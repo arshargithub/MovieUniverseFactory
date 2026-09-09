@@ -1,0 +1,8 @@
+{
+  "schema_version":"1.0",
+  "dependencies":[
+    {"name":"Blender","version":"5.2.1 LTS","build":"9e2066aef7ef","source":"https://www.blender.org/download/","license":"GPL-2.0-or-later","scope":"worker","status":"LIVE_MACHINE_QUALIFIED"},
+    {"name":"CPython","version":"3.12.11","source":"uv managed download","scope":"outer .venv","status":"INSTALLED"},
+    {"name":"outer Python packages","version":"requirements.lock","source":"Python package index via uv","scope":"outer .venv","status":"INSTALLED_HASH_PINNED"}
+  ]
+}

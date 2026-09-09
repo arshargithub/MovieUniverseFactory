@@ -1,0 +1,13 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema","$id":"scene-plan.schema.json","type":"object","additionalProperties":false,
+  "required":["schema_version","scene_id","seed","room","entities","cameras","lights","world_strength","exposure"],
+  "properties":{
+    "schema_version":{"const":"1.0"},"scene_id":{"const":"apartment_living_room_01"},"seed":{"type":"integer"},
+    "room":{"type":"object","additionalProperties":false,"required":["size_m","wall_color_hex","floor_color_hex"],"properties":{"size_m":{"type":"array","prefixItems":[{"const":5.0},{"const":4.0},{"const":2.8}],"items":false},"wall_color_hex":{"$ref":"#/$defs/color"},"floor_color_hex":{"$ref":"#/$defs/color"}}},
+    "entities":{"type":"array","minItems":4,"maxItems":4,"items":{"type":"object","additionalProperties":false,"required":["id","kind","position","rotation_z","dimensions","color_hex","roughness"],"properties":{"id":{"enum":["sofa_01","coffee_table_01","floor_lamp_01","helmet_01"]},"kind":{"enum":["sofa","coffee_table","floor_lamp","motorcycle_helmet"]},"position":{"$ref":"#/$defs/vec3"},"rotation_z":{"type":"number"},"dimensions":{"$ref":"#/$defs/positive_vec3"},"color_hex":{"$ref":"#/$defs/color"},"roughness":{"type":"number","minimum":0,"maximum":1}}}},
+    "cameras":{"type":"array","minItems":3,"maxItems":3,"items":{"type":"object","additionalProperties":false,"required":["id","shot_id","position","target","lens_mm"],"properties":{"id":{"enum":["camera_A","camera_B","camera_C"]},"shot_id":{"enum":["shot_A","shot_B","shot_C"]},"position":{"$ref":"#/$defs/vec3"},"target":{"$ref":"#/$defs/vec3"},"lens_mm":{"type":"number","minimum":18,"maximum":120}}}},
+    "lights":{"type":"array","minItems":1,"maxItems":6,"items":{"type":"object","additionalProperties":false,"required":["id","type","position","target","color_hex","energy_w","size_m"],"properties":{"id":{"type":"string","pattern":"^[a-zA-Z0-9_]+$"},"type":{"enum":["AREA","POINT"]},"position":{"$ref":"#/$defs/vec3"},"target":{"$ref":"#/$defs/vec3"},"color_hex":{"$ref":"#/$defs/color"},"energy_w":{"type":"number","exclusiveMinimum":0,"maximum":5000},"size_m":{"type":"number","exclusiveMinimum":0,"maximum":10}}}},
+    "world_strength":{"type":"number","minimum":0,"maximum":2},"exposure":{"type":"number","minimum":-5,"maximum":5}
+  },
+  "$defs":{"color":{"type":"string","pattern":"^#[0-9A-Fa-f]{6}$"},"vec3":{"type":"array","prefixItems":[{"type":"number"},{"type":"number"},{"type":"number"}],"items":false},"positive_vec3":{"type":"array","prefixItems":[{"type":"number","exclusiveMinimum":0},{"type":"number","exclusiveMinimum":0},{"type":"number","exclusiveMinimum":0}],"items":false}}
+}

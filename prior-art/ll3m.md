@@ -1,0 +1,11 @@
+# LL3M assimilation
+
+Identity: **LL3M: Large Language 3D Modelers**, Sining Lu, Guan Chen, Nam Anh Dinh, Itai Lang, Ari Holtzman, Rana Hanocka; submitted 2025-08-11. Retrieved 2026-09-08. Sources: [paper](https://arxiv.org/abs/2508.08228), [project](https://threedle.github.io/ll3m/), [repository README](https://github.com/threedle/ll3m), [license](https://github.com/threedle/ll3m/blob/main/LICENSE).
+
+Scope: paper abstract, README/runtime requirements, displayed license; no implementation code or prompts read or reused. Commit: not applicable to incorporated code; documentation read from unpinned `main`. The paper describes specialized planning/retrieval/debugging/visual-refinement roles with Blender API documentation retrieval. The README documents Python 3.12, Blender 4.4, an add-on/client-server workflow and account authentication. It now states that its hosted server was discontinued following retirement of the paper's model. We did not attempt authentication or service execution.
+
+License record: the displayed code agreement limits use to non-commercial academic/evaluation purposes and includes additional restrictions; no permission is assumed from the AGPL reference within that agreement. Data/model licenses are separately unresolved. No code, weights, prompts or assets incorporated; no restricted evaluation attempted.
+
+**Learn From:** ground adapter behavior in a tiny original topic index of the exact installed version's API: `bpy.ops.wm.open_mainfile`, `bpy.ops.wm.save_as_mainfile`, `bpy.types.Object.matrix_world`, `bpy.types.Mesh`, `bpy.types.ShaderNodeBsdfPrincipled`, `bpy.ops.render.render`. Start at the [Blender API index](https://docs.blender.org/api/current/) and record the actual runtime version in the package. This is an original pointer list, not a copied retrieval corpus.
+
+**Ignore:** restricted implementation and hosted runtime. The useful failure lesson is provider/version lifecycle risk: pin the Factory model and record actual error feedback; never silently substitute another model. A controlled missing-property/exception fixture belongs in native failure injection, with nonzero exit and retained diagnostics. Runnable status: not reproduced; upstream hosted service is reported discontinued and reuse is uncleared.

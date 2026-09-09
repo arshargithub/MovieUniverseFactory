@@ -1,0 +1,11 @@
+# BlenderGym assimilation
+
+Identity: **BlenderGym: Benchmarking Foundational Model Systems for Graphics Editing**, Yunqi Gu, Ian Huang, Jihyeon Je, Guandao Yang, Leonidas Guibas; submitted 2025-04-02, CVPR 2025. Retrieved 2026-09-08. Sources: [paper](https://arxiv.org/abs/2504.01786), [project](https://blendergym.github.io/), [repository](https://github.com/richard-guyunqi/BlenderGym-Open), [dataset](https://huggingface.co/datasets/richard-guyunqi/BG_bench_data), [setup script](https://github.com/richard-guyunqi/BlenderGym-Open/blob/master/starter_setup.sh).
+
+Scope: paper abstract, repository README, dataset card, and the short setup script. No benchmark/solver implementation or assets copied. Inspected setup revision: unpinned `master`; exact commit unresolved and therefore not usable as a qualified dependency. The README uses Python 3.10/Conda with model-specific API or local inference. The setup installs Torch, an editable TaskSolver package, downloads benchmark data and clones an additional Infinigen fork. Hardware depends on the chosen model/renderer and was not reproduced here.
+
+Code license: not established from the displayed root listing. Dataset license: not established from its displayed card, whose metadata is missing. Model licenses: provider/weight-specific and not qualified. Website licensing is not treated as blanket permission for code or assets. Runnable status: not run; unnecessary dependency expansion and unresolved permission make the original tiny fixtures preferable.
+
+**Learn From:** benchmark placement, material, lighting and procedural-edit failures separately. Our original tests deliberately reverse or undershoot movement, change cameras/lights/roughness, mutate mesh data, hide geometry, share the shell material, and obscure the helmet mask.
+
+**Adapt concept:** generation and verification have different roles and costs. Keep the actual revision separate from an independent canonical state/render reference; charge planner and reviewer calls independently. **Ignore for 3D-01:** upstream asset bundle and setup scripts. Attractive global image metrics can conceal small object failures; our helmet/table mask-region gates are mandatory alongside full-frame metrics.

@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "movie-factory-feasibility"
+version = "0.1.0"
+description = "Blender-first persistent scene and targeted revision qualification harness"
+requires-python = ">=3.12,<3.13"
+dependencies = ["openai>=1.100,<3", "jsonschema>=4.23,<5", "Pillow>=11,<13", "numpy>=2.2,<3", "scikit-image>=0.25,<1"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "setuptools>=75", "wheel"]
+
+[project.scripts]
+mf3d = "movie_factory.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["blender: invokes the local Blender executable", "live: calls a paid external provider (explicit opt-in only)"]
+addopts = "-m 'not blender and not live'"

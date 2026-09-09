@@ -203,6 +203,17 @@ cython_debug/
 # Temporary file for partial code execution
 tempCodeRunnerFile.py
 
+# Movie Factory local execution state and private configuration
+.env.*
+!.env.example
+.runtime/
+.cache/
+runs/
+artifacts/
+replays/
+exports/
+results/**/raw/
+
 # Ruff stuff:
 .ruff_cache/
 

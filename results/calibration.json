@@ -1,0 +1,564 @@
+{
+  "calibration_id": "seed-101-20260908T193449Z-a6f7de2e",
+  "comparisons": [
+    {
+      "color": "GREEN",
+      "errors": [],
+      "passed": true,
+      "policy": {
+        "decode": "PNG display-referred RGB in [0,1]; no additional gamma conversion",
+        "green": {
+          "mae_max": 0.01,
+          "ssim_min": 0.98
+        },
+        "regions": "union of baseline, actual and expected stable-ID masks, expanded by ceil(8*width/1280) pixels; remaining region is complement",
+        "ssim": "scikit-image channel_axis=-1, data_range=1, win_size=7; local SSIM map averaged over each selected region",
+        "version": "3d01-perceptual-v1",
+        "visibility": "opaque visible mask pixels / full image pixels; helmet A/B >=0.002, C >=0.05; table A/B >=0.01",
+        "yellow": {
+          "mae_max": 0.03,
+          "ssim_min": 0.95
+        }
+      },
+      "shots": {
+        "shot_A": {
+          "height": 720,
+          "regions": {
+            "full_frame": {
+              "applicable": true,
+              "color": "GREEN",
+              "crop_xyxy": [
+                0,
+                0,
+                1280,
+                720
+              ],
+              "mae": 0.0,
+              "pixels": 921600,
+              "ssim": 1.0,
+              "standard_ssim": 1.0
+            },
+            "helmet": {
+              "applicable": true,
+              "color": "GREEN",
+              "crop_xyxy": [
+                744,
+                337,
+                818,
+                405
+              ],
+              "mae": 0.0,
+              "pixels": 4304,
+              "required": true,
+              "ssim": 1.0
+            },
+            "remaining": {
+              "applicable": true,
+              "color": "GREEN",
+              "crop_xyxy": [
+                0,
+                0,
+                1280,
+                720
+              ],
+              "mae": 0.0,
+              "pixels": 896991,
+              "ssim": 1.0
+            },
+            "table": {
+              "applicable": true,
+              "color": "GREEN",
+              "crop_xyxy": [
+                450,
+                405,
+                699,
+                565
+              ],
+              "mae": 0.0,
+              "pixels": 20305,
+              "required": true,
+              "ssim": 1.0
+            }
+          },
+          "visibility": {
+            "helmet": {
+              "actual": {
+                "fraction": 0.002421875,
+                "minimum": 0.002,
+                "passed": true
+              },
+              "expected": {
+                "fraction": 0.002421875,
+                "minimum": 0.002,
+                "passed": true
+              }
+            },
+            "table": {
+              "actual": {
+                "fraction": 0.013779296875,
+                "minimum": 0.01,
+                "passed": true
+              },
+              "expected": {
+                "fraction": 0.013779296875,
+                "minimum": 0.01,
+                "passed": true
+              }
+            }
+          },
+          "width": 1280
+        },
+        "shot_B": {
+          "height": 720,
+          "regions": {
+            "full_frame": {
+              "applicable": true,
+              "color": "GREEN",
+              "crop_xyxy": [
+                0,
+                0,
+                1280,
+                720
+              ],
+              "mae": 0.0,
+              "pixels": 921600,
+              "ssim": 1.0,
+              "standard_ssim": 1.0
+            },
+            "helmet": {
+              "applicable": true,
+              "color": "GREEN",
+              "crop_xyxy": [
+                803,
+                306,
+                945,
+                433
+              ],
+              "mae": 0.0,
+              "pixels": 14631,
+              "required": true,
+              "ssim": 1.0
+            },
+            "remaining": {
+              "applicable": true,
+              "color": "GREEN",
+              "crop_xyxy": [
+                0,
+                0,
+                1280,
+                720
+              ],
+              "mae": 0.0,
+              "pixels": 827916,
+              "ssim": 1.0
+            },
+            "table": {
+              "applicable": true,
+              "color": "GREEN",
+              "crop_xyxy": [
+                131,
+                454,
+                691,
+                720
+              ],
+              "mae": 0.0,
+              "pixels": 79053,
+              "required": true,
+              "ssim": 1.0
+            }
+          },
+          "visibility": {
+            "helmet": {
+              "actual": {
+                "fraction": 0.011200086805555556,
+                "minimum": 0.002,
+                "passed": true
+              },
+              "expected": {
+                "fraction": 0.011200086805555556,
+                "minimum": 0.002,
+                "passed": true
+              }
+            },
+            "table": {
+              "actual": {
+                "fraction": 0.0679275173611111,
+                "minimum": 0.01,
+                "passed": true
+              },
+              "expected": {
+                "fraction": 0.0679275173611111,
+                "minimum": 0.01,
+                "passed": true
+              }
+            }
+          },
+          "width": 1280
+        },
+        "shot_C": {
+          "height": 720,
+          "regions": {
+            "full_frame": {
+              "applicable": true,
+              "color": "GREEN",
+              "crop_xyxy": [
+                0,
+                0,
+                1280,
+                720
+              ],
+              "mae": 0.0,
+              "pixels": 921600,
+              "ssim": 1.0,
+              "standard_ssim": 1.0
+            },
+            "helmet": {
+              "applicable": true,
+              "color": "GREEN",
+              "crop_xyxy": [
+                460,
+                331,
+                812,
+                650
+              ],
+              "mae": 0.0,
+              "pixels": 87939,
+              "required": true,
+              "ssim": 1.0
+            },
+            "remaining": {
+              "applicable": true,
+              "color": "GREEN",
+              "crop_xyxy": [
+                0,
+                0,
+                1280,
+                720
+              ],
+              "mae": 0.0,
+              "pixels": 833661,
+              "ssim": 1.0
+            },
+            "table": {
+              "applicable": false,
+              "color": "YELLOW",
+              "mae": null,
+              "pixels": 0,
+              "reason": "Fewer than 49 visible comparison pixels",
+              "required": false,
+              "ssim": null
+            }
+          },
+          "visibility": {
+            "helmet": {
+              "actual": {
+                "fraction": 0.08197048611111112,
+                "minimum": 0.05,
+                "passed": true
+              },
+              "expected": {
+                "fraction": 0.08197048611111112,
+                "minimum": 0.05,
+                "passed": true
+              }
+            },
+            "table": {
+              "actual": {
+                "fraction": 0.0,
+                "minimum": 0,
+                "passed": true
+              },
+              "expected": {
+                "fraction": 0.0,
+                "minimum": 0,
+                "passed": true
+              }
+            }
+          },
+          "width": 1280
+        }
+      }
+    },
+    {
+      "color": "GREEN",
+      "errors": [],
+      "passed": true,
+      "policy": {
+        "decode": "PNG display-referred RGB in [0,1]; no additional gamma conversion",
+        "green": {
+          "mae_max": 0.01,
+          "ssim_min": 0.98
+        },
+        "regions": "union of baseline, actual and expected stable-ID masks, expanded by ceil(8*width/1280) pixels; remaining region is complement",
+        "ssim": "scikit-image channel_axis=-1, data_range=1, win_size=7; local SSIM map averaged over each selected region",
+        "version": "3d01-perceptual-v1",
+        "visibility": "opaque visible mask pixels / full image pixels; helmet A/B >=0.002, C >=0.05; table A/B >=0.01",
+        "yellow": {
+          "mae_max": 0.03,
+          "ssim_min": 0.95
+        }
+      },
+      "shots": {
+        "shot_A": {
+          "height": 720,
+          "regions": {
+            "full_frame": {
+              "applicable": true,
+              "color": "GREEN",
+              "crop_xyxy": [
+                0,
+                0,
+                1280,
+                720
+              ],
+              "mae": 0.0,
+              "pixels": 921600,
+              "ssim": 1.0,
+              "standard_ssim": 1.0
+            },
+            "helmet": {
+              "applicable": true,
+              "color": "GREEN",
+              "crop_xyxy": [
+                744,
+                337,
+                818,
+                405
+              ],
+              "mae": 0.0,
+              "pixels": 4304,
+              "required": true,
+              "ssim": 1.0
+            },
+            "remaining": {
+              "applicable": true,
+              "color": "GREEN",
+              "crop_xyxy": [
+                0,
+                0,
+                1280,
+                720
+              ],
+              "mae": 0.0,
+              "pixels": 896991,
+              "ssim": 1.0
+            },
+            "table": {
+              "applicable": true,
+              "color": "GREEN",
+              "crop_xyxy": [
+                450,
+                405,
+                699,
+                565
+              ],
+              "mae": 0.0,
+              "pixels": 20305,
+              "required": true,
+              "ssim": 1.0
+            }
+          },
+          "visibility": {
+            "helmet": {
+              "actual": {
+                "fraction": 0.002421875,
+                "minimum": 0.002,
+                "passed": true
+              },
+              "expected": {
+                "fraction": 0.002421875,
+                "minimum": 0.002,
+                "passed": true
+              }
+            },
+            "table": {
+              "actual": {
+                "fraction": 0.013779296875,
+                "minimum": 0.01,
+                "passed": true
+              },
+              "expected": {
+                "fraction": 0.013779296875,
+                "minimum": 0.01,
+                "passed": true
+              }
+            }
+          },
+          "width": 1280
+        },
+        "shot_B": {
+          "height": 720,
+          "regions": {
+            "full_frame": {
+              "applicable": true,
+              "color": "GREEN",
+              "crop_xyxy": [
+                0,
+                0,
+                1280,
+                720
+              ],
+              "mae": 0.0,
+              "pixels": 921600,
+              "ssim": 1.0,
+              "standard_ssim": 1.0
+            },
+            "helmet": {
+              "applicable": true,
+              "color": "GREEN",
+              "crop_xyxy": [
+                803,
+                306,
+                945,
+                433
+              ],
+              "mae": 0.0,
+              "pixels": 14631,
+              "required": true,
+              "ssim": 1.0
+            },
+            "remaining": {
+              "applicable": true,
+              "color": "GREEN",
+              "crop_xyxy": [
+                0,
+                0,
+                1280,
+                720
+              ],
+              "mae": 0.0,
+              "pixels": 827916,
+              "ssim": 1.0
+            },
+            "table": {
+              "applicable": true,
+              "color": "GREEN",
+              "crop_xyxy": [
+                131,
+                454,
+                691,
+                720
+              ],
+              "mae": 0.0,
+              "pixels": 79053,
+              "required": true,
+              "ssim": 1.0
+            }
+          },
+          "visibility": {
+            "helmet": {
+              "actual": {
+                "fraction": 0.011200086805555556,
+                "minimum": 0.002,
+                "passed": true
+              },
+              "expected": {
+                "fraction": 0.011200086805555556,
+                "minimum": 0.002,
+                "passed": true
+              }
+            },
+            "table": {
+              "actual": {
+                "fraction": 0.0679275173611111,
+                "minimum": 0.01,
+                "passed": true
+              },
+              "expected": {
+                "fraction": 0.0679275173611111,
+                "minimum": 0.01,
+                "passed": true
+              }
+            }
+          },
+          "width": 1280
+        },
+        "shot_C": {
+          "height": 720,
+          "regions": {
+            "full_frame": {
+              "applicable": true,
+              "color": "GREEN",
+              "crop_xyxy": [
+                0,
+                0,
+                1280,
+                720
+              ],
+              "mae": 0.0,
+              "pixels": 921600,
+              "ssim": 1.0,
+              "standard_ssim": 1.0
+            },
+            "helmet": {
+              "applicable": true,
+              "color": "GREEN",
+              "crop_xyxy": [
+                460,
+                331,
+                812,
+                650
+              ],
+              "mae": 0.0,
+              "pixels": 87939,
+              "required": true,
+              "ssim": 1.0
+            },
+            "remaining": {
+              "applicable": true,
+              "color": "GREEN",
+              "crop_xyxy": [
+                0,
+                0,
+                1280,
+                720
+              ],
+              "mae": 0.0,
+              "pixels": 833661,
+              "ssim": 1.0
+            },
+            "table": {
+              "applicable": false,
+              "color": "YELLOW",
+              "mae": null,
+              "pixels": 0,
+              "reason": "Fewer than 49 visible comparison pixels",
+              "required": false,
+              "ssim": null
+            }
+          },
+          "visibility": {
+            "helmet": {
+              "actual": {
+                "fraction": 0.08197048611111112,
+                "minimum": 0.05,
+                "passed": true
+              },
+              "expected": {
+                "fraction": 0.08197048611111112,
+                "minimum": 0.05,
+                "passed": true
+              }
+            },
+            "table": {
+              "actual": {
+                "fraction": 0.0,
+                "minimum": 0,
+                "passed": true
+              },
+              "expected": {
+                "fraction": 0.0,
+                "minimum": 0,
+                "passed": true
+              }
+            }
+          },
+          "width": 1280
+        }
+      }
+    }
+  ],
+  "note": "Three independent renders of one frozen native scene; no model call.",
+  "ok": true,
+  "profile": "qualification_cpu"
+}

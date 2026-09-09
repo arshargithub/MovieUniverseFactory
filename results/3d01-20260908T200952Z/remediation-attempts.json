@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0",
+  "classification": "implementation_remediation_before_selected_campaign",
+  "known_api_cost_usd": 0.345125,
+  "attempts": [
+    {
+      "run_id": "seed-101-20260908T195619Z-2a674429",
+      "seed": 101,
+      "provider_calls": 1,
+      "known_api_cost_usd": 0.0689925,
+      "outcome": "FAILED_CONTROLLER",
+      "cause": "Revision prompt treated the native stable-ID object map as a list."
+    },
+    {
+      "run_id": "seed-202-20260908T195742Z-73a44340",
+      "seed": 202,
+      "provider_calls": 1,
+      "known_api_cost_usd": 0.0591825,
+      "outcome": "FAILED_CONTROLLER",
+      "cause": "Same reproduced object-map controller defect; retained before campaign interruption."
+    },
+    {
+      "run_id": "seed-303-20260908T195900Z-cfe02d72",
+      "seed": 303,
+      "provider_calls": 1,
+      "known_api_cost_usd": 0.0703275,
+      "outcome": "INTERRUPTED",
+      "cause": "Stopped during initial rendering after the repeated controller defect was diagnosed."
+    },
+    {
+      "run_id": "seed-101-20260908T200150Z-c8dc4149",
+      "seed": 101,
+      "provider_calls": 3,
+      "known_api_cost_usd": 0.09902,
+      "outcome": "FAILED_MACHINE_VISUAL",
+      "cause": "Model-selected medium camera hid the required table and reviewer context omitted the authorized helmet color change."
+    },
+    {
+      "run_id": "seed-202-20260908T200517Z-e31f9f35",
+      "seed": 202,
+      "provider_calls": 1,
+      "known_api_cost_usd": 0.0476025,
+      "outcome": "INTERRUPTED",
+      "cause": "Stopped during initial rendering after the framing and reviewer-contract failure was diagnosed."
+    }
+  ]
+}

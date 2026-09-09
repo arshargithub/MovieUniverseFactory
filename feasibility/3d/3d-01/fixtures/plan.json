@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "scene_id": "apartment_living_room_01",
+  "seed": 1701,
+  "room": {"size_m": [5, 4, 2.8], "wall_color_hex": "#D0C9B9", "floor_color_hex": "#806348"},
+  "entities": [
+    {"id": "sofa_01", "kind": "sofa", "position": [0, 1, 0], "rotation_z": 0, "dimensions": [2.6, 1, 1.2], "color_hex": "#566B69", "roughness": 0.8},
+    {"id": "coffee_table_01", "kind": "coffee_table", "position": [0, -0.45, 0], "rotation_z": 0, "dimensions": [1.35, 0.65, 0.42], "color_hex": "#70462A", "roughness": 0.4},
+    {"id": "floor_lamp_01", "kind": "floor_lamp", "position": [-1.8, 1.1, 0], "rotation_z": 0, "dimensions": [0.5, 0.5, 1.8], "color_hex": "#C8AC75", "roughness": 0.35},
+    {"id": "helmet_01", "kind": "motorcycle_helmet", "position": [0.68, 0.9, 0.648], "rotation_z": 0.12, "dimensions": [0.38, 0.36, 0.4], "color_hex": "#C62828", "roughness": 0.22}
+  ],
+  "cameras": [
+    {"id": "camera_A", "shot_id": "shot_A", "position": [3.6, -5.4, 2.55], "target": [0, 0.55, 0.75], "lens_mm": 43},
+    {"id": "camera_B", "shot_id": "shot_B", "position": [-3.15, -3.1, 1.65], "target": [0.1, 0.6, 0.8], "lens_mm": 42},
+    {"id": "camera_C", "shot_id": "shot_C", "position": [1.65, -0.55, 1.35], "target": [0.68, 0.9, 0.85], "lens_mm": 62}
+  ],
+  "lights": [
+    {"id": "key_light_01", "type": "AREA", "position": [-2, -1.5, 3.4], "target": [0, 0.7, 0.6], "color_hex": "#FFF0D9", "energy_w": 650, "size_m": 3},
+    {"id": "fill_light_01", "type": "AREA", "position": [2.8, -0.8, 2.8], "target": [0, 0.8, 0.8], "color_hex": "#D3E4FF", "energy_w": 250, "size_m": 2.5}
+  ],
+  "world_strength": 0.12,
+  "exposure": 0
+}

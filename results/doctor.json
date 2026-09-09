@@ -1,0 +1,41 @@
+{
+  "blender": {
+    "exit_code": 0,
+    "ok": true,
+    "output": "Blender 5.2.1 LTS\n\tbuild date: 2026-08-25\n\tbuild time: 01:35:57\n\tbuild commit date: 2026-08-24\n\tbuild commit time: 16:50\n\tbuild hash: 9e2066aef7ef\n\tbuild branch: blender-v5.2-release\n\tbuild platform: Darwin\n\tbuild type: Release\n\tbuild c flags:  -Wall -Werror=implicit-function-declaration -Werror=return-type -Wno-tautological-compare -Wno-unknown-pragmas -Wno-char-subscripts -Wstrict-prototypes -Wmissing-prototypes -Wunused-parameter -Wundef -Wundef-prefix -Werror=unguarded-availability-new  -mmacosx-version-min=11.2  -std=gnu11  -pipe -funsigned-char -fno-strict-aliasing -ffp-contract=off  \n\tbuild c++ flags:  -Wall -Wno-tautological-compare -Wno-unknown-pragmas -Wno-char-subscripts -Wno-overloaded-virtual -Wno-sign-compare -Wno-invalid-offsetof -Wno-suggest-override -Wundef -Wundef-prefix -Wunused-parameter -Wmismatched-tags -Werror=unguarded-availability-new  -mmacosx-version-min=11.2 -ftemplate-depth=1024   -pipe -funsigned-char -fno-strict-aliasing -ffp-contract=off  \n\tbuild link flags: -fexceptions -framework CoreServices -framework Foundation -framework IOKit -framework AppKit -framework Cocoa -framework Carbon -framework AudioUnit -framework AudioToolbox -framework CoreAudio -framework Metal -framework QuartzCore -framework CoreImage -framework OpenGL -framework Accelerate -liconv -Xlinker -no_warn_duplicate_libraries\n\tbuild system: CMake\n ArchWarn: ARCH_CACHE_LINE_SIZE != Arch_ObtainCacheLineSize()\n Function: Arch_ValidateAssumptions\n     File: /Users/jonas/blender-dev-deps/build_darwin/deps_arm64/build/usd/src/external_usd/pxr/base/arch/assumptions.cpp\n     Line: 140\n",
+    "path": "/Applications/Blender.app/Contents/MacOS/Blender",
+    "sha256": "ea651e507c6b197df0e234bfa04e5ed43e7f4d498267a7df93fcb38f21928a5c"
+  },
+  "configuration": {
+    "GH_TOKEN": true,
+    "GITHUB_REPOSITORY": true,
+    "OPENAI_API_KEY": true
+  },
+  "disk": {
+    "free_gib": 43.06,
+    "meets_minimum": true,
+    "minimum_gib": 5,
+    "recommended_gib": 20
+  },
+  "git": {
+    "exit_code": 0,
+    "ok": true,
+    "output": " M .gitignore\n M README.md\n?? .env.example\n?? .python-version\n?? AGENTS.md\n?? MOVIE_FACTORY_3D_FEASIBILITY_SPEC.md\n?? SETUP_README.md\n?? config/\n?? docs/\n?? feasibility/\n?? prior-art/\n?? pyproject.toml\n?? requirements.lock\n?? results/\n?? schemas/\n?? src/\n?? tests/\n"
+  },
+  "ok": true,
+  "platform": {
+    "architecture": "arm64",
+    "macos": "26.3.1",
+    "python": "3.12.11"
+  },
+  "schema_version": "1.0",
+  "security": {
+    "env_mode": "0o600",
+    "secrets_reported": false
+  },
+  "virtual_environment": {
+    "actual": "/Users/adisharma/projects/MovieUniverseFactory/.venv",
+    "expected": "/Users/adisharma/projects/MovieUniverseFactory/.venv",
+    "isolated": true
+  }
+}
