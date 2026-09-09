@@ -202,6 +202,7 @@ def write_campaign_report(campaign_dir: Path, summaries: list[dict[str, Any]], b
             item["comparison"] = f"../../runs/{campaign_dir.name}/{item['run_id']}/comparison.html"
     source_binding = _json(campaign_dir / "source-binding.json")
     batch_review = _json(campaign_dir / "director-batch-review.json")
+    replay_attestation = _json(campaign_dir / "replay-attestation.json")
     report = {
         "schema_version":"1.0","campaign_id":campaign_dir.name,"pairs_attempted":len(summaries),"pairs_machine_valid":passed,
         "director_review":"PENDING" if pending_director else "RECORDED","decision":color,"budget":budget,"metrics":metrics,"remediation":remediation,"runs":portable_summaries
@@ -210,6 +211,8 @@ def write_campaign_report(campaign_dir: Path, summaries: list[dict[str, Any]], b
         report["source_binding"] = source_binding
     if batch_review:
         report["director_batch_review"] = batch_review
+    if replay_attestation:
+        report["replay_attestation"] = replay_attestation
     atomic_json(campaign_dir / "summary.json", report)
     known_selected = sum(row["known_api_cost_usd"] for row in metrics)
     total_calls = sum(row["api_calls"] for row in metrics)
@@ -232,6 +235,7 @@ def write_campaign_report(campaign_dir: Path, summaries: list[dict[str, Any]], b
         "## Source provenance", "",
         (f"- Status: `{source_binding.get('status')}`; implementation commit `{source_binding.get('implementation_commit')}`; Git tree `{source_binding.get('implementation_tree')}`" if source_binding else "- Source binding has not been recorded."),
         (f"- Evidence seal tag: `{source_binding.get('evidence_seal_tag')}`. {source_binding.get('qualification_provenance_note')}" if source_binding else "- Commit and tree provenance remain pending."), "",
+        (f"- Offline revision replay: seed {replay_attestation.get('seed')}; zero semantic differences; no provider calls; [attestation](replay-attestation.json)" if replay_attestation else "- Offline non-101 replay remains pending."), "",
         "## Machine outcome", "",
         f"All {passed} selected pairs passed baseline structure, exact deny-by-default revision state, required mask visibility, oracle render comparison, and the model visual gate.",
         "Each revision moved only `coffee_table_01` exactly 0.4 m toward `sofa_01` and changed only `helmet_shell_01` from `#C62828` to `#163D2A`; cameras, lighting, geometry, and protected materials remained unchanged.", "",
