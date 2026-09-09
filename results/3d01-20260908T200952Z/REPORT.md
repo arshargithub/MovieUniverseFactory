@@ -14,8 +14,10 @@ Machine-valid pairs: **5/5**. Director reviews are recorded. Revision API econom
 
 ## Source provenance
 
-- Source binding has not been recorded.
-- Commit and tree provenance remain pending.
+- Status: `post_hoc_reconstructed`; implementation commit `1a62dbb915ee7636f6e3f031e910b8804773af3c`; Git tree `72382e40a165b1c9668e5f4b58c36f482176991b`
+- Evidence seal tag: `3d-01-v1-yellow`. The live API campaign ran before the implementation was committed. This binding identifies the sealed committed reconstruction used for offline replay, not a contemporaneous source commit for the live calls. Offline replay against this commit supplies the reproducibility check.
+
+- Offline revision replay: seed 303; zero semantic differences; no provider calls; [attestation](replay-attestation.json)
 
 ## Machine outcome
 

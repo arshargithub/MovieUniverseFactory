@@ -785,6 +785,22 @@
     "known_api_cost_usd": 0.345125,
     "schema_version": "1.0"
   },
+  "replay_attestation": {
+    "campaign_id": "3d01-20260908T200952Z",
+    "implementation_commit": "1a62dbb915ee7636f6e3f031e910b8804773af3c",
+    "legacy_seed_resolution": "Seed recovered from revision/intent-package.json after its content identity and executable-package binding were verified.",
+    "package_id": "4d1d7a140fd996f8e2f1bf0e370ba9fde1a767169e832b7470d5eeb01b761d0c",
+    "provider_calls": 0,
+    "replay_result_path": "../../replays/3d01-20260908T200952Z-seed-303-revision/replay-result.json",
+    "replay_result_sha256": "3004096df08daf4ae8ef7f6f931c89feb8fe421a520a42cda35896c55b3773b5",
+    "replayed_native_sha256": "33b8a439068742a316a1de835582d791cf1b255cae09972c8ede58a549c73e79",
+    "run_id": "seed-303-20260908T201610Z-8fbfe21a",
+    "schema_version": "1.0",
+    "seed": 303,
+    "semantic_difference_count": 0,
+    "semantic_replay_passed": true,
+    "stage": "revision"
+  },
   "runs": [
     {
       "baseline_validation": {
@@ -16687,5 +16703,16 @@
       }
     }
   ],
-  "schema_version": "1.0"
+  "schema_version": "1.0",
+  "source_binding": {
+    "bound_at": "2026-09-09T21:25:06Z",
+    "campaign_id": "3d01-20260908T200952Z",
+    "evidence_seal_tag": "3d-01-v1-yellow",
+    "implementation_commit": "1a62dbb915ee7636f6e3f031e910b8804773af3c",
+    "implementation_tree": "72382e40a165b1c9668e5f4b58c36f482176991b",
+    "qualification_provenance_note": "The live API campaign ran before the implementation was committed. This binding identifies the sealed committed reconstruction used for offline replay, not a contemporaneous source commit for the live calls. Offline replay against this commit supplies the reproducibility check.",
+    "replay_requirement": "At least one non-101 selected revision package must replay offline with zero semantic differences against the bound implementation before the evidence seal is complete.",
+    "schema_version": "1.0",
+    "status": "post_hoc_reconstructed"
+  }
 }

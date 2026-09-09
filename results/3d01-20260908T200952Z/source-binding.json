@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0",
+  "campaign_id": "3d01-20260908T200952Z",
+  "status": "post_hoc_reconstructed",
+  "implementation_commit": "1a62dbb915ee7636f6e3f031e910b8804773af3c",
+  "implementation_tree": "72382e40a165b1c9668e5f4b58c36f482176991b",
+  "evidence_seal_tag": "3d-01-v1-yellow",
+  "bound_at": "2026-09-09T21:25:06Z",
+  "qualification_provenance_note": "The live API campaign ran before the implementation was committed. This binding identifies the sealed committed reconstruction used for offline replay, not a contemporaneous source commit for the live calls. Offline replay against this commit supplies the reproducibility check.",
+  "replay_requirement": "At least one non-101 selected revision package must replay offline with zero semantic differences against the bound implementation before the evidence seal is complete."
+}
