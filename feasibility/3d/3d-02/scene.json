@@ -49,7 +49,10 @@
         {
           "id": "tower_base",
           "source": {"path": "environment_source_01/Models/GLB format/tower-square-base.glb", "sha256": "996887e98957eeea2ba7b5d14f0d17877c91e4e99e1c5b8ee57d87b7f7c9d5e8", "format": "glb"},
-          "instances": [{"position":[-4,3,0],"scale":[2,2,2]}]
+          "instances": [
+            {"position":[-4,3,0],"scale":[2,2,2]},
+            {"position":[1.45,0.15,0],"scale":[0.8,0.8,0.35]}
+          ]
         },
         {
           "id": "tower_mid",
@@ -81,7 +84,7 @@
       "id": "sword_01",
       "kind": "sword",
       "source_sha256": "8e69eb27977f8c84a9b7cd423cd5830eddcf0d07ac1d7fed1969931387015b28",
-      "position": [1.45, 0.15, 0],
+      "position": [1.45, 0.15, 0.3535],
       "rotation_z_degrees": 0,
       "target_longest_m": 1.0,
       "source": {"path": "sword_source_01/Models/GLB format/weapon-sword.glb", "sha256": "8e69eb27977f8c84a9b7cd423cd5830eddcf0d07ac1d7fed1969931387015b28", "format": "glb"}
@@ -90,7 +93,7 @@
   "cameras": [
     {"id":"camera_A","shot_id":"shot_A","position":[5.8,-8.5,4.4],"target":[0,0.4,1.0],"lens_mm":48},
     {"id":"camera_B","shot_id":"shot_B","position":[3.8,-5.2,1.9],"target":[-0.5,0,0.8],"lens_mm":58},
-    {"id":"camera_C","shot_id":"shot_C","position":[3.0,-3.1,1.35],"target":[1.35,0.1,0.5],"lens_mm":68}
+    {"id":"camera_C","shot_id":"shot_C","position":[1.45,-3.1,1.45],"target":[1.45,0.15,0.82],"lens_mm":72}
   ],
   "lights": [
     {"id":"key_light_01","type":"AREA","position":[-2.5,-3.5,6.5],"target":[0,0,0.7],"color_hex":"#FFF1DB","energy_w":1100,"size_m":5.0},

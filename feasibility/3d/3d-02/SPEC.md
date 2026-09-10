@@ -21,7 +21,7 @@ The controller verifies the manifest, archive digests, member paths, member size
 1. Reproduce the 20-file staged set from the three frozen source archives.
 2. Probe each source in a fresh Blender process and record raw topology, dimensions, materials, and images.
 3. Build a courtyard scene from the admitted external files only.
-4. Normalize the motorcycle to a 2.4 m longest dimension and the sword to a 1.0 m longest dimension; ground their origins and preserve uniform scaling.
+4. Normalize the motorcycle to a 2.4 m longest dimension and the sword to a 1.0 m longest dimension; ground the motorcycle, support the sword on an imported stone plinth, and preserve uniform scaling.
 5. Assemble the modular environment at recorded metre-scale transforms.
 6. Relink the motorcycle PBR textures, pack every texture into the `.blend`, assign stable entity/part/material IDs, and record source hashes as custom properties.
 7. Save, reopen in a fresh process, and require exact semantic snapshot equality.

@@ -59,8 +59,9 @@ def validate_external_baseline(snapshot: dict, plan: dict) -> dict:
             vertices, polygons = _entity_topology(snapshot, entity_id)
             _check(checks, f"normalization.{entity_id}.longest_dimension", abs(longest-target) <= 1e-4,
                    {"actual_m": longest, "target_m": target})
-            _check(checks, f"normalization.{entity_id}.ground_contact", abs(bounds["min"][2]) <= 1e-4,
-                   {"bottom_z_m": bounds["min"][2]})
+            if entity_id == "motorcycle_01":
+                _check(checks, "normalization.motorcycle_01.ground_contact", abs(bounds["min"][2]) <= 1e-4,
+                       {"bottom_z_m": bounds["min"][2]})
             _check(checks, f"topology.{entity_id}.minimum", vertices >= minimum_vertices and polygons > 0,
                    {"vertices": vertices, "polygons": polygons})
             root = snapshot["objects"][entity_id]
@@ -73,6 +74,16 @@ def validate_external_baseline(snapshot: dict, plan: dict) -> dict:
                           if material["custom_properties"].get("mf_repair")]
         _check(checks, "materials.motorcycle_explicit_repair", len(bike_materials) == 1 and
                bike_materials[0]["custom_properties"]["mf_repair"] == "explicit_unreal_pbr_relink_v1")
+        sword_bounds=snapshot["entities"]["sword_01"]["bounds_world"]
+        supports=[]
+        for obj in snapshot["objects"].values():
+            if obj.get("entity_id")!="courtyard_01" or obj.get("custom_properties",{}).get("mf_component_id")!="tower_base" or not obj.get("bounds_world"):
+                continue
+            support=obj["bounds_world"]
+            contact=abs(sword_bounds["min"][2]-support["max"][2])<=1e-4
+            contained=all(sword_bounds["min"][i]>=support["min"][i]-1e-6 and sword_bounds["max"][i]<=support["max"][i]+1e-6 for i in (0,1))
+            supports.append({"object_id":obj["id"],"contact":contact,"footprint_contained":contained})
+        _check(checks,"physical.sword_supported_by_plinth",any(item["contact"] and item["footprint_contained"] for item in supports),supports)
     except (KeyError, TypeError, ValueError) as exc:
         _check(checks, "snapshot.malformed", False, f"{type(exc).__name__}: {exc}")
     return _result(checks)

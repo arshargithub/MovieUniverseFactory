@@ -1,4 +1,5 @@
 {
   "smoke": {"name":"smoke","width":640,"height":360,"samples":8,"device":"CPU","shots":["shot_A"]},
+  "asset_preview": {"name":"asset_preview","width":640,"height":360,"samples":8,"device":"CPU","shots":["shot_A","shot_B","shot_C"]},
   "qualification_cpu": {"name":"qualification_cpu","width":1280,"height":720,"samples":64,"device":"CPU","shots":["shot_A","shot_B","shot_C"]}
 }
