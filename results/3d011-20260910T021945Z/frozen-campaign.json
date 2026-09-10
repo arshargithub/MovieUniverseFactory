@@ -1,0 +1,35 @@
+{
+  "brief_path": "feasibility/3d/3d-01/brief.json",
+  "campaign_api_limit_usd": 40.0,
+  "campaign_prefix": "3d011",
+  "claim_boundary": "GREEN applies only to supported, unambiguous structured revisions with LLM escalation for ambiguous instructions. Open-ended natural-language comprehension, general autonomous cinematography, production asset quality, and unrestricted model control of Blender remain outside this qualification.",
+  "experiment_id": "3D-01.1",
+  "image_detail": "low",
+  "initial_api_limit_usd": 3.0,
+  "planner_model": "gpt-5.4-2026-03-05",
+  "planner_reasoning_effort": "medium",
+  "profile": "qualification_cpu",
+  "reviewer_qualification": {
+    "benchmark_id": "3d011-evaluator-v3",
+    "candidate_id": "base-low-low-framing",
+    "negative_critical_finding_rate": 1.0,
+    "negative_sensitivity": 1.0,
+    "positive_pass_rate": 1.0,
+    "response_valid_rate": 1.0,
+    "result": "results/3d011-evaluator-v5-20260909/summary.json"
+  },
+  "revision_api_limit_usd": 2.0,
+  "revision_compiler": "3d011-supported-revision-v1",
+  "revision_path": "feasibility/3d/3d-01/revision.json",
+  "schema_version": "1.0",
+  "seeds": [
+    606,
+    707,
+    808,
+    909,
+    1001
+  ],
+  "vision_model": "gpt-5.4-2026-03-05",
+  "vision_reasoning_effort": "low",
+  "visual_prompt_version": "3d011-blind-review-v3"
+}
