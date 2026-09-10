@@ -281,7 +281,14 @@ def build_external(plan, profile):
     world.node_tree.nodes["Background"].inputs["Color"].default_value = color(plan["world_color_hex"])
     world.node_tree.nodes["Background"].inputs["Strength"].default_value = plan["world_strength"]; scene.world = world
     apply_profile(profile, plan["seed"]); scene.view_settings.exposure = plan["exposure"]; scene.camera = bpy.data.objects[plan["cameras"][0]["id"]]
-    bpy.ops.file.pack_all(); bpy.context.view_layer.update()
+    bpy.ops.file.pack_all()
+    # Packed bytes are authoritative. A canonical virtual path prevents Blender
+    # from rebasing source-machine paths when a self-contained file is saved in
+    # a different replay directory.
+    for image in bpy.data.images:
+        if image.packed_file:
+            image.filepath = "/__movie_factory_packed__/" + image.name
+    bpy.context.view_layer.update()
 
 
 def revise_external(operations):
@@ -833,7 +840,7 @@ def main():
             raise ValueError("Unknown worker mode")
         if mode in {"build","build_external","revise","revise_external","evaluator_corrupt"}:
             bpy.context.preferences.filepaths.save_version=0
-            bpy.ops.wm.save_as_mainfile(filepath=str(out/"scene.blend"),check_existing=False,compress=True)
+            bpy.ops.wm.save_as_mainfile(filepath=str(out/"scene.blend"),check_existing=False,compress=True,relative_remap=False)
             status["artifacts"].append("scene.blend")
         if mode in {"build","build_external","revise","revise_external","inspect","evaluator_corrupt"}:
             state=inspector.snapshot()

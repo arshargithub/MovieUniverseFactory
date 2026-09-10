@@ -41,6 +41,8 @@ def test_external_assets_persist_and_revise(tmp_path):
     result, revised=job(tmp_path,"revised","revise_external",parent_native=str(build/"scene.blend"),operations=OPS); assert result["ok"], result
     after=json.loads((revised/"snapshot.json").read_text())
     assert validate_external_revision(before,after,OPS)["passed"]
+    result,replayed=job(tmp_path/"different-depth","replayed","revise_external",parent_native=str(build/"scene.blend"),operations=OPS); assert result["ok"], result
+    assert compare_snapshots(after,json.loads((replayed/"snapshot.json").read_text()))["passed"]
 
 
 def test_external_worker_rejects_digest_and_revision_scope(tmp_path):
