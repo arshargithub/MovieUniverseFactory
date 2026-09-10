@@ -33,11 +33,13 @@ def prepare_assets(source_root: Path, manifest: dict[str, Any], output: Path) ->
     source_root, output = source_root.resolve(), output.resolve()
     if output.exists():
         raise FileExistsError(output)
-    if manifest.get("schema_version") != "1.0" or manifest.get("experiment_id") != "3D-02":
+    experiment_id = manifest.get("experiment_id")
+    if manifest.get("schema_version") != "1.0" or experiment_id not in {"3D-02", "3D-03"}:
         raise ValueError("unsupported asset manifest")
     assets = manifest.get("assets")
-    if not isinstance(assets, list) or len(assets) != 3:
-        raise ValueError("3D-02 requires exactly three asset sources")
+    required_count = {"3D-02": 3, "3D-03": 1}[experiment_id]
+    if not isinstance(assets, list) or len(assets) != required_count:
+        raise ValueError(f"{experiment_id} requires exactly {required_count} asset source(s)")
     output.mkdir(parents=True, mode=0o700)
     staged: list[Path] = []
     records = []
@@ -94,7 +96,7 @@ def prepare_assets(source_root: Path, manifest: dict[str, Any], output: Path) ->
                 "archive_sha256": asset["archive_sha256"], "members": member_records,
             })
         payload = {
-            "schema_version": "1.0", "experiment_id": "3D-02",
+            "schema_version": "1.0", "experiment_id": experiment_id,
             "source_manifest_sha256": hashlib.sha256(
                 json.dumps(manifest, sort_keys=True, separators=(",", ":")).encode()
             ).hexdigest(),

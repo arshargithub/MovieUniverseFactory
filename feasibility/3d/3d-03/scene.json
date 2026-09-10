@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0",
+  "experiment_id": "3D-03",
+  "scene_id": "persistent_character_v1",
+  "seed": 303,
+  "required_packed_image_sha256": [
+    "321b7ba2d81b8b6380d0b0320ebf1117341bfd61ad73711dd8bf9094c26e14d6",
+    "de575f5075a8991907a4807fea3ef291b8e57778c6c4f4ada990abe7582026df"
+  ],
+  "mask_palette": {
+    "character_01": [220, 44, 44],
+    "stage_01": [96, 112, 128]
+  },
+  "entity": {
+    "id": "character_01",
+    "kind": "humanoid_character",
+    "source_sha256": "18835fef534eede635b081ee7fe647d01a885550a591d2e6bf071010906167d8",
+    "position": [0, 0, 0],
+    "target_height_m": 1.75,
+    "source": {"path":"character_source_01/Model/characterMedium.fbx","sha256":"18835fef534eede635b081ee7fe647d01a885550a591d2e6bf071010906167d8","format":"fbx"},
+    "skins": {
+      "cyborg": {"path":"character_source_01/Skins/cyborgFemaleA.png","sha256":"321b7ba2d81b8b6380d0b0320ebf1117341bfd61ad73711dd8bf9094c26e14d6"},
+      "skater": {"path":"character_source_01/Skins/skaterFemaleA.png","sha256":"de575f5075a8991907a4807fea3ef291b8e57778c6c4f4ada990abe7582026df"}
+    }
+  },
+  "clips": {
+    "idle": {"path":"character_source_01/Animations/idle.fbx","sha256":"c8a24e0294376ee5a195c56752a13310e1c0b5f8588a4db50e094120e3e4cc74","format":"fbx"},
+    "run": {"path":"character_source_01/Animations/run.fbx","sha256":"e635461fc8dace85ec67a7f7941e949a7c3f108b51ae4d2da1557e6e01749df8","format":"fbx"},
+    "jump": {"path":"character_source_01/Animations/jump.fbx","sha256":"b88429077a7a1af5d3f55f43cfd8ce0f7441b4f6f7bb15a8070d7ed15d275f74","format":"fbx"}
+  },
+  "cameras": [
+    {"id":"camera_A","shot_id":"shot_A","frame":5,"position":[3.2,-6.2,2.35],"target":[0,0,0.9],"lens_mm":52},
+    {"id":"camera_B","shot_id":"shot_B","frame":9,"position":[-2.3,-4.2,1.75],"target":[0,0,0.95],"lens_mm":62},
+    {"id":"camera_C","shot_id":"shot_C","frame":17,"position":[0,-3.2,1.55],"target":[0,0,1.38],"lens_mm":78}
+  ],
+  "lights": [
+    {"id":"key_light_01","type":"AREA","position":[-2.5,-3.0,4.5],"target":[0,0,1.0],"color_hex":"#FFF0DA","energy_w":750,"size_m":3.0},
+    {"id":"fill_light_01","type":"AREA","position":[3.0,-1.0,3.2],"target":[0,0,1.0],"color_hex":"#D6E6FF","energy_w":380,"size_m":2.5},
+    {"id":"rim_light_01","type":"AREA","position":[0,2.0,3.5],"target":[0,0,1.2],"color_hex":"#FFD5A8","energy_w":550,"size_m":2.0}
+  ],
+  "world_color_hex": "#8EA5BD",
+  "world_strength": 0.16,
+  "exposure": 0
+}

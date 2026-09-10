@@ -427,6 +427,48 @@ def command_replay_assets(args) -> int:
     emit(result); return 0 if result["ok"] else 3
 
 
+def command_probe_character_assets(args) -> int:
+    root=repo_root(); settings=load_settings_safe(root)
+    staged=Path(args.staged); staged=(staged if staged.is_absolute() else root/staged).resolve()
+    output=Path(args.output); output=(output if output.is_absolute() else root/output).resolve()
+    output.mkdir(parents=True,exist_ok=False)
+    manifest=read_json(root/"feasibility/3d/3d-03/assets.json")
+    members={item["archive_path"]:item["sha256"] for item in manifest["assets"][0]["members"]}
+    sources={
+        "model":"Model/characterMedium.fbx", "idle":"Animations/idle.fbx",
+        "run":"Animations/run.fbx", "jump":"Animations/jump.fbx",
+    }
+    from .adapters.blender.runner import run_blender
+    results={}
+    for label,relative in sources.items():
+        path=safe_relative(staged,staged/"character_source_01"/relative)
+        status=run_blender({"mode":"animation_probe","output_dir":str(output/label),"seed":303,
+                            "profile":_profile(root,"smoke"),"asset":{"path":str(path),"sha256":members[relative],"format":"fbx"}},
+                           blender_bin=settings.get("BLENDER_BIN","/Applications/Blender.app/Contents/MacOS/Blender"),timeout=300)
+        results[label]={"ok":status.get("ok"),"error":status.get("error"),"probe":str(output/label/"probe.json")}
+    summary={"schema_version":"1.0","experiment_id":"3D-03","results":results,"ok":all(item["ok"] for item in results.values())}
+    atomic_json(output/"summary.json",summary); emit(summary); return 0 if summary["ok"] else 3
+
+
+def command_qualify_character(args) -> int:
+    root=repo_root(); settings=load_settings_safe(root)
+    staged=Path(args.staged); staged=(staged if staged.is_absolute() else root/staged).resolve()
+    output=Path(args.output); output=(output if output.is_absolute() else root/output).resolve()
+    from .character_controller import run_character_qualification
+    result=run_character_qualification(root,staged,output,_profile(root,args.profile),settings.get("BLENDER_BIN","/Applications/Blender.app/Contents/MacOS/Blender"))
+    emit({"ok":result["passed"],"run_id":result["run_id"],"comparison":result["comparison"],"director_status":result["director_status"]})
+    return 0 if result["passed"] else 3
+
+
+def command_replay_character(args) -> int:
+    root=repo_root(); settings=load_settings_safe(root)
+    run=Path(args.run); run=(run if run.is_absolute() else root/run).resolve()
+    output=Path(args.output); output=(output if output.is_absolute() else root/output).resolve()
+    from .character_controller import replay_character_revision
+    result=replay_character_revision(run,output,settings.get("BLENDER_BIN","/Applications/Blender.app/Contents/MacOS/Blender"))
+    emit(result); return 0 if result["ok"] else 3
+
+
 def command_evaluate_evaluator(args) -> int:
     if not args.live: raise ValueError("evaluator qualification requires explicit --live")
     root=repo_root(); settings=load_settings_safe(root)
@@ -455,6 +497,9 @@ def parser() -> argparse.ArgumentParser:
     q=sub.add_parser("prepare-assets"); q.add_argument("--manifest",required=True); q.add_argument("--source",required=True); q.add_argument("--output",required=True); q.set_defaults(func=command_prepare_assets)
     q=sub.add_parser("qualify-assets"); q.add_argument("--staged",required=True); q.add_argument("--output",default="runs/3d02"); q.add_argument("--profile",default="smoke"); q.set_defaults(func=command_qualify_assets)
     q=sub.add_parser("replay-assets"); q.add_argument("--run",required=True); q.add_argument("--output",required=True); q.set_defaults(func=command_replay_assets)
+    q=sub.add_parser("probe-character-assets"); q.add_argument("--staged",required=True); q.add_argument("--output",required=True); q.set_defaults(func=command_probe_character_assets)
+    q=sub.add_parser("qualify-character"); q.add_argument("--staged",required=True); q.add_argument("--output",default="runs/3d03"); q.add_argument("--profile",default="asset_preview"); q.set_defaults(func=command_qualify_character)
+    q=sub.add_parser("replay-character"); q.add_argument("--run",required=True); q.add_argument("--output",required=True); q.set_defaults(func=command_replay_character)
     q=sub.add_parser("evaluate-evaluator"); q.add_argument("--config",required=True); q.add_argument("--benchmark",required=True); q.add_argument("--output",required=True); q.add_argument("--live",action="store_true"); q.set_defaults(func=command_evaluate_evaluator)
     return p
 

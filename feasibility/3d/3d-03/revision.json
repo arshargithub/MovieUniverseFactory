@@ -1,0 +1,9 @@
+{
+  "schema_version": "1.0",
+  "experiment_id": "3D-03",
+  "instruction": "Keep the same character and staging, change her cyborg appearance to the skater appearance, and change her performance from idle to run.",
+  "operations": [
+    {"op":"set_character_skin","entity_id":"character_01","from":"cyborg","to":"skater"},
+    {"op":"set_character_action","entity_id":"character_01","from":"idle","to":"run"}
+  ]
+}

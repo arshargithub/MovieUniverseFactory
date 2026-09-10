@@ -66,6 +66,55 @@ def import_source_asset(spec):
     return imported
 
 
+def import_animated_fbx(spec):
+    if not isinstance(spec,dict) or set(spec)!={"path","sha256","format"}:
+        raise ValueError("Animated import requires only path, sha256, and format")
+    path=Path(spec["path"])
+    if not path.is_absolute() or not path.is_file() or path.is_symlink() or spec["format"]!="fbx" or path.suffix.lower()!=".fbx":
+        raise ValueError("Animated asset must be an absolute regular FBX")
+    if file_sha256(path)!=spec["sha256"]:
+        raise ValueError("Animated asset digest mismatch")
+    before_objects=set(bpy.data.objects); before_actions=set(bpy.data.actions)
+    bpy.ops.import_scene.fbx(filepath=str(path),use_anim=True)
+    objects=sorted(set(bpy.data.objects)-before_objects,key=lambda item:(item.name,item.type))
+    actions=sorted(set(bpy.data.actions)-before_actions,key=lambda item:item.name)
+    if not objects or not any(obj.type=="ARMATURE" for obj in objects):
+        raise ValueError("Animated FBX produced no armature")
+    return objects,actions
+
+
+def action_channels(action):
+    curves=[]
+    if hasattr(action,"fcurves"):
+        try: curves=list(action.fcurves)
+        except RuntimeError: curves=[]
+    if not curves and hasattr(action,"layers"):
+        for layer in action.layers:
+            for strip in layer.strips:
+                for bag in getattr(strip,"channelbags",[]): curves.extend(bag.fcurves)
+    return curves
+
+
+def animation_probe(spec):
+    bpy.ops.wm.read_factory_settings(use_empty=True)
+    imported,actions=import_animated_fbx(spec)
+    bpy.context.view_layer.update()
+    meshes=[obj for obj in imported if obj.type=="MESH"]
+    armatures=[obj for obj in imported if obj.type=="ARMATURE"]
+    return {
+        "schema_version":"1.0","source_sha256":spec["sha256"],"object_count":len(imported),
+        "object_types":sorted({obj.type for obj in imported}),
+        "objects":[{"name":obj.name,"type":obj.type,"parent":obj.parent.name if obj.parent else None,
+                    "modifiers":[mod.type for mod in obj.modifiers],"vertex_groups":[group.name for group in obj.vertex_groups]} for obj in imported],
+        "topology":{"vertices":sum(len(obj.data.vertices) for obj in meshes),"polygons":sum(len(obj.data.polygons) for obj in meshes)},
+        "armatures":[{"name":obj.name,"bones":[{"name":bone.name,"parent":bone.parent.name if bone.parent else None,
+                      "head":list(bone.head_local),"tail":list(bone.tail_local),"use_deform":bone.use_deform} for bone in obj.data.bones]} for obj in armatures],
+        "actions":[{"name":action.name,"frame_range":list(action.frame_range),"curve_count":len(action_channels(action)),
+                    "keyframe_count":sum(len(curve.keyframe_points) for curve in action_channels(action)),
+                    "data_paths":sorted({curve.data_path for curve in action_channels(action)})} for action in actions],
+    }
+
+
 def asset_probe(spec):
     bpy.ops.wm.read_factory_settings(use_empty=True)
     imported=import_source_asset(spec)
@@ -125,6 +174,129 @@ def verified_image(spec):
     image = bpy.data.images.load(str(path), check_existing=False)
     image["mf_source_sha256"] = spec["sha256"]
     return image
+
+
+def character_material(entity_id, skins):
+    if set(skins)!={"cyborg","skater"}:
+        raise ValueError("Character requires exactly cyborg and skater skins")
+    loaded={name:verified_image(spec) for name,spec in skins.items()}
+    for name,image in loaded.items():
+        image.name=f"{entity_id}_skin_{name}"
+        image["mf_id"]=image.name
+        image["mf_skin_role"]=name
+        image.use_fake_user=True
+    mat=bpy.data.materials.new(entity_id+"_skin_material")
+    mat["mf_id"]=mat.name; mat["mf_active_skin"]="cyborg"; mat.use_nodes=True
+    tree=mat.node_tree; tree.nodes.clear()
+    output=tree.nodes.new("ShaderNodeOutputMaterial"); output.name="Material Output"
+    bsdf=tree.nodes.new("ShaderNodeBsdfPrincipled"); bsdf.name="Principled BSDF"; bsdf.inputs["Roughness"].default_value=.62
+    texture=tree.nodes.new("ShaderNodeTexImage"); texture.name="Character Skin"; texture.image=loaded["cyborg"]; texture.interpolation="Linear"
+    tree.links.new(texture.outputs["Color"],bsdf.inputs["Base Color"]); tree.links.new(texture.outputs["Alpha"],bsdf.inputs["Alpha"])
+    tree.links.new(bsdf.outputs["BSDF"],output.inputs["Surface"])
+    return mat,loaded
+
+
+def import_character_action(spec, clip_name):
+    objects,actions=import_animated_fbx(spec)
+    candidates=[action for action in actions if action.name.lower().endswith("|"+clip_name.lower())]
+    if len(candidates)!=1:
+        raise ValueError("Animation FBX did not contain exactly one named clip: "+clip_name)
+    source=candidates[0]
+    action=source.copy(); action.name="character_action_"+clip_name
+    action["mf_id"]=action.name; action["mf_clip_name"]=clip_name; action["mf_source_sha256"]=spec["sha256"]; action.use_fake_user=True
+    for obj in objects: bpy.data.objects.remove(obj,do_unlink=True)
+    for imported in actions:
+        bpy.data.actions.remove(imported)
+    return action
+
+
+def assign_character_action(armature,action):
+    armature.animation_data_create(); armature.animation_data.action=action
+    slots=list(getattr(action,"slots",[]))
+    if slots:
+        compatible=[slot for slot in slots if getattr(slot,"target_id_type",None)=="OBJECT"]
+        if len(compatible)!=1: raise ValueError("Character action requires one compatible object slot")
+        armature.animation_data.action_slot=compatible[0]
+    return armature.animation_data
+
+
+def evaluated_bounds(objects):
+    bpy.context.view_layer.update(); deps=bpy.context.evaluated_depsgraph_get(); points=[]
+    for obj in objects:
+        if obj.type!="MESH": continue
+        evaluated=obj.evaluated_get(deps)
+        points.extend(evaluated.matrix_world@Vector(corner) for corner in evaluated.bound_box)
+    if not points: raise ValueError("Character has no evaluated mesh bounds")
+    return ([min(point[i] for point in points) for i in range(3)],[max(point[i] for point in points) for i in range(3)])
+
+
+def build_character(plan,profile):
+    if plan.get("schema_version")!="1.0" or plan.get("experiment_id")!="3D-03": raise ValueError("Unsupported character scene plan")
+    if plan.get("entity",{}).get("id")!="character_01": raise ValueError("3D-03 requires character_01")
+    if set(plan.get("clips",{}))!={"idle","run","jump"} or len(plan.get("cameras",[]))!=3 or len(plan.get("lights",[]))!=3:
+        raise ValueError("3D-03 requires the frozen clips, camera rig, and light rig")
+    bpy.ops.wm.read_factory_settings(use_empty=True)
+    scene=bpy.context.scene; entity=plan["entity"]
+    scene["mf_scene_id"]=plan["scene_id"]; scene["mf_seed"]=plan["seed"]; scene["mf_builder_version"]="character-v1"
+    scene["mf_mask_palette_json"]=json.dumps(plan["mask_palette"],sort_keys=True); scene.unit_settings.system="METRIC"; scene.unit_settings.scale_length=1
+    collection=bpy.data.collections.new("MovieFactoryCharacter"); collection["mf_id"]="collection_3d03_01"; scene.collection.children.link(collection)
+    bpy.context.view_layer.active_layer_collection=bpy.context.view_layer.layer_collection.children[collection.name]
+    character=external_root(entity)
+    imported,model_actions=import_animated_fbx(entity["source"])
+    if model_actions: raise ValueError("Frozen character model unexpectedly contains animation")
+    armatures=[obj for obj in imported if obj.type=="ARMATURE"]; meshes=[obj for obj in imported if obj.type=="MESH"]
+    if len(armatures)!=1 or len(meshes)!=1: raise ValueError("Frozen character requires one armature and one mesh")
+    armature,mesh=armatures[0],meshes[0]
+    # Keep animation-controlled transforms below a separate normalization root.
+    armature.parent=character; armature.matrix_parent_inverse=Matrix.Identity(4)
+    identify_external(armature,"character_01_armature","character_01","character_armature",entity["source"]["sha256"])
+    identify_external(mesh,"character_01_mesh","character_01","character_mesh",entity["source"]["sha256"])
+    for bone in armature.data.bones:
+        bone["mf_id"]="character_01_bone_"+bone.name
+        bone["mf_source_name"]=bone.name
+    skin_material,skins=character_material("character_01",entity["skins"])
+    mesh.data.materials.clear(); mesh.data.materials.append(skin_material)
+    actions={name:import_character_action(spec,name) for name,spec in plan["clips"].items()}
+    assign_character_action(armature,actions["idle"])
+    armature["mf_active_action"]="idle"; character["mf_active_skin"]="cyborg"
+    scene.frame_start=1; scene.frame_end=33; scene.frame_set(1)
+    low,high=evaluated_bounds([mesh]); height=high[2]-low[2]
+    factor=entity["target_height_m"]/height
+    character.scale=(factor,factor,factor); bpy.context.view_layer.update()
+    low,high=evaluated_bounds([mesh]); character.location=(-((low[0]+high[0])/2),-((low[1]+high[1])/2),-low[2]); bpy.context.view_layer.update()
+    # Simple fixed studio stage; it is protected but not part of the imported character claim.
+    stage=root({"id":"stage_01","kind":"stage","position":[0,0,0],"rotation_z":0})
+    floor_mat=material("stage_floor_01","#6F7C86",.7); wall_mat=material("stage_wall_01","#39434D",.82)
+    box(stage,"floor",(8,7,.08),(0,0,-.04),floor_mat,0)
+    box(stage,"backdrop",(8,.08,4),(0,2.7,2),wall_mat,0)
+    add_external_rig(plan,collection)
+    for camera in plan["cameras"]: bpy.data.objects[camera["id"]]["mf_frame"]=camera["frame"]
+    world=bpy.data.worlds.new("world_3d03_01"); world["mf_id"]="world_3d03_01"; world.use_nodes=True
+    world.node_tree.nodes["Background"].inputs["Color"].default_value=color(plan["world_color_hex"])
+    world.node_tree.nodes["Background"].inputs["Strength"].default_value=plan["world_strength"]; scene.world=world
+    apply_profile(profile,plan["seed"]); scene.view_settings.exposure=plan["exposure"]; scene.camera=bpy.data.objects["camera_A"]
+    bpy.ops.file.pack_all()
+    for image in bpy.data.images:
+        if image.packed_file: image.filepath="/__movie_factory_packed__/"+image.name
+    bpy.context.view_layer.update()
+
+
+def revise_character(operations):
+    expected=[
+        {"op":"set_character_skin","entity_id":"character_01","from":"cyborg","to":"skater"},
+        {"op":"set_character_action","entity_id":"character_01","from":"idle","to":"run"},
+    ]
+    if operations!=expected: raise ValueError("3D-03 accepts only the frozen skin and action revision")
+    character=bpy.data.objects.get("character_01"); armature=bpy.data.objects.get("character_01_armature")
+    material=bpy.data.materials.get("character_01_skin_material"); action=bpy.data.actions.get("character_action_run")
+    image=bpy.data.images.get("character_01_skin_skater")
+    if not all((character,armature,material,action,image)): raise ValueError("Character revision target is missing")
+    node=material.node_tree.nodes.get("Character Skin")
+    if not node or material.get("mf_active_skin")!="cyborg" or armature.get("mf_active_action")!="idle": raise ValueError("Character baseline state is invalid")
+    node.image=image; material["mf_active_skin"]="skater"; character["mf_active_skin"]="skater"
+    assign_character_action(armature,action); armature["mf_active_action"]="run"
+    bpy.context.scene.frame_set(1); bpy.context.view_layer.update()
+    return [{"op":"set_character_skin","before":"cyborg","after":"skater"},{"op":"set_character_action","before":"idle","after":"run"}]
 
 
 def pbr_motorcycle_material(entity_id, textures):
@@ -745,6 +917,7 @@ def render(native,out,profile,seed):
         apply_profile(profile,seed)
         s=bpy.context.scene
         s.camera=next(o for o in s.objects if o.type=="CAMERA" and o.get("mf_shot_id")==shot)
+        s.frame_set(int(s.camera.get("mf_frame",1)))
         s.render.filepath=str(out/"renders"/(shot+".png"))
         bpy.ops.render.render(write_still=True)
         times[shot+"_beauty_seconds"]=time.monotonic()-t
@@ -815,11 +988,17 @@ def main():
             probe=asset_probe(job["asset"])
             write_json(out/"probe.json",probe)
             status["artifacts"].append("probe.json")
+        elif mode=="animation_probe":
+            probe=animation_probe(job["asset"])
+            write_json(out/"probe.json",probe)
+            status["artifacts"].append("probe.json")
         elif mode=="build":
             build(job["plan"],profile)
         elif mode=="build_external":
             build_external(job["plan"], profile)
-        elif mode in {"revise","revise_external","inspect","render","evaluator_corrupt"}:
+        elif mode=="build_character":
+            build_character(job["plan"],profile)
+        elif mode in {"revise","revise_external","revise_character","inspect","render","evaluator_corrupt"}:
             native=Path(job["parent_native"])
             if native.resolve()==(out/"scene.blend").resolve():
                 raise ValueError("Parent native may never be overwritten")
@@ -832,17 +1011,21 @@ def main():
                 mutations=revise_external(job["operations"])
                 write_json(out/"mutations.json",mutations)
                 status["artifacts"].append("mutations.json")
+            elif mode=="revise_character":
+                mutations=revise_character(job["operations"])
+                write_json(out/"mutations.json",mutations)
+                status["artifacts"].append("mutations.json")
             elif mode=="evaluator_corrupt":
                 mutation=evaluator_corrupt(job.get("corruption"))
                 write_json(out/"corruption.json",mutation)
                 status["artifacts"].append("corruption.json")
         else:
             raise ValueError("Unknown worker mode")
-        if mode in {"build","build_external","revise","revise_external","evaluator_corrupt"}:
+        if mode in {"build","build_external","build_character","revise","revise_external","revise_character","evaluator_corrupt"}:
             bpy.context.preferences.filepaths.save_version=0
             bpy.ops.wm.save_as_mainfile(filepath=str(out/"scene.blend"),check_existing=False,compress=True,relative_remap=False)
             status["artifacts"].append("scene.blend")
-        if mode in {"build","build_external","revise","revise_external","inspect","evaluator_corrupt"}:
+        if mode in {"build","build_external","build_character","revise","revise_external","revise_character","inspect","evaluator_corrupt"}:
             state=inspector.snapshot()
             write_json(out/"snapshot.json",state)
             status["artifacts"].append("snapshot.json")

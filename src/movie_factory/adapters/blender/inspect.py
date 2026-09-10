@@ -117,8 +117,79 @@ def animation(item):
         return None
     # No animation/drivers are accepted in this static experiment. Their presence
     # is preserved and is independently a hard unsupported-state failure.
-    return {"action": data.action.name if data.action else None,
+    slot=getattr(data,"action_slot",None)
+    return {"action": data.action.get("mf_id", data.action.name) if data.action else None,
+            "action_slot":getattr(slot,"identifier",None),
             "drivers": [d.data_path for d in data.drivers], "nla_tracks": len(data.nla_tracks)}
+
+
+def action_curves(action):
+    curves = []
+    if hasattr(action, "fcurves"):
+        try:
+            curves = list(action.fcurves)
+        except RuntimeError:
+            curves = []
+    if not curves and hasattr(action, "layers"):
+        for layer in action.layers:
+            for strip in layer.strips:
+                for bag in getattr(strip, "channelbags", []):
+                    curves.extend(bag.fcurves)
+    return curves
+
+
+def action_state(action):
+    curves = {}
+    for index, curve in enumerate(sorted(action_curves(action), key=lambda c: (c.data_path, c.array_index))):
+        curves[f"{index:04d}:{curve.data_path}[{curve.array_index}]"] = {
+            "data_path": curve.data_path, "array_index": curve.array_index,
+            "extrapolation": curve.extrapolation,
+            "keyframes": [{"co": value(point.co), "interpolation": point.interpolation,
+                           "easing": point.easing, "handle_left": value(point.handle_left),
+                           "handle_right": value(point.handle_right),
+                           "handle_left_type": point.handle_left_type,
+                           "handle_right_type": point.handle_right_type} for point in curve.keyframe_points],
+        }
+    return {"id": action.get("mf_id", action.name), "name": action.name,
+            "frame_range": value(action.frame_range), "curves": curves,
+            "slots": [{"identifier": slot.identifier, "target_id_type": slot.target_id_type} for slot in getattr(action, "slots", [])],
+            "custom_properties": custom(action), "use_fake_user": action.use_fake_user}
+
+
+def vertex_groups(obj):
+    result = {}
+    for group in sorted(obj.vertex_groups, key=lambda item: item.name):
+        weights = []
+        for vertex in obj.data.vertices:
+            try:
+                weight = group.weight(vertex.index)
+            except RuntimeError:
+                continue
+            weights.append([vertex.index, value(weight)])
+        result[group.name] = weights
+    return result
+
+
+def armature_state(obj):
+    if obj.type != "ARMATURE":
+        return None
+    bones = {}
+    for bone in sorted(obj.data.bones, key=lambda item: item.name):
+        bones[bone.name] = {
+            "id": bone.get("mf_id"), "parent": bone.parent.name if bone.parent else None,
+            "head_local": value(bone.head_local), "tail_local": value(bone.tail_local),
+            "matrix_local": value(bone.matrix_local), "roll": value(getattr(bone, "roll", 0.0)),
+            "use_deform": bone.use_deform, "inherit_scale": bone.inherit_scale,
+            "custom_properties": custom(bone),
+        }
+    sampled={}
+    scene=bpy.context.scene; original=scene.frame_current
+    for frame in (1,9,17):
+        scene.frame_set(frame); bpy.context.view_layer.update()
+        sampled[str(frame)]={bone.name:value(bone.matrix) for bone in sorted(obj.pose.bones,key=lambda item:item.name)}
+    scene.frame_set(original); bpy.context.view_layer.update()
+    return {"id": obj.data.get("mf_id", obj.data.name), "bones": bones,"sampled_pose_matrices":sampled,
+            "custom_properties": custom(obj.data)}
 
 
 def snapshot():
@@ -127,7 +198,7 @@ def snapshot():
     deps = bpy.context.evaluated_depsgraph_get()
     result = {"schema_version": "1.0", "scene_id": scene.get("mf_scene_id"),
               "objects": {}, "entities": {}, "materials": {}, "cameras": {}, "lights": {},
-              "world": {}, "render": {}, "images": {}, "external_files": [], "unsupported": []}
+              "world": {}, "render": {}, "images": {}, "actions": {}, "external_files": [], "unsupported": []}
     seen_ids = set()
     for obj in sorted(scene.objects, key=lambda o: o.get("mf_id", o.name)):
         oid = obj.get("mf_id")
@@ -157,16 +228,24 @@ def snapshot():
                                            "visible_glossy", "visible_shadow", "visible_transmission", "visible_volume_scatter")),
             "collection_ids": sorted(c.get("mf_id", c.name) for c in obj.users_collection),
             "material_ids": [m.get("mf_id", m.name) if m else None for m in obj.data.materials] if hasattr(obj.data, "materials") else [],
+            "vertex_groups": vertex_groups(obj) if obj.type == "MESH" else {},
+            "armature": armature_state(obj),
             "geometry_hash": geom["hash"] if geom else None,
             "source_geometry": geom, "evaluated_geometry": evaluated,
-            "modifiers": [rna_values(m) for m in obj.modifiers],
+            "modifiers": [{**rna_values(m), "target_object": value(getattr(m, "object", None))} for m in obj.modifiers],
             "constraints": [rna_values(c) for c in obj.constraints],
             "animation": animation(obj), "drivers": [d.data_path for d in obj.animation_data.drivers] if obj.animation_data else [],
             "custom_properties": custom(obj), "provenance": obj.get("mf_creation_id"),
         }
-        if obj.modifiers or obj.constraints or obj.animation_data:
+        character_mode = scene.get("mf_builder_version") == "character-v1"
+        allowed_character_state = character_mode and (
+            (obj.type == "MESH" and len(obj.modifiers) == 1 and obj.modifiers[0].type == "ARMATURE" and not obj.constraints and not obj.animation_data)
+            or (obj.type == "ARMATURE" and not obj.modifiers and not obj.constraints and obj.animation_data and obj.animation_data.action)
+            or (obj.type in {"EMPTY", "CAMERA", "LIGHT"} and not obj.modifiers and not obj.constraints and not obj.animation_data)
+        )
+        if (obj.modifiers or obj.constraints or obj.animation_data) and not allowed_character_state:
             result["unsupported"].append("object_procedural_or_animated_state:" + oid)
-        if obj.type not in {"EMPTY", "MESH", "CAMERA", "LIGHT"}:
+        if obj.type not in ({"EMPTY", "MESH", "CAMERA", "LIGHT", "ARMATURE"} if character_mode else {"EMPTY", "MESH", "CAMERA", "LIGHT"}):
             result["unsupported"].append("object_type:" + oid)
         result["objects"][oid] = item
         if obj.get("mf_is_entity"):
@@ -203,7 +282,7 @@ def snapshot():
             "properties": properties(mat, ("use_nodes", "diffuse_color", "surface_render_method", "use_backface_culling")),
             **nodes(mat.node_tree), "animation": animation(mat), "custom_properties": custom(mat)}
         allowed_material_nodes = {"ShaderNodeBsdfPrincipled", "ShaderNodeOutputMaterial"}
-        if scene.get("mf_builder_version") == "external-v1":
+        if scene.get("mf_builder_version") in {"external-v1", "character-v1"}:
             allowed_material_nodes |= {
                 "ShaderNodeTexImage", "ShaderNodeNormalMap", "ShaderNodeSeparateColor",
                 "ShaderNodeMapping", "ShaderNodeUVMap", "ShaderNodeTexCoord",
@@ -220,6 +299,7 @@ def snapshot():
     result["render"] = {
         "engine": scene.render.engine, "blender_version": bpy.app.version_string,
         "blender_build_hash": bpy.app.build_hash.decode(), "frame": scene.frame_current,
+        "frame_start": scene.frame_start, "frame_end": scene.frame_end,
         "settings": properties(scene.render, ("resolution_x", "resolution_y", "resolution_percentage", "pixel_aspect_x", "pixel_aspect_y", "film_transparent", "use_border", "use_crop_to_border", "fps", "fps_base", "film_transparent_glass", "use_freestyle")),
         "image_settings": properties(scene.render.image_settings, ("file_format", "color_mode", "color_depth", "compression")),
         "cycles": properties(scene.cycles, ("device", "samples", "seed", "use_animated_seed", "use_denoising", "use_adaptive_sampling", "adaptive_threshold", "max_bounces", "diffuse_bounces", "glossy_bounces", "transmission_bounces", "transparent_max_bounces", "volume_bounces", "sample_clamp_direct", "sample_clamp_indirect", "use_light_tree")),
@@ -236,6 +316,10 @@ def snapshot():
         result["unsupported"].append("compositor_nodes")
     if scene.animation_data:
         result["unsupported"].append("scene_animation")
+    for action in sorted(bpy.data.actions, key=lambda item: item.get("mf_id", item.name)):
+        if action.users:
+            aid=action.get("mf_id",action.name)
+            result["actions"][aid]=action_state(action)
     for library in bpy.data.libraries:
         result["external_files"].append({"type": "library", "path": library.filepath})
     for img in bpy.data.images:
