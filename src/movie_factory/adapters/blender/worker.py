@@ -196,14 +196,42 @@ def character_material(entity_id, skins):
     return mat,loaded
 
 
-def import_character_action(spec, clip_name):
+def import_character_action(spec, clip_name, target_armature):
     objects,actions=import_animated_fbx(spec)
+    source_armatures=[obj for obj in objects if obj.type=="ARMATURE"]
+    if len(source_armatures)!=1:
+        raise ValueError("Animation FBX did not contain exactly one source armature")
     candidates=[action for action in actions if action.name.lower().endswith("|"+clip_name.lower())]
     if len(candidates)!=1:
         raise ValueError("Animation FBX did not contain exactly one named clip: "+clip_name)
-    source=candidates[0]
-    action=source.copy(); action.name="character_action_"+clip_name
+    source_armature=source_armatures[0]; source=candidates[0]
+    source_names={bone.name for bone in source_armature.pose.bones}; target_names={bone.name for bone in target_armature.pose.bones}
+    if source_names!=target_names:
+        raise ValueError("Animation skeleton does not exactly match the canonical character skeleton")
+    assign_character_action(source_armature,source)
+    action=bpy.data.actions.new("character_action_"+clip_name)
+    target_armature.animation_data_create(); target_armature.animation_data.action=action
+    # Animation-only FBXs can encode clip-specific bind/rest transforms. Raw
+    # curve copying therefore produces plausible metadata but visibly broken
+    # limbs on the model's canonical rig. Evaluate the verified source rig and
+    # deterministically bake each same-name pose into canonical armature space.
+    ordered=sorted(target_armature.pose.bones,key=lambda bone:len(bone.parent_recursive))
+    scene=bpy.context.scene; first,last=(int(round(value)) for value in source.frame_range)
+    source_to_target=target_armature.matrix_world.inverted()@source_armature.matrix_world
+    for frame in range(first,last+1):
+        scene.frame_set(frame); bpy.context.view_layer.update()
+        poses={name:(source_to_target@source_armature.pose.bones[name].matrix).copy() for name in source_names}
+        for bone in ordered:
+            bone.rotation_mode="QUATERNION"; bone.matrix=poses[bone.name]
+        bpy.context.view_layer.update()
+        for bone in ordered:
+            bone.keyframe_insert(data_path="location",frame=frame,group=bone.name)
+            bone.keyframe_insert(data_path="rotation_quaternion",frame=frame,group=bone.name)
+            bone.keyframe_insert(data_path="scale",frame=frame,group=bone.name)
+    for curve in action_channels(action):
+        for key in curve.keyframe_points: key.interpolation="LINEAR"
     action["mf_id"]=action.name; action["mf_clip_name"]=clip_name; action["mf_source_sha256"]=spec["sha256"]; action.use_fake_user=True
+    target_armature.animation_data.action=None
     for obj in objects: bpy.data.objects.remove(obj,do_unlink=True)
     for imported in actions:
         bpy.data.actions.remove(imported)
@@ -254,9 +282,12 @@ def build_character(plan,profile):
     for bone in armature.data.bones:
         bone["mf_id"]="character_01_bone_"+bone.name
         bone["mf_source_name"]=bone.name
+    for pose_bone in armature.pose.bones:
+        for constraint in list(pose_bone.constraints): pose_bone.constraints.remove(constraint)
+    armature["mf_animation_normalization"]="same_skeleton_pose_bake_v1"
     skin_material,skins=character_material("character_01",entity["skins"])
     mesh.data.materials.clear(); mesh.data.materials.append(skin_material)
-    actions={name:import_character_action(spec,name) for name,spec in plan["clips"].items()}
+    actions={name:import_character_action(spec,name,armature) for name,spec in plan["clips"].items()}
     assign_character_action(armature,actions["idle"])
     armature["mf_active_action"]="idle"; character["mf_active_skin"]="cyborg"
     scene.frame_start=1; scene.frame_end=33; scene.frame_set(1)

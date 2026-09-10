@@ -48,7 +48,7 @@ def validate_character_baseline(snapshot:dict,plan:dict)->dict:
         for action_id,frame_range in EXPECTED_ACTIONS.items():
             action=snapshot["actions"][action_id]
             _check(checks,f"actions.{action_id}.range",tuple(action["frame_range"])==frame_range,action["frame_range"])
-            _check(checks,f"actions.{action_id}.curves",len(action["curves"])==459)
+            _check(checks,f"actions.{action_id}.curves",len(action["curves"])==580)
             referenced=set()
             allowed=True
             for curve in action["curves"].values():
@@ -58,6 +58,7 @@ def validate_character_baseline(snapshot:dict,plan:dict)->dict:
             _check(checks,f"actions.{action_id}.bone_compatibility",allowed and referenced<=set(bones) and bool(referenced),{"referenced_bones":len(referenced)})
             _check(checks,f"actions.{action_id}.slot",len(action["slots"])==1 and action["slots"][0]["target_id_type"]=="OBJECT",action["slots"])
         _check(checks,"performance.active_idle",arm["animation"]["action"]=="character_action_idle" and arm["custom_properties"].get("mf_active_action")=="idle",arm["animation"])
+        _check(checks,"performance.normalization",arm["custom_properties"].get("mf_animation_normalization")=="same_skeleton_pose_bake_v1")
         poses=arm["armature"]["sampled_pose_matrices"]
         _check(checks,"performance.idle_evaluates",poses["1"]!=poses["9"],"sampled bone matrices at frames 1 and 9")
         material=snapshot["materials"]["character_01_skin_material"]

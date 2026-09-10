@@ -15,7 +15,7 @@ The baseline uses the cyborg skin and idle action. The revision switches only th
 - The controller reproduces a fresh seven-file staging directory from the exact official archive and verifies every path, size, and SHA-256 digest.
 - Blender receives only absolute, digest-paired FBX/PNG paths. Import formats, entity count, clip names, skin roles, frame range, camera rig, lighting, and revision operations are allowlisted.
 - FBX import runs with arbitrary script execution disabled and no credentials in the worker environment.
-- Animation FBXs may contribute only compatible actions. Their temporary objects and data are removed after the action curves are copied and named.
+- Animation FBXs may contribute only an exact same-name skeleton and one allowlisted action. Because animation-only FBXs can carry clip-specific rest transforms, the worker evaluates each verified source rig and bakes its poses deterministically onto the canonical model rig. Temporary source objects, actions, and constraints are removed.
 - The model never emits or executes Python.
 
 ## Qualification sequence
@@ -23,7 +23,7 @@ The baseline uses the cyborg skin and idle action. The revision switches only th
 1. Verify provenance and reproduce the seven admitted files.
 2. Probe the model and three clips in isolated Blender processes; record object types, topology, armature/bone hierarchy, actions, curve counts, frame ranges, and texture requirements.
 3. Import the model, normalize it to 1.75 m, ground it, and assign stable entity/mesh/armature/bone/material/action identities.
-4. Import the idle, run, and jump actions without retaining their temporary scene objects.
+4. Import the idle, run, and jump sources, require exact bone-name compatibility, and bake their evaluated poses onto the constraint-free canonical rig without retaining temporary scene objects.
 5. Link and pack both verified skins. Assign cyborg plus idle for the baseline.
 6. Save, reopen in a fresh process, and require an exact semantic snapshot.
 7. Render wide, medium, and close views at frozen representative frames with entity masks.
@@ -35,7 +35,7 @@ The baseline uses the cyborg skin and idle action. The revision switches only th
 
 - **GREEN:** source/license identity, rig import, skin/action mapping, normalization, both save/reopen checks, deny-by-default revision checks, renders, Director review, and zero-provider replay all pass.
 - **YELLOW:** machine evidence is sound but Director review is pending, or a documented importer normalization is necessary without losing the qualified semantics.
-- **RED:** skeleton/action compatibility fails; mesh, weights, bone hierarchy/rest pose, cameras, or lighting drift; a texture remains external; temporary import objects survive; replay differs; or required evidence is missing.
+- **RED:** skeleton/action compatibility fails; the baked performance contains implausible deformation or is visually ambiguous; mesh, weights, bone hierarchy/rest pose, cameras, or lighting drift; a texture remains external; temporary import objects survive; replay differs; or required evidence is missing.
 
 ## Claim boundary
 
