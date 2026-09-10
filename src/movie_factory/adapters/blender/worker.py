@@ -196,7 +196,7 @@ def character_material(entity_id, skins):
     return mat,loaded
 
 
-def import_character_action(spec, clip_name, target_armature):
+def import_character_action(spec, clip_name, target_armature, target_mesh):
     objects,actions=import_animated_fbx(spec)
     source_armatures=[obj for obj in objects if obj.type=="ARMATURE"]
     if len(source_armatures)!=1:
@@ -215,19 +215,40 @@ def import_character_action(spec, clip_name, target_armature):
     # curve copying therefore produces plausible metadata but visibly broken
     # limbs on the model's canonical rig. Evaluate the verified source rig and
     # deterministically bake each same-name pose into canonical armature space.
-    ordered=sorted(target_armature.pose.bones,key=lambda bone:len(bone.parent_recursive))
+    deform_names={group.name for group in target_mesh.vertex_groups}
+    if not deform_names or not deform_names<=target_names:
+        raise ValueError("Character mesh weights do not map to the canonical skeleton")
+    ordered=sorted((bone for bone in target_armature.pose.bones if bone.name in deform_names),key=lambda bone:len(bone.parent_recursive))
     scene=bpy.context.scene; first,last=(int(round(value)) for value in source.frame_range)
     source_to_target=target_armature.matrix_world.inverted()@source_armature.matrix_world
     for frame in range(first,last+1):
         scene.frame_set(frame); bpy.context.view_layer.update()
-        poses={name:(source_to_target@source_armature.pose.bones[name].matrix).copy() for name in source_names}
+        target_armature.location=(0,0,0)
+        source_poses={name:(source_to_target@source_armature.pose.bones[name].matrix).copy() for name in source_names}
+        desired={}
         for bone in ordered:
-            bone.rotation_mode="QUATERNION"; bone.matrix=poses[bone.name]
+            source_pose=source_poses[bone.name]
+            rotation=source_pose.to_quaternion().normalized().to_matrix().to_4x4()
+            if bone.parent and bone.parent.name in desired:
+                parent_rest=bone.parent.bone.matrix_local
+                local_rest=parent_rest.inverted()@bone.bone.matrix_local
+                location=desired[bone.parent.name]@local_rest.translation
+            else:
+                source_rest=source_to_target@source_armature.data.bones[bone.name].matrix_local
+                location=bone.bone.head_local+(source_pose.translation-source_rest.translation)
+            desired[bone.name]=Matrix.Translation(location)@rotation
+        for bone in ordered:
+            bone.rotation_mode="QUATERNION"; bone.matrix=desired[bone.name]
+        bpy.context.view_layer.update()
+        rotations={bone.name:bone.rotation_quaternion.copy() for bone in ordered}
+        for bone in ordered:
+            bone.location=(0,0,0); bone.scale=(1,1,1); bone.rotation_quaternion=rotations[bone.name]
+        bpy.context.view_layer.update()
+        low,_=evaluated_bounds([target_mesh]); target_armature.location.z=-low[2]
         bpy.context.view_layer.update()
         for bone in ordered:
-            bone.keyframe_insert(data_path="location",frame=frame,group=bone.name)
             bone.keyframe_insert(data_path="rotation_quaternion",frame=frame,group=bone.name)
-            bone.keyframe_insert(data_path="scale",frame=frame,group=bone.name)
+        target_armature.keyframe_insert(data_path="location",frame=frame,group="grounding")
     for curve in action_channels(action):
         for key in curve.keyframe_points: key.interpolation="LINEAR"
     action["mf_id"]=action.name; action["mf_clip_name"]=clip_name; action["mf_source_sha256"]=spec["sha256"]; action.use_fake_user=True
@@ -287,7 +308,7 @@ def build_character(plan,profile):
     armature["mf_animation_normalization"]="same_skeleton_pose_bake_v1"
     skin_material,skins=character_material("character_01",entity["skins"])
     mesh.data.materials.clear(); mesh.data.materials.append(skin_material)
-    actions={name:import_character_action(spec,name,armature) for name,spec in plan["clips"].items()}
+    actions={name:import_character_action(spec,name,armature,mesh) for name,spec in plan["clips"].items()}
     assign_character_action(armature,actions["idle"])
     armature["mf_active_action"]="idle"; character["mf_active_skin"]="cyborg"
     scene.frame_start=1; scene.frame_end=33; scene.frame_set(1)

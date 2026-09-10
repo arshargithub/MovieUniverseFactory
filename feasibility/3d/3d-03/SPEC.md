@@ -15,7 +15,7 @@ The baseline uses the cyborg skin and idle action. The revision switches only th
 - The controller reproduces a fresh seven-file staging directory from the exact official archive and verifies every path, size, and SHA-256 digest.
 - Blender receives only absolute, digest-paired FBX/PNG paths. Import formats, entity count, clip names, skin roles, frame range, camera rig, lighting, and revision operations are allowlisted.
 - FBX import runs with arbitrary script execution disabled and no credentials in the worker environment.
-- Animation FBXs may contribute only an exact same-name skeleton and one allowlisted action. Because animation-only FBXs can carry clip-specific rest transforms, the worker evaluates each verified source rig and bakes its poses deterministically onto the canonical model rig. Temporary source objects, actions, and constraints are removed.
+- Animation FBXs may contribute only an exact same-name skeleton and one allowlisted action. Because animation-only FBXs can carry clip-specific rest transforms, the worker evaluates each verified source rig and bakes rotation-only motion onto the 32 weighted bones while preserving the canonical model's bone lengths, joint connections, and in-place position. Source scale and incompatible bone translations are discarded; a bounded armature Z channel grounds every baked frame. Temporary source objects, actions, and constraints are removed.
 - The model never emits or executes Python.
 
 ## Qualification sequence
@@ -23,7 +23,7 @@ The baseline uses the cyborg skin and idle action. The revision switches only th
 1. Verify provenance and reproduce the seven admitted files.
 2. Probe the model and three clips in isolated Blender processes; record object types, topology, armature/bone hierarchy, actions, curve counts, frame ranges, and texture requirements.
 3. Import the model, normalize it to 1.75 m, ground it, and assign stable entity/mesh/armature/bone/material/action identities.
-4. Import the idle, run, and jump sources, require exact bone-name compatibility, and bake their evaluated poses onto the constraint-free canonical rig without retaining temporary scene objects.
+4. Import the idle, run, and jump sources, require exact bone-name compatibility, and bake their evaluated deform-bone rotations onto the constraint-free canonical rig without retaining temporary scene objects.
 5. Link and pack both verified skins. Assign cyborg plus idle for the baseline.
 6. Save, reopen in a fresh process, and require an exact semantic snapshot.
 7. Render wide, medium, and close views at frozen representative frames with entity masks.

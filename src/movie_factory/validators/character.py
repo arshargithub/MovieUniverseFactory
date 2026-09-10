@@ -48,14 +48,19 @@ def validate_character_baseline(snapshot:dict,plan:dict)->dict:
         for action_id,frame_range in EXPECTED_ACTIONS.items():
             action=snapshot["actions"][action_id]
             _check(checks,f"actions.{action_id}.range",tuple(action["frame_range"])==frame_range,action["frame_range"])
-            _check(checks,f"actions.{action_id}.curves",len(action["curves"])==580)
-            referenced=set()
+            _check(checks,f"actions.{action_id}.curves",len(action["curves"])==131)
+            referenced=set(); grounding=[]
             allowed=True
             for curve in action["curves"].values():
-                path=curve["data_path"]; match=re.fullmatch(r'pose\.bones\["([^"]+)"\]\.(location|rotation_quaternion|scale)',path)
+                path=curve["data_path"]; match=re.fullmatch(r'pose\.bones\["([^"]+)"\]\.rotation_quaternion',path)
                 if match: referenced.add(match.group(1))
-                elif path not in {"location","rotation_euler","rotation_quaternion","scale"}: allowed=False
-            _check(checks,f"actions.{action_id}.bone_compatibility",allowed and referenced<=set(bones) and bool(referenced),{"referenced_bones":len(referenced)})
+                elif path=="location": grounding.append(curve)
+                else: allowed=False
+            grounding_by_index={curve["array_index"]:curve for curve in grounding}
+            lateral_zero=all(all(abs(key["co"][1])<=1e-9 for key in grounding_by_index[index]["keyframes"]) for index in (0,1)) if set(grounding_by_index)=={0,1,2} else False
+            vertical_bounded=all(abs(key["co"][1])<=.5 for key in grounding_by_index.get(2,{}).get("keyframes",[])) and bool(grounding_by_index.get(2,{}).get("keyframes",[]))
+            _check(checks,f"actions.{action_id}.bone_compatibility",allowed and referenced==set(mesh["vertex_groups"]),{"referenced_bones":len(referenced)})
+            _check(checks,f"actions.{action_id}.in_place_grounding",lateral_zero and vertical_bounded,{"location_curves":sorted(grounding_by_index)})
             _check(checks,f"actions.{action_id}.slot",len(action["slots"])==1 and action["slots"][0]["target_id_type"]=="OBJECT",action["slots"])
         _check(checks,"performance.active_idle",arm["animation"]["action"]=="character_action_idle" and arm["custom_properties"].get("mf_active_action")=="idle",arm["animation"])
         _check(checks,"performance.normalization",arm["custom_properties"].get("mf_animation_normalization")=="same_skeleton_pose_bake_v1")
