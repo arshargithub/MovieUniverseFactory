@@ -1,9 +1,10 @@
 {
-  "evidence_seal_tag": "3d-02-v1-green",
   "implementation_commit": "40f604e812cc2773ad0222e44c823eba354fd066",
+  "implementation_tag": "3d-02-v1-green",
   "implementation_tree": "153726123a13547c775483183895e56821808f8d",
   "qualification_provenance_note": "Commit and Git tree were recorded from a clean worktree before Blender dispatch; the accepted evidence tag resolves to that commit.",
   "schema_version": "1.0",
   "status": "EXACT_PRE_RUN",
+  "tag_meaning": "Identifies the clean implementation used for qualification; it does not seal later evidence or documentation commits.",
   "worktree_clean_before_dispatch": true
 }

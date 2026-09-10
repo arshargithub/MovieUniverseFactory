@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["overall_recommendation", "confidence", "clip_reviews", "critical_findings", "limitations"],
+  "properties": {
+    "overall_recommendation": {"type": "string", "enum": ["pass", "fail", "director_review"]},
+    "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+    "clip_reviews": {
+      "type": "array", "minItems": 3, "maxItems": 3,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["clip", "motion_readability", "naturalness_score", "grounding_plausible", "deformation_free", "findings"],
+        "properties": {
+          "clip": {"type": "string", "enum": ["idle", "run", "jump"]},
+          "motion_readability": {"type": "string", "enum": ["clear", "ambiguous", "incorrect"]},
+          "naturalness_score": {"type": "number", "minimum": 1, "maximum": 5},
+          "grounding_plausible": {"type": "boolean"},
+          "deformation_free": {"type": "boolean"},
+          "findings": {
+            "type": "array", "maxItems": 12,
+            "items": {
+              "type": "object", "additionalProperties": false,
+              "required": ["frame", "severity", "body_region", "observation"],
+              "properties": {
+                "frame": {"type": "integer", "minimum": 1, "maximum": 33},
+                "severity": {"type": "string", "enum": ["minor", "major", "critical"]},
+                "body_region": {"type": "string", "maxLength": 80},
+                "observation": {"type": "string", "maxLength": 400}
+              }
+            }
+          }
+        }
+      }
+    },
+    "critical_findings": {"type": "array", "maxItems": 12, "items": {"type": "string", "maxLength": 400}},
+    "limitations": {"type": "array", "maxItems": 8, "items": {"type": "string", "maxLength": 400}}
+  }
+}

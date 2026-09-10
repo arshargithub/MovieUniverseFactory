@@ -1,4 +1,5 @@
 {
+  "accepted_run_elapsed_seconds": 177.36638845902053,
   "artifacts": {
     "comparison": "../../runs/3d02/asset-set-v1-20260910T034104Z-cffdd816/comparison.html",
     "run_result": "../../runs/3d02/asset-set-v1-20260910T034104Z-cffdd816/result.json"
@@ -9,6 +10,11 @@
   "director_mean_score": 4.7,
   "director_status": "ACCEPTED",
   "experiment_id": "3D-02",
+  "hands_on_blender_edits": false,
+  "human_acquisition_repair_time_seconds": null,
+  "human_acquisition_repair_time_status": "NOT_INSTRUMENTED",
+  "implementation_tag": "3d-02-v1-green",
+  "implementation_tag_meaning": "Clean source used for qualification; not the later final evidence commit.",
   "known_api_cost_usd": 0,
   "machine_valid": true,
   "provider_calls": 0,
@@ -31,12 +37,18 @@
   "scene_plan_sha256": "569359955133f9c474f381f6926332ae08b883c452c1b8463df68789867b9618",
   "schema_version": "1.0",
   "source_binding": {
-    "evidence_seal_tag": "3d-02-v1-green",
     "implementation_commit": "40f604e812cc2773ad0222e44c823eba354fd066",
+    "implementation_tag": "3d-02-v1-green",
     "implementation_tree": "153726123a13547c775483183895e56821808f8d",
     "qualification_provenance_note": "Commit and Git tree were recorded from a clean worktree before Blender dispatch; the accepted evidence tag resolves to that commit.",
     "schema_version": "1.0",
     "status": "EXACT_PRE_RUN",
+    "tag_meaning": "Identifies the clean implementation used for qualification; it does not seal later evidence or documentation commits.",
     "worktree_clean_before_dispatch": true
-  }
+  },
+  "superseded_development_attempts": [
+    "asset-set-v1-20260910T032855Z-de546b3d",
+    "asset-set-v1-20260910T033445Z-be6eb8ab"
+  ],
+  "superseded_evidence": "superseded-evidence/attempts.json"
 }

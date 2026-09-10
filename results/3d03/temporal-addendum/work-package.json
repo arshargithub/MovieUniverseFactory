@@ -1,0 +1,46 @@
+{
+  "authority": {
+    "blender": "trusted_temporal_inspection",
+    "director": "required",
+    "provider": "secondary_screen_only"
+  },
+  "configuration_sha256": "da4d780141f865ce1ef28a044b7a91ee2055ceec0d3df72ecea5a53c58aa0c32",
+  "experiment_id": "3D-03-TEMPORAL",
+  "package_id": "84b19402a10be60963ca64d6da2b667681cae29a30c8c7edfb357024b72d8905",
+  "package_kind": "immutable_work_package",
+  "playback_profile": {
+    "device": "CPU",
+    "height": 360,
+    "name": "character_temporal_v1",
+    "samples": 2,
+    "shots": [
+      "shot_B"
+    ],
+    "width": 640
+  },
+  "request": {
+    "camera_id": "camera_B",
+    "clips": {
+      "idle": {
+        "action": "character_action_idle",
+        "frame_end": 33,
+        "frame_start": 1
+      },
+      "jump": {
+        "action": "character_action_jump",
+        "frame_end": 13,
+        "frame_start": 1
+      },
+      "run": {
+        "action": "character_action_run",
+        "frame_end": 17,
+        "frame_start": 1
+      }
+    },
+    "schema_version": "1.0"
+  },
+  "run_id": "motion-v1-20260910T231748Z-8312e764",
+  "schema_version": "1.0",
+  "source_native_sha256": "1fbb2535aedc3a25227c87ff3d778e8b2d77efb9e620d30e4eef7e635f5c16bb",
+  "source_run": "character-v1-20260910T201716Z-dd48f85a"
+}

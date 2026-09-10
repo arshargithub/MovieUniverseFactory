@@ -101,6 +101,30 @@ def animation_probe(spec):
     bpy.context.view_layer.update()
     meshes=[obj for obj in imported if obj.type=="MESH"]
     armatures=[obj for obj in imported if obj.type=="ARMATURE"]
+    evaluated={}
+    scene=bpy.context.scene; original=scene.frame_current
+    diagnostic_bones=("Hips","Spine","Chest","Head","LeftUpLeg","LeftLeg","LeftFoot",
+                      "RightUpLeg","RightLeg","RightFoot","LeftArm","LeftForeArm","LeftHand",
+                      "RightArm","RightForeArm","RightHand")
+    if len(armatures)==1:
+        armature=armatures[0]
+        for action in actions:
+            assign_character_action(armature,action)
+            first,last=(int(round(value)) for value in action.frame_range)
+            samples=[]
+            for frame in range(first,last+1):
+                scene.frame_set(frame); bpy.context.view_layer.update()
+                hips=armature.pose.bones.get("Hips")
+                low,high=evaluated_bounds(meshes) if meshes else ([None]*3,[None]*3)
+                samples.append({"frame":frame,"armature_location":list(armature.location),
+                                "hips_basis_location":list(hips.matrix_basis.translation) if hips else None,
+                                "bone_pose":{name:{"head":list(armature.pose.bones[name].head),
+                                                   "tail":list(armature.pose.bones[name].tail),
+                                                   "rotation_quaternion":list(armature.pose.bones[name].matrix.to_quaternion())}
+                                             for name in diagnostic_bones if name in armature.pose.bones},
+                                "bounds_min":low,"bounds_max":high})
+            evaluated[action.name]=samples
+    scene.frame_set(original); bpy.context.view_layer.update()
     return {
         "schema_version":"1.0","source_sha256":spec["sha256"],"object_count":len(imported),
         "object_types":sorted({obj.type for obj in imported}),
@@ -108,10 +132,15 @@ def animation_probe(spec):
                     "modifiers":[mod.type for mod in obj.modifiers],"vertex_groups":[group.name for group in obj.vertex_groups]} for obj in imported],
         "topology":{"vertices":sum(len(obj.data.vertices) for obj in meshes),"polygons":sum(len(obj.data.polygons) for obj in meshes)},
         "armatures":[{"name":obj.name,"bones":[{"name":bone.name,"parent":bone.parent.name if bone.parent else None,
-                      "head":list(bone.head_local),"tail":list(bone.tail_local),"use_deform":bone.use_deform} for bone in obj.data.bones]} for obj in armatures],
+                      "head":list(bone.head_local),"tail":list(bone.tail_local),"use_deform":bone.use_deform,
+                      "constraints":[{"type":constraint.type,"target":getattr(getattr(constraint,"target",None),"name",None),
+                                      "subtarget":getattr(constraint,"subtarget",None),"influence":constraint.influence}
+                                     for constraint in obj.pose.bones[bone.name].constraints]}
+                      for bone in obj.data.bones]} for obj in armatures],
         "actions":[{"name":action.name,"frame_range":list(action.frame_range),"curve_count":len(action_channels(action)),
                     "keyframe_count":sum(len(curve.keyframe_points) for curve in action_channels(action)),
                     "data_paths":sorted({curve.data_path for curve in action_channels(action)})} for action in actions],
+        "evaluated_samples":evaluated,
     }
 
 
@@ -279,6 +308,112 @@ def evaluated_bounds(objects):
     return ([min(point[i] for point in points) for i in range(3)],[max(point[i] for point in points) for i in range(3)])
 
 
+CHARACTER_MOTION_ACTIONS={
+    "idle":("character_action_idle",1,33),
+    "run":("character_action_run",1,17),
+    "jump":("character_action_jump",1,13),
+}
+CHARACTER_MOTION_LIMBS=("LeftUpLeg","LeftLeg","LeftFoot","RightUpLeg","RightLeg","RightFoot",
+                        "LeftArm","LeftForeArm","RightArm","RightForeArm")
+
+
+def _evaluated_character_points(mesh):
+    depsgraph=bpy.context.evaluated_depsgraph_get(); evaluated=mesh.evaluated_get(depsgraph)
+    temporary=evaluated.to_mesh()
+    try:
+        if len(temporary.vertices)!=len(mesh.data.vertices):
+            raise ValueError("Temporal validation requires stable evaluated topology")
+        return [evaluated.matrix_world@vertex.co for vertex in temporary.vertices]
+    finally:
+        evaluated.to_mesh_clear()
+
+
+def _character_foot_vertices(mesh):
+    result={}
+    for side,names in {"left":("LeftFoot","LeftToes"),"right":("RightFoot","RightToes")}.items():
+        group_ids={mesh.vertex_groups[name].index for name in names if mesh.vertex_groups.get(name)}
+        indices=[vertex.index for vertex in mesh.data.vertices
+                 if sum(link.weight for link in vertex.groups if link.group in group_ids)>=.25]
+        if not indices:
+            raise ValueError("Character foot has no sufficiently weighted vertices: "+side)
+        result[side]=indices
+    return result
+
+
+def character_temporal_evidence(out,profile,seed,request):
+    """Measure and render every frame without saving changes to the source scene."""
+    expected={name:{"action":action,"frame_start":first,"frame_end":last}
+              for name,(action,first,last) in CHARACTER_MOTION_ACTIONS.items()}
+    if not isinstance(request,dict) or set(request)!={"schema_version","clips","camera_id"}:
+        raise ValueError("Invalid temporal evidence request")
+    if request["schema_version"]!="1.0" or request["clips"]!=expected or request["camera_id"]!="camera_B":
+        raise ValueError("Temporal evidence request does not match the frozen contract")
+    armature=bpy.data.objects.get("character_01_armature"); mesh=bpy.data.objects.get("character_01_mesh")
+    camera=bpy.data.objects.get(request["camera_id"])
+    if not armature or armature.type!="ARMATURE" or not mesh or mesh.type!="MESH" or not camera or camera.type!="CAMERA":
+        raise ValueError("Frozen temporal evidence targets are missing")
+    actions={name:bpy.data.actions.get(spec["action"]) for name,spec in request["clips"].items()}
+    if any(action is None for action in actions.values()):
+        raise ValueError("Frozen temporal evidence action is missing")
+    foot_vertices=_character_foot_vertices(mesh)
+    rest_lengths={}
+    for name in CHARACTER_MOTION_LIMBS:
+        bone=armature.data.bones.get(name)
+        if bone is None: raise ValueError("Frozen limb bone is missing: "+name)
+        rest_lengths[name]=(armature.matrix_world.to_3x3()@(bone.tail_local-bone.head_local)).length
+        if rest_lengths[name]<=0: raise ValueError("Frozen limb has invalid rest length: "+name)
+    apply_profile(profile,seed); scene=bpy.context.scene; scene.camera=camera
+    original_frame=scene.frame_current
+    original_action=armature.animation_data.action if armature.animation_data else None
+    clips={}
+    try:
+        for clip,spec in request["clips"].items():
+            assign_character_action(armature,actions[clip])
+            folder=out/"frames"/clip; folder.mkdir(parents=True,exist_ok=True)
+            frames=[]; previous=None; first_points=None
+            for frame in range(spec["frame_start"],spec["frame_end"]+1):
+                scene.frame_set(frame); bpy.context.view_layer.update()
+                points=_evaluated_character_points(mesh)
+                finite=all(math.isfinite(value) for point in points for value in point)
+                if finite:
+                    low=[min(point[axis] for point in points) for axis in range(3)]
+                    high=[max(point[axis] for point in points) for axis in range(3)]
+                    dimensions=[high[axis]-low[axis] for axis in range(3)]
+                    centroid=[sum(point[axis] for point in points)/len(points) for axis in range(3)]
+                    feet={side:min(points[index].z for index in indices) for side,indices in foot_vertices.items()}
+                else:
+                    low=high=dimensions=centroid=[None,None,None]; feet={"left":None,"right":None}
+                limb_ratios={}
+                for name,rest in rest_lengths.items():
+                    pose=armature.pose.bones[name]
+                    length=(armature.matrix_world@pose.tail-armature.matrix_world@pose.head).length
+                    limb_ratios[name]=length/rest
+                step=None
+                if previous is not None and finite:
+                    distances=[(point-prior).length for point,prior in zip(points,previous)]
+                    step={"max_vertex_m":max(distances),"rms_vertex_m":math.sqrt(sum(value*value for value in distances)/len(distances))}
+                if first_points is None: first_points=[point.copy() for point in points]
+                frames.append({"frame":frame,"finite":finite,"bounds":{"min":low,"max":high,"dimensions":dimensions},
+                               "centroid":centroid,"foot_min_z_m":feet,"limb_length_ratios":limb_ratios,
+                               "step_from_previous":step})
+                scene.render.filepath=str(folder/(f"frame-{frame:04d}.png"))
+                bpy.ops.render.render(write_still=True)
+                previous=[point.copy() for point in points]
+            seam_distances=[(point-prior).length for point,prior in zip(previous,first_points)]
+            clips[clip]={"action":spec["action"],"frame_start":spec["frame_start"],"frame_end":spec["frame_end"],
+                         "frame_count":len(frames),"frames":frames,
+                         "loop_seam":{"max_vertex_m":max(seam_distances),
+                                      "rms_vertex_m":math.sqrt(sum(value*value for value in seam_distances)/len(seam_distances))}}
+    finally:
+        if original_action is not None: assign_character_action(armature,original_action)
+        scene.frame_set(original_frame); bpy.context.view_layer.update()
+    payload={"schema_version":"1.0","experiment_id":"3D-03-TEMPORAL","source_native_sha256":file_sha256(Path(bpy.data.filepath)),
+             "camera_id":request["camera_id"],"vertex_count":len(mesh.data.vertices),
+             "foot_vertex_counts":{key:len(value) for key,value in foot_vertices.items()},"clips":clips}
+    write_json(out/"temporal-metrics.json",payload)
+    return payload
+
+
 def build_character(plan,profile):
     if plan.get("schema_version")!="1.0" or plan.get("experiment_id")!="3D-03": raise ValueError("Unsupported character scene plan")
     if plan.get("entity",{}).get("id")!="character_01": raise ValueError("3D-03 requires character_01")
@@ -315,6 +450,19 @@ def build_character(plan,profile):
     low,high=evaluated_bounds([mesh]); height=high[2]-low[2]
     factor=entity["target_height_m"]/height
     character.scale=(factor,factor,factor); bpy.context.view_layer.update()
+    # The jump source is intentionally in place. Apply an exact 0.32 m world
+    # root-height arc after normalization scale is known. Bone rotations remain
+    # exact transferred source deltas and the first/last frames remain grounded.
+    jump=actions["jump"]
+    z_curves=[curve for curve in action_channels(jump) if curve.data_path=="location" and curve.array_index==2]
+    if len(z_curves)!=1 or len(z_curves[0].keyframe_points)!=13:
+        raise ValueError("Jump root-height curve does not match the frozen contract")
+    keys=z_curves[0].keyframe_points; first,last=1,13
+    for key in keys:
+        phase=(key.co[0]-first)/(last-first)
+        key.co[1]+=(.32/factor)*math.sin(math.pi*phase)**2
+        key.handle_left[1]=key.co[1]; key.handle_right[1]=key.co[1]
+    jump["mf_root_height_normalization"]="sine_squared_0.32m_world"
     low,high=evaluated_bounds([mesh]); character.location=(-((low[0]+high[0])/2),-((low[1]+high[1])/2),-low[2]); bpy.context.view_layer.update()
     # Simple fixed studio stage; it is protected but not part of the imported character claim.
     stage=root({"id":"stage_01","kind":"stage","position":[0,0,0],"rotation_z":0})
@@ -1050,7 +1198,7 @@ def main():
             build_external(job["plan"], profile)
         elif mode=="build_character":
             build_character(job["plan"],profile)
-        elif mode in {"revise","revise_external","revise_character","inspect","render","evaluator_corrupt"}:
+        elif mode in {"revise","revise_external","revise_character","inspect","render","evaluator_corrupt","character_temporal"}:
             native=Path(job["parent_native"])
             if native.resolve()==(out/"scene.blend").resolve():
                 raise ValueError("Parent native may never be overwritten")
@@ -1071,6 +1219,14 @@ def main():
                 mutation=evaluator_corrupt(job.get("corruption"))
                 write_json(out/"corruption.json",mutation)
                 status["artifacts"].append("corruption.json")
+            elif mode=="character_temporal":
+                evidence=character_temporal_evidence(out,profile,job["seed"],job["request"])
+                status["artifacts"].append("temporal-metrics.json")
+                status["artifacts"].extend(
+                    f"frames/{clip}/frame-{frame:04d}.png"
+                    for clip,item in evidence["clips"].items()
+                    for frame in range(item["frame_start"],item["frame_end"]+1)
+                )
         else:
             raise ValueError("Unknown worker mode")
         if mode in {"build","build_external","build_character","revise","revise_external","revise_character","evaluator_corrupt"}:

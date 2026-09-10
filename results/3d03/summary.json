@@ -4,18 +4,19 @@
     "run_result": "../../runs/3d03/character-v1-20260910T201716Z-dd48f85a/result.json"
   },
   "asset_manifest_sha256": "05412eaa118fe0df7ba6603240a8f2b680a89704824cd8f99602977cad7c01da",
-  "claim_boundary": "Frozen Kenney skeleton, three verified clips, two skins, deterministic same-skeleton rotation transfer, and two supported structured revisions only.",
-  "decision": "GREEN",
+  "claim_boundary": "Frozen Kenney character persistence, two skins, three structurally persisted action datablocks, and two supported structured revisions. Full-clip temporal quality is not qualified.",
+  "decision": "YELLOW",
   "director_mean_score": 4.7,
-  "director_status": "ACCEPTED",
+  "director_status": "REPRESENTATIVE_STILLS_ACCEPTED_FULL_CLIPS_NOT_ACCEPTED",
   "experiment_id": "3D-03",
   "known_api_cost_usd": 0,
-  "machine_valid": true,
+  "machine_valid": false,
   "preserved_rejected_runs": [
     "character-v1-20260910T133330Z-37bb41df",
     "character-v1-20260910T200359Z-54d86d96"
   ],
   "provider_calls": 0,
+  "qualified_full_motion_clips": [],
   "replay": {
     "experiment_id": "3D-03",
     "native_sha256": "f86b1bb111bd727401926ff9198c9b39d7896d938b9487605c9e66aeb4a4d978",
@@ -24,19 +25,52 @@
     "provider_calls": 0,
     "replay_output": "../../replays/3d03/character-v1-20260910T201716Z-dd48f85a",
     "schema_version": "1.0",
-    "semantic_replay": {"differences": [], "max_numeric_delta": 0, "passed": true}
+    "semantic_replay": {
+      "differences": [],
+      "max_numeric_delta": 0,
+      "passed": true
+    }
   },
   "revision_plan_sha256": "8d7c1f531c0ad6954c207410fd1ca61f5d52b31447673316fdf61a4b2e6cfe0f",
   "run_id": "character-v1-20260910T201716Z-dd48f85a",
   "scene_plan_sha256": "953799c0a660d07cd1ea9124c03f41713e113d4a4a0941f14fd04e23b2bab017",
   "schema_version": "1.0",
   "source_binding": {
-    "evidence_seal_tag": "3d-03-v1-green",
     "implementation_commit": "c31859272bce7bb083bf0a9ead002368606111ea",
+    "implementation_tag": "3d-03-v1-green",
     "implementation_tree": "87416f2adeed7419f3bae66408363c55673d9d49",
     "qualification_provenance_note": "Commit and Git tree were recorded from a clean worktree before Blender dispatch; the accepted evidence tag resolves to that commit.",
     "schema_version": "1.0",
     "status": "EXACT_PRE_RUN",
+    "tag_meaning": "Identifies the clean implementation used for qualification; it does not seal later evidence or documentation commits.",
     "worktree_clean_before_dispatch": true
-  }
+  },
+  "structural_machine_valid": true,
+  "structurally_persisted_clips": [
+    "idle",
+    "run",
+    "jump"
+  ],
+  "temporal_addendum": {
+    "artifacts": "temporal-addendum/",
+    "decision": "RED",
+    "deterministic_passed": false,
+    "director_status": "PENDING",
+    "errors": [
+      "idle.continuous_max_vertex",
+      "idle.continuous_rms",
+      "idle.loop_seam",
+      "run.continuous_max_vertex",
+      "run.continuous_rms",
+      "run.loop_seam",
+      "jump.continuous_max_vertex",
+      "jump.continuous_rms",
+      "jump.loop_seam",
+      "jump.airborne_phase"
+    ],
+    "known_api_cost_usd": 0,
+    "provider_calls": 0,
+    "run_id": "motion-v1-20260910T231748Z-8312e764"
+  },
+  "temporal_machine_valid": false
 }

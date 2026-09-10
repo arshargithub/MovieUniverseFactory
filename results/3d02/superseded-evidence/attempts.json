@@ -1,0 +1,35 @@
+{
+  "attempts": [
+    {
+      "baseline_native_sha256": "2373173cf8b106f56250ddf2532745039190de3a5b2af51e3c2f879eee935ebf",
+      "contact_sheet": "asset-set-v1-20260910T032855Z-de546b3d-contact-sheet.png",
+      "director_status": "PENDING",
+      "elapsed_seconds": 117.61440716701327,
+      "known_api_cost_usd": 0,
+      "machine_baseline_passed": true,
+      "machine_revision_passed": true,
+      "provider_calls": 0,
+      "reason": "Superseded before freeze because the sword was grounded directly and the courtyard source lacked the later verified support staging.",
+      "revision_native_sha256": "a8990513d99d590b13d806eaf1afe89b5158d372db61992b32a9627170d3c06f",
+      "run_id": "asset-set-v1-20260910T032855Z-de546b3d",
+      "status": "SUPERSEDED_DEVELOPMENT"
+    },
+    {
+      "baseline_native_sha256": "450702f42a5b7b79c0bfbde4784122c964f5c0e027bbaeb24094ab4cc1a6cab3",
+      "contact_sheet": "asset-set-v1-20260910T033445Z-be6eb8ab-contact-sheet.png",
+      "director_status": "PENDING",
+      "elapsed_seconds": 116.91012916597538,
+      "known_api_cost_usd": 0,
+      "machine_baseline_passed": true,
+      "machine_revision_passed": true,
+      "provider_calls": 0,
+      "reason": "Superseded before freeze while refining the sword/plinth composition; machine checks passed but Director review was intentionally not requested.",
+      "revision_native_sha256": "53677544d8dd237efba7ce70ac28d28575821f080c135767584c8545924ce821",
+      "run_id": "asset-set-v1-20260910T033445Z-be6eb8ab",
+      "status": "SUPERSEDED_DEVELOPMENT"
+    }
+  ],
+  "classification": "pre-freeze machine-valid development iterations",
+  "experiment_id": "3D-02",
+  "schema_version": "1.0"
+}

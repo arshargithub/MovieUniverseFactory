@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0",
+  "experiment_id": "3D-03-TEMPORAL",
+  "accepted_source_run": "character-v1-20260910T201716Z-dd48f85a",
+  "source_native_sha256": "1fbb2535aedc3a25227c87ff3d778e8b2d77efb9e620d30e4eef7e635f5c16bb",
+  "request": {
+    "schema_version": "1.0",
+    "camera_id": "camera_B",
+    "clips": {
+      "idle": {"action": "character_action_idle", "frame_start": 1, "frame_end": 33},
+      "run": {"action": "character_action_run", "frame_start": 1, "frame_end": 17},
+      "jump": {"action": "character_action_jump", "frame_start": 1, "frame_end": 13}
+    }
+  },
+  "playback_profile": {"name": "character_temporal_v1", "width": 640, "height": 360, "samples": 2, "device": "CPU", "shots": ["shot_B"]},
+  "playback_fps": 12,
+  "thresholds": {
+    "floor_penetration_tolerance_m": 0.015,
+    "minimum_height_m": 0.8,
+    "maximum_height_m": 2.4,
+    "maximum_dimension_m": 3.0,
+    "maximum_limb_length_relative_error": 0.01,
+    "maximum_vertex_step_m": 0.45,
+    "maximum_rms_vertex_step_m": 0.18,
+    "maximum_loop_seam_rms_m": 0.18,
+    "contact_clearance_m": 0.06,
+    "idle_max_ungrounded_frames": 0,
+    "run_min_contact_frames_each_foot": 1,
+    "run_min_rms_vertex_step_m": 0.005,
+    "jump_endpoint_contact_m": 0.08,
+    "jump_min_airborne_clearance_m": 0.06,
+    "jump_min_airborne_frames": 2
+  },
+  "evaluator": {
+    "role": "secondary_perceptual_screen_only",
+    "model": "gpt-5.4-2026-03-05",
+    "reasoning_effort": "medium",
+    "image_detail": "high",
+    "max_output_tokens": 1800,
+    "maximum_call_count": 1,
+    "maximum_known_cost_usd": 0.25,
+    "pass_confidence": 0.6,
+    "api_can_override_deterministic_failure": false,
+    "api_can_replace_director_acceptance": false
+  }
+}
