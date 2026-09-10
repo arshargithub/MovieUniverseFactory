@@ -1,0 +1,42 @@
+{
+  "artifacts": {
+    "comparison": "../../runs/3d02/asset-set-v1-20260910T034104Z-cffdd816/comparison.html",
+    "run_result": "../../runs/3d02/asset-set-v1-20260910T034104Z-cffdd816/result.json"
+  },
+  "asset_manifest_sha256": "d325329ca9a8e101a3ae429ca05b54a7a155d076dc70fd07b8ae8119c9716aeb",
+  "claim_boundary": "Frozen CC0 FBX/GLB set and two supported structured revisions only.",
+  "decision": "GREEN",
+  "director_mean_score": 4.7,
+  "director_status": "ACCEPTED",
+  "experiment_id": "3D-02",
+  "known_api_cost_usd": 0,
+  "machine_valid": true,
+  "provider_calls": 0,
+  "replay": {
+    "experiment_id": "3D-02",
+    "native_sha256": "7d5e1fb9dc0d36619aa5e58dec7e79a89df5cfee385b356a0b83003bf2f60778",
+    "ok": true,
+    "package_id": "826230f98b8eba4041aa2bf9734ae00e3b66f4fa04da10e11e8b3d660409b632",
+    "provider_calls": 0,
+    "replay_output": "../../../replays/3d02/asset-set-v1-20260910T034104Z-cffdd816",
+    "schema_version": "1.0",
+    "semantic_replay": {
+      "differences": [],
+      "max_numeric_delta": 0,
+      "passed": true
+    }
+  },
+  "revision_plan_sha256": "4c3694cafb05371b6423e8d0dc424a9d84914763195d3712e3f2671d2055665d",
+  "run_id": "asset-set-v1-20260910T034104Z-cffdd816",
+  "scene_plan_sha256": "569359955133f9c474f381f6926332ae08b883c452c1b8463df68789867b9618",
+  "schema_version": "1.0",
+  "source_binding": {
+    "evidence_seal_tag": "3d-02-v1-green",
+    "implementation_commit": "40f604e812cc2773ad0222e44c823eba354fd066",
+    "implementation_tree": "153726123a13547c775483183895e56821808f8d",
+    "qualification_provenance_note": "Commit and Git tree were recorded from a clean worktree before Blender dispatch; the accepted evidence tag resolves to that commit.",
+    "schema_version": "1.0",
+    "status": "EXACT_PRE_RUN",
+    "worktree_clean_before_dispatch": true
+  }
+}
