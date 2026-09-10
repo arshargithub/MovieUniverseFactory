@@ -1,0 +1,9 @@
+{
+  "schema_version": "1.0",
+  "experiment_id": "3D-02",
+  "instruction": "Move the motorcycle 60 cm to camera-right and rotate the sword 25 degrees around its vertical axis. Preserve everything else exactly.",
+  "operations": [
+    {"op":"translate_entity","entity_id":"motorcycle_01","delta_m":[0.6,0,0]},
+    {"op":"rotate_entity_z","entity_id":"sword_01","degrees":25}
+  ]
+}

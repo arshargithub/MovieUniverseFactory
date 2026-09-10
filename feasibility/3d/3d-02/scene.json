@@ -1,0 +1,103 @@
+{
+  "schema_version": "1.0",
+  "experiment_id": "3D-02",
+  "scene_id": "courtyard_external_assets_v1",
+  "seed": 302,
+  "required_packed_image_sha256": [
+    "fbe0836df5e4214b783e42ad2506c2d366ace29e2bee29921dc218c3f39f6e0a",
+    "cf59ccb86d16d8d7f957f276eae665d3f3d0c2a1a2ff6d611a5a9f4ca5f33427",
+    "418cfcf74dca50d9ccc9965bae8fe4a29c3897a6e2295ff530d349999a311d14",
+    "bc492d755caf9e64924447f065681be0d5438a33cd0acddc72f3d00fd75893be",
+    "66fd49be148f32e88f6c8cace67120250d1943a7856601158ad0ff24651db0b0"
+  ],
+  "mask_palette": {
+    "courtyard_01": [96, 112, 128],
+    "motorcycle_01": [220, 44, 44],
+    "sword_01": [42, 190, 82]
+  },
+  "entities": [
+    {
+      "id": "courtyard_01",
+      "kind": "environment",
+      "source_sha256": "921f3f73927bb23106cae34bc21d5ab4b033a9fc120475e96f714a406e3169df",
+      "position": [0, 0, 0],
+      "components": [
+        {
+          "id": "ground",
+          "source": {"path": "environment_source_01/Models/GLB format/ground.glb", "sha256": "470e9637694bba581e7a67a07399920c9785d8fa9a01a688c80dfc6a0c06ff77", "format": "glb"},
+          "instances": [
+            {"position":[-4,-3,0],"scale":[2,2,1]},{"position":[-2,-3,0],"scale":[2,2,1]},{"position":[0,-3,0],"scale":[2,2,1]},{"position":[2,-3,0],"scale":[2,2,1]},{"position":[4,-3,0],"scale":[2,2,1]},
+            {"position":[-4,-1,0],"scale":[2,2,1]},{"position":[-2,-1,0],"scale":[2,2,1]},{"position":[0,-1,0],"scale":[2,2,1]},{"position":[2,-1,0],"scale":[2,2,1]},{"position":[4,-1,0],"scale":[2,2,1]},
+            {"position":[-4,1,0],"scale":[2,2,1]},{"position":[-2,1,0],"scale":[2,2,1]},{"position":[0,1,0],"scale":[2,2,1]},{"position":[2,1,0],"scale":[2,2,1]},{"position":[4,1,0],"scale":[2,2,1]},
+            {"position":[-4,3,0],"scale":[2,2,1]},{"position":[-2,3,0],"scale":[2,2,1]},{"position":[0,3,0],"scale":[2,2,1]},{"position":[2,3,0],"scale":[2,2,1]},{"position":[4,3,0],"scale":[2,2,1]}
+          ]
+        },
+        {
+          "id": "back_wall",
+          "source": {"path": "environment_source_01/Models/GLB format/wall.glb", "sha256": "b2ea00acbf4ba91ff0d4b8b942edf9fa12d821abd0b2c945c57a2b9b3153cfe3", "format": "glb"},
+          "instances": [
+            {"position":[-4,4,0],"scale":[2,0.4,2]},{"position":[-2,4,0],"scale":[2,0.4,2]},{"position":[0,4,0],"scale":[2,0.4,2]},{"position":[2,4,0],"scale":[2,0.4,2]},{"position":[4,4,0],"scale":[2,0.4,2]}
+          ]
+        },
+        {
+          "id": "side_wall",
+          "source": {"path": "environment_source_01/Models/GLB format/wall.glb", "sha256": "b2ea00acbf4ba91ff0d4b8b942edf9fa12d821abd0b2c945c57a2b9b3153cfe3", "format": "glb"},
+          "instances": [
+            {"position":[-5,-3,0],"rotation_z_degrees":90,"scale":[2,0.4,2]},{"position":[-5,-1,0],"rotation_z_degrees":90,"scale":[2,0.4,2]},{"position":[-5,1,0],"rotation_z_degrees":90,"scale":[2,0.4,2]},{"position":[-5,3,0],"rotation_z_degrees":90,"scale":[2,0.4,2]}
+          ]
+        },
+        {
+          "id": "tower_base",
+          "source": {"path": "environment_source_01/Models/GLB format/tower-square-base.glb", "sha256": "996887e98957eeea2ba7b5d14f0d17877c91e4e99e1c5b8ee57d87b7f7c9d5e8", "format": "glb"},
+          "instances": [{"position":[-4,3,0],"scale":[2,2,2]}]
+        },
+        {
+          "id": "tower_mid",
+          "source": {"path": "environment_source_01/Models/GLB format/tower-square-mid-windows.glb", "sha256": "68c186f978135ba77969cdbee502a1c0d9d8f40bd01e8aa33b7cc6859a2ba766", "format": "glb"},
+          "instances": [{"position":[-4,3,2.02],"scale":[2,2,2]}]
+        },
+        {
+          "id": "tower_roof",
+          "source": {"path": "environment_source_01/Models/GLB format/tower-square-top-roof.glb", "sha256": "5516fb45c3158e03773e15e83f5fc8b9bafbbcb3f35fc8e1e06e823cdb01e3bb", "format": "glb"},
+          "instances": [{"position":[-4,3,4.04],"scale":[2,2,2]}]
+        }
+      ]
+    },
+    {
+      "id": "motorcycle_01",
+      "kind": "motorcycle",
+      "source_sha256": "de967297ef736f92a7510fbe65509c9fa3776c3ffec5d6fc3296f21cdf073fc7",
+      "position": [-1.25, 0, 0],
+      "rotation_z_degrees": 0,
+      "target_longest_m": 2.4,
+      "source": {"path": "motorcycle_source_01/OPEN_GAME/MODELS/Bike_new_low.fbx", "sha256": "de967297ef736f92a7510fbe65509c9fa3776c3ffec5d6fc3296f21cdf073fc7", "format": "fbx"},
+      "textures": {
+        "base_color": {"path": "motorcycle_source_01/OPEN_GAME/TEXTURES_UNREAL/Bike_new_low_FLH_1200_BaseColor.png", "sha256": "fbe0836df5e4214b783e42ad2506c2d366ace29e2bee29921dc218c3f39f6e0a"},
+        "normal": {"path": "motorcycle_source_01/OPEN_GAME/TEXTURES_UNREAL/Bike_new_low_FLH_1200_Normal.png", "sha256": "cf59ccb86d16d8d7f957f276eae665d3f3d0c2a1a2ff6d611a5a9f4ca5f33427"},
+        "orm": {"path": "motorcycle_source_01/OPEN_GAME/TEXTURES_UNREAL/Bike_new_low_FLH_1200_OcclusionRoughnessMetallic.png", "sha256": "418cfcf74dca50d9ccc9965bae8fe4a29c3897a6e2295ff530d349999a311d14"}
+      }
+    },
+    {
+      "id": "sword_01",
+      "kind": "sword",
+      "source_sha256": "8e69eb27977f8c84a9b7cd423cd5830eddcf0d07ac1d7fed1969931387015b28",
+      "position": [1.45, 0.15, 0],
+      "rotation_z_degrees": 0,
+      "target_longest_m": 1.0,
+      "source": {"path": "sword_source_01/Models/GLB format/weapon-sword.glb", "sha256": "8e69eb27977f8c84a9b7cd423cd5830eddcf0d07ac1d7fed1969931387015b28", "format": "glb"}
+    }
+  ],
+  "cameras": [
+    {"id":"camera_A","shot_id":"shot_A","position":[5.8,-8.5,4.4],"target":[0,0.4,1.0],"lens_mm":48},
+    {"id":"camera_B","shot_id":"shot_B","position":[3.8,-5.2,1.9],"target":[-0.5,0,0.8],"lens_mm":58},
+    {"id":"camera_C","shot_id":"shot_C","position":[3.0,-3.1,1.35],"target":[1.35,0.1,0.5],"lens_mm":68}
+  ],
+  "lights": [
+    {"id":"key_light_01","type":"AREA","position":[-2.5,-3.5,6.5],"target":[0,0,0.7],"color_hex":"#FFF1DB","energy_w":1100,"size_m":5.0},
+    {"id":"fill_light_01","type":"AREA","position":[4.5,-1.5,4.0],"target":[0,0,0.8],"color_hex":"#D8E7FF","energy_w":650,"size_m":4.0},
+    {"id":"rim_light_01","type":"AREA","position":[0,4.5,5.0],"target":[0,0,1.0],"color_hex":"#FFD7AC","energy_w":900,"size_m":3.0}
+  ],
+  "world_color_hex": "#AFC7E8",
+  "world_strength": 0.2,
+  "exposure": 0
+}

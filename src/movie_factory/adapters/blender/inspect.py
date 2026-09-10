@@ -71,10 +71,12 @@ def nodes(tree):
     for node in sorted(tree.nodes, key=lambda n: n.name):
         graph[node.name] = {
             "type": node.bl_idname,
+            "image": value(getattr(node, "image", None)),
             "inputs": {s.identifier: value(s.default_value) for s in node.inputs if hasattr(s, "default_value")},
             "outputs": {s.identifier: value(s.default_value) for s in node.outputs if hasattr(s, "default_value")},
             "properties": properties(node, ("mute", "is_active_output", "distribution", "subsurface_method",
-                                            "operation", "blend_type", "clamp_factor", "clamp_result")),
+                                            "operation", "blend_type", "clamp_factor", "clamp_result",
+                                            "interpolation", "extension", "projection")),
         }
     links = [{"from_node": l.from_node.name, "from_socket": l.from_socket.identifier,
               "to_node": l.to_node.name, "to_socket": l.to_socket.identifier} for l in tree.links]
@@ -125,7 +127,7 @@ def snapshot():
     deps = bpy.context.evaluated_depsgraph_get()
     result = {"schema_version": "1.0", "scene_id": scene.get("mf_scene_id"),
               "objects": {}, "entities": {}, "materials": {}, "cameras": {}, "lights": {},
-              "world": {}, "render": {}, "external_files": [], "unsupported": []}
+              "world": {}, "render": {}, "images": {}, "external_files": [], "unsupported": []}
     seen_ids = set()
     for obj in sorted(scene.objects, key=lambda o: o.get("mf_id", o.name)):
         oid = obj.get("mf_id")
@@ -200,7 +202,13 @@ def snapshot():
             "roughness": value(principled.inputs["Roughness"].default_value) if principled else None,
             "properties": properties(mat, ("use_nodes", "diffuse_color", "surface_render_method", "use_backface_culling")),
             **nodes(mat.node_tree), "animation": animation(mat), "custom_properties": custom(mat)}
-        if not mat.use_nodes or any(n.bl_idname not in {"ShaderNodeBsdfPrincipled", "ShaderNodeOutputMaterial"} for n in mat.node_tree.nodes):
+        allowed_material_nodes = {"ShaderNodeBsdfPrincipled", "ShaderNodeOutputMaterial"}
+        if scene.get("mf_builder_version") == "external-v1":
+            allowed_material_nodes |= {
+                "ShaderNodeTexImage", "ShaderNodeNormalMap", "ShaderNodeSeparateColor",
+                "ShaderNodeMapping", "ShaderNodeUVMap", "ShaderNodeTexCoord",
+            }
+        if not mat.use_nodes or any(n.bl_idname not in allowed_material_nodes for n in mat.node_tree.nodes):
             result["unsupported"].append("material_node_type:" + mid)
         if animation(mat) or (mat.node_tree and animation(mat.node_tree)):
             result["unsupported"].append("material_animation:" + mid)
@@ -233,7 +241,17 @@ def snapshot():
     for img in bpy.data.images:
         if img.source == "FILE":
             result["external_files"].append({"type": "image", "path": img.filepath, "packed": bool(img.packed_file)})
-    if result["external_files"]:
+        if img.users:
+            packed = bytes(img.packed_file.data) if img.packed_file else None
+            result["images"][img.name] = {
+                "name": img.name, "source": img.source, "filepath": img.filepath,
+                "packed": bool(img.packed_file), "packed_sha256": hashlib.sha256(packed).hexdigest() if packed is not None else None,
+                "size": value(img.size), "channels": img.channels,
+                "colorspace": img.colorspace_settings.name, "custom_properties": custom(img),
+            }
+    # Packed images remain self-contained inside the native file. Preserve their
+    # original acquisition paths as evidence, but reject libraries and unpacked images.
+    if any(item["type"] == "library" or not item.get("packed", False) for item in result["external_files"]):
         result["unsupported"].append("external_files")
     result["unsupported"] = sorted(set(result["unsupported"]))
     return result

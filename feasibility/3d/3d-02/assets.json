@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0",
+  "experiment_id": "3D-02",
+  "retrieved_at": "2026-09-09",
+  "license_policy": "Only assets whose official source page declares CC0 are admitted. Original archive and selected-member SHA-256 digests are mandatory.",
+  "assets": [
+    {
+      "asset_id": "motorcycle_source_01",
+      "title": "Custom Harley Davidson FLH 1972",
+      "author": "Esteban Lopez / elopez7",
+      "source_page": "https://opengameart.org/content/custom-harley-davidson-flh-1972",
+      "download_url": "https://opengameart.org/sites/default/files/FLH1200.zip",
+      "license": "CC0-1.0",
+      "archive_filename": "FLH1200.zip",
+      "archive_sha256": "486cad876e89ec2af6fc290ef5f566840980db49c0ea31b642a9cffe6fecad3d",
+      "members": [
+        {"archive_path":"OPEN_GAME/MODELS/Bike_new_low.fbx","sha256":"de967297ef736f92a7510fbe65509c9fa3776c3ffec5d6fc3296f21cdf073fc7"},
+        {"archive_path":"OPEN_GAME/TEXTURES_UNITY/FLH_1200_albedo.jpg","sha256":"9db9222723c20df7a49219398352d25b1c2dcf94ce4ab0f8d2be69a6020a6069"},
+        {"archive_path":"OPEN_GAME/TEXTURES_UNITY/FLH_1200_AO.jpg","sha256":"3890d91b0495d344110d94f6e4983ec90e71c729b5e04014fe79c67c75f0c0b0"},
+        {"archive_path":"OPEN_GAME/TEXTURES_UNITY/FLH_1200_metallic.jpg","sha256":"011aeeffe0c497083f941698797d260418d05e18c092fbd1a457adce826b50be"},
+        {"archive_path":"OPEN_GAME/TEXTURES_UNITY/FLH_1200_normal.jpg","sha256":"33b97f71be11a8365f91336b533eb9d3624054abc687ebcfe56661300bd23bfa"},
+        {"archive_path":"OPEN_GAME/TEXTURES_UNITY/FLH_1200_roughness.jpg","sha256":"b496cbcfb1f918ecf29fb715296216fd86055f14ff0cf058c93efcc838dd90cb"},
+        {"archive_path":"OPEN_GAME/TEXTURES_UNREAL/Bike_new_low_FLH_1200_BaseColor.png","sha256":"fbe0836df5e4214b783e42ad2506c2d366ace29e2bee29921dc218c3f39f6e0a"},
+        {"archive_path":"OPEN_GAME/TEXTURES_UNREAL/Bike_new_low_FLH_1200_Normal.png","sha256":"cf59ccb86d16d8d7f957f276eae665d3f3d0c2a1a2ff6d611a5a9f4ca5f33427"},
+        {"archive_path":"OPEN_GAME/TEXTURES_UNREAL/Bike_new_low_FLH_1200_OcclusionRoughnessMetallic.png","sha256":"418cfcf74dca50d9ccc9965bae8fe4a29c3897a6e2295ff530d349999a311d14"}
+      ]
+    },
+    {
+      "asset_id": "sword_source_01",
+      "title": "Mini Dungeon weapon sword",
+      "author": "Kenney",
+      "source_page": "https://kenney.nl/assets/mini-dungeon",
+      "download_url": "https://kenney.nl/media/pages/assets/mini-dungeon/6cd72dc849-1785314274/kenney_mini-dungeon.zip",
+      "license": "CC0-1.0",
+      "archive_filename": "kenney_mini-dungeon.zip",
+      "archive_sha256": "19c4648680cb1d2e8836cade96cbf9781c0c1f45fbc6d2ce41cee8239a3ec4d8",
+      "members": [
+        {"archive_path":"License.txt","sha256":"f8b470068a1c043854101c9ff7161d376ba02c36239da3c1dbdfa928b08444b6"},
+        {"archive_path":"Models/GLB format/Textures/colormap.png","sha256":"bc492d755caf9e64924447f065681be0d5438a33cd0acddc72f3d00fd75893be"},
+        {"archive_path":"Models/GLB format/weapon-sword.glb","sha256":"8e69eb27977f8c84a9b7cd423cd5830eddcf0d07ac1d7fed1969931387015b28"}
+      ]
+    },
+    {
+      "asset_id": "environment_source_01",
+      "title": "Castle Kit",
+      "author": "Kenney",
+      "source_page": "https://kenney.nl/assets/castle-kit",
+      "download_url": "https://kenney.nl/media/pages/assets/castle-kit/a395102d20-1711543616/kenney_castle-kit.zip",
+      "license": "CC0-1.0",
+      "archive_filename": "kenney_castle-kit.zip",
+      "archive_sha256": "921f3f73927bb23106cae34bc21d5ab4b033a9fc120475e96f714a406e3169df",
+      "members": [
+        {"archive_path":"License.txt","sha256":"aac944f18106b3a3e29c6fdeec02523d4cab4c735abc01f5a8fa88a79ae173ef"},
+        {"archive_path":"Models/GLB format/Textures/colormap.png","sha256":"66fd49be148f32e88f6c8cace67120250d1943a7856601158ad0ff24651db0b0"},
+        {"archive_path":"Models/GLB format/ground.glb","sha256":"470e9637694bba581e7a67a07399920c9785d8fa9a01a688c80dfc6a0c06ff77"},
+        {"archive_path":"Models/GLB format/wall.glb","sha256":"b2ea00acbf4ba91ff0d4b8b942edf9fa12d821abd0b2c945c57a2b9b3153cfe3"},
+        {"archive_path":"Models/GLB format/wall-corner.glb","sha256":"82d27b869162b6a9ee19b0d7480913f56928b6620708f3b3899131495803cc9a"},
+        {"archive_path":"Models/GLB format/tower-square-base.glb","sha256":"996887e98957eeea2ba7b5d14f0d17877c91e4e99e1c5b8ee57d87b7f7c9d5e8"},
+        {"archive_path":"Models/GLB format/tower-square-mid-windows.glb","sha256":"68c186f978135ba77969cdbee502a1c0d9d8f40bd01e8aa33b7cc6859a2ba766"},
+        {"archive_path":"Models/GLB format/tower-square-top-roof.glb","sha256":"5516fb45c3158e03773e15e83f5fc8b9bafbbcb3f35fc8e1e06e823cdb01e3bb"}
+      ]
+    }
+  ]
+}

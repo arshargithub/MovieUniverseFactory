@@ -16,6 +16,7 @@ import traceback
 
 import bpy
 from mathutils import Vector
+from mathutils import Matrix
 
 
 def load_inspector():
@@ -35,6 +36,57 @@ def color(hex_color):
     return tuple(srgb_channel(int(hex_color[i:i + 2], 16) / 255) for i in (1, 3, 5)) + (1.0,)
 
 
+def file_sha256(path):
+    digest=hashlib.sha256()
+    with path.open("rb") as handle:
+        for chunk in iter(lambda:handle.read(1024*1024),b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def import_source_asset(spec):
+    if not isinstance(spec,dict) or set(spec)!={"path","sha256","format"}:
+        raise ValueError("Asset import requires only path, sha256, and format")
+    path=Path(spec["path"])
+    if not path.is_absolute() or not path.is_file() or path.is_symlink():
+        raise ValueError("Asset path must be an absolute regular file")
+    expected_format=spec["format"].lower()
+    if expected_format not in {"glb","fbx"} or path.suffix.lower()!="."+expected_format:
+        raise ValueError("Asset format is not allowlisted or does not match its suffix")
+    if file_sha256(path)!=spec["sha256"]:
+        raise ValueError("Asset digest mismatch")
+    before=set(bpy.data.objects)
+    if expected_format=="glb":
+        bpy.ops.import_scene.gltf(filepath=str(path),import_pack_images=True)
+    else:
+        bpy.ops.import_scene.fbx(filepath=str(path),use_anim=False)
+    imported=sorted(set(bpy.data.objects)-before,key=lambda item:(item.name,item.type))
+    if not imported or not any(obj.type=="MESH" for obj in imported):
+        raise ValueError("Asset import produced no mesh")
+    return imported
+
+
+def asset_probe(spec):
+    bpy.ops.wm.read_factory_settings(use_empty=True)
+    imported=import_source_asset(spec)
+    bpy.context.view_layer.update()
+    meshes=[obj for obj in imported if obj.type=="MESH"]
+    points=[obj.matrix_world@Vector(corner) for obj in meshes for corner in obj.bound_box]
+    bounds={"min":[min(p[i] for p in points) for i in range(3)],"max":[max(p[i] for p in points) for i in range(3)]}
+    dimensions=[bounds["max"][i]-bounds["min"][i] for i in range(3)]
+    materials=sorted({mat for obj in meshes for mat in obj.data.materials if mat},key=lambda mat:mat.name)
+    return {
+        "schema_version":"1.0","source_sha256":spec["sha256"],"format":spec["format"],
+        "object_count":len(imported),"mesh_count":len(meshes),
+        "vertex_count":sum(len(obj.data.vertices) for obj in meshes),
+        "polygon_count":sum(len(obj.data.polygons) for obj in meshes),
+        "object_types":sorted({obj.type for obj in imported}),
+        "object_names":[obj.name for obj in imported],"bounds":bounds,"dimensions":dimensions,
+        "materials":[{"name":mat.name,"uses_nodes":mat.use_nodes,"node_types":sorted(node.bl_idname for node in mat.node_tree.nodes) if mat.use_nodes else []} for mat in materials],
+        "images":[{"name":image.name,"source":image.source,"packed":bool(image.packed_file)} for image in sorted(bpy.data.images,key=lambda image:image.name)],
+    }
+
+
 def identify(obj, oid, entity, kind):
     obj.name = oid
     obj["mf_id"] = oid
@@ -45,6 +97,208 @@ def identify(obj, oid, entity, kind):
         obj.data.name = oid + "_data"
         obj.data["mf_id"] = oid + "_data"
     return obj
+
+
+def identify_external(obj, oid, entity, kind, source_sha256):
+    obj.name = oid
+    obj["mf_id"] = oid
+    obj["mf_entity"] = entity or ""
+    obj["mf_kind"] = kind
+    obj["mf_source_sha256"] = source_sha256
+    obj["mf_creation_id"] = hashlib.sha256(
+        (bpy.context.scene["mf_scene_id"] + ":external-v1:" + oid + ":" + source_sha256).encode()
+    ).hexdigest()
+    if obj.data:
+        obj.data.name = oid + "_data"
+        obj.data["mf_id"] = oid + "_data"
+    return obj
+
+
+def verified_image(spec):
+    if not isinstance(spec, dict) or set(spec) != {"path", "sha256"}:
+        raise ValueError("Texture requires only path and sha256")
+    path = Path(spec["path"])
+    if not path.is_absolute() or not path.is_file() or path.is_symlink():
+        raise ValueError("Texture path must be an absolute regular file")
+    if path.suffix.lower() not in {".png", ".jpg", ".jpeg"} or file_sha256(path) != spec["sha256"]:
+        raise ValueError("Texture format or digest mismatch")
+    image = bpy.data.images.load(str(path), check_existing=False)
+    image["mf_source_sha256"] = spec["sha256"]
+    return image
+
+
+def pbr_motorcycle_material(entity_id, textures):
+    if set(textures) != {"base_color", "normal", "orm"}:
+        raise ValueError("Motorcycle repair requires the frozen BaseColor, Normal, and ORM maps")
+    mat = bpy.data.materials.new(entity_id + "_pbr_01")
+    mat["mf_id"] = entity_id + "_pbr_01"
+    mat["mf_repair"] = "explicit_unreal_pbr_relink_v1"
+    mat.use_nodes = True
+    tree = mat.node_tree
+    tree.nodes.clear()
+    output = tree.nodes.new("ShaderNodeOutputMaterial"); output.name = "Material Output"
+    bsdf = tree.nodes.new("ShaderNodeBsdfPrincipled"); bsdf.name = "Principled BSDF"
+    base = tree.nodes.new("ShaderNodeTexImage"); base.name = "Base Color"; base.image = verified_image(textures["base_color"])
+    normal_tex = tree.nodes.new("ShaderNodeTexImage"); normal_tex.name = "Normal Texture"; normal_tex.image = verified_image(textures["normal"]); normal_tex.image.colorspace_settings.name = "Non-Color"
+    normal = tree.nodes.new("ShaderNodeNormalMap"); normal.name = "Normal Map"
+    orm = tree.nodes.new("ShaderNodeTexImage"); orm.name = "ORM Texture"; orm.image = verified_image(textures["orm"]); orm.image.colorspace_settings.name = "Non-Color"
+    separate = tree.nodes.new("ShaderNodeSeparateColor"); separate.name = "ORM Channels"; separate.mode = "RGB"
+    tree.links.new(base.outputs["Color"], bsdf.inputs["Base Color"])
+    tree.links.new(normal_tex.outputs["Color"], normal.inputs["Color"])
+    tree.links.new(normal.outputs["Normal"], bsdf.inputs["Normal"])
+    tree.links.new(orm.outputs["Color"], separate.inputs["Color"])
+    tree.links.new(separate.outputs["Green"], bsdf.inputs["Roughness"])
+    tree.links.new(separate.outputs["Blue"], bsdf.inputs["Metallic"])
+    tree.links.new(bsdf.outputs["BSDF"], output.inputs["Surface"])
+    return mat
+
+
+def external_root(entity):
+    obj = bpy.data.objects.new(entity["id"], None)
+    bpy.context.collection.objects.link(obj)
+    identify_external(obj, entity["id"], entity["id"], entity["kind"], entity["source_sha256"])
+    obj["mf_is_entity"] = True
+    obj.location = entity["position"]
+    obj.rotation_euler[2] = math.radians(entity.get("rotation_z_degrees", 0))
+    return obj
+
+
+def asset_world_bounds(objects):
+    bpy.context.view_layer.update()
+    points = [obj.matrix_world @ Vector(corner) for obj in objects if obj.type == "MESH" for corner in obj.bound_box]
+    if not points:
+        raise ValueError("Imported component has no mesh bounds")
+    return ([min(point[i] for point in points) for i in range(3)],
+            [max(point[i] for point in points) for i in range(3)])
+
+
+def attach_import(root_obj, component_id, kind, source, *, target_longest=None, material_override=None):
+    imported = import_source_asset(source)
+    top_level = [obj for obj in imported if obj.parent not in imported]
+    low, high = asset_world_bounds(imported)
+    dimensions = [high[i] - low[i] for i in range(3)]
+    factor = float(target_longest) / max(dimensions) if target_longest else 1.0
+    normalize = Matrix.Translation((-factor*(low[0]+high[0])/2, -factor*(low[1]+high[1])/2, -factor*low[2])) @ Matrix.Scale(factor, 4)
+    for obj in top_level:
+        obj.matrix_world = normalize @ obj.matrix_world
+        obj.parent = root_obj
+        obj.matrix_parent_inverse = Matrix.Identity(4)
+    ordered = sorted(imported, key=lambda obj: (obj.name, obj.type))
+    for index, obj in enumerate(ordered):
+        oid = f"{root_obj['mf_id']}_{component_id}_{index:02d}"
+        identify_external(obj, oid, root_obj["mf_id"], kind, source["sha256"])
+        if obj.type == "MESH":
+            if material_override:
+                obj.data.materials.clear(); obj.data.materials.append(material_override)
+            else:
+                for slot, mat in enumerate(list(obj.data.materials)):
+                    if mat:
+                        private = mat.copy()
+                        private.name = f"{oid}_material_{slot:02d}"
+                        private["mf_id"] = private.name
+                        private["mf_source_sha256"] = source["sha256"]
+                        obj.data.materials[slot] = private
+    return imported
+
+
+def duplicate_component(template_objects, base_matrices, root_obj, component_id, kind, source_sha256, transform):
+    mapping = {}
+    for index, original in enumerate(sorted(template_objects, key=lambda obj: obj["mf_id"])):
+        copy = original.copy()
+        if original.data:
+            copy.data = original.data.copy()
+        bpy.context.collection.objects.link(copy)
+        identify_external(copy, f"{root_obj['mf_id']}_{component_id}_{index:02d}", root_obj["mf_id"], kind, source_sha256)
+        mapping[original] = copy
+    for original, copy in mapping.items():
+        copy.parent = mapping.get(original.parent, root_obj)
+        copy.matrix_parent_inverse = Matrix.Identity(4)
+        copy.matrix_local = base_matrices[original].copy()
+    first = mapping[sorted(template_objects, key=lambda obj: obj["mf_id"])[0]]
+    first.matrix_local = transform @ base_matrices[sorted(template_objects, key=lambda obj: obj["mf_id"])[0]]
+    return list(mapping.values())
+
+
+def add_external_rig(plan, collection):
+    for camera in plan["cameras"]:
+        data = bpy.data.cameras.new(camera["id"] + "_data")
+        obj = bpy.data.objects.new(camera["id"], data); collection.objects.link(obj)
+        identify_external(obj, camera["id"], None, "camera", "rig-v1")
+        obj["mf_shot_id"] = camera["shot_id"]; obj.location = camera["position"]; aim(obj, camera["target"])
+        data.lens = camera["lens_mm"]; data.sensor_width = 36; data.clip_start = .01; data.clip_end = 100; data.dof.use_dof = False
+    for light in plan["lights"]:
+        if light["type"] != "AREA": raise ValueError("3D-02 uses AREA lights only")
+        data = bpy.data.lights.new(light["id"] + "_data", "AREA")
+        obj = bpy.data.objects.new(light["id"], data); collection.objects.link(obj)
+        identify_external(obj, light["id"], None, "light", "rig-v1")
+        obj.location = light["position"]; aim(obj, light["target"])
+        data.energy = light["energy_w"]; data.color = color(light["color_hex"])[:3]; data.shape = "DISK"; data.size = light["size_m"]
+
+
+def build_external(plan, profile):
+    if plan.get("schema_version") != "1.0" or plan.get("experiment_id") != "3D-02":
+        raise ValueError("Unsupported external scene plan")
+    if [entity.get("id") for entity in plan.get("entities", [])] != ["courtyard_01", "motorcycle_01", "sword_01"]:
+        raise ValueError("3D-02 requires exactly the frozen entity set and order")
+    if len(plan.get("cameras", [])) != 3 or {item.get("id") for item in plan["cameras"]} != {"camera_A","camera_B","camera_C"}:
+        raise ValueError("3D-02 requires the frozen three-camera rig")
+    if len(plan.get("lights", [])) != 3 or {item.get("id") for item in plan["lights"]} != {"key_light_01","fill_light_01","rim_light_01"}:
+        raise ValueError("3D-02 requires the frozen three-light rig")
+    components = plan["entities"][0].get("components", [])
+    if not 1 <= len(components) <= 8 or sum(len(item.get("instances", [])) for item in components) > 40:
+        raise ValueError("3D-02 environment exceeds component or instance bounds")
+    bpy.ops.wm.read_factory_settings(use_empty=True)
+    scene = bpy.context.scene
+    scene["mf_scene_id"] = plan["scene_id"]; scene["mf_seed"] = plan["seed"]; scene["mf_builder_version"] = "external-v1"
+    scene["mf_mask_palette_json"] = json.dumps(plan["mask_palette"], sort_keys=True)
+    scene.unit_settings.system = "METRIC"; scene.unit_settings.scale_length = 1
+    collection = bpy.data.collections.new("MovieFactoryExternal"); collection["mf_id"] = "collection_3d02_01"; scene.collection.children.link(collection)
+    bpy.context.view_layer.active_layer_collection = bpy.context.view_layer.layer_collection.children[collection.name]
+    entities = {entity["id"]: entity for entity in plan["entities"]}
+
+    courtyard = external_root(entities["courtyard_01"])
+    for component in entities["courtyard_01"]["components"]:
+        imported = attach_import(courtyard, component["id"] + "_template", "environment", component["source"])
+        template = sorted(imported, key=lambda obj: obj["mf_id"])
+        base_matrices = {obj: obj.matrix_local.copy() for obj in template}
+        for index, instance in enumerate(component["instances"]):
+            matrix = Matrix.Translation(instance["position"]) @ Matrix.Rotation(math.radians(instance.get("rotation_z_degrees", 0)), 4, "Z") @ Matrix.Diagonal((*instance.get("scale", [1,1,1]), 1))
+            if index == 0:
+                first = template[0]; first.matrix_local = matrix @ base_matrices[first]
+                for obj in template: obj["mf_component_id"] = component["id"]
+            else:
+                copies = duplicate_component(template, base_matrices, courtyard, f"{component['id']}_{index:02d}", "environment", component["source"]["sha256"], matrix)
+                for obj in copies: obj["mf_component_id"] = component["id"]
+
+    motorcycle = external_root(entities["motorcycle_01"])
+    bike_material = pbr_motorcycle_material("motorcycle_01", entities["motorcycle_01"]["textures"])
+    attach_import(motorcycle, "body", "motorcycle", entities["motorcycle_01"]["source"], target_longest=entities["motorcycle_01"]["target_longest_m"], material_override=bike_material)
+
+    sword = external_root(entities["sword_01"])
+    attach_import(sword, "blade", "sword", entities["sword_01"]["source"], target_longest=entities["sword_01"]["target_longest_m"])
+    add_external_rig(plan, collection)
+    world = bpy.data.worlds.new("world_3d02_01"); world["mf_id"] = "world_3d02_01"; world.use_nodes = True
+    world.node_tree.nodes["Background"].inputs["Color"].default_value = color(plan["world_color_hex"])
+    world.node_tree.nodes["Background"].inputs["Strength"].default_value = plan["world_strength"]; scene.world = world
+    apply_profile(profile, plan["seed"]); scene.view_settings.exposure = plan["exposure"]; scene.camera = bpy.data.objects[plan["cameras"][0]["id"]]
+    bpy.ops.file.pack_all(); bpy.context.view_layer.update()
+
+
+def revise_external(operations):
+    if operations != [
+        {"op":"translate_entity","entity_id":"motorcycle_01","delta_m":[0.6,0,0]},
+        {"op":"rotate_entity_z","entity_id":"sword_01","degrees":25},
+    ]:
+        raise ValueError("3D-02 accepts only the frozen two-operation revision")
+    objects = {obj.get("mf_id"): obj for obj in bpy.context.scene.objects}; initial_ids = set(objects)
+    motorcycle = objects["motorcycle_01"]; sword = objects["sword_01"]
+    before_motorcycle = list(motorcycle.location); before_sword = math.degrees(sword.rotation_euler.z)
+    motorcycle.location.x += .6; sword.rotation_euler.z += math.radians(25); bpy.context.view_layer.update()
+    if initial_ids != {obj.get("mf_id") for obj in bpy.context.scene.objects}: raise RuntimeError("Revision changed object identity set")
+    return [
+        {"op":"translate_entity","entity_id":"motorcycle_01","before":before_motorcycle,"after":list(motorcycle.location)},
+        {"op":"rotate_entity_z","entity_id":"sword_01","before_degrees":before_sword,"after_degrees":math.degrees(sword.rotation_euler.z)},
+    ]
 
 
 def material(mid, rgb, roughness=.5, metallic=0, emission=0):
@@ -490,7 +744,10 @@ def render(native,out,profile,seed):
         artifacts.append("renders/"+shot+".png")
         t=time.monotonic()
         maskmats={}
-        for entity,rgb in PALETTE.items():
+        palette=json.loads(s.get("mf_mask_palette_json",json.dumps(PALETTE)))
+        if not isinstance(palette,dict) or not palette:
+            raise ValueError("Scene mask palette is invalid")
+        for entity,rgb in palette.items():
             mat=bpy.data.materials.new("__mask_"+entity)
             mat.use_nodes=True
             mat.node_tree.nodes.clear()
@@ -502,7 +759,10 @@ def render(native,out,profile,seed):
             maskmats[entity]=mat
         for obj in s.objects:
             if obj.type=="MESH":
-                mat=maskmats[obj["mf_entity"]]
+                entity=obj.get("mf_entity")
+                if entity not in maskmats:
+                    raise ValueError("Mesh has no allowlisted entity mask: "+obj.name)
+                mat=maskmats[entity]
                 obj.data.materials.clear()
                 obj.data.materials.append(mat)
                 for face in obj.data.polygons:
@@ -519,7 +779,7 @@ def render(native,out,profile,seed):
         bpy.ops.render.render(write_still=True)
         times[shot+"_mask_seconds"]=time.monotonic()-t
         artifacts.append("masks/"+shot+".png")
-    write_json(out/"mask-legend.json",{"schema_version":"1.0","encoding":"rgb8","entities":PALETTE,
+    write_json(out/"mask-legend.json",{"schema_version":"1.0","encoding":"rgb8","entities":palette,
         "background":[0,0,0],"method":"opaque emission Cycles CPU one-sample pass; edge antialiasing; stable entity colors"})
     return artifacts+["mask-legend.json"],times
 
@@ -544,9 +804,15 @@ def main():
         inspector=load_inspector()
         mode=job["mode"]
         profile=job["profile"]
-        if mode=="build":
+        if mode=="asset_probe":
+            probe=asset_probe(job["asset"])
+            write_json(out/"probe.json",probe)
+            status["artifacts"].append("probe.json")
+        elif mode=="build":
             build(job["plan"],profile)
-        elif mode in {"revise","inspect","render","evaluator_corrupt"}:
+        elif mode=="build_external":
+            build_external(job["plan"], profile)
+        elif mode in {"revise","revise_external","inspect","render","evaluator_corrupt"}:
             native=Path(job["parent_native"])
             if native.resolve()==(out/"scene.blend").resolve():
                 raise ValueError("Parent native may never be overwritten")
@@ -555,17 +821,21 @@ def main():
                 mutations=revise(job["operations"])
                 write_json(out/"mutations.json",mutations)
                 status["artifacts"].append("mutations.json")
+            elif mode=="revise_external":
+                mutations=revise_external(job["operations"])
+                write_json(out/"mutations.json",mutations)
+                status["artifacts"].append("mutations.json")
             elif mode=="evaluator_corrupt":
                 mutation=evaluator_corrupt(job.get("corruption"))
                 write_json(out/"corruption.json",mutation)
                 status["artifacts"].append("corruption.json")
         else:
             raise ValueError("Unknown worker mode")
-        if mode in {"build","revise","evaluator_corrupt"}:
+        if mode in {"build","build_external","revise","revise_external","evaluator_corrupt"}:
             bpy.context.preferences.filepaths.save_version=0
             bpy.ops.wm.save_as_mainfile(filepath=str(out/"scene.blend"),check_existing=False,compress=True)
             status["artifacts"].append("scene.blend")
-        if mode in {"build","revise","inspect","evaluator_corrupt"}:
+        if mode in {"build","build_external","revise","revise_external","inspect","evaluator_corrupt"}:
             state=inspector.snapshot()
             write_json(out/"snapshot.json",state)
             status["artifacts"].append("snapshot.json")

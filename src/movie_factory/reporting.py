@@ -21,9 +21,11 @@ def write_comparison(run_dir: Path, result: dict[str, Any]) -> Path:
         if before.exists() and after.exists():
             rows.append(f'<section><h2>{shot}</h2><div class="pair"><figure><img src="{before.relative_to(run_dir)}"><figcaption>Before</figcaption></figure><figure><img src="{after.relative_to(run_dir)}"><figcaption>After</figcaption></figure></div></section>')
     safe = html.escape(json.dumps({k:v for k,v in result.items() if k not in {"raw"}}, indent=2))
-    document = f'''<!doctype html><meta charset="utf-8"><title>Movie Factory 3D-01</title>
+    experiment = html.escape(result.get("experiment_id", "3D-01"))
+    title = "External Asset Persistence + Targeted Revision" if experiment == "3D-02" else "Persistent Scene + Targeted Revision"
+    document = f'''<!doctype html><meta charset="utf-8"><title>Movie Factory {experiment}</title>
 <style>body{{font:16px system-ui;margin:2rem;background:#181818;color:#eee}}.pair{{display:grid;grid-template-columns:1fr 1fr;gap:1rem}}img{{width:100%;background:#333}}pre{{white-space:pre-wrap}}figure{{margin:0}}@media(max-width:800px){{.pair{{grid-template-columns:1fr}}}}</style>
-<h1>3D-01 Persistent Scene + Targeted Revision</h1>{''.join(rows)}<h2>Machine result</h2><pre>{safe}</pre>'''
+<h1>{experiment} {title}</h1>{''.join(rows)}<h2>Machine result</h2><pre>{safe}</pre>'''
     path = run_dir / "comparison.html"
     path.write_text(document)
     return path

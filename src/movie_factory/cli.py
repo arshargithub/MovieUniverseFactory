@@ -397,6 +397,36 @@ def command_prepare_evaluator(args) -> int:
     return 0
 
 
+def command_prepare_assets(args) -> int:
+    root=repo_root()
+    from .assets import prepare_assets
+    manifest_path=Path(args.manifest); manifest_path=manifest_path if manifest_path.is_absolute() else root/manifest_path
+    source=Path(args.source); source=source if source.is_absolute() else root/source
+    output=Path(args.output); output=output if output.is_absolute() else root/output
+    result=prepare_assets(source,read_json(manifest_path),output)
+    emit({"output":str(output),"assets":len(result["assets"]),"selected_bytes":result["selected_bytes"],"artifacts":len(result["artifacts"])})
+    return 0
+
+
+def command_qualify_assets(args) -> int:
+    root=repo_root(); settings=load_settings_safe(root)
+    staged=Path(args.staged); staged=staged if staged.is_absolute() else root/staged
+    output=Path(args.output); output=output if output.is_absolute() else root/output
+    from .asset_controller import run_asset_qualification
+    result=run_asset_qualification(root,staged.resolve(),output.resolve(),_profile(root,args.profile),settings.get("BLENDER_BIN","/Applications/Blender.app/Contents/MacOS/Blender"))
+    emit({"ok":result["passed"],"run_id":result["run_id"],"comparison":result["comparison"],"director_status":result["director_status"]})
+    return 0 if result["passed"] else 3
+
+
+def command_replay_assets(args) -> int:
+    root=repo_root(); settings=load_settings_safe(root)
+    run=Path(args.run); run=run if run.is_absolute() else root/run
+    output=Path(args.output); output=output if output.is_absolute() else root/output
+    from .asset_controller import replay_asset_revision
+    result=replay_asset_revision(root,run.resolve(),output.resolve(),settings.get("BLENDER_BIN","/Applications/Blender.app/Contents/MacOS/Blender"))
+    emit(result); return 0 if result["ok"] else 3
+
+
 def command_evaluate_evaluator(args) -> int:
     if not args.live: raise ValueError("evaluator qualification requires explicit --live")
     root=repo_root(); settings=load_settings_safe(root)
@@ -422,6 +452,9 @@ def parser() -> argparse.ArgumentParser:
     q=sub.add_parser("report"); q.add_argument("--campaign",required=True); q.set_defaults(func=command_report)
     q=sub.add_parser("export"); q.add_argument("--campaign",required=True); q.add_argument("--output",required=True); q.set_defaults(func=command_export)
     q=sub.add_parser("prepare-evaluator"); q.add_argument("--config",required=True); q.add_argument("--output",required=True); q.set_defaults(func=command_prepare_evaluator)
+    q=sub.add_parser("prepare-assets"); q.add_argument("--manifest",required=True); q.add_argument("--source",required=True); q.add_argument("--output",required=True); q.set_defaults(func=command_prepare_assets)
+    q=sub.add_parser("qualify-assets"); q.add_argument("--staged",required=True); q.add_argument("--output",default="runs/3d02"); q.add_argument("--profile",default="smoke"); q.set_defaults(func=command_qualify_assets)
+    q=sub.add_parser("replay-assets"); q.add_argument("--run",required=True); q.add_argument("--output",required=True); q.set_defaults(func=command_replay_assets)
     q=sub.add_parser("evaluate-evaluator"); q.add_argument("--config",required=True); q.add_argument("--benchmark",required=True); q.add_argument("--output",required=True); q.add_argument("--live",action="store_true"); q.set_defaults(func=command_evaluate_evaluator)
     return p
 
