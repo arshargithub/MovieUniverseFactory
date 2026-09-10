@@ -1,0 +1,94 @@
+{
+  "benchmark_id": "3d011-evaluator-v1",
+  "labels": {
+    "case-01": {
+      "category": "accepted",
+      "director_scores": {
+        "brief_fulfillment": 5,
+        "cinematography": 5,
+        "continuity_revision": 5,
+        "lighting_materials": 5,
+        "physical_finish": 4
+      },
+      "expected": "pass",
+      "seed": 101
+    },
+    "case-02": {
+      "category": "intersection",
+      "expected": "non_pass"
+    },
+    "case-03": {
+      "category": "accepted",
+      "director_scores": {
+        "brief_fulfillment": 5,
+        "cinematography": 5,
+        "continuity_revision": 5,
+        "lighting_materials": 5,
+        "physical_finish": 4
+      },
+      "expected": "pass",
+      "seed": 303
+    },
+    "case-04": {
+      "category": "lighting_drift",
+      "expected": "non_pass"
+    },
+    "case-05": {
+      "category": "failed_framing",
+      "expected": "non_pass"
+    },
+    "case-06": {
+      "category": "accepted",
+      "director_scores": {
+        "brief_fulfillment": 5,
+        "cinematography": 5,
+        "continuity_revision": 5,
+        "lighting_materials": 5,
+        "physical_finish": 4
+      },
+      "expected": "pass",
+      "seed": 505
+    },
+    "case-07": {
+      "category": "wrong_color",
+      "expected": "non_pass"
+    },
+    "case-08": {
+      "category": "accepted",
+      "director_scores": {
+        "brief_fulfillment": 5,
+        "cinematography": 5,
+        "continuity_revision": 5,
+        "lighting_materials": 5,
+        "physical_finish": 4
+      },
+      "expected": "pass",
+      "seed": 202
+    },
+    "case-09": {
+      "category": "degraded_composition",
+      "expected": "non_pass"
+    },
+    "case-10": {
+      "category": "missing_object",
+      "expected": "non_pass"
+    },
+    "case-11": {
+      "category": "accepted",
+      "director_scores": {
+        "brief_fulfillment": 5,
+        "cinematography": 5,
+        "continuity_revision": 5,
+        "lighting_materials": 5,
+        "physical_finish": 4
+      },
+      "expected": "pass",
+      "seed": 404
+    },
+    "case-12": {
+      "category": "camera_drift",
+      "expected": "non_pass"
+    }
+  },
+  "schema_version": "1.0"
+}

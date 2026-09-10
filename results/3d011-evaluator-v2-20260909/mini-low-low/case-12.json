@@ -1,0 +1,52 @@
+{
+  "cost_usd": 0.004149,
+  "data": {
+    "confidence": 0.72,
+    "critical_findings": [],
+    "recommendation": "repair",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "The coffee table is visibly closer to the sofa in the candidate, and the motorcycle helmet shell changes from red to dark green while the other scene elements remain present.",
+        "score": 4
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "Overall framing is similar, but there is a mild viewpoint/scene crop difference in the candidate compared with baseline, especially in the wider views.",
+        "score": 3
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "Lighting stays soft and consistent, and the helmet material still reads as a glossy hard shell after the color change.",
+        "score": 4
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "The revision looks physically plausible; the helmet retains its form and shading, and the moved table does not show obvious intersections or deformation.",
+        "score": 4
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "The requested edits are visible, but the candidate is not a perfect continuity match to baseline due to slight composition drift and the coffee-table repositioning is not strongly pronounced.",
+        "score": 3
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.0022455,
+  "other_output_cost_usd": 0.003645,
+  "output_cost_usd": 0.0019035,
+  "provider_request_id": "req_993a71ab5c9248d19fffc646d7574ee8",
+  "reasoning_cost_usd": 0.00081,
+  "reservation_id": "3f4b980d-f2c4-4587-a3be-033dcae0ed8e",
+  "response_id": "resp_0c66bf0d1989f8fb016aa1d98d9d6087d2a45d1ce51b971cc5",
+  "returned_model": "gpt-5.4-mini-2026-03-17",
+  "usage": {
+    "cached_input_tokens": 4480,
+    "input_tokens": 7026,
+    "output_tokens": 423,
+    "reasoning_tokens": 180,
+    "total_tokens": 7449,
+    "usage_certainty": "known"
+  }
+}

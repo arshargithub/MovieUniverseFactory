@@ -1,0 +1,55 @@
+{
+  "cost_usd": 0.00538875,
+  "data": {
+    "confidence": 0.69,
+    "critical_findings": [
+      "Helmet shell color appears slightly lighter/less saturated than the requested dark green #163D2A.",
+      "Exact 0.4 m coffee-table translation cannot be confirmed from the imagery alone."
+    ],
+    "recommendation": "repair",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "Helmet shell changes from red to green in the candidate, and the coffee table is moved closer to the sofa in all three views.",
+        "score": 4
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "Camera framing, perspective, and overall composition remain largely consistent between baseline and candidate shots with no obvious major camera drift.",
+        "score": 4
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "Lighting direction and exposure are broadly stable; material response on the sofa, table, and helmet remains coherent across the revision.",
+        "score": 4
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "The helmet finish still reads as a clean glossy shell, but the requested dark green target appears a bit brighter/olive rather than a precise #163D2A match.",
+        "score": 3
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "The table move looks directionally correct, but the exact 0.4 m displacement is not clearly verifiable from the images, and the helmet hue may not be exact.",
+        "score": 3
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.00305775,
+  "other_output_cost_usd": 0.004215,
+  "output_cost_usd": 0.002331,
+  "provider_request_id": "req_de86eb10ac414686a163e95b9b78729e",
+  "reasoning_cost_usd": 0.0010665,
+  "reservation_id": "320d97f7-996b-402a-8bfe-9e3e9c63d26a",
+  "response_id": "resp_0c5be22ce826a877016aa1d6cc028487d282fbebed52f2bff1",
+  "returned_model": "gpt-5.4-mini-2026-03-17",
+  "usage": {
+    "cached_input_tokens": 3200,
+    "input_tokens": 6957,
+    "output_tokens": 518,
+    "reasoning_tokens": 237,
+    "total_tokens": 7475,
+    "usage_certainty": "known"
+  }
+}

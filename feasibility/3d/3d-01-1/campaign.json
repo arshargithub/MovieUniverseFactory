@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "experiment_id": "3D-01.1",
+  "campaign_prefix": "3d011",
+  "brief_path": "feasibility/3d/3d-01/brief.json",
+  "revision_path": "feasibility/3d/3d-01/revision.json",
+  "seeds": [606, 707, 808, 909, 1001],
+  "profile": "qualification_cpu",
+  "campaign_api_limit_usd": 40.0,
+  "initial_api_limit_usd": 3.0,
+  "revision_api_limit_usd": 2.0,
+  "planner_model": "gpt-5.4-2026-03-05",
+  "planner_reasoning_effort": "medium",
+  "vision_model": "gpt-5.4-2026-03-05",
+  "vision_reasoning_effort": "low",
+  "image_detail": "low",
+  "visual_prompt_version": "3d011-blind-review-v3",
+  "reviewer_qualification": {
+    "benchmark_id": "3d011-evaluator-v3",
+    "result": "results/3d011-evaluator-v5-20260909/summary.json",
+    "candidate_id": "base-low-low-framing",
+    "positive_pass_rate": 1.0,
+    "negative_sensitivity": 1.0,
+    "negative_critical_finding_rate": 1.0,
+    "response_valid_rate": 1.0
+  },
+  "revision_compiler": "3d011-supported-revision-v1",
+  "claim_boundary": "GREEN applies only to supported, unambiguous structured revisions with LLM escalation for ambiguous instructions. Open-ended natural-language comprehension, general autonomous cinematography, production asset quality, and unrestricted model control of Blender remain outside this qualification."
+}

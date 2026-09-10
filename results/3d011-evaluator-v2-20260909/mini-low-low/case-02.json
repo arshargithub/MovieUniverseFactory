@@ -1,0 +1,56 @@
+{
+  "cost_usd": 0.0069345,
+  "data": {
+    "confidence": 0.84,
+    "critical_findings": [
+      "Coffee table overlaps/intersects the helmet in the candidate, producing an unnatural collision.",
+      "Helmet is partially hidden under the table in the candidate, degrading the clarity of the requested color change.",
+      "Candidate composition is tighter and less clean than baseline due to the new overlap/occlusion."
+    ],
+    "recommendation": "reject",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "The coffee table is visibly moved closer to the sofa, and the helmet shell is changed from red to dark green in the candidate views.",
+        "score": 4
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "Camera framing stays broadly consistent, but the candidate crop/occlusion changes make the composition feel tighter and less balanced than baseline.",
+        "score": 3
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "Overall lighting remains similar, but the green helmet material appears only moderately dark and is somewhat obscured, making the material change less cleanly legible.",
+        "score": 3
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "The coffee table now intersects the helmet/overlaps it visibly, creating an unnatural contact and poor physical placement.",
+        "score": 2
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "The main edit is directionally correct, but the new table position causes the helmet to be heavily occluded and partially embedded under the table, reducing continuity quality.",
+        "score": 3
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.0052695,
+  "other_output_cost_usd": 0.00438,
+  "output_cost_usd": 0.001665,
+  "provider_request_id": "req_c3ce92deb3fc4599ab492a938c5a51cb",
+  "reasoning_cost_usd": 0.000351,
+  "reservation_id": "0c7e5c75-58fa-4bf0-9c26-da7e60cb475a",
+  "response_id": "resp_06884d2543bd3f5e016aa1d95f168c87d29f3ceec2e9e5d3e1",
+  "returned_model": "gpt-5.4-mini-2026-03-17",
+  "usage": {
+    "cached_input_tokens": 0,
+    "input_tokens": 7026,
+    "output_tokens": 370,
+    "reasoning_tokens": 78,
+    "total_tokens": 7396,
+    "usage_certainty": "known"
+  }
+}

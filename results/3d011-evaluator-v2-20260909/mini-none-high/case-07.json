@@ -1,0 +1,56 @@
+{
+  "cost_usd": 0.0024489000000000004,
+  "data": {
+    "confidence": 0.9,
+    "critical_findings": [
+      "Helmet shell in the candidate is blue, not dark green.",
+      "A large foreground wall/pillar occludes the left side of the candidate view and alters composition.",
+      "Revision is not cleanly isolated visually; unintended view/composition change is present."
+    ],
+    "recommendation": "reject",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "Coffee table is visibly moved closer to the sofa in the candidate set, and the helmet changes color from red toward a non-red cool tone, but it reads blue rather than dark green.",
+        "score": 3
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "Camera framing remains broadly similar, but the candidate introduces a large occluding wall/pillar in the left foreground that degrades composition and changes the view significantly.",
+        "score": 2
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "Lighting is broadly consistent, but the helmet shell material/color is incorrect relative to the requested dark green intent and looks blue in the candidate.",
+        "score": 2
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "Sofa, coffee table, floor lamp, and helmet are all present and the objects remain intact without obvious geometry breakage or intersections.",
+        "score": 3
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "The revision is not cleanly isolated: the helmet color shifts to blue instead of dark green, the foreground occlusion changes the composition, and the table repositioning is not clearly controlled across views.",
+        "score": 2
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.0010359000000000002,
+  "other_output_cost_usd": 0.00471,
+  "output_cost_usd": 0.001413,
+  "provider_request_id": "req_3df68e7b879e4682bb7b25b5abe0f4ed",
+  "reasoning_cost_usd": 0.0,
+  "reservation_id": "cf11bcb0-4174-453d-98ed-feedd71b35e9",
+  "response_id": "resp_0c635595cecf4974016aa1d9aeb16087d29eb701ac149c4d92",
+  "returned_model": "gpt-5.4-mini-2026-03-17",
+  "usage": {
+    "cached_input_tokens": 6272,
+    "input_tokens": 7026,
+    "output_tokens": 314,
+    "reasoning_tokens": 0,
+    "total_tokens": 7340,
+    "usage_certainty": "known"
+  }
+}

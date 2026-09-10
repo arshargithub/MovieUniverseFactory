@@ -1,0 +1,52 @@
+{
+  "cost_usd": 0.023190000000000002,
+  "data": {
+    "confidence": 0.95,
+    "critical_findings": [],
+    "recommendation": "pass",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "All required objects remain present in the candidate views: sofa, coffee table, floor lamp, and motorcycle helmet. The coffee table is visibly closer to the sofa than in the baseline, and the helmet shell has clearly changed from red to a dark green tone.",
+        "score": 5
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "Camera framing and shot selection are effectively unchanged across baseline and candidate for shots A, B, and C, preserving composition and coverage of the scene.",
+        "score": 5
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "Lighting appears stable across the revision with consistent soft illumination and similar shadowing. Materials remain coherent, and the helmet shell reads as a dark green glossy finish.",
+        "score": 4
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "Objects appear well-placed with no obvious new intersections or floating artifacts. The moved table still sits plausibly on the floor and the helmet remains properly seated on the sofa cushion.",
+        "score": 4
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "Scene continuity is strong: the sofa, lamp, room geometry, and helmet position are consistent, while the intended edits are isolated to the coffee table position and helmet shell color.",
+        "score": 5
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.017565,
+  "other_output_cost_usd": 0.004245,
+  "output_cost_usd": 0.005625,
+  "provider_request_id": "req_d68b83211970470786af3b418134bcd1",
+  "reasoning_cost_usd": 0.00138,
+  "reservation_id": "a4431dcb-c14d-4235-afc4-d3e2bc972a1a",
+  "response_id": "resp_028c456a75a60899016aa1daaf18e487d2b279ffe25e38addc",
+  "returned_model": "gpt-5.4-2026-03-05",
+  "usage": {
+    "cached_input_tokens": 0,
+    "input_tokens": 7026,
+    "output_tokens": 375,
+    "reasoning_tokens": 92,
+    "total_tokens": 7401,
+    "usage_certainty": "known"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "cost_usd": 0.0021946500000000002,
+  "data": {
+    "confidence": 0.72,
+    "critical_findings": [
+      "Camera/viewpoint and crop changed between baseline and candidate shots instead of remaining locked.",
+      "Coffee table relocation is not cleanly isolated; composition changes make the exact 0.4 m move difficult to verify precisely."
+    ],
+    "recommendation": "repair",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "Helmet shell changes from red to dark green, and the coffee table appears moved closer to the sofa in the candidate views.",
+        "score": 4
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "Camera framing stays broadly consistent, but the candidate views show a noticeable repositioning/crop shift versus baseline, reducing shot continuity.",
+        "score": 3
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "Lighting remains soft and similar overall; material response on the helmet shell remains plausible after recolor, with no major lighting drift.",
+        "score": 4
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "Helmet finish looks clean and cohesive; the new green shell reads as a solid procedural material with acceptable reflections and no obvious mesh artifacts.",
+        "score": 4
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "The requested edits are present, but the table move and helmet recolor are accompanied by visible camera drift and changed composition between baseline and candidate.",
+        "score": 3
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.00098415,
+  "other_output_cost_usd": 0.004035,
+  "output_cost_usd": 0.0012105,
+  "provider_request_id": "req_ddc08c2d6a4d4af88d3c3c2a6e4df50b",
+  "reasoning_cost_usd": 0.0,
+  "reservation_id": "20943d15-4fbf-41a8-b2d9-41454b58f3ed",
+  "response_id": "resp_0941a9e61524a6fc016aa1d70bb31887d2b5d8143ca8839092",
+  "returned_model": "gpt-5.4-mini-2026-03-17",
+  "usage": {
+    "cached_input_tokens": 6272,
+    "input_tokens": 6957,
+    "output_tokens": 269,
+    "reasoning_tokens": 0,
+    "total_tokens": 7226,
+    "usage_certainty": "known"
+  }
+}

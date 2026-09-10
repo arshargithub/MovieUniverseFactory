@@ -1,0 +1,56 @@
+{
+  "cost_usd": 0.00684,
+  "data": {
+    "confidence": 0.91,
+    "critical_findings": [
+      "Helmet shell remains visibly red instead of dark green in the candidate images.",
+      "Requested color-only revision is not clearly achieved; the helmet appears to have no visible shell recolor.",
+      "Coffee table movement toward the sofa is visible, but the core helmet edit is missing."
+    ],
+    "recommendation": "reject",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "The sofa, floor lamp, coffee table, and helmet are present, and the coffee table appears moved closer to the sofa. However, the helmet does not read as changed from red to dark green; it remains visibly red in the candidate views.",
+        "score": 2
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "Camera framing stays consistent across baseline and candidate with only the intended object repositioning visible. Composition remains coherent and the close-up inserts still support inspection.",
+        "score": 4
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "The helmet shell color is still red rather than dark green, with strong specular highlights preserving a glossy red appearance. Lighting is otherwise stable but does not support the requested material/color change.",
+        "score": 2
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "The rendered objects maintain generally plausible geometry and surface finish, with no obvious severe intersections or broken topology. The helmet visor and sofa/table surfaces remain cleanly modeled, though the edit does not achieve the intended shell recolor.",
+        "score": 3
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "Scene continuity is mostly preserved between baseline and candidate, and the coffee table shift toward the sofa is visible. The main continuity failure is the unchanged helmet shell color, which makes the requested revision incomplete.",
+        "score": 3
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.0052695,
+  "other_output_cost_usd": 0.005235,
+  "output_cost_usd": 0.0015705,
+  "provider_request_id": "req_164e61991c704b6cba87bc16a3a67557",
+  "reasoning_cost_usd": 0.0,
+  "reservation_id": "99ce0d30-f281-4be0-b085-7f9e407e98a9",
+  "response_id": "resp_0dde93d400e9cb14016aa1d933dd4087d2a1568d3ef86adfdf",
+  "returned_model": "gpt-5.4-mini-2026-03-17",
+  "usage": {
+    "cached_input_tokens": 0,
+    "input_tokens": 7026,
+    "output_tokens": 349,
+    "reasoning_tokens": 0,
+    "total_tokens": 7375,
+    "usage_certainty": "known"
+  }
+}

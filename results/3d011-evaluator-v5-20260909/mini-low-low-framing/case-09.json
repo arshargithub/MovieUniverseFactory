@@ -1,0 +1,52 @@
+{
+  "cost_usd": 0.00475125,
+  "data": {
+    "confidence": 0.77,
+    "critical_findings": [],
+    "recommendation": "pass",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "Candidate preserves sofa, coffee table, floor lamp, and helmet; the helmet shell is changed from red to dark green, and the coffee table is visibly moved closer to the sofa.",
+        "score": 4
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "Camera framing remains consistent enough across baseline and candidate, with the wide and medium views still readable and the lamp retained in the wide coverage.",
+        "score": 4
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "Lighting stays stable and the helmet material reads as a darker green shell with the same visor and hardware treatment; no obvious lighting shift or material breakage is visible.",
+        "score": 4
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "Scene objects remain intact with clean edges and no apparent intersections or deformation beyond the intended repositioning of the table.",
+        "score": 4
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "The revision is visually coherent across matched views: the coffee table position shifts toward the sofa, while the helmet color changes consistently from red to green without other intended scene changes.",
+        "score": 4
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.00313125,
+  "other_output_cost_usd": 0.003795,
+  "output_cost_usd": 0.00162,
+  "provider_request_id": "req_96eafdedc8904057b495f35ebfe69819",
+  "reasoning_cost_usd": 0.0004815,
+  "reservation_id": "095cf4c6-b534-40c8-be94-0d9bae234e20",
+  "response_id": "resp_074103fc9f6f8b61016aa211ac209487d297101e6d027a00e3",
+  "returned_model": "gpt-5.4-mini-2026-03-17",
+  "usage": {
+    "cached_input_tokens": 3200,
+    "input_tokens": 7055,
+    "output_tokens": 360,
+    "reasoning_tokens": 107,
+    "total_tokens": 7415,
+    "usage_certainty": "known"
+  }
+}

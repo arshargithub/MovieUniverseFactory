@@ -1,0 +1,54 @@
+{
+  "cost_usd": 0.025167000000000002,
+  "data": {
+    "confidence": 0.95,
+    "critical_findings": [
+      "Floor lamp visible in baseline shot_A is missing in candidate shot_A."
+    ],
+    "recommendation": "reject",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "The candidate clearly changes the helmet shell from red to dark green and moves the coffee table closer to the sofa, but it fails the required scene contents because the floor lamp present in baseline shot_A is missing in candidate shot_A.",
+        "score": 2
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "Camera viewpoints and framing are well matched across the three shots, with no major crop, angle, or composition drift between baseline and candidate.",
+        "score": 4
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "Lighting remains broadly consistent, and the helmet shell reads as a plausible dark green material while the visor and metal side fasteners stay visually coherent.",
+        "score": 4
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "Geometry and contacts are generally clean: the table sits plausibly on the floor and the helmet remains stably placed on the sofa without obvious intersections or broken surfaces.",
+        "score": 4
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "The intended revision is only partially successful: the coffee table is visibly closer to the sofa and the helmet shell is dark green, but the floor lamp has been unintentionally removed, breaking scene continuity and violating the 'change only the helmet shell' constraint.",
+        "score": 2
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.012957,
+  "other_output_cost_usd": 0.00447,
+  "output_cost_usd": 0.01221,
+  "provider_request_id": "req_cab47e0cca9d428b9ae1244bbb6fd655",
+  "reasoning_cost_usd": 0.00774,
+  "reservation_id": "632fd55d-093f-4c31-b6a3-14ea75c22035",
+  "response_id": "resp_0a4ae87f031c4e90016aa1db98560087d2aa5ebac1bb9052bd",
+  "returned_model": "gpt-5.4-2026-03-05",
+  "usage": {
+    "cached_input_tokens": 2048,
+    "input_tokens": 7026,
+    "output_tokens": 814,
+    "reasoning_tokens": 516,
+    "total_tokens": 7840,
+    "usage_certainty": "known"
+  }
+}

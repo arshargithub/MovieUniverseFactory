@@ -1,0 +1,55 @@
+{
+  "cost_usd": 0.003555,
+  "data": {
+    "confidence": 0.84,
+    "critical_findings": [
+      "Large unintended foreground wall/occluder intrudes into the candidate view, degrading composition and continuity.",
+      "Candidate rendering is noticeably noisy/grainy compared with a clean procedural prototype expectation."
+    ],
+    "recommendation": "reject",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "Candidate shows the sofa, coffee table, floor lamp, and helmet. The coffee table appears moved closer toward the sofa, and the helmet shell has changed from red to dark green.",
+        "score": 4
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "Camera framing is broadly consistent, but the candidate includes a large distracting occluding wall/edge in one view and the crop/composition feels less clean than baseline.",
+        "score": 3
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "Lighting remains generally similar, and the helmet color change is visible. However, the candidate helmet surface appears somewhat noisy/flat and the overall render quality is grainy.",
+        "score": 3
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "Objects are intact and recognizable, but the helmet and furniture materials look mildly synthetic and the scene has noticeable render noise.",
+        "score": 3
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "There is an unintended major composition change with a large foreground wall/occluder visible in the candidate view, which disrupts continuity across the shot sequence.",
+        "score": 2
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.0022455,
+  "other_output_cost_usd": 0.004365,
+  "output_cost_usd": 0.0013095,
+  "provider_request_id": "req_e7cb0486784b4e9e950a50ed8d4060a5",
+  "reasoning_cost_usd": 0.0,
+  "reservation_id": "5890de99-7ac5-454a-b413-37e4cd2f9e08",
+  "response_id": "resp_048ed091dade0b2a016aa1d954bb9887d28d0dc138edf4627d",
+  "returned_model": "gpt-5.4-mini-2026-03-17",
+  "usage": {
+    "cached_input_tokens": 4480,
+    "input_tokens": 7026,
+    "output_tokens": 291,
+    "reasoning_tokens": 0,
+    "total_tokens": 7317,
+    "usage_certainty": "known"
+  }
+}

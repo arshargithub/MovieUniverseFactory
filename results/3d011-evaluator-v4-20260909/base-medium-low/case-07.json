@@ -1,0 +1,55 @@
+{
+  "cost_usd": 0.023187,
+  "data": {
+    "confidence": 0.95,
+    "critical_findings": [
+      "The motorcycle helmet shell is blue in the candidate instead of dark green.",
+      "The requested helmet color change from red to dark green is therefore not correctly achieved."
+    ],
+    "recommendation": "repair",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "All required scene objects are present across the set. The coffee table is visibly moved closer to the sofa in the candidate views, but the helmet shell changes from red to blue rather than to dark green.",
+        "score": 2
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "Camera framing and shot matching remain consistent between baseline and candidate across shots A, B, and C, with no meaningful viewpoint drift or degraded composition.",
+        "score": 4
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "Overall lighting direction, exposure, and material response stay stable. Sofa, table, lamp, and visor materials remain coherent, though the helmet color revision is clearly the wrong hue.",
+        "score": 4
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "Geometry looks clean and stable, with no obvious intersections or broken placement after the table move. The moved table still sits plausibly on the floor.",
+        "score": 4
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "The intended table movement toward the sofa is preserved across views, but the helmet shell revision does not match the requested dark green and instead appears blue; otherwise the scene remains largely unchanged.",
+        "score": 2
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.012957,
+  "other_output_cost_usd": 0.004515,
+  "output_cost_usd": 0.01023,
+  "provider_request_id": "req_91f19d7fde0a421f8655b5c70762dc8a",
+  "reasoning_cost_usd": 0.005715,
+  "reservation_id": "eec91762-cf3b-4d22-93fd-4a08ad09ddef",
+  "response_id": "resp_0e9fd8a158448818016aa1db74564887d2ad0c81c08cd226ab",
+  "returned_model": "gpt-5.4-2026-03-05",
+  "usage": {
+    "cached_input_tokens": 2048,
+    "input_tokens": 7026,
+    "output_tokens": 682,
+    "reasoning_tokens": 381,
+    "total_tokens": 7708,
+    "usage_certainty": "known"
+  }
+}

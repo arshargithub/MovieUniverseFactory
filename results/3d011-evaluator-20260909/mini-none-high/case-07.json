@@ -1,0 +1,56 @@
+{
+  "cost_usd": 0.0025996500000000002,
+  "data": {
+    "confidence": 0.95,
+    "critical_findings": [
+      "Helmet shell color is incorrect in the candidate: blue instead of dark green #163D2A.",
+      "Coffee table relocation is not clearly exactly 0.4 metres toward the sofa.",
+      "Unintended appearance drift is present in the revision sequence, reducing continuity confidence."
+    ],
+    "recommendation": "reject",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "Helmet color changes are present, but the requested dark green #163D2A was not achieved; it remains red in one set and blue in the revision. The coffee table position also appears changed, but not clearly by the exact requested 0.4 m toward the sofa.",
+        "score": 2
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "Camera angle and framing are broadly consistent across baseline and candidate, with no major compositional collapse, though the close-up/overall perspective suggests some minor drift or inconsistency between the paired views.",
+        "score": 3
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "Lighting remains soft and neutral overall, but the helmet material/color response shifts significantly and incorrectly between views, and the candidate introduces a different color appearance without matching the requested target.",
+        "score": 3
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "Geometry and surfaces remain mostly intact, but the helmet finish/color is incorrect and the table placement change creates a noticeable composition shift that is not verified as physically exact.",
+        "score": 3
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "The revision does not preserve the helmet color requirement: the candidate helmet is blue instead of dark green #163D2A. The coffee table move is not clearly exact, and the pair shows an unintended color mismatch relative to the baseline.",
+        "score": 1
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.00098415,
+  "other_output_cost_usd": 0.005385,
+  "output_cost_usd": 0.0016155,
+  "provider_request_id": "req_575de1d9d02f46239655e3793dc6b575",
+  "reasoning_cost_usd": 0.0,
+  "reservation_id": "8e6cde62-930f-4d38-b2fa-369f40866df5",
+  "response_id": "resp_0500601815a7fcce016aa1d71e8fe087d285ce5caee33fdd6e",
+  "returned_model": "gpt-5.4-mini-2026-03-17",
+  "usage": {
+    "cached_input_tokens": 6272,
+    "input_tokens": 6957,
+    "output_tokens": 359,
+    "reasoning_tokens": 0,
+    "total_tokens": 7316,
+    "usage_certainty": "known"
+  }
+}

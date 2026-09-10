@@ -1,0 +1,52 @@
+{
+  "cost_usd": 0.029445,
+  "data": {
+    "confidence": 0.9,
+    "critical_findings": [],
+    "recommendation": "pass",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "All required scene elements are present in the wide view: sofa, coffee table, floor lamp, and motorcycle helmet. In the revision, the coffee table is visibly moved closer toward the sofa, and the helmet shell changes from red to a dark green tone.",
+        "score": 5
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "Camera framing and composition remain consistent across baseline and revision in all three matched shots, with no noticeable camera drift or reframing.",
+        "score": 5
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "Lighting remains consistent and the helmet shell reads as intentionally dark green rather than red in the revision. Material response on the helmet visor and sofa stays coherent, though the very dark lighting limits precise color/material inspection.",
+        "score": 4
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "Objects appear cleanly modeled and placed, with no obvious new intersections, broken geometry, or rendering artifacts introduced by the revision.",
+        "score": 4
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "The requested changes are isolated well: the coffee table shifts toward the sofa and the helmet shell color changes, while the sofa, lamp, camera, and overall scene layout remain stable.",
+        "score": 5
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.017565,
+  "other_output_cost_usd": 0.0042,
+  "output_cost_usd": 0.01188,
+  "provider_request_id": "req_3a8da119b306472f9c83b935a1398e03",
+  "reasoning_cost_usd": 0.00768,
+  "reservation_id": "6ac5c8a9-9474-429f-b832-9aacebc405dd",
+  "response_id": "resp_033f3a25ed08bb0c016aa1db604e1487d2b03c641cdce4f4b9",
+  "returned_model": "gpt-5.4-2026-03-05",
+  "usage": {
+    "cached_input_tokens": 0,
+    "input_tokens": 7026,
+    "output_tokens": 792,
+    "reasoning_tokens": 512,
+    "total_tokens": 7818,
+    "usage_certainty": "known"
+  }
+}

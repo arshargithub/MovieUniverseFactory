@@ -1,0 +1,56 @@
+{
+  "cost_usd": 0.026321999999999998,
+  "data": {
+    "confidence": 0.98,
+    "critical_findings": [
+      "Candidate shot A is a blank gray frame with no visible sofa, coffee table, floor lamp, or motorcycle helmet.",
+      "The baseline wide establishing composition is lost in candidate shot A, creating a major camera/content continuity break.",
+      "Because candidate shot A is empty, required object presence and the requested revision cannot be verified across the full shot set."
+    ],
+    "recommendation": "reject",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "The candidate clearly changes the helmet shell from red to dark green in shots B and C, and the coffee table appears moved closer to the sofa in shot B. However, candidate shot A is a blank gray frame with none of the required scene objects visible, so the full requested revision is not delivered across the shot set.",
+        "score": 2
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "Shots B and C roughly preserve the baseline framing, but shot A is a complete composition failure: the baseline wide establishing view is replaced by an empty gray image.",
+        "score": 1
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "In shots B and C, lighting and the helmet material read consistently and the new green shell is plausible. But shot A has total render/content failure, indicating severe inconsistency across the sequence.",
+        "score": 2
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "Visible geometry in candidate shots B and C looks intact, with no obvious new intersections or broken object shapes. The coffee table and helmet appear physically plausible in those views.",
+        "score": 3
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "The revision is not continuous across the three-shot set because candidate shot A is missing entirely. This introduces major shot-to-shot discontinuity and prevents verification of object presence and unchanged scene state in that view.",
+        "score": 1
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.012957,
+  "other_output_cost_usd": 0.005625,
+  "output_cost_usd": 0.013365,
+  "provider_request_id": "req_ae45111cf1e64673b3dc264dd30dcf06",
+  "reasoning_cost_usd": 0.00774,
+  "reservation_id": "f7db4f91-2712-4642-811f-f7b5f20e1ea1",
+  "response_id": "resp_0a02de73d70d38b8016aa1db8c7f6887d285efe09c7f7224cf",
+  "returned_model": "gpt-5.4-2026-03-05",
+  "usage": {
+    "cached_input_tokens": 2048,
+    "input_tokens": 7026,
+    "output_tokens": 891,
+    "reasoning_tokens": 516,
+    "total_tokens": 7917,
+    "usage_certainty": "known"
+  }
+}

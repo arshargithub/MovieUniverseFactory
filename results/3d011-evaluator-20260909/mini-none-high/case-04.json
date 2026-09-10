@@ -1,0 +1,58 @@
+{
+  "cost_usd": 0.0027931500000000003,
+  "data": {
+    "confidence": 0.89,
+    "critical_findings": [
+      "Coffee table relocation is not clearly exactly 0.4 metres toward the sofa; the displacement appears uncontrolled and not verifiable from the revision.",
+      "Helmet shell color is not clearly the requested dark green #163D2A; it reads very dark/black under changed lighting rather than an unambiguous target green.",
+      "Candidate introduces major camera/framing drift, including different occlusion and tighter compositions across the shot set.",
+      "Lighting/exposure changes substantially between baseline and candidate, with a strong red/orange cast and darker overall scene.",
+      "Image quality degrades in the candidate with heavy noise/grain and reduced material readability."
+    ],
+    "recommendation": "reject",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "The helmet color changes toward dark green in the candidate, but the coffee table movement is not clearly the requested exact 0.4 m toward the sofa; the scene composition and table placement appear substantially altered and not verifiably exact.",
+        "score": 2
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "Candidate views show noticeable camera/framing drift versus baseline, including different occlusion by the wall and much tighter/darker compositions, indicating the shot setup is not preserved.",
+        "score": 2
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "Lighting shifts dramatically from bright neutral to dark red/orange tinted exposure, with altered material appearance and stronger noise/grain, suggesting unintended lighting/material drift.",
+        "score": 2
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "The helmet finish becomes very dark and glossy with reduced readable detail; the dark green target color is not cleanly represented and the object reads inconsistently under the changed lighting.",
+        "score": 2
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "There are major continuity issues across the candidate shots: strong color/lighting drift, altered camera position, and the coffee table appears moved in a way that is not consistently controlled or exact.",
+        "score": 1
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.00098415,
+  "other_output_cost_usd": 0.00603,
+  "output_cost_usd": 0.001809,
+  "provider_request_id": "req_b556699666134b5d887e7f1e603e52a0",
+  "reasoning_cost_usd": 0.0,
+  "reservation_id": "93f50347-3415-46f8-951e-37afaae3222b",
+  "response_id": "resp_0ac924b0dffdcb49016aa1d7102d1c87d295d1abb5e9238968",
+  "returned_model": "gpt-5.4-mini-2026-03-17",
+  "usage": {
+    "cached_input_tokens": 6272,
+    "input_tokens": 6957,
+    "output_tokens": 402,
+    "reasoning_tokens": 0,
+    "total_tokens": 7359,
+    "usage_certainty": "known"
+  }
+}

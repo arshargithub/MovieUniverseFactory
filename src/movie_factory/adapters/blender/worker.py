@@ -419,6 +419,51 @@ def revise(operations):
     return applied
 
 
+EVALUATOR_CORRUPTIONS={"missing_object","wrong_color","camera_drift","lighting_drift","intersection","degraded_composition"}
+
+
+def evaluator_corrupt(corruption):
+    """Apply one fixed, labeled corruption for the offline evaluator benchmark."""
+    if not isinstance(corruption,dict) or set(corruption)!={"kind"} or corruption["kind"] not in EVALUATOR_CORRUPTIONS:
+        raise ValueError("Unsupported evaluator corruption")
+    kind=corruption["kind"]
+    objects={o.get("mf_id"):o for o in bpy.context.scene.objects if o.get("mf_id")}
+    if kind=="missing_object":
+        root=objects["floor_lamp_01"]
+        stack=[root]
+        while stack:
+            current=stack.pop()
+            current.hide_render=True
+            stack.extend(current.children)
+    elif kind=="wrong_color":
+        mat=bpy.data.materials.get("helmet_shell_01")
+        if not mat or not mat.use_nodes:
+            raise ValueError("Missing helmet material")
+        mat.node_tree.nodes["Principled BSDF"].inputs["Base Color"].default_value=color("#1565C0")
+    elif kind=="camera_drift":
+        camera=objects["camera_B"]
+        camera.rotation_euler[2]+=.72
+        camera.data.lens=58
+    elif kind=="lighting_drift":
+        key=objects["key_light_01"]
+        fill=objects["fill_light_01"]
+        key.data.energy=90
+        key.data.color=color("#C62828")[:3]
+        fill.data.energy=25
+    elif kind=="intersection":
+        table=objects["coffee_table_01"]
+        sofa=objects["sofa_01"]
+        table.location.x=sofa.location.x
+        table.location.y=sofa.location.y-.25
+        table.location.z=.45
+    elif kind=="degraded_composition":
+        camera=objects["camera_A"]
+        camera.rotation_euler[2]+=.95
+        camera.data.lens=110
+    bpy.context.view_layer.update()
+    return {"kind":kind,"fixture_only":True}
+
+
 PALETTE={"helmet_01":[255,0,0],"coffee_table_01":[0,255,0],"sofa_01":[0,0,255],
          "floor_lamp_01":[255,255,0],"room_01":[128,128,128]}
 
@@ -501,7 +546,7 @@ def main():
         profile=job["profile"]
         if mode=="build":
             build(job["plan"],profile)
-        elif mode in {"revise","inspect","render"}:
+        elif mode in {"revise","inspect","render","evaluator_corrupt"}:
             native=Path(job["parent_native"])
             if native.resolve()==(out/"scene.blend").resolve():
                 raise ValueError("Parent native may never be overwritten")
@@ -510,13 +555,17 @@ def main():
                 mutations=revise(job["operations"])
                 write_json(out/"mutations.json",mutations)
                 status["artifacts"].append("mutations.json")
+            elif mode=="evaluator_corrupt":
+                mutation=evaluator_corrupt(job.get("corruption"))
+                write_json(out/"corruption.json",mutation)
+                status["artifacts"].append("corruption.json")
         else:
             raise ValueError("Unknown worker mode")
-        if mode in {"build","revise"}:
+        if mode in {"build","revise","evaluator_corrupt"}:
             bpy.context.preferences.filepaths.save_version=0
             bpy.ops.wm.save_as_mainfile(filepath=str(out/"scene.blend"),check_existing=False,compress=True)
             status["artifacts"].append("scene.blend")
-        if mode in {"build","revise","inspect"}:
+        if mode in {"build","revise","inspect","evaluator_corrupt"}:
             state=inspector.snapshot()
             write_json(out/"snapshot.json",state)
             status["artifacts"].append("snapshot.json")

@@ -1,0 +1,56 @@
+{
+  "cost_usd": 0.0025996500000000002,
+  "data": {
+    "confidence": 0.77,
+    "critical_findings": [
+      "Helmet shell color is not an exact match to dark green #163D2A; it reads slightly brighter/lighter green.",
+      "Coffee table relocation appears approximate rather than clearly exactly 0.4 metres toward the sofa.",
+      "Minor camera/composition drift is visible between baseline and candidate views."
+    ],
+    "recommendation": "repair",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "Coffee table appears moved closer to the sofa in the candidate views, and the helmet shell is changed from red to dark green. The color is close to the requested tone but slightly lighter/less saturated than #163D2A.",
+        "score": 4
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "Camera framing and perspective remain broadly consistent, but the candidate sequence shows minor viewpoint drift/cropping changes compared with baseline, including the foreground wall occlusion and slightly altered composition.",
+        "score": 3
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "Overall lighting stays similar, but the candidate helmet material reads a bit different in reflectance and brightness, with the green shell appearing more glossy and less color-accurate than requested.",
+        "score": 3
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "Scene geometry looks intact with no obvious missing objects or severe intersections, though the revised coffee table position creates a tighter spatial relationship and slightly more crowded composition.",
+        "score": 3
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "The requested edits are present, but not exact: the helmet color is not an exact dark green #163D2A, and the table move is only approximate rather than clearly exactly 0.4 metres. Minor shot-to-shot composition differences remain.",
+        "score": 3
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.00098415,
+  "other_output_cost_usd": 0.005385,
+  "output_cost_usd": 0.0016155,
+  "provider_request_id": "req_ae14b2335bd645e4a57705a44098f0ce",
+  "reasoning_cost_usd": 0.0,
+  "reservation_id": "125cb7d0-0937-4cfd-99cd-00a90da5adf2",
+  "response_id": "resp_079f1abd0f48d989016aa1d72f6b9887d2bf69d20403dc0abc",
+  "returned_model": "gpt-5.4-mini-2026-03-17",
+  "usage": {
+    "cached_input_tokens": 6272,
+    "input_tokens": 6957,
+    "output_tokens": 359,
+    "reasoning_tokens": 0,
+    "total_tokens": 7316,
+    "usage_certainty": "known"
+  }
+}

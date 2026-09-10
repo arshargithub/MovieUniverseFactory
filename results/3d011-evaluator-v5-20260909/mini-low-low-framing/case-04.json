@@ -1,0 +1,56 @@
+{
+  "cost_usd": 0.0052777499999999995,
+  "data": {
+    "confidence": 0.87,
+    "critical_findings": [
+      "Severe camera/lighting drift between baseline and candidate views.",
+      "Helmet color change is not cleanly isolated; the candidate scene lighting makes the shell read as dark/black with red reflections rather than a clearly controlled dark green.",
+      "Candidate render quality is substantially darker and noisier than baseline, degrading continuity and material readability."
+    ],
+    "recommendation": "reject",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "Coffee table is moved closer to the sofa in the candidate views, and the helmet shell is no longer red-looking and reads as very dark green/black under the new lighting. Required sofa, coffee table, floor lamp, and helmet are present.",
+        "score": 3
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "Candidate framing and coverage drift noticeably from baseline, with strong composition change and some views partially occluded by foreground walls.",
+        "score": 2
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "Severe lighting shift to a much darker red/orange cast in the candidate images; material appearance of the sofa, table, and helmet changes substantially.",
+        "score": 1
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "Overall render is noisy/grainy with heavy darkness in the candidate set, reducing finish quality and material readability.",
+        "score": 2
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "Candidate introduces major lighting/exposure drift relative to baseline, and the helmet color change is not cleanly isolated because the scene becomes strongly red-tinted and much darker.",
+        "score": 1
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.00313125,
+  "other_output_cost_usd": 0.004815,
+  "output_cost_usd": 0.0021465,
+  "provider_request_id": "req_0c367d56fb0d447f9544052061592ef7",
+  "reasoning_cost_usd": 0.000702,
+  "reservation_id": "1fb9312d-4327-4856-91c8-0ed993983e7c",
+  "response_id": "resp_0a6c8884e8c06659016aa21193d62487d29e5a984ceebea51f",
+  "returned_model": "gpt-5.4-mini-2026-03-17",
+  "usage": {
+    "cached_input_tokens": 3200,
+    "input_tokens": 7055,
+    "output_tokens": 477,
+    "reasoning_tokens": 156,
+    "total_tokens": 7532,
+    "usage_certainty": "known"
+  }
+}

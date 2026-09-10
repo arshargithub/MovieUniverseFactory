@@ -1,0 +1,56 @@
+{
+  "cost_usd": 0.00244665,
+  "data": {
+    "confidence": 0.87,
+    "critical_findings": [
+      "Helmet shell remains red instead of dark green #163D2A.",
+      "Coffee table position does not appear to reflect an exact 0.4 m move toward the sofa; the layout/composition shifts noticeably.",
+      "The candidate introduces a stronger near-camera table placement in some views, changing scene composition beyond the requested edit."
+    ],
+    "recommendation": "reject",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "The helmet color was not changed to dark green; it remains red in the candidate views. The coffee table also appears moved more than the requested 0.4 m toward the sofa, significantly altering composition.",
+        "score": 1
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "Camera framing and perspective are broadly consistent between baseline and candidate, with no major view change beyond the object placement shift.",
+        "score": 3
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "Lighting direction and overall material response remain mostly consistent, though the scene stays very dark and green-tinted, making the revision harder to verify cleanly.",
+        "score": 3
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "The helmet surface still reads as glossy red with strong specular highlights rather than a dark green shell; the table and sofa materials otherwise look intact.",
+        "score": 2
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "The required edit is not correctly applied: helmet color is wrong and the coffee table relocation does not match the specified exact 0.4 m adjustment. This creates visible continuity mismatch between baseline and candidate.",
+        "score": 1
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.00098415,
+  "other_output_cost_usd": 0.004875,
+  "output_cost_usd": 0.0014625,
+  "provider_request_id": "req_8a9d307fb9fe45f080f4c3de72afb3bf",
+  "reasoning_cost_usd": 0.0,
+  "reservation_id": "3713ea55-716a-405e-9981-7c15b9123f24",
+  "response_id": "resp_0b4cbe3112d620bc016aa1d7161bb887d290ea39d6200394f3",
+  "returned_model": "gpt-5.4-mini-2026-03-17",
+  "usage": {
+    "cached_input_tokens": 6272,
+    "input_tokens": 6957,
+    "output_tokens": 325,
+    "reasoning_tokens": 0,
+    "total_tokens": 7282,
+    "usage_certainty": "known"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "cost_usd": 0.020532,
+  "data": {
+    "confidence": 0.97,
+    "critical_findings": [
+      "Candidate shot_A is a blank frame with the scene missing entirely.",
+      "Required objects are not visible in candidate shot_A because the whole scene is absent.",
+      "The delivered candidate sequence breaks camera/output continuity due to the unusable first revised shot."
+    ],
+    "recommendation": "reject",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "The visible revision in candidate shot_B and shot_C moves the coffee table closer to the sofa and changes the helmet shell from red to dark green, but candidate shot_A is a blank frame with the required scene objects absent.",
+        "score": 2
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "Candidate shot_A is an unusable blank image, breaking the expected three-shot sequence and severely degrading presentation. Candidate shot_B and shot_C otherwise roughly match baseline framing.",
+        "score": 1
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "In candidate shot_B and shot_C, lighting remains generally consistent and the helmet shell reads as a dark green material with similar gloss to baseline. However, the blank candidate shot_A prevents full sequence consistency.",
+        "score": 3
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "Candidate shot_B and shot_C appear physically plausible with no obvious object intersections introduced by the table move, but the blank candidate shot_A is a major render/output defect.",
+        "score": 3
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "Continuity is badly broken because candidate shot_A does not preserve the scene at all. While shot_B and shot_C keep the sofa, coffee table, and helmet consistent and show the intended table move and helmet recolor, the sequence as delivered is incomplete.",
+        "score": 1
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.012957,
+  "other_output_cost_usd": 0.005235,
+  "output_cost_usd": 0.007575,
+  "provider_request_id": "req_4b31e062b1214cb08a5292b4b08440d3",
+  "reasoning_cost_usd": 0.00234,
+  "reservation_id": "6fb0aa6b-9916-4ebf-979b-248976e19344",
+  "response_id": "resp_09eb98fe9e53af5e016aa1daa18bd087d29667988b2120a236",
+  "returned_model": "gpt-5.4-2026-03-05",
+  "usage": {
+    "cached_input_tokens": 2048,
+    "input_tokens": 7026,
+    "output_tokens": 505,
+    "reasoning_tokens": 156,
+    "total_tokens": 7531,
+    "usage_certainty": "known"
+  }
+}

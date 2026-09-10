@@ -1,7 +1,8 @@
 """Metered, stateless Responses calls; one physical request per invocation.
 
-Verified sources (2026-09-08):
+Verified sources (2026-09-09):
 https://developers.openai.com/api/docs/models/gpt-5.4
+https://developers.openai.com/api/docs/models/gpt-5.4-mini
 https://developers.openai.com/api/docs/guides/structured-outputs
 https://developers.openai.com/api/docs/guides/images-vision
 https://developers.openai.com/api/docs/guides/reasoning
@@ -30,6 +31,14 @@ PRICEBOOK = {"model": MODEL, "currency": "USD", "input_per_million": 2.5,
              "input_ceiling": 200_000, "service_tier": "default",
              "source": "https://developers.openai.com/api/docs/models/gpt-5.4",
              "verified_date": "2026-09-08"}
+MINI_MODEL = "gpt-5.4-mini-2026-03-17"
+MINI_PRICEBOOK = {"model": MINI_MODEL, "currency": "USD", "input_per_million": .75,
+                  "cached_input_per_million": .075, "output_per_million": 4.5,
+                  "input_ceiling": 200_000, "long_context_threshold": 272_000,
+                  "service_tier": "default",
+                  "source": "https://developers.openai.com/api/docs/models/gpt-5.4-mini",
+                  "verified_date": "2026-09-09"}
+PRICEBOOKS = {MODEL: PRICEBOOK, MINI_MODEL: MINI_PRICEBOOK}
 
 
 def _dict(value):
@@ -62,17 +71,18 @@ def normalize_usage(raw) -> dict:
     return result
 
 
-def usage_cost(usage: dict) -> dict:
+def usage_cost(usage: dict, pricebook: dict | None = None) -> dict:
     """Reasoning is attribution inside output cost, never an extra charge."""
     if usage.get("usage_certainty") != "known":
         return {"cost_usd": None, "input_cost_usd": None, "output_cost_usd": None,
                 "reasoning_cost_usd": None, "other_output_cost_usd": None}
+    pricebook = pricebook or PRICEBOOK
     i, c, o, r = (usage[name] for name in ("input_tokens", "cached_input_tokens", "output_tokens", "reasoning_tokens"))
-    if i > 272_000:
+    if i > pricebook.get("long_context_threshold", 272_000):
         raise ValueError("unsupported_long_context_pricing")
-    input_cost = ((i - c) * 2.5 + c * 0.25) / 1_000_000
-    output_cost = o * 15 / 1_000_000
-    reasoning_cost = None if r is None else r * 15 / 1_000_000
+    input_cost = ((i - c) * pricebook["input_per_million"] + c * pricebook["cached_input_per_million"]) / 1_000_000
+    output_cost = o * pricebook["output_per_million"] / 1_000_000
+    reasoning_cost = None if r is None else r * pricebook["output_per_million"] / 1_000_000
     return {"cost_usd": input_cost + output_cost, "input_cost_usd": input_cost,
             "output_cost_usd": output_cost, "reasoning_cost_usd": reasoning_cost,
             "other_output_cost_usd": None if r is None else (o - r) * 15 / 1_000_000}
@@ -132,15 +142,19 @@ def _load_json(text: str):
 
 
 class OpenAIProvider:
-    def __init__(self, settings: dict, ledger: BudgetLedger, log_dir: Path, *, client=None):
+    def __init__(self, settings: dict, ledger: BudgetLedger, log_dir: Path, *, client=None, pricebooks=None):
         self.settings, self.ledger, self.log_dir = settings, ledger, Path(log_dir)
         self.secrets = tuple(settings.get(name, "") for name in SECRET_NAMES)
         self.telemetry = Telemetry(self.log_dir / "telemetry.jsonl", secrets=self.secrets)
+        self.pricebooks = dict(pricebooks or PRICEBOOKS)
         for name in ("MF_PLANNER_MODEL", "MF_VISION_MODEL"):
-            if settings.get(name, MODEL) != MODEL:
-                raise ValueError("Only the pinned, priced GPT-5.4 snapshot is qualified")
-        if settings.get("MF_REASONING_EFFORT", "medium") not in {"none", "low", "medium", "high", "xhigh"}:
-            raise ValueError("Unsupported reasoning effort")
+            if settings.get(name, MODEL) not in self.pricebooks:
+                raise ValueError("Requested model has no frozen pricebook")
+        for effort in (settings.get("MF_REASONING_EFFORT", "medium"), settings.get("MF_PLANNER_REASONING_EFFORT", "medium"), settings.get("MF_VISION_REASONING_EFFORT", "medium")):
+            if effort not in {"none", "low", "medium", "high", "xhigh"}:
+                raise ValueError("Unsupported reasoning effort")
+        if settings.get("MF_IMAGE_DETAIL", "high") not in {"low", "high"}:
+            raise ValueError("Unsupported image detail")
         if client is None:
             if not settings.get("OPENAI_API_KEY"):
                 raise ValueError("OPENAI_API_KEY is required for live calls")
@@ -149,7 +163,7 @@ class OpenAIProvider:
                             max_retries=0, timeout=float(settings.get("MF_API_TIMEOUT_SECONDS", 180)))
         self.client = client
 
-    def _prepare(self, prompt, schema, images, max_output_tokens):
+    def _prepare(self, prompt, schema, images, max_output_tokens, pricebook, image_detail):
         if type(max_output_tokens) is not int or not 1 <= max_output_tokens <= min(8192, int(self.settings.get("MF_LLM_MAX_OUTPUT_TOKENS", 8192))):
             raise ValueError("invalid_output_token_limit")
         if not isinstance(prompt, str) or not prompt.strip():
@@ -175,16 +189,16 @@ class OpenAIProvider:
                     raise ValueError("unsupported_image")
                 im.verify()
             mime = {"PNG": "image/png", "JPEG": "image/jpeg", "WEBP": "image/webp"}[fmt]
-            content.append({"type": "input_image", "image_url": f"data:{mime};base64," + base64.b64encode(raw).decode("ascii"), "detail": "high"})
+            content.append({"type": "input_image", "image_url": f"data:{mime};base64," + base64.b64encode(raw).decode("ascii"), "detail": image_detail})
             image_info.append({"sha256": hashlib.sha256(raw).hexdigest(), "width": width,
-                               "height": height, "bytes": len(raw), "mime_type": mime, "detail": "high"})
+                               "height": height, "bytes": len(raw), "mime_type": mime, "detail": image_detail})
         # UTF-8 bytes bound text tokens conservatively; allow protocol overhead.
         # GPT-5.4 high: at most 2500 image patches * 1.2 = 3000 tokens.
         # Reserve 4096 per image, including additional per-item overhead.
         input_bound = len(prompt.encode("utf-8")) + len(schema_text.encode("utf-8")) + 4096 + 4096 * len(images)
-        if input_bound > PRICEBOOK["input_ceiling"]:
+        if input_bound > pricebook["input_ceiling"]:
             raise ValueError("input_exceeds_qualified_pricing_profile")
-        reserve = (input_bound * 2.5 + max_output_tokens * 15) / 1_000_000
+        reserve = (input_bound * pricebook["input_per_million"] + max_output_tokens * pricebook["output_per_million"]) / 1_000_000
         return content, image_info, input_bound, reserve, api_schema
 
     def generate_json(self, *, purpose: str, prompt: str, schema: dict,
@@ -193,12 +207,16 @@ class OpenAIProvider:
         """No automatic retry. Caller may invoke again with a new accounted request."""
         result = {"data": None, "usage": normalize_usage(None), "cost_usd": None,
                   "response_id": None, "error": None, "reservation_id": None}
+        image_inputs = images or []
+        model = self.settings.get("MF_VISION_MODEL" if image_inputs else "MF_PLANNER_MODEL", MODEL)
+        pricebook = self.pricebooks[model]
+        image_detail = self.settings.get("MF_IMAGE_DETAIL", "high")
+        effort = self.settings.get("MF_VISION_REASONING_EFFORT" if image_inputs else "MF_PLANNER_REASONING_EFFORT", self.settings.get("MF_REASONING_EFFORT", "medium"))
         try:
-            content, image_info, input_bound, reserve, api_schema = self._prepare(prompt, schema, images or [], max_output_tokens)
+            content, image_info, input_bound, reserve, api_schema = self._prepare(prompt, schema, image_inputs, max_output_tokens, pricebook, image_detail)
         except Exception as exc:
             result["error"] = "request_validation:" + type(exc).__name__
             return result
-        model = self.settings.get("MF_VISION_MODEL" if images else "MF_PLANNER_MODEL", MODEL)
         scope = self.settings.get("MF_COST_SCOPE", "development")
         try:
             request_id = self.ledger.reserve(run_id=run_id, stage=stage, amount_usd=reserve,
@@ -215,14 +233,14 @@ class OpenAIProvider:
         self.telemetry.emit("provider_request", **common, prompt=prompt, schema=schema,
                             images=image_info, input_token_bound=input_bound,
                             max_output_tokens=max_output_tokens, reserved_usd=reserve,
-                            reasoning_effort=self.settings.get("MF_REASONING_EFFORT", "medium"),
-                            pricebook=PRICEBOOK, status="reserved")
+                            reasoning_effort=effort, image_detail=image_detail,
+                            pricebook=pricebook, status="reserved")
         started = time.monotonic()
         try:
             response = self.client.responses.create(
                 model=model, input=[{"role": "user", "content": content}],
                 text={"format": {"type": "json_schema", "name": "movie_factory_result", "strict": True, "schema": api_schema}},
-                reasoning={"effort": self.settings.get("MF_REASONING_EFFORT", "medium")},
+                reasoning={"effort": effort},
                 max_output_tokens=max_output_tokens, store=False, service_tier="default",
                 tools=[], truncation="disabled")
         except Exception as exc:
@@ -242,7 +260,7 @@ class OpenAIProvider:
         result["provider_request_id"] = getattr(response, "_request_id", None)
         try:
             usage = normalize_usage(raw.get("usage"))
-            costs = usage_cost(usage)
+            costs = usage_cost(usage, pricebook)
             result.update(costs, usage=usage)
             if returned_model != model:
                 result["cost_usd"] = None

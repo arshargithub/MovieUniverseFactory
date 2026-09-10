@@ -1,0 +1,56 @@
+{
+  "cost_usd": 0.0032544,
+  "data": {
+    "confidence": 0.85,
+    "critical_findings": [
+      "Coffee table is pushed too far into the sofa area, creating visible overlap/intersection and degrading spatial realism.",
+      "Helmet shell changes toward green, but the visible result is noisy and not clearly a clean dark-green finish.",
+      "Helmet is heavily occluded by the moved table in the candidate, reducing clarity of the requested color revision."
+    ],
+    "recommendation": "reject",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "Candidate keeps the sofa, coffee table, floor lamp, and helmet present; the table is moved toward the sofa and the helmet shell is visibly changed toward green.",
+        "score": 4
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "Overall camera angle and framing are broadly consistent, but the candidate composition is more cluttered due to the table entering the sofa area and heavy occlusion of the helmet.",
+        "score": 3
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "Lighting remains soft and neutral with similar material response, though the helmet\u2019s dark-green shell still reads somewhat noisy and not cleanly finished.",
+        "score": 3
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "Geometry and materials are serviceable, but the table appears to intersect/press into the sofa area and the helmet is partially hidden under the table.",
+        "score": 3
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "The revision intent is recognizable, but the table shift is visibly aggressive and the helmet color change is not cleanly isolated in appearance.",
+        "score": 3
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.0010359000000000002,
+  "other_output_cost_usd": 0.00468,
+  "output_cost_usd": 0.0022185,
+  "provider_request_id": "req_dca9a02c6b56425ea5fa109a0beda162",
+  "reasoning_cost_usd": 0.0008145,
+  "reservation_id": "27d7c51b-9a87-4f76-be11-7b1484ad44b1",
+  "response_id": "resp_03e734c18b3bbf0a016aa1d9cfc85487d28591f21a63e01c87",
+  "returned_model": "gpt-5.4-mini-2026-03-17",
+  "usage": {
+    "cached_input_tokens": 6272,
+    "input_tokens": 7026,
+    "output_tokens": 493,
+    "reasoning_tokens": 181,
+    "total_tokens": 7519,
+    "usage_certainty": "known"
+  }
+}

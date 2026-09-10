@@ -1,0 +1,54 @@
+{
+  "cost_usd": 0.019452,
+  "data": {
+    "confidence": 0.91,
+    "critical_findings": [
+      "Floor lamp is missing in candidate shot_A despite being present in the baseline and required in the scene."
+    ],
+    "recommendation": "repair",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "The coffee table is visibly moved closer toward the sofa in the candidate views, and the helmet shell changes from red to a dark green. However, the required floor lamp is missing in candidate shot_A, so the full required scene object set is not preserved across the revision.",
+        "score": 3
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "Camera framing and perspective are closely matched to the baseline across the three shots, with no major viewpoint drift or composition break.",
+        "score": 4
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "Lighting remains broadly consistent with the baseline, and the helmet shell material reads as a plausible dark green finish while other materials stay stable overall.",
+        "score": 4
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "Geometry and contact placement look clean, with no obvious object intersections or severe rendering artifacts beyond normal prototype grain.",
+        "score": 4
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "The intended table move and helmet recolor are clearly visible, and most scene elements remain consistent, but the floor lamp present in the baseline disappears in candidate shot_A, which is an unintended scene change.",
+        "score": 3
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.012957,
+  "other_output_cost_usd": 0.00432,
+  "output_cost_usd": 0.006495,
+  "provider_request_id": "req_d640b6709a3446f1b0299980aff5ca95",
+  "reasoning_cost_usd": 0.002175,
+  "reservation_id": "3c36e1c1-5ff2-4582-aff0-e04523da2eff",
+  "response_id": "resp_0e14c06d824c40ad016aa1daa8eaa487d2a4c53be711bd37fe",
+  "returned_model": "gpt-5.4-2026-03-05",
+  "usage": {
+    "cached_input_tokens": 2048,
+    "input_tokens": 7026,
+    "output_tokens": 433,
+    "reasoning_tokens": 145,
+    "total_tokens": 7459,
+    "usage_certainty": "known"
+  }
+}

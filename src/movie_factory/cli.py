@@ -73,12 +73,20 @@ def command_doctor(args) -> int:
 def command_validate(args) -> int:
     root = repo_root()
     errors = {}
-    mapping = {"brief.json":None,"revision.json":None,"campaign.json":None}
-    for name, schema in mapping.items():
-        path = Path(args.experiment) / name
-        if not path.is_absolute(): path = root / path
+    experiment = Path(args.experiment)
+    if not experiment.is_absolute(): experiment = root / experiment
+    campaign_path = experiment / "campaign.json"
+    campaign = read_json(campaign_path) if campaign_path.exists() else {}
+    mapping = {
+        "brief.json": campaign.get("brief_path", "brief.json"),
+        "revision.json": campaign.get("revision_path", "revision.json"),
+        "campaign.json": "campaign.json",
+    }
+    for name, configured_path in mapping.items():
+        path = Path(configured_path)
+        if not path.is_absolute():
+            path = (root / path) if "/" in str(path) else (experiment / path)
         if not path.exists(): errors[name] = ["missing"]
-        elif schema: errors[name] = validate(root,schema,read_json(path))
         else:
             try: read_json(path); errors[name] = []
             except Exception as exc: errors[name] = [str(exc)]
@@ -129,9 +137,34 @@ def command_calibrate(args) -> int:
 def command_qualify(args) -> int:
     if not args.live: raise ValueError("qualification requires explicit --live")
     root=repo_root(); settings=load_settings_safe(root)
-    settings["MF_COST_SCOPE"] = "scored"
     campaign_path=Path(args.campaign); campaign_path=campaign_path if campaign_path.is_absolute() else root/campaign_path
-    campaign=read_json(campaign_path); campaign_id=time.strftime("3d01-%Y%m%dT%H%M%SZ",time.gmtime()); campaign_dir=root/"results"/campaign_id; campaign_dir.mkdir(parents=True)
+    campaign=read_json(campaign_path)
+    setting_fields = {
+        "planner_model":"MF_PLANNER_MODEL", "vision_model":"MF_VISION_MODEL",
+        "planner_reasoning_effort":"MF_PLANNER_REASONING_EFFORT",
+        "vision_reasoning_effort":"MF_VISION_REASONING_EFFORT",
+        "image_detail":"MF_IMAGE_DETAIL",
+    }
+    for field, setting in setting_fields.items():
+        if field in campaign:
+            settings[setting] = campaign[field]
+    settings["MF_COST_SCOPE"] = "scored"
+    prefix=campaign.get("campaign_prefix","3d01")
+    if not isinstance(prefix,str) or not prefix.replace("-","").isalnum():
+        raise ValueError("invalid campaign_prefix")
+    git_status=subprocess.run(["git","status","--porcelain"],cwd=root,text=True,capture_output=True,check=True).stdout
+    if git_status:
+        raise ValueError("qualification source tree must be clean before live dispatch")
+    commit=subprocess.run(["git","rev-parse","HEAD"],cwd=root,text=True,capture_output=True,check=True).stdout.strip()
+    tree=subprocess.run(["git","rev-parse","HEAD^{tree}"],cwd=root,text=True,capture_output=True,check=True).stdout.strip()
+    campaign_id=time.strftime(f"{prefix}-%Y%m%dT%H%M%SZ",time.gmtime()); campaign_dir=root/"results"/campaign_id; campaign_dir.mkdir(parents=True)
+    atomic_json(campaign_dir/"frozen-campaign.json",campaign)
+    atomic_json(campaign_dir/"source-binding.json",{
+        "schema_version":"1.0","status":"EXACT_PRE_RUN","implementation_commit":commit,
+        "implementation_tree":tree,"worktree_clean_before_dispatch":True,
+        "campaign_config_hash":content_id(campaign),
+        "qualification_provenance_note":"Commit and Git tree were recorded from a clean worktree before the first live provider call."
+    })
     from .budget import BudgetLedger
     from .providers.openai_provider import OpenAIProvider
     # One durable ledger covers development checks and every scored campaign so
@@ -280,7 +313,7 @@ def command_export(args) -> int:
     for replay_source in replay_sources:
         if any(replay_source.iterdir()):
             shutil.copytree(replay_source,destination/"replays"/replay_source.name)
-    for relative in ("config","schemas","feasibility/3d/3d-01","docs","prior-art","src","tests"):
+    for relative in ("config","schemas","feasibility/3d/3d-01","feasibility/3d/3d-01-1","docs","prior-art","src","tests"):
         candidate=root/relative
         if candidate.is_dir(): shutil.copytree(candidate,destination/relative)
     for relative in ("MOVIE_FACTORY_3D_FEASIBILITY_SPEC.md","README.md","SETUP_README.md","requirements.lock","pyproject.toml",".python-version",".env.example","AGENTS.md"):
@@ -304,6 +337,27 @@ def command_export(args) -> int:
     print(destination); return 0
 
 
+def command_prepare_evaluator(args) -> int:
+    root=repo_root(); settings=load_settings_safe(root)
+    from .evaluator import prepare_benchmark
+    config_path=Path(args.config); config_path=config_path if config_path.is_absolute() else root/config_path
+    output=Path(args.output); output=output if output.is_absolute() else root/output
+    emit(prepare_benchmark(root,read_json(config_path),output,blender_bin=settings["BLENDER_BIN"]))
+    return 0
+
+
+def command_evaluate_evaluator(args) -> int:
+    if not args.live: raise ValueError("evaluator qualification requires explicit --live")
+    root=repo_root(); settings=load_settings_safe(root)
+    from .evaluator import evaluate_benchmark
+    config_path=Path(args.config); config_path=config_path if config_path.is_absolute() else root/config_path
+    benchmark=Path(args.benchmark); benchmark=benchmark if benchmark.is_absolute() else root/benchmark
+    output=Path(args.output); output=output if output.is_absolute() else root/output
+    summary=evaluate_benchmark(root,read_json(config_path),benchmark,output,settings)
+    emit({"output":str(output),"qualified_candidates":sum(x["qualified"] for x in summary["candidate_results"]),"selected_candidate":summary["selected_candidate"]})
+    return 0 if summary["selected_candidate"] else 3
+
+
 def parser() -> argparse.ArgumentParser:
     p=argparse.ArgumentParser(prog="mf3d"); sub=p.add_subparsers(dest="command",required=True)
     q=sub.add_parser("doctor"); q.add_argument("--engine",default="blender",choices=["blender"]); q.add_argument("--output",type=Path); q.set_defaults(func=command_doctor)
@@ -316,6 +370,8 @@ def parser() -> argparse.ArgumentParser:
     q=sub.add_parser("replay"); q.add_argument("--package",required=True); q.add_argument("--offline",action="store_true"); q.add_argument("--output",required=True); q.set_defaults(func=command_replay)
     q=sub.add_parser("report"); q.add_argument("--campaign",required=True); q.set_defaults(func=command_report)
     q=sub.add_parser("export"); q.add_argument("--campaign",required=True); q.add_argument("--output",required=True); q.set_defaults(func=command_export)
+    q=sub.add_parser("prepare-evaluator"); q.add_argument("--config",required=True); q.add_argument("--output",required=True); q.set_defaults(func=command_prepare_evaluator)
+    q=sub.add_parser("evaluate-evaluator"); q.add_argument("--config",required=True); q.add_argument("--benchmark",required=True); q.add_argument("--output",required=True); q.add_argument("--live",action="store_true"); q.set_defaults(func=command_evaluate_evaluator)
     return p
 
 

@@ -1,0 +1,57 @@
+{
+  "cost_usd": 0.00685575,
+  "data": {
+    "confidence": 0.82,
+    "critical_findings": [
+      "Coffee table was not moved exactly 0.4 m toward the sofa; its position differs substantially and inconsistently across the revision shots.",
+      "Camera/framing drift is present between baseline and candidate, including a large left-side foreground occlusion in the side view.",
+      "Candidate introduces broader compositional changes beyond the requested edits, reducing continuity.",
+      "Helmet shell color change is present, but the requested revision is not clearly isolated or verified as exact."
+    ],
+    "recommendation": "reject",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "Helmet shell changes from red to dark green in the candidate, but the coffee table is not moved exactly 0.4 m toward the sofa; it appears substantially repositioned and the setup/camera framing also changes.",
+        "score": 2
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "Candidate views do not maintain the baseline camera position/framing; there is noticeable viewpoint drift and a large foreground occlusion appears in the left-side shot, degrading composition consistency.",
+        "score": 2
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "Overall lighting remains similar and material response is plausible, but the candidate shows slight shading/render variation and the changed helmet color reads differently under the same lighting.",
+        "score": 3
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "The helmet shell recolor is present and the object remains intact, but the finish is noisy and somewhat synthetic; the table and sofa materials also show no improvement in finish fidelity.",
+        "score": 3
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "The revision is not clearly correct: the coffee table location changes inconsistently across views, camera alignment drifts, and the only requested object color change is mixed with broader compositional changes.",
+        "score": 1
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.00521775,
+  "other_output_cost_usd": 0.00546,
+  "output_cost_usd": 0.001638,
+  "provider_request_id": "req_91dd9a92487b43dc8069c1f0c7974267",
+  "reasoning_cost_usd": 0.0,
+  "reservation_id": "d0dfc474-b4e4-4169-aa02-20d1d0c2d875",
+  "response_id": "resp_05f2a2a49bc06428016aa1d68995ac87d2b879c2416ae7611e",
+  "returned_model": "gpt-5.4-mini-2026-03-17",
+  "usage": {
+    "cached_input_tokens": 0,
+    "input_tokens": 6957,
+    "output_tokens": 364,
+    "reasoning_tokens": 0,
+    "total_tokens": 7321,
+    "usage_certainty": "known"
+  }
+}

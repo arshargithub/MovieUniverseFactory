@@ -1,0 +1,55 @@
+{
+  "cost_usd": 0.00651825,
+  "data": {
+    "confidence": 0.82,
+    "critical_findings": [
+      "Helmet shell is green but not the specified dark green #163D2A.",
+      "Coffee table relocation is not verifiably exactly 0.4 metres toward the sofa."
+    ],
+    "recommendation": "reject",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "Helmet color changes from red to green, but it is not the requested dark green #163D2A; coffee table appears moved closer, but exact 0.4 m shift cannot be confirmed and revision is not clearly correct.",
+        "score": 2
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "Camera angle and framing remain largely consistent across baseline and candidate views, with no major composition drift.",
+        "score": 4
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "Lighting stays broadly stable, but the helmet material/color response changes substantially and the candidate green appears brighter and less dark than requested.",
+        "score": 3
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "Scene geometry is mostly intact, but the helmet finish looks altered by the color change and there is some soft rendering noise/grain; no obvious object loss.",
+        "score": 3
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "The revision is not cleanly continuous with the baseline because the helmet color does not match the specified dark green, and the coffee table move is not verifiably exact.",
+        "score": 2
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.00521775,
+  "other_output_cost_usd": 0.004335,
+  "output_cost_usd": 0.0013005,
+  "provider_request_id": "req_0e974401e0474d88ba27dec0ba17c9a6",
+  "reasoning_cost_usd": 0.0,
+  "reservation_id": "d5870f26-5cbf-46ac-893b-b9edd2c15158",
+  "response_id": "resp_0359cafb25b57f7b016aa1d6b70ae087d282cc2f97eca59a53",
+  "returned_model": "gpt-5.4-mini-2026-03-17",
+  "usage": {
+    "cached_input_tokens": 0,
+    "input_tokens": 6957,
+    "output_tokens": 289,
+    "reasoning_tokens": 0,
+    "total_tokens": 7246,
+    "usage_certainty": "known"
+  }
+}

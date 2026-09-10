@@ -1,0 +1,56 @@
+{
+  "cost_usd": 0.0054675,
+  "data": {
+    "confidence": 0.9,
+    "critical_findings": [
+      "Severe global lighting/color drift between baseline and candidate; candidate becomes dramatically darker and red-tinted.",
+      "Helmet shell change is not cleanly readable as a controlled dark green material edit because the altered lighting makes it appear nearly black/green-black.",
+      "Overall scene continuity is degraded by the unintended appearance change across walls, sofa, floor, and table."
+    ],
+    "recommendation": "reject",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "Sofa, coffee table, floor lamp, and helmet are all present; the coffee table is visibly closer to the sofa in the candidate views, and the helmet shell is no longer red-looking in the revised shots.",
+        "score": 4
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "The candidate introduces a major camera/scene presentation drift: the baseline bright neutral lighting becomes a dark red/orange-tinted look, substantially changing the composition's readability.",
+        "score": 1
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "Lighting and material appearance shift heavily between baseline and candidate; the sofa, floor, walls, and table all take on a deep reddish cast, obscuring the intended selective helmet-only material change.",
+        "score": 1
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "The helmet reads very dark, but under the altered lighting it is difficult to verify a clean dark-green shell finish; the visible result looks closer to black/green-black than a clearly controlled material edit.",
+        "score": 2
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "The revision is not visually continuous with the baseline due to strong global lighting/color drift, making the intended isolated edit difficult to trust even though the table position change is apparent.",
+        "score": 1
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.0031095,
+  "other_output_cost_usd": 0.00537,
+  "output_cost_usd": 0.002358,
+  "provider_request_id": "req_f5aea707ffce47bfb73dc27aea7b9f90",
+  "reasoning_cost_usd": 0.000747,
+  "reservation_id": "9582cb66-0f54-4144-8b19-0421fe09a396",
+  "response_id": "resp_071b0aecc705e36d016aa1d968078087d286d49ee722b26035",
+  "returned_model": "gpt-5.4-mini-2026-03-17",
+  "usage": {
+    "cached_input_tokens": 3200,
+    "input_tokens": 7026,
+    "output_tokens": 524,
+    "reasoning_tokens": 166,
+    "total_tokens": 7550,
+    "usage_certainty": "known"
+  }
+}

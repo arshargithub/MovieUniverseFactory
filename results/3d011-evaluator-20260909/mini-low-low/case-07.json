@@ -1,0 +1,55 @@
+{
+  "cost_usd": 0.004704750000000001,
+  "data": {
+    "confidence": 0.94,
+    "critical_findings": [
+      "Helmet shell color is wrong: blue/red in candidate instead of dark green #163D2A.",
+      "Coffee table relocation is not verifiably the exact requested 0.4 metres toward the sofa."
+    ],
+    "recommendation": "reject",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "Helmet shell was changed to blue instead of the required dark green #163D2A; coffee table appears repositioned but exact 0.4 m move is not clearly verified.",
+        "score": 1
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "Camera framing and perspective remain consistent across baseline and candidate shots with no obvious lens or view drift.",
+        "score": 4
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "Overall illumination, shadows, and material response stay stable; no major lighting mismatch or material breakup is visible.",
+        "score": 4
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "Geometry and surfaces remain clean overall, with no obvious intersections or broken meshes beyond the expected object rearrangement.",
+        "score": 4
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "Requested helmet color change is incorrect, and the table relocation cannot be confirmed as exactly 0.4 m toward the sofa.",
+        "score": 1
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.00305775,
+  "other_output_cost_usd": 0.00396,
+  "output_cost_usd": 0.001647,
+  "provider_request_id": "req_ee38416a7c9440c78e5c0d92ec2f7109",
+  "reasoning_cost_usd": 0.000459,
+  "reservation_id": "ba9c8c02-89cc-4f12-a06a-3d332442777d",
+  "response_id": "resp_06b51d807f2e5ec4016aa1d6e25b5087d295a5860333515177",
+  "returned_model": "gpt-5.4-mini-2026-03-17",
+  "usage": {
+    "cached_input_tokens": 3200,
+    "input_tokens": 6957,
+    "output_tokens": 366,
+    "reasoning_tokens": 102,
+    "total_tokens": 7323,
+    "usage_certainty": "known"
+  }
+}

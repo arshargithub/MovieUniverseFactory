@@ -1,0 +1,55 @@
+{
+  "cost_usd": 0.0200795,
+  "data": {
+    "confidence": 0.94,
+    "critical_findings": [
+      "The floor lamp is missing in the candidate wide shot_A despite being present in the baseline wide shot and required to remain visible in wide coverage.",
+      "An unintended scene change occurred beyond the requested edits: object continuity is broken by removal of the floor lamp."
+    ],
+    "recommendation": "reject",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "The coffee table is visibly moved closer to the sofa in the candidate wide and medium views, and the helmet shell changes from red to a dark green. However, the floor lamp that is present in the baseline wide shot is missing from the candidate wide coverage, which violates required scene presence and the 'change only' constraint.",
+        "score": 3
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "Shot framing and coverage remain largely consistent across baseline and candidate in all three views, preserving the intended wide/medium/close composition. The only notable compositional issue is the absent floor lamp in the revised wide shot, which reduces continuity of the wide coverage.",
+        "score": 4
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "Lighting stays soft and consistent across the revision, and the helmet material still reads plausibly with a dark green shell and consistent visor finish. No major lighting drift is visible, though the scene change involving the missing lamp slightly affects material/scene continuity.",
+        "score": 4
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "The table and helmet appear cleanly rendered with no obvious intersections or severe geometry artifacts. The table placement closer to the sofa still reads physically plausible, and the helmet sits properly on the cushion.",
+        "score": 4
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "Continuity is broken because the floor lamp visible in the baseline wide shot disappears in the candidate wide shot. The requested revisions otherwise appear correct, but this unintended object removal is a significant visible change.",
+        "score": 2
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.0130295,
+  "other_output_cost_usd": 0.00588,
+  "output_cost_usd": 0.00705,
+  "provider_request_id": "req_7829431306bc44ba82bc642da6c99c09",
+  "reasoning_cost_usd": 0.00117,
+  "reservation_id": "2b238b90-3438-4211-8e6b-687e4b06f6b4",
+  "response_id": "resp_00521780e3e375b8016aa2120972d487d2bfc0762bd53939ac",
+  "returned_model": "gpt-5.4-2026-03-05",
+  "usage": {
+    "cached_input_tokens": 2048,
+    "input_tokens": 7055,
+    "output_tokens": 470,
+    "reasoning_tokens": 78,
+    "total_tokens": 7525,
+    "usage_certainty": "known"
+  }
+}

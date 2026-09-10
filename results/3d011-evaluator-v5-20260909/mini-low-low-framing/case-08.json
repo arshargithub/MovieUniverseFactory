@@ -1,0 +1,52 @@
+{
+  "cost_usd": 0.0068527499999999995,
+  "data": {
+    "confidence": 0.82,
+    "critical_findings": [],
+    "recommendation": "pass",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "Candidate keeps the sofa, coffee table, floor lamp, and helmet visible; the helmet shell is changed from red to dark green and the coffee table is moved closer to the sofa.",
+        "score": 4
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "Camera framing remains consistent across baseline and revision sets, with stable wide and medium coverage and no obvious viewpoint drift.",
+        "score": 4
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "Lighting stays consistent and the revised helmet material reads as a darker green glossy shell with similar reflections to the baseline.",
+        "score": 4
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "Objects retain plausible geometry and surface finish; the helmet appears cleanly recolored without obvious mesh damage or texture tearing.",
+        "score": 4
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "The revision preserves scene continuity while making the intended directional table shift toward the sofa and changing only the helmet shell color in a visually coherent way.",
+        "score": 4
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.00529125,
+  "other_output_cost_usd": 0.003495,
+  "output_cost_usd": 0.0015615,
+  "provider_request_id": "req_fb9f285f93434a6596ee79914f777be7",
+  "reasoning_cost_usd": 0.000513,
+  "reservation_id": "c029715d-faef-4af2-9a89-67eae2834479",
+  "response_id": "resp_03460f297b4b75e6016aa211a8403487d2a2b1333fe9c13610",
+  "returned_model": "gpt-5.4-mini-2026-03-17",
+  "usage": {
+    "cached_input_tokens": 0,
+    "input_tokens": 7055,
+    "output_tokens": 347,
+    "reasoning_tokens": 114,
+    "total_tokens": 7402,
+    "usage_certainty": "known"
+  }
+}

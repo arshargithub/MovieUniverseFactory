@@ -8,6 +8,7 @@ from typing import Any
 
 from .packages import atomic_json, content_id, file_digest
 from .plans import canonical_revision, fixture_plan
+from .revision_compiler import compile_supported_revision
 from .reporting import finalize_run_artifacts, write_comparison
 from .schema import load_schema, validate
 
@@ -33,11 +34,6 @@ Use exactly two neutral qualification lights: key_light_01 is AREA at [-2,-1.5,3
 def _revision_prompt(revision: dict[str, Any], snapshot: dict[str, Any]) -> str:
     ids = sorted(obj["id"] for obj in snapshot.get("objects", {}).values())
     return f"""Return only the strict JSON revision operation list. The authorized instruction is: {revision['instruction']} The exact named palette is dark_green=#163D2A. Existing stable IDs are {ids}. Express 40 cm as 0.4 metres. Only the two authorized operations are permitted; do not add, delete, rebuild, or touch cameras, lights, geometry, transforms of other entities, or any other material field."""
-
-
-def _visual_prompt(revision: bool) -> str:
-    context = "Images are ordered as all baseline shots followed by the matching revised shots, in shot-ID order. The two authorized and required revisions are: move the coffee table exactly 0.4 metres toward the sofa, and change only the helmet shell from palette red #C62828 to dark green #163D2A. Treat those two changes as successful continuity when present; judge every other scene, camera, lighting, geometry, and material property for continuity." if revision else "The images are ordered by shot ID and show one scene."
-    return f"""You are an independent visual reviewer for a small 3D feasibility test. {context} Score all five rubric dimensions exactly once from 1 to 5: brief_fulfillment, cinematography, lighting_materials, physical_finish, continuity_revision. For an initial scene, score continuity_revision based on internal shot continuity. A 3 means serviceable, 4 good, 5 unusually strong for a procedural prototype. Critical findings are concrete missing/wrong objects, broken framing, implausible intersections, or unintended revision changes. Recommend pass only for mean >=4, no score below 3, no critical finding, confidence >=0.6. Do not claim exact geometric measurements from pixels."""
 
 
 def _provider_json(provider: Any, **kwargs: Any) -> dict[str, Any]:
@@ -104,12 +100,15 @@ def run_pair(repo_root: Path, run_dir: Path, seed: int, profile: dict[str, Any],
     if not render_status.get("ok"):
         raise RuntimeError(f"initial render failed: {render_status.get('error')}")
 
-    if live:
+    compilation = compile_supported_revision(revision_brief["instruction"])
+    if compilation["status"] == "compiled":
+        operations = compilation["operations"]
+    elif live:
         result = _provider_json(provider, purpose="revision_plan", prompt=_revision_prompt(revision_brief,before_snapshot), schema=load_schema(repo_root,"operations.schema.json"), images=None, run_id=run_dir.name, stage="revision", max_output_tokens=1200)
         calls.append({k:v for k,v in result.items() if k != "data"})
         operations = result["data"]
     else:
-        operations = canonical_revision()
+        raise ValueError("offline revision is outside the deterministic compiler vocabulary")
     operation_errors = validate(repo_root,"operations.schema.json",operations)
     if operation_errors:
         raise ValueError("invalid revision: " + "; ".join(operation_errors))
@@ -149,8 +148,9 @@ def run_pair(repo_root: Path, run_dir: Path, seed: int, profile: dict[str, Any],
 
     visual_review = None
     if live:
+        from .evaluator import visual_prompt
         images = [initial_render/"renders"/f"{s}.png" for s in profile["shots"]] + [revision_render/"renders"/f"{s}.png" for s in profile["shots"]]
-        result = _provider_json(provider, purpose="visual_review", prompt=_visual_prompt(True), schema=load_schema(repo_root,"visual-review.schema.json"), images=images, run_id=run_dir.name, stage="revision", max_output_tokens=1800)
+        result = _provider_json(provider, purpose="visual_review", prompt=visual_prompt(), schema=load_schema(repo_root,"visual-review.schema.json"), images=images, run_id=run_dir.name, stage="revision", max_output_tokens=1200)
         calls.append({k:v for k,v in result.items() if k != "data"})
         visual_review = result["data"]
         atomic_json(run_dir / "visual-review.json", visual_review)
@@ -167,7 +167,7 @@ def run_pair(repo_root: Path, run_dir: Path, seed: int, profile: dict[str, Any],
         and min(item["score"] for item in visual_scores) >= 3
     )
     passed = bool(baseline_validation.get("passed") and revision_validation.get("passed") and image_validation.get("passed") and machine_visual)
-    result = {"schema_version":"1.0","run_id":run_dir.name,"seed":seed,"live":live,"passed":passed,"baseline_validation":baseline_validation,"revision_validation":revision_validation,"image_validation":image_validation,"visual_review":visual_review,"provider_calls":calls,"parent_sha256":file_digest(before_scene),"revision_sha256":file_digest(after_scene),"director_status":"PENDING"}
+    result = {"schema_version":"1.0","run_id":run_dir.name,"seed":seed,"live":live,"passed":passed,"baseline_validation":baseline_validation,"revision_validation":revision_validation,"image_validation":image_validation,"visual_review":visual_review,"revision_compilation":{key:value for key,value in compilation.items() if key != "operations"},"provider_calls":calls,"parent_sha256":file_digest(before_scene),"revision_sha256":file_digest(after_scene),"director_status":"PENDING"}
     result["technical_status"] = "MACHINE_REVIEWED" if passed else "FAILED"
     result["creative_status"] = "AWAITING_DIRECTOR" if passed else "NOT_ELIGIBLE"
     known_costs=[call.get("cost_usd") for call in calls if call.get("cost_usd") is not None]

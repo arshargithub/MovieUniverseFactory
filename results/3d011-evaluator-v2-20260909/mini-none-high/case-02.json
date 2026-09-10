@@ -1,0 +1,56 @@
+{
+  "cost_usd": 0.0022464,
+  "data": {
+    "confidence": 0.82,
+    "critical_findings": [
+      "Coffee table is pushed so close that it overlaps/intersects the sofa visually.",
+      "Candidate framing/composition changes substantially, with the table obscuring the sofa and helmet.",
+      "Helmet shell is green but not clearly a precise dark green material match from pixels alone."
+    ],
+    "recommendation": "repair",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "Candidate moves the coffee table toward the sofa and changes the helmet shell from red to dark green; all required objects remain present.",
+        "score": 4
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "Camera composition shifts notably and the table ends up heavily occluding the sofa, degrading the framing compared with the baseline.",
+        "score": 2
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "Overall lighting is consistent, but the helmet shell color is only roughly dark green and the render is noisy/low fidelity.",
+        "score": 3
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "Objects appear intact with no obvious broken geometry, but the table-sofa overlap creates an awkward physical look.",
+        "score": 3
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "The candidate introduces a strong composition change and the coffee table appears to intersect/overlap the sofa more than a clean move toward it.",
+        "score": 2
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.0010359000000000002,
+  "other_output_cost_usd": 0.004035,
+  "output_cost_usd": 0.0012105,
+  "provider_request_id": "req_6c2d2bc31a244298b62f9ea708007866",
+  "reasoning_cost_usd": 0.0,
+  "reservation_id": "6263afe2-126a-47d2-bfa2-359e39eecf31",
+  "response_id": "resp_06327ba379b196f6016aa1d996ff3487d2b491479acfc16e0e",
+  "returned_model": "gpt-5.4-mini-2026-03-17",
+  "usage": {
+    "cached_input_tokens": 6272,
+    "input_tokens": 7026,
+    "output_tokens": 269,
+    "reasoning_tokens": 0,
+    "total_tokens": 7295,
+    "usage_certainty": "known"
+  }
+}

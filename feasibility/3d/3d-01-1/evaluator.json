@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0",
+  "experiment_id": "3D-01.1-evaluator",
+  "benchmark_id": "3d011-evaluator-v2",
+  "accepted_campaign": "3d01-20260908T200952Z",
+  "historical_negative": {
+    "campaign_id": "3d01-20260908T200150Z",
+    "run_id": "seed-101-20260908T200150Z-c8dc4149",
+    "category": "failed_framing"
+  },
+  "synthetic_source_run_id": "seed-303-20260908T201610Z-8fbfe21a",
+  "corruptions": [
+    "missing_object",
+    "wrong_color",
+    "camera_drift",
+    "lighting_drift",
+    "intersection",
+    "degraded_composition"
+  ],
+  "blind_case_order": [
+    "accepted_seed_101",
+    "intersection",
+    "accepted_seed_303",
+    "lighting_drift",
+    "failed_framing",
+    "accepted_seed_505",
+    "wrong_color",
+    "accepted_seed_202",
+    "degraded_composition",
+    "missing_object",
+    "accepted_seed_404",
+    "camera_drift"
+  ],
+  "candidates": [
+    {"candidate_id":"mini-none-low","model":"gpt-5.4-mini-2026-03-17","reasoning_effort":"none","image_detail":"low"},
+    {"candidate_id":"mini-low-low","model":"gpt-5.4-mini-2026-03-17","reasoning_effort":"low","image_detail":"low"},
+    {"candidate_id":"mini-none-high","model":"gpt-5.4-mini-2026-03-17","reasoning_effort":"none","image_detail":"high"},
+    {"candidate_id":"mini-low-high","model":"gpt-5.4-mini-2026-03-17","reasoning_effort":"low","image_detail":"high"}
+  ],
+  "thresholds": {
+    "positive_pass_rate_min": 1.0,
+    "negative_sensitivity_min": 1.0,
+    "negative_critical_finding_rate_min": 1.0,
+    "accepted_dimension_mae_max": 1.0,
+    "accepted_scores_within_one_min": 0.8,
+    "response_valid_rate_min": 1.0
+  },
+  "max_output_tokens": 1200,
+  "evaluation_api_limit_usd": 2.0,
+  "pricebook": {
+    "model": "gpt-5.4-mini-2026-03-17",
+    "input_per_million_usd": 0.75,
+    "cached_input_per_million_usd": 0.075,
+    "output_per_million_usd": 4.5,
+    "source": "https://developers.openai.com/api/docs/models/gpt-5.4-mini",
+    "verified_date": "2026-09-09"
+  },
+  "claim_boundary": "GREEN applies only to supported, unambiguous structured revisions. Ambiguous instructions escalate to an LLM and remain outside 3D-01.1 qualification."
+}

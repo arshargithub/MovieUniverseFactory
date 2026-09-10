@@ -1,0 +1,54 @@
+{
+  "cost_usd": 0.0241775,
+  "data": {
+    "confidence": 0.92,
+    "critical_findings": [
+      "Coffee table is not visibly present in candidate medium shot_B, despite the requirement that it be visible in both wide shot_A and medium shot_B."
+    ],
+    "recommendation": "repair",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "The candidate clearly changes the helmet shell from red to dark green and the coffee table appears moved closer toward the sofa in the wide shot. However, the coffee table is not visibly present in medium shot_B, which violates the required object-presence condition.",
+        "score": 3
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "Camera framing and shot coverage remain consistent across baseline and revision, with no noticeable drift in angle or composition in the matched shots.",
+        "score": 4
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "Lighting stays consistent with the moody green-tinted setup, and the helmet material still reads as a glossy shell with dark visor. The new shell color reads as dark green rather than red.",
+        "score": 4
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "Objects appear cleanly rendered with no obvious intersections or broken geometry. The coffee table placement in the wide shot looks physically plausible relative to the sofa.",
+        "score": 4
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "The requested visual changes are mostly isolated to the coffee table position and helmet shell color, with strong continuity in the sofa, lamp, and overall scene. But the required visibility continuity for the coffee table in shot_B is not met.",
+        "score": 3
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.0176375,
+  "other_output_cost_usd": 0.004785,
+  "output_cost_usd": 0.00654,
+  "provider_request_id": "req_c0ad517a1d634f838b0fe490c9a10dd8",
+  "reasoning_cost_usd": 0.001755,
+  "reservation_id": "e067e65f-e8e2-44f2-88b1-179751660ca9",
+  "response_id": "resp_044b848e0fe03423016aa211dcfcd887d2a23c6b3687044952",
+  "returned_model": "gpt-5.4-2026-03-05",
+  "usage": {
+    "cached_input_tokens": 0,
+    "input_tokens": 7055,
+    "output_tokens": 436,
+    "reasoning_tokens": 117,
+    "total_tokens": 7491,
+    "usage_certainty": "known"
+  }
+}

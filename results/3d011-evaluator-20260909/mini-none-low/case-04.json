@@ -1,0 +1,57 @@
+{
+  "cost_usd": 0.00463725,
+  "data": {
+    "confidence": 0.9,
+    "critical_findings": [
+      "Helmet shell is not changed to dark green #163D2A; it appears black/dark greenish-black instead.",
+      "Lighting/exposure and color temperature drift heavily between baseline and candidate, introducing a strong red cast and darkening the scene.",
+      "Camera/framing changes substantially across the candidate shots, breaking continuity.",
+      "The requested coffee table move cannot be confirmed as exactly 0.4 metres and the revision introduces broader composition changes."
+    ],
+    "recommendation": "reject",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "The helmet shell color changes, but it is not dark green #163D2A; it appears nearly black in the revision. The coffee table also appears moved, but the exact 0.4 m change is not clearly verifiable and there are major unintended scene changes.",
+        "score": 2
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "The candidate views drift substantially in framing and composition relative to the baseline shots, with noticeable camera position changes and occlusion differences.",
+        "score": 2
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "Lighting changes dramatically from a bright neutral interior to a very dark red-tinted scene, with heavy exposure shift and altered material appearance.",
+        "score": 1
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "The helmet surface reads darker and less red, but the intended green material is not achieved; the table and sofa materials also appear to shift under the changed lighting.",
+        "score": 2
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "There are severe continuity breaks across the revision set, including major lighting/color drift, camera drift, and altered scene appearance beyond the requested object edits.",
+        "score": 1
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.00305775,
+  "other_output_cost_usd": 0.005265,
+  "output_cost_usd": 0.0015795,
+  "provider_request_id": "req_3b3b5e35451844ce849d22828163c373",
+  "reasoning_cost_usd": 0.0,
+  "reservation_id": "8eefb4b0-c7d3-48ac-9081-039cd5264606",
+  "response_id": "resp_0dacde2ffbae7c2a016aa1d695c2bc87d2877c287d6a2f3f99",
+  "returned_model": "gpt-5.4-mini-2026-03-17",
+  "usage": {
+    "cached_input_tokens": 3200,
+    "input_tokens": 6957,
+    "output_tokens": 351,
+    "reasoning_tokens": 0,
+    "total_tokens": 7308,
+    "usage_certainty": "known"
+  }
+}

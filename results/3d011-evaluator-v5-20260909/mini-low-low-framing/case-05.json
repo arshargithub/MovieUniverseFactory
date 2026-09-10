@@ -1,0 +1,55 @@
+{
+  "cost_usd": 0.00773025,
+  "data": {
+    "confidence": 0.74,
+    "critical_findings": [
+      "Helmet shell color change is visually subtle and reads closer to black/green-black than a clearly legible dark green.",
+      "Overall low-light rendering and noise make the revision somewhat ambiguous in color read, especially on the helmet."
+    ],
+    "recommendation": "repair",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "Coffee table is visible in both the wide and medium views, the floor lamp remains visible in the wide view, and the table appears moved closer toward the sofa in the candidate shots.",
+        "score": 4
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "Camera framing and scene composition are largely consistent across baseline and candidate, with no major viewpoint drift; the revised table placement still reads cleanly in the wide shot.",
+        "score": 4
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "The helmet\u2019s shell no longer reads as red and is rendered as a very dark green/green-black under the existing lighting, though the hue is subtle and somewhat ambiguous due to the heavy darkness.",
+        "score": 3
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "Surfaces retain plausible glossy highlights on the helmet and soft upholstery on the sofa/table, but the low light and noise reduce clarity of the material read.",
+        "score": 3
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "The revision preserves the room layout and object set while changing the helmet color and nudging the coffee table closer to the sofa without obvious unintended object changes.",
+        "score": 4
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.00529125,
+  "other_output_cost_usd": 0.00468,
+  "output_cost_usd": 0.002439,
+  "provider_request_id": "req_5f7b1c08640d4431a22d11c9821c293c",
+  "reasoning_cost_usd": 0.001035,
+  "reservation_id": "8fbc4e8e-caf3-4483-8028-b537d76b7738",
+  "response_id": "resp_0adccd843337af05016aa2119aba1087d2926aba641361fd4f",
+  "returned_model": "gpt-5.4-mini-2026-03-17",
+  "usage": {
+    "cached_input_tokens": 0,
+    "input_tokens": 7055,
+    "output_tokens": 542,
+    "reasoning_tokens": 230,
+    "total_tokens": 7597,
+    "usage_certainty": "known"
+  }
+}

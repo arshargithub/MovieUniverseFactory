@@ -1,0 +1,52 @@
+{
+  "cost_usd": 0.018312000000000002,
+  "data": {
+    "confidence": 0.96,
+    "critical_findings": [],
+    "recommendation": "pass",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "All required objects remain present. In the candidate, the coffee table is visibly moved closer toward the sofa, and the helmet shell changes from red to a dark green tone while the rest of the helmet remains consistent.",
+        "score": 5
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "Camera framing and viewpoints across shots A, B, and C are effectively unchanged between baseline and candidate, preserving composition and making the revision easy to verify.",
+        "score": 5
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "Lighting direction and scene exposure remain stable. The helmet shell reads as a darker green material with similar gloss to the original, and other materials appear consistent.",
+        "score": 4
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "The moved coffee table sits plausibly on the floor with no obvious floating or clipping, and the helmet remains seated naturally on the sofa cushion. Geometry and contacts look coherent.",
+        "score": 4
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "The requested edits are isolated and consistent across all three candidate views: the table is closer to the sofa and the helmet shell is green, with no visible unintended scene alterations.",
+        "score": 5
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.012957,
+  "other_output_cost_usd": 0.00408,
+  "output_cost_usd": 0.005355,
+  "provider_request_id": "req_80cb4caef6aa4706a6e2a1dfc6085c3e",
+  "reasoning_cost_usd": 0.001275,
+  "reservation_id": "ae61ce33-d21d-4766-8e87-e61c6c4d91c4",
+  "response_id": "resp_0a750dc327affe25016aa1da7b32b887d2bad5b5cd8070c297",
+  "returned_model": "gpt-5.4-2026-03-05",
+  "usage": {
+    "cached_input_tokens": 2048,
+    "input_tokens": 7026,
+    "output_tokens": 357,
+    "reasoning_tokens": 85,
+    "total_tokens": 7383,
+    "usage_certainty": "known"
+  }
+}

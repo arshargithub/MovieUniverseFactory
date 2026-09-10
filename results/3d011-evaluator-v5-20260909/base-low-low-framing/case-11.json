@@ -1,0 +1,52 @@
+{
+  "cost_usd": 0.023352499999999998,
+  "data": {
+    "confidence": 0.95,
+    "critical_findings": [],
+    "recommendation": "pass",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "All required objects are present. In the candidate, the coffee table is still visible in wide shot_A and medium shot_B, the floor lamp remains visible in the wide shot, the table has been moved closer toward the sofa, and the helmet shell changes from red to a dark green.",
+        "score": 5
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "Camera framing and shot coverage are effectively unchanged between baseline and candidate across shot_A, shot_B, and shot_C, preserving the intended wide/medium/close composition.",
+        "score": 5
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "Lighting stays consistent with the baseline, and the helmet material still reads as the same glossy shell with only the shell color changed to dark green. Minor render noise remains, but no obvious lighting drift is visible.",
+        "score": 4
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "Object placement appears stable and plausible, with no obvious collisions or broken geometry. The table relocation reads cleanly and the helmet sits properly on the sofa cushion.",
+        "score": 4
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "The requested revision is isolated and visually coherent: the coffee table is moved nearer the sofa and the helmet shell changes from red to dark green, while the sofa, lamp, room layout, and shot continuity remain intact.",
+        "score": 5
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.0176375,
+  "other_output_cost_usd": 0.004605,
+  "output_cost_usd": 0.005715,
+  "provider_request_id": "req_6d3f6c0e7043430db133ce59b5addb2e",
+  "reasoning_cost_usd": 0.00111,
+  "reservation_id": "ffc8f0f1-2067-473c-9e5f-ef7e7ed61f4e",
+  "response_id": "resp_0773622b23dadff4016aa21212137487d2a225cd7eab757ba8",
+  "returned_model": "gpt-5.4-2026-03-05",
+  "usage": {
+    "cached_input_tokens": 0,
+    "input_tokens": 7055,
+    "output_tokens": 381,
+    "reasoning_tokens": 74,
+    "total_tokens": 7436,
+    "usage_certainty": "known"
+  }
+}

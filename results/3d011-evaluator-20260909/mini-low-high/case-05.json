@@ -1,0 +1,56 @@
+{
+  "cost_usd": 0.00311715,
+  "data": {
+    "confidence": 0.79,
+    "critical_findings": [
+      "Helmet shell does not clearly match the requested dark green #163D2A; it reads closer to black/very dark green.",
+      "Coffee table moved toward the sofa, but the exact 0.4 metre offset cannot be confirmed from the images.",
+      "Slight lighting/material response drift is visible in the candidate helmet compared with the baseline."
+    ],
+    "recommendation": "repair",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "Coffee table is moved closer to the sofa in the candidate set, and the helmet shell is no longer red; however the helmet color reads nearly black/very dark green rather than the specified #163D2A, and the exact 0.4 m displacement is not verifiable from the frames alone.",
+        "score": 3
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "Camera framing and perspective remain broadly consistent between baseline and candidate views, with no obvious camera cut or major composition drift.",
+        "score": 4
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "Lighting remains generally consistent, but the candidate renders show a noticeably darker, more muted helmet shell response and slightly different highlight prominence, suggesting some material/lighting drift.",
+        "score": 3
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "The helmet surface appears glossy and intact, but the target shell color is not cleanly achieved; it reads too dark and desaturated relative to the requested dark green.",
+        "score": 3
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "The coffee table placement changes in the intended direction, but the amount is not demonstrably exact; the revision also introduces a color shift that is not a clean match to the specified green.",
+        "score": 3
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.00098415,
+  "other_output_cost_usd": 0.00531,
+  "output_cost_usd": 0.002133,
+  "provider_request_id": "req_3467da7622d4423a9a82f018a6acb024",
+  "reasoning_cost_usd": 0.00054,
+  "reservation_id": "b9b08ae0-825f-402b-8342-7584aac5880b",
+  "response_id": "resp_0c4f7f9ef45d9fd0016aa1d7535af887d28e1932d76d04bc6c",
+  "returned_model": "gpt-5.4-mini-2026-03-17",
+  "usage": {
+    "cached_input_tokens": 6272,
+    "input_tokens": 6957,
+    "output_tokens": 474,
+    "reasoning_tokens": 120,
+    "total_tokens": 7431,
+    "usage_certainty": "known"
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "cost_usd": 0.00704625,
+  "data": {
+    "confidence": 0.78,
+    "critical_findings": [],
+    "recommendation": "pass",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "Required sofa, coffee table, floor lamp, and motorcycle helmet are present; helmet changes from red to dark green, and the coffee table is visibly moved toward the sofa in the candidate views.",
+        "score": 5
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "Baseline and candidate maintain a similar room angle and coverage overall, with the wide shot still showing the lamp and the revision remaining readable.",
+        "score": 4
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "Lighting stays consistent and neutral; the helmet material remains glossy and the green reads as a clear color change rather than a lighting shift.",
+        "score": 4
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "Scene geometry and object surfaces remain coherent, with no obvious deformation or broken intersections beyond normal rendering noise.",
+        "score": 4
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "The candidate preserves the room layout and keeps required objects visible while applying the intended helmet color change and table repositioning.",
+        "score": 4
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.00529125,
+  "other_output_cost_usd": 0.003525,
+  "output_cost_usd": 0.001755,
+  "provider_request_id": "req_321cc84f2f1148c28e24996ab9e8ef1e",
+  "reasoning_cost_usd": 0.0006975,
+  "reservation_id": "218ba1d0-e47a-43a3-bc83-96201aeeae83",
+  "response_id": "resp_095d95b2ba46f1eb016aa211862e7887d2a03a09c3a4c89f38",
+  "returned_model": "gpt-5.4-mini-2026-03-17",
+  "usage": {
+    "cached_input_tokens": 0,
+    "input_tokens": 7055,
+    "output_tokens": 390,
+    "reasoning_tokens": 155,
+    "total_tokens": 7445,
+    "usage_certainty": "known"
+  }
+}

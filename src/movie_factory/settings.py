@@ -14,6 +14,8 @@ DEFAULTS = {
     "OPENAI_API_KEY": "", "GH_TOKEN": "", "GITHUB_REPOSITORY": "",
     "MF_PROVIDER": "openai", "MF_PLANNER_MODEL": "gpt-5.4-2026-03-05",
     "MF_VISION_MODEL": "gpt-5.4-2026-03-05", "MF_REASONING_EFFORT": "medium",
+    "MF_PLANNER_REASONING_EFFORT": "medium", "MF_VISION_REASONING_EFFORT": "medium",
+    "MF_IMAGE_DETAIL": "high",
     "BLENDER_BIN": "/Applications/Blender.app/Contents/MacOS/Blender",
     "MF_COST_SCOPE": "development", "MF_MAX_CAMPAIGN_API_USD": 40.0,
     "MF_MAX_INITIAL_API_USD": 3.0, "MF_MAX_REVISION_API_USD": 2.0,
@@ -110,4 +112,9 @@ def load_settings(repo_root: Path) -> dict:
         raise SettingsError("Invalid MF_PROVIDER")
     if result["MF_NETWORK_POLICY"] != "controller_only":
         raise SettingsError("Only controller_only network policy is supported")
+    for name in ("MF_REASONING_EFFORT", "MF_PLANNER_REASONING_EFFORT", "MF_VISION_REASONING_EFFORT"):
+        if result[name] not in {"none", "low", "medium", "high", "xhigh"}:
+            raise SettingsError(f"Invalid reasoning effort: {name}")
+    if result["MF_IMAGE_DETAIL"] not in {"low", "high"}:
+        raise SettingsError("MF_IMAGE_DETAIL must be low or high")
     return result

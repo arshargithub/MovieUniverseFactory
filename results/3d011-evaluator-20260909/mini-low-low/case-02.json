@@ -1,0 +1,56 @@
+{
+  "cost_usd": 0.00819675,
+  "data": {
+    "confidence": 0.86,
+    "critical_findings": [
+      "Substantial camera/framing drift between baseline and candidate shots, including a new left-side occluder and different crop/composition.",
+      "Coffee table relocation is not consistently visible and cannot be confirmed as an exact 0.4 m move toward the sofa.",
+      "Helmet shell color is green in the candidate, but it does not clearly match the requested dark green #163D2A; it reads brighter than specified."
+    ],
+    "recommendation": "reject",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "Helmet shell is changed from red to green in the candidate, but the coffee table relocation is not cleanly verifiable across the three views and appears inconsistent with the baseline framing.",
+        "score": 3
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "Candidate views drift in camera position/framing: a large left-side occluder enters the frame, the sofa/table composition changes noticeably, and the table is cropped differently.",
+        "score": 2
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "Overall lighting remains similar and physically plausible, with no major exposure shift, though the candidate rendering still shows noisy material response and slightly different specular balance on the helmet.",
+        "score": 3
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "The helmet and furniture surfaces remain coherent and intact, but the candidate helmet color reads as a brighter medium green rather than a clearly dark green #163D2A finish.",
+        "score": 3
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "The revision is not cleanly continuous: camera framing changes substantially, the coffee table\u2019s position is inconsistent across the candidate shots, and the requested exact 0.4 m move is not clearly demonstrated.",
+        "score": 2
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.00521775,
+  "other_output_cost_usd": 0.005385,
+  "output_cost_usd": 0.002979,
+  "provider_request_id": "req_e18bcad1698c4b1e92695ba0188ad7c1",
+  "reasoning_cost_usd": 0.0013635,
+  "reservation_id": "80de8a5e-e8ae-413b-974d-fc08f0ce5c50",
+  "response_id": "resp_0e760f02b8549195016aa1d6c453b487d29940a836bd57a364",
+  "returned_model": "gpt-5.4-mini-2026-03-17",
+  "usage": {
+    "cached_input_tokens": 0,
+    "input_tokens": 6957,
+    "output_tokens": 662,
+    "reasoning_tokens": 303,
+    "total_tokens": 7619,
+    "usage_certainty": "known"
+  }
+}

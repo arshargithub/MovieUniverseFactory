@@ -1,0 +1,55 @@
+{
+  "cost_usd": 0.0047655,
+  "data": {
+    "confidence": 0.91,
+    "critical_findings": [
+      "Helmet shell in the candidate is blue, not dark green as requested.",
+      "Coffee table movement toward the sofa is only modest/ambiguous in the visible composition."
+    ],
+    "recommendation": "reject",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "Coffee table appears to have been moved somewhat toward the sofa, but the helmet shell does not match the requested red-to-dark-green change.",
+        "score": 2
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "Camera framing and perspective remain stable across baseline and candidate with no major viewpoint drift.",
+        "score": 4
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "Lighting is consistent, but the helmet shell visibly changes to a bright blue tone rather than dark green.",
+        "score": 2
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "Objects retain coherent 3D form and materials; no obvious geometry breakage, but the helmet color revision is visibly incorrect.",
+        "score": 3
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "Scene continuity is mostly preserved, but the helmet color change is a clear unintended deviation from the requested revision.",
+        "score": 2
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.0031095,
+  "other_output_cost_usd": 0.00363,
+  "output_cost_usd": 0.001656,
+  "provider_request_id": "req_c1b8883464be4c2e8097b20327b28618",
+  "reasoning_cost_usd": 0.000567,
+  "reservation_id": "34948a32-951d-4a82-aee4-88bfd2611ba4",
+  "response_id": "resp_0da444f9059c7f04016aa1d976c2c087d2935c0eab851c9c73",
+  "returned_model": "gpt-5.4-mini-2026-03-17",
+  "usage": {
+    "cached_input_tokens": 3200,
+    "input_tokens": 7026,
+    "output_tokens": 368,
+    "reasoning_tokens": 126,
+    "total_tokens": 7394,
+    "usage_certainty": "known"
+  }
+}

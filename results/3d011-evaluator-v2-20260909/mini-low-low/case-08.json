@@ -1,0 +1,52 @@
+{
+  "cost_usd": 0.006885,
+  "data": {
+    "confidence": 0.84,
+    "critical_findings": [],
+    "recommendation": "pass",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "Candidate visibly moves the coffee table closer to the sofa and changes the helmet shell from red to dark green while keeping the other scene objects present.",
+        "score": 5
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "Camera framing and perspective remain consistent across baseline and candidate with no obvious viewpoint drift; composition is stable.",
+        "score": 4
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "Lighting remains consistent and the helmet\u2019s material reads clearly as a dark green shell; overall material appearance stays coherent.",
+        "score": 4
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "Objects retain clean, procedural render quality; the revised helmet color looks physically plausible and the table repositioning does not create obvious clipping.",
+        "score": 4
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "Baseline-to-candidate continuity is strong: sofa, floor lamp, coffee table, and helmet are all present, with only the requested visible changes apparent.",
+        "score": 4
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.0052695,
+  "other_output_cost_usd": 0.00342,
+  "output_cost_usd": 0.0016155,
+  "provider_request_id": "req_caec5152ec3b42fd88f31075c770a61f",
+  "reasoning_cost_usd": 0.0005895,
+  "reservation_id": "24494073-2793-4fa5-9f6d-1054ec884ec0",
+  "response_id": "resp_052c151664e3d6d7016aa1d97b086887d282b501f5d694be80",
+  "returned_model": "gpt-5.4-mini-2026-03-17",
+  "usage": {
+    "cached_input_tokens": 0,
+    "input_tokens": 7026,
+    "output_tokens": 359,
+    "reasoning_tokens": 131,
+    "total_tokens": 7385,
+    "usage_certainty": "known"
+  }
+}

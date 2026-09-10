@@ -1,0 +1,52 @@
+{
+  "cost_usd": 0.02331,
+  "data": {
+    "confidence": 0.94,
+    "critical_findings": [],
+    "recommendation": "pass",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "Across the candidate views, the coffee table is visibly closer to the sofa than in the baseline, and the helmet shell changes from red to a dark green while the sofa, table, lamp, and helmet remain present in the scene.",
+        "score": 5
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "Camera framing and viewpoint match the baseline shots closely, preserving the established composition across all three views without noticeable drift.",
+        "score": 4
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "Lighting remains consistent with the baseline, and the helmet shell reads clearly as dark green with unchanged visor/trim materials; overall scene materials remain stable.",
+        "score": 4
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "Objects appear properly placed with no obvious intersections, floaters, or geometry breakage; the moved table still sits plausibly on the floor and the helmet remains seated correctly on the sofa.",
+        "score": 4
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "The requested edits are isolated and consistent across views: the coffee table shifts toward the sofa and the helmet shell color updates, with no clear unintended changes to scene layout, camera, or lighting.",
+        "score": 5
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.017565,
+  "other_output_cost_usd": 0.00411,
+  "output_cost_usd": 0.005745,
+  "provider_request_id": "req_6f394d26f4b24d8580c769e1ee0e4337",
+  "reasoning_cost_usd": 0.001635,
+  "reservation_id": "adb5624e-2860-46f9-b402-cc2576b5c78b",
+  "response_id": "resp_038c65096d0f2cb1016aa1da9b508887d2815cbce64feca789",
+  "returned_model": "gpt-5.4-2026-03-05",
+  "usage": {
+    "cached_input_tokens": 0,
+    "input_tokens": 7026,
+    "output_tokens": 383,
+    "reasoning_tokens": 109,
+    "total_tokens": 7409,
+    "usage_certainty": "known"
+  }
+}

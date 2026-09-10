@@ -1,0 +1,56 @@
+{
+  "cost_usd": 0.00255015,
+  "data": {
+    "confidence": 0.84,
+    "critical_findings": [
+      "Coffee table does not clearly move exactly 0.4 metres toward the sofa; its placement relative to the sofa is inconsistent and appears too ambiguous to confirm the required translation.",
+      "Helmet shell color is changed to green, but the exact requested dark green #163D2A is not clearly verified from the render.",
+      "Wider candidate shots show composition/framing changes that suggest the revision may not be a clean isolated edit."
+    ],
+    "recommendation": "reject",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "Helmet shell changes to dark green in the candidate, but the coffee table does not appear to move exactly 0.4 m toward the sofa; its position changes inconsistently across views and remains not clearly revised by the requested amount.",
+        "score": 2
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "Camera framing and perspective stay mostly consistent between baseline and candidate, with no major unintended camera drift.",
+        "score": 4
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "Overall lighting remains stable, and the helmet material still reads plausibly; however the candidate shows a noticeable render-noise/grain difference and the helmet color shift affects perceived material response.",
+        "score": 4
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "Geometry looks intact with no obvious intersections or broken surfaces; the revised helmet retains coherent shape and finish, though the table/sofa spacing looks potentially inconsistent.",
+        "score": 4
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "The only requested color edit is partially correct, but the coffee table translation is not clearly or precisely executed, and the candidate introduces a strong composition shift in the wider views.",
+        "score": 2
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.00098415,
+  "other_output_cost_usd": 0.00522,
+  "output_cost_usd": 0.001566,
+  "provider_request_id": "req_8431c9f0229a409593ed0120809bab03",
+  "reasoning_cost_usd": 0.0,
+  "reservation_id": "426f6f2d-c049-4c3d-ac2c-879edae587e1",
+  "response_id": "resp_0fa0362b298e2af0016aa1d719dda087d2b97493705c5f8702",
+  "returned_model": "gpt-5.4-mini-2026-03-17",
+  "usage": {
+    "cached_input_tokens": 6272,
+    "input_tokens": 6957,
+    "output_tokens": 348,
+    "reasoning_tokens": 0,
+    "total_tokens": 7305,
+    "usage_certainty": "known"
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "cost_usd": 0.0025546500000000003,
+  "data": {
+    "confidence": 0.88,
+    "critical_findings": [
+      "Coffee table does not appear to be moved exactly 0.4 metres toward the sofa.",
+      "Candidate shots show significant camera/framing drift relative to baseline.",
+      "One candidate view is effectively blank/obstructed, indicating a missing or invalid shot.",
+      "Unintended render quality degradation/noise increase in the candidate images."
+    ],
+    "recommendation": "reject",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "Helmet shell appears changed to dark green in the revision, but the coffee table does not appear to be moved exactly 0.4 m toward the sofa; it is also still clearly separated from the seating area and the framing/camera differ across views.",
+        "score": 2
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "Strong camera drift/cropping differences between baseline and candidate views, including a blocked/blank frame in the candidate set and major viewpoint shifts that break shot continuity.",
+        "score": 2
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "Overall lighting remains soft and consistent enough, but the candidate helmet material/color rendering changes noticeably; the green shell reads acceptable though not especially polished.",
+        "score": 3
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "The helmet and sofa geometry remain intact with no obvious major mesh breakage, but the candidate introduces visible noise/grain and the blank obstructed view suggests degraded render quality.",
+        "score": 3
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "Requested revision is not clearly correct: the helmet color change is present, but the coffee table relocation is not convincingly executed and the candidate set shows substantial unintended framing changes, including one missing/obstructed shot.",
+        "score": 1
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.00098415,
+  "other_output_cost_usd": 0.005235,
+  "output_cost_usd": 0.0015705,
+  "provider_request_id": "req_6c451aab033948babd128f57683954cb",
+  "reasoning_cost_usd": 0.0,
+  "reservation_id": "4ca812dd-47db-48dc-ad4d-b4d3af126404",
+  "response_id": "resp_088e9f157c2a1398016aa1d737841487d28c7beb4d02ae57d0",
+  "returned_model": "gpt-5.4-mini-2026-03-17",
+  "usage": {
+    "cached_input_tokens": 6272,
+    "input_tokens": 6957,
+    "output_tokens": 349,
+    "reasoning_tokens": 0,
+    "total_tokens": 7306,
+    "usage_certainty": "known"
+  }
+}

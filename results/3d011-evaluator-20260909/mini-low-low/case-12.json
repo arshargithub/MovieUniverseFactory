@@ -1,0 +1,54 @@
+{
+  "cost_usd": 0.00438075,
+  "data": {
+    "confidence": 0.74,
+    "critical_findings": [
+      "Helmet shell color is not an exact match to dark green #163D2A; it reads lighter/more olive than requested."
+    ],
+    "recommendation": "repair",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "Coffee table appears moved closer to the sofa in the candidate views, and the helmet shell is changed from red to green; however the helmet color does not look like an exact match to the requested dark green #163D2A.",
+        "score": 4
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "Camera framing and perspective are broadly consistent with baseline, with no obvious major lens or viewpoint drift across the candidate set.",
+        "score": 4
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "Overall lighting remains stable and the scene materials read consistently; the table and sofa retain similar shading and gloss behavior without obvious relighting artifacts.",
+        "score": 4
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "The candidate helmet shell has visible render noise/grain and the green finish looks somewhat lighter and less saturated than the specified dark green.",
+        "score": 3
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "The table move is directionally correct, but the revision is not perfectly clean because the helmet color is not clearly the exact target shade.",
+        "score": 3
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.00219375,
+  "other_output_cost_usd": 0.004155,
+  "output_cost_usd": 0.002187,
+  "provider_request_id": "req_f4c525fdfcef4cfdbdf4844a6f997f01",
+  "reasoning_cost_usd": 0.0009405,
+  "reservation_id": "4c95c37b-4f43-49f4-9b71-fa6ecc9bf743",
+  "response_id": "resp_0eeffd527c24fd8d016aa1d6fc7c4087d29930e720ce7a69d0",
+  "returned_model": "gpt-5.4-mini-2026-03-17",
+  "usage": {
+    "cached_input_tokens": 4480,
+    "input_tokens": 6957,
+    "output_tokens": 486,
+    "reasoning_tokens": 209,
+    "total_tokens": 7443,
+    "usage_certainty": "known"
+  }
+}

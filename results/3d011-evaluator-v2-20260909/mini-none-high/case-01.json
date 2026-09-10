@@ -1,0 +1,52 @@
+{
+  "cost_usd": 0.0021069,
+  "data": {
+    "confidence": 0.67,
+    "critical_findings": [],
+    "recommendation": "pass",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "Sofa, coffee table, floor lamp, and motorcycle helmet are all present. Candidate changes the helmet shell from red to a dark green tone and the coffee table is moved closer to the sofa.",
+        "score": 4
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "Camera framing and perspective stay broadly consistent across baseline and candidate, with no obvious major crop or angle change.",
+        "score": 4
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "Lighting remains stable and the helmet material reads as a glossy shell with the requested green-ish recolor; surfaces keep consistent rendering quality.",
+        "score": 4
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "The helmet shell appears plausibly recolored, though the exact dark-green target cannot be verified from pixels alone; overall finish remains intact.",
+        "score": 3
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "The revision is visually coherent, but the coffee table shift is modest and the scene shows slight viewpoint/composition variation between shots.",
+        "score": 3
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.0010359000000000002,
+  "other_output_cost_usd": 0.00357,
+  "output_cost_usd": 0.001071,
+  "provider_request_id": "req_7f928c27b74441ba94510bd2880492f0",
+  "reasoning_cost_usd": 0.0,
+  "reservation_id": "d266ede8-832d-4661-b288-bd4505b07242",
+  "response_id": "resp_05006dcd962a04cb016aa1d9921eb087d296cb68be665f4ac3",
+  "returned_model": "gpt-5.4-mini-2026-03-17",
+  "usage": {
+    "cached_input_tokens": 6272,
+    "input_tokens": 7026,
+    "output_tokens": 238,
+    "reasoning_tokens": 0,
+    "total_tokens": 7264,
+    "usage_certainty": "known"
+  }
+}

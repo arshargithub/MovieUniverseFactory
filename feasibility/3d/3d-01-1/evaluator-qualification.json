@@ -1,0 +1,274 @@
+{
+  "attempts": [
+    {
+      "candidates": [
+        {
+          "candidate_id": "mini-none-low",
+          "image_detail": "low",
+          "metrics": {
+            "accepted_dimension_mae": 2.0,
+            "accepted_scores_within_one": 0.36,
+            "known_api_cost_usd": 0.0667305,
+            "median_case_cost_usd": 0.0056542499999999996,
+            "negative_critical_finding_rate": 1.0,
+            "negative_sensitivity": 1.0,
+            "positive_pass_rate": 0.0,
+            "response_valid_rate": 1.0
+          },
+          "model": "gpt-5.4-mini-2026-03-17",
+          "qualified": false,
+          "reasoning_effort": "none"
+        },
+        {
+          "candidate_id": "mini-low-low",
+          "image_detail": "low",
+          "metrics": {
+            "accepted_dimension_mae": 1.08,
+            "accepted_scores_within_one": 0.8,
+            "known_api_cost_usd": 0.0749925,
+            "median_case_cost_usd": 0.00633375,
+            "negative_critical_finding_rate": 0.8571428571428571,
+            "negative_sensitivity": 0.8571428571428571,
+            "positive_pass_rate": 0.4,
+            "response_valid_rate": 1.0
+          },
+          "model": "gpt-5.4-mini-2026-03-17",
+          "qualified": false,
+          "reasoning_effort": "low"
+        },
+        {
+          "candidate_id": "mini-none-high",
+          "image_detail": "high",
+          "metrics": {
+            "accepted_dimension_mae": 1.84,
+            "accepted_scores_within_one": 0.48,
+            "known_api_cost_usd": 0.029634300000000002,
+            "median_case_cost_usd": 0.00243765,
+            "negative_critical_finding_rate": 1.0,
+            "negative_sensitivity": 1.0,
+            "positive_pass_rate": 0.0,
+            "response_valid_rate": 1.0
+          },
+          "model": "gpt-5.4-mini-2026-03-17",
+          "qualified": false,
+          "reasoning_effort": "none"
+        },
+        {
+          "candidate_id": "mini-low-high",
+          "image_detail": "high",
+          "metrics": {
+            "accepted_dimension_mae": 0.96,
+            "accepted_scores_within_one": 0.88,
+            "known_api_cost_usd": 0.0388278,
+            "median_case_cost_usd": 0.00311265,
+            "negative_critical_finding_rate": 0.8571428571428571,
+            "negative_sensitivity": 0.8571428571428571,
+            "positive_pass_rate": 0.6,
+            "response_valid_rate": 1.0
+          },
+          "model": "gpt-5.4-mini-2026-03-17",
+          "qualified": false,
+          "reasoning_effort": "low"
+        }
+      ],
+      "prompt_version": "3d011-blind-review-v1",
+      "result_dir": "results/3d011-evaluator-20260909",
+      "summary_sha256": "28094f7361606cd8a616d795184816532ef08c1088b37a6d06db71fc508cacc2"
+    },
+    {
+      "candidates": [
+        {
+          "candidate_id": "mini-none-low",
+          "image_detail": "low",
+          "metrics": {
+            "accepted_dimension_mae": 1.24,
+            "accepted_scores_within_one": 0.72,
+            "known_api_cost_usd": 0.065016,
+            "median_case_cost_usd": 0.005516999999999999,
+            "negative_critical_finding_rate": 0.8571428571428571,
+            "negative_sensitivity": 1.0,
+            "positive_pass_rate": 0.2,
+            "response_valid_rate": 1.0
+          },
+          "model": "gpt-5.4-mini-2026-03-17",
+          "qualified": false,
+          "reasoning_effort": "none"
+        },
+        {
+          "candidate_id": "mini-low-low",
+          "image_detail": "low",
+          "metrics": {
+            "accepted_dimension_mae": 0.72,
+            "accepted_scores_within_one": 1.0,
+            "known_api_cost_usd": 0.0723285,
+            "median_case_cost_usd": 0.006311249999999999,
+            "negative_critical_finding_rate": 0.7142857142857143,
+            "negative_sensitivity": 0.8571428571428571,
+            "positive_pass_rate": 1.0,
+            "response_valid_rate": 1.0
+          },
+          "model": "gpt-5.4-mini-2026-03-17",
+          "qualified": false,
+          "reasoning_effort": "low"
+        },
+        {
+          "candidate_id": "mini-none-high",
+          "image_detail": "high",
+          "metrics": {
+            "accepted_dimension_mae": 1.28,
+            "accepted_scores_within_one": 0.72,
+            "known_api_cost_usd": 0.0270378,
+            "median_case_cost_usd": 0.0021924,
+            "negative_critical_finding_rate": 0.5714285714285714,
+            "negative_sensitivity": 1.0,
+            "positive_pass_rate": 0.0,
+            "response_valid_rate": 1.0
+          },
+          "model": "gpt-5.4-mini-2026-03-17",
+          "qualified": false,
+          "reasoning_effort": "none"
+        },
+        {
+          "candidate_id": "mini-low-high",
+          "image_detail": "high",
+          "metrics": {
+            "accepted_dimension_mae": 0.76,
+            "accepted_scores_within_one": 0.92,
+            "known_api_cost_usd": 0.034813800000000006,
+            "median_case_cost_usd": 0.00286065,
+            "negative_critical_finding_rate": 0.8571428571428571,
+            "negative_sensitivity": 0.8571428571428571,
+            "positive_pass_rate": 0.8,
+            "response_valid_rate": 1.0
+          },
+          "model": "gpt-5.4-mini-2026-03-17",
+          "qualified": false,
+          "reasoning_effort": "low"
+        }
+      ],
+      "prompt_version": "3d011-blind-review-v2",
+      "result_dir": "results/3d011-evaluator-v2-20260909",
+      "summary_sha256": "add78d1d2e9e6796728786a412aa60441eafdeee642c831f449708b2cf31d642"
+    },
+    {
+      "candidates": [
+        {
+          "candidate_id": "base-low-low",
+          "image_detail": "low",
+          "metrics": {
+            "accepted_dimension_mae": 0.24,
+            "accepted_scores_within_one": 1.0,
+            "known_api_cost_usd": 0.250875,
+            "median_case_cost_usd": 0.021546000000000003,
+            "negative_critical_finding_rate": 0.8571428571428571,
+            "negative_sensitivity": 0.8571428571428571,
+            "positive_pass_rate": 1.0,
+            "response_valid_rate": 1.0
+          },
+          "model": "gpt-5.4-2026-03-05",
+          "qualified": false,
+          "reasoning_effort": "low"
+        }
+      ],
+      "prompt_version": "3d011-blind-review-v2",
+      "result_dir": "results/3d011-evaluator-v3-20260909",
+      "summary_sha256": "701277a9961e58b5c6acebeea485440345a9eb35923bcf052eeacade6c97233d"
+    },
+    {
+      "candidates": [
+        {
+          "candidate_id": "base-medium-low",
+          "image_detail": "low",
+          "metrics": {
+            "accepted_dimension_mae": 0.4,
+            "accepted_scores_within_one": 1.0,
+            "known_api_cost_usd": 0.33732,
+            "median_case_cost_usd": 0.028372500000000002,
+            "negative_critical_finding_rate": 0.5714285714285714,
+            "negative_sensitivity": 0.5714285714285714,
+            "positive_pass_rate": 1.0,
+            "response_valid_rate": 0.8333333333333334
+          },
+          "model": "gpt-5.4-2026-03-05",
+          "qualified": false,
+          "reasoning_effort": "medium"
+        }
+      ],
+      "prompt_version": "3d011-blind-review-v2",
+      "result_dir": "results/3d011-evaluator-v4-20260909",
+      "summary_sha256": "3eb57a39b2b630dbc315293a9f60abe6a393be8a9cad689c4932b319923d7770"
+    },
+    {
+      "candidates": [
+        {
+          "candidate_id": "mini-low-low-framing",
+          "image_detail": "low",
+          "metrics": {
+            "accepted_dimension_mae": 0.68,
+            "accepted_scores_within_one": 1.0,
+            "known_api_cost_usd": 0.0721485,
+            "median_case_cost_usd": 0.00607875,
+            "negative_critical_finding_rate": 0.7142857142857143,
+            "negative_sensitivity": 0.7142857142857143,
+            "positive_pass_rate": 1.0,
+            "response_valid_rate": 1.0
+          },
+          "model": "gpt-5.4-mini-2026-03-17",
+          "qualified": false,
+          "reasoning_effort": "low"
+        },
+        {
+          "candidate_id": "base-low-low-framing",
+          "image_detail": "low",
+          "metrics": {
+            "accepted_dimension_mae": 0.28,
+            "accepted_scores_within_one": 1.0,
+            "known_api_cost_usd": 0.2646,
+            "median_case_cost_usd": 0.0233225,
+            "negative_critical_finding_rate": 1.0,
+            "negative_sensitivity": 1.0,
+            "positive_pass_rate": 1.0,
+            "response_valid_rate": 1.0
+          },
+          "model": "gpt-5.4-2026-03-05",
+          "qualified": true,
+          "reasoning_effort": "low"
+        }
+      ],
+      "prompt_version": "3d011-blind-review-v3",
+      "result_dir": "results/3d011-evaluator-v5-20260909",
+      "summary_sha256": "d3ea7e43af5bb7b0d731586be15e1217eabbf11de78e2bb89b0d86b84775d842"
+    }
+  ],
+  "benchmark_manifest_hash": "975cb66e01f76fa7d867c92a3855d4b4a601e7b7a162b5569642a9abfe275099",
+  "claim_boundary": "Qualification applies to this six-image 3D-01.1 rubric and balanced benchmark; it does not establish general visual judgment.",
+  "experiment_id": "3D-01.1-evaluator",
+  "interpretation": "The selected reviewer passed every positive case and detected every negative case. Earlier attempts are preserved and are not qualification evidence.",
+  "schema_version": "1.0",
+  "selected_candidate": {
+    "candidate_id": "base-low-low-framing",
+    "image_detail": "low",
+    "metrics": {
+      "accepted_dimension_mae": 0.28,
+      "accepted_scores_within_one": 1.0,
+      "known_api_cost_usd": 0.2646,
+      "median_case_cost_usd": 0.0233225,
+      "negative_critical_finding_rate": 1.0,
+      "negative_sensitivity": 1.0,
+      "positive_pass_rate": 1.0,
+      "response_valid_rate": 1.0
+    },
+    "model": "gpt-5.4-2026-03-05",
+    "qualified": true,
+    "reasoning_effort": "low"
+  },
+  "status": "QUALIFIED",
+  "thresholds": {
+    "accepted_dimension_mae_max": 1.0,
+    "accepted_scores_within_one_min": 0.8,
+    "negative_critical_finding_rate_min": 1.0,
+    "negative_sensitivity_min": 1.0,
+    "positive_pass_rate_min": 1.0,
+    "response_valid_rate_min": 1.0
+  }
+}

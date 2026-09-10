@@ -5,7 +5,7 @@ import pytest
 from PIL import Image
 
 from movie_factory.budget import BudgetLedger
-from movie_factory.providers.openai_provider import MODEL, OpenAIProvider, normalize_usage, provider_safe_schema, usage_cost
+from movie_factory.providers.openai_provider import MINI_MODEL, MODEL, OpenAIProvider, normalize_usage, provider_safe_schema, usage_cost
 
 
 SCHEMA = {"type": "object", "properties": {"ok": {"type": "boolean"}},
@@ -133,6 +133,24 @@ def test_image_payload_and_conservative_reservation(tmp_path):
     text = (tmp_path / "logs/telemetry.jsonl").read_text()
     assert '"width":1280' in text
     assert "base64" not in text
+
+
+def test_pinned_mini_pricebook_and_low_detail_are_applied(tmp_path):
+    path = tmp_path / "test.png"
+    Image.new("RGB", (1280, 720), "red").save(path)
+    raw = response(model=MINI_MODEL)
+    ledger = BudgetLedger(tmp_path / "ledger.jsonl")
+    client = FakeClient(raw)
+    settings = {"MF_PLANNER_MODEL": MODEL, "MF_VISION_MODEL": MINI_MODEL,
+                "MF_VISION_REASONING_EFFORT": "low", "MF_IMAGE_DETAIL": "low",
+                "MF_COST_SCOPE": "development", "OPENAI_API_KEY": "synthetic"}
+    instance = OpenAIProvider(settings, ledger, tmp_path / "logs", client=client)
+    result = call(instance, images=[path])
+    assert result["cost_usd"] == pytest.approx(.0003825)
+    request = client.calls[0]
+    assert request["model"] == MINI_MODEL
+    assert request["reasoning"] == {"effort": "low"}
+    assert request["input"][0]["content"][1]["detail"] == "low"
 
 
 def test_remote_schema_ref_denied_before_dispatch(tmp_path):

@@ -1,0 +1,55 @@
+{
+  "cost_usd": 0.0043289999999999995,
+  "data": {
+    "confidence": 0.82,
+    "critical_findings": [
+      "Visible left-side wall intrusion/occlusion in the candidate changes the composition beyond the requested revision.",
+      "Helmet shell appears green but not clearly confirmable as the exact requested dark green from pixels alone."
+    ],
+    "recommendation": "reject",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "All required objects are present; the coffee table is moved closer to the sofa and the helmet shell changes from red to green in the candidate.",
+        "score": 4
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "Camera framing is broadly consistent, though the candidate introduces noticeable occlusion from the left wall and a slightly different composition.",
+        "score": 3
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "Lighting remains generally stable; the helmet material reads as dark green, but the exact target tone cannot be verified from the pixels alone.",
+        "score": 3
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "The revised helmet and furniture surfaces look procedurally clean with no obvious breakage, though the helmet finish is somewhat noisy/grainy.",
+        "score": 3
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "The candidate adds a visible left-side wall intrusion/occlusion that is not present in the baseline, altering composition beyond the requested object edits.",
+        "score": 2
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.0031095,
+  "other_output_cost_usd": 0.004065,
+  "output_cost_usd": 0.0012195,
+  "provider_request_id": "req_cc0f5a1b086f4a25969b86b01abd66e7",
+  "reasoning_cost_usd": 0.0,
+  "reservation_id": "a5f7bf23-784d-4a09-b5b4-c68b113e68eb",
+  "response_id": "resp_07bf4f485d9645b2016aa1d92a19d087d2add74b1040dc2640",
+  "returned_model": "gpt-5.4-mini-2026-03-17",
+  "usage": {
+    "cached_input_tokens": 3200,
+    "input_tokens": 7026,
+    "output_tokens": 271,
+    "reasoning_tokens": 0,
+    "total_tokens": 7297,
+    "usage_certainty": "known"
+  }
+}

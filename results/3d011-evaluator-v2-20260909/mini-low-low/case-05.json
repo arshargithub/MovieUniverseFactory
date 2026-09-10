@@ -1,0 +1,55 @@
+{
+  "cost_usd": 0.0079245,
+  "data": {
+    "confidence": 0.78,
+    "critical_findings": [
+      "Noticeable scene-wide lighting/color drift from baseline to candidate, with the candidate significantly darker and greener.",
+      "The helmet shell reads very dark\u2014almost black\u2014so the intended dark-green change is only moderately legible."
+    ],
+    "recommendation": "repair",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "All required objects are present, the coffee table is moved closer to the sofa, and the helmet no longer reads red in the candidate views.",
+        "score": 4
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "Camera angle is broadly consistent, but the candidate views feel slightly tighter and darker than the baseline.",
+        "score": 3
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "The helmet shell shifts toward a dark green/near-black look, but the scene-wide green/darkening drift makes the material change less cleanly isolated.",
+        "score": 3
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "Objects remain intact with no obvious geometry breakage, intersections, or severe surface artifacts beyond the very dark helmet appearance.",
+        "score": 4
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "The revision direction is correct overall, but the candidate introduces visible global lighting/color drift that affects continuity.",
+        "score": 3
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.0052695,
+  "other_output_cost_usd": 0.003975,
+  "output_cost_usd": 0.002655,
+  "provider_request_id": "req_ca64a33edf9946e79d4dae4071aac8d4",
+  "reasoning_cost_usd": 0.0014625,
+  "reservation_id": "224f6f11-918b-4341-9d6f-4745a1255463",
+  "response_id": "resp_0cc8a3914a588d50016aa1d96d2b4c87d2b288c957aaf0294a",
+  "returned_model": "gpt-5.4-mini-2026-03-17",
+  "usage": {
+    "cached_input_tokens": 0,
+    "input_tokens": 7026,
+    "output_tokens": 590,
+    "reasoning_tokens": 325,
+    "total_tokens": 7616,
+    "usage_certainty": "known"
+  }
+}

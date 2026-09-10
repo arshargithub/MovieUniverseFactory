@@ -1,0 +1,54 @@
+{
+  "cost_usd": 0.00255015,
+  "data": {
+    "confidence": 0.91,
+    "critical_findings": [
+      "Helmet shell color is wrong in the candidate: blue instead of dark green #163D2A."
+    ],
+    "recommendation": "reject",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "The coffee table appears moved closer to the sofa in the candidate views, but the helmet shell was not changed to dark green #163D2A; it is blue instead.",
+        "score": 2
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "Camera framing and perspective are broadly consistent across baseline and candidate views with no major compositional degradation.",
+        "score": 4
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "Lighting remains stable and the room materials keep a similar soft, diffuse render; no obvious lighting drift is visible.",
+        "score": 4
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "The helmet surface and sofa/table finishes remain serviceable, though the helmet color/material change is incorrect relative to the brief.",
+        "score": 3
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "The candidate introduces the wrong helmet shell color, which breaks the requested revision despite the table appearing repositioned toward the sofa.",
+        "score": 2
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.00098415,
+  "other_output_cost_usd": 0.00369,
+  "output_cost_usd": 0.001566,
+  "provider_request_id": "req_4ed870958d2f4e66a6140a7676c4dda1",
+  "reasoning_cost_usd": 0.000459,
+  "reservation_id": "807e8b6b-6637-4c87-a933-73f29559b232",
+  "response_id": "resp_08f4b0f38af17ac4016aa1d75ee90c87d29516c4b2c4a3fb4e",
+  "returned_model": "gpt-5.4-mini-2026-03-17",
+  "usage": {
+    "cached_input_tokens": 6272,
+    "input_tokens": 6957,
+    "output_tokens": 348,
+    "reasoning_tokens": 102,
+    "total_tokens": 7305,
+    "usage_certainty": "known"
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "cost_usd": 0.029835,
+  "data": {
+    "confidence": 0.91,
+    "critical_findings": [],
+    "recommendation": "pass",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "All required scene objects are present across the set, the coffee table is visibly moved closer to the sofa in the revision, and the helmet shell changes from red to a dark green while preserving the overall scene layout.",
+        "score": 5
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "Camera angles and framing match the baseline closely across shots A, B, and C, preserving composition and readability of the requested edits.",
+        "score": 4
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "Lighting remains consistent with the baseline and the helmet retains a plausible glossy shell material after recoloring, with no obvious material mismatch elsewhere.",
+        "score": 4
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "Object placement appears stable and believable, with no clear intersections or broken geometry introduced by the revision.",
+        "score": 4
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "Continuity is strong: the table shift is consistent across wide and medium views, the helmet color update is consistent across all views, and no unintended scene changes are apparent.",
+        "score": 5
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.017565,
+  "other_output_cost_usd": 0.003735,
+  "output_cost_usd": 0.01227,
+  "provider_request_id": "req_5f43759aa4f940ba97890837e4a93708",
+  "reasoning_cost_usd": 0.008535,
+  "reservation_id": "881cb679-605a-48d2-b2a3-356da9a92f30",
+  "response_id": "resp_09523b46cbe4ec96016aa1dba423bc87d28ecb746c52d6c0f7",
+  "returned_model": "gpt-5.4-2026-03-05",
+  "usage": {
+    "cached_input_tokens": 0,
+    "input_tokens": 7026,
+    "output_tokens": 818,
+    "reasoning_tokens": 569,
+    "total_tokens": 7844,
+    "usage_certainty": "known"
+  }
+}

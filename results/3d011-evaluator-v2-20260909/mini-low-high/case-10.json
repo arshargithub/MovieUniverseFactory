@@ -1,0 +1,55 @@
+{
+  "cost_usd": 0.0031734000000000003,
+  "data": {
+    "confidence": 0.79,
+    "critical_findings": [
+      "Floor lamp is not visible in the candidate views, reducing required object presence continuity.",
+      "Helmet green reads as a lighter green rather than clearly dark green from pixels alone, though the color direction is correct."
+    ],
+    "recommendation": "reject",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "Coffee table is visibly moved closer to the sofa, and the helmet shell changes from red to green across the revision images.",
+        "score": 4
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "Camera angle and framing stay broadly consistent between baseline and candidate, with only minor composition change from the table repositioning.",
+        "score": 4
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "Lighting remains stable and the sofa/table materials look consistent; the helmet shows a plausible green material update without obvious lighting mismatch.",
+        "score": 4
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "The revised helmet retains a coherent glossy shell and visor finish, and the moved table still sits naturally in the scene.",
+        "score": 4
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "Overall continuity is mostly preserved, but the floor lamp is no longer visible in the candidate views and the framing composition shifts slightly due to the table move.",
+        "score": 3
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.0010359000000000002,
+  "other_output_cost_usd": 0.003975,
+  "output_cost_usd": 0.0021375,
+  "provider_request_id": "req_3649816975144719afa56c8ce6bd712d",
+  "reasoning_cost_usd": 0.000945,
+  "reservation_id": "616778d5-58b0-47e2-817c-ada1f29d5c6b",
+  "response_id": "resp_0e6ad787e7d3b93b016aa1d9f6085887d2a446fa0076d3c358",
+  "returned_model": "gpt-5.4-mini-2026-03-17",
+  "usage": {
+    "cached_input_tokens": 6272,
+    "input_tokens": 7026,
+    "output_tokens": 475,
+    "reasoning_tokens": 210,
+    "total_tokens": 7501,
+    "usage_certainty": "known"
+  }
+}

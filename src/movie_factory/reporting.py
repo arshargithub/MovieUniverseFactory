@@ -203,8 +203,14 @@ def write_campaign_report(campaign_dir: Path, summaries: list[dict[str, Any]], b
     source_binding = _json(campaign_dir / "source-binding.json")
     batch_review = _json(campaign_dir / "director-batch-review.json")
     replay_attestation = _json(campaign_dir / "replay-attestation.json")
+    frozen = _json(campaign_dir / "frozen-campaign.json", {}) or {}
+    experiment_id = frozen.get("experiment_id", "3D-01")
+    claim_boundary = frozen.get(
+        "claim_boundary",
+        "Evidence applies only to the recorded structured revision contract."
+    )
     report = {
-        "schema_version":"1.0","campaign_id":campaign_dir.name,"pairs_attempted":len(summaries),"pairs_machine_valid":passed,
+        "schema_version":"1.0","experiment_id":experiment_id,"campaign_id":campaign_dir.name,"pairs_attempted":len(summaries),"pairs_machine_valid":passed,
         "director_review":"PENDING" if pending_director else "RECORDED","decision":color,"budget":budget,"metrics":metrics,"remediation":remediation,"runs":portable_summaries
     }
     if source_binding:
@@ -224,17 +230,19 @@ def write_campaign_report(campaign_dir: Path, summaries: list[dict[str, Any]], b
     platform = doctor.get("platform", {})
     blender = doctor.get("blender", {})
     lines = [
-        "# 3D-01 campaign report", "", f"**Decision: {color}**", "",
+        f"# {experiment_id} campaign report", "", f"**Decision: {color}**", "",
         f"Machine-valid pairs: **{passed}/{len(summaries)}**. " + ("Director creative acceptance remains pending." if pending_director else "Director reviews are recorded.") + (" Revision API economics are in the YELLOW band." if economics_yellow and not economics_red else ""), "",
         "## Environment and frozen configuration", "",
         f"- macOS {platform.get('macos')} on {platform.get('architecture')}; outer Python {platform.get('python')}",
         f"- {blender.get('output','').splitlines()[0] if blender.get('output') else 'Blender version unavailable'}; binary SHA-256 `{blender.get('sha256')}`",
         "- Blender Cycles CPU, 1280×720, 64 samples, three frozen cameras; two neutral frozen lights",
-        "- Planner and visual reviewer: pinned `gpt-5.4-2026-03-05`, medium reasoning, no provider retries, `store=false`",
+        f"- Planner: pinned `{frozen.get('planner_model','gpt-5.4-2026-03-05')}`, {frozen.get('planner_reasoning_effort','medium')} reasoning",
+        f"- Visual reviewer: pinned `{frozen.get('vision_model','gpt-5.4-2026-03-05')}`, {frozen.get('vision_reasoning_effort','medium')} reasoning, `{frozen.get('image_detail','high')}` image detail, prompt `{frozen.get('visual_prompt_version','legacy')}`",
+        "- Provider retries disabled; responses use `store=false`",
         "- Scene interface: strict semantic plans and trusted structured Blender operations; no model-generated code is executed", "",
         "## Source provenance", "",
         (f"- Status: `{source_binding.get('status')}`; implementation commit `{source_binding.get('implementation_commit')}`; Git tree `{source_binding.get('implementation_tree')}`" if source_binding else "- Source binding has not been recorded."),
-        (f"- Evidence seal tag: `{source_binding.get('evidence_seal_tag')}`. {source_binding.get('qualification_provenance_note')}" if source_binding else "- Commit and tree provenance remain pending."), "",
+        ((f"- Evidence seal tag: `{source_binding.get('evidence_seal_tag')}`. " if source_binding and source_binding.get('evidence_seal_tag') else "- ") + source_binding.get('qualification_provenance_note','') if source_binding else "- Commit and tree provenance remain pending."), "",
         (f"- Offline revision replay: seed {replay_attestation.get('seed')}; zero semantic differences; no provider calls; [attestation](replay-attestation.json)" if replay_attestation else "- Offline non-101 replay remains pending."), "",
         "## Machine outcome", "",
         f"All {passed} selected pairs passed baseline structure, exact deny-by-default revision state, required mask visibility, oracle render comparison, and the model visual gate.",
@@ -257,10 +265,10 @@ def write_campaign_report(campaign_dir: Path, summaries: list[dict[str, Any]], b
     review_action = "Director reviews are complete and recorded." if not pending_director else "Open each comparison/contact sheet and record Director scores."
     lines += ["", "## Failures, limits, and next action", "",
               f"Before freezing this selected campaign, {len(remediation.get('attempts', []))} implementation-remediation attempts consumed USD {remediation.get('known_api_cost_usd', 0):.6f}. Their artifacts and causes are retained in `remediation-attempts.json` and their costs remain included in the global ledger. They are not presented as Blender failures or selected results.",
-              "This five-pair experiment is evidence for the recorded 3D-01 configuration only; it is too small for a production reliability claim. Houdini and Unreal were not run.",
-              "The autonomy result is deliberately narrow: cameras and lights were frozen, planning bands were tight, and the revision contract allowed two known operations. It demonstrates persistent semantic state, trusted structured Blender execution, exact targeted revision, preservation, and offline replay. It does not demonstrate general autonomous cinematography, arbitrary natural-language editing, production asset quality, or unrestricted model control of Blender.",
+              f"This five-pair experiment is evidence for the recorded {experiment_id} configuration only; it is too small for a production reliability claim. Houdini and Unreal were not run.",
+              claim_boundary,
               review_action,
-              f"To pursue GREEN, reduce all revision-runtime API cost enough to bring median `R_api` from {med_api:.4f} to at most 0.75 without weakening validation." if med_api is not None else "Revision economics could not be calculated."]
+              (f"Revision economics meet the GREEN ceiling: median `R_api` is {med_api:.4f}, at or below 0.75." if med_api is not None and med_api <= .75 else f"To pursue GREEN, reduce all revision-runtime API cost enough to bring median `R_api` from {med_api:.4f} to at most 0.75 without weakening validation.") if med_api is not None else "Revision economics could not be calculated."]
     path = campaign_dir / "REPORT.md"
     path.write_text("\n".join(lines) + "\n")
     return path

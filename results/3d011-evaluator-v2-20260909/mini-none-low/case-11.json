@@ -1,0 +1,55 @@
+{
+  "cost_usd": 0.006588,
+  "data": {
+    "confidence": 0.84,
+    "critical_findings": [
+      "Coffee table move is not cleanly isolated; it shifts in a way that looks like a broader repositioning rather than only toward the sofa.",
+      "Visible composition changes between baseline and candidate make the edit feel less tightly continuous than ideal."
+    ],
+    "recommendation": "repair",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "Candidate keeps the sofa, coffee table, floor lamp, and helmet present; coffee table is visibly closer to the sofa and the helmet shell changes from red to dark green.",
+        "score": 4
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "Camera framing stays broadly consistent with the baseline while maintaining the room composition; no major viewpoint drift is apparent.",
+        "score": 4
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "Lighting remains stable across the revision and the helmet material reads as a glossy dark green shell with unchanged visor.",
+        "score": 4
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "Helmet finish looks clean and coherent; table and sofa surfaces remain plausible with no obvious material breakage or severe artifacts.",
+        "score": 4
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "Revision intent is mostly correct, but the coffee table appears moved more diagonally and slightly more than a simple toward-sofa adjustment, and the close-up reveals a noticeable change in perceived size/placement due to camera composition rather than only object edit.",
+        "score": 3
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.0052695,
+  "other_output_cost_usd": 0.004395,
+  "output_cost_usd": 0.0013185,
+  "provider_request_id": "req_eabacfbb312c42cdb950eca19614e0ae",
+  "reasoning_cost_usd": 0.0,
+  "reservation_id": "6ee69e0b-64cd-416a-83f4-f3573b41057a",
+  "response_id": "resp_0d8ffde538894549016aa1d94ff14887d2bab40f5dcd862a8b",
+  "returned_model": "gpt-5.4-mini-2026-03-17",
+  "usage": {
+    "cached_input_tokens": 0,
+    "input_tokens": 7026,
+    "output_tokens": 293,
+    "reasoning_tokens": 0,
+    "total_tokens": 7319,
+    "usage_certainty": "known"
+  }
+}

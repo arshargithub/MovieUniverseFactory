@@ -1,0 +1,56 @@
+{
+  "cost_usd": 0.0065655,
+  "data": {
+    "confidence": 0.9,
+    "critical_findings": [
+      "Coffee table intersects the sofa in the revision, creating an implausible overlap.",
+      "Helmet is partially obscured by the moved table in the revision, reducing clarity of the intended color change.",
+      "Composition changes noticeably between baseline and revision due to the table\u2019s new placement and occlusion."
+    ],
+    "recommendation": "reject",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "All required objects are present, the coffee table is moved closer to the sofa, and the helmet shell is visibly changed from red to dark green.",
+        "score": 3
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "Camera framing is inconsistent across the revision set, with notable viewpoint shifts and occlusion changes from the added table proximity.",
+        "score": 2
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "Lighting stays broadly consistent and the helmet color change is visible, but the render is noisy and the dark green shell reads somewhat muted under the lighting.",
+        "score": 3
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "The revised table now intersects/overlaps the sofa space and partially obscures the helmet, degrading the physical plausibility of the arrangement.",
+        "score": 2
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "The revision introduces substantial composition change and object overlap; the table is pushed into the sofa area rather than cleanly repositioned.",
+        "score": 2
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.0052695,
+  "other_output_cost_usd": 0.00432,
+  "output_cost_usd": 0.001296,
+  "provider_request_id": "req_b5459e0d696f436d9f4fa7e8d350e2a1",
+  "reasoning_cost_usd": 0.0,
+  "reservation_id": "cb030359-ca63-4fa9-ac86-d7cbf743ae69",
+  "response_id": "resp_08f0c3a5548cef18016aa1d924002487d2986679c0fc8e8596",
+  "returned_model": "gpt-5.4-mini-2026-03-17",
+  "usage": {
+    "cached_input_tokens": 0,
+    "input_tokens": 7026,
+    "output_tokens": 288,
+    "reasoning_tokens": 0,
+    "total_tokens": 7314,
+    "usage_certainty": "known"
+  }
+}

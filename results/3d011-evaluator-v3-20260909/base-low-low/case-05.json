@@ -1,0 +1,52 @@
+{
+  "cost_usd": 0.023685,
+  "data": {
+    "confidence": 0.94,
+    "critical_findings": [],
+    "recommendation": "pass",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "All required objects remain visible across the set: sofa, coffee table, floor lamp, and motorcycle helmet. In the candidate, the coffee table is visibly positioned closer to the sofa, and the helmet shell is changed from red to a dark green tone while other helmet parts remain consistent.",
+        "score": 5
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "Camera framing and viewpoints for shots A, B, and C match the baseline closely, preserving composition and readability of the requested edits.",
+        "score": 5
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "The dim green-tinted lighting remains consistent between baseline and revision. Helmet material still reads as a glossy shell with stable visor reflections; the shell color intent clearly shifts to dark green.",
+        "score": 4
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "Geometry and placement appear clean with no obvious new intersections, distortions, or malformed surfaces. The table and helmet sit plausibly in the scene.",
+        "score": 4
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "Scene continuity is strong: sofa, lamp, room, helmet details, and camera setup remain unchanged aside from the intended table repositioning and helmet shell recolor.",
+        "score": 5
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.017565,
+  "other_output_cost_usd": 0.004215,
+  "output_cost_usd": 0.00612,
+  "provider_request_id": "req_2d6d47f496d6496598964de4b41bf4c7",
+  "reasoning_cost_usd": 0.001905,
+  "reservation_id": "4bd7edca-bafd-46bb-a26f-0d8a7045858f",
+  "response_id": "resp_07782bc454ebf6e3016aa1da881a5487d2826500d373c4db90",
+  "returned_model": "gpt-5.4-2026-03-05",
+  "usage": {
+    "cached_input_tokens": 0,
+    "input_tokens": 7026,
+    "output_tokens": 408,
+    "reasoning_tokens": 127,
+    "total_tokens": 7434,
+    "usage_certainty": "known"
+  }
+}

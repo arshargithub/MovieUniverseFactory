@@ -1,0 +1,57 @@
+{
+  "cost_usd": 0.00360315,
+  "data": {
+    "confidence": 0.91,
+    "critical_findings": [
+      "One of the candidate images is completely blank/empty instead of showing the revised scene.",
+      "The coffee table move is not clearly and consistently verifiable as exactly 0.4 metres toward the sofa.",
+      "The helmet color appears green, but not cleanly matched to the specified dark green #163D2A across all candidate views.",
+      "Visible candidate views show rendering noise/grain and slight framing/placement drift, reducing continuity."
+    ],
+    "recommendation": "reject",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "Candidate set includes a blank/empty fourth frame instead of a valid revision shot, so the requested revision is not fully and clearly demonstrated. The helmet color change to green is visible in the remaining candidate views, but the table move is only partially verifiable.",
+        "score": 2
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "The visible candidate views preserve the general camera angle and framing style, but one frame is missing entirely and the remaining shots show a noticeably different crop/placement relative to the sofa and table.",
+        "score": 3
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "Lighting stays broadly consistent, though the render noise is heavy and the helmet material reads as a brighter, slightly more reflective green than a clean dark green #163D2A.",
+        "score": 3
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "The helmet geometry and sofa/table assets remain intact without obvious mesh breakage, but the candidate has a rough render finish with visible grain and no strong evidence of a polished procedural prototype output.",
+        "score": 3
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "The candidate revision contains a blank frame, and the coffee table position relative to the sofa does not read as a clearly controlled exact 0.4 m move across all views. The helmet color change is present, but the overall revision continuity is not reliable.",
+        "score": 2
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.00098415,
+  "other_output_cost_usd": 0.00594,
+  "output_cost_usd": 0.002619,
+  "provider_request_id": "req_dc6f4bf3afd14944bb9f0678b85345a6",
+  "reasoning_cost_usd": 0.000837,
+  "reservation_id": "9f507d68-6a22-4128-90b4-9e795e920111",
+  "response_id": "resp_0d4a14888badb1a8016aa1d767eb9887d29961b63b1df2f81d",
+  "returned_model": "gpt-5.4-mini-2026-03-17",
+  "usage": {
+    "cached_input_tokens": 6272,
+    "input_tokens": 6957,
+    "output_tokens": 582,
+    "reasoning_tokens": 186,
+    "total_tokens": 7539,
+    "usage_certainty": "known"
+  }
+}

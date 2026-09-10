@@ -1,0 +1,57 @@
+{
+  "cost_usd": 0.004761,
+  "data": {
+    "confidence": 0.83,
+    "critical_findings": [
+      "Candidate introduces major camera/framing drift relative to the baseline, including a foreground wall occluding the scene.",
+      "Lighting/color balance changes dramatically from bright neutral to dark red, affecting continuity and material readability.",
+      "Helmet shell does not read as the requested dark green; it appears mostly black/dark with at most a weak green cast.",
+      "Coffee table movement toward the sofa is not clearly evident from the images."
+    ],
+    "recommendation": "reject",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "The sofa, coffee table, floor lamp, and helmet are present, but the required revision is not clearly correct: the helmet shell has changed from red to a very dark near-black/greenish tone, and the coffee table does not appear visibly moved toward the sofa in a reliable way.",
+        "score": 2
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "The candidate views show major camera/framing drift and heavy occlusion from a foreground wall, with a much darker, less readable composition than the baseline.",
+        "score": 2
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "Lighting changes substantially between baseline and candidate, shifting from bright neutral to a dark red-tinted scene; material appearance of the helmet becomes hard to verify because of the extreme lighting shift.",
+        "score": 2
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "The candidate renders are significantly darker and noisier, with reduced clarity and visibility of object surfaces, which degrades the physical presentation.",
+        "score": 2
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "There is clear continuity drift across the candidate images, including strong lighting/color changes and camera repositioning; the intended selective helmet-shell color edit is not cleanly isolated.",
+        "score": 1
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.0031095,
+  "other_output_cost_usd": 0.005505,
+  "output_cost_usd": 0.0016515,
+  "provider_request_id": "req_9be2758d97ae49a0ac9bb2ddf3d0f77c",
+  "reasoning_cost_usd": 0.0,
+  "reservation_id": "fbb27022-b1c5-4a41-b374-2610ed540e1c",
+  "response_id": "resp_0c8be36c71b269f7016aa1d92eedb087d29df4c4d165bb29b0",
+  "returned_model": "gpt-5.4-mini-2026-03-17",
+  "usage": {
+    "cached_input_tokens": 3200,
+    "input_tokens": 7026,
+    "output_tokens": 367,
+    "reasoning_tokens": 0,
+    "total_tokens": 7393,
+    "usage_certainty": "known"
+  }
+}

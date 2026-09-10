@@ -1,0 +1,54 @@
+{
+  "cost_usd": 0.0028089000000000005,
+  "data": {
+    "confidence": 0.95,
+    "critical_findings": [
+      "Helmet shell changes from red to blue instead of the required dark green."
+    ],
+    "recommendation": "reject",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "Coffee table is moved closer to the sofa, but the helmet shell is not changed to dark green; it remains visibly blue in the candidate.",
+        "score": 2
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "Camera framing and viewpoint remain consistent between baseline and candidate with no major drift or crop issues.",
+        "score": 4
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "Lighting and material response stay broadly consistent overall, though the helmet\u2019s shell color change is incorrect.",
+        "score": 3
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "The scene retains the required sofa, coffee table, floor lamp, and helmet, with no obvious geometry breakage or intersections beyond the intended table relocation.",
+        "score": 3
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "The coffee table moves toward the sofa as requested, but the helmet color continuity is wrong: red in baseline becomes blue rather than dark green in the candidate.",
+        "score": 2
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.0010359000000000002,
+  "other_output_cost_usd": 0.00363,
+  "output_cost_usd": 0.001773,
+  "provider_request_id": "req_610016ebc7ae463d993e048a52d4edd9",
+  "reasoning_cost_usd": 0.000684,
+  "reservation_id": "fa509ec8-d078-403c-9492-88ca72723570",
+  "response_id": "resp_01314080821c9b0e016aa1d9e605e087d29855554b1b0804b3",
+  "returned_model": "gpt-5.4-mini-2026-03-17",
+  "usage": {
+    "cached_input_tokens": 6272,
+    "input_tokens": 7026,
+    "output_tokens": 394,
+    "reasoning_tokens": 152,
+    "total_tokens": 7420,
+    "usage_certainty": "known"
+  }
+}

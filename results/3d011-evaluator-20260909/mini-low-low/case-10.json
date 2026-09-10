@@ -1,0 +1,52 @@
+{
+  "cost_usd": 0.00487575,
+  "data": {
+    "confidence": 0.87,
+    "critical_findings": [],
+    "recommendation": "pass",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "Coffee table is moved closer to the sofa in the candidate, and the helmet shell changes from red to dark green #163D2A across all candidate views.",
+        "score": 5
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "Camera angle and framing are consistent with the baseline overall, with only minor composition shift due to the table placement change.",
+        "score": 4
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "Lighting remains stable and the materials read consistently; the helmet retains its glossy finish and the sofa/table surfaces are unchanged.",
+        "score": 4
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "The helmet shell looks cleanly recolored without obvious texture breaks, and the scene geometry/material transitions remain coherent.",
+        "score": 4
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "The revision is applied consistently in shot_A, shot_B, and shot_C: table location is updated coherently and the helmet color matches the requested dark green in every candidate image.",
+        "score": 5
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.00305775,
+  "other_output_cost_usd": 0.00357,
+  "output_cost_usd": 0.001818,
+  "provider_request_id": "req_1fea510748d74e59aff3dfe991f1cd97",
+  "reasoning_cost_usd": 0.000747,
+  "reservation_id": "10290d2a-323f-404d-956d-16e2d074789b",
+  "response_id": "resp_059e33475715387a016aa1d6f2bc9887d2b2a2d165aea6ca8c",
+  "returned_model": "gpt-5.4-mini-2026-03-17",
+  "usage": {
+    "cached_input_tokens": 3200,
+    "input_tokens": 6957,
+    "output_tokens": 404,
+    "reasoning_tokens": 166,
+    "total_tokens": 7361,
+    "usage_certainty": "known"
+  }
+}

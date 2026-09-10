@@ -1,0 +1,57 @@
+{
+  "cost_usd": 0.019797,
+  "data": {
+    "confidence": 0.89,
+    "critical_findings": [
+      "Global lighting changed dramatically from bright neutral illumination to a dark warm/red-tinted render.",
+      "Helmet shell color reads very dark because of the lighting shift, making the intended dark green harder to verify cleanly.",
+      "Coffee table movement toward the sofa is not clearly demonstrated across the candidate views.",
+      "Overall scene material appearance is altered by the lighting drift, not limited to the requested helmet-shell recolor."
+    ],
+    "recommendation": "reject",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "All required objects remain present. The helmet shell is changed from red to a very dark green appearance, and the coffee table appears moved somewhat toward the sofa, though the move is modest and harder to verify under the darker render.",
+        "score": 3
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "Camera framing across the three views is broadly preserved, with similar compositions and object placements. However, the much darker render reduces legibility and weakens scene readability.",
+        "score": 3
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "Lighting changes drastically from a bright neutral setup to a very dark warm/red-tinted scene. This substantially alters perceived materials and makes the helmet color difficult to read accurately.",
+        "score": 1
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "Objects appear intact with no obvious missing geometry or severe intersections. The scene remains coherent, though the dark noisy render obscures fine surface quality.",
+        "score": 3
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "The intended helmet recolor is visible, but the candidate introduces a major unintended global lighting/material appearance shift. The coffee table shift toward the sofa is not especially clear and continuity with the baseline is poor due to the render change.",
+        "score": 2
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.012957,
+  "other_output_cost_usd": 0.005415,
+  "output_cost_usd": 0.00684,
+  "provider_request_id": "req_89ee6aae6d484951b7702a4172e6f67f",
+  "reasoning_cost_usd": 0.001425,
+  "reservation_id": "44ea1521-269e-4593-96dd-35240d4fd73c",
+  "response_id": "resp_0fc94e0e35e974e4016aa1da810f5c87d299b719c3c6a6213b",
+  "returned_model": "gpt-5.4-2026-03-05",
+  "usage": {
+    "cached_input_tokens": 2048,
+    "input_tokens": 7026,
+    "output_tokens": 456,
+    "reasoning_tokens": 95,
+    "total_tokens": 7482,
+    "usage_certainty": "known"
+  }
+}

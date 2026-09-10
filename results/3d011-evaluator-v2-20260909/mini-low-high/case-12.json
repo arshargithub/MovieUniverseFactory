@@ -1,0 +1,55 @@
+{
+  "cost_usd": 0.0031779,
+  "data": {
+    "confidence": 0.88,
+    "critical_findings": [
+      "One candidate image is effectively invalid: the room scene is largely missing, replaced by wall/occlusion, indicating severe camera or render drift.",
+      "This discontinuous candidate view degrades composition and makes the revision set inconsistent across shots."
+    ],
+    "recommendation": "reject",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "Candidate shows the helmet shell changed from red to dark green and the coffee table is visibly moved closer toward the sofa while all required objects remain present.",
+        "score": 4
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "One candidate view is badly broken/near-empty, showing mostly wall and a dark occluding region instead of the room, indicating major camera drift or framing failure.",
+        "score": 2
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "Overall lighting stays consistent across most views and the green helmet material reads clearly as a plausible shell color change without obvious texture corruption.",
+        "score": 4
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "The sofa, table, lamp, and helmet all remain rendered with generally clean surfaces; the helmet color change is visually coherent and the objects do not show major new intersections.",
+        "score": 4
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "The candidate set includes a strong discontinuity/failed view with the scene largely absent, which breaks continuity even though the requested edit is visible in other views.",
+        "score": 2
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.0010359000000000002,
+  "other_output_cost_usd": 0.00447,
+  "output_cost_usd": 0.002142,
+  "provider_request_id": "req_7ce0b095143244928925efbd7d222aea",
+  "reasoning_cost_usd": 0.000801,
+  "reservation_id": "fa0fe806-5ace-4f2f-83f1-2d98365eb6ad",
+  "response_id": "resp_00cec4655a918a99016aa1d9ffc02487d2aa471ff55c721870",
+  "returned_model": "gpt-5.4-mini-2026-03-17",
+  "usage": {
+    "cached_input_tokens": 6272,
+    "input_tokens": 7026,
+    "output_tokens": 476,
+    "reasoning_tokens": 178,
+    "total_tokens": 7502,
+    "usage_certainty": "known"
+  }
+}

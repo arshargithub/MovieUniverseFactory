@@ -1,0 +1,55 @@
+{
+  "cost_usd": 0.00445725,
+  "data": {
+    "confidence": 0.77,
+    "critical_findings": [
+      "Coffee table relocation appears larger/less exact than the requested 0.4 m toward the sofa.",
+      "Candidate framing/composition differs from baseline, introducing continuity drift beyond the requested edit."
+    ],
+    "recommendation": "reject",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "Helmet shell changes to dark green in the candidate, but the coffee table also appears moved much more than a subtle 0.4 m shift toward the sofa; the overall layout change is larger and not clearly exact.",
+        "score": 2
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "Camera framing remains broadly consistent across the paired views, but there is some crop/pose drift between baseline and candidate shots and the composition is not perfectly stable.",
+        "score": 3
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "Lighting stays soft and neutral overall, though the candidate shows slight tonal/material appearance shifts with the helmet recolor and no strong evidence of improved material fidelity.",
+        "score": 3
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "Objects render cleanly enough, but the helmet and furniture surfaces look a bit noisy/soft and the revision does not add notable physical realism.",
+        "score": 3
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "The helmet color is correctly changed to dark green #163D2A, but the coffee table relocation does not read as an exact 0.4 m adjustment and the scene composition changes enough to raise continuity concerns.",
+        "score": 2
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.00305775,
+  "other_output_cost_usd": 0.004665,
+  "output_cost_usd": 0.0013995,
+  "provider_request_id": "req_165c1fa26d974d7fbf7937b5f27b3ae3",
+  "reasoning_cost_usd": 0.0,
+  "reservation_id": "28ca00fe-f1f9-4940-a702-51fa386d523d",
+  "response_id": "resp_04907147b24626e9016aa1d6b2df2887d29270d900c422eac3",
+  "returned_model": "gpt-5.4-mini-2026-03-17",
+  "usage": {
+    "cached_input_tokens": 3200,
+    "input_tokens": 6957,
+    "output_tokens": 311,
+    "reasoning_tokens": 0,
+    "total_tokens": 7268,
+    "usage_certainty": "known"
+  }
+}

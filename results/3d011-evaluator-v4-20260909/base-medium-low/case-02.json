@@ -1,0 +1,57 @@
+{
+  "cost_usd": 0.034530000000000005,
+  "data": {
+    "confidence": 0.96,
+    "critical_findings": [
+      "The coffee table is placed on/into the sofa instead of remaining on the floor in front of it.",
+      "The table legs visibly penetrate the sofa seat cushions.",
+      "The tabletop overlaps and compresses/occludes the motorcycle helmet.",
+      "The revised table placement significantly degrades the composition by obscuring the helmet and sofa."
+    ],
+    "recommendation": "repair",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "The helmet shell visibly changes from red to a dark green, and the coffee table is moved toward the sofa, but it is pushed far too close and ends up on/into the sofa rather than simply nearer to it.",
+        "score": 2
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "Camera viewpoints and framing are well matched between baseline and revision across all three shots, with no obvious camera drift.",
+        "score": 4
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "Lighting remains consistent across the revision, and the helmet's shell reads as a dark green while other visible materials largely preserve their appearance.",
+        "score": 4
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "The revised table visibly intersects the sofa cushions and overlaps the helmet, creating clear impossible geometry and collision artifacts.",
+        "score": 1
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "Most scene elements remain consistent, but the revision introduces a major unintended layout change: the coffee table leaves the floor plane and occludes/presses into the helmet and sofa.",
+        "score": 2
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.017565,
+  "other_output_cost_usd": 0.004665,
+  "output_cost_usd": 0.016965,
+  "provider_request_id": "req_9dcc676ac8a04082af9bffe5500ff567",
+  "reasoning_cost_usd": 0.0123,
+  "reservation_id": "a82d3933-838e-4faf-8fdf-fcbe0f6591ca",
+  "response_id": "resp_07fc5f38aa64deae016aa1db35f03887d29c1dcf50e1e9fb36",
+  "returned_model": "gpt-5.4-2026-03-05",
+  "usage": {
+    "cached_input_tokens": 0,
+    "input_tokens": 7026,
+    "output_tokens": 1131,
+    "reasoning_tokens": 820,
+    "total_tokens": 8157,
+    "usage_certainty": "known"
+  }
+}

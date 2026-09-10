@@ -1,0 +1,52 @@
+{
+  "cost_usd": 0.0027999,
+  "data": {
+    "confidence": 0.84,
+    "critical_findings": [],
+    "recommendation": "pass",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "Coffee table is moved closer to the sofa in the candidate views, and the motorcycle helmet shell changes from red to dark green while the visor and other components remain consistent.",
+        "score": 5
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "Camera angle and framing are stable enough across baseline and candidate, with only minor apparent viewpoint drift between the paired shots.",
+        "score": 4
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "Lighting remains soft and even, and the helmet material reads as a darker green shell with similar specular response to the baseline red version.",
+        "score": 4
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "The helmet and furniture retain clean, procedural-looking finishes without obvious mesh breakage or severe shading artifacts; the green shell looks physically plausible.",
+        "score": 4
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "The sofa, floor lamp, and overall room layout remain present and consistent; the only clear semantic changes are the closer coffee table and the helmet shell color change.",
+        "score": 4
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.0010359000000000002,
+  "other_output_cost_usd": 0.00366,
+  "output_cost_usd": 0.001764,
+  "provider_request_id": "req_39f4643534414d0c824a24442f451a61",
+  "reasoning_cost_usd": 0.000666,
+  "reservation_id": "a9674fc1-4951-484d-8fdf-2974a593e732",
+  "response_id": "resp_0cc504d3291797be016aa1d9ca7c7087d29fb4589b844b7ccc",
+  "returned_model": "gpt-5.4-mini-2026-03-17",
+  "usage": {
+    "cached_input_tokens": 6272,
+    "input_tokens": 7026,
+    "output_tokens": 392,
+    "reasoning_tokens": 148,
+    "total_tokens": 7418,
+    "usage_certainty": "known"
+  }
+}

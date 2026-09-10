@@ -1,0 +1,52 @@
+{
+  "cost_usd": 0.00484575,
+  "data": {
+    "confidence": 0.86,
+    "critical_findings": [],
+    "recommendation": "pass",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "Coffee table is visibly moved closer to the sofa in the candidate views, and the helmet shell has changed from red to dark green while the sofa and lamp remain present.",
+        "score": 4
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "Camera composition remains stable across the revision with the same room framing and object layout, and the wide shot still cleanly includes the lamp.",
+        "score": 4
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "Lighting stays consistent and the helmet material reads as a darker green glossy shell with the visor unchanged.",
+        "score": 4
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "The furniture and helmet surfaces remain coherent with no obvious deformation or broken geometry; the scene still reads as a clean procedural render.",
+        "score": 4
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "Baseline-to-candidate continuity is strong: the sofa, coffee table, floor lamp, and helmet all remain in place, with only the intended table shift and helmet recolor visible.",
+        "score": 4
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.00313125,
+  "other_output_cost_usd": 0.00363,
+  "output_cost_usd": 0.0017145,
+  "provider_request_id": "req_6fbd7adcfb32442cafd226a5253bca0b",
+  "reasoning_cost_usd": 0.0006255,
+  "reservation_id": "7b6a81c7-9851-4a9c-9479-c21d44b0f94b",
+  "response_id": "resp_0767322982b6205c016aa2118fbff887d2ad57c8975af0b068",
+  "returned_model": "gpt-5.4-mini-2026-03-17",
+  "usage": {
+    "cached_input_tokens": 3200,
+    "input_tokens": 7055,
+    "output_tokens": 381,
+    "reasoning_tokens": 139,
+    "total_tokens": 7436,
+    "usage_certainty": "known"
+  }
+}

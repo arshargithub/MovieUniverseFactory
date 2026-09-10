@@ -1,0 +1,56 @@
+{
+  "cost_usd": 0.006736499999999999,
+  "data": {
+    "confidence": 0.84,
+    "critical_findings": [
+      "Candidate introduces a noticeable left-edge foreground wall occlusion/crop difference relative to baseline.",
+      "Render grain/noise is prominent, especially in close-up views.",
+      "Coffee table repositioning is visually apparent but not cleanly matched to baseline composition."
+    ],
+    "recommendation": "repair",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "All required objects are present in the candidate: sofa, coffee table, floor lamp, and motorcycle helmet. The helmet color changes from red to a dark green tone, and the coffee table appears moved closer to the sofa.",
+        "score": 4
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "Camera framing is broadly consistent, but the candidate view shows a noticeable occlusion/shift from the left foreground wall, and the table occupies more of the foreground, reducing compositional cleanliness.",
+        "score": 3
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "Lighting remains coherent with the baseline and the helmet material still reads as glossy; the new dark green shell is visually clear. No major lighting inconsistency is visible.",
+        "score": 4
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "The helmet surface remains plausibly finished, but the close-up shows strong render grain/noise and the color transition is not perfectly uniform. Table and sofa materials remain acceptable.",
+        "score": 3
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "The intended revision is visible, but the coffee table shift is not cleanly isolated and the candidate introduces a stronger foreground obstruction/changed crop, making continuity less seamless.",
+        "score": 3
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.0052695,
+  "other_output_cost_usd": 0.00489,
+  "output_cost_usd": 0.001467,
+  "provider_request_id": "req_302c5155c9ca47adb7e65abcd36b71c0",
+  "reasoning_cost_usd": 0.0,
+  "reservation_id": "c96934be-b2a9-4d2c-b57a-61f808c2cc00",
+  "response_id": "resp_035c5818c2fa83d9016aa1d91f60ac87d2bd28664b37fe6187",
+  "returned_model": "gpt-5.4-mini-2026-03-17",
+  "usage": {
+    "cached_input_tokens": 0,
+    "input_tokens": 7026,
+    "output_tokens": 326,
+    "reasoning_tokens": 0,
+    "total_tokens": 7352,
+    "usage_certainty": "known"
+  }
+}

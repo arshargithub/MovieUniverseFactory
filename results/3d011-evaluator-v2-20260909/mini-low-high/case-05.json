@@ -1,0 +1,55 @@
+{
+  "cost_usd": 0.0029124,
+  "data": {
+    "confidence": 0.88,
+    "critical_findings": [
+      "Helmet shell still appears red/orange instead of dark green.",
+      "Requested color-only helmet revision is not clearly visible as completed."
+    ],
+    "recommendation": "reject",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "Coffee table is moved toward the sofa, but the helmet shell still reads as red/orange rather than a clearly dark green revision.",
+        "score": 2
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "Camera framing is consistent and readable across the set; no obvious viewpoint jump or severe composition break is visible.",
+        "score": 4
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "Helmet material retains a bright red glossy appearance under the green cast, so the requested shell color change is not clearly achieved visually.",
+        "score": 2
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "Surfaces remain coherent and glossy, with no major mesh corruption or obvious clipping beyond the helmet color issue.",
+        "score": 3
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "Object layout is mostly stable and the table position change is plausible, but the helmet appearance does not match the requested red-to-dark-green edit.",
+        "score": 3
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.0010359000000000002,
+  "other_output_cost_usd": 0.003705,
+  "output_cost_usd": 0.0018765,
+  "provider_request_id": "req_efab06e523374bf6941fc014275824a8",
+  "reasoning_cost_usd": 0.000765,
+  "reservation_id": "69589f2a-d83a-416b-9f76-15e6f37dcbd6",
+  "response_id": "resp_04364f8bca9c90c8016aa1d9ddbdd087d2b1d336b1156e9b4f",
+  "returned_model": "gpt-5.4-mini-2026-03-17",
+  "usage": {
+    "cached_input_tokens": 6272,
+    "input_tokens": 7026,
+    "output_tokens": 417,
+    "reasoning_tokens": 170,
+    "total_tokens": 7443,
+    "usage_certainty": "known"
+  }
+}

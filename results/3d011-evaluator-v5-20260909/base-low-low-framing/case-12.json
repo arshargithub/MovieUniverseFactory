@@ -1,0 +1,56 @@
+{
+  "cost_usd": 0.019584499999999998,
+  "data": {
+    "confidence": 0.98,
+    "critical_findings": [
+      "Candidate shot_B is a failed/incorrect camera view showing only a dark wall/corner instead of the living-room scene.",
+      "The coffee table is not visibly present in candidate shot_B, violating the requirement that it remain visible in the medium shot.",
+      "None of the required scene objects are visible in candidate shot_B, indicating severe composition/coverage drift."
+    ],
+    "recommendation": "reject",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "The helmet shell is visibly changed from red to dark green, and in the wide revision the coffee table appears moved somewhat toward the sofa. However, candidate shot_B is a failed/blank view with none of the required scene objects visible, so the coffee table is not visibly present in medium shot_B as required.",
+        "score": 2
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "Shot_A and shot_C roughly preserve composition, but candidate shot_B has catastrophic framing/camera failure, showing only a dark wall/corner instead of the scene.",
+        "score": 1
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "Lighting appears consistent between baseline and revision in shot_A and shot_C, and the helmet material change reads clearly as a dark green shell while other materials remain broadly stable.",
+        "score": 4
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "Visible geometry and placement in shot_A and shot_C look physically plausible with no obvious intersections, but the unusable shot_B represents a severe output defect.",
+        "score": 3
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "Continuity is badly broken because candidate shot_B does not match the baseline camera/view at all. Across the usable shots, the intended helmet color revision is consistent, but coverage continuity is not maintained.",
+        "score": 1
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.0130295,
+  "other_output_cost_usd": 0.00549,
+  "output_cost_usd": 0.006555,
+  "provider_request_id": "req_2f0de3c1094745c496af94c40db44371",
+  "reasoning_cost_usd": 0.001065,
+  "reservation_id": "f0fa2fde-ed40-4f6c-92b1-a90f05a81875",
+  "response_id": "resp_0241e0575d0d4280016aa212192fe887d29a9e6620906bc7c6",
+  "returned_model": "gpt-5.4-2026-03-05",
+  "usage": {
+    "cached_input_tokens": 2048,
+    "input_tokens": 7055,
+    "output_tokens": 437,
+    "reasoning_tokens": 71,
+    "total_tokens": 7492,
+    "usage_certainty": "known"
+  }
+}

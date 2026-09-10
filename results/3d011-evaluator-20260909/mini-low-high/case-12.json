@@ -1,0 +1,56 @@
+{
+  "cost_usd": 0.00345015,
+  "data": {
+    "confidence": 0.82,
+    "critical_findings": [
+      "Candidate shot set contains a blank/corrupted frame with no usable room content.",
+      "Exact 0.4 m coffee-table movement is not clearly demonstrated across the candidate views.",
+      "There is slight framing/continuity drift across shots, reducing confidence in the revision."
+    ],
+    "recommendation": "reject",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "Helmet shell changes from red to dark green in the candidate, and the coffee table appears moved closer to the sofa, but the exact 0.4 m adjustment is not clearly verifiable.",
+        "score": 3
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "Viewpoint is not fully consistent across the revision set; one candidate frame is a blank/corrupted view, breaking shot continuity and composition.",
+        "score": 2
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "Overall lighting remains soft and neutral, with materials still readable; however the renders are noisy and one frame is missing the scene entirely.",
+        "score": 3
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "The helmet color update is plausible and the object surfaces remain coherent, but the candidate still shows heavy grain and no notable finish improvement.",
+        "score": 3
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "One of the candidate images is essentially empty/corrupted, and the requested table translation cannot be confirmed cleanly across all three revised shots.",
+        "score": 1
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.00098415,
+  "other_output_cost_usd": 0.004485,
+  "output_cost_usd": 0.002466,
+  "provider_request_id": "req_dbb67440693c4e3eb4be470ceef492cb",
+  "reasoning_cost_usd": 0.0011205,
+  "reservation_id": "dffb7eb6-8b73-4691-9c1b-b9b137044c96",
+  "response_id": "resp_0cbbe5d227c331d8016aa1d777a04487d2ab27538a705c1188",
+  "returned_model": "gpt-5.4-mini-2026-03-17",
+  "usage": {
+    "cached_input_tokens": 6272,
+    "input_tokens": 6957,
+    "output_tokens": 548,
+    "reasoning_tokens": 249,
+    "total_tokens": 7505,
+    "usage_certainty": "known"
+  }
+}

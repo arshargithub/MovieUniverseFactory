@@ -1,0 +1,56 @@
+{
+  "cost_usd": 0.00670275,
+  "data": {
+    "confidence": 0.76,
+    "critical_findings": [
+      "Coffee table relocation is not clearly exact 0.4 m toward the sofa; the amount of movement is only approximate from the image set.",
+      "Candidate views show framing/composition drift, including altered object proportions and a more prominent left-side occluder.",
+      "Render quality differs between baseline and candidate with visible noise/exposure variation."
+    ],
+    "recommendation": "reject",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "Helmet shell is changed to dark green in the candidate views, and the table is moved closer to the sofa, but the shift does not read as an exact 0.4 m verification from the images alone.",
+        "score": 4
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "Camera angle and framing are broadly consistent, but the candidate views show noticeable composition shifts, with the table and sofa occupying different proportions and the left occluder changing prominence.",
+        "score": 3
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "Lighting remains generally similar, but the candidate render has visible exposure/noise differences and slightly altered material appearance, especially on the helmet shell and table surface.",
+        "score": 3
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "Geometry is intact and the helmet material reads plausibly, though the render has noise/grain and some soft edge artifacts that reduce finish quality.",
+        "score": 3
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "The requested color change is correct, but the coffee table position change is not clearly exact, and the candidate set introduces noticeable continuity drift in framing and scene presentation.",
+        "score": 2
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.00521775,
+  "other_output_cost_usd": 0.00495,
+  "output_cost_usd": 0.001485,
+  "provider_request_id": "req_0f63e40216b14f5e9d2a54d40e67d4f0",
+  "reasoning_cost_usd": 0.0,
+  "reservation_id": "c98a0d51-f4e9-4058-9d62-6f504911b536",
+  "response_id": "resp_06f0e089a6f0bc87016aa1d6a9c51487d2ab8e34601fe4da45",
+  "returned_model": "gpt-5.4-mini-2026-03-17",
+  "usage": {
+    "cached_input_tokens": 0,
+    "input_tokens": 6957,
+    "output_tokens": 330,
+    "reasoning_tokens": 0,
+    "total_tokens": 7287,
+    "usage_certainty": "known"
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "cost_usd": 0.0021339,
+  "data": {
+    "confidence": 0.86,
+    "critical_findings": [],
+    "recommendation": "pass",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "Candidate clearly changes the helmet shell from red to dark green and moves the coffee table closer to the sofa, while keeping the sofa, table, floor lamp, and helmet present.",
+        "score": 4
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "Camera viewpoint is broadly consistent, but the candidate framing shifts slightly and the left-edge occluder remains prominent, reducing composition cleanliness.",
+        "score": 3
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "Lighting remains stable overall and the helmet color reads as dark green; materials are consistent with the baseline prototype look.",
+        "score": 4
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "The helmet shell appears correctly green, but there is noticeable grain/noise and the finish is only moderately polished.",
+        "score": 3
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "The revision intent is visible and mostly correct, but there is some framing/compositional drift and the table-closer change is not strongly emphasized in all views.",
+        "score": 3
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.0010359000000000002,
+  "other_output_cost_usd": 0.00366,
+  "output_cost_usd": 0.001098,
+  "provider_request_id": "req_305640d5f587403abb7eaca885d9710d",
+  "reasoning_cost_usd": 0.0,
+  "reservation_id": "76e94b08-8341-4ebc-a2fe-792acaa1a4ea",
+  "response_id": "resp_0604469ea8fad37e016aa1d9bc01bc87d291c25eb35fed25a7",
+  "returned_model": "gpt-5.4-mini-2026-03-17",
+  "usage": {
+    "cached_input_tokens": 6272,
+    "input_tokens": 7026,
+    "output_tokens": 244,
+    "reasoning_tokens": 0,
+    "total_tokens": 7270,
+    "usage_certainty": "known"
+  }
+}

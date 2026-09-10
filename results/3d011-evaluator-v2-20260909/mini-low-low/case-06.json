@@ -1,0 +1,52 @@
+{
+  "cost_usd": 0.00693,
+  "data": {
+    "confidence": 0.79,
+    "critical_findings": [],
+    "recommendation": "pass",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "Coffee table is visibly moved closer to the sofa in all candidate views, and the motorcycle helmet shell changes from red to green while remaining in place.",
+        "score": 4
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "Camera angle, framing, and perspective are consistent with the baseline overall, with no obvious intentional shot change beyond normal render variation.",
+        "score": 4
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "Lighting remains stable and the helmet reads as a dark green material; the visor and other materials stay visually coherent.",
+        "score": 4
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "Objects retain solid form and acceptable render quality; the revised helmet shell looks cleanly recolored rather than broken or malformed.",
+        "score": 4
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "The sofa, floor lamp, coffee table, and helmet are all present in both sets, with no clear object loss or disruptive scene change; the table shift and helmet color edit are visually consistent.",
+        "score": 4
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.0052695,
+  "other_output_cost_usd": 0.003615,
+  "output_cost_usd": 0.0016605,
+  "provider_request_id": "req_07274e05057b4c60b2c5b5b713c14bb4",
+  "reasoning_cost_usd": 0.000576,
+  "reservation_id": "5f53236a-bbe4-4163-bbd0-dcc6fe3705dc",
+  "response_id": "resp_0a86a3f8c5ed3b9e016aa1d972d2a087d28667a6f5e4c2ce83",
+  "returned_model": "gpt-5.4-mini-2026-03-17",
+  "usage": {
+    "cached_input_tokens": 0,
+    "input_tokens": 7026,
+    "output_tokens": 369,
+    "reasoning_tokens": 128,
+    "total_tokens": 7395,
+    "usage_certainty": "known"
+  }
+}

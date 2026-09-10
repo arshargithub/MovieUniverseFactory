@@ -1,0 +1,56 @@
+{
+  "cost_usd": 0.0053047500000000004,
+  "data": {
+    "confidence": 0.9,
+    "critical_findings": [
+      "Floor lamp is not visibly present in the candidate wide shot, violating the required visible lamp continuity.",
+      "Candidate framing/composition drifts noticeably with a left-side occluding wall and a tighter crop relative to baseline.",
+      "Coffee table move is visible but not clearly controlled enough to confirm the intended revision without ambiguity."
+    ],
+    "recommendation": "reject",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "Candidate shows the coffee table moved closer to the sofa and the helmet shell changed from red to green, but the floor lamp is no longer visibly present in the wide candidate view, so the brief is only partially met.",
+        "score": 3
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "The candidate maintains a similar interior setup, but the framing shifts and a left-side wall occludes part of the scene, reducing composition consistency versus the baseline.",
+        "score": 3
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "Lighting remains soft and consistent across baseline and candidate, and the helmet material reads as a darker green shell with the same visor treatment.",
+        "score": 4
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "The sofa, coffee table, and helmet surfaces remain clean and coherent with no major visible geometry damage; finishes look procedurally strong overall.",
+        "score": 4
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "The wide candidate shot loses the visible floor lamp, which breaks required continuity; the table shift and helmet recolor are visible, but scene continuity is not clean.",
+        "score": 2
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.00313125,
+  "other_output_cost_usd": 0.004815,
+  "output_cost_usd": 0.0021735,
+  "provider_request_id": "req_925723db2c934b9896e1dc3d82a37fd6",
+  "reasoning_cost_usd": 0.000729,
+  "reservation_id": "b4dc5938-2377-47cb-b71a-24884eb6b2c1",
+  "response_id": "resp_0e37869c69a41729016aa211b0661487d2b76a8d4718af8cf9",
+  "returned_model": "gpt-5.4-mini-2026-03-17",
+  "usage": {
+    "cached_input_tokens": 3200,
+    "input_tokens": 7055,
+    "output_tokens": 483,
+    "reasoning_tokens": 162,
+    "total_tokens": 7538,
+    "usage_certainty": "known"
+  }
+}

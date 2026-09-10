@@ -1,0 +1,56 @@
+{
+  "cost_usd": 0.0186995,
+  "data": {
+    "confidence": 0.98,
+    "critical_findings": [
+      "Candidate revision shot_A is a blank image instead of the required wide scene.",
+      "Because candidate shot_A is missing, the floor lamp is not visibly present in the candidate wide coverage.",
+      "Because candidate shot_A is missing, the coffee table presence and moved-toward-sofa revision cannot be verified in the required wide shot."
+    ],
+    "recommendation": "reject",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "Helmet shell changes from red to dark green in candidate shots B and C, but the required wide shot_A revision is missing entirely, so the coffee table move toward the sofa and required wide-scene object presence cannot be verified there.",
+        "score": 2
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "Candidate shot_A is a blank frame, which breaks the required three-shot coverage and severely degrades composition and usability of the sequence.",
+        "score": 1
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "In candidate shots B and C, lighting remains broadly consistent and the helmet reads as a dark green material with similar gloss to baseline, though the missing shot_A prevents full coverage assessment.",
+        "score": 3
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "Candidate shots B and C appear physically plausible with no obvious new intersections, and the coffee table in shot_B appears moved closer to the sofa, but the absent shot_A prevents checking wide-shot spatial integrity.",
+        "score": 3
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "Continuity is broken because candidate shot_A is missing; the floor lamp is not visibly present in the candidate wide coverage, and full scene consistency across all three views cannot be maintained.",
+        "score": 1
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.0130295,
+  "other_output_cost_usd": 0.005235,
+  "output_cost_usd": 0.00567,
+  "provider_request_id": "req_d8b2e93666d743ab9d4b93a6d635f767",
+  "reasoning_cost_usd": 0.000435,
+  "reservation_id": "7725f73f-c0d7-4e3a-b0a6-74e9a40e088d",
+  "response_id": "resp_0d2ecebcf44aff5b016aa21202d51887d2a95ba3204e08a887",
+  "returned_model": "gpt-5.4-2026-03-05",
+  "usage": {
+    "cached_input_tokens": 2048,
+    "input_tokens": 7055,
+    "output_tokens": 378,
+    "reasoning_tokens": 29,
+    "total_tokens": 7433,
+    "usage_certainty": "known"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "cost_usd": 0.014595,
+  "data": {
+    "confidence": 0.95,
+    "critical_findings": [
+      "Candidate shot_B is a failed render or wrong camera view showing mostly blank wall/floor instead of the living-room scene.",
+      "Required scene objects are missing from candidate shot_B: sofa, coffee table, floor lamp, and motorcycle helmet are not visible.",
+      "Severe camera/composition drift in candidate shot_B breaks continuity with baseline shot_B."
+    ],
+    "recommendation": "reject",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "In candidate shot_A, the coffee table is visibly moved closer to the sofa, and in candidate shots_A/C the helmet shell is changed from red to a dark green. However, candidate shot_B fails to show the scene at all, so fulfillment is incomplete across the full set.",
+        "score": 3
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "Shots_A and_C roughly preserve composition, but candidate shot_B has a completely different framing showing mostly blank wall/floor and no scene content, indicating severe camera/composition failure.",
+        "score": 1
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "Overall lighting and material response look broadly consistent in shots_A and_C, and the helmet reads as a plausible dark green glossy shell. No major lighting drift is visible in those matching shots, but shot_B cannot be evaluated normally because the scene is absent.",
+        "score": 3
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "In the valid matching views, objects appear physically plausible with no obvious new intersections or broken geometry, and the table relocation looks coherent. The main physical/output defect is the missing scene content in candidate shot_B.",
+        "score": 3
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "The intended edits appear isolated correctly in shots_A and_C, but continuity is badly broken because candidate shot_B no longer matches the baseline viewpoint or scene visibility and omits the required objects entirely.",
+        "score": 2
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.007485,
+  "other_output_cost_usd": 0.00582,
+  "output_cost_usd": 0.00711,
+  "provider_request_id": "req_05ab55a217614de092d715a0cc2a813d",
+  "reasoning_cost_usd": 0.00129,
+  "reservation_id": "b2d3558c-9f53-4cd6-b22f-d19664103ffe",
+  "response_id": "resp_0f530e6c6712613a016aa1dab53b5c87d2a0cfc71a21779085",
+  "returned_model": "gpt-5.4-2026-03-05",
+  "usage": {
+    "cached_input_tokens": 4480,
+    "input_tokens": 7026,
+    "output_tokens": 474,
+    "reasoning_tokens": 86,
+    "total_tokens": 7500,
+    "usage_certainty": "known"
+  }
+}

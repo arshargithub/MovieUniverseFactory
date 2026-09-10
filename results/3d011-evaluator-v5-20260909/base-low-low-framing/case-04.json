@@ -1,0 +1,56 @@
+{
+  "cost_usd": 0.0205895,
+  "data": {
+    "confidence": 0.9,
+    "critical_findings": [
+      "Candidate revision introduces a strong global lighting change: the scene becomes much darker and heavily red-tinted compared with the baseline.",
+      "Helmet shell does not read clearly as dark green in the wide and medium shots because the new lighting makes it appear nearly black.",
+      "Unrequested scene-wide material/color appearance drift occurs due to the lighting change, affecting sofa, walls, floor, and table."
+    ],
+    "recommendation": "reject",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "The coffee table is still visible in wide shot_A and medium shot_B and appears moved closer toward the sofa. The helmet shell is no longer red and reads as a very dark green/near-black in the close shot, but the color intent is hard to read in the wider views because of the dark red lighting shift.",
+        "score": 3
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "Shot framing and coverage are largely preserved between baseline and revision, with the sofa, table, lamp, and helmet remaining in comparable compositions. The wide and medium shots still communicate the scene clearly.",
+        "score": 4
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "Lighting changes drastically from bright neutral illumination to a much darker red-tinted scene in all candidate shots. This strongly alters material appearance and makes the helmet color and furniture finishes harder to judge.",
+        "score": 2
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "Objects remain coherent and generally well placed, with no obvious severe intersections or geometry breakage visible. However, the heavy darkness/noise obscures surface readability and lowers finish quality.",
+        "score": 3
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "Beyond the requested table move and helmet shell recolor, the candidate introduces a major global lighting and color mood change across all shots. This is a clear unintended revision that breaks continuity with the baseline.",
+        "score": 2
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.0130295,
+  "other_output_cost_usd": 0.005835,
+  "output_cost_usd": 0.00756,
+  "provider_request_id": "req_1bf4e8b5b2cc41c7a08f8bd4a6587cc7",
+  "reasoning_cost_usd": 0.001725,
+  "reservation_id": "82ab6278-9e7e-4794-ba77-f258e917d0a7",
+  "response_id": "resp_08d0fd3087b7cd3d016aa211d4bf3c87d2a269f7bba0be49ee",
+  "returned_model": "gpt-5.4-2026-03-05",
+  "usage": {
+    "cached_input_tokens": 2048,
+    "input_tokens": 7055,
+    "output_tokens": 504,
+    "reasoning_tokens": 115,
+    "total_tokens": 7559,
+    "usage_certainty": "known"
+  }
+}

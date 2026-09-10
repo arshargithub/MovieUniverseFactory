@@ -1,0 +1,55 @@
+{
+  "cost_usd": 0.0057374999999999995,
+  "data": {
+    "confidence": 0.86,
+    "critical_findings": [
+      "One candidate frame is blank/invalid instead of showing the revised scene.",
+      "The revision is not consistently visible across all candidate views due to framing/continuity mismatch."
+    ],
+    "recommendation": "reject",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "Candidate visibly changes the helmet shell from red to dark green and the coffee table is moved closer to the sofa.",
+        "score": 4
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "Overall camera angle is broadly consistent, but the candidate set shows a noticeable framing inconsistency with one view appearing missing/invalid and the close-up perspective varying.",
+        "score": 3
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "Lighting remains soft and neutral; the helmet material still reads as a glossy shell, and the green recolor is clearly visible.",
+        "score": 4
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "Objects retain clean procedural surfaces with no obvious mesh breakage; sofa, table, lamp, and helmet are all present in the visible candidate views.",
+        "score": 4
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "One candidate image is a blank gray frame, creating a major continuity break; the table shift is also not consistently readable across all candidate views.",
+        "score": 2
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.0031095,
+  "other_output_cost_usd": 0.004035,
+  "output_cost_usd": 0.002628,
+  "provider_request_id": "req_efa73e2c96674205a543da5986770dc7",
+  "reasoning_cost_usd": 0.0014175,
+  "reservation_id": "45788977-643b-4274-949d-14429cea14d7",
+  "response_id": "resp_0f1b7436c3ecfb6a016aa1d97ed3b087d2b6ace04cf23efcb3",
+  "returned_model": "gpt-5.4-mini-2026-03-17",
+  "usage": {
+    "cached_input_tokens": 3200,
+    "input_tokens": 7026,
+    "output_tokens": 584,
+    "reasoning_tokens": 315,
+    "total_tokens": 7610,
+    "usage_certainty": "known"
+  }
+}

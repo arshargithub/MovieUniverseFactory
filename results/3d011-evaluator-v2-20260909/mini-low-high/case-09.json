@@ -1,0 +1,52 @@
+{
+  "cost_usd": 0.0025929000000000004,
+  "data": {
+    "confidence": 0.84,
+    "critical_findings": [],
+    "recommendation": "pass",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "Coffee table is visibly moved closer to the sofa, and the helmet shell changes from red to dark green while the sofa, lamp, and helmet remain present.",
+        "score": 5
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "Camera angle and framing stay broadly consistent across baseline and candidate, with only minor viewpoint/crop variation.",
+        "score": 4
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "Scene lighting remains stable; the helmet material reads as a dark green shell with the visor unchanged.",
+        "score": 4
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "Objects retain clean procedural finishes with no obvious new intersections, deformation, or material breakage visible.",
+        "score": 4
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "The candidate preserves the scene layout and object set while showing the requested table move and helmet color change with no obvious unintended edits.",
+        "score": 4
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.0010359000000000002,
+  "other_output_cost_usd": 0.00324,
+  "output_cost_usd": 0.001557,
+  "provider_request_id": "req_eb3249e7bd184140938f96c66d980057",
+  "reasoning_cost_usd": 0.000585,
+  "reservation_id": "425ae678-d05b-4ea5-acc4-15ea21db378f",
+  "response_id": "resp_00859347cbfb2100016aa1d9f1df4c87d298d7588b8c63916c",
+  "returned_model": "gpt-5.4-mini-2026-03-17",
+  "usage": {
+    "cached_input_tokens": 6272,
+    "input_tokens": 7026,
+    "output_tokens": 346,
+    "reasoning_tokens": 130,
+    "total_tokens": 7372,
+    "usage_certainty": "known"
+  }
+}

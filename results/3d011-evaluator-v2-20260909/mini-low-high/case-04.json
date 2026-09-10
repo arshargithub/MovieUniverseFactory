@@ -1,0 +1,56 @@
+{
+  "cost_usd": 0.0031239,
+  "data": {
+    "confidence": 0.88,
+    "critical_findings": [
+      "Scene-wide lighting/exposure changed substantially, with the candidate much darker and more red-toned than the baseline.",
+      "Helmet shell does not read as a clear dark green in the candidate; it appears nearly black under the new lighting.",
+      "Minor composition/framing drift is visible between baseline and candidate."
+    ],
+    "recommendation": "reject",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "All required objects are present, the coffee table is visibly moved closer toward the sofa, and the helmet shell is changed away from bright red toward a very dark green/black appearance.",
+        "score": 4
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "Camera angle is broadly consistent, but the candidate framing is tighter/darker and less cleanly presented than the baseline.",
+        "score": 3
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "The candidate has a strong scene-wide lighting shift to a much darker red cast, making materials read differently from the baseline.",
+        "score": 2
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "Geometry and object placement remain coherent overall, with no major collisions or broken forms visible.",
+        "score": 3
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "There is an obvious continuity break in exposure and color temperature between baseline and candidate, and the helmet color reads closer to black than a clean dark green.",
+        "score": 2
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.0010359000000000002,
+  "other_output_cost_usd": 0.004335,
+  "output_cost_usd": 0.002088,
+  "provider_request_id": "req_33f7ead5b3ce416eae2726d3595e51d2",
+  "reasoning_cost_usd": 0.0007875,
+  "reservation_id": "57515d69-830e-4764-aa2f-532c96921e65",
+  "response_id": "resp_07718244537dbd6e016aa1d9d9099c87d285bb3bf6e908c6e3",
+  "returned_model": "gpt-5.4-mini-2026-03-17",
+  "usage": {
+    "cached_input_tokens": 6272,
+    "input_tokens": 7026,
+    "output_tokens": 464,
+    "reasoning_tokens": 175,
+    "total_tokens": 7490,
+    "usage_certainty": "known"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "cost_usd": 0.0024579000000000003,
+  "data": {
+    "confidence": 0.87,
+    "critical_findings": [
+      "A large wall/partition intrudes into the candidate frame, causing a noticeable composition/camera drift.",
+      "The candidate crop is tighter and less stable than the baseline, reducing continuity.",
+      "The helmet color changes to dark green as requested, but the scene also shows an unintended framing change."
+    ],
+    "recommendation": "reject",
+    "scores": [
+      {
+        "dimension": "brief_fulfillment",
+        "evidence": "The candidate preserves the sofa, coffee table, floor lamp, and helmet, and the helmet shell is visibly changed from red to dark green. The coffee table also appears moved closer toward the sofa.",
+        "score": 4
+      },
+      {
+        "dimension": "cinematography",
+        "evidence": "The candidate view introduces a strong composition change with a large occluding wall/edge intruding into frame and a more cramped crop, reducing scene clarity and framing consistency.",
+        "score": 2
+      },
+      {
+        "dimension": "lighting_materials",
+        "evidence": "Lighting remains broadly similar, but the helmet material is visibly darker green with similar glossy finish; overall rendering noise and shading are acceptable though not especially clean.",
+        "score": 3
+      },
+      {
+        "dimension": "physical_finish",
+        "evidence": "Objects remain intact and readable, but the helmet sits very close to the sofa cushion and the close framing makes the arrangement feel slightly awkward.",
+        "score": 3
+      },
+      {
+        "dimension": "continuity_revision",
+        "evidence": "The candidate maintains the general scene but introduces an obvious camera/framing shift and visible occluding wall, making continuity weaker even though the requested object edits are apparent.",
+        "score": 2
+      }
+    ]
+  },
+  "error": null,
+  "input_cost_usd": 0.0010359000000000002,
+  "other_output_cost_usd": 0.00474,
+  "output_cost_usd": 0.001422,
+  "provider_request_id": "req_73a49f1de7624be793a34ef25b03358f",
+  "reasoning_cost_usd": 0.0,
+  "reservation_id": "76e912fd-14ae-4fb3-b996-c065aeec73be",
+  "response_id": "resp_074e9d9582d96017016aa1d9c522d087d2bd6fbed85d94bcc3",
+  "returned_model": "gpt-5.4-mini-2026-03-17",
+  "usage": {
+    "cached_input_tokens": 6272,
+    "input_tokens": 7026,
+    "output_tokens": 316,
+    "reasoning_tokens": 0,
+    "total_tokens": 7342,
+    "usage_certainty": "known"
+  }
+}
