@@ -1091,8 +1091,32 @@
     "unresolved_calls": 1
   },
   "campaign_id": "3d011-20260910T021945Z",
-  "decision": "YELLOW",
-  "director_review": "PENDING",
+  "decision": "GREEN",
+  "director_batch_review": {
+    "batch_review_id": "director-batch-3d011-20260909",
+    "campaign_id": "3d011-20260910T021945Z",
+    "recorded_at": "2026-09-10T02:47:56.226542+00:00",
+    "review_mode": "intentional_batch",
+    "reviewer": "Director",
+    "run_ids": [
+      "seed-606-20260910T021945Z-3d552dc6",
+      "seed-707-20260910T022228Z-683ada8a",
+      "seed-808-20260910T022523Z-c04607ec",
+      "seed-909-20260910T022835Z-c30de1a2",
+      "seed-1001-20260910T023150Z-46182253"
+    ],
+    "schema_version": "1.0",
+    "shared_observation": "Accepted after inspecting all five fresh seed comparisons. Foreground-wall occlusion reduces cinematography to 4.5; visible sofa/table faceting and render grain reduce physical finish to 4.5. The requested changes are clear and isolated, with no other visible continuity change.",
+    "shared_scores": {
+      "brief_fulfillment": 5,
+      "cinematography": 4.5,
+      "continuity_revision": 5,
+      "lighting_materials": 5,
+      "physical_finish": 4.5
+    },
+    "source": "Director supplied the same scorecard for all five fresh seeds after reviewing the combined 30-image comparison."
+  },
+  "director_review": "RECORDED",
   "experiment_id": "3D-01.1",
   "metrics": [
     {
@@ -1100,7 +1124,7 @@
       "baseline_valid": true,
       "blender_invocations": 6,
       "cached_input_tokens": 0,
-      "director_status": "PENDING",
+      "director_status": "ACCEPTED",
       "error": null,
       "expected_oracle_wall_seconds": 61.752838624001015,
       "human_interventions": 0,
@@ -1139,7 +1163,7 @@
       "baseline_valid": true,
       "blender_invocations": 6,
       "cached_input_tokens": 0,
-      "director_status": "PENDING",
+      "director_status": "ACCEPTED",
       "error": null,
       "expected_oracle_wall_seconds": 45.81097575099557,
       "human_interventions": 0,
@@ -1178,7 +1202,7 @@
       "baseline_valid": true,
       "blender_invocations": 6,
       "cached_input_tokens": 0,
-      "director_status": "PENDING",
+      "director_status": "ACCEPTED",
       "error": null,
       "expected_oracle_wall_seconds": 50.34209083300084,
       "human_interventions": 0,
@@ -1217,7 +1241,7 @@
       "baseline_valid": true,
       "blender_invocations": 6,
       "cached_input_tokens": 0,
-      "director_status": "PENDING",
+      "director_status": "ACCEPTED",
       "error": null,
       "expected_oracle_wall_seconds": 57.34036287499475,
       "human_interventions": 0,
@@ -1256,7 +1280,7 @@
       "baseline_valid": true,
       "blender_invocations": 6,
       "cached_input_tokens": 0,
-      "director_status": "PENDING",
+      "director_status": "ACCEPTED",
       "error": null,
       "expected_oracle_wall_seconds": 55.647020583972335,
       "human_interventions": 0,
@@ -2427,8 +2451,40 @@
         "passed": true
       },
       "comparison": "../../runs/3d011-20260910T021945Z/seed-1001-20260910T023150Z-46182253/comparison.html",
-      "creative_status": "AWAITING_DIRECTOR",
-      "director_status": "PENDING",
+      "creative_status": "DIRECTOR_ACCEPTED",
+      "director_review": {
+        "accepted": true,
+        "batch_review_id": "director-batch-3d011-20260909",
+        "hands_on_edits": false,
+        "mean_score": 4.8,
+        "notes": "Accepted after inspecting all five fresh seed comparisons. Foreground-wall occlusion reduces cinematography to 4.5; visible sofa/table faceting and render grain reduce physical finish to 4.5. The requested changes are clear and isolated, with no other visible continuity change.",
+        "reviewed_at": "2026-09-10T02:47:56.226542+00:00",
+        "reviewer": "Director",
+        "scores": [
+          {
+            "dimension": "brief_fulfillment",
+            "score": 5
+          },
+          {
+            "dimension": "cinematography",
+            "score": 4.5
+          },
+          {
+            "dimension": "continuity_revision",
+            "score": 5
+          },
+          {
+            "dimension": "lighting_materials",
+            "score": 5
+          },
+          {
+            "dimension": "physical_finish",
+            "score": 4.5
+          }
+        ],
+        "status": "ACCEPTED"
+      },
+      "director_status": "ACCEPTED",
       "image_validation": {
         "color": "GREEN",
         "errors": [],
@@ -5561,8 +5617,40 @@
         "passed": true
       },
       "comparison": "../../runs/3d011-20260910T021945Z/seed-606-20260910T021945Z-3d552dc6/comparison.html",
-      "creative_status": "AWAITING_DIRECTOR",
-      "director_status": "PENDING",
+      "creative_status": "DIRECTOR_ACCEPTED",
+      "director_review": {
+        "accepted": true,
+        "batch_review_id": "director-batch-3d011-20260909",
+        "hands_on_edits": false,
+        "mean_score": 4.8,
+        "notes": "Accepted after inspecting all five fresh seed comparisons. Foreground-wall occlusion reduces cinematography to 4.5; visible sofa/table faceting and render grain reduce physical finish to 4.5. The requested changes are clear and isolated, with no other visible continuity change.",
+        "reviewed_at": "2026-09-10T02:47:56.226542+00:00",
+        "reviewer": "Director",
+        "scores": [
+          {
+            "dimension": "brief_fulfillment",
+            "score": 5
+          },
+          {
+            "dimension": "cinematography",
+            "score": 4.5
+          },
+          {
+            "dimension": "continuity_revision",
+            "score": 5
+          },
+          {
+            "dimension": "lighting_materials",
+            "score": 5
+          },
+          {
+            "dimension": "physical_finish",
+            "score": 4.5
+          }
+        ],
+        "status": "ACCEPTED"
+      },
+      "director_status": "ACCEPTED",
       "image_validation": {
         "color": "GREEN",
         "errors": [],
@@ -8695,8 +8783,40 @@
         "passed": true
       },
       "comparison": "../../runs/3d011-20260910T021945Z/seed-707-20260910T022228Z-683ada8a/comparison.html",
-      "creative_status": "AWAITING_DIRECTOR",
-      "director_status": "PENDING",
+      "creative_status": "DIRECTOR_ACCEPTED",
+      "director_review": {
+        "accepted": true,
+        "batch_review_id": "director-batch-3d011-20260909",
+        "hands_on_edits": false,
+        "mean_score": 4.8,
+        "notes": "Accepted after inspecting all five fresh seed comparisons. Foreground-wall occlusion reduces cinematography to 4.5; visible sofa/table faceting and render grain reduce physical finish to 4.5. The requested changes are clear and isolated, with no other visible continuity change.",
+        "reviewed_at": "2026-09-10T02:47:56.226542+00:00",
+        "reviewer": "Director",
+        "scores": [
+          {
+            "dimension": "brief_fulfillment",
+            "score": 5
+          },
+          {
+            "dimension": "cinematography",
+            "score": 4.5
+          },
+          {
+            "dimension": "continuity_revision",
+            "score": 5
+          },
+          {
+            "dimension": "lighting_materials",
+            "score": 5
+          },
+          {
+            "dimension": "physical_finish",
+            "score": 4.5
+          }
+        ],
+        "status": "ACCEPTED"
+      },
+      "director_status": "ACCEPTED",
       "image_validation": {
         "color": "GREEN",
         "errors": [],
@@ -11829,8 +11949,40 @@
         "passed": true
       },
       "comparison": "../../runs/3d011-20260910T021945Z/seed-808-20260910T022523Z-c04607ec/comparison.html",
-      "creative_status": "AWAITING_DIRECTOR",
-      "director_status": "PENDING",
+      "creative_status": "DIRECTOR_ACCEPTED",
+      "director_review": {
+        "accepted": true,
+        "batch_review_id": "director-batch-3d011-20260909",
+        "hands_on_edits": false,
+        "mean_score": 4.8,
+        "notes": "Accepted after inspecting all five fresh seed comparisons. Foreground-wall occlusion reduces cinematography to 4.5; visible sofa/table faceting and render grain reduce physical finish to 4.5. The requested changes are clear and isolated, with no other visible continuity change.",
+        "reviewed_at": "2026-09-10T02:47:56.226542+00:00",
+        "reviewer": "Director",
+        "scores": [
+          {
+            "dimension": "brief_fulfillment",
+            "score": 5
+          },
+          {
+            "dimension": "cinematography",
+            "score": 4.5
+          },
+          {
+            "dimension": "continuity_revision",
+            "score": 5
+          },
+          {
+            "dimension": "lighting_materials",
+            "score": 5
+          },
+          {
+            "dimension": "physical_finish",
+            "score": 4.5
+          }
+        ],
+        "status": "ACCEPTED"
+      },
+      "director_status": "ACCEPTED",
       "image_validation": {
         "color": "GREEN",
         "errors": [],
@@ -14963,8 +15115,40 @@
         "passed": true
       },
       "comparison": "../../runs/3d011-20260910T021945Z/seed-909-20260910T022835Z-c30de1a2/comparison.html",
-      "creative_status": "AWAITING_DIRECTOR",
-      "director_status": "PENDING",
+      "creative_status": "DIRECTOR_ACCEPTED",
+      "director_review": {
+        "accepted": true,
+        "batch_review_id": "director-batch-3d011-20260909",
+        "hands_on_edits": false,
+        "mean_score": 4.8,
+        "notes": "Accepted after inspecting all five fresh seed comparisons. Foreground-wall occlusion reduces cinematography to 4.5; visible sofa/table faceting and render grain reduce physical finish to 4.5. The requested changes are clear and isolated, with no other visible continuity change.",
+        "reviewed_at": "2026-09-10T02:47:56.226542+00:00",
+        "reviewer": "Director",
+        "scores": [
+          {
+            "dimension": "brief_fulfillment",
+            "score": 5
+          },
+          {
+            "dimension": "cinematography",
+            "score": 4.5
+          },
+          {
+            "dimension": "continuity_revision",
+            "score": 5
+          },
+          {
+            "dimension": "lighting_materials",
+            "score": 5
+          },
+          {
+            "dimension": "physical_finish",
+            "score": 4.5
+          }
+        ],
+        "status": "ACCEPTED"
+      },
+      "director_status": "ACCEPTED",
       "image_validation": {
         "color": "GREEN",
         "errors": [],

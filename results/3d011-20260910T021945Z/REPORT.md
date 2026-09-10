@@ -1,8 +1,8 @@
 # 3D-01.1 campaign report
 
-**Decision: YELLOW**
+**Decision: GREEN**
 
-Machine-valid pairs: **5/5**. Director creative acceptance remains pending.
+Machine-valid pairs: **5/5**. Director reviews are recorded.
 
 ## Environment and frozen configuration
 
@@ -26,8 +26,8 @@ Machine-valid pairs: **5/5**. Director creative acceptance remains pending.
 All 5 selected pairs passed baseline structure, exact deny-by-default revision state, required mask visibility, oracle render comparison, and the model visual gate.
 Each revision moved only `coffee_table_01` exactly 0.4 m toward `sofa_01` and changed only `helmet_shell_01` from `#C62828` to `#163D2A`; cameras, lighting, geometry, and protected materials remained unchanged.
 
-Director review is pending.
-
+Director review accepted all 5 pairs with a mean score of 4.8/5 per pair; minor sofa and table polygon faceting is recorded under physical finish.
+The identical scorecards were intentionally entered as one batch review (`director-batch-3d011-20260909`) after the Director inspected every seed.
 
 ## Measured runtime and API use
 
@@ -41,16 +41,16 @@ Reasoning cost is an attribution within output cost and is not added twice. The 
 
 ## Runs
 
-- `seed-1001-20260910T023150Z-46182253` — machine-valid; model visual mean 4.6; Director mean None; API USD 0.059555000; [comparison](../../runs/3d011-20260910T021945Z/seed-1001-20260910T023150Z-46182253/comparison.html)
-- `seed-606-20260910T021945Z-3d552dc6` — machine-valid; model visual mean 4.4; Director mean None; API USD 0.064397500; [comparison](../../runs/3d011-20260910T021945Z/seed-606-20260910T021945Z-3d552dc6/comparison.html)
-- `seed-707-20260910T022228Z-683ada8a` — machine-valid; model visual mean 4.6; Director mean None; API USD 0.065747500; [comparison](../../runs/3d011-20260910T021945Z/seed-707-20260910T022228Z-683ada8a/comparison.html)
-- `seed-808-20260910T022523Z-c04607ec` — machine-valid; model visual mean 4.6; Director mean None; API USD 0.076457500; [comparison](../../runs/3d011-20260910T021945Z/seed-808-20260910T022523Z-c04607ec/comparison.html)
-- `seed-909-20260910T022835Z-c30de1a2` — machine-valid; model visual mean 4.4; Director mean None; API USD 0.067667500; [comparison](../../runs/3d011-20260910T021945Z/seed-909-20260910T022835Z-c30de1a2/comparison.html)
+- `seed-1001-20260910T023150Z-46182253` — machine-valid; model visual mean 4.6; Director mean 4.8; API USD 0.059555000; [comparison](../../runs/3d011-20260910T021945Z/seed-1001-20260910T023150Z-46182253/comparison.html)
+- `seed-606-20260910T021945Z-3d552dc6` — machine-valid; model visual mean 4.4; Director mean 4.8; API USD 0.064397500; [comparison](../../runs/3d011-20260910T021945Z/seed-606-20260910T021945Z-3d552dc6/comparison.html)
+- `seed-707-20260910T022228Z-683ada8a` — machine-valid; model visual mean 4.6; Director mean 4.8; API USD 0.065747500; [comparison](../../runs/3d011-20260910T021945Z/seed-707-20260910T022228Z-683ada8a/comparison.html)
+- `seed-808-20260910T022523Z-c04607ec` — machine-valid; model visual mean 4.6; Director mean 4.8; API USD 0.076457500; [comparison](../../runs/3d011-20260910T021945Z/seed-808-20260910T022523Z-c04607ec/comparison.html)
+- `seed-909-20260910T022835Z-c30de1a2` — machine-valid; model visual mean 4.4; Director mean 4.8; API USD 0.067667500; [comparison](../../runs/3d011-20260910T021945Z/seed-909-20260910T022835Z-c30de1a2/comparison.html)
 
 ## Failures, limits, and next action
 
 Before freezing this selected campaign, 0 implementation-remediation attempts consumed USD 0.000000. Their artifacts and causes are retained in `remediation-attempts.json` and their costs remain included in the global ledger. They are not presented as Blender failures or selected results.
 This five-pair experiment is evidence for the recorded 3D-01.1 configuration only; it is too small for a production reliability claim. Houdini and Unreal were not run.
 GREEN applies only to supported, unambiguous structured revisions with LLM escalation for ambiguous instructions. Open-ended natural-language comprehension, general autonomous cinematography, production asset quality, and unrestricted model control of Blender remain outside this qualification.
-Open each comparison/contact sheet and record Director scores.
+Director reviews are complete and recorded.
 Revision economics meet the GREEN ceiling: median `R_api` is 0.5340, at or below 0.75.

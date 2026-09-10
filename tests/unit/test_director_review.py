@@ -16,9 +16,18 @@ def test_director_review_normalizes_complete_accepted_scorecard():
     assert len(result["scores"])==5 and result["hands_on_edits"] is False
 
 
+def test_director_review_preserves_half_point_scores():
+    value=review()
+    value["scores"].update(cinematography=4.5,physical_finish=4.5)
+    result=normalize_director_review(value)
+    assert result["mean_score"]==4.8
+    assert {item["dimension"]:item["score"] for item in result["scores"]}["cinematography"]==4.5
+
+
 @pytest.mark.parametrize("mutation",[
     lambda value:value["scores"].pop("physical_finish"),
     lambda value:value["scores"].update(physical_finish=2),
+    lambda value:value["scores"].update(physical_finish=4.25),
     lambda value:value.update(hands_on_edits=True),
 ])
 def test_invalid_accepted_director_review_is_rejected(mutation):

@@ -53,7 +53,11 @@ def normalize_director_review(review):
     if isinstance(scores,dict): scores=[{"dimension":dimension,"score":score} for dimension,score in scores.items()]
     if not isinstance(scores,list) or len(scores)!=5 or {item.get("dimension") for item in scores if isinstance(item,dict)}!=DIRECTOR_DIMENSIONS:
         raise ValueError("review must score each Director dimension exactly once")
-    if any(type(item.get("score")) is not int or not 1<=item["score"]<=5 for item in scores): raise ValueError("Director scores must be integers from 1 to 5")
+    def valid_director_score(item):
+        score=item.get("score")
+        return type(score) in {int,float} and 1<=score<=5 and score*2==int(score*2)
+    if any(not valid_director_score(item) for item in scores):
+        raise ValueError("Director scores must be half-point increments from 1 to 5")
     mean=sum(item["score"] for item in scores)/5
     hands_on=bool(review.get("hands_on_edits",False))
     if review["accepted"] and (mean<4 or min(item["score"] for item in scores)<3 or hands_on):
@@ -293,6 +297,8 @@ def command_export(args) -> int:
     root=repo_root(); source=root/"results"/args.campaign; destination=Path(args.output).resolve()
     if destination.exists(): raise FileExistsError(destination)
     summary=read_json(source/"summary.json")
+    frozen=read_json(source/"frozen-campaign.json") if (source/"frozen-campaign.json").exists() else {}
+    source_binding=read_json(source/"source-binding.json") if (source/"source-binding.json").exists() else {}
     shutil.copytree(source,destination/"results"/args.campaign)
     for name in ("doctor.json","calibration.json","budget.jsonl","OFFLINE_READINESS.md"):
         candidate=root/"results"/name
@@ -313,6 +319,28 @@ def command_export(args) -> int:
     for replay_source in replay_sources:
         if any(replay_source.iterdir()):
             shutil.copytree(replay_source,destination/"replays"/replay_source.name)
+    reviewer_qualification=frozen.get("reviewer_qualification") or {}
+    qualification_record=root/"feasibility/3d/3d-01-1/evaluator-qualification.json"
+    if reviewer_qualification and qualification_record.exists():
+        record=read_json(qualification_record)
+        for attempt in record.get("attempts",[]):
+            attempt_source=safe_relative(root,root/attempt["result_dir"])
+            attempt_destination=destination/attempt_source.relative_to(root)
+            if not attempt_destination.exists():
+                shutil.copytree(attempt_source,attempt_destination)
+        benchmark_id=reviewer_qualification.get("benchmark_id")
+        benchmark_matches=[]
+        for manifest_path in (root/"runs/3d011-evaluator").glob("*/manifest.json"):
+            if read_json(manifest_path).get("benchmark_id")==benchmark_id:
+                benchmark_matches.append(manifest_path.parent)
+        if len(benchmark_matches)!=1:
+            raise ValueError("qualified evaluator benchmark is missing or ambiguous")
+        benchmark_source=benchmark_matches[0]
+        benchmark_destination=destination/"evaluator-benchmark"/benchmark_id
+        benchmark_destination.mkdir(parents=True)
+        shutil.copytree(benchmark_source/"cases",benchmark_destination/"cases")
+        shutil.copy2(benchmark_source/"manifest.json",benchmark_destination/"manifest.json")
+        shutil.copy2(benchmark_source/"labels.json",benchmark_destination/"labels.json")
     for relative in ("config","schemas","feasibility/3d/3d-01","feasibility/3d/3d-01-1","docs","prior-art","src","tests"):
         candidate=root/relative
         if candidate.is_dir(): shutil.copytree(candidate,destination/relative)
@@ -320,16 +348,39 @@ def command_export(args) -> int:
         candidate=root/relative
         if candidate.exists():
             target=destination/relative; target.parent.mkdir(parents=True,exist_ok=True); shutil.copy2(candidate,target)
+    if source_binding.get("implementation_commit"):
+        import io
+        import tarfile
+        archive_paths=["src","tests","config","schemas","feasibility","docs","prior-art","MOVIE_FACTORY_3D_FEASIBILITY_SPEC.md","README.md","SETUP_README.md","requirements.lock","pyproject.toml",".python-version",".env.example","AGENTS.md"]
+        archive=subprocess.run(["git","archive",source_binding["implementation_commit"],*archive_paths],cwd=root,check=True,capture_output=True)
+        exact_source=destination/"execution-source"
+        exact_source.mkdir(parents=True)
+        with tarfile.open(fileobj=io.BytesIO(archive.stdout),mode="r:") as bundle:
+            bundle.extractall(exact_source,filter="data")
+    evidence_commit=subprocess.run(["git","rev-parse","HEAD"],cwd=root,text=True,capture_output=True,check=True).stdout.strip()
+    evidence_tree=subprocess.run(["git","rev-parse","HEAD^{tree}"],cwd=root,text=True,capture_output=True,check=True).stdout.strip()
+    atomic_json(destination/"bundle-source-binding.json",{
+        "schema_version":"1.0","campaign_id":args.campaign,
+        "execution_commit":source_binding.get("implementation_commit"),
+        "execution_tree":source_binding.get("implementation_tree"),
+        "evidence_tooling_commit":evidence_commit,"evidence_tooling_tree":evidence_tree,
+        "note":"execution-source contains the exact live campaign revision; root source contains the final review and export tooling."
+    })
     atomic_json(destination/"excluded-inventory.json",{
         "schema_version":"1.0","campaign_id":args.campaign,
-        "excluded":[".env and all credential values",".git history",".venv and .runtime dependency installations","non-selected control/remediation run payloads","API preflight logs","empty failed replay directory","Python and test caches"],
+        "excluded":[".env and all credential values",".git history",".venv and .runtime dependency installations","non-selected control/remediation run payloads","evaluator corruption build intermediates","API preflight logs","empty failed replay directory","Python and test caches"],
         "note":"Recreate the project-local environment from requirements.lock. Replays require the pinned Blender build or a separately qualified compatible build."
     })
+    experiment_id=summary.get("experiment_id","3D-01")
+    if source_binding.get("status")=="EXACT_PRE_RUN":
+        provenance=(f"The live campaign was bound before dispatch to implementation commit `{source_binding['implementation_commit']}` and Git tree `{source_binding['implementation_tree']}`. An exact archive of that revision is in `execution-source/`; `bundle-source-binding.json` identifies the final root evidence tooling revision.")
+    else:
+        provenance="The live qualification predates its recorded Git commit. Its source binding is explicitly post-hoc; offline replay is the reproducibility evidence."
     (destination/"REPRODUCIBILITY.md").write_text(
-        "# Reproducing this 3D-01 evidence bundle\n\n"
-        "This bundle includes the implementation in `src/`, its tests in `tests/`, the frozen configuration, selected run packages, native Blender scenes, renders, reports, and offline replays.\n\n"
+        f"# Reproducing this {experiment_id} evidence bundle\n\n"
+        "This bundle includes the exact live implementation in `execution-source/`, final evidence tooling in the root `src/`, tests, frozen configuration, selected run packages, native Blender scenes, renders, evaluator qualification cases and results, reports, and offline replays.\n\n"
         "Create the project-local `.venv` exactly as described in `SETUP_README.md`; never place credentials in this bundle. Run `.venv/bin/python -m pytest`, then replay any selected executable package with `mf3d replay --offline`. Comparison links in the campaign report are relative to this bundle.\n\n"
-        "See `results/%s/source-binding.json` for the provenance boundary. The live qualification predates the recorded Git commit, so its source binding is explicitly post-hoc; offline replay against that sealed source is the reproducibility evidence.\n" % args.campaign
+        f"See `results/{args.campaign}/source-binding.json` for the provenance boundary. {provenance}\n"
     )
     from .packages import manifest_for
     files=[path for path in destination.rglob("*") if path.is_file() and path.name!="inventory.json"]
