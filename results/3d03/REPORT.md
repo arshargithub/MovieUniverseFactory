@@ -12,6 +12,7 @@ The frozen persistent-character experiment passed verified asset ingestion, cano
 - Provider calls and API cost: **0 / $0**
 - Replay differences: **0**
 - Baseline/revision save-reopen differences: **0 / 0**
+- Temporal addendum: `motion-v1-20260910T232321Z-f260e19a`, bound before dispatch to commit `4d86e3fac0e47b44c290e1923ac66997eae4e6e6`
 - Character topology: **804 vertices / 826 polygons**
 - Rig coverage: **58 stable bones / 32 weighted bones**
 - Structurally persisted action datablocks and skins: **idle, run, jump / cyborg, skater**
