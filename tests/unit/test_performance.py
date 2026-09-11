@@ -6,6 +6,7 @@ import pytest
 from jsonschema import Draft202012Validator
 
 from movie_factory.performance import edit_envelope,repeated_source_frame,required_sample_times,validate_director_review
+from movie_factory.performance_controller import _metric_identity
 from movie_factory.validators.performance import (inject_performance_control,protected_snapshot_flags,
                                                   validate_control_sensitivity,validate_performance_metrics)
 
@@ -92,3 +93,13 @@ def test_director_schema_is_valid():
 def test_recorded_campaign_digest_matches_canonical_configuration():
     from movie_factory.packages import content_id
     assert (ROOT/"feasibility/3d/3d-04/campaign.sha256").read_text().strip()==content_id(CONFIG)
+
+
+def test_replay_geometry_identity_ignores_render_bookkeeping_only():
+    measured={"samples":[{"frame":1,"rms":0}],"rendered_frames_per_clip":96,"protected":{"source":True},
+              "persistence":{"replay":True},"performance_native_sha256":"a"*64}
+    replay={"samples":[{"frame":1,"rms":0}],"rendered_frames_per_clip":0,"protected":{},
+            "persistence":{},"performance_native_sha256":"b"*64}
+    assert _metric_identity(measured)==_metric_identity(replay)
+    replay["samples"][0]["rms"]=.01
+    assert _metric_identity(measured)!=_metric_identity(replay)

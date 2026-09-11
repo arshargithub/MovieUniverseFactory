@@ -30,6 +30,7 @@ def _source_binding(repo):
 def _metric_identity(raw):
     value=deepcopy(raw)
     value.pop("performance_native_sha256",None); value.pop("protected",None); value.pop("persistence",None)
+    value.pop("rendered_frames_per_clip",None)
     return content_id(value)
 
 
