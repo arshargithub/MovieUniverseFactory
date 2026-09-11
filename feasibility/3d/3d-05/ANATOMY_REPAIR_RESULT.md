@@ -16,3 +16,11 @@ Decision: **YELLOW, machine checks passed, Director PENDING**. The earlier thumb
 - Offline suite: 125 passed, 11 opt-in tests deselected. Pre-score native test history, including the ineffective connected-bone failure injection and its verified geometry replacement, is preserved in [ANATOMY_REPAIR.md](ANATOMY_REPAIR.md).
 
 Review the complete approach, thumb-up closure, wrist/elbow posture, lift, and hold in all three views. Record A/B scores, visible defects, preference, and review duration. The player estimates visible-page time. Engineering attribution and this pending outcome are recorded in the central engineering-intelligence ledger; there is no accepted Astra-versus-Sol result or Sol handoff yet.
+
+## Subsequent Director feedback: coordinated motion planning requested
+
+The Director reports that the lift appears driven by the shoulder/upper arm with a level wrist/forearm presentation and slight elbow distortion. They also note absent head/torso attention as a more minor issue, possibly outside the existing criteria. They request a natural-movement planning pass before further implementation.
+
+Machine results remain unchanged. Status remains YELLOW / acceptance PENDING; no numerical scores, preference, review duration or major-defect severity were supplied. The earlier result and review manifest are preserved in the run's `review-history/before-organic-motion-feedback/` directory. The updated inventory includes the new feedback and this history; the 1,470-artifact figure above describes the original pre-feedback verification.
+
+See [MOTION_PLAN.md](MOTION_PLAN.md) for the proposed coordinated lift and [Decision 0004](../../../docs/decisions/0004-motion-design-before-implementation.md) for the adopted planning workflow. No new animation or scored campaign was executed in this planning pass.

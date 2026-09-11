@@ -317,6 +317,45 @@
           "sha256_at_recording": "9412a4d590af7723d8a5e4d03b7f70d91dfeecd8d7c684f2aad5f7b1d588e3bf"
         }
       ]
+    },
+    {
+      "controlled_model_comparison": false,
+      "engineering_model": {
+        "attribution_basis": "user_retained_model_for_this_repair",
+        "reasoning_effort": null,
+        "reported_name": "Astra",
+        "runtime_verified": false
+      },
+      "engineering_usage": {
+        "cost_usd": null,
+        "elapsed_seconds": null,
+        "human_review_seconds": null,
+        "input_tokens": null,
+        "output_tokens": null,
+        "reasoning_tokens": null
+      },
+      "event_id": "3d05-85655dd3-organic-motion-director-feedback",
+      "event_type": "director_feedback_and_process_learning",
+      "experiment_id": "3D-05",
+      "observation": "Director reports remaining rigid lift and slight elbow distortion after the machine-passing Astra anatomy repair, plus minor missing head/torso attention. Requests a planning pass for natural movement before implementation. Code confirms fixed hand/sword orientation and absent authored attention, but elbow motion is not literally absent. Existing planning covered constraints and states without a required whole-action movement brief.",
+      "occurred_at_utc": null,
+      "outcome": "CHANGES_REQUESTED_ACCEPTANCE_PENDING",
+      "phase": "coordinated_human_motion_planning",
+      "previous_model_reported": "Astra",
+      "recorded_at_utc": "2026-09-11T16:36:15.083081+00:00",
+      "run_id": "interaction-v1-20260911T160515Z-85655dd3",
+      "sources": [
+        {
+          "kind": "repository_artifact",
+          "path": "docs/engineering-intelligence/evidence/interaction-v1-20260911T160515Z-85655dd3/director-feedback.json",
+          "sha256_at_recording": "ae37493ab7927108fdae77d4cb4fbcc2341937336942e3a6aa5f230469276c52"
+        },
+        {
+          "kind": "repository_artifact",
+          "path": "docs/engineering-intelligence/evidence/interaction-v1-20260911T160515Z-85655dd3/result.json",
+          "sha256_at_recording": "172882f93428f05b3627841ef7fd1453a2ac8e443347027935f0b08e2026e82f"
+        }
+      ]
     }
   ],
   "recording_mode": "manual_evidence_backfill_and_future_event_capture",

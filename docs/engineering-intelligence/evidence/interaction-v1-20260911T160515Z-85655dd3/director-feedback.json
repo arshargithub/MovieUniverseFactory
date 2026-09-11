@@ -1,0 +1,24 @@
+{
+  "acceptance_supplied": false,
+  "clip_assignment": "NOT_SPECIFIED",
+  "director_quotes": [
+    "when the sword is lifted up, the wrist moves up and stays parallel to the ground, only the shoulder joint and the upper arm moves. which seems slightly unnatural and at the top of the lift it creates slight distortion at the elbow joint because the wrist isn't pivoting at all at the elbow as it probably would in a more natural motion",
+    "this is more minor and maybe not part of the criteria for the experiment, but the character lifts the sword without looking at it, without the torso or head angling or moving towards it, which also isn't fully natural.",
+    "I feel we need a pass first that plans considerations related to natural/organic human movement before we start implementing. do we already do this? if yes does it need to be more robust? because i feel this should be captured as a key learning from these experiments"
+  ],
+  "engineering_findings": {
+    "confirmed": "Hand orientation is fixed after source frame 24; sword orientation remains fixed; no head/torso attention motion is authored. The elbow is solved and does move.",
+    "hypothesis": "Fixed world orientation restricts coordinated articulation and contributes to perceived stiffness. A full anatomical diagnosis is not established by this inspection."
+  },
+  "lesson": "Plan intention, attention, coordinated joint contribution, contacts and constraint compatibility before implementation. Machine-valid poses and stable grip do not establish natural whole-action performance.",
+  "next_step": "Planning brief and movement/constraint review before another implementation. No new render was executed in this pass.",
+  "numerical_scores_supplied": false,
+  "observations": {
+    "attention": "Director notes absent head/torso attention toward the sword and explicitly considers this a more minor, possibly out-of-criteria issue.",
+    "lift": "Director perceives a shoulder/upper-arm-dominated lift with level hand/forearm presentation and slight elbow distortion."
+  },
+  "recorded_at_utc": "2026-09-11T16:36:15.083081+00:00",
+  "review_seconds": null,
+  "schema_version": "1.0",
+  "status": "CHANGES_REQUESTED_DURING_REVIEW"
+}
