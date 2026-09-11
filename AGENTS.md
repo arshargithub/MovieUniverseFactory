@@ -6,3 +6,4 @@
 - Blender workers execute only validated structured operations. Do not add arbitrary model-generated Python execution on the developer account.
 - Do not run live provider calls outside the persistent campaign budget ledger. Mocks are the default for tests.
 - Houdini and Unreal remain later-phase design notes until the Blender qualification is complete.
+- Record announced engineering-model switches, handoffs, and their outcomes in `docs/engineering-intelligence/events.json`, following its README. Keep Codex engineering attribution separate from experiment API models, mark unknown effort/usage as unknown, and include Director-rejected outcomes after escalation. Consult this record when proposing Factory model routing; do not treat it as a controlled model benchmark.

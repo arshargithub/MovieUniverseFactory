@@ -1,0 +1,233 @@
+{
+  "events": [
+    {
+      "controlled_model_comparison": false,
+      "engineering_model": {
+        "attribution_basis": "user_statement_and_handoff",
+        "reasoning_effort": "high",
+        "reported_name": "Astra",
+        "runtime_verified": false
+      },
+      "engineering_usage": {
+        "cost_usd": null,
+        "elapsed_seconds": null,
+        "human_review_seconds": null,
+        "input_tokens": null,
+        "output_tokens": null,
+        "reasoning_tokens": null
+      },
+      "event_id": "3d031-astra-diagnosis",
+      "event_type": "diagnostic_escalation",
+      "experiment_id": "3D-03.1",
+      "observation": "Astra diagnosed stale parent pose evaluation and demonstrated causal controls. Earlier engineering model attribution is not established by the handoff alone.",
+      "occurred_at_utc": null,
+      "outcome": "DIAGNOSIS_PROVEN",
+      "phase": "diagnosis",
+      "previous_model_reported": null,
+      "recorded_at_utc": "2026-09-11T15:26:52.177619+00:00",
+      "sources": [
+        {
+          "kind": "repository_artifact",
+          "path": "feasibility/3d/3d-03-1/ASTRA_DIAGNOSIS_AND_SOL_HANDOFF.md",
+          "sha256_at_recording": "5f2bfeda2206d6205919483e3b4f7f3a70deb004367444b112b5832080d0a50e"
+        },
+        {
+          "kind": "user_statement_in_current_conversation",
+          "text": "I have switched to Astra High."
+        }
+      ]
+    },
+    {
+      "controlled_model_comparison": false,
+      "engineering_model": {
+        "attribution_basis": "user_statement_and_handoff",
+        "reasoning_effort": null,
+        "reported_name": "Sol",
+        "runtime_verified": false
+      },
+      "engineering_usage": {
+        "cost_usd": null,
+        "elapsed_seconds": null,
+        "human_review_seconds": null,
+        "input_tokens": null,
+        "output_tokens": null,
+        "reasoning_tokens": null
+      },
+      "event_id": "3d031-sol-implementation",
+      "event_type": "model_handoff",
+      "experiment_id": "3D-03.1",
+      "observation": "User switched to Sol after the Astra diagnosis; subsequent production correction reached GREEN for bounded transfer and separately authored jump.",
+      "occurred_at_utc": null,
+      "outcome": "BOUNDED_WORKFLOW_ACCEPTED",
+      "phase": "implementation",
+      "previous_model_reported": "Astra",
+      "recorded_at_utc": "2026-09-11T15:26:52.177619+00:00",
+      "sources": [
+        {
+          "kind": "user_statement_in_current_conversation",
+          "text": "switched to sol. continue"
+        },
+        {
+          "kind": "repository_artifact",
+          "path": "feasibility/3d/3d-03-1/ASTRA_DIAGNOSIS_AND_SOL_HANDOFF.md",
+          "sha256_at_recording": "5f2bfeda2206d6205919483e3b4f7f3a70deb004367444b112b5832080d0a50e"
+        },
+        {
+          "kind": "repository_artifact",
+          "path": "results/3d031/REPORT.md",
+          "sha256_at_recording": "069d108b0ae57a480c0b0024e5129706b5177cd06ac50fcd09de4406aa2373ea"
+        }
+      ]
+    },
+    {
+      "controlled_model_comparison": false,
+      "engineering_model": {
+        "attribution_basis": "user_reported_switch",
+        "reasoning_effort": null,
+        "reported_name": "Astra",
+        "runtime_verified": false
+      },
+      "engineering_usage": {
+        "cost_usd": null,
+        "elapsed_seconds": null,
+        "human_review_seconds": null,
+        "input_tokens": null,
+        "output_tokens": null,
+        "reasoning_tokens": null
+      },
+      "event_id": "3d05-sol-to-astra",
+      "event_type": "repair_escalation",
+      "experiment_id": "3D-05",
+      "observation": "User identified preceding engineering attempts as Sol and requested Astra after repeated Director rejection. This is failure of those attempts, not proof that Sol cannot solve the task. Prior Sol reasoning setting is unverified.",
+      "occurred_at_utc": null,
+      "outcome": "ESCALATED_AFTER_REJECTION",
+      "phase": "grasp_repair",
+      "previous_model_reported": "Sol",
+      "recorded_at_utc": "2026-09-11T15:26:52.177619+00:00",
+      "sources": [
+        {
+          "kind": "user_statement_in_current_conversation",
+          "text": "make a note that I am now switching to Astra for the next repair and run"
+        },
+        {
+          "kind": "repository_artifact",
+          "path": "feasibility/3d/3d-05/NEXT_REPAIR.md",
+          "sha256_at_recording": "2af4c8bd1e128d54126648ec2681dce6d02e218899c671db1ba7a0751bebd570"
+        },
+        {
+          "kind": "repository_artifact",
+          "path": "runs/3d05/interaction-v1-20260911T143452Z-281f2ecf/director-feedback.json",
+          "sha256_at_recording": "498d6d3469813b6bc8d7c74f6ceff8fa6a39e60da63f5d68275dfd5419faafdc"
+        },
+        {
+          "kind": "repository_artifact",
+          "path": "docs/engineering-intelligence/evidence/interaction-v1-20260911T143452Z-281f2ecf/director-feedback.json",
+          "sha256_at_recording": "498d6d3469813b6bc8d7c74f6ceff8fa6a39e60da63f5d68275dfd5419faafdc",
+          "snapshot_of": "runs/3d05/interaction-v1-20260911T143452Z-281f2ecf/director-feedback.json"
+        }
+      ]
+    },
+    {
+      "controlled_model_comparison": false,
+      "engineering_model": {
+        "attribution_basis": "user_reported_switch_and_conversation_sequence",
+        "reasoning_effort": null,
+        "reported_name": "Astra",
+        "runtime_verified": false
+      },
+      "engineering_usage": {
+        "cost_usd": null,
+        "elapsed_seconds": null,
+        "human_review_seconds": null,
+        "input_tokens": null,
+        "output_tokens": null,
+        "reasoning_tokens": null
+      },
+      "event_id": "3d05-astra-outcome-151105",
+      "event_type": "director_outcome",
+      "experiment_id": "3D-05",
+      "observation": "Scripted finger closure, explicit sword normalization and mesh gates improved enclosure. Director judges grip fine but rejects backwards thumb-down approach. Machine-valid geometry is insufficient for anatomy.",
+      "occurred_at_utc": null,
+      "outcome": "PARTIAL_PROGRESS_DIRECTOR_REJECTED",
+      "phase": "grasp_repair",
+      "previous_model_reported": null,
+      "recorded_at_utc": "2026-09-11T15:26:52.177619+00:00",
+      "sources": [
+        {
+          "kind": "repository_artifact",
+          "path": "feasibility/3d/3d-05/GRASP_REPAIR.md",
+          "sha256_at_recording": "68d9667d9699a15de1d237a4ca6edf21eb376acdb4a4ae140d5f725232323e4f"
+        },
+        {
+          "kind": "repository_artifact",
+          "path": "runs/3d05/interaction-v1-20260911T151105Z-b556e5e5/director-feedback.json",
+          "sha256_at_recording": "8539556f66be22e81e1bbf06b002dc1e0755db05791766f97674e561e5943316"
+        },
+        {
+          "kind": "repository_artifact",
+          "path": "runs/3d05/interaction-v1-20260911T151105Z-b556e5e5/result.json",
+          "sha256_at_recording": "48e4456b2dfe9d2f5b9373ee95fdc47e46d58a03147308667227cee55ea2629d"
+        },
+        {
+          "kind": "repository_artifact",
+          "path": "runs/3d05/interaction-v1-20260911T151105Z-b556e5e5/source-binding.json",
+          "sha256_at_recording": "9372d63b9bbefe516f90d8d35603ff693cf922c8e1bc6148c32da9777e280c4a"
+        },
+        {
+          "kind": "repository_artifact",
+          "path": "docs/engineering-intelligence/evidence/interaction-v1-20260911T151105Z-b556e5e5/director-feedback.json",
+          "sha256_at_recording": "8539556f66be22e81e1bbf06b002dc1e0755db05791766f97674e561e5943316",
+          "snapshot_of": "runs/3d05/interaction-v1-20260911T151105Z-b556e5e5/director-feedback.json"
+        },
+        {
+          "kind": "repository_artifact",
+          "path": "docs/engineering-intelligence/evidence/interaction-v1-20260911T151105Z-b556e5e5/result.json",
+          "sha256_at_recording": "48e4456b2dfe9d2f5b9373ee95fdc47e46d58a03147308667227cee55ea2629d",
+          "snapshot_of": "runs/3d05/interaction-v1-20260911T151105Z-b556e5e5/result.json"
+        },
+        {
+          "kind": "repository_artifact",
+          "path": "docs/engineering-intelligence/evidence/interaction-v1-20260911T151105Z-b556e5e5/source-binding.json",
+          "sha256_at_recording": "9372d63b9bbefe516f90d8d35603ff693cf922c8e1bc6148c32da9777e280c4a",
+          "snapshot_of": "runs/3d05/interaction-v1-20260911T151105Z-b556e5e5/source-binding.json"
+        }
+      ]
+    },
+    {
+      "controlled_model_comparison": false,
+      "engineering_model": {
+        "attribution_basis": "user_recollection_only",
+        "reasoning_effort": null,
+        "reported_name": "Astra",
+        "runtime_verified": false
+      },
+      "engineering_usage": {
+        "cost_usd": null,
+        "elapsed_seconds": null,
+        "human_review_seconds": null,
+        "input_tokens": null,
+        "output_tokens": null,
+        "reasoning_tokens": null
+      },
+      "event_id": "3d011-switch-recollection",
+      "event_type": "unconfirmed_recollection",
+      "experiment_id": "3D-01.1",
+      "observation": "User recalls a possible escalation during 3D-01.1. No confirming engineering-model evidence found in reviewed repository documents or supplied conversation. Do not conflate API evaluator model changes with Codex model switches, or relabel this as 3D-03.1 without confirmation.",
+      "occurred_at_utc": null,
+      "outcome": "UNCONFIRMED",
+      "phase": "unknown",
+      "previous_model_reported": "Sol",
+      "recorded_at_utc": "2026-09-11T15:26:52.177619+00:00",
+      "sources": [
+        {
+          "kind": "user_statement_in_current_conversation",
+          "text": "I think this happened with 3D1.1 and now again?"
+        }
+      ]
+    }
+  ],
+  "recording_mode": "manual_evidence_backfill_and_future_event_capture",
+  "schema_version": "1.0",
+  "scope": "Codex engineering model transitions and observed outcomes; separate from experiment API evaluators",
+  "unknown_values_are_not_zero": true
+}
