@@ -1607,11 +1607,12 @@ def main():
         inspector=load_inspector()
         mode=job["mode"]
         profile=job["profile"]
-        if mode=="gesture_screen":
+        if mode in {"gesture_screen","gesture_campaign","gesture_tail"}:
             module_spec=importlib.util.spec_from_file_location("mf_gesture",Path(__file__).with_name("gesture.py"))
             gesture=importlib.util.module_from_spec(module_spec)
             module_spec.loader.exec_module(gesture)
-            status["artifacts"].extend(gesture.screen(sys.modules[__name__],out,job))
+            handler=gesture.screen if mode=="gesture_screen" else gesture.render_tail if mode=="gesture_tail" else gesture.campaign
+            status["artifacts"].extend(handler(sys.modules[__name__],out,job))
         elif mode=="asset_probe":
             probe=asset_probe(job["asset"])
             write_json(out/"probe.json",probe)
