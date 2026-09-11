@@ -1,0 +1,59 @@
+{
+  "experiment_id": "3D-03.1-TEMPORAL",
+  "jump_claim": "authored_full_jump",
+  "playback_fps": 24,
+  "playback_fps_by_clip": {
+    "idle": 30,
+    "jump": 24,
+    "run": 24
+  },
+  "playback_profile": {
+    "device": "CPU",
+    "height": 360,
+    "name": "character_temporal_v2_authored_jump",
+    "samples": 2,
+    "shots": [
+      "shot_B"
+    ],
+    "width": 640
+  },
+  "request": {
+    "camera_id": "camera_B",
+    "clips": {
+      "idle": {
+        "action": "character_action_idle",
+        "frame_end": 33,
+        "frame_start": 1
+      },
+      "jump": {
+        "action": "character_action_jump",
+        "frame_end": 13,
+        "frame_start": 1
+      },
+      "run": {
+        "action": "character_action_run",
+        "frame_end": 17,
+        "frame_start": 1
+      }
+    },
+    "schema_version": "1.0"
+  },
+  "schema_version": "1.0",
+  "thresholds": {
+    "contact_clearance_m": 0.06,
+    "floor_penetration_tolerance_m": 0.015,
+    "idle_max_ungrounded_frames": 0,
+    "jump_endpoint_contact_m": 0.08,
+    "jump_min_airborne_clearance_m": 0.06,
+    "jump_min_airborne_frames": 2,
+    "maximum_dimension_m": 3.0,
+    "maximum_height_m": 2.4,
+    "maximum_limb_length_relative_error": 0.01,
+    "maximum_loop_seam_rms_m": 0.18,
+    "maximum_rms_vertex_step_m": 0.18,
+    "maximum_vertex_step_m": 0.45,
+    "minimum_height_m": 0.8,
+    "run_min_contact_frames_each_foot": 1,
+    "run_min_rms_vertex_step_m": 0.005
+  }
+}

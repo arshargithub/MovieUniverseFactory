@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "experiment_id": "3D-03.1",
+  "decision": "GREEN",
+  "source_commit": "6afb4d8b382437bb4629f9168e4d40261b441bd9",
+  "source_tree": "b47304d4ce56d4f8e41c49ef3feac1a8c7654df6",
+  "qualification_run": "character-v2-20260911T012644Z-2d7d8605",
+  "temporal_run": "motion-v2-20260911T012703Z-335b367f",
+  "replay_run": "runs/3d031-replay/replay-01",
+  "source_native_sha256": "bbf05848c30e531ca31fc4632210b8344f6f35166db9c26abe4adfa6150e2488",
+  "machine_validation_passed": true,
+  "director_status": "ACCEPTED",
+  "director_run_score": 4.0,
+  "provider_calls": 0,
+  "known_api_cost_usd": 0,
+  "claims": {
+    "idle": "corrected_source_transfer",
+    "run": "corrected_source_transfer_with_minor_performance_limitation",
+    "jump": "separately_authored_motion_using_admitted_pose_reference"
+  }
+}

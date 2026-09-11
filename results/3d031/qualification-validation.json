@@ -1,0 +1,324 @@
+{
+  "baseline": {
+    "checks": [
+      {
+        "details": null,
+        "name": "identity.scene",
+        "passed": true
+      },
+      {
+        "details": [
+          "character_01",
+          "stage_01"
+        ],
+        "name": "identity.entities",
+        "passed": true
+      },
+      {
+        "details": [],
+        "name": "snapshot.supported",
+        "passed": true
+      },
+      {
+        "details": [
+          {
+            "packed": true,
+            "path": "/__movie_factory_packed__/character_01_skin_cyborg",
+            "type": "image"
+          },
+          {
+            "packed": true,
+            "path": "/__movie_factory_packed__/character_01_skin_skater",
+            "type": "image"
+          }
+        ],
+        "name": "assets.images_packed",
+        "passed": true
+      },
+      {
+        "details": {
+          "observed": [
+            "321b7ba2d81b8b6380d0b0320ebf1117341bfd61ad73711dd8bf9094c26e14d6",
+            "de575f5075a8991907a4807fea3ef291b8e57778c6c4f4ada990abe7582026df"
+          ],
+          "required": [
+            "321b7ba2d81b8b6380d0b0320ebf1117341bfd61ad73711dd8bf9094c26e14d6",
+            "de575f5075a8991907a4807fea3ef291b8e57778c6c4f4ada990abe7582026df"
+          ]
+        },
+        "name": "assets.skin_identity",
+        "passed": true
+      },
+      {
+        "details": {
+          "height_m": 1.75
+        },
+        "name": "normalization.height",
+        "passed": true
+      },
+      {
+        "details": {
+          "bottom_z_m": 0.0
+        },
+        "name": "normalization.ground_contact",
+        "passed": true
+      },
+      {
+        "details": null,
+        "name": "topology.mesh",
+        "passed": true
+      },
+      {
+        "details": null,
+        "name": "rig.vertex_groups",
+        "passed": true
+      },
+      {
+        "details": [
+          {
+            "execution_time": 0.0,
+            "invert_vertex_group": false,
+            "is_active": true,
+            "is_override_data": false,
+            "name": "Root",
+            "persistent_uid": 312629205,
+            "show_expanded": true,
+            "show_in_editmode": false,
+            "show_on_cage": false,
+            "show_render": true,
+            "show_viewport": true,
+            "target_object": "character_01_armature",
+            "type": "ARMATURE",
+            "use_apply_on_spline": false,
+            "use_bone_envelopes": false,
+            "use_deform_preserve_volume": false,
+            "use_multi_modifier": false,
+            "use_pin_to_last": false,
+            "use_vertex_groups": true,
+            "vertex_group": ""
+          }
+        ],
+        "name": "rig.armature_modifier",
+        "passed": true
+      },
+      {
+        "details": null,
+        "name": "rig.bones",
+        "passed": true
+      },
+      {
+        "details": [
+          "character_action_idle",
+          "character_action_jump",
+          "character_action_run"
+        ],
+        "name": "actions.exact_set",
+        "passed": true
+      },
+      {
+        "details": [
+          1.0,
+          33.0
+        ],
+        "name": "actions.character_action_idle.range",
+        "passed": true
+      },
+      {
+        "details": null,
+        "name": "actions.character_action_idle.curves",
+        "passed": true
+      },
+      {
+        "details": {
+          "referenced_bones": 32
+        },
+        "name": "actions.character_action_idle.bone_compatibility",
+        "passed": true
+      },
+      {
+        "details": {
+          "location_curves": [
+            0,
+            1,
+            2
+          ],
+          "vertical_limit": 0.5
+        },
+        "name": "actions.character_action_idle.in_place_grounding",
+        "passed": true
+      },
+      {
+        "details": [
+          {
+            "identifier": "OBcharacter_01_armature",
+            "target_id_type": "OBJECT"
+          }
+        ],
+        "name": "actions.character_action_idle.slot",
+        "passed": true
+      },
+      {
+        "details": [
+          1.0,
+          17.0
+        ],
+        "name": "actions.character_action_run.range",
+        "passed": true
+      },
+      {
+        "details": null,
+        "name": "actions.character_action_run.curves",
+        "passed": true
+      },
+      {
+        "details": {
+          "referenced_bones": 32
+        },
+        "name": "actions.character_action_run.bone_compatibility",
+        "passed": true
+      },
+      {
+        "details": {
+          "location_curves": [
+            0,
+            1,
+            2
+          ],
+          "vertical_limit": 0.5
+        },
+        "name": "actions.character_action_run.in_place_grounding",
+        "passed": true
+      },
+      {
+        "details": [
+          {
+            "identifier": "OBcharacter_01_armature",
+            "target_id_type": "OBJECT"
+          }
+        ],
+        "name": "actions.character_action_run.slot",
+        "passed": true
+      },
+      {
+        "details": [
+          1.0,
+          13.0
+        ],
+        "name": "actions.character_action_jump.range",
+        "passed": true
+      },
+      {
+        "details": null,
+        "name": "actions.character_action_jump.curves",
+        "passed": true
+      },
+      {
+        "details": {
+          "referenced_bones": 32
+        },
+        "name": "actions.character_action_jump.bone_compatibility",
+        "passed": true
+      },
+      {
+        "details": {
+          "location_curves": [
+            0,
+            1,
+            2
+          ],
+          "vertical_limit": 0.75
+        },
+        "name": "actions.character_action_jump.in_place_grounding",
+        "passed": true
+      },
+      {
+        "details": [
+          {
+            "identifier": "OBcharacter_01_armature",
+            "target_id_type": "OBJECT"
+          }
+        ],
+        "name": "actions.character_action_jump.slot",
+        "passed": true
+      },
+      {
+        "details": {
+          "action": "character_action_idle",
+          "action_slot": "OBcharacter_01_armature",
+          "drivers": [],
+          "nla_tracks": 0
+        },
+        "name": "performance.active_idle",
+        "passed": true
+      },
+      {
+        "details": null,
+        "name": "performance.normalization",
+        "passed": true
+      },
+      {
+        "details": "sampled bone matrices at frames 1 and 9",
+        "name": "performance.idle_evaluates",
+        "passed": true
+      },
+      {
+        "details": null,
+        "name": "wardrobe.active_cyborg",
+        "passed": true
+      },
+      {
+        "details": null,
+        "name": "identity.no_temporary_imports",
+        "passed": true
+      }
+    ],
+    "errors": [],
+    "passed": true
+  },
+  "images": {
+    "method": "Director comparison pending; deterministic masks emitted",
+    "passed": true
+  },
+  "revision": {
+    "checks": [
+      {
+        "details": null,
+        "name": "revision.operations_frozen",
+        "passed": true
+      },
+      {
+        "details": [],
+        "name": "revision.exact_expected_state",
+        "passed": true
+      },
+      {
+        "details": null,
+        "name": "revision.action_data_unchanged",
+        "passed": true
+      },
+      {
+        "details": null,
+        "name": "revision.rig_rest_unchanged",
+        "passed": true
+      },
+      {
+        "details": null,
+        "name": "revision.source_mesh_unchanged",
+        "passed": true
+      },
+      {
+        "details": null,
+        "name": "revision.weights_unchanged",
+        "passed": true
+      },
+      {
+        "details": null,
+        "name": "revision.pose_changed",
+        "passed": true
+      }
+    ],
+    "errors": [],
+    "passed": true
+  },
+  "visual_review": null
+}

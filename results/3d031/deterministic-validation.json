@@ -1,0 +1,388 @@
+{
+  "api_can_override": false,
+  "authority": "deterministic_outer_validator",
+  "checks": [
+    {
+      "details": null,
+      "name": "identity.experiment",
+      "passed": true
+    },
+    {
+      "details": "camera_B",
+      "name": "identity.camera",
+      "passed": true
+    },
+    {
+      "details": [
+        "idle",
+        "jump",
+        "run"
+      ],
+      "name": "clips.exact_set",
+      "passed": true
+    },
+    {
+      "details": {
+        "expected": 33,
+        "observed": 33
+      },
+      "name": "idle.frame_coverage",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "idle.finite",
+      "passed": true
+    },
+    {
+      "details": {
+        "source_fps": 30.0,
+        "timestamps": [
+          0.0,
+          0.03333333333333333,
+          0.06666666666666667,
+          0.1,
+          0.13333333333333333,
+          0.16666666666666666,
+          0.2,
+          0.23333333333333334,
+          0.26666666666666666,
+          0.3,
+          0.3333333333333333,
+          0.36666666666666664,
+          0.4,
+          0.43333333333333335,
+          0.4666666666666667,
+          0.5,
+          0.5333333333333333,
+          0.5666666666666667,
+          0.6,
+          0.6333333333333333,
+          0.6666666666666666,
+          0.7,
+          0.7333333333333333,
+          0.7666666666666667,
+          0.8,
+          0.8333333333333334,
+          0.8666666666666667,
+          0.9,
+          0.9333333333333333,
+          0.9666666666666667,
+          1.0,
+          1.0333333333333334,
+          1.0666666666666667
+        ]
+      },
+      "name": "idle.timing",
+      "passed": true
+    },
+    {
+      "details": {
+        "minimum_z_m": 3.102491419326725e-08
+      },
+      "name": "idle.no_floor_penetration",
+      "passed": true
+    },
+    {
+      "details": {
+        "maximum_dimension_m": 1.7499999689750858
+      },
+      "name": "idle.bounded_extent",
+      "passed": true
+    },
+    {
+      "details": {
+        "range_m": [
+          1.7241135742515326,
+          1.7499999689750858
+        ]
+      },
+      "name": "idle.plausible_height",
+      "passed": true
+    },
+    {
+      "details": {
+        "maximum_relative_error": 1.8114511775024766e-06
+      },
+      "name": "idle.limb_lengths",
+      "passed": true
+    },
+    {
+      "details": {
+        "maximum_m": 0.00468923055422908
+      },
+      "name": "idle.continuous_max_vertex",
+      "passed": true
+    },
+    {
+      "details": {
+        "maximum_m": 0.0022545634579414107
+      },
+      "name": "idle.continuous_rms",
+      "passed": true
+    },
+    {
+      "details": {
+        "max_vertex_m": 0.0,
+        "rms_vertex_m": 0.0
+      },
+      "name": "idle.loop_seam",
+      "passed": true
+    },
+    {
+      "details": {
+        "ungrounded_frames": 0
+      },
+      "name": "idle.grounding",
+      "passed": true
+    },
+    {
+      "details": {
+        "expected": 17,
+        "observed": 17
+      },
+      "name": "run.frame_coverage",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "run.finite",
+      "passed": true
+    },
+    {
+      "details": {
+        "source_fps": 24.0,
+        "timestamps": [
+          0.0,
+          0.041666666666666664,
+          0.08333333333333333,
+          0.125,
+          0.16666666666666666,
+          0.20833333333333334,
+          0.25,
+          0.2916666666666667,
+          0.3333333333333333,
+          0.375,
+          0.4166666666666667,
+          0.4583333333333333,
+          0.5,
+          0.5416666666666666,
+          0.5833333333333334,
+          0.625,
+          0.6666666666666666
+        ]
+      },
+      "name": "run.timing",
+      "passed": true
+    },
+    {
+      "details": {
+        "minimum_z_m": 3.01795338719657e-10
+      },
+      "name": "run.no_floor_penetration",
+      "passed": true
+    },
+    {
+      "details": {
+        "maximum_dimension_m": 1.747936963733239
+      },
+      "name": "run.bounded_extent",
+      "passed": true
+    },
+    {
+      "details": {
+        "range_m": [
+          1.6530323177576065,
+          1.747936963733239
+        ]
+      },
+      "name": "run.plausible_height",
+      "passed": true
+    },
+    {
+      "details": {
+        "maximum_relative_error": 3.3562297683253917e-06
+      },
+      "name": "run.limb_lengths",
+      "passed": true
+    },
+    {
+      "details": {
+        "maximum_m": 0.36541409155016635
+      },
+      "name": "run.continuous_max_vertex",
+      "passed": true
+    },
+    {
+      "details": {
+        "maximum_m": 0.15348544182237947
+      },
+      "name": "run.continuous_rms",
+      "passed": true
+    },
+    {
+      "details": {
+        "max_vertex_m": 0.0,
+        "rms_vertex_m": 0.0
+      },
+      "name": "run.loop_seam",
+      "passed": true
+    },
+    {
+      "details": {
+        "contacts": {
+          "left": 7,
+          "right": 7
+        },
+        "support": [
+          "right",
+          "right",
+          "right",
+          "right",
+          "right",
+          "right",
+          "none",
+          "left",
+          "left",
+          "left",
+          "left",
+          "left",
+          "left",
+          "left",
+          "none",
+          "none",
+          "right"
+        ]
+      },
+      "name": "run.alternating_contact",
+      "passed": true
+    },
+    {
+      "details": {
+        "peak_rms_m": 0.15348544182237947
+      },
+      "name": "run.motion_present",
+      "passed": true
+    },
+    {
+      "details": {
+        "expected": 13,
+        "observed": 13
+      },
+      "name": "jump.frame_coverage",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "jump.finite",
+      "passed": true
+    },
+    {
+      "details": {
+        "source_fps": 24.0,
+        "timestamps": [
+          0.0,
+          0.041666666666666664,
+          0.08333333333333333,
+          0.125,
+          0.16666666666666666,
+          0.20833333333333334,
+          0.25,
+          0.2916666666666667,
+          0.3333333333333333,
+          0.375,
+          0.4166666666666667,
+          0.4583333333333333,
+          0.5
+        ]
+      },
+      "name": "jump.timing",
+      "passed": true
+    },
+    {
+      "details": {
+        "minimum_z_m": 2.7299622118448497e-08
+      },
+      "name": "jump.no_floor_penetration",
+      "passed": true
+    },
+    {
+      "details": {
+        "maximum_dimension_m": 1.7505236502869579
+      },
+      "name": "jump.bounded_extent",
+      "passed": true
+    },
+    {
+      "details": {
+        "range_m": [
+          1.6433302089571953,
+          1.7505236502869579
+        ]
+      },
+      "name": "jump.plausible_height",
+      "passed": true
+    },
+    {
+      "details": {
+        "maximum_relative_error": 5.038657808986713e-06
+      },
+      "name": "jump.limb_lengths",
+      "passed": true
+    },
+    {
+      "details": {
+        "maximum_m": 0.18956995095234824
+      },
+      "name": "jump.continuous_max_vertex",
+      "passed": true
+    },
+    {
+      "details": {
+        "maximum_m": 0.11409788248101077
+      },
+      "name": "jump.continuous_rms",
+      "passed": true
+    },
+    {
+      "details": {
+        "max_vertex_m": 0.0,
+        "rms_vertex_m": 0.0
+      },
+      "name": "jump.loop_seam",
+      "passed": true
+    },
+    {
+      "details": {
+        "first": [
+          2.7299622118448497e-08,
+          5.748668991145678e-05
+        ],
+        "last": [
+          2.7299622118448497e-08,
+          5.748668991145678e-05
+        ]
+      },
+      "name": "jump.takeoff_landing_contact",
+      "passed": true
+    },
+    {
+      "details": {
+        "airborne_frames": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      },
+      "name": "jump.airborne_phase",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "passed": true,
+  "schema_version": "1.0"
+}
