@@ -1,0 +1,121 @@
+{
+  "baseline_label": "A",
+  "candidate_label": "B",
+  "checks": [
+    {
+      "details": "ACCEPTED",
+      "name": "review.status",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "review.assignment",
+      "passed": true
+    },
+    {
+      "details": {
+        "A": "baseline",
+        "B": "candidate"
+      },
+      "name": "review.mapping",
+      "passed": true
+    },
+    {
+      "details": 5.0,
+      "name": "review.A.interaction_readability",
+      "passed": true
+    },
+    {
+      "details": 4.5,
+      "name": "review.A.grasp_contact_believability",
+      "passed": true
+    },
+    {
+      "details": 5.0,
+      "name": "review.A.transition_smoothness",
+      "passed": true
+    },
+    {
+      "details": 5.0,
+      "name": "review.A.hold_clearance",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "review.A.visible_defects",
+      "passed": true
+    },
+    {
+      "details": 5.0,
+      "name": "review.B.interaction_readability",
+      "passed": true
+    },
+    {
+      "details": 4.5,
+      "name": "review.B.grasp_contact_believability",
+      "passed": true
+    },
+    {
+      "details": 5.0,
+      "name": "review.B.transition_smoothness",
+      "passed": true
+    },
+    {
+      "details": 5.0,
+      "name": "review.B.hold_clearance",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "review.B.visible_defects",
+      "passed": true
+    },
+    {
+      "details": 120,
+      "name": "review.duration",
+      "passed": true
+    },
+    {
+      "details": {
+        "grasp_contact_believability": 4.5,
+        "hold_clearance": 5.0,
+        "interaction_readability": 5.0,
+        "transition_smoothness": 5.0,
+        "visible_defects": [
+          "Minor: handle appears insufficiently seated in fist/palm."
+        ]
+      },
+      "name": "creative.minimum_scores",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "creative.readability_improved",
+      "passed": false
+    },
+    {
+      "details": null,
+      "name": "creative.no_regression",
+      "passed": true
+    },
+    {
+      "details": {
+        "candidate": "B",
+        "preference": "TIE"
+      },
+      "name": "creative.preference",
+      "passed": false
+    },
+    {
+      "details": [],
+      "name": "creative.major_defects",
+      "passed": true
+    }
+  ],
+  "errors": [
+    "creative.readability_improved",
+    "creative.preference"
+  ],
+  "passed": false,
+  "schema_version": "1.0"
+}

@@ -1,16 +1,19 @@
 {
   "checkpoint_pair_count": 6,
   "complete_rendered_frames": 576,
+  "creative_status": "FROZEN_IMPROVEMENT_GATE_NOT_MET",
   "decision": "YELLOW",
   "director_feedback": {
-    "absolute_scores_confirmed": false,
+    "absolute_scores_confirmed": true,
     "frozen_improvement_demonstrated": false,
     "grasp_deduction_both": 0.5,
     "path": "director-feedback.json",
     "preference": "TIE"
   },
-  "director_review_seconds": null,
-  "director_status": "PARTIAL_FEEDBACK_TIE",
+  "director_review_duration_is_approximate": true,
+  "director_review_seconds": 120,
+  "director_status": "COMPLETED",
+  "director_validation": "director-validation.json",
   "elapsed_seconds": 1529.8180205419776,
   "execution_source_commit": "1bc89a30028516ac0a08480148c17221c6c11bb7",
   "experiment_id": "3D-05",
@@ -20,7 +23,7 @@
   "native_control_count": 18,
   "process_review": {
     "exact_engineering_tokens": null,
-    "formal_visual_review_pending": true,
+    "formal_visual_review_pending": false,
     "path": "PROCESS_REVIEW.md",
     "status": "OVERRUN_REQUIRING_CORRECTION",
     "user_reported_elapsed_minutes_approx": 150

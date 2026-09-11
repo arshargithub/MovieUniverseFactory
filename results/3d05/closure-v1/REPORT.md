@@ -1,6 +1,6 @@
 # 3D-05 closure campaign — Director tie; qualification remains YELLOW
 
-**YELLOW: all technical gates pass; the Director reports a tie with a 0.5-point grasp deduction for both clips. Absolute scores and review duration remain unspecified, and the frozen candidate-improvement gate is not met.** This is a new scored campaign, separate from the earlier YELLOW campaign and accepted development preview. No GREEN closure tag or claim is implied.
+**YELLOW: all technical gates pass; the Director reports a tie with a 0.5-point grasp deduction for both clips. Both clips score 4.5/5 for grasp and 5/5 for all other dimensions; review took approximately 120 seconds. The frozen candidate-improvement gate is not met.** This is a new scored campaign, separate from the earlier YELLOW campaign and accepted development preview. No GREEN closure tag or claim is implied.
 
 Review the [complete anonymous A/B videos](../../../runs/3d05-closure/interaction-v1-20260911T194804Z-9aafbc8a/review/video.html), or [primary](../../../runs/3d05-closure/interaction-v1-20260911T194804Z-9aafbc8a/review/primary-AB.mp4), [side](../../../runs/3d05-closure/interaction-v1-20260911T194804Z-9aafbc8a/review/side-AB.mp4), [rear](../../../runs/3d05-closure/interaction-v1-20260911T194804Z-9aafbc8a/review/rear-AB.mp4). A is left and B right in each video. Both variants already include the coordinated motion and head attention; the scored revision advances grasp/lift/hold timing only. The original [frame player](../../../runs/3d05-closure/interaction-v1-20260911T194804Z-9aafbc8a/review/index.html) remains available. Each view contains all 96 frames at 24 fps (four seconds); replay resets to the initial state and is not a seamless motion loop.
 
@@ -28,11 +28,13 @@ The Director reports approximately **2.5 hours and excessive Codex token use**, 
 
 ## Director gate and economics
 
-Latest [Director feedback](director-feedback.json): both clips are tied, with a 0.5-point deduction for the handle appearing insufficiently seated in the fist/palm. This is recorded as perceived incomplete enclosure, without assuming all handle visibility is inherently incorrect. No absolute scores or review duration are invented. The original pending `director-review.json`, raw run, and verified bundle remain preserved; this feedback is additive. The tie supplies no candidate preference or demonstrated readability improvement, so the frozen GREEN gate remains unmet even if missing scores are later supplied.
+Completed [Director review](director-review.json): both clips score **5/5 readability, 4.5/5 grasp/contact, 5/5 transition smoothness and 5/5 hold/clearance**. Preference is **TIE**; review duration is approximately **120 seconds**. The minor reservation is that the handle appears insufficiently seated in the fist/palm. No major defect was reported. The original partial feedback and pre-review records are preserved in `director-feedback.json` and `review-history/`; raw run and existing bundle are unchanged.
+
+The production [Director validator](director-validation.json) passes score completeness, duration, minimum quality, no regression and major-defect checks. It fails exactly `creative.readability_improved` and `creative.preference`. This is a completed review with no demonstrated improvement, not a pending review or a technical failure. Overall remains YELLOW under the unchanged frozen contract.
 
 Record A and B scores in 0.5 increments for readability, grasp/contact, transition smoothness and hold/clearance, plus preference, visible defects and review seconds. The frozen candidate gate remains ≥4 in each dimension, ≥0.5 readability improvement, no regression elsewhere, candidate preference and zero major defects. A review that does not meet those criteria must remain non-GREEN. The older development pass with a 0.5-point forehead-proximity deduction is preserved; it supplies neither invented absolute scores nor acceptance of this new comparison.
 
-Scored elapsed local wall time: 1529.82 seconds. Known provider calls: **0**; known API cost: **$0.00**. This is not total production cost. Historical human review/engineering time was not measured, and fresh Director review duration is pending. Job elapsed time is not CPU core-seconds.
+Scored elapsed local wall time: 1529.82 seconds. Known provider calls: **0**; known API cost: **$0.00**. This is not total production cost. Historical human review/engineering time was not measured, and fresh Director review duration is approximately 120 seconds. Job elapsed time is not CPU core-seconds.
 
 ## Retention and qualification limits
 
@@ -40,4 +42,4 @@ The [attempt history](../../../feasibility/3d/3d-05/ATTEMPT_HISTORY.md) retains 
 
 This qualifies progress on one stationary admitted rig, one modified sword, scripted kinematic enclosure/attachment and one bounded timing edit. It does not establish general prop fit, arbitrary skeleton support, physical grasp, release/drop, moving pickup, combat, autonomous creative direction or production rendering. Retain the motion-planning-first workflow, precise asset suitability checks, evaluated ownership, surface-sensitive controls and dense fractional sampling. Engineering-model switches were not controlled experiments and cannot alone explain the improvements.
 
-Before recording a future Director decision, preserve the current pending result/review and manifest, then append the new review evidence and regenerate the final inventory. Only after all frozen Director gates pass should the final GREEN report, evidence tag and authoritative accepted bundle be created.
+The completed review and validation are added to this results record; the existing review bundle predates them. No GREEN evidence tag or accepted bundle is warranted under the current frozen gates. No renders or campaign reruns were needed to record this review.
