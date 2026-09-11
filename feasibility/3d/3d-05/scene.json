@@ -16,14 +16,14 @@
     },
     "target_longest_m": 1.0,
     "grip_offset_from_geometry_base_m": 0.15,
-    "handle_contact_radius_m": 0.16,
-    "supported_grip_world_m": [-0.47, 0.08, 0.75],
-    "held_grip_world_m": [-0.50, -0.15, 1.05]
+    "handle_contact_radius_m": 0.28,
+    "supported_grip_world_m": [-0.60, 0.08, 0.95],
+    "held_grip_world_m": [-0.55, -0.08, 1.25]
   },
   "support": {
     "id": "sword_support_01",
-    "dimensions_m": [0.30, 0.30, 0.60],
-    "position_m": [-0.47, 0.08, 0.30]
+    "dimensions_m": [0.30, 0.30, 0.80],
+    "position_m": [-0.60, 0.08, 0.40]
   },
   "timeline": {
     "fps": 24,
@@ -32,7 +32,8 @@
     "baseline_transitions": {"reach": 16, "grasp": 40, "lift": 48, "held": 68}
   },
   "cameras": [
-    {"id": "interaction_camera_primary", "view": "primary", "position": [3.0, -5.2, 2.3], "target": [-0.15, 0.02, 0.90], "lens_mm": 55},
-    {"id": "interaction_camera_contact", "view": "contact", "position": [-0.45, -3.2, 1.55], "target": [-0.47, 0.02, 0.88], "lens_mm": 72}
+    {"id": "interaction_camera_primary", "view": "primary", "position": [3.0, -5.2, 2.3], "target": [-0.25, 0.02, 1.00], "lens_mm": 55},
+    {"id": "interaction_camera_side", "view": "side", "position": [-0.60, -3.2, 1.65], "target": [-0.58, 0.02, 1.08], "lens_mm": 72},
+    {"id": "interaction_camera_rear", "view": "rear", "position": [0.15, 1.65, 0.90], "target": [-0.58, 0.00, 1.08], "lens_mm": 55}
   ]
 }

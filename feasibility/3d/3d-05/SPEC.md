@@ -16,7 +16,7 @@ This experiment does not qualify physical grasping, finger articulation, release
 - Sword: 3D-02 `weapon-sword.glb`, SHA-256 `8e69eb27977f8c84a9b7cd423cd5830eddcf0d07ac1d7fed1969931387015b28`, normalized to a 1.0 m longest dimension using the qualified import path.
 - Timeline: integer frames 1–96 at 24 fps. Fractional evaluation is required.
 - Character lower body, character root, skin, mesh, topology, weights, rest rig, lights, world, render settings, and source actions are protected.
-- The primary camera shows the complete character, support, sword, reach, lift, and hold. The contact camera clearly shows the right hand, handle, blade clearance, and attachment transition.
+- The primary camera shows the complete character, support, sword, reach, lift, and hold. Dedicated side and rear contact cameras expose the right hand, handle, blade clearance, and attachment transition without the sword hiding the grip in every view.
 
 ## Explicit interaction states and ownership
 
@@ -38,9 +38,9 @@ The candidate uses the same state machine with grasp, lift, and held transitions
 
 `sword_01` is a semantic root located at the handle grip point. Imported sword geometry is offset under that root so the root identifies the handle consistently. The right-hand grip anchor uses the evaluated `RightHand` bone tail as its palm-centre position and the evaluated `RightHand` orientation.
 
-Before grasp, the sword root is owned by the support and follows its frozen world transform. At grasp, a trusted constraint transfers ownership to the right-hand anchor. The hand reaches the existing sword transform; the sword must not move to hide a reach error. Constraint activation must preserve the sword world position and orientation.
+Before grasp, the sword root is owned by the support and follows its frozen world transform. The qualified sword geometry is blade-up in world space, with its handle supported 0.15 m above the support surface. At grasp, a trusted constraint transfers ownership to the right-hand anchor. The hand reaches the existing sword transform; the sword must not move to hide a reach error. Constraint activation must preserve the sword world position and orientation. The hand orientation remains constant through this bounded interaction, so the sword stays blade-up during lift and hold.
 
-During `grasped`, `lifting`, and `held`, maximum sword-root translation relative to the hand anchor is 0.003 m and maximum orientation error is 0.5°. Hand–handle contact inside a 0.160 m radius around the grip point is intentional; this radius admits the qualified asset's measured grip, pommel, and guard region. Sword geometry outside the handle-contact zone must remain at least 0.040 m from protected body geometry.
+During `grasped`, `lifting`, and `held`, maximum sword-root translation relative to the hand anchor is 0.003 m and maximum orientation error is 0.5°. Hand contact inside a 0.280 m radius around the grip point is intentional; this radius admits the qualified asset's measured grip, pommel, and broad guard region. Sword geometry outside the handle-contact zone, including the blade, must remain at least 0.040 m from protected body geometry.
 
 ## Contact, support, and continuity gates
 
@@ -117,7 +117,7 @@ Controls may fail additional gates. All designated failures must be observed. Th
 
 ## Director review
 
-The Director reviews synchronized, anonymously labelled baseline/candidate playback in both views. The mapping is frozen before rendering and revealed only after submission. The Director records:
+The Director reviews synchronized, anonymously labelled baseline/candidate playback in the primary, side, and rear views. The mapping is frozen before rendering and revealed only after submission. The Director records:
 
 1. interaction readability, 1–5 in 0.5 increments;
 2. grasp/contact believability, 1–5 in 0.5 increments;

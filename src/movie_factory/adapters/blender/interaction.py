@@ -73,7 +73,8 @@ def _hand_target(source_time, initial, supported, held):
     if source_time < 48:
         return supported.copy()
     if source_time < 68:
-        return _lerp(supported, held, (source_time-48)/20)
+        x = (source_time-48)/20
+        return supported.lerp(held, 3*x*x-2*x*x*x)
     return held.copy()
 
 
@@ -195,8 +196,8 @@ def _setup_cameras(mf, config):
         if old.type == "CAMERA":
             bpy.data.objects.remove(old, do_unlink=True)
     result = {}
-    for key in ("primary", "contact"):
-        spec = next(item for item in config["cameras"] if item["view"] == key)
+    for spec in config["cameras"]:
+        key = spec["view"]
         data = bpy.data.cameras.new(f"camera_3d05_{key}_data")
         camera = bpy.data.objects.new(f"camera_3d05_{key}", data)
         bpy.context.collection.objects.link(camera)
@@ -224,9 +225,11 @@ def _create_sword(mf, config, hand_matrix, control):
                                 material_override=sword_material)
     top = [obj for obj in imported if obj.parent == root]
     grip = Vector(config["sword"]["supported_grip_world_m"])
-    rotation = hand_matrix.to_quaternion().to_matrix().to_4x4()
-    grip_offset = Matrix.Translation((0, 0, -config["sword"]["grip_offset_from_geometry_base_m"]))
-    desired_world = {obj: Matrix.Translation(grip)@rotation@grip_offset@obj.matrix_world for obj in top}
+    bpy.context.view_layer.update()
+    low, high = mf.asset_world_bounds(imported)
+    desired_bottom = grip.z-config["sword"]["grip_offset_from_geometry_base_m"]
+    delta = Vector((grip.x-(low[0]+high[0])/2, grip.y-(low[1]+high[1])/2, desired_bottom-low[2]))
+    desired_world = {obj: Matrix.Translation(delta)@obj.matrix_world for obj in top}
     root.matrix_world = hand_matrix.copy()
     for obj in top:
         obj.matrix_world = desired_world[obj]
@@ -477,6 +480,8 @@ def evidence(mf, out, campaign, profile, render_frames=False):
                for role in ("baseline", "candidate")}
     character_mesh = bpy.data.objects["character_01_mesh"]
     handle_radius = bpy.data.objects["sword_01"]["mf_handle_contact_radius_m"]
+    support = bpy.data.objects["sword_support_01"]
+    support_top = max((support.matrix_world@Vector(corner)).z for corner in support.bound_box)
     rows = []
     root_initial = Vector(sampled["baseline"][1]["character_root_translation"])
     for frame in times:
@@ -494,7 +499,7 @@ def evidence(mf, out, campaign, profile, render_frames=False):
             "candidate_grip_orientation_error_degrees": candidate["grip_orientation_error_degrees"],
             "candidate_sword_min_z_m": min(point.z for point in candidate["sword_points"]),
             "candidate_character_min_z_m": min(point.z for point in candidate["character_points"]),
-            "candidate_sword_support_separation_m": min(point.z for point in candidate["sword_points"])-.60,
+            "candidate_sword_support_separation_m": min(point.z for point in candidate["sword_points"])-support_top,
             "candidate_non_handle_body_clearance_m": _nearest_body_clearance(
                 character_mesh, candidate["character_points"], candidate["sword_points"], grip, handle_radius),
             "candidate_sword_bounds_m": {
@@ -555,16 +560,16 @@ def evidence(mf, out, campaign, profile, render_frames=False):
     }
     mf.write_json(out/"interaction-metrics.json", raw)
     if render_frames:
-        render_review(mf, out, profile)
+        render_review(mf, out, profile, campaign["director_gate"]["views"])
     return raw
 
 
-def render_review(mf, out, profile):
+def render_review(mf, out, profile, views):
     scene = bpy.context.scene
     mf.apply_profile(profile, 305)
     for role in ("baseline", "candidate"):
         select_role(mf, role)
-        for view in ("primary", "contact"):
+        for view in views:
             scene.camera = bpy.data.objects[f"camera_3d05_{view}"]
             folder = out/"frames"/role/view
             folder.mkdir(parents=True, exist_ok=True)
@@ -581,7 +586,9 @@ def preview(mf, out, profile, frames):
     mf.apply_profile(profile, 305)
     select_role(mf, "candidate")
     artifacts = []
-    for view in ("primary", "contact"):
+    views = sorted((obj["mf_view"] for obj in bpy.data.objects if obj.type == "CAMERA" and "mf_view" in obj),
+                   key=lambda value: (value != "primary", value))
+    for view in views:
         scene.camera = bpy.data.objects[f"camera_3d05_{view}"]
         for frame in frames:
             scene.frame_set(frame)

@@ -1673,7 +1673,7 @@ def main():
                 if job.get("render_frames",False):
                     status["artifacts"].extend(
                         f"frames/{role}/{view}/frame-{frame:04d}.png"
-                        for role in ("baseline","candidate") for view in ("primary","contact") for frame in range(1,97))
+                        for role in ("baseline","candidate") for view in job["campaign"]["director_gate"]["views"] for frame in range(1,97))
             elif mode=="interaction_preview":
                 interaction=load_interaction()
                 status["artifacts"].extend(interaction.preview(sys.modules[__name__],out,profile,job["frames"]))

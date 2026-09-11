@@ -50,18 +50,18 @@ def _script_json(value):
             .replace("<", "\\u003c").replace("\u2028", "\\u2028").replace("\u2029", "\\u2029"))
 
 
-def _write_review(run_dir, assignment):
+def _write_review(run_dir, assignment, views):
     review = run_dir/"review"
     for label, role in assignment["labels"].items():
-        for view in ("primary", "contact"):
+        for view in views:
             target = review/"frames"/label/view
             target.mkdir(parents=True, exist_ok=True)
             for source in sorted((run_dir/"evidence"/"frames"/role/view).glob("frame-*.png")):
                 shutil.copy2(source, target/source.name)
     frame_sets = {label: {view: [f"frames/{label}/{view}/frame-{frame:04d}.png" for frame in range(1, 97)]
-                          for view in ("primary", "contact")} for label in ("A", "B")}
+                          for view in views} for label in ("A", "B")}
     panels = "".join(f'<section><h2>Clip {label} — {view.title()} view</h2><img data-label="{label}" data-view="{view}" src="{frame_sets[label][view][0]}"></section>'
-                     for label in ("A", "B") for view in ("primary", "contact"))
+                     for label in ("A", "B") for view in views)
     page = f'''<!doctype html><meta charset="utf-8"><title>3D-05 blinded interaction review</title>
 <style>body{{font:16px system-ui;margin:2rem;background:#171717;color:#eee}}main{{display:grid;grid-template-columns:1fr 1fr;gap:1rem}}section{{background:#242424;padding:1rem;border-radius:.5rem}}img{{width:100%;background:#333}}input{{width:min(760px,72vw)}}.notice{{color:#ffd479}}</style>
 <h1>3D-05 anonymous A/B sword-pickup review</h1><p class="notice">Watch all 96 synchronized frames in both views. One clip advances the grasp, lift, and hold by four frames inside the frozen edit interval.</p>
@@ -218,7 +218,7 @@ def run_interaction_05(repo: Path, output_root: Path, profile: dict, blender_bin
     sensitivity = validate_control_sensitivity(control_results)
     atomic_json(run_dir/"control-sensitivity.json", sensitivity)
     machine_passed = validation["passed"] and sensitivity["passed"]
-    review_page = _write_review(run_dir, assignment) if render_frames and machine_passed else None
+    review_page = _write_review(run_dir, assignment, campaign["director_gate"]["views"]) if render_frames and machine_passed else None
     pending = {"schema_version": "1.0", "status": "PENDING", "blind_assignment_id": assignment["blind_assignment_id"],
                "clips": {label: {"interaction_readability": None, "grasp_contact_believability": None,
                                   "transition_smoothness": None, "hold_clearance": None, "visible_defects": []}
