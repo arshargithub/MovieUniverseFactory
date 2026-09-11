@@ -30,7 +30,7 @@ Replacement admission (later, independent): documented rest pose, bone axes and 
 
 The revision requests the acknowledgement at **frame 44 instead of 48**. This cue has an explicit reference target; aesthetic preference is optional. Modification is confined to `[24,72]`, with a blending envelope of zero value and first derivative at both boundaries. Use an isolated action copy; do not change every repetition or the original reference. Head/torso coordination is authored in the baseline; timing revision changes timing, not the spatial gesture.
 
-These numerical thresholds are frozen unchanged after the fixture screen. The cue observable is the first forearm local rotation crossing 19.2 degrees (32 degrees × 0.6), sampled at 0.01-frame intervals. `reference-landmarks.json` records the evaluated board.
+These numerical thresholds are frozen unchanged after the fixture screen. The cue observable is the first forearm local rotation crossing 19.2 degrees (32 degrees × 0.6), sampled every half-frame with the specified dense offsets around cue and boundary frames. `reference-landmarks.json` records the evaluated board.
 
 - Baseline cue: frame 48 ±1 frame; candidate cue: frame 44 ±1 frame. Candidate landmark pose RMS wrist/elbow position error ≤0.02 m relative to the annotated shoulder frame; selected joint orientation error ≤5°. Freeze interpolation and cue detection rules, including the first-attainment rule for a held pose.
 - Exact equality for protected semantic IDs, mesh topology, materials, nonedited actions, ownership and metadata; sampled numerical preservation outside `[24,72]`: evaluated vertex/position error ≤1e-6 m, orientation error ≤1e-5 radians.

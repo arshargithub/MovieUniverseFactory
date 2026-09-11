@@ -168,8 +168,9 @@ def make_candidate(mf, control=None):
     for frame,values in samples.items():
         for name,basis in values.items():
             bone=arm.pose.bones[name];loc,rot,scale=basis.decompose()
-            if control=='boundary_jump' and name=='RightHand' and frame==24:loc.x+=.08/max(1e-8,arm.matrix_world.to_scale().x)
-            if control=='foot_drift' and name=='RightFoot':loc.x+=.02/max(1e-8,arm.matrix_world.to_scale().x)
+            # Connected bones ignore location channels; rotate the actual joint to corrupt evaluated geometry.
+            if control=='boundary_jump' and name=='RightHand' and frame==24:rot=rot@Quaternion((1,0,0),.6)
+            if control=='foot_drift' and name=='RightFoot':rot=rot@Quaternion((1,0,0),.4)
             if control=='elbow_deformation' and name=='RightForeArm' and 36<=frame<=60:scale.y*=2.2
             bone.rotation_mode='QUATERNION';bone.location=loc;bone.rotation_quaternion=rot;bone.scale=scale
             for field in ['location','rotation_quaternion','scale']:bone.keyframe_insert(data_path=field,frame=frame,group=name)
