@@ -1,0 +1,167 @@
+{
+  "cameras": [
+    {
+      "id": "interaction_camera_primary",
+      "lens_mm": 55,
+      "position": [
+        3.0,
+        -5.2,
+        2.3
+      ],
+      "target": [
+        -0.25,
+        0.02,
+        1.0
+      ],
+      "view": "primary"
+    },
+    {
+      "id": "interaction_camera_side",
+      "lens_mm": 72,
+      "position": [
+        -0.6,
+        -3.2,
+        1.65
+      ],
+      "target": [
+        -0.58,
+        0.02,
+        1.08
+      ],
+      "view": "side"
+    },
+    {
+      "id": "interaction_camera_rear",
+      "lens_mm": 55,
+      "position": [
+        0.15,
+        1.65,
+        0.9
+      ],
+      "target": [
+        -0.58,
+        0.0,
+        1.08
+      ],
+      "view": "rear"
+    }
+  ],
+  "character_armature_id": "character_01_armature",
+  "character_id": "character_01",
+  "character_mesh_id": "character_01_mesh",
+  "experiment_id": "3D-05",
+  "grasp": {
+    "anchor_hand_local": [
+      -0.12,
+      0.145,
+      -0.135
+    ],
+    "approach_bow_world_m": [
+      0.02,
+      0.16,
+      0.22
+    ],
+    "closed_curl_fraction": 0.85,
+    "hand_yaw_degrees": 45,
+    "open_thumb_curl_fraction": 0.35,
+    "pregrasp_clearance_m": 0.06,
+    "thumb_clearance_swing_degrees": -45
+  },
+  "motion": {
+    "contact_pitch_degrees": -15,
+    "elbow_settle_end": 21.5,
+    "elbow_target_weight": 0.6,
+    "head_attention_end": 16,
+    "head_attention_start": 8,
+    "head_forward_local": [
+      0,
+      0,
+      1
+    ],
+    "head_pitch_limit_degrees": 18,
+    "head_yaw_limit_degrees": 35,
+    "late_approach_bow_world_m": [
+      0,
+      0.04,
+      0
+    ],
+    "lift_hand_pitch_degrees": 25,
+    "lift_take_up_arc_world_m": [
+      0.015,
+      0,
+      0
+    ],
+    "reach_elbow_target_weight": 0.82,
+    "torso_motion": "intentionally_static",
+    "version": "coordinated_lift_v1"
+  },
+  "scene_id": "stationary_sword_pickup_v1",
+  "schema_version": "1.0",
+  "seed": 305,
+  "support": {
+    "dimensions_m": [
+      0.3,
+      0.3,
+      0.8
+    ],
+    "id": "sword_support_01",
+    "position_m": [
+      -0.5,
+      -0.2,
+      0.4
+    ]
+  },
+  "surface_ownership_validation": "v1",
+  "sword": {
+    "grip_offset_from_geometry_base_m": 0.15,
+    "handle_contact_radius_m": 0.28,
+    "held_grip_world_m": [
+      -0.36,
+      -0.39,
+      1.2
+    ],
+    "id": "sword_01",
+    "normalization": {
+      "blade_xy_scale": [
+        0.75,
+        0.2
+      ],
+      "guard_height_scale": 0.3,
+      "guard_xy_scale": [
+        0.65,
+        0.35
+      ],
+      "handle_xy_scale": [
+        0.12,
+        0.12
+      ],
+      "section_heights_m": [
+        0.224544,
+        0.383278
+      ]
+    },
+    "source": {
+      "format": "glb",
+      "path": "sword_source_01/Models/GLB format/weapon-sword.glb",
+      "sha256": "8e69eb27977f8c84a9b7cd423cd5830eddcf0d07ac1d7fed1969931387015b28"
+    },
+    "source_sha256": "8e69eb27977f8c84a9b7cd423cd5830eddcf0d07ac1d7fed1969931387015b28",
+    "supported_grip_world_m": [
+      -0.5,
+      -0.2,
+      0.95
+    ],
+    "target_longest_m": 1.0
+  },
+  "timeline": {
+    "baseline_transitions": {
+      "grasp": 40,
+      "held": 68,
+      "lift": 48,
+      "reach": 16
+    },
+    "fps": 24,
+    "frame_end": 96,
+    "frame_start": 1
+  }
+}

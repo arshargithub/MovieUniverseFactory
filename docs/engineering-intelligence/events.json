@@ -432,6 +432,26 @@
           "sha256_at_recording": "9f55922a94f6c1ec7de184cd0000e6f816aa9434a86c576fb79a39bd9d6a8b75"
         }
       ]
+    },
+    {
+      "event_id": "3d05-closure-reach-surface-preflight-v10",
+      "event_type": "diagnostic_repair",
+      "experiment_id": "3D-05",
+      "engineering_model": {
+        "reported_name": "Astra",
+        "reasoning_effort": null,
+        "runtime_verified": false,
+        "attribution_basis": "User retained Astra for this repair; not an isolated model comparison"
+      },
+      "outcome": "PREFLIGHT_PASSES_FULL_CAMPAIGN_PENDING",
+      "human_review_seconds": null,
+      "observation": "Motion planning, elbow-route diagnostics, staged open-hand orientation, and closed explicitly labeled collision proxies resolve preflight failures without changing frozen skin thresholds. Legacy nearest-normal penetration misclassified an exterior hand sample on an open sword surface. Exact contact anchors alone remain insufficient. Full controls, replay and fresh Director scoring remain mandatory.",
+      "sources": [
+        {
+          "kind": "repository_artifact",
+          "path": "feasibility/3d/3d-05/CLOSURE_REPAIR_PLAN.md"
+        }
+      ]
     }
   ],
   "recording_mode": "manual_evidence_backfill_and_future_event_capture",

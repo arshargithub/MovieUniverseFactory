@@ -35,6 +35,9 @@ MOTION_CONTROL_EXPECTATIONS = {
 }
 
 
+SURFACE_CONTROL_EXPECTATIONS = {"dual_ownership":{"ownership.candidate.evaluated_owner"}, "missing_ownership":{"ownership.candidate.evaluated_owner"}, "blade_face_crossing":{"surface.candidate.intersections"}}
+
+
 def _check(checks, name, passed, details=None):
     checks.append({"name": name, "passed": bool(passed), "details": details})
 
@@ -126,6 +129,8 @@ def validate_interaction_metrics(raw: dict, config: dict) -> dict:
         _check(checks, "preservation.outside_sword_orientation", max(row["sword_orientation_delta_degrees"] for row in outside) <= thresholds["outside_sword_orientation_delta_degrees"])
     if config.get("motion_thresholds"):
         _validate_motion(checks, rows, config)
+    if config.get("surface_ownership_thresholds"):
+        _validate_surfaces_and_owners(checks, rows, config)
     steps = raw.get("half_frame_steps", [])
     _check(checks, "continuity.character", bool(steps) and max(row["character_rms_m"] for row in steps) <= thresholds["maximum_character_rms_half_frame_step_m"],
            max((row["character_rms_m"] for row in steps), default=None))
@@ -186,9 +191,9 @@ def interaction_protected_flags(parent: dict, current: dict) -> dict:
     }
 
 
-def validate_control_sensitivity(results: dict, coordinated: bool = False, positive_result: dict | None = None) -> dict:
+def validate_control_sensitivity(results: dict, coordinated: bool = False, positive_result: dict | None = None, surface_ownership: bool = False) -> dict:
     checks = []
-    expectations = {**CONTROL_EXPECTATIONS, **(MOTION_CONTROL_EXPECTATIONS if coordinated else {})}
+    expectations = {**CONTROL_EXPECTATIONS, **(MOTION_CONTROL_EXPECTATIONS if coordinated else {}), **(SURFACE_CONTROL_EXPECTATIONS if surface_ownership else {})}
     _check(checks, "controls.exact_set", set(results) == set(expectations), sorted(results))
     for name, expected in expectations.items():
         result = results.get(name, {})
@@ -231,3 +236,37 @@ def _validate_motion(checks, rows, config):
         low, high = values("elbow_edge_ratio_min", lift_rows), values("elbow_edge_ratio_max", lift_rows)
         valid = finite(low) and finite(high)
         _check(checks, f"motion.{role}.lift_elbow_skin", valid and min(low) >= limits["minimum_elbow_edge_ratio"] and max(high) <= limits["maximum_elbow_edge_ratio"], {"min":min(low),"max":max(high)} if valid else "missing/nonfinite")
+
+
+def _validate_surfaces_and_owners(checks, rows, config):
+    limits=config["surface_ownership_thresholds"]
+    def finite(v):return type(v) in (int,float) and math.isfinite(v)
+    for role in ("baseline","candidate"):
+        surfaces=[r.get(role+"_surface_validation",{}) for r in rows]
+        keys=("protected_body_clearance_lower_bound_m","head_clearance_lower_bound_m","nonhandle_hand_clearance_lower_bound_m","forbidden_triangle_intersections","forbidden_contained_vertices","surface_sample_count","maximum_surface_cover_radius_m")
+        valid=bool(rows) and all(finite(s.get(k)) and s[k]>=0 for s in surfaces for k in keys)
+        valid=valid and all(set(s.get("region_triangle_counts",{}))=={"1","2","3"} and all(type(v) is int and v>0 for v in s["region_triangle_counts"].values()) and all(finite(s.get("region_body_clearance_lower_bound_m",{}).get(k)) for k in ("1","2","3")) for s in surfaces)
+        _check(checks,f"surface.{role}.coverage",valid and all(s["surface_sample_count"]>=3 and 0<s["maximum_surface_cover_radius_m"]<=.03 for s in surfaces))
+        for region,label,threshold in (("1","handle_body","minimum_handle_body_clearance_m"),("2","guard_body","minimum_nonhandle_body_clearance_m"),("3","blade_body","minimum_nonhandle_body_clearance_m")):
+            minimum=min((s.get("region_body_clearance_lower_bound_m",{}).get(region,-math.inf) for s in surfaces),default=-math.inf) if valid else None
+            _check(checks,f"surface.{role}.{label}",valid and minimum>=limits[threshold],minimum)
+        for metric,label,ceiling in (("forbidden_triangle_intersections","intersections","maximum_forbidden_triangle_intersections"),("forbidden_contained_vertices","containment","maximum_forbidden_contained_vertices")):
+            maximum=max((s.get(metric,math.inf) for s in surfaces),default=math.inf) if valid else None
+            _check(checks,f"surface.{role}.{label}",valid and maximum<=limits[ceiling],maximum)
+        minimum=min((s.get("head_clearance_lower_bound_m",-math.inf) for s in surfaces),default=-math.inf) if valid else None
+        _check(checks,f"surface.{role}.head_comfort",valid and minimum>=limits["minimum_head_staging_clearance_m"],minimum)
+        owner_errors=[]
+        for row in rows:
+            constraints=row.get(role+"_evaluated_constraints")
+            if not isinstance(constraints,list) or not constraints or any(not finite(c.get("influence")) or not 0<=c["influence"]<=1 for c in constraints):
+                owner_errors.append(row["frame"]);continue
+            active=[c for c in constraints if not c.get("muted",True) and c["influence"]>1e-8]
+            expected=expected_owner(row["frame"],role)
+            target,bone=("character_01_armature","RightHand") if expected.endswith("right_hand") else ("sword_support_01","")
+            if len(active)!=1 or active[0].get("type")!="CHILD_OF" or active[0].get("valid") is not True or active[0].get("target")!=target or active[0].get("bone")!=bone or abs(active[0]["influence"]-1)>1e-8:
+                owner_errors.append(row["frame"])
+        _check(checks,f"ownership.{role}.evaluated_owner",bool(rows) and not owner_errors,{"failed_samples":len(owner_errors),"first_frames":owner_errors[:8]})
+        for metric,threshold in (("grip_translation_error_m","grip_translation_error_m"),("grip_orientation_error_degrees","grip_orientation_error_degrees")):
+            values=[r.get(role+"_"+metric) for r in rows if expected_owner(r["frame"],role).endswith("right_hand")]
+            valid_grip=bool(values) and all(finite(v) and v>=0 for v in values)
+            _check(checks,f"attachment.{role}.evaluated_{metric}",valid_grip and max(values)<=config["thresholds"][threshold],max(values) if valid_grip else None)

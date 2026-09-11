@@ -118,3 +118,42 @@ def test_controls_do_not_take_credit_for_positive_case_failures():
     result=validate_control_sensitivity(controls,positive_result={'errors':['grip.translation']})
     assert not result['passed']
     assert 'controls.hand_sword_sliding' in result['errors']
+
+
+def surface_metrics():
+    from movie_factory.interaction import expected_owner
+    raw=passing_metrics();config=deepcopy(CONFIG)
+    config['surface_ownership_thresholds']={'minimum_nonhandle_body_clearance_m':.04,'minimum_handle_body_clearance_m':.01,'minimum_head_staging_clearance_m':.12,'maximum_forbidden_triangle_intersections':0,'maximum_forbidden_contained_vertices':0,'minimum_nonhandle_hand_clearance_m':0}
+    for row in raw['samples']:
+        for role in ('baseline','candidate'):
+            held=expected_owner(row['frame'],role).endswith('right_hand')
+            row[role+'_grip_translation_error_m']=0;row[role+'_grip_orientation_error_degrees']=0
+            row[role+'_evaluated_constraints']=[{'type':'CHILD_OF','target':'character_01_armature' if held else 'sword_support_01','bone':'RightHand' if held else '', 'muted':False,'valid':True,'influence':1.0}]
+            row[role+'_surface_validation']={'protected_body_clearance_lower_bound_m':.05,'head_clearance_lower_bound_m':.15,'nonhandle_hand_clearance_lower_bound_m':.01,'forbidden_triangle_intersections':0,'forbidden_contained_vertices':0,'surface_sample_count':100,'maximum_surface_cover_radius_m':.015,'region_triangle_counts':{'1':10,'2':20,'3':20},'region_body_clearance_lower_bound_m':{'1':.02,'2':.05,'3':.06}}
+    return raw,config
+
+
+def test_actual_owner_required_even_when_schedule_and_grip_are_perfect():
+    raw,config=surface_metrics();assert validate_interaction_metrics(raw,config)['passed']
+    for mode in ('dual','missing','wrong_bone','muted','invalid','nan'):
+        broken=deepcopy(raw);constraints=broken['samples'][-1]['candidate_evaluated_constraints']
+        if mode=='dual':constraints.append({**constraints[0],'target':'sword_support_01','bone':''})
+        elif mode=='missing':constraints[0]['influence']=0
+        elif mode=='wrong_bone':constraints[0]['bone']='LeftHand'
+        elif mode=='muted':constraints[0]['muted']=True
+        elif mode=='invalid':constraints[0]['valid']=False
+        else:constraints[0]['influence']=float('nan')
+        assert 'ownership.candidate.evaluated_owner' in validate_interaction_metrics(broken,config)['errors']
+
+
+def test_surface_validation_is_symmetric_and_fails_closed():
+    raw,config=surface_metrics()
+    for role in ('baseline','candidate'):
+        for key,value,error in [('forbidden_triangle_intersections',1,'intersections'),('forbidden_contained_vertices',1,'containment'),('head_clearance_lower_bound_m',.08,'head_comfort')]:
+            broken=deepcopy(raw);broken['samples'][0][role+'_surface_validation'][key]=value
+            assert f'surface.{role}.{error}' in validate_interaction_metrics(broken,config)['errors']
+        for value in (None,float('nan'),float('inf')):
+            broken=deepcopy(raw);broken['samples'][0][role+'_surface_validation']['head_clearance_lower_bound_m']=value
+            assert f'surface.{role}.coverage' in validate_interaction_metrics(broken,config)['errors']
+    broken=deepcopy(raw);broken['samples'][0]['candidate_surface_validation']['region_triangle_counts'].pop('3')
+    assert 'surface.candidate.coverage' in validate_interaction_metrics(broken,config)['errors']

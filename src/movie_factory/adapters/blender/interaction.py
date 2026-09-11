@@ -15,7 +15,7 @@ CONTROLS = {
     "open_hand_attachment", "oversized_handle",
     "thumb_down_grasp", "locked_forearm_roll",
     "hand_support_penetration",
-    "rigid_lift", "wrist_only_lift", "relative_prop_rotation", "elbow_skin_distortion", "missing_attention",
+    "rigid_lift", "wrist_only_lift", "relative_prop_rotation", "elbow_skin_distortion", "missing_attention", "dual_ownership", "missing_ownership", "blade_face_crossing",
 }
 FINGER_BONES = ("RightHandIndex1", "RightHandIndex2", "RightHandIndex3", "RightHandThumb1", "RightHandThumb2")
 ARM_BONES = ("RightArm", "RightForeArm", "RightHand") + FINGER_BONES
@@ -88,7 +88,7 @@ def _grip_rotation(armature, config):
     # Hand Y reaches toward the prop, with the palm on its rear side.
     world = Matrix(((0, -1, 0), (0, 0, 1), (-1, 0, 0)))
     world = Matrix.Rotation(math.radians(config["grasp"]["hand_yaw_degrees"]), 3, "Z")@world
-    return armature.matrix_world.to_quaternion().inverted()@world.to_quaternion()
+    return armature.matrix_world.to_quaternion().inverted()@world.to_quaternion()@Quaternion((0,0,1),math.radians(config.get("motion",{}).get("contact_pitch_degrees",0)))
 
 
 def _attention_pose(armature, initial, desired, source_time, target_world, motion):
@@ -114,7 +114,7 @@ def _attention_pose(armature, initial, desired, source_time, target_world, motio
             desired[bone.name] = desired[bone.parent.name]@initial[bone.parent.name].inverted()@initial[bone.name]
 
 
-def _arm_matrices(mf, armature, initial, target, hand_rotation, grip_local, roll_weight=1.0):
+def _arm_matrices(mf, armature, initial, target, hand_rotation, grip_local, roll_weight=1.0, elbow_target_weight=1.0):
     upper = armature.pose.bones["RightArm"]
     lower = armature.pose.bones["RightForeArm"]
     hand = armature.pose.bones["RightHand"]
@@ -133,7 +133,7 @@ def _arm_matrices(mf, armature, initial, target, hand_rotation, grip_local, roll
     height = math.sqrt(max(0.0, first*first-along*along))
     # Select the reachable elbow closest to a straight wrist, blending away
     # from the source idle elbow as the hand enters its acquisition frame.
-    preferred_elbow = base_elbow.lerp(wrist-(hand_rotation@Vector((0, 1, 0)))*second, roll_weight)
+    preferred_elbow = base_elbow.lerp(wrist-(hand_rotation@Vector((0, 1, 0)))*second, roll_weight*elbow_target_weight)
     base_projection = preferred_elbow-(shoulder+unit*(preferred_elbow-shoulder).dot(unit))
     if base_projection.length <= 1e-8:
         base_projection = Vector((0, 1, 0)).cross(unit)
@@ -216,6 +216,9 @@ def _create_character_action(mf, armature, role, initial, supported, held, contr
     initial_anchor = initial["RightHand"]@grip_local
     initial_rotation = initial["RightHand"].to_quaternion()
     final_rotation = _grip_rotation(armature, config)
+    acquisition_rotation=final_rotation
+    if motion and motion.get("acquisition_orientation_settle"):
+        acquisition_rotation=_grip_rotation(armature,{**config,"motion":{**motion,"contact_pitch_degrees":0}})
     closed_bases = {}
     for name in FINGER_BONES:
         bone = armature.pose.bones[name]
@@ -229,13 +232,23 @@ def _create_character_action(mf, armature, role, initial, supported, held, contr
         frame = 1+index*.125
         source_time = _source_time(frame, role, control)
         target = _hand_target(source_time, initial_anchor, supported, held)
+        if motion and motion.get("lift_take_up_arc_world_m") and 48<source_time<60:
+            arc=Vector(motion["lift_take_up_arc_world_m"])*math.sin(math.pi*_smooth((source_time-48)/12))**2
+            target+=armature.matrix_world.inverted().to_3x3()@arc
         pregrasp = supported+(final_rotation@Vector((0, 0, config["grasp"]["pregrasp_clearance_m"]/armature.matrix_world.to_scale().x)))
         if 16 < source_time < 24:
             target = _lerp(initial_anchor, pregrasp, (source_time-16)/8)
         elif 24 <= source_time < 32:
             target = _lerp(pregrasp, supported, (source_time-24)/8)
+            # Stand off while orienting the open hand, then approach the handle.
+            # This C1 pulse leaves the preceding reach and final grip unchanged.
+            clearance = (motion or {}).get("alignment_clearance_m", 0)
+            envelope = _smooth((source_time-24)/2)*(1-_smooth((source_time-28)/4))
+            target += final_rotation@Vector((0, 0, clearance*envelope/armature.matrix_world.to_scale().x))
         rotation_weight = _smooth((source_time-16)/8)
-        hand_rotation = initial_rotation.slerp(final_rotation, rotation_weight)
+        hand_rotation = initial_rotation.slerp(acquisition_rotation, rotation_weight)
+        if motion and motion.get("acquisition_orientation_settle") and source_time>=24:
+            hand_rotation=acquisition_rotation.slerp(final_rotation,_smooth((source_time-24)/8))
         if motion:
             lift = _smooth((source_time-48)/20)
             if not (control == "rigid_lift" and role == "candidate"):
@@ -243,12 +256,22 @@ def _create_character_action(mf, armature, role, initial, supported, held, contr
         if 16 < source_time < 24:
             # Interpolate the wrist inside the reach sphere; rotating an offset
             # grip around an interpolated anchor can push the wrist outside it.
-            wrist = initial["RightHand"].translation.lerp(pregrasp-final_rotation@grip_local, rotation_weight)
+            wrist = initial["RightHand"].translation.lerp(pregrasp-acquisition_rotation@grip_local, rotation_weight)
             bow = Vector(config["grasp"]["approach_bow_world_m"])
             wrist += (armature.matrix_world.inverted().to_3x3()@bow)*math.sin(math.pi*rotation_weight)**2
+            if motion and motion.get("late_approach_bow_world_m") and source_time>20:
+                late=Vector(motion["late_approach_bow_world_m"])*math.sin(math.pi*_smooth((source_time-20)/4))**2
+                wrist+=armature.matrix_world.inverted().to_3x3()@late
             target = wrist+hand_rotation@grip_local
         try:
-            desired = _arm_matrices(mf, armature, initial, target, hand_rotation, grip_local, rotation_weight)
+            elbow_weight=(motion or {}).get("elbow_target_weight",1.0)
+            if motion and motion.get("acquisition_orientation_settle"):
+                settle=_smooth((source_time-24)/8)
+                elbow_weight=1*(1-settle)+elbow_weight*settle
+            elif motion and "reach_elbow_target_weight" in motion:
+                settle=_smooth((source_time-20)/((motion or {}).get("elbow_settle_end",24)-20))
+                elbow_weight=motion["reach_elbow_target_weight"]*(1-settle)+elbow_weight*settle
+            desired = _arm_matrices(mf, armature, initial, target, hand_rotation, grip_local, rotation_weight, elbow_weight)
         except ValueError as error:
             raise ValueError(f"{error}; role={role}, frame={frame}, source_time={source_time}") from error
         if motion and control == "wrist_only_lift" and role == "candidate" and source_time >= 48:
@@ -373,6 +396,10 @@ def _create_sword(mf, config):
                 if i in sections and sections[i] != section:
                     raise ValueError("Qualified sword section topology changed")
                 sections[i] = section
+        if config.get("surface_ownership_validation"):
+            attr=obj.data.attributes.new("mf_sword_region","INT","FACE")
+            for poly in obj.data.polygons:
+                attr.data[poly.index].value={"handle":1,"guard":2,"blade":3}[sections[poly.vertices[0]]]
         for vertex in obj.data.vertices:
             point = original[vertex.index].copy()
             sx, sy = normalization[sections[vertex.index]+"_xy_scale"]
@@ -385,6 +412,8 @@ def _create_sword(mf, config):
                 point.z = guard_bottom+(point.z-guard_bottom)*normalization["guard_height_scale"]
             vertex.co = inverse@(centre+point)
         obj.data.update()
+        if config.get("surface_ownership_validation"):
+            _surface_module().build_region_proxies(obj)
     bpy.context.view_layer.update()
     low, high = mf.asset_world_bounds(imported)
     desired_bottom = grip.z-config["sword"]["grip_offset_from_geometry_base_m"]
@@ -395,6 +424,13 @@ def _create_sword(mf, config):
     root.matrix_world = Matrix.Translation(grip)
     for obj in top:
         obj.matrix_world = desired_world[obj]
+    if config.get("motion",{}).get("contact_pitch_degrees"):
+        arm=bpy.data.objects["character_01_armature"]
+        neutral_config={**config,"motion":{**config["motion"],"contact_pitch_degrees":0}}
+        neutral=arm.matrix_world.to_quaternion()@_grip_rotation(arm,neutral_config)
+        tilted=arm.matrix_world.to_quaternion()@_grip_rotation(arm,config)
+        root.rotation_mode="QUATERNION";root.rotation_quaternion=tilted@neutral.inverted()
+        bpy.context.view_layer.update()
     for material in list(set(bpy.data.materials)-materials_before):
         if material != sword_material and material.users == 0:
             bpy.data.materials.remove(material)
@@ -434,6 +470,12 @@ def _create_sword_action(mf, sword, armature, role, control):
         if control == "edit_leakage" and role == "candidate" and frame >= 76:
             influence = .80
         constraint = sword.constraints["3D05_HAND_LOCATION"]
+        if control == "missing_ownership" and role == "candidate" and source_time >= 40:
+            influence=0.0
+        support_owner=sword.constraints.get("3D05_SUPPORT_OWNER")
+        if support_owner:
+            support_owner.influence=1.0 if source_time < 40 or (control == "dual_ownership" and role == "candidate") else 0.0
+            support_owner.keyframe_insert(data_path="influence",frame=frame)
         constraint.influence = influence
         constraint.keyframe_insert(data_path="influence", frame=frame)
         attached = influence > 0.0
@@ -530,6 +572,11 @@ def build(mf, out, config, profile, role="candidate", control=None):
         location_constraint.inverse_matrix = effective_target.inverted()
         sword["mf_attachment_kind"] = "rigid_hand_transform_v1"
     location_constraint.influence = 0
+    if config.get("surface_ownership_validation"):
+        owner=sword.constraints.new("CHILD_OF")
+        owner.name="3D05_SUPPORT_OWNER";owner.target=support
+        owner.inverse_matrix=support.matrix_world.inverted();owner.influence=1
+        scene["mf_surface_ownership_validation"]=True
     sword.rotation_mode = "QUATERNION"
     sword_baseline = _create_sword_action(mf, sword, armature, "baseline", None)
     sword_candidate = _create_sword_action(mf, sword, armature, "candidate", control)
@@ -543,6 +590,17 @@ def build(mf, out, config, profile, role="candidate", control=None):
     if config.get("motion"):
         scene["mf_coordinated_motion_json"] = json.dumps(config["motion"], sort_keys=True)
     scene["mf_character_root_matrix_json"] = json.dumps([list(row) for row in bpy.data.objects["character_01"].matrix_world])
+    if control == "blade_face_crossing":
+        select_role(mf,"candidate");_set_time(64)
+        head_world=armature.matrix_world@armature.pose.bones["Head"].head
+        bpy.ops.mesh.primitive_cube_add(size=1,location=head_world+Vector((0,0,.08)))
+        plate=bpy.context.object;plate.name="blade_surface_crossing_control"
+        plate.scale=(1.0,.6,.006);bpy.ops.object.transform_apply(location=False,rotation=False,scale=True)
+        keep=plate.matrix_world.copy();plate.parent=sword;plate.matrix_world=keep
+        plate["mf_entity"]="sword_01"
+        attr=plate.data.attributes.new("mf_sword_region","INT","FACE")
+        for item in attr.data:item.value=3
+        _surface_module().build_region_proxies(plate)
     select_role(mf, role)
     _set_time(1)
     mf.apply_profile(profile, 305)
@@ -582,6 +640,8 @@ def checkpoint(mf, out, role, frame):
         "character_action": bpy.data.objects["character_01_armature"].animation_data.action.name,
         "sword_action": sword.animation_data.action.name,
     }
+    if bpy.context.scene.get("mf_surface_ownership_validation"):
+        payload["evaluated_constraints"]=_surface_module().ownership(sword)
     mf.write_json(out/"checkpoint.json", payload)
     return payload
 
@@ -645,10 +705,16 @@ def _sample(mf, role, frame, with_geometry=True):
         expected = (armature.matrix_world@hand_pose.matrix)@Matrix(json.loads(sword["mf_hand_relative_matrix_json"]))
         result["grip_translation_error_m"] = (expected.translation-sword_matrix.translation).length
         result["grip_orientation_error_degrees"] = _quat_angle_degrees(expected.to_quaternion(), sword_matrix.to_quaternion())
+    if bpy.context.scene.get("mf_surface_ownership_validation"):
+        ownership = _surface_module().ownership
+        result["evaluated_constraints"]=ownership(sword)
     if with_geometry:
         result["character_points"] = _character_points(mf, mesh)
         result["sword_points"] = _sword_points(sword)
         result["grasp_geometry"] = _grasp_geometry(mesh, result["character_points"], sword)
+        if bpy.context.scene.get("mf_surface_ownership_validation"):
+            inspect = _surface_module().inspect
+            result["surface_validation"]=inspect(mesh,result["character_points"])
         if mesh.get("mf_elbow_reference_edges_json"):
             edges = json.loads(mesh["mf_elbow_reference_edges_json"])
             ratios = [(result["character_points"][a]-result["character_points"][b]).length/length for a,b,length in edges]
@@ -769,6 +835,8 @@ def _grasp_geometry(mesh, character, sword):
                 samples.append((a*(1-(u+v)/6)+b*(u/6)+c*(v/6), group))
     errors = {"thumb": [], "fingers": [], "palm": []}
     penetration, angles = [], []
+    proxies=_surface_module().penetration_proxies() if bpy.context.scene.get("mf_surface_ownership_validation") else None
+    legacy_normal_depth=[]
     worst_group = "none"
     worst_penetration = 0.0
     worst_point = None
@@ -780,11 +848,13 @@ def _grasp_geometry(mesh, character, sword):
             continue
         surface, normal, _, distance = nearest
         signed = (point-surface).dot(normal)
-        if -signed > worst_penetration:
+        legacy_normal_depth.append(max(0.0,-signed))
+        depth=_surface_module().proxy_penetration(point,proxies) if proxies is not None else max(0.0,-signed)
+        if depth > worst_penetration:
             worst_group = group
-            worst_penetration = -signed
+            worst_penetration = depth
             worst_point = list(point-sword.matrix_world.translation)
-        penetration.append(max(0.0, -signed))
+        penetration.append(depth)
         local_surface = inverse_sword@surface if inverse_sword else surface-grip
         if -.095 <= local_surface.z <= .065:
             errors[group].append(distance)
@@ -804,12 +874,15 @@ def _grasp_geometry(mesh, character, sword):
         support_penetration = max((max(0.0, min(*(point[a]-low[a] for a in range(3)),
                                                 *(high[a]-point[a] for a in range(3))))
                                    for point, _ in samples), default=0.0)
-    return {"thumb_contact_distance_m": min(errors["thumb"], default=1.0),
+    return {"legacy_nearest_normal_depth_m":max(legacy_normal_depth,default=0.0),"penetration_basis":"closed_region_collision_proxies" if proxies is not None else "legacy_nearest_surface_normal",
+            "thumb_contact_distance_m": min(errors["thumb"], default=1.0),
             "finger_contact_distance_m": min(errors["fingers"], default=1.0),
             "maximum_hand_penetration_m": max(penetration, default=0.0),
             "maximum_hand_support_penetration_m": support_penetration,
             "contact_angular_coverage_degrees": coverage, "surface_sample_count":len(samples), "worst_penetration_group":worst_group,
-            "worst_penetration_point_relative_grip_m": worst_point}
+            "worst_penetration_point_relative_grip_m": worst_point,
+            "surface_topology": _surface_module().closed_surface_topology(vertices,faces) if bpy.context.scene.get("mf_surface_ownership_validation") else None,
+            "worst_nearest_normal_sample_parity_inside": _surface_module()._inside(tree,grip+Vector(worst_point)) if worst_point is not None and bpy.context.scene.get("mf_surface_ownership_validation") else None}
 
 
 def evidence(mf, out, campaign, profile, render_frames=False):
@@ -839,6 +912,10 @@ def evidence(mf, out, campaign, profile, render_frames=False):
                for key,value in data["grasp_geometry"].items()},
             **{role+"_"+key:value for role, data in (("baseline",base),("candidate",candidate))
                for key,value in data["anatomy"].items()},
+            **({role+"_evaluated_constraints":data["evaluated_constraints"] for role,data in (("baseline",base),("candidate",candidate))} if "evaluated_constraints" in base else {}),
+            **({role+"_surface_validation":data["surface_validation"] for role,data in (("baseline",base),("candidate",candidate))} if "surface_validation" in base else {}),
+            **{role+"_grip_translation_error_m":data["grip_translation_error_m"] for role,data in (("baseline",base),("candidate",candidate))},
+            **{role+"_grip_orientation_error_degrees":data["grip_orientation_error_degrees"] for role,data in (("baseline",base),("candidate",candidate))},
             "frame": frame, "baseline_state": base["state"], "candidate_state": candidate["state"],
             "baseline_owner": base["owner"], "candidate_owner": candidate["owner"],
             "candidate_attachment_influence": candidate["attachment_influence"],
@@ -1006,3 +1083,49 @@ def grip_diagnostic(mf, out, frame=40):
         variants[str(factor)] = {str(i):list(world_to_hand@fitted[i]) for i in indices}
     payload["finger_curl_variants"] = variants
     mf.write_json(out/"grip-diagnostic.json", payload)
+
+
+def reach_diagnostic(mf, out):
+    """Read-only edge/triangle and evaluated-joint evidence around the reach."""
+    mesh=bpy.data.objects["character_01_mesh"]
+    arm=bpy.data.objects["character_01_armature"]
+    edges=json.loads(mesh["mf_elbow_reference_edges_json"])
+    ids=sorted({i for a,b,_ in edges for i in (a,b)})
+    mesh.data.calc_loop_triangles()
+    triangles=[list(t.vertices) for t in mesh.data.loop_triangles if any(i in ids for i in t.vertices)]
+    all_ids=sorted(set(ids)|{i for tri in triangles for i in tri})
+    rows=[]
+    for role in ("baseline","candidate"):
+        for frame in (1,16,18,19,20,20.25,21,21.875,22,24,32,48,58,68):
+            item=_sample(mf,role,frame)
+            points=item["character_points"]
+            rows.append({"role":role,"frame":frame,"anatomy":item["anatomy"],
+                         "edge_ratios":[{"vertices":[a,b],"reference_m":length,"evaluated_m":(points[a]-points[b]).length,"ratio":(points[a]-points[b]).length/length} for a,b,length in edges],
+                         "points":{str(i):list(points[i]) for i in all_ids},
+                         "bones":{n:{"matrix":[list(r) for r in arm.pose.bones[n].matrix],"head_world":list(arm.matrix_world@arm.pose.bones[n].head),"tail_world":list(arm.matrix_world@arm.pose.bones[n].tail),"basis_quaternion":list(arm.pose.bones[n].matrix_basis.to_quaternion())} for n in ("RightShoulder","RightArm","RightForeArm","RightHand")}})
+    mf.write_json(out/"reach-diagnostic.json",{"schema_version":"1.0","triangles":triangles,"reference_edges":edges,
+        "weights":{str(i):{mesh.vertex_groups[g.group].name:g.weight for g in mesh.data.vertices[i].groups} for i in all_ids},
+        "armature_modifiers":[{"name":m.name,"preserve_volume":m.use_deform_preserve_volume} for m in mesh.modifiers if m.type=="ARMATURE"],"samples":rows})
+
+
+_SURFACE_MODULE=None
+
+def _surface_module():
+    global _SURFACE_MODULE
+    if _SURFACE_MODULE is None:
+        import importlib.util
+        from pathlib import Path
+        spec=importlib.util.spec_from_file_location("mf_interaction_geometry",Path(__file__).with_name("interaction_geometry.py"))
+        _SURFACE_MODULE=importlib.util.module_from_spec(spec);spec.loader.exec_module(_SURFACE_MODULE)
+    return _SURFACE_MODULE
+
+
+def surface_diagnostic(mf,out):
+    tests=_surface_module().selftest()
+    if not tests["passed"]:raise ValueError("Surface narrow-phase selftest failed")
+    rows=[]
+    for role in ("baseline","candidate"):
+        for frame in (1,16,19,20,20.5,21,21.5,21.875,22,23,24,36,40,48,58,64,76,96):
+            item=_sample(mf,role,frame)
+            rows.append({"role":role,**{k:v for k,v in item.items() if k not in ("character_points","sword_points")}})
+    mf.write_json(out/"surface-diagnostic.json",{"selftest":tests,"samples":rows})
