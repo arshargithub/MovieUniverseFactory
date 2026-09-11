@@ -1,0 +1,2515 @@
+{
+  "blender": "5.2.1 LTS",
+  "clips": {
+    "idle": {
+      "fps": 30,
+      "fps_base": 1.0,
+      "max_mesh_rms_against_explicit_forward_source_units": {
+        "explicit_forward": 0.0,
+        "explicit_reverse": 0.0,
+        "legacy_forward": 0.5358102012422642,
+        "legacy_isolated": 0.5904144102243819,
+        "legacy_reverse": 0.5358102012422642,
+        "parent_update_forward": 2.9719521217573296e-07
+      },
+      "range": [
+        1,
+        33
+      ],
+      "source_endpoint_max_matrix_error": 0.0,
+      "source_order_max_matrix_error": 0.0,
+      "variants": {
+        "explicit_forward": {
+          "max_assignment_error": 1.3113021850585938e-06,
+          "max_mesh_step_source_units": 0.005362152807233643,
+          "max_playback_channel_error": 0.0,
+          "max_playback_order_mesh_rms_source_units": 0.0,
+          "negative_adjacent_quaternion_dots": 0,
+          "seam_mesh_rms_source_units": 0.0,
+          "stages": [
+            {
+              "assignment_max_matrix_error": 1.1324882507324219e-06,
+              "frame": 1,
+              "rotation_error_after_normalization": 1.704692840576172e-05,
+              "worst_bone": "LeftFoot"
+            },
+            {
+              "assignment_max_matrix_error": 1.1920928955078125e-06,
+              "frame": 2,
+              "rotation_error_after_normalization": 1.704692840576172e-05,
+              "worst_bone": "LeftFoot"
+            },
+            {
+              "assignment_max_matrix_error": 1.1175870895385742e-06,
+              "frame": 3,
+              "rotation_error_after_normalization": 1.710653305053711e-05,
+              "worst_bone": "LeftUpLeg"
+            },
+            {
+              "assignment_max_matrix_error": 1.1622905731201172e-06,
+              "frame": 4,
+              "rotation_error_after_normalization": 1.704692840576172e-05,
+              "worst_bone": "LeftFoot"
+            },
+            {
+              "assignment_max_matrix_error": 1.1920928955078125e-06,
+              "frame": 5,
+              "rotation_error_after_normalization": 1.704692840576172e-05,
+              "worst_bone": "LeftFoot"
+            },
+            {
+              "assignment_max_matrix_error": 1.1324882507324219e-06,
+              "frame": 6,
+              "rotation_error_after_normalization": 1.6987323760986328e-05,
+              "worst_bone": "LeftUpLeg"
+            },
+            {
+              "assignment_max_matrix_error": 1.1920928955078125e-06,
+              "frame": 7,
+              "rotation_error_after_normalization": 1.710653305053711e-05,
+              "worst_bone": "LeftFoot"
+            },
+            {
+              "assignment_max_matrix_error": 1.1362135410308838e-06,
+              "frame": 8,
+              "rotation_error_after_normalization": 1.710653305053711e-05,
+              "worst_bone": "LeftUpLeg"
+            },
+            {
+              "assignment_max_matrix_error": 1.1380761861801147e-06,
+              "frame": 9,
+              "rotation_error_after_normalization": 1.6987323760986328e-05,
+              "worst_bone": "LeftUpLeg"
+            },
+            {
+              "assignment_max_matrix_error": 1.1399388313293457e-06,
+              "frame": 10,
+              "rotation_error_after_normalization": 1.710653305053711e-05,
+              "worst_bone": "LeftUpLeg"
+            },
+            {
+              "assignment_max_matrix_error": 1.1920928955078125e-06,
+              "frame": 11,
+              "rotation_error_after_normalization": 1.710653305053711e-05,
+              "worst_bone": "LeftFoot"
+            },
+            {
+              "assignment_max_matrix_error": 1.1920928955078125e-06,
+              "frame": 12,
+              "rotation_error_after_normalization": 1.710653305053711e-05,
+              "worst_bone": "LeftFoot"
+            },
+            {
+              "assignment_max_matrix_error": 1.2218952178955078e-06,
+              "frame": 13,
+              "rotation_error_after_normalization": 1.71661376953125e-05,
+              "worst_bone": "LeftToes"
+            },
+            {
+              "assignment_max_matrix_error": 1.2516975402832031e-06,
+              "frame": 14,
+              "rotation_error_after_normalization": 1.704692840576172e-05,
+              "worst_bone": "LeftFoot"
+            },
+            {
+              "assignment_max_matrix_error": 1.2218952178955078e-06,
+              "frame": 15,
+              "rotation_error_after_normalization": 1.710653305053711e-05,
+              "worst_bone": "LeftFoot"
+            },
+            {
+              "assignment_max_matrix_error": 1.2218952178955078e-06,
+              "frame": 16,
+              "rotation_error_after_normalization": 1.710653305053711e-05,
+              "worst_bone": "LeftFoot"
+            },
+            {
+              "assignment_max_matrix_error": 1.1622905731201172e-06,
+              "frame": 17,
+              "rotation_error_after_normalization": 1.71661376953125e-05,
+              "worst_bone": "LeftFoot"
+            },
+            {
+              "assignment_max_matrix_error": 1.2516975402832031e-06,
+              "frame": 18,
+              "rotation_error_after_normalization": 1.710653305053711e-05,
+              "worst_bone": "LeftFoot"
+            },
+            {
+              "assignment_max_matrix_error": 1.1920928955078125e-06,
+              "frame": 19,
+              "rotation_error_after_normalization": 1.704692840576172e-05,
+              "worst_bone": "LeftFoot"
+            },
+            {
+              "assignment_max_matrix_error": 1.1622905731201172e-06,
+              "frame": 20,
+              "rotation_error_after_normalization": 1.710653305053711e-05,
+              "worst_bone": "LeftFoot"
+            },
+            {
+              "assignment_max_matrix_error": 1.1920928955078125e-06,
+              "frame": 21,
+              "rotation_error_after_normalization": 1.71661376953125e-05,
+              "worst_bone": "LeftToes"
+            },
+            {
+              "assignment_max_matrix_error": 1.1920928955078125e-06,
+              "frame": 22,
+              "rotation_error_after_normalization": 1.710653305053711e-05,
+              "worst_bone": "LeftFoot"
+            },
+            {
+              "assignment_max_matrix_error": 1.2516975402832031e-06,
+              "frame": 23,
+              "rotation_error_after_normalization": 1.710653305053711e-05,
+              "worst_bone": "LeftToes"
+            },
+            {
+              "assignment_max_matrix_error": 1.1399388313293457e-06,
+              "frame": 24,
+              "rotation_error_after_normalization": 1.704692840576172e-05,
+              "worst_bone": "LeftUpLeg"
+            },
+            {
+              "assignment_max_matrix_error": 1.3113021850585938e-06,
+              "frame": 25,
+              "rotation_error_after_normalization": 1.6987323760986328e-05,
+              "worst_bone": "RightHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 1.2218952178955078e-06,
+              "frame": 26,
+              "rotation_error_after_normalization": 1.710653305053711e-05,
+              "worst_bone": "LeftFoot"
+            },
+            {
+              "assignment_max_matrix_error": 1.1920928955078125e-06,
+              "frame": 27,
+              "rotation_error_after_normalization": 1.710653305053711e-05,
+              "worst_bone": "LeftFoot"
+            },
+            {
+              "assignment_max_matrix_error": 1.1920928955078125e-06,
+              "frame": 28,
+              "rotation_error_after_normalization": 1.6987323760986328e-05,
+              "worst_bone": "LeftFoot"
+            },
+            {
+              "assignment_max_matrix_error": 1.1920928955078125e-06,
+              "frame": 29,
+              "rotation_error_after_normalization": 1.710653305053711e-05,
+              "worst_bone": "LeftFoot"
+            },
+            {
+              "assignment_max_matrix_error": 1.2218952178955078e-06,
+              "frame": 30,
+              "rotation_error_after_normalization": 1.704692840576172e-05,
+              "worst_bone": "LeftFoot"
+            },
+            {
+              "assignment_max_matrix_error": 1.1324882507324219e-06,
+              "frame": 31,
+              "rotation_error_after_normalization": 1.704692840576172e-05,
+              "worst_bone": "LeftFoot"
+            },
+            {
+              "assignment_max_matrix_error": 1.1324882507324219e-06,
+              "frame": 32,
+              "rotation_error_after_normalization": 1.704692840576172e-05,
+              "worst_bone": "LeftFoot"
+            },
+            {
+              "assignment_max_matrix_error": 1.1324882507324219e-06,
+              "frame": 33,
+              "rotation_error_after_normalization": 1.704692840576172e-05,
+              "worst_bone": "LeftFoot"
+            }
+          ]
+        },
+        "explicit_reverse": {
+          "max_assignment_error": 1.3113021850585938e-06,
+          "max_mesh_step_source_units": 0.005362152807233643,
+          "max_playback_channel_error": 0.0,
+          "max_playback_order_mesh_rms_source_units": 0.0,
+          "negative_adjacent_quaternion_dots": 0,
+          "seam_mesh_rms_source_units": 0.0,
+          "stages": [
+            {
+              "assignment_max_matrix_error": 1.1324882507324219e-06,
+              "frame": 1,
+              "rotation_error_after_normalization": 1.704692840576172e-05,
+              "worst_bone": "LeftFoot"
+            },
+            {
+              "assignment_max_matrix_error": 1.1920928955078125e-06,
+              "frame": 2,
+              "rotation_error_after_normalization": 1.704692840576172e-05,
+              "worst_bone": "LeftFoot"
+            },
+            {
+              "assignment_max_matrix_error": 1.1175870895385742e-06,
+              "frame": 3,
+              "rotation_error_after_normalization": 1.710653305053711e-05,
+              "worst_bone": "LeftUpLeg"
+            },
+            {
+              "assignment_max_matrix_error": 1.1622905731201172e-06,
+              "frame": 4,
+              "rotation_error_after_normalization": 1.704692840576172e-05,
+              "worst_bone": "LeftFoot"
+            },
+            {
+              "assignment_max_matrix_error": 1.1920928955078125e-06,
+              "frame": 5,
+              "rotation_error_after_normalization": 1.704692840576172e-05,
+              "worst_bone": "LeftFoot"
+            },
+            {
+              "assignment_max_matrix_error": 1.1324882507324219e-06,
+              "frame": 6,
+              "rotation_error_after_normalization": 1.6987323760986328e-05,
+              "worst_bone": "LeftUpLeg"
+            },
+            {
+              "assignment_max_matrix_error": 1.1920928955078125e-06,
+              "frame": 7,
+              "rotation_error_after_normalization": 1.710653305053711e-05,
+              "worst_bone": "LeftFoot"
+            },
+            {
+              "assignment_max_matrix_error": 1.1362135410308838e-06,
+              "frame": 8,
+              "rotation_error_after_normalization": 1.710653305053711e-05,
+              "worst_bone": "LeftUpLeg"
+            },
+            {
+              "assignment_max_matrix_error": 1.1380761861801147e-06,
+              "frame": 9,
+              "rotation_error_after_normalization": 1.6987323760986328e-05,
+              "worst_bone": "LeftUpLeg"
+            },
+            {
+              "assignment_max_matrix_error": 1.1399388313293457e-06,
+              "frame": 10,
+              "rotation_error_after_normalization": 1.710653305053711e-05,
+              "worst_bone": "LeftUpLeg"
+            },
+            {
+              "assignment_max_matrix_error": 1.1920928955078125e-06,
+              "frame": 11,
+              "rotation_error_after_normalization": 1.710653305053711e-05,
+              "worst_bone": "LeftFoot"
+            },
+            {
+              "assignment_max_matrix_error": 1.1920928955078125e-06,
+              "frame": 12,
+              "rotation_error_after_normalization": 1.710653305053711e-05,
+              "worst_bone": "LeftFoot"
+            },
+            {
+              "assignment_max_matrix_error": 1.2218952178955078e-06,
+              "frame": 13,
+              "rotation_error_after_normalization": 1.71661376953125e-05,
+              "worst_bone": "LeftToes"
+            },
+            {
+              "assignment_max_matrix_error": 1.2516975402832031e-06,
+              "frame": 14,
+              "rotation_error_after_normalization": 1.704692840576172e-05,
+              "worst_bone": "LeftFoot"
+            },
+            {
+              "assignment_max_matrix_error": 1.2218952178955078e-06,
+              "frame": 15,
+              "rotation_error_after_normalization": 1.710653305053711e-05,
+              "worst_bone": "LeftFoot"
+            },
+            {
+              "assignment_max_matrix_error": 1.2218952178955078e-06,
+              "frame": 16,
+              "rotation_error_after_normalization": 1.710653305053711e-05,
+              "worst_bone": "LeftFoot"
+            },
+            {
+              "assignment_max_matrix_error": 1.1622905731201172e-06,
+              "frame": 17,
+              "rotation_error_after_normalization": 1.71661376953125e-05,
+              "worst_bone": "LeftFoot"
+            },
+            {
+              "assignment_max_matrix_error": 1.2516975402832031e-06,
+              "frame": 18,
+              "rotation_error_after_normalization": 1.710653305053711e-05,
+              "worst_bone": "LeftFoot"
+            },
+            {
+              "assignment_max_matrix_error": 1.1920928955078125e-06,
+              "frame": 19,
+              "rotation_error_after_normalization": 1.704692840576172e-05,
+              "worst_bone": "LeftFoot"
+            },
+            {
+              "assignment_max_matrix_error": 1.1622905731201172e-06,
+              "frame": 20,
+              "rotation_error_after_normalization": 1.710653305053711e-05,
+              "worst_bone": "LeftFoot"
+            },
+            {
+              "assignment_max_matrix_error": 1.1920928955078125e-06,
+              "frame": 21,
+              "rotation_error_after_normalization": 1.71661376953125e-05,
+              "worst_bone": "LeftToes"
+            },
+            {
+              "assignment_max_matrix_error": 1.1920928955078125e-06,
+              "frame": 22,
+              "rotation_error_after_normalization": 1.710653305053711e-05,
+              "worst_bone": "LeftFoot"
+            },
+            {
+              "assignment_max_matrix_error": 1.2516975402832031e-06,
+              "frame": 23,
+              "rotation_error_after_normalization": 1.710653305053711e-05,
+              "worst_bone": "LeftToes"
+            },
+            {
+              "assignment_max_matrix_error": 1.1399388313293457e-06,
+              "frame": 24,
+              "rotation_error_after_normalization": 1.704692840576172e-05,
+              "worst_bone": "LeftUpLeg"
+            },
+            {
+              "assignment_max_matrix_error": 1.3113021850585938e-06,
+              "frame": 25,
+              "rotation_error_after_normalization": 1.6987323760986328e-05,
+              "worst_bone": "RightHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 1.2218952178955078e-06,
+              "frame": 26,
+              "rotation_error_after_normalization": 1.710653305053711e-05,
+              "worst_bone": "LeftFoot"
+            },
+            {
+              "assignment_max_matrix_error": 1.1920928955078125e-06,
+              "frame": 27,
+              "rotation_error_after_normalization": 1.710653305053711e-05,
+              "worst_bone": "LeftFoot"
+            },
+            {
+              "assignment_max_matrix_error": 1.1920928955078125e-06,
+              "frame": 28,
+              "rotation_error_after_normalization": 1.6987323760986328e-05,
+              "worst_bone": "LeftFoot"
+            },
+            {
+              "assignment_max_matrix_error": 1.1920928955078125e-06,
+              "frame": 29,
+              "rotation_error_after_normalization": 1.710653305053711e-05,
+              "worst_bone": "LeftFoot"
+            },
+            {
+              "assignment_max_matrix_error": 1.2218952178955078e-06,
+              "frame": 30,
+              "rotation_error_after_normalization": 1.704692840576172e-05,
+              "worst_bone": "LeftFoot"
+            },
+            {
+              "assignment_max_matrix_error": 1.1324882507324219e-06,
+              "frame": 31,
+              "rotation_error_after_normalization": 1.704692840576172e-05,
+              "worst_bone": "LeftFoot"
+            },
+            {
+              "assignment_max_matrix_error": 1.1324882507324219e-06,
+              "frame": 32,
+              "rotation_error_after_normalization": 1.704692840576172e-05,
+              "worst_bone": "LeftFoot"
+            },
+            {
+              "assignment_max_matrix_error": 1.1324882507324219e-06,
+              "frame": 33,
+              "rotation_error_after_normalization": 1.704692840576172e-05,
+              "worst_bone": "LeftFoot"
+            }
+          ]
+        },
+        "legacy_forward": {
+          "max_assignment_error": 2.2803695797920227,
+          "max_mesh_step_source_units": 0.695970765666484,
+          "max_playback_channel_error": 0.0,
+          "max_playback_order_mesh_rms_source_units": 0.0,
+          "negative_adjacent_quaternion_dots": 27,
+          "seam_mesh_rms_source_units": 0.5357209366818274,
+          "stages": [
+            {
+              "assignment_max_matrix_error": 1.9015092253684998,
+              "frame": 1,
+              "rotation_error_after_normalization": 1.901507556438446,
+              "worst_bone": "LeftHandIndex1"
+            },
+            {
+              "assignment_max_matrix_error": 2.2803695797920227,
+              "frame": 2,
+              "rotation_error_after_normalization": 1.9161564111709595,
+              "worst_bone": "RightHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 1.8818207383155823,
+              "frame": 3,
+              "rotation_error_after_normalization": 1.8818208575248718,
+              "worst_bone": "RightHandIndex2"
+            },
+            {
+              "assignment_max_matrix_error": 1.955252468585968,
+              "frame": 4,
+              "rotation_error_after_normalization": 1.955253541469574,
+              "worst_bone": "RightHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 1.9014626741409302,
+              "frame": 5,
+              "rotation_error_after_normalization": 1.901461660861969,
+              "worst_bone": "LeftHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 1.6969098448753357,
+              "frame": 6,
+              "rotation_error_after_normalization": 1.6969099044799805,
+              "worst_bone": "RightHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 1.4196613132953644,
+              "frame": 7,
+              "rotation_error_after_normalization": 1.419660747051239,
+              "worst_bone": "LeftHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 1.1612823903560638,
+              "frame": 8,
+              "rotation_error_after_normalization": 1.161280483007431,
+              "worst_bone": "LeftHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 0.38905248045921326,
+              "frame": 9,
+              "rotation_error_after_normalization": 0.38905224204063416,
+              "worst_bone": "RightHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 0.1528306007385254,
+              "frame": 10,
+              "rotation_error_after_normalization": 0.05107462406158447,
+              "worst_bone": "RightHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 0.17677271366119385,
+              "frame": 11,
+              "rotation_error_after_normalization": 0.009252113290131092,
+              "worst_bone": "RightHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 0.19877463579177856,
+              "frame": 12,
+              "rotation_error_after_normalization": 0.00851605471689254,
+              "worst_bone": "RightHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 0.21755450963974,
+              "frame": 13,
+              "rotation_error_after_normalization": 0.007417276967316866,
+              "worst_bone": "RightHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 0.2325066328048706,
+              "frame": 14,
+              "rotation_error_after_normalization": 0.006058556027710438,
+              "worst_bone": "RightHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 0.2432420253753662,
+              "frame": 15,
+              "rotation_error_after_normalization": 0.004522846080362797,
+              "worst_bone": "RightHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 0.24959075450897217,
+              "frame": 16,
+              "rotation_error_after_normalization": 0.0029131434857845306,
+              "worst_bone": "RightHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 0.25154370069503784,
+              "frame": 17,
+              "rotation_error_after_normalization": 0.0014367103576660156,
+              "worst_bone": "RightHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 0.24915540218353271,
+              "frame": 18,
+              "rotation_error_after_normalization": 0.0024670660495758057,
+              "worst_bone": "RightHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 0.24239581823349,
+              "frame": 19,
+              "rotation_error_after_normalization": 0.004109695553779602,
+              "worst_bone": "RightHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 0.23126906156539917,
+              "frame": 20,
+              "rotation_error_after_normalization": 0.00579562783241272,
+              "worst_bone": "RightHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 0.21588116884231567,
+              "frame": 21,
+              "rotation_error_after_normalization": 0.0073189884424209595,
+              "worst_bone": "RightHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 0.19675278663635254,
+              "frame": 22,
+              "rotation_error_after_normalization": 0.008612081408500671,
+              "worst_bone": "RightHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 0.17444509267807007,
+              "frame": 23,
+              "rotation_error_after_normalization": 0.009592041373252869,
+              "worst_bone": "RightHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 0.14986228942871094,
+              "frame": 24,
+              "rotation_error_after_normalization": 0.01011396199464798,
+              "worst_bone": "RightHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 0.12411463260650635,
+              "frame": 25,
+              "rotation_error_after_normalization": 0.010168693959712982,
+              "worst_bone": "RightHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 0.09841728210449219,
+              "frame": 26,
+              "rotation_error_after_normalization": 0.009691476821899414,
+              "worst_bone": "RightHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 0.07400178909301758,
+              "frame": 27,
+              "rotation_error_after_normalization": 0.009219776839017868,
+              "worst_bone": "RightHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 0.05195140838623047,
+              "frame": 28,
+              "rotation_error_after_normalization": 0.00846870243549347,
+              "worst_bone": "RightHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 0.03314638137817383,
+              "frame": 29,
+              "rotation_error_after_normalization": 0.007368810474872589,
+              "worst_bone": "RightHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 0.018207192420959473,
+              "frame": 30,
+              "rotation_error_after_normalization": 0.006007872521877289,
+              "worst_bone": "RightHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 0.007515311241149902,
+              "frame": 31,
+              "rotation_error_after_normalization": 0.0044870153069496155,
+              "worst_bone": "RightHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 0.0028769224882125854,
+              "frame": 32,
+              "rotation_error_after_normalization": 0.002876952290534973,
+              "worst_bone": "RightHandIndex1"
+            },
+            {
+              "assignment_max_matrix_error": 0.0017161369323730469,
+              "frame": 33,
+              "rotation_error_after_normalization": 0.0017156004905700684,
+              "worst_bone": "LeftFoot"
+            }
+          ]
+        },
+        "legacy_isolated": {
+          "max_assignment_error": 1.9015092253684998,
+          "max_mesh_step_source_units": 0.009341573627091034,
+          "max_playback_channel_error": 0.0,
+          "max_playback_order_mesh_rms_source_units": 0.0,
+          "negative_adjacent_quaternion_dots": 0,
+          "seam_mesh_rms_source_units": 0.0,
+          "stages": [
+            {
+              "assignment_max_matrix_error": 1.9015092253684998,
+              "frame": 1,
+              "rotation_error_after_normalization": 1.901507556438446,
+              "worst_bone": "LeftHandIndex1"
+            },
+            {
+              "assignment_max_matrix_error": 1.9009646773338318,
+              "frame": 2,
+              "rotation_error_after_normalization": 1.900963306427002,
+              "worst_bone": "LeftHandIndex1"
+            },
+            {
+              "assignment_max_matrix_error": 1.899287462234497,
+              "frame": 3,
+              "rotation_error_after_normalization": 1.899286150932312,
+              "worst_bone": "LeftHandIndex1"
+            },
+            {
+              "assignment_max_matrix_error": 1.8964253664016724,
+              "frame": 4,
+              "rotation_error_after_normalization": 1.896423578262329,
+              "worst_bone": "LeftHandIndex1"
+            },
+            {
+              "assignment_max_matrix_error": 1.8923186659812927,
+              "frame": 5,
+              "rotation_error_after_normalization": 1.8923172354698181,
+              "worst_bone": "LeftHandIndex1"
+            },
+            {
+              "assignment_max_matrix_error": 1.8869330883026123,
+              "frame": 6,
+              "rotation_error_after_normalization": 1.8869314193725586,
+              "worst_bone": "LeftHandIndex1"
+            },
+            {
+              "assignment_max_matrix_error": 1.8803196549415588,
+              "frame": 7,
+              "rotation_error_after_normalization": 1.8803182244300842,
+              "worst_bone": "LeftHandIndex1"
+            },
+            {
+              "assignment_max_matrix_error": 1.8726115822792053,
+              "frame": 8,
+              "rotation_error_after_normalization": 1.8726102113723755,
+              "worst_bone": "LeftHandIndex1"
+            },
+            {
+              "assignment_max_matrix_error": 1.864075243473053,
+              "frame": 9,
+              "rotation_error_after_normalization": 1.8640738129615784,
+              "worst_bone": "LeftHandIndex1"
+            },
+            {
+              "assignment_max_matrix_error": 1.855087697505951,
+              "frame": 10,
+              "rotation_error_after_normalization": 1.8550862073898315,
+              "worst_bone": "LeftHandIndex1"
+            },
+            {
+              "assignment_max_matrix_error": 1.8461259007453918,
+              "frame": 11,
+              "rotation_error_after_normalization": 1.8461243510246277,
+              "worst_bone": "LeftHandIndex1"
+            },
+            {
+              "assignment_max_matrix_error": 1.8376717567443848,
+              "frame": 12,
+              "rotation_error_after_normalization": 1.8376705646514893,
+              "worst_bone": "LeftHandIndex1"
+            },
+            {
+              "assignment_max_matrix_error": 1.8301926851272583,
+              "frame": 13,
+              "rotation_error_after_normalization": 1.8301910161972046,
+              "worst_bone": "LeftHandIndex1"
+            },
+            {
+              "assignment_max_matrix_error": 1.8240521550178528,
+              "frame": 14,
+              "rotation_error_after_normalization": 1.8240509629249573,
+              "worst_bone": "LeftHandIndex1"
+            },
+            {
+              "assignment_max_matrix_error": 1.819521963596344,
+              "frame": 15,
+              "rotation_error_after_normalization": 1.8195205926895142,
+              "worst_bone": "LeftHandIndex1"
+            },
+            {
+              "assignment_max_matrix_error": 1.8167789578437805,
+              "frame": 16,
+              "rotation_error_after_normalization": 1.816777527332306,
+              "worst_bone": "LeftHandIndex1"
+            },
+            {
+              "assignment_max_matrix_error": 1.8158662915229797,
+              "frame": 17,
+              "rotation_error_after_normalization": 1.8158648610115051,
+              "worst_bone": "LeftHandIndex1"
+            },
+            {
+              "assignment_max_matrix_error": 1.8167800307273865,
+              "frame": 18,
+              "rotation_error_after_normalization": 1.8167783617973328,
+              "worst_bone": "LeftHandIndex1"
+            },
+            {
+              "assignment_max_matrix_error": 1.8195221424102783,
+              "frame": 19,
+              "rotation_error_after_normalization": 1.8195208311080933,
+              "worst_bone": "LeftHandIndex1"
+            },
+            {
+              "assignment_max_matrix_error": 1.8240512013435364,
+              "frame": 20,
+              "rotation_error_after_normalization": 1.8240500688552856,
+              "worst_bone": "LeftHandIndex1"
+            },
+            {
+              "assignment_max_matrix_error": 1.8301867246627808,
+              "frame": 21,
+              "rotation_error_after_normalization": 1.8301854729652405,
+              "worst_bone": "LeftHandIndex1"
+            },
+            {
+              "assignment_max_matrix_error": 1.8376717567443848,
+              "frame": 22,
+              "rotation_error_after_normalization": 1.8376701474189758,
+              "worst_bone": "LeftHandIndex1"
+            },
+            {
+              "assignment_max_matrix_error": 1.8461257219314575,
+              "frame": 23,
+              "rotation_error_after_normalization": 1.8461244106292725,
+              "worst_bone": "LeftHandIndex1"
+            },
+            {
+              "assignment_max_matrix_error": 1.855087399482727,
+              "frame": 24,
+              "rotation_error_after_normalization": 1.855086088180542,
+              "worst_bone": "LeftHandIndex1"
+            },
+            {
+              "assignment_max_matrix_error": 1.8640756011009216,
+              "frame": 25,
+              "rotation_error_after_normalization": 1.864074170589447,
+              "worst_bone": "LeftHandIndex1"
+            },
+            {
+              "assignment_max_matrix_error": 1.8726107478141785,
+              "frame": 26,
+              "rotation_error_after_normalization": 1.8726093769073486,
+              "worst_bone": "LeftHandIndex1"
+            },
+            {
+              "assignment_max_matrix_error": 1.8803194761276245,
+              "frame": 27,
+              "rotation_error_after_normalization": 1.8803179860115051,
+              "worst_bone": "LeftHandIndex1"
+            },
+            {
+              "assignment_max_matrix_error": 1.8869326710700989,
+              "frame": 28,
+              "rotation_error_after_normalization": 1.8869312405586243,
+              "worst_bone": "LeftHandIndex1"
+            },
+            {
+              "assignment_max_matrix_error": 1.8923192024230957,
+              "frame": 29,
+              "rotation_error_after_normalization": 1.8923173546791077,
+              "worst_bone": "LeftHandIndex1"
+            },
+            {
+              "assignment_max_matrix_error": 1.8964248299598694,
+              "frame": 30,
+              "rotation_error_after_normalization": 1.8964235186576843,
+              "worst_bone": "LeftHandIndex1"
+            },
+            {
+              "assignment_max_matrix_error": 1.899288296699524,
+              "frame": 31,
+              "rotation_error_after_normalization": 1.8992863297462463,
+              "worst_bone": "LeftHandIndex1"
+            },
+            {
+              "assignment_max_matrix_error": 1.9009652137756348,
+              "frame": 32,
+              "rotation_error_after_normalization": 1.9009634256362915,
+              "worst_bone": "LeftHandIndex1"
+            },
+            {
+              "assignment_max_matrix_error": 1.9015092253684998,
+              "frame": 33,
+              "rotation_error_after_normalization": 1.901507556438446,
+              "worst_bone": "LeftHandIndex1"
+            }
+          ]
+        },
+        "legacy_reverse": {
+          "max_assignment_error": 2.2803695797920227,
+          "max_mesh_step_source_units": 0.6959708392690365,
+          "max_playback_channel_error": 0.0,
+          "max_playback_order_mesh_rms_source_units": 0.0,
+          "negative_adjacent_quaternion_dots": 27,
+          "seam_mesh_rms_source_units": 0.5357208232572613,
+          "stages": [
+            {
+              "assignment_max_matrix_error": 0.0017129778861999512,
+              "frame": 1,
+              "rotation_error_after_normalization": 0.001712501049041748,
+              "worst_bone": "LeftFoot"
+            },
+            {
+              "assignment_max_matrix_error": 0.002873152494430542,
+              "frame": 2,
+              "rotation_error_after_normalization": 0.0028732120990753174,
+              "worst_bone": "RightHandIndex1"
+            },
+            {
+              "assignment_max_matrix_error": 0.007514476776123047,
+              "frame": 3,
+              "rotation_error_after_normalization": 0.004489384591579437,
+              "worst_bone": "RightHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 0.018207669258117676,
+              "frame": 4,
+              "rotation_error_after_normalization": 0.006007358431816101,
+              "worst_bone": "RightHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 0.03314685821533203,
+              "frame": 5,
+              "rotation_error_after_normalization": 0.007370598614215851,
+              "worst_bone": "RightHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 0.051951050758361816,
+              "frame": 6,
+              "rotation_error_after_normalization": 0.008466478437185287,
+              "worst_bone": "RightHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 0.07400155067443848,
+              "frame": 7,
+              "rotation_error_after_normalization": 0.00922079011797905,
+              "worst_bone": "RightHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 0.09841775894165039,
+              "frame": 8,
+              "rotation_error_after_normalization": 0.009685695171356201,
+              "worst_bone": "RightHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 0.12411105632781982,
+              "frame": 9,
+              "rotation_error_after_normalization": 0.010169237852096558,
+              "worst_bone": "RightHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 0.1498662233352661,
+              "frame": 10,
+              "rotation_error_after_normalization": 0.010118432343006134,
+              "worst_bone": "RightHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 0.17444169521331787,
+              "frame": 11,
+              "rotation_error_after_normalization": 0.009585246443748474,
+              "worst_bone": "RightHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 0.19675493240356445,
+              "frame": 12,
+              "rotation_error_after_normalization": 0.008618906140327454,
+              "worst_bone": "RightHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 0.2158815860748291,
+              "frame": 13,
+              "rotation_error_after_normalization": 0.007314726710319519,
+              "worst_bone": "RightHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 0.23126941919326782,
+              "frame": 14,
+              "rotation_error_after_normalization": 0.005798161029815674,
+              "worst_bone": "RightHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 0.2423965334892273,
+              "frame": 15,
+              "rotation_error_after_normalization": 0.004107847809791565,
+              "worst_bone": "RightHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 0.24915409088134766,
+              "frame": 16,
+              "rotation_error_after_normalization": 0.0024674683809280396,
+              "worst_bone": "RightHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 0.2515459656715393,
+              "frame": 17,
+              "rotation_error_after_normalization": 0.001435697078704834,
+              "worst_bone": "RightHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 0.24958688020706177,
+              "frame": 18,
+              "rotation_error_after_normalization": 0.002914018929004669,
+              "worst_bone": "RightHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 0.24324315786361694,
+              "frame": 19,
+              "rotation_error_after_normalization": 0.004519779235124588,
+              "worst_bone": "RightHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 0.23250490427017212,
+              "frame": 20,
+              "rotation_error_after_normalization": 0.006062518805265427,
+              "worst_bone": "RightHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 0.21755439043045044,
+              "frame": 21,
+              "rotation_error_after_normalization": 0.007415831554681063,
+              "worst_bone": "RightHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 0.19877469539642334,
+              "frame": 22,
+              "rotation_error_after_normalization": 0.008516038535162807,
+              "worst_bone": "RightHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 0.1767711639404297,
+              "frame": 23,
+              "rotation_error_after_normalization": 0.009253140538930893,
+              "worst_bone": "RightHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 0.15283024311065674,
+              "frame": 24,
+              "rotation_error_after_normalization": 0.05106554925441742,
+              "worst_bone": "RightHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 0.3890562057495117,
+              "frame": 25,
+              "rotation_error_after_normalization": 0.38905560970306396,
+              "worst_bone": "RightHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 1.1612842679023743,
+              "frame": 26,
+              "rotation_error_after_normalization": 1.1612821221351624,
+              "worst_bone": "LeftHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 1.419669270515442,
+              "frame": 27,
+              "rotation_error_after_normalization": 1.4196687936782837,
+              "worst_bone": "LeftHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 1.6969024538993835,
+              "frame": 28,
+              "rotation_error_after_normalization": 1.696902871131897,
+              "worst_bone": "RightHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 1.9014624953269958,
+              "frame": 29,
+              "rotation_error_after_normalization": 1.90146142244339,
+              "worst_bone": "LeftHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 1.9552533626556396,
+              "frame": 30,
+              "rotation_error_after_normalization": 1.9552533626556396,
+              "worst_bone": "RightHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 1.8818223476409912,
+              "frame": 31,
+              "rotation_error_after_normalization": 1.8818215131759644,
+              "worst_bone": "RightHandIndex2"
+            },
+            {
+              "assignment_max_matrix_error": 2.2803695797920227,
+              "frame": 32,
+              "rotation_error_after_normalization": 1.9161563515663147,
+              "worst_bone": "RightHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 1.9015092253684998,
+              "frame": 33,
+              "rotation_error_after_normalization": 1.901507556438446,
+              "worst_bone": "LeftHandIndex1"
+            }
+          ]
+        },
+        "parent_update_forward": {
+          "max_assignment_error": 1.1622905731201172e-06,
+          "max_mesh_step_source_units": 0.005362095775635047,
+          "max_playback_channel_error": 0.0,
+          "max_playback_order_mesh_rms_source_units": 0.0,
+          "negative_adjacent_quaternion_dots": 0,
+          "seam_mesh_rms_source_units": 0.0,
+          "stages": [
+            {
+              "assignment_max_matrix_error": 1.1119991540908813e-06,
+              "frame": 1,
+              "rotation_error_after_normalization": 1.704692840576172e-05,
+              "worst_bone": "LeftUpLeg"
+            },
+            {
+              "assignment_max_matrix_error": 1.1157244443893433e-06,
+              "frame": 2,
+              "rotation_error_after_normalization": 1.704692840576172e-05,
+              "worst_bone": "LeftUpLeg"
+            },
+            {
+              "assignment_max_matrix_error": 1.1175870895385742e-06,
+              "frame": 3,
+              "rotation_error_after_normalization": 1.710653305053711e-05,
+              "worst_bone": "LeftUpLeg"
+            },
+            {
+              "assignment_max_matrix_error": 1.1175870895385742e-06,
+              "frame": 4,
+              "rotation_error_after_normalization": 1.704692840576172e-05,
+              "worst_bone": "LeftUpLeg"
+            },
+            {
+              "assignment_max_matrix_error": 1.1157244443893433e-06,
+              "frame": 5,
+              "rotation_error_after_normalization": 1.710653305053711e-05,
+              "worst_bone": "LeftUpLeg"
+            },
+            {
+              "assignment_max_matrix_error": 1.12876296043396e-06,
+              "frame": 6,
+              "rotation_error_after_normalization": 1.6987323760986328e-05,
+              "worst_bone": "LeftUpLeg"
+            },
+            {
+              "assignment_max_matrix_error": 1.1194497346878052e-06,
+              "frame": 7,
+              "rotation_error_after_normalization": 1.710653305053711e-05,
+              "worst_bone": "LeftUpLeg"
+            },
+            {
+              "assignment_max_matrix_error": 1.1362135410308838e-06,
+              "frame": 8,
+              "rotation_error_after_normalization": 1.710653305053711e-05,
+              "worst_bone": "LeftUpLeg"
+            },
+            {
+              "assignment_max_matrix_error": 1.1343508958816528e-06,
+              "frame": 9,
+              "rotation_error_after_normalization": 1.6987323760986328e-05,
+              "worst_bone": "LeftUpLeg"
+            },
+            {
+              "assignment_max_matrix_error": 1.1380761861801147e-06,
+              "frame": 10,
+              "rotation_error_after_normalization": 1.710653305053711e-05,
+              "worst_bone": "LeftUpLeg"
+            },
+            {
+              "assignment_max_matrix_error": 1.1418014764785767e-06,
+              "frame": 11,
+              "rotation_error_after_normalization": 1.710653305053711e-05,
+              "worst_bone": "LeftUpLeg"
+            },
+            {
+              "assignment_max_matrix_error": 1.1492520570755005e-06,
+              "frame": 12,
+              "rotation_error_after_normalization": 1.710653305053711e-05,
+              "worst_bone": "LeftUpLeg"
+            },
+            {
+              "assignment_max_matrix_error": 1.1492520570755005e-06,
+              "frame": 13,
+              "rotation_error_after_normalization": 1.71661376953125e-05,
+              "worst_bone": "LeftUpLeg"
+            },
+            {
+              "assignment_max_matrix_error": 1.1436641216278076e-06,
+              "frame": 14,
+              "rotation_error_after_normalization": 1.704692840576172e-05,
+              "worst_bone": "LeftUpLeg"
+            },
+            {
+              "assignment_max_matrix_error": 1.1455267667770386e-06,
+              "frame": 15,
+              "rotation_error_after_normalization": 1.710653305053711e-05,
+              "worst_bone": "LeftUpLeg"
+            },
+            {
+              "assignment_max_matrix_error": 1.1622905731201172e-06,
+              "frame": 16,
+              "rotation_error_after_normalization": 1.704692840576172e-05,
+              "worst_bone": "LeftUpLeg"
+            },
+            {
+              "assignment_max_matrix_error": 1.1436641216278076e-06,
+              "frame": 17,
+              "rotation_error_after_normalization": 1.71661376953125e-05,
+              "worst_bone": "LeftUpLeg"
+            },
+            {
+              "assignment_max_matrix_error": 1.1604279279708862e-06,
+              "frame": 18,
+              "rotation_error_after_normalization": 1.710653305053711e-05,
+              "worst_bone": "LeftUpLeg"
+            },
+            {
+              "assignment_max_matrix_error": 1.1473894119262695e-06,
+              "frame": 19,
+              "rotation_error_after_normalization": 1.704692840576172e-05,
+              "worst_bone": "LeftUpLeg"
+            },
+            {
+              "assignment_max_matrix_error": 1.1492520570755005e-06,
+              "frame": 20,
+              "rotation_error_after_normalization": 1.71661376953125e-05,
+              "worst_bone": "LeftUpLeg"
+            },
+            {
+              "assignment_max_matrix_error": 1.1511147022247314e-06,
+              "frame": 21,
+              "rotation_error_after_normalization": 1.71661376953125e-05,
+              "worst_bone": "LeftUpLeg"
+            },
+            {
+              "assignment_max_matrix_error": 1.1492520570755005e-06,
+              "frame": 22,
+              "rotation_error_after_normalization": 1.710653305053711e-05,
+              "worst_bone": "LeftUpLeg"
+            },
+            {
+              "assignment_max_matrix_error": 1.1436641216278076e-06,
+              "frame": 23,
+              "rotation_error_after_normalization": 1.710653305053711e-05,
+              "worst_bone": "LeftUpLeg"
+            },
+            {
+              "assignment_max_matrix_error": 1.1380761861801147e-06,
+              "frame": 24,
+              "rotation_error_after_normalization": 1.704692840576172e-05,
+              "worst_bone": "LeftUpLeg"
+            },
+            {
+              "assignment_max_matrix_error": 1.1343508958816528e-06,
+              "frame": 25,
+              "rotation_error_after_normalization": 1.6987323760986328e-05,
+              "worst_bone": "LeftUpLeg"
+            },
+            {
+              "assignment_max_matrix_error": 1.1362135410308838e-06,
+              "frame": 26,
+              "rotation_error_after_normalization": 1.710653305053711e-05,
+              "worst_bone": "LeftUpLeg"
+            },
+            {
+              "assignment_max_matrix_error": 1.1194497346878052e-06,
+              "frame": 27,
+              "rotation_error_after_normalization": 1.710653305053711e-05,
+              "worst_bone": "LeftUpLeg"
+            },
+            {
+              "assignment_max_matrix_error": 1.12876296043396e-06,
+              "frame": 28,
+              "rotation_error_after_normalization": 1.6987323760986328e-05,
+              "worst_bone": "LeftUpLeg"
+            },
+            {
+              "assignment_max_matrix_error": 1.1194497346878052e-06,
+              "frame": 29,
+              "rotation_error_after_normalization": 1.710653305053711e-05,
+              "worst_bone": "LeftUpLeg"
+            },
+            {
+              "assignment_max_matrix_error": 1.1138617992401123e-06,
+              "frame": 30,
+              "rotation_error_after_normalization": 1.704692840576172e-05,
+              "worst_bone": "LeftUpLeg"
+            },
+            {
+              "assignment_max_matrix_error": 1.1157244443893433e-06,
+              "frame": 31,
+              "rotation_error_after_normalization": 1.710653305053711e-05,
+              "worst_bone": "LeftUpLeg"
+            },
+            {
+              "assignment_max_matrix_error": 1.1194497346878052e-06,
+              "frame": 32,
+              "rotation_error_after_normalization": 1.704692840576172e-05,
+              "worst_bone": "LeftUpLeg"
+            },
+            {
+              "assignment_max_matrix_error": 1.1119991540908813e-06,
+              "frame": 33,
+              "rotation_error_after_normalization": 1.704692840576172e-05,
+              "worst_bone": "LeftUpLeg"
+            }
+          ]
+        }
+      }
+    },
+    "jump": {
+      "fps": 24,
+      "fps_base": 1.0,
+      "max_mesh_rms_against_explicit_forward_source_units": {
+        "explicit_forward": 0.0,
+        "explicit_reverse": 0.0,
+        "legacy_forward": 0.7942048447132896,
+        "legacy_isolated": 0.7569434646625133,
+        "legacy_reverse": 0.7942048902895303,
+        "parent_update_forward": 2.07956994569473e-06
+      },
+      "range": [
+        1,
+        13
+      ],
+      "source_endpoint_max_matrix_error": 0.0,
+      "source_order_max_matrix_error": 0.0,
+      "variants": {
+        "explicit_forward": {
+          "max_assignment_error": 6.9141387939453125e-06,
+          "max_mesh_step_source_units": 0.0025413772932268994,
+          "max_playback_channel_error": 0.0,
+          "max_playback_order_mesh_rms_source_units": 0.0,
+          "negative_adjacent_quaternion_dots": 0,
+          "seam_mesh_rms_source_units": 0.0,
+          "stages": [
+            {
+              "assignment_max_matrix_error": 6.8247318267822266e-06,
+              "frame": 1,
+              "rotation_error_after_normalization": 1.5914440155029297e-05,
+              "worst_bone": "RightUpLeg"
+            },
+            {
+              "assignment_max_matrix_error": 6.8247318267822266e-06,
+              "frame": 2,
+              "rotation_error_after_normalization": 1.5914440155029297e-05,
+              "worst_bone": "RightLeg"
+            },
+            {
+              "assignment_max_matrix_error": 6.660819053649902e-06,
+              "frame": 3,
+              "rotation_error_after_normalization": 1.5854835510253906e-05,
+              "worst_bone": "RightLeg"
+            },
+            {
+              "assignment_max_matrix_error": 6.780028343200684e-06,
+              "frame": 4,
+              "rotation_error_after_normalization": 1.5854835510253906e-05,
+              "worst_bone": "RightLeg"
+            },
+            {
+              "assignment_max_matrix_error": 6.9141387939453125e-06,
+              "frame": 5,
+              "rotation_error_after_normalization": 1.5914440155029297e-05,
+              "worst_bone": "RightLeg"
+            },
+            {
+              "assignment_max_matrix_error": 6.794929504394531e-06,
+              "frame": 6,
+              "rotation_error_after_normalization": 1.5854835510253906e-05,
+              "worst_bone": "RightUpLeg"
+            },
+            {
+              "assignment_max_matrix_error": 6.809830665588379e-06,
+              "frame": 7,
+              "rotation_error_after_normalization": 1.5854835510253906e-05,
+              "worst_bone": "RightLeg"
+            },
+            {
+              "assignment_max_matrix_error": 6.794929504394531e-06,
+              "frame": 8,
+              "rotation_error_after_normalization": 1.5854835510253906e-05,
+              "worst_bone": "RightUpLeg"
+            },
+            {
+              "assignment_max_matrix_error": 6.9141387939453125e-06,
+              "frame": 9,
+              "rotation_error_after_normalization": 1.5914440155029297e-05,
+              "worst_bone": "RightLeg"
+            },
+            {
+              "assignment_max_matrix_error": 6.780028343200684e-06,
+              "frame": 10,
+              "rotation_error_after_normalization": 1.5854835510253906e-05,
+              "worst_bone": "RightLeg"
+            },
+            {
+              "assignment_max_matrix_error": 6.660819053649902e-06,
+              "frame": 11,
+              "rotation_error_after_normalization": 1.5854835510253906e-05,
+              "worst_bone": "RightLeg"
+            },
+            {
+              "assignment_max_matrix_error": 6.8247318267822266e-06,
+              "frame": 12,
+              "rotation_error_after_normalization": 1.5914440155029297e-05,
+              "worst_bone": "RightLeg"
+            },
+            {
+              "assignment_max_matrix_error": 6.8247318267822266e-06,
+              "frame": 13,
+              "rotation_error_after_normalization": 1.5914440155029297e-05,
+              "worst_bone": "RightUpLeg"
+            }
+          ]
+        },
+        "explicit_reverse": {
+          "max_assignment_error": 6.9141387939453125e-06,
+          "max_mesh_step_source_units": 0.0025413772932268994,
+          "max_playback_channel_error": 0.0,
+          "max_playback_order_mesh_rms_source_units": 0.0,
+          "negative_adjacent_quaternion_dots": 0,
+          "seam_mesh_rms_source_units": 0.0,
+          "stages": [
+            {
+              "assignment_max_matrix_error": 6.8247318267822266e-06,
+              "frame": 1,
+              "rotation_error_after_normalization": 1.5914440155029297e-05,
+              "worst_bone": "RightUpLeg"
+            },
+            {
+              "assignment_max_matrix_error": 6.8247318267822266e-06,
+              "frame": 2,
+              "rotation_error_after_normalization": 1.5914440155029297e-05,
+              "worst_bone": "RightLeg"
+            },
+            {
+              "assignment_max_matrix_error": 6.660819053649902e-06,
+              "frame": 3,
+              "rotation_error_after_normalization": 1.5854835510253906e-05,
+              "worst_bone": "RightLeg"
+            },
+            {
+              "assignment_max_matrix_error": 6.780028343200684e-06,
+              "frame": 4,
+              "rotation_error_after_normalization": 1.5854835510253906e-05,
+              "worst_bone": "RightLeg"
+            },
+            {
+              "assignment_max_matrix_error": 6.9141387939453125e-06,
+              "frame": 5,
+              "rotation_error_after_normalization": 1.5914440155029297e-05,
+              "worst_bone": "RightLeg"
+            },
+            {
+              "assignment_max_matrix_error": 6.794929504394531e-06,
+              "frame": 6,
+              "rotation_error_after_normalization": 1.5854835510253906e-05,
+              "worst_bone": "RightUpLeg"
+            },
+            {
+              "assignment_max_matrix_error": 6.809830665588379e-06,
+              "frame": 7,
+              "rotation_error_after_normalization": 1.5854835510253906e-05,
+              "worst_bone": "RightLeg"
+            },
+            {
+              "assignment_max_matrix_error": 6.794929504394531e-06,
+              "frame": 8,
+              "rotation_error_after_normalization": 1.5854835510253906e-05,
+              "worst_bone": "RightUpLeg"
+            },
+            {
+              "assignment_max_matrix_error": 6.9141387939453125e-06,
+              "frame": 9,
+              "rotation_error_after_normalization": 1.5914440155029297e-05,
+              "worst_bone": "RightLeg"
+            },
+            {
+              "assignment_max_matrix_error": 6.780028343200684e-06,
+              "frame": 10,
+              "rotation_error_after_normalization": 1.5854835510253906e-05,
+              "worst_bone": "RightLeg"
+            },
+            {
+              "assignment_max_matrix_error": 6.660819053649902e-06,
+              "frame": 11,
+              "rotation_error_after_normalization": 1.5854835510253906e-05,
+              "worst_bone": "RightLeg"
+            },
+            {
+              "assignment_max_matrix_error": 6.8247318267822266e-06,
+              "frame": 12,
+              "rotation_error_after_normalization": 1.5914440155029297e-05,
+              "worst_bone": "RightLeg"
+            },
+            {
+              "assignment_max_matrix_error": 6.8247318267822266e-06,
+              "frame": 13,
+              "rotation_error_after_normalization": 1.5914440155029297e-05,
+              "worst_bone": "RightUpLeg"
+            }
+          ]
+        },
+        "legacy_forward": {
+          "max_assignment_error": 3.20878529548645,
+          "max_mesh_step_source_units": 1.0212878159147267,
+          "max_playback_channel_error": 0.0,
+          "max_playback_order_mesh_rms_source_units": 0.0,
+          "negative_adjacent_quaternion_dots": 17,
+          "seam_mesh_rms_source_units": 0.7578773515376007,
+          "stages": [
+            {
+              "assignment_max_matrix_error": 1.8954268097877502,
+              "frame": 1,
+              "rotation_error_after_normalization": 1.895425260066986,
+              "worst_bone": "LeftHandThumb2"
+            },
+            {
+              "assignment_max_matrix_error": 2.366984724998474,
+              "frame": 2,
+              "rotation_error_after_normalization": 1.9231335520744324,
+              "worst_bone": "LeftHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 1.8260778784751892,
+              "frame": 3,
+              "rotation_error_after_normalization": 1.8260773420333862,
+              "worst_bone": "LeftHandThumb2"
+            },
+            {
+              "assignment_max_matrix_error": 3.20878529548645,
+              "frame": 4,
+              "rotation_error_after_normalization": 1.9519800543785095,
+              "worst_bone": "LeftHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 2.123255133628845,
+              "frame": 5,
+              "rotation_error_after_normalization": 1.71481591463089,
+              "worst_bone": "RightHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 1.6883577704429626,
+              "frame": 6,
+              "rotation_error_after_normalization": 1.688357174396515,
+              "worst_bone": "LeftHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 1.8438096046447754,
+              "frame": 7,
+              "rotation_error_after_normalization": 1.8438093662261963,
+              "worst_bone": "LeftHandIndex2"
+            },
+            {
+              "assignment_max_matrix_error": 1.78628271818161,
+              "frame": 8,
+              "rotation_error_after_normalization": 1.7862828969955444,
+              "worst_bone": "LeftHandThumb2"
+            },
+            {
+              "assignment_max_matrix_error": 1.8318934440612793,
+              "frame": 9,
+              "rotation_error_after_normalization": 1.8318923711776733,
+              "worst_bone": "LeftHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 0.24688903987407684,
+              "frame": 10,
+              "rotation_error_after_normalization": 0.2468893975019455,
+              "worst_bone": "LeftHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 0.017232775688171387,
+              "frame": 11,
+              "rotation_error_after_normalization": 0.006680667400360107,
+              "worst_bone": "RightHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 0.005888581275939941,
+              "frame": 12,
+              "rotation_error_after_normalization": 0.005888521671295166,
+              "worst_bone": "RightHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 0.0033347606658935547,
+              "frame": 13,
+              "rotation_error_after_normalization": 0.0026204288005828857,
+              "worst_bone": "RightHandIndex3"
+            }
+          ]
+        },
+        "legacy_isolated": {
+          "max_assignment_error": 1.9199509620666504,
+          "max_mesh_step_source_units": 0.004925850743570589,
+          "max_playback_channel_error": 0.0,
+          "max_playback_order_mesh_rms_source_units": 0.0,
+          "negative_adjacent_quaternion_dots": 0,
+          "seam_mesh_rms_source_units": 0.0,
+          "stages": [
+            {
+              "assignment_max_matrix_error": 1.8954268097877502,
+              "frame": 1,
+              "rotation_error_after_normalization": 1.895425260066986,
+              "worst_bone": "LeftHandThumb2"
+            },
+            {
+              "assignment_max_matrix_error": 1.8971257209777832,
+              "frame": 2,
+              "rotation_error_after_normalization": 1.8971242308616638,
+              "worst_bone": "LeftHandThumb2"
+            },
+            {
+              "assignment_max_matrix_error": 1.9019333124160767,
+              "frame": 3,
+              "rotation_error_after_normalization": 1.9019322395324707,
+              "worst_bone": "LeftHandThumb2"
+            },
+            {
+              "assignment_max_matrix_error": 1.9084879159927368,
+              "frame": 4,
+              "rotation_error_after_normalization": 1.9084864854812622,
+              "worst_bone": "LeftHandThumb2"
+            },
+            {
+              "assignment_max_matrix_error": 1.914615273475647,
+              "frame": 5,
+              "rotation_error_after_normalization": 1.914613664150238,
+              "worst_bone": "LeftHandThumb2"
+            },
+            {
+              "assignment_max_matrix_error": 1.9186224937438965,
+              "frame": 6,
+              "rotation_error_after_normalization": 1.918621301651001,
+              "worst_bone": "LeftHandThumb2"
+            },
+            {
+              "assignment_max_matrix_error": 1.9199509620666504,
+              "frame": 7,
+              "rotation_error_after_normalization": 1.9199497699737549,
+              "worst_bone": "LeftHandThumb2"
+            },
+            {
+              "assignment_max_matrix_error": 1.9186224937438965,
+              "frame": 8,
+              "rotation_error_after_normalization": 1.918621301651001,
+              "worst_bone": "LeftHandThumb2"
+            },
+            {
+              "assignment_max_matrix_error": 1.91461580991745,
+              "frame": 9,
+              "rotation_error_after_normalization": 1.914613962173462,
+              "worst_bone": "LeftHandThumb2"
+            },
+            {
+              "assignment_max_matrix_error": 1.908488690853119,
+              "frame": 10,
+              "rotation_error_after_normalization": 1.9084869027137756,
+              "worst_bone": "LeftHandThumb2"
+            },
+            {
+              "assignment_max_matrix_error": 1.9019333720207214,
+              "frame": 11,
+              "rotation_error_after_normalization": 1.9019319415092468,
+              "worst_bone": "LeftHandThumb2"
+            },
+            {
+              "assignment_max_matrix_error": 1.8971257209777832,
+              "frame": 12,
+              "rotation_error_after_normalization": 1.8971242308616638,
+              "worst_bone": "LeftHandThumb2"
+            },
+            {
+              "assignment_max_matrix_error": 1.8954268097877502,
+              "frame": 13,
+              "rotation_error_after_normalization": 1.895425260066986,
+              "worst_bone": "LeftHandThumb2"
+            }
+          ]
+        },
+        "legacy_reverse": {
+          "max_assignment_error": 3.20878529548645,
+          "max_mesh_step_source_units": 1.0212878159147267,
+          "max_playback_channel_error": 0.0,
+          "max_playback_order_mesh_rms_source_units": 0.0,
+          "negative_adjacent_quaternion_dots": 17,
+          "seam_mesh_rms_source_units": 0.7578773710844826,
+          "stages": [
+            {
+              "assignment_max_matrix_error": 0.003335118293762207,
+              "frame": 1,
+              "rotation_error_after_normalization": 0.0026204288005828857,
+              "worst_bone": "RightHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 0.005892574787139893,
+              "frame": 2,
+              "rotation_error_after_normalization": 0.005892515182495117,
+              "worst_bone": "RightHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 0.01723194122314453,
+              "frame": 3,
+              "rotation_error_after_normalization": 0.006680667400360107,
+              "worst_bone": "RightHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 0.24688829481601715,
+              "frame": 4,
+              "rotation_error_after_normalization": 0.24688877165317535,
+              "worst_bone": "LeftHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 1.831893265247345,
+              "frame": 5,
+              "rotation_error_after_normalization": 1.831892490386963,
+              "worst_bone": "LeftHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 1.7862825989723206,
+              "frame": 6,
+              "rotation_error_after_normalization": 1.78628271818161,
+              "worst_bone": "LeftHandThumb2"
+            },
+            {
+              "assignment_max_matrix_error": 1.8438094854354858,
+              "frame": 7,
+              "rotation_error_after_normalization": 1.843809187412262,
+              "worst_bone": "LeftHandIndex2"
+            },
+            {
+              "assignment_max_matrix_error": 1.6883577704429626,
+              "frame": 8,
+              "rotation_error_after_normalization": 1.688357174396515,
+              "worst_bone": "LeftHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 2.123254895210266,
+              "frame": 9,
+              "rotation_error_after_normalization": 1.7148151397705078,
+              "worst_bone": "RightHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 3.20878529548645,
+              "frame": 10,
+              "rotation_error_after_normalization": 1.9519801139831543,
+              "worst_bone": "LeftHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 1.826078474521637,
+              "frame": 11,
+              "rotation_error_after_normalization": 1.8260778188705444,
+              "worst_bone": "LeftHandThumb2"
+            },
+            {
+              "assignment_max_matrix_error": 2.366984724998474,
+              "frame": 12,
+              "rotation_error_after_normalization": 1.9231335520744324,
+              "worst_bone": "LeftHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 1.8954268097877502,
+              "frame": 13,
+              "rotation_error_after_normalization": 1.895425260066986,
+              "worst_bone": "LeftHandThumb2"
+            }
+          ]
+        },
+        "parent_update_forward": {
+          "max_assignment_error": 7.636845111846924e-06,
+          "max_mesh_step_source_units": 0.002541369282475051,
+          "max_playback_channel_error": 0.0,
+          "max_playback_order_mesh_rms_source_units": 0.0,
+          "negative_adjacent_quaternion_dots": 0,
+          "seam_mesh_rms_source_units": 0.0,
+          "stages": [
+            {
+              "assignment_max_matrix_error": 7.5213611125946045e-06,
+              "frame": 1,
+              "rotation_error_after_normalization": 1.5914440155029297e-05,
+              "worst_bone": "RightLeg"
+            },
+            {
+              "assignment_max_matrix_error": 7.495284080505371e-06,
+              "frame": 2,
+              "rotation_error_after_normalization": 1.5795230865478516e-05,
+              "worst_bone": "RightLeg"
+            },
+            {
+              "assignment_max_matrix_error": 7.636845111846924e-06,
+              "frame": 3,
+              "rotation_error_after_normalization": 1.5854835510253906e-05,
+              "worst_bone": "RightLeg"
+            },
+            {
+              "assignment_max_matrix_error": 7.569789886474609e-06,
+              "frame": 4,
+              "rotation_error_after_normalization": 1.5854835510253906e-05,
+              "worst_bone": "RightLeg"
+            },
+            {
+              "assignment_max_matrix_error": 7.580965757369995e-06,
+              "frame": 5,
+              "rotation_error_after_normalization": 1.5854835510253906e-05,
+              "worst_bone": "RightLeg"
+            },
+            {
+              "assignment_max_matrix_error": 7.487833499908447e-06,
+              "frame": 6,
+              "rotation_error_after_normalization": 1.5854835510253906e-05,
+              "worst_bone": "RightLeg"
+            },
+            {
+              "assignment_max_matrix_error": 7.627531886100769e-06,
+              "frame": 7,
+              "rotation_error_after_normalization": 1.5854835510253906e-05,
+              "worst_bone": "RightLeg"
+            },
+            {
+              "assignment_max_matrix_error": 7.487833499908447e-06,
+              "frame": 8,
+              "rotation_error_after_normalization": 1.5854835510253906e-05,
+              "worst_bone": "RightLeg"
+            },
+            {
+              "assignment_max_matrix_error": 7.580965757369995e-06,
+              "frame": 9,
+              "rotation_error_after_normalization": 1.5854835510253906e-05,
+              "worst_bone": "RightLeg"
+            },
+            {
+              "assignment_max_matrix_error": 7.569789886474609e-06,
+              "frame": 10,
+              "rotation_error_after_normalization": 1.5854835510253906e-05,
+              "worst_bone": "RightLeg"
+            },
+            {
+              "assignment_max_matrix_error": 7.636845111846924e-06,
+              "frame": 11,
+              "rotation_error_after_normalization": 1.5854835510253906e-05,
+              "worst_bone": "RightLeg"
+            },
+            {
+              "assignment_max_matrix_error": 7.495284080505371e-06,
+              "frame": 12,
+              "rotation_error_after_normalization": 1.5795230865478516e-05,
+              "worst_bone": "RightLeg"
+            },
+            {
+              "assignment_max_matrix_error": 7.5213611125946045e-06,
+              "frame": 13,
+              "rotation_error_after_normalization": 1.5914440155029297e-05,
+              "worst_bone": "RightLeg"
+            }
+          ]
+        }
+      }
+    },
+    "run": {
+      "fps": 24,
+      "fps_base": 1.0,
+      "max_mesh_rms_against_explicit_forward_source_units": {
+        "explicit_forward": 0.0,
+        "explicit_reverse": 0.0,
+        "legacy_forward": 0.8915897506710325,
+        "legacy_isolated": 0.8855696050553636,
+        "legacy_reverse": 0.8316032568217604,
+        "parent_update_forward": 1.754761733264541e-06
+      },
+      "range": [
+        1,
+        17
+      ],
+      "source_endpoint_max_matrix_error": 0.0,
+      "source_order_max_matrix_error": 0.0,
+      "variants": {
+        "explicit_forward": {
+          "max_assignment_error": 7.674098014831543e-06,
+          "max_mesh_step_source_units": 0.32799311964177574,
+          "max_playback_channel_error": 0.0,
+          "max_playback_order_mesh_rms_source_units": 0.0,
+          "negative_adjacent_quaternion_dots": 0,
+          "seam_mesh_rms_source_units": 0.0,
+          "stages": [
+            {
+              "assignment_max_matrix_error": 3.56137752532959e-06,
+              "frame": 1,
+              "rotation_error_after_normalization": 1.722574234008789e-05,
+              "worst_bone": "RightLeg"
+            },
+            {
+              "assignment_max_matrix_error": 3.7103891372680664e-06,
+              "frame": 2,
+              "rotation_error_after_normalization": 1.71661376953125e-05,
+              "worst_bone": "RightToes"
+            },
+            {
+              "assignment_max_matrix_error": 3.829598426818848e-06,
+              "frame": 3,
+              "rotation_error_after_normalization": 1.704692840576172e-05,
+              "worst_bone": "RightUpLeg"
+            },
+            {
+              "assignment_max_matrix_error": 3.4570693969726562e-06,
+              "frame": 4,
+              "rotation_error_after_normalization": 1.6987323760986328e-05,
+              "worst_bone": "RightToes"
+            },
+            {
+              "assignment_max_matrix_error": 1.0132789611816406e-06,
+              "frame": 5,
+              "rotation_error_after_normalization": 1.71661376953125e-05,
+              "worst_bone": "RightToes"
+            },
+            {
+              "assignment_max_matrix_error": 3.933906555175781e-06,
+              "frame": 6,
+              "rotation_error_after_normalization": 1.6987323760986328e-05,
+              "worst_bone": "RightToes"
+            },
+            {
+              "assignment_max_matrix_error": 5.364418029785156e-06,
+              "frame": 7,
+              "rotation_error_after_normalization": 1.6927719116210938e-05,
+              "worst_bone": "RightToes"
+            },
+            {
+              "assignment_max_matrix_error": 3.7997961044311523e-06,
+              "frame": 8,
+              "rotation_error_after_normalization": 1.6987323760986328e-05,
+              "worst_bone": "RightToes"
+            },
+            {
+              "assignment_max_matrix_error": 2.1830201148986816e-06,
+              "frame": 9,
+              "rotation_error_after_normalization": 1.710653305053711e-05,
+              "worst_bone": "RightUpLeg"
+            },
+            {
+              "assignment_max_matrix_error": 1.3262033462524414e-06,
+              "frame": 10,
+              "rotation_error_after_normalization": 1.710653305053711e-05,
+              "worst_bone": "RightToes"
+            },
+            {
+              "assignment_max_matrix_error": 1.773238182067871e-06,
+              "frame": 11,
+              "rotation_error_after_normalization": 1.710653305053711e-05,
+              "worst_bone": "RightUpLeg"
+            },
+            {
+              "assignment_max_matrix_error": 2.555549144744873e-06,
+              "frame": 12,
+              "rotation_error_after_normalization": 1.710653305053711e-05,
+              "worst_bone": "RightToes"
+            },
+            {
+              "assignment_max_matrix_error": 3.1404197216033936e-06,
+              "frame": 13,
+              "rotation_error_after_normalization": 1.7344951629638672e-05,
+              "worst_bone": "RightFoot"
+            },
+            {
+              "assignment_max_matrix_error": 7.674098014831543e-06,
+              "frame": 14,
+              "rotation_error_after_normalization": 1.7583370208740234e-05,
+              "worst_bone": "RightToes"
+            },
+            {
+              "assignment_max_matrix_error": 4.693865776062012e-06,
+              "frame": 15,
+              "rotation_error_after_normalization": 1.7523765563964844e-05,
+              "worst_bone": "RightFoot"
+            },
+            {
+              "assignment_max_matrix_error": 4.127621650695801e-06,
+              "frame": 16,
+              "rotation_error_after_normalization": 1.728534698486328e-05,
+              "worst_bone": "RightLeg"
+            },
+            {
+              "assignment_max_matrix_error": 3.56137752532959e-06,
+              "frame": 17,
+              "rotation_error_after_normalization": 1.722574234008789e-05,
+              "worst_bone": "RightLeg"
+            }
+          ]
+        },
+        "explicit_reverse": {
+          "max_assignment_error": 7.674098014831543e-06,
+          "max_mesh_step_source_units": 0.32799311964177574,
+          "max_playback_channel_error": 0.0,
+          "max_playback_order_mesh_rms_source_units": 0.0,
+          "negative_adjacent_quaternion_dots": 0,
+          "seam_mesh_rms_source_units": 0.0,
+          "stages": [
+            {
+              "assignment_max_matrix_error": 3.56137752532959e-06,
+              "frame": 1,
+              "rotation_error_after_normalization": 1.722574234008789e-05,
+              "worst_bone": "RightLeg"
+            },
+            {
+              "assignment_max_matrix_error": 3.7103891372680664e-06,
+              "frame": 2,
+              "rotation_error_after_normalization": 1.71661376953125e-05,
+              "worst_bone": "RightToes"
+            },
+            {
+              "assignment_max_matrix_error": 3.829598426818848e-06,
+              "frame": 3,
+              "rotation_error_after_normalization": 1.704692840576172e-05,
+              "worst_bone": "RightUpLeg"
+            },
+            {
+              "assignment_max_matrix_error": 3.4570693969726562e-06,
+              "frame": 4,
+              "rotation_error_after_normalization": 1.6987323760986328e-05,
+              "worst_bone": "RightToes"
+            },
+            {
+              "assignment_max_matrix_error": 1.0132789611816406e-06,
+              "frame": 5,
+              "rotation_error_after_normalization": 1.71661376953125e-05,
+              "worst_bone": "RightToes"
+            },
+            {
+              "assignment_max_matrix_error": 3.933906555175781e-06,
+              "frame": 6,
+              "rotation_error_after_normalization": 1.6987323760986328e-05,
+              "worst_bone": "RightToes"
+            },
+            {
+              "assignment_max_matrix_error": 5.364418029785156e-06,
+              "frame": 7,
+              "rotation_error_after_normalization": 1.6927719116210938e-05,
+              "worst_bone": "RightToes"
+            },
+            {
+              "assignment_max_matrix_error": 3.7997961044311523e-06,
+              "frame": 8,
+              "rotation_error_after_normalization": 1.6987323760986328e-05,
+              "worst_bone": "RightToes"
+            },
+            {
+              "assignment_max_matrix_error": 2.1830201148986816e-06,
+              "frame": 9,
+              "rotation_error_after_normalization": 1.710653305053711e-05,
+              "worst_bone": "RightUpLeg"
+            },
+            {
+              "assignment_max_matrix_error": 1.3262033462524414e-06,
+              "frame": 10,
+              "rotation_error_after_normalization": 1.710653305053711e-05,
+              "worst_bone": "RightToes"
+            },
+            {
+              "assignment_max_matrix_error": 1.773238182067871e-06,
+              "frame": 11,
+              "rotation_error_after_normalization": 1.710653305053711e-05,
+              "worst_bone": "RightUpLeg"
+            },
+            {
+              "assignment_max_matrix_error": 2.555549144744873e-06,
+              "frame": 12,
+              "rotation_error_after_normalization": 1.710653305053711e-05,
+              "worst_bone": "RightToes"
+            },
+            {
+              "assignment_max_matrix_error": 3.1404197216033936e-06,
+              "frame": 13,
+              "rotation_error_after_normalization": 1.7344951629638672e-05,
+              "worst_bone": "RightFoot"
+            },
+            {
+              "assignment_max_matrix_error": 7.674098014831543e-06,
+              "frame": 14,
+              "rotation_error_after_normalization": 1.7583370208740234e-05,
+              "worst_bone": "RightToes"
+            },
+            {
+              "assignment_max_matrix_error": 4.693865776062012e-06,
+              "frame": 15,
+              "rotation_error_after_normalization": 1.7523765563964844e-05,
+              "worst_bone": "RightFoot"
+            },
+            {
+              "assignment_max_matrix_error": 4.127621650695801e-06,
+              "frame": 16,
+              "rotation_error_after_normalization": 1.728534698486328e-05,
+              "worst_bone": "RightLeg"
+            },
+            {
+              "assignment_max_matrix_error": 3.56137752532959e-06,
+              "frame": 17,
+              "rotation_error_after_normalization": 1.722574234008789e-05,
+              "worst_bone": "RightLeg"
+            }
+          ]
+        },
+        "legacy_forward": {
+          "max_assignment_error": 2.9672811031341553,
+          "max_mesh_step_source_units": 1.0875472417924412,
+          "max_playback_channel_error": 0.0,
+          "max_playback_order_mesh_rms_source_units": 0.0,
+          "negative_adjacent_quaternion_dots": 25,
+          "seam_mesh_rms_source_units": 0.7967362600086094,
+          "stages": [
+            {
+              "assignment_max_matrix_error": 1.8663421273231506,
+              "frame": 1,
+              "rotation_error_after_normalization": 1.866340160369873,
+              "worst_bone": "LeftHandThumb1"
+            },
+            {
+              "assignment_max_matrix_error": 2.9672811031341553,
+              "frame": 2,
+              "rotation_error_after_normalization": 1.9488881826400757,
+              "worst_bone": "RightHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 1.9677119851112366,
+              "frame": 3,
+              "rotation_error_after_normalization": 1.9677107334136963,
+              "worst_bone": "LeftForeArm"
+            },
+            {
+              "assignment_max_matrix_error": 1.9385026097297668,
+              "frame": 4,
+              "rotation_error_after_normalization": 1.698606252670288,
+              "worst_bone": "LeftHandIndex2"
+            },
+            {
+              "assignment_max_matrix_error": 1.5560361742973328,
+              "frame": 5,
+              "rotation_error_after_normalization": 1.5560344457626343,
+              "worst_bone": "LeftHand"
+            },
+            {
+              "assignment_max_matrix_error": 1.8760567903518677,
+              "frame": 6,
+              "rotation_error_after_normalization": 1.8760539889335632,
+              "worst_bone": "LeftHandThumb2"
+            },
+            {
+              "assignment_max_matrix_error": 1.9592157006263733,
+              "frame": 7,
+              "rotation_error_after_normalization": 1.9592149257659912,
+              "worst_bone": "LeftHandIndex2"
+            },
+            {
+              "assignment_max_matrix_error": 1.8274168372154236,
+              "frame": 8,
+              "rotation_error_after_normalization": 1.827414870262146,
+              "worst_bone": "RightHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 0.49611519277095795,
+              "frame": 9,
+              "rotation_error_after_normalization": 0.4961152523756027,
+              "worst_bone": "RightHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 0.5618928968906403,
+              "frame": 10,
+              "rotation_error_after_normalization": 0.5618929862976074,
+              "worst_bone": "LeftHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 0.6757725477218628,
+              "frame": 11,
+              "rotation_error_after_normalization": 0.4314707890152931,
+              "worst_bone": "RightHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 0.5664286650717258,
+              "frame": 12,
+              "rotation_error_after_normalization": 0.5664297975599766,
+              "worst_bone": "LeftToes"
+            },
+            {
+              "assignment_max_matrix_error": 1.2169888615608215,
+              "frame": 13,
+              "rotation_error_after_normalization": 1.216993510723114,
+              "worst_bone": "RightToes"
+            },
+            {
+              "assignment_max_matrix_error": 1.1203359067440033,
+              "frame": 14,
+              "rotation_error_after_normalization": 1.12033711373806,
+              "worst_bone": "RightToes"
+            },
+            {
+              "assignment_max_matrix_error": 0.8186682164669037,
+              "frame": 15,
+              "rotation_error_after_normalization": 0.8186700344085693,
+              "worst_bone": "RightToes"
+            },
+            {
+              "assignment_max_matrix_error": 0.5035332217812538,
+              "frame": 16,
+              "rotation_error_after_normalization": 0.5035320594906807,
+              "worst_bone": "LeftHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 0.536199826747179,
+              "frame": 17,
+              "rotation_error_after_normalization": 0.5361995585262775,
+              "worst_bone": "RightHandIndex3"
+            }
+          ]
+        },
+        "legacy_isolated": {
+          "max_assignment_error": 2.478488028049469,
+          "max_mesh_step_source_units": 0.5621219708809364,
+          "max_playback_channel_error": 0.0,
+          "max_playback_order_mesh_rms_source_units": 0.0,
+          "negative_adjacent_quaternion_dots": 2,
+          "seam_mesh_rms_source_units": 0.0,
+          "stages": [
+            {
+              "assignment_max_matrix_error": 1.8663421273231506,
+              "frame": 1,
+              "rotation_error_after_normalization": 1.866340160369873,
+              "worst_bone": "LeftHandThumb1"
+            },
+            {
+              "assignment_max_matrix_error": 1.8989825248718262,
+              "frame": 2,
+              "rotation_error_after_normalization": 1.8989832997322083,
+              "worst_bone": "LeftToes"
+            },
+            {
+              "assignment_max_matrix_error": 1.979732096195221,
+              "frame": 3,
+              "rotation_error_after_normalization": 1.979729950428009,
+              "worst_bone": "LeftHandIndex1"
+            },
+            {
+              "assignment_max_matrix_error": 2.478488028049469,
+              "frame": 4,
+              "rotation_error_after_normalization": 1.926132082939148,
+              "worst_bone": "LeftHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 1.927479326725006,
+              "frame": 5,
+              "rotation_error_after_normalization": 1.6550930738449097,
+              "worst_bone": "LeftHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 1.7910714745521545,
+              "frame": 6,
+              "rotation_error_after_normalization": 1.7910704612731934,
+              "worst_bone": "RightHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 1.9666380286216736,
+              "frame": 7,
+              "rotation_error_after_normalization": 1.9666376113891602,
+              "worst_bone": "RightHandIndex1"
+            },
+            {
+              "assignment_max_matrix_error": 2.030931293964386,
+              "frame": 8,
+              "rotation_error_after_normalization": 1.9857916235923767,
+              "worst_bone": "RightHandThumb2"
+            },
+            {
+              "assignment_max_matrix_error": 2.216358795762062,
+              "frame": 9,
+              "rotation_error_after_normalization": 1.9704872369766235,
+              "worst_bone": "RightHandThumb2"
+            },
+            {
+              "assignment_max_matrix_error": 2.0326999872922897,
+              "frame": 10,
+              "rotation_error_after_normalization": 1.9322440028190613,
+              "worst_bone": "RightHandThumb2"
+            },
+            {
+              "assignment_max_matrix_error": 1.9613885283470154,
+              "frame": 11,
+              "rotation_error_after_normalization": 1.9613884091377258,
+              "worst_bone": "RightHandIndex1"
+            },
+            {
+              "assignment_max_matrix_error": 1.8707001209259033,
+              "frame": 12,
+              "rotation_error_after_normalization": 1.870698869228363,
+              "worst_bone": "LeftHandThumb1"
+            },
+            {
+              "assignment_max_matrix_error": 1.8382121324539185,
+              "frame": 13,
+              "rotation_error_after_normalization": 1.6445701718330383,
+              "worst_bone": "LeftHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 2.3529045581817627,
+              "frame": 14,
+              "rotation_error_after_normalization": 1.890671193599701,
+              "worst_bone": "LeftHandIndex2"
+            },
+            {
+              "assignment_max_matrix_error": 1.9834583401679993,
+              "frame": 15,
+              "rotation_error_after_normalization": 1.9834594130516052,
+              "worst_bone": "LeftToes"
+            },
+            {
+              "assignment_max_matrix_error": 1.8909704089164734,
+              "frame": 16,
+              "rotation_error_after_normalization": 1.8909708261489868,
+              "worst_bone": "LeftToes"
+            },
+            {
+              "assignment_max_matrix_error": 1.8663421273231506,
+              "frame": 17,
+              "rotation_error_after_normalization": 1.866340160369873,
+              "worst_bone": "LeftHandThumb1"
+            }
+          ]
+        },
+        "legacy_reverse": {
+          "max_assignment_error": 2.984205722808838,
+          "max_mesh_step_source_units": 0.9592502934573384,
+          "max_playback_channel_error": 0.0,
+          "max_playback_order_mesh_rms_source_units": 0.0,
+          "negative_adjacent_quaternion_dots": 25,
+          "seam_mesh_rms_source_units": 0.7885948147455089,
+          "stages": [
+            {
+              "assignment_max_matrix_error": 0.612731009721756,
+              "frame": 1,
+              "rotation_error_after_normalization": 0.6127317249774933,
+              "worst_bone": "LeftToes"
+            },
+            {
+              "assignment_max_matrix_error": 0.493384025990963,
+              "frame": 2,
+              "rotation_error_after_normalization": 0.493384025990963,
+              "worst_bone": "LeftLeg"
+            },
+            {
+              "assignment_max_matrix_error": 0.513202503323555,
+              "frame": 3,
+              "rotation_error_after_normalization": 0.513201966881752,
+              "worst_bone": "LeftHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 0.7250707447528839,
+              "frame": 4,
+              "rotation_error_after_normalization": 0.7250694334506989,
+              "worst_bone": "LeftHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 1.5030648708343506,
+              "frame": 5,
+              "rotation_error_after_normalization": 1.5030665397644043,
+              "worst_bone": "LeftToes"
+            },
+            {
+              "assignment_max_matrix_error": 1.0015654265880585,
+              "frame": 6,
+              "rotation_error_after_normalization": 1.0015664398670197,
+              "worst_bone": "LeftToes"
+            },
+            {
+              "assignment_max_matrix_error": 0.64510178565979,
+              "frame": 7,
+              "rotation_error_after_normalization": 0.6451019942760468,
+              "worst_bone": "LeftHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 0.49791157245635986,
+              "frame": 8,
+              "rotation_error_after_normalization": 0.4979117810726166,
+              "worst_bone": "LeftFoot"
+            },
+            {
+              "assignment_max_matrix_error": 0.4837617725133896,
+              "frame": 9,
+              "rotation_error_after_normalization": 0.48376496136188507,
+              "worst_bone": "RightToes"
+            },
+            {
+              "assignment_max_matrix_error": 1.7800943851470947,
+              "frame": 10,
+              "rotation_error_after_normalization": 1.7800925374031067,
+              "worst_bone": "RightHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 1.945785105228424,
+              "frame": 11,
+              "rotation_error_after_normalization": 1.9457836747169495,
+              "worst_bone": "LeftHandThumb2"
+            },
+            {
+              "assignment_max_matrix_error": 1.8758835792541504,
+              "frame": 12,
+              "rotation_error_after_normalization": 1.8758820295333862,
+              "worst_bone": "LeftHandThumb2"
+            },
+            {
+              "assignment_max_matrix_error": 1.6086583137512207,
+              "frame": 13,
+              "rotation_error_after_normalization": 1.6086658239364624,
+              "worst_bone": "RightToes"
+            },
+            {
+              "assignment_max_matrix_error": 1.8514655828475952,
+              "frame": 14,
+              "rotation_error_after_normalization": 1.7977812886238098,
+              "worst_bone": "LeftHandIndex2"
+            },
+            {
+              "assignment_max_matrix_error": 1.9705410599708557,
+              "frame": 15,
+              "rotation_error_after_normalization": 1.9705395698547363,
+              "worst_bone": "LeftForeArm"
+            },
+            {
+              "assignment_max_matrix_error": 2.984205722808838,
+              "frame": 16,
+              "rotation_error_after_normalization": 1.9433377385139465,
+              "worst_bone": "RightHandIndex3"
+            },
+            {
+              "assignment_max_matrix_error": 1.8663421273231506,
+              "frame": 17,
+              "rotation_error_after_normalization": 1.866340160369873,
+              "worst_bone": "LeftHandThumb1"
+            }
+          ]
+        },
+        "parent_update_forward": {
+          "max_assignment_error": 6.616115570068359e-06,
+          "max_mesh_step_source_units": 0.32799309262996945,
+          "max_playback_channel_error": 0.0,
+          "max_playback_order_mesh_rms_source_units": 0.0,
+          "negative_adjacent_quaternion_dots": 0,
+          "seam_mesh_rms_source_units": 0.0,
+          "stages": [
+            {
+              "assignment_max_matrix_error": 3.337860107421875e-06,
+              "frame": 1,
+              "rotation_error_after_normalization": 1.722574234008789e-05,
+              "worst_bone": "RightLeg"
+            },
+            {
+              "assignment_max_matrix_error": 3.5390257835388184e-06,
+              "frame": 2,
+              "rotation_error_after_normalization": 1.71661376953125e-05,
+              "worst_bone": "RightUpLeg"
+            },
+            {
+              "assignment_max_matrix_error": 3.7997961044311523e-06,
+              "frame": 3,
+              "rotation_error_after_normalization": 1.704692840576172e-05,
+              "worst_bone": "RightUpLeg"
+            },
+            {
+              "assignment_max_matrix_error": 3.509223461151123e-06,
+              "frame": 4,
+              "rotation_error_after_normalization": 1.6987323760986328e-05,
+              "worst_bone": "RightLeg"
+            },
+            {
+              "assignment_max_matrix_error": 9.5367431640625e-07,
+              "frame": 5,
+              "rotation_error_after_normalization": 1.71661376953125e-05,
+              "worst_bone": "RightUpLeg"
+            },
+            {
+              "assignment_max_matrix_error": 3.084540367126465e-06,
+              "frame": 6,
+              "rotation_error_after_normalization": 1.6987323760986328e-05,
+              "worst_bone": "RightFoot"
+            },
+            {
+              "assignment_max_matrix_error": 4.235655069351196e-06,
+              "frame": 7,
+              "rotation_error_after_normalization": 1.6927719116210938e-05,
+              "worst_bone": "RightUpLeg"
+            },
+            {
+              "assignment_max_matrix_error": 3.509223461151123e-06,
+              "frame": 8,
+              "rotation_error_after_normalization": 1.6987323760986328e-05,
+              "worst_bone": "RightUpLeg"
+            },
+            {
+              "assignment_max_matrix_error": 2.175569534301758e-06,
+              "frame": 9,
+              "rotation_error_after_normalization": 1.710653305053711e-05,
+              "worst_bone": "RightUpLeg"
+            },
+            {
+              "assignment_max_matrix_error": 1.3224780559539795e-06,
+              "frame": 10,
+              "rotation_error_after_normalization": 1.710653305053711e-05,
+              "worst_bone": "RightUpLeg"
+            },
+            {
+              "assignment_max_matrix_error": 1.7881393432617188e-06,
+              "frame": 11,
+              "rotation_error_after_normalization": 1.710653305053711e-05,
+              "worst_bone": "RightUpLeg"
+            },
+            {
+              "assignment_max_matrix_error": 2.518296241760254e-06,
+              "frame": 12,
+              "rotation_error_after_normalization": 1.710653305053711e-05,
+              "worst_bone": "RightLeg"
+            },
+            {
+              "assignment_max_matrix_error": 3.3676624298095703e-06,
+              "frame": 13,
+              "rotation_error_after_normalization": 1.7344951629638672e-05,
+              "worst_bone": "RightLeg"
+            },
+            {
+              "assignment_max_matrix_error": 6.616115570068359e-06,
+              "frame": 14,
+              "rotation_error_after_normalization": 1.7583370208740234e-05,
+              "worst_bone": "RightUpLeg"
+            },
+            {
+              "assignment_max_matrix_error": 4.0978193283081055e-06,
+              "frame": 15,
+              "rotation_error_after_normalization": 1.7404556274414062e-05,
+              "worst_bone": "RightFoot"
+            },
+            {
+              "assignment_max_matrix_error": 3.591179847717285e-06,
+              "frame": 16,
+              "rotation_error_after_normalization": 1.728534698486328e-05,
+              "worst_bone": "RightLeg"
+            },
+            {
+              "assignment_max_matrix_error": 3.337860107421875e-06,
+              "frame": 17,
+              "rotation_error_after_normalization": 1.722574234008789e-05,
+              "worst_bone": "RightLeg"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "provider_calls": 0,
+  "status": "DIAGNOSTIC_ONLY"
+}

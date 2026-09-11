@@ -1,0 +1,39 @@
+{
+  "status": "DIAGNOSIS_PROVEN_IMPLEMENTATION_PENDING",
+  "production_qualification": "UNCHANGED_YELLOW",
+  "run": "parent-evaluation-v4",
+  "provider_calls": 0,
+  "known_api_cost_usd": 0,
+  "independent_process_repeat_matches": true,
+  "first_corruption_stage": "target pose-matrix assignment before keyframe insertion",
+  "cause": "Child pose matrix is converted with stale evaluated parent matrix; updating only after the whole chain is too late.",
+  "prototype": "Explicit current-frame parent matrices via Bone.convert_local_to_pose(invert=True), keeping legacy desired world rotations.",
+  "control": "Dependency-graph update immediately after each bone assignment agrees within 1e-5 source units RMS.",
+  "qualification_not_performed": [
+    "new production build",
+    "persistence/revision/replay requalification",
+    "new source admission",
+    "Director full playback acceptance",
+    "paid evaluation"
+  ],
+  "clips": {
+    "idle": {
+      "old_peak_rms_m": 0.34820168568290955,
+      "diagnostic_peak_rms_m": 0.002631129248682508,
+      "diagnostic_loop_seam_rms_m": 0.0,
+      "source_fps": 30
+    },
+    "run": {
+      "old_peak_rms_m": 0.6371683416474382,
+      "diagnostic_peak_rms_m": 0.16094414420091124,
+      "diagnostic_loop_seam_rms_m": 0.0,
+      "source_fps": 24
+    },
+    "jump": {
+      "old_peak_rms_m": 0.4794530458091372,
+      "diagnostic_peak_rms_m": 0.001247025016043987,
+      "diagnostic_loop_seam_rms_m": 0.0,
+      "source_fps": 24
+    }
+  }
+}

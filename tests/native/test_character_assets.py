@@ -47,3 +47,15 @@ def test_character_rejects_wrong_digest_and_revision_scope(tmp_path):
     bad=[OPS[0],{"op":"set_character_action","entity_id":"character_01","from":"idle","to":"jump"}]
     status,_=job(tmp_path,"bad-operation","revise_character",parent_native=str(build/"scene.blend"),operations=bad)
     assert not status["ok"] and "frozen skin and action" in status["error"]
+
+
+def test_authored_jump_is_explicit_and_persists(tmp_path):
+    template=json.loads((ROOT/"feasibility/3d/3d-03-1/scene.json").read_text()); plan=resolved_character_plan(template,STAGED)
+    status,build=job(tmp_path,"authored-build","build_character",plan=plan); assert status["ok"],status
+    before=json.loads((build/"snapshot.json").read_text()); assert validate_character_baseline(before,template)["passed"]
+    jump=before["actions"]["character_action_jump"]["custom_properties"]
+    assert jump["mf_clip_semantics"]=="authored_full_jump"
+    assert jump["mf_source_role"]=="pose_reference_only"
+    assert jump["mf_authored_peak_height_m"]==.34
+    status,reopen=job(tmp_path,"authored-reopen","inspect",parent_native=str(build/"scene.blend")); assert status["ok"],status
+    assert compare_snapshots(before,json.loads((reopen/"snapshot.json").read_text()))["passed"]

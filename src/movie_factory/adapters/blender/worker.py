@@ -15,8 +15,7 @@ import time
 import traceback
 
 import bpy
-from mathutils import Vector
-from mathutils import Matrix
+from mathutils import Matrix,Quaternion,Vector
 
 
 def load_inspector():
@@ -238,8 +237,6 @@ def import_character_action(spec, clip_name, target_armature, target_mesh):
     if source_names!=target_names:
         raise ValueError("Animation skeleton does not exactly match the canonical character skeleton")
     assign_character_action(source_armature,source)
-    action=bpy.data.actions.new("character_action_"+clip_name)
-    target_armature.animation_data_create(); target_armature.animation_data.action=action
     # Animation-only FBXs can encode clip-specific bind/rest transforms. Raw
     # curve copying therefore produces plausible metadata but visibly broken
     # limbs on the model's canonical rig. Evaluate the verified source rig and
@@ -248,44 +245,144 @@ def import_character_action(spec, clip_name, target_armature, target_mesh):
     if not deform_names or not deform_names<=target_names:
         raise ValueError("Character mesh weights do not map to the canonical skeleton")
     ordered=sorted((bone for bone in target_armature.pose.bones if bone.name in deform_names),key=lambda bone:len(bone.parent_recursive))
+    full_order=sorted(target_armature.pose.bones,key=lambda bone:len(bone.parent_recursive))
     scene=bpy.context.scene; first,last=(int(round(value)) for value in source.frame_range)
     source_to_target=target_armature.matrix_world.inverted()@source_armature.matrix_world
+    source_fps=scene.render.fps/scene.render.fps_base
+    source_rest={bone.name:(source_to_target@bone.matrix_local).copy() for bone in source_armature.data.bones}
+    target_rest={bone.name:bone.bone.matrix_local.copy() for bone in full_order}
+    # Capture the complete source before touching the target. Blender pose
+    # matrices are mutable dependency-graph values, so every matrix is copied.
+    captured={}
     for frame in range(first,last+1):
         scene.frame_set(frame); bpy.context.view_layer.update()
+        captured[frame]={name:(source_to_target@source_armature.pose.bones[name].matrix).copy() for name in source_names}
+
+    action=bpy.data.actions.new("character_action_"+clip_name)
+    assign_character_action(target_armature,action)
+    solved_frames={}; floor_z={}
+    for frame in range(first,last+1):
         target_armature.location=(0,0,0)
-        source_poses={name:(source_to_target@source_armature.pose.bones[name].matrix).copy() for name in source_names}
+        source_poses=captured[frame]
         desired={}
         for bone in ordered:
             source_pose=source_poses[bone.name]
             rotation=source_pose.to_quaternion().normalized().to_matrix().to_4x4()
             if bone.parent and bone.parent.name in desired:
-                parent_rest=bone.parent.bone.matrix_local
-                local_rest=parent_rest.inverted()@bone.bone.matrix_local
+                parent_rest=target_rest[bone.parent.name]
+                local_rest=parent_rest.inverted()@target_rest[bone.name]
                 location=desired[bone.parent.name]@local_rest.translation
             else:
-                source_rest=source_to_target@source_armature.data.bones[bone.name].matrix_local
-                location=bone.bone.head_local+(source_pose.translation-source_rest.translation)
+                location=bone.bone.head_local+(source_pose.translation-source_rest[bone.name].translation)
             desired[bone.name]=Matrix.Translation(location)@rotation
-        for bone in ordered:
-            bone.rotation_mode="QUATERNION"; bone.matrix=desired[bone.name]
+
+        # Solve every bone against its parent pose from this frame. Assigning
+        # bone.matrix across the hierarchy and updating only at the end makes
+        # Blender derive child bases from stale parent poses.
+        actual={}; rotations={}
+        for bone in full_order:
+            parent_args={"parent_matrix":actual[bone.parent.name],
+                         "parent_matrix_local":target_rest[bone.parent.name]} if bone.parent else {}
+            if bone.name in desired:
+                raw_basis=bone.bone.convert_local_to_pose(
+                    desired[bone.name],target_rest[bone.name],invert=True,**parent_args)
+                rotation=raw_basis.to_quaternion().normalized()
+                basis=rotation.to_matrix().to_4x4()
+                rotations[bone.name]=rotation
+            else:
+                basis=Matrix.Identity(4)
+            bone.rotation_mode="QUATERNION"; bone.matrix_basis=basis
+            actual[bone.name]=bone.bone.convert_local_to_pose(
+                basis,target_rest[bone.name],**parent_args)
         bpy.context.view_layer.update()
-        rotations={bone.name:bone.rotation_quaternion.copy() for bone in ordered}
-        for bone in ordered:
-            bone.location=(0,0,0); bone.scale=(1,1,1); bone.rotation_quaternion=rotations[bone.name]
-        bpy.context.view_layer.update()
-        low,_=evaluated_bounds([target_mesh]); target_armature.location.z=-low[2]
+        low,_=evaluated_bounds([target_mesh]); floor_z[frame]=low[2]
+        solved_frames[frame]=rotations
+
+    # Equivalent quaternions q and -q represent the same orientation. Keep a
+    # consistent sign so interpolation cannot take the long path between keys.
+    for bone in ordered:
+        previous=None
+        for frame in range(first,last+1):
+            rotation=solved_frames[frame][bone.name]
+            if previous is not None and rotation.dot(previous)<0: rotation.negate()
+            previous=rotation.copy()
+
+    # Use one placement offset for the whole clip. This preserves any vertical
+    # source trajectory; per-frame floor snapping would erase an airborne phase.
+    root_z=-min(floor_z.values())
+    for frame in range(first,last+1):
+        scene.frame_set(frame)
+        for bone in full_order:
+            bone.rotation_mode="QUATERNION"; bone.location=(0,0,0); bone.scale=(1,1,1)
+            bone.rotation_quaternion=solved_frames[frame][bone.name] if bone.name in deform_names else (1,0,0,0)
+        target_armature.location=(0,0,root_z)
         bpy.context.view_layer.update()
         for bone in ordered:
             bone.keyframe_insert(data_path="rotation_quaternion",frame=frame,group=bone.name)
         target_armature.keyframe_insert(data_path="location",frame=frame,group="grounding")
     for curve in action_channels(action):
         for key in curve.keyframe_points: key.interpolation="LINEAR"
-    action["mf_id"]=action.name; action["mf_clip_name"]=clip_name; action["mf_source_sha256"]=spec["sha256"]; action.use_fake_user=True
+    action["mf_id"]=action.name; action["mf_clip_name"]=clip_name; action["mf_source_sha256"]=spec["sha256"]
+    action["mf_source_fps"]=source_fps; action["mf_source_frame_start"]=first; action["mf_source_frame_end"]=last
+    action["mf_transfer_method"]="explicit_parent_pose_rotation_bake_v2"
+    action["mf_clip_semantics"]="loop" if clip_name in {"idle","run"} else "source_pose_reference"
+    action["mf_root_motion_policy"]="static_clip_floor_offset_preserve_vertical_v1"; action.use_fake_user=True
     target_armature.animation_data.action=None
     for obj in objects: bpy.data.objects.remove(obj,do_unlink=True)
     for imported in actions:
         bpy.data.actions.remove(imported)
     return action
+
+
+def author_character_jump(armature,mesh,idle,jump,world_height_m,character_scale):
+    """Create the fixed 3D-03.1 jump from admitted idle and jump poses."""
+    if world_height_m!=.34 or len(character_scale)!=3 or max(character_scale)-min(character_scale)>1e-12:
+        raise ValueError("Authored jump parameters do not match the frozen 3D-03.1 contract")
+    weighted={group.name for group in mesh.vertex_groups}
+    def rotations(action,frame):
+        values={name:[None]*4 for name in weighted}
+        for curve in action_channels(action):
+            if not curve.data_path.startswith('pose.bones['): continue
+            name=curve.data_path.split('"')[1]
+            if name in values and curve.array_index<4: values[name][curve.array_index]=curve.evaluate(frame)
+        if any(any(value is None for value in quaternion) for quaternion in values.values()):
+            raise ValueError("Authored jump reference action lacks quaternion channels")
+        return {name:Quaternion(values[name]) for name in values}
+    idle_values=rotations(idle,1); jump_values={frame:rotations(jump,frame) for frame in range(1,14)}
+    weights=(0,.35,.75,1,.85,.65,.55,.65,.85,1,.75,.35,0)
+    heights=(0,0,.03,.10,.20,.29,.34,.29,.20,.10,.03,0,0)
+    pose_values={}; root_values={}
+    assign_character_action(armature,jump)
+    for frame,(weight,height) in enumerate(zip(weights,heights),1):
+        scene=bpy.context.scene; scene.frame_set(frame)
+        frame_values={}
+        for bone in armature.pose.bones:
+            bone.location=(0,0,0); bone.scale=(1,1,1); bone.rotation_mode="QUATERNION"
+            if bone.name in weighted:
+                start=idle_values[bone.name].copy(); reference=jump_values[frame][bone.name].copy()
+                if start.dot(reference)<0: reference.negate()
+                value=start.slerp(reference,weight).normalized()
+                bone.rotation_quaternion=value; frame_values[bone.name]=value.copy()
+            else:
+                bone.rotation_quaternion=(1,0,0,0)
+        armature.location=(0,0,0); bpy.context.view_layer.update()
+        low,_=evaluated_bounds([mesh])
+        armature.location.z=(-low[2]+height)/character_scale[2]
+        bpy.context.view_layer.update(); pose_values[frame]=frame_values; root_values[frame]=armature.location.copy()
+    for curve in action_channels(jump):
+        if curve.data_path=="location": samples={frame:root[curve.array_index] for frame,root in root_values.items()}
+        else:
+            name=curve.data_path.split('"')[1]
+            samples={frame:value[name][curve.array_index] for frame,value in pose_values.items()}
+        for key in curve.keyframe_points:
+            frame=int(round(key.co[0])); key.co[1]=samples[frame]
+            key.handle_left[1]=key.co[1]; key.handle_right[1]=key.co[1]; key.interpolation="LINEAR"
+        curve.update()
+    jump["mf_clip_semantics"]="authored_full_jump"
+    jump["mf_authored_motion_policy"]="idle_to_admitted_pose_takeoff_airborne_landing_v1"
+    jump["mf_authored_peak_height_m"]=world_height_m
+    jump["mf_source_role"]="pose_reference_only"
+    jump["mf_root_motion_policy"]="authored_pose_grounding_plus_vertical_arc_v1"
 
 
 def assign_character_action(armature,action):
@@ -369,6 +466,8 @@ def character_temporal_evidence(out,profile,seed,request):
     try:
         for clip,spec in request["clips"].items():
             assign_character_action(armature,actions[clip])
+            source_fps=float(actions[clip].get("mf_source_fps",scene.render.fps/scene.render.fps_base))
+            if not math.isfinite(source_fps) or source_fps<=0: raise ValueError("Frozen clip source FPS is invalid")
             folder=out/"frames"/clip; folder.mkdir(parents=True,exist_ok=True)
             frames=[]; previous=None; first_points=None
             for frame in range(spec["frame_start"],spec["frame_end"]+1):
@@ -391,16 +490,23 @@ def character_temporal_evidence(out,profile,seed,request):
                 step=None
                 if previous is not None and finite:
                     distances=[(point-prior).length for point,prior in zip(points,previous)]
-                    step={"max_vertex_m":max(distances),"rms_vertex_m":math.sqrt(sum(value*value for value in distances)/len(distances))}
+                    delta_seconds=1/source_fps
+                    step={"delta_seconds":delta_seconds,"max_vertex_m":max(distances),
+                          "rms_vertex_m":math.sqrt(sum(value*value for value in distances)/len(distances))}
+                    step["max_vertex_m_per_s"]=step["max_vertex_m"]/delta_seconds
+                    step["rms_vertex_m_per_s"]=step["rms_vertex_m"]/delta_seconds
                 if first_points is None: first_points=[point.copy() for point in points]
-                frames.append({"frame":frame,"finite":finite,"bounds":{"min":low,"max":high,"dimensions":dimensions},
+                frames.append({"frame":frame,"timestamp_seconds":(frame-spec["frame_start"])/source_fps,
+                               "finite":finite,"bounds":{"min":low,"max":high,"dimensions":dimensions},
                                "centroid":centroid,"foot_min_z_m":feet,"limb_length_ratios":limb_ratios,
                                "step_from_previous":step})
                 scene.render.filepath=str(folder/(f"frame-{frame:04d}.png"))
                 bpy.ops.render.render(write_still=True)
                 previous=[point.copy() for point in points]
             seam_distances=[(point-prior).length for point,prior in zip(previous,first_points)]
-            clips[clip]={"action":spec["action"],"frame_start":spec["frame_start"],"frame_end":spec["frame_end"],
+            clips[clip]={"action":spec["action"],"source_fps":source_fps,
+                         "semantics":actions[clip].get("mf_clip_semantics","unspecified"),
+                         "frame_start":spec["frame_start"],"frame_end":spec["frame_end"],
                          "frame_count":len(frames),"frames":frames,
                          "loop_seam":{"max_vertex_m":max(seam_distances),
                                       "rms_vertex_m":math.sqrt(sum(value*value for value in seam_distances)/len(seam_distances))}}
@@ -415,7 +521,7 @@ def character_temporal_evidence(out,profile,seed,request):
 
 
 def build_character(plan,profile):
-    if plan.get("schema_version")!="1.0" or plan.get("experiment_id")!="3D-03": raise ValueError("Unsupported character scene plan")
+    if plan.get("schema_version")!="1.0" or plan.get("experiment_id") not in {"3D-03","3D-03.1"}: raise ValueError("Unsupported character scene plan")
     if plan.get("entity",{}).get("id")!="character_01": raise ValueError("3D-03 requires character_01")
     if set(plan.get("clips",{}))!={"idle","run","jump"} or len(plan.get("cameras",[]))!=3 or len(plan.get("lights",[]))!=3:
         raise ValueError("3D-03 requires the frozen clips, camera rig, and light rig")
@@ -440,29 +546,25 @@ def build_character(plan,profile):
         bone["mf_source_name"]=bone.name
     for pose_bone in armature.pose.bones:
         for constraint in list(pose_bone.constraints): pose_bone.constraints.remove(constraint)
-    armature["mf_animation_normalization"]="same_skeleton_pose_bake_v1"
+    armature["mf_animation_normalization"]="same_skeleton_pose_bake_v2"
     skin_material,skins=character_material("character_01",entity["skins"])
     mesh.data.materials.clear(); mesh.data.materials.append(skin_material)
     actions={name:import_character_action(spec,name,armature,mesh) for name,spec in plan["clips"].items()}
-    assign_character_action(armature,actions["idle"])
+    assign_character_action(armature,actions["idle"]); scene.frame_set(1); bpy.context.view_layer.update()
     armature["mf_active_action"]="idle"; character["mf_active_skin"]="cyborg"
     scene.frame_start=1; scene.frame_end=33; scene.frame_set(1)
     low,high=evaluated_bounds([mesh]); height=high[2]-low[2]
     factor=entity["target_height_m"]/height
     character.scale=(factor,factor,factor); bpy.context.view_layer.update()
-    # The jump source is intentionally in place. Apply an exact 0.32 m world
-    # root-height arc after normalization scale is known. Bone rotations remain
-    # exact transferred source deltas and the first/last frames remain grounded.
-    jump=actions["jump"]
-    z_curves=[curve for curve in action_channels(jump) if curve.data_path=="location" and curve.array_index==2]
-    if len(z_curves)!=1 or len(z_curves[0].keyframe_points)!=13:
-        raise ValueError("Jump root-height curve does not match the frozen contract")
-    keys=z_curves[0].keyframe_points; first,last=1,13
-    for key in keys:
-        phase=(key.co[0]-first)/(last-first)
-        key.co[1]+=(.32/factor)*math.sin(math.pi*phase)**2
-        key.handle_left[1]=key.co[1]; key.handle_right[1]=key.co[1]
-    jump["mf_root_height_normalization"]="sine_squared_0.32m_world"
+    if plan["experiment_id"]=="3D-03.1":
+        if plan.get("jump_authoring")!={"method":"idle_to_admitted_pose_takeoff_airborne_landing_v1","peak_height_m":.34}:
+            raise ValueError("3D-03.1 requires the frozen authored jump policy")
+        author_character_jump(armature,mesh,actions["idle"],actions["jump"],.34,character.scale)
+    elif "jump_authoring" in plan:
+        raise ValueError("3D-03 faithful transfer does not accept authored jump motion")
+    assign_character_action(armature,actions["idle"]); scene.frame_set(1); bpy.context.view_layer.update()
+    scene.render.fps=24; scene.render.fps_base=1.0
+    scene["mf_playback_fps"]=24
     low,high=evaluated_bounds([mesh]); character.location=(-((low[0]+high[0])/2),-((low[1]+high[1])/2),-low[2]); bpy.context.view_layer.update()
     # Simple fixed studio stage; it is protected but not part of the imported character claim.
     stage=root({"id":"stage_01","kind":"stage","position":[0,0,0],"rotation_z":0})
@@ -1192,6 +1294,12 @@ def main():
             probe=animation_probe(job["asset"])
             write_json(out/"probe.json",probe)
             status["artifacts"].append("probe.json")
+        elif mode=="character_bake_diagnostic":
+            diagnostic_spec=importlib.util.spec_from_file_location("mf_character_diagnostic",Path(__file__).with_name("character_diagnostic.py"))
+            diagnostic=importlib.util.module_from_spec(diagnostic_spec)
+            diagnostic_spec.loader.exec_module(diagnostic)
+            diagnostic.run(sys.modules[__name__],out,job["plan"],job.get("parent_native"))
+            status["artifacts"].append("diagnostic.json")
         elif mode=="build":
             build(job["plan"],profile)
         elif mode=="build_external":

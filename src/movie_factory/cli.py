@@ -460,6 +460,17 @@ def command_qualify_character(args) -> int:
     return 0 if result["passed"] else 3
 
 
+def command_qualify_character_031(args) -> int:
+    root=repo_root(); settings=load_settings_safe(root)
+    staged=Path(args.staged); staged=(staged if staged.is_absolute() else root/staged).resolve()
+    output=Path(args.output); output=(output if output.is_absolute() else root/output).resolve()
+    from .character_controller import run_character_qualification
+    result=run_character_qualification(root,staged,output,_profile(root,args.profile),
+                                       settings.get("BLENDER_BIN","/Applications/Blender.app/Contents/MacOS/Blender"),variant="3d-03-1")
+    emit({"ok":result["passed"],"run_id":result["run_id"],"comparison":result["comparison"],"director_status":result["director_status"]})
+    return 0 if result["passed"] else 3
+
+
 def command_replay_character(args) -> int:
     root=repo_root(); settings=load_settings_safe(root)
     run=Path(args.run); run=(run if run.is_absolute() else root/run).resolve()
@@ -477,6 +488,18 @@ def command_validate_character_motion(args) -> int:
     result=run_character_motion_addendum(root,run,output,settings.get("BLENDER_BIN","/Applications/Blender.app/Contents/MacOS/Blender"),settings,args.live)
     emit({"ok":result["decision"]=="YELLOW","decision":result["decision"],"run_id":result["run_id"],
           "review":result["review"],"director_status":result["director_status"],"known_api_cost_usd":result["known_api_cost_usd"]})
+    return 0 if result["decision"]=="YELLOW" else 3
+
+
+def command_validate_character_motion_031(args) -> int:
+    root=repo_root(); settings=load_settings_safe(root)
+    run=Path(args.run); run=(run if run.is_absolute() else root/run).resolve()
+    output=Path(args.output); output=(output if output.is_absolute() else root/output).resolve()
+    from .character_motion import run_character_motion_031
+    result=run_character_motion_031(root,run,output,settings.get("BLENDER_BIN","/Applications/Blender.app/Contents/MacOS/Blender"))
+    emit({"ok":result["decision"]=="YELLOW","decision":result["decision"],"run_id":result["run_id"],
+          "review":result["review"],"idle_run_machine_pass":result["idle_run_machine_pass"],
+          "jump_status":result["jump_status"],"known_api_cost_usd":0})
     return 0 if result["decision"]=="YELLOW" else 3
 
 
@@ -510,8 +533,10 @@ def parser() -> argparse.ArgumentParser:
     q=sub.add_parser("replay-assets"); q.add_argument("--run",required=True); q.add_argument("--output",required=True); q.set_defaults(func=command_replay_assets)
     q=sub.add_parser("probe-character-assets"); q.add_argument("--staged",required=True); q.add_argument("--output",required=True); q.set_defaults(func=command_probe_character_assets)
     q=sub.add_parser("qualify-character"); q.add_argument("--staged",required=True); q.add_argument("--output",default="runs/3d03"); q.add_argument("--profile",default="asset_preview"); q.set_defaults(func=command_qualify_character)
+    q=sub.add_parser("qualify-character-031"); q.add_argument("--staged",required=True); q.add_argument("--output",default="runs/3d031"); q.add_argument("--profile",default="asset_preview"); q.set_defaults(func=command_qualify_character_031)
     q=sub.add_parser("replay-character"); q.add_argument("--run",required=True); q.add_argument("--output",required=True); q.set_defaults(func=command_replay_character)
     q=sub.add_parser("validate-character-motion"); q.add_argument("--run",required=True); q.add_argument("--output",default="runs/3d03-temporal"); q.add_argument("--live",action="store_true"); q.set_defaults(func=command_validate_character_motion)
+    q=sub.add_parser("validate-character-motion-031"); q.add_argument("--run",required=True); q.add_argument("--output",default="runs/3d031-motion"); q.set_defaults(func=command_validate_character_motion_031)
     q=sub.add_parser("evaluate-evaluator"); q.add_argument("--config",required=True); q.add_argument("--benchmark",required=True); q.add_argument("--output",required=True); q.add_argument("--live",action="store_true"); q.set_defaults(func=command_evaluate_evaluator)
     return p
 

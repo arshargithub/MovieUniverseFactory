@@ -1,0 +1,119 @@
+{
+  "idle": {
+    "fps": 30.0,
+    "samples": 33,
+    "duration_seconds": 1.0666666666666667,
+    "source_bone_motion": {
+      "HipsCtrl": {
+        "axis_span_source_units": [
+          5.784386303275824e-10,
+          1.4901161193847656e-08,
+          0.035854220390319824
+        ],
+        "max_distance_from_first_source_units": 0.035854220390319824
+      },
+      "Hips": {
+        "axis_span_source_units": [
+          9.604264050722122e-10,
+          2.2351741790771484e-08,
+          0.035854339599609375
+        ],
+        "max_distance_from_first_source_units": 0.03585433959961016
+      },
+      "LeftFoot": {
+        "axis_span_source_units": [
+          0.00024139881134033203,
+          1.4379620552062988e-05,
+          3.802776336669922e-05
+        ],
+        "max_distance_from_first_source_units": 0.00024404146266321895
+      },
+      "RightFoot": {
+        "axis_span_source_units": [
+          4.351139068603516e-06,
+          1.4424324035644531e-05,
+          4.941225051879883e-05
+        ],
+        "max_distance_from_first_source_units": 3.176615829006023e-05
+      }
+    }
+  },
+  "run": {
+    "fps": 24.0,
+    "samples": 17,
+    "duration_seconds": 0.6666666666666666,
+    "source_bone_motion": {
+      "HipsCtrl": {
+        "axis_span_source_units": [
+          2.3283064365386963e-09,
+          1.4901161193847656e-08,
+          0.04216623306274414
+        ],
+        "max_distance_from_first_source_units": 0.04216623306274415
+      },
+      "Hips": {
+        "axis_span_source_units": [
+          0.008076750207692385,
+          8.195638656616211e-08,
+          0.04227924346923828
+        ],
+        "max_distance_from_first_source_units": 0.04304379539788869
+      },
+      "LeftFoot": {
+        "axis_span_source_units": [
+          0.0343327671289444,
+          1.5900506973266602,
+          0.4744279980659485
+        ],
+        "max_distance_from_first_source_units": 1.5293343311959502
+      },
+      "RightFoot": {
+        "axis_span_source_units": [
+          0.05391472578048706,
+          1.6297138929367065,
+          0.49375003576278687
+        ],
+        "max_distance_from_first_source_units": 1.219332822634152
+      }
+    }
+  },
+  "jump": {
+    "fps": 24.0,
+    "samples": 13,
+    "duration_seconds": 0.5,
+    "source_bone_motion": {
+      "HipsCtrl": {
+        "axis_span_source_units": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "max_distance_from_first_source_units": 0.0
+      },
+      "Hips": {
+        "axis_span_source_units": [
+          1.8207356333732605e-07,
+          0.009853966534137726,
+          9.465217590332031e-05
+        ],
+        "max_distance_from_first_source_units": 0.0098544211143344
+      },
+      "LeftFoot": {
+        "axis_span_source_units": [
+          3.7550926208496094e-06,
+          5.513429641723633e-07,
+          5.066394805908203e-07
+        ],
+        "max_distance_from_first_source_units": 3.6389355667982316e-06
+      },
+      "RightFoot": {
+        "axis_span_source_units": [
+          1.996755599975586e-06,
+          1.1026859283447266e-06,
+          1.1920928955078125e-06
+        ],
+        "max_distance_from_first_source_units": 2.4882708380981307e-06
+      }
+    }
+  }
+}

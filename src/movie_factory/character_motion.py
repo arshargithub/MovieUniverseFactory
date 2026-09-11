@@ -87,8 +87,10 @@ def _write_review_html(output,config,result):
     panels=[]
     for clip,spec in config["request"]["clips"].items():
         frames=[f"worker/frames/{clip}/frame-{frame:04d}.png" for frame in range(spec["frame_start"],spec["frame_end"]+1)]
-        panels.append(f'''<section data-clip="{clip}" data-frames='{html.escape(json.dumps(frames),quote=True)}'>
-<h2>{clip.title()}</h2><img class="player" src="{frames[0]}" alt="{clip} animation frame">
+        fps=config.get("playback_fps_by_clip",{}).get(clip,config["playback_fps"])
+        label="Jump source pose reference (not a complete jump)" if clip=="jump" and config.get("jump_claim")=="source_pose_reference_only" else clip.title()
+        panels.append(f'''<section data-clip="{clip}" data-fps="{fps}" data-frames='{html.escape(json.dumps(frames),quote=True)}'>
+<h2>{label} · {fps} fps</h2><img class="player" src="{frames[0]}" alt="{clip} animation frame">
 <div><button type="button">Pause</button> <label>Frame <input type="range" min="0" max="{len(frames)-1}" value="0"></label> <output>{spec["frame_start"]}</output></div>
 <p><a href="contact-sheet-{clip}.png">Open complete {clip} contact sheet</a></p></section>''')
     safe=html.escape(json.dumps(result,indent=2,sort_keys=True))
@@ -96,7 +98,7 @@ def _write_review_html(output,config,result):
 <style>body{{font:16px system-ui;margin:2rem;background:#181818;color:#eee}}main{{display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:1.5rem}}section{{background:#242424;padding:1rem;border-radius:.5rem}}img{{width:100%;background:#333}}input{{width:55%}}a{{color:#8fc7ff}}pre{{white-space:pre-wrap;overflow-wrap:anywhere}}.pending{{color:#ffd479}}</style>
 <h1>3D-03 complete motion review</h1><p class="pending">Review every complete clip at least once. API screening is advisory; Director acceptance is still required.</p>
 <main>{''.join(panels)}</main><h2>Recorded evidence</h2><pre>{safe}</pre>
-<script>document.querySelectorAll('section[data-clip]').forEach(panel=>{{const frames=JSON.parse(panel.dataset.frames),img=panel.querySelector('img'),slider=panel.querySelector('input'),out=panel.querySelector('output'),button=panel.querySelector('button');let index=0,playing=true;const show=i=>{{index=Number(i);img.src=frames[index];slider.value=index;out.value=index+1}};slider.oninput=()=>{{playing=false;button.textContent='Play';show(slider.value)}};button.onclick=()=>{{playing=!playing;button.textContent=playing?'Pause':'Play'}};setInterval(()=>{{if(playing)show((index+1)%frames.length)}},{round(1000/config["playback_fps"])});}});</script>'''
+<script>document.querySelectorAll('section[data-clip]').forEach(panel=>{{const frames=JSON.parse(panel.dataset.frames),img=panel.querySelector('img'),slider=panel.querySelector('input'),out=panel.querySelector('output'),button=panel.querySelector('button');let index=0,playing=true;const show=i=>{{index=Number(i);img.src=frames[index];slider.value=index;out.value=index+1}};slider.oninput=()=>{{playing=false;button.textContent='Play';show(slider.value)}};button.onclick=()=>{{playing=!playing;button.textContent=playing?'Pause':'Play'}};setInterval(()=>{{if(playing)show((index+1)%frames.length)}},1000/Number(panel.dataset.fps));}});</script>'''
     (output/"review.html").write_text(document)
 
 
@@ -163,6 +165,63 @@ def run_character_motion_addendum(repo:Path,source_run:Path,output_root:Path,ble
             "evidence_hierarchy":["deterministic_every_frame_checks","secondary_api_screen","director_full_playback_acceptance"]}
     atomic_json(output/"result.json",result)
     atomic_json(output/"director-review.json",{"status":"PENDING","accepted":None,"clips":{},"notes":"Director has not reviewed all three complete clips."})
+    _write_review_html(output,config,result)
+    artifacts=[path for path in output.rglob("*") if path.is_file() and path.name!="artifact-manifest.json"]
+    atomic_json(output/"artifact-manifest.json",{"schema_version":"1.0","run_id":run_id,"artifacts":manifest_for(output,artifacts)})
+    return {**result,"review":str(output/"review.html")}
+
+
+def run_character_motion_031(repo:Path,source_run:Path,output_root:Path,blender_bin:str)->dict:
+    """Provider-free production evidence for the corrected transfer implementation."""
+    from .adapters.blender.runner import run_blender
+    source_run=safe_relative(repo,source_run.resolve()); output_root=output_root.resolve()
+    source_result=_read(source_run/"result.json"); native=source_run/"initial/build/scene.blend"
+    config_name="temporal-validation-authored.json" if source_result.get("experiment_id")=="3D-03.1" else "temporal-validation.json"
+    config=_read(repo/"feasibility/3d/3d-03-1"/config_name)
+    if not source_result.get("passed") or source_result.get("parent_sha256")!=file_digest(native):
+        raise ValueError("3D-03.1 motion validation requires a machine-passed source run with matching native identity")
+    run_id=f"motion-v2-{time.strftime('%Y%m%dT%H%M%SZ',time.gmtime())}-{uuid.uuid4().hex[:8]}"
+    output=output_root/run_id; output.mkdir(parents=True,exist_ok=False)
+    binding=_binding(repo); native_sha=file_digest(native)
+    package={"schema_version":"1.0","package_kind":"immutable_work_package","experiment_id":"3D-03.1-TEMPORAL",
+             "run_id":run_id,"source_run":source_run.name,"source_native_sha256":native_sha,
+             "configuration_sha256":content_id(config),"request":config["request"],"playback_profile":config["playback_profile"],
+             "authority":{"blender":"trusted_temporal_inspection","provider_calls":0,"director":"required_for_idle_and_run"}}
+    package["package_id"]=content_id(package)
+    atomic_json(output/"work-package.json",package); atomic_json(output/"source-binding.json",binding); atomic_json(output/"frozen-config.json",config)
+    worker=output/"worker"
+    status=run_blender({"mode":"character_temporal","output_dir":str(worker),"seed":303,
+                        "profile":config["playback_profile"],"parent_native":str(native),"request":config["request"]},
+                       blender_bin=blender_bin,timeout=1800)
+    if not status.get("ok"): raise RuntimeError("3D-03.1 temporal inspection failed: "+status.get("error","unknown"))
+    raw=_read(worker/"temporal-metrics.json")
+    if raw.get("source_native_sha256")!=native_sha: raise ValueError("Worker inspected an unexpected 3D-03.1 native file")
+    deterministic=validate_character_motion(raw,config); atomic_json(output/"deterministic-validation.json",deterministic)
+    for clip,spec in config["request"]["clips"].items():
+        frames=[worker/"frames"/clip/f"frame-{frame:04d}.png" for frame in range(spec["frame_start"],spec["frame_end"]+1)]
+        if not all(path.is_file() for path in frames): raise ValueError("3D-03.1 temporal render coverage is incomplete")
+        _contact_sheet(frames,output/f"contact-sheet-{clip}.png",clip)
+    full_jump=config.get("jump_claim")=="authored_full_jump"
+    shared_errors={name for name in deterministic["errors"] if not name.startswith("jump.")}
+    idle_run_pass=not shared_errors
+    jump_pass=full_jump and not any(name.startswith("jump.") for name in deterministic["errors"])
+    machine_pass=deterministic["passed"] if full_jump else idle_run_pass
+    result={"schema_version":"1.0","experiment_id":"3D-03.1-TEMPORAL","run_id":run_id,
+            "source_run":source_run.name,"source_native_sha256":native_sha,"source_binding":binding,
+            "work_package_id":package["package_id"],"deterministic_validation":deterministic,
+            "idle_run_machine_pass":idle_run_pass,"jump_full_motion_pass":jump_pass,
+            "jump_status":"MACHINE_REVIEWED_AUTHORED_MOTION" if jump_pass else "FAILED" if full_jump else "SOURCE_POSE_REFERENCE_ONLY",
+            "provider_calls":[],"known_api_cost_usd":0,
+            "technical_status":"MACHINE_REVIEWED" if machine_pass else "FAILED",
+            "creative_status":"AWAITING_DIRECTOR" if machine_pass else "NOT_ELIGIBLE",
+            "director_status":"PENDING","decision":"YELLOW" if machine_pass else "RED",
+            "claim":("Corrected idle/run transfer and separately labelled authored jump pass every-frame machine validation; Director full-playback review remains required."
+                     if machine_pass and full_jump else "Corrected faithful transfer is machine-qualified for idle and run only. The admitted jump FBX is a pose reference and does not qualify complete jump motion.")}
+    atomic_json(output/"result.json",result)
+    clips={"idle":None,"run":None,"jump":None} if full_jump else {"idle":None,"run":None}
+    notes=("Review complete idle, run, and separately authored jump playback." if full_jump else
+           "Review complete idle and run playback. Jump is shown only to document the admitted source limitation.")
+    atomic_json(output/"director-review.json",{"status":"PENDING","accepted":None,"clips":clips,"notes":notes})
     _write_review_html(output,config,result)
     artifacts=[path for path in output.rglob("*") if path.is_file() and path.name!="artifact-manifest.json"]
     atomic_json(output/"artifact-manifest.json",{"schema_version":"1.0","run_id":run_id,"artifacts":manifest_for(output,artifacts)})

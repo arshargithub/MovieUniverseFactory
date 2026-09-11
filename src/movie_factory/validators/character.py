@@ -58,12 +58,16 @@ def validate_character_baseline(snapshot:dict,plan:dict)->dict:
                 else: allowed=False
             grounding_by_index={curve["array_index"]:curve for curve in grounding}
             lateral_zero=all(all(abs(key["co"][1])<=1e-9 for key in grounding_by_index[index]["keyframes"]) for index in (0,1)) if set(grounding_by_index)=={0,1,2} else False
-            vertical_bounded=all(abs(key["co"][1])<=.5 for key in grounding_by_index.get(2,{}).get("keyframes",[])) and bool(grounding_by_index.get(2,{}).get("keyframes",[]))
+            authored_jump=(action_id=="character_action_jump" and
+                           action.get("custom_properties",{}).get("mf_clip_semantics")=="authored_full_jump")
+            vertical_limit=.75 if authored_jump else .5
+            vertical_bounded=all(abs(key["co"][1])<=vertical_limit for key in grounding_by_index.get(2,{}).get("keyframes",[])) and bool(grounding_by_index.get(2,{}).get("keyframes",[]))
             _check(checks,f"actions.{action_id}.bone_compatibility",allowed and referenced==set(mesh["vertex_groups"]),{"referenced_bones":len(referenced)})
-            _check(checks,f"actions.{action_id}.in_place_grounding",lateral_zero and vertical_bounded,{"location_curves":sorted(grounding_by_index)})
+            _check(checks,f"actions.{action_id}.in_place_grounding",lateral_zero and vertical_bounded,
+                   {"location_curves":sorted(grounding_by_index),"vertical_limit":vertical_limit})
             _check(checks,f"actions.{action_id}.slot",len(action["slots"])==1 and action["slots"][0]["target_id_type"]=="OBJECT",action["slots"])
         _check(checks,"performance.active_idle",arm["animation"]["action"]=="character_action_idle" and arm["custom_properties"].get("mf_active_action")=="idle",arm["animation"])
-        _check(checks,"performance.normalization",arm["custom_properties"].get("mf_animation_normalization")=="same_skeleton_pose_bake_v1")
+        _check(checks,"performance.normalization",arm["custom_properties"].get("mf_animation_normalization")=="same_skeleton_pose_bake_v2")
         poses=arm["armature"]["sampled_pose_matrices"]
         _check(checks,"performance.idle_evaluates",poses["1"]!=poses["9"],"sampled bone matrices at frames 1 and 9")
         material=snapshot["materials"]["character_01_skin_material"]

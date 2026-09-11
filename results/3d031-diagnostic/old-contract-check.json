@@ -1,0 +1,271 @@
+{
+  "schema_version": "1.0",
+  "passed": false,
+  "checks": [
+    {
+      "name": "identity.experiment",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "identity.camera",
+      "passed": true,
+      "details": "camera_B"
+    },
+    {
+      "name": "clips.exact_set",
+      "passed": true,
+      "details": [
+        "idle",
+        "jump",
+        "run"
+      ]
+    },
+    {
+      "name": "idle.frame_coverage",
+      "passed": true,
+      "details": {
+        "observed": 33,
+        "expected": 33
+      }
+    },
+    {
+      "name": "idle.finite",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "idle.no_floor_penetration",
+      "passed": true,
+      "details": {
+        "minimum_z_m": 4.9802224566519726e-08
+      }
+    },
+    {
+      "name": "idle.bounded_extent",
+      "passed": true,
+      "details": {
+        "maximum_dimension_m": 1.803426968422798
+      }
+    },
+    {
+      "name": "idle.plausible_height",
+      "passed": true,
+      "details": {
+        "range_m": [
+          1.7767502167509477,
+          1.803426968422798
+        ]
+      }
+    },
+    {
+      "name": "idle.limb_lengths",
+      "passed": true,
+      "details": {
+        "maximum_relative_error": 1.899991073583962e-06
+      }
+    },
+    {
+      "name": "idle.continuous_max_vertex",
+      "passed": true,
+      "details": {
+        "maximum_m": 0.005250668296131753
+      }
+    },
+    {
+      "name": "idle.continuous_rms",
+      "passed": true,
+      "details": {
+        "maximum_m": 0.002631129248682508
+      }
+    },
+    {
+      "name": "idle.loop_seam",
+      "passed": true,
+      "details": {
+        "max_vertex_m": 0.0,
+        "rms_vertex_m": 0.0
+      }
+    },
+    {
+      "name": "idle.grounding",
+      "passed": true,
+      "details": {
+        "ungrounded_frames": 0
+      }
+    },
+    {
+      "name": "run.frame_coverage",
+      "passed": true,
+      "details": {
+        "observed": 17,
+        "expected": 17
+      }
+    },
+    {
+      "name": "run.finite",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "run.no_floor_penetration",
+      "passed": true,
+      "details": {
+        "minimum_z_m": 3.268164405767493e-08
+      }
+    },
+    {
+      "name": "run.bounded_extent",
+      "passed": true,
+      "details": {
+        "maximum_dimension_m": 1.8013011429133599
+      }
+    },
+    {
+      "name": "run.plausible_height",
+      "passed": true,
+      "details": {
+        "range_m": [
+          1.7034991689137087,
+          1.8013011429133599
+        ]
+      }
+    },
+    {
+      "name": "run.limb_lengths",
+      "passed": true,
+      "details": {
+        "maximum_relative_error": 3.3762828688388424e-06
+      }
+    },
+    {
+      "name": "run.continuous_max_vertex",
+      "passed": true,
+      "details": {
+        "maximum_m": 0.38258986739365863
+      }
+    },
+    {
+      "name": "run.continuous_rms",
+      "passed": true,
+      "details": {
+        "maximum_m": 0.16094414420091124
+      }
+    },
+    {
+      "name": "run.loop_seam",
+      "passed": true,
+      "details": {
+        "max_vertex_m": 0.0,
+        "rms_vertex_m": 0.0
+      }
+    },
+    {
+      "name": "run.alternating_contact",
+      "passed": true,
+      "details": {
+        "left": 9,
+        "right": 10
+      }
+    },
+    {
+      "name": "run.motion_present",
+      "passed": true,
+      "details": {
+        "peak_rms_m": 0.16094414420091124
+      }
+    },
+    {
+      "name": "jump.frame_coverage",
+      "passed": true,
+      "details": {
+        "observed": 13,
+        "expected": 13
+      }
+    },
+    {
+      "name": "jump.finite",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "jump.no_floor_penetration",
+      "passed": true,
+      "details": {
+        "minimum_z_m": -2.4684599253532724e-08
+      }
+    },
+    {
+      "name": "jump.bounded_extent",
+      "passed": true,
+      "details": {
+        "maximum_dimension_m": 1.6951543339573654
+      }
+    },
+    {
+      "name": "jump.plausible_height",
+      "passed": true,
+      "details": {
+        "range_m": [
+          1.6918355928267914,
+          1.6951543339573654
+        ]
+      }
+    },
+    {
+      "name": "jump.limb_lengths",
+      "passed": true,
+      "details": {
+        "maximum_relative_error": 5.353300090993329e-06
+      }
+    },
+    {
+      "name": "jump.continuous_max_vertex",
+      "passed": true,
+      "details": {
+        "maximum_m": 0.0030461634455097217
+      }
+    },
+    {
+      "name": "jump.continuous_rms",
+      "passed": true,
+      "details": {
+        "maximum_m": 0.001247025016043987
+      }
+    },
+    {
+      "name": "jump.loop_seam",
+      "passed": true,
+      "details": {
+        "max_vertex_m": 0.0,
+        "rms_vertex_m": 0.0
+      }
+    },
+    {
+      "name": "jump.takeoff_landing_contact",
+      "passed": true,
+      "details": {
+        "first": [
+          4.9034170501727203e-08,
+          0.03428800776600838
+        ],
+        "last": [
+          4.9034170501727203e-08,
+          0.03428800776600838
+        ]
+      }
+    },
+    {
+      "name": "jump.airborne_phase",
+      "passed": false,
+      "details": {
+        "airborne_frames": []
+      }
+    }
+  ],
+  "errors": [
+    "jump.airborne_phase"
+  ],
+  "authority": "deterministic_outer_validator",
+  "api_can_override": false
+}

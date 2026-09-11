@@ -32,11 +32,13 @@ def _package(path,payload):
     value=dict(payload); value["package_id"]=content_id(value); atomic_json(path,value); return value
 
 
-def run_character_qualification(repo:Path,staged:Path,output_root:Path,profile:dict,blender_bin:str)->dict:
+def run_character_qualification(repo:Path,staged:Path,output_root:Path,profile:dict,blender_bin:str,variant:str="3d-03")->dict:
     from .adapters.blender.runner import run_blender
-    template=_read(repo/"feasibility/3d/3d-03/scene.json"); revision=_read(repo/"feasibility/3d/3d-03/revision.json")
+    if variant not in {"3d-03","3d-03-1"}: raise ValueError("Unsupported character qualification variant")
+    template=_read(repo/f"feasibility/3d/{variant}/scene.json"); revision=_read(repo/"feasibility/3d/3d-03/revision.json")
     assets=_read(repo/"feasibility/3d/3d-03/assets.json"); staged_manifest=_read(staged/"staged-manifest.json")
-    plan=resolved_character_plan(template,staged); run_id=f"character-v1-{time.strftime('%Y%m%dT%H%M%SZ',time.gmtime())}-{uuid.uuid4().hex[:8]}"
+    experiment_id=template["experiment_id"]
+    plan=resolved_character_plan(template,staged); run_id=f"character-{'v2' if variant=='3d-03-1' else 'v1'}-{time.strftime('%Y%m%dT%H%M%SZ',time.gmtime())}-{uuid.uuid4().hex[:8]}"
     run_dir=output_root/run_id; run_dir.mkdir(parents=True,exist_ok=False)
     status=subprocess.run(["git","status","--porcelain"],cwd=repo,text=True,capture_output=True,check=True).stdout
     binding={"schema_version":"1.0","status":"EXACT_PRE_RUN" if not status else "DIRTY_DEVELOPMENT",
@@ -44,14 +46,14 @@ def run_character_qualification(repo:Path,staged:Path,output_root:Path,profile:d
              "implementation_tree":subprocess.run(["git","rev-parse","HEAD^{tree}"],cwd=repo,text=True,capture_output=True,check=True).stdout.strip(),
              "worktree_clean_before_dispatch":not bool(status)}
     for path,value in ((run_dir/"scene-plan.json",template),(run_dir/"revision-plan.json",revision),(run_dir/"staged-manifest.json",staged_manifest),(run_dir/"source-binding.json",binding)): atomic_json(path,value)
-    _package(run_dir/"work-package.json",{"schema_version":"1.0","package_kind":"immutable_work_package","experiment_id":"3D-03","run_id":run_id,
+    _package(run_dir/"work-package.json",{"schema_version":"1.0","package_kind":"immutable_work_package","experiment_id":experiment_id,"run_id":run_id,
              "scene_plan_sha256":content_id(template),"revision_plan_sha256":content_id(revision),"asset_manifest_sha256":content_id(assets),
              "staged_manifest_sha256":content_id(staged_manifest),"authority":{"build":"frozen_character_assets","revision":["set_character_skin","set_character_action"],"network":False,"provider_calls":0},"render_profile":profile})
     started=time.monotonic(); initial=run_dir/"initial/build"
     result=run_blender({"mode":"build_character","output_dir":str(initial.resolve()),"seed":template["seed"],"profile":profile,"plan":plan},blender_bin=blender_bin,timeout=600)
     if not result.get("ok"): raise RuntimeError("character build failed: "+result.get("error","unknown"))
     before=_read(initial/"snapshot.json")
-    _package(run_dir/"revision/executable-package.json",{"schema_version":"1.0","package_kind":"executable","experiment_id":"3D-03","stage":"revision",
+    _package(run_dir/"revision/executable-package.json",{"schema_version":"1.0","package_kind":"executable","experiment_id":experiment_id,"stage":"revision",
              "parent_native_sha256":file_digest(initial/"scene.blend"),"parent_native_relpath":"../initial/build/scene.blend",
              "operations_sha256":content_id(revision["operations"]),"operations_relpath":"../revision-plan.json","render_profile":profile,"seed":template["seed"],"worker":"trusted_structured_operations"})
     reopen=run_dir/"initial/reopen"; result=run_blender({"mode":"inspect","output_dir":str(reopen.resolve()),"seed":template["seed"],"profile":profile,"parent_native":str((initial/"scene.blend").resolve())},blender_bin=blender_bin,timeout=300)
@@ -68,12 +70,13 @@ def run_character_qualification(repo:Path,staged:Path,output_root:Path,profile:d
     revision_render=run_dir/"revision/render"; result=run_blender({"mode":"render","output_dir":str(revision_render.resolve()),"seed":template["seed"],"profile":profile,"parent_native":str((changed/"scene.blend").resolve())},blender_bin=blender_bin,timeout=1200)
     if not result.get("ok"): raise RuntimeError("character revision render failed: "+result.get("error","unknown"))
     passed=all(item["passed"] for item in (initial_reopen,baseline,revision_reopen,revision_validation))
-    result={"schema_version":"1.0","experiment_id":"3D-03","run_id":run_id,"seed":template["seed"],"passed":passed,
+    result={"schema_version":"1.0","experiment_id":experiment_id,"run_id":run_id,"seed":template["seed"],"passed":passed,
             "technical_status":"MACHINE_REVIEWED" if passed else "FAILED","creative_status":"AWAITING_DIRECTOR" if passed else "NOT_ELIGIBLE","director_status":"PENDING",
             "initial_reopen_validation":initial_reopen,"baseline_validation":baseline,"revision_reopen_validation":revision_reopen,"revision_validation":revision_validation,
             "image_validation":{"passed":True,"method":"Director comparison pending; deterministic masks emitted"},"provider_calls":[],"known_api_cost_usd":0,
             "parent_sha256":file_digest(initial/"scene.blend"),"revision_sha256":file_digest(changed/"scene.blend"),"elapsed_seconds":time.monotonic()-started,"source_binding":binding,
-            "claim_boundary":"Frozen Kenney skeleton, three compatible clips, two skins, and two supported structured revisions only."}
+            "claim_boundary":("Frozen Kenney skeleton, corrected idle/run transfers, separately authored jump v1, two skins, and two supported structured revisions only."
+                              if variant=="3d-03-1" else "Frozen Kenney skeleton, three compatible clips, two skins, and two supported structured revisions only.")}
     atomic_json(run_dir/"costs.json",{"known_api_cost_usd":0,"provider_calls":0,"scope":"3D-03 provider-free qualification"})
     atomic_json(run_dir/"director-review.json",{"status":"PENDING","accepted":None,"scores":None,"notes":"Director review has not been entered."})
     atomic_json(run_dir/"result.json",result); result["comparison"]=str(write_comparison(run_dir,result)); atomic_json(run_dir/"result.json",result); finalize_run_artifacts(run_dir,result)
@@ -92,5 +95,6 @@ def replay_character_revision(run_dir:Path,output:Path,blender_bin:str)->dict:
     render=output/"render"; status=run_blender({"mode":"render","output_dir":str(render.resolve()),"seed":package["seed"],"profile":package["render_profile"],"parent_native":str((build/"scene.blend").resolve())},blender_bin=blender_bin,timeout=1200)
     if not status.get("ok"): raise RuntimeError("3D-03 replay render failed: "+status.get("error","unknown"))
     semantic=compare_snapshots(_read(run_dir/"revision/build/snapshot.json"),_read(build/"snapshot.json"))
-    result={"schema_version":"1.0","experiment_id":"3D-03","ok":semantic["passed"],"package_id":claimed,"provider_calls":0,"semantic_replay":semantic,"native_sha256":file_digest(build/"scene.blend")}
+    result={"schema_version":"1.0","experiment_id":package["experiment_id"],"ok":semantic["passed"],"package_id":claimed,
+            "provider_calls":0,"semantic_replay":semantic,"native_sha256":file_digest(build/"scene.blend")}
     atomic_json(output/"replay-result.json",result); return result
