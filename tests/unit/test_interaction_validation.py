@@ -61,3 +61,43 @@ def test_anatomy_measurements_fail_closed_when_absent_or_nonfinite():
             result = validate_interaction_metrics(raw, CONFIG)
             assert not result["passed"]
             assert any(error.startswith("anatomy.candidate.") for error in result["errors"])
+
+
+def coordinated_metrics():
+    config=json.loads((ROOT/'feasibility/3d/3d-05/prototypes/coordinated-lift/campaign.json').read_text())
+    raw=passing_metrics()
+    for row in raw['samples']:
+        for role in ('baseline','candidate'):
+            t=config['baseline'][role+'_transitions']
+            w=max(0,min(1,(row['frame']-t['lift'])/(t['held']-t['lift'])))
+            row.update({role+'_'+k:v for k,v in {
+                'hand_radial_up_dot':.9,'hand_pitch_degrees':25*w,
+                'forearm_pitch_degrees':40*w,'elbow_flexion_degrees':50+20*w,
+                'head_attention_gain_degrees':30,'elbow_edge_ratio_min':.8,
+                'elbow_edge_ratio_max':1.2,'elbow_reference_edge_count':20}.items()})
+    return raw,config
+
+
+def test_coordinated_probes_fail_closed_and_detect_no_motion():
+    raw,config=coordinated_metrics()
+    assert validate_interaction_metrics(raw,config)['passed']
+    for key in ('hand_pitch_degrees','forearm_pitch_degrees','elbow_flexion_degrees',
+                'head_attention_gain_degrees','elbow_edge_ratio_min','elbow_edge_ratio_max',
+                'elbow_reference_edge_count','hand_radial_up_dot'):
+        for value in (None,float('nan'),float('inf')):
+            broken=deepcopy(raw);broken['samples'][-1]['candidate_'+key]=value
+            assert not validate_interaction_metrics(broken,config)['passed'],key
+    broken=deepcopy(raw)
+    for row in broken['samples']:
+        row['candidate_forearm_pitch_degrees']=0
+    assert 'motion.candidate.forearm_pitch' in validate_interaction_metrics(broken,config)['errors']
+    broken=deepcopy(raw);broken['samples'][0]['candidate_elbow_edge_ratio_max']=2.5
+    assert 'motion.candidate.elbow_skin' in validate_interaction_metrics(broken,config)['errors']
+
+
+def test_coordinated_controls_cannot_be_omitted():
+    from movie_factory.validators.interaction import MOTION_CONTROL_EXPECTATIONS
+    controls={name:{'passed':False,'errors':list(errors)} for name,errors in CONTROL_EXPECTATIONS.items()}
+    assert not validate_control_sensitivity(controls,coordinated=True)['passed']
+    controls.update({name:{'passed':False,'errors':list(errors)} for name,errors in MOTION_CONTROL_EXPECTATIONS.items()})
+    assert validate_control_sensitivity(controls,coordinated=True)['passed']

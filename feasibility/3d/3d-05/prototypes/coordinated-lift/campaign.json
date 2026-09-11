@@ -1,0 +1,149 @@
+{
+  "acceptance_version": "coordinated-lift-probes-v1",
+  "baseline": {
+    "baseline_transitions": {
+      "grasp": 40,
+      "held": 68,
+      "lift": 48,
+      "reach": 16
+    },
+    "candidate_transitions": {
+      "grasp": 36,
+      "held": 64,
+      "lift": 44,
+      "reach": 16
+    },
+    "character_evidence_tag": "3d-03-1-v1-green-evidence",
+    "character_relative_path": "runs/3d031/character-v2-20260911T012644Z-2d7d8605/initial/build/scene.blend",
+    "character_sha256": "bbf05848c30e531ca31fc4632210b8344f6f35166db9c26abe4adfa6150e2488",
+    "sword_asset_relative_path": ".runtime/assets/3d-02/staged-v1/sword_source_01/Models/GLB format/weapon-sword.glb",
+    "sword_asset_sha256": "8e69eb27977f8c84a9b7cd423cd5830eddcf0d07ac1d7fed1969931387015b28",
+    "sword_staged_manifest_sha256": "92bbd423248c9b8a67da1433522f0bb6748dbbc952b2ad43a70274d26202b1f4",
+    "timeline_fps": 24,
+    "timeline_frame_end": 96,
+    "timeline_frame_start": 1
+  },
+  "campaign_status": "UNSCORED_MOTION_PROTOTYPE",
+  "director_gate": {
+    "candidate_must_not_regress_other_dimensions": true,
+    "candidate_preference_required": true,
+    "labels": [
+      "A",
+      "B"
+    ],
+    "major_defects_allowed": 0,
+    "minimum_candidate_score": 4.0,
+    "minimum_readability_improvement": 0.5,
+    "review_seconds_required": true,
+    "score_increment": 0.5,
+    "views": [
+      "primary",
+      "side",
+      "rear"
+    ]
+  },
+  "experiment_id": "3D-05",
+  "motion_thresholds": {
+    "maximum_elbow_edge_ratio": 1.5,
+    "maximum_forearm_pitch_gain_degrees": 65,
+    "maximum_hand_pitch_gain_degrees": 35,
+    "maximum_held_elbow_flexion_degrees": 110,
+    "minimum_attention_gain_degrees": 10,
+    "minimum_elbow_edge_ratio": 0.35,
+    "minimum_forearm_pitch_gain_degrees": 20,
+    "minimum_hand_pitch_gain_degrees": 15,
+    "minimum_held_elbow_flexion_degrees": 45,
+    "minimum_peak_elbow_flexion_gain_degrees": 10,
+    "minimum_radial_up_dot": 0.7
+  },
+  "negative_controls": [
+    "early_attachment",
+    "attachment_teleportation",
+    "hand_sword_sliding",
+    "penetration",
+    "edit_leakage",
+    "open_hand_attachment",
+    "oversized_handle",
+    "thumb_down_grasp",
+    "locked_forearm_roll",
+    "hand_support_penetration",
+    "rigid_lift",
+    "wrist_only_lift",
+    "relative_prop_rotation",
+    "elbow_skin_distortion",
+    "missing_attention"
+  ],
+  "provider_budget": {
+    "maximum_known_api_cost_usd": 0.0,
+    "maximum_provider_calls": 0
+  },
+  "sampling": {
+    "boundary_probe_offsets": [
+      -0.061,
+      -0.01,
+      -0.001,
+      0.001,
+      0.01,
+      0.061
+    ],
+    "checkpoints": {
+      "baseline": [
+        32,
+        40.125,
+        80
+      ],
+      "candidate": [
+        32,
+        36.125,
+        80
+      ]
+    },
+    "dense_step_frames": 0.125,
+    "dense_windows": [
+      [
+        16,
+        50
+      ],
+      [
+        62,
+        78
+      ]
+    ],
+    "regular_step_frames": 0.5,
+    "velocity_half_width_frames": 0.125
+  },
+  "schema_version": "1.0",
+  "thresholds": {
+    "attachment_orientation_second_difference_degrees": 0.5,
+    "attachment_position_second_difference_m": 0.002,
+    "boundary_character_rms_velocity_delta_m_per_s": 0.002,
+    "boundary_sword_velocity_delta_m_per_s": 0.005,
+    "floor_penetration_tolerance_m": 0.015,
+    "grip_orientation_error_degrees": 0.5,
+    "grip_translation_error_m": 0.003,
+    "maximum_attached_wrist_swing_degrees": 45,
+    "maximum_character_rms_half_frame_step_m": 0.18,
+    "maximum_digit_contact_distance_m": 0.005,
+    "maximum_forearm_twist_degrees": 120,
+    "maximum_hand_penetration_m": 0.004,
+    "maximum_hand_support_penetration_m": 0.004,
+    "maximum_supported_translation_error_m": 0.001,
+    "maximum_sword_half_frame_step_m": 0.08,
+    "maximum_wrist_swing_degrees": 60,
+    "maximum_wrist_twist_degrees": 30,
+    "minimum_acquisition_thumb_side_up_dot": 0.5,
+    "minimum_blade_body_clearance_m": 0.04,
+    "minimum_contact_angular_coverage_degrees": 170,
+    "minimum_held_support_separation_m": 0.25,
+    "minimum_lifting_support_separation_m": 0.02,
+    "outside_character_max_vertex_delta_m": 1e-06,
+    "outside_character_rms_vertex_delta_m": 2.5e-07,
+    "outside_sword_orientation_delta_degrees": 0.0001,
+    "outside_sword_translation_delta_m": 1e-06,
+    "required_timing_shift_frames": 4,
+    "stationary_root_rotation_degrees": 0.0001,
+    "stationary_root_translation_m": 1e-06,
+    "support_contact_error_m": 0.01,
+    "timing_shift_tolerance_frames": 0.125
+  }
+}

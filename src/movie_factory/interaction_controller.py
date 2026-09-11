@@ -86,13 +86,14 @@ def _checkpoint_equal(first, second):
 
 
 def run_interaction_05(repo: Path, output_root: Path, profile: dict, blender_bin: str,
-                       render_frames: bool = True, scored: bool = False) -> dict:
+                       render_frames: bool = True, scored: bool = False, configuration_dir: Path | None = None) -> dict:
     from .adapters.blender.runner import run_blender
-    campaign = _read(repo/"feasibility/3d/3d-05/campaign.json")
-    revision = _read(repo/"feasibility/3d/3d-05/revision.json")
-    scene_source = _read(repo/"feasibility/3d/3d-05/scene.json")
+    inputs = safe_relative(repo, configuration_dir or repo/"feasibility/3d/3d-05")
+    campaign = _read(inputs/"campaign.json")
+    revision = _read(inputs/"revision.json")
+    scene_source = _read(inputs/"scene.json")
     campaign_digest = content_id(campaign)
-    if campaign_digest != (repo/"feasibility/3d/3d-05/campaign.sha256").read_text().strip():
+    if campaign_digest != (inputs/"campaign.sha256").read_text().strip():
         raise ValueError("3D-05 campaign digest mismatch")
     baseline = safe_relative(repo, repo/campaign["baseline"]["character_relative_path"])
     if not baseline.is_file() or file_digest(baseline) != campaign["baseline"]["character_sha256"]:
@@ -215,7 +216,7 @@ def run_interaction_05(repo: Path, output_root: Path, profile: dict, blender_bin
                                                               "offline_replay_semantic_exact", "offline_replay_geometry_within_tolerance")}
         control_results[control] = validate_interaction_metrics(controlled, campaign)
         atomic_json(run_dir/"controls"/control/"validation.json", control_results[control])
-    sensitivity = validate_control_sensitivity(control_results)
+    sensitivity = validate_control_sensitivity(control_results, coordinated=bool(campaign.get("motion_thresholds")))
     atomic_json(run_dir/"control-sensitivity.json", sensitivity)
     machine_passed = validation["passed"] and sensitivity["passed"]
     review_page = _write_review(run_dir, assignment, campaign["director_gate"]["views"]) if render_frames and machine_passed else None

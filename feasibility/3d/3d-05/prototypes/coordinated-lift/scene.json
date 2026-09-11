@@ -1,0 +1,152 @@
+{
+  "schema_version": "1.0",
+  "experiment_id": "3D-05",
+  "scene_id": "stationary_sword_pickup_v1",
+  "seed": 305,
+  "character_id": "character_01",
+  "character_armature_id": "character_01_armature",
+  "character_mesh_id": "character_01_mesh",
+  "sword": {
+    "id": "sword_01",
+    "source_sha256": "8e69eb27977f8c84a9b7cd423cd5830eddcf0d07ac1d7fed1969931387015b28",
+    "source": {
+      "path": "sword_source_01/Models/GLB format/weapon-sword.glb",
+      "sha256": "8e69eb27977f8c84a9b7cd423cd5830eddcf0d07ac1d7fed1969931387015b28",
+      "format": "glb"
+    },
+    "target_longest_m": 1.0,
+    "grip_offset_from_geometry_base_m": 0.15,
+    "handle_contact_radius_m": 0.28,
+    "supported_grip_world_m": [
+      -0.5,
+      -0.2,
+      0.95
+    ],
+    "held_grip_world_m": [
+      -0.42,
+      -0.25,
+      1.25
+    ],
+    "normalization": {
+      "section_heights_m": [
+        0.224544,
+        0.383278
+      ],
+      "guard_height_scale": 0.3,
+      "handle_xy_scale": [
+        0.12,
+        0.12
+      ],
+      "guard_xy_scale": [
+        0.65,
+        0.35
+      ],
+      "blade_xy_scale": [
+        0.75,
+        0.2
+      ]
+    }
+  },
+  "support": {
+    "id": "sword_support_01",
+    "dimensions_m": [
+      0.3,
+      0.3,
+      0.8
+    ],
+    "position_m": [
+      -0.5,
+      -0.2,
+      0.4
+    ]
+  },
+  "timeline": {
+    "fps": 24,
+    "frame_start": 1,
+    "frame_end": 96,
+    "baseline_transitions": {
+      "reach": 16,
+      "grasp": 40,
+      "lift": 48,
+      "held": 68
+    }
+  },
+  "cameras": [
+    {
+      "id": "interaction_camera_primary",
+      "view": "primary",
+      "position": [
+        3.0,
+        -5.2,
+        2.3
+      ],
+      "target": [
+        -0.25,
+        0.02,
+        1.0
+      ],
+      "lens_mm": 55
+    },
+    {
+      "id": "interaction_camera_side",
+      "view": "side",
+      "position": [
+        -0.6,
+        -3.2,
+        1.65
+      ],
+      "target": [
+        -0.58,
+        0.02,
+        1.08
+      ],
+      "lens_mm": 72
+    },
+    {
+      "id": "interaction_camera_rear",
+      "view": "rear",
+      "position": [
+        0.15,
+        1.65,
+        0.9
+      ],
+      "target": [
+        -0.58,
+        0.0,
+        1.08
+      ],
+      "lens_mm": 55
+    }
+  ],
+  "grasp": {
+    "anchor_hand_local": [
+      -0.12,
+      0.145,
+      -0.135
+    ],
+    "closed_curl_fraction": 0.85,
+    "thumb_clearance_swing_degrees": -45,
+    "hand_yaw_degrees": 45,
+    "pregrasp_clearance_m": 0.06,
+    "open_thumb_curl_fraction": 0.35,
+    "approach_bow_world_m": [
+      0.08,
+      0.14,
+      0.22
+    ]
+  },
+  "motion": {
+    "version": "coordinated_lift_v1",
+    "lift_hand_pitch_degrees": 25,
+    "head_yaw_limit_degrees": 35,
+    "head_pitch_limit_degrees": 18,
+    "head_attention_start": 8,
+    "head_attention_end": 16,
+    "head_forward_local": [
+      0,
+      0,
+      1
+    ],
+    "torso_motion": "intentionally_static"
+  }
+}

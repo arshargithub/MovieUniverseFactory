@@ -15,6 +15,7 @@ CONTROLS = {
     "open_hand_attachment", "oversized_handle",
     "thumb_down_grasp", "locked_forearm_roll",
     "hand_support_penetration",
+    "rigid_lift", "wrist_only_lift", "relative_prop_rotation", "elbow_skin_distortion", "missing_attention",
 }
 FINGER_BONES = ("RightHandIndex1", "RightHandIndex2", "RightHandIndex3", "RightHandThumb1", "RightHandThumb2")
 ARM_BONES = ("RightArm", "RightForeArm", "RightHand") + FINGER_BONES
@@ -88,6 +89,29 @@ def _grip_rotation(armature, config):
     world = Matrix(((0, -1, 0), (0, 0, 1), (-1, 0, 0)))
     world = Matrix.Rotation(math.radians(config["grasp"]["hand_yaw_degrees"]), 3, "Z")@world
     return armature.matrix_world.to_quaternion().inverted()@world.to_quaternion()
+
+
+def _attention_pose(armature, initial, desired, source_time, target_world, motion):
+    """Bounded authored head orientation; does not claim eye-gaze control."""
+    weight = _smooth((source_time-motion["head_attention_start"])/
+                     (motion["head_attention_end"]-motion["head_attention_start"]))
+    head_world = armature.matrix_world@initial["Head"]
+    rotation = head_world.to_quaternion()
+    forward = (rotation@Vector(motion["head_forward_local"])).normalized()
+    target = (target_world-head_world.translation).normalized()
+    yaw = (math.atan2(target.y, target.x)-math.atan2(forward.y, forward.x)+math.pi)%(2*math.pi)-math.pi
+    yaw_limit = math.radians(motion["head_yaw_limit_degrees"])
+    yaw = max(-yaw_limit, min(yaw_limit, yaw))*weight
+    pitch = math.asin(max(-1, min(1, target.z)))-math.asin(max(-1, min(1, forward.z)))
+    pitch_limit = math.radians(motion["head_pitch_limit_degrees"])
+    pitch = max(-pitch_limit, min(pitch_limit, pitch))*weight
+    rotation = Quaternion((0, 0, 1), yaw)@rotation
+    rotation = Quaternion(rotation@Vector((1, 0, 0)), -pitch)@rotation
+    desired["Head"] = Matrix.LocRotScale(initial["Head"].translation,
+        armature.matrix_world.to_quaternion().inverted()@rotation, Vector((1, 1, 1)))
+    for bone in sorted(armature.pose.bones, key=lambda b:len(b.parent_recursive)):
+        if any(parent.name == "Head" for parent in bone.parent_recursive):
+            desired[bone.name] = desired[bone.parent.name]@initial[bone.parent.name].inverted()@initial[bone.name]
 
 
 def _arm_matrices(mf, armature, initial, target, hand_rotation, grip_local, roll_weight=1.0):
@@ -184,7 +208,10 @@ def _create_character_action(mf, armature, role, initial, supported, held, contr
         action["mf_failure_control"] = control
     action.use_fake_user = True
     rest = {bone.name: bone.bone.matrix_local.copy() for bone in armature.pose.bones}
-    previous = {name: None for name in ARM_BONES}
+    motion = config.get("motion")
+    key_names = ARM_BONES + tuple(b.name for b in armature.pose.bones
+        if motion and (b.name == "Head" or any(p.name == "Head" for p in b.parent_recursive)))
+    previous = {name: None for name in key_names}
     grip_local = Vector(config["grasp"]["anchor_hand_local"])
     initial_anchor = initial["RightHand"]@grip_local
     initial_rotation = initial["RightHand"].to_quaternion()
@@ -209,6 +236,10 @@ def _create_character_action(mf, armature, role, initial, supported, held, contr
             target = _lerp(pregrasp, supported, (source_time-24)/8)
         rotation_weight = _smooth((source_time-16)/8)
         hand_rotation = initial_rotation.slerp(final_rotation, rotation_weight)
+        if motion:
+            lift = _smooth((source_time-48)/20)
+            if not (control == "rigid_lift" and role == "candidate"):
+                hand_rotation = hand_rotation@Quaternion((0, 0, 1), math.radians(motion["lift_hand_pitch_degrees"])*lift)
         if 16 < source_time < 24:
             # Interpolate the wrist inside the reach sphere; rotating an offset
             # grip around an interpolated anchor can push the wrist outside it.
@@ -220,6 +251,14 @@ def _create_character_action(mf, armature, role, initial, supported, held, contr
             desired = _arm_matrices(mf, armature, initial, target, hand_rotation, grip_local, rotation_weight)
         except ValueError as error:
             raise ValueError(f"{error}; role={role}, frame={frame}, source_time={source_time}") from error
+        if motion and control == "wrist_only_lift" and role == "candidate" and source_time >= 48:
+            actual_hand = desired["RightHand"].copy()
+            desired = _arm_matrices(mf, armature, initial, actual_hand.translation+final_rotation@grip_local,
+                                    final_rotation, grip_local, rotation_weight)
+            desired["RightHand"] = actual_hand
+        if motion and control == "elbow_skin_distortion" and role == "candidate":
+            swell = 1+1.5*_smooth((source_time-48)/20)
+            desired["RightForeArm"] = desired["RightForeArm"]@Matrix.Diagonal((swell,1,swell,1))
         if control == "thumb_down_grasp" and role == "candidate":
             desired["RightHand"] = desired["RightHand"]@Matrix.Rotation(math.pi*rotation_weight, 4, "Y")
         if control == "locked_forearm_roll" and role == "candidate":
@@ -244,7 +283,10 @@ def _create_character_action(mf, armature, role, initial, supported, held, contr
             desired[bone.name] = bone.bone.convert_local_to_pose(
                 Matrix.LocRotScale(location, rotation, scale), rest[bone.name],
                 parent_matrix=desired[bone.parent.name], parent_matrix_local=rest[bone.parent.name])
-        _insert_pose(mf, armature, action, frame, desired, rest, previous)
+        if motion and not (control == "missing_attention" and role == "candidate"):
+            attention_target = supported if source_time < 48 else target
+            _attention_pose(armature, initial, desired, source_time, armature.matrix_world@attention_target, motion)
+        _insert_pose(mf, armature, action, frame, desired, rest, previous, key_names)
     for curve in mf.action_channels(action):
         for key in curve.keyframe_points:
             key.interpolation = "LINEAR"
@@ -380,6 +422,7 @@ def _create_sword_action(mf, sword, armature, role, control):
     supported = Vector(json.loads(sword["mf_supported_location_world_json"]))
     hand_surface_offset = Vector(json.loads(sword["mf_hand_surface_offset_world_json"]))
     attached_base = -hand_surface_offset
+    supported_rotation = Quaternion(json.loads(sword["mf_supported_quaternion_json"]))
     for index in range(761):
         frame = 1+index*.125
         source_time = _source_time(frame, role, control)
@@ -394,7 +437,10 @@ def _create_sword_action(mf, sword, armature, role, control):
         constraint.influence = influence
         constraint.keyframe_insert(data_path="influence", frame=frame)
         attached = influence > 0.0
-        sword.location = attached_base if attached else supported
+        sword.location = supported if constraint.type == "CHILD_OF" else attached_base if attached else supported
+        sword.rotation_quaternion = supported_rotation
+        if control == "relative_prop_rotation" and role == "candidate":
+            sword.rotation_quaternion = supported_rotation@Quaternion((0, 0, 1), math.radians(20)*_smooth((source_time-48)/20))
         if control == "attachment_teleportation" and role == "candidate" and not attached:
             sword.location = supported+Vector((.12, 0, 0))
         sword.keyframe_insert(data_path="location", frame=frame)
@@ -423,6 +469,18 @@ def build(mf, out, config, profile, role="candidate", control=None):
     mf.assign_character_action(armature, idle)
     _set_time(1)
     initial = {bone.name: bone.matrix.copy() for bone in armature.pose.bones}
+    if config.get("motion"):
+        reference = _character_points(mf, mesh)
+        center = armature.matrix_world@armature.pose.bones["RightForeArm"].head
+        groups = {g.index for g in mesh.vertex_groups if g.name in {"RightArm", "RightForeArm"}}
+        vertices = {v.index for v in mesh.data.vertices if (reference[v.index]-center).length < .09
+                    and any(g.group in groups and g.weight >= .05 for g in v.groups)}
+        edges = [[a,b,(reference[a]-reference[b]).length] for edge in mesh.data.edges
+                 for a,b in [tuple(edge.vertices)] if a in vertices and b in vertices]
+        if len(edges) < 6 or any(edge[2] <= 1e-8 for edge in edges):
+            raise ValueError("Insufficient nondegenerate elbow skin reference edges")
+        mesh["mf_elbow_reference_edges_json"] = json.dumps(edges)
+        scene["mf_head_neutral_direction_json"] = json.dumps(list((armature.matrix_world@initial["Head"]).to_quaternion()@Vector((0,0,1))))
     supported_world = Vector(config["sword"]["supported_grip_world_m"])
     held_world = Vector(config["sword"]["held_grip_world_m"])
     if control == "penetration":
@@ -448,14 +506,29 @@ def build(mf, out, config, profile, role="candidate", control=None):
         support.scale.z = 1.3125
         support.location.z = .525
     sword, imported = _create_sword(mf, config)
-    location_constraint = sword.constraints.new("COPY_LOCATION")
+    location_constraint = sword.constraints.new("CHILD_OF" if config.get("motion") else "COPY_LOCATION")
     location_constraint.name = "3D05_HAND_LOCATION"
     location_constraint.target = armature
     location_constraint.subtarget = "RightHand"
-    location_constraint.head_tail = 1.0
-    location_constraint.target_space = "WORLD"
-    location_constraint.owner_space = "WORLD"
-    location_constraint.use_offset = True
+    if location_constraint.type == "COPY_LOCATION":
+        location_constraint.head_tail = 1.0
+        location_constraint.target_space = "WORLD"
+        location_constraint.owner_space = "WORLD"
+        location_constraint.use_offset = True
+    else:
+        mf.assign_character_action(armature, baseline)
+        _set_time(40)
+        supported_matrix = sword.matrix_world.copy()
+        hand_world = armature.matrix_world@armature.pose.bones["RightHand"].matrix
+        sword["mf_hand_relative_matrix_json"] = json.dumps([list(row) for row in hand_world.inverted()@supported_matrix])
+        # Capture Blender's effective bone target frame, including its scale
+        # and bone-origin convention, then preserve the supported world pose.
+        location_constraint.inverse_matrix = Matrix.Identity(4)
+        location_constraint.influence = 1
+        bpy.context.view_layer.update()
+        effective_target = sword.matrix_world@supported_matrix.inverted()
+        location_constraint.inverse_matrix = effective_target.inverted()
+        sword["mf_attachment_kind"] = "rigid_hand_transform_v1"
     location_constraint.influence = 0
     sword.rotation_mode = "QUATERNION"
     sword_baseline = _create_sword_action(mf, sword, armature, "baseline", None)
@@ -467,6 +540,8 @@ def build(mf, out, config, profile, role="candidate", control=None):
     scene["mf_interaction_revision"] = "shift_interaction_timing_v1"
     scene["mf_interaction_role"] = role
     scene["mf_interaction_control"] = control or "none"
+    if config.get("motion"):
+        scene["mf_coordinated_motion_json"] = json.dumps(config["motion"], sort_keys=True)
     scene["mf_character_root_matrix_json"] = json.dumps([list(row) for row in bpy.data.objects["character_01"].matrix_world])
     select_role(mf, role)
     _set_time(1)
@@ -566,10 +641,18 @@ def _sample(mf, role, frame, with_geometry=True):
         "character_root_translation": list(bpy.data.objects["character_01"].matrix_world.translation),
         "anatomy": _arm_anatomy(armature),
     }
+    if sword.get("mf_hand_relative_matrix_json"):
+        expected = (armature.matrix_world@hand_pose.matrix)@Matrix(json.loads(sword["mf_hand_relative_matrix_json"]))
+        result["grip_translation_error_m"] = (expected.translation-sword_matrix.translation).length
+        result["grip_orientation_error_degrees"] = _quat_angle_degrees(expected.to_quaternion(), sword_matrix.to_quaternion())
     if with_geometry:
         result["character_points"] = _character_points(mf, mesh)
         result["sword_points"] = _sword_points(sword)
         result["grasp_geometry"] = _grasp_geometry(mesh, result["character_points"], sword)
+        if mesh.get("mf_elbow_reference_edges_json"):
+            edges = json.loads(mesh["mf_elbow_reference_edges_json"])
+            ratios = [(result["character_points"][a]-result["character_points"][b]).length/length for a,b,length in edges]
+            result["anatomy"].update(elbow_edge_ratio_min=min(ratios), elbow_edge_ratio_max=max(ratios), elbow_reference_edge_count=len(edges))
     return result
 
 
@@ -590,6 +673,22 @@ def _arm_anatomy(armature):
     thumb = armature.matrix_world@armature.pose.bones["RightHandThumb1"].head
     index = armature.matrix_world@armature.pose.bones["RightHandIndex1"].head
     result["thumb_side_up_dot"] = (thumb-index).normalized().z
+    if bpy.context.scene.get("mf_coordinated_motion_json"):
+        world = armature.matrix_world
+        shoulder, elbow, wrist = [world@armature.pose.bones[name].head for name in ("RightArm", "RightForeArm", "RightHand")]
+        upper, lower = (elbow-shoulder).normalized(), (wrist-elbow).normalized()
+        hand_world = world@armature.pose.bones["RightHand"].matrix
+        head_world = world@armature.pose.bones["Head"].matrix
+        head_forward = head_world.to_quaternion()@Vector((0,0,1))
+        target_direction = (bpy.data.objects["sword_01"].matrix_world.translation-head_world.translation).normalized()
+        neutral_direction = Vector(json.loads(bpy.context.scene["mf_head_neutral_direction_json"]))
+        result.update(elbow_flexion_degrees=math.degrees(upper.angle(lower)),
+                      forearm_pitch_degrees=math.degrees(math.asin(max(-1,min(1,lower.z)))),
+                      hand_pitch_degrees=math.degrees(math.asin(max(-1,min(1,(hand_world.to_quaternion()@Vector((0,1,0))).z)))),
+                      hand_radial_up_dot=max(-1,min(1,-(hand_world.to_quaternion()@Vector((1,0,0))).z)),
+                      head_forward_world=list(head_forward),
+                      head_attention_error_degrees=math.degrees(head_forward.angle(target_direction)),
+                      head_attention_gain_degrees=math.degrees(neutral_direction.angle(target_direction)-head_forward.angle(target_direction)))
     return result
 
 
@@ -674,6 +773,7 @@ def _grasp_geometry(mesh, character, sword):
     worst_penetration = 0.0
     worst_point = None
     grip = sword.matrix_world.translation
+    inverse_sword = sword.matrix_world.inverted() if sword.get("mf_hand_relative_matrix_json") else None
     for point, group in samples:
         nearest = tree.find_nearest(point)
         if nearest is None:
@@ -685,10 +785,11 @@ def _grasp_geometry(mesh, character, sword):
             worst_penetration = -signed
             worst_point = list(point-sword.matrix_world.translation)
         penetration.append(max(0.0, -signed))
-        if -.095 <= surface.z-grip.z <= .065:
+        local_surface = inverse_sword@surface if inverse_sword else surface-grip
+        if -.095 <= local_surface.z <= .065:
             errors[group].append(distance)
             if distance <= .008:
-                angles.append(math.atan2(surface.y-grip.y, surface.x-grip.x) % (2*math.pi))
+                angles.append(math.atan2(local_surface.y, local_surface.x) % (2*math.pi))
     angles.sort()
     gaps = [b-a for a,b in zip(angles, angles[1:])] + ([angles[0]+2*math.pi-angles[-1]] if angles else [])
     coverage = math.degrees(2*math.pi-max(gaps)) if gaps else 0.0

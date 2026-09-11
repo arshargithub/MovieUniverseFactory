@@ -26,6 +26,15 @@ CONTROL_EXPECTATIONS = {
 }
 
 
+MOTION_CONTROL_EXPECTATIONS = {
+    "rigid_lift": {"motion.candidate.hand_pitch"},
+    "wrist_only_lift": {"motion.candidate.forearm_pitch"},
+    "relative_prop_rotation": {"grip.orientation"},
+    "elbow_skin_distortion": {"motion.candidate.elbow_skin"},
+    "missing_attention": {"motion.candidate.attention"},
+}
+
+
 def _check(checks, name, passed, details=None):
     checks.append({"name": name, "passed": bool(passed), "details": details})
 
@@ -65,9 +74,11 @@ def validate_interaction_metrics(raw: dict, config: dict) -> dict:
             bend = [row.get(role+"_wrist_swing_degrees") for row in held_rows]
             finite_bend = bool(bend) and all(type(value) in (int,float) and math.isfinite(value) for value in bend)
             _check(checks, f"anatomy.{role}.attached_wrist_swing", finite_bend and max(bend) <= thresholds["maximum_attached_wrist_swing_degrees"], max(bend) if finite_bend else "missing/nonfinite")
-            up = [row.get(role+"_thumb_side_up_dot") for row in rows if row["frame"] >= 24]
+            up_key = "hand_radial_up_dot" if config.get("motion_thresholds") else "thumb_side_up_dot"
+            up_limit = config.get("motion_thresholds", {}).get("minimum_radial_up_dot", thresholds["minimum_acquisition_thumb_side_up_dot"])
+            up = [row.get(role+"_"+up_key) for row in rows if row["frame"] >= 24]
             finite_up = bool(up) and all(type(value) in (int,float) and math.isfinite(value) and -1 <= value <= 1 for value in up)
-            _check(checks, f"anatomy.{role}.thumb_up", finite_up and min(up) >= thresholds["minimum_acquisition_thumb_side_up_dot"], min(up) if finite_up else "missing/nonfinite")
+            _check(checks, f"anatomy.{role}.thumb_up", finite_up and min(up) >= up_limit, min(up) if finite_up else "missing/nonfinite")
             supported_rows = [row for row in rows if expected_owner(row["frame"], role) == "sword_support_01"]
             stationary = max((row.get(role+"_supported_translation_error_m", math.inf) for row in supported_rows), default=math.inf)
             _check(checks, f"support.{role}.stationary", stationary <= thresholds["maximum_supported_translation_error_m"], stationary)
@@ -113,6 +124,8 @@ def validate_interaction_metrics(raw: dict, config: dict) -> dict:
         _check(checks, "preservation.outside_character_rms", max(row["character_rms_vertex_delta_m"] for row in outside) <= thresholds["outside_character_rms_vertex_delta_m"])
         _check(checks, "preservation.outside_sword_translation", max(row["sword_translation_delta_m"] for row in outside) <= thresholds["outside_sword_translation_delta_m"])
         _check(checks, "preservation.outside_sword_orientation", max(row["sword_orientation_delta_degrees"] for row in outside) <= thresholds["outside_sword_orientation_delta_degrees"])
+    if config.get("motion_thresholds"):
+        _validate_motion(checks, rows, config)
     steps = raw.get("half_frame_steps", [])
     _check(checks, "continuity.character", bool(steps) and max(row["character_rms_m"] for row in steps) <= thresholds["maximum_character_rms_half_frame_step_m"],
            max((row["character_rms_m"] for row in steps), default=None))
@@ -173,13 +186,41 @@ def interaction_protected_flags(parent: dict, current: dict) -> dict:
     }
 
 
-def validate_control_sensitivity(results: dict) -> dict:
+def validate_control_sensitivity(results: dict, coordinated: bool = False) -> dict:
     checks = []
-    _check(checks, "controls.exact_set", set(results) == set(CONTROL_EXPECTATIONS), sorted(results))
-    for name, expected in CONTROL_EXPECTATIONS.items():
+    expectations = {**CONTROL_EXPECTATIONS, **(MOTION_CONTROL_EXPECTATIONS if coordinated else {})}
+    _check(checks, "controls.exact_set", set(results) == set(expectations), sorted(results))
+    for name, expected in expectations.items():
         result = results.get(name, {})
         errors = set(result.get("errors", []))
         _check(checks, "controls."+name, result.get("passed") is False and expected <= errors,
                {"expected_errors": sorted(expected), "observed_errors": sorted(errors)})
     errors = [item["name"] for item in checks if not item["passed"]]
     return {"schema_version": "1.0", "passed": not errors, "checks": checks, "errors": errors}
+
+
+def _validate_motion(checks, rows, config):
+    """Opt-in authored-motion probes; independent evaluated geometry, not key values."""
+    limits = config["motion_thresholds"]
+    for role in ("baseline", "candidate"):
+        start = config["baseline"][role+"_transitions"]["lift"]
+        end = config["baseline"][role+"_transitions"]["held"]
+        by_time = {row["frame"]: row for row in rows}
+        def values(metric, subset=rows):
+            return [row.get(role+"_"+metric) for row in subset]
+        def finite(items):
+            return bool(items) and all(type(v) in (int,float) and math.isfinite(v) for v in items)
+        metrics = ("hand_pitch_degrees", "forearm_pitch_degrees", "elbow_flexion_degrees", "head_attention_gain_degrees", "elbow_edge_ratio_min", "elbow_edge_ratio_max", "elbow_reference_edge_count")
+        _check(checks, f"motion.{role}.finite", all(finite(values(metric)) for metric in metrics))
+        for metric in ("hand_pitch", "forearm_pitch"):
+            pair = [by_time.get(t, {}).get(role+"_"+metric+"_degrees") for t in (start,end)]
+            gain = pair[1]-pair[0] if finite(pair) else None
+            _check(checks, f"motion.{role}.{metric}", gain is not None and limits["minimum_"+metric+"_gain_degrees"] <= gain <= limits["maximum_"+metric+"_gain_degrees"], gain)
+        flex = values("elbow_flexion_degrees", [r for r in rows if start <= r["frame"] <= end])
+        gain = max(flex)-flex[0] if finite(flex) else None
+        _check(checks, f"motion.{role}.elbow_flexion", gain is not None and gain >= limits["minimum_peak_elbow_flexion_gain_degrees"] and limits["minimum_held_elbow_flexion_degrees"] <= flex[-1] <= limits["maximum_held_elbow_flexion_degrees"], {"peak_gain":gain, "held":flex[-1] if finite(flex) else None})
+        attention = values("head_attention_gain_degrees", [r for r in rows if r["frame"] >= 16])
+        _check(checks, f"motion.{role}.attention", finite(attention) and min(attention) >= limits["minimum_attention_gain_degrees"], min(attention) if finite(attention) else None)
+        low, high, counts = values("elbow_edge_ratio_min"), values("elbow_edge_ratio_max"), values("elbow_reference_edge_count")
+        valid = finite(low) and finite(high) and finite(counts)
+        _check(checks, f"motion.{role}.elbow_skin", valid and min(low) >= limits["minimum_elbow_edge_ratio"] and max(high) <= limits["maximum_elbow_edge_ratio"] and min(counts) >= 6, {"min":min(low),"max":max(high),"edges":min(counts)} if valid else "missing/nonfinite")

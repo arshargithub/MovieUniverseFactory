@@ -546,7 +546,8 @@ def command_run_interaction_05(args) -> int:
     from .interaction_controller import run_interaction_05
     result=run_interaction_05(root,output,_profile(root,args.profile),
                               settings.get("BLENDER_BIN","/Applications/Blender.app/Contents/MacOS/Blender"),
-                              render_frames=not args.no_render,scored=args.scored)
+                              render_frames=not args.no_render,scored=args.scored,
+                              configuration_dir=Path(args.configuration) if args.configuration else None)
     emit({"ok":result["machine_passed"],"decision":result["decision"],"run_id":result["run_id"],
           "review":result["review"],"director_status":result["director_status"],"scored":result["scored"]})
     return 0 if result["machine_passed"] else 3
@@ -590,7 +591,7 @@ def parser() -> argparse.ArgumentParser:
     q=sub.add_parser("run-performance-04"); q.add_argument("--output",default="runs/3d04"); q.add_argument("--profile",default="asset_preview"); q.add_argument("--no-render",action="store_true"); q.add_argument("--scored",action="store_true"); q.set_defaults(func=command_run_performance_04)
     q=sub.add_parser("run-performance-controls-04"); q.add_argument("--accepted-run",required=True); q.add_argument("--output",default="runs/3d04-controls"); q.add_argument("--profile",default="asset_preview"); q.add_argument("--development",action="store_true"); q.set_defaults(func=command_run_performance_controls_04)
     q=sub.add_parser("export-performance-04"); q.add_argument("--output",required=True); q.set_defaults(func=command_export_performance_04)
-    q=sub.add_parser("run-interaction-05"); q.add_argument("--output",default="runs/3d05"); q.add_argument("--profile",default="asset_preview"); q.add_argument("--no-render",action="store_true"); q.add_argument("--scored",action="store_true"); q.set_defaults(func=command_run_interaction_05)
+    q=sub.add_parser("run-interaction-05"); q.add_argument("--output",default="runs/3d05"); q.add_argument("--profile",default="asset_preview"); q.add_argument("--no-render",action="store_true"); q.add_argument("--scored",action="store_true"); q.add_argument("--configuration",help="Repository-local directory of scene, revision and campaign inputs"); q.set_defaults(func=command_run_interaction_05)
     q=sub.add_parser("evaluate-evaluator"); q.add_argument("--config",required=True); q.add_argument("--benchmark",required=True); q.add_argument("--output",required=True); q.add_argument("--live",action="store_true"); q.set_defaults(func=command_evaluate_evaluator)
     return p
 
