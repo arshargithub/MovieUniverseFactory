@@ -1,0 +1,63 @@
+{
+  "clips": {
+    "idle": {
+      "capture_order_max_mesh_rms": {
+        "forward": 0.0,
+        "isolated": 0.0,
+        "reverse": 0.0
+      },
+      "capture_properties": {
+        "forward": "forward",
+        "isolated": "isolated",
+        "reverse": "reverse"
+      },
+      "fractional_sample_count": 32,
+      "playback_order_max_mesh_rms": {
+        "forward": 0.0,
+        "isolated": 0.0,
+        "reverse": 0.0
+      }
+    },
+    "jump": {
+      "capture_order_max_mesh_rms": {
+        "forward": 0.0,
+        "isolated": 0.0,
+        "reverse": 0.0
+      },
+      "capture_properties": {
+        "forward": "forward",
+        "isolated": "isolated",
+        "reverse": "reverse"
+      },
+      "fractional_sample_count": 12,
+      "playback_order_max_mesh_rms": {
+        "forward": 0.0,
+        "isolated": 0.0,
+        "reverse": 0.0
+      }
+    },
+    "run": {
+      "capture_order_max_mesh_rms": {
+        "forward": 0.0,
+        "isolated": 0.0,
+        "reverse": 0.0
+      },
+      "capture_properties": {
+        "forward": "forward",
+        "isolated": "isolated",
+        "reverse": "reverse"
+      },
+      "fractional_sample_count": 16,
+      "playback_order_max_mesh_rms": {
+        "forward": 0.0,
+        "isolated": 0.0,
+        "reverse": 0.0
+      }
+    }
+  },
+  "experiment_id": "3D-03.1-PRODUCTION-REGRESSION",
+  "passed": true,
+  "provider_calls": 0,
+  "schema_version": "1.0",
+  "tolerance_source_units": 1e-07
+}

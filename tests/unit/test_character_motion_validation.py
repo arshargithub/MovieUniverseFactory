@@ -55,3 +55,12 @@ def test_missing_limb_nonfinite_value_and_both_feet_contact_are_rejected():
     result=validate_character_motion(raw,CONFIG)
     assert not result["passed"]
     assert {"idle.limb_lengths","run.alternating_contact","jump.finite"}<=set(result["errors"])
+
+
+def test_fragmented_airborne_samples_do_not_satisfy_contiguous_jump_gate():
+    raw=deepcopy(evidence())
+    for frame in raw["clips"]["jump"]["frames"]:
+        frame["foot_min_z_m"]={"left":.12,"right":.12} if frame["frame"] in {4,8} else {"left":.01,"right":.01}
+    config=deepcopy(CONFIG); config["thresholds"]["jump_min_airborne_frames"]=2
+    result=validate_character_motion(raw,config)
+    assert "jump.airborne_phase" in result["errors"]

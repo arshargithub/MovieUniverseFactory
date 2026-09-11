@@ -2,7 +2,7 @@
 
 Decision: **GREEN for the bounded 3D-03.1 claim.**
 
-The production importer now captures source animation before touching the target and solves each bone against its current-frame parent pose. This removes the stale-parent corruption that caused the rejected opening contortions. Quaternion signs are canonicalized, source frame rates are recorded, and a static placement offset preserves source vertical motion.
+The production importer now captures source animation before touching the target and solves each bone against its current-frame parent pose. This removes the stale-parent corruption that caused the rejected opening contortions. Quaternion signs are canonicalized, source frame rates are recorded, and a static placement offset avoids per-frame grounding drift for the admitted rotation-only fixtures. Bone and root translations remain outside the qualified transfer contract.
 
 The official Kenney archive contains no animation beyond `idle.fbx`, `run.fbx`, and `jump.fbx`. The admitted jump evaluates as a near-static crouched pose, so it cannot support a complete source-jump claim. 3D-03.1 therefore keeps idle and run as corrected transfers and labels jump separately as deterministic authored motion. The authored action blends the admitted idle and crouched poses with a frozen 0.34 m vertical trajectory; it does not claim faithful transfer of a complete jump.
 
@@ -35,3 +35,11 @@ The Director accepted all complete clips. Run received **4/5** because its limit
 GREEN establishes the corrected same-skeleton transfer for this character's idle and run actions, plus this exact bounded authored-jump recipe, persistence, structured revision, and offline replay. It does not establish faithful transfer of a complete source jump, arbitrary animation import or retargeting, general motion authoring, horizontal root motion, facial performance, or production character quality.
 
 The next animation experiment should use this accepted character and focus on timeline-local performance editing, stronger run dynamics, foot sliding, contacts, motion arcs, and preservation outside an edited frame range.
+
+## Post-closure regression and packaging pass
+
+The production importer is now exercised directly under forward, reverse, and reset-between-sample source capture. All three methods produce identical meshes for idle, run, and jump. Playback evaluated in forward and reverse order also matches exactly at every integer and half frame: 32 fractional idle samples, 16 run samples, and 12 jump samples. This protects the specific parent-evaluation correction independently of the original diagnostic prototype.
+
+The airborne gate now requires one contiguous interval rather than a count of disconnected frames; a fragmented negative control is retained. Loop playback skips the duplicated endpoint for idle and run while leaving the endpoint accessible on the slider.
+
+For 3D-04, common-timeline integration uses an explicit physical-time scale of `timeline_fps / source_fps`. At 24 fps, the admitted 30 fps idle action has scale 0.8 and the 24 fps run has scale 1.0. The sealed 3D-03.1 actions remain unchanged; the shared timing policy is applied by the next timeline experiment.

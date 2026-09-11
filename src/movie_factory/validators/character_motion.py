@@ -85,9 +85,16 @@ def validate_character_motion(raw:dict,config:dict)->dict:
             endpoint_contact=min(feet["left"][0],feet["right"][0])<=endpoint and min(feet["left"][-1],feet["right"][-1])<=endpoint
             airborne=[frame["frame"] for frame,left,right in zip(frames,feet["left"],feet["right"])
                       if min(left,right)>=thresholds["jump_min_airborne_clearance_m"]]
+            runs=[]; current=[]
+            for frame in airborne:
+                if current and frame!=current[-1]+1: runs.append(current); current=[]
+                current.append(frame)
+            if current: runs.append(current)
+            longest=max(runs,key=len,default=[])
             _check(checks,"jump.takeoff_landing_contact",endpoint_contact,
                    {"first":[feet["left"][0],feet["right"][0]],"last":[feet["left"][-1],feet["right"][-1]]})
-            _check(checks,"jump.airborne_phase",len(airborne)>=thresholds["jump_min_airborne_frames"],{"airborne_frames":airborne})
+            _check(checks,"jump.airborne_phase",len(longest)>=thresholds["jump_min_airborne_frames"],
+                   {"airborne_frames":airborne,"longest_contiguous_interval":longest})
     errors=[item["name"] for item in checks if not item["passed"]]
     return {"schema_version":"1.0","passed":not errors,"checks":checks,"errors":errors,
             "authority":"deterministic_outer_validator","api_can_override":False}

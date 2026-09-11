@@ -471,6 +471,12 @@ def command_qualify_character_031(args) -> int:
     return 0 if result["passed"] else 3
 
 
+def command_export_character_031(args) -> int:
+    root=repo_root(); output=Path(args.output); output=(output if output.is_absolute() else root/output).resolve()
+    from .character_export import export_character_031
+    result=export_character_031(root,output); emit(result); return 0
+
+
 def command_replay_character(args) -> int:
     root=repo_root(); settings=load_settings_safe(root)
     run=Path(args.run); run=(run if run.is_absolute() else root/run).resolve()
@@ -534,6 +540,7 @@ def parser() -> argparse.ArgumentParser:
     q=sub.add_parser("probe-character-assets"); q.add_argument("--staged",required=True); q.add_argument("--output",required=True); q.set_defaults(func=command_probe_character_assets)
     q=sub.add_parser("qualify-character"); q.add_argument("--staged",required=True); q.add_argument("--output",default="runs/3d03"); q.add_argument("--profile",default="asset_preview"); q.set_defaults(func=command_qualify_character)
     q=sub.add_parser("qualify-character-031"); q.add_argument("--staged",required=True); q.add_argument("--output",default="runs/3d031"); q.add_argument("--profile",default="asset_preview"); q.set_defaults(func=command_qualify_character_031)
+    q=sub.add_parser("export-character-031"); q.add_argument("--output",required=True); q.set_defaults(func=command_export_character_031)
     q=sub.add_parser("replay-character"); q.add_argument("--run",required=True); q.add_argument("--output",required=True); q.set_defaults(func=command_replay_character)
     q=sub.add_parser("validate-character-motion"); q.add_argument("--run",required=True); q.add_argument("--output",default="runs/3d03-temporal"); q.add_argument("--live",action="store_true"); q.set_defaults(func=command_validate_character_motion)
     q=sub.add_parser("validate-character-motion-031"); q.add_argument("--run",required=True); q.add_argument("--output",default="runs/3d031-motion"); q.set_defaults(func=command_validate_character_motion_031)

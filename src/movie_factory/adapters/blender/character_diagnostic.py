@@ -174,3 +174,53 @@ def run(w,out,plan,parent_native=None):
         temporal=out/'preview'; temporal.mkdir()
         w.character_temporal_evidence(temporal,{'name':'diagnostic_only','width':640,'height':360,'samples':2,'device':'CPU','shots':['shot_B']},303,
             {'schema_version':'1.0','camera_id':'camera_B','clips':{c:{'action':a,'frame_start':f,'frame_end':l} for c,(a,f,l) in w.CHARACTER_MOTION_ACTIONS.items()}})
+
+
+def run_production_regression(w,out,plan):
+    """Exercise the production importer under alternate evaluation orders."""
+    if plan.get('experiment_id') not in {'3D-03','3D-03.1'} or set(plan.get('clips',{}))!={'idle','run','jump'}:
+        raise ValueError('Production regression accepts only an admitted character plan')
+    report={'schema_version':'1.0','experiment_id':'3D-03.1-PRODUCTION-REGRESSION','clips':{},'provider_calls':0}
+    for clip in ('idle','run','jump'):
+        variants={}
+        for order in ('forward','reverse','isolated'):
+            bpy.ops.wm.read_factory_settings(use_empty=True)
+            model,model_actions=w.import_animated_fbx(plan['entity']['source'])
+            if model_actions: raise ValueError('Regression model unexpectedly contains animation')
+            target=next(obj for obj in model if obj.type=='ARMATURE'); mesh=next(obj for obj in model if obj.type=='MESH')
+            for pose_bone in target.pose.bones:
+                for constraint in list(pose_bone.constraints): pose_bone.constraints.remove(constraint)
+            action=w.import_character_action(plan['clips'][clip],clip,target,mesh,capture_order=order)
+            w.assign_character_action(target,action)
+            first,last=(int(round(value)) for value in action.frame_range)
+            samples=[float(first)]
+            for frame in range(first,last): samples.extend((frame+.5,float(frame+1)))
+            def evaluated(sequence):
+                result={}
+                for frame in sequence:
+                    bpy.context.scene.frame_set(int(frame),subframe=frame-int(frame)); bpy.context.view_layer.update()
+                    points=w._evaluated_character_points(mesh)
+                    if not all(math.isfinite(value) for point in points for value in point):
+                        raise ValueError('Production regression produced non-finite geometry')
+                    result[frame]=points
+                return result
+            forward=evaluated(samples); reverse=evaluated(list(reversed(samples)))
+            variants[order]={'points':forward,
+                             'playback_order_max_rms':max(rms(forward[frame],reverse[frame]) for frame in samples),
+                             'fractional_sample_count':sum(not frame.is_integer() for frame in samples),
+                             'capture_property':action.get('mf_capture_order')}
+        baseline=variants['forward']['points']
+        comparisons={order:max(rms(baseline[frame],variant['points'][frame]) for frame in baseline)
+                     for order,variant in variants.items()}
+        report['clips'][clip]={
+            'capture_order_max_mesh_rms':comparisons,
+            'playback_order_max_mesh_rms':{order:variant['playback_order_max_rms'] for order,variant in variants.items()},
+            'fractional_sample_count':variants['forward']['fractional_sample_count'],
+            'capture_properties':{order:variant['capture_property'] for order,variant in variants.items()},
+        }
+    tolerance=1e-7
+    report['tolerance_source_units']=tolerance
+    report['passed']=all(value<=tolerance for clip in report['clips'].values()
+                         for group in ('capture_order_max_mesh_rms','playback_order_max_mesh_rms')
+                         for value in clip[group].values())
+    w.write_json(out/'production-regression.json',report)

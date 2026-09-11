@@ -10,7 +10,7 @@ The character, rig, skins, and three FBXs remain the exact digest-paired Kenney 
 
 This experiment makes two distinct claims:
 
-1. Idle and run are faithful same-skeleton transfers. The worker captures all source samples before changing the target, solves every target basis against the current frame's explicit parent pose, preserves the canonical rig's lengths, canonicalizes quaternion signs, and uses a static clip placement offset.
+1. Idle and run are same-skeleton, rotation-only transfers for these admitted fixtures. The worker captures all source samples before changing the target, solves every target basis against the current frame's explicit parent pose, preserves the canonical rig's lengths, canonicalizes quaternion signs, and uses a static clip placement offset. Bone and root translations are deliberately discarded, so this does not establish general vertical-trajectory transfer.
 2. Jump is bounded authored motion. It deterministically blends the admitted idle and crouched reference poses over 13 frames and adds the frozen 0.34 m takeoff/airborne/landing trajectory. It is labelled `authored_full_jump`; it is not described as faithful transfer of a complete source jump.
 
 All actions record their imported frame rate. The evidence player uses 30 fps for idle and 24 fps for run and jump. The Blender scene has a deterministic 24 fps default; consumers must honor each action's recorded source rate when exact imported timing matters.

@@ -224,7 +224,9 @@ def character_material(entity_id, skins):
     return mat,loaded
 
 
-def import_character_action(spec, clip_name, target_armature, target_mesh):
+def import_character_action(spec, clip_name, target_armature, target_mesh,capture_order="forward"):
+    if capture_order not in {"forward","reverse","isolated"}:
+        raise ValueError("Unsupported character source capture order")
     objects,actions=import_animated_fbx(spec)
     source_armatures=[obj for obj in objects if obj.type=="ARMATURE"]
     if len(source_armatures)!=1:
@@ -254,14 +256,18 @@ def import_character_action(spec, clip_name, target_armature, target_mesh):
     # Capture the complete source before touching the target. Blender pose
     # matrices are mutable dependency-graph values, so every matrix is copied.
     captured={}
-    for frame in range(first,last+1):
+    frames=list(range(first,last+1))
+    capture_frames=list(reversed(frames)) if capture_order=="reverse" else frames
+    for frame in capture_frames:
+        if capture_order=="isolated":
+            scene.frame_set(first); bpy.context.view_layer.update()
         scene.frame_set(frame); bpy.context.view_layer.update()
         captured[frame]={name:(source_to_target@source_armature.pose.bones[name].matrix).copy() for name in source_names}
 
     action=bpy.data.actions.new("character_action_"+clip_name)
     assign_character_action(target_armature,action)
     solved_frames={}; floor_z={}
-    for frame in range(first,last+1):
+    for frame in frames:
         target_armature.location=(0,0,0)
         source_poses=captured[frame]
         desired={}
@@ -302,15 +308,16 @@ def import_character_action(spec, clip_name, target_armature, target_mesh):
     # consistent sign so interpolation cannot take the long path between keys.
     for bone in ordered:
         previous=None
-        for frame in range(first,last+1):
+        for frame in frames:
             rotation=solved_frames[frame][bone.name]
             if previous is not None and rotation.dot(previous)<0: rotation.negate()
             previous=rotation.copy()
 
-    # Use one placement offset for the whole clip. This preserves any vertical
-    # source trajectory; per-frame floor snapping would erase an airborne phase.
+    # Use one placement offset for the whole clip. This avoids per-frame floor
+    # snapping for these admitted rotation-only fixtures. Source bone and root
+    # translations remain outside this bounded transfer contract.
     root_z=-min(floor_z.values())
-    for frame in range(first,last+1):
+    for frame in frames:
         scene.frame_set(frame)
         for bone in full_order:
             bone.rotation_mode="QUATERNION"; bone.location=(0,0,0); bone.scale=(1,1,1)
@@ -325,6 +332,7 @@ def import_character_action(spec, clip_name, target_armature, target_mesh):
     action["mf_id"]=action.name; action["mf_clip_name"]=clip_name; action["mf_source_sha256"]=spec["sha256"]
     action["mf_source_fps"]=source_fps; action["mf_source_frame_start"]=first; action["mf_source_frame_end"]=last
     action["mf_transfer_method"]="explicit_parent_pose_rotation_bake_v2"
+    action["mf_capture_order"]=capture_order
     action["mf_clip_semantics"]="loop" if clip_name in {"idle","run"} else "source_pose_reference"
     action["mf_root_motion_policy"]="static_clip_floor_offset_preserve_vertical_v1"; action.use_fake_user=True
     target_armature.animation_data.action=None
@@ -565,6 +573,9 @@ def build_character(plan,profile):
     assign_character_action(armature,actions["idle"]); scene.frame_set(1); bpy.context.view_layer.update()
     scene.render.fps=24; scene.render.fps_base=1.0
     scene["mf_playback_fps"]=24
+    for action in actions.values():
+        action["mf_timeline_fps"]=24.0
+        action["mf_nla_time_scale"]=24.0/action["mf_source_fps"]
     low,high=evaluated_bounds([mesh]); character.location=(-((low[0]+high[0])/2),-((low[1]+high[1])/2),-low[2]); bpy.context.view_layer.update()
     # Simple fixed studio stage; it is protected but not part of the imported character claim.
     stage=root({"id":"stage_01","kind":"stage","position":[0,0,0],"rotation_z":0})
@@ -1300,6 +1311,12 @@ def main():
             diagnostic_spec.loader.exec_module(diagnostic)
             diagnostic.run(sys.modules[__name__],out,job["plan"],job.get("parent_native"))
             status["artifacts"].append("diagnostic.json")
+        elif mode=="character_production_regression":
+            diagnostic_spec=importlib.util.spec_from_file_location("mf_character_diagnostic",Path(__file__).with_name("character_diagnostic.py"))
+            diagnostic=importlib.util.module_from_spec(diagnostic_spec)
+            diagnostic_spec.loader.exec_module(diagnostic)
+            diagnostic.run_production_regression(sys.modules[__name__],out,job["plan"])
+            status["artifacts"].append("production-regression.json")
         elif mode=="build":
             build(job["plan"],profile)
         elif mode=="build_external":
