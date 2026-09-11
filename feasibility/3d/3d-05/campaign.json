@@ -1,9 +1,18 @@
 {
-  "schema_version": "1.0",
-  "experiment_id": "3D-05",
-  "campaign_status": "FROZEN_FOR_SCORED_CAMPAIGN",
-  "acceptance_version": "3d05-gates-v1-frozen",
+  "acceptance_version": "3d05-gates-v2-surface-contact",
   "baseline": {
+    "baseline_transitions": {
+      "grasp": 40,
+      "held": 68,
+      "lift": 48,
+      "reach": 16
+    },
+    "candidate_transitions": {
+      "grasp": 36,
+      "held": 64,
+      "lift": 44,
+      "reach": 16
+    },
     "character_evidence_tag": "3d-03-1-v1-green-evidence",
     "character_relative_path": "runs/3d031/character-v2-20260911T012644Z-2d7d8605/initial/build/scene.blend",
     "character_sha256": "bbf05848c30e531ca31fc4632210b8344f6f35166db9c26abe4adfa6150e2488",
@@ -11,61 +20,95 @@
     "sword_asset_sha256": "8e69eb27977f8c84a9b7cd423cd5830eddcf0d07ac1d7fed1969931387015b28",
     "sword_staged_manifest_sha256": "92bbd423248c9b8a67da1433522f0bb6748dbbc952b2ad43a70274d26202b1f4",
     "timeline_fps": 24,
-    "timeline_frame_start": 1,
     "timeline_frame_end": 96,
-    "baseline_transitions": {"reach": 16, "grasp": 40, "lift": 48, "held": 68},
-    "candidate_transitions": {"reach": 16, "grasp": 36, "lift": 44, "held": 64}
+    "timeline_frame_start": 1
   },
-  "sampling": {
-    "regular_step_frames": 0.5,
-    "dense_step_frames": 0.125,
-    "dense_windows": [[26, 50], [62, 78]],
-    "velocity_half_width_frames": 0.125,
-    "checkpoints": {
-      "baseline": [32, 40.125, 80],
-      "candidate": [32, 36.125, 80]
-    }
-  },
-  "thresholds": {
-    "support_contact_error_m": 0.01,
-    "grip_translation_error_m": 0.003,
-    "grip_orientation_error_degrees": 0.5,
-    "attachment_position_second_difference_m": 0.002,
-    "attachment_orientation_second_difference_degrees": 0.5,
-    "minimum_blade_body_clearance_m": 0.04,
-    "floor_penetration_tolerance_m": 0.015,
-    "minimum_lifting_support_separation_m": 0.02,
-    "minimum_held_support_separation_m": 0.25,
-    "stationary_root_translation_m": 0.000001,
-    "stationary_root_rotation_degrees": 0.0001,
-    "maximum_character_rms_half_frame_step_m": 0.18,
-    "maximum_sword_half_frame_step_m": 0.08,
-    "outside_character_max_vertex_delta_m": 0.000001,
-    "outside_character_rms_vertex_delta_m": 2.5e-7,
-    "outside_sword_translation_delta_m": 0.000001,
-    "outside_sword_orientation_delta_degrees": 0.0001,
-    "boundary_character_rms_velocity_delta_m_per_s": 0.002,
-    "boundary_sword_velocity_delta_m_per_s": 0.005,
-    "required_timing_shift_frames": 4,
-    "timing_shift_tolerance_frames": 0.125
-  },
-  "negative_controls": ["early_attachment", "attachment_teleportation", "hand_sword_sliding", "penetration", "edit_leakage"],
+  "campaign_status": "FROZEN_FOR_SCORED_CAMPAIGN",
   "director_gate": {
-    "score_increment": 0.5,
-    "minimum_candidate_score": 4.0,
-    "minimum_readability_improvement": 0.5,
     "candidate_must_not_regress_other_dimensions": true,
     "candidate_preference_required": true,
+    "labels": [
+      "A",
+      "B"
+    ],
     "major_defects_allowed": 0,
+    "minimum_candidate_score": 4.0,
+    "minimum_readability_improvement": 0.5,
     "review_seconds_required": true,
-    "views": ["primary", "side", "rear"],
-    "labels": ["A", "B"]
+    "score_increment": 0.5,
+    "views": [
+      "primary",
+      "side",
+      "rear"
+    ]
   },
-  "provider_budget": {"maximum_provider_calls": 0, "maximum_known_api_cost_usd": 0.0},
+  "experiment_id": "3D-05",
+  "negative_controls": [
+    "early_attachment",
+    "attachment_teleportation",
+    "hand_sword_sliding",
+    "penetration",
+    "edit_leakage"
+  ],
+  "provider_budget": {
+    "maximum_known_api_cost_usd": 0.0,
+    "maximum_provider_calls": 0
+  },
+  "sampling": {
+    "checkpoints": {
+      "baseline": [
+        32,
+        40.125,
+        80
+      ],
+      "candidate": [
+        32,
+        36.125,
+        80
+      ]
+    },
+    "dense_step_frames": 0.125,
+    "dense_windows": [
+      [
+        26,
+        50
+      ],
+      [
+        62,
+        78
+      ]
+    ],
+    "regular_step_frames": 0.5,
+    "velocity_half_width_frames": 0.125
+  },
+  "schema_version": "1.0",
   "scored_source_binding": {
-    "implementation_commit": "0c5b4458dc85159e81131b90e9efd8542ae2ca91",
-    "implementation_tree": "e9a8149c315edeae364559bdaf29785a636a636b",
+    "blender_build_hash": "9e2066aef7ef",
     "blender_version": "5.2.1 LTS",
-    "blender_build_hash": "9e2066aef7ef"
+    "implementation_commit": "5da31e65bb6c2ab210f70f4ec7335491bcdf805b",
+    "implementation_tree": "2ade2d13d557acd6f69695c316bc9361fbf529ae"
+  },
+  "thresholds": {
+    "attachment_orientation_second_difference_degrees": 0.5,
+    "attachment_position_second_difference_m": 0.002,
+    "boundary_character_rms_velocity_delta_m_per_s": 0.002,
+    "boundary_sword_velocity_delta_m_per_s": 0.005,
+    "floor_penetration_tolerance_m": 0.015,
+    "grip_orientation_error_degrees": 0.5,
+    "grip_translation_error_m": 0.003,
+    "maximum_character_rms_half_frame_step_m": 0.18,
+    "maximum_sword_half_frame_step_m": 0.08,
+    "minimum_blade_body_clearance_m": 0.04,
+    "minimum_held_support_separation_m": 0.25,
+    "minimum_lifting_support_separation_m": 0.02,
+    "outside_character_max_vertex_delta_m": 1e-06,
+    "outside_character_rms_vertex_delta_m": 2.5e-07,
+    "outside_sword_orientation_delta_degrees": 0.0001,
+    "outside_sword_translation_delta_m": 1e-06,
+    "required_timing_shift_frames": 4,
+    "stationary_root_rotation_degrees": 0.0001,
+    "stationary_root_translation_m": 1e-06,
+    "support_contact_error_m": 0.01,
+    "timing_shift_tolerance_frames": 0.125
   }
 }
