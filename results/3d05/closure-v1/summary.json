@@ -2,8 +2,15 @@
   "checkpoint_pair_count": 6,
   "complete_rendered_frames": 576,
   "decision": "YELLOW",
+  "director_feedback": {
+    "absolute_scores_confirmed": false,
+    "frozen_improvement_demonstrated": false,
+    "grasp_deduction_both": 0.5,
+    "path": "director-feedback.json",
+    "preference": "TIE"
+  },
   "director_review_seconds": null,
-  "director_status": "PENDING",
+  "director_status": "PARTIAL_FEEDBACK_TIE",
   "elapsed_seconds": 1529.8180205419776,
   "execution_source_commit": "1bc89a30028516ac0a08480148c17221c6c11bb7",
   "experiment_id": "3D-05",
