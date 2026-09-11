@@ -1,8 +1,8 @@
 # Coordinated lift prototype — development result
 
-Status: **unscored diagnostic RED; Director review pending**. The lift repair is reviewable, but the complete-clip elbow skin probe fails during the preserved reach. No new GREEN claim, scored campaign, or Sol handoff is made. Earlier scored inputs and evidence remain unchanged.
+Status: **Director accepted the complete development preview with a 0.5-point deduction for sword–head proximity. Technical diagnostic remains RED.** The complete-clip elbow skin probe still fails during the preserved reach. No new GREEN claim, scored campaign, or Sol handoff is made. Earlier scored inputs and evidence remain unchanged.
 
-Run: `interaction-v1-20260911T165641Z-6f92e608`, under `runs/3d05-development/coordinated-validation/`. [Local playback](../../../../runs/3d05-development/coordinated-validation/interaction-v1-20260911T165641Z-6f92e608/motion-playback/index.html) contains the complete candidate performance in three synchronized views: 96 frames each at 24 fps, 640×360, four render samples. Press Play; playback stops at the hold instead of jumping back to the supported pose. This is a labelled development preview, not the earlier anonymous timing test. The visible-page timer is a review-time proxy, not proof of attention. Director time and judgments remain unrecorded until supplied.
+Run: `interaction-v1-20260911T165641Z-6f92e608`, under `runs/3d05-development/coordinated-validation/`. [Local playback](../../../../runs/3d05-development/coordinated-validation/interaction-v1-20260911T165641Z-6f92e608/motion-playback/index.html) contains the complete candidate performance in three synchronized views: 96 frames each at 24 fps, 640×360, four render samples. Press Play; playback stops at the hold instead of jumping back to the supported pose. This is a labelled development preview, not the earlier anonymous timing test. The visible-page timer is a review-time proxy, not proof of attention. The Director explicitly passed this playback, noting that the sword almost seems to touch the forehead at maximum elevation. This is a proximity observation, not independently confirmed collision. The 0.5-point deduction is recorded without inventing an absolute total or per-dimension scores. Review duration remains unknown. See `director-prototype-review.json` in the run directory.
 
 ## Design and observations
 
@@ -33,9 +33,9 @@ The additive validator and convenience player bind to commit `95df2804428381d962
 - Six state checkpoints, save/reopen, exact semantic replay and numerical replay pass.
 - Source actions, identity, topology, weights, rest rig, materials, lights and world are preserved; the timing variants match outside `[28,76]` within the existing numerical tolerances.
 - The normal offline suite passes: **129 passed, 11 deselected**. Native evidence comes from the separate complete prototype execution; the deselected tests are not claimed as run.
-- Browser inspection confirmed all 288 frames decoded and the player reached Ready. Human full-motion acceptance remains pending.
+- Browser inspection confirmed all 288 frames decoded and the player reached Ready. The Director subsequently accepted full motion with the clearance deduction noted above.
 
-The original `artifact-manifest.json` remains untouched. `prototype-artifact-manifest.json` inventories 694 artifacts including the full playback and additive validation. Compact copies of results, bindings, validation and inventory are committed under `docs/engineering-intelligence/evidence/interaction-v1-20260911T165641Z-6f92e608/`. Full native scenes and images remain local, inventoried development evidence; no authoritative GREEN export is claimed.
+The original `artifact-manifest.json` remains untouched. `prototype-artifact-manifest.json` now inventories 697 artifacts, including full playback, additive validation, Director acceptance and preserved review history. The prior 694-artifact inventory remains preserved. Compact copies of results, bindings, validation and inventory are committed under `docs/engineering-intelligence/evidence/interaction-v1-20260911T165641Z-6f92e608/`. Full native scenes and images remain local, inventoried development evidence; no authoritative GREEN export is claimed.
 
 Known experiment API usage: **0 calls, $0**. Measured validation/control elapsed time was 215.42 seconds and preview rendering 68.36 seconds (283.78 seconds combined). This excludes earlier pose probes, engineering time, browser checks and future human review. Engineering tokens/cost and Director time are unknown, not zero.
 
@@ -68,4 +68,4 @@ assert result['ok'], result.get('error')
 
 Then run `.venv/bin/python tools/interaction_motion_player.py /absolute/path/to/new/run`. It refuses to overwrite a player or accept missing frames. Open the resulting HTML, or serve only its `motion-playback` directory using `.venv/bin/python -m http.server 8766 --bind 127.0.0.1 --directory /absolute/path/to/new/run/motion-playback`.
 
-Next decision: review the complete development motion, then diagnose the reach-stage skin concern before another scored freeze. Preserve the failure if it reflects an admitted-rig limitation; any justified contract change requires explicit rationale and a new freeze. Do not turn Director approval of the lift into retrospective approval of the failed full-clip probe.
+Next decision: retain the accepted motion design, assess the sword–head staging concern, and diagnose the reach-stage skin finding before another scored freeze. Preserve the failure if it reflects an admitted-rig limitation; any justified contract change requires explicit rationale and a new freeze. Do not turn Director approval of the lift into retrospective approval of the failed full-clip probe.

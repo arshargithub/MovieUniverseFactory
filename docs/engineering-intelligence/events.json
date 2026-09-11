@@ -405,6 +405,33 @@
           "sha256_at_recording": "f15a810ace148e5c8c307ff1324635f2c2a64780dc004ebdda6c0416ded94109"
         }
       ]
+    },
+    {
+      "controlled_model_comparison": false,
+      "deduction_points": 0.5,
+      "engineering_model": {
+        "attribution_basis": "user retained Astra for the preceding repair",
+        "reasoning_effort": null,
+        "reported_name": "Astra",
+        "runtime_verified": false
+      },
+      "event_id": "3d05-coordinated-lift-6f92e608-director-acceptance",
+      "event_type": "director_acceptance_with_limitation",
+      "experiment_id": "3D-05",
+      "human_review_seconds": null,
+      "observation": "Director passes the complete coordinated-lift prototype with a 0.5-point deduction because the sword approaches the forehead at maximum elevation. Contact is perceived as near-touching, not independently confirmed collision. Existing machine clearance checks passing does not establish comfortable visual head clearance. Preserve minimum geometric clearance and a separate perceptual personal-space/prop staging assessment. Original whole-clip reach skin failure remains unresolved. This is an accepted development performance, not a scored GREEN result or controlled Astra-versus-Sol comparison.",
+      "occurred_at_utc": null,
+      "outcome": "DIRECTOR_ACCEPTED_WITH_CLEARANCE_DEDUCTION_TECHNICAL_FINDING_OPEN",
+      "phase": "coordinated_human_motion",
+      "recorded_at_utc": "2026-09-11T17:17:11.094450+00:00",
+      "run_id": "interaction-v1-20260911T165641Z-6f92e608",
+      "sources": [
+        {
+          "kind": "repository_artifact",
+          "path": "docs/engineering-intelligence/evidence/interaction-v1-20260911T165641Z-6f92e608/director-prototype-review.json",
+          "sha256_at_recording": "9f55922a94f6c1ec7de184cd0000e6f816aa9434a86c576fb79a39bd9d6a8b75"
+        }
+      ]
     }
   ],
   "recording_mode": "manual_evidence_backfill_and_future_event_capture",

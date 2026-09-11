@@ -1,6 +1,6 @@
 # 3D-05 coordinated lift: design brief
 
-Status: opt-in unscored prototype implemented after Director feedback on `interaction-v1-20260911T160515Z-85655dd3`. See [authored pose board](prototypes/POSE_BOARD.md) and [prototype results](prototypes/RESULT.md). The existing scored configuration and evidence remain unchanged. New motion is not accepted or GREEN; the full-clip elbow deformation probe exposes a reach-stage limitation.
+Status: opt-in unscored prototype implemented after Director feedback on `interaction-v1-20260911T160515Z-85655dd3`. See [authored pose board](prototypes/POSE_BOARD.md) and [prototype results](prototypes/RESULT.md). The existing scored configuration and evidence remain unchanged. The Director has accepted the new development motion with a 0.5-point sword–head proximity deduction. It is not GREEN: the full-clip elbow deformation probe still exposes a reach-stage limitation.
 
 ## What needs to change
 
