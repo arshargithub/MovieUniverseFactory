@@ -1,0 +1,23 @@
+{
+  "blind_assignment_id": "c09a7940b6e4a205db45c256113ccb1f2c26215d95eb81cb5120dbce9a3801c6",
+  "kind": "post_run_review_player_repair",
+  "mapping_unchanged": true,
+  "original_player": {
+    "path": "review/index-original-broken.html",
+    "sha256": "e33a576a703e254124dec7771ad4ba735a4f3a3409cd9b3492294063f071d7f8"
+  },
+  "provider_calls": 0,
+  "reason": "HTML entity escaping made the embedded JavaScript frame map invalid.",
+  "rendered_frames_modified": false,
+  "repair_source_commit": "6085048d71c9c03873af0a94fde5634f01f02787",
+  "repaired_at": "2026-09-11T03:04:39.631973+00:00",
+  "repaired_player": {
+    "path": "review/index.html",
+    "sha256": "38662ae375426c9de5c8d7796e0195fcb78e705cb0e27bfd0a9496f557012b40"
+  },
+  "review_frame_count": 192,
+  "review_frame_set_sha256_after": "ff9330122596252b0fc71a69a7f3603d719c898e7fe62638183bd80bf3d2cd4b",
+  "review_frame_set_sha256_before": "ff9330122596252b0fc71a69a7f3603d719c898e7fe62638183bd80bf3d2cd4b",
+  "run_id": "performance-v1-20260911T025746Z-51f59d9c",
+  "schema_version": "1.0"
+}

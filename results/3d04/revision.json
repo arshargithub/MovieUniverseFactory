@@ -1,0 +1,21 @@
+{
+  "experiment_id": "3D-04",
+  "operations": [
+    {
+      "blend_envelope": "quintic_smootherstep_zero_value_and_slope_v1",
+      "blend_width_frames": 6,
+      "body_target": "Hips",
+      "entity_id": "character_01",
+      "forward_torso_lean_degrees": 6.0,
+      "frame_end": 70,
+      "frame_start": 40,
+      "op": "adjust_run_body_dynamics",
+      "support_compensation": "preserve_baseline_in_place_contact_trajectory_two_bone_ik_v1",
+      "support_contact_clearance_m": 0.045,
+      "torso_target": "Chest",
+      "vertical_axis": "armature_local_z",
+      "vertical_body_amplitude_m": 0.035
+    }
+  ],
+  "schema_version": "1.0"
+}

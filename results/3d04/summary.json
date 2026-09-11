@@ -1,0 +1,49 @@
+{
+  "accepted_seconds": 1.25,
+  "blender_process_elapsed_seconds": 67.98565766599495,
+  "blind_reveal": {
+    "A": "candidate",
+    "B": "baseline"
+  },
+  "claim_boundary": "One admitted rig, one in-place run, one structured pelvis-and-chest edit, and one fixed interval.",
+  "cost_per_accepted_second_usd": 0.0,
+  "decision": "GREEN",
+  "director_preference": "A",
+  "director_scores": {
+    "A": {
+      "foot_contact_quality": 5.0,
+      "run_readability": 5.0,
+      "transition_smoothness": 5.0,
+      "visible_defects": []
+    },
+    "B": {
+      "foot_contact_quality": 5.0,
+      "run_readability": 4.5,
+      "transition_smoothness": 5.0,
+      "visible_defects": []
+    }
+  },
+  "director_status": "ACCEPTED",
+  "elapsed_seconds": 70.07111849996727,
+  "evidence_tag": "3d-04-v1-green-evidence",
+  "execution_source_commit": "1d5409d0c86be6da952705a1397dd610fc9c9375",
+  "execution_source_tree": "8782f4d5233cc7add06122d7fec0d3299df55b8d",
+  "experiment_id": "3D-04",
+  "human_review_seconds": null,
+  "key_metrics": {
+    "maximum_candidate_induced_support_slide_m": 1.1354499052560456e-06,
+    "maximum_rms_vertex_step_m": 0.15942989010999095,
+    "minimum_candidate_z_m": -0.001108356285840273,
+    "outside_max_vertex_delta_m": 0.0,
+    "peak_chest_lean_degrees": 6.000053100931279,
+    "peak_core_max_vertex_delta_m": 0.11303468087802954,
+    "peak_core_rms_vertex_delta_m": 0.052926978698096636,
+    "peak_pelvis_correction_m": 0.03499998149371045
+  },
+  "known_api_cost_usd": 0.0,
+  "machine_passed": true,
+  "provider_calls": 0,
+  "review_player_repair_commit": "6085048d71c9c03873af0a94fde5634f01f02787",
+  "run_id": "performance-v1-20260911T025746Z-51f59d9c",
+  "schema_version": "1.0"
+}

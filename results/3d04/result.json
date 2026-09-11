@@ -1,0 +1,33 @@
+{
+  "accepted_seconds": 1.25,
+  "baseline_native_sha256": "bbf05848c30e531ca31fc4632210b8344f6f35166db9c26abe4adfa6150e2488",
+  "blind_reveal": {
+    "A": "candidate",
+    "B": "baseline"
+  },
+  "claim": "GREEN for one trusted structured performance edit on frames 40-70 of the admitted 3D-03.1 run: the edit measurably improves run readability, preserves protected state and motion outside the interval, and passes persistence, replay, contact, boundary, control, cost, and blinded Director gates.",
+  "cost_per_accepted_second_usd": 0.0,
+  "creative_status": "ACCEPTED",
+  "decision": "GREEN",
+  "director_status": "ACCEPTED",
+  "director_validation": "director-validation.json",
+  "elapsed_seconds": 70.07111849996727,
+  "experiment_id": "3D-04",
+  "known_api_cost_usd": 0,
+  "machine_passed": true,
+  "passed": true,
+  "performance_native_sha256": "dcab7b53bfd119398ded701ce17d3d2d5853047a9e5c69dbd167b171cd8acf62",
+  "provider_calls": 0,
+  "review": "/Users/adisharma/projects/MovieUniverseFactory/runs/3d04/performance-v1-20260911T025746Z-51f59d9c/review/index.html",
+  "run_id": "performance-v1-20260911T025746Z-51f59d9c",
+  "schema_version": "1.0",
+  "scored": true,
+  "source_binding": {
+    "implementation_commit": "1d5409d0c86be6da952705a1397dd610fc9c9375",
+    "implementation_tree": "8782f4d5233cc7add06122d7fec0d3299df55b8d",
+    "schema_version": "1.0",
+    "status": "EXACT_PRE_RUN",
+    "worktree_clean_before_dispatch": true
+  },
+  "technical_status": "MACHINE_REVIEWED"
+}

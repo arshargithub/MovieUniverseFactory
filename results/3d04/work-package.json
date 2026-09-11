@@ -1,0 +1,33 @@
+{
+  "baseline_native_sha256": "bbf05848c30e531ca31fc4632210b8344f6f35166db9c26abe4adfa6150e2488",
+  "campaign_sha256": "d091feb4e0d4192cfb42308febb521376aa7820ef7435ce6583845b8ab249aea",
+  "experiment_id": "3D-04",
+  "package_id": "90fbd7fcc10f03c082eccd624f38129afaa7780873e8a6a159c0ffdb07780992",
+  "package_kind": "immutable_work_package",
+  "provider_budget": {
+    "maximum_known_api_cost_usd": 0.0,
+    "maximum_provider_calls": 0
+  },
+  "render_profile": {
+    "device": "CPU",
+    "height": 360,
+    "name": "asset_preview",
+    "samples": 8,
+    "shots": [
+      "shot_A",
+      "shot_B",
+      "shot_C"
+    ],
+    "width": 640
+  },
+  "revision_sha256": "8485c0af46604d0ff7b81f803a6c36c58b1e7d79d0c5f8ba8b9eaf5f008d6f45",
+  "run_id": "performance-v1-20260911T025746Z-51f59d9c",
+  "schema_version": "1.0",
+  "source_binding": {
+    "implementation_commit": "1d5409d0c86be6da952705a1397dd610fc9c9375",
+    "implementation_tree": "8782f4d5233cc7add06122d7fec0d3299df55b8d",
+    "schema_version": "1.0",
+    "status": "EXACT_PRE_RUN",
+    "worktree_clean_before_dispatch": true
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "acceptance_version": "3d04-gates-v1-frozen",
+  "baseline": {
+    "action": "character_action_run",
+    "action_unique_frames": 16,
+    "evidence_tag": "3d-03-1-v1-green-evidence",
+    "relative_path": "runs/3d031/character-v2-20260911T012644Z-2d7d8605/initial/build/scene.blend",
+    "sha256": "bbf05848c30e531ca31fc4632210b8344f6f35166db9c26abe4adfa6150e2488",
+    "source_fps": 24,
+    "timeline_fps": 24,
+    "timeline_frame_end": 96,
+    "timeline_frame_start": 1
+  },
+  "campaign_status": "FROZEN_FOR_SCORED_CAMPAIGN",
+  "development_budget": {
+    "maximum_known_api_cost_usd": 0.0,
+    "maximum_provider_calls": 0
+  },
+  "director_gate": {
+    "candidate_contact_must_not_regress": true,
+    "candidate_preference_required": true,
+    "labels": [
+      "A",
+      "B"
+    ],
+    "major_defects_allowed": 0,
+    "mapping_frozen_before_render": true,
+    "minimum_candidate_contact_quality": 4.0,
+    "minimum_candidate_transition_smoothness": 4.0,
+    "minimum_readability_improvement": 0.5,
+    "score_increment": 0.5
+  },
+  "experiment_id": "3D-04",
+  "negative_controls": [
+    "no_op",
+    "edit_every_cycle",
+    "boundary_leakage",
+    "support_foot_slide"
+  ],
+  "revision_path": "feasibility/3d/3d-04/revision.json",
+  "sampling": {
+    "boundary_step_frames": 0.125,
+    "boundary_windows": [
+      [
+        38,
+        42
+      ],
+      [
+        68,
+        72
+      ]
+    ],
+    "regular_step_frames": 0.5,
+    "velocity_half_width_frames": 0.125
+  },
+  "schema_version": "1.0",
+  "scored_secondary_evaluator": {
+    "enabled": false,
+    "maximum_known_api_cost_usd": 0.0,
+    "maximum_provider_calls": 0,
+    "note": "A nonzero evaluator budget requires a separately frozen qualified motion-review configuration before dispatch."
+  },
+  "scored_source_binding": {
+    "blender_build_hash": "9e2066aef7ef",
+    "blender_version": "5.2.1 LTS",
+    "campaign_configuration_sha256": "COMPUTED_IN_IMMUTABLE_WORK_PACKAGE",
+    "implementation_commit": "cee67d6e70d6b6208d24b5913816a018b1d6d6a5",
+    "implementation_tree": "0b7d9598d633ca481aef6e144788f84d160f36e5",
+    "revision_sha256": "COMPUTED_IN_IMMUTABLE_WORK_PACKAGE",
+    "worktree_clean_before_dispatch": true
+  },
+  "thresholds": {
+    "boundary_max_velocity_delta_m_per_s": 0.01,
+    "boundary_max_vertex_delta_m": 1e-06,
+    "boundary_rms_velocity_delta_m_per_s": 0.002,
+    "candidate_contact_clearance_m": 0.06,
+    "floor_penetration_tolerance_m": 0.015,
+    "maximum_candidate_induced_support_slide_m": 0.005,
+    "maximum_limb_length_relative_error": 0.01,
+    "maximum_peak_chest_lean_degrees": 6.5,
+    "maximum_peak_pelvis_correction_m": 0.0355,
+    "maximum_rms_vertex_step_m": 0.18,
+    "maximum_slide_regression_m": 0.005,
+    "maximum_vertex_step_m": 0.45,
+    "minimum_core_max_rms_vertex_delta_m": 0.012,
+    "minimum_core_max_vertex_delta_m": 0.025,
+    "minimum_peak_chest_lean_degrees": 4.0,
+    "minimum_peak_pelvis_correction_m": 0.025,
+    "outside_max_vertex_delta_m": 1e-06,
+    "outside_rms_vertex_delta_m": 2.5e-07,
+    "support_contact_clearance_m": 0.045
+  }
+}
