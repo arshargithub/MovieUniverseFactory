@@ -1,6 +1,6 @@
 # 3D-05 closure campaign — coordinated stationary pickup and timing revision
 
-Status: technical preflight passed; numerical contract prepared for the next scored freeze. This addendum supersedes the original specification's fixed-hand orientation, old held position, nearest-normal penetration method and broad grip-sphere exclusion **only for the new closure campaign**. Original campaign files and all historical decisions remain unchanged. Frozen JSON in this directory will be authoritative for exact inputs and numerical gates.
+Status: FROZEN_FOR_SCORED_CAMPAIGN. Technical preflight passed; campaign JSON binds source, toolchain, scene/revision digests, render profile and zero provider budget. No scored result is implied by this freeze. This addendum supersedes the original specification's fixed-hand orientation, old held position, nearest-normal penetration method and broad grip-sphere exclusion **only for the new closure campaign**. Original campaign files and all historical decisions remain unchanged. Frozen JSON in this directory will be authoritative for exact inputs and numerical gates.
 
 ## Scope and motion plan
 

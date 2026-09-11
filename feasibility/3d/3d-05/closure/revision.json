@@ -1,0 +1,22 @@
+{
+  "experiment_id": "3D-05",
+  "operations": [
+    {
+      "advance_frames": 4,
+      "blend_envelope": "quintic_smootherstep_zero_value_and_slope_v1",
+      "blend_width_frames": 8,
+      "entity_id": "character_01",
+      "frame_end": 76,
+      "frame_start": 28,
+      "op": "shift_interaction_timing",
+      "preserve_transition": "reach",
+      "prop_id": "sword_01",
+      "transitions": [
+        "grasp",
+        "lift",
+        "held"
+      ]
+    }
+  ],
+  "schema_version": "1.0"
+}
