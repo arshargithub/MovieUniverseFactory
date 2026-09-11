@@ -356,6 +356,55 @@
           "sha256_at_recording": "172882f93428f05b3627841ef7fd1453a2ac8e443347027935f0b08e2026e82f"
         }
       ]
+    },
+    {
+      "controlled_model_comparison": false,
+      "engineering_model": {
+        "attribution_basis": "user retained Astra and authorized next pass",
+        "reasoning_effort": null,
+        "reported_name": "Astra",
+        "runtime_verified": false
+      },
+      "engineering_usage": {
+        "cost_usd": null,
+        "elapsed_seconds": null,
+        "human_review_seconds": null,
+        "input_tokens": null,
+        "output_tokens": null,
+        "reasoning_tokens": null
+      },
+      "event_id": "3d05-astra-coordinated-lift-6f92e608",
+      "event_type": "unscored_prototype_outcome",
+      "experiment_id": "3D-05",
+      "experiment_runtime": {
+        "director_review_seconds": null,
+        "known_api_cost_usd": 0.0,
+        "measured_validation_plus_preview_seconds": 283.78348337399075,
+        "provider_calls": 0
+      },
+      "observation": "Authored pose board preceded code. Closer hold, pitched hand/rigid prop and head attention give measured coordinated lift; full skin probe reveals 1.821x reach-stage stretch against 1.5x ceiling. Original threshold and failure retained. Six checkpoints and exact replay pass, all 15 actual Blender controls have distinct expected failures under additive validator review. No scored retry or Sol handoff. Reference is authored, not human motion capture; torso remains static. Partial Astra progress and unresolved validation limitation both feed the Factory record.",
+      "occurred_at_utc": null,
+      "outcome": "UNSCORED_DIAGNOSTIC_RED_DIRECTOR_PENDING",
+      "phase": "coordinated_human_motion",
+      "recorded_at_utc": "2026-09-11T17:07:24.441826+00:00",
+      "run_id": "interaction-v1-20260911T165641Z-6f92e608",
+      "sources": [
+        {
+          "kind": "repository_artifact",
+          "path": "docs/engineering-intelligence/evidence/interaction-v1-20260911T165641Z-6f92e608/prototype-summary.json",
+          "sha256_at_recording": "11a46eb410b8ab78b0bd61fbb013d3c3521bfdbbb03180dbbdee5ef8df179327"
+        },
+        {
+          "kind": "repository_artifact",
+          "path": "docs/engineering-intelligence/evidence/interaction-v1-20260911T165641Z-6f92e608/validation-addendum.json",
+          "sha256_at_recording": "3eb181939bfb9f9f120411232236fc2f91d51b216b830de43125c6b87e68f36d"
+        },
+        {
+          "kind": "repository_artifact",
+          "path": "docs/engineering-intelligence/evidence/interaction-v1-20260911T165641Z-6f92e608/source-binding.json",
+          "sha256_at_recording": "f15a810ace148e5c8c307ff1324635f2c2a64780dc004ebdda6c0416ded94109"
+        }
+      ]
     }
   ],
   "recording_mode": "manual_evidence_backfill_and_future_event_capture",

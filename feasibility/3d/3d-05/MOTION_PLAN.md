@@ -1,6 +1,6 @@
 # 3D-05 coordinated lift: design brief
 
-Status: planning proposal following Director feedback on `interaction-v1-20260911T160515Z-85655dd3`. No new animation implementation, render or acceptance is claimed. The existing campaign remains unchanged; its 76 machine gates pass and Director acceptance remains pending.
+Status: opt-in unscored prototype implemented after Director feedback on `interaction-v1-20260911T160515Z-85655dd3`. See [authored pose board](prototypes/POSE_BOARD.md) and [prototype results](prototypes/RESULT.md). The existing scored configuration and evidence remain unchanged. New motion is not accepted or GREEN; the full-clip elbow deformation probe exposes a reach-stage limitation.
 
 ## What needs to change
 

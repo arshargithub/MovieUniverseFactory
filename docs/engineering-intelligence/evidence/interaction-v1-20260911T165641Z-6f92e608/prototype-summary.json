@@ -1,0 +1,41 @@
+{
+  "actual_blender_controls": 15,
+  "browser_check": "All 288 frames decoded and Ready state observed; Director playback review pending.",
+  "decision": "RED_DIAGNOSTIC",
+  "director_review_seconds": null,
+  "director_status": "PENDING",
+  "discriminative_control_sensitivity_passed": true,
+  "engineering_tokens_and_cost": "NOT_MEASURED",
+  "frames_per_view": 96,
+  "full_frame_count": 288,
+  "known_api_cost_usd": 0.0,
+  "measured_validation_plus_preview_seconds": 283.78348337399075,
+  "native_source_commit": "7492fac8605cf84429935eb42c0b9625a4ffbd8e",
+  "original_result_preserved": true,
+  "playback_fps": 24,
+  "player_generator": "tools/interaction_motion_player.py",
+  "player_generator_sha256": "6d15762884219cca4dec0cd3781adf4c96035d38d0349eed614e1885844ab3f4",
+  "player_html_sha256": "8a9819cf5a4a32719917bd4961d0153bf1ad4e2b66fe0dedbf35cc1a0186c563",
+  "positive_check_count": 90,
+  "positive_errors": [
+    "motion.baseline.elbow_skin",
+    "motion.candidate.elbow_skin"
+  ],
+  "preview_elapsed_seconds": 68.36402129102498,
+  "provider_calls": 0,
+  "recorded_at_utc": "2026-09-11T17:07:24.441826+00:00",
+  "replay_and_persistence": {
+    "checkpoints_exact": true,
+    "offline_replay_geometry_within_tolerance": true,
+    "offline_replay_semantic_exact": true,
+    "save_reopen_semantic_exact": true
+  },
+  "review_page": "motion-playback/index.html",
+  "run_id": "interaction-v1-20260911T165641Z-6f92e608",
+  "schema_version": "1.0",
+  "scored": false,
+  "unit_tests": "129 passed, 11 deselected; separate native campaign performed",
+  "validation_elapsed_seconds": 215.41946208296577,
+  "validation_scope": "Full-clip check unchanged; separate lift-window check provides discriminative elbow control. No gate relaxation.",
+  "validator_commit": "95df2804428381d962c196985487712990df013f"
+}
