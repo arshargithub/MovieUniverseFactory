@@ -499,6 +499,41 @@
           "sha256_at_recording": "e473c0fc7b4c1a9682c6e6c90e3e22eaa4987203a6a8a13c5e0ba43856457196"
         }
       ]
+    },
+    {
+      "event_id": "3d05-closed-yellow-learning-card",
+      "event_type": "closed_experiment_learning",
+      "experiment_id": "3D-05",
+      "outcome": "CLOSED_YELLOW",
+      "human_review_seconds": 120,
+      "observation": "Technical execution and minimum visual quality passed; timing preference was not demonstrated. Both clips scored 4.5 grasp and 5 elsewhere, tied. No further iteration planned. Earlier pending and rejected records remain historical. The operating handoff creates a compact card and transfers relevant lessons to the draft 3D-06A specification without rerunning 3D-05 or reconstructing historical tokens.",
+      "sources": [
+        {"kind": "repository_artifact", "path": "results/3d05/EXPERIMENT_CARD.md"},
+        {"kind": "git_commit", "commit": "c4842c0"},
+        {"kind": "git_commit", "commit": "adb17cb"}
+      ],
+      "controlled_model_comparison": false
+    },
+    {
+      "event_id": "experiment-operating-ledger-v1",
+      "event_type": "operating_policy_implementation",
+      "experiment_id": "OPERATING-SETUP",
+      "phase": "bookkeeping_and_specification",
+      "outcome": "IMPLEMENTED_OFFLINE_VERIFIED",
+      "engineering_model": {
+        "reported_name": "gpt-6-astra",
+        "reasoning_effort": "medium",
+        "runtime_verified": true,
+        "attribution_basis": "Current task turn_context structured metadata; no setting change made"
+      },
+      "observation": "A small transactional append-only event ledger, scoped optional usage adapter and JSON/Markdown report implement prospective lifecycle and coverage accounting. Tests cover wait/work union, overlapping jobs, reopening, gaps, clock discontinuities, cumulative/reset/duplicate/inherited usage and UNKNOWN fallback. Model routing remains an observational policy hypothesis. 3D-06A is draft/NOT_RUN; animation is not implemented.",
+      "sources": [
+        {"kind": "repository_artifact", "path": "docs/engineering-intelligence/OPERATING_LEDGER.md"},
+        {"kind": "repository_artifact", "path": "results/operating-setup/USAGE_CAPABILITY.json"},
+        {"kind": "repository_artifact", "path": "results/operating-demo/summary.json"},
+        {"kind": "repository_artifact", "path": "feasibility/3d/3d-06a/SPEC.md"}
+      ],
+      "controlled_model_comparison": false
     }
   ],
   "recording_mode": "manual_evidence_backfill_and_future_event_capture",

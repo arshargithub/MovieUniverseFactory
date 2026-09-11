@@ -1,0 +1,165 @@
+{
+  "closed_episode_count": 1,
+  "consumption_per_outcome": {
+    "closed_episodes": {
+      "engineering_tokens": null,
+      "net_seconds": 5100.0
+    },
+    "closed_experiments": {
+      "engineering_tokens": null,
+      "net_seconds": 5100.0
+    },
+    "director_accepted_outputs": {
+      "engineering_tokens": null,
+      "net_seconds": 5100.0
+    },
+    "technically_successful_outputs": {
+      "engineering_tokens": null,
+      "net_seconds": 5100.0
+    }
+  },
+  "cost_scope": "Development investment; repeatable runtime cost remains in the campaign provider records.",
+  "engineering_usage": {
+    "account_allowance": {
+      "observations": [],
+      "scope": "account-wide; not experiment token attribution"
+    },
+    "actual_engineering_charge_usd": null,
+    "api_equivalent_estimate_usd": null,
+    "blocks": [],
+    "captured_tasks": [],
+    "category_coverage": {
+      "cache_write_input_tokens": {
+        "observed_blocks": 0,
+        "total_blocks": 0
+      },
+      "cached_input_tokens": {
+        "observed_blocks": 0,
+        "total_blocks": 0
+      },
+      "input_tokens": {
+        "observed_blocks": 0,
+        "total_blocks": 0
+      },
+      "output_tokens": {
+        "observed_blocks": 0,
+        "total_blocks": 0
+      },
+      "reasoning_output_tokens": {
+        "observed_blocks": 0,
+        "total_blocks": 0
+      },
+      "total_tokens": {
+        "observed_blocks": 0,
+        "total_blocks": 0
+      }
+    },
+    "exact_attributable_tokens": null,
+    "expected_tasks": [
+      "synthetic-task"
+    ],
+    "missing_tasks": [
+      "synthetic-task"
+    ],
+    "observed_tokens": {
+      "cache_write_input_tokens": null,
+      "cached_input_tokens": null,
+      "input_tokens": null,
+      "output_tokens": null,
+      "reasoning_output_tokens": null,
+      "total_tokens": null
+    },
+    "status": "UNKNOWN",
+    "subscription": {
+      "allocation_usd": null,
+      "treatment": "shared fixed overhead"
+    },
+    "token_definitions": {
+      "cache_write_input_tokens": "Retained as reported; not added to total.",
+      "cached_input_tokens": "Subset of input; do not add to total.",
+      "input_tokens": "Reported input total; cached input is a subset.",
+      "output_tokens": "Reported output total; reasoning output is a subset.",
+      "reasoning_output_tokens": "Subset of output; do not add to total.",
+      "total_tokens": "Reported total; input plus output, without subset double counting."
+    },
+    "uncertainties": [
+      "capture_completeness_not_established",
+      "missing_linked_tasks"
+    ],
+    "window_end": "2026-01-01T02:00:00+00:00",
+    "window_start": "2026-01-01T00:00:00+00:00"
+  },
+  "episodes": [
+    {
+      "assistant_active_union_seconds": 4500.0,
+      "assistant_time_scope": "Recorded activity intervals only; not token generation time",
+      "calendar_elapsed_seconds": 7200.0,
+      "coverage_fraction": 1.0,
+      "disposition": "YELLOW",
+      "episode_id": "demo-1",
+      "excluded_input_wait_seconds": 2100.0,
+      "human_review_seconds": 120,
+      "jobs": [
+        {
+          "job_id": "render1",
+          "job_kind": "native",
+          "monotonic_seconds": 600,
+          "outcome": null,
+          "utc_seconds": 600.0
+        },
+        {
+          "job_id": "render2",
+          "job_kind": "native",
+          "monotonic_seconds": 300,
+          "outcome": null,
+          "utc_seconds": 300.0
+        }
+      ],
+      "lifecycle": "CLOSED",
+      "native_job_wall_sum_seconds": 900,
+      "native_job_wall_union_seconds": 600.0,
+      "native_jobs": [
+        {
+          "job_id": "render1",
+          "job_kind": "native",
+          "monotonic_seconds": 600,
+          "outcome": null,
+          "utc_seconds": 600.0
+        },
+        {
+          "job_id": "render2",
+          "job_kind": "native",
+          "monotonic_seconds": 300,
+          "outcome": null,
+          "utc_seconds": 300.0
+        }
+      ],
+      "net_elapsed_seconds": 5100.0,
+      "observed_excluded_input_wait_seconds": 2100.0,
+      "operational_proxies": {},
+      "phase_net_seconds": {
+        "engineering": 3000.0,
+        "packaging": 2100.0
+      },
+      "uncertainties": [],
+      "unknown_gap_seconds": 0
+    }
+  ],
+  "experiment_id": "SIMULATED-OPS",
+  "factory_api": {
+    "known_api_cost_usd": null,
+    "provider_calls": null,
+    "reason": "No provider ledger evidence supplied; absence is not zero.",
+    "status": "UNKNOWN"
+  },
+  "model_setting_observations": [],
+  "net_episode_sum_seconds": 5100.0,
+  "note": "Episode totals exclude inter-episode gaps. Job sums are process-seconds, not CPU time.",
+  "outcome_denominators": {
+    "closed_episodes": 1,
+    "closed_experiments": 1,
+    "director_accepted_outputs": 1,
+    "technically_successful_outputs": 1
+  },
+  "schema_version": "1.0"
+}

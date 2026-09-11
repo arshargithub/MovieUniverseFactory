@@ -20,6 +20,8 @@ Keep observations and causal claims separate. A model that inherits a diagnosis,
 
 ## Feedback into the Factory design
 
+The historical Sol/Astra routing proposals below are preserved as evidence of the earlier approach. The prospective next-run policy is now in [OPERATING_LEDGER.md](OPERATING_LEDGER.md): Astra Medium for specified work, High for unfamiliar design or unresolved diagnosis, with observed setting/usage attribution. This is a hypothesis, not an automatic switch or controlled comparison.
+
 The Factory should consume this record as an engineering-routing input alongside experiment telemetry. Initial policy hypotheses are:
 
 1. Use Sol High for implementation of a specified, evidenced correction, test integration, replay and packaging.
@@ -35,3 +37,7 @@ The subsequent 3D-05 anatomy repair is now machine-qualified in `interaction-v1-
 The coordinated-lift Astra follow-up is now an [unscored prototype](../../feasibility/3d/3d-05/prototypes/RESULT.md): measured forearm/elbow participation, rigid prop rotation and head attention improve the intended performance, while a new full-clip skin probe reveals reach-stage stretching. Its diagnostic result remains RED with Director review pending. The controls were strengthened to require failures absent from the positive case. Record both progress and the unresolved concern; no handoff success or paid API evaluator contribution is implied.
 
 The Director subsequently **passed the complete coordinated-lift prototype**, deducting 0.5 points for the sword approaching the forehead at the top of the lift. Keep visual comfort around the head distinct from merely passing a geometric collision/clearance floor. The reach-stage skin probe remains failed; this accepted development performance is not a scored GREEN result. Review duration and absolute/per-dimension scores were not supplied.
+
+The later scored repair is now **closed YELLOW**: technical execution and minimum visual quality passed; timing preference was not demonstrated; no further iteration planned. Both clips received 4.5/5 grasp and 5/5 elsewhere, tied, with approximately 120 seconds of review. See the [closure card](../../results/3d05/EXPERIMENT_CARD.md) and immutable [supplement](../../exports/3d05-closure-v1-supplement/README.md). Prior pending/rejected entries above remain historical observations.
+
+Prospective lifecycle, usage and effort records use the small [local operating ledger](OPERATING_LEDGER.md). Its generated summary exposes coverage; the curated events here remain the cross-experiment learning index. See [3D-06A's learning delta](../../feasibility/3d/3d-06a/SPEC.md) for the next planned changes. No 3D-06A animation has run.

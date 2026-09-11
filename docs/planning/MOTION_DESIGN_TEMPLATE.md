@@ -2,6 +2,8 @@
 
 Complete this brief before production animation changes. Label unknowns and draft values; freeze numeric thresholds before scoring. This is an engineering artifact, not an extra permission form.
 
+Start the [operating ledger](../engineering-intelligence/OPERATING_LEDGER.md) with authorized design work. Include a short [learning-delta table](LEARNING_DELTA_TEMPLATE.md) before freeze and a [closure card](EXPERIMENT_CARD_TEMPLATE.md) at disposition. Forecast net time, variants, tests, disk/output growth and packaging; use the 20-minute diagnostic and 60-minute overall checkpoints unless a task budget overrides them.
+
 ## Intention and scope
 
 - What should the action communicate, and how should effort, speed and prop weight read?
@@ -37,6 +39,8 @@ Define key poses, trajectories, orientation changes, ordering/overlap, and easin
 Separate geometric safety, temporal coordination and aesthetic judgment. Define measurements, sampling, numerical thresholds, their rationale, and actual scene/action controls that should fail them. Include contacts, unwanted intersections, pose/mesh deformation, joint trajectories, speeds, boundary continuity and replay.
 
 Define what improvement should be visible before showing the scored result. Use full synchronized playback from an overview and contact/deformation views. An angle-range pass does not establish natural movement. Record Director observations, scores when supplied, and review time without inferring missing values.
+
+For reference timing changes, define the actual cue and numerical timing tolerance. Distinguish successful instruction execution from an aesthetic preference; an arbitrary timing shift need not be preferred. Mark reference landmarks as manually annotated or automatically extracted. Screen fixture range and geometry representations before candidate generation. Map each required test to changed dependencies and state explicit hash-bound reuse eligibility; plan one full frozen qualification after the complete inexpensive preview.
 
 ## Ready for implementation / ready for scoring
 
