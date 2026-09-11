@@ -87,3 +87,8 @@ def test_director_gate_resolves_blind_labels_and_requires_improvement():
 def test_director_schema_is_valid():
     schema=json.loads((ROOT/"feasibility/3d/3d-04/director-review.schema.json").read_text())
     Draft202012Validator.check_schema(schema)
+
+
+def test_recorded_campaign_digest_matches_canonical_configuration():
+    from movie_factory.packages import content_id
+    assert (ROOT/"feasibility/3d/3d-04/campaign.sha256").read_text().strip()==content_id(CONFIG)

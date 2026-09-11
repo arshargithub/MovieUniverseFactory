@@ -8,7 +8,7 @@ Can Movie Factory improve a bounded section of the accepted character's run perf
 
 GREEN qualifies one trusted structured edit on the accepted 3D-03.1 character and run cycle. It does not qualify arbitrary prompts, motion generation, retargeting, horizontal locomotion, other rigs, or unrestricted Blender control.
 
-Development and failure-injection runs are provider-free. A scored run is forbidden until its work package binds the clean implementation commit and tree, `campaign.json` digest, revision digest, baseline native hash, Blender build, and evaluator budget. Failed and superseded attempts remain evidence.
+Development and failure-injection runs are provider-free. A scored run is forbidden until its work package binds the clean implementation commit and tree, canonical `campaign.json` digest recorded in `campaign.sha256`, revision digest, baseline native hash, Blender build, and evaluator budget. Failed and superseded attempts remain evidence.
 
 ## Frozen baseline and timeline
 

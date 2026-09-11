@@ -61,17 +61,27 @@ def _write_review(run_dir,assignment):
     return review/"index.html"
 
 
-def run_performance_04(repo:Path,output_root:Path,profile:dict,blender_bin:str,render_frames:bool=True)->dict:
+def run_performance_04(repo:Path,output_root:Path,profile:dict,blender_bin:str,render_frames:bool=True,scored:bool=False)->dict:
     from .adapters.blender.runner import run_blender
     campaign=_read(repo/"feasibility/3d/3d-04/campaign.json"); revision=_read(repo/"feasibility/3d/3d-04/revision.json")
+    campaign_digest=content_id(campaign)
+    recorded_digest=(repo/"feasibility/3d/3d-04/campaign.sha256").read_text().strip()
+    if campaign_digest!=recorded_digest: raise ValueError("3D-04 campaign digest mismatch")
     baseline=safe_relative(repo,repo/campaign["baseline"]["relative_path"])
     if not baseline.is_file() or file_digest(baseline)!=campaign["baseline"]["sha256"]:
         raise ValueError("3D-04 frozen baseline native hash mismatch")
     parent_snapshot=_read(baseline.with_name("snapshot.json")); binding=_source_binding(repo)
+    if scored:
+        frozen=campaign.get("scored_source_binding",{})
+        if campaign.get("campaign_status")!="FROZEN_FOR_SCORED_CAMPAIGN" or not binding["worktree_clean_before_dispatch"]:
+            raise ValueError("A scored 3D-04 run requires the frozen campaign and a clean worktree")
+        source_change=subprocess.run(["git","diff","--quiet",frozen.get("implementation_commit",""),"HEAD","--","src","tests"],cwd=repo)
+        if source_change.returncode!=0: raise ValueError("3D-04 implementation differs from the frozen source commit")
+        if not render_frames: raise ValueError("A scored 3D-04 run requires complete synchronized playback")
     run_id=f"performance-v1-{time.strftime('%Y%m%dT%H%M%SZ',time.gmtime())}-{uuid.uuid4().hex[:8]}"
     run_dir=output_root/run_id; run_dir.mkdir(parents=True,exist_ok=False)
     package={"schema_version":"1.0","package_kind":"immutable_work_package","experiment_id":"3D-04","run_id":run_id,
-             "campaign_sha256":content_id(campaign),"revision_sha256":content_id(revision),
+             "campaign_sha256":campaign_digest,"revision_sha256":content_id(revision),
              "baseline_native_sha256":campaign["baseline"]["sha256"],"source_binding":binding,
              "render_profile":profile,"provider_budget":campaign["development_budget"]}
     package["package_id"]=content_id(package); assignment=_blind_assignment(package["package_id"])
@@ -83,6 +93,10 @@ def run_performance_04(repo:Path,output_root:Path,profile:dict,blender_bin:str,r
                         "parent_native":str(baseline.resolve()),"operations":revision["operations"]},
                        blender_bin=blender_bin,timeout=600)
     if not status.get("ok"): raise RuntimeError("3D-04 build failed: "+status.get("error","unknown"))
+    if scored:
+        frozen=campaign["scored_source_binding"]; toolchain=status.get("toolchain",{})
+        if toolchain.get("blender")!=frozen["blender_version"] or toolchain.get("build_hash")!=frozen["blender_build_hash"]:
+            raise ValueError("3D-04 Blender build differs from the frozen campaign")
     build_snapshot=_read(build/"snapshot.json"); protected=protected_snapshot_flags(parent_snapshot,build_snapshot)
     reopen=run_dir/"reopen"
     status=run_blender({"mode":"inspect","output_dir":str(reopen.resolve()),"seed":304,"profile":profile,
@@ -124,14 +138,15 @@ def run_performance_04(repo:Path,output_root:Path,profile:dict,blender_bin:str,r
              "notes":"Director has not reviewed the synchronized anonymous playback."}
     atomic_json(run_dir/"director-review.json",pending)
     machine_pass=validation["passed"] and sensitivity["passed"]
-    result={"schema_version":"1.0","experiment_id":"3D-04","run_id":run_id,"scored":False,
+    result={"schema_version":"1.0","experiment_id":"3D-04","run_id":run_id,"scored":scored,
             "machine_passed":machine_pass,"technical_status":"MACHINE_REVIEWED" if machine_pass else "FAILED",
             "creative_status":"AWAITING_DIRECTOR" if machine_pass else "NOT_ELIGIBLE","director_status":"PENDING",
             "decision":"YELLOW" if machine_pass else "RED","source_binding":binding,
             "baseline_native_sha256":campaign["baseline"]["sha256"],"performance_native_sha256":file_digest(build/"scene.blend"),
             "provider_calls":0,"known_api_cost_usd":0,"accepted_seconds":0,"elapsed_seconds":time.monotonic()-started,
             "review":str(review_page) if review_page else None,
-            "claim":"Development evidence only; scored campaign remains locked until a clean implementation binding is frozen."}
+            "claim":("Scored candidate evidence; GREEN remains impossible until the blinded Director gate passes."
+                     if scored else "Development evidence only; it cannot establish the scored 3D-04 result.")}
     atomic_json(run_dir/"costs.json",{"provider_calls":0,"known_api_cost_usd":0,"accepted_seconds":0,
                                       "cost_per_accepted_second_usd":None,"scope":"provider-free 3D-04 development"})
     atomic_json(run_dir/"result.json",result)

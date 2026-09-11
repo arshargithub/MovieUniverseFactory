@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "experiment_id": "3D-04",
-  "campaign_status": "DEVELOPMENT_ONLY_UNTIL_SOURCE_BINDING_IS_FROZEN",
+  "campaign_status": "FROZEN_FOR_SCORED_CAMPAIGN",
   "acceptance_version": "3d04-gates-v1-frozen",
   "baseline": {
     "evidence_tag": "3d-03-1-v1-green-evidence",
@@ -61,12 +61,13 @@
     "maximum_known_api_cost_usd": 0.0,
     "note": "A nonzero evaluator budget requires a separately frozen qualified motion-review configuration before dispatch."
   },
-  "required_scored_source_binding": {
+  "scored_source_binding": {
     "worktree_clean_before_dispatch": true,
-    "implementation_commit": "TO_BE_FROZEN_AFTER_IMPLEMENTATION",
-    "implementation_tree": "TO_BE_FROZEN_AFTER_IMPLEMENTATION",
+    "implementation_commit": "91212a1f13884eee924c6514a998d35e3b4314d2",
+    "implementation_tree": "f1700fcb606507cbad0f30448a84025383f130b7",
     "campaign_configuration_sha256": "COMPUTED_IN_IMMUTABLE_WORK_PACKAGE",
     "revision_sha256": "COMPUTED_IN_IMMUTABLE_WORK_PACKAGE",
-    "blender_version_and_build_hash": "RECORDED_BY_PREFLIGHT"
+    "blender_version": "5.2.1 LTS",
+    "blender_build_hash": "9e2066aef7ef"
   }
 }
