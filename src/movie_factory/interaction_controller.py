@@ -216,7 +216,7 @@ def run_interaction_05(repo: Path, output_root: Path, profile: dict, blender_bin
                                                               "offline_replay_semantic_exact", "offline_replay_geometry_within_tolerance")}
         control_results[control] = validate_interaction_metrics(controlled, campaign)
         atomic_json(run_dir/"controls"/control/"validation.json", control_results[control])
-    sensitivity = validate_control_sensitivity(control_results, coordinated=bool(campaign.get("motion_thresholds")))
+    sensitivity = validate_control_sensitivity(control_results, coordinated=bool(campaign.get("motion_thresholds")), positive_result=validation)
     atomic_json(run_dir/"control-sensitivity.json", sensitivity)
     machine_passed = validation["passed"] and sensitivity["passed"]
     review_page = _write_review(run_dir, assignment, campaign["director_gate"]["views"]) if render_frames and machine_passed else None

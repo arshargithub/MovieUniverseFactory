@@ -30,7 +30,7 @@ MOTION_CONTROL_EXPECTATIONS = {
     "rigid_lift": {"motion.candidate.hand_pitch"},
     "wrist_only_lift": {"motion.candidate.forearm_pitch"},
     "relative_prop_rotation": {"grip.orientation"},
-    "elbow_skin_distortion": {"motion.candidate.elbow_skin"},
+    "elbow_skin_distortion": {"motion.candidate.lift_elbow_skin"},
     "missing_attention": {"motion.candidate.attention"},
 }
 
@@ -186,14 +186,14 @@ def interaction_protected_flags(parent: dict, current: dict) -> dict:
     }
 
 
-def validate_control_sensitivity(results: dict, coordinated: bool = False) -> dict:
+def validate_control_sensitivity(results: dict, coordinated: bool = False, positive_result: dict | None = None) -> dict:
     checks = []
     expectations = {**CONTROL_EXPECTATIONS, **(MOTION_CONTROL_EXPECTATIONS if coordinated else {})}
     _check(checks, "controls.exact_set", set(results) == set(expectations), sorted(results))
     for name, expected in expectations.items():
         result = results.get(name, {})
         errors = set(result.get("errors", []))
-        _check(checks, "controls."+name, result.get("passed") is False and expected <= errors,
+        _check(checks, "controls."+name, result.get("passed") is False and expected <= errors and not (expected & set((positive_result or {}).get("errors", []))),
                {"expected_errors": sorted(expected), "observed_errors": sorted(errors)})
     errors = [item["name"] for item in checks if not item["passed"]]
     return {"schema_version": "1.0", "passed": not errors, "checks": checks, "errors": errors}
@@ -224,3 +224,10 @@ def _validate_motion(checks, rows, config):
         low, high, counts = values("elbow_edge_ratio_min"), values("elbow_edge_ratio_max"), values("elbow_reference_edge_count")
         valid = finite(low) and finite(high) and finite(counts)
         _check(checks, f"motion.{role}.elbow_skin", valid and min(low) >= limits["minimum_elbow_edge_ratio"] and max(high) <= limits["maximum_elbow_edge_ratio"] and min(counts) >= 6, {"min":min(low),"max":max(high),"edges":min(counts)} if valid else "missing/nonfinite")
+
+        # Keep the failing full-clip probe above. A separate lift window makes
+        # the distortion control discriminative when the approach already fails.
+        lift_rows = [r for r in rows if start <= r["frame"] <= end]
+        low, high = values("elbow_edge_ratio_min", lift_rows), values("elbow_edge_ratio_max", lift_rows)
+        valid = finite(low) and finite(high)
+        _check(checks, f"motion.{role}.lift_elbow_skin", valid and min(low) >= limits["minimum_elbow_edge_ratio"] and max(high) <= limits["maximum_elbow_edge_ratio"], {"min":min(low),"max":max(high)} if valid else "missing/nonfinite")

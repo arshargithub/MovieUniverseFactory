@@ -101,3 +101,20 @@ def test_coordinated_controls_cannot_be_omitted():
     assert not validate_control_sensitivity(controls,coordinated=True)['passed']
     controls.update({name:{'passed':False,'errors':list(errors)} for name,errors in MOTION_CONTROL_EXPECTATIONS.items()})
     assert validate_control_sensitivity(controls,coordinated=True)['passed']
+
+
+def test_lift_skin_control_is_distinct_from_preexisting_reach_failure():
+    raw,config=coordinated_metrics()
+    raw['samples'][0]['candidate_elbow_edge_ratio_max']=1.82
+    errors=validate_interaction_metrics(raw,config)['errors']
+    assert 'motion.candidate.elbow_skin' in errors
+    assert 'motion.candidate.lift_elbow_skin' not in errors
+    next(row for row in raw['samples'] if row['frame']==60)['candidate_elbow_edge_ratio_max']=2.5
+    assert 'motion.candidate.lift_elbow_skin' in validate_interaction_metrics(raw,config)['errors']
+
+
+def test_controls_do_not_take_credit_for_positive_case_failures():
+    controls={name:{'passed':False,'errors':list(errors)} for name,errors in CONTROL_EXPECTATIONS.items()}
+    result=validate_control_sensitivity(controls,positive_result={'errors':['grip.translation']})
+    assert not result['passed']
+    assert 'controls.hand_sword_sliding' in result['errors']
