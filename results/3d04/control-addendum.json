@@ -1,0 +1,198 @@
+{
+  "accepted_run_manifest_sha256": "bd726af2744bc01968d24ef5b8fe66cde641b516de7cc827e15bbf705edbd6a4",
+  "accepted_run_unchanged": true,
+  "artifact_count": 160,
+  "artifact_manifest_sha256": "77e7c90322ec0d7e031dc1c7348ba7203a690b5ac205b2ff09b6d0e415d748a7",
+  "claim": "Disposable Blender action variants were measured through the production 3D-04 evidence worker.",
+  "control_results": {
+    "boundary_leakage": {
+      "actual_blender_scene": true,
+      "control": "boundary_leakage",
+      "detected": true,
+      "expected_errors": [
+        "boundary.40.value",
+        "boundary.40.velocity_max",
+        "boundary.40.velocity_rms"
+      ],
+      "native_sha256": "832a26a6c75a34445ee5172377640fb5f51e6e878a7412155f52efb8d714b012",
+      "normal_measurement_worker": "performance_evidence",
+      "observed_errors": [
+        "preservation.outside_max",
+        "preservation.outside_rms",
+        "geometry.continuous_rms",
+        "boundary.40.value",
+        "boundary.40.velocity_rms",
+        "boundary.40.velocity_max"
+      ],
+      "provider_calls": 0,
+      "schema_version": "1.0"
+    },
+    "edit_every_cycle": {
+      "actual_blender_scene": true,
+      "control": "edit_every_cycle",
+      "detected": true,
+      "expected_errors": [
+        "preservation.outside_max",
+        "preservation.outside_rms"
+      ],
+      "native_sha256": "f893afdfb7ed97d419c6730ce7309a324041de6ce581e68e48dfa74c4ee17672",
+      "normal_measurement_worker": "performance_evidence",
+      "observed_errors": [
+        "preservation.outside_max",
+        "preservation.outside_rms",
+        "boundary.40.value",
+        "boundary.40.velocity_rms",
+        "boundary.40.velocity_max",
+        "boundary.70.value",
+        "boundary.70.velocity_rms",
+        "boundary.70.velocity_max"
+      ],
+      "provider_calls": 0,
+      "schema_version": "1.0"
+    },
+    "no_op": {
+      "actual_blender_scene": true,
+      "control": "no_op",
+      "detected": true,
+      "expected_errors": [
+        "meaningful.chest_lean",
+        "meaningful.core_max_vertex",
+        "meaningful.core_rms_vertex",
+        "meaningful.pelvis"
+      ],
+      "native_sha256": "32c121e90e4eed66f2619e6cc377f1591f0ae1e6f984d03e268761edc348a67d",
+      "normal_measurement_worker": "performance_evidence",
+      "observed_errors": [
+        "meaningful.core_max_vertex",
+        "meaningful.core_rms_vertex",
+        "meaningful.pelvis",
+        "meaningful.chest_lean"
+      ],
+      "provider_calls": 0,
+      "schema_version": "1.0"
+    },
+    "support_foot_slide": {
+      "actual_blender_scene": true,
+      "control": "support_foot_slide",
+      "detected": true,
+      "expected_errors": [
+        "contacts.induced_slide",
+        "contacts.slide_regression"
+      ],
+      "native_sha256": "5566e60a2a72314c27a9e6007ffc14ce1fe20cae32d19d6097d2589eaad7a647",
+      "normal_measurement_worker": "performance_evidence",
+      "observed_errors": [
+        "contacts.induced_slide",
+        "contacts.slide_regression"
+      ],
+      "provider_calls": 0,
+      "schema_version": "1.0"
+    }
+  },
+  "decision": "PASS",
+  "elapsed_seconds": 43.93208291695919,
+  "experiment_id": "3D-04-CONTROLS",
+  "known_api_cost_usd": 0.0,
+  "passed": true,
+  "provider_calls": 0,
+  "run_id": "blender-controls-v1-20260911T032852Z-b0545a82",
+  "run_path": "runs/3d04-controls/blender-controls-v1-20260911T032852Z-b0545a82",
+  "schema_version": "1.0",
+  "sensitivity": {
+    "checks": [
+      {
+        "details": [
+          "boundary_leakage",
+          "edit_every_cycle",
+          "no_op",
+          "support_foot_slide"
+        ],
+        "name": "controls.exact_set",
+        "passed": true
+      },
+      {
+        "details": {
+          "expected_errors": [
+            "meaningful.chest_lean",
+            "meaningful.core_max_vertex",
+            "meaningful.core_rms_vertex",
+            "meaningful.pelvis"
+          ],
+          "observed_errors": [
+            "meaningful.chest_lean",
+            "meaningful.core_max_vertex",
+            "meaningful.core_rms_vertex",
+            "meaningful.pelvis"
+          ]
+        },
+        "name": "controls.no_op",
+        "passed": true
+      },
+      {
+        "details": {
+          "expected_errors": [
+            "preservation.outside_max",
+            "preservation.outside_rms"
+          ],
+          "observed_errors": [
+            "boundary.40.value",
+            "boundary.40.velocity_max",
+            "boundary.40.velocity_rms",
+            "boundary.70.value",
+            "boundary.70.velocity_max",
+            "boundary.70.velocity_rms",
+            "preservation.outside_max",
+            "preservation.outside_rms"
+          ]
+        },
+        "name": "controls.edit_every_cycle",
+        "passed": true
+      },
+      {
+        "details": {
+          "expected_errors": [
+            "boundary.40.value",
+            "boundary.40.velocity_max",
+            "boundary.40.velocity_rms"
+          ],
+          "observed_errors": [
+            "boundary.40.value",
+            "boundary.40.velocity_max",
+            "boundary.40.velocity_rms",
+            "geometry.continuous_rms",
+            "preservation.outside_max",
+            "preservation.outside_rms"
+          ]
+        },
+        "name": "controls.boundary_leakage",
+        "passed": true
+      },
+      {
+        "details": {
+          "expected_errors": [
+            "contacts.induced_slide",
+            "contacts.slide_regression"
+          ],
+          "observed_errors": [
+            "contacts.induced_slide",
+            "contacts.slide_regression"
+          ]
+        },
+        "name": "controls.support_foot_slide",
+        "passed": true
+      }
+    ],
+    "errors": [],
+    "passed": true,
+    "schema_version": "1.0"
+  },
+  "source_binding": {
+    "implementation_commit": "ade45ca1103b2bdbcd69f390e70cf9bd54500a61",
+    "implementation_tree": "b5f41233ad5d86dd4712448f816acb3902479b55",
+    "schema_version": "1.0",
+    "status": "EXACT_PRE_RUN",
+    "worktree_clean_before_dispatch": true
+  },
+  "source_commit": "ade45ca1103b2bdbcd69f390e70cf9bd54500a61",
+  "source_tree": "b5f41233ad5d86dd4712448f816acb3902479b55"
+}

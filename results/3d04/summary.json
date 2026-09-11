@@ -1,11 +1,20 @@
 {
   "accepted_seconds": 1.25,
+  "blender_control_addendum": {
+    "artifact_count": 160,
+    "passed": true,
+    "provider_calls": 0,
+    "run_id": "blender-controls-v1-20260911T032852Z-b0545a82",
+    "run_path": "runs/3d04-controls/blender-controls-v1-20260911T032852Z-b0545a82",
+    "source_commit": "ade45ca1103b2bdbcd69f390e70cf9bd54500a61"
+  },
   "blender_process_elapsed_seconds": 67.98565766599495,
   "blind_reveal": {
     "A": "candidate",
     "B": "baseline"
   },
   "claim_boundary": "One admitted rig, one in-place run, one structured pelvis-and-chest edit, and one fixed interval.",
+  "complete_evidence_tag": "3d-04-v1-green-evidence-v2",
   "cost_per_accepted_second_usd": 0.0,
   "decision": "GREEN",
   "director_preference": "A",
@@ -41,9 +50,15 @@
     "peak_pelvis_correction_m": 0.03499998149371045
   },
   "known_api_cost_usd": 0.0,
+  "limitations": [
+    "Qualification covers one edit on one admitted rig and frames 40-70.",
+    "Contact preservation is relative to an in-place treadmill baseline and does not establish stationary world-space planted feet during forward locomotion.",
+    "Known API cost is zero, but total production economics are incomplete because human review time was not recorded."
+  ],
   "machine_passed": true,
   "provider_calls": 0,
   "review_player_repair_commit": "6085048d71c9c03873af0a94fde5634f01f02787",
   "run_id": "performance-v1-20260911T025746Z-51f59d9c",
+  "run_path": "runs/3d04/performance-v1-20260911T025746Z-51f59d9c",
   "schema_version": "1.0"
 }

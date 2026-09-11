@@ -18,7 +18,7 @@ Movie Factory improved one authorized interval of the accepted 3D-03.1 run while
 - Total harness elapsed time: **70.071 s**; recorded Blender-process time: **67.986 s**
 - Human review duration: **NOT_RECORDED**
 
-The scored dispatch began from a clean worktree. Save/reopen and provider-free offline replay reproduced the semantic snapshot exactly and the evaluated geometry within the frozen tolerances. All four negative controls failed their intended gates.
+The scored dispatch began from a clean worktree. Save/reopen and provider-free offline replay reproduced the semantic snapshot exactly and the evaluated geometry within the frozen tolerances. The original JSON-level controls verified the outer gate logic. A later [Blender failure-control addendum](CONTROL_ADDENDUM.md) built, saved, reopened, measured, and independently replayed four actual corrupted action variants through the production evidence worker; all four failed their intended gates without changing the accepted run.
 
 ## Numerical result
 
@@ -50,6 +50,6 @@ The initially generated playback page contained valid images but invalid JavaScr
 
 GREEN establishes one trusted structured pelvis-and-chest performance revision on frames 40–70 for the admitted character and in-place run. It establishes exact protected-state and outside-interval preservation, smooth numerical boundaries, baseline-relative support-contact preservation, persistence, offline replay, negative-control sensitivity, and goal-specific blinded preference.
 
-It does not establish arbitrary natural-language animation editing, general inverse kinematics, new motion generation, retargeting, horizontal locomotion, other rigs, character-prop interaction, facial performance, cloth/hair, or production-quality acting.
+It does not establish arbitrary natural-language animation editing, general inverse kinematics, new motion generation, retargeting, horizontal locomotion, other rigs, character-prop interaction, facial performance, cloth/hair, or production-quality acting. Its foot-contact claim is relative to the admitted in-place treadmill trajectory; stationary world-space planting during forward locomotion remains untested. Known API cost is $0.00, while total production economics remain incomplete because human review time was not recorded.
 
 Review the preserved synchronized playback at [the scored run](../../runs/3d04/performance-v1-20260911T025746Z-51f59d9c/review/index.html).
