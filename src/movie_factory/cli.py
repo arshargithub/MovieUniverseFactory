@@ -509,6 +509,18 @@ def command_validate_character_motion_031(args) -> int:
     return 0 if result["decision"]=="YELLOW" else 3
 
 
+def command_run_performance_04(args) -> int:
+    root=repo_root(); settings=load_settings_safe(root)
+    output=Path(args.output); output=(output if output.is_absolute() else root/output).resolve()
+    from .performance_controller import run_performance_04
+    result=run_performance_04(root,output,_profile(root,args.profile),
+                              settings.get("BLENDER_BIN","/Applications/Blender.app/Contents/MacOS/Blender"),
+                              render_frames=not args.no_render)
+    emit({"ok":result["machine_passed"],"decision":result["decision"],"run_id":result["run_id"],
+          "review":result["review"],"director_status":result["director_status"],"scored":result["scored"]})
+    return 0 if result["machine_passed"] else 3
+
+
 def command_evaluate_evaluator(args) -> int:
     if not args.live: raise ValueError("evaluator qualification requires explicit --live")
     root=repo_root(); settings=load_settings_safe(root)
@@ -544,6 +556,7 @@ def parser() -> argparse.ArgumentParser:
     q=sub.add_parser("replay-character"); q.add_argument("--run",required=True); q.add_argument("--output",required=True); q.set_defaults(func=command_replay_character)
     q=sub.add_parser("validate-character-motion"); q.add_argument("--run",required=True); q.add_argument("--output",default="runs/3d03-temporal"); q.add_argument("--live",action="store_true"); q.set_defaults(func=command_validate_character_motion)
     q=sub.add_parser("validate-character-motion-031"); q.add_argument("--run",required=True); q.add_argument("--output",default="runs/3d031-motion"); q.set_defaults(func=command_validate_character_motion_031)
+    q=sub.add_parser("run-performance-04"); q.add_argument("--output",default="runs/3d04"); q.add_argument("--profile",default="asset_preview"); q.add_argument("--no-render",action="store_true"); q.set_defaults(func=command_run_performance_04)
     q=sub.add_parser("evaluate-evaluator"); q.add_argument("--config",required=True); q.add_argument("--benchmark",required=True); q.add_argument("--output",required=True); q.add_argument("--live",action="store_true"); q.set_defaults(func=command_evaluate_evaluator)
     return p
 

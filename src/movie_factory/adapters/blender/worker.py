@@ -421,6 +421,280 @@ CHARACTER_MOTION_ACTIONS={
 CHARACTER_MOTION_LIMBS=("LeftUpLeg","LeftLeg","LeftFoot","RightUpLeg","RightLeg","RightFoot",
                         "LeftArm","LeftForeArm","RightArm","RightForeArm")
 
+PERFORMANCE_OPERATION={
+    "op":"adjust_run_body_dynamics","entity_id":"character_01","frame_start":40,"frame_end":70,
+    "blend_width_frames":6,"blend_envelope":"quintic_smootherstep_zero_value_and_slope_v1",
+    "body_target":"Hips","vertical_body_amplitude_m":.035,"vertical_axis":"armature_local_z",
+    "forward_torso_lean_degrees":6.0,"torso_target":"Chest","support_contact_clearance_m":.045,
+    "support_compensation":"preserve_baseline_in_place_contact_trajectory_two_bone_ik_v1"}
+
+
+def _set_scene_time(scene,frame):
+    whole=math.floor(frame); scene.frame_set(whole,subframe=frame-whole); bpy.context.view_layer.update()
+
+
+def _smootherstep(value):
+    x=max(0.0,min(1.0,value)); return 6*x**5-15*x**4+10*x**3
+
+
+def _performance_envelope(frame,operation):
+    start=operation["frame_start"]; end=operation["frame_end"]; width=operation["blend_width_frames"]
+    if frame<=start or frame>=end: return 0.0
+    if frame<start+width: return _smootherstep((frame-start)/width)
+    if frame>end-width: return _smootherstep((end-frame)/width)
+    return 1.0
+
+
+def _performance_phase(frame): return 1+(frame-1)%16
+
+
+def _action_fingerprint(action):
+    payload={"name":action.name,"properties":{key:action[key] for key in sorted(action.keys())},"curves":[]}
+    for curve in sorted(action_channels(action),key=lambda item:(item.data_path,item.array_index)):
+        payload["curves"].append({"data_path":curve.data_path,"array_index":curve.array_index,
+            "keys":[[float(key.co[0]),float(key.co[1]),key.interpolation] for key in curve.keyframe_points]})
+    return hashlib.sha256(json.dumps(payload,sort_keys=True,separators=(",",":"),default=str).encode()).hexdigest()
+
+
+def _pose_at(armature,action,frame):
+    assign_character_action(armature,action); _set_scene_time(bpy.context.scene,frame)
+    return {bone.name:bone.matrix.copy() for bone in armature.pose.bones}
+
+
+def _make_repeating_run_action(armature,source):
+    captured={}
+    for frame in range(1,97):
+        _pose_at(armature,source,_performance_phase(frame))
+        captured[frame]={"basis":{bone.name:bone.matrix_basis.decompose() for bone in armature.pose.bones},
+                         "armature_location":armature.location.copy()}
+    action=bpy.data.actions.new("character_action_run_3d04_baseline_96")
+    assign_character_action(armature,action)
+    for frame in range(1,97):
+        values=captured[frame]
+        armature.location=values["armature_location"]
+        armature.keyframe_insert(data_path="location",frame=frame,group="grounding")
+        for bone in armature.pose.bones:
+            location,rotation,scale=values["basis"][bone.name]
+            bone.rotation_mode="QUATERNION"; bone.location=location; bone.scale=scale
+            bone.rotation_quaternion=rotation.normalized()
+            bone.keyframe_insert(data_path="location",frame=frame,group=bone.name)
+            bone.keyframe_insert(data_path="rotation_quaternion",frame=frame,group=bone.name)
+            bone.keyframe_insert(data_path="scale",frame=frame,group=bone.name)
+    for curve in action_channels(action):
+        for key in curve.keyframe_points: key.interpolation="LINEAR"
+    action["mf_id"]=action.name; action["mf_clip_name"]="run"; action["mf_source_action"]="character_action_run"
+    action["mf_source_unique_frames"]=16; action["mf_timeline_fps"]=24.0; action["mf_frame_start"]=1; action["mf_frame_end"]=96
+    action["mf_timeline_policy"]="repeat_16_unique_samples_without_endpoint_hold_v1"; action.use_fake_user=True
+    return action
+
+
+def _bone_tail(matrix,bone): return matrix@Vector((0,bone.bone.length,0))
+
+
+def _orient_bone(matrix,bone,new_head,new_tail):
+    old_head=matrix.translation; old_tail=_bone_tail(matrix,bone)
+    old_direction=old_tail-old_head; new_direction=new_tail-new_head
+    if old_direction.length<=1e-12 or new_direction.length<=1e-12: raise ValueError("Cannot orient zero-length performance bone")
+    rotation=old_direction.rotation_difference(new_direction)
+    return Matrix.Translation(new_head)@rotation.to_matrix().to_4x4()@Matrix.Translation(-old_head)@matrix
+
+
+def _solve_leg(desired,baseline,armature,side,target):
+    upper=armature.pose.bones[side+"UpLeg"]; lower=armature.pose.bones[side+"Leg"]; foot=armature.pose.bones[side+"Foot"]
+    a=desired[upper.name].translation; base_knee=baseline[lower.name].translation; base_ankle=baseline[foot.name].translation
+    l1=upper.bone.length; l2=lower.bone.length; direction=target-a; distance=direction.length
+    if distance<=1e-9 or distance>=l1+l2-1e-7: raise ValueError("Support target is outside the qualified two-bone solve")
+    unit=direction.normalized(); x=(l1*l1-l2*l2+distance*distance)/(2*distance); height=math.sqrt(max(0.0,l1*l1-x*x))
+    normal=(base_knee-baseline[upper.name].translation).cross(base_ankle-base_knee)
+    if normal.length<=1e-9: normal=Vector((1,0,0))
+    normal.normalize(); bend=normal.cross(unit)
+    if bend.length<=1e-9: bend=Vector((0,1,0))
+    bend.normalize(); projected=base_knee-(a+unit*x)
+    if bend.dot(projected)<0: bend.negate()
+    knee=a+unit*x+bend*height
+    desired[upper.name]=_orient_bone(desired[upper.name],upper,a,knee)
+    desired[lower.name]=_orient_bone(desired[lower.name],lower,knee,target)
+    foot_shift=target-baseline[foot.name].translation
+    for bone in armature.pose.bones:
+        if bone==foot or foot in bone.parent_recursive:
+            desired[bone.name]=Matrix.Translation(foot_shift)@baseline[bone.name]
+
+
+def build_performance(operations):
+    if operations!=[PERFORMANCE_OPERATION]: raise ValueError("3D-04 accepts only the frozen timeline-local revision")
+    scene=bpy.context.scene; armature=bpy.data.objects.get("character_01_armature"); mesh=bpy.data.objects.get("character_01_mesh")
+    source=bpy.data.actions.get("character_action_run")
+    if not armature or not mesh or not source: raise ValueError("3D-04 baseline character or source action is missing")
+    if scene.render.fps!=24 or scene.render.fps_base!=1: raise ValueError("3D-04 requires the frozen 24 fps scene")
+    source_before=_action_fingerprint(source); baseline=_make_repeating_run_action(armature,source)
+    candidate=baseline.copy(); candidate.name="character_action_run_3d04_candidate_96"; candidate["mf_id"]=candidate.name
+    candidate["mf_parent_action"]=baseline.name; candidate["mf_revision"]="adjust_run_body_dynamics_v1"
+    candidate["mf_edit_interval"]="[40,70]"; candidate["mf_blend_envelope"]=PERFORMANCE_OPERATION["blend_envelope"]
+    candidate.use_fake_user=True
+    foot_vertices=_character_foot_vertices(mesh); internal=[40+i*.125 for i in range(241)]
+    scale_z=(armature.matrix_world.to_3x3()@Vector((0,0,1))).length
+    if scale_z<=0: raise ValueError("Character has invalid armature world scale")
+    baseline_states={}
+    for frame in internal:
+        matrices=_pose_at(armature,baseline,frame); points=_evaluated_character_points(mesh)
+        feet={side:min(points[index].z for index in indices) for side,indices in foot_vertices.items()}
+        baseline_states[frame]={"matrices":matrices,"feet":feet}
+    rest={bone.name:bone.bone.matrix_local.copy() for bone in armature.pose.bones}
+    full_order=sorted(armature.pose.bones,key=lambda bone:len(bone.parent_recursive)); hips=armature.pose.bones["Hips"]
+    edited=("Hips","Chest","LeftUpLeg","LeftLeg","LeftFoot","RightUpLeg","RightLeg","RightFoot")
+    previous={name:None for name in edited}
+    assign_character_action(armature,candidate)
+    for frame in internal:
+        state=baseline_states[frame]; base=state["matrices"]; envelope=_performance_envelope(frame,PERFORMANCE_OPERATION)
+        phase=_performance_phase(frame); rhythm=.5+.5*math.cos(2*math.pi*(phase-1)/8)
+        # Compress during planted support rather than lengthening an already
+        # straight leg. Returning to baseline height at flight strengthens the
+        # run's vertical contrast without moving the armature or character root.
+        delta=-PERFORMANCE_OPERATION["vertical_body_amplitude_m"]*envelope*rhythm/scale_z
+        translation=Matrix.Translation((0,0,delta)); desired={name:matrix.copy() for name,matrix in base.items()}
+        for bone in armature.pose.bones:
+            if bone==hips or hips in bone.parent_recursive: desired[bone.name]=translation@base[bone.name]
+        for side in ("Left","Right"):
+            if state["feet"][side.lower()]<=PERFORMANCE_OPERATION["support_contact_clearance_m"] and envelope>0:
+                _solve_leg(desired,base,armature,side,base[side+"Foot"].translation.copy())
+        chest=armature.pose.bones["Chest"]; chest_head=desired["Chest"].translation
+        lean=math.radians(PERFORMANCE_OPERATION["forward_torso_lean_degrees"])*envelope
+        chest_transform=Matrix.Translation(chest_head)@Quaternion((1,0,0),lean).to_matrix().to_4x4()@Matrix.Translation(-chest_head)
+        for bone in armature.pose.bones:
+            if bone==chest or chest in bone.parent_recursive: desired[bone.name]=chest_transform@desired[bone.name]
+        actual={}; bases={}
+        for bone in full_order:
+            parent_args={"parent_matrix":actual[bone.parent.name],"parent_matrix_local":rest[bone.parent.name]} if bone.parent else {}
+            basis=bone.bone.convert_local_to_pose(desired[bone.name],rest[bone.name],invert=True,**parent_args)
+            location,rotation,_=basis.decompose(); rotation.normalize()
+            if bone.name in previous and previous[bone.name] is not None and rotation.dot(previous[bone.name])<0: rotation.negate()
+            if bone.name in previous: previous[bone.name]=rotation.copy()
+            bases[bone.name]=(location,rotation)
+            actual[bone.name]=bone.bone.convert_local_to_pose(Matrix.LocRotScale(location,rotation,Vector((1,1,1))),rest[bone.name],**parent_args)
+        if envelope==0: continue
+        for name in edited:
+            bone=armature.pose.bones[name]; location,rotation=bases[name]
+            bone.rotation_mode="QUATERNION"; bone.location=location; bone.rotation_quaternion=rotation
+            bone.keyframe_insert(data_path="rotation_quaternion",frame=frame,group=name)
+            if name=="Hips": bone.keyframe_insert(data_path="location",frame=frame,group=name)
+    for curve in action_channels(candidate):
+        for key in curve.keyframe_points: key.interpolation="LINEAR"
+    if _action_fingerprint(source)!=source_before: raise ValueError("3D-04 mutated the immutable source action")
+    assign_character_action(armature,candidate); armature["mf_active_action"]="run_3d04_candidate"
+    scene.frame_start=1; scene.frame_end=96; scene.frame_set(1); scene.camera=bpy.data.objects["camera_B"]
+    scene["mf_experiment_id"]="3D-04"; scene["mf_timeline_revision"]="adjust_run_body_dynamics_v1"
+    scene["mf_source_action_sha256"]=source_before
+    bpy.context.view_layer.update()
+    return [{"op":"create_repeating_baseline_action","action":baseline.name,"source":source.name},
+            {"op":"adjust_run_body_dynamics","action":candidate.name,"frame_start":40,"frame_end":70,
+             "source_action_sha256":source_before}]
+
+
+def _performance_sample(armature,mesh,action,frame,foot_vertices,rest_lengths):
+    assign_character_action(armature,action); _set_scene_time(bpy.context.scene,frame)
+    points=_evaluated_character_points(mesh); low=min(point.z for point in points)
+    feet={side:min(points[index].z for index in indices) for side,indices in foot_vertices.items()}
+    ankles={side:list(armature.matrix_world@armature.pose.bones[side.title()+"Foot"].head) for side in ("left","right")}
+    ratios=[]
+    for name,rest in rest_lengths.items():
+        pose=armature.pose.bones[name]; length=(armature.matrix_world@pose.tail-armature.matrix_world@pose.head).length
+        ratios.append(abs(length/rest-1))
+    return {"points":points,"candidate_min_z_m":low,"feet":feet,"ankles":ankles,
+            "maximum_limb_length_relative_error":max(ratios),
+            "hips":armature.pose.bones["Hips"].matrix.copy(),"chest":armature.pose.bones["Chest"].matrix.copy()}
+
+
+def _point_delta(left,right):
+    distances=[(a-b).length for a,b in zip(left,right)]
+    return max(distances),math.sqrt(sum(value*value for value in distances)/len(distances))
+
+
+def performance_evidence(out,profile,seed,campaign,render_frames=False):
+    baseline_spec=campaign.get("baseline",{}); sampling=campaign.get("sampling",{})
+    expected_baseline={"action":"character_action_run","action_unique_frames":16,"source_fps":24,"timeline_fps":24,
+                       "timeline_frame_start":1,"timeline_frame_end":96}
+    if any(baseline_spec.get(key)!=value for key,value in expected_baseline.items()):
+        raise ValueError("3D-04 evidence timeline does not match the frozen contract")
+    if sampling.get("regular_step_frames")!=.5 or sampling.get("boundary_step_frames")!=.125 or sampling.get("boundary_windows")!=[[38,42],[68,72]]:
+        raise ValueError("3D-04 evidence sampling does not match the frozen contract")
+    scene=bpy.context.scene; armature=bpy.data.objects.get("character_01_armature"); mesh=bpy.data.objects.get("character_01_mesh")
+    baseline=bpy.data.actions.get("character_action_run_3d04_baseline_96"); candidate=bpy.data.actions.get("character_action_run_3d04_candidate_96")
+    source=bpy.data.actions.get("character_action_run")
+    if not armature or not mesh or not baseline or not candidate or not source or scene.get("mf_experiment_id")!="3D-04":
+        raise ValueError("3D-04 evidence targets are missing")
+    times={1+i*.5 for i in range(191)}
+    for low,high in sampling["boundary_windows"]: times.update(low+i*.125 for i in range(int((high-low)/.125)+1))
+    times=sorted(times); foot_vertices=_character_foot_vertices(mesh)
+    rest_lengths={name:(armature.matrix_world.to_3x3()@(armature.data.bones[name].tail_local-armature.data.bones[name].head_local)).length
+                  for name in CHARACTER_MOTION_LIMBS}
+    baseline_states={frame:_performance_sample(armature,mesh,baseline,frame,foot_vertices,rest_lengths) for frame in times}
+    candidate_states={frame:_performance_sample(armature,mesh,candidate,frame,foot_vertices,rest_lengths) for frame in times}
+    rows=[]; previous_frame=None; previous_points=None
+    for frame in times:
+        before=baseline_states[frame]; after=candidate_states[frame]; maximum,rms=_point_delta(before["points"],after["points"])
+        if previous_points is None: step_max=step_rms=0.0
+        else:
+            step_max,step_rms=_point_delta(after["points"],previous_points); scale=1/(frame-previous_frame)
+            step_max*=scale; step_rms*=scale
+        rows.append({"frame":frame,"max_vertex_delta_m":maximum,"rms_vertex_delta_m":rms,
+                     "candidate_min_z_m":after["candidate_min_z_m"],
+                     "maximum_limb_length_relative_error":after["maximum_limb_length_relative_error"],
+                     "candidate_step_max_vertex_m":step_max,"candidate_step_rms_vertex_m":step_rms})
+        previous_frame=frame; previous_points=[point.copy() for point in after["points"]]
+    h=sampling["velocity_half_width_frames"]; fps=baseline_spec["timeline_fps"]; boundaries={}
+    for boundary in (40,70):
+        center_max,center_rms=_point_delta(baseline_states[boundary]["points"],candidate_states[boundary]["points"])
+        velocities=[]
+        for b0,b1,c0,c1 in zip(baseline_states[boundary-h]["points"],baseline_states[boundary+h]["points"],
+                               candidate_states[boundary-h]["points"],candidate_states[boundary+h]["points"]):
+            velocities.append(((c1-c0)-(b1-b0))*(fps/(2*h)))
+        magnitudes=[value.length for value in velocities]
+        boundaries[str(boundary)]={"max_vertex_delta_m":center_max,"rms_vertex_delta_m":center_rms,
+            "max_velocity_delta_m_per_s":max(magnitudes),
+            "rms_velocity_delta_m_per_s":math.sqrt(sum(value*value for value in magnitudes)/len(magnitudes))}
+    segments=[]
+    for side in ("left","right"):
+        run=[]; runs=[]
+        for frame in times:
+            if baseline_states[frame]["feet"][side]<=campaign["thresholds"]["support_contact_clearance_m"]: run.append(frame)
+            elif run: runs.append(run); run=[]
+        if run: runs.append(run)
+        for run in runs:
+            anchor_frame=min(run,key=lambda value:baseline_states[value]["feet"][side])
+            baseline_anchor=Vector(baseline_states[anchor_frame]["ankles"][side]); candidate_anchor=Vector(candidate_states[anchor_frame]["ankles"][side])
+            baseline_slide=max((Vector(baseline_states[frame]["ankles"][side])-baseline_anchor).xy.length for frame in run)
+            candidate_slide=max((Vector(candidate_states[frame]["ankles"][side])-candidate_anchor).xy.length for frame in run)
+            induced_slide=max((Vector(candidate_states[frame]["ankles"][side])-Vector(baseline_states[frame]["ankles"][side])).xy.length for frame in run)
+            retained=all(candidate_states[frame]["feet"][side]<=campaign["thresholds"]["candidate_contact_clearance_m"] for frame in run)
+            segments.append({"foot":side,"frame_start":run[0],"frame_end":run[-1],"baseline_slide_m":baseline_slide,
+                             "candidate_slide_m":candidate_slide,"candidate_induced_slide_m":induced_slide,
+                             "candidate_contact_retained":retained})
+    achieved={"peak_absolute_pelvis_correction_m":0.0,"peak_chest_lean_degrees":0.0}
+    for frame in times:
+        if 40<=frame<=70:
+            before=baseline_states[frame]; after=candidate_states[frame]
+            hips_delta=(after["hips"].translation-before["hips"].translation).length*(armature.matrix_world.to_3x3()@Vector((0,0,1))).length
+            chest_delta=math.degrees(before["chest"].to_quaternion().rotation_difference(after["chest"].to_quaternion()).angle)
+            achieved["peak_absolute_pelvis_correction_m"]=max(achieved["peak_absolute_pelvis_correction_m"],hips_delta)
+            achieved["peak_chest_lean_degrees"]=max(achieved["peak_chest_lean_degrees"],chest_delta)
+    if render_frames:
+        apply_profile(profile,seed); scene.camera=bpy.data.objects["camera_B"]
+        for role,action in (("baseline",baseline),("candidate",candidate)):
+            assign_character_action(armature,action); folder=out/"frames"/role; folder.mkdir(parents=True,exist_ok=True)
+            for frame in range(1,97):
+                scene.frame_set(frame); bpy.context.view_layer.update(); scene.render.filepath=str(folder/f"frame-{frame:04d}.png")
+                bpy.ops.render.render(write_still=True)
+    source_actual=_action_fingerprint(source); source_expected=scene.get("mf_source_action_sha256")
+    source_equal=source_actual==source_expected
+    payload={"schema_version":"1.0","experiment_id":"3D-04","baseline_native_sha256":baseline_spec["sha256"],
+             "performance_native_sha256":file_sha256(Path(bpy.data.filepath)),
+             "timeline":{"fps":24,"frame_start":1,"frame_end":96,"unique_source_frames":16},
+             "protected":{"source_action_equal":source_equal,"source_action_expected_sha256":source_expected,
+                          "source_action_actual_sha256":source_actual},"samples":rows,"boundaries":boundaries,
+             "support_segments":segments,"achieved":achieved,"persistence":{},
+             "rendered_frames_per_clip":96 if render_frames else 0,"provider_calls":0}
+    write_json(out/"performance-metrics.json",payload); return payload
+
 
 def _evaluated_character_points(mesh):
     depsgraph=bpy.context.evaluated_depsgraph_get(); evaluated=mesh.evaluated_get(depsgraph)
@@ -1323,7 +1597,7 @@ def main():
             build_external(job["plan"], profile)
         elif mode=="build_character":
             build_character(job["plan"],profile)
-        elif mode in {"revise","revise_external","revise_character","inspect","render","evaluator_corrupt","character_temporal"}:
+        elif mode in {"revise","revise_external","revise_character","build_performance","inspect","render","evaluator_corrupt","character_temporal","performance_evidence"}:
             native=Path(job["parent_native"])
             if native.resolve()==(out/"scene.blend").resolve():
                 raise ValueError("Parent native may never be overwritten")
@@ -1340,6 +1614,10 @@ def main():
                 mutations=revise_character(job["operations"])
                 write_json(out/"mutations.json",mutations)
                 status["artifacts"].append("mutations.json")
+            elif mode=="build_performance":
+                mutations=build_performance(job["operations"])
+                write_json(out/"mutations.json",mutations)
+                status["artifacts"].append("mutations.json")
             elif mode=="evaluator_corrupt":
                 mutation=evaluator_corrupt(job.get("corruption"))
                 write_json(out/"corruption.json",mutation)
@@ -1352,13 +1630,20 @@ def main():
                     for clip,item in evidence["clips"].items()
                     for frame in range(item["frame_start"],item["frame_end"]+1)
                 )
+            elif mode=="performance_evidence":
+                evidence=performance_evidence(out,profile,job["seed"],job["campaign"],job.get("render_frames",False))
+                status["artifacts"].append("performance-metrics.json")
+                if job.get("render_frames",False):
+                    status["artifacts"].extend(
+                        f"frames/{role}/frame-{frame:04d}.png"
+                        for role in ("baseline","candidate") for frame in range(1,97))
         else:
             raise ValueError("Unknown worker mode")
-        if mode in {"build","build_external","build_character","revise","revise_external","revise_character","evaluator_corrupt"}:
+        if mode in {"build","build_external","build_character","revise","revise_external","revise_character","build_performance","evaluator_corrupt"}:
             bpy.context.preferences.filepaths.save_version=0
             bpy.ops.wm.save_as_mainfile(filepath=str(out/"scene.blend"),check_existing=False,compress=True,relative_remap=False)
             status["artifacts"].append("scene.blend")
-        if mode in {"build","build_external","build_character","revise","revise_external","revise_character","inspect","evaluator_corrupt"}:
+        if mode in {"build","build_external","build_character","revise","revise_external","revise_character","build_performance","inspect","evaluator_corrupt"}:
             state=inspector.snapshot()
             write_json(out/"snapshot.json",state)
             status["artifacts"].append("snapshot.json")

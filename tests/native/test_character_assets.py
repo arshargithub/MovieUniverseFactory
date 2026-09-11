@@ -8,6 +8,7 @@ import pytest
 from movie_factory.adapters.blender.runner import run_blender
 from movie_factory.character_controller import resolved_character_plan
 from movie_factory.validators.character import validate_character_baseline,validate_character_revision
+from movie_factory.validators.performance import protected_snapshot_flags,validate_performance_metrics
 from movie_factory.validators.structural import compare_snapshots
 
 
@@ -70,3 +71,23 @@ def test_production_transfer_is_order_independent_at_integer_and_fractional_fram
     assert report["passed"] and report["provider_calls"]==0
     assert set(report["clips"])=={"idle","run","jump"}
     assert all(clip["fractional_sample_count"]>0 for clip in report["clips"].values())
+
+
+def test_performance_revision_is_local_grounded_and_source_preserving(tmp_path):
+    template=json.loads((ROOT/"feasibility/3d/3d-03-1/scene.json").read_text()); plan=resolved_character_plan(template,STAGED)
+    operation=json.loads((ROOT/"feasibility/3d/3d-04/revision.json").read_text())["operations"]
+    campaign=json.loads((ROOT/"feasibility/3d/3d-04/campaign.json").read_text())
+    status,source=job(tmp_path,"3d04-source","build_character",plan=plan); assert status["ok"],status
+    source_snapshot=json.loads((source/"snapshot.json").read_text())
+    status,build=job(tmp_path,"3d04-build","build_performance",parent_native=str(source/"scene.blend"),operations=operation)
+    assert status["ok"],status
+    build_snapshot=json.loads((build/"snapshot.json").read_text())
+    flags=protected_snapshot_flags(source_snapshot,build_snapshot); assert all(flags.values()),flags
+    status,evidence_dir=job(tmp_path,"3d04-evidence","performance_evidence",parent_native=str(build/"scene.blend"),
+                            campaign=campaign,render_frames=False)
+    assert status["ok"],status
+    evidence=json.loads((evidence_dir/"performance-metrics.json").read_text()); evidence["protected"].update(flags)
+    evidence["persistence"]={name:True for name in ("save_reopen_semantic_exact","save_reopen_geometry_within_tolerance",
+                                                     "offline_replay_semantic_exact","offline_replay_geometry_within_tolerance")}
+    result=validate_performance_metrics(evidence,campaign)
+    assert result["passed"],result["errors"]

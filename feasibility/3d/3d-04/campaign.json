@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0",
+  "experiment_id": "3D-04",
+  "campaign_status": "DEVELOPMENT_ONLY_UNTIL_SOURCE_BINDING_IS_FROZEN",
+  "acceptance_version": "3d04-gates-v1-frozen",
+  "baseline": {
+    "evidence_tag": "3d-03-1-v1-green-evidence",
+    "relative_path": "runs/3d031/character-v2-20260911T012644Z-2d7d8605/initial/build/scene.blend",
+    "sha256": "bbf05848c30e531ca31fc4632210b8344f6f35166db9c26abe4adfa6150e2488",
+    "action": "character_action_run",
+    "action_unique_frames": 16,
+    "source_fps": 24,
+    "timeline_fps": 24,
+    "timeline_frame_start": 1,
+    "timeline_frame_end": 96
+  },
+  "revision_path": "feasibility/3d/3d-04/revision.json",
+  "sampling": {
+    "regular_step_frames": 0.5,
+    "boundary_step_frames": 0.125,
+    "boundary_windows": [[38, 42], [68, 72]],
+    "velocity_half_width_frames": 0.125
+  },
+  "thresholds": {
+    "outside_max_vertex_delta_m": 0.000001,
+    "outside_rms_vertex_delta_m": 0.00000025,
+    "boundary_max_vertex_delta_m": 0.000001,
+    "boundary_rms_velocity_delta_m_per_s": 0.002,
+    "boundary_max_velocity_delta_m_per_s": 0.01,
+    "floor_penetration_tolerance_m": 0.015,
+    "support_contact_clearance_m": 0.045,
+    "candidate_contact_clearance_m": 0.06,
+    "maximum_candidate_induced_support_slide_m": 0.005,
+    "maximum_slide_regression_m": 0.005,
+    "maximum_limb_length_relative_error": 0.01,
+    "maximum_vertex_step_m": 0.45,
+    "maximum_rms_vertex_step_m": 0.18,
+    "minimum_core_max_vertex_delta_m": 0.025,
+    "minimum_core_max_rms_vertex_delta_m": 0.012,
+    "minimum_peak_pelvis_correction_m": 0.025,
+    "maximum_peak_pelvis_correction_m": 0.0355,
+    "minimum_peak_chest_lean_degrees": 4.0,
+    "maximum_peak_chest_lean_degrees": 6.5
+  },
+  "director_gate": {
+    "score_increment": 0.5,
+    "minimum_readability_improvement": 0.5,
+    "minimum_candidate_contact_quality": 4.0,
+    "minimum_candidate_transition_smoothness": 4.0,
+    "candidate_contact_must_not_regress": true,
+    "candidate_preference_required": true,
+    "major_defects_allowed": 0,
+    "labels": ["A", "B"],
+    "mapping_frozen_before_render": true
+  },
+  "negative_controls": ["no_op", "edit_every_cycle", "boundary_leakage", "support_foot_slide"],
+  "development_budget": {"maximum_provider_calls": 0, "maximum_known_api_cost_usd": 0.0},
+  "scored_secondary_evaluator": {
+    "enabled": false,
+    "maximum_provider_calls": 0,
+    "maximum_known_api_cost_usd": 0.0,
+    "note": "A nonzero evaluator budget requires a separately frozen qualified motion-review configuration before dispatch."
+  },
+  "required_scored_source_binding": {
+    "worktree_clean_before_dispatch": true,
+    "implementation_commit": "TO_BE_FROZEN_AFTER_IMPLEMENTATION",
+    "implementation_tree": "TO_BE_FROZEN_AFTER_IMPLEMENTATION",
+    "campaign_configuration_sha256": "COMPUTED_IN_IMMUTABLE_WORK_PACKAGE",
+    "revision_sha256": "COMPUTED_IN_IMMUTABLE_WORK_PACKAGE",
+    "blender_version_and_build_hash": "RECORDED_BY_PREFLIGHT"
+  }
+}

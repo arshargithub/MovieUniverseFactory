@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "3D-04 blinded Director review",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "status", "blind_assignment_id", "clips", "preference", "major_defects", "notes"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "status": {"enum": ["PENDING", "ACCEPTED", "REJECTED"]},
+    "blind_assignment_id": {"type": "string", "minLength": 16},
+    "clips": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["A", "B"],
+      "properties": {"A": {"$ref": "#/$defs/clip"}, "B": {"$ref": "#/$defs/clip"}}
+    },
+    "preference": {"enum": ["A", "B", "tie", null]},
+    "major_defects": {"type": "array", "items": {"type": "string"}},
+    "notes": {"type": "string"}
+  },
+  "$defs": {
+    "score": {"type": ["number", "null"], "minimum": 1, "maximum": 5, "multipleOf": 0.5},
+    "clip": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["run_readability", "foot_contact_quality", "transition_smoothness", "visible_defects"],
+      "properties": {
+        "run_readability": {"$ref": "#/$defs/score"},
+        "foot_contact_quality": {"$ref": "#/$defs/score"},
+        "transition_smoothness": {"$ref": "#/$defs/score"},
+        "visible_defects": {"type": "array", "items": {"type": "string"}}
+      }
+    }
+  }
+}

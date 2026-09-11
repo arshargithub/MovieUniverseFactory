@@ -7,8 +7,15 @@
       "entity_id": "character_01",
       "frame_start": 40,
       "frame_end": 70,
+      "blend_width_frames": 6,
+      "blend_envelope": "quintic_smootherstep_zero_value_and_slope_v1",
+      "body_target": "Hips",
       "vertical_body_amplitude_m": 0.035,
-      "forward_torso_lean_degrees": 6.0
+      "vertical_axis": "armature_local_z",
+      "forward_torso_lean_degrees": 6.0,
+      "torso_target": "Chest",
+      "support_contact_clearance_m": 0.045,
+      "support_compensation": "preserve_baseline_in_place_contact_trajectory_two_bone_ik_v1"
     }
   ]
 }
