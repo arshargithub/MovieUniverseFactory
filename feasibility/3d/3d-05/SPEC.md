@@ -36,13 +36,17 @@ The candidate uses the same state machine with grasp, lift, and held transitions
 
 ## Grip and attachment model
 
-`sword_01` is a semantic root at the handle grip point. The admitted grip centre is `[0, 0.145, -0.135]` in the existing RightHand bone frame (armature-local units). The arm solver brings that point to the supported sword. The hand's local X axis becomes world up; local Y points toward the sword. Wrist orientation settles by source frame 24. From frames 16–24 the hand approaches a staging point 0.12 m in front of the handle along world -Y; it then advances toward the handle over frames 24–32. The open hand reaches its position by source frame 32, then the existing index and thumb bones close over source frames 32–40 using a quintic envelope. The final curl is 0.85 of the admitted idle-pose quaternion rotation for each existing finger control. During closure, the thumb base adds an outward -30° local-Y rotation multiplied by `sin(pi * closure)^2`, returning to the admitted final pose. This routes the thumb around the handle rather than through it. This is a bounded extension of the earlier finger-articulation non-goal, required to fulfill the original grasp brief; it does not qualify arbitrary dexterous grasping.
+`sword_01` is a semantic root at the handle grip point. The admitted grip centre is `[-0.12, 0.145, -0.135]` in the existing RightHand bone frame (armature-local units). Negative hand X is the fixture's thumb side and points upward. Hand Y is horizontal at a 45° world-Z yaw from world -X. The forearm is rolled toward the hand's neutral rest relationship, while upper-arm roll follows the elbow hinge plane. The elbow position is solved from the two preserved segment lengths, selecting the reachable solution closest to the desired wrist direction.
+
+The support and supported sword are at world X/Y = [-0.50, -0.20] m, 0.10 m inward and 0.28 m forward from the rejected thumb-down attempt. The held grip is [-0.55, -0.20, 1.25] m. Wrist orientation settles by source frame 24. Frames 16–24 interpolate the wrist toward a staging point 0.06 m behind the grip in positive local hand Z, with a smooth world-space clearance bow of [0.08, 0.14, 0.22] m multiplied by `sin(pi * rotation_weight)^2`. The wrist then advances to the handle over frames 24–32. The lower grip position clears the guard; this staging and the approach path are recorded explicitly in `scene.json`.
+
+Index controls open initially and close over source frames 32–40 using a quintic envelope, reaching 0.85 of the admitted idle-pose quaternion rotation. Thumb controls start at 0.35 of that rotation and reach the same 0.85 final curl. The thumb base adds a -45° local-Y clearance rotation multiplied by `1 - closure`, which returns to zero at grasp. This is one authored closure using the admitted controls, not general dexterous grasping. The earlier thumb-down frame and closure are retained in rejected evidence; see [ANATOMY_REPAIR.md](ANATOMY_REPAIR.md).
 
 At attachment the sword must retain its supported world position and blade-up orientation. The world offset used by the location constraint is derived from the frozen hand-local grip point, hand orientation, and armature scale. After grasp the orientation is fixed while the wrist and prop rise together. Translation error is at most 0.003 m and blade-up rotation error at most 0.5°. The same equations apply to baseline and candidate; source timing is the only revision.
 
 Stable anchors are necessary but insufficient. Both clips must demonstrate an enclosing hand through independent measurements against evaluated sword surfaces. Thumb and finger surface samples must each approach within 0.005 m during grasp, lift, and hold. Surface samples within 0.008 m of the handle must span at least 170 degrees about its axis. Maximum sampled hand penetration is at most 0.004 m throughout the clip, including approach and closure. These gates supplement explicit Director acceptance of a visible grasp; a fist merely touching the handle cannot be accepted on anchor accuracy alone.
 
-The measurement uses all skin vertices predominantly weighted to the right hand or its finger/thumb descendants plus interior samples on their triangles (six subdivisions). Signed nearest-surface distance measures penetration against the evaluated sword mesh. Contact angles use surface hits in the admitted handle band, -0.095 to +0.065 m relative to the grip centre. This finite sampling is not an exact continuous collision proof. It is checked at all frozen times in both clips; conservative limits and complete playback review remain required. The broader 0.280 m grip-region exclusion remains only for the separate protected-body clearance check, not a permission for hand penetration.
+The measurement uses all skin vertices predominantly weighted to the right hand or its finger/thumb descendants plus interior samples on their triangles (six subdivisions). Signed nearest-surface distance measures penetration against the evaluated sword mesh. Contact angles use surface hits in the admitted handle band, -0.095 to +0.065 m relative to the grip centre. This finite sampling is not an exact continuous collision proof. It is checked at all frozen times in both clips; conservative limits and complete playback review remain required. Hand surface samples are also tested against the frozen axis-aligned support bounding box; this conservatively includes its bevelled-away corners. No intentional hand–support contact is admitted. The broader 0.280 m grip-region exclusion remains only for the separate protected-body clearance check, not a permission for hand penetration.
 
 ## Contact, support, and continuity gates
 
@@ -56,6 +60,12 @@ All distances use evaluated world-space metres. Before attachment, each sword mu
 | Thumb and finger surface contact distance after grasp | each ≤ 0.005 m |
 | Angular contact coverage within 0.008 m of handle | ≥ 170° |
 | Sampled hand–sword penetration at every time | ≤ 0.004 m |
+| Sampled hand penetration into the support bounding box | ≤ 0.004 m |
+| Wrist swing from the rig neutral relationship, all samples | ≤ 60° |
+| Wrist swing while attached | ≤ 45° |
+| Wrist axial twist from the rig neutral relationship | ≤ 30° |
+| Forearm axial twist from the rig neutral relationship | ≤ 120° |
+| Normalized index-root to thumb-root world-up dot, frame 24 onward | ≥ 0.50 |
 | Attachment position discontinuity at grasp | ≤ 0.002 m second difference |
 | Attachment orientation discontinuity at grasp | ≤ 0.5° second difference |
 | Non-handle sword–body clearance | ≥ 0.040 m |
@@ -65,6 +75,8 @@ All distances use evaluated world-space metres. Before attachment, each sword mu
 | Character-root translation or rotation | ≤ 0.000001 m / 0.0001° |
 | Adjacent half-frame character RMS displacement | ≤ 0.18 m |
 | Adjacent half-frame sword-root translation | ≤ 0.08 m |
+
+Anatomical angles use evaluated pose rotations relative to the parent pose and the rig rest relationship, decomposed into swing and twist about the child bone Y axis. These are frozen fixture-specific regression screens, not universal human joint limits or proof of biological plausibility. The thumb direction uses evaluated thumb/index bone roots, independent of the authored target frame. Missing or non-finite anatomy measurements fail closed. Director review must still judge the entire shoulder–elbow–wrist approach and visible mesh deformation.
 
 The blade/body clearance gate excludes only the defined handle-contact zone and right-hand vertices. It does not exempt forearm, torso, head, legs, or sword geometry outside that zone. Support contact is allowed only before lift.
 
@@ -96,7 +108,7 @@ Outside-range character maximum vertex delta is at most 0.000001 m and RMS delta
 
 ## Dense measurement
 
-Measure every integer and half frame. Additionally measure every 1/8 frame on `[26,38]`, `[38,50]`, `[62,78]`, and around every baseline and candidate attachment/state transition. Use a 0.125-frame central difference and the physical 24 fps timeline for velocity and attachment-discontinuity calculations. Also probe frames 28, 36, 40, and 76 at offsets ±0.061, ±0.01, and ±0.001 frame. These off-grid probes detect location interpolation before constraint activation. Sword base-location keys use constant interpolation because their coordinate meaning changes at attachment. Reject NaNs, non-finite matrices, missing objects, changed topology, inconsistent state ownership, or incomplete sampling.
+Measure every integer and half frame. Additionally measure every 1/8 frame on `[16,50]` and `[62,78]`, covering the complete approach, closure, attachment, and edit boundaries. Use a 0.125-frame central difference and the physical 24 fps timeline for velocity and attachment-discontinuity calculations. Also probe frames 28, 36, 40, and 76 at offsets ±0.061, ±0.01, and ±0.001 frame. These off-grid probes detect location interpolation before constraint activation. Sword base-location keys use constant interpolation because their coordinate meaning changes at attachment. Reject NaNs, non-finite matrices, missing objects, changed topology, inconsistent state ownership, or incomplete sampling.
 
 ## Persistence and replay
 
@@ -119,6 +131,9 @@ Each control is a disposable `.blend` variant and must be measured through the p
 5. `edit_leakage`: change candidate motion outside `[28,76]`; detect character or sword preservation failure.
 6. `open_hand_attachment`: keep fingers open while the anchor still follows the sword; detect inadequate enclosure.
 7. `oversized_handle`: double handle width/thickness with the anchor relationship intact; detect hand penetration.
+8. `thumb_down_grasp`: rotate the actual hand and descendants 180° about hand Y by source frame 24; detect the reversed thumb-side direction.
+9. `locked_forearm_roll`: retain the transported source forearm roll while applying the new hand orientation; detect excessive wrist twist.
+10. `hand_support_penetration`: lower the actual candidate hand by 0.10 m over source frames 24–28; detect hand penetration into the support.
 
 Controls may fail additional gates. All designated failures must be observed. They never enter Director scoring and never alter the accepted candidate.
 

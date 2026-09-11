@@ -1,5 +1,7 @@
 # 3D-05 grasp repair — 2026-09-11
 
+Historical repair: its scored thumb-down result was rejected by the Director. The subsequent correction is documented in [ANATOMY_REPAIR.md](ANATOMY_REPAIR.md).
+
 The Director rejected `interaction-v1-20260911T143452Z-281f2ecf`: the fist touched the handle instead of grasping it, and the result was as bad as or worse than the preceding attempt. The user requested Astra for the next engineering repair and run. This records that request, not a controlled comparison between Codex models. The experiment evaluator remains disabled.
 
 ## Demonstrated causes

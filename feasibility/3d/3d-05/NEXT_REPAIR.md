@@ -1,5 +1,7 @@
 # 3D-05 Director rejection and Astra repair handoff
 
+Current thumb-up repair: see [ANATOMY_REPAIR.md](ANATOMY_REPAIR.md). Full Director acceptance remains pending.
+
 Repair progress and the diagnosed causes are recorded in [GRASP_REPAIR.md](GRASP_REPAIR.md). The original handoff below is retained as history.
 
 Recorded 2026-09-11. The user announced switching to **Astra for the next repair and run**. This records the requested engineering model; it does not verify or change app model settings or the experiment's API evaluator.

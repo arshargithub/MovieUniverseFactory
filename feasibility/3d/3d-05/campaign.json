@@ -1,5 +1,5 @@
 {
-  "acceptance_version": "3d05-gates-v3-enclosing-grasp",
+  "acceptance_version": "3d05-gates-v4-thumb-up-anatomy",
   "baseline": {
     "baseline_transitions": {
       "grasp": 40,
@@ -23,7 +23,7 @@
     "timeline_frame_end": 96,
     "timeline_frame_start": 1
   },
-  "campaign_status": "FROZEN_FOR_SCORED_CAMPAIGN",
+  "campaign_status": "DEVELOPMENT_ANATOMY_REPAIR",
   "director_gate": {
     "candidate_must_not_regress_other_dimensions": true,
     "candidate_preference_required": true,
@@ -50,7 +50,10 @@
     "penetration",
     "edit_leakage",
     "open_hand_attachment",
-    "oversized_handle"
+    "oversized_handle",
+    "thumb_down_grasp",
+    "locked_forearm_roll",
+    "hand_support_penetration"
   ],
   "provider_budget": {
     "maximum_known_api_cost_usd": 0.0,
@@ -80,7 +83,7 @@
     "dense_step_frames": 0.125,
     "dense_windows": [
       [
-        26,
+        16,
         50
       ],
       [
@@ -106,11 +109,17 @@
     "floor_penetration_tolerance_m": 0.015,
     "grip_orientation_error_degrees": 0.5,
     "grip_translation_error_m": 0.003,
+    "maximum_attached_wrist_swing_degrees": 45,
     "maximum_character_rms_half_frame_step_m": 0.18,
     "maximum_digit_contact_distance_m": 0.005,
+    "maximum_forearm_twist_degrees": 120,
     "maximum_hand_penetration_m": 0.004,
+    "maximum_hand_support_penetration_m": 0.004,
     "maximum_supported_translation_error_m": 0.001,
     "maximum_sword_half_frame_step_m": 0.08,
+    "maximum_wrist_swing_degrees": 60,
+    "maximum_wrist_twist_degrees": 30,
+    "minimum_acquisition_thumb_side_up_dot": 0.5,
     "minimum_blade_body_clearance_m": 0.04,
     "minimum_contact_angular_coverage_degrees": 170,
     "minimum_held_support_separation_m": 0.25,

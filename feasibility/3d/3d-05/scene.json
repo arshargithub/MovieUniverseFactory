@@ -18,13 +18,13 @@
     "grip_offset_from_geometry_base_m": 0.15,
     "handle_contact_radius_m": 0.28,
     "supported_grip_world_m": [
-      -0.6,
-      0.08,
+      -0.5,
+      -0.2,
       0.95
     ],
     "held_grip_world_m": [
       -0.55,
-      -0.08,
+      -0.2,
       1.25
     ],
     "normalization": {
@@ -55,8 +55,8 @@
       0.8
     ],
     "position_m": [
-      -0.6,
-      0.08,
+      -0.5,
+      -0.2,
       0.4
     ]
   },
@@ -120,11 +120,19 @@
   ],
   "grasp": {
     "anchor_hand_local": [
-      0,
+      -0.12,
       0.145,
       -0.135
     ],
     "closed_curl_fraction": 0.85,
-    "thumb_clearance_swing_degrees": -30
+    "thumb_clearance_swing_degrees": -45,
+    "hand_yaw_degrees": 45,
+    "pregrasp_clearance_m": 0.06,
+    "open_thumb_curl_fraction": 0.35,
+    "approach_bow_world_m": [
+      0.08,
+      0.14,
+      0.22
+    ]
   }
 }

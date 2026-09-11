@@ -15,7 +15,7 @@ def passing_metrics():
     rows=[]
     for frame in required_sample_times(CONFIG):
         owner=expected_owner(frame,"candidate")
-        rows.append({**{role+"_"+key:value for role in ("baseline","candidate") for key,value in {"supported_translation_error_m":0,"thumb_contact_distance_m":.002,"finger_contact_distance_m":.002,"maximum_hand_penetration_m":0,"contact_angular_coverage_degrees":190}.items()}, "frame":frame,"baseline_state":expected_state(frame,"baseline"),"candidate_state":expected_state(frame,"candidate"),
+        rows.append({**{role+"_"+key:value for role in ("baseline","candidate") for key,value in {"supported_translation_error_m":0,"thumb_contact_distance_m":.002,"finger_contact_distance_m":.002,"maximum_hand_penetration_m":0,"maximum_hand_support_penetration_m":0,"contact_angular_coverage_degrees":190,"wrist_swing_degrees":20,"wrist_twist_degrees":5,"forearm_twist_degrees":40,"thumb_side_up_dot":.7}.items()}, "frame":frame,"baseline_state":expected_state(frame,"baseline"),"candidate_state":expected_state(frame,"candidate"),
             "baseline_owner":expected_owner(frame,"baseline"),"candidate_owner":owner,
             "candidate_attachment_influence":1.0 if owner.endswith("right_hand") else 0.0,
             "candidate_grip_translation_error_m":0,"candidate_grip_orientation_error_degrees":0,
@@ -36,6 +36,9 @@ def test_passing_metrics_and_controls():
     raw=passing_metrics(); assert validate_interaction_metrics(raw,CONFIG)["passed"]
     controls={}
     mutations={
+        "hand_support_penetration":lambda value:value["samples"][0].update(candidate_maximum_hand_support_penetration_m=.1),
+        "thumb_down_grasp":lambda value:value["samples"][-1].update(candidate_thumb_side_up_dot=-.7),
+        "locked_forearm_roll":lambda value:value["samples"][-1].update(candidate_wrist_twist_degrees=150),
         "open_hand_attachment":lambda value:value["samples"][-1].update(candidate_contact_angular_coverage_degrees=0),
         "oversized_handle":lambda value:value["samples"][-1].update(candidate_maximum_hand_penetration_m=.02),
         "early_attachment":lambda value:value["samples"][0].update(candidate_attachment_influence=1),
@@ -48,3 +51,13 @@ def test_passing_metrics_and_controls():
         broken=deepcopy(raw); mutate(broken); controls[name]=validate_interaction_metrics(broken,CONFIG)
         assert CONTROL_EXPECTATIONS[name] <= set(controls[name]["errors"])
     assert validate_control_sensitivity(controls)["passed"]
+
+
+def test_anatomy_measurements_fail_closed_when_absent_or_nonfinite():
+    for key in ("wrist_swing_degrees", "wrist_twist_degrees", "forearm_twist_degrees", "thumb_side_up_dot"):
+        for value in (None, float("nan"), float("inf")):
+            raw = passing_metrics()
+            raw["samples"][-1]["candidate_"+key] = value
+            result = validate_interaction_metrics(raw, CONFIG)
+            assert not result["passed"]
+            assert any(error.startswith("anatomy.candidate.") for error in result["errors"])

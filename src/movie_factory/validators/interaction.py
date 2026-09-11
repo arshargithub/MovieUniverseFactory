@@ -20,6 +20,9 @@ CONTROL_EXPECTATIONS = {
     "edit_leakage": {"preservation.outside_character_max", "preservation.outside_sword_translation"},
     "open_hand_attachment": {"grasp.candidate.enclosure"},
     "oversized_handle": {"grasp.candidate.penetration"},
+    "thumb_down_grasp": {"anatomy.candidate.thumb_up"},
+    "locked_forearm_roll": {"anatomy.candidate.wrist_twist"},
+    "hand_support_penetration": {"grasp.candidate.support_penetration"},
 }
 
 
@@ -52,6 +55,19 @@ def validate_interaction_metrics(raw: dict, config: dict) -> dict:
     if rows:
         for role in ("baseline", "candidate"):
             held_rows = [row for row in rows if expected_owner(row["frame"], role).endswith("right_hand")]
+            anatomy_limits = {"wrist_swing": "maximum_wrist_swing_degrees",
+                              "wrist_twist": "maximum_wrist_twist_degrees",
+                              "forearm_twist": "maximum_forearm_twist_degrees"}
+            for metric, limit in anatomy_limits.items():
+                values = [row.get(role+"_"+metric+"_degrees") for row in rows]
+                finite = all(type(value) in (int, float) and math.isfinite(value) and value >= 0 for value in values)
+                _check(checks, f"anatomy.{role}.{metric}", finite and max(values) <= thresholds[limit], max(values) if finite else "missing/nonfinite")
+            bend = [row.get(role+"_wrist_swing_degrees") for row in held_rows]
+            finite_bend = bool(bend) and all(type(value) in (int,float) and math.isfinite(value) for value in bend)
+            _check(checks, f"anatomy.{role}.attached_wrist_swing", finite_bend and max(bend) <= thresholds["maximum_attached_wrist_swing_degrees"], max(bend) if finite_bend else "missing/nonfinite")
+            up = [row.get(role+"_thumb_side_up_dot") for row in rows if row["frame"] >= 24]
+            finite_up = bool(up) and all(type(value) in (int,float) and math.isfinite(value) and -1 <= value <= 1 for value in up)
+            _check(checks, f"anatomy.{role}.thumb_up", finite_up and min(up) >= thresholds["minimum_acquisition_thumb_side_up_dot"], min(up) if finite_up else "missing/nonfinite")
             supported_rows = [row for row in rows if expected_owner(row["frame"], role) == "sword_support_01"]
             stationary = max((row.get(role+"_supported_translation_error_m", math.inf) for row in supported_rows), default=math.inf)
             _check(checks, f"support.{role}.stationary", stationary <= thresholds["maximum_supported_translation_error_m"], stationary)
@@ -64,6 +80,9 @@ def validate_interaction_metrics(raw: dict, config: dict) -> dict:
             _check(checks, f"grasp.{role}.enclosure", coverage >= thresholds["minimum_contact_angular_coverage_degrees"], coverage)
             penetration = max((row.get(role+"_maximum_hand_penetration_m", math.inf) for row in rows), default=math.inf)
             _check(checks, f"grasp.{role}.penetration", penetration <= thresholds["maximum_hand_penetration_m"], penetration)
+            support_values = [row.get(role+"_maximum_hand_support_penetration_m") for row in rows]
+            finite_support = all(type(value) in (int,float) and math.isfinite(value) and value >= 0 for value in support_values)
+            _check(checks, f"grasp.{role}.support_penetration", finite_support and max(support_values) <= thresholds["maximum_hand_support_penetration_m"], max(support_values) if finite_support else "missing/nonfinite")
         _check(checks, "states.sequence", all(row["candidate_state"] == expected_state(row["frame"], "candidate") and
                                                row["baseline_state"] == expected_state(row["frame"], "baseline") for row in rows))
         _check(checks, "ownership.single", all(row["candidate_owner"] == expected_owner(row["frame"], "candidate") and

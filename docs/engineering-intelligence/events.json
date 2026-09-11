@@ -224,6 +224,43 @@
           "text": "I think this happened with 3D1.1 and now again?"
         }
       ]
+    },
+    {
+      "controlled_model_comparison": false,
+      "engineering_model": {
+        "attribution_basis": "user_statement_in_current_conversation",
+        "reasoning_effort": null,
+        "reported_name": "Astra",
+        "runtime_verified": false
+      },
+      "engineering_usage": {
+        "cost_usd": null,
+        "elapsed_seconds": null,
+        "human_review_seconds": null,
+        "input_tokens": null,
+        "output_tokens": null,
+        "reasoning_tokens": null
+      },
+      "event_id": "3d05-astra-anatomy-repair-retained",
+      "event_type": "continued_diagnostic_repair",
+      "experiment_id": "3D-05",
+      "observation": "User retained Astra after rejecting its thumb-down grasp. This pass corrects hand-frame sign, forearm and elbow roll, clearance trajectory, and front-of-character staging. New anatomy and hand/support gates address failures missed by the prior contract. Earlier partial and rejected outcomes remain in the record.",
+      "occurred_at_utc": null,
+      "outcome": "DEVELOPMENT_MEASUREMENTS_PASS_DIRECTOR_PENDING",
+      "phase": "anatomy_and_approach",
+      "previous_model_reported": "Astra",
+      "recorded_at_utc": "2026-09-11T15:59:11.449218+00:00",
+      "sources": [
+        {
+          "kind": "user_statement_in_current_conversation",
+          "text": "ok still with Astra. go ahead."
+        },
+        {
+          "kind": "repository_artifact",
+          "path": "feasibility/3d/3d-05/ANATOMY_REPAIR.md",
+          "sha256_at_recording": "ff01c98375406a4567473e380a7c47d72807a98d578a8a570ac2a4e2b2eddd07"
+        }
+      ]
     }
   ],
   "recording_mode": "manual_evidence_backfill_and_future_event_capture",
