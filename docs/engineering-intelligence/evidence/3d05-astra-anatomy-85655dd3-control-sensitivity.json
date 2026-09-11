@@ -1,0 +1,195 @@
+{
+  "checks": [
+    {
+      "details": [
+        "attachment_teleportation",
+        "early_attachment",
+        "edit_leakage",
+        "hand_support_penetration",
+        "hand_sword_sliding",
+        "locked_forearm_roll",
+        "open_hand_attachment",
+        "oversized_handle",
+        "penetration",
+        "thumb_down_grasp"
+      ],
+      "name": "controls.exact_set",
+      "passed": true
+    },
+    {
+      "details": {
+        "expected_errors": [
+          "ownership.influence"
+        ],
+        "observed_errors": [
+          "ownership.influence"
+        ]
+      },
+      "name": "controls.early_attachment",
+      "passed": true
+    },
+    {
+      "details": {
+        "expected_errors": [
+          "attachment.candidate.position_continuity"
+        ],
+        "observed_errors": [
+          "attachment.candidate.position_continuity",
+          "continuity.sword",
+          "grasp.candidate.penetration",
+          "preservation.outside_sword_translation",
+          "support.candidate.stationary"
+        ]
+      },
+      "name": "controls.attachment_teleportation",
+      "passed": true
+    },
+    {
+      "details": {
+        "expected_errors": [
+          "grip.translation"
+        ],
+        "observed_errors": [
+          "continuity.sword",
+          "grasp.candidate.enclosure",
+          "grasp.candidate.finger_contact",
+          "grasp.candidate.penetration",
+          "grasp.candidate.thumb_contact",
+          "grip.translation",
+          "ownership.influence",
+          "preservation.outside_sword_translation",
+          "support.held_separation",
+          "support.lifting_separation"
+        ]
+      },
+      "name": "controls.hand_sword_sliding",
+      "passed": true
+    },
+    {
+      "details": {
+        "expected_errors": [
+          "clearance.body"
+        ],
+        "observed_errors": [
+          "anatomy.baseline.attached_wrist_swing",
+          "anatomy.baseline.wrist_swing",
+          "anatomy.candidate.attached_wrist_swing",
+          "anatomy.candidate.wrist_swing",
+          "clearance.body",
+          "support.held_separation",
+          "support.lifting_separation"
+        ]
+      },
+      "name": "controls.penetration",
+      "passed": true
+    },
+    {
+      "details": {
+        "expected_errors": [
+          "preservation.outside_character_max",
+          "preservation.outside_sword_translation"
+        ],
+        "observed_errors": [
+          "boundary.28.character_velocity",
+          "boundary.76.sword_velocity",
+          "continuity.sword",
+          "grasp.candidate.enclosure",
+          "grasp.candidate.finger_contact",
+          "grasp.candidate.penetration",
+          "grasp.candidate.thumb_contact",
+          "grip.translation",
+          "ownership.influence",
+          "preservation.outside_character_max",
+          "preservation.outside_character_rms",
+          "preservation.outside_sword_translation",
+          "states.sequence",
+          "support.held_separation"
+        ]
+      },
+      "name": "controls.edit_leakage",
+      "passed": true
+    },
+    {
+      "details": {
+        "expected_errors": [
+          "grasp.candidate.enclosure"
+        ],
+        "observed_errors": [
+          "grasp.candidate.enclosure",
+          "grasp.candidate.finger_contact",
+          "grasp.candidate.thumb_contact",
+          "preservation.outside_character_max",
+          "preservation.outside_character_rms"
+        ]
+      },
+      "name": "controls.open_hand_attachment",
+      "passed": true
+    },
+    {
+      "details": {
+        "expected_errors": [
+          "grasp.candidate.penetration"
+        ],
+        "observed_errors": [
+          "grasp.baseline.penetration",
+          "grasp.candidate.penetration"
+        ]
+      },
+      "name": "controls.oversized_handle",
+      "passed": true
+    },
+    {
+      "details": {
+        "expected_errors": [
+          "anatomy.candidate.thumb_up"
+        ],
+        "observed_errors": [
+          "anatomy.candidate.thumb_up",
+          "anatomy.candidate.wrist_twist",
+          "grasp.candidate.enclosure",
+          "grasp.candidate.finger_contact",
+          "grasp.candidate.support_penetration",
+          "grasp.candidate.thumb_contact",
+          "preservation.outside_character_max",
+          "preservation.outside_character_rms"
+        ]
+      },
+      "name": "controls.thumb_down_grasp",
+      "passed": true
+    },
+    {
+      "details": {
+        "expected_errors": [
+          "anatomy.candidate.wrist_twist"
+        ],
+        "observed_errors": [
+          "anatomy.candidate.wrist_twist",
+          "boundary.28.character_velocity",
+          "preservation.outside_character_max",
+          "preservation.outside_character_rms"
+        ]
+      },
+      "name": "controls.locked_forearm_roll",
+      "passed": true
+    },
+    {
+      "details": {
+        "expected_errors": [
+          "grasp.candidate.support_penetration"
+        ],
+        "observed_errors": [
+          "grasp.baseline.support_penetration",
+          "grasp.candidate.support_penetration",
+          "support.held_separation",
+          "support.initial_contact",
+          "support.lifting_separation"
+        ]
+      },
+      "name": "controls.hand_support_penetration",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "passed": true,
+  "schema_version": "1.0"
+}

@@ -261,6 +261,62 @@
           "sha256_at_recording": "ff01c98375406a4567473e380a7c47d72807a98d578a8a570ac2a4e2b2eddd07"
         }
       ]
+    },
+    {
+      "controlled_model_comparison": false,
+      "engineering_model": {
+        "attribution_basis": "user_retained_model_for_this_repair",
+        "reasoning_effort": null,
+        "reported_name": "Astra",
+        "runtime_verified": false
+      },
+      "engineering_usage": {
+        "cost_usd": null,
+        "elapsed_seconds": null,
+        "human_review_seconds": null,
+        "input_tokens": null,
+        "output_tokens": null,
+        "reasoning_tokens": null
+      },
+      "event_id": "3d05-astra-anatomy-85655dd3-machine-result",
+      "event_type": "repair_campaign_outcome",
+      "experiment_id": "3D-05",
+      "experiment_runtime": {
+        "director_review_seconds": null,
+        "elapsed_seconds": 717.2352722920477,
+        "known_api_cost_usd": 0.0,
+        "provider_calls": 0
+      },
+      "observation": "After the Director-rejected thumb-down attempt, the corrected hand frame, forearm/elbow roll, front staging, and support-clearing approach passed 76 deterministic checks and 10 actual Blender controls. Full replay and six checkpoints passed; 576 playback frames and 1470 inventoried artifacts were independently verified. Director acceptance of natural full motion remains pending. This is additional progress within the Astra repair sequence, not a successful model handoff or controlled model comparison.",
+      "occurred_at_utc": null,
+      "outcome": "MACHINE_PASSED_AWAITING_DIRECTOR",
+      "phase": "anatomy_and_approach",
+      "previous_model_reported": "Astra",
+      "recorded_at_utc": "2026-09-11T16:19:31.282154+00:00",
+      "run_id": "interaction-v1-20260911T160515Z-85655dd3",
+      "source_commit": "2bed69eea574ca1d117cda55422609fcd6622921",
+      "sources": [
+        {
+          "kind": "repository_artifact",
+          "path": "docs/engineering-intelligence/evidence/3d05-astra-anatomy-85655dd3-result.json",
+          "sha256_at_recording": "083c6b01da0769fdfd90dd7c26d2f6b15b7dc6813fe051ab1b9187827d743ec1"
+        },
+        {
+          "kind": "repository_artifact",
+          "path": "docs/engineering-intelligence/evidence/3d05-astra-anatomy-85655dd3-source-binding.json",
+          "sha256_at_recording": "2b5691478537a1a97b1c9685b1856b053a8f7fff72b296eda67fbdecff074189"
+        },
+        {
+          "kind": "repository_artifact",
+          "path": "docs/engineering-intelligence/evidence/3d05-astra-anatomy-85655dd3-deterministic-validation.json",
+          "sha256_at_recording": "f253f7b25305e0fa4d40bb21620ec87126c965e066dded058d6ae9f015d98c6c"
+        },
+        {
+          "kind": "repository_artifact",
+          "path": "docs/engineering-intelligence/evidence/3d05-astra-anatomy-85655dd3-control-sensitivity.json",
+          "sha256_at_recording": "9412a4d590af7723d8a5e4d03b7f70d91dfeecd8d7c684f2aad5f7b1d588e3bf"
+        }
+      ]
     }
   ],
   "recording_mode": "manual_evidence_backfill_and_future_event_capture",

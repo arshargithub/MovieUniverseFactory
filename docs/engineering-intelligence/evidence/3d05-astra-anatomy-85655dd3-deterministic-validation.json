@@ -1,0 +1,539 @@
+{
+  "authority": "deterministic_outer_validator",
+  "checks": [
+    {
+      "details": null,
+      "name": "identity.experiment",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "identity.timeline",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "protected.source_actions_equal",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "protected.character_identity_equal",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "protected.character_topology_equal",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "protected.character_weights_equal",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "protected.character_materials_equal",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "protected.character_rig_equal",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "protected.lights_equal",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "protected.world_equal",
+      "passed": true
+    },
+    {
+      "details": {
+        "expected": 515,
+        "observed": 515
+      },
+      "name": "sampling.coverage",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "sampling.finite",
+      "passed": true
+    },
+    {
+      "details": 33.860054923502084,
+      "name": "anatomy.baseline.wrist_swing",
+      "passed": true
+    },
+    {
+      "details": 16.644546045012017,
+      "name": "anatomy.baseline.wrist_twist",
+      "passed": true
+    },
+    {
+      "details": 118.33295906857921,
+      "name": "anatomy.baseline.forearm_twist",
+      "passed": true
+    },
+    {
+      "details": 8.812311774697744,
+      "name": "anatomy.baseline.attached_wrist_swing",
+      "passed": true
+    },
+    {
+      "details": 0.585270345211029,
+      "name": "anatomy.baseline.thumb_up",
+      "passed": true
+    },
+    {
+      "details": 0.0,
+      "name": "support.baseline.stationary",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "grasp.baseline.finite.supported_translation_error_m",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "grasp.baseline.finite.thumb_contact_distance_m",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "grasp.baseline.finite.finger_contact_distance_m",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "grasp.baseline.finite.maximum_hand_penetration_m",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "grasp.baseline.finite.contact_angular_coverage_degrees",
+      "passed": true
+    },
+    {
+      "details": 0.0035980993416160345,
+      "name": "grasp.baseline.thumb_contact",
+      "passed": true
+    },
+    {
+      "details": 0.0025357373524457216,
+      "name": "grasp.baseline.finger_contact",
+      "passed": true
+    },
+    {
+      "details": 186.49498663947415,
+      "name": "grasp.baseline.enclosure",
+      "passed": true
+    },
+    {
+      "details": 0.0,
+      "name": "grasp.baseline.penetration",
+      "passed": true
+    },
+    {
+      "details": 0.0,
+      "name": "grasp.baseline.support_penetration",
+      "passed": true
+    },
+    {
+      "details": 33.860054923502084,
+      "name": "anatomy.candidate.wrist_swing",
+      "passed": true
+    },
+    {
+      "details": 16.644546045012017,
+      "name": "anatomy.candidate.wrist_twist",
+      "passed": true
+    },
+    {
+      "details": 118.33295906857921,
+      "name": "anatomy.candidate.forearm_twist",
+      "passed": true
+    },
+    {
+      "details": 8.812311774697744,
+      "name": "anatomy.candidate.attached_wrist_swing",
+      "passed": true
+    },
+    {
+      "details": 0.5852712392807007,
+      "name": "anatomy.candidate.thumb_up",
+      "passed": true
+    },
+    {
+      "details": 0.0,
+      "name": "support.candidate.stationary",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "grasp.candidate.finite.supported_translation_error_m",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "grasp.candidate.finite.thumb_contact_distance_m",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "grasp.candidate.finite.finger_contact_distance_m",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "grasp.candidate.finite.maximum_hand_penetration_m",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "grasp.candidate.finite.contact_angular_coverage_degrees",
+      "passed": true
+    },
+    {
+      "details": 0.0035981740802526474,
+      "name": "grasp.candidate.thumb_contact",
+      "passed": true
+    },
+    {
+      "details": 0.0025357373524457216,
+      "name": "grasp.candidate.finger_contact",
+      "passed": true
+    },
+    {
+      "details": 186.49498663947415,
+      "name": "grasp.candidate.enclosure",
+      "passed": true
+    },
+    {
+      "details": 7.078051567077637e-06,
+      "name": "grasp.candidate.penetration",
+      "passed": true
+    },
+    {
+      "details": 0.0,
+      "name": "grasp.candidate.support_penetration",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "states.sequence",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "ownership.single",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "ownership.influence",
+      "passed": true
+    },
+    {
+      "details": -5.960464477539063e-08,
+      "name": "support.initial_contact",
+      "passed": true
+    },
+    {
+      "details": 1.3254915829492506e-07,
+      "name": "grip.translation",
+      "passed": true
+    },
+    {
+      "details": 0.0,
+      "name": "grip.orientation",
+      "passed": true
+    },
+    {
+      "details": 0.21684005856513977,
+      "name": "clearance.body",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "clearance.floor",
+      "passed": true
+    },
+    {
+      "details": [
+        {
+          "baseline_contact_angular_coverage_degrees": 186.49624156494878,
+          "baseline_finger_contact_distance_m": 0.0025355990510433912,
+          "baseline_forearm_swing_degrees": 48.700478216241514,
+          "baseline_forearm_twist_degrees": 22.0966984461978,
+          "baseline_maximum_hand_penetration_m": 0.0,
+          "baseline_maximum_hand_support_penetration_m": 0.0,
+          "baseline_owner": "character_01/right_hand",
+          "baseline_state": "lifting",
+          "baseline_supported_translation_error_m": 2.457562461863554e-07,
+          "baseline_surface_sample_count": 1181,
+          "baseline_thumb_contact_distance_m": 0.0035979521926492453,
+          "baseline_thumb_side_up_dot": 0.5852785706520081,
+          "baseline_worst_penetration_group": "none",
+          "baseline_worst_penetration_point_relative_grip_m": null,
+          "baseline_wrist_swing_degrees": 8.277062292842402,
+          "baseline_wrist_twist_degrees": 0.10085804173984618,
+          "candidate_attachment_influence": 1.0,
+          "candidate_character_min_z_m": 6.082723302824888e-08,
+          "candidate_character_root_translation_m": 0.0,
+          "candidate_contact_angular_coverage_degrees": 186.49681751018133,
+          "candidate_finger_contact_distance_m": 0.0025356016121804714,
+          "candidate_forearm_swing_degrees": 52.667455501279505,
+          "candidate_forearm_twist_degrees": 28.252572067759164,
+          "candidate_grip_orientation_error_degrees": 0.0,
+          "candidate_grip_translation_error_m": 2.1721988524665314e-08,
+          "candidate_maximum_hand_penetration_m": 0.0,
+          "candidate_maximum_hand_support_penetration_m": 0.0,
+          "candidate_non_handle_body_clearance_m": 0.2307082861661911,
+          "candidate_owner": "character_01/right_hand",
+          "candidate_state": "lifting",
+          "candidate_supported_translation_error_m": 0.03163065520574664,
+          "candidate_surface_sample_count": 1181,
+          "candidate_sword_bounds_m": {
+            "max": [
+              -0.31022006273269653,
+              -0.1577419638633728,
+              1.831200361251831
+            ],
+            "min": [
+              -0.7001799941062927,
+              -0.24225828051567078,
+              0.8312002420425415
+            ]
+          },
+          "candidate_sword_min_z_m": 0.8312002420425415,
+          "candidate_sword_support_separation_m": 0.03120023012161255,
+          "candidate_thumb_contact_distance_m": 0.00359796779230237,
+          "candidate_thumb_side_up_dot": 0.5852755904197693,
+          "candidate_worst_penetration_group": "none",
+          "candidate_worst_penetration_point_relative_grip_m": null,
+          "candidate_wrist_swing_degrees": 3.586156245882522,
+          "candidate_wrist_twist_degrees": 0.010281053869249093,
+          "character_max_vertex_delta_m": 0.03171636515243562,
+          "character_rms_vertex_delta_m": 0.010357417027513516,
+          "frame": 48.0,
+          "sword_orientation_delta_degrees": 0.0,
+          "sword_translation_delta_m": 0.03163045985306898
+        },
+        {
+          "baseline_contact_angular_coverage_degrees": 186.49681751018133,
+          "baseline_finger_contact_distance_m": 0.0025356016121804714,
+          "baseline_forearm_swing_degrees": 52.667455501279505,
+          "baseline_forearm_twist_degrees": 28.252572067759164,
+          "baseline_maximum_hand_penetration_m": 0.0,
+          "baseline_maximum_hand_support_penetration_m": 0.0,
+          "baseline_owner": "character_01/right_hand",
+          "baseline_state": "lifting",
+          "baseline_supported_translation_error_m": 0.03163065520574664,
+          "baseline_surface_sample_count": 1181,
+          "baseline_thumb_contact_distance_m": 0.00359796779230237,
+          "baseline_thumb_side_up_dot": 0.5852755904197693,
+          "baseline_worst_penetration_group": "none",
+          "baseline_worst_penetration_point_relative_grip_m": null,
+          "baseline_wrist_swing_degrees": 3.586156245882522,
+          "baseline_wrist_twist_degrees": 0.010281053869249093,
+          "candidate_attachment_influence": 1.0,
+          "candidate_character_min_z_m": 6.082723302824888e-08,
+          "candidate_character_root_translation_m": 0.0,
+          "candidate_contact_angular_coverage_degrees": 186.49707129058783,
+          "candidate_finger_contact_distance_m": 0.0025354642421007156,
+          "candidate_forearm_swing_degrees": 56.967749432908704,
+          "candidate_forearm_twist_degrees": 49.78865370952419,
+          "candidate_grip_orientation_error_degrees": 0.0,
+          "candidate_grip_translation_error_m": 2.1721988524665314e-08,
+          "candidate_maximum_hand_penetration_m": 0.0,
+          "candidate_maximum_hand_support_penetration_m": 0.0,
+          "candidate_non_handle_body_clearance_m": 0.26687103509902954,
+          "candidate_owner": "character_01/right_hand",
+          "candidate_state": "lifting",
+          "candidate_supported_translation_error_m": 0.10705680599174161,
+          "candidate_surface_sample_count": 1181,
+          "candidate_sword_bounds_m": {
+            "max": [
+              -0.32262009382247925,
+              -0.1577419489622116,
+              1.9056003093719482
+            ],
+            "min": [
+              -0.7125800251960754,
+              -0.24225826561450958,
+              0.9056001901626587
+            ]
+          },
+          "candidate_sword_min_z_m": 0.9056001901626587,
+          "candidate_sword_support_separation_m": 0.10560017824172974,
+          "candidate_thumb_contact_distance_m": 0.0035978341475129128,
+          "candidate_thumb_side_up_dot": 0.5852756500244141,
+          "candidate_worst_penetration_group": "none",
+          "candidate_worst_penetration_point_relative_grip_m": null,
+          "candidate_wrist_swing_degrees": 6.164712740121008,
+          "candidate_wrist_twist_degrees": 0.40522461136883703,
+          "character_max_vertex_delta_m": 0.07673583587033447,
+          "character_rms_vertex_delta_m": 0.02635861431411038,
+          "frame": 52.0,
+          "sword_orientation_delta_degrees": 0.0,
+          "sword_translation_delta_m": 0.07542614912108185
+        }
+      ],
+      "name": "support.lifting_separation",
+      "passed": true
+    },
+    {
+      "details": 0.30000001192092896,
+      "name": "support.held_separation",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "stationary.character_root",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "preservation.outside_character_max",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "preservation.outside_character_rms",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "preservation.outside_sword_translation",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "preservation.outside_sword_orientation",
+      "passed": true
+    },
+    {
+      "details": 0.03399679168322636,
+      "name": "continuity.character",
+      "passed": true
+    },
+    {
+      "details": 0.011395876774401632,
+      "name": "continuity.sword",
+      "passed": true
+    },
+    {
+      "details": {
+        "frame": 40.0,
+        "orientation_second_difference_degrees": 0.0,
+        "position_second_difference_m": 2.457562461863554e-07
+      },
+      "name": "attachment.baseline.position_continuity",
+      "passed": true
+    },
+    {
+      "details": {
+        "frame": 40.0,
+        "orientation_second_difference_degrees": 0.0,
+        "position_second_difference_m": 2.457562461863554e-07
+      },
+      "name": "attachment.baseline.orientation_continuity",
+      "passed": true
+    },
+    {
+      "details": {
+        "frame": 36.0,
+        "orientation_second_difference_degrees": 0.0,
+        "position_second_difference_m": 2.457562461863554e-07
+      },
+      "name": "attachment.candidate.position_continuity",
+      "passed": true
+    },
+    {
+      "details": {
+        "frame": 36.0,
+        "orientation_second_difference_degrees": 0.0,
+        "position_second_difference_m": 2.457562461863554e-07
+      },
+      "name": "attachment.candidate.orientation_continuity",
+      "passed": true
+    },
+    {
+      "details": {
+        "character_rms_velocity_delta_m_per_s": 6.56245539110708e-05,
+        "sword_velocity_delta_m_per_s": 0.0
+      },
+      "name": "boundary.28.character_velocity",
+      "passed": true
+    },
+    {
+      "details": {
+        "character_rms_velocity_delta_m_per_s": 6.56245539110708e-05,
+        "sword_velocity_delta_m_per_s": 0.0
+      },
+      "name": "boundary.28.sword_velocity",
+      "passed": true
+    },
+    {
+      "details": {
+        "character_rms_velocity_delta_m_per_s": 0.0,
+        "sword_velocity_delta_m_per_s": 0.0
+      },
+      "name": "boundary.76.character_velocity",
+      "passed": true
+    },
+    {
+      "details": {
+        "character_rms_velocity_delta_m_per_s": 0.0,
+        "sword_velocity_delta_m_per_s": 0.0
+      },
+      "name": "boundary.76.sword_velocity",
+      "passed": true
+    },
+    {
+      "details": 4.0,
+      "name": "timing.grasp",
+      "passed": true
+    },
+    {
+      "details": 4.0,
+      "name": "timing.lift",
+      "passed": true
+    },
+    {
+      "details": 4.0,
+      "name": "timing.held",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "persistence.checkpoints_exact",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "persistence.save_reopen_semantic_exact",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "persistence.offline_replay_semantic_exact",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "persistence.offline_replay_geometry_within_tolerance",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "passed": true,
+  "provider_can_override": false,
+  "schema_version": "1.0"
+}

@@ -7,7 +7,7 @@ This is the central record of **Codex engineering models**, distinct from the pa
 | Experiment | Documented sequence | Observed outcome | Limit on interpretation |
 |---|---|---|---|
 | 3D-03.1 | Astra High diagnosis → Sol implementation | Causal bake diagnosis; subsequent bounded GREEN qualification | Earlier model and Sol effort are not established; production success belongs to the combined workflow |
-| 3D-05 | User-reported Sol attempts → requested Astra repair | Better grip enclosure and validation; Director still rejects backwards thumb-down anatomy | Partial progress, not an Astra repair success or proof that Sol is incapable |
+| 3D-05 | User-reported Sol attempts → requested Astra repair | Earlier Astra thumb-down attempt rejected; subsequent thumb-up/support-clearance campaign passes machine checks and awaits Director playback | Partial progress, not an Astra repair success or proof that Sol is incapable |
 | 3D-01.1 | User recalls a possible Sol → Astra switch | Unconfirmed in reviewed evidence | Exclude from escalation/success counts until corroborated |
 
 Artifact references include hashes at recording. Conversation-derived attribution is labelled as such. Explicitly stated effort is retained; absent effort, timestamps, engineering tokens, engineering costs, and human review time remain null. The experiment's zero API cost does not imply zero engineering cost. Historical model identifiers are reported names, not verified runtime snapshots.
@@ -30,4 +30,4 @@ The Factory should consume this record as an engineering-routing input alongside
 
 These are proposed routing rules, not deployed automatic model switching. Qualify them by task class using comparable starting snapshots, prompts, tools, effort settings, budgets, fixtures, and rubrics. Measure cost/time to an accepted result, human intervention, failure detection, and regressions across repeated trials. The observed cases are too few and too confounded to calculate a meaningful model superiority or escalation-success rate.
 
-The immediate 3D-05 task is to establish a natural hand/forearm orientation and approach. The current fixed frame achieves enclosure while failing the Director's anatomical requirement. Simply rotating the hand or changing models without validating forearm twist and wrist bend is not an established fix. Preserve the accepted-looking enclosure while qualifying the whole approach and lift.
+The subsequent 3D-05 anatomy repair is now machine-qualified in `interaction-v1-20260911T160515Z-85655dd3`, with 76 deterministic checks, ten actual controls, and full playback evidence. It corrects the hand frame, distributes arm roll, moves the prop in front of the character, and clears the support during approach. It remains YELLOW pending Director acceptance; the prior Astra rejection and intermediate failures remain evidence. Do not count this as an accepted repair or hand it off as proven natural motion before that review.
