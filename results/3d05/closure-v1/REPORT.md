@@ -22,6 +22,10 @@ The offline suite passes **132 tests**, with 11 opt-in/native tests deselected. 
 
 The frozen player generator requires a complete frame inventory and preloads the images. Added synchronized H.264 convenience copies preserve the original HTML and all source PNGs; ffprobe verifies 96 frames, 24 fps and four seconds for each view. [Video provenance](video-provenance.json) contains input hashes, encoding settings and FFmpeg version. Lossy video copies are review conveniences; PNGs remain exact image evidence. Browser automation could not open the local file URL because of its security policy; no browser workaround was attempted.
 
+## Execution-cost review
+
+The Director reports approximately **2.5 hours and excessive Codex token use**, considered rejecting the pass on process grounds, and chose to capture the learnings. This is recorded as an **execution overrun requiring correction**, independently of the technical pass. See the [process review](PROCESS_REVIEW.md) and [structured feedback](process-review.json). The two full native suites alone took 40.1 minutes; exact total and token attribution were not recorded. Paid API cost of $0 does not represent engineering cost.
+
 ## Director gate and economics
 
 Record A and B scores in 0.5 increments for readability, grasp/contact, transition smoothness and hold/clearance, plus preference, visible defects and review seconds. The frozen candidate gate remains ≥4 in each dimension, ≥0.5 readability improvement, no regression elsewhere, candidate preference and zero major defects. A review that does not meet those criteria must remain non-GREEN. The older development pass with a 0.5-point forehead-proximity deduction is preserved; it supplies neither invented absolute scores nor acceptance of this new comparison.

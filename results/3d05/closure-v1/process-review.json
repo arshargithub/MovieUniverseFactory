@@ -1,0 +1,25 @@
+{
+  "assessment_basis": "Director-reported approximately 2.5 hours and excessive Codex token consumption; corroborating run records and execution history",
+  "director_status": "PENDING",
+  "exact_engineering_token_cost": null,
+  "exact_engineering_token_count": null,
+  "exact_total_elapsed_seconds": null,
+  "experiment_id": "3D-05",
+  "known_model_api_calls": 0,
+  "known_model_api_cost_usd": 0.0,
+  "known_preflight_elapsed_seconds": 876.5615205420181,
+  "known_scored_elapsed_seconds": 1529.8180205419776,
+  "note": "Process criticism is retained independently of technical success. The reported 150 minutes is not a measured native-job total or Director review duration. Exact token attribution is unavailable; zero model API charges does not mean zero engineering cost.",
+  "process_status": "OVERRUN_REQUIRING_CORRECTION",
+  "recorded_at_utc": "2026-09-11T20:29:31.791580+00:00",
+  "run_id": "interaction-v1-20260911T194804Z-9aafbc8a",
+  "schema_version": "1.0",
+  "technical_verdict_changed": false,
+  "user_feedback": {
+    "formal_visual_scores": null,
+    "process_observation": "Director considered rejecting the pass because of approximately 2.5 hours and heavy token use, but chose to capture learnings for the next experiment",
+    "render_observation": "The render itself looks fine",
+    "review_seconds": null
+  },
+  "user_reported_total_elapsed_minutes_approx": 150
+}

@@ -1,0 +1,35 @@
+# 3D-05 closure: time and token overrun
+
+**Process outcome: overrun requiring correction.** The Director reports approximately 2.5 hours and excessive Codex token consumption, considered rejecting the pass for those reasons, and chose to retain the result while capturing lessons. The render “looks fine” is positive informal feedback; formal A/B scores and review duration remain pending. Technical checks passing do not excuse the execution cost.
+
+## What the evidence supports
+
+The complete native preflight took 876.56 seconds (14.6 minutes). The scored campaign took 1529.82 seconds (25.5 minutes), including its 576 renders, persistence/replay and 18 controls. Those two runs alone account for 40.1 minutes. There are 35 closure-prefixed development groups, including routing/staging probes, measurement diagnostics, a partial disk-blocked attempt, preflight and restoration verification. These are not 35 independently scored campaigns.
+
+The reported overall 150 minutes also encompassed diagnostics, other preview rendering, authentication/archival work, storage recovery, packaging and assistant orchestration. A reliable partition of that remaining time was not recorded. Do not attribute all of it to Blender or subtract job totals and label the remainder “token overhead”: jobs can overlap and other native work is omitted from those two totals.
+
+Exact engineering token counts, phase-level token attribution and monetary cost are unavailable in this evidence package. The Director's high-usage report is retained. The execution history also shows excessive assistant reasoning, repeated status checks and repetitive updates between tool waits. That was avoidable overhead. Unattended native processing time is distinct from model activity between waits. The experiment's zero paid model-API calls says nothing about Codex subscription consumption or total engineering cost.
+
+## Why the pass expanded
+
+1. **Several real defects were coupled.** Changing the reach to protect the elbow could introduce support/guard contact; changing sword orientation for head clearance could alter wrist and elbow deformation. These needed diagnosis, but the work drifted into many serial parameter variants without an effective hypothesis/attempt budget.
+2. **Measurement qualification was mixed with motion tuning.** The sword's open surfaces caused a nearest-normal penetration false positive. Closed section proxies and surface-interior collision tests were worthwhile repairs, yet integrating them late invalidated assumptions behind earlier tuning. Fixture topology and collision representation should have been checked before repeated pose adjustments.
+3. **Full validation was duplicated.** A complete preflight and a complete scored campaign each ran all 18 controls plus persistence/replay. This gave real evidence, but repeated expensive unchanged checks. Earlier tests should have been smaller and targeted, with one planned full frozen qualification suite. Reuse must be explicitly permitted and bound to unchanged relevant source/configuration/assets; required scored checks must never be silently omitted.
+4. **Storage and archival work entered the critical path.** The existing 5 GB guard interrupted a run. Large repeated JSON snapshots had accumulated. Verified copy-on-write sharing recovered space without deleting evidence. GitHub authentication investigation, historical archive preparation, video conveniences, bundle construction and a fresh restore check added useful durability work that should have been forecast and separated from motion diagnosis.
+5. **I managed the work inefficiently.** I spent too much reasoning and too many interactions on routine orchestration, polled repeatedly, and narrated unchanged or nearly unchanged states. There was no effective overall time/token checkpoint to force simplification. The final handoff was also incomplete and contained an invalid link despite the extensive work. These are assistant execution failures, not requirements of rigorous testing.
+
+## Changes for the next experiment
+
+- Before implementation, freeze a short motion brief, fixture/contact assumptions, failure hypotheses, required outputs and an expected time/cost breakdown. Check disk headroom against projected snapshot/render/archive growth.
+- Use a **20-minute diagnostic checkpoint and at most three candidate variants per hypothesis** as planning defaults. If those fail, reassess the cause and produce a bounded next plan before launching more variants. Avoid open-ended serial tuning.
+- Screen candidates at the failing fractional-frame window and representative contact/staging poses. Run inexpensive complete playback on the selected candidate. Freeze the relevant implementation and measurement contract before the full suite.
+- Plan **one full scored qualification suite**. Retest changed dependencies and new failure controls during development; reuse prior evidence only under an explicit, hash-bound contract. Keep every frozen acceptance threshold and mandatory check intact.
+- Forecast the whole task, including rendering, packaging and recovery. At an expected overrun of the initial budget—or a **60-minute elapsed checkpoint** if no better estimate exists—stop adding scope, report the cause and choose the smallest defensible next step. These are prospective process checkpoints, not retroactive acceptance gates or reasons to hide unfinished work.
+- During long jobs, use bounded tool waits and concise phase-transition updates. Do not spend lengthy reasoning on already-settled implementation or repeatedly inspect unchanged state. Prepare report templates once and produce a clear, working review handoff.
+- Record engineering model attribution, phase wall times, candidate/run counts, and task-scoped tokens/cost when available. Mark unavailable values unknown. Track local compute and human review separately from paid model-API charges. Do not change the user's policy of paid calls only for experiment evaluation.
+
+## Review-contract lesson
+
+The current A/B comparison changes timing by four frames (about 0.17 seconds); both clips already use the repaired motion. A generic requirement for a 0.5-point readability improvement and candidate preference can be a poor fit for a timing-only instruction without a stated dramatic intent. The existing frozen gate remains unchanged. The Director should report an honest tie if appropriate; a later experiment should distinguish successful execution of a timing instruction from a subjective quality improvement and define the intended improvement before scoring.
+
+No new renders, paid calls or campaign reruns were needed for this postmortem. It is an additive results record; original scored evidence and the already-verified review bundle are preserved. The compact results manifest is updated to include this document and the Director's process feedback. The existing bundle predates this addendum and is not represented as containing it.

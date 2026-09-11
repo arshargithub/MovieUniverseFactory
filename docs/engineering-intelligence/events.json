@@ -476,6 +476,29 @@
           "sha256_at_recording": "41d54b9b0b76927a62900e1e6792a92464118d19c50531956cb603fa62ecde2a"
         }
       ]
+    },
+    {
+      "engineering_model": {
+        "attribution_basis": "User-retained model; outcome is not a controlled model comparison",
+        "reasoning_effort": null,
+        "reported_name": "Astra",
+        "runtime_verified": false
+      },
+      "event_id": "3d05-closure-director-process-overrun",
+      "event_type": "director_process_feedback",
+      "experiment_id": "3D-05",
+      "human_review_seconds": null,
+      "observation": "Director reports approximately 2.5 hours and excessive token consumption, considered rejecting the pass, and chose to capture lessons. Technical success does not excuse inefficient engineering. Bound diagnostic variants, qualify measurements earlier, avoid duplicate full suites unless required, forecast storage/packaging, and reduce repetitive orchestration. Exact tokens are unknown; zero experiment API cost is not total engineering cost. Formal visual scores remain pending.",
+      "outcome": "PROCESS_OVERRUN_REQUIRING_CORRECTION",
+      "recorded_at_utc": "2026-09-11T20:29:31.791580+00:00",
+      "run_id": "interaction-v1-20260911T194804Z-9aafbc8a",
+      "sources": [
+        {
+          "kind": "repository_artifact",
+          "path": "results/3d05/closure-v1/process-review.json",
+          "sha256_at_recording": "e473c0fc7b4c1a9682c6e6c90e3e22eaa4987203a6a8a13c5e0ba43856457196"
+        }
+      ]
     }
   ],
   "recording_mode": "manual_evidence_backfill_and_future_event_capture",
