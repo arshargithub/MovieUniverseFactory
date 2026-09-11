@@ -25,6 +25,13 @@ def load_inspector():
     return module
 
 
+def load_interaction():
+    spec = importlib.util.spec_from_file_location("mf_blender_interaction", Path(__file__).with_name("interaction.py"))
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
 def srgb_channel(c):
     return c / 12.92 if c <= .04045 else ((c + .055) / 1.055) ** 2.4
 
@@ -1626,7 +1633,7 @@ def main():
             build_external(job["plan"], profile)
         elif mode=="build_character":
             build_character(job["plan"],profile)
-        elif mode in {"revise","revise_external","revise_character","build_performance","build_performance_control","inspect","render","evaluator_corrupt","character_temporal","performance_evidence"}:
+        elif mode in {"revise","revise_external","revise_character","build_performance","build_performance_control","build_interaction","build_interaction_control","interaction_checkpoint","interaction_evidence","interaction_preview","inspect","render","evaluator_corrupt","character_temporal","performance_evidence"}:
             native=Path(job["parent_native"])
             if native.resolve()==(out/"scene.blend").resolve():
                 raise ValueError("Parent native may never be overwritten")
@@ -1651,6 +1658,25 @@ def main():
                 mutations=build_performance(job["operations"],job.get("control"))
                 write_json(out/"mutations.json",mutations)
                 status["artifacts"].append("mutations.json")
+            elif mode in {"build_interaction","build_interaction_control"}:
+                interaction=load_interaction()
+                interaction.build(sys.modules[__name__],out,job["interaction"],profile,job.get("role","candidate"),job.get("control"))
+                status["artifacts"].append("interaction-build.json")
+            elif mode=="interaction_checkpoint":
+                interaction=load_interaction()
+                interaction.checkpoint(sys.modules[__name__],out,job["role"],job["frame"])
+                status["artifacts"].append("checkpoint.json")
+            elif mode=="interaction_evidence":
+                interaction=load_interaction()
+                evidence=interaction.evidence(sys.modules[__name__],out,job["campaign"],profile,job.get("render_frames",False))
+                status["artifacts"].append("interaction-metrics.json")
+                if job.get("render_frames",False):
+                    status["artifacts"].extend(
+                        f"frames/{role}/{view}/frame-{frame:04d}.png"
+                        for role in ("baseline","candidate") for view in ("primary","contact") for frame in range(1,97))
+            elif mode=="interaction_preview":
+                interaction=load_interaction()
+                status["artifacts"].extend(interaction.preview(sys.modules[__name__],out,profile,job["frames"]))
             elif mode=="evaluator_corrupt":
                 mutation=evaluator_corrupt(job.get("corruption"))
                 write_json(out/"corruption.json",mutation)
@@ -1672,11 +1698,11 @@ def main():
                         for role in ("baseline","candidate") for frame in range(1,97))
         else:
             raise ValueError("Unknown worker mode")
-        if mode in {"build","build_external","build_character","revise","revise_external","revise_character","build_performance","build_performance_control","evaluator_corrupt"}:
+        if mode in {"build","build_external","build_character","revise","revise_external","revise_character","build_performance","build_performance_control","build_interaction","build_interaction_control","interaction_checkpoint","evaluator_corrupt"}:
             bpy.context.preferences.filepaths.save_version=0
             bpy.ops.wm.save_as_mainfile(filepath=str(out/"scene.blend"),check_existing=False,compress=True,relative_remap=False)
             status["artifacts"].append("scene.blend")
-        if mode in {"build","build_external","build_character","revise","revise_external","revise_character","build_performance","build_performance_control","inspect","evaluator_corrupt"}:
+        if mode in {"build","build_external","build_character","revise","revise_external","revise_character","build_performance","build_performance_control","build_interaction","build_interaction_control","interaction_checkpoint","inspect","evaluator_corrupt"}:
             state=inspector.snapshot()
             write_json(out/"snapshot.json",state)
             status["artifacts"].append("snapshot.json")

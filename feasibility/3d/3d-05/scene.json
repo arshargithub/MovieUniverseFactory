@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0",
+  "experiment_id": "3D-05",
+  "scene_id": "stationary_sword_pickup_v1",
+  "seed": 305,
+  "character_id": "character_01",
+  "character_armature_id": "character_01_armature",
+  "character_mesh_id": "character_01_mesh",
+  "sword": {
+    "id": "sword_01",
+    "source_sha256": "8e69eb27977f8c84a9b7cd423cd5830eddcf0d07ac1d7fed1969931387015b28",
+    "source": {
+      "path": "sword_source_01/Models/GLB format/weapon-sword.glb",
+      "sha256": "8e69eb27977f8c84a9b7cd423cd5830eddcf0d07ac1d7fed1969931387015b28",
+      "format": "glb"
+    },
+    "target_longest_m": 1.0,
+    "grip_offset_from_geometry_base_m": 0.15,
+    "handle_contact_radius_m": 0.16,
+    "supported_grip_world_m": [-0.47, 0.08, 0.75],
+    "held_grip_world_m": [-0.50, -0.15, 1.05]
+  },
+  "support": {
+    "id": "sword_support_01",
+    "dimensions_m": [0.30, 0.30, 0.60],
+    "position_m": [-0.47, 0.08, 0.30]
+  },
+  "timeline": {
+    "fps": 24,
+    "frame_start": 1,
+    "frame_end": 96,
+    "baseline_transitions": {"reach": 16, "grasp": 40, "lift": 48, "held": 68}
+  },
+  "cameras": [
+    {"id": "interaction_camera_primary", "view": "primary", "position": [3.0, -5.2, 2.3], "target": [-0.15, 0.02, 0.90], "lens_mm": 55},
+    {"id": "interaction_camera_contact", "view": "contact", "position": [-0.45, -3.2, 1.55], "target": [-0.47, 0.02, 0.88], "lens_mm": 72}
+  ]
+}
