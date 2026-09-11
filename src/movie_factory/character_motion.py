@@ -83,7 +83,7 @@ def _validate_api_screen(data,config):
             "can_override_deterministic_failure":False,"can_replace_director":False}
 
 
-def _write_review_html(output,config,result):
+def _write_review_html(output,config,result,filename="review.html",notice=None):
     panels=[]
     for clip,spec in config["request"]["clips"].items():
         frames=[f"worker/frames/{clip}/frame-{frame:04d}.png" for frame in range(spec["frame_start"],spec["frame_end"]+1)]
@@ -95,12 +95,13 @@ def _write_review_html(output,config,result):
 <div><button type="button">Pause</button> <label>Frame <input type="range" min="0" max="{len(frames)-1}" value="0"></label> <output>{spec["frame_start"]}</output></div>
 <p><a href="contact-sheet-{clip}.png">Open complete {clip} contact sheet</a></p></section>''')
     safe=html.escape(json.dumps(result,indent=2,sort_keys=True))
+    notice_html=f'<p>{html.escape(notice)}</p>' if notice else ""
     document=f'''<!doctype html><meta charset="utf-8"><title>3D-03 temporal review</title>
 <style>body{{font:16px system-ui;margin:2rem;background:#181818;color:#eee}}main{{display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:1.5rem}}section{{background:#242424;padding:1rem;border-radius:.5rem}}img{{width:100%;background:#333}}input{{width:55%}}a{{color:#8fc7ff}}pre{{white-space:pre-wrap;overflow-wrap:anywhere}}.pending{{color:#ffd479}}</style>
-<h1>3D-03 complete motion review</h1><p class="pending">Review every complete clip at least once. API screening is advisory; Director acceptance is still required.</p>
+<h1>3D-03 complete motion review</h1>{notice_html}<p class="pending">Review every complete clip at least once. API screening is advisory; Director acceptance is still required.</p>
 <main>{''.join(panels)}</main><h2>Recorded evidence</h2><pre>{safe}</pre>
 <script>document.querySelectorAll('section[data-clip]').forEach(panel=>{{const frames=JSON.parse(panel.dataset.frames),img=panel.querySelector('img'),slider=panel.querySelector('input'),out=panel.querySelector('output'),button=panel.querySelector('button'),loop=panel.dataset.loop==='true',autoCount=loop?frames.length-1:frames.length;let index=0,playing=true;const show=i=>{{index=Number(i);img.src=frames[index];slider.value=index;out.value=index+1}};slider.oninput=()=>{{playing=false;button.textContent='Play';show(slider.value)}};button.onclick=()=>{{playing=!playing;button.textContent=playing?'Pause':'Play'}};setInterval(()=>{{if(playing)show((index+1)%autoCount)}},1000/Number(panel.dataset.fps));}});</script>'''
-    (output/"review.html").write_text(document)
+    (output/filename).write_text(document)
 
 
 def run_character_motion_addendum(repo:Path,source_run:Path,output_root:Path,blender_bin:str,settings:dict,live:bool)->dict:

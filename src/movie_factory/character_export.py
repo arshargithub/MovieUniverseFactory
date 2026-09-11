@@ -14,6 +14,30 @@ from .packages import atomic_json,file_digest,manifest_for,safe_relative
 def _read(path:Path): return json.loads(path.read_text())
 
 
+def _reproducibility_text(corrected_player:Path)->str:
+    return (
+        "# Reproducing the 3D-03.1 GREEN bundle\n\n"
+        "`execution-source/` is the exact source revision that produced the accepted qualification. "
+        "`source/` contains the final regression, validation, and export tooling. Native baseline and revised scenes, "
+        "all 63 temporal frames, contact sheets, playback HTML, the offline replay, and the causal diagnostic are included.\n\n"
+        "The admitted assets are bundled at `assets/admitted-staging/`. Before running the native tests, map that "
+        "directory into the location expected by the source tree. From the bundle root, run:\n\n"
+        "```sh\n"
+        "mkdir -p source/.runtime/assets/3d-03/staged-v1\n"
+        "cp -R assets/admitted-staging/. source/.runtime/assets/3d-03/staged-v1/\n"
+        "test -f source/.runtime/assets/3d-03/staged-v1/staged-manifest.json\n"
+        "```\n\n"
+        "Create `source/.venv` using `source/SETUP_README.md`; install nothing globally and do not add credentials. "
+        "From `source/`, run `.venv/bin/pytest -q`. For native regressions, run "
+        "`MF_NATIVE_TEST=1 .venv/bin/pytest tests/native/test_character_assets.py -q -m blender`.\n\n"
+        "The original Director-reviewed playback remains `review.html` under the accepted run in "
+        "`runs/3d031-motion/`. It is preserved byte-for-byte and includes the historical duplicate endpoint hold. "
+        f"Use `{corrected_player.as_posix()}` for convenience playback with the corrected idle/run loop timing; it "
+        "uses the same reviewed frames and keeps the endpoint available on the slider. Review the closure report at "
+        "`results/3d031/REPORT.md`. Use `mf3d replay-character` with the included qualification run to repeat the "
+        "structured revision without provider calls. A fresh visual qualification requires its own Director review.\n")
+
+
 def _extract_commit(repo:Path,commit:str,destination:Path)->None:
     paths=["src","tests","config","schemas","feasibility","docs","prior-art",
            "MOVIE_FACTORY_3D_FEASIBILITY_SPEC.md","README.md","SETUP_README.md","requirements.lock",
@@ -49,7 +73,14 @@ def export_character_031(repo:Path,destination:Path)->dict:
         if not required.is_file(): raise ValueError("Required 3D-03.1 evidence is missing: "+str(required))
     shutil.copytree(compact,destination/"results/3d031")
     shutil.copytree(qualification,destination/"runs/3d031"/qualification.name)
-    shutil.copytree(temporal,destination/"runs/3d031-motion"/temporal.name)
+    bundled_temporal=destination/"runs/3d031-motion"/temporal.name
+    shutil.copytree(temporal,bundled_temporal)
+    from .character_motion import _write_review_html
+    corrected_name="review-corrected-loop.html"
+    _write_review_html(bundled_temporal,_read(temporal/"frozen-config.json"),_read(temporal/"result.json"),
+                       filename=corrected_name,
+                       notice=("Packaging convenience player using corrected idle/run loop timing. The original "
+                               "Director-reviewed review.html is preserved unchanged."))
     shutil.copytree(replay,destination/summary["replay_run"])
     shutil.copytree(diagnostic,destination/"runs/3d031-diagnostic"/diagnostic.name)
     shutil.copytree(repo/".runtime/assets/3d-03/staged-v1",destination/"assets/admitted-staging")
@@ -67,17 +98,8 @@ def export_character_031(repo:Path,destination:Path)->dict:
         "schema_version":"1.0","excluded":[".env and credential values",".git history",".venv dependencies",
         "superseded implementation attempts except the authoritative diagnostic","local caches"],
         "note":"Recreate the project-local environment from requirements.lock. No provider call is required."})
-    (destination/"REPRODUCIBILITY.md").write_text(
-        "# Reproducing the 3D-03.1 GREEN bundle\n\n"
-        "`execution-source/` is the exact source revision that produced the accepted qualification. "
-        "`source/` contains the final regression, validation, and export tooling. Native baseline and revised scenes, "
-        "all 63 temporal frames, contact sheets, playback HTML, the offline replay, and the causal diagnostic are included.\n\n"
-        "Create `source/.venv` using `source/SETUP_README.md`; install nothing globally and do not add credentials. "
-        "From `source/`, run `.venv/bin/pytest -q`. For native regressions, run "
-        "`MF_NATIVE_TEST=1 .venv/bin/pytest tests/native/test_character_assets.py -q -m blender`.\n\n"
-        "Review the accepted playback under `runs/3d031-motion/` and the closure report at "
-        "`results/3d031/REPORT.md`. Use `mf3d replay-character` with the included qualification run to repeat the "
-        "structured revision without provider calls. A fresh visual qualification requires its own Director review.\n")
+    corrected_player=Path("runs/3d031-motion")/temporal.name/corrected_name
+    (destination/"REPRODUCIBILITY.md").write_text(_reproducibility_text(corrected_player))
     files=[path for path in destination.rglob("*") if path.is_file() and path.name!="inventory.json"]
     inventory={"schema_version":"1.0","experiment_id":"3D-03.1","artifacts":manifest_for(destination,files)}
     atomic_json(destination/"inventory.json",inventory)
