@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "experiment_id": "3D-05",
-  "campaign_status": "ACCEPTANCE_FROZEN_IMPLEMENTATION_PENDING",
+  "campaign_status": "FROZEN_FOR_SCORED_CAMPAIGN",
   "acceptance_version": "3d05-gates-v1-frozen",
   "baseline": {
     "character_evidence_tag": "3d-03-1-v1-green-evidence",
@@ -62,5 +62,10 @@
     "labels": ["A", "B"]
   },
   "provider_budget": {"maximum_provider_calls": 0, "maximum_known_api_cost_usd": 0.0},
-  "scored_source_binding": null
+  "scored_source_binding": {
+    "implementation_commit": "fa7c0c5c28c043fa8219bd7b2f6802b15c095f8a",
+    "implementation_tree": "3eba99efb04f901cd58374bafa4beed938250709",
+    "blender_version": "5.2.1 LTS",
+    "blender_build_hash": "9e2066aef7ef"
+  }
 }
