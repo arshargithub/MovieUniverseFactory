@@ -1,15 +1,32 @@
 {
   "schema_version": "1.0",
+  "bundle": "../3d05-closure-v1-review-9aafbc8a",
+  "disposition": "CLOSED_YELLOW",
   "artifacts": [
+    {
+      "path": "BUNDLE_LINK.json",
+      "bytes": 556,
+      "sha256": "6216781c5dec8e45de73505ab3e11992ec49bfd7c4c6b0cda931c09cc0c5c210"
+    },
     {
       "path": "PROCESS_REVIEW.md",
       "bytes": 7179,
       "sha256": "03a5b1d724115161468c45244abcddaa016a89356de9ad8065f25d6d0b48548b"
     },
     {
+      "path": "README.md",
+      "bytes": 1847,
+      "sha256": "5cdb6b47abf9e772a95f56c8a6fcade6ac9bf2047b2542b7d4ebde9acb52a20c"
+    },
+    {
       "path": "REPORT.md",
-      "bytes": 8827,
-      "sha256": "aaa46bfdef696630b28d2fd5d0bdfe84a082766070ba765dcaaf0b70560a310c"
+      "bytes": 8800,
+      "sha256": "3c031095b00f685981707e308dfadf783f223314baf1a0e69229e7e207b84c72"
+    },
+    {
+      "path": "SOURCE_BINDING.md",
+      "bytes": 865,
+      "sha256": "660777ce84b0212a2455401787fc77a30245386bcc2451172260975a855e49bf"
     },
     {
       "path": "checkpoint-validation.json",
@@ -47,6 +64,11 @@
       "sha256": "ad1fd51af26f5905a6b8deb0e77b74ce6f24bdabeb990186291eb391d803bbbe"
     },
     {
+      "path": "execution-source-binding.json",
+      "bytes": 241,
+      "sha256": "877d10737e581eab9befcdffffaa6d0e7972bb8f6f31bb5f873a34ff9d69c1a3"
+    },
+    {
       "path": "frozen-campaign.json",
       "bytes": 5472,
       "sha256": "d3b5786ea43d2e83c99e89fa8c7a9c455d0998575415c89043dd5e62ea044c63"
@@ -62,24 +84,9 @@
       "sha256": "b91f44e96c3ae3f5ca7f823ae57840abec6ba88b8ab6b64a7140208dfc27a8a8"
     },
     {
-      "path": "review-history/before-completed-review-director-review.json",
-      "bytes": 696,
-      "sha256": "119b65552e639e381da20522afe3f4926ab05c848a06695d1b8edcb38279b7a8"
-    },
-    {
-      "path": "review-history/before-completed-review-manifest.json",
-      "bytes": 2200,
-      "sha256": "77332a379fae1aceedce1df44c19f831e54e450bc4f6b47717b0b802e517c978"
-    },
-    {
-      "path": "review-history/before-completed-review-result.json",
-      "bytes": 1042,
-      "sha256": "f332ab904a24dc3f7b23991257665c78a57cffeb8638f90f85b81ebb8191f91a"
-    },
-    {
-      "path": "source-binding.json",
-      "bytes": 241,
-      "sha256": "877d10737e581eab9befcdffffaa6d0e7972bb8f6f31bb5f873a34ff9d69c1a3"
+      "path": "results-manifest.json",
+      "bytes": 2925,
+      "sha256": "1c2958d32a25f89a8eb67979d40208eee910c2eb9b90f0d53334f7fc320c4228"
     },
     {
       "path": "summary.json",
@@ -87,9 +94,9 @@
       "sha256": "1a38c3675c9b6d5bdd5ede5c5bdd7cd550066ac4acd5dd95e7f58ab34895eba9"
     },
     {
-      "path": "video-provenance.json",
-      "bytes": 113156,
-      "sha256": "28648ce452c958084951d7545c0dd996aee801aa5dc9d441bbf844912606bdfd"
+      "path": "verify.py",
+      "bytes": 620,
+      "sha256": "79e750b6f3bba0972010e74dd91fbc2b2fed5a5122136703dd52e9948c5689bb"
     }
   ]
 }
