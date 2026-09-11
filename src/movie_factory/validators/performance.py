@@ -116,7 +116,7 @@ def protected_snapshot_flags(parent:dict,current:dict)->dict:
 
 
 def inject_performance_control(raw:dict,name:str)->dict:
-    """Apply one fixed validator-level failure injection to measured evidence."""
+    """Apply a fast validator-unit control; Blender controls are run separately."""
     if name not in CONTROL_EXPECTATIONS: raise ValueError("Unknown 3D-04 negative control")
     value=deepcopy(raw)
     if name=="no_op":

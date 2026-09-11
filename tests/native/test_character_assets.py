@@ -8,7 +8,8 @@ import pytest
 from movie_factory.adapters.blender.runner import run_blender
 from movie_factory.character_controller import resolved_character_plan
 from movie_factory.validators.character import validate_character_baseline,validate_character_revision
-from movie_factory.validators.performance import protected_snapshot_flags,validate_performance_metrics
+from movie_factory.validators.performance import (CONTROL_EXPECTATIONS,protected_snapshot_flags,
+                                                  validate_control_sensitivity,validate_performance_metrics)
 from movie_factory.validators.structural import compare_snapshots
 
 
@@ -91,3 +92,25 @@ def test_performance_revision_is_local_grounded_and_source_preserving(tmp_path):
                                                      "offline_replay_semantic_exact","offline_replay_geometry_within_tolerance")}
     result=validate_performance_metrics(evidence,campaign)
     assert result["passed"],result["errors"]
+
+
+def test_performance_scene_controls_are_measured_and_rejected(tmp_path):
+    template=json.loads((ROOT/"feasibility/3d/3d-03-1/scene.json").read_text()); plan=resolved_character_plan(template,STAGED)
+    operation=json.loads((ROOT/"feasibility/3d/3d-04/revision.json").read_text())["operations"]
+    campaign=json.loads((ROOT/"feasibility/3d/3d-04/campaign.json").read_text())
+    status,source=job(tmp_path,"3d04-control-source","build_character",plan=plan); assert status["ok"],status
+    source_snapshot=json.loads((source/"snapshot.json").read_text()); results={}
+    for control in campaign["negative_controls"]:
+        status,build=job(tmp_path,f"control-{control}-build","build_performance_control",
+                         parent_native=str(source/"scene.blend"),operations=operation,control=control)
+        assert status["ok"],status
+        flags=protected_snapshot_flags(source_snapshot,json.loads((build/"snapshot.json").read_text()))
+        status,evidence_dir=job(tmp_path,f"control-{control}-evidence","performance_evidence",
+                                parent_native=str(build/"scene.blend"),campaign=campaign,render_frames=False)
+        assert status["ok"],status
+        evidence=json.loads((evidence_dir/"performance-metrics.json").read_text()); evidence["protected"].update(flags)
+        evidence["persistence"]={name:True for name in ("save_reopen_semantic_exact","save_reopen_geometry_within_tolerance",
+                                                         "offline_replay_semantic_exact","offline_replay_geometry_within_tolerance")}
+        results[control]=validate_performance_metrics(evidence,campaign)
+        assert CONTROL_EXPECTATIONS[control]<=set(results[control]["errors"]),results[control]["errors"]
+    assert validate_control_sensitivity(results)["passed"]

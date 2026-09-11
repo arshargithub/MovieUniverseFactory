@@ -427,6 +427,7 @@ PERFORMANCE_OPERATION={
     "body_target":"Hips","vertical_body_amplitude_m":.035,"vertical_axis":"armature_local_z",
     "forward_torso_lean_degrees":6.0,"torso_target":"Chest","support_contact_clearance_m":.045,
     "support_compensation":"preserve_baseline_in_place_contact_trajectory_two_bone_ik_v1"}
+PERFORMANCE_CONTROLS=("no_op","edit_every_cycle","boundary_leakage","support_foot_slide")
 
 
 def _set_scene_time(scene,frame):
@@ -443,6 +444,17 @@ def _performance_envelope(frame,operation):
     if frame<start+width: return _smootherstep((frame-start)/width)
     if frame>end-width: return _smootherstep((end-frame)/width)
     return 1.0
+
+
+def _performance_control_envelope(frame,operation,control):
+    if control is None or control=="support_foot_slide": return _performance_envelope(frame,operation)
+    if control=="no_op": return 0.0
+    if control=="edit_every_cycle": return 1.0
+    if control=="boundary_leakage":
+        # Deliberately nonzero at frame 40 with a steep central difference.
+        if 39.875<=frame<=40.125: return .25+2*(frame-40)
+        return _performance_envelope(frame,operation)
+    raise ValueError("Unknown 3D-04 performance control")
 
 
 def _performance_phase(frame): return 1+(frame-1)%16
@@ -520,8 +532,21 @@ def _solve_leg(desired,baseline,armature,side,target):
             desired[bone.name]=Matrix.Translation(foot_shift)@baseline[bone.name]
 
 
-def build_performance(operations):
+def _apply_support_slide_control(action):
+    """Add an actual transverse object-motion ramp during a support segment."""
+    curves=[curve for curve in action_channels(action) if curve.data_path=="location" and curve.array_index==0]
+    if len(curves)!=1: raise ValueError("3D-04 support-slide control requires one armature X-location curve")
+    for key in curves[0].keyframe_points:
+        frame=float(key.co[0])
+        if 48<frame<=54: offset=.04*(frame-48)
+        elif 54<frame<64: offset=.24*(64-frame)/10
+        else: offset=0.0
+        key.co[1]+=offset
+
+
+def build_performance(operations,control=None):
     if operations!=[PERFORMANCE_OPERATION]: raise ValueError("3D-04 accepts only the frozen timeline-local revision")
+    if control is not None and control not in PERFORMANCE_CONTROLS: raise ValueError("Unknown 3D-04 performance control")
     scene=bpy.context.scene; armature=bpy.data.objects.get("character_01_armature"); mesh=bpy.data.objects.get("character_01_mesh")
     source=bpy.data.actions.get("character_action_run")
     if not armature or not mesh or not source: raise ValueError("3D-04 baseline character or source action is missing")
@@ -529,9 +554,12 @@ def build_performance(operations):
     source_before=_action_fingerprint(source); baseline=_make_repeating_run_action(armature,source)
     candidate=baseline.copy(); candidate.name="character_action_run_3d04_candidate_96"; candidate["mf_id"]=candidate.name
     candidate["mf_parent_action"]=baseline.name; candidate["mf_revision"]="adjust_run_body_dynamics_v1"
+    if control is not None: candidate["mf_failure_control"]=control
     candidate["mf_edit_interval"]="[40,70]"; candidate["mf_blend_envelope"]=PERFORMANCE_OPERATION["blend_envelope"]
     candidate.use_fake_user=True
-    foot_vertices=_character_foot_vertices(mesh); internal=[40+i*.125 for i in range(241)]
+    foot_vertices=_character_foot_vertices(mesh)
+    internal=([1+i*.125 for i in range(761)] if control=="edit_every_cycle"
+              else [40+i*.125 for i in range(241)])
     scale_z=(armature.matrix_world.to_3x3()@Vector((0,0,1))).length
     if scale_z<=0: raise ValueError("Character has invalid armature world scale")
     baseline_states={}
@@ -545,7 +573,7 @@ def build_performance(operations):
     previous={name:None for name in edited}
     assign_character_action(armature,candidate)
     for frame in internal:
-        state=baseline_states[frame]; base=state["matrices"]; envelope=_performance_envelope(frame,PERFORMANCE_OPERATION)
+        state=baseline_states[frame]; base=state["matrices"]; envelope=_performance_control_envelope(frame,PERFORMANCE_OPERATION,control)
         phase=_performance_phase(frame); rhythm=.5+.5*math.cos(2*math.pi*(phase-1)/8)
         # Compress during planted support rather than lengthening an already
         # straight leg. Returning to baseline height at flight strengthens the
@@ -579,6 +607,7 @@ def build_performance(operations):
             if name=="Hips": bone.keyframe_insert(data_path="location",frame=frame,group=name)
     for curve in action_channels(candidate):
         for key in curve.keyframe_points: key.interpolation="LINEAR"
+    if control=="support_foot_slide": _apply_support_slide_control(candidate)
     if _action_fingerprint(source)!=source_before: raise ValueError("3D-04 mutated the immutable source action")
     assign_character_action(armature,candidate); armature["mf_active_action"]="run_3d04_candidate"
     scene.frame_start=1; scene.frame_end=96; scene.frame_set(1); scene.camera=bpy.data.objects["camera_B"]
@@ -587,7 +616,7 @@ def build_performance(operations):
     bpy.context.view_layer.update()
     return [{"op":"create_repeating_baseline_action","action":baseline.name,"source":source.name},
             {"op":"adjust_run_body_dynamics","action":candidate.name,"frame_start":40,"frame_end":70,
-             "source_action_sha256":source_before}]
+             "source_action_sha256":source_before,"failure_control":control}]
 
 
 def _performance_sample(armature,mesh,action,frame,foot_vertices,rest_lengths):
@@ -1597,7 +1626,7 @@ def main():
             build_external(job["plan"], profile)
         elif mode=="build_character":
             build_character(job["plan"],profile)
-        elif mode in {"revise","revise_external","revise_character","build_performance","inspect","render","evaluator_corrupt","character_temporal","performance_evidence"}:
+        elif mode in {"revise","revise_external","revise_character","build_performance","build_performance_control","inspect","render","evaluator_corrupt","character_temporal","performance_evidence"}:
             native=Path(job["parent_native"])
             if native.resolve()==(out/"scene.blend").resolve():
                 raise ValueError("Parent native may never be overwritten")
@@ -1616,6 +1645,10 @@ def main():
                 status["artifacts"].append("mutations.json")
             elif mode=="build_performance":
                 mutations=build_performance(job["operations"])
+                write_json(out/"mutations.json",mutations)
+                status["artifacts"].append("mutations.json")
+            elif mode=="build_performance_control":
+                mutations=build_performance(job["operations"],job.get("control"))
                 write_json(out/"mutations.json",mutations)
                 status["artifacts"].append("mutations.json")
             elif mode=="evaluator_corrupt":
@@ -1639,11 +1672,11 @@ def main():
                         for role in ("baseline","candidate") for frame in range(1,97))
         else:
             raise ValueError("Unknown worker mode")
-        if mode in {"build","build_external","build_character","revise","revise_external","revise_character","build_performance","evaluator_corrupt"}:
+        if mode in {"build","build_external","build_character","revise","revise_external","revise_character","build_performance","build_performance_control","evaluator_corrupt"}:
             bpy.context.preferences.filepaths.save_version=0
             bpy.ops.wm.save_as_mainfile(filepath=str(out/"scene.blend"),check_existing=False,compress=True,relative_remap=False)
             status["artifacts"].append("scene.blend")
-        if mode in {"build","build_external","build_character","revise","revise_external","revise_character","build_performance","inspect","evaluator_corrupt"}:
+        if mode in {"build","build_external","build_character","revise","revise_external","revise_character","build_performance","build_performance_control","inspect","evaluator_corrupt"}:
             state=inspector.snapshot()
             write_json(out/"snapshot.json",state)
             status["artifacts"].append("snapshot.json")
