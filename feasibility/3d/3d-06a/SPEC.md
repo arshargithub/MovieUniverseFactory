@@ -1,6 +1,6 @@
 # 3D-06A — reference-timed upper-body gesture
 
-Status: **DRAFT / NOT_RUN**. This handoff authorizes specification only; no animation implementation, fixture screening, scored freeze or Director acceptance is claimed.
+Status: **AUTHORIZED / DEVELOPMENT**. The user authorized execution after the operating handoff. Begin with the reference plan and fixture screen; no scored freeze or Director acceptance is claimed yet.
 
 ## Question, reference and scope
 
@@ -66,4 +66,4 @@ Prospective forecast to refine before authorized execution: 15 net minutes desig
 
 Policy hypothesis: Astra Medium for specified implementation/orchestration; High for initial unfamiliar constraint design or unresolved diagnosis; actual model/effort changes are recorded, never inferred or silently applied. Finish with an experiment card, learning transfer, ledger/usage report and compact reproducible evidence. Do not reopen 3D-05.
 
-Minimal next-task briefing: use the admitted character and this spec, complete the manual reference board and fixture screen first, use `python -m movie_factory.experiment_ops` in `.venv` for lifecycle/jobs/reports, and stop if the fixture is unsuitable, the diagnostic budget expires without a new supported hypothesis, or required freeze inputs are missing. Animation implementation awaits a separate user instruction.
+Execution briefing: use the admitted character and this spec, complete the manual reference board and fixture screen first, use `python -m movie_factory.experiment_ops` in `.venv` for lifecycle/jobs/reports, and stop if the fixture is unsuitable, the diagnostic budget expires without a new supported hypothesis, or required freeze inputs are missing. The user has now authorized this execution sequence.
