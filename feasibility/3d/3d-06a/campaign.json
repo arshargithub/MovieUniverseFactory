@@ -1,0 +1,66 @@
+{
+  "dependencies": {
+    "feasibility/3d/3d-06a/MOTION_PLAN.md": "9d64be55edeb95a13cd8746c8c0e4d0e71c2ead00d62bc6e3b6ce053a65ca35d",
+    "feasibility/3d/3d-06a/SPEC.md": "14df69f81f4a413fa78fcc3bb38c10884c1fb9fc64830c8f594f3123b7b166db",
+    "feasibility/3d/3d-06a/reference-landmarks.json": "6ad216f201d85d138609b7628e452cf7dc234c719a2d088b2fadc853899b1670",
+    "feasibility/3d/3d-06a/reference-plan.json": "21aa38b871143e5cc07cb6e6d571e652c816e9217dd73a660543e7bcf7c1e94c",
+    "src/movie_factory/adapters/blender/gesture.py": "be27c8b96cfcd8565d581fd655ff9cfb069d93133c2d8cd9dbd4139da0670c60",
+    "src/movie_factory/adapters/blender/inspect.py": "c2e413d5d8b05ee4fbc0a73a1e8b6dc08e98da699ce99ad7e5c53f3b20a7d4e6",
+    "src/movie_factory/adapters/blender/interaction.py": "554f2a3474ba71547d1bcebd8e61e1327d4f97569bfea223db01adad6fa0b5fd",
+    "src/movie_factory/adapters/blender/runner.py": "2f308ae76c82be57dc76fa2bf92de9fe4c841e6277396159f3cfbffa73a9e735",
+    "src/movie_factory/adapters/blender/worker.py": "8770d3c012d271bbc068ebf8b5c7f568e830a5949bf1551a6f39e4a44df2246e",
+    "src/movie_factory/gesture.py": "f8f6fd2d1779a3ab5fa052d32502e623d7a560257e71f1764b041bba7074852c",
+    "src/movie_factory/gesture_controller.py": "cf1cf54ef16d505ce94f3b4367d07e1884b5dbe3672470c94f50029b89cb4ff2",
+    "src/movie_factory/packages.py": "a2ccac383e5a6981ea12a922525e1ed72467ad1b3dd1380f7a99a123e2b7126e"
+  },
+  "director": {
+    "candidate_minimum": 4,
+    "dimensions": [
+      "readability",
+      "natural_movement",
+      "transition_smoothness",
+      "finish"
+    ],
+    "major_defects_allowed": false,
+    "no_regression": true,
+    "preference_optional": true,
+    "review_seconds_required": true
+  },
+  "experiment_id": "3D-06A",
+  "implementation_commit": "4d247904b232ee5193ab641010b9725d64f0ae4f",
+  "original_baseline_sha256": "bbf05848c30e531ca31fc4632210b8344f6f35166db9c26abe4adfa6150e2488",
+  "preview": "runs/3d06a/preview-complete-69aa0805",
+  "preview_recovery_sha256": "a94026d5659fec4096b2eb6b761405da0f056cdd1e53fa106128853c2b909695",
+  "provider_budget": {
+    "calls": 0,
+    "usd": 0
+  },
+  "render": {
+    "denoising": true,
+    "fps": 24,
+    "frames": [
+      0,
+      95
+    ],
+    "native_timeout_seconds": 900,
+    "resolution": [
+      640,
+      480
+    ],
+    "samples": 16,
+    "views": [
+      "camera_A",
+      "camera_B"
+    ]
+  },
+  "reuse": "Screened fixture is admitted input; every scored gate, control, persistence checkpoint, replay and rendered frame is executed fresh. No preview result counts as scored evidence.",
+  "screen_metrics_sha256": "f610d783b45b33a81fbac06a5d69b99c6b71f2f9bf94f815fcccd9d8f54dd831",
+  "screen_native_sha256": "ef9f263438a101f2a19e6b13129217c83daca74b449b14e27c87fcc5df4030f4",
+  "screen_path": "runs/3d06a/screen-20260911T222625Z-370528ef",
+  "status": "FROZEN",
+  "test_dependencies": {
+    "complete_playback": "all dependencies plus screen native/metrics/render",
+    "positive_and_five_native_controls": "all dependencies plus screen native/metrics",
+    "six_persistence_checkpoints_and_replay": "all dependencies plus screen native/metrics"
+  }
+}
