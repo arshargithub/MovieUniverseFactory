@@ -15,9 +15,12 @@ def _read(path:Path): return json.loads(path.read_text())
 
 
 def _extract_commit(repo:Path,commit:str,destination:Path)->None:
-    paths=["src","tests","config","schemas","feasibility","docs","prior-art","results/3d031",
+    paths=["src","tests","config","schemas","feasibility","docs","prior-art",
            "MOVIE_FACTORY_3D_FEASIBILITY_SPEC.md","README.md","SETUP_README.md","requirements.lock",
            "pyproject.toml",".python-version",".env.example","AGENTS.md"]
+    has_results=subprocess.run(["git","cat-file","-e",f"{commit}:results/3d031"],cwd=repo,
+                               stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL).returncode==0
+    if has_results: paths.append("results/3d031")
     archive=subprocess.run(["git","archive",commit,*paths],cwd=repo,check=True,capture_output=True)
     destination.mkdir(parents=True)
     with tarfile.open(fileobj=io.BytesIO(archive.stdout),mode="r:") as bundle:
