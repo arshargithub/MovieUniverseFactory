@@ -5,7 +5,7 @@ import hashlib
 import importlib.util
 from pathlib import Path
 import bpy
-from mathutils import Matrix, Vector
+from mathutils import Matrix, Vector, Quaternion
 
 
 def validate_plan(plan):
