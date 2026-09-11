@@ -133,7 +133,7 @@ Each control is a disposable `.blend` variant and must be measured through the p
 7. `oversized_handle`: double handle width/thickness with the anchor relationship intact; detect hand penetration.
 8. `thumb_down_grasp`: rotate the actual hand and descendants 180° about hand Y by source frame 24; detect the reversed thumb-side direction.
 9. `locked_forearm_roll`: retain the transported source forearm roll while applying the new hand orientation; detect excessive wrist twist.
-10. `hand_support_penetration`: lower the actual candidate hand by 0.10 m over source frames 24–28; detect hand penetration into the support.
+10. `hand_support_penetration`: raise the actual support top from 0.80 m to 1.05 m while retaining the authored hand motion; detect hand penetration into the support.
 
 Controls may fail additional gates. All designated failures must be observed. They never enter Director scoring and never alter the accepted candidate.
 

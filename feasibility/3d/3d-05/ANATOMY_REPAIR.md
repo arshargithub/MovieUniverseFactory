@@ -21,3 +21,9 @@ Sampling covers 515 times per clip, including every eighth frame over the comple
 Development `astra-thumb-up-v12` measures approximately 33.86 degrees maximum wrist swing, 16.64 degrees maximum wrist twist, positive thumb-side dot of at least 0.5853, approximately 186.50 degrees held contact coverage, and contact distances under 3.60 mm. Maximum sampled sword penetration is below 0.008 mm; sampled support penetration is zero. These figures describe the development fixture; the scored campaign must repeat all checks against its frozen source.
 
 No provider calls are authorized or needed. Codex engineering usage and human review duration are not inferred from the zero API cost. A successful machine run remains YELLOW until the Director accepts full synchronized playback. No accepted anatomy outcome or Sol handoff is claimed yet.
+
+## Pre-score verification
+
+The offline suite passes 125 tests (11 opt-in tests deselected). `astra-anatomy-native-final` passes the corrected scene and the first nine actual controls. Its last control initially failed sensitivity because translating the connected hand did not change the evaluated pose. That failed attempt remains preserved; it is not reported as a passing suite. The corrected control raises the support's actual top to 1.05 m. `astra-support-control-final/validation.json` confirms both hand/support penetration gates reject that evaluated scene. The scored campaign must repeat all ten controls, checkpoints, and replay on the updated source binding.
+
+The final inspected approach/closure/hold previews are in `runs/3d05-development/astra-anatomy-front-preview`. Positive development measurements and previews do not replace full playback review.

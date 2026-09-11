@@ -222,8 +222,6 @@ def _create_character_action(mf, armature, role, initial, supported, held, contr
             raise ValueError(f"{error}; role={role}, frame={frame}, source_time={source_time}") from error
         if control == "thumb_down_grasp" and role == "candidate":
             desired["RightHand"] = desired["RightHand"]@Matrix.Rotation(math.pi*rotation_weight, 4, "Y")
-        if control == "hand_support_penetration" and role == "candidate":
-            desired["RightHand"].translation += armature.matrix_world.inverted().to_3x3()@Vector((0, 0, -.10*_smooth((source_time-24)/4)))
         if control == "locked_forearm_roll" and role == "candidate":
             desired["RightForeArm"] = mf._orient_bone(
                 initial["RightForeArm"], armature.pose.bones["RightForeArm"],
@@ -443,7 +441,12 @@ def build(mf, out, config, profile, role="candidate", control=None):
     offset = armature.matrix_world.to_3x3()@(rotation@(hand_tail-grip_local))
     config = {**config, "sword": {**config["sword"], "hand_surface_offset_world_m": list(offset)}}
     config["failure_control"] = control
-    _setup_support(mf, config)
+    support = _setup_support(mf, config)
+    if control == "hand_support_penetration":
+        # Change evaluated geometry, not a translation on a connected hand
+        # bone (Blender can discard the latter while preserving its joint).
+        support.scale.z = 1.3125
+        support.location.z = .525
     sword, imported = _create_sword(mf, config)
     location_constraint = sword.constraints.new("COPY_LOCATION")
     location_constraint.name = "3D05_HAND_LOCATION"
