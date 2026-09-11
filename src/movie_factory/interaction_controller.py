@@ -56,7 +56,10 @@ def _write_review(run_dir, assignment, views):
         for view in views:
             target = review/"frames"/label/view
             target.mkdir(parents=True, exist_ok=True)
-            for source in sorted((run_dir/"evidence"/"frames"/role/view).glob("frame-*.png")):
+            sources = sorted((run_dir/"evidence"/"frames"/role/view).glob("frame-*.png"))
+            if [source.name for source in sources] != [f"frame-{frame:04d}.png" for frame in range(1, 97)]:
+                raise ValueError(f"Incomplete {role}/{view} playback evidence")
+            for source in sources:
                 shutil.copy2(source, target/source.name)
     frame_sets = {label: {view: [f"frames/{label}/{view}/frame-{frame:04d}.png" for frame in range(1, 97)]
                           for view in views} for label in ("A", "B")}
@@ -66,8 +69,8 @@ def _write_review(run_dir, assignment, views):
 <style>body{{font:16px system-ui;margin:2rem;background:#171717;color:#eee}}main{{display:grid;grid-template-columns:1fr 1fr;gap:1rem}}section{{background:#242424;padding:1rem;border-radius:.5rem}}img{{width:100%;background:#333}}input{{width:min(760px,72vw)}}.notice{{color:#ffd479}}</style>
 <h1>3D-05 anonymous A/B sword-pickup review</h1><p class="notice">Watch all 96 synchronized frames in all three views. One clip advances the grasp, lift, and hold by four frames inside the frozen edit interval.</p>
 <p><button id="toggle">Pause</button> <label>Frame <input id="frame" type="range" min="0" max="95" value="0"></label> <output id="number">1</output></p>
-<p>Visible-page time: <output id="review-seconds">0</output> seconds. Use this as an estimate when reporting your review duration.</p><main>{panels}</main><h2>Frozen questions</h2><ol><li>Interaction readability for A and B, 1–5 in 0.5 increments.</li><li>Grasp/contact believability for A and B.</li><li>Attachment and transition smoothness for A and B.</li><li>Hold stability and sword/body clearance for A and B.</li><li>Concrete visible defects and overall preference.</li><li>Record total review time in seconds.</li></ol>
-<script>const frames={_script_json(frame_sets)},images=[...document.querySelectorAll('img[data-label]')],slider=document.querySelector('#frame'),number=document.querySelector('#number'),button=document.querySelector('#toggle');let index=0,playing=true;function show(value){{index=Number(value);images.forEach(image=>image.src=frames[image.dataset.label][image.dataset.view][index]);slider.value=index;number.value=index+1}}slider.oninput=()=>{{playing=false;button.textContent='Play';show(slider.value)}};button.onclick=()=>{{playing=!playing;button.textContent=playing?'Pause':'Play'}};setInterval(()=>{{if(playing)show((index+1)%96)}},1000/24);let visibleSeconds=0;setInterval(()=>{{if(!document.hidden)document.querySelector('#review-seconds').value=++visibleSeconds}},1000);</script>'''
+<p id="loading">Loading complete playback…</p><p>Visible-page time after loading: <output id="review-seconds">0</output> seconds. Use this as an estimate when reporting your review duration.</p><main>{panels}</main><h2>Frozen questions</h2><ol><li>Interaction readability for A and B, 1–5 in 0.5 increments.</li><li>Grasp/contact believability for A and B.</li><li>Attachment and transition smoothness for A and B.</li><li>Hold stability and sword/body clearance for A and B.</li><li>Concrete visible defects and overall preference.</li><li>Record total review time in seconds.</li></ol>
+<script>const frames={_script_json(frame_sets)},images=[...document.querySelectorAll('img[data-label]')],slider=document.querySelector('#frame'),number=document.querySelector('#number'),button=document.querySelector('#toggle');let index=0,playing=false,ready=false;button.disabled=true;slider.disabled=true;const cached=[];let loaded=0;const urls=Object.values(frames).flatMap(views=>Object.values(views).flat());Promise.all(urls.map(url=>new Promise((resolve,reject)=>{{const im=new Image();cached.push(im);im.onload=()=>{{document.querySelector('#loading').textContent=`Loading ${{++loaded}}/${{urls.length}}`;resolve()}};im.onerror=()=>reject(new Error(url));im.src=url}}))).then(()=>{{ready=true;playing=true;button.disabled=false;slider.disabled=false;document.querySelector('#loading').textContent='Complete playback ready: 96 frames at 24 fps. Replay resets to the starting pose.'}}).catch(()=>{{document.querySelector('#loading').textContent='Playback failed to load. Use the verified video copies; do not score a still frame.'}});function show(value){{index=Number(value);images.forEach(image=>image.src=frames[image.dataset.label][image.dataset.view][index]);slider.value=index;number.value=index+1}}slider.oninput=()=>{{playing=false;button.textContent='Play';show(slider.value)}};button.onclick=()=>{{playing=!playing;button.textContent=playing?'Pause':'Play'}};setInterval(()=>{{if(playing)show((index+1)%96)}},1000/24);let visibleSeconds=0;setInterval(()=>{{if(ready&&!document.hidden)document.querySelector('#review-seconds').value=++visibleSeconds}},1000);</script>'''
     (review/"index.html").write_text(page)
     return review/"index.html"
 
@@ -83,6 +86,16 @@ def _resolved_scene(repo, scene):
 
 def _checkpoint_equal(first, second):
     return content_id(first) == content_id(second)
+
+
+def _validate_frozen_inputs(campaign, scene, revision, profile):
+    frozen = campaign.get("scored_source_binding") or {}
+    if content_id(scene) != frozen.get("scene_sha256"):
+        raise ValueError("3D-05 scene differs from the frozen input")
+    if content_id(revision) != frozen.get("revision_sha256"):
+        raise ValueError("3D-05 revision differs from the frozen input")
+    if profile != campaign.get("render_profile"):
+        raise ValueError("3D-05 render profile differs from the frozen input")
 
 
 def run_interaction_05(repo: Path, output_root: Path, profile: dict, blender_bin: str,
@@ -107,6 +120,8 @@ def run_interaction_05(repo: Path, output_root: Path, profile: dict, blender_bin
         frozen = campaign.get("scored_source_binding") or {}
         if campaign.get("campaign_status") != "FROZEN_FOR_SCORED_CAMPAIGN" or not binding["worktree_clean_before_dispatch"]:
             raise ValueError("A scored 3D-05 run requires the frozen campaign and a clean worktree")
+        if campaign.get("acceptance_version") == "3d05-closure-v1":
+            _validate_frozen_inputs(campaign, scene_source, revision, profile)
         source_change = subprocess.run(["git", "diff", "--quiet", frozen.get("implementation_commit", ""), "HEAD", "--", "src", "tests"], cwd=repo)
         if source_change.returncode != 0:
             raise ValueError("3D-05 implementation differs from the frozen source commit")
