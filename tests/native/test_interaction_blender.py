@@ -53,6 +53,10 @@ def test_interaction_passes_dense_native_measurement(tmp_path):
     campaign,scene,parent=_fixtures()
     result=_validate(tmp_path,"accepted",campaign,scene,parent)
     assert result["passed"],result["errors"]
+    raw=json.loads((tmp_path/"accepted-evidence/interaction-metrics.json").read_text())
+    for role,grasp in (("baseline",40),("candidate",36)):
+        before=next(row for row in raw["samples"] if row["frame"] == grasp-.001)
+        assert before[role+"_supported_translation_error_m"] < 1e-6
 
 
 def test_actual_interaction_controls_are_detected(tmp_path):
@@ -60,4 +64,8 @@ def test_actual_interaction_controls_are_detected(tmp_path):
     for control in campaign["negative_controls"]:
         results[control]=_validate(tmp_path,control,campaign,scene,parent,control)
         assert CONTROL_EXPECTATIONS[control] <= set(results[control]["errors"]),results[control]["errors"]
+        if control in {"open_hand_attachment","oversized_handle"}:
+            # A correct tracking proxy must not conceal an invalid mesh grasp.
+            checks={item["name"]:item["passed"] for item in results[control]["checks"]}
+            assert checks["grip.translation"] and checks["grip.orientation"]
     assert validate_control_sensitivity(results)["passed"]

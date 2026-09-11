@@ -15,7 +15,7 @@ def passing_metrics():
     rows=[]
     for frame in required_sample_times(CONFIG):
         owner=expected_owner(frame,"candidate")
-        rows.append({"frame":frame,"baseline_state":expected_state(frame,"baseline"),"candidate_state":expected_state(frame,"candidate"),
+        rows.append({**{role+"_"+key:value for role in ("baseline","candidate") for key,value in {"supported_translation_error_m":0,"thumb_contact_distance_m":.002,"finger_contact_distance_m":.002,"maximum_hand_penetration_m":0,"contact_angular_coverage_degrees":190}.items()}, "frame":frame,"baseline_state":expected_state(frame,"baseline"),"candidate_state":expected_state(frame,"candidate"),
             "baseline_owner":expected_owner(frame,"baseline"),"candidate_owner":owner,
             "candidate_attachment_influence":1.0 if owner.endswith("right_hand") else 0.0,
             "candidate_grip_translation_error_m":0,"candidate_grip_orientation_error_degrees":0,
@@ -36,6 +36,8 @@ def test_passing_metrics_and_controls():
     raw=passing_metrics(); assert validate_interaction_metrics(raw,CONFIG)["passed"]
     controls={}
     mutations={
+        "open_hand_attachment":lambda value:value["samples"][-1].update(candidate_contact_angular_coverage_degrees=0),
+        "oversized_handle":lambda value:value["samples"][-1].update(candidate_maximum_hand_penetration_m=.02),
         "early_attachment":lambda value:value["samples"][0].update(candidate_attachment_influence=1),
         "attachment_teleportation":lambda value:value["attachment_discontinuities"]["candidate"].update(position_second_difference_m=.1),
         "hand_sword_sliding":lambda value:value["samples"][-1].update(candidate_grip_translation_error_m=.1),

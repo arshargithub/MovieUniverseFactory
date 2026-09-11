@@ -6,14 +6,14 @@ Can Movie Factory create and persist one scripted kinematic interaction in which
 
 ## Qualification boundary
 
-GREEN qualifies one character, the previously admitted CC0 sword asset, one right-hand grip anchor, one scripted pickup, and one timing revision. The character root remains stationary. The sword follows authored transforms and a deterministic attachment relationship; no physics simulation decides the grasp.
+GREEN qualifies one character, the previously admitted CC0 sword asset, one right-hand grip anchor, one scripted pickup with authored closure of its existing thumb/finger controls, and one timing revision. The character root remains stationary. The sword follows authored transforms and a deterministic attachment relationship; no physics simulation decides the grasp.
 
-This experiment does not qualify physical grasping, finger articulation, release or drop dynamics, moving-character pickups, arbitrary props or rigs, autonomous staging, or natural-language animation editing.
+This experiment does not qualify physical grasping, general finger articulation, release or drop dynamics, moving-character pickups, arbitrary props or rigs, autonomous staging, or natural-language animation editing.
 
 ## Frozen inputs
 
 - Character scene: accepted 3D-03.1 native scene, SHA-256 `bbf05848c30e531ca31fc4632210b8344f6f35166db9c26abe4adfa6150e2488`.
-- Sword: 3D-02 `weapon-sword.glb`, SHA-256 `8e69eb27977f8c84a9b7cd423cd5830eddcf0d07ac1d7fed1969931387015b28`, normalized to a 1.0 m longest dimension using the qualified import path.
+- Sword: 3D-02 `weapon-sword.glb`, SHA-256 `8e69eb27977f8c84a9b7cd423cd5830eddcf0d07ac1d7fed1969931387015b28`, normalized to a 1.0 m longest dimension using the qualified import path, then fitted using the explicit section normalization in `scene.json`. The source file remains unchanged. Handle X/Y scale is 0.12, guard X/Y is 0.65/0.35, blade X/Y is 0.75/0.20; guard height is reduced to 0.30 of its original height and blade height compensates to retain the 1.0 m total length. These are asset-specific geometry changes, not a claim that the original oversized handle was graspable.
 - Timeline: integer frames 1–96 at 24 fps. Fractional evaluation is required.
 - Character lower body, character root, skin, mesh, topology, weights, rest rig, lights, world, render settings, and source actions are protected.
 - The primary camera shows the complete character, support, sword, reach, lift, and hold. Dedicated side and rear contact cameras expose the right hand, handle, blade clearance, and attachment transition without the sword hiding the grip in every view.
@@ -36,21 +36,26 @@ The candidate uses the same state machine with grasp, lift, and held transitions
 
 ## Grip and attachment model
 
-`sword_01` is a semantic root located at the handle grip point. Imported sword geometry is offset under that root so the root identifies the handle consistently. The evaluated `RightHand` bone tail is the palm contact reference. At grasp it remains 0.160 m on the character-facing side of the sword root, placing the mitten against the handle surface instead of through its centre. The attachment validator measures deviation from this frozen relative offset.
+`sword_01` is a semantic root at the handle grip point. The admitted grip centre is `[0, 0.145, -0.135]` in the existing RightHand bone frame (armature-local units). The arm solver brings that point to the supported sword. The hand's local X axis becomes world up; local Y points toward the sword. Wrist orientation settles by source frame 24. From frames 16–24 the hand approaches a staging point 0.12 m in front of the handle along world -Y; it then advances toward the handle over frames 24–32. The open hand reaches its position by source frame 32, then the existing index and thumb bones close over source frames 32–40 using a quintic envelope. The final curl is 0.85 of the admitted idle-pose quaternion rotation for each existing finger control. During closure, the thumb base adds an outward -30° local-Y rotation multiplied by `sin(pi * closure)^2`, returning to the admitted final pose. This routes the thumb around the handle rather than through it. This is a bounded extension of the earlier finger-articulation non-goal, required to fulfill the original grasp brief; it does not qualify arbitrary dexterous grasping.
 
-Before grasp, the sword root is owned by the support and follows its frozen world transform. The qualified sword geometry is blade-up in world space, with its handle supported 0.15 m above the support surface. At grasp, a trusted offset-location constraint transfers ownership to the right-hand anchor. The hand reaches the existing sword transform; the sword must not move to hide a reach error. Constraint activation must preserve the sword world position and orientation. The wrist may rotate into a straight contact pose during the reach, while the sword independently retains its frozen blade-up orientation through lift and hold.
+At attachment the sword must retain its supported world position and blade-up orientation. The world offset used by the location constraint is derived from the frozen hand-local grip point, hand orientation, and armature scale. After grasp the orientation is fixed while the wrist and prop rise together. Translation error is at most 0.003 m and blade-up rotation error at most 0.5°. The same equations apply to baseline and candidate; source timing is the only revision.
 
-During `grasped`, `lifting`, and `held`, maximum sword-root translation error relative to the frozen sword-to-palm offset is 0.003 m. The sword's blade-up orientation may deviate by at most 0.5°. Hand contact inside a 0.280 m radius around the grip point is intentional; this radius admits the qualified asset's measured grip, pommel, and broad guard region. Sword geometry outside the handle-contact zone, including the blade, must remain at least 0.040 m from protected body geometry.
+Stable anchors are necessary but insufficient. Both clips must demonstrate an enclosing hand through independent measurements against evaluated sword surfaces. Thumb and finger surface samples must each approach within 0.005 m during grasp, lift, and hold. Surface samples within 0.008 m of the handle must span at least 170 degrees about its axis. Maximum sampled hand penetration is at most 0.004 m throughout the clip, including approach and closure. These gates supplement explicit Director acceptance of a visible grasp; a fist merely touching the handle cannot be accepted on anchor accuracy alone.
+
+The measurement uses all skin vertices predominantly weighted to the right hand or its finger/thumb descendants plus interior samples on their triangles (six subdivisions). Signed nearest-surface distance measures penetration against the evaluated sword mesh. Contact angles use surface hits in the admitted handle band, -0.095 to +0.065 m relative to the grip centre. This finite sampling is not an exact continuous collision proof. It is checked at all frozen times in both clips; conservative limits and complete playback review remain required. The broader 0.280 m grip-region exclusion remains only for the separate protected-body clearance check, not a permission for hand penetration.
 
 ## Contact, support, and continuity gates
 
-All distances use evaluated world-space metres.
+All distances use evaluated world-space metres. Before attachment, each sword must remain within 0.001 m of its frozen support position.
 
 | Gate | GREEN limit |
 |---|---:|
 | Initial sword support contact error | ≤ 0.010 m |
 | Grip translation error after attachment | ≤ 0.003 m |
-| Grip orientation error after attachment | ≤ 0.5° |
+| Blade-up orientation error after attachment | ≤ 0.5° |
+| Thumb and finger surface contact distance after grasp | each ≤ 0.005 m |
+| Angular contact coverage within 0.008 m of handle | ≥ 170° |
+| Sampled hand–sword penetration at every time | ≤ 0.004 m |
 | Attachment position discontinuity at grasp | ≤ 0.002 m second difference |
 | Attachment orientation discontinuity at grasp | ≤ 0.5° second difference |
 | Non-handle sword–body clearance | ≥ 0.040 m |
@@ -91,7 +96,7 @@ Outside-range character maximum vertex delta is at most 0.000001 m and RMS delta
 
 ## Dense measurement
 
-Measure every integer and half frame. Additionally measure every 1/8 frame on `[26,38]`, `[38,50]`, `[62,78]`, and around every baseline and candidate attachment/state transition. Use a 0.125-frame central difference and the physical 24 fps timeline for velocity and attachment-discontinuity calculations. Reject NaNs, non-finite matrices, missing objects, changed topology, inconsistent state ownership, or incomplete sampling.
+Measure every integer and half frame. Additionally measure every 1/8 frame on `[26,38]`, `[38,50]`, `[62,78]`, and around every baseline and candidate attachment/state transition. Use a 0.125-frame central difference and the physical 24 fps timeline for velocity and attachment-discontinuity calculations. Also probe frames 28, 36, 40, and 76 at offsets ±0.061, ±0.01, and ±0.001 frame. These off-grid probes detect location interpolation before constraint activation. Sword base-location keys use constant interpolation because their coordinate meaning changes at attachment. Reject NaNs, non-finite matrices, missing objects, changed topology, inconsistent state ownership, or incomplete sampling.
 
 ## Persistence and replay
 
@@ -112,6 +117,8 @@ Each control is a disposable `.blend` variant and must be measured through the p
 3. `hand_sword_sliding`: add relative motion after grasp; detect grip translation/orientation error.
 4. `penetration`: move or rotate the held blade into protected body geometry; detect the clearance gate.
 5. `edit_leakage`: change candidate motion outside `[28,76]`; detect character or sword preservation failure.
+6. `open_hand_attachment`: keep fingers open while the anchor still follows the sword; detect inadequate enclosure.
+7. `oversized_handle`: double handle width/thickness with the anchor relationship intact; detect hand penetration.
 
 Controls may fail additional gates. All designated failures must be observed. They never enter Director scoring and never alter the accepted candidate.
 
@@ -127,7 +134,7 @@ The Director reviews synchronized, anonymously labelled baseline/candidate playb
 6. overall preference: A, B, or tie;
 7. review duration in seconds.
 
-GREEN requires the candidate to score at least 4.0 in every dimension, improve timing/readability by at least 0.5 without regressing another dimension, be preferred, and have no major defect. Complete playback in both views is mandatory.
+GREEN requires the candidate to score at least 4.0 in every dimension, improve timing/readability by at least 0.5 without regressing another dimension, be preferred, and have no major defect. Complete playback in all three views is mandatory.
 
 ## Cost and provenance
 
@@ -143,4 +150,4 @@ Every scored package binds the character native hash, sword asset hash, campaign
 
 ## Explicit non-goals
 
-Physical grasping, finger articulation, release/drop behavior, rigid-body causality, moving-character pickups, forward locomotion, arbitrary props/skeletons, motion capture, retargeting, facial acting, cloth/hair, production rendering, natural-language planning, and unrestricted Blender Python are outside 3D-05.
+Physical grasping, general finger articulation, release/drop behavior, rigid-body causality, moving-character pickups, forward locomotion, arbitrary props/skeletons, motion capture, retargeting, facial acting, cloth/hair, production rendering, natural-language planning, and unrestricted Blender Python are outside 3D-05.

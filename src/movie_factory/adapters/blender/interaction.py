@@ -12,8 +12,10 @@ from mathutils import Matrix, Quaternion, Vector
 CONTROLS = {
     "early_attachment", "attachment_teleportation", "hand_sword_sliding",
     "penetration", "edit_leakage",
+    "open_hand_attachment", "oversized_handle",
 }
-ARM_BONES = ("RightArm", "RightForeArm", "RightHand")
+FINGER_BONES = ("RightHandIndex1", "RightHandIndex2", "RightHandIndex3", "RightHandThumb1", "RightHandThumb2")
+ARM_BONES = ("RightArm", "RightForeArm", "RightHand") + FINGER_BONES
 
 
 def _smooth(value):
@@ -68,8 +70,8 @@ def _lerp(left, right, weight):
 def _hand_target(source_time, initial, supported, held):
     if source_time <= 16:
         return initial.copy()
-    if source_time < 40:
-        return _lerp(initial, supported, (source_time-16)/24)
+    if source_time < 32:
+        return _lerp(initial, supported, (source_time-16)/16)
     if source_time < 48:
         return supported.copy()
     if source_time < 68:
@@ -78,7 +80,7 @@ def _hand_target(source_time, initial, supported, held):
     return held.copy()
 
 
-def _arm_matrices(mf, armature, initial, target, hand_direction):
+def _arm_matrices(mf, armature, initial, target, hand_rotation, grip_local):
     upper = armature.pose.bones["RightArm"]
     lower = armature.pose.bones["RightForeArm"]
     hand = armature.pose.bones["RightHand"]
@@ -87,8 +89,7 @@ def _arm_matrices(mf, armature, initial, target, hand_direction):
     base_wrist = initial[hand.name].translation
     first = (base_elbow-shoulder).length
     second = (base_wrist-base_elbow).length
-    hand_length = (initial[hand.name]@Vector((0, hand.bone.length, 0))-base_wrist).length
-    wrist = target-hand_direction.normalized()*hand_length
+    wrist = target-hand_rotation@grip_local
     direction = wrist-shoulder
     distance = direction.length
     if distance <= 1e-8 or distance >= first+second-1e-6:
@@ -104,7 +105,7 @@ def _arm_matrices(mf, armature, initial, target, hand_direction):
     desired = {name: matrix.copy() for name, matrix in initial.items()}
     desired[upper.name] = mf._orient_bone(initial[upper.name], upper, shoulder, elbow)
     desired[lower.name] = mf._orient_bone(initial[lower.name], lower, elbow, wrist)
-    desired[hand.name] = mf._orient_bone(initial[hand.name], hand, wrist, target)
+    desired[hand.name] = Matrix.LocRotScale(wrist, hand_rotation, Vector((1, 1, 1)))
     return desired
 
 
@@ -138,7 +139,7 @@ def _insert_pose(mf, armature, action, frame, desired, rest, previous, key_names
         bone.keyframe_insert(data_path="scale", frame=frame, group=bone.name)
 
 
-def _create_character_action(mf, armature, role, initial, supported, held, control):
+def _create_character_action(mf, armature, role, initial, supported, held, control, config):
     name = f"character_action_pickup_3d05_{role}_96"
     old = bpy.data.actions.get(name)
     if old:
@@ -155,11 +156,18 @@ def _create_character_action(mf, armature, role, initial, supported, held, contr
     action.use_fake_user = True
     rest = {bone.name: bone.bone.matrix_local.copy() for bone in armature.pose.bones}
     previous = {name: None for name in ARM_BONES}
-    shoulder = initial["RightArm"].translation
-    hand_bone = armature.pose.bones["RightHand"]
-    initial_anchor = initial["RightHand"]@Vector((0, hand_bone.bone.length, 0))
-    initial_hand_direction = ((initial["RightHand"]@Vector((0, armature.pose.bones["RightHand"].bone.length, 0)))-
-                              initial["RightHand"].translation).normalized()
+    grip_local = Vector(config["grasp"]["anchor_hand_local"])
+    initial_anchor = initial["RightHand"]@grip_local
+    initial_rotation = initial["RightHand"].to_quaternion()
+    # Local X is the grip axis (world up), local Y points toward the sword.
+    world_rotation = Matrix(((0, -1, 0), (0, 0, -1), (1, 0, 0)))
+    final_rotation = (armature.matrix_world.to_quaternion().inverted()@world_rotation.to_quaternion())
+    closed_bases = {}
+    for name in FINGER_BONES:
+        bone = armature.pose.bones[name]
+        closed_bases[name] = bone.bone.convert_local_to_pose(
+            initial[name], rest[name], invert=True,
+            parent_matrix=initial[bone.parent.name], parent_matrix_local=rest[bone.parent.name])
     all_names = frozenset(initial)
     _insert_pose(mf, armature, action, 1, initial, rest, {}, all_names)
     _insert_pose(mf, armature, action, 96, initial, rest, {}, all_names)
@@ -167,10 +175,28 @@ def _create_character_action(mf, armature, role, initial, supported, held, contr
         frame = 1+index*.125
         source_time = _source_time(frame, role, control)
         target = _hand_target(source_time, initial_anchor, supported, held)
-        direction_goal = (target-shoulder).normalized()
-        direction_weight = 0.0 if source_time <= 16 else _smooth(min(1.0, (source_time-16)/24))
-        hand_direction = initial_hand_direction.lerp(direction_goal, direction_weight).normalized()
-        desired = _arm_matrices(mf, armature, initial, target, hand_direction)
+        pregrasp = supported+armature.matrix_world.inverted().to_3x3()@Vector((0, -.12, 0))
+        if 16 < source_time < 24:
+            target = _lerp(initial_anchor, pregrasp, (source_time-16)/8)
+        elif 24 <= source_time < 32:
+            target = _lerp(pregrasp, supported, (source_time-24)/8)
+        rotation_weight = _smooth((source_time-16)/8)
+        hand_rotation = initial_rotation.slerp(final_rotation, rotation_weight)
+        desired = _arm_matrices(mf, armature, initial, target, hand_rotation, grip_local)
+        closure = _smooth((source_time-32)/8)
+        if control == "open_hand_attachment" and role == "candidate":
+            closure = 0.0
+        for bone in sorted(armature.pose.bones, key=lambda item: len(item.parent_recursive)):
+            if not bone.name.startswith("RightHand") or bone.name == "RightHand":
+                continue
+            basis = closed_bases.get(bone.name, Matrix.Identity(4))
+            location, rotation, scale = basis.decompose()
+            rotation = Quaternion().slerp(rotation, closure*config["grasp"]["closed_curl_fraction"])
+            if bone.name == "RightHandThumb1":
+                rotation = rotation@Quaternion((0, 1, 0), math.radians(config["grasp"]["thumb_clearance_swing_degrees"])*math.sin(math.pi*closure)**2)
+            desired[bone.name] = bone.bone.convert_local_to_pose(
+                Matrix.LocRotScale(location, rotation, scale), rest[bone.name],
+                parent_matrix=desired[bone.parent.name], parent_matrix_local=rest[bone.parent.name])
         _insert_pose(mf, armature, action, frame, desired, rest, previous)
     for curve in mf.action_channels(action):
         for key in curve.keyframe_points:
@@ -236,6 +262,41 @@ def _create_sword(mf, config):
     top = [obj for obj in imported if obj.parent == root]
     grip = Vector(config["sword"]["supported_grip_world_m"])
     bpy.context.view_layer.update()
+    # Qualified asset-specific normalization preserves the silhouette of the
+    # blade/guard while fitting the handle to the character's existing hand.
+    low, high = mf.asset_world_bounds(imported)
+    centre = Vector(((low[0]+high[0])/2, (low[1]+high[1])/2, low[2]))
+    normalization = config["sword"]["normalization"]
+    guard_bottom, blade_bottom = normalization["section_heights_m"]
+    guard_height = (blade_bottom-guard_bottom)*normalization["guard_height_scale"]
+    for obj in imported:
+        if obj.type != "MESH":
+            continue
+        world, inverse = obj.matrix_world.copy(), obj.matrix_world.inverted()
+        original = [world@v.co-centre for v in obj.data.vertices]
+        sections = {}
+        for poly in obj.data.polygons:
+            minimum = min(original[i].z for i in poly.vertices)
+            maximum = max(original[i].z for i in poly.vertices)
+            section = ("blade" if minimum >= blade_bottom-1e-5 else
+                       "guard" if minimum >= guard_bottom-1e-5 and maximum <= blade_bottom+1e-5 else "handle")
+            for i in poly.vertices:
+                if i in sections and sections[i] != section:
+                    raise ValueError("Qualified sword section topology changed")
+                sections[i] = section
+        for vertex in obj.data.vertices:
+            point = original[vertex.index].copy()
+            sx, sy = normalization[sections[vertex.index]+"_xy_scale"]
+            if config.get("failure_control") == "oversized_handle" and sections[vertex.index] == "handle":
+                sx *= 2.0; sy *= 2.0
+            point.x *= sx; point.y *= sy
+            if point.z > blade_bottom:
+                point.z = guard_bottom+guard_height+(point.z-blade_bottom)*(1-guard_bottom-guard_height)/(1-blade_bottom)
+            elif point.z > guard_bottom:
+                point.z = guard_bottom+(point.z-guard_bottom)*normalization["guard_height_scale"]
+            vertex.co = inverse@(centre+point)
+        obj.data.update()
+    bpy.context.view_layer.update()
     low, high = mf.asset_world_bounds(imported)
     desired_bottom = grip.z-config["sword"]["grip_offset_from_geometry_base_m"]
     delta = Vector((grip.x-(low[0]+high[0])/2, grip.y-(low[1]+high[1])/2, desired_bottom-low[2]))
@@ -252,6 +313,8 @@ def _create_sword(mf, config):
         if image.users == 0:
             bpy.data.images.remove(image)
     root["mf_grip_anchor"] = "semantic_root"
+    root["mf_hand_grip_local_json"] = json.dumps(config["grasp"]["anchor_hand_local"])
+    root["mf_section_normalization_json"] = json.dumps(normalization)
     root["mf_handle_contact_radius_m"] = config["sword"]["handle_contact_radius_m"]
     root["mf_hand_surface_offset_world_json"] = json.dumps(config["sword"]["hand_surface_offset_world_m"])
     root["mf_supported_location_world_json"] = json.dumps(list(grip))
@@ -291,7 +354,9 @@ def _create_sword_action(mf, sword, armature, role, control):
         sword.keyframe_insert(data_path="rotation_quaternion", frame=frame)
     for curve in mf.action_channels(action):
         for key in curve.keyframe_points:
-            key.interpolation = "CONSTANT" if "influence" in curve.data_path else "LINEAR"
+            # Location changes coordinate meaning at attachment. Interpolating
+            # that change before the constraint switches causes a subframe jump.
+            key.interpolation = "CONSTANT" if "influence" in curve.data_path or curve.data_path == "location" else "LINEAR"
     return action
 
 
@@ -315,18 +380,21 @@ def build(mf, out, config, profile, role="candidate", control=None):
     held_world = Vector(config["sword"]["held_grip_world_m"])
     if control == "penetration":
         held_world = Vector((-0.05, 0.02, 1.05))
-    hand_surface_offset_world = Vector(config["sword"]["hand_surface_offset_world_m"])
-    hand_surface_offset_local = armature.matrix_world.inverted().to_3x3()@hand_surface_offset_world
-    # The arm solver targets the hand tail/palm contact point.  The sword root
-    # remains one frozen surface offset away on the opposite side of the palm.
-    supported = armature.matrix_world.inverted()@supported_world+hand_surface_offset_local
-    held = armature.matrix_world.inverted()@held_world+hand_surface_offset_local
-    # Validate both endpoints before creating any persistent action.
-    shoulder = initial["RightArm"].translation
-    _arm_matrices(mf, armature, initial, supported, (supported-shoulder).normalized())
-    _arm_matrices(mf, armature, initial, held, (held-shoulder).normalized())
-    baseline = _create_character_action(mf, armature, "baseline", initial, supported, held, None)
-    candidate = _create_character_action(mf, armature, "candidate", initial, supported, held, control)
+    grip_local = Vector(config["grasp"]["anchor_hand_local"])
+    supported = armature.matrix_world.inverted()@supported_world
+    held = armature.matrix_world.inverted()@held_world
+    world_rotation = Matrix(((0, -1, 0), (0, 0, -1), (1, 0, 0)))
+    rotation = armature.matrix_world.to_quaternion().inverted()@world_rotation.to_quaternion()
+    _arm_matrices(mf, armature, initial, supported, rotation, grip_local)
+    _arm_matrices(mf, armature, initial, held, rotation, grip_local)
+    baseline = _create_character_action(mf, armature, "baseline", initial, supported, held, None, config)
+    candidate = _create_character_action(mf, armature, "candidate", initial, supported, held, control, config)
+    # Tail-to-grip offset is derived from the admitted hand frame, not fitted to
+    # make an anchor error disappear after the sword has moved.
+    hand_tail = Vector((0, armature.pose.bones["RightHand"].bone.length, 0))
+    offset = armature.matrix_world.to_3x3()@(rotation@(hand_tail-grip_local))
+    config = {**config, "sword": {**config["sword"], "hand_surface_offset_world_m": list(offset)}}
+    config["failure_control"] = control
     _setup_support(mf, config)
     sword, imported = _create_sword(mf, config)
     location_constraint = sword.constraints.new("COPY_LOCATION")
@@ -442,12 +510,14 @@ def _sample(mf, role, frame, with_geometry=True):
         "grip_translation_error_m": ((hand_matrix.translation-sword_matrix.translation)-expected_hand_offset).length,
         "grip_orientation_error_degrees": _quat_angle_degrees(sword_matrix.to_quaternion(), supported_orientation),
         "sword_translation": list(sword_matrix.translation),
+        "supported_translation_error_m": (sword_matrix.translation-Vector(json.loads(sword["mf_supported_location_world_json"]))).length,
         "sword_quaternion": list(sword_matrix.to_quaternion()),
         "character_root_translation": list(bpy.data.objects["character_01"].matrix_world.translation),
     }
     if with_geometry:
         result["character_points"] = _character_points(mf, mesh)
         result["sword_points"] = _sword_points(sword)
+        result["grasp_geometry"] = _grasp_geometry(mesh, result["character_points"], sword)
     return result
 
 
@@ -461,6 +531,9 @@ def _times(campaign):
     values = {1+i*.5 for i in range(191)}
     for low, high in sampling["dense_windows"]:
         values.update(low+i*.125 for i in range(round((high-low)/.125)+1))
+    for frame in (28, 36, 40, 76):
+        for offset in sampling.get("boundary_probe_offsets", []):
+            values.add(round(frame+offset, 9))
     return sorted(values)
 
 
@@ -485,6 +558,72 @@ def _nearest_body_clearance(mesh, character, sword, grip, handle_radius):
     return min(distances) if distances else math.inf
 
 
+def _grasp_geometry(mesh, character, sword):
+    """Measure evaluated skin against the actual prop surface, not its anchor."""
+    from mathutils.bvhtree import BVHTree
+    deps = bpy.context.evaluated_depsgraph_get()
+    vertices, faces = [], []
+    for obj in bpy.context.scene.objects:
+        if obj.type != "MESH" or obj.get("mf_entity") != "sword_01":
+            continue
+        evaluated = obj.evaluated_get(deps)
+        data = evaluated.to_mesh()
+        try:
+            offset = len(vertices)
+            vertices.extend(evaluated.matrix_world@v.co for v in data.vertices)
+            faces.extend(tuple(offset+i for i in p.vertices) for p in data.polygons)
+        finally:
+            evaluated.to_mesh_clear()
+    tree = BVHTree.FromPolygons(vertices, faces)
+    family = {}
+    for v in mesh.data.vertices:
+        weights = sorted(v.groups, key=lambda g:g.weight, reverse=True)
+        if not weights:
+            continue
+        name = mesh.vertex_groups[weights[0].group].name
+        if name.startswith("RightHand"):
+            family[v.index] = "thumb" if "Thumb" in name else "fingers" if "Index" in name else "palm"
+    # Include face interiors: vertex-only tests can miss an intersection through
+    # a large low-poly palm face. Subdivision is for measurement, not rendering.
+    samples = [(character[i], group) for i, group in family.items()]
+    mesh.data.calc_loop_triangles()
+    for tri in mesh.data.loop_triangles:
+        ids = tuple(tri.vertices)
+        if not all(i in family for i in ids):
+            continue
+        group = max(sorted(set(family[i] for i in ids)), key=lambda g:sum(family[i] == g for i in ids))
+        a, b, c = (character[i] for i in ids)
+        for u in range(1, 6):
+            for v in range(1, 6-u):
+                samples.append((a*(1-(u+v)/6)+b*(u/6)+c*(v/6), group))
+    errors = {"thumb": [], "fingers": [], "palm": []}
+    penetration, angles = [], []
+    worst_group = "none"
+    worst_penetration = 0.0
+    grip = sword.matrix_world.translation
+    for point, group in samples:
+        nearest = tree.find_nearest(point)
+        if nearest is None:
+            continue
+        surface, normal, _, distance = nearest
+        signed = (point-surface).dot(normal)
+        if -signed > worst_penetration:
+            worst_group = group
+            worst_penetration = -signed
+        penetration.append(max(0.0, -signed))
+        if -.095 <= surface.z-grip.z <= .065:
+            errors[group].append(distance)
+            if distance <= .008:
+                angles.append(math.atan2(surface.y-grip.y, surface.x-grip.x) % (2*math.pi))
+    angles.sort()
+    gaps = [b-a for a,b in zip(angles, angles[1:])] + ([angles[0]+2*math.pi-angles[-1]] if angles else [])
+    coverage = math.degrees(2*math.pi-max(gaps)) if gaps else 0.0
+    return {"thumb_contact_distance_m": min(errors["thumb"], default=1.0),
+            "finger_contact_distance_m": min(errors["fingers"], default=1.0),
+            "maximum_hand_penetration_m": max(penetration, default=0.0),
+            "contact_angular_coverage_degrees": coverage, "surface_sample_count":len(samples), "worst_penetration_group":worst_group}
+
+
 def evidence(mf, out, campaign, profile, render_frames=False):
     scene = bpy.context.scene
     if scene.get("mf_experiment_id") != "3D-05":
@@ -506,6 +645,10 @@ def evidence(mf, out, campaign, profile, render_frames=False):
         sword_orientation_delta = _quat_angle_degrees(Quaternion(base["sword_quaternion"]), Quaternion(candidate["sword_quaternion"]))
         grip = Vector(candidate["sword_translation"])
         rows.append({
+            "baseline_supported_translation_error_m": base["supported_translation_error_m"],
+            "candidate_supported_translation_error_m": candidate["supported_translation_error_m"],
+            **{role+"_"+key:value for role, data in (("baseline",base),("candidate",candidate))
+               for key,value in data["grasp_geometry"].items()},
             "frame": frame, "baseline_state": base["state"], "candidate_state": candidate["state"],
             "baseline_owner": base["owner"], "candidate_owner": candidate["owner"],
             "candidate_attachment_influence": candidate["attachment_influence"],
@@ -613,3 +756,62 @@ def preview(mf, out, profile, frames):
             bpy.ops.render.render(write_still=True)
             artifacts.append(relative)
     return artifacts
+
+
+def grip_diagnostic(mf, out, frame=40):
+    """Read evaluated fixture geometry without changing the source asset."""
+    select_role(mf, "candidate")
+    _set_time(float(frame))
+    armature = bpy.data.objects["character_01_armature"]
+    mesh = bpy.data.objects["character_01_mesh"]
+    hand = armature.pose.bones["RightHand"]
+    world_to_hand = (armature.matrix_world@hand.matrix).inverted()
+    groups = {g.index:g.name for g in mesh.vertex_groups if g.name.startswith("RightHand")}
+    indices = [v.index for v in mesh.data.vertices if any(g.group in groups and g.weight > .01 for g in v.groups)]
+    points = _character_points(mf, mesh)
+    faces = [list(p.vertices) for p in mesh.data.polygons if all(i in indices for i in p.vertices)]
+    sword = bpy.data.objects["sword_01"]
+    sword_points = _sword_points(sword)
+    components = []
+    for obj in bpy.context.scene.objects:
+        if obj.type != "MESH" or obj.get("mf_entity") != "sword_01":
+            continue
+        adjacency = {v.index:set() for v in obj.data.vertices}
+        for edge in obj.data.edges:
+            a,b = edge.vertices
+            adjacency[a].add(b); adjacency[b].add(a)
+        remaining = set(adjacency)
+        while remaining:
+            todo = [remaining.pop()]; found = set(todo)
+            while todo:
+                for neighbor in adjacency[todo.pop()]:
+                    if neighbor in remaining:
+                        remaining.remove(neighbor); found.add(neighbor); todo.append(neighbor)
+            world = [obj.matrix_world@obj.data.vertices[i].co for i in found]
+            components.append({"vertices":len(found),"min":[min(p[a] for p in world) for a in range(3)],"max":[max(p[a] for p in world) for a in range(3)]})
+    payload = {
+        "bones": [b.name for b in armature.pose.bones],
+        "hand_bone_length": hand.bone.length,
+        "hand_world_matrix": [list(row) for row in world_to_hand.inverted()],
+        "hand_vertices_local": {str(i): list(world_to_hand@points[i]) for i in indices},
+        "hand_faces": faces,
+        "grasp_geometry": _grasp_geometry(mesh, points, sword),
+        "hand_weights": {str(i): {mesh.vertex_groups[g.group].name:g.weight for g in mesh.data.vertices[i].groups} for i in indices},
+        "hand_bones": {b.name: {"matrix_local": [list(row) for row in b.bone.matrix_local], "pose_matrix": [list(row) for row in b.matrix], "basis": [list(row) for row in b.matrix_basis], "length": b.bone.length, "parent":b.parent.name if b.parent else None} for b in armature.pose.bones if b.name.startswith("RightHand")},
+        "sword_vertices_world": [list(p) for p in sword_points],
+        "sword_root_world": list(sword.matrix_world.translation),
+        "sword_components":components,
+        "provider_calls": 0,
+    }
+    bases = {name: armature.pose.bones[name].matrix_basis.copy() for name in FINGER_BONES}
+    armature.animation_data.action = None
+    variants = {}
+    for factor in (.4, .55, .7, .85, 1.0):
+        for name, basis in bases.items():
+            loc, rot, scale = basis.decompose()
+            armature.pose.bones[name].matrix_basis = Matrix.LocRotScale(loc, Quaternion().slerp(rot, factor), scale)
+        bpy.context.view_layer.update()
+        fitted = _character_points(mf, mesh)
+        variants[str(factor)] = {str(i):list(world_to_hand@fitted[i]) for i in indices}
+    payload["finger_curl_variants"] = variants
+    mf.write_json(out/"grip-diagnostic.json", payload)

@@ -1633,7 +1633,7 @@ def main():
             build_external(job["plan"], profile)
         elif mode=="build_character":
             build_character(job["plan"],profile)
-        elif mode in {"revise","revise_external","revise_character","build_performance","build_performance_control","build_interaction","build_interaction_control","interaction_checkpoint","interaction_evidence","interaction_preview","inspect","render","evaluator_corrupt","character_temporal","performance_evidence"}:
+        elif mode in {"revise","revise_external","revise_character","build_performance","build_performance_control","build_interaction","build_interaction_control","interaction_checkpoint","interaction_evidence","interaction_preview","interaction_grip_diagnostic","inspect","render","evaluator_corrupt","character_temporal","performance_evidence"}:
             native=Path(job["parent_native"])
             if native.resolve()==(out/"scene.blend").resolve():
                 raise ValueError("Parent native may never be overwritten")
@@ -1674,6 +1674,10 @@ def main():
                     status["artifacts"].extend(
                         f"frames/{role}/{view}/frame-{frame:04d}.png"
                         for role in ("baseline","candidate") for view in job["campaign"]["director_gate"]["views"] for frame in range(1,97))
+            elif mode=="interaction_grip_diagnostic":
+                interaction=load_interaction()
+                interaction.grip_diagnostic(sys.modules[__name__],out,job.get("frame",40))
+                status["artifacts"].append("grip-diagnostic.json")
             elif mode=="interaction_preview":
                 interaction=load_interaction()
                 status["artifacts"].extend(interaction.preview(sys.modules[__name__],out,profile,job["frames"]))

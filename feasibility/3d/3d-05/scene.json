@@ -17,24 +17,114 @@
     "target_longest_m": 1.0,
     "grip_offset_from_geometry_base_m": 0.15,
     "handle_contact_radius_m": 0.28,
-    "hand_surface_offset_world_m": [0.16, 0.0, 0.0],
-    "supported_grip_world_m": [-0.60, 0.08, 0.95],
-    "held_grip_world_m": [-0.55, -0.08, 1.25]
+    "supported_grip_world_m": [
+      -0.6,
+      0.08,
+      0.95
+    ],
+    "held_grip_world_m": [
+      -0.55,
+      -0.08,
+      1.25
+    ],
+    "normalization": {
+      "section_heights_m": [
+        0.224544,
+        0.383278
+      ],
+      "guard_height_scale": 0.3,
+      "handle_xy_scale": [
+        0.12,
+        0.12
+      ],
+      "guard_xy_scale": [
+        0.65,
+        0.35
+      ],
+      "blade_xy_scale": [
+        0.75,
+        0.2
+      ]
+    }
   },
   "support": {
     "id": "sword_support_01",
-    "dimensions_m": [0.30, 0.30, 0.80],
-    "position_m": [-0.60, 0.08, 0.40]
+    "dimensions_m": [
+      0.3,
+      0.3,
+      0.8
+    ],
+    "position_m": [
+      -0.6,
+      0.08,
+      0.4
+    ]
   },
   "timeline": {
     "fps": 24,
     "frame_start": 1,
     "frame_end": 96,
-    "baseline_transitions": {"reach": 16, "grasp": 40, "lift": 48, "held": 68}
+    "baseline_transitions": {
+      "reach": 16,
+      "grasp": 40,
+      "lift": 48,
+      "held": 68
+    }
   },
   "cameras": [
-    {"id": "interaction_camera_primary", "view": "primary", "position": [3.0, -5.2, 2.3], "target": [-0.25, 0.02, 1.00], "lens_mm": 55},
-    {"id": "interaction_camera_side", "view": "side", "position": [-0.60, -3.2, 1.65], "target": [-0.58, 0.02, 1.08], "lens_mm": 72},
-    {"id": "interaction_camera_rear", "view": "rear", "position": [0.15, 1.65, 0.90], "target": [-0.58, 0.00, 1.08], "lens_mm": 55}
-  ]
+    {
+      "id": "interaction_camera_primary",
+      "view": "primary",
+      "position": [
+        3.0,
+        -5.2,
+        2.3
+      ],
+      "target": [
+        -0.25,
+        0.02,
+        1.0
+      ],
+      "lens_mm": 55
+    },
+    {
+      "id": "interaction_camera_side",
+      "view": "side",
+      "position": [
+        -0.6,
+        -3.2,
+        1.65
+      ],
+      "target": [
+        -0.58,
+        0.02,
+        1.08
+      ],
+      "lens_mm": 72
+    },
+    {
+      "id": "interaction_camera_rear",
+      "view": "rear",
+      "position": [
+        0.15,
+        1.65,
+        0.9
+      ],
+      "target": [
+        -0.58,
+        0.0,
+        1.08
+      ],
+      "lens_mm": 55
+    }
+  ],
+  "grasp": {
+    "anchor_hand_local": [
+      0,
+      0.145,
+      -0.135
+    ],
+    "closed_curl_fraction": 0.85,
+    "thumb_clearance_swing_degrees": -30
+  }
 }

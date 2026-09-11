@@ -45,6 +45,9 @@ def required_sample_times(config:dict)->list[float]:
     step=sampling["dense_step_frames"]
     for low,high in sampling["dense_windows"]:
         values.update(round(low+i*step,9) for i in range(round((high-low)/step)+1))
+    for frame in (28,36,40,76):
+        for offset in sampling.get("boundary_probe_offsets",[]):
+            values.add(round(frame+offset,9))
     return sorted(value for value in values if start<=value<=end)
 
 

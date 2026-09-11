@@ -18,6 +18,8 @@ CONTROL_EXPECTATIONS = {
     "hand_sword_sliding": {"grip.translation"},
     "penetration": {"clearance.body"},
     "edit_leakage": {"preservation.outside_character_max", "preservation.outside_sword_translation"},
+    "open_hand_attachment": {"grasp.candidate.enclosure"},
+    "oversized_handle": {"grasp.candidate.penetration"},
 }
 
 
@@ -48,6 +50,20 @@ def validate_interaction_metrics(raw: dict, config: dict) -> dict:
     numeric = [row.get(key) for row in rows for key in numeric_keys]
     _check(checks, "sampling.finite", bool(rows) and all(type(value) in {int, float} and math.isfinite(value) for value in numeric))
     if rows:
+        for role in ("baseline", "candidate"):
+            held_rows = [row for row in rows if expected_owner(row["frame"], role).endswith("right_hand")]
+            supported_rows = [row for row in rows if expected_owner(row["frame"], role) == "sword_support_01"]
+            stationary = max((row.get(role+"_supported_translation_error_m", math.inf) for row in supported_rows), default=math.inf)
+            _check(checks, f"support.{role}.stationary", stationary <= thresholds["maximum_supported_translation_error_m"], stationary)
+            for metric in ("supported_translation_error_m", "thumb_contact_distance_m", "finger_contact_distance_m", "maximum_hand_penetration_m", "contact_angular_coverage_degrees"):
+                _check(checks, f"grasp.{role}.finite.{metric}", all(type(row.get(role+"_"+metric)) in (int,float) and math.isfinite(row[role+"_"+metric]) for row in rows))
+            for part in ("thumb", "finger"):
+                distance = max((row.get(role+"_"+part+"_contact_distance_m", math.inf) for row in held_rows), default=math.inf)
+                _check(checks, f"grasp.{role}.{part}_contact", distance <= thresholds["maximum_digit_contact_distance_m"], distance)
+            coverage = min((row.get(role+"_contact_angular_coverage_degrees", 0.0) for row in held_rows), default=0.0)
+            _check(checks, f"grasp.{role}.enclosure", coverage >= thresholds["minimum_contact_angular_coverage_degrees"], coverage)
+            penetration = max((row.get(role+"_maximum_hand_penetration_m", math.inf) for row in rows), default=math.inf)
+            _check(checks, f"grasp.{role}.penetration", penetration <= thresholds["maximum_hand_penetration_m"], penetration)
         _check(checks, "states.sequence", all(row["candidate_state"] == expected_state(row["frame"], "candidate") and
                                                row["baseline_state"] == expected_state(row["frame"], "baseline") for row in rows))
         _check(checks, "ownership.single", all(row["candidate_owner"] == expected_owner(row["frame"], "candidate") and

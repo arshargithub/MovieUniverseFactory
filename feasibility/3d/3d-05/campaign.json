@@ -1,5 +1,5 @@
 {
-  "acceptance_version": "3d05-gates-v2-surface-contact",
+  "acceptance_version": "3d05-gates-v3-enclosing-grasp",
   "baseline": {
     "baseline_transitions": {
       "grasp": 40,
@@ -23,7 +23,7 @@
     "timeline_frame_end": 96,
     "timeline_frame_start": 1
   },
-  "campaign_status": "FROZEN_FOR_SCORED_CAMPAIGN",
+  "campaign_status": "DEVELOPMENT_GRASP_REPAIR",
   "director_gate": {
     "candidate_must_not_regress_other_dimensions": true,
     "candidate_preference_required": true,
@@ -48,13 +48,23 @@
     "attachment_teleportation",
     "hand_sword_sliding",
     "penetration",
-    "edit_leakage"
+    "edit_leakage",
+    "open_hand_attachment",
+    "oversized_handle"
   ],
   "provider_budget": {
     "maximum_known_api_cost_usd": 0.0,
     "maximum_provider_calls": 0
   },
   "sampling": {
+    "boundary_probe_offsets": [
+      -0.061,
+      -0.01,
+      -0.001,
+      0.001,
+      0.01,
+      0.061
+    ],
     "checkpoints": {
       "baseline": [
         32,
@@ -97,8 +107,12 @@
     "grip_orientation_error_degrees": 0.5,
     "grip_translation_error_m": 0.003,
     "maximum_character_rms_half_frame_step_m": 0.18,
+    "maximum_digit_contact_distance_m": 0.005,
+    "maximum_hand_penetration_m": 0.004,
+    "maximum_supported_translation_error_m": 0.001,
     "maximum_sword_half_frame_step_m": 0.08,
     "minimum_blade_body_clearance_m": 0.04,
+    "minimum_contact_angular_coverage_degrees": 170,
     "minimum_held_support_separation_m": 0.25,
     "minimum_lifting_support_separation_m": 0.02,
     "outside_character_max_vertex_delta_m": 1e-06,
