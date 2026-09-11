@@ -6,7 +6,7 @@ import pytest
 from jsonschema import Draft202012Validator
 
 from movie_factory.performance import edit_envelope,repeated_source_frame,required_sample_times,validate_director_review
-from movie_factory.performance_controller import _metric_identity
+from movie_factory.performance_controller import _metric_identity,_write_review
 from movie_factory.validators.performance import (inject_performance_control,protected_snapshot_flags,
                                                   validate_control_sensitivity,validate_performance_metrics)
 
@@ -103,3 +103,19 @@ def test_replay_geometry_identity_ignores_render_bookkeeping_only():
     assert _metric_identity(measured)==_metric_identity(replay)
     replay["samples"][0]["rms"]=.01
     assert _metric_identity(measured)!=_metric_identity(replay)
+
+
+def test_review_player_embeds_executable_frame_data(tmp_path):
+    run_dir=tmp_path/"run"
+    for role in ("baseline","candidate"):
+        frames=run_dir/"evidence/frames"/role; frames.mkdir(parents=True)
+        for frame in range(1,97):
+            (frames/f"frame-{frame:04d}.png").write_bytes(b"png")
+    assignment={"labels":{"A":"candidate","B":"baseline"}}
+    source=_write_review(run_dir,assignment).read_text()
+    assert "&quot;" not in source
+    encoded=source.split("<script>const frames=",1)[1].split(",images=",1)[0]
+    frame_sets=json.loads(encoded)
+    assert frame_sets["A"][0]=="frames/A/frame-0001.png"
+    assert frame_sets["B"][-1]=="frames/B/frame-0096.png"
+    assert _write_review(run_dir,assignment).is_file()

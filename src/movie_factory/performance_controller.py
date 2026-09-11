@@ -41,8 +41,14 @@ def _blind_assignment(package_id):
     payload["blind_assignment_id"]=content_id(payload); return payload
 
 
-def _write_review(run_dir,assignment):
-    review=run_dir/"review"; (review/"frames/A").mkdir(parents=True); (review/"frames/B").mkdir(parents=True)
+def _script_json(value):
+    """Serialize data for a JavaScript expression without HTML entity escaping."""
+    return (json.dumps(value,separators=(",",":"),ensure_ascii=False)
+            .replace("<","\\u003c").replace("\u2028","\\u2028").replace("\u2029","\\u2029"))
+
+
+def _write_review(run_dir,assignment,repair_note=None):
+    review=run_dir/"review"; (review/"frames/A").mkdir(parents=True,exist_ok=True); (review/"frames/B").mkdir(parents=True,exist_ok=True)
     for label,role in assignment["labels"].items():
         for source in sorted((run_dir/"evidence/frames"/role).glob("frame-*.png")):
             shutil.copy2(source,review/"frames"/label/source.name)
@@ -51,13 +57,14 @@ def _write_review(run_dir,assignment):
         frames=[f"frames/{label}/frame-{frame:04d}.png" for frame in range(1,97)]
         panels.append(f'<section><h2>Clip {label}</h2><img data-label="{label}" src="{frames[0]}" alt="Anonymous run clip {label}"></section>')
     frame_sets={label:[f"frames/{label}/frame-{frame:04d}.png" for frame in range(1,97)] for label in ("A","B")}
+    repair_banner=(f'<p class="repair">{html.escape(repair_note)}</p>' if repair_note else "")
     page=f'''<!doctype html><meta charset="utf-8"><title>3D-04 blinded synchronized review</title>
 <style>body{{font:16px system-ui;margin:2rem;background:#171717;color:#eee}}main{{display:grid;grid-template-columns:1fr 1fr;gap:1rem}}section{{background:#242424;padding:1rem;border-radius:.5rem}}img{{width:100%;background:#333}}input{{width:min(700px,70vw)}}.notice{{color:#ffd479}}</style>
-<h1>3D-04 anonymous A/B run review</h1><p class="notice">Watch the complete synchronized clips. One clip contains a timeline-local edit on frames 40–70. Labels do not reveal the mapping.</p>
+<h1>3D-04 anonymous A/B run review</h1>{repair_banner}<p class="notice">Watch the complete synchronized clips. One clip contains a timeline-local edit on frames 40–70. Labels do not reveal the mapping.</p>
 <p><button type="button" id="toggle">Pause</button> <label>Frame <input id="frame" type="range" min="0" max="95" value="0"></label> <output id="number">1</output></p>
 <main>{''.join(panels)}</main>
 <h2>Frozen questions</h2><ol><li>Run readability for A and B, 1–5 in 0.5 increments.</li><li>Foot-contact quality for A and B, 1–5 in 0.5 increments.</li><li>Transition smoothness for A and B, 1–5 in 0.5 increments.</li><li>Concrete visible defects.</li><li>Overall preference: A, B, or tie.</li></ol>
-<script>const frames={html.escape(json.dumps(frame_sets))},images=[...document.querySelectorAll('img[data-label]')],slider=document.querySelector('#frame'),number=document.querySelector('#number'),button=document.querySelector('#toggle');let index=0,playing=true;function show(value){{index=Number(value);images.forEach(image=>image.src=frames[image.dataset.label][index]);slider.value=index;number.value=index+1}}slider.oninput=()=>{{playing=false;button.textContent='Play';show(slider.value)}};button.onclick=()=>{{playing=!playing;button.textContent=playing?'Pause':'Play'}};setInterval(()=>{{if(playing)show((index+1)%96)}},1000/24);</script>'''
+<script>const frames={_script_json(frame_sets)},images=[...document.querySelectorAll('img[data-label]')],slider=document.querySelector('#frame'),number=document.querySelector('#number'),button=document.querySelector('#toggle');let index=0,playing=true;function show(value){{index=Number(value);images.forEach(image=>image.src=frames[image.dataset.label][index]);slider.value=index;number.value=index+1}}slider.oninput=()=>{{playing=false;button.textContent='Play';show(slider.value)}};button.onclick=()=>{{playing=!playing;button.textContent=playing?'Pause':'Play'}};setInterval(()=>{{if(playing)show((index+1)%96)}},1000/24);</script>'''
     (review/"index.html").write_text(page)
     return review/"index.html"
 
