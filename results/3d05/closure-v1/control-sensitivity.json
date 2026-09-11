@@ -1,0 +1,392 @@
+{
+  "checks": [
+    {
+      "details": [
+        "attachment_teleportation",
+        "blade_face_crossing",
+        "dual_ownership",
+        "early_attachment",
+        "edit_leakage",
+        "elbow_skin_distortion",
+        "hand_support_penetration",
+        "hand_sword_sliding",
+        "locked_forearm_roll",
+        "missing_attention",
+        "missing_ownership",
+        "open_hand_attachment",
+        "oversized_handle",
+        "penetration",
+        "relative_prop_rotation",
+        "rigid_lift",
+        "thumb_down_grasp",
+        "wrist_only_lift"
+      ],
+      "name": "controls.exact_set",
+      "passed": true
+    },
+    {
+      "details": {
+        "expected_errors": [
+          "ownership.influence"
+        ],
+        "observed_errors": [
+          "ownership.candidate.evaluated_owner",
+          "ownership.influence"
+        ]
+      },
+      "name": "controls.early_attachment",
+      "passed": true
+    },
+    {
+      "details": {
+        "expected_errors": [
+          "attachment.candidate.position_continuity"
+        ],
+        "observed_errors": [
+          "attachment.candidate.position_continuity",
+          "continuity.sword",
+          "preservation.outside_sword_translation",
+          "support.candidate.stationary",
+          "surface.candidate.containment",
+          "surface.candidate.head_comfort",
+          "surface.candidate.intersections"
+        ]
+      },
+      "name": "controls.attachment_teleportation",
+      "passed": true
+    },
+    {
+      "details": {
+        "expected_errors": [
+          "grip.translation"
+        ],
+        "observed_errors": [
+          "attachment.candidate.evaluated_grip_orientation_error_degrees",
+          "attachment.candidate.evaluated_grip_translation_error_m",
+          "grasp.candidate.enclosure",
+          "grasp.candidate.finger_contact",
+          "grasp.candidate.penetration",
+          "grip.orientation",
+          "grip.translation",
+          "ownership.candidate.evaluated_owner",
+          "ownership.influence",
+          "preservation.outside_sword_orientation",
+          "preservation.outside_sword_translation",
+          "support.held_separation",
+          "surface.candidate.guard_body",
+          "surface.candidate.handle_body"
+        ]
+      },
+      "name": "controls.hand_sword_sliding",
+      "passed": true
+    },
+    {
+      "details": {
+        "expected_errors": [
+          "clearance.body"
+        ],
+        "observed_errors": [
+          "anatomy.baseline.attached_wrist_swing",
+          "anatomy.baseline.wrist_swing",
+          "anatomy.candidate.attached_wrist_swing",
+          "anatomy.candidate.wrist_swing",
+          "clearance.body",
+          "motion.baseline.elbow_flexion",
+          "motion.baseline.elbow_skin",
+          "motion.baseline.forearm_pitch",
+          "motion.baseline.lift_elbow_skin",
+          "motion.candidate.elbow_flexion",
+          "motion.candidate.elbow_skin",
+          "motion.candidate.forearm_pitch",
+          "motion.candidate.lift_elbow_skin",
+          "support.held_separation",
+          "support.lifting_separation",
+          "surface.baseline.blade_body",
+          "surface.baseline.containment",
+          "surface.baseline.guard_body",
+          "surface.baseline.handle_body",
+          "surface.baseline.head_comfort",
+          "surface.baseline.intersections",
+          "surface.candidate.blade_body",
+          "surface.candidate.containment",
+          "surface.candidate.guard_body",
+          "surface.candidate.handle_body",
+          "surface.candidate.head_comfort",
+          "surface.candidate.intersections"
+        ]
+      },
+      "name": "controls.penetration",
+      "passed": true
+    },
+    {
+      "details": {
+        "expected_errors": [
+          "preservation.outside_character_max",
+          "preservation.outside_sword_translation"
+        ],
+        "observed_errors": [
+          "attachment.candidate.evaluated_grip_orientation_error_degrees",
+          "attachment.candidate.evaluated_grip_translation_error_m",
+          "boundary.28.character_velocity",
+          "boundary.76.sword_velocity",
+          "grasp.candidate.penetration",
+          "grip.orientation",
+          "grip.translation",
+          "ownership.candidate.evaluated_owner",
+          "ownership.influence",
+          "preservation.outside_character_max",
+          "preservation.outside_character_rms",
+          "preservation.outside_sword_orientation",
+          "preservation.outside_sword_translation",
+          "states.sequence",
+          "support.held_separation",
+          "surface.candidate.containment",
+          "surface.candidate.guard_body",
+          "surface.candidate.handle_body",
+          "surface.candidate.intersections"
+        ]
+      },
+      "name": "controls.edit_leakage",
+      "passed": true
+    },
+    {
+      "details": {
+        "expected_errors": [
+          "grasp.candidate.enclosure"
+        ],
+        "observed_errors": [
+          "grasp.candidate.enclosure",
+          "grasp.candidate.finger_contact",
+          "grasp.candidate.thumb_contact",
+          "preservation.outside_character_max",
+          "preservation.outside_character_rms"
+        ]
+      },
+      "name": "controls.open_hand_attachment",
+      "passed": true
+    },
+    {
+      "details": {
+        "expected_errors": [
+          "grasp.candidate.penetration"
+        ],
+        "observed_errors": [
+          "grasp.baseline.penetration",
+          "grasp.candidate.penetration",
+          "support.held_separation"
+        ]
+      },
+      "name": "controls.oversized_handle",
+      "passed": true
+    },
+    {
+      "details": {
+        "expected_errors": [
+          "anatomy.candidate.thumb_up"
+        ],
+        "observed_errors": [
+          "anatomy.candidate.thumb_up",
+          "anatomy.candidate.wrist_twist",
+          "attachment.candidate.evaluated_grip_orientation_error_degrees",
+          "attachment.candidate.orientation_continuity",
+          "attachment.candidate.position_continuity",
+          "boundary.28.character_velocity",
+          "continuity.sword",
+          "grasp.candidate.support_penetration",
+          "grip.orientation",
+          "preservation.outside_character_max",
+          "preservation.outside_character_rms",
+          "preservation.outside_sword_orientation",
+          "preservation.outside_sword_translation",
+          "support.held_separation",
+          "support.lifting_separation"
+        ]
+      },
+      "name": "controls.thumb_down_grasp",
+      "passed": true
+    },
+    {
+      "details": {
+        "expected_errors": [
+          "anatomy.candidate.wrist_twist"
+        ],
+        "observed_errors": [
+          "anatomy.candidate.wrist_twist",
+          "boundary.28.character_velocity",
+          "preservation.outside_character_max",
+          "preservation.outside_character_rms"
+        ]
+      },
+      "name": "controls.locked_forearm_roll",
+      "passed": true
+    },
+    {
+      "details": {
+        "expected_errors": [
+          "grasp.candidate.support_penetration"
+        ],
+        "observed_errors": [
+          "grasp.baseline.support_penetration",
+          "grasp.candidate.support_penetration",
+          "support.held_separation",
+          "support.initial_contact",
+          "support.lifting_separation"
+        ]
+      },
+      "name": "controls.hand_support_penetration",
+      "passed": true
+    },
+    {
+      "details": {
+        "expected_errors": [
+          "motion.candidate.hand_pitch"
+        ],
+        "observed_errors": [
+          "anatomy.candidate.attached_wrist_swing",
+          "motion.candidate.elbow_skin",
+          "motion.candidate.hand_pitch",
+          "motion.candidate.lift_elbow_skin",
+          "preservation.outside_character_max",
+          "preservation.outside_character_rms",
+          "preservation.outside_sword_orientation"
+        ]
+      },
+      "name": "controls.rigid_lift",
+      "passed": true
+    },
+    {
+      "details": {
+        "expected_errors": [
+          "motion.candidate.forearm_pitch"
+        ],
+        "observed_errors": [
+          "anatomy.candidate.forearm_twist",
+          "motion.candidate.elbow_skin",
+          "motion.candidate.forearm_pitch",
+          "motion.candidate.lift_elbow_skin",
+          "preservation.outside_character_max",
+          "preservation.outside_character_rms"
+        ]
+      },
+      "name": "controls.wrist_only_lift",
+      "passed": true
+    },
+    {
+      "details": {
+        "expected_errors": [
+          "grip.orientation"
+        ],
+        "observed_errors": [
+          "attachment.candidate.evaluated_grip_orientation_error_degrees",
+          "grip.orientation",
+          "preservation.outside_sword_orientation",
+          "surface.candidate.head_comfort"
+        ]
+      },
+      "name": "controls.relative_prop_rotation",
+      "passed": true
+    },
+    {
+      "details": {
+        "expected_errors": [
+          "motion.candidate.lift_elbow_skin"
+        ],
+        "observed_errors": [
+          "grasp.candidate.enclosure",
+          "grasp.candidate.finger_contact",
+          "grasp.candidate.penetration",
+          "motion.candidate.elbow_skin",
+          "motion.candidate.hand_pitch",
+          "motion.candidate.lift_elbow_skin",
+          "preservation.outside_character_max",
+          "preservation.outside_character_rms",
+          "preservation.outside_sword_orientation",
+          "preservation.outside_sword_translation",
+          "support.held_separation",
+          "surface.candidate.blade_body",
+          "surface.candidate.guard_body",
+          "surface.candidate.head_comfort"
+        ]
+      },
+      "name": "controls.elbow_skin_distortion",
+      "passed": true
+    },
+    {
+      "details": {
+        "expected_errors": [
+          "motion.candidate.attention"
+        ],
+        "observed_errors": [
+          "motion.candidate.attention",
+          "preservation.outside_character_max",
+          "preservation.outside_character_rms"
+        ]
+      },
+      "name": "controls.missing_attention",
+      "passed": true
+    },
+    {
+      "details": {
+        "expected_errors": [
+          "ownership.candidate.evaluated_owner"
+        ],
+        "observed_errors": [
+          "ownership.candidate.evaluated_owner"
+        ]
+      },
+      "name": "controls.dual_ownership",
+      "passed": true
+    },
+    {
+      "details": {
+        "expected_errors": [
+          "ownership.candidate.evaluated_owner"
+        ],
+        "observed_errors": [
+          "attachment.candidate.evaluated_grip_orientation_error_degrees",
+          "attachment.candidate.evaluated_grip_translation_error_m",
+          "grasp.candidate.enclosure",
+          "grasp.candidate.finger_contact",
+          "grasp.candidate.penetration",
+          "grasp.candidate.thumb_contact",
+          "grip.orientation",
+          "grip.translation",
+          "ownership.candidate.evaluated_owner",
+          "ownership.influence",
+          "preservation.outside_sword_orientation",
+          "preservation.outside_sword_translation",
+          "support.held_separation",
+          "support.lifting_separation",
+          "surface.candidate.blade_body",
+          "surface.candidate.containment",
+          "surface.candidate.guard_body",
+          "surface.candidate.intersections"
+        ]
+      },
+      "name": "controls.missing_ownership",
+      "passed": true
+    },
+    {
+      "details": {
+        "expected_errors": [
+          "surface.candidate.intersections"
+        ],
+        "observed_errors": [
+          "surface.baseline.blade_body",
+          "surface.baseline.containment",
+          "surface.baseline.head_comfort",
+          "surface.baseline.intersections",
+          "surface.candidate.blade_body",
+          "surface.candidate.containment",
+          "surface.candidate.head_comfort",
+          "surface.candidate.intersections"
+        ]
+      },
+      "name": "controls.blade_face_crossing",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "passed": true,
+  "schema_version": "1.0"
+}

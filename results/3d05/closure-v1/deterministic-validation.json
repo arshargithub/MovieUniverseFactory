@@ -1,0 +1,1055 @@
+{
+  "authority": "deterministic_outer_validator",
+  "checks": [
+    {
+      "details": null,
+      "name": "identity.experiment",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "identity.timeline",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "protected.source_actions_equal",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "protected.character_identity_equal",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "protected.character_topology_equal",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "protected.character_weights_equal",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "protected.character_materials_equal",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "protected.character_rig_equal",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "protected.lights_equal",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "protected.world_equal",
+      "passed": true
+    },
+    {
+      "details": {
+        "expected": 515,
+        "observed": 515
+      },
+      "name": "sampling.coverage",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "sampling.finite",
+      "passed": true
+    },
+    {
+      "details": 41.169764354384746,
+      "name": "anatomy.baseline.wrist_swing",
+      "passed": true
+    },
+    {
+      "details": 17.4273267050305,
+      "name": "anatomy.baseline.wrist_twist",
+      "passed": true
+    },
+    {
+      "details": 38.64847856945,
+      "name": "anatomy.baseline.forearm_twist",
+      "passed": true
+    },
+    {
+      "details": 32.84979139808174,
+      "name": "anatomy.baseline.attached_wrist_swing",
+      "passed": true
+    },
+    {
+      "details": 0.9396925568580627,
+      "name": "anatomy.baseline.thumb_up",
+      "passed": true
+    },
+    {
+      "details": 0.0,
+      "name": "support.baseline.stationary",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "grasp.baseline.finite.supported_translation_error_m",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "grasp.baseline.finite.thumb_contact_distance_m",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "grasp.baseline.finite.finger_contact_distance_m",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "grasp.baseline.finite.maximum_hand_penetration_m",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "grasp.baseline.finite.contact_angular_coverage_degrees",
+      "passed": true
+    },
+    {
+      "details": 0.0035981624387204647,
+      "name": "grasp.baseline.thumb_contact",
+      "passed": true
+    },
+    {
+      "details": 0.002535901963710785,
+      "name": "grasp.baseline.finger_contact",
+      "passed": true
+    },
+    {
+      "details": 186.49440307190872,
+      "name": "grasp.baseline.enclosure",
+      "passed": true
+    },
+    {
+      "details": 0.0,
+      "name": "grasp.baseline.penetration",
+      "passed": true
+    },
+    {
+      "details": 0.00025731325149536133,
+      "name": "grasp.baseline.support_penetration",
+      "passed": true
+    },
+    {
+      "details": 41.169764354384746,
+      "name": "anatomy.candidate.wrist_swing",
+      "passed": true
+    },
+    {
+      "details": 17.4273267050305,
+      "name": "anatomy.candidate.wrist_twist",
+      "passed": true
+    },
+    {
+      "details": 38.64847856945,
+      "name": "anatomy.candidate.forearm_twist",
+      "passed": true
+    },
+    {
+      "details": 32.84979139808174,
+      "name": "anatomy.candidate.attached_wrist_swing",
+      "passed": true
+    },
+    {
+      "details": 0.9396925568580627,
+      "name": "anatomy.candidate.thumb_up",
+      "passed": true
+    },
+    {
+      "details": 0.0,
+      "name": "support.candidate.stationary",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "grasp.candidate.finite.supported_translation_error_m",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "grasp.candidate.finite.thumb_contact_distance_m",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "grasp.candidate.finite.finger_contact_distance_m",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "grasp.candidate.finite.maximum_hand_penetration_m",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "grasp.candidate.finite.contact_angular_coverage_degrees",
+      "passed": true
+    },
+    {
+      "details": 0.0035981368273496628,
+      "name": "grasp.candidate.thumb_contact",
+      "passed": true
+    },
+    {
+      "details": 0.002535877050831914,
+      "name": "grasp.candidate.finger_contact",
+      "passed": true
+    },
+    {
+      "details": 186.49440307190872,
+      "name": "grasp.candidate.enclosure",
+      "passed": true
+    },
+    {
+      "details": 0.0,
+      "name": "grasp.candidate.penetration",
+      "passed": true
+    },
+    {
+      "details": 0.00025731325149536133,
+      "name": "grasp.candidate.support_penetration",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "states.sequence",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "ownership.single",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "ownership.influence",
+      "passed": true
+    },
+    {
+      "details": 0.007262170314788818,
+      "name": "support.initial_contact",
+      "passed": true
+    },
+    {
+      "details": 2.5288109106536417e-07,
+      "name": "grip.translation",
+      "passed": true
+    },
+    {
+      "details": 0.0,
+      "name": "grip.orientation",
+      "passed": true
+    },
+    {
+      "details": 0.27556583285331726,
+      "name": "clearance.body",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "clearance.floor",
+      "passed": true
+    },
+    {
+      "details": [
+        {
+          "baseline_contact_angular_coverage_degrees": 186.497469241218,
+          "baseline_elbow_edge_ratio_max": 1.2724030867121985,
+          "baseline_elbow_edge_ratio_min": 0.3692488187513734,
+          "baseline_elbow_flexion_degrees": 65.68272588929189,
+          "baseline_elbow_reference_edge_count": 26,
+          "baseline_evaluated_constraints": [
+            {
+              "bone": "RightHand",
+              "influence": 1.0,
+              "muted": false,
+              "name": "3D05_HAND_LOCATION",
+              "target": "character_01_armature",
+              "type": "CHILD_OF",
+              "valid": true
+            },
+            {
+              "bone": "",
+              "influence": 0.0,
+              "muted": false,
+              "name": "3D05_SUPPORT_OWNER",
+              "target": "sword_support_01",
+              "type": "CHILD_OF",
+              "valid": true
+            }
+          ],
+          "baseline_finger_contact_distance_m": 0.0025354039389640093,
+          "baseline_forearm_pitch_degrees": -0.04255211579142519,
+          "baseline_forearm_swing_degrees": 60.426949964480436,
+          "baseline_forearm_twist_degrees": 32.92238947876981,
+          "baseline_grip_orientation_error_degrees": 0.0,
+          "baseline_grip_translation_error_m": 9.541398640621973e-08,
+          "baseline_hand_pitch_degrees": -20.000009736473615,
+          "baseline_hand_radial_up_dot": 0.9396925568580627,
+          "baseline_head_attention_error_degrees": 27.453393831090775,
+          "baseline_head_attention_gain_degrees": 36.50130102837706,
+          "baseline_head_forward_world": [
+            -0.5090956687927246,
+            -0.7270631790161133,
+            -0.4606524407863617
+          ],
+          "baseline_legacy_nearest_normal_depth_m": 0.0,
+          "baseline_maximum_hand_penetration_m": 0.0,
+          "baseline_maximum_hand_support_penetration_m": 0.0,
+          "baseline_owner": "character_01/right_hand",
+          "baseline_penetration_basis": "closed_region_collision_proxies",
+          "baseline_state": "lifting",
+          "baseline_supported_translation_error_m": 1.228781230931777e-07,
+          "baseline_surface_sample_count": 1181,
+          "baseline_surface_topology": {
+            "boundary_edges": 26,
+            "closed_after_micrometre_weld": false,
+            "nonmanifold_edges": 26,
+            "welded_vertices": 57
+          },
+          "baseline_surface_validation": {
+            "forbidden_contained_vertices": 0,
+            "forbidden_triangle_intersections": 0,
+            "head_clearance_lower_bound_m": 0.17917897427549145,
+            "head_nearest_sample_m": 0.19130069017410278,
+            "head_witness": {
+              "head_point": [
+                -0.22599096596240997,
+                -0.1387050300836563,
+                1.240350365638733
+              ],
+              "sword_point": [
+                -0.35954806208610535,
+                -0.24663111567497253,
+                1.15602707862854
+              ],
+              "sword_region": 3
+            },
+            "intersection_pairs": [],
+            "intersection_region_pairs": [],
+            "maximum_surface_cover_radius_m": 0.01795510166066763,
+            "nonhandle_hand_clearance_lower_bound_m": 0.029803873693949275,
+            "protected_body_clearance_lower_bound_m": 0.025448273998466633,
+            "region_body_clearance_lower_bound_m": {
+              "1": 0.025448273998466633,
+              "2": 0.06654347637892394,
+              "3": 0.11765462056092087
+            },
+            "region_triangle_counts": {
+              "1": 44,
+              "2": 20,
+              "3": 26
+            },
+            "surface_basis": "qualified_convex_region_proxies_enclosing_render_mesh",
+            "surface_sample_count": 5056
+          },
+          "baseline_thumb_contact_distance_m": 0.0035977817606180906,
+          "baseline_thumb_side_up_dot": 0.8243746757507324,
+          "baseline_worst_nearest_normal_sample_parity_inside": null,
+          "baseline_worst_penetration_group": "none",
+          "baseline_worst_penetration_point_relative_grip_m": null,
+          "baseline_wrist_swing_degrees": 16.445411879760297,
+          "baseline_wrist_twist_degrees": 0.055902657097534614,
+          "candidate_attachment_influence": 1.0,
+          "candidate_character_min_z_m": 6.082723302824888e-08,
+          "candidate_character_root_translation_m": 0.0,
+          "candidate_contact_angular_coverage_degrees": 186.4970295853618,
+          "candidate_elbow_edge_ratio_max": 1.2660833832043685,
+          "candidate_elbow_edge_ratio_min": 0.3916406747748111,
+          "candidate_elbow_flexion_degrees": 72.19477167795462,
+          "candidate_elbow_reference_edge_count": 26,
+          "candidate_evaluated_constraints": [
+            {
+              "bone": "RightHand",
+              "influence": 1.0,
+              "muted": false,
+              "name": "3D05_HAND_LOCATION",
+              "target": "character_01_armature",
+              "type": "CHILD_OF",
+              "valid": true
+            },
+            {
+              "bone": "",
+              "influence": 0.0,
+              "muted": false,
+              "name": "3D05_SUPPORT_OWNER",
+              "target": "sword_support_01",
+              "type": "CHILD_OF",
+              "valid": true
+            }
+          ],
+          "candidate_finger_contact_distance_m": 0.002535575767979026,
+          "candidate_forearm_pitch_degrees": 5.865219913653515,
+          "candidate_forearm_swing_degrees": 66.93724039452647,
+          "candidate_forearm_twist_degrees": 31.9404063516079,
+          "candidate_grip_orientation_error_degrees": 0.0,
+          "candidate_grip_translation_error_m": 1.228781230931777e-07,
+          "candidate_hand_pitch_degrees": -18.552017178123553,
+          "candidate_hand_radial_up_dot": 0.9480352401733398,
+          "candidate_head_attention_error_degrees": 25.380376776478546,
+          "candidate_head_attention_gain_degrees": 36.016057068982676,
+          "candidate_head_forward_world": [
+            -0.5170956254005432,
+            -0.738488495349884,
+            -0.4327203333377838
+          ],
+          "candidate_legacy_nearest_normal_depth_m": 0.0,
+          "candidate_maximum_hand_penetration_m": 0.0,
+          "candidate_maximum_hand_support_penetration_m": 0.0,
+          "candidate_non_handle_body_clearance_m": 0.32287678122520447,
+          "candidate_owner": "character_01/right_hand",
+          "candidate_penetration_basis": "closed_region_collision_proxies",
+          "candidate_state": "lifting",
+          "candidate_supported_translation_error_m": 0.03839362057441628,
+          "candidate_surface_sample_count": 1181,
+          "candidate_surface_topology": {
+            "boundary_edges": 26,
+            "closed_after_micrometre_weld": false,
+            "nonmanifold_edges": 26,
+            "welded_vertices": 57
+          },
+          "candidate_surface_validation": {
+            "forbidden_contained_vertices": 0,
+            "forbidden_triangle_intersections": 0,
+            "head_clearance_lower_bound_m": 0.1665220864826125,
+            "head_nearest_sample_m": 0.17864376306533813,
+            "head_witness": {
+              "head_point": [
+                -0.2171933352947235,
+                -0.15115417540073395,
+                1.2539297342300415
+              ],
+              "sword_point": [
+                -0.3356924057006836,
+                -0.26272475719451904,
+                1.180284857749939
+              ],
+              "sword_region": 3
+            },
+            "intersection_pairs": [],
+            "intersection_region_pairs": [],
+            "maximum_surface_cover_radius_m": 0.017955066354912064,
+            "nonhandle_hand_clearance_lower_bound_m": 0.02980376243044912,
+            "protected_body_clearance_lower_bound_m": 0.025448075938041128,
+            "region_body_clearance_lower_bound_m": {
+              "1": 0.025448075938041128,
+              "2": 0.06654348059942304,
+              "3": 0.11765456404721358
+            },
+            "region_triangle_counts": {
+              "1": 44,
+              "2": 20,
+              "3": 26
+            },
+            "surface_basis": "qualified_convex_region_proxies_enclosing_render_mesh",
+            "surface_sample_count": 5056
+          },
+          "candidate_sword_bounds_m": {
+            "max": [
+              -0.3173809349536896,
+              -0.18093326687812805,
+              1.7818303108215332
+            ],
+            "min": [
+              -0.7533966302871704,
+              -0.410990446805954,
+              0.8321352601051331
+            ]
+          },
+          "candidate_sword_min_z_m": 0.8321352601051331,
+          "candidate_sword_support_separation_m": 0.0321352481842041,
+          "candidate_thumb_contact_distance_m": 0.00359782250598073,
+          "candidate_thumb_side_up_dot": 0.8101211786270142,
+          "candidate_worst_nearest_normal_sample_parity_inside": null,
+          "candidate_worst_penetration_group": "none",
+          "candidate_worst_penetration_point_relative_grip_m": null,
+          "candidate_wrist_swing_degrees": 22.194038887154235,
+          "candidate_wrist_twist_degrees": 0.22719919910789257,
+          "character_max_vertex_delta_m": 0.03956248410476573,
+          "character_rms_vertex_delta_m": 0.01252039488015211,
+          "frame": 48.0,
+          "sword_orientation_delta_degrees": 1.4477742809132697,
+          "sword_translation_delta_m": 0.03839356561660854
+        },
+        {
+          "baseline_contact_angular_coverage_degrees": 186.4970295853618,
+          "baseline_elbow_edge_ratio_max": 1.2660833832043685,
+          "baseline_elbow_edge_ratio_min": 0.3916406747748111,
+          "baseline_elbow_flexion_degrees": 72.19477167795462,
+          "baseline_elbow_reference_edge_count": 26,
+          "baseline_evaluated_constraints": [
+            {
+              "bone": "RightHand",
+              "influence": 1.0,
+              "muted": false,
+              "name": "3D05_HAND_LOCATION",
+              "target": "character_01_armature",
+              "type": "CHILD_OF",
+              "valid": true
+            },
+            {
+              "bone": "",
+              "influence": 0.0,
+              "muted": false,
+              "name": "3D05_SUPPORT_OWNER",
+              "target": "sword_support_01",
+              "type": "CHILD_OF",
+              "valid": true
+            }
+          ],
+          "baseline_finger_contact_distance_m": 0.002535575767979026,
+          "baseline_forearm_pitch_degrees": 5.865219913653515,
+          "baseline_forearm_swing_degrees": 66.93724039452647,
+          "baseline_forearm_twist_degrees": 31.9404063516079,
+          "baseline_grip_orientation_error_degrees": 0.0,
+          "baseline_grip_translation_error_m": 1.228781230931777e-07,
+          "baseline_hand_pitch_degrees": -18.552017178123553,
+          "baseline_hand_radial_up_dot": 0.9480352401733398,
+          "baseline_head_attention_error_degrees": 25.380376776478546,
+          "baseline_head_attention_gain_degrees": 36.016057068982676,
+          "baseline_head_forward_world": [
+            -0.5170956254005432,
+            -0.738488495349884,
+            -0.4327203333377838
+          ],
+          "baseline_legacy_nearest_normal_depth_m": 0.0,
+          "baseline_maximum_hand_penetration_m": 0.0,
+          "baseline_maximum_hand_support_penetration_m": 0.0,
+          "baseline_owner": "character_01/right_hand",
+          "baseline_penetration_basis": "closed_region_collision_proxies",
+          "baseline_state": "lifting",
+          "baseline_supported_translation_error_m": 0.03839362057441628,
+          "baseline_surface_sample_count": 1181,
+          "baseline_surface_topology": {
+            "boundary_edges": 26,
+            "closed_after_micrometre_weld": false,
+            "nonmanifold_edges": 26,
+            "welded_vertices": 57
+          },
+          "baseline_surface_validation": {
+            "forbidden_contained_vertices": 0,
+            "forbidden_triangle_intersections": 0,
+            "head_clearance_lower_bound_m": 0.1665220864826125,
+            "head_nearest_sample_m": 0.17864376306533813,
+            "head_witness": {
+              "head_point": [
+                -0.2171933352947235,
+                -0.15115417540073395,
+                1.2539297342300415
+              ],
+              "sword_point": [
+                -0.3356924057006836,
+                -0.26272475719451904,
+                1.180284857749939
+              ],
+              "sword_region": 3
+            },
+            "intersection_pairs": [],
+            "intersection_region_pairs": [],
+            "maximum_surface_cover_radius_m": 0.017955066354912064,
+            "nonhandle_hand_clearance_lower_bound_m": 0.02980376243044912,
+            "protected_body_clearance_lower_bound_m": 0.025448075938041128,
+            "region_body_clearance_lower_bound_m": {
+              "1": 0.025448075938041128,
+              "2": 0.06654348059942304,
+              "3": 0.11765456404721358
+            },
+            "region_triangle_counts": {
+              "1": 44,
+              "2": 20,
+              "3": 26
+            },
+            "surface_basis": "qualified_convex_region_proxies_enclosing_render_mesh",
+            "surface_sample_count": 5056
+          },
+          "baseline_thumb_contact_distance_m": 0.00359782250598073,
+          "baseline_thumb_side_up_dot": 0.8101211786270142,
+          "baseline_worst_nearest_normal_sample_parity_inside": null,
+          "baseline_worst_penetration_group": "none",
+          "baseline_worst_penetration_point_relative_grip_m": null,
+          "baseline_wrist_swing_degrees": 22.194038887154235,
+          "baseline_wrist_twist_degrees": 0.22719919910789257,
+          "candidate_attachment_influence": 1.0,
+          "candidate_character_min_z_m": 6.082723302824888e-08,
+          "candidate_character_root_translation_m": 0.0,
+          "candidate_contact_angular_coverage_degrees": 186.49585583019865,
+          "candidate_elbow_edge_ratio_max": 1.2421370974968131,
+          "candidate_elbow_edge_ratio_min": 0.4861197726313963,
+          "candidate_elbow_flexion_degrees": 76.35934292058649,
+          "candidate_elbow_reference_edge_count": 26,
+          "candidate_evaluated_constraints": [
+            {
+              "bone": "RightHand",
+              "influence": 1.0,
+              "muted": false,
+              "name": "3D05_HAND_LOCATION",
+              "target": "character_01_armature",
+              "type": "CHILD_OF",
+              "valid": true
+            },
+            {
+              "bone": "",
+              "influence": 0.0,
+              "muted": false,
+              "name": "3D05_SUPPORT_OWNER",
+              "target": "sword_support_01",
+              "type": "CHILD_OF",
+              "valid": true
+            }
+          ],
+          "candidate_finger_contact_distance_m": 0.0025356111582368612,
+          "candidate_forearm_pitch_degrees": 17.516027945088368,
+          "candidate_forearm_swing_degrees": 71.10077344840451,
+          "candidate_forearm_twist_degrees": 25.8500018007884,
+          "candidate_grip_orientation_error_degrees": 0.0,
+          "candidate_grip_translation_error_m": 1.3657139822709083e-07,
+          "candidate_hand_pitch_degrees": -12.064005326306976,
+          "candidate_hand_radial_up_dot": 0.977914571762085,
+          "candidate_head_attention_error_degrees": 20.581764195836264,
+          "candidate_head_attention_gain_degrees": 34.923436830097614,
+          "candidate_head_forward_world": [
+            -0.5381181240081787,
+            -0.7685117721557617,
+            -0.34614822268486023
+          ],
+          "candidate_legacy_nearest_normal_depth_m": 0.0,
+          "candidate_maximum_hand_penetration_m": 0.0,
+          "candidate_maximum_hand_support_penetration_m": 0.0,
+          "candidate_non_handle_body_clearance_m": 0.3023952543735504,
+          "candidate_owner": "character_01/right_hand",
+          "candidate_penetration_basis": "closed_region_collision_proxies",
+          "candidate_state": "lifting",
+          "candidate_supported_translation_error_m": 0.12341778252906473,
+          "candidate_surface_sample_count": 1181,
+          "candidate_surface_topology": {
+            "boundary_edges": 26,
+            "closed_after_micrometre_weld": false,
+            "nonmanifold_edges": 26,
+            "welded_vertices": 57
+          },
+          "candidate_surface_validation": {
+            "forbidden_contained_vertices": 0,
+            "forbidden_triangle_intersections": 0,
+            "head_clearance_lower_bound_m": 0.14245964879942613,
+            "head_nearest_sample_m": 0.15458135306835175,
+            "head_witness": {
+              "head_point": [
+                -0.2107846885919571,
+                -0.20592255890369415,
+                1.383675456047058
+              ],
+              "sword_point": [
+                -0.3159424066543579,
+                -0.3100505471229553,
+                1.3390144109725952
+              ],
+              "sword_region": 3
+            },
+            "intersection_pairs": [],
+            "intersection_region_pairs": [],
+            "maximum_surface_cover_radius_m": 0.01795509069410967,
+            "nonhandle_hand_clearance_lower_bound_m": 0.029804022050934395,
+            "protected_body_clearance_lower_bound_m": 0.025448147537484648,
+            "region_body_clearance_lower_bound_m": {
+              "1": 0.025448147537484648,
+              "2": 0.06654359865887698,
+              "3": 0.11765468181388242
+            },
+            "region_triangle_counts": {
+              "1": 44,
+              "2": 20,
+              "3": 26
+            },
+            "surface_basis": "qualified_convex_region_proxies_enclosing_render_mesh",
+            "surface_sample_count": 5056
+          },
+          "candidate_sword_bounds_m": {
+            "max": [
+              -0.2703183889389038,
+              -0.23495690524578094,
+              1.869227647781372
+            ],
+            "min": [
+              -0.665391743183136,
+              -0.3984280228614807,
+              0.8902226686477661
+            ]
+          },
+          "candidate_sword_min_z_m": 0.8902226686477661,
+          "candidate_sword_support_separation_m": 0.09022265672683716,
+          "candidate_thumb_contact_distance_m": 0.003597972448915243,
+          "candidate_thumb_side_up_dot": 0.7400320768356323,
+          "candidate_worst_nearest_normal_sample_parity_inside": null,
+          "candidate_worst_penetration_group": "none",
+          "candidate_worst_penetration_point_relative_grip_m": null,
+          "candidate_wrist_swing_degrees": 30.163976601325135,
+          "candidate_wrist_twist_degrees": 0.6283414917871777,
+          "character_max_vertex_delta_m": 0.09210016648101092,
+          "character_rms_vertex_delta_m": 0.030256541422532122,
+          "frame": 52.0,
+          "sword_orientation_delta_degrees": 6.487785383617664,
+          "sword_translation_delta_m": 0.08526281665827054
+        }
+      ],
+      "name": "support.lifting_separation",
+      "passed": true
+    },
+    {
+      "details": 0.2501160502433777,
+      "name": "support.held_separation",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "stationary.character_root",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "preservation.outside_character_max",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "preservation.outside_character_rms",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "preservation.outside_sword_translation",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "preservation.outside_sword_orientation",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "motion.baseline.finite",
+      "passed": true
+    },
+    {
+      "details": 24.99999012162569,
+      "name": "motion.baseline.hand_pitch",
+      "passed": true
+    },
+    {
+      "details": 31.994542801577204,
+      "name": "motion.baseline.forearm_pitch",
+      "passed": true
+    },
+    {
+      "details": {
+        "held": 50.30112280295025,
+        "peak_gain": 12.459754027342328
+      },
+      "name": "motion.baseline.elbow_flexion",
+      "passed": true
+    },
+    {
+      "details": 34.31994522069738,
+      "name": "motion.baseline.attention",
+      "passed": true
+    },
+    {
+      "details": {
+        "edges": 26,
+        "max": 1.4690781353859024,
+        "min": 0.35338479205276113
+      },
+      "name": "motion.baseline.elbow_skin",
+      "passed": true
+    },
+    {
+      "details": {
+        "max": 1.2733660887009628,
+        "min": 0.36785828699670137
+      },
+      "name": "motion.baseline.lift_elbow_skin",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "motion.candidate.finite",
+      "passed": true
+    },
+    {
+      "details": 24.99999012162569,
+      "name": "motion.candidate.hand_pitch",
+      "passed": true
+    },
+    {
+      "details": 31.994542801577204,
+      "name": "motion.candidate.forearm_pitch",
+      "passed": true
+    },
+    {
+      "details": {
+        "held": 50.30112280295025,
+        "peak_gain": 12.459754027342328
+      },
+      "name": "motion.candidate.elbow_flexion",
+      "passed": true
+    },
+    {
+      "details": 34.31994522069738,
+      "name": "motion.candidate.attention",
+      "passed": true
+    },
+    {
+      "details": {
+        "edges": 26,
+        "max": 1.4690781353859024,
+        "min": 0.3533948762077542
+      },
+      "name": "motion.candidate.elbow_skin",
+      "passed": true
+    },
+    {
+      "details": {
+        "max": 1.2733660887009628,
+        "min": 0.36785828699670137
+      },
+      "name": "motion.candidate.lift_elbow_skin",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "surface.baseline.coverage",
+      "passed": true
+    },
+    {
+      "details": 0.025447947514755178,
+      "name": "surface.baseline.handle_body",
+      "passed": true
+    },
+    {
+      "details": 0.06654314845999734,
+      "name": "surface.baseline.guard_body",
+      "passed": true
+    },
+    {
+      "details": 0.1176542572850757,
+      "name": "surface.baseline.blade_body",
+      "passed": true
+    },
+    {
+      "details": 0,
+      "name": "surface.baseline.intersections",
+      "passed": true
+    },
+    {
+      "details": 0,
+      "name": "surface.baseline.containment",
+      "passed": true
+    },
+    {
+      "details": 0.13039474111354526,
+      "name": "surface.baseline.head_comfort",
+      "passed": true
+    },
+    {
+      "details": {
+        "failed_samples": 0,
+        "first_frames": []
+      },
+      "name": "ownership.baseline.evaluated_owner",
+      "passed": true
+    },
+    {
+      "details": 2.5636927089222153e-07,
+      "name": "attachment.baseline.evaluated_grip_translation_error_m",
+      "passed": true
+    },
+    {
+      "details": 0.0,
+      "name": "attachment.baseline.evaluated_grip_orientation_error_degrees",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "surface.candidate.coverage",
+      "passed": true
+    },
+    {
+      "details": 0.025447989800037298,
+      "name": "surface.candidate.handle_body",
+      "passed": true
+    },
+    {
+      "details": 0.06654323200078473,
+      "name": "surface.candidate.guard_body",
+      "passed": true
+    },
+    {
+      "details": 0.1176542572850757,
+      "name": "surface.candidate.blade_body",
+      "passed": true
+    },
+    {
+      "details": 0,
+      "name": "surface.candidate.intersections",
+      "passed": true
+    },
+    {
+      "details": 0,
+      "name": "surface.candidate.containment",
+      "passed": true
+    },
+    {
+      "details": 0.13039474111354526,
+      "name": "surface.candidate.head_comfort",
+      "passed": true
+    },
+    {
+      "details": {
+        "failed_samples": 0,
+        "first_frames": []
+      },
+      "name": "ownership.candidate.evaluated_owner",
+      "passed": true
+    },
+    {
+      "details": 2.5288109106536417e-07,
+      "name": "attachment.candidate.evaluated_grip_translation_error_m",
+      "passed": true
+    },
+    {
+      "details": 0.0,
+      "name": "attachment.candidate.evaluated_grip_orientation_error_degrees",
+      "passed": true
+    },
+    {
+      "details": 0.03434658469968857,
+      "name": "continuity.character",
+      "passed": true
+    },
+    {
+      "details": 0.012822322872682139,
+      "name": "continuity.sword",
+      "passed": true
+    },
+    {
+      "details": {
+        "frame": 40.0,
+        "orientation_second_difference_degrees": 0.0,
+        "position_second_difference_m": 1.228781230931777e-07
+      },
+      "name": "attachment.baseline.position_continuity",
+      "passed": true
+    },
+    {
+      "details": {
+        "frame": 40.0,
+        "orientation_second_difference_degrees": 0.0,
+        "position_second_difference_m": 1.228781230931777e-07
+      },
+      "name": "attachment.baseline.orientation_continuity",
+      "passed": true
+    },
+    {
+      "details": {
+        "frame": 36.0,
+        "orientation_second_difference_degrees": 0.0,
+        "position_second_difference_m": 1.228781230931777e-07
+      },
+      "name": "attachment.candidate.position_continuity",
+      "passed": true
+    },
+    {
+      "details": {
+        "frame": 36.0,
+        "orientation_second_difference_degrees": 0.0,
+        "position_second_difference_m": 1.228781230931777e-07
+      },
+      "name": "attachment.candidate.orientation_continuity",
+      "passed": true
+    },
+    {
+      "details": {
+        "character_rms_velocity_delta_m_per_s": 7.387852684674791e-05,
+        "sword_velocity_delta_m_per_s": 0.0
+      },
+      "name": "boundary.28.character_velocity",
+      "passed": true
+    },
+    {
+      "details": {
+        "character_rms_velocity_delta_m_per_s": 7.387852684674791e-05,
+        "sword_velocity_delta_m_per_s": 0.0
+      },
+      "name": "boundary.28.sword_velocity",
+      "passed": true
+    },
+    {
+      "details": {
+        "character_rms_velocity_delta_m_per_s": 0.0,
+        "sword_velocity_delta_m_per_s": 0.0
+      },
+      "name": "boundary.76.character_velocity",
+      "passed": true
+    },
+    {
+      "details": {
+        "character_rms_velocity_delta_m_per_s": 0.0,
+        "sword_velocity_delta_m_per_s": 0.0
+      },
+      "name": "boundary.76.sword_velocity",
+      "passed": true
+    },
+    {
+      "details": 4.0,
+      "name": "timing.grasp",
+      "passed": true
+    },
+    {
+      "details": 4.0,
+      "name": "timing.lift",
+      "passed": true
+    },
+    {
+      "details": 4.0,
+      "name": "timing.held",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "persistence.checkpoints_exact",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "persistence.save_reopen_semantic_exact",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "persistence.offline_replay_semantic_exact",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "persistence.offline_replay_geometry_within_tolerance",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "passed": true,
+  "provider_can_override": false,
+  "schema_version": "1.0"
+}

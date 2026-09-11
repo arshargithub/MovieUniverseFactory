@@ -434,22 +434,46 @@
       ]
     },
     {
+      "engineering_model": {
+        "attribution_basis": "User retained Astra for this repair; not an isolated model comparison",
+        "reasoning_effort": null,
+        "reported_name": "Astra",
+        "runtime_verified": false
+      },
       "event_id": "3d05-closure-reach-surface-preflight-v10",
       "event_type": "diagnostic_repair",
       "experiment_id": "3D-05",
-      "engineering_model": {
-        "reported_name": "Astra",
-        "reasoning_effort": null,
-        "runtime_verified": false,
-        "attribution_basis": "User retained Astra for this repair; not an isolated model comparison"
-      },
-      "outcome": "PREFLIGHT_PASSES_FULL_CAMPAIGN_PENDING",
       "human_review_seconds": null,
       "observation": "Motion planning, elbow-route diagnostics, staged open-hand orientation, and closed explicitly labeled collision proxies resolve preflight failures without changing frozen skin thresholds. Legacy nearest-normal penetration misclassified an exterior hand sample on an open sword surface. Exact contact anchors alone remain insufficient. Full controls, replay and fresh Director scoring remain mandatory.",
+      "outcome": "PREFLIGHT_PASSES_FULL_CAMPAIGN_PENDING",
       "sources": [
         {
           "kind": "repository_artifact",
           "path": "feasibility/3d/3d-05/CLOSURE_REPAIR_PLAN.md"
+        }
+      ]
+    },
+    {
+      "engineering_model": {
+        "attribution_basis": "User retained Astra for the repair; not a controlled model comparison",
+        "reasoning_effort": null,
+        "reported_name": "Astra",
+        "runtime_verified": false
+      },
+      "event_id": "3d05-closure-scored-9aafbc8a-machine-pass",
+      "event_type": "scored_technical_validation",
+      "experiment_id": "3D-05",
+      "human_review_seconds": null,
+      "observation": "Fresh frozen campaign passes both variants, six checkpoint/reopen pairs, exact replay and all 18 native controls. Surface-interior control passes the historical vertex gate but fails true surface coverage; dual ownership is independently detected. Motion planning, fixture-specific routing, conservative closed proxies and unchanged deformation limits jointly contributed. Historical engineering time remains unknown; final Director scores and review duration are pending.",
+      "outcome": "MACHINE_PASSED_DIRECTOR_PENDING",
+      "phase": "stationary_pickup_closure",
+      "recorded_at_utc": "2026-09-11T20:15:10.973025+00:00",
+      "run_id": "interaction-v1-20260911T194804Z-9aafbc8a",
+      "sources": [
+        {
+          "kind": "repository_artifact",
+          "path": "results/3d05/closure-v1/summary.json",
+          "sha256_at_recording": "41d54b9b0b76927a62900e1e6792a92464118d19c50531956cb603fa62ecde2a"
         }
       ]
     }

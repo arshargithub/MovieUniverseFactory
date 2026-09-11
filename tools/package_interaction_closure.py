@@ -69,6 +69,8 @@ def main():
         with tarfile.open(fileobj=io.BytesIO(raw),mode='r:') as archive:archive.extractall(out/label,filter='data')
     subprocess.run(['git','bundle','create',str(out/'source-history.bundle'),'--all'],check=True)
     relative=run.relative_to(repo);copy_evidence(run,out/relative)
+    compact=repo/'results/3d05/closure-v1'
+    if compact.is_dir():copy_evidence(compact,out/'results/3d05/closure-v1')
     for development in sorted((repo/'runs/3d05-development').glob('closure-*')):
         if development.is_dir():copy_evidence(development,out/development.relative_to(repo))
     baseline=safe_relative(repo,repo/campaign['baseline']['character_relative_path']);(out/'baseline').mkdir()
@@ -88,7 +90,7 @@ def main():
 
 Status: **{state['status']}**. Missing Director acceptance is not GREEN. The original scored YELLOW result and rejected attempts remain historical facts.
 
-Open `{relative}/review/index.html` through a local HTTP server for complete synchronized A/B playback. Its source images are unchanged; any player repair has a separate provenance record. Keep `blind-key.json` private from the Director until scoring.
+The portable report is `results/3d05/closure-v1/REPORT.md`. Review `{relative}/review/video.html` or the three `*-AB.mp4` files for synchronized video playback. The original frame player is `{relative}/review/index.html`. Its source images are unchanged; any player repair has a separate provenance record. Keep `blind-key.json` private from the Director until scoring.
 
 Verify every entry in `inventory.json` by path, bytes and SHA-256 before replay. The historical archive's numbered parts reconstruct a gzip tar; follow its included guide and inventory. It includes native scenes and original images from rejected attempts. No credentials are included. Harmless worker-generated thumbnails referenced by original run manifests are retained; unexpected runtime files are rejected.
 

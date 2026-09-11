@@ -33,3 +33,7 @@ Verified APFS copy-on-write sharing recovered storage from byte-identical native
 ## Reusable lessons
 
 Plan human movement and fixture fit before fine joint edits. Validate contact surfaces and enclosure independently of anchors. Separate comfortable staging from nonintersection. Probe fractional times around coordinate/ownership changes. Negative controls must produce a targeted failure absent from the positive case. Retain fixture and measurement assumptions, particularly open surfaces and conservative collision proxies. Model-switch history is useful process intelligence, but the changed fixtures, constraints, measurements and Director feedback prevent attributing improvement to model choice alone.
+
+## Fresh scored closure run
+
+`runs/3d05-closure/interaction-v1-20260911T194804Z-9aafbc8a` passes all technical gates, all 18 native control sensitivities, six checkpoint/reopen pairs and exact replay. Its 576 original PNGs and added A/B video copies are verified. Decision remains YELLOW pending fresh Director scores and duration; see `results/3d05/closure-v1/REPORT.md`. Dispatch was bound to clean source/configuration commit `1bc89a3`; the implementation is `b1f1571`.

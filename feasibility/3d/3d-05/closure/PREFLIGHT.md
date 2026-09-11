@@ -4,7 +4,7 @@ Source `75b18bf2d40d71f0087b4ac9b4304644680d9fe2`, clean at dispatch. Run `runs/
 
 The dual-owner control failed only the new evaluated ownership check. The blade-interior control passed the old vertex clearance gate at 0.10936 m, while the new surface test found 84 forbidden intersections and zero head clearance. This demonstrates the required measurement sensitivity gap directly in Blender.
 
-Across both timing variants the positive elbow-edge range is 0.35339–1.46908, within unchanged 0.35–1.50 limits. Lift maximum is 1.27337. Head clearance has a conservative minimum of 0.13039 m, above the new predeclared 0.12 m staging criterion. Contact enclosure is at least 186.49°. This remains one fixture and one authored performance.
+Across both timing variants the positive elbow-edge range is 0.35338–1.46908, within unchanged 0.35–1.50 limits. Lift maximum is 1.27337. Head clearance has a conservative minimum of 0.13039 m, above the new predeclared 0.12 m staging criterion. Contact enclosure is at least 186.49°. This remains one fixture and one authored performance.
 
 Complete inexpensive preview: `runs/3d05-development/closure-surface-v10/motion-playback`, 96 frames in each of three views. Engineering inspected all three frame sequences and enlarged contact evidence; this is not Director playback acceptance. The original accepted development lift's intent is retained while approach, sword tilt and held staging changed. A new scored anonymous comparison with full scores and review duration is required.
 
