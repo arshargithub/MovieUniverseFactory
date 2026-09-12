@@ -1,0 +1,213 @@
+{
+  "boundary_jump": {
+    "expected_error": "boundary_position",
+    "metrics": {
+      "baseline_cue_frame": 47.99,
+      "boundary_angular_velocity_delta_deg_s": 1.9255421713742535,
+      "boundary_position_delta_m": 0.08870290886530474,
+      "boundary_velocity_delta_m_s": 4.305609699476247,
+      "candidate_cue_frame": 43.99,
+      "elbow_max": 1.209653082005433,
+      "elbow_min": 0.6961570397182674,
+      "finite": true,
+      "landmark_position_rms_m": 0.0002517729296769933,
+      "landmark_rotation_error_deg": 34.37745882860347,
+      "min_z_m": 6.082723302824888e-08,
+      "outside_max_rotation_delta_rad": 0.5999998450279236,
+      "outside_max_vertex_delta_m": 0.08870290886530474,
+      "protected": true,
+      "support_displacement_m": 1.2693349299878494e-07
+    },
+    "sensitive": true,
+    "validation": {
+      "checks": {
+        "baseline_cue": true,
+        "boundary_position": false,
+        "boundary_velocity": false,
+        "candidate_cue": true,
+        "deformation": true,
+        "finite": true,
+        "grounding": true,
+        "outside_preserved": false,
+        "protected": true,
+        "reference_fidelity": false,
+        "support": true
+      },
+      "errors": [
+        "outside_preserved",
+        "boundary_position",
+        "boundary_velocity",
+        "reference_fidelity"
+      ],
+      "passed": false
+    }
+  },
+  "elbow_deformation": {
+    "expected_error": "deformation",
+    "metrics": {
+      "baseline_cue_frame": 47.99,
+      "boundary_angular_velocity_delta_deg_s": 1.9255421713742535,
+      "boundary_position_delta_m": 1.8431718463976653e-07,
+      "boundary_velocity_delta_m_s": 0.018066402726076403,
+      "candidate_cue_frame": 43.99,
+      "elbow_max": 2.269434972827203,
+      "elbow_min": 0.6961582886837132,
+      "finite": true,
+      "landmark_position_rms_m": 0.21301726524894227,
+      "landmark_rotation_error_deg": 5.383764278347382,
+      "min_z_m": 6.082723302824888e-08,
+      "outside_max_rotation_delta_rad": 0.0,
+      "outside_max_vertex_delta_m": 3.998401124775034e-07,
+      "protected": true,
+      "support_displacement_m": 1.2693349299878494e-07
+    },
+    "sensitive": true,
+    "validation": {
+      "checks": {
+        "baseline_cue": true,
+        "boundary_position": true,
+        "boundary_velocity": true,
+        "candidate_cue": true,
+        "deformation": false,
+        "finite": true,
+        "grounding": true,
+        "outside_preserved": true,
+        "protected": true,
+        "reference_fidelity": false,
+        "support": true
+      },
+      "errors": [
+        "deformation",
+        "reference_fidelity"
+      ],
+      "passed": false
+    }
+  },
+  "foot_drift": {
+    "expected_error": "support",
+    "metrics": {
+      "baseline_cue_frame": 47.99,
+      "boundary_angular_velocity_delta_deg_s": 1.9255421713742535,
+      "boundary_position_delta_m": 0.09230160085742811,
+      "boundary_velocity_delta_m_s": 0.018066402726076403,
+      "candidate_cue_frame": 43.99,
+      "elbow_max": 1.209653082005433,
+      "elbow_min": 0.6961570397182674,
+      "finite": true,
+      "landmark_position_rms_m": 0.0002517729296769933,
+      "landmark_rotation_error_deg": 0.06852804166478502,
+      "min_z_m": -0.07553588598966599,
+      "outside_max_rotation_delta_rad": 0.0,
+      "outside_max_vertex_delta_m": 0.09230160085742811,
+      "protected": true,
+      "support_displacement_m": 0.09230160085742811
+    },
+    "sensitive": true,
+    "validation": {
+      "checks": {
+        "baseline_cue": true,
+        "boundary_position": false,
+        "boundary_velocity": true,
+        "candidate_cue": true,
+        "deformation": true,
+        "finite": true,
+        "grounding": false,
+        "outside_preserved": false,
+        "protected": true,
+        "reference_fidelity": true,
+        "support": false
+      },
+      "errors": [
+        "outside_preserved",
+        "boundary_position",
+        "support",
+        "grounding"
+      ],
+      "passed": false
+    }
+  },
+  "global_timing": {
+    "expected_error": "outside_preserved",
+    "metrics": {
+      "baseline_cue_frame": 47.99,
+      "boundary_angular_velocity_delta_deg_s": 9.495523484460513,
+      "boundary_position_delta_m": 0.03925373495986343,
+      "boundary_velocity_delta_m_s": 0.029343469889031176,
+      "candidate_cue_frame": 43.99,
+      "elbow_max": 1.209653082005433,
+      "elbow_min": 0.6961570397182674,
+      "finite": true,
+      "landmark_position_rms_m": 0.021072733785696563,
+      "landmark_rotation_error_deg": 6.339435809279103,
+      "min_z_m": 6.082723302824888e-08,
+      "outside_max_rotation_delta_rad": 0.11064402759075165,
+      "outside_max_vertex_delta_m": 0.04299821710217127,
+      "protected": true,
+      "support_displacement_m": 1.2693349299878494e-07
+    },
+    "sensitive": true,
+    "validation": {
+      "checks": {
+        "baseline_cue": true,
+        "boundary_position": false,
+        "boundary_velocity": false,
+        "candidate_cue": true,
+        "deformation": true,
+        "finite": true,
+        "grounding": true,
+        "outside_preserved": false,
+        "protected": true,
+        "reference_fidelity": false,
+        "support": true
+      },
+      "errors": [
+        "outside_preserved",
+        "boundary_position",
+        "boundary_velocity",
+        "reference_fidelity"
+      ],
+      "passed": false
+    }
+  },
+  "no_op": {
+    "expected_error": "candidate_cue",
+    "metrics": {
+      "baseline_cue_frame": 47.99,
+      "boundary_angular_velocity_delta_deg_s": 1.8636059092588722,
+      "boundary_position_delta_m": 1.8431718463976653e-07,
+      "boundary_velocity_delta_m_s": 0.01112676767991865,
+      "candidate_cue_frame": 47.99,
+      "elbow_max": 1.209653082005433,
+      "elbow_min": 0.6961570397182674,
+      "finite": true,
+      "landmark_position_rms_m": 0.024076408906564425,
+      "landmark_rotation_error_deg": 7.121029723929295,
+      "min_z_m": 6.082723302824888e-08,
+      "outside_max_rotation_delta_rad": 0.0,
+      "outside_max_vertex_delta_m": 3.998401124775034e-07,
+      "protected": true,
+      "support_displacement_m": 1.2693349299878494e-07
+    },
+    "sensitive": true,
+    "validation": {
+      "checks": {
+        "baseline_cue": true,
+        "boundary_position": true,
+        "boundary_velocity": true,
+        "candidate_cue": false,
+        "deformation": true,
+        "finite": true,
+        "grounding": true,
+        "outside_preserved": true,
+        "protected": true,
+        "reference_fidelity": false,
+        "support": true
+      },
+      "errors": [
+        "candidate_cue",
+        "reference_fidelity"
+      ],
+      "passed": false
+    }
+  }
+}

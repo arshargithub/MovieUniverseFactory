@@ -1,0 +1,8 @@
+{
+  "cause": "UNKNOWN: clock adjustment or suspension not independently established",
+  "observed_monotonic_elapsed_seconds": 310.9574928340153,
+  "observed_utc": "2026-09-11T23:57:19.909811+00:00",
+  "start_utc": "2026-09-11T22:48:16.239513+00:00",
+  "treatment": "Do not subtract as human input wait or claim exact net duration. Preserve UTC and monotonic evidence separately; ledger detects discontinuity on job completion.",
+  "wall_elapsed_seconds": 4143.670298
+}
