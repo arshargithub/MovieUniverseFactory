@@ -1,0 +1,1123 @@
+{
+  "closed_episode_count": 1,
+  "closure_usage_note": "Prior partial token observation retained; closure-turn tokens not captured. Exact whole-experiment usage remains UNKNOWN.",
+  "consumption_per_outcome": {
+    "closed_episodes": {
+      "engineering_tokens": null,
+      "net_seconds": null
+    },
+    "closed_experiments": {
+      "engineering_tokens": null,
+      "net_seconds": null
+    },
+    "director_accepted_outputs": {
+      "engineering_tokens": null,
+      "net_seconds": null
+    },
+    "technically_successful_outputs": {
+      "engineering_tokens": null,
+      "net_seconds": null
+    }
+  },
+  "cost_scope": "Development investment; repeatable runtime cost remains in the campaign provider records.",
+  "engineering_usage": {
+    "account_allowance": {
+      "observations": [],
+      "scope": "account-wide; not experiment token attribution"
+    },
+    "actual_engineering_charge_usd": null,
+    "api_equivalent_estimate_usd": null,
+    "blocks": [
+      {
+        "effort": null,
+        "model": null,
+        "record_id": "c872548ca8fa8fe1c28718540a31440b0468068399d0b2134e325d07dc1772af",
+        "setting_attribution": "UNKNOWN",
+        "task_id": "01a081e1-3bf7-7192-b1d6-50914112eccb",
+        "tokens": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 203264,
+          "input_tokens": 204953,
+          "output_tokens": 496,
+          "reasoning_output_tokens": 401,
+          "total_tokens": 205449
+        },
+        "turn_id": "01a0928f-9ef4-7b93-8ff7-e9f9f31d6bf1",
+        "utc": "2026-09-11T22:32:45.969Z"
+      },
+      {
+        "effort": null,
+        "model": null,
+        "record_id": "584bc42d341fcd59bb15dad1cd71d4c32aeca1fc0f22693167d184b0ee1c937c",
+        "setting_attribution": "UNKNOWN",
+        "task_id": "01a081e1-3bf7-7192-b1d6-50914112eccb",
+        "tokens": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 204800,
+          "input_tokens": 205663,
+          "output_tokens": 956,
+          "reasoning_output_tokens": 771,
+          "total_tokens": 206619
+        },
+        "turn_id": "01a0928f-9ef4-7b93-8ff7-e9f9f31d6bf1",
+        "utc": "2026-09-11T22:33:23.443Z"
+      },
+      {
+        "effort": null,
+        "model": null,
+        "record_id": "9fd65a20831875095455f4de52edd9209dcf1818e89dfee024108ea9e267fd1a",
+        "setting_attribution": "UNKNOWN",
+        "task_id": "01a081e1-3bf7-7192-b1d6-50914112eccb",
+        "tokens": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 205568,
+          "input_tokens": 208601,
+          "output_tokens": 1290,
+          "reasoning_output_tokens": 819,
+          "total_tokens": 209891
+        },
+        "turn_id": "01a0928f-9ef4-7b93-8ff7-e9f9f31d6bf1",
+        "utc": "2026-09-11T22:34:08.357Z"
+      },
+      {
+        "effort": null,
+        "model": null,
+        "record_id": "67f9c40fb8d603ca9dc6874c382536103008bc688a65758ff105c2ef500afd07",
+        "setting_attribution": "UNKNOWN",
+        "task_id": "01a081e1-3bf7-7192-b1d6-50914112eccb",
+        "tokens": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 208512,
+          "input_tokens": 209925,
+          "output_tokens": 798,
+          "reasoning_output_tokens": 663,
+          "total_tokens": 210723
+        },
+        "turn_id": "01a0928f-9ef4-7b93-8ff7-e9f9f31d6bf1",
+        "utc": "2026-09-11T22:34:35.397Z"
+      },
+      {
+        "effort": null,
+        "model": null,
+        "record_id": "1d4d943e35400c28f762c7b44dc62b912a5e2511184a8a962100714aa75da66f",
+        "setting_attribution": "UNKNOWN",
+        "task_id": "01a081e1-3bf7-7192-b1d6-50914112eccb",
+        "tokens": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 209792,
+          "input_tokens": 211210,
+          "output_tokens": 1628,
+          "reasoning_output_tokens": 516,
+          "total_tokens": 212838
+        },
+        "turn_id": "01a0928f-9ef4-7b93-8ff7-e9f9f31d6bf1",
+        "utc": "2026-09-11T22:35:28.050Z"
+      },
+      {
+        "effort": null,
+        "model": null,
+        "record_id": "de92141f597eac90659781646073c2bcbc565659532b8c935c7f243dcce514fe",
+        "setting_attribution": "UNKNOWN",
+        "task_id": "01a081e1-3bf7-7192-b1d6-50914112eccb",
+        "tokens": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 211072,
+          "input_tokens": 212862,
+          "output_tokens": 1422,
+          "reasoning_output_tokens": 1310,
+          "total_tokens": 214284
+        },
+        "turn_id": "01a0928f-9ef4-7b93-8ff7-e9f9f31d6bf1",
+        "utc": "2026-09-11T22:36:14.646Z"
+      },
+      {
+        "effort": null,
+        "model": null,
+        "record_id": "73858e655a6e39e3fa6af15140ccb29acfcc014a3f0a2a5e7dfcefad82f3fb3d",
+        "setting_attribution": "UNKNOWN",
+        "task_id": "01a081e1-3bf7-7192-b1d6-50914112eccb",
+        "tokens": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 212736,
+          "input_tokens": 214452,
+          "output_tokens": 855,
+          "reasoning_output_tokens": 555,
+          "total_tokens": 215307
+        },
+        "turn_id": "01a0928f-9ef4-7b93-8ff7-e9f9f31d6bf1",
+        "utc": "2026-09-11T22:36:51.283Z"
+      },
+      {
+        "effort": null,
+        "model": null,
+        "record_id": "8ec1862cf7c134d9c474efa87bad49c513e3419aa9b117dbb4d6bf41a0247633",
+        "setting_attribution": "UNKNOWN",
+        "task_id": "01a081e1-3bf7-7192-b1d6-50914112eccb",
+        "tokens": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 214272,
+          "input_tokens": 215376,
+          "output_tokens": 2416,
+          "reasoning_output_tokens": 1493,
+          "total_tokens": 217792
+        },
+        "turn_id": "01a0928f-9ef4-7b93-8ff7-e9f9f31d6bf1",
+        "utc": "2026-09-11T22:38:07.903Z"
+      },
+      {
+        "effort": null,
+        "model": null,
+        "record_id": "695d71b08482cdb02578a3aac8ac2a7788d182bf7a99fe0144167f4b5942bc6c",
+        "setting_attribution": "UNKNOWN",
+        "task_id": "01a081e1-3bf7-7192-b1d6-50914112eccb",
+        "tokens": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 215168,
+          "input_tokens": 217968,
+          "output_tokens": 1346,
+          "reasoning_output_tokens": 1051,
+          "total_tokens": 219314
+        },
+        "turn_id": "01a0928f-9ef4-7b93-8ff7-e9f9f31d6bf1",
+        "utc": "2026-09-11T22:38:53.627Z"
+      },
+      {
+        "effort": null,
+        "model": null,
+        "record_id": "27f1d4d6cc0052d7f1bc18afaaf57d8c1b9ae8d305250f04115e96ee1d8d4cb0",
+        "setting_attribution": "UNKNOWN",
+        "task_id": "01a081e1-3bf7-7192-b1d6-50914112eccb",
+        "tokens": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 217728,
+          "input_tokens": 219451,
+          "output_tokens": 1001,
+          "reasoning_output_tokens": 899,
+          "total_tokens": 220452
+        },
+        "turn_id": "01a0928f-9ef4-7b93-8ff7-e9f9f31d6bf1",
+        "utc": "2026-09-11T22:39:33.007Z"
+      },
+      {
+        "effort": null,
+        "model": null,
+        "record_id": "ad1adfcbbd41c77397e125ab4ef3dd65e79004569a0fc1dc9cc1167f784c94fe",
+        "setting_attribution": "UNKNOWN",
+        "task_id": "01a081e1-3bf7-7192-b1d6-50914112eccb",
+        "tokens": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 219264,
+          "input_tokens": 220619,
+          "output_tokens": 1048,
+          "reasoning_output_tokens": 516,
+          "total_tokens": 221667
+        },
+        "turn_id": "01a0928f-9ef4-7b93-8ff7-e9f9f31d6bf1",
+        "utc": "2026-09-11T22:40:17.122Z"
+      },
+      {
+        "effort": null,
+        "model": null,
+        "record_id": "e81986511ea5190b43fd0248473cf09dd70ad49c15da70ef1541fb9ed88f9500",
+        "setting_attribution": "UNKNOWN",
+        "task_id": "01a081e1-3bf7-7192-b1d6-50914112eccb",
+        "tokens": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 220416,
+          "input_tokens": 221793,
+          "output_tokens": 1211,
+          "reasoning_output_tokens": 306,
+          "total_tokens": 223004
+        },
+        "turn_id": "01a0928f-9ef4-7b93-8ff7-e9f9f31d6bf1",
+        "utc": "2026-09-11T22:40:57.746Z"
+      },
+      {
+        "effort": null,
+        "model": null,
+        "record_id": "b42e24e058bcb67c0b45c92aaefb39bbba41a5259ff894f93a42da9fdb7fe718",
+        "setting_attribution": "UNKNOWN",
+        "task_id": "01a081e1-3bf7-7192-b1d6-50914112eccb",
+        "tokens": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 221568,
+          "input_tokens": 223064,
+          "output_tokens": 1099,
+          "reasoning_output_tokens": 1019,
+          "total_tokens": 224163
+        },
+        "turn_id": "01a0928f-9ef4-7b93-8ff7-e9f9f31d6bf1",
+        "utc": "2026-09-11T22:41:40.828Z"
+      },
+      {
+        "effort": null,
+        "model": null,
+        "record_id": "fe507e5758db25adbbfb8f12f143a5dcba0ad4afc8765698a1623de686eea7b3",
+        "setting_attribution": "UNKNOWN",
+        "task_id": "01a081e1-3bf7-7192-b1d6-50914112eccb",
+        "tokens": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 222848,
+          "input_tokens": 224315,
+          "output_tokens": 736,
+          "reasoning_output_tokens": 475,
+          "total_tokens": 225051
+        },
+        "turn_id": "01a0928f-9ef4-7b93-8ff7-e9f9f31d6bf1",
+        "utc": "2026-09-11T22:42:07.464Z"
+      },
+      {
+        "effort": null,
+        "model": null,
+        "record_id": "5a49d89f2a8dff1bd9f57c3d97170fe5fdae99fd78f5efbf4c1a528b825af46f",
+        "setting_attribution": "UNKNOWN",
+        "task_id": "01a081e1-3bf7-7192-b1d6-50914112eccb",
+        "tokens": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 224128,
+          "input_tokens": 225090,
+          "output_tokens": 4713,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 229803
+        },
+        "turn_id": "01a0928f-9ef4-7b93-8ff7-e9f9f31d6bf1",
+        "utc": "2026-09-11T22:44:33.603Z"
+      },
+      {
+        "effort": "medium",
+        "model": "gpt-6-astra",
+        "record_id": "6a93c55b0c559b03e5b45a9450e8edfbfc71cd3b2872a97af08279c713862d49",
+        "setting_attribution": "runtime_turn_context",
+        "task_id": "01a081e1-3bf7-7192-b1d6-50914112eccb",
+        "tokens": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 18944,
+          "input_tokens": 42288,
+          "output_tokens": 105,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 42393
+        },
+        "turn_id": "01a0928f-9ef4-7b93-8ff7-e9f9f31d6bf1",
+        "utc": "2026-09-11T22:44:39.341Z"
+      },
+      {
+        "effort": "medium",
+        "model": "gpt-6-astra",
+        "record_id": "5e9c6922a774cec7ae75be6c54b32a350aa61e4420336320a1d72e6a638f30d2",
+        "setting_attribution": "runtime_turn_context",
+        "task_id": "01a081e1-3bf7-7192-b1d6-50914112eccb",
+        "tokens": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 42112,
+          "input_tokens": 47332,
+          "output_tokens": 160,
+          "reasoning_output_tokens": 19,
+          "total_tokens": 47492
+        },
+        "turn_id": "01a0928f-9ef4-7b93-8ff7-e9f9f31d6bf1",
+        "utc": "2026-09-11T22:44:52.695Z"
+      },
+      {
+        "effort": "medium",
+        "model": "gpt-6-astra",
+        "record_id": "db1c1d9d7f3023e2a614b3e1c453b22f446a824f1c4491f78527b312fad0453d",
+        "setting_attribution": "runtime_turn_context",
+        "task_id": "01a081e1-3bf7-7192-b1d6-50914112eccb",
+        "tokens": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 46720,
+          "input_tokens": 50245,
+          "output_tokens": 190,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 50435
+        },
+        "turn_id": "01a0928f-9ef4-7b93-8ff7-e9f9f31d6bf1",
+        "utc": "2026-09-11T22:45:01.297Z"
+      },
+      {
+        "effort": "medium",
+        "model": "gpt-6-astra",
+        "record_id": "4ebc322b7c7d69c68c4d1ff142cdef26456cbc119010e4db47de9e8ec05c053a",
+        "setting_attribution": "runtime_turn_context",
+        "task_id": "01a081e1-3bf7-7192-b1d6-50914112eccb",
+        "tokens": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 50176,
+          "input_tokens": 51098,
+          "output_tokens": 984,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 52082
+        },
+        "turn_id": "01a0928f-9ef4-7b93-8ff7-e9f9f31d6bf1",
+        "utc": "2026-09-11T22:45:38.467Z"
+      },
+      {
+        "effort": "medium",
+        "model": "gpt-6-astra",
+        "record_id": "3b8b97113e4c69112a6f32d83ba231c9c15d4e59d5dfc00b32cb444056b9fa37",
+        "setting_attribution": "runtime_turn_context",
+        "task_id": "01a081e1-3bf7-7192-b1d6-50914112eccb",
+        "tokens": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 51072,
+          "input_tokens": 52289,
+          "output_tokens": 83,
+          "reasoning_output_tokens": 8,
+          "total_tokens": 52372
+        },
+        "turn_id": "01a0928f-9ef4-7b93-8ff7-e9f9f31d6bf1",
+        "utc": "2026-09-11T22:45:58.964Z"
+      },
+      {
+        "effort": "medium",
+        "model": "gpt-6-astra",
+        "record_id": "b40a3cf13aaad1f9b0d3c910642759ca4b391cba36629fc7b176672ed78d76d7",
+        "setting_attribution": "runtime_turn_context",
+        "task_id": "01a081e1-3bf7-7192-b1d6-50914112eccb",
+        "tokens": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 52224,
+          "input_tokens": 55968,
+          "output_tokens": 71,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 56039
+        },
+        "turn_id": "01a0928f-9ef4-7b93-8ff7-e9f9f31d6bf1",
+        "utc": "2026-09-11T22:46:03.518Z"
+      },
+      {
+        "effort": "medium",
+        "model": "gpt-6-astra",
+        "record_id": "f04343a1893e4cc626efae8594de3b1e7fb6032ad0f15c3a47f0ceb159405e22",
+        "setting_attribution": "runtime_turn_context",
+        "task_id": "01a081e1-3bf7-7192-b1d6-50914112eccb",
+        "tokens": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 55936,
+          "input_tokens": 56208,
+          "output_tokens": 177,
+          "reasoning_output_tokens": 11,
+          "total_tokens": 56385
+        },
+        "turn_id": "01a0928f-9ef4-7b93-8ff7-e9f9f31d6bf1",
+        "utc": "2026-09-11T22:46:15.011Z"
+      },
+      {
+        "effort": "medium",
+        "model": "gpt-6-astra",
+        "record_id": "a03f4173f40367a7a84c855d0d318a6455ac2114b78af92e46bba37eaa8bb635",
+        "setting_attribution": "runtime_turn_context",
+        "task_id": "01a081e1-3bf7-7192-b1d6-50914112eccb",
+        "tokens": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 56064,
+          "input_tokens": 62120,
+          "output_tokens": 80,
+          "reasoning_output_tokens": 13,
+          "total_tokens": 62200
+        },
+        "turn_id": "01a0928f-9ef4-7b93-8ff7-e9f9f31d6bf1",
+        "utc": "2026-09-11T22:46:21.106Z"
+      },
+      {
+        "effort": "medium",
+        "model": "gpt-6-astra",
+        "record_id": "7464c53ede892d4b4eb6b1267add2b16ad3b59745a4eedfcc71c255c4664b844",
+        "setting_attribution": "runtime_turn_context",
+        "task_id": "01a081e1-3bf7-7192-b1d6-50914112eccb",
+        "tokens": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 62080,
+          "input_tokens": 64125,
+          "output_tokens": 259,
+          "reasoning_output_tokens": 64,
+          "total_tokens": 64384
+        },
+        "turn_id": "01a0928f-9ef4-7b93-8ff7-e9f9f31d6bf1",
+        "utc": "2026-09-11T22:46:31.166Z"
+      },
+      {
+        "effort": "medium",
+        "model": "gpt-6-astra",
+        "record_id": "5e0f79f4881765bfc4d572ebfecd9fb06c774fb7271379dcc4b5dcba953dc779",
+        "setting_attribution": "runtime_turn_context",
+        "task_id": "01a081e1-3bf7-7192-b1d6-50914112eccb",
+        "tokens": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 64000,
+          "input_tokens": 69177,
+          "output_tokens": 761,
+          "reasoning_output_tokens": 33,
+          "total_tokens": 69938
+        },
+        "turn_id": "01a0928f-9ef4-7b93-8ff7-e9f9f31d6bf1",
+        "utc": "2026-09-11T22:46:57.159Z"
+      },
+      {
+        "effort": "medium",
+        "model": "gpt-6-astra",
+        "record_id": "99c21206f6bf37d81b6a75651428a7578b08f6e9d79989116d4077cc946d6736",
+        "setting_attribution": "runtime_turn_context",
+        "task_id": "01a081e1-3bf7-7192-b1d6-50914112eccb",
+        "tokens": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 69120,
+          "input_tokens": 70205,
+          "output_tokens": 186,
+          "reasoning_output_tokens": 14,
+          "total_tokens": 70391
+        },
+        "turn_id": "01a0928f-9ef4-7b93-8ff7-e9f9f31d6bf1",
+        "utc": "2026-09-11T22:47:22.857Z"
+      },
+      {
+        "effort": "medium",
+        "model": "gpt-6-astra",
+        "record_id": "d3c78aa1f838d6461fdc724c81d235acad391f1bdd48f5d12e183c5ab29f33f1",
+        "setting_attribution": "runtime_turn_context",
+        "task_id": "01a081e1-3bf7-7192-b1d6-50914112eccb",
+        "tokens": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 70144,
+          "input_tokens": 72107,
+          "output_tokens": 463,
+          "reasoning_output_tokens": 8,
+          "total_tokens": 72570
+        },
+        "turn_id": "01a0928f-9ef4-7b93-8ff7-e9f9f31d6bf1",
+        "utc": "2026-09-11T22:47:40.261Z"
+      },
+      {
+        "effort": "medium",
+        "model": "gpt-6-astra",
+        "record_id": "4fef985ea930c837d4b59d1bddcffe17fed471c902a56a91e4aaa79ffde9d500",
+        "setting_attribution": "runtime_turn_context",
+        "task_id": "01a081e1-3bf7-7192-b1d6-50914112eccb",
+        "tokens": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 72064,
+          "input_tokens": 72731,
+          "output_tokens": 40,
+          "reasoning_output_tokens": 7,
+          "total_tokens": 72771
+        },
+        "turn_id": "01a0928f-9ef4-7b93-8ff7-e9f9f31d6bf1",
+        "utc": "2026-09-11T22:48:14.748Z"
+      },
+      {
+        "effort": "medium",
+        "model": "gpt-6-astra",
+        "record_id": "f308de87c143c71041ab21906f29c709b04409fb386cac8e7434b7d5a65cfa94",
+        "setting_attribution": "runtime_turn_context",
+        "task_id": "01a081e1-3bf7-7192-b1d6-50914112eccb",
+        "tokens": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 72704,
+          "input_tokens": 72871,
+          "output_tokens": 42,
+          "reasoning_output_tokens": 9,
+          "total_tokens": 72913
+        },
+        "turn_id": "01a0928f-9ef4-7b93-8ff7-e9f9f31d6bf1",
+        "utc": "2026-09-11T22:48:19.383Z"
+      },
+      {
+        "effort": "medium",
+        "model": "gpt-6-astra",
+        "record_id": "0a84428fb1510322904975503a9c8c2f8b0395f0b5d61476b208f31bd09bbbab",
+        "setting_attribution": "runtime_turn_context",
+        "task_id": "01a081e1-3bf7-7192-b1d6-50914112eccb",
+        "tokens": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 72832,
+          "input_tokens": 72971,
+          "output_tokens": 155,
+          "reasoning_output_tokens": 10,
+          "total_tokens": 73126
+        },
+        "turn_id": "01a0928f-9ef4-7b93-8ff7-e9f9f31d6bf1",
+        "utc": "2026-09-11T22:48:39.447Z"
+      },
+      {
+        "effort": "medium",
+        "model": "gpt-6-astra",
+        "record_id": "a121dafb7c1dd86bc5bdbabbe6a31feb308c122f4fbc511daab0826b2634e903",
+        "setting_attribution": "runtime_turn_context",
+        "task_id": "01a081e1-3bf7-7192-b1d6-50914112eccb",
+        "tokens": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 72832,
+          "input_tokens": 73393,
+          "output_tokens": 418,
+          "reasoning_output_tokens": 46,
+          "total_tokens": 73811
+        },
+        "turn_id": "01a0928f-9ef4-7b93-8ff7-e9f9f31d6bf1",
+        "utc": "2026-09-11T22:48:54.609Z"
+      },
+      {
+        "effort": "medium",
+        "model": "gpt-6-astra",
+        "record_id": "e62b35f249e809fc5476a77163a875738781efadcd80c859b239de58f7c7aabc",
+        "setting_attribution": "runtime_turn_context",
+        "task_id": "01a081e1-3bf7-7192-b1d6-50914112eccb",
+        "tokens": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 73344,
+          "input_tokens": 74485,
+          "output_tokens": 540,
+          "reasoning_output_tokens": 48,
+          "total_tokens": 75025
+        },
+        "turn_id": "01a0928f-9ef4-7b93-8ff7-e9f9f31d6bf1",
+        "utc": "2026-09-11T22:49:15.137Z"
+      },
+      {
+        "effort": "medium",
+        "model": "gpt-6-astra",
+        "record_id": "3fae5a7ea2e7c8ead73de136eb46b8b23937e60613dd504ae008490e55ea86a6",
+        "setting_attribution": "runtime_turn_context",
+        "task_id": "01a081e1-3bf7-7192-b1d6-50914112eccb",
+        "tokens": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 74368,
+          "input_tokens": 75302,
+          "output_tokens": 2224,
+          "reasoning_output_tokens": 56,
+          "total_tokens": 77526
+        },
+        "turn_id": "01a0928f-9ef4-7b93-8ff7-e9f9f31d6bf1",
+        "utc": "2026-09-11T22:50:24.534Z"
+      },
+      {
+        "effort": "medium",
+        "model": "gpt-6-astra",
+        "record_id": "f75c3987011a9709fc91e13a719141cfceec5098c5cd057a207895ac4bb7d617",
+        "setting_attribution": "runtime_turn_context",
+        "task_id": "01a081e1-3bf7-7192-b1d6-50914112eccb",
+        "tokens": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 75264,
+          "input_tokens": 77621,
+          "output_tokens": 377,
+          "reasoning_output_tokens": 53,
+          "total_tokens": 77998
+        },
+        "turn_id": "01a0928f-9ef4-7b93-8ff7-e9f9f31d6bf1",
+        "utc": "2026-09-11T22:50:45.296Z"
+      },
+      {
+        "effort": "medium",
+        "model": "gpt-6-astra",
+        "record_id": "fe596ad3757f3346515b135a7c5225c4a805c96a01d899de94b292026935bda6",
+        "setting_attribution": "runtime_turn_context",
+        "task_id": "01a081e1-3bf7-7192-b1d6-50914112eccb",
+        "tokens": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 77568,
+          "input_tokens": 81295,
+          "output_tokens": 656,
+          "reasoning_output_tokens": 140,
+          "total_tokens": 81951
+        },
+        "turn_id": "01a0928f-9ef4-7b93-8ff7-e9f9f31d6bf1",
+        "utc": "2026-09-11T22:51:07.692Z"
+      },
+      {
+        "effort": "medium",
+        "model": "gpt-6-astra",
+        "record_id": "c536f294b90c8e476bebeba9c017a6e619e9955a6a54a917b18b56251336e21d",
+        "setting_attribution": "runtime_turn_context",
+        "task_id": "01a081e1-3bf7-7192-b1d6-50914112eccb",
+        "tokens": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 81152,
+          "input_tokens": 82042,
+          "output_tokens": 141,
+          "reasoning_output_tokens": 14,
+          "total_tokens": 82183
+        },
+        "turn_id": "01a0928f-9ef4-7b93-8ff7-e9f9f31d6bf1",
+        "utc": "2026-09-11T22:51:20.187Z"
+      },
+      {
+        "effort": "medium",
+        "model": "gpt-6-astra",
+        "record_id": "544187ceb3076828f561015117fd06451dfeff9ff143578c192f6d960eb4cfaa",
+        "setting_attribution": "runtime_turn_context",
+        "task_id": "01a081e1-3bf7-7192-b1d6-50914112eccb",
+        "tokens": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 0,
+          "input_tokens": 82291,
+          "output_tokens": 167,
+          "reasoning_output_tokens": 58,
+          "total_tokens": 82458
+        },
+        "turn_id": "01a0928f-9ef4-7b93-8ff7-e9f9f31d6bf1",
+        "utc": "2026-09-11T22:51:33.886Z"
+      },
+      {
+        "effort": "medium",
+        "model": "gpt-6-astra",
+        "record_id": "79dbacf2e9ff9b5ac4e41df076dd5ec498493d4609f8fa67f505f270c99d50c1",
+        "setting_attribution": "runtime_turn_context",
+        "task_id": "01a081e1-3bf7-7192-b1d6-50914112eccb",
+        "tokens": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 82176,
+          "input_tokens": 82660,
+          "output_tokens": 88,
+          "reasoning_output_tokens": 14,
+          "total_tokens": 82748
+        },
+        "turn_id": "01a0928f-9ef4-7b93-8ff7-e9f9f31d6bf1",
+        "utc": "2026-09-11T22:51:43.890Z"
+      },
+      {
+        "effort": "medium",
+        "model": "gpt-6-astra",
+        "record_id": "5c8721350c6eafe4d7eea3df8d9fc5ef969512c439b15a370e20a748260ae8e8",
+        "setting_attribution": "runtime_turn_context",
+        "task_id": "01a081e1-3bf7-7192-b1d6-50914112eccb",
+        "tokens": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 82560,
+          "input_tokens": 83121,
+          "output_tokens": 72,
+          "reasoning_output_tokens": 31,
+          "total_tokens": 83193
+        },
+        "turn_id": "01a0928f-9ef4-7b93-8ff7-e9f9f31d6bf1",
+        "utc": "2026-09-11T22:51:56.299Z"
+      },
+      {
+        "effort": "medium",
+        "model": "gpt-6-astra",
+        "record_id": "390a017543211067dbbcd46559c05346312bb826c989c83d836e70eedba56b4b",
+        "setting_attribution": "runtime_turn_context",
+        "task_id": "01a081e1-3bf7-7192-b1d6-50914112eccb",
+        "tokens": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 81920,
+          "input_tokens": 83221,
+          "output_tokens": 30,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 83251
+        },
+        "turn_id": "01a0928f-9ef4-7b93-8ff7-e9f9f31d6bf1",
+        "utc": "2026-09-11T23:56:59.015Z"
+      },
+      {
+        "effort": "medium",
+        "model": "gpt-6-astra",
+        "record_id": "d9ef61c35a6d4bb533c41fd6a0b3e07b09659558dcde3b49a72b36b87c628609",
+        "setting_attribution": "runtime_turn_context",
+        "task_id": "01a081e1-3bf7-7192-b1d6-50914112eccb",
+        "tokens": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 83072,
+          "input_tokens": 83309,
+          "output_tokens": 140,
+          "reasoning_output_tokens": 29,
+          "total_tokens": 83449
+        },
+        "turn_id": "01a0928f-9ef4-7b93-8ff7-e9f9f31d6bf1",
+        "utc": "2026-09-11T23:57:06.289Z"
+      },
+      {
+        "effort": "medium",
+        "model": "gpt-6-astra",
+        "record_id": "a29f543c71687231b7036f901b30d06562d442eb9181b5bdfeb00968580d4209",
+        "setting_attribution": "runtime_turn_context",
+        "task_id": "01a081e1-3bf7-7192-b1d6-50914112eccb",
+        "tokens": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 83200,
+          "input_tokens": 83551,
+          "output_tokens": 332,
+          "reasoning_output_tokens": 105,
+          "total_tokens": 83883
+        },
+        "turn_id": "01a0928f-9ef4-7b93-8ff7-e9f9f31d6bf1",
+        "utc": "2026-09-11T23:57:20.132Z"
+      },
+      {
+        "effort": "medium",
+        "model": "gpt-6-astra",
+        "record_id": "a95ac201d165a50eb4585b2aea332298691b3fbd89266d43b1e094e6a51b7e04",
+        "setting_attribution": "runtime_turn_context",
+        "task_id": "01a081e1-3bf7-7192-b1d6-50914112eccb",
+        "tokens": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 83456,
+          "input_tokens": 84011,
+          "output_tokens": 138,
+          "reasoning_output_tokens": 105,
+          "total_tokens": 84149
+        },
+        "turn_id": "01a0928f-9ef4-7b93-8ff7-e9f9f31d6bf1",
+        "utc": "2026-09-11T23:57:57.818Z"
+      },
+      {
+        "effort": "medium",
+        "model": "gpt-6-astra",
+        "record_id": "8e3046123d93699f9805d168733ca8113b34ba63bf796c30e6e6f665f431afb0",
+        "setting_attribution": "runtime_turn_context",
+        "task_id": "01a081e1-3bf7-7192-b1d6-50914112eccb",
+        "tokens": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 83968,
+          "input_tokens": 84177,
+          "output_tokens": 42,
+          "reasoning_output_tokens": 9,
+          "total_tokens": 84219
+        },
+        "turn_id": "01a0928f-9ef4-7b93-8ff7-e9f9f31d6bf1",
+        "utc": "2026-09-11T23:58:05.661Z"
+      },
+      {
+        "effort": "medium",
+        "model": "gpt-6-astra",
+        "record_id": "4aa929d9ec49c5a04723b2c23051e59930b02ca2f9f8e71d06eebab152a9487a",
+        "setting_attribution": "runtime_turn_context",
+        "task_id": "01a081e1-3bf7-7192-b1d6-50914112eccb",
+        "tokens": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 84096,
+          "input_tokens": 84247,
+          "output_tokens": 84,
+          "reasoning_output_tokens": 51,
+          "total_tokens": 84331
+        },
+        "turn_id": "01a0928f-9ef4-7b93-8ff7-e9f9f31d6bf1",
+        "utc": "2026-09-11T23:58:11.697Z"
+      },
+      {
+        "effort": "medium",
+        "model": "gpt-6-astra",
+        "record_id": "58a7711dfdc650d5b77e888635611dd64e0c496d010301433f9b3d7ba2999d04",
+        "setting_attribution": "runtime_turn_context",
+        "task_id": "01a081e1-3bf7-7192-b1d6-50914112eccb",
+        "tokens": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 84224,
+          "input_tokens": 84389,
+          "output_tokens": 335,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 84724
+        },
+        "turn_id": "01a0928f-9ef4-7b93-8ff7-e9f9f31d6bf1",
+        "utc": "2026-09-11T23:58:24.817Z"
+      },
+      {
+        "effort": "medium",
+        "model": "gpt-6-astra",
+        "record_id": "13de4be0d61cffe14ba4e7d8ad3ed174c2ead525c78b290273f9904636619c94",
+        "setting_attribution": "runtime_turn_context",
+        "task_id": "01a081e1-3bf7-7192-b1d6-50914112eccb",
+        "tokens": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 84352,
+          "input_tokens": 84786,
+          "output_tokens": 62,
+          "reasoning_output_tokens": 30,
+          "total_tokens": 84848
+        },
+        "turn_id": "01a0928f-9ef4-7b93-8ff7-e9f9f31d6bf1",
+        "utc": "2026-09-11T23:59:00.984Z"
+      },
+      {
+        "effort": "medium",
+        "model": "gpt-6-astra",
+        "record_id": "114e2eb3dbb231de8b20cd3c03a6b125bf56695f8004f3a11045e741fcbfc281",
+        "setting_attribution": "runtime_turn_context",
+        "task_id": "01a081e1-3bf7-7192-b1d6-50914112eccb",
+        "tokens": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 84736,
+          "input_tokens": 84906,
+          "output_tokens": 112,
+          "reasoning_output_tokens": 17,
+          "total_tokens": 85018
+        },
+        "turn_id": "01a0928f-9ef4-7b93-8ff7-e9f9f31d6bf1",
+        "utc": "2026-09-11T23:59:20.565Z"
+      },
+      {
+        "effort": "medium",
+        "model": "gpt-6-astra",
+        "record_id": "45d66d256d99f733ca9b41ab037b9a3ade380bcbc7f7179f2c2842a004f10bd8",
+        "setting_attribution": "runtime_turn_context",
+        "task_id": "01a081e1-3bf7-7192-b1d6-50914112eccb",
+        "tokens": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 84864,
+          "input_tokens": 85046,
+          "output_tokens": 31,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 85077
+        },
+        "turn_id": "01a0928f-9ef4-7b93-8ff7-e9f9f31d6bf1",
+        "utc": "2026-09-11T23:59:55.132Z"
+      },
+      {
+        "effort": "medium",
+        "model": "gpt-6-astra",
+        "record_id": "1793640348b4bc8256a21fd34421f30f6fb97ffc896272b43951b7808b0de678",
+        "setting_attribution": "runtime_turn_context",
+        "task_id": "01a081e1-3bf7-7192-b1d6-50914112eccb",
+        "tokens": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 84992,
+          "input_tokens": 85192,
+          "output_tokens": 126,
+          "reasoning_output_tokens": 29,
+          "total_tokens": 85318
+        },
+        "turn_id": "01a0928f-9ef4-7b93-8ff7-e9f9f31d6bf1",
+        "utc": "2026-09-12T00:00:11.440Z"
+      },
+      {
+        "effort": "medium",
+        "model": "gpt-6-astra",
+        "record_id": "bb61ff234c6b28c4fc8bf0bb6ec98ac58063322ff070359ec070a9fbdc6a8ab1",
+        "setting_attribution": "runtime_turn_context",
+        "task_id": "01a081e1-3bf7-7192-b1d6-50914112eccb",
+        "tokens": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 85120,
+          "input_tokens": 85409,
+          "output_tokens": 1236,
+          "reasoning_output_tokens": 243,
+          "total_tokens": 86645
+        },
+        "turn_id": "01a0928f-9ef4-7b93-8ff7-e9f9f31d6bf1",
+        "utc": "2026-09-12T00:00:52.628Z"
+      }
+    ],
+    "captured_tasks": [
+      "01a081e1-3bf7-7192-b1d6-50914112eccb"
+    ],
+    "category_coverage": {
+      "cache_write_input_tokens": {
+        "observed_blocks": 51,
+        "total_blocks": 51
+      },
+      "cached_input_tokens": {
+        "observed_blocks": 51,
+        "total_blocks": 51
+      },
+      "input_tokens": {
+        "observed_blocks": 51,
+        "total_blocks": 51
+      },
+      "output_tokens": {
+        "observed_blocks": 51,
+        "total_blocks": 51
+      },
+      "reasoning_output_tokens": {
+        "observed_blocks": 51,
+        "total_blocks": 51
+      },
+      "total_tokens": {
+        "observed_blocks": 51,
+        "total_blocks": 51
+      }
+    },
+    "exact_attributable_tokens": null,
+    "expected_tasks": [
+      "01a081e1-3bf7-7192-b1d6-50914112eccb"
+    ],
+    "missing_tasks": [],
+    "observed_tokens": {
+      "cache_write_input_tokens": 0,
+      "cached_input_tokens": 5694592,
+      "input_tokens": 5871531,
+      "output_tokens": 32122,
+      "reasoning_output_tokens": 12068,
+      "total_tokens": 5903653
+    },
+    "status": "PARTIAL",
+    "subscription": {
+      "allocation_usd": null,
+      "treatment": "shared fixed overhead"
+    },
+    "token_definitions": {
+      "cache_write_input_tokens": "Retained as reported; not added to total.",
+      "cached_input_tokens": "Subset of input; do not add to total.",
+      "input_tokens": "Reported input total; cached input is a subset.",
+      "output_tokens": "Reported output total; reasoning output is a subset.",
+      "reasoning_output_tokens": "Subset of output; do not add to total.",
+      "total_tokens": "Reported total; input plus output, without subset double counting."
+    },
+    "uncertainties": [
+      "capture_completeness_not_established"
+    ],
+    "window_end": "2026-09-12T01:38:32.431699+00:00",
+    "window_start": "2026-09-11T22:21:50.502917+00:00"
+  },
+  "episodes": [
+    {
+      "assistant_active_union_seconds": 6041.532116174698,
+      "assistant_time_scope": "Recorded activity intervals only; not token generation time",
+      "calendar_elapsed_seconds": 11801.928781986237,
+      "coverage_fraction": 1.0,
+      "disposition": "YELLOW",
+      "episode_id": "first",
+      "excluded_input_wait_seconds": null,
+      "human_review_seconds": null,
+      "jobs": [
+        {
+          "job_id": "screen-20260911T222609Z-70aa786f",
+          "job_kind": "native",
+          "monotonic_seconds": 0.8483281669905409,
+          "outcome": "FAILED",
+          "utc_seconds": 0.8483359813690186
+        },
+        {
+          "job_id": "screen-20260911T222625Z-370528ef",
+          "job_kind": "native",
+          "monotonic_seconds": 3.948865915997885,
+          "outcome": "PASSED",
+          "utc_seconds": 3.948875904083252
+        },
+        {
+          "job_id": "preview-20260911T223142Z-279f98ac",
+          "job_kind": "native",
+          "monotonic_seconds": 480.03646470897365,
+          "outcome": "FAILED",
+          "utc_seconds": 480.03632497787476
+        },
+        {
+          "job_id": "preview-complete-69aa0805",
+          "job_kind": "native",
+          "monotonic_seconds": 3.3139182080049068,
+          "outcome": "PASSED",
+          "utc_seconds": 3.314033031463623
+        },
+        {
+          "job_id": "qualification-20260911T224552Z-be3ff346",
+          "job_kind": "native",
+          "monotonic_seconds": 12.637253749999218,
+          "outcome": "PASSED",
+          "utc_seconds": 12.637280941009521
+        },
+        {
+          "job_id": "qualification-20260911T224712Z-14675f1c",
+          "job_kind": "native",
+          "monotonic_seconds": 5.389483582985122,
+          "outcome": "FAILED",
+          "utc_seconds": 5.389494895935059
+        },
+        {
+          "job_id": "qualification-20260911T224816Z-eddd9200",
+          "job_kind": "native",
+          "monotonic_seconds": 475.2084302919684,
+          "outcome": "PASSED",
+          "utc_seconds": 4307.920319080353
+        }
+      ],
+      "lifecycle": "CLOSED",
+      "native_job_wall_sum_seconds": 981.3827446249197,
+      "native_job_wall_union_seconds": null,
+      "native_jobs": [
+        {
+          "job_id": "screen-20260911T222609Z-70aa786f",
+          "job_kind": "native",
+          "monotonic_seconds": 0.8483281669905409,
+          "outcome": "FAILED",
+          "utc_seconds": 0.8483359813690186
+        },
+        {
+          "job_id": "screen-20260911T222625Z-370528ef",
+          "job_kind": "native",
+          "monotonic_seconds": 3.948865915997885,
+          "outcome": "PASSED",
+          "utc_seconds": 3.948875904083252
+        },
+        {
+          "job_id": "preview-20260911T223142Z-279f98ac",
+          "job_kind": "native",
+          "monotonic_seconds": 480.03646470897365,
+          "outcome": "FAILED",
+          "utc_seconds": 480.03632497787476
+        },
+        {
+          "job_id": "preview-complete-69aa0805",
+          "job_kind": "native",
+          "monotonic_seconds": 3.3139182080049068,
+          "outcome": "PASSED",
+          "utc_seconds": 3.314033031463623
+        },
+        {
+          "job_id": "qualification-20260911T224552Z-be3ff346",
+          "job_kind": "native",
+          "monotonic_seconds": 12.637253749999218,
+          "outcome": "PASSED",
+          "utc_seconds": 12.637280941009521
+        },
+        {
+          "job_id": "qualification-20260911T224712Z-14675f1c",
+          "job_kind": "native",
+          "monotonic_seconds": 5.389483582985122,
+          "outcome": "FAILED",
+          "utc_seconds": 5.389494895935059
+        },
+        {
+          "job_id": "qualification-20260911T224816Z-eddd9200",
+          "job_kind": "native",
+          "monotonic_seconds": 475.2084302919684,
+          "outcome": "PASSED",
+          "utc_seconds": 4307.920319080353
+        }
+      ],
+      "net_elapsed_seconds": null,
+      "observed_excluded_input_wait_seconds": 5760.396665811539,
+      "operational_proxies": {},
+      "phase_net_seconds": null,
+      "uncertainties": [
+        "clock_discontinuity",
+        "clock_discontinuity_or_out_of_order_capture"
+      ],
+      "unknown_gap_seconds": 0
+    }
+  ],
+  "experiment_id": "3D-06A",
+  "factory_api": {
+    "basis": "All experiment workers are trusted local Blender paths; work packages explicitly record zero provider calls. No evaluator configured.",
+    "engineering_dollars": null,
+    "human_review_seconds": null,
+    "known_api_cost_usd": 0,
+    "provider_calls": 0,
+    "status": "RECORDED"
+  },
+  "model_setting_observations": [
+    {
+      "attribution": "runtime_turn_context",
+      "effort": "medium",
+      "episode_id": "first",
+      "event_id": "3d06a-model-2026-09-11T22:44:33.617Z",
+      "event_type": "model_setting_observed",
+      "evidence_ref": "results/3d06a/engineering-usage.json",
+      "experiment_id": "3D-06A",
+      "model": "gpt-6-astra",
+      "phase": "qualification",
+      "reason": null,
+      "run_id": null,
+      "schema_version": "1.0",
+      "task_id": null,
+      "turn_id": null,
+      "utc": "2026-09-11T22:44:33.617Z"
+    }
+  ],
+  "net_episode_sum_seconds": null,
+  "note": "Episode totals exclude inter-episode gaps. Job sums are process-seconds, not CPU time.",
+  "outcome_denominators": {
+    "closed_episodes": 1,
+    "closed_experiments": 1,
+    "director_accepted_outputs": 0,
+    "technically_successful_outputs": 1
+  },
+  "schema_version": "1.0"
+}

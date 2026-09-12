@@ -1,3 +1,5 @@
+> Final disposition: Closed YELLOW at Director request. See [closure learning](closure-v1/REPORT.md). Pending-review statements below describe the historical handoff, not outstanding work.
+
 # 3D-06A process review — pre-Director handoff
 
 The work stayed within a no-prop stationary gesture. A written motion brief and measured fixture board preceded candidate generation. No replacement character or geometry repair was needed. The frozen quality gate explicitly allows a Director tie when the requested timing and non-regression requirements pass.

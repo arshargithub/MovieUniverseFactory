@@ -584,6 +584,20 @@
           "path": "results/3d06a/engineering-usage.json"
         }
       ]
+    },
+    {
+      "controlled_model_comparison": false,
+      "event_id": "3d06a-director-closure",
+      "event_type": "director_requested_closure",
+      "experiment_id": "3D-06A",
+      "observation": "Numerically successful but creatively underpowered: Director saw a slight arm raise and no meaningful comparison. No scores or visual acceptance. Define creative value and visible change before the next implementation; no automatic successor.",
+      "outcome": "CLOSED_YELLOW",
+      "sources": [
+        {
+          "kind": "repository_artifact",
+          "path": "results/3d06a/closure-v1/REPORT.md"
+        }
+      ]
     }
   ],
   "recording_mode": "manual_evidence_backfill_and_future_event_capture",

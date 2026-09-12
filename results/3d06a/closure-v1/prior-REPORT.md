@@ -1,11 +1,3 @@
-# Current disposition
-
-**Closed YELLOW: technical execution passed; creative usefulness and visual qualification were not established. No further iteration planned.**
-
-See [final Director feedback and learning](closure-v1/REPORT.md). The following is the preserved pre-review technical report; its pending status is historical.
-
----
-
 # 3D-06A — reference-timed gesture
 
 Qualification: **YELLOW / Director review pending**. Lifecycle: **OPEN**. The latest frozen numerical suite and complete 384-frame render passed. Director acceptance is pending before GREEN. This is a modest, manually authored pose/time reference on the admitted stationary character, not human-video motion extraction or general choreography.
