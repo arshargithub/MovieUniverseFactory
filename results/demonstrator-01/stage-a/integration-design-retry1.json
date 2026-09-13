@@ -1,0 +1,24 @@
+{
+  "cost_usd": 0.19949999999999998,
+  "data": {
+    "result": "## Decision: saddle-follow keys with an all-FK rider\n\nUse one rider action: animate existing controls directly, without parenting, constraints, new bones, or rig scripts. Work in a separate preview file with a copied rider action; leave the horse animation unchanged.\n\n### Setup and pose targets\n\nSet rider object scale to **1.8/4.2 = 0.428571** and Z rotation to **\u03c0**; do not apply these transforms. Position the evaluated pelvis, not the armature origin.\n\nDefine saddle frame **S** at the visible saddle-top centre: initially world Z = **1.63 m**. Local \u2212Y is forward, +X transverse, +Z upward. S must follow the evaluated saddle, including forward travel; it is not automatically a horse control\u2019s head.\n\nProvisional anatomical targets, metres relative to S:\n\n| Landmark | (X, Y, Z) |\n|---|---|\n| Pelvis centre | (0, 0, +0.10) |\n| Chest centre | (0, \u22120.08, +0.60) |\n| Head centre | (0, \u22120.10, +0.88) |\n| Knees | (\u00b10.29, \u22120.27, \u22120.21) |\n| Ankles | (\u00b10.31, \u22120.17, \u22120.61) |\n| Toes | (\u00b10.31, \u22120.36, \u22120.64) |\n| Hands | (\u00b10.18, \u22120.43, +0.38) |\n\nMatch signs to anatomical sides after rotation. These are placement goals, not bone-head translations; preserve limb lengths and test barrel clearance.\n\n### Controls and 60-frame motion\n\nSelect **FK** through existing custom properties, verifying which endpoint activates FK rather than assuming its numeric value. Pose thighs, shins and feet with their `*_fk.L/R` controls; similarly use upper-arm, forearm and hand FK. Leave hand/foot IK controls and thigh pole targets inactive.\n\nUse `torso` to carry the seated pose; `hips` establishes pelvic orientation, `chest` the forward lean, and `head` the gaze. Manually key torso translation/orientation each frame against S, accounting for its offset from the pelvis.\n\nHold the seated leg pose. Add chest pitch of \u00b13\u00b0 around the initial lean, maximum at saddle crest and minimum at trough; counterrotate upper arms and head approximately oppositely. Repeat these local offsets every **10 frames**, with frame 11 matching frame 1. Follow actual saddle translation\u2014not repeated world positions\u2014for frames **1\u201360 at 24 fps**.\n\n### Fast checks and essential measurements\n\nBefore detailed posing, perturb torso, one FK thigh and one FK upper arm; scrub and confirm mesh response, then undo. Inspect the Drivers editor for invalid drivers/namespace errors. Blocked `rig_ui.py` alone does not establish breakage; working horse gait does not validate rider drivers.\n\nNext measure S\u2019s evaluated trajectory, rider joint lengths and barrel clearance. Track an **evaluated hoof-sole point during stance relative to ground**. Control-head speeds **2\u201315 m/s, median 3.45** imply **8\u201363 cm/frame, median 14 cm**; flag the apparent contact mismatch, but do not equate control heads with hoof surfaces.\n\n### Go/no-go\n\n**Go:** responsive controls, pelvis within 3 cm of target, reachable limbs without barrel penetration, and sole slip below 2 cm per stance. **No-go:** any failed check; show the labelled failure and stop\u2014no rig repair loop."
+  },
+  "error": null,
+  "input_cost_usd": 0.00435,
+  "other_output_cost_usd": 0.011955,
+  "output_cost_usd": 0.19515,
+  "provider_request_id": "req_df272630fdf149619078557ef095c29b",
+  "reasoning_cost_usd": 0.1553,
+  "reconciliation_status": "CONSERVATIVE_CALCULATED_ESTIMATE_NOT_PROVIDER_INVOICE",
+  "reservation_id": "d16366c5-6206-4a6b-83cb-81492b3fdfcb",
+  "response_id": "resp_01ce27d79aab9929016aa509a5870087d2b8b8366c62152d6d",
+  "returned_model": "gpt-6-astra",
+  "usage": {
+    "cached_input_tokens": 0,
+    "input_tokens": 348,
+    "output_tokens": 3903,
+    "reasoning_tokens": 3106,
+    "total_tokens": 4251,
+    "usage_certainty": "known"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "captured_at": "2026-09-12T16:36:28.906080+00:00",
+  "base_commit": "13a603ed3c3853ed25dad41aeb4b8624bc778017",
+  "working_tree_clean": false,
+  "files": [
+    {
+      "path": "src/movie_factory/adapters/blender/demo_riding.py",
+      "sha256": "4324d34b0aa5136c1e9edfc8c70036db5c42afd54f9d8054882ea320cd0ae01e"
+    },
+    {
+      "path": "src/movie_factory/adapters/blender/demo_kinematic.py",
+      "sha256": "69f9c0ee0c2fa072b86f24dc7fb4a2382ca7ff7ef8b03c5b05374fe301d5fc47"
+    },
+    {
+      "path": "src/movie_factory/adapters/blender/demo_contact.py",
+      "sha256": "6392492ec4cf63c37167d3be62fd9f9acc4077efbef23e2a190b00523e1b61f2"
+    },
+    {
+      "path": "src/movie_factory/adapters/blender/worker.py",
+      "sha256": "4fa1901a19026050247e91a495f28626420c049df38f2a3883160eb6edccc817"
+    },
+    {
+      "path": "src/movie_factory/adapters/blender/runner.py",
+      "sha256": "2f308ae76c82be57dc76fa2bf92de9fe4c841e6277396159f3cfbffa73a9e735"
+    },
+    {
+      "path": "tests/unit/test_demo_contact.py",
+      "sha256": "01e226a2c8e164c2c14901b1713224ffd97713ca8422601ca55f080268057cf9"
+    },
+    {
+      "path": "feasibility/demonstrator-01/free-repair-screening.json",
+      "sha256": "f259a2ae98ab6838bf142e39a300fa6d76fa051ef992501669d8da7f8163e680"
+    },
+    {
+      "path": "feasibility/demonstrator-01/MOTION_BRIEF.md",
+      "sha256": "98380c5d44b81bf8ace53db0b45f250b6eb059986073a64cd56c16a6e7799d5e"
+    },
+    {
+      "path": "feasibility/demonstrator-01/FREE_ASSET_REPAIR_PLAN.md",
+      "sha256": "cc976087cdee81c9239f572508893ee03730d6a912605563af1978f053a17eff"
+    }
+  ],
+  "note": "Uncommitted repair snapshot. Captured after render launch. Additive fixed verification mode was introduced after the render worker loaded; rendering functions were not changed afterward. This is a reproduction snapshot, not a claim that the entire source file was byte-identical at render launch. Closed campaign source/evidence tags remain untouched."
+}

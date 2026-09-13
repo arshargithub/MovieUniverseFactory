@@ -1,0 +1,69 @@
+{
+  "status": "YELLOW_INTERMEDIATE_REPAIR_DIRECTOR_PENDING_FULL_PACE_NOT_QUALIFIED",
+  "activity_seconds": 1207.431652,
+  "start": "2026-09-12T18:08:16.619336+00:00",
+  "end": "2026-09-12T18:28:24.050988+00:00",
+  "native_jobs": [
+    {
+      "run": "realism-audit",
+      "ok": true,
+      "seconds": 35.71849937498337,
+      "exit_code": 0
+    },
+    {
+      "run": "realism-probe",
+      "ok": true,
+      "seconds": 57.21433608402731,
+      "exit_code": 0
+    },
+    {
+      "run": "realism-motion",
+      "ok": true,
+      "seconds": 503.52381679200334,
+      "exit_code": 0
+    },
+    {
+      "run": "realism-reopen",
+      "ok": true,
+      "seconds": 116.55970770900603,
+      "exit_code": 0
+    }
+  ],
+  "native_process_seconds": 713.01635996002,
+  "render_seconds": 463.03965961537324,
+  "new_paid_api_calls": 0,
+  "new_paid_api_cost_usd": 0,
+  "campaign_api_estimated_usd": 2.156012501,
+  "director_review_seconds": null,
+  "subscription_tokens": null,
+  "reopen": {
+    "all_integer_actor_bounds_finite": true,
+    "frames": [
+      0,
+      59
+    ],
+    "head_scale": [
+      1.5633331537246704,
+      1.5633329153060913,
+      1.5633329153060913
+    ],
+    "helmet_dimension_ratios_to_previous": [
+      0.669999986581598,
+      0.6699999131418717,
+      0.6699995357292087
+    ],
+    "limitations": [
+      "Same sole estimator; not independent collision proof.",
+      "Surface grasp, skin quality, physical hair and full-pace gallop are not qualified."
+    ],
+    "max_hoof_penetration_m": 0.0016988902352750301,
+    "max_rein_endpoint_error_m": 0.0035266917744871786,
+    "max_stance_excursion_m": 0.005900985317870749,
+    "scene_sha256": "37594a7ef2d59e5dcc9af42c332f28ab41e86e78f78a60e6bd5ff9e2a7ca961e",
+    "screens_pass": true,
+    "step": 0.05,
+    "tail_render_children": 12
+  },
+  "tests_passed": 21,
+  "production_frozen": false
+}

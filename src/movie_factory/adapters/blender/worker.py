@@ -1613,6 +1613,56 @@ def main():
             module_spec.loader.exec_module(gesture)
             handler=gesture.screen if mode=="gesture_screen" else gesture.render_tail if mode=="gesture_tail" else gesture.campaign
             status["artifacts"].extend(handler(sys.modules[__name__],out,job))
+        elif mode in {"demo_riding_preview","demo_riding_recovery","demo_riding_motion","demo_riding_audit","demo_free_probe","demo_free_motion","demo_hoof_response","demo_free_verify"}:
+            module_spec=importlib.util.spec_from_file_location("mf_demo_riding",Path(__file__).with_name("demo_riding.py"))
+            module=importlib.util.module_from_spec(module_spec)
+            module_spec.loader.exec_module(module)
+            status["artifacts"].extend((module.verify_free_scene if mode=="demo_free_verify" else module.audit_fixture if mode in {"demo_riding_audit","demo_hoof_response"} else module.build_preview)(sys.modules[__name__],out,job))
+        elif mode in {"demo_realism_audit","demo_realism_probe","demo_realism_motion"}:
+            spec=importlib.util.spec_from_file_location("mf_demo_realism",Path(__file__).with_name("demo_realism.py"));module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+            spec=importlib.util.spec_from_file_location("mf_demo_riding",Path(__file__).with_name("demo_riding.py"));helper=importlib.util.module_from_spec(spec);spec.loader.exec_module(helper)
+            status["artifacts"].extend((module.audit if mode=="demo_realism_audit" else module.build)(sys.modules[__name__],out,job,helper))
+        elif mode=="demo_realism_reopen":
+            spec=importlib.util.spec_from_file_location("mf_demo_realism_verify",Path(__file__).with_name("demo_realism_verify.py"));module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+            spec=importlib.util.spec_from_file_location("mf_demo_riding",Path(__file__).with_name("demo_riding.py"));helper=importlib.util.module_from_spec(spec);spec.loader.exec_module(helper)
+            status["artifacts"].extend(module.verify(sys.modules[__name__],out,job,helper))
+        elif mode in {"demo_fullpace_audit","demo_fullpace_probe","demo_fullpace_motion"}:
+            spec=importlib.util.spec_from_file_location("mf_demo_fullpace",Path(__file__).with_name("demo_fullpace.py"));module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+            spec=importlib.util.spec_from_file_location("mf_demo_riding",Path(__file__).with_name("demo_riding.py"));helper=importlib.util.module_from_spec(spec);spec.loader.exec_module(helper)
+            status["artifacts"].extend((module.audit if mode=="demo_fullpace_audit" else module.build)(sys.modules[__name__],out,job,helper))
+        elif mode in {"demo_sustained_check","demo_sustained_fx","demo_sustained_render","demo_sustained_look","demo_sustained_contact_control"}:
+            spec=importlib.util.spec_from_file_location("mf_sustained_finish",Path(__file__).with_name("demo_sustained_finish.py"));module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+            spec=importlib.util.spec_from_file_location("mf_demo_riding",Path(__file__).with_name("demo_riding.py"));helper=importlib.util.module_from_spec(spec);spec.loader.exec_module(helper)
+            status["artifacts"].extend(module.run(sys.modules[__name__],out,job,helper))
+        elif mode in {"demo_source_gallop_probe","demo_source_gallop_build"}:
+            spec=importlib.util.spec_from_file_location("mf_source_gallop",Path(__file__).with_name("demo_source_gallop.py"));module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+            spec=importlib.util.spec_from_file_location("mf_demo_riding",Path(__file__).with_name("demo_riding.py"));helper=importlib.util.module_from_spec(spec);spec.loader.exec_module(helper)
+            status["artifacts"].extend(module.run(sys.modules[__name__],out,job,helper))
+        elif mode=="demo_sustained_closure":
+            spec=importlib.util.spec_from_file_location("mf_closure",Path(__file__).with_name("demo_closure.py"));module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+            spec=importlib.util.spec_from_file_location("mf_demo_riding",Path(__file__).with_name("demo_riding.py"));helper=importlib.util.module_from_spec(spec);spec.loader.exec_module(helper)
+            status["artifacts"].extend(module.run(sys.modules[__name__],out,job,helper))
+        elif mode=="demo_sustained_audit":
+            spec=importlib.util.spec_from_file_location("mf_sustained",Path(__file__).with_name("demo_sustained.py"));module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+            spec=importlib.util.spec_from_file_location("mf_demo_riding",Path(__file__).with_name("demo_riding.py"));helper=importlib.util.module_from_spec(spec);spec.loader.exec_module(helper)
+            status["artifacts"].extend(module.run(sys.modules[__name__],out,job,helper))
+        elif mode=="demo_forefoot_pose":
+            spec=importlib.util.spec_from_file_location("mf_forefoot_pose",Path(__file__).with_name("demo_forefoot_pose.py"));module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+            spec=importlib.util.spec_from_file_location("mf_demo_riding",Path(__file__).with_name("demo_riding.py"));helper=importlib.util.module_from_spec(spec);spec.loader.exec_module(helper)
+            status["artifacts"].extend(module.run(sys.modules[__name__],out,job,helper))
+        elif mode=="demo_forefoot_diagnosis":
+            spec=importlib.util.spec_from_file_location("mf_forefoot_diagnosis",Path(__file__).with_name("demo_forefoot_diagnosis.py"));module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+            spec=importlib.util.spec_from_file_location("mf_demo_riding",Path(__file__).with_name("demo_riding.py"));helper=importlib.util.module_from_spec(spec);spec.loader.exec_module(helper)
+            status["artifacts"].extend(module.diagnose(sys.modules[__name__],out,job,helper))
+        elif mode=="demo_fullpace_clean_audit":
+            spec=importlib.util.spec_from_file_location("mf_fullpace_replay",Path(__file__).with_name("demo_fullpace_replay.py"));module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+            spec=importlib.util.spec_from_file_location("mf_demo_riding",Path(__file__).with_name("demo_riding.py"));helper=importlib.util.module_from_spec(spec);spec.loader.exec_module(helper)
+            status["artifacts"].extend(module.verify(sys.modules[__name__],out,job,helper))
+        elif mode=="demo_asset_inspect":
+            module_spec=importlib.util.spec_from_file_location("mf_demo_asset",Path(__file__).with_name("demo_asset.py"))
+            module=importlib.util.module_from_spec(module_spec)
+            module_spec.loader.exec_module(module)
+            status["artifacts"].extend(module.inspect_asset(sys.modules[__name__],out,job))
         elif mode=="asset_probe":
             probe=asset_probe(job["asset"])
             write_json(out/"probe.json",probe)

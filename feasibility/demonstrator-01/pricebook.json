@@ -1,0 +1,44 @@
+{
+  "accounting": "Text only; tools disabled; <100K UTF8 byte/protocol bound, below 272K long-context threshold. Reserve all input at 1.25x uncached input to cover cache writes, plus all maximum output (including reasoning). Calculated settlement remains a conservative estimate until provider reconciliation. No discount assumed in reservation. Image route NOT_ENABLED until its model-specific bound is verified.",
+  "bounding_pricebooks": {
+    "gpt-5.6-sol": {
+      "cached_input_per_million": 0.4,
+      "currency": "USD",
+      "input_ceiling": 100000,
+      "input_per_million": 5.0,
+      "long_context_threshold": 272000,
+      "model": "gpt-5.6-sol",
+      "output_per_million": 20,
+      "service_tier": "default",
+      "source": "https://developers.openai.com/api/docs/models/gpt-5.6-sol",
+      "verified_date": "2026-09-12"
+    },
+    "gpt-6-astra": {
+      "cached_input_per_million": 1.0,
+      "currency": "USD",
+      "input_ceiling": 100000,
+      "input_per_million": 12.5,
+      "long_context_threshold": 272000,
+      "model": "gpt-6-astra",
+      "output_per_million": 50,
+      "service_tier": "default",
+      "source": "https://developers.openai.com/api/docs/models/gpt-6-astra",
+      "verified_date": "2026-09-12"
+    }
+  },
+  "date": "2026-09-12",
+  "source_hashes": {
+    "results/demonstrator-01/stage-a/sources/gpt-5.6-sol.md": "23f4ff2c236486d42145e21693f450bfcac272c37ee839a5ee6f9455cd1d8b7b",
+    "results/demonstrator-01/stage-a/sources/gpt-6-astra.md": "f45ae813c3f69708e2576328056de14cdf71fec174c875f4b81d236105545625"
+  },
+  "standard_input_output_per_million": {
+    "gpt-5.6-sol": [
+      4,
+      20
+    ],
+    "gpt-6-astra": [
+      10,
+      50
+    ]
+  }
+}

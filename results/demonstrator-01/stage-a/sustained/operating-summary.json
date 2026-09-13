@@ -1,0 +1,243 @@
+{
+  "activity_envelope_monotonic_seconds": 5152.331086082966,
+  "pure_active_engineering_seconds": null,
+  "note": "Activity envelope includes overlapping local jobs and supervision; pure active thinking is not independently measured. Native process sums are not wall time. Historical UTC discontinuity prevents whole-Stage-A exact net timing.",
+  "native_process_seconds": 5452.114012914011,
+  "jobs": [
+    {
+      "job_id": "demo01-sustained-audit",
+      "kind": "native",
+      "phase": "sustained_repair",
+      "outcome": "PASSED",
+      "seconds": 6.339165167009924,
+      "clock_id": "62e91880-bce9-40b3-bdda-6926c9d2754b"
+    },
+    {
+      "job_id": "demo01-sustained-closure",
+      "kind": "native",
+      "phase": "sustained_repair",
+      "outcome": "PASSED",
+      "seconds": 12.237446166982409,
+      "clock_id": "d8354cd6-8e5f-4b65-831a-4bf356e83c4f"
+    },
+    {
+      "job_id": "demo01-source-gallop-probe",
+      "kind": "native",
+      "phase": "sustained_repair",
+      "outcome": "PASSED",
+      "seconds": 272.45453120797174,
+      "clock_id": "2166b0e3-126f-446b-afa3-4229c1ae570b"
+    },
+    {
+      "job_id": "demo01-source-gallop-build",
+      "kind": "native",
+      "phase": "sustained_repair",
+      "outcome": "PASSED",
+      "seconds": 195.46107958297944,
+      "clock_id": "9d4aa6c8-74bd-4a57-bf8a-8de5d979632f"
+    },
+    {
+      "job_id": "demo01-sustained-reopen",
+      "kind": "native",
+      "phase": "sustained_validation",
+      "outcome": "FAILED",
+      "seconds": 360.19275412498973,
+      "clock_id": "6804c5eb-752e-4106-856c-d148ac2f315b"
+    },
+    {
+      "job_id": "demo01-sustained-fx",
+      "kind": "native",
+      "phase": "sustained_fx",
+      "outcome": "PASSED",
+      "seconds": 457.8420080000069,
+      "clock_id": "21f27dd9-293d-4bf0-b25a-20aaf283e26f"
+    },
+    {
+      "job_id": "demo01-sustained-reopen-fast",
+      "kind": "native",
+      "phase": "sustained_validation",
+      "outcome": "PASSED",
+      "seconds": 62.903281415987294,
+      "clock_id": "41b5de43-ec79-4d45-94d3-dea0c9d56d11"
+    },
+    {
+      "job_id": "demo01-sustained-look",
+      "kind": "native",
+      "phase": "sustained_fx",
+      "outcome": "PASSED",
+      "seconds": 23.04618916695472,
+      "clock_id": "085fa103-8e5d-42d9-a4de-cc7359935c19"
+    },
+    {
+      "job_id": "demo01-source-gallop-pivot",
+      "kind": "native",
+      "phase": "sustained_repair",
+      "outcome": "PASSED",
+      "seconds": 132.21166433300823,
+      "clock_id": "384207ba-67ea-4185-8457-068e4b63ca31"
+    },
+    {
+      "job_id": "demo01-pivot-fx",
+      "kind": "native",
+      "phase": "integrated-look",
+      "outcome": "PASSED",
+      "seconds": 16.82014845800586,
+      "clock_id": "6cef2f9a-ac41-47d0-9622-e3d179e07f01"
+    },
+    {
+      "job_id": "demo01-pivot-reopen",
+      "kind": "native",
+      "phase": "motion-validation",
+      "outcome": "PASSED",
+      "seconds": 62.12731425004313,
+      "clock_id": "800928ff-eec4-421d-b08c-e637704414b5"
+    },
+    {
+      "job_id": "demo01-cloud-fx",
+      "kind": "native",
+      "phase": "integrated-look",
+      "outcome": "PASSED",
+      "seconds": 14.925104333029594,
+      "clock_id": "19271539-be20-4888-9bb6-cddd92b58542"
+    },
+    {
+      "job_id": "demo01-cloud-final-look",
+      "kind": "native",
+      "phase": "integrated-look",
+      "outcome": "PASSED",
+      "seconds": 15.4213629590231,
+      "clock_id": "4984d0e5-0439-4b4c-99f9-70731e633f00"
+    },
+    {
+      "job_id": "demo01-material-contact-control",
+      "kind": "native",
+      "phase": "contact-control",
+      "outcome": "PASSED",
+      "seconds": 30.949372000002768,
+      "clock_id": "73da96da-49e1-44a4-8bf5-d45f581702a3"
+    },
+    {
+      "job_id": "demo01-integrated-reopen",
+      "kind": "native",
+      "phase": "integrated-reopen",
+      "outcome": "PASSED",
+      "seconds": 145.64070737501606,
+      "clock_id": "28833c06-7b5f-42a7-a23f-9a89df4f891c"
+    },
+    {
+      "job_id": "demo01-sixsecond-hero",
+      "kind": "native",
+      "phase": "full-preview",
+      "outcome": "FAILED",
+      "seconds": 362.9600330000394,
+      "clock_id": "71e4dbc0-1ea0-4f40-a2e1-8af0e1106af9"
+    },
+    {
+      "job_id": "demo01-sixsecond-contact",
+      "kind": "native",
+      "phase": "full-preview",
+      "outcome": "FAILED",
+      "seconds": 397.64379787497455,
+      "clock_id": "0d391c63-2cb4-44e1-9151-097c87d864d2"
+    },
+    {
+      "job_id": "demo01-grounded-final-look",
+      "kind": "native",
+      "phase": "integrated-look",
+      "outcome": "PASSED",
+      "seconds": 12.377156540984288,
+      "clock_id": "b9a44b6e-8472-414e-b73c-1b1eebca9d90"
+    },
+    {
+      "job_id": "demo01-final-reopen",
+      "kind": "native",
+      "phase": "final-reopen",
+      "outcome": "PASSED",
+      "seconds": 169.30832395801554,
+      "clock_id": "0a4f87f7-260c-47f1-a6a0-9a0c53d220b9"
+    },
+    {
+      "job_id": "demo01-final-hero",
+      "kind": "native",
+      "phase": "final-preview",
+      "outcome": "FAILED",
+      "seconds": 399.3491645420436,
+      "clock_id": "e49eca14-390a-4de1-88f3-dfe4d87d53ea"
+    },
+    {
+      "job_id": "demo01-final-contact",
+      "kind": "native",
+      "phase": "final-preview",
+      "outcome": "FAILED",
+      "seconds": 407.16457195801195,
+      "clock_id": "b8b667bb-f6b0-45ce-92e1-549c6cdff2d2"
+    },
+    {
+      "job_id": "demo01-smooth-approach",
+      "kind": "native",
+      "phase": "approach-repair",
+      "outcome": "PASSED",
+      "seconds": 120.84567974996753,
+      "clock_id": "ba07ef1f-4a6d-43f4-863a-6df004bbc54c"
+    },
+    {
+      "job_id": "demo01-smooth-fx",
+      "kind": "native",
+      "phase": "integrated-look",
+      "outcome": "PASSED",
+      "seconds": 12.751736083999276,
+      "clock_id": "82522f6b-e8fd-46cb-9701-feb96ad9bca2"
+    },
+    {
+      "job_id": "demo01-smooth-contact-control",
+      "kind": "native",
+      "phase": "smooth-contact-check",
+      "outcome": "PASSED",
+      "seconds": 31.56617891602218,
+      "clock_id": "b8bce6da-1cd5-46f5-bb89-bd35284d0ef9"
+    },
+    {
+      "job_id": "demo01-smooth-contact-cycle",
+      "kind": "native",
+      "phase": "cycle-preview",
+      "outcome": "PASSED",
+      "seconds": 123.40658824995626,
+      "clock_id": "838a4198-f843-4f24-bd4a-5e018663b083"
+    },
+    {
+      "job_id": "demo01-smooth-hero-cycle",
+      "kind": "native",
+      "phase": "cycle-preview",
+      "outcome": "PASSED",
+      "seconds": 140.63352679100353,
+      "clock_id": "34db444f-d7c4-4f21-8ad2-af9bc70e88ec"
+    },
+    {
+      "job_id": "demo01-smooth-reopen",
+      "kind": "native",
+      "phase": "smooth-reopen",
+      "outcome": "PASSED",
+      "seconds": 116.5512410000083,
+      "clock_id": "e88f37ed-b8d2-4dda-9592-fb61069f190e"
+    },
+    {
+      "job_id": "demo01-smooth-contact-rest",
+      "kind": "native",
+      "phase": "sixsecond-completion",
+      "outcome": "PASSED",
+      "seconds": 632.7332944159862,
+      "clock_id": "e6a85ad1-6894-4b21-9bb2-1be2ac6c06f7"
+    },
+    {
+      "job_id": "demo01-smooth-hero-rest",
+      "kind": "native",
+      "phase": "sixsecond-completion",
+      "outcome": "PASSED",
+      "seconds": 716.2505912919878,
+      "clock_id": "72896960-362a-465f-98c0-114e564b608f"
+    }
+  ],
+  "director_review_seconds": null,
+  "subscription_tokens": null,
+  "capture_boundary": "review handoff"
+}

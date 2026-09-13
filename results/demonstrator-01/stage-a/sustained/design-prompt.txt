@@ -1,0 +1,293 @@
+You are the paid Astra High engineering designer for an authorized serious Blender horse animation repair. We need produce a six-second realistic full-pace extended gallop with rider/tail/dust using existing horse rig. 4h engineering /4h native compute authorized. Do NOT give another generic Hermite gait recipe. Diagnose structural flaws in this actual code and recommend concrete code modifications for a robust short motion solution. Need source-aware whole-limb motion, body clock, ground contacts. We can alter rig controls/constraints and local weights if needed; preserve originals. The previous arbitrary 12m/s 2.4Hz gait hit foot targets but over-folded mesh. Source source-fit speed was6.47m/s, source10frame cycle24fps. Source limb lengths stretch (forefoot +13.8%) so sameframe length screen misleading; new fullcycle5%mesh envelope also possibly wrong if residual comes from B-bone twist/influence. Source heel & foot basis restore rightleg angles exactly but still62edges/65triangles atframe1.875 differ; sourcehead/neck shape-keydrivers exist, notforelimb. Rot modeschanged fromXYZtoquaternion. Avoid blind optimization and falsepasses. Give rigorous mechanism diagnosis priority plus feasible complete pipeline with code-level plan, anatomically coherent temporal retiming not just speeding playback. Can admit phaseaware mesh gates beforetest with rationale. Exact rig sourcefile available local only, not in this prompt. Return concise substantive design incl 1 necessary diagnostic if any, not long alternatives.
+
+FILE src/movie_factory/adapters/blender/demo_fullpace.py
+"""Bounded existing-fixture full-pace diagnostics; no runtime code input."""
+from pathlib import Path
+import bpy
+BASE=Path('/Users/adisharma/projects/MovieUniverseFactory/runs/demonstrator-01/realism-motion')
+SHA='37594a7ef2d59e5dcc9af42c332f28ab41e86e78f78a60e6bd5ff9e2a7ca961e'
+
+def audit(mf,out,job,helper):
+    if set(job)!={'mode','output_dir','profile'} or job['mode']!='demo_fullpace_audit' or job['profile']!={}:raise ValueError('Fixed audit required')
+    out=Path(out).resolve()
+    if BASE.parent.resolve() not in out.parents:raise ValueError('Output outside diagnostic runs')
+    helper._file(BASE/'scene.blend',SHA);bpy.ops.wm.open_mainfile(filepath=str(BASE/'scene.blend'),use_scripts=False,load_ui=False)
+    scene=bpy.context.scene;horse=bpy.data.objects['horse.rig'];path=bpy.data.objects['horse diagnostic path'];path.animation_data.action=None;path.location=(0,0,0)
+    for tr in horse.animation_data.nla_tracks:
+        if tr.name.startswith('HoofContactOverlay'):tr.mute=True
+    ik=[{'bone':pb.name,'ik_stretch':pb.ik_stretch,'props':{k:str(pb[k]) for k in pb.keys() if 'stretch' in k.lower()},'constraints':[{'type':c.type,'name':c.name,'use_stretch':getattr(c,'use_stretch',None)} for c in pb.constraints if c.type in ('IK','STRETCH_TO')]} for pb in horse.pose.bones if pb.ik_stretch or any(c.type in ('IK','STRETCH_TO') for c in pb.constraints)]
+    poses=[]
+    for frame in (0,2,5,8,10):
+        helper._refresh(scene,mf,frame)
+        names=[p.name for p in horse.pose.bones if any(s in p.name.lower() for s in ('tail','torso','thigh','shin','forefoot','hind_foot','upper_arm','forearm','shoulder','hip'))]
+        bones={name:{'head':list(horse.matrix_world@horse.pose.bones[name].head),'tail':list(horse.matrix_world@horse.pose.bones[name].tail),'parent':horse.pose.bones[name].parent.name if horse.pose.bones[name].parent else None,'constraints':[{'type':c.type,'influence':c.influence,'target':getattr(getattr(c,'target',None),'name',None),'subtarget':getattr(c,'subtarget',None)} for c in horse.pose.bones[name].constraints]} for name in names}
+        poses.append({'frame':frame,'bones':bones,'hooves':helper.hoof_surfaces(bpy.context.evaluated_depsgraph_get())})
+    mf.write_json(out/'audit.json',{'source_sha256':SHA,'horse_matrix':[list(row) for row in horse.matrix_world],'poses':poses,'ik':ik})
+    return ['audit.json']
+
+def build(mf,out,job,helper):
+    import importlib.util,math,time
+    from mathutils import Matrix,Vector
+    if set(job)!={'mode','output_dir','profile'} or job['mode'] not in ('demo_fullpace_probe','demo_fullpace_motion') or job['profile']!={}:raise ValueError('Fixed fullpace job required')
+    out=Path(out).resolve()
+    if BASE.parent.resolve() not in out.parents:raise ValueError('Output outside diagnostic runs')
+    helper._file(BASE/'scene.blend',SHA);bpy.ops.wm.open_mainfile(filepath=str(BASE/'scene.blend'),use_scripts=False,load_ui=False)
+    spec=importlib.util.spec_from_file_location('fullpace_math',Path(__file__).with_name('fullpace_math.py'));motion=importlib.util.module_from_spec(spec);spec.loader.exec_module(motion)
+    scene=bpy.context.scene;horse=bpy.data.objects['horse.rig'];path=bpy.data.objects['horse diagnostic path']
+    for tr in horse.animation_data.nla_tracks:
+        if tr.name.startswith('HoofContactOverlay'):tr.mute=True
+    path.animation_data.action=path.animation_data.action.copy()
+    for fc in mf.action_channels(path.animation_data.action):
+        if fc.data_path=='location' and fc.array_index==1:
+            for k in fc.keyframe_points:k.co.y=-motion.SPEED*k.co.x/24
+    helper._refresh(scene,mf,0)
+    adjust=bpy.data.objects.new('fullpace body travel',None);scene.collection.objects.link(adjust)
+    obj=bpy.data.objects['realism speed compensation'];world=obj.matrix_world.copy();obj.parent=adjust;obj.matrix_world=world
+    for pb in horse.pose.bones:
+        pb.ik_stretch=0
+        for constraint in pb.constraints:
+            if constraint.type=='IK':constraint.use_stretch=False
+    zkeys=[]
+    for tick in range(241):
+        f=tick/4;helper._refresh(scene,mf,f);z=(horse.matrix_world@horse.pose.bones['torso'].head).z
+        zkeys.append((f,1.32+motion.body_z(f/24)-z))
+    for f,z in zkeys:
+        path.location.z=z;path.keyframe_insert('location',index=2,frame=f)
+        adjust.location=(0,-(motion.SPEED-6.47)*f/24,z);adjust.keyframe_insert('location',frame=f)
+    for obj in (path,adjust):
+        for fc in mf.action_channels(obj.animation_data.action):
+            for key in fc.keyframe_points:
+                key.interpolation='LINEAR' if fc.array_index==1 else 'BEZIER';key.handle_left_type=key.handle_right_type='AUTO_CLAMPED'
+    controls={'LH':('hind_foot_ik.L','DEF-r_hoof.L',.5),'RH':('hind_foot_ik.R','DEF-r_hoof.R',2.25),'LF':('forefoot_ik.L','DEF-f_hoof.L',4),'RF':('forefoot_ik.R','DEF-f_hoof.R',5.5)}
+    rotations={};sole_depth={}
+    for leg,(name,group,f) in controls.items():
+        helper._refresh(scene,mf,f);rotations[leg]=horse.pose.bones[name].matrix.to_quaternion();h=helper.hoof_surfaces(bpy.context.evaluated_depsgraph_get())[group];sole_depth[leg]=h['center'][2]-h['min_z']+.003
+    # Coordinate the additional paw/heel controls with the authored contact clock.
+    source_windows={'LH':(9.125,12.46875),'RH':(1.34375,3.375),'LF':(2.4375,5.46875),'RF':(3.5,7.3125)}
+    heel_names={leg:name.replace('_ik.','_heel_ik.') for leg,(name,_,_) in controls.items()}
+    for name in heel_names.values():
+        if name not in horse.pose.bones:raise ValueError('Required existing heel control missing: '+name)
+    library={leg:[] for leg in controls}
+    for tick in range(81):
+        helper._refresh(scene,mf,tick/8)
+        for leg,(name,_,_) in controls.items():library[leg].append((horse.pose.bones[name].matrix.to_quaternion().copy(),horse.pose.bones[heel_names[leg]].matrix_basis.copy()))
+    def reference(leg,f):
+        phase=(f/10-motion.TOUCHDOWN[leg])%1;a,b=source_windows[leg]
+        t=(a+(b-a)*phase/motion.DUTY) if phase<=motion.DUTY else (b+(10-(b-a))*(phase-motion.DUTY)/(1-motion.DUTY))
+        x=(t%10)*8;i=min(int(x),79);w=x-i
+        q0,m0=library[leg][i];q1,m1=library[leg][i+1]
+        return q0.slerp(q1,w),m0.lerp(m1,w)
+    limb_names=[p.name for p in horse.pose.bones if p.name.startswith(('DEF-thigh','DEF-lower_leg','DEF-hind_foot','DEF-upper_arm','DEF-forearm','DEF-forefoot','DEF-r_hoof','DEF-f_hoof'))]
+    records=[];length_ratios=[];errors=[]
+    for tick in range(81):
+        f=tick/8;helper._refresh(scene,mf,f);baseline={n:(horse.pose.bones[n].tail-horse.pose.bones[n].head).length for n in limb_names}
+        targets={}
+        for leg,(name,group,_) in controls.items():
+            pb=horse.pose.bones[name];rotation,heel=reference(leg,f);hp=horse.pose.bones[heel_names[leg]];hp.rotation_mode='QUATERNION';hp.matrix_basis=heel;pb.rotation_mode='QUATERNION';mat=pb.matrix.copy();mat=Matrix.LocRotScale(mat.translation,rotation,mat.to_scale());pb.matrix=mat
+            p,supported=motion.target(f/24,leg);targets[leg]=Vector((p[0],p[1],p[2]+sole_depth[leg]))
+        bpy.context.view_layer.update()
+        for attempt in range(3):
+            hooves=helper.hoof_surfaces(bpy.context.evaluated_depsgraph_get())
+            for leg,(name,group,_) in controls.items():
+                pb=horse.pose.bones[name];lift,_=motion.target(f/24,leg);targets[leg].z=lift[2]+hooves[group]['center'][2]-hooves[group]['min_z']+.003;delta=targets[leg]-Vector(hooves[group]['center']);mat=pb.matrix.copy();mat.translation+=horse.matrix_world.inverted().to_3x3()@delta;pb.matrix=mat
+            bpy.context.view_layer.update()
+        hooves=helper.hoof_surfaces(bpy.context.evaluated_depsgraph_get())
+        for leg,(name,group,_) in controls.items():
+            pb=horse.pose.bones[name];records.append((f,name,tuple(pb.location),tuple(pb.rotation_quaternion)));hp=horse.pose.bones[heel_names[leg]];records.append((f,hp.name,tuple(hp.location),tuple(hp.rotation_quaternion)))
+            errors.append({'frame':f,'leg':leg,'error_m':(Vector(hooves[group]['center'])-targets[leg]).length})
+        length_ratios.extend({'frame':f,'bone':n,'ratio':(horse.pose.bones[n].tail-horse.pose.bones[n].head).length/baseline[n]} for n in limb_names if baseline[n]>1e-6)
+    # Local IK channels repeat with the 10-frame source/reference clock.
+    first_cycle=[r for r in records if r[0]<10];records=[(f+10*cycle,n,loc,q) for cycle in range(6) for f,n,loc,q in first_cycle]+[(60,n,loc,q) for f,n,loc,q in first_cycle if f==0]
+    mf.write_json(out/'authoring.json',{'records':records,'zkeys':zkeys})
+    action=bpy.data.actions.new('authored fullpace gait');slot=action.slots.new(id_type='OBJECT',name=horse.name);layer=action.layers.new('Authored existing IK');bag=layer.strips.new(type='KEYFRAME').channelbag(slot,ensure=True)
+    for name in sorted({row[1] for row in records}):
+        rows=[r for r in records if r[1]==name]
+        prev=None
+        for i,(f,n,loc,q) in enumerate(rows):
+            if prev and sum(a*b for a,b in zip(prev,q))<0:q=tuple(-x for x in q);rows[i]=(f,n,loc,q)
+            prev=q
+        for prop,count,col in (('location',3,2),('rotation_quaternion',4,3)):
+            for axis in range(count):
+                fc=bag.fcurves.new(horse.pose.bones[name].path_from_id(prop),index=axis)
+                for row in rows:
+                    k=fc.keyframe_points.insert(row[0],row[col][axis]);k.interpolation='BEZIER';k.handle_left_type=k.handle_right_type='AUTO_CLAMPED'
+    track=horse.animation_data.nla_tracks.new();track.name='authored fullpace';strip=track.strips.new(action.name,0,action);strip.action_slot=slot;strip.blend_type='REPLACE';strip.extrapolation='NOTHING'
+    spans={};slip=0;penetration=0;dense=[]
+    for tick in range(257):
+        f=10*tick/256;helper._refresh(scene,mf,f);h=helper.hoof_surfaces(bpy.context.evaluated_depsgraph_get());dense.append({'frame':f,'hooves':h})
+        for n,p in h.items():
+            penetration=max(penetration,-p['min_z'])
+            if p['min_z']<=.04:
+                spans.setdefault(n,p['center']);start=spans[n];slip=max(slip,math.hypot(p['center'][0]-start[0],p['center'][1]-start[1]))
+            else:spans.pop(n,None)
+    result={'source_scene_sha256':SHA,'speed_mps':motion.SPEED,'stride_m':motion.SPEED/motion.FREQUENCY,'frequency_hz':motion.FREQUENCY,'authored_gait':True,'max_target_error_m':max(x['error_m'] for x in errors),'worst_target':max(errors,key=lambda x:x['error_m']),'deform_length_ratio_min':min(x['ratio'] for x in length_ratios),'deform_length_ratio_max':max(x['ratio'] for x in length_ratios),'worst_length_ratios':sorted(length_ratios,key=lambda x:abs(x['ratio']-1),reverse=True)[:12],'max_stance_excursion_m':slip,'max_penetration_m':penetration,'dense_samples':dense,'render_seconds':{},'limits':{'target_error_m':.05,'stance_excursion_m':.05,'penetration_m':.02,'length_ratio_min':.97,'length_ratio_max':1.03}}
+    result['pass']=result['max_target_error_m']<=.05 and slip<=.05 and penetration<=.02 and result['deform_length_ratio_min']>=.97 and result['deform_length_ratio_max']<=1.03
+    mf.write_json(out/'checks.json',result)
+    if job['mode']=='demo_fullpace_motion' and not result['pass']:raise ValueError('Authored gait failed preflight; full render blocked')
+    scene.render.resolution_x=512;scene.render.resolution_y=288;scene.cycles.samples=6
+    # The road must cover the 30m full-pace preview; scenery remains diagnostic.
+    bpy.data.objects['diagnostic road'].scale.y=40
+    frames=sorted(set((0,3,7,round(result['worst_target']['frame'])))) if job['mode']=='demo_fullpace_probe' else range(60)
+    for name in ('lateral','threequarter'):
+        scene.camera=bpy.data.objects[name];folder=out/'renders'/name;folder.mkdir(parents=True,exist_ok=True);result['render_seconds'][name]=[]
+        for f in frames:
+            helper._refresh(scene,mf,f);scene.render.filepath=str(folder/f'{f:04d}.png');t=time.perf_counter();bpy.ops.render.render(write_still=True);result['render_seconds'][name].append(time.perf_counter()-t);mf.write_json(out/'checks.json',result)
+    return ['checks.json','renders']
+
+FILE src/movie_factory/adapters/blender/demo_fullpace_replay.py
+"""Independent clean-reference audit of the existing third candidate; no new gait."""
+from pathlib import Path
+import json
+import bpy
+BASE=Path('/Users/adisharma/projects/MovieUniverseFactory/runs/demonstrator-01')
+SCENE_SHA='37594a7ef2d59e5dcc9af42c332f28ab41e86e78f78a60e6bd5ff9e2a7ca961e'
+RECORD_SHA='cc43617fb765512a6ee7882246c398d718bd6725f08f1cde23ca5a737f8eac8c'
+
+def reconstruct(mf,helper,observer=None):
+    helper._file(BASE/'realism-motion/scene.blend',SCENE_SHA);helper._file(BASE/'fullpace-probe3/authoring.json',RECORD_SHA)
+    bpy.ops.wm.open_mainfile(filepath=str(BASE/'realism-motion/scene.blend'),load_ui=False,use_scripts=False)
+    scene=bpy.context.scene;horse=bpy.data.objects['horse.rig'];path=bpy.data.objects['horse diagnostic path']
+    for tr in horse.animation_data.nla_tracks:
+        if tr.name.startswith('HoofContactOverlay'):tr.mute=True
+    for pb in horse.pose.bones:
+        pb.ik_stretch=0
+        for c in pb.constraints:
+            if c.type=='IK':c.use_stretch=False
+    names=[p.name for p in horse.pose.bones if p.name.startswith(('DEF-thigh','DEF-lower_leg','DEF-hind_foot','DEF-upper_arm','DEF-forearm','DEF-forefoot','DEF-r_hoof','DEF-f_hoof'))]
+    clean={}
+    for tick in range(81):
+        helper._refresh(scene,mf,tick/8);clean[tick]={n:(horse.pose.bones[n].tail-horse.pose.bones[n].head).length for n in names}
+        if observer:observer("source",tick/8,horse)
+    d=json.loads((BASE/'fullpace-probe3/authoring.json').read_text())
+    path.animation_data.action=path.animation_data.action.copy()
+    for fc in mf.action_channels(path.animation_data.action):
+        if fc.data_path=='location' and fc.array_index==1:
+            for k in fc.keyframe_points:k.co.y=-12*k.co.x/24
+    helper._refresh(scene,mf,0);adjust=bpy.data.objects.new('fullpace body travel',None);scene.collection.objects.link(adjust);o=bpy.data.objects['realism speed compensation'];world=o.matrix_world.copy();o.parent=adjust;o.matrix_world=world
+    for f,z in d['zkeys']:
+        path.location.z=z;path.keyframe_insert('location',index=2,frame=f);adjust.location=(0,-(12-6.47)*f/24,z);adjust.keyframe_insert('location',frame=f)
+    for o in (path,adjust):
+        for fc in mf.action_channels(o.animation_data.action):
+            for k in fc.keyframe_points:k.interpolation='LINEAR' if fc.array_index==1 else 'BEZIER';k.handle_left_type=k.handle_right_type='AUTO_CLAMPED'
+    action=bpy.data.actions.new('authored fullpace gait');slot=action.slots.new(id_type='OBJECT',name=horse.name);bag=action.layers.new('Authored existing IK').strips.new(type='KEYFRAME').channelbag(slot,ensure=True)
+    for name in sorted({r[1] for r in d['records']}):
+        pb=horse.pose.bones[name];pb.rotation_mode='QUATERNION';rows=[r for r in d['records'] if r[1]==name];prev=None
+        for i,row in enumerate(rows):
+            q=row[3]
+            if prev and sum(a*b for a,b in zip(prev,q))<0:q=[-x for x in q];rows[i]=row[:3]+[q]
+            prev=q
+        for prop,count,col in (('location',3,2),('rotation_quaternion',4,3)):
+            for axis in range(count):
+                fc=bag.fcurves.new(pb.path_from_id(prop),index=axis)
+                for row in rows:k=fc.keyframe_points.insert(row[0],row[col][axis]);k.interpolation='BEZIER';k.handle_left_type=k.handle_right_type='AUTO_CLAMPED'
+    tr=horse.animation_data.nla_tracks.new();tr.name='authored fullpace';st=tr.strips.new(action.name,0,action);st.action_slot=slot;st.blend_type='REPLACE';st.extrapolation='NOTHING'
+    comparisons=[]
+    for tick in range(81):
+        helper._refresh(scene,mf,tick/8)
+        if observer:observer("candidate",tick/8,horse)
+        for n,before in clean[tick].items():
+            after=(horse.pose.bones[n].tail-horse.pose.bones[n].head).length
+            if before>1e-6:comparisons.append({'frame':tick/8,'bone':n,'source_length':before,'candidate_length':after,'ratio':after/before})
+    result={'source_scene_sha256':SCENE_SHA,'authoring_sha256':RECORD_SHA,'reference':'Unmodified source rotation modes, clean NLA source; same no-IK-stretch setting as candidate. Reference captured before any candidate pose writes.','min_ratio':min(x['ratio'] for x in comparisons),'max_ratio':max(x['ratio'] for x in comparisons),'worst':sorted(comparisons,key=lambda x:abs(x['ratio']-1),reverse=True)[:12]}
+    result['pass']=result['min_ratio']>=.97 and result['max_ratio']<=1.03
+    return result
+
+def verify(mf,out,job,helper):
+    if set(job)!={'mode','output_dir','profile'} or job['mode']!='demo_fullpace_clean_audit' or job['profile']!={}:raise ValueError('Fixed verification required')
+    out=Path(out).resolve()
+    if BASE.resolve() not in out.parents:raise ValueError('Invalid output')
+    result=reconstruct(mf,helper);mf.write_json(out/'clean-reference.json',result);return ['clean-reference.json']
+
+FILE results/demonstrator-01/stage-a/FOREFOOT_DIAGNOSIS.md
+# Forefoot diagnosis — bounded follow-up
+
+**Diagnosis complete; full-pace gait remains YELLOW / unqualified.** The user authorized up to 20 minutes of diagnosis, with no fourth authored gait variant. Two fixed native jobs measured the unchanged, hash-bound third candidate and disposable single-pose controls. No animation keys or native scenes were saved; no paid model calls or rendering occurred.
+
+## Correction to the previous interpretation
+
+The 12.1% “shortening” is relative to a stretched source pose, not the rig rest length. Right forefoot rest length is 0.198119 armature units. Candidate lengths remain 0.198044–0.198127 (within approximately 0.04% of rest), whereas source lengths span 0.197834–0.225424, reaching 13.8% above rest. The two deform segments use COPY_TRANSFORMS and STRETCH_TO constraints. Disabling IK stretch does not disable those separate deform constraints.
+
+Consequently, the frozen same-frame source comparison is a real measured failure but an insufficient anatomical diagnosis. Different contact timing makes same-frame source stretch a poor sole target for this newly authored gait. **No threshold has been changed, and this finding does not promote the candidate to a pass.** Original results are preserved.
+
+## Actual mesh and articulation evidence
+
+Both source and candidate were inspected at 81 samples across the ten-frame cycle. Evaluated topology remained stable and sampled coordinates were finite. In the right forearm/forefoot/hoof weighted region, 1,869 of 8,535 edges and 2,323 of 8,461 triangles leave their individual source-cycle ranges by more than 5% at some time. The most compressed edge falls to about 11.4% of its source-cycle minimum; one triangle falls to about 1.88% of its source-cycle minimum. These are local geometry diagnostics, not universal aesthetic or anatomical gates; tiny features and bending can strongly affect ratios.
+
+The upper-arm/forearm direction angle reaches 129.75 degrees in the candidate versus 82.70 degrees in the source cycle. Forearm/forefoot angle reaches 129.37 versus 108.70 degrees. These are angles between named bone directions, not clinical joint angles. The candidate therefore exercises substantially different articulation and skin deformation, even while segment lengths remain near rest. [Mesh projection](../../../runs/demonstrator-01/forefoot-diagnosis/mesh-comparison.png) shows weighted-region geometry only; omitted vertices cause apparent gaps and each panel is independently centered/scaled. It is not a production render or evidence of a disconnected hoof.
+
+## Isolation controls
+
+At frames 1.875, 3.25 and 3.875, restore source local foot and heel matrices separately and together in disposable evaluated poses. Keep the authored root and other legs. Re-evaluate the same candidate afterward to prove reset; all three reset results match exactly. These interventions are not usable new gait variants: their contacts and motion have not been qualified.
+
+At frame 3.25:
+
+| Control | Edges outside source envelope by >5% | Triangles outside by >5% | Worst triangle envelope factor |
+|---|---:|---:|---:|
+| Unchanged candidate | 387 | 246 | 53.17 |
+| Restore source foot only | 11 | 3 | 1.42 |
+| Restore source heel only | 383 | 291 | 22.54 |
+| Restore both | 0 | 0 | 1.026 |
+| Reset candidate | 387 | 246 | 53.17 |
+
+Restoring both also reduces excursions at the other two frames, but does not remove all of them. This localizes a major contribution to the authored foot transform and its interaction with the heel/limb mechanism. It does **not** yet distinguish foot translation from orientation, prove a skin-weight defect, or establish the rig's maximum natural gallop speed. The earlier plan to adjust only the heel is inadequate.
+
+## Concrete repair contract for the next authorized pass
+
+1. Preserve current head, cameras, original assets and all failed evidence. No rig rebuild is justified by these findings.
+2. Solve the foot target, heel and full limb articulation together. Use source whole-limb poses as the reference; bound bend and orientation while satisfying the ground-stationary stance. Do not force the current high swing path independently of reachability.
+3. First prove a pose-level correction at the three diagnostic frames, separating translation and orientation effects. Inspect the weighted mesh and support error. Only then bake one new complete candidate; do not spend the next budget on successive heel-only guesses.
+4. Before scoring, explicitly correct and freeze the deformation contract: distinguish rest-length preservation, phase-aware articulation and evaluated mesh quality. Retain the historical same-frame failure; do not just increase its ceiling. Qualify the measurement using source controls and a deliberate mesh-deformation failure. No replacement numerical acceptance contract was adopted in this diagnosis.
+5. Validate full-cycle fractional samples, actual ground contact, target error, persistence and replay. Only after these pass, integrate the existing drafted tail/dust into one inexpensive preview plus dust-free contact view. Effects and full-pace appearance remain NOT_RUN.
+
+Proposed next budget: 20 minutes for the pose-level correction and contract, with a checkpoint before a new full gait or effects render. No fourth gait, extra API spend or full-film production was dispatched here.
+
+## Cost and durability
+
+Native elapsed time: 14.429 + 16.459 = **30.888 seconds**. Nine existing pure-math tests pass; Python syntax checks pass. Repeated measurement reproduces the prior clean-reference result exactly, and all isolation resets reproduce their candidate metrics exactly. This is not a rerun of the whole campaign suite.
+
+New API charges: **$0**; campaign calculated cost remains $2.550887501. Exact subscription tokens remain unknown. Recorded activity duration is captured in the operating ledger and compact summary. Historical reports and inventories remain intact. The diagnostic source snapshot and checksummed inventory bind this addendum without rebuilding any large archive.
+
+[Raw measurements](../../../runs/demonstrator-01/forefoot-isolation/diagnosis.json) · [Isolation controls](../../../runs/demonstrator-01/forefoot-isolation/single-pose-controls.json) · [Inventory](forefoot-diagnosis-manifest.json)
+
+FILE results/demonstrator-01/stage-a/FOREFOOT_POSE_REPAIR.md
+# Forefoot pose repair checkpoint
+
+**Repair attempted; pose qualification FAILED. Full-pace remains YELLOW / unqualified.** No complete gait, native scene, tail or dust playback was produced. Original assets, reviewed head/camera/intermediate motion and earlier evidence remain unchanged.
+
+## What changed and what was tested
+
+The pre-dispatch [pose contract](../../../feasibility/demonstrator-01/FOREFOOT_POSE_REPAIR.md) replaces the inappropriate same-frame source-stretch comparison only for this prospective development test. It uses clean source-cycle segment envelopes with 3% allowance, rig-relative articulation ranges with 5-degree margin, and the retained 5% edge/triangle envelope screen. Historical failures are not relabelled. This is a conservative development screen, not proof of universal anatomical limits or final aesthetics.
+
+A deterministic search blends foot translation, orientation and heel control toward the source at the three identified recovery frames. Component-only controls were also measured. A second hypothesis uses evaluated armature-space control poses instead of local bases. Each hypothesis uses at most 21 predetermined interpolation samples per frame. These are disposable unkeyed pose solves, not new full gait variants.
+
+| Recovery frame | Local-basis search | Evaluated-pose search |
+|---|---|---|
+| 1.875 | No passing pose | No passing pose |
+| 3.25 | Pass at 80% source blend | Pass at 100% source blend |
+| 3.875 | No passing pose | No passing pose |
+
+The local passing pose changes the hoof recovery position by 0.418 m relative to the previous swing target. It therefore cannot simply replace one key in the old animation. Even the isolated success requires a newly fitted continuous swing path. At the best remaining local solutions, frame 1.875 still has 62 edges / 65 triangles outside the mesh envelope, and frame 3.875 has 21 / 22. Angle and segment-length screens pass there; mesh shape remains the binding screen. The parent-space hypothesis produces essentially the same residual problem and is not a demonstrated repair.
+
+No interpolation limit was loosened. Support-pose compatibility, all-four-leg validation, continuous recovery, contact preservation, save/reopen, full playback and FX remain NOT_RUN. The contract requires all three recovery poses to pass before advancing; that condition was not met.
+
+## Validator control repair
+
+The first attempted 30% local mesh distortion unexpectedly passed because modifying mesh vertex coordinates alone did not change the active shape-key geometry. This was an ineffective negative control, retained in `forefoot-pose`. The corrected control modifies the corresponding coordinates in the shape-key blocks in a disposable copied mesh. It fails on 1,536 edges and 1,619 triangles, while the clean source positive passes. Its bone and angle screens remain passing, so detection is attributable to measured mesh deformation rather than a pre-existing rig failure.
+
+The shape-key driver inventory contains neck/head corrective drivers; it does not establish a forefoot-specific driver fault. Neither parent-space conversion nor this validator repair proves the remaining mesh deviation is an asset defect. The selected weighted region and its boundary must be considered before any anatomical conclusion.
+
+## Disposition and next scope
+
+Stop this interpolation approach at the agreed pose checkpoint. Do not spend on a full gait or dust render to conceal an unresolved screen. No fourth full gait has been authored.
+
+The demonstrated result is narrower than the requested repair: one feasible recovery pose and a trustworthy distortion control. A next motion approach would need source-aware whole-limb articulation and contact constraints, including upstream controls and skin-boundary behavior, rather than more foot/heel blends. This pass does not establish that the existing asset can deliver the requested 12 m/s / 5 m stride. The full-pace objective remains open; no lower speed is silently substituted and no asset purchase is proposed.
+
+## Time, cost and process
+
+Three native jobs completed in 28.064, 32.548 and 25.734 monotonic process seconds: **86.346 seconds total**, under the 120-second native envelope. No paid API calls; campaign calculated cost remains $2.550887501. Subscription token usage is unknown.
+
+**Exact net supervising duration is UNKNOWN because wall-clock timestamps are discontinuous.** Between the first and last native job starts, UTC advances about 70 minutes while the monotonic clock advances about 10.9 minutes. Even the middle job records 285.6 UTC seconds versus 32.6 monotonic seconds. Preserve both; do not claim a 70-minute engineering duration or a proven sub-20-minute exact net total. The initial supervising start did not capture a monotonic timestamp, so an exact activity duration cannot be reconstructed. The next bounded activity should capture a monotonic deadline at its start and enforce checkpoints against it.
+
+The runtime jobs completed successfully, but their semantic pose result is FAILED. These are distinct outcomes. Python syntax checks passed. No unrelated campaign suite was repeated. The corrected source-positive/mesh-negative control is native evidence; it does not establish the repair's success.
+
+[Initial attempt](../../../runs/demonstrator-01/forefoot-pose/pose-results.json) · [Corrected control](../../../runs/demonstrator-01/forefoot-pose-control/pose-results.json) · [Parent-space attempt](../../../runs/demonstrator-01/forefoot-pose-space/pose-results.json) · [Inventory](forefoot-pose-manifest.json)

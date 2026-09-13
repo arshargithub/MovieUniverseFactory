@@ -164,7 +164,7 @@ class OpenAIProvider:
         self.client = client
 
     def _prepare(self, prompt, schema, images, max_output_tokens, pricebook, image_detail):
-        if type(max_output_tokens) is not int or not 1 <= max_output_tokens <= min(8192, int(self.settings.get("MF_LLM_MAX_OUTPUT_TOKENS", 8192))):
+        if type(max_output_tokens) is not int or not 1 <= max_output_tokens <= min(32768, int(self.settings.get("MF_LLM_MAX_OUTPUT_TOKENS", 8192))):
             raise ValueError("invalid_output_token_limit")
         if not isinstance(prompt, str) or not prompt.strip():
             raise ValueError("empty_prompt")

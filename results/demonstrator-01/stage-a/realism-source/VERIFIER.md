@@ -1,0 +1,1 @@
+The fixed reopen handler was added after the render worker loaded. It accepts the exact candidate scene SHA-256 only; samples full 0–59 playback at 1/20 frame, checks finite integer-frame actor bounds and persisted head/tail settings. No rerender or native scene write. Its source is preserved here separately from the render-launch snapshot.

@@ -1,0 +1,322 @@
+from pathlib import Path
+import bpy, hashlib, math, os, stat, time
+from mathutils import Matrix, Vector
+
+HORSE_PATH = Path("REVIEWER_SUBSTITUTE_HORSE_BLEND")
+HORSE_SHA256 = "REVIEWER_SUBSTITUTE_HORSE_SHA256"
+RIDER_PATH = Path("REVIEWER_SUBSTITUTE_RIDER_BLEND")
+RIDER_SHA256 = "REVIEWER_SUBSTITUTE_RIDER_SHA256"
+ROOT_PATH = Path("REVIEWER_SUBSTITUTE_ROOT")
+
+MODE = "demo_riding_preview"
+FRAMES = range(60)
+RIDER_MESHES = {"Man", "Belt", "BreastPlate", "cuisse", "eyes-Left", "eyes-Right",
+                "Gauntlets", "Helmet", "Shoes", "Shoulder-Plate", "teeth-bottom",
+                "teeth-top", "tongue"}
+HORSE_MESHES = {"horse", "bit", "bridle", "bridle.body", "reins", "saddle",
+                "saddle.pad", "saddle.stirrup", "saddle.stirrup.strap", "Torus.002"}
+CONTROLS = [f"{n}.{s}" for n in ("thigh_fk", "shin_fk", "foot_fk", "upper_arm_fk",
+            "forearm_fk", "hand_fk") for s in ("L", "R")] + ["torso", "chest", "head"]
+
+
+def _file(path, digest):
+    p = Path(path).expanduser()
+    if p.is_symlink() or not p.exists() or not stat.S_ISREG(p.lstat().st_mode):
+        raise ValueError(f"asset is not a regular non-symlink file: {p}")
+    h = hashlib.sha256()
+    with p.open("rb") as f:
+        for block in iter(lambda: f.read(1024 * 1024), b""):
+            h.update(block)
+    if h.hexdigest().lower() != digest.lower():
+        raise ValueError(f"SHA256 mismatch: {p}")
+    return p.resolve()
+
+
+def _output(job):
+    if set(job) != {"mode", "output_dir", "profile"} or job["mode"] != MODE or job["profile"] != {}:
+        raise ValueError("job must contain exactly mode=demo_riding_preview, output_dir, profile={}")
+    root = ROOT_PATH.expanduser().resolve()
+    base = (root / "runs" / "demonstrator-01").resolve()
+    out = Path(job["output_dir"]).expanduser()
+    out = (root / out).resolve() if not out.is_absolute() else out.resolve()
+    if os.path.commonpath((str(out), str(base))) != str(base):
+        raise ValueError("output_dir must be under ROOT_PATH/runs/demonstrator-01")
+    cur = out
+    while cur != cur.parent and cur.exists():
+        if cur.is_symlink():
+            raise ValueError(f"symlink forbidden in output path: {cur}")
+        cur = cur.parent
+    out.mkdir(parents=True, exist_ok=True)
+    return out
+
+
+def _hide(o, value=True):
+    o.hide_viewport = value
+    o.hide_render = value
+
+
+def _bbox(obj, deps):
+    e = obj.evaluated_get(deps)
+    pts = [e.matrix_world @ Vector(c) for c in e.bound_box]
+    if not pts or not all(math.isfinite(v) for p in pts for v in p):
+        raise FloatingPointError(f"non-finite bounds: {obj.name}")
+    lo = Vector(tuple(min(p[i] for p in pts) for i in range(3)))
+    hi = Vector(tuple(max(p[i] for p in pts) for i in range(3)))
+    return lo, hi
+
+
+def _pb_world(arm, pb, tail=False):
+    return arm.matrix_world @ (pb.tail if tail else pb.head)
+
+
+def _refresh(scene, mf, frame):
+    mf._set_scene_time(scene, float(frame))
+    bpy.context.view_layer.update()
+
+
+def _rotate_at_head(arm, pb, target):
+    inv3 = arm.matrix_world.inverted_safe().to_3x3()
+    desired = inv3 @ (Vector(target) - _pb_world(arm, pb))
+    current = pb.tail - pb.head
+    if desired.length < 1e-8 or current.length < 1e-8:
+        raise ValueError(f"degenerate aim for {pb.name}")
+    q = current.normalized().rotation_difference(desired.normalized())
+    h = pb.head.copy()
+    pb.matrix = Matrix.Translation(h) @ q.to_matrix().to_4x4() @ Matrix.Translation(-h) @ pb.matrix
+    bpy.context.view_layer.update()
+
+
+def _roll(pb, angle):
+    h = pb.head.copy()
+    pb.matrix = Matrix.Translation(h) @ Matrix.Rotation(angle, 4, "X") @ Matrix.Translation(-h) @ pb.matrix
+    bpy.context.view_layer.update()
+
+
+def _material(name, color, rough=.65):
+    m = bpy.data.materials.get(name) or bpy.data.materials.new(name)
+    m.diffuse_color = (*color, 1.0)
+    m.use_nodes = True
+    bs = m.node_tree.nodes.get("Principled BSDF")
+    bs.inputs["Base Color"].default_value = (*color, 1.0)
+    bs.inputs["Roughness"].default_value = rough
+    return m
+
+
+def _invalid_drivers(objects):
+    bad = []
+    for o in objects:
+        ad = getattr(o, "animation_data", None)
+        for fc in (() if not ad else ad.drivers):
+            if not fc.is_valid:
+                bad.append({"object": o.name, "data_path": fc.data_path, "array_index": fc.array_index})
+    return bad
+
+
+def _fk_test(scene, mf, arm, props):
+    deps = bpy.context.evaluated_depsgraph_get()
+    candidates = []
+    for endpoint in (0.0, 1.0):
+        oldp = [(pb, key, pb[key]) for pb, key in props]
+        for pb, key in props:
+            pb[key] = endpoint
+        _refresh(scene, mf, 0)
+        total, reactions = 0.0, {}
+        for ctl, stem in (("thigh_fk.L", "DEF-thigh"), ("upper_arm_fk.L", "DEF-upper_arm")):
+            defs = [p.name for p in arm.pose.bones if p.name.startswith(stem) and p.name.endswith(".L")]
+            if not defs:
+                raise RuntimeError(f"missing evaluated dependency bone: {stem}.L")
+            before = arm.evaluated_get(deps).pose.bones[defs[0]].tail.copy()
+            pb = arm.pose.bones[ctl]
+            saved = pb.matrix_basis.copy()
+            pb.matrix_basis = saved @ Matrix.Rotation(math.radians(2), 4, "X")
+            bpy.context.view_layer.update()
+            after = arm.evaluated_get(deps).pose.bones[defs[0]].tail.copy()
+            pb.matrix_basis = saved
+            bpy.context.view_layer.update()
+            reactions[ctl] = (after - before).length
+            total += reactions[ctl]
+        for pb, key, value in oldp:
+            pb[key] = value
+        candidates.append({"endpoint": endpoint, "response": reactions, "total": total})
+    best = max(candidates, key=lambda x: x["total"])
+    if min(best["response"].values()) <= 1e-7:
+        raise RuntimeError(f"FK controls do not drive evaluated DEF limbs: {candidates}")
+    for pb, key in props:
+        pb[key] = best["endpoint"]
+    bpy.context.view_layer.update()
+    return {"selected_endpoint": best["endpoint"], "tests": candidates}
+
+
+def _environment(path):
+    sand = _material("diagnostic sand", (.38, .25, .12))
+    ridge = _material("diagnostic ridge", (.18, .16, .13))
+    bpy.ops.mesh.primitive_cube_add(location=(0, -4, -.16), scale=(4, 16, .16))
+    road = bpy.context.object; road.name = "diagnostic road"; road.data.materials.append(sand)
+    for y in range(-15, 11, 4):
+        for x in (-2.2, 2.2):
+            bpy.ops.mesh.primitive_cube_add(location=(x, y, .08), scale=(.06, .45, .08))
+            bpy.context.object.data.materials.append(ridge)
+    for x, y, z, s in ((-8, -10, 1, 3), (8, -13, 1.4, 4), (10, 5, 1, 3)):
+        bpy.ops.mesh.primitive_ico_sphere_add(subdivisions=1, radius=s, location=(x, y, z))
+        bpy.context.object.data.materials.append(ridge)
+    bpy.ops.mesh.primitive_cube_add(location=(9, -15, 2.1), scale=(.8, .8, 2.1))
+    bpy.context.object.name = "distant tower"; bpy.context.object.data.materials.append(ridge)
+    target = bpy.data.objects.new("camera target", None); bpy.context.collection.objects.link(target)
+    target.parent = path; target.location = (0, 0, 1.5)
+    cams = []
+    for name, loc in (("lateral", (7.5, 0, 2.8)), ("threequarter", (6.0, 6.0, 3.4))):
+        data = bpy.data.cameras.new(name); cam = bpy.data.objects.new(name, data)
+        bpy.context.collection.objects.link(cam); cam.parent = path; cam.location = loc
+        data.lens = 52; c = cam.constraints.new("TRACK_TO"); c.target = target
+        c.track_axis = "TRACK_NEGATIVE_Z"; c.up_axis = "UP_Y"; cams.append(cam)
+    return cams
+
+
+def build_preview(mf, out, job):
+    out = _output(job)
+    if Path(out).resolve() != Path(job["output_dir"]).expanduser().resolve():
+        raise ValueError("out argument and job.output_dir disagree")
+    horse_file = _file(HORSE_PATH, HORSE_SHA256)
+    rider_file = _file(RIDER_PATH, RIDER_SHA256)
+    if out == horse_file or out == rider_file:
+        raise ValueError("output cannot overwrite an input source")
+    bpy.ops.wm.open_mainfile(filepath=str(horse_file), load_ui=False, use_scripts=False)
+    scene = bpy.context.scene; scene.frame_start = 0; scene.frame_end = 59; scene.render.fps = 24
+    source_objects = list(scene.objects)
+    horse = bpy.data.objects.get("horse.rig"); saddle = bpy.data.objects.get("saddle")
+    action = bpy.data.actions.get("horse.gallop")
+    if not horse or horse.type != "ARMATURE" or not saddle or not action:
+        raise RuntimeError("horse.rig, saddle, or horse.gallop is missing")
+    if tuple(round(v, 4) for v in action.frame_range) != (0.0, 10.0):
+        raise RuntimeError(f"unexpected horse.gallop range: {tuple(action.frame_range)}")
+    mesh = bpy.data.objects.get("horse")
+    keys = [] if not mesh or not mesh.data.shape_keys else [k.name for k in mesh.data.shape_keys.key_blocks]
+    if keys != ["Basis", "corr.neck", "corr.chin", "corr.neck.2"]:
+        raise RuntimeError(f"horse shape keys changed: {keys}")
+    path = bpy.data.objects.new("horse diagnostic path", None); scene.collection.objects.link(path)
+    for o in source_objects:
+        if o.parent is None:
+            w = o.matrix_world.copy(); o.parent = path; o.matrix_world = w
+        if o.type == "MESH" and o.name not in HORSE_MESHES:
+            _hide(o)
+        if o.name == "Plane" or "widget" in o.name.lower() or "custom" in o.name.lower():
+            _hide(o)
+    ad = horse.animation_data_create()
+    for tr in ad.nla_tracks: tr.mute = True
+    ad.action = None
+    tr = ad.nla_tracks.new(); tr.name = "diagnostic authored gait"
+    strip = tr.strips.new("horse.gallop x7", 0, action); strip.repeat = 7.0
+    strip.extrapolation = "NOTHING"; strip.blend_type = "REPLACE"
+    path.location = (0, 0, 0); path.keyframe_insert("location", frame=0)
+    path.location.y = -3.45 * 60 / 24; path.keyframe_insert("location", frame=60)
+    for fc in path.animation_data.action.fcurves:
+        for kp in fc.keyframe_points: kp.interpolation = "LINEAR"
+    with bpy.data.libraries.load(str(rider_file), link=False) as (src, dst):
+        dst.objects = list(src.objects)
+    appended = [o for o in dst.objects if o]
+    for o in appended:
+        if o.name not in scene.objects: scene.collection.objects.link(o)
+    rider = bpy.data.objects.get("rig")
+    if not rider or rider.type != "ARMATURE": raise RuntimeError("rider dependency armature 'rig' missing")
+    original = {o: o.matrix_world.copy() for o in appended}
+    original_rig_z = original[rider].translation.z
+    common = Matrix.Rotation(math.pi, 4, "Z") @ Matrix.Scale(1.8 / 4.2, 4)
+    for o in sorted(appended, key=lambda q: len(q.parent_recursive)):
+        o.matrix_world = common @ original[o]
+        if o.type == "MESH" and o.name not in RIDER_MESHES: _hide(o)
+        if o.name == "metarig" or "widget" in o.name.lower() or "prop" in o.name.lower(): _hide(o)
+        if o.animation_data: o.animation_data.action = None
+    missing = [n for n in CONTROLS if n not in rider.pose.bones]
+    if missing: raise RuntimeError(f"missing required rider controls: {missing}")
+    props = [(pb, k) for pb in rider.pose.bones for k in pb.keys() if "ik_fk" in k.lower()]
+    if not props: raise RuntimeError("no IK_FK custom properties discovered")
+    fk_response = _fk_test(scene, mf, rider, props)
+    neutral = {pb.name: pb.matrix_basis.copy() for pb in rider.pose.bones}
+    snapshots, perframe, hoof_proxy = {}, [], {}
+    deps = bpy.context.evaluated_depsgraph_get()
+    hoof_names = [p.name for p in horse.pose.bones if "hoof" in p.name.lower() or "foot" in p.name.lower()]
+    for f in FRAMES:
+        _refresh(scene, mf, f)
+        lo, hi = _bbox(saddle, deps); S = Vector(((lo.x + hi.x) / 2, (lo.y + hi.y) / 2, hi.z))
+        for name, mat in neutral.items(): rider.pose.bones[name].matrix_basis = mat.copy()
+        bpy.context.view_layer.update()
+        pelvis = (_pb_world(rider, rider.pose.bones["thigh_fk.L"]) + _pb_world(rider, rider.pose.bones["thigh_fk.R"])) * .5
+        delta_local = rider.matrix_world.inverted_safe().to_3x3() @ (S + Vector((0, 0, .10)) - pelvis)
+        torso = rider.pose.bones["torso"]; torso.matrix = Matrix.Translation(delta_local) @ torso.matrix
+        bpy.context.view_layer.update()
+        lean = math.radians(10 + 3 * math.sin(2 * math.pi * f / 10.0))
+        _roll(rider.pose.bones["chest"], lean); _roll(rider.pose.bones["head"], -lean)
+        goals, endpoints = {}, {}
+        for side, sx in (("L", .29), ("R", -.29)):
+            knee = S + Vector((sx, -.27, -.21)); ankle = S + Vector((math.copysign(.31, sx), -.17, -.61))
+            toe = S + Vector((math.copysign(.31, sx), -.36, -.64)); elbow = S + Vector((math.copysign(.35, sx), -.10, .45))
+            hand = S + Vector((math.copysign(.18, sx), -.43, .38))
+            for bone, target, label in ((f"thigh_fk.{side}", knee, "knee"), (f"shin_fk.{side}", ankle, "ankle"),
+                                        (f"foot_fk.{side}", toe, "toe"), (f"upper_arm_fk.{side}", elbow, "elbow"),
+                                        (f"forearm_fk.{side}", hand, "hand")):
+                _rotate_at_head(rider, rider.pose.bones[bone], target)
+                goals[f"{label}.{side}"] = list(target)
+                endpoints[f"{label}.{side}"] = list(_pb_world(rider, rider.pose.bones[bone], True))
+        pelvis = (_pb_world(rider, rider.pose.bones["thigh_fk.L"]) + _pb_world(rider, rider.pose.bones["thigh_fk.R"])) * .5
+        snapshots[f] = {p.name: p.matrix_basis.copy() for p in rider.pose.bones}
+        errors = {k: (Vector(endpoints[k]) - Vector(v)).length for k, v in goals.items()}
+        bounds = {}
+        for o in [x for x in scene.objects if x.type == "MESH" and not x.hide_render]:
+            a, b = _bbox(o, deps); bounds[o.name] = [list(a), list(b)]
+        for n in hoof_names:
+            hoof_proxy.setdefault(n, []).append(list(_pb_world(horse, horse.pose.bones[n])))
+        perframe.append({"frame": f, "saddle_top_center": list(S),
+                         "pelvis_error": (pelvis - (S + Vector((0, 0, .10)))).length,
+                         "endpoint_errors": errors, "finite_mesh_bounds": bounds, "floor_height": 0.0})
+    rider_action = bpy.data.actions.new("diagnostic rider FK bake")
+    mf.assign_character_action(rider, rider_action)
+    for f in FRAMES:
+        scene.frame_set(f)
+        for name, mat in snapshots[f].items():
+            pb = rider.pose.bones[name]; pb.matrix_basis = mat
+            pb.keyframe_insert("location", frame=f); pb.keyframe_insert("scale", frame=f)
+            prop = "rotation_quaternion" if pb.rotation_mode == "QUATERNION" else ("rotation_axis_angle" if pb.rotation_mode == "AXIS_ANGLE" else "rotation_euler")
+            pb.keyframe_insert(prop, frame=f)
+    brown = _material("diagnostic horse brown", (.20, .075, .025))
+    armor = _material("diagnostic dark armor", (.035, .045, .055), .32)
+    for n in HORSE_MESHES:
+        o = bpy.data.objects.get(n)
+        if o and o.type == "MESH": o.data.materials.clear(); o.data.materials.append(brown)
+    for n in RIDER_MESHES:
+        o = bpy.data.objects.get(n)
+        if o and o.type == "MESH": o.data.materials.clear(); o.data.materials.append(armor)
+    for o in scene.objects:
+        for mod in o.modifiers:
+            if mod.type == "SUBSURF": mod.levels = min(mod.levels, 1); mod.render_levels = min(mod.render_levels, 1)
+    cams = _environment(path)
+    scene.render.engine = "BLENDER_EEVEE_NEXT" if "CYCLES" not in bpy.types.RenderSettings.bl_rna.properties["engine"].enum_items.keys() else "CYCLES"
+    scene.render.engine = "CYCLES"; scene.cycles.device = "CPU"; scene.cycles.samples = 8; scene.cycles.use_denoising = True
+    scene.render.resolution_x = 640; scene.render.resolution_y = 360; scene.render.resolution_percentage = 100
+    scene.render.image_settings.file_format = "PNG"; scene.render.use_file_extension = True
+    scene.render.use_stamp = True; scene.render.use_stamp_note = True
+    scene.render.stamp_note_text = "UNQUALIFIED DIAGNOSTIC PREVIEW — NOT PHYSICALLY CALIBRATED"
+    scene.render.use_stamp_date = False; scene.render.use_stamp_time = False; scene.render.use_stamp_render_time = False
+    invalid = _invalid_drivers(appended)
+    contact_fail = any(x["pelvis_error"] > .04 or max(x["endpoint_errors"].values(), default=0) > .12 for x in perframe)
+    metrics = {"mode": MODE, "frames": [0, 59], "fps": 24,
+               "source": {"horse_sha256": HORSE_SHA256, "rider_sha256": RIDER_SHA256,
+                          "horse_shape_keys": keys, "rider_original_armature_translation_z": original_rig_z},
+               "source_warnings": ["Exact validated horse source loaded; known invalid orphan ShapeKey warning may occur."],
+               "motion_notice": "Forward -Y translation is provisional 3.45 m/s and not physically calibrated.",
+               "fk_response": fk_response, "invalid_drivers": invalid,
+               "action_channels": list(mf.action_channels(rider_action)), "per_frame": perframe,
+               "hoof_control_proxy_trajectories": hoof_proxy,
+               "hoof_proxy_notice": "Control trajectories are proxies and explicitly are not sole-slip measurements.",
+               "contact_checks_failed": contact_fail, "render_seconds": {}}
+    bpy.ops.wm.save_as_mainfile(filepath=str(out / "scene.blend"), check_existing=False)
+    finite = all(math.isfinite(x["pelvis_error"]) and all(math.isfinite(v) for v in x["endpoint_errors"].values()) for x in perframe)
+    if not finite: raise FloatingPointError("non-finite diagnostic measurements; rendering refused")
+    for cam in cams:
+        scene.camera = cam; d = out / "renders" / cam.name; d.mkdir(parents=True, exist_ok=True)
+        metrics["render_seconds"][cam.name] = []
+        for f in FRAMES:
+            scene.frame_set(f); scene.render.filepath = str(d / f"{f:04d}.png")
+            t = time.perf_counter(); bpy.ops.render.render(write_still=True)
+            metrics["render_seconds"][cam.name].append(time.perf_counter() - t)
+    mf.write_json(out / "metrics.json", metrics)
+    return {"scene": str(out / "scene.blend"), "metrics": str(out / "metrics.json")}

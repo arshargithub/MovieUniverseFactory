@@ -1,0 +1,237 @@
+{
+  "status": "DIAGNOSIS_COMPLETE_GAIT_UNQUALIFIED",
+  "native_elapsed_seconds": 30.887473374954425,
+  "new_api_cost_usd": 0,
+  "artifacts": [
+    {
+      "path": "results/demonstrator-01/stage-a/FOREFOOT_DIAGNOSIS.md",
+      "sha256": "4df4230f4308d038e551ecb9e9d52c4684d91b889a3260aa7d07d243958b879e",
+      "bytes": 6294
+    },
+    {
+      "path": "results/demonstrator-01/stage-a/STATUS.md",
+      "sha256": "c2d7585677845e5a3d26ba39b618961ece6ba964d9807602e392bffb1880e806",
+      "bytes": 753
+    },
+    {
+      "path": "results/demonstrator-01/stage-a/forefoot-diagnostic-source/worker.py",
+      "sha256": "31f1c461af7407eb9fc9805722eefa0607485b2a6bf98d290be931617c7f4904",
+      "bytes": 105417
+    },
+    {
+      "path": "results/demonstrator-01/stage-a/forefoot-diagnostic-source/demo_forefoot_diagnosis.py",
+      "sha256": "55fa0bbdee2905ac793c80828da35f38b77cbf0d008d62a892cba3352b8b9c3c",
+      "bytes": 7287
+    },
+    {
+      "path": "results/demonstrator-01/stage-a/forefoot-diagnostic-source/demo_fullpace_replay.py",
+      "sha256": "e3fdcbeb50960a6342a1c4d582c465d7791ee0592d293dbba658ecd381e25103",
+      "bytes": 4817
+    },
+    {
+      "path": "results/demonstrator-01/stage-a/forefoot-diagnostic-source/plot_mesh.py",
+      "sha256": "fee32e192ba5a05597b5e2d1326fe7fe3d4cc66aa21eeb1d6e647ac44a1e1bf1",
+      "bytes": 1044
+    },
+    {
+      "path": "runs/demonstrator-01/forefoot-diagnosis/source-mesh-7.5.json",
+      "sha256": "46629ddf8dbe1be6454019afcf5b91cf184ce1ee208ac3ec93a3a9bd8a1676a6",
+      "bytes": 870058
+    },
+    {
+      "path": "runs/demonstrator-01/forefoot-diagnosis/stderr.log",
+      "sha256": "1946d4debc81066e67c1577addba5ebab751a935f301cfe98baa0e6cdbc0f583",
+      "bytes": 8256
+    },
+    {
+      "path": "runs/demonstrator-01/forefoot-diagnosis/mesh-comparison.png",
+      "sha256": "b26312ab4ba979082f341d789aa486737926e26a0eb91dcd3cab9a22931483a1",
+      "bytes": 50631
+    },
+    {
+      "path": "runs/demonstrator-01/forefoot-diagnosis/candidate-mesh-3.875.json",
+      "sha256": "9f00263f95049410883897b81afd0ee53b7d848d21d40b9d6ac0f2e3ddec17b2",
+      "bytes": 866263
+    },
+    {
+      "path": "runs/demonstrator-01/forefoot-diagnosis/candidate-mesh-2.75.json",
+      "sha256": "12fba926819fe7a731e9d880fc00e2f825efcbdac1fac87aec3011ef2c1b0e13",
+      "bytes": 866310
+    },
+    {
+      "path": "runs/demonstrator-01/forefoot-diagnosis/candidate-mesh-5.0.json",
+      "sha256": "d4d19d5278794e1a9d58e46a55332c5c6dacf5a00d50b1f4dbebef2f66bc23c7",
+      "bytes": 868781
+    },
+    {
+      "path": "runs/demonstrator-01/forefoot-diagnosis/mesh-samples.json",
+      "sha256": "bae48065bc9add27cea088063ba70cdfb8afbcabb440f8a3795393f7c8f77730",
+      "bytes": 84412612
+    },
+    {
+      "path": "runs/demonstrator-01/forefoot-diagnosis/source-mesh-0.0.json",
+      "sha256": "b1c0c7ac00d2baa95b2eb317b437ec53d10a7089561a1ce085adf4d0bcc8dcc8",
+      "bytes": 866666
+    },
+    {
+      "path": "runs/demonstrator-01/forefoot-diagnosis/stdout.log",
+      "sha256": "17d7ccde30b93fdbd33510e8c91f40bbdf1a1bb338325c3f6c8784ab681c18d9",
+      "bytes": 357
+    },
+    {
+      "path": "runs/demonstrator-01/forefoot-diagnosis/source-mesh-2.75.json",
+      "sha256": "112a6999c8d11d0c6bcda28bc7dcf5726f48f8b1d8dd049a363c9b2d9d21a3e5",
+      "bytes": 868216
+    },
+    {
+      "path": "runs/demonstrator-01/forefoot-diagnosis/source-mesh-5.0.json",
+      "sha256": "5306c94a83bf570e0b9b7901dd4fd92546cdbd9497b6e9d9a6a46c43e59f110f",
+      "bytes": 870379
+    },
+    {
+      "path": "runs/demonstrator-01/forefoot-diagnosis/job.json",
+      "sha256": "6d851eb67ddcf24febcdbfce32a716dcc8c2e22a134ad17a730aa41a242a04c2",
+      "bytes": 163
+    },
+    {
+      "path": "runs/demonstrator-01/forefoot-diagnosis/candidate-mesh-7.5.json",
+      "sha256": "4b43023a0d63bc47ad124765038fc8da6f9933bcf81a4b30ddf1215288e166e4",
+      "bytes": 869034
+    },
+    {
+      "path": "runs/demonstrator-01/forefoot-diagnosis/worker-status.json",
+      "sha256": "52d63a1c42b96acd6bbc0e79a9c32c780ed51ee688b738631f7f5649b3dc739c",
+      "bytes": 322
+    },
+    {
+      "path": "runs/demonstrator-01/forefoot-diagnosis/runner-status.json",
+      "sha256": "0b373974c2a1755dae14fa4eb0752d697954c01cfa10156bb61aeef282567a67",
+      "bytes": 1070
+    },
+    {
+      "path": "runs/demonstrator-01/forefoot-diagnosis/candidate-mesh-0.0.json",
+      "sha256": "20bcc3b273863c1fa2af30ed44048e7e25107114dea6253d7253f587a30ddbb5",
+      "bytes": 866744
+    },
+    {
+      "path": "runs/demonstrator-01/forefoot-diagnosis/source-mesh-3.875.json",
+      "sha256": "657fb618514b47940cf417c7f774cca7092397470bbde902685d8fe57fb45731",
+      "bytes": 869418
+    },
+    {
+      "path": "runs/demonstrator-01/forefoot-diagnosis/diagnosis.json",
+      "sha256": "e9c1a8bbbec0334e05bfe568cf617d120719612e714880e0801193df34c78b09",
+      "bytes": 37839
+    },
+    {
+      "path": "runs/demonstrator-01/forefoot-diagnosis/bone-samples.json",
+      "sha256": "78a13a2d8c42cc19399fe3b082f244032a8648a286082f6976c4bb8000142080",
+      "bytes": 5210033
+    },
+    {
+      "path": "runs/demonstrator-01/forefoot-isolation/source-mesh-7.5.json",
+      "sha256": "46629ddf8dbe1be6454019afcf5b91cf184ce1ee208ac3ec93a3a9bd8a1676a6",
+      "bytes": 870058
+    },
+    {
+      "path": "runs/demonstrator-01/forefoot-isolation/stderr.log",
+      "sha256": "1946d4debc81066e67c1577addba5ebab751a935f301cfe98baa0e6cdbc0f583",
+      "bytes": 8256
+    },
+    {
+      "path": "runs/demonstrator-01/forefoot-isolation/candidate-mesh-3.875.json",
+      "sha256": "9f00263f95049410883897b81afd0ee53b7d848d21d40b9d6ac0f2e3ddec17b2",
+      "bytes": 866263
+    },
+    {
+      "path": "runs/demonstrator-01/forefoot-isolation/candidate-mesh-2.75.json",
+      "sha256": "12fba926819fe7a731e9d880fc00e2f825efcbdac1fac87aec3011ef2c1b0e13",
+      "bytes": 866310
+    },
+    {
+      "path": "runs/demonstrator-01/forefoot-isolation/candidate-mesh-5.0.json",
+      "sha256": "d4d19d5278794e1a9d58e46a55332c5c6dacf5a00d50b1f4dbebef2f66bc23c7",
+      "bytes": 868781
+    },
+    {
+      "path": "runs/demonstrator-01/forefoot-isolation/mesh-samples.json",
+      "sha256": "bae48065bc9add27cea088063ba70cdfb8afbcabb440f8a3795393f7c8f77730",
+      "bytes": 84412612
+    },
+    {
+      "path": "runs/demonstrator-01/forefoot-isolation/single-pose-controls.json",
+      "sha256": "4bf24aedf7cd7fa6a3840097cdcf6293b409b44f0861fb9e630090f95d4023c5",
+      "bytes": 5767
+    },
+    {
+      "path": "runs/demonstrator-01/forefoot-isolation/source-mesh-0.0.json",
+      "sha256": "b1c0c7ac00d2baa95b2eb317b437ec53d10a7089561a1ce085adf4d0bcc8dcc8",
+      "bytes": 866666
+    },
+    {
+      "path": "runs/demonstrator-01/forefoot-isolation/stdout.log",
+      "sha256": "4b5ba67826c452c3a270a7e9ad0803687d2f1ed72f9853f29dab44ab97f872e3",
+      "bytes": 357
+    },
+    {
+      "path": "runs/demonstrator-01/forefoot-isolation/source-mesh-2.75.json",
+      "sha256": "112a6999c8d11d0c6bcda28bc7dcf5726f48f8b1d8dd049a363c9b2d9d21a3e5",
+      "bytes": 868216
+    },
+    {
+      "path": "runs/demonstrator-01/forefoot-isolation/source-mesh-5.0.json",
+      "sha256": "5306c94a83bf570e0b9b7901dd4fd92546cdbd9497b6e9d9a6a46c43e59f110f",
+      "bytes": 870379
+    },
+    {
+      "path": "runs/demonstrator-01/forefoot-isolation/job.json",
+      "sha256": "296027abe8934a8ba80699cfc54b1baca1fa326984f909ae36cb22735756ce78",
+      "bytes": 163
+    },
+    {
+      "path": "runs/demonstrator-01/forefoot-isolation/candidate-mesh-7.5.json",
+      "sha256": "4b43023a0d63bc47ad124765038fc8da6f9933bcf81a4b30ddf1215288e166e4",
+      "bytes": 869034
+    },
+    {
+      "path": "runs/demonstrator-01/forefoot-isolation/worker-status.json",
+      "sha256": "584b9d742dcab3d7877fc96bce6618cfaac9222da9d3287cd7ca60ecdc0f4867",
+      "bytes": 322
+    },
+    {
+      "path": "runs/demonstrator-01/forefoot-isolation/runner-status.json",
+      "sha256": "9acc5d493a025bf0618dbe6968cf0e16d73eb09775ebcc70f4740353431a56e2",
+      "bytes": 1071
+    },
+    {
+      "path": "runs/demonstrator-01/forefoot-isolation/candidate-mesh-0.0.json",
+      "sha256": "20bcc3b273863c1fa2af30ed44048e7e25107114dea6253d7253f587a30ddbb5",
+      "bytes": 866744
+    },
+    {
+      "path": "runs/demonstrator-01/forefoot-isolation/source-mesh-3.875.json",
+      "sha256": "657fb618514b47940cf417c7f774cca7092397470bbde902685d8fe57fb45731",
+      "bytes": 869418
+    },
+    {
+      "path": "runs/demonstrator-01/forefoot-isolation/diagnosis.json",
+      "sha256": "e9c1a8bbbec0334e05bfe568cf617d120719612e714880e0801193df34c78b09",
+      "bytes": 37839
+    },
+    {
+      "path": "runs/demonstrator-01/forefoot-isolation/bone-samples.json",
+      "sha256": "78a13a2d8c42cc19399fe3b082f244032a8648a286082f6976c4bb8000142080",
+      "bytes": 5210033
+    },
+    {
+      "path": "results/demonstrator-01/stage-a/forefoot-diagnosis-summary.json",
+      "sha256": "19fd5960c2cde921df4888e6951bc7de6d88109bb03e99c7c5a131a9675b7923",
+      "bytes": 499
+    },
+    {
+      "path": "results/demonstrator-01/stage-a/forefoot-diagnosis-operating-events.json",
+      "sha256": "951024814d20e746e5ce77c8a05e6b71cff4bb59645527294140db01f8eb95e9",
+      "bytes": 83238
+    }
+  ]
+}

@@ -1,0 +1,154 @@
+{
+  "status": "POSE_REPAIR_FAILED",
+  "new_api_cost_usd": 0,
+  "native_process_seconds": 86.34609391709091,
+  "exact_net_supervising_seconds": null,
+  "timing_limitation": "UTC/monotonic discontinuity; no initial activity monotonic timestamp",
+  "artifacts": [
+    {
+      "path": "results/demonstrator-01/stage-a/FOREFOOT_POSE_REPAIR.md",
+      "sha256": "084f270e5be247308c0511218947e0c4432592e345af24d56864f2df7e759da0",
+      "bytes": 5581
+    },
+    {
+      "path": "results/demonstrator-01/stage-a/STATUS.md",
+      "sha256": "0f9019147a4a12f8edb2df2b68b76bc040ddff0aa9a6ff5c067e5faf508df7f4",
+      "bytes": 800
+    },
+    {
+      "path": "feasibility/demonstrator-01/FOREFOOT_POSE_REPAIR.md",
+      "sha256": "ee6b94a3a3d62f3140a14e0c3ae9ea1a6d1df4ec915545b05be0da4efe6185c7",
+      "bytes": 4858
+    },
+    {
+      "path": "results/demonstrator-01/stage-a/forefoot-pose-source/worker.py",
+      "sha256": "570fd40bd141a3b4db54516ae30ce5cf357809aa5e7cc9ddd14757730d285e56",
+      "bytes": 105944
+    },
+    {
+      "path": "results/demonstrator-01/stage-a/forefoot-pose-source/initial_ineffective_control_handler.py",
+      "sha256": "4b2cfd0ecf3ae109392d69a5a58e4ad8c00e7d80f4ae890083e54f6bc7bbc8b6",
+      "bytes": 7446
+    },
+    {
+      "path": "results/demonstrator-01/stage-a/forefoot-pose-source/local_basis_handler.py",
+      "sha256": "1ca57653caaecbe4c692730c1043ac93c9a84ca642e217e162b71d7604d30e8b",
+      "bytes": 8291
+    },
+    {
+      "path": "results/demonstrator-01/stage-a/forefoot-pose-source/demo_fullpace_replay.py",
+      "sha256": "e3fdcbeb50960a6342a1c4d582c465d7791ee0592d293dbba658ecd381e25103",
+      "bytes": 4817
+    },
+    {
+      "path": "results/demonstrator-01/stage-a/forefoot-pose-source/demo_forefoot_pose.py",
+      "sha256": "60653abe1e1af18235dde7dc725a4f009aec104514367e83d13bdd45115a3abf",
+      "bytes": 8340
+    },
+    {
+      "path": "runs/demonstrator-01/forefoot-pose/stderr.log",
+      "sha256": "e45d6c2d2c273714795e701ec25521ee5a335cfc2c765435a4153a488d36d7a4",
+      "bytes": 14448
+    },
+    {
+      "path": "runs/demonstrator-01/forefoot-pose/pose-results.json",
+      "sha256": "a15dc9a6f4fe8ac6193a25ba775c66402d10cd33ea06ce3c368397f0b58fb80d",
+      "bytes": 93743
+    },
+    {
+      "path": "runs/demonstrator-01/forefoot-pose/stdout.log",
+      "sha256": "7611980ce2aab624bfce660aacaf33c3e4dc074c8ef94d7d63b3f68d1d8e1d9a",
+      "bytes": 636
+    },
+    {
+      "path": "runs/demonstrator-01/forefoot-pose/job.json",
+      "sha256": "2354b176d8c757bd13cdc013d72223391691b7eb843cb0cffb7fc0c9babc8a37",
+      "bytes": 153
+    },
+    {
+      "path": "runs/demonstrator-01/forefoot-pose/worker-status.json",
+      "sha256": "984ad3cc7fdf2d1c0c2f3bb0d36b4acd089d8a49e360cb971b6a128a222ff0e7",
+      "bytes": 270
+    },
+    {
+      "path": "runs/demonstrator-01/forefoot-pose/runner-status.json",
+      "sha256": "f7921f37a913b17311413c61de6bc55d4f02dcf86d700c54b8112484c503afaf",
+      "bytes": 1013
+    },
+    {
+      "path": "runs/demonstrator-01/forefoot-pose-control/mesh-driver-inventory.json",
+      "sha256": "73e2af19fae9cf45cc32337b5cfd376f6a481dc7596ff74e148d15c9520cd08d",
+      "bytes": 2159
+    },
+    {
+      "path": "runs/demonstrator-01/forefoot-pose-control/stderr.log",
+      "sha256": "e45d6c2d2c273714795e701ec25521ee5a335cfc2c765435a4153a488d36d7a4",
+      "bytes": 14448
+    },
+    {
+      "path": "runs/demonstrator-01/forefoot-pose-control/pose-results.json",
+      "sha256": "76ff8db1a194db08ff68dca88f7aa5f8ada47f45e59e7ee782d22387e150eb4f",
+      "bytes": 93780
+    },
+    {
+      "path": "runs/demonstrator-01/forefoot-pose-control/stdout.log",
+      "sha256": "7a7ce06b225ab3de20780182c053b180fa629214db5bc40811c9c2758aadadb1",
+      "bytes": 636
+    },
+    {
+      "path": "runs/demonstrator-01/forefoot-pose-control/job.json",
+      "sha256": "214c4155370e7a7e28ad5118473c554afb12f173b01b5126eabdfbaaf5b06eb1",
+      "bytes": 161
+    },
+    {
+      "path": "runs/demonstrator-01/forefoot-pose-control/worker-status.json",
+      "sha256": "c9a4c7b0c289eb603b5a04481486158994ca6520995f5f3f028b15107260c8d0",
+      "bytes": 270
+    },
+    {
+      "path": "runs/demonstrator-01/forefoot-pose-control/runner-status.json",
+      "sha256": "9b2ab9647d0caedfc0268e05971170f9d7394ec8ce765e4cb556c7901154ac65",
+      "bytes": 1021
+    },
+    {
+      "path": "runs/demonstrator-01/forefoot-pose-space/mesh-driver-inventory.json",
+      "sha256": "73e2af19fae9cf45cc32337b5cfd376f6a481dc7596ff74e148d15c9520cd08d",
+      "bytes": 2159
+    },
+    {
+      "path": "runs/demonstrator-01/forefoot-pose-space/stderr.log",
+      "sha256": "e45d6c2d2c273714795e701ec25521ee5a335cfc2c765435a4153a488d36d7a4",
+      "bytes": 14448
+    },
+    {
+      "path": "runs/demonstrator-01/forefoot-pose-space/pose-results.json",
+      "sha256": "bf865979c4571035404e544374c157aef469e9a5ea9328e9344113b051f9b1e1",
+      "bytes": 86229
+    },
+    {
+      "path": "runs/demonstrator-01/forefoot-pose-space/stdout.log",
+      "sha256": "c61552c21abd8e707428b958c8bdf87cf143d64d3a5e279633d455e7cdf80127",
+      "bytes": 636
+    },
+    {
+      "path": "runs/demonstrator-01/forefoot-pose-space/job.json",
+      "sha256": "793c54b59e4fe95713a392662f2d20b38d98a1c0830c2bb411f5e39718de7062",
+      "bytes": 159
+    },
+    {
+      "path": "runs/demonstrator-01/forefoot-pose-space/worker-status.json",
+      "sha256": "5d0df4db3d48515effadd33f4bdbd027397432c4b78229bd2de691e239381123",
+      "bytes": 270
+    },
+    {
+      "path": "runs/demonstrator-01/forefoot-pose-space/runner-status.json",
+      "sha256": "320624a19337c9ae714b24bd147b83dd8edd19cb0f6d64a09faadb6d6379f176",
+      "bytes": 1020
+    },
+    {
+      "path": "results/demonstrator-01/stage-a/forefoot-pose-operating-events.json",
+      "sha256": "3fcf12095c1360ad34082f24c43371288b5ee96f99c4f37793a3f1ecec5cf8a7",
+      "bytes": 88767
+    }
+  ]
+}

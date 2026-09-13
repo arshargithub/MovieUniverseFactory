@@ -43,7 +43,9 @@ class BudgetLedger:
     """
 
     def __init__(self, path: Path, campaign_limit: float = 40, *,
-                 scope_limits=None, stage_limits=None):
+                 scope_limits=None, stage_limits=None, request_limit=None,
+                 request_ceiling_usd=None, work_item_attempt_limit=None, additional_campaign_ceiling_usd=None):
+        self.additional_campaign_ceiling_units = (_units(additional_campaign_ceiling_usd) if additional_campaign_ceiling_usd is not None else None)
         self.path = Path(path)
         self.path.parent.mkdir(parents=True, exist_ok=True)
         self.policy = {
@@ -55,6 +57,14 @@ class BudgetLedger:
                                  "initial": (3, 8), "revision": (2, 6),
                                  "development": (10, 50), "faults": (5, 30)}).items()},
         }
+        # Optional campaign-wide controls; omitted fields preserve historical policies.
+        for key, value in (("request_limit", request_limit), ("work_item_attempt_limit", work_item_attempt_limit)):
+            if value is not None:
+                if type(value) is not int or value <= 0:
+                    raise BudgetError("Request limits must be positive integers")
+                self.policy[key] = value
+        if request_ceiling_usd is not None:
+            self.policy["request_ceiling_units"] = _units(request_ceiling_usd)
         if any(item["calls"] <= 0 for item in self.policy["stage_limits"].values()):
             raise BudgetError("Call limits must be positive")
         with self._locked() as handle:
@@ -147,6 +157,17 @@ class BudgetLedger:
         with self._locked() as handle:
             events = self._read(handle)
             requests = self._reservations(events)
+            if any(item.get("settlement", {}).get("reservation_exceeded") for item in requests.values()):
+                raise BudgetExceeded("Prior charge exceeded its reservation; reconcile bounding before dispatch")
+            if len(requests) >= self.policy.get("request_limit", float("inf")):
+                raise BudgetExceeded("Campaign physical request ceiling reached")
+            if amount > self.policy.get("request_ceiling_units", float("inf")):
+                raise BudgetExceeded("Per-request ceiling exceeded")
+            attempts = [item for item in requests.values() if item["purpose"] == purpose]
+            if len(attempts) >= self.policy.get("work_item_attempt_limit", float("inf")):
+                raise BudgetExceeded("Work item attempt ceiling reached")
+            if attempts and "work_item_attempt_limit" in self.policy and scope != "contingency":
+                raise BudgetError("Work item retries must charge contingency")
             if identity in requests:
                 raise BudgetError("Request identity already reserved; do not redispatch it")
             total = sum(self._charge(item) for item in requests.values())
@@ -154,7 +175,7 @@ class BudgetLedger:
             stage_requests = [item for item in requests.values() if item["run_id"] == run_id and item["stage"] == stage]
             stage_total = sum(self._charge(item) for item in stage_requests)
             stage_limit = self.policy["stage_limits"][stage]
-            if total + amount > self.policy["campaign_limit_units"]:
+            if total + amount > min(self.policy["campaign_limit_units"], self.additional_campaign_ceiling_units if self.additional_campaign_ceiling_units is not None else self.policy["campaign_limit_units"]):
                 raise BudgetExceeded("Campaign spend ceiling would be exceeded")
             if scope_total + amount > self.policy["scope_limits_units"][scope]:
                 raise BudgetExceeded("Scope spend ceiling would be exceeded")
@@ -208,6 +229,7 @@ class BudgetLedger:
                     "unresolved_calls": len(unknown),
                     "reservation_exceeded": any(item.get("settlement", {}).get("reservation_exceeded", False) for item in items)}
         return {**totals(requests.values()), "campaign_limit_usd": self.policy["campaign_limit_units"] / 1e9,
+                "effective_campaign_limit_usd": min(self.policy["campaign_limit_units"], self.additional_campaign_ceiling_units if self.additional_campaign_ceiling_units is not None else self.policy["campaign_limit_units"]) / 1e9,
                 "scopes": {scope: totals(item for item in requests.values() if item["scope"] == scope)
                            for scope in self.policy["scope_limits_units"]},
                 "runs": {run: {stage: totals(item for item in requests.values() if item["run_id"] == run and item["stage"] == stage)

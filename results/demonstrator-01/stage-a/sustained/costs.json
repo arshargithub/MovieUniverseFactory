@@ -1,0 +1,69 @@
+{
+  "calls": 14,
+  "known_cost_usd": 3.222300001,
+  "reserved_unknown_usd": 0.0,
+  "committed_usd": 3.222300001,
+  "unresolved_calls": 0,
+  "reservation_exceeded": false,
+  "campaign_limit_usd": 100.0,
+  "effective_campaign_limit_usd": 50.0,
+  "scopes": {
+    "feasibility": {
+      "calls": 4,
+      "known_cost_usd": 1.177975,
+      "reserved_unknown_usd": 0.0,
+      "committed_usd": 1.177975,
+      "unresolved_calls": 0,
+      "reservation_exceeded": false
+    },
+    "implementation": {
+      "calls": 5,
+      "known_cost_usd": 1.038467501,
+      "reserved_unknown_usd": 0.0,
+      "committed_usd": 1.038467501,
+      "unresolved_calls": 0,
+      "reservation_exceeded": false
+    },
+    "critique": {
+      "calls": 1,
+      "known_cost_usd": 0.051475,
+      "reserved_unknown_usd": 0.0,
+      "committed_usd": 0.051475,
+      "unresolved_calls": 0,
+      "reservation_exceeded": false
+    },
+    "direction": {
+      "calls": 0,
+      "known_cost_usd": 0.0,
+      "reserved_unknown_usd": 0.0,
+      "committed_usd": 0.0,
+      "unresolved_calls": 0,
+      "reservation_exceeded": false
+    },
+    "contingency": {
+      "calls": 4,
+      "known_cost_usd": 0.9543825,
+      "reserved_unknown_usd": 0.0,
+      "committed_usd": 0.9543825,
+      "unresolved_calls": 0,
+      "reservation_exceeded": false
+    }
+  },
+  "runs": {
+    "demonstrator-01": {
+      "api": {
+        "calls": 14,
+        "known_cost_usd": 3.222300001,
+        "reserved_unknown_usd": 0.0,
+        "committed_usd": 3.222300001,
+        "unresolved_calls": 0,
+        "reservation_exceeded": false
+      }
+    }
+  },
+  "prior_this_pass_usd": 2.550887501,
+  "this_pass_calculated_usd": 0.6714124999999997,
+  "reconciliation": "CONSERVATIVE_CALCULATED_ESTIMATE_NOT_PROVIDER_INVOICE",
+  "subscription_tokens": null,
+  "subscription_allocated_cost_usd": null
+}

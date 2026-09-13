@@ -1,0 +1,24 @@
+{
+  "cost_usd": 0.0015,
+  "data": {
+    "result": "The first integration risk is rig mismatch: the horse and rider may use incompatible scale, root orientation, attachment points, and animation spaces, causing the rider to drift, clip, or fail to follow the gallop correctly."
+  },
+  "error": null,
+  "input_cost_usd": 0.00036,
+  "other_output_cost_usd": 0.000855,
+  "output_cost_usd": 0.00114,
+  "provider_request_id": "req_2c4aaedb548a429fb86037961aae41e1",
+  "reasoning_cost_usd": 0.0,
+  "reconciliation_status": "CONSERVATIVE_CALCULATED_ESTIMATE_NOT_PROVIDER_INVOICE",
+  "reservation_id": "214b833f-4029-4a20-b1f6-121492a55850",
+  "response_id": "resp_031f423dfa27e45b016aa504eca93087d2ab0de842e957d87a",
+  "returned_model": "gpt-5.6-sol",
+  "usage": {
+    "cached_input_tokens": 0,
+    "input_tokens": 72,
+    "output_tokens": 57,
+    "reasoning_tokens": 0,
+    "total_tokens": 129,
+    "usage_certainty": "known"
+  }
+}

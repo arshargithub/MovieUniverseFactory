@@ -1,0 +1,20 @@
+{
+  "scope": "Current Director-requested realism repair; prior existing-asset pass ended at demo01-free-repair-end. No prior time is erased.",
+  "pass_activity_id": "demo01-realism",
+  "native_completed": [
+    {
+      "run": "realism-audit",
+      "seconds": 35.71849937498337
+    },
+    {
+      "run": "realism-probe",
+      "seconds": 57.21433608402731
+    }
+  ],
+  "native_completed_seconds": 92.93283545901068,
+  "proposed_worker_timeout_seconds": 580,
+  "maximum_total_seconds": 672.9328354590107,
+  "pass_compute_ceiling_seconds": 900,
+  "proposed_job_id": "demo01-realism-motion",
+  "dispatch_occurred": false
+}

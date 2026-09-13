@@ -598,6 +598,183 @@
           "path": "results/3d06a/closure-v1/REPORT.md"
         }
       ]
+    },
+    {
+      "controlled_model_comparison": false,
+      "event_id": "demonstrator01-stage-a-routing",
+      "event_type": "bounded_paid_engineering_handoff",
+      "evidence": [
+        "results/demonstrator-01/stage-a/asset-inspector-proposal.json",
+        "results/demonstrator-01/stage-a/CODE_REVIEW.md"
+      ],
+      "experiment_id": "DEMONSTRATOR-01",
+      "observed_supervisor": {
+        "effort": "medium",
+        "model": "gpt-6-astra",
+        "source": "runtime_turn_context"
+      },
+      "outcome": "Code proposal produced; supervisor fixed digest/helper/path validation issues. Initial asset inspections failed size cap and legacy shape-key load warning. Reviewed fixed-handler execution pending explicit approval after auto-review rejection. No asset or motion qualification claimed.",
+      "paid_engineering": {
+        "observed_effort": null,
+        "requested_effort": "medium",
+        "requested_model": "gpt-5.6-sol",
+        "returned_model": "gpt-5.6-sol",
+        "work_item": "asset-inspector-implementation"
+      },
+      "phase": "asset_inspection",
+      "requested_supervisor": {
+        "effort": "medium",
+        "model": "gpt-6-astra"
+      }
+    },
+    {
+      "controlled_model_comparison": false,
+      "event_id": "demonstrator01-stage-a-execution-blocker",
+      "event_type": "handoff_outcome",
+      "evidence": [
+        "results/demonstrator-01/stage-a/execution-blocker.json"
+      ],
+      "experiment_id": "DEMONSTRATOR-01",
+      "observation": "Explicit user approval did not unblock the reviewed Sol-proposed inspector. Rejected dispatch removed. Pre-existing unchanged inspector read rider; integrated horse/rider preview and render envelope remain NOT_RUN. No model-quality or production feasibility conclusion can be drawn from this policy blocker.",
+      "outcome": "STAGE_A_INCOMPLETE_EXECUTION_POLICY_BLOCK",
+      "paid_model_estimated_cost_usd": 0.117725
+    },
+    {
+      "event_id": "demonstrator01-first-integration-checkpoint",
+      "event_type": "handoff_outcome",
+      "experiment_id": "DEMONSTRATOR-01",
+      "controlled_model_comparison": false,
+      "outcome": "STAGE_A_INCOMPLETE_VISIBLE_INTEGRATION_FAILURE",
+      "observation": "Director-authorized policy clarification allowed reviewed fixed handlers. Astra High design and Sol Medium proposal produced a native integration, but assembled rider/armour and framing failed visually despite pelvis-anchor checks. Render stopped; no motion qualification. Initial design and implementation output-limit failures retained. Recommend single-pose native compatibility probes before full animation.",
+      "paid_model_estimated_cost_usd": 1.127472501,
+      "evidence": [
+        "results/demonstrator-01/stage-a/STAGE_A_GATE.md"
+      ]
+    },
+    {
+      "event_id": "demonstrator01-bounded-recovery",
+      "event_type": "handoff_outcome",
+      "experiment_id": "DEMONSTRATOR-01",
+      "controlled_model_comparison": false,
+      "outcome": "ASSEMBLY_IMPROVED_MOTION_NOT_QUALIFIED",
+      "requested_model": "gpt-6-astra",
+      "requested_effort": "high",
+      "returned_model": "gpt-6-astra",
+      "observed_effort": null,
+      "observation": "Bounded paid diagnosis proposed refreshed evaluation, root-only normalization and preservation of rig ownership. Three fixed pose probes support common-transform normalization and visibly improved seating. Full motion and contacts remain unqualified.",
+      "evidence": [
+        "results/demonstrator-01/stage-a/RECOVERY.md"
+      ]
+    },
+    {
+      "event_id": "demonstrator01-complete-motion-outcome",
+      "event_type": "handoff_outcome",
+      "experiment_id": "DEMONSTRATOR-01",
+      "controlled_model_comparison": false,
+      "outcome": "COMPLETE_DIAGNOSTIC_CLIP_STAGE_A_YELLOW",
+      "observation": "Applied bounded diagnosis to full preview. Source FOLLOW_PATH plus added parent duplicated travel; pre-render guard rejected it, removing source path ownership restored measured travel. Full clip reveals unstable tail, rigid rider and missing rein contact. No extra API calls; no general model-quality claim.",
+      "evidence": [
+        "results/demonstrator-01/stage-a/MOTION_PREVIEW.md"
+      ]
+    },
+    {
+      "event_id": "demonstrator01-existing-asset-repair",
+      "event_type": "handoff_outcome",
+      "experiment_id": "DEMONSTRATOR-01",
+      "controlled_model_comparison": false,
+      "outcome": "COARSE_SCREEN_PASSED_DENSE_CONTACT_FAILED_DIRECTOR_PENDING",
+      "observation": "Sol Medium proposed bounded kinematic helpers; supervisor corrected Blender ownership/roll and rein interpolation. Native sole measurements rejected the first full attempt. A bounded Astra High work item (one output-limit failure and one retry) proposed an existing-IK additive contact layer; supervisor changed plant-target fitting and preserved vertical motion. Source gallop retained; simple contact screens improved, visual contact quality and finished realistic look remain unqualified. This is a combined workflow with fixture/constraint changes, not a model benchmark. Saved-scene eighth-frame validation subsequently rejected 0.220464 m stance travel at support transitions; coarse success was not accepted as qualification. Derive dense source support intervals and validate off-grid before full render.",
+      "paid_model_estimated_cost_usd": 0.8297275,
+      "engineering_subscription_usage": null,
+      "evidence": [
+        "results/demonstrator-01/stage-a/FREE_REPAIR.md",
+        "results/demonstrator-01/stage-a/FREE_REPAIR_REVIEW.md"
+      ]
+    },
+    {
+      "event_id": "demonstrator01-realism-repair",
+      "event_type": "handoff_outcome",
+      "experiment_id": "DEMONSTRATOR-01",
+      "controlled_model_comparison": false,
+      "outcome": "COMPLETE_INTERMEDIATE_REPAIR_REOPEN_SCREENS_PASS_DIRECTOR_PENDING",
+      "observation": "Director found oversized head, wiry tail, cadence/travel mismatch and dark final frame. Supervisor-only diagnostic identified camera entering a rock and coarse support-window inference. Dense source fitting reduced contact excursion in the probe to 5.34 mm; appearance adapted existing controls/groom. A 6.47 m/s fixture fit is explicitly distinguished from the full-pace extended gallop target. No paid API calls or model switch in this pass; usage unknown. Complete two-view playback and 0.05-frame full-clip reopen sampling passed the retained contact screens (5.90 mm maximum stance excursion). Full-pace extended gait remains unqualified.",
+      "paid_model_estimated_cost_usd": 0,
+      "engineering_subscription_usage": null,
+      "evidence": [
+        "results/demonstrator-01/stage-a/REALISM_REPAIR.md",
+        "results/demonstrator-01/stage-a/realism-director-feedback.json"
+      ]
+    },
+    {
+      "event_id": "demonstrator01-fullpace-blocked-checkpoint",
+      "event_type": "handoff_outcome",
+      "experiment_id": "DEMONSTRATOR-01",
+      "controlled_model_comparison": false,
+      "outcome": "THREE_VARIANTS_FAILED_SCREEN_CLEAN_REFERENCE_AUDIT_NOT_RUN_DISK_GUARD",
+      "observation": "Generic paid Astra High design guided authored gallop, but did not identify the existing rig paw/heel control dependencies. Three supervised variants failed deformation screens. Source-reference rotation-mode contamination was then identified as a possible measurement issue; fixed independent audit blocked by <5GB free-space guard. No combined movie or validated FX. Do not infer model superiority, true asset limit, or successful repair from this checkpoint.",
+      "paid_model_estimated_cost_usd": 0.394875,
+      "engineering_subscription_usage": null,
+      "evidence": [
+        "results/demonstrator-01/stage-a/FULL_PACE_PASS.md"
+      ]
+    },
+    {
+      "event_id": "demonstrator01-forefoot-bounded-diagnosis",
+      "event_type": "handoff_outcome",
+      "experiment_id": "DEMONSTRATOR-01",
+      "controlled_model_comparison": false,
+      "outcome": "DIAGNOSIS_COMPLETE_CANDIDATE_UNQUALIFIED",
+      "observation": "Same-frame segment screen compared a near-rest candidate with stretched source. Full-cycle mesh measurements and exact-reset single-pose controls localize a major deformation contribution to authored foot transforms with heel interaction. Whole-limb feasibility and a phase-aware validation contract should precede further gait authoring. No model switch or paid call; no claim of model superiority or completed repair.",
+      "paid_model_estimated_cost_usd": 0,
+      "engineering_subscription_usage": null,
+      "evidence": [
+        "results/demonstrator-01/stage-a/FOREFOOT_DIAGNOSIS.md"
+      ]
+    },
+    {
+      "event_id": "demonstrator01-forefoot-pose-repair-failed",
+      "event_type": "handoff_outcome",
+      "experiment_id": "DEMONSTRATOR-01",
+      "controlled_model_comparison": false,
+      "outcome": "POSE_REPAIR_FAILED_ONE_OF_THREE_POSES_PASSES",
+      "observation": "Local-basis and evaluated-pose interpolation failed two of three recovery poses under frozen mesh screen. Initial negative control did not affect active shape-key geometry; corrected native corruption fails mesh metrics while bone/angle checks pass. No full gait or FX. Wall-clock/monotonic disagreement prevents exact net duration; capture monotonic activity deadlines prospectively. No model switch or paid API call; no model benchmark inference.",
+      "paid_model_estimated_cost_usd": 0,
+      "engineering_subscription_usage": null,
+      "evidence": [
+        "results/demonstrator-01/stage-a/FOREFOOT_POSE_REPAIR.md"
+      ]
+    },
+    {
+      "event_id": "demonstrator01-sustained-sixsecond-preview",
+      "event_type": "handoff_outcome",
+      "experiment_id": "DEMONSTRATOR-01",
+      "controlled_model_comparison": false,
+      "outcome": "SIX_SECOND_INTEGRATED_PREVIEW_READY_DIRECTOR_PENDING",
+      "observation": "Paid Astra High supplied source-centred whole-control design; paid Sol Medium supplied FX proposal; paid Astra Medium selected-frame critique identified presentation limitations. Supervised repairs, source closure, rolling material contact, wider airborne capture and Director history all contributed. Full six-second hero and dust-free videos now exist. Fixed-material/off-grid sliding controls pass, legacy centroid screen remains failed, and comprehensive anatomical/visual qualification remains unclaimed. Cancelled render work and timing limitations are retained. This does not isolate a model-choice effect.",
+      "requested_api_routes": [
+        {
+          "model": "gpt-6-astra",
+          "effort": "high",
+          "work": "whole-control motion design"
+        },
+        {
+          "model": "gpt-5.6-sol",
+          "effort": "medium",
+          "work": "tail and dust proposal"
+        },
+        {
+          "model": "gpt-6-astra",
+          "effort": "medium",
+          "work": "selected-frame critique"
+        }
+      ],
+      "observed_supervisor_model": null,
+      "engineering_subscription_usage": null,
+      "paid_model_estimated_cost_usd": 0.6714124999999997,
+      "evidence": [
+        "results/demonstrator-01/stage-a/sustained/REPORT.md",
+        "results/demonstrator-01/stage-a/sustained/PROCESS_REVIEW.md"
+      ]
     }
   ],
   "recording_mode": "manual_evidence_backfill_and_future_event_capture",

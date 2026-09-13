@@ -1,0 +1,881 @@
+{
+  "base": "repository root",
+  "artifacts": [
+    {
+      "path": "feasibility/demonstrator-01/REALISM_REPAIR.md",
+      "sha256": "33b9d47a16801b10eaa3551a16433ded0dc54cfb3df962baa8d203d3417b5d09",
+      "bytes": 5123
+    },
+    {
+      "path": "feasibility/demonstrator-01/realism-config.json",
+      "sha256": "facd4ab0297a79b1f9927af2a69b7b17a9dcf48d1eda2b46debd1df37e6a09cb",
+      "bytes": 644
+    },
+    {
+      "path": "results/demonstrator-01/stage-a/REALISM_REPAIR.md",
+      "sha256": "a3b5e28c5dbb9c962a3de5d466be873714d0e1fd4a3844bf5e2750db861e13ec",
+      "bytes": 7132
+    },
+    {
+      "path": "results/demonstrator-01/stage-a/realism-budget-proof.json",
+      "sha256": "f36049f02a2106ef26f1f5144514fb6637326137b43ff158d8f77f075300b882",
+      "bytes": 620
+    },
+    {
+      "path": "results/demonstrator-01/stage-a/realism-director-feedback.json",
+      "sha256": "76f0b8621ea2c7f87fda6a421fe71893edd1210e721a5f7b18215254b67bda1e",
+      "bytes": 681
+    },
+    {
+      "path": "results/demonstrator-01/stage-a/realism-operating-events.json",
+      "sha256": "7a23f72b1ecd408b24da133aa419e6aae9459e00906c3cf0921f14bf88fbab65",
+      "bytes": 6405
+    },
+    {
+      "path": "results/demonstrator-01/stage-a/realism-source/VERIFIER.md",
+      "sha256": "e3ea57340709a3c1679d729776b8387e6e6985055435df03a42ae0f787ce72f4",
+      "bytes": 345
+    },
+    {
+      "path": "results/demonstrator-01/stage-a/realism-source/binding.json",
+      "sha256": "94ba41ea4c8b150278488b84173df8bf47c813f20dacb6807f7fd442d844d9cd",
+      "bytes": 1156
+    },
+    {
+      "path": "results/demonstrator-01/stage-a/realism-source/feasibility/demonstrator-01/REALISM_REPAIR.md",
+      "sha256": "373c2d1b83e73a2f0ffa92c187c324ce755a88d43abb8c2f597255259aaa3a84",
+      "bytes": 4296
+    },
+    {
+      "path": "results/demonstrator-01/stage-a/realism-source/feasibility/demonstrator-01/realism-config.json",
+      "sha256": "facd4ab0297a79b1f9927af2a69b7b17a9dcf48d1eda2b46debd1df37e6a09cb",
+      "bytes": 644
+    },
+    {
+      "path": "results/demonstrator-01/stage-a/realism-source/fit_demo_gait.py",
+      "sha256": "3f6a711e3195957ed19da7a06a50698f75e46a2e59e8247ebade511460c451d3",
+      "bytes": 1821
+    },
+    {
+      "path": "results/demonstrator-01/stage-a/realism-source/src/movie_factory/adapters/blender/demo_contact.py",
+      "sha256": "6392492ec4cf63c37167d3be62fd9f9acc4077efbef23e2a190b00523e1b61f2",
+      "bytes": 3642
+    },
+    {
+      "path": "results/demonstrator-01/stage-a/realism-source/src/movie_factory/adapters/blender/demo_realism.py",
+      "sha256": "3f8b1aa42742df049eb2901123e8f75887c4989327bf399cde9f35267ae9b7f0",
+      "bytes": 9848
+    },
+    {
+      "path": "results/demonstrator-01/stage-a/realism-source/src/movie_factory/adapters/blender/demo_realism_verify.py",
+      "sha256": "9c494636ba7b7c2d05816ad355d938f50546efb7ad2aacd53cdd8dbe20ab2d49",
+      "bytes": 2790
+    },
+    {
+      "path": "results/demonstrator-01/stage-a/realism-source/src/movie_factory/adapters/blender/demo_riding.py",
+      "sha256": "4324d34b0aa5136c1e9edfc8c70036db5c42afd54f9d8054882ea320cd0ae01e",
+      "bytes": 48581
+    },
+    {
+      "path": "results/demonstrator-01/stage-a/realism-source/src/movie_factory/adapters/blender/worker.py",
+      "sha256": "f8595c0a572e94bad390fd4c389204721ae96247639b855f0d116803c38bd4fc",
+      "bytes": 103166
+    },
+    {
+      "path": "results/demonstrator-01/stage-a/realism-summary.json",
+      "sha256": "8717eab9663da99ffeb4f39322153b86875a465cc32d296ed456b0ad8579d900",
+      "bytes": 1860
+    },
+    {
+      "path": "runs/demonstrator-01/realism-audit/audit.json",
+      "sha256": "66a9e85093fb6cc171ae39e1a4524943f5fba72aa1d4a45639ed322de4112d61",
+      "bytes": 324377
+    },
+    {
+      "path": "runs/demonstrator-01/realism-audit/job.json",
+      "sha256": "4feee246f2af46acfbd00599a41571fddfae00a70cb7dc3869301b625bfcd6d6",
+      "bytes": 153
+    },
+    {
+      "path": "runs/demonstrator-01/realism-audit/runner-status.json",
+      "sha256": "7dfb292631282bc70406e99d24abd2f5207c216328f8251434aaaaabfc16d37d",
+      "bytes": 1005
+    },
+    {
+      "path": "runs/demonstrator-01/realism-audit/stderr.log",
+      "sha256": "f5a384776406402200637c8bde1862e1b95c2aa1cae95ef826dabfbc7ca612be",
+      "bytes": 4128
+    },
+    {
+      "path": "runs/demonstrator-01/realism-audit/stdout.log",
+      "sha256": "1396172ec851afc6c49163f0ba9c17a5c479efcaf805c3f055dfdd356f7d3395",
+      "bytes": 369
+    },
+    {
+      "path": "runs/demonstrator-01/realism-audit/worker-status.json",
+      "sha256": "1f94c44b1f5cd5d4a12d76c49a3b7f75b0661c9c6acf8cc8c0cfc64570d54e17",
+      "bytes": 262
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/.worker_runtime/home/.thumbnails/large/818c1095497cab9aca5a29feccdc534f.png",
+      "sha256": "259a05b7a32c8bd8f8f32351d2e9acee96b659365a45116c9696e078f470ded8",
+      "bytes": 5938
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/checks.json",
+      "sha256": "dd570e7c7cba71f34df7a59619d1c9788eb7ff3421c09c2954a24d37e762e10f",
+      "bytes": 4554
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/job.json",
+      "sha256": "1d2c797803b5502a3249a293de256764e71e591444a1580d7d7c709df4f3e62d",
+      "bytes": 155
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/lateral.mp4",
+      "sha256": "336a4aa5461d70e416f3a1a4038d4fa8e151cdad69f56ea40295726fcfc5a239",
+      "bytes": 138129
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/lateral/0000.png",
+      "sha256": "25d279609e5886c1ce2c95d9f695d50da8d972e3e4fa98daccb5d2c0e86ebc90",
+      "bytes": 228514
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/lateral/0001.png",
+      "sha256": "34dc474bc7d23a6741ad3bda28a08383a250e6729dc9148d6b2ed93e1cdfc22f",
+      "bytes": 228596
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/lateral/0002.png",
+      "sha256": "8feb9e5579ec06381c992deaaa4ade1189488d9a1d6577deeb8e9013ce1cac69",
+      "bytes": 228827
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/lateral/0003.png",
+      "sha256": "4ae5455d73e3799a73dd83a5c4839e066da0a583a08428ca5f851b45659968de",
+      "bytes": 228400
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/lateral/0004.png",
+      "sha256": "576b5d49dce170d32485def259d6af6028b1cd8fe3f771694d364313d9111879",
+      "bytes": 226320
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/lateral/0005.png",
+      "sha256": "73cf5683266e0fb447df1575ff1012607bf418e2a4409a52ea6eabbac5ae1b74",
+      "bytes": 223908
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/lateral/0006.png",
+      "sha256": "83c44d4f44b4440bdcfbbc85631505bac4f237d2990f1271f827f547dcae5a32",
+      "bytes": 223052
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/lateral/0007.png",
+      "sha256": "266c1ec8e0eed7561b9ca6904a45ac3a5cbbd289d5f71e079f2c3428ebbe2264",
+      "bytes": 226163
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/lateral/0008.png",
+      "sha256": "ecd0905e25412637212b2c24196ffa75a7733c7a9cda7cfb62c71821c5d9d8f5",
+      "bytes": 228074
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/lateral/0009.png",
+      "sha256": "0e274bc62582ecfea1ca89eb00571aded95870ba2eacae369dac8f83b1aa3ffc",
+      "bytes": 230106
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/lateral/0010.png",
+      "sha256": "5559eedf80ec0ddeb5a9fb1735576854d57e944309835fbf57682465a5bf53f8",
+      "bytes": 228995
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/lateral/0011.png",
+      "sha256": "695050179ca6b1c31af03bb2377bf60fdaab5ef1b74bb262dfd38b144ac823bb",
+      "bytes": 228884
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/lateral/0012.png",
+      "sha256": "2edc95f56a71af8db8cc8df82b44c17ae40d8e55b33704db6e646682b3618bb7",
+      "bytes": 229050
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/lateral/0013.png",
+      "sha256": "85d19911312ef9db77065d492f3673454a56fdf3d0212130df7ce073d59b0186",
+      "bytes": 229772
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/lateral/0014.png",
+      "sha256": "fb6c2e00b1ec9d9d3be32744bd3e4374a258cf43ee1c5d412912f8a12139eb13",
+      "bytes": 229140
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/lateral/0015.png",
+      "sha256": "08a53b0091637999e85be1a31d31e6bf50980b1b5b1603091e3d911f796ea135",
+      "bytes": 226292
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/lateral/0016.png",
+      "sha256": "43497447608a1552712bc98eec3015b44210d22cd4781517574a570e558eaf54",
+      "bytes": 225599
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/lateral/0017.png",
+      "sha256": "1364e917c5c7986d423ad700758fe665d4009051bfbe2a20a95ff28ebd1c06fd",
+      "bytes": 229690
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/lateral/0018.png",
+      "sha256": "4c2fd37ada98a6cd5a5ced7f8554d01f794105dd144fb1597e4ddbcc836c5908",
+      "bytes": 231094
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/lateral/0019.png",
+      "sha256": "59f5c4c252bca6f2c8fdd73b8a6e732330f9706766d3e6db14b1f1babc870357",
+      "bytes": 232948
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/lateral/0020.png",
+      "sha256": "6ca3f3de8fca9f8bbf1b4bdf4c0748d832af9f3cfa8894c0ff5159687f29304a",
+      "bytes": 232575
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/lateral/0021.png",
+      "sha256": "0026c39e80b9bcfdd49a39181f582de46ce8e10b5377a6fadbd508ebac26e7f7",
+      "bytes": 232274
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/lateral/0022.png",
+      "sha256": "52a02d301b8e27c4a8d67d349802df61506946e990c2df5098b8d05218a70247",
+      "bytes": 232221
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/lateral/0023.png",
+      "sha256": "fd34a71fc6ec4291e0bae3b68ff5ac9ace08d578625b9f3110c387c1df815723",
+      "bytes": 231902
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/lateral/0024.png",
+      "sha256": "e47ffd7264222f702da31e47e7a58ea3652fb235494d7c50c10c254be2d48e13",
+      "bytes": 230457
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/lateral/0025.png",
+      "sha256": "c536205ff7cdf4137b0b0b58d4abb4e5c307c144eee8dafcd3331caf1cd6182f",
+      "bytes": 228042
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/lateral/0026.png",
+      "sha256": "2f79067bb5c9320a55f4aac3d55b616e45a7c029cdeb923401da2dbc7baad115",
+      "bytes": 227151
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/lateral/0027.png",
+      "sha256": "e9dbbce616e4942d368f8bbc944b469dc1605ec34f7de9d507f1337ee0e718a5",
+      "bytes": 230357
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/lateral/0028.png",
+      "sha256": "fc08705d85ff06137a8bfc9c3744b08df2efa9721236400f220c39bfdeb6b1a3",
+      "bytes": 232843
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/lateral/0029.png",
+      "sha256": "4d2dd96e309a55debfd408e142821e7d3e1d18aa197de2b3d329043cc0ea7c44",
+      "bytes": 234895
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/lateral/0030.png",
+      "sha256": "07a48ab2e861366f1d1ea0e9d7450cfb939128c22974002911e1490f9801c988",
+      "bytes": 233858
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/lateral/0031.png",
+      "sha256": "b4b36b9111aa1052c01cefbbcafb9803cecd19c087f8ecce3a2fb735736ae76a",
+      "bytes": 234848
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/lateral/0032.png",
+      "sha256": "0e0643d4d07e0ef192f1f286541e5d2ba99b47a7c1aac1d7cdf8ba3f45ed9370",
+      "bytes": 235325
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/lateral/0033.png",
+      "sha256": "5ec4127cc7d219243940f1dc87ecf23e5698a6962d42f0f6b1fa36e71334293c",
+      "bytes": 234867
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/lateral/0034.png",
+      "sha256": "dae53ac828f8eadfc16afd421a8f5783f36aa7d6e4ae2e8b82e20a6451208619",
+      "bytes": 231975
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/lateral/0035.png",
+      "sha256": "6b56236dd0ea7b0ac9d11fcde6b8ac05f2a926990a1d1c6ab9153dc66ebce2c1",
+      "bytes": 230137
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/lateral/0036.png",
+      "sha256": "ec41837c1821969fc8795510be7e900f0443710ab120530b50389641bd927b87",
+      "bytes": 229048
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/lateral/0037.png",
+      "sha256": "3c38417f3de1105761989bbafc6c681b107fd2211d73bc75286b5b06ca03e4da",
+      "bytes": 232665
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/lateral/0038.png",
+      "sha256": "1fcf481e8ef01369c4c9e3910086b0c8408d21bbc657b5593168f6c2d805a9d8",
+      "bytes": 234089
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/lateral/0039.png",
+      "sha256": "1e1d0467f832b9733437c44a6c8a0f1bcf12b063e31b5dacb6e689dfaab0ace2",
+      "bytes": 234859
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/lateral/0040.png",
+      "sha256": "2cbbd21bf7edc1ab2ece686d3b36eee8cf62061b6ea0fea0a47b5ac9334e0f89",
+      "bytes": 233667
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/lateral/0041.png",
+      "sha256": "96970b47a3cdc6e95e9c2befb73e425ed546ff10c315a265b75ed975e5ec6a09",
+      "bytes": 233019
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/lateral/0042.png",
+      "sha256": "2216161bee03eb9ae739e9707e0ad83501e17fa862fa0187fa196ccc1ceab798",
+      "bytes": 233957
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/lateral/0043.png",
+      "sha256": "da515eec84290515c54568dd06e065bce576931f2d2172a692cb0a131ceabd2a",
+      "bytes": 233352
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/lateral/0044.png",
+      "sha256": "54d5f5f6be823b7ae92cefa202b2d2f0934e9caa1e1d540ae6fd4d9b85682bd5",
+      "bytes": 230994
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/lateral/0045.png",
+      "sha256": "df5530ff04208deaad41417c4288d4c5c945bc461d2ebd437f3db71e26c25995",
+      "bytes": 228003
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/lateral/0046.png",
+      "sha256": "047d8896ffc3674092cc6ed16d870d3bc382be94385ef4bcc8ba44efb0524768",
+      "bytes": 227781
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/lateral/0047.png",
+      "sha256": "79632f20ce2d3bf19a584bfdbdd6fb76bb5ecc1cf7e2046e2ff6d41aa4caf0a6",
+      "bytes": 230794
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/lateral/0048.png",
+      "sha256": "4b2c80a4464a80ec3f374a999baf6e89f50d5f40b45eddb331691bcb0204798f",
+      "bytes": 232456
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/lateral/0049.png",
+      "sha256": "82fe0b96c52bfd456c6ab7cf9eefa6d6f893432ed27e989b3853f75598ac8e03",
+      "bytes": 233839
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/lateral/0050.png",
+      "sha256": "fa118dc7d7c907f055cea4078eb9d25154535d49613e2531e886d003d0f6f089",
+      "bytes": 233266
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/lateral/0051.png",
+      "sha256": "a45d89778f293a1e3dc226315c27210fa801d99656b6da863f74f69a38ae7e44",
+      "bytes": 232596
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/lateral/0052.png",
+      "sha256": "323a9807e21998e9c9db9cda8053c9af9722dcb4039e0c1745cb3b556dace845",
+      "bytes": 232897
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/lateral/0053.png",
+      "sha256": "f7a1860e7b7749f66f2efc8d733df645126db451e3a84cf47150153c6b2e52b5",
+      "bytes": 232894
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/lateral/0054.png",
+      "sha256": "85aa0992b044cb211d9bda9aa554785784f0460b130dcfaf216dace914b9484f",
+      "bytes": 231200
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/lateral/0055.png",
+      "sha256": "da559320b4229d4dee55b87571d44c6e215f2181ea2aaf3ac39f3e54d2c0e5fe",
+      "bytes": 228211
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/lateral/0056.png",
+      "sha256": "52b141cd379400a4a29611f7a615b6df89ed87a13f782919bd93e814c08b00e4",
+      "bytes": 227136
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/lateral/0057.png",
+      "sha256": "71811a51bb4697e29d25dbf9322fd056f816b05e7bff848ef42db724cdc44e70",
+      "bytes": 229598
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/lateral/0058.png",
+      "sha256": "db94ca4d4871c3c9638164768f1040865e5cb678c516edc2adb9273803b63ed8",
+      "bytes": 231303
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/lateral/0059.png",
+      "sha256": "45b3b500e155c130addc615276d2034690b46bd026ef0891473bc355081a48f4",
+      "bytes": 232314
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/threequarter/0000.png",
+      "sha256": "ada2a921b7f44cf8bf8d1fb17b413230d85c6e8a856b1e133ac95b94160d3393",
+      "bytes": 230389
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/threequarter/0001.png",
+      "sha256": "bbb2465e6d76d0fc46315432bc9f8aed54161aa48c996fb378fdfaf1a4742273",
+      "bytes": 229863
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/threequarter/0002.png",
+      "sha256": "3f04783a71a7d8566bdab33ea87b46af8094672daeed69717ecc07c6d9dd55e4",
+      "bytes": 230040
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/threequarter/0003.png",
+      "sha256": "db58f4934def6abd78c9c248ffb4ad4c967a0e4b4b37c8254e5bf0303893d10b",
+      "bytes": 229067
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/threequarter/0004.png",
+      "sha256": "d3140e7c63dbb51f08492bf06bfac10c8997f1f56df2677050d2b5b6952e4a93",
+      "bytes": 227884
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/threequarter/0005.png",
+      "sha256": "5fe12bbba91ad213160c58b2ce6a4d9790088a2e2c6077a977131b88b1069dec",
+      "bytes": 226532
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/threequarter/0006.png",
+      "sha256": "f054c3acd237fc9d779ac80a1be53cd9cb6820129e49a4f190cbb732867f2ea0",
+      "bytes": 227053
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/threequarter/0007.png",
+      "sha256": "409b3e91e3ee4b2f6246bb8fd0b66b8a1ba8806a0cee907f6501c9445d2b2751",
+      "bytes": 227248
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/threequarter/0008.png",
+      "sha256": "e25f0e622277c74c7576dbb9b1733b9e27b1b48dfb58d22f236d0b074144c83a",
+      "bytes": 230645
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/threequarter/0009.png",
+      "sha256": "f41109d661476538653ea343698f996ec86e430fb2dceae9d596c696e32391ff",
+      "bytes": 231769
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/threequarter/0010.png",
+      "sha256": "45bddb6a1913e56acc69a8c6b050967002c0aa3fd59eadcf028f10abb9360eda",
+      "bytes": 231340
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/threequarter/0011.png",
+      "sha256": "0e9c3ce6bf1f3722a9263461a28d4fef41a553ea5fef70e1b33666157ec62ebf",
+      "bytes": 231187
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/threequarter/0012.png",
+      "sha256": "d8bf6bef8f323d4a1670b87d735114db934201cb9c9f31de5b502ac64d301162",
+      "bytes": 230981
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/threequarter/0013.png",
+      "sha256": "7c13e8f503445da41822681ef5ccb82ba9e212f78adf5c7ecdf4f88d2814658b",
+      "bytes": 229670
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/threequarter/0014.png",
+      "sha256": "32b3f9ccb54cfa70c4982d26d755cc867b1b74c095533292b59963333f40f888",
+      "bytes": 228478
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/threequarter/0015.png",
+      "sha256": "23cb44441150e6c08dddc63a139b9a2fa3a1b004467cf65085fc739bbf378b2d",
+      "bytes": 226725
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/threequarter/0016.png",
+      "sha256": "8021904f2c32bad706de9f8294b86dec5e4cdc52fdd8f9144771d8641e756d51",
+      "bytes": 226581
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/threequarter/0017.png",
+      "sha256": "c9dd28369ee5209364cf33b938f9111e7650cbec60528e71e5ab9b4afa0c7612",
+      "bytes": 226649
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/threequarter/0018.png",
+      "sha256": "778027f3d9b3bb10f0604ae0211de46dccd41b19ca019cb08568b20b0a778024",
+      "bytes": 229448
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/threequarter/0019.png",
+      "sha256": "6637656846900dbffbf315e92cdca14873ced05785145ef94617cda2cd258708",
+      "bytes": 230734
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/threequarter/0020.png",
+      "sha256": "074d536111e8e0f3dd68abac6355b0e75d86b36a24be665e118617d755451f71",
+      "bytes": 230353
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/threequarter/0021.png",
+      "sha256": "f110c4d223e618aa2366ae1ea65f0156182a56163113eb9deabc9c7992bc1e5f",
+      "bytes": 230830
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/threequarter/0022.png",
+      "sha256": "62165a81e663bf6684b5e40c275eaa1911eb25ee66415e38529c74a8620aea53",
+      "bytes": 231380
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/threequarter/0023.png",
+      "sha256": "29ad40050b6275de6063304368da3e701febaf83d0be6e4766af8eb55e3b0254",
+      "bytes": 230081
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/threequarter/0024.png",
+      "sha256": "04fb2bbb302a57fd123a235f5acd39efe2293677144f483ad334dd1efdd39f77",
+      "bytes": 229503
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/threequarter/0025.png",
+      "sha256": "62c2e25eb9c28a6ceecfd79fc27c0d7665d52033f45c33da0bfa85b35bfe1cc6",
+      "bytes": 227676
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/threequarter/0026.png",
+      "sha256": "a5a4e9d71d7f21a3f1388f95b264cd3e87c3eb7965b7a3f956ce459f51642ee2",
+      "bytes": 227791
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/threequarter/0027.png",
+      "sha256": "0a1c58945c72b73e065fdbb3a295d6cd9bbcfba39a7f6da797b21c89e66b240b",
+      "bytes": 227550
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/threequarter/0028.png",
+      "sha256": "9290eb59636f75472e24fc31f4df0a41de9e4348f5a76bb3ac4d584d106b3b59",
+      "bytes": 229928
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/threequarter/0029.png",
+      "sha256": "90f5e6dae946f754da82be512310fed0d7c70da5bbf04bb5fb1bd16020205b99",
+      "bytes": 230942
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/threequarter/0030.png",
+      "sha256": "5021e98ddb82252ae4b3dadcf9b25664c6f1a15a65c4a729909a69cfd058f991",
+      "bytes": 230390
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/threequarter/0031.png",
+      "sha256": "da424e5dc56c5cdf30137be42154feda7c37316299d02138538197dba5dbc483",
+      "bytes": 230563
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/threequarter/0032.png",
+      "sha256": "46e182e05cb7e97a12f10a3b30d5061b49c890ddc813a4483c1b7084e0712ec3",
+      "bytes": 230292
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/threequarter/0033.png",
+      "sha256": "9ee9259ff25a682ef9ce6e77ee637239687615e0d31390d25f1f12bf57f99fcc",
+      "bytes": 229011
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/threequarter/0034.png",
+      "sha256": "b84415ff0df5bbe755fc06d10a48e490eb00b19d3562fd2c4cf9d3503d03cd1c",
+      "bytes": 228208
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/threequarter/0035.png",
+      "sha256": "d649aeae1ee1d08455dd3a5457f27988f5a5612927b35e0f43bb19e2c4e44378",
+      "bytes": 226359
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/threequarter/0036.png",
+      "sha256": "8d3605cce4aa5d84848882d348d0020c4d5452067e5efa019966f13b9f259ea8",
+      "bytes": 228470
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/threequarter/0037.png",
+      "sha256": "4478de3a3b8f24ad91ea9c56c2eb23613b5ba363d6c30682a87ca643e903a431",
+      "bytes": 229434
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/threequarter/0038.png",
+      "sha256": "ad6ed745f81491dec8d92a572816b67382e7a741563c6cca3c7c366ade1eb868",
+      "bytes": 233003
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/threequarter/0039.png",
+      "sha256": "8da6144099aeeeb9a60f016583b7e75bc23aac0dc684f5a478fa9d47c4f676bb",
+      "bytes": 234779
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/threequarter/0040.png",
+      "sha256": "a01d415211e136240246434389afbeb5c1658b81fc9d5c2b398b880245b08247",
+      "bytes": 234195
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/threequarter/0041.png",
+      "sha256": "12f0a777df544d06402765c6695f692a824718e861333a839d9411d78df33a7b",
+      "bytes": 234490
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/threequarter/0042.png",
+      "sha256": "17944d3e9dd198aec634d00967da81927750f31db2833466505c24133d24540f",
+      "bytes": 234259
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/threequarter/0043.png",
+      "sha256": "8bf7ce94fbcf2d291fa038f3b21850b03f028b7e70b12caa96165d519da70f75",
+      "bytes": 233608
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/threequarter/0044.png",
+      "sha256": "b0893d47408c102a1019495e37b406673406291bd988556b8a2f5ba3f4baf60d",
+      "bytes": 232735
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/threequarter/0045.png",
+      "sha256": "913f605ea10e37f647f9586ffbe3647edb6db27e62a576fa51a7669ebdca0da5",
+      "bytes": 230616
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/threequarter/0046.png",
+      "sha256": "f063f25a7c883c73248d14891f69ba48190ea72f331efa708703bc270a49574e",
+      "bytes": 230414
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/threequarter/0047.png",
+      "sha256": "bf93b679c563936f1cbdeffec5d1b4d65ac5d634861555adf512a43cf5d0a545",
+      "bytes": 230380
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/threequarter/0048.png",
+      "sha256": "b044e847fdaca0c347a8cb41e41d0c3e231f7d134975b8fae82854499d53b309",
+      "bytes": 233628
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/threequarter/0049.png",
+      "sha256": "c7b44e636ccab094b1c23cf811c1beb17dd3104e1b0cb89d6ec070ea373be45e",
+      "bytes": 234786
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/threequarter/0050.png",
+      "sha256": "5e42b73a1d479fa98627df9a5d18515351e06a0e17f14edc054ca64b5084b847",
+      "bytes": 234448
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/threequarter/0051.png",
+      "sha256": "7408521552ddc3955f54e6c1df1df1859cbdcccd1792bc58987fbd39c1f4d9bc",
+      "bytes": 235359
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/threequarter/0052.png",
+      "sha256": "1b8dfe04a86088619c0390c457a51915890a44030fbbacc13614c16a944866fd",
+      "bytes": 236428
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/threequarter/0053.png",
+      "sha256": "bf390d3cc9e7764eef09f5d8d7bf919b75949b6c58518aa1b2b7c8930400e46c",
+      "bytes": 235623
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/threequarter/0054.png",
+      "sha256": "d0be22b218f8afbc742b414f19f1015125cf84f752590da291b6e58b2b42ad92",
+      "bytes": 235007
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/threequarter/0055.png",
+      "sha256": "31241b882226384a1924766d0cd8b390f9de7b1b495daeba4ce8e14928d8240b",
+      "bytes": 233835
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/threequarter/0056.png",
+      "sha256": "29b514db3a4899a92019a58556b12a3ec6a7150911b445652dd429d2ac54f558",
+      "bytes": 234300
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/threequarter/0057.png",
+      "sha256": "8e119447b2d9f386d811e3d5a43f2645d0e6e3c1a1d8c7df8d37e4908f57b1b1",
+      "bytes": 234024
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/threequarter/0058.png",
+      "sha256": "e649bfcc86718887b615510cf818daf8e0c4b0a7be8ff0afb714e0d9f0f3defe",
+      "bytes": 236446
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/renders/threequarter/0059.png",
+      "sha256": "0ef2a6ec8ca50d6602f4b44f6db38923e970752c053383888ecb2e8f6c23296f",
+      "bytes": 237360
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/review.html",
+      "sha256": "0832dfe6c2fa3908baf8c5a2e4024f8dc5b748b995e1f0191e470284f7a37c12",
+      "bytes": 4879
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/runner-status.json",
+      "sha256": "9f9aa90d1a5def3b4b634ab626ce4d443b6a96a002c7a804bc1b40136e2c6125",
+      "bytes": 1043
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/scene.blend",
+      "sha256": "37594a7ef2d59e5dcc9af42c332f28ab41e86e78f78a60e6bd5ff9e2a7ca961e",
+      "bytes": 575741267
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/stderr.log",
+      "sha256": "0173da546e47c9dfc39f5dd54db1bc50b74522464c84faea1374d63e1e203cbe",
+      "bytes": 260064
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/stdout.log",
+      "sha256": "e0951e0f1ad1641adc4dd07f2e33d043ed754f79f9d6011a3c8716e7ba8d34cd",
+      "bytes": 18338
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/threequarter.mp4",
+      "sha256": "1f875803f057cafdf6a1dc5add3629f20c24b614e238cc135ae3d634d0d07989",
+      "bytes": 118982
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/video-verification.json",
+      "sha256": "878466d510654b20cd86ee7b9b249f9b2a3978437a201dde9f0c914efa15f404",
+      "bytes": 302
+    },
+    {
+      "path": "runs/demonstrator-01/realism-motion/worker-status.json",
+      "sha256": "465100b38b46131ea1a53702631971d4dcafddfa6fa7ffad128b4251e4e8de92",
+      "bytes": 298
+    },
+    {
+      "path": "runs/demonstrator-01/realism-probe/checks.json",
+      "sha256": "02aca5b9da8d02f2cee577c41442dc307e64f8a6a26348b4dae09f0e07f0e646",
+      "bytes": 1639
+    },
+    {
+      "path": "runs/demonstrator-01/realism-probe/job.json",
+      "sha256": "f4cb7695833cce29750fbc8266c874fc4fe8fee0f9491b01afcfc4c7a3794de5",
+      "bytes": 153
+    },
+    {
+      "path": "runs/demonstrator-01/realism-probe/renders/lateral/0000.png",
+      "sha256": "43bded867eb9729dca5754398df4b4c662d20266fbe2ae4992267d9e8926bfec",
+      "bytes": 228520
+    },
+    {
+      "path": "runs/demonstrator-01/realism-probe/renders/lateral/0003.png",
+      "sha256": "ea988dd636d91becd6765ca36a8509ba918cc75f6703e6e8018cebf5639236aa",
+      "bytes": 228406
+    },
+    {
+      "path": "runs/demonstrator-01/realism-probe/renders/lateral/0059.png",
+      "sha256": "0d3ebaee004e6d65ab82f485707e52947f4b925b47411e084351c417dec41b35",
+      "bytes": 232320
+    },
+    {
+      "path": "runs/demonstrator-01/realism-probe/renders/threequarter/0000.png",
+      "sha256": "0a128a1f5e9c534e3c7aaf0a1e492c11edad6d77b5566a02caea73e2464ce4f1",
+      "bytes": 230395
+    },
+    {
+      "path": "runs/demonstrator-01/realism-probe/renders/threequarter/0003.png",
+      "sha256": "06b43403339198b8c40025a6d69290b2fa449b9f9049a49b60b73902b7e4ced4",
+      "bytes": 229073
+    },
+    {
+      "path": "runs/demonstrator-01/realism-probe/renders/threequarter/0059.png",
+      "sha256": "c5e76f833d1e7876e8ee5c7a25ede947458a8ce5911d5eeb1404c613376c9da6",
+      "bytes": 237366
+    },
+    {
+      "path": "runs/demonstrator-01/realism-probe/runner-status.json",
+      "sha256": "d142a03571af2d4d44695b1b6051f326cce8bea4a69503944c49362fccef073e",
+      "bytes": 1020
+    },
+    {
+      "path": "runs/demonstrator-01/realism-probe/stderr.log",
+      "sha256": "ed063a4681466f57519b49f58c5be22347c085035781a114a7131d1f15c95485",
+      "bytes": 24768
+    },
+    {
+      "path": "runs/demonstrator-01/realism-probe/stdout.log",
+      "sha256": "28137820dddf04a016e12f8795c7e1c8b71efa8e1058ef86feb739bb0d918391",
+      "bytes": 1260
+    },
+    {
+      "path": "runs/demonstrator-01/realism-probe/worker-status.json",
+      "sha256": "110931f6a7713e246da255ee968385cd489f561427c48274ab62dbcbfe9f22ea",
+      "bytes": 277
+    },
+    {
+      "path": "runs/demonstrator-01/realism-reopen/job.json",
+      "sha256": "7210fc250a440e2932364bbbc022a96af1cea6af297508c8f34f0a17e988f3da",
+      "bytes": 155
+    },
+    {
+      "path": "runs/demonstrator-01/realism-reopen/reopen.json",
+      "sha256": "860644fd2f1fd0463fc460787a8ff5baff54a5864cf7f1dc6abd054224831c69",
+      "bytes": 776
+    },
+    {
+      "path": "runs/demonstrator-01/realism-reopen/runner-status.json",
+      "sha256": "38b229ace63eac4ab2d798d5bb4504fc40ca399a40279b9ac5bd73f4504f4451",
+      "bytes": 1010
+    },
+    {
+      "path": "runs/demonstrator-01/realism-reopen/stderr.log",
+      "sha256": "c363ff05edd9cdb6a8881938c1906d66f621df963ef7789e026e9bfbe588b3fc",
+      "bytes": 2064
+    },
+    {
+      "path": "runs/demonstrator-01/realism-reopen/stdout.log",
+      "sha256": "19487e067ed68bc232217109fb4b89668d3131f2d2c4363aaa514a98ea072246",
+      "bytes": 357
+    },
+    {
+      "path": "runs/demonstrator-01/realism-reopen/worker-status.json",
+      "sha256": "aa075525351470c033ec517ce87feb4cd2acb4d552f2db16c65e6e00730ea5ec",
+      "bytes": 265
+    },
+    {
+      "path": "src/movie_factory/adapters/blender/demo_realism_verify.py",
+      "sha256": "9c494636ba7b7c2d05816ad355d938f50546efb7ad2aacd53cdd8dbe20ab2d49",
+      "bytes": 2790
+    },
+    {
+      "path": "tests/unit/test_demo_realism_boundary.py",
+      "sha256": "5548ac06b5c1bc54654f8a02aa424e2733f9894def595d9adebd8cf0151e88a0",
+      "bytes": 834
+    }
+  ],
+  "native_files": "Retained in place; no duplicate archive"
+}

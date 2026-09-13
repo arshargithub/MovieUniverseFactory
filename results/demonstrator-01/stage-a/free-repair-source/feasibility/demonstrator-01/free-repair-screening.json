@@ -1,0 +1,27 @@
+{
+  "status": "FROZEN_DEVELOPMENT_SCREEN_NOT_PRODUCTION_ACCEPTANCE",
+  "scope": "existing fixture repair; human playback remains separate",
+  "sample_step_frames": 0.5,
+  "fps": 24,
+  "max_path_displacement_error_m": 0.001,
+  "max_hoof_penetration_m": 0.02,
+  "max_stance_slip_m": 0.05,
+  "stance_clearance_band_m": 0.04,
+  "max_hand_rein_endpoint_gap_m": 0.01,
+  "max_foot_stirrup_target_gap_m": 0.03,
+  "max_bake_pose_position_error_m": 0.001,
+  "max_repeat_mesh_bound_error_m": 0.001,
+  "tail_policy": "Preserve visible groom; disable source tail dynamics; check frame-order consistency and no progressive expansion",
+  "rationale": "Development limits frozen before corrected candidate; world-space errors use metre-normalized source. Hoof thresholds are provisional perceptual screens, not contact-physics qualification. Report failures; do not tune limits after seeing result.",
+  "visual_checks": [
+    "tail stable",
+    "saddle follows back",
+    "rider absorbs gallop",
+    "grip visually credible",
+    "feet align with stirrups",
+    "no obvious sliding or intersections"
+  ],
+  "api_work_item_ceiling_usd": 2,
+  "active_work_ceiling_minutes": 60,
+  "local_compute_ceiling_minutes": 15
+}

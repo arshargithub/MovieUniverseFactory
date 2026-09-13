@@ -1,0 +1,101 @@
+[
+  {
+    "run": "contact-probe",
+    "seconds": 22.926362917001825,
+    "ok": true,
+    "exit_code": 0,
+    "error": null,
+    "disposition": "Diagnostic evidence; not creative acceptance.",
+    "directory": "runs/demonstrator-01/contact-probe"
+  },
+  {
+    "run": "free-audit",
+    "seconds": 5.925788125023246,
+    "ok": true,
+    "exit_code": 0,
+    "error": null,
+    "disposition": "Diagnostic evidence; not creative acceptance.",
+    "directory": "runs/demonstrator-01/free-audit"
+  },
+  {
+    "run": "free-motion-v1",
+    "seconds": 81.09002783300821,
+    "ok": false,
+    "exit_code": -15,
+    "error": "Worker did not produce status",
+    "disposition": "Stopped by supervisor after failed 0.522 m stance screen; wrapper exit zero was not Blender success.",
+    "directory": "runs/demonstrator-01/free-motion-v1"
+  },
+  {
+    "run": "free-motion-v2",
+    "seconds": 0.29784187499899417,
+    "ok": false,
+    "exit_code": -11,
+    "error": "Worker did not produce status",
+    "disposition": "Blender startup crash before handler; wrapper exit zero was not Blender success.",
+    "directory": "runs/demonstrator-01/free-motion-v2"
+  },
+  {
+    "run": "free-motion-v2-retry",
+    "seconds": 410.4134800830507,
+    "ok": true,
+    "exit_code": 0,
+    "error": null,
+    "disposition": "Complete candidate retained; not accepted because denser verification failed.",
+    "directory": "runs/demonstrator-01/free-motion-v2-retry"
+  },
+  {
+    "run": "free-probe-v1",
+    "seconds": 20.824838707980234,
+    "ok": true,
+    "exit_code": 0,
+    "error": null,
+    "disposition": "Rejected pose/rein geometry; retained.",
+    "directory": "runs/demonstrator-01/free-probe-v1"
+  },
+  {
+    "run": "free-probe-v2",
+    "seconds": 22.97663929197006,
+    "ok": true,
+    "exit_code": 0,
+    "error": null,
+    "disposition": "Improved inexpensive poses; not full-motion qualification.",
+    "directory": "runs/demonstrator-01/free-probe-v2"
+  },
+  {
+    "run": "free-verify",
+    "seconds": 50.652325208007824,
+    "ok": false,
+    "exit_code": 7,
+    "error": "TypeError: Object of type Vector is not JSON serializable",
+    "disposition": "Probe failed report serialization; no measurements fabricated.",
+    "directory": "runs/demonstrator-01/free-verify"
+  },
+  {
+    "run": "free-verify-retry",
+    "seconds": 56.28168683301192,
+    "ok": true,
+    "exit_code": 0,
+    "error": null,
+    "disposition": "Worker completed; dense stance screen failed.",
+    "directory": "runs/demonstrator-01/free-verify-retry"
+  },
+  {
+    "run": "hoof-response",
+    "seconds": 6.136583624989726,
+    "ok": true,
+    "exit_code": 0,
+    "error": null,
+    "disposition": "Non-driving hoof-bone hypothesis falsified despite successful diagnostic execution.",
+    "directory": "runs/demonstrator-01/hoof-response"
+  },
+  {
+    "run": "hoof-response-v2",
+    "seconds": 6.118270541017409,
+    "ok": true,
+    "exit_code": 0,
+    "error": null,
+    "disposition": "Existing IK controls respond in evaluated sole geometry.",
+    "directory": "runs/demonstrator-01/hoof-response-v2"
+  }
+]

@@ -1,0 +1,41 @@
+{
+  "cycle_frames": 10,
+  "fps": 24,
+  "hooves": {
+    "f_hoof.L": {
+      "min_head_z": 0.08280348777770996,
+      "stance_head_velocity_y_m_s": [
+        7.978202819824219,
+        2.9361534118652344,
+        1.3643074035644531,
+        3.2627105712890625
+      ]
+    },
+    "f_hoof.R": {
+      "min_head_z": 0.08280356228351593,
+      "stance_head_velocity_y_m_s": [
+        2.167888641357422,
+        2.4128665924072266,
+        3.822509765625
+      ]
+    },
+    "r_hoof.L": {
+      "min_head_z": 0.07920844107866287,
+      "stance_head_velocity_y_m_s": [
+        1.1634635925292969,
+        3.4543075561523438,
+        5.691295623779297,
+        7.873558044433594
+      ]
+    },
+    "r_hoof.R": {
+      "min_head_z": 0.07902245223522186,
+      "stance_head_velocity_y_m_s": [
+        12.542724609375,
+        15.844425201416016
+      ]
+    }
+  },
+  "median_countertravel_m_s": 3.4543075561523438,
+  "method": "Provisional source hoof-control heads near per-foot minimum height; not mesh surface contact qualification"
+}

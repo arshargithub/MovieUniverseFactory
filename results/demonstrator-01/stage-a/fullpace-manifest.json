@@ -1,0 +1,330 @@
+{
+  "base": "repository root",
+  "artifacts": [
+    {
+      "path": "feasibility/demonstrator-01/FULL_PACE_PASS.md",
+      "sha256": "cc53b83fc1fd57e31ab8a2c544f3b44c1b74b7555cedbddcbe775f6e31699cab",
+      "bytes": 6813
+    },
+    {
+      "path": "results/demonstrator-01/stage-a/FULL_PACE_PASS.md",
+      "sha256": "3f363359a89f586f0bc82a5ff6c8666baf8d368be2c2dc60a387cdde89636923",
+      "bytes": 6087
+    },
+    {
+      "path": "results/demonstrator-01/stage-a/fullpace-design-prompt.txt",
+      "sha256": "f4567caf669adfe067058c26497eab232a8054a5d088ed066513897d7ee926b3",
+      "bytes": 1422
+    },
+    {
+      "path": "results/demonstrator-01/stage-a/fullpace-design-response.json",
+      "sha256": "bd885e98538018f60d233dcccfbb7a3a9a983433357111cce62b61597f710435",
+      "bytes": 10221
+    },
+    {
+      "path": "results/demonstrator-01/stage-a/fullpace-operating-events.json",
+      "sha256": "0dae00d36ee71a4af559df31d643d50be0f82c9378ba6bb5c237f40ea65d8cbe",
+      "bytes": 8286
+    },
+    {
+      "path": "results/demonstrator-01/stage-a/fullpace-summary.json",
+      "sha256": "39fbdf226528ef4a71f69114613c36e74e971e7c6dc9e3a514bc09bdf02e7879",
+      "bytes": 1307
+    },
+    {
+      "path": "runs/demonstrator-01/fullpace-audit/audit.json",
+      "sha256": "42be615a6a7c57a3cbacf8765710c467ed173887cee8846963bf7948d7b51ba2",
+      "bytes": 534115
+    },
+    {
+      "path": "runs/demonstrator-01/fullpace-audit/job.json",
+      "sha256": "67703b247634d5d7fa73a905dfd81cac5cd65bf853e0bba48b0a1112de7f4750",
+      "bytes": 155
+    },
+    {
+      "path": "runs/demonstrator-01/fullpace-audit/runner-status.json",
+      "sha256": "ccf0b3368649c39dedd795f7596859c3b1661818e1e4adbe06b3fa37e9188088",
+      "bytes": 1005
+    },
+    {
+      "path": "runs/demonstrator-01/fullpace-audit/stderr.log",
+      "sha256": "f5a384776406402200637c8bde1862e1b95c2aa1cae95ef826dabfbc7ca612be",
+      "bytes": 4128
+    },
+    {
+      "path": "runs/demonstrator-01/fullpace-audit/stdout.log",
+      "sha256": "fd379de40582a83c12bb948cc750232b06e0634f492b5dadbeac6461e8c12bca",
+      "bytes": 357
+    },
+    {
+      "path": "runs/demonstrator-01/fullpace-audit/worker-status.json",
+      "sha256": "576d18ae5c7fb27ddc592bcc6c5d770a14676497c433462bf36a6e6dd47d3182",
+      "bytes": 261
+    },
+    {
+      "path": "runs/demonstrator-01/fullpace-constraints/audit.json",
+      "sha256": "39d1f7879d845a9697107b668ba575c0d7177784022303f1b1f52a4c785a10a5",
+      "bytes": 556212
+    },
+    {
+      "path": "runs/demonstrator-01/fullpace-constraints/job.json",
+      "sha256": "05039fa735b449669c4287652c81b334b20962d6917927f455e625b6cf0ebe3f",
+      "bytes": 161
+    },
+    {
+      "path": "runs/demonstrator-01/fullpace-constraints/runner-status.json",
+      "sha256": "ea795629d3748c52fcf43425fd36b1d19c9b1f75b6e1ad3e4ac4c0940f4270d6",
+      "bytes": 1013
+    },
+    {
+      "path": "runs/demonstrator-01/fullpace-constraints/stderr.log",
+      "sha256": "f5a384776406402200637c8bde1862e1b95c2aa1cae95ef826dabfbc7ca612be",
+      "bytes": 4128
+    },
+    {
+      "path": "runs/demonstrator-01/fullpace-constraints/stdout.log",
+      "sha256": "acf9b21508d784bd90ad3d612e1db68afe00fdb7f4bc9a94daff72e9ae4dcfcc",
+      "bytes": 357
+    },
+    {
+      "path": "runs/demonstrator-01/fullpace-constraints/worker-status.json",
+      "sha256": "0419ea9c5c7273e8623ad7e7f0ed2d42f346d4a21c486a8bcf7ee295a4f008c3",
+      "bytes": 263
+    },
+    {
+      "path": "runs/demonstrator-01/fullpace-probe/checks.json",
+      "sha256": "b6908b6a244ecbfaae902af63efaf9085c91d3f454cd13c0de0d043efb20641f",
+      "bytes": 259838
+    },
+    {
+      "path": "runs/demonstrator-01/fullpace-probe/job.json",
+      "sha256": "c76020869ee07aa7d51e59c8a0af47a7f331f2c43caa81d91fc4a0586ee2052a",
+      "bytes": 155
+    },
+    {
+      "path": "runs/demonstrator-01/fullpace-probe/renders/lateral/0000.png",
+      "sha256": "f0a9d4c5702d51383987dbdefafc69e08a0258b6835edaaa0aff3d1bd3803544",
+      "bytes": 148901
+    },
+    {
+      "path": "runs/demonstrator-01/fullpace-probe/renders/lateral/0003.png",
+      "sha256": "7d2e9318f7155bcc07e8be27f0150d570dd1394407b76d4de531e967c520ac7d",
+      "bytes": 149810
+    },
+    {
+      "path": "runs/demonstrator-01/fullpace-probe/renders/lateral/0007.png",
+      "sha256": "1b6788a4f5678623c6a9d35d862f6845063d9c1b71fc0f366042517b6d129226",
+      "bytes": 148875
+    },
+    {
+      "path": "runs/demonstrator-01/fullpace-probe/renders/lateral/0059.png",
+      "sha256": "bff3e9c30ad33c842f6b5e749d92015d11d84b31625dcc1282576305cc7d71db",
+      "bytes": 147435
+    },
+    {
+      "path": "runs/demonstrator-01/fullpace-probe/renders/threequarter/0000.png",
+      "sha256": "e5e2b06d81e6d247e1baaf2fae0e5fbafbf483110a50e087d7deeebdeba72b34",
+      "bytes": 149567
+    },
+    {
+      "path": "runs/demonstrator-01/fullpace-probe/renders/threequarter/0003.png",
+      "sha256": "41edd496c315c095ca6cdc8ba31b4fe0de115d68a728a38889cf4aa38ae2dc8d",
+      "bytes": 150814
+    },
+    {
+      "path": "runs/demonstrator-01/fullpace-probe/renders/threequarter/0007.png",
+      "sha256": "12f35db19b776552dc69d376b4ccb67b281563c27ce00e847658c939743d2510",
+      "bytes": 149871
+    },
+    {
+      "path": "runs/demonstrator-01/fullpace-probe/renders/threequarter/0059.png",
+      "sha256": "d9211ab654fb9b18319adee4e84e7be9a5cbe63e11ddbfb32a0cf38c5ce5aad0",
+      "bytes": 150014
+    },
+    {
+      "path": "runs/demonstrator-01/fullpace-probe/runner-status.json",
+      "sha256": "25da664e6bbfe2e6002f8f434c8edabb416f53e751838ece98893829ede728f5",
+      "bytes": 1022
+    },
+    {
+      "path": "runs/demonstrator-01/fullpace-probe/stderr.log",
+      "sha256": "de118069af17f114822a337f02703d675f94a82493fc4fa110dd23ae9de8d397",
+      "bytes": 30960
+    },
+    {
+      "path": "runs/demonstrator-01/fullpace-probe/stdout.log",
+      "sha256": "ba5f8f395acc6f96359e86d26c410498cc78383646c03bee7929d92136b3b083",
+      "bytes": 1553
+    },
+    {
+      "path": "runs/demonstrator-01/fullpace-probe/worker-status.json",
+      "sha256": "9af73534292cb61344d7aeafe03cd78d879fee26afe08ae4ac9f582a37a23bf2",
+      "bytes": 279
+    },
+    {
+      "path": "runs/demonstrator-01/fullpace-probe2/authoring.json",
+      "sha256": "d90a3b30dc7767fbe306dc491467d26506e8f9aecf0bee0068737515de385d8b",
+      "bytes": 451869
+    },
+    {
+      "path": "runs/demonstrator-01/fullpace-probe2/checks.json",
+      "sha256": "87bae06530a7aa4f6da82696fa0a79c832ac8c3915d5bbd7c4bf558aa7932058",
+      "bytes": 260668
+    },
+    {
+      "path": "runs/demonstrator-01/fullpace-probe2/job.json",
+      "sha256": "f458d1d154cce33e9a1d07ea3b888e479368c70408b1337273b6acb336a6d992",
+      "bytes": 156
+    },
+    {
+      "path": "runs/demonstrator-01/fullpace-probe2/renders/lateral/0000.png",
+      "sha256": "b70b4165576897235c99df59881266227725e01d91ba098a5be5b5cf4ea070b2",
+      "bytes": 148826
+    },
+    {
+      "path": "runs/demonstrator-01/fullpace-probe2/renders/lateral/0002.png",
+      "sha256": "e1146f060b40d928af26fa5debfebc498f50c41387681ac49d2e0270b1797e25",
+      "bytes": 150273
+    },
+    {
+      "path": "runs/demonstrator-01/fullpace-probe2/renders/lateral/0003.png",
+      "sha256": "cfb3a0ae1ab4a471a2aef6674862d3187b0e567e12455b3860c3882520a9a99b",
+      "bytes": 149774
+    },
+    {
+      "path": "runs/demonstrator-01/fullpace-probe2/renders/lateral/0007.png",
+      "sha256": "2b440ddbb646021c76832d41996619f2b4bf50ec44f39cedb3ffa8e95fa687cc",
+      "bytes": 148341
+    },
+    {
+      "path": "runs/demonstrator-01/fullpace-probe2/renders/threequarter/0000.png",
+      "sha256": "817c27825df11a87928290ada2eb4a02e0a2ff09accdbaa9607f81bd1bef0de8",
+      "bytes": 149461
+    },
+    {
+      "path": "runs/demonstrator-01/fullpace-probe2/renders/threequarter/0002.png",
+      "sha256": "d618f2f0f41a5d895426a2889e83a643e7ca8c2a4f0ad74750621aa67946a31b",
+      "bytes": 150049
+    },
+    {
+      "path": "runs/demonstrator-01/fullpace-probe2/renders/threequarter/0003.png",
+      "sha256": "274d9b1d1d975ad01e81bdef79e765d6019a695422482cde2337a89d90700073",
+      "bytes": 150608
+    },
+    {
+      "path": "runs/demonstrator-01/fullpace-probe2/renders/threequarter/0007.png",
+      "sha256": "eafc723231858a3a284dd5da5ec07b585b261aa7d9549743b828ade0cc6ccd9b",
+      "bytes": 148518
+    },
+    {
+      "path": "runs/demonstrator-01/fullpace-probe2/runner-status.json",
+      "sha256": "72080b6fb892f419e4937da3e479a9006c6035a2091eebc6a09b592e6ea53156",
+      "bytes": 1024
+    },
+    {
+      "path": "runs/demonstrator-01/fullpace-probe2/stderr.log",
+      "sha256": "de118069af17f114822a337f02703d675f94a82493fc4fa110dd23ae9de8d397",
+      "bytes": 30960
+    },
+    {
+      "path": "runs/demonstrator-01/fullpace-probe2/stdout.log",
+      "sha256": "375303fce2c7b03df60c0f66caa02b8a6d6ffca3b1327f647375f979073e323c",
+      "bytes": 1561
+    },
+    {
+      "path": "runs/demonstrator-01/fullpace-probe2/worker-status.json",
+      "sha256": "0e4221552cb828e3f232c30f7e470c56b444a561dd0a92bf1afaef959dd293a9",
+      "bytes": 279
+    },
+    {
+      "path": "runs/demonstrator-01/fullpace-probe3/authoring.json",
+      "sha256": "cc43617fb765512a6ee7882246c398d718bd6725f08f1cde23ca5a737f8eac8c",
+      "bytes": 985769
+    },
+    {
+      "path": "runs/demonstrator-01/fullpace-probe3/checks.json",
+      "sha256": "14c02519a954df6d2697d2382620e7e9ee1f7cd32c8743fefc4b6e65e57e4ec7",
+      "bytes": 260642
+    },
+    {
+      "path": "runs/demonstrator-01/fullpace-probe3/job.json",
+      "sha256": "ad1371fd4a982ff77fa0d4464f918dbc7381ee6ac32fa096962451f837b3ebb8",
+      "bytes": 156
+    },
+    {
+      "path": "runs/demonstrator-01/fullpace-probe3/renders/lateral/0000.png",
+      "sha256": "e2c23492e74dd890a71b3c4101db186cd109ee440140e628548257d437a3f307",
+      "bytes": 150528
+    },
+    {
+      "path": "runs/demonstrator-01/fullpace-probe3/renders/lateral/0003.png",
+      "sha256": "7d29a9cf0082c449c21b34e6d86a2ae602e0814a6d5f98b9ab95aeb256d323c1",
+      "bytes": 150191
+    },
+    {
+      "path": "runs/demonstrator-01/fullpace-probe3/renders/lateral/0007.png",
+      "sha256": "34e06ff1b8021d35bc0f1969339b6e2f3b85af83e5d069a20a2de859b915ab9c",
+      "bytes": 149251
+    },
+    {
+      "path": "runs/demonstrator-01/fullpace-probe3/renders/threequarter/0000.png",
+      "sha256": "8e9a5e604e72cbb5edb2bd5b9306df08c46aaf5badb70cb68105b3e8bacf3b21",
+      "bytes": 150222
+    },
+    {
+      "path": "runs/demonstrator-01/fullpace-probe3/renders/threequarter/0003.png",
+      "sha256": "1f4c87fe226da45d221ccd41c8a8c9ce28a682395a396d4f1cdf58cfce804e25",
+      "bytes": 150735
+    },
+    {
+      "path": "runs/demonstrator-01/fullpace-probe3/renders/threequarter/0007.png",
+      "sha256": "7c8faea15bd4a7db9bfaf6bf7df008329197c341798856327f7f8f4d0bc6d419",
+      "bytes": 149419
+    },
+    {
+      "path": "runs/demonstrator-01/fullpace-probe3/runner-status.json",
+      "sha256": "f25182fcf9410ccd749a1ab9bd5a4fe6c2c1c59575360568a310bcaa63dc134b",
+      "bytes": 1024
+    },
+    {
+      "path": "runs/demonstrator-01/fullpace-probe3/stderr.log",
+      "sha256": "680277b10ed72afb20b1355d100e0eebf2aaf111846f4a78eef2c09d57bc3f28",
+      "bytes": 26832
+    },
+    {
+      "path": "runs/demonstrator-01/fullpace-probe3/stdout.log",
+      "sha256": "6f8628b612f95384efa960ee5585a8939ddb5ce946742522984d195eb2969d35",
+      "bytes": 1260
+    },
+    {
+      "path": "runs/demonstrator-01/fullpace-probe3/worker-status.json",
+      "sha256": "f78a2e2e42b2853099b47049ec60bcea92e3af52dcf6b72f03eda3ee527641d7",
+      "bytes": 279
+    },
+    {
+      "path": "src/movie_factory/adapters/blender/demo_fullpace.py",
+      "sha256": "dbe6733c48cd68f2db7c8006c384412585258fea06bdf2f5400597521451f8dc",
+      "bytes": 12108
+    },
+    {
+      "path": "src/movie_factory/adapters/blender/demo_fullpace_replay.py",
+      "sha256": "88a5634306c5999614f4059043cebeb4f3ed710009f6e9b7254870b4b566fd46",
+      "bytes": 4696
+    },
+    {
+      "path": "src/movie_factory/adapters/blender/fullpace_fx.py",
+      "sha256": "f9a2b7079cd5c2a22e6ce3f5d60165010e17370ce3f53bbfc7afeb60315881ff",
+      "bytes": 6900
+    },
+    {
+      "path": "src/movie_factory/adapters/blender/fullpace_math.py",
+      "sha256": "c116d2bbce8ee741b38742fec9f6b29cf141f373e5605c225d0e64e0f25a42d9",
+      "bytes": 1582
+    },
+    {
+      "path": "tests/unit/test_fullpace_math.py",
+      "sha256": "56672b82aa2a27b683a511b31db0bc6e8dc984adfd2c35a9f87e6031655b2ccd",
+      "bytes": 884
+    }
+  ]
+}

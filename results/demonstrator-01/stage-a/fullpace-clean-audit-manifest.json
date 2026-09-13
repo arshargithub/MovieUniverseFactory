@@ -1,0 +1,53 @@
+{
+  "status": "AUDIT_COMPLETE_GAIT_FAILED",
+  "historical_inventory": "fullpace-manifest.json",
+  "new_api_cost_usd": 0,
+  "native_elapsed_seconds": 6.781718792044558,
+  "artifacts": [
+    {
+      "path": "results/demonstrator-01/stage-a/FULL_PACE_CLEAN_AUDIT.md",
+      "sha256": "34de50351ae3bdb573200713db19b7621de362f24fe10d2a623513a4e156ee72",
+      "bytes": 1833
+    },
+    {
+      "path": "results/demonstrator-01/stage-a/STATUS.md",
+      "sha256": "4eca5a00f35895d0f73d1681eb70237011b3fe26a277bd94a1f8ab679d4b97c6",
+      "bytes": 663
+    },
+    {
+      "path": "src/movie_factory/adapters/blender/demo_fullpace_replay.py",
+      "sha256": "88a5634306c5999614f4059043cebeb4f3ed710009f6e9b7254870b4b566fd46",
+      "bytes": 4696
+    },
+    {
+      "path": "runs/demonstrator-01/fullpace-clean-audit-resume/stderr.log",
+      "sha256": "1946d4debc81066e67c1577addba5ebab751a935f301cfe98baa0e6cdbc0f583",
+      "bytes": 8256
+    },
+    {
+      "path": "runs/demonstrator-01/fullpace-clean-audit-resume/clean-reference.json",
+      "sha256": "159baae62cd176b40e86e7e5634987770534e3b3bfd6f5ea57bf0907945ca58a",
+      "bytes": 2759
+    },
+    {
+      "path": "runs/demonstrator-01/fullpace-clean-audit-resume/stdout.log",
+      "sha256": "ae76066b9238f8d8c9944ea805ba64e03e3cacd36f3d846dc731322da616f093",
+      "bytes": 357
+    },
+    {
+      "path": "runs/demonstrator-01/fullpace-clean-audit-resume/job.json",
+      "sha256": "0cb1f6ec01629d4edc5c612cc4e676cfbb97d5ba2d46fe853ab6098ac89b3362",
+      "bytes": 174
+    },
+    {
+      "path": "runs/demonstrator-01/fullpace-clean-audit-resume/worker-status.json",
+      "sha256": "a10e0bc6cbc9a92e22ba71df4796cdba848a4e9066530d1f940004691d5fc790",
+      "bytes": 279
+    },
+    {
+      "path": "runs/demonstrator-01/fullpace-clean-audit-resume/runner-status.json",
+      "sha256": "f614b4a9e845332f24ba416015560a0b108b144c6e5677b2ed4465c0f058e91d",
+      "bytes": 1036
+    }
+  ]
+}

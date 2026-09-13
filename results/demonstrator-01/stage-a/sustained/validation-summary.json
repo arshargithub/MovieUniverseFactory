@@ -1,0 +1,38 @@
+{
+  "actual_horse_travel_m": 72.00000143051147,
+  "contact_screens_pass": false,
+  "finite": true,
+  "input_sha256": "f529c61d6a7cefad919a19f2208608fad5e664ba2aee3b47c632199656cc51a1",
+  "legacy_centroid_screen_retained": true,
+  "material_contact_screen_pass": true,
+  "max_integer_mesh_rms_step_local_m": 0.2763491661304102,
+  "max_material_point_ground_band_travel_m": 0.008888532894749494,
+  "max_near_floor_travel_m": 0.11240390434987235,
+  "max_penetration_m": 0,
+  "max_rein_gap_m": 0.003529798483274514,
+  "peak_hoof_centroid_speed": {
+    "from_frame": 40.0,
+    "group": "DEF-f_hoof.L",
+    "mps": 36.525014638876584,
+    "role": "temporal diagnostic; centroid is not a fixed material vertex",
+    "to_frame": 40.125
+  },
+  "native_control": {
+    "frozen_material_travel_limit_m": 0.02,
+    "input_sha256": "46f9e2c15ad228cdf0136c6f9eaad20116f1c11f34d45d6e63f8a595e0ffd1a8",
+    "pass": true,
+    "path_speed_125pct": {
+      "max_material_ground_band_travel_m": 0.2959279168996641,
+      "max_penetration_m": 0.0,
+      "samples": 353,
+      "sampling": "1/16 frame with 1/32 offset; not bake knots"
+    },
+    "positive": {
+      "max_material_ground_band_travel_m": 0.008437418773699319,
+      "max_penetration_m": 0.0,
+      "samples": 353,
+      "sampling": "1/16 frame with 1/32 offset; not bake knots"
+    }
+  },
+  "source_closure_ref": "runs/demonstrator-01/sustained-closure/closure.json"
+}

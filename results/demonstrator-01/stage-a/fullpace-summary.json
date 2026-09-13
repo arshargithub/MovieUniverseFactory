@@ -1,0 +1,47 @@
+{
+  "status": "BLOCKED_CHECKPOINT_FULL_PACE_UNQUALIFIED",
+  "activity_seconds": 3471.932333,
+  "activity_scope": "Recorded interval includes supervision, native work, API and approval waits; not isolated token generation time.",
+  "native_jobs": [
+    {
+      "run": "fullpace-audit",
+      "worker_ok": true,
+      "seconds": 6.731120125041343,
+      "exit_code": 0
+    },
+    {
+      "run": "fullpace-constraints",
+      "worker_ok": true,
+      "seconds": 5.966525374969933,
+      "exit_code": 0
+    },
+    {
+      "run": "fullpace-probe",
+      "worker_ok": true,
+      "seconds": 154.981193042011,
+      "exit_code": 0
+    },
+    {
+      "run": "fullpace-probe2",
+      "worker_ok": true,
+      "seconds": 89.87460933299735,
+      "exit_code": 0
+    },
+    {
+      "run": "fullpace-probe3",
+      "worker_ok": true,
+      "seconds": 93.22086341702379,
+      "exit_code": 0
+    }
+  ],
+  "native_seconds": 350.7743112920434,
+  "disk_guard_refusal": "Independent audit did not launch Blender; less than 5GB free.",
+  "new_api_cost_usd": 0.394875,
+  "reasoning_tokens": 5696,
+  "output_tokens_including_reasoning": 7822,
+  "campaign_api_estimated_usd": 2.550887501,
+  "new_combined_video": false,
+  "tail_fx_native_validation": "NOT_RUN",
+  "director_review_seconds": null,
+  "subscription_tokens": null
+}

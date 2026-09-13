@@ -1,0 +1,258 @@
+{
+  "closed_episode_count": 0,
+  "consumption_per_outcome": {
+    "closed_episodes": {
+      "engineering_tokens": null,
+      "net_seconds": null
+    },
+    "closed_experiments": {
+      "engineering_tokens": null,
+      "net_seconds": null
+    },
+    "director_accepted_outputs": {
+      "engineering_tokens": null,
+      "net_seconds": null
+    },
+    "technically_successful_outputs": {
+      "engineering_tokens": null,
+      "net_seconds": null
+    }
+  },
+  "cost_scope": "Development investment; repeatable runtime cost remains in the campaign provider records.",
+  "engineering_usage": {
+    "account_allowance": {
+      "observations": [],
+      "scope": "account-wide; not experiment token attribution"
+    },
+    "actual_engineering_charge_usd": null,
+    "api_equivalent_estimate_usd": null,
+    "blocks": [],
+    "captured_tasks": [],
+    "category_coverage": {
+      "cache_write_input_tokens": {
+        "observed_blocks": 0,
+        "total_blocks": 0
+      },
+      "cached_input_tokens": {
+        "observed_blocks": 0,
+        "total_blocks": 0
+      },
+      "input_tokens": {
+        "observed_blocks": 0,
+        "total_blocks": 0
+      },
+      "output_tokens": {
+        "observed_blocks": 0,
+        "total_blocks": 0
+      },
+      "reasoning_output_tokens": {
+        "observed_blocks": 0,
+        "total_blocks": 0
+      },
+      "total_tokens": {
+        "observed_blocks": 0,
+        "total_blocks": 0
+      }
+    },
+    "exact_attributable_tokens": null,
+    "expected_tasks": [
+      "01a081e1-3bf7-7192-b1d6-50914112eccb"
+    ],
+    "missing_tasks": [
+      "01a081e1-3bf7-7192-b1d6-50914112eccb"
+    ],
+    "observed_tokens": {
+      "cache_write_input_tokens": null,
+      "cached_input_tokens": null,
+      "input_tokens": null,
+      "output_tokens": null,
+      "reasoning_output_tokens": null,
+      "total_tokens": null
+    },
+    "status": "UNKNOWN",
+    "subscription": {
+      "allocation_usd": null,
+      "treatment": "shared fixed overhead"
+    },
+    "token_definitions": {
+      "cache_write_input_tokens": "Retained as reported; not added to total.",
+      "cached_input_tokens": "Subset of input; do not add to total.",
+      "input_tokens": "Reported input total; cached input is a subset.",
+      "output_tokens": "Reported output total; reasoning output is a subset.",
+      "reasoning_output_tokens": "Subset of output; do not add to total.",
+      "total_tokens": "Reported total; input plus output, without subset double counting."
+    },
+    "uncertainties": [
+      "capture_completeness_not_established",
+      "missing_linked_tasks"
+    ],
+    "window_end": "2026-09-12T08:05:27.117772+00:00",
+    "window_start": "2026-09-12T07:48:54.454499+00:00"
+  },
+  "episodes": [
+    {
+      "assistant_active_union_seconds": 973.4435141086578,
+      "assistant_time_scope": "Recorded activity intervals only; not token generation time",
+      "calendar_elapsed_seconds": null,
+      "coverage_fraction": 1.0,
+      "disposition": null,
+      "episode_id": "stage-a",
+      "excluded_input_wait_seconds": null,
+      "human_review_seconds": null,
+      "jobs": [
+        {
+          "job_id": "demo01-rider-screen",
+          "job_kind": "native",
+          "monotonic_seconds": 3.0888943749596365,
+          "outcome": "PASSED",
+          "utc_seconds": 3.0890958309173584
+        },
+        {
+          "job_id": "demo01-horse-screen",
+          "job_kind": "native",
+          "monotonic_seconds": 5.7647931249812245,
+          "outcome": "PASSED",
+          "utc_seconds": 5.764892101287842
+        },
+        {
+          "job_id": "demo01-existing-rider-inspection",
+          "job_kind": "native",
+          "monotonic_seconds": 3.850452291953843,
+          "outcome": "PASSED",
+          "utc_seconds": 3.850538969039917
+        }
+      ],
+      "lifecycle": "OPEN",
+      "native_job_wall_sum_seconds": 12.704139791894704,
+      "native_job_wall_union_seconds": null,
+      "native_jobs": [
+        {
+          "job_id": "demo01-rider-screen",
+          "job_kind": "native",
+          "monotonic_seconds": 3.0888943749596365,
+          "outcome": "PASSED",
+          "utc_seconds": 3.0890958309173584
+        },
+        {
+          "job_id": "demo01-horse-screen",
+          "job_kind": "native",
+          "monotonic_seconds": 5.7647931249812245,
+          "outcome": "PASSED",
+          "utc_seconds": 5.764892101287842
+        },
+        {
+          "job_id": "demo01-existing-rider-inspection",
+          "job_kind": "native",
+          "monotonic_seconds": 3.850452291953843,
+          "outcome": "PASSED",
+          "utc_seconds": 3.850538969039917
+        }
+      ],
+      "net_elapsed_seconds": null,
+      "observed_excluded_input_wait_seconds": 19.219758987426758,
+      "operational_proxies": {},
+      "phase_net_seconds": null,
+      "uncertainties": [
+        "missing_interval_end",
+        "missing_or_duplicate_lifecycle_boundary"
+      ],
+      "unknown_gap_seconds": 0
+    }
+  ],
+  "experiment_id": "DEMONSTRATOR-01",
+  "factory_api": {
+    "calls": 2,
+    "campaign_limit_usd": 100.0,
+    "committed_usd": 0.117725,
+    "known_cost_usd": 0.117725,
+    "reservation_exceeded": false,
+    "reserved_unknown_usd": 0.0,
+    "runs": {
+      "demonstrator-01": {
+        "api": {
+          "calls": 2,
+          "committed_usd": 0.117725,
+          "known_cost_usd": 0.117725,
+          "reservation_exceeded": false,
+          "reserved_unknown_usd": 0.0,
+          "unresolved_calls": 0
+        }
+      }
+    },
+    "scopes": {
+      "contingency": {
+        "calls": 0,
+        "committed_usd": 0.0,
+        "known_cost_usd": 0.0,
+        "reservation_exceeded": false,
+        "reserved_unknown_usd": 0.0,
+        "unresolved_calls": 0
+      },
+      "critique": {
+        "calls": 0,
+        "committed_usd": 0.0,
+        "known_cost_usd": 0.0,
+        "reservation_exceeded": false,
+        "reserved_unknown_usd": 0.0,
+        "unresolved_calls": 0
+      },
+      "direction": {
+        "calls": 0,
+        "committed_usd": 0.0,
+        "known_cost_usd": 0.0,
+        "reservation_exceeded": false,
+        "reserved_unknown_usd": 0.0,
+        "unresolved_calls": 0
+      },
+      "feasibility": {
+        "calls": 1,
+        "committed_usd": 0.0015,
+        "known_cost_usd": 0.0015,
+        "reservation_exceeded": false,
+        "reserved_unknown_usd": 0.0,
+        "unresolved_calls": 0
+      },
+      "implementation": {
+        "calls": 1,
+        "committed_usd": 0.116225,
+        "known_cost_usd": 0.116225,
+        "reservation_exceeded": false,
+        "reserved_unknown_usd": 0.0,
+        "unresolved_calls": 0
+      }
+    },
+    "status": "CONSERVATIVE_CALCULATED_ESTIMATE_NOT_INVOICE_RECONCILED",
+    "unresolved_calls": 0
+  },
+  "model_setting_observations": [
+    {
+      "effort": "medium",
+      "episode_id": "stage-a",
+      "event_id": "demo01-supervisor-observed",
+      "event_type": "model_setting_observed",
+      "evidence_ref": null,
+      "experiment_id": "DEMONSTRATOR-01",
+      "model": "gpt-6-astra",
+      "observation_utc": "2026-09-12T07:48:29.252Z",
+      "phase": "supervision",
+      "reason": null,
+      "requested_effort": "medium",
+      "requested_model": "gpt-6-astra",
+      "run_id": null,
+      "schema_version": "1.0",
+      "setting_attribution": "runtime_turn_context",
+      "task_id": null,
+      "turn_id": null,
+      "utc": "2026-09-12T07:56:34.920859+00:00"
+    }
+  ],
+  "net_episode_sum_seconds": null,
+  "note": "Episode totals exclude inter-episode gaps. Job sums are process-seconds, not CPU time.",
+  "outcome_denominators": {
+    "closed_episodes": 0,
+    "closed_experiments": 0,
+    "director_accepted_outputs": null,
+    "technically_successful_outputs": null
+  },
+  "schema_version": "1.0"
+}

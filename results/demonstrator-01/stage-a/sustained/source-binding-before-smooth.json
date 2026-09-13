@@ -1,0 +1,436 @@
+{
+  "git_head": "13a603ed3c3853ed25dad41aeb4b8624bc778017",
+  "dirty_worktree": true,
+  "binding_kind": "retrospective source snapshot after construction, before final render dispatch completion; not an immutable source commit captured at every earlier job",
+  "files": [
+    {
+      "path": "src/movie_factory/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/movie_factory/adapters/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/movie_factory/adapters/blender/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/movie_factory/adapters/blender/character_diagnostic.py",
+      "sha256": "655a656cb063486e74ef5fe3ab1b887cfd981a5020d0aa421b335f62fa20ac56"
+    },
+    {
+      "path": "src/movie_factory/adapters/blender/demo_asset.py",
+      "sha256": "d76ac167ce6d600974d2fb6c7236c9b5662f15fbdc0e6f7134eebe1325ac0e83"
+    },
+    {
+      "path": "src/movie_factory/adapters/blender/demo_closure.py",
+      "sha256": "8ce1765dcd1ea2d5f176c9578698056436086f9e736ce6ff61226dfc2eb56c53"
+    },
+    {
+      "path": "src/movie_factory/adapters/blender/demo_contact.py",
+      "sha256": "6392492ec4cf63c37167d3be62fd9f9acc4077efbef23e2a190b00523e1b61f2"
+    },
+    {
+      "path": "src/movie_factory/adapters/blender/demo_forefoot_diagnosis.py",
+      "sha256": "55fa0bbdee2905ac793c80828da35f38b77cbf0d008d62a892cba3352b8b9c3c"
+    },
+    {
+      "path": "src/movie_factory/adapters/blender/demo_forefoot_pose.py",
+      "sha256": "60653abe1e1af18235dde7dc725a4f009aec104514367e83d13bdd45115a3abf"
+    },
+    {
+      "path": "src/movie_factory/adapters/blender/demo_fullpace.py",
+      "sha256": "dbe6733c48cd68f2db7c8006c384412585258fea06bdf2f5400597521451f8dc"
+    },
+    {
+      "path": "src/movie_factory/adapters/blender/demo_fullpace_replay.py",
+      "sha256": "e3fdcbeb50960a6342a1c4d582c465d7791ee0592d293dbba658ecd381e25103"
+    },
+    {
+      "path": "src/movie_factory/adapters/blender/demo_kinematic.py",
+      "sha256": "69f9c0ee0c2fa072b86f24dc7fb4a2382ca7ff7ef8b03c5b05374fe301d5fc47"
+    },
+    {
+      "path": "src/movie_factory/adapters/blender/demo_realism.py",
+      "sha256": "3f8b1aa42742df049eb2901123e8f75887c4989327bf399cde9f35267ae9b7f0"
+    },
+    {
+      "path": "src/movie_factory/adapters/blender/demo_realism_verify.py",
+      "sha256": "9c494636ba7b7c2d05816ad355d938f50546efb7ad2aacd53cdd8dbe20ab2d49"
+    },
+    {
+      "path": "src/movie_factory/adapters/blender/demo_riding.py",
+      "sha256": "4324d34b0aa5136c1e9edfc8c70036db5c42afd54f9d8054882ea320cd0ae01e"
+    },
+    {
+      "path": "src/movie_factory/adapters/blender/demo_source_gallop.py",
+      "sha256": "1f2d503d76877af9b69c42a68d9f55d6409920b3e510041194bbce562840ce60"
+    },
+    {
+      "path": "src/movie_factory/adapters/blender/demo_sustained.py",
+      "sha256": "b9982a3a5b23c5343344dd7a0fd63d4a3641cd2af8225c67d20dd38ee8016ecd"
+    },
+    {
+      "path": "src/movie_factory/adapters/blender/demo_sustained_finish.py",
+      "sha256": "3e344379cdfb5c493f9c01f2b5843933c13b1a6b1978311e8369d033574b1d37"
+    },
+    {
+      "path": "src/movie_factory/adapters/blender/fullpace_fx.py",
+      "sha256": "f9a2b7079cd5c2a22e6ce3f5d60165010e17370ce3f53bbfc7afeb60315881ff"
+    },
+    {
+      "path": "src/movie_factory/adapters/blender/fullpace_math.py",
+      "sha256": "c116d2bbce8ee741b38742fec9f6b29cf141f373e5605c225d0e64e0f25a42d9"
+    },
+    {
+      "path": "src/movie_factory/adapters/blender/gesture.py",
+      "sha256": "2115e710c84bd4a8a35b1d187e97e6c8a403fe2fb6f8e70eebf5ef2b7632f646"
+    },
+    {
+      "path": "src/movie_factory/adapters/blender/inspect.py",
+      "sha256": "c2e413d5d8b05ee4fbc0a73a1e8b6dc08e98da699ce99ad7e5c53f3b20a7d4e6"
+    },
+    {
+      "path": "src/movie_factory/adapters/blender/interaction.py",
+      "sha256": "554f2a3474ba71547d1bcebd8e61e1327d4f97569bfea223db01adad6fa0b5fd"
+    },
+    {
+      "path": "src/movie_factory/adapters/blender/interaction_geometry.py",
+      "sha256": "9ae546272899787ac98f778242a1b306c22bc8bcf1546f3df215c69c76797540"
+    },
+    {
+      "path": "src/movie_factory/adapters/blender/runner.py",
+      "sha256": "2f308ae76c82be57dc76fa2bf92de9fe4c841e6277396159f3cfbffa73a9e735"
+    },
+    {
+      "path": "src/movie_factory/adapters/blender/source_gallop_math.py",
+      "sha256": "53f30390d77edf339062b1874d8bb0d184d9f52a79fcb9b0902fc47615f459fb"
+    },
+    {
+      "path": "src/movie_factory/adapters/blender/sustained_fx.py",
+      "sha256": "25a0ad044e234176bc1123633cdf45f69b844310099b8244094856a34f5d29c7"
+    },
+    {
+      "path": "src/movie_factory/adapters/blender/worker.py",
+      "sha256": "800e0c7d7d0ac340a705efe22fd53490b53484205b7dff8b0a42f512e5da610b"
+    },
+    {
+      "path": "src/movie_factory/animation_timing.py",
+      "sha256": "e399786c6405affc159309fe674a11d7036408080759f29a4878bcd2bdc00dc2"
+    },
+    {
+      "path": "src/movie_factory/asset_controller.py",
+      "sha256": "1755ec66f6a66f09326373b2f7b3c6ac42fbb7345e3e5ffe3373c964d01580e7"
+    },
+    {
+      "path": "src/movie_factory/assets.py",
+      "sha256": "7d78240339ee5887ffe52e216ea80b81bf9b74c9767e1355ab285e4c8d43b12d"
+    },
+    {
+      "path": "src/movie_factory/budget.py",
+      "sha256": "f58a5021ebdb9fe6e144777c36627daee845b8acad532787f6ea8fb51607f6d7"
+    },
+    {
+      "path": "src/movie_factory/character_controller.py",
+      "sha256": "9edced0b41f5689ed54777e490fcfcb65d588894ae445ed9fbaeabbc8c146599"
+    },
+    {
+      "path": "src/movie_factory/character_export.py",
+      "sha256": "f402783a84bf3074ae9177f47aeb6bc764991b3efdefb9814454872e0a78fd87"
+    },
+    {
+      "path": "src/movie_factory/character_motion.py",
+      "sha256": "c7291d5e6cabeea26432733aeeffa7cae2013f3f016bd119595ccd8bd720bede"
+    },
+    {
+      "path": "src/movie_factory/cli.py",
+      "sha256": "4c6d24d335ae0a57dd4458181d25d7340c2a6b73d5c7b72474e0f84c66ab4aae"
+    },
+    {
+      "path": "src/movie_factory/controller.py",
+      "sha256": "dae86e81f0b0bb7324b58cc2fec103ee9d66d7bb94858d1652eb2ceac669bc31"
+    },
+    {
+      "path": "src/movie_factory/doctor.py",
+      "sha256": "95e4d5faf48a464d118cdf26ac25b13cc568d217eb172ba5821780172066bf4f"
+    },
+    {
+      "path": "src/movie_factory/engineering_usage.py",
+      "sha256": "4716dbddc50908b8e113908b5d8ab6e4eef2a35d5586f5edfad954cee4dacea3"
+    },
+    {
+      "path": "src/movie_factory/evaluator.py",
+      "sha256": "651551a7d258ec1aee0618c428e2557e2eeda3ad64f75c5622b66e717f615bd7"
+    },
+    {
+      "path": "src/movie_factory/experiment_ledger.py",
+      "sha256": "685c9e957ace252cabae5b225f170ba9913e074de25c845d954dae43dbdb3b96"
+    },
+    {
+      "path": "src/movie_factory/experiment_ops.py",
+      "sha256": "394397fb58fefe15602f368b3584fe0e3ba0c16a6cef54e4df3bd4df34904dd0"
+    },
+    {
+      "path": "src/movie_factory/gesture.py",
+      "sha256": "f8f6fd2d1779a3ab5fa052d32502e623d7a560257e71f1764b041bba7074852c"
+    },
+    {
+      "path": "src/movie_factory/gesture_controller.py",
+      "sha256": "cf1cf54ef16d505ce94f3b4367d07e1884b5dbe3672470c94f50029b89cb4ff2"
+    },
+    {
+      "path": "src/movie_factory/interaction.py",
+      "sha256": "6e8b258e4d356771dfe1797b88fbdd363e747b46dbe92c2f93268b3702b4cfdd"
+    },
+    {
+      "path": "src/movie_factory/interaction_controller.py",
+      "sha256": "6cfceebc266f4fcf4c5face45f5d5e0ed71b0cf7ec96b54ccc38566be4687577"
+    },
+    {
+      "path": "src/movie_factory/packages.py",
+      "sha256": "a2ccac383e5a6981ea12a922525e1ed72467ad1b3dd1380f7a99a123e2b7126e"
+    },
+    {
+      "path": "src/movie_factory/performance.py",
+      "sha256": "f66f037071916c2c19ca840f26b34e68fd9c777e526625b9f6b285ba03d67362"
+    },
+    {
+      "path": "src/movie_factory/performance_controller.py",
+      "sha256": "4919adc9a321d0bb3b34a68a5a9af80983f7019252e8345aada307bdc57ebcbd"
+    },
+    {
+      "path": "src/movie_factory/performance_controls.py",
+      "sha256": "ccfc0f0dd07a6c553fafde4bc0844828e59be9b415db39447c8bfbf561fdfc43"
+    },
+    {
+      "path": "src/movie_factory/performance_export.py",
+      "sha256": "a7b8d16d54c1f71817c8c4c143c7e2317a1aee6f33aa823c31ed5841393ae40c"
+    },
+    {
+      "path": "src/movie_factory/plans.py",
+      "sha256": "ff68b3801569bb0f9d963b7e0c2cc1834d9ff3d9aca22a17241c1750a955ee9b"
+    },
+    {
+      "path": "src/movie_factory/providers/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/movie_factory/providers/demonstrator.py",
+      "sha256": "d7073c79202068dfd2a8ea7ca0c3e6b442392827dae8e15c37ca25ad65589fcc"
+    },
+    {
+      "path": "src/movie_factory/providers/github_archive.py",
+      "sha256": "e725c7a9e97410676587f1704d26d1dc8f3dd5b03f7ddc2b87c014da0549c325"
+    },
+    {
+      "path": "src/movie_factory/providers/mock_provider.py",
+      "sha256": "ab28f4d78c29174b73bc3e2b541485fb4041c4dbdc978c0957565e8c0dd88dce"
+    },
+    {
+      "path": "src/movie_factory/providers/openai_provider.py",
+      "sha256": "b3f68528ceb44741892ca1bd7cd61c2869d2af478e58ce11eb4932d06a6f5879"
+    },
+    {
+      "path": "src/movie_factory/reporting.py",
+      "sha256": "42899e113d391480763978cb8df03fb7bdfc2529096bd655dd1afd311e3bd522"
+    },
+    {
+      "path": "src/movie_factory/revision_compiler.py",
+      "sha256": "f06f6cae5775387e0accd05382768104dae0be2faf99a79f46b37f57a157bf0e"
+    },
+    {
+      "path": "src/movie_factory/schema.py",
+      "sha256": "b5724708f6afd35e28730b0355e4b089d7580dbb9bed1bf9c4821f99b08e2e90"
+    },
+    {
+      "path": "src/movie_factory/settings.py",
+      "sha256": "d234752dc7cd86d860e7ad815b656dd1b64147923f021539482af88986ed919d"
+    },
+    {
+      "path": "src/movie_factory/telemetry.py",
+      "sha256": "c59177d94377b3db13e9da8236372cf8062327d9959f687caf5743b53e9cc431"
+    },
+    {
+      "path": "src/movie_factory/validators/__init__.py",
+      "sha256": "1cf695221fd25f706bd4b4e34d0bb1d1518220499576563dac3e1aad667cd21b"
+    },
+    {
+      "path": "src/movie_factory/validators/assets.py",
+      "sha256": "cc40f3126cc0bee38dc456690d5694659031cd1f09000de3a495200dad4fbdf9"
+    },
+    {
+      "path": "src/movie_factory/validators/character.py",
+      "sha256": "ab29a44cd7272047f535c0a9b01682a83f379abf6bad1d2ea2a9d098f4c8738d"
+    },
+    {
+      "path": "src/movie_factory/validators/character_motion.py",
+      "sha256": "b22f50a18ca92d2fb3347e7ec4f2af630da0cbd64159256afe18535df33e9838"
+    },
+    {
+      "path": "src/movie_factory/validators/interaction.py",
+      "sha256": "8b35cfe9bb6e779152a46880574242dd94ab8548777738913100c3463f0ada67"
+    },
+    {
+      "path": "src/movie_factory/validators/perceptual.py",
+      "sha256": "2a5e2b52128c4378a33d91c518a8331afd8bb072f3cf3e125f746dab2919bb4e"
+    },
+    {
+      "path": "src/movie_factory/validators/performance.py",
+      "sha256": "fa9cd692a675e50094d77298957a5dd57e1eb96431048c6a80cab33c322d423c"
+    },
+    {
+      "path": "src/movie_factory/validators/structural.py",
+      "sha256": "7280aedf3af14da26704e77a55d2c83e4c91bb83b86b028fec3d3fa753dd950a"
+    },
+    {
+      "path": "tests/native/test_blender_adapter.py",
+      "sha256": "9719311970b4e6c2249fba38cf01066d71f7262580c4864a9f634e0fb87d344a"
+    },
+    {
+      "path": "tests/native/test_character_assets.py",
+      "sha256": "4cf56450d6fbdb060fcc4e03536f0cfbe3068794081da2bd0ec77a0444407ba5"
+    },
+    {
+      "path": "tests/native/test_external_assets.py",
+      "sha256": "36ee44bd792b2b53c4f42a1796b7d4867a908f587512a21977f92d015d3484ba"
+    },
+    {
+      "path": "tests/native/test_interaction_blender.py",
+      "sha256": "5d5776bc06ff1079836100dc70a60aee1b74bfc7ba2f5a7035958caa440863da"
+    },
+    {
+      "path": "tests/unit/test_animation_timing.py",
+      "sha256": "ebc5d0049560aca989a134aed00901bda4e644e851e8186b81c47662f3525603"
+    },
+    {
+      "path": "tests/unit/test_asset_validation.py",
+      "sha256": "0adccf562417b3769397839590cd46eec5f65bb8fede66d16cefbc83ef3b1d0f"
+    },
+    {
+      "path": "tests/unit/test_assets.py",
+      "sha256": "e4de09a84e0af0edb57f8cd11ac0e4e63d8531e4fbb23f6995a461f35664b5e8"
+    },
+    {
+      "path": "tests/unit/test_character_export.py",
+      "sha256": "c9eb8aa21a50e25e517168194b5880ecc4c90f5da75ad2436e016cb0c1061027"
+    },
+    {
+      "path": "tests/unit/test_character_motion_validation.py",
+      "sha256": "025f3a516da38b5ce5c3882bbc2e434b519c0ef8c850a23fdd467126b0094867"
+    },
+    {
+      "path": "tests/unit/test_controller.py",
+      "sha256": "c36ecc875d7e58cb77096cda80dd86f72561dad95525c37b6a0d11767bade469"
+    },
+    {
+      "path": "tests/unit/test_demo_asset_boundary.py",
+      "sha256": "dae92d55c063f042d2776658aa103e99ab96ab8276728b9c571647ef9c135d7d"
+    },
+    {
+      "path": "tests/unit/test_demo_contact.py",
+      "sha256": "01e226a2c8e164c2c14901b1713224ffd97713ca8422601ca55f080268057cf9"
+    },
+    {
+      "path": "tests/unit/test_demo_realism_boundary.py",
+      "sha256": "5548ac06b5c1bc54654f8a02aa424e2733f9894def595d9adebd8cf0151e88a0"
+    },
+    {
+      "path": "tests/unit/test_demonstrator_budget.py",
+      "sha256": "c1bdd4f317b7a71ad206686c527080dc54d3f9eaaab71d1a8219313fd1f07811"
+    },
+    {
+      "path": "tests/unit/test_director_review.py",
+      "sha256": "171ef6849cb47113b9c2f8532decc148bc8c5a201518695b5ce476a2643587d5"
+    },
+    {
+      "path": "tests/unit/test_evaluator.py",
+      "sha256": "1713c944cc3c2f202fa7b2069511535b905d2baa56d4c78838c44fbe585f92d9"
+    },
+    {
+      "path": "tests/unit/test_experiment_ops.py",
+      "sha256": "b42d9f20b4afeeb78645ba99b9b8e1f8f511824c9d79d3285e26853c4c660b67"
+    },
+    {
+      "path": "tests/unit/test_fullpace_math.py",
+      "sha256": "56672b82aa2a27b683a511b31db0bc6e8dc984adfd2c35a9f87e6031655b2ccd"
+    },
+    {
+      "path": "tests/unit/test_gesture.py",
+      "sha256": "9d8290036341f0b00a4b42bf79b44e9feba8d709663f75d1e11a695eaf3a4af0"
+    },
+    {
+      "path": "tests/unit/test_interaction.py",
+      "sha256": "e02444b67132590996d63f21ce11ed8d1eb27cc0e1d560624f4efaa32808695e"
+    },
+    {
+      "path": "tests/unit/test_interaction_freeze.py",
+      "sha256": "69f46c8b31efd6ba7a09a0bec38650cfb961c2d0fc3354ea4e7b96c9a9703f31"
+    },
+    {
+      "path": "tests/unit/test_interaction_validation.py",
+      "sha256": "7b23b5abe23e3a611f89fbe490a67583de7e90429063cafbd446f7d0d2500e2b"
+    },
+    {
+      "path": "tests/unit/test_openai_provider.py",
+      "sha256": "22776f6dbc76ade58fcf457489e90e68778475fc69e3bc3a3841bdc86418c3e2"
+    },
+    {
+      "path": "tests/unit/test_packages.py",
+      "sha256": "8921332b2dca0b3cefb002a89a7e5f191695a024228f6bf8f254001b7a7c5046"
+    },
+    {
+      "path": "tests/unit/test_perceptual_validation.py",
+      "sha256": "cca15080a561cda6364d4e89723714217b4471283b2ac6d93fd4f3e6d9f5afe3"
+    },
+    {
+      "path": "tests/unit/test_performance.py",
+      "sha256": "445d081d54ac3729ca91c7503e267dc81d3f2fff76b53d4c5f4bfb27577c0485"
+    },
+    {
+      "path": "tests/unit/test_performance_export.py",
+      "sha256": "7226e0eb61599e543de0c9d4c0b55061b0540cf8b38c41d7e370b47161f42d70"
+    },
+    {
+      "path": "tests/unit/test_provider_budget.py",
+      "sha256": "e394936eb5476e7059f996b430a56727a255888ef38c17088e9773774fcca626"
+    },
+    {
+      "path": "tests/unit/test_provider_settings.py",
+      "sha256": "3d0b7587b9fb0c89c21a3c84cfe597ce1e4d8d08cc71fdbf7a95eceb56aaf991"
+    },
+    {
+      "path": "tests/unit/test_revision_compiler.py",
+      "sha256": "6d92bed112a463a01308961772d15353f2bb0f9e1839c2c91a56824cd2561f45"
+    },
+    {
+      "path": "tests/unit/test_schema.py",
+      "sha256": "d1fc71f8e29dbe9afdbc939f2feef3b9de19a805626092cea99912e082eaba83"
+    },
+    {
+      "path": "tests/unit/test_source_gallop_phase.py",
+      "sha256": "a1a8a154a80095cc1b4bbaa0f56d45f075d9a8268a8724034b08edb43f720f76"
+    },
+    {
+      "path": "tests/unit/test_structural_validation.py",
+      "sha256": "c5615ce11fdc20f81fde25748ebe9dd200aeb57f98687c7f1dd137ac62dc338d"
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "f9099da7bcae9e33e60d587039391045f505ed38356ead634e1f7e4dcba50ed0"
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "b3740ed81141a7b5e7c6d744a68324f0dfacaba8436ce4594001801d288eb289"
+    },
+    {
+      "path": "feasibility/demonstrator-01/SUSTAINED_REPAIR.md",
+      "sha256": "77388b2ebdc5f36a9aed9cab7e2ed224d2895c89d5cdeabb8180da257a1d775e"
+    },
+    {
+      "path": "feasibility/demonstrator-01/pricebook.json",
+      "sha256": "b3a24f7ac58692356540ccccda9f6f840488495908b5b836a1ded98f15d90857"
+    }
+  ],
+  "tree_digest": "d1abc1779b4dfdf4f9ab2411a2d77f0f4d16c04b2619046466c827ab14da1d1b"
+}
