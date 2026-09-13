@@ -1,0 +1,1578 @@
+{
+  "schema_version": "1.0",
+  "experiment_id": "DEMONSTRATOR-01",
+  "episodes": [
+    {
+      "episode_id": "stage-a",
+      "lifecycle": "CLOSED",
+      "disposition": "YELLOW",
+      "calendar_elapsed_seconds": 110969.19716405869,
+      "excluded_input_wait_seconds": null,
+      "observed_excluded_input_wait_seconds": 82694.81864261627,
+      "net_elapsed_seconds": null,
+      "coverage_fraction": 0.9989040982151269,
+      "unknown_gap_seconds": 121.61134123802185,
+      "uncertainties": [
+        "clock_discontinuity",
+        "unexplained_gap"
+      ],
+      "jobs": [
+        {
+          "job_id": "demo01-rider-screen",
+          "utc_seconds": 3.0890958309173584,
+          "monotonic_seconds": 3.0888943749596365,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-horse-screen",
+          "utc_seconds": 5.764892101287842,
+          "monotonic_seconds": 5.7647931249812245,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-existing-rider-inspection",
+          "utc_seconds": 3.850538969039917,
+          "monotonic_seconds": 3.850452291953843,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-inspection-policy-clarified",
+          "utc_seconds": 10.60307502746582,
+          "monotonic_seconds": 10.60298900003545,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-focused-source-probe",
+          "utc_seconds": 10.815827131271362,
+          "monotonic_seconds": 10.81574200000614,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-riding-v1",
+          "utc_seconds": 7.501711845397949,
+          "monotonic_seconds": 7.5016994579928,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-riding-v2",
+          "utc_seconds": 5.7764129638671875,
+          "monotonic_seconds": 5.776375208981335,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-riding-v3",
+          "utc_seconds": 14.245192050933838,
+          "monotonic_seconds": 14.24516545800725,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-riding-v4",
+          "utc_seconds": 73.21024894714355,
+          "monotonic_seconds": 73.21027708298061,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-recovery-three-probes",
+          "utc_seconds": 10.796540021896362,
+          "monotonic_seconds": 10.796339833003003,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-motion-v1",
+          "utc_seconds": 8.784575939178467,
+          "monotonic_seconds": 8.784520166984294,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-motion-v2",
+          "utc_seconds": 210.73208689689636,
+          "monotonic_seconds": 210.73256283299997,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-free-audit",
+          "utc_seconds": 5.950711965560913,
+          "monotonic_seconds": 5.950644416967407,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-free-probe-v1",
+          "utc_seconds": 20.85204291343689,
+          "monotonic_seconds": 20.851757834025193,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-free-probe-v2",
+          "utc_seconds": 23.002614974975586,
+          "monotonic_seconds": 23.00253054202767,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-free-motion-v1",
+          "utc_seconds": 81.11488819122314,
+          "monotonic_seconds": 81.1148536670371,
+          "outcome": "FAILED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-hoof-response",
+          "utc_seconds": 6.1614990234375,
+          "monotonic_seconds": 6.161416832997929,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-hoof-response-v2",
+          "utc_seconds": 6.144060850143433,
+          "monotonic_seconds": 6.143957166990731,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-contact-probe",
+          "utc_seconds": 22.951883792877197,
+          "monotonic_seconds": 22.95185216597747,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-free-motion-v2",
+          "utc_seconds": 0.32297205924987793,
+          "monotonic_seconds": 0.3228503749705851,
+          "outcome": "FAILED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-free-motion-v2-retry",
+          "utc_seconds": 410.43994092941284,
+          "monotonic_seconds": 410.43923833296867,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-free-verify",
+          "utc_seconds": 50.67754316329956,
+          "monotonic_seconds": 50.67721629102016,
+          "outcome": "FAILED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-free-verify-retry",
+          "utc_seconds": 56.30550003051758,
+          "monotonic_seconds": 56.305448165978305,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-realism-audit",
+          "utc_seconds": 35.74377989768982,
+          "monotonic_seconds": 35.74364887498086,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-realism-probe",
+          "utc_seconds": 57.23951196670532,
+          "monotonic_seconds": 57.23946537502343,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-realism-motion",
+          "utc_seconds": 503.55065417289734,
+          "monotonic_seconds": 503.5506521249772,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-realism-reopen",
+          "utc_seconds": 116.58527302742004,
+          "monotonic_seconds": 116.58504695800366,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-fullpace-audit",
+          "utc_seconds": 6.758328914642334,
+          "monotonic_seconds": 6.758199083036743,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-fullpace-probe",
+          "utc_seconds": 155.0099058151245,
+          "monotonic_seconds": 155.0096135410131,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-fullpace-probe2",
+          "utc_seconds": 89.90279388427734,
+          "monotonic_seconds": 89.90222899999935,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-fullpace-constraints",
+          "utc_seconds": 5.992350101470947,
+          "monotonic_seconds": 5.992195125028957,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-fullpace-probe3",
+          "utc_seconds": 93.25079607963562,
+          "monotonic_seconds": 93.24832899996545,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-fullpace-clean-audit",
+          "utc_seconds": 0.02083897590637207,
+          "monotonic_seconds": 0.020637708017602563,
+          "outcome": "FAILED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-fullpace-clean-audit-resume",
+          "utc_seconds": 6.809361934661865,
+          "monotonic_seconds": 6.809173166984692,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-forefoot-diagnosis-native",
+          "utc_seconds": 14.453903913497925,
+          "monotonic_seconds": 14.453768957988359,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-forefoot-isolation-native",
+          "utc_seconds": 16.48297095298767,
+          "monotonic_seconds": 16.482844249985646,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-forefoot-pose-native",
+          "utc_seconds": 28.094048976898193,
+          "monotonic_seconds": 28.09412279195385,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-forefoot-pose-control-native",
+          "utc_seconds": 285.61871314048767,
+          "monotonic_seconds": 32.571622082963586,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-forefoot-pose-space-native",
+          "utc_seconds": 25.763735055923462,
+          "monotonic_seconds": 25.76343920797808,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-sustained-audit",
+          "utc_seconds": 6.339418172836304,
+          "monotonic_seconds": 6.339165167009924,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-sustained-closure",
+          "utc_seconds": 12.2376708984375,
+          "monotonic_seconds": 12.237446166982409,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-source-gallop-probe",
+          "utc_seconds": 272.45515298843384,
+          "monotonic_seconds": 272.45453120797174,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-source-gallop-build",
+          "utc_seconds": 195.46147203445435,
+          "monotonic_seconds": 195.46107958297944,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-sustained-reopen",
+          "utc_seconds": 360.193265914917,
+          "monotonic_seconds": 360.19275412498973,
+          "outcome": "FAILED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-sustained-fx",
+          "utc_seconds": 457.84222197532654,
+          "monotonic_seconds": 457.8420080000069,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-sustained-reopen-fast",
+          "utc_seconds": 62.90356683731079,
+          "monotonic_seconds": 62.903281415987294,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-sustained-look",
+          "utc_seconds": 23.04640793800354,
+          "monotonic_seconds": 23.04618916695472,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-source-gallop-pivot",
+          "utc_seconds": 132.21269392967224,
+          "monotonic_seconds": 132.21166433300823,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-pivot-fx",
+          "utc_seconds": 16.819949865341187,
+          "monotonic_seconds": 16.82014845800586,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-pivot-reopen",
+          "utc_seconds": 62.12763595581055,
+          "monotonic_seconds": 62.12731425004313,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-cloud-fx",
+          "utc_seconds": 14.925514936447144,
+          "monotonic_seconds": 14.925104333029594,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-cloud-final-look",
+          "utc_seconds": 15.421610832214355,
+          "monotonic_seconds": 15.4213629590231,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-material-contact-control",
+          "utc_seconds": 30.94976305961609,
+          "monotonic_seconds": 30.949372000002768,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-integrated-reopen",
+          "utc_seconds": 145.64091205596924,
+          "monotonic_seconds": 145.64070737501606,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-sixsecond-hero",
+          "utc_seconds": 362.95112681388855,
+          "monotonic_seconds": 362.9600330000394,
+          "outcome": "FAILED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-sixsecond-contact",
+          "utc_seconds": 397.64413595199585,
+          "monotonic_seconds": 397.64379787497455,
+          "outcome": "FAILED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-grounded-final-look",
+          "utc_seconds": 12.37746810913086,
+          "monotonic_seconds": 12.377156540984288,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-final-reopen",
+          "utc_seconds": 169.31439185142517,
+          "monotonic_seconds": 169.30832395801554,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-final-hero",
+          "utc_seconds": 399.35559821128845,
+          "monotonic_seconds": 399.3491645420436,
+          "outcome": "FAILED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-final-contact",
+          "utc_seconds": 407.1709909439087,
+          "monotonic_seconds": 407.16457195801195,
+          "outcome": "FAILED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-smooth-approach",
+          "utc_seconds": 120.84652304649353,
+          "monotonic_seconds": 120.84567974996753,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-smooth-fx",
+          "utc_seconds": 12.751868963241577,
+          "monotonic_seconds": 12.751736083999276,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-smooth-contact-control",
+          "utc_seconds": 31.566499948501587,
+          "monotonic_seconds": 31.56617891602218,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-smooth-contact-cycle",
+          "utc_seconds": 123.4068500995636,
+          "monotonic_seconds": 123.40658824995626,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-smooth-hero-cycle",
+          "utc_seconds": 140.63292121887207,
+          "monotonic_seconds": 140.63352679100353,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-smooth-reopen",
+          "utc_seconds": 116.55224299430847,
+          "monotonic_seconds": 116.5512410000083,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-smooth-contact-rest",
+          "utc_seconds": 632.7345788478851,
+          "monotonic_seconds": 632.7332944159862,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-smooth-hero-rest",
+          "utc_seconds": 716.2533450126648,
+          "monotonic_seconds": 716.2505912919878,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-cut-motion",
+          "utc_seconds": 675.7469959259033,
+          "monotonic_seconds": 675.7449583329726,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-cut-world",
+          "utc_seconds": 7.340890884399414,
+          "monotonic_seconds": 7.3408232079818845,
+          "outcome": "FAILED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-cut-check",
+          "utc_seconds": 1.9936950206756592,
+          "monotonic_seconds": 1.9925500829704106,
+          "outcome": "FAILED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-cut-world-plane-fix",
+          "utc_seconds": 79.7143177986145,
+          "monotonic_seconds": 79.71406045899494,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-cut-world-v2",
+          "utc_seconds": 73.42551517486572,
+          "monotonic_seconds": 73.42534312501084,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-cut-segment",
+          "utc_seconds": 142.31623697280884,
+          "monotonic_seconds": 142.3157909999718,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-cut-check-fixed",
+          "utc_seconds": 274.3825650215149,
+          "monotonic_seconds": 274.3817224170198,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-cut-world-v3",
+          "utc_seconds": 55.79915118217468,
+          "monotonic_seconds": 55.79869016597513,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-cut-contact-control",
+          "utc_seconds": 37.483627796173096,
+          "monotonic_seconds": 37.48345474997768,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-cut-world-v4",
+          "utc_seconds": 75.93993902206421,
+          "monotonic_seconds": 75.93970595899737,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-cut-final-reopen",
+          "utc_seconds": 11.183839082717896,
+          "monotonic_seconds": 11.18388570798561,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-cut-shot1-0-48",
+          "utc_seconds": 13.391682863235474,
+          "monotonic_seconds": 13.391963000001851,
+          "outcome": "FAILED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-cut-shot1-48-96",
+          "utc_seconds": 14.152239084243774,
+          "monotonic_seconds": 14.152250082988758,
+          "outcome": "FAILED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-cut-shot1-0-48-serial",
+          "utc_seconds": 302.18920707702637,
+          "monotonic_seconds": 302.18832916597603,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-cut-shot1-48-96-serial",
+          "utc_seconds": 333.70150899887085,
+          "monotonic_seconds": 333.70054158300627,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-cut-shot1-96-143-serial",
+          "utc_seconds": 358.48471903800964,
+          "monotonic_seconds": 358.48385133303236,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-cut-shot2-144-192-serial",
+          "utc_seconds": 167.15042805671692,
+          "monotonic_seconds": 167.14982774999226,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-cut-shot2-192-240-serial",
+          "utc_seconds": 190.13949489593506,
+          "monotonic_seconds": 190.1337892920128,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-cut-shot2-240-288-serial",
+          "utc_seconds": 210.35249400138855,
+          "monotonic_seconds": 210.3514317080262,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-cut-shot2-288-312-serial",
+          "utc_seconds": 115.46333622932434,
+          "monotonic_seconds": 115.4627073329757,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-cut-shot3-312-360-serial",
+          "utc_seconds": 290.9522590637207,
+          "monotonic_seconds": 290.9509935840033,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-cut-shot3-360-408-serial",
+          "utc_seconds": 305.7928400039673,
+          "monotonic_seconds": 305.7917069999967,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-cut-shot3-408-432-serial",
+          "utc_seconds": 163.40541791915894,
+          "monotonic_seconds": 163.40454870898975,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-cut-shot4-432-480-serial",
+          "utc_seconds": 316.2681419849396,
+          "monotonic_seconds": 316.26289358298527,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-cut-shot4-480-528-serial",
+          "utc_seconds": 329.9681439399719,
+          "monotonic_seconds": 329.9663980829646,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-cut-shot4-528-575-serial",
+          "utc_seconds": 339.65773820877075,
+          "monotonic_seconds": 339.6560212909826,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-cut-assembly",
+          "utc_seconds": 4.152615070343018,
+          "monotonic_seconds": 4.152433042007033,
+          "outcome": "PASSED",
+          "job_kind": "local"
+        },
+        {
+          "job_id": "demo01-cut-media-audit",
+          "utc_seconds": 4.697801828384399,
+          "monotonic_seconds": 4.697734916000627,
+          "outcome": "PASSED",
+          "job_kind": "local"
+        }
+      ],
+      "native_jobs": [
+        {
+          "job_id": "demo01-rider-screen",
+          "utc_seconds": 3.0890958309173584,
+          "monotonic_seconds": 3.0888943749596365,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-horse-screen",
+          "utc_seconds": 5.764892101287842,
+          "monotonic_seconds": 5.7647931249812245,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-existing-rider-inspection",
+          "utc_seconds": 3.850538969039917,
+          "monotonic_seconds": 3.850452291953843,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-inspection-policy-clarified",
+          "utc_seconds": 10.60307502746582,
+          "monotonic_seconds": 10.60298900003545,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-focused-source-probe",
+          "utc_seconds": 10.815827131271362,
+          "monotonic_seconds": 10.81574200000614,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-riding-v1",
+          "utc_seconds": 7.501711845397949,
+          "monotonic_seconds": 7.5016994579928,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-riding-v2",
+          "utc_seconds": 5.7764129638671875,
+          "monotonic_seconds": 5.776375208981335,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-riding-v3",
+          "utc_seconds": 14.245192050933838,
+          "monotonic_seconds": 14.24516545800725,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-riding-v4",
+          "utc_seconds": 73.21024894714355,
+          "monotonic_seconds": 73.21027708298061,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-recovery-three-probes",
+          "utc_seconds": 10.796540021896362,
+          "monotonic_seconds": 10.796339833003003,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-motion-v1",
+          "utc_seconds": 8.784575939178467,
+          "monotonic_seconds": 8.784520166984294,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-motion-v2",
+          "utc_seconds": 210.73208689689636,
+          "monotonic_seconds": 210.73256283299997,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-free-audit",
+          "utc_seconds": 5.950711965560913,
+          "monotonic_seconds": 5.950644416967407,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-free-probe-v1",
+          "utc_seconds": 20.85204291343689,
+          "monotonic_seconds": 20.851757834025193,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-free-probe-v2",
+          "utc_seconds": 23.002614974975586,
+          "monotonic_seconds": 23.00253054202767,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-free-motion-v1",
+          "utc_seconds": 81.11488819122314,
+          "monotonic_seconds": 81.1148536670371,
+          "outcome": "FAILED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-hoof-response",
+          "utc_seconds": 6.1614990234375,
+          "monotonic_seconds": 6.161416832997929,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-hoof-response-v2",
+          "utc_seconds": 6.144060850143433,
+          "monotonic_seconds": 6.143957166990731,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-contact-probe",
+          "utc_seconds": 22.951883792877197,
+          "monotonic_seconds": 22.95185216597747,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-free-motion-v2",
+          "utc_seconds": 0.32297205924987793,
+          "monotonic_seconds": 0.3228503749705851,
+          "outcome": "FAILED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-free-motion-v2-retry",
+          "utc_seconds": 410.43994092941284,
+          "monotonic_seconds": 410.43923833296867,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-free-verify",
+          "utc_seconds": 50.67754316329956,
+          "monotonic_seconds": 50.67721629102016,
+          "outcome": "FAILED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-free-verify-retry",
+          "utc_seconds": 56.30550003051758,
+          "monotonic_seconds": 56.305448165978305,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-realism-audit",
+          "utc_seconds": 35.74377989768982,
+          "monotonic_seconds": 35.74364887498086,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-realism-probe",
+          "utc_seconds": 57.23951196670532,
+          "monotonic_seconds": 57.23946537502343,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-realism-motion",
+          "utc_seconds": 503.55065417289734,
+          "monotonic_seconds": 503.5506521249772,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-realism-reopen",
+          "utc_seconds": 116.58527302742004,
+          "monotonic_seconds": 116.58504695800366,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-fullpace-audit",
+          "utc_seconds": 6.758328914642334,
+          "monotonic_seconds": 6.758199083036743,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-fullpace-probe",
+          "utc_seconds": 155.0099058151245,
+          "monotonic_seconds": 155.0096135410131,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-fullpace-probe2",
+          "utc_seconds": 89.90279388427734,
+          "monotonic_seconds": 89.90222899999935,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-fullpace-constraints",
+          "utc_seconds": 5.992350101470947,
+          "monotonic_seconds": 5.992195125028957,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-fullpace-probe3",
+          "utc_seconds": 93.25079607963562,
+          "monotonic_seconds": 93.24832899996545,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-fullpace-clean-audit",
+          "utc_seconds": 0.02083897590637207,
+          "monotonic_seconds": 0.020637708017602563,
+          "outcome": "FAILED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-fullpace-clean-audit-resume",
+          "utc_seconds": 6.809361934661865,
+          "monotonic_seconds": 6.809173166984692,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-forefoot-diagnosis-native",
+          "utc_seconds": 14.453903913497925,
+          "monotonic_seconds": 14.453768957988359,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-forefoot-isolation-native",
+          "utc_seconds": 16.48297095298767,
+          "monotonic_seconds": 16.482844249985646,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-forefoot-pose-native",
+          "utc_seconds": 28.094048976898193,
+          "monotonic_seconds": 28.09412279195385,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-forefoot-pose-control-native",
+          "utc_seconds": 285.61871314048767,
+          "monotonic_seconds": 32.571622082963586,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-forefoot-pose-space-native",
+          "utc_seconds": 25.763735055923462,
+          "monotonic_seconds": 25.76343920797808,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-sustained-audit",
+          "utc_seconds": 6.339418172836304,
+          "monotonic_seconds": 6.339165167009924,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-sustained-closure",
+          "utc_seconds": 12.2376708984375,
+          "monotonic_seconds": 12.237446166982409,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-source-gallop-probe",
+          "utc_seconds": 272.45515298843384,
+          "monotonic_seconds": 272.45453120797174,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-source-gallop-build",
+          "utc_seconds": 195.46147203445435,
+          "monotonic_seconds": 195.46107958297944,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-sustained-reopen",
+          "utc_seconds": 360.193265914917,
+          "monotonic_seconds": 360.19275412498973,
+          "outcome": "FAILED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-sustained-fx",
+          "utc_seconds": 457.84222197532654,
+          "monotonic_seconds": 457.8420080000069,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-sustained-reopen-fast",
+          "utc_seconds": 62.90356683731079,
+          "monotonic_seconds": 62.903281415987294,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-sustained-look",
+          "utc_seconds": 23.04640793800354,
+          "monotonic_seconds": 23.04618916695472,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-source-gallop-pivot",
+          "utc_seconds": 132.21269392967224,
+          "monotonic_seconds": 132.21166433300823,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-pivot-fx",
+          "utc_seconds": 16.819949865341187,
+          "monotonic_seconds": 16.82014845800586,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-pivot-reopen",
+          "utc_seconds": 62.12763595581055,
+          "monotonic_seconds": 62.12731425004313,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-cloud-fx",
+          "utc_seconds": 14.925514936447144,
+          "monotonic_seconds": 14.925104333029594,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-cloud-final-look",
+          "utc_seconds": 15.421610832214355,
+          "monotonic_seconds": 15.4213629590231,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-material-contact-control",
+          "utc_seconds": 30.94976305961609,
+          "monotonic_seconds": 30.949372000002768,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-integrated-reopen",
+          "utc_seconds": 145.64091205596924,
+          "monotonic_seconds": 145.64070737501606,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-sixsecond-hero",
+          "utc_seconds": 362.95112681388855,
+          "monotonic_seconds": 362.9600330000394,
+          "outcome": "FAILED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-sixsecond-contact",
+          "utc_seconds": 397.64413595199585,
+          "monotonic_seconds": 397.64379787497455,
+          "outcome": "FAILED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-grounded-final-look",
+          "utc_seconds": 12.37746810913086,
+          "monotonic_seconds": 12.377156540984288,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-final-reopen",
+          "utc_seconds": 169.31439185142517,
+          "monotonic_seconds": 169.30832395801554,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-final-hero",
+          "utc_seconds": 399.35559821128845,
+          "monotonic_seconds": 399.3491645420436,
+          "outcome": "FAILED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-final-contact",
+          "utc_seconds": 407.1709909439087,
+          "monotonic_seconds": 407.16457195801195,
+          "outcome": "FAILED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-smooth-approach",
+          "utc_seconds": 120.84652304649353,
+          "monotonic_seconds": 120.84567974996753,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-smooth-fx",
+          "utc_seconds": 12.751868963241577,
+          "monotonic_seconds": 12.751736083999276,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-smooth-contact-control",
+          "utc_seconds": 31.566499948501587,
+          "monotonic_seconds": 31.56617891602218,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-smooth-contact-cycle",
+          "utc_seconds": 123.4068500995636,
+          "monotonic_seconds": 123.40658824995626,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-smooth-hero-cycle",
+          "utc_seconds": 140.63292121887207,
+          "monotonic_seconds": 140.63352679100353,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-smooth-reopen",
+          "utc_seconds": 116.55224299430847,
+          "monotonic_seconds": 116.5512410000083,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-smooth-contact-rest",
+          "utc_seconds": 632.7345788478851,
+          "monotonic_seconds": 632.7332944159862,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-smooth-hero-rest",
+          "utc_seconds": 716.2533450126648,
+          "monotonic_seconds": 716.2505912919878,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-cut-motion",
+          "utc_seconds": 675.7469959259033,
+          "monotonic_seconds": 675.7449583329726,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-cut-world",
+          "utc_seconds": 7.340890884399414,
+          "monotonic_seconds": 7.3408232079818845,
+          "outcome": "FAILED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-cut-check",
+          "utc_seconds": 1.9936950206756592,
+          "monotonic_seconds": 1.9925500829704106,
+          "outcome": "FAILED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-cut-world-plane-fix",
+          "utc_seconds": 79.7143177986145,
+          "monotonic_seconds": 79.71406045899494,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-cut-world-v2",
+          "utc_seconds": 73.42551517486572,
+          "monotonic_seconds": 73.42534312501084,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-cut-segment",
+          "utc_seconds": 142.31623697280884,
+          "monotonic_seconds": 142.3157909999718,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-cut-check-fixed",
+          "utc_seconds": 274.3825650215149,
+          "monotonic_seconds": 274.3817224170198,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-cut-world-v3",
+          "utc_seconds": 55.79915118217468,
+          "monotonic_seconds": 55.79869016597513,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-cut-contact-control",
+          "utc_seconds": 37.483627796173096,
+          "monotonic_seconds": 37.48345474997768,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-cut-world-v4",
+          "utc_seconds": 75.93993902206421,
+          "monotonic_seconds": 75.93970595899737,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-cut-final-reopen",
+          "utc_seconds": 11.183839082717896,
+          "monotonic_seconds": 11.18388570798561,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-cut-shot1-0-48",
+          "utc_seconds": 13.391682863235474,
+          "monotonic_seconds": 13.391963000001851,
+          "outcome": "FAILED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-cut-shot1-48-96",
+          "utc_seconds": 14.152239084243774,
+          "monotonic_seconds": 14.152250082988758,
+          "outcome": "FAILED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-cut-shot1-0-48-serial",
+          "utc_seconds": 302.18920707702637,
+          "monotonic_seconds": 302.18832916597603,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-cut-shot1-48-96-serial",
+          "utc_seconds": 333.70150899887085,
+          "monotonic_seconds": 333.70054158300627,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-cut-shot1-96-143-serial",
+          "utc_seconds": 358.48471903800964,
+          "monotonic_seconds": 358.48385133303236,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-cut-shot2-144-192-serial",
+          "utc_seconds": 167.15042805671692,
+          "monotonic_seconds": 167.14982774999226,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-cut-shot2-192-240-serial",
+          "utc_seconds": 190.13949489593506,
+          "monotonic_seconds": 190.1337892920128,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-cut-shot2-240-288-serial",
+          "utc_seconds": 210.35249400138855,
+          "monotonic_seconds": 210.3514317080262,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-cut-shot2-288-312-serial",
+          "utc_seconds": 115.46333622932434,
+          "monotonic_seconds": 115.4627073329757,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-cut-shot3-312-360-serial",
+          "utc_seconds": 290.9522590637207,
+          "monotonic_seconds": 290.9509935840033,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-cut-shot3-360-408-serial",
+          "utc_seconds": 305.7928400039673,
+          "monotonic_seconds": 305.7917069999967,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-cut-shot3-408-432-serial",
+          "utc_seconds": 163.40541791915894,
+          "monotonic_seconds": 163.40454870898975,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-cut-shot4-432-480-serial",
+          "utc_seconds": 316.2681419849396,
+          "monotonic_seconds": 316.26289358298527,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-cut-shot4-480-528-serial",
+          "utc_seconds": 329.9681439399719,
+          "monotonic_seconds": 329.9663980829646,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        },
+        {
+          "job_id": "demo01-cut-shot4-528-575-serial",
+          "utc_seconds": 339.65773820877075,
+          "monotonic_seconds": 339.6560212909826,
+          "outcome": "PASSED",
+          "job_kind": "native"
+        }
+      ],
+      "native_job_wall_sum_seconds": 12575.798815491551,
+      "native_job_wall_union_seconds": null,
+      "assistant_active_union_seconds": 23473.368343114853,
+      "assistant_time_scope": "Recorded activity intervals only; not token generation time",
+      "human_review_seconds": null,
+      "phase_net_seconds": null,
+      "operational_proxies": {
+        "focused_tests_passed": 17
+      }
+    },
+    {
+      "episode_id": "documentary-closure",
+      "lifecycle": "CLOSED",
+      "disposition": "YELLOW",
+      "calendar_elapsed_seconds": 120.6073272228241,
+      "excluded_input_wait_seconds": null,
+      "observed_excluded_input_wait_seconds": 0,
+      "net_elapsed_seconds": null,
+      "coverage_fraction": 0.9999923615802551,
+      "unknown_gap_seconds": 0.0009212493896484375,
+      "uncertainties": [
+        "unexplained_gap"
+      ],
+      "jobs": [],
+      "native_jobs": [],
+      "native_job_wall_sum_seconds": 0,
+      "native_job_wall_union_seconds": null,
+      "assistant_active_union_seconds": 120.60640597343445,
+      "assistant_time_scope": "Recorded activity intervals only; not token generation time",
+      "human_review_seconds": null,
+      "phase_net_seconds": null,
+      "operational_proxies": {}
+    }
+  ],
+  "closed_episode_count": 2,
+  "net_episode_sum_seconds": null,
+  "note": "Episode totals exclude inter-episode gaps. Job sums are process-seconds, not CPU time.",
+  "engineering_usage": {
+    "status": "UNKNOWN",
+    "observed_tokens": {
+      "input_tokens": null,
+      "cached_input_tokens": null,
+      "cache_write_input_tokens": null,
+      "output_tokens": null,
+      "reasoning_output_tokens": null,
+      "total_tokens": null
+    },
+    "category_coverage": {
+      "input_tokens": {
+        "observed_blocks": 0,
+        "total_blocks": 0
+      },
+      "cached_input_tokens": {
+        "observed_blocks": 0,
+        "total_blocks": 0
+      },
+      "cache_write_input_tokens": {
+        "observed_blocks": 0,
+        "total_blocks": 0
+      },
+      "output_tokens": {
+        "observed_blocks": 0,
+        "total_blocks": 0
+      },
+      "reasoning_output_tokens": {
+        "observed_blocks": 0,
+        "total_blocks": 0
+      },
+      "total_tokens": {
+        "observed_blocks": 0,
+        "total_blocks": 0
+      }
+    },
+    "exact_attributable_tokens": null,
+    "expected_tasks": [
+      "01a081e1-3bf7-7192-b1d6-50914112eccb"
+    ],
+    "captured_tasks": [],
+    "missing_tasks": [
+      "01a081e1-3bf7-7192-b1d6-50914112eccb"
+    ],
+    "window_start": "2026-09-12T07:48:54.454499+00:00",
+    "window_end": "2026-09-13T14:38:23.652928+00:00",
+    "uncertainties": [
+      "capture_completeness_not_established",
+      "missing_linked_tasks"
+    ],
+    "blocks": [],
+    "token_definitions": {
+      "input_tokens": "Reported input total; cached input is a subset.",
+      "cached_input_tokens": "Subset of input; do not add to total.",
+      "cache_write_input_tokens": "Retained as reported; not added to total.",
+      "output_tokens": "Reported output total; reasoning output is a subset.",
+      "reasoning_output_tokens": "Subset of output; do not add to total.",
+      "total_tokens": "Reported total; input plus output, without subset double counting."
+    },
+    "actual_engineering_charge_usd": null,
+    "subscription": {
+      "treatment": "shared fixed overhead",
+      "allocation_usd": null
+    },
+    "api_equivalent_estimate_usd": null,
+    "account_allowance": {
+      "scope": "account-wide; not experiment token attribution",
+      "observations": []
+    }
+  },
+  "model_setting_observations": [
+    {
+      "effort": "medium",
+      "episode_id": "stage-a",
+      "event_id": "demo01-supervisor-observed",
+      "event_type": "model_setting_observed",
+      "evidence_ref": null,
+      "experiment_id": "DEMONSTRATOR-01",
+      "model": "gpt-6-astra",
+      "observation_utc": "2026-09-12T07:48:29.252Z",
+      "phase": "supervision",
+      "reason": null,
+      "requested_effort": "medium",
+      "requested_model": "gpt-6-astra",
+      "run_id": null,
+      "schema_version": "1.0",
+      "setting_attribution": "runtime_turn_context",
+      "task_id": null,
+      "turn_id": null,
+      "utc": "2026-09-12T07:56:34.920859+00:00"
+    }
+  ],
+  "factory_api": {
+    "additional_api_usd": 0.51397,
+    "additional_limit_usd": 10,
+    "remaining_additional_usd": 9.48603,
+    "campaign_cumulative_usd": 3.736270001,
+    "effective_campaign_ceiling_usd": 13.222300001,
+    "calls": [
+      {
+        "record": "world-response.json",
+        "reservation_id": "96df861d-4165-4790-ace1-6575471d0b87",
+        "model": "gpt-5.6-sol",
+        "effort": "medium",
+        "cost_usd": 0.20471,
+        "reasoning_cost_usd": 0.06896,
+        "input_cost_usd": 0.00471,
+        "output_cost_usd": 0.2,
+        "error": "response_invalid:response_not_completed",
+        "usage": {
+          "input_tokens": 942,
+          "cached_input_tokens": 0,
+          "output_tokens": 10000,
+          "reasoning_tokens": 3448,
+          "total_tokens": 10942,
+          "usage_certainty": "known"
+        }
+      },
+      {
+        "record": "world-retry-response.json",
+        "reservation_id": "2fdc57c9-6a26-44d9-81c6-e01ac04fcf61",
+        "model": "gpt-5.6-sol",
+        "effort": "medium",
+        "cost_usd": 0.265935,
+        "reasoning_cost_usd": 0.09854,
+        "input_cost_usd": 0.004955,
+        "output_cost_usd": 0.26098,
+        "error": null,
+        "usage": {
+          "input_tokens": 991,
+          "cached_input_tokens": 0,
+          "output_tokens": 13049,
+          "reasoning_tokens": 4927,
+          "total_tokens": 14040,
+          "usage_certainty": "known"
+        }
+      },
+      {
+        "record": "visual-review.json",
+        "reservation_id": "f2958b2e-e291-42f7-8d05-a6529649d8a0",
+        "model": "gpt-5.6-sol",
+        "effort": "medium",
+        "cost_usd": 0.043325,
+        "reasoning_cost_usd": 0.02002,
+        "input_cost_usd": 0.012905,
+        "output_cost_usd": 0.03042,
+        "error": null,
+        "usage": {
+          "input_tokens": 2581,
+          "cached_input_tokens": 0,
+          "output_tokens": 1521,
+          "reasoning_tokens": 1001,
+          "total_tokens": 4102,
+          "usage_certainty": "known"
+        }
+      }
+    ],
+    "purchases_paid_media_cloud_usd": 0,
+    "subscription_token_usage": null,
+    "subscription_marginal_cost": null,
+    "human_review_seconds": null,
+    "accounting": "conservative calculated estimate, not provider invoice; reasoning is included in output cost and never added twice"
+  },
+  "outcome_denominators": {
+    "closed_experiments": 1,
+    "closed_episodes": 2,
+    "technically_successful_outputs": 2,
+    "director_accepted_outputs": 1
+  },
+  "consumption_per_outcome": {
+    "closed_experiments": {
+      "net_seconds": null,
+      "engineering_tokens": null
+    },
+    "closed_episodes": {
+      "net_seconds": null,
+      "engineering_tokens": null
+    },
+    "technically_successful_outputs": {
+      "net_seconds": null,
+      "engineering_tokens": null
+    },
+    "director_accepted_outputs": {
+      "net_seconds": null,
+      "engineering_tokens": null
+    }
+  },
+  "cost_scope": "Development investment; repeatable runtime cost remains in the campaign provider records."
+}
