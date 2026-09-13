@@ -51,4 +51,10 @@ The prior authorized source push reached GitHub at `f05f0fa`. The new cut implem
 
 Next: review the complete film as a sequence, then inspect the lateral shot for the front-leg apex. Record story clarity, motion credibility, visual coherence, cinematography and sound/editing, plus review duration. No scores or approval are inferred from the earlier six-second preview.
 '''
+if (R/'director-acceptance/acceptance.json').exists():
+ text=text.replace('**Development YELLOW: complete rough cut; Director playback review is pending.**','**Director PASS: the complete 24-second development rough cut is accepted.** See the [Director acceptance record](director-acceptance/README.md).')
+ text=text.replace('Complete playback judgment remains pending.','The Director has accepted the complete playback. No separate score or claim that every apex imperfection is eliminated was supplied.')
+ text=text.replace('their readability is for the Director to judge.','the Director accepted the sequence overall without separate category scores.')
+ text=text.replace('## Scope, durability and next review','## Scope, durability and Director acceptance')
+ text=text.replace('Next: review the complete film as a sequence, then inspect the lateral shot for the front-leg apex. Record story clarity, motion credibility, visual coherence, cinematography and sound/editing, plus review duration. No scores or approval are inferred from the earlier six-second preview.','The Director explicitly said, “I think this is great. pass.” This acceptance applies to this complete cut. Numerical scores and review duration remain unspecified. The accepted cut is the baseline for any separately agreed next phase; no further rendering or paid calls were initiated by this acceptance.')
 (R/'REPORT.md').write_text(text)

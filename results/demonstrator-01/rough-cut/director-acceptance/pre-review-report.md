@@ -1,6 +1,6 @@
 # The Courier — 24-second development rough cut
 
-**Director PASS: the complete 24-second development rough cut is accepted.** See the [Director acceptance record](director-acceptance/README.md). This delivers the authorized four-shot film, without claiming final photorealism or a newly scored GREEN campaign. No closed 3D campaign has been reopened.
+**Development YELLOW: complete rough cut; Director playback review is pending.** This delivers the authorized four-shot film, without claiming final photorealism or a newly scored GREEN campaign. No closed 3D campaign has been reopened.
 
 Watch [the complete film](../../../runs/demonstrator-01/cut-review/the-courier-24s.mp4) or use the [review player with exact source-frame stepping](../../../runs/demonstrator-01/cut-review/review.html). The film is 24 seconds, 576 frames at 24 fps, 960×540, with original provisional hoofbeats, wind and a signal bell.
 
@@ -8,7 +8,7 @@ Watch [the complete film](../../../runs/demonstrator-01/cut-review/the-courier-2
 
 The six-second opening descends from an offset aerial view into a frontal tracking hold. A seven-second lateral view shows full-pace gallop and trailing dust on the meadow track. The five-second signal shot brings the rider closer as the flag rises and the head turns. A six-second departure keeps the destination in view. All shots share one continuous 12 m/s world path; the user-requested meadow replaces the earlier mountain-road concept.
 
-The front-leg recovery uses a monotone timing warp, reaching 1.5× phase rate at mid-swing and returning to the original timing and first derivative at support boundaries. All four dependent control families on each front leg share that clock. It does not stretch the mesh to force more extension. The prior source/player investigation and the Director's perceived apex hesitation remain distinct: timing-map tests and unique PNGs do not prove that the perceived hitch is gone. The Director has accepted the complete playback. No separate score or claim that every apex imperfection is eliminated was supplied.
+The front-leg recovery uses a monotone timing warp, reaching 1.5× phase rate at mid-swing and returning to the original timing and first derivative at support boundaries. All four dependent control families on each front leg share that clock. It does not stretch the mesh to force more extension. The prior source/player investigation and the Director's perceived apex hesitation remain distinct: timing-map tests and unique PNGs do not prove that the perceived hitch is gone. Complete playback judgment remains pending.
 
 ## Verification
 
@@ -38,10 +38,10 @@ Native jobs consumed **81.4 process-minutes**, including failed attempts, agains
 
 Free storage at finalization is **8.17 GiB**. Available disk fell during the initial concurrent render, consistent with memory/swap pressure, and triggered the 5 GiB guard. Exact swap attribution was not independently measured. Both failures were preserved. The current-pass intermediate scenes were losslessly compressed with verified round-trip hashes; rendering completed with one worker. Closed campaign files were untouched. See [storage preservation](storage-preservation.json) and the [process review](PROCESS_REVIEW.md).
 
-## Scope, durability and Director acceptance
+## Scope, durability and next review
 
-This is one modified free horse/rider fixture with authored motion, procedural meadow scenery and a bounded dust effect. The environment remains visibly simplified, the dust treatment is approximate, and the sound is provisional. Early aerial frames also show some dust/ground shading and grain variation (for example frames 8–9); this remains a rough-cut finishing limitation. The head turn and flag are a modest narrative beat; the Director accepted the sequence overall without separate category scores. This does not establish arbitrary asset support or final production realism.
+This is one modified free horse/rider fixture with authored motion, procedural meadow scenery and a bounded dust effect. The environment remains visibly simplified, the dust treatment is approximate, and the sound is provisional. Early aerial frames also show some dust/ground shading and grain variation (for example frames 8–9); this remains a rough-cut finishing limitation. The head turn and flag are a modest narrative beat; their readability is for the Director to judge. This does not establish arbitrary asset support or final production realism.
 
 The prior authorized source push reached GitHub at `f05f0fa`. The new cut implementation is locally committed at `dae2c5dd85e85cb18d9cc495d66430df7542ff3d`; its files match the implementation digest frozen before rendering. The final film, native scenes and images remain local. No new public native-asset upload or large archive rebuild was performed. [Reproduction instructions](REPRODUCIBILITY.md) explain native paths, compressed intermediate restoration and frame assembly.
 
-The Director explicitly said, “I think this is great. pass.” This acceptance applies to this complete cut. Numerical scores and review duration remain unspecified. The accepted cut is the baseline for any separately agreed next phase; no further rendering or paid calls were initiated by this acceptance.
+Next: review the complete film as a sequence, then inspect the lateral shot for the front-leg apex. Record story clarity, motion credibility, visual coherence, cinematography and sound/editing, plus review duration. No scores or approval are inferred from the earlier six-second preview.
