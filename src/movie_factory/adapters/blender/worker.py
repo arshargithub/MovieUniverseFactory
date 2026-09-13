@@ -1630,6 +1630,10 @@ def main():
             spec=importlib.util.spec_from_file_location("mf_demo_fullpace",Path(__file__).with_name("demo_fullpace.py"));module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
             spec=importlib.util.spec_from_file_location("mf_demo_riding",Path(__file__).with_name("demo_riding.py"));helper=importlib.util.module_from_spec(spec);spec.loader.exec_module(helper)
             status["artifacts"].extend((module.audit if mode=="demo_fullpace_audit" else module.build)(sys.modules[__name__],out,job,helper))
+        elif mode=="demo_reuse":
+            spec=importlib.util.spec_from_file_location("mf_demo_reuse",Path(__file__).with_name("demo_reuse.py"));module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+            spec=importlib.util.spec_from_file_location("mf_demo_riding",Path(__file__).with_name("demo_riding.py"));helper=importlib.util.module_from_spec(spec);spec.loader.exec_module(helper)
+            status["artifacts"].extend(module.run(sys.modules[__name__],out,job,helper))
         elif mode in {"demo_cut_check","demo_cut_contact_control","demo_cut_final_check"}:
             spec=importlib.util.spec_from_file_location("mf_cut_check",Path(__file__).with_name("demo_cut_check.py"));module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
             spec=importlib.util.spec_from_file_location("mf_demo_riding",Path(__file__).with_name("demo_riding.py"));helper=importlib.util.module_from_spec(spec);spec.loader.exec_module(helper)

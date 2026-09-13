@@ -1,0 +1,13 @@
+{
+  "disposition": "NOT_DEMONSTRATED",
+  "reason": "NATIVE_BUDGET_FORECAST_EXCEEDS_REMAINING",
+  "minimum_two_clip_forecast_seconds": 1924.5613713036291,
+  "render_seconds_per_frame": 10.630345930345356,
+  "preparation_per_operation_seconds": 196.8957786669489,
+  "native_seconds_remaining": 1145.2891028341255,
+  "held_out_request_received": false,
+  "post_freeze_implementation_changes": 0,
+  "api_cost_usd": 0,
+  "source_interface": "frozen and native smoke verified, not qualified for affordable full-clip reuse",
+  "proposed_followup": "Separately approve one lower-resolution/sample preview timing check before any new held-out shot. Reuse current handler; avoid repeated full-state serialization where equivalent digest evidence can be reused, but count that as setup and refreeze before Director request."
+}
