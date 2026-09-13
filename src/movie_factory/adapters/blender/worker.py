@@ -1630,6 +1630,18 @@ def main():
             spec=importlib.util.spec_from_file_location("mf_demo_fullpace",Path(__file__).with_name("demo_fullpace.py"));module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
             spec=importlib.util.spec_from_file_location("mf_demo_riding",Path(__file__).with_name("demo_riding.py"));helper=importlib.util.module_from_spec(spec);spec.loader.exec_module(helper)
             status["artifacts"].extend((module.audit if mode=="demo_fullpace_audit" else module.build)(sys.modules[__name__],out,job,helper))
+        elif mode in {"demo_cut_check","demo_cut_contact_control","demo_cut_final_check"}:
+            spec=importlib.util.spec_from_file_location("mf_cut_check",Path(__file__).with_name("demo_cut_check.py"));module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+            spec=importlib.util.spec_from_file_location("mf_demo_riding",Path(__file__).with_name("demo_riding.py"));helper=importlib.util.module_from_spec(spec);spec.loader.exec_module(helper)
+            status["artifacts"].extend(module.run(sys.modules[__name__],out,job,helper))
+        elif mode in {"demo_cut_world","demo_cut_render"}:
+            spec=importlib.util.spec_from_file_location("mf_cut_world",Path(__file__).with_name("demo_cut_world.py"));module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+            spec=importlib.util.spec_from_file_location("mf_demo_riding",Path(__file__).with_name("demo_riding.py"));helper=importlib.util.module_from_spec(spec);spec.loader.exec_module(helper)
+            status["artifacts"].extend(module.run(sys.modules[__name__],out,job,helper))
+        elif mode=="demo_cut_motion":
+            spec=importlib.util.spec_from_file_location("mf_cut_motion",Path(__file__).with_name("demo_cut_motion.py"));module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+            spec=importlib.util.spec_from_file_location("mf_demo_riding",Path(__file__).with_name("demo_riding.py"));helper=importlib.util.module_from_spec(spec);spec.loader.exec_module(helper)
+            status["artifacts"].extend(module.run(sys.modules[__name__],out,job,helper))
         elif mode in {"demo_sustained_check","demo_sustained_fx","demo_sustained_render","demo_sustained_look","demo_sustained_contact_control"}:
             spec=importlib.util.spec_from_file_location("mf_sustained_finish",Path(__file__).with_name("demo_sustained_finish.py"));module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
             spec=importlib.util.spec_from_file_location("mf_demo_riding",Path(__file__).with_name("demo_riding.py"));helper=importlib.util.module_from_spec(spec);spec.loader.exec_module(helper)

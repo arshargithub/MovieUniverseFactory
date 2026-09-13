@@ -10,7 +10,7 @@ CATEGORIES = {'feasibility':10,'implementation':40,'critique':15,'direction':20,
 
 def ledger(repo):
     return BudgetLedger(repo/'.runtime/demonstrator-01-api.jsonl',100,scope_limits=CATEGORIES,
-        stage_limits={'api':(100,60)},request_limit=60,request_ceiling_usd=5,work_item_attempt_limit=3,additional_campaign_ceiling_usd=50)
+        stage_limits={'api':(100,60)},request_limit=60,request_ceiling_usd=5,work_item_attempt_limit=3,additional_campaign_ceiling_usd=13.222300001)
 
 def access(repo):
     settings=load_settings(repo)

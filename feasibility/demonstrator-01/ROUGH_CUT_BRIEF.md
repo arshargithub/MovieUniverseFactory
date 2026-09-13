@@ -1,0 +1,19 @@
+# The Courier:24-second rough cut — approved overnight scope
+
+Director approves four active engineering hours, four native-render hours, $10 additional API including retries/reasoning (cumulative effective cap $13.222300001), and silent fallback if sound is blocked. Push existing work now; do not infer a later automatic push of new production assets. Existing free fixtures only, no purchases/cloud/paid media. Start with 9.5GiB free; forecast3–4GiB growth, retain5GiB reserve. One shared24-second scene and frame reuse avoid four duplicated native projects.
+
+## Motion design
+
+Intent: purposeful full-pace courier ride with a readable signal reaction. Reuse the source-centred12m/s,2.2Hz horse/rider, rolling contact and flowing tail. Director sees a front-leg hesitation at apex; literal duplicated source/decoded frames were not found, but the old player had unreliable labels. Preserve this distinction. Retiming decision before the production motion build: accelerate the middle of airborne foreleg recovery by a monotone phase warp (1.5× instantaneous phase rate at its midpoint), returning to identical timing and first derivative at support boundaries. Apply the same clock to each foreleg’s four dependent controls. This replaces the initial forward-reach idea and avoids stretching the admitted pose. Evaluate all dependent joints through Blender. Do not change support anchors to improve the camera view. Whole motion remains authored and visually unqualified until Director playback review.
+
+Phases: shot1 frames0–143 (6s), high right/front aerial descent into near-frontal tracking, ending in a stable view. Shot2 frames144–311 (7s), lower three-quarter lateral tracking highlights stride and dust against green meadow. Shot3 frames312–431 (5s), signal is revealed and rider acknowledges it with a restrained head/neck turn if admitted rig controls permit; shoulders/arms/reins remain protected. Shot4 frames432–575 (6s), rear/side departure toward watchtower and signal. Maintain one continuous world path across cuts. No arbitrary timeline revision or general rig qualification claimed.
+
+Foot contact belongs to fixed material rolling pivots; world travel belongs to horse diagnostic path. Torso/rider/tack use source-relative timing. Head reaction must not disturb hand/rein or support contact; if a usable head control is absent, record the limitation instead of inventing a verified response. No new human reference was reviewed; the existing source cycle and Director observations are the design reference.
+
+## Environment and review
+
+Tan dusty strip through green meadow, darker hedgerows/trees for dust contrast, restrained distant farm scenery and destination tower. Procedural local scenery; avoid new asset downloads. Warm side/back light, readable tan plume, retained dust-free diagnosis. Camera front hold means tracking backward with the horse, not stopping in world space.
+
+Check representative extreme frames and one complete inexpensive segment before all576 frames. Preserve source identity, contact20mm material-travel screen/20mm penetration screen, rein10mm screen and full finite geometry checks where changed. Keep historical centroid failure visible. Temporal speed/apex trajectory measurements are diagnostics, not biological qualification. Source-derived performance needs complete playback acceptance. Reopen the final scene and reproduce a selected frame; use exactly576frames24fps and no duplicate endpoints. Review film story/motion/visual coherence/camera/sound as proposed charter dimensions, without inventing scores.
+
+Learning delta: previous long renders started before complete temporal/framing review; this pass freezes one shared scene after representative motion and framing checks, then renders the whole cut. Do not redesign harness or chase micro-polish. API proposals are reviewed code only. Native process sums and active envelope separate; unknown subscription counters remain null.
