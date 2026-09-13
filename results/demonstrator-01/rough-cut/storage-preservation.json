@@ -1,0 +1,24 @@
+{
+  "archives": [
+    {
+      "original_path": "runs/demonstrator-01/cut-world/scene.blend",
+      "archive_path": "runs/demonstrator-01/cut-world/scene.blend.gz",
+      "original_sha256": "5db7c6983aee1b506c102fc4bc3c43c96128fa0c99143fc2c32a8046f07360d8",
+      "original_bytes": 1519705717,
+      "archive_bytes": 104734964,
+      "archive_sha256": "3492c68fcd971470751e934954541bb48f41bd5e37d5840a70ff35242925fbc8",
+      "lossless_roundtrip_verified": true,
+      "reason": "preserve superseded current-pass scene while restoring disk reserve after native swap growth"
+    },
+    {
+      "original_path": "runs/demonstrator-01/cut-motion/scene.blend",
+      "archive_path": "runs/demonstrator-01/cut-motion/scene.blend.gz",
+      "original_sha256": "ab14f8cfcf7e075244f25b571a3655c17de008e84b5c072a6bb74bd8a6a487f0",
+      "original_bytes": 794839307,
+      "archive_bytes": 76409032,
+      "archive_sha256": "f88c6733afeee7afaf3548777847ef904e3a953a76c1c3df5fad76b4492610ba",
+      "lossless_roundtrip_verified": true,
+      "reason": "preserve current-pass validated motion base; final shared scene remains directly usable"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "utc": "2026-09-13T02:23:35.435568+00:00",
+  "passed": 37,
+  "failed": 0,
+  "scope": [
+    "cut_boundary",
+    "cut_phase",
+    "source_gallop_phase",
+    "demonstrator_budget",
+    "demo_asset_boundary",
+    "demo_contact",
+    "demo_realism_boundary"
+  ],
+  "command": ".venv/bin/pytest tests/unit/test_cut_boundary.py tests/unit/test_cut_phase.py tests/unit/test_source_gallop_phase.py tests/unit/test_demonstrator_budget.py tests/unit/test_demo_asset_boundary.py tests/unit/test_demo_contact.py tests/unit/test_demo_realism_boundary.py -q"
+}

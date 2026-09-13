@@ -1,0 +1,246 @@
+{
+  "captured_utc": "2026-09-13T03:21:02.600025+00:00",
+  "authorization_to_capture_monotonic_seconds": 6140.746380167024,
+  "native_completed_process_seconds": 4886.3682387057925,
+  "native_compute_limit_seconds": 14400,
+  "engineering_envelope_seconds": 14400,
+  "pure_active_engineering_seconds": null,
+  "subscription_token_usage": null,
+  "director_review_seconds": null,
+  "open_jobs": [],
+  "native_completed_jobs": 26,
+  "failed_native_jobs": [
+    "demo01-cut-world",
+    "demo01-cut-check",
+    "demo01-cut-shot1-0-48",
+    "demo01-cut-shot1-48-96"
+  ],
+  "jobs": [
+    {
+      "id": "demo01-cut-motion",
+      "kind": "native",
+      "outcome": "PASSED",
+      "seconds": 675.7449583329726,
+      "start_utc": "2026-09-13T01:44:48.984424+00:00",
+      "end_utc": "2026-09-13T01:56:04.731420+00:00"
+    },
+    {
+      "id": "demo01-cut-world",
+      "kind": "native",
+      "outcome": "FAILED",
+      "seconds": 7.3408232079818845,
+      "start_utc": "2026-09-13T02:00:41.859507+00:00",
+      "end_utc": "2026-09-13T02:00:49.200398+00:00"
+    },
+    {
+      "id": "demo01-cut-check",
+      "kind": "native",
+      "outcome": "FAILED",
+      "seconds": 1.9925500829704106,
+      "start_utc": "2026-09-13T02:02:38.277304+00:00",
+      "end_utc": "2026-09-13T02:02:40.270999+00:00"
+    },
+    {
+      "id": "demo01-cut-world-plane-fix",
+      "kind": "native",
+      "outcome": "PASSED",
+      "seconds": 79.71406045899494,
+      "start_utc": "2026-09-13T02:01:33.353032+00:00",
+      "end_utc": "2026-09-13T02:02:53.067350+00:00"
+    },
+    {
+      "id": "demo01-cut-world-v2",
+      "kind": "native",
+      "outcome": "PASSED",
+      "seconds": 73.42534312501084,
+      "start_utc": "2026-09-13T02:04:21.812085+00:00",
+      "end_utc": "2026-09-13T02:05:35.237600+00:00"
+    },
+    {
+      "id": "demo01-cut-segment",
+      "kind": "native",
+      "outcome": "PASSED",
+      "seconds": 142.3157909999718,
+      "start_utc": "2026-09-13T02:06:07.559451+00:00",
+      "end_utc": "2026-09-13T02:08:29.875688+00:00"
+    },
+    {
+      "id": "demo01-cut-check-fixed",
+      "kind": "native",
+      "outcome": "PASSED",
+      "seconds": 274.3817224170198,
+      "start_utc": "2026-09-13T02:04:40.497686+00:00",
+      "end_utc": "2026-09-13T02:09:14.880251+00:00"
+    },
+    {
+      "id": "demo01-cut-world-v3",
+      "kind": "native",
+      "outcome": "PASSED",
+      "seconds": 55.79869016597513,
+      "start_utc": "2026-09-13T02:09:27.040598+00:00",
+      "end_utc": "2026-09-13T02:10:22.839749+00:00"
+    },
+    {
+      "id": "demo01-cut-contact-control",
+      "kind": "native",
+      "outcome": "PASSED",
+      "seconds": 37.48345474997768,
+      "start_utc": "2026-09-13T02:09:56.631498+00:00",
+      "end_utc": "2026-09-13T02:10:34.115126+00:00"
+    },
+    {
+      "id": "demo01-cut-world-v4",
+      "kind": "native",
+      "outcome": "PASSED",
+      "seconds": 75.93970595899737,
+      "start_utc": "2026-09-13T02:12:29.621168+00:00",
+      "end_utc": "2026-09-13T02:13:45.561107+00:00"
+    },
+    {
+      "id": "demo01-cut-final-reopen",
+      "kind": "native",
+      "outcome": "PASSED",
+      "seconds": 11.18388570798561,
+      "start_utc": "2026-09-13T02:15:21.962663+00:00",
+      "end_utc": "2026-09-13T02:15:33.146502+00:00"
+    },
+    {
+      "id": "demo01-cut-shot1-0-48",
+      "kind": "native",
+      "outcome": "FAILED",
+      "seconds": 13.391963000001851,
+      "start_utc": "2026-09-13T02:16:04.260951+00:00",
+      "end_utc": "2026-09-13T02:16:17.652634+00:00"
+    },
+    {
+      "id": "demo01-cut-shot1-48-96",
+      "kind": "native",
+      "outcome": "FAILED",
+      "seconds": 14.152250082988758,
+      "start_utc": "2026-09-13T02:16:04.260984+00:00",
+      "end_utc": "2026-09-13T02:16:18.413223+00:00"
+    },
+    {
+      "id": "demo01-cut-shot1-0-48-serial",
+      "kind": "native",
+      "outcome": "PASSED",
+      "seconds": 302.18832916597603,
+      "start_utc": "2026-09-13T02:19:23.758945+00:00",
+      "end_utc": "2026-09-13T02:24:25.948152+00:00"
+    },
+    {
+      "id": "demo01-cut-shot1-48-96-serial",
+      "kind": "native",
+      "outcome": "PASSED",
+      "seconds": 333.70054158300627,
+      "start_utc": "2026-09-13T02:24:25.996731+00:00",
+      "end_utc": "2026-09-13T02:29:59.698240+00:00"
+    },
+    {
+      "id": "demo01-cut-shot1-96-143-serial",
+      "kind": "native",
+      "outcome": "PASSED",
+      "seconds": 358.48385133303236,
+      "start_utc": "2026-09-13T02:29:59.747360+00:00",
+      "end_utc": "2026-09-13T02:35:58.232079+00:00"
+    },
+    {
+      "id": "demo01-cut-shot2-144-192-serial",
+      "kind": "native",
+      "outcome": "PASSED",
+      "seconds": 167.14982774999226,
+      "start_utc": "2026-09-13T02:35:58.281928+00:00",
+      "end_utc": "2026-09-13T02:38:45.432356+00:00"
+    },
+    {
+      "id": "demo01-cut-shot2-192-240-serial",
+      "kind": "native",
+      "outcome": "PASSED",
+      "seconds": 190.1337892920128,
+      "start_utc": "2026-09-13T02:38:45.482242+00:00",
+      "end_utc": "2026-09-13T02:41:55.621737+00:00"
+    },
+    {
+      "id": "demo01-cut-shot2-240-288-serial",
+      "kind": "native",
+      "outcome": "PASSED",
+      "seconds": 210.3514317080262,
+      "start_utc": "2026-09-13T02:41:55.670895+00:00",
+      "end_utc": "2026-09-13T02:45:26.023389+00:00"
+    },
+    {
+      "id": "demo01-cut-shot2-288-312-serial",
+      "kind": "native",
+      "outcome": "PASSED",
+      "seconds": 115.4627073329757,
+      "start_utc": "2026-09-13T02:45:26.073722+00:00",
+      "end_utc": "2026-09-13T02:47:21.537058+00:00"
+    },
+    {
+      "id": "demo01-cut-shot3-312-360-serial",
+      "kind": "native",
+      "outcome": "PASSED",
+      "seconds": 290.9509935840033,
+      "start_utc": "2026-09-13T02:47:21.587453+00:00",
+      "end_utc": "2026-09-13T02:52:12.539712+00:00"
+    },
+    {
+      "id": "demo01-cut-shot3-360-408-serial",
+      "kind": "native",
+      "outcome": "PASSED",
+      "seconds": 305.7917069999967,
+      "start_utc": "2026-09-13T02:52:12.584722+00:00",
+      "end_utc": "2026-09-13T02:57:18.377562+00:00"
+    },
+    {
+      "id": "demo01-cut-shot3-408-432-serial",
+      "kind": "native",
+      "outcome": "PASSED",
+      "seconds": 163.40454870898975,
+      "start_utc": "2026-09-13T02:57:18.429001+00:00",
+      "end_utc": "2026-09-13T03:00:01.834419+00:00"
+    },
+    {
+      "id": "demo01-cut-shot4-432-480-serial",
+      "kind": "native",
+      "outcome": "PASSED",
+      "seconds": 316.26289358298527,
+      "start_utc": "2026-09-13T03:00:01.883925+00:00",
+      "end_utc": "2026-09-13T03:05:18.152067+00:00"
+    },
+    {
+      "id": "demo01-cut-shot4-480-528-serial",
+      "kind": "native",
+      "outcome": "PASSED",
+      "seconds": 329.9663980829646,
+      "start_utc": "2026-09-13T03:05:18.201621+00:00",
+      "end_utc": "2026-09-13T03:10:48.169765+00:00"
+    },
+    {
+      "id": "demo01-cut-shot4-528-575-serial",
+      "kind": "native",
+      "outcome": "PASSED",
+      "seconds": 339.6560212909826,
+      "start_utc": "2026-09-13T03:10:48.215098+00:00",
+      "end_utc": "2026-09-13T03:16:27.872836+00:00"
+    },
+    {
+      "id": "demo01-cut-assembly",
+      "kind": "local",
+      "outcome": "PASSED",
+      "seconds": 4.152433042007033,
+      "start_utc": "2026-09-13T03:16:42.806601+00:00",
+      "end_utc": "2026-09-13T03:16:46.959216+00:00"
+    },
+    {
+      "id": "demo01-cut-media-audit",
+      "kind": "local",
+      "outcome": "PASSED",
+      "seconds": 4.697734916000627,
+      "start_utc": "2026-09-13T03:16:59.363701+00:00",
+      "end_utc": "2026-09-13T03:17:04.061503+00:00"
+    }
+  ],
+  "storage_free_gib": 8.174911499023438,
+  "timing_definition": "Native same-process monotonic durations are process-seconds, not CPU core time. Authorization-to-capture includes overlapping rendering and supervision and conservatively bounds active engineering; do not add them together."
+}

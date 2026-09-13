@@ -1,0 +1,668 @@
+{
+  "source_commit_before_work": "f05f0fa293cdf7749da085adcff8a589c3514027",
+  "dirty_implementation_binding": [
+    {
+      "path": "feasibility/demonstrator-01/ROUGH_CUT_BRIEF.md",
+      "sha256": "eefd56f172c58e1848a43c30b260e199027a4a9ddd03d174735ee421bc5f4558"
+    },
+    {
+      "path": "src/movie_factory/adapters/blender/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/movie_factory/adapters/blender/character_diagnostic.py",
+      "sha256": "655a656cb063486e74ef5fe3ab1b887cfd981a5020d0aa421b335f62fa20ac56"
+    },
+    {
+      "path": "src/movie_factory/adapters/blender/cut_phase_math.py",
+      "sha256": "ec1bf97ded53eb47d0183f1af2f8e2c44a1f27c9959bd14f15906758fa98cbc3"
+    },
+    {
+      "path": "src/movie_factory/adapters/blender/demo_asset.py",
+      "sha256": "d76ac167ce6d600974d2fb6c7236c9b5662f15fbdc0e6f7134eebe1325ac0e83"
+    },
+    {
+      "path": "src/movie_factory/adapters/blender/demo_closure.py",
+      "sha256": "8ce1765dcd1ea2d5f176c9578698056436086f9e736ce6ff61226dfc2eb56c53"
+    },
+    {
+      "path": "src/movie_factory/adapters/blender/demo_contact.py",
+      "sha256": "6392492ec4cf63c37167d3be62fd9f9acc4077efbef23e2a190b00523e1b61f2"
+    },
+    {
+      "path": "src/movie_factory/adapters/blender/demo_cut_check.py",
+      "sha256": "e5abb7eb106e021b85175ee5df43f853824bc2323a11f506b506d2547f0c3b8a"
+    },
+    {
+      "path": "src/movie_factory/adapters/blender/demo_cut_motion.py",
+      "sha256": "b9fb414692d8758b01ecb392391491edb895889db9f69446a0b6f03fa7a83355"
+    },
+    {
+      "path": "src/movie_factory/adapters/blender/demo_cut_world.py",
+      "sha256": "0ceeb90dd94921399d54284a6de0bcf1efbaa29647618e43c2ae8ff9ce82cadc"
+    },
+    {
+      "path": "src/movie_factory/adapters/blender/demo_forefoot_diagnosis.py",
+      "sha256": "55fa0bbdee2905ac793c80828da35f38b77cbf0d008d62a892cba3352b8b9c3c"
+    },
+    {
+      "path": "src/movie_factory/adapters/blender/demo_forefoot_pose.py",
+      "sha256": "60653abe1e1af18235dde7dc725a4f009aec104514367e83d13bdd45115a3abf"
+    },
+    {
+      "path": "src/movie_factory/adapters/blender/demo_fullpace.py",
+      "sha256": "dbe6733c48cd68f2db7c8006c384412585258fea06bdf2f5400597521451f8dc"
+    },
+    {
+      "path": "src/movie_factory/adapters/blender/demo_fullpace_replay.py",
+      "sha256": "e3fdcbeb50960a6342a1c4d582c465d7791ee0592d293dbba658ecd381e25103"
+    },
+    {
+      "path": "src/movie_factory/adapters/blender/demo_kinematic.py",
+      "sha256": "69f9c0ee0c2fa072b86f24dc7fb4a2382ca7ff7ef8b03c5b05374fe301d5fc47"
+    },
+    {
+      "path": "src/movie_factory/adapters/blender/demo_realism.py",
+      "sha256": "3f8b1aa42742df049eb2901123e8f75887c4989327bf399cde9f35267ae9b7f0"
+    },
+    {
+      "path": "src/movie_factory/adapters/blender/demo_realism_verify.py",
+      "sha256": "9c494636ba7b7c2d05816ad355d938f50546efb7ad2aacd53cdd8dbe20ab2d49"
+    },
+    {
+      "path": "src/movie_factory/adapters/blender/demo_riding.py",
+      "sha256": "4324d34b0aa5136c1e9edfc8c70036db5c42afd54f9d8054882ea320cd0ae01e"
+    },
+    {
+      "path": "src/movie_factory/adapters/blender/demo_source_gallop.py",
+      "sha256": "db9355f1b6ca3e30f73cc1f2fd44908b5f044e1e22b84662fae86e898a818755"
+    },
+    {
+      "path": "src/movie_factory/adapters/blender/demo_sustained.py",
+      "sha256": "b9982a3a5b23c5343344dd7a0fd63d4a3641cd2af8225c67d20dd38ee8016ecd"
+    },
+    {
+      "path": "src/movie_factory/adapters/blender/demo_sustained_finish.py",
+      "sha256": "5fd5511b83fae4e092880b5cdd3e04c87637ff8485ab9618652b07263a4c9c58"
+    },
+    {
+      "path": "src/movie_factory/adapters/blender/fullpace_fx.py",
+      "sha256": "f9a2b7079cd5c2a22e6ce3f5d60165010e17370ce3f53bbfc7afeb60315881ff"
+    },
+    {
+      "path": "src/movie_factory/adapters/blender/fullpace_math.py",
+      "sha256": "c116d2bbce8ee741b38742fec9f6b29cf141f373e5605c225d0e64e0f25a42d9"
+    },
+    {
+      "path": "src/movie_factory/adapters/blender/gesture.py",
+      "sha256": "2115e710c84bd4a8a35b1d187e97e6c8a403fe2fb6f8e70eebf5ef2b7632f646"
+    },
+    {
+      "path": "src/movie_factory/adapters/blender/inspect.py",
+      "sha256": "c2e413d5d8b05ee4fbc0a73a1e8b6dc08e98da699ce99ad7e5c53f3b20a7d4e6"
+    },
+    {
+      "path": "src/movie_factory/adapters/blender/interaction.py",
+      "sha256": "554f2a3474ba71547d1bcebd8e61e1327d4f97569bfea223db01adad6fa0b5fd"
+    },
+    {
+      "path": "src/movie_factory/adapters/blender/interaction_geometry.py",
+      "sha256": "9ae546272899787ac98f778242a1b306c22bc8bcf1546f3df215c69c76797540"
+    },
+    {
+      "path": "src/movie_factory/adapters/blender/runner.py",
+      "sha256": "2f308ae76c82be57dc76fa2bf92de9fe4c841e6277396159f3cfbffa73a9e735"
+    },
+    {
+      "path": "src/movie_factory/adapters/blender/source_gallop_math.py",
+      "sha256": "53f30390d77edf339062b1874d8bb0d184d9f52a79fcb9b0902fc47615f459fb"
+    },
+    {
+      "path": "src/movie_factory/adapters/blender/sustained_fx.py",
+      "sha256": "2ff4b533a347e27a99eccda319240f7e5521f90f3610fbcaf34cddb2294b0bcf"
+    },
+    {
+      "path": "src/movie_factory/adapters/blender/worker.py",
+      "sha256": "7f79e19a1c2828f9d46189768fe2498ff632fe879a255540bbc9a3cb0154c677"
+    },
+    {
+      "path": "src/movie_factory/providers/demonstrator.py",
+      "sha256": "e8dbbdb3ee44ccfb84bd2e23aadc99fef97195ca819548ac14dcdc97128cae14"
+    }
+  ],
+  "implementation_digest": "579703a8d468caa8c2452ee35adebcf33de85b9d52ffda9f0a417e94c4686ba5",
+  "scene": {
+    "asset_roles": {
+      "cameras": [
+        "Courier_Shot1",
+        "Courier_Shot2",
+        "Courier_Shot3",
+        "Courier_Shot4"
+      ],
+      "daylight": [
+        "Courier_WarmSun"
+      ],
+      "diagnostic_road": [
+        "diagnostic road"
+      ],
+      "dirt_strip": [
+        "Courier_DirtStrip"
+      ],
+      "farm": [
+        "Courier_Barn",
+        "Courier_BarnRoof",
+        "Courier_BarnDoor"
+      ],
+      "fences": [
+        "Courier_FenceRail_L_00",
+        "Courier_FenceRail_L_01",
+        "Courier_FenceRail_L_02",
+        "Courier_FenceRail_L_03",
+        "Courier_FenceRail_L_04",
+        "Courier_FenceRail_L_05",
+        "Courier_FenceRail_L_06",
+        "Courier_FenceRail_L_07",
+        "Courier_FenceRail_L_08",
+        "Courier_FenceRail_L_09",
+        "Courier_FenceRail_L_10",
+        "Courier_FenceRail_L_11",
+        "Courier_FenceRail_L_12",
+        "Courier_FenceRail_L_13",
+        "Courier_FenceRail_L_14",
+        "Courier_FenceRail_L_15",
+        "Courier_FenceRail_L_16",
+        "Courier_FenceRail_L_17",
+        "Courier_FenceRail_L_18",
+        "Courier_FenceRail_L_19",
+        "Courier_FenceRail_L_20",
+        "Courier_FenceRail_L_21",
+        "Courier_FenceRail_L_22",
+        "Courier_FenceRail_L_23",
+        "Courier_FenceRail_L_24",
+        "Courier_FenceRail_L_25",
+        "Courier_FenceRail_L_26",
+        "Courier_FenceRail_L_27",
+        "Courier_FenceRail_L_28",
+        "Courier_FenceRail_L_29",
+        "Courier_FenceRail_L_30",
+        "Courier_FenceRail_L_31",
+        "Courier_FenceRail_L_32",
+        "Courier_FenceRail_L_33",
+        "Courier_FenceRail_L_34",
+        "Courier_FenceRail_L_35",
+        "Courier_FenceRail_L_36",
+        "Courier_FenceRail_L_37",
+        "Courier_FenceRail_L_38",
+        "Courier_FenceRail_L_39",
+        "Courier_FenceRail_L_40",
+        "Courier_FenceRail_L_41",
+        "Courier_FenceRail_L_42",
+        "Courier_FenceRail_L_43",
+        "Courier_FenceRail_L_44",
+        "Courier_FenceRail_L_45",
+        "Courier_FencePost_L_00",
+        "Courier_FencePost_L_01",
+        "Courier_FencePost_L_02",
+        "Courier_FencePost_L_03",
+        "Courier_FencePost_L_04",
+        "Courier_FencePost_L_05",
+        "Courier_FencePost_L_06",
+        "Courier_FencePost_L_07",
+        "Courier_FencePost_L_08",
+        "Courier_FencePost_L_09",
+        "Courier_FencePost_L_10",
+        "Courier_FencePost_L_11",
+        "Courier_FencePost_L_12",
+        "Courier_FencePost_L_13",
+        "Courier_FencePost_L_14",
+        "Courier_FencePost_L_15",
+        "Courier_FencePost_L_16",
+        "Courier_FencePost_L_17",
+        "Courier_FencePost_L_18",
+        "Courier_FencePost_L_19",
+        "Courier_FencePost_L_20",
+        "Courier_FencePost_L_21",
+        "Courier_FencePost_L_22",
+        "Courier_FencePost_L_23",
+        "Courier_FencePost_L_24",
+        "Courier_FencePost_L_25",
+        "Courier_FencePost_L_26",
+        "Courier_FencePost_L_27",
+        "Courier_FencePost_L_28",
+        "Courier_FencePost_L_29",
+        "Courier_FencePost_L_30",
+        "Courier_FencePost_L_31",
+        "Courier_FencePost_L_32",
+        "Courier_FencePost_L_33",
+        "Courier_FencePost_L_34",
+        "Courier_FencePost_L_35",
+        "Courier_FencePost_L_36",
+        "Courier_FencePost_L_37",
+        "Courier_FencePost_L_38",
+        "Courier_FencePost_L_39",
+        "Courier_FencePost_L_40",
+        "Courier_FencePost_L_41",
+        "Courier_FencePost_L_42",
+        "Courier_FencePost_L_43",
+        "Courier_FencePost_L_44",
+        "Courier_FencePost_L_45",
+        "Courier_FencePost_L_46",
+        "Courier_FenceRail_R_00",
+        "Courier_FenceRail_R_01",
+        "Courier_FenceRail_R_02",
+        "Courier_FenceRail_R_03",
+        "Courier_FenceRail_R_04",
+        "Courier_FenceRail_R_05",
+        "Courier_FenceRail_R_06",
+        "Courier_FenceRail_R_07",
+        "Courier_FenceRail_R_08",
+        "Courier_FenceRail_R_09",
+        "Courier_FenceRail_R_10",
+        "Courier_FenceRail_R_11",
+        "Courier_FenceRail_R_12",
+        "Courier_FenceRail_R_13",
+        "Courier_FenceRail_R_14",
+        "Courier_FenceRail_R_15",
+        "Courier_FenceRail_R_16",
+        "Courier_FenceRail_R_17",
+        "Courier_FenceRail_R_18",
+        "Courier_FenceRail_R_19",
+        "Courier_FenceRail_R_20",
+        "Courier_FenceRail_R_21",
+        "Courier_FenceRail_R_22",
+        "Courier_FenceRail_R_23",
+        "Courier_FenceRail_R_24",
+        "Courier_FenceRail_R_25",
+        "Courier_FenceRail_R_26",
+        "Courier_FenceRail_R_27",
+        "Courier_FenceRail_R_28",
+        "Courier_FenceRail_R_29",
+        "Courier_FenceRail_R_30",
+        "Courier_FenceRail_R_31",
+        "Courier_FenceRail_R_32",
+        "Courier_FenceRail_R_33",
+        "Courier_FenceRail_R_34",
+        "Courier_FenceRail_R_35",
+        "Courier_FenceRail_R_36",
+        "Courier_FenceRail_R_37",
+        "Courier_FenceRail_R_38",
+        "Courier_FenceRail_R_39",
+        "Courier_FenceRail_R_40",
+        "Courier_FenceRail_R_41",
+        "Courier_FenceRail_R_42",
+        "Courier_FenceRail_R_43",
+        "Courier_FenceRail_R_44",
+        "Courier_FenceRail_R_45",
+        "Courier_FencePost_R_00",
+        "Courier_FencePost_R_01",
+        "Courier_FencePost_R_02",
+        "Courier_FencePost_R_03",
+        "Courier_FencePost_R_04",
+        "Courier_FencePost_R_05",
+        "Courier_FencePost_R_06",
+        "Courier_FencePost_R_07",
+        "Courier_FencePost_R_08",
+        "Courier_FencePost_R_09",
+        "Courier_FencePost_R_10",
+        "Courier_FencePost_R_11",
+        "Courier_FencePost_R_12",
+        "Courier_FencePost_R_13",
+        "Courier_FencePost_R_14",
+        "Courier_FencePost_R_15",
+        "Courier_FencePost_R_16",
+        "Courier_FencePost_R_17",
+        "Courier_FencePost_R_18",
+        "Courier_FencePost_R_19",
+        "Courier_FencePost_R_20",
+        "Courier_FencePost_R_21",
+        "Courier_FencePost_R_22",
+        "Courier_FencePost_R_23",
+        "Courier_FencePost_R_24",
+        "Courier_FencePost_R_25",
+        "Courier_FencePost_R_26",
+        "Courier_FencePost_R_27",
+        "Courier_FencePost_R_28",
+        "Courier_FencePost_R_29",
+        "Courier_FencePost_R_30",
+        "Courier_FencePost_R_31",
+        "Courier_FencePost_R_32",
+        "Courier_FencePost_R_33",
+        "Courier_FencePost_R_34",
+        "Courier_FencePost_R_35",
+        "Courier_FencePost_R_36",
+        "Courier_FencePost_R_37",
+        "Courier_FencePost_R_38",
+        "Courier_FencePost_R_39",
+        "Courier_FencePost_R_40",
+        "Courier_FencePost_R_41",
+        "Courier_FencePost_R_42",
+        "Courier_FencePost_R_43",
+        "Courier_FencePost_R_44",
+        "Courier_FencePost_R_45",
+        "Courier_FencePost_R_46"
+      ],
+      "hedgerows": [
+        "Courier_Hedge_00_00",
+        "Courier_Hedge_00_01",
+        "Courier_Hedge_00_02",
+        "Courier_Hedge_00_03",
+        "Courier_Hedge_00_04",
+        "Courier_Hedge_00_05",
+        "Courier_Hedge_00_06",
+        "Courier_Hedge_00_07",
+        "Courier_Hedge_00_08",
+        "Courier_Hedge_00_09",
+        "Courier_Hedge_00_10",
+        "Courier_Hedge_00_11",
+        "Courier_Hedge_00_12",
+        "Courier_Hedge_00_13",
+        "Courier_Hedge_00_14",
+        "Courier_Hedge_00_15",
+        "Courier_Hedge_01_00",
+        "Courier_Hedge_01_01",
+        "Courier_Hedge_01_02",
+        "Courier_Hedge_01_03",
+        "Courier_Hedge_01_04",
+        "Courier_Hedge_01_05",
+        "Courier_Hedge_01_06",
+        "Courier_Hedge_01_07",
+        "Courier_Hedge_01_08",
+        "Courier_Hedge_01_09",
+        "Courier_Hedge_01_10",
+        "Courier_Hedge_01_11",
+        "Courier_Hedge_01_12",
+        "Courier_Hedge_01_13",
+        "Courier_Hedge_01_14",
+        "Courier_Hedge_01_15",
+        "Courier_Hedge_02_00",
+        "Courier_Hedge_02_01",
+        "Courier_Hedge_02_02",
+        "Courier_Hedge_02_03",
+        "Courier_Hedge_02_04",
+        "Courier_Hedge_02_05",
+        "Courier_Hedge_02_06",
+        "Courier_Hedge_02_07",
+        "Courier_Hedge_02_08",
+        "Courier_Hedge_02_09",
+        "Courier_Hedge_02_10",
+        "Courier_Hedge_02_11",
+        "Courier_Hedge_02_12",
+        "Courier_Hedge_02_13",
+        "Courier_Hedge_02_14",
+        "Courier_Hedge_02_15"
+      ],
+      "meadow": [
+        "Courier_MeadowGround"
+      ],
+      "rolling_hills": [
+        "Courier_RollingHill_00",
+        "Courier_RollingHill_01",
+        "Courier_RollingHill_02",
+        "Courier_RollingHill_03",
+        "Courier_RollingHill_04"
+      ],
+      "signal_flag": [
+        "Courier_SignalFlag"
+      ],
+      "source_horse": [
+        "horse.rig",
+        "horse"
+      ],
+      "sustained_fx": [
+        "tail",
+        "dust"
+      ],
+      "tree_instances": [
+        "Courier_TreeTrunk_00",
+        "Courier_TreeCrown_00",
+        "Courier_TreeTrunk_01",
+        "Courier_TreeCrown_01",
+        "Courier_TreeTrunk_02",
+        "Courier_TreeCrown_02",
+        "Courier_TreeTrunk_03",
+        "Courier_TreeCrown_03",
+        "Courier_TreeTrunk_04",
+        "Courier_TreeCrown_04",
+        "Courier_TreeTrunk_05",
+        "Courier_TreeCrown_05",
+        "Courier_TreeTrunk_06",
+        "Courier_TreeCrown_06",
+        "Courier_TreeTrunk_07",
+        "Courier_TreeCrown_07",
+        "Courier_TreeTrunk_08",
+        "Courier_TreeCrown_08",
+        "Courier_TreeTrunk_09",
+        "Courier_TreeCrown_09",
+        "Courier_TreeTrunk_10",
+        "Courier_TreeCrown_10",
+        "Courier_TreeTrunk_11",
+        "Courier_TreeCrown_11",
+        "Courier_TreeTrunk_12",
+        "Courier_TreeCrown_12",
+        "Courier_TreeTrunk_13",
+        "Courier_TreeCrown_13",
+        "Courier_TreeTrunk_14",
+        "Courier_TreeCrown_14",
+        "Courier_TreeTrunk_15",
+        "Courier_TreeCrown_15",
+        "Courier_TreeTrunk_16",
+        "Courier_TreeCrown_16",
+        "Courier_TreeTrunk_17",
+        "Courier_TreeCrown_17"
+      ],
+      "watchtower": [
+        "Courier_TowerLeg_00",
+        "Courier_TowerLeg_01",
+        "Courier_TowerLeg_02",
+        "Courier_TowerLeg_03",
+        "Courier_TowerPlatform",
+        "Courier_TowerCabin",
+        "Courier_TowerRoof",
+        "Courier_FlagPole"
+      ]
+    },
+    "camera_positions": {
+      "shot1": {
+        "0": [
+          9.99909,
+          -10.73502,
+          17.03203
+        ],
+        "143": [
+          2.49909,
+          -77.23502,
+          3.23203
+        ],
+        "71": [
+          3.76006,
+          -42.07566,
+          5.55221
+        ]
+      },
+      "shot2": {
+        "144": [
+          10.49909,
+          -66.73502,
+          3.33203
+        ],
+        "227": [
+          10.49909,
+          -108.23502,
+          3.33203
+        ],
+        "311": [
+          10.49909,
+          -150.23502,
+          3.33203
+        ]
+      },
+      "shot3": {
+        "312": [
+          2.99909,
+          -147.73502,
+          3.23203
+        ],
+        "371": [
+          2.99909,
+          -177.23502,
+          3.23203
+        ],
+        "431": [
+          2.99909,
+          -207.23502,
+          3.23203
+        ]
+      },
+      "shot4": {
+        "432": [
+          19.99909,
+          -184.73502,
+          11.03203
+        ],
+        "503": [
+          21.4886,
+          -218.24901,
+          11.52853
+        ],
+        "575": [
+          22.99909,
+          -252.23502,
+          12.03203
+        ]
+      }
+    },
+    "duration_seconds": 24,
+    "film": "The Courier",
+    "fps": 24,
+    "frame_range": [
+      0,
+      576
+    ],
+    "head_reaction": {
+      "control": "rig/head",
+      "director_acceptance": "NOT_RUN",
+      "frames": [
+        334,
+        431
+      ],
+      "method": "source-basis quaternion offset; head only; captured before writing",
+      "nod_max_degrees": 4,
+      "performed": true,
+      "yaw_degrees": 18
+    },
+    "motion_sha256": "cdadffff569634fdde2314aa7c4cc946225b0a6936953fb9447ab7774d2bbfcd",
+    "preflight": [
+      {
+        "camera_position": [
+          9.999088,
+          -10.735016,
+          17.032026
+        ],
+        "frame": 0,
+        "image": "preflight/shot1_f0000.png",
+        "render_seconds": 6.9134,
+        "shot": "shot1"
+      },
+      {
+        "camera_position": [
+          6.249088,
+          -32.235016,
+          10.132027
+        ],
+        "frame": 48,
+        "image": "preflight/shot1_f0048.png",
+        "render_seconds": 6.8599,
+        "shot": "shot1"
+      },
+      {
+        "camera_position": [
+          2.499088,
+          -77.235016,
+          3.232027
+        ],
+        "frame": 143,
+        "image": "preflight/shot1_f0143.png",
+        "render_seconds": 7.7822,
+        "shot": "shot1"
+      },
+      {
+        "camera_position": [
+          10.499088,
+          -104.735016,
+          3.332027
+        ],
+        "frame": 220,
+        "image": "preflight/shot2_f0220.png",
+        "render_seconds": 4.151,
+        "shot": "shot2"
+      },
+      {
+        "camera_position": [
+          2.999088,
+          -177.735016,
+          3.232027
+        ],
+        "frame": 372,
+        "image": "preflight/shot3_f0372.png",
+        "render_seconds": 6.3495,
+        "shot": "shot3"
+      },
+      {
+        "camera_position": [
+          21.761326,
+          -224.385361,
+          11.61944
+        ],
+        "frame": 516,
+        "image": "preflight/shot4_f0516.png",
+        "render_seconds": 6.8217,
+        "shot": "shot4"
+      },
+      {
+        "camera_position": [
+          22.999088,
+          -252.235016,
+          12.032026
+        ],
+        "frame": 575,
+        "image": "preflight/shot4_f0575.png",
+        "render_seconds": 7.2922,
+        "shot": "shot4"
+      }
+    ],
+    "scene_path": "/Users/adisharma/projects/MovieUniverseFactory/runs/demonstrator-01/cut-world-v4/scene.blend",
+    "scene_sha256": "7248f9dfecef3e9ece309c08055ab53ee6d802abe0a0e01307c7f9d8b93fd73e",
+    "shot_ranges": {
+      "shot1": [
+        0,
+        144
+      ],
+      "shot2": [
+        144,
+        312
+      ],
+      "shot3": [
+        312,
+        432
+      ],
+      "shot4": [
+        432,
+        576
+      ]
+    },
+    "source_path": "/Users/adisharma/projects/MovieUniverseFactory/runs/demonstrator-01/cut-motion/scene.blend",
+    "source_sha256": "ab14f8cfcf7e075244f25b571a3655c17de008e84b5c072a6bb74bd8a6a487f0"
+  },
+  "contract": {
+    "fps": 24,
+    "frames": 576,
+    "seconds": 24,
+    "resolution": [
+      960,
+      540
+    ],
+    "director_review": "NOT_RUN",
+    "type": "development rough cut, not a newly scored qualification campaign"
+  },
+  "free_gib_at_freeze": 6.020328521728516
+}

@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "command": "/usr/local/bin/node results/demonstrator-01/rough-cut/test_player.cjs",
+  "checks": [
+    "label waits for loaded PNG",
+    "out-of-order load cannot overwrite newer frame",
+    "hidden video callback cannot overwrite source label",
+    "video label follows presented timestamp",
+    "source index clamps to final frame"
+  ],
+  "scope": "isolated JavaScript behavior, not a full-browser playback qualification"
+}
