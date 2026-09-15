@@ -24,7 +24,7 @@ def validate(job):
         raise ValueError('Unapproved output path')
     p = job['profile']
     keys = {'source_sha256','start','duration_frames','offset_start','offset_end','target_offset','lens_mm','operation'}
-    if not isinstance(p,dict) or set(p) != keys: raise ValueError('Invalid profile keys')
+    if not isinstance(p,dict) or set(p) not in (keys, keys|{'camera_path'}): raise ValueError('Invalid profile keys')
     if p['source_sha256'] != BASE_SHA: raise ValueError('Unadmitted source')
     if type(p['start']) is not int or type(p['duration_frames']) is not int:
         raise ValueError('Integer timeline required')
@@ -38,12 +38,34 @@ def validate(job):
         bounds = [(-3,3),(-6,6),(-2,3)] if key=='target_offset' else [(-25,25),(-30,30),(0,20)]
         if not all(number(x,*b) for x,b in zip(v,bounds)):raise ValueError('Camera coordinates outside bounds')
     if not number(p['lens_mm'],24,70):raise ValueError('Lens outside 24–70mm')
-    # Distance to aim point must remain safe along the full interpolated path.
-    for i in range(101):
-        t=i/100
-        d=[p['offset_start'][j]*(1-t)+p['offset_end'][j]*t-p['target_offset'][j] for j in range(3)]
-        if sum(x*x for x in d)<9:raise ValueError('Camera must stay at least 3m from aim point')
+    path=p.get('camera_path',[{'at':0,'offset':p['offset_start']},{'at':1,'offset':p['offset_end']}])
+    if not isinstance(path,list) or not 2<=len(path)<=6:raise ValueError('Camera path needs2–6 knots')
+    previous=-1
+    for knot in path:
+        if not isinstance(knot,dict) or set(knot)!={'at','offset'}:raise ValueError('Invalid camera knot')
+        if not number(knot['at'],0,1) or knot['at']<=previous:raise ValueError('Strictly increasing camera times required')
+        previous=knot['at'];v=knot['offset']
+        if not isinstance(v,list) or len(v)!=3 or not all(number(x,*b) for x,b in zip(v,[(-25,25),(-30,30),(0,20)])):
+            raise ValueError('Camera knot outside bounded coordinates')
+    if path[0]['at']!=0 or path[-1]['at']!=1:raise ValueError('Camera path must span entire shot')
+    if path[0]['offset']!=p['offset_start'] or path[-1]['offset']!=p['offset_end']:raise ValueError('Endpoint mismatch')
+    # Exact minimum along each line segment; smoothstep traverses the same segment.
+    for a,b in zip(path,path[1:]):
+        d=[a['offset'][j]-p['target_offset'][j] for j in range(3)]
+        v=[b['offset'][j]-a['offset'][j] for j in range(3)]
+        den=sum(x*x for x in v)
+        u=max(0,min(1,-sum(x*y for x,y in zip(d,v))/den)) if den else 0
+        if sum((x+u*y)**2 for x,y in zip(d,v))<9:raise ValueError('Camera must stay at least3m from aim point')
     return out,p
+
+def camera_offset(p,t):
+    """Piecewise C1 relative travel; repeated offsets produce explicit holds."""
+    path=p.get('camera_path',[{'at':0,'offset':p['offset_start']},{'at':1,'offset':p['offset_end']}])
+    for a,b in zip(path,path[1:]):
+        if t<=b['at']:
+            u=max(0,min(1,(t-a['at'])/(b['at']-a['at'])));u=u*u*(3-2*u)
+            return [x+(y-x)*u for x,y in zip(a['offset'],b['offset'])]
+    return list(path[-1]['offset'])
 
 def stable_property(value):
     if value is None or isinstance(value,(str,int,float,bool)):return value
@@ -96,9 +118,9 @@ def run(mf,out,job,helper):
     cam.rotation_mode='QUATERNION';previous=None
     start=p['start'];end=start+p['duration_frames']
     for frame in range(start,end):
-        t=(frame-start)/(p['duration_frames']-1);t=t*t*(3-2*t)
+        t=(frame-start)/(p['duration_frames']-1)
         body=origin+Vector((0,-12*frame/24,0))
-        cam.location=body+Vector(p['offset_start']).lerp(Vector(p['offset_end']),t)
+        cam.location=body+Vector(camera_offset(p,t))
         q=(body+Vector(p['target_offset'])-cam.location).to_track_quat('-Z','Y')
         if previous is not None and q.dot(previous)<0:q.negate()
         cam.rotation_quaternion=q;previous=q.copy()
@@ -121,6 +143,10 @@ def run(mf,out,job,helper):
     scene.render.film_transparent=False
     bpy.ops.wm.save_as_mainfile(filepath=str(output/'scene.blend'),compress=True)
     frames=range(start,start+3) if p['operation']=='smoke' else ([start+p['duration_frames']//2] if p['operation']=='replay' else range(start,end))
+    if p['operation']=='clip':
+        # Early camera-extreme coverage; reuse these frames in the final sequence.
+        probes=list(dict.fromkeys([start,start+int(.35*(end-start-1)),start+int(.52*(end-start-1)),end-1]))
+        frames=probes+[f for f in frames if f not in probes]
     # Always reopen saved derived scene before rendering, also checking protected binding.
     bpy.ops.wm.open_mainfile(filepath=str(output/'scene.blend'),load_ui=False,use_scripts=False)
     scene=bpy.context.scene;helper._refresh(scene,mf,0)

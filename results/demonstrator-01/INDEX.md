@@ -28,4 +28,8 @@ Historical [Stage A](stage-a/) failures and previews remain retained and superse
 
 The accepted rough-cut episode is administratively closed YELLOW at the actual closure time, with Director PASS preserved separately. Original charter completion is not claimed. Director approval now replaces the original Stage D obligation with narrowed Part B; original requirements are not retroactively marked passed. See [approval and reuse episode](reuse-01/authorization.json).
 
-**Blender adoption: ADOPTED** for the demonstrated persistent production backbone, following the Director’s approval of the presented recommendation. **Factory reuse: NOT DEMONSTRATED.** The bounded setup closed YELLOW because the measured full-clip forecast exceeded remaining native budget. See [reuse report](reuse-01/REPORT.md). **Private backup: NOT_TRANSFERRED**, destination/cost approval pending. No push or asset transfer was performed.
+**Blender adoption: ADOPTED** for the demonstrated persistent production backbone, following the Director’s approval of the presented recommendation. **Factory reuse: CODE_ASSISTED PREVIEW / Director review pending.** Original parameter-only reuse remains not demonstrated. Prior setup stays closed YELLOW under its original budget; the Director approved90 cumulative native minutes. The multi-stage camera exceeded the frozen interface and is delivered as a disclosed [camera-only successor](reuse-camera/REPORT.md). **Private backup: NOT_TRANSFERRED**, destination/cost approval pending. No push or asset transfer was performed.
+
+## Current camera-only successor
+
+The Director narrowed the next request to the multistage5-second camera preview. See [current delivery](reuse-camera/REPORT.md). This is a disclosed code-assisted extension; it does not convert the original parameter-only reuse test into a pass. Remaining production changes are [captured for later](../../docs/planning/NEXT_PRODUCTION_EXPERIMENT_BRIEF.md), not started.

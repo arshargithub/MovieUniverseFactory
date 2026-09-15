@@ -1,0 +1,68 @@
+{
+  "utc": "2026-09-15T16:09:10.454895+00:00",
+  "classification": "CODE_ASSISTED; parameter-only reuse NOT_DEMONSTRATED",
+  "delivery": "five-second120-frame camera-only preview",
+  "director_acceptance": "PENDING",
+  "director_review_duration_seconds": null,
+  "protected_fingerprint": "70e1d04b712f958b82eff1afd8a5cc1a1dd0079c41961d8d4005d1f513787b09",
+  "protected_reopen": true,
+  "accepted_scene_and_film_unchanged": true,
+  "new_runtime_matches_successor_freeze": true,
+  "runtime_digest": "6615cb3a33374d7d53ea9f3b0ac6ba36652cfc8d5b6aeb4d608f37de733fcebe",
+  "all_original_reuse_native_seconds": 1558.7786612918717,
+  "native_ceiling_seconds": 5400,
+  "shot_native_seconds": 767.91118783399,
+  "native_jobs": [
+    {
+      "name": "smoke",
+      "ok": false,
+      "seconds": 36.456496458966285
+    },
+    {
+      "name": "smoke-retry",
+      "ok": false,
+      "seconds": 106.11406566598453
+    },
+    {
+      "name": "smoke-diagnostic",
+      "ok": false,
+      "seconds": 114.98664799996186
+    },
+    {
+      "name": "smoke-fixed",
+      "ok": true,
+      "seconds": 168.36687058297684
+    },
+    {
+      "name": "replay",
+      "ok": true,
+      "seconds": 136.15657629200723
+    },
+    {
+      "name": "smoke-timing",
+      "ok": true,
+      "seconds": 228.78681645798497
+    },
+    {
+      "name": "shot",
+      "ok": true,
+      "seconds": 767.91118783399
+    }
+  ],
+  "api_calls": 0,
+  "api_cost_usd": 0,
+  "free_disk_GiB": 6.479740142822266,
+  "replay": {
+    "status": "PIXEL_DIFFERENCE_RECORDED",
+    "global_frame": 204,
+    "preview_frame": 60,
+    "original": "runs/demonstrator-01/reuse-01/shot/frame_0204.png",
+    "replay": "runs/demonstrator-01/reuse-01/replay/frame_0204.png",
+    "rms_channel_difference_255": 0.006804138174397717,
+    "max_channel_difference_255": 1.0,
+    "png_hash_equal": false,
+    "protected_state_matches": true,
+    "method": "Independently rebuild derived camera scene with frozen structured request, save/reopen, render selected frame. No paid calls. Exact pixels evaluated separately from PNG metadata."
+  },
+  "future_production_executed": false
+}

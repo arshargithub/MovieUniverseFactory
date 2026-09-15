@@ -1,0 +1,68 @@
+{
+  "mode": "demo_reuse",
+  "output_dir": "/Users/adisharma/projects/MovieUniverseFactory/runs/demonstrator-01/reuse-01/replay",
+  "profile": {
+    "source_sha256": "7248f9dfecef3e9ece309c08055ab53ee6d802abe0a0e01307c7f9d8b93fd73e",
+    "start": 144,
+    "duration_frames": 120,
+    "offset_start": [
+      0,
+      12,
+      20
+    ],
+    "offset_end": [
+      -3,
+      -10,
+      1.8
+    ],
+    "target_offset": [
+      0,
+      0,
+      0
+    ],
+    "lens_mm": 32,
+    "operation": "replay",
+    "camera_path": [
+      {
+        "at": 0,
+        "offset": [
+          0,
+          12,
+          20
+        ]
+      },
+      {
+        "at": 0.35,
+        "offset": [
+          -10,
+          0,
+          2.2
+        ]
+      },
+      {
+        "at": 0.52,
+        "offset": [
+          -10,
+          0,
+          2.2
+        ]
+      },
+      {
+        "at": 0.84,
+        "offset": [
+          -3,
+          -10,
+          1.8
+        ]
+      },
+      {
+        "at": 1,
+        "offset": [
+          -3,
+          -10,
+          1.8
+        ]
+      }
+    ]
+  }
+}
