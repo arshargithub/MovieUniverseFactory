@@ -37,3 +37,7 @@ The Director narrowed the next request to the multistage5-second camera preview.
 ## Latest camera revision
 
 [Continuous five-second camera move](reuse-camera-revision/REPORT.md) supersedes the phased preview for current Director review. The earlier version and feedback remain preserved. This remains code-assisted, not a parameter-only reuse pass. [S3 archive setup requirements](../../docs/planning/S3_ARCHIVE_SETUP.md) are documented; no cloud transfer or deletion has occurred.
+
+## Continuous camera accepted
+
+The Director accepted the smoother camera revision. [Acceptance and disposition](reuse-camera-revision/DIRECTOR_ACCEPTANCE.md): closed YELLOW, accepted code-assisted result; original parameter-only reuse remains not demonstrated. This supersedes review-pending language in earlier timestamped records.

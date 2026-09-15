@@ -1,0 +1,50 @@
+[
+  {
+    "episode_id": "reuse-camera",
+    "event_id": "camera-continuous-review-received",
+    "event_type": "wait_ended",
+    "evidence_ref": "results/demonstrator-01/reuse-camera-revision/director-acceptance.json",
+    "experiment_id": "DEMONSTRATOR-01",
+    "phase": "director-acceptance",
+    "reason": "director_response",
+    "run_id": null,
+    "schema_version": "1.0",
+    "task_id": null,
+    "turn_id": null,
+    "utc": "2026-09-15T20:11:48.691464+00:00",
+    "wait_id": "camera-continuous-review"
+  },
+  {
+    "decision": "DIRECTOR_ACCEPTED",
+    "duration_seconds": null,
+    "episode_id": "reuse-camera",
+    "event_id": "camera-continuous-director-acceptance",
+    "event_type": "human_review",
+    "evidence_ref": "results/demonstrator-01/reuse-camera-revision/director-acceptance.json",
+    "experiment_id": "DEMONSTRATOR-01",
+    "phase": "director-acceptance",
+    "reason": null,
+    "run_id": null,
+    "schema_version": "1.0",
+    "task_id": null,
+    "turn_id": null,
+    "utc": "2026-09-15T20:11:48.692109+00:00"
+  },
+  {
+    "director_outputs": 1,
+    "disposition": "YELLOW",
+    "episode_id": "reuse-camera",
+    "event_id": "camera-continuous-closed",
+    "event_type": "close",
+    "evidence_ref": "results/demonstrator-01/reuse-camera-revision/director-acceptance.json",
+    "experiment_id": "DEMONSTRATOR-01",
+    "phase": "director-acceptance",
+    "reason": "Director accepts smoother camera result; code-assisted, parameter-only reuse not demonstrated",
+    "run_id": null,
+    "schema_version": "1.0",
+    "task_id": null,
+    "technical_outputs": 1,
+    "turn_id": null,
+    "utc": "2026-09-15T20:11:48.692507+00:00"
+  }
+]
