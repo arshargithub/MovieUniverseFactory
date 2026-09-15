@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "verified_at": "2026-09-15T20:46:55.729271+00:00",
+  "bucket": "movie-factory-archive",
+  "prefix": "movie-factory/history/closed-3d-v1/",
+  "manifest": {
+    "local_path": "results/archive/closed-3d-01-through-06a-manifest.json",
+    "sha256": "34d73afc2b9f2a4eadd39099f3bacf37d8fcfea244eaa65577898e0ff5541b04",
+    "bytes": 13152126,
+    "remote_version_id": "m1Oci37AlHOxPnSLlJJ74baksGJ4B51M",
+    "remote_checksum_type": "COMPOSITE",
+    "remote_checksum_matches": true,
+    "streamed_restore_verified": true
+  },
+  "inventory": {
+    "path_count": 31378,
+    "object_count": 15788,
+    "object_bytes": 30772370396,
+    "exact_key_and_size_match": true,
+    "missing": 0,
+    "unexpected": 0,
+    "size_mismatches": 0
+  },
+  "checksum_samples": [
+    {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "checksum_type": "FULL_OBJECT",
+      "ordinary_sha256_comparable": true,
+      "checksum_matches": true
+    },
+    {
+      "sha256": "be8946aa5951df6edb18a76142ccd1ef9ed637516bfe19c5695e8ae60d7fba35",
+      "bytes": 1066,
+      "checksum_type": "FULL_OBJECT",
+      "ordinary_sha256_comparable": true,
+      "checksum_matches": true
+    },
+    {
+      "sha256": "c768763b51b104551d5ab153f3c7844f6fce6db2c6e738a9fb22981d438df364",
+      "bytes": 261960,
+      "checksum_type": "FULL_OBJECT",
+      "ordinary_sha256_comparable": true,
+      "checksum_matches": true
+    },
+    {
+      "sha256": "ebb4a3feae76d165833c0ff6285cf31525facdc1f7f1a61eef13c08585459dbf",
+      "bytes": 450490,
+      "checksum_type": "FULL_OBJECT",
+      "ordinary_sha256_comparable": true,
+      "checksum_matches": true
+    },
+    {
+      "sha256": "efcf0f66d6b6e6497dd1c4fdfb667b74a3d633240c1d72efbaefa3785c2d02d0",
+      "bytes": 536870912,
+      "checksum_type": "COMPOSITE",
+      "ordinary_sha256_comparable": false,
+      "checksum_matches": null
+    }
+  ],
+  "streamed_restore": {
+    "sha256": "ee388aa2e8cf507b3835296e115e1ebc4977a4dd7adac21a92b220cbeaf57310",
+    "bytes": 93266197,
+    "matches": true
+  },
+  "local_deletion_authorized": false
+}
