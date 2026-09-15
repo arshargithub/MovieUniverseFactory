@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "completed_on": "2026-09-15",
+  "authorization": "explicit Director approval",
+  "archive_verification_receipt": "results/archive/closed-3d-v1-remote-verification.json",
+  "deleted": [
+    "runs/3d*",
+    "untracked large contents of exports/",
+    ".runtime/assets/3d-02",
+    ".runtime/assets/3d-03",
+    ".runtime/archive-stage/closed-3d-v1"
+  ],
+  "retained": [
+    "exports/3d05-closure-v1-supplement",
+    "feasibility/3d",
+    "results/3d*",
+    "results/archive",
+    "src",
+    "tests",
+    "runs/demonstrator-01",
+    ".runtime/assets/demonstrator-01"
+  ],
+  "verification": {
+    "remaining_top_level_runs_matching_3d_prefix": 0,
+    "active_demonstrator_run_present": true,
+    "active_demonstrator_assets_present": true,
+    "tracked_file_deletions_remaining": 0
+  },
+  "disk": {
+    "free_before_gib_approx": 7.7,
+    "free_after_gib_approx": 38.0,
+    "physical_recovered_gib_approx": 30.3,
+    "selected_logical_size_gib_approx": 58.83,
+    "note": "Logical file sizes exceeded exclusive physical blocks because the filesystem shared storage through hard links or clones."
+  }
+}

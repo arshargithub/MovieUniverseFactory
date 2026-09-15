@@ -1,7 +1,7 @@
 # Closed 3D experiment S3 archive
 
-Status: uploaded and independently verified on 2026-09-15; local deletion is
-not included. Bucket: private
+Status: uploaded and independently verified on 2026-09-15. The separately
+approved local cleanup completed on the same date. Bucket: private
 `movie-factory-archive` in `ca-central-1`, prefix
 `movie-factory/history/closed-3d-v1/`.
 
@@ -50,3 +50,16 @@ The first sync encountered a transient S3 endpoint interruption. It was stopped
 after the connection failed, then resumed idempotently after connectivity was
 confirmed. The resumed sync completed successfully and the independent audit
 above verified the final state.
+
+## Local cleanup result
+
+After separate Director approval, the archived `runs/3d*` trees, large closed
+exports, staged 3D-02/03 assets and temporary content-addressed staging tree
+were removed locally. A small tracked 3D-05 closure supplement was restored
+from Git and retained. Source, tests, specifications, results, archive
+manifests and the active Demonstrator run/assets remain local.
+
+Available disk space increased from approximately 7.7 GiB to 38 GiB. The
+physical recovery was lower than the 58.83 GiB logical file total because the
+filesystem shared some underlying blocks. See `closed-3d-v1-local-cleanup.json`
+for the machine-readable receipt.
