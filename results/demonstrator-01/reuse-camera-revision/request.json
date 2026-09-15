@@ -1,0 +1,61 @@
+{
+  "mode": "demo_reuse",
+  "output_dir": "/Users/adisharma/projects/MovieUniverseFactory/runs/demonstrator-01/reuse-01/revision",
+  "profile": {
+    "source_sha256": "7248f9dfecef3e9ece309c08055ab53ee6d802abe0a0e01307c7f9d8b93fd73e",
+    "start": 144,
+    "duration_frames": 120,
+    "offset_start": [
+      0,
+      12,
+      20
+    ],
+    "offset_end": [
+      -3,
+      -10,
+      1.8
+    ],
+    "target_offset": [
+      0,
+      0,
+      0
+    ],
+    "lens_mm": 32,
+    "operation": "clip",
+    "camera_path": [
+      {
+        "at": 0,
+        "offset": [
+          0,
+          12,
+          20
+        ]
+      },
+      {
+        "at": 0.55,
+        "offset": [
+          -11,
+          1,
+          4.5
+        ]
+      },
+      {
+        "at": 0.7,
+        "offset": [
+          -9,
+          -2,
+          2.5
+        ]
+      },
+      {
+        "at": 1,
+        "offset": [
+          -3,
+          -10,
+          1.8
+        ]
+      }
+    ],
+    "path_interpolation": "continuous"
+  }
+}

@@ -56,3 +56,27 @@ def test_bad_path(change):
  if change=='endpoint':knots[-1]['at']=.99
  if change=='too_many':p['camera_path']=knots*2
  with pytest.raises(ValueError):validate(j)
+
+def continuous():
+ j=multistage();p=j['profile'];p['path_interpolation']='continuous'
+ p['camera_path']=[{'at':0,'offset':p['offset_start']},{'at':.55,'offset':[-11,1,4.5]},{'at':.7,'offset':[-9,-2,2.5]},{'at':1,'offset':p['offset_end']}]
+ return j
+
+def test_continuous_path_moves_through_interior_knots():
+ from movie_factory.adapters.blender.demo_reuse import camera_offset
+ p=validate(continuous())[1]
+ for t in [.55,.7]:
+  eps=1e-6;left=camera_offset(p,t-eps);mid=camera_offset(p,t);right=camera_offset(p,t+eps)
+  vl=[(m-l)/eps for l,m in zip(left,mid)];vr=[(r-m)/eps for m,r in zip(mid,right)]
+  assert sum(v*v for v in vl)>1
+  assert max(abs(x-y) for x,y in zip(vl,vr))<.01
+ for i in range(1001):
+  t=i/1000;v=camera_offset(p,t)
+  assert sum(x*x for x in v)>=9
+  for a,b in zip(p['camera_path'],p['camera_path'][1:]):
+   if a['at']<=t<=b['at']:
+    assert all(min(x,y)-1e-9<=z<=max(x,y)+1e-9 for x,y,z in zip(a['offset'],b['offset'],v))
+
+def test_unknown_interpolator_rejected():
+ j=continuous();j['profile']['path_interpolation']='python'
+ with pytest.raises(ValueError):validate(j)

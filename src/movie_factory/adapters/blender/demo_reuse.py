@@ -24,7 +24,8 @@ def validate(job):
         raise ValueError('Unapproved output path')
     p = job['profile']
     keys = {'source_sha256','start','duration_frames','offset_start','offset_end','target_offset','lens_mm','operation'}
-    if not isinstance(p,dict) or set(p) not in (keys, keys|{'camera_path'}): raise ValueError('Invalid profile keys')
+    if not isinstance(p,dict) or not keys.issubset(p) or set(p)-keys-{'camera_path','path_interpolation'}: raise ValueError('Invalid profile keys')
+    if p.get('path_interpolation','smoothstep') not in {'smoothstep','continuous'}:raise ValueError('Invalid path interpolation')
     if p['source_sha256'] != BASE_SHA: raise ValueError('Unadmitted source')
     if type(p['start']) is not int or type(p['duration_frames']) is not int:
         raise ValueError('Integer timeline required')
@@ -56,11 +57,34 @@ def validate(job):
         den=sum(x*x for x in v)
         u=max(0,min(1,-sum(x*y for x,y in zip(d,v))/den)) if den else 0
         if sum((x+u*y)**2 for x,y in zip(d,v))<9:raise ValueError('Camera must stay at least3m from aim point')
+    if p.get('path_interpolation')=='continuous':
+        # Coordinate-wise monotone Hermite stays within endpoint bounds. Reject if
+        # the conservative segment box can approach the target within3m.
+        for a,b in zip(path,path[1:]):
+            gap=[max(min(x,y)-q,0,q-max(x,y)) for x,y,q in zip(a['offset'],b['offset'],p['target_offset'])]
+            if sum(x*x for x in gap)<9:raise ValueError('Continuous path clearance is not conservatively established')
     return out,p
 
 def camera_offset(p,t):
     """Piecewise C1 relative travel; repeated offsets produce explicit holds."""
     path=p.get('camera_path',[{'at':0,'offset':p['offset_start']},{'at':1,'offset':p['offset_end']}])
+    if p.get('path_interpolation')=='continuous':
+        h=[b['at']-a['at'] for a,b in zip(path,path[1:])]
+        slopes=[]
+        for axis in range(3):
+            d=[(b['offset'][axis]-a['offset'][axis])/dt for a,b,dt in zip(path,path[1:],h)]
+            m=[0.0]
+            for i in range(1,len(path)-1):
+                if d[i-1]*d[i]<=0:m.append(0.0)
+                else:
+                    w1=2*h[i]+h[i-1];w2=h[i]+2*h[i-1]
+                    m.append((w1+w2)/(w1/d[i-1]+w2/d[i]))
+            m.append(0.0);slopes.append(m)
+        for i,(a,b) in enumerate(zip(path,path[1:])):
+            if t<=b['at']:
+                u=max(0,min(1,(t-a['at'])/h[i]));u2=u*u;u3=u2*u
+                return [(2*u3-3*u2+1)*a['offset'][j]+(u3-2*u2+u)*h[i]*slopes[j][i]+(-2*u3+3*u2)*b['offset'][j]+(u3-u2)*h[i]*slopes[j][i+1] for j in range(3)]
+        return list(path[-1]['offset'])
     for a,b in zip(path,path[1:]):
         if t<=b['at']:
             u=max(0,min(1,(t-a['at'])/(b['at']-a['at'])));u=u*u*(3-2*u)
