@@ -1,7 +1,7 @@
 """Bounded existing-fixture full-pace diagnostics; no runtime code input."""
 from pathlib import Path
 import bpy
-BASE=Path('/Users/adisharma/projects/MovieUniverseFactory/runs/demonstrator-01/realism-motion')
+BASE=Path(__file__).resolve().parents[4]/'runs/demonstrator-01/realism-motion'
 SHA='37594a7ef2d59e5dcc9af42c332f28ab41e86e78f78a60e6bd5ff9e2a7ca961e'
 
 def audit(mf,out,job,helper):

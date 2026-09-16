@@ -1,7 +1,7 @@
 """Fixed deformation closure differential; no generated execution input."""
 from pathlib import Path
 import bpy,importlib.util,math
-BASE=Path('/Users/adisharma/projects/MovieUniverseFactory/runs/demonstrator-01')
+BASE=Path(__file__).resolve().parents[4]/'runs/demonstrator-01'
 def run(mf,out,job,helper):
  if set(job)!={'mode','output_dir','profile'} or job['mode']!='demo_sustained_closure' or job['profile']!={}:raise ValueError('Invalid fixed closure')
  out=Path(out)

@@ -4,8 +4,8 @@ No imported code or arbitrary paths; the historical centroid diagnostic is retai
 from pathlib import Path
 import json,math,bpy
 from mathutils import Vector
-BASE=Path('/Users/adisharma/projects/MovieUniverseFactory/runs/demonstrator-01')
-ROOT=BASE.parents[1]
+ROOT=Path(__file__).resolve().parents[4]
+BASE=ROOT/'runs/demonstrator-01'
 def run(mf,out,job,helper):
  if set(job)!={'mode','output_dir','profile'} or job['mode'] not in ('demo_cut_check','demo_cut_contact_control','demo_cut_final_check') or job['profile']!={}:raise ValueError('Fixed cut verification operation required')
  out=Path(out).resolve()

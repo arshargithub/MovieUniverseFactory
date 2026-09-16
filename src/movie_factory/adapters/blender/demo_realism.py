@@ -3,7 +3,7 @@ import json
 from pathlib import Path
 import bpy
 from mathutils import Vector
-BASE=Path('/Users/adisharma/projects/MovieUniverseFactory/runs/demonstrator-01/free-motion-v2-retry')
+BASE=Path(__file__).resolve().parents[4]/'runs/demonstrator-01/free-motion-v2-retry'
 SHA='32518f65560d6bdf9c08d200dbc4061e8fd890e4fe768d83d598dfd7b001a174'
 
 def audit(mf,out,job,helper):

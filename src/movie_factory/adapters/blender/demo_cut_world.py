@@ -11,7 +11,7 @@ from pathlib import Path
 import bpy
 from mathutils import Vector, Quaternion
 
-ROOT = "/Users/adisharma/projects/MovieUniverseFactory"
+ROOT = str(Path(__file__).resolve().parents[4])
 RUN_ROOT = os.path.join(ROOT, "runs", "demonstrator-01")
 SOURCE_BLEND = os.path.join(RUN_ROOT, "cut-motion", "scene.blend")
 MOTION_JSON = os.path.join(RUN_ROOT, "cut-motion", "motion.json")

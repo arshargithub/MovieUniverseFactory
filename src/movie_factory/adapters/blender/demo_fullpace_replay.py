@@ -2,7 +2,7 @@
 from pathlib import Path
 import json
 import bpy
-BASE=Path('/Users/adisharma/projects/MovieUniverseFactory/runs/demonstrator-01')
+BASE=Path(__file__).resolve().parents[4]/'runs/demonstrator-01'
 SCENE_SHA='37594a7ef2d59e5dcc9af42c332f28ab41e86e78f78a60e6bd5ff9e2a7ca961e'
 RECORD_SHA='cc43617fb765512a6ee7882246c398d718bd6725f08f1cde23ca5a737f8eac8c'
 

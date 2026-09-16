@@ -6,7 +6,7 @@ import math
 import shutil
 import time
 
-ROOT = Path('/Users/adisharma/projects/MovieUniverseFactory')
+ROOT = Path(__file__).resolve().parents[4]
 BASE = ROOT/'runs/demonstrator-01/cut-world-v4/scene.blend'
 BASE_SHA = '7248f9dfecef3e9ece309c08055ab53ee6d802abe0a0e01307c7f9d8b93fd73e'
 OUTPUT = ROOT/'runs/demonstrator-01/reuse-01'

@@ -2,8 +2,8 @@
 from pathlib import Path
 import json,math,time,importlib.util,bpy
 from mathutils import Vector
-BASE=Path('/Users/adisharma/projects/MovieUniverseFactory/runs/demonstrator-01')
-ROOT=BASE.parents[1]
+ROOT=Path(__file__).resolve().parents[4]
+BASE=ROOT/'runs/demonstrator-01'
 def run(mf,out,job,helper):
  if set(job)!={'mode','output_dir','profile'} or job['mode'] not in ('demo_sustained_check','demo_sustained_fx','demo_sustained_render','demo_sustained_look','demo_sustained_contact_control'):raise ValueError('Fixed finish operation required')
  out=Path(out).resolve()

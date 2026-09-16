@@ -4,7 +4,7 @@ import importlib.util
 import math
 import bpy
 
-BASE=Path('/Users/adisharma/projects/MovieUniverseFactory/runs/demonstrator-01')
+BASE=Path(__file__).resolve().parents[4]/'runs/demonstrator-01'
 
 def diagnose(mf,out,job,helper):
     if set(job)!={'mode','output_dir','profile'} or job['mode']!='demo_forefoot_diagnosis' or job['profile']!={}:raise ValueError('Fixed diagnosis required')

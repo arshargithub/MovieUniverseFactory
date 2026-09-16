@@ -3,7 +3,7 @@ from pathlib import Path
 import json,math,time
 import bpy
 from mathutils import Matrix,Vector
-BASE=Path('/Users/adisharma/projects/MovieUniverseFactory/runs/demonstrator-01')
+BASE=Path(__file__).resolve().parents[4]/'runs/demonstrator-01'
 SHA='37594a7ef2d59e5dcc9af42c332f28ab41e86e78f78a60e6bd5ff9e2a7ca961e'
 import importlib.util
 _spec=importlib.util.spec_from_file_location('source_gallop_math',Path(__file__).with_name('source_gallop_math.py'));_math=importlib.util.module_from_spec(_spec);_spec.loader.exec_module(_math)

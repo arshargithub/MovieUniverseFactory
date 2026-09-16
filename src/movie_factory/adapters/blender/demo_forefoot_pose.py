@@ -3,7 +3,7 @@ from pathlib import Path
 import importlib.util
 import math
 import bpy
-BASE=Path('/Users/adisharma/projects/MovieUniverseFactory/runs/demonstrator-01')
+BASE=Path(__file__).resolve().parents[4]/'runs/demonstrator-01'
 
 def run(mf,out,job,helper):
     if set(job)!={'mode','output_dir','profile'} or job['mode']!='demo_forefoot_pose' or job['profile']!={}:raise ValueError('Fixed pose repair required')

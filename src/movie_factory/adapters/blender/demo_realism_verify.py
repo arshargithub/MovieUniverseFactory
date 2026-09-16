@@ -5,7 +5,7 @@ from mathutils import Vector
 
 def verify(mf,out,job,helper):
     if set(job)!={'mode','output_dir','profile'} or job['mode']!='demo_realism_reopen' or job['profile']!={}:raise ValueError('Fixed verification required')
-    base=Path('/Users/adisharma/projects/MovieUniverseFactory/runs/demonstrator-01');out=Path(out).resolve()
+    base=Path(__file__).resolve().parents[4]/'runs/demonstrator-01';out=Path(out).resolve()
     if base.resolve() not in out.parents:raise ValueError('Output outside diagnostic runs')
     digest='37594a7ef2d59e5dcc9af42c332f28ab41e86e78f78a60e6bd5ff9e2a7ca961e';scene_file=helper._file(base/'realism-motion/scene.blend',digest)
     bpy.ops.wm.open_mainfile(filepath=str(scene_file),use_scripts=False,load_ui=False)

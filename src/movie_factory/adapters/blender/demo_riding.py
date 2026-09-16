@@ -2,11 +2,11 @@ from pathlib import Path
 import bpy, hashlib, math, os, stat, time
 from mathutils import Matrix, Vector
 
-HORSE_PATH = Path("/Users/adisharma/projects/MovieUniverseFactory/.runtime/assets/demonstrator-01/horse.blend")
+ROOT_PATH = Path(__file__).resolve().parents[4]
+HORSE_PATH = ROOT_PATH / ".runtime/assets/demonstrator-01/horse.blend"
 HORSE_SHA256 = "b848037332fe62064989f250a94faa04c75e3fb21ae93f6a100f19079c1b21aa"
-RIDER_PATH = Path("/Users/adisharma/projects/MovieUniverseFactory/.runtime/assets/demonstrator-01/Knight_0.blend")
+RIDER_PATH = ROOT_PATH / ".runtime/assets/demonstrator-01/Knight_0.blend"
 RIDER_SHA256 = "d7461ba21f3d5768e4f8a782ac4e5283eac73fdb991e44fddeb5cb487c045e0c"
-ROOT_PATH = Path("/Users/adisharma/projects/MovieUniverseFactory")
 
 MODE = "demo_riding_preview"
 FRAMES = range(60)

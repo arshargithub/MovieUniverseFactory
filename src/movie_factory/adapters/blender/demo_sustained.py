@@ -1,7 +1,7 @@
 """Reviewed fixed operations for the authorized six-second integrated preview."""
 from pathlib import Path
 import json,importlib.util,bpy
-BASE=Path('/Users/adisharma/projects/MovieUniverseFactory/runs/demonstrator-01')
+BASE=Path(__file__).resolve().parents[4]/'runs/demonstrator-01'
 SHA='37594a7ef2d59e5dcc9af42c332f28ab41e86e78f78a60e6bd5ff9e2a7ca961e'
 def validate(job,out):
     if set(job)!={'mode','output_dir','profile'} or job['mode'] not in ('demo_sustained_audit',) or job['profile']!={}:raise ValueError('Fixed sustained operation required')
