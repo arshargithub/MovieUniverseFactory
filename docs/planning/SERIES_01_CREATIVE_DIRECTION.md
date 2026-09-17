@@ -6,6 +6,16 @@ Established at exchange 51, 2026-09-17. Decision brief, not an approved style or
 
 ## Director inputs and status
 
+Exchange 62: language and tone accepted—primarily English, natural character-specific accents and occasional culturally grounded expressions, English captions and pronunciation review; intense consequential action without graphic gore, balanced by relationship-based warmth/humor. No formal rating or cast selected.
+
+### Next bounded proposal — trailer world rules (exchange 62; unapproved)
+
+- Retain the reimagined frontier world, recognizable cultural identities and British imperial structure, without an exact historical year onscreen or a claim of documentary chronology. Do not erase real imperial accountability through purely generic villains.
+- For trailer scenes, emphasize horses, human-scale weapons and physical environments. Leave motorcycle/jeep/AK-style loadouts offscreen until deliberately designed into the world. This is restraint of initial presentation, not a permanent ban or a declaration those technologies do not exist.
+- Show exceptional skill through heightened staging/timing while preserving physical danger: no explicit supernatural effect, bullet immunity or impossible recovery in the trailer. Do not allocate ethnic superpowers. Specific individual abilities and whether any feat is literally beyond human limits remain open; spectacle must not promise an incompatible later series.
+
+These proposed rules are a limited basis for look briefs and boards, not a full A2 pass or a change to accepted story outcomes. If a proposed trailer shot depends on a particular firearm, communication method or ability, decide that rule before staging it. No media generation or new capability implementation initiated.
+
 - Director asks for explicit decisions on how the film looks, citing a comic book come alive, hyperrealistic 3D, Fantastic Mr. Fox-like presentation and retro possibilities. These are alternatives, not a selected look, animation technique or artist imitation request.
 - Director explores mixed-era signature imagery: Pashtun on a horse, Sikh on an old British motorcycle, Gurkha in a military-jeep-style off-roader; possible AK-47 for the Pashtun, kirpan/sword for the Sikh and kukri for the Gurkha. Preserve as exploratory ideas, not locked loadouts, ownership, religious practices or exclusive equipment. Anachronistic machinery is a world decision, not just a rendering choice.
 - Director explores one distinctive ability per protagonist near the boundary of human possibility and superhero/divine capability. No ability, cause, hereditary mechanism, spiritual doctrine or power scale selected.

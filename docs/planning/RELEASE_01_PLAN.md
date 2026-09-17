@@ -4,6 +4,8 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+Current-state override, exchange 62: the earlier pause/open-status snapshots below are historical. Trailer working beats are accepted and development is active. Complete initial episodes will be native vertical 9:16 releases on TikTok, Instagram Reels and YouTube Shorts, working range 90–180 seconds; trailer approximately 60–75 seconds. Primarily English, natural character-specific accents, English captions and culturally appropriate expressions; consequential action and warmth without graphic gore. Final delivery checks, scripts and visual proof remain open. No spend or publication authorization inferred. Checkpoint 60 was recorded at exchange 61 and pushed at `09f48d1`; next checkpoint/push is 70.
+
 Deliver a coherent series trailer plus episodes 1 and 2, approved by the Director and released through the chosen channels. Establish enough reusable universe, creative, production and strategy state that later episodes and the standalone Factory can continue without reconstructing the project from conversations.
 
 Goal orientation means explicit outcomes, sequencing and evidence—not a deadline imposed on creative exploration. No release date, episode duration, platform, new production spend or autonomous publishing is approved by this plan. The trailer is part of the deliverable, but its creative development remains paused until the Director shares their ideas. Other work continues.
@@ -104,5 +106,7 @@ Report commit and push separately. If remote access or scope is unresolved, comm
 Director clarification, exchange 2: design/planning and implementation changes must remain separate commits; both currently push directly to `main`. The Director separately pushed the implementation ancestry, and a fresh fetch confirmed only six design commits remained before this exchange's additions. Keep checking outgoing ancestry on future pushes; this is not authority to bundle unrelated implementation work.
 
 ## Next conversation focus
+
+Current focus, exchange 62: agree the minimum trailer technology/heightening rules proposed in the creative-direction brief, then prepare coherent vertical look briefs and episode outlines. Do not reopen the accepted reimagined-world choice or language/tone decisions. The exchange-51 paragraph below is retained as history, not current instructions.
 
 At exchange 51, prioritize [creative direction and world rules](SERIES_01_CREATIVE_DIRECTION.md): historical versus deliberately reimagined/mixed-era world, degree of extraordinary ability, then visual language. Vehicles, weapons, powers and looks supplied by the Director are exploratory, not yet canon. Preserve all character/formation decisions while deferring technology-dependent mission detail until the world branch is chosen. The first joint mission remains missing-informant recovery; the return-now versus seek-corroboration conflict is an accepted working direction, not a locked outcome or evidence chain. Initial briefs remain Sikh 5/6, Gurkha 4/6, Pashtun 3/6, officer 3/6. C1/C2 and legacy reconciliation remain needed before script/implementation lock. Trailer discussion stays paused. Next routine checkpoint/push: exchange 60; exchange 51 also records a scope-change checkpoint without an unscheduled push.
