@@ -25,4 +25,15 @@ Review batch 1, 2026-09-17. Three source items and their immediately preceding e
 
 The second decision matters immediately to the accepted gradual founding-story reveal: order of revelation, fictional event order and production revision order need not match. Record only approved events as canon; do not invent the founding mission to fill the schema.
 
-Next review batch: entity identity versus state/representation/performance, audience-model ownership, and accepted UX treatment of canonical artifacts. Do not claim those are reviewed merely because their terms appear in an extracted candidate.
+## Review batch 3 — character ownership and discovery
+
+2026-09-17. Read the initial four-layer proposal `7f9db151-d9d8-4d2d-b795-f902f55294ab`, acceptance `32c0623c-e642-49c0-8c09-5b8db82671ab`, character-discovery acceptance `c3224275-3122-4d14-873b-394ed028987f`, later ownership proposal `440963ab-ce01-495c-ac82-19693a9bec86` and acceptance `32c16454-894f-4d22-9c8a-c0746b069297` in full. The later checkpoint `683d284f-38b4-49e5-8f4d-9e84d315a6f3` corroborates the separation. This checks a later refinement, not every possible subsequent amendment.
+
+| Source decision / evidence | Release disposition | Concrete requirement and verification |
+|---|---|---|
+| Four character layers accepted in `32c0623c-e642-49c0-8c09-5b8db82671ab`; their explicit domain ownership accepted in `32c16454-894f-4d22-9c8a-c0746b069297`. | ADOPT in D2/D3/E1/E2. Identity and story-time state belong to the creative world; canonical representation bindings point to managed artifacts; shot-specific performance belongs to production. | Replace a mesh/rig without changing the character ID or biography. Revise one vocal/acting take without redefining canonical personality or voice identity. A permanent fictional injury changes story state through an approved event, not merely because an image shows it. Export/import preserves all four layers and their links, including the original accepted take. No autonomous acting capability is implied by storing this distinction. |
+| `c3224275-3122-4d14-873b-394ed028987f`: Director explicitly endorses Want / Need / Motivation / Fear / Contradiction / Arc after a proposal for conversational discovery rather than a questionnaire. | ADOPT in A3. Use that framework beneath the conversation, not as six forced questions or an automatic canon generator. | Character briefs distinguish approved traits from proposed interpretations and open questions. A scene-specific reaction does not silently become an enduring trait. The six current progress criteria are acceptance checks, not a replacement for this richer creative framework. |
+
+For The Martials, this means a more detailed Sikh character rig is not character development by itself; equally, a nuanced written brief does not prove that the production system can express him. Both need evidence, linked through one identity. No appearance, voice or new motivation is approved by this review.
+
+Next review batch: audience-model ownership and accepted UX treatment of canonical artifacts. Do not claim those are reviewed merely because their terms appear in an extracted candidate.

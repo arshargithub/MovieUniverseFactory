@@ -58,6 +58,8 @@ One local workspace: converse → view cited canon → propose/approve a fact �
 
 Include inexpensive synthetic continuity checks in that slice: two productions reference the same universe entity; an earlier-story scene retrieves the correct relationship/possession state despite a newer asset revision; export/import preserves ownership, story applicability and production pins. Keep synthetic events outside series canon. These tests make the initial timeline requirement concrete without authorizing new story decisions.
 
+The [historically accepted character ownership model](../knowledge/RELEASE_01_APPLICABILITY.md) also requires an isolation check: replacing a representation must not change identity, and revising one performance must not rewrite personality or canonical voice. Persist representation bindings separately from the managed artifact bytes, and retain shot-specific takes under production. These are contract tests, not claims that expressive acting or voice continuity is already qualified.
+
 The next slice reuses the same contracts for one real series shot, review and supported revision. The subscription-independence milestone is routine conversation, memory, budgeted dispatch and review functioning without signed-in Codex. Future code maintenance remains separate.
 
 Before coding, create a short gap map from these requirements to existing repository modules. Reuse provider adapters, budget ledger, worker boundary and validators where they fit; do not infer that experimental hard-coded shot handlers already provide a general interface. Freeze only the minimal schemas needed for the first slice.
