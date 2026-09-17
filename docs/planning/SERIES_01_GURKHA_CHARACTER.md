@@ -38,6 +38,8 @@ Interpretation to explore, not accepted: the village can be a genuinely desired 
 
 When he imagines being back in his village, what does he picture himself doing or enjoying? A concrete image can develop the dream without imposing a family, occupation or retirement deadline. Leave the answer open rather than defaulting to a wife, children, farm or training role.
 
+Exchange 14: Director requested quick historical research before choosing. [Village-return research](SERIES_01_GURKHA_VILLAGE_RESEARCH.md) recommends cultivation/livestock as a broad candidate, with sheep/wool as a conditional Gurung-specific alternative. It separates early-nineteenth-century evidence, modern community descriptions and fictional character interpretation. No option or community is accepted yet.
+
 ## Remaining brief criteria
 
 Exchange 11 clarification distinguished accepting people from accepting circumstances using hypothetical responses to a companion's mistake and an unfair order. Neither meant endorsing wrongdoing or automatic obedience. The people-focused interpretation was subsequently accepted in exchange 12 above; circumstance-focused acceptance was not. Specific dialogue and mission events were not fixed.
