@@ -32,7 +32,7 @@ Accepted: he values the opportunity to exercise his warrior skills; the work giv
 
 Do not infer bloodlust, enjoyment of cruelty, a death wish, a last-mission plot, inevitable death before returning home, or inability to live peacefully. These would be new choices, not consequences of the Director's description.
 
-Interpretation to explore, not accepted: the village can be a genuinely desired future while warrior work is what presently makes him feel useful and fully himself. The dramatic question may be when enough is enough, and whether he can find purpose after leaving—not whether the dream is false. Any fear of losing relevance, reluctance to retire or refusal of help needs Director confirmation.
+The village is a genuinely desired future while warrior work presently gives him purpose. Exchange 16 below establishes his difficulty leaving people to manage without him. Fear of losing relevance or refusing help for himself is not thereby established; the dream is not assumed false.
 
 ## Director acceptance — village dream, exchange 15
 
@@ -40,12 +40,20 @@ Source: Director responds “agreed” to the recommendation of a smallholding, 
 
 Exchange 14's [village-return research](SERIES_01_GURKHA_VILLAGE_RESEARCH.md) remains the evidence/limitations record. The broad cultivation/livestock option is now accepted as an aspiration; the Gurung-specific sheep/wool alternative and any ethnic-community selection are not.
 
-## Next discovery question — proposed contradiction
+## Director acceptance — inner conflict, exchange 16
 
-Could his difficulty be leaving people to manage without him? He may keep postponing departure because someone still needs help, even while sincerely wanting home. Unlike the Sikh protagonist's difficulty seeking help, this would be difficulty ceasing to provide it. It could lead him to shoulder too much or intervene when companions need to make their own choices. This is an unaccepted proposal, not inferred fear of irrelevance, martyrdom, universal selflessness or an assigned departure/death plot. Ask before treating it as his private need/contradiction.
+Source: Director responds “i really like what you proposed” to the difficulty of leaving others to manage without him.
+
+Accepted: he genuinely wants home, but can postpone leaving because someone still needs help. He finds it hard to cease providing help, even at a cost to himself, and can intervene when companions need to make their own choices. His growth involves trusting their ability to manage without him, rather than assuming that keeping the group together is always best. This complements, but does not define him solely in opposition to, the Sikh protagonist's difficulty asking for help.
+
+Do not infer universal selflessness, a secret wish for dependence, fear of irrelevance, an assigned departure/death plot or a fixed backstory causing this trait. His pleasure and purpose in warrior work remain independent accepted reasons to stay.
+
+## Next discovery proposal — moral boundary, not accepted
+
+Potential line: he refuses to treat a person as disposable merely because they can no longer be useful. Unlike the Sikh protagonist's personal assurance, this would apply even without a promise, for example to an injured guide or discarded informant. It does not mandate suicidal rescue, forgiveness of deliberate betrayal or approval of every action. The moral difficulty is how much risk he may impose on others while protecting one person, not that everyone opposing him is callous. Ask whether this fits before accepting a boundary or assigning a mission.
 
 ## Remaining brief criteria
 
 Exchange 11 clarification distinguished accepting people from accepting circumstances using hypothetical responses to a companion's mistake and an unfair order. Neither meant endorsing wrongdoing or automatic obedience. The people-focused interpretation was subsequently accepted in exchange 12 above; circumstance-focused acceptance was not. Specific dialogue and mission events were not fixed.
 
-Identity/temperament and external aim/staying motive established: purposeful warrior work now and a hoped-for return to his village later. The original joining event remains unknown. Personal history and richer relationships, private need/contradiction, moral boundary and consequential episode 1–2 choices remain open. The initial group-cohesion role is a relationship seed, not a completed relationship history. No names, family structure, rank, service history or mission events are inferred.
+Identity/temperament, external aim/staying motive and private need/contradiction established. The original joining event remains unknown. Personal history and richer relationships, moral boundary and consequential episode 1–2 choices remain open. The initial group-cohesion role is a relationship seed, not a completed relationship history. No names, family structure, rank, service history or mission events are inferred.
