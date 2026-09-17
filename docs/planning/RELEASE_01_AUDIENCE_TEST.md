@@ -6,6 +6,8 @@ Established exchange 53. Strategy accepted; creative treatment and execution det
 
 The trailer/intro is the first audience test for the series, not an additional standalone proof film. Assess whether a reimagined history-inspired ensemble, presented in stylized cinematic 3D with a graphic-novel sensibility, attracts attention and creates interest in another installment. Restrain technology and extraordinary abilities for this release; exact allowances remain to be selected. Preserve culturally specific, multidimensional characters and an intelligible audience promise. Reach and returning viewership are explicit project goals, not guarantees.
 
+Exchange 55: plan bidirectional shot/scene/asset reuse with episodes 1–2, but first-impression strength and audience cultivation take priority. Trailer-only work can be justified; neither a reuse quota nor retrofitting episode stories is required. Reuse opportunities belong in the shot plan with continuity/spoiler and cost implications, not as a separate generic experiment.
+
 Primary audience direction: North American/European and other non-South-Asian viewers, especially relevant action/adventure/animation audiences; include culturally connected viewers in evaluation rather than assuming their approval or treating either group as uniform. No recruitment/outreach authorized by this brief.
 
 ## What the test can and cannot establish

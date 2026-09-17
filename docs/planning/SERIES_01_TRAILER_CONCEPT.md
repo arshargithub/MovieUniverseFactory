@@ -2,6 +2,8 @@
 
 Exchange 54. Director-supplied creative direction plus clearly separated treatment proposals. Not an approved script, shot list, duration or production authorization.
 
+**Exchange 55:** Director endorses the proposed broad trailer direction, with an explicit reuse priority below. Exact source quotations, individual shots, dialogue, runtime and scene placement are not thereby locked.
+
 ## Director vision
 
 Director envisions dramatic individual entrances, including a highly stylized horse gallop in a dramatic setting with a trailing dust cloud; possible narration using actual colonial-era writings about martial-race ideas; interspersed old textbook-like visuals; the trio assembling before the British officer ready for a mission. Director asks whether mission/conflict/origin fragments should be integrated. Treat as creative direction, not proof that any exact shot, quote, vehicle or scene is locked. The previously reserved trailer ideas have now been shared, so treatment discussion is active rather than paused.
@@ -34,3 +36,13 @@ Do not call this memoir a textbook. Recruiting manuals and historical illustrati
 ## Next development work
 
 Choose the trailer's organizing idea and relative emphasis (entrances, archival contrast, mission hook), then a bounded beat sheet that also defines visual comparisons. Agree C1/C2 audience/format before detailed timing and framing. Keep technological/ability restraint explicit and convey reimagining early enough not to promise a documentary or literal period reconstruction. Test whether viewers remember personalities and a reason to return, not only the gallop. No paid work or publication authorized.
+
+## Audience-first, bidirectional reuse — accepted exchange 55
+
+Director explicitly wants an attempt at reuse between episodes 1–2 and the trailer, in either production direction, but does not want early reuse to weaken audience cultivation or the first impression. Reuse is an optimization, not a footage quota or a prerequisite that delays the trailer until episodes are complete. Strong trailer-specific material is permitted as a creative choice, subject to normal budget/production approvals; this is not new spending authority.
+
+During the beat sheet/shot breakdown, classify each shot as **shared footage candidate**, **shared scene/assets with a tailored shot**, or **trailer-specific**. Record prospective episode use, whether the scene is accepted or merely a candidate, spoiler/continuity constraints, adaptation work and incremental cost/time when known. Leave unknowns explicit rather than invent savings. Stable scene/shot/asset IDs and versioned source files should preserve usable cameras, lighting, animation, materials and composition; actual schema implementation belongs to D2, not this Markdown decision alone.
+
+Examples, not locked episode placements: gallop/environment/character assets might support episode travel or pursuit, with a trailer-specific camera/edit; mission fragments might reuse accepted episode shots; archival transitions or a signature introduction may remain trailer-only. Do not invent episode story events to amortize trailer footage, change the accepted opening into a founding-mission pilot, leak a key reveal, or reduce an effective trailer to whatever footage happens to exist. Conversely, do not force episode pacing/character logic to accommodate a promotional hero shot. Preserve one coherent visual/world promise even when editing and framing differ.
+
+Decision order: audience/character/story impact first; feasible cost and production constraints assessed honestly; pursue the strongest compatible reuse. Compare options rather than assume maximum reuse is cheapest or best. No numerical reuse target selected. Trailer-specific polish must not imply a recurring quality level the episode workflow cannot sustain without a stated plan.

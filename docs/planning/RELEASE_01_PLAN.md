@@ -62,6 +62,8 @@ Production acceptance and actual publishing are separate states. A finished but 
 
 Sequencing refinement, exchange 53: the trailer/intro is now selected as the first audience-facing test; F1 precedes episode audience tests. Use its own material for necessary E1–E4 checks and plan C4 measurement before release. This does not require every episode detail or all later Factory features to be finished before learning from the trailer. Approve trailer-specific scene rules, safe production, rights and durability before release; publishing still requires explicit authorization.
 
+Audience-first reuse, exchange 55: deliberately seek episode 1–2 ↔ trailer reuse at footage, scene and asset levels, but never weaken first-impression quality or distort episode storytelling to meet a reuse target. B4 shot planning records shared-footage candidates, tailored shots using shared scenes/assets, and justified trailer-only material, with continuity/spoiler constraints and known incremental cost. No quota, premature episode placement or requirement to finish both episodes before the trailer. See the accepted rule in the trailer concept.
+
 Parallel tracks do not imply extra agents, simultaneous shared-schema edits or unbounded native jobs. Each dispatched task gets a bounded objective, owner, dependencies, resource ceiling, evidence and next decision. The existing operating-ledger controls still apply. Avoid reopening accepted demonstrations merely to change YELLOW labels.
 
 ## Now versus later architecture
