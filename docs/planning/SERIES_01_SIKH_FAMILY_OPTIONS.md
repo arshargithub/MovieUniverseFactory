@@ -1,6 +1,6 @@
 # Series 01 — Sikh protagonist: history and family options
 
-Recorded 2026-09-15; updated at planning exchange 3. Status: **father/son relationship direction and agency-versus-influence motivation accepted; other details remain development proposals**. Firm inputs and the agreed ensemble/opening structure are in [the discovery brief](SERIES_01_DISCOVERY.md). No trailer development is included.
+Recorded 2026-09-15; updated at planning exchange 4. Status: **father/son direction, agency-versus-influence motivation and the officer's sincere-but-bounded empowerment accepted; other details remain development proposals**. Firm inputs and the agreed ensemble/opening structure are in [the discovery brief](SERIES_01_DISCOVERY.md). No trailer development is included.
 
 ## Director acceptance — motivation, exchange 3
 
@@ -8,7 +8,17 @@ Source: Director's explicit response, “i like what you proposed: Agency is wha
 
 Accepted central motivation: he wants agency—his judgment to count and room to make consequential decisions. The officer offers influence through their relationship. This mismatch is a continuing source of character/story tension, not a mandate that every mission follow the same pattern.
 
-This supersedes the pending status of that combination in the exploratory notes below. It does **not** approve the illustrative escort/arrest mission, private concession, sister scene, specific officer intentions, enjoyment of danger, controlling behaviour, moral boundary or eventual arc ending. Those remain proposals. Next explore whether the officer sincerely sees personal influence as the best agency he can offer, knowingly uses it to retain control, or mixes the two; no answer is assumed.
+This supersedes the pending status of that combination in the exploratory notes below. It does **not** approve the illustrative escort/arrest mission, private concession, sister scene, enjoyment of danger, controlling behaviour, moral boundary or eventual arc ending. Those remain proposals. The officer's intentions were subsequently clarified in exchange 4 below.
+
+## Director acceptance — officer's intentions, exchange 4
+
+Source: Director responds to the sincere-empowerment proposal, “i like what you proposed. no i do not see the officer as consciously transactional”.
+
+Accepted: the officer sincerely believes he is empowering the protagonist, but expects that freedom to operate within his own judgment. He welcomes initiative until it challenges something he regards as his responsibility to decide. Respect and affection can be real while their understandings of freedom differ. Do not recast the offer of influence as a calculated exchange of favours for obedience or a concealed manipulation scheme.
+
+This does not establish that the officer is always right, harmless, free of prejudice or an enlightened rescuer. His institutional position, wider convictions, personal history, specific conduct and eventual choices remain open. The earlier imagined dialogue is illustrative, not accepted script.
+
+Next conversational focus: give the Sikh protagonist an everyday personality beyond this thematic conflict. His humour, sociability and behaviour when not proving himself remain open. Possible discussion contrast—not a forced binary or accepted trait—is expansive/playful versus quieter/dryly observant with people he trusts.
 
 ## Director acceptance — father and son
 
