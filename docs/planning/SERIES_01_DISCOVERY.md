@@ -62,6 +62,8 @@ Exchange 39: officer originated and established the team, selecting through his 
 
 Exchange 40: formation direction accepted—he encountered the individuals before conceiving the team, then deliberately brought them together. This resolves the preceding open choice in favor of prior encounters leading to intentional assembly. Earlier encounters, first joint mission and later earned trust are separate layers; no events or order are yet selected. Opening with an existing team and revealing origins progressively remains unchanged.
 
+Exchange 41: [comparative prior-encounter sketches](SERIES_01_FORMATION_OPTIONS.md) drafted for discussion. All events and invitation details are proposals, not accepted backstory or episode assignments.
+
 An illustrative dramatic engine is a mission whose officially stated purpose conflicts with what the team discovers on the ground. This is a development proposal, not an approved first episode. Character choices should reveal the theme before exposition names it.
 
 ## Historical anchors and research boundaries
