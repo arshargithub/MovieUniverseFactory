@@ -1,6 +1,6 @@
 # Series 01 — Sikh protagonist: history and family options
 
-Recorded 2026-09-15; updated at planning exchange 6. Status: **family relationship anchors, warm/goofy side with his sister, affectionate self-consciousness with his father, agency-versus-influence motivation and the officer's sincere-but-bounded empowerment accepted; other details remain development proposals**. Firm inputs and the agreed ensemble/opening structure are in [the discovery brief](SERIES_01_DISCOVERY.md). No trailer development is included.
+Recorded 2026-09-15; updated at planning exchange 7. Status: **family relationships, agency-versus-influence motivation, difficulty admitting uncertainty and the officer's sincere-but-bounded empowerment accepted; other details remain development proposals**. Firm inputs and the agreed ensemble/opening structure are in [the discovery brief](SERIES_01_DISCOVERY.md). No trailer development is included.
 
 ## Director acceptance — motivation, exchange 3
 
@@ -32,7 +32,13 @@ Source: Director answers “yes I like what you proposed” to the contrast betw
 
 Accepted: with his sister he need not be impressive; shared silliness is part of their ease. With his father he remains affectionate but is more aware of how he is perceived, wanting to be seen as a capable man. He may compose himself, be selective about what he shares, or understate a difficulty; these are possible expressions, not mandatory habits or fixed scenes. Do not translate this into a cold, frightening or perpetually solemn father. The exaggerated-story sibling beat remains illustrative rather than an assigned episode scene.
 
-Next development proposal, not accepted: under pressure, he may find it harder to admit uncertainty than to face danger. He might say he has a situation in hand and ask for help too late because he fears losing others' confidence in his judgment. This could connect his desire for agency to a consequential flaw, but must not be inferred as canon from the accepted father/son manner. Test whether this feels right before defining his private need or episode choices.
+## Director acceptance — uncertainty and growth, exchange 7
+
+Source: Director responds “i really like that” to the proposal that admitting uncertainty is harder for him than facing danger.
+
+Accepted: because being trusted to decide matters deeply to him, he struggles to admit uncertainty—not because he believes he knows everything. He can claim to have a situation in hand prematurely and seek help too late. His growth involves learning that asking for another person's judgment does not surrender his agency. This is a situational vulnerability, not a claim that he is always reckless, dishonest or unable to collaborate.
+
+The mission and home examples illustrate how the trait might manifest; they are not fixed episode scenes. Moral boundary and consequential episode 1–2 choices remain open. This acceptance completes the current brief's private-need/contradiction criterion, not the full character or ensemble gate.
 
 ## Director acceptance — father and son
 
