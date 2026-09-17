@@ -3,7 +3,7 @@
   "plan_version": 1,
   "updated_date": "2026-09-17",
   "outcome": "Trailer plus episodes 1 and 2",
-  "substantive_exchange_count": 32,
+  "substantive_exchange_count": 33,
   "last_checkpoint": "CP-003",
   "next_checkpoint_exchange": 40,
   "current_gate": "A3",
@@ -30,11 +30,18 @@
     "completed": 4,
     "total": 6
   },
-  "current_subtask": {
+  "pashtun_subtask": {
     "name": "Muslim Pashtun protagonist brief",
     "accepted": ["identity_and_temperament", "external_aim", "private_need_and_contradiction"],
     "remaining": ["personal_history_and_relationships", "moral_boundary", "episode_1_2_choices"],
     "completed": 3,
+    "total": 6
+  },
+  "current_subtask": {
+    "name": "British officer brief",
+    "accepted": ["identity_career_and_starting_outlook"],
+    "remaining": ["personal_history_and_relationships", "external_aim", "private_need_and_contradiction", "moral_boundary", "episode_1_2_choices"],
+    "completed": 1,
     "total": 6
   },
   "gates": [
@@ -53,7 +60,7 @@
     {
       "id": "A3",
       "status": "IN_PROGRESS",
-      "evidence": ["SERIES_01_SIKH_FAMILY_OPTIONS.md", "SERIES_01_GURKHA_CHARACTER.md", "SERIES_01_FEMALE_CHARACTER.md"]
+      "evidence": ["SERIES_01_SIKH_FAMILY_OPTIONS.md", "SERIES_01_GURKHA_CHARACTER.md", "SERIES_01_FEMALE_CHARACTER.md", "SERIES_01_BRITISH_OFFICER.md"]
     },
     {
       "id": "A4",
@@ -164,7 +171,7 @@
   "accepted_gate_count": 1,
   "total_gate_count": 24,
   "trailer_creative_status": "PAUSED_PENDING_DIRECTOR_IDEAS",
-  "git_status": "CP_003_PUSH_VERIFIED_AT_8d7a72f; EXCHANGES_31_32_LOCAL_DESIGN_SAVE; NEXT_ROUTINE_PUSH_AT_EXCHANGE_40",
+  "git_status": "CP_003_PUSH_VERIFIED_AT_8d7a72f; EXCHANGES_31_33_LOCAL_DESIGN_SAVE; NEXT_ROUTINE_PUSH_AT_EXCHANGE_40",
   "historical_decisions_status": "SOURCE_CAPTURE_AND_CANDIDATE_INDEX_NOT_YET_RECONCILED",
   "authorization": "Planning/persistence/regular scoped Git pushes; no new production spending or publication authorized"
 }

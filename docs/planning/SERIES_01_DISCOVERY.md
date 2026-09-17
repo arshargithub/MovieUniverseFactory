@@ -54,6 +54,8 @@ The story can combine an accessible mission-adventure structure with a continuin
 
 Exchange 32 next-focus proposal, not accepted officer canon: explore whether the officer begins as a sincere believer that imperial rule can be made just through responsible people, or as someone already disillusioned who stays to limit harm. Recommendation for discussion is the former, allowing real affection and courage to coexist with an unexamined claim to decide for others; his arc need not have a predetermined conversion. Existing acceptance is narrower: he sincerely believes he empowers the Sikh and is not consciously transactional in that relationship. Developing his wider convictions does not revise that decision.
 
+Exchange 33 Director refinement: a loyal, successful British soldier who has advanced through his career, beginning or nearly beginning to suspect that British rationalizations and moral justifications for subjugation may be hollow. Doubt unfolds gradually; neither exact onset nor endpoint is fixed. This supersedes a reading of the exchange-32 proposal as untroubled imperial conviction. See [officer development](SERIES_01_BRITISH_OFFICER.md); no specific rank, enlisted-to-officer path or past wrongdoing is inferred.
+
 An illustrative dramatic engine is a mission whose officially stated purpose conflicts with what the team discovers on the ground. This is a development proposal, not an approved first episode. Character choices should reveal the theme before exposition names it.
 
 ## Historical anchors and research boundaries
