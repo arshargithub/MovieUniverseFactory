@@ -60,6 +60,8 @@ Exchanges 37–38 institutional clarification: the secret team's sole direct Bri
 
 Exchange 39: officer originated and established the team, selecting through his “martial races” outlook and granting tactical freedom with no British in-field supervision. Senior backing and founder status coexist. Deliberate recruitment versus bringing together people met in prior events is explicitly open. Trio awareness of basic deniable British backing is tentatively supported, not full knowledge of senior sponsorship or guarantees. These are fictional story decisions, not validation of colonial racial theory or claims of a historical counterpart.
 
+Exchange 40: formation direction accepted—he encountered the individuals before conceiving the team, then deliberately brought them together. This resolves the preceding open choice in favor of prior encounters leading to intentional assembly. Earlier encounters, first joint mission and later earned trust are separate layers; no events or order are yet selected. Opening with an existing team and revealing origins progressively remains unchanged.
+
 An illustrative dramatic engine is a mission whose officially stated purpose conflicts with what the team discovers on the ground. This is a development proposal, not an approved first episode. Character choices should reveal the theme before exposition names it.
 
 ## Historical anchors and research boundaries
