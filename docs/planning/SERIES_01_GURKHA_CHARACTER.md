@@ -22,14 +22,24 @@ His ferocity need not be a second personality or a contradiction of warmth; the 
 
 Avoid defaulting to the loyal/stoic Gurkha stereotype, assigning spiritual wisdom from religion, or treating him as a caretaker whose only purpose is to support the other leads. He needs his own want, stake, limits and potential mistakes.
 
-Possible underlying tension: knowing how to live with imperfect people and institutions may help him keep the team alive, but could also make him accommodate something he ought to challenge. This is a hypothesis, not accepted resignation, colonial loyalty or approval of injustice.
+Earlier possible tension about accommodating imperfect institutions remains unaccepted; do not use his acceptance of people as evidence of colonial resignation. The purpose/retirement direction below now provides a more directly Director-grounded development path.
+
+## Director motivation and future horizon — exchange 13
+
+Source: Director says the opportunity to “practice” as a warrior and the purpose of belonging to this work—“his special place in the world”—keep him there. He is just old enough to recognize that he cannot do this forever, and dreams of retiring back to his village.
+
+Accepted: he values the opportunity to exercise his warrior skills; the work gives him purpose and a distinctive place in the world. This is a positive reason to stay, not merely wages, obedience or responsibility for his companions. He also recognizes a finite horizon and dreams of returning to his village in retirement. Neither an exact age nor current physical decline is established. His village's location, household, family, livelihood, retirement resources and timetable are unspecified. “Retirement” describes his aspiration, not a verified formal pension entitlement or discharge arrangement.
+
+Do not infer bloodlust, enjoyment of cruelty, a death wish, a last-mission plot, inevitable death before returning home, or inability to live peacefully. These would be new choices, not consequences of the Director's description.
+
+Interpretation to explore, not accepted: the village can be a genuinely desired future while warrior work is what presently makes him feel useful and fully himself. The dramatic question may be when enough is enough, and whether he can find purpose after leaving—not whether the dream is false. Any fear of losing relevance, reluctance to retire or refusal of help needs Director confirmation.
 
 ## Next discovery question
 
-What does he want for his own life beyond keeping the team together? One useful contrast for discussion is a life outside the work that he is building toward, versus a sense that this company of people is where he most belongs. Neither is accepted; they need not be mutually exclusive. Do not infer family, bereavement, estrangement, permanent exile or a retirement plan from the question.
+When he imagines being back in his village, what does he picture himself doing or enjoying? A concrete image can develop the dream without imposing a family, occupation or retirement deadline. Leave the answer open rather than defaulting to a wife, children, farm or training role.
 
 ## Remaining brief criteria
 
 Exchange 11 clarification distinguished accepting people from accepting circumstances using hypothetical responses to a companion's mistake and an unfair order. Neither meant endorsing wrongdoing or automatic obedience. The people-focused interpretation was subsequently accepted in exchange 12 above; circumstance-focused acceptance was not. Specific dialogue and mission events were not fixed.
 
-Identity/temperament foundation established. Personal history and richer relationships, external aim and joining/staying motives, private need/contradiction, moral boundary and consequential episode 1–2 choices remain open. The initial group-cohesion role is a relationship seed, not a completed relationship history. No names, family structure, rank, service history or mission events are inferred.
+Identity/temperament and external aim/staying motive established: purposeful warrior work now and a hoped-for return to his village later. The original joining event remains unknown. Personal history and richer relationships, private need/contradiction, moral boundary and consequential episode 1–2 choices remain open. The initial group-cohesion role is a relationship seed, not a completed relationship history. No names, family structure, rank, service history or mission events are inferred.
