@@ -21,3 +21,11 @@ Possible next development target: identify the kind of contradiction he can no l
 ## Initial brief tracking
 
 Identity/career and starting outlook foundation: accepted (1/6). Remaining: personal history/relationships; external aim and reason for the unofficial team; private need/contradiction; moral boundary; consequential episode 1–2 choices. Existing Sikh relationship is a foundation, not a completed independent officer brief.
+
+## Accepted disturbance direction — exchange 34
+
+Director likes the instinct that his doubt arises from an apparent professional success: he did his job well, received approval, and begins to question who benefited. Accepted as a development direction, not a selected operation, historical event, episode placement or offense. It need not arise simply from discovering an obviously cruel superior. The interpretation that he is proud specifically of restraint remains a proposal below, not yet accepted. Brief remains 1/6; this develops his starting outlook without completing the private-need criterion.
+
+Next fictional illustration, not canon: he helps secure a settlement that averts a larger campaign and restores safer travel or trade. Those benefits are real. Later he sees that the arrangement entrenches a favored local power holder, and British-backed authority is used against people who had no meaningful part in the settlement. The people affected have independent interests and responses; they are not merely witnesses for his moral journey. Do not assign a real community, policy, treaty or date without research. Do not assume this is the trio's founding mission or the Pashtun household's dilemma.
+
+Possible personal pressure point: he is proud not only of winning but of achieving an outcome with less bloodshed. His first defense can therefore be substantively true: the alternative might have been worse. The question is what that comparison excuses and which alternatives his framework excluded. He need not discover every achievement was hollow or that all superiors were secretly cynical. Proposed self-image for discussion: a man who believes judgment and restraint distinguish him from officers who rely on force, confronted by consequences his competence helped make durable. No definitive flaw, refusal line or redemption arc fixed.
