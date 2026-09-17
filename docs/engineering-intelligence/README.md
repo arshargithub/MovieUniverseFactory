@@ -1,5 +1,9 @@
 # Engineering model intelligence
 
+## Latest integrated-production learning
+
+Demonstrator 01 now has a Director-accepted 24-second rough cut. See the [consolidated learnings and qualification boundary](../planning/DEMONSTRATOR_01_LEARNINGS.md) and [closure/reuse handoff](../planning/DEMONSTRATOR_01_CLOSURE_AND_REUSE_SPEC.md). These distinguish scoped Blender adoption from unproven economical Factory reuse. Earlier pending/rejected observations below remain historical; API-assisted progress is not a controlled model comparison. This handoff is prepared, not executed.
+
 This is the central record of **Codex engineering models**, distinct from the paid API models inside Movie Factory. Previously, model changes were recorded inconsistently in handoffs and conversation history. [events.json](events.json) starts a curated, machine-readable backfill. It is not an automatic capture of Codex runtime settings or token usage.
 
 ## Current evidence

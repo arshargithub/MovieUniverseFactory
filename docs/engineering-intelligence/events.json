@@ -775,6 +775,22 @@
         "results/demonstrator-01/stage-a/sustained/REPORT.md",
         "results/demonstrator-01/stage-a/sustained/PROCESS_REVIEW.md"
       ]
+    },
+    {
+      "event_id": "demonstrator01-accepted-cut-closure-reuse-handoff",
+      "event_type": "handoff_outcome",
+      "experiment_id": "DEMONSTRATOR-01",
+      "controlled_model_comparison": false,
+      "outcome": "ROUGH_CUT_ACCEPTED_CLOSURE_REUSE_HANDOFF_PREPARED_NOT_EXECUTED",
+      "observation": "Director accepted the complete 24-second development cut. Independent review verified artifact/source hashes, existing frame replay equality and 37 relevant tests. Consolidated learnings recommend scoped Blender adoption separately from unproven parameter-only Factory reuse. New handoff limits initial work to documentary closure; production reuse and its budget require explicit approval. No model switch, new native render or paid call occurred in preparing this handoff. This is not a controlled model comparison or retrospective campaign GREEN.",
+      "observed_supervisor_model": null,
+      "engineering_subscription_usage": null,
+      "paid_model_estimated_cost_usd": 0,
+      "evidence": [
+        "results/demonstrator-01/rough-cut/director-acceptance/acceptance.json",
+        "docs/planning/DEMONSTRATOR_01_LEARNINGS.md",
+        "docs/planning/DEMONSTRATOR_01_CLOSURE_AND_REUSE_SPEC.md"
+      ]
     }
   ],
   "recording_mode": "manual_evidence_backfill_and_future_event_capture",

@@ -1,5 +1,9 @@
 # Movie Factory implementation instructions
 
+- For ongoing series/release planning, read `docs/planning/RELEASE_01_PLAN.md` and `RELEASE_01_STATUS.json`; preserve accepted decisions and update the substantive-exchange counter. Provide the specified checkpoint every ten substantive planning exchanges. Do not increment it for tools, automatic continuations or unrelated implementation tasks.
+- Before new product/architecture/capability/UX specifications, consult `docs/knowledge/README.md` and the historical decision register; review relevant original context and record adoption/deviation rather than silently replacing earlier decisions. Candidate extraction is not approval.
+- Persist planning changes each substantive exchange. At major accepted decisions/handoffs and ten-exchange checkpoints, make scoped Git commits and attempt authorized pushes, excluding unrelated changes, secrets and native assets. Report local commit versus remote push/backup distinctly; no force-push or automatic publication.
+
 - Use this project's `.venv` for all outer Python commands and dependencies. Never install packages globally.
 - Treat `.env` as private. Never print, log, commit, or pass its values to Blender. Only the trusted provider module may read known settings.
 - Follow `MOVIE_FACTORY_3D_FEASIBILITY_SPEC.md`. Preserve failed evidence and report `NOT_RUN` or YELLOW when a prerequisite or Director review is missing.

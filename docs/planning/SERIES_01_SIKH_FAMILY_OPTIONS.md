@@ -1,0 +1,48 @@
+# Series 01 — Sikh protagonist: history and family options
+
+Recorded 2026-09-15. Status: **father/son relationship direction accepted; other details remain development proposals**. Firm inputs and the agreed ensemble/opening structure are in [the discovery brief](SERIES_01_DISCOVERY.md). No trailer development is included.
+
+## Director acceptance — father and son
+
+The Director endorsed the proposed direction and explicitly rejected a blatantly oppositional father condemning his son for serving the conqueror. Working direction: the father helped steer his son into British service; both have a stake in that choice, and affection, pride and practical accommodation can coexist with unease. Do not write their relationship as a simple patriot-versus-collaborator argument. This acceptance does not freeze the illustrative ages/date, particular military service, sister's ambitions or every suggested personality trait below.
+
+## Historical foundation
+
+The First Anglo-Sikh War occurred in 1845–46; the Second in 1848–49 ended with British annexation of Punjab. British recruitment of Sikhs following conquest makes a father/son contrast between service to the former Sikh state and service under British power historically grounded. Specific family service, recruitment paths and motives remain fictional proposals requiring date/unit research.
+
+Sources: National Army Museum, [First Sikh War](https://www.nam.ac.uk/explore/first-sikh-war) and [Second Sikh War](https://www.nam.ac.uk/explore/second-sikh-war). These provide chronology, not the whole regional or family perspective.
+
+A provisional late-1870s opening keeps the loss of the Sikh state within living parental memory. Illustrative arithmetic, not approved ages: in 1878 a father born in 1820 is about 58, a son born in 1848 about 30, and a daughter born in 1858 about 20. The father could have served as a young adult in the Anglo-Sikh Wars. Service personally under Ranjit Singh, a particular battle, village or regiment must not be invented as verified history.
+
+Recruitment ideology, inherited martial traditions and masculinity should be distinguished. Kaushik Roy's [Race and Recruitment in the Indian Army: 1880–1918](https://www.cambridge.org/core/journals/modern-asian-studies/article/abs/race-and-recruitment-in-the-indian-army-18801918/054587B97D07557F48A4CEAC7553D0AC) describes contradictory late-nineteenth-century recruitment ideas and their political use. Prem Chowdhry's [Militarized Masculinities](https://www.cambridge.org/core/journals/modern-asian-studies/article/abs/militarized-masculinities-shaped-and-reshaped-in-colonial-southeast-punjab/D1B33664FDC314F311F520F65AB5737E) connects military recruitment with selected existing masculine ideals and political economy in south-east Punjab. Its geography and later-period evidence must not be generalized directly to every Sikh family in the 1870s. Abstracts/available page material were consulted; this is not a completed literature review.
+
+## Recommended family contradiction
+
+**The father fought against British conquest, yet helped his son find work under British power.** This is a proposed fictional history, not a representative claim about Sikh veterans.
+
+He may have acted for livelihood, continuity of a profession, family security or a belief that service does not surrender conscience. He can be proud of his son's skill and distressed by what it serves. His own participation makes him more than an external voice calling his son a traitor.
+
+The son may genuinely enjoy military accomplishment, companionship, responsibility and recognition. Family support can be one motive without reducing him to a reluctant wage-earner. His vulnerability: he mistakes being needed or praised for being respected as an equal, and sometimes mistakes protective authority for love. These are individual traits for consideration, not ethnic characteristics.
+
+Two viable alternative emphases, not extra mandatory plotlines:
+
+- Father opposed enlistment: stronger overt conflict about loyalty, with a risk of making him only a spokesman for lost sovereignty.
+- Father later served the British himself: stronger intergenerational compromise; the son inherits both martial pride and an unresolved accommodation. Exact service history would need research.
+
+## The younger sister as a person
+
+Give her an independent desire and competence, a relationship with her father, and her own opinion of the brother beyond pride or worry. She might want a say in family livelihood, marriage or her future; the particular circumstances and feasible choices require local/date research. Do not default to kidnapping, threatened sexual violence, death, or rescue as her dramatic purpose.
+
+The useful contrast: her brother equates protecting the family with deciding for it; she asks whether his sacrifices give him that right. But she should not exist only to teach him a lesson. She can be proud, mistaken, funny, strategic, affectionate and consequential in her own right. Her relationship with the Muslim lead should develop through personal contact rather than an automatic symbolic alliance.
+
+A possible scene question, not scripted dialogue or canon: the brother brings home pay and expects the money to settle a family disagreement; his father accepts its practical necessity while questioning a mission, and his sister challenges an unrelated decision made on her behalf. The family may disagree without anyone being simply hypocritical or correct about everything.
+
+## Connection to the ensemble
+
+The officer offers opportunity and recognition the protagonist values. The other two leads gradually become people before whom he can admit fear, error or uncertainty without losing belonging. Do not allocate “hot-headed Sikh,” “obedient Gurkha,” and “rebellious Muslim woman” as ethnic personality slots. All four need separate strengths, blind spots and histories.
+
+Potential arc: retain courage and martial skill while separating them from compulsive proof, domination and unquestioning service. The dramatic challenge is not merely learning to fight harder; it may be accepting help, exercising restraint, admitting error, or respecting another person's choice.
+
+## Remaining development
+
+The third direction—shared responsibility rather than condemnation—is now the working choice. Next develop what the father hoped service would give his son and what the son actually seeks from it. No names, dates, particular military history, mother/family loss, or first mission have been fixed.

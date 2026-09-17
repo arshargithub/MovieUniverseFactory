@@ -1,5 +1,11 @@
 # Movie Universe Factory — 3D feasibility harness
 
+## Current product and production planning
+
+**Active delivery plan:** [trailer + first two episodes](docs/planning/RELEASE_01_PLAN.md), with [machine-readable progress](docs/planning/RELEASE_01_STATUS.json) and [ten-exchange checkpoints](docs/planning/RELEASE_01_CHECKPOINTS.md). Historical architecture/UX source continuity is tracked in the [knowledge register](docs/knowledge/README.md).
+
+The [Movie Factory roadmap](docs/planning/MOVIE_FACTORY_ROADMAP.md) connects the accepted demonstrator to a standalone app and the first series release. It includes parallel storage-light work, proposed milestones, remaining targeted readiness checks, and pending Director choices. See also the [app/memory baseline](docs/planning/FACTORY_APP_AND_MEMORY_BASELINE.md), [series discovery brief](docs/planning/SERIES_01_DISCOVERY.md), and [current demonstrator evidence](results/demonstrator-01/INDEX.md). The roadmap is a draft, not blanket implementation or spending authorization. The original 3D-01 description below remains historical harness context.
+
 This repository implements **3D-01: Persistent Scene + Targeted Revision**, a measured Blender-first feasibility experiment. It builds a small apartment scene with persistent semantic identities, renders three shots, moves the coffee table 40 cm toward the sofa, changes a red motorcycle helmet to dark green, and verifies that protected scene state did not change.
 
 The authoritative design is [MOVIE_FACTORY_3D_FEASIBILITY_SPEC.md](MOVIE_FACTORY_3D_FEASIBILITY_SPEC.md). [SETUP_README.md](SETUP_README.md) explains local setup and the review workflow.
