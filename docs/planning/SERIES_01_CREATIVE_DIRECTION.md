@@ -8,13 +8,21 @@ Established at exchange 51, 2026-09-17. Decision brief, not an approved style or
 
 Exchange 62: language and tone accepted—primarily English, natural character-specific accents and occasional culturally grounded expressions, English captions and pronunciation review; intense consequential action without graphic gore, balanced by relationship-based warmth/humor. No formal rating or cast selected.
 
-### Next bounded proposal — trailer world rules (exchange 62; unapproved)
+### Accepted trailer world rules (proposed exchange 62; approved exchange 63)
 
 - Retain the reimagined frontier world, recognizable cultural identities and British imperial structure, without an exact historical year onscreen or a claim of documentary chronology. Do not erase real imperial accountability through purely generic villains.
 - For trailer scenes, emphasize horses, human-scale weapons and physical environments. Leave motorcycle/jeep/AK-style loadouts offscreen until deliberately designed into the world. This is restraint of initial presentation, not a permanent ban or a declaration those technologies do not exist.
 - Show exceptional skill through heightened staging/timing while preserving physical danger: no explicit supernatural effect, bullet immunity or impossible recovery in the trailer. Do not allocate ethnic superpowers. Specific individual abilities and whether any feat is literally beyond human limits remain open; spectacle must not promise an incompatible later series.
 
-These proposed rules are a limited basis for look briefs and boards, not a full A2 pass or a change to accepted story outcomes. If a proposed trailer shot depends on a particular firearm, communication method or ability, decide that rule before staging it. No media generation or new capability implementation initiated.
+Director explicitly accepts this package at exchange 63. These rules are a limited basis for look briefs and boards, not a full A2 pass or a change to accepted story outcomes. If a proposed trailer shot depends on a particular firearm, communication method or ability, decide that rule before staging it. No media generation or new capability implementation initiated.
+
+### Proposed visual brief — exchange 63, not yet selected
+
+Working descriptor: **painterly cinematic realism** within the accepted stylized 3D/graphic-novel direction. Believable human anatomy and horse weight; selectively simplified forms, textured color and designed shadows instead of pore-level photorealism. Expressive individual faces must support intimate humor and doubt, not just heroic poses. Cultural specificity comes from researched individual design, not exaggerated ethnic facial shorthand or generic ornamental excess.
+
+Propose earth/stone/indigo and selective warm accents, with deliberate variation across settings rather than permanent sepia. Cloth, leather, stone and metal should remain materially distinct and lived-in. Use strong silhouettes, depth and readable faces in vertical framing; environmental scale can rise behind or recede beyond the subject. Choreography uses physical weight, anticipation and occasional emphasis without removing vulnerability. This is a proposed aesthetic, not a cost-saving claim or demonstrated renderer capability.
+
+Comparison brief: use the same 9:16 Pashtun rider/dust composition, provisional character design, pose and lighting scenario in three treatments: (A) painterly cinematic balance, (B) bolder graphic shadow/edge treatment, (C) softer illustrated surfaces. Change treatment rather than identity, costume or composition so preference is interpretable. No final face/costume canon from a concept image; no religious markers invented for decoration. A later expression/ensemble view must test whether the selected treatment supports warmth and group readability, not only spectacle. No image generation or paid work started at this exchange. Selection requires actual visual review; words alone do not close A5.
 
 - Director asks for explicit decisions on how the film looks, citing a comic book come alive, hyperrealistic 3D, Fantastic Mr. Fox-like presentation and retro possibilities. These are alternatives, not a selected look, animation technique or artist imitation request.
 - Director explores mixed-era signature imagery: Pashtun on a horse, Sikh on an old British motorcycle, Gurkha in a military-jeep-style off-roader; possible AK-47 for the Pashtun, kirpan/sword for the Sikh and kukri for the Gurkha. Preserve as exploratory ideas, not locked loadouts, ownership, religious practices or exclusive equipment. Anachronistic machinery is a world decision, not just a rendering choice.
