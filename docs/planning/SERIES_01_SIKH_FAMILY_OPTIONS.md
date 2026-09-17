@@ -1,6 +1,6 @@
 # Series 01 — Sikh protagonist: history and family options
 
-Recorded 2026-09-15; updated at planning exchange 4. Status: **father/son direction, agency-versus-influence motivation and the officer's sincere-but-bounded empowerment accepted; other details remain development proposals**. Firm inputs and the agreed ensemble/opening structure are in [the discovery brief](SERIES_01_DISCOVERY.md). No trailer development is included.
+Recorded 2026-09-15; updated at planning exchange 5. Status: **family relationship anchors, warm/goofy side with his sister, agency-versus-influence motivation and the officer's sincere-but-bounded empowerment accepted; other details remain development proposals**. Firm inputs and the agreed ensemble/opening structure are in [the discovery brief](SERIES_01_DISCOVERY.md). No trailer development is included.
 
 ## Director acceptance — motivation, exchange 3
 
@@ -18,7 +18,15 @@ Accepted: the officer sincerely believes he is empowering the protagonist, but e
 
 This does not establish that the officer is always right, harmless, free of prejudice or an enlightened rescuer. His institutional position, wider convictions, personal history, specific conduct and eventual choices remain open. The earlier imagined dialogue is illustrative, not accepted script.
 
-Next conversational focus: give the Sikh protagonist an everyday personality beyond this thematic conflict. His humour, sociability and behaviour when not proving himself remain open. Possible discussion contrast—not a forced binary or accepted trait—is expansive/playful versus quieter/dryly observant with people he trusts.
+## Director acceptance — warmth and sister relationship, exchange 5
+
+Source: Director describes him as “warm and funny, even goofy, especially with his sister” and says she is “the person he's the most comfortable with”, with a different dynamic with his father.
+
+Accepted: warmth, humour and goofiness are genuine parts of his personality, especially evident with his younger sister. She is the person with whom he feels most comfortable. This is not approval of a universally boisterous public manner, nor does it mean he is never playful with anyone else. The different father/son dynamic remains to be specified; do not infer fear, coldness, hostility or absence of affection.
+
+Writing interpretation for consideration, not additional canon: sibling scenes can show affection through shared silliness rather than only serious confidences or protection. His sister should have her own humour, desires and agency, not function solely as his emotional refuge. Avoid treating this warmth as a disguise or requiring tragedy to justify it.
+
+Next question: how does he carry himself differently around his father? A possible direction is greater composure and a wish to be seen as capable, without losing affection; this is a proposal awaiting the Director's response.
 
 ## Director acceptance — father and son
 
