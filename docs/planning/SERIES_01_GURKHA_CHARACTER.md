@@ -34,11 +34,15 @@ Do not infer bloodlust, enjoyment of cruelty, a death wish, a last-mission plot,
 
 Interpretation to explore, not accepted: the village can be a genuinely desired future while warrior work is what presently makes him feel useful and fully himself. The dramatic question may be when enough is enough, and whether he can find purpose after leaving—not whether the dream is false. Any fear of losing relevance, reluctance to retire or refusal of help needs Director confirmation.
 
-## Next discovery question
+## Director acceptance — village dream, exchange 15
 
-When he imagines being back in his village, what does he picture himself doing or enjoying? A concrete image can develop the dream without imposing a family, occupation or retirement deadline. Leave the answer open rather than defaulting to a wife, children, farm or training role.
+Source: Director responds “agreed” to the recommendation of a smallholding, a few animals and familiar company. Accepted as his retirement aspiration: useful work close to home, not retirement into inactivity or an automatic village leadership/training role. This is a dream, not established land ownership or proof it is affordable. Exact community, village, crops, animals, household and means remain open. No family members or historical pension entitlement are inferred.
 
-Exchange 14: Director requested quick historical research before choosing. [Village-return research](SERIES_01_GURKHA_VILLAGE_RESEARCH.md) recommends cultivation/livestock as a broad candidate, with sheep/wool as a conditional Gurung-specific alternative. It separates early-nineteenth-century evidence, modern community descriptions and fictional character interpretation. No option or community is accepted yet.
+Exchange 14's [village-return research](SERIES_01_GURKHA_VILLAGE_RESEARCH.md) remains the evidence/limitations record. The broad cultivation/livestock option is now accepted as an aspiration; the Gurung-specific sheep/wool alternative and any ethnic-community selection are not.
+
+## Next discovery question — proposed contradiction
+
+Could his difficulty be leaving people to manage without him? He may keep postponing departure because someone still needs help, even while sincerely wanting home. Unlike the Sikh protagonist's difficulty seeking help, this would be difficulty ceasing to provide it. It could lead him to shoulder too much or intervene when companions need to make their own choices. This is an unaccepted proposal, not inferred fear of irrelevance, martyrdom, universal selflessness or an assigned departure/death plot. Ask before treating it as his private need/contradiction.
 
 ## Remaining brief criteria
 

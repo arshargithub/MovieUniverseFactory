@@ -2,6 +2,8 @@
 
 Quick research pass, planning exchange 14, 2026-09-17. Purpose: offer grounded fictional possibilities for the Director's accepted village-retirement dream. **No ethnicity, village, household, occupation or new trait is selected by this research.** This is not completed historical validation of an 1870s–1880s setting.
 
+Subsequent Director decision, exchange 15: the recommended smallholding/few animals/familiar company image is accepted as his aspiration. Research limitations remain; this does not choose a community, establish existing ownership or validate period-specific financing. The conditional sheep/wool alternative remains unselected.
+
 ## Findings and limits
 
 | Source inspected | Useful evidence | Limit |
