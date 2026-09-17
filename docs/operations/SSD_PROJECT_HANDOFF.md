@@ -55,12 +55,15 @@ continue without reconstructing the project from conversation memory.
   - untracked `docs/planning/SERIES_01_SIKH_FAMILY_OPTIONS.md`
   - untracked `.DS_Store` is incidental and not project evidence.
 
-The old workspace at `/Users/adisharma/projects/MovieUniverseFactory` remains
-as a temporary safety copy. Do **not** write new work there. It must not be
-deleted merely because the SSD migration passed: the active Demonstrator is
-not part of the closed-3D S3 archive, so the old workspace currently supplies
-its second physical copy. Either retain it or complete a separately approved,
-checksummed Demonstrator backup and restore check before deleting it.
+The active project now has a separate checksummed S3 recovery copy. The
+20260917T021807Z snapshot contains 4,490 unique objects and 13,141,835,302
+unique bytes. Exact remote inventory, manifest restoration, and a 104,734,964
+byte streamed payload restore all passed. After that verification and explicit
+authorization, the obsolete workspace at
+`/Users/adisharma/projects/MovieUniverseFactory` was permanently removed. The
+SSD workspace is the authoritative working copy. See the
+[active-backup policy](ACTIVE_S3_BACKUP_POLICY.md) and
+[verification receipt](../../results/backup/active-20260917T021807Z-verification.json).
 
 ## Experiment history and defensible claims
 
@@ -240,8 +243,9 @@ without expensive rendering.
 - Asset purchases, paid media generation, cloud rendering, new S3 transfers,
   and public/native-asset uploads require separate explicit approval.
 - No current authorization exists for the racing/rear/dismount experiment,
-  the standalone app implementation, a new production campaign, or deletion
-  of the old internal workspace.
+  the standalone app implementation, or a new production campaign. The
+  completed 20260917T021807Z S3 backup and old-workspace deletion were separately
+  and explicitly authorized; that authorization does not roll forward.
 - Routine local inspection, tests, reversible code fixes and planning do not
   require repeated permission when they are within an authorized task.
 
@@ -250,9 +254,8 @@ without expensive rendering.
 1. Verify the task's project path is the SSD path and run `git status` without
    modifying the preserved working files.
 2. Read the current `AGENTS.md` and this handoff.
-3. Decide the backup state before deleting the old internal workspace:
-   preserve it temporarily, or propose an exact checksummed S3 Demonstrator
-   archive with cost and restore verification for approval.
+3. Confirm the latest active-backup receipt remains available; do not repeat
+   the completed local-workspace deletion.
 4. Ask the Director for **one** current priority:
    - continue Series 01 character/concept development;
    - freeze the portable-memory/standalone-app work package; or
@@ -268,7 +271,8 @@ without expensive rendering.
 > mount, Git status and project-local `.venv` without printing `.env`. Preserve
 > all existing uncommitted planning work. Summarize the current safe operating
 > state and recommend one concrete next work package based on the roadmap and
-> Series 01 decisions. Do not delete the old internal workspace until the
-> active Demonstrator has a second verified copy, and do not start paid calls,
-> purchases, cloud rendering, public uploads or the racing/rear/dismount
-> experiment without the explicit authorization recorded in the handoff.
+> Series 01 decisions. The obsolete internal workspace has already been removed
+> after the active S3 backup passed restore verification; do not recreate or
+> repeat that migration step. Do not start paid calls, purchases, cloud
+> rendering, public uploads or the racing/rear/dismount experiment without new
+> explicit authorization.

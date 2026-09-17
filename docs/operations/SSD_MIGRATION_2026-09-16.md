@@ -1,8 +1,8 @@
 # External SSD workspace migration
 
 Date: 2026-09-16  
-Status: migrated and validated; original local workspace retained as a safety
-copy pending separate deletion approval.
+Status: migrated, validated, independently backed up, and completed. The
+obsolete internal-drive workspace was removed after remote restore verification.
 
 ## Workspace
 
@@ -57,5 +57,15 @@ repository path. They now derive the repository root from each handler's
 
 The SSD must be mounted at `/Volumes/MovieFactorySSD` before opening the Codex
 project or running Movie Factory. Eject the volume cleanly before disconnecting
-it. The old local workspace must not be deleted until the SSD project has been
-opened as the active Codex project and the user separately approves removal.
+it. The SSD is the authoritative working copy.
+
+On 2026-09-16, the active project state was uploaded as a checksummed snapshot
+to the private, versioned S3 bucket after explicit approval. All 4,490 expected
+objects and 13,141,835,302 unique bytes passed remote inventory verification;
+the manifest and a 104,734,964-byte representative object passed streamed
+SHA-256 restore checks. The obsolete workspace at
+`/Users/adisharma/projects/MovieUniverseFactory` was then permanently removed
+under the same explicit authorization. See the
+[active-backup policy](ACTIVE_S3_BACKUP_POLICY.md),
+[snapshot manifest](../../results/backup/active-20260917T021807Z-manifest.json),
+and [verification receipt](../../results/backup/active-20260917T021807Z-verification.json).
