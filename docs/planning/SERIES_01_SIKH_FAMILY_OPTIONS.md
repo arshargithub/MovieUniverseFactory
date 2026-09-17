@@ -1,6 +1,6 @@
 # Series 01 — Sikh protagonist: history and family options
 
-Recorded 2026-09-15; updated at planning exchange 5. Status: **family relationship anchors, warm/goofy side with his sister, agency-versus-influence motivation and the officer's sincere-but-bounded empowerment accepted; other details remain development proposals**. Firm inputs and the agreed ensemble/opening structure are in [the discovery brief](SERIES_01_DISCOVERY.md). No trailer development is included.
+Recorded 2026-09-15; updated at planning exchange 6. Status: **family relationship anchors, warm/goofy side with his sister, affectionate self-consciousness with his father, agency-versus-influence motivation and the officer's sincere-but-bounded empowerment accepted; other details remain development proposals**. Firm inputs and the agreed ensemble/opening structure are in [the discovery brief](SERIES_01_DISCOVERY.md). No trailer development is included.
 
 ## Director acceptance — motivation, exchange 3
 
@@ -26,7 +26,13 @@ Accepted: warmth, humour and goofiness are genuine parts of his personality, esp
 
 Writing interpretation for consideration, not additional canon: sibling scenes can show affection through shared silliness rather than only serious confidences or protection. His sister should have her own humour, desires and agency, not function solely as his emotional refuge. Avoid treating this warmth as a disguise or requiring tragedy to justify it.
 
-Next question: how does he carry himself differently around his father? A possible direction is greater composure and a wish to be seen as capable, without losing affection; this is a proposal awaiting the Director's response.
+## Director acceptance — father/son manner, exchange 6
+
+Source: Director answers “yes I like what you proposed” to the contrast between unselfconscious sibling playfulness and affection with more self-consciousness around his father.
+
+Accepted: with his sister he need not be impressive; shared silliness is part of their ease. With his father he remains affectionate but is more aware of how he is perceived, wanting to be seen as a capable man. He may compose himself, be selective about what he shares, or understate a difficulty; these are possible expressions, not mandatory habits or fixed scenes. Do not translate this into a cold, frightening or perpetually solemn father. The exaggerated-story sibling beat remains illustrative rather than an assigned episode scene.
+
+Next development proposal, not accepted: under pressure, he may find it harder to admit uncertainty than to face danger. He might say he has a situation in hand and ask for help too late because he fears losing others' confidence in his judgment. This could connect his desire for agency to a consequential flaw, but must not be inferred as canon from the accepted father/son manner. Test whether this feels right before defining his private need or episode choices.
 
 ## Director acceptance — father and son
 
