@@ -2,6 +2,8 @@
 
 Established at exchange 51, 2026-09-17. Decision brief, not an approved style or replacement universe. This raises a foundational choice before detailed plot/script and asset lock. It does not discard existing characters, themes or technical evidence.
 
+**Current direction, exchanges 52–53:** develop the reimagined history-inspired world as the leading working direction and stylized cinematic 3D with a graphic-novel sensibility as the working visual direction. These supersede the candidate-only status below, but not the need for specific world rules or visual validation. The trailer/intro is the first audience test; technology and abilities are restrained for that release. No particular weapon, vehicle or power has been selected.
+
 ## Director inputs and status
 
 - Director asks for explicit decisions on how the film looks, citing a comic book come alive, hyperrealistic 3D, Fantastic Mr. Fox-like presentation and retro possibilities. These are alternatives, not a selected look, animation technique or artist imitation request.
@@ -37,3 +39,13 @@ Magical realism is not a generic synonym for special abilities. The reference de
 4. **E1/E4 production evidence:** prove the chosen look, motion, revision, identity consistency and time/cost on representative series material. Still-image appeal alone does not pass motion or end-to-end production gates.
 
 No image generation, paid call, new campaign, asset purchase, renderer change or production implementation is authorized or started by this planning update. Trailer creative discussion remains paused. Next question: retain our historical world with heightened presentation, or deliberately adopt a reimagined mixed-era world? Visual and power choices are independent follow-up decisions.
+
+## Director choices and audience objective — exchanges 52–53
+
+Exchange 52 combines the interrupted audience/world-choice request with the Director's added commercial-success requirement and the assistant's response. Director says a reimagined, history-inspired mixture of eras is closer to their intent, requests assessment against cultural and audience aims, accepts stylized cinematic 3D/graphic-novel sensibility as a working direction, and wants concrete visual expression later. Audience includes mainstream North American and European/non-South-Asian viewers, without flattening South Asian characters or alienating culturally connected viewers. Actual views and a returning audience are explicit success aims, not assumed consequences of representation or aesthetic quality. Neither audience is homogeneous; start from viewers interested in stylized action/ensemble adventure rather than attempting to please everyone.
+
+Marvel/Avengers is a Director-supplied inspiration for audience appeal and ensemble storytelling, not a request to copy characters, exact designs, budget scale or signature equipment. Useful proposed principles: immediately readable individual identities, differentiated personalities, action shaped by character, consequential teamwork and relationships that reward return. Do not infer that ethnic labels plus weapons/powers create attachment. Existing domestic relationships, humor, ambitions and contradictions are assets against caricature. Success is a hypothesis to test, not a forecast.
+
+Exchange 53: Director agrees to proceed with this direction and explicitly chooses **the trailer/intro as the first audience test**, with **restrained technology and abilities for it**. This replaces the assistant's suggestion of a separate audience-test scene. Internal style/animatic/technical checks can use material from the same trailer; do not turn them into another generic experiment series. The restraint is a trailer constraint, not a permanent ban on later world development. It does not authorize a bait-and-switch: trailer promise must fairly represent the intended series. Degree of heightening, costs/limits and exact equipment remain open; no giant powers or late-era loadouts are inferred from prior brainstorming.
+
+Audience-test strategy is accepted, but the trailer's creative treatment remains pending the Director's previously reserved ideas. No platform, duration, numerical success threshold, audience sample, production budget, paid promotion or publication authorization is selected. See [trailer audience test brief](RELEASE_01_AUDIENCE_TEST.md). No new media or implementation work initiated.

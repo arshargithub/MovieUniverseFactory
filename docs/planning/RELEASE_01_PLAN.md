@@ -8,6 +8,8 @@ Deliver a coherent series trailer plus episodes 1 and 2, approved by the Directo
 
 Goal orientation means explicit outcomes, sequencing and evidence—not a deadline imposed on creative exploration. No release date, episode duration, platform, new production spend or autonomous publishing is approved by this plan. The trailer is part of the deliverable, but its creative development remains paused until the Director shares their ideas. Other work continues.
 
+Exchanges 52–53 clarify audience success as an explicit aim: views and a returning audience, alongside culturally specific representation and strong storytelling, especially for North American/European and other non-South-Asian audiences. The **trailer/intro is the first audience test**, with restrained technology/abilities; do not create an extra standalone audience-test scene. Working direction is reimagined history-inspired world plus stylized cinematic 3D/graphic-novel sensibility, not finalized world rules or a validated look. Trailer treatment still awaits Director ideas. See [audience test brief](RELEASE_01_AUDIENCE_TEST.md).
+
 Creative standard confirmed at exchange 20: this is historically inspired fiction, not a documentary. Research supports specificity and plausible context; it must not become a requirement for documented counterparts to every character or event. Track real-history claims separately from deliberate fictional invention. See the discovery brief for the accepted scope.
 
 The active workspace is `/Volumes/MovieFactorySSD/MovieUniverseFactory`. Read this plan and [status](RELEASE_01_STATUS.json) at the beginning of each substantive continuation. Read the relevant creative documents and historical decisions before proposing changes. Record accepted choices separately from suggestions.
@@ -28,11 +30,11 @@ Each row is one deliverable with explicit exit evidence. Completing a document d
 | B1 | Episode 1 story outline | Mission, character viewpoints, stakes, choices, resolution/hook and continuity consequences accepted. |
 | B2 | Episode 1 script and production breakdown | Script accepted for the selected format; scenes, shots, dialogue, assets and risks enumerated. |
 | B3 | Episode 2 outline, script and breakdown | Builds on episode 1 consequences; accepted script and dependency/asset breakdown available. |
-| B4 | Trailer creative brief and script/boards | Director's ideas incorporated; promise, footage/spoiler policy, relation to episodes and approved structure established. |
+| B4 | Trailer creative brief and script/boards | Director's ideas incorporated; first-audience-test promise, restrained technology/ability envelope, footage/spoiler policy, relation to episodes and approved structure established. |
 | C1 | Audience/channel strategy | Primary viewing experience and roles for TikTok, Instagram and YouTube selected using current official constraints and audience intent. |
 | C2 | Format and adaptation strategy | Episode/trailer duration, master aspect ratio(s), cutdowns, language, captions and framing/readability requirements agreed. |
 | C3 | Launch and rights plan | Cadence, account ownership, credits/music/voice/asset rights, disclosure requirements and publishing authority documented. |
-| C4 | Learning after release | Success measures, analytics access, observation window and how results inform episode 3 defined without invented growth guarantees. |
+| C4 | Audience test and learning plan | Before trailer release, define reach/engagement/return-intent measures, available analytics, exposure context, thresholds/observation window and response decisions; distinguish intent from actual returning viewers measured across later releases. Feed findings into episodes 1–3 without invented growth guarantees. Include separate cultural-quality feedback. |
 | D1 | Historical decision continuity | Source coverage audited; applicable architecture/capability/UX decisions reconciled, mapped and approved; unresolved gaps explicit. |
 | D2 | Sources of truth and reusable interfaces | Record ownership, IDs/versions, approvals, production/work-package schema, storage resolution and Codex access contracts implemented/tested for needed scope. |
 | D3 | Orchestrator handover proof | Fresh Factory context recovers approved universe/production/strategy state, switches model and resumes a controlled job without duplicate spend; critical export/restore tests pass. |
@@ -55,6 +57,8 @@ Production acceptance and actual publishing are separate states. A finished but 
 3. **Production proof:** combine E1–E4 around an actual episode scene. Voice/music tests can run independently once character/tone/language needs are known. Do not launch a new generic experiment for every tool.
 4. **Controlled production:** work in shot batches with cheap complete animatics first. D4 supports needed controls; D3 migration may progress in parallel but must pass before declaring Factory takeover. Do not require every future app feature to finish before producing footage.
 5. **Release and reuse:** deliver F1–F3 in an agreed order/cadence, then F4. Trailer publication order is a strategy choice, not assumed. Approve spend and publishing separately.
+
+Sequencing refinement, exchange 53: the trailer/intro is now selected as the first audience-facing test; F1 precedes episode audience tests. Use its own material for necessary E1–E4 checks and plan C4 measurement before release. This does not require every episode detail or all later Factory features to be finished before learning from the trailer. Approve trailer-specific scene rules, safe production, rights and durability before release; publishing still requires explicit authorization.
 
 Parallel tracks do not imply extra agents, simultaneous shared-schema edits or unbounded native jobs. Each dispatched task gets a bounded objective, owner, dependencies, resource ceiling, evidence and next decision. The existing operating-ledger controls still apply. Avoid reopening accepted demonstrations merely to change YELLOW labels.
 
