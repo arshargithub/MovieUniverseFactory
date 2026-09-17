@@ -6,6 +6,8 @@ Audience promise: three distinctive, capable people entrusted with a secret miss
 
 ## Proposed sequence
 
+Current decision, exchange 66: Pashtun spectacular gallop and Sikh mounted confrontation explicitly selected; this supersedes the open assignment at exchange 64 below. The Sikh's introduction should now be developed around mounted presence followed by decisive commitment, not a duplicate gallop. Exact actions/order and the Gurkha's proposed on-foot entrance remain open. The v0.1 timing table is a working scaffold, not final boards.
+
 Exchange 64: entrance assignment/order below is explicitly provisional pending an ensemble decision. Director's original mounted-entrance image was the Sikh; the Pashtun's horse-related biography does not settle who receives the signature gallop. Preserve this v0.1 as history; see the ensemble proposal in [trailer concept](SERIES_01_TRAILER_CONCEPT.md). Broad progression remains accepted. Do not generate the Pashtun opening as a final selected shot on the authority of this table.
 
 | Time | Beat and purpose | Proposed image/sound | Reuse candidate and limits |

@@ -6,6 +6,16 @@ Exchange 54. Director-supplied creative direction plus clearly separated treatme
 
 ## Director vision
 
+### Current entrance decision — exchanges 65–66
+
+Exchange 65: Director values both the originally imagined Sikh galloping charge and the Pashtun woman in flowing robes making a spectacular galloping entrance. Assistant proposes differentiating movement from mounted presence instead of removing either character's horse. Exchange 66: Director clarifies the original Sikh image really was a galloping charge, but explicitly selects **Pashtun spectacular gallop; Sikh mounted confrontation**. This supersedes the exchange-64 assistant preference and resolves the assignment deliberately, not through the choice of a visual-test subject.
+
+- **Pashtun:** sweeping speed, dramatic flowing layers and trailing dust, with purposeful attention and command of the horse. Exact costume must be designed for credible riding and cultural specificity; flowing robes are a visual intention, not an approved garment design. She is not merely a decorative silhouette. No pursuit reversal required by this acceptance.
+- **Sikh:** mounted presence facing a confrontation, comparative stillness and the horse's contained energy, then a decisive commitment forward. Not a second spectacular galloping charge. Exact opposition, stakes and action remain open; this is not approval of invulnerability or a specific sword/weapon beat.
+- **Gurkha:** on-foot stillness into concentrated ferocity remains the proposed contrasting entrance, not explicitly accepted by this selection of the other two. Develop a concrete beat that conveys both capability and concern for another person without making him a supporting accessory.
+
+Entrance ordering, full choreography and scene/episode placement remain open; opening with her does not select a primary protagonist. The two mounted entrances are different dramatic functions, not exclusive cultural ownership of horses. Preserve the accepted overall trailer progression and audience-first reuse rule. Exchange 65 was not saved in its own turn; captured retrospectively here with exchange 66. No image generation, spending or production work initiated.
+
 Exchange 64 clarification: Director had originally envisioned the Sikh's entrance on horseback. The Pashtun's horse-linked biography makes a mounted entrance plausible, but does not automatically allocate the signature gallop to her. Decide all three entrance concepts together before generating look studies. Earlier Pashtun-opening assignments are provisional, not exclusive horse ownership or a selected protagonist hierarchy. Working overall trailer progression remains accepted; entrance assignment/order is explicitly open.
 
 ### Ensemble entrance proposal — exchange 64, unapproved
