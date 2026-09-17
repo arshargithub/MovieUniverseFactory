@@ -14,6 +14,8 @@ Source: **AI Movie Production System**, task `6a82016c-3a88-83ea-a93b-b277f6526b
 
 Capture completeness is not interpretation completeness. The register is deliberately unreviewed until each relevant item has been read in context, checked against user approval and later amendments, and mapped to an applicable requirement. Do not let automatic extraction declare canon.
 
+First contextual review: [Release 01 applicability](RELEASE_01_APPLICABILITY.md) maps three historical items to canon revision, agreed production checkpoints and provider-independent music. Each includes the preceding question/user response and a verification requirement. Broader supersession reconciliation remains incomplete; no release gate is newly complete.
+
 ## How to use it without rereading the entire conversation
 
 1. Search candidate labels/excerpts for the current topic: universe/entity identity, representations, audience, production, approval, budget, reuse, retrieval, interface, orchestration, perception, soundtrack, distribution, etc.
