@@ -6,13 +6,15 @@ Exchange 54. Director-supplied creative direction plus clearly separated treatme
 
 ## Director vision
 
-### Current entrance decision — exchanges 65–66
+### Current entrance decisions — exchanges 65–67
 
 Exchange 65: Director values both the originally imagined Sikh galloping charge and the Pashtun woman in flowing robes making a spectacular galloping entrance. Assistant proposes differentiating movement from mounted presence instead of removing either character's horse. Exchange 66: Director clarifies the original Sikh image really was a galloping charge, but explicitly selects **Pashtun spectacular gallop; Sikh mounted confrontation**. This supersedes the exchange-64 assistant preference and resolves the assignment deliberately, not through the choice of a visual-test subject.
 
 - **Pashtun:** sweeping speed, dramatic flowing layers and trailing dust, with purposeful attention and command of the horse. Exact costume must be designed for credible riding and cultural specificity; flowing robes are a visual intention, not an approved garment design. She is not merely a decorative silhouette. No pursuit reversal required by this acceptance.
 - **Sikh:** mounted presence facing a confrontation, comparative stillness and the horse's contained energy, then a decisive commitment forward. Not a second spectacular galloping charge. Exact opposition, stakes and action remain open; this is not approval of invulnerability or a specific sword/weapon beat.
-- **Gurkha:** on-foot stillness into concentrated ferocity remains the proposed contrasting entrance, not explicitly accepted by this selection of the other two. Develop a concrete beat that conveys both capability and concern for another person without making him a supporting accessory.
+- **Gurkha (accepted exchange 67):** on-foot composure at a narrow/constrained passage while another person needs time to get clear; a small preparatory movement becomes a sudden, economical close-quarters intervention. After the immediate threat is dealt with, his attention returns to the person he refuses to abandon. Ferocity and care belong to the same person; he is a formidable lead, not a supporting accessory. An offered hand is a possible finishing gesture, not a mandatory exact shot. Specific opponent, weapon, choreography, location and protected person's identity remain open.
+
+Exchange 67: Director endorses the Gurkha entrance as described in the preceding two assistant proposals. All three high-level entrance concepts are now accepted: **Pashtun—spectacular gallop; Sikh—mounted confrontation; Gurkha—composure, decisive ferocity, care.** Concept approval is not finished choreography, final shot order, historical costume approval or production authorization. No further approval of this same conceptual trio is needed before drafting the comparison brief.
 
 Entrance ordering, full choreography and scene/episode placement remain open; opening with her does not select a primary protagonist. The two mounted entrances are different dramatic functions, not exclusive cultural ownership of horses. Preserve the accepted overall trailer progression and audience-first reuse rule. Exchange 65 was not saved in its own turn; captured retrospectively here with exchange 66. No image generation, spending or production work initiated.
 

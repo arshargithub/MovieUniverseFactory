@@ -107,6 +107,8 @@ Director clarification, exchange 2: design/planning and implementation changes m
 
 ## Next conversation focus
 
+Current focus, exchange 67: all three high-level entrances are accepted. Move to the ensemble visual comparison brief (three treatments applied to the same three entrance compositions) rather than asking again about accepted entrance assignments. Exact choreography/order and final visual design remain open. This proposal does not authorize new paid spend. The exchange-66 and earlier focus paragraphs below are historical snapshots. Next checkpoint/push remains 70.
+
 Current focus, exchange 66: Pashtun spectacular gallop and Sikh mounted confrontation explicitly selected. Complete the Gurkha's contrasting entrance concept and develop the ensemble visual brief; exact choreography/order still open. The exchange-64 focus below is a historical snapshot, not a reason to reopen the selected pair. Next checkpoint/push remains 70.
 
 Current focus, exchange 64: decide high-level entrances across all three protagonists before selecting a subject for visual comparisons. Director originally envisioned the Sikh's mounted entrance; the Pashtun's biography does not silently assign her the signature gallop. Minimum trailer technology/heightening rules remain accepted. Then prepare concrete vertical look comparisons and coherent episode outlines. Do not reopen the accepted reimagined-world choice, trailer restraint or language/tone decisions. Actual look selection requires visual review, not wording approval alone. The exchange-51 paragraph below is retained as history, not current instructions.
