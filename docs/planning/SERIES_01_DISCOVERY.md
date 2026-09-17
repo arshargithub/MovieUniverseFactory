@@ -56,6 +56,8 @@ Exchange 32 next-focus proposal, not accepted officer canon: explore whether the
 
 Exchange 33 Director refinement: a loyal, successful British soldier who has advanced through his career, beginning or nearly beginning to suspect that British rationalizations and moral justifications for subjugation may be hollow. Doubt unfolds gradually; neither exact onset nor endpoint is fixed. This supersedes a reading of the exchange-32 proposal as untroubled imperial conviction. See [officer development](SERIES_01_BRITISH_OFFICER.md); no specific rank, enlisted-to-officer path or past wrongdoing is inferred.
 
+Exchanges 37–38 institutional clarification: the secret team's sole direct British institutional connection is the officer, but its existence is secretly known all the way up. It undertakes missions the British cannot publicly be associated with. This supersedes the assistant's weaker “quietly tolerated” suggestion; not a rogue private venture. Officer's aim of limiting wider conflict is distinct from the institution's broader need for deniability. Exact command/funding/protection arrangements and the trio's knowledge of senior backing remain open; see officer brief.
+
 An illustrative dramatic engine is a mission whose officially stated purpose conflicts with what the team discovers on the ground. This is a development proposal, not an approved first episode. Character choices should reveal the theme before exposition names it.
 
 ## Historical anchors and research boundaries
