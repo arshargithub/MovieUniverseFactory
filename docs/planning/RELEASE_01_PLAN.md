@@ -86,6 +86,8 @@ The Director authorizes regular Git preservation of this planning work. Save loc
 
 Report commit and push separately. If remote access or scope is unresolved, commit safely where possible and record `PUSH_PENDING`; do not imply the remote has the latest work. Raw history and large artifacts require their own verified backup policy; Git notes do not replace that backup. No calendar automation or background worker is created by this plan.
 
+Director clarification, exchange 2: design/planning and implementation changes must remain separate commits; both currently push directly to `main`. The Director separately pushed the implementation ancestry, and a fresh fetch confirmed only six design commits remained before this exchange's additions. Keep checking outgoing ancestry on future pushes; this is not authority to bundle unrelated implementation work.
+
 ## Next conversation focus
 
 Continue A3: the Sikh protagonist's motives, using the accepted warm/shared-responsibility father relationship. Establish what he consciously seeks, what he cannot admit he needs, and the line that could put him at odds with the officer. Then develop the Gurkha, Muslim female lead and officer to equal specificity; do not let the closest-to-home character consume all development attention. Historical year/region research and C1/C2 remain parallel bounded items, not prerequisites to every creative choice.

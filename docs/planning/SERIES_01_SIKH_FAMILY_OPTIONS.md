@@ -82,3 +82,44 @@ Start with **A as the central want and C as the source of pleasure**: he wants h
 Potential contradiction: he wants to be trusted with discretion but struggles to extend that trust to people he feels responsible for. This is not yet accepted personality. His eventual moral boundary should emerge from a concrete choice, not a generic claim that he is honourable.
 
 No option defines the Gurkha or Muslim protagonist as his opposite. Their motives must be developed independently, and the officer must offer something real while having his own limitations and interests. No origin event, episode plot, historical office, paid test or new asset is authorized by these options.
+
+## Agency versus influence — story consequences, exchange 2
+
+Director finds the distinction interesting and requests concrete implications before choosing. **Neither motivation is accepted yet.** These are alternative fictional stress tests, not an episode outline or researched historical practice. They use the same situations so differences in motive are visible without making one version inherently more heroic.
+
+Agency: “Trust me to decide what is right and how to act.” Influence: “Give my word enough weight that I can secure an outcome for someone.” Both can serve other people; both can become exercises in pride or control.
+
+### 1. An escort mission becomes an arrest
+
+The team escorts a local intermediary under an assurance of safe passage. New orders require handing that person over on arrival; the truth of the accusation remains uncertain.
+
+- Agency-led: he demands the evidence, is refused it, and changes the plan because he will not surrender judgment. The intermediary gets a chance to explain, but the team's extraction arrangements are disrupted and a teammate pays a real cost. His choice can be courageous and badly informed at once. A later story can make him confront damage caused by acting on an incomplete picture.
+- Influence-led: he uses his standing with the officer to obtain a delay or guarantee, staking his reputation on it. That can protect the intermediary without a fight. But it leaves someone else's safety dependent on his access, and makes him reluctant to jeopardize that access later. Another story can test whether he stays silent about a lesser wrong to preserve the ability to intervene in a greater one.
+
+Neither route must produce that exact outcome. The contrast is the recurring dramatic pressure: acting without permission versus bargaining from inside a relationship of dependence. The officer should sometimes have valid concerns or incomplete knowledge, rather than always possessing a hidden malicious motive.
+
+### 2. The officer offers a private concession
+
+After success, the officer offers him greater discretion or a personal hearing on future requests—but not the same standing to his teammates.
+
+- Agency-led: he initially sees recognition of his judgment. A teammate challenges him: does freedom mean everyone's right to question, or only his own? His arc may require supporting a teammate's contrary decision when he believes it is wrong.
+- Influence-led: he accepts, believing he can use the access for all three. Over time he becomes their intermediary, deciding what to raise and what is too risky to ask. Resentment can grow without betrayal: he believes he is protecting the team, while they feel he has become another authority they must petition.
+
+This creates different ensemble conflict without assigning a fixed reaction to either other protagonist or making them supporting figures in his arc.
+
+### 3. His sister makes a choice he dislikes
+
+Her specific ambition remains open. Assume only that she makes a considered choice about her own future, one he thinks unsafe or unwise.
+
+- Agency-led: he insists the officer respect his judgment, then tries to overrule hers. She can expose the contradiction without a lecture. Growth means allowing a choice he cannot control, not simply discovering that she was right all along.
+- Influence-led: he arranges what he believes is a better opportunity through a contact before asking her. It may be genuinely useful, yet rejecting it now carries social or practical costs. Growth means offering help without making gratitude or obedience its price.
+
+The father can understand the son's concern while questioning his conduct; this does not reopen the rejected father-as-condemning-patriot direction. The sister needs her own consequential trajectory, not just a teaching function.
+
+### Longer series shape
+
+Agency leans toward stories about discretion, imperfect judgment, responsibility and mutual trust. Its endpoint need not be independence from everyone: it may be learning that autonomy includes hearing others and owning consequences.
+
+Influence leans toward stories about promises, access, favours, unequal protection and compromise. Its endpoint need not be powerlessness: it may be choosing not to preserve his standing at someone else's expense, and seeking protection less dependent on personal favour.
+
+A promising but unaccepted combination: agency is his conscious goal, while influence is the officer's reward. He asks for room to decide; the officer offers exceptional personal access. It genuinely helps him accomplish good things, so recognizing the dependency is difficult. This can sustain a series arc, but should not become a rigid formula for every mission.
