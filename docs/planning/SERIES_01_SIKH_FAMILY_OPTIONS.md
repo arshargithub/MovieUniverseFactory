@@ -46,3 +46,39 @@ Potential arc: retain courage and martial skill while separating them from compu
 ## Remaining development
 
 The third direction—shared responsibility rather than condemnation—is now the working choice. Next develop what the father hoped service would give his son and what the son actually seeks from it. No names, dates, particular military history, mother/family loss, or first mission have been fixed.
+
+## Motivation options for discussion — 2026-09-17
+
+These are fictional development proposals, not Director decisions or claims about historical recruitment. They answer a specific question: why does this man prefer the officer's unofficial work to ordinary service or returning home? Each option must eventually explain both its genuine benefit and its cost. None requires the father to condemn his son.
+
+### A. He wants a say, not merely a wage
+
+He enjoys being trusted to judge a situation and carry a mission through. The officer offers apparent discretion and responsibility that the protagonist values. The trap is mistaking delegated freedom for actual power: someone else still defines the purpose, withholds information and decides whose judgment counts.
+
+Father/son distinction: the father may want service to give his son dependable footing; the son wants room to become consequential. Both can understand the other's ambition. The father need not be morally wiser about every choice.
+
+Dramatic test, not an episode assignment: when he discovers that completing an order would defeat its stated protective purpose, does he obey, quietly alter the mission, or demand an explanation? His choice should have consequences beyond proving him right.
+
+### B. He wants to become a man whose word protects others
+
+His ambition is not just personal advancement. He wants the standing to make a promise and have powerful people honour it. The officer seems to offer access and influence. This gives protection a generous side, but also a controlling one: he may decide what others need before listening to them.
+
+Father/son distinction: both value security, but the son believes he can enlarge the family's choices through his own reputation. His sister needs her own goal; disagreement with his plan must not exist only to correct his character.
+
+Dramatic test: he gives someone his word before confirming that he can deliver, then discovers the officer never authorized that promise. Saving his reputation and honouring the actual person are no longer the same task.
+
+### C. He wants work that feels worthy of his abilities
+
+He genuinely loves difficult work, danger, skill and the satisfaction of doing something well with capable companions. This gives him energy, humour and pleasure rather than making every decision a burden. The trap is treating excitement and excellence as evidence that the mission deserves doing.
+
+Father/son distinction: the father can take pride in his son's ability while recognizing that a life cannot be built entirely around displaying it. The son may regard caution as a failure of imagination, not cowardice or betrayal.
+
+Dramatic test: the right action is patient, unglamorous or requires letting a teammate lead. Can he accept success that gives him little opportunity to distinguish himself?
+
+### Working recommendation, awaiting Director response
+
+Start with **A as the central want and C as the source of pleasure**: he wants his judgment to matter, and he genuinely likes the work. Keep B as a possible consequence rather than adding a third equal motivation immediately. This gives him both an understandable ambition and a life beyond the thesis about colonial service.
+
+Potential contradiction: he wants to be trusted with discretion but struggles to extend that trust to people he feels responsible for. This is not yet accepted personality. His eventual moral boundary should emerge from a concrete choice, not a generic claim that he is honourable.
+
+No option defines the Gurkha or Muslim protagonist as his opposite. Their motives must be developed independently, and the officer must offer something real while having his own limitations and interests. No origin event, episode plot, historical office, paid test or new asset is authorized by these options.
