@@ -1,6 +1,14 @@
 # Series 01 — Sikh protagonist: history and family options
 
-Recorded 2026-09-15. Status: **father/son relationship direction accepted; other details remain development proposals**. Firm inputs and the agreed ensemble/opening structure are in [the discovery brief](SERIES_01_DISCOVERY.md). No trailer development is included.
+Recorded 2026-09-15; updated at planning exchange 3. Status: **father/son relationship direction and agency-versus-influence motivation accepted; other details remain development proposals**. Firm inputs and the agreed ensemble/opening structure are in [the discovery brief](SERIES_01_DISCOVERY.md). No trailer development is included.
+
+## Director acceptance — motivation, exchange 3
+
+Source: Director's explicit response, “i like what you proposed: Agency is what he wants; influence is what the officer offers him.”
+
+Accepted central motivation: he wants agency—his judgment to count and room to make consequential decisions. The officer offers influence through their relationship. This mismatch is a continuing source of character/story tension, not a mandate that every mission follow the same pattern.
+
+This supersedes the pending status of that combination in the exploratory notes below. It does **not** approve the illustrative escort/arrest mission, private concession, sister scene, specific officer intentions, enjoyment of danger, controlling behaviour, moral boundary or eventual arc ending. Those remain proposals. Next explore whether the officer sincerely sees personal influence as the best agency he can offer, knowingly uses it to retain control, or mixes the two; no answer is assumed.
 
 ## Director acceptance — father and son
 
