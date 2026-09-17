@@ -66,6 +66,8 @@ Exchange 41: [comparative prior-encounter sketches](SERIES_01_FORMATION_OPTIONS.
 
 Exchanges 42–43: Director required operationally relevant capability in the Sikh/Pashtun encounters, not mere impressive judgment or bargaining, then accepted all three revised directions. Sikh takes responsibility when an escort/recovery plan fails, making a consequential assurance; Gurkha's bounded injured-guide recovery remains; Pashtun independently pursues horses taken from family care and participates in a dangerous recovery intersecting with the officer's separate objective. Current accepted sketches and open details are in the formation document; original A/C alternatives are superseded. No first joint mission or episode assignment yet accepted.
 
+Exchange 47: first joint mission working direction selected—recover a missing informant before a retaliatory response proceeds on information that may be wrong. The secret passage-agreement option is retained as a future possibility, not assigned to an episode or merged into this mission. Details and outcome remain open; see [formation development](SERIES_01_FORMATION_OPTIONS.md). This mission remains founding backstory, not automatically the pilot.
+
 An illustrative dramatic engine is a mission whose officially stated purpose conflicts with what the team discovers on the ground. This is a development proposal, not an approved first episode. Character choices should reveal the theme before exposition names it.
 
 ## Historical anchors and research boundaries
