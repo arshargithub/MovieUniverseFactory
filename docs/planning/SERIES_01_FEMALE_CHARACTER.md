@@ -6,7 +6,7 @@ Established at planning exchange 18. Discovery and research notes, not a complet
 
 - Strong Muslim female lead is established in the series premise.
 - Director wants specific community/religious grounding for all protagonists, with prominence in the story to be decided later; the purpose is richness and authenticity rather than vague South Asian caricature.
-- Pashtun remains the Director's preferred background, now under explicit discussion about representation and possible controversy, not yet a final selection following this advice.
+- Muslim Pashtun identity accepted in exchange 19: Director says “ok let's go with muslim pashtun”. Specific region, community and household remain open.
 - Director envisions her as beautiful, strong, strongheaded and a warrior working alongside men. These qualities do not establish a sexualized presentation, emotional invulnerability, contempt for other women or rejection of her faith.
 - Region, family/community ties, age, training, practical freedoms, personal aims and reasons for working with the officer remain open. Do not invent a rescue by the British, forced-marriage origin or family violence by default.
 
@@ -30,3 +30,16 @@ Jatt Sikh, Hindu Gurkha and Pashtun Muslim are useful specific starting points, 
 6. Seek paid historical/cultural review from relevant Pashtun women and a period specialist before script lock, within an approved budget. No outreach or spending authorized. No individual reviewer represents every Pashtun perspective; contributor credit/anonymity should be consensual.
 
 A promising dramatic question, not canon: what objective is important enough that she accepts an alliance with this British officer while retaining her own loyalties? This may require at least as much explanation as her combat skills. No backstory, ethnic sub-group, historical military role or episode plot selected yet.
+
+## Recruitment geography — exchange 19
+
+Director asks whether British Pathan recruits came from what is now Pakistan/Khyber Pakhtunkhwa rather than Afghanistan. Findings:
+
+- “Pathan” is the Indo-Aryan/Hindustani designation used extensively in British sources for Pashtuns; Pashtun/Pakhtun reflect linguistic variants, not separate modern national populations. [Encyclopaedia Iranica, Pashto](https://www.iranicaonline.org/articles/afghanistan-vi-pasto/) discusses the term's linguistic derivation; [Library of Congress catalogue](https://www.loc.gov/item/02013572) identifies the terminology in a colonial tribal dictionary. Do not call Pathan exclusively Pakistani and Pashtun exclusively Afghan.
+- Recruitment from the frontier is established before our candidate date: the [National Army Museum overview](https://www.nam.ac.uk/explore/north-west-frontier-india) includes Pathan soldiers of the 20th Punjab Native Infantry in 1868. It distinguishes directly administered districts from largely autonomous adjacent territory; colonial classifications and rhetoric need critical handling.
+- Much of the relevant geography is in today's Khyber Pakhtunkhwa. In the 1870s–1880s, administered frontier districts belonged to Punjab; North-West Frontier Province was created in 1901. Not every territory in the modern province shared the same nineteenth-century status. The [1893 Durand agreement](https://www.iranicaonline.org/articles/boundaries-iii/) postdates our candidate setting; an earlier frontier existed but was not today's national border. Do not place modern citizenship categories or a province called Khyber Pakhtunkhwa in period dialogue.
+- A [Royal Historical Society research essay on 1919](https://blog.royalhistsoc.org/2019/05/06/third-anglo-afghan-war/) describes recruitment from northwestern India and Afghanistan. Its indexed text was available; direct retrieved text did not expose the article body. This supports caution about categorically excluding Afghan-origin recruits, but does not establish a particular 1870s Afghan-subject recruitment channel. Cross-frontier origin must not automatically be equated with Afghan state jurisdiction. Exact unit/date/origin evidence remains necessary.
+
+Recommendation, not accepted location: investigate a Pashtun household in the Peshawar–Mardan area first. This provides a grounded frontier setting for contact with British military/political networks without needing to assume a recruit taken directly from Kabul or Kandahar. Possible family service or intermediary connections are fictional leads, not established facts. Her own reason to cooperate and training must still be developed independently. **Evidence of male recruitment does not establish routine female enlistment or validate this fictional mixed-gender team.**
+
+Keep three questions separate: where she is from; how contact with the officer arose; what she personally wants from the alliance. Choose her region and date before attaching a named tribe or real unit to her family.
