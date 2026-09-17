@@ -6,6 +6,8 @@ Date: 2026-09-15. Status: proposed contract for roadmap discussion, not an imple
 
 Factory owns conversations, canon, approval, jobs, artifact references and budgets. Models propose work through typed contracts; they do not own the only copy of memory and cannot grant their own permissions. Codex is a development client that reads/writes the same reviewed project records—not a required production daemon.
 
+Historical requirement confirmed in [Release 01 applicability, batch 2](../knowledge/RELEASE_01_APPLICABILITY.md): Universe is the top-level creative project boundary. The Martials trailer and episodes share universe-owned entities rather than duplicating their identities. Story-time state belongs in the initial model, separately from production revision history; it is not a later-only feature. This does not require a full temporal simulation or graph database.
+
 Provisional deployment: private single-user local web interface and backend, reusing the Python controller/worker code. Confirm local vs remote needs with the Director. Keep deployment small; no hosted service, public URL, multi-user permissions framework, graph database or distributed agent cluster unless requirements justify it. API credentials stay in the trusted backend, never in browser code, prompts, source-control exports or Blender.
 
 Separate the conversational model from production planning/review workers. A user's choice of chat model must not silently change the worker model, safety policy or budget. Record provider, requested/returned model, supported effort, prompt/template version and usage. Provider adapters normalize capabilities and errors but cannot promise identical image, tool or reasoning support. Unsupported features and model retirement fail explicitly; fallback requires configured permission and preserves provenance.
@@ -53,6 +55,8 @@ The nearly-full internal drive remains a constraint even after adding external c
 ## First implementation slice and acceptance
 
 One local workspace: converse → view cited canon → propose/approve a fact → restart → switch a supported model → see identical approved state → submit a mocked shot job → inspect its reservation/result. Export/import that workspace without loss of the critical records. No Blender or media generation needed for this slice.
+
+Include inexpensive synthetic continuity checks in that slice: two productions reference the same universe entity; an earlier-story scene retrieves the correct relationship/possession state despite a newer asset revision; export/import preserves ownership, story applicability and production pins. Keep synthetic events outside series canon. These tests make the initial timeline requirement concrete without authorizing new story decisions.
 
 The next slice reuses the same contracts for one real series shot, review and supported revision. The subscription-independence milestone is routine conversation, memory, budgeted dispatch and review functioning without signed-in Codex. Future code maintenance remains separate.
 

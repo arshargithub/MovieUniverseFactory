@@ -14,4 +14,15 @@ Review batch 1, 2026-09-17. Three source items and their immediately preceding e
 - The new checkpoint policy is a conversation agreement, not authority to render, pay or publish. A production agreement is still required before those activities.
 - The sound/music proof should test artistic continuity and revisability as well as audio quality. Music-provider selection is a bounded capability decision, not a requirement to build a specialist audio model.
 
-Next review batch: Universe/Production separation, entity identity versus state/representation/performance, audience-model ownership, and accepted UX treatment of canonical artifacts. Do not claim those are reviewed merely because their terms appear in an extracted candidate.
+## Review batch 2 — universe boundary and two kinds of time
+
+2026-09-17. Read both source turns below, the preceding proposal `10efcb32-d56c-42ea-b28f-fd3d543af996`, and following response `a5445e64-d01b-4acb-bfee-914571441390` in full. These adjacent records establish the Director's intent; later-amendment reconciliation remains incomplete.
+
+| Source decision / evidence | Release disposition | Concrete requirement and verification |
+|---|---|---|
+| `43d6eba9-caa6-4bdb-8ce6-924cc0517644`: Director explicitly defines Universe as the top-level project equivalent and says every artifact belongs to a universe. | ADOPT in D2/D3. The Martials is one universe; episodes and trailer are related productions/outputs, not independent copies of its characters and lore. | Give creative and production records explicit universe ownership and stable references. Export/import the universe with its production relationships. Verify that a character correction identifies dependent work across both episodes and trailer, while unrelated-universe records are excluded. A platform-specific cut retains lineage to its source production. This does not require implementing multi-user tenancy or a graph database now. |
+| `d4b4c489-afa3-4a70-be1c-5f6fe68831c1`: Director counters the previous deferral recommendation with “why not have A right from the start.” The preceding turn defines story time versus production time; the response adopts story-world history from the beginning. | ADOPT in D2/D3. Story-time state cannot be deferred out of the initial data model. A sophisticated temporal simulation is not required. | Keep story chronology, character knowledge and applicable states distinct from asset/document revision history. Test a synthetic prequel/flashback that uses an earlier relationship or possession state even when its asset revision was created later. Preserve unknown story dates explicitly. Export/import both kinds of time without conflating them. Synthetic events are test fixtures, not new Martials canon. |
+
+The second decision matters immediately to the accepted gradual founding-story reveal: order of revelation, fictional event order and production revision order need not match. Record only approved events as canon; do not invent the founding mission to fill the schema.
+
+Next review batch: entity identity versus state/representation/performance, audience-model ownership, and accepted UX treatment of canonical artifacts. Do not claim those are reviewed merely because their terms appear in an extracted candidate.
