@@ -1,0 +1,35 @@
+# Series 01 — trailer/intro beat sheet v0.1
+
+Exchange 56. **Proposal for discussion, not an approved script, animatic or production order.** Working duration 75 seconds is an editorial sizing exercise, not a platform recommendation or locked runtime. C1/C2 remain open. Working title The Martials is not final/cleared.
+
+Audience promise: three distinctive, capable people entrusted with a secret mission whose execution demands independent judgment. History-inspired reimagined world; stylized cinematic 3D/graphic-novel sensibility; restrained technology/abilities. Audience impact takes priority over reuse, while shared footage/scenes/assets are deliberately considered.
+
+## Proposed sequence
+
+| Time | Beat and purpose | Proposed image/sound | Reuse candidate and limits |
+|---|---|---|---|
+| 0–7s | Immediate attraction: meet the Pashtun in motion | Close physical details of a gallop open into a striking wide image with trailing dust. Reveal her purposeful attention and control, not just a faceless silhouette. Hoofbeats lead before music expands. | Horse/rider/environment/motion asset reuse; trailer camera likely tailored. Episode pursuit/travel placement is not approved. No new stunt, route or power fixed. |
+| 7–14s | Archival claim meets a living counterexample | Dust/texture transitions into a brief source-attributed historical page fragment; a short verified excerpt is contrasted with independent action. Source attribution must be legible. Not a lengthy lecture or neutral narrator endorsing racial doctrine. | Likely trailer-specific graphics; art-direction techniques may recur. Quotation/scan/rights and fictional-versus-authentic marking remain unresolved. |
+| 14–29s | Complete the individual introductions | Sikh takes charge of an uncertain moment rather than simply posing with a sword; Gurkha's controlled physical intensity is paired with attention to someone else. Strong face/silhouette reveals, no résumé voiceover or automatic cultural power classes. | Shared character/prop/location assets. Footage may come from earlier encounters or episode scenes only after staging and spoiler review; neither source locked. No new weapon/vehicle choice approved. |
+| 29–40s | Establish a concrete story promise | A brief original line about a missing informant and an approaching military response, over searching/preparation imagery. Keep the British officer the liaison; no British field minder. | Potential shared briefing/search material. Actual dialogue and chronology must fit approved scenes; not automatically episode 1. |
+| 40–57s | Promise action AND chemistry | A small escalating set of mission fragments: movement under pressure, a contested choice, one character relying on another. Include one short human reaction or dry exchange if it earns its place. Do not reveal successful recovery, the culprit or final team decision. | Highest potential for episode footage, but plot/scene selection still open. Reframe/edit/audio variants are tracked rather than assumed free. No three new giant sets just for montage. |
+| 57–68s | Assemble the team before the officer | Rhythm drops; three presences share the frame facing him. Their posture and attention show different relationships to authority rather than identical obedient salutes. He gives a concise assignment cue. This may be founding-backstory imagery, not the series' opening chronology. | Shared interior/characters/costume/lighting; scene placement undecided. Can remain trailer-specific if exact tableau does not fit an episode. |
+| 68–75s | Unresolved promise, working title and next-view reason | End on a consequential question/reaction or interrupted action, then title. Candidate original promotional line below; do not resolve the informant story or present a invented line as historical testimony. Platform-specific next-step language comes after C1/C2. | Trailer-specific title/end treatment; possible shared action fragment. Avoid false launch date or unavailable episode CTA. |
+
+## Candidate original copy, not selected
+
+- Mission cue: “Find the informant. Bring him back alive. Before they march.” Fictional draft dialogue only; speaker, exact orders, march deadline and grammar remain open. This is not a historical quote or a locked military response.
+- Thematic end copy: “Their courage was never in question. Their obedience was.” Refers to these fictional characters, not an ethnic assertion. Test whether it overpromises immediate rebellion; it can be replaced. Do not force a fixed arc merely to serve a tagline.
+
+## Editing and story guardrails
+
+- Entrances sell distinct people; mission fragments sell a reason to return. Avoid all spectacle/no relationships or an opening textbook lecture.
+- The archival viewpoint is challenged by living agency, not apparently verified by heroic ethnic imagery. Do not compress a source into a misleading claim or imply the fictional officer authored it.
+- Clear reimagining cues must coexist with real source attribution. A new dossier graphic is not a historical scan. No signature motorcycle/jeep/AK loadout or supernatural effect is approved by this draft.
+- Trailer chronology can intercut past and later events without moving the series opening to the founding mission. Exact scene extraction must preserve fair audience expectations and spoiler limits.
+- No mission outcome, ability origin or full individual-origin explanation. The retrieved person's truth should remain a question, not a disclosed answer.
+- Sound/voice/music and motion are part of the intended impact, but this document does not pick providers, artists, accents, rights, assets or spending. Visual design comparisons should use a small set of these same beats when authorized; no images generated now.
+
+## Next decisions
+
+Director reviews balance and progression first: spectacle → archival challenge → three people → mission/chemistry → assembly → unresolved promise. Then choose duration/platform assumptions and test a small same-content look comparison before animatic/expensive production. Keep scene/shot IDs and known reuse/cost records in the eventual breakdown. The table is a beat map, not an assertion that episode footage or finished assets already exist. No gate passes from this draft alone.

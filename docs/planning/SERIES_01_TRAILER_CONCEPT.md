@@ -10,7 +10,7 @@ Director envisions dramatic individual entrances, including a highly stylized ho
 
 Retain working visual direction (stylized cinematic 3D/graphic-novel sensibility), reimagined history-inspired world and restrained technology/abilities. The trailer is the first audience test; no additional standalone test movie. Illustrative historical sources are external framing, not proof this fictional team existed or that its imagined world is literal history.
 
-## Proposed organizing idea — not accepted
+## Working organizing direction — broadly endorsed at exchange 55
 
 **The archive attempts to define them; the living characters exceed those definitions.** Sell thrilling people and a consequential mission, not colonial racial theory. Avoid making genuine period praise function as an authoritative explanation of inherited powers. Character individuality, choice, humor and mutual responsibility must become visible, not just three ethnic labels and signature weapons.
 
@@ -46,3 +46,7 @@ During the beat sheet/shot breakdown, classify each shot as **shared footage can
 Examples, not locked episode placements: gallop/environment/character assets might support episode travel or pursuit, with a trailer-specific camera/edit; mission fragments might reuse accepted episode shots; archival transitions or a signature introduction may remain trailer-only. Do not invent episode story events to amortize trailer footage, change the accepted opening into a founding-mission pilot, leak a key reveal, or reduce an effective trailer to whatever footage happens to exist. Conversely, do not force episode pacing/character logic to accommodate a promotional hero shot. Preserve one coherent visual/world promise even when editing and framing differ.
 
 Decision order: audience/character/story impact first; feasible cost and production constraints assessed honestly; pursue the strongest compatible reuse. Compare options rather than assume maximum reuse is cheapest or best. No numerical reuse target selected. Trailer-specific polish must not imply a recurring quality level the episode workflow cannot sustain without a stated plan.
+
+## Beat-sheet draft — exchange 56
+
+[Beat sheet v0.1](SERIES_01_TRAILER_BEAT_SHEET_V01.md) makes the direction concrete using an illustrative 75-second structure with reuse classes, audience purpose and spoiler constraints. Runtime, exact actions, lines and archival choice remain proposals. Director's request to continue authorizes development, not silent approval of the draft or production spend.
