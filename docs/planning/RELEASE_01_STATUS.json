@@ -3,10 +3,10 @@
   "plan_version": 2,
   "updated_date": "2026-09-17",
   "outcome": "Trailer plus episodes 1 and 2",
-  "substantive_exchange_count": 53,
+  "substantive_exchange_count": 54,
   "last_checkpoint": "CP-005A",
   "next_checkpoint_exchange": 60,
-  "current_gate": "A2",
+  "current_gate": "B4",
   "previous_subtask": {
     "name": "Sikh protagonist brief",
     "accepted": [
@@ -52,10 +52,10 @@
     "progress_method": "A4 remains 0/1 completed deliverable; listed foundations are not equally weighted acceptance gates"
   },
   "current_subtask": {
-    "name": "Genre/world model and visual direction",
+    "name": "Trailer concept with world/style and audience-test dependencies",
     "status": "IN_PROGRESS",
     "accepted": ["explicit_planning_coverage_required", "reimagined_history_inspired_working_direction", "stylized_cinematic_3d_graphic_novel_working_look", "trailer_intro_first_audience_test", "restrained_technology_and_abilities_for_trailer"],
-    "remaining": ["genre_and_tone_detail", "technology_rules", "extraordinary_ability_rules", "visual_comparisons_and_look_bible", "impact_review_of_existing_story_and_production", "trailer_ideas_and_audience_measurement_plan"],
+    "remaining": ["approved_trailer_treatment_and_beat_sheet", "genre_and_tone_detail", "technology_rules", "extraordinary_ability_rules", "visual_comparisons_and_look_bible", "impact_review_of_existing_story_and_production", "format_and_audience_measurement_plan", "archival_quote_and_visual_verification"],
     "progress_method": "A2 and A5 incomplete; working directions selected, no specific equipment/powers or validated look"
   },
   "gates": [
@@ -103,8 +103,8 @@
     },
     {
       "id": "B4",
-      "status": "NOT_STARTED",
-      "evidence": []
+      "status": "IN_PROGRESS",
+      "evidence": ["SERIES_01_TRAILER_CONCEPT.md"]
     },
     {
       "id": "C1",
@@ -189,8 +189,8 @@
   ],
   "accepted_gate_count": 1,
   "total_gate_count": 25,
-  "trailer_creative_status": "FIRST_AUDIENCE_TEST_SELECTED; TREATMENT_PENDING_DIRECTOR_IDEAS; RESTRAINED_TECHNOLOGY_AND_ABILITIES",
-  "git_status": "CP_005_PUSH_VERIFIED_AT_4be743e; EXCHANGES_51_53_LOCAL_DESIGN_SAVE; NEXT_ROUTINE_PUSH_AT_EXCHANGE_60",
+  "trailer_creative_status": "DIRECTOR_IDEAS_RECEIVED; TREATMENT_IN_PROGRESS; FIRST_AUDIENCE_TEST; RESTRAINED_TECHNOLOGY_AND_ABILITIES",
+  "git_status": "CP_005_PUSH_VERIFIED_AT_4be743e; EXCHANGES_51_54_LOCAL_DESIGN_SAVE; NEXT_ROUTINE_PUSH_AT_EXCHANGE_60",
   "historical_decisions_status": "SOURCE_CAPTURE_AND_CANDIDATE_INDEX_NOT_YET_RECONCILED",
   "authorization": "Planning/persistence/regular scoped Git pushes; no new production spending or publication authorized"
 }

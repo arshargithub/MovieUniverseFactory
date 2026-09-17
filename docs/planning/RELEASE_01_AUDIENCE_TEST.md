@@ -1,6 +1,6 @@
 # Release 01 — trailer/intro audience test
 
-Established exchange 53. Strategy accepted; creative treatment and execution details open.
+Established exchange 53. Strategy accepted; creative treatment and execution details open. At exchange 54 the Director supplies entrance/archival/assembly ideas; treatment development is now active in [trailer concept](SERIES_01_TRAILER_CONCEPT.md).
 
 ## Purpose and scope
 
@@ -26,4 +26,4 @@ Before publication, C1/C2/C4 must define platform, audience, duration/format, me
 4. Review craft/readability and cultural details before public test. Private quality review does not become an unrequested separate release.
 5. Publish only after explicit authorization and required rights/credits/output checks. Observe, document uncertainty, and use findings to adjust episode production; do not assume all standalone Factory features must be finished to learn from the trailer. Required durability/safe-operation controls still apply.
 
-Open: treatment, duration, channels, language/performance, violence level, exact technology/ability restraint, visual references, proof needs, budget/cadence, distribution and measurement plan. Trailer creative pause is lifted only when Director shares ideas or requests treatment development, not merely by selecting its test role. No paid API calls, assets, promotion, audience messages or publication started/authorized here.
+Open: approved treatment, duration, channels, language/performance, violence level, exact technology/ability restraint, visual references, proof needs, budget/cadence, distribution and measurement plan. Trailer creative pause was lifted by Director sharing ideas at exchange 54; this is not approval of an assistant-written treatment. No paid API calls, assets, promotion, audience messages or publication started/authorized here.

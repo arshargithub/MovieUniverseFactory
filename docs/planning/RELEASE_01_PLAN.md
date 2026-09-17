@@ -8,6 +8,8 @@ Deliver a coherent series trailer plus episodes 1 and 2, approved by the Directo
 
 Goal orientation means explicit outcomes, sequencing and evidence—not a deadline imposed on creative exploration. No release date, episode duration, platform, new production spend or autonomous publishing is approved by this plan. The trailer is part of the deliverable, but its creative development remains paused until the Director shares their ideas. Other work continues.
 
+Status update, exchange 54: Director has shared trailer entrance/archival/assembly ideas, lifting the creative pause referenced in earlier snapshots below. [Trailer treatment development](SERIES_01_TRAILER_CONCEPT.md) is now active; no complete script, duration, exact quote or shot list approved.
+
 Exchanges 52–53 clarify audience success as an explicit aim: views and a returning audience, alongside culturally specific representation and strong storytelling, especially for North American/European and other non-South-Asian audiences. The **trailer/intro is the first audience test**, with restrained technology/abilities; do not create an extra standalone audience-test scene. Working direction is reimagined history-inspired world plus stylized cinematic 3D/graphic-novel sensibility, not finalized world rules or a validated look. Trailer treatment still awaits Director ideas. See [audience test brief](RELEASE_01_AUDIENCE_TEST.md).
 
 Creative standard confirmed at exchange 20: this is historically inspired fiction, not a documentary. Research supports specificity and plausible context; it must not become a requirement for documented counterparts to every character or event. Track real-history claims separately from deliberate fictional invention. See the discovery brief for the accepted scope.
