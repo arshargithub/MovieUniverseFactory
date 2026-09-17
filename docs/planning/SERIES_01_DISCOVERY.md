@@ -52,6 +52,8 @@ Peshawar–Mardan is accepted as the working regional development direction for 
 
 The story can combine an accessible mission-adventure structure with a continuing question: **What does honour require when the power that rewards your courage also depends on your obedience?** Each protagonist needs a distinct reason to work with the officer, something the arrangement provides, and a line they will not cross. The officer needs convictions and interests of his own, not simply the role of enlightened rescuer or one-dimensional villain. The female lead needs an independently grounded role, training and agency; her ethnicity alone should not supply her function.
 
+Exchange 32 next-focus proposal, not accepted officer canon: explore whether the officer begins as a sincere believer that imperial rule can be made just through responsible people, or as someone already disillusioned who stays to limit harm. Recommendation for discussion is the former, allowing real affection and courage to coexist with an unexamined claim to decide for others; his arc need not have a predetermined conversion. Existing acceptance is narrower: he sincerely believes he empowers the Sikh and is not consciously transactional in that relationship. Developing his wider convictions does not revise that decision.
+
 An illustrative dramatic engine is a mission whose officially stated purpose conflicts with what the team discovers on the ground. This is a development proposal, not an approved first episode. Character choices should reveal the theme before exposition names it.
 
 ## Historical anchors and research boundaries
