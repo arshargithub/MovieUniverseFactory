@@ -1,6 +1,6 @@
 # Series 01 — trailer/intro beat sheet v0.1
 
-Exchange 56. **Proposal for discussion, not an approved script, animatic or production order.** Working duration 75 seconds is an editorial sizing exercise, not a platform recommendation or locked runtime. C1/C2 remain open. Working title The Martials is not final/cleared.
+Proposed exchange 56; **accepted at exchange 57 as a working draft to proceed with**, not a locked script, animatic or production order. Working duration 75 seconds is an editorial sizing exercise, not a platform recommendation or locked runtime. C1/C2 remain open. Working title The Martials is not final/cleared.
 
 Audience promise: three distinctive, capable people entrusted with a secret mission whose execution demands independent judgment. History-inspired reimagined world; stylized cinematic 3D/graphic-novel sensibility; restrained technology/abilities. Audience impact takes priority over reuse, while shared footage/scenes/assets are deliberately considered.
 
@@ -32,4 +32,4 @@ Audience promise: three distinctive, capable people entrusted with a secret miss
 
 ## Next decisions
 
-Director reviews balance and progression first: spectacle → archival challenge → three people → mission/chemistry → assembly → unresolved promise. Then choose duration/platform assumptions and test a small same-content look comparison before animatic/expensive production. Keep scene/shot IDs and known reuse/cost records in the eventual breakdown. The table is a beat map, not an assertion that episode footage or finished assets already exist. No gate passes from this draft alone.
+Director accepted the working balance and progression at exchange 57: spectacle → archival challenge → three people → mission/chemistry → assembly → unresolved promise. Next choose duration/platform assumptions and test a small same-content look comparison before animatic/expensive production. Keep scene/shot IDs and known reuse/cost records in the eventual breakdown. The table is a beat map, not an assertion that episode footage or finished assets already exist. Exact shots, candidate copy and historical quotation remain open. No gate passes from working-draft acceptance alone.
