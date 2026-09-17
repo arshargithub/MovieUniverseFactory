@@ -36,4 +36,15 @@ The second decision matters immediately to the accepted gradual founding-story r
 
 For The Martials, this means a more detailed Sikh character rig is not character development by itself; equally, a nuanced written brief does not prove that the production system can express him. Both need evidence, linked through one identity. No appearance, voice or new motivation is approved by this review.
 
-Next review batch: audience-model ownership and accepted UX treatment of canonical artifacts. Do not claim those are reviewed merely because their terms appear in an extracted candidate.
+## Review batch 4 — audience ownership and primary workspace
+
+2026-09-17. Read audience domain proposal `0631b445-0d3d-4684-ac1f-fe01772a640a`, Director clarification and refined proposal `83bbea43-8bcb-4a34-aae2-a789bac5fff2`, and acceptance `9b4a3def-43f3-4bb2-a36a-1c5f123ba12d` in full. Also read the later direct UX requirement `cd1feac8-3d52-4174-ac03-3e08b824a4fc` and routing acceptance `a19ecd48-4b95-403a-b1b4-3591d88e3da8` in full.
+
+| Source decision / evidence | Release disposition | Concrete requirement and verification |
+|---|---|---|
+| Audience Intelligence is an independent Studio-level domain, clarified in `83bbea43-8bcb-4a34-aae2-a789bac5fff2` and accepted in `9b4a3def-43f3-4bb2-a36a-1c5f123ba12d`. | ADOPT in C1/C4/D2/D3. Reusable audience knowledge is distinct from fictional truth; productions and deliverables bind contextualized audience models. | Preserve evidence, uncertainty and version for audience assumptions. A change in channel/audience hypothesis must not silently rewrite universe canon. Export/import relevant audience bindings as well as creative state. The universe remains usable without an audience model. No platform is selected by this historical decision. |
+| Director explicitly requires one place for primary interactions in `cd1feac8-3d52-4174-ac03-3e08b824a4fc`; accepts Factory routing of the workspace in `a19ecd48-4b95-403a-b1b4-3591d88e3da8`. | ADOPT in D4. One primary working context, with relevant review/decision surfaces brought to the Director; optional manual navigation remains available. | Demonstrate conversation → cited character context → candidate review → return to prior work without requiring the Director to discover the correct module. Keep current subject and pending decisions apparent. This is a minimum interaction requirement, not authorization to build every proposed canvas mode before the release. |
+
+**Refinement of batch 2:** the earlier “every artifact belongs to a universe” statement is not an absolute ban on shared knowledge. The later accepted Studio-level ownership model explicitly supports cross-universe audience intelligence and shared resources. Use universe ownership for series-specific creative/production records and explicit Studio ownership for genuinely shared records. A universe migration preserves required shared references/versions without importing unrelated private universe content. Do not assign reusable audience knowledge to a fictional character or silently duplicate it as competing universe truth.
+
+Next review batch: accepted UX treatment of canonical artifacts and the boundary between audience prediction and observed results. These are not yet reconciled merely because related terms appear in an extracted candidate.
