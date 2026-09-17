@@ -82,9 +82,9 @@ Full raw conversation capture remains local/private until an approved backup or 
 
 ## Versioning cadence and authority
 
-Exchange 7 cadence discussion: Director asks whether remote pushes should happen only at checkpoints. Recommendation pending confirmation: save locally each substantive exchange, make local design commits for coherent decisions, and batch remote pushes at ten-exchange checkpoints, with an earlier push on explicit request. Local-only commits are not off-device backups. Do not treat the question itself as approval to rewrite the standing policy below.
+Cadence confirmed by the Director in exchange 8: save locally each substantive exchange, make local design commits for coherent decisions, and batch remote design pushes at ten-exchange checkpoints, with an earlier push only on explicit request. Local-only commits are not off-device backups. This replaces the earlier practice of pushing at individual major decisions/handoffs.
 
-The Director authorizes regular Git preservation of this planning work. Save locally every substantive exchange; make scoped commits and attempt push at each ten-exchange checkpoint and at major accepted decisions/handoffs. Stage exact reviewed paths only. Check for unrelated staged changes and unpushed ancestry; no force-push, blanket `git add .`, secrets, raw native assets or unrelated task changes.
+The Director authorizes regular Git preservation of this planning work under the cadence above. Stage exact reviewed paths only. Check for unrelated staged changes and unpushed ancestry before checkpoint pushes; no force-push, blanket `git add .`, secrets, raw native assets or unrelated task changes.
 
 Report commit and push separately. If remote access or scope is unresolved, commit safely where possible and record `PUSH_PENDING`; do not imply the remote has the latest work. Raw history and large artifacts require their own verified backup policy; Git notes do not replace that backup. No calendar automation or background worker is created by this plan.
 

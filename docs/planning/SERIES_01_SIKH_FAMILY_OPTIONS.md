@@ -40,6 +40,18 @@ Accepted: because being trusted to decide matters deeply to him, he struggles to
 
 The mission and home examples illustrate how the trait might manifest; they are not fixed episode scenes. Moral boundary and consequential episode 1–2 choices remain open. This acceptance completes the current brief's private-need/contradiction criterion, not the full character or ensemble gate.
 
+## Moral boundary proposal — exchange 8, not accepted
+
+Candidate: he will not knowingly use someone's trust in his personal assurance to deliver them into harm. If he persuades someone to surrender, cooperate or leave shelter under his protection, he considers himself answerable for what follows. This is a proposed individual conviction, not an ethnic/religious generalization or proof that he always keeps every promise.
+
+The boundary is narrower than general opposition to all deception: he can still use tactical misdirection. It also does not mean promised protection establishes innocence or immunity from accountability. What protection actually covers must be defined in the situation.
+
+Illustrative stress test, not an episode assignment: after securing someone's cooperation under an assurance of safety, he learns they may have committed a serious wrong. He wants a way to keep them safe while allowing the allegation to be investigated. A teammate or harmed person reasonably sees delay as protecting someone dangerous; the officer believes the protagonist promised more than he had authority to promise. The conflict must not rely on every other character becoming cruel or foolish.
+
+Connection to his accepted flaw: eager to demonstrate judgment, he can make a promise before knowing whether he can fulfil it. He then has to admit the overreach and seek help without treating the person who trusted him as expendable. This supplies a cost to both the promise and his agency, but remains proposed until the Director responds.
+
+Question to Director: does this particular weight on his personal assurance fit, or is the deeper boundary loyalty to companions regardless of what he has promised?
+
 ## Director acceptance — father and son
 
 The Director endorsed the proposed direction and explicitly rejected a blatantly oppositional father condemning his son for serving the conqueror. Working direction: the father helped steer his son into British service; both have a stake in that choice, and affection, pride and practical accommodation can coexist with unease. Do not write their relationship as a simple patriot-versus-collaborator argument. This acceptance does not freeze the illustrative ages/date, particular military service, sister's ambitions or every suggested personality trait below.

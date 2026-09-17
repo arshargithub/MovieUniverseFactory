@@ -2,7 +2,7 @@
 
 - For ongoing series/release planning, read `docs/planning/RELEASE_01_PLAN.md` and `RELEASE_01_STATUS.json`; preserve accepted decisions and update the substantive-exchange counter. Provide the specified checkpoint every ten substantive planning exchanges. Do not increment it for tools, automatic continuations or unrelated implementation tasks.
 - Before new product/architecture/capability/UX specifications, consult `docs/knowledge/README.md` and the historical decision register; review relevant original context and record adoption/deviation rather than silently replacing earlier decisions. Candidate extraction is not approval.
-- Persist planning changes each substantive exchange. At major accepted decisions/handoffs and ten-exchange checkpoints, make scoped Git commits and attempt authorized pushes, excluding unrelated changes, secrets and native assets. Report local commit versus remote push/backup distinctly; no force-push or automatic publication.
+- Persist planning changes each substantive exchange and make scoped local commits for coherent design decisions. Batch remote design pushes at ten-exchange checkpoints; push sooner only on explicit Director request. Exclude unrelated changes, secrets and native assets. Report local commit versus remote push/backup distinctly; no force-push or automatic publication.
 - Keep design/planning commits separate from implementation commits. Both may push directly to `main` under the Director's current workflow; inspect outgoing ancestry and do not mix unrelated work into a commit.
 
 - Use this project's `.venv` for all outer Python commands and dependencies. Never install packages globally.
