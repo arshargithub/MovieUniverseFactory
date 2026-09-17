@@ -4,6 +4,8 @@ Date: 2026-09-15. Status: **initial Director premise captured; detailed canon an
 
 ## Director premise — 2026-09-15
 
+**Current scope note, exchange 51:** the original period premise below is preserved. Director now explores a deliberately mixed-era world and near-superhuman abilities alongside explicit art-direction choices. None is selected yet. See [creative direction/world rules](SERIES_01_CREATIVE_DIRECTION.md); do not silently treat the historical baseline or a proposed replacement as finalized.
+
 Source: Director's message in “AI Movie Factory - Design Work” on this date. The following are creative requirements supplied by the Director, not independently established historical facts.
 
 - Setting: approximately 150 years ago, in northern British India and the adjacent Afghan frontier, broadly the region of modern Pakistan/Afghanistan. Exact date, jurisdictions, base and mission locations remain open.

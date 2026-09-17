@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "plan_version": 1,
+  "plan_version": 2,
   "updated_date": "2026-09-17",
   "outcome": "Trailer plus episodes 1 and 2",
-  "substantive_exchange_count": 50,
-  "last_checkpoint": "CP-005",
+  "substantive_exchange_count": 51,
+  "last_checkpoint": "CP-005A",
   "next_checkpoint_exchange": 60,
-  "current_gate": "A4",
+  "current_gate": "A2",
   "previous_subtask": {
     "name": "Sikh protagonist brief",
     "accepted": [
@@ -44,12 +44,19 @@
     "completed": 3,
     "total": 6
   },
-  "current_subtask": {
+  "formation_subtask": {
     "name": "Ensemble formation and first joint mission",
     "status": "IN_PROGRESS",
     "accepted": ["prior_encounters_then_deliberate_assembly", "senior_backed_deniable_team_with_field_autonomy", "three_operational_encounter_directions", "missing_informant_recovery_before_retaliation", "abduction_working_version"],
     "remaining": ["concrete_attack_and_evidence_chain", "credible_warning_lead_captivity_and_deadline", "first_joint_mission_choices_and_outcome", "earned_relationship_changes", "origin_revelation_plan"],
     "progress_method": "A4 remains 0/1 completed deliverable; listed foundations are not equally weighted acceptance gates"
+  },
+  "current_subtask": {
+    "name": "Genre/world model and visual direction",
+    "status": "IN_PROGRESS",
+    "accepted": ["explicit_planning_coverage_required"],
+    "remaining": ["historical_or_reimagined_world_choice", "genre_and_tone", "technology_rules", "extraordinary_ability_rules", "visual_direction_and_comparisons", "impact_review_of_existing_story_and_production"],
+    "progress_method": "A2 and A5 incomplete; no world switch, style, signature equipment or power selected"
   },
   "gates": [
     {
@@ -62,7 +69,7 @@
     {
       "id": "A2",
       "status": "IN_PROGRESS",
-      "evidence": []
+      "evidence": ["SERIES_01_CREATIVE_DIRECTION.md"]
     },
     {
       "id": "A3",
@@ -73,6 +80,11 @@
       "id": "A4",
       "status": "IN_PROGRESS",
       "evidence": ["SERIES_01_FORMATION_OPTIONS.md"]
+    },
+    {
+      "id": "A5",
+      "status": "IN_PROGRESS",
+      "evidence": ["SERIES_01_CREATIVE_DIRECTION.md"]
     },
     {
       "id": "B1",
@@ -176,9 +188,9 @@
     }
   ],
   "accepted_gate_count": 1,
-  "total_gate_count": 24,
+  "total_gate_count": 25,
   "trailer_creative_status": "PAUSED_PENDING_DIRECTOR_IDEAS",
-  "git_status": "CP_005_PRE_PUSH_SNAPSHOT; VERIFY_CHECKPOINT_COMMIT_ON_ORIGIN_MAIN; NEXT_ROUTINE_PUSH_AT_EXCHANGE_60",
+  "git_status": "CP_005_PUSH_VERIFIED_AT_4be743e; EXCHANGE_51_SCOPE_UPDATE_LOCAL_ONLY; NEXT_ROUTINE_PUSH_AT_EXCHANGE_60",
   "historical_decisions_status": "SOURCE_CAPTURE_AND_CANDIDATE_INDEX_NOT_YET_RECONCILED",
   "authorization": "Planning/persistence/regular scoped Git pushes; no new production spending or publication authorized"
 }
