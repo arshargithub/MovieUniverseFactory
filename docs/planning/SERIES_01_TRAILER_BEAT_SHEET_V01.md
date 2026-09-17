@@ -6,6 +6,8 @@ Audience promise: three distinctive, capable people entrusted with a secret miss
 
 ## Proposed sequence
 
+Exchange 64: entrance assignment/order below is explicitly provisional pending an ensemble decision. Director's original mounted-entrance image was the Sikh; the Pashtun's horse-related biography does not settle who receives the signature gallop. Preserve this v0.1 as history; see the ensemble proposal in [trailer concept](SERIES_01_TRAILER_CONCEPT.md). Broad progression remains accepted. Do not generate the Pashtun opening as a final selected shot on the authority of this table.
+
 | Time | Beat and purpose | Proposed image/sound | Reuse candidate and limits |
 |---|---|---|---|
 | 0–7s | Immediate attraction: meet the Pashtun in motion | Close physical details of a gallop open into a striking wide image with trailing dust. Reveal her purposeful attention and control, not just a faceless silhouette. Hoofbeats lead before music expands. | Horse/rider/environment/motion asset reuse; trailer camera likely tailored. Episode pursuit/travel placement is not approved. No new stunt, route or power fixed. |

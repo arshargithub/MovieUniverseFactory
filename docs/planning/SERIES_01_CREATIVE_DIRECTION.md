@@ -18,6 +18,8 @@ Director explicitly accepts this package at exchange 63. These rules are a limit
 
 ### Proposed visual brief — exchange 63, not yet selected
 
+Exchange 64 sequencing correction: select high-level entrances across the trio before choosing the comparison subject. Pashtun rider was a convenient proposed sample, not a selected opening or an exclusive assignment of horse imagery. Director's original Sikh mounted entrance is preserved in the trailer concept. The proposed three rendering treatments remain candidates; no image generation initiated.
+
 Working descriptor: **painterly cinematic realism** within the accepted stylized 3D/graphic-novel direction. Believable human anatomy and horse weight; selectively simplified forms, textured color and designed shadows instead of pore-level photorealism. Expressive individual faces must support intimate humor and doubt, not just heroic poses. Cultural specificity comes from researched individual design, not exaggerated ethnic facial shorthand or generic ornamental excess.
 
 Propose earth/stone/indigo and selective warm accents, with deliberate variation across settings rather than permanent sepia. Cloth, leather, stone and metal should remain materially distinct and lived-in. Use strong silhouettes, depth and readable faces in vertical framing; environmental scale can rise behind or recede beyond the subject. Choreography uses physical weight, anticipation and occasional emphasis without removing vulnerability. This is a proposed aesthetic, not a cost-saving claim or demonstrated renderer capability.
