@@ -58,6 +58,8 @@ Exchange 33 Director refinement: a loyal, successful British soldier who has adv
 
 Exchanges 37–38 institutional clarification: the secret team's sole direct British institutional connection is the officer, but its existence is secretly known all the way up. It undertakes missions the British cannot publicly be associated with. This supersedes the assistant's weaker “quietly tolerated” suggestion; not a rogue private venture. Officer's aim of limiting wider conflict is distinct from the institution's broader need for deniability. Exact command/funding/protection arrangements and the trio's knowledge of senior backing remain open; see officer brief.
 
+Exchange 39: officer originated and established the team, selecting through his “martial races” outlook and granting tactical freedom with no British in-field supervision. Senior backing and founder status coexist. Deliberate recruitment versus bringing together people met in prior events is explicitly open. Trio awareness of basic deniable British backing is tentatively supported, not full knowledge of senior sponsorship or guarantees. These are fictional story decisions, not validation of colonial racial theory or claims of a historical counterpart.
+
 An illustrative dramatic engine is a mission whose officially stated purpose conflicts with what the team discovers on the ground. This is a development proposal, not an approved first episode. Character choices should reveal the theme before exposition names it.
 
 ## Historical anchors and research boundaries
