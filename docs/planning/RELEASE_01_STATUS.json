@@ -3,11 +3,11 @@
   "plan_version": 1,
   "updated_date": "2026-09-17",
   "outcome": "Trailer plus episodes 1 and 2",
-  "substantive_exchange_count": 9,
-  "last_checkpoint": "CP-000",
-  "next_checkpoint_exchange": 10,
+  "substantive_exchange_count": 10,
+  "last_checkpoint": "CP-001",
+  "next_checkpoint_exchange": 20,
   "current_gate": "A3",
-  "current_subtask": {
+  "previous_subtask": {
     "name": "Sikh protagonist brief",
     "accepted": [
       "identity",
@@ -23,6 +23,13 @@
     "total": 6
   },
   "progress_method": "Binary Director-accepted deliverable gates, equal weight; not effort or time estimate",
+  "current_subtask": {
+    "name": "Gurkha protagonist brief",
+    "accepted": ["identity_and_temperament"],
+    "remaining": ["personal_history_and_relationships", "external_aim", "private_need_and_contradiction", "moral_boundary", "episode_1_2_choices"],
+    "completed": 1,
+    "total": 6
+  },
   "gates": [
     {
       "id": "A1",
@@ -39,7 +46,7 @@
     {
       "id": "A3",
       "status": "IN_PROGRESS",
-      "evidence": []
+      "evidence": ["SERIES_01_SIKH_FAMILY_OPTIONS.md", "SERIES_01_GURKHA_CHARACTER.md"]
     },
     {
       "id": "A4",
@@ -150,7 +157,7 @@
   "accepted_gate_count": 1,
   "total_gate_count": 24,
   "trailer_creative_status": "PAUSED_PENDING_DIRECTOR_IDEAS",
-  "git_status": "LOCAL_DESIGN_COMMITS_PENDING_CHECKPOINT_10_PUSH; EARLIER_PUSH_ONLY_ON_EXPLICIT_REQUEST",
+  "git_status": "CP_001_DESIGN_PUSH_DUE; VERIFY_REMOTE_RECEIPT_AFTER_COMMIT; NEXT_ROUTINE_PUSH_AT_EXCHANGE_20",
   "historical_decisions_status": "SOURCE_CAPTURE_AND_CANDIDATE_INDEX_NOT_YET_RECONCILED",
   "authorization": "Planning/persistence/regular scoped Git pushes; no new production spending or publication authorized"
 }

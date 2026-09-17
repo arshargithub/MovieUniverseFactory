@@ -92,4 +92,4 @@ Director clarification, exchange 2: design/planning and implementation changes m
 
 ## Next conversation focus
 
-Continue A3: the Sikh protagonist's motives, using the accepted warm/shared-responsibility father relationship. Establish what he consciously seeks, what he cannot admit he needs, and the line that could put him at odds with the officer. Then develop the Gurkha, Muslim female lead and officer to equal specificity; do not let the closest-to-home character consume all development attention. Historical year/region research and C1/C2 remain parallel bounded items, not prerequisites to every creative choice.
+At exchange 10, continue A3 with the Gurkha protagonist: clarify his accepting temperament, then his own motives and limits. The Sikh protagonist has five of six initial criteria established; episode choices wait for ensemble development. Develop the Muslim female lead and officer to equal specificity; do not let the closest-to-home character consume all development attention. Historical year/region research and C1/C2 remain parallel bounded items, not prerequisites to every creative choice.
