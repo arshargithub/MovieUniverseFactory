@@ -1,6 +1,6 @@
 # Series 01 — Sikh protagonist: history and family options
 
-Recorded 2026-09-15; updated at planning exchange 7. Status: **family relationships, agency-versus-influence motivation, difficulty admitting uncertainty and the officer's sincere-but-bounded empowerment accepted; other details remain development proposals**. Firm inputs and the agreed ensemble/opening structure are in [the discovery brief](SERIES_01_DISCOVERY.md). No trailer development is included.
+Recorded 2026-09-15; updated at planning exchange 9. Status: **family relationships, agency-versus-influence motivation, difficulty admitting uncertainty, personal-assurance moral boundary and the officer's sincere-but-bounded empowerment accepted; other details remain development proposals**. Firm inputs and the agreed ensemble/opening structure are in [the discovery brief](SERIES_01_DISCOVERY.md). No trailer development is included.
 
 ## Director acceptance — motivation, exchange 3
 
@@ -8,7 +8,7 @@ Source: Director's explicit response, “i like what you proposed: Agency is wha
 
 Accepted central motivation: he wants agency—his judgment to count and room to make consequential decisions. The officer offers influence through their relationship. This mismatch is a continuing source of character/story tension, not a mandate that every mission follow the same pattern.
 
-This supersedes the pending status of that combination in the exploratory notes below. It does **not** approve the illustrative escort/arrest mission, private concession, sister scene, enjoyment of danger, controlling behaviour, moral boundary or eventual arc ending. Those remain proposals. The officer's intentions were subsequently clarified in exchange 4 below.
+This supersedes the pending status of that combination in the exploratory notes below. It does **not** approve the illustrative escort/arrest mission, private concession, sister scene, enjoyment of danger, controlling behaviour or eventual arc ending. Those remain proposals. The officer's intentions were subsequently clarified in exchange 4 and the moral boundary in exchange 9 below.
 
 ## Director acceptance — officer's intentions, exchange 4
 
@@ -38,19 +38,21 @@ Source: Director responds “i really like that” to the proposal that admittin
 
 Accepted: because being trusted to decide matters deeply to him, he struggles to admit uncertainty—not because he believes he knows everything. He can claim to have a situation in hand prematurely and seek help too late. His growth involves learning that asking for another person's judgment does not surrender his agency. This is a situational vulnerability, not a claim that he is always reckless, dishonest or unable to collaborate.
 
-The mission and home examples illustrate how the trait might manifest; they are not fixed episode scenes. Moral boundary and consequential episode 1–2 choices remain open. This acceptance completes the current brief's private-need/contradiction criterion, not the full character or ensemble gate.
+The mission and home examples illustrate how the trait might manifest; they are not fixed episode scenes. The moral boundary was subsequently accepted in exchange 9; consequential episode 1–2 choices remain open. This acceptance completes the current brief's private-need/contradiction criterion, not the full character or ensemble gate.
 
-## Moral boundary proposal — exchange 8, not accepted
+## Director acceptance — moral boundary, proposed exchange 8, accepted exchange 9
 
-Candidate: he will not knowingly use someone's trust in his personal assurance to deliver them into harm. If he persuades someone to surrender, cooperate or leave shelter under his protection, he considers himself answerable for what follows. This is a proposed individual conviction, not an ethnic/religious generalization or proof that he always keeps every promise.
+Source: Director says “i really like what you have proposed and how it connects to his flaw and the possibilities it offers for the series”.
+
+Accepted: he will not knowingly use someone's trust in his personal assurance to deliver them into harm. If he persuades someone to surrender, cooperate or leave shelter under his protection, he considers himself answerable for what follows. This is an individual conviction, not an ethnic/religious generalization or proof that he always keeps every promise.
 
 The boundary is narrower than general opposition to all deception: he can still use tactical misdirection. It also does not mean promised protection establishes innocence or immunity from accountability. What protection actually covers must be defined in the situation.
 
 Illustrative stress test, not an episode assignment: after securing someone's cooperation under an assurance of safety, he learns they may have committed a serious wrong. He wants a way to keep them safe while allowing the allegation to be investigated. A teammate or harmed person reasonably sees delay as protecting someone dangerous; the officer believes the protagonist promised more than he had authority to promise. The conflict must not rely on every other character becoming cruel or foolish.
 
-Connection to his accepted flaw: eager to demonstrate judgment, he can make a promise before knowing whether he can fulfil it. He then has to admit the overreach and seek help without treating the person who trusted him as expendable. This supplies a cost to both the promise and his agency, but remains proposed until the Director responds.
+Accepted connection to his flaw: eager to demonstrate judgment, he can make a promise before knowing whether he can fulfil it. He then has to admit the overreach and seek help without treating the person who trusted him as expendable. This supplies a cost to both the promise and his agency. No particular breach, mission, victim, culprit or episode outcome is established by accepting the dramatic possibilities.
 
-Question to Director: does this particular weight on his personal assurance fit, or is the deeper boundary loyalty to companions regardless of what he has promised?
+Next-step recommendation: develop another lead before assigning the Sikh protagonist's episode 1–2 choices, so the ensemble shapes the story rather than being fitted around his dilemma. Begin with the Gurkha's own wants and personality, not a default loyal/stoic foil. His specific motives remain open for Director input.
 
 ## Director acceptance — father and son
 
