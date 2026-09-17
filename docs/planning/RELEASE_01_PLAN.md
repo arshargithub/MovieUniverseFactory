@@ -107,6 +107,8 @@ Director clarification, exchange 2: design/planning and implementation changes m
 
 ## Next conversation focus
 
+Current focus, exchange 68: three ensemble treatment sheets generated and inspected; [comparison record and exact prompts](SERIES_01_LOOK_COMPARISON_V01.md) document local media, provenance and limitations. Await Director aesthetic feedback before further generation or style lock. These are not Blender renders or approved final character designs. Media are saved on the project SSD under ignored `.runtime/art-direction/series01-entrances-v01`, not included in Git backup. Next checkpoint/push is 70.
+
 Current focus, exchange 67: all three high-level entrances are accepted. Move to the ensemble visual comparison brief (three treatments applied to the same three entrance compositions) rather than asking again about accepted entrance assignments. Exact choreography/order and final visual design remain open. This proposal does not authorize new paid spend. The exchange-66 and earlier focus paragraphs below are historical snapshots. Next checkpoint/push remains 70.
 
 Current focus, exchange 66: Pashtun spectacular gallop and Sikh mounted confrontation explicitly selected. Complete the Gurkha's contrasting entrance concept and develop the ensemble visual brief; exact choreography/order still open. The exchange-64 focus below is a historical snapshot, not a reason to reopen the selected pair. Next checkpoint/push remains 70.
