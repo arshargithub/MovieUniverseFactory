@@ -4,6 +4,8 @@ Initially drafted at exchange 41. **Status at exchange 43: all three encounter d
 
 **Mission selection at exchange 47:** option 2, missing informant/evidence before retaliation, is the working first joint mission. Option 1, secret passage agreement, is retained only as a future possibility. See the latest selection section below; earlier recommendations do not override it.
 
+**Disappearance selection at exchange 49:** abduction by the actual culprits is the working version. Voluntary hiding is an unselected alternative; do not silently combine the two.
+
 ## Accepted framework
 
 The officer knew the individuals before conceiving the team and then deliberately assembled them. Prior encounters, first joint mission and later earned mutual trust are separate layers. The team has senior secret backing, the officer as sole direct institutional connection, tactical freedom and no British in-field supervision. The series begins with them already together; origins emerge gradually. Exact dates, units, locations, first-meeting sequence and prior links among the trio remain open.
@@ -116,3 +118,16 @@ Recommendation for discussion: abduction is a promising first-mission choice bec
 Keep recovery stakes and thematic ambiguity distinct: an abducted informant can genuinely want rescue while still fearing disclosure of their own errors or involvement. Abduction does not make every statement reliable, guarantee innocence or vindicate the planned retaliation. Institutional handling of uncertain information and the officer's part in it remain consequential even if identifiable culprits exist.
 
 Before locking the abduction version, establish why the captors keep the informant alive and why the trio have a recoverable lead. One possible motive for continued captivity is uncertainty over what evidence has already reached others; this is not an accepted interrogation event or tactic. Do not combine hiding and kidnapping merely to retain every idea. Next decision is whether to use abduction as the working disappearance, followed by a concise cause-and-effect outline rather than repeated abstract motive choices.
+
+## Abduction selected — exchange 49
+
+Director accepts the recommendation to use abduction by the real culprits as the working disappearance. The initial-account/correction sequence is the current development scaffold, not approval of every suggested fact: report contents, actual evidence, officer's complicity or endorsement, warning mechanism, captor motives and informant culpability still need specification. Voluntary hiding and hiding-then-kidnapping are not selected. Recovering the informant does not automatically prove the original target innocent, make the source reliable or resolve the wider moral stakes.
+
+### Proposed connecting beats — not accepted
+
+1. Before capture, the informant sends a brief warning that the earlier attribution is unsafe and that they have something concrete to explain in person. The warning reaches the officer but is not itself a complete corrective account or sufficient proof. Its delivery mechanism and reason for limited content remain to be made credible; no literacy/language assumptions fixed.
+2. They fail to make the follow-up contact. A last known appointment or contact gives the trio a starting point, not the captors' location or an implausibly complete trail. Specific site and people remain open. The team initially knows disappearance, while the audience's knowledge of abduction is a separate storytelling choice.
+3. Captors keep the informant alive for a bounded reason: they need to establish what corroboration exists and who else has it. This is only a candidate motive, not an interrogation scene or guarantee that capture logically requires indefinite survival. Avoid solving the story with a convenient unexplained cache of proof; select the actual evidence before plotting detailed pursuit.
+4. Officer seeks a limited delay while assigning the trio the recovery. Two pressures are possible: the military response may proceed, and continued survival of the informant is uncertain. No precise countdown, commander refusal, automatic retaliation trigger or execution order is selected.
+
+The mission's dramatic aim is to test independent cooperation: officer supplies an objective and incomplete starting information, not field supervision or answers to every decision. The trio must establish what happened, find a way to recover the informant and assess what the source can substantiate. How they divide authority and their first consequential disagreement remain next development work. No mission outcome or additional accepted gate yet.
