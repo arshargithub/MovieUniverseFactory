@@ -1,6 +1,6 @@
 # Series 01 — prior encounters and formation options
 
-Planning exchange 41. All encounter sketches below are proposals, not accepted events, episode assignments or historical claims.
+Initially drafted at exchange 41. **Status at exchange 43: all three encounter directions accepted, using the revised Sikh and Pashtun versions below.** Original A/C sketches are retained as superseded alternatives, not current canon. Specific staging, dates, units and episode placement remain open. These are fictional foundations, not historical claims.
 
 ## Accepted framework
 
@@ -37,3 +37,27 @@ Proposed relationship distinctions: Sikh — being trusted and backed; Gurkha �
 Do not make every meeting an audition, a display of all accepted traits or proof the officer is uniquely benevolent. The sketches explain why each might consider a later invitation, not complete the reasons for long-term trust. Each encounter needs the protagonist's own stakes. His decision to found the team comes after encounters, not as a concealed recruitment test within them.
 
 Next: ask which sketches feel alive, revise/select them, then develop the first joint mission as a test of cooperation. No checklist gate is promoted by this proposal draft.
+
+## Revision and acceptance — exchanges 42–43 (current direction)
+
+Exchange 42: Director endorses the Gurkha event but challenges the original Sikh/Pashtun encounters because they do not demonstrate capability relevant to the group's dangerous independent missions. Assistant agrees: personal judgment or bargaining alone is an insufficient recruitment basis. This is a substantive correction, not merely additional color. Exchange 43: Director accepts all three after the revisions.
+
+### Sikh — independent command when the plan fails
+
+During an escort or recovery operation, changed circumstances require him to assume responsibility without consulting a superior. He gets people through danger by adapting and making a consequential decision. The accepted sketch includes securing necessary cooperation through a personal assurance beyond his independently guaranteed authority; success leaves him answerable for that promise. The officer recognizes both the operational value of his initiative and the obligation it creates. Exact mission type, protected person, allegation, command status, resolution and dialogue remain open. Recruitment logic: demonstrated capacity to lead and decide when instructions no longer suffice. Do not automatically import every detail of the original A sketch, such as a particular investigation procedure or reprimand.
+
+### Gurkha — recovery under competing responsibilities
+
+Retain the withdrawal/evacuation and injured-guide recovery direction from B. He insists on an attempt; the officer has a legitimate concern for others' safety. They arrive at a limited attempt that succeeds with a cost rather than effortless heroism. Particular terrain, enemy, injuries, equipment losses, timing and exact execution are not locked. Recruitment logic: courage, responsibility and judgment under pressure, plus a professional disagreement that establishes respect.
+
+### Pashtun — overlapping objectives in a dangerous recovery
+
+She is independently trying to recover horses taken from the family's care; the officer is investigating the same group for a different reason. Her knowledge of the animals, transaction and people has already enabled progress. Their efforts intersect and she actively participates in recovery, demonstrating riding, fighting and adaptation under danger, while her own objective can conflict with his preferred outcome. A person taken with the horses remains optional, not an accepted kidnapping/family tragedy. Exact adversary, offense, route, tactics and outcome remain open. This replaces the primarily commercial-dispute encounter in C and supplies the intended pre-team encounter with real danger. Recruitment logic: independent initiative, specific knowledge and effective action, not just persuasive argument. The officer does not create her competence.
+
+### Accepted common basis and remaining scope
+
+The officer has operationally relevant evidence of each person's capability, not merely an impression of admirable character. Sikh: responsibility beyond authority; Gurkha: challenging a decision responsibly; Pashtun: pursuing an independent objective. These are not fixed combat specialties or guarantees of flawless performance. He need not personally witness every moment for the evidence to be credible; exact observation/reporting remains a staging question. No particular meeting order or first joint mission is selected, and prior relationships among the trio remain open. These accepted directions advance the still-open history/relationships work; they do not by themselves complete A3/A4 or assign episode plots.
+
+## First joint mission — next proposal, not accepted
+
+Recommendation: test cooperation rather than stage a second set of auditions. Illustrative premise: locate and bring back a missing intermediary before their disappearance triggers a wider confrontation. The intermediary has reasons to distrust returning. This can expose different definitions of success: the Sikh seeks a promise that will secure cooperation, the Gurkha weighs what happens to someone unable to travel safely, and the Pashtun questions whose interests the return serves. These are possible pressures, not mandatory beats; avoid mechanically displaying every trait or repeating the prior encounters. The officer's briefing is not presumed a lie, the intermediary is not presumed innocent, and the trio's eventual decision is open. Select or replace the premise before expanding it. First joint mission remains backstory, not automatically the pilot.
