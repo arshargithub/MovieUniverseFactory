@@ -8,6 +8,8 @@ Deliver a coherent series trailer plus episodes 1 and 2, approved by the Directo
 
 Goal orientation means explicit outcomes, sequencing and evidence—not a deadline imposed on creative exploration. No release date, episode duration, platform, new production spend or autonomous publishing is approved by this plan. The trailer is part of the deliverable, but its creative development remains paused until the Director shares their ideas. Other work continues.
 
+Creative standard confirmed at exchange 20: this is historically inspired fiction, not a documentary. Research supports specificity and plausible context; it must not become a requirement for documented counterparts to every character or event. Track real-history claims separately from deliberate fictional invention. See the discovery brief for the accepted scope.
+
 The active workspace is `/Volumes/MovieFactorySSD/MovieUniverseFactory`. Read this plan and [status](RELEASE_01_STATUS.json) at the beginning of each substantive continuation. Read the relevant creative documents and historical decisions before proposing changes. Record accepted choices separately from suggestions.
 
 ## Six workstreams and 24 acceptance gates
@@ -92,4 +94,4 @@ Director clarification, exchange 2: design/planning and implementation changes m
 
 ## Next conversation focus
 
-At exchange 10, continue A3 with the Gurkha protagonist: clarify his accepting temperament, then his own motives and limits. The Sikh protagonist has five of six initial criteria established; episode choices wait for ensemble development. Develop the Muslim female lead and officer to equal specificity; do not let the closest-to-home character consume all development attention. Historical year/region research and C1/C2 remain parallel bounded items, not prerequisites to every creative choice.
+At exchange 20, continue A3 with the Muslim Pashtun protagonist's personal aim and reason to join the alliance. Her working regional direction is Peshawar–Mardan. Sikh brief: five of six initial criteria; Gurkha: four of six. Their remaining relationships and episode choices will develop with the ensemble. The officer still needs a fuller independent brief. Historical year/region research and C1/C2 remain parallel bounded items, not prerequisites to every creative choice.

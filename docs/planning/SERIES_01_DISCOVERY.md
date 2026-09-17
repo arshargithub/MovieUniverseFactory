@@ -18,6 +18,12 @@ The Director's thematic hypothesis includes British preference for recruits perc
 
 ## Development interpretation — proposed, not canon
 
+### Creative standard — accepted at exchange 20
+
+The Director explicitly defines the series as **100% fiction**, with characters, settings and historical context based on or inspired by reality—not a documentary. Research should support specificity, credible constraints and deliberate invention, not require a documented precedent for every fictional life, scene or alliance. Invent people, households, local settings, motives and missions coherently; keep invented elements distinct from claims about real history. Material departures from a real event, institution or community practice should be conscious choices, not accidental errors. Neither historical grounding nor fiction status makes a character representative of an entire community.
+
+Peshawar–Mardan is accepted as the working regional development direction for the Muslim Pashtun protagonist, not a selected birthplace, tribe or household. Family service/intermediary links remain possibilities rather than established biography.
+
 ### Subsequent Director decisions and family anchors
 
 - Religious backgrounds: Sikh protagonist, Hindu Gurkha protagonist, and a strong Muslim female protagonist whose Pashtun identity was accepted in exchange 19. Do not treat “Jatt,” “Gurkha,” and “Pashtun” as three religions or assume community labels alone determine belief/practice.
@@ -42,6 +48,7 @@ The Director's thematic hypothesis includes British preference for recruits perc
 - Planning exchange 17: accepts the Gurkha's refusal to discard someone merely because they are no longer useful, even without a personal promise. Director connects this to Gurkha courage/rescue traditions. Later institutional sources support that association; exact nineteenth-century motto usage and a generalized period rescue-specialist reputation are not verified. Treat the boundary as his conviction, not an automatic ethnic trait or suicide requirement.
 - Planning exchange 18: Director emphasizes specific community/religious grounding to avoid generic stereotypes, and prefers a beautiful, strong, strongheaded Pashtun Muslim warrior woman. Pashtun selection remains under discussion while assessing credibility and controversy; do not substitute Taliban policy for Pashtun culture or invent a British-rescuer origin. See [female character development](SERIES_01_FEMALE_CHARACTER.md) for advice and limited historical-source evidence.
 - Planning exchange 19: Muslim Pashtun identity explicitly accepted, superseding the tentative status above. Recruitment geography research distinguishes modern Khyber Pakhtunkhwa, nineteenth-century administered Punjab districts/autonomous frontier territory, and Afghanistan; neither a home locality nor a recruitment/family link is chosen. Peshawar–Mardan is a research recommendation only. Male Pathan enlistment does not establish routine female enlistment.
+- Planning exchange 20: Director agrees to the working regional direction and explicitly establishes historically inspired fiction, not documentary reconstruction; see the creative standard above. This supersedes the region's recommendation-only status, without selecting specific geography or family links.
 
 The story can combine an accessible mission-adventure structure with a continuing question: **What does honour require when the power that rewards your courage also depends on your obedience?** Each protagonist needs a distinct reason to work with the officer, something the arrangement provides, and a line they will not cross. The officer needs convictions and interests of his own, not simply the role of enlightened rescuer or one-dimensional villain. The female lead needs an independently grounded role, training and agency; her ethnicity alone should not supply her function.
 
