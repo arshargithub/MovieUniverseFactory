@@ -48,12 +48,18 @@ Accepted: he genuinely wants home, but can postpone leaving because someone stil
 
 Do not infer universal selflessness, a secret wish for dependence, fear of irrelevance, an assigned departure/death plot or a fixed backstory causing this trait. His pleasure and purpose in warrior work remain independent accepted reasons to stay.
 
-## Next discovery proposal — moral boundary, not accepted
+## Director acceptance — moral boundary, exchange 17
 
-Potential line: he refuses to treat a person as disposable merely because they can no longer be useful. Unlike the Sikh protagonist's personal assurance, this would apply even without a promise, for example to an injured guide or discarded informant. It does not mandate suicidal rescue, forgiveness of deliberate betrayal or approval of every action. The moral difficulty is how much risk he may impose on others while protecting one person, not that everyone opposing him is callous. Ask whether this fits before accepting a boundary or assigning a mission.
+Source: Director agrees and connects the boundary to Gurkha traditions of courage and rescue.
+
+Accepted: he refuses to treat a person as disposable merely because they can no longer be useful. Unlike the Sikh protagonist's personal assurance, this applies even without a promise. An injured guide or discarded informant remains an illustrative example, not a fixed mission. It does not mandate suicidal rescue, forgiveness of deliberate betrayal or approval of every action. The moral difficulty is how much risk he may impose on others while protecting one person, not that everyone opposing him is callous.
+
+Historical association checked in exchange 17: [Gurkha Welfare Trust](https://www.gwt.org.uk/about-the-gurkhas/remember-gurkhas/) explicitly uses both the no-one-left-behind theme and rescue reputation. [The Gurkha Museum's Kulbir Thapa account](https://thegurkhamuseum.co.uk/blog/kulbir-thapas-v-c/) documents rescue bravery in 1915. The courage motto is attested in [the 2015 parliamentary anniversary debate](https://hansard.parliament.uk/Lords/2015-06-10/debates/15061073000214/GurkhasAnniversary). These support the association, not the exact wording's attestation in our 1870s–1880s setting. They are later commemorative sources, not proof of a universal ethnic trait, period rescue-specialist doctrine or this character's personal experience. Preserve the Director's connection as creative grounding; verify period language before placing a motto in dialogue.
+
+Possible thematic development, not additional canon: British commanders may expect courage to mean compliance with a dangerous task, while this character understands courage to include returning for someone the mission has ceased to value. That can connect his personal boundary to the series' recruitment/obedience theme without denying genuine martial traditions or making him simply their embodiment.
 
 ## Remaining brief criteria
 
 Exchange 11 clarification distinguished accepting people from accepting circumstances using hypothetical responses to a companion's mistake and an unfair order. Neither meant endorsing wrongdoing or automatic obedience. The people-focused interpretation was subsequently accepted in exchange 12 above; circumstance-focused acceptance was not. Specific dialogue and mission events were not fixed.
 
-Identity/temperament, external aim/staying motive and private need/contradiction established. The original joining event remains unknown. Personal history and richer relationships, moral boundary and consequential episode 1–2 choices remain open. The initial group-cohesion role is a relationship seed, not a completed relationship history. No names, family structure, rank, service history or mission events are inferred.
+Identity/temperament, external aim/staying motive, private need/contradiction and moral boundary established. The original joining event remains unknown. Personal history and richer relationships, and consequential episode 1–2 choices remain open. The initial group-cohesion role is a relationship seed, not a completed relationship history. No names, family structure, rank, service history or mission events are inferred.
