@@ -4,6 +4,8 @@ Established at planning exchange 18. Discovery and research notes, not a complet
 
 ## Selected visual baseline — exchange 88
 
+Exchange 91: Director authorizes a restrained individuality refinement in BOTH three-quarter and frontal views and requests paired comparisons going forward. Original portrait 5 and frontal-v01 remain preserved. New portrait-v07-individualized and frontal-v02-individualized are review candidates only; generated changes are subtle and do not establish resolution of the idealization concern. Exact prompts and provenance in [baseline record](SERIES_01_PASHTUN_BASELINE_V01.md).
+
 Exchange 90 review: Director confirms frontal-v01 is a very accurate frontal of the selected woman and still likes her. **Cross-view likeness accepted; final design polish remains open.** Director feels both views are a little too perfect / generically beautiful and exoticized. Preserve beauty, self-possession, natural simplicity and chosen coloring while seeking individual specificity; do not infer a desire for ugliness, scars, trauma, exaggerated ethnic features or a new identity.
 
 Proposed response, not accepted anatomy changes: first reduce beauty-styling cues (uniformly heavy lash/eye outlines and polished lip treatment), then test restrained natural asymmetry in brows/eyelids or mouth rather than stacking conspicuous flaws. Subtle lived-in expression and future acting can express her particular wit/persistence; not every personality trait should be encoded in facial anatomy. Recommend one restrained de-idealization candidate against the accepted pair, only after direction approval. No image generated this exchange.
