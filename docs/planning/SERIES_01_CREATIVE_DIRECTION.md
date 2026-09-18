@@ -6,6 +6,22 @@ Established at exchange 51, 2026-09-17. Decision brief, not an approved style or
 
 ## Director inputs and status
 
+### Creative guiding principles — exchange 96
+
+Director requests explicit principles for spectacular warrior action compatible with intended distribution, designed upstream rather than hoping uploads evade flags. Accepted requirement: develop this within existing milestones; do not add another workstream/gate. Exchange-62 consequential action without graphic gore remains accepted. The detailed treatment below is a proposal for Director review, not blanket approval or a formal age rating.
+
+Ownership: A2 owns tone/editorial boundaries; A5 owns visual and sound treatment; C1–C3 own platform eligibility/delivery checks. B2/B3/B4 apply the principles in scripts/boards, E1/E3/E4 validate on existing proof footage, F1–F3 check final release packages. Gate denominator stays 25.
+
+Proposed core: **Spectacle through skill, danger and consequence—not graphic injury.** Show anticipation, spatially legible choreography, speed, weight, reversals, teamwork and difficult choices. Prefer parries, disarms, interrupted attacks, escapes and rescues; not every fight must be nonlethal, but lethal outcomes need not show penetration or damaged anatomy. Cutaways/silhouettes are storytelling tools, not policy exemptions; distressing audio can also make a sequence graphic.
+
+Proposed launch baseline: no visible blood, wound detail, blade penetration, dismemberment, execution spectacle, prolonged helpless suffering or wet/crunching anatomical sound effects. No graphic animal harm. Death and injury can have clear narrative consequences through absence, retreat, restrained aftermath and relationship responses. Bloodless violence may still be too intense; assess total scene duration, context and sound, not a checklist loophole. Exceptional story needs require an explicit editorial/platform review before production, not an automatic sanitized export afterward. These are conservative house rules, not asserted universal platform prohibitions.
+
+Illustrative, unapproved choreography: Gurkha protects a narrow passage, redirects an attack, disarms an opponent, then turns immediately to help someone behind him. His speed and priority establish ferocity and care without a wound close-up. Sikh holds his ground under a mounted threat and chooses when to advance; Pashtun's riding spectacle can turn on timing, terrain and a rescue rather than trampling bodies. Specific beats must fit story and approved ability rules.
+
+Other guiding principles to consolidate from existing decisions, not new approvals: action reveals character and changes a situation; vulnerability/consequences remain real; warmth coexists with danger; cultural specificity without caricature; imperial racial doctrine is examined, not validated as innate ethnic fighting ability; standalone excerpts must not accidentally endorse dehumanizing archival language; visual identity and phone-size clarity survive spectacle; reuse serves the audience rather than dictating story.
+
+Before freezing each action board, record dramatic purpose, source of spectacle, visible/implied harm, sound/aftermath, contextual clarity, platform risk and redesign if needed. Review the whole edit plus thumbnail, captions and promotional extracts before publication. Aim for conservative broad-discovery suitability, not boundary-testing; no guarantee against automated error or policy changes. Apply this to the proposed actual-trailer passage rather than creating a separate violence experiment.
+
 Exchange 62: language and tone accepted—primarily English, natural character-specific accents and occasional culturally grounded expressions, English captions and pronunciation review; intense consequential action without graphic gore, balanced by relationship-based warmth/humor. No formal rating or cast selected.
 
 ### Accepted trailer world rules (proposed exchange 62; approved exchange 63)
