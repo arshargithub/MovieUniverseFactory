@@ -18,6 +18,8 @@ See [C art direction](SERIES_01_ART_DIRECTION_C.md) for visual translation and [
 
 ## Director direction
 
+Exchange 84: first portrait received positively, with a requested exploratory refinement toward slightly greater maturity and a slightly fuller build. [Second portrait candidate](SERIES_01_PASHTUN_BASELINE_V01.md) awaits comparison; no exact age or final proportions selected.
+
 Exchange 83 visual evidence: [first closer portrait candidate](SERIES_01_PASHTUN_BASELINE_V01.md), generated from C, is awaiting review. It does not supersede the original reference or accepted written requirements.
 
 - Strong Muslim female lead is established in the series premise.
