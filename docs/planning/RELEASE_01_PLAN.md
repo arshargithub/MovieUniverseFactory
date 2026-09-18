@@ -107,6 +107,8 @@ Director clarification, exchange 2: design/planning and implementation changes m
 
 ## Next conversation focus
 
+Current focus, exchange 82: refine the Pashtun still-image baseline around simplicity—no earrings, makeup or obvious embellishments; naturally strong jawline, not cosmetic contouring. Saved in character brief and art direction. No image generation or spending; visual baseline approval remains pending. Next checkpoint/push 90.
+
 Current focus, exchange 81: Director agrees to establish one usable still-image identity baseline for the Pashtun character, anchored in original C, before further motion. Self-possession rather than aggression, young-adult composure and natural regal elegance are now recorded in her persistent character brief and cross-linked from art direction, without removing her fire or negotiation flaw. No generation this exchange; A5 remains open. CP-008 push verified at `b6fecc7`; this exchange is a local-only design commit, next routine push 90.
 
 Current focus, exchange 80 / CP-008: Director rejects the first motion comparison: clip 1 loses the intended character impression; clips 2/3 read as near-still zooms rather than useful motion alternatives, and clip 2's face is strongly rejected. C remains the preferred still direction. Preserve her young-adult, composed, determined, self-assured, naturally regal appearance; strength must not default to anger. No additional calls. Proposed next step is identity/face-angle anchoring followed by one simple continuous-motion baseline before testing stylized timing, not another three-way reroll. See updated results and checkpoint. A5 remains open; next checkpoint/push 90.
