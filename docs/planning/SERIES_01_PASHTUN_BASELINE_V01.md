@@ -1,5 +1,7 @@
 # Pashtun identity baseline — candidate 1
 
+**Selection update, exchange 88:** Director chooses portrait **5 in the six-portrait gallery**, `portrait-v05-subtle.png`, as the winner and selected three-quarter identity baseline. Earlier pending-review/selection statements below are historical. All alternatives preserved; no frontal view approved yet. See character brief for scope and proposed next reference.
+
 Exchange 83, 2026-09-18. Director requested baseline image(s); generated one closer portrait before exploring additional angles. **Awaiting Director review; not an approved likeness.** No video calls or automatic variants.
 
 Built-in image-generation tool, reference-based identity-preserving edit. Source: `.runtime/art-direction/series01-motion-v01/input.png`, the extracted original C panel. Output: [portrait](../../.runtime/art-direction/series01-pashtun-baseline-v01/portrait.png). Original reference and generator output preserved. Media copied to project SSD, ignored by Git; no off-device media backup claimed. Model/usage/monetary cost unavailable, not reported as zero; no Runway API spend.

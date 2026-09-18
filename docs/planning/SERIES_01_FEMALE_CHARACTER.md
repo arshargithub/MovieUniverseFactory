@@ -2,6 +2,12 @@
 
 Established at planning exchange 18. Discovery and research notes, not a completed character brief.
 
+## Selected visual baseline — exchange 88
+
+Director selects **portrait 5 from the six-portrait gallery**: [subtly lighter eyes/hair](../../.runtime/art-direction/series01-pashtun-baseline-v01/portrait-v05-subtle.png). This exact filename resolves gallery numbering; it is NOT portrait-v04.png or the more strongly lightened version. Adopt its mature young-adult appearance, fuller cheek/neck contours, strong jawline, slightly rounded nose, warm brown eyes and dark chestnut hair as the selected three-quarter identity reference. Original C remains the aesthetic/entrance origin; earlier pending-selection language is superseded for this portrait only. No full-body proportions, exact age, other angles or complete look-bible approval inferred.
+
+Recommended next reference: one straight-on, eye-level head-and-shoulders portrait derived from the selected image, soft even light, simple background, same indigo cloth and illustrated style, relaxed composed expression; no makeup or adornment. This is to review currently unseen facial structure, not redesign her. Frontal likeness requires separate Director review. User asks whether to produce it; no generation performed this exchange. Profile/expression sheet can follow only if needed; no large reference batch proposed.
+
 ## Accepted presence and visual baseline — exchanges 80–81
 
 **Her strength comes from self-possession, not aggression. A young adult woman, composed and assured, with natural, almost regal elegance.** Director explicitly affirms this characterization at exchange 81 and requests its preservation in her character record, not only in generation feedback.
