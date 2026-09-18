@@ -107,6 +107,8 @@ Director clarification, exchange 2: design/planning and implementation changes m
 
 ## Next conversation focus
 
+Current focus, exchange 93: Director authorizes one simple identity-motion clip from approved pair B. [Motion brief and outcome](SERIES_01_IDENTITY_MOTION_V01.md) capture the scoped test; existing USD 5 ledger reused, estimated incremental USD 0.60, no automatic retry. A5 remains open; next checkpoint/push 100.
+
 Current focus, exchange 92: Director selects revised portrait pair B (portrait-v07-individualized and frontal-v02-individualized) as current still-image identity references. Original pair preserved; illustrated-world C unchanged. Stop facial micro-iterations and use the accepted pair for the next proposed bounded motion/identity check, subject to separate execution authorization. No generation this exchange; A5 remains incomplete. Next checkpoint/push 100.
 
 Current focus, exchange 91: paired individuality-refinement candidates generated; compare original side/front against revised side/front together. Originals remain selected references until Director decides otherwise. Changes are subtle; idealization concern remains open. CP-009 push verified at 742d388; this exchange local-only, next checkpoint/push 100. No Runway calls or new gate acceptance.
