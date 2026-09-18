@@ -11,7 +11,7 @@ class SettingsError(ValueError):
 
 
 DEFAULTS = {
-    "OPENAI_API_KEY": "", "GH_TOKEN": "", "GITHUB_REPOSITORY": "",
+    "OPENAI_API_KEY": "", "RUNWAY_API_KEY": "", "GH_TOKEN": "", "GITHUB_REPOSITORY": "",
     "MF_PROVIDER": "openai", "MF_PLANNER_MODEL": "gpt-5.4-2026-03-05",
     "MF_VISION_MODEL": "gpt-5.4-2026-03-05", "MF_REASONING_EFFORT": "medium",
     "MF_PLANNER_REASONING_EFFORT": "medium", "MF_VISION_REASONING_EFFORT": "medium",
@@ -31,7 +31,7 @@ DEFAULTS = {
 ALIASES = {name.lower(): name for name in DEFAULTS}
 ALIASES.update({"github_token": "GH_TOKEN", "GITHUB_TOKEN": "GH_TOKEN",
                 "github_repository": "GITHUB_REPOSITORY"})
-SECRET_NAMES = frozenset({"OPENAI_API_KEY", "GH_TOKEN"})
+SECRET_NAMES = frozenset({"OPENAI_API_KEY", "RUNWAY_API_KEY", "GH_TOKEN"})
 
 
 def safe_settings(settings: dict) -> dict:
