@@ -1,5 +1,7 @@
 # Series 01 — ensemble look comparison v0.1
 
+Exchange 70 naming update: retain all original files unchanged, but call this set **A1, A2, A3**, three variants of realism-led A. Original A → A1, original B → A2, original C → A3. New independently generated B/C and their limitations are documented in [v0.2](SERIES_01_LOOK_COMPARISON_V02.md). Earlier labels below are historical provenance.
+
 Exchange 68, 2026-09-17. Director authorized the three-sheet concept comparison. Created with the built-in image-generation tool under the imagegen skill, not the project API harness or Blender. Three calls total: one original, two style edits referencing A. No API key or .env accessed. Token usage, provider model identity and monetary charge were not returned: unknown, not zero. This is creative concept work, not a scored capability campaign.
 
 ## Deliverables and status
