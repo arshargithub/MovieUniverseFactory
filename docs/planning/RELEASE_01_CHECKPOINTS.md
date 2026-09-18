@@ -1,5 +1,15 @@
 # Release 01 — checkpoints
 
+## CP-009 — exchange 90, 2026-09-18
+
+- Current item A5/B4: Pashtun identity reference development. Since CP-008: preserved self-possession rather than aggression, unadorned beauty, natural strong jawline; explored maturity/fullness/nose and eye/hair colors through six portrait candidates; selected portrait 5; generated frontal view now accepted as an accurate likeness. Two-view likeness is established, not final character design or motion qualification. No defensible percentage for art-direction effort; A5 remains incomplete.
+- New Director concern: both views feel too perfect/generically beautiful and exoticized. Retain liked identity, coloring and composure; choose a restrained individualization direction before any new generation. Proposed styling reduction/natural asymmetry is not yet approved. Avoid automatically adding scars, dirt, aging or stereotyped ethnic anatomy.
+- Readiness: **1/25 = 4%** completed release gates; creative foundation **1/5 = 20%**, other five workstreams **0/4** each. These are binary accepted deliverables, not effort or artistic progress. Character brief checklists remain Sikh 5/6, Gurkha 4/6, Pashtun 3/6, officer 3/6. The substantial likeness progress sits inside A5.
+- Current remainder: resolve individual specificity; expression/performance range; other leads' designs and shared look bible; successful actual-series motion/readability evidence; trailer boards/script. Next bounded proposal: one restrained de-idealization comparison after direction approval, then return to performance rather than indefinite cosmetic variants.
+- Overall remainder: world/ensemble/origin and episode 1/2 scripts, distribution/rights/measurement, historical-decision reconciliation and reusable interfaces/handover, voice/music/sound/integration, production and authorized releases. Existing Blender evidence remains retained; no new generic experiment required by this checkpoint.
+- Seven built-in still outputs since CP-008 (six portraits plus frontal); usage/cost unknown, not zero. No additional Runway calls since $1.80 observed debit. Current exchange generates nothing. No new paid campaign or publication authority.
+- Preservation: design-only checkpoint push due after outgoing ancestry check; verify receipt. All originals and exact prompts preserved; images on ignored local SSD, not backed up by Git. Next checkpoint/push **100**.
+
 ## CP-008 — exchange 80, 2026-09-18
 
 - Current work: B4/A5, C-led art direction and motion. Since CP-007: expanded seven-look comparison, corrected B/C framing, selected C as preferred still direction, drafted art direction, reconciled two relevant original capability decisions, and completed a bounded Runway preview. Three delivered videos, **0/3 accepted (0%)**. This is the preview acceptance rate, not total art-direction progress. No motion-language decision can be inferred from the failed comparison.

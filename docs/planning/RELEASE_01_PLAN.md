@@ -107,6 +107,8 @@ Director clarification, exchange 2: design/planning and implementation changes m
 
 ## Next conversation focus
 
+Current focus, exchange 90 / CP-009: frontal likeness accepted as accurate to portrait 5, but both views feel too idealized/generic to Director. Preserve the reference pair and selected traits; discuss restrained individualization rather than random blemishes or ethnic exaggeration. No generation this exchange. A5 remains open; next checkpoint/push 100.
+
 Current focus, exchange 89: one frontal head-and-shoulders reference generated from selected portrait 5. Await Director confirmation that both views depict the same woman; no automatic frontal likeness approval or A5 completion. Saved to SSD with exact prompt in baseline record. Next checkpoint/push 90.
 
 Current focus, exchange 88: Director selects portrait 5 (`portrait-v05-subtle.png`) as Pashtun three-quarter identity baseline. Recommend one frontal reference to review unseen facial structure before motion; no generation this exchange. Prior gallery-only request did not advance substantive count. A5 remains open; next checkpoint/push 90.

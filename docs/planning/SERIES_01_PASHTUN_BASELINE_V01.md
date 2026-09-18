@@ -10,6 +10,10 @@ Inspection: single closer portrait retains indigo cloth, painted/inked style, ri
 
 ## Exact prompt
 
+### Frontal review — exchange 90
+
+Director affirms frontal-v01 as an accurate same-person view and still likes the character, but identifies a shared concern across frontal and three-quarter portraits: too perfect / generic beautiful exotic woman. Likeness continuity passes Director review; final character-design satisfaction does not. Keep portrait 5 and frontal-v01 as the reference pair while discussing restrained individualization. No new generation or final look-bible approval. See character brief for proposals, not accepted changes.
+
 ### Frontal reference candidate — exchange 89
 
 Director authorized one straight-on reference following selection of portrait 5. Built-in image-generation edit used ONLY portrait-v05-subtle.png as reference. Output: [frontal-v01.png](../../.runtime/art-direction/series01-pashtun-baseline-v01/frontal-v01.png). Inspection: frontal head/shoulders, plain light background, indigo covering, brown eyes/chestnut hair, fuller cheek/neck proportions retained broadly. New angle necessarily interprets unseen structure; face appears softer head-on and dark eye contours persist. **Awaiting Director likeness approval**, not automatically an accepted turnaround. Selected portrait 5 remains authoritative. Original and all alternatives preserved; media saved on SSD, not Git-backed. No Runway call; built-in usage/cost unknown.
