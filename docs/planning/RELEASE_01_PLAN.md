@@ -107,6 +107,8 @@ Director clarification, exchange 2: design/planning and implementation changes m
 
 ## Next conversation focus
 
+Current focus, exchange 92: Director selects revised portrait pair B (portrait-v07-individualized and frontal-v02-individualized) as current still-image identity references. Original pair preserved; illustrated-world C unchanged. Stop facial micro-iterations and use the accepted pair for the next proposed bounded motion/identity check, subject to separate execution authorization. No generation this exchange; A5 remains incomplete. Next checkpoint/push 100.
+
 Current focus, exchange 91: paired individuality-refinement candidates generated; compare original side/front against revised side/front together. Originals remain selected references until Director decides otherwise. Changes are subtle; idealization concern remains open. CP-009 push verified at 742d388; this exchange local-only, next checkpoint/push 100. No Runway calls or new gate acceptance.
 
 Current focus, exchange 90 / CP-009: frontal likeness accepted as accurate to portrait 5, but both views feel too idealized/generic to Director. Preserve the reference pair and selected traits; discuss restrained individualization rather than random blemishes or ethnic exaggeration. No generation this exchange. A5 remains open; next checkpoint/push 100.

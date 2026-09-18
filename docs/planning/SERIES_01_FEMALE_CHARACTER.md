@@ -2,7 +2,9 @@
 
 Established at planning exchange 18. Discovery and research notes, not a completed character brief.
 
-## Selected visual baseline — exchange 88
+## Selected visual baseline — exchange 92
+
+Director selects **B, the revised pair**, after comparing both angles: [three-quarter / side](../../.runtime/art-direction/series01-pashtun-baseline-v01/portrait-v07-individualized.png) and [frontal](../../.runtime/art-direction/series01-pashtun-baseline-v01/frontal-v02-individualized.png). Use these together as the current approved still-image identity references. Original portrait 5 and frontal-v01 remain preserved as lineage, not the current default. This B denotes the portrait refinement pair, NOT visual-language B; illustrated-world C remains the selected aesthetic direction. Earlier pending-review statements below are historical. No further facial refinement required before moving on; motion, expressions, full-body design and complete A5 approval remain separate. No new generation or spend authorized by selection.
 
 Exchange 91: Director authorizes a restrained individuality refinement in BOTH three-quarter and frontal views and requests paired comparisons going forward. Original portrait 5 and frontal-v01 remain preserved. New portrait-v07-individualized and frontal-v02-individualized are review candidates only; generated changes are subtle and do not establish resolution of the idealization concern. Exact prompts and provenance in [baseline record](SERIES_01_PASHTUN_BASELINE_V01.md).
 

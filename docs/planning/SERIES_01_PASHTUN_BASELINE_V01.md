@@ -1,4 +1,6 @@
-# Pashtun identity baseline — candidate 1
+# Pashtun identity baseline — selected pair and iteration history
+
+**Current selection, exchange 92:** Director selects revised **pair B**: [side / three-quarter](../../.runtime/art-direction/series01-pashtun-baseline-v01/portrait-v07-individualized.png) and [frontal](../../.runtime/art-direction/series01-pashtun-baseline-v01/frontal-v02-individualized.png). Both are approved still-image identity references going forward. Prior originals and alternatives remain unchanged. B is the portrait-pair label, not a change from illustrated visual language C. Selection supersedes earlier pending-review/default-reference statements below; it does not certify motion or complete the look bible. The intervening display-only reordering request did not increment the substantive counter. No new images or provider calls this exchange.
 
 **Selection update, exchange 88:** Director chooses portrait **5 in the six-portrait gallery**, `portrait-v05-subtle.png`, as the winner and selected three-quarter identity baseline. Earlier pending-review/selection statements below are historical. All alternatives preserved; no frontal view approved yet. See character brief for scope and proposed next reference.
 
