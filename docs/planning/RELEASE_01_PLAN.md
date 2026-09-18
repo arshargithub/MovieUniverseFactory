@@ -107,6 +107,8 @@ Director clarification, exchange 2: design/planning and implementation changes m
 
 ## Next conversation focus
 
+Current focus, exchange 97: Director accepts creative guiding principles and launch violence treatment. Next proposed concrete decision is the dramatic intention of a short Pashtun entrance passage, followed by written shots before provider selection or generation; see trailer beat sheet. No new gate/campaign, no spend. Next checkpoint/push 100 (three substantive exchanges away).
+
 Current focus, exchange 96: incorporate creative guiding principles into A2/A5 and platform checks into C1–C3; no new gate or workstream. Director requires compelling warrior action designed for intended distribution rather than risky upload-and-hope. Proposed house treatment and other principles are in SERIES_01_CREATIVE_DIRECTION.md; approval of detailed boundaries remains open. Apply them to trailer boards/proof material. Exchange 95 was the preceding substantive big-picture orientation, recorded retrospectively here (no new creative choice). Next checkpoint/push 100.
 
 Current focus, exchange 94: Director rejects identity-motion turned face (different-person impression, distorted far eye/cheek), while frontal portion is acceptable. Episode closed YELLOW with zero accepted complete clips; still pair B unchanged. Proposed next step: storyboard a 10–15-second actual-trailer excerpt with explicit identity/motion/revision acceptance, reconnecting A5 to E1/E4 instead of further isolated prompt retries. This is a recommendation, not a new approved scope or renderer decision. No generation this exchange; next checkpoint/push 100.

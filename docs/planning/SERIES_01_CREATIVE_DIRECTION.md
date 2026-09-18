@@ -8,6 +8,8 @@ Established at exchange 51, 2026-09-17. Decision brief, not an approved style or
 
 ### Creative guiding principles — exchange 96
 
+Acceptance, exchange 97: Director approves the preceding guiding-principles proposal, including the conservative launch treatment (no visible blood/graphic injury, no lingering suffering or graphic injury sounds), action revealing character, real vulnerability, cultural specificity, warmth and phone-size clarity. These now guide boards and release review; no formal rating or platform guarantee inferred. Illustrative choreography remains illustrative, not approved story canon. Earlier proposal-status language below records the discussion history.
+
 Director requests explicit principles for spectacular warrior action compatible with intended distribution, designed upstream rather than hoping uploads evade flags. Accepted requirement: develop this within existing milestones; do not add another workstream/gate. Exchange-62 consequential action without graphic gore remains accepted. The detailed treatment below is a proposal for Director review, not blanket approval or a formal age rating.
 
 Ownership: A2 owns tone/editorial boundaries; A5 owns visual and sound treatment; C1–C3 own platform eligibility/delivery checks. B2/B3/B4 apply the principles in scripts/boards, E1/E3/E4 validate on existing proof footage, F1–F3 check final release packages. Gate denominator stays 25.
