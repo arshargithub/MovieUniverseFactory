@@ -107,6 +107,8 @@ Director clarification, exchange 2: design/planning and implementation changes m
 
 ## Next conversation focus
 
+Current focus, exchange 69: Director finds first comparison too filter-like; no visual language selected. Explain actual B/C aesthetics and revise comparison methodology before further generation: preserve story/cultural identity, not identical anatomy/composition/render geometry. See Director review in the look-comparison record. Earlier feedback-pending snapshot below is superseded. Next checkpoint/push is 70.
+
 Current focus, exchange 68: three ensemble treatment sheets generated and inspected; [comparison record and exact prompts](SERIES_01_LOOK_COMPARISON_V01.md) document local media, provenance and limitations. Await Director aesthetic feedback before further generation or style lock. These are not Blender renders or approved final character designs. Media are saved on the project SSD under ignored `.runtime/art-direction/series01-entrances-v01`, not included in Git backup. Next checkpoint/push is 70.
 
 Current focus, exchange 67: all three high-level entrances are accepted. Move to the ensemble visual comparison brief (three treatments applied to the same three entrance compositions) rather than asking again about accepted entrance assignments. Exact choreography/order and final visual design remain open. This proposal does not authorize new paid spend. The exchange-66 and earlier focus paragraphs below are historical snapshots. Next checkpoint/push remains 70.

@@ -20,6 +20,16 @@ Clothing, footwear, decorative motifs and background pennant-like elements were 
 
 ## Exact prompt set
 
+## Director review — exchange 69
+
+Director observes A appears photorealistic and B/C feel like filters applied to the same underlying image, rather than distinct visual languages; requests clearer aesthetic descriptions. No treatment selected. Assistant agrees the comparison is too narrow: the edit prompts explicitly locked identity, geometry, pose, framing and palette, allowing mostly surface/render treatment changes. Preserve outputs and prompts as evidence of this limitation, not a successful full visual-language exploration.
+
+A intended painterly cinematic realism but resolved close to live-action/game-cinematic realism. B groups forms into angular planes, harder shadow shapes and simplified edges; its intended graphic-novel language is only partially realized because anatomy, staging and camera remain naturalistic. C introduces brushwork, softer edge transitions and illustrated environments but retains relatively realistic faces; it is not a coherent redesigned illustrated world.
+
+Proposed corrective approach (not yet authorized for generation): hold characters' identities, cultural grounding, entrance actions and 9:16 deliverable constant, but permit deliberate differences in shape language, proportion, silhouette, composition, palette organization, spatial depth and material depiction. Compare independent designs of the same narrative brief rather than texture edits of A. Candidate directions: grounded cinematic realism as baseline; sculpted/graphic stylized 3D with designed proportions and expressive silhouettes; illustrated 2.5D-like compositions with ink/paint masses and layered depth. These are visual targets, not a switch of production engine or proof of motion feasibility. Motion timing would need its own small trailer-linked check. Avoid caricaturing ethnic anatomy while exploring individual stylization. No additional images generated in this explanatory turn.
+
+## Exact prompt set (original calls)
+
 ### A — original generation
 
 Use case: stylized-concept.
@@ -38,4 +48,3 @@ Use case: style-transfer. Edit target: the supplied ensemble triptych. Produce t
 ### C — style edit of A
 
 Use case: style-transfer. Edit target: the supplied ensemble triptych. Produce treatment C, SOFT PAINTERLY ILLUSTRATED CINEMATIC 3D. Preserve exactly the three-panel layout, camera framing, all three protagonists' facial identity and expressions, skin tones, costumes and colors, horses, poses, traveler, scene geometry and light direction. Change ONLY rendering treatment. Make the stylistic difference unmistakable: visible broad gouache-like brushwork, soft selectively lost edges, matte surfaces, simplified detail, luminous atmospheric color, delicate textured shadow transitions. Retain believable sculpted volumes and weight, mature expressive faces, not cute or childlike, not photorealistic pores, not gritty game rendering. Same indigo/earth palette with warm highlights and cooler distance; avoid blanket sepia. No ink outlines unlike the graphic alternative. No new objects, symbols, action, text, labels, logos or borders. Same three tall 9:16 frames side by side, exact subjects and staging. This is an art direction study, not a new scene.
-
