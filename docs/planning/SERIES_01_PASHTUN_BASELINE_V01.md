@@ -8,6 +8,14 @@ Inspection: single closer portrait retains indigo cloth, painted/inked style, ri
 
 ## Exact prompt
 
+### Fullness and nose refinement — exchange 86
+
+Director requested one notch more fullness and a tiny bit rounder nose. One built-in edit of portrait-v03.png produced [candidate 4 / comparison image 5](../../.runtime/art-direction/series01-pashtun-baseline-v01/portrait-v04.png). Prompt interpreted roundness as subtly rounding the nose tip while retaining bridge and size. Inspection: changes are very small; composition, expression and style broadly retained, with no claim of pixel identity or final approval. Previous versions preserved. No Runway calls; built-in generation usage/cost unknown. Await Director review.
+
+Exact prompt:
+
+Use case: identity-preserve. Input image 1 is the edit target. Produce one revised version of this exact illustrated adult Pashtun woman portrait. Only two tiny changes: (1) one small notch more natural fullness through cheeks and neck than the input, preserving the strong anatomical jawline; (2) a slightly rounder, less pointed nose tip, with only a very subtle softening of its contour. Keep nose size and bridge substantially the same. Do not drastically widen the nose or face. Keep her current age unchanged. Preserve her identity, eyes, lips, hair, composed determined self-assured expression, head angle, pose, framing, indigo cloth/head covering, leather straps, mountain background, lighting, palette and hand-inked painterly illustration style. No makeup, earrings, jewelry, embellishments, angry scowl, text or panels. This must remain the same naturally elegant woman with subtle localized refinements, not a redesign.
+
 ### Additional fullness revision — exchange 85
 
 Director requested just a tiny further increase in cheek and neck fullness, with four-image comparison. One built-in image edit from portrait-v02.png produced [candidate 3 / comparison image 4](../../.runtime/art-direction/series01-pashtun-baseline-v01/portrait-v03.png). Inspection: slightly fuller cheek/neck contours, broadly preserved angle, composition and illustrated appearance; generated details are not pixel-identical. No additional aging requested. Awaiting Director selection; all earlier images preserved. No Runway calls; built-in usage/cost unknown. Media local SSD only, not Git-backed.

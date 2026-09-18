@@ -107,6 +107,8 @@ Director clarification, exchange 2: design/planning and implementation changes m
 
 ## Next conversation focus
 
+Current focus, exchange 86: generated one further subtle fullness/nose-roundness portrait edit, preserving all earlier images. Tiny roundness adjustment targeted nose tip without intentional bridge/size change. Candidate awaits review; no age change or final likeness approval. Exact prompt in baseline record. Next checkpoint/push 90.
+
 Current focus, exchange 85: one further tiny cheek/neck-fullness edit generated for four-image comparison, with no additional aging requested. Original C and all three portrait candidates preserved; final likeness still awaiting Director selection. See baseline record for exact prompt. No Runway calls; local design commit only, next push 90.
 
 Current focus, exchange 84: generated a targeted portrait revision exploring slightly older/less skinny appearance, preserving candidate 1 and C for three-image review. No final likeness approval; next checkpoint/push 90. Previous display-only request did not advance the substantive-exchange counter.
