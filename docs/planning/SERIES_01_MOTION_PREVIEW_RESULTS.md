@@ -1,5 +1,21 @@
 # C motion previews — first pass
 
+## Director review and closure — exchange 80
+
+**Creative comparison FAILED; bounded first pass closed YELLOW with findings.** Three technically delivered clips, zero Director-accepted outputs. Technical integration success must not hide the failed creative objective. Earlier pending-review observations below are historical.
+
+- Clip 1 does not feel right and fails the intended face/character impression. Director loves the original partial face: young adult woman rather than girl, composed, determined and self-assured rather than angry, naturally regal without visible makeup. Preserve those qualities, not merely costume/palette.
+- Clips 2 and 3 are described by the Director as essentially two frames with progressive zoom, not meaningful articulated animation. Clip 2's face is strongly rejected. Clip 3 scarcely adds to the starting image. This describes perceived motion, not a measured claim that the encoded files contain only two unique frames.
+- C remains preferred. No motion grammar is selected or rejected as an artistic concept by these failed realizations. Sampled-frame inspection before handoff was insufficient to qualify temporal quality; full decode is not full playback quality review.
+- Prompt audit: clip 2 requested two quarter-second pose holds; clip 3 requested six key poses held roughly half a second with short transitions. Those requests may have encouraged near-static results, but this is an unisolated hypothesis, not a proven cause. The test confounded face completion, gait, camera, illustration preservation and precise timing. Comparison assembly did not retime or manufacture the holds/zoom.
+- Model was **gen4.5**, not Turbo. [Runway's model documentation](https://docs.dev.runwayml.com/guides/models/) identifies Gen-4.5 as a flagship model; it does not establish a universal identity-preservation ranking. [Official prompting guidance](https://help.runwayml.com/hc/en-us/articles/48324313115155-Image-to-Video-Prompting-Guide) recommends simple motion-focused prompts and iterative refinement. A stronger-model claim alone cannot resolve these failures.
+
+Recommended next step, not execution authorization: anchor the original face and expression, keep its existing angle for the first motion test (approve any required unseen-face reference separately), then seek one continuous gallop with actual coordinated body motion and restrained camera movement. Only after identity/action pass, test intentionally designed timing/key poses; simple frame dropping is not a substitute for authored limited animation. Do not run another three-way batch or broad model bake-off automatically. If the simplified baseline fails, reassess reference/control or realization route before more prompt variants.
+
+Cost remains $1.80 observed aggregate debit; no new calls this review. Remaining observed API credit $8.20, authorized preview headroom $3.20, neither is an instruction to spend. Failed evidence stays preserved. No production, targeted-edit, multi-shot identity or Blender qualification claimed. Engineering tokens and exact all-in elapsed time remain unknown; review resumption was captured late and prior setup coverage was incomplete. Operating report: `.runtime/art-direction/series01-motion-v01/operating/REPORT.md`. This record is the compact closure/handoff; any authorized continuation opens a linked episode.
+
+## Original delivery record
+
 2026-09-18, exchange 79. **Three technical outputs ready; Director review pending.** No motion-language selection, A5 completion or generative-route qualification claimed. No retries or additional variants used.
 
 ## Watch

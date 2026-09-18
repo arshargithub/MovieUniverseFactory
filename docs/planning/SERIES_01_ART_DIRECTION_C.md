@@ -4,6 +4,7 @@ Draft v0.1, exchange 75, 2026-09-17. Director authorized development of the brie
 
 ## Established basis
 
+- Director refinement, exchange 80: preserve the Pashtun woman's original C face/impression: a young adult woman, not a girl; composed yet determined and self-assured, not angry; elegant like a queen with a natural, visibly unmade-up face. Fire coexists with composure. These are individual appearance/performance requirements, not an ethnic template. The partial reference does not yet settle unseen facial angles; approve any necessary completion against the original, rather than silently redesigning her. First generated videos do not supply accepted likeness references.
 - C, the illustrated world, is the preferred visual direction after the seven-image comparison. See [comparison and Director feedback](SERIES_01_LOOK_COMPARISON_V04.md).
 - Reimagined history-inspired frontier, culturally specific protagonists, restrained trailer technology and extraordinary abilities; native vertical presentation. Preserve accepted character/entrance and warmth/violence decisions.
 - The Gurkha likeness needs later attention; Director explicitly does not want an image fix now. All depicted faces, costumes, buildings and weapons remain provisional.

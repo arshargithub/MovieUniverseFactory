@@ -1,5 +1,15 @@
 # Release 01 — checkpoints
 
+## CP-008 — exchange 80, 2026-09-18
+
+- Current work: B4/A5, C-led art direction and motion. Since CP-007: expanded seven-look comparison, corrected B/C framing, selected C as preferred still direction, drafted art direction, reconciled two relevant original capability decisions, and completed a bounded Runway preview. Three delivered videos, **0/3 accepted (0%)**. This is the preview acceptance rate, not total art-direction progress. No motion-language decision can be inferred from the failed comparison.
+- Director appearance requirements: young adult Pashtun woman; composed, determined, self-assured rather than angry; natural regal elegance without visible makeup. Preserve original C impression. First clip fails that impression; second face strongly rejected; second/third read as near-still zooms. C itself remains preferred; Gurkha appearance correction still deferred.
+- Readiness remains **1/25 = 4%** completed release gates; creative foundation **1/5 = 20%**, other streams **0/4**. These are accepted deliverables, not effort, artistic progress or time remaining. Character brief checklists unchanged: Sikh 5/6, Gurkha 4/6, Pashtun 3/6, officer 3/6.
+- Current remainder: coherent likeness/costume/expression references; usable motion comparison and quiet acting check; camera/readability rules and approved look bible; production-ready trailer script/boards. Next bounded recommendation: preserve original face angle and test one simple continuous-action baseline before stylized timing. No new generation or implementation started at this checkpoint.
+- Overall remainder: world/ensemble/origin completion, episode 1/2 outlines/scripts, delivery/rights/audience measures, historical-decision reconciliation and durable handover interfaces, actual-series voice/music/sound/integration, authorized production and release. Motion failure does not reopen prior Blender qualification or invalidate the selected illustrated world.
+- Cost/process: $1.80 observed aggregate API debit, $8.20 observed balance; $5 preview ceiling unchanged. No additional calls. Three technical outputs but zero accepted; preserve failed evidence and close first pass YELLOW with explicit creative failure. Engineering tokens/all-in time unknown. Avoid another three-way reroll or broad provider bake-off without isolating the failure.
+- Preservation: scoped design commit and routine checkpoint push due; inspect outgoing ancestry, keep implementation/design separate, verify remote receipt. Media remain ignored/local SSD assets, not Git-backed. Next checkpoint/push **90**.
+
 ## CP-000 — baseline, 2026-09-17, exchange 1
 
 Outcome: trailer plus first two episodes; audience/channel/length decisions remain open. Trailer creative discussion is still paused for Director ideas.
