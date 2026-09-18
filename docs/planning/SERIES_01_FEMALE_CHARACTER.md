@@ -4,6 +4,8 @@ Established at planning exchange 18. Discovery and research notes, not a complet
 
 ## Selected visual baseline — exchange 88
 
+Exchange 89: [frontal reference candidate](../../.runtime/art-direction/series01-pashtun-baseline-v01/frontal-v01.png) generated from the selected portrait with Director authorization. Awaiting review; this does not yet fix unseen facial structure or supersede portrait 5. Prompt and provenance in the baseline record.
+
 Director selects **portrait 5 from the six-portrait gallery**: [subtly lighter eyes/hair](../../.runtime/art-direction/series01-pashtun-baseline-v01/portrait-v05-subtle.png). This exact filename resolves gallery numbering; it is NOT portrait-v04.png or the more strongly lightened version. Adopt its mature young-adult appearance, fuller cheek/neck contours, strong jawline, slightly rounded nose, warm brown eyes and dark chestnut hair as the selected three-quarter identity reference. Original C remains the aesthetic/entrance origin; earlier pending-selection language is superseded for this portrait only. No full-body proportions, exact age, other angles or complete look-bible approval inferred.
 
 Recommended next reference: one straight-on, eye-level head-and-shoulders portrait derived from the selected image, soft even light, simple background, same indigo cloth and illustrated style, relaxed composed expression; no makeup or adornment. This is to review currently unseen facial structure, not redesign her. Frontal likeness requires separate Director review. User asks whether to produce it; no generation performed this exchange. Profile/expression sheet can follow only if needed; no large reference batch proposed.
