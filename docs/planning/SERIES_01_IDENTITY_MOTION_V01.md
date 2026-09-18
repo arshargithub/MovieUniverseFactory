@@ -20,6 +20,18 @@ Forecast: one variant, approximately 5–15 active minutes plus provider process
 
 ## Outcome
 
+### Director disposition — exchange 94
+
+Director: "it's ok when she's facing front. when she moves her face to the side, it gets messed up, she looks like a different person and her far eye and cheek look really weird."
+
+Moving-likeness test FAILED. Close this episode YELLOW: one technically valid file, zero Director-accepted complete clips; acceptable frontal portion does not pass the head-turn requirement. Approved still pair B remains unchanged. No new call authorized or made in this review. Total preview commitments remain USD 2.40.
+
+Lesson: the adapter supplied only the frontal image, not the approved side reference. Asking text to preserve identity did not constrain newly exposed facial structure adequately in this sample. This is a demonstrated limitation of this single-image Gen-4.5 workflow for this character/action, not proof of a universal Runway ceiling. Official [prompt guidance](https://help.runwayml.com/hc/en-us/articles/48324313115155-Image-to-Video-Prompting-Guide) favors simple motion-focused text; the previous prompt could be shorter, but there is no evidence that wording alone fixes this geometry/likeness failure.
+
+Recommendation, not approved implementation: stop prompt-only head-turn retries. Re-anchor the next milestone as a short edited excerpt of the actual trailer with recognizable lead, convincing illustrated motion and one bounded revision; use existing A5/E1/E4 gates rather than inventing another qualification ladder. Storyboard a proposed 10–15-second entrance passage first, assigning identity-critical close-ups versus action/wide shots. Investigate stronger visual control only where those shots require it; preserve approved per-shot generative/structured/hybrid routing rather than declare a new global renderer. A no-turn portrait retry would test only narrow near-static coverage, NOT repair the failed head-turn capability. No such retry performed.
+
+Earlier pending-review status below is historical and superseded by this disposition.
+
 One output succeeded, no retries. Task 7d9946e8-5137-45f1-a57f-c3fb4c58163a. [Play clip](../../.runtime/art-direction/series01-motion-v01/identity-baseline-1.mp4). H.264, 720x1280, 24 fps, 121 frames, 5.041667 seconds, 2,239,336 bytes; complete ffmpeg decode passes. SHA-256: 80778475b786edef012977d469f6d3ed2f161571daf306b0eda223e48cad3518.
 
 Ten sampled frames at 2 fps show articulated head turning and changing eyelids, not merely zoom-only movement. They suggest multiple blinks rather than the requested one, and sharper/narrower facial definition in the turned view. Illustrated palette/cloth broadly persist. This is sampled-frame inspection, NOT full temporal or identity acceptance; smoothness, likeness and emotional impression await Director playback. No full A5/gallop/cross-shot qualification claimed.
