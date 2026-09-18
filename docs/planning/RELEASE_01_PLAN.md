@@ -107,6 +107,8 @@ Director clarification, exchange 2: design/planning and implementation changes m
 
 ## Next conversation focus
 
+Current focus, exchange 77: Director approves the three-preview motion comparison with USD 5 generation ceiling and asks to use it as early generative-video capability evidence. Original Capability Decision 8 and representation-handoff approvals reviewed and adopted in the art-direction record. Runway installation/authentication and billing verification pending; no generation yet. Lifecycle capture started prospectively with missing earlier coverage disclosed. No broader pipeline implementation authorized. Next checkpoint/push 80.
+
 Current focus, exchange 76: Director requests moving examples before selecting motion grammar. Proposed bounded three-treatment image-to-video comparison using one C trailer entrance; see [motion comparison proposal](SERIES_01_ART_DIRECTION_C.md). Runway integration suggested but not connected; no generation/spend authorized or started. Confirm access and a small generation ceiling before execution; aesthetic preview is not Blender proof. Next checkpoint/push 80.
 
 Current focus, exchange 75: [C-led art-direction draft](SERIES_01_ART_DIRECTION_C.md) proposes drawing/material/palette/framing/performance rules and cinematic motion with selective illustrated emphasis. Director authorized developing the brief, not blanket approval of its proposals. First discussion decision is motion grammar; no new images, implementation or campaign. A5 remains in progress; next checkpoint/push 80.

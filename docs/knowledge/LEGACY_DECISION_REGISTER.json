@@ -8252,10 +8252,10 @@
       "label": "> **Capability Decision 8 — Movie Factory should not assume a purely generative realization architecture. MVP feasibility work should explicitly evaluate pure generation, structured/3D realization, and hybrid structured+generative realization as first-class routes. Factory ultimately chooses among them based on creative requirements, controllability, continuity, quality, and cost-to-acceptance.**",
       "statement_excerpt": "Yes — I agree with your gut instinct.\n\nPurely generative video is likely to be **one major realization path, but not the whole answer**.\n\nThe reason is not that generative video is weak. It’s getting extremely capable. Current systems already support reference images, character/object guidance, audio, and increasingly strong cinematic control. Google explicitly positions Veo 3.1 around greater control and consistency with reference images. citeturn286036search7\n\nBut the remaining failure modes line up almost exactly with the things Movie Factory cares about most: precise spatial relationships, physically correct interactions, exact temporal choreography, deterministic camera motion, and targeted revision. OpenAI’s own Sora materials still call out problems with complex physics, spatial details, and precise events unfolding over time. citeturn286036search4\n\nThat means I see a likely split.\n\nFor shots like:\n\n> “A lonely man walks through a rainy alley.”\n\nPure generative video may be the highest-quality and cheapest route.\n\nBut for:\n\n> “Camera starts exactly here, tracks 2.5 metres, Maya crosses behind Daniel, picks up this specific object, turns on this line, and this must cut continuously into the next shot.”\n\nor:\n\n> “Keep the exact scene, camera and lighting, but alter only her hand motion.”\n\nor the Gatka example where the choreography actually matters…\n\nI would be uncomf",
       "statement_excerpt_is_complete": false,
-      "status": "CANDIDATE_REQUIRES_CONTEXT_REVIEW",
-      "applicability": null,
+      "status": "CONTEXT_REVIEWED_ACCEPTED",
+      "applicability": "ADOPT",
       "supersedes": [],
-      "verification": null
+      "verification": {"reviewed_date":"2026-09-18","approval_turn":"a474a790-6f6c-41bf-b0e0-88c914b5ea10","normalized_statement":"Pure generative, structured/3D and hybrid are first-class realization routes selected per scene/shot for control, continuity, quality and cost-to-acceptance.","evidence":"docs/planning/SERIES_01_ART_DIRECTION_C.md","scope":"Early image-to-video evidence only; no qualification pass claimed"}
     },
     {
       "id": "legacy-a474a790-6f6c-41bf-b0e0-88c914b5ea10",
@@ -8764,10 +8764,10 @@
       "label": "So **Cross-Representation Perceptual Consistency** is critical, and for hero entities it is effectively existential. Factory must verify not only that representations are linked correctly, but that th",
       "statement_excerpt": "Locked.\n\nSo **Cross-Representation Perceptual Consistency** is critical, and for hero entities it is effectively existential. Factory must verify not only that representations are linked correctly, but that they still *read as the same thing* in the finished result.\n\n## Capability / Feasibility Question 38 — Should Factory qualify representation **conversion and handoff** as its own seam?\n\nI think yes.\n\nBecause one of the biggest risks in this architecture is not any single representation. It’s moving between them.\n\nFor example:\n\n> generated Character concept → 3D Character  \n> 3D blocking → generative video control  \n> reference video → extracted motion → rigged Character  \n> rough Location model → detailed hero representation  \n> simulation output → final rendered/generative shot\n\nEach handoff can lose something:\n\n- identity\n- proportions\n- spatial relationships\n- motion nuance\n- materials\n- timing\n- creative style\n- state continuity\n\nSo I think we should explicitly test:\n\n> **Can Factory translate an entity or scene from one representation to another while preserving the dimensions that matter for the current filmmaking task?**\n\nNot necessarily pixel-perfect preservation. The right question is whether the **creative invariants** survive.\n\nThat would make “representation conversion/handoff” a first-class seam test rather than assuming interoperability because file formats exi",
       "statement_excerpt_is_complete": false,
-      "status": "CANDIDATE_REQUIRES_CONTEXT_REVIEW",
-      "applicability": null,
+      "status": "CONTEXT_REVIEWED_ACCEPTED",
+      "applicability": "ADOPT",
       "supersedes": [],
-      "verification": null
+      "verification": {"reviewed_date":"2026-09-18","approval_turn":"18ae66f4-631b-4c27-b9e5-8301c80225ac","normalized_statement":"Representation conversion and handoff must preserve relevant creative invariants; file interchange alone is not qualification.","evidence":"docs/planning/SERIES_01_ART_DIRECTION_C.md","scope":"Early image-to-video evidence only; no qualification pass claimed"}
     },
     {
       "id": "legacy-18ae66f4-631b-4c27-b9e5-8301c80225ac",
