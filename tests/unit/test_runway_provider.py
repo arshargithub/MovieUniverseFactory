@@ -91,3 +91,24 @@ def test_request_ceiling_and_attempt_bound(tmp_path):
         p.ledger.reserve(run_id="x", stage="preview", amount_usd=.6, scope=scope, purpose="x")
     with pytest.raises(BudgetExceeded):
         p.ledger.reserve(run_id="x", stage="preview", amount_usd=.6, scope="contingency", purpose="x")
+
+
+def test_download_rejects_arbitrary_host(tmp_path):
+    p = provider(tmp_path, lambda r: pytest.fail("network called"))
+    (p.output / "cinematic-1.json").write_text(json.dumps({
+        "status": "SUCCEEDED", "output": ["https://127.0.0.1/private"]}))
+    with pytest.raises(RunwayError, match="host requires review"):
+        p.download("cinematic")
+
+
+def test_download_uses_no_api_authorization(tmp_path, monkeypatch):
+    p = provider(tmp_path, lambda r: pytest.fail("API not needed for download"))
+    (p.output / "cinematic-1.json").write_text(json.dumps({
+        "status": "SUCCEEDED", "output": ["https://test.cloudfront.net/video.mp4"]}))
+    client = httpx.Client(transport=httpx.MockTransport(lambda request: (
+        httpx.Response(200, content=b"video") if "authorization" not in request.headers
+        else pytest.fail("API authorization leaked"))))
+    monkeypatch.setattr(httpx, "stream", client.stream)
+    result = p.download("cinematic")
+    assert result["bytes"] == 5
+    with pytest.raises(RunwayError, match="already exists"): p.download("cinematic")

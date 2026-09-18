@@ -15,6 +15,7 @@ import os
 from pathlib import Path
 import re
 import uuid
+from urllib.parse import urlparse
 
 import httpx
 
@@ -150,10 +151,49 @@ class RunwayProvider:
         save_json(path, record)
         return {"name": name, "task_id": task_id, "status": record["status"]}
 
+    def download(self, name, attempt=1):
+        """Retain generated project assets; never send the API key to the CDN."""
+        if not re.fullmatch(r"[a-z][a-z0-9-]{0,50}", name) or attempt not in (1, 2):
+            raise RunwayError("Invalid work item")
+        path = self.output / f"{name}-{attempt}.json"
+        record = json.loads(path.read_text())
+        if record.get("status") != "SUCCEEDED" or len(record.get("output", [])) != 1:
+            raise RunwayError("Expected one successful video output")
+        url = record["output"][0]
+        parsed = urlparse(url)
+        host = parsed.hostname or ""
+        if parsed.scheme != "https" or parsed.username or parsed.password or not any(
+            host == domain or host.endswith("." + domain)
+            for domain in ("runwayml.com", "runwayml.cloud", "cloudfront.net", "runwaycdn.com")):
+            raise RunwayError("Output host requires review before download")
+        destination = self.output / f"{name}-{attempt}.mp4"
+        if destination.exists():
+            raise RunwayError("Output already exists; verify rather than overwrite")
+        partial = destination.with_suffix(".mp4.partial")
+        digest = hashlib.sha256()
+        size = 0
+        try:
+            with httpx.stream("GET", url, timeout=60, follow_redirects=False) as r:
+                r.raise_for_status()
+                with partial.open("xb") as f:
+                    for chunk in r.iter_bytes():
+                        size += len(chunk)
+                        if size > 50_000_000: raise RunwayError("Video exceeds 50 MB limit")
+                        digest.update(chunk)
+                        f.write(chunk)
+                    f.flush()
+                    os.fsync(f.fileno())
+            partial.rename(destination)
+        except Exception:
+            raise RunwayError("Download incomplete; partial retained, no generation retried") from None
+        record.update(local_file=destination.name, output_sha256=digest.hexdigest(), output_bytes=size)
+        save_json(path, record)
+        return {"name": name, "local_file": str(destination), "bytes": size, "sha256": digest.hexdigest()}
+
 
 def main():
     p = argparse.ArgumentParser()
-    p.add_argument("command", choices=["account", "submit", "poll", "budget"])
+    p.add_argument("command", choices=["account", "submit", "poll", "download", "budget"])
     p.add_argument("--root", type=Path, default=Path.cwd())
     p.add_argument("--output", type=Path, required=True)
     p.add_argument("--name")
@@ -166,6 +206,7 @@ def main():
         if a.command == "account": result = provider.account()
         elif a.command == "budget": result = provider.ledger.summary()
         elif a.command == "poll": result = provider.poll(a.name, a.attempt)
+        elif a.command == "download": result = provider.download(a.name, a.attempt)
         else: result = provider.submit(a.name, a.image, a.prompt_file.read_text(), attempt=a.attempt)
         print(json.dumps(result))
     except Exception as e:
