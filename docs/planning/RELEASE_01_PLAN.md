@@ -107,6 +107,8 @@ Director clarification, exchange 2: design/planning and implementation changes m
 
 ## Next conversation focus
 
+Current focus, exchange 85: one further tiny cheek/neck-fullness edit generated for four-image comparison, with no additional aging requested. Original C and all three portrait candidates preserved; final likeness still awaiting Director selection. See baseline record for exact prompt. No Runway calls; local design commit only, next push 90.
+
 Current focus, exchange 84: generated a targeted portrait revision exploring slightly older/less skinny appearance, preserving candidate 1 and C for three-image review. No final likeness approval; next checkpoint/push 90. Previous display-only request did not advance the substantive-exchange counter.
 
 Current focus, exchange 83: one [Pashtun baseline portrait candidate](SERIES_01_PASHTUN_BASELINE_V01.md) generated through built-in image generation from original C panel. Await Director likeness/expression review; eye outlining may still read as makeup. No new video calls, no likeness approval or gate completion. Media preserved on SSD; design record local-only until checkpoint 90.

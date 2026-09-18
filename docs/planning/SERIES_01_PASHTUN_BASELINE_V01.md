@@ -8,6 +8,14 @@ Inspection: single closer portrait retains indigo cloth, painted/inked style, ri
 
 ## Exact prompt
 
+### Additional fullness revision — exchange 85
+
+Director requested just a tiny further increase in cheek and neck fullness, with four-image comparison. One built-in image edit from portrait-v02.png produced [candidate 3 / comparison image 4](../../.runtime/art-direction/series01-pashtun-baseline-v01/portrait-v03.png). Inspection: slightly fuller cheek/neck contours, broadly preserved angle, composition and illustrated appearance; generated details are not pixel-identical. No additional aging requested. Awaiting Director selection; all earlier images preserved. No Runway calls; built-in usage/cost unknown. Media local SSD only, not Git-backed.
+
+Exact prompt:
+
+Use case: identity-preserve. Image 1 is the edit target, an illustrated adult Pashtun woman portrait. Make ONE tiny targeted revision: add just a little more natural fullness to her cheeks and neck than in this exact image. A small incremental change only, not a round face or major weight change. Preserve the strong natural jawline, current apparent adult age, facial identity, nose, eyes, lips, composed self-assured expression, head angle, pose and framing. Do not age her further. Keep all other elements as unchanged as possible: indigo head covering and clothes, hair, straps, mountain backdrop, light, palette, ink contours and painterly illustration style. No makeup, jewelry, earrings or additional decoration; do not glamourize, scowl, soften away the jawline or redesign the woman. One portrait only, no panels or text.
+
 ### Revision — exchange 84
 
 Director finds candidate 1 really good, but requests a subtly older and less skinny version to compare, not a final age/body lock. Generated one targeted built-in edit: [candidate 2](../../.runtime/art-direction/series01-pashtun-baseline-v01/portrait-v02.png), using portrait.png as edit target. Original C and first portrait preserved. Inspection: subtle added cheek/neck fullness, same broad composition and illustrated treatment; maturity change is modest and remains for Director judgment. No claim of exact pixel preservation or approved likeness. Previous display-only request was not a substantive planning exchange. Unknown generation usage/cost remains unknown; no Runway call.
