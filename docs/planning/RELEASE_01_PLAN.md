@@ -107,6 +107,8 @@ Director clarification, exchange 2: design/planning and implementation changes m
 
 ## Next conversation focus
 
+Current focus, exchange 79: authorized narrow Runway API adapter implemented and three motion previews generated, no retries. Observed debit $1.80; API balance $8.20, preview ceiling still $5. [Results and synchronized comparison](SERIES_01_MOTION_PREVIEW_RESULTS.md) ready for Director review. Appearance drift observed in samples; exact timing and aesthetic differentiation not certified. No look/production gate newly passed. Implementation commits separate from design; next checkpoint/push 80.
+
 Current focus, exchange 78: plugin authentication verified, but connected Free web workspace has no video models. Director reports $10 API funding and a private key; neither API balance nor key validated. Web/API credits are separate. No generation calls or implementation changes made. Recommend a narrowly scoped budget-controlled Runway API adapter, pending explicit route/implementation approval; do not buy a web subscription or increase the USD 5 preview ceiling. Next checkpoint/push 80.
 
 Current focus, exchange 77: Director approves the three-preview motion comparison with USD 5 generation ceiling and asks to use it as early generative-video capability evidence. Original Capability Decision 8 and representation-handoff approvals reviewed and adopted in the art-direction record. Runway installation/authentication and billing verification pending; no generation yet. Lifecycle capture started prospectively with missing earlier coverage disclosed. No broader pipeline implementation authorized. Next checkpoint/push 80.
