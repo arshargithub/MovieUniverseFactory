@@ -107,6 +107,8 @@ Director clarification, exchange 2: design/planning and implementation changes m
 
 ## Next conversation focus
 
+Current focus, exchange 71: Director prefers illustrated C but asks about audience risk; preference is not final style approval. Recommend C as a provisional lead and evaluate readability/performance on existing trailer material, preserving A/B. No evidence that realism is safer for this series, no quantitative success forecast, no new generic experiment authorized. CP-007 push verified at `c372e70`; next checkpoint/push 80.
+
 Current focus, exchange 70: original images preserved as A1/A2/A3; new independent B/C visual languages generated. Review [v0.2 comparison](SERIES_01_LOOK_COMPARISON_V02.md), including incorrect narrow panel layout and provisional character-design details, before selecting a direction or making further images. No style or production method locked. CP-007 recorded; scheduled design push due, next checkpoint/push 80. Earlier focus entries below are history.
 
 Current focus, exchange 69: Director finds first comparison too filter-like; no visual language selected. Explain actual B/C aesthetics and revise comparison methodology before further generation: preserve story/cultural identity, not identical anatomy/composition/render geometry. See Director review in the look-comparison record. Earlier feedback-pending snapshot below is superseded. Next checkpoint/push is 70.
