@@ -2,6 +2,18 @@
 
 Established at planning exchange 18. Discovery and research notes, not a completed character brief.
 
+## Accepted presence and visual baseline — exchanges 80–81
+
+**Her strength comes from self-possession, not aggression. A young adult woman, composed and assured, with natural, almost regal elegance.** Director explicitly affirms this characterization at exchange 81 and requests its preservation in her character record, not only in generation feedback.
+
+Her original C illustration is the visual anchor: determined and self-assured rather than angry, elegant like a queen without a visibly made-up face. “Regal” describes bearing, not royal ancestry, wealth or a new costume requirement. Exact age and unseen facial features are not yet fixed. Preserve her likeness rather than replace it with a generic scowling action heroine or make her appear a child.
+
+This complements, rather than replaces, her established fire, stubbornness, ambition, persistence and affectionate sparring with her mother. Composure is not passivity, emotional suppression or permanent serenity: she can be angry, laugh, misjudge and overreach when the situation earns it. Aggression is not the default visual shorthand for her strength. Her accepted negotiation flaw and protective ambition remain unchanged.
+
+Agreed sequencing: establish one usable **still-image identity baseline**, anchored in the original C face, before a simple motion test. This is refinement/confirmation of an existing character, not a redesign. Any fuller-face interpretation must preserve the original impression and be reviewed before becoming a reference. The first three Runway clips are rejected references, not accepted character designs. No new image or paid video generation performed in exchange 81.
+
+See [C art direction](SERIES_01_ART_DIRECTION_C.md) for visual translation and [motion review](SERIES_01_MOTION_PREVIEW_RESULTS.md) for rejected-output evidence. This character record owns the characterization; production briefs should refer back here. Later accepted sections below supersede the early exploratory/open-status snapshots where explicitly stated.
+
 ## Director direction
 
 - Strong Muslim female lead is established in the series premise.
