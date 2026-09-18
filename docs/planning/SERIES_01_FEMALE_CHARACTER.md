@@ -18,6 +18,8 @@ See [C art direction](SERIES_01_ART_DIRECTION_C.md) for visual translation and [
 
 ## Director direction
 
+Exchange 83 visual evidence: [first closer portrait candidate](SERIES_01_PASHTUN_BASELINE_V01.md), generated from C, is awaiting review. It does not supersede the original reference or accepted written requirements.
+
 - Strong Muslim female lead is established in the series premise.
 - Director wants specific community/religious grounding for all protagonists, with prominence in the story to be decided later; the purpose is richness and authenticity rather than vague South Asian caricature.
 - Muslim Pashtun identity accepted in exchange 19: Director says “ok let's go with muslim pashtun”. Specific region, community and household remain open.
