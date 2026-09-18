@@ -58,3 +58,10 @@ The original three images are variants within family A, not the independent B/C 
 
 No additional regeneration, public audience test, production spend or final style lock authorized by this exchange.
 
+## Director review — exchange 74
+
+After the complete comparison, the Director reaffirmed C: “my heart is still with C.” This establishes C as the preferred direction for continued development, not approval of every depicted character, prop or environment, nor completion of the A5 look bible/motion requirements.
+
+The Director feels C's Gurkha looks too much like a white man and explicitly says there is no need to fix the image now. Record this as a deferred character-design concern, not an assertion of ethnicity from appearance. When character design resumes, ground his individual face in appropriate references for the specific community/background we establish; avoid a generic racial template or caricature. Preserve his already accepted older, accepting, cohesive and ferocious personality. No new ancestry or community choice is made here.
+
+No images generated or altered this exchange. Proposed next step: a concise C-led art-direction brief separating the illustrated visual language (ink contours, painted masses, controlled palette and deliberate detail) from provisional character likenesses. Production technique remains open.

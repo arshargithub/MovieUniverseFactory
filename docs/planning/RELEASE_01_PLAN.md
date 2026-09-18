@@ -107,6 +107,8 @@ Director clarification, exchange 2: design/planning and implementation changes m
 
 ## Next conversation focus
 
+Current focus, exchange 74: after reviewing all seven treatments, Director still prefers C, the illustrated world. Director feels the Gurkha reads too much like a white man; defer that character-design issue, explicitly no image correction now. Preserve C's visual language independently of its provisional faces. Next proposed step: articulate a concise C-led art-direction brief, not more aesthetic variants. Full A5 acceptance and production method remain open. Next checkpoint/push 80.
+
 Current focus, exchange 73: Director requested framing-only edits of B/C and an ordered comparison of A1/A2/A3/B/C/D/E. Landscape edits preserve the visual languages but are not pixel-identical; originals remain untouched. See [seven-image comparison and edit provenance](SERIES_01_LOOK_COMPARISON_V04.md). Await Director review; no new look approval or production-method decision. Next checkpoint/push 80.
 
 Current focus, exchange 72: C preference reaffirmed; Director requests additional D comic-cinema and E different aesthetic. Both generated and saved with [prompts and limitations](SERIES_01_LOOK_COMPARISON_V03.md). Await feedback, keep prior images, no final style lock or implementation switch. E emphasizes handmade materiality but only partially achieves distinct puppet design. Next checkpoint/push 80.
