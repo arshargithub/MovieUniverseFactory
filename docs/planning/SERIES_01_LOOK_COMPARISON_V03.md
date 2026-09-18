@@ -1,0 +1,39 @@
+# Ensemble visual languages — D and E
+
+Exchange 72. Director reiterates that C makes them want to know the characters, and requests two additional explorations: Spider-Verse-inspired comic cinema D and an assistant-chosen distinct E. C remains leading preference, not final style lock. A1–A3, B and C preserved unchanged.
+
+## Outputs and provenance
+
+- D: `../../.runtime/art-direction/series01-entrances-v03/D-comic-cinema.png`
+- E: `../../.runtime/art-direction/series01-entrances-v03/E-handcrafted.png`
+
+Built-in imagegen skill workflow, two independent text-to-image calls, no reference images, no API keys/harness calls. Model identity, token consumption and monetary charge not returned: unknown, not zero. Local SSD media are Git-ignored, not remotely backed up through design commits. Exact prompts below. No production-engine selection, motion evidence, style approval or new general spending authority.
+
+## Inspection
+
+D: stronger ink contours, print texture/halftone, coral/blue accents and dynamic horse framing; recognizable comic-cinema attributes without Spider-Man characters or costumes. More traditional comic illustration than a full demonstration of Spider-Verse-like temporal/mixed-media language, which a still cannot establish. Added multiple distant riders and flags are unrequested generated details, not accepted scene content. Weapon staging and all cultural details remain provisional.
+
+E: tactile coarse cloth, fuzzy horse surfaces, weathered handmade-looking sets and selective miniature depth. Faces stay fairly realistic; handmade-puppet shape language is less pronounced than requested. Thus E differentiates materiality more strongly than anatomy, and is not a fully qualified distinct character-design language. The horse's lifted pose is not a biomechanically validated gallop. Added incidental figures/props not canon.
+
+Both returned landscape triptychs with near-portrait panels, correcting the extreme narrow-panel issue in v0.2. Exact 9:16 framing, motion, warmth and cultural accuracy remain to validate. These concept stills do not establish animation budget or claim actual physical stop-motion production. Preserve the results for Director comparison without automatic regeneration.
+
+## Exact prompt D
+
+Use case: stylized-concept. Generate ORIGINAL concept art for an adult ensemble frontier adventure, a comic book come to life inspired by the visual inventiveness of the Spider-Verse movies, without any Spider-Man characters, costumes, logos, webs or franchise objects.
+OUTPUT: ONE LANDSCAPE 16:9 sheet, approximately 1800 pixels wide by 1000 tall. Divide WIDTH into three equal columns, each approximately 600x1000, near portrait 9:16. DO NOT make the overall sheet portrait; no thin sliver panels. No words or labels.
+STYLE D: hybrid 2D/3D comic cinema. Deliberately angular character design, expressive proportion, bold ink contours, offset cyan/magenta print registration selectively at moving edges, halftone shadow fields, risograph/screen-print texture, graphic speed lines, exaggerated perspective, sculpted volumes broken by drawn marks. Saturated indigo/coral/ochre/teal color scripting, contrasting light/shadow rather than photographic lighting. Bold dynamic shape language, emotionally readable faces, adult not childish. No photographic textures or realistic pores. Make a coherent designed comic world, not a color filter on realism.
+Three panels left to right, all adults with individual dignified faces and no ethnic caricature:
+LEFT: Muslim Pashtun female lead on chestnut horse in spectacular gallop, purposeful face visible, flowing indigo robes/scarf over practical riding layers, fabric clear of reins/legs. Entire horse and rider in a strongly diagonal three-quarter composition; massive graphic dust sweep, frontier mountains as bold layered shapes. Speed conveyed by drawn accents, not literal magic.
+CENTER: Jatt Sikh male lead with turban and full beard, almost still on dark bay horse, confronting an offscreen situation with assessing gaze and contained resolve. Low angle, horse poised to step forward, not rearing or galloping. Earth-tone coat and indigo turban, strong mounted silhouette, abstracted tall stone architecture, quieter composition than left but equal power.
+RIGHT: Hindu Gurkha male lead slightly older, compact athletic body, short hair, distinct Nepali face, practical olive-brown clothes. Composed grounded stance on foot in narrow stone passage; an adult traveler behind him gets clear. Quiet readiness before sudden close-quarters force, expressive attentive face, not mid-slaughter, no gore. Strong graphic doorway shapes frame him.
+Reimagined nineteenth-century-inspired northern subcontinent frontier, no exact year. No modern technology, superhero powers, religious-symbol decoration or fantasy armor. All designs provisional. Genuine new design and staging; no reference-image lock. High readability and equal importance to all three.
+
+## Exact prompt E
+
+Use case: stylized-concept. Create an original ensemble art-direction sheet for a mature frontier adventure. Direction E: TACTILE HANDCRAFTED MINIATURE / STOP-MOTION CINEMA. Radically different from photoreal people, smooth CGI animation, painted illustration and halftone comics. Adult human characters as exquisitely crafted expressive articulated puppets, hand-sculpted matte faces with subtle tool marks and individual asymmetry, real miniature woven cloth garments with visible seams and fibers, carved wood/resin leather-like tack, horse mane as hand-laid fibers. Miniature stone sets built by hand, controlled practical lighting, tangible shadows and selective miniature depth of field. Sophisticated dramatic handmade cinema, not cute dolls, not chibi or caricatures, not plastic toys, not clay blobs, not glossy CGI. Three coherent distinct individuals with expressive eyes and faces. Earth, indigo, muted olive and warm brass accents.
+OUTPUT MUST BE LANDSCAPE 16:9 approximately 1800 wide x1000 high. THREE equal approximately 600x1000 portrait panels SIDE BY SIDE. Overall canvas wider than tall. No writing, labels or logos.
+LEFT: adult Muslim Pashtun female rider on a chestnut handcrafted horse at the apex of a physically plausible galloping stride. Flowing indigo woven robe/scarf as sculpted fabric held in a sweeping wind shape, practical trousers, purposeful face visible. Full horse and rider; dust as fine translucent fiber-like practical scenic effect trailing behind, miniature rocky mountain trail. Strong cinematic action pose; no magical cloud, no sexualized costume. Horse retains convincing anatomy and weight rather than rocking-horse construction.
+CENTER: adult Jatt Sikh male puppet with neatly wrapped cloth turban and carefully crafted full beard, mounted nearly still on a dark bay horse, earth-tone coat. Facing offscreen confrontation, upright presence and quiet resolve; poised forward step, not another gallop. Miniature stone architecture with hand-worked surfaces, restrained dramatic lighting.
+RIGHT: adult Hindu Gurkha male puppet slightly older, compact athletic figure, short dark hair, individually sculpted Nepali features without ethnic exaggeration, practical olive-brown worn clothes. On foot in a narrow handmade stone passage, relaxed-looking but ready stance guarding an adult traveler behind him moving to safety. Formidable composure, no comedy, no gore or attack. Let a subtle humane expression coexist with readiness.
+Setting: openly reimagined northern subcontinental frontier, historically inspired not documentary. No precise real year, modern firearms/vehicles, religious-symbol decoration, fantasy armor, superpowers or existing franchise designs. This is a still visual target for handmade materiality, NOT a claim of actual physical production. Different independent staging allowed, entrance meanings remain.
+
