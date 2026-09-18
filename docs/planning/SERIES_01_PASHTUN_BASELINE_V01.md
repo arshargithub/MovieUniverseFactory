@@ -8,6 +8,18 @@ Inspection: single closer portrait retains indigo cloth, painted/inked style, ri
 
 ## Exact prompt
 
+### Eye/hair color alternatives — exchange 87
+
+Director requested two versions of latest portrait: slightly lighter eyes/hair and more noticeably lighter eyes/hair. Two independent built-in edits used portrait-v04.png, not serial edits of each other. [Subtle](../../.runtime/art-direction/series01-pashtun-baseline-v01/portrait-v05-subtle.png): warm brown eyes/dark chestnut hair. [Lighter](../../.runtime/art-direction/series01-pashtun-baseline-v01/portrait-v06-lighter.png): golden-hazel eyes/lighter chestnut hair. Inspection confirms visibly distinct hair lightness and warmer/lighter irises in the second; broad facial design and composition retained, not pixel-identical. Neither color is accepted canon yet. Skin-tone change was explicitly prohibited in both prompts. All originals preserved on SSD; no Runway call. Built-in model usage/cost unavailable. Design notes Git-tracked, media not Git-backed.
+
+Exact subtle prompt:
+
+Use case: identity-preserve. Input image 1 is the edit target, the latest illustrated adult Pashtun woman portrait. Make ONE version changing ONLY iris color and hair color. Preserve exact skin tone (do NOT lighten skin), facial anatomy, cheek/neck fullness, rounded nose tip, strong jawline, age, brows, lips, composed self-assured expression, head angle, pose, indigo clothing/head covering, straps, mountain backdrop, lighting and hand-inked painterly style. No makeup, jewelry, earrings or decorative additions. No text or panels. Do not redesign or change ethnicity. Version A — SUBTLE lightening: eyes a slightly lighter warm brown, hair a slightly lighter dark chestnut brown instead of near-black. Modest, natural shift; deep shadows remain. Not blond, not blue eyes.
+
+Exact lighter prompt:
+
+Use case: identity-preserve. Input image 1 is the edit target, the latest illustrated adult Pashtun woman portrait. Make ONE version changing ONLY iris color and hair color. Preserve exact skin tone (do NOT lighten skin), facial anatomy, cheek/neck fullness, rounded nose tip, strong jawline, age, brows, lips, composed self-assured expression, head angle, pose, indigo clothing/head covering, straps, mountain backdrop, lighting and hand-inked painterly style. No makeup, jewelry, earrings or decorative additions. No text or panels. Do not redesign or change ethnicity. Version B — MORE noticeable lightening: irises natural light warm hazel with golden-brown tones; hair natural medium-light chestnut brown. Clearly lighter than near-black hair/brown eyes, but not blonde, not bleached, not luminous or supernatural eyes. Keep the same lighting and skin tone; color change only.
+
 ### Fullness and nose refinement — exchange 86
 
 Director requested one notch more fullness and a tiny bit rounder nose. One built-in edit of portrait-v03.png produced [candidate 4 / comparison image 5](../../.runtime/art-direction/series01-pashtun-baseline-v01/portrait-v04.png). Prompt interpreted roundness as subtly rounding the nose tip while retaining bridge and size. Inspection: changes are very small; composition, expression and style broadly retained, with no claim of pixel identity or final approval. Previous versions preserved. No Runway calls; built-in generation usage/cost unknown. Await Director review.

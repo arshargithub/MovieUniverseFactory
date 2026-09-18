@@ -107,6 +107,8 @@ Director clarification, exchange 2: design/planning and implementation changes m
 
 ## Next conversation focus
 
+Current focus, exchange 87: two independent eye/hair lightness alternatives generated from latest portrait (subtle brown/chestnut and more noticeable golden-hazel/lighter chestnut). No skin lightening requested; facial design intended unchanged. Await Director choice; no color or final likeness lock. Both saved with exact prompts in baseline record; next checkpoint/push 90.
+
 Current focus, exchange 86: generated one further subtle fullness/nose-roundness portrait edit, preserving all earlier images. Tiny roundness adjustment targeted nose tip without intentional bridge/size change. Candidate awaits review; no age change or final likeness approval. Exact prompt in baseline record. Next checkpoint/push 90.
 
 Current focus, exchange 85: one further tiny cheek/neck-fullness edit generated for four-image comparison, with no additional aging requested. Original C and all three portrait candidates preserved; final likeness still awaiting Director selection. See baseline record for exact prompt. No Runway calls; local design commit only, next push 90.
