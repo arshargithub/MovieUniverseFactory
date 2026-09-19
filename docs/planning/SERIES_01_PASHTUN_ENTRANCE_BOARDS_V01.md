@@ -4,6 +4,14 @@ Exchange 100. Director approves racing-intensity gallop, low forward athletic po
 
 ## Sequence contract
 
+## Opening-camera clarification — exchange 104
+
+Director proposes a genuinely high bird's-eye opening slightly behind the rider, then descending toward the side, and invites judgment. Recommend this direction: high oblique rear view looking down along horse/road/dust trail, not simply a distant eye-level view with a large mountain skyline as in v02. Avoid a perfectly vertical top-down view as the default, since a readable horse/rider silhouette and forward depth serve this reveal. Exact angle/height not locked.
+
+Proposed continuous move: high rear-oblique → descend and close through rear-three-quarter → low moving side view that reveals racing posture/stride → modest forward-three-quarter finish. No stationary side hold, abrupt orbit, digital zoom substitute or unnecessary full frontal endpoint. Camera travels through space while re-aiming; "pan down" is Director intent, not a restriction to tripod rotation. Let the reveal build before cutting to obstruction/decision. Keep path/eyeline continuity; original Blender curve remains inspiration, not a transferable numeric camera specification.
+
+Next useful planning artifact should isolate three or four opening-camera keyframes, rather than regenerate all six story panels. This would clarify the previously missing intermediate move; it is a recommendation, not a generation performed or a new mandatory experiment. Preserve current close-up expression, racing direction and revised terrain requirements. No media/provider calls this exchange.
+
 ## Revised visual sheet — exchange 103
 
 Director authorizes the camera/terrain revision. One built-in image-generation edit using original storyboard as target and portrait-v07-individualized as supporting identity reference. [Revised sheet](../../.runtime/art-direction/series01-entrance-boards-v01/storyboard-v02.png); original preserved. Both source images inspected. Image-generation skill used for scoped edit; no Runway calls or API-budget change, built-in usage/cost unknown. Saved on SSD, not Git-backed.
@@ -14,7 +22,7 @@ Exact prompt:
 
 Use case: identity-preserve. Edit reference image 1 (previous six-panel storyboard) into ONE revised SIX-PANEL storyboard contact sheet. Image 2 is supporting character identity reference. Preserve illustrated ink/paint medium, ochre/slate-blue mountain world, bay horse, brown tack, indigo costume, forward racing riding posture and particularly the EXACT determined close-up expression from panel 4 of image 1. Do NOT soften that expression, add smiles, redesign face or introduce makeup/jewelry.
 Change camera progression and alternate-route danger. Layout THREE columns TWO rows, read top row then bottom; numbered 1–6 only. Each panel must be tall 9:16; overall canvas portrait approximately 27:32 plus thin cream gutters, NOT square.
-Panels 1 and 2 are keyframes of ONE CONTINUOUS camera move; no digital zoom look. 
+Panels 1 and 2 are keyframes of ONE CONTINUOUS camera move; no digital zoom look.
 1: VERY DISTANT elevated rear-three-quarter view into vast mountain valley, rider SMALL in lower middle traveling away on broad graded road, long dust trail locates her. Show expansive terrain and the fork far ahead. This is NOT a medium shot. Aerial landscape dominates.
 2: camera has descended and approached, sweeping around into LOW LATERAL near-three-quarter tracking as horse races toward screen right. Whole horse and rider visible with margins, powerful credible stride, woman low forward over neck with bent knees and hands on reins. Foreground parallax/ground streaks suggest speed; no literal flight. This angle comes from camera moving around the subject, not rider turning face.
 3: forward-looking fork reveal. Easy broad gently rising GRADED MAIN ROAD continues toward simple timber barrier with two anonymous distant armed guards; alternative branches RIGHT well BEFORE barrier. CONTRAST: alternate route climbs steeply across BROKEN ROCK AND LOOSE SCREE, with irregular embedded stone steps, eroded ruts and exposed downslope. A continuous navigable band remains several horse widths wide with a broad turn; visibly hazardous footing/gradient/exposure, NOT a narrow cliff ledge, NOT smooth scenic bypass. Preserve recognizable landmark rocky outcrop dividing paths.
