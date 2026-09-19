@@ -107,6 +107,8 @@ Director clarification, exchange 2: design/planning and implementation changes m
 
 ## Next conversation focus
 
+Current focus, exchange 99: Director specifies racing-intensity gallop and low, forward athletic riding posture for the Pashtun entrance; "almost flying" is figurative. Preserve calm facial self-possession. Proposed staging keeps an open fast stretch and a broad credible route-change arc, not a pace-killing hairpin. No media generation or animation implementation; full motion brief/reference review precedes implementation. Next checkpoint/push 100, one substantive exchange away.
+
 Current focus, exchange 98: Director accepts Pashtun entrance intention and three-beat progression. Written four-shot, approximately 13-second draft added to trailer beat sheet; roadblock/alternate-track specifics proposed for review, no production route or generation authorized. Account for longer entrance within existing trailer runtime rather than silently expanding it. Next checkpoint/push 100, two substantive exchanges away.
 
 Current focus, exchange 97: Director accepts creative guiding principles and launch violence treatment. Next proposed concrete decision is the dramatic intention of a short Pashtun entrance passage, followed by written shots before provider selection or generation; see trailer beat sheet. No new gate/campaign, no spend. Next checkpoint/push 100 (three substantive exchanges away).

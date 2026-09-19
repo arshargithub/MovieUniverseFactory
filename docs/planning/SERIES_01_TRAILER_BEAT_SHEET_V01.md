@@ -40,6 +40,12 @@ Exchange 64: entrance assignment/order below is explicitly provisional pending a
 
 ### Entrance passage — direction accepted, exchange 98
 
+Motion refinement accepted, exchange 99: Director wants horse-racing motion/dynamics: "the horse is almost flying (not literally) and the rider is in that aggressive position." Interpret as racing intensity, forward drive and a low athletic rider silhouette, not literal flight, supernatural speed or an angry face. Her established composed self-possession remains intact. This specifies performance direction, not a modern racing costume/saddle, particular breed or measured speed. The preceding "yeah" supports continuing the roadblock draft; specific blockade affiliation, geography and mission stakes remain unresolved.
+
+Proposed staging application: give P-01 an uninterrupted stretch of powerful full gallop, with the rider low and forward, torso moving in coordination with the horse rather than seated upright and bouncing. Show propulsion and rhythmic weight through the complete gait, not a permanently airborne stretched pose. Low lateral tracking and nearby ground passing quickly should sell speed while retaining readable anatomy; dust and streaming cloth support, not conceal, movement. Keep face visible and cloth clear of reins/limbs. P-03 retains this athletic posture rather than resetting to the upright portrait pose; likeness reference is identity guidance, not a pose lock.
+
+Proposed P-04 refinement: use a broad, traversable uphill branch rather than a tight rocky hairpin so the sequence retains momentum. Show a brief gathering/balancing transition before the arc, then renewed drive; no instantaneous full-speed pivot or implausible terrain traversal. Her physical riding posture is assertive; her expression is focused, not furious. Motion reference review, coordinated rider/horse/contact brief, terrain compatibility and actual timing remain required before implementation; no racing reference clip has been reviewed in this exchange. No generation or campaign started.
+
 Director accepts the exchange-97 proposal: Pashtun rides toward danger deliberately; spectacle → recognition of a blocked route → commitment to a harder route. Proceed with written shot planning. Specific obstruction, geography, mission linkage and exact choreography are still proposed, not canon. No generation or production spending authorized. The following 13-second treatment is a draft, not a locked edit:
 
 | Shot | Working time | Image and dramatic purpose | Sound / continuity / risks |
