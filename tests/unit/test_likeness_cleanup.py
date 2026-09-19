@@ -29,6 +29,7 @@ def test_accept_pinned_source(handler, monkeypatch, tmp_path):
     monkeypatch.setattr(handler, 'BASE', tmp_path)
     monkeypatch.setattr(handler, 'DIGEST', hashlib.sha256(b'test').hexdigest())
     assert handler.validate({'operation': 'inspect', 'output_name': 'cleanup-unit-unused'}).name == 'cleanup-unit-unused'
+    assert handler.validate({'operation': 'jaw_diagnostic', 'output_name': 'cleanup-jaw-unit'}).name == 'cleanup-jaw-unit'
     (tmp_path / 'cleanup-unit-unused').mkdir()
     with pytest.raises(ValueError, match='overwrite'):
         handler.validate({'operation': 'inspect', 'output_name': 'cleanup-unit-unused'})
@@ -52,3 +53,11 @@ def test_color_conversion(handler):
     assert handler.linear_channel(0) == 0
     assert handler.linear_channel(1) == 1
     assert handler.linear_channel(.5) == pytest.approx(.21404114)
+
+
+def test_jaw_mask_is_local(handler):
+    assert handler.jaw_mask(0, .4) == 0
+    assert handler.jaw_mask(.7, .6) == 0
+    assert handler.jaw_mask(.7, .2) == 0
+    assert handler.jaw_mask(.7, .4) == pytest.approx(.85)
+    assert handler.jaw_mask(-.7, .4) == handler.jaw_mask(.7, .4)

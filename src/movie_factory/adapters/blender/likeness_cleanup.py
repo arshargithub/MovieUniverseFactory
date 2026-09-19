@@ -19,7 +19,7 @@ DIGEST = 'c0e5201fa25490e528396132edff5f45b5f4b803d9487983bca2fde194255e4c'
 def validate(job):
     if not isinstance(job, dict) or set(job) != {'operation', 'output_name'}:
         raise ValueError('Only operation and output_name admitted')
-    if job['operation'] not in {'inspect', 'neck_material_preview'}:
+    if job['operation'] not in {'inspect', 'neck_material_preview', 'jaw_diagnostic', 'jaw_projection_preview'}:
         raise ValueError('Unsupported operation')
     name = job['output_name']
     if not isinstance(name, str) or not name.startswith('cleanup-') or len(name) > 64 or not all(c.isalnum() or c == '-' for c in name):
@@ -163,6 +163,104 @@ def render_views(scene, camera, out, prefix):
         bpy.ops.render.render(write_still=True)
 
 
+def jaw_mask(x, z):
+    """Local lower-side face blend; preserves central mouth and upper face."""
+    side = max(0., min(1., (abs(x) - .22) / .22))
+    lower = max(0., min(1., (z - .27) / .05))
+    upper = max(0., min(1., (.49 - z) / .08))
+    return .85 * side * lower * upper
+
+
+def project_frontal_jaw(obj, low, high):
+    import bpy
+    from bpy_extras.object_utils import world_to_camera_view
+    scene = bpy.context.scene
+    camera = bpy.data.objects['fbCamera.001']
+    image = bpy.data.images['frontal-v02-individualized.png.001']
+    old = (scene.render.resolution_x, scene.render.resolution_y)
+    scene.render.resolution_x, scene.render.resolution_y = tuple(image.size)
+    active_index = obj.data.uv_layers.active_index
+    uv = obj.data.uv_layers.new(name='MF_frontal_jaw_projection')
+    attr = obj.data.attributes.new('MF_jaw_weight', 'FLOAT', 'POINT')
+    for v in obj.data.vertices:
+        p = world_to_camera_view(scene, camera, obj.matrix_world @ v.co)
+        weight = jaw_mask(v.co.x, (v.co.z - low[2]) / (high[2] - low[2]))
+        if p.z <= 0 or not (0 <= p.x <= 1 and 0 <= p.y <= 1) or v.co.y > -.2:
+            weight = 0
+        attr.data[v.index].value = weight
+    for loop in obj.data.loops:
+        p = world_to_camera_view(scene, camera, obj.matrix_world @ obj.data.vertices[loop.vertex_index].co)
+        uv.data[loop.index].uv = (p.x, p.y)
+    obj.data.uv_layers.active_index = active_index
+    scene.render.resolution_x, scene.render.resolution_y = old
+    nodes, links = obj.data.materials[0].node_tree.nodes, obj.data.materials[0].node_tree.links
+    neck_mix = next(n for n in nodes if n.type == 'MIX_RGB')
+    original_color = neck_mix.inputs[1].links[0].from_socket
+    uvnode = nodes.new('ShaderNodeUVMap'); uvnode.uv_map = uv.name
+    tex = nodes.new('ShaderNodeTexImage'); tex.image = image; tex.extension = 'EXTEND'
+    links.new(uvnode.outputs[0], tex.inputs['Vector'])
+    attribute = nodes.new('ShaderNodeAttribute'); attribute.attribute_name = attr.name
+    mix = nodes.new('ShaderNodeMixRGB')
+    links.new(attribute.outputs['Fac'], mix.inputs[0])
+    links.new(original_color, mix.inputs[1])
+    links.new(tex.outputs['Color'], mix.inputs[2])
+    links.new(mix.outputs[0], neck_mix.inputs[1])
+    return {'method': 'Localized approved frontal-camera projection; max blend 0.85',
+            'geometry_edit': False, 'source_image_edit': False,
+            'additional_uv_layer': uv.name, 'additional_weight_attribute': attr.name}
+
+
+def jaw_diagnostic(obj, low, high, out, report, correction=False):
+    """Separate geometry, baked color, and real light without modifying the mesh."""
+    import bpy
+    repair_material(obj, low, high)
+    material = obj.data.materials[0]
+    scene, camera = setup_review(obj)
+    # Equal mirrored large lights; no asymmetric key/fill difference.
+    for name, x in [('MF_key', -3), ('MF_fill', 3)]:
+        from mathutils import Vector
+        light = bpy.data.objects[name]
+        light.location = (x, -4, 3)
+        light.rotation_euler = (Vector((0, 0, -.1)) - light.location).to_track_quat('-Z', 'Y').to_euler()
+        light.data.energy = 300
+        light.data.size = 5
+    scene.cycles.samples = 32
+    render_views(scene, camera, out, 'balanced-texture')
+    unlit = material.copy()
+    unlit.name = 'MF_diagnostic_unlit_color'
+    nodes, links = unlit.node_tree.nodes, unlit.node_tree.links
+    bsdf = next(n for n in nodes if n.type == 'BSDF_PRINCIPLED')
+    color_socket = bsdf.inputs['Base Color'].links[0].from_socket
+    emission = nodes.new('ShaderNodeEmission')
+    links.new(color_socket, emission.inputs['Color'])
+    output = next(n for n in nodes if n.type == 'OUTPUT_MATERIAL')
+    links.new(emission.outputs[0], output.inputs['Surface'])
+    obj.data.materials[0] = unlit
+    render_views(scene, camera, out, 'unlit-texture')
+    clay = bpy.data.materials.new('MF_diagnostic_clay')
+    clay.use_nodes = True
+    shader = clay.node_tree.nodes.get('Principled BSDF')
+    shader.inputs['Base Color'].default_value = (.35, .35, .35, 1)
+    shader.inputs['Roughness'].default_value = .8
+    obj.data.materials[0] = clay
+    render_views(scene, camera, out, 'balanced-clay')
+    report['geometry_after'] = geometry_digest(obj)
+    if report['geometry_before'] != report['geometry_after']:
+        raise ValueError('Diagnostic changed geometry')
+    report['diagnostic'] = 'Equal mirrored lights / emission texture / neutral clay; no shape correction'
+    obj.data.materials[0] = material
+    if correction:
+        report['jaw_correction'] = project_frontal_jaw(obj, low, high)
+        if geometry_digest(obj) != report['geometry_before']:
+            raise ValueError('Correction changed protected geometry or primary UV')
+        render_views(scene, camera, out, 'corrected')
+    bpy.ops.wm.save_as_mainfile(filepath=str(out / 'jaw-review.blend'))
+    report['source_preserved'] = hashlib.sha256(SOURCE.read_bytes()).hexdigest() == DIGEST
+    if not report['source_preserved']:
+        raise ValueError('Source mutated')
+    (out / 'result.json').write_text(json.dumps(report, indent=2))
+
+
 def run(job):
     out = validate(job)  # Must precede Blender operations and output creation.
     import bpy
@@ -186,6 +284,9 @@ def run(job):
               'images': [{'name': i.name, 'size': list(i.size), 'packed': bool(i.packed_file)} for i in bpy.data.images]}
     (out / 'inspection.json').write_text(json.dumps(report, indent=2))
     if job['operation'] == 'inspect':
+        return
+    if job['operation'] in {'jaw_diagnostic', 'jaw_projection_preview'}:
+        jaw_diagnostic(obj, low, high, out, report, job['operation'] == 'jaw_projection_preview')
         return
     # Export the untouched approved material, before adding procedural nodes.
     bpy.ops.object.select_all(action='DESELECT')
