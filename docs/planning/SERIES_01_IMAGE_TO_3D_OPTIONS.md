@@ -1,5 +1,7 @@
 # Image-led asset creation — exchanges 112–113
 
+Execution update 2026-09-19: Director authorized installation and the bounded trial. Add-on/Core installed; an unfitted head was created. Pointer control worked after foreground recovery, but Blender then stalled accessing the SSD reference folder. See [trial operational record](SERIES_01_FACEBUILDER_TRIAL_01.md). Earlier no-install/no-execution statements below are historical. Likeness remains untested.
+
 ## Post-trial economics — exchange 118
 
 Director requires future costs before starting the trial. Official pages checked 2026-09-19: [FaceBuilder-only pricing](https://keentools.io/products/facebuilder-for-blender) lists Freelancer $19.99 monthly or $191.88 annually, and Studio $699 annually, excluding taxes (checkout currency/conversion and local tax must be confirmed before purchase). Annual Freelancer breaks even against about ten paid monthly periods; two monthly periods cost $39.98 before tax. These are desktop subscription prices, not per-head charges. Do not buy FaceTracker/GeoTracker bundles for this fitting test.
