@@ -4,6 +4,8 @@
 
 ## Current accepted state — exchange 119
 
+Implementation continuation: [material cleanup and portable-base evidence](SERIES_01_FACEBUILDER_CLEANUP_RESULT.md) now verifies geometry preservation and a factory-startup GLB + explicit material-sidecar round-trip. A separate neck-mask derivative removes the sliver but remains provisional/low-detail; hair/scarf and upper-side coverage are unfinished. This supersedes earlier NOT_RUN notes only for the checks explicitly listed in that result.
+
 Director explicitly agrees to accept **`head-v02-two-view.blend` as the provisional 3D facial starting point** following the two-sided modest-angle review. The approved illustrated pair B remains the identity authority. v03 frontal-only texture is not selected. This acceptance excludes unfinished ears/neck texture, projected hair/scarf, final rendering style and animation. Do not reopen facial design to solve texture artifacts. A5 and E1 remain incomplete.
 
 Preserve the v02 file unchanged as the accepted-base snapshot. Subsequent cleanup must use a separate derivative. Next technical work: local texture repair retaining the two-view face, material-appearance matching and portable export of the accepted base (the existing FBX round-trip used v03). Hair/scarf/body/rig are separate deliverables, not already proven by this head. User requests routine implementation to proceed without small approval interruptions; still seek approval for material creative deviations, purchases or scope expansion.
