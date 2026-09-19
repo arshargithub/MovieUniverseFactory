@@ -2,6 +2,8 @@
 
 ## CP-011 — exchange 110, 2026-09-19
 
+Push receipt: design batch through `70841f5d45cfc2a9291d12e0512a045254c4d48a` pushed to main and verified against `git ls-remote`. No implementation/native media/private source snapshots included; preceding push-due language below is historical pre-push state.
+
 - Current work B4/A5: actual-series entrance and realization route. Since CP-010: first and revised six-panel boards, four-frame opening camera study, approved high-rear descending camera direction, 14-second static timing draft carried forward provisionally, and one five-second generated opening. Director now rejects identity/style and excessively fast camera. Camera concept is not revoked; moving timing is not locked.
 - Current item: B4/A5 **0/2 completed gates**; generated preview acceptance **0/5 (0%)** across heterogeneous briefs, not a controlled benchmark or percent of creative work. Overall release readiness **1/25 = 4%**; creative foundation **1/5 = 20%**, other five streams **0/4** each. This measures fully accepted deliverables, not effort, artistic progress or time remaining. Brief checklists unchanged: Sikh 5/6, Gurkha 4/6, Pashtun 3/6, officer 3/6.
 - Current remainder: actual-series moving likeness/style, readable pacing and physically convincing riding/route, final realization method, complete trailer script/boards and sound, other leads and ensemble look. Proposed next bounded deliverable: one controlled actual-shot preview using existing Blender foundation plus one matched production-view look/identity anchor before polished motion; direct/hybrid finishing decision follows evidence. No new generic Blender campaign, provider tournament or execution authorization.
