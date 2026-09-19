@@ -4,6 +4,12 @@ Exchange 100. Director approves racing-intensity gallop, low forward athletic po
 
 ## Sequence contract
 
+## Camera direction accepted — exchange 106
+
+Director reviews the four-frame camera study and says "looks good." Accept the pictured opening-camera progression: high oblique behind → descending rear-side approach → low lateral racing view → modest forward-three-quarter reveal, intended as one continuous move. No need to reopen camera direction or regenerate these compositions absent a concrete implementation issue. Approval is of this camera study, not moving performance, exact timing, new horse forehead marking, final horse/tack design, all terrain details or the entire trailer. Keep generation-drift notes below.
+
+Next proposed step: a rough timed board edit of the complete entrance, using the approved camera study and existing route/decision boards. Clearly label it an animatic of static keyframes, not proof of smooth camera travel or horse animation. Judge time spent on approach versus character reveal and route choice before finished motion; no paid video call or animatic generated in this acceptance exchange.
+
 ## Opening camera study — exchange 105
 
 Director authorizes the focused four-frame study. [Camera study](../../.runtime/art-direction/series01-entrance-boards-v01/camera-study-v01.png), read top left, top right, bottom left, bottom right. One built-in image-generation call using storyboard-v02 for world/horse/rider/style and portrait-v07-individualized for identity; sources inspected. Existing six-panel boards unchanged. Asset saved to SSD, not Git-backed. Exact prompt below; built-in usage/cost unknown, no Runway calls or API budget change.
