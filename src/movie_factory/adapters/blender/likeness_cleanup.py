@@ -171,6 +171,62 @@ def jaw_mask(x, z):
     return .85 * side * lower * upper
 
 
+def skin_projection_confidence(rgb):
+    """Conservative local color gate, not a general skin/ethnicity classifier."""
+    r, g, b = rgb
+    if not all(math.isfinite(c) for c in rgb):
+        return 0.
+    return max(0., min(1., (r - .25) / .15)) * max(0., min(1., (r - g) / .08)) * max(0., min(1., (g - b) / .05))
+
+
+def gap_region(x, y, z):
+    return (max(0., min(1., (x-.25)/.2)) * max(0., min(1., (z-.27)/.05))
+            * max(0., min(1., (.54-z)/.06)) * max(0., min(1., (.5-y)/.3)))
+
+
+def fill_jaw_gap(obj, low, high, nodes, links, color_socket):
+    """Material-only approximate infill of the known viewer-right black gap."""
+    from mathutils.kdtree import KDTree
+    original = next(n for n in nodes if n.type == 'TEX_IMAGE' and n.image and n.image.name == 'FBHead_baked_tex')
+    image = original.image
+    pixels, (w, h) = list(image.pixels), tuple(image.size)
+    samples = []
+    for loop in obj.data.loops:
+        v = obj.data.vertices[loop.vertex_index].co
+        z = (v.z-low[2])/(high[2]-low[2])
+        if not (.28 < z < .56 and v.y < -.2):
+            continue
+        uv = obj.data.uv_layers.active.data[loop.index].uv
+        x, y = max(0,min(w-1,int(uv.x*w))), max(0,min(h-1,int(uv.y*h)))
+        rgb = pixels[4*(y*w+x):4*(y*w+x)+3]
+        if skin_projection_confidence(rgb) > .9:
+            samples.append((v.copy(), tuple(linear_channel(c) for c in rgb)+(1,)))
+    if len(samples) < 10:
+        raise ValueError('Insufficient local skin for gap fill')
+    tree = KDTree(len(samples))
+    for index, (p, _) in enumerate(samples):
+        tree.insert(p, index)
+    tree.balance()
+    colors = obj.data.color_attributes.new(name='MF_gap_skin', type='FLOAT_COLOR', domain='POINT')
+    region = obj.data.attributes.new(name='MF_gap_region', type='FLOAT', domain='POINT')
+    for v in obj.data.vertices:
+        near = tree.find_n(v.co, min(8,len(samples)))
+        colors.data[v.index].color = tuple(statistics.median(samples[i][1][c] for _,i,_ in near) for c in range(4))
+        region.data[v.index].value = gap_region(v.co.x,v.co.y,(v.co.z-low[2])/(high[2]-low[2]))
+    luminance = nodes.new('ShaderNodeRGBToBW'); links.new(original.outputs['Color'],luminance.inputs[0])
+    dark = nodes.new('ShaderNodeMapRange'); dark.clamp=True
+    dark.inputs['From Min'].default_value=.005; dark.inputs['From Max'].default_value=.055
+    dark.inputs['To Min'].default_value=1; dark.inputs['To Max'].default_value=0
+    links.new(luminance.outputs[0],dark.inputs['Value'])
+    region_node=nodes.new('ShaderNodeAttribute'); region_node.attribute_name=region.name
+    color_node=nodes.new('ShaderNodeAttribute'); color_node.attribute_name=colors.name
+    weight=nodes.new('ShaderNodeMath'); weight.operation='MULTIPLY'
+    links.new(dark.outputs['Result'],weight.inputs[0]); links.new(region_node.outputs['Fac'],weight.inputs[1])
+    mix=nodes.new('ShaderNodeMixRGB')
+    links.new(weight.outputs[0],mix.inputs[0]); links.new(color_socket,mix.inputs[1]); links.new(color_node.outputs['Color'],mix.inputs[2])
+    return mix.outputs[0]
+
+
 def project_frontal_jaw(obj, low, high):
     import bpy
     from bpy_extras.object_utils import world_to_camera_view
@@ -182,11 +238,17 @@ def project_frontal_jaw(obj, low, high):
     active_index = obj.data.uv_layers.active_index
     uv = obj.data.uv_layers.new(name='MF_frontal_jaw_projection')
     attr = obj.data.attributes.new('MF_jaw_weight', 'FLOAT', 'POINT')
+    pixels = list(image.pixels)
+    w, h = image.size
     for v in obj.data.vertices:
         p = world_to_camera_view(scene, camera, obj.matrix_world @ v.co)
         weight = jaw_mask(v.co.x, (v.co.z - low[2]) / (high[2] - low[2]))
-        if p.z <= 0 or not (0 <= p.x <= 1 and 0 <= p.y <= 1) or v.co.y > -.2:
+        # Only directly visible front-facing skin, never underside/back-face projection.
+        if p.z <= 0 or not (0 <= p.x <= 1 and 0 <= p.y <= 1) or v.co.y > -.2 or v.normal.y > -.25:
             weight = 0
+        else:
+            x, y = min(w-1, int(p.x*w)), min(h-1, int(p.y*h))
+            weight *= skin_projection_confidence(pixels[4*(y*w+x):4*(y*w+x)+3])
         attr.data[v.index].value = weight
     for loop in obj.data.loops:
         p = world_to_camera_view(scene, camera, obj.matrix_world @ obj.data.vertices[loop.vertex_index].co)
@@ -201,11 +263,34 @@ def project_frontal_jaw(obj, low, high):
     links.new(uvnode.outputs[0], tex.inputs['Vector'])
     attribute = nodes.new('ShaderNodeAttribute'); attribute.attribute_name = attr.name
     mix = nodes.new('ShaderNodeMixRGB')
-    links.new(attribute.outputs['Fac'], mix.inputs[0])
+    # Fragment-level gate prevents dark/blue pixels leaking between admitted vertices.
+    separate = nodes.new('ShaderNodeSeparateColor')
+    links.new(tex.outputs['Color'], separate.inputs['Color'])
+    def difference(a, b):
+        n = nodes.new('ShaderNodeMath'); n.operation = 'SUBTRACT'
+        links.new(a, n.inputs[0]); links.new(b, n.inputs[1])
+        gate = nodes.new('ShaderNodeMapRange'); gate.clamp = True
+        gate.inputs['From Min'].default_value = 0
+        gate.inputs['From Max'].default_value = .02
+        links.new(n.outputs[0], gate.inputs['Value'])
+        return gate.outputs['Result']
+    factor = attribute.outputs['Fac']
+    for gate in [difference(separate.outputs['Red'], separate.outputs['Green']),
+                 difference(separate.outputs['Green'], separate.outputs['Blue'])]:
+        multiply = nodes.new('ShaderNodeMath'); multiply.operation = 'MULTIPLY'
+        links.new(factor, multiply.inputs[0]); links.new(gate, multiply.inputs[1])
+        factor = multiply.outputs[0]
+    luminance = nodes.new('ShaderNodeMapRange'); luminance.clamp = True
+    luminance.inputs['From Min'].default_value = .05
+    luminance.inputs['From Max'].default_value = .12
+    links.new(separate.outputs['Red'], luminance.inputs['Value'])
+    multiply = nodes.new('ShaderNodeMath'); multiply.operation = 'MULTIPLY'
+    links.new(factor, multiply.inputs[0]); links.new(luminance.outputs['Result'], multiply.inputs[1])
+    links.new(multiply.outputs[0], mix.inputs[0])
     links.new(original_color, mix.inputs[1])
     links.new(tex.outputs['Color'], mix.inputs[2])
-    links.new(mix.outputs[0], neck_mix.inputs[1])
-    return {'method': 'Localized approved frontal-camera projection; max blend 0.85',
+    links.new(fill_jaw_gap(obj, low, high, nodes, links, mix.outputs[0]), neck_mix.inputs[1])
+    return {'method': 'Skin-gated frontal projection plus localized nearest-skin black-gap infill; inferred color, not recovered anatomy',
             'geometry_edit': False, 'source_image_edit': False,
             'additional_uv_layer': uv.name, 'additional_weight_attribute': attr.name}
 

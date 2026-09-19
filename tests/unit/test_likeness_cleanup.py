@@ -61,3 +61,19 @@ def test_jaw_mask_is_local(handler):
     assert handler.jaw_mask(.7, .2) == 0
     assert handler.jaw_mask(.7, .4) == pytest.approx(.85)
     assert handler.jaw_mask(-.7, .4) == handler.jaw_mask(.7, .4)
+
+
+@pytest.mark.parametrize('rgb', [(0,0,0),(.1,.07,.03),(.1,.2,.5),(float('nan'),.2,.1)])
+def test_projection_rejects_dark_or_blue(handler, rgb):
+    assert handler.skin_projection_confidence(rgb) == 0
+
+
+def test_projection_keeps_warm_lit_patch(handler):
+    assert handler.skin_projection_confidence((.6,.4,.25)) == 1
+
+
+def test_gap_fill_is_confined(handler):
+    assert handler.gap_region(-.7,0,.4) == 0
+    assert handler.gap_region(.7,0,.7) == 0
+    assert handler.gap_region(.7,1,.4) == 0
+    assert handler.gap_region(.7,0,.4) == 1
