@@ -35,6 +35,21 @@ Director authorized removing the malformed camera and described the initial like
 
 Next: a small front/angled likeness review, then mask/repair the neck texture and build the scarf/hair as separate assets if this candidate is accepted. Do not repeatedly refit facial geometry to fix texture-only artifacts. No paid calls or purchases in this cleanup. Experiment remains open pending review and portability verification.
 
+## Texture comparison and portable round-trip
+
+Director requested continued autonomous progress, yielding only for material creative/approval decisions rather than small implementation steps.
+
+- Preserved a third candidate, `head-v03-frontal-texture.blend`: unchanged two-view fitted geometry, frontal-only texture source, AutoFill enabled. This removes the central blue neck sliver but introduces side-face stretching/appearance differences and does not resolve all rear-neck coverage. It is a diagnostic comparison, not the selected replacement for v02. No further variants were generated.
+- Exported `head-v03-frontal-texture.fbx` using selected-object export, Copy path mode and embedded textures. Imported it through Blender's standard FBX importer into a fresh General scene, with its default cube hidden. Head geometry and textured material appeared successfully without restoring FaceBuilder cameras or fitting data. Saved packed evidence as `head-v03-fbx-roundtrip.blend`.
+- Round-trip has **partial portability evidence**, not full parity: the imported material looks different; imported transform shows X rotation 90 degrees and uniform scale 0.010. No dimensions/vertex-digest comparison, add-on-disabled test, rig test or animation test was performed. Do not call this a production-ready asset or a proven add-on-free pipeline yet.
+- Reopened `head-v02-two-view.blend` successfully and inspected both modest three-quarter sides. v02 remains the preferred likeness-review candidate; the third variant illustrates why neck repair should use local masking/painting rather than replacing the whole face texture. The source image cannot supply unseen anatomy or covered skin.
+
+### Decision checkpoint
+
+The meaningful next decision is whether **v02 facial likeness is an acceptable 3D starting point**, explicitly excluding projected hair/scarf, unfinished ears/neck, final shading and animation. Recommendation: conditionally accept it as a base if the Director recognizes her at front and both modest angles, then perform targeted neck/texture repair and separate hair/scarf construction. Otherwise identify the specific facial mismatch before spending on more modeling. Neither automatic matching nor the Director's earlier encouraging comment establishes full likeness approval.
+
+No paid provider calls or purchases were made. Assets are local and not backed up by the documentation commit. Experiment remains open pending this creative review; no additional major scope is authorized by technical progress alone.
+
 ## Previous recovery plan (resolved)
 
 Check for a macOS removable-volume access prompt. Do not force-quit without accounting for the unsaved scene. If restart is necessary, only the default unfitted head is known to exist from this task. A temporary copy of the two references on internal storage is a possible diagnostic after recovery, preserving the SSD originals. Resume fitting only after basic file access works.
