@@ -107,6 +107,8 @@ Director clarification, exchange 2: design/planning and implementation changes m
 
 ## Next conversation focus
 
+Current focus, exchange 103: authorized storyboard revision v02 generated; distant opening, closer racing view, rougher exposed alternate route and retained close-up expression. Original preserved. Review terrain width/grade and camera progression; static endpoints do not validate continuous movement. No video generation. Next checkpoint/push 110.
+
 Current focus, exchange 102: Director keeps storyboard close-up expression; requests distant-to-close continuous camera inspiration from accepted knight/horse revision and meaningfully more treacherous alternate terrain. Existing camera records/contact sheet reviewed; revised staging saved, no new generation. Next storyboard revision must show camera progression and route-risk contrast. Next checkpoint/push 110.
 
 Current focus, exchange 101: first six-panel visual storyboard generated and saved with exact prompt/inspection in SERIES_01_PASHTUN_ENTRANCE_BOARDS_V01.md. Racing posture and route choice visible; wider-than-9:16 panels, cropped horse, sterner close-up, wardrobe/terrain consistency remain review issues. Await Director feedback before timed boards or focused correction; no video calls. CP-010 push confirmed through 4e4b123; next checkpoint/push 110.
