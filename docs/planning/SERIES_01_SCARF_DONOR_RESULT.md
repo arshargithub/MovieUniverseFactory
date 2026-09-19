@@ -1,5 +1,15 @@
 # Scarf scan: acquisition and bounded fit result
 
+## Authorized reconstruction and cheek/jaw diagnostic — latest
+
+Director approved one capped 20-minute reconstruction diagnostic and explicitly requested investigation/correction of apparent cheek/jaw roundness. This authorizes a new **candidate**, not replacement of the accepted original. Director described the hair as a good close match; ambiguity retained: the latest scarf renders contain painted scalp hair, not the downloaded hair mesh. No blanket approval of the occluding donor fringe is inferred.
+
+Three reconstruction renders retained under `scarf-reconstruct-01/` through `scarf-reconstruct-03/`. The front neck bib was opened, three shaped shoulder fold strips added, and 02/03 tested smoothed scan boundaries and an inner lining. **Garment result rejected:** the open framing exposes the neck/jaw, but cut gaps, overlapping crown surfaces and artificial layered fold strips remain. Do not promote these derivatives or call the shawl fixed. Further variants on this cut-and-patch approach are not justified by the evidence; garment needs coherent topology/modeling rather than additional rough masks.
+
+The matched `framing-only-*` images retain original face geometry; `jaw-candidate-*` add one reversible `MF_lower_cheek_definition_candidate` shape key. 01/02's localized cheek displacement caused an unwanted crease and is rejected. 03 uses reduced smooth sinusoidal feathering (maximum Y adjustment .030 model units, lateral factor .025), leaving eyes, nose, lips, upper face and jaw-bottom region protected by the analytic mask. Front and left-angle images inspected: smaller lower-cheek fullness change with less creasing; not Director-approved likeness. A visible crease remains a visual-review concern, not a test-suite pass. Opening the neck region is a larger visual change than this small shape adjustment; comparison does not establish geometry as the sole cause of perceived roundness.
+
+03 working diagnostic: `.runtime/art-direction/series01-facebuilder-trial-01/scarf-reconstruct-03/head-reconstruction-candidate.blend`. Base vertices retained in Basis, original head file hash unchanged; effective evaluated face is deliberately different while shape key is enabled. Original geometry digest equivalence must not be claimed for this candidate's evaluated mesh. No paid calls, no new hair integration, no blink/rig work. This is a diagnostic with failed cloth work and provisional facial work, not completed delivery. Native jobs succeeded; input/mask tests do not qualify aesthetics. Local implementation/documentation commits only.
+
 2026-09-19. Director supplied the GLB and attribution. Original preserved at `.runtime/assets/series01-dressing-source/scarf-original.glb`, SHA-256 `b34727d6d989d33cef5fb77c84bb34194bf8045e4d01ac4a4d7c48c93319e7c7`. Download original remains untouched. Embedded metadata agrees with Director credit:
 
 “Balaclava - scarf as a hood - 3D scan” by Tijerín Art Studio, [source](https://skfb.ly/oP7Yu), [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/).
