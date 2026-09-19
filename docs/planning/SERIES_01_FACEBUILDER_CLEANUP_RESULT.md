@@ -35,6 +35,16 @@ To reproduce using this trusted repository handler, provide JSON with exactly `o
 
 ## Next production work
 
+### Jaw diagnosis and localized correction test
+
+Director flagged excessive apparent left/right jaw difference, texture mismatch and dark areas on viewer-right; authorized neutral diagnosis and texture-first correction. New operations `jaw_diagnostic` and `jaw_projection_preview` remain pinned to the original source and reject arbitrary data/code. Unit suite: 15 passed. This execution does not constitute a new accepted creative direction or increment the planning counter.
+
+Evidence: `.runtime/art-direction/series01-facebuilder-trial-01/cleanup-jaw-diagnostic-01/` and `cleanup-jaw-correction-01/`. Each contains equal-mirrored-light textured, emission-only textured, and neutral-clay front/±30-degree renders. Geometry/primary-UV/shape-key digest is unchanged; original file remains unchanged. Emission-only views retain the dark viewer-right jaw/ear patch and side-to-side painted difference, so those features cannot be attributed solely to scene lights. Neutral clay shows modest natural asymmetry; there is no demonstrated need to modify the accepted jaw shape yet.
+
+One localized lower-side-face shader correction reprojects the approved frontal portrait through its fitted camera, adding a separate UV layer and weight attribute (primary UV unchanged). Front-view transitions soften, but a dark stripe/contamination appears at the side/under-jaw in the angled view. **Do not promote this candidate** or use the better frontal image alone as evidence of completion. Preserve `jaw-review.blend` and all comparisons as partial/failed evidence. No source raster edits or paid calls were made. The approved v02 face and prior neck derivative remain authoritative/provisional respectively.
+
+Next targeted fix needs a skin-only projection mask or local texture repair excluding occluding hair/scarf and portrait shadows. Do not symmetrize facial geometry to conceal this texture problem. Remaining jaw texture issue is explicitly OPEN, not fixed by this test.
+
 Preserve accepted facial fit. Build actual hair/headscarf and repair only skin that remains exposed in the intended shot; do not spend on hidden full-head surfaces prematurely. Before animation, verify the dressed head in the intended illustrated-C lighting/framing and confirm eye construction/blink requirements. Body, horse integration, facial rigging and motion remain separate uncompleted scope. No new purchase, animation campaign or completed A5/E1 gate is implied.
 
 Native assets are local SSD artifacts, excluded from Git. Documentation/code commits are not an off-machine asset backup.
