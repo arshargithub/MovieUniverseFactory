@@ -2,6 +2,8 @@
 
 ## CP-010 — exchange 100, 2026-09-18
 
+Push receipt: design batch through 79c112dd03dc998d894fd35afacbe5c0a87e71ed verified against remote main. No implementation changes, native media or unrelated .DS_Store included. Earlier push-due wording below records pre-push state.
+
 - Current item B4/A5: actual-trailer entrance planning. Approved revised Pashtun identity pair B; accepted platform-aware creative principles and conservative violence treatment; accepted deliberate commitment toward danger, racing-intensity gallop, forward athletic rider posture, calm expression and broad uphill branch. Written four-shot/six-panel treatment prepared. Exact imagery, obstacle details, performance and production route remain open. No defensible percentage for artistic effort; B4/A5 remain incomplete (0/2 completed gates).
 - Evidence/learning since CP-009: two built-in portrait edits (usage/cost unknown); one USD 0.60 Gen-4.5 identity-motion clip technically succeeded but failed Director moving-likeness review at the turned eye/cheek. This episode: 0/1 accepted complete clips; across four video previews: 0/4. Preserve failed evidence; stop prompt-only head-turn retries. Approved still likeness does not establish 3D or moving identity.
 - Release readiness unchanged: 1/25 = 4% accepted deliverables; creative foundation 1/5 = 20%; story/scripts, distribution, architecture/handover, production proof and releases each 0/4. This coarse checklist measures completed gates, NOT effort consumed, artistic quality or time remaining. Character brief checklists remain Sikh 5/6, Gurkha 4/6, Pashtun 3/6, officer 3/6.
