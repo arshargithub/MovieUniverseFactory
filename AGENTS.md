@@ -1,5 +1,7 @@
 # Movie Factory implementation instructions
 
+- Director working preference: continue through the agreed plan without yielding for routine milestones or reversible implementation choices. Use commentary for progress; pause only for material creative/plan changes, new authorization, genuine blockers, or completion of the agreed scope. A local commit or technical milestone alone is not a reason to ask for another go-ahead.
+
 - For ongoing series/release planning, read `docs/planning/RELEASE_01_PLAN.md` and `RELEASE_01_STATUS.json`; preserve accepted decisions and update the substantive-exchange counter. Provide the specified checkpoint every ten substantive planning exchanges. Do not increment it for tools, automatic continuations or unrelated implementation tasks.
 - Before new product/architecture/capability/UX specifications, consult `docs/knowledge/README.md` and the historical decision register; review relevant original context and record adoption/deviation rather than silently replacing earlier decisions. Candidate extraction is not approval.
 - Persist planning changes each substantive exchange and make scoped local commits for coherent design decisions. Batch remote design pushes at ten-exchange checkpoints; push sooner only on explicit Director request. Exclude unrelated changes, secrets and native assets. Report local commit versus remote push/backup distinctly; no force-push or automatic publication.

@@ -38,6 +38,8 @@ Procedural → baked RGB MAE (0–255), front/left/right: **0.09744 / 0.09053 / 
 
 ## Next bounded production step (existing plan, not started)
 
+Update: [static dressing attempt and eye assessment](SERIES_01_HEAD_DRESSING_RESULT.md) now records three rejected dressing blockouts and the missing eye/blink prerequisites. Dressing is not accepted or complete; the cleaned-head starting asset remains unchanged.
+
 Construct separate hair/headscarf matching the approved portraits and inspect the dressed head at intended shot angles in illustrated-C treatment. Inspect eye construction and blink needs before animation. Final exposed-skin work follows dressing/shot visibility; do not keep polishing unseen surfaces. Preserve her face and avoid inventing new costume/accessory design without Director review. Body/rig/motion integration remains a later deliverable with the required motion brief.
 
 ## Process learning
