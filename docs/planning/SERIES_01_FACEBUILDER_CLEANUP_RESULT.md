@@ -6,6 +6,8 @@
 
 **YELLOW: usable approved facial starting point and verified portable base, not a completed character.**
 
+Latest technical milestone: [cleaned head handoff](SERIES_01_HEAD_HANDOFF.md). `cleanup-portable-01/` now contains the baked cleanup, GLB + sidecar and verified fresh-scene import. The historical statements below that cleanup portability is untested are superseded only by that bounded three-view check. Recommended native handoff is `cleanup-portable-01/head-baked.blend`; editable shader source is its sibling `head-procedural.blend`. No new Director likeness approval is implied.
+
 ### Latest working derivative — localized under-ear repair
 
 **2026-09-19 subsequent ear correction:** Director flagged the viewer-right ear's lower apparent fidelity and dark surrounding skin. Matched neutral-clay views show comparable gross ear shape/detail, while emission-texture evidence shows missing/dark source coverage on that side. Previous smooth infill also flattened visible detail. One bounded variant transfers the opposite side's original texture coordinates onto a feathered viewer-right ear/side-face region using nearest mirrored surface triangles and barycentric UV interpolation. This mirrors material detail only, not geometry or facial identity; primary UV is retained, with a new derivative UV layer and blend attribute.
