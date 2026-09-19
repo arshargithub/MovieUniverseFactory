@@ -107,6 +107,8 @@ Director clarification, exchange 2: design/planning and implementation changes m
 
 ## Next conversation focus
 
+Current focus, exchange 108: Director says "yeah lets try it" following the static timing draft. Proceed with 14 seconds as provisional working timing, not certified motion or final edit lock. Recommend a single five-second opening motion preview before attempting all 14 seconds: high rear approach, descent and side/front-quarter reveal, racing posture and illustrated style. No new paid call dispatched; confirm this specific paid scope within the existing cumulative USD 5 preview ceiling, check ledger/balance and complete motion preflight before execution. No automatic retries or separate per-panel campaigns. Next checkpoint/push 110.
+
 Current focus, exchange 107: Director authorizes next deliverable; a 14-second silent static-board animatic is assembled from approved opening-camera keyframes and existing v02 roadblock/decision/climb panels. First five seconds represent one intended continuous camera move, not four production cuts. Review approach pacing and route-choice readability next; no new image/video generation or paid calls. B4/A5 remain incomplete; checkpoint/push 110 unchanged. See [timing recipe](SERIES_01_PASHTUN_ANIMATIC_V01.json) and [board record](SERIES_01_PASHTUN_ENTRANCE_BOARDS_V01.md).
 
 Current focus, exchange 106: Director approves four-frame opening-camera progression. Stop camera-composition rerolls; next proposed deliverable is a rough timed board edit of complete entrance, explicitly not motion qualification. Timing, actual gait/rider contact/identity and route execution remain open. No new media or paid calls this exchange. Next checkpoint/push 110.

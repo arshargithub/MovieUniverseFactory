@@ -4,6 +4,12 @@ Exchange 100. Director approves racing-intensity gallop, low forward athletic po
 
 ## Sequence contract
 
+## Working timing and proposed motion step — exchange 108
+
+Director responds "yeah lets try it" to the 14-second static draft. Treat this as permission to carry the timing forward provisionally, not a claim that the still edit proves gallop, identity or camera continuity. The preceding response asked about pacing/readability; it did not propose a priced provider call, so do not silently interpret this as approval for a complete generated sequence.
+
+Recommend one five-second opening preview, not the entire passage or another face-turn retry. Target high oblique rear → descending approach → low side → modest front-quarter, with racing horse motion, coordinated rider contact, illustrated C style and consistent identity revealed by camera travel. The roadblock/decision/climb remain boards for now. Confirm this paid scope under the existing cumulative USD 5 preview ceiling; prior observed debits/commitments total USD 2.40, not a fresh account-balance check. Before submission, reconcile the ledger, complete the motion brief/preflight and record exact provider/input/model/cost. One generation, no automatic retries. Judge complete playback, camera progression, horse/rider motion and identity; failure is evidence for shot routing, not justification for repeated prompt changes. No live calls, new media or motion implementation this exchange.
+
 ## Static timing draft — exchange 107
 
 Director authorizes the proposed timed board edit. [Play animatic v01](../../.runtime/art-direction/series01-entrance-boards-v01/animatic-v01.mp4); [contact sheet](../../.runtime/art-direction/series01-entrance-boards-v01/animatic-v01/contact-sheet.jpg); [edit recipe](SERIES_01_PASHTUN_ANIMATIC_V01.json). Existing sheets remain unchanged. Deterministic FFmpeg crops, proportional fitting, labels and static holds only; no image generation, Runway call, interpolation, simulated zoom or sound. These are editorial keyframes, not demonstrated moving performance.
