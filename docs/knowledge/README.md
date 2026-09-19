@@ -14,6 +14,8 @@ Source: **AI Movie Production System**, task `6a82016c-3a88-83ea-a93b-b277f6526b
 
 Capture completeness is not interpretation completeness. The register is deliberately unreviewed until each relevant item has been read in context, checked against user approval and later amendments, and mapped to an applicable requirement. Do not let automatic extraction declare canon.
 
+Exchange 110: [realization review](../planning/SERIES_01_REALIZATION_REVIEW.md) rechecks accepted capability 8 (per-shot generative/structured/hybrid routing) and newly context-reviews/maps capabilities 9 and 10 (persistent production worlds; representation investment proportional to recurrence/importance/reuse). Full proposals and subsequent Director approvals read. New control-first entrance recommendation remains proposed, not inferred approval; broader source reconciliation remains incomplete.
+
 Contextual review: [Release 01 applicability](RELEASE_01_APPLICABILITY.md) maps nine requirements across canon revision, agreed production checkpoints, provider-independent music, universe ownership, separate story/production timelines, character-layer ownership, conversational character discovery, Studio-level audience knowledge and a single primary workspace. Each includes source context and a verification requirement; a requirement may have several supporting exchanges. Batch 4 records a later refinement to the earlier universal universe-ownership wording. Broader supersession reconciliation remains incomplete; no release gate is newly complete.
 
 ## How to use it without rereading the entire conversation

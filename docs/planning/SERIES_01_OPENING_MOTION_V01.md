@@ -33,6 +33,14 @@ Forecast: 10–15 active minutes plus provider processing, one variant, under 60
 
 ## Execution and disposition
 
+### Director disposition — exchange 110
+
+Director: "this doesn't look like her at all. the visual language doesn't feel aligned, and even with the camera movements, everything's happening so fast, I am not really able to judge."
+
+Close YELLOW / creative failure: one technically valid output, zero accepted clips. Across the five heterogeneous previews, zero accepted complete outputs; not a controlled model benchmark. No retry, new paid call or Blender execution. Camera-path intent remains approved but five-second realization is not accepted; reconsider pacing separately from horse speed. [Strategic/tactical review](SERIES_01_REALIZATION_REVIEW.md) preserves existing per-shot multi-route architecture. Earlier pending-review wording below is historical and superseded here.
+
+Closure card: output/request/account records and all original media retained; episode debit USD 0.60 observed, cumulative commitments USD 3.00; engineering tokens and exact net elapsed unknown. Input wait was ended at bookkeeping resumption, not the exact message-arrival instant, so some current-turn context review is outside recorded work and the excluded interval is only observed ledger coverage. Do not claim exact time savings. Operating report updated on closure; no off-device native-media backup claimed. Next action is Director decision on proposed control/look pilot, not another automatic generation.
+
 Submitted once: task `a43a7836-1d9e-445c-9278-bb3bc2d87659`; SUCCEEDED. Input inspected after cropping; 720×1280 PNG, 1,843,398 bytes, no storyboard number/header. Exact prompt: [opening-gallop.txt](../../config/series01-motion/opening-gallop.txt). Private input/request/output/account/budget evidence lives in `.runtime/art-direction/series01-motion-v01/`; source art remains in `.runtime/art-direction/series01-entrance-boards-v01/`.
 
 ### Technical output and preliminary review

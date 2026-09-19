@@ -8316,10 +8316,10 @@
       "label": "So **Capability Decision 9** is broader than “test Blender animation”:",
       "statement_excerpt": "Locked.\n\nSo **Capability Decision 9** is broader than “test Blender animation”:\n\n> **We need to qualify whether a persistent structured production world is viable** — Characters, Locations, props, rigs, materials, spatial relationships, motion, cameras, lighting, simulation and targeted revision — with direct rendering and hybrid generative realization both available.\n\nBlender is a leading candidate to test, not an architectural assumption.\n\n## Capability / Feasibility Question 10\n\nThere’s a closely related principle I think we should make explicit:\n\n**Should Factory prefer creating/reusing persistent production representations when an element will recur, rather than regenerating it independently for every Shot?**\n\nFor example, if Maya appears throughout a film, Factory should ideally invest in a strong reusable representation of Maya once, then improve/adapt it as needed.\n\nSimilarly:\n\n> Maya’s apartment  \n> her motorcycle  \n> an important sword  \n> a recurring spaceship  \n> a major costume\n\nThat investment might be more expensive upfront, but potentially dramatically cheaper and more controllable over 50 Shots.\n\nConversely, the guy walking past in the background for two seconds probably does **not** deserve a fully modeled persistent Character.\n\nSo the principle would be:\n\n> **Representation investment should scale with recurrence, narrative importance, continuity requirements",
       "statement_excerpt_is_complete": false,
-      "status": "CANDIDATE_REQUIRES_CONTEXT_REVIEW",
-      "applicability": null,
+      "status": "CONTEXT_REVIEWED_ACCEPTED",
+      "applicability": "ADOPT",
       "supersedes": [],
-      "verification": null
+      "verification": {"reviewed_date":"2026-09-19","approval_turn":"c989f205-885e-4232-8bca-4902f9579c30","normalized_statement":"Qualify persistent structured production worlds, asset creation/acquisition, direct rendering and hybrid realization; do not assume autonomous modeling of every asset.","evidence":"docs/planning/SERIES_01_REALIZATION_REVIEW.md","scope":"Capability decision 9 only; later capability 10 proposal reviewed separately"}
     },
     {
       "id": "legacy-30fc1e10-2d6e-4a13-b821-43d8a6837986",
@@ -8332,10 +8332,10 @@
       "label": "So **Capability Decision 10** becomes a core economic/technical principle:",
       "statement_excerpt": "Locked.\n\nSo **Capability Decision 10** becomes a core economic/technical principle:\n\n> **Invest in persistent production representations in proportion to recurrence, narrative importance, continuity demands, revision value, and expected reuse.**\n\nThat gives us a clean continuum:\n\n- fleeting/background element → cheap ephemeral realization\n- recurring prop/location → reusable structured representation\n- major Character / hero asset → high-confidence persistent representation worth refining over time\n\nThat should materially improve both continuity and cost-to-acceptance.\n\n# Capability / Feasibility Checkpoint — 10\n\nI think the first ten capability decisions have established the right methodology before we start naming technologies.\n\nWe now have:\n\n- **End-to-end completion inside Factory** as a hard thesis requirement.\n- A **3–5 minute polished short** as the first serious end-to-end feasibility gate.\n- A quality bar of “finished film people willingly watch,” not “good for AI.”\n- A target cost band around **$100–$300**, with yellow/red circuit breakers above that.\n- **Every meaningful capability qualified empirically**, including open-source ones.\n- Qualification based on actual autonomous operation and **total cost-to-accepted-result**, including LLM/tool-driving cost.\n- Capability spikes proportional to risk and number of credible alternatives.\n- **Risk-first qualification order",
       "statement_excerpt_is_complete": false,
-      "status": "CANDIDATE_REQUIRES_CONTEXT_REVIEW",
-      "applicability": null,
+      "status": "CONTEXT_REVIEWED_ACCEPTED",
+      "applicability": "ADOPT",
       "supersedes": [],
-      "verification": null
+      "verification": {"reviewed_date":"2026-09-19","approval_turn":"30fc1e10-2d6e-4a13-b821-43d8a6837986","normalized_statement":"Scale persistent representation investment with recurrence, narrative importance, continuity demands, revision value and expected reuse.","evidence":"docs/planning/SERIES_01_REALIZATION_REVIEW.md","scope":"Capability decision 10 only; surrounding historical duration/budget statements are not newly adopted"}
     },
     {
       "id": "legacy-64468e26-9643-41f7-86b3-b8b30218f8e5",
