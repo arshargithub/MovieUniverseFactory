@@ -1,5 +1,6 @@
 """Pinned GLB scarf diagnostic/adaptation; no embedded scripts or external URIs."""
 import hashlib
+import math
 import json
 from pathlib import Path
 import struct
@@ -13,7 +14,7 @@ SHA='b34727d6d989d33cef5fb77c84bb34194bf8045e4d01ac4a4d7c48c93319e7c7'
 
 def validate(job):
     if not isinstance(job,dict) or set(job)!={'operation','output_name'} or job['operation']!='scarf_fit':raise ValueError('Invalid job')
-    if job['output_name'] not in {'scarf-fit-01','scarf-fit-02','scarf-fit-03'}:raise ValueError('Invalid output')
+    if job['output_name'] not in {'scarf-fit-01','scarf-fit-02','scarf-fit-03','scarf-reconstruct-01','scarf-reconstruct-02','scarf-reconstruct-03'}:raise ValueError('Invalid output')
     out=BASE/job['output_name']
     if out.exists():raise ValueError('No overwrite')
     b=SOURCE.read_bytes()
@@ -22,6 +23,58 @@ def validate(job):
     if any('uri' in x for k in ['buffers','images'] for x in doc.get(k,[])):raise ValueError('External URI prohibited')
     if sum(a.get('count',0) for a in doc['accessors'])>2_000_000:raise ValueError('Complexity cap')
     return out,doc['asset']
+
+
+def cheek_delta(x,y,z):
+    """Small local hollow above the jaw; protect central features and upper face."""
+    side=max(0.,min(1.,(abs(x)-.25)/.3))
+    front=max(0.,min(1.,(.1-y)/.5))
+    t=max(0.,min(1.,(z+.8)/1.0))
+    height=math.sin(math.pi*t)**4 if -.8<z<.2 else 0.
+    weight=side*front*height
+    return (-x*.025*weight,.030*weight,0.)
+
+
+def reconstruct(scarf,mat):
+    import bpy
+    import bmesh
+    bm=bmesh.new();bm.from_mesh(scarf.data)
+    # Open the scanned neck bib, retaining side/back hood fold geometry.
+    cut=[]
+    for v in bm.verts:
+        x,y,z=v.co
+        width=.84+.08*max(0.,-z)
+        if y<.65 and abs(x)<width and -1.8<z<.65:cut.append(v)
+    bmesh.ops.delete(bm,geom=cut,context='VERTS')
+    boundary=[v for v in bm.verts if any(e.is_boundary for e in v.link_edges)]
+    for _ in range(8):
+        bmesh.ops.smooth_vert(bm,verts=boundary,factor=.45,use_axis_x=True,use_axis_y=True,use_axis_z=True)
+    bm.to_mesh(scarf.data);bm.free()
+    # Continuous inner hood lining behind the retained scan closes scan gaps.
+    from head_dressing import hood_point
+    verts=[hood_point(-2+4*i/80,j/16) for i in range(81) for j in range(17)]
+    mesh=bpy.data.meshes.new('MF_hood_lining')
+    mesh.from_pydata(verts,[],[(i*17+j,(i+1)*17+j,(i+1)*17+j+1,i*17+j+1) for i in range(80) for j in range(16)])
+    mesh.update();obj=bpy.data.objects.new('MF_hood_lining',mesh);bpy.context.scene.collection.objects.link(obj)
+    mesh.materials.append(mat)
+    for p in mesh.polygons:p.use_smooth=True
+    # Three overlapping shaped shoulder folds, not a flat chest panel.
+    for layer in range(3):
+        verts=[];faces=[]
+        for i in range(65):
+            x=-1.75+3.5*i/64
+            for j in range(9):
+                t=j/8
+                z=-1.43-.25*layer+.18*x+.15*x*x-.40*t
+                y=-.80+.30*x*x-.10*math.sin(t*math.pi)-.025*math.sin(x*8+layer)
+                verts.append((x,y,z))
+        for i in range(64):
+            for j in range(8):faces.append((i*9+j,(i+1)*9+j,(i+1)*9+j+1,i*9+j+1))
+        mesh=bpy.data.meshes.new('MF_shawl_fold');mesh.from_pydata(verts,[],faces);mesh.update()
+        obj=bpy.data.objects.new('MF_shoulder_fold',mesh);bpy.context.scene.collection.objects.link(obj)
+        mesh.materials.append(mat)
+        for p in mesh.polygons:p.use_smooth=True
+        obj.modifiers.new('Thin cloth','SOLIDIFY').thickness=.012
 
 
 def run(job):
@@ -51,8 +104,8 @@ def run(job):
             t=max(0.,min(1.,(.9-v.co.z)/1.5))
             v.co.x*=1.12
             v.co.y+=.42
-            v.co.z-=(1.35 if job['output_name']=='scarf-fit-03' else .6)*t
-            if job['output_name']=='scarf-fit-03':
+            v.co.z-=(1.35 if job['output_name']=='scarf-fit-03' or job['output_name'].startswith('scarf-reconstruct') else .6)*t
+            if job['output_name']=='scarf-fit-03' or job['output_name'].startswith('scarf-reconstruct'):
                 v.co.x*=1.08
         # Remove dangling tied ends in this derivative, preserving original GLB.
         import bmesh
@@ -67,6 +120,23 @@ def run(job):
     bsdf.inputs['Roughness'].default_value=.9
     scarf.data.materials.clear();scarf.data.materials.append(mat)
     scene=bpy.context.scene;scene.camera.data.ortho_scale=4.7
+    if job['output_name'].startswith('scarf-reconstruct'):
+        reconstruct(scarf,mat)
+        render_views(scene,scene.camera,out,'framing-only')
+        assert geometry_digest(head)==before
+        head.shape_key_add(name='Basis')
+        key=head.shape_key_add(name='MF_lower_cheek_definition_candidate')
+        distances=[]
+        for v,k in zip(head.data.vertices,key.data):
+            delta=Vector(cheek_delta(*v.co));k.co=v.co+delta;distances.append(delta.length)
+        key.value=1
+        render_views(scene,scene.camera,out,'jaw-candidate')
+        bpy.ops.wm.save_as_mainfile(filepath=str(out/'head-reconstruction-candidate.blend'))
+        (out/'result.json').write_text(json.dumps({'source':meta,'source_sha256':SHA,
+            'base_vertices_unchanged':all((v.co-b.co).length<1e-8 for v,b in zip(head.data.vertices,head.data.shape_keys.key_blocks['Basis'].data)),
+            'shape_key':key.name,'maximum_displacement':max(distances),'source_head_preserved':hashlib.sha256(headpath.read_bytes()).hexdigest()=='51e2a3d4c9df966e44f6a217d3535115bf19eef8e7ef9561cf6da75dc0ebd9b4',
+            'scope':'Open hood/shoulder reconstruction blockout and reversible cheek definition; not approved'},indent=2))
+        return
     render_views(scene,scene.camera,out,'scarf-fit')
     bpy.ops.wm.save_as_mainfile(filepath=str(out/'head-scarf-fit.blend'))
     assert geometry_digest(head)==before
