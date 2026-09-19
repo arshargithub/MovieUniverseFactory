@@ -1,5 +1,19 @@
 # Image-led asset creation — exchanges 112–113
 
+## Concrete first pass proposed — exchange 114
+
+Recommend **Meshy multi-image-to-3D first**, one head/shoulders candidate, not a broad vendor comparison. Rationale: documented artwork/multi-view input and downloadable mesh suit a small acquisition test without first configuring a full character-authoring suite. This is a workflow-fit recommendation, not evidence Meshy beats FaceBuilder or Tripo on likeness. No purchase, upload or generation authorized by the planning question.
+
+1. Prepare the accepted pair B as two separate consistent head/shoulder references: frontal-v02-individualized.png first, portrait-v07-individualized.png second. Preserve originals/hashes and her existing face; simple background removal/cropping if needed, no beautification or invented extra angles. Inspect relative proportions and visible shawl/hair consistency before submission. Approved originals remain review anchors if any input preparation changes pixels.
+2. Confirm account access, private handling/export rights and actual account credit cost. No Meshy connector was available in current tools. Use a minimal budgeted API route or user-assisted web submission with a recorded reservation; do not build a general integration first. API key, if used, must stay in approved private credential storage and be read only by a trusted provider, never in chat or Blender. No subscription/top-up without explicit approval.
+3. Submit exactly one textured multi-image candidate. Proposed API settings from current docs: pin `meshy-7.1`, standard geometry, 2K texture, image enhancement off, GLB output, no rigging, no automatic reroll/remesh/animation. Recheck supported settings immediately before paid dispatch. Current listed generation cost: **30 Meshy credits**, not USD 0.30; account cash cost and minimum purchase remain unverified. No use of the Runway ledger allowance for a different provider.
+4. Import safely into Blender as an untrusted asset with scripts disabled; preserve original generated file and inspect geometry/materials before reuse. Produce matched front/three-quarter views and one modest novel angle, both textured and plain shaded, plus a slow inspection turntable if useful. This tests static 3D likeness/texture behavior, not facial animation or final illustrated rendering. No body/horse/scenery generation yet.
+5. Stop for Director review: recognizably the same woman, correct age/fullness/jaw/nose, no generic-beauty substitution, no texture-only illusion of likeness, coherent nearby angles. Note inferred occluded surfaces and shawl/face separation limitations. If accepted as a starting asset, scope cleanup/body/wardrobe next; if not, diagnose geometry versus reference/texture error and consider guided fitting rather than automatic regeneration.
+
+Suggested first execution bound, pending approval: one generation / 30-credit reservation, 20-net-minute setup diagnostic, 60-net-minute overall stop including import/review packaging, Director waits excluded. Unknown engineering tokens remain unknown. Account purchase costs are separate from per-call credits. If provider access or safe import cannot fit, stop without quietly expanding into infrastructure work. Immediate next action: prepare the reference pair and establish Meshy access/actual cash ceiling; do not ask the Director to revisit accepted facial design.
+
+Current primary sources: [multi-image API](https://docs.meshy.ai/en/api/multi-image-to-3d) (1–4 images, primary front image for 7.1, enhancement switch and GLB output); [API pricing](https://docs.meshy.ai/en/api/pricing) (30 credits for standard textured multi-image 7.1). Checked 2026-09-19. Web-app prices/settings are not assumed identical to API.
+
 2026-09-19. Research/advice only; no uploads, installations, purchases, generation or new experiment executed.
 
 ## Accepted correction to the pilot
