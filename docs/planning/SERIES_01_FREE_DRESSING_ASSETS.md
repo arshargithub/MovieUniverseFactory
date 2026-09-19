@@ -1,5 +1,17 @@
 # Free dressing asset shortlist
 
+## Verification update — supersedes listing-only recommendations below
+
+Director challenged the shemagh assumption and requested actual progress, not another promise. **BlendSwap headwear is removed from recommended cloth donors pending visual proof.** Browser access failed because the admin-enforced security policy could not be verified; no alternate access workaround was attempted after that denial. Thus neither a scarf nor a mislabeled hat is established. Sketchfab direct research fetches for the hooded scarf, Halfcape Soft and Drape Hoodie return 403. Cloth suitability remains unverified; a user-provided preview/model is needed to assess these specific candidates with the available access.
+
+Actual hair acquisition completed: official MakeHuman alternate mirror ZIP range reads obtained only six `o4saken_long01` data files (~9.6 MB uncompressed) in `.runtime/assets/series01-dressing-source/o4saken-long01/`, with per-file SHA-256 in `acquisition.json`. Full 217 MB download from the first mirror timed out at 90 seconds; its 1,991,947-byte incomplete archive remains failed evidence and must not be treated as valid. No installation or downloaded code execution.
+
+**License discrepancy:** downloaded OBJ and MHClO both explicitly state author **04saken**, **CC BY 4.0**, unlike catalog CC0/credit punkduck. Retain embedded attribution/license, original files and catalog discrepancy; do not distribute as unconditionally CC0. Credit: `o4saken_long01 by 04saken, CC BY 4.0, obtained from MakeHuman Hair 01; first-fit transform/material reconstruction by MovieUniverseFactory`. Attribution/source records must accompany any derivative use.
+
+Actual thumbnail inspected, then one pinned data-only OBJ import/first-fit rendered at front and both angles under `hair-donor-01/`. Native execution succeeded, 31 combined handler tests passed, original head geometry unchanged. Front and right renders inspected: layered hair provides real donor geometry, but uniform first fit is **not acceptable**—fringe obscures eyes, cards intersect forehead, and scalp coverage is incomplete. Preserve as diagnostic, not approved hairstyle. It may supply side/back layers after selective editing; do not commit to it as the final donor or replace the approved center-part silhouette. No paid calls or remote push.
+
+Concrete remaining access request: Director can provide a screenshot of the hooded-scarf scan preview (or its freely downloadable mesh with license) so actual drape can be evaluated. No paid asset requested. Further hair fitting should follow selected scarf coverage rather than polishing hair that may be hidden.
+
 2026-09-19. Director authorizes looking for free assets close enough to adapt. Research only: no purchase, installation, download or import completed. No character-design change. Listing claims are not verified mesh fitness or legal provenance guarantees.
 
 ## Ranked inspection candidates
