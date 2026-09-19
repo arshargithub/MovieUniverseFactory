@@ -1,0 +1,109 @@
+{
+  "version": 1,
+  "exchange": 107,
+  "output": "animatic-v01.mp4",
+  "fps": 24,
+  "width": 720,
+  "height": 1280,
+  "audio": false,
+  "transitions": "hard cuts between static boards; first four boards represent one intended continuous camera move",
+  "fit": "preserve aspect ratio within 648x1152; center on 720x1280 dark background",
+  "panels": [
+    {
+      "source": "camera-study-v01.png",
+      "crop": [
+        450,
+        830,
+        12,
+        0
+      ],
+      "seconds": 1.25,
+      "label": "P-01 / 1   HIGH REAR",
+      "note": "One continuous camera move - keyframe 1 of 4"
+    },
+    {
+      "source": "camera-study-v01.png",
+      "crop": [
+        450,
+        830,
+        479,
+        0
+      ],
+      "seconds": 1.25,
+      "label": "P-01 / 2   DESCEND + APPROACH",
+      "note": "One continuous camera move - keyframe 2 of 4"
+    },
+    {
+      "source": "camera-study-v01.png",
+      "crop": [
+        450,
+        818,
+        12,
+        840
+      ],
+      "seconds": 1.25,
+      "label": "P-01 / 3   LOW SIDE",
+      "note": "One continuous camera move - keyframe 3 of 4"
+    },
+    {
+      "source": "camera-study-v01.png",
+      "crop": [
+        450,
+        818,
+        479,
+        840
+      ],
+      "seconds": 1.25,
+      "label": "P-01 / 4   CHARACTER REVEAL",
+      "note": "One continuous camera move - keyframe 4 of 4"
+    },
+    {
+      "source": "storyboard-v02.png",
+      "crop": [
+        382,
+        675,
+        760,
+        0
+      ],
+      "seconds": 2,
+      "label": "P-02   BLOCKED ROAD / HARDER ROUTE",
+      "note": "05.00 - 07.00 sec"
+    },
+    {
+      "source": "storyboard-v02.png",
+      "crop": [
+        349,
+        667,
+        10,
+        686
+      ],
+      "seconds": 2,
+      "label": "P-03   THE DECISION",
+      "note": "07.00 - 09.00 sec"
+    },
+    {
+      "source": "storyboard-v02.png",
+      "crop": [
+        376,
+        667,
+        371,
+        686
+      ],
+      "seconds": 2,
+      "label": "P-04 / 1   COMMIT TO THE CLIMB",
+      "note": "09.00 - 11.00 sec"
+    },
+    {
+      "source": "storyboard-v02.png",
+      "crop": [
+        382,
+        667,
+        760,
+        686
+      ],
+      "seconds": 3,
+      "label": "P-04 / 2   TAKE THE HARDER WAY",
+      "note": "11.00 - 14.00 sec"
+    }
+  ]
+}

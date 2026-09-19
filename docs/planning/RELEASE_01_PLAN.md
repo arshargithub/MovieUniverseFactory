@@ -107,6 +107,8 @@ Director clarification, exchange 2: design/planning and implementation changes m
 
 ## Next conversation focus
 
+Current focus, exchange 107: Director authorizes next deliverable; a 14-second silent static-board animatic is assembled from approved opening-camera keyframes and existing v02 roadblock/decision/climb panels. First five seconds represent one intended continuous camera move, not four production cuts. Review approach pacing and route-choice readability next; no new image/video generation or paid calls. B4/A5 remain incomplete; checkpoint/push 110 unchanged. See [timing recipe](SERIES_01_PASHTUN_ANIMATIC_V01.json) and [board record](SERIES_01_PASHTUN_ENTRANCE_BOARDS_V01.md).
+
 Current focus, exchange 106: Director approves four-frame opening-camera progression. Stop camera-composition rerolls; next proposed deliverable is a rough timed board edit of complete entrance, explicitly not motion qualification. Timing, actual gait/rider contact/identity and route execution remain open. No new media or paid calls this exchange. Next checkpoint/push 110.
 
 Current focus, exchange 105: focused four-frame opening camera study generated, clearly high/downward rear view through descending approach, lateral and forward-three-quarter positions. Entire storyboard unchanged; camera study awaits Director review. Horse-marking/crop/continuity limits recorded; no animation qualification or video calls. Next checkpoint/push 110.

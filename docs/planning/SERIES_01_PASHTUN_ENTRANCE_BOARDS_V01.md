@@ -4,6 +4,25 @@ Exchange 100. Director approves racing-intensity gallop, low forward athletic po
 
 ## Sequence contract
 
+## Static timing draft — exchange 107
+
+Director authorizes the proposed timed board edit. [Play animatic v01](../../.runtime/art-direction/series01-entrance-boards-v01/animatic-v01.mp4); [contact sheet](../../.runtime/art-direction/series01-entrance-boards-v01/animatic-v01/contact-sheet.jpg); [edit recipe](SERIES_01_PASHTUN_ANIMATIC_V01.json). Existing sheets remain unchanged. Deterministic FFmpeg crops, proportional fitting, labels and static holds only; no image generation, Runway call, interpolation, simulated zoom or sound. These are editorial keyframes, not demonstrated moving performance.
+
+| Time | Source | Intended beat |
+|---|---|---|
+| 0–1.25 s | Camera study panel 1 | High oblique rear opening |
+| 1.25–2.50 s | Camera study panel 2 | Descend and approach |
+| 2.50–3.75 s | Camera study panel 3 | Low lateral racing view |
+| 3.75–5.00 s | Camera study panel 4 | Forward-three-quarter character reveal |
+| 5–7 s | Storyboard v02 panel 3 | Roadblock and harder alternative |
+| 7–9 s | Storyboard v02 panel 4 | Her decision; retained expression |
+| 9–11 s | Storyboard v02 panel 5 | Commit to the climb |
+| 11–14 s | Storyboard v02 panel 6 | Continue up the harder route |
+
+The first four holds are placeholders for **one continuous camera move**, explicitly labeled in the video; their hard transitions are not a four-cut production recommendation. Other holds establish provisional editorial timing. Review whether five seconds earns the reveal, whether the roadblock/alternative reads in two seconds, and whether the decision-to-climb connection feels clear. Timing acceptance remains pending; soundtrack could alter perceived pace. Existing horse-marking, framing, face/tack and terrain-continuity limitations carry forward; this edit does not canonize them or prove safe riding, smooth camera travel or coherent 3D geography. No gate closure or motion-production authorization inferred.
+
+Verification: 720×1280 H.264, 24 fps, 336 frames, exactly 14.000 seconds, no audio stream, 2,469,857 bytes. Full decode completed without reported errors; sampled every hold into the inspected eight-frame contact sheet to verify source order, legibility and aspect-preserving layout. Output SHA-256: `ca26d4723307226fba251f63f15ecf786296ec4284ebda0d1dd89cbe3d04b007`. Crop coordinates and durations are recorded in the JSON recipe, relative to this runtime asset directory; per-panel intermediate videos are in `animatic-v01/`. Native media remains SSD-local, not included in Git. Planning records/recipe committed locally; next routine remote design push at exchange 110. No new API charges; engineering token usage unknown.
+
 ## Camera direction accepted — exchange 106
 
 Director reviews the four-frame camera study and says "looks good." Accept the pictured opening-camera progression: high oblique behind → descending rear-side approach → low lateral racing view → modest forward-three-quarter reveal, intended as one continuous move. No need to reopen camera direction or regenerate these compositions absent a concrete implementation issue. Approval is of this camera study, not moving performance, exact timing, new horse forehead marking, final horse/tack design, all terrain details or the entire trailer. Keep generation-drift notes below.
