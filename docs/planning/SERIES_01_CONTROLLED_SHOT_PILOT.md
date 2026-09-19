@@ -1,5 +1,7 @@
 # Proposed controlled-shot pilot — Pashtun opening
 
+**Superseded as immediate work order at exchanges 112–113.** Director flags disconnect from approved likeness/style and agrees to identity/look-first correction. Preserve the proposal below as history, not execution authorization. Prioritize her accepted design, faithful on-horse composition and stable-angle movement before expanding camera freedom. See [image-led asset options and accepted correction](SERIES_01_IMAGE_TO_3D_OPTIONS.md). No proxy-camera-first execution or inherited one-hour asset-production promise.
+
 Exchange 111, 2026-09-19. Recommendation requested; **not yet authorized for execution**. One actual-series shot under B4/A5/E1, not a new general Blender qualification. Builds on [realization review](SERIES_01_REALIZATION_REVIEW.md). Existing historical capabilities 8–10 remain adopted: per-shot routes, persistent production representations, investment proportional to recurrence/importance/reuse. Source proposals/Director approvals were reviewed at exchange 110 and mapped there; no deviations or new global rendering mandate.
 
 ## Decision and deliverables
