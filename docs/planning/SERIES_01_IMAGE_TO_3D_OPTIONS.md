@@ -1,5 +1,13 @@
 # Image-led asset creation — exchanges 112–113
 
+## Recommendation confidence clarified — exchange 115
+
+Director asks whether Meshy is the best choice. Answer: **not established**. Meshy was recommended as a practical automated starting-mesh test, not a demonstrated winner for this heroine's likeness. No actual reference-set comparison, cleanup measurement or animation-quality test has been performed. Tripo has not been ruled inferior.
+
+Rechecked [FaceBuilder's official workflow](https://keentools.io/products/facebuilder-for-blender): it offers reference-point mesh fitting, multi-view texturing and facial blendshapes. Inference: explicit facial fitting is more directly aligned with correcting her jaw, cheeks, nose and proportions than relying only on a general generator. However illustrated-input accuracy and economical agent operation remain unverified; manual fitting effort can outweigh nominal generation savings. Its photorealistic positioning is not evidence that it preserves illustrated C. Meshy offers straightforward multi-image API generation, not proven hero-character fidelity.
+
+Retain Meshy as a candidate for one small exploratory mesh, but do not ask the Director to purchase access on the premise that it is best. Before commitment, assess likeness control and practical operation of a face-fitting route alongside the already-researched general generator; no broad provider bake-off or install is authorized. The earlier concrete Meshy plan is conditional, not a selected production stack. No paid work or new assets this exchange.
+
 ## Concrete first pass proposed — exchange 114
 
 Recommend **Meshy multi-image-to-3D first**, one head/shoulders candidate, not a broad vendor comparison. Rationale: documented artwork/multi-view input and downloadable mesh suit a small acquisition test without first configuring a full character-authoring suite. This is a workflow-fit recommendation, not evidence Meshy beats FaceBuilder or Tripo on likeness. No purchase, upload or generation authorized by the planning question.
