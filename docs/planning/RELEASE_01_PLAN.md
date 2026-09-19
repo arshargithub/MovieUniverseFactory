@@ -107,6 +107,8 @@ Director clarification, exchange 2: design/planning and implementation changes m
 
 ## Next conversation focus
 
+Current focus, exchange 105: focused four-frame opening camera study generated, clearly high/downward rear view through descending approach, lateral and forward-three-quarter positions. Entire storyboard unchanged; camera study awaits Director review. Horse-marking/crop/continuity limits recorded; no animation qualification or video calls. Next checkpoint/push 110.
+
 Current focus, exchange 104: Director clarifies opening as high bird's-eye slightly behind rider, descending toward side. Recommend oblique high-rear → rear-three-quarter → low moving side → slight forward-three-quarter; v02 opening does not yet express sufficiently high downward view. Next proposed artifact is focused camera keyframes, not another whole-sheet reroll. No generation. Next checkpoint/push 110.
 
 Current focus, exchange 103: authorized storyboard revision v02 generated; distant opening, closer racing view, rougher exposed alternate route and retained close-up expression. Original preserved. Review terrain width/grade and camera progression; static endpoints do not validate continuous movement. No video generation. Next checkpoint/push 110.
