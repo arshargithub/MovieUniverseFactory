@@ -11,7 +11,19 @@
 - Navigating the picker to the reference folder on the SSD remained at Loading. Requesting the frontal image then left Blender unresponsive. Process 45153 remained alive; no new Blender crash report was found.
 - One-second native stack sample shows main thread waiting for file-browser worker termination (`ED_fileselect_exit` → `WM_jobs_kill_all_from_owner` → `_pthread_join`), with the directory worker blocked at `__opendir2` → `open$NOCANCEL`. This localizes the stall to directory access; it does not prove SSD failure or a macOS permission cause. Diagnostic sample: `/private/tmp/moviefactory-blender-import-sample.txt` (temporary, not backed up).
 
-## Next recovery
+## Permission recovery and initial fitting
+
+Director approved SSD access; the file picker subsequently listed and loaded the approved portraits. FaceBuilder visibly reports **Trial: 14 days left**. This supersedes the earlier activation uncertainty and unresponsive-directory state above.
+
+An initial textured diagnostic head is saved at `.runtime/art-direction/series01-facebuilder-trial-01/head-v01-diagnostic.blend`. Blender's Pack Resources command was invoked and the scene saved again; independent reopen/export verification is still pending. No originals were edited. The default cube is hidden, not deleted.
+
+The first placeholder camera acquired an incorrectly framed frontal image. Re-importing through Add Images created a correctly proportioned frontal view; Auto Align detected and pinned that view and the approved three-quarter view. The malformed original camera remains in the scene with pins: it was excluded from texture generation, **but not yet removed from the geometric solve**. Therefore this diagnostic must not be accepted as a clean two-view fit. Preserve it as failed/setup evidence before removing the malformed camera and refitting.
+
+The generated texture produces a recognizable face in the frontal viewport, but side/back coverage is incomplete and clothing/hair projections contaminate parts of the head/neck. This is not a production likeness or style approval. Hair, headscarf, unseen anatomy and texture cleanup remain unresolved; no portable export or controlled multi-angle review has been completed. No purchase or paid provider call was made during this recovery.
+
+Next bounded action: remove only the malformed first FaceBuilder camera and its pins (GUI deletion requires Director confirmation), refit the two valid views, then inspect plain/textured modest novel angles. Do not expand into body/horse/animation work. Native diagnostic assets remain local and outside Git; this note does not imply off-machine backup.
+
+## Previous recovery plan (resolved)
 
 Check for a macOS removable-volume access prompt. Do not force-quit without accounting for the unsaved scene. If restart is necessary, only the default unfitted head is known to exist from this task. A temporary copy of the two references on internal storage is a possible diagnostic after recovery, preserving the SSD originals. Resume fitting only after basic file access works.
 
