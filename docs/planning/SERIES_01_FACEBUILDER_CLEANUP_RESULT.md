@@ -35,6 +35,16 @@ To reproduce using this trusted repository handler, provide JSON with exactly `o
 
 ## Next production work
 
+### Skin-gated jaw continuation
+
+Director explicitly requests confident reversible implementation decisions proceed without repeated micro-approvals. This does not approve arbitrary creative redesigns, spending, publication or destructive changes. No planning-counter increment for this implementation continuation.
+
+Two additional jaw-material variants were run, reaching the three-variant checkpoint for this correction hypothesis. `cleanup-jaw-correction-02/` gates frontal projection by front-facing normals and conservative local warm/lit color tests, preventing the new dark stripe but retaining the original missing-color gap. `cleanup-jaw-correction-03/` additionally fills only near-black pixels in a feathered viewer-right lower-face region using nearby valid skin samples. This is inferred material color, not recovered reference information or an ethnic/skin classifier. Source images and primary UVs were not edited; new shader attributes are derivative-only.
+
+Reviewed final front and angled renders: the original black lower-jaw patch is replaced and the extra stripe is absent; the angled side still has a color/detail transition near the ear and under-jaw. Retain variant 03 as the **assistant-selected working material derivative**, not new Director-approved likeness or final skin. Do not produce further micro-variants on this hypothesis without reassessing the next production need. Full facial geometry, primary UV, transforms and shape-key digest remain equal to the accepted base. The authoritative v02 source is untouched.
+
+Working file: `.runtime/art-direction/series01-facebuilder-trial-01/cleanup-jaw-correction-03/jaw-review.blend`; matching `corrected-front.png`, `corrected-left.png`, `corrected-right.png`, and `result.json`. Unit suite: 21 passed; native job exited successfully. Portable GLB checks from the earlier result remain checks of the original base, **not this procedural derivative**. Material baking/transfer, ears, true hair/scarf and final illustrated rendering remain open. No paid calls or purchases.
+
 ### Jaw diagnosis and localized correction test
 
 Director flagged excessive apparent left/right jaw difference, texture mismatch and dark areas on viewer-right; authorized neutral diagnosis and texture-first correction. New operations `jaw_diagnostic` and `jaw_projection_preview` remain pinned to the original source and reject arbitrary data/code. Unit suite: 15 passed. This execution does not constitute a new accepted creative direction or increment the planning counter.
