@@ -107,6 +107,8 @@ Director clarification, exchange 2: design/planning and implementation changes m
 
 ## Next conversation focus
 
+Current focus, exchange 101: first six-panel visual storyboard generated and saved with exact prompt/inspection in SERIES_01_PASHTUN_ENTRANCE_BOARDS_V01.md. Racing posture and route choice visible; wider-than-9:16 panels, cropped horse, sterner close-up, wardrobe/terrain consistency remain review issues. Await Director feedback before timed boards or focused correction; no video calls. CP-010 push confirmed through 4e4b123; next checkpoint/push 110.
+
 Current focus, exchange 100 / CP-010: racing-intensity staging and broad sweeping branch accepted; [storyboard-ready entrance treatment](SERIES_01_PASHTUN_ENTRANCE_BOARDS_V01.md) consolidates four shots/six panels. Next deliverable is rough visual boards and a timed board edit before shot realization, not another face variant. No paid generation this exchange. Gate counts unchanged; see CP-010 for actual progress and remaining work. Routine design push due after ancestry check; next checkpoint/push 110.
 
 Current focus, exchange 99: Director specifies racing-intensity gallop and low, forward athletic riding posture for the Pashtun entrance; "almost flying" is figurative. Preserve calm facial self-possession. Proposed staging keeps an open fast stretch and a broad credible route-change arc, not a pace-killing hairpin. No media generation or animation implementation; full motion brief/reference review precedes implementation. Next checkpoint/push 100, one substantive exchange away.
