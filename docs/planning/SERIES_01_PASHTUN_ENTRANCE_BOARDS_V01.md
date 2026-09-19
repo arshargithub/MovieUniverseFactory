@@ -4,6 +4,21 @@ Exchange 100. Director approves racing-intensity gallop, low forward athletic po
 
 ## Sequence contract
 
+## Director review and revised staging — exchange 102
+
+Director does NOT find the close-up too stern; retain its expression. Supersedes assistant's exchange-101 proposed expression correction, not approval of every generated facial detail. Director requests camera start afar and move closer, inspired by the last knight/horse Blender camera experiment. Director also finds alternate route too narrow yet insufficiently treacherous relative to the blocked path. First visual sheet remains preserved, not regenerated this exchange.
+
+Reference inspected: results/demonstrator-01/reuse-camera-revision/PLAN.md, REPORT.md, request.json and DIRECTOR_ACCEPTANCE.md plus runs/demonstrator-01/reuse-camera-continuous-review/contact-sheet.jpg. Accepted revision begins high behind, descends and approaches through a moving side view, then sweeps toward offset frontal tracking. Earlier stop/start side hold was specifically removed. Inspection here is records plus contact sheet, not a new complete playback or claim of motion revalidation. Adopt camera progression/continuous travel as inspiration; do not copy exact offsets, five-second duration, rider pose or old visual style. Prior geometry/control proof does not qualify this new scene.
+
+Revised proposed progression replaces the opening's immediate close/low view:
+
+- P-01, approximately 0–5 s: distant elevated rear-three-quarter view, rider initially small but readable through a dust trail in a large landscape. Camera descends and closes distance, sweeps through a low lateral racing view toward a closer three-quarter view without a stationary side hold. The horse/rider—not a digital zoom—gain scale through camera travel and parallax. No need to finish in exact frontal view or force a full orbit merely to match old footage.
+- P-02, approximately 5–7 s: reveal fork and blockade together. Main road visibly broad, graded and easy; alternate branch wide enough for a real sweeping turn but visibly rougher and more exposed.
+- P-03, approximately 7–9 s: retain current close-up expression as the decision beat; camera angle and eyeline must connect to the preceding sweep/route reveal. Do not add an unnecessary head rotation to prove identity.
+- P-04, approximately 9–14 s: gathering into the branch, then renewed drive. Proposed danger comes from rough broken ground, loose scree, a stronger climb and an exposed downslope on one side—not a horse-width ledge, impossible jump or arbitrary narrowing. Preserve a continuous traversable line and let horse/rider adjust pace and balance. Maximum racing intensity belongs on suitable ground; route change demonstrates skilled judgment, not invulnerability.
+
+Rationale: the safe/easy route is denied by people; she deliberately accepts a harder physical route. The board must communicate BOTH alternatives, not make the branch look like a convenient scenic bypass. Detailed footing, gradient, speed and camera collision clearances remain unvalidated. This roughly 14-second timing is provisional; preserve overall trailer range and balance across trio. Next visual revision should explicitly show distant opening, intermediate sweep, contrasted route geometry and matching close-up—not soften her expression. No generation or spending performed this feedback exchange.
+
 ## Visual draft — exchange 101
 
 Director authorizes the next deliverable. One six-panel sheet generated with the built-in image-generation tool/skill, using portrait-v07-individualized.png and frontal-v02-individualized.png as identity/style references (both inspected). [Storyboard](../../.runtime/art-direction/series01-entrance-boards-v01/storyboard.png). Saved on SSD, ignored by Git; no verified off-device media backup. No Runway calls, no API ledger change; built-in token usage and monetary cost unknown.

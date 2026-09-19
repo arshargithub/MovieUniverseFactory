@@ -40,6 +40,8 @@ Exchange 64: entrance assignment/order below is explicitly provisional pending a
 
 ### Entrance passage — direction accepted, exchange 98
 
+Exchange 102 supersedes the immediate low/close opening: Director requests distant-to-close camera movement inspired by accepted continuous knight/horse revision. Retain storyboard close-up expression; Director does not find it too stern. Alternate route must read more treacherous than easy blocked road without becoming merely narrower. Revised camera/timing/terrain proposal and verified reference paths are in SERIES_01_PASHTUN_ENTRANCE_BOARDS_V01.md. Prior panels/timings remain historical drafts.
+
 Exchange 100: Director accepts the racing-intensity staging refinement, including a broad sweeping uphill branch and composed face/athletic posture. [Six-panel, four-shot storyboard-ready treatment](SERIES_01_PASHTUN_ENTRANCE_BOARDS_V01.md) now consolidates the passage. Exact panels, blockade details and production method remain open. This supersedes the earlier narrow/rough-turn implication, not the passage's core purpose. No new media generated.
 
 Motion refinement accepted, exchange 99: Director wants horse-racing motion/dynamics: "the horse is almost flying (not literally) and the rider is in that aggressive position." Interpret as racing intensity, forward drive and a low athletic rider silhouette, not literal flight, supernatural speed or an angry face. Her established composed self-possession remains intact. This specifies performance direction, not a modern racing costume/saddle, particular breed or measured speed. The preceding "yeah" supports continuing the roadblock draft; specific blockade affiliation, geography and mission stakes remain unresolved.
