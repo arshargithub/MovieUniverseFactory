@@ -181,7 +181,7 @@ def skin_projection_confidence(rgb):
 
 def gap_region(x, y, z):
     return (max(0., min(1., (x-.25)/.2)) * max(0., min(1., (z-.27)/.05))
-            * max(0., min(1., (.54-z)/.06)) * max(0., min(1., (.5-y)/.3)))
+            * max(0., min(1., (.62-z)/.08)) * max(0., min(1., (.5-y)/.3)))
 
 
 def fill_jaw_gap(obj, low, high, nodes, links, color_socket):
@@ -209,19 +209,29 @@ def fill_jaw_gap(obj, low, high, nodes, links, color_socket):
     tree.balance()
     colors = obj.data.color_attributes.new(name='MF_gap_skin', type='FLOAT_COLOR', domain='POINT')
     region = obj.data.attributes.new(name='MF_gap_region', type='FLOAT', domain='POINT')
+    side = obj.data.attributes.new(name='MF_gap_side_blend', type='FLOAT', domain='POINT')
     for v in obj.data.vertices:
-        near = tree.find_n(v.co, min(8,len(samples)))
-        colors.data[v.index].color = tuple(statistics.median(samples[i][1][c] for _,i,_ in near) for c in range(4))
+        near = tree.find_n(v.co, min(32,len(samples)))
+        weights = [(i, 1.0 / (.04 + distance)**2) for _,i,distance in near]
+        total = sum(weight for _,weight in weights)
+        colors.data[v.index].color = tuple(sum(samples[i][1][c]*weight for i,weight in weights)/total for c in range(4))
         region.data[v.index].value = gap_region(v.co.x,v.co.y,(v.co.z-low[2])/(high[2]-low[2]))
+        # Feather from the front cheek into the side; cover the baked portrait
+        # silhouette rather than retaining it as a false crease below the ear.
+        t = max(0., min(1., (v.co.y + 1.25)/.6))
+        side.data[v.index].value = t*t*(3-2*t)
     luminance = nodes.new('ShaderNodeRGBToBW'); links.new(original.outputs['Color'],luminance.inputs[0])
     dark = nodes.new('ShaderNodeMapRange'); dark.clamp=True
-    dark.inputs['From Min'].default_value=.005; dark.inputs['From Max'].default_value=.055
+    dark.inputs['From Min'].default_value=.015; dark.inputs['From Max'].default_value=.09
     dark.inputs['To Min'].default_value=1; dark.inputs['To Max'].default_value=0
     links.new(luminance.outputs[0],dark.inputs['Value'])
     region_node=nodes.new('ShaderNodeAttribute'); region_node.attribute_name=region.name
+    side_node=nodes.new('ShaderNodeAttribute'); side_node.attribute_name=side.name
+    coverage=nodes.new('ShaderNodeMath'); coverage.operation='MAXIMUM'
+    links.new(dark.outputs['Result'],coverage.inputs[0]); links.new(side_node.outputs['Fac'],coverage.inputs[1])
     color_node=nodes.new('ShaderNodeAttribute'); color_node.attribute_name=colors.name
     weight=nodes.new('ShaderNodeMath'); weight.operation='MULTIPLY'
-    links.new(dark.outputs['Result'],weight.inputs[0]); links.new(region_node.outputs['Fac'],weight.inputs[1])
+    links.new(coverage.outputs[0],weight.inputs[0]); links.new(region_node.outputs['Fac'],weight.inputs[1])
     mix=nodes.new('ShaderNodeMixRGB')
     links.new(weight.outputs[0],mix.inputs[0]); links.new(color_socket,mix.inputs[1]); links.new(color_node.outputs['Color'],mix.inputs[2])
     return mix.outputs[0]

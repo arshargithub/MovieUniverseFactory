@@ -77,3 +77,5 @@ def test_gap_fill_is_confined(handler):
     assert handler.gap_region(.7,0,.7) == 0
     assert handler.gap_region(.7,1,.4) == 0
     assert handler.gap_region(.7,0,.4) == 1
+    assert handler.gap_region(.7,0,.53) == 1
+    assert handler.gap_region(.7,0,.62) == 0
