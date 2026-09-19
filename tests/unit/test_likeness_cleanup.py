@@ -79,3 +79,9 @@ def test_gap_fill_is_confined(handler):
     assert handler.gap_region(.7,0,.4) == 1
     assert handler.gap_region(.7,0,.53) == 1
     assert handler.gap_region(.7,0,.62) == 0
+
+
+def test_ear_transfer_protects_face_and_opposite_side(handler):
+    for point in [(-.9,0,.5), (0,-1,.5), (.9,0,.7), (.9,0,.2), (.9,-1.2,.5)]:
+        assert handler.ear_region(*point) == 0
+    assert handler.ear_region(.9,0,.5) == 1

@@ -237,6 +237,49 @@ def fill_jaw_gap(obj, low, high, nodes, links, color_socket):
     return mix.outputs[0]
 
 
+def ear_region(x, y, z):
+    def smooth(t):
+        t = max(0., min(1., t))
+        return t*t*(3-2*t)
+    return smooth((x-.4)/.3)*smooth((y+1.1)/.55)*smooth((z-.30)/.10)*smooth((.68-z)/.08)
+
+
+def transfer_ear_material(obj, low, high, nodes, links, color_socket):
+    """Mirror only material coordinates from the better-covered side, not shape."""
+    from mathutils import Vector
+    from mathutils.bvhtree import BVHTree
+    from mathutils.geometry import barycentric_transform
+    mesh = obj.data
+    mesh.calc_loop_triangles()
+    triangles = list(mesh.loop_triangles)
+    tree = BVHTree.FromPolygons([v.co for v in mesh.vertices],
+                               [tuple(t.vertices) for t in triangles], all_triangles=True)
+    primary = mesh.uv_layers.active
+    active_index = mesh.uv_layers.active_index
+    uv = mesh.uv_layers.new(name='MF_opposite_ear_material')
+    weight = mesh.attributes.new(name='MF_ear_transfer', type='FLOAT', domain='POINT')
+    for v in mesh.vertices:
+        weight.data[v.index].value = ear_region(v.co.x, v.co.y, (v.co.z-low[2])/(high[2]-low[2]))
+    for loop in mesh.loops:
+        v = mesh.vertices[loop.vertex_index].co
+        hit, _, index, _ = tree.find_nearest(Vector((-v.x,v.y,v.z)))
+        tri = triangles[index]
+        points = [mesh.vertices[i].co for i in tri.vertices]
+        coords = [Vector((*primary.data[i].uv,0)) for i in tri.loops]
+        mapped = barycentric_transform(hit, *points, *coords)
+        uv.data[loop.index].uv = mapped.xy
+    mesh.uv_layers.active_index = active_index
+    original = next(n for n in nodes if n.type == 'TEX_IMAGE' and n.image and n.image.name == 'FBHead_baked_tex')
+    tex = nodes.new('ShaderNodeTexImage'); tex.image = original.image
+    uvnode = nodes.new('ShaderNodeUVMap'); uvnode.uv_map = uv.name
+    links.new(uvnode.outputs['UV'],tex.inputs['Vector'])
+    attr = nodes.new('ShaderNodeAttribute'); attr.attribute_name = weight.name
+    mix = nodes.new('ShaderNodeMixRGB')
+    links.new(attr.outputs['Fac'],mix.inputs[0])
+    links.new(color_socket,mix.inputs[1]); links.new(tex.outputs['Color'],mix.inputs[2])
+    return mix.outputs[0]
+
+
 def project_frontal_jaw(obj, low, high):
     import bpy
     from bpy_extras.object_utils import world_to_camera_view
@@ -299,8 +342,9 @@ def project_frontal_jaw(obj, low, high):
     links.new(multiply.outputs[0], mix.inputs[0])
     links.new(original_color, mix.inputs[1])
     links.new(tex.outputs['Color'], mix.inputs[2])
-    links.new(fill_jaw_gap(obj, low, high, nodes, links, mix.outputs[0]), neck_mix.inputs[1])
-    return {'method': 'Skin-gated frontal projection plus localized nearest-skin black-gap infill; inferred color, not recovered anatomy',
+    filled = fill_jaw_gap(obj, low, high, nodes, links, mix.outputs[0])
+    links.new(transfer_ear_material(obj, low, high, nodes, links, filled), neck_mix.inputs[1])
+    return {'method': 'Skin-gated frontal projection, localized nearest-skin infill and mirrored opposite-side ear material; inferred color, not recovered anatomy',
             'geometry_edit': False, 'source_image_edit': False,
             'additional_uv_layer': uv.name, 'additional_weight_attribute': attr.name}
 
