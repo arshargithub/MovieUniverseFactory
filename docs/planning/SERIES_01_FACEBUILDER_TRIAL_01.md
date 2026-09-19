@@ -2,7 +2,15 @@
 
 2026-09-19. Director authorized installation, then one bounded fitting attempt using approved portrait pair B; subsequently requested another UI attempt after bringing Blender forward. Installation and setup are implementation activity, not additional substantive creative-planning exchanges.
 
-## Verified state
+## Current accepted state — exchange 119
+
+Director explicitly agrees to accept **`head-v02-two-view.blend` as the provisional 3D facial starting point** following the two-sided modest-angle review. The approved illustrated pair B remains the identity authority. v03 frontal-only texture is not selected. This acceptance excludes unfinished ears/neck texture, projected hair/scarf, final rendering style and animation. Do not reopen facial design to solve texture artifacts. A5 and E1 remain incomplete.
+
+Preserve the v02 file unchanged as the accepted-base snapshot. Subsequent cleanup must use a separate derivative. Next technical work: local texture repair retaining the two-view face, material-appearance matching and portable export of the accepted base (the existing FBX round-trip used v03). Hair/scarf/body/rig are separate deliverables, not already proven by this head. User requests routine implementation to proceed without small approval interruptions; still seek approval for material creative deviations, purchases or scope expansion.
+
+## Initial verified state (historical; superseded below)
+
+Accepted-base preservation: v02 blend SHA-256 `c0e5201fa25490e528396132edff5f45b5f4b803d9487983bca2fde194255e4c`. Exported `head-v02-two-view.fbx` separately with selected-head / Copy / embedded-texture settings. This accepted-base export exists but has not itself been round-trip tested; v03's import result must not be substituted as its verification. The original accepted blend was not overwritten during export. Texture cleanup remains pending.
 
 - Blender 5.2.1 LTS at `/Applications/Blender.app`; KeenTools extension and Core 2026.3.1 installed and confirmed in Preferences. FaceBuilder enabled; GeoTracker and FaceTracker disabled. No purchase or account created.
 - One default FaceBuilder head created in an unsaved Untitled scene. No fitted character, texture, export or accepted likeness output exists yet. Earlier messages described the trial as active; exact license activation/expiry has not been read and remains unverified.
