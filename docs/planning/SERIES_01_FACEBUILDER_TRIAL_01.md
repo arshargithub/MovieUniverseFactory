@@ -23,6 +23,18 @@ The generated texture produces a recognizable face in the frontal viewport, but 
 
 Next bounded action: remove only the malformed first FaceBuilder camera and its pins (GUI deletion requires Director confirmation), refit the two valid views, then inspect plain/textured modest novel angles. Do not expand into body/horse/animation work. Native diagnostic assets remain local and outside Git; this note does not imply off-machine backup.
 
+## Clean two-view candidate
+
+Director authorized removing the malformed camera and described the initial likeness as coming along nicely, while flagging neck artifacts. This is encouraging feedback, not final likeness approval.
+
+- Removed only the malformed first FaceBuilder view and its pins through the add-on. The original `head-v01-diagnostic.blend` remains recoverable and unchanged by this cleanup.
+- Re-ran Auto Align on both valid views and regenerated texture. The Views panel now contains only the correctly imported frontal and three-quarter references.
+- Compared solid shading against the texture at front and a modest approximately 30-degree novel angle. The neck sliver disappears in solid shading; it is projected scarf imagery, not a visible mesh tear. Dark side-neck regions are also texture coverage problems. This visual check is not a topology audit.
+- Saved packed candidate `.runtime/art-direction/series01-facebuilder-trial-01/head-v02-two-view.blend` separately. Both saved scene files exist. Portable mesh export and independent reopen verification remain NOT_RUN.
+- Face geometry appears coherent in this limited inspection, but likeness across angles still needs Director review. Hair/ears/neck textures include inferred or contaminated regions. Do not treat projected hair as modeled hair or the current preview as the final illustrated style.
+
+Next: a small front/angled likeness review, then mask/repair the neck texture and build the scarf/hair as separate assets if this candidate is accepted. Do not repeatedly refit facial geometry to fix texture-only artifacts. No paid calls or purchases in this cleanup. Experiment remains open pending review and portability verification.
+
 ## Previous recovery plan (resolved)
 
 Check for a macOS removable-volume access prompt. Do not force-quit without accounting for the unsaved scene. If restart is necessary, only the default unfitted head is known to exist from this task. A temporary copy of the two references on internal storage is a possible diagnostic after recovery, preserving the SSD originals. Resume fitting only after basic file access works.
