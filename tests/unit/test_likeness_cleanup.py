@@ -30,6 +30,7 @@ def test_accept_pinned_source(handler, monkeypatch, tmp_path):
     monkeypatch.setattr(handler, 'DIGEST', hashlib.sha256(b'test').hexdigest())
     assert handler.validate({'operation': 'inspect', 'output_name': 'cleanup-unit-unused'}).name == 'cleanup-unit-unused'
     assert handler.validate({'operation': 'jaw_diagnostic', 'output_name': 'cleanup-jaw-unit'}).name == 'cleanup-jaw-unit'
+    assert handler.validate({'operation': 'portable_cleanup', 'output_name': 'cleanup-portable-unit'}).name == 'cleanup-portable-unit'
     (tmp_path / 'cleanup-unit-unused').mkdir()
     with pytest.raises(ValueError, match='overwrite'):
         handler.validate({'operation': 'inspect', 'output_name': 'cleanup-unit-unused'})

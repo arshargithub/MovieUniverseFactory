@@ -19,7 +19,7 @@ DIGEST = 'c0e5201fa25490e528396132edff5f45b5f4b803d9487983bca2fde194255e4c'
 def validate(job):
     if not isinstance(job, dict) or set(job) != {'operation', 'output_name'}:
         raise ValueError('Only operation and output_name admitted')
-    if job['operation'] not in {'inspect', 'neck_material_preview', 'jaw_diagnostic', 'jaw_projection_preview'}:
+    if job['operation'] not in {'inspect', 'neck_material_preview', 'jaw_diagnostic', 'jaw_projection_preview', 'portable_cleanup'}:
         raise ValueError('Unsupported operation')
     name = job['output_name']
     if not isinstance(name, str) or not name.startswith('cleanup-') or len(name) > 64 or not all(c.isalnum() or c == '-' for c in name):
@@ -400,6 +400,81 @@ def jaw_diagnostic(obj, low, high, out, report, correction=False):
     (out / 'result.json').write_text(json.dumps(report, indent=2))
 
 
+def portable_cleanup(obj, low, high, out, report):
+    """Bake base color only; check clean-scene import with explicit material defaults."""
+    import bpy
+    repair_material(obj, low, high)
+    report['correction'] = project_frontal_jaw(obj, low, high)
+    scene, camera = setup_review(obj)
+    scene.cycles.samples = 32
+    render_views(scene, camera, out, 'procedural')
+    bpy.ops.wm.save_as_mainfile(filepath=str(out / 'head-procedural.blend'))
+    mat = obj.data.materials[0]
+    defaults = shader_defaults(mat)
+    nodes, links = mat.node_tree.nodes, mat.node_tree.links
+    bsdf = next(n for n in nodes if n.type == 'BSDF_PRINCIPLED')
+    output = next(n for n in nodes if n.type == 'OUTPUT_MATERIAL')
+    color = bsdf.inputs['Base Color'].links[0].from_socket
+    emission = nodes.new('ShaderNodeEmission')
+    links.new(color, emission.inputs['Color'])
+    links.new(emission.outputs[0], output.inputs['Surface'])
+    atlas = bpy.data.images.new('MF_cleaned_base_color', width=2048, height=2048, alpha=False)
+    atlas.colorspace_settings.name = 'sRGB'
+    target = nodes.new('ShaderNodeTexImage'); target.image = atlas
+    nodes.active = target
+    for n in nodes:
+        n.select = n == target
+    bpy.ops.object.select_all(action='DESELECT')
+    obj.hide_set(False); obj.select_set(True)
+    bpy.context.view_layer.objects.active = obj
+    # Primary UV is the portable atlas; projection layers are shader inputs only.
+    obj.data.uv_layers.active.active_render = True
+    scene.render.bake.margin = 16
+    bpy.ops.object.bake(type='EMIT')
+    atlas.filepath_raw = str(out / 'cleaned-base-color.png')
+    atlas.file_format = 'PNG'; atlas.save(); atlas.pack()
+    links.new(bsdf.outputs[0], output.inputs['Surface'])
+    # A minimal portable material avoids accidental export of procedural nodes.
+    baked = bpy.data.materials.new('MF_cleaned_portable'); baked.use_nodes = True
+    shader = baked.node_tree.nodes.get('Principled BSDF')
+    for name, value in defaults.items():
+        socket = shader.inputs.get(name)
+        if socket is not None:
+            socket.default_value = value
+    texture = baked.node_tree.nodes.new('ShaderNodeTexImage'); texture.image = atlas
+    uv = baked.node_tree.nodes.new('ShaderNodeUVMap'); uv.uv_map = obj.data.uv_layers.active.name
+    baked.node_tree.links.new(uv.outputs['UV'],texture.inputs['Vector'])
+    baked.node_tree.links.new(texture.outputs['Color'],shader.inputs['Base Color'])
+    obj.data.materials[0] = baked
+    report['geometry_after'] = geometry_digest(obj)
+    if report['geometry_after'] != report['geometry_before']:
+        raise ValueError('Bake changed protected geometry')
+    render_views(scene, camera, out, 'baked')
+    bpy.ops.wm.save_as_mainfile(filepath=str(out / 'head-baked.blend'))
+    bpy.ops.export_scene.gltf(filepath=str(out / 'head-cleaned.glb'), export_format='GLB', use_selection=True)
+    (out / 'material-sidecar.json').write_text(json.dumps(defaults, indent=2))
+    bpy.ops.wm.read_factory_settings(use_empty=True)
+    bpy.ops.import_scene.gltf(filepath=str(out / 'head-cleaned.glb'), import_pack_images=True)
+    meshes = [o for o in bpy.context.scene.objects if o.type == 'MESH']
+    if len(meshes) != 1:
+        raise ValueError('Expected one imported head')
+    imported = meshes[0]
+    shader = next(n for n in imported.data.materials[0].node_tree.nodes if n.type == 'BSDF_PRINCIPLED')
+    for name, value in defaults.items():
+        socket = shader.inputs.get(name)
+        if socket is not None and not socket.is_linked:
+            socket.default_value = value
+    scene, camera = setup_review(imported); scene.cycles.samples = 32
+    render_views(scene, camera, out, 'roundtrip')
+    bpy.ops.wm.save_as_mainfile(filepath=str(out / 'head-roundtrip.blend'))
+    report['roundtrip'] = {'meshes': len(meshes), 'vertices': len(imported.data.vertices),
+                           'faces': len(imported.data.polygons), 'policy': 'GLB plus Principled defaults sidecar; no add-on'}
+    report['source_preserved'] = hashlib.sha256(SOURCE.read_bytes()).hexdigest() == DIGEST
+    if not report['source_preserved']:
+        raise ValueError('Source mutated')
+    (out / 'result.json').write_text(json.dumps(report, indent=2))
+
+
 def run(job):
     out = validate(job)  # Must precede Blender operations and output creation.
     import bpy
@@ -423,6 +498,9 @@ def run(job):
               'images': [{'name': i.name, 'size': list(i.size), 'packed': bool(i.packed_file)} for i in bpy.data.images]}
     (out / 'inspection.json').write_text(json.dumps(report, indent=2))
     if job['operation'] == 'inspect':
+        return
+    if job['operation'] == 'portable_cleanup':
+        portable_cleanup(obj, low, high, out, report)
         return
     if job['operation'] in {'jaw_diagnostic', 'jaw_projection_preview'}:
         jaw_diagnostic(obj, low, high, out, report, job['operation'] == 'jaw_projection_preview')
