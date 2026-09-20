@@ -2,6 +2,33 @@
 
 2026-09-19 local date. Director challenged the narrow donor search and supplied a Tripo model. This supersedes the premature proposal to require paid assets in `SERIES_01_DRESSING_RENEWAL.md`. Failure of existing donors is not evidence that suitable free donors have been exhausted. No paid sourcing budget has been approved.
 
+## Current disposition — free only
+
+Director subsequently confirmed that Tripo requires a subscription to export this candidate and explicitly does not want to pay for assets now. **Exclude it from acquisition; no subscription, purchase or paid generation.** Its screenshot remains useful visual research. The earlier request below to inspect its export panel is superseded; do not ask the Director to repeat that step.
+
+The additional search covered 24 text queries: free/CC0 shawls and headscarves, MakeHuman clothing, BlendSwap garments, OpenGameArt, whole female characters, nun/wimple geometry donors, Gumroad/itch.io, individual creator/license lookups, and Blender's native cloth tools. No new donor was downloaded or mesh-inspected. Several sources were only available as indexed primary listing text; direct Sketchfab opens returned 403. Previously reported browser policy-verification denials remain unresolved and were not bypassed. A search result is not a verified free export.
+
+### Additional leads and practical order
+
+1. **Standalone first:** the lam_m_zack Hijab and NETINFO SEFSERI below remain the first two free-file candidates to inspect. Both creator listings advertise downloads and CC Attribution. Obtain the actual archive/license, inspect face opening and shoulder coverage, then audit topology before fitting. Do not assume either is visually approved.
+2. **Additional donor:** [hijab muslim woman — Yasser.Hamedah](https://sketchfab.com/3d-models/hijab-muslim-woman-6f4d486e45464220beeda01fb6e495a5). Indexed primary listing explicitly advertises Download 3D Model, CC Attribution, 37.7k triangles and 19.6k vertices. No description; garment separation and visual suitability remain unknown. Full-character donor only; never replace the accepted face.
+3. **Conditional alternative:** the four-style CGTrader collection below has stronger format information, but its no-AI terms require workflow clarification before adoption. Do not silently treat it as fully cleared for Factory use.
+4. **Lower-confidence leads, not acquired:** BlendSwap's indexed clothed/rig categories list “Hijab Woman walking rigged” by Ahmed047 as CC0 and Blender 2.7x; no verified individual download route. [Serene Hijab Portrait — Meshy](https://www.meshy.ai/3d-models/Serene-Hijab-Portrait-v2-019ed907-b1db-77c2-af56-47f66e7e247d) has indexed individual CC0 metadata, but actual export access and fused-bust topology remain unverified. Do not substitute another untested service's free marketing for confirmed access. Other whole-character, printable and rehost results lacked sufficient fit/license/download evidence to promote.
+
+This is a more extensive shortlist, not a claim that a suitable free production asset has been secured. If account/download access requires the Director, request only a specific shortlisted file, preferably GLB or the complete OBJ/material/texture archive, plus its displayed license. Do not send the Director on another broad search.
+
+### Scratch versus adaptation — recommendation, not a new build started
+
+Not prohibitively hard in principle for the **static head-and-shoulders target**. A complete outfit that deforms convincingly on a galloping rider is a substantially larger problem: body fit, rigging, layered cloth, collision and motion all need work. Neither is automatically solved by buying a mesh.
+
+Use a donor only if its opening, drape and separate garment geometry are genuinely close. Extracting a fused AI bust or forcing a closed balaclava into an open shawl can cost more than making the appropriate cloth panels. The three rejected local variants tested analytic folds and an unsuitable scan; they did not test proper cloth-pattern draping, and are not evidence that Blender cannot achieve the reference.
+
+Recommended fallback: preserve bilateral-04 head geometry/materials; add a separate simple shoulder/upper-torso collision proxy; construct a small number of cloth panels around the approved crown/shoulder silhouette; pin selected regions and settle/sculpt broad diagonal folds; freeze a static mesh for matched front/left/right review. Refine thickness, UVs and indigo material only after the silhouette works. Retain hair as a separately fitted asset. No animation, new body canon, full-costume redesign, or paid tooling is implied.
+
+Blender's [Cloth Filter documentation](https://docs.blender.org/manual/en/latest/sculpt_paint/sculpting/tools/cloth_filter.html) describes whole-mesh cloth simulation, pinning via masks/Face Sets, gravity and collisions. Its [cloth-sculpting introduction](https://docs.blender.org/manual/id/5.2/sculpt_paint/sculpting/introduction/cloth_sculpting.html) identifies base meshes, broad folds and draping as useful applications, with resolution/performance limits. These establish available capabilities, not a guarantee of our modeling quality or completion time.
+
+If the free donors are unsuitable, prefer one native-cloth feasibility pass with the existing 20-net-minute diagnostic reassessment over endless asset hunting or another formula-fold variation. That checkpoint assesses silhouette progress; it is **not** a promise to finish in 20 minutes. Implement through reviewed/tested structured handlers only, preserving the approved face and failed evidence. This turn performed research and recorded a recommendation only; no Blender scene changes, paid calls or purchases.
+
 ## Fit contract
 
 Approved portraits and bilateral-04 face remain authoritative. Seek loose cloth over crown and shoulders, an adaptable open face/neck region, broad diagonal folds, space for center-parted hair, no face mask, and a garment that can be isolated from any included head. Search names are discovery vocabulary, **not** claims that Arab, Tunisian, Iranian, Afghan and Pashtun garments are interchangeable. Adopt geometry only when it can reproduce the approved silhouette; no silent costume redesign.
