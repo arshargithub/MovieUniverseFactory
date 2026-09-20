@@ -6,7 +6,7 @@ Activity `neck-anatomy-4`: forecast 20 minutes / 70 MB, three variants maximum b
 
 ## Result
 
-**16 is the current internal review pointer; Director acceptance pending.** A compact posterior radial correction reduces the residual swell without rebuilding the improved shoulders or anterior anatomy. Five soft-light views and rear/front three-quarter, back and front directional views inspected. Assistant assessment: posterior flow is improved without a new visible band. No universal anatomical or rig qualification is claimed.
+**16's static anatomy is Director accepted.** Subsequent Director response: “ok great, I think this looks good,” followed by explicit direction to resolve the whole bust's skin/texture before clothes/drapes and hair. The approved geometry is now frozen for the [skin-only pass](SERIES_01_BUST_SKIN_REVIEW.md); this does not approve its old material or costume. A compact posterior radial correction reduces the residual swell without rebuilding the improved shoulders or anterior anatomy. Five soft-light views and rear/front three-quarter, back and front directional views inspected. No universal anatomical or rig qualification is claimed.
 
 - Native: `.runtime/art-direction/series01-facebuilder-trial-01/posterior-neck-build-16/character-upperbody.blend`.
 - SHA-256: `76b2a6c7f4f1c2288ed746ebb3cf146b4146650058e263c6dd16b6f9225ef080`.
