@@ -20,9 +20,9 @@ REF_SHA='7f959fed6ca4f57cb1b7fdaa20aa4a0fdd64208595a8b5debd8d060c79068c75'
 def validate(job):
     if not isinstance(job,dict) or set(job)!={'operation','variant'}:
         raise ValueError('Exact structured keys required')
-    if job['operation'] not in ('audit','build','verify','portraits','detail','facecheck','package','verify_package','diagnostic','shoulders','clay','contacts'):
+    if job['operation'] not in ('audit','build','verify','portraits','detail','facecheck','package','verify_package','diagnostic','shoulders','clay','contacts','neck_audit'):
         raise ValueError('Unsupported operation')
-    if type(job['variant']) is not int or not 1<=job['variant']<=32:
+    if type(job['variant']) is not int or not 1<=job['variant']<=35:
         raise ValueError('Unsupported variant')
     for path,digest in ((SOURCE,SOURCE_SHA),(REF,REF_SHA)):
         if path.is_symlink() or hashlib.sha256(path.read_bytes()).hexdigest()!=digest:
@@ -245,6 +245,29 @@ def extend_neck_color(obj,head,variant):
         # reduce projected lighting only in the editable neck branch.
         quiet=n.new('ShaderNodeMixRGB');quiet.inputs[0].default_value=.45
         l.new(neck_color,quiet.inputs[1]);l.new(ramp.outputs[0],quiet.inputs[2]);neck_color=quiet.outputs[0]
+    if variant>=33:
+        from neck_drape_refinement import boundary_skin_texture
+        atlas=boundary_skin_texture(head)
+        yy=n.new('ShaderNodeMath');yy.operation='SUBTRACT';yy.inputs[1].default_value=.10;l.new(sep.outputs['Y'],yy.inputs[0])
+        angle=n.new('ShaderNodeMath');angle.operation='ARCTAN2';l.new(sep.outputs['X'],angle.inputs[0]);l.new(yy.outputs[0],angle.inputs[1])
+        angular=n.new('ShaderNodeMath');angular.operation='MULTIPLY';angular.inputs[1].default_value=1/(2*math.pi);l.new(angle.outputs[0],angular.inputs[0])
+        vmap=n.new('ShaderNodeMapRange');vmap.clamp=True;vmap.inputs['From Min'].default_value=-.86;vmap.inputs['From Max'].default_value=-.50
+        vmap.inputs['To Min'].default_value=.09/.45;vmap.inputs['To Max'].default_value=1;l.new(sep.outputs['Z'],vmap.inputs['Value'])
+        band_uv=n.new('ShaderNodeCombineXYZ');l.new(angular.outputs[0],band_uv.inputs['X']);l.new(vmap.outputs[0],band_uv.inputs['Y'])
+        band=n.new('ShaderNodeTexImage');band.image=atlas;band.extension='REPEAT';l.new(band_uv.outputs[0],band.inputs[0])
+        boundary_color=band.outputs['Color']
+        if variant>=34:
+            average=boundary_color
+            for i,offset in enumerate((-.02,.02,-.04,.04,-.06,.06),start=2):
+                shift=n.new('ShaderNodeVectorMath');shift.operation='ADD';shift.inputs[1].default_value=(offset,0,0);l.new(band_uv.outputs[0],shift.inputs[0])
+                sample=n.new('ShaderNodeTexImage');sample.image=atlas;sample.extension='REPEAT';l.new(shift.outputs[0],sample.inputs[0])
+                mean=n.new('ShaderNodeMixRGB');mean.inputs[0].default_value=1/i;l.new(average,mean.inputs[1]);l.new(sample.outputs[0],mean.inputs[2]);average=mean.outputs[0]
+            soften=n.new('ShaderNodeMapRange');soften.clamp=True;soften.interpolation_type='SMOOTHSTEP'
+            soften.inputs['From Min'].default_value=-.86;soften.inputs['From Max'].default_value=-1.08;l.new(sep.outputs['Z'],soften.inputs[0])
+            blurred=n.new('ShaderNodeMixRGB');l.new(soften.outputs[0],blurred.inputs[0]);l.new(boundary_color,blurred.inputs[1]);l.new(average,blurred.inputs[2]);boundary_color=blurred.outputs[0]
+        fade=n.new('ShaderNodeMapRange');fade.clamp=True;fade.interpolation_type='SMOOTHSTEP'
+        fade.inputs['From Min'].default_value=-.86;fade.inputs['From Max'].default_value=-1.43;l.new(sep.outputs['Z'],fade.inputs['Value'])
+        blend=n.new('ShaderNodeMixRGB');l.new(fade.outputs[0],blend.inputs[0]);l.new(boundary_color,blend.inputs[1]);l.new(neck_color,blend.inputs[2]);neck_color=blend.outputs[0]
     weight=n.new('ShaderNodeMapRange');weight.clamp=True;weight.inputs['From Min'].default_value=-.86;weight.inputs['From Max'].default_value=-1.10;l.new(sep.outputs['Z'],weight.inputs['Value'])
     if variant>=5:weight.inputs['From Max'].default_value=-.94
     mix=n.new('ShaderNodeMixRGB');l.new(weight.outputs['Result'],mix.inputs[0]);l.new(original,mix.inputs[1]);l.new(neck_color,mix.inputs[2]);l.new(mix.outputs[0],p.inputs['Base Color'])
@@ -671,6 +694,9 @@ def run(job):
             review(bpy.context.scene,out,(0,-.1,-.60),4.8,[('front',0)])
         if job['operation']=='facecheck':
             facecheck(out)
+        if job['operation']=='neck_audit':
+            from neck_drape_refinement import audit_neck
+            audit_neck(out)
         if job['operation']=='package':
             for obj in bpy.context.scene.objects:
                 obj.select_set(False)
@@ -704,7 +730,7 @@ def run(job):
     if job['variant']>=21:
         result['attribution']='Adapted hood: Hijab by lam_m_zack, CC BY 4.0, https://sketchfab.com/3d-models/hijab-ee50e01adc864ccc880caed9b5eb3bcb. Visible cowl/diagonal shawl, tunic/sleeves, harness/buckle, hair geometry and neck extension authored locally; approved project illustrations reused as material references. Hidden earlier donor objects remain retained: internal working scene, not a cleaned redistribution bundle.'
     if job['variant']>=16:
-        result['verification_handler_sha256']={name:hashlib.sha256((Path(__file__).parent/name).read_bytes()).hexdigest() for name in ('upperbody_refinement.py','costume_refinement.py','reference_dressing.py','hijab_donor.py','likeness_cleanup.py')}
+        result['verification_handler_sha256']={name:hashlib.sha256((Path(__file__).parent/name).read_bytes()).hexdigest() for name in ('upperbody_refinement.py','costume_refinement.py','reference_dressing.py','hijab_donor.py','likeness_cleanup.py','neck_drape_refinement.py')}
         result['visible_harness_objects']=[o.name for o in bpy.context.scene.objects if o.name.startswith('MF_reference_shoulder_harness') and not o.hide_render]
     if 'MF_display_head_neck' in bpy.data.objects:result['visible_protected_face_digest']=protected_face_digest(bpy.data.objects['MF_display_head_neck'])
     if 'MF_continuous_head_neck' in bpy.data.objects:result['visible_protected_surface_digest']=protected_surface_digest(bpy.data.objects['MF_continuous_head_neck'])
@@ -712,11 +738,16 @@ def run(job):
     elif job['operation']=='package':
         result['native_sha256']=hashlib.sha256((out/'character-upperbody.blend').read_bytes()).hexdigest()
         result['build_native_sha256']=record['native_sha256']
-    elif job['operation'] in ('verify','portraits','detail','facecheck','verify_package','diagnostic','shoulders','clay','contacts'):result['verified_native_sha256']=record['native_sha256']
+    elif job['operation'] in ('verify','portraits','detail','facecheck','verify_package','diagnostic','shoulders','clay','contacts','neck_audit'):result['verified_native_sha256']=record['native_sha256']
     if job['operation'] in ('package','verify_package'):
         result['file_images']=[{'name':im.name,'packed':bool(im.packed_file or im.packed_files)} for im in bpy.data.images if im.source=='FILE']
         assert all(item['packed'] for item in result['file_images'])
         assert bpy.data.objects['FBHead'].hide_get() and not bpy.data.objects['MF_continuous_head_neck'].hide_get()
+        if job['variant']>=33:
+            atlas=bpy.data.images['MF_accepted_neck_boundary_color']
+            assert atlas.packed_file and tuple(atlas.size)==(1024,256)
+            result['boundary_skin_atlas']={'name':atlas.name,'packed':True,'size':list(atlas.size),
+                'packed_sha256':hashlib.sha256(atlas.packed_file.data).hexdigest()}
     (out/'result.json').write_text(json.dumps(result,indent=2))
 
 

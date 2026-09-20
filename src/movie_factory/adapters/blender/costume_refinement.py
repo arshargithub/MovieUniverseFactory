@@ -68,6 +68,9 @@ def refine_neck(variant):
         for _ in range(18):bmesh.ops.smooth_vert(bm,verts=transition,factor=.35,use_axis_x=True,use_axis_y=True,use_axis_z=False)
         bm.normal_update();bm.to_mesh(obj.data);bm.free()
     obj.data.update()
+    if variant>=33:
+        from neck_drape_refinement import repair_neck_geometry
+        repair_neck_geometry()
     if variant>=17:
         attr=obj.data.attributes.new('MF_neck_anatomy_tone','FLOAT','POINT')
         for v in obj.data.vertices:
@@ -254,6 +257,7 @@ def soft_layered_scarf(variant):
         inner=Vector(neck_point(.8*math.sin(a),.22-.7*math.cos(a),top,variant))
         inner+=Vector((.04*math.sin(a),-.04*math.cos(a),0))
         bottom=-1.82-.93*front+.19*math.sin(a)
+        if variant>=35:bottom-=.55*max(0.,-math.cos(a))
         if variant==30:bottom+=.17*math.sin(a)
         for j in range(nv+1):
             t=j/nv;blend=smooth(t)
@@ -264,6 +268,15 @@ def soft_layered_scarf(variant):
             if variant==30:
                 fold=(.075+.035*math.sin(a+.8)**2)*math.sin(t*math.pi*4+1.1*math.sin(a))*math.sin(math.pi*t)
                 z+=.10*math.sin(a+.4)*math.sin(math.pi*t)
+            if variant>=34:
+                # Keep the entire fitted neckline/upper quarter unchanged.
+                # Vary lower fold flow instead of lowering a side of the rim.
+                weight=smooth((t-.28)/.45)
+                phase=t*math.pi*5+.35*math.sin(a*2)+weight*.95*math.sin(a+.4)
+                fold=.105*math.sin(phase)*math.sin(math.pi*t)
+            if variant>=35:
+                loose=.12*math.sin(math.pi*(4.2+.6*math.cos(a))*t+1.8*math.sin(a)+.30*math.sin(3*a))*math.sin(math.pi*t)
+                fold=fold*(1-weight)+loose*weight
             x+=math.sin(a)*fold;y-=math.cos(a)*fold
             verts.append(outside(x,y,z))
     for i in range(nu):
@@ -468,5 +481,9 @@ def settle_body_proportion(variant=28):
 
 
 def refine(variant):
-    refine_neck(variant);refine_hair(variant);refine_cloth(variant);shoulder_straps(variant)
+    refine_neck(variant);refine_hair(variant);refine_cloth(variant)
+    if variant>=34:
+        from neck_drape_refinement import rebuild_lower_veil
+        rebuild_lower_veil(variant)
+    shoulder_straps(variant)
     if variant>=20:settle_body_proportion(variant)
