@@ -1,5 +1,7 @@
 # Neck, throat and shoulder continuation
 
+**Subsequent Director feedback:** 15 is very close, with a remaining small posterior-neck bump. See [localized correction 04](SERIES_01_NECK_ANATOMY_REVIEW_04.md) for current candidate 16. This report retains the historical 15 assessment and evidence; it is not Director approval.
+
 2026-09-20. Director rejected candidate 07: residual swelling where the neck spreads into the shoulders, with inadequate throat/collarbone definition. Earlier positive assistant assessments are not acceptance. Geometry-only continuation; accepted face/jaw, shortened proportions, textures, hair and costume remain protected. Planning exchange counter stays 119.
 
 Activity `neck-anatomy-3`: forecast 35 minutes / 120 MB; reassess at 20 minutes, three variants per hypothesis and 60 minutes overall. No paid calls, purchases, new assets, uploads or remote push. Engineering model/effort/token totals are unknown. The local operating ledger records actual native jobs and activity/wait boundaries.
