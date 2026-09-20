@@ -1,5 +1,9 @@
 # Bilateral face review and right-cheek correction
 
+## Director acceptance — supersedes provisional face status below
+
+After reviewing the matched-light left/right pair, Director said “I think we've nailed this” and instructed work on scarf and hair. `bilateral-04/head-bilateral.blend` is now the approved static facial baseline for this dressing work. Preserve its geometry, enabled shape-key values and material. This accepts the shown facial appearance, not unfinished dressing, full-angle likeness, animation or final illustrated rendering. The historical limitations and prior rejections below remain evidence, not current approval status. Implementation continuation; planning exchange count unchanged.
+
 2026-09-19. Director says the shown left-angle face looks perfect, but the previously shown right remains wrong. Explicit instruction: compare both sides first, protect the liked side, then present left/front/right together. These refer to existing render suffixes (camera at -30/0/+30 degrees), not clinical anatomical left/right or true 90-degree profiles.
 
 ## Result

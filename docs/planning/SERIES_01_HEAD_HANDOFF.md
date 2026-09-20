@@ -4,7 +4,7 @@
 
 ## Disposition
 
-**Latest face review pointer:** subsequent Director-requested right-side corrections are in `bilateral-04/head-bilateral.blend` under the same trial directory; see [bilateral review](SERIES_01_BILATERAL_FACE_REVIEW.md). That dressed, procedural-material candidate is not yet approved or rebaked into the portable package below. The older portable head remains a reproducible baseline, not the latest appearance.
+**Latest approved face pointer:** subsequent Director-requested right-side corrections are in `bilateral-04/head-bilateral.blend` under the same trial directory; see [bilateral review](SERIES_01_BILATERAL_FACE_REVIEW.md). Director approved the static face after matched-light comparison. Scarf/hair are not approved; [renewal results and sourcing dependency](SERIES_01_DRESSING_RENEWAL.md) record three rejected candidates. The approved face is not yet rebaked into the portable package below. The older portable head remains a reproducible baseline, not the latest appearance.
 
 **YELLOW, technically portable cleaned static head.** Stop local face-refitting/ear micro-variants here. The accepted shape has been preserved and the localized material repairs are carried into an ordinary texture. This does not close A5/E1 or qualify a dressed, animated character. The cleaned derivative has not received separate Director approval.
 
