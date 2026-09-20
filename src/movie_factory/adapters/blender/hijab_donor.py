@@ -109,7 +109,7 @@ def material_signature(mat):
     return hashlib.sha256(json.dumps([nodes, links], sort_keys=True).encode()).hexdigest()
 
 
-def review(scene, out, target, scale, angles):
+def review(scene, out, target, scale, angles, *, portrait=False):
     import bpy
     from mathutils import Vector
     from matched_face_review import rotate_z
@@ -132,6 +132,9 @@ def review(scene, out, target, scale, angles):
     scene.render.engine = 'CYCLES'; scene.cycles.samples = 24; scene.cycles.seed = 0
     scene.render.resolution_x = 640; scene.render.resolution_y = 800
     scene.render.resolution_percentage = 100
+    if portrait:
+        scene.render.resolution_x = 955; scene.render.resolution_y = 1647
+        scene.cycles.samples = 64
     target = Vector(target)
     for label, angle in angles:
         cam.location = target + Vector(rotate_z((0, -10, 0), angle))
@@ -141,6 +144,13 @@ def review(scene, out, target, scale, angles):
             ob.rotation_euler = (target-ob.location).to_track_quat('-Z', 'Y').to_euler()
         scene.render.filepath = str(out / (label+'.png'))
         bpy.ops.render.render(write_still=True)
+    # Leave the saved scene on the first reviewed view, including its lighting.
+    angle = angles[0][1]
+    cam.location = target + Vector(rotate_z((0, -10, 0), angle))
+    cam.rotation_euler = (target-cam.location).to_track_quat('-Z', 'Y').to_euler()
+    for ob, offset in lights:
+        ob.location = target + Vector(rotate_z(offset, angle))
+        ob.rotation_euler = (target-ob.location).to_track_quat('-Z', 'Y').to_euler()
 
 
 def run(job):
