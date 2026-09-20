@@ -849,6 +849,19 @@
       "engineering_subscription_usage": null,
       "engineering_cost_usd": null,
       "evidence": ["docs/planning/SERIES_01_NECK_ANATOMY_REVIEW_04.md", "docs/planning/SERIES_01_BUST_SKIN_REVIEW.md"]
+    },
+    {
+      "event_id": "series01-skin03-rejected-source-detail07-review",
+      "event_type": "director_review_outcome",
+      "experiment_id": "SERIES01-LIKENESS-ASSET",
+      "controlled_model_comparison": false,
+      "outcome": "SMOOTH_SKIN03_REJECTED_SOURCE_DETAIL07_PENDING",
+      "observation": "Director rejected the assistant-preferred smooth skin03 because forehead/chin/jaw/neck lost the approved illustrated texture. Continuation restores accepted facial detail on immutable anatomy16 and transfers actual portrait marks. Mirrored mapping and noise-coordinate variants fail visually despite invariant checks; overlapping randomized patches plus contrast calibration produce detail07 for review.124 focused tests and fresh-open protection pass. No Director approval, model switch or controlled model comparison is implied.",
+      "observed_supervisor_model": null,
+      "reasoning_effort": null,
+      "engineering_subscription_usage": null,
+      "engineering_cost_usd": null,
+      "evidence": ["docs/planning/SERIES_01_BUST_SKIN_REVIEW.md", "docs/planning/SERIES_01_BUST_SKIN_REVIEW_02.md"]
     }
   ],
   "recording_mode": "manual_evidence_backfill_and_future_event_capture",

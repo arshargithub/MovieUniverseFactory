@@ -4,7 +4,9 @@
 
 ## Current result
 
-**Candidate03 is the preferred static skin-review asset; Director acceptance pending (YELLOW).** Native path under `.runtime/art-direction/series01-facebuilder-trial-01/`: `bust-skin-build-03/character-upperbody.blend`. SHA-256 `13675790d95c399bc236803e3b3aecfb8314d6db5db70848d2ba204a3d7b5b9e`.
+**Director rejected candidate03's appearance:** chin, jaw, neck and forehead looked airbrushed and lost the illustrated skin detail. The assistant's earlier seam-removal/technical assessment was insufficient. This candidate is historical cleanup evidence, **not an accepted skin baseline**. See the [source-detail continuation](SERIES_01_BUST_SKIN_REVIEW_02.md) for the current review asset. Anatomy16 remains accepted and frozen.
+
+Historical native path under `.runtime/art-direction/series01-facebuilder-trial-01/`: `bust-skin-build-03/character-upperbody.blend`. SHA-256 `13675790d95c399bc236803e3b3aecfb8314d6db5db70848d2ba204a3d7b5b9e`.
 
 - Five matched camera-relative soft-light views: `bust-skin-build-03/{front,left,right,back,three-quarter}.png`. Left/right names denote camera positions; these are ±60° oblique views, not exact profiles.
 - Five lighting-independent base-color views: `bust-skin-emission-03/`. These reveal remaining painted facial shading honestly rather than attributing all shadows to light.
