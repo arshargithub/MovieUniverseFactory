@@ -1,5 +1,7 @@
 # Scarf/hair renewal after facial acceptance
 
+**Sourcing correction:** Director challenged the search breadth. The paid-source proposal below is withdrawn pending the [expanded free headscarf search](SERIES_01_FREE_SCARF_SEARCH.md), which found additional specific free leads. The existing donor failures remain valid; they did not establish exhaustion of free assets.
+
 2026-09-19 local date. Director approved the matched-light bilateral-04 face and asked to proceed with scarf and hair. Approval is captured in `SERIES_01_BILATERAL_FACE_REVIEW.md`. Face geometry, material and shape-key values are protected; planning counter unchanged for implementation.
 
 ## Disposition: rejected dressing, approved face preserved
