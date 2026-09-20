@@ -1,4 +1,4 @@
-"""Reviewed, fixed reference-fit helpers for upperbody variants 16–31.
+"""Reviewed, fixed reference-fit helpers for upperbody variants 16–32.
 
 Not an arbitrary-code operation or dynamic clothing/rig qualification.
 """
@@ -118,6 +118,11 @@ def refine_hair(variant):
                     p.co.z+=(.10+.17*(.5+.5*math.sin(lock_index*2.17)))*tail
                     p.co.x+=s*(.028*math.sin(lock_index*1.7+t*5)+.028*math.sin(si*2.3))*tail
                     p.co.y+=(.03+.018*math.sin(lock_index*1.3))*tail
+                    if variant>=32:
+                        # Close three-quarter review exposes far-side tips
+                        # beneath the chin. Sweep them behind the neck; no
+                        # face mesh edit or camera-dependent hiding.
+                        p.co.y+=.25*smooth((t-.25)/.65)
         obj.data.bevel_depth*=.85
         if variant>=20:
             # Dark continuous lock volume below fine fibers prevents a bundle
