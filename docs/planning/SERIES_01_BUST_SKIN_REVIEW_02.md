@@ -4,7 +4,7 @@
 
 ## Current review pointer
 
-**`bust-detail-build-07/character-upperbody.blend` is the preferred internal skin candidate, YELLOW pending Director review.** All paths below are under `.runtime/art-direction/series01-facebuilder-trial-01/` on the SSD.
+**Director rejected detail07:** the replacement still reads as a weird pattern, the cheek-to-ear transition is distinct, and dark brow/temple remnants include a scar-like line on the viewer-left side. Do not promote this to a preferred or accepted whole-bust material. The [regional follow-up](SERIES_01_BUST_SKIN_REVIEW_03.md) retains a local temple cleanup but does not resolve the global texture. All historical paths below are under `.runtime/art-direction/series01-facebuilder-trial-01/` on the SSD.
 
 - Native SHA-256: `c591b45c6f666597498d418ebd90fa37010f37d9a7bccc2597508f2c96a23688`.
 - Larger 960×1200, 48-sample front/left/right/back/three-quarter views: `bust-detail-portraits-07/`. Its `setup.png` is a separate 640×800 setup image, not a high-resolution final.

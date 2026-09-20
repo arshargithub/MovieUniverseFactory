@@ -862,6 +862,19 @@
       "engineering_subscription_usage": null,
       "engineering_cost_usd": null,
       "evidence": ["docs/planning/SERIES_01_BUST_SKIN_REVIEW.md", "docs/planning/SERIES_01_BUST_SKIN_REVIEW_02.md"]
+    },
+    {
+      "event_id": "series01-detail07-rejected-regional-cleanup-incomplete",
+      "event_type": "director_review_outcome",
+      "experiment_id": "SERIES01-LIKENESS-ASSET",
+      "controlled_model_comparison": false,
+      "outcome": "DETAIL07_REJECTED_WHOLE_BUST_SKIN_UNRESOLVED",
+      "observation": "Director rejected detail07 for patterning, cheek-ear transition and dark/scar-like brow/temple remnants. Two additional native facet infills fail the style match internally. Region03 isolates local temple cleanup while explicitly retaining the rejected global pattern; it is not promoted as a finished material. Geometry stays protected and133 focused tests pass. Recommend coherent texture-map authoring rather than another shader-pattern loop; no new provider trial executed. No model switch or controlled comparison.",
+      "observed_supervisor_model": null,
+      "reasoning_effort": null,
+      "engineering_subscription_usage": null,
+      "engineering_cost_usd": null,
+      "evidence": ["docs/planning/SERIES_01_BUST_SKIN_REVIEW_02.md", "docs/planning/SERIES_01_BUST_SKIN_REVIEW_03.md"]
     }
   ],
   "recording_mode": "manual_evidence_backfill_and_future_event_capture",
