@@ -15,15 +15,19 @@ def test_neck_cannot_touch_jaw():
     for z in (-.86,-.8,-.7,0,1.5):assert m.neck_weight(z)==0
     assert m.neck_weight(-1.08)==1
 
-def test_pinned_sources_and_output(tmp_path,monkeypatch):
+@pytest.mark.parametrize('operation',['audit','clay_four'])
+def test_pinned_sources_and_output(tmp_path,monkeypatch,operation):
     p=tmp_path/'source';p.write_bytes(b'pinned')
     monkeypatch.setattr(m,'BASE',tmp_path)
     for key in ('SOURCE','REF'):monkeypatch.setattr(m,key,p)
     for key in ('SOURCE_SHA','REF_SHA'):monkeypatch.setattr(m,key,m.hashlib.sha256(b'pinned').hexdigest())
-    job={'operation':'audit','variant':1};out=m.validate(job);out.mkdir()
+    job={'operation':operation,'variant':1};out=m.validate(job);out.mkdir()
     with pytest.raises(ValueError,match='Existing'):m.validate(job)
     p.write_bytes(b'changed')
     with pytest.raises(ValueError,match='Pinned'):m.validate(job)
+
+def test_clay_four_true_orthogonal_views():
+    assert dict(m.CLAY_FOUR_VIEWS)=={'left':-90,'right':90,'front':0,'back':180}
 
 def test_relief_bounded_and_face_clear():
     for x in (-1,-.5,0,.5,1):

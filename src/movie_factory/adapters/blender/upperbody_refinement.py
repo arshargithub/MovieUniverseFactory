@@ -15,12 +15,13 @@ SOURCE=BASE/'reference-dress-18/dressed.blend'
 SOURCE_SHA='1fbe41cad8e01cab7d7ef41dee471e9a6aaad2253fb1e2beb4fcf9714da44e0b'
 REF=ROOT/'.runtime/art-direction/series01-pashtun-baseline-v01/frontal-v02-individualized.png'
 REF_SHA='7f959fed6ca4f57cb1b7fdaa20aa4a0fdd64208595a8b5debd8d060c79068c75'
+CLAY_FOUR_VIEWS=(('left',-90),('right',90),('front',0),('back',180))
 
 
 def validate(job):
     if not isinstance(job,dict) or set(job)!={'operation','variant'}:
         raise ValueError('Exact structured keys required')
-    if job['operation'] not in ('audit','build','verify','portraits','detail','facecheck','package','verify_package','diagnostic','shoulders','clay','contacts','neck_audit'):
+    if job['operation'] not in ('audit','build','verify','portraits','detail','facecheck','package','verify_package','diagnostic','shoulders','clay','clay_four','contacts','neck_audit'):
         raise ValueError('Unsupported operation')
     if type(job['variant']) is not int or not 1<=job['variant']<=36:
         raise ValueError('Unsupported variant')
@@ -673,14 +674,15 @@ def run(job):
             review(bpy.context.scene,out,(0,-.1,-.60),4.8,[('front',0),('right',45)],portrait=True)
         if job['operation']=='shoulders':
             review(bpy.context.scene,out,(0,-.1,-1.8),7.6,[('side',90),('rear',135)])
-        if job['operation']=='clay':
+        if job['operation'] in ('clay','clay_four'):
             for obj in bpy.context.scene.objects:
                 if obj.type in ('MESH','CURVE'):obj.hide_render=obj.name!='MF_continuous_head_neck'
             obj=bpy.data.objects['MF_continuous_head_neck'];mat=bpy.data.materials.new('MF_diagnostic_clay');mat.use_nodes=True
             mat.node_tree.nodes['Principled BSDF'].inputs['Base Color'].default_value=(.35,.35,.35,1)
             mat.node_tree.nodes['Principled BSDF'].inputs['Roughness'].default_value=.8
             obj.data.materials.clear();obj.data.materials.append(mat)
-            review(bpy.context.scene,out,(0,-.1,-.55),4.8,[('front',0),('left',-45)])
+            angles=CLAY_FOUR_VIEWS if job['operation']=='clay_four' else [('front',0),('left',-45)]
+            review(bpy.context.scene,out,(0,-.1,-.55),4.8,angles)
         if job['operation']=='contacts':
             colors={'MF_continuous_head_neck':(.6,.35,.18,1),'MF_upper_tunic':(.9,.7,.01,1),
                     'MF_layered_upper_scarf':(.8,.03,.02,1),'MF_diagonal_donor_wrap':(.02,.5,.06,1)}
@@ -738,7 +740,10 @@ def run(job):
     elif job['operation']=='package':
         result['native_sha256']=hashlib.sha256((out/'character-upperbody.blend').read_bytes()).hexdigest()
         result['build_native_sha256']=record['native_sha256']
-    elif job['operation'] in ('verify','portraits','detail','facecheck','verify_package','diagnostic','shoulders','clay','contacts','neck_audit'):result['verified_native_sha256']=record['native_sha256']
+    elif job['operation'] in ('verify','portraits','detail','facecheck','verify_package','diagnostic','shoulders','clay','clay_four','contacts','neck_audit'):result['verified_native_sha256']=record['native_sha256']
+    if job['operation']=='clay_four':
+        result['review_views_degrees']=dict(CLAY_FOUR_VIEWS)
+        result['review_scope']='Head/neck only; hair and costume hidden; temporary neutral material; matching camera-relative light; no native save.'
     if job['operation'] in ('package','verify_package'):
         result['file_images']=[{'name':im.name,'packed':bool(im.packed_file or im.packed_files)} for im in bpy.data.images if im.source=='FILE']
         assert all(item['packed'] for item in result['file_images'])
