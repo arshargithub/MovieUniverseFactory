@@ -7,7 +7,7 @@ spec=importlib.util.spec_from_file_location('upper',Path('src/movie_factory/adap
 m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
 
 @pytest.mark.parametrize('job',[{},None,{'operation':'exec','variant':1},{'operation':'build','variant':True},
-    {'operation':'build','variant':28},{'operation':'build','variant':1,'source':'elsewhere'}])
+    {'operation':'build','variant':29},{'operation':'build','variant':1,'source':'elsewhere'}])
 def test_reject(job):
     with pytest.raises(ValueError):m.validate(job)
 

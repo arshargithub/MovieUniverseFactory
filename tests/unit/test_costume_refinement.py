@@ -9,13 +9,13 @@ def test_face_exactly_untouched():
     for x in (-1,-.3,0,.5,1):
         for y in (-1,-.5,0,.8):
             for z in (-.86,-.8,0,1.5):
-                for variant in range(16,28):assert m.neck_point(x,y,z,variant)==(x,y,z)
+                for variant in range(16,29):assert m.neck_point(x,y,z,variant)==(x,y,z)
 
 def test_neck_finite_and_bounded():
     for i in range(100):
         a=i*math.pi*2/100
         for z in (-.9,-1,-1.3,-1.7,-1.9,-2.3):
-            for variant in range(16,28):
+            for variant in range(16,29):
                 p=m.neck_point(.8*math.sin(a),.22+.7*math.cos(a),z,variant)
                 assert all(math.isfinite(v) for v in p)
                 assert abs(p[0])<1.8 and abs(p[1])<1.1 and p[2]==z

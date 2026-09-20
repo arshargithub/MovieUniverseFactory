@@ -22,7 +22,7 @@ def validate(job):
         raise ValueError('Exact structured keys required')
     if job['operation'] not in ('audit','build','verify','portraits','detail','facecheck','package','verify_package','diagnostic','shoulders','clay','contacts'):
         raise ValueError('Unsupported operation')
-    if type(job['variant']) is not int or not 1<=job['variant']<=27:
+    if type(job['variant']) is not int or not 1<=job['variant']<=28:
         raise ValueError('Unsupported variant')
     for path,digest in ((SOURCE,SOURCE_SHA),(REF,REF_SHA)):
         if path.is_symlink() or hashlib.sha256(path.read_bytes()).hexdigest()!=digest:

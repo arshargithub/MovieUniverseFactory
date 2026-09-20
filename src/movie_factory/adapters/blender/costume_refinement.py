@@ -1,4 +1,4 @@
-"""Reviewed, fixed reference-fit helpers for upperbody variants 16–27.
+"""Reviewed, fixed reference-fit helpers for upperbody variants 16–28.
 
 Not an arbitrary-code operation or dynamic clothing/rig qualification.
 """
@@ -83,6 +83,14 @@ def refine_neck(variant):
         tone=n.new('ShaderNodeAttribute');tone.attribute_name=attr.name
         mul=n.new('ShaderNodeMixRGB');mul.blend_type='MULTIPLY';mul.inputs[0].default_value=1
         l.new(original,mul.inputs[1]);l.new(tone.outputs['Fac'],mul.inputs[2]);l.new(mul.outputs[0],p.inputs['Base Color'])
+        if variant>=28:
+            # Vertex attributes interpolate across neck/face boundary polygons.
+            # Gate the anatomy tint per shading point, independently of that
+            # interpolation, so it is identically off in the protected face.
+            coord=n.new('ShaderNodeTexCoord');sep=n.new('ShaderNodeSeparateXYZ');l.new(coord.outputs['Object'],sep.inputs[0])
+            gate=n.new('ShaderNodeMapRange');gate.clamp=True
+            gate.inputs['From Min'].default_value=-.86;gate.inputs['From Max'].default_value=-1.08
+            l.new(sep.outputs['Z'],gate.inputs['Value']);l.new(gate.outputs['Result'],mul.inputs[0])
 
 
 def refine_hair(variant):
