@@ -20,9 +20,9 @@ REF_SHA='7f959fed6ca4f57cb1b7fdaa20aa4a0fdd64208595a8b5debd8d060c79068c75'
 def validate(job):
     if not isinstance(job,dict) or set(job)!={'operation','variant'}:
         raise ValueError('Exact structured keys required')
-    if job['operation'] not in ('audit','build','verify','portraits','detail','facecheck','package','verify_package'):
+    if job['operation'] not in ('audit','build','verify','portraits','detail','facecheck','package','verify_package','diagnostic','shoulders','clay','contacts'):
         raise ValueError('Unsupported operation')
-    if type(job['variant']) is not int or not 1<=job['variant']<=15:
+    if type(job['variant']) is not int or not 1<=job['variant']<=26:
         raise ValueError('Unsupported variant')
     for path,digest in ((SOURCE,SOURCE_SHA),(REF,REF_SHA)):
         if path.is_symlink() or hashlib.sha256(path.read_bytes()).hexdigest()!=digest:
@@ -639,6 +639,29 @@ def run(job):
             review(bpy.context.scene,out,(0,-.1,-1.8),7.6,[('front',0),('left',-45),('right',45)],portrait=True)
         if job['operation']=='detail':
             review(bpy.context.scene,out,(0,-.1,-.48),4.6,[('front',0),('left',-45),('right',45)],portrait=True)
+        if job['operation']=='diagnostic':
+            review(bpy.context.scene,out,(0,-.1,-.60),4.8,[('front',0),('right',45)],portrait=True)
+        if job['operation']=='shoulders':
+            review(bpy.context.scene,out,(0,-.1,-1.8),7.6,[('side',90),('rear',135)])
+        if job['operation']=='clay':
+            for obj in bpy.context.scene.objects:
+                if obj.type in ('MESH','CURVE'):obj.hide_render=obj.name!='MF_continuous_head_neck'
+            obj=bpy.data.objects['MF_continuous_head_neck'];mat=bpy.data.materials.new('MF_diagnostic_clay');mat.use_nodes=True
+            mat.node_tree.nodes['Principled BSDF'].inputs['Base Color'].default_value=(.35,.35,.35,1)
+            mat.node_tree.nodes['Principled BSDF'].inputs['Roughness'].default_value=.8
+            obj.data.materials.clear();obj.data.materials.append(mat)
+            review(bpy.context.scene,out,(0,-.1,-.55),4.8,[('front',0),('left',-45)])
+        if job['operation']=='contacts':
+            colors={'MF_continuous_head_neck':(.6,.35,.18,1),'MF_upper_tunic':(.9,.7,.01,1),
+                    'MF_layered_upper_scarf':(.8,.03,.02,1),'MF_diagonal_donor_wrap':(.02,.5,.06,1)}
+            for obj in bpy.context.scene.objects:
+                if obj.hide_render or obj.type not in ('MESH','CURVE'):continue
+                mat=bpy.data.materials.new('MF_contact_ID_'+obj.name);mat.use_nodes=True
+                n,l=mat.node_tree.nodes,mat.node_tree.links;em=n.new('ShaderNodeEmission')
+                em.inputs['Color'].default_value=colors.get(obj.name,(.025,.025,.08,1))
+                l.new(em.outputs[0],n.get('Material Output').inputs['Surface'])
+                obj.data.materials.clear();obj.data.materials.append(mat)
+            review(bpy.context.scene,out,(0,-.1,-.60),4.8,[('front',0)])
         if job['operation']=='facecheck':
             facecheck(out)
         if job['operation']=='package':
@@ -671,13 +694,18 @@ def run(job):
             'shape_values':shapes,'protected_neck_top_z':-.86,'director_accepted':False,
             'scope':'Static upper-body reference fit; no animation or all-angle qualification.'}
     result['attribution']='Adapted hood and upper folds: Hijab by lam_m_zack, CC BY 4.0, https://sketchfab.com/3d-models/hijab-ee50e01adc864ccc880caed9b5eb3bcb. New lower shawl, tunic/sleeves, straps/buckle and neck extension authored locally; approved project illustrations reused as material references.'
+    if job['variant']>=21:
+        result['attribution']='Adapted hood: Hijab by lam_m_zack, CC BY 4.0, https://sketchfab.com/3d-models/hijab-ee50e01adc864ccc880caed9b5eb3bcb. Visible cowl/diagonal shawl, tunic/sleeves, harness/buckle, hair geometry and neck extension authored locally; approved project illustrations reused as material references. Hidden earlier donor objects remain retained: internal working scene, not a cleaned redistribution bundle.'
+    if job['variant']>=16:
+        result['verification_handler_sha256']={name:hashlib.sha256((Path(__file__).parent/name).read_bytes()).hexdigest() for name in ('upperbody_refinement.py','costume_refinement.py','reference_dressing.py','hijab_donor.py','likeness_cleanup.py')}
+        result['visible_harness_objects']=[o.name for o in bpy.context.scene.objects if o.name.startswith('MF_reference_shoulder_harness') and not o.hide_render]
     if 'MF_display_head_neck' in bpy.data.objects:result['visible_protected_face_digest']=protected_face_digest(bpy.data.objects['MF_display_head_neck'])
     if 'MF_continuous_head_neck' in bpy.data.objects:result['visible_protected_surface_digest']=protected_surface_digest(bpy.data.objects['MF_continuous_head_neck'])
     if job['operation']=='build':result['native_sha256']=hashlib.sha256((out/'upperbody.blend').read_bytes()).hexdigest()
     elif job['operation']=='package':
         result['native_sha256']=hashlib.sha256((out/'character-upperbody.blend').read_bytes()).hexdigest()
         result['build_native_sha256']=record['native_sha256']
-    elif job['operation'] in ('verify','portraits','detail','facecheck','verify_package'):result['verified_native_sha256']=record['native_sha256']
+    elif job['operation'] in ('verify','portraits','detail','facecheck','verify_package','diagnostic','shoulders','clay','contacts'):result['verified_native_sha256']=record['native_sha256']
     if job['operation'] in ('package','verify_package'):
         result['file_images']=[{'name':im.name,'packed':bool(im.packed_file or im.packed_files)} for im in bpy.data.images if im.source=='FILE']
         assert all(item['packed'] for item in result['file_images'])
@@ -691,6 +719,9 @@ def build(variant):
     make_neck(variant);make_garments(variant);tailor_wrap(variant)
     if variant>=9:make_reference_shawl(variant)
     bridge_hair(variant);make_straps(variant)
+    if variant>=16:
+        from costume_refinement import refine
+        refine(variant)
     bpy.context.scene.cycles.transparent_max_bounces=32
 
 
