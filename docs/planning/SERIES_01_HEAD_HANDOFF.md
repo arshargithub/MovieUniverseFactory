@@ -4,7 +4,7 @@
 
 ## Disposition
 
-**Latest dressing checkpoint:** [free Hijab donor audit and fit](SERIES_01_HIJAB_DONOR_RESULT.md); preferred working file `hijab-fit02/donor.blend` under the trial directory. This is a YELLOW adaptation candidate with unchanged approved face, not approved scarf/hair or a replacement canonical head.
+**Latest dressing checkpoint:** [sustained portrait-led scarf/hair refinement](SERIES_01_SUSTAINED_DRESSING.md); preferred working file `reference-dress-18/dressed.blend` under the trial directory, with larger front/left/right renders in `reference-portraits-18/`. This is a YELLOW static review candidate with unchanged approved face, not approved scarf/hair or a replacement canonical head. The [free Hijab donor audit and initial fit](SERIES_01_HIJAB_DONOR_RESULT.md) remain provenance; `hijab-fit02` is superseded as the working dressing candidate.
 
 **Latest approved face pointer:** subsequent Director-requested right-side corrections are in `bilateral-04/head-bilateral.blend` under the same trial directory; see [bilateral review](SERIES_01_BILATERAL_FACE_REVIEW.md). Director approved the static face after matched-light comparison. Scarf/hair are not approved; [renewal results and sourcing dependency](SERIES_01_DRESSING_RENEWAL.md) record three rejected candidates. The approved face is not yet rebaked into the portable package below. The older portable head remains a reproducible baseline, not the latest appearance.
 
