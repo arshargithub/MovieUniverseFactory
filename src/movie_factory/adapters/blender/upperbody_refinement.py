@@ -22,7 +22,7 @@ def validate(job):
         raise ValueError('Exact structured keys required')
     if job['operation'] not in ('audit','build','verify','portraits','detail','facecheck','package','verify_package','diagnostic','shoulders','clay','contacts'):
         raise ValueError('Unsupported operation')
-    if type(job['variant']) is not int or not 1<=job['variant']<=28:
+    if type(job['variant']) is not int or not 1<=job['variant']<=31:
         raise ValueError('Unsupported variant')
     for path,digest in ((SOURCE,SOURCE_SHA),(REF,REF_SHA)):
         if path.is_symlink() or hashlib.sha256(path.read_bytes()).hexdigest()!=digest:
@@ -238,9 +238,16 @@ def extend_neck_color(obj,head,variant):
             facing=n.new('ShaderNodeMapRange');facing.clamp=True;facing.interpolation_type='SMOOTHSTEP'
             facing.inputs['From Min'].default_value=.25;facing.inputs['From Max'].default_value=.85;l.new(dot.outputs['Value'],facing.inputs['Value'])
             projected=n.new('ShaderNodeMath');projected.operation='MULTIPLY';l.new(safe.outputs[0],projected.inputs[0]);l.new(facing.outputs['Result'],projected.inputs[1]);l.new(projected.outputs[0],skin.inputs[0])
+    neck_color=skin.outputs[0]
+    if variant>=31:
+        # The illustration's baked neck shadows become blocky when stretched
+        # over a shorter three-dimensional neck. Keep reference color, but
+        # reduce projected lighting only in the editable neck branch.
+        quiet=n.new('ShaderNodeMixRGB');quiet.inputs[0].default_value=.45
+        l.new(neck_color,quiet.inputs[1]);l.new(ramp.outputs[0],quiet.inputs[2]);neck_color=quiet.outputs[0]
     weight=n.new('ShaderNodeMapRange');weight.clamp=True;weight.inputs['From Min'].default_value=-.86;weight.inputs['From Max'].default_value=-1.10;l.new(sep.outputs['Z'],weight.inputs['Value'])
     if variant>=5:weight.inputs['From Max'].default_value=-.94
-    mix=n.new('ShaderNodeMixRGB');l.new(weight.outputs['Result'],mix.inputs[0]);l.new(original,mix.inputs[1]);l.new(skin.outputs[0],mix.inputs[2]);l.new(mix.outputs[0],p.inputs['Base Color'])
+    mix=n.new('ShaderNodeMixRGB');l.new(weight.outputs['Result'],mix.inputs[0]);l.new(original,mix.inputs[1]);l.new(neck_color,mix.inputs[2]);l.new(mix.outputs[0],p.inputs['Base Color'])
 
 
 def make_continuous_neck(head,variant):

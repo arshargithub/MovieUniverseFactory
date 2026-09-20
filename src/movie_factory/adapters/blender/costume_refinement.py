@@ -1,4 +1,4 @@
-"""Reviewed, fixed reference-fit helpers for upperbody variants 16–28.
+"""Reviewed, fixed reference-fit helpers for upperbody variants 16–31.
 
 Not an arbitrary-code operation or dynamic clothing/rig qualification.
 """
@@ -77,7 +77,7 @@ def refine_neck(variant):
             collar=-1.88+.105*abs(x)-.035*math.sin(abs(x)*3)
             below=math.exp(-((z-collar+.09)/(.085 if variant>=26 else .055))**2)*smooth((abs(x)-.15)/.2)
             notch=math.exp(-(x/.15)**2-((z+1.84)/.11)**2)
-            attr.data[v.index].value=1-weight*(.10*groove+(.065 if variant>=26 else .13)*below+.10*notch)
+            attr.data[v.index].value=1-weight*(.10*groove+(.035 if variant>=30 else .065 if variant>=26 else .13)*below+.10*notch)
         n,l=obj.data.materials[0].node_tree.nodes,obj.data.materials[0].node_tree.links
         p=n.get('Principled BSDF');original=p.inputs['Base Color'].links[0].from_socket
         tone=n.new('ShaderNodeAttribute');tone.attribute_name=attr.name
@@ -99,8 +99,8 @@ def refine_hair(variant):
     from reference_dressing import mesh_object
     # Restore roots into existing painted scalp; retain the locked face mesh and
     # authored waves, avoiding a new scalp cap or a second projected face image.
-    for obj in bpy.context.scene.objects:
-        if obj.type!='CURVE' or not obj.name.startswith('MF_fiber_lock'):continue
+    locks=sorted((o for o in bpy.context.scene.objects if o.type=='CURVE' and o.name.startswith('MF_fiber_lock')),key=lambda o:o.name)
+    for lock_index,obj in enumerate(locks):
         for si,spline in enumerate(obj.data.splines):
             n=len(spline.points)-1
             for j,p in enumerate(spline.points):
@@ -111,6 +111,13 @@ def refine_hair(variant):
                 # Break up the identical bundled ends without adding flyaway
                 # noise around the accepted eyes/face silhouette.
                 p.co.z+=.035*math.sin(si*1.71+t*8)*smooth((t-.45)/.40)
+                if variant>=30:
+                    # Unequal, feathered ends; small displacements away from
+                    # the cheeks, not a new face-framing silhouette over them.
+                    s=1 if x>=0 else -1;tail=smooth((t-.40)/.60)
+                    p.co.z+=(.10+.17*(.5+.5*math.sin(lock_index*2.17)))*tail
+                    p.co.x+=s*(.028*math.sin(lock_index*1.7+t*5)+.028*math.sin(si*2.3))*tail
+                    p.co.y+=(.03+.018*math.sin(lock_index*1.3))*tail
         obj.data.bevel_depth*=.85
         if variant>=20:
             # Dark continuous lock volume below fine fibers prevents a bundle
@@ -125,7 +132,7 @@ def refine_hair(variant):
                 across=tangent.cross(outward).normalized();normal=across.cross(tangent).normalized()
                 taper=smooth(t/.18)*smooth((1-t)/.22)
                 for k in range(8):
-                    a=k*math.pi/4;v=center+across*(.046*taper*math.cos(a))+normal*(.023*taper*math.sin(a))
+                    a=k*math.pi/4;v=center+across*((.036 if variant>=30 else .046)*taper*math.cos(a))+normal*(.023*taper*math.sin(a))
                     verts.append(tuple(v))
             for j in range(len(centers)-1):
                 for k in range(8):faces.append((j*8+k,j*8+(k+1)%8,(j+1)*8+(k+1)%8,(j+1)*8+k))
@@ -136,6 +143,11 @@ def refine_hair(variant):
                     material=obj.data.materials[1].copy();material.name='MF_soft_chestnut_lock_core'
                     p=material.node_tree.nodes.get('Principled BSDF');p.inputs['Roughness'].default_value=.82;p.inputs['Specular IOR Level'].default_value=.08
             mesh_object('MF_cohesive_hair_lock',verts,faces,material,0)
+    if variant>=30:
+        for mat in bpy.data.materials:
+            if mat.name.startswith('MF_warm_chestnut_fiber'):
+                p=mat.node_tree.nodes.get('Principled BSDF')
+                p.inputs['Roughness'].default_value=.72;p.inputs['Specular IOR Level'].default_value=.10
 
 
 def refine_cloth(variant):
@@ -237,12 +249,16 @@ def soft_layered_scarf(variant):
         inner=Vector(neck_point(.8*math.sin(a),.22-.7*math.cos(a),top,variant))
         inner+=Vector((.04*math.sin(a),-.04*math.cos(a),0))
         bottom=-1.82-.93*front+.19*math.sin(a)
+        if variant==30:bottom+=.17*math.sin(a)
         for j in range(nv+1):
             t=j/nv;blend=smooth(t)
             x=inner.x*(1-blend)+(1.60 if variant>=23 else 1.85)*math.sin(a)*blend
             z=top*(1-t)+bottom*t
             y=inner.y*(1-blend)+(.22-.90*math.cos(a))*blend
             fold=.105*math.sin(t*math.pi*5+.35*math.sin(a*2))*math.sin(math.pi*t)
+            if variant==30:
+                fold=(.075+.035*math.sin(a+.8)**2)*math.sin(t*math.pi*4+1.1*math.sin(a))*math.sin(math.pi*t)
+                z+=.10*math.sin(a+.4)*math.sin(math.pi*t)
             x+=math.sin(a)*fold;y-=math.cos(a)*fold
             verts.append(outside(x,y,z))
     for i in range(nu):
@@ -266,6 +282,9 @@ def soft_layered_scarf(variant):
             t=j/nv;z=top*(1-t)+bottom*t;radius=1.93-.38*t
             phase=t*math.pi*6+.24*math.sin(a*2.3+t*2)
             fold=.14*math.sin(phase)*math.sin(math.pi*t)**.6
+            if variant>=30:
+                phase+=.85*math.sin(a)+.40*a*t
+                fold=(.10+.05*math.sin(a+1)**2)*math.sin(phase)*math.sin(math.pi*t)**.6
             x=(radius+fold*.4)*math.sin(a)
             y=.16-(.94+fold+.11*math.sin(math.pi*t))*math.cos(a)
             verts.append(outside(x,y,z,.065))
@@ -287,6 +306,16 @@ def support_envelope(values,start=0,radius=3):
     """Local outward envelope; never propagate an earlier minimum indefinitely."""
     return [min(values[max(start,j-radius):min(len(values),j+radius+1)]) if j>=start else value
             for j,value in enumerate(values)]
+
+
+def tension_profile(values,iterations=60):
+    """Relax leather outward of support; fixed ends, immutable input."""
+    current=list(values)
+    for _ in range(iterations):
+        previous=current
+        current=[previous[0]]+[min(values[i],(previous[i-1]+previous[i+1])*.5)
+                              for i in range(1,len(values)-1)]+[previous[-1]]
+    return current
 
 
 def shoulder_straps(variant):
@@ -358,6 +387,7 @@ def shoulder_straps(variant):
                 ys=[h.y for h in hits if h is not None]
                 points[j].y=(min(ys) if ys else -.6)-.065-(.028 if side==1 else 0)
             envelope=support_envelope([p.y for p in points],49,3)
+            if variant>=30:envelope[49:]=tension_profile(envelope[49:])
             for j in range(49,len(points)):points[j].y=envelope[j]
         for _ in range(8):
             old=[p.copy() for p in points]
@@ -385,10 +415,16 @@ def shoulder_straps(variant):
                     hit,normal,_,distance=trees[1 if side==-1 else 2].find_nearest(vertex)
                     if hit is not None and distance<.25:vertex=hit+normal*.045
                 verts.append(tuple(vertex))
-            for k,s in enumerate((-1,1)):edges[k].append(tuple(point+across*(s*.122)+normals[j]*.023))
+            for k,s in enumerate((-1,1)):
+                edge=point+across*(s*.122)+normals[j]*.023
+                if variant>=30:
+                    edge=Vector(verts[-5 if k==0 else -1])*.84+point*.16+normals[j]*.014
+                edges[k].append(tuple(edge))
         for j in range(len(points)-1):
             for k in range(4):faces.append((j*5+k,j*5+k+1,(j+1)*5+k+1,(j+1)*5+k))
         strap=mesh_object('MF_reference_shoulder_harness_'+str(side),verts,faces,leather,1)
+        if variant>=30:
+            relax=strap.modifiers.new('Quiet leather edge ripples','SMOOTH');relax.factor=.35;relax.iterations=4
         strap.modifiers.new('Leather thickness','SOLIDIFY').thickness=.028
         bevel=strap.modifiers.new('Soft leather edges','BEVEL');bevel.width=.012;bevel.segments=3
         for edge in edges:
@@ -401,12 +437,14 @@ def shoulder_straps(variant):
         strap['MF_route']='back over shoulder to crossed chest; no rig/dynamics qualification'
 
 
-def body_z(z):
+def body_z(z,variant=28):
     if z>=-.86:return z
-    return z+.23*smooth((-.86-z)/1.44)
+    lift=.23*smooth((-.86-z)/1.44)
+    if variant>=29:lift+=.17*smooth((-.86-z)/.95)
+    return z+lift
 
 
-def settle_body_proportion():
+def settle_body_proportion(variant=28):
     import bpy
     from mathutils import Vector
     # The previous neck-to-collar distance exceeded the reference. Raise the
@@ -418,7 +456,7 @@ def settle_body_proportion():
         inv=obj.matrix_world.inverted()
         points=obj.data.vertices if obj.type=='MESH' else [p for s in obj.data.splines for p in s.points]
         for point in points:
-            world=obj.matrix_world@Vector(point.co[:3]);world.z=body_z(world.z);local=inv@world
+            world=obj.matrix_world@Vector(point.co[:3]);world.z=body_z(world.z,variant);local=inv@world
             if obj.type=='MESH':point.co=local
             else:point.co=(*local,point.co.w)
         if obj.type=='MESH':obj.data.update()
@@ -426,4 +464,4 @@ def settle_body_proportion():
 
 def refine(variant):
     refine_neck(variant);refine_hair(variant);refine_cloth(variant);shoulder_straps(variant)
-    if variant>=20:settle_body_proportion()
+    if variant>=20:settle_body_proportion(variant)
