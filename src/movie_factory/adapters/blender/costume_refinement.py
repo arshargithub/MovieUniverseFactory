@@ -1,4 +1,4 @@
-"""Reviewed, fixed reference-fit helpers for upperbody variants 16–26.
+"""Reviewed, fixed reference-fit helpers for upperbody variants 16–27.
 
 Not an arbitrary-code operation or dynamic clothing/rig qualification.
 """
@@ -275,6 +275,12 @@ def ribbon_frame(tangent,normal):
     return across.normalized()
 
 
+def support_envelope(values,start=0,radius=3):
+    """Local outward envelope; never propagate an earlier minimum indefinitely."""
+    return [min(values[max(start,j-radius):min(len(values),j+radius+1)]) if j>=start else value
+            for j,value in enumerate(values)]
+
+
 def shoulder_straps(variant):
     import bpy
     from mathutils import Vector
@@ -334,6 +340,17 @@ def shoulder_straps(variant):
         # Tension bridges recesses; smooth the support envelope without sinking.
         for j in range(50,len(points)-1):
             points[j].y=min(p.y for p in points[max(49,j-3):min(len(points),j+4)])
+        if variant>=27:
+            # Re-query the supports after the legacy loop, then envelope an
+            # immutable snapshot. The in-place minimum chained a deep fold's
+            # offset all the way down the strap, visibly floating at the waist.
+            for j in range(49,len(points)):
+                x,y,z=points[j]
+                hits=[tree.ray_cast(Vector((x+offset,-6,z)),Vector((0,1,0)),10)[0] for tree in trees for offset in (-.14,0,.14)]
+                ys=[h.y for h in hits if h is not None]
+                points[j].y=(min(ys) if ys else -.6)-.065-(.028 if side==1 else 0)
+            envelope=support_envelope([p.y for p in points],49,3)
+            for j in range(49,len(points)):points[j].y=envelope[j]
         for _ in range(8):
             old=[p.copy() for p in points]
             for j in range(1,len(points)-1):

@@ -21,7 +21,7 @@ def differences(a,b):
 
 
 def measure(variant):
-    if type(variant) is not int or not 1<=variant<=26:raise ValueError('Unsupported fixed variant')
+    if type(variant) is not int or not 1<=variant<=27:raise ValueError('Unsupported fixed variant')
     folder=BASE/f'upperbody-facecheck-{variant:02}'
     target=folder/'comparison.json'
     if target.exists():raise ValueError('Do not overwrite evidence')
