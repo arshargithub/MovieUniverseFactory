@@ -22,7 +22,7 @@ VIEWS=(('front',0),('left',-90),('right',90),('back',180),('three-quarter',-45))
 def validate(job):
     if not isinstance(job,dict) or set(job)!={'operation','candidate'}:
         raise ValueError('Exact structured keys required')
-    if job['operation'] not in ('build','verify','profile','template','raking') or type(job['candidate']) is not int or not 1<=job['candidate']<=7:
+    if job['operation'] not in ('build','verify','profile','template','raking') or type(job['candidate']) is not int or not 1<=job['candidate']<=15:
         raise ValueError('Unsupported operation or candidate')
     if SOURCE.is_symlink() or hashlib.sha256(SOURCE.read_bytes()).hexdigest()!=SOURCE_SHA:
         raise ValueError('Pinned source changed')
@@ -162,9 +162,9 @@ def invariants(candidate,indices=None):
     from hijab_donor import material_signature
     obj=bpy.data.objects['MF_continuous_head_neck']
     return {'protected_surface':protected_surface_digest(obj) if candidate<4 or candidate>=6 else None,
-            'protected_vertices':[(v.index,list(v.co)) for v in obj.data.vertices if (v.index in indices if indices is not None else protected_vertex(*v.co,candidate))],
+            'protected_vertices':list(enumerate(sorted(list(v.co) for v in obj.data.vertices if v.co.z>=TOP))) if candidate>=15 else [(v.index,list(v.co)) for v in obj.data.vertices if (v.index in indices if indices is not None else protected_vertex(*v.co,candidate))],
             'neck_materials':[material_signature(m) for m in obj.data.materials],
-            'uv':hashlib.sha256(json.dumps([[list(p.uv) for p in layer.data] for layer in obj.data.uv_layers]).encode()).hexdigest(),
+            'uv':hashlib.sha256(json.dumps([[list(p.uv) for p in layer.data] for layer in obj.data.uv_layers]).encode()).hexdigest() if candidate<12 else 'Lower-only subdivision interpolates UVs; face UVs protected by surface digest',
             'other_objects':{o.name:signature(o) for o in bpy.context.scene.objects if o.type in ('MESH','CURVE') and o!=obj}}
 
 
@@ -243,6 +243,8 @@ def template_neck_extension(candidate):
         hit,_,_,_=tree.ray_cast(c+d*4,-d,8)
         if hit is None or (hit-c).dot(d)<=0:raise ValueError('Template cross-section incomplete')
         return (hit-c).dot(d)
+    if candidate>=8:
+        return shoulder_anatomy(obj,radius,candidate)
     join=-1.0;bottom=-1.9;count=512;table=[]
     for i in range(count):
         a=2*math.pi*i/count;sa,ca=math.sin(a),math.cos(a)
@@ -276,6 +278,134 @@ def template_neck_extension(candidate):
             'method':'Original fitted neck retained through z=-1.0; continuous original-slope shoulder extension; no posterior neck mask',
             'template_join_z':join,'bottom_rear_radius':rear_depth,'extension_support':table,
             'extension_interpolation':'cubic' if candidate>=7 else 'quintic'}
+
+
+def shoulder_form(z,angle):
+    """Neck shaft into shoulder shelf, with separate anterior/posterior depths.
+
+    The lower cross-section is a rounded thorax rather than a circular cone.
+    Endpoint is a cropped upper bust, not a complete torso or shoulder rig.
+    """
+    depth=-z
+    width=spline_value(depth,(.86,1.0,1.15,1.3,1.45,1.6,1.75,1.9),
+        (.575,.600,.650,.785,1.015,1.340,1.665,1.750))
+    rear=spline_value(depth,(.86,1.,1.2,1.4,1.65,1.9),(.562,.614,.674,.719,.758,.785))
+    front=spline_value(depth,(.86,1.,1.2,1.4,1.65,1.9),(.692,.592,.552,.598,.714,.800))
+    ca=math.cos(angle);sa=math.sin(angle)
+    ry=front+(rear-front)*smoother((ca+1)/2)
+    exponent=2.+.65*smoother((depth-1.12)/.65)
+    return (abs(sa/width)**exponent+abs(ca/ry)**exponent)**(-1/exponent)
+
+
+def anatomical_landmarks(x,z,angle):
+    """Subcutaneous relief: paired SCM, clavicles, and a shallow jugular notch."""
+    front=max(0.,-math.cos(angle))**.65
+    fade=smoother((TOP-z)/.22)
+    ax=abs(x)
+    # SCM descends medially toward the sternum, separate from the trapezius.
+    path=.16+.44*max(0.,min(1.,(z+1.60)/.78))
+    scm=.048*math.exp(-((ax-path)/.095)**2-((z+1.20)/.42)**4)
+    clavicle_z=-1.635+.065*math.sin(min(ax/1.45,1.)*math.pi)-.012*ax
+    clavicle=.082*math.exp(-((z-clavicle_z)/.064)**2)*(1-math.exp(-(x/.13)**2))*math.exp(-(ax/1.6)**8)
+    hollow=.034*math.exp(-((z-clavicle_z-.125)/.12)**2-((ax-.65)/.47)**2)
+    notch=.045*math.exp(-(x/.14)**2-((z+1.55)/.12)**2)
+    throat=.015*math.exp(-(x/.16)**2-((z+1.10)/.19)**2)
+    return (scm+clavicle+throat-hollow-notch)*front*fade
+
+
+def shoulder_anatomy(obj,template_radius,candidate):
+    from mathutils import Vector
+    import bpy
+    moved=[]
+    join=-1.40
+    count=512;table=[]
+    if candidate>=9:
+        for i in range(count):
+            a=i*2*math.pi/count
+            r0=template_radius(a,TOP)
+            d0=(template_radius(a,TOP-.015)-template_radius(a,TOP+.015))/.03
+            r1=shoulder_form(join,a)
+            d1=(shoulder_form(join-.005,a)-shoulder_form(join+.005,a))/.01
+            table.append((r0,r1,d0,d1))
+        if candidate>=11:
+            # Ray/triangle derivative noise should not become neck tendons.
+            slopes=[sum(table[(i+j)%count][2]*math.exp(-(j/9)**2) for j in range(-20,21))/sum(math.exp(-(j/9)**2) for j in range(-20,21)) for i in range(count)]
+            table=[(a,b,slopes[i],d) for i,(a,b,_,d) in enumerate(table)]
+    def surface(a,z):
+        weight=smoother((TOP-z)/.36)
+        # Blend locally into the fitted neck, never into the bad lower loft.
+        r=shoulder_form(z,a)
+        if candidate>=9 and z>join:
+            f=(a%(2*math.pi))/(2*math.pi)*count;i=int(f);w=f-i
+            support=[table[i][k]*(1-w)+table[(i+1)%count][k]*w for k in range(4)]
+            r=cubic_bridge(*support,(TOP-z)/(TOP-join),TOP-join)
+        elif candidate==8 and weight<1:r=template_radius(a,z)*(1-weight)+r*weight
+        xx=r*math.sin(a);yy=.1+r*math.cos(a)
+        yy-=(.65 if candidate>=9 else 1)*anatomical_landmarks(xx,z,a)
+        return Vector((xx,yy,z))
+    parameters=[(math.atan2(v.co.x,v.co.y-.1),v.co.z) for v in obj.data.vertices]
+    if candidate>=10:
+        neighbors=[set() for _ in parameters]
+        for edge in obj.data.edges:
+            i,j=edge.vertices;neighbors[i].add(j);neighbors[j].add(i)
+        parameters=relax_neck_parameters(parameters,neighbors,candidate>=11)
+    for v,(a,z) in zip(obj.data.vertices,parameters):
+        if v.co.z>=TOP:continue
+        target=surface(a,z);moved.append((target-v.co).length);v.co=target
+    obj.data.update();bpy.context.view_layer.update()
+    refinement=refine_lower_surface(obj,surface,parameters) if candidate>=12 else None
+    return {'edited_vertices':len(moved),'max_displacement':max(moved),
+        'method':'Fitted upper neck to distinct shoulder shelf and rounded chest; paired SCM/clavicle relief and jugular hollow',
+        'join_z':TOP,'full_shoulder_form_z':join if candidate>=9 else TOP-.36,
+        'join_method':'endpoint-slope-matched' if candidate>=9 else 'surface crossfade','local_refinement':refinement}
+
+
+def refine_lower_surface(obj,surface,parameters):
+    """Subdivide only neck edges below the face, reproject to the same surface.
+
+    Facial coordinates, connectivity and UVs remain protected independent of
+    vertex order. Blender interpolates new UV corners; no face modifier.
+    """
+    import bmesh
+    bm=bmesh.new();bm.from_mesh(obj.data)
+    cs=bm.verts.layers.float.new('MF_temp_angle_cos');sn=bm.verts.layers.float.new('MF_temp_angle_sin')
+    # Adding/removing CustomData layers invalidates existing BMVert wrappers.
+    original=list(bm.verts);original_count=len(original)
+    for v,(a,z) in zip(original,parameters):v[cs]=math.cos(a);v[sn]=math.sin(a)
+    edges=[e for e in bm.edges if all(v.co.z<-.90 for v in e.verts)]
+    bmesh.ops.subdivide_edges(bm,edges=edges,cuts=2,use_grid_fill=True)
+    for v in bm.verts:
+        if v.co.z<TOP:
+            a=math.atan2(v[sn],v[cs]);v.co=surface(a,v.co.z)
+    for face in bm.faces:face.smooth=True
+    bm.normal_update();count=len(bm.verts)-original_count
+    bm.verts.layers.float.remove(cs);bm.verts.layers.float.remove(sn)
+    bm.to_mesh(obj.data);bm.free();obj.data.update()
+    return {'added_vertices':count,'cuts_per_lower_edge':2,'edge_ceiling_z':-.90,
+            'vertex_order_preserved':False,'protected_face_check':'exact index-independent vertices and per-face position/UV digest',
+            'new_uvs':'interpolated by native subdivision'}
+
+
+def relax_neck_parameters(parameters,neighbors,whole_surface=False):
+    """Improve cut-ring slivers on the same surface; no face or silhouette edit.
+
+    Local vertex redistribution, not a smoothing deformation of the anatomy.
+    Z motion is capped at .025 and fades away above/below the old cut.
+    """
+    original=list(parameters);current=list(parameters)
+    for _ in range(80 if whole_surface else 24):
+        updated=list(current)
+        for i,(a,z) in enumerate(current):
+            az,zz=original[i]
+            weight=smoother((TOP-zz)/.045)*smoother((zz+1.12)/.10)
+            angular_weight=smoother((TOP-zz)/.12) if whole_surface else weight
+            if angular_weight==0 or not neighbors[i]:continue
+            nn=neighbors[i]
+            da=sum(math.atan2(math.sin(current[j][0]-a),math.cos(current[j][0]-a)) for j in nn)/len(nn)
+            dz=sum(current[j][1]-z for j in nn)/len(nn)
+            updated[i]=(a+.3*angular_weight*da,max(zz-.025,min(zz+.025,z+.3*weight*dz)))
+        current=updated
+    return current
 
 
 def clay(out,name='MF_continuous_head_neck',raking=False):
@@ -326,6 +456,20 @@ def profiles(name='MF_continuous_head_neck'):
     return rows
 
 
+def mesh_diagnostics():
+    import bpy
+    obj=bpy.data.objects['MF_continuous_head_neck'];mesh=obj.data;mesh.update()
+    rows=[]
+    for p in mesh.polygons:
+        if not all(mesh.vertices[i].co.z<TOP for i in p.vertices):continue
+        c=p.center;n=p.normal
+        radial=(n.x*c.x+n.y*(c.y-.1))/max(1e-9,math.hypot(c.x,c.y-.1))
+        rows.append({'face':p.index,'vertices':list(p.vertices),'center':list(c),'normal':list(n),'area':p.area,'radial_normal':radial})
+    return {'lower_face_count':len(rows),'inward_faces':[r for r in rows if r['radial_normal']<0],
+            'tiny_faces':[r for r in rows if r['area']<1e-10],
+            'smallest_faces':sorted(rows,key=lambda r:r['area'])[:10]}
+
+
 def run(job):
     out=validate(job)
     import bpy
@@ -337,6 +481,10 @@ def run(job):
     result={'job':job,'source_sha256':SOURCE_SHA,'handler_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
             'director_accepted':False,'scope':'Geometry-only static clay review, not anatomy/rig qualification'}
     if job['operation']=='build':
+        if job['candidate']>=15:
+            mesh=bpy.data.objects['MF_continuous_head_neck'].data
+            attr=mesh.attributes.new('MF_anatomy_source_z','FLOAT','POINT')
+            for value,z in zip(attr.data,original_z):value.value=z
         result['geometry_edit']=sculpt(job['candidate'])
         assert invariants(job['candidate'],indices)==baseline,'Protected state changed'
         native=out/'character-upperbody.blend'
@@ -350,8 +498,18 @@ def run(job):
         bpy.ops.wm.open_mainfile(filepath=str(native),load_ui=False,use_scripts=False)
         assert invariants(job['candidate'],indices)==baseline,'Protected state changed on reopen'
     result['protected_state_pass']=True;result['protected_surface_digest']=baseline['protected_surface']
-    result['max_z_delta']=max(abs(v.co.z-z) for v,z in zip(bpy.data.objects['MF_continuous_head_neck'].data.vertices,original_z))
-    assert result['max_z_delta']<1e-6,'Vertical proportion changed'
+    result['mesh_diagnostics']=mesh_diagnostics()
+    if job['candidate']>=10:
+        assert not result['mesh_diagnostics']['inward_faces'],'Inward-facing neck surface'
+        assert not result['mesh_diagnostics']['tiny_faces'],'Degenerate neck surface'
+    mesh=bpy.data.objects['MF_continuous_head_neck'].data
+    reference_z=[value.value for value in mesh.attributes['MF_anatomy_source_z'].data] if job['candidate']>=15 else original_z
+    result['max_z_delta']=max(abs(v.co.z-z) for v,z in zip(mesh.vertices,reference_z))
+    assert result['max_z_delta']<(.025001 if job['candidate']>=10 else 1e-6),'Vertical redistribution exceeded bound'
+    result['z_change_scope']='Cut-ring vertex redistribution, <=0.025; face, upper/lower extent unchanged' if job['candidate']>=10 else 'None'
+    final_z=[v.co.z for v in bpy.data.objects['MF_continuous_head_neck'].data.vertices]
+    result['z_extent_delta']=[min(final_z)-min(original_z),max(final_z)-max(original_z)]
+    assert max(abs(d) for d in result['z_extent_delta'])<1e-6,'Overall height changed'
     result['protected_vertex_digest']=hashlib.sha256(json.dumps(baseline['protected_vertices']).encode()).hexdigest()
     result['protected_vertex_count']=len(baseline['protected_vertices'])
     result['posterior_exception']='Below ears z=-0.45..-1.48, y>0.12, abs(x)<0.70; smooth taper. Earlier full horizontal-plane digest not asserted.' if job['candidate']>=4 else None

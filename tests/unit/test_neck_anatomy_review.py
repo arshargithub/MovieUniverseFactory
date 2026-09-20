@@ -6,7 +6,7 @@ import pytest
 spec=importlib.util.spec_from_file_location('anatomy',Path('src/movie_factory/adapters/blender/neck_anatomy_review.py'))
 m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
 
-@pytest.mark.parametrize('job',[{},None,{'operation':'exec','candidate':1},{'operation':'build','candidate':True},{'operation':'build','candidate':8},{'operation':'build','candidate':1,'path':'x'}])
+@pytest.mark.parametrize('job',[{},None,{'operation':'exec','candidate':1},{'operation':'build','candidate':True},{'operation':'build','candidate':16},{'operation':'build','candidate':1,'path':'x'}])
 def test_reject(job):
     with pytest.raises(ValueError):m.validate(job)
 
@@ -85,7 +85,37 @@ def test_spline_continuous_curvature():
         assert abs(left-right)<.01
 
 def test_template_extension_restores_full_face_plane_guard():
-    for candidate in (6,7):
+    for candidate in (6,7,8,9,10,11,12,13,14,15):
         for x in (-1,0,1):
             for y in (-1,0,1):
                 for z in (-.86,-.6,0,1):assert m.protected_vertex(x,y,z,candidate)
+
+def test_shoulder_form_and_landmarks_bounded():
+    for i in range(101):
+        z=m.TOP+(-1.9-m.TOP)*i/100
+        for j in range(101):
+            a=j*2*math.pi/100;r=m.shoulder_form(z,a)
+            assert .45<r<1.8
+            assert abs(m.anatomical_landmarks(r*math.sin(a),z,a))<.15
+            if math.cos(a)>=0:assert m.anatomical_landmarks(r*math.sin(a),z,a)==0
+    assert m.anatomical_landmarks(0,m.TOP,math.pi)==0
+
+def test_clavicle_separate_from_central_hollow():
+    assert m.anatomical_landmarks(.6,-1.6,math.pi)>0
+    assert m.anatomical_landmarks(0,-1.55,math.pi)<0
+
+def test_local_parameter_relaxation_bounded_and_protected():
+    points=[(0,-.8),(.1,-.86),(.12,-.93),(.121,-.95),(.3,-.99),(.32,-1.2)]
+    adj=[{1},{0,2},{1,3,4},{2,4},{2,3,5},{4}]
+    result=m.relax_neck_parameters(points,adj)
+    assert result[0]==points[0] and result[1]==points[1] and result[-1]==points[-1]
+    assert result[3]!=points[3]
+    for a,b in zip(points,result):assert abs(a[1]-b[1])<=.0250001
+
+def test_whole_neck_angular_redistribution_keeps_height_and_face():
+    points=[(0,-.8),(.1,-.86),(.12,-.93),(.121,-.95),(.3,-.99),(.32,-1.2),(.33,-1.9)]
+    adj=[{1},{0,2},{1,3,4},{2,4},{2,3,5},{4,6},{5}]
+    result=m.relax_neck_parameters(points,adj,True)
+    assert result[:2]==points[:2]
+    assert result[-1][1]==points[-1][1] and result[-2][1]==points[-2][1]
+    for a,b in zip(points,result):assert abs(a[1]-b[1])<=.0250001
