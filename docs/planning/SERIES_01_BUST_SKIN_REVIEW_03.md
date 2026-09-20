@@ -1,5 +1,7 @@
 # Regional cleanup: local progress, whole-bust texture unresolved
 
+Subsequent authorization: the Director approved the proposed map-authoring switch and requested retention of all previous versions. See [authored-map trial04](SERIES_01_BUST_SKIN_REVIEW_04.md) for the new candidate. The failed/partial dispositions below remain unchanged.
+
 2026-09-20. Director rejected detail07 for an artificial skin pattern, visible cheek-to-ear transition, dark streaks above/beside the eyebrows and a viewer-left scar-like temple remnant. Anatomy16 remains accepted. Planning counter remains119.
 
 ## Disposition

@@ -875,6 +875,19 @@
       "engineering_subscription_usage": null,
       "engineering_cost_usd": null,
       "evidence": ["docs/planning/SERIES_01_BUST_SKIN_REVIEW_02.md", "docs/planning/SERIES_01_BUST_SKIN_REVIEW_03.md"]
+    },
+    {
+      "event_id": "series01-authored-skin-atlas01-pending-review",
+      "event_type": "director_review_outcome",
+      "experiment_id": "SERIES01-LIKENESS-ASSET",
+      "controlled_model_comparison": false,
+      "outcome": "METHOD_SWITCH_AUTHORIZED_ATLAS01_REVIEW_PENDING",
+      "observation": "Director authorized coherent texture-map authoring and preserving earlier versions. One built-in imagegen edit of a native cylindrical bake produced an authored map; original central-face shader is retained and anatomy/original UVs/other objects are unchanged. Native lit/emission views support improved continuity over the rejected patch pattern. One candidate only;142 focused tests pass. Initial sandbox Blender Metal startup crash retained, retry succeeded outside sandbox. All13 prior native skin candidates preserved. Director skin acceptance, flattened export and animation remain pending. No engineering-model switch or controlled model comparison; imagegen model/usage/cost unavailable.",
+      "observed_supervisor_model": null,
+      "reasoning_effort": null,
+      "engineering_subscription_usage": null,
+      "engineering_cost_usd": null,
+      "evidence": ["docs/planning/SERIES_01_BUST_SKIN_REVIEW_04.md"]
     }
   ],
   "recording_mode": "manual_evidence_backfill_and_future_event_capture",
