@@ -1,5 +1,7 @@
 # Geometry-only neck / collarbone review
 
+**Subsequent Director decision:** candidate 04 was rejected for a persistent middle-neck bulge, especially back/three-quarter. The favorable assessment below is historical and not acceptance. See [the anatomy continuation](SERIES_01_NECK_ANATOMY_REVIEW_02.md) for diagnosis and replacement evidence.
+
 2026-09-20. Director requests anatomically natural neck and collarbone transitions before further texture or clothing work. Implementation continuation, not new canon; planning counter remains 119. Current authority: accepted face/jaw, shortened proportions, existing hair and costume unchanged. No purchases, providers, uploads or remote push.
 
 Source is `upperbody-package-36/character-upperbody.blend` beneath `.runtime/art-direction/series01-facebuilder-trial-01/`, SHA-256 `983f128f82c51efd7b2ab35e06d8c679bbc3fdd38635eabd0687ccddbda71efa`. New candidates are `neck-anatomy-build-NN/`; previous source/evidence is immutable. The handler loads the actual selected scene rather than reconstructing/re-tailoring clothing. Geometry changes only on the visible head/neck derivative. Original head, all other mesh/curve geometry/materials/render visibility, derivative UVs/materials and protected face positions remain checked. No intended Z edits: final maximum floating-point Z change is 1.19e-7 scene units, below the 1e-6 verification tolerance, preserving vertical proportions.

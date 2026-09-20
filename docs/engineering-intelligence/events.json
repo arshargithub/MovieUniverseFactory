@@ -791,6 +791,22 @@
         "docs/planning/DEMONSTRATOR_01_LEARNINGS.md",
         "docs/planning/DEMONSTRATOR_01_CLOSURE_AND_REUSE_SPEC.md"
       ]
+    },
+    {
+      "event_id": "series01-neck-anatomy04-director-rejected",
+      "event_type": "director_review_outcome",
+      "experiment_id": "SERIES01-LIKENESS-ASSET",
+      "controlled_model_comparison": false,
+      "outcome": "DIRECTOR_REJECTED_DESPITE_TECHNICAL_PASSES",
+      "observation": "Director rejected candidate 04's persistent middle-neck bulge after the assistant described improvement and reported 116 tests. Follow-up cross-sections confirm rear-oblique/side growth followed by narrowing. Template inspection finds cleaner original fitted neck anatomy; subsequent correction reuses it rather than repeatedly smoothing the replacement. Candidate 07 remains pending Director review. No model switch occurred or model superiority was established.",
+      "observed_supervisor_model": null,
+      "reasoning_effort": null,
+      "engineering_subscription_usage": null,
+      "engineering_cost_usd": null,
+      "evidence": [
+        "docs/planning/SERIES_01_NECK_ANATOMY_REVIEW.md",
+        "docs/planning/SERIES_01_NECK_ANATOMY_REVIEW_02.md"
+      ]
     }
   ],
   "recording_mode": "manual_evidence_backfill_and_future_event_capture",
