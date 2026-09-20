@@ -4,6 +4,8 @@
 
 ## Current disposition — free only
 
+**Acquired follow-up:** Director supplied the lam_m_zack `hijab.glb`; embedded CC BY 4.0 attribution, topology and two native fits are now documented in [the donor result](SERIES_01_HIJAB_DONOR_RESULT.md). It is a usable donor, not an accepted costume. This supersedes the not-downloaded status for that candidate only.
+
 Director subsequently confirmed that Tripo requires a subscription to export this candidate and explicitly does not want to pay for assets now. **Exclude it from acquisition; no subscription, purchase or paid generation.** Its screenshot remains useful visual research. The earlier request below to inspect its export panel is superseded; do not ask the Director to repeat that step.
 
 The additional search covered 24 text queries: free/CC0 shawls and headscarves, MakeHuman clothing, BlendSwap garments, OpenGameArt, whole female characters, nun/wimple geometry donors, Gumroad/itch.io, individual creator/license lookups, and Blender's native cloth tools. No new donor was downloaded or mesh-inspected. Several sources were only available as indexed primary listing text; direct Sketchfab opens returned 403. Previously reported browser policy-verification denials remain unresolved and were not bypassed. A search result is not a verified free export.
