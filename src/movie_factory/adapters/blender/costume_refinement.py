@@ -1,4 +1,4 @@
-"""Reviewed, fixed reference-fit helpers for upperbody variants 16–32.
+"""Reviewed, fixed reference-fit helpers for upperbody variants 16–36.
 
 Not an arbitrary-code operation or dynamic clothing/rig qualification.
 """
@@ -27,6 +27,9 @@ def neck_point(x,y,z,variant=16):
         if b[0]<=z<=a[0]:
             t=(a[0]-z)/(a[0]-b[0]);rx=a[1]*(1-t)+b[1]*t;ry=a[2]*(1-t)+b[2]*t;break
     else:rx,ry=sections[-1][1:]
+    if variant>=36:
+        from neck_drape_refinement import neck_section
+        rx,ry=neck_section(z,sections)
     xx=rx*math.sin(angle);yy=(.10 if variant>=24 else .22)+ry*math.cos(angle)
     front=max(0.,-math.cos(angle))**2
     # Sternocleidomastoid approaches the central sternum, collarbones travel
@@ -34,7 +37,7 @@ def neck_point(x,y,z,variant=16):
     tendon=.15+.36*smooth((z+1.85)/.95)
     yy-=.070*math.exp(-((abs(xx)-tendon)/.085)**2)*math.exp(-((z+1.37)/.55)**2)*front
     collar=-1.88+.105*abs(xx)-.035*math.sin(abs(xx)*3)
-    yy-=(.072 if variant>=23 else .095)*math.exp(-((z-collar)/(.085 if variant>=23 else .065))**2)*smooth((abs(xx)-.10)/.20)*front
+    yy-=(.060 if variant>=36 else .072 if variant>=23 else .095)*math.exp(-((z-collar)/(.11 if variant>=36 else .085 if variant>=23 else .065))**2)*smooth((abs(xx)-.10)/.20)*front
     yy+=.060*math.exp(-(xx/.15)**2-((z+1.84)/.13)**2)*front
     yy+=.027*math.exp(-((abs(xx)-.70)/.40)**2-((z+1.67)/.12)**2)*front
     return (x*(1-weight)+xx*weight,y*(1-weight)+yy*weight,z)

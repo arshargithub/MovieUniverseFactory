@@ -10,5 +10,5 @@ def test_face_region_excludes_neck():
 
 def test_shape_and_variant_guards():
     with pytest.raises(ValueError):differences(np.zeros((3,3)),np.zeros((3,3)))
-    for variant in (True,0,36,'../'):
+    for variant in (True,0,37,'../'):
         with pytest.raises(ValueError):measure(variant)

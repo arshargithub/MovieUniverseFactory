@@ -17,6 +17,25 @@ def monotone_hermite(a,b,da,db,t,length):
     return (2*t**3-3*t*t+1)*a+(t**3-2*t*t+t)*ma+(-2*t**3+3*t*t)*b+(t**3-t*t)*mb
 
 
+def neck_section(z,sections):
+    """C1 monotone radii replace visibly kinked piecewise-linear sections."""
+    depths=[-s[0] for s in sections];depth=-z
+    for i in range(len(sections)-1):
+        if depths[i]<=depth<=depths[i+1]:break
+    else:return tuple(sections[0][1:] if depth<depths[0] else sections[-1][1:])
+    h=depths[i+1]-depths[i];t=(depth-depths[i])/h;result=[]
+    for c in (1,2):
+        slopes=[(b[c]-a[c])/(db-da) for a,b,da,db in zip(sections,sections[1:],depths,depths[1:])]
+        def tangent(k):
+            if k==0:return slopes[0]
+            if k==len(sections)-1:return slopes[-1]
+            left,right=slopes[k-1],slopes[k]
+            if left*right<=0:return 0.
+            return 2*left*right/(left+right)
+        result.append(monotone_hermite(sections[i][c],sections[i+1][c],tangent(i),tangent(i+1),t,h))
+    return tuple(result)
+
+
 def repair_neck_geometry():
     import bpy
     from mathutils import Vector
