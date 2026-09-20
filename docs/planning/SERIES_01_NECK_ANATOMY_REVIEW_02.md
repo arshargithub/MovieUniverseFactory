@@ -1,5 +1,7 @@
 # Neck anatomy continuation: remove the middle swell
 
+**Superseded assessment:** the Director subsequently rejected 07 for remaining neck-to-shoulder swelling and lost throat/collarbone definition. See [continuation 03](SERIES_01_NECK_ANATOMY_REVIEW_03.md) for the current review pointer. The measurements and renders below remain historical evidence, not acceptance.
+
 2026-09-20. Director rejects anatomy candidate 04: the middle-neck bulge remains visible, particularly from back and three-quarter. This supersedes the prior assistant's favorable assessment, not the preserved evidence. Continue until a materially better all-angle clay result; no texture/clothing edits. Face/jaw and shortened vertical proportions remain locked. Planning counter 119 unchanged.
 
 Activity `neck-anatomy-2`: prospective forecast 30 minutes / 100 MB, reassess at 20 minutes and three candidates per hypothesis. No paid calls, purchases, uploads, model switch or remote push. Earlier work remains in its separate activity. Native jobs serial. Model/effort/tokens unknown.

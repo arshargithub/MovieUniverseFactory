@@ -807,6 +807,22 @@
         "docs/planning/SERIES_01_NECK_ANATOMY_REVIEW.md",
         "docs/planning/SERIES_01_NECK_ANATOMY_REVIEW_02.md"
       ]
+    },
+    {
+      "event_id": "series01-neck-anatomy07-director-rejected",
+      "event_type": "director_review_outcome",
+      "experiment_id": "SERIES01-LIKENESS-ASSET",
+      "controlled_model_comparison": false,
+      "outcome": "DIRECTOR_REJECTED_RESIDUAL_SHOULDER_SWELL_AND_LOST_DEFINITION",
+      "observation": "Director rejected 07 despite technical passes and the earlier assistant assessment. Continuation separates shoulder form, anatomical landmarks and mesh sampling. Candidate 08 is internally rejected for a new join ridge; 09-11 expose local cut-triangle and directional-light rippling issues. Attempts 12-14 fail before saving native outputs during local subdivision implementation. Candidate 15 passes fresh-open facial coordinate/connectivity/UV protection, mesh checks and 124 tests, and is the preferred static review after five soft-light and eight directional-light views. Director acceptance remains pending. No model switch or controlled model comparison occurred.",
+      "observed_supervisor_model": null,
+      "reasoning_effort": null,
+      "engineering_subscription_usage": null,
+      "engineering_cost_usd": null,
+      "evidence": [
+        "docs/planning/SERIES_01_NECK_ANATOMY_REVIEW_02.md",
+        "docs/planning/SERIES_01_NECK_ANATOMY_REVIEW_03.md"
+      ]
     }
   ],
   "recording_mode": "manual_evidence_backfill_and_future_event_capture",
