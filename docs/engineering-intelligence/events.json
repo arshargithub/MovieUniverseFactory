@@ -914,6 +914,19 @@
       "engineering_subscription_usage": null,
       "engineering_cost_usd": null,
       "evidence": ["docs/planning/SERIES_01_FACE_PERFORMANCE_READINESS.md"]
+    },
+    {
+      "event_id": "series01-restrained-facial-likeness-accepted",
+      "event_type": "director_review_outcome",
+      "experiment_id": "SERIES01-LIKENESS-ASSET",
+      "controlled_model_comparison": false,
+      "outcome": "RESTRAINED_MOVEMENT_LIKENESS_ACCEPTED_NOT_GENERAL_RIG",
+      "observation": "Director notes very subtle movements and confirms she looks like herself in the complete ten-second front/oblique preview. Preserve amplitudes and accepted facial baseline; resume hair/scarf work with tested-pose clearance. No dialogue, extreme-expression, full-rig or wardrobe-dynamics qualification. Existing build-time review-pending manifests remain immutable. No model switch or controlled comparison.",
+      "observed_supervisor_model": null,
+      "reasoning_effort": null,
+      "engineering_subscription_usage": null,
+      "engineering_cost_usd": null,
+      "evidence": ["docs/planning/SERIES_01_FACE_SURFACE_INTEGRATION_01.md"]
     }
   ],
   "recording_mode": "manual_evidence_backfill_and_future_event_capture",

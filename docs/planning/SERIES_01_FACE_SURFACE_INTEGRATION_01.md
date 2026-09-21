@@ -1,5 +1,9 @@
 # Localized facial integration and acting preview
 
+## Director outcome — exchange123
+
+“yeah, movements are very subtle but yeah she does look like herself.” Accepted: recognizable likeness through this restrained ten-second performance. Keep the existing amplitudes; this is not a request for stronger expressions. Resume hair/scarf with tested-pose clearance. Dialogue, broad emotion range, full facial rig and costume dynamics remain unqualified. Earlier pending-review statements and native build-time manifests below are historical; retain them rather than rewriting immutable evidence.
+
 2026-09-21, exchange122. Director approved the localized surface/UV exception proposed in [diagnostic01](SERIES_01_FACE_PERFORMANCE_DIAGNOSTIC_01.md). [Motion brief and authorization amendment](SERIES_01_FACE_PERFORMANCE_MOTION_BRIEF.md) remain the contract. **Bounded implementation complete; YELLOW pending Director playback/likeness review.** No production-quality facial-rig or dialogue qualification is claimed.
 
 ## What changed

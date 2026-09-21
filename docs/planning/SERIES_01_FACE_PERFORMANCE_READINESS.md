@@ -1,5 +1,9 @@
 # Face performance readiness
 
+## Current Director outcome — exchange123, 2026-09-21
+
+Director confirms likeness survives the restrained movement in the complete two-view preview. Accept this bounded baseline, retain expression amplitudes and resume hair/scarf clearance/refinement. Not approval of dialogue, exaggerated expressions or a general production rig. The exchange122 pending-review status below is historical. [Outcome and evidence](SERIES_01_FACE_SURFACE_INTEGRATION_01.md).
+
 ## Current status — exchange122, 2026-09-21
 
 Localized eye/lid/mouth work authorized and implemented on a derivative. Two candidates; full10second front/oblique acting preview complete, controls and exact neutral return verified after reopening without FaceBuilder loaded. **YELLOW pending Director playback/likeness review**, not yet production-rig qualification. Original accepted face remains unchanged. [Integration result, preview/native paths and limits](SERIES_01_FACE_SURFACE_INTEGRATION_01.md). The exchange121 structural decision below is now resolved; no further go-ahead is needed for routine steps within the approved work.
