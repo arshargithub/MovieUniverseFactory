@@ -1,4 +1,14 @@
-# Face performance readiness — recommendation, not implementation approval
+# Face performance readiness
+
+## Current status — exchange121, 2026-09-21
+
+Director authorized the bounded pass (“ok go ahead”). **Diagnostic complete, YELLOW; acting readiness not achieved.** [Motion brief](SERIES_01_FACE_PERFORMANCE_MOTION_BRIEF.md) preceded edits. Accepted atlas02 remains unchanged; only a separate derivative was written. Detailed [diagnostic/handoff](SERIES_01_FACE_PERFORMANCE_DIAGNOSTIC_01.md).
+
+Recovered51 FaceBuilder expressions and transferred19 minimum controls using unique original UV identities plus adjacency verification (16938/16938 upper-head vertices, zero mismatched edges). Stable rest-position shader sampling preserves neutral appearance. Fresh reopen verifies accepted geometry/original UVs/transforms and other objects; no paid calls. Blink clay closes, but projected eye texture stretches onto the lids. No independent aimable eyeballs exist; mouth opening reveals unsuitable interior and a lower-jaw/neck transition artifact. These are not acceptable acting results.
+
+Material scope decision: recommend a tightly localized eye/lid and mouth-interior adaptation on the derivative, permitting changes only to those internal surfaces/UV assignments plus a jaw/neck deformation corrective. Keep accepted neutral external face and original atlas02 immutable. This is not a request to redesign her likeness or build a general-purpose rig. No full acting clip or costume continuation until that integration passes.
+
+## Historical recommendation at CP-012
 
 Exchange120 / CP-012, 2026-09-20. Director accepts atlas02 skin as good enough and asks what facial groundwork should precede further dressing. **Static skin work is closed at the accepted version.** Do not continue cosmetic iterations without a concrete performance defect or new Director request.
 
@@ -12,7 +22,7 @@ Current atlas shader samples Object coordinates. Inference from implementation: 
 
 ## Recommended bounded next deliverable
 
-One **minimum facial-performance readiness pass**, within existing A5/E1; not a new generic experiment or another beauty pass. No implementation, image call, subscription or purchase authorized by this recommendation. Complete the existing motion-design brief before performance changes.
+One **minimum facial-performance readiness pass**, within existing A5/E1; not a new generic experiment or another beauty pass. At CP-012 no implementation, image call, subscription or purchase was authorized by the recommendation; exchange121 subsequently authorized the bounded pass. Complete the existing motion-design brief before performance changes.
 
 1. Freeze accepted neutral geometry/look as immutable reference. Inspect eyelid/lip topology and original FaceBuilder compatibility before broad retopology. Modified vertex count rules out blindly copying indexed shape-key arrays from the original head.
 2. Stabilize material attachment and verify neutral appearance, skin/UV persistence and reopen behavior. Keep paint marks following deforming skin rather than fixed object-space positions.

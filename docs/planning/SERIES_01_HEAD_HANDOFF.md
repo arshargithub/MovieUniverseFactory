@@ -1,5 +1,7 @@
 # Pashtun head: cleaned static asset handoff
 
+**Current facial-performance derivative, exchange121:** [diagnostic01](SERIES_01_FACE_PERFORMANCE_DIAGNOSTIC_01.md) adds19 reusable controls and stable rest-coordinate skin attachment on `face-performance-transfer-02/face-readiness.blend`, not on the accepted atlas02. Fresh-open neutral preservation passes; acting readiness remains YELLOW because eyes/lid texture, mouth interior and jaw/neck deformation need localized integration. No production animation or new appearance approval. Accepted static bust remains `bust-atlas-build-02/character-upperbody.blend`.
+
 2026-09-19. Implementation result, not a new creative specification or approval. Planning exchange remains 119. Original portrait pair B and provisional v02 facial acceptance remain authoritative.
 
 ## Disposition
