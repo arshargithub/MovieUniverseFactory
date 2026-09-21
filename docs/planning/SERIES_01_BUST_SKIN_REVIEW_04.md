@@ -1,5 +1,7 @@
 # Authored skin-map trial — candidate01 for Director review
 
+Follow-up: Director found01 very close/potentially usable and requested a cheek-led continuity refinement. [Review05 / atlas02](SERIES_01_BUST_SKIN_REVIEW_05.md) records that separate candidate.01 remains unchanged as the near-approved fallback; its historical pending status below is not a rejection.
+
 2026-09-20. The Director approved switching from tiny-patch/procedural infill to coherent texture authoring and explicitly requested preservation of earlier versions. Planning counter remains119: this is an implementation continuation, not a new planning exchange.
 
 ## Current disposition

@@ -888,6 +888,19 @@
       "engineering_subscription_usage": null,
       "engineering_cost_usd": null,
       "evidence": ["docs/planning/SERIES_01_BUST_SKIN_REVIEW_04.md"]
+    },
+    {
+      "event_id": "series01-atlas01-near-approved-cheek-led-atlas02",
+      "event_type": "director_review_outcome",
+      "experiment_id": "SERIES01-LIKENESS-ASSET",
+      "controlled_model_comparison": false,
+      "outcome": "ATLAS01_VERY_CLOSE_ATLAS02_REVIEW_PENDING",
+      "observation": "Director found atlas01 very close/potentially usable, but requested extending cheek texture character into surrounding skin. One targeted built-in image edit and one native candidate02, no mask contraction or geometry changes. Same original-face contribution and native mapping; broader softer surrounding marks.144 focused tests and fresh-process reopens pass. Prior01 preserved as fallback, not rejected. No model switch or controlled benchmark. Imagegen and engineering usage/cost unavailable.",
+      "observed_supervisor_model": null,
+      "reasoning_effort": null,
+      "engineering_subscription_usage": null,
+      "engineering_cost_usd": null,
+      "evidence": ["docs/planning/SERIES_01_BUST_SKIN_REVIEW_05.md"]
     }
   ],
   "recording_mode": "manual_evidence_backfill_and_future_event_capture",
