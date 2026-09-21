@@ -1,6 +1,7 @@
 # Movie Factory implementation instructions
 
 - Director working preference: continue through the agreed plan without yielding for routine milestones or reversible implementation choices. Use commentary for progress; pause only for material creative/plan changes, new authorization, genuine blockers, or completion of the agreed scope. A local commit or technical milestone alone is not a reason to ask for another go-ahead.
+- Anchor every evaluation in the applicable Director-approved references and decisions, identifying them explicitly. Separate reference fidelity and creative acceptance from technical validation. Rejected candidates are diagnostic history, never replacement acceptance targets. For this character, the approved frontal-v02-individualized.png and portrait-v07-individualized.png pair remains the illustrated identity and hair-look authority.
 
 - For ongoing series/release planning, read `docs/planning/RELEASE_01_PLAN.md` and `RELEASE_01_STATUS.json`; preserve accepted decisions and update the substantive-exchange counter. Provide the specified checkpoint every ten substantive planning exchanges. Do not increment it for tools, automatic continuations or unrelated implementation tasks.
 - Before new product/architecture/capability/UX specifications, consult `docs/knowledge/README.md` and the historical decision register; review relevant original context and record adoption/deviation rather than silently replacing earlier decisions. Candidate extraction is not approval.

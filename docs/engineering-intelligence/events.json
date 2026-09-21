@@ -953,6 +953,19 @@
       "engineering_subscription_usage": null,
       "engineering_cost_usd": null,
       "evidence": ["docs/planning/SERIES_01_HAIR_ANATOMY_REVIEW_01.md"]
+    },
+    {
+      "event_id": "series01-illustrated-hair-section-internal-failure",
+      "event_type": "engineering_review_outcome",
+      "experiment_id": "SERIES01-LIKENESS-ASSET",
+      "controlled_model_comparison": false,
+      "outcome": "FOUR_LOCAL_PREVIEWS_INTERNALLY_REJECTED_AGAINST_APPROVED_PAIR_B",
+      "observation": "Director explicitly requires every evaluation to use approved references. Three shell/projection previews and one explicitly bounded rounded-loft correction preserve non-hair state but fail the illustrated hair reference: cap-like volume, stretched highlights and ribbon-like disconnected temple locks. Assistant rejects them before Director review; no new native promoted. Recommend shape-first interlocking volume proof before attaching illustrated detail. Initial three-variant forecast exceeded by one, documented at reassessment. No model switch, paid calls or new appearance approval.",
+      "observed_supervisor_model": null,
+      "reasoning_effort": null,
+      "engineering_subscription_usage": null,
+      "engineering_cost_usd": null,
+      "evidence": ["docs/planning/SERIES_01_ILLUSTRATED_HAIR_SECTION_01.md"]
     }
   ],
   "recording_mode": "manual_evidence_backfill_and_future_event_capture",
