@@ -940,6 +940,19 @@
       "engineering_subscription_usage": null,
       "engineering_cost_usd": null,
       "evidence": ["docs/planning/SERIES_01_HAIR_ANATOMY_REVIEW_01.md"]
+    },
+    {
+      "event_id": "series01-hair-anatomy10-art-direction-rejected",
+      "event_type": "director_review_outcome",
+      "experiment_id": "SERIES01-LIKENESS-ASSET",
+      "controlled_model_comparison": false,
+      "outcome": "HAIR10_REJECTED_COMPETING_LAYERS_AND_LOST_ILLUSTRATED_CHARACTER",
+      "observation": "Director rejects competing original painted and new modeled hair and the new hair's lifeless appearance. Original pair-B illustrated hair is explicitly the look to achieve. Technical improvements and stronger multi-angle checks failed to establish reference fidelity; crown uniformity understated the mismatch. No neck approval inferred. Reinspection and proposed local art-direction proof only; no asset edits or model switch.",
+      "observed_supervisor_model": null,
+      "reasoning_effort": null,
+      "engineering_subscription_usage": null,
+      "engineering_cost_usd": null,
+      "evidence": ["docs/planning/SERIES_01_HAIR_ANATOMY_REVIEW_01.md"]
     }
   ],
   "recording_mode": "manual_evidence_backfill_and_future_event_capture",

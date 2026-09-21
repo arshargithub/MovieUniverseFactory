@@ -1,5 +1,17 @@
 # Hair transitions and neck/clavicle definition
 
+## Superseding Director review — exchange125
+
+**Candidate10 hair is Director-rejected, not merely awaiting polish.** Director sees competing original image-derived hair and new modeled hair, and finds the new hair lifeless compared with the original's luscious volume and character. The original pair-B illustrated hair is the explicit appearance authority. “Painted” describes its current image-texture representation, not an inferior look to replace. No new acceptance or rejection of the neck is inferred from this hair feedback.
+
+Reinspection of both approved portraits and candidate10's temple close-up confirms the mismatch: a high-contrast illustrated underlayer remains visibly distinct from the finer, more regularly striated modeled overlay. Crown/part uniformity is only one symptom. Missing qualities include broad overlapping locks with varied thickness/curvature, lifted roots, deliberately uneven face-framing flow, selective broad warm highlights and deep separations, and lively silhouette/strand breaks. More strand count, length or random waviness does not by itself reproduce those qualities. Earlier technical preservation results remain valid but do not establish appearance success.
+
+Recommended correction, **not implemented in this review**: stop polishing the current fine-strand appearance as the default; build a small reference-matched forehead-to-temple/ear section around broad illustrated hair volumes and coherent painted shading. Compare at front and both obliques before extending to the whole head. Use one consistent visible hair language; do not solve the mismatch by simply concealing the desired original under an unlike overlay. Preserve original images/native sources and accepted face/skin/controls. Any projected image layer must serve the unified result, not remain visibly competing. No new asset route, purchase, full rebuild or animation qualification is authorized by this diagnostic exchange.
+
+Process correction: the previous review was stronger at finding gaps and preserving geometry than at judging fidelity to the intended art direction. Before the next Director review, judge against the actual portraits for volume, lock hierarchy, highlight shapes, root character and coherent material—not only whether the new version improves upon the previous failed render.
+
+The implementation/results below are retained history; their “current candidate” and YELLOW comparison language does **not** supersede this rejection.
+
 2026-09-21, exchange124. Director rejects dressing-fit04's wig-like hair, particularly above/around the ears and between temple and cheek. Hair is too groomed and possibly too short against the approved pair-B illustrations. Director also requests stronger neck/collarbone definition, authorizing diagnosis at both texture and model level. Prior facial identity, face proportions, skin character and restrained acting amplitude remain accepted; this is not permission to redesign the face.
 
 ## Review contract before presenting to Director
