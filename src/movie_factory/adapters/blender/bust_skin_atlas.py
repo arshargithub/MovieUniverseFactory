@@ -179,6 +179,17 @@ def run(job):
     result['materials']=[material_record(m) for m in bpy.data.objects['MF_continuous_head_neck'].data.materials]
     result['images']=[{'name':im.name,'packed':bool(im.packed_file or im.packed_files),'size':list(im.size)}
                       for im in bpy.data.images if im.source=='FILE']
+    if job['operation']=='verify':
+        # Read-only animation-readiness inventory; never creates shapes or rigs.
+        result['animation_inventory']=[{
+            'name':o.name,'type':o.type,'hidden_render':o.hide_render,
+            'vertices':len(o.data.vertices) if o.type=='MESH' else None,
+            'shape_keys':list(o.data.shape_keys.key_blocks.keys()) if o.type=='MESH' and o.data.shape_keys else [],
+            'modifiers':[(m.name,m.type) for m in o.modifiers],
+            'vertex_groups':list(o.vertex_groups.keys()),
+            'animation_data_present':bool(o.animation_data),
+            'parent':o.parent.name if o.parent else None
+        } for o in bpy.context.scene.objects if o.type in ('MESH','CURVE','ARMATURE')]
     assert all(im['packed'] for im in result['images']), 'Unpacked image dependency'
     if job['operation'] not in ('prepare','build'):
         assert json.loads(json.dumps(result['materials']))==record['materials']
