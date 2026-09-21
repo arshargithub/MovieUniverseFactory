@@ -16,6 +16,8 @@ SOURCE = BASE / 'posterior-neck-build-16/character-upperbody.blend'
 SOURCE_SHA = '76b2a6c7f4f1c2288ed746ebb3cf146b4146650058e263c6dd16b6f9225ef080'
 TEXTURE = BASE / 'bust-atlas-input-01/skin-authored.png'
 TEXTURE_SHA = 'a5c85d73f42f135af5980950967eed5549ca365e66c1d286280d26ebd2eb709a'
+CHEEK_TEXTURE = BASE / 'bust-atlas-input-02/skin-authored.png'
+CHEEK_TEXTURE_SHA = 'b1800a97fcd7e6bbe711c5f01c934ebe616d631d5e17d45eae32b67366e7c60d'
 ZMIN, ZMAX = -2.8, 1.65
 
 
@@ -49,14 +51,17 @@ def validate(job):
         raise ValueError('Exact operation/candidate keys required')
     if job['operation'] not in ('prepare', 'build', 'portraits', 'emission', 'verify'):
         raise ValueError('Unsupported operation')
-    if type(job['candidate']) is not int or job['candidate'] != 1:
-        raise ValueError('Only candidate01 authorized')
+    if type(job['candidate']) is not int or job['candidate'] not in (1,2):
+        raise ValueError('Only candidates01/02 authorized')
+    if job['operation']=='prepare' and job['candidate']!=1:
+        raise ValueError('Only reference01 preparation authorized')
     if SOURCE.is_symlink() or digest(SOURCE) != SOURCE_SHA:
         raise ValueError('Pinned anatomy changed')
     if job['operation'] != 'prepare':
-        if TEXTURE_SHA is None or TEXTURE.is_symlink() or digest(TEXTURE) != TEXTURE_SHA:
+        texture,sha = texture_source(job['candidate'])
+        if sha is None or texture.is_symlink() or digest(texture) != sha:
             raise ValueError('Authored texture not pinned')
-    out = BASE / f'bust-atlas-{job["operation"]}-01'
+    out = BASE / f'bust-atlas-{job["operation"]}-{job["candidate"]:02}'
     if out.exists() or shutil.disk_usage(BASE).free < 5_000_000_000:
         raise ValueError('Existing output or disk low')
     return out
@@ -105,13 +110,20 @@ def prepare(out):
             'temporary_uv_removed': True, 'source_material': 'region03 diagnostic, not accepted skin'}
 
 
-def apply_texture():
+def texture_source(candidate):
+    if candidate==1:return TEXTURE,TEXTURE_SHA
+    if candidate==2:return CHEEK_TEXTURE,CHEEK_TEXTURE_SHA
+    raise ValueError('Unsupported texture candidate')
+
+
+def apply_texture(candidate=1):
     import bpy
     ob = bpy.data.objects['MF_continuous_head_neck']
     mat = ob.data.materials[0].copy(); ob.data.materials[0] = mat
-    mat.name = 'MF_authored_skin_atlas_01'
+    mat.name = f'MF_authored_skin_atlas_{candidate:02}'
     n, links = mat.node_tree.nodes, mat.node_tree.links
-    im = bpy.data.images.load(str(TEXTURE), check_existing=False)
+    texture,texture_sha=texture_source(candidate)
+    im = bpy.data.images.load(str(texture), check_existing=False)
     if min(im.size) < 1024 or max(im.size) > 4096:
         raise ValueError('Texture resolution out of bounds')
     im.colorspace_settings.name = 'sRGB'; im.pack()
@@ -134,7 +146,8 @@ def apply_texture():
     links.new(tex.outputs['Color'],mix.inputs[1])
     links.new(n['Mix (Legacy).001'].outputs['Color'],mix.inputs[2])
     links.new(mix.outputs[0],n['Principled BSDF'].inputs['Base Color'])
-    return {'texture_sha256':TEXTURE_SHA,'texture_size':list(im.size),'original_face_weight_range':[min(d.value for d in a.data),max(d.value for d in a.data)],
+    return {'texture_sha256':texture_sha,'texture_size':list(im.size),'original_face_weight_range':[min(d.value for d in a.data),max(d.value for d in a.data)],
+            'original_face_mask_sha256':hashlib.sha256(json.dumps([d.value for d in a.data]).encode()).hexdigest(),
             'geometry_changed':False,'uv_channels_changed':False,
             'limitation':'Generated outside-face color requires native review; original face has illustrated baked-in tone, not calibrated albedo.'}
 
@@ -151,12 +164,12 @@ def run(job):
     if job['operation']=='prepare':
         result['edit']=prepare(out)
     elif job['operation']=='build':
-        result['edit']=apply_texture()
+        result['edit']=apply_texture(job['candidate'])
         assert protected_state()==before
         native=out/'character-upperbody.blend';bpy.ops.wm.save_as_mainfile(filepath=str(native))
         result['native_sha256']=digest(native)
     else:
-        folder=BASE/'bust-atlas-build-01';native=folder/'character-upperbody.blend'
+        folder=BASE/f'bust-atlas-build-{job["candidate"]:02}';native=folder/'character-upperbody.blend'
         record=json.loads((folder/'result.json').read_text())
         if native.is_symlink() or digest(native)!=record['native_sha256']:raise ValueError('Candidate changed')
         bpy.ops.wm.open_mainfile(filepath=str(native),load_ui=False,use_scripts=False)
