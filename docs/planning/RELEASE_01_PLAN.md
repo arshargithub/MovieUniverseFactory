@@ -4,6 +4,8 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+Current focus, exchange120 / CP-012: Director accepts Pashtun atlas02 static skin and stops cosmetic iteration. Read-only final-bust audit confirms facial performance is not yet enabled. Recommend one bounded facial-readiness pass (stable skin mapping, eyes/blink/gaze, minimum expressions and neutral-return proof), then hair/scarf and actual-shot integration; no implementation authorization from the advice request. [Recommendation and source continuity](SERIES_01_FACE_PERFORMANCE_READINESS.md). Overall gate readiness remains1/25, not an effort estimate. Checkpoint push due; next checkpoint130.
+
 Current-state override, exchange 62: the earlier pause/open-status snapshots below are historical. Trailer working beats are accepted and development is active. Complete initial episodes will be native vertical 9:16 releases on TikTok, Instagram Reels and YouTube Shorts, working range 90–180 seconds; trailer approximately 60–75 seconds. Primarily English, natural character-specific accents, English captions and culturally appropriate expressions; consequential action and warmth without graphic gore. Final delivery checks, scripts and visual proof remain open. No spend or publication authorization inferred. Checkpoint 60 was recorded at exchange 61 and pushed at `09f48d1`; next checkpoint/push is 70.
 
 Deliver a coherent series trailer plus episodes 1 and 2, approved by the Director and released through the chosen channels. Establish enough reusable universe, creative, production and strategy state that later episodes and the standalone Factory can continue without reconstructing the project from conversations.

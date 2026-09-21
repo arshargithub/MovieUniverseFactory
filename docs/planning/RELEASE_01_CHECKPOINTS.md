@@ -1,5 +1,15 @@
 # Release 01 — checkpoints
 
+## CP-012 — exchange120, 2026-09-20
+
+- Current item A5/E1 preparation within B4: Pashtun neutral likeness, corrected neck/shoulder anatomy and atlas02 skin are now Director-accepted within their static scope. Cosmetic skin iteration stops. Numerous implementation/review turns between119 and120 did not increment the planning counter; this next-scope discussion does.
+- Native audit: visible bust has no shape keys/rig; hidden original only has an old cheek adjustment, not an expression library. Recommended next bounded deliverable: stable material attachment plus eye/blink/gaze and a small facial-performance proof, before final hair/scarf. No animation implementation or paid call authorized by this advice request. Clothing, facial movement, body/horse integration and final illustrated shot remain unfinished.
+- Current A5/B4 gates remain0/2 complete. Overall release acceptance1/25 = **4%**; creative foundation1/5 =20%, other streams0/4 each. This coarse checklist does not measure effort, artistic progress or time remaining. Static skin acceptance is real progress inside a larger gate, not a new release gate. No defensible percentage for the remaining rig work before topology diagnosis.
+- Overall remainder: other leads/ensemble look, world and character/origin details, episode1/2 scripts, production-ready trailer breakdown, distribution/rights/measurement, original-decision reconciliation and Factory handover, actual-series acting/riding/sound/music/editing proofs, authorized production/release. Character brief counts unchanged.
+- Original question16 character-layer ownership re-read with actual Director approval; retained/adopted. Capture gaps and broader source reconciliation remain as documented; no lossless-memory claim.
+- Process: reuse before custom rigging;20-net-minute feasibility diagnosis proposed, no new subscription or tool tournament. Recent two authored skin passes captured11.55 and6.67minutes respectively, excluding unmeasured initial inspection; not total character effort or token/cash cost. Both used one built-in image edit each; usage/cost unknown. No new image/video call this exchange.
+- Durability: fresh origin fetch shows no divergence and81 prior outgoing task-related commits, design and implementation separate. Scheduled checkpoint push will include those commits plus this scoped audit/acceptance record; it is not design-only. No native/media/private snapshot/.env/.DS_Store included. Those assets remain SSD-local, not backed up by Git. Push receipt recorded separately once verified. Next checkpoint130.
+
 ## CP-011 — exchange 110, 2026-09-19
 
 Push receipt: design batch through `70841f5d45cfc2a9291d12e0512a045254c4d48a` pushed to main and verified against `git ls-remote`. No implementation/native media/private source snapshots included; preceding push-due language below is historical pre-push state.

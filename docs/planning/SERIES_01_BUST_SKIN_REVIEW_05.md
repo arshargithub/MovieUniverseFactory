@@ -1,5 +1,7 @@
 # Cheek-led skin refinement — atlas02
 
+**Director accepted atlas02 static skin at exchange120. Stop cosmetic iteration.** See [facial-performance readiness recommendation](SERIES_01_FACE_PERFORMANCE_READINESS.md) for the distinct, unimplemented next scope. Creation-time pending statements below remain historical evidence, not current acceptance status.
+
 2026-09-20. Director described atlas01 as very close and potentially usable, but requested extending/blending the cheek character outward rather than changing the cheeks to match the surrounding skin. This is not an outright rejection of01 or formal approval of02. Planning counter119 unchanged.
 
 **YELLOW: atlas02 is the current internal review candidate; atlas01 remains the near-approved fallback.** One targeted built-in imagegen edit, one native candidate. No additional variants, geometry edits, hair work or costume changes.
