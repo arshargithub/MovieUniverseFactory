@@ -2,6 +2,8 @@
 
 ## CP-012 — exchange120, 2026-09-20
 
+Push receipt: batch through `7cefef26ea30b207aa80ba298126613b4b84f91d` successfully pushed to main and independently verified with `git ls-remote`. Both design and implementation are present as separate scoped commits; no native media or unrelated files included. Pre-push wording below is historical.
+
 - Current item A5/E1 preparation within B4: Pashtun neutral likeness, corrected neck/shoulder anatomy and atlas02 skin are now Director-accepted within their static scope. Cosmetic skin iteration stops. Numerous implementation/review turns between119 and120 did not increment the planning counter; this next-scope discussion does.
 - Native audit: visible bust has no shape keys/rig; hidden original only has an old cheek adjustment, not an expression library. Recommended next bounded deliverable: stable material attachment plus eye/blink/gaze and a small facial-performance proof, before final hair/scarf. No animation implementation or paid call authorized by this advice request. Clothing, facial movement, body/horse integration and final illustrated shot remain unfinished.
 - Current A5/B4 gates remain0/2 complete. Overall release acceptance1/25 = **4%**; creative foundation1/5 =20%, other streams0/4 each. This coarse checklist does not measure effort, artistic progress or time remaining. Static skin acceptance is real progress inside a larger gate, not a new release gate. No defensible percentage for the remaining rig work before topology diagnosis.
