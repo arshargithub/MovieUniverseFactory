@@ -1,5 +1,7 @@
 # Pashtun head: cleaned static asset handoff
 
+**Current acting review, exchange122:** [localized integration result](SERIES_01_FACE_SURFACE_INTEGRATION_01.md). Use `face-surface-motion-02/face-acting.blend` for the10second facial preview and `face-surface-build-02/face-integrated.blend` for its neutral derivative. Two independently aimable eyes, blink-linked lid skin, basic dark mouth lining and jaw/neck corrective added without changing original neutral geometry/UVs. Original accepted atlas02 remains the static authority. Complete synchronized video under `face-surface-motion-02/review/`; YELLOW pending Director acting/likeness review. No speech/full-rig qualification; no hair/scarf approval or cleanup this pass.
+
 **Current facial-performance derivative, exchange121:** [diagnostic01](SERIES_01_FACE_PERFORMANCE_DIAGNOSTIC_01.md) adds19 reusable controls and stable rest-coordinate skin attachment on `face-performance-transfer-02/face-readiness.blend`, not on the accepted atlas02. Fresh-open neutral preservation passes; acting readiness remains YELLOW because eyes/lid texture, mouth interior and jaw/neck deformation need localized integration. No production animation or new appearance approval. Accepted static bust remains `bust-atlas-build-02/character-upperbody.blend`.
 
 2026-09-19. Implementation result, not a new creative specification or approval. Planning exchange remains 119. Original portrait pair B and provisional v02 facial acceptance remain authoritative.

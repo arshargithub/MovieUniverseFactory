@@ -4,6 +4,10 @@
 
 ## Intent, references and fixed state
 
+### Exchange122 authorization amendment — 2026-09-21
+
+Director approves the localized eye/lid and mouth work. Internal eye/mouth surface topology and UVs may change on a derivative; accepted atlas02 stays immutable. External neutral silhouette, nose/brows/lip contour and surrounding face remain protected. Closed-lid skin assignment, independent eyes, basic mouth lining and jaw/neck deformation correction are in scope. Reuse the timing/intent above; no new acting canon. First20-minute feasibility reassessment is internal unless a material blocker appears; continue through reversible implementation and verification without asking again at routine milestones. Maximum three surface hypotheses before reassessment,60-minute overall checkpoint, no paid calls, forecast250MB including native/stills/low-resolution playback. Numeric mesh preservation excludes only the explicitly enumerated internal patches; record affected indices and compare retained vertices/UVs. Eye look initially ±5degrees; jaw-open diagnostic0.2 of native shape. These are preview limits, not physical qualification thresholds. Closed mouth and blink at0,0.5,1 plus oblique checks precede complete playback.
+
 Reuse accepted `bust-atlas-build-02/character-upperbody.blend` (SHA256 in readiness recommendation), original FaceBuilder head and approved portrait pair B. Her self-possession, not anger, must carry the performance. Exact accepted neutral vertex coordinates and existing UVs are protected; new controls/maps live only in a derivative. Neck/shoulders remain fixed for this isolated facial test, intentionally not a complete body performance. Hair/scarf hidden in diagnostic views; their eventual clearance remains unproven.
 
 Timing below is an **authored proposal**, not measured human footage. No reference clip has been reviewed. Full proof is conditional on the topology/reuse diagnostic succeeding.

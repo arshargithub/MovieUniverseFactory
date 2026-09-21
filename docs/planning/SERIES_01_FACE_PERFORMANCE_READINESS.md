@@ -1,6 +1,10 @@
 # Face performance readiness
 
-## Current status — exchange121, 2026-09-21
+## Current status — exchange122, 2026-09-21
+
+Localized eye/lid/mouth work authorized and implemented on a derivative. Two candidates; full10second front/oblique acting preview complete, controls and exact neutral return verified after reopening without FaceBuilder loaded. **YELLOW pending Director playback/likeness review**, not yet production-rig qualification. Original accepted face remains unchanged. [Integration result, preview/native paths and limits](SERIES_01_FACE_SURFACE_INTEGRATION_01.md). The exchange121 structural decision below is now resolved; no further go-ahead is needed for routine steps within the approved work.
+
+## Previous diagnostic — exchange121, 2026-09-21
 
 Director authorized the bounded pass (“ok go ahead”). **Diagnostic complete, YELLOW; acting readiness not achieved.** [Motion brief](SERIES_01_FACE_PERFORMANCE_MOTION_BRIEF.md) preceded edits. Accepted atlas02 remains unchanged; only a separate derivative was written. Detailed [diagnostic/handoff](SERIES_01_FACE_PERFORMANCE_DIAGNOSTIC_01.md).
 
