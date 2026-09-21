@@ -1,5 +1,7 @@
 # Dressing fit after accepted facial movement
 
+**Superseding Director review, exchange124:** hair in04 below is rejected as wig-like/over-groomed with poor temple/ear integration. Its earlier numerical checks did not establish artistic hair quality. Use [hair/anatomy review](SERIES_01_HAIR_ANATOMY_REVIEW_01.md) for the authorized repair and current candidate; keep this file as historical evidence, not approval.
+
 2026-09-21, exchange123. Director accepts recognizable likeness in the restrained facial preview: “movements are very subtle but yeah she does look like herself.” Keep its amplitudes. This authorized dressing continuation does not reopen accepted neutral anatomy/skin, widen the face, change canon, or qualify dialogue/full-body performance.
 
 ## Reference and diagnosis
