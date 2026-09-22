@@ -1,5 +1,15 @@
 # Release 01 — checkpoints
 
+## CP-013 — exchange130, 2026-09-22
+
+- Current work: A5/B4, reusable Pashtun likeness and illustrated hair. Current gates0/2 complete; overall1/25 = **4%**, creative foundation1/5 =20%, other streams0/4 each. These are accepted-deliverable counts, not artistic progress, effort or time remaining. No defensible percentage for unfinished hair.
+- Accepted since CP-012: recognizable likeness through restrained facial motion at exchange123; keep accepted amplitudes. Static skin/anatomy acceptance retained. Hair revisions are progress, not a newly accepted appearance. Technical clay checkpoints proved unhelpful to Director; textured reference-anchored comparisons now required. New renders remain clothing-free until hair review is resolved.
+- Current remainder: crown/temple/length integration and illustrated brush-flow, hair/scarf/costume agreement, then pose clearance and bounded actual-shot motion. Higher hairline03 corrects the latest forehead-placement feedback; acceptance pending. Do not restart accepted skin cosmetics or indefinitely polish unseen geometry.
+- Overall remainder: other leads/ensemble look, complete world/character/origin details and episode1/2 scripts, production-ready trailer, platform delivery/rights/audience measurement, historical-decision reconciliation and durable Factory handover, actual-series riding/acting/audio/music/editing proofs, authorized production and release. Original story and architecture decisions remain in force; no new spending or publishing authority.
+- Efficiency: preservation tests are necessary but cannot judge hair. Localize deformations, inspect front/both obliques/back together, and distinguish source-projection defects from anatomy. Reuse approved state and stop unrelated cosmetic loops. Latest continuation stays within three previews; four native jobs205.64 process-seconds and74.60MB evidence. Engineering token/cost totals remain unknown; do not infer them from plan allowance.
+- Next bounded step: judge the raised hairline and resolve the remaining hair junction against approved pair B; then resume garment/scarf integration and the already-defined controlled-shot pathway. Hair work is a production dependency, not a replacement for the trailer/two-episode deliverable.
+- Preservation: fresh origin/main fetch, no divergence;18 task-related implementation/design commits before this checkpoint record. Scheduled batch includes those plus this scoped design checkpoint, not design-only ancestry. Excludes native media, private source snapshots, credentials and unrelated `.DS_Store`. Destination `arshargithub/MovieUniverseFactory`, main. No force-push; verify remote receipt. Git is not native-media backup. Next checkpoint/push140.
+
 ## CP-012 — exchange120, 2026-09-20
 
 Push receipt: batch through `7cefef26ea30b207aa80ba298126613b4b84f91d` successfully pushed to main and independently verified with `git ls-remote`. Both design and implementation are present as separate scoped commits; no native media or unrelated files included. Pre-push wording below is historical.
