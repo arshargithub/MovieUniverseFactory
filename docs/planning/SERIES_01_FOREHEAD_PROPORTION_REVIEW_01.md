@@ -1,5 +1,19 @@
 # Forehead opening — reference-led continuation
 
+## Superseding Director outcome — exchange132
+
+**Appearance rejected: Director says she looks worse.** The technical preservation results below remain valid, but01 must not be promoted as an improved likeness or new hair baseline. No native edits, reverts, new renders or paid calls occurred during this review.
+
+Reinspected approved frontal pair-B image, hairline03 front, and forehead-opening01 front. The last lift increases the bare forehead while leaving a low, close-fitting crown, broad smooth hairline and largely vertical side masses. The original has root lift, a more tapered/curved face opening, irregular overlapping sweeps, and soft temple framing. The new treatment reads more slicked back/receding; this is an artistic interpretation of the images, not an independently measured cause. The cloth framing and different image lighting also affect the overall impression; do not conflate them with changed facial geometry. The face itself was preserved.
+
+Process failure: selected the stronger forehead exposure as progress despite recognizing the unresolved cap-like structure. Non-hair hashes and test counts establish preservation, not the character's visual identity. Do not ask the Director to discover the same obvious reference mismatch again. Stop one-parameter hairline optimization.
+
+Recommended next direction: set aside the latest lift, use an earlier preserved hair state only as a technical starting point, and rebuild the **front framing as one connected design**—part/root lift, broad irregular sweeps, tapered forehead opening and temple transition. Preserve face/skull/skin/controls; no facial slimming or new face design. Check front and both obliques at comparable eye scale against pair B before detailed rear/costume work. Remain clothing-free for new review renders. This reset is proposed, not implemented or Director-approved in this exchange. No new experiment campaign or spend implied. All failed versions retained; no gate advance.
+
+Local design-only feedback record; no remote push. Checkpoint remains140. Review activity `hair-rethink13` is captured in the existing operating ledger; initial context/image inspection unmeasured, subscription usage unknown.
+
+## Historical implementation record — exchange131
+
 2026-09-22, exchange131. Director finds hairline03 still insufficient against the prominent forehead in the original. Approved pair B remains the authority. This explicitly supersedes the previous internal assessment; no appearance approval inferred.
 
 ## Result and judgment
