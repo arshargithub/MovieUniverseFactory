@@ -992,6 +992,19 @@
       "engineering_subscription_usage": null,
       "engineering_cost_usd": null,
       "evidence": ["docs/planning/SERIES_01_TEXTURED_HAIR_REVIEW_01.md"]
+    },
+    {
+      "event_id": "series01-hair-refinement03-clothing-free-review",
+      "event_type": "engineering_review_outcome",
+      "experiment_id": "SERIES01-LIKENESS-ASSET",
+      "controlled_model_comparison": false,
+      "outcome": "HAIR_ONLY_REVIEW_CANDIDATE_NOT_REFERENCE_FIDELITY_PASS",
+      "observation": "Director sees progress but requests crown, forehead-band and root corrections plus back/length work, with clothing-free renders only. Hair-layer sampling shift removes false skin band; coherent root lift and17 broad uneven tapered waves retained. Three variants plus two defect previews exceed forecast explicitly. Voxel cleanup rejected for jagged part and damaged tips; preserved non-unioned candidate. Crown/temple transitions still open, rear provisional. Fresh reopen non-hair exact,102 tests, four pixel-identical review/package renders, no appearance approval or gate advance. No model switch, paid calls, purchases or remote push.",
+      "observed_supervisor_model": null,
+      "reasoning_effort": null,
+      "engineering_subscription_usage": null,
+      "engineering_cost_usd": null,
+      "evidence": ["docs/planning/SERIES_01_TEXTURED_HAIR_REVIEW_02.md"]
     }
   ],
   "recording_mode": "manual_evidence_backfill_and_future_event_capture",

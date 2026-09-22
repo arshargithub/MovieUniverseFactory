@@ -1,0 +1,30 @@
+# Hairline, crown and hanging-hair continuation
+
+2026-09-21 local, exchange129. Director: look06 is moving in the right direction, but correct the crown artifact, slight viewer-left root flatness and forehead line; continue back/hanging hair. **New review renders must be clothing-free.** This is feedback, not hair acceptance. Approved portrait pair B remains authority.
+
+## Deliverable and visual assessment
+
+**YELLOW — hair-only review candidate, not final/reference-matched production hair.** [Native derivative](../../.runtime/art-direction/series01-facebuilder-trial-01/hair-finish-package-03/hair-refined.blend), SHA-256 `44234a6140baeaa03a7c9850ad7f58d8be86d54d244941bbe6153ca2cb3cf973`. [Preservation result](../../.runtime/art-direction/series01-facebuilder-trial-01/hair-finish-package-03/result.json). Implementation commit `0b5e19b`. Input look06 and all earlier evidence remain untouched.
+
+Inspected clothing-free [front](../../.runtime/art-direction/series01-facebuilder-trial-01/hair-finish-package-03/portrait-front.png), [three-quarter A](../../.runtime/art-direction/series01-facebuilder-trial-01/hair-finish-package-03/portrait-left.png), [three-quarter B](../../.runtime/art-direction/series01-facebuilder-trial-01/hair-finish-package-03/portrait-right.png), [back](../../.runtime/art-direction/series01-facebuilder-trial-01/hair-finish-package-03/back.png). Seven-view comparison also includes previous bare front and unchanged approved [frontal](../../.runtime/art-direction/series01-pashtun-baseline-v01/frontal-v02-individualized.png)/[three-quarter](../../.runtime/art-direction/series01-pashtun-baseline-v01/portrait-v07-individualized.png) portraits. Clothing in original references is not a new costume rendering; no new clothed renders were generated.
+
+- Face-only diagnostic localizes the false forehead line to the hair layer. Sampling slightly farther inside the original painted hair removes its false skin strip; accepted skin was not repainted.
+- A small shared upward warp lifts viewer-left roots without reshaping the face. The crown's repeated image-row patch is feathered into native shading and center notch softened. **Upper crown remains more regular than the original; the painted-to-native transition is still visible close up. Reduced, not fully resolved.**
+- Seventeen broader uneven descending waves replace21 nearly parallel sections; unequal lengths and tapered ends reduce the blunt curtain. Six front sweeps remain. Rear arrangement is a provisional extrapolation, not specified by the originals.
+- **Still open:** crown/temple-to-length transitions, relatively coarse locks and uniform striping versus the original rich illustration. A voxel junction cleanup was rejected because it damaged the part and tips. Do not promote that failed derivative or claim seamless production grooming.
+
+Accepted face, bust anatomy, skin, eyes, rest coordinates and expression controls remain exact. No hair deformation, head-motion attachment, wind, scarf clearance, costume or unrestricted-camera qualification. No new appearance approval or gate advance:1/25 accepted, B4/A5 in progress.
+
+## Verification and operating evidence
+
+**102 focused tests pass.** Fresh native reopen reproduces the protected non-hair signature. Four640×800 package views have pixel-identical RGB content to the inspected final preview; three955×1647 portraits separately inspected. Input and reference hashes unchanged. Fixed structured operations, no arbitrary job code/paths, source/output guards, sanitized Blender environment and disabled autoexecution. Packaging requires a matching current successful final preview.
+
+Preserved sequence: preview01 stretches the fringe and intersects offset surfaces;02 fixes the front but over-buried roots expose rear skin;03 restores coverage and tapers ends; repair03 remesh damages part/tips and is rejected; final03 retains the non-unioned design with a small ear-coverage adjustment; package03 rebuilds that inspected state. Three planned variants plus two defect-only previews exceed the three-variant forecast explicitly. Reassessment/rollback recorded. One stale unit-test expected exception after restricting packaging to candidate3 was corrected; final102 tests pass. All six native jobs succeed technically, not all visually.
+
+[Operating card](../../.runtime/art-direction/series01-facebuilder-trial-01/hair-refine-operating/pass-summary.json), [events](../../.runtime/art-direction/series01-facebuilder-trial-01/hair-refine-operating/pass-events.json), [hash manifest](../../.runtime/art-direction/series01-facebuilder-trial-01/hair-refine-operating/artifact-sha256.json): six reconciled native jobs,421.75 process-seconds;37 artifact files,80,334,373bytes within100MB forecast. Comparison/browser wrapper additional. Forecast40net minutes; final captured duration is in the card, excluding Director waits; initial context recovery unmeasured. No paid calls, generated images or purchases. Engineering model/effort/tokens/subscription cost unknown. Final preview/package save exact handler snapshots; earlier diagnostic source revisions were not separately retained, so their hashes alone are not full replay provenance. Final handler is committed.
+
+## Learnings and next boundary
+
+Do not repair a hair-layer mapping defect by altering approved skin. Hard coordinate clamping creates stretched bands; a continuous sampling shift is better here. Shared positional warps preserve overlaps better than separate normal offsets. Root burial needs rear inspection. Remeshing can improve one junction while destroying the part: visible regression overrides technical test success.
+
+If further hair refinement is needed, target remaining crown/temple/length transitions and illustrated brush-flow; do not restart facial cosmetics or hide hair defects with costume. The visualization skill supplies a browser-checked seven-view comparison. Separate local implementation/design commits; no remote push or off-device native backup this exchange. Next planning checkpoint/push130. Broader likeness episode remains open.
