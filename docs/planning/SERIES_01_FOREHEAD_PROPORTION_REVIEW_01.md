@@ -1,0 +1,23 @@
+# Forehead opening — reference-led continuation
+
+2026-09-22, exchange131. Director finds hairline03 still insufficient against the prominent forehead in the original. Approved pair B remains the authority. This explicitly supersedes the previous internal assessment; no appearance approval inferred.
+
+## Result and judgment
+
+**YELLOW: review candidate, not final hair.** [Native](../../.runtime/art-direction/series01-facebuilder-trial-01/forehead-package-01/hair-forehead.blend), SHA-256 `aaebcb258cb4ce5ea455f38570a4f4c35f37afbdcfebf89995677045be508113`. [Machine result](../../.runtime/art-direction/series01-facebuilder-trial-01/forehead-package-01/result.json). Implementation commit `94fb1dd`. Hairline03 and both approved image hashes are unchanged.
+
+Compared nominal additional lifts0.18 and0.12 in scene units. These are local warp parameters, not anatomical millimetres. Retained the larger01 opening for a more visible forehead across the centre and outer-brow sweep. Shared front-only displacement plus skull-only radial refitting preserves overlapping hair placement; no global skull enlargement, brow/face movement, new material, UV repaint or posterior-groom redesign. Preview03 is the smaller alternative, retained for evidence. Candidate02 was not run; three is a ceiling, not a target.
+
+Inspected [front](../../.runtime/art-direction/series01-facebuilder-trial-01/forehead-package-01/portrait-front.png), [three-quarter A](../../.runtime/art-direction/series01-facebuilder-trial-01/forehead-package-01/portrait-left.png), [three-quarter B](../../.runtime/art-direction/series01-facebuilder-trial-01/forehead-package-01/portrait-right.png), [back](../../.runtime/art-direction/series01-facebuilder-trial-01/forehead-package-01/back.png). All new renders are clothing-free. Forehead exposure is visibly greater; exact likeness/reference proportional equivalence is **not** claimed. The approved image has more lifted, broken-up hair volume; current crown still reads cap-like, temple/length joins and orderly rear locks remain unfinished. Do not keep raising the hairline indefinitely to solve those different deficiencies. Next hair work should address the reference's lifted root volume and broken silhouette while preserving whatever opening the Director accepts.
+
+The visualization skill provides nine selectable views using seven images. Three frontal details use approximate manually selected eye scale/alignment to reduce misleading camera-size differences. These are display-only crops/scales, not audited landmarks, geometry measurements or altered reference artwork. Original full images remain available. Browser switching verified. No costume review or final hair/motion qualification.
+
+## Verification, cost and persistence
+
+**118 focused tests passed.** All protected non-hair geometry, anatomy, skin, UVs, rest attributes, eyes and expression controls remain exact after saving and freshly reopening. All four640×800 package renders reproduce preview01 RGB pixels exactly; three955×1647 portraits visually inspected. Handler-source snapshots retained for every preview/package; fixed structured jobs, pinned source/references, no overwrites, sanitized environment and disabled Blender auto-execution.
+
+[Operating card](../../.runtime/art-direction/series01-facebuilder-trial-01/forehead-operating/pass-summary.json), [events](../../.runtime/art-direction/series01-facebuilder-trial-01/forehead-operating/pass-events.json), [SHA manifest](../../.runtime/art-direction/series01-facebuilder-trial-01/forehead-operating/artifact-sha256.json): two previews and one package, three reconciled successful native jobs,170.71 process-seconds;22 native/output files,72,265,253bytes within90MB forecast. Gallery/preview wrapper additional. Forecast25 net minutes and max3 previews; captured duration is in the final card, excluding Director waiting and noting unmeasured initial context recovery. Local browser-server sandbox bind denial was resolved through scoped localhost permission, not a native-render failure. No paid calls or purchases. Engineering model/effort/tokens/cost remain unknown, not zero.
+
+Implementation and design records use separate scoped local commits. No remote push this exchange; next scheduled checkpoint140. Native media remain SSD-local and not newly off-device backed up. No release gate advances. Preserve `.DS_Store` and unrelated work untouched.
+
+Lesson: compare the approved original and render at similar facial scale before judging forehead placement. Separate hairline exposure from crown fullness/temple framing; a mathematically higher hairline alone is not a demonstrated reference match.

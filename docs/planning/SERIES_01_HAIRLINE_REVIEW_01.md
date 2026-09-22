@@ -1,5 +1,7 @@
 # Raised hairline review
 
+**Superseding Director outcome, exchange131:** still does not resemble the original's prominent forehead;03 is not accepted hairline placement. Preserve this evidence. [Forehead opening continuation](SERIES_01_FOREHEAD_PROPORTION_REVIEW_01.md) is the new review pointer, not a new approved baseline.
+
 2026-09-22, exchange130. Director says hair remains unfinished and the hairline/front mass sits too low. Approved pair B remains identity/style authority. No acceptance of the prior hairstyle inferred; continue clothing-free review.
 
 ## Current derivative
