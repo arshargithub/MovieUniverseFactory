@@ -1083,6 +1083,19 @@
       "engineering_subscription_usage": null,
       "engineering_cost_usd": null,
       "evidence": ["docs/planning/SERIES_01_HAIR_FRONT_FIT_01.md"]
+    },
+    {
+      "event_id": "series01-edge03-directional-progress-review",
+      "event_type": "engineering_review_outcome",
+      "experiment_id": "SERIES01-LIKENESS-ASSET",
+      "controlled_model_comparison": false,
+      "outcome": "FRONTFIT03_CLOSER_EDGE03_STATIC_REVIEW_PENDING",
+      "observation": "Director says front-fit03 is closer and authorizes edge refinement, not finished hair approval. Three bounded previews: frontal-only feather, temple extension with short fringe, then fewer swept strands. Edge03 softens the cut boundary without changing existing hair meshes or accepted non-hair state. Broader crown/side masses and joins remain provisional against pair B.167 tests establish technical preservation, not reference fidelity. No paid calls, purchases, texture generation, model switch or remote push.",
+      "observed_supervisor_model": null,
+      "reasoning_effort": null,
+      "engineering_subscription_usage": null,
+      "engineering_cost_usd": null,
+      "evidence": ["docs/planning/SERIES_01_HAIR_EDGE_REVIEW_01.md"]
     }
   ],
   "recording_mode": "manual_evidence_backfill_and_future_event_capture",
