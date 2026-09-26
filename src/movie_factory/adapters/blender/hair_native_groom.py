@@ -23,7 +23,7 @@ def digest(p): return hashlib.sha256(p.read_bytes()).hexdigest()
 def validate(job):
     if not isinstance(job,dict) or set(job)!={'operation','candidate'}:
         raise ValueError('Exact structured keys required')
-    if type(job['candidate']) is not int or (job['operation'],job['candidate']) not in (('inspect',0),('preview',1),('preview',2),('preview',3),('field',2),('field',3),('field-retry',2),('clumps',1),('clumps',2),('clumps',3),('checkpoint',2),('verify',2),('brush-inspect',0),('brush-inspect',1),('brush-inspect',2),('brush-preview',1),('brush-preview',2),('brush-preview',3),('brush-retry',3)):
+    if type(job['candidate']) is not int or (job['operation'],job['candidate']) not in (('inspect',0),('preview',1),('preview',2),('preview',3),('field',2),('field',3),('field-retry',2),('clumps',1),('clumps',2),('clumps',3),('checkpoint',2),('verify',2),('brush-inspect',0),('brush-inspect',1),('brush-inspect',2),('brush-inspect',3),('brush-preview',1),('brush-preview',2),('brush-preview',3),('brush-retry',3),('brush-locks',1),('brush-locks',2),('brush-locks',3)):
         raise ValueError('Unsupported fixed operation')
     if job['operation'].startswith('brush') and (BRUSH_LIB.is_symlink() or digest(BRUSH_LIB)!=BRUSH_SHA):
         raise ValueError('Pinned brush resource changed')
@@ -433,7 +433,75 @@ def inspect_brush(out):
             'material_nodes':{m.name:[{'name':n.name,'type':n.type,'group':n.node_tree.name if n.type=='GROUP' else None,'inputs':[(s.name,str(getattr(s,'default_value',None))) for s in n.inputs]} for n in m.node_tree.nodes] for m in dst.materials},
             'scripts_executed':False,'addon_installed':False,'resource_sha256':digest(p)}
     report['material_controls']={m.name:[{'name':n.name,'attribute':getattr(n,'attribute_name',None),'operation':getattr(n,'operation',None),'inputs':[(s.name,str(getattr(s,'default_value',None)),[(l.from_node.name,l.from_socket.name) for l in s.links]) for s in n.inputs]} for n in m.node_tree.nodes if n.name in ('Backface Culling','Mix Shader.002','Use Strength','Opacity','Brush Color','Brush Style') or n.type=='OUTPUT_MATERIAL'] for m in dst.materials}
+    report['geometry_contract']={g.name:[{'name':n.name,'type':n.bl_idname,'group':n.node_tree.name if n.type=='GROUP' else None,'inputs':[(s.name,str(getattr(s,'default_value',None)),[(l.from_node.name,l.from_socket.name) for l in s.links]) for s in n.inputs]} for n in g.nodes] for g in bpy.data.node_groups if g.bl_idname=='GeometryNodeTree'}
     (out/'inspection.json').write_text(json.dumps(report,indent=2)+'\n')
+
+def dominant_locks(variant):
+    """Explicit broad strokes; only roots attach, depth remains authored."""
+    import bpy
+    from mathutils import Vector
+    from hair_integrated_front import SECTIONS,sample
+    from hair_volume_sculpt import skull_surface
+    skull=skull_surface(bpy.data.objects['MF_reference_crown_hair'])
+    ob=bpy.data.objects['MF_native_hair_groom'];old=ob.data
+    hair=bpy.data.hair_curves.new('MF_dominant_painterly_locks')
+    steps=80;per=9 if variant>=2 else 5
+    hair.add_curves([steps+1]*(len(SECTIONS)*per))
+    radius=hair.attributes.new('radius','FLOAT','POINT')
+    color=hair.attributes.new('MF_groom_color','FLOAT_COLOR','POINT')
+    body=bpy.data.objects['MF_continuous_head_neck'];hair.surface=body
+    hair.surface_uv_map=body.data.uv_layers.active.name
+    for index,(points,widths,lift) in enumerate(SECTIONS):
+        root=Vector(((points[0][0]-488)/227.29,points[0][2],(532-points[0][1])/257+.105))
+        hit,n,_,_=skull.find_nearest(root);root_delta=hit+n*.008-root
+        for j in range(per):
+            accent=j>=5
+            w=(j-2)/2 if not accent else (-.65,-.2,.3,.7)[j-5]
+            for k in range(steps+1):
+                u=k/steps
+                t=(.12+.03*((index+j)%3))+u*(.66-.025*(index%3)) if accent else u
+                px,py,y=sample(points,t)
+                a,b=sample(points,max(0,t-.001)),sample(points,min(1,t+.001))
+                dx,dy=b[0]-a[0],b[1]-a[1];norm=math.hypot(dx,dy)
+                width=max(.1,sample([(v,) for v in widths],t)[0])
+                px-=dy/norm*width*w*.8;py+=dx/norm*width*w*.8
+                x=(px-488)/227.29;z=(532-py)/257+.105
+                y-=lift*math.sin(math.pi*t)*(1-w*w*.5)
+                co=Vector((x,y,z))+root_delta*(1-smooth(t/.25))
+                if variant>=2:
+                    # Keep the front-space trace and lift; recede lateral ends
+                    # into the scalp/rear rather than leaving outward spikes.
+                    if abs(co.x)>.78:co.x=math.copysign(.78+.16*math.tanh((abs(co.x)-.78)/.16),co.x)
+                    hit,hn,_,_=skull.ray_cast(Vector((co.x,-3,co.z)),Vector((0,1,0)))
+                    if hit is not None:
+                        amount=smooth((t-.10)/.55)
+                        co.y=co.y*(1-amount)+(hit.y-.025-.04*math.sin(math.pi*t))*amount
+                    if t>.72:co.y+=.26*smooth((t-.72)/.28)
+                    if accent:co.y-=.006
+                # Collision guard only: never flatten external lifted paths.
+                near,normal,_,_=skull.find_nearest(co)
+                if (co-near).dot(normal)<.006:co=near+normal*.006
+                if variant>=3:
+                    # Continuous radial wrap avoids the front-ray hit/miss
+                    # discontinuity at the silhouette seen in variant two.
+                    origin=Vector((0,0,.3))
+                    hit,normal,_,_=skull.ray_cast(origin,(co-origin).normalized())
+                    if hit is not None:
+                        lifted=hit+normal*(.015+.055*math.sin(math.pi*t)**.8)
+                        co=co.lerp(lifted,smooth((t-.18)/.48))
+                        if accent:co+=normal*.007
+                pi=(index*per+j)*(steps+1)+k
+                hair.attributes['position'].data[pi].vector=co
+                radius.data[pi].value=max(.012,width/227.29*2.4/.32)
+                if variant>=2:
+                    radius.data[pi].value*=.90
+                    if accent:radius.data[pi].value*=.13*math.sin(math.pi*u)**.6
+                highlight=math.sin(math.pi*t)**1.4*(.5+.5*math.sin(t*9+index*.9))**2
+                value=.012+(.022+.038*(j in (1,3)))*highlight
+                if variant>=2:value=(.075+.018*((index+j)%3)) if accent else (.004,.012,.006,.019,.004)[j]
+                color.data[pi].color=(value,value*.45,value*.20,1)
+    ob.data=hair;bpy.data.hair_curves.remove(old)
+    return {'dominant_locks':len(SECTIONS),'editable_strokes':len(hair.curves),'points':len(hair.points),'depth_policy':'Fixed roots, independent depth, collision guard only'}
 
 def brush_preview(job,out):
     """Use verified official node assets directly; do not register add-on code."""
@@ -443,7 +511,8 @@ def brush_preview(job,out):
     from hair_anatomy_refinement import visibility
     from hijab_donor import review
     bpy.ops.wm.open_mainfile(filepath=str(SOURCE),load_ui=False,use_scripts=False)
-    protected,rear=protection(),rear_signature();build(5)
+    protected,rear=protection(),rear_signature();build(4 if job['operation']=='brush-locks' else 5)
+    lock_info=dominant_locks(job['candidate']) if job['operation']=='brush-locks' else {}
     with bpy.data.libraries.load(str(BRUSH_LIB),link=False) as (src,dst):
         dst.node_groups=['.brushstroke_tools.surface_draw','.brushstroke_tools.pre_processing']
         dst.materials=['Brush Material']
@@ -452,7 +521,7 @@ def brush_preview(job,out):
     p=nodes.get('Principled BSDF');attr=nodes.new('ShaderNodeAttribute');attr.attribute_name='brush_stroke.color'
     links.new(attr.outputs['Color'],p.inputs['Base Color']);links.new(attr.outputs['Color'],p.inputs['Emission Color'])
     p.inputs['Emission Strength'].default_value=.7;p.inputs['Specular IOR Level'].default_value=.05;p.inputs['Roughness'].default_value=.8
-    if job['candidate']>=3:
+    if job['candidate']>=3 or lock_info:
         # Stroke ribbons must face a coherent head surface, not the overlapping
         # UV emitter patches designed only for root distribution.
         # Official graph computes mask - backfacing. Keep the mask and remove
@@ -466,8 +535,9 @@ def brush_preview(job,out):
             im.filepath=str(BRUSH_LIB.parent/'maps/canvas-linen_01.exr')
     ob=bpy.data.objects['MF_native_hair_groom'];ob.modifiers.clear()
     # Brushstroke drawing uses normalized pressure-radius, not hair diameter.
-    for index,value in enumerate(ob.data.attributes['radius'].data):
-        value.value=.7*(1-smooth(((index%73)/72-.78)/.22))+.02
+    if not lock_info:
+        for index,value in enumerate(ob.data.attributes['radius'].data):
+            value.value=.7*(1-smooth(((index%73)/72-.78)/.22))+.02
     graph=bpy.data.node_groups.new('MF_specialist_brushstroke_pipeline','GeometryNodeTree')
     graph.interface.new_socket(name='Geometry',in_out='INPUT',socket_type='NodeSocketGeometry')
     graph.interface.new_socket(name='Geometry',in_out='OUTPUT',socket_type='NodeSocketGeometry')
@@ -478,12 +548,33 @@ def brush_preview(job,out):
     settings={'Surface Object':ob.data.surface,'Surface UV Map':'GroomSurfaceUV','Use Rest Position':False,
               'Normal Offset':.005,'Shrinkwrap':0.,'Brush Width':.075,'Overdraw':0.,'Brush Material':material,
               'Color Attribute':'MF_groom_color','Mesh Loops':3,'Smoothing Steps':2,'Taper':.65,'Preview Base Curves':False,'Seed':614}
-    if job['candidate']>=3:
+    if job['candidate']>=3 or lock_info:
         body=bpy.data.objects['MF_continuous_head_neck']
         pre.inputs['Object'].default_value=body
         settings.update({'Surface Object':body,'Surface UV Map':body.data.uv_layers.active.name,'Brush Width':.10,'Mesh Loops':2})
+    if lock_info:
+        settings.update({'Brush Width':.32,'Mesh Loops':3,'Taper':.12,'Smoothing Steps':1})
+        nodes['Brush Style'].inputs['Fill Extent'].default_value=.94
+        nodes['Brush Style'].inputs['Falloff'].default_value=.22
     for key,value in settings.items():draw.inputs[key].default_value=value
     l.new(gi.outputs[0],pre.inputs['Geometry']);l.new(pre.outputs['Geometry'],draw.inputs['Brushstroke Curves']);l.new(draw.outputs['Brushstroke Mesh'],go.inputs[0])
+    if lock_info and job['candidate']==3:
+        # Isolate strip conversion from surface_draw's sampled face/ear normal
+        # field. Analytic scalp normals are continuous across the silhouette.
+        direct=n.new('GeometryNodeGroup');direct.node_tree=bpy.data.node_groups['.brushstroke_tools.curves_to_brushstrokes']
+        direct.inputs['Width'].default_value=.32
+        direct.inputs['Material'].default_value=material
+        direct.inputs['Resolution'].default_value=3
+        direct.inputs['Opacity'].default_value=1
+        position=n.new('GeometryNodeInputPosition')
+        center=n.new('ShaderNodeVectorMath');center.operation='SUBTRACT';center.inputs[1].default_value=(0,0,.3)
+        scale=n.new('ShaderNodeVectorMath');scale.operation='MULTIPLY';scale.inputs[1].default_value=(1/.86**2,1,1/1.25**2)
+        norm=n.new('ShaderNodeVectorMath');norm.operation='NORMALIZE'
+        colors=n.new('GeometryNodeInputNamedAttribute');colors.data_type='FLOAT_COLOR';colors.inputs['Name'].default_value='MF_groom_color'
+        l.new(position.outputs[0],center.inputs[0]);l.new(center.outputs[0],scale.inputs[0]);l.new(scale.outputs[0],norm.inputs[0])
+        l.new(norm.outputs[0],direct.inputs['Surface Normal']);l.new(colors.outputs['Attribute'],direct.inputs['Color'])
+        l.new(gi.outputs[0],direct.inputs['Curves']);l.new(direct.outputs[0],go.inputs[0])
+        lock_info['strip_orientation']='Continuous analytic scalp normals; direct inspected official strip converter'
     mod=ob.modifiers.new('Official Brushstroke Tools draw nodes','NODES');mod.node_group=graph
     visibility();bpy.context.scene.cycles.transparent_max_bounces=32
     # CURVES.to_mesh is unsupported even when its evaluated geometry set holds
@@ -503,6 +594,9 @@ def brush_preview(job,out):
             'protected_exact':protection()==protected,'rear_mesh_exact':rear_signature()==rear,'review_ready':False,'director_acceptance':'NOT_REQUESTED',
             'handler_sha256':digest(Path(__file__)),'source_sha256':SOURCE_SHA,'reference_authority':REFERENCES,'brush_resource_sha256':BRUSH_SHA,
             'addon_installed':False,'third_party_python_executed':False,'purchased_assets':False}
+    result.update(lock_info)
+    if lock_info:
+        result['hypothesis']='DOMINANT_PAINTERLY_LOCKS_FIXED_ROOTS_INDEPENDENT_DEPTH'
     (out/'result.json').write_text(json.dumps(result,indent=2)+'\n')
 
 def verify(out):
@@ -545,7 +639,7 @@ def run(job):
     out=validate(job); out.mkdir(); shutil.copyfile(Path(__file__),out/'handler-source.py')
     if job['operation']=='inspect':inspect(out)
     elif job['operation']=='brush-inspect':inspect_brush(out)
-    elif job['operation'] in ('brush-preview','brush-retry'):brush_preview(job,out)
+    elif job['operation'] in ('brush-preview','brush-retry','brush-locks'):brush_preview(job,out)
     elif job['operation']=='checkpoint':checkpoint(out)
     elif job['operation']=='verify':verify(out)
     else:preview(job,out)

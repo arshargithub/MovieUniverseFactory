@@ -5,7 +5,7 @@ import pytest
 spec=importlib.util.spec_from_file_location('groom',Path('src/movie_factory/adapters/blender/hair_native_groom.py'))
 m=importlib.util.module_from_spec(spec); spec.loader.exec_module(m)
 
-@pytest.mark.parametrize('job',[None,{}, {'operation':'exec','candidate':0}, {'operation':'inspect','candidate':1}, {'operation':'inspect','candidate':False}, {'operation':'inspect','candidate':0,'code':'x'}, {'operation':'field','candidate':'2'}, {'operation':'clumps','candidate':4}, {'operation':'verify','candidate':1}, {'operation':'checkpoint','candidate':True}])
+@pytest.mark.parametrize('job',[None,{}, {'operation':'exec','candidate':0}, {'operation':'inspect','candidate':1}, {'operation':'inspect','candidate':False}, {'operation':'inspect','candidate':0,'code':'x'}, {'operation':'field','candidate':'2'}, {'operation':'clumps','candidate':4}, {'operation':'verify','candidate':1}, {'operation':'checkpoint','candidate':True}, {'operation':'brush-locks','candidate':0}, {'operation':'brush-locks','candidate':4}, {'operation':'brush-locks','candidate':True}])
 def test_reject(job):
     with pytest.raises(ValueError):m.validate(job)
 
@@ -46,7 +46,7 @@ def test_guide_tip_variation():
     lengths=[m.guide_points(1,i/20,(.02,-.5,1.2),4)[-1][2] for i in range(21)]
     assert max(lengths)-min(lengths)>.20
 
-@pytest.mark.parametrize('operation,candidate',[('brush-inspect',0),('brush-inspect',1),('brush-inspect',2),('brush-preview',1),('brush-preview',2),('brush-preview',3),('brush-retry',3)])
+@pytest.mark.parametrize('operation,candidate',[('brush-inspect',0),('brush-inspect',1),('brush-inspect',2),('brush-inspect',3),('brush-preview',1),('brush-preview',2),('brush-preview',3),('brush-retry',3),('brush-locks',1),('brush-locks',2),('brush-locks',3)])
 def test_specialist_resource_pin(operation,candidate,tmp_path,monkeypatch):
     p=tmp_path/'resource';p.write_bytes(b'pin')
     for name in ('SOURCE','LIB','BRUSH_LIB'):monkeypatch.setattr(m,name,p)
