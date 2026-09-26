@@ -4,6 +4,8 @@
 
 ## Capability result
 
+**Latest: the Director-approved 30-minute dominant-lock extension has executed and stopped at its three-variant limit. All three fail internal pair-B review.** See the extension result below. The earlier recommendation section is retained as proposal history, not a fresh authorization or invitation to repeat the same method.
+
 **Native hair authoring/control demonstrated; approved illustrated hair fidelity NOT_DEMONSTRATED.** These are different conclusions. The agent can create attached editable guides, operate installed interpolation/clumping nodes, render the preserved character, save the native, reopen it in a fresh process and make a controlled guide revision. The tested authoring recipes still fail the approved front/both-oblique target. No Director acceptance was requested for the known failures.
 
 Authority remains `frontal-v02-individualized.png` and `portrait-v07-individualized.png` (pair B). Face width, accepted skin/anatomy/expressions are not revised to accommodate hair. The back is regression evidence, not a likeness target absent from those references. No scarf conceals the failures.
@@ -65,3 +67,37 @@ Why this is worth considering but not guaranteed: the established painterly tool
 The current investigation produced19 reconciled native jobs (three failed jobs),11 full four-view preview sets plus three persistence/revision images, and one diagnostic native. That is not19 hairstyles. Local diagnostic artifacts total94,858,301 bytes before the compact card; the downloaded archive plus extracted resources add60,298,591 bytes. About464 native process seconds overlap captured assistant activity; they are not added to it. The final card includes integrated19's728.396053 captured seconds in the same cumulative objective. It excludes Director waits and leaves uncaptured intervals unknown.
 
 Time and dependencies belong in the compact card. Engineering model/effort/tokens/subscription allocation and human review duration remain UNKNOWN. No quota-to-token/cost inference. Local code/docs commits do not back up ignored native/media files, and no remote push or backup occurs in this investigation.
+
+## Approved extension result — dominant painterly locks, 2026-09-26
+
+Director approved the proposed extension with “go ahead.” Activity `groom21` retains the previous **3,393.305756 captured seconds** rather than restarting objective accounting. Limit: 30 additional net minutes and at most three visual variants. The three-variant checkpoint was reached before the time allowance; unused allowance is not permission for a fourth variant. The FaceBuilder episode remains open, but this construction method is stopped.
+
+The same pinned edge03 native, approved pair-B images and official Brushstroke Tools resources were used. No new download, installation, provider call, purchase, model switch or human asset edit. Four native jobs completed: three four-view renders and one resource-graph inspection. All12 images were inspected, including both obliques and back; no scarf or clothing conceals failures.
+
+| Variant | Implemented difference | Internal visual outcome against pair B |
+|---|---|---|
+|01 |14 reference-led locks,70 editable strokes, fixed roots, explicit lifted depth and collision guard; quiet foundation instead of the448-guide visible field | FAIL: broad solid plates, toothed central part, outward-pointing ends and detached oblique layers. The reference's prominent forehead alone is not a pass. |
+|02 |126 strokes separating dark supporting shapes from shorter warm accents; lateral clamping and progressive front-ray depth blending | FAIL: more deliberate colour hierarchy, but blocky oblique layers, discontinuous turns, exposed foundation and poor temple joins. This is not merely a texture issue. |
+|03 |Same126-stroke organization; continuous radial wrap on the outer path and direct official strip conversion with analytic scalp normals | FAIL: some extreme lateral spikes reduced, but repeated ribbons, curled temple tips, a segmented part and conflicting front/rear languages remain. No integrated fidelity. |
+
+The third variant changes both depth fitting and orientation. It **does not isolate their individual causal contributions**. The graph inspection clarifies the actual radius/color/normal connections; it does not prove that Brushstroke Tools is intrinsically unsuitable. Neither a lower-level converter nor a new add-on automatically supplies good three-dimensional artistic organization. Variant03 also returns to substantial outer-path surface fitting: the build-time `depth_policy` shorthand must not be interpreted as completely unconstrained authored depth in every variant.
+
+Readiness: forehead/part **FAIL** (segmented part despite exposed forehead); lifted overlapping flow **FAIL**; temple/ear transition **FAIL**; coherent illustrated language **FAIL**; accepted non-hair preservation **PASS**; integrated side/rear appearance **FAIL**. Existing rear-lock geometry is exactly preserved, but the added front layers alter the total rear silhouette. This is not a pixel-level no-regression claim. Motion, fresh persistence/reopen of these candidates and release qualification **NOT_RUN**. No failed derivative was promoted or saved as a new character native.
+
+Evidence, relative to the trial directory:
+
+- `native-groom-brush-locks-01/` through `native-groom-brush-locks-03/`: immutable previews, result records and the exact handler snapshot used by each run.
+- `native-groom-brush-inspect-03/inspection.json`: inspected official geometry-node contract.
+- `native-groom-extension-operating/`: scoped event/card export, preview results, SHA-256 manifest and handler-dependency bindings. The previous card remains unchanged.
+
+All three runs preserve accepted non-hair state and original rear-lock geometry exactly in-process, and the pinned source is unchanged. **76 focused unit tests pass** for the current native-groom, integrated-front, front-fit and edge-refinement handlers. These are technical guards, not an artistic success rate. There were no failed native jobs in this extension. Preview/inspection files total8,500,408 bytes before the compact card. Final captured time is in the extension card; it includes this turn's bookkeeping and excludes the Director wait. The cumulative number covers integrated19 + groom20 + groom21 only, **not all historical hair work**. Engineering usage and cost remain unknown. Implementation commit: `895782f`; these findings are a separate scoped local design/evidence commit. Neither is pushed; ignored render/operating artifacts are not backed up by Git. Unrelated `.DS_Store` preserved.
+
+### Learning and next route decision
+
+This strengthens a narrow conclusion: **this agent's tested guide-to-strip construction has not reproduced the approved hairstyle**, even with a specialist painterly renderer. It does not establish that agent-only character creation is impossible, that Blender is unsuitable, or that a human artist is necessary. Native editing/control remains demonstrated; reference-faithful spatial authoring remains unproven.
+
+Do not spend another continuation on denser strips, another material, or another front-only generator. A library change that still produces the same strip-based spatial organization is not a genuinely new shape-authoring strategy. The next evidence-producing route I recommend is **agent-driven adaptation of an already-authored, free, editable hairstyle with suitable center-part/long-wave volume**. Its purpose is to test the asset-assisted boundary separately from de-novo authoring. No new donor has been found or verified by this extension, and success is not promised.
+
+Start from the existing acquisition record, not a fresh uninformed search: `SERIES_01_FREE_DRESSING_ASSETS.md` records the prior `o4saken_long01` donor, failed first fit and embedded CC-BY/catalog license discrepancy. Do not blindly refit that rejected fringe/card asset. A new candidate must show an appropriate part, crown volume and both side transitions in actual mesh inspection, with usable individual terms and editable components. If none meets those prerequisites, report no suitable donor instead of importing a vaguely related asset and generating another long repair loop. Preserve the face, original pair-B target and no-purchase boundary. A donor-assisted result would be agent-only **adaptation with a pre-created asset**, not from-scratch creation.
+
+This is a material workflow recommendation awaiting Director choice, not an executed acquisition or permission to expand work. No further hairstyle variant, new costume work, remote push or backup follows automatically.

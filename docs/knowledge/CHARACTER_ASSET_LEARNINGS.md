@@ -120,6 +120,12 @@ If explicit guide/layer authoring still fails within the next integrated bound, 
 
 ## Applying this beyond hair
 
+### Dominant-lock specialist extension, 2026-09-26
+
+The [approved native-groom extension](../planning/SERIES_01_NATIVE_GROOM_CAPABILITY.md#approved-extension-result--dominant-painterly-locks-2026-09-26) reaches its three-variant bound without a review-ready hairstyle. Smaller explicit lock sets and selective painted accents expose, but do not solve, the same spatial failures: segmented roots, planar/ribbon volume and poor side joins. The final normal-field/depth change is not a controlled causal comparison. This is a limitation of the tested agent authoring route, not proof of tool incapability or human necessity.
+
+Process lesson: **changing the rendering library is not changing the spatial construction method**. Do not count a new node system as evidence of a new hypothesis when the geometry remains the same problematic strip family. Preserve technical-control proof but stop promoting it as progress toward visual acceptance. Record donor-assisted creation separately from de-novo creation; a verified suitable free hairstyle could supply the spatial structure the agent has not authored successfully. The earlier MakeHuman fringe/card donor and its license discrepancy remain evidence, not a default solution. New donor suitability is untested. This route change is recommended, not executed or silently authorized. No new Director cosmetic review is requested for the failed variants.
+
 ### Execution follow-through, 2026-09-26
 
 The [first integrated attempt](../planning/SERIES_01_INTEGRATED_HAIR_ATTEMPT_01.md) tested three explicit-guide section variants and **rejected all three internally**, with no new native promoted. Editable guide paths alone were insufficient: hand-authored depth floated, scalp fitting buried the sections, and quiet-support/envelope fitting exposed segmented roots and temple joins. This did not become a successful sculptural representation change. Stop this hypothesis; recommend a materially different, hands-on authoring route rather than another geometry-handler family. The useful process change is stopping before requesting predictable cosmetic feedback, not declaring the visual objective achieved. Costs are separately captured in the linked operating card and are not added silently to the eleven-card historical table above.
