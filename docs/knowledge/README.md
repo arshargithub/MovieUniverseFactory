@@ -20,6 +20,8 @@ Contextual review: [Release 01 applicability](RELEASE_01_APPLICABILITY.md) maps 
 
 ## How to use it without rereading the entire conversation
 
+For character production, start with [Character asset learnings and review contract](CHARACTER_ASSET_LEARNINGS.md), established at exchange137 after the repeated hair-review loop. It links accepted face/skin/anatomy/performance evidence, failed authoring methods, an audited eleven-card effort summary, and the integrated internal-readiness rule. Historical checkpoint and asset-acquisition source context was re-read; no new asset, aesthetic, provider or renderer choice is implied.
+
 1. Search candidate labels/excerpts for the current topic: universe/entity identity, representations, audience, production, approval, budget, reuse, retrieval, interface, orchestration, perception, soundtrack, distribution, etc.
 2. Open the full local source turn and its preceding/following context. The page order is newest-first. Inspect the user's actual response; an assistant saying “Locked” is not alone sufficient evidence of scope or approval. Short excerpt fields are not full specifications.
 3. Update the candidate with normalized decision statement, source/user approval evidence, status, conflicts/supersession, and an applicability disposition: ADOPT, ADAPT, DEFER, NOT_APPLICABLE or NEEDS_DIRECTOR_DECISION. Preserve the original excerpt/source pointer.
