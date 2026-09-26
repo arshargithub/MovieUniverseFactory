@@ -88,6 +88,10 @@ If explicit guide/layer authoring still fails within the next integrated bound, 
 
 ## Applying this beyond hair
 
+### Execution follow-through, 2026-09-26
+
+The [first integrated attempt](../planning/SERIES_01_INTEGRATED_HAIR_ATTEMPT_01.md) tested three explicit-guide section variants and **rejected all three internally**, with no new native promoted. Editable guide paths alone were insufficient: hand-authored depth floated, scalp fitting buried the sections, and quiet-support/envelope fitting exposed segmented roots and temple joins. This did not become a successful sculptural representation change. Stop this hypothesis; recommend a materially different, hands-on authoring route rather than another geometry-handler family. The useful process change is stopping before requesting predictable cosmetic feedback, not declaring the visual objective achieved. Costs are separately captured in the linked operating card and are not added silently to the eleven-card historical table above.
+
 - **Scarf and garments:** solve silhouette, opening, major folds, weight and body clearance together before weave/microfolds. Use actual donor topology and license checks. Test the visible continuous shoulder/belt path before detailed leather shading.
 - **Skin/anatomy:** retain accepted results; classify a new defect with clay/emission/light controls before editing. A local texture fix should not initiate a face remodel.
 - **Performance:** motion brief first, complete low-cost motion with all coordinated joints before high-quality frames; evaluate identity and contact/clearance, not isolated key poses. Static hair acceptance will not qualify gallop or cloth/hair dynamics.
