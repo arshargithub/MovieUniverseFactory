@@ -2,6 +2,36 @@
 
 2026-09-26 · Release 01 exchange 137 · applies to the Pashtun character and subsequent asset work.
 
+## Current priority override — exchange138: capability before economics
+
+The Director's primary objective is to establish whether **agent-only creation at this complexity and approved quality is possible**. Economics comes second, after capability. Learnings must locate the boundary between agent authoring, specialist tools/knowledge, pre-created assets and human technical intervention.
+
+**Supersedes the integrated19 recommendation to move next to human authoring.** Three related section-fitting failures establish that method's failure, not that a human artist is necessary or agent-only routes are exhausted. No human engagement or spending is authorized. The approved target and protected state remain unchanged; known defects stay in internal QA.
+
+### Keep execution and dependencies separate
+
+| Route | What success could demonstrate | What it would not demonstrate |
+|---|---|---|
+| Agent authors new geometry/materials using native tools, code or procedural systems | Agent authoring for this target | General asset creation or economical repeatability |
+| Agent operates specialist reconstruction/generation/groom tools | Automated tool-mediated creation/integration | Native from-scratch modeling |
+| Agent adapts a pre-created groom | Autonomous adaptation | Creation without artist-authored asset dependency |
+| Human supplies technical diagnosis, tool operations or asset edits | Assisted result, with intervention recorded | Fully agent-executed authoring |
+
+Creative briefs, approved references and final Director taste/acceptance are expected creative direction, not human sculpting. Still record repeated technical coaching and manual setup/operations; do not hide their contribution. Documentation/tutorial knowledge is distinct from a ready-made mesh. Agent-only does not mean inventing every algorithm or avoiding established tools.
+
+### Revised next step and stopping rules
+
+- Continue the same integrated front/both-obliques target against pair B. Do not lower quality, hide defects with scarf/lighting or alter the face to obtain a PASS.
+- Next: an **agent-only workflow reassessment** of established hair-authoring methods and available controls, compared with the failed local methods; select a materially different mechanism before more geometry edits. Distinguish faulty implementation, unsuitable representation, weak visual diagnosis, tool-access limitations and missing dependencies. A new handler name or model is not itself a different method.
+- Keep one capability record and reusable preview setup, not another experiment/gallery per edit. Isolated diagnostics must answer a named question that feeds the integrated result; they are not acceptance.
+- Three variants end an unproductive hypothesis, not the whole capability investigation. Twenty-minute checks and the cumulative sixty-minute checkpoint remain reassessments, not evidence that human labor is required. Retain integrated19's12 captured minutes in cumulative accounting. No unlimited time, paid calls or silent budget reset is authorized. At the overall checkpoint, explain the evidence and case for a bounded extension if needed rather than defaulting to outsourcing.
+- Integrated Director acceptance, technical preservation, an editable persistent native and verified reopen establish scoped success. A subsequent small controlled revision should test controllability, not just one attractive still; motion remains separate. Track costs now but optimize them after capability is established.
+- Negative conclusion: **not demonstrated under tested methods/tools/intervention conditions**. Distinguish failed from untested routes. Do not claim universal impossibility or human necessity without comparative evidence. If a human contribution or pre-created asset becomes necessary to the demonstrated route, identify precisely where it entered.
+
+Accepted face/skin/anatomy/restrained expression work is partial evidence from a tool-assisted, reference-guided, Director-reviewed workflow—not proof of an independently authored full character. Hair remains NOT_DEMONSTRATED; integrated19 is one related method family, not three independent tests of agent capability. Future clothing/rig/motion/environment records should retain target, starting tools/assets, method, human contribution, acceptance/revision/reopen evidence, failures and measured/unknown effort. No new general harness is requested.
+
+Historical continuity: re-read full capability9 proposal/approval turns `e2c7fcd8-04a8-4696-98d5-cf88ff29f3e8` and `c989f205-885e-4232-8bca-4902f9579c30`. **ADOPT** persistent controllable assets and multiple creation/acquisition routes; **ADAPT** investigation sequencing per exchange138: capability first, economics subsequently. Acquisition/hybrid routes remain architectural options; the immediate test does not mandate from-scratch production forever.
+
 ## Executive conclusion
 
 The Director sees incremental progress but rejects the sustainability of many short passes followed by predictable requests for review. The goal remains the approved illustrated character, not a succession of technically sound hair derivatives. The assistant has repeatedly documented the main visual failure and then presented a partial candidate anyway. **That is an internal quality-control and stopping-rule failure, not missing Director feedback.**

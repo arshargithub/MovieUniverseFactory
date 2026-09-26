@@ -1,5 +1,7 @@
 # Integrated front hair attempt 01 — method failed, no promotion
 
+**Subsequent Director clarification, exchange138:** capability-first agent-only investigation takes priority over economics. The human-authoring recommendation below is historical and superseded, not accepted. Preserve these three failures as method-specific evidence; reassess a different agent-only route under the [current contract](../knowledge/CHARACTER_ASSET_LEARNINGS.md), not as proof that human labor is required.
+
 2026-09-26. Authorized implementation following exchange137. This execution is not a substantive story/planning exchange; the planning counter remains137.
 
 ## Outcome
