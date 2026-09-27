@@ -120,6 +120,14 @@ If explicit guide/layer authoring still fails within the next integrated bound, 
 
 ## Applying this beyond hair
 
+### Free authored-donor route, 2026-09-26
+
+The authorized [three-fit acquisition/adaptation trial](../planning/SERIES_01_NATIVE_GROOM_CAPABILITY.md#approved-free-donor-route-result--2026-09-26) separates **source suitability** from retargeting ability. A waved card mesh with a low side fringe does not become the approved lifted center-part hairstyle through scaling and a material change. Two failed fits are enough to reject that donor; the full21-style pack thumbnail inspection gives no stronger match. An apparently attractive marketplace asset was also excluded when the uploader's own comments revealed upstream extraction despite a CC badge. Do not infer rights from a download button or price.
+
+An official creator-attributed Blender groom supplied coherent whole-head shape on the third fit, materially better than this agent's generated plates. This is useful evidence for **agent-only adaptation with artist-authored input**, not de-novo success. It still fails reference-specific part/forehead and illustrated stroke hierarchy. Do not mistake more plausible hair for pair-B fidelity, or request predictable cosmetic approval. The CC BY-SA donor remains local diagnostic pending exact distribution terms.
+
+Keep a separate control gate: copied evaluated strands can look plausible while copied original guides are disconnected. The current fit has precisely that limitation. Next adaptation must preserve the guide-to-render relationship before making controllability claims. Static coverage, attachment under motion, native reopening, rights and creative acceptance are separate gates. No human necessity or model superiority follows from these observations. Retain cumulative time and the failed test command; no reset on a new donor or prompt.
+
 ### Dominant-lock specialist extension, 2026-09-26
 
 The [approved native-groom extension](../planning/SERIES_01_NATIVE_GROOM_CAPABILITY.md#approved-extension-result--dominant-painterly-locks-2026-09-26) reaches its three-variant bound without a review-ready hairstyle. Smaller explicit lock sets and selective painted accents expose, but do not solve, the same spatial failures: segmented roots, planar/ribbon volume and poor side joins. The final normal-field/depth change is not a controlled causal comparison. This is a limitation of the tested agent authoring route, not proof of tool incapability or human necessity.
