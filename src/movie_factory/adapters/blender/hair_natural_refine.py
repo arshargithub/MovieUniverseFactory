@@ -118,8 +118,10 @@ def temple_wisps(material,candidate):
     tree=BVHTree.FromPolygons([head.matrix_world@v.co for v in mesh.vertices],[list(p.vertices) for p in mesh.polygons])
     rows=[];radii=[];rng=np.random.default_rng(147)
     for side in (-1,1):
-        for ci in range(36 if candidate>=3 else 55 if candidate>=2 else 90):
+        for ci in range(18 if candidate>=5 else 36 if candidate>=3 else 55 if candidate>=2 else 90):
             jitter=float(rng.uniform(-1,1));length=float(rng.uniform(.22,.44));row=[]
+            if candidate>=5:
+                length=float(rng.uniform(.09,.23));root_y=float(rng.uniform(-.42,-.24));root_z=float(rng.uniform(.45,.54))
             for k in range(48):
                 t=k/47
                 if candidate>=2:
@@ -127,11 +129,15 @@ def temple_wisps(material,candidate):
                     # smooth path; nearest-point projection jumped across rims.
                     y=-.43+.055*t+.022*jitter
                     z=.49-length*t+.025*jitter
+                    if candidate>=5:
+                        y=root_y+.045*t+.018*math.sin(math.pi*t+jitter)*t
+                        z=root_z-length*t
                     hit,normal,_,_=tree.ray_cast(Vector((side*2,y,z)),Vector((-side,0,0)))
                     if hit is None:raise ValueError('Temple strand misses skin')
                     q=hit+normal*(.005+.008*math.sin(math.pi*t))
                     q.y+=.004*math.sin(t*5+ci)*math.sin(math.pi*t)
                     radius=.00065*(1-t)**.8+.000015
+                    if candidate>=5:radius=.00036*(1-t)**1.2+.000008
                 else:
                     p=Vector((side*(.745+.015*t),-.32+.12*t+.035*jitter,.50-length*t+.035*jitter))
                     hit,normal,_,_=tree.find_nearest(p)
@@ -147,20 +153,75 @@ def temple_wisps(material,candidate):
     ob=bpy.data.objects.new(curves.name,curves);bpy.context.scene.collection.objects.link(ob)
     return ob
 
+def add_brown_accents(main,strands,material,candidate):
+    """Root-localized colour fields follow whole native curves, not image bands."""
+    import bpy
+    from mathutils import Vector
+    for ob in (main,strands):
+        tree=ob.modifiers['MF live finish'].node_group;n,l=tree.nodes,tree.links
+        gi=next(v for v in n if v.type=='GROUP_INPUT')
+        radius=next(v for v in n if v.bl_idname=='GeometryNodeSetCurveRadius')
+        sample=n.new('GeometryNodeSampleCurve');sample.data_type='FLOAT_VECTOR';sample.use_all_curves=False
+        index=n.new('GeometryNodeInputIndex')
+        l.new(gi.outputs['Geometry'],sample.inputs['Curves']);l.new(index.outputs['Index'],sample.inputs['Curve Index'])
+        combined=None
+        for centre,width in [((-.40,-.66,1.09),.19),((.28,-.77,1.07),.16),((.72,-.24,1.00),.15),((-.36,.65,.96),.16)]:
+            distance=n.new('ShaderNodeVectorMath');distance.operation='DISTANCE'
+            distance.inputs[1].default_value=ob.matrix_world.inverted()@Vector(centre)
+            l.new(sample.outputs['Position'],distance.inputs[0])
+            falloff=n.new('ShaderNodeMapRange');falloff.clamp=True;falloff.interpolation_type='SMOOTHERSTEP'
+            falloff.inputs['From Min'].default_value=0;falloff.inputs['From Max'].default_value=width
+            falloff.inputs['To Min'].default_value=1;falloff.inputs['To Max'].default_value=0
+            l.new(distance.outputs['Value'],falloff.inputs['Value'])
+            if combined is None:combined=falloff.outputs[0]
+            else:
+                maximum=n.new('ShaderNodeMath');maximum.operation='MAXIMUM'
+                l.new(combined,maximum.inputs[0]);l.new(falloff.outputs[0],maximum.inputs[1]);combined=maximum.outputs[0]
+        store=n.new('GeometryNodeStoreNamedAttribute');store.data_type='FLOAT';store.domain='CURVE'
+        store.inputs['Name'].default_value='MF_brown_accent'
+        l.new(gi.outputs['Geometry'],store.inputs['Geometry']);l.new(combined,store.inputs['Value'])
+        l.new(store.outputs['Geometry'],radius.inputs['Curve'])
+    n,l=material.node_tree.nodes,material.node_tree.links
+    p=n.get('Principled BSDF');ramp=next(v for v in n if v.type=='VALTORGB')
+    attr=n.new('ShaderNodeAttribute');attr.attribute_name='MF_brown_accent'
+    mix=n.new('ShaderNodeMixRGB');mix.blend_type='MIX'
+    mix.inputs[2].default_value=(.17,.076,.031,1)
+    if candidate>=6:
+        warm=n.new('ShaderNodeValToRGB')
+        warm.color_ramp.elements[0].color=(.065,.025,.010,1)
+        warm.color_ramp.elements[1].color=(.20,.095,.039,1)
+        info=next(v for v in n if v.type=='HAIR_INFO')
+        l.new(info.outputs['Random'],warm.inputs['Fac']);l.new(warm.outputs['Color'],mix.inputs[2])
+    l.new(attr.outputs['Fac'],mix.inputs[0]);l.new(ramp.outputs['Color'],mix.inputs[1])
+    l.new(mix.outputs[0],p.inputs['Base Color']);l.new(mix.outputs[0],p.inputs['Emission Color'])
+
+def accent_state(main):
+    import bpy,struct
+    from hijab_donor import material_signature
+    evaluated=main.evaluated_get(bpy.context.evaluated_depsgraph_get()).data
+    attr=evaluated.attributes['MF_brown_accent']
+    values=[p.value for p in attr.data]
+    assert attr.domain=='CURVE' and min(values)>=0 and max(values)<=1
+    assert 0<sum(v>.05 for v in values)<len(values)/2
+    return {'count':len(values),'accented_over_005':sum(v>.05 for v in values),
+            'weights_sha256':hashlib.sha256(b''.join(struct.pack('f',v) for v in values)).hexdigest(),
+            'material':material_signature(bpy.data.materials['MF_natural147_hair'])}
+
 def validate(job):
     if (not isinstance(job,dict) or set(job)!={'operation','candidate'}
         or type(job['candidate']) is not int or job['candidate'] not in range(0,7)
-        or job['operation'] not in ('audit','inspect','ear-preview','preview','seal','verify')):
+        or job['operation'] not in ('audit','accent-audit','inspect','ear-preview','preview','seal','verify')):
         raise ValueError('Fixed natural-groom job required')
     from hair_uncovered_finish import PINS,ORIGINAL_PINS,REF,ORIGINAL_REF
     for p,h in [(SOURCE,SOURCE_SHA),(DONOR,DONOR_SHA),*[(REF/n,h) for n,h in PINS.items()],*[(ORIGINAL_REF/n,h) for n,h in ORIGINAL_PINS.items()]]:
         if p.is_symlink() or digest(p)!=h:raise ValueError('Pinned input changed')
-    out=BASE/f'natural147-{job["operation"]}-{job["candidate"]:02}'
+    prefix='natural148' if job['candidate']>=5 else 'natural147'
+    out=BASE/f'{prefix}-{job["operation"]}-{job["candidate"]:02}'
     if out.exists() or out.is_symlink() or out.resolve().parent!=BASE.resolve():raise ValueError('Fresh confined output required')
     if shutil.disk_usage(BASE).free<5_000_000_000:raise ValueError('Disk low')
     if job['operation'] in ('seal','verify'):
         stage='preview' if job['operation']=='seal' else 'seal'
-        folder=BASE/f'natural147-{stage}-{job["candidate"]:02}'
+        folder=BASE/f'{prefix}-{stage}-{job["candidate"]:02}'
         if folder.is_symlink() or (folder/'result.json').is_symlink():raise ValueError('Linked prerequisite')
         r=json.loads((folder/'result.json').read_text())
         if not r['protected_exact'] or r['handler_sha256']!=digest(Path(__file__)):raise ValueError('Stale prerequisite')
@@ -259,6 +320,22 @@ def run(job):
     out.mkdir();shutil.copyfile(__file__,out/'handler-source.py')
     bpy.ops.wm.open_mainfile(filepath=str(SOURCE),load_ui=False,use_scripts=False)
     protected=protection()
+    prefix='natural148' if job['candidate']>=5 else 'natural147'
+    if job['operation']=='accent-audit':
+        checkpoint=BASE/'natural147-seal-04/natural-hair.blend'
+        assert digest(checkpoint)=='31835579b66300c562ef0faccfbaef1a0edf6816abb6ddf7eaed47fb9442da67'
+        bpy.ops.wm.open_mainfile(filepath=str(checkpoint),load_ui=False,use_scripts=False)
+        main=bpy.data.objects['MF_natural147_hair_long hair main']
+        evaluated=main.evaluated_get(bpy.context.evaluated_depsgraph_get()).data
+        graph=bpy.data.node_groups.new('accent-inspection','GeometryNodeTree')
+        node=graph.nodes.new('GeometryNodeSampleCurve');node.data_type='FLOAT_VECTOR';node.use_all_curves=False
+        info={'attributes':[(a.name,a.data_type,a.domain) for a in evaluated.attributes],
+              'roots':[list(main.matrix_world@c.points[0].position) for c in main.data.curves],
+              'sample_inputs':[(s.name,s.bl_idname) for s in node.inputs],'sample_outputs':[s.name for s in node.outputs]}
+        (out/'inspection.json').write_text(json.dumps(info,indent=2)+'\n')
+        bpy.data.objects['MF_natural147_hair_temples'].hide_render=True
+        review(bpy.context.scene,out,(0,0,-.03),3.8,(('front-no-wisps',0),('left-no-wisps',-45)))
+        return
     if job['operation']=='ear-preview':
         from hair_anatomy_refinement import is_hair
         for ob in bpy.context.scene.objects:
@@ -301,7 +378,7 @@ def run(job):
         assert protection()==protected
         return
     if job['operation']=='verify':
-        seal=BASE/f'natural147-seal-{job["candidate"]:02}'
+        seal=BASE/f'{prefix}-seal-{job["candidate"]:02}'
         prior=json.loads((seal/'result.json').read_text())
         bpy.ops.wm.open_mainfile(filepath=str(seal/'natural-hair.blend'),load_ui=False,use_scripts=False)
         main=bpy.data.objects['MF_natural147_hair_long hair main']
@@ -313,12 +390,15 @@ def run(job):
             define_ears()
             bpy.context.view_layer.update()
             temple_wisps(material,job['candidate'])
+            if job['candidate']>=5:add_brown_accents(main,strands,material,job['candidate'])
     assert protected_state()==protected
     control=control_check(main)
     ears=ear_record() if job['candidate']>=1 else None
     state=native_state() if job['candidate']>=1 else None
+    accents=accent_state(main) if job['candidate']>=5 else None
     if job['operation']=='verify':
         assert control['baseline']==prior['baseline'] and ears==prior['ears'] and state==prior['native_state']
+        assert accents==prior.get('accents')
     views=(('front',0),) if job['operation'] in ('seal','verify') else (('front',0),('left',-45),('right',45),('back',180))
     review(bpy.context.scene,out,(0,0,-.03),3.8,views)
     if job['candidate']>=1 and job['operation']=='preview':
@@ -333,8 +413,9 @@ def run(job):
         key.value=1
         for ob,value in saved.items():ob.hide_render=value
     result={'protected_exact':protected_state()==protected,'protected_digest':protected,'handler_sha256':digest(out/'handler-source.py'),'dependency_hashes':dependency_hashes(),'source_sha256':SOURCE_SHA,'donor_sha256':DONOR_SHA,'candidate':job['candidate'],'ears':ears,'native_state':state,'guide_counts':[len(main.data.curves),len(strands.data.curves)],'director_acceptance':'PENDING','scalp_animation_binding':'NOT_VALIDATED',**control}
+    result['accents']=accents
     if job['operation']=='seal':
-        preview=json.loads((BASE/f'natural147-preview-{job["candidate"]:02}'/'result.json').read_text())
+        preview=json.loads((BASE/f'{prefix}-preview-{job["candidate"]:02}'/'result.json').read_text())
         assert preview['baseline']==result['baseline'] and preview['ears']==result['ears'] and preview['native_state']==state
         bpy.context.scene['MF_natural147_status']='STATIC_CREATIVE_REVIEW_PENDING'
         bpy.ops.file.pack_all()

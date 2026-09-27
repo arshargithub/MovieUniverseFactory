@@ -33,6 +33,15 @@ def inputs(tmp_path,monkeypatch):
 def test_fresh_preview(inputs):
     assert m.validate({'operation':'preview','candidate':4})==inputs/'natural147-preview-04'
 
+@pytest.mark.parametrize('candidate',[5,6])
+def test_accent_output_preserves_prior_namespace(inputs,candidate):
+    assert m.validate({'operation':'preview','candidate':candidate})==inputs/f'natural148-preview-{candidate:02}'
+
+def test_accent_seal_needs_current_handler(inputs):
+    folder=inputs/'natural148-preview-06';folder.mkdir()
+    (folder/'result.json').write_text(json.dumps({'protected_exact':True,'handler_sha256':'old'}))
+    with pytest.raises(ValueError,match='Stale'):m.validate({'operation':'seal','candidate':6})
+
 def test_source_tamper(inputs):
     m.SOURCE.write_bytes(b'changed')
     with pytest.raises(ValueError,match='Pinned'):m.validate({'operation':'preview','candidate':4})
