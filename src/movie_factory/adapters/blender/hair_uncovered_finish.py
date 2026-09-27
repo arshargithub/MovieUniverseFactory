@@ -36,7 +36,7 @@ def digest(path):
 def validate(job):
     if (not isinstance(job, dict) or set(job) != {'operation', 'candidate'}
             or job['operation'] not in ('preview', 'seal', 'verify', 'audit')
-            or type(job['candidate']) is not int or job['candidate'] not in tuple(range(1, 13))):
+            or type(job['candidate']) is not int or job['candidate'] not in tuple(range(1, 19))):
         raise ValueError('Fixed uncovered finish job required')
     for p, h in [(SOURCE, SOURCE_SHA), *[(REF/n, h) for n, h in PINS.items()],
                  *[(ORIGINAL_REF/n,h) for n,h in ORIGINAL_PINS.items()]]:
@@ -67,6 +67,44 @@ def validate(job):
 def smooth(t):
     t = max(0., min(1., t))
     return t*t*(3-2*t)
+
+
+def crown_offset(point, root, t, candidate):
+    """Lift distinct upper lock families without moving roots or lower hair."""
+    x,y,z=point
+    if t>=.45 or z<=.55 or (t<=0 and candidate==13):
+        return (0.,0.,0.)
+    side=1 if x>=0 else -1
+    if candidate>=16:
+        # Connected crest; large independently lifted root bands made the
+        # previous hypothesis scalloped. Small unequal overlaps sit on this
+        # continuous profile instead of defining separate peaks.
+        upper=smooth((z-.65)/.70)
+        frontal=smooth((y+.82)/.4)*(1-smooth((y-.15)/.65))
+        crest=.17*math.exp(-(x/.65)**2)*frontal*upper
+        env=math.sin(math.pi*t/.45)**1.2
+        overlap=.025*(1+math.sin(root[1]*7+side*.55))*env*upper
+        overlap*=1-smooth((y-.1)/.5)
+        return (0.,-.04*env*upper*(1-smooth((y-.1)/.5)),crest+overlap)
+    envelope=math.sin(math.pi*t/.45)**1.2
+    upper=smooth((z-.55)/.65)*(1-smooth((abs(x)-.7)/.6))
+    rear=1-smooth((root[1]-.3)/.6)
+    centers=(-.92,-.57,-.18,.25)
+    heights=(.23,.29,.20,.25) if side<0 else (.27,.20,.30,.19)
+    weights=[math.exp(-((root[1]-c)/.15)**2) for c in centers]
+    lift=(.065+sum(h*w for h,w in zip(heights,weights)))*envelope*upper*rear
+    # Neighbouring coherent root bands have different lift/depth. The
+    # near-center part roots and the whole face/forehead remain untouched.
+    depth=(.07+.035*math.sin(root[1]*8+side))*envelope*upper*rear
+    if candidate>=14:
+        # Upper part roots, unlike the frontal hairline, can lift with the
+        # crest. Keeping all of them pinned made13's two detached humps.
+        apex=(.14 if candidate>=15 else .24)*math.exp(-(x/.70)**2)*smooth((z-.75)/.65)
+        apex*=smooth((y+.82)/.50)*(1-smooth((y-.5)/.5))
+        apex*=1-smooth((t-.22)/.23)
+        lift=.40*lift+apex
+        depth*=.6
+    return (side*.018*lift,-depth,lift)
 
 
 def shape(point, candidate):
@@ -220,6 +258,13 @@ def finish(candidate):
                     rear=smooth((q.y-.15)/.5)*smooth((q.z+.1)/.5)
                     q.x-=.16*math.tanh(q.x/.10)*math.exp(-(q.x/.55)**2)*rear
                     point.position=q
+    if candidate >= 13:
+        for curve in ob.data.curves:
+            root=tuple(curve.points[0].position)
+            for k,p in enumerate(curve.points):
+                q=p.position.copy()
+                delta=crown_offset(q,root,k/(len(curve.points)-1),candidate)
+                p.position=tuple(a+b for a,b in zip(q,delta))
     ob.data.update_tag()
     # Keep live native curves and a single material language. Use the now
     # approved uncovered source, not scarf/skin pixels from the hooded portrait.
@@ -252,7 +297,7 @@ def uncovered_material(mat, candidate):
     p = nodes.new('ShaderNodeBsdfPrincipled')
     p.inputs['Roughness'].default_value = .95
     p.inputs['Specular IOR Level'].default_value = 0
-    p.inputs['Emission Strength'].default_value = .60
+    p.inputs['Emission Strength'].default_value = .40 if candidate>=15 else .60
     links.new(p.outputs[0], output.inputs['Surface'])
     def mathnode(op, a, b=None):
         node=nodes.new('ShaderNodeMath');node.operation=op
@@ -283,14 +328,14 @@ def uncovered_material(mat, candidate):
         valid=mathnode('MULTIPLY',mathnode('LESS_THAN',rgb.outputs['Red'],.24),mathnode('GREATER_THAN',rgb.outputs['Red'],mathnode('MULTIPLY',rgb.outputs['Green'],1.18)))
         valid=mathnode('MULTIPLY',valid,mathnode('GREATER_THAN',rgb.outputs['Red'],mathnode('MULTIPLY',rgb.outputs['Blue'],1.35)))
         return mix(valid,fallback,tex.outputs[0])
-    front=project('front-uncovered-v01.png',260,650,350)
+    front=project('front-uncovered-v01.png',260,570 if candidate>=15 else 650,265 if candidate>=15 else 350)
     rear=project('back-uncovered-v01.png',-230,675,280)
     frontweight=mathnode('MINIMUM',1,mathnode('MAXIMUM',0,mathnode('DIVIDE',mathnode('SUBTRACT',.10,y),.70)))
     rearweight=mathnode('MINIMUM',1,mathnode('MAXIMUM',0,mathnode('DIVIDE',mathnode('SUBTRACT',y,.05),.65)))
     if candidate >= 5:
         # Reject the full portrait projection: shaded marks crossed the real
         # flow and copied face detail at temples. Keep only safe upper crown.
-        height=mathnode('MINIMUM',1,mathnode('MAXIMUM',0,mathnode('DIVIDE',mathnode('SUBTRACT',z,.65),.45)))
+        height=mathnode('MINIMUM',1,mathnode('MAXIMUM',0,mathnode('DIVIDE',mathnode('SUBTRACT',z,.30 if candidate>=17 else .65),.50 if candidate>=17 else .45)))
         frontweight=mathnode('MULTIPLY',frontweight,height)
         rearweight=0.
     color=mix(frontweight,fallback,front)
