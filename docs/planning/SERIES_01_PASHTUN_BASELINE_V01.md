@@ -1,5 +1,11 @@
 # Pashtun identity baseline — selected pair and iteration history
 
+## Baseline expansion approved — exchange142, 2026-09-27
+
+Director accepts all four uncovered images from exchange141 and adds them to the baseline set. The two original pair-B portraits remain authoritative for illustrated identity; the four uncovered views supplement them for crown, forehead/temple framing, wave structure, volume and rear/length design. Their file paths and SHA-256 hashes are in the table below. This supersedes the pending-status statements for these four images, not the originals. The side views are obliques, not calibrated orthographic measurements. Rear clothing/strap artifacts remain excluded from costume authority.
+
+Director authorizes finishing the native hair against this expanded six-image set. Preserve accepted face width, skin, anatomy and restrained performance. Native candidate23 is a starting point, not accepted finished hair. Internal whole-look review precedes delivery of clothing-free front/both-oblique/back renders and persistent editable native. No new motion, costume work, purchases or paid provider calls authorized. Original media remain unchanged; no gate completion inferred from reference approval.
+
 ## Uncovered reference candidates — exchange 141, 2026-09-27
 
 Director finds integrated native hair candidate23 much closer but still funny-looking from the front; this is encouragement, not final hairstyle acceptance. Director requests uncovered versions of the original baseline pair plus side/back views to reduce ambiguity for continued authoring. No native character changes this exchange.

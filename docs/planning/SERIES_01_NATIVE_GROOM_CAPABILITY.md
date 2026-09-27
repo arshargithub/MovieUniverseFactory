@@ -1,5 +1,9 @@
 # Agent-only hair workflow investigation
 
+## Current uncovered-hair finish — exchange142, 2026-09-27
+
+Director approves four uncovered references as a supplement to original pair B. [Finish12 result](SERIES_01_UNCOVERED_HAIR_FINISH_01.md) is the current integrated static review candidate, **not Director-approved native hair**. It repairs coverage and temporal flow, carries long face-framing waves into the rear, and preserves the accepted bust exactly. Saved native and fresh-process reversible guide/rebuild/rollback pass; preview/seal and fresh front render pixels match.135 tests;12 internal previews; six approved references. Cumulative effort remains on the same objective. This demonstrates continued agent-executed donor adaptation and static native control, not asset-free creation, animated scalp attachment or general production qualification. No paid call, new asset, purchase or publication. Prior rear-provisional language below is superseded for hair design only; the new rear costume artifact is excluded from wardrobe authority.
+
 ## Current integrated review candidate — exchange140, 2026-09-26 local / September27 UTC
 
 **Candidate23 is ready for an integrated Director appearance review, not approved production hair.** The Director removed arbitrary30/60-minute stopping limits; diagnosis, failed variants and verification remained internal. No new purchase, paid call, model switch, human asset edit or native upload. Earlier sections below remain history.

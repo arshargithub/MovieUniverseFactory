@@ -2,6 +2,12 @@
 
 2026-09-26 · Release 01 exchange 137 · applies to the Pashtun character and subsequent asset work.
 
+## Expanded reference authority — exchange142
+
+Director approves all four uncovered references and authorizes native hair finalization. The original pair B plus `series01-pashtun-uncovered-v01/{front,three-quarter-screen-right,three-quarter-screen-left,back}-uncovered-v01.png` form the accepted six-image baseline. Hidden rear/length now has an approved illustrated design target, superseding earlier provisional-back wording for hair only. New views are not calibrated geometry and their rear costume artifact is excluded. Apply the existing integrated readiness checklist to this expanded authority; do not change accepted non-hair state. Reference approval is not native acceptance. Continue the sustained objective and cumulative accounting; no arbitrary cosmetic milestone yields.
+
+**Execution learning:** [uncovered finish](../planning/SERIES_01_UNCOVERED_HAIR_FINISH_01.md) separates exposed-root skin from material contamination using a flat-colour hair diagnostic. A separate undergrowth layer can repair sparse coverage without changing the accepted head. Mid-strand temple reversals require whole-arc authoring, not repeated tip compression. Hard height constraints create steps; complete portrait projection copies unrelated marks. Continuous face-framing paths with restrained uneven waves address the combined silhouette. Preserve failed evidence and use the six references for internal whole-head QA. Final native appearance still needs Director acceptance; static guide/rebuild evidence cannot qualify animated scalp attachment.
+
 ## Reference coverage clarification — exchange141
 
 Director requests uncovered front/side/back image references after finding integrated23 closer but still odd from the front. [Four candidates](../planning/SERIES_01_PASHTUN_BASELINE_V01.md#uncovered-reference-candidates--exchange-141-2026-09-27) are generated from approved pair B, not reverse-engineered from the native candidate. They remain pending: do not let convenient new generated geometry replace approved identity. Two portraits with a covering constrain visible framing but cannot establish a unique hidden crown/rear hairstyle. Close that creative ambiguity explicitly before treating hidden hair as a fidelity target. New obliques are not strict profile measurements; the rear's inherited strap/buckle is not a garment reference. No native acceptance or agent-only capability claim follows from generating these images.
