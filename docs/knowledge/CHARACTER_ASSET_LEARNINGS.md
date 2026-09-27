@@ -2,6 +2,10 @@
 
 2026-09-26 · Release 01 exchange 137 · applies to the Pashtun character and subsequent asset work.
 
+## Small forehead adjustment — exchange148
+
+After the Director liked the natural alternative, a small local front-guide lift improved forehead exposure without moving the scalp/growth surface or reopening the entire style. The stronger first lift sharpened the edge; reduced amplitude and a longer root transition retained softer framing. Keep such corrections local and compare against the liked current look plus approved identity references. Do not equate a request for slightly more forehead with permission for global recession, new crown design or face changes. [Current result](../planning/SERIES_01_NATIVE_GROOM_CAPABILITY.md#subtle-forehead-opening--exchange148); final tweak review pending. Reuse the existing handler/gallery and skip redundant isolated ear renders when the ear state is exactly preserved.
+
 ## Temple correction and colour direction — exchange147
 
 Director spotted a narrow temple stripe in the previously reviewed natural groom: earlier internal QA missed that aligned short hairs read as one mark at ordinary viewing size. Hiding only the added wisps removed it; do not repaint skin to correct a hair defect. Shorter, finer strands with dispersed roots and trajectories fix the band while retaining soft temple framing. For selective brown accents, use feathered root-local fields carried along native curves; per-strand colour variation avoids uniformly coloured locks. [Current result](../planning/SERIES_01_NATIVE_GROOM_CAPABILITY.md#temple-repair-and-brown-accents--exchange147). Main groom geometry and all prior anatomy/skin/ear controls preserved; technical evidence does not imply Director acceptance. Dark base colour is acceptable, not approval of the entire hairstyle.

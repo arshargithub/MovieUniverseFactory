@@ -4,6 +4,8 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+**Exchange148:** Director likes the natural hair result, then adds one final request for slightly more exposed forehead. Retain overall style/colour and accepted face/ears/skin; do not treat this as unconditional final acceptance or reopen rejected exact-match hair methods. [Localized08 result](SERIES_01_NATIVE_GROOM_CAPABILITY.md#subtle-forehead-opening--exchange148) is review-ready with same-light before/after,198 tests and verified saved native. Only front framing changed; final tweak acceptance pending. Counter148, next checkpoint150, no release-gate advance, spending or remote push.
+
 **Exchange147:** Director identifies a stripe below the viewer-left temple on the exposed-ear side. Darker base hair colour is acceptable; add a few restrained lighter-brown streaks inspired by the baseline for character. Correct the local hair defect, preserve current natural style and non-hair state, and review internally before delivery. This is scoped refinement, not full hairstyle acceptance. Counter147; next checkpoint150. No paid calls or purchases.
 
 Execution: [natural148-06](SERIES_01_NATIVE_GROOM_CAPABILITY.md#temple-repair-and-brown-accents--exchange147) repairs the added-wisp stripe and introduces selective varied brown accents. Main hairstyle geometry, ears and accepted character state preserved;195 tests and fresh native/control/accent/pixel checks pass. Complete static comparison, not creative acceptance or a new release milestone. No remote push.
