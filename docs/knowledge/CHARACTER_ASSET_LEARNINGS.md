@@ -2,6 +2,10 @@
 
 2026-09-26 · Release 01 exchange 137 · applies to the Pashtun character and subsequent asset work.
 
+## Reference coverage clarification — exchange141
+
+Director requests uncovered front/side/back image references after finding integrated23 closer but still odd from the front. [Four candidates](../planning/SERIES_01_PASHTUN_BASELINE_V01.md#uncovered-reference-candidates--exchange-141-2026-09-27) are generated from approved pair B, not reverse-engineered from the native candidate. They remain pending: do not let convenient new generated geometry replace approved identity. Two portraits with a covering constrain visible framing but cannot establish a unique hidden crown/rear hairstyle. Close that creative ambiguity explicitly before treating hidden hair as a fidelity target. New obliques are not strict profile measurements; the rear's inherited strap/buckle is not a garment reference. No native acceptance or agent-only capability claim follows from generating these images.
+
 ## Authorized sustained execution — exchange140
 
 **Current result:** [integrated candidate23](../planning/SERIES_01_NATIVE_GROOM_CAPABILITY.md#current-integrated-review-candidate--exchange140-2026-09-26-local--september27-utc) is ready for a whole-look Director review; acceptance remains pending. The measured front root-penetration cause was repaired by clearance-preserving transport. Native curves plus a restricted reference crown material outperform tested thick lofts and remeshed surfaces for this candidate. Source-guided spatial adaptation remains artist-asset-dependent, not de-novo creation. One guide edit, explicit derivative rebuild and exact rollback repeat after fresh reopen; the render is pixel-identical. This does not validate automatic animation binding, all-angle fidelity, edit locality or economics. Rejected colour/geometry variants stay internal evidence.23 previews and one failed first package are retained in one compact card; no time allowance reset, spend or new model claim. Review the entire hairstyle now, not another isolated technical milestone.

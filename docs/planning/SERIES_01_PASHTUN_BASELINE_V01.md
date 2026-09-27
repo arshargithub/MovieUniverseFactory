@@ -1,5 +1,24 @@
 # Pashtun identity baseline — selected pair and iteration history
 
+## Uncovered reference candidates — exchange 141, 2026-09-27
+
+Director finds integrated native hair candidate23 much closer but still funny-looking from the front; this is encouragement, not final hairstyle acceptance. Director requests uncovered versions of the original baseline pair plus side/back views to reduce ambiguity for continued authoring. No native character changes this exchange.
+
+Four built-in image-generation edits use ONLY approved pair B, not the native candidate. Original exchange91 prompts below were retained verbatim as the base, followed by explicit overrides: do not repeat the already-completed individuality pass; lower head covering onto shoulders; retain face, forehead/part, visible locks, expression, illustrated medium, palette and costume; change requested viewpoint. Thus these are controlled edits, not literally unchanged prompts or pixel-identical portraits. Exact submitted prompts, input order and generator source paths: [generation record](../../.runtime/art-direction/series01-pashtun-uncovered-v01/generation-record.json).
+
+| Candidate | SHA-256 |
+|---|---|
+| [Front](../../.runtime/art-direction/series01-pashtun-uncovered-v01/front-uncovered-v01.png) | `3344c7d880fb6b50f46e9af268790be2772863c6cca0db2cdd83ea54d216f8f6` |
+| [Facing right, anatomical left](../../.runtime/art-direction/series01-pashtun-uncovered-v01/three-quarter-screen-right-uncovered-v01.png) | `d8b3e07494b0ac6f3fd0233d5463d03ae98cb5a7b50b23a2b1588be146c09dfc` |
+| [Facing left, anatomical right](../../.runtime/art-direction/series01-pashtun-uncovered-v01/three-quarter-screen-left-uncovered-v01.png) | `73ea1adb291f98d4d5b82c4160318db065ab268d1f916b38d362bbb5596ddccc` |
+| [Rear](../../.runtime/art-direction/series01-pashtun-uncovered-v01/back-uncovered-v01.png) | `d9357b9baf5da1b821288cdd27938d07871d83ffbaefe643e6585b590e71b085` |
+
+**Visual inspection:** all four uncover the crown and keep the illustrated brushwork. Front broadly retains identity, expression and forehead framing. Side requests yielded obliques, not strict profiles; filenames reflect observed views. Opposite-side anatomy and hair volume/length are generated interpretations, not a calibrated turnaround. Rear is slightly oblique, with one ear visible, and inherits implausibly front-like strap/buckle placement: use only for proposed hair silhouette, never costume construction. Do not treat newly visible hair length/volume as accepted design. No automatic rerolls. A compact six-image comparison includes the unchanged approved pair; navigation/keyboard/state checks pass, browser layout was not verified.
+
+**Authority:** all four new images await Director selection. Pair B remains approved identity/hair-look authority; this is not hairstyle approval, A5 completion, native modeling or motion qualification. After approval, supplement the reference contract explicitly rather than silently replacing its originals. Preserve accepted facial geometry/skin/anatomy.
+
+Four built-in calls, zero project-provider API calls, no purchase/subscription. Built-in generation model, tokens and monetary cost UNKNOWN, not zero. Files copied to project SSD; original images and outputs preserved. Media and full prompt record are ignored by Git; no new off-device backup claimed. Text decision record is a scoped local design commit; next scheduled push/checkpoint150. Lifecycle capture uses existing likeness episode activity `uncovered141-references`; initial context-recovery effort predates prospective capture and is not invented.
+
 **3D starting-point acceptance, exchange 119:** Director accepts [FaceBuilder head v02](../../.runtime/art-direction/series01-facebuilder-trial-01/head-v02-two-view.blend) as a provisional 3D facial base. Pair B below remains the authoritative illustrated identity reference. This is not approval of neck/ear texture, projected hair/scarf, final style, rig or animation. Preserve v02 unchanged and work in derivatives; see [trial record](SERIES_01_FACEBUILDER_TRIAL_01.md) for evidence and remaining limitations.
 
 **Current selection, exchange 92:** Director selects revised **pair B**: [side / three-quarter](../../.runtime/art-direction/series01-pashtun-baseline-v01/portrait-v07-individualized.png) and [frontal](../../.runtime/art-direction/series01-pashtun-baseline-v01/frontal-v02-individualized.png). Both are approved still-image identity references going forward. Prior originals and alternatives remain unchanged. B is the portrait-pair label, not a change from illustrated visual language C. Selection supersedes earlier pending-review/default-reference statements below; it does not certify motion or complete the look bible. The intervening display-only reordering request did not increment the substantive counter. No new images or provider calls this exchange.
