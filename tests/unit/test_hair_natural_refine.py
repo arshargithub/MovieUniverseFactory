@@ -6,7 +6,7 @@ import sys
 import types
 spec=importlib.util.spec_from_file_location('natural',Path('src/movie_factory/adapters/blender/hair_natural_refine.py'))
 m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
-@pytest.mark.parametrize('job',[None,{}, {'operation':'exec','candidate':1},{'operation':'preview','candidate':True},{'operation':'preview','candidate':-1},{'operation':'preview','candidate':9},{'operation':'preview','candidate':1,'code':'pass'}])
+@pytest.mark.parametrize('job',[None,{}, {'operation':'exec','candidate':1},{'operation':'preview','candidate':True},{'operation':'preview','candidate':-1},{'operation':'preview','candidate':10},{'operation':'preview','candidate':1,'code':'pass'}])
 def test_rejects_unsupported_jobs(job):
     with pytest.raises(ValueError):m.validate(job)
 
@@ -35,6 +35,17 @@ def test_fresh_preview(inputs):
 
 def test_forehead_output_is_fresh_namespace(inputs):
     assert m.validate({'operation':'preview','candidate':7})==inputs/'natural149-preview-07'
+
+def test_attachment_audit_validation_is_data_only(inputs):
+    assert m.validate({'operation':'attachment-audit','candidate':9})==inputs/'natural150-attachment-audit-09'
+
+def test_scalp_fit_locality_and_small_arc():
+    import math
+    for p in ((0,.1,1.),(.9,-.8,.9),(0,-.9,.4),(0,-.8,1.5)):
+        assert m.scalp_position(p)==p
+    p=(.1,-.95,.9);q=m.scalp_position(p)
+    assert q[0]==p[0] and 0<q[2]-p[2]<.07 and 0<q[1]-p[1]<.05
+    assert math.isclose(p[1]**2+(p[2]-.3)**2,q[1]**2+(q[2]-.3)**2)
 
 def test_forehead_lift_pins_roots_crown_rear_and_temples():
     assert m.forehead_delta((0,-.9,.85),0)==(0.,0.,0.)

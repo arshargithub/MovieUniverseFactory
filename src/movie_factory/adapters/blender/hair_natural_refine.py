@@ -29,7 +29,49 @@ def forehead_delta(p,t,candidate=7):
     return (0.,0.,(.050 if candidate>=8 else .075)*weight)
 
 def output_prefix(candidate):
-    return 'natural149' if candidate>=7 else 'natural148' if candidate>=5 else 'natural147'
+    return 'natural150' if candidate>=9 else 'natural149' if candidate>=7 else 'natural148' if candidate>=5 else 'natural147'
+
+def scalp_position(p):
+    """Small front-only rotation along the head arc, not vertical flotation."""
+    x,y,z=p
+    weight=smooth((-y-.40)/.40)*smooth((z-.48)/.35)
+    weight*=1-smooth((z-1.20)/.30)
+    weight*=1-smooth((abs(x)-.40)/.45)
+    if weight==0:return tuple(p)
+    angle=-.065*weight;c=math.cos(angle);s=math.sin(angle)
+    return (x,y*c-(z-.30)*s,.30+y*s+(z-.30)*c)
+
+def lift_front_scalp(main,strands,surface):
+    """Move guides and growth mesh together; keep UV/parting topology intact."""
+    import bpy
+    from mathutils import Vector
+    from mathutils.bvhtree import BVHTree
+    head=bpy.data.objects[HEAD];mesh=head.evaluated_get(bpy.context.evaluated_depsgraph_get()).data
+    tree=BVHTree.FromPolygons([head.matrix_world@v.co for v in mesh.vertices],[list(p.vertices) for p in mesh.polygons])
+    record={}
+    for ob in (main,strands,surface):
+        matrix=ob.matrix_world.copy();inverse=matrix.inverted();changed=0;maximum=0.;roots=[]
+        if ob.type=='CURVES':
+            for curve in ob.data.curves:
+                old=matrix@curve.points[0].position;new=Vector(scalp_position(old))
+                if (new-old).length>1e-7:
+                    near,n,_,_=tree.find_nearest(old);before=(old-near).dot(n)
+                    near,n,_,_=tree.find_nearest(new);after=(new-near).dot(n)
+                    roots.append({'old':list(old),'new':list(new),'old_signed_distance':before,'new_signed_distance':after})
+            points=ob.data.points;field='position'
+        else:
+            assert not ob.data.shape_keys
+            points=ob.data.vertices;field='co'
+        for point in points:
+            old=matrix@getattr(point,field);new=Vector(scalp_position(old));delta=(new-old).length
+            if delta>1e-8:setattr(point,field,inverse@new);changed+=1;maximum=max(maximum,delta)
+        if ob.type=='MESH':ob.data.update()
+        else:ob.data.update_tag()
+        record[ob.name]={'changed_points':changed,'max_world_displacement':maximum,'changed_roots':roots}
+    bpy.context.view_layer.update()
+    assert record[surface.name]['changed_points']>0 and record[main.name]['changed_roots']
+    bpy.context.scene['MF_front_scalp_fit']=json.dumps(record,sort_keys=True)
+    return record
 
 def ear_delta(p):
     """Bounded local auricle relief; leave face, scalp, neck and lobe unchanged."""
@@ -221,8 +263,8 @@ def accent_state(main):
 
 def validate(job):
     if (not isinstance(job,dict) or set(job)!={'operation','candidate'}
-        or type(job['candidate']) is not int or job['candidate'] not in range(0,9)
-        or job['operation'] not in ('audit','accent-audit','inspect','ear-preview','preview','seal','verify')):
+        or type(job['candidate']) is not int or job['candidate'] not in range(0,10)
+        or job['operation'] not in ('audit','accent-audit','attachment-audit','inspect','ear-preview','preview','seal','verify')):
         raise ValueError('Fixed natural-groom job required')
     from hair_uncovered_finish import PINS,ORIGINAL_PINS,REF,ORIGINAL_REF
     for p,h in [(SOURCE,SOURCE_SHA),(DONOR,DONOR_SHA),*[(REF/n,h) for n,h in PINS.items()],*[(ORIGINAL_REF/n,h) for n,h in ORIGINAL_PINS.items()]]:
@@ -333,6 +375,26 @@ def run(job):
     bpy.ops.wm.open_mainfile(filepath=str(SOURCE),load_ui=False,use_scripts=False)
     protected=protection()
     prefix=output_prefix(job['candidate'])
+    if job['operation']=='attachment-audit':
+        checkpoint=BASE/'natural149-seal-08/natural-hair.blend'
+        assert digest(checkpoint)=='9169f2d3731cd56b29a81dff6c9efe6fc8802d9bb0bfed7de8627f7a4eeeac31'
+        bpy.ops.wm.open_mainfile(filepath=str(checkpoint),load_ui=False,use_scripts=False)
+        info={}
+        for suffix in ('long hair main','long hair strands','long hair growth mesh'):
+            ob=bpy.data.objects['MF_natural147_hair_'+suffix]
+            data={'type':ob.type,'matrix':[list(row) for row in ob.matrix_world],
+                  'attributes':[(a.name,a.data_type,a.domain,len(a.data)) for a in ob.data.attributes],
+                  'modifiers':[]}
+            if ob.type=='CURVES':data['surface']=ob.data.surface.name if ob.data.surface else None
+            if ob.type=='MESH':data['shape_keys']=list(ob.data.shape_keys.key_blocks.keys()) if ob.data.shape_keys else []
+            for mod in ob.modifiers:
+                item={'name':mod.name,'type':mod.type}
+                if mod.type=='NODES':
+                    item['nodes']=[{'name':n.name,'group':n.node_tree.name if n.type=='GROUP' else None,
+                                    'inputs':[(s.name,str(s.default_value)) for s in n.inputs if hasattr(s,'default_value')]} for n in mod.node_group.nodes]
+                data['modifiers'].append(item)
+            info[suffix]=data
+        (out/'inspection.json').write_text(json.dumps(info,indent=2)+'\n');return
     if job['operation']=='accent-audit':
         checkpoint=BASE/'natural147-seal-04/natural-hair.blend'
         assert digest(checkpoint)=='31835579b66300c562ef0faccfbaef1a0edf6816abb6ddf7eaed47fb9442da67'
@@ -400,6 +462,7 @@ def run(job):
         if job['candidate']>=1:
             refine_groom(main,strands,material,job['candidate'])
             define_ears()
+            if job['candidate']>=9:lift_front_scalp(main,strands,surface)
             bpy.context.view_layer.update()
             temple_wisps(material,job['candidate'])
             if job['candidate']>=5:add_brown_accents(main,strands,material,job['candidate'])
@@ -426,6 +489,9 @@ def run(job):
         for ob,value in saved.items():ob.hide_render=value
     result={'protected_exact':protected_state()==protected,'protected_digest':protected,'handler_sha256':digest(out/'handler-source.py'),'dependency_hashes':dependency_hashes(),'source_sha256':SOURCE_SHA,'donor_sha256':DONOR_SHA,'candidate':job['candidate'],'ears':ears,'native_state':state,'guide_counts':[len(main.data.curves),len(strands.data.curves)],'director_acceptance':'PENDING','scalp_animation_binding':'NOT_VALIDATED',**control}
     result['accents']=accents
+    if job['candidate']>=9:
+        result['front_scalp_fit']=json.loads(bpy.context.scene['MF_front_scalp_fit'])
+        if job['operation']=='verify':assert result['front_scalp_fit']==prior['front_scalp_fit']
     if job['operation']=='seal':
         preview=json.loads((BASE/f'{prefix}-preview-{job["candidate"]:02}'/'result.json').read_text())
         assert preview['baseline']==result['baseline'] and preview['ears']==result['ears'] and preview['native_state']==state
