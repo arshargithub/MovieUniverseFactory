@@ -120,6 +120,12 @@ If explicit guide/layer authoring still fails within the next integrated bound, 
 
 ## Applying this beyond hair
 
+### Live authored-donor extension, 2026-09-26
+
+[Donor23](../planning/SERIES_01_NATIVE_GROOM_CAPABILITY.md#approved-live-donor-continuation--2026-09-26-local--september27-utc) closes the disconnected-guide gap: original guides drive generated hair, and a fixed main-guide edit/rollback survives native save/reopen with protected non-hair exact. This is asset-assisted static control, not illustrated fidelity or scalp-motion qualification. All three visual variants still fail pair B. Unmodified transfer has better coverage; moving the side part through whole-groom warps creates a bald patch, even after removing height/depth movement and disabling donor rest-surface deformation. The latter is a two-factor change, not a proven causal diagnosis.
+
+Practical delta: **an authored groom includes root distribution, density/parting fields and surface bindings, not only curve points.** Next diagnosis must inspect those correspondences and actual target-scalp clearance before another warp or shader pass. Preserve01 as the coverage control; saved03 is a reproducible failure, not a superior result. No further front-lift/lateral-warp loop. Technical progress should be retained without selling it as visual progress. Six reconciled native attempts include one API-inspection failure; a separate pre-dispatch test-argument mistake is recorded.112 tests pass but no appearance gate does. Cumulative time continues across prompts; no paid calls/assets, model comparison, human-necessity conclusion or production promotion.
+
 ### Free authored-donor route, 2026-09-26
 
 The authorized [three-fit acquisition/adaptation trial](../planning/SERIES_01_NATIVE_GROOM_CAPABILITY.md#approved-free-donor-route-result--2026-09-26) separates **source suitability** from retargeting ability. A waved card mesh with a low side fringe does not become the approved lifted center-part hairstyle through scaling and a material change. Two failed fits are enough to reject that donor; the full21-style pack thumbnail inspection gives no stronger match. An apparently attractive marketplace asset was also excluded when the uploader's own comments revealed upstream extraction despite a CC badge. Do not infer rights from a download button or price.

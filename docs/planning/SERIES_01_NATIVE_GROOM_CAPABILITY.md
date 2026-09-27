@@ -4,7 +4,7 @@
 
 ## Capability result
 
-**Latest: the Director-approved free-donor route has executed through three fits. Two MakeHuman card fits fail; the official Daniel Bystedt groom supplies coherent whole-head coverage, but still fails pair-B hairstyle/illustrated-language fidelity.** See the donor-route result below. It is a promising diagnostic, not approved hair or a live editable transferred groom. Earlier recommendations are proposal history, not permission to repeat stopped methods.
+**Latest: the approved live-donor continuation proves static editable transfer and fresh-process reversible guide control, but all three variants fail pair-B fidelity.** Lateral/global front warps introduce scalp gaps; stop that fitting method. The saved derivative is a diagnostic, not production hair. See the live-donor result below. Earlier proposals and disconnected-guide limitations remain historical, not current instructions.
 
 **Native hair authoring/control demonstrated; approved illustrated hair fidelity NOT_DEMONSTRATED.** These are different conclusions. The agent can create attached editable guides, operate installed interpolation/clumping nodes, render the preserved character, save the native, reopen it in a fresh process and make a controlled guide revision. The tested authoring recipes still fail the approved front/both-oblique target. No Director acceptance was requested for the known failures.
 
@@ -139,3 +139,43 @@ This result supports **agent-only asset-assisted adaptation as a promising route
 Local implementation commit: `f36905a`; design/evidence committed separately. Neither is pushed. Ignored downloads/renders/cards are not backed up by Git. Engineering model, effort, tokens and cost remain unknown; known paid model calls and asset purchases are zero. Final captured activity and cumulative time are in the compact card, excluding Director waits and without adding overlapping native process time again. Planning counter stays138; next checkpoint140. Unrelated `.DS_Store` remains untouched.
 
 The compact six-view comparison contains the unchanged approved pair and fit03 front/both obliques/back, clearly labelled diagnostic. Display-size JPEGs are for comparison only, not replacement authorities. Navigation/state logic passed a local check; browser layout verification was unavailable because local-file navigation is blocked. Original full-resolution PNGs remain in the evidence folders.
+
+## Approved live-donor continuation — 2026-09-26 local / September27 UTC
+
+Director approved the30-minute, at-most-three-variant extension. Activity `donor23` carries forward6117.887053 captured seconds, rather than resetting the integrated objective. Three variants were completed and internally rejected before the time ceiling. No additional styling variant is implied by unused time. The face, skin, anatomy, eyes and facial controls remain unchanged; approved pair B is still the only illustrated identity/hair authority. No clothing hides the failures.
+
+### What actually advanced
+
+Transferred the original346 main +30 secondary guides, growth surface and their native interpolation/clumping graph instead of copying baked evaluated strands. A non-root point on one main guide changes generated output; exact rollback restores its position digest/count. A saved diagnostic reopens in a separate Blender process with exactly the same main evaluated output and protected non-hair digest; the same edit reproduces the same changed digest and rollback. The native file itself remains unchanged during verification. This is a **static main-guide control proof**, not a general grooming API, every-guide test, animated scalp attachment or production-quality claim.
+
+| Variant | Shape/graph change | Pair-B evaluation |
+|---|---|---|
+|01 | Live reconstruction of the original affine donor fit | Continuous four-view coverage, but side part, low heavy framing, straight hanging silhouette and fine-strand language remain unlike the approved illustrated sweeps. FAIL. |
+|02 | Shared upper/front warp of guides and growth surface: lateral part shift plus lift/backward movement | Bare triangular scalp region appears above the viewer-left forehead and is especially obvious in the left oblique. Part relocation does not preserve attachment/coverage. FAIL. |
+|03 | Same lateral relocation without height/depth movement; donor Surface Deform modifiers disabled | Scalp opening persists. This weakens the simple explanation that raising/receding the roots alone caused it, but does not isolate the full mechanism. Shape still fails; no illustrated-shader polishing attempted. FAIL. |
+
+Variant03 changes two factors, so it is **not** a controlled single-variable diagnosis. The original graph includes a side-part density image, parting attribute, surface shrinkwrap and interpolation; moving its points is not equivalent to authoring a new center-part root distribution. Root/surface/density correspondence and target-scalp clearance are unresolved hypotheses, not proven causes. Do not label the hole a shading defect or conceal it with more strands. Do not repeat a whole-groom lateral warp as the next pass.
+
+Main evaluated count changes from11193 curves /211265 points in01 to11027 /208000 in03; guide counts remain346 +30. These counts establish execution, not visual improvement.03 deliberately disables donor rest-surface deformation; interpolation/clumping still operate, but scalp animation binding is **NOT_VALIDATED**. No motion or collision-free guarantee. Back is only a provisional regression view, not a reference match.
+
+### Evidence and preservation
+
+Relative to `.runtime/art-direction/series01-facebuilder-trial-01/`:
+
+- `donor23-live-preview-01/` through `-03/`:12 inspected PNGs, exact handler snapshots and results.01 remains the stronger coverage control;03 is not the preferred appearance merely because it was saved.
+- `donor23-live-preview-03/diagnostic-live-groom.blend`: **NOT_APPROVED**, retained only for reproducible failure/control diagnosis. SHA256 `fd5bf2f2fc88cd559cbe9c2aa377c6e2d48c2f1bcc495e33adad3eb7c246fd27`.
+- `donor23-live-verify-03/verification.json`: successful fresh-process main-output, reversible-edit, non-hair and immutable-file checks. No extra beauty render or fourth visual variant.
+- `donor23-live-inspect-00/` preserves failed modifier-property inspection; `-01/` records the corrected graph inspection. The obsolete modifier `.keys()` API error is an implementation failure, not Blender incapability.
+- `donor23-operating/`: compact card, events, results, verification, artifact and dependency hashes. Existing cards/assets are unchanged.
+
+Six native job attempts reconciled: one failed inspection and five successes.112 focused unit tests pass. An invalid `--kind test` wrapper argument was rejected before dispatch; a proxy record preserves that mistake, and corrected `--kind local` tests passed. This is separate from the native failure. Tests and exact state checks do not overrule the visible failures. All12 images were internally inspected, with zero new Director acceptances.
+
+No new downloads, purchases, paid API calls, model switches, installs, human asset edits or external publication. Donor embedded scripts were not executed. Blender received a stripped environment and scripts-disabled startup. CC BY-SA exact-version/distribution clearance remains pending from donor22; do not treat this native as release-cleared. Engineering tokens/cost/effort remain unknown, not free. Final card records captured time and cumulative coverage, excluding Director waits; this is not all historical hair time. Local implementation and design/evidence commits remain separate; ignored natives/renders are not backed up by Git. Planning counter stays138.
+
+### Recommended next decision
+
+**Stop whole-groom warping and defer shading.** The next useful task would be a root/part correspondence diagnosis using the unmodified01 control and failed03, before another artistic variant: identify whether the exposed patch comes from misplaced source roots, density/parting mappings or surface fitting; inspect actual roots and generated output, not only beauty images. Any subsequent center-part authoring must preserve scalp coverage and both temple joins first. This is a proposed follow-up, not an automatic new allowance. Do not spend another full styling loop without a demonstrated cause and a different edit method.
+
+Current boundary: agent-operated live adaptation of an artist-authored groom is demonstrated technically; agent-only reproduction of this approved illustrated hairstyle is still **NOT_DEMONSTRATED**. This result neither proves a human artist is required nor makes Blender unsuitable. It does show that a plausible donor plus a spatial warp is insufficient. No finished hairstyle or new cosmetic review is claimed.
+
+Local implementation commit: `6a3eeeb`. This result/learning/handoff update is committed separately as design/evidence; neither commit is pushed. Unrelated `.DS_Store` remains untouched. The existing gallery continues to show the previous coverage diagnostic; it has not been silently replaced with the worse03 candidate.
