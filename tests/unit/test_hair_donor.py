@@ -71,3 +71,38 @@ def test_demo_symlink_rejected(authored):
     target=authored/'copy.blend';target.write_bytes(m.DEMO.read_bytes())
     m.DEMO.unlink();m.DEMO.symlink_to(target)
     with pytest.raises(ValueError):m.validate_demo({'operation':'inspect-demo'})
+
+@pytest.mark.parametrize('job',[None,{}, {'operation':'live-preview','candidate':True},
+    {'operation':'live-preview','candidate':4},{'operation':'live-preview','candidate':1,'code':'x'},
+    {'operation':'live-verify','candidate':1}])
+def test_live_rejects_unbounded_jobs(authored,job):
+    with pytest.raises(ValueError):m.validate_live(job)
+
+def test_live_output_preservation(authored):
+    out=m.validate_live({'operation':'live-preview','candidate':1});out.mkdir()
+    with pytest.raises(ValueError):m.validate_live({'operation':'live-preview','candidate':1})
+
+def test_live_shape_is_bounded_hair_only():
+    import math
+    assert m.live_shape((.1,-.5,.8),1)==(.1,-.5,.8)
+    assert m.live_shape((.5,.9,-.3),2)==(.5,.9,-.3)
+    for x in (-1.,-.5,0.,.5,1.):
+        for y in (-1.,0.,1.):
+            for z in (-1.,0.,1.,1.5):
+                q=m.live_shape((x,y,z),2)
+                assert all(math.isfinite(v) for v in q)
+                assert max(abs(a-b) for a,b in zip(q,(x,y,z)))<=.3
+
+def test_third_live_shape_does_not_raise_or_recede_roots():
+    for p in ((-.3,-.6,.9),(0,-.5,1.),(.6,-.2,.5)):
+        q=m.live_shape(p,3)
+        assert q[1:]==p[1:]
+        assert 0<=q[0]-p[0]<=.29
+
+def test_live_verify_rejects_changed_checkpoint(authored):
+    import json
+    out=authored/'donor23-live-preview-03';out.mkdir()
+    (out/'result.json').write_text(json.dumps({'native_sha256':'wrong'}))
+    (out/'diagnostic-live-groom.blend').write_bytes(b'changed')
+    with pytest.raises(ValueError,match='Checkpoint changed'):
+        m.validate_live({'operation':'live-verify','candidate':3})

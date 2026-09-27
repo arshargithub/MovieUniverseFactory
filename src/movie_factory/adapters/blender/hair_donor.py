@@ -14,6 +14,180 @@ DEMO=ROOT/'.runtime/assets/series01-hair-donor22/bystedt-hair-demo.blend'
 DEMO_SHA='1ad6202095c1793678fee7d69a7e9f8b5fdb6e5c293d300eb1062d2d437e8d48'
 
 
+def validate_live(job):
+    from hair_native_groom import SOURCE,SOURCE_SHA,REFBASE,REFERENCES,digest
+    if not isinstance(job,dict) or set(job)!={'operation','candidate'} or type(job['candidate']) is not int or (job['operation'],job['candidate']) not in [('live-inspect',0),('live-inspect',1),('live-preview',1),('live-preview',2),('live-preview',3),('live-verify',3)]:
+        raise ValueError('Fixed live donor job required')
+    for p,h in [(DEMO,DEMO_SHA),(SOURCE,SOURCE_SHA),*[(REFBASE/n,h) for n,h in REFERENCES.items()]]:
+        if p.is_symlink() or digest(p)!=h:raise ValueError('Pinned input changed')
+    out=BASE/f'donor23-{job["operation"]}-{job["candidate"]:02}'
+    if out.exists() or out.is_symlink() or out.resolve().parent!=BASE.resolve():raise ValueError('Output exists or escapes')
+    if job['operation']=='live-verify':
+        checkpoint=BASE/'donor23-live-preview-03'
+        record=json.loads((checkpoint/'result.json').read_text())
+        native=checkpoint/'diagnostic-live-groom.blend'
+        if native.is_symlink() or digest(native)!=record['native_sha256']:raise ValueError('Checkpoint changed')
+    if shutil.disk_usage(BASE).free<5_000_000_000:raise ValueError('Disk low')
+    return out
+
+
+def live_inspect(job):
+    out=validate_live(job)
+    import bpy
+    out.mkdir();shutil.copyfile(Path(__file__),out/'handler-source.py')
+    bpy.ops.wm.open_mainfile(filepath=str(DEMO),load_ui=False,use_scripts=False)
+    objects=[]
+    for ob in bpy.data.collections['Long hair'].all_objects:
+        objects.append({'name':ob.name,'type':ob.type,'parent':ob.parent.name if ob.parent else None,'world':[list(row) for row in ob.matrix_world],'drivers':len(ob.animation_data.drivers) if ob.animation_data else 0})
+    graphs={}
+    for obname in ('long hair main','long hair strands'):
+        ob=bpy.data.objects[obname]
+        for m in ob.modifiers:
+            if m.type!='NODES':continue
+            g=m.node_group
+            graphs[obname+'/'+m.name]={'group':g.name,'nodes':[{'name':n.name,'type':n.bl_idname,'group':n.node_tree.name if n.type=='GROUP' else None,'inputs':{s.name:str(s.default_value) for s in n.inputs if hasattr(s,'default_value') and not s.is_linked}} for n in g.nodes]}
+    (out/'inspection.json').write_text(json.dumps({'objects':objects,'graphs':graphs},indent=2)+'\n')
+
+
+def live_shape(point,candidate):
+    """Fixed hair-only warp in target coordinates; preserves lower/rear shape."""
+    import math
+    x,y,z=point
+    if candidate==1:return (x,y,z)
+    def smooth(t):
+        t=max(0.,min(1.,t));return t*t*(3-2*t)
+    upper=smooth((z-.25)/.65)
+    front=1-smooth((y+.15)/.85)
+    # Move the side part toward the approved near-centre position, fading
+    # the correction at temples rather than shifting the entire hairstyle.
+    shift=.29*math.exp(-((x+.32)/.66)**2)*upper*front
+    x+=shift
+    # Third diagnostic removes global root lift/rearward motion. It also
+    # disables Surface Deform below, so it is not a single-variable study.
+    if candidate==3:return (x,y,z)
+    lift=.10*math.exp(-(x/.60)**2)*front*smooth((z-.4)/.5)
+    z+=lift
+    y+=.09*front*upper
+    return (x,y,z)
+
+
+def curve_state(ob):
+    import bpy,struct
+    bpy.context.view_layer.update()
+    data=ob.evaluated_get(bpy.context.evaluated_depsgraph_get()).data
+    h=hashlib.sha256()
+    for p in data.points:h.update(struct.pack('fff',*p.position))
+    return {'curves':len(data.curves),'points':len(data.points),'positions_sha256':h.hexdigest()}
+
+
+def live_preview(job):
+    out=validate_live(job)
+    import bpy
+    from mathutils import Matrix,Vector
+    from hair_native_groom import SOURCE,SOURCE_SHA,REFERENCES,digest
+    from illustrated_hair_section import protection
+    from hair_anatomy_refinement import is_hair,visibility
+    from hijab_donor import review
+    out.mkdir();shutil.copyfile(Path(__file__),out/'handler-source.py')
+    bpy.ops.wm.open_mainfile(filepath=str(SOURCE),load_ui=False,use_scripts=False)
+    protected=protection()
+    for ob in bpy.context.scene.objects:
+        if is_hair(ob):ob.hide_render=True
+    existing=set(bpy.data.objects)
+    with bpy.data.libraries.load(str(DEMO),link=False) as (a,b):
+        b.objects=['long hair main','long hair strands','long hair growth mesh']
+    main,strands,surface=b.objects
+    imported=set(bpy.data.objects)-existing
+    for ob in imported:
+        if ob.name not in bpy.context.scene.objects:bpy.context.scene.collection.objects.link(ob)
+        ob.hide_render=True;ob.hide_viewport=False;ob.hide_set(False)
+    bpy.context.view_layer.update()
+    worlds={ob:ob.matrix_world.copy() for ob in imported}
+    root=bpy.data.objects.new('MF_donor23_hair_retarget',None);bpy.context.scene.collection.objects.link(root)
+    root.matrix_world=Matrix(((1.17,0,0,-5*1.17),(0,1.15,0,.62),(0,0,1.10,1.36-16.400089263916016*1.10),(0,0,0,1)))
+    for ob in imported:
+        ob.name='MF_donor23_hair_'+ob.name
+        ob.parent=root;ob.matrix_parent_inverse=Matrix.Identity(4);ob.matrix_basis=worlds[ob]
+    bpy.context.view_layer.update()
+    # Apply the same bounded warp to the growth surface and the live source
+    # curves, preserving UV/root islands and the existing interpolation graph.
+    for ob in (main,strands,surface):
+        matrix=ob.matrix_world.copy();inverse=matrix.inverted()
+        if ob.type=='MESH':
+            for v in ob.data.vertices:v.co=inverse@Vector(live_shape(matrix@v.co,job['candidate']))
+            ob.data.update()
+        else:
+            for p in ob.data.points:p.position=inverse@Vector(live_shape(matrix@p.position,job['candidate']))
+            ob.data.update_tag()
+    if job['candidate']==3:
+        # A static neutral retarget, not a scalp-deformation binding proof.
+        # Disable donor rest-surface deformation after editing neutral guides
+        # and surface together. Interpolation/clumping remain fully live.
+        for ob in (main,strands):
+            for mod in ob.modifiers:
+                if mod.name=='Surface Deform':mod.show_viewport=False;mod.show_render=False
+    material=bpy.data.materials.new('MF_donor23_hair_material');material.use_nodes=True
+    n,l=material.node_tree.nodes,material.node_tree.links;p=n.get('Principled BSDF')
+    p.inputs['Roughness'].default_value=.72;p.inputs['Specular IOR Level'].default_value=.13
+    info=n.new('ShaderNodeHairInfo');ramp=n.new('ShaderNodeValToRGB')
+    ramp.color_ramp.elements[0].color=(.008,.0025,.0012,1);ramp.color_ramp.elements[1].color=(.085,.038,.017,1)
+    l.new(info.outputs['Random'],ramp.inputs['Fac']);l.new(ramp.outputs['Color'],p.inputs['Base Color'])
+    l.new(ramp.outputs['Color'],p.inputs['Emission Color']);p.inputs['Emission Strength'].default_value=.12
+    for ob in (main,strands):
+        ob.hide_render=False
+        tree=bpy.data.node_groups.new('MF_donor23_hair_finish','GeometryNodeTree')
+        tree.interface.new_socket(name='Geometry',in_out='INPUT',socket_type='NodeSocketGeometry');tree.interface.new_socket(name='Geometry',in_out='OUTPUT',socket_type='NodeSocketGeometry')
+        n,l=tree.nodes,tree.links;gi=n.new('NodeGroupInput');go=n.new('NodeGroupOutput')
+        radius=n.new('GeometryNodeSetCurveRadius');radius.inputs['Radius'].default_value=.0016
+        mat=n.new('GeometryNodeSetMaterial');mat.inputs['Material'].default_value=material
+        l.new(gi.outputs['Geometry'],radius.inputs['Curve']);l.new(radius.outputs['Curve'],mat.inputs['Geometry']);l.new(mat.outputs['Geometry'],go.inputs['Geometry'])
+        ob.modifiers.new('MF live finish','NODES').node_group=tree
+    visibility()
+    for ob in imported:
+        ob.hide_render=ob not in (main,strands)
+    baseline=curve_state(main)
+    # Live control proof: fixed non-root guide-point displacement must change
+    # evaluated children, and an exact rollback must restore their digest.
+    probe=main.data.curves[0].points[min(4,len(main.data.curves[0].points)-1)]
+    old=probe.position.copy();probe.position=old+Vector((0,-.08,.04));main.data.update_tag()
+    changed=curve_state(main)
+    probe.position=old;main.data.update_tag();restored=curve_state(main)
+    assert baseline==restored and baseline!=changed
+    assert protection()==protected
+    review(bpy.context.scene,out,(0,0,-.03),3.8,(('front',0),('left',-45),('right',45),('back',180)))
+    result={'candidate':job['candidate'],'live_control_changed':baseline!=changed,'rollback_exact':baseline==restored,'baseline':baseline,'changed':changed,'guide_counts':[len(main.data.curves),len(strands.data.curves)],'protected_exact':protection()==protected,'protected_digest':protected,'source_sha256':SOURCE_SHA,'donor_sha256':DEMO_SHA,'handler_sha256':digest(Path(__file__)),'reference_authority':REFERENCES,'review_ready':False,'director_acceptance':'NOT_REQUESTED','native_saved':False,'surface_deform_disabled':job['candidate']==3,'scalp_animation_binding':'NOT_VALIDATED'}
+    if job['candidate']==3:
+        bpy.context.scene['MF_donor23_diagnostic']='NOT_APPROVED';bpy.ops.file.pack_all()
+        bpy.ops.wm.save_as_mainfile(filepath=str(out/'diagnostic-live-groom.blend'),compress=True)
+        result['native_saved']=True;result['native_sha256']=digest(out/'diagnostic-live-groom.blend')
+    (out/'result.json').write_text(json.dumps(result,indent=2)+'\n')
+
+
+def live_verify(job):
+    out=validate_live(job)
+    import bpy
+    from mathutils import Vector
+    from hair_native_groom import digest
+    from illustrated_hair_section import protection
+    checkpoint=BASE/'donor23-live-preview-03'
+    record=json.loads((checkpoint/'result.json').read_text())
+    native=checkpoint/'diagnostic-live-groom.blend'
+    out.mkdir();shutil.copyfile(Path(__file__),out/'handler-source.py')
+    bpy.ops.wm.open_mainfile(filepath=str(native),load_ui=False,use_scripts=False)
+    main=bpy.data.objects['MF_donor23_hair_long hair main']
+    baseline=curve_state(main)
+    assert baseline==record['baseline']
+    assert protection()==record['protected_digest']
+    probe=main.data.curves[0].points[min(4,len(main.data.curves[0].points)-1)]
+    old=probe.position.copy();probe.position=old+Vector((0,-.08,.04));main.data.update_tag()
+    changed=curve_state(main)
+    assert changed==record['changed'] and changed!=baseline
+    probe.position=old;main.data.update_tag()
+    assert curve_state(main)==baseline and protection()==record['protected_digest']
+    assert digest(native)==record['native_sha256']
+    (out/'verification.json').write_text(json.dumps({'fresh_reopen_exact':True,'controlled_revision_exact':True,'rollback_exact':True,'protected_exact':True,'checkpoint_unchanged':True,'native_sha256':record['native_sha256'],'review_ready':False,'motion':'NOT_RUN'},indent=2)+'\n')
+
+
 def validate_demo(job):
     if job not in ({'operation':'inspect-demo'},{'operation':'fit-demo'}):raise ValueError('Fixed demo operations only')
     if DEMO.is_symlink() or hashlib.sha256(DEMO.read_bytes()).hexdigest()!=DEMO_SHA:raise ValueError('Demo changed')
@@ -252,7 +426,10 @@ if __name__=='__main__':
     args=sys.argv[sys.argv.index('--')+1:]
     if len(args)!=1:raise ValueError('One JSON job required')
     job=json.loads(Path(args[0]).read_text())
-    if isinstance(job,dict) and job.get('operation')=='inspect-demo':inspect_demo(job)
+    if isinstance(job,dict) and job.get('operation')=='live-inspect':live_inspect(job)
+    elif isinstance(job,dict) and job.get('operation')=='live-preview':live_preview(job)
+    elif isinstance(job,dict) and job.get('operation')=='live-verify':live_verify(job)
+    elif isinstance(job,dict) and job.get('operation')=='inspect-demo':inspect_demo(job)
     elif isinstance(job,dict) and job.get('operation')=='fit-demo':fit_demo(job)
     elif isinstance(job,dict) and job.get('operation')=='authored-fit':authored_fit(job)
     else:run(job)
