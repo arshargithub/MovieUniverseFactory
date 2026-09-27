@@ -106,3 +106,42 @@ def test_live_verify_rejects_changed_checkpoint(authored):
     (out/'diagnostic-live-groom.blend').write_bytes(b'changed')
     with pytest.raises(ValueError,match='Checkpoint changed'):
         m.validate_live({'operation':'live-verify','candidate':3})
+
+@pytest.mark.parametrize('job',[None,{}, {'operation':'root-audit','candidate':True},{'operation':'root-audit','candidate':1},{'operation':'surface-preview','candidate':24},{'operation':'root-audit','candidate':0,'code':'x'}])
+def test_integrated_rejects_unstructured_job(authored,job):
+    with pytest.raises(ValueError):m.integrated_validate(job)
+
+def test_integrated_fresh_only(authored):
+    out=m.integrated_validate({'operation':'root-audit','candidate':0});out.mkdir()
+    with pytest.raises(ValueError):m.integrated_validate({'operation':'root-audit','candidate':0})
+
+def test_trajectory_clustering_is_deterministic_and_accounts_for_every_guide(authored):
+    paths=[[(x,0,1),(x+.1,-.2,.7),(x+.2,-.1,-.5)] for x in (-.8,-.7,.6,.7)]
+    a=m.cluster_paths(paths,count=2);b=m.cluster_paths(paths,count=2)
+    assert a==b and len(a)==2
+    assert sum(len(members) for mean,members in a)==len(paths)
+    assert all(len(mean)==48 and len(mean[0])==3 for mean,members in a)
+
+@pytest.mark.parametrize('operation',['surface-package','surface-seal','surface-verify'])
+def test_integrated_delivery_requires_prerequisite(authored,operation):
+    with pytest.raises(ValueError,match='Prerequisite'):
+        m.integrated_validate({'operation':operation,'candidate':23})
+
+def test_integrated_package_rejects_failed_protection(authored):
+    import json
+    folder=authored/'integrated24-surface-preview-23';folder.mkdir()
+    (folder/'result.json').write_text(json.dumps({'protected_exact':False}))
+    with pytest.raises(ValueError,match='Protected'):
+        m.integrated_validate({'operation':'surface-package','candidate':23})
+
+def test_integrated_verify_rejects_changed_native(authored):
+    import json
+    folder=authored/'integrated24-surface-seal-23';folder.mkdir()
+    (folder/'integrated-hair.blend').write_bytes(b'changed')
+    (folder/'result.json').write_text(json.dumps({'protected_exact':True,'native_sha256':'wrong'}))
+    with pytest.raises(ValueError,match='Native checkpoint changed'):
+        m.integrated_validate({'operation':'surface-verify','candidate':23})
+
+def test_integrated_package_is_specific_to_review_candidate(authored):
+    with pytest.raises(ValueError):
+        m.integrated_validate({'operation':'surface-package','candidate':22})
