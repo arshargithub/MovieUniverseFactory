@@ -2,6 +2,12 @@
 
 2026-09-26 · Release 01 exchange 137 · applies to the Pashtun character and subsequent asset work.
 
+## Authorized sustained execution — exchange140
+
+**Current result:** [integrated candidate23](../planning/SERIES_01_NATIVE_GROOM_CAPABILITY.md#current-integrated-review-candidate--exchange140-2026-09-26-local--september27-utc) is ready for a whole-look Director review; acceptance remains pending. The measured front root-penetration cause was repaired by clearance-preserving transport. Native curves plus a restricted reference crown material outperform tested thick lofts and remeshed surfaces for this candidate. Source-guided spatial adaptation remains artist-asset-dependent, not de-novo creation. One guide edit, explicit derivative rebuild and exact rollback repeat after fresh reopen; the render is pixel-identical. This does not validate automatic animation binding, all-angle fidelity, edit locality or economics. Rejected colour/geometry variants stay internal evidence.23 previews and one failed first package are retained in one compact card; no time allowance reset, spend or new model claim. Review the entire hairstyle now, not another isolated technical milestone.
+
+Director explicitly authorizes the integrated deliverable and removes arbitrary30/60-minute stopping limits for this continuation. Earlier time-ceiling language below is superseded for this work, not silently reset. Track actual/cumulative effort; use diagnostic intervals and repeated-variant failures to reassess methods internally, not to require routine go-aheads. Continue until an integrated reviewable result, genuine blocker or material creative/authority decision. No relaxation of pair-B fidelity, protected character state, no-purchase/no-paid-call boundaries or final Director acceptance. Implementation activity does not increment the planning counter further.
+
 ## Review-deliverable reaffirmation — exchange139
 
 Director rejects another diagnosis-only checkpoint with nothing meaningful to review or decide. This reaffirms the existing exchange137 contract; it is not a new quality requirement. The assistant incorrectly scoped repeated continuations around technical milestones. Honoring an explicit time/variant bound was required, but does not make that deliverable planning adequate.

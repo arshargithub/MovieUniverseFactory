@@ -1,5 +1,50 @@
 # Agent-only hair workflow investigation
 
+## Current integrated review candidate — exchange140, 2026-09-26 local / September27 UTC
+
+**Candidate23 is ready for an integrated Director appearance review, not approved production hair.** The Director removed arbitrary30/60-minute stopping limits; diagnosis, failed variants and verification remained internal. No new purchase, paid call, model switch, human asset edit or native upload. Earlier sections below remain history.
+
+Authority is still `frontal-v02-individualized.png` and `portrait-v07-individualized.png`. Candidate23 combines a near-center part, prominent tapered forehead, swept temple/ear framing, retained volume and reference-derived painted crown detail on a complete native groom. The four clothing-free views are the review deliverable, not a clay fragment or another request to authorize debugging. The assistant regards this as sufficiently integrated for that creative decision; this is a subjective readiness assessment, **not measured reference equivalence or Director acceptance**. The uncovered rear/length remain a provisional extrapolation; the portraits do not establish an unobstructed rear design. No pose/hair motion or scarf fit is newly qualified.
+
+### What changed, and what did not work
+
+Root audit measured actual nearest-surface signed clearance against the preserved head. The original affine donor fit had0/94 tested main guide roots and0/3866 tested generated roots below the front-upper proxy threshold. The previous lateral warp had30/94 and2110/3700 respectively below that threshold. Preserving clearance when transporting the hair over the curved scalp removed the visible front opening; this is stronger evidence than a density guess. Later reported0/3845 is the **hidden live main output**, not a collision-free certificate for every transformed rendered strand. Do not overstate the metric.
+
+| Internal family | Finding carried forward |
+|---|---|
+|01 root-clearance transport | Repairs the diagnosed front opening while preserving accepted non-hair state. Original side-part styling still mismatched. |
+|02–05 separate thick locks / clustered closed lofts | Cords, angular tips, competing layers and exposed foundation. Rejected; more thickness is not the illustrated look. |
+|06–11 continuous curve colour, lift and reference-flow sampling | Continuous coverage survives; flat colour blocks, bright wire-like highlights and cap rims fail. Direct reference detail is useful but cannot repair the side-part silhouette alone. |
+|12–15 swept-half recentering and forehead composition | Raw half reuse opens a central gap; clearance-aware transport closes it. Coupled lift/taper improves framing; excessive symmetry and temple flips require whole-view assessment. |
+|16–18 groom-derived implicit surface | Solid union plus nearest-point colours speckles; nearest-flow UVs seam; continuous mapping still reads like a rough shell. Rejected. It adds no demonstrated benefit over native curves. |
+|19–23 native curves with restricted reference crown shading | Remove scarf/background contamination and repeated rear projection; blend into groom-flow shading, soften roots and align outer-forehead framing.22's tighter temple compression looks rolled and is rejected.23 retains21's shape and regularizes/tapers the hanging ends. |
+
+This remains **agent-executed adaptation of Daniel Bystedt's artist-authored groom**, not de-novo hair creation. The retained source has346 main and30 secondary guides. The rendered derivative has10696 curves /684544 points. It combines clearance-aware remapping, a swept-half-derived near-center arrangement and selective use of the approved image in the crown material. It is not an AI-generated replacement beauty picture. The native shader and geometry produce the actual Blender renders. The original references are unmodified; comparison JPEGs are display copies only.
+
+### Persistence and control
+
+All paths below are under `.runtime/art-direction/series01-facebuilder-trial-01/`:
+
+- `integrated24-surface-preview-23/{front,left,right,back}.png`: four internally inspected review views.
+- `integrated24-surface-seal-23/integrated-hair.blend`: packed review candidate, SHA256 `bbadab6723e31824df869ddd49dfb69160da0da85612fc0d8b9b6ab63dacb591`.
+- `integrated24-surface-seal-23/result.json`: exact protected non-hair state; no unpacked file images; baseline geometry/colour digests; static guide-control proof.
+- `integrated24-surface-verify-23/verification.json`: separate Blender process reproduces the baseline, the same changed output and exact rollback. Native file unchanged. The reopened front render is pixel-identical to the sealed front; all four sealed renders are pixel-identical to the preview. See `integrated24-operating/render-comparison.json`.
+- `integrated24-operating/`: one compact time/event/result/hash card for this entire continuation; earlier candidates and the failed package attempt are preserved.
+
+**Editability boundary:** original source guides still drive the donor's live interpolation graph. The rendered colour/shape derivative requires an **explicit deterministic rebuild** after source edits; it is not automatically bound for animation. A fixed non-root edit of main guide7/point4 changes source and rendered positions, retains the rendered colour digest in this probe, and restores both exactly on rollback. Fresh-process repetition passes. This is one static control test, not every-guide coverage, protected-region edit locality, animated scalp attachment or a general grooming API. The first packaging attempt failed the control assertion; it was not promoted. Reacquiring the source point before rollback passed the diagnostic, fresh seal and fresh-reopen repeat. Preserve the failure without claiming the earlier aggregate assertion isolated every cause.
+
+126 focused tests pass.28 native attempts are reconciled, with one failed first package;23 artistic previews produced92 images.61 preview images were individually inspected, including all four of candidate23; already-rejected variants were not all reviewed from every angle. The fresh verification front was also inspected. No test count overrides artistic judgment. Native evidence is about170MB, not another full campaign export. Known paid calls, purchases and new downloads are zero; engineering model/effort/tokens/cost remain unknown. Actual activity and cumulative effort retain the prior7171.42092 captured seconds, rather than resetting the objective. These totals are not all historical hair work.
+
+### Learnings and next gate
+
+1. A verified spatial cause enabled a useful repair; blind whole-head translation, material replacement and adding density did not.
+2. Use existing authored spatial structure where it helps, but disclose the dependency. Donor suitability, reference fidelity, native control and production readiness are different claims.
+3. Reference colour detail needs continuous coordinates, content filtering and regional use; unqualified front projection duplicates itself on the back and imports scarf/skin content. Closed surface union is not automatically painterly or better than curves.
+4. Judge front/both obliques together. The explicit tighter22 alternative looked worse and was not promoted simply because it was newer.
+5. Sustained execution kept23 previews inside one Director review handoff, but it did **not** prove this route economical. Many internal variants and uncertain token usage remain costs. Preserve one current card/gallery and carry useful mechanisms forward, rather than treating volume of work as success.
+
+The next decision is **integrated hair appearance acceptance against pair B**. Do not silently lock the hairstyle or resume cosmetic skin changes. If accepted, proceed to the existing free scarf/garment integration and a later scoped pose-clearance/motion check; do not infer production motion readiness from these static views. The donor's exact CC BY-SA version/distribution clearance remains pending from donor22, so the native is local review evidence, not release-cleared redistribution. CP-014 leaves release readiness1/25 and A5/E1 open. Local implementation commit `de38064`; design/evidence committed separately. Git commits/push exclude all native media; no off-device media backup is claimed. The compact comparison reuses the existing six-view/arrow layout at420px image height; navigation, keyboard and restored state were checked locally. Browser layout remains unverified because local-file access is blocked; no alternate access bypass was attempted.
+
 2026-09-26. Continues the integrated front-hair objective after Director exchange138. Implementation/research, not a new planning exchange; counter remains138. This record and its compact operating card are the current continuation point, not another approved hairstyle.
 
 ## Capability result
