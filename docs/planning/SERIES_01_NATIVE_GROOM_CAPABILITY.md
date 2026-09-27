@@ -4,6 +4,8 @@
 
 ## Capability result
 
+**Exchange139 delivery correction:** root/density diagnosis proposed below is an internal task, not a sufficient next Director-facing deliverable. Follow the [reaffirmed review contract](../knowledge/CHARACTER_ASSET_LEARNINGS.md#review-deliverable-reaffirmation--exchange139): integrated textured pair-B hair comparison or a concrete evidence-backed material decision at a genuine blocker/explicit budget boundary. Do not resume serial diagnosis-only go-ahead requests. No new implementation allowance is created by this clarification.
+
 **Latest: the approved live-donor continuation proves static editable transfer and fresh-process reversible guide control, but all three variants fail pair-B fidelity.** Lateral/global front warps introduce scalp gaps; stop that fitting method. The saved derivative is a diagnostic, not production hair. See the live-donor result below. Earlier proposals and disconnected-guide limitations remain historical, not current instructions.
 
 **Native hair authoring/control demonstrated; approved illustrated hair fidelity NOT_DEMONSTRATED.** These are different conclusions. The agent can create attached editable guides, operate installed interpolation/clumping nodes, render the preserved character, save the native, reopen it in a fresh process and make a controlled guide revision. The tested authoring recipes still fail the approved front/both-oblique target. No Director acceptance was requested for the known failures.

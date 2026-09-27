@@ -2,6 +2,14 @@
 
 2026-09-26 · Release 01 exchange 137 · applies to the Pashtun character and subsequent asset work.
 
+## Review-deliverable reaffirmation — exchange139
+
+Director rejects another diagnosis-only checkpoint with nothing meaningful to review or decide. This reaffirms the existing exchange137 contract; it is not a new quality requirement. The assistant incorrectly scoped repeated continuations around technical milestones. Honoring an explicit time/variant bound was required, but does not make that deliverable planning adequate.
+
+**Next proposed outcome:** one integrated, textured hairstyle judged internally against approved `frontal-v02-individualized.png` and `portrait-v07-individualized.png`, shown in the existing compact arrow comparison with both originals and clothing-free front/both three-quarter/back renders. Prominent tapered forehead, recognizable near-center part, lifted unequal sweeps, natural temple/ear integration and coherent illustrated lock/highlight language must work together; no exposed scalp patches, floating/wig edges or known major regressions. Preserve accepted non-hair state and verify an editable native. Back remains provisional; no new motion qualification. One good candidate is sufficient; do not manufacture multiple options or new galleries for review volume.
+
+Root/surface/density diagnosis, reversible repairs, failed previews and tests are internal steps toward that outcome, not separately proposed deliverables or routine approval requests. A real blocker or explicit overall budget boundary still requires stopping; do not silently remove limits. Such escalation must show the strongest actual result against the reference, explain the unresolved limitation and offer concrete alternatives with target/dependency/budget consequences and a recommendation. If no viable alternative has been established, say so. Do not replace this with another 'approve more debugging' loop or promise a guaranteed finished result. Current message clarifies the outcome; it does not itself authorize another implementation allowance, purchase, paid call, model switch or lowered target.
+
 ## Current priority override — exchange138: capability before economics
 
 The Director's primary objective is to establish whether **agent-only creation at this complexity and approved quality is possible**. Economics comes second, after capability. Learnings must locate the boundary between agent authoring, specialist tools/knowledge, pre-created assets and human technical intervention.
