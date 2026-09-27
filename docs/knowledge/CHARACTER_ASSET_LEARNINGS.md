@@ -2,6 +2,10 @@
 
 2026-09-26 · Release 01 exchange 137 · applies to the Pashtun character and subsequent asset work.
 
+## Attachment versus strand lift — exchange149
+
+The Director clarified that a higher frontal **attachment** was wanted. The preceding strand-only lift did not fulfill that intent even though it exposed more skin. A small coherent front-only arc transform of growth mesh plus guides achieved the requested fit without remodeling the face or moving the whole groom. Inspect the actual surface/interpolation graph first; keep existing UV/parting relationships and measure root/head proximity. [Final scalp-fit result](../planning/SERIES_01_NATIVE_GROOM_CAPABILITY.md#final-frontal-scalp-fit--exchange149). Stop cosmetic hair iteration per Director instruction after this correction; do not manufacture another routine approval gate. Final frame has not been separately reviewed and static completion is not motion or license qualification.
+
 ## Small forehead adjustment — exchange148
 
 After the Director liked the natural alternative, a small local front-guide lift improved forehead exposure without moving the scalp/growth surface or reopening the entire style. The stronger first lift sharpened the edge; reduced amplitude and a longer root transition retained softer framing. Keep such corrections local and compare against the liked current look plus approved identity references. Do not equate a request for slightly more forehead with permission for global recession, new crown design or face changes. [Current result](../planning/SERIES_01_NATIVE_GROOM_CAPABILITY.md#subtle-forehead-opening--exchange148); final tweak review pending. Reuse the existing handler/gallery and skip redundant isolated ear renders when the ear state is exactly preserved.
