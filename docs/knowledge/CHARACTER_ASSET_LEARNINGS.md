@@ -2,6 +2,10 @@
 
 2026-09-26 · Release 01 exchange 137 · applies to the Pashtun character and subsequent asset work.
 
+## Temple correction and colour direction — exchange147
+
+Director spotted a narrow temple stripe in the previously reviewed natural groom: earlier internal QA missed that aligned short hairs read as one mark at ordinary viewing size. Hiding only the added wisps removed it; do not repaint skin to correct a hair defect. Shorter, finer strands with dispersed roots and trajectories fix the band while retaining soft temple framing. For selective brown accents, use feathered root-local fields carried along native curves; per-strand colour variation avoids uniformly coloured locks. [Current result](../planning/SERIES_01_NATIVE_GROOM_CAPABILITY.md#temple-repair-and-brown-accents--exchange147). Main groom geometry and all prior anatomy/skin/ear controls preserved; technical evidence does not imply Director acceptance. Dark base colour is acceptable, not approval of the entire hairstyle.
+
 ## Active scope override — exchange146
 
 **Execution result:** [natural147 alternative](../planning/SERIES_01_NATIVE_GROOM_CAPABILITY.md#natural-groom-refinement-result--after-exchange146) is a complete internally reviewed static candidate, not Director-approved hair. Keeping the donor's natural part/live interpolation and adjusting noise, tip flow and strand radius produced a more coherent alternative than forcing an exact illustrated crown. Temple strands need a continuous anterior-skin path: nearest-surface projection jumped onto pinna folds; bounded lateral ray fitting avoided that. Ear masks must include measured bowl coordinates, not only the outermost rim; verify evaluated on/off shape changes and inspect clay before compensating with shading. Native `CURVES` must be explicitly hidden for isolated ear review.192 tests, exact non-ear preservation, fresh-open control/rollback and identical decoded front pixels; artist-authored donor dependence and motion/license limits remain. No new acceptance or universal capability claim.
