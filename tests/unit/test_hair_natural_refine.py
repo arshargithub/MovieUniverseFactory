@@ -6,7 +6,7 @@ import sys
 import types
 spec=importlib.util.spec_from_file_location('natural',Path('src/movie_factory/adapters/blender/hair_natural_refine.py'))
 m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
-@pytest.mark.parametrize('job',[None,{}, {'operation':'exec','candidate':1},{'operation':'preview','candidate':True},{'operation':'preview','candidate':-1},{'operation':'preview','candidate':8},{'operation':'preview','candidate':1,'code':'pass'}])
+@pytest.mark.parametrize('job',[None,{}, {'operation':'exec','candidate':1},{'operation':'preview','candidate':True},{'operation':'preview','candidate':-1},{'operation':'preview','candidate':9},{'operation':'preview','candidate':1,'code':'pass'}])
 def test_rejects_unsupported_jobs(job):
     with pytest.raises(ValueError):m.validate(job)
 
@@ -32,6 +32,24 @@ def inputs(tmp_path,monkeypatch):
 
 def test_fresh_preview(inputs):
     assert m.validate({'operation':'preview','candidate':4})==inputs/'natural147-preview-04'
+
+def test_forehead_output_is_fresh_namespace(inputs):
+    assert m.validate({'operation':'preview','candidate':7})==inputs/'natural149-preview-07'
+
+def test_forehead_lift_pins_roots_crown_rear_and_temples():
+    assert m.forehead_delta((0,-.9,.85),0)==(0.,0.,0.)
+    for p in ((0,-.9,1.3),(0,.4,.85),(.76,-.9,.85),(0,-.9,.48)):
+        assert m.forehead_delta(p,.5)==(0.,0.,0.)
+    assert m.forehead_delta((0,-.9,.85),.5)==(0.,0.,.075)
+    for x in (-.7,-.5,0,.5,.7):
+        for z in (.5,.7,.9,1.1,1.3):
+            delta=m.forehead_delta((x,-.9,z),.1)
+            assert delta[:2]==(0.,0.) and 0<=delta[2]<=.075
+
+def test_gentler_forehead_variant():
+    assert m.forehead_delta((0,-.9,.85),0,8)==(0.,0.,0.)
+    assert m.forehead_delta((0,-.9,.85),.5,8)==(0.,0.,.050)
+    assert m.forehead_delta((0,-.9,.85),.1,8)[2]<m.forehead_delta((0,-.9,.85),.1,7)[2]
 
 @pytest.mark.parametrize('candidate',[5,6])
 def test_accent_output_preserves_prior_namespace(inputs,candidate):

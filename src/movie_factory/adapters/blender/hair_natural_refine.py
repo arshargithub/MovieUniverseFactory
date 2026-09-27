@@ -20,6 +20,17 @@ def digest(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def smooth(t):
     t=max(0.,min(1.,t));return t*t*(3-2*t)
 
+def forehead_delta(p,t,candidate=7):
+    """Small front-fringe lift, with roots, temples and upper crown pinned."""
+    x,y,z=p
+    weight=smooth(t/(.22 if candidate>=8 else .12))*smooth((-y-.55)/.22)
+    weight*=smooth((z-.48)/.20)*(1-smooth((z-1.06)/.23))
+    weight*=1-smooth((abs(x)-.45)/.30)
+    return (0.,0.,(.050 if candidate>=8 else .075)*weight)
+
+def output_prefix(candidate):
+    return 'natural149' if candidate>=7 else 'natural148' if candidate>=5 else 'natural147'
+
 def ear_delta(p):
     """Bounded local auricle relief; leave face, scalp, neck and lobe unchanged."""
     x,y,z=p
@@ -94,6 +105,7 @@ def refine_groom(main,strands,material,candidate):
                     temple=smooth((t-.3)/.6)*math.exp(-((q.z-.28)/.23)**4-((q.y+.11)/.30)**4)
                     q.y+=.11*temple
                     q.z+=.04*temple
+                if candidate>=7:q+=Vector(forehead_delta(q,t,candidate))
                 p.position=inverse@q
         ob.data.update_tag()
         tree=ob.modifiers['MF live finish'].node_group;n,l=tree.nodes,tree.links
@@ -209,13 +221,13 @@ def accent_state(main):
 
 def validate(job):
     if (not isinstance(job,dict) or set(job)!={'operation','candidate'}
-        or type(job['candidate']) is not int or job['candidate'] not in range(0,7)
+        or type(job['candidate']) is not int or job['candidate'] not in range(0,9)
         or job['operation'] not in ('audit','accent-audit','inspect','ear-preview','preview','seal','verify')):
         raise ValueError('Fixed natural-groom job required')
     from hair_uncovered_finish import PINS,ORIGINAL_PINS,REF,ORIGINAL_REF
     for p,h in [(SOURCE,SOURCE_SHA),(DONOR,DONOR_SHA),*[(REF/n,h) for n,h in PINS.items()],*[(ORIGINAL_REF/n,h) for n,h in ORIGINAL_PINS.items()]]:
         if p.is_symlink() or digest(p)!=h:raise ValueError('Pinned input changed')
-    prefix='natural148' if job['candidate']>=5 else 'natural147'
+    prefix=output_prefix(job['candidate'])
     out=BASE/f'{prefix}-{job["operation"]}-{job["candidate"]:02}'
     if out.exists() or out.is_symlink() or out.resolve().parent!=BASE.resolve():raise ValueError('Fresh confined output required')
     if shutil.disk_usage(BASE).free<5_000_000_000:raise ValueError('Disk low')
@@ -320,7 +332,7 @@ def run(job):
     out.mkdir();shutil.copyfile(__file__,out/'handler-source.py')
     bpy.ops.wm.open_mainfile(filepath=str(SOURCE),load_ui=False,use_scripts=False)
     protected=protection()
-    prefix='natural148' if job['candidate']>=5 else 'natural147'
+    prefix=output_prefix(job['candidate'])
     if job['operation']=='accent-audit':
         checkpoint=BASE/'natural147-seal-04/natural-hair.blend'
         assert digest(checkpoint)=='31835579b66300c562ef0faccfbaef1a0edf6816abb6ddf7eaed47fb9442da67'
@@ -401,7 +413,7 @@ def run(job):
         assert accents==prior.get('accents')
     views=(('front',0),) if job['operation'] in ('seal','verify') else (('front',0),('left',-45),('right',45),('back',180))
     review(bpy.context.scene,out,(0,0,-.03),3.8,views)
-    if job['candidate']>=1 and job['operation']=='preview':
+    if 1<=job['candidate']<7 and job['operation']=='preview':
         from hair_anatomy_refinement import is_hair
         saved={ob:ob.hide_render for ob in bpy.context.scene.objects}
         for ob in bpy.context.scene.objects:
