@@ -1,5 +1,11 @@
 # Pashtun uncovered hair finish — exchange142
 
+## Superseding Director review — exchange143
+
+Director finds12 close but still flat and wig/hat-like at the top; **not accepted as finished hair**. Direct front comparison with approved `front-uncovered-v01.png` supports the objection:12 has a low, broadly rounded crown with smooth continuous sweeps, whereas the reference has greater apparent root lift, irregular overlapping locks, broken selective highlights and a less uniform outer contour. The exposed forehead alone is not the missing ingredient. This is visual diagnosis, not a calibrated reconstruction or proof of a single geometric cause; material/light differences also affect depth cues.
+
+The earlier assistant readiness assessment was too generous. Preserve12 as a technically valid checkpoint, not a creative target. Recommended correction is localized three-dimensional root/lock lift and overlap around the part and upper frontal crown, preserving the approved hairline and accepted face. Do not solve this by raising the hairline again, uniformly inflating the whole head, adding fine strands or repainting flat geometry. Recheck both obliques against the six approved references. This exchange compares and records feedback only; no model, texture, render or reference-image changes.
+
 2026-09-27. Continuation of the existing likeness/hair objective, not a new campaign or reset of effort. Director approves the four uncovered images and requests native hair finalization. No arbitrary30/60-minute cutoff applies to this sustained continuation; reference fidelity and scope controls still apply.
 
 ## Authority and protected state
