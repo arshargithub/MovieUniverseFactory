@@ -2,6 +2,10 @@
 
 2026-09-26 · Release 01 exchange 137 · applies to the Pashtun character and subsequent asset work.
 
+## Director alternative and constraint — exchange145
+
+Director rules out commissioned specialist hair and offers a feasibility-led alternative based on the earlier native groom's natural irregularity. [Proposed route](../planning/SERIES_01_NATIVE_GROOM_CAPABILITY.md#feasibility-led-alternative-proposed--exchange145). Do not conflate inability to reproduce an exact illustrated hairstyle with inability to develop any suitable native hairstyle. Retain17 and original references; preserve face identity while explicitly proposing flexible part/lock arrangement. The earlier live01 record is the starting family, not the later saved03 with scalp gaps. Existing free authored input is allowed by the proposal and must stay attributed; hired human authoring is excluded. New alternative acceptance is pending, not implied by a positive screenshot comparison. No new native work in this exchange.
+
 ## Superseding failure disposition — exchange144
 
 Director rejects17 as wig/hat-like; subsequent native lock-grouping19 and layered-coverage20 both fail internally. [Stopped route](../planning/SERIES_01_UNCOVERED_HAIR_FINISH_01.md#stopped-unsuccessful--director-exchange144). The agent again mistook relative improvement for satisfying the integrated criterion. **Retract17's readiness claim; no finished hair is demonstrated.** Quantizing a smooth donor into clumps creates ribbons/gaps; restoring continuous support restores coverage but also the helmet. This two-variant comparison changes geometry and shading together, so it is evidence of route failure, not an isolated causal proof. Preserve the accepted bust and technical controls, stop parameter-only continuation, and identify any future artist/tool/donor intervention explicitly. No universal impossibility or human-necessity claim is supported. The Director authorized a candid failure conclusion, not another cosmetic approval request. No spending or outsourcing is authorized.
