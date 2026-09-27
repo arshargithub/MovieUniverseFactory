@@ -36,8 +36,10 @@ def digest(path):
 def validate(job):
     if (not isinstance(job, dict) or set(job) != {'operation', 'candidate'}
             or job['operation'] not in ('preview', 'seal', 'verify', 'audit')
-            or type(job['candidate']) is not int or job['candidate'] not in tuple(range(1, 19))):
+            or type(job['candidate']) is not int or job['candidate'] not in tuple(range(1, 21))):
         raise ValueError('Fixed uncovered finish job required')
+    if job['candidate']>=19 and job['operation'] in ('seal','verify'):
+        raise ValueError('Rejected diagnostic lock candidates cannot be promoted')
     for p, h in [(SOURCE, SOURCE_SHA), *[(REF/n, h) for n, h in PINS.items()],
                  *[(ORIGINAL_REF/n,h) for n,h in ORIGINAL_PINS.items()]]:
         if p.is_symlink() or digest(p) != h:
@@ -139,6 +141,64 @@ def shape(point, candidate):
         z -= .07*flare
         x += side*.14*lower*smooth((abs(x)-.45)/.45)
     return x, y, z
+
+
+def lock_groups(rows, count=44):
+    """Deterministic complete-trajectory groups, not disconnected root bands."""
+    import numpy as np
+    features=rows[:,[0,8,20,40,63]].reshape(len(rows),-1)
+    centers=[features[0].copy()]
+    for _ in range(min(count,len(rows))-1):
+        distance=np.min(np.sum((features[:,None,:]-np.array(centers)[None,:,:])**2,axis=2),axis=1)
+        centers.append(features[int(np.argmax(distance))].copy())
+    centers=np.array(centers)
+    for _ in range(8):
+        labels=np.argmin(np.sum((features[:,None,:]-centers[None,:,:])**2,axis=2),axis=1)
+        for k in range(len(centers)):
+            if np.any(labels==k):centers[k]=features[labels==k].mean(axis=0)
+    return labels
+
+
+def sculpt_locks(ob,candidate):
+    """Separate continuous curve bundles and shade in their own flow space."""
+    import numpy as np
+    values=np.empty(len(ob.data.points)*3,dtype=np.float32)
+    ob.data.attributes['position'].data.foreach_get('vector',values)
+    rows=values.reshape(-1,64,3).copy()
+    original=rows.copy()
+    labels=lock_groups(rows,count=44 if candidate==19 else 84)
+    colors=np.empty((len(rows),64,4),dtype=np.float32)
+    ts=np.linspace(0,1,64)
+    envelope=np.array([smooth(t/.13)*(1-.45*smooth((t-.80)/.20)) for t in ts])
+    for group in np.unique(labels):
+        mask=labels==group;subset=rows[mask];mean=subset.mean(axis=0)
+        # Preserve strand roots; form the grouping along entire trajectories.
+        amount=.58 if candidate==19 else .48
+        subset+=(mean[None,:,:]-subset)*amount*envelope[None,:,None]
+        side=1 if mean[12,0]>=0 else -1
+        phase=group*2.39996
+        upper=np.array([smooth((z-.20)/.65) for z in mean[:,2]])
+        wave=np.sin(ts*9+phase)*np.sin(np.pi*ts)
+        subset[:,:,0]+=side*.075*wave[None,:]*envelope[None,:]
+        subset[:,:,1]+=.055*np.sin(ts*9+phase+.8)[None,:]*envelope[None,:]
+        subset[:,:,2]+=.06*np.sin(phase)*envelope[None,:]*upper[None,:]
+        rows[mask]=subset
+        across=subset[:,10,1]-mean[10,1]
+        span=max(.035,float(np.std(across))*2.5)
+        accent=np.exp(-((across/span-.22*np.sin(phase))/.55)**2)
+        band=.30+.70*np.maximum(0,np.sin(ts*13+phase))**2
+        strength=accent[:,None]*band[None,:]*(.6+.3*np.sin(phase)**2)
+        base=np.array([.009,.0037,.0019]);light=np.array([.095,.042,.022])
+        colors[mask,:,:3]=base+(light-base)*strength[:,:,None]
+        colors[mask,:,3]=1
+    if candidate>=20:
+        # Keep one third as a continuous underlayer. Grouped curves provide
+        # overlapping locks; coverage must not depend on disconnected ribbons.
+        support=np.arange(len(rows))%3==0
+        rows[support]=original[support]
+        colors[support,:,:3]=(.008,.0032,.0016)
+    ob.data.attributes['position'].data.foreach_set('vector',rows.ravel())
+    ob.data.attributes['MF_paint'].data.foreach_set('color',colors.ravel())
 
 
 def finish(candidate):
@@ -265,6 +325,8 @@ def finish(candidate):
                 q=p.position.copy()
                 delta=crown_offset(q,root,k/(len(curve.points)-1),candidate)
                 p.position=tuple(a+b for a,b in zip(q,delta))
+    if candidate>=19:
+        sculpt_locks(ob,candidate)
     ob.data.update_tag()
     # Keep live native curves and a single material language. Use the now
     # approved uncovered source, not scarf/skin pixels from the hooded portrait.
@@ -339,6 +401,10 @@ def uncovered_material(mat, candidate):
         frontweight=mathnode('MULTIPLY',frontweight,height)
         rearweight=0.
     color=mix(frontweight,fallback,front)
+    if candidate>=19:
+        color=attr.outputs['Color']
+    if candidate>=20:
+        color=mix(.65,color,mix(frontweight,fallback,front))
     color=mix(rearweight,color,rear)
     links.new(color,p.inputs['Base Color']);links.new(color,p.inputs['Emission Color'])
 

@@ -12,7 +12,7 @@ def test_rejects_arbitrary_jobs(job):
     with pytest.raises(ValueError):
         m.validate(job)
 
-@pytest.mark.parametrize('candidate', list(range(1,19)))
+@pytest.mark.parametrize('candidate', list(range(1,21)))
 def test_shape_is_continuous_bounded_and_finite(candidate):
     for x in (-1.2, -.5, 0, .5, 1.2):
         for y in (-.8, 0, .8):
@@ -53,6 +53,21 @@ def test_connected_crest_continuity_and_bound(candidate):
                 b=m.crown_offset((x+.00001,y,1.3),root,t,candidate)
                 assert all(math.isfinite(v) and abs(v)<.23 for v in a)
                 assert max(abs(v-w) for v,w in zip(a,b))<.001
+
+def test_complete_trajectory_groups_deterministic():
+    import numpy as np
+    rng=np.random.default_rng(7)
+    rows=rng.normal(size=(18,64,3))
+    original=rows.copy()
+    a=m.lock_groups(rows,5);b=m.lock_groups(rows,5)
+    assert np.array_equal(a,b) and np.array_equal(rows,original)
+    assert len(set(a))==5 and len(a)==len(rows)
+
+@pytest.mark.parametrize('candidate',[19,20])
+@pytest.mark.parametrize('operation',['seal','verify'])
+def test_rejected_diagnostics_cannot_be_promoted(candidate,operation):
+    with pytest.raises(ValueError,match='cannot be promoted'):
+        m.validate({'operation':operation,'candidate':candidate})
 
 @pytest.fixture
 def pinned(tmp_path,monkeypatch):
