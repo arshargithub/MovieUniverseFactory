@@ -1,5 +1,9 @@
 # Agent-only hair workflow investigation
 
+## Current crown correction after exchange143
+
+[Candidate17](SERIES_01_UNCOVERED_HAIR_FINISH_01.md#crown-correction-after-exchange143--current-review-candidate17) is the new static appearance-review candidate after12's flat-crown rejection. Five internal previews; preserved accepted non-hair and six approved references. Front, both obliques and rear visually compared with uncovered baselines, including an approximately eye-aligned frontal comparison. Localized connected crest and broad coherent shading improve the top without changing the forehead. This remains artist-donor-assisted adaptation with explicit derivative rebuild, not de-novo creation or motion qualification. Director approval is pending; prior12's readiness claim was superseded. Current native/card pointers are in the linked record; planning counter143 remains unchanged by execution.
+
 ## Current uncovered-hair finish — exchange142, 2026-09-27
 
 Director approves four uncovered references as a supplement to original pair B. [Finish12 result](SERIES_01_UNCOVERED_HAIR_FINISH_01.md) is the current integrated static review candidate, **not Director-approved native hair**. It repairs coverage and temporal flow, carries long face-framing waves into the rear, and preserves the accepted bust exactly. Saved native and fresh-process reversible guide/rebuild/rollback pass; preview/seal and fresh front render pixels match.135 tests;12 internal previews; six approved references. Cumulative effort remains on the same objective. This demonstrates continued agent-executed donor adaptation and static native control, not asset-free creation, animated scalp attachment or general production qualification. No paid call, new asset, purchase or publication. Prior rear-provisional language below is superseded for hair design only; the new rear costume artifact is excluded from wardrobe authority.
