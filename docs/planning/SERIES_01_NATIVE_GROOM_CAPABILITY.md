@@ -1,5 +1,9 @@
 # Agent-only hair workflow investigation
 
+## Superseding disposition — exchange144: not demonstrated
+
+Director rejected17; whole-trajectory lock grouping19 creates ribbons/gaps and continuous-underlayer20 restores the cap. Both fail internally; no new native promoted. [Stopped unsuccessful route](SERIES_01_UNCOVERED_HAIR_FINISH_01.md#stopped-unsuccessful--director-exchange144). The agent is stopping this authoring/adaptation method, not qualifying hair or proving universal agent incapability. Prior technical controls remain scoped evidence.153 tests pass; artistic failure is decisive. Accepted face/bust, six references and failed attempts preserved. A specialist-authored groom would change the intervention class and requires approval; a suitable alternative agent-only route is untested, not guaranteed. No routine continuation recommended.
+
 ## Current crown correction after exchange143
 
 [Candidate17](SERIES_01_UNCOVERED_HAIR_FINISH_01.md#crown-correction-after-exchange143--current-review-candidate17) is the new static appearance-review candidate after12's flat-crown rejection. Five internal previews; preserved accepted non-hair and six approved references. Front, both obliques and rear visually compared with uncovered baselines, including an approximately eye-aligned frontal comparison. Localized connected crest and broad coherent shading improve the top without changing the forehead. This remains artist-donor-assisted adaptation with explicit derivative rebuild, not de-novo creation or motion qualification. Director approval is pending; prior12's readiness claim was superseded. Current native/card pointers are in the linked record; planning counter143 remains unchanged by execution.

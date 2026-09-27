@@ -1,5 +1,17 @@
 # Pashtun uncovered hair finish — exchange142
 
+## Stopped unsuccessful — Director exchange144
+
+Director rejects17: “looks like a weird wig/hair hat still,” and authorizes continued work only until fixed or an explicit admission of failure. **17 is rejected, not review-ready or accepted; the previous agent readiness claim below is superseded.** No finished hairstyle is established.
+
+Continuation tested coverage diagnostic18 and two whole-trajectory lock-grouping variants19/20.19 groups actual continuous native strands and shades in lock-flow space rather than front projection; it creates separated ribbon-like bundles and visible coverage gaps.20 retains one third of original strands as continuous support, uses smaller groups and blends reference shading; coverage improves but the helmet mass returns, with ordered/string-like lower hair. All eight preview images were inspected. Both variants fail the approved uncovered front and original pair-B hair language. More grouping strength or another crown-height change is not a credible next repair. No19/20 native is sealed; handler rejects their promotion. Original files, accepted non-hair and six references are preserved;153 focused checks pass but do not offset the artistic failure.
+
+**Disposition: stopping this agent-executed authoring/adaptation route without success.** The failure is reference-specific spatial composition and artistic review judgment, not Blender persistence or an established impossibility of agent-only work. Prior raised-crown variants and current grouped-strand variants have not produced convincing root-to-lock integration. Do not resume another parameter-only pass or hide it with scarf/lighting. Existing guide/control proof and accepted face/bust remain useful, but hair/A5/E1 stay unqualified.
+
+Recommended path if finished character production becomes the priority: a narrowly scoped specialist-authored hair groom against the six approved references, followed by agent integration and preservation/control tests. This requires explicit Director authorization and would demonstrate a hybrid result, not agent-only creation. No human engagement, purchase or spending is authorized here. If agent-only remains mandatory, retain this as **NOT_DEMONSTRATED under tested methods**; a suitable materially different tool or reference-compatible authored groom remains untested, not a promised solution. No additional asset search or provider call was performed.
+
+Evidence: `finalhair142-audit-18/`, `finalhair142-preview-19/`, `finalhair142-preview-20/`, and compact `crown145-operating/` under the trial directory. These continue the same cumulative objective;145 is an activity label, not planning exchange145. No new review gallery or large native package is produced for failed results. The previous gallery is frozen historical evidence, not a current approval invitation. Local implementation/design commits are separate; no push/media backup.
+
 ## Crown correction after exchange143 — current review candidate17
 
 Director authorized fixing the flat/wig-like crown and explicitly required comparison with the uncovered baselines. This is implementation continuation, not a new planning exchange or reset of the sustained objective. Original pair B remains identity authority; all four approved uncovered views were visually compared with candidate17's clothing-free front, both obliques and rear before handoff.

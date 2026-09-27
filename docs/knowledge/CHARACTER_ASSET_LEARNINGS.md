@@ -2,6 +2,10 @@
 
 2026-09-26 · Release 01 exchange 137 · applies to the Pashtun character and subsequent asset work.
 
+## Superseding failure disposition — exchange144
+
+Director rejects17 as wig/hat-like; subsequent native lock-grouping19 and layered-coverage20 both fail internally. [Stopped route](../planning/SERIES_01_UNCOVERED_HAIR_FINISH_01.md#stopped-unsuccessful--director-exchange144). The agent again mistook relative improvement for satisfying the integrated criterion. **Retract17's readiness claim; no finished hair is demonstrated.** Quantizing a smooth donor into clumps creates ribbons/gaps; restoring continuous support restores coverage but also the helmet. This two-variant comparison changes geometry and shading together, so it is evidence of route failure, not an isolated causal proof. Preserve the accepted bust and technical controls, stop parameter-only continuation, and identify any future artist/tool/donor intervention explicitly. No universal impossibility or human-necessity claim is supported. The Director authorized a candid failure conclusion, not another cosmetic approval request. No spending or outsourcing is authorized.
+
 ## Expanded reference authority — exchange142
 
 **Authorized crown correction after143:** [candidate17](../planning/SERIES_01_UNCOVERED_HAIR_FINISH_01.md#crown-correction-after-exchange143--current-review-candidate17) separates frontal hairline preservation from upper-part lift. Pinning every root while lifting adjacent bands creates two humps; independently lifting large bands creates scallops. A connected local crest plus small unequal overlaps performed better in this case. After geometry changes, the reference sampling coordinates must follow the new crown; broad coherent highlight/dark structure matters more than extra fine strands. Compare fronts at approximately equal pupil spacing, then inspect both obliques and rear: a flattering front alone is insufficient.17 is internally review-ready, not Director-approved or an exact illustrated match. Preserve the previous overly generous judgment and failed variants; do not reset cumulative time.
