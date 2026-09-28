@@ -1,5 +1,13 @@
 # Agent-only hair workflow investigation
 
+## Pointed temple tail removed — exchange151
+
+Director likes the ear-framing result15 but requests removal of the pointed spike descending toward the cheek. This is approval of the surrounding look with one specific correction, not permission to redesign the hair. Trimmed16 keeps the upper temple paths, roots, main/secondary groom, growth surface, frontal fit, colour accents and protected character/ear state. Only the lower added-wisp ends are shortened and feathered, with unequal endpoints to avoid a blunt common edge. Front, both obliques and back visually checked; no new costume, skin or motion work.
+
+Current native: `.runtime/art-direction/series01-facebuilder-trial-01/natural152-seal-16/natural-hair.blend`, SHA256 `9a204ec2e3951274aeff52aeb554de6b8bc7fa169933e27bfea7073bb62f323f`. Prior15 preserved in the same compact comparison. Implementation `41a0fcf`;292 focused tests; one preview. Scoped save/reopen checks, source binding, checksums and cumulative operating card in `natural152-operating/`. Final tweak is delivered, not separately Director-reviewed. Motion/scarf fit and donor release rights remain unqualified. No paid calls, purchase, new asset, remote push or native-media backup this exchange. Counter151; next checkpoint160. Local design and implementation commits remain separate.
+
+Verification complete: preview/save/fresh-open native state and decoded front pixels match exactly; live guide edit/rollback passes. The saved file hash matches the record, and protected fields agree with15. Four reconciled jobs, zero failures;316.04 captured seconds (5.3 minutes),96.26 overlapping native-process seconds; cumulative22,038.73 seconds for the continuing captured objective, not all historical hair work. Initial context/final receipt overhead excluded; engineering tokens/cost unknown. Evidence scope92,297,774 bytes. One integrated trim, not a restarted hairstyle experiment.
+
 ## Ear framing reopened — exchange150
 
 The Director requests more natural hair around the ears/sideburns, grounded in the original images. This reopens only that localized area after the earlier stopping instruction; retain the liked main groom, raised frontal attachment, colour accents, face, ears and skin. Pair B (`frontal-v02-individualized.png`, `portrait-v07-individualized.png`) remains identity authority. The portrait's connected, tapered anterior-ear lock guides this correction; the flexible natural-groom brief from146 remains in force, not exact illustrated crown matching.
