@@ -1,5 +1,15 @@
 # Agent-only hair workflow investigation
 
+## Ear framing reopened — exchange150
+
+The Director requests more natural hair around the ears/sideburns, grounded in the original images. This reopens only that localized area after the earlier stopping instruction; retain the liked main groom, raised frontal attachment, colour accents, face, ears and skin. Pair B (`frontal-v02-individualized.png`, `portrait-v07-individualized.png`) remains identity authority. The portrait's connected, tapered anterior-ear lock guides this correction; the flexible natural-groom brief from146 remains in force, not exact illustrated crown matching.
+
+**Current review native:** `.runtime/art-direction/series01-facebuilder-trial-01/natural151-seal-15/natural-hair.blend`, SHA256 `dbe5ca8ec05575a1ac01dfc67568aa7eb353bc9571eded4edc31d4abf6eef09b`. Previous150-09 and all references preserved.144 editable native temple curves replace36 sparse short wisps. Roots start underneath the retained swept hair; varied lengths and early taper make a finer lock in front of the ear. The change is deliberately localized and most visible in the exposed-ear oblique; no ear, skin or main-groom remodel. All four clothing-free views were inspected against the original pair and before/after renders. Appearance approval remains pending.
+
+Six internal previews10–15 are retained.10–12 were too faint, too high or misplaced toward the ear;13 made a blunt lock,14 still exposed a stripe-like root edge.15 relocates the roots under the existing groom and reduces thickness with a longer taper. These are diagnostic failures, not acceptance targets. The key improvement is connected placement, not indiscriminately increasing density. No new asset or paid call was needed.
+
+Implementation `a8025e7`;289 focused tests pass. Main and secondary groom, growth surface, frontal-fit record, accents, ears and protected character digest are exactly unchanged from150-09. Only the separate temple curves differ. Preview/save/reopen evidence and cumulative activity are captured in `natural151-operating/`; native state, live control/rollback and decoded front pixels agree exactly across all three stages. Static evidence does not establish animated binding, scarf clearance, donor release-license clearance, economical repeatability or de-novo agent hair creation. Existing artist-authored donor dependence remains explicit. CP-015 records the scheduled text-only Git batch; native assets/renders remain SSD-local and are not backed up by Git.
+
 ## Final frontal scalp fit — exchange149
 
 Director clarifies that the **actual front scalp/hair attachment** should sit a little higher, not merely the overlying strands, and asks to call the hair done after that correction. This authorizes a localized hair growth-surface change; it does not authorize changing the accepted skull/forehead/face. Static hair refinement is complete under that stopping instruction, with final09 renders delivered for visibility rather than another requested cosmetic go-ahead. The Director has not separately reviewed09; do not relabel this as explicit approval of a viewed final frame or general production qualification.
