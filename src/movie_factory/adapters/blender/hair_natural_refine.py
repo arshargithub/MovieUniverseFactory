@@ -29,7 +29,7 @@ def forehead_delta(p,t,candidate=7):
     return (0.,0.,(.050 if candidate>=8 else .075)*weight)
 
 def output_prefix(candidate):
-    return 'natural150' if candidate>=9 else 'natural149' if candidate>=7 else 'natural148' if candidate>=5 else 'natural147'
+    return 'natural151' if candidate>=10 else 'natural150' if candidate>=9 else 'natural149' if candidate>=7 else 'natural148' if candidate>=5 else 'natural147'
 
 def scalp_position(p):
     """Small front-only rotation along the head arc, not vertical flotation."""
@@ -172,10 +172,40 @@ def temple_wisps(material,candidate):
     tree=BVHTree.FromPolygons([head.matrix_world@v.co for v in mesh.vertices],[list(p.vertices) for p in mesh.polygons])
     rows=[];radii=[];rng=np.random.default_rng(147)
     for side in (-1,1):
-        for ci in range(18 if candidate>=5 else 36 if candidate>=3 else 55 if candidate>=2 else 90):
+        for ci in range(72 if candidate>=14 else 96 if candidate>=10 else 18 if candidate>=5 else 36 if candidate>=3 else 55 if candidate>=2 else 90):
             jitter=float(rng.uniform(-1,1));length=float(rng.uniform(.22,.44));row=[]
             if candidate>=5:
                 length=float(rng.uniform(.09,.23));root_y=float(rng.uniform(-.42,-.24));root_z=float(rng.uniform(.45,.54))
+            if candidate>=10:
+                # Three loose overlapping locks, rooted under existing swept hair.
+                group=ci%3
+                root_y=(-.30,-.38,-.44)[group]+float(rng.uniform(-.035,.035))
+                root_z=(.59,.66,.72)[group]+float(rng.uniform(-.065,.065))
+                length=(.50,.48,.40)[group]+float(rng.uniform(-.09,.09))
+                bow=float(rng.uniform(.018,.065));width=float(rng.uniform(.00065,.00125))
+                if candidate>=11:
+                    length+=.10
+                    width*=2.6
+                if candidate>=12:
+                    root_y=(-.21,-.26,-.31)[group]+float(rng.uniform(-.025,.025))
+                    root_z=(.56,.63,.68)[group]+float(rng.uniform(-.045,.045))
+                    length=(.72,.73,.70)[group]+float(rng.uniform(-.08,.08))
+                    width=float(rng.uniform(.0013,.0025))
+                if candidate>=13:
+                    # Anterior cheek strip, not projection across the pinna.
+                    root_y=(-.39,-.43,-.47)[group]+float(rng.uniform(-.015,.015))
+                    root_z=(.55,.61,.67)[group]+float(rng.uniform(-.03,.03))
+                    length=(.70,.72,.75)[group]+float(rng.uniform(-.07,.07))
+                    width=float(rng.uniform(.0018,.0032))
+                if candidate>=14:
+                    root_y=(-.40,-.43,-.46)[group]+float(rng.uniform(-.02,.02))
+                    length=(.64,.69,.66)[group]+float(rng.uniform(-.09,.09))
+                    width=float(rng.uniform(.0008,.0016))
+                if candidate>=15:
+                    root_y=float(rng.uniform(-.30,-.24))
+                    root_z=float(rng.uniform(.80,.90))
+                    length=float(rng.uniform(.78,1.02))
+                    width=float(rng.uniform(.0006,.0012))
             for k in range(48):
                 t=k/47
                 if candidate>=2:
@@ -186,12 +216,28 @@ def temple_wisps(material,candidate):
                     if candidate>=5:
                         y=root_y+.045*t+.018*math.sin(math.pi*t+jitter)*t
                         z=root_z-length*t
+                    if candidate>=10:
+                        y=root_y+.07*t+bow*math.sin(math.pi*t)+.010*math.sin(2*math.pi*t+jitter)*t
+                        z=root_z-length*t+.015*math.sin(math.pi*t+jitter)*t
+                    if candidate>=12:
+                        y=root_y+.025*t-.025*math.sin(math.pi*t)+.010*math.sin(2*math.pi*t+jitter)*t
+                    if candidate>=13:
+                        y=root_y+.04*math.sin(math.pi*t)-.025*t
+                    if candidate>=14:
+                        y=root_y+.06*math.sin(math.pi*t)-.035*math.sin(2*math.pi*t)-.01*t
+                    if candidate>=15:
+                        y=root_y-(.15+.025*jitter)*smooth(t)+.025*math.sin(2*math.pi*t)
                     hit,normal,_,_=tree.ray_cast(Vector((side*2,y,z)),Vector((-side,0,0)))
                     if hit is None:raise ValueError('Temple strand misses skin')
                     q=hit+normal*(.005+.008*math.sin(math.pi*t))
                     q.y+=.004*math.sin(t*5+ci)*math.sin(math.pi*t)
                     radius=.00065*(1-t)**.8+.000015
                     if candidate>=5:radius=.00036*(1-t)**1.2+.000008
+                    if candidate>=10:
+                        q+=normal*(.008*math.sin(math.pi*t))
+                        radius=width*(1-t)**1.35+.000008
+                    if candidate>=12:radius=width*(1-smooth((t-.4)/.6))+.000008
+                    if candidate>=14:radius=width*(1-smooth((t-.12)/.88))+.000008
                 else:
                     p=Vector((side*(.745+.015*t),-.32+.12*t+.035*jitter,.50-length*t+.035*jitter))
                     hit,normal,_,_=tree.find_nearest(p)
@@ -263,7 +309,7 @@ def accent_state(main):
 
 def validate(job):
     if (not isinstance(job,dict) or set(job)!={'operation','candidate'}
-        or type(job['candidate']) is not int or job['candidate'] not in range(0,10)
+        or type(job['candidate']) is not int or job['candidate'] not in range(0,16)
         or job['operation'] not in ('audit','accent-audit','attachment-audit','inspect','ear-preview','preview','seal','verify')):
         raise ValueError('Fixed natural-groom job required')
     from hair_uncovered_finish import PINS,ORIGINAL_PINS,REF,ORIGINAL_REF

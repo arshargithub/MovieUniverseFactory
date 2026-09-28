@@ -6,7 +6,7 @@ import sys
 import types
 spec=importlib.util.spec_from_file_location('natural',Path('src/movie_factory/adapters/blender/hair_natural_refine.py'))
 m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
-@pytest.mark.parametrize('job',[None,{}, {'operation':'exec','candidate':1},{'operation':'preview','candidate':True},{'operation':'preview','candidate':-1},{'operation':'preview','candidate':10},{'operation':'preview','candidate':1,'code':'pass'}])
+@pytest.mark.parametrize('job',[None,{}, {'operation':'exec','candidate':1},{'operation':'preview','candidate':True},{'operation':'preview','candidate':-1},{'operation':'preview','candidate':16},{'operation':'preview','candidate':1,'code':'pass'}])
 def test_rejects_unsupported_jobs(job):
     with pytest.raises(ValueError):m.validate(job)
 
@@ -38,6 +38,9 @@ def test_forehead_output_is_fresh_namespace(inputs):
 
 def test_attachment_audit_validation_is_data_only(inputs):
     assert m.validate({'operation':'attachment-audit','candidate':9})==inputs/'natural150-attachment-audit-09'
+
+def test_sideburn_refinement_retains_previous_outputs(inputs):
+    assert m.validate({'operation':'preview','candidate':10})==inputs/'natural151-preview-10'
 
 def test_scalp_fit_locality_and_small_arc():
     import math
