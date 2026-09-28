@@ -1,5 +1,9 @@
 # Pashtun identity baseline — selected pair and iteration history
 
+## Accepted production representation — exchange152
+
+Director accepts the completed static head/neck/upper shoulders/skin/natural hair. [Pinned native and scope](../knowledge/PASHTUN_CHARACTER_RETROSPECTIVE.md). Preserve pair B and uncovered images as identity/art-direction references and creative lineage; the accepted native governs continuity of the realized appearance in its tested scope. Previously accepted differences (including the feasible natural hairstyle) are intentional, not regressions to correct back to literal image geometry. The new [feature-specific reference policy](../knowledge/EFFICIENT_QUALITY_ASSET_WORKFLOW.md) is recommended for future assets; it does not erase earlier approvals or invent lower-body costume authority.
+
 ## Baseline expansion approved — exchange142, 2026-09-27
 
 Director accepts all four uncovered images from exchange141 and adds them to the baseline set. The two original pair-B portraits remain authoritative for illustrated identity; the four uncovered views supplement them for crown, forehead/temple framing, wave structure, volume and rear/length design. Their file paths and SHA-256 hashes are in the table below. This supersedes the pending-status statements for these four images, not the originals. The side views are obliques, not calibrated orthographic measurements. Rear clothing/strap artifacts remain excluded from costume authority.

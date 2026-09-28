@@ -20,6 +20,8 @@ Contextual review: [Release 01 applicability](RELEASE_01_APPLICABILITY.md) maps 
 
 ## How to use it without rereading the entire conversation
 
+Exchange152 accepts the static Pashtun head/neck/upper shoulders/hair. Start with [accepted result and cross-discipline retrospective](PASHTUN_CHARACTER_RETROSPECTIVE.md), then [proposed Efficient Quality asset workflow](EFFICIENT_QUALITY_ASSET_WORKFLOW.md) and [Pashtun completion plan](../planning/SERIES_01_PASHTUN_COMPLETION_PLAN.md). Five original Efficient Quality/convergence/intent/budget/progressive-commitment candidates were context-reviewed and mapped; this does not certify the entire register or automatically approve the new workflow. Do not reopen accepted native differences to chase literal reference matching.
+
 For character production, start with [Character asset learnings and review contract](CHARACTER_ASSET_LEARNINGS.md), established at exchange137 after the repeated hair-review loop. It links accepted face/skin/anatomy/performance evidence, failed authoring methods, an audited eleven-card effort summary, and the integrated internal-readiness rule. Historical checkpoint and asset-acquisition source context was re-read; no new asset, aesthetic, provider or renderer choice is implied.
 
 1. Search candidate labels/excerpts for the current topic: universe/entity identity, representations, audience, production, approval, budget, reuse, retrieval, interface, orchestration, perception, soundtrack, distribution, etc.

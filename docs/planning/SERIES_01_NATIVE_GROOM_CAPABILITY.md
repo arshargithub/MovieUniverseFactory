@@ -1,5 +1,9 @@
 # Agent-only hair workflow investigation
 
+## Director acceptance — exchange152
+
+Director calls the current result done. Static head, neck/upper shoulders, skin and natural hair16 are accepted; do not reopen the prior image-matching target or optional cosmetics. [Consolidated learnings](../knowledge/PASHTUN_CHARACTER_RETROSPECTIVE.md) and [recommended completion plan](SERIES_01_PASHTUN_COMPLETION_PLAN.md) carry this forward. This establishes a scoped, agent-executed tool/donor-assisted accepted asset, not de-novo authoring, economical repeatability, final-groom motion or rights clearance. Immutable runtime manifests retain their historical build-time pending status; this dated acceptance supersedes it without rewriting evidence.
+
 ## Pointed temple tail removed — exchange151
 
 Director likes the ear-framing result15 but requests removal of the pointed spike descending toward the cheek. This is approval of the surrounding look with one specific correction, not permission to redesign the hair. Trimmed16 keeps the upper temple paths, roots, main/secondary groom, growth surface, frontal fit, colour accents and protected character/ear state. Only the lower added-wisp ends are shortened and feathered, with unequal endpoints to avoid a blunt common edge. Front, both obliques and back visually checked; no new costume, skin or motion work.

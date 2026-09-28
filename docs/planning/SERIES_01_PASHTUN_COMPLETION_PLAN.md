@@ -1,0 +1,43 @@
+# Pashtun character — completion plan after static head acceptance
+
+2026-09-27, exchange152. **Recommended next execution plan; not begun in this documentation turn.** [Accepted asset and retrospective](../knowledge/PASHTUN_CHARACTER_RETROSPECTIVE.md); [proposed Efficient Quality workflow](../knowledge/EFFICIENT_QUALITY_ASSET_WORKFLOW.md).
+
+## Outcome and constraints
+
+One reusable, recognizable, dressed and poseable Pashtun character sufficient for the trailer's galloping entrance and known early-episode needs. Not a universal human model, every expression, a final whole film or invisible anatomical perfection. Preserve the accepted head/neck/upper shoulders, skin and hair. No paid assets, specialist commission, new subscription or paid generation without separate authority. Existing paid allowances do not automatically apply.
+
+The character's cultural identity, self-possession, practical strength and unadorned elegance are constraints; exact garment folds, hidden fastenings and unestablished lower-body details are design space. The indigo drape and brown shoulder-crossing harness are working visual vocabulary, not proof of a complete validated costume. Do not add an AK-47 or other unfinalized hero prop merely because it appeared in earlier brainstorming. Do not genericize her dress to match a convenient donor.
+
+## Next deliverable: whole-character feasibility and silhouette
+
+Prepare a **rough full-body assembly with two costume/drape configurations only if meaningfully different**, keeping the same accepted head. Include front, both obliques and back; a target9:16 medium/full shot; a standing pose and static forward riding lean with rough horse/tack proxy. Show a neutral turnaround only if it adds information. This is the creative decision: which feasible complete design carries her character and movement—not whether an isolated fold is prettier.
+
+Before that review, inspect existing body/rig and scarf assets, separate their actual reusable components, and identify the body/head attachment corridor. Prefer a suitable deformable body/rig over sculpting a detailed body beneath clothing. A short cheap motion/pose diagnostic may be internal if it determines feasibility; complete the existing motion brief before animation edits. Do not promise exact illustrated costume reproduction or final movement from these poses.
+
+## Sequenced work and gates
+
+| Stage | Work | Exit evidence / decision |
+|---|---|---|
+| 0. Freeze and inspect | Pin current accepted native/hash and refs; inventory visible/hidden components, facial controls, hair binding, existing garments, body/rig candidates and rights | Reuse map and scoped active-time/storage/spend forecast. No cosmetic head edits. Flag any mandatory neck-interface exception before changing accepted geometry. |
+| 1. Coarse complete assembly | Compatible body, rough hands/feet where visible, garment layers, open indigo drape, continuous shoulder/chest harness, boots/fastenings as proposals | Whole-body silhouette and seated/forward-lean plausibility; no floating head, obvious gaps, costume contradiction or neck/shoulder bulk. Director selects design/deviations once. |
+| 2. Rig and fit proof | Head/body attachment; preserve existing eye/blink/expression controls. Coordinate spine/pelvis/shoulders/hands in required poses. Bind hair/scarf or use controlled deformation appropriate to the shot | Cheap representative motion, not just a neutral frame: turn, lean/reach, mounted pose and brief ride cycle once contact is feasible. Check hair roots, eyelids, collar/harness, hips/knees, hands/reins and boots/stirrups. Failures stay internal. |
+| 3. Selected-look finish | Refine visible major folds, garment thickness and material blocks; carry illustrated skin/hair language into cloth/leather. Keep harness over-shoulder continuity | One target-view look frame plus moving low-cost preview. Strong impression and legible identity at delivery size; no need for every hidden seam or fully simulated cloth. |
+| 4. Actual-shot integration | Reuse existing horse/camera foundation where compatible; establish saddle/reins/grip contacts, racing-intensity posture, readable camera pace and route | Bounded complete shot segment with real character, not another generic horse qualification. Motion brief first. No approval inferred from earlier knight/horse or facial-only tests. |
+| 5. Reusable handoff | Neutral master and shot derivative, controls, source/rights, selected views, one meaningful revision/reopen check, packed dependencies and limitations | Scope-specific character acceptance and clear shot readiness. Verify off-device recovery through separately authorized backup workflow; Git is not asset backup. |
+
+Stages2–4 are integrated work toward the same deliverable, not a request for five new experiments or five cosmetic approval rounds. A major design selection and final dressed/moving review are useful Director gates; routine fit/test/save milestones are not.
+
+## Reuse first, with known limits
+
+- **Keep:** accepted `natural152-seal-16/natural-hair.blend`; facial-control knowledge and accepted small expression amplitudes. Do not rerun all facial exploration or infer final-groom animation binding from retained controls.
+- **Inspect, not blindly promote:** `dressing-motion-build-04/character-dressed.blend`, earlier upperbody/strap derivatives, the lam_m_zack Hijab donor and its credits. Earlier scarves were fitted to older anatomy and hidden hairstyles; their current fit is unproven. Keep rejected geometry as diagnostic, not acceptance targets.
+- **Reuse selectively:** horse/tack/motion and camera logic from the demonstrator only after dimensions, rig interfaces and rights are checked. Do not open closed Blender campaigns merely to reuse their evidence.
+- **Do not repeat:** analytical concentric scarf folds, whole-image colour projection across skin/hair/cloth, enlarging a scarf to hide missing undergarments, disconnected rendered hair copies, fitting only the flattering side, detailed boots/body before mounted pose feasibility.
+
+## Decisions, economics and parallel work
+
+Before expensive work, adopt or amend the proposed reference-authority/flexible-design policy, select the feasible complete costume, and agree a scoped allowance based on inventory. No credible full-character duration can be promised before rig/body inspection. Default operating-ledger reassessments apply; the past sustained hair-research override is not a new unlimited body budget. Count engineering, Director reviews, retries and packaging—not only paid APIs. Unknown tokens remain null.
+
+Parallel planning can advance episode1/2 scene demands, trio silhouette/character briefs, cultural costume research, shot list and voice/music strategy without waiting for high-resolution modeling. Do not start those implementations or spawn tasks under this planning request. Derive Sikh/Gurkha production candidates early from intent plus feasible body/hair/wardrobe routes; no fully polished image canon before checking realization cost. Asset rights/source audit can run alongside design; release use remains blocked until cleared.
+
+**Definition of done for this next character scope:** Director accepts the dressed identity and silhouette; required representative movement retains likeness and contact/clearance; source/native/controls/dependencies are preserved and reopen; rights and backup status are explicit; one scoped revision works; all deferred abilities are named. This is not automatically completion of Release01 A5/E1 or production of the trailer.

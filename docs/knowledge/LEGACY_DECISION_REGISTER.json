@@ -92,10 +92,16 @@
       "label": "Yes — **that's exactly the interaction model I was hoping you'd choose.** And your *Fantastic Mr. Fox* example is particularly useful because it reveals a key product requirement:",
       "statement_excerpt": "Yes — **that's exactly the interaction model I was hoping you'd choose.**\n\nAnd your *Fantastic Mr. Fox* example is particularly useful because it reveals a key product requirement:\n\n> **The director shouldn't need to know the vocabulary in order to communicate sophisticated visual intent.**\n\nYou might know *exactly* what you want in your head but only be able to say:\n\n> \"I want it to feel like Fantastic Mr. Fox, but darker, more cinematic, and less whimsical.\"\n\nFactory should be able to turn that into a set of **visual hypotheses**, show them to you, and gradually learn:\n\n> *Ah. This is what Adi means when he says \"darker and more cinematic.\"*\n\nThen eventually the system has a formal Visual Bible that might contain things like lens behavior, lighting philosophy, material treatment, etc. **But you didn't have to know those terms to create it.**\n\nI've added that to the spec.\n\nOne nuance I also captured: references should be treated as **creative signals**, rather than \"copy this movie.\" So a reference can communicate aesthetic characteristics without becoming a literal production instruction.\n\n---\n\n# Question 7 — I want to explore something fundamental: how \"real\" should the world be?\n\nWe've established that we're leaning heavily toward **3D + generative hybrid**, but there's a spectrum here.\n\nImagine three possible Movie Factory outputs:\n\n### A — Stylized animation\n\nThink:\n\n*Fan",
       "statement_excerpt_is_complete": false,
-      "status": "CANDIDATE_REQUIRES_CONTEXT_REVIEW",
-      "applicability": null,
+      "status": "CONTEXT_REVIEWED_ACCEPTED",
+      "applicability": "ADAPT",
       "supersedes": [],
-      "verification": null
+      "verification": {
+        "reviewed_date": "2026-09-27",
+        "approval_turn": "e5ecab92-bb6f-4834-8f6c-9311cdf6d6db",
+        "normalized_statement": "Broad visual intent precedes iterative discovery and a formal visual bible; reference examples communicate creative intent. New feature-authority taxonomy remains proposed.",
+        "evidence": "docs/knowledge/EFFICIENT_QUALITY_ASSET_WORKFLOW.md",
+        "scope": "Full source message and adjacent user replies read. Acceptance applies to stated historical principle; new workflow/taxonomy/budget defaults remain proposed, not inferred approval."
+      }
     },
     {
       "id": "legacy-a5db6653-b067-4d3f-a7d1-798121e5bc36",
@@ -156,10 +162,16 @@
       "label": "Yes — **that is a really important product decision**, and I think \"control over convergence\" is actually a great way to describe it. You don't just want:",
       "statement_excerpt": "Yes — **that is a really important product decision**, and I think \"control over convergence\" is actually a great way to describe it.\n\nYou don't just want:\n\n> Generate → pick → refine → done.\n\nYou want to be able to control the **exploration/convergence tradeoff**.\n\nFor example:\n\n### You're excited about Sarah\n\n> \"I like this. Let's refine it.\"\n\nFactory narrows the search around the selected design.\n\n### You're not sure about Sarah\n\n> \"I'm not convinced. Keep exploring.\"\n\nFactory deliberately maintains diversity and gives you substantially different possibilities.\n\n### You like her face but not her clothing\n\n> \"Hold the face. Explore clothing.\"\n\nFactory varies only the relevant dimensions.\n\n### You want to go weird\n\n> \"Take this design in three radically different directions.\"\n\nFactory intentionally increases divergence.\n\nAnd importantly, I think the underlying system should preserve **candidate lineage**. If you eventually choose Sarah v7, we should still know that v7 came from:\n\n> A's face + C's hair + B's clothing + D's silhouette → three refinement passes → director-approved.\n\nThat's valuable both creatively and technically.\n\nI'm treating **convergence control, composable candidates, branching, and lineage** as product requirements in the living spec. The current artifact environment is being finicky about updating the existing file in-place, so I'll fold this into the next",
       "statement_excerpt_is_complete": false,
-      "status": "CANDIDATE_REQUIRES_CONTEXT_REVIEW",
-      "applicability": null,
+      "status": "CONTEXT_REVIEWED_ACCEPTED",
+      "applicability": "ADOPT",
       "supersedes": [],
-      "verification": null
+      "verification": {
+        "reviewed_date": "2026-09-27",
+        "approval_turn": "93cb775e-fbd6-4457-93de-fc431e2a0fe1",
+        "normalized_statement": "Director controls exploration versus convergence, selective freezing and candidate composition; preserve lineage.",
+        "evidence": "docs/knowledge/EFFICIENT_QUALITY_ASSET_WORKFLOW.md",
+        "scope": "Full source message and adjacent user replies read. Acceptance applies to stated historical principle; new workflow/taxonomy/budget defaults remain proposed, not inferred approval."
+      }
     },
     {
       "id": "legacy-3f4fd328-3dab-4cff-bd91-cc148e32a3da",
@@ -3644,10 +3656,16 @@
       "label": "Yes — **Efficient Quality** is probably the cleaner operational phrase for what we’ve been building. > **Spend fidelity, control, simulation, and money where they materially affect perceived quality; ",
       "statement_excerpt": "Yes — **Efficient Quality** is probably the cleaner operational phrase for what we’ve been building.\n\n> **Spend fidelity, control, simulation, and money where they materially affect perceived quality; stay deliberately approximate where they do not.**\n\nThat sits underneath our broader optimization goal:\n\n> **maximize perceived creative quality within the available budget.**\n\n# Architecture Question 152 — Simulation outcomes vs canon\n\nThere’s an important consequence once we start simulating things like floods, crashes, destruction, cloth, fire, crowds, etc.\n\nA simulation may produce incidental outcomes:\n\n- a car rolls onto its side\n- a wall collapses differently than expected\n- debris blocks a doorway\n- Sarah falls in an unexpectedly convincing way\n- fire spreads to another room\n\nI don’t think those outcomes should automatically become story truth just because the simulator produced them.\n\nInstead:\n\n> **Simulation generates candidate physical outcomes. Canon/story state changes only when the relevant outcome is deliberately accepted or promoted.**\n\nSo a crash simulation might discover a better version of the scene, and Factory can say:\n\n> “The vehicle naturally rolls after the second impact. This improves the sequence and would leave the passenger door inaccessible. Promote that outcome into the Scene/Story state?”\n\nIf accepted, the resulting state change then propagates forwar",
       "statement_excerpt_is_complete": false,
-      "status": "CANDIDATE_REQUIRES_CONTEXT_REVIEW",
-      "applicability": null,
+      "status": "CONTEXT_REVIEWED_ACCEPTED",
+      "applicability": "ADOPT",
       "supersedes": [],
-      "verification": null
+      "verification": {
+        "reviewed_date": "2026-09-27",
+        "approval_turn": "a57e7dcc-be08-4dfa-940b-22aeef7621c9",
+        "normalized_statement": "Efficient Quality allocates fidelity and control where perceived creative quality benefits; approximate where it does not.",
+        "evidence": "docs/knowledge/EFFICIENT_QUALITY_ASSET_WORKFLOW.md",
+        "scope": "Full source message and adjacent user replies read. Acceptance applies to stated historical principle; new workflow/taxonomy/budget defaults remain proposed, not inferred approval."
+      }
     },
     {
       "id": "legacy-1b379d21-cb3a-4d78-aabf-7847172ecd9b",
@@ -7084,10 +7102,16 @@
       "label": "## Revised UX Decision 83 — Budget-constrained creative negotiation",
       "statement_excerpt": "Yes — I think that’s a much stronger framing than what I proposed.\n\nThe budget shouldn’t primarily answer:\n\n> **“How cheaply can we make the thing we already designed?”**\n\nIt should answer:\n\n> **“Given what we’re trying to achieve and what we can spend, what is the strongest filmmaking undertaking we should actually attempt?”**\n\nThat is **Efficient Quality applied at the Production level**.\n\n## Revised UX Decision 83 — Budget-constrained creative negotiation\n\nSuppose we’ve been discussing:\n\n> six-episode serialized thriller  \n> high Character consistency  \n> several locations  \n> TikTok/Reels/Shorts distribution  \n> objective: acquire viewers and build continuation\n\nThen you say:\n\n> “I only want to spend $50.”\n\nFactory should **not** respond:\n\n> “Okay, I’ll make the six episodes really cheaply.”\n\nIf its evidence says that would produce mediocre work, it should challenge the scope.\n\nSomething more like:\n\n> **I don’t recommend making the six-episode series for $50.**\n>\n> At that budget, we’d have to compromise too much on Character consistency and shot quality, and I don’t think the result would represent the idea well.\n>\n> **What I recommend instead:** make one exceptional 30–45 second vertical proof-of-concept centered on the first voicemail.\n>\n> We can reuse one location, keep Maya mostly in controlled medium/close framing, concentrate the spend on 3–4 strong shots, and end on",
       "statement_excerpt_is_complete": false,
-      "status": "CANDIDATE_REQUIRES_CONTEXT_REVIEW",
-      "applicability": null,
+      "status": "CONTEXT_REVIEWED_ACCEPTED",
+      "applicability": "ADOPT",
       "supersedes": [],
-      "verification": null
+      "verification": {
+        "reviewed_date": "2026-09-27",
+        "approval_turn": "b53dcb22-4308-4fc9-88ba-1d0e60211f6c",
+        "normalized_statement": "Negotiate scope, format and realization strategy under budget while protecting the quality floor and underlying objective.",
+        "evidence": "docs/knowledge/EFFICIENT_QUALITY_ASSET_WORKFLOW.md",
+        "scope": "Full source message and adjacent user replies read. Acceptance applies to stated historical principle; new workflow/taxonomy/budget defaults remain proposed, not inferred approval."
+      }
     },
     {
       "id": "legacy-3b72cb4c-1a7c-4cdd-9031-9e09c824247e",
@@ -7100,10 +7124,16 @@
       "label": "Locked. This is a major UX/product principle: > **Spend should scale with confidence and evidence, not with ambition alone.**",
       "statement_excerpt": "Locked. This is a major UX/product principle:\n\n> **Spend should scale with confidence and evidence, not with ambition alone.**\n\nSo Factory should treat low-cost early work as **option-preserving experiments**, not cheap substitutes for the final vision.\n\nA strong pattern is:\n\n> **cheap exploration → evidence → narrower uncertainty → higher-confidence spend → higher-fidelity realization**\n\nFor example:\n\n> **$50** — prove the premise can work at all  \n> **$200** — validate the Character/visual language and a stronger short  \n> **$800** — produce a polished serialized pilot / first release unit  \n> **$2,500+** — commit to the larger series once creative and audience evidence justify it\n\nThose numbers are illustrative, obviously. The important thing is the logic.\n\nAnd Factory should always preserve the distinction between:\n\n> **Ultimate ambition:** six-part premium serialized thriller  \n> **Current step:** 30–45 second proof-of-concept  \n> **Why this step:** cheaply validate the premise and audience hook before committing materially more capital  \n> **What evidence would justify escalation:** e.g. strong completion/continuation signals plus proof that Maya’s representation holds up\n\nThat is **Efficient Quality + progressive commitment**.\n\nIt also means Factory should sometimes actively resist premature spend:\n\n> “We *can* spend $1,000 now, but I don't think we know enough yet for t",
       "statement_excerpt_is_complete": false,
-      "status": "CANDIDATE_REQUIRES_CONTEXT_REVIEW",
-      "applicability": null,
+      "status": "CONTEXT_REVIEWED_ACCEPTED",
+      "applicability": "ADOPT",
       "supersedes": [],
-      "verification": null
+      "verification": {
+        "reviewed_date": "2026-09-27",
+        "approval_turn": "3b72cb4c-1a7c-4cdd-9031-9e09c824247e",
+        "normalized_statement": "Scale commitment with evidence and confidence; preserve the larger ambition and avoid endless prototypes.",
+        "evidence": "docs/knowledge/EFFICIENT_QUALITY_ASSET_WORKFLOW.md",
+        "scope": "Full source message and adjacent user replies read. Acceptance applies to stated historical principle; new workflow/taxonomy/budget defaults remain proposed, not inferred approval."
+      }
     },
     {
       "id": "legacy-24a001fd-1505-45db-8491-b084368eb2ac",
@@ -8255,7 +8285,13 @@
       "status": "CONTEXT_REVIEWED_ACCEPTED",
       "applicability": "ADOPT",
       "supersedes": [],
-      "verification": {"reviewed_date":"2026-09-18","approval_turn":"a474a790-6f6c-41bf-b0e0-88c914b5ea10","normalized_statement":"Pure generative, structured/3D and hybrid are first-class realization routes selected per scene/shot for control, continuity, quality and cost-to-acceptance.","evidence":"docs/planning/SERIES_01_ART_DIRECTION_C.md","scope":"Early image-to-video evidence only; no qualification pass claimed"}
+      "verification": {
+        "reviewed_date": "2026-09-18",
+        "approval_turn": "a474a790-6f6c-41bf-b0e0-88c914b5ea10",
+        "normalized_statement": "Pure generative, structured/3D and hybrid are first-class realization routes selected per scene/shot for control, continuity, quality and cost-to-acceptance.",
+        "evidence": "docs/planning/SERIES_01_ART_DIRECTION_C.md",
+        "scope": "Early image-to-video evidence only; no qualification pass claimed"
+      }
     },
     {
       "id": "legacy-a474a790-6f6c-41bf-b0e0-88c914b5ea10",
@@ -8319,7 +8355,13 @@
       "status": "CONTEXT_REVIEWED_ACCEPTED",
       "applicability": "ADOPT",
       "supersedes": [],
-      "verification": {"reviewed_date":"2026-09-19","approval_turn":"c989f205-885e-4232-8bca-4902f9579c30","normalized_statement":"Qualify persistent structured production worlds, asset creation/acquisition, direct rendering and hybrid realization; do not assume autonomous modeling of every asset.","evidence":"docs/planning/SERIES_01_REALIZATION_REVIEW.md","scope":"Capability decision 9 only; later capability 10 proposal reviewed separately"}
+      "verification": {
+        "reviewed_date": "2026-09-19",
+        "approval_turn": "c989f205-885e-4232-8bca-4902f9579c30",
+        "normalized_statement": "Qualify persistent structured production worlds, asset creation/acquisition, direct rendering and hybrid realization; do not assume autonomous modeling of every asset.",
+        "evidence": "docs/planning/SERIES_01_REALIZATION_REVIEW.md",
+        "scope": "Capability decision 9 only; later capability 10 proposal reviewed separately"
+      }
     },
     {
       "id": "legacy-30fc1e10-2d6e-4a13-b821-43d8a6837986",
@@ -8335,7 +8377,13 @@
       "status": "CONTEXT_REVIEWED_ACCEPTED",
       "applicability": "ADOPT",
       "supersedes": [],
-      "verification": {"reviewed_date":"2026-09-19","approval_turn":"30fc1e10-2d6e-4a13-b821-43d8a6837986","normalized_statement":"Scale persistent representation investment with recurrence, narrative importance, continuity demands, revision value and expected reuse.","evidence":"docs/planning/SERIES_01_REALIZATION_REVIEW.md","scope":"Capability decision 10 only; surrounding historical duration/budget statements are not newly adopted"}
+      "verification": {
+        "reviewed_date": "2026-09-19",
+        "approval_turn": "30fc1e10-2d6e-4a13-b821-43d8a6837986",
+        "normalized_statement": "Scale persistent representation investment with recurrence, narrative importance, continuity demands, revision value and expected reuse.",
+        "evidence": "docs/planning/SERIES_01_REALIZATION_REVIEW.md",
+        "scope": "Capability decision 10 only; surrounding historical duration/budget statements are not newly adopted"
+      }
     },
     {
       "id": "legacy-64468e26-9643-41f7-86b3-b8b30218f8e5",
@@ -8767,7 +8815,13 @@
       "status": "CONTEXT_REVIEWED_ACCEPTED",
       "applicability": "ADOPT",
       "supersedes": [],
-      "verification": {"reviewed_date":"2026-09-18","approval_turn":"18ae66f4-631b-4c27-b9e5-8301c80225ac","normalized_statement":"Representation conversion and handoff must preserve relevant creative invariants; file interchange alone is not qualification.","evidence":"docs/planning/SERIES_01_ART_DIRECTION_C.md","scope":"Early image-to-video evidence only; no qualification pass claimed"}
+      "verification": {
+        "reviewed_date": "2026-09-18",
+        "approval_turn": "18ae66f4-631b-4c27-b9e5-8301c80225ac",
+        "normalized_statement": "Representation conversion and handoff must preserve relevant creative invariants; file interchange alone is not qualification.",
+        "evidence": "docs/planning/SERIES_01_ART_DIRECTION_C.md",
+        "scope": "Early image-to-video evidence only; no qualification pass claimed"
+      }
     },
     {
       "id": "legacy-18ae66f4-631b-4c27-b9e5-8301c80225ac",

@@ -1,5 +1,9 @@
 # Character asset learning and review contract
 
+## Current acceptance — exchange152
+
+Director calls the static head, neck/upper shoulders and hair done. [Consolidated retrospective](PASHTUN_CHARACTER_RETROSPECTIVE.md) pins the accepted16 native and gathers technical, modeling, creative, reuse and efficiency findings. **Stop cosmetic iteration.** Earlier pending/failed dispositions below remain historical evidence; do not use literal-reference criteria to reopen accepted differences. [Efficient Quality workflow](EFFICIENT_QUALITY_ASSET_WORKFLOW.md) and [rest-of-character plan](../planning/SERIES_01_PASHTUN_COMPLETION_PLAN.md) are recommendations, not executed work. Motion, costume, final portability and release rights remain separately scoped.
+
 2026-09-26 · Release 01 exchange 137 · applies to the Pashtun character and subsequent asset work.
 
 ## Attachment versus strand lift — exchange149
