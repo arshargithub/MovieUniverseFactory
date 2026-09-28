@@ -29,7 +29,19 @@ def forehead_delta(p,t,candidate=7):
     return (0.,0.,(.050 if candidate>=8 else .075)*weight)
 
 def output_prefix(candidate):
-    return 'natural151' if candidate>=10 else 'natural150' if candidate>=9 else 'natural149' if candidate>=7 else 'natural148' if candidate>=5 else 'natural147'
+    return 'natural152' if candidate>=16 else 'natural151' if candidate>=10 else 'natural150' if candidate>=9 else 'natural149' if candidate>=7 else 'natural148' if candidate>=5 else 'natural147'
+
+def trim_temple_tip(row,radii,cutoff):
+    """Retain the upper lock exactly; feather and end before the cheek spike."""
+    points=[];widths=[]
+    for i,p in enumerate(row):
+        if p[2]<=cutoff:
+            if not points:raise ValueError('Temple root below trim plane')
+            a=row[i-1];t=(a[2]-cutoff)/(a[2]-p[2])
+            points.append(tuple(a[j]+t*(p[j]-a[j]) for j in range(3)));widths.append(0.)
+            break
+        points.append(p);widths.append(radii[i]*smooth((p[2]-cutoff)/.16))
+    return points,widths
 
 def scalp_position(p):
     """Small front-only rotation along the head arc, not vertical flotation."""
@@ -173,7 +185,7 @@ def temple_wisps(material,candidate):
     rows=[];radii=[];rng=np.random.default_rng(147)
     for side in (-1,1):
         for ci in range(72 if candidate>=14 else 96 if candidate>=10 else 18 if candidate>=5 else 36 if candidate>=3 else 55 if candidate>=2 else 90):
-            jitter=float(rng.uniform(-1,1));length=float(rng.uniform(.22,.44));row=[]
+            jitter=float(rng.uniform(-1,1));length=float(rng.uniform(.22,.44));row=[];row_radii=[]
             if candidate>=5:
                 length=float(rng.uniform(.09,.23));root_y=float(rng.uniform(-.42,-.24));root_z=float(rng.uniform(.45,.54))
             if candidate>=10:
@@ -244,10 +256,13 @@ def temple_wisps(material,candidate):
                     q=hit+normal*(.006+.008*math.sin(math.pi*t))
                     q.y+=.008*math.sin(t*7+ci)*math.sin(math.pi*t)
                     radius=.0012*(1-t)**.7+.00003
-                row.append(tuple(q));radii.append(radius)
+                row.append(tuple(q));row_radii.append(radius)
+            if candidate>=16:
+                row,row_radii=trim_temple_tip(row,row_radii,.26+.07*(ci%7)/6)
+            radii.extend(row_radii)
             rows.append(row)
-    curves=bpy.data.hair_curves.new('MF_natural147_hair_temples');curves.add_curves([48]*len(rows))
-    curves.attributes['position'].data.foreach_set('vector',np.array(rows,dtype=np.float32).ravel())
+    curves=bpy.data.hair_curves.new('MF_natural147_hair_temples');curves.add_curves([len(row) for row in rows])
+    curves.attributes['position'].data.foreach_set('vector',np.concatenate([np.array(row,dtype=np.float32) for row in rows]).ravel())
     radius=curves.attributes.new('radius','FLOAT','POINT');radius.data.foreach_set('value',radii)
     curves.materials.append(material)
     ob=bpy.data.objects.new(curves.name,curves);bpy.context.scene.collection.objects.link(ob)
@@ -309,7 +324,7 @@ def accent_state(main):
 
 def validate(job):
     if (not isinstance(job,dict) or set(job)!={'operation','candidate'}
-        or type(job['candidate']) is not int or job['candidate'] not in range(0,16)
+        or type(job['candidate']) is not int or job['candidate'] not in range(0,17)
         or job['operation'] not in ('audit','accent-audit','attachment-audit','inspect','ear-preview','preview','seal','verify')):
         raise ValueError('Fixed natural-groom job required')
     from hair_uncovered_finish import PINS,ORIGINAL_PINS,REF,ORIGINAL_REF

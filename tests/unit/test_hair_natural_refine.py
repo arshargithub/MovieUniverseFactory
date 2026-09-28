@@ -6,7 +6,7 @@ import sys
 import types
 spec=importlib.util.spec_from_file_location('natural',Path('src/movie_factory/adapters/blender/hair_natural_refine.py'))
 m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
-@pytest.mark.parametrize('job',[None,{}, {'operation':'exec','candidate':1},{'operation':'preview','candidate':True},{'operation':'preview','candidate':-1},{'operation':'preview','candidate':16},{'operation':'preview','candidate':1,'code':'pass'}])
+@pytest.mark.parametrize('job',[None,{}, {'operation':'exec','candidate':1},{'operation':'preview','candidate':True},{'operation':'preview','candidate':-1},{'operation':'preview','candidate':17},{'operation':'preview','candidate':1,'code':'pass'}])
 def test_rejects_unsupported_jobs(job):
     with pytest.raises(ValueError):m.validate(job)
 
@@ -41,6 +41,19 @@ def test_attachment_audit_validation_is_data_only(inputs):
 
 def test_sideburn_refinement_retains_previous_outputs(inputs):
     assert m.validate({'operation':'preview','candidate':10})==inputs/'natural151-preview-10'
+
+def test_tip_trim_preserves_upper_lock_and_feathers_endpoint():
+    row=[(.7,-.3,z) for z in (.8,.6,.4,.3,.2,0.)]
+    points,radii=m.trim_temple_tip(row,[.001]*len(row),.26)
+    assert points[:4]==row[:4] and len(points)==5
+    assert points[-1][2]==.26 and radii[-1]==0
+    assert radii[:2]==[.001,.001] and 0<radii[3]<radii[2]<.001
+
+def test_tip_trim_rejects_invalid_root():
+    with pytest.raises(ValueError):m.trim_temple_tip([(0,0,.1)],[.001],.26)
+
+def test_tip_trim_new_namespace(inputs):
+    assert m.validate({'operation':'preview','candidate':16})==inputs/'natural152-preview-16'
 
 def test_scalp_fit_locality_and_small_arc():
     import math
