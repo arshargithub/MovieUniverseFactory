@@ -8106,10 +8106,16 @@
       "label": "That gives us one of the strongest UX principles in the whole product: > **The Director should not have to become the project manager. Factory owns prioritization and presents the highest-value next c",
       "statement_excerpt": "Locked.\n\nThat gives us one of the strongest UX principles in the whole product:\n\n> **The Director should not have to become the project manager. Factory owns prioritization and presents the highest-value next creative move.**\n\nThe backlog can exist underneath, but it should not become the primary directing interface.\n\n# Screen Architecture Adversarial Test 6\n\nYou deliberately reject Factory’s recommendation.\n\nExample:\n\n> Factory says the ending is strong enough and recommends moving to finishing.\n\nYou say:\n\n> “No. I still don’t believe the ending. I want to reopen it completely.”\n\nThat may invalidate protected work, create rework, spend more money, and delay release.\n\nI think Factory should **push back intelligently but not obstruct you**:\n\n> “I think the current ending clears our acceptance target, and reopening it will likely affect Scenes 11–13 and about $60–$100 of downstream work. My recommendation is still to finish.\n>\n> But if your issue is that the emotional resolution itself is wrong, then continuing to polish it would be a mistake. I can reopen the ending and preserve everything that remains compatible.”\n\nThen the Studio shifts back toward exploration around that scope.\n\nSo:\n\n> **Factory can challenge the Director, explain consequences, and recommend against a change—but once the Director deliberately overrides it, the system should reorganize cleanly around the new i",
       "statement_excerpt_is_complete": false,
-      "status": "CANDIDATE_REQUIRES_CONTEXT_REVIEW",
-      "applicability": null,
+      "status": "CONTEXT_REVIEWED_ACCEPTED",
+      "applicability": "ADOPT",
       "supersedes": [],
-      "verification": null
+      "verification": {
+        "reviewed_date": "2026-09-28",
+        "approval_turn": "6baa9a49-b58c-41a9-9090-c6a31f8389e1",
+        "normalized_statement": "Challenge consequential Director decisions with evidence and consequences before execution; respect a deliberate scoped override without repeated relitigation.",
+        "evidence_file": "docs/knowledge/EFFICIENT_QUALITY_ASSET_WORKFLOW.md#constructive-challenge--adopted-at-exchange153",
+        "scope": "Adversarial Test 6 full proposal and next user approval read; reaffirmed at Release01 exchange153. Not adoption of every neighboring topic or historical budget example."
+      }
     },
     {
       "id": "legacy-6baa9a49-b58c-41a9-9090-c6a31f8389e1",
@@ -8122,10 +8128,16 @@
       "label": "Locked — strongly. That gives us a crucial authority invariant:",
       "statement_excerpt": "Locked — strongly.\n\nThat gives us a crucial authority invariant:\n\n> **Factory challenges before consequential change, not after the Director has deliberately decided.**\n\nOnce you override it, Factory stops relitigating the decision and becomes excellent at executing the new intent.\n\n# Screen Architecture Adversarial Test 7\n\nYou suddenly want to understand **exactly what Factory is doing technically**.\n\nExample:\n\n> “Why is this shot taking so long and costing so much?”\n\nor:\n\n> “What model is generating these Takes?”\n\nor:\n\n> “Why did Factory abandon the first realization strategy?”\n\nThis is where your technical escape hatch has to work without contaminating the normal filmmaking UX.\n\nMy instinct is:\n\nYou ask naturally from the Shot/Scene you’re already looking at:\n\n> “What’s actually happening under the hood here?”\n\nThe Context layer progressively opens into something like:\n\n> **Creative problem**  \n> Maintaining Character identity during fast rotational motion.\n>\n> **Current approach**  \n> [technical realization summary]\n>\n> **Why this approach**  \n> Previous cheaper approach failed continuity evaluation.\n>\n> **Attempts**  \n> 4 creative Takes / 7 technical retries\n>\n> **Spend**  \n> $12.40 actual, ~$4–8 estimated remaining\n>\n> **Execution detail**  \n> provider → model/version → parameters → artifacts → evaluation findings → logs\n\nAnd because you are technically capable, you could",
       "statement_excerpt_is_complete": false,
-      "status": "CANDIDATE_REQUIRES_CONTEXT_REVIEW",
-      "applicability": null,
+      "status": "CONTEXT_REVIEWED_ACCEPTED",
+      "applicability": "ADOPT",
       "supersedes": [],
-      "verification": null
+      "verification": {
+        "reviewed_date": "2026-09-28",
+        "approval_turn": "6baa9a49-b58c-41a9-9090-c6a31f8389e1",
+        "normalized_statement": "Factory challenges before consequential change, not after the Director deliberately decides; current agent assumes this role.",
+        "evidence_file": "docs/knowledge/EFFICIENT_QUALITY_ASSET_WORKFLOW.md#constructive-challenge--adopted-at-exchange153",
+        "scope": "Opening authority invariant approved by actual user reply to previous proposal; following Test7 technical UX not newly adopted here."
+      }
     },
     {
       "id": "legacy-caa562a9-479d-4c58-afc9-267bb461daa3",

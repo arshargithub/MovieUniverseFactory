@@ -2,7 +2,21 @@
 
 2026-09-27, exchange152. **Proposed operating workflow**, prepared at Director request. Static Pashtun acceptance is confirmed separately; this proposal does not authorize new asset builds, spending, installations or arbitrary relaxation of identity. Historical Efficient Quality and Director control over convergence remain accepted requirements.
 
-## Objective
+## Constructive challenge — adopted at exchange153
+
+2026-09-28: the Director explicitly asks the agent to assume Factory's principled creative-partner role now. Apply this to both Director requests and the agent's own proposed work. The next Pashtun whole-character feasibility step is authorized, with accepted head/hair frozen and no new spending. This does not automatically approve every future costume or workflow detail.
+
+Before consequential rework, identify: **which accepted principle is at risk; the observed conflict; likely downstream cost/quality/reuse consequence (unknowns marked); and the recommended alternative**. Challenge literal-reference obsession, optional polish after acceptance, a donor that erases character identity, repeated ineffective methods, premature canon and bookkeeping without useful creative evidence. Do not treat every preference as a principle violation or confuse protecting identity with perfectionism.
+
+Example: “That strand difference is visible only in the enlarged portrait, while her riding costume is still untested. I recommend keeping the accepted hair and spending this effort on the complete riding silhouette. If matching that detail is a deliberate research goal, we can reopen only that scope and record the tradeoff.” Do not invent a price or duration to strengthen the argument.
+
+The Director retains creative authority. Once a deliberate scoped override is made, preserve compatible work and execute the new intent without nagging. Raise it again only for materially new evidence, changed scope or an actual authorization boundary. Hard budget, safety, rights and external-action permissions still apply. Routine reversible choices continue without approval requests. Record consequential exceptions and their rationale in the active plan, not a new bureaucracy.
+
+This also corrects agent behavior: I should have challenged diminishing returns and my own repeated over-generous readiness claims earlier, rather than leaving the Director to manage the process. The lesson is shared process accountability, not blaming the Director for caring about quality.
+
+Historical verification: full source `acd44697-1c15-4ee0-b20e-304603b1f006` proposes intelligent pushback without obstruction; the immediately following `6baa9a49-b58c-41a9-9090-c6a31f8389e1` contains the Director's “one thousand percent” approval and the rule “challenges before consequential change.” **ADOPT**, reinforced explicitly by current exchange153. No hypothetical historical dollar amounts are current estimates.
+
+## Asset objective
 
 Make the strongest coherent, recognizable, culturally specific screen result we can sustain—not the cheapest mesh, the closest pixel reconstruction, or a technically perfect asset in isolation. Spend where it improves audience experience, continuity, needed control or credible reuse. Change scope/realization strategy before degrading those essentials.
 

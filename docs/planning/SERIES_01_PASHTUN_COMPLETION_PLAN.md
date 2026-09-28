@@ -4,11 +4,15 @@
 
 ## Outcome and constraints
 
+**Exchange153 execution authorization (2026-09-28):** begin stage0 inventory and stage1 rough complete character using the intent-led, feasibility-informed approach; do not reopen accepted head/hair. Director explicitly adopts principled pushback. No purchase, provider spend, outsourced artist or blanket final-costume acceptance. Initial forecast: inspect local inventory and produce one coarse complete silhouette within the existing60-net-minute overall reassessment, with a20-minute internal method check; forecast, not a completion promise or new unlimited allowance. Target incremental disk under500MB for selected native/previews; no redundant whole-asset packages. If no suitable rig/body exists, establish a visibly honest prototype and name the missing rig dependency rather than secretly substituting a final unqualified rig. Engineering tokens and dollar cost remain unknown; paid calls/assets planned zero.
+
 One reusable, recognizable, dressed and poseable Pashtun character sufficient for the trailer's galloping entrance and known early-episode needs. Not a universal human model, every expression, a final whole film or invisible anatomical perfection. Preserve the accepted head/neck/upper shoulders, skin and hair. No paid assets, specialist commission, new subscription or paid generation without separate authority. Existing paid allowances do not automatically apply.
 
 The character's cultural identity, self-possession, practical strength and unadorned elegance are constraints; exact garment folds, hidden fastenings and unestablished lower-body details are design space. The indigo drape and brown shoulder-crossing harness are working visual vocabulary, not proof of a complete validated costume. Do not add an AK-47 or other unfinalized hero prop merely because it appeared in earlier brainstorming. Do not genericize her dress to match a convenient donor.
 
 ## Next deliverable: whole-character feasibility and silhouette
+
+**Executed at exchange153:** [whole-character brief and results](SERIES_01_BODY_ASSEMBLY_BRIEF.md) now contain inventory, three rejected segmented candidates, a continuous silhouette, a pinned free weighted core-body candidate and a garment-specific bound static pose screen. `body154-bind03` / `body154-review04` are proposed for overall silhouette selection, not finished costume or animation. The free body is a hidden weight scaffold, not fitted anatomy; no more head/hair cosmetics. Continue with selected outfit/rig fit and real contacts after the material silhouette choice, not another isolated cloth-polish loop.
 
 Prepare a **rough full-body assembly with two costume/drape configurations only if meaningfully different**, keeping the same accepted head. Include front, both obliques and back; a target9:16 medium/full shot; a standing pose and static forward riding lean with rough horse/tack proxy. Show a neutral turnaround only if it adds information. This is the creative decision: which feasible complete design carries her character and movement—not whether an isolated fold is prettier.
 

@@ -2,6 +2,8 @@
 
 ## Current acceptance — exchange152
 
+**Exchange153 continuation:** [constructive challenge is adopted](EFFICIENT_QUALITY_ASSET_WORKFLOW.md#constructive-challenge--adopted-at-exchange153). [Body blockout](../planning/SERIES_01_BODY_ASSEMBLY_BRIEF.md) carries the accepted bust into a whole-character feasibility test. Key new lesson: nearest-surface weights without anatomical restrictions can bind a skirt/trousers to adjacent fingers; a small bend missed this, a fuller static mounted pose exposed it. Filter source regions and allowed bone families by garment before transfer. Reuse a known rig/weighted scaffold, but do not label it fitted production anatomy. Keep artifacts, then select silhouette before detailed finish. No new character/costume acceptance.
+
 Director calls the static head, neck/upper shoulders and hair done. [Consolidated retrospective](PASHTUN_CHARACTER_RETROSPECTIVE.md) pins the accepted16 native and gathers technical, modeling, creative, reuse and efficiency findings. **Stop cosmetic iteration.** Earlier pending/failed dispositions below remain historical evidence; do not use literal-reference criteria to reopen accepted differences. [Efficient Quality workflow](EFFICIENT_QUALITY_ASSET_WORKFLOW.md) and [rest-of-character plan](../planning/SERIES_01_PASHTUN_COMPLETION_PLAN.md) are recommendations, not executed work. Motion, costume, final portability and release rights remain separately scoped.
 
 2026-09-26 · Release 01 exchange 137 · applies to the Pashtun character and subsequent asset work.

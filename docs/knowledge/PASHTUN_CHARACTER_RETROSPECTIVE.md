@@ -46,6 +46,8 @@ Do not retroactively say the original portraits were “only suggestions” thro
 
 ## Carry-forward contract
 
+**Exchange153 learning:** the Director acknowledges over-focusing on literal images and explicitly authorizes constructive challenge. The agent also failed to surface diminishing returns and method mismatch early enough. [Adopted challenge contract](EFFICIENT_QUALITY_ASSET_WORKFLOW.md#constructive-challenge--adopted-at-exchange153) now requires evidence-backed pushback before consequential rework, while respecting deliberate Director overrides. This is a working instruction in AGENTS.md, not just retrospective commentary. Next body/costume feasibility work is authorized; accepted static features remain frozen.
+
 1. Keep this accepted head/hair as a pinned dependency. No more appearance edits absent a named visible defect in an intended shot or explicit Director request.
 2. Read the [Efficient Quality asset workflow](EFFICIENT_QUALITY_ASSET_WORKFLOW.md) before new asset planning. Its proposed defaults need adoption; original accepted principles already apply.
 3. Follow the [Pashtun completion plan](../planning/SERIES_01_PASHTUN_COMPLETION_PLAN.md): whole-character proof before more isolated detail.
