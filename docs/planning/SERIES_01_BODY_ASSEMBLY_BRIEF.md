@@ -28,7 +28,33 @@ Then screen seated hip/knee flexion and forward reach before detailed clothes. F
 
 Research result is a prioritized, partially verified shortlist—not a new aesthetic or technical PASS. [Release orientation](RELEASE_01_PLAN.md#current-path-to-audience) keeps body work connected to the trailer and episodes, and requires advancing story/shot planning without waiting for every asset detail.
 
+## Adult body fit execution brief
+
+Exchange155 authorizes the recommended body fit. Forecast: one neutral fit hypothesis, at most three variants before reassessment; ordinary20/60-net-minute method checkpoints carry forward the same whole-character objective, not a new blank allowance. Target under200MB new evidence beyond the49MB source extraction, preview frames before one selected native. No paid calls, installation or head/hair appearance changes. Actual duration/usage and failures stay in the operating ledger.
+
+This is an agent-authored **static** pose brief, not a human motion-reference study. Neutral A-pose establishes proportions; a seated/reaching pose screens fit. No gait or temporal performance is claimed. Pelvis owns the body frame; hips flex/abduct to a seated stance, knees flex so feet hang below knees, spine leans modestly forward, shoulders and elbows reach together toward a provisional rein position. Head stays recognizable and may counter-rotate modestly only through a rigid assembly attachment; no face sculpting. Hands are free, not world-locked, and neither horse contact nor finger grip is qualified. No need to add a saddle asset for this body-only screen. Neutral return, visible joint deformation, neck/shoulder interface and source preservation are the checks; rough automated weights do not establish final animation readiness. Any seam failure requiring protected neck changes is a material scope decision, not a cosmetic retry.
+
+## Adult body fit result
+
+Exchange155, 2026-10-02: **adult-proportioned foundation proposed for review; not an accepted costume or animation-ready character.** Blender Studio's realistic female mesh is the visible lower body, unlike the rejected proxy/scaffold route. Accepted natural152 bust, eyes and native hair retain exact checked local geometry, shape-key and material data. The original illustrated pair supplies identity/character intent; the accepted native bust supplies the attachment boundary. These references do not prescribe an exact unseen full body.
+
+Current native: `.runtime/art-direction/series01-facebuilder-trial-01/body156-fit04/adult-body-fit.blend`, SHA256 `644d7109c379f78092bc5a897aa1e81628b17f5f877cea48a3ec492598dc278c`. Matched-light front, both obliques, side, back, shoulder close-up and complete seated/reach views are in `body156-review05/`. Identifier156 is an internal asset label, not a second planning exchange. The native has a diagnostic clay override; accepted skin/hair materials remain intact underneath it.
+
+The source body had no rig. A 15-bone test rig covers all 6,510 retained donor vertices. Reopened evaluated body vertices move and return exactly to neutral. Protected bust/hair move rigidly with the chest: local-data preservation does not qualify their deformation. Fingers, grip, neck articulation, reins/stirrups, horse contact and temporal animation remain unqualified. Knee/shoulder weighting needs the actual dressed riding test; keep this rig replaceable.
+
+Visual judgment: head/body, torso/pelvis and limb proportions are substantially more coherent than the rejected blockout and suitable for a whole-character design choice. A fine join remains at the protected bust's lower shoulder boundary, visible in the close-up and stronger in the pose. Do not call it seamless or hide it as a technical PASS. For planned covered shoulders, defer naked-surface polish until costume/pose fit shows what is actually visible. Exposed shoulders or broader motion require a scoped interface solution before shot acceptance. No accepted anatomy was changed to close it.
+
+Three interface trials led to internal reassessment: clipping left a gap; donor terminal-ring fitting closed it; normal transfer reduced shading discontinuity. The first rig's hard chest-weight cutoff produced a crease, corrected with continuous blending, correct modifier order and volume preservation. The fourth implementation is a diagnosed binding repair, not an allowance reset. One process failed after save because its result writer retained an invalid Blender object reference across reopen;04 corrects that and completes verification.03 remains failed evidence, not the delivery native. Implementation commit `64b5bd6` is a post-run source seal, not proof that every historical attempt was separately source-sealed.
+
+Rights: the official bundle listing and embedded README declare CC0, but an embedded `License` text describes a Rain rig under CC BY4.0. The selected female object has no asset-level license metadata. Resolve this provenance discrepancy before release/distribution; do not declare every bundled component cleared. The library was inspected scripts-disabled and only the selected mesh appended. No upstream scripts or addons were executed. Existing groom/other component rights remain separate.
+
+Next: review overall proportions, then fit one practical indigo tunic/trouser/drape and continuous shoulder harness concept. Screen seated reach and actual tack contacts before major folds/materials; do not polish invisible anatomy or return to head/hair cosmetics. No release gate advances without acceptance. Operating evidence is in `body156-operating/`; paid provider calls and purchases are zero, engineering tokens/cost unknown.26 focused tests pass, not the full suite. No remote push or asset backup is implied.
+
+Captured activity: **25.73 minutes**, excluding initial context recovery and final receipt/design-commit overhead. Six native jobs include one process failure; process success is not Director acceptance. Retained fitting/review evidence is **189.31 MB**, excluding source archive/extraction and the operating card. Two large natives were retained because03 failed after saving; no deletion is authorized. Twelve selected artifact hashes bind accepted input, current native, results and review images. This is partial active-time capture, not complete character economics; native time is already inside the activity interval.
+
 ## Historical blockout record
+
+The remainder records the rejected body154 route; earlier readiness and selection proposals are superseded by the Director rejection above.
 
 ## Purpose and authority
 
