@@ -44,3 +44,20 @@ def test_weight_sharpening_preserves_sum_support_and_dominance():
     assert result['upper']>.8 and result['hand']==0
     assert module.sharpen_weights({})=={}
     assert module.sharpen_weights({'a':.5,'b':.5})=={'a':.5,'b':.5}
+
+
+@pytest.mark.parametrize('operation', ['fit17','fit18','fit19','fit20','fit21','fit22','fit23','fit24','fit25','fit26','fit27'])
+def test_correction_operations_are_fixed_and_non_overwriting(monkeypatch,tmp_path,operation):
+    monkeypatch.setattr(module,'BASE',tmp_path)
+    monkeypatch.setattr(module,'digest',lambda p:module.ARCHIVE_SHA if p==module.ARCHIVE else module.SOURCE_SHA)
+    job={'operation':operation}
+    path=module.validate(job)
+    assert path.name=='body158-'+operation
+    with pytest.raises(ValueError):module.validate({**job,'code':'anything'})
+    path.mkdir()
+    with pytest.raises(ValueError):module.validate(job)
+
+
+@pytest.mark.parametrize('job', [{'operation':'fit28'}, {'operation':'fit27','path':'other'}, {'operation':'fit27','python':'pass'}])
+def test_correction_rejects_unreviewed_variants_and_payload(job):
+    with pytest.raises(ValueError):module.validate(job)
