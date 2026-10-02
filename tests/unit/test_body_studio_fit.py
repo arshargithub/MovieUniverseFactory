@@ -58,7 +58,7 @@ def test_correction_operations_are_fixed_and_non_overwriting(monkeypatch,tmp_pat
     with pytest.raises(ValueError):module.validate(job)
 
 
-@pytest.mark.parametrize('job', [{'operation':'fit34'}, {'operation':'fit27','path':'other'}, {'operation':'fit27','python':'pass'}])
+@pytest.mark.parametrize('job', [{'operation':'fit40'}, {'operation':'fit27','path':'other'}, {'operation':'fit27','python':'pass'}])
 def test_correction_rejects_unreviewed_variants_and_payload(job):
     with pytest.raises(ValueError):module.validate(job)
 
@@ -80,3 +80,21 @@ def test_lateral_shoulder_weight_is_continuous_at_source_boundary():
     assert max(b-a for a,b in zip(values,values[1:]))<.012
     assert module.shoulder_chest_weight(1.5,-1.9)<.6
     assert module.shoulder_chest_weight(.5,-1.8)==1.
+
+
+@pytest.mark.parametrize('operation',['fit34','fit35','fit36','fit37','fit38','fit39'])
+def test_continuous_donor_operations_are_fixed(monkeypatch,tmp_path,operation):
+    monkeypatch.setattr(module,'BASE',tmp_path)
+    monkeypatch.setattr(module,'digest',lambda p:module.ARCHIVE_SHA if p==module.ARCHIVE else module.SOURCE_SHA)
+    path=module.validate({'operation':operation})
+    assert path.name=='body160-'+operation
+    with pytest.raises(ValueError):module.validate({'operation':operation,'path':'other'})
+    path.mkdir()
+    with pytest.raises(ValueError):module.validate({'operation':operation})
+
+
+def test_anatomical_support_fades_with_flat_endpoints():
+    assert module.smooth_transition(-.1)==0
+    assert module.smooth_transition(1.1)==1
+    assert module.smooth_transition(.001)<1e-7
+    assert 1-module.smooth_transition(.999)<1e-7

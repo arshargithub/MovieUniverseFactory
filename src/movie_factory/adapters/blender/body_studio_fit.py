@@ -27,13 +27,14 @@ def protected():
 
 
 def validate(job):
-    if job not in tuple({'operation': name} for name in ('inspect01','fit01','fit02','fit03','fit04','review05','fit06','fit07','fit08','fit09','fit10','fit11','fit12','fit13','fit14','fit15','fit16','fit17','fit18','fit19','fit20','fit21','fit22','fit23','fit24','fit25','fit26','fit27','fit28','fit29','fit30','fit31','fit32','fit33')):
+    if job not in tuple({'operation': name} for name in ('inspect01','fit01','fit02','fit03','fit04','review05','fit06','fit07','fit08','fit09','fit10','fit11','fit12','fit13','fit14','fit15','fit16','fit17','fit18','fit19','fit20','fit21','fit22','fit23','fit24','fit25','fit26','fit27','fit28','fit29','fit30','fit31','fit32','fit33','fit34','fit35','fit36','fit37','fit38','fit39')):
         raise ValueError('Only fixed operations admitted')
     for path, sha in ((ARCHIVE, ARCHIVE_SHA), (SOURCE, SOURCE_SHA)):
         if path.is_symlink() or digest(path) != sha:
             raise ValueError('Pinned input mismatch')
     out = BASE / (('body158-' if job['operation'] in ('fit17','fit18','fit19','fit20','fit21','fit22','fit23','fit24','fit25','fit26','fit27') else 'body157-' if job['operation'] in ('fit06','fit07','fit08','fit09','fit10','fit11','fit12','fit13','fit14','fit15','fit16') else 'body156-') + job['operation'])
     if job['operation'] in ('fit28','fit29','fit30','fit31','fit32','fit33'):out=BASE/('body159-'+job['operation'])
+    if job['operation'] in ('fit34','fit35','fit36','fit37','fit38','fit39'):out=BASE/('body160-'+job['operation'])
     if out.exists():
         raise ValueError('Never overwrite evidence')
     return out
@@ -110,7 +111,7 @@ def fit(out, native, variant):
     if variant>=30:
         # Refine donor topology before cutting, so the join does not terminate
         # in a sparse, faceted shoulder ring. This edits only the derivative.
-        refine=body.modifiers.new('Donor topology for shoulder connection','SUBSURF');refine.levels=1
+        refine=body.modifiers.new('Donor topology for shoulder connection','SUBSURF');refine.levels=2 if variant>=34 else 1
         bpy.context.view_layer.update()
         evaluated=body.evaluated_get(bpy.context.evaluated_depsgraph_get())
         refined=bpy.data.meshes.new_from_object(evaluated)
@@ -127,6 +128,16 @@ def fit(out, native, variant):
         (out/'sections.json').write_text(json.dumps(samples,indent=2)+'\n')
         return
     cutoff=-1.84
+    anatomy_transfer=None
+    if variant>=34:
+        anatomy_transfer=transfer_bust_anatomy(body,bpy.data.objects['MF_continuous_head_neck'],normal_support=variant>=36,detail_only=variant>=38,relief_gain=.8 if variant==39 else 2.)
+        bust=bpy.data.objects['MF_continuous_head_neck']
+        group=bust.vertex_groups.new(name='MF_body160_retained_head_neck')
+        for v in bust.data.vertices:
+            z=(bust.matrix_world@v.co).z
+            group.add([v.index],max(0.,min(1.,(z+1.20)/.10)),'REPLACE')
+        mask=bust.modifiers.new('Reversible neck-only control surface','MASK')
+        mask.vertex_group=group.name;mask.use_smooth=True;mask.threshold=.5
     if 9<=variant<28:
         bust=bpy.data.objects['MF_continuous_head_neck']
         group=bust.vertex_groups.new(name='MF_body157_visible_neck')
@@ -148,6 +159,7 @@ def fit(out, native, variant):
         if variant>=15:cutoff=-1.65
         if variant>=18:cutoff=-1.30
     if variant>=28:cutoff=-2.40
+    if variant>=34:cutoff=-1.42
     # Diagnostic interface: preserve source/local data, clip donor only.
     bm = bmesh.new(); bm.from_mesh(body.data)
     bmesh.ops.bisect_plane(bm, geom=list(bm.verts)+list(bm.edges)+list(bm.faces),
@@ -202,6 +214,8 @@ def fit(out, native, variant):
             upper=-1.84
             if variant>=32:upper+=.22*max(0.,min(1.,(abs(v.co.x)-1.05)/.40))
             w=max(0.,min(1.,(z+3.05)/.30,(upper-z)/.12))
+            if variant>=34:w=max(0.,min(1.,(z+1.72)/.18,(-1.03-z)/.12))
+            if variant>=36:w=max(0.,min(1.,(z+1.65)/.15,(-.91-z)/.12))
             if w:group.add([v.index],w,'REPLACE')
         smooth=body.modifiers.new('Lower connection fairing only','SMOOTH')
         smooth.vertex_group=group.name;smooth.factor=.65;smooth.iterations=40 if variant>=32 else 18
@@ -217,7 +231,7 @@ def fit(out, native, variant):
     if variant>=26:
         crease=body.data.attributes.get('crease_edge') or body.data.attributes.new('crease_edge','FLOAT','EDGE')
         for e in body.data.edges:
-            if all(body.data.vertices[i].co.z>(-1.899 if variant>=28 else -.80) for i in e.vertices):crease.data[e.index].value=1.
+            if all(body.data.vertices[i].co.z>(-.95 if variant>=36 else -1.149 if variant>=34 else -1.899 if variant>=28 else -.80) for i in e.vertices):crease.data[e.index].value=1.
         sub=body.modifiers.new('Donor body continuity with protected face edges','SUBSURF');sub.levels=1;sub.render_levels=1
     body.hide_render=False;body.hide_set(False)
     scene=bpy.context.scene
@@ -261,19 +275,79 @@ def fit(out, native, variant):
     face_control=check_face_control(body) if variant>=26 else None
     assert all(protected()[k]==v for k,v in before.items())
     sealed = None
-    if variant in (3,4,7,10,12,14,16,27,29,31,33):
+    if variant in (3,4,7,10,12,14,16,27,29,31,33,35,37,39):
         bpy.context.preferences.filepaths.save_version=0
         render('front',0,write=False)
         bpy.ops.wm.save_as_mainfile(filepath=str(out/'adult-body-fit.blend'),check_existing=False)
         sealed=verify_saved(out/'adult-body-fit.blend',before,pose_result['pose_matrices'])
         body=bpy.data.objects['MF_studio_adult_body']
-    result={'status':'INTERNAL_FIT_NOT_ACCEPTED','asset_metadata':metadata,'scale':scale,'zoffset':zoffset,'upper_assembly_scale':.88 if variant>=6 else 1.,'lower_bust_display_mask':9<=variant<28,
-        'body_vertices':len(body.data.vertices),'source_sha256':digest(native),'protected':before,'complete_accepted_bust_retained':variant>=28,
+    result={'status':'INTERNAL_FIT_NOT_ACCEPTED','asset_metadata':metadata,'scale':scale,'zoffset':zoffset,'upper_assembly_scale':.88 if variant>=6 else 1.,'lower_bust_display_mask':9<=variant<28 or variant>=34,
+        'body_vertices':len(body.data.vertices),'source_sha256':digest(native),'protected':before,'complete_accepted_bust_retained':28<=variant<34,
+        'anatomy_transfer':anatomy_transfer,
         'lower_connection_fairing':variant>=30,'lateral_shoulder_deforms':variant>=32,
         'bounds':next(r['bounds'] for r in inventory() if r['name']==body.name),
         'pose_screen':pose_result,'saved_verification':sealed,'surface_integration':integration,'face_control':face_control,
         'rigged':variant>=2,'limits':['Body interface requires visual acceptance','Static pose is not animation qualification','Clay material override is diagnostic only']}
     (out/'result.json').write_text(json.dumps(result,indent=2)+'\n')
+
+
+def smooth_transition(value):
+    t=max(0.,min(1.,value))
+    return t*t*t*(t*(t*6-15)+10)
+
+
+def transfer_bust_anatomy(body,bust,normal_support=False,detail_only=False,relief_gain=2.):
+    """Transfer the approved surface to a continuous donor torso by depth rays.
+
+    The donor's lateral shoulders, vertex heights and topology remain intact.
+    The source supplies central neck/clavicle relief. Smooth support fades below
+    and beside that region instead of grafting its horizontal shoulder cutoff.
+    """
+    import bpy,bmesh
+    from mathutils import Vector
+    from mathutils.bvhtree import BVHTree
+    bpy.context.view_layer.update()
+    ev=bust.evaluated_get(bpy.context.evaluated_depsgraph_get())
+    verts=[bust.matrix_world@v.co for v in ev.data.vertices]
+    tree=BVHTree.FromPolygons(verts,[tuple(p.vertices) for p in ev.data.polygons])
+    smooth_tree=None
+    if detail_only:
+        # Separate local anatomical relief from the portrait bust's broad,
+        # flat lower shape. Copy-only smoothing creates a reference field;
+        # it never edits accepted geometry or the donor shoulder silhouette.
+        bm=bmesh.new();bm.from_mesh(ev.data)
+        for v,p in zip(bm.verts,verts):v.co=p
+        selected=[v for v in bm.verts if v.co.z<-.85]
+        for _ in range(180):
+            bmesh.ops.smooth_vert(bm,verts=selected,factor=.65,use_axis_x=False,use_axis_y=True,use_axis_z=False)
+        bm.verts.ensure_lookup_table();bm.verts.index_update()
+        smooth_tree=BVHTree.FromPolygons([v.co.copy() for v in bm.verts],[tuple(v.index for v in p.verts) for p in bm.faces])
+        bm.free()
+    hits=0;max_delta=0.
+    normals=[v.normal.copy() for v in body.data.vertices]
+    for v,n in zip(body.data.vertices,normals):
+        x,y,z=v.co
+        if not -2.45<z<-.95:continue
+        w=smooth_transition((z+2.45)/.60)*(1-smooth_transition((abs(x)-.85)/.60))
+        if normal_support:w*=smooth_transition((abs(n.y)-.20)/.60)
+        if not w:continue
+        front=n.y<0 if normal_support else y<.15
+        start=Vector((x,-3 if front else 3,max(z,-1.885)))
+        hit,normal,index,distance=tree.ray_cast(start,Vector((0,1 if front else -1,0)),6.)
+        if hit is None:continue
+        delta=(hit.y-y)*w
+        if detail_only:
+            soft,_,_,_=smooth_tree.ray_cast(start,Vector((0,1 if front else -1,0)),6.)
+            if soft is None:continue
+            absolute=smooth_transition((z+1.75)/.30)
+            relief=(hit.y-soft.y)*relief_gain
+            delta=((hit.y-y)*absolute+relief*(1-absolute))*w
+        assert abs(delta)<1.5, 'Anatomical transfer exceeds bounded donor depth'
+        v.co.y+=delta;hits+=1;max_delta=max(max_delta,abs(delta))
+    body.data.update()
+    assert hits>100,'Source neck/clavicle transfer did not cover donor'
+    return {'depth_ray_vertices':hits,'max_depth_change':max_delta,'donor_xz_preserved':True,'clavicle_relief_without_bust_base':detail_only,'relief_gain':relief_gain if detail_only else None,
+            'limits':'Central surface adaptation only; not exact reuse of every source clavicle vertex'}
 
 
 def unify_surface(body,bust):
