@@ -2,7 +2,29 @@
 
 ## Current review outcome
 
+**Exchange159: Director rejects fit27.** A visible neck band/protrusion persists and accepted collarbone definition is lost. The agent's claim that the ring was removed and the result ready for review was incorrect. Withdraw the recommendation to advance to clothes on that basis. Restoring technical connectivity did not restore anatomical shape. Keep fit27 as failed evidence, not an acceptance target.
+
+Continue the authorized correction by retaining the accepted natural152 neck/clavicle surface in the current scaled assembly and testing a lower donor connection. Compare accepted versus assembled geometry under matched camera/light, including front and both obliques; inspect the posterior neck without hair occlusion. No face/hair redesign, smoothing away the accepted landmarks, paid work or new assets. Retain the current static seated-reach brief and prior69.78 captured adult-fit minutes. Preview before saving; target one selected native and under150MB added evidence, not a new time allowance.
+
+### Restored-anatomy result — exchange159
+
+Selected `body159-fit33/adult-body-fit.blend`, SHA256 `0c2bdb261e1581c88599a808f4ca2630c66e2b58db9b69858e26c34bd4cf132a`, under the existing trial root. **Ready for Director comparison, not accepted or animation-qualified.** The accepted neck, throat and clavicle geometry is included in the scaled assembly rather than masked off and approximated. The donor connection is below the clavicles. Local fairing changes the lower connection and lateral shoulder edge of the derivative; it does not mean every accepted upper-shoulder vertex is unchanged in the rendered assembly. The original natural152 native/control source, face and hair remain preserved.
+
+Internal plain-shaded review covers the front, both obliques, side, back, hair-hidden posterior neck, and seated close/full views. Compare `neck-front` with `accepted-neck-front`, and `interface` with `accepted-interface`, using matched cameras and lights. The former neck ring/protrusion is absent in these inspected views and the accepted collarbone/throat definition is visible again. Neutral shoulder contour and the tested seated connection are coherent enough for foundation review; no claim of perfected anatomy, finished skin, full neck articulation or production riding performance. Do not use clothes to waive a visible structural failure.
+
+Three shape/weight previews retained: fit28 restored landmarks but left a coarse lower shoulder connection; fit30 refined that connection but the seated view exposed a shelf from rigidly chest-weighted source shoulders; fit32 kept the neck protected while blending the lateral lower bust into arm deformation. This is the key distinction: preserve accepted neutral identity, not an incompatible rigid shoulder cutoff. Selected fit33 repeats the geometry with a continuous central weight ramp, adds seated closeups and saves/reopens. All nine neutral inspection frames match fit32 pixels. No further cosmetic variant was generated after selecting that route.
+
+Technical scope: 306 welded boundary vertices; 47,273 copied source vertices before local derivative fairing; 20 linked facial keys; 1,811 evaluated vertices respond to the checked left blink; 299,042 evaluated body vertices move in the fixed seated pose and return with zero measured error after reopening. The source hash and checked protected local data remain exact. These are preservation/control checks, not visual scores.35 focused unit tests pass; full suite not run. Complete textured integration, all expressions, neck motion, fingers/grip, actual horse/tack fit and rights remain open. Source added to the final implementation commit after execution is a reconstruction binding, not proof of every preview's exact historical code.
+
+Next production dependency, after this appearance review: practical outfit/drape/harness and actual riding fit supporting the trailer passage. Keep failed integrations as evidence. No face/hair reopening, paid calls, purchases, remote push, deletion or native backup this turn. Operating receipt: `body159-operating/`; engineering token/cost usage remains unknown.
+
+Captured active continuation20.49 minutes, cumulative adult-fit capture90.26 minutes; initial context recovery and final receipt/commit overhead are excluded, so coverage remains PARTIAL. The20-minute/three-preview reassessment supports selecting the changed lower-connection/weighting method rather than repeating the failed neck smoothing. Four successful native jobs (three previews and one selected save) retain123.79MB, within the150MB forecast. The compact13-view comparison includes accepted-source matching views, the rejected27 and posed closeups; image selection, captions, previous/next wrapping and saved-state metadata were exercised with a DOM test double, not an actual browser layout test.
+
+Implementation bound locally in `d6ff9ae`; the design/retraction record is a separate commit. No remote push or native-media backup is implied.
+
 ### Corrected interface candidate
+
+Historical exchange158 claim below is superseded by the rejection above. Technical checks remain scoped evidence; they do not establish visual success.
 
 Exchange158 result: `body158-fit27/adult-body-fit.blend` under the existing trial root, SHA256 `b03343f9dca511cc4513e5152c889fa883601dc990267f793dcb474bc5623a14`. Internally reviewed in all eight neutral/posed views; Director acceptance remains pending. The shoulder-reaching protrusion and discrete neck ring are removed in these views. Collarbone relief is deliberately restrained, not a finished muscular sculpt. The elbow has a more localized bend in the tested seated reach; this is not final riding performance. Accepted natural152 remains unchanged and supplies identity/hair authority; rejected fit16 supplies defect comparison only.
 
