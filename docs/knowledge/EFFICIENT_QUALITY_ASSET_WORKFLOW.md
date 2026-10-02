@@ -46,6 +46,14 @@ A generated turnaround is useful exploration, not a calibrated measurement of a 
 
 ## A concrete stopping and change policy
 
+### Feedback triage adopted at exchange156
+
+Director observations are inputs to prioritization, not an automatic implementation checklist. Before rework, classify each observation as **fix now**, **reassess after the upstream correction**, or **defer until a named production test**. State the relevant shot/dependency, the smallest useful correction, what stays protected and the condition that would reopen a deferred item. Do not quietly drop observations, assume every comment requests perfection, or hide structural failures behind future clothes.
+
+For the current body: head-to-body scale and shoulder/armpit construction block credible outfit fitting; gross rubbery arm bending blocks the seated reach screen. Correct those together. Reassess collarbone/neck prominence after coherent assembly scaling before sculpting accepted anatomy. A fine residual seam may wait for the actual neckline/drape and pose, but a gap, silhouette kink or visible neckline break may not. Detailed skin, hidden torso anatomy, muscle/finger polish and a universal rig are not prerequisites for that next step. This is application of existing Efficient Quality/forward-momentum principles, not a lower quality floor or new production objective.
+
+An accepted component is not automatically an accepted assembly: preserve identity and source data while checking its scale, placement and interfaces in context. Conversely, local-data hashes cannot establish that the new assembly looks right. The next useful exit is a coherent foundation that can carry the planned clothes and seated reach, followed by a dressed riding candidate—not another isolated anatomy campaign.
+
 - Classify issues: **blocking** (identity loss, visible intersections, broken deformation, rights uncertainty); **material improvement** (noticeably better intended screen result); **optional** (microscopic/off-camera detail or personal perfection). Rights uncertainty blocks release/use as applicable, not necessarily private diagnostics.
 - Before another cosmetic pass, state the defect, relevant framing, proposed visible benefit and what remains protected. If no meaningful change is perceptible at delivery size, defer it unless it protects a known future shot or continuity dependency.
 - Once blocking issues pass and the Director accepts the look, freeze it. Reopen only for a demonstrated use-case failure or explicit creative revision, not comparison with an unadopted reference detail.

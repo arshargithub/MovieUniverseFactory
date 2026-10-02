@@ -2,6 +2,10 @@
 
 ## Current review outcome
 
+Exchange156: Director rejects fit04's relative scale and identifies excessive neck/collarbone prominence, a visible shoulder seam, angular shoulders, odd armpit taper and noodly seated arms. The former proportion-readiness claim is superseded; body fit remains unaccepted. Prioritize whole-assembly scale, donor shoulder connection and coarse limb deformation. Do not start skin, hair or hidden-anatomy polish. Reassess neck definition after scale before any sculpt change. Preserve the accepted local face/hair and original asset.
+
+Continuation uses the same static neutral/seated-reach motion brief, with no new gait, timing or contact claims. Root/chest attachment remains coherent; no world-locked hands. Inspect elbow location, upper/lower-arm contributions and shoulder silhouette together. First hypothesis: reversible uniform upper-assembly scale plus donor-only interface/weight correction. Preview before one selected save, at most three shape hypotheses before reassessment; carry prior25.73 captured minutes for this adult-body-fit objective, not a reset. Forecast incremental evidence under110MB, no paid calls/assets. Fine seam polish is conditional on actual garment visibility; broken shape/deformation is not deferred behind clothes.
+
 2026-10-02, exchange154: **Director rejects body154's overall appearance/proportions as comical.** Its earlier review-readiness claim is superseded. No costume silhouette was accepted; preserve it as failed diagnostic history. Do not continue detailed cloth work on this body. The visible assembly used authored coarse garments/limbs, with MakeHuman data as a hidden weight scaffold, not the knight's body. That distinction corrects provenance, not the visual failure. The accepted natural152 head/neck/upper shoulders/skin/hair remains protected.
 
 ## Adult body candidate search
@@ -34,7 +38,23 @@ Exchange155 authorizes the recommended body fit. Forecast: one neutral fit hypot
 
 This is an agent-authored **static** pose brief, not a human motion-reference study. Neutral A-pose establishes proportions; a seated/reaching pose screens fit. No gait or temporal performance is claimed. Pelvis owns the body frame; hips flex/abduct to a seated stance, knees flex so feet hang below knees, spine leans modestly forward, shoulders and elbows reach together toward a provisional rein position. Head stays recognizable and may counter-rotate modestly only through a rigid assembly attachment; no face sculpting. Hands are free, not world-locked, and neither horse contact nor finger grip is qualified. No need to add a saddle asset for this body-only screen. Neutral return, visible joint deformation, neck/shoulder interface and source preservation are the checks; rough automated weights do not establish final animation readiness. Any seam failure requiring protected neck changes is a material scope decision, not a cosmetic retry.
 
+## Revised foundation after scale and shoulder feedback
+
+Exchange156 result: `.runtime/art-direction/series01-facebuilder-trial-01/body157-fit16/adult-body-fit.blend`, SHA256 `02331ad18fc3ae61d77976e93d6034dcffba64bf8e1fd10f54e4a1eeb3086615`. Implementation `1bc1078`; Director acceptance pending. This is a revised body foundation, not finished neck shading, skin, clothing or animation. The original natural152 asset and earlier failures remain untouched.
+
+The whole accepted upper assembly is uniformly scaled to88% around its lower anchor, without editing local face/hair/eye/shape-key/material data. This is relative assembly scaling, not a new facial design or calibrated anatomical measurement. Forcing the body onto the old bust's horizontal shoulder cutoff continued to produce angular transitions, so that method was rejected. The selected derivative masks the old lower bust below the neck and uses the donor's continuous shoulder/armpit/collarbone region. This **changes displayed lower-neck/shoulder anatomy**, despite unchanged local source hashes, and is explicitly proposed in response to this interface feedback. Do not call the entire accepted bust appearance unchanged.
+
+A bridge connects the actual evaluated neck boundary to the donor's open neck loop. Radial overlap and shrinkwrap attempts left a lip/crease and are rejected. The bridge removes the open join in inspected views; residual triangular/vertical neck shading is visible in close-up and remains unfinished. No face/hair remodel or full skin repaint. Shoulder pivot adjustment and more concentrated arm weights improve elbow segmentation, but seated arms remain coarse and this does not prove final natural performance. Inspect garment deformation and real rein contacts next; no finger or temporal-motion qualification.
+
+All eight selected views were inspected; sealed-build decoded pixels match the preview. Native reopen, exact checked local source data, moved body vertices and exact neutral return pass.27 focused tests pass, not the full repository suite. No paid calls/assets. Source/assembled rights caveats remain. One selected native saved this continuation; rejected methods retain frames/recipes only. Engineering tokens/cost unknown; operating card `body157-operating/` continues the adult-fit objective rather than resetting it.
+
+**Exit and next step:** stop standalone anatomy refinement. Carry this proposed foundation into one practical outfit/drape/harness and seated riding fit. Fine detail waits until neckline and pose establish visibility; a visible neck break, silhouette fault or rubbery garment motion remains blocking and may not be hidden behind the Efficient Quality label. No release gate or creative acceptance inferred.
+
+Captured continuation activity:21.09 minutes; cumulative captured adult-fit activity46.82 minutes, excluding initial context recovery and final receipt/commit overhead. Seven native jobs completed; successful processes include rejected visual methods. Retained new evidence105.67MB, within this continuation's110MB forecast. No paid calls or purchases. This is not a complete character-time/token estimate.
+
 ## Adult body fit result
+
+Historical fit04 result below, superseded by the Director's exchange156 rejection and revised foundation above.
 
 Exchange155, 2026-10-02: **adult-proportioned foundation proposed for review; not an accepted costume or animation-ready character.** Blender Studio's realistic female mesh is the visible lower body, unlike the rejected proxy/scaffold route. Accepted natural152 bust, eyes and native hair retain exact checked local geometry, shape-key and material data. The original illustrated pair supplies identity/character intent; the accepted native bust supplies the attachment boundary. These references do not prescribe an exact unseen full body.
 

@@ -4,6 +4,8 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+**Current state, exchange156, superseding the155 review below:** Director rejects the body fit's scale and shoulder/arm integration and explicitly requires feedback triage, not automatic polishing. [Revised foundation](SERIES_01_BODY_ASSEMBLY_BRIEF.md#revised-foundation-after-scale-and-shoulder-feedback) scales the upper assembly, uses donor shoulders and improves coarse arm binding. Local accepted source data remains intact, but displayed lower-neck/shoulder anatomy changes in this proposed derivative. Residual neck shading and final performance are incomplete. Next: one practical dressed riding fit, with exposed interface and garment deformation checked in context. Counter156; checkpoint160; broad accepted gates remain1/25.
+
 **Current state, exchange155, 2026-10-02:** the authorized [adult body fit](SERIES_01_BODY_ASSEMBLY_BRIEF.md#adult-body-fit-result) is delivered for an overall proportion review, replacing the rejected proxy with Blender Studio's realistic female body. Accepted bust/hair local data remain unchanged; saved pose/neutral-return checks pass. A fine shoulder interface and coarse joint weights remain explicit; this is not a final rig, costume or moving character. Recommendation: adopt the foundation for outfit fitting, not another naked-anatomy polish campaign. No whole-body/costume acceptance or release-gate advance inferred. Counter155; next checkpoint160; accepted release gates remain1/25.
 
 ### Current Path to Audience
