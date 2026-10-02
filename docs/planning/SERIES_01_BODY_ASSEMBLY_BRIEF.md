@@ -1,5 +1,35 @@
 # Pashtun complete-character blockout — exchange153
 
+## Current review outcome
+
+2026-10-02, exchange154: **Director rejects body154's overall appearance/proportions as comical.** Its earlier review-readiness claim is superseded. No costume silhouette was accepted; preserve it as failed diagnostic history. Do not continue detailed cloth work on this body. The visible assembly used authored coarse garments/limbs, with MakeHuman data as a hidden weight scaffold, not the knight's body. That distinction corrects provenance, not the visual failure. The accepted natural152 head/neck/upper shoulders/skin/hair remains protected.
+
+## Adult body candidate search
+
+This intake answers the request for free, credibly adult feminine bodies. A familiar rig, a download badge or passing geometry tests is not evidence that a body fits this character. Recommendation: **start the next fit with Blender Studio's realistic female body**; retain a properly configured MakeHuman/MPFB adult female as the main fallback. Neither is yet integrated or motion-qualified here.
+
+| Candidate | Evidence inspected | Fit judgment and remaining work |
+|---|---|---|
+| Blender Studio Human Base Meshes v1.4.1, realistic female | Official download card explicitly states CC0 and Blender4.2+; official50.64MB archive downloaded, archive listing and bundled `realistic_body_female.png` preview inspected | First choice. Supplied preview shows coherent adult torso, pelvis and limbs; select for anatomical foundation, not a change to photorealistic art direction. Actual native topology, rig availability, shoulder join and deformation not yet inspected. Do not call it animation-ready. |
+| MakeHuman/MPFB, configured adult female | Official modeling/new-human documentation describes female creation and body controls; publisher core-data license is CC0. Existing local generic base/rig was inspected in the prior pass | Main fallback, especially for body variation and a documented rig path. Prior generic scaffold is not a trial of a properly configured female character. Full generator/target setup and compatibility need verification; no addon installed this turn. Do not use ethnicity sliders as evidence of cultural identity. |
+| Blender Studio bundle, stylized female | Bundled `stylized_body_female.png` inspected; same official source bundle | Reserve only. In this preview the relatively large head and narrow waist risk repeating the exaggerated proportions the Director rejected. Illustrated rendering does not require cartoon anatomy. |
+
+Also screened and **not shortlisted**: Eliber's [female sculpting base](https://blendswap.com/blend/25433) is explicitly stylized and its description adds a resale restriction alongside a CC-BY badge; licensing statements need clarification and the proportions are not the strongest fit. CharMorph was considered at repository level but not acquired: a different generator adds setup and asset-specific licensing without yet showing an advantage over the two leading routes. Do not expand into an open-ended asset hunt or equate free acquisition with zero adaptation cost.
+
+Primary sources, checked2026-10-02: [Blender official asset listing](https://www.blender.org/download/demo-files/), [official archive index](https://download.blender.org/demo/asset-bundles/human-base-meshes/), [MPFB new-human controls](https://github.com/makehumancommunity/mpfb2/blob/master/docs/ui/new_human/newhuman.md), [MakeHuman/MPFB core-asset license](https://static.makehumancommunity.org/about/license.html). Publisher license statements support intake selection; assembled-character rights remain separate. No purchase, signup, subscription or upstream-code execution occurred.
+
+Intake path: `.runtime/assets/series01-body-blender-studio/human-base-meshes-bundle-v1.4.1.zip`; SHA256 `811f43accbb31a88266d932f8f5563b2d13586fca0ba2693aad1f5fe582b3515`. The two supplied female previews were extracted without alteration. This turn did not open/import the native library or modify the character. The download card's displayed update year conflicts with archive timestamps; version/hash, not that display date, identifies this intake. No off-device backup or Git inclusion of the archive is implied.
+
+### Next fit and exit condition
+
+Inspect the selected actual mesh, hands/feet, topology and rig state in scripts-disabled Blender. Keep the accepted bust as the likeness/neck authority; fit the donor below that protected region instead of forcing the head to match old proxy clothes. Preserve originals and use one reversible derivative. Judge adult head-to-body scale, shoulder width, torso/pelvis balance, limb lengths and hand/foot scale as a whole, with plain shading and neutral front, side and three-quarter views. No fixed head-count formula is a universal anatomical standard; measurements support visual judgment, not replace it. Maintain an athletic, believable woman without defaulting to fashion-model thinness or sexualized exaggeration.
+
+Then screen seated hip/knee flexion and forward reach before detailed clothes. Follow the motion brief before any performance implementation. A suitable whole-body fit unlocks costume fitting and the actual riding shot. Reject obviously childlike/comical proportions internally; do not ask the Director to manage another incremental correction loop. If fitting requires a visible change to the accepted neck/shoulders, surface that bounded interface decision rather than altering protected appearance silently. No need to perfect hidden anatomy. This is the existing character completion objective, not a new generic human-modeling campaign or renewed unlimited budget.
+
+Research result is a prioritized, partially verified shortlist—not a new aesthetic or technical PASS. [Release orientation](RELEASE_01_PLAN.md#current-path-to-audience) keeps body work connected to the trailer and episodes, and requires advancing story/shot planning without waiting for every asset detail.
+
+## Historical blockout record
+
 ## Purpose and authority
 
 Test whether the accepted bust can sit in a coherent, economical full costume before detailed wardrobe work. Protect natural152-seal16 head, neck/shoulders, skin, eyes and native hair data exactly. Interpret original pair B for indigo cloth, practical unadorned strength and a brown over-shoulder harness, not literal fold copying. Loose trousers, boots and the open-head shoulder drape are **design proposals**, not historical claims or approved canon. No weapon added.

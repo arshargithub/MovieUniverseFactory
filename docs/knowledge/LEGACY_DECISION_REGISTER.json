@@ -5790,10 +5790,16 @@
       "label": "So the foundational UX model is: > **Conversation drives. Visual workspaces reveal. Context follows you. Factory owns forward momentum.**",
       "statement_excerpt": "Locked.\n\nSo the foundational UX model is:\n\n> **Conversation drives. Visual workspaces reveal. Context follows you. Factory owns forward momentum.**\n\nAnd the three persistent UX functions are:\n- **Conversation**\n- **Current Work**\n- **Journey / Next Move**\n\nNot necessarily three literal panes, but three responsibilities the interface must always satisfy.\n\n# UX Question 2 — How explicit should the overall filmmaking journey be?\n\nMy instinct is: **very visible, but not rigid**.\n\nI don’t think we want a hard wizard like:\n\n> Idea → Universe → Story → Script → Previs → Production → Edit → Publish\n\nbecause our architecture explicitly allows iteration, branching, overlapping development, and entering from different starting points.\n\nBut I *do* think the Director should always have a clear sense of:\n\n> **where we are now**  \n> **what has been accomplished**  \n> **what is still needed before we can ship**  \n> **what Factory recommends doing next**\n\nSo I’m imagining something more like a dynamic **Production Journey**.\n\nFor example:\n\n> **Developing the story**  \n> We have the central premise, Maya and Daniel are well-defined, and the ending is still unresolved.  \n> **Recommended next:** decide what Maya discovers in the final act.  \n> Why this matters: it will determine the locations and visual work we need before production.\n\nLater:\n\n> **Preparing to shoot**  \n> Story is stable enough to",
       "statement_excerpt_is_complete": false,
-      "status": "CANDIDATE_REQUIRES_CONTEXT_REVIEW",
-      "applicability": null,
+      "status": "CONTEXT_REVIEWED_ACCEPTED",
+      "applicability": "ADOPT",
       "supersedes": [],
-      "verification": null
+      "verification": {
+        "reviewed_date": "2026-10-02",
+        "approval_turn": "edd95910-7947-43e5-b068-534cb4190bfc",
+        "normalized_statement": "Factory owns forward momentum: explain the current production position, prioritize the highest-value next move and guide toward an audience-facing release without requiring the Director to manage routine sequencing.",
+        "evidence_file": "docs/planning/RELEASE_01_PLAN.md#current-path-to-audience",
+        "scope": "Full prior turn10ef7636-d142-41f6-b2a5-10d743ea0bd0 includes the Director instruction and UX proposal; this turn begins with actual approval. Subsequent Director clarification60565c5f-285e-42b4-88d1-2d973908ae55 and current exchange154 reaffirm the outcome orientation. Not universal authorization or adoption of every UI detail."
+      }
     },
     {
       "id": "legacy-60565c5f-285e-42b4-88d1-2d973908ae55",
@@ -5806,10 +5812,16 @@
       "label": "So I’d revise UX Decision 2 from simply “Production Journey” to something closer to a persistent **Path to Audience**.",
       "statement_excerpt": "Yes — I think that changes the framing in an important way.\n\nThe journey can be non-linear, but it should have a **direction**:\n\n> **Idea → something an audience can actually watch.**\n\nSo I’d revise UX Decision 2 from simply “Production Journey” to something closer to a persistent **Path to Audience**.\n\nThe Factory should always understand the ultimate realization as:\n\n> **develop → make → finish → publish → learn → make the next thing better**\n\nYou can move backwards, branch, explore, revise, jump ahead, or spend days developing a Character. But the interface never loses sight of the fact that all of this creative material ultimately exists so we can **ship movies to audiences**.\n\nFor example, while developing a Story:\n\n> **Path to Audience — Story Development**  \n> We have enough of the premise to begin visual exploration.  \n> The ending is still important but doesn't block us yet.  \n> **Recommended next:** establish Maya's visual identity so we can begin testing scenes.\n\nDuring production:\n\n> **Path to Audience — 63% of required footage accepted**  \n> Three scenes remain. Scene 8 is currently the main blocker to a complete cut.  \n> **Recommended next:** review the two viable takes for Shot 8.4.\n\nDuring finishing:\n\n> **Path to Audience — Nearly ready to release**  \n> Picture and sound are ready. TikTok and YouTube Shorts versions are mastered.  \n> One publication decision req",
       "statement_excerpt_is_complete": false,
-      "status": "CANDIDATE_REQUIRES_CONTEXT_REVIEW",
-      "applicability": null,
+      "status": "CONTEXT_REVIEWED_ACCEPTED",
+      "applicability": "ADOPT",
       "supersedes": [],
-      "verification": null
+      "verification": {
+        "reviewed_date": "2026-10-02",
+        "approval_turn": "60565c5f-285e-42b4-88d1-2d973908ae55",
+        "normalized_statement": "Creative development may be non-linear, but its ultimate realization is finished films published to audiences. Maintain that orientation without forcing exploration into a rigid pipeline.",
+        "evidence_file": "docs/planning/RELEASE_01_PLAN.md#current-path-to-audience",
+        "scope": "Full source read; the Director explicitly states this requirement in this turn. Current exchange154 reaffirms it for the trailer and two episodes. Example percentages, durations, publishing actions and subsequent UX proposals are not thereby authorized."
+      }
     },
     {
       "id": "legacy-f568c473-3ce8-4ed7-8578-d2b04447fb26",

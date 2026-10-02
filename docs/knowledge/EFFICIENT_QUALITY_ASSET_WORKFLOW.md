@@ -18,6 +18,8 @@ Historical verification: full source `acd44697-1c15-4ee0-b20e-304603b1f006` prop
 
 ## Asset objective
 
+Exchange154 reaffirms the constructive-challenge duty and adds explicit agent ownership of [forward momentum toward release](../planning/RELEASE_01_PLAN.md#current-path-to-audience). The rejected body blockout is a quality-floor failure, not Director perfectionism. Recommend replacing its anatomical foundation before garment polish. Efficiency means reducing cost to an accepted screen result, not defending a cheap-looking shortcut or optimizing test counts. Every work package should name which production dependency it closes and the next usable film-level artifact it enables.
+
 Make the strongest coherent, recognizable, culturally specific screen result we can sustain—not the cheapest mesh, the closest pixel reconstruction, or a technically perfect asset in isolation. Spend where it improves audience experience, continuity, needed control or credible reuse. Change scope/realization strategy before degrading those essentials.
 
 The design is an intersection of **creative purpose, character identity, visual language, demonstrated tool capability, available lawful assets, motion/shot needs and total cost-to-acceptance**. Feasibility should inform creation early, not excuse defects late. A convenient generic asset must not erase cultural specificity or the characters' individuality. Shared materials, framing and art direction prevent an incompatible asset-store collage.
