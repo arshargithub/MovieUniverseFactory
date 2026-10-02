@@ -12,7 +12,8 @@ from movie_factory.experiment_ledger import Ledger
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = ROOT / '.runtime/art-direction/series01-facebuilder-trial-01'
-CURRENT = BASE / 'body158-fit27'
+CURRENT = BASE / 'body159-fit33'
+PREFIX = 'body159-'
 GALLERY = Path('/Users/adisharma/.codex/visualizations/2026/09/09/01a0878c-e7a2-75e0-873c-c31d97f879a1/pashtun-body-foundation-review.html')
 
 
@@ -20,17 +21,21 @@ def main():
     result=json.loads((CURRENT/'result.json').read_text())
     assert result['saved_verification']['reopened']
     rows=[
-        ('interface','Neck and shoulders · continuous surface'),
-        ('three-quarter','Facing right ¾ · corrected foundation'),
-        ('other-three-quarter','Facing left ¾ · corrected foundation'),
-        ('back','Back · corrected foundation'),
-        ('side','Side · corrected foundation'),
-        ('front','Front · corrected foundation'),
+        ('neck-front','New front · restored neck and collarbones'),
+        ('accepted-neck-front','Accepted bust · matched front and lighting'),
+        ('interface','New right-facing ¾ · neck and shoulders'),
+        ('accepted-interface','Accepted bust · matched right-facing ¾'),
+        ('neck-other-side','New left-facing ¾'),
+        ('neck-back','Posterior neck · hair hidden for anatomy inspection'),
+        ('front','Whole-body front · foundation only'),
+        ('back','Whole-body back · foundation only'),
+        ('seated-interface','Seated shoulder connection · close ¾'),
+        ('seated-neck-front','Seated neck and collarbones · close front'),
         ('seated-three-quarter','Seated reach ¾ · not final riding performance'),
-        ('seated-side','Seated reach side · localized elbow correction'),
+        ('seated-side','Seated reach side · coarse rig'),
     ]
-    paths=[CURRENT/(name+'.png') for name,_ in rows]+[BASE/'body157-fit16/interface.png',BASE/'body157-fit16/seated-side.png']
-    labels=[label for _,label in rows]+['Previous rejected neck interface','Previous seated elbow']
+    paths=[CURRENT/(name+'.png') for name,_ in rows]+[BASE/'body158-fit27/interface.png']
+    labels=[label for _,label in rows]+['Rejected fit27 · band and missing collarbones']
     pictures=[]
     for path in paths:
         im=Image.open(path).convert('RGB');im.thumbnail((480,640))
@@ -41,28 +46,27 @@ def main():
     text=re.sub(r'const labels=.*?;\n',lambda _: 'const labels='+json.dumps(labels)+';\n',text)
     text=re.sub(r'<img src="[^"]*"',lambda _: '<img src="'+pictures[0]+'"',text,count=1)
     text=re.sub(r'<figcaption[^>]*>.*?</figcaption>', '<figcaption aria-live="polite">'+labels[0]+'</figcaption>',text,count=1)
-    buttons=['Neck and shoulders','Facing right ¾','Facing left ¾','Back','Side','Front','Seated ¾','Seated side','Previous neck','Previous elbow']
-    for i,label in enumerate(buttons[:9]):
-        text=re.sub(r'(<button[^>]*data-i="'+str(i)+r'">).*?(</button>)',lambda m:m[1]+label+m[2],text)
-    if 'data-i="9"' not in text:
-        text=text.replace('  </div>\n  <figure>', '    <button class="btn" type="button" data-i="9">Previous elbow</button>\n  </div>\n  <figure>',1)
-    text=text.replace('body157-fit16','body158-fit27').replace("version:'body157'","version:'body158'").replace("version==='body157'","version==='body158'")
-    text=text.replace('REVISED_FOUNDATION_NOT_ANIMATION_READY','CORRECTED_INTERFACE_DIRECTOR_REVIEW_PENDING').replace('1 / 9','1 / 10')
-    assert len(text.encode())<1_000_000 and 'data-i="9"' in text
+    buttons=['New front','Accepted front','New ¾','Accepted ¾','Other ¾','Neck back','Full front','Full back','Seated close ¾','Seated close front','Seated full ¾','Seated side','Rejected fit27']
+    controls='\n'.join(f'    <button class="btn" type="button" data-i="{i}">{label}</button>' for i,label in enumerate(buttons))
+    text=re.sub(r'(<div class="viz-controls"[^>]*>).*?(</div>)',lambda m:m[1]+'\n'+controls+'\n  '+m[2],text,count=1,flags=re.S)
+    text=text.replace('body158-fit27','body159-fit33').replace("version:'body158'","version:'body159'").replace("version==='body158'","version==='body159'")
+    text=re.sub(r'(body-count">)\d+ / \d+',lambda m:m[1]+'1 / '+str(len(paths)),text)
+    assert len(text.encode())<1_000_000 and 'data-i="12"' in text
     GALLERY.write_text(text)
-    events=[e for e in Ledger(ROOT/'.runtime/experiment-ops.sqlite3').events() if e['event_id'].startswith('body158-')]
+    events=[e for e in Ledger(ROOT/'.runtime/experiment-ops.sqlite3').events() if e['event_id'].startswith(PREFIX)]
     starts={e['job_id']:e for e in events if e['event_type']=='job_started'}
     jobs=[{'id':e['job_id'],'returncode':e['returncode'],'seconds':e['monotonic_seconds']-starts[e['job_id']]['monotonic_seconds']} for e in events if e['event_type']=='job_completed']
-    start=next(e for e in events if e['event_id']=='body158-work-start')
-    end=next(e for e in events if e['event_id']=='body158-work-end')
+    start=next(e for e in events if e['event_id']==PREFIX+'work-start')
+    end=next(e for e in events if e['event_id']==PREFIX+'work-end')
     seconds=(datetime.fromisoformat(end['utc'].replace('Z','+00:00'))-datetime.fromisoformat(start['utc'].replace('Z','+00:00'))).total_seconds()
-    files=[p for d in BASE.glob('body158-fit*') if d.is_dir() for p in d.rglob('*') if p.is_file()]
-    card=BASE/'body158-operating';card.mkdir(exist_ok=True)
+    files=[p for d in BASE.glob(PREFIX+'fit*') if d.is_dir() for p in d.rglob('*') if p.is_file()]
+    card=BASE/'body159-operating';card.mkdir(exist_ok=True)
     manifest={str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in [CURRENT/'adult-body-fit.blend',CURRENT/'result.json',BASE/'natural152-seal-16/natural-hair.blend',*paths]}
-    summary={'scope':'Neck integration and seated elbow correction, exchange158','disposition':'YELLOW_DIRECTOR_REVIEW_PENDING','captured_active_seconds':seconds,'prior_captured_seconds':2809.146363,'cumulative_captured_seconds':2809.146363+seconds,'capture':'PARTIAL','capture_exclusions':['Initial context recovery','Final receipt/commit overhead'],'jobs':jobs,'native_time_inside_activity':True,'retained_evidence_bytes':sum(p.stat().st_size for p in files),'paid_provider_calls':0,'asset_purchases_usd':0,'engineering_tokens':None,'engineering_cost_usd':None,'full_suite_run':False,'remaining':['Director appearance acceptance','Dressed riding fit','Full facial/motion qualification','Rights and backup']}
+    prior=json.loads((BASE/'body158-operating/pass-summary.json').read_text())['cumulative_captured_seconds']
+    summary={'scope':'Restore accepted neck and collarbones; lower shoulder connection, exchange159','disposition':'YELLOW_DIRECTOR_REVIEW_PENDING','captured_active_seconds':seconds,'prior_captured_seconds':prior,'cumulative_captured_seconds':prior+seconds,'capture':'PARTIAL','capture_exclusions':['Initial context recovery','Final receipt/commit overhead'],'jobs':jobs,'native_time_inside_activity':True,'retained_evidence_bytes':sum(p.stat().st_size for p in files),'paid_provider_calls':0,'asset_purchases_usd':0,'engineering_tokens':None,'engineering_cost_usd':None,'full_suite_run':False,'remaining':['Director appearance acceptance','Dressed riding fit','Full facial/motion qualification','Rights and backup']}
     for name,value in [('pass-summary.json',summary),('events.json',events),('checksums.json',manifest)]:
         (card/name).write_text(json.dumps(value,indent=2)+'\n')
-    print(json.dumps({'gallery_bytes':len(text.encode()),'captured_minutes':seconds/60,'cumulative_minutes':(2809.146363+seconds)/60,'artifact_mb':summary['retained_evidence_bytes']/1e6,'jobs':len(jobs)}))
+    print(json.dumps({'gallery_bytes':len(text.encode()),'captured_minutes':seconds/60,'cumulative_minutes':(prior+seconds)/60,'artifact_mb':summary['retained_evidence_bytes']/1e6,'jobs':len(jobs)}))
 
 
 if __name__=='__main__':main()

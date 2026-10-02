@@ -58,6 +58,25 @@ def test_correction_operations_are_fixed_and_non_overwriting(monkeypatch,tmp_pat
     with pytest.raises(ValueError):module.validate(job)
 
 
-@pytest.mark.parametrize('job', [{'operation':'fit28'}, {'operation':'fit27','path':'other'}, {'operation':'fit27','python':'pass'}])
+@pytest.mark.parametrize('job', [{'operation':'fit34'}, {'operation':'fit27','path':'other'}, {'operation':'fit27','python':'pass'}])
 def test_correction_rejects_unreviewed_variants_and_payload(job):
     with pytest.raises(ValueError):module.validate(job)
+
+
+@pytest.mark.parametrize('operation',['fit28','fit29','fit30','fit31','fit32','fit33'])
+def test_restored_bust_outputs_are_separate(monkeypatch,tmp_path,operation):
+    monkeypatch.setattr(module,'BASE',tmp_path)
+    monkeypatch.setattr(module,'digest',lambda p:module.ARCHIVE_SHA if p==module.ARCHIVE else module.SOURCE_SHA)
+    path=module.validate({'operation':operation})
+    assert path.name=='body159-'+operation
+    path.mkdir()
+    with pytest.raises(ValueError):module.validate({'operation':operation})
+
+
+def test_lateral_shoulder_weight_is_continuous_at_source_boundary():
+    values=[module.shoulder_chest_weight(1.5,-2.5+i*.01) for i in range(121)]
+    assert all(0<=v<=1 for v in values)
+    assert values==sorted(values)
+    assert max(b-a for a,b in zip(values,values[1:]))<.012
+    assert module.shoulder_chest_weight(1.5,-1.9)<.6
+    assert module.shoulder_chest_weight(.5,-1.8)==1.

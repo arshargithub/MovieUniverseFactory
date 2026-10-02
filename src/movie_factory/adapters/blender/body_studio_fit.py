@@ -27,12 +27,13 @@ def protected():
 
 
 def validate(job):
-    if job not in tuple({'operation': name} for name in ('inspect01','fit01','fit02','fit03','fit04','review05','fit06','fit07','fit08','fit09','fit10','fit11','fit12','fit13','fit14','fit15','fit16','fit17','fit18','fit19','fit20','fit21','fit22','fit23','fit24','fit25','fit26','fit27')):
+    if job not in tuple({'operation': name} for name in ('inspect01','fit01','fit02','fit03','fit04','review05','fit06','fit07','fit08','fit09','fit10','fit11','fit12','fit13','fit14','fit15','fit16','fit17','fit18','fit19','fit20','fit21','fit22','fit23','fit24','fit25','fit26','fit27','fit28','fit29','fit30','fit31','fit32','fit33')):
         raise ValueError('Only fixed operations admitted')
     for path, sha in ((ARCHIVE, ARCHIVE_SHA), (SOURCE, SOURCE_SHA)):
         if path.is_symlink() or digest(path) != sha:
             raise ValueError('Pinned input mismatch')
     out = BASE / (('body158-' if job['operation'] in ('fit17','fit18','fit19','fit20','fit21','fit22','fit23','fit24','fit25','fit26','fit27') else 'body157-' if job['operation'] in ('fit06','fit07','fit08','fit09','fit10','fit11','fit12','fit13','fit14','fit15','fit16') else 'body156-') + job['operation'])
+    if job['operation'] in ('fit28','fit29','fit30','fit31','fit32','fit33'):out=BASE/('body159-'+job['operation'])
     if out.exists():
         raise ValueError('Never overwrite evidence')
     return out
@@ -106,6 +107,14 @@ def fit(out, native, variant):
         v.co = ((p.x-xcenter)*scale, p.y*scale + .15, p.z*scale+zoffset)
     body.matrix_world = Matrix.Identity(4)
     body.name = 'MF_studio_adult_body'
+    if variant>=30:
+        # Refine donor topology before cutting, so the join does not terminate
+        # in a sparse, faceted shoulder ring. This edits only the derivative.
+        refine=body.modifiers.new('Donor topology for shoulder connection','SUBSURF');refine.levels=1
+        bpy.context.view_layer.update()
+        evaluated=body.evaluated_get(bpy.context.evaluated_depsgraph_get())
+        refined=bpy.data.meshes.new_from_object(evaluated)
+        body.modifiers.clear();body.data=refined
     if variant==8:
         samples={}
         for ob in (body,bpy.data.objects['MF_continuous_head_neck']):
@@ -118,7 +127,7 @@ def fit(out, native, variant):
         (out/'sections.json').write_text(json.dumps(samples,indent=2)+'\n')
         return
     cutoff=-1.84
-    if variant>=9:
+    if 9<=variant<28:
         bust=bpy.data.objects['MF_continuous_head_neck']
         group=bust.vertex_groups.new(name='MF_body157_visible_neck')
         kept=[v.index for v in bust.data.vertices if (bust.matrix_world@v.co).z>=(-1.05 if variant>=18 else -1.36)]
@@ -138,6 +147,7 @@ def fit(out, native, variant):
         cutoff=min((bust.matrix_world@bust.data.vertices[i].co).z for i in kept)+.06
         if variant>=15:cutoff=-1.65
         if variant>=18:cutoff=-1.30
+    if variant>=28:cutoff=-2.40
     # Diagnostic interface: preserve source/local data, clip donor only.
     bm = bmesh.new(); bm.from_mesh(body.data)
     bmesh.ops.bisect_plane(bm, geom=list(bm.verts)+list(bm.edges)+list(bm.faces),
@@ -149,7 +159,7 @@ def fit(out, native, variant):
         bridge_donor(body,bpy.data.objects['MF_continuous_head_neck'],cutoff=cutoff,high=variant>=18)
     elif variant >= 2:
         join_donor(body, bpy.data.objects['MF_continuous_head_neck'], short=variant>=6, neck=variant>=9, cutoff=cutoff, boundary=variant>=11)
-    if variant>=26:
+    if 26<=variant<28:
         import math
         for v in body.data.vertices:
             x,y,z=v.co;ax=abs(x)
@@ -185,7 +195,17 @@ def fit(out, native, variant):
     integration=None
     if variant>=24:
         integration=unify_surface(body,bpy.data.objects['MF_continuous_head_neck'])
-    if variant>=25:
+    if variant>=30:
+        group=body.vertex_groups.new(name='MF_lower_shoulder_connection')
+        for v in body.data.vertices:
+            z=v.co.z
+            upper=-1.84
+            if variant>=32:upper+=.22*max(0.,min(1.,(abs(v.co.x)-1.05)/.40))
+            w=max(0.,min(1.,(z+3.05)/.30,(upper-z)/.12))
+            if w:group.add([v.index],w,'REPLACE')
+        smooth=body.modifiers.new('Lower connection fairing only','SMOOTH')
+        smooth.vertex_group=group.name;smooth.factor=.65;smooth.iterations=40 if variant>=32 else 18
+    if 25<=variant<28:
         group=body.vertex_groups.new(name='MF_neck_surface_fairing')
         for v in body.data.vertices:
             z=v.co.z
@@ -197,7 +217,7 @@ def fit(out, native, variant):
     if variant>=26:
         crease=body.data.attributes.get('crease_edge') or body.data.attributes.new('crease_edge','FLOAT','EDGE')
         for e in body.data.edges:
-            if all(body.data.vertices[i].co.z>-.80 for i in e.vertices):crease.data[e.index].value=1.
+            if all(body.data.vertices[i].co.z>(-1.899 if variant>=28 else -.80) for i in e.vertices):crease.data[e.index].value=1.
         sub=body.modifiers.new('Donor body continuity with protected face edges','SUBSURF');sub.levels=1;sub.render_levels=1
     body.hide_render=False;body.hide_set(False)
     scene=bpy.context.scene
@@ -223,20 +243,33 @@ def fit(out, native, variant):
             scene.render.filepath=str(out/(label+'.png'));bpy.ops.render.render(write_still=True)
     for label,angle in [('front',0),('side',90),('three-quarter',-40),('other-three-quarter',40),('back',180)]:render(label,angle)
     render('interface',-35,(0,0,-1.65),6)
+    if variant>=28:
+        # Match the accepted source and derivative, not only the failed prior fit.
+        render('neck-front',0,(0,0,-1.2),4.7)
+        render('neck-other-side',35,(0,0,-1.2),4.7)
+        hair=[ob for ob in scene.objects if ob.type=='CURVES' and not ob.hide_render]
+        for ob in hair:ob.hide_render=True
+        render('neck-back',180,(0,0,-1.2),4.7)
+        for ob in hair:ob.hide_render=False
+        bust=bpy.data.objects['MF_continuous_head_neck'];bust.hide_render=False;body.hide_render=True
+        render('accepted-neck-front',0,(0,0,-1.2),4.7)
+        render('accepted-interface',-35,(0,0,-1.65),6)
+        bust.hide_render=True;body.hide_render=False
     pose_result = None
     if variant >= 2:
-        pose_result = pose_screen(body, before, render, sharpen=variant>=6, neck=variant>=9,hinge=variant>=20)
+        pose_result = pose_screen(body, before, render, sharpen=variant>=6, neck=variant>=9,hinge=variant>=20,shoulder=variant>=32)
     face_control=check_face_control(body) if variant>=26 else None
     assert all(protected()[k]==v for k,v in before.items())
     sealed = None
-    if variant in (3,4,7,10,12,14,16,27):
+    if variant in (3,4,7,10,12,14,16,27,29,31,33):
         bpy.context.preferences.filepaths.save_version=0
         render('front',0,write=False)
         bpy.ops.wm.save_as_mainfile(filepath=str(out/'adult-body-fit.blend'),check_existing=False)
         sealed=verify_saved(out/'adult-body-fit.blend',before,pose_result['pose_matrices'])
         body=bpy.data.objects['MF_studio_adult_body']
-    result={'status':'INTERNAL_FIT_NOT_ACCEPTED','asset_metadata':metadata,'scale':scale,'zoffset':zoffset,'upper_assembly_scale':.88 if variant>=6 else 1.,'lower_bust_display_mask':variant>=9,
-        'body_vertices':len(body.data.vertices),'source_sha256':digest(native),'protected':before,
+    result={'status':'INTERNAL_FIT_NOT_ACCEPTED','asset_metadata':metadata,'scale':scale,'zoffset':zoffset,'upper_assembly_scale':.88 if variant>=6 else 1.,'lower_bust_display_mask':9<=variant<28,
+        'body_vertices':len(body.data.vertices),'source_sha256':digest(native),'protected':before,'complete_accepted_bust_retained':variant>=28,
+        'lower_connection_fairing':variant>=30,'lateral_shoulder_deforms':variant>=32,
         'bounds':next(r['bounds'] for r in inventory() if r['name']==body.name),
         'pose_screen':pose_result,'saved_verification':sealed,'surface_integration':integration,'face_control':face_control,
         'rigged':variant>=2,'limits':['Body interface requires visual acceptance','Static pose is not animation qualification','Clay material override is diagnostic only']}
@@ -297,10 +330,12 @@ def unify_surface(body,bust):
     error=max((body.data.vertices[i].co-vertices[i]).length for i in range(head_count))
     assert welded>100 and error<1e-5
     bm=bmesh.new();bm.from_mesh(mesh)
-    seam_edges=[e for e in bm.edges if all(-1.051<v.co.z<-1.049 for v in e.verts)]
+    seam_z=min(v.z for v in vertices[:head_count])
+    seam_edges=[e for e in bm.edges if all(abs(v.co.z-seam_z)<.001 for v in e.verts)]
     assert seam_edges and all(len(e.link_faces)==2 for e in seam_edges), 'Unwelded neck edge'
     bm.free();ev.to_mesh_clear()
     bust.hide_render=True
+    body['accepted_head_vertex_count']=head_count
     return {'welded_vertices':welded,'head_vertex_count':head_count,'head_position_max_error':error,'linked_shape_keys':len(keys)-1,'source_retained_as_control':True,'continuous_neck_edges':len(seam_edges)}
 
 
@@ -499,13 +534,20 @@ def chest_blend(z):
     return t*t*(3-2*t)
 
 
+def shoulder_chest_weight(x,z):
+    """Continuous chest protection without a hard lateral source/donor cutoff."""
+    w=max(0.,min(1.,(z+2.4)/.90))
+    central=max(0.,min(1.,(.95-abs(x))/.30))*max(0.,min(1.,(z+2.4)/.30))
+    return max(w,central)
+
+
 def sharpen_weights(weights, power=3.):
     transformed={key:value**power for key,value in weights.items()}
     total=sum(transformed.values())
     return {key:value/total for key,value in transformed.items()} if total else weights
 
 
-def pose_screen(body, before, render, sharpen=False, neck=False,hinge=False):
+def pose_screen(body, before, render, sharpen=False, neck=False,hinge=False,shoulder=False):
     import bpy
     import math
     from mathutils import Matrix, Vector
@@ -547,6 +589,11 @@ def pose_screen(body, before, render, sharpen=False, neck=False,hinge=False):
     bone_groups={g.index:g for g in body.vertex_groups if g.name in arm.bones}
     for v in body.data.vertices:
         w=max(0.,min(1.,(v.co.z+2.)/.64)) if neck else chest_blend(v.co.z)
+        if v.index<body.get('accepted_head_vertex_count',0) and not shoulder:w=1.
+        if shoulder:
+            # Preserve neck identity; do not pin the lateral shoulder to the
+            # chest while the immediately adjacent donor follows the arm.
+            w=shoulder_chest_weight(v.co.x,v.co.z)
         if w:
             old_chest=next((g.weight for g in v.groups if g.group==body.vertex_groups['chest'].index),0.)
             for g in list(v.groups):
@@ -602,6 +649,9 @@ def pose_screen(body, before, render, sharpen=False, neck=False,hinge=False):
     posed=evaluated();assert all(math.isfinite(v) for p in posed for v in p)
     render('seated-three-quarter',-45,(0,-.8,-4.9),14.5)
     render('seated-side',90,(0,-.8,-4.9),14.5)
+    if shoulder:
+        render('seated-interface',-35,(0,-.2,-1.65),6)
+        render('seated-neck-front',0,(0,-.2,-1.65),6)
     recipe={b.name:[list(row) for row in b.matrix_basis] for b in rig.pose.bones}
     for b in rig.pose.bones:b.matrix_basis=Matrix.Identity(4)
     attach();returned=evaluated()
@@ -609,7 +659,7 @@ def pose_screen(body, before, render, sharpen=False, neck=False,hinge=False):
     assert error<1e-5
     return {'bones':len(arm.bones),'unweighted':len(unweighted),'neutral_return_max_error':error,
             'neutral_attachment_matrix_error':attachment_error,
-            'pose_matrices':recipe,'limits':['Coarse body weights with boundary correction; not final performance rig','No finger articulation or actual tack contacts','Preserved upper bust moves rigidly with chest; assembly-only lower-neck/shoulder replacement when enabled']}
+            'pose_matrices':recipe,'limits':['Coarse body weights with boundary correction; not final performance rig','No finger articulation or actual tack contacts','Lateral lower bust participates in shoulder deformation; central neck follows chest' if shoulder else 'Preserved upper bust moves rigidly with chest; assembly-only lower-neck/shoulder replacement when enabled']}
 
 
 def verify_saved(native,before,recipe):
