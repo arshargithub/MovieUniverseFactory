@@ -15,12 +15,12 @@ MEMBER = 'human-base-meshes-bundle-v1.4.1/human_base_meshes_bundle.blend'
 
 
 def validate(job):
-    if job not in tuple({'operation': name} for name in ('inspect01','fit01','fit02','fit03','fit04','review05')):
+    if job not in tuple({'operation': name} for name in ('inspect01','fit01','fit02','fit03','fit04','review05','fit06','fit07','fit08','fit09','fit10','fit11','fit12','fit13','fit14','fit15','fit16')):
         raise ValueError('Only fixed operations admitted')
     for path, sha in ((ARCHIVE, ARCHIVE_SHA), (SOURCE, SOURCE_SHA)):
         if path.is_symlink() or digest(path) != sha:
             raise ValueError('Pinned input mismatch')
-    out = BASE / ('body156-' + job['operation'])
+    out = BASE / (('body157-' if job['operation'] in ('fit06','fit07','fit08','fit09','fit10','fit11','fit12','fit13','fit14','fit15','fit16') else 'body156-') + job['operation'])
     if out.exists():
         raise ValueError('Never overwrite evidence')
     return out
@@ -68,6 +68,12 @@ def fit(out, native, variant):
     from character_assembly import material
     bpy.ops.wm.open_mainfile(filepath=str(SOURCE), load_ui=False, use_scripts=False)
     before = protected()
+    if variant>=6:
+        # Coherent reversible assembly scale: no accepted local data is edited.
+        transform=Matrix.Translation((0,0,-1.9))@Matrix.Scale(.88,4)@Matrix.Translation((0,0,1.9))
+        for name in [n for n in before if n not in ('MF_natural147_hair_long hair main','MF_natural147_hair_long hair strands')]+['MF_natural147_hair_retarget']:
+            ob=bpy.data.objects[name];ob.matrix_world=transform@ob.matrix_world
+        bpy.context.view_layer.update()
     with bpy.data.libraries.load(str(native), link=False) as (a, b):
         b.objects = ['GEO-body_female_realistic']
     body = b.objects[0]
@@ -83,28 +89,63 @@ def fit(out, native, variant):
     scale = 8.6
     top = max(v.z for v in original)
     zoffset = 1.3302977085 - top * scale
+    if variant>=9:zoffset-=.55
     for v, p in zip(body.data.vertices, original):
         v.co = ((p.x-xcenter)*scale, p.y*scale + .15, p.z*scale+zoffset)
     body.matrix_world = Matrix.Identity(4)
     body.name = 'MF_studio_adult_body'
-    # Diagnostic interface: retain original bust intact and clip donor only.
+    if variant==8:
+        samples={}
+        for ob in (body,bpy.data.objects['MF_continuous_head_neck']):
+            points=[ob.matrix_world@v.co for v in ob.data.vertices]
+            rows=[]
+            for z in (.2,0,-.2,-.4,-.6,-.8,-1.,-1.2,-1.4,-1.6,-1.8,-2.,-2.4,-3.,-3.5,-4.,-4.5):
+                band=[v for v in points if abs(v.z-z)<.08]
+                if band:rows.append({'z':z,'xmin':min(p.x for p in band),'xmax':max(p.x for p in band),'ymin':min(p.y for p in band),'ymax':max(p.y for p in band)})
+            samples[ob.name]=rows
+        (out/'sections.json').write_text(json.dumps(samples,indent=2)+'\n')
+        return
+    cutoff=-1.84
+    if variant>=9:
+        bust=bpy.data.objects['MF_continuous_head_neck']
+        group=bust.vertex_groups.new(name='MF_body157_visible_neck')
+        kept=[v.index for v in bust.data.vertices if (bust.matrix_world@v.co).z>=-1.36]
+        group.add(kept,1.,'REPLACE')
+        mask=bust.modifiers.new('Reversible lower bust replacement','MASK');mask.vertex_group=group.name
+        cutoff=min((bust.matrix_world@bust.data.vertices[i].co).z for i in kept)+.06
+        if variant>=15:cutoff=-1.65
+    # Diagnostic interface: preserve source/local data, clip donor only.
     bm = bmesh.new(); bm.from_mesh(body.data)
     bmesh.ops.bisect_plane(bm, geom=list(bm.verts)+list(bm.edges)+list(bm.faces),
-        plane_co=(0,0,-1.84), plane_no=(0,0,1), clear_outer=True, dist=.00001)
+        plane_co=(0,0,cutoff), plane_no=(0,0,1), clear_outer=True, dist=.00001)
     bm.to_mesh(body.data); bm.free()
-    if variant >= 2:
-        join_donor(body, bpy.data.objects['MF_continuous_head_neck'])
+    if variant>=15:
+        bridge_donor(body,bpy.data.objects['MF_continuous_head_neck'])
+    elif variant >= 2:
+        join_donor(body, bpy.data.objects['MF_continuous_head_neck'], short=variant>=6, neck=variant>=9, cutoff=cutoff, boundary=variant>=11)
     for p in body.data.polygons: p.use_smooth=True
     sub=body.modifiers.new('Body display subdivision','SUBSURF');sub.levels=1
-    if variant>=3:
+    if 3<=variant<13 or variant>=15:
         group=body.vertex_groups.new(name='MF_interface_normals')
         for v in body.data.vertices:
-            w=max(0.,min(1.,(v.co.z+2.22)/.32))
+            w=max(0.,min(1.,(v.co.z+1.65)/.28)) if variant>=15 else max(0.,min(1.,(v.co.z-(cutoff-.38))/.32))
             if w:group.add([v.index],w,'REPLACE')
         transfer=body.modifiers.new('Boundary normal continuity','DATA_TRANSFER')
         transfer.object=bpy.data.objects['MF_continuous_head_neck']
         transfer.use_loop_data=True;transfer.data_types_loops={'CUSTOM_NORMAL'}
         transfer.loop_mapping='POLYINTERP_NEAREST';transfer.vertex_group=group.name
+    if 13<=variant<15:
+        bust=bpy.data.objects['MF_continuous_head_neck']
+        blend=bust.vertex_groups.new(name='MF_body157_neck_interface')
+        for v in bust.data.vertices:
+            z=(bust.matrix_world@v.co).z
+            w=max(0.,min(1.,(-1.05-z)/.20))
+            if w:blend.add([v.index],w,'REPLACE')
+        shrink=bust.modifiers.new('Reversible neck boundary fit','SHRINKWRAP')
+        shrink.target=body;shrink.vertex_group=blend.name;shrink.wrap_method='NEAREST_SURFACEPOINT';shrink.offset=.002
+        normal=bust.modifiers.new('Neck boundary normals','DATA_TRANSFER')
+        normal.object=body;normal.use_loop_data=True;normal.data_types_loops={'CUSTOM_NORMAL'}
+        normal.loop_mapping='POLYINTERP_NEAREST';normal.vertex_group=blend.name
     clay=material('MF_body156_clay',(.34,.31,.28))
     body.data.materials.clear();body.data.materials.append(clay)
     body.hide_render=False;body.hide_set(False)
@@ -121,7 +162,7 @@ def fit(out, native, variant):
         light=bpy.data.objects.new('MF_body156_softbox',bpy.data.lights.new('MF_body156_softbox','AREA'))
         scene.collection.objects.link(light);light.data.energy=power;light.data.shape='DISK';light.data.size=9
         lights.append((light,Vector((x,-9,7))))
-    def render(label,angle,center=(0,0,-5.5),size=15.7,write=True):
+    def render(label,angle,center=(0,0,-5.8),size=16.5,write=True):
         target=Vector(center);rot=Matrix.Rotation(__import__('math').radians(angle),3,'Z')
         camera.data.ortho_scale=size;camera.location=target+rot@Vector((0,-25,.5))
         camera.rotation_euler=(target-camera.location).to_track_quat('-Z','Y').to_euler()
@@ -129,20 +170,20 @@ def fit(out, native, variant):
             light.location=target+rot@offset;light.rotation_euler=(target-light.location).to_track_quat('-Z','Y').to_euler()
         if write:
             scene.render.filepath=str(out/(label+'.png'));bpy.ops.render.render(write_still=True)
-    for label,angle in [('front',0),('side',90),('three-quarter',-40),('back',180)]:render(label,angle)
+    for label,angle in [('front',0),('side',90),('three-quarter',-40),('other-three-quarter',40),('back',180)]:render(label,angle)
     render('interface',-35,(0,0,-1.65),6)
     pose_result = None
     if variant >= 2:
-        pose_result = pose_screen(body, before, render)
+        pose_result = pose_screen(body, before, render, sharpen=variant>=6, neck=variant>=9)
     assert all(protected()[k]==v for k,v in before.items())
     sealed = None
-    if variant>=3:
+    if variant in (3,4,7,10,12,14,16):
         bpy.context.preferences.filepaths.save_version=0
         render('front',0,write=False)
         bpy.ops.wm.save_as_mainfile(filepath=str(out/'adult-body-fit.blend'),check_existing=False)
         sealed=verify_saved(out/'adult-body-fit.blend',before,pose_result['pose_matrices'])
         body=bpy.data.objects['MF_studio_adult_body']
-    result={'status':'INTERNAL_FIT_NOT_ACCEPTED','asset_metadata':metadata,'scale':scale,'zoffset':zoffset,
+    result={'status':'INTERNAL_FIT_NOT_ACCEPTED','asset_metadata':metadata,'scale':scale,'zoffset':zoffset,'upper_assembly_scale':.88 if variant>=6 else 1.,'lower_bust_display_mask':variant>=9,
         'body_vertices':len(body.data.vertices),'source_sha256':digest(native),'protected':before,
         'bounds':next(r['bounds'] for r in inventory() if r['name']==body.name),
         'pose_screen':pose_result,'saved_verification':sealed,
@@ -150,20 +191,66 @@ def fit(out, native, variant):
     (out/'result.json').write_text(json.dumps(result,indent=2)+'\n')
 
 
-def join_donor(body, bust):
+def bridge_donor(body,bust):
+    """Connect actual evaluated neck boundary to the donor's open neck loop."""
+    import bpy,bmesh,math
+    from collections import Counter
+    bpy.context.view_layer.update()
+    ev=bust.evaluated_get(bpy.context.evaluated_depsgraph_get())
+    counts=Counter(edge for p in ev.data.polygons for edge in p.edge_keys)
+    indices={i for edge,count in counts.items() if count==1 for i in edge}
+    points=[bust.matrix_world@ev.data.vertices[i].co for i in indices]
+    points=[p for p in points if p.z<-1.15]
+    assert len(points)>12
+    cy=(min(p.y for p in points)+max(p.y for p in points))/2
+    angle=lambda p:math.atan2(p.y-cy,p.x)
+    points.sort(key=angle)
+    bm=bmesh.new();bm.from_mesh(body.data)
+    lower=sorted({v for e in bm.edges if e.is_boundary for v in e.verts if v.co.z>-1.651},key=lambda v:angle(v.co))
+    assert len(lower)>8
+    upper=[bm.verts.new(p) for p in points]
+    i=j=0
+    while i<len(upper) or j<len(lower):
+        ai=angle(upper[(i+1)%len(upper)].co)+(2*math.pi if i+1>=len(upper) else 0) if i<len(upper) else float('inf')
+        aj=angle(lower[(j+1)%len(lower)].co)+(2*math.pi if j+1>=len(lower) else 0) if j<len(lower) else float('inf')
+        if ai<=aj:
+            bm.faces.new((upper[i%len(upper)],upper[(i+1)%len(upper)],lower[j%len(lower)]));i+=1
+        else:
+            bm.faces.new((upper[i%len(upper)],lower[(j+1)%len(lower)],lower[j%len(lower)]));j+=1
+    crease=bm.edges.layers.float.get('crease_edge') or bm.edges.layers.float.new('crease_edge')
+    upper_set=set(upper)
+    for e in bm.edges:
+        if all(v in upper_set for v in e.verts):e[crease]=1.
+    assert all(len(e.link_faces)<=2 for e in bm.edges), 'Nonmanifold bridge'
+    bmesh.ops.recalc_face_normals(bm,faces=list(bm.faces))
+    bm.to_mesh(body.data);bm.free();body.data.update()
+
+
+def join_donor(body, bust, short=False, neck=False, cutoff=-1.84, boundary=False):
     """Fit donor-only terminal ring to fixed accepted bust boundary."""
     import math
     from mathutils import Vector
     points=[bust.matrix_world@v.co for v in bust.data.vertices]
+    if neck:points=[p for p in points if p.z>=-1.36]
     bottom=min(p.z for p in points)
-    ring=[p for p in points if p.z<bottom+.0002]
+    ring=[p for p in points if p.z<bottom+(.035 if neck else .0002)]
+    if boundary:
+        import bpy
+        from collections import Counter
+        bpy.context.view_layer.update()
+        evaluated=bust.evaluated_get(bpy.context.evaluated_depsgraph_get())
+        counts=Counter(edge for p in evaluated.data.polygons for edge in p.edge_keys)
+        indices={i for edge,count in counts.items() if count==1 for i in edge}
+        ring=[bust.matrix_world@evaluated.data.vertices[i].co for i in indices]
+        ring=[p for p in ring if p.z<-1.15]
+        assert len(ring)>12
     assert len(ring)>12
     cy=(min(p.y for p in ring)+max(p.y for p in ring))/2
     ring.sort(key=lambda p:math.atan2(p.y-cy,p.x))
     angles=[math.atan2(p.y-cy,p.x) for p in ring]
     import bisect
     for v in body.data.vertices:
-        t=max(0.,min(1.,(v.co.z+2.85)/1.01))
+        t=max(0.,min(1.,(v.co.z-(cutoff-.5))/.5)) if neck else max(0.,min(1.,(v.co.z+2.49)/.65)) if short else max(0.,min(1.,(v.co.z+2.85)/1.01))
         if t==0:continue
         a=math.atan2(v.co.y-cy,v.co.x)
         j=bisect.bisect_left(angles,a)%len(ring);k=(j-1)%len(ring)
@@ -175,7 +262,7 @@ def join_donor(body, bust):
         w=t*t*(3-2*t)
         v.co.x=(1-w)*v.co.x+w*target.x
         v.co.y=(1-w)*v.co.y+w*target.y
-        v.co.z-=.06*t
+        v.co.z=(1-w)*v.co.z+w*(target.z+.035) if boundary else v.co.z-.06*t
     body.data.update()
 
 
@@ -184,7 +271,13 @@ def chest_blend(z):
     return t*t*(3-2*t)
 
 
-def pose_screen(body, before, render):
+def sharpen_weights(weights, power=3.):
+    transformed={key:value**power for key,value in weights.items()}
+    total=sum(transformed.values())
+    return {key:value/total for key,value in transformed.items()} if total else weights
+
+
+def pose_screen(body, before, render, sharpen=False, neck=False):
     import bpy
     import math
     from mathutils import Matrix, Vector
@@ -206,6 +299,11 @@ def pose_screen(body, before, render):
             'forearm.'+side:((s*2.48,-.10,-4.16),(s*3.14,-.33,-5.52),'upperarm.'+side),
             'hand.'+side:((s*3.14,-.33,-5.52),(s*3.52,-.46,-6.40),'forearm.'+side),
         })
+    if neck:
+        for side,s in [('L',1),('R',-1)]:
+            definitions['upperarm.'+side]=((s*1.55,.12,-1.65),(s*2.48,-.10,-4.05),'chest')
+            definitions['forearm.'+side]=((s*2.48,-.10,-4.05),(s*3.14,-.33,-5.52),'upperarm.'+side)
+        definitions={n:((h[0],h[1],h[2]-.55),(t[0],t[1],t[2]-.55),p) for n,(h,t,p) in definitions.items()}
     for name,(head,tail,parent) in definitions.items():
         bone=arm.edit_bones.new(name);bone.head=head;bone.tail=tail
         if parent:bone.parent=arm.edit_bones[parent]
@@ -220,13 +318,18 @@ def pose_screen(body, before, render):
     mod.use_deform_preserve_volume=True
     bone_groups={g.index:g for g in body.vertex_groups if g.name in arm.bones}
     for v in body.data.vertices:
-        w=chest_blend(v.co.z)
+        w=max(0.,min(1.,(v.co.z+2.)/.64)) if neck else chest_blend(v.co.z)
         if w:
             old_chest=next((g.weight for g in v.groups if g.group==body.vertex_groups['chest'].index),0.)
             for g in list(v.groups):
                 if g.group in bone_groups:bone_groups[g.group].add([v.index],g.weight*(1-w),'REPLACE')
             body.vertex_groups['chest'].add([v.index],old_chest*(1-w)+w,'REPLACE')
     unweighted=[v.index for v in body.data.vertices if sum(g.weight for g in v.groups if g.group in bone_groups)<.001]
+    if sharpen:
+        for v in body.data.vertices:
+            if abs(v.co.x)>2.05 and v.co.z<-3.1:
+                weights={g.group:g.weight for g in v.groups if g.group in bone_groups}
+                for index,weight in sharpen_weights(weights).items():bone_groups[index].add([v.index],weight,'REPLACE')
     assert not unweighted, ('Unweighted body',len(unweighted))
     protected_roots=[bpy.data.objects[n] for n in before if n not in ('MF_natural147_hair_long hair main','MF_natural147_hair_long hair strands')]
     protected_roots.append(bpy.data.objects['MF_natural147_hair_retarget'])
@@ -255,8 +358,8 @@ def pose_screen(body, before, render):
         aim('upperarm.'+side,(s*.15,-.38,-1));aim('forearm.'+side,(-s*.18,-1,-.10))
     attach()
     posed=evaluated();assert all(math.isfinite(v) for p in posed for v in p)
-    render('seated-three-quarter',-45,(0,-1,-4.1),12)
-    render('seated-side',90,(0,-1,-4.1),12)
+    render('seated-three-quarter',-45,(0,-.8,-4.9),14.5)
+    render('seated-side',90,(0,-.8,-4.9),14.5)
     recipe={b.name:[list(row) for row in b.matrix_basis] for b in rig.pose.bones}
     for b in rig.pose.bones:b.matrix_basis=Matrix.Identity(4)
     attach();returned=evaluated()
@@ -264,7 +367,7 @@ def pose_screen(body, before, render):
     assert error<1e-5
     return {'bones':len(arm.bones),'unweighted':len(unweighted),'neutral_return_max_error':error,
             'neutral_attachment_matrix_error':attachment_error,
-            'pose_matrices':recipe,'limits':['Automatic body weights with continuous chest-boundary correction','No finger articulation or actual tack contacts','Protected bust moves rigidly with chest, not final neck articulation']}
+            'pose_matrices':recipe,'limits':['Coarse body weights with boundary correction; not final performance rig','No finger articulation or actual tack contacts','Preserved upper bust moves rigidly with chest; assembly-only lower-neck/shoulder replacement when enabled']}
 
 
 def verify_saved(native,before,recipe):

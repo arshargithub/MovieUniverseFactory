@@ -36,3 +36,11 @@ def test_fixed_fit_job_and_no_overwrite(monkeypatch,tmp_path):
     out.mkdir()
     with pytest.raises(ValueError,match='overwrite'):
         module.validate({'operation':'fit04'})
+
+
+def test_weight_sharpening_preserves_sum_support_and_dominance():
+    result=module.sharpen_weights({'upper':.8,'lower':.2,'hand':0})
+    assert sum(result.values())==pytest.approx(1)
+    assert result['upper']>.8 and result['hand']==0
+    assert module.sharpen_weights({})=={}
+    assert module.sharpen_weights({'a':.5,'b':.5})=={'a':.5,'b':.5}
