@@ -34,7 +34,7 @@ def main():
           'status':'INTERNAL_STATIC_DIRECTION_REVIEW_READY_DIRECTOR_APPEARANCE_PENDING',
           'captured_activity_start':start['utc'],'captured_activity_end':end['utc'],'captured_activity_seconds':seconds,
           'prior_partial_body_and_wardrobe_seconds':31155.672652,'cumulative_partial_captured_seconds':31155.672652+seconds,'lifetime_net_seconds':None,
-          'time_limits':'Current assistant activity window excludes Director wait and final receipt/commit overhead; historical capture gaps remain. Native job time is not added to activity.',
+          'time_limits':'Partial current assistant activity window excludes initial intake before capture, Director wait and final receipt/commit overhead; historical capture gaps remain. Native job time is not added to activity.',
           'engineering_model':None,'reasoning_effort':None,'engineering_tokens':None,'engineering_dollar_cost':None,
           'paid_provider_calls_in_this_scope':0,'asset_purchases_in_this_scope':0,'spend_provenance':'Observed scoped local execution only, not free subscription engineering.',
           'native_job_count':sum(j['kind']=='native' for j in jobs),'native_job_sum_seconds':sum(j['seconds'] for j in jobs if j['kind']=='native'),
