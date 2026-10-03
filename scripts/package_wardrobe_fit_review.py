@@ -37,7 +37,7 @@ def main():
     assert all(v is not None and v<fresh['surface_tolerance'] for v in fresh['evaluated_local_surface_max_errors'].values())
     compared=[]
     for path in selected.glob('*.png'):
-        previous=BASE/'wardrobe169-preview25'/path.name
+        previous=BASE/'wardrobe169-preview28'/path.name
         assert previous.is_file()
         assert ImageChops.difference(Image.open(path).convert('RGB'),Image.open(previous).convert('RGB')).getbbox() is None
         compared.append(path.name)

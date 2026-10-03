@@ -17,7 +17,7 @@ HORSE_SHA = '7248f9dfecef3e9ece309c08055ab53ee6d802abe0a0e01307c7f9d8b93fd73e'
 
 
 def validate(job):
-    if not isinstance(job, dict) or set(job) != {'operation'} or job['operation'] not in ('inspect01', 'inspect02', 'inspect03', 'inspect04', 'preview01', 'preview02', 'preview03', 'preview04', 'preview05', 'preview06', 'preview07', 'preview08', 'preview09', 'preview10', 'preview11', 'preview12', 'preview13', 'finger14', 'finger16', 'finger17', 'finger18', 'preview15', 'preview19', 'preview20', 'preview21', 'preview22', 'preview23', 'cloth24', 'preview25', 'seal01', 'verify01'):
+    if not isinstance(job, dict) or set(job) != {'operation'} or job['operation'] not in ('inspect01', 'inspect02', 'inspect03', 'inspect04', 'preview01', 'preview02', 'preview03', 'preview04', 'preview05', 'preview06', 'preview07', 'preview08', 'preview09', 'preview10', 'preview11', 'preview12', 'preview13', 'finger14', 'finger16', 'finger17', 'finger18', 'preview15', 'preview19', 'preview20', 'preview21', 'preview22', 'preview23', 'cloth24', 'preview25', 'preview26', 'pose27', 'preview28', 'seal01', 'verify01'):
         raise ValueError('Only fixed reviewed operations admitted')
     for path, sha in ((BODY, BODY_SHA), (HORSE, HORSE_SHA)):
         if path.is_symlink() or not path.is_file() or digest(path) != sha:
@@ -311,7 +311,11 @@ def continuous_tunic(parts,body,surface,rig,cloth):
     bpy.context.view_layer.update();ev=ob.evaluated_get(bpy.context.evaluated_depsgraph_get())
     data=bpy.data.meshes.new_from_object(ev);ob.modifiers.clear();ob.data=data
     bm=bmesh.new();bm.from_mesh(data)
-    caps=[f for f in bm.faces if (f.calc_center_median().z>-2.40 and f.normal.z>.45) or (f.calc_center_median().z<-6.80 and f.normal.z<-.65)]
+    # Open only the central neck aperture, not upward-facing shoulder skin.
+    # The broad normal-only cut passed neutral but tore open on arm reach.
+    caps=[f for f in bm.faces if (f.calc_center_median().z>-2.40 and f.normal.z>.45
+          and (f.calc_center_median().x/1.30)**2+((f.calc_center_median().y-.18)/1.00)**2<1.)
+          or (f.calc_center_median().z<-6.80 and f.normal.z<-.65)]
     bmesh.ops.delete(bm,geom=caps,context='FACES')
     bm.to_mesh(data);bm.free()
     kd=KDTree(len(surface))
@@ -325,6 +329,8 @@ def continuous_tunic(parts,body,surface,rig,cloth):
         for n,w in weights.items():
             if w:groups[n].add([v.index],w/total,'REPLACE')
     arm=ob.modifiers.new('Accepted-body garment weight transfer','ARMATURE');arm.object=rig;arm.use_deform_preserve_volume=True
+    contact=ob.modifiers.new('Explicit static posed body clearance','SHRINKWRAP')
+    contact.target=body;contact.wrap_method='NEAREST_SURFACEPOINT';contact.wrap_mode='OUTSIDE_SURFACE';contact.offset=.30
     return ob
 
 
@@ -846,7 +852,7 @@ def build(out, operation):
     # remain separate from this authored static pose/clearance screen.
     for b in rig.pose.bones:b.matrix_basis=Matrix.Identity(4)
     bpy.context.view_layer.update()
-    if not operation.startswith('finger'):
+    if not operation.startswith(('finger','pose')):
         for label, angle in [('front',0), ('side',90), ('rear',180)]:fit_render(out,'standing-'+label,angle)
     if operation=='cloth24':
         result={'operation':operation,'protected_data_exact':accepted_signature(authority)==before,
@@ -860,6 +866,18 @@ def build(out, operation):
     riding_pose(rig)
     bpy.context.view_layer.update()
     contacts=fit_static_contacts(horse,rig,leather)
+    if operation=='pose27':
+        for ob in clothes+horse:ob.hide_render=True
+        for ob in scene.objects:
+            if ob.name.startswith(('MF_fit_rein_','MF_fit_stirrup_leather_')):ob.hide_render=True
+        scene.view_layers[0].material_override=material('MF_fit_pose_clay',(.35,.35,.35))
+        for label,angle in [('side',90),('rear-quarter',140)]:fit_render(out,'body-'+label,angle,(0,-1,-5.8),15.8)
+        result={'operation':operation,'scope':'Underlying current body pose, without garment concealment',
+                'protected_data_exact':accepted_signature(authority)==before,
+                'body_local_geometry_exact':coordinates_digest(tuple(v.co) for v in body.data.vertices)==body_hash,
+                'handler_sha256':digest(Path(__file__))}
+        assert result['protected_data_exact'] and result['body_local_geometry_exact']
+        (out/'result.json').write_text(json.dumps(result,indent=2)+'\n');return
     if not operation.startswith('finger'):
         for label,angle in [('side',90),('opposite-side',-90),('front-quarter',-40),('rear-quarter',140)]:
             fit_render(out,'mounted-'+label,angle,(0,-1,-10.0),29,(1000,700) if 'side' in label else (540,900))
@@ -888,6 +906,7 @@ def build(out, operation):
     result['finger_controls']=finger_controls
     result['garment_envelope_volumes']=list(clothes[0]['fit_envelope_volumes'])
     result['horse_pose_scope']='Neutral private derivative; source gait snapshot not qualified for reuse'
+    result['garment_fit_scope']='Pose-evaluated outside-surface clearance, not cloth simulation or dynamic qualification'
     result['static_grip_corrective']='Articulated derivative finger controls; native animation and force/contact qualification remain open'
     (out/'result.json').write_text(json.dumps(result,indent=2)+'\n')
     assert result['body_local_geometry_exact'] and result['protected_data_exact'] and result['source_unchanged'], {k:result[k] for k in ('body_local_geometry_exact','protected_differences','source_unchanged')}
