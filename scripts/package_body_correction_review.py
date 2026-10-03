@@ -27,6 +27,10 @@ def check_review_gate(review, candidate, evidence_root):
     Source/reopen checks are an independent prerequisite in main().
     """
     required={'neck_clavicles','chest_shoulders','arms_elbows','knees','abdomen','whole_result'}
+    if candidate.startswith('body168-'):
+        required|={'hip_fold','pelvic_volume_and_cleft'}
+        if review.get('known_blockers_remaining')!=[] or review.get('failure_seeking_review') is not True:
+            raise ValueError('Unresolved or uninspected blockers must stay internal')
     rows=review.get('criteria',[])
     if review.get('candidate')!=candidate or {r.get('id') for r in rows}!=required or len(rows)!=len(required):
         raise ValueError('Visual review does not cover this integrated candidate')

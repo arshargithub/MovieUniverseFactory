@@ -29,3 +29,17 @@ def test_pass_still_requires_candidate_and_present_image_evidence(tmp_path):
 def test_reference_path_cannot_replace_uninspected_candidate_evidence(tmp_path):
     data=review();data['criteria'][0]['images']=['../old.png']
     with pytest.raises(ValueError):module.check_review_gate(data,'body161-fit46',tmp_path)
+
+
+def test_hip_handoff_requires_landmark_gate_and_no_unresolved_blockers(tmp_path):
+    data=review();data['candidate']='body168-hip66'
+    data.update(known_blockers_remaining=[],failure_seeking_review=True)
+    (tmp_path/'checked.png').touch()
+    with pytest.raises(ValueError,match='integrated'):module.check_review_gate(data,'body168-hip66',tmp_path)
+    for key in ('hip_fold','pelvic_volume_and_cleft'):
+        data['criteria'].append({'id':key,'status':'PASS','images':['checked.png'],'observation':'Full and partial bend inspected; structural landmarks retained'})
+    assert module.check_review_gate(data,'body168-hip66',tmp_path)
+    data['known_blockers_remaining']=['Cleft lost at partial bend']
+    with pytest.raises(ValueError,match='stay internal'):module.check_review_gate(data,'body168-hip66',tmp_path)
+    data['known_blockers_remaining']=[];data['criteria'][-1]['status']='NOT_RUN'
+    with pytest.raises(ValueError,match='stay internal'):module.check_review_gate(data,'body168-hip66',tmp_path)

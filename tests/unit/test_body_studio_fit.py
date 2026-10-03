@@ -296,3 +296,14 @@ def test_flexion_fairing_has_a_broad_smooth_waist_fade():
     values=[module.hip_fairing_support((.8,0,-4.-i*.01)) for i in range(401)]
     assert max(abs(a-b) for a,b in zip(values,values[1:]))<.03
     assert module.hip_fairing_support((-.8,0,-5.3))==module.hip_fairing_support((.8,0,-5.3))
+
+
+@pytest.mark.parametrize('operation',['hip63','hip66'])
+def test_shape_preserving_hip_correction_is_fixed_pinned_and_non_overwriting(monkeypatch,tmp_path,operation):
+    monkeypatch.setattr(module,'BASE',tmp_path)
+    monkeypatch.setattr(module,'digest',lambda p:module.SOURCE_SHA if p==module.SOURCE else 'cedce781c0980ce387b925d4b1cab6b510a8dcdd42453d6da243131440924f2f')
+    path=module.validate({'operation':operation})
+    assert path.name=='body168-'+operation
+    with pytest.raises(ValueError):module.validate({'operation':operation,'code':'anything'})
+    path.mkdir()
+    with pytest.raises(ValueError,match='overwrite'):module.validate({'operation':operation})

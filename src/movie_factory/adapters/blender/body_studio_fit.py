@@ -27,10 +27,10 @@ def protected():
 
 
 def validate(job):
-    if job in tuple({'operation':name} for name in ('hip58','hip59','hip61','hip62')):
+    if job in tuple({'operation':name} for name in ('hip58','hip59','hip61','hip62','hip63','hip66')):
         for path,sha in ((SOURCE,SOURCE_SHA),(BASE/'body164-legs57/adult-body-fit.blend','cedce781c0980ce387b925d4b1cab6b510a8dcdd42453d6da243131440924f2f')):
             if path.is_symlink() or digest(path)!=sha:raise ValueError('Pinned hip-correction input mismatch')
-        out=BASE/('body166-'+job['operation'])
+        out=BASE/(('body168-' if job['operation'] in ('hip63','hip66') else 'body166-')+job['operation'])
         if out.exists():raise ValueError('Never overwrite evidence')
         return out
     if job in tuple({'operation':name} for name in ('legs55','legs56','legs57')):
@@ -77,7 +77,7 @@ def main():
     job = json.loads(Path(sys.argv[sys.argv.index('--') + 1]).read_text())
     out = validate(job)
     out.mkdir()
-    if job['operation'] in ('hip58','hip59','hip61','hip62'):
+    if job['operation'] in ('hip58','hip59','hip61','hip62','hip63','hip66'):
         repair_hip_transition(out,job['operation'])
         return
     if job['operation'] in ('legs55','legs56','legs57'):
@@ -1417,6 +1417,22 @@ def repair_hip_transition(out,operation):
     blend.vertex_group=group.name
     bpy.context.view_layer.objects.active=body
     while body.modifiers.find(blend.name)>body.modifiers.find(main.name)+1:bpy.ops.object.modifier_move_up(modifier=blend.name)
+    shape_preserving=operation in ('hip63','hip66')
+    if shape_preserving:
+        # Delta-mush restores the neutral surface detail after smoothing the
+        # deformation, unlike SMOOTH which erased the gluteal cleft in62.
+        # Bind at the unchanged neutral surface; never smooth accepted rest.
+        fair=body.modifiers.new('Hip-local rest-shape corrective deformation','CORRECTIVE_SMOOTH')
+        fair_group=body.vertex_groups.new(name='MF_body168_hip_shape_preserving')
+        for v in body.data.vertices:
+            arm_weight=sum(g.weight for g in v.groups if body.vertex_groups[g.group].name.startswith(('upperarm.','forearm.','hand.')))
+            w=hip_fairing_support(tuple(v.co)) if arm_weight<1e-6 else 0.
+            if w:fair_group.add([v.index],w,'REPLACE')
+        fair.vertex_group=fair_group.name;fair.factor=.8;fair.iterations=24
+        fair.smooth_type='LENGTH_WEIGHTED';fair.rest_source='BIND';fair.use_only_smooth=False
+        while body.modifiers.find(fair.name)>body.modifiers.find(blend.name)+1:bpy.ops.object.modifier_move_up(modifier=fair.name)
+        bpy.context.view_layer.update();bpy.ops.object.correctivesmooth_bind(modifier=fair.name)
+        assert fair.is_bind,'Hip correction needs an actual neutral rest bind'
     if operation in ('hip59','hip61','hip62'):
         # Local linear skinning removes DQ inflation, but the flexion crease
         # still needs a pose-only fairing. Never fair the accepted neutral.
@@ -1441,7 +1457,7 @@ def repair_hip_transition(out,operation):
     assert coordinates_digest(tuple(v.co) for v in body.data.vertices)==local
     render('standing-side',90,(0,0,-5.5),15.7)
     apply(recipe);posed=surface()
-    upper=[i for i,p in enumerate(neutral) if p[2]>(-4.4 if operation in ('hip61','hip62') else -5.1) or (abs(p[0])>1.7 and p[2]>-8.3)]
+    upper=[i for i,p in enumerate(neutral) if p[2]>(-4.4 if operation in ('hip61','hip62') or shape_preserving else -5.1) or (abs(p[0])>1.7 and p[2]>-8.3)]
     upper_error=max((Vector(posed[i])-Vector(old_pose[i])).length for i in upper)
     assert upper_error<1e-5,('Upper-body pose changed',upper_error)
     angles=[('front',0),('front-left',-45),('left',-90),('rear-left',-135),('back',180),('rear-right',135),('right',90),('front-right',45)]
@@ -1453,17 +1469,22 @@ def repair_hip_transition(out,operation):
         if bone.name.startswith(('thigh.','shin.')):rot=rot.slerp(rot.__class__(),.5)
         half[bone.name]=[list(row) for row in Matrix.LocRotScale(loc,rot,scale)]
     apply(half);render('half-bend-side',90);render('half-bend-rear',135)
+    if shape_preserving:
+        # The failures appear already at partial flexion, so inspect that
+        # actual transition from all angles, not only two flattering samples.
+        for label,angle in angles:render('half-hip-'+label,angle,(0,-.35,-6.0),5.5)
+        render('half-bend-front',0);render('half-bend-left',-90);render('half-bend-back',180)
     apply(None);returned=surface()
     return_error=max((Vector(a)-Vector(b)).length for a,b in zip(after,returned))
     final_protected=protected();assert all(final_protected[n]==v for n,v in parent['protected'].items())
     assert return_error<1e-5 and digest(native)==pinned and digest(SOURCE)==SOURCE_SHA
-    result={'status':'INTERNAL_VISUAL_REVIEW_PENDING','method':'Hip-local linear/DQ multi-modifier blend'+(' plus pose-only flexion fairing' if operation!='hip58' else '')+'; no neutral sculpt',
+    result={'status':'INTERNAL_VISUAL_REVIEW_PENDING','method':'Hip-local linear/DQ multi-modifier blend'+(' plus neutral-bound rest-shape corrective deformation' if shape_preserving else ' plus pose-only flexion fairing' if operation!='hip58' else '')+'; no neutral sculpt',
         'parent_native_sha256':pinned,'protected':parent['protected'],'support_vertices':count,
         'body_local_geometry_exact':True,'neutral_surface_max_error':neutral_error,
         'previous_upper_pose_max_error':upper_error,'neutral_return_max_error':return_error,
         'pose_screen':{'pose_matrices':recipe,'neutral_surface_sha256':coordinates_digest(after),'posed_surface_sha256':coordinates_digest(posed)},
         'limits':['Static seated screen plus intermediate bend, not full riding performance','Original source native unmodified']}
-    if operation=='hip62':
+    if operation in ('hip62','hip66'):
         result['pose_screen']['_posed_surface_points']=posed
         bpy.context.preferences.filepaths.save_version=0
         bpy.ops.wm.save_as_mainfile(filepath=str(out/'adult-body-fit.blend'),check_existing=False)
