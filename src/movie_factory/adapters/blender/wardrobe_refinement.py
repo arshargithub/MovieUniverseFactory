@@ -12,7 +12,7 @@ from wardrobe_riding_fit import BASE, BODY, BODY_SHA, HORSE, HORSE_SHA, digest
 
 SOURCE = BASE / 'wardrobe169-seal01/dressed-fit.blend'
 SOURCE_SHA = '07d1989584dc44e2d1253364147dbd830ee67f7e7ad05c5ce4ed6ebff88c67ab'
-OPERATIONS = ('inspect01', 'inspect02', 'preview01', 'preview02', 'preview03', 'preview04', 'preview05', 'preview06', 'preview07', 'preview08', 'preview09', 'preview10', 'preview11', 'preview12', 'preview13', 'seal01', 'verify01', 'seal02', 'verify02')
+OPERATIONS = ('inspect01', 'inspect02', 'preview01', 'preview02', 'preview03', 'preview04', 'preview05', 'preview06', 'preview07', 'preview08', 'preview09', 'preview10', 'preview11', 'preview12', 'preview13', 'preview14', 'preview15', 'preview16', 'preview17', 'seal01', 'verify01', 'seal02', 'verify02', 'seal03', 'verify03')
 
 
 def validate(job):
@@ -342,6 +342,8 @@ def repair_tail(out, inspect_only=False):
     boundary_points=[horse.matrix_world@v.co for e in boundaries for v in e.verts]
     root=sum(boundary_points,Vector())/len(boundary_points)
     bmesh.ops.holes_fill(bm,edges=boundaries,sides=0)
+    from static_tail_dock import soften_dock_surface,root_fibers
+    soften_dock_surface(bm,horse.matrix_world,root)
     bmesh.ops.recalc_face_normals(bm,faces=list(bm.faces));bm.to_mesh(horse.data);bm.free()
     result['removed_original_tail_vertices']=len(ids);result['measured_original_dock_root']=list(root)
     inv=tail.matrix_world.inverted()
@@ -358,13 +360,15 @@ def repair_tail(out, inspect_only=False):
     # longitudinal hair geometry remains source-derived and separately named.
     from character_assembly import tube
     core=tube('MF_170_tail_dock',[(root.x,root.y-.08,root.z,.28,.28),
-                                 (root.x,root.y+.25,root.z-.22,.24,.22),
-                                 (root.x,root.y+.6,root.z-.7,.15,.15)],tail.data.materials[0],detail=24)
+                                 (root.x,root.y+.25,root.z-.59,.24,.22),
+                                 (root.x,root.y+.6,root.z-1.18,.10,.10)],tail.data.materials[0],detail=24)
     bm=bmesh.new();bm.from_mesh(core.data)
     bmesh.ops.holes_fill(bm,edges=[e for e in bm.edges if e.is_boundary],sides=0)
     bmesh.ops.recalc_face_normals(bm,faces=list(bm.faces));bm.to_mesh(core.data);bm.free()
     result['dock_core']=core.name
+    result['static_dock_fibers']=root_fibers(root)
     result['separate_flowing_tail_refitted']=True
+    result['visible_tail']='Agent-authored volumetric native curve groom; refitted card groom/core retained hidden after flat-root failure; static only'
     return result
 
 
@@ -373,7 +377,7 @@ def render_views(out, full=False, rear_only=False):
     from wardrobe_riding_fit import fit_render, riding_pose, fit_static_contacts
     rig=bpy.data.objects['MF_body156_fit_rig']
     horse=[o for o in bpy.context.scene.objects if o.get('source_object')]
-    horse_visible=[o for o in bpy.context.scene.objects if o.name.startswith(('MF_fit_horse','MF_fit_saddle','MF_fit_bridle','MF_fit_bit','MF_fit_Torus','MF_fit_Full','MF_fit_rein_','MF_fit_stirrup_leather_','MF_170_tail_dock'))]
+    horse_visible=[o for o in bpy.context.scene.objects if o.name.startswith(('MF_fit_horse','MF_fit_saddle','MF_fit_bridle','MF_fit_bit','MF_fit_Torus','MF_fit_Full','MF_fit_rein_','MF_fit_stirrup_leather_','MF_170_tail_'))]
     states={o.name:o.hide_render for o in horse_visible}
     neutral(rig)
     for ob in horse_visible:ob.hide_render=True
@@ -420,13 +424,20 @@ def build(out, operation):
         while list(strap.modifiers).index(rounded)>1:
             bpy.ops.object.modifier_move_up(modifier=rounded.name)
     bpy.context.scene.cycles.samples=16
-    render_views(out,operation.startswith('seal'),operation in ('preview06','preview07','preview08','preview09','preview10','preview11','preview12','preview13'))
+    if operation in ('preview14','preview15','preview16','preview17'):
+        from wardrobe_riding_fit import fit_render
+        for label,angle in [('rear-quarter',140),('side',90),('opposite-side',-90)]:
+            fit_render(out,'tail-'+label,angle,(0,7,-10),12,(850,750))
+    else:
+        render_views(out,operation.startswith('seal'),operation in ('preview06','preview07','preview08','preview09','preview10','preview11','preview12','preview13'))
     assert accepted_signature(before)==before and coordinates_digest(tuple(v.co) for v in body.data.vertices)==basis
     result={'operation':operation,'parent_sha256':SOURCE_SHA,'protected_signatures':before,'body_basis_digest':basis,
             'protected_data_exact':True,'body_basis_exact':True,'source_pins_unchanged':all(digest(p)==h for p,h in ((SOURCE,SOURCE_SHA),(BODY,BODY_SHA),(HORSE,HORSE_SHA))),
             'stature_m':1.7526,'neutral_body_height_scene_units':height,'metric_scale_length':bpy.context.scene.unit_settings.scale_length,
             'tailoring':tailoring,'look':look,'scarf':scarf,'tail':tail,'handler_sha256':digest(Path(__file__)),
             'visual_gate':'NOT_RUN','Director_acceptance':'PENDING','limits':['Static pose only','No gait, cloth physics, continuous grasp, rights or release qualification']}
+    from static_tail_dock import data_signature
+    result['static_tail_curve_digest']=data_signature(bpy.data.objects['MF_170_tail_fibers'])
     if operation.startswith('seal'):
         import numpy as np
         names=[o.name for o in bpy.context.scene.objects if not o.hide_render and o.type=='MESH']
@@ -448,10 +459,12 @@ def verify(out, operation):
     body=bpy.data.objects['MF_studio_adult_body'];rig=bpy.data.objects['MF_body156_fit_rig']
     exact=accepted_signature(result['protected_signatures'])==result['protected_signatures']
     basis=coordinates_digest(tuple(v.co) for v in body.data.vertices)==result['body_basis_digest']
+    from static_tail_dock import data_signature
+    tail_exact=data_signature(bpy.data.objects['MF_170_tail_fibers'])==result['static_tail_curve_digest']
     reference=np.load(selected/'evaluated-surfaces.npz',allow_pickle=False)
     actual=evaluated_surfaces(reference.files)
     errors={name:float(np.max(np.abs(actual[name]-reference[name]))) if actual[name].shape==reference[name].shape else None for name in reference.files}
-    assert exact and basis and all(v is not None and v<2e-5 for v in errors.values())
+    assert exact and basis and tail_exact and all(v is not None and v<2e-5 for v in errors.values())
     tunic=bpy.data.objects['MF_fit_tunic'];contact=tunic.modifiers['Final posed fabric coverage'];offset=contact.offset
     contact.offset=offset+.025;bpy.context.view_layer.update()
     revised=evaluated_surfaces([tunic.name])[tunic.name]
@@ -463,9 +476,9 @@ def verify(out, operation):
     fit_render(out,'reopened-mounted-side',90,(0,-1,-10),29,(1000,700))
     neutral(rig)
     for ob in bpy.context.scene.objects:
-        if ob.name.startswith(('MF_fit_horse','MF_fit_saddle','MF_fit_bridle','MF_fit_bit','MF_fit_Torus','MF_fit_Full','MF_fit_rein_','MF_fit_stirrup_leather_','MF_170_tail_dock')):ob.hide_render=True
+        if ob.name.startswith(('MF_fit_horse','MF_fit_saddle','MF_fit_bridle','MF_fit_bit','MF_fit_Torus','MF_fit_Full','MF_fit_rein_','MF_fit_stirrup_leather_','MF_170_tail_')):ob.hide_render=True
     bpy.context.view_layer.update();fit_render(out,'reopened-standing-front',0)
-    verification={'reopened':True,'protected_signatures_exact':exact,'body_basis_exact':basis,
+    verification={'reopened':True,'protected_signatures_exact':exact,'body_basis_exact':basis,'static_tail_curve_data_exact':tail_exact,
                   'evaluated_local_surface_max_errors':errors,'surface_tolerance':2e-5,
                   'stature_m':bpy.context.scene['MF_pashtun_stature_m'],
                   'controlled_garment_clearance_revision_max_delta':revision_delta,'revision_rollback_max_delta':rollback,

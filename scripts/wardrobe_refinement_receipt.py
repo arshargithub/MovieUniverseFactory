@@ -22,7 +22,7 @@ def main():
     end=next(e for e in events if e['event_id']=='wardrobe170-work-end')
     seconds=(datetime.fromisoformat(end['utc'])-datetime.fromisoformat(start['utc'])).total_seconds()
     manifest=[]
-    for folder in ('wardrobe170-seal02','wardrobe170-verify02'):
+    for folder in ('wardrobe170-seal03','wardrobe170-verify03'):
         for path in sorted((BASE/folder).iterdir()):
             if not path.is_file():continue
             h=hashlib.sha256()
@@ -38,7 +38,7 @@ def main():
           'engineering_model':None,'reasoning_effort':None,'engineering_tokens':None,'engineering_dollar_cost':None,
           'paid_provider_calls_in_this_scope':0,'asset_purchases_in_this_scope':0,'spend_provenance':'Observed scoped local execution only, not free subscription engineering.',
           'native_job_count':sum(j['kind']=='native' for j in jobs),'native_job_sum_seconds':sum(j['seconds'] for j in jobs if j['kind']=='native'),
-          'job_outcome_definition':'Wrapper exit outcome only; failed visual previews and seal01 are retained and not promoted.',
+          'job_outcome_definition':'Wrapper exit outcome only; failed visual previews and seals01/02 are retained and not promoted.',
           'jobs':jobs,'retained_scope_bytes_before_receipt':retained,'initial_storage_forecast_bytes':350_000_000,
           'technical_selected_outputs':1,'director_accepted_outputs_in_this_scope':0,
           'limits':['Static pose and prescribed partial lean only; no gait, cloth physics or continuous grasp','Coarse footwear/hem/hand hold remain shot-screen dependencies','Body/groom/horse release rights unresolved','Git text durability is not off-device native-media backup'],

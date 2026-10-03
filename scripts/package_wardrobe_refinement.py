@@ -13,16 +13,16 @@ CRITERIA={'protected_foundation','tailored_silhouette','costume_character','open
 
 
 def main():
-    selected=BASE/'wardrobe170-seal02';receipt=BASE/'wardrobe170-operating'
+    selected=BASE/'wardrobe170-seal03';receipt=BASE/'wardrobe170-operating'
     review=json.loads((receipt/'visual-review.json').read_text())
-    check_review(review,selected,'wardrobe170-seal02',CRITERIA)
+    check_review(review,selected,'wardrobe170-seal03',CRITERIA)
     result=json.loads((selected/'result.json').read_text())
-    fresh=json.loads((BASE/'wardrobe170-verify02/result.json').read_text())
+    fresh=json.loads((BASE/'wardrobe170-verify03/result.json').read_text())
     assert result['protected_data_exact'] and result['body_basis_exact'] and result['source_pins_unchanged']
-    assert fresh['reopened'] and fresh['protected_signatures_exact'] and fresh['body_basis_exact']
+    assert fresh['reopened'] and fresh['protected_signatures_exact'] and fresh['body_basis_exact'] and fresh['static_tail_curve_data_exact']
     assert all(v is not None and v<fresh['surface_tolerance'] for v in fresh['evaluated_local_surface_max_errors'].values())
     compared={}
-    for path in (BASE/'wardrobe170-verify02').glob('reopened-*.png'):
+    for path in (BASE/'wardrobe170-verify03').glob('reopened-*.png'):
         original=selected/path.name.removeprefix('reopened-')
         delta=ImageChops.difference(Image.open(path).convert('RGB'),Image.open(original).convert('RGB'))
         maximum=max(v[1] for v in delta.getextrema());assert maximum<=4
