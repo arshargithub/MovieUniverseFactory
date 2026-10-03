@@ -257,6 +257,12 @@ The [first integrated attempt](../planning/SERIES_01_INTEGRATED_HAIR_ATTEMPT_01.
 
 ## Decision continuity and adoption
 
+### Wardrobe interface continuation — exchange169
+
+The accepted body and groom are protected inputs, not a reason to restart anatomical polishing. Cloth must follow the **evaluated** body, including pose corrections, rather than merely copying bone weights. A neutral outfit and a flattering riding side can both pass while the shoulder fails in an oblique. See the [wardrobe/tack record](../planning/SERIES_01_WARDROBE_TACK_FIT.md): topology inspection disproved an apparent underarm-aperture diagnosis; native surface binding then improved exposed-arm coverage. This is scoped static-fit evidence, not universal clothing deformation or riding qualification.
+
+Use the required pose and the most revealing oblique before a repeated full turnaround. Restrict fitting targets: a scarf can push a harness away from the tunic if accidentally included as the support surface. Keep coherent simple material blocks, register real saddle/rein/stirrup geometry, and defer cloth weave/stitches and dynamic grasp to their named shot tests. The multi-hour diagnostic overrun is a process failure to carry forward, not a new normal or proof that the entire task must be perfected before footage. Selected design review, native reopening, motion, cultural/art direction and rights are separate gates.
+
 Consulted [knowledge index](README.md), the historical register and [Release applicability](RELEASE_01_APPLICABILITY.md). Re-read full source turns `a253f9d8-af6f-4a6d-91f7-87a06b6e7200` and `239aaa29-fb22-44f7-a8d7-886a9ad8dc5b`: the Director explicitly required agreed review checkpoints. **ADOPT** that contract; exchange137 changes this asset's checkpoint granularity, not the Director's final authority. The old example checkpoint list is not a mandate for this production.
 
 Re-read full asset-creation proposal `e2c7fcd8-04a8-4696-98d5-cf88ff29f3e8` and acceptance `c989f205-885e-4232-8bca-4902f9579c30`: a persistent controllable asset is the goal, not proving that the agent personally models every polygon. **ADOPT**, no global renderer switch. Hybrid/direct/acquired routes remain possible; current autonomous hair authoring is unqualified, not evidence against the whole persistent-world architecture. Existing [realization review](../planning/SERIES_01_REALIZATION_REVIEW.md) remains applicable.

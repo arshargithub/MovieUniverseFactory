@@ -1,5 +1,9 @@
 # Pashtun complete-character blockout — exchange153
 
+**Director acceptance169:** "ok approved. get going on the wardrobe and horse/tack fit" accepts the displayed body168-hip66 static correction. Preserve this source and accepted152 head/hair; no further isolated anatomy polish. [Authorized next deliverable](SERIES_01_WARDROBE_TACK_FIT.md) is the complete practical wardrobe with actual horse/tack contacts. Costume, timed riding, rights and release gates remain separate.
+
+Continuation169: the linked wardrobe/static-tack candidate is saved/reopened with protected source and body basis exact. The body repair is not reopened; current Director gate is whole-costume direction. The next production dependency is coordinated low-cost riding in trailer timing, with final materials, credible dynamic grasp/contact, gait reuse, rights and media backup still open. Native source and planning changes are local and separately committed; checkpoint170 unchanged.
+
 ## Current review outcome
 
 ### Continued repair and stronger exit contract — exchange168
