@@ -257,6 +257,18 @@ The [first integrated attempt](../planning/SERIES_01_INTEGRATED_HAIR_ATTEMPT_01.
 
 ## Decision continuity and adoption
 
+### Integrated wardrobe correction — exchange171
+
+Director rejects170's narrow crown strip, bilateral sleeve wings, hip-hugging hem, plain cloth and pale/airbrushed exposed-skin interface. Withdraw those visual passes; valid source/reopen checks and the tail repair remain separate. Scarf fullness and coherent sleeve joins are structural direction requirements, not small finish items to waive for a future shot. Overall costume vocabulary is liked, not final accepted. Preserve accepted152 identity/groom and accepted169 body; do not reshape them to rescue clothing.
+
+The untextured control disproves the initial “overstrong weave” diagnosis: fitting both sides of already-solidified fabric to one surface creates coincident layers and crust-like z-fighting. This is the same lesson recorded at169, not a new Blender limitation. Fit the single surface, verify its winding, then add thickness. Nearest-skin and radial skin-copy sleeve patterns still create local spikes; a clean sewn sleeve with rounded cap and evaluated-body support removes them. Do not keep adding noise, smoothing or dye to an unsuitable construction.
+
+Lower scarf projection onto a nearby torso triangle creates a rear spike; preserve a coherent falling veil around the groom rather than forcing every point onto the back. A softly flared tunic needs side vents and an actual mounted screen, not merely a wider standing outline. Inspect accessory integration too: whole views hide a collapsed belt rim and a new vertical band can still bury itself under posed fabric. Test the two revealing close-ups before another complete turnaround, with clearance applied before thickness. The successful derivative gives leather articulated torso support rather than soft-skin following, retaining band width in the prescribed poses; it is not general belt dynamics or continuous-motion proof.
+
+Extend the approved authored skin character into derivative exposed neck/chest/hands with a skin-only atlas region and gradual lower-neck blend. Protect facial blend weights and original source materials; don't flatten the strong face to match a flat body placeholder or accidentally project eyes/lips onto limbs. Rugged cloth character is uneven dye, matte woven surface and practical construction, not automatic grime, invented insignia or a claim of ethnographic authenticity. Director appearance remains a separate judgment.
+
+Capture cumulative time, failures and method changes; pass names do not grant new allowances. Serialize workers and wait for actual process completion—not the last render—before modifying the handler. Early failed previews with post-render handler edits have no exact executed-source claim. Seal the selected source before dispatch, inspect the actual saved images, and preserve failures without promoting them. Current correction exit and selected evidence are recorded in the [wardrobe/tack record](../planning/SERIES_01_WARDROBE_TACK_FIT.md); this learning does not itself grant a visual pass, riding qualification or release acceptance.
+
 ### Wardrobe refinement — exchange170
 
 The Director explicitly says elapsed duration alone is not the current concern; Efficient Quality and meaningful handovers are. Preserve the prior overrun evidence, but distinguish avoidable repeated full renders, premature passes and poor method selection from an invented hard time limit. Method checkpoints still require reassessment, not a cosmetic go-ahead or permission to lower the exit gate.
