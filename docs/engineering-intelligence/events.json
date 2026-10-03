@@ -1241,6 +1241,32 @@
       "engineering_cost_usd": null,
       "evidence": ["docs/planning/SERIES_01_BODY_ASSEMBLY_BRIEF.md", ".runtime/art-direction/series01-facebuilder-trial-01/body161-operating/visual-review.json", ".runtime/art-direction/series01-facebuilder-trial-01/body161-verify48/result.json"]
     }
+    , {
+      "event_id": "series01-body162-director-rejects-shoulder-pass",
+      "event_type": "engineering_review_outcome",
+      "experiment_id": "SERIES01-LIKENESS-ASSET",
+      "controlled_model_comparison": false,
+      "outcome": "FIT47_SHOULDER_AND_WHOLE_RESULT_PASS_RETRACTED",
+      "observation": "Director identifies blocky neutral shoulders, an upper-chest/armpit depression, skewed seated upper arms and a posterior triceps flap. Read-only49 confirms the visible flap; sampled inner-triceps vertices carry over90% torso influence under the X-width classification. Unmodified donor cap provides a coherent local shape control, not an identity replacement. Preview50 uses actual lower-arm connectivity and upper-shoulder surface paths plus measured donor elbow/wrist pivots. Both rear/side views are now required internally. Preserve47's historical machine evidence but withdraw shoulder/whole-result readiness. Current model/effort/usage unverified; no controlled or causal model conclusion.",
+      "observed_supervisor_model": null,
+      "reasoning_effort": null,
+      "engineering_subscription_usage": null,
+      "engineering_cost_usd": null,
+      "evidence": ["docs/planning/SERIES_01_BODY_ASSEMBLY_BRIEF.md", ".runtime/art-direction/series01-facebuilder-trial-01/body162-inspect49/result.json"]
+    }
+    , {
+      "event_id": "series01-body162-shoulder-correction-review-candidate",
+      "event_type": "engineering_review_outcome",
+      "experiment_id": "SERIES01-LIKENESS-ASSET",
+      "controlled_model_comparison": false,
+      "outcome": "FIT52_INTERNAL_STATIC_FOUNDATION_PASS_DIRECTOR_PENDING",
+      "observation": "One connectivity-weight/donor-cap preview selected, with both posterior arms and hair-hidden side inspected. Selected52 matches all30 preview images; five fresh-open renders retain appearance. Neutral geometry exact, posed max error4.774328325867841e-6 below1e-5, pose/blink return0 and source data protected.81 focused tests, full suite not run. Three native jobs succeed; one unsupported ledger CLI event separately recorded.160.31MB retained under190MB forecast.42.38-minute UTC window and cumulative234.85 minutes are partial work spans, not exact active effort:52 has1101.45-second UTC/monotonic discrepancy. No spend or causal model claim; model/effort/usage unknown. Implementation690b5b1 binds final source post-run; Director acceptance, costume, riding contacts, texture, rights and backup remain open.",
+      "observed_supervisor_model": null,
+      "reasoning_effort": null,
+      "engineering_subscription_usage": null,
+      "engineering_cost_usd": null,
+      "evidence": ["docs/planning/SERIES_01_BODY_ASSEMBLY_BRIEF.md", ".runtime/art-direction/series01-facebuilder-trial-01/body162-operating/visual-review.json", ".runtime/art-direction/series01-facebuilder-trial-01/body162-fit52/result.json"]
+    }
   ],
   "recording_mode": "manual_evidence_backfill_and_future_event_capture",
   "schema_version": "1.0",
