@@ -12,11 +12,11 @@ GALLERY=Path('/Users/adisharma/.codex/visualizations/2026/09/09/01a0878c-e7a2-75
 CRITERIA={'protected_foundation','standing_costume','mounted_clearance','tack_registration','partial_lean','whole_static_candidate'}
 
 
-def check_review(review, root):
+def check_review(review, root, candidate='wardrobe169-seal01', criteria=CRITERIA):
     rows=review.get('criteria',[])
-    if review.get('candidate')!='wardrobe169-seal01' or review.get('known_structural_blockers')!=[]:
+    if review.get('candidate')!=candidate or review.get('known_structural_blockers')!=[]:
         raise ValueError('Known blockers or wrong candidate stay internal')
-    if len(rows)!=len(CRITERIA) or {r.get('id') for r in rows}!=CRITERIA:
+    if len(rows)!=len(criteria) or {r.get('id') for r in rows}!=criteria:
         raise ValueError('Incomplete integrated static review')
     for row in rows:
         if row.get('status')!='PASS' or not row.get('images') or not row.get('observation'):

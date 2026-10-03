@@ -15,6 +15,16 @@ def ready(root):
 def test_ready_gate(tmp_path):module.check_review(ready(tmp_path),tmp_path)
 
 
+def test_refinement_requires_its_own_candidate_and_criteria(tmp_path):
+    review=ready(tmp_path)
+    criteria={'protected_foundation','tailored_silhouette','costume_character','open_scarf_fit','single_tail_assembly','mounted_and_partial_regressions'}
+    with pytest.raises(ValueError):
+        module.check_review(review,tmp_path,'wardrobe170-seal02',criteria)
+    review['candidate']='wardrobe170-seal02'
+    review['criteria']=[{'id':name,'status':'PASS','images':['frame.png'],'observation':'Manually inspected scoped refinement'} for name in criteria]
+    module.check_review(review,tmp_path,'wardrobe170-seal02',criteria)
+
+
 @pytest.mark.parametrize('defect',['blocker','failed','missing','escape'])
 def test_failed_review_stays_internal(tmp_path,defect):
     review=ready(tmp_path)

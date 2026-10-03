@@ -12,7 +12,7 @@ from wardrobe_riding_fit import BASE, BODY, BODY_SHA, HORSE, HORSE_SHA, digest
 
 SOURCE = BASE / 'wardrobe169-seal01/dressed-fit.blend'
 SOURCE_SHA = '07d1989584dc44e2d1253364147dbd830ee67f7e7ad05c5ce4ed6ebff88c67ab'
-OPERATIONS = ('inspect01', 'inspect02', 'preview01', 'preview02', 'preview03', 'preview04', 'preview05', 'seal01', 'verify01')
+OPERATIONS = ('inspect01', 'inspect02', 'preview01', 'preview02', 'preview03', 'preview04', 'preview05', 'preview06', 'preview07', 'preview08', 'preview09', 'preview10', 'preview11', 'preview12', 'seal01', 'verify01', 'seal02', 'verify02')
 
 
 def validate(job):
@@ -24,8 +24,8 @@ def validate(job):
     out = BASE / ('wardrobe170-' + job['operation'])
     if out.exists():
         raise ValueError('Never overwrite wardrobe evidence')
-    if job['operation'] == 'verify01':
-        selected = BASE / 'wardrobe170-seal01'
+    if job['operation'].startswith('verify'):
+        selected = BASE / ('wardrobe170-seal'+job['operation'][-2:])
         result = json.loads((selected / 'result.json').read_text())
         path = selected / 'dressed-fit.blend'
         if path.is_symlink() or digest(path) != result['native_sha256']:
@@ -186,27 +186,113 @@ def fit_scarf():
         for p in list(ev.data.points)[::stride]: hull.verts.new(ob.matrix_world @ p.position)
     bmesh.ops.convex_hull(hull, input=list(hull.verts), use_existing_faces=False)
     hull.verts.ensure_lookup_table(); hull.verts.index_update()
-    tree = BVHTree.FromPolygons([v.co for v in hull.verts],[tuple(v.index for v in f.verts) for f in hull.faces]); hull.free()
+    top=max(v.co.z for v in hull.verts)
+    vertices=[tuple(v.co) for v in hull.verts];faces=[tuple(v.index for v in f.verts) for f in hull.faces]
+    tree = BVHTree.FromPolygons(vertices,faces); hull.free()
+    from character_assembly import mesh
+    proxy=mesh('MF_170_temporary_groom_collision',vertices,faces,hood.data.materials[0]);proxy.hide_render=True
+    proxy.modifiers.new('Static drape groom collision','COLLISION');proxy.collision.thickness_outer=.035
     cloth_tree = tree_for(bpy.data.objects['MF_fit_tunic'])
-    inv = hood.matrix_world.inverted(); changed=0
-    for v in hood.data.vertices:
-        p=hood.matrix_world @ v.co
-        if p.z > -1.35:
-            hit, normal, _, distance = tree.find_nearest(p)
-            if hit is not None and distance < .85:
-                p = p.lerp(hit + normal * .07, .92)
-        else:
-            hit, normal, _, distance = cloth_tree.find_nearest(p)
-            t=min(1.,max(0.,(-p.z-1.35)/1.0))
-            if hit is not None and distance < 1.4:
-                p=p.lerp(hit+normal*.09,t*.8)
-        v.co=inv @ p; changed+=1
-    hood.data.update()
+    # Donor lower folds remain unsuitable after depth-only fitting. Do not
+    # repeat another nearest-point patch. Author one continuous lightweight
+    # open veil from measured hair/garment envelopes and broad vertical folds.
+    hood.hide_render=True
+    authored_open_hood(tree,cloth_tree,hood.data.materials[0],top)
+    bpy.data.objects.remove(proxy,do_unlink=True)
     # Front donor wrap is separate from the hood. Refitting its single
     # surface avoids a thick collar/plate and preserves shoulder coverage.
     shawl=bpy.data.objects['MF_fit_diagonal_scarf'];shawl.hide_render=True
     authored_wrap(hood.data.materials[0])
-    return {'donor_vertices_adapted':changed,'hair_geometry_changed':False,'hair_clearance_scene_units':.07,'scope':'Static donor scarf fit, not simulated cloth'}
+    return {'donor_vertices_adapted':0,'hair_geometry_changed':False,'hair_clearance_scene_units':.14,'scope':'Authored open veil with scoped neutral static cloth settling, frozen before posing; not dynamic cloth qualification; rejected donor retained hidden'}
+
+
+def authored_open_hood(hair_tree,cloth_tree,mat,top):
+    import bpy
+    from mathutils import Vector
+    from character_assembly import mesh
+    rig=bpy.data.objects['MF_body156_fit_rig']
+    points=[];faces=[];nu=65;nv=35
+    for j in range(nv):
+        v=j/(nv-1)
+        for i in range(nu):
+            theta=-math.pi/2+math.pi*i/(nu-1)
+            # Softly unequal hem, continuous drape; no stacked annular rolls.
+            z=(top+.10-.65*abs(math.sin(theta))**1.5)*(1-v)+(-3.5+.6*abs(math.sin(theta))+.12*math.sin(theta+.5))*v
+            center=Vector((0,.15,z));direction=Vector((math.sin(theta),math.cos(theta),0))
+            hits=[]
+            # A veil falls from the groom rather than stepping inward at the
+            # nape to a different torso envelope. Sample just below the crest
+            # to avoid discontinuous no-hit crown spikes.
+            sample=Vector((0,.15,min(z,top-.10)))
+            for tree in (hair_tree,):
+                hit,_,_,_=tree.ray_cast(sample+direction*7,-direction,12)
+                if hit is not None and (hit-center).dot(direction)>0:hits.append((hit-center).dot(direction))
+            radius=max(hits or [.15])+.14
+            if v>.55:
+                hit,_,_,_=cloth_tree.ray_cast(center+direction*7,-direction,12)
+                if hit is not None:radius=max(radius,(hit-center).dot(direction)+.12)
+            # Three unequal longitudinal folds become stronger below nape;
+            # crown stays close, while shoulders have room without a cape lip.
+            fold=max(0.,v-.3)*(.19*math.exp(-((theta+.68)/.22)**2)+.25*math.exp(-((theta-.1)/.3)**2)+.16*math.exp(-((theta-1.05)/.2)**2))
+            p=center+direction*(radius+fold)
+            points.append(tuple(p))
+    # Taut major drape between crown, hair and upper back: construct the
+    # concave outer profile, bridging inward nape dents without a floating
+    # vertical curtain. Broad unequal folds remain above this support.
+    for i in range(nu):
+        theta=-math.pi/2+math.pi*i/(nu-1);direction=Vector((math.sin(theta),math.cos(theta),0))
+        values=[(Vector(points[j*nu+i])-Vector((0,.15,points[j*nu+i][2]))).dot(direction) for j in range(nv)]
+        hull=[]
+        for j,r in enumerate(values):
+            while len(hull)>1 and (hull[-1][1]-hull[-2][1])/(hull[-1][0]-hull[-2][0]) < (r-hull[-1][1])/(j-hull[-1][0]):hull.pop()
+            hull.append((j,r))
+        for (a,ra),(b,rb) in zip(hull,hull[1:]):
+            for j in range(a,b+1):
+                radius=ra+(rb-ra)*(j-a)/(b-a)
+                v=j/(nv-1)
+                radius+=.12*math.sin(math.pi*v)*(.5+.5*math.cos(9*theta+1.4*v))
+                z=points[j*nu+i][2];points[j*nu+i]=(direction.x*radius,.15+direction.y*radius,z)
+    for j in range(nv-1):
+        for i in range(nu-1):
+            a=j*nu+i;faces.append((a,a+1,a+nu+1,a+nu))
+    ob=mesh('MF_170_authored_open_scarf',points,faces,mat)
+    settle_open_veil(ob,nu)
+    smooth=ob.modifiers.new('Continuous major scarf drape','SMOOTH');smooth.factor=.6;smooth.iterations=5
+    ob.modifiers.new('Soft scarf surface','SUBSURF').levels=2
+    ob.modifiers.new('Thin cloth edge','SOLIDIFY').thickness=.02
+    rest=rig.matrix_world@rig.data.bones['chest'].matrix_local
+    attach=ob.constraints.new('CHILD_OF');attach.target=rig;attach.subtarget='chest';attach.inverse_matrix=rest.inverted()
+
+
+def settle_open_veil(ob,nu):
+    """Construction-only low-resolution settling; no production physics rig."""
+    import bpy
+    source=bpy.data.objects['MF_fit_tunic']
+    proxy=source.copy();proxy.data=source.data.copy();proxy.name='MF_170_temporary_tunic_collision'
+    bpy.context.scene.collection.objects.link(proxy);proxy.hide_render=True
+    decimate=proxy.modifiers.new('Static drape inexpensive collision envelope','DECIMATE');decimate.ratio=.10
+    proxy.modifiers.new('Static drape body collision','COLLISION');proxy.collision.thickness_outer=.035
+    pin=ob.vertex_groups.new(name='Static crown attachment')
+    pin.add(list(range(nu*2)),1.,'REPLACE')
+    cloth=ob.modifiers.new('Construction-only neutral veil settling','CLOTH')
+    cloth.settings.quality=5;cloth.settings.mass=.25
+    cloth.settings.tension_stiffness=12;cloth.settings.compression_stiffness=12
+    cloth.settings.shear_stiffness=6;cloth.settings.bending_stiffness=.08
+    cloth.settings.vertex_group_mass=pin.name
+    cloth.collision_settings.distance_min=.035
+    cloth.point_cache.frame_start=1;cloth.point_cache.frame_end=36
+    original_frame=bpy.context.scene.frame_current
+    for frame in range(1,37):
+        bpy.context.scene.frame_set(frame)
+        evaluated=ob.evaluated_get(bpy.context.evaluated_depsgraph_get())
+        temporary=evaluated.to_mesh();evaluated.to_mesh_clear()
+    evaluated=ob.evaluated_get(bpy.context.evaluated_depsgraph_get());temporary=evaluated.to_mesh()
+    coords=[v.co.copy() for v in temporary.vertices];evaluated.to_mesh_clear()
+    assert len(coords)==len(ob.data.vertices)
+    ob.modifiers.remove(cloth)
+    for vertex,co in zip(ob.data.vertices,coords):vertex.co=co
+    ob.data.update();bpy.data.objects.remove(proxy,do_unlink=True)
+    bpy.context.scene.frame_set(original_frame)
 
 
 def authored_wrap(mat):
@@ -216,7 +302,7 @@ def authored_wrap(mat):
     from character_assembly import mesh
     from wardrobe_riding_fit import bind_torso
     tunic=bpy.data.objects['MF_fit_tunic'];tree=tree_for(tunic)
-    anchors=[Vector(p) for p in [(-1.28,.15,-1.45),(-1.67,-.35,-2.0),(-1.05,-1.0,-2.45),(-.25,-1.30,-2.90),(.65,-1.15,-3.40),(1.37,-.60,-3.85),(1.47,.20,-4.0),(1.03,1.04,-3.90)]]
+    anchors=[Vector(p) for p in [(-1.28,.15,-1.45),(-1.67,-.35,-2.0),(-1.05,-1.0,-2.45),(-.25,-1.30,-2.90),(.65,-1.15,-3.40),(1.37,-.60,-3.85)]]
     points=[];faces=[];n=8
     for i in range(len(anchors)-1):
         p0=anchors[max(0,i-1)];p1=anchors[i];p2=anchors[i+1];p3=anchors[min(len(anchors)-1,i+2)]
@@ -273,7 +359,13 @@ def repair_tail(out, inspect_only=False):
     dock_points=[horse.matrix_world@horse.data.vertices[i].co for i in ids]
     root=min(dock_points,key=lambda p:p.y)
     bm=bmesh.new();bm.from_mesh(horse.data);bm.verts.ensure_lookup_table()
-    bmesh.ops.delete(bm,geom=[bm.verts[i] for i in ids],context='VERTS');bm.to_mesh(horse.data);bm.free()
+    bmesh.ops.delete(bm,geom=[bm.verts[i] for i in ids],context='VERTS')
+    boundaries=[e for e in bm.edges if e.is_boundary and all((horse.matrix_world@v.co-root).length<2. for v in e.verts)]
+    assert boundaries, 'Inspect actual new tail aperture, never cap arbitrary horse holes'
+    boundary_points=[horse.matrix_world@v.co for e in boundaries for v in e.verts]
+    root=sum(boundary_points,Vector())/len(boundary_points)
+    bmesh.ops.holes_fill(bm,edges=boundaries,sides=0)
+    bmesh.ops.recalc_face_normals(bm,faces=list(bm.faces));bm.to_mesh(horse.data);bm.free()
     result['removed_original_tail_vertices']=len(ids);result['measured_original_dock_root']=list(root)
     inv=tail.matrix_world.inverted()
     for v in tail.data.vertices:
@@ -288,15 +380,18 @@ def repair_tail(out, inspect_only=False):
     # Small coherent dark dock core closes the groom's card roots. The
     # longitudinal hair geometry remains source-derived and separately named.
     from character_assembly import tube
-    core=tube('MF_170_tail_dock',[(root.x,root.y-.08,root.z,.19,.19),
-                                 (root.x,root.y+.25,root.z-.22,.17,.16),
-                                 (root.x,root.y+.6,root.z-.7,.10,.10)],tail.data.materials[0],detail=24)
+    core=tube('MF_170_tail_dock',[(root.x,root.y-.08,root.z,.28,.28),
+                                 (root.x,root.y+.25,root.z-.22,.24,.22),
+                                 (root.x,root.y+.6,root.z-.7,.15,.15)],tail.data.materials[0],detail=24)
+    bm=bmesh.new();bm.from_mesh(core.data)
+    bmesh.ops.holes_fill(bm,edges=[e for e in bm.edges if e.is_boundary],sides=0)
+    bmesh.ops.recalc_face_normals(bm,faces=list(bm.faces));bm.to_mesh(core.data);bm.free()
     result['dock_core']=core.name
     result['separate_flowing_tail_refitted']=True
     return result
 
 
-def render_views(out, full=False):
+def render_views(out, full=False, rear_only=False):
     import bpy
     from wardrobe_riding_fit import fit_render, riding_pose, fit_static_contacts
     rig=bpy.data.objects['MF_body156_fit_rig']
@@ -305,9 +400,10 @@ def render_views(out, full=False):
     states={o.name:o.hide_render for o in horse_visible}
     neutral(rig)
     for ob in horse_visible:ob.hide_render=True
-    angles=[('front',0),('side',90),('rear',180)] if full else [('front',0)]
+    angles=[('rear',180),('side',90)] if rear_only else [('front',0),('side',90),('rear',180)] if full else [('front',0)]
     for label,angle in angles:fit_render(out,'standing-'+label,angle)
     fit_render(out,'head-scarf-quarter',-40,(0,.15,-.75),5.7,(720,800))
+    if rear_only:return
     for ob in horse_visible:ob.hide_render=states[ob.name]
     riding_pose(rig);bpy.context.view_layer.update()
     leather=bpy.data.objects['MF_fit_waist_belt'].data.materials[0]
@@ -347,14 +443,14 @@ def build(out, operation):
         while list(strap.modifiers).index(rounded)>1:
             bpy.ops.object.modifier_move_up(modifier=rounded.name)
     bpy.context.scene.cycles.samples=16
-    render_views(out,operation=='seal01')
+    render_views(out,operation.startswith('seal'),operation in ('preview06','preview07','preview08','preview09','preview10','preview11','preview12'))
     assert accepted_signature(before)==before and coordinates_digest(tuple(v.co) for v in body.data.vertices)==basis
     result={'operation':operation,'parent_sha256':SOURCE_SHA,'protected_signatures':before,'body_basis_digest':basis,
             'protected_data_exact':True,'body_basis_exact':True,'source_pins_unchanged':all(digest(p)==h for p,h in ((SOURCE,SOURCE_SHA),(BODY,BODY_SHA),(HORSE,HORSE_SHA))),
             'stature_m':1.7526,'neutral_body_height_scene_units':height,'metric_scale_length':bpy.context.scene.unit_settings.scale_length,
             'tailoring':tailoring,'look':look,'scarf':scarf,'tail':tail,'handler_sha256':digest(Path(__file__)),
             'visual_gate':'NOT_RUN','Director_acceptance':'PENDING','limits':['Static pose only','No gait, cloth physics, continuous grasp, rights or release qualification']}
-    if operation=='seal01':
+    if operation.startswith('seal'):
         import numpy as np
         names=[o.name for o in bpy.context.scene.objects if not o.hide_render and o.type=='MESH']
         np.savez_compressed(out/'evaluated-surfaces.npz',**evaluated_surfaces(names))
@@ -364,12 +460,12 @@ def build(out, operation):
     (out/'result.json').write_text(json.dumps(result,indent=2)+'\n')
 
 
-def verify(out):
+def verify(out, operation):
     import bpy
     import numpy as np
     from wardrobe_riding_fit import accepted_signature, evaluated_surfaces, fit_render, riding_pose, fit_static_contacts
     from body_studio_fit import coordinates_digest
-    selected=BASE/'wardrobe170-seal01'
+    selected=BASE/('wardrobe170-seal'+operation[-2:])
     result=json.loads((selected/'result.json').read_text())
     bpy.ops.wm.open_mainfile(filepath=str(selected/'dressed-fit.blend'),load_ui=False,use_scripts=False)
     body=bpy.data.objects['MF_studio_adult_body'];rig=bpy.data.objects['MF_body156_fit_rig']
@@ -406,8 +502,8 @@ def main():
     out = validate(job); out.mkdir()
     if job['operation'] == 'inspect01':
         inspect(out)
-    elif job['operation']=='verify01':
-        verify(out)
+    elif job['operation'].startswith('verify'):
+        verify(out,job['operation'])
     else:
         build(out,job['operation'])
 
