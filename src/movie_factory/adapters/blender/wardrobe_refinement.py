@@ -12,7 +12,7 @@ from wardrobe_riding_fit import BASE, BODY, BODY_SHA, HORSE, HORSE_SHA, digest
 
 SOURCE = BASE / 'wardrobe169-seal01/dressed-fit.blend'
 SOURCE_SHA = '07d1989584dc44e2d1253364147dbd830ee67f7e7ad05c5ce4ed6ebff88c67ab'
-OPERATIONS = ('inspect01', 'inspect02', 'preview01', 'preview02', 'preview03', 'preview04', 'preview05', 'preview06', 'preview07', 'preview08', 'preview09', 'preview10', 'preview11', 'preview12', 'seal01', 'verify01', 'seal02', 'verify02')
+OPERATIONS = ('inspect01', 'inspect02', 'preview01', 'preview02', 'preview03', 'preview04', 'preview05', 'preview06', 'preview07', 'preview08', 'preview09', 'preview10', 'preview11', 'preview12', 'preview13', 'seal01', 'verify01', 'seal02', 'verify02')
 
 
 def validate(job):
@@ -211,52 +211,29 @@ def authored_open_hood(hair_tree,cloth_tree,mat,top):
     from mathutils import Vector
     from character_assembly import mesh
     rig=bpy.data.objects['MF_body156_fit_rig']
-    points=[];faces=[];nu=65;nv=35
+    points=[];faces=[];nu=65;nv=17
     for j in range(nv):
         v=j/(nv-1)
         for i in range(nu):
-            theta=-math.pi/2+math.pi*i/(nu-1)
-            # Softly unequal hem, continuous drape; no stacked annular rolls.
-            z=(top+.10-.65*abs(math.sin(theta))**1.5)*(1-v)+(-3.5+.6*abs(math.sin(theta))+.12*math.sin(theta+.5))*v
-            center=Vector((0,.15,z));direction=Vector((math.sin(theta),math.cos(theta),0))
-            hits=[]
-            # A veil falls from the groom rather than stepping inward at the
-            # nape to a different torso envelope. Sample just below the crest
-            # to avoid discontinuous no-hit crown spikes.
-            sample=Vector((0,.15,min(z,top-.10)))
-            for tree in (hair_tree,):
-                hit,_,_,_=tree.ray_cast(sample+direction*7,-direction,12)
-                if hit is not None and (hit-center).dot(direction)>0:hits.append((hit-center).dot(direction))
-            radius=max(hits or [.15])+.14
-            if v>.55:
-                hit,_,_,_=cloth_tree.ray_cast(center+direction*7,-direction,12)
-                if hit is not None:radius=max(radius,(hit-center).dot(direction)+.12)
-            # Three unequal longitudinal folds become stronger below nape;
-            # crown stays close, while shoulders have room without a cape lip.
-            fold=max(0.,v-.3)*(.19*math.exp(-((theta+.68)/.22)**2)+.25*math.exp(-((theta-.1)/.3)**2)+.16*math.exp(-((theta-1.05)/.2)**2))
-            p=center+direction*(radius+fold)
+            theta=-2.8+5.6*i/(nu-1);a=abs(theta);sign=-1 if theta<0 else 1
+            # A loose crown-to-shoulder scarf strip, not a closed hood/bag.
+            # It leaves the rear hair visible and cannot form the rejected
+            # circumferential nape roll. Side ends settle onto the shoulders.
+            if a<=math.pi/2:
+                x=1.35*math.sin(theta);z=.1+(top+.02)*math.cos(theta)
+            else:
+                x=sign*(1.35+.34*(a-math.pi/2));z=.1-2.1*(a-math.pi/2)
+            p=Vector((x,.32+v*(.65+.18*min(1,a)),z))
+            if z>-.9:
+                hit,normal,_,distance=hair_tree.find_nearest(p)
+                if hit is not None and distance<.7:p=hit+normal*.12
+            p.z+=.025*math.sin(4*theta+3*v)
             points.append(tuple(p))
-    # Taut major drape between crown, hair and upper back: construct the
-    # concave outer profile, bridging inward nape dents without a floating
-    # vertical curtain. Broad unequal folds remain above this support.
-    for i in range(nu):
-        theta=-math.pi/2+math.pi*i/(nu-1);direction=Vector((math.sin(theta),math.cos(theta),0))
-        values=[(Vector(points[j*nu+i])-Vector((0,.15,points[j*nu+i][2]))).dot(direction) for j in range(nv)]
-        hull=[]
-        for j,r in enumerate(values):
-            while len(hull)>1 and (hull[-1][1]-hull[-2][1])/(hull[-1][0]-hull[-2][0]) < (r-hull[-1][1])/(j-hull[-1][0]):hull.pop()
-            hull.append((j,r))
-        for (a,ra),(b,rb) in zip(hull,hull[1:]):
-            for j in range(a,b+1):
-                radius=ra+(rb-ra)*(j-a)/(b-a)
-                v=j/(nv-1)
-                radius+=.12*math.sin(math.pi*v)*(.5+.5*math.cos(9*theta+1.4*v))
-                z=points[j*nu+i][2];points[j*nu+i]=(direction.x*radius,.15+direction.y*radius,z)
     for j in range(nv-1):
         for i in range(nu-1):
             a=j*nu+i;faces.append((a,a+1,a+nu+1,a+nu))
     ob=mesh('MF_170_authored_open_scarf',points,faces,mat)
-    settle_open_veil(ob,nu)
+    settle_open_veil(ob,nu,nv)
     smooth=ob.modifiers.new('Continuous major scarf drape','SMOOTH');smooth.factor=.6;smooth.iterations=5
     ob.modifiers.new('Soft scarf surface','SUBSURF').levels=2
     ob.modifiers.new('Thin cloth edge','SOLIDIFY').thickness=.02
@@ -264,7 +241,7 @@ def authored_open_hood(hair_tree,cloth_tree,mat,top):
     attach=ob.constraints.new('CHILD_OF');attach.target=rig;attach.subtarget='chest';attach.inverse_matrix=rest.inverted()
 
 
-def settle_open_veil(ob,nu):
+def settle_open_veil(ob,nu,nv):
     """Construction-only low-resolution settling; no production physics rig."""
     import bpy
     source=bpy.data.objects['MF_fit_tunic']
@@ -273,7 +250,7 @@ def settle_open_veil(ob,nu):
     decimate=proxy.modifiers.new('Static drape inexpensive collision envelope','DECIMATE');decimate.ratio=.10
     proxy.modifiers.new('Static drape body collision','COLLISION');proxy.collision.thickness_outer=.035
     pin=ob.vertex_groups.new(name='Static crown attachment')
-    pin.add(list(range(nu*2)),1.,'REPLACE')
+    pin.add([j*nu+i for j in range(nv) for i in range(nu//2-2,nu//2+3)],1.,'REPLACE')
     cloth=ob.modifiers.new('Construction-only neutral veil settling','CLOTH')
     cloth.settings.quality=5;cloth.settings.mass=.25
     cloth.settings.tension_stiffness=12;cloth.settings.compression_stiffness=12
@@ -443,7 +420,7 @@ def build(out, operation):
         while list(strap.modifiers).index(rounded)>1:
             bpy.ops.object.modifier_move_up(modifier=rounded.name)
     bpy.context.scene.cycles.samples=16
-    render_views(out,operation.startswith('seal'),operation in ('preview06','preview07','preview08','preview09','preview10','preview11','preview12'))
+    render_views(out,operation.startswith('seal'),operation in ('preview06','preview07','preview08','preview09','preview10','preview11','preview12','preview13'))
     assert accepted_signature(before)==before and coordinates_digest(tuple(v.co) for v in body.data.vertices)==basis
     result={'operation':operation,'parent_sha256':SOURCE_SHA,'protected_signatures':before,'body_basis_digest':basis,
             'protected_data_exact':True,'body_basis_exact':True,'source_pins_unchanged':all(digest(p)==h for p,h in ((SOURCE,SOURCE_SHA),(BODY,BODY_SHA),(HORSE,HORSE_SHA))),
