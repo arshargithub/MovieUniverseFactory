@@ -1215,6 +1215,32 @@
       "engineering_cost_usd": null,
       "evidence": ["docs/planning/SERIES_01_BODY_ASSEMBLY_BRIEF.md", "docs/knowledge/CHARACTER_ASSET_LEARNINGS.md"]
     }
+    , {
+      "event_id": "series01-body161-director-rejects-visual-readiness",
+      "event_type": "engineering_review_outcome",
+      "experiment_id": "SERIES01-LIKENESS-ASSET",
+      "controlled_model_comparison": false,
+      "outcome": "FIT39_REJECTED_NECK_AND_POSED_DEFORMATION",
+      "observation": "Director identifies unnatural neck/clavicles relative to the accepted bust, arm streaks and poor elbow bends, knee folds and lower-abdominal skew. Retract visual readiness despite passing technical checks. Enforce a reference/pose/evidence-based internal gate; no increment-only review. Current engineering model/effort and usage are unverified; no causal model conclusion.",
+      "observed_supervisor_model": null,
+      "reasoning_effort": null,
+      "engineering_subscription_usage": null,
+      "engineering_cost_usd": null,
+      "evidence": ["AGENTS.md", "docs/knowledge/EFFICIENT_QUALITY_ASSET_WORKFLOW.md", "docs/planning/SERIES_01_BODY_ASSEMBLY_BRIEF.md"]
+    }
+    , {
+      "event_id": "series01-body161-integrated-foundation-internal-gate",
+      "event_type": "engineering_review_outcome",
+      "experiment_id": "SERIES01-LIKENESS-ASSET",
+      "controlled_model_comparison": false,
+      "outcome": "INTERNAL_VISUAL_GATE_PASS_DIRECTOR_PENDING",
+      "observation": "47 retains accepted central anatomy and passes six scoped visual checks for neutral/seated foundation.42 fails a boundary guard;47 saves but fails a strict posed digest. Read-only48 reconstructs fixed46 and measures neutral equality and4.774328325867841e-6 maximum posed error below1e-5, with five fresh images inspected. No bit-identical posed replay or full motion claim.76 focused tests. Known model/effort and engineering usage unverified; no causal model conclusion.83.14-minute UTC window is partial capture, not exact active time: a923.81-second UTC/monotonic anomaly remains unexplained.188.02MB retained; no paid calls/assets. Local implementation/source binding is post-run reconstruction.",
+      "observed_supervisor_model": null,
+      "reasoning_effort": null,
+      "engineering_subscription_usage": null,
+      "engineering_cost_usd": null,
+      "evidence": ["docs/planning/SERIES_01_BODY_ASSEMBLY_BRIEF.md", ".runtime/art-direction/series01-facebuilder-trial-01/body161-operating/visual-review.json", ".runtime/art-direction/series01-facebuilder-trial-01/body161-verify48/result.json"]
+    }
   ],
   "recording_mode": "manual_evidence_backfill_and_future_event_capture",
   "schema_version": "1.0",
