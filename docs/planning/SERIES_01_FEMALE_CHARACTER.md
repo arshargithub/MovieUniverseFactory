@@ -20,6 +20,8 @@ Recommended next reference: one straight-on, eye-level head-and-shoulders portra
 
 ## Accepted presence and visual baseline — exchanges 80–81
 
+Exchange170 stature/wardrobe intent: tall, approximately5ft9in/175.26cm, and slimmer in silhouette than the first coarse costume. Fit clothing before changing accepted anatomy. Hair/forehead remain visible beneath an open scarf. Practical tailoring and restrained character detail should support her unadorned elegance; this does not authorize jewelry, a new identity or exact historical-dress claims. Whole-costume appearance remains pending.
+
 **Her strength comes from self-possession, not aggression. A young adult woman, composed and assured, with natural, almost regal elegance.** Director explicitly affirms this characterization at exchange 81 and requests its preservation in her character record, not only in generation feedback.
 
 Her original C illustration is the visual anchor: determined and self-assured rather than angry, elegant like a queen without a visibly made-up face. “Regal” describes bearing, not royal ancestry, wealth or a new costume requirement. Exact age and unseen facial features are not yet fixed. Preserve her likeness rather than replace it with a generic scowling action heroine or make her appear a child.

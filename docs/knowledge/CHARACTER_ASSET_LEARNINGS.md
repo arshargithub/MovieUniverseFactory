@@ -257,6 +257,18 @@ The [first integrated attempt](../planning/SERIES_01_INTEGRATED_HAIR_ATTEMPT_01.
 
 ## Decision continuity and adoption
 
+### Wardrobe refinement — exchange170
+
+The Director explicitly says elapsed duration alone is not the current concern; Efficient Quality and meaningful handovers are. Preserve the prior overrun evidence, but distinguish avoidable repeated full renders, premature passes and poor method selection from an invented hard time limit. Method checkpoints still require reassessment, not a cosmetic go-ahead or permission to lower the exit gate.
+
+Tall/slimmer intent first requires clothing-versus-body diagnosis. Reduce actual sleeve/torso ease against the accepted evaluated neutral body; do not resculpt a protected body to rescue a baggy outfit. Define about5ft9in through anatomical crown-to-sole metric normalization, disclosing scene-unit conversion rather than claiming a stretched/retargeted rig. Costume character can come from a few legible tailoring/material blocks and the shoulder harness; don't compensate for plain geometry with arbitrary jewelry or ethnic insignia.
+
+Rear-first scarf screens expose defects the front cannot: a nape roll, floating rear flap, crown discontinuities and a stiff curtain can survive a flattering face view. A donor fitting method is not privileged merely because the donor was free; stop failed topology warps and test a different construction route while retaining hair/forehead and accepted grooming. A construction-only neutral cloth settle, if useful, is frozen static geometry—not a continuous riding-physics qualification.
+
+The horse-tail defect combines competing tail geometry and poor root registration. Select the actual source tail groups rather than deleting a guessed rump strip; inspect and cap only the new local aperture, then fit one groom and inspect its dock from rear and both sides. A successful mesh operation is not a visual attachment pass. Retain failed selected evidence, and don't seal expensive native packages before the revealing cheap view passes. Serialize memory-heavy native workers; source/time/storage provenance must include failures, not just the selected result.
+
+Selected170 carries this further: flat cards and a capped root still read as a patch. One native volumetric curve bundle improves the static attachment; it does not qualify tail physics. Validate curve coordinates/radii/material assignments/world transform as well as mesh surfaces after reopening. Native byte/data equality and visual direction readiness remain separate. Keep hem/underarm finish and loose grip explicitly named for the moving-shot screen rather than claiming a final garment or silently lowering the whole-production gate.
+
 ### Wardrobe interface continuation — exchange169
 
 The accepted body and groom are protected inputs, not a reason to restart anatomical polishing. Cloth must follow the **evaluated** body, including pose corrections, rather than merely copying bone weights. A neutral outfit and a flattering riding side can both pass while the shoulder fails in an oblique. See the [wardrobe/tack record](../planning/SERIES_01_WARDROBE_TACK_FIT.md): topology inspection disproved an apparent underarm-aperture diagnosis; native surface binding then improved exposed-arm coverage. This is scoped static-fit evidence, not universal clothing deformation or riding qualification.
