@@ -298,7 +298,7 @@ def test_flexion_fairing_has_a_broad_smooth_waist_fade():
     assert module.hip_fairing_support((-.8,0,-5.3))==module.hip_fairing_support((.8,0,-5.3))
 
 
-@pytest.mark.parametrize('operation',['hip63','hip64','hip66'])
+@pytest.mark.parametrize('operation',['hip63','hip64','hip65','hip66'])
 def test_shape_preserving_hip_correction_is_fixed_pinned_and_non_overwriting(monkeypatch,tmp_path,operation):
     monkeypatch.setattr(module,'BASE',tmp_path)
     monkeypatch.setattr(module,'digest',lambda p:module.SOURCE_SHA if p==module.SOURCE else 'cedce781c0980ce387b925d4b1cab6b510a8dcdd42453d6da243131440924f2f')
@@ -315,3 +315,13 @@ def test_anatomical_hip_support_is_bilateral_and_posterior_transition_is_broader
     assert front==(5.35,1.70)
     assert rear==pytest.approx((5.70,2.15))
     assert rear==module.anatomical_hip_transition((-.8,.8,-6.5))
+
+
+def test_anterior_corrective_protects_posterior_relief_without_a_hard_boundary():
+    assert module.hip_front_corrective_support((.8,-.6,-6.3))==1
+    assert module.hip_front_corrective_support((.8,.8,-6.3))==pytest.approx(.05)
+    values=[module.hip_front_corrective_support((.8,-.5+i*.01,-6.3)) for i in range(151)]
+    # Quintic smoothstep's maximum derivative is1.875; scale and sample step
+    # determine this mathematical continuity bound, not a visual PASS target.
+    assert max(abs(a-b) for a,b in zip(values,values[1:]))<=1.875*.95/.65*.01
+    assert module.hip_front_corrective_support((.8,.3,-6.3))==module.hip_front_corrective_support((-.8,.3,-6.3))
