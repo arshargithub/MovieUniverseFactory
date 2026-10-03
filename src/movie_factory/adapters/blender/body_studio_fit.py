@@ -27,10 +27,10 @@ def protected():
 
 
 def validate(job):
-    if job in tuple({'operation':name} for name in ('hip58','hip59','hip61','hip62','hip63','hip66')):
+    if job in tuple({'operation':name} for name in ('hip58','hip59','hip61','hip62','hip63','hip64','hip66')):
         for path,sha in ((SOURCE,SOURCE_SHA),(BASE/'body164-legs57/adult-body-fit.blend','cedce781c0980ce387b925d4b1cab6b510a8dcdd42453d6da243131440924f2f')):
             if path.is_symlink() or digest(path)!=sha:raise ValueError('Pinned hip-correction input mismatch')
-        out=BASE/(('body168-' if job['operation'] in ('hip63','hip66') else 'body166-')+job['operation'])
+        out=BASE/(('body168-' if job['operation'] in ('hip63','hip64','hip66') else 'body166-')+job['operation'])
         if out.exists():raise ValueError('Never overwrite evidence')
         return out
     if job in tuple({'operation':name} for name in ('legs55','legs56','legs57')):
@@ -77,7 +77,7 @@ def main():
     job = json.loads(Path(sys.argv[sys.argv.index('--') + 1]).read_text())
     out = validate(job)
     out.mkdir()
-    if job['operation'] in ('hip58','hip59','hip61','hip62','hip63','hip66'):
+    if job['operation'] in ('hip58','hip59','hip61','hip62','hip63','hip64','hip66'):
         repair_hip_transition(out,job['operation'])
         return
     if job['operation'] in ('legs55','legs56','legs57'):
@@ -1372,6 +1372,13 @@ def hip_fairing_support(point):
     return smooth_transition((-z-4.65)/1.30)*(1-smooth_transition((-z-7.05)/.65))
 
 
+def anatomical_hip_transition(point):
+    """Front thigh and posterior gluteal tissue need different support fields."""
+    x,y,z=point
+    rear=smooth_transition((y-.05)/.65)
+    return (5.35+.35*rear,1.70+.45*rear)
+
+
 def repair_hip_transition(out,operation):
     """Pinned local dual-quaternion/linear blend; preserve neutral coordinates."""
     import bpy,math
@@ -1403,6 +1410,16 @@ def repair_hip_transition(out,operation):
     apply(recipe);old_pose=surface()
     for label,angle in [('side',90),('front',0),('rear-oblique',135)]:render('before-'+label,angle)
     apply(None)
+    anatomical_support=operation in ('hip64','hip66')
+    if anatomical_support:
+        definitions={b.name:(tuple(b.head_local),tuple(b.tail_local),b.parent.name if b.parent else None) for b in rig.data.bones}
+        for v in body.data.vertices:
+            if v.co.z>=-5.25:continue
+            current={body.vertex_groups[g.group].name:g.weight for g in v.groups if body.vertex_groups[g.group].name in rig.data.bones}
+            if any(n.startswith(('upperarm.','forearm.','hand.')) and w>1e-6 for n,w in current.items()):continue
+            weights=regional_weights(tuple(v.co),definitions,arm_support=0.,hip_transition=anatomical_hip_transition(tuple(v.co)))
+            for name in current:body.vertex_groups[name].remove([v.index])
+            for name,w in weights.items():body.vertex_groups[name].add([v.index],w,'REPLACE')
     main=next(m for m in body.modifiers if m.type=='ARMATURE')
     assert main.use_deform_preserve_volume
     blend=body.modifiers.new('Hip-local linear skinning blend','ARMATURE')
@@ -1417,7 +1434,7 @@ def repair_hip_transition(out,operation):
     blend.vertex_group=group.name
     bpy.context.view_layer.objects.active=body
     while body.modifiers.find(blend.name)>body.modifiers.find(main.name)+1:bpy.ops.object.modifier_move_up(modifier=blend.name)
-    shape_preserving=operation in ('hip63','hip66')
+    shape_preserving=operation in ('hip63','hip64','hip66')
     if shape_preserving:
         # Delta-mush restores the neutral surface detail after smoothing the
         # deformation, unlike SMOOTH which erased the gluteal cleft in62.
