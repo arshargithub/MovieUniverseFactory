@@ -27,17 +27,21 @@ ROWS=[
 ]
 
 def main():
- selected=BASE/'wardrobe171-seal01';card=BASE/'wardrobe171-operating';preview=BASE/'wardrobe171-preview07';fresh=BASE/'wardrobe171-verify01'
+ selected=BASE/'wardrobe171-seal01';card=BASE/'wardrobe171-operating';preview=BASE/'wardrobe171-preview09';fresh=BASE/'wardrobe171-verify01'
  review=json.loads((card/'visual-review.json').read_text());check_review(review,selected,'wardrobe171-seal01',CRITERIA)
  result=json.loads((selected/'result.json').read_text());verified=json.loads((fresh/'result.json').read_text())
  assert all(result[k] for k in ('protected_data_exact','body_basis_exact','source_unchanged','cloth_thickness_after_fitting'))
  assert all(verified[k] for k in ('reopened','protected_signatures_exact','body_basis_exact','static_tail_curve_data_exact','source_unchanged'))
  assert all(v is not None and v<verified['surface_tolerance'] for v in verified['evaluated_local_surface_max_errors'].values())
- compared=[]
+ compared=[];other_views=[]
  for name,_,_ in ROWS:
+  if not (preview/(name+'.png')).is_file():
+   other_views.append(name)
+   continue
   delta=ImageChops.difference(Image.open(selected/(name+'.png')).convert('RGB'),Image.open(preview/(name+'.png')).convert('RGB'))
   assert delta.getbbox() is None,name
   compared.append(name)
+ assert len(compared)==4
  reopened={}
  for path in fresh.glob('reopened-*.png'):
   delta=ImageChops.difference(Image.open(path).convert('RGB'),Image.open(selected/path.name.removeprefix('reopened-')).convert('RGB'))
@@ -54,7 +58,7 @@ def main():
  html=GALLERY.read_text();token='/* REVIEW_DATA */[]';assert token in html
  html=html.replace(token,json.dumps(data));assert len(html.encode())<1_000_000
  GALLERY.write_text(html)
- (card/'pixel-comparison.json').write_text(json.dumps({'selected_vs_inspected_preview_exact':compared,'fresh_open_max_channel_differences':reopened,'limits':'Reproducibility, not Director appearance acceptance'},indent=2)+'\n')
+ (card/'pixel-comparison.json').write_text(json.dumps({'selected_vs_inspected_preview_exact':compared,'selected_other_views_manually_reviewed':other_views,'fresh_open_max_channel_differences':reopened,'limits':'Reproducibility, not Director appearance acceptance; only four targeted previews are claimed identical'},indent=2)+'\n')
  print(json.dumps({'gallery_bytes':len(html.encode()),'views':len(data),'compared_views':len(compared),'reopened_views':len(reopened)}))
 
 if __name__=='__main__':main()

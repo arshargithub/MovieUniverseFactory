@@ -10,7 +10,7 @@ from wardrobe_riding_fit import digest
 
 SOURCE = BASE / 'wardrobe170-seal03/dressed-fit.blend'
 SOURCE_SHA = 'f146fc11bada5c1bb47c4880f5d615d8a4896fa8009ad09535425e11734f0280'
-OPERATIONS = ('inspect01', 'inspect02', 'diagnosis01', 'diagnosis02', 'diagnosis03', 'diagnosis04', 'diagnosis05', 'preview01', 'preview02', 'preview03', 'preview04', 'preview05', 'preview06', 'preview07', 'seal01', 'verify01')
+OPERATIONS = ('inspect01', 'inspect02', 'diagnosis01', 'diagnosis02', 'diagnosis03', 'diagnosis04', 'diagnosis05', 'preview01', 'preview02', 'preview03', 'preview04', 'preview05', 'preview06', 'preview07', 'preview08', 'preview09', 'seal01', 'verify01')
 
 
 def validate(job):
@@ -87,7 +87,10 @@ def continuous_waist_belt():
     for j in range(3):
         for i in range(n):
             a=j*n+i;b=j*n+(i+1)%n;faces.append((a,a+n,b+n,b))
-    belt=mesh('MF_fit_waist_belt',points,faces,mat);follow_body(belt)
+    from wardrobe_riding_fit import bind_torso
+    belt=mesh('MF_fit_waist_belt',points,faces,mat);bind_torso(belt,bpy.data.objects['MF_body156_fit_rig'])
+    belt.modifiers.new('Continuous vertical leather surface','SUBSURF').levels=2
+    contact=belt.modifiers.new('Vertical band posed garment clearance','SHRINKWRAP');contact.target=bpy.data.objects['MF_fit_tunic'];contact.wrap_method='NEAREST_SURFACEPOINT';contact.wrap_mode='OUTSIDE_SURFACE';contact.offset=.10
     belt.modifiers.new('Leather thickness after fitting','SOLIDIFY').thickness=.035
     return 'Continuous vertical body-supported waist band; no collapsed horizontal rim'
 
@@ -302,15 +305,18 @@ def build(out,operation):
             fit_render(out,'clay-reach',-40,(-.1,-2.5,-6),11.,(800,850))
         (out/'diagnosis.json').write_text(json.dumps({'visible_meshes':visible,'scope':'Untextured geometry control, not new acceptance'},indent=2)+'\n')
         return
-    for label,angle in [('front',0),('side',90),('rear',180)]:fit_render(out,'standing-'+label,angle)
-    for label,angle in [('left',-40),('right',40)]:fit_render(out,'upper-'+label,angle,(0,.15,-1.7),7.,(800,850))
+    targeted=operation in ('preview08','preview09')
+    for label,angle in ([('front',0)] if targeted else [('front',0),('side',90),('rear',180)]):fit_render(out,'standing-'+label,angle)
+    if not targeted:
+        for label,angle in [('left',-40),('right',40)]:fit_render(out,'upper-'+label,angle,(0,.15,-1.7),7.,(800,850))
     if operation in ('preview05','preview06','preview07','seal01'):fit_render(out,'upper-front',0,(0,.15,-1.7),7.,(800,850))
     for o in horse:o.hide_render=states[o.name]
     leather=bpy.data.objects['MF_fit_waist_belt'].data.materials[0]
     riding_pose(rig);bpy.context.view_layer.update();fit_static_contacts(contacts,rig,leather)
-    for label,angle in [('side',90),('front-quarter',-40),('rear-quarter',140)]:fit_render(out,'mounted-'+label,angle,(0,-1,-10),29,(1000,700) if label=='side' else (540,900))
-    if operation in ('preview05','preview06','preview07','seal01'):
-        fit_render(out,'mounted-opposite-side',-90,(0,-1,-10),29,(1000,700))
+    if not targeted:
+        for label,angle in [('side',90),('front-quarter',-40),('rear-quarter',140)]:fit_render(out,'mounted-'+label,angle,(0,-1,-10),29,(1000,700) if label=='side' else (540,900))
+    if operation in ('preview05','preview06','preview07','preview08','preview09','seal01'):
+        if not targeted:fit_render(out,'mounted-opposite-side',-90,(0,-1,-10),29,(1000,700))
         fit_render(out,'mounted-sleeve-interface',-40,(-.1,-2.5,-6),11.,(800,850))
         fit_render(out,'mounted-sleeve-opposite',40,(-.1,-2.5,-6),11.,(800,850))
         riding_pose(rig,.75);bpy.context.view_layer.update();fit_static_contacts(contacts,rig,leather)
