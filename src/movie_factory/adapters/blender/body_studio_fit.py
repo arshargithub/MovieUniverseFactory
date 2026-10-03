@@ -27,6 +27,12 @@ def protected():
 
 
 def validate(job):
+    if job in tuple({'operation':name} for name in ('hip58','hip59','hip61','hip62')):
+        for path,sha in ((SOURCE,SOURCE_SHA),(BASE/'body164-legs57/adult-body-fit.blend','cedce781c0980ce387b925d4b1cab6b510a8dcdd42453d6da243131440924f2f')):
+            if path.is_symlink() or digest(path)!=sha:raise ValueError('Pinned hip-correction input mismatch')
+        out=BASE/('body166-'+job['operation'])
+        if out.exists():raise ValueError('Never overwrite evidence')
+        return out
     if job in tuple({'operation':name} for name in ('legs55','legs56','legs57')):
         for path,sha in ((SOURCE,SOURCE_SHA),(BASE/'body162-fit52/adult-body-fit.blend','8e9db951953034113e51c0be55f8acb39b96486826d0fa404a28631c5d08ce81')):
             if path.is_symlink() or digest(path)!=sha:raise ValueError('Pinned leg-repair input mismatch')
@@ -71,6 +77,9 @@ def main():
     job = json.loads(Path(sys.argv[sys.argv.index('--') + 1]).read_text())
     out = validate(job)
     out.mkdir()
+    if job['operation'] in ('hip58','hip59','hip61','hip62'):
+        repair_hip_transition(out,job['operation'])
+        return
     if job['operation'] in ('legs55','legs56','legs57'):
         repair_seated_legs(out,job['operation'])
         return
@@ -1102,7 +1111,8 @@ def verify_saved(native,before,recipe,expected=None):
     import bpy
     from mathutils import Matrix,Vector
     bpy.ops.wm.open_mainfile(filepath=str(native),load_ui=False,use_scripts=False)
-    assert all(protected()[n]==v for n,v in before.items())
+    reopened_protected=protected()
+    assert all(reopened_protected[n]==v for n,v in before.items())
     rig=bpy.data.objects['MF_body156_fit_rig'];body=bpy.data.objects['MF_studio_adult_body']
     bust=bpy.data.objects['MF_continuous_head_neck']
     neutral=bust.matrix_world.copy()
@@ -1128,7 +1138,8 @@ def verify_saved(native,before,recipe,expected=None):
     moved=sum((Vector(a)-Vector(b)).length>.001 for a,b in zip(neutral_body,posed));assert moved>100
     for bone in rig.pose.bones:bone.matrix_basis=Matrix.Identity(4)
     returned=coords();err=max((Vector(a)-Vector(b)).length for a,b in zip(neutral_body,returned));assert err<1e-5
-    assert all(protected()[n]==v for n,v in before.items())
+    returned_protected=protected()
+    assert all(returned_protected[n]==v for n,v in before.items())
     face_control=check_face_control(body) if body.data.shape_keys else None
     return {'native_sha256':digest(native),'reopened':True,'local_protected_data_exact':True,
             'evaluated_surfaces_match_pre_save':bool(expected),
@@ -1346,6 +1357,125 @@ def repair_seated_legs(out,operation):
         apply(recipe);render('reopened-seated-side',90);render('reopened-seated-front',0);apply(None)
     del result['pose_screen']['_posed_surface_points']
     assert digest(native)==pinned and digest(SOURCE)==SOURCE_SHA
+    (out/'result.json').write_text(json.dumps(result,indent=2)+'\n')
+
+
+def hip_linear_support(point):
+    """Compact smooth mask: hip bend only, not abdomen, knees or upper body."""
+    x,y,z=point
+    return smooth_transition((-z-5.35)/.55)*(1-smooth_transition((-z-7.05)/.65))
+
+
+def hip_fairing_support(point):
+    """Broad lower-waist fade avoids a new ridge at a tight hip mask boundary."""
+    x,y,z=point
+    return smooth_transition((-z-4.65)/1.30)*(1-smooth_transition((-z-7.05)/.65))
+
+
+def repair_hip_transition(out,operation):
+    """Pinned local dual-quaternion/linear blend; preserve neutral coordinates."""
+    import bpy,math
+    from mathutils import Matrix,Vector
+    native=BASE/'body164-legs57/adult-body-fit.blend'
+    pinned='cedce781c0980ce387b925d4b1cab6b510a8dcdd42453d6da243131440924f2f'
+    parent=json.loads((native.parent/'result.json').read_text())
+    bpy.ops.wm.open_mainfile(filepath=str(native),load_ui=False,use_scripts=False)
+    scene=bpy.context.scene;camera=scene.camera
+    rig=bpy.data.objects['MF_body156_fit_rig'];body=bpy.data.objects['MF_studio_adult_body']
+    before=protected();assert all(before[n]==v for n,v in parent['protected'].items())
+    local=coordinates_digest(tuple(v.co) for v in body.data.vertices)
+    def apply(recipe):
+        for bone in rig.pose.bones:bone.matrix_basis=Matrix(recipe[bone.name]) if recipe else Matrix.Identity(4)
+        bpy.context.view_layer.update()
+    def surface():
+        bpy.context.view_layer.update()
+        return [tuple(v.co) for v in body.evaluated_get(bpy.context.evaluated_depsgraph_get()).data.vertices]
+    lights=sorted((o for o in scene.objects if o.name.startswith('MF_body156_softbox')),key=lambda o:o.name)
+    def render(label,angle,center=(0,-.8,-4.9),size=14.5):
+        target=Vector(center);rot=Matrix.Rotation(math.radians(angle),3,'Z')
+        camera.data.ortho_scale=size;camera.location=target+rot@Vector((0,-25,.5))
+        camera.rotation_euler=(target-camera.location).to_track_quat('-Z','Y').to_euler()
+        for light,x in zip(lights,(-7,7)):
+            light.location=target+rot@Vector((x,-9,7));light.rotation_euler=(target-light.location).to_track_quat('-Z','Y').to_euler()
+        scene.render.filepath=str(out/(label+'.png'));bpy.ops.render.render(write_still=True)
+    apply(None);neutral=surface()
+    recipe=parent['pose_screen']['pose_matrices']
+    apply(recipe);old_pose=surface()
+    for label,angle in [('side',90),('front',0),('rear-oblique',135)]:render('before-'+label,angle)
+    apply(None)
+    main=next(m for m in body.modifiers if m.type=='ARMATURE')
+    assert main.use_deform_preserve_volume
+    blend=body.modifiers.new('Hip-local linear skinning blend','ARMATURE')
+    assert hasattr(blend,'use_multi_modifier'),'Native version lacks multi-armature blend; do not silently alter whole-body skinning'
+    group=body.vertex_groups.new(name='MF_body166_hip_linear_support')
+    count=0
+    for v in body.data.vertices:
+        arm_weight=sum(g.weight for g in v.groups if body.vertex_groups[g.group].name.startswith(('upperarm.','forearm.','hand.')))
+        w=hip_linear_support(tuple(v.co)) if arm_weight<1e-6 else 0.
+        if w:group.add([v.index],w,'REPLACE');count+=1
+    blend.object=rig;blend.use_deform_preserve_volume=False;blend.use_multi_modifier=True
+    blend.vertex_group=group.name
+    bpy.context.view_layer.objects.active=body
+    while body.modifiers.find(blend.name)>body.modifiers.find(main.name)+1:bpy.ops.object.modifier_move_up(modifier=blend.name)
+    if operation in ('hip59','hip61','hip62'):
+        # Local linear skinning removes DQ inflation, but the flexion crease
+        # still needs a pose-only fairing. Never fair the accepted neutral.
+        fair=body.modifiers.new('Hip-local pose-only flexion fairing','SMOOTH')
+        fair_group=group
+        if operation in ('hip61','hip62'):
+            fair_group=body.vertex_groups.new(name='MF_body166_lower_waist_fairing')
+            for v in body.data.vertices:
+                arm_weight=sum(g.weight for g in v.groups if body.vertex_groups[g.group].name.startswith(('upperarm.','forearm.','hand.')))
+                w=hip_fairing_support(tuple(v.co)) if arm_weight<1e-6 else 0.
+                if w:fair_group.add([v.index],w,'REPLACE')
+        fair.vertex_group=fair_group.name;fair.iterations=90 if operation in ('hip61','hip62') else 160;fair.factor=0.
+        while body.modifiers.find(fair.name)>body.modifiers.find(blend.name)+1:bpy.ops.object.modifier_move_up(modifier=fair.name)
+        driver=fair.driver_add('factor').driver;driver.type='SCRIPTED'
+        for side in ('L','R'):
+            variable=driver.variables.new();variable.name='bend'+side;variable.type='TRANSFORMS'
+            target=variable.targets[0];target.id=rig;target.bone_target='thigh.'+side
+            target.transform_type='ROT_X';target.transform_space='LOCAL_SPACE'
+        driver.expression='min(0.85, 0.85 * (abs(bendL) + abs(bendR)) / 2.6)' if operation in ('hip61','hip62') else 'min(0.9, (abs(bendL) + abs(bendR)) / 2.0)'
+    after=surface();neutral_error=max((Vector(a)-Vector(b)).length for a,b in zip(neutral,after))
+    assert neutral_error<1e-5,('Standing surface changed',neutral_error)
+    assert coordinates_digest(tuple(v.co) for v in body.data.vertices)==local
+    render('standing-side',90,(0,0,-5.5),15.7)
+    apply(recipe);posed=surface()
+    upper=[i for i,p in enumerate(neutral) if p[2]>(-4.4 if operation in ('hip61','hip62') else -5.1) or (abs(p[0])>1.7 and p[2]>-8.3)]
+    upper_error=max((Vector(posed[i])-Vector(old_pose[i])).length for i in upper)
+    assert upper_error<1e-5,('Upper-body pose changed',upper_error)
+    angles=[('front',0),('front-left',-45),('left',-90),('rear-left',-135),('back',180),('rear-right',135),('right',90),('front-right',45)]
+    for label,angle in angles:render('seated-'+label,angle)
+    for label,angle in angles:render('hip-'+label,angle,(0,-.35,-6.0),5.5)
+    half={}
+    for bone in rig.pose.bones:
+        loc,rot,scale=Matrix(recipe[bone.name]).decompose()
+        if bone.name.startswith(('thigh.','shin.')):rot=rot.slerp(rot.__class__(),.5)
+        half[bone.name]=[list(row) for row in Matrix.LocRotScale(loc,rot,scale)]
+    apply(half);render('half-bend-side',90);render('half-bend-rear',135)
+    apply(None);returned=surface()
+    return_error=max((Vector(a)-Vector(b)).length for a,b in zip(after,returned))
+    final_protected=protected();assert all(final_protected[n]==v for n,v in parent['protected'].items())
+    assert return_error<1e-5 and digest(native)==pinned and digest(SOURCE)==SOURCE_SHA
+    result={'status':'INTERNAL_VISUAL_REVIEW_PENDING','method':'Hip-local linear/DQ multi-modifier blend'+(' plus pose-only flexion fairing' if operation!='hip58' else '')+'; no neutral sculpt',
+        'parent_native_sha256':pinned,'protected':parent['protected'],'support_vertices':count,
+        'body_local_geometry_exact':True,'neutral_surface_max_error':neutral_error,
+        'previous_upper_pose_max_error':upper_error,'neutral_return_max_error':return_error,
+        'pose_screen':{'pose_matrices':recipe,'neutral_surface_sha256':coordinates_digest(after),'posed_surface_sha256':coordinates_digest(posed)},
+        'limits':['Static seated screen plus intermediate bend, not full riding performance','Original source native unmodified']}
+    if operation=='hip62':
+        result['pose_screen']['_posed_surface_points']=posed
+        bpy.context.preferences.filepaths.save_version=0
+        bpy.ops.wm.save_as_mainfile(filepath=str(out/'adult-body-fit.blend'),check_existing=False)
+        result['saved_verification']=verify_saved(out/'adult-body-fit.blend',parent['protected'],recipe,result['pose_screen'])
+        del result['pose_screen']['_posed_surface_points']
+        rig=bpy.data.objects['MF_body156_fit_rig'];body=bpy.data.objects['MF_studio_adult_body'];scene=bpy.context.scene;camera=scene.camera
+        lights=sorted((o for o in scene.objects if o.name.startswith('MF_body156_softbox')),key=lambda o:o.name)
+        render('reopened-standing-side',90,(0,0,-5.5),15.7)
+        apply(recipe)
+        for label,angle in [('front',0),('right',90),('rear-right',135)]:render('reopened-seated-'+label,angle)
+        render('reopened-hip-front',0,(0,-.35,-6.0),5.5)
+        apply(None)
     (out/'result.json').write_text(json.dumps(result,indent=2)+'\n')
 
 

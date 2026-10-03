@@ -261,3 +261,38 @@ def test_selected_hip_transition_is_bilateral_and_continuous():
     above=module.regional_weights((.3,0,-5.79),definitions,0.,(5.80,1.30))
     below=module.regional_weights((.3,0,-5.81),definitions,0.,(5.80,1.30))
     assert abs(sum(w for n,w in below.items() if n.startswith('thigh.'))-sum(w for n,w in above.items() if n.startswith('thigh.')))<.001
+
+
+def test_hip_blend_mask_is_local_bilateral_and_smooth():
+    for z in (-4.,-5.35,-7.7,-9.):assert module.hip_linear_support((.8,0,z))==0
+    assert module.hip_linear_support((.8,0,-6.3))==1
+    values=[module.hip_linear_support((.8,0,-5.-i*.01)) for i in range(301)]
+    assert all(0<=v<=1 for v in values)
+    assert max(abs(a-b) for a,b in zip(values,values[1:]))<.035
+    assert module.hip_linear_support((-.8,0,-6.3))==module.hip_linear_support((.8,0,-6.3))
+
+
+@pytest.mark.parametrize('operation',['hip58','hip59','hip61','hip62'])
+def test_hip_correction_is_fixed_pinned_and_non_overwriting(monkeypatch,tmp_path,operation):
+    monkeypatch.setattr(module,'BASE',tmp_path)
+    monkeypatch.setattr(module,'digest',lambda p:module.SOURCE_SHA if p==module.SOURCE else 'cedce781c0980ce387b925d4b1cab6b510a8dcdd42453d6da243131440924f2f')
+    path=module.validate({'operation':operation})
+    assert path.name=='body166-'+operation
+    with pytest.raises(ValueError):module.validate({'operation':operation,'strength':1})
+    path.mkdir()
+    with pytest.raises(ValueError,match='overwrite'):module.validate({'operation':operation})
+
+
+def test_hip_correction_rejects_unpinned_input(monkeypatch,tmp_path):
+    monkeypatch.setattr(module,'BASE',tmp_path)
+    monkeypatch.setattr(module,'digest',lambda p:module.SOURCE_SHA if p==module.SOURCE else '0'*64)
+    with pytest.raises(ValueError,match='hip-correction'):module.validate({'operation':'hip58'})
+
+
+def test_flexion_fairing_has_a_broad_smooth_waist_fade():
+    for z in (-2.,-4.65,-7.7,-9.):assert module.hip_fairing_support((.8,0,z))==0
+    assert 0<module.hip_fairing_support((.8,0,-5.3))<1
+    assert module.hip_fairing_support((.8,0,-6.3))==1
+    values=[module.hip_fairing_support((.8,0,-4.-i*.01)) for i in range(401)]
+    assert max(abs(a-b) for a,b in zip(values,values[1:]))<.03
+    assert module.hip_fairing_support((-.8,0,-5.3))==module.hip_fairing_support((.8,0,-5.3))
