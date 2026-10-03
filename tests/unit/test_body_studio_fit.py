@@ -58,7 +58,7 @@ def test_correction_operations_are_fixed_and_non_overwriting(monkeypatch,tmp_pat
     with pytest.raises(ValueError):module.validate(job)
 
 
-@pytest.mark.parametrize('job', [{'operation':'fit40'}, {'operation':'fit27','path':'other'}, {'operation':'fit27','python':'pass'}])
+@pytest.mark.parametrize('job', [{'operation':'fit48'}, {'operation':'fit27','path':'other'}, {'operation':'fit27','python':'pass'}])
 def test_correction_rejects_unreviewed_variants_and_payload(job):
     with pytest.raises(ValueError):module.validate(job)
 
@@ -98,3 +98,65 @@ def test_anatomical_support_fades_with_flat_endpoints():
     assert module.smooth_transition(1.1)==1
     assert module.smooth_transition(.001)<1e-7
     assert 1-module.smooth_transition(.999)<1e-7
+
+
+def test_curved_anatomical_boundary_preserves_central_landmarks():
+    assert module.anatomical_boundary(0)==pytest.approx(-1.885)
+    assert module.anatomical_boundary(1.65)==pytest.approx(-1.405)
+    assert module.anatomical_boundary(-1.45)==module.anatomical_boundary(1.45)
+
+
+def test_anatomical_skin_support_is_normalized_and_region_restricted():
+    definitions={'upperarm.L':((1.55,.12,-2.2),(2.48,-.1,-4.6),'chest'),'forearm.L':((2.48,-.1,-4.6),(3.14,-.33,-6.07),'upperarm.L'),'hand.L':((3.14,-.33,-6.07),(3.52,-.46,-6.95),'forearm.L'),'thigh.L':((.79,.16,-6.6),(.85,-.03,-9.77),'pelvis'),'shin.L':((.85,-.03,-9.77),(.85,.16,-12.73),'thigh.L'),'foot.L':((.85,.16,-12.73),(.85,-.92,-13.17),'shin.L')}
+    definitions.update({name.replace('.L','.R'):((-h[0],h[1],h[2]),(-t[0],t[1],t[2]),parent.replace('.L','.R')) for name,(h,t,parent) in list(definitions.items())})
+    for point in ((0,0,-5.5),(2.48,-.1,-4.6),(.85,0,-9.77),(.79,0,-7.2)):
+        weights=module.regional_weights(point,definitions)
+        assert sum(weights.values())==pytest.approx(1)
+        assert all(0<=w<=1 for w in weights.values())
+        assert not any(n.endswith('.R') for n in weights)
+    assert not any('.' in n for n in module.regional_weights((0,0,-5.5),definitions))
+    assert module.regional_weights((3.6,-.5,-7.8),definitions)=={'hand.L':1.0}
+    middle=module.regional_weights((0,0,-6.65),definitions)
+    assert middle['thigh.L']==pytest.approx(middle['thigh.R'])
+
+
+@pytest.mark.parametrize('operation',['fit40','fit41','fit42','fit43','fit44','fit45','fit46','fit47','verify48'])
+def test_new_patch_operation_is_fixed_and_non_overwriting(monkeypatch,tmp_path,operation):
+    monkeypatch.setattr(module,'BASE',tmp_path)
+    monkeypatch.setattr(module,'digest',lambda p:module.ARCHIVE_SHA if p==module.ARCHIVE else module.SOURCE_SHA)
+    path=module.validate({'operation':operation})
+    assert path.name=='body161-'+operation
+    path.mkdir()
+    with pytest.raises(ValueError):module.validate({'operation':operation})
+
+
+def test_connection_fairing_does_not_smooth_central_anatomical_landmarks():
+    for x in (0,.5,1.,1.3):
+        assert module.connection_fairing_weight(x,-1.7)==0
+    assert module.connection_fairing_weight(1.7,-1.6)>.9
+    assert module.connection_fairing_weight(-1.7,-1.6)==module.connection_fairing_weight(1.7,-1.6)
+    assert module.connection_fairing_weight(0,-3.4)==0
+
+
+def test_surface_digest_binds_point_order_and_positions():
+    points=[(0.,1.,2.),(3.,4.,5.)]
+    assert module.coordinates_digest(points)==module.coordinates_digest(iter(points))
+    assert module.coordinates_digest(points)!=module.coordinates_digest(points[::-1])
+    assert module.coordinates_digest(points)!=module.coordinates_digest([(0.,1.,2.001),(3.,4.,5.)])
+
+
+def test_boundary_order_follows_connectivity_not_coordinate_sort():
+    loops=module.boundary_loops([(3,0),(2,3),(1,2),(0,1),(4,5),(5,6),(6,4)])
+    assert {frozenset(v) for v in loops}=={frozenset(range(4)),frozenset((4,5,6))}
+    for loop in loops:
+        edges={frozenset((a,b)) for a,b in zip(loop,loop[1:]+loop[:1])}
+        assert all(e in {frozenset((a,b)) for a,b in [(3,0),(2,3),(1,2),(0,1),(4,5),(5,6),(6,4)]} for e in edges)
+    with pytest.raises(ValueError):module.boundary_loops([(0,1),(1,2)])
+
+
+def test_semantic_ring_anchors_do_not_drift_with_long_front_transition():
+    sequence=[(0,-1,-3),(1,-.5,-2),(2,0,-1),(1,.5,-1),(0,1,-1),(-1,.5,-1),(-2,0,-1),(-1,-.5,-2)]
+    order,fractions=module.anchored_ring_parameters(sequence[3:]+sequence[:3])
+    arranged=[(sequence[3:]+sequence[:3])[i] for i in order]
+    assert arranged[0]==sequence[0]
+    assert fractions[2]==.25 and fractions[4]==.5 and fractions[6]==.75
