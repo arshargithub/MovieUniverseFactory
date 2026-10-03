@@ -2,6 +2,12 @@
 
 ## Current review outcome
 
+### Matched before/after review — exchange165
+
+Director challenges the claimed improvement and requests before/after, not a new modeling pass. Compare **previous52 versus candidate57** using the existing480×800 side, front and both three-quarter frames. Trusted handlers use the same camera target `(0,-.8,-4.9)`, orthographic scale14.5, view angles and relative softbox placement/power. No cropping, warping, new render or native edit; display encoding is identical full-frame JPEG93. Exact source PNG hashes and render-contract evidence are retained in `body165-comparison/manifest.json` under the trial root. A new comparison has neutral before/after labels, side-by-side and same-frame switching; it does not reuse the old gallery's selection state.
+
+**Assistant reevaluation:** a longer side-view thigh span is visible, but the hip-to-thigh transition remains bulky/over-rounded. The prior whole-result visual PASS was too confident: withdraw that readiness claim pending this comparison. This is the agent's reevaluation, not an invented Director rejection of every region. Preserve the historical164 visual sheet and its technical evidence; saved/reopen/protected-state successes are not retracted and do not prove appearance. Neither seated candidate is Director-accepted. Standing proportions and accepted head/hair remain protected. Current dependency is still the seated foundation for B4; do not advance costume based on an unsupported whole-result PASS. This exchange delivers the specifically requested comparison without silently modifying the asset. Counter165; checkpoint170; no spend, remote push or media backup.
+
 ### Authorized seated correction and handover contract — exchange164
 
 Director explicitly rejects the diagnosis-only163 handover: there was no Director-relevant option/tradeoff, and the Director is not a technical modeling/rigging expert. Strengthen the working rule and execute the correction without another method-approval request. The prior "diagnostic only" interpretation below is historical agent error, not a continuing scope boundary.
