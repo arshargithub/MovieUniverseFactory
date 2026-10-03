@@ -27,6 +27,12 @@ def protected():
 
 
 def validate(job):
+    if job in tuple({'operation':name} for name in ('legs55','legs56','legs57')):
+        for path,sha in ((SOURCE,SOURCE_SHA),(BASE/'body162-fit52/adult-body-fit.blend','8e9db951953034113e51c0be55f8acb39b96486826d0fa404a28631c5d08ce81')):
+            if path.is_symlink() or digest(path)!=sha:raise ValueError('Pinned leg-repair input mismatch')
+        out=BASE/('body164-'+job['operation'])
+        if out.exists():raise ValueError('Never overwrite evidence')
+        return out
     if job not in tuple({'operation': name} for name in ('inspect01','fit01','fit02','fit03','fit04','review05','fit06','fit07','fit08','fit09','fit10','fit11','fit12','fit13','fit14','fit15','fit16','fit17','fit18','fit19','fit20','fit21','fit22','fit23','fit24','fit25','fit26','fit27','fit28','fit29','fit30','fit31','fit32','fit33','fit34','fit35','fit36','fit37','fit38','fit39','fit40','fit41','fit42','fit43','fit44','fit45','fit46','fit47','verify48','inspect49','fit50','fit52','inspect53','inspect54')):
         raise ValueError('Only fixed operations admitted')
     for path, sha in ((ARCHIVE, ARCHIVE_SHA), (SOURCE, SOURCE_SHA)):
@@ -65,6 +71,9 @@ def main():
     job = json.loads(Path(sys.argv[sys.argv.index('--') + 1]).read_text())
     out = validate(job)
     out.mkdir()
+    if job['operation'] in ('legs55','legs56','legs57'):
+        repair_seated_legs(out,job['operation'])
+        return
     if job['operation'] in ('inspect53','inspect54'):
         inspect_seated_proportions(out)
         return
@@ -418,7 +427,7 @@ def anchored_ring_parameters(sequence):
     return order,fractions
 
 
-def regional_weights(point,definitions,arm_support=None):
+def regional_weights(point,definitions,arm_support=None,hip_transition=None):
     """Normalized anatomical support; no heat diffusion into unrelated limbs."""
     import math
     x,y,z=point;side='L' if x>=0 else 'R';ax=abs(x)
@@ -432,8 +441,9 @@ def regional_weights(point,definitions,arm_support=None):
     pelvis_spine=smooth_transition((z+5.7)/1.0)
     spine_chest=smooth_transition((z+4.3)/1.1)
     weights={'pelvis':1-pelvis_spine,'spine':pelvis_spine*(1-spine_chest),'chest':pelvis_spine*spine_chest}
-    if z< -5.85:
-        hip=smooth_transition((-z-6.0)/1.20)
+    hip_start,hip_width=(6.0,1.20) if hip_transition is None else hip_transition
+    if z< (-5.85 if hip_transition is None else -hip_start):
+        hip=smooth_transition((-z-hip_start)/hip_width)
         weights={k:v*(1-hip) for k,v in weights.items()}
         left=smooth_transition((x+.30)/.60)
         for leg,fraction in [('L',left),('R',1-left)]:
@@ -1241,6 +1251,102 @@ def inspect_shoulders(out):
     for bone in rig.pose.bones:bone.matrix_basis=Matrix.Identity(4)
     render('donor-shoulders',-35);render('donor-shoulders-rear',145)
     (out/'result.json').write_text(json.dumps({'native_unchanged':digest(native)==pinned,'source_unchanged':digest(SOURCE)==SOURCE_SHA,'bones':bones,'rest_surface_weight_samples':rows,'purpose':'Internal shoulder/arm diagnosis; not acceptance'},indent=2)+'\n')
+
+
+def repair_seated_legs(out,operation):
+    """Fixed local leg-rig correction; keep all accepted rest geometry exact."""
+    import bpy,math
+    from mathutils import Matrix,Vector
+    native=BASE/'body162-fit52/adult-body-fit.blend'
+    pinned='8e9db951953034113e51c0be55f8acb39b96486826d0fa404a28631c5d08ce81'
+    assert digest(native)==pinned and not native.is_symlink()
+    parent=json.loads((native.parent/'result.json').read_text())
+    bpy.ops.wm.open_mainfile(filepath=str(native),load_ui=False,use_scripts=False)
+    scene=bpy.context.scene;camera=scene.camera
+    rig=bpy.data.objects['MF_body156_fit_rig'];body=bpy.data.objects['MF_studio_adult_body']
+    before=protected();assert all(before[n]==v for n,v in parent['protected'].items())
+    def surface():
+        bpy.context.view_layer.update()
+        return [tuple(v.co) for v in body.evaluated_get(bpy.context.evaluated_depsgraph_get()).data.vertices]
+    def apply(recipe):
+        for bone in rig.pose.bones:bone.matrix_basis=Matrix(recipe[bone.name]) if recipe else Matrix.Identity(4)
+        bpy.context.view_layer.update()
+    neutral=surface();local_digest=coordinates_digest(tuple(v.co) for v in body.data.vertices)
+    apply(parent['pose_screen']['pose_matrices']);previous_pose=surface();apply(None)
+    # The old hip is almost at the groin, below the broad lateral pelvic mass.
+    # Move only its rotation centre inside that mass; no limb mesh is stretched.
+    hip_z=-5.95
+    bpy.ops.object.select_all(action='DESELECT');rig.select_set(True);bpy.context.view_layer.objects.active=rig
+    bpy.ops.object.mode_set(mode='EDIT')
+    for side,s in [('L',1),('R',-1)]:rig.data.edit_bones['thigh.'+side].head=(s*.84,.20,hip_z)
+    bpy.ops.object.mode_set(mode='OBJECT')
+    definitions={b.name:(tuple(b.head_local),tuple(b.tail_local),b.parent.name if b.parent else None) for b in rig.data.bones}
+    changed=0
+    for v in body.data.vertices:
+        if v.co.z>=-5.65:continue
+        current={body.vertex_groups[g.group].name:g.weight for g in v.groups if body.vertex_groups[g.group].name in rig.data.bones}
+        if any(n.startswith(('upperarm.','forearm.','hand.')) and w>1e-6 for n,w in current.items()):continue
+        # First diagnostic varied central/lateral support; selected repair uses
+        # one continuous bilateral transition to avoid an abdominal crease.
+        lateral=smooth_transition((abs(v.co.x)-.30)/.45)
+        hip_start=6.0*(1-lateral)+5.65*lateral if operation=='legs55' else 5.80
+        width=1.20*(1-lateral)+1.10*lateral if operation=='legs55' else 1.30
+        weights=regional_weights(tuple(v.co),definitions,arm_support=0.,hip_transition=(hip_start,width))
+        for name in current:body.vertex_groups[name].remove([v.index])
+        for name,w in weights.items():body.vertex_groups[name].add([v.index],w,'REPLACE')
+        changed+=1
+    assert coordinates_digest(tuple(v.co) for v in body.data.vertices)==local_digest
+    after=surface();neutral_error=max((Vector(a)-Vector(b)).length for a,b in zip(neutral,after))
+    assert neutral_error<1e-5,('Standing geometry changed',neutral_error)
+    lights=sorted((o for o in scene.objects if o.name.startswith('MF_body156_softbox')),key=lambda o:o.name)
+    def render(label,angle,center=(0,-.8,-4.9),size=14.5):
+        target=Vector(center);rot=Matrix.Rotation(math.radians(angle),3,'Z')
+        camera.data.ortho_scale=size;camera.location=target+rot@Vector((0,-25,.5))
+        camera.rotation_euler=(target-camera.location).to_track_quat('-Z','Y').to_euler()
+        for light,x in zip(lights,(-7,7)):
+            light.location=target+rot@Vector((x,-9,7));light.rotation_euler=(target-light.location).to_track_quat('-Z','Y').to_euler()
+        scene.render.filepath=str(out/(label+'.png'));bpy.ops.render.render(write_still=True)
+    render('standing-side',90,(0,0,-5.5),15.7)
+    apply(parent['pose_screen']['pose_matrices'])
+    def aim(name,target):
+        bone=rig.pose.bones[name]
+        q=(bone.tail-bone.head).normalized().rotation_difference(Vector(target).normalized())
+        matrix=q.to_matrix().to_4x4()@bone.matrix;matrix.translation=bone.head;bone.matrix=matrix
+        bpy.context.view_layer.update()
+    for side,s in [('L',1),('R',-1)]:
+        aim('thigh.'+side,(s*.22,-1,-.35));aim('shin.'+side,(0,.20,-1))
+    posed=surface()
+    unchanged_indices=[i for i,p in enumerate(neutral) if p[2]>-5.4 or (abs(p[0])>1.7 and p[2]>-8.3)]
+    upper_error=max((Vector(posed[i])-Vector(previous_pose[i])).length for i in unchanged_indices)
+    assert upper_error<1e-5,('Previously repaired upper-body pose changed',upper_error)
+    for label,angle in [('seated-side',90),('seated-opposite-side',-90),('seated-front',0),('seated-three-quarter',-45),('seated-other-three-quarter',45)]:render(label,angle)
+    knees=(rig.pose.bones['shin.L'].head+rig.pose.bones['shin.R'].head)/2
+    render('seated-knees',-45,tuple(knees),6.5);render('seated-other-knees',45,tuple(knees),6.5)
+    render('seated-abdomen',0,(0,-.5,-5.5),6.5)
+    recipe={b.name:[list(row) for row in b.matrix_basis] for b in rig.pose.bones}
+    lengths={s:{'hip_to_knee':rig.data.bones['thigh.'+s].length,'knee_to_ankle':rig.data.bones['shin.'+s].length} for s in ('L','R')}
+    apply(None);returned=surface();return_error=max((Vector(a)-Vector(b)).length for a,b in zip(after,returned))
+    protected_after=protected()
+    assert return_error<1e-5 and all(protected_after[n]==v for n,v in parent['protected'].items())
+    result={'status':'INTERNAL_VISUAL_REVIEW_PENDING','parent_native_sha256':pinned,'hip_z':hip_z,
+        'leg_lengths':lengths,'vertices_reweighted':changed,'body_local_geometry_exact':True,
+        'neutral_surface_max_error':neutral_error,'previous_upper_pose_max_error':upper_error,
+        'neutral_return_max_error':return_error,'protected':parent['protected'],
+        'pose_screen':{'pose_matrices':recipe,'neutral_surface_sha256':coordinates_digest(after),
+            'posed_surface_sha256':coordinates_digest(posed),'_posed_surface_points':posed},
+        'limits':['Static correction only; no true hip-centre reconstruction or universal ratio claim','Standing geometry preserved; selected save requires internal visual review']}
+    if operation=='legs57':
+        bpy.context.preferences.filepaths.save_version=0
+        bpy.ops.wm.save_as_mainfile(filepath=str(out/'adult-body-fit.blend'),check_existing=False)
+        result['saved_verification']=verify_saved(out/'adult-body-fit.blend',parent['protected'],recipe,result['pose_screen'])
+        # Inspect representative actual saved/reopened images, not only previews.
+        rig=bpy.data.objects['MF_body156_fit_rig'];body=bpy.data.objects['MF_studio_adult_body'];scene=bpy.context.scene;camera=scene.camera
+        lights=sorted((o for o in scene.objects if o.name.startswith('MF_body156_softbox')),key=lambda o:o.name)
+        render('reopened-standing-side',90,(0,0,-5.5),15.7)
+        apply(recipe);render('reopened-seated-side',90);render('reopened-seated-front',0);apply(None)
+    del result['pose_screen']['_posed_surface_points']
+    assert digest(native)==pinned and digest(SOURCE)==SOURCE_SHA
+    (out/'result.json').write_text(json.dumps(result,indent=2)+'\n')
 
 
 def inspect_seated_proportions(out):

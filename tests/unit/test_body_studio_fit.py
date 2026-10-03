@@ -219,3 +219,45 @@ def test_seated_diagnosis_rejects_changed_native(monkeypatch,tmp_path):
     monkeypatch.setattr(module,'BASE',tmp_path)
     monkeypatch.setattr(module,'digest',lambda p:module.ARCHIVE_SHA if p==module.ARCHIVE else module.SOURCE_SHA if p==module.SOURCE else '0'*64)
     with pytest.raises(ValueError,match='seated diagnosis'):module.validate({'operation':'inspect53'})
+
+
+@pytest.mark.parametrize('operation',['legs55','legs56','legs57'])
+def test_leg_repair_operations_are_fixed_pinned_and_non_overwriting(monkeypatch,tmp_path,operation):
+    monkeypatch.setattr(module,'BASE',tmp_path)
+    monkeypatch.setattr(module,'digest',lambda p:module.SOURCE_SHA if p==module.SOURCE else '8e9db951953034113e51c0be55f8acb39b96486826d0fa404a28631c5d08ce81')
+    path=module.validate({'operation':operation})
+    assert path.name=='body164-'+operation
+    with pytest.raises(ValueError):module.validate({'operation':operation,'hip_z':-5.9})
+    path.mkdir()
+    with pytest.raises(ValueError,match='overwrite'):module.validate({'operation':operation})
+
+
+def test_leg_repair_rejects_unpinned_native(monkeypatch,tmp_path):
+    monkeypatch.setattr(module,'BASE',tmp_path)
+    monkeypatch.setattr(module,'digest',lambda p:module.SOURCE_SHA if p==module.SOURCE else '0'*64)
+    with pytest.raises(ValueError,match='leg-repair'):module.validate({'operation':'legs55'})
+
+
+def test_higher_lateral_hip_support_is_normalized_and_leaves_torso_unchanged():
+    definitions={'thigh.L':((.84,.20,-5.95),(.90,.04,-9.03),'pelvis'),'shin.L':((.90,.04,-9.03),(.95,.16,-12.23),'thigh.L'),'foot.L':((.95,.16,-12.23),(.95,-.92,-12.85),'shin.L')}
+    definitions.update({n.replace('.L','.R'):((-h[0],h[1],h[2]),(-t[0],t[1],t[2]),p.replace('.L','.R')) for n,(h,t,p) in list(definitions.items())})
+    assert module.regional_weights((.8,0,-5.4),definitions,0.,(5.65,1.10))==module.regional_weights((.8,0,-5.4),definitions,0.)
+    old=module.regional_weights((.8,0,-6.3),definitions,0.)
+    new=module.regional_weights((.8,0,-6.3),definitions,0.,(5.65,1.10))
+    assert new['thigh.L']>old['thigh.L']
+    assert sum(new.values())==pytest.approx(1)
+    assert not any(n.endswith('.R') for n in new)
+
+
+def test_selected_hip_transition_is_bilateral_and_continuous():
+    definitions={'thigh.L':((.84,.20,-5.95),(.90,.04,-9.03),'pelvis'),'shin.L':((.90,.04,-9.03),(.95,.16,-12.23),'thigh.L'),'foot.L':((.95,.16,-12.23),(.95,-.92,-12.85),'shin.L')}
+    definitions.update({n.replace('.L','.R'):((-h[0],h[1],h[2]),(-t[0],t[1],t[2]),p.replace('.L','.R')) for n,(h,t,p) in list(definitions.items())})
+    for x in (0.,.1,.3,.8):
+        left=module.regional_weights((x,0,-6.3),definitions,0.,(5.80,1.30))
+        right=module.regional_weights((-x,0,-6.3),definitions,0.,(5.80,1.30))
+        assert sum(left.values())==pytest.approx(1)
+        assert left.get('thigh.L',0)==pytest.approx(right.get('thigh.R',0))
+        assert left.get('thigh.R',0)==pytest.approx(right.get('thigh.L',0))
+    above=module.regional_weights((.3,0,-5.79),definitions,0.,(5.80,1.30))
+    below=module.regional_weights((.3,0,-5.81),definitions,0.,(5.80,1.30))
+    assert abs(sum(w for n,w in below.items() if n.startswith('thigh.'))-sum(w for n,w in above.items() if n.startswith('thigh.')))<.001

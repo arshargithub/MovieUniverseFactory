@@ -140,4 +140,48 @@ def main():
     print(json.dumps({'gallery_bytes':len(text.encode()),'utc_work_span_minutes':seconds/60,'exact_active_seconds':summary['exact_active_seconds'],'cumulative_capture_minutes':(prior+seconds)/60,'artifact_mb':summary['retained_evidence_bytes']/1e6,'jobs':len(jobs)}))
 
 
-if __name__=='__main__':main()
+def package_seated_correction():
+    """Refresh only current views/data after the selected local repair gate."""
+    current=BASE/'body164-legs57';card=BASE/'body164-operating'
+    review=json.loads((card/'visual-review.json').read_text())
+    check_review_gate(review,current.name,current)
+    assert review['technical_gate']=='PASS' and review['fresh_open_visual_replay']=='PASS'
+    result=json.loads((current/'result.json').read_text())
+    assert result['saved_verification']['reopened']
+    assert result['body_local_geometry_exact'] and result['neutral_surface_max_error']<1e-5
+    assert result['previous_upper_pose_max_error']==0
+    names=['seated-side','seated-opposite-side','seated-front','seated-three-quarter','seated-other-three-quarter','standing-side','seated-knees','seated-other-knees','seated-abdomen']
+    labels=['Seated side · corrected leg support','Seated opposite side','Seated front','Seated ¾ · left-facing','Seated ¾ · right-facing','Standing side · preserved body geometry','Knees · first side','Knees · opposite side','Lower abdomen and hip transition']
+    pixels={}
+    for name in names:
+        diff=ImageChops.difference(Image.open(BASE/'body164-legs56'/(name+'.png')).convert('RGB'),Image.open(current/(name+'.png')).convert('RGB'))
+        assert diff.getbbox() is None,('Selected repair differs from reviewed preview',name)
+    for path in current.glob('reopened-*.png'):
+        diff=ImageChops.difference(Image.open(path).convert('RGB'),Image.open(current/path.name.removeprefix('reopened-')).convert('RGB'))
+        maximum=max(v[1] for v in diff.getextrema());mean=sum(ImageStat.Stat(diff).mean)/3
+        assert maximum<=4 and mean<.01,('Fresh-open visual changed',path.name,maximum,mean)
+        pixels[path.name]={'maximum_channel_difference':maximum,'mean_channel_difference':mean}
+    assert len(pixels)==3
+    pictures=[]
+    for name in names:
+        frame=Image.open(current/(name+'.png')).convert('RGB')
+        stream=BytesIO();frame.save(stream,'JPEG',quality=88,optimize=True)
+        pictures.append('data:image/jpeg;base64,'+base64.b64encode(stream.getvalue()).decode())
+    text=GALLERY.read_text()
+    text=re.sub(r'const pictures=\[.*?\];',lambda m:'const pictures='+json.dumps(pictures)+';',text,flags=re.S)
+    text=re.sub(r'const labels=\[.*?\];',lambda m:'const labels='+json.dumps(labels)+';',text,flags=re.S)
+    text=re.sub(r'(<img src=")[^"]+',lambda m:m[1]+pictures[0],text,count=1)
+    text=re.sub(r'(<img src="[^"]+" alt=")[^"]*',lambda m:m[1]+labels[0],text,count=1)
+    text=re.sub(r'(<figcaption[^>]*>).*?(</figcaption>)',lambda m:m[1]+labels[0]+m[2],text,count=1)
+    assert len(text.encode())<1_000_000
+    assert len(re.findall(r'data-i="\d+"',text))==len(names)
+    GALLERY.write_text(text)
+    (card/'pixel-comparison.json').write_text(json.dumps({'selected_vs_preview_decoded_pixels_exact':names,'fresh_open_images':pixels,'scope':'Replay corroboration, not automated appearance approval'},indent=2)+'\n')
+    print(json.dumps({'gallery_bytes':len(text.encode()),'latest_views':len(names),'fresh_open_views':len(pixels)}))
+
+
+if __name__=='__main__':
+    import sys
+    if sys.argv[1:]==['--seated-correction']:package_seated_correction()
+    elif not sys.argv[1:]:main()
+    else:raise SystemExit('Unknown fixed packaging operation')
