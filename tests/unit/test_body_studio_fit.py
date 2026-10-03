@@ -160,3 +160,39 @@ def test_semantic_ring_anchors_do_not_drift_with_long_front_transition():
     arranged=[(sequence[3:]+sequence[:3])[i] for i in order]
     assert arranged[0]==sequence[0]
     assert fractions[2]==.25 and fractions[4]==.5 and fractions[6]==.75
+
+
+def test_shoulder_restoration_protects_central_neck_and_fades_locally():
+    for p in ((0,0,-1.8),(1.,.5,-1.8),(1.6,0,-.9),(1.6,0,-3.4)):
+        assert module.shoulder_restore_weight(p)==0
+    assert module.shoulder_restore_weight((1.6,.3,-2.2))==1
+    assert module.shoulder_restore_weight((-1.6,.3,-2.2))==1
+    assert 0<module.shoulder_restore_weight((1.3,.3,-2.2))<1
+
+
+@pytest.mark.parametrize('operation',['inspect49','fit50','fit52'])
+def test_shoulder_operations_are_fixed_and_non_overwriting(monkeypatch,tmp_path,operation):
+    monkeypatch.setattr(module,'BASE',tmp_path)
+    monkeypatch.setattr(module,'digest',lambda p:module.ARCHIVE_SHA if p==module.ARCHIVE else module.SOURCE_SHA)
+    path=module.validate({'operation':operation})
+    assert path.name=='body162-'+operation
+    with pytest.raises(ValueError):module.validate({'operation':operation,'code':'anything'})
+    path.mkdir()
+    with pytest.raises(ValueError):module.validate({'operation':operation})
+
+
+def test_surface_connectivity_keeps_inner_arm_with_arm_not_nearby_torso():
+    points=[(0.,0.,-4.-i*.001) for i in range(120)]
+    points.extend((1.6,0.,-4.-i*.001) for i in range(110))
+    points.extend((-1.6,0.,-4.-i*.001) for i in range(110))
+    edges=[(i,i+1) for start,end in ((0,120),(120,230),(230,340)) for i in range(start,end-1)]
+    points.extend(((1.3,0.,-2.4),(-1.3,0.,-2.4),(1.6,0.,0.)))
+    edges.extend(((0,340),(340,120),(0,341),(341,230),(0,342)))
+    support,result=module.connected_arm_support(points,edges)
+    assert all(v==0 for v in support[:120])
+    assert all(v==1 for v in support[120:340])
+    assert 0<support[340]<1 and support[340]==pytest.approx(support[341])
+    assert support[342]==0
+    assert result['lower_arm_vertices']==220
+    with pytest.raises(AssertionError,match='disconnected'):
+        module.connected_arm_support(points,edges+[(0,120)])

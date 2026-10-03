@@ -7,15 +7,16 @@ import json
 from pathlib import Path
 import re
 
-from PIL import Image
+from PIL import Image, ImageChops, ImageStat
 from movie_factory.experiment_ledger import Ledger
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = ROOT / '.runtime/art-direction/series01-facebuilder-trial-01'
-CURRENT = BASE / 'body161-fit47'
-PROOF = BASE / 'body161-verify48'
+CURRENT = BASE / 'body162-fit52'
+PROOF = CURRENT
+DIAGNOSTIC = BASE / 'body162-inspect49'
 REFERENCE = CURRENT
-PREFIX = 'body161-'
+PREFIX = 'body162-'
 GALLERY = Path('/Users/adisharma/.codex/visualizations/2026/09/09/01a0878c-e7a2-75e0-873c-c31d97f879a1/pashtun-body-foundation-review.html')
 
 
@@ -41,13 +42,36 @@ def check_review_gate(review, candidate, evidence_root):
 
 
 def main():
-    review=json.loads((BASE/'body161-operating/visual-review.json').read_text())
+    review=json.loads((BASE/'body162-operating/visual-review.json').read_text())
     check_review_gate(review,CURRENT.name,CURRENT)
     result=json.loads((PROOF/'result.json').read_text())
     assert result['saved_verification']['reopened']
-    assert result['saved_verification']['evaluated_surfaces_match_reconstruction']
+    assert result['saved_verification']['evaluated_surfaces_match_pre_save']
     assert review['technical_gate']=='PASS' and review['fresh_open_visual_replay']=='PASS'
+    preview=BASE/'body162-fit50'
+    compared=[]
+    for path in preview.glob('*.png'):
+        diff=ImageChops.difference(Image.open(path).convert('RGB'),Image.open(CURRENT/path.name).convert('RGB'))
+        assert diff.getbbox() is None,('Selected build differs from inspected preview',path.name)
+        compared.append(path.name)
+    fresh={}
+    for path in CURRENT.glob('reopened-*.png'):
+        diff=ImageChops.difference(Image.open(path).convert('RGB'),Image.open(CURRENT/path.name.removeprefix('reopened-')).convert('RGB'))
+        fresh[path.name]={'maximum_channel_difference':max(v[1] for v in diff.getextrema()),'mean_channel_difference':sum(ImageStat.Stat(diff).mean)/3}
+    assert len(compared)==30 and len(fresh)==5
+    card=BASE/'body162-operating'
+    (card/'pixel-comparison.json').write_text(json.dumps({'selected_vs_preview_decoded_pixels_exact':sorted(compared),'fresh_open_images':fresh,'limit':'Pixel differences support replay only; manual visual review remains separate'},indent=2)+'\n')
     rows=[
+        ('neutral-shoulders','New bound neutral shoulders · rounded outer cap'),
+        ('rejected-neutral-shoulders','Rejected47 · blocky shoulder diagnostic, not acceptance target'),
+        ('neutral-other-shoulders','New opposite neutral shoulders'),
+        ('neutral-shoulders-rear','New neutral posterior shoulders · hair hidden'),
+        ('seated-shoulders','New seated shoulder and upper-arm connection'),
+        ('seated-other-shoulders','New seated opposite shoulder'),
+        ('seated-shoulders-rear','New posterior upper arms · hair hidden'),
+        ('seated-other-shoulders-rear','New opposite posterior upper arms'),
+        ('seated-shoulders-side','New seated side · triceps and armpit'),
+        ('rejected-seated-shoulders-side','Rejected47 · triceps flap diagnostic, not acceptance target'),
         ('neck-front','New front · retained accepted throat and collarbones'),
         ('accepted-neck-front','Accepted bust · matched front and lighting'),
         ('interface','New right-facing ¾ · neck and shoulders'),
@@ -72,7 +96,7 @@ def main():
     ]
     # References are the full accepted bust: temporarily unmask the control
     # during native rendering, using the exact same camera/light as candidate.
-    paths=[(REFERENCE if name.startswith('accepted-') else CURRENT)/(name+'.png') for name,_ in rows]
+    paths=[DIAGNOSTIC/(name.removeprefix('rejected-')+'.png') if name.startswith('rejected-') else (REFERENCE if name.startswith('accepted-') else CURRENT)/(name+'.png') for name,_ in rows]
     labels=[label for _,label in rows]
     pictures=[]
     for path in paths:
@@ -84,15 +108,15 @@ def main():
     text=re.sub(r'const labels=.*?;\n',lambda _: 'const labels='+json.dumps(labels)+';\n',text)
     text=re.sub(r'<img src="[^"]*"',lambda _: '<img src="'+pictures[0]+'"',text,count=1)
     text=re.sub(r'<figcaption[^>]*>.*?</figcaption>', '<figcaption aria-live="polite">'+labels[0]+'</figcaption>',text,count=1)
-    buttons=['New front','Accepted front','New ¾','Accepted ¾','Other ¾','Neck back','Full front','Full back','Seated close ¾','Seated close front','Left elbow','Right elbow','Knees','Other knees','Abdomen','Seated front','Seated ¾','Seated side','Full ¾','Other full ¾','Full side']
+    buttons=['Shoulders','Rejected shoulder','Other shoulders','Shoulder back','Seated shoulders','Other seated shoulder','Seated rear','Other seated rear','Triceps side','Rejected flap','New neck front','Accepted front','New ¾','Accepted ¾','Other ¾','Neck back','Full front','Full back','Seated close ¾','Seated close front','Left elbow','Right elbow','Knees','Other knees','Abdomen','Seated front','Seated ¾','Seated side','Full ¾','Other full ¾','Full side']
     controls='\n'.join(f'    <button class="btn" type="button" data-i="{i}">{label}</button>' for i,label in enumerate(buttons))
     text=re.sub(r'(<div class="viz-controls"[^>]*>).*?(</div>)',lambda m:m[1]+'\n'+controls+'\n  '+m[2],text,count=1,flags=re.S)
     text=re.sub(r"candidate:'body\d+-fit\d+'", "candidate:'"+CURRENT.name+"'",text)
-    text=re.sub(r"version:'body\d+'", "version:'body161'",text)
-    text=re.sub(r"version==='body\d+'", "version==='body161'",text)
+    text=re.sub(r"version:'body\d+'", "version:'body162'",text)
+    text=re.sub(r"version==='body\d+'", "version==='body162'",text)
     text=text.replace("acceptance:'CORRECTED_INTERFACE_DIRECTOR_REVIEW_PENDING'","acceptance:'INTERNAL_VISUAL_GATE_PASS_DIRECTOR_REVIEW_PENDING'")
     text=re.sub(r'(body-count">)\d+ / \d+',lambda m:m[1]+'1 / '+str(len(paths)),text)
-    assert len(text.encode())<1_000_000 and 'data-i="20"' in text
+    assert len(text.encode())<1_000_000 and f'data-i="{len(paths)-1}"' in text
     GALLERY.write_text(text)
     events=[e for e in Ledger(ROOT/'.runtime/experiment-ops.sqlite3').events() if e['event_id'].startswith(PREFIX)]
     starts={e['job_id']:e for e in events if e['event_type']=='job_started'}
@@ -102,11 +126,11 @@ def main():
     start=next(e for e in events if e['event_id']==PREFIX+'work-start')
     end=next(e for e in events if e['event_id']==PREFIX+'work-end')
     seconds=(datetime.fromisoformat(end['utc'].replace('Z','+00:00'))-datetime.fromisoformat(start['utc'].replace('Z','+00:00'))).total_seconds()
-    files=[p for pattern in ('fit*','verify*') for d in BASE.glob(PREFIX+pattern) if d.is_dir() for p in d.rglob('*') if p.is_file()]
-    card=BASE/'body161-operating';card.mkdir(exist_ok=True)
-    manifest={str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in [CURRENT/'adult-body-fit.blend',PROOF/'result.json',PROOF/'pixel-comparison.json',*PROOF.glob('*.png'),BASE/'natural152-seal-16/natural-hair.blend',BASE/'body161-job47.json',BASE/'body161-job48.json',card/'visual-review.json',ROOT/'src/movie_factory/adapters/blender/body_studio_fit.py',*paths]}
-    prior=json.loads((BASE/'body160-operating/pass-summary.json').read_text())['cumulative_captured_seconds']
-    summary={'scope':'Retain accepted throat/clavicles and correct neutral/seated shoulder, elbow, knee and abdominal structure, exchange161','disposition':'INTERNAL_VISUAL_GATE_PASS_DIRECTOR_REVIEW_PENDING','captured_active_seconds':seconds,'prior_captured_seconds':prior,'cumulative_captured_seconds':prior+seconds,'capture':'PARTIAL','capture_exclusions':['Initial context recovery','Final receipt/commit overhead'],'jobs':jobs,'native_time_inside_activity':True,'retained_evidence_bytes':sum(p.stat().st_size for p in files),'paid_provider_calls':0,'asset_purchases_usd':0,'engineering_tokens':None,'engineering_cost_usd':None,'full_suite_run':False,'visual_gate':'visual-review.json','remaining':['Director appearance acceptance','Dressed riding fit','Full facial/motion qualification','Textured body integration','Rights and backup']}
+    files=[p for pattern in ('fit*','verify*','inspect*') for d in BASE.glob(PREFIX+pattern) if d.is_dir() for p in d.rglob('*') if p.is_file()]
+    card=BASE/'body162-operating';card.mkdir(exist_ok=True)
+    manifest={str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in [CURRENT/'adult-body-fit.blend',PROOF/'result.json',card/'pixel-comparison.json',*PROOF.glob('*.png'),BASE/'natural152-seal-16/natural-hair.blend',BASE/'body162-fit52-job.json',card/'visual-review.json',ROOT/'src/movie_factory/adapters/blender/body_studio_fit.py',*paths]}
+    prior=json.loads((BASE/'body161-operating/pass-summary.json').read_text())['cumulative_captured_seconds']
+    summary={'scope':'Correct neutral shoulder cap and seated upper-arm/triceps attachment; preserve accepted central neck and regression-check prior joints, exchange162','disposition':'INTERNAL_VISUAL_GATE_PASS_DIRECTOR_REVIEW_PENDING','captured_active_seconds':seconds,'prior_captured_seconds':prior,'cumulative_captured_seconds':prior+seconds,'capture':'PARTIAL','capture_exclusions':['Initial context recovery','Final receipt/commit overhead'],'jobs':jobs,'native_time_inside_activity':True,'retained_evidence_bytes':sum(p.stat().st_size for p in files),'paid_provider_calls':0,'asset_purchases_usd':0,'engineering_tokens':None,'engineering_cost_usd':None,'full_suite_run':False,'visual_gate':'visual-review.json','remaining':['Director appearance acceptance','Dressed riding fit','Full facial/motion qualification','Textured body integration','Rights and backup']}
     summary.update(captured_utc_work_span_seconds=seconds,clock_anomalies=anomalies,
                    duration_basis='Cumulative capture is historical partial spans plus this UTC work window, not exact active effort. Unknown clock/suspend gaps are not fabricated Director waits or subtracted.',
                    exact_active_seconds=None if anomalies else seconds)

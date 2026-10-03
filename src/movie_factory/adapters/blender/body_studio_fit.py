@@ -27,7 +27,7 @@ def protected():
 
 
 def validate(job):
-    if job not in tuple({'operation': name} for name in ('inspect01','fit01','fit02','fit03','fit04','review05','fit06','fit07','fit08','fit09','fit10','fit11','fit12','fit13','fit14','fit15','fit16','fit17','fit18','fit19','fit20','fit21','fit22','fit23','fit24','fit25','fit26','fit27','fit28','fit29','fit30','fit31','fit32','fit33','fit34','fit35','fit36','fit37','fit38','fit39','fit40','fit41','fit42','fit43','fit44','fit45','fit46','fit47','verify48')):
+    if job not in tuple({'operation': name} for name in ('inspect01','fit01','fit02','fit03','fit04','review05','fit06','fit07','fit08','fit09','fit10','fit11','fit12','fit13','fit14','fit15','fit16','fit17','fit18','fit19','fit20','fit21','fit22','fit23','fit24','fit25','fit26','fit27','fit28','fit29','fit30','fit31','fit32','fit33','fit34','fit35','fit36','fit37','fit38','fit39','fit40','fit41','fit42','fit43','fit44','fit45','fit46','fit47','verify48','inspect49','fit50','fit52')):
         raise ValueError('Only fixed operations admitted')
     for path, sha in ((ARCHIVE, ARCHIVE_SHA), (SOURCE, SOURCE_SHA)):
         if path.is_symlink() or digest(path) != sha:
@@ -36,6 +36,7 @@ def validate(job):
     if job['operation'] in ('fit28','fit29','fit30','fit31','fit32','fit33'):out=BASE/('body159-'+job['operation'])
     if job['operation'] in ('fit34','fit35','fit36','fit37','fit38','fit39'):out=BASE/('body160-'+job['operation'])
     if job['operation'] in ('fit40','fit41','fit42','fit43','fit44','fit45','fit46','fit47','verify48'):out=BASE/('body161-'+job['operation'])
+    if job['operation'] in ('inspect49','fit50','fit52'):out=BASE/('body162-'+job['operation'])
     if out.exists():
         raise ValueError('Never overwrite evidence')
     return out
@@ -59,6 +60,9 @@ def main():
     job = json.loads(Path(sys.argv[sys.argv.index('--') + 1]).read_text())
     out = validate(job)
     out.mkdir()
+    if job['operation']=='inspect49':
+        inspect_shoulders(out)
+        return
     if job['operation']=='verify48':
         diagnostic_reopen(out)
         return
@@ -112,6 +116,7 @@ def fit(out, native, variant,render_images=True,write_result=True,retain_points=
         v.co = ((p.x-xcenter)*scale, p.y*scale + .15, p.z*scale+zoffset)
     body.matrix_world = Matrix.Identity(4)
     body.name = 'MF_studio_adult_body'
+    donor_surface=None
     if variant>=30:
         # Refine donor topology before cutting, so the join does not terminate
         # in a sparse, faceted shoulder ring. This edits only the derivative.
@@ -120,6 +125,9 @@ def fit(out, native, variant,render_images=True,write_result=True,retain_points=
         evaluated=body.evaluated_get(bpy.context.evaluated_depsgraph_get())
         refined=bpy.data.meshes.new_from_object(evaluated)
         body.modifiers.clear();body.data=refined
+    if variant>=50:
+        from mathutils.bvhtree import BVHTree
+        donor_surface=BVHTree.FromPolygons([v.co.copy() for v in body.data.vertices],[tuple(p.vertices) for p in body.data.polygons])
     if variant==8:
         samples={}
         for ob in (body,bpy.data.objects['MF_continuous_head_neck']):
@@ -233,6 +241,8 @@ def fit(out, native, variant,render_images=True,write_result=True,retain_points=
     integration=None
     if variant>=24:
         integration=unify_surface(body,bpy.data.objects['MF_continuous_head_neck'])
+    shoulder_restoration=None
+    if variant>=50:shoulder_restoration=restore_donor_shoulders(body,donor_surface)
     if variant>=30:
         group=body.vertex_groups.new(name='MF_lower_shoulder_connection')
         for v in body.data.vertices:
@@ -247,6 +257,7 @@ def fit(out, native, variant,render_images=True,write_result=True,retain_points=
                 w=smooth_transition((boundary-z)/.10)*smooth_transition((z-boundary+.65)/.25)
             if variant>=45:w=smooth_transition((-1.74-z)/.18)*smooth_transition((z+3.38)/.35)
             if variant>=46:w=connection_fairing_weight(v.co.x,z)
+            if variant>=50:w*=1-shoulder_restore_weight(tuple(v.co))
             if w:group.add([v.index],w,'REPLACE')
         smooth=body.modifiers.new('Lower connection fairing only','SMOOTH')
         smooth.vertex_group=group.name;smooth.factor=.65;smooth.iterations=40 if variant>=32 else 18
@@ -264,6 +275,7 @@ def fit(out, native, variant,render_images=True,write_result=True,retain_points=
         crease=body.data.attributes.get('crease_edge') or body.data.attributes.new('crease_edge','FLOAT','EDGE')
         for e in body.data.edges:
             keep=all(body.data.vertices[i].co.z>anatomical_boundary(body.data.vertices[i].co.x)+.025 for i in e.vertices) if variant>=40 else all(body.data.vertices[i].co.z>(-.95 if variant>=36 else -1.149 if variant>=34 else -1.899 if variant>=28 else -.80) for i in e.vertices)
+            if variant>=50:keep=keep and all(shoulder_restore_weight(tuple(body.data.vertices[i].co))==0 for i in e.vertices)
             if keep:crease.data[e.index].value=1.
         sub=body.modifiers.new('Donor body continuity with protected face edges','SUBSURF');sub.levels=1;sub.render_levels=1
     body.hide_render=False;body.hide_set(False)
@@ -308,19 +320,24 @@ def fit(out, native, variant,render_images=True,write_result=True,retain_points=
         bust.hide_render=True;body.hide_render=False
     pose_result = None
     if variant >= 2:
-        pose_result = pose_screen(body, before, render, sharpen=variant>=6, neck=variant>=9,hinge=20<=variant<40,shoulder=variant>=32,semantic=variant>=40,corrective=variant>=42,knee_fairing=variant>=45,retain_points=retain_points)
+        pose_result = pose_screen(body, before, render, sharpen=variant>=6, neck=variant>=9,hinge=20<=variant<40,shoulder=variant>=32,semantic=variant>=40,corrective=variant>=42,knee_fairing=variant>=45,retain_points=retain_points or variant==52,topological_arms=variant>=50)
     face_control=check_face_control(body) if variant>=26 else None
     assert all(protected()[k]==v for k,v in before.items())
     sealed = None
-    if variant in (3,4,7,10,12,14,16,27,29,31,33,35,37,39,47):
+    if variant in (3,4,7,10,12,14,16,27,29,31,33,35,37,39,47,52):
         bpy.context.preferences.filepaths.save_version=0
         render('front',0,write=False)
         bpy.ops.wm.save_as_mainfile(filepath=str(out/'adult-body-fit.blend'),check_existing=False)
         sealed=verify_saved(out/'adult-body-fit.blend',before,pose_result['pose_matrices'],pose_result)
         body=bpy.data.objects['MF_studio_adult_body']
+        if variant==52:
+            del pose_result['_posed_surface_points']
+            saved_review_frames(out,pose_result['pose_matrices'])
+            assert digest(out/'adult-body-fit.blend')==sealed['native_sha256']
     result={'status':'INTERNAL_FIT_NOT_ACCEPTED','asset_metadata':metadata,'scale':scale,'zoffset':zoffset,'upper_assembly_scale':.88 if variant>=6 else 1.,'lower_bust_display_mask':9<=variant<28 or variant>=34,
         'body_vertices':len(body.data.vertices),'source_sha256':digest(native),'protected':before,'complete_accepted_bust_retained':28<=variant<34,
         'anatomy_transfer':anatomy_transfer,
+        'shoulder_restoration':shoulder_restoration,
         'lower_connection_fairing':variant>=30,'lateral_shoulder_deforms':variant>=32,
         'bounds':next(r['bounds'] for r in inventory() if r['name']==body.name),
         'pose_screen':pose_result,'saved_verification':sealed,'surface_integration':integration,'face_control':face_control,
@@ -393,7 +410,7 @@ def anchored_ring_parameters(sequence):
     return order,fractions
 
 
-def regional_weights(point,definitions):
+def regional_weights(point,definitions,arm_support=None):
     """Normalized anatomical support; no heat diffusion into unrelated limbs."""
     import math
     x,y,z=point;side='L' if x>=0 else 'R';ax=abs(x)
@@ -418,13 +435,90 @@ def regional_weights(point,definitions):
             weights.update({'thigh.'+leg:hip*fraction*(1-knee),'shin.'+leg:hip*fraction*knee*(1-ankle),'foot.'+leg:hip*fraction*knee*ankle})
     if z>-8.3:
         threshold=1.20+.20*max(0.,-z-2.2)
-        arm=smooth_transition((ax-threshold)/.35)
+        arm=smooth_transition((ax-threshold)/.35) if arm_support is None else arm_support
         if arm:
             elbow=smooth_transition((signed_projection('forearm.'+side,'upperarm.'+side,'forearm.'+side)+.32)/.64)
             wrist=smooth_transition((signed_projection('hand.'+side,'forearm.'+side,'hand.'+side)+.15)/.30)
             weights={k:v*(1-arm) for k,v in weights.items()}
             weights.update({'upperarm.'+side:arm*(1-elbow),'forearm.'+side:arm*elbow*(1-wrist),'hand.'+side:arm*elbow*wrist})
     return {k:v for k,v in weights.items() if v>1e-8}
+
+
+def shoulder_restore_weight(point):
+    """Adapt lateral assembly shoulders only; central accepted relief is fixed."""
+    x,y,z=point
+    return smooth_transition((abs(x)-1.05)/.50)*smooth_transition((-1.0-z)/.35)*smooth_transition((z+3.3)/.40)
+
+
+def restore_donor_shoulders(body,tree):
+    """Replace the outer graft corner with the donor's continuous shoulder cap."""
+    maximum=0.;count=0
+    for v in body.data.vertices:
+        w=shoulder_restore_weight(tuple(v.co))
+        if not w:continue
+        hit=tree.find_nearest(v.co)
+        assert hit[0] is not None and hit[3]<1.,'Shoulder donor correspondence outside local scope'
+        delta=(hit[0]-v.co)*w
+        if delta.length<1e-8:continue
+        target=v.co+delta
+        if body.data.shape_keys:
+            for key in body.data.shape_keys.key_blocks:key.data[v.index].co+=delta
+        v.co=target;maximum=max(maximum,delta.length);count+=1
+    body.data.update()
+    return {'vertices':count,'maximum_delta':maximum,'central_landmarks_unchanged':True,'method':'Local nearest donor shoulder cap, faded before central neck/clavicles; original source unedited'}
+
+
+def connected_arm_support(points,edges):
+    """Classify disconnected lower arms, then blend along surface paths.
+
+    A world-X threshold cuts through the triceps and attaches it to the spine.
+    Below the armpits the actual mesh separates into torso and two arm regions.
+    Use that connectivity, not proximity across the armpit gap, as the seeds.
+    """
+    import heapq,math
+    adjacency=[[] for _ in points]
+    for a,b in edges:
+        length=math.dist(points[a],points[b])
+        adjacency[a].append((b,length));adjacency[b].append((a,length))
+    lower={i for i,p in enumerate(points) if p[2]<-3.25}
+    components=[]
+    while lower:
+        stack=[lower.pop()];component=[]
+        while stack:
+            i=stack.pop();component.append(i)
+            for j,_ in adjacency[i]:
+                if j in lower:lower.remove(j);stack.append(j)
+        components.append(component)
+    major=[c for c in components if len(c)>100]
+    assert len(major)==3,('Expected torso and two disconnected lower arms',list(map(len,major)))
+    torso=max(major,key=len)
+    arms=[c for c in major if c is not torso]
+    assert all(abs(sum(points[i][0] for i in c)/len(c))>1.5 for c in arms)
+    fixed={i:0. for i in torso}
+    for c in arms:
+        for i in c:fixed[i]=1.
+    for i,p in enumerate(points):
+        if p[2]>=-1.35 or abs(p[0])<=1.05:fixed[i]=0.
+    def distances(value):
+        dist=[float('inf')]*len(points);queue=[]
+        for i,v in fixed.items():
+            if v==value:
+                dist[i]=0.;heapq.heappush(queue,(0.,i))
+        while queue:
+            d,i=heapq.heappop(queue)
+            if d!=dist[i]:continue
+            for j,length in adjacency[i]:
+                if j in fixed:continue
+                candidate=d+length
+                if candidate<dist[j]:dist[j]=candidate;heapq.heappush(queue,(candidate,j))
+        return dist
+    chest=distances(0.);arm=distances(1.)
+    support=[]
+    for i in range(len(points)):
+        if i in fixed:support.append(fixed[i]);continue
+        assert math.isfinite(chest[i]) and math.isfinite(arm[i]),'Unseeded shoulder island'
+        support.append(smooth_transition(chest[i]/(chest[i]+arm[i])))
+    return support,{'major_lower_components':list(map(len,major)),'lower_arm_vertices':sum(map(len,arms)),'transition_vertices':len(points)-len(fixed),'method':'Lower-arm connectivity labels; upper-shoulder geodesic blend'}
 
 
 def transfer_bust_anatomy(body,bust,normal_support=False,detail_only=False,relief_gain=2.):
@@ -776,7 +870,7 @@ def sharpen_weights(weights, power=3.):
     return {key:value/total for key,value in transformed.items()} if total else weights
 
 
-def pose_screen(body, before, render, sharpen=False, neck=False,hinge=False,shoulder=False,semantic=False,corrective=False,knee_fairing=False,retain_points=False):
+def pose_screen(body, before, render, sharpen=False, neck=False,hinge=False,shoulder=False,semantic=False,corrective=False,knee_fairing=False,retain_points=False,topological_arms=False):
     import bpy
     import math
     from mathutils import Matrix, Vector
@@ -809,6 +903,20 @@ def pose_screen(body, before, render, sharpen=False, neck=False,hinge=False,shou
             definitions['thigh.'+side]=((s*.79,.16,-6.60),(s*.90,.04,-9.03),'pelvis')
             definitions['shin.'+side]=((s*.90,.04,-9.03),(s*.95,.16,-12.23),'thigh.'+side)
             definitions['foot.'+side]=((s*.95,.16,-12.23),(s*.95,-.92,-12.85),'shin.'+side)
+    arm_support=None;arm_support_result=None
+    if topological_arms:
+        # Centre the elbow/wrist pivots on actual donor cross-sections.
+        for side,s in [('L',1),('R',-1)]:
+            joints=[]
+            for z in (-4.6,-6.07):
+                band=[v.co for v in body.data.vertices if abs(v.co.z-z)<.04 and s*v.co.x>1.7]
+                assert len(band)>10
+                joints.append((sum(p.x for p in band)/len(band),sum(p.y for p in band)/len(band),z))
+            elbow,wrist=joints
+            definitions['upperarm.'+side]=((s*1.57,.30,-2.05),elbow,'chest')
+            definitions['forearm.'+side]=(elbow,wrist,'upperarm.'+side)
+            definitions['hand.'+side]=(wrist,definitions['hand.'+side][1],'forearm.'+side)
+        arm_support,arm_support_result=connected_arm_support([tuple(v.co) for v in body.data.vertices],[tuple(e.vertices) for e in body.data.edges])
     for name,(head,tail,parent) in definitions.items():
         bone=arm.edit_bones.new(name);bone.head=head;bone.tail=tail
         if parent:bone.parent=arm.edit_bones[parent]
@@ -819,7 +927,7 @@ def pose_screen(body, before, render, sharpen=False, neck=False,hinge=False,shou
             if group.name in arm.bones:body.vertex_groups.remove(group)
         for name in definitions:body.vertex_groups.new(name=name)
         for v in body.data.vertices:
-            weights=regional_weights(tuple(v.co),definitions)
+            weights=regional_weights(tuple(v.co),definitions,None if arm_support is None else arm_support[v.index])
             assert abs(sum(weights.values())-1)<1e-6
             for name,weight in weights.items():body.vertex_groups[name].add([v.index],weight,'REPLACE')
         body.parent=rig
@@ -914,6 +1022,13 @@ def pose_screen(body, before, render, sharpen=False, neck=False,hinge=False,shou
         bpy.context.view_layer.update();ev=body.evaluated_get(bpy.context.evaluated_depsgraph_get())
         return [tuple(v.co) for v in ev.data.vertices]
     neutral=evaluated()
+    if topological_arms:
+        render('neutral-shoulders',-35,(0,0,-2.9),6.8)
+        render('neutral-other-shoulders',35,(0,0,-2.9),6.8)
+        hair=[ob for ob in bpy.context.scene.objects if ob.type=='CURVES' and not ob.hide_render]
+        for ob in hair:ob.hide_render=True
+        render('neutral-shoulders-rear',145,(0,0,-2.9),6.8)
+        for ob in hair:ob.hide_render=False
     def aim(name,target):
         bone=rig.pose.bones[name]
         q=(bone.tail-bone.head).normalized().rotation_difference(Vector(target).normalized())
@@ -941,6 +1056,16 @@ def pose_screen(body, before, render, sharpen=False, neck=False,hinge=False,shou
         if knee_fairing:render('seated-other-knees',45,tuple(center),6.5)
         render('seated-abdomen',0,(0,-.5,-5.5),6.5)
         if knee_fairing:render('seated-front',0,(0,-.8,-4.9),14.5)
+    if topological_arms:
+        render('seated-other-three-quarter',45,(0,-.8,-4.9),14.5)
+        render('seated-shoulders',-35,(0,0,-2.9),6.8)
+        render('seated-other-shoulders',35,(0,0,-2.9),6.8)
+        hair=[ob for ob in bpy.context.scene.objects if ob.type=='CURVES' and not ob.hide_render]
+        for ob in hair:ob.hide_render=True
+        render('seated-shoulders-rear',145,(0,0,-2.9),6.8)
+        render('seated-other-shoulders-rear',-145,(0,0,-2.9),6.8)
+        render('seated-shoulders-side',90,(0,0,-2.9),6.8)
+        for ob in hair:ob.hide_render=False
     recipe={b.name:[list(row) for row in b.matrix_basis] for b in rig.pose.bones}
     for b in rig.pose.bones:b.matrix_basis=Matrix.Identity(4)
     attach();returned=evaluated()
@@ -948,6 +1073,7 @@ def pose_screen(body, before, render, sharpen=False, neck=False,hinge=False,shou
     assert error<1e-5
     if knee_fairing:assert all(abs(f.factor)<1e-6 for f in fairs),'No knee correction in neutral'
     return {'bones':len(arm.bones),'unweighted':len(unweighted),'neutral_return_max_error':error,
+            'arm_support':arm_support_result,'bone_definitions':definitions if topological_arms else None,
             **({'_posed_surface_points':posed} if retain_points else {}),
             'neutral_attachment_matrix_error':attachment_error,
             'neutral_surface_sha256':coordinates_digest(neutral),'posed_surface_sha256':coordinates_digest(posed),
@@ -1033,6 +1159,80 @@ def diagnostic_reopen(out):
     render('seated-knees',-45,tuple(center),6.5)
     render('seated-abdomen',0,(0,-.5,-5.5),6.5)
     assert digest(native)==pinned and digest(SOURCE)==SOURCE_SHA
+
+
+def saved_review_frames(out,recipe):
+    """Inspect the just-reopened scene, including posterior upper arms."""
+    import bpy,math
+    from mathutils import Matrix,Vector
+    scene=bpy.context.scene;camera=scene.camera
+    lights=sorted((ob for ob in scene.objects if ob.name.startswith('MF_body156_softbox')),key=lambda ob:ob.name)
+    assert len(lights)==2
+    def render(label,angle,center=(0,0,-2.9),size=6.8):
+        target=Vector(center);rot=Matrix.Rotation(math.radians(angle),3,'Z')
+        camera.data.ortho_scale=size;camera.location=target+rot@Vector((0,-25,.5))
+        camera.rotation_euler=(target-camera.location).to_track_quat('-Z','Y').to_euler()
+        for light,x in zip(lights,(-7,7)):
+            light.location=target+rot@Vector((x,-9,7));light.rotation_euler=(target-light.location).to_track_quat('-Z','Y').to_euler()
+        scene.render.filepath=str(out/(label+'.png'));bpy.ops.render.render(write_still=True)
+    render('reopened-neutral-shoulders',-35)
+    render('reopened-neck-front',0,(0,0,-1.2),4.7)
+    rig=bpy.data.objects['MF_body156_fit_rig']
+    for n,m in recipe.items():rig.pose.bones[n].matrix_basis=Matrix(m)
+    bpy.context.view_layer.update()
+    render('reopened-seated-three-quarter',-45,(0,-.8,-4.9),14.5)
+    hair=[ob for ob in scene.objects if ob.type=='CURVES' and not ob.hide_render]
+    for ob in hair:ob.hide_render=True
+    render('reopened-seated-shoulders-rear',145)
+    render('reopened-seated-shoulders-side',90)
+    for ob in hair:ob.hide_render=False
+    for bone in rig.pose.bones:bone.matrix_basis=Matrix.Identity(4)
+    bpy.context.view_layer.update()
+
+
+def inspect_shoulders(out):
+    """Read-only rest/posed shoulder diagnosis on the rejected pinned native."""
+    import bpy,math
+    from mathutils import Matrix,Vector
+    native=BASE/'body161-fit47/adult-body-fit.blend'
+    pinned='ead27ef192fec5dad724a4a86706328121b4174266002627f780d4911e80a4ce'
+    assert not native.is_symlink() and digest(native)==pinned
+    bpy.ops.wm.open_mainfile(filepath=str(native),load_ui=False,use_scripts=False)
+    scene=bpy.context.scene;camera=scene.camera
+    rig=bpy.data.objects['MF_body156_fit_rig'];body=bpy.data.objects['MF_studio_adult_body']
+    lights=sorted((o for o in scene.objects if o.name.startswith('MF_body156_softbox')),key=lambda o:o.name)
+    def render(label,angle):
+        target=Vector((0,0,-2.9));rot=Matrix.Rotation(math.radians(angle),3,'Z')
+        camera.data.ortho_scale=6.8;camera.location=target+rot@Vector((0,-25,.5))
+        camera.rotation_euler=(target-camera.location).to_track_quat('-Z','Y').to_euler()
+        for light,x in zip(lights,(-7,7)):
+            light.location=target+rot@Vector((x,-9,7));light.rotation_euler=(target-light.location).to_track_quat('-Z','Y').to_euler()
+        scene.render.filepath=str(out/(label+'.png'));bpy.ops.render.render(write_still=True)
+    for o in scene.objects:
+        if o.type=='CURVES':o.hide_render=True
+    render('neutral-shoulders',-35);render('neutral-shoulders-rear',145)
+    rows=[]
+    for z in (-1.6,-2.2,-2.8,-3.4,-4.0,-4.6):
+        band=[v for v in body.data.vertices if abs(v.co.z-z)<.04 and 1.2<v.co.x<3]
+        rows.append({'z':z,'points':[{'p':list(v.co),'weights':{body.vertex_groups[g.group].name:g.weight for g in v.groups if body.vertex_groups[g.group].name in rig.data.bones}} for v in sorted(band,key=lambda v:v.co.y)[::max(1,len(band)//12)]]})
+    recipe=json.loads((BASE/'body161-verify48/result.json').read_text())['pose_screen']['pose_matrices']
+    for n,m in recipe.items():rig.pose.bones[n].matrix_basis=Matrix(m)
+    bpy.context.view_layer.update()
+    render('seated-shoulders',-35);render('seated-shoulders-rear',145);render('seated-shoulders-side',90)
+    bones={b.name:{'head':list(b.head_local),'tail':list(b.tail_local)} for b in rig.data.bones}
+    # Unmodified donor at the exact assembly transform supplies a shape control.
+    with bpy.data.libraries.load(str(native_source()),link=False) as (a,b):b.objects=['GEO-body_female_realistic']
+    donor=b.objects[0];scene.collection.objects.link(donor)
+    world=donor.matrix_world.copy();points=[world@v.co for v in donor.data.vertices]
+    xc=(max(p.x for p in points)+min(p.x for p in points))/2
+    zo=1.3302977085-max(p.z for p in points)*8.6-.55
+    for v,p in zip(donor.data.vertices,points):v.co=((p.x-xc)*8.6,p.y*8.6+.15,p.z*8.6+zo)
+    donor.matrix_world=Matrix.Identity(4);donor.modifiers.clear()
+    sub=donor.modifiers.new('Donor inspection subdivision','SUBSURF');sub.levels=2
+    donor.hide_render=False;body.hide_render=True
+    for bone in rig.pose.bones:bone.matrix_basis=Matrix.Identity(4)
+    render('donor-shoulders',-35);render('donor-shoulders-rear',145)
+    (out/'result.json').write_text(json.dumps({'native_unchanged':digest(native)==pinned,'source_unchanged':digest(SOURCE)==SOURCE_SHA,'bones':bones,'rest_surface_weight_samples':rows,'purpose':'Internal shoulder/arm diagnosis; not acceptance'},indent=2)+'\n')
 
 
 def review(out):
