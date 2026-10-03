@@ -96,7 +96,9 @@ def main():
     GALLERY.write_text(text)
     events=[e for e in Ledger(ROOT/'.runtime/experiment-ops.sqlite3').events() if e['event_id'].startswith(PREFIX)]
     starts={e['job_id']:e for e in events if e['event_type']=='job_started'}
-    jobs=[{'id':e['job_id'],'kind':e.get('job_kind'),'returncode':e['returncode'],'seconds':e['monotonic_seconds']-starts[e['job_id']]['monotonic_seconds']} for e in events if e['event_type']=='job_completed']
+    jobs=[{'id':e['job_id'],'kind':e.get('job_kind'),'returncode':e['returncode'],'seconds':e['monotonic_seconds']-starts[e['job_id']]['monotonic_seconds'],
+           'utc_seconds':(datetime.fromisoformat(e['utc'])-datetime.fromisoformat(starts[e['job_id']]['utc'])).total_seconds()} for e in events if e['event_type']=='job_completed']
+    anomalies=[{'job':j['id'],'utc_minus_monotonic_seconds':j['utc_seconds']-j['seconds']} for j in jobs if abs(j['utc_seconds']-j['seconds'])>1.]
     start=next(e for e in events if e['event_id']==PREFIX+'work-start')
     end=next(e for e in events if e['event_id']==PREFIX+'work-end')
     seconds=(datetime.fromisoformat(end['utc'].replace('Z','+00:00'))-datetime.fromisoformat(start['utc'].replace('Z','+00:00'))).total_seconds()
@@ -105,9 +107,13 @@ def main():
     manifest={str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in [CURRENT/'adult-body-fit.blend',PROOF/'result.json',PROOF/'pixel-comparison.json',*PROOF.glob('*.png'),BASE/'natural152-seal-16/natural-hair.blend',BASE/'body161-job47.json',BASE/'body161-job48.json',card/'visual-review.json',ROOT/'src/movie_factory/adapters/blender/body_studio_fit.py',*paths]}
     prior=json.loads((BASE/'body160-operating/pass-summary.json').read_text())['cumulative_captured_seconds']
     summary={'scope':'Retain accepted throat/clavicles and correct neutral/seated shoulder, elbow, knee and abdominal structure, exchange161','disposition':'INTERNAL_VISUAL_GATE_PASS_DIRECTOR_REVIEW_PENDING','captured_active_seconds':seconds,'prior_captured_seconds':prior,'cumulative_captured_seconds':prior+seconds,'capture':'PARTIAL','capture_exclusions':['Initial context recovery','Final receipt/commit overhead'],'jobs':jobs,'native_time_inside_activity':True,'retained_evidence_bytes':sum(p.stat().st_size for p in files),'paid_provider_calls':0,'asset_purchases_usd':0,'engineering_tokens':None,'engineering_cost_usd':None,'full_suite_run':False,'visual_gate':'visual-review.json','remaining':['Director appearance acceptance','Dressed riding fit','Full facial/motion qualification','Textured body integration','Rights and backup']}
+    summary.update(captured_utc_work_span_seconds=seconds,clock_anomalies=anomalies,
+                   duration_basis='Cumulative capture is historical partial spans plus this UTC work window, not exact active effort. Unknown clock/suspend gaps are not fabricated Director waits or subtracted.',
+                   exact_active_seconds=None if anomalies else seconds)
+    if anomalies:summary['captured_active_seconds']=None
     for name,value in [('pass-summary.json',summary),('events.json',events),('checksums.json',manifest)]:
         (card/name).write_text(json.dumps(value,indent=2)+'\n')
-    print(json.dumps({'gallery_bytes':len(text.encode()),'captured_minutes':seconds/60,'cumulative_minutes':(prior+seconds)/60,'artifact_mb':summary['retained_evidence_bytes']/1e6,'jobs':len(jobs)}))
+    print(json.dumps({'gallery_bytes':len(text.encode()),'utc_work_span_minutes':seconds/60,'exact_active_seconds':summary['exact_active_seconds'],'cumulative_capture_minutes':(prior+seconds)/60,'artifact_mb':summary['retained_evidence_bytes']/1e6,'jobs':len(jobs)}))
 
 
 if __name__=='__main__':main()
