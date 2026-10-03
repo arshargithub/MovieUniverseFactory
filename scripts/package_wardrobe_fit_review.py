@@ -35,13 +35,16 @@ def main():
     assert all(result[k] for k in ('protected_data_exact','body_local_geometry_exact','source_unchanged'))
     assert fresh['reopened'] and fresh['body_basis_exact'] and fresh['protected_signatures_exact']
     assert all(v is not None and v<fresh['surface_tolerance'] for v in fresh['evaluated_local_surface_max_errors'].values())
-    compared=[]
+    compared=[];reframed=[]
     for path in selected.glob('*.png'):
-        previous=BASE/'wardrobe169-preview28'/path.name
+        previous=BASE/'wardrobe169-preview38'/path.name
         assert previous.is_file()
-        assert ImageChops.difference(Image.open(path).convert('RGB'),Image.open(previous).convert('RGB')).getbbox() is None
-        compared.append(path.name)
-    assert len(compared)==10
+        if path.name in {'mounted-side.png','mounted-opposite-side.png','mounted-partial-lean.png'}:
+            reframed.append(path.name)
+        else:
+            assert ImageChops.difference(Image.open(path).convert('RGB'),Image.open(previous).convert('RGB')).getbbox() is None
+            compared.append(path.name)
+    assert len(compared)==7 and len(reframed)==3
     reopened={}
     for path in (BASE/'wardrobe169-verify01').glob('reopened-*.png'):
         original=selected/path.name.removeprefix('reopened-')
@@ -74,7 +77,7 @@ def main():
     text=text.replace(token,json.dumps(data))
     assert len(text.encode())<1_000_000
     GALLERY.write_text(text)
-    (card/'pixel-comparison.json').write_text(json.dumps({'selected_vs_inspected_preview_exact':sorted(compared),'fresh_open_max_channel_differences':reopened,'limits':'Replay evidence only, not aesthetic acceptance'},indent=2)+'\n')
+    (card/'pixel-comparison.json').write_text(json.dumps({'selected_vs_inspected_preview_exact':sorted(compared),'camera_only_reframed_and_manually_reviewed':sorted(reframed),'fresh_open_max_channel_differences':reopened,'limits':'Replay evidence only, not aesthetic acceptance'},indent=2)+'\n')
     print(json.dumps({'gallery_bytes':len(text.encode()),'views':len(data),'compared_views':len(compared),'reopened_views':len(reopened)}))
 
 

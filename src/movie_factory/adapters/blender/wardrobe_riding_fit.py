@@ -17,7 +17,7 @@ HORSE_SHA = '7248f9dfecef3e9ece309c08055ab53ee6d802abe0a0e01307c7f9d8b93fd73e'
 
 
 def validate(job):
-    if not isinstance(job, dict) or set(job) != {'operation'} or job['operation'] not in ('inspect01', 'inspect02', 'inspect03', 'inspect04', 'preview01', 'preview02', 'preview03', 'preview04', 'preview05', 'preview06', 'preview07', 'preview08', 'preview09', 'preview10', 'preview11', 'preview12', 'preview13', 'finger14', 'finger16', 'finger17', 'finger18', 'preview15', 'preview19', 'preview20', 'preview21', 'preview22', 'preview23', 'cloth24', 'preview25', 'preview26', 'pose27', 'preview28', 'seal01', 'verify01'):
+    if not isinstance(job, dict) or set(job) != {'operation'} or job['operation'] not in ('inspect01', 'inspect02', 'inspect03', 'inspect04', 'preview01', 'preview02', 'preview03', 'preview04', 'preview05', 'preview06', 'preview07', 'preview08', 'preview09', 'preview10', 'preview11', 'preview12', 'preview13', 'finger14', 'finger16', 'finger17', 'finger18', 'preview15', 'preview19', 'preview20', 'preview21', 'preview22', 'preview23', 'cloth24', 'preview25', 'preview26', 'pose27', 'preview28', 'preview29', 'inspect30', 'reach31', 'preview32', 'reach33', 'reach34', 'preview35', 'preview36', 'preview37', 'preview38', 'seal01', 'verify01'):
         raise ValueError('Only fixed reviewed operations admitted')
     for path, sha in ((BODY, BODY_SHA), (HORSE, HORSE_SHA)):
         if path.is_symlink() or not path.is_file() or digest(path) != sha:
@@ -286,13 +286,20 @@ def continuous_tunic(parts,body,surface,rig,cloth):
     import bpy,bmesh
     from mathutils.kdtree import KDTree
     from character_assembly import mesh
-    points=[];faces=[];volumes=[]
+    points=[];faces=[];volumes=[];pattern_samples=[]
     for ob in parts:
         # Close each outer envelope before volumetric union. Thin walls were
         # undersampled and produced lace-like holes; they are rejected evidence.
         ob.modifiers.remove(ob.modifiers[-1])
         bpy.context.view_layer.update();deps=bpy.context.evaluated_depsgraph_get()
         ev=ob.evaluated_get(deps);me=ev.to_mesh();offset=len(points)
+        # Transfer garment-pattern weights, not nearest skin anatomy. The
+        # latter assigned torso fabric to the adjacent arm at the axilla.
+        for v in me.vertices:
+            weights={ob.vertex_groups[g.group].name:g.weight for g in v.groups
+                     if ob.vertex_groups[g.group].name in rig.data.bones}
+            assert sum(weights.values())>.99, 'Evaluated pattern weights must survive'
+            pattern_samples.append((ob.matrix_world@v.co,weights))
         bm=bmesh.new();bm.from_mesh(me)
         bmesh.ops.holes_fill(bm,edges=[e for e in bm.edges if e.is_boundary],sides=0)
         bmesh.ops.recalc_face_normals(bm,faces=list(bm.faces))
@@ -315,20 +322,61 @@ def continuous_tunic(parts,body,surface,rig,cloth):
     # The broad normal-only cut passed neutral but tore open on arm reach.
     caps=[f for f in bm.faces if (f.calc_center_median().z>-2.40 and f.normal.z>.45
           and (f.calc_center_median().x/1.30)**2+((f.calc_center_median().y-.18)/1.00)**2<1.)
-          or (f.calc_center_median().z<-6.80 and f.normal.z<-.65)]
+          or (f.calc_center_median().z<-6.80 and f.normal.z<-.65)
+          or (f.calc_center_median().z<-5.20 and abs(f.calc_center_median().x)>2.60 and f.normal.z<-.45)]
     bmesh.ops.delete(bm,geom=caps,context='FACES')
     bm.to_mesh(data);bm.free()
-    kd=KDTree(len(surface))
-    for i,(p,_) in enumerate(surface):kd.insert(p,i)
+    kd=KDTree(len(pattern_samples))
+    for i,(p,_) in enumerate(pattern_samples):kd.insert(p,i)
     kd.balance()
     groups={n:ob.vertex_groups.new(name=n) for n in rig.data.bones.keys()}
+    bm=bmesh.new();bm.from_mesh(data);bm.verts.ensure_lookup_table();bm.verts.index_update()
+    rim={v.index for e in bm.edges if e.is_boundary for v in e.verts if v.co.z>-3.0}
+    bands={i:1. for i in rim};front=set(rim)
+    for strength in (.70,.35):
+        adjacent={other.index for i in front for e in bm.verts[i].link_edges for other in e.verts if other.index not in bands}
+        for i in adjacent:bands[i]=strength
+        front=adjacent
+    bm.free();ob['neckline_chest_binding_vertices']=len(bands)
     for v in ob.data.vertices:
-        _,i,_=kd.find(v.co)
-        weights={body.vertex_groups[g.group].name:g.weight for g in body.data.vertices[i].groups if body.vertex_groups[g.group].name in groups}
+        weights={}
+        neighbors=kd.find_n(v.co,4)
+        factors=[1/max(distance,.015)**2 for _,_,distance in neighbors]
+        norm=sum(factors)
+        for (_,i,_),factor in zip(neighbors,factors):
+            for n,w in pattern_samples[i][1].items():weights[n]=weights.get(n,0.)+w*factor/norm
+        # The low-resolution torso pattern owns the chest/waist corridor;
+        # sleeve support blends in across the shoulder, rather than tugging
+        # the ribcage toward an adjacent arm when it reaches forward.
+        arm_blend=min(1.,max(0.,(abs(v.co.x)-1.60)/.80))
+        arm_blend=arm_blend*arm_blend*(3-2*arm_blend)
+        chest=min(1.,max(0.,(v.co.z+4.8)/1.6))
+        pelvis=min(1.,max(0.,(-v.co.z-4.8)/1.2))
+        weights={n:w*arm_blend for n,w in weights.items()}
+        for n,w in [('chest',chest),('pelvis',pelvis),('spine',1-chest-pelvis)]:
+            weights[n]=weights.get(n,0.)+w*(1-arm_blend)
+        if v.index in bands:
+            blend=bands[v.index];weights={n:w*(1-blend) for n,w in weights.items()}
+            weights['chest']=weights.get('chest',0.)+blend
         total=sum(weights.values());assert total>.99
         for n,w in weights.items():
             if w:groups[n].add([v.index],w/total,'REPLACE')
-    arm=ob.modifiers.new('Accepted-body garment weight transfer','ARMATURE');arm.object=rig;arm.use_deform_preserve_volume=True
+    fair_boundary(ob)
+    # The body has evaluated pose correctives as well as bone skinning.
+    # Copying weights alone misses that interface. Bind a native surface
+    # follower to a hidden, topology-stable body derivative instead.
+    support=body.copy();bpy.context.scene.collection.objects.link(support)
+    support.name='MF_fit_pose_skin_support';support.hide_render=True
+    for mod in list(support.modifiers):
+        if mod.type=='SUBSURF':support.modifiers.remove(mod)
+    ob.modifiers.clear()
+    follow=ob.modifiers.new('Accepted evaluated-body surface support','SURFACE_DEFORM')
+    follow.target=support
+    bpy.context.view_layer.objects.active=ob;ob.hide_set(False);ob.select_set(True)
+    bpy.context.view_layer.update()
+    bpy.ops.object.surfacedeform_bind(modifier=follow.name)
+    assert follow.is_bound, 'Native garment surface binding must succeed'
+    smooth=ob.modifiers.new('Static tailoring seam fairing','SMOOTH');smooth.factor=.8;smooth.iterations=35
     contact=ob.modifiers.new('Explicit static posed body clearance','SHRINKWRAP')
     contact.target=body;contact.wrap_method='NEAREST_SURFACEPOINT';contact.wrap_mode='OUTSIDE_SURFACE';contact.offset=.30
     return ob
@@ -755,6 +803,9 @@ def fit_render(out, label, angle, center=(0,.1,-5.8), size=15.8, resolution=(540
     from mathutils import Matrix,Vector
     scene=bpy.context.scene;camera=scene.camera
     scene.render.resolution_x,scene.render.resolution_y=resolution
+    # Presentation-only correction after preview38: horizontal full-rider
+    # views need enough vertical extent to retain the scarf and hoofs.
+    if 'mounted' in label and size>20 and resolution[0]>resolution[1]:size=32.
     target=Vector(center);rot=Matrix.Rotation(math.radians(angle),3,'Z')
     camera.data.ortho_scale=size;camera.location=target+rot@Vector((0,-36,.6))
     camera.rotation_euler=(target-camera.location).to_track_quat('-Z','Y').to_euler()
@@ -830,7 +881,7 @@ def build(out, operation):
         p=hood.matrix_world@v.co
         if p.z<-1.2:
             t=min(1.,max(0.,(-p.z-1.2)/1.2))
-            p.z-=.65*t
+            p.z=-1.2+(p.z+1.2)*.62
             if p.y>.8:p.y=p.y*(1-t*.55)+1.18*t*.55
             p.x*=1+.10*t
             v.co=hood.matrix_world.inverted()@p
@@ -842,17 +893,43 @@ def build(out, operation):
     shawl=next(o for o in clothes if o.name=='MF_fit_diagonal_scarf')
     collar=next(o for o in clothes if o.name=='MF_fit_bound_neckline')
     fit_straps([shawl,collar],[clothes[0]])
-    for ob in (clothes[0],shawl):fair_boundary(ob)
-    fit_straps([o for o in clothes if 'harness' in o.name or 'belt' in o.name],[o for o in clothes if 'harness' not in o.name and 'belt' not in o.name and 'boot' not in o.name and 'trouser' not in o.name])
+    fair_boundary(shawl)
+    fit_straps([o for o in clothes if 'harness' in o.name or 'belt' in o.name],[clothes[0]])
+    for ob in clothes:
+        if 'harness' in ob.name or 'belt' in ob.name:
+            # Project the single cloth/leather surface first. Projecting both
+            # solidified layers collapses thickness and creates z-fighting.
+            thickness=next(m for m in ob.modifiers if m.type=='SOLIDIFY')
+            ob.modifiers.remove(thickness)
+            contact=ob.modifiers.new('Static strap-to-garment registration','SHRINKWRAP')
+            contact.target=clothes[0];contact.wrap_method='NEAREST_SURFACEPOINT'
+            contact.wrap_mode='ON_SURFACE';contact.offset=.18
+            ob.modifiers.new('Leather thickness after fitting','SOLIDIFY').thickness=.04
     # Closed overshoe volumes remove bare-toe silhouettes without changing feet.
     for side,sign in [('L',1),('R',-1)]:
         clothes.append(closed_boot(body,side,sign,leather,rig))
     finger_controls=install_fingers(body,rig)
+    support=bpy.data.objects['MF_fit_pose_skin_support']
+    for name in finger_controls:
+        group=support.vertex_groups.get(name) or support.vertex_groups.new(name=name)
+        assert group.index==body.vertex_groups[name].index
     # Tailoring/control surfaces are derivatives; folds and dynamic cloth
     # remain separate from this authored static pose/clearance screen.
     for b in rig.pose.bones:b.matrix_basis=Matrix.Identity(4)
     bpy.context.view_layer.update()
-    if not operation.startswith(('finger','pose')):
+    if operation=='inspect30':
+        import bmesh
+        bm=bmesh.new();bm.from_mesh(clothes[0].data);bm.verts.ensure_lookup_table();bm.verts.index_update()
+        pending={v for e in bm.edges if e.is_boundary for v in e.verts};rows=[]
+        while pending:
+            group={pending.pop()};front=set(group)
+            while front:
+                nearby={w for v in front for e in v.link_edges if e.is_boundary for w in e.verts if w in pending}
+                pending-=nearby;group|=nearby;front=nearby
+            rows.append({'count':len(group),'bounds':[[min(v.co[k] for v in group) for k in range(3)],[max(v.co[k] for v in group) for k in range(3)]],
+                         'mean':[sum(v.co[k] for v in group)/len(group) for k in range(3)]})
+        bm.free();(out/'boundaries.json').write_text(json.dumps(rows,indent=2)+'\n');return
+    if not operation.startswith(('finger','pose','reach')):
         for label, angle in [('front',0), ('side',90), ('rear',180)]:fit_render(out,'standing-'+label,angle)
     if operation=='cloth24':
         result={'operation':operation,'protected_data_exact':accepted_signature(authority)==before,
@@ -866,6 +943,10 @@ def build(out, operation):
     riding_pose(rig)
     bpy.context.view_layer.update()
     contacts=fit_static_contacts(horse,rig,leather)
+    if operation in ('reach31','reach33','reach34'):
+        fit_render(out,'mounted-front-quarter',-40,(0,-1,-10.0),29,(540,900))
+        fit_render(out,'mounted-rear-quarter',140,(0,-1,-10.0),29,(540,900))
+        return
     if operation=='pose27':
         for ob in clothes+horse:ob.hide_render=True
         for ob in scene.objects:
@@ -905,8 +986,10 @@ def build(out, operation):
     result['body_basis_digest']=body_hash
     result['finger_controls']=finger_controls
     result['garment_envelope_volumes']=list(clothes[0]['fit_envelope_volumes'])
+    result['neckline_chest_binding_vertices']=clothes[0]['neckline_chest_binding_vertices']
     result['horse_pose_scope']='Neutral private derivative; source gait snapshot not qualified for reuse'
-    result['garment_fit_scope']='Pose-evaluated outside-surface clearance, not cloth simulation or dynamic qualification'
+    result['garment_fit_scope']='Native evaluated-body surface binding plus static outside-surface clearance; not cloth simulation or dynamic qualification'
+    result['native_surface_binding']=clothes[0].modifiers['Accepted evaluated-body surface support'].is_bound
     result['static_grip_corrective']='Articulated derivative finger controls; native animation and force/contact qualification remain open'
     (out/'result.json').write_text(json.dumps(result,indent=2)+'\n')
     assert result['body_local_geometry_exact'] and result['protected_data_exact'] and result['source_unchanged'], {k:result[k] for k in ('body_local_geometry_exact','protected_differences','source_unchanged')}
