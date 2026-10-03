@@ -196,3 +196,26 @@ def test_surface_connectivity_keeps_inner_arm_with_arm_not_nearby_torso():
     assert result['lower_arm_vertices']==220
     with pytest.raises(AssertionError,match='disconnected'):
         module.connected_arm_support(points,edges+[(0,120)])
+
+
+@pytest.mark.parametrize('operation',['inspect53','inspect54'])
+def test_seated_diagnosis_is_pinned_read_only_and_non_overwriting(monkeypatch,tmp_path,operation):
+    monkeypatch.setattr(module,'BASE',tmp_path)
+    pinned='8e9db951953034113e51c0be55f8acb39b96486826d0fa404a28631c5d08ce81'
+    def digest(path):
+        return module.ARCHIVE_SHA if path==module.ARCHIVE else module.SOURCE_SHA if path==module.SOURCE else pinned
+    monkeypatch.setattr(module,'digest',digest)
+    path=module.validate({'operation':operation})
+    assert path.name=='body163-'+operation
+    with pytest.raises(ValueError):module.validate({'operation':operation,'path':'other'})
+    path.mkdir()
+    with pytest.raises(ValueError,match='overwrite'):module.validate({'operation':operation})
+    import inspect
+    source=inspect.getsource(module.inspect_seated_proportions)
+    assert 'save_as_mainfile' not in source and 'save_mainfile' not in source
+
+
+def test_seated_diagnosis_rejects_changed_native(monkeypatch,tmp_path):
+    monkeypatch.setattr(module,'BASE',tmp_path)
+    monkeypatch.setattr(module,'digest',lambda p:module.ARCHIVE_SHA if p==module.ARCHIVE else module.SOURCE_SHA if p==module.SOURCE else '0'*64)
+    with pytest.raises(ValueError,match='seated diagnosis'):module.validate({'operation':'inspect53'})

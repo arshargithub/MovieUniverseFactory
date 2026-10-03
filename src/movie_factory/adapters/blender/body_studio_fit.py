@@ -27,7 +27,7 @@ def protected():
 
 
 def validate(job):
-    if job not in tuple({'operation': name} for name in ('inspect01','fit01','fit02','fit03','fit04','review05','fit06','fit07','fit08','fit09','fit10','fit11','fit12','fit13','fit14','fit15','fit16','fit17','fit18','fit19','fit20','fit21','fit22','fit23','fit24','fit25','fit26','fit27','fit28','fit29','fit30','fit31','fit32','fit33','fit34','fit35','fit36','fit37','fit38','fit39','fit40','fit41','fit42','fit43','fit44','fit45','fit46','fit47','verify48','inspect49','fit50','fit52')):
+    if job not in tuple({'operation': name} for name in ('inspect01','fit01','fit02','fit03','fit04','review05','fit06','fit07','fit08','fit09','fit10','fit11','fit12','fit13','fit14','fit15','fit16','fit17','fit18','fit19','fit20','fit21','fit22','fit23','fit24','fit25','fit26','fit27','fit28','fit29','fit30','fit31','fit32','fit33','fit34','fit35','fit36','fit37','fit38','fit39','fit40','fit41','fit42','fit43','fit44','fit45','fit46','fit47','verify48','inspect49','fit50','fit52','inspect53','inspect54')):
         raise ValueError('Only fixed operations admitted')
     for path, sha in ((ARCHIVE, ARCHIVE_SHA), (SOURCE, SOURCE_SHA)):
         if path.is_symlink() or digest(path) != sha:
@@ -37,6 +37,11 @@ def validate(job):
     if job['operation'] in ('fit34','fit35','fit36','fit37','fit38','fit39'):out=BASE/('body160-'+job['operation'])
     if job['operation'] in ('fit40','fit41','fit42','fit43','fit44','fit45','fit46','fit47','verify48'):out=BASE/('body161-'+job['operation'])
     if job['operation'] in ('inspect49','fit50','fit52'):out=BASE/('body162-'+job['operation'])
+    if job['operation'] in ('inspect53','inspect54'):
+        native=BASE/'body162-fit52/adult-body-fit.blend'
+        if native.is_symlink() or digest(native)!='8e9db951953034113e51c0be55f8acb39b96486826d0fa404a28631c5d08ce81':
+            raise ValueError('Pinned seated diagnosis input mismatch')
+        out=BASE/('body163-'+job['operation'])
     if out.exists():
         raise ValueError('Never overwrite evidence')
     return out
@@ -60,6 +65,9 @@ def main():
     job = json.loads(Path(sys.argv[sys.argv.index('--') + 1]).read_text())
     out = validate(job)
     out.mkdir()
+    if job['operation'] in ('inspect53','inspect54'):
+        inspect_seated_proportions(out)
+        return
     if job['operation']=='inspect49':
         inspect_shoulders(out)
         return
@@ -1233,6 +1241,76 @@ def inspect_shoulders(out):
     for bone in rig.pose.bones:bone.matrix_basis=Matrix.Identity(4)
     render('donor-shoulders',-35);render('donor-shoulders-rear',145)
     (out/'result.json').write_text(json.dumps({'native_unchanged':digest(native)==pinned,'source_unchanged':digest(SOURCE)==SOURCE_SHA,'bones':bones,'rest_surface_weight_samples':rows,'purpose':'Internal shoulder/arm diagnosis; not acceptance'},indent=2)+'\n')
+
+
+def inspect_seated_proportions(out):
+    """Read-only current-native skeletal/support diagnosis; never save the scene."""
+    import bpy, math
+    from mathutils import Matrix, Vector
+    from bpy_extras.object_utils import world_to_camera_view
+    native=BASE/'body162-fit52/adult-body-fit.blend'
+    pinned='8e9db951953034113e51c0be55f8acb39b96486826d0fa404a28631c5d08ce81'
+    assert not native.is_symlink() and digest(native)==pinned
+    data=json.loads((native.parent/'result.json').read_text())
+    bpy.ops.wm.open_mainfile(filepath=str(native),load_ui=False,use_scripts=False)
+    scene=bpy.context.scene;camera=scene.camera
+    rig=bpy.data.objects['MF_body156_fit_rig'];body=bpy.data.objects['MF_studio_adult_body']
+    current=protected()
+    before={name:current[name] for name in data['protected']}
+    assert before==data['protected']
+    def surface():
+        bpy.context.view_layer.update()
+        ob=body.evaluated_get(bpy.context.evaluated_depsgraph_get())
+        return [tuple(v.co) for v in ob.data.vertices]
+    neutral=surface()
+    def snapshot(posed):
+        target=Vector((0,-.8,-4.9) if posed else (0,0,-5.5))
+        rot=Matrix.Rotation(math.radians(90),3,'Z')
+        camera.data.ortho_scale=14.5 if posed else 15.7
+        camera.location=target+rot@Vector((0,-25,.5))
+        camera.rotation_euler=(target-camera.location).to_track_quat('-Z','Y').to_euler()
+        bpy.context.view_layer.update()
+        result={}
+        for side in ('L','R'):
+            thigh=rig.pose.bones['thigh.'+side];shin=rig.pose.bones['shin.'+side]
+            points=[rig.matrix_world@p for p in (thigh.head,shin.head,shin.tail)]
+            projection=[world_to_camera_view(scene,camera,p) for p in points]
+            pixels=[(p.x*scene.render.resolution_x,(1-p.y)*scene.render.resolution_y) for p in projection]
+            a,b=(points[1]-points[0]).length,(points[2]-points[1]).length
+            pa,pb=math.dist(pixels[0],pixels[1]),math.dist(pixels[1],pixels[2])
+            result[side]={'world_joints':[list(p) for p in points], 'image_pixels':pixels,
+                'hip_to_knee':a,'knee_to_ankle':b,'upper_lower_ratio':a/b,
+                'projected_upper_lower_ratio':pa/pb}
+        return result
+    rest=snapshot(False)
+    bands=[]
+    names={g.index:g.name for g in body.vertex_groups}
+    for z in (-5.4,-5.7,-6.0,-6.3,-6.6,-6.9,-7.2,-7.5,-8.0,-8.5,-9.03,-9.5,-10.0,-11.0,-12.23):
+        vertices=[v for v in body.data.vertices if abs(v.co.z-z)<.045 and .30<v.co.x<1.5]
+        if not vertices:continue
+        means={}
+        for v in vertices:
+            for g in v.groups:
+                name=names[g.group]
+                if name in rig.data.bones:means[name]=means.get(name,0)+g.weight/len(vertices)
+        bands.append({'z':z,'vertex_count':len(vertices),'mean_weights':means,
+            'mean_coordinate':[sum(v.co[i] for v in vertices)/len(vertices) for i in range(3)]})
+    for n,m in data['pose_screen']['pose_matrices'].items():rig.pose.bones[n].matrix_basis=Matrix(m)
+    bpy.context.view_layer.update()
+    seated=snapshot(True);posed=surface()
+    for bone in rig.pose.bones:bone.matrix_basis=Matrix.Identity(4)
+    returned=surface()
+    error=max((Vector(a)-Vector(b)).length for a,b in zip(neutral,returned))
+    assert error<1e-5 and all(protected()[name]==value for name,value in before.items())
+    assert digest(native)==pinned and digest(SOURCE)==SOURCE_SHA
+    result={'native_sha256':pinned,'native_unchanged':True,'protected_local_data_exact':True,
+        'standing':rest,'seated':seated,'rest_surface_weight_bands':bands,
+        'neutral_surface_sha256':coordinates_digest(neutral),
+        'posed_surface_sha256':coordinates_digest(posed),'neutral_return_max_error':error,
+        'limits':['Joint ratios are test-rig measurements, not a universal anatomical standard',
+            'No asset change, new design, render, pose revision or animation qualification',
+            'Camera projection includes the actual side-view elevation and lateral leg splay']}
+    (out/'result.json').write_text(json.dumps(result,indent=2)+'\n')
 
 
 def review(out):
