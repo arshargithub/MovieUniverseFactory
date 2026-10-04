@@ -20,12 +20,15 @@ def validate(job):
     out = BASE/'wardrobe174-verify02'
     if out.exists():raise ValueError('Never overwrite failed or selected evidence')
     binding_path = BASE/'wardrobe174-operating/source-binding.json'
-    repair_path = BASE/'wardrobe174-operating/verification-binding.json'
+    repair_path = BASE/'wardrobe174-operating/verification-binding02.json'
     repair = json.loads(repair_path.read_text())
-    import package_wardrobe_construction174 as package
-    expected = {str(p.relative_to(ROOT)) for p in package.source_paths()}
-    expected.update({'scripts/wardrobe_construction174_recheck.py',
-                     'tests/unit/test_wardrobe_construction174_recheck.py'})
+    # Native Blender must not import the outer packaging/Pillow runtime.
+    expected = {str(p.relative_to(ROOT)) for p in (ROOT/'src/movie_factory/adapters/blender').glob('*.py')}
+    expected.update({'scripts/wardrobe_construction174.py','scripts/wardrobe_construction174_verify.py',
+        'scripts/package_wardrobe_construction174.py','scripts/package_wardrobe_studio.py',
+        'scripts/package_wardrobe_fit_review.py','tests/unit/test_wardrobe_construction174.py',
+        'tests/unit/test_wardrobe_construction174_package.py','scripts/wardrobe_construction174_recheck.py',
+        'tests/unit/test_wardrobe_construction174_recheck.py'})
     rows = repair['source_files']
     if len(rows)!=len(expected) or {r['path'] for r in rows}!=expected:
         raise ValueError('Unexpected verification source paths')

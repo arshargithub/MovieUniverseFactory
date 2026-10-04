@@ -19,3 +19,9 @@ def test_selected_artifact_is_not_rebuilt_or_saved():
     text = (ROOT/'scripts/wardrobe_construction174_verify.py').read_text()
     assert 'mats = studio.make_materials()' in text
     assert "bpy.data.materials['MF_173_'" not in text
+
+
+def test_native_recheck_does_not_import_outer_packaging_runtime():
+    text = inspect.getsource(module.validate)
+    assert 'import package_wardrobe' not in text
+    assert "verification-binding02.json" in text

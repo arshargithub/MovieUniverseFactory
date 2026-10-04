@@ -67,7 +67,7 @@ def package():
     verified = json.loads((fresh/'result.json').read_text())
     binding = json.loads((OUT/'source-binding.json').read_text())
     assert {r['path'] for r in binding['source_files']}=={str(p.relative_to(ROOT)) for p in source_paths()}
-    verification = json.loads((OUT/'verification-binding.json').read_text())
+    verification = json.loads((OUT/'verification-binding02.json').read_text())
     assert verification['selected_binding_sha256']==sha(OUT/'source-binding.json')
     assert verification['selected_native_sha256']==sha(selected/'dressed-fit.blend')
     import hashlib
@@ -147,7 +147,7 @@ def receipt():
 
 def bind_verification():
     """Pin the check repair separately; never rewrite the selected source claim."""
-    path = OUT/'verification-binding.json'
+    path = OUT/'verification-binding02.json'
     if path.exists() or (BASE/'wardrobe174-verify02').exists():
         raise ValueError('Bind verification once before repaired dispatch')
     commit = subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
@@ -160,7 +160,7 @@ def bind_verification():
         blob = subprocess.check_output(['git','show',commit+':'+relative],cwd=ROOT)
         assert not source.is_symlink() and hashlib.sha256(blob).hexdigest()==sha(source)
         rows.append({'path':relative,'sha256':sha(source)})
-    write('verification-binding.json',{'source_commit':commit,'source_files':rows,
+    write('verification-binding02.json',{'source_commit':commit,'source_files':rows,
         'selected_binding_sha256':sha(OUT/'source-binding.json'),
         'selected_native_sha256':sha(BASE/'wardrobe174-seal01/dressed-fit.blend'),
         'scope':'Verification/material lookup and packaging repair only; original selected source binding and native unchanged. Failed verify01 retained.'})
