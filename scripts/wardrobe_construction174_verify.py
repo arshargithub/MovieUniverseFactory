@@ -11,6 +11,12 @@ def verify(out, base, source, source_sha, binding):
     from static_tail_dock import data_signature
     selected = base/'wardrobe174-seal01'
     result = json.loads((selected/'result.json').read_text())
+    # The first selected neutral construction began with173's belt shell.
+    # Buckle placement queries that evaluated shell before174 sets thickness.
+    assert digest(source)==source_sha
+    bpy.ops.wm.open_mainfile(filepath=str(source),load_ui=False,use_scripts=False)
+    original_shell = next(m for m in bpy.data.objects['MF_173_waist_belt'].modifiers if m.type=='SOLIDIFY')
+    initial_shell = (original_shell.thickness,original_shell.offset)
     bpy.ops.wm.open_mainfile(filepath=str(selected/'dressed-fit.blend'),load_ui=False,use_scripts=False)
     assert digest(base/'wardrobe174-operating/source-binding.json')==result['source_binding_sha256']
     assert bpy.context.scene['MF_174_source_commit']==binding['source_commit']==result['source_commit']
@@ -37,6 +43,8 @@ def verify(out, base, source, source_sha, binding):
     assert delta>1e-5 and rollback<2e-5
     fit_render(out,'reopened-mounted-side',90,(0,-1,-10),29.,(1000,700))
     studio.neutral(rig)
+    thickness.thickness,thickness.offset = initial_shell
+    bpy.context.view_layer.update()
     # Recreate the same trusted shader recipe. Blender can discard unused
     # unsuffixed datablocks while the selected garments use numeric suffixes.
     # Datablock naming is not a reliable saved-material identity.
@@ -57,5 +65,6 @@ def verify(out, base, source, source_sha, binding):
         'body_basis_exact':basis,'static_tail_curve_data_exact':tail,'surface_errors':errors,
         'surface_tolerance':2e-5,'visible_garment_revision_max_delta':delta,
         'revision_rollback_max_delta':rollback,'neutral_static_pattern_regenerated':True,
+        'neutral_initial_belt_shell':initial_shell,
         'unpacked_external_images':external,'source_unchanged':source_unchanged,
         'appearance_acceptance':'PENDING','motion_and_rights':'NOT_QUALIFIED'},indent=2)+'\n')

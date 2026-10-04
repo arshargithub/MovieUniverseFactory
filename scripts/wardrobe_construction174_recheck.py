@@ -15,12 +15,12 @@ def sha(path):
 
 
 def validate(job):
-    if not isinstance(job,dict) or job!={'operation':'verify02'}:
-        raise ValueError('Fixed verify02 operation only')
-    out = BASE/'wardrobe174-verify02'
+    if not isinstance(job,dict) or job!={'operation':'verify03'}:
+        raise ValueError('Fixed verify03 operation only')
+    out = BASE/'wardrobe174-verify03'
     if out.exists():raise ValueError('Never overwrite failed or selected evidence')
     binding_path = BASE/'wardrobe174-operating/source-binding.json'
-    repair_path = BASE/'wardrobe174-operating/verification-binding02.json'
+    repair_path = BASE/'wardrobe174-operating/verification-binding03.json'
     repair = json.loads(repair_path.read_text())
     # Native Blender must not import the outer packaging/Pillow runtime.
     expected = {str(p.relative_to(ROOT)) for p in (ROOT/'src/movie_factory/adapters/blender').glob('*.py')}

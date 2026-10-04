@@ -24,4 +24,10 @@ def test_selected_artifact_is_not_rebuilt_or_saved():
 def test_native_recheck_does_not_import_outer_packaging_runtime():
     text = inspect.getsource(module.validate)
     assert 'import package_wardrobe' not in text
-    assert "verification-binding02.json" in text
+    assert "verification-binding03.json" in text
+
+
+def test_neutral_replay_restores_initial_belt_shell_before_construction():
+    text = (ROOT/'scripts/wardrobe_construction174_verify.py').read_text()
+    assert 'initial_shell = (original_shell.thickness,original_shell.offset)' in text
+    assert 'thickness.thickness,thickness.offset = initial_shell' in text

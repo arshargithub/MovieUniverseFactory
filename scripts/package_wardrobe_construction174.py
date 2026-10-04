@@ -60,14 +60,14 @@ def bind():
 
 
 def package():
-    selected = BASE/'wardrobe174-seal01'; fresh = BASE/'wardrobe174-verify02'
+    selected = BASE/'wardrobe174-seal01'; fresh = BASE/'wardrobe174-verify03'
     review = json.loads((OUT/'visual-review.json').read_text())
     check_review(review,selected,'wardrobe174-seal01',CRITERIA)
     result = json.loads((selected/'result.json').read_text())
     verified = json.loads((fresh/'result.json').read_text())
     binding = json.loads((OUT/'source-binding.json').read_text())
     assert {r['path'] for r in binding['source_files']}=={str(p.relative_to(ROOT)) for p in source_paths()}
-    verification = json.loads((OUT/'verification-binding02.json').read_text())
+    verification = json.loads((OUT/'verification-binding03.json').read_text())
     assert verification['selected_binding_sha256']==sha(OUT/'source-binding.json')
     assert verification['selected_native_sha256']==sha(selected/'dressed-fit.blend')
     import hashlib
@@ -124,7 +124,7 @@ def receipt():
     end = next(e for e in events if e['event_id']=='wardrobe174-work-end')
     seconds = (datetime.fromisoformat(end['utc'])-datetime.fromisoformat(start['utc'])).total_seconds()
     manifest = [{'path':str(p.relative_to(ROOT)),'sha256':sha(p),'bytes':p.stat().st_size}
-                for folder in ('wardrobe174-seal01','wardrobe174-verify01','wardrobe174-verify02')
+                for folder in ('wardrobe174-seal01','wardrobe174-verify01','wardrobe174-verify02','wardrobe174-verify03')
                 for p in sorted((BASE/folder).iterdir()) if p.is_file()]
     retained = sum(p.stat().st_size for folder in BASE.glob('wardrobe174-*') if folder.is_dir()
                    for p in folder.rglob('*') if p.is_file())
@@ -147,8 +147,8 @@ def receipt():
 
 def bind_verification():
     """Pin the check repair separately; never rewrite the selected source claim."""
-    path = OUT/'verification-binding02.json'
-    if path.exists() or (BASE/'wardrobe174-verify02').exists():
+    path = OUT/'verification-binding03.json'
+    if path.exists() or (BASE/'wardrobe174-verify03').exists():
         raise ValueError('Bind verification once before repaired dispatch')
     commit = subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
     import hashlib
@@ -160,7 +160,7 @@ def bind_verification():
         blob = subprocess.check_output(['git','show',commit+':'+relative],cwd=ROOT)
         assert not source.is_symlink() and hashlib.sha256(blob).hexdigest()==sha(source)
         rows.append({'path':relative,'sha256':sha(source)})
-    write('verification-binding02.json',{'source_commit':commit,'source_files':rows,
+    write('verification-binding03.json',{'source_commit':commit,'source_files':rows,
         'selected_binding_sha256':sha(OUT/'source-binding.json'),
         'selected_native_sha256':sha(BASE/'wardrobe174-seal01/dressed-fit.blend'),
         'scope':'Verification/material lookup and packaging repair only; original selected source binding and native unchanged. Failed verify01 retained.'})
