@@ -60,14 +60,24 @@ def bind():
 
 
 def package():
-    selected = BASE/'wardrobe174-seal01'; fresh = BASE/'wardrobe174-verify01'
+    selected = BASE/'wardrobe174-seal01'; fresh = BASE/'wardrobe174-verify02'
     review = json.loads((OUT/'visual-review.json').read_text())
     check_review(review,selected,'wardrobe174-seal01',CRITERIA)
     result = json.loads((selected/'result.json').read_text())
     verified = json.loads((fresh/'result.json').read_text())
     binding = json.loads((OUT/'source-binding.json').read_text())
     assert {r['path'] for r in binding['source_files']}=={str(p.relative_to(ROOT)) for p in source_paths()}
-    for row in binding['source_files']+binding['inputs']:
+    verification = json.loads((OUT/'verification-binding.json').read_text())
+    assert verification['selected_binding_sha256']==sha(OUT/'source-binding.json')
+    assert verification['selected_native_sha256']==sha(selected/'dressed-fit.blend')
+    import hashlib
+    allowed = {'scripts/wardrobe_construction174_verify.py','scripts/package_wardrobe_construction174.py'}
+    for row in binding['source_files']:
+        blob = subprocess.check_output(['git','show',binding['source_commit']+':'+row['path']],cwd=ROOT)
+        assert hashlib.sha256(blob).hexdigest()==row['sha256']
+        path = ROOT/row['path']; assert not path.is_symlink()
+        assert sha(path)==row['sha256'] or row['path'] in allowed
+    for row in binding['inputs']+verification['source_files']:
         path = ROOT/row['path']; assert not path.is_symlink() and sha(path)==row['sha256']
     assert sha(OUT/'source-binding.json')==result['source_binding_sha256']
     assert sha(selected/'dressed-fit.blend')==result['native_sha256']
@@ -114,7 +124,7 @@ def receipt():
     end = next(e for e in events if e['event_id']=='wardrobe174-work-end')
     seconds = (datetime.fromisoformat(end['utc'])-datetime.fromisoformat(start['utc'])).total_seconds()
     manifest = [{'path':str(p.relative_to(ROOT)),'sha256':sha(p),'bytes':p.stat().st_size}
-                for folder in ('wardrobe174-seal01','wardrobe174-verify01')
+                for folder in ('wardrobe174-seal01','wardrobe174-verify01','wardrobe174-verify02')
                 for p in sorted((BASE/folder).iterdir()) if p.is_file()]
     retained = sum(p.stat().st_size for folder in BASE.glob('wardrobe174-*') if folder.is_dir()
                    for p in folder.rglob('*') if p.is_file())
@@ -135,8 +145,30 @@ def receipt():
     write('CARD.json',card); print(json.dumps(card))
 
 
+def bind_verification():
+    """Pin the check repair separately; never rewrite the selected source claim."""
+    path = OUT/'verification-binding.json'
+    if path.exists() or (BASE/'wardrobe174-verify02').exists():
+        raise ValueError('Bind verification once before repaired dispatch')
+    commit = subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
+    import hashlib
+    paths = source_paths()+[ROOT/'scripts/wardrobe_construction174_recheck.py',
+                            ROOT/'tests/unit/test_wardrobe_construction174_recheck.py']
+    rows = []
+    for source in paths:
+        relative = str(source.relative_to(ROOT))
+        blob = subprocess.check_output(['git','show',commit+':'+relative],cwd=ROOT)
+        assert not source.is_symlink() and hashlib.sha256(blob).hexdigest()==sha(source)
+        rows.append({'path':relative,'sha256':sha(source)})
+    write('verification-binding.json',{'source_commit':commit,'source_files':rows,
+        'selected_binding_sha256':sha(OUT/'source-binding.json'),
+        'selected_native_sha256':sha(BASE/'wardrobe174-seal01/dressed-fit.blend'),
+        'scope':'Verification/material lookup and packaging repair only; original selected source binding and native unchanged. Failed verify01 retained.'})
+    print(json.dumps({'verification_commit':commit,'source_files':len(rows)}))
+
+
 if __name__=='__main__':
     import sys
-    actions = {'bind':bind,'package':package,'receipt':receipt}
+    actions = {'bind':bind,'bind-verification':bind_verification,'package':package,'receipt':receipt}
     if len(sys.argv)!=2 or sys.argv[1] not in actions: raise ValueError('Fixed packaging operation only')
     actions[sys.argv[1]]()

@@ -37,8 +37,10 @@ def verify(out, base, source, source_sha, binding):
     assert delta>1e-5 and rollback<2e-5
     fit_render(out,'reopened-mounted-side',90,(0,-1,-10),29.,(1000,700))
     studio.neutral(rig)
-    mats = {name:bpy.data.materials['MF_173_'+name] for name in
-            ('cloth','scarf','panel','pants','leather','boot','seam','thread','metal','sole')}
+    # Recreate the same trusted shader recipe. Blender can discard unused
+    # unsuffixed datablocks while the selected garments use numeric suffixes.
+    # Datablock naming is not a reliable saved-material identity.
+    mats = studio.make_materials()
     studio.pose_wardrobe(mats)
     for ob in bpy.context.scene.objects:
         if ob.name.startswith(('MF_fit_horse','MF_fit_saddle','MF_fit_bridle','MF_fit_bit','MF_fit_Torus',
