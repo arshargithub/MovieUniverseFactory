@@ -224,9 +224,86 @@ def receipt():
     write(OUT/'CARD.json',card);print(json.dumps(card))
 
 
+def failure():
+    """Honest failed-method comparison/receipt; never a selected native bundle."""
+    import base64
+    from datetime import datetime
+    from io import BytesIO
+    import sqlite3
+    from PIL import Image
+    OUT.mkdir(exist_ok=True)
+    review=json.loads((OUT/'method-disposition.json').read_text())
+    assert review['status']=='FAILED_INTERNAL_REVIEW_DIRECTOR_DECISION_REQUIRED'
+    assert review['known_blockers'] and review['Director_acceptance']=='NOT_REQUESTED_FOR_FAILED_CANDIDATE'
+    assert not (BASE/'wardrobe175-seal01').exists() and not (OUT/'source-binding.json').exists()
+    last=BASE/'wardrobe175-preview32'
+    result=json.loads((last/'result.json').read_text())
+    assert result['protected_exact'] and result['body_basis_exact']
+    assert result['handler_sha256']==sha(ROOT/'scripts/wardrobe_outer175.py')
+    commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
+    source=[]
+    for p in source_paths():
+        rel=str(p.relative_to(ROOT));blob=subprocess.check_output(['git','show',commit+':'+rel],cwd=ROOT)
+        assert hashlib.sha256(blob).hexdigest()==sha(p)
+        source.append({'path':rel,'sha256':sha(p)})
+    write(OUT/'failed-source-preservation.json',{'commit':commit,'source_files':source,
+        'inputs':[{'path':str(p.relative_to(ROOT)),'sha256':sha(p)} for p in input_paths()],
+        'last_handler_matches_committed_bytes':True,
+        'provenance':'Post-run preservation of failed32 source, NOT a pre-execution seal or qualified replay'})
+    refs=ROOT/'.runtime/art-direction/series01-pashtun-baseline-v01'
+    frames=[(refs/'frontal-v02-individualized.png','Original front','Approved illustrated front'),
+        (refs/'portrait-v07-individualized.png','Original portrait','Approved illustrated portrait')]
+    frames += [(last/(name+'.png'),label,label+' · diagnostic32 · FAILED internal review') for name,label in
+        [('upper-front','Front'),('upper-right','Right ¾'),('upper-rear','Back'),
+         ('upper-profile','Profile'),('mounted-left','Riding front'),('mounted-rear','Riding rear'),
+         ('mounted-profile','Riding profile'),('partial-rear','Partial-lean rear')]]
+    assert all(p.name in review['reviewed_images'] for p,_,_ in frames[2:])
+    template=GALLERY.read_text();assert '/* REVIEW_DATA */[]' in template
+    for quality in (80,74,68,62):
+        rows=[]
+        for p,label,caption in frames:
+            picture=Image.open(p).convert('RGB');picture.thumbnail((850,700))
+            stream=BytesIO();picture.save(stream,'JPEG',quality=quality,optimize=True)
+            rows.append({'short':label,'label':caption,'image':'data:image/jpeg;base64,'+base64.b64encode(stream.getvalue()).decode()})
+        content=template.replace('/* REVIEW_DATA */[]',json.dumps(rows))
+        if len(content.encode())<970000:break
+    assert len(content.encode())<1000000
+    GALLERY.write_text(content)
+    con=sqlite3.connect(f'file:{ROOT/".runtime/experiment-ops.sqlite3"}?mode=ro',uri=True)
+    events=[json.loads(p) for p, in con.execute('SELECT payload FROM events ORDER BY seq')
+            if json.loads(p)['event_id'].startswith('wardrobe175-')]
+    con.close()
+    starts={e['job_id']:e for e in events if e['event_type']=='job_started'}
+    ends={e['job_id']:e for e in events if e['event_type']=='job_completed'}
+    assert starts.keys()==ends.keys()
+    start=next(e for e in events if e['event_id']=='wardrobe175-work-start')
+    end=next(e for e in events if e['event_id']=='wardrobe175-work-end')
+    seconds=(datetime.fromisoformat(end['utc'])-datetime.fromisoformat(start['utc'])).total_seconds()
+    manifest=[{'path':str(p.relative_to(ROOT)),'sha256':sha(p),'bytes':p.stat().st_size}
+        for folder in BASE.glob('wardrobe175-*') if folder.is_dir() and folder!=OUT
+        for p in sorted(folder.rglob('*')) if p.is_file()]
+    write(OUT/'diagnostic-manifest.json',manifest);write(OUT/'scope-events.json',events)
+    card={'status':review['status'],'known_blockers':review['known_blockers'],
+        'captured_utc_activity_seconds':seconds,'prior_partial_seconds':67788.491694,
+        'cumulative_partial_seconds':67788.491694+seconds,'lifetime_net_seconds':None,
+        'engineering_model':None,'reasoning_effort':None,'engineering_tokens':None,'engineering_dollar_cost':None,
+        'paid_provider_calls':0,'asset_purchases':0,'all_jobs_reconciled':True,
+        'native_job_count':sum(e['job_kind']=='native' for e in starts.values()),
+        'process_failures':sum(e.get('returncode') not in (0,None) for e in ends.values()),
+        'retained_diagnostic_bytes':sum(r['bytes'] for r in manifest),'gallery_bytes':len(content.encode()),
+        'selected_native_outputs':0,'director_accepted_outputs':0,'creative_qualification':'FAIL',
+        'episode_status':'OPEN','remote_push':False,'media_backup':False,
+        'capture_limits':'Partial history; initial context recovery and final receipt/commit overhead excluded',
+        'recommended_choice':'PROPOSED single broad outside crossover, soft closed rear; not adopted',
+        'limits':['Technical preservation is not creative acceptance','No selected sealing or native replay performed',
+                  'Not motion/rights/release qualification','Local commits are not off-device backup']}
+    write(OUT/'CARD.json',card);print(json.dumps(card))
+
+
 if __name__=='__main__':
     import sys
     if sys.argv[1:]==['bind']:bind()
     elif sys.argv[1:]==['publish']:publish()
     elif sys.argv[1:]==['receipt']:receipt()
-    else:raise ValueError('Only fixed bind/publish/receipt actions')
+    elif sys.argv[1:]==['failure']:failure()
+    else:raise ValueError('Only fixed bind/publish/receipt/failure actions')

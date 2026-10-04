@@ -11,7 +11,7 @@ studio = prior.studio
 BASE = studio.BASE
 SOURCE = BASE/'wardrobe174-seal01/dressed-fit.blend'
 SOURCE_SHA = '65d19c99bc7232b62146df0fb866412e2431f2e8e12deb29caaa17f7e14331cd'
-OPERATIONS = tuple('preview%02d'%i for i in range(1,27)) + ('seal01','verify01')
+OPERATIONS = tuple('preview%02d'%i for i in range(1,35)) + ('seal01','verify01')
 
 
 def route_point(column, across):
@@ -43,13 +43,22 @@ def route_point(column, across):
 
 def rear_drop(lean,y,z):
     """Bounded prescribed-pose drape, not dynamic cloth qualification."""
-    return min(.65,1.10*abs(math.sin(lean)))*studio.smoothstep((y-.35)/.70)*studio.smoothstep((-z-.60)/.70)
+    return min(1.1,1.90*abs(math.sin(lean)))*studio.smoothstep((y-.35)/.70)*studio.smoothstep((-z-.60)/.70)
 
 
 def cloth_point(p):
     result=studio.torso_point(p)
     lean=abs(studio.torso_matrix(-2.7).to_quaternion().angle)
     result.z-=rear_drop(lean,p.y,p.z)
+    return result
+
+
+def headfall_point(p,index):
+    result=studio.torso_point(p)
+    column,j=divmod(index,41)
+    if 189<=column<=226:
+        lean=abs(studio.torso_matrix(-2.7).to_quaternion().angle)
+        result.z-=rear_drop(lean,p.y,p.z)*studio.smoothstep((j/40-.65)/.35)*.7
     return result
 
 
@@ -82,6 +91,16 @@ def construct(mats):
         for j in range(41):
             target=Vector((0.,1.54,-1.92+.48*(j/40-.5)))
             rest[i*41+j]=rest[i*41+j].lerp(target,1-studio.smoothstep((i-180)/9))
+    # The frozen neutral crown is reusable; its short central rear hem is
+    # not sufficient once exterior wraps hang lower in a leaning pose.
+    # Lengthen the LOWER rear curtain, never translate the hair-supported top.
+    for i in range(189,227):
+        for j in range(41):
+            p=rest[i*41+j]
+            w=studio.smoothstep((j/40-.55)/.45)
+            fold=.07*math.exp(-((p.x+.45)/.18)**2)+.05*math.exp(-((p.x-.5)/.22)**2)
+            p.y=p.y*(1-w)+(1.83-.12*p.x*p.x+fold)*w
+            p.z=p.z*(1-w)+min(p.z,-3.55)*w
     # Broad end under rear overlap, not a point-tuck or dangling jagged tab.
     for i in range(227,243):
         t=studio.smoothstep((i-226)/16)
@@ -90,10 +109,14 @@ def construct(mats):
             target=Vector((.15+.95*(v-.5),1.60+.12*math.sin(math.pi*v),
                            -2.06-.28*math.sin(math.pi*v)))
             rest[i*41+j]=rest[i*41+j].lerp(target,t)
-    faces = prior.sheet_faces(243)
+    # One logical garment, assembled surfaces with a hidden rear overlap.
+    # Do not claim a manufacturable continuous sheet or dynamic cloth solve.
+    faces = [f for f in prior.sheet_faces(243)
+             if not (min(f)//41==180 and max(f)//41==181)]
     # Preserve the sloped rounded shoulder crossing instead of flattening
     # all columns to a superior-surface shelf.
-    ob = studio.panel('MF_173_open_scarf', [tuple(cloth_point(p)) for p in rest],
+    ob = studio.panel('MF_173_open_scarf', [tuple(cloth_point(p) if i//41<=180
+                      else headfall_point(p,i)) for i,p in enumerate(rest)],
                       faces,mats['scarf'],.012,1)
     for p,item in zip(rest,ob.data.attributes['MF_173_material_coords'].data):item.vector=p
     layer = ob.data.attributes.new('MF_174_wrap_under_harness','FLOAT','POINT')
@@ -109,35 +132,113 @@ def construct(mats):
             studio.smoothstep((col-170)/10) if 170<col<=180 else
             1-studio.smoothstep((col-180)/9) if 180<col<189 else
             studio.smoothstep((col-226)/16) if col>226 else 0.)
-    # Resolve whole-sheet folds through the actual contact geometry at the
-    # low-resolution authoring surface, before subdivision. This is a frozen
-    # construction settle for each prescribed pose, not moving cloth approval.
-    # The normal pipeline rebuilds leather AFTER cloth. A construction solve
-    # must instead see the current pose's leather, never yesterday's surfaces.
+    # Build leather first against the actual tunic, then loft exterior cloth
+    # around its smooth shoulder centerline. Physics/projection failures remain
+    # preserved in be7dfff and previews01-25, never qualification evidence.
     prior.leather(frame,mats)
     from body_studio_fit import coordinates_digest
     ob['MF_175_harness_before_solve']=json.dumps({str(sign):coordinates_digest(
         tuple(v.co for v in bpy.data.objects['MF_173_tension_harness_'+str(sign)].data.vertices)) for sign in (-1,1)})
     ob['MF_175_construction_settled']=False
-    outer_clearance()
-    collision_mods=[]
-    try:
-        for sign in (-1,1):
-            support=bpy.data.objects['MF_173_tension_harness_'+str(sign)]
-            mod=support.modifiers.new('175 outer-shawl construction support','COLLISION')
-            support.collision.thickness_outer=.016
-            collision_mods.append((support,mod))
-        settle_shoulders(ob)
-    finally:
-        for support,mod in collision_mods:support.modifiers.remove(mod)
+    ob['MF_175_assembled']=True
+    outer_clearance(False)
+    loft_shoulders(ob)
     ob['MF_175_construction_settled']=True
     data = studio.single_surface_mesh(ob)
     for mod in list(ob.modifiers):
         if mod.type=='SUBSURF':ob.modifiers.remove(mod)
     studio.set_surface(ob.name,data,.012)
+    fit_headfall_and_outer_rear(ob)
     bpy.data.objects['MF_173_diagonal_scarf_fall'].hide_render=True
     ob['MF_175_layer_order']='tunic / harness / shawl; rear wrap over headfall'
+    ob['MF_175_representation']='assembled overlapping static surfaces; prescribed-pose loft; NOT dynamic or single physical sheet'
     return frame
+
+
+def fit_headfall_and_outer_rear(ob):
+    """Final-surface clearance, preserving crown/front and actual groom data."""
+    import bpy
+    from mathutils import Vector
+    from mathutils.bvhtree import BVHTree
+    from wardrobe_refinement import tree_for
+    frame=studio.torso_matrix(-2.7);inverse=frame.inverted()
+    groom=tree_for(bpy.data.objects['MF_173_static_groom_clearance'])
+    courses=ob.data.attributes['MF_175_course'].data
+    across=ob.data.attributes['MF_175_across'].data
+    for v in ob.data.vertices:
+        if courses[v.index].value<1.5 or across[v.index].value<.53:continue
+        p=ob.matrix_world@v.co;local=inverse@p
+        root=frame@Vector((0,.14,local.z));direction=p-root
+        radius=direction.length
+        if radius<.1:continue
+        direction.normalize();hit,_,_,distance=groom.ray_cast(root,direction,4.)
+        if hit is not None and radius<distance+.055:
+            v.co=ob.matrix_world.inverted()@(root+direction*(distance+.055))
+    ob.data.update();bpy.context.view_layer.update()
+    head=BVHTree.FromPolygons([ob.matrix_world@v.co for v in ob.data.vertices],
+        [tuple(f.vertices) for f in ob.data.polygons
+         if all(courses[i].value>1.5 for i in f.vertices)])
+    for v,item in zip(ob.data.vertices,ob.data.attributes['MF_173_material_coords'].data):
+        course=courses[v.index].value
+        if course>1.5 or item.vector.y<.55:continue
+        p=ob.matrix_world@v.co;local=inverse@p
+        root=frame@Vector((0,.14,local.z));direction=p-root
+        radius=direction.length
+        if radius<.1:continue
+        direction.normalize();hit,_,_,distance=head.ray_cast(root,direction,4.)
+        margin=.045+.045*min(course,1.)
+        if hit is not None and radius<distance+margin:
+            v.co=ob.matrix_world.inverted()@(root+direction*(distance+margin))
+    ob.data.update();bpy.context.view_layer.update()
+
+
+def loft_shoulders(ob):
+    """Broad, continuous shoulder turns, not frilled pinned simulation ends."""
+    import bpy
+    from mathutils import Vector
+    frame=studio.torso_matrix(-2.7);inverse=frame.inverted()
+    up=(frame.to_3x3()@Vector((0,0,1))).normalized()
+    paths={}
+    for sign in (-1,1):
+        band=bpy.data.objects['MF_173_tension_harness_'+str(sign)]
+        points=[band.matrix_world@v.co for v in band.data.vertices]
+        centers=[(points[i]+points[i+1])*.5 for i in range(0,len(points),2)]
+        widths=[(points[i]-points[i+1]).normalized() for i in range(0,len(points),2)]
+        for i,w in enumerate(widths):
+            if (inverse.to_3x3()@w).x*sign<0:widths[i]=-w
+        paths[sign]=(centers,widths)
+    for vertex,item in zip(ob.data.vertices,ob.data.attributes['MF_173_material_coords'].data):
+        column=vertex.index//41;v=(vertex.index%41)/40
+        if not (9<=column<=170):continue
+        theta=column/90*2*math.pi
+        side=math.sin(theta)
+        if abs(side)<math.sqrt(.5):continue
+        sign=1 if side>0 else -1
+        # Front-to-rear row60..120 on each actual leather shoulder.
+        alpha=math.acos(max(-1.,min(1.,math.cos(theta))))
+        t=(alpha-math.pi/4)/(math.pi/2)
+        row=120-60*t
+        centers,widths=paths[sign];k=int(row);f=row-k
+        center=centers[k].lerp(centers[min(k+1,len(centers)-1)],f)
+        width=widths[k].lerp(widths[min(k+1,len(widths)-1)],f).normalized()
+        tangent=(centers[min(k+2,len(centers)-1)]-centers[max(k-2,0)]).normalized()
+        normal=width.cross(tangent).normalized()
+        if normal.dot(up)<0:normal=-normal
+        course=studio.smoothstep((column-78)/16)
+        # A gently uneven long fold, never periodic waves across the route.
+        crease=.035*math.exp(-((v-.34-.035*math.sin(theta))/.15)**2)
+        crease+=.022*math.exp(-((v-.79)/.10)**2)
+        target=center+width*((v-.5)*.46)+normal*(.045+.050*course+crease)
+        # Release the outer edge only beyond the leather's physical width.
+        # Dropping the entire width put outer-edge stitches through the cloth.
+        target-=up*(.06*(v-.5)+.14*studio.smoothstep((v-.78)/.22))
+        local=inverse@target
+        # Side headfall is inside the winding, not sliced by its inner edge.
+        local.x=sign*max(abs(local.x),1.38+.045*course)
+        target=frame@local
+        weight=math.sin(math.pi*t)**.6
+        vertex.co=ob.matrix_world.inverted()@(ob.matrix_world@vertex.co).lerp(target,weight)
+    ob.data.update();bpy.context.view_layer.update()
 
 
 def shoulder_freedom(column):
@@ -252,6 +353,8 @@ def outer_clearance(fair=True):
         if course>1.5:
             continue
         if rest.z>-.7:continue
+        if ob.get('MF_175_assembled') and abs(math.sin(vertex.index//41/90*2*math.pi))>.9:
+            continue
         root = studio.torso_point(Vector((0,.14,rest.z)))
         direction = p-root
         if direction.length<.2:continue
@@ -376,11 +479,11 @@ def preview(out):
          'MF_fit_Full','MF_fit_rein_','MF_fit_stirrup_leather_','MF_170_tail_'))]
     for o in horse:o.hide_render=True
     bpy.context.scene.cycles.samples=16
-    for label,angle in (('front',0),('right',40),('rear',180),('profile',90)):
+    for label,angle in (('front',0),('left',-40),('right',40),('rear',180),('profile',90)):
         fit_render(out,'upper-'+label,angle,(0,.15,-1.7),7.,(720,765))
     riding_pose(rig);bpy.context.view_layer.update();studio.pose_wardrobe(mats)
     if diagnostic:colour_routes()
-    for label,angle in (('left',-40),('right',40)):
+    for label,angle in (('left',-40),('right',40),('rear',140),('profile',90)):
         fit_render(out,'mounted-'+label,angle,(0,-1.4,-3.4),9.,(720,765))
     # Cloth/body comparison diagnoses the upper-arm issue without anatomy edits.
     garments=[o for o in bpy.context.scene.objects if not o.hide_render and o.type in ('MESH','CURVE')
@@ -388,6 +491,12 @@ def preview(out):
                    or 'MF_171_' in o.name)]
     for o in garments:o.hide_render=True
     fit_render(out,'mounted-body-control',-40,(0,-1.4,-3.4),9.,(720,765))
+    fit_render(out,'mounted-body-profile',90,(0,-1.4,-3.4),9.,(720,765))
+    if out.name.endswith(('preview31','preview32','preview33','preview34')):
+        for o in garments:o.hide_render=False
+        riding_pose(rig,.75);bpy.context.view_layer.update();studio.pose_wardrobe(mats)
+        for label,angle in (('left',-40),('rear',140),('profile',90)):
+            fit_render(out,'partial-'+label,angle,(0,-1.4,-3.4),9.,(720,765))
 
 
 def colour_routes():
