@@ -1,5 +1,14 @@
 # Release 01 — checkpoints
 
+## CP-018 — due180, recorded181, 2026-10-05; escalation stopped without costume success
+
+- Counter correction: the model-recommendation exchange180 was not persisted.181 is the Director's explicit Astra High escalation authorization; tool calls and internal iterations do not increment this counter. Next checkpoint190.
+- Current deliverable remains an integrated believable moving Pashtun costume, A5/E1→B4 riding entrance→trailer plus episodes1/2. Both wrapping methods have failed visual review. Static protected152 head/hair and169 body remain accepted;179's local underarm repair is retained separately. No new appearance, motion, rights or release gate has passed.
+- Accepted release gates remain1/25 (4% of binary deliverables, not effort or useful knowledge). The unresolved costume has consumed substantial work and still blocks usable footage. Astra escalation is a scoped method test, not permission for unlimited cosmetic variations or an assertion of model superiority.
+- Escalation outcome: convergence/closed-contact controls improve, but the preserved single-wrap and replacement05/06 fail integrated construction.30 native attempts reconcile and75 focused tests pass; neither is appearance acceptance. Double-wrap repair and new motion remain NOT_RUN. Recommend separately scoped free-asset/pattern-led reconstruction if the wrapped look is retained; alternative is further visible simplification or prioritizing other release work. No option adopted, no new spend/assets/tools/specialists or protected-anatomy changes.
+- Overall remainder remains ensemble/world/story and episode1/2 scripts, trailer timing and production, sound/voice/music/edit/captions, rights/distribution/measurement, durable Factory handover and authorized release. These can progress alongside asset work but are not silently started here.
+- Preservation: related implementation and design changes stay separate. Scheduled text-only main push remains due;33 previously unpushed commits make the outgoing batch broader than this escalation. No remote push or native-media backup is implied. The wardrobe brief records the final FAIL and the private180 operating receipt records actual effort/diagnostics.
+
 ## CP-015 — exchange150, 2026-09-27 local / September28 UTC
 
 Push receipt:20 related commits through `04840ac29765c3d27d6564b22c04021a28f6f417` reached `origin/main`, independently verified with `git ls-remote`. Reviewed13 text paths and76 changed blobs; no configured credential patterns found. Source/tests and design remain separate commits. No native media, downloads, private history, credentials or unrelated `.DS_Store` included. This post-push receipt is local for the next scheduled batch; pending wording below is the pre-push snapshot. Git is not native-media backup.

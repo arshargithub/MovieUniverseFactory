@@ -1,6 +1,20 @@
 {
   "events": [
     {
+      "event_id": "series01-wardrobe180-astra-high-escalation",
+      "event_type": "diagnostic_escalation",
+      "experiment_id": "SERIES01-LIKENESS-ASSET",
+      "phase": "shawl construction and moving cloth rescue",
+      "engineering_model": {"reported_name": "Astra", "reasoning_effort": "high", "attribution_basis": "user_reported", "runtime_verified": false},
+      "previous_model_reported": "Sol 6.1",
+      "previous_reasoning_effort": null,
+      "controlled_model_comparison": false,
+      "outcome": "TECHNICAL_CONTROLS_IMPROVED_INTEGRATED_COSTUME_FAILED",
+      "observation": "User-reported Astra High escalation tested both prior constructions through source/constraint audit and a new-solver replay of the preserved single wrap. Convergence and closed collision controls improve scoped native behavior; some fix newly introduced180 diagnostic defects, not historical root causes. The preserved cut still forms a rear pouch. Replacement assembly05/06 improves contacts but fails shoulder/rear construction; no motion or double-wrap repair is dispatched.30 native attempts reconcile;75 focused tests pass, but no selected asset or visual pass results. Preserve accepted152/169 and underarm repair04. Proposed free-asset/pattern-led reconstruction versus further visible costume simplification remains a Director look/production-priority boundary. Prior trials and cumulative effort carry forward. This is not a controlled model comparison or proof of an agent-only ceiling.",
+      "engineering_usage": {"input_tokens": null, "output_tokens": null, "reasoning_tokens": null, "cost_usd": null},
+      "sources": [{"kind": "user_statement_in_current_conversation", "text": "Ok I have switched the model to astra - high. Please proceed with the escalation"}, {"kind": "repository_artifact", "path": "docs/planning/SERIES_01_WARDROBE_TACK_FIT.md"}]
+    },
+    {
       "controlled_model_comparison": false,
       "engineering_model": {
         "attribution_basis": "user_statement_and_handoff",
