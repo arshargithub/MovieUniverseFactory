@@ -35,6 +35,10 @@ def animate(rig):
                 loc,rot,scale=goals[bone.name]
                 bone.rotation_mode='QUATERNION';bone.location=loc*t
                 bone.rotation_quaternion=identity.slerp(rot,t)
+                if bone.name in ('MF185_neck','MF185_head'):
+                    import math
+                    angle=-18 if bone.name=='MF185_neck' else -12
+                    bone.rotation_quaternion=Quaternion((1,0,0),math.radians(angle)*p['lean'])
                 bone.scale=Vector((1,1,1)).lerp(scale,t)
                 if bone.name=='pelvis':bone.location.z+=p['bob']
                 if bone.name=='chest':bone.rotation_quaternion=Quaternion((0,0,1),p['chest_yaw'])@bone.rotation_quaternion
@@ -90,3 +94,54 @@ def simulate(out):
     from wardrobe185_cut_solve import run
     (out/Path(__file__).name).write_bytes(Path(__file__).read_bytes())
     run(out,motion=True)
+
+
+def screen(out):
+    import bpy
+    from mathutils import Vector
+    import wardrobe_motion178 as base
+    import wardrobe_motion178_controls as controls
+    import wardrobe_studio as studio
+    from wardrobe_motion178_proof import dress_actor
+    from wardrobe_underarm179_repair import repair
+    from wardrobe_shawl180_cache import cache
+    from wardrobe_shawl179 import screens
+    from wardrobe_riding_fit import fit_render
+    (out/Path(__file__).name).write_bytes(Path(__file__).read_bytes())
+    source=base.BASE/'wardrobe185-motion02/trajectory.npz';proof=source.parent/'motion-proof.npz'
+    for path,sha in ((source,'c600d77d2f07323ae02803117bffe03a2bae0970ca3472518811e59367aaf749'),(proof,'5e57e3f3405e83ee42ec9b268c90ee46a05a5f507617647805b752bc2ce8fe13')):
+        if base.digest(path)!=sha:raise ValueError('Motion screen source changed')
+    with np.load(source,allow_pickle=False) as d:p=d['points'];f=d['faces'];frames=d['frames']
+    with np.load(proof,allow_pickle=False) as d:matrices=d['chest_matrices']
+    if frames.shape!=(360,7205,3) or matrices.shape!=(360,4,4):raise ValueError('Unexpected diagnostic trajectory')
+    bpy.ops.wm.open_mainfile(filepath=str(base.SOURCE),load_ui=False,use_scripts=False)
+    base.check_protected();rig,mats,_=base.clean_foundation();dress_actor(rig);repair(rig,'repair04');animate(rig)
+    ob=studio.panel('MF185_moving_shawl',p.tolist(),f.tolist(),mats['scarf'],.012,1)
+    mod=cache(ob,frames,out/'cloth.mdd');bpy.context.view_layer.objects.active=ob
+    while list(ob.modifiers).index(mod)>0:bpy.ops.object.modifier_move_up(modifier=mod.name)
+    errors={};matrix_error=0.;scene=bpy.context.scene
+    states=[(m,m.show_viewport) for m in ob.modifiers if m!=mod]
+    for m,_ in states:m.show_viewport=False
+    with controls.render_geometry_paused():
+        ob.hide_viewport=False
+        for frame in range(1,361):
+            scene.frame_set(frame);bpy.context.view_layer.update()
+            matrix_error=max(matrix_error,float(np.max(abs(np.array(studio.torso_matrix(-2.7))-matrices[frame-1]))))
+            if frame in (1,169,193,217,265,360):
+                ev=ob.evaluated_get(bpy.context.evaluated_depsgraph_get());m=ev.to_mesh()
+                q=np.array([v.co[:] for v in m.vertices]);ev.to_mesh_clear()
+                errors[frame]=float(np.max(abs(q-frames[frame-1])))
+        scene.frame_set(169);bpy.context.view_layer.update()
+        ev=ob.evaluated_get(bpy.context.evaluated_depsgraph_get());m=ev.to_mesh()
+        q=np.array([v.co[:] for v in m.vertices]);ev.to_mesh_clear();backward=float(np.max(abs(q-frames[168])))
+    for m,state in states:m.show_viewport=state
+    record={'cache_errors_native':errors,'backward_seek_error_native':backward,'all_frame_chest_matrix_error':matrix_error}
+    (out/'transfer-check.json').write_text(json.dumps(record,indent=2)+'\n')
+    if max(errors.values())>2e-6 or backward>2e-6 or matrix_error>1e-5:raise ValueError('Character/cache transfer mismatch')
+    screens(out,(169,193,217,265,360))
+    for frame in (169,217):
+        scene.frame_set(frame);bpy.context.view_layer.update()
+        for angle,label in ((0,'front'),(90,'side'),(180,'rear')):
+            fit_render(out,'body-'+label+'-%03d'%frame,angle,(0,.1,-5.2),15.8,(600,900))
+    base.check_protected()
+    (out/'result.json').write_text(json.dumps({'source':str(source),'transfer':record,'protected_local_data_exact':True,'visual_gate':'NOT_RUN','complete_playback':'NOT_RUN','actual_gallop':'NOT_RUN'},indent=2)+'\n')

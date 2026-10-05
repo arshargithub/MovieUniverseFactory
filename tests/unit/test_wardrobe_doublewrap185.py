@@ -100,7 +100,8 @@ def test_dispatch_has_an_explicit_handler_for_every_admitted_operation(operation
         'wardrobe185_intersections':('run',),
         'wardrobe185_head_dress':('run',),
         'wardrobe185_harness_contact':('run',),
-        'wardrobe185_motion':('prep','simulate'),
+        'wardrobe185_motion':('prep','simulate','screen'),
+        'wardrobe185_integration':('audit','gaze_screen'),
     }.items():
         fake=types.ModuleType(name)
         for method in methods:setattr(fake,method,record)
@@ -159,3 +160,12 @@ def test_motion_schedule_preserves_dressing_then_coordinates_lean():
     assert schedule(217)['lean']==1
     assert schedule(1)['wind']==schedule(169)['wind']==0
     assert schedule(265)['wind']>0
+
+
+def test_head_weights_keep_face_rigid_and_lower_clavicles_unchanged():
+    from wardrobe185_integration import head_weights
+    for z in np.linspace(-3,2,101):
+        weights=head_weights(z)
+        assert min(weights.values())>=0 and sum(weights.values())==pytest.approx(1)
+    assert head_weights(-1.72)=={'chest':1.,'MF185_neck':0.,'MF185_head':0.}
+    assert head_weights(-1.)=={'chest':0.,'MF185_neck':0.,'MF185_head':1.}

@@ -81,6 +81,9 @@ OPERATIONS += ('screen25',)
 OPERATIONS += ('motionprep01',)
 OPERATIONS += ('motion01','motionoff01')
 OPERATIONS += ('motion02',)
+OPERATIONS += ('motionreview02',)
+OPERATIONS += ('integration01',)
+OPERATIONS += ('gaze01',)
 HEAD = base.BASE / 'wardrobe180-xpbdhead08/trajectory.npz'
 HEAD_SHA = '55ce2f99edfbb45a7cf8a5898be31caa1f20bd7da3bb2ae2be9c43e49d7095e8'
 
@@ -399,6 +402,15 @@ def main():
     elif job['operation'] in ('motion01','motion02','motionoff01'):
         from wardrobe185_motion import simulate
         simulate(out)
+    elif job['operation']=='gaze01':
+        from wardrobe185_integration import gaze_screen
+        gaze_screen(out)
+    elif job['operation']=='integration01':
+        from wardrobe185_integration import audit
+        audit(out)
+    elif job['operation']=='motionreview02':
+        from wardrobe185_motion import screen as motion_screen
+        motion_screen(out)
     else:raise ValueError('Validated operation has no implementation')
 
 

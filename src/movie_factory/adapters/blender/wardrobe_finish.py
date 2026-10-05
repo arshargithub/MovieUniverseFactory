@@ -16,7 +16,7 @@ def boot_flex(z,a):
     return .035*envelope*math.sin(32*z+1.1*math.sin(3*a))
 
 
-def finishing(mats):
+def finishing(mats, *, boots_only=False):
     import bpy
     from mathutils import Vector
     from wardrobe_studio import panel,line,smoothstep
@@ -103,6 +103,8 @@ def finishing(mats):
         if not heel.modifiers:
             bevel=heel.modifiers.new('Soft worn heel edges','BEVEL');bevel.width=.035;bevel.segments=3
 
+    if boots_only:
+        return
     pants=bpy.data.objects['MF_fit_trousers_173_visible']
     from wardrobe_refinement import tree_for
     tree=tree_for(pants)
