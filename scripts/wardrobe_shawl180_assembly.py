@@ -92,7 +92,7 @@ def closed_panel(points,faces,name,mat):
     return ob
 
 
-def union_contact(contacts):
+def union_contact(contacts, margin=.055):
     """One collision-only exterior, not intersecting layered thin shells."""
     import bpy,bmesh
     p=[];f=[]
@@ -110,7 +110,8 @@ def union_contact(contacts):
     bpy.context.view_layer.objects.active=ob;bpy.ops.object.modifier_apply(modifier=mod.name)
     if len(ob.data.vertices)>500000:raise ValueError('Collision union complexity exceeded')
     # Conservative contact margin accounts for voxel and render smoothing.
-    for v in ob.data.vertices:v.co+=v.normal*.055
+    if not 0<=margin<=.055:raise ValueError('Bounded contact-only margin required')
+    for v in ob.data.vertices:v.co+=v.normal*margin
     ob.data.update()
     return ob
 
