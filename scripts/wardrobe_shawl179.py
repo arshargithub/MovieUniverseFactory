@@ -14,12 +14,14 @@ sys.path.insert(0, str(ROOT / 'scripts'))
 import wardrobe_motion178 as foundation
 
 BASE = foundation.BASE
-OPERATIONS = ('initial01', 'initial02', 'initial03', 'initial04', 'solve01', 'windoff01')
+OPERATIONS = ('initial01', 'initial02', 'initial03', 'initial04', 'solve01', 'windoff01', 'initial05', 'solve02', 'windoff02')
 HEAD_ROWS, HEAD_COLS, WRAP_ROWS, WRAP_COLS = 41, 31, 96, 21
 HEAD_COUNT = HEAD_ROWS * HEAD_COLS
 COUNT = HEAD_COUNT + WRAP_ROWS * WRAP_COLS
 INITIAL = BASE/'wardrobe179-initial04/constructed-layout.npz'
 INITIAL_SHA = 'e541c75772c9e7ca03aa6d3c6c9f6f794c901e7d50d81ff41b9ccd8607b62bb0'
+JOINED_INITIAL = BASE/'wardrobe179-initial05/constructed-layout.npz'
+JOINED_SHA = '74acd62caa000ec3d9cc562de5b230d9c76a2cfaaeb9cb23e1e932d9b022ce76'
 
 
 def validate(job):
@@ -29,6 +31,8 @@ def validate(job):
         raise ValueError('Protected foundation mismatch')
     if job['operation'] in ('solve01','windoff01') and (INITIAL.is_symlink() or foundation.digest(INITIAL)!=INITIAL_SHA):
         raise ValueError('Inspected fixed construction mismatch')
+    if job['operation'] in ('solve02','windoff02') and (JOINED_INITIAL.is_symlink() or foundation.digest(JOINED_INITIAL)!=JOINED_SHA):
+        raise ValueError('Joined construction mismatch')
     out = BASE / ('wardrobe179-' + job['operation'])
     if out.exists() or out.is_symlink():
         raise ValueError('Never overwrite evidence')
@@ -41,7 +45,7 @@ def head_point(u, v):
                 (.22, .57, 1.28, 1.35, 1.25),
                 (.45, 1.10, .64, 1.32, .94),
                 (.65, 1.27, -.72, 1.39, .37),
-                (1., 1.32, -3.30, 1.59, .12))
+                (1., 1.32, -1.60, 1.59, .12))
     segment = next((i for i in range(4) if u <= sections[i+1][0]), 3)
     a, b = sections[segment:segment+2]
     t = (u-a[0])/(b[0]-a[0]); t = t*t*(3-2*t)
@@ -59,7 +63,7 @@ def wrap_description(u, v):
     angle = 2*math.pi*u
     front = max(0., -math.cos(angle))
     top = -1.38-.75*front-.22*max(0.,math.cos(angle))+.48*math.sin(angle)*front
-    width = .38+1.05*front
+    width = 1.10+.33*front
     return angle, top-width*v, front
 
 
@@ -114,38 +118,40 @@ def pattern():
                     start=hit+Vector((0,1e-5,0))
                     if travel>=4.:break
             hood[index]=(x,outer,z)
-    # Carry the required rear clearance through a broad continuous fall,
-    # rather than imprinting the inner course as a horizontal shelf.
-    rear_clearance=max(p[1] for p in hood[18*HEAD_COLS:])
-    for row in range(18,HEAD_ROWS):
-        blend=min(1.,(row-18)/9);blend=blend*blend*(3-2*blend)
-        for col in range(HEAD_COLS):
-            index=row*HEAD_COLS+col;x,y,z=hood[index]
-            lateral=math.sin((2*col/(HEAD_COLS-1)-1)*1.57)**2
-            target=(1.27*(1-blend)+rear_clearance*blend)*(1-.85*lateral)
-            hood[index]=(x,max(y,target),z)
+    # Meet the rear superior course along the complete lower hood border.
+    # The prior long overlapping hood, joined only at its two ends, formed a
+    # closed pocket. No rear clearance plateau or long doubled cape remains.
+    join=[]
+    for col in range(HEAD_COLS):
+        theta=-math.pi/2+math.pi*col/(HEAD_COLS-1)
+        wr=int(round((theta%(2*math.pi))/(2*math.pi)*WRAP_ROWS))%WRAP_ROWS
+        w=HEAD_COUNT+wr*WRAP_COLS+20
+        join.append(w)
+        target=Vector(ribbon[w-HEAD_COUNT])
+        for row in range(28,HEAD_ROWS):
+            k=row*HEAD_COLS+col
+            t=(row-28)/(HEAD_ROWS-1-28);t=t*t*(3-2*t)
+            hood[k]=tuple(Vector(hood[k]).lerp(target,t))
     faces = hood_faces + [tuple(HEAD_COUNT+i for i in f) for f in ribbon_faces]
     points = hood+ribbon
     pins = {}
     # Small stable crown field, not a fully held opening or broad rigid hood.
-    for row in range(3, 17):
-        for col in range(10, 21):
-            pins[row*HEAD_COLS+col] = 1. if 12 <= col <= 18 else .6
+    for row in (5,8):
+        for col in (13,17):
+            pins[row*HEAD_COLS+col] = 1.
     for row in range(WRAP_ROWS):
         theta=2*math.pi*row/WRAP_ROWS
         if math.cos(theta)<-.15 or abs(math.sin(theta))>.97:
             pins[HEAD_COUNT+row*WRAP_COLS+20] = 1.
             pins[HEAD_COUNT+row*WRAP_COLS+19] = .7
             pins[HEAD_COUNT+row*WRAP_COLS+18] = .25
-    # Two small shoulder seam zones physically join the hood to the course.
-    stitches = []
-    for head_col, wrap_row in ((0, 72), (30, 24)):
-        for offset in (-1,0,1):
-            w = HEAD_COUNT+(wrap_row+offset)*WRAP_COLS+20
-            h=min((r*HEAD_COLS+head_col for r in range(18,HEAD_ROWS)),
-                  key=lambda k:sum((points[k][axis]-points[w][axis])**2 for axis in range(3)))
-            if math.dist(points[h],points[w])>.8:raise ValueError('Shoulder seam is not physically local')
-            stitches.append((h,w))
+    # Sewing edges are local, slightly separated to avoid exact coincidence.
+    stitches=[]
+    for col,w in enumerate(join):
+        h=(HEAD_ROWS-1)*HEAD_COLS+col
+        x,y,z=points[h];points[h]=(x,y,z+.012)
+        if math.dist(points[h],points[w])>.02:raise ValueError('Nonlocal rear seam')
+        stitches.append((h,w))
     p = np.array(points)
     if p.shape != (COUNT,3) or not np.isfinite(p).all(): raise ValueError('Invalid fixed pattern')
     edges = {tuple(sorted((a,b))) for face in faces for a,b in zip(face, face[1:]+face[:1])}
@@ -181,8 +187,9 @@ def main():
     bpy.ops.wm.open_mainfile(filepath=str(foundation.SOURCE),load_ui=False,use_scripts=False)
     foundation.check_protected()
     rig,mats,groom = foundation.clean_foundation()
-    if job['operation'] in ('solve01','windoff01'):
-        with np.load(INITIAL,allow_pickle=False) as record:
+    if job['operation'].startswith(('solve','windoff')):
+        initial=JOINED_INITIAL if job['operation'].endswith('02') else INITIAL
+        with np.load(initial,allow_pickle=False) as record:
             points=record['points'].tolist();faces=[tuple(f) for f in record['faces'].tolist()]
             pins={int(i):float(w) for i,w in zip(record['pin_indices'],record['pin_weights'])}
             stitches=[tuple(e) for e in record['stitches'].tolist()]
@@ -191,12 +198,12 @@ def main():
     np.savez_compressed(out/'constructed-layout.npz',points=np.array(points),faces=np.array(faces),
                         pin_indices=np.array(sorted(pins)),pin_weights=np.array([pins[i] for i in sorted(pins)]),
                         stitches=np.array(stitches))
-    if job['operation'] in ('initial01','initial02','initial03','initial04'):
+    if job['operation'].startswith('initial'):
         studio.panel('MF179_continuous_shawl',points,faces,mats['scarf'],.014,1)
         screens(out)
     else:
         from wardrobe_shawl179_motion import simulate
-        result=simulate(out,rig,mats,groom,points,faces,pins,stitches,wind_off=job['operation']=='windoff01')
+        result=simulate(out,rig,mats,groom,points,faces,pins,stitches,wind_off=job['operation'].startswith('windoff'))
         foundation.check_protected()
         (out/'result.json').write_text(json.dumps(result,indent=2)+'\n')
         return
