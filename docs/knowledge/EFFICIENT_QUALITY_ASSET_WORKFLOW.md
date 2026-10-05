@@ -40,6 +40,8 @@ A generated turnaround is useful exploration, not a calibrated measurement of a 
 
 ## Five-step workflow
 
+Exchange184 places this asset workflow under [production strategy before execution](../decisions/0005-production-strategy-before-execution.md). Establish the complete path to the production result, key interfaces and earliest risk-reducing proof before detailed asset work. A chain of compensating fixes must trigger strategic reassessment; this rule also applies outside asset development. Use the existing asset brief rather than duplicate planning paperwork.
+
 1. **Brief and scope.** One asset card: story function, shots/framing, recurrence, protected anchors, flexible dimensions, required motion, quality floor, reuse expectation and budget boundaries. Name the single uncertainty the next step resolves.
 2. **Feasibility reconnaissance.** Inspect project inventory first; then a small number of genuinely different free/tool-native routes if needed. Check actual geometry, editability, rigging, rights and adaptation burden. No catalog-only endorsement, paywalled “free” assumptions or open-ended shopping. Recommend a route, including “none suitable.”
 3. **Whole-result prototype.** Coarse but coherent complete assembly, simple material palette, target-format frame and cheap representative pose/movement. At most2–3 materially distinct design/realization choices where they answer a real question; not three mandatory variants or filters. For recurring leads, keep facial identity readable. No polishing one subsystem while major interfaces remain untested.

@@ -20,6 +20,8 @@ Contextual review: [Release 01 applicability](RELEASE_01_APPLICABILITY.md) maps 
 
 ## How to use it without rereading the entire conversation
 
+Exchange184 adopts [production strategy before execution](../decisions/0005-production-strategy-before-execution.md) across story, assets, motion, sound, edit, delivery and software. Start substantial work with a concise current strategy and an early integrated proof of its riskiest assumptions. Existing asset/motion rules remain domain-specific applications. This extends Efficient Quality and progressive commitment; it does not authorize new builds or certify automated Factory enforcement.
+
 Exchange154 reaffirms [Factory ownership of forward momentum](../planning/RELEASE_01_PLAN.md#current-path-to-audience) toward the trailer and two episodes. Full original UX proposal, actual approval and the Director's publication-oriented clarification were reviewed; the corresponding two register entries are mapped to current operating instructions. The rejected full-body blockout is not accepted costume canon. Next body sourcing must support a usable character-to-shot path, not another isolated perfection loop.
 
 Exchange153 explicitly adopts [constructive challenge](EFFICIENT_QUALITY_ASSET_WORKFLOW.md#constructive-challenge--adopted-at-exchange153) for this agent: surface conflicts with agreed principles before consequential action, respect informed scoped overrides afterward. Two historical entries mapped from full proposal/actual approval; this is not whole-register reconciliation. The next full-character feasibility step is authorized with head/hair frozen and no new spend.
