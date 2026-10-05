@@ -4,6 +4,8 @@ Exchange169, 2026-10-03. Director accepts the displayed body168-hip66 and author
 
 ## Deliverable and authority
 
+**Exchange182 clarification:** explanation requested before choosing the next route; no further construction run authorized here. The experimental180 cloth solver lacks self-collision, a relevant gap for wrapped fabric; the older cloth modifier has it, and this gap is not proven to explain all failures. Expert3D-authored garments are legitimate when construction/rest-state/control and derived simulation/render representations are deliberately designed; flat patterns are not the only professional route. [Concepts, evidence and carry-forward synthesis](../knowledge/CHARACTER_ASSET_LEARNINGS.md#exchange182--explaining-the-boundary-not-authorizing-another-rebuild). Earlier181 FAIL remains unchanged.
+
 ### Astra escalation181 — stopped without a qualified shawl
 
 **Outcome: integrated appearance FAIL; moving shawl NOT_RUN; no production asset selected.** The escalation has completed its investigation but has not achieved the costume objective. This is a demonstrated limit of this attempted construction/solver workflow, not proof that Blender, Astra, Sol or agent-only garment creation is universally incapable. The accepted actor and source remain protected; the existing underarm repair04 remains a separate local result. Do not reopen accepted anatomy or lower the visual floor to compensate.
