@@ -42,6 +42,16 @@ def simulate(out,rig,mats,groom,points,faces,pins,stitches,wind_off=False,integr
                       allow_fingers=name=='MF_studio_adult_body')
         supports.append(support)
     rig.animation_data.action=original_action;canonical.animation_data.action=canonical_action
+    body_errors={}
+    if exact_body_target is not None:
+        from wardrobe_shawl179_collision import body_parity
+        # Validate contacts at revealing poses BEFORE committing to a solve.
+        # No cloth cache exists yet; rewind to the real pre-roll afterward.
+        with controls.render_geometry_paused():
+            for frame in (97,121,145):
+                bpy.context.scene.frame_set(frame);bpy.context.view_layer.update()
+                body_errors[str(frame)]=body_parity(exact_body_target,scale)
+            bpy.context.scene.frame_set(1);bpy.context.view_layer.update()
     data=bpy.data.meshes.new('MF179_metric_cloth')
     data.from_pydata([tuple(scale*c for c in p) for p in points],stitches,faces);data.update()
     cloth=bpy.data.objects.new('MF178_live_solver179',data)
@@ -64,7 +74,7 @@ def simulate(out,rig,mats,groom,points,faces,pins,stitches,wind_off=False,integr
     mod.point_cache.frame_start=1;mod.point_cache.frame_end=288
     controls.wind(gain=0. if wind_off else .04)
     scene=bpy.context.scene;scene.gravity=(0,0,-9.81);scene.render.fps=24
-    frames=[];matrices=[];body_errors={}
+    frames=[];matrices=[]
     with controls.render_geometry_paused():
         for frame in range(1,289):
             scene.frame_set(frame);bpy.context.view_layer.update()
