@@ -42,6 +42,7 @@ def surface(cells,origin,step):
 
 
 def run(out):
+    if out.name.endswith('proxy03'):return fidelity(out)
     import bpy,bmesh
     from mathutils import Vector
     from mathutils.bvhtree import BVHTree
@@ -92,3 +93,46 @@ def run(out):
     bm.free()
     np.savez_compressed(out/'proxy.npz',points=np.array([v.co[:] for v in ob.data.vertices]),faces=np.array([v.vertices[:] for v in ob.data.polygons]))
     (out/'result.json').write_text(json.dumps(report,indent=2)+'\n');print(json.dumps(report),flush=True)
+
+
+def fidelity(out):
+    """Keep the stable exterior, recover leather lost by coarse occupancy."""
+    import bpy,bmesh
+    from mathutils import Vector
+    from mathutils.bvhtree import BVHTree
+    import wardrobe_motion178 as base
+    from wardrobe_doublewrap185_solve import inside
+    from wardrobe185_cut import winding_inside
+    (out/Path(__file__).name).write_bytes(Path(__file__).read_bytes())
+    proxy=base.BASE/'wardrobe185-proxy02/proxy.npz';harness=base.BASE/'wardrobe185-harnesscontact01/visible-harness.npz'
+    for path,sha in ((proxy,'19cce587247a325e2f0b081f49e14eb0a40bf6c3364896a327af4639a6d4f7eb'),(harness,'ea814916c53af95b6370e506c163e3fe3e08306efb74b94675a38e851bb872ab')):
+        if base.digest(path)!=sha:raise ValueError('Contact fidelity input changed')
+    with np.load(proxy,allow_pickle=False) as d:p=d['points'];f=d['faces']
+    with np.load(harness,allow_pickle=False) as d:hp=d['points'];hf=d['faces']
+    bpy.ops.wm.read_factory_settings(use_empty=True)
+    mesh=bpy.data.meshes.new('Leather volume');mesh.from_pydata(hp.tolist(),[],hf.tolist());mesh.update()
+    bm=bmesh.new();bm.from_mesh(mesh);bmesh.ops.recalc_face_normals(bm,faces=list(bm.faces));bm.normal_update()
+    for v in bm.verts:v.co+=v.normal*.04
+    bm.to_mesh(mesh);bm.free()
+    pp=np.concatenate([p,np.array([v.co[:] for v in mesh.vertices])]);ff=np.concatenate([f,hf+len(p)])
+    combined=bpy.data.meshes.new('Faithful exterior');combined.from_pydata(pp.tolist(),[],ff.tolist());combined.update()
+    ob=bpy.data.objects.new('Faithful exterior',combined);bpy.context.scene.collection.objects.link(ob);bpy.context.view_layer.objects.active=ob
+    remesh=ob.modifiers.new('Leather-inclusive union','REMESH');remesh.mode='VOXEL';remesh.voxel_size=.018
+    bpy.ops.object.modifier_apply(modifier=remesh.name)
+    smooth=ob.modifiers.new('Light fairing','SMOOTH');smooth.factor=.3;smooth.iterations=2;bpy.ops.object.modifier_apply(modifier=smooth.name)
+    dec=ob.modifiers.new('Actual solver reduction','DECIMATE');dec.ratio=min(1,12000/len(ob.data.polygons));bpy.ops.object.modifier_apply(modifier=dec.name)
+    bm=bmesh.new();bm.from_mesh(ob.data);bmesh.ops.recalc_face_normals(bm,faces=list(bm.faces));bm.to_mesh(ob.data)
+    nonmanifold=sum(not e.is_manifold for e in bm.edges);bm.free()
+    ob.data.calc_loop_triangles();p=np.array([v.co[:] for v in ob.data.vertices]);tri=np.array([t.vertices[:] for t in ob.data.loop_triangles])
+    tree=BVHTree.FromPolygons(p.tolist(),tri.tolist(),all_triangles=True)
+    samples=np.concatenate([hp,hp[hf].mean(1)]);samples=samples[(samples[:,2]>-4)&(samples[:,2]<0)]
+    outside=[]
+    for point in samples:
+        q=Vector(point);h,_,_,distance=tree.find_nearest(q)
+        try:within=inside(tree,q)
+        except ValueError:within=winding_inside(point,p[tri])
+        if not within:outside.append(float(distance*.12292759120464325))
+    report={'nonmanifold_edges':nonmanifold,'vertices':len(p),'triangles':len(tri),'visible_harness_samples':len(samples),'outside_samples':len(outside),'max_exposure_m':max(outside,default=0),'contact_inflation_native':.04,'voxel_native':.018,'render_geometry_changed':False,'visual_gate':'NOT_RUN'}
+    np.savez_compressed(out/'proxy.npz',points=p,faces=tri)
+    (out/'result.json').write_text(json.dumps(report,indent=2)+'\n');print(json.dumps(report),flush=True)
+    if nonmanifold or max(outside,default=0)>.002:raise ValueError('Contact fidelity remains insufficient')

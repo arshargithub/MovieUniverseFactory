@@ -44,6 +44,28 @@ OPERATIONS += ('cut09',)
 OPERATIONS += ('screen07',)
 OPERATIONS += ('cut10',)
 OPERATIONS += ('screen08',)
+OPERATIONS += ('screen09',)
+OPERATIONS += ('cut11',)
+OPERATIONS += ('screen11',)
+OPERATIONS += ('cut12',)
+OPERATIONS += ('cut13',)
+OPERATIONS += ('screen13',)
+OPERATIONS += ('headdress01',)
+OPERATIONS += ('screen14',)
+OPERATIONS += ('headdress02',)
+OPERATIONS += ('cut14',)
+OPERATIONS += ('screen15',)
+OPERATIONS += ('harnesscontact01',)
+OPERATIONS += ('proxy03',)
+OPERATIONS += ('intersections02',)
+OPERATIONS += ('cut15',)
+OPERATIONS += ('cut16',)
+OPERATIONS += ('cut17',)
+OPERATIONS += ('cut18',)
+OPERATIONS += ('cut19',)
+OPERATIONS += ('screen19',)
+OPERATIONS += ('cut20',)
+OPERATIONS += ('screen20',)
 HEAD = base.BASE / 'wardrobe180-xpbdhead08/trajectory.npz'
 HEAD_SHA = '55ce2f99edfbb45a7cf8a5898be31caa1f20bd7da3bb2ae2be9c43e49d7095e8'
 
@@ -168,8 +190,20 @@ def screen(out):
         source=base.BASE/'wardrobe185-cut05/trajectory.npz';sha='b58d4b35d26c686014565630ed7debdd18a5ed77fb095e6436901cadc405ba3a'
     if out.name.endswith('screen07'):
         source=base.BASE/'wardrobe185-cut09/trajectory.npz';sha='8c49f81757a678d4f0db3dd24ff8c7f1d5268f2c9fc8e88c27f5b0e24b6f7762'
-    if out.name.endswith('screen08'):
+    if out.name.endswith(('screen08','screen09')):
         source=base.BASE/'wardrobe185-cut10/trajectory.npz';sha='50d88a05d9652c7e368c738406553d89d9bafea7d1c9cf22b04f89b7eff95aaf'
+    if out.name.endswith('screen11'):
+        source=base.BASE/'wardrobe185-cut11/trajectory.npz';sha='65ab929b2b6309f1223446995b2ff6efee290ab7b8e1346eb906a228f5effb80'
+    if out.name.endswith('screen13'):
+        source=base.BASE/'wardrobe185-cut13/trajectory.npz';sha='44751128314f25fd6b9900efd38e6380d4fbd42955c78fee73dc5f379942a9d9'
+    if out.name.endswith('screen14'):
+        source=base.BASE/'wardrobe185-headdress01/trajectory.npz';sha='4418bd6dae0b23dc3ddee0f517fada27e504eb60af01d6b9585d33f1487cf613'
+    if out.name.endswith('screen15'):
+        source=base.BASE/'wardrobe185-cut14/trajectory.npz';sha='082cc13896e7c8991c4443b60a817e6d189de9f477606a2f1525736735a035bb'
+    if out.name.endswith('screen19'):
+        source=base.BASE/'wardrobe185-cut19/trajectory.npz';sha='a44440025cf5957ee213ca04f02888f6f86fbeb28fa2d07fdb5fccfbb8c7abf4'
+    if out.name.endswith('screen20'):
+        source=base.BASE/'wardrobe185-cut20/trajectory.npz';sha='eb63b6c9371ae9d7c1ade8020defd15ca4a455bd03c9fd06f49d679891fdc960'
     if base.digest(source)!=sha:raise ValueError('Screen input changed')
     with np.load(source,allow_pickle=False) as d:points=d['frames'][-1];faces=d['faces'];counts=d['counts'];source_frame=len(d['frames'])
     from mathutils.bvhtree import BVHTree
@@ -177,7 +211,7 @@ def screen(out):
     for count in counts:
         f=faces[(faces[:,0]>=offset)&(faces[:,0]<offset+count)]
         trees.append(BVHTree.FromPolygons(points.tolist(),f.tolist()));offset+=count
-    overlaps={str((i,j)):len(trees[i].overlap(trees[j])) for i,j in ((0,1),(0,2),(1,2))}
+    overlaps={str((i,j)):len(trees[i].overlap(trees[j])) for i in range(len(trees)) for j in range(i+1,len(trees))}
     (out/'layer-intersections.json').write_text(json.dumps(overlaps,indent=2)+'\n')
     bpy.ops.wm.open_mainfile(filepath=str(base.SOURCE),load_ui=False,use_scripts=False)
     base.check_protected();rig,mats,_=base.clean_foundation();dress_actor(rig);repair(rig,'repair04')
@@ -186,7 +220,21 @@ def screen(out):
         f=faces[(faces[:,0]>=offset)&(faces[:,0]<offset+count)]-offset
         studio.panel('MF185_screen_'+str(k),points[offset:offset+count].tolist(),f.tolist(),color('screen'+str(k),rgb),.012,1)
         offset+=count
+    if out.name.endswith('screen09'):
+        for ob in bpy.data.objects:
+            if ob.name.startswith('MF185_screen_'):ob.hide_render=True
+        proxy=base.BASE/'wardrobe185-proxy02/proxy.npz'
+        if base.digest(proxy)!='19cce587247a325e2f0b081f49e14eb0a40bf6c3364896a327af4639a6d4f7eb':raise ValueError('Proxy changed')
+        with np.load(proxy,allow_pickle=False) as d:cp=d['points'];cf=d['faces']
+        mesh=bpy.data.meshes.new('Diagnostic collision envelope');mesh.from_pydata(cp.tolist(),[],cf.tolist());mesh.update()
+        ob=bpy.data.objects.new('MF185_contact_screen',mesh);bpy.context.scene.collection.objects.link(ob)
+        ob.data.materials.append(color('Contact envelope',(.30,.23,.18)))
+        for poly in ob.data.polygons:poly.use_smooth=True
     screens(out,(1,));base.check_protected()
+    if out.name.endswith('screen11'):
+        for ob in bpy.data.objects:
+            if ob.name.startswith('MF185_screen_'):ob.hide_render=True
+        control=out/'uncovered';control.mkdir();screens(control,(1,));base.check_protected()
     (out/'result.json').write_text(json.dumps({'source':str(source),'source_frame':source_frame,'protected_exact':True,'visual_gate':'NOT_RUN'},indent=2)+'\n')
 
 
@@ -286,7 +334,7 @@ def main():
     elif job['operation'] in ('isolate01','isolate02','isolate03','isolate04'):
         from wardrobe185_isolate import run
         run(out)
-    elif job['operation'] in ('proxy01','proxy02'):
+    elif job['operation'] in ('proxy01','proxy02','proxy03'):
         from wardrobe185_proxy import run
         run(out)
     elif job['operation'].startswith('screen'):screen(out)
@@ -296,8 +344,14 @@ def main():
     elif job['operation'] in ('restunit01','restunit02','restunit03'):
         from wardrobe185_rest_unit import run
         run(out)
-    elif job['operation']=='intersections01':
+    elif job['operation'].startswith('intersections'):
         from wardrobe185_intersections import run
+        run(out)
+    elif job['operation'].startswith('headdress'):
+        from wardrobe185_head_dress import run
+        run(out)
+    elif job['operation']=='harnesscontact01':
+        from wardrobe185_harness_contact import run
         run(out)
     else:raise ValueError('Validated operation has no implementation')
 

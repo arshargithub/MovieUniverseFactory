@@ -98,6 +98,8 @@ def test_dispatch_has_an_explicit_handler_for_every_admitted_operation(operation
         'wardrobe185_isolate':('run',),'wardrobe185_proxy':('run',),
         'wardrobe185_cut_solve':('run',),'wardrobe185_rest_unit':('run',),
         'wardrobe185_intersections':('run',),
+        'wardrobe185_head_dress':('run',),
+        'wardrobe185_harness_contact':('run',),
     }.items():
         fake=types.ModuleType(name)
         for method in methods:setattr(fake,method,record)
@@ -105,3 +107,35 @@ def test_dispatch_has_an_explicit_handler_for_every_admitted_operation(operation
     monkeypatch.setattr(sys,'argv',['test','--',str(job)])
     module.main()
     assert calls==[operation]
+
+
+def test_fresh_head_sheet_has_authored_dimensions_and_regular_metric():
+    import wardrobe185_head_dress as head
+    p,f,r=head.pattern()
+    assert p.shape==r.shape==(41*61,3) and f.shape==(40*60,4)
+    np.testing.assert_allclose(np.ptp(r,axis=0)*.12292759120464325,[.55,.78,0])
+    assert np.isfinite(p).all()
+
+
+def test_closed_course_uses_uniform_periodic_fabric_metric():
+    import wardrobe185_cut as cut
+    for layer in (0,1):
+        p,f,r,pins=cut.closed_course(layer)
+        assert p.shape==r.shape==(112*21,3) and f.shape==(112*20,4)
+        g=r.reshape(112,21,3)
+        circum=np.linalg.norm(np.roll(g,-1,axis=0)-g,axis=2)
+        across=np.linalg.norm(np.diff(g,axis=1),axis=2)
+        assert np.ptp(circum)<1e-10 and np.ptp(across)<1e-10
+        assert across[0,0]*20*.12292759120464325==pytest.approx(.175)
+        assert np.isfinite(p).all() and len(pins)==18
+
+
+def test_tailored_courses_have_concealed_rear_support_and_uniform_width():
+    import wardrobe185_cut as cut
+    for layer in (0,1):
+        p,f,r,pins=cut.closed_course(layer,tailored=True)
+        across=np.linalg.norm(np.diff(r.reshape(112,21,3),axis=1),axis=2)
+        assert np.ptp(across)<1e-10
+        assert across[0,0]*20*.12292759120464325==pytest.approx(.135)
+        assert len(pins)==63 and min(pins)>=0 and max(pins)<len(p)
+        assert 10 in pins and 28*21+16 in pins

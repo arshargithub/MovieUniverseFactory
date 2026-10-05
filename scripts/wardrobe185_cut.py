@@ -42,7 +42,7 @@ def rectangular_metric(points, rows, cols, typical=False):
     return np.array([(length*i/(rows-1),width*j/(cols-1),0.) for i in range(rows) for j in range(cols)])
 
 
-def separate_layers(points, faces, counts, margin=.10):
+def separate_layers(points, faces, counts, margin=.10, periodic=False):
     """Dress each outer strip beyond preceding layers along radial rays.
 
     Initial construction only. Exact triangle overlap rejects any unresolved
@@ -68,12 +68,13 @@ def separate_layers(points, faces, counts, margin=.10):
         # Carry a required clearance across neighboring samples at an open
         # headfall edge. Independent rays otherwise introduce a sharp dent
         # exactly where one ray misses that boundary and its neighbor hits.
-        grid=np.array(displacement).reshape(113,21)
-        padded=np.pad(grid,2,mode='edge')
-        spread=np.maximum.reduce([padded[i:i+113,j:j+21] for i in range(5) for j in range(5)])
+        rows=int(count)//21
+        grid=np.array(displacement).reshape(rows,21)
+        padded=np.pad(np.pad(grid,((2,2),(0,0)),mode='wrap' if periodic else 'edge'),((0,0),(2,2)),mode='edge')
+        spread=np.maximum.reduce([padded[i:i+rows,j:j+21] for i in range(5) for j in range(5)])
         for _ in range(2):
-            pad=np.pad(spread,1,mode='edge')
-            spread=np.maximum(grid,sum(pad[i:i+113,j:j+21] for i in range(3) for j in range(3))/9)
+            pad=np.pad(np.pad(spread,((1,1),(0,0)),mode='wrap' if periodic else 'edge'),((0,0),(1,1)),mode='edge')
+            spread=np.maximum(grid,sum(pad[i:i+rows,j:j+21] for i in range(3) for j in range(3))/9)
         p[offset:offset+count]=original+np.array(directions)*spread.reshape(-1,1)
         upper=faces[(faces[:,0]>=offset)&(faces[:,0]<offset+count)]
         upper_tree=BVHTree.FromPolygons(p.tolist(),upper.tolist())
@@ -82,6 +83,71 @@ def separate_layers(points, faces, counts, margin=.10):
             'examples':[{'lower':p[lower[x]].tolist(),'upper':p[upper[y]].tolist()} for x,y in overlaps[:8]]})
         offset+=count
     return p,records
+
+
+def closed_course(layer, tailored=False):
+    """Concealed-join course with a constant-width developable rest cylinder.
+
+    Avoids an invalid self-crossing end overlap and the varying circumferences
+    of an annular bib. This is a sewn simulation panel, not automatic tying.
+    """
+    rows,cols=112,21
+    p,f=course(layer,rows,cols,revised=3);grid=p.reshape(rows,cols,3)
+    for i in range(rows):
+        theta=math.tau*i/rows
+        tilt=(-.65 if layer else .45) if tailored else (.45+.25*layer)
+        grid[i,:,2]+=tilt*math.sin(theta)*max(0.,-math.cos(theta))
+        if tailored:
+            # Route the outer back course higher around the headfall, rather
+            # than duplicating two low collars. Opposing front bias is a
+            # construction choice; simulation supplies the folds.
+            grid[i,:,2]+=(.15+.65*layer)*max(0.,math.cos(theta))**2
+    lengths=np.linalg.norm(np.roll(grid,-1,axis=0)-grid,axis=2).sum(0)
+    radius=float(np.median(lengths))/(math.tau)
+    width=(.135 if tailored else .175)/.12292759120464325
+    rest=np.array([(radius*math.sin(math.tau*i/rows),radius*math.cos(math.tau*i/rows),-width*j/(cols-1)) for i in range(rows) for j in range(cols)])
+    pins={}
+    for row in (28,84):
+        for i in (row-1,row,row+1):
+            center=16 if tailored else 5
+            for j in (center-1,center,center+1):pins[i*cols+j]=1. if j==center else .6
+    if tailored:
+        # Concealed joined ends tuck at the rear, not at visible shoulders.
+        # Support a short seam region rather than a lone peak-producing pin.
+        for i in (110,111,0,1,2):
+            for j in range(6,15):pins[i*cols+j]=.85 if 8<=j<=12 else .5
+    return p,f,rest,pins
+
+
+def radial_actor_fit(points, tree, start, scale):
+    """Clear outer courses without collapsing their across-width sampling.
+
+    Closest-point projection onto a shoulder mapped multiple cloth rows to
+    the same surface location. Radial initial dressing preserves height and
+    angular order; the exact actor, edge and self-intersection gates still
+    apply afterwards. This is not an animated-frame correction.
+    """
+    from mathutils import Vector
+    result=np.array(points,copy=True);maximum=0.
+    for i in range(start,len(result)):
+        q=Vector(result[i]*scale);origin=Vector((0,.30*scale,q.z))
+        direction=q-origin;radius=direction.length;direction.normalize()
+        ray=origin.copy();outer=0.
+        for _ in range(64):
+            hit,_,_,_=tree.ray_cast(ray,direction,2.)
+            if hit is None:break
+            outer=max(outer,(hit-origin).dot(direction));ray=hit+direction*1e-5
+        else:raise ValueError('Actor radial query did not terminate')
+        target=max(radius,outer+.005)
+        for _ in range(60):
+            candidate=origin+direction*target
+            if tree.find_nearest(candidate)[3]>=.005-1e-7:break
+            target+=.001
+        else:raise ValueError('Radial actor clearance unresolved')
+        maximum=max(maximum,target-radius)
+        result[i]=np.array(candidate)/scale
+    if maximum>.06:raise ValueError('Radial dressing exceeds six-centimetre reconstruction guard')
+    return result,maximum
 
 
 def strips(layer):
