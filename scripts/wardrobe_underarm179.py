@@ -8,11 +8,11 @@ sys.path.insert(0,str(ROOT/'scripts'))
 import wardrobe_motion178 as foundation
 
 def validate(job):
-    if not isinstance(job,dict) or job!={'operation':'inspect01'}:
+    if not isinstance(job,dict) or set(job)!={'operation'} or job['operation'] not in ('inspect01','repair01'):
         raise ValueError('Fixed underarm inspection only')
     if foundation.SOURCE.is_symlink() or foundation.digest(foundation.SOURCE)!=foundation.SOURCE_SHA:
         raise ValueError('Protected foundation mismatch')
-    out=foundation.BASE/'wardrobe179-underarm-inspect01'
+    out=foundation.BASE/('wardrobe179-underarm-'+job['operation'])
     if out.exists() or out.is_symlink():raise ValueError('Never overwrite evidence')
     return out
 
@@ -29,6 +29,11 @@ def main():
     bpy.ops.wm.open_mainfile(filepath=str(foundation.SOURCE),load_ui=False,use_scripts=False)
     foundation.check_protected()
     rig,_,_=foundation.clean_foundation();dress_actor(rig)
+    correction=None
+    if job['operation']=='repair01':
+        from wardrobe_underarm179_repair import repair
+        correction=repair(rig)
+        (out/'wardrobe_underarm179_repair.py').write_bytes((ROOT/'scripts/wardrobe_underarm179_repair.py').read_bytes())
     controls.animate(rig,neutral_entry=True)
     # Record the actual protected-hair exclusion contour alongside the views;
     # a cloth silhouette is not evidence that a proxy matches visible hair.
@@ -50,6 +55,7 @@ def main():
     (out/'result.json').write_text(json.dumps({'protected_exact':True,'visual_gate':'NOT_RUN',
         'scope':'Both underarm joins without shawl: upper neutral, partial and full riding lean',
         'neutral_groom_proxy_sections':sections,
+        'garment_correction':correction,
         'source_sha256':foundation.SOURCE_SHA,'handler_sha256':foundation.digest(Path(__file__))},indent=2)+'\n')
 
 if __name__=='__main__':main()

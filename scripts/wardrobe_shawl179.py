@@ -15,6 +15,8 @@ import wardrobe_motion178 as foundation
 
 BASE = foundation.BASE
 OPERATIONS = ('initial01', 'initial02', 'initial03', 'initial04', 'solve01', 'windoff01', 'initial05', 'solve02', 'windoff02')
+OPERATIONS += ('initial06','initial07','solve03','windoff03')
+CONSTRUCTION_AUDIT = {}
 HEAD_ROWS, HEAD_COLS, WRAP_ROWS, WRAP_COLS = 41, 31, 96, 21
 HEAD_COUNT = HEAD_ROWS * HEAD_COLS
 COUNT = HEAD_COUNT + WRAP_ROWS * WRAP_COLS
@@ -22,6 +24,8 @@ INITIAL = BASE/'wardrobe179-initial04/constructed-layout.npz'
 INITIAL_SHA = 'e541c75772c9e7ca03aa6d3c6c9f6f794c901e7d50d81ff41b9ccd8607b62bb0'
 JOINED_INITIAL = BASE/'wardrobe179-initial05/constructed-layout.npz'
 JOINED_SHA = '74acd62caa000ec3d9cc562de5b230d9c76a2cfaaeb9cb23e1e932d9b022ce76'
+CONTACT_INITIAL = BASE/'wardrobe179-initial07/constructed-layout.npz'
+CONTACT_SHA = 'e740133b78865b9690f35bec30b353276400fd42636357fbb3a83e078af1d0a2'
 
 
 def validate(job):
@@ -33,6 +37,8 @@ def validate(job):
         raise ValueError('Inspected fixed construction mismatch')
     if job['operation'] in ('solve02','windoff02') and (JOINED_INITIAL.is_symlink() or foundation.digest(JOINED_INITIAL)!=JOINED_SHA):
         raise ValueError('Joined construction mismatch')
+    if job['operation'] in ('solve03','windoff03') and (CONTACT_INITIAL.is_symlink() or foundation.digest(CONTACT_INITIAL)!=CONTACT_SHA):
+        raise ValueError('Contact-cleared construction mismatch')
     out = BASE / ('wardrobe179-' + job['operation'])
     if out.exists() or out.is_symlink():
         raise ValueError('Never overwrite evidence')
@@ -132,6 +138,50 @@ def pattern():
             k=row*HEAD_COLS+col
             t=(row-28)/(HEAD_ROWS-1-28);t=t*t*(3-2*t)
             hood[k]=tuple(Vector(hood[k]).lerp(target,t))
+    # Neutral construction contact must also clear the CROWN, not just rear
+    # hair. A pin fixed inside a collision surface cannot be repaired by
+    # changing pin stiffness. Never project already simulated frames.
+    clearance_trees=(trees[-1],tree_for(bpy.data.objects['MF_continuous_head_neck']))
+    def signed_distances(point):
+        result=[]
+        for tree in clearance_trees:
+            hit,normal,_,distance=tree.find_nearest(Vector(point))
+            if hit is not None:result.append(float((Vector(point)-hit).dot(normal)))
+        return result
+    before=[min(signed_distances(p)) for p in hood]
+    for index,p in enumerate(hood):
+        p=Vector(p)
+        # Ray exits from a point within the head avoid oscillating nearest
+        # projections between intersecting head and hair exclusion surfaces.
+        origin=Vector((0,.25,0));direction=(p-origin).normalized()
+        extent=(p-origin).length
+        for tree in clearance_trees:
+            start=origin.copy();travel=0.
+            for _ in range(16):
+                hit,normal,_,distance=tree.ray_cast(start,direction,6.-travel)
+                if hit is None:break
+                travel+=distance;extent=max(extent,travel+.08)
+                travel+=1e-5;start=hit+direction*1e-5
+                if travel>=6.:break
+        p=origin+direction*extent
+        for _ in range(20):
+            for tree in clearance_trees:
+                hit,normal,_,distance=tree.find_nearest(p)
+                if hit is not None and (p-hit).dot(normal)<.060:
+                    p=hit+normal*.062
+        hood[index]=tuple(p)
+    after=[min(signed_distances(p)) for p in hood]
+    CONSTRUCTION_AUDIT.update({'head_min_signed_before_native':min(before),
+        'head_min_signed_after_native':min(after),'head_points_below_060_before':sum(d<.060 for d in before),
+        'head_points_below_059_after':sum(d<.059 for d in after),
+        'scope':'Nearest outward contact against protected head and actual local groom proxy; neutral pre-dress only'})
+    print('179 head construction contact audit',json.dumps(CONSTRUCTION_AUDIT),flush=True)
+    if min(after)<.059:raise ValueError('Initial head cloth still intersects contact margin')
+    # Carry the outermost sewn border into the course instead of forcing it
+    # back inside the clearance surface. Other course vertices remain free.
+    for col,w in enumerate(join):
+        x,y,z=hood[(HEAD_ROWS-1)*HEAD_COLS+col]
+        ribbon[w-HEAD_COUNT]=(x,y,z)
     faces = hood_faces + [tuple(HEAD_COUNT+i for i in f) for f in ribbon_faces]
     points = hood+ribbon
     pins = {}
@@ -188,7 +238,7 @@ def main():
     foundation.check_protected()
     rig,mats,groom = foundation.clean_foundation()
     if job['operation'].startswith(('solve','windoff')):
-        initial=JOINED_INITIAL if job['operation'].endswith('02') else INITIAL
+        initial=CONTACT_INITIAL if job['operation'].endswith('03') else JOINED_INITIAL if job['operation'].endswith('02') else INITIAL
         with np.load(initial,allow_pickle=False) as record:
             points=record['points'].tolist();faces=[tuple(f) for f in record['faces'].tolist()]
             pins={int(i):float(w) for i,w in zip(record['pin_indices'],record['pin_weights'])}
@@ -211,7 +261,7 @@ def main():
     (out/'result.json').write_text(json.dumps({'scope':'Approved single-course initial construction screen only',
         'protected_exact':True,'visual_gate':'NOT_RUN','motion_gate':'NOT_RUN','source_sha256':foundation.SOURCE_SHA,
         'handler_sha256':foundation.digest(Path(__file__)),'logical_garment':'Seamed hood and one continuous outer course',
-        'vertices':COUNT,'physics_not_run':True},indent=2)+'\n')
+        'vertices':COUNT,'physics_not_run':True,'construction_contact_audit':CONSTRUCTION_AUDIT},indent=2)+'\n')
 
 
 if __name__ == '__main__': main()
