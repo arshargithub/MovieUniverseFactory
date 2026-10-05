@@ -47,18 +47,10 @@ def validate(job):
     return out,cache
 
 
-def assembly(record):
+def dress_actor(rig):
     import bpy
-    import numpy as np
-    import wardrobe_studio as studio
     import wardrobe_motion178_controls as controls
-    from wardrobe_motion178_playback import absolute_cache
-    points=record['constructed_initial'];frames=record['frames'];faces=record['faces']
-    if points.shape!=(3891,3) or frames.shape!=(192,3891,3) or faces.ndim!=2 or faces.shape[1]!=4:
-        raise ValueError('Fixed two-wrap trajectory topology required')
-    if not np.isfinite(frames).all() or np.max(np.abs(frames))>100 or faces.min()<0 or faces.max()>=3891:
-        raise ValueError('Invalid bounded cloth cache')
-    rig,mats,_=recipe.clean_foundation();sample=controls.body_weight_sampler()
+    sample=controls.body_weight_sampler()
     # A bust-only screen can hide static lower garments left by the selected
     # pose authoring. Bind those neutral derivatives before whole-body review;
     # do not alter the accepted actor or recompute the cached shawl trajectory.
@@ -90,6 +82,21 @@ def assembly(record):
             c.inverse_matrix=(rig.matrix_world@rig.pose.bones['pelvis'].matrix).inverted()
     for ob in bpy.context.scene.objects:
         if '_seam_' in ob.name or 'harness_welt' in ob.name:ob.hide_render=True
+
+
+def assembly(record,expected_count=3891):
+    import bpy
+    import numpy as np
+    import wardrobe_studio as studio
+    import wardrobe_motion178_controls as controls
+    from wardrobe_motion178_playback import absolute_cache
+    if expected_count not in (3891,3287):raise ValueError('Fixed admitted cloth topology required')
+    points=record['constructed_initial'];frames=record['frames'];faces=record['faces']
+    if points.shape!=(expected_count,3) or frames.shape!=(192,expected_count,3) or faces.ndim!=2 or faces.shape[1]!=4:
+        raise ValueError('Fixed trajectory topology required')
+    if not np.isfinite(frames).all() or np.max(np.abs(frames))>100 or faces.min()<0 or faces.max()>=expected_count:
+        raise ValueError('Invalid bounded cloth cache')
+    rig,mats,_=recipe.clean_foundation();dress_actor(rig)
     controls.animate(rig,neutral_entry=True)
     display=studio.panel('MF178_moving_shawl',[tuple(p) for p in points],
                         [tuple(int(i) for i in f) for f in faces],mats['scarf'],.014,1)

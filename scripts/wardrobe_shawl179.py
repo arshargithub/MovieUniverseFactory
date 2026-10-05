@@ -14,10 +14,12 @@ sys.path.insert(0, str(ROOT / 'scripts'))
 import wardrobe_motion178 as foundation
 
 BASE = foundation.BASE
-OPERATIONS = ('initial01', 'solve01', 'windoff01')
-HEAD_ROWS, HEAD_COLS, WRAP_ROWS, WRAP_COLS = 41, 31, 97, 21
+OPERATIONS = ('initial01', 'initial02', 'initial03', 'initial04', 'solve01', 'windoff01')
+HEAD_ROWS, HEAD_COLS, WRAP_ROWS, WRAP_COLS = 41, 31, 96, 21
 HEAD_COUNT = HEAD_ROWS * HEAD_COLS
 COUNT = HEAD_COUNT + WRAP_ROWS * WRAP_COLS
+INITIAL = BASE/'wardrobe179-initial04/constructed-layout.npz'
+INITIAL_SHA = 'e541c75772c9e7ca03aa6d3c6c9f6f794c901e7d50d81ff41b9ccd8607b62bb0'
 
 
 def validate(job):
@@ -25,6 +27,8 @@ def validate(job):
         raise ValueError('Fixed approved shawl operation only')
     if foundation.SOURCE.is_symlink() or foundation.digest(foundation.SOURCE) != foundation.SOURCE_SHA:
         raise ValueError('Protected foundation mismatch')
+    if job['operation'] in ('solve01','windoff01') and (INITIAL.is_symlink() or foundation.digest(INITIAL)!=INITIAL_SHA):
+        raise ValueError('Inspected fixed construction mismatch')
     out = BASE / ('wardrobe179-' + job['operation'])
     if out.exists() or out.is_symlink():
         raise ValueError('Never overwrite evidence')
@@ -43,6 +47,8 @@ def head_point(u, v):
     t = (u-a[0])/(b[0]-a[0]); t = t*t*(3-2*t)
     y, z, width, drop = [a[k]*(1-t)+b[k]*t for k in range(1, 5)]
     angle = (2*v-1)*1.57
+    lateral=max(0.,min(1.,(u-.4)/.25));lateral=lateral*lateral*(3-2*lateral)
+    y=y*(1-lateral*math.sin(angle)**2)+.14*lateral*math.sin(angle)**2
     return (width*math.sin(angle), y+.12*math.sin(angle)**2,
             z-drop*(1-math.cos(angle)))
 
@@ -52,8 +58,8 @@ def wrap_description(u, v):
         raise ValueError('Bounded cloth coordinates required')
     angle = 2*math.pi*u
     front = max(0., -math.cos(angle))
-    top = -1.76-.50*front+.28*math.sin(angle)*front
-    width = .65+.92*front
+    top = -1.38-.75*front-.22*max(0.,math.cos(angle))+.48*math.sin(angle)*front
+    width = .38+1.05*front
     return angle, top-width*v, front
 
 
@@ -72,7 +78,7 @@ def pattern():
     ribbon = []
     for row in range(WRAP_ROWS):
         for col in range(WRAP_COLS):
-            angle, z, front = wrap_description(row/(WRAP_ROWS-1), (WRAP_COLS-1-col)/(WRAP_COLS-1))
+            angle, z, front = wrap_description(row/WRAP_ROWS, (WRAP_COLS-1-col)/(WRAP_COLS-1))
             direction = Vector((math.sin(angle), math.cos(angle), 0))
             origin = Vector((0, .14, z)); extent = 0.
             limit = 2.7 if abs(direction.x) > .75 else 3.2
@@ -86,10 +92,39 @@ def pattern():
                     if travel >= limit: break
             if extent <= 0: raise ValueError('Missing outer garment contact')
             # One exterior course with no overlapping terminal layer stack.
-            radius = extent+.055+.055*front*math.sin(math.pi*col/(WRAP_COLS-1))
+            radius = extent+.18+.055*front*math.sin(math.pi*col/(WRAP_COLS-1))
             ribbon.append(tuple(origin+direction*radius))
-    faces = hood_faces + [tuple(HEAD_COUNT+i for i in f) for f in
-                         foundation.sheet_grid(WRAP_ROWS, WRAP_COLS, lambda u,v:(u,v,0))[1]]
+    # The long headfall is the exterior rear layer. Register its neutral
+    # rear corridor to actual groom AND under-wrap, not a guessed ellipse.
+    from mathutils.bvhtree import BVHTree
+    ribbon_faces=[(i*WRAP_COLS+j,i*WRAP_COLS+j+1,((i+1)%WRAP_ROWS)*WRAP_COLS+j+1,
+                   ((i+1)%WRAP_ROWS)*WRAP_COLS+j) for i in range(WRAP_ROWS) for j in range(WRAP_COLS-1)]
+    wrap_tree=BVHTree.FromPolygons([Vector(p) for p in ribbon],ribbon_faces)
+    for row in range(18,HEAD_ROWS):
+        for col in range(HEAD_COLS):
+            index=row*HEAD_COLS+col;x,y,z=hood[index]
+            outer=y
+            rear_trees=[trees[-1]]+([wrap_tree] if abs(x)<1.1 else [])
+            for tree in rear_trees:
+                start=Vector((x,-.3,z));travel=0.
+                for _ in range(12):
+                    hit,_,_,distance=tree.ray_cast(start,Vector((0,1,0)),4.-travel)
+                    if hit is None:break
+                    outer=max(outer,hit.y+.09);travel+=distance+1e-5
+                    start=hit+Vector((0,1e-5,0))
+                    if travel>=4.:break
+            hood[index]=(x,outer,z)
+    # Carry the required rear clearance through a broad continuous fall,
+    # rather than imprinting the inner course as a horizontal shelf.
+    rear_clearance=max(p[1] for p in hood[18*HEAD_COLS:])
+    for row in range(18,HEAD_ROWS):
+        blend=min(1.,(row-18)/9);blend=blend*blend*(3-2*blend)
+        for col in range(HEAD_COLS):
+            index=row*HEAD_COLS+col;x,y,z=hood[index]
+            lateral=math.sin((2*col/(HEAD_COLS-1)-1)*1.57)**2
+            target=(1.27*(1-blend)+rear_clearance*blend)*(1-.85*lateral)
+            hood[index]=(x,max(y,target),z)
+    faces = hood_faces + [tuple(HEAD_COUNT+i for i in f) for f in ribbon_faces]
     points = hood+ribbon
     pins = {}
     # Small stable crown field, not a fully held opening or broad rigid hood.
@@ -97,15 +132,19 @@ def pattern():
         for col in range(10, 21):
             pins[row*HEAD_COLS+col] = 1. if 12 <= col <= 18 else .6
     for row in range(WRAP_ROWS):
-        pins[HEAD_COUNT+row*WRAP_COLS+20] = 1.
-        pins[HEAD_COUNT+row*WRAP_COLS+19] = .7
-        pins[HEAD_COUNT+row*WRAP_COLS+18] = .25
+        theta=2*math.pi*row/WRAP_ROWS
+        if math.cos(theta)<-.15 or abs(math.sin(theta))>.97:
+            pins[HEAD_COUNT+row*WRAP_COLS+20] = 1.
+            pins[HEAD_COUNT+row*WRAP_COLS+19] = .7
+            pins[HEAD_COUNT+row*WRAP_COLS+18] = .25
     # Two small shoulder seam zones physically join the hood to the course.
     stitches = []
     for head_col, wrap_row in ((0, 72), (30, 24)):
         for offset in (-1,0,1):
-            h = 28*HEAD_COLS+head_col
             w = HEAD_COUNT+(wrap_row+offset)*WRAP_COLS+20
+            h=min((r*HEAD_COLS+head_col for r in range(18,HEAD_ROWS)),
+                  key=lambda k:sum((points[k][axis]-points[w][axis])**2 for axis in range(3)))
+            if math.dist(points[h],points[w])>.8:raise ValueError('Shoulder seam is not physically local')
             stitches.append((h,w))
     p = np.array(points)
     if p.shape != (COUNT,3) or not np.isfinite(p).all(): raise ValueError('Invalid fixed pattern')
@@ -136,21 +175,31 @@ def main():
     import wardrobe_studio as studio
     job = json.loads(Path(sys.argv[sys.argv.index('--')+1]).read_text())
     out = validate(job); out.mkdir()
-    for name in ('wardrobe_shawl179.py','wardrobe_motion178.py','wardrobe_motion178_controls.py',
+    for name in ('wardrobe_shawl179.py','wardrobe_shawl179_motion.py','wardrobe_motion178.py','wardrobe_motion178_controls.py',
                  'wardrobe_motion178_proof.py','wardrobe_motion178_playback.py'):
         (out/name).write_bytes((ROOT/'scripts'/name).read_bytes())
     bpy.ops.wm.open_mainfile(filepath=str(foundation.SOURCE),load_ui=False,use_scripts=False)
     foundation.check_protected()
     rig,mats,groom = foundation.clean_foundation()
-    points,faces,pins,stitches = pattern()
+    if job['operation'] in ('solve01','windoff01'):
+        with np.load(INITIAL,allow_pickle=False) as record:
+            points=record['points'].tolist();faces=[tuple(f) for f in record['faces'].tolist()]
+            pins={int(i):float(w) for i,w in zip(record['pin_indices'],record['pin_weights'])}
+            stitches=[tuple(e) for e in record['stitches'].tolist()]
+        if len(points)!=COUNT or len(faces)!=3120:raise ValueError('Fixed single-course topology mismatch')
+    else:points,faces,pins,stitches = pattern()
     np.savez_compressed(out/'constructed-layout.npz',points=np.array(points),faces=np.array(faces),
                         pin_indices=np.array(sorted(pins)),pin_weights=np.array([pins[i] for i in sorted(pins)]),
                         stitches=np.array(stitches))
-    if job['operation']=='initial01':
+    if job['operation'] in ('initial01','initial02','initial03','initial04'):
         studio.panel('MF179_continuous_shawl',points,faces,mats['scarf'],.014,1)
         screens(out)
     else:
-        raise ValueError('Motion requires inspected hash-bound construction before dispatch')
+        from wardrobe_shawl179_motion import simulate
+        result=simulate(out,rig,mats,groom,points,faces,pins,stitches,wind_off=job['operation']=='windoff01')
+        foundation.check_protected()
+        (out/'result.json').write_text(json.dumps(result,indent=2)+'\n')
+        return
     foundation.check_protected()
     (out/'result.json').write_text(json.dumps({'scope':'Approved single-course initial construction screen only',
         'protected_exact':True,'visual_gate':'NOT_RUN','motion_gate':'NOT_RUN','source_sha256':foundation.SOURCE_SHA,

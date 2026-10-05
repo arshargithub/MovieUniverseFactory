@@ -15,6 +15,15 @@ def test_head_cut_is_finite(u,v):
 def test_single_course_not_double():
     assert module.wrap_description(1,.5)[0]==pytest.approx(2*math.pi)
 
+def test_fixed_periodic_topology():
+    assert module.COUNT==3287
+    assert module.WRAP_ROWS==96
+
+def test_lateral_cloth_reaches_shoulder_instead_of_rear_plane():
+    middle=module.head_point(.7,.5)
+    side=module.head_point(.7,0)
+    assert middle[1]>1.2 and side[1]<.3
+
 @pytest.mark.parametrize('job',[{}, {'operation':'arbitrary'}, {'operation':'initial01','code':'x'},'x'])
 def test_rejects_unstructured_payload(job):
     with pytest.raises(ValueError): module.validate(job)
