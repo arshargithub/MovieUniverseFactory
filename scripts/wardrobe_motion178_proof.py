@@ -84,19 +84,23 @@ def dress_actor(rig):
         if '_seam_' in ob.name or 'harness_welt' in ob.name:ob.hide_render=True
 
 
-def assembly(record,expected_count=3891):
+def assembly(record,expected_count=3891,integrated=False):
     import bpy
     import numpy as np
     import wardrobe_studio as studio
     import wardrobe_motion178_controls as controls
     from wardrobe_motion178_playback import absolute_cache
-    if expected_count not in (3891,3287):raise ValueError('Fixed admitted cloth topology required')
+    if expected_count not in (3891,3287,3256):raise ValueError('Fixed admitted cloth topology required')
+    if integrated and expected_count!=3256:raise ValueError('Integrated garment profile requires the fixed shared seam')
     points=record['constructed_initial'];frames=record['frames'];faces=record['faces']
     if points.shape!=(expected_count,3) or frames.shape!=(192,expected_count,3) or faces.ndim!=2 or faces.shape[1]!=4:
         raise ValueError('Fixed trajectory topology required')
     if not np.isfinite(frames).all() or np.max(np.abs(frames))>100 or faces.min()<0 or faces.max()>=expected_count:
         raise ValueError('Invalid bounded cloth cache')
     rig,mats,_=recipe.clean_foundation();dress_actor(rig)
+    if integrated:
+        from wardrobe_underarm179_repair import repair
+        repair(rig,'repair04')
     controls.animate(rig,neutral_entry=True)
     display=studio.panel('MF178_moving_shawl',[tuple(p) for p in points],
                         [tuple(int(i) for i in f) for f in faces],mats['scarf'],.014,1)
