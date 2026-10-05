@@ -100,6 +100,7 @@ def test_dispatch_has_an_explicit_handler_for_every_admitted_operation(operation
         'wardrobe185_intersections':('run',),
         'wardrobe185_head_dress':('run',),
         'wardrobe185_harness_contact':('run',),
+        'wardrobe185_motion':('prep','simulate'),
     }.items():
         fake=types.ModuleType(name)
         for method in methods:setattr(fake,method,record)
@@ -139,3 +140,22 @@ def test_tailored_courses_have_concealed_rear_support_and_uniform_width():
         assert across[0,0]*20*.12292759120464325==pytest.approx(.135)
         assert len(pins)==63 and min(pins)>=0 and max(pins)<len(p)
         assert 10 in pins and 28*21+16 in pins
+
+
+def test_tailored_head_has_planar_trapezoid_rest_not_distorted_surface_metric():
+    import wardrobe185_head_dress as head
+    p,f,r=head.pattern(1.10,.94)
+    grid=r.reshape(41,61,3)
+    assert np.all(grid[:,:,2]==0)
+    assert np.ptp(grid[0,:,1])*.12292759120464325==pytest.approx(.94)
+    assert np.ptp(grid[-1,:,1])*.12292759120464325==pytest.approx(.78)
+
+
+def test_motion_schedule_preserves_dressing_then_coordinates_lean():
+    from wardrobe185_motion import schedule
+    assert schedule(1)['lean']==schedule(169)['lean']==0
+    assert schedule(1)['legs']==0 and schedule(145)['legs']==1
+    assert schedule(193)['lean']==pytest.approx(.5)
+    assert schedule(217)['lean']==1
+    assert schedule(1)['wind']==schedule(169)['wind']==0
+    assert schedule(265)['wind']>0

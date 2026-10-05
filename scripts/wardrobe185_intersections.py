@@ -11,6 +11,8 @@ def run(out):
     revised=out.name.endswith('02')
     path=base.BASE/('wardrobe185-cut14/trajectory.npz' if revised else 'wardrobe185-cut05/trajectory.npz')
     sha='082cc13896e7c8991c4443b60a817e6d189de9f477606a2f1525736735a035bb' if revised else 'b58d4b35d26c686014565630ed7debdd18a5ed77fb095e6436901cadc405ba3a'
+    if out.name.endswith('03'):
+        path=base.BASE/'wardrobe185-cut23/trajectory.npz';sha='2f5d1c4a9c0a0b2052aed1d9be891e3fd3a0d5d1be2133d2f77640825ce93d66'
     if base.digest(path)!=sha:raise ValueError('Audit source changed')
     with np.load(path,allow_pickle=False) as d:p=d['points'];f=d['faces'];q=d['frames'][-1];counts=d['counts']
     report={}

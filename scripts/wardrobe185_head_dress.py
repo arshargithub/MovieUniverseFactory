@@ -4,16 +4,17 @@ from pathlib import Path
 import numpy as np
 
 
-def pattern(crown=1.30):
+def pattern(crown=1.30, front_width=.78, spread_tails=False):
     rows,cols=41,61;scale=.12292759120464325
     width=.78/scale;length=.55/scale
     p=[];r=[];f=[]
     for i in range(rows):
         u=i/(rows-1)
+        local_width=(front_width*(1-u)+.78*u)/scale
         for j in range(cols):
-            s=(j/(cols-1)-.5)*width;a=max(-math.pi/2,min(math.pi/2,s/1.36))
+            s=(j/(cols-1)-.5)*local_width;a=max(-math.pi/2,min(math.pi/2,s/1.36))
             extra=max(0,abs(s)-1.36*math.pi/2)
-            p.append((1.36*math.sin(a)+math.copysign(.025*extra,s),.05+length*u,crown-1.36*(1-math.cos(a))-extra))
+            p.append((1.36*math.sin(a)+math.copysign((.90 if spread_tails else .025)*extra,s),.05+length*u,crown-1.36*(1-math.cos(a))-(.30 if spread_tails else 1.)*extra))
             r.append((length*u,s,0))
     for i in range(rows-1):
         for j in range(cols-1):f.append((i*cols+j,(i+1)*cols+j,(i+1)*cols+j+1,i*cols+j+1))
@@ -34,11 +35,13 @@ def run(out):
     if base.digest(path)!='19cce587247a325e2f0b081f49e14eb0a40bf6c3364896a327af4639a6d4f7eb':raise ValueError('Proxy changed')
     with np.load(path,allow_pickle=False) as d:cp=d['points'];cf=d['faces']
     bpy.ops.wm.read_factory_settings(use_empty=True);scene=bpy.context.scene;scene.render.fps=24;scene.gravity=(0,0,-9.81)
-    revised=out.name.endswith('02')
-    scale=.12292759120464325;p,f,r=pattern(1.10 if revised else 1.30)
+    revised=out.name.endswith(('02','03','04'))
+    front_width=.94 if out.name.endswith(('03','04')) else .78
+    scale=.12292759120464325;p,f,r=pattern(1.10 if revised else 1.30,front_width,spread_tails=out.name.endswith('04'))
     mesh=bpy.data.meshes.new('Actor');mesh.from_pydata((cp*scale).tolist(),[],cf.tolist());mesh.update()
     contact=bpy.data.objects.new('Actor',mesh);scene.collection.objects.link(contact);bpy.context.view_layer.objects.active=contact
     dec=contact.modifiers.new('Contact reduction','DECIMATE');dec.ratio=min(1,12000/len(cf));bpy.ops.object.modifier_apply(modifier=dec.name)
+    mesh=contact.data
     mesh.calc_loop_triangles();v=np.array([x.co[:] for x in mesh.vertices]);t=np.array([x.vertices[:] for x in mesh.loop_triangles])
     tree=BVHTree.FromPolygons(v.tolist(),t.tolist(),all_triangles=True);deltas=[]
     for i,point in enumerate(p*scale):
@@ -50,7 +53,7 @@ def run(out):
             if direction.length<1e-7:direction=n
             q=h+direction.normalized()*.005
         deltas.append((q-Vector(point)).length);p[i]=np.array(q)/scale
-    (out/'construction.json').write_text(json.dumps({'max_adjustment_m':max(deltas),'width_m':.78,'length_m':.55},indent=2)+'\n')
+    (out/'construction.json').write_text(json.dumps({'max_adjustment_m':max(deltas),'front_width_m':front_width,'rear_width_m':.78,'length_m':.55},indent=2)+'\n')
     if max(deltas)>.03:raise ValueError('Fresh pattern penetrates actor; correct initial drape')
     contact.modifiers.new('Collision','COLLISION');contact.collision.thickness_outer=.0015;contact.collision.cloth_friction=15
     domain=bpy.data.collections.new('Domain');scene.collection.children.link(domain);domain.objects.link(contact)

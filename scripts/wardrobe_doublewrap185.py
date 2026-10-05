@@ -66,6 +66,21 @@ OPERATIONS += ('cut19',)
 OPERATIONS += ('screen19',)
 OPERATIONS += ('cut20',)
 OPERATIONS += ('screen20',)
+OPERATIONS += ('headdress03',)
+OPERATIONS += ('headdress04',)
+OPERATIONS += ('cut21',)
+OPERATIONS += ('cut22',)
+OPERATIONS += ('screen22',)
+OPERATIONS += ('cut23',)
+OPERATIONS += ('screen23',)
+OPERATIONS += ('intersections03',)
+OPERATIONS += ('cut24',)
+OPERATIONS += ('screen24',)
+OPERATIONS += ('cut25',)
+OPERATIONS += ('screen25',)
+OPERATIONS += ('motionprep01',)
+OPERATIONS += ('motion01','motionoff01')
+OPERATIONS += ('motion02',)
 HEAD = base.BASE / 'wardrobe180-xpbdhead08/trajectory.npz'
 HEAD_SHA = '55ce2f99edfbb45a7cf8a5898be31caa1f20bd7da3bb2ae2be9c43e49d7095e8'
 
@@ -204,6 +219,14 @@ def screen(out):
         source=base.BASE/'wardrobe185-cut19/trajectory.npz';sha='a44440025cf5957ee213ca04f02888f6f86fbeb28fa2d07fdb5fccfbb8c7abf4'
     if out.name.endswith('screen20'):
         source=base.BASE/'wardrobe185-cut20/trajectory.npz';sha='eb63b6c9371ae9d7c1ade8020defd15ca4a455bd03c9fd06f49d679891fdc960'
+    if out.name.endswith('screen22'):
+        source=base.BASE/'wardrobe185-cut22/trajectory.npz';sha='0f5d77429db1399008ddf7ebc7a7d4d0b4e0022fd314a63678313ec9e7cf22cf'
+    if out.name.endswith('screen23'):
+        source=base.BASE/'wardrobe185-cut23/trajectory.npz';sha='2f5d1c4a9c0a0b2052aed1d9be891e3fd3a0d5d1be2133d2f77640825ce93d66'
+    if out.name.endswith('screen24'):
+        source=base.BASE/'wardrobe185-cut24/trajectory.npz';sha='16d36ab0cd4617f7c3f2614c7b25539b80b6ea9467516524576fc5c3201b3882'
+    if out.name.endswith('screen25'):
+        source=base.BASE/'wardrobe185-cut25/trajectory.npz';sha='01b39b795fa57488cef9b0841a03c897446b29f0c63b8261d02e831ce6aaab45'
     if base.digest(source)!=sha:raise ValueError('Screen input changed')
     with np.load(source,allow_pickle=False) as d:points=d['frames'][-1];faces=d['faces'];counts=d['counts'];source_frame=len(d['frames'])
     from mathutils.bvhtree import BVHTree
@@ -231,6 +254,23 @@ def screen(out):
         ob.data.materials.append(color('Contact envelope',(.30,.23,.18)))
         for poly in ob.data.polygons:poly.use_smooth=True
     screens(out,(1,));base.check_protected()
+    if out.name.endswith(('screen23','screen24','screen25')):
+        for ob in bpy.data.objects:
+            if ob.name.startswith('MF185_screen_'):
+                ob.data.materials.clear();ob.data.materials.append(mats['scarf'])
+        finished=out/'material-control';finished.mkdir();screens(finished,(1,));base.check_protected()
+    if out.name.endswith(('screen24','screen25')):
+        evaluated_trees=[]
+        for k in range(3):
+            ob=bpy.data.objects['MF185_screen_'+str(k)]
+            states=[(m,m.show_viewport) for m in ob.modifiers if m.type=='SOLIDIFY']
+            for m,_ in states:m.show_viewport=False
+            bpy.context.view_layer.update();ev=ob.evaluated_get(bpy.context.evaluated_depsgraph_get());mesh=ev.to_mesh()
+            mesh.calc_loop_triangles()
+            evaluated_trees.append(BVHTree.FromPolygons([list(ob.matrix_world@v.co) for v in mesh.vertices],[list(t.vertices) for t in mesh.loop_triangles],all_triangles=True))
+            ev.to_mesh_clear()
+            for m,value in states:m.show_viewport=value
+        (out/'evaluated-midsurface-intersections.json').write_text(json.dumps({str((i,j)):len(evaluated_trees[i].overlap(evaluated_trees[j])) for i in range(3) for j in range(i+1,3)},indent=2)+'\n')
     if out.name.endswith('screen11'):
         for ob in bpy.data.objects:
             if ob.name.startswith('MF185_screen_'):ob.hide_render=True
@@ -353,6 +393,12 @@ def main():
     elif job['operation']=='harnesscontact01':
         from wardrobe185_harness_contact import run
         run(out)
+    elif job['operation']=='motionprep01':
+        from wardrobe185_motion import prep
+        prep(out)
+    elif job['operation'] in ('motion01','motion02','motionoff01'):
+        from wardrobe185_motion import simulate
+        simulate(out)
     else:raise ValueError('Validated operation has no implementation')
 
 

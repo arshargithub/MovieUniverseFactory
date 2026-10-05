@@ -42,7 +42,7 @@ def rectangular_metric(points, rows, cols, typical=False):
     return np.array([(length*i/(rows-1),width*j/(cols-1),0.) for i in range(rows) for j in range(cols)])
 
 
-def separate_layers(points, faces, counts, margin=.10, periodic=False):
+def separate_layers(points, faces, counts, margin=.10, periodic=False, subsample=False):
     """Dress each outer strip beyond preceding layers along radial rays.
 
     Initial construction only. Exact triangle overlap rejects any unresolved
@@ -55,8 +55,8 @@ def separate_layers(points, faces, counts, margin=.10, periodic=False):
         lower=faces[faces[:,0]<offset]
         tree=BVHTree.FromPolygons(p.tolist(),lower.tolist())
         displacement=[];directions=[];original=p[offset:offset+count].copy()
-        for i in range(offset,offset+count):
-            q=Vector(p[i]);origin=Vector((0,.30,q.z));direction=q-origin
+        def required(point):
+            q=Vector(point);origin=Vector((0,.30,q.z));direction=q-origin
             radius=direction.length;direction.normalize();ray=origin.copy();outer=0.
             for _ in range(64):
                 h,_,_,_=tree.ray_cast(ray,direction,5.)
@@ -64,7 +64,19 @@ def separate_layers(points, faces, counts, margin=.10, periodic=False):
                 outer=max(outer,(h-origin).dot(direction));ray=h+direction*1e-4
             else:raise ValueError('Layer ray did not terminate')
             delta=max(0.,outer+margin-radius)
-            displacement.append(delta);directions.append(np.array(direction))
+            return delta,np.array(direction)
+        for i in range(offset,offset+count):
+            delta,direction=required(p[i]);displacement.append(delta);directions.append(direction)
+        upper=faces[(faces[:,0]>=offset)&(faces[:,0]<offset+count)]
+        if subsample:
+            # At an open lower-panel edge, vertex rays may both miss while
+            # their connecting face crosses it. Sample each face interior
+            # and edge; transfer its required clearance to that whole cell.
+            for face in upper:
+                q=p[face]
+                samples=np.concatenate([q.mean(0)[None,:],(q+np.roll(q,-1,axis=0))*.5])
+                needed=max(required(point)[0] for point in samples)
+                for index in face:displacement[index-offset]=max(displacement[index-offset],needed)
         # Carry a required clearance across neighboring samples at an open
         # headfall edge. Independent rays otherwise introduce a sharp dent
         # exactly where one ray misses that boundary and its neighbor hits.
@@ -76,7 +88,6 @@ def separate_layers(points, faces, counts, margin=.10, periodic=False):
             pad=np.pad(np.pad(spread,((1,1),(0,0)),mode='wrap' if periodic else 'edge'),((0,0),(1,1)),mode='edge')
             spread=np.maximum(grid,sum(pad[i:i+rows,j:j+21] for i in range(3) for j in range(3))/9)
         p[offset:offset+count]=original+np.array(directions)*spread.reshape(-1,1)
-        upper=faces[(faces[:,0]>=offset)&(faces[:,0]<offset+count)]
         upper_tree=BVHTree.FromPolygons(p.tolist(),upper.tolist())
         overlaps=tree.overlap(upper_tree)
         records.append({'maximum_displacement_native':max(displacement),'initial_layer_crossings':len(overlaps),
@@ -85,7 +96,7 @@ def separate_layers(points, faces, counts, margin=.10, periodic=False):
     return p,records
 
 
-def closed_course(layer, tailored=False):
+def closed_course(layer, tailored=False, fitted=False, tucked=False):
     """Concealed-join course with a constant-width developable rest cylinder.
 
     Avoids an invalid self-crossing end overlap and the varying circumferences
@@ -102,20 +113,25 @@ def closed_course(layer, tailored=False):
             # than duplicating two low collars. Opposing front bias is a
             # construction choice; simulation supplies the folds.
             grid[i,:,2]+=(.15+.65*layer)*max(0.,math.cos(theta))**2
+        if fitted:
+            # Opposed shoulder-height bias carries the cross-front route;
+            # a front-only bias had vanished at both supporting shoulders.
+            grid[i,:,2]+=(.20 if layer==0 else -.20)*math.sin(theta)
     lengths=np.linalg.norm(np.roll(grid,-1,axis=0)-grid,axis=2).sum(0)
     radius=float(np.median(lengths))/(math.tau)
+    if fitted:radius*=.95 if layer==0 else .90
     width=(.135 if tailored else .175)/.12292759120464325
     rest=np.array([(radius*math.sin(math.tau*i/rows),radius*math.cos(math.tau*i/rows),-width*j/(cols-1)) for i in range(rows) for j in range(cols)])
     pins={}
     for row in (28,84):
         for i in (row-1,row,row+1):
-            center=16 if tailored else 5
+            center=12 if fitted else 16 if tailored else 5
             for j in (center-1,center,center+1):pins[i*cols+j]=1. if j==center else .6
     if tailored:
         # Concealed joined ends tuck at the rear, not at visible shoulders.
         # Support a short seam region rather than a lone peak-producing pin.
         for i in (110,111,0,1,2):
-            for j in range(6,15):pins[i*cols+j]=.85 if 8<=j<=12 else .5
+            for j in (range(8,13) if tucked else range(6,15)):pins[i*cols+j]=.85 if 8<=j<=12 else .5
     return p,f,rest,pins
 
 
