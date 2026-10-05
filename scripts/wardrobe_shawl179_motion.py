@@ -3,7 +3,7 @@ import json
 from pathlib import Path
 
 
-def simulate(out,rig,mats,groom,points,faces,pins,stitches,wind_off=False):
+def simulate(out,rig,mats,groom,points,faces,pins,stitches,wind_off=False,integrated=False):
     import bpy
     import numpy as np
     import wardrobe_studio as studio
@@ -15,16 +15,23 @@ def simulate(out,rig,mats,groom,points,faces,pins,stitches,wind_off=False):
     scale=bpy.context.scene.unit_settings.scale_length
     sample=controls.body_weight_sampler()
     dress_actor(rig)
+    if integrated:
+        from wardrobe_underarm179_repair import repair
+        repair(rig,'repair04')
     controls.animate(rig,neutral_entry=True)
     canonical=controls.canonical_rig(rig,scale)
     original_action=rig.animation_data.action;canonical_action=canonical.animation_data.action
     rig.animation_data.action=None;canonical.animation_data.action=None
     neutral(rig);neutral(canonical);bpy.context.view_layer.update()
-    supports=[]
+    supports=[];exact_body_target=None
+    if integrated:
+        from wardrobe_shawl179_collision import supports as actual_supports
+        supports,exact_body_target=actual_supports(canonical,scale,sample)
     for name in ('MF_studio_adult_body','MF_fit_tunic_173_visible',
                  'MF_171_fitted_sleeve_L_173_visible','MF_171_fitted_sleeve_R_173_visible',
                  'MF_173_tension_harness_-1','MF_173_tension_harness_1',
                  'MF_173_static_groom_clearance','MF_continuous_head_neck'):
+        if integrated:continue
         support=foundation.solver_support(bpy.data.objects[name],scale,
                     faces_limit=12000 if name=='MF_studio_adult_body' else 4500)
         bpy.context.view_layer.objects.active=support
@@ -46,7 +53,7 @@ def simulate(out,rig,mats,groom,points,faces,pins,stitches,wind_off=False):
     s=mod.settings;s.quality=16;s.mass=.04
     s.tension_stiffness=25;s.compression_stiffness=25;s.shear_stiffness=12;s.bending_stiffness=.015
     s.tension_damping=6;s.compression_damping=6;s.shear_damping=6;s.air_damping=1
-    s.vertex_group_mass=pin.name;s.use_sewing_springs=True;s.sewing_force_max=1.
+    s.vertex_group_mass=pin.name;s.use_sewing_springs=bool(stitches);s.sewing_force_max=1.
     s.use_dynamic_mesh=False
     domain=bpy.data.collections.new('MF179_exclusive_metric_contacts')
     bpy.context.scene.collection.children.link(domain)
@@ -57,7 +64,7 @@ def simulate(out,rig,mats,groom,points,faces,pins,stitches,wind_off=False):
     mod.point_cache.frame_start=1;mod.point_cache.frame_end=288
     controls.wind(gain=0. if wind_off else .04)
     scene=bpy.context.scene;scene.gravity=(0,0,-9.81);scene.render.fps=24
-    frames=[];matrices=[]
+    frames=[];matrices=[];body_errors={}
     with controls.render_geometry_paused():
         for frame in range(1,289):
             scene.frame_set(frame);bpy.context.view_layer.update()
@@ -68,6 +75,9 @@ def simulate(out,rig,mats,groom,points,faces,pins,stitches,wind_off=False):
             error=max(float(np.max(np.abs(np.array(b.matrix)-np.array(canonical.pose.bones[b.name].matrix))))
                       for b in rig.pose.bones)
             if error>1e-6:raise ValueError('Canonical actor-local bone mismatch')
+            if exact_body_target is not None and frame in (97,121,145):
+                from wardrobe_shawl179_collision import body_parity
+                body_errors[str(frame)]=body_parity(exact_body_target,scale)
             if frame>=97:frames.append(coords);matrices.append(np.array(studio.torso_matrix(-1.)))
             if frame%24==0:print('179 native cloth frame',frame,flush=True)
     frames=np.array(frames);matrices=np.array(matrices)
@@ -85,6 +95,8 @@ def simulate(out,rig,mats,groom,points,faces,pins,stitches,wind_off=False):
         'protected_exact':True,'visual_gate':'NOT_RUN','complete_playback':'NOT_RUN','wind_causality':'NOT_RUN',
         'source_sha256':foundation.SOURCE_SHA,'frames':len(frames),'fps':24,'duration_seconds':8.,
         'all_frame_actor_canonical_local_bone_parity':True,'wind_off':wind_off,
+        'integrated_underarm_profile':'repair04' if integrated else None,
+        'metric_actual_pose_corrective_body_max_errors_native':body_errors,
         'wind_gain':0. if wind_off else .04,'solver_mass_per_vertex':s.mass,
         'settings_scope':'Authored native profile, not measured garment mass or wind calibration',
         'head_pin_scope':'Small crown region, opening edges free',

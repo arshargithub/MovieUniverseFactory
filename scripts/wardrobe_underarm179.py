@@ -8,7 +8,7 @@ sys.path.insert(0,str(ROOT/'scripts'))
 import wardrobe_motion178 as foundation
 
 def validate(job):
-    if not isinstance(job,dict) or set(job)!={'operation'} or job['operation'] not in ('inspect01','repair01'):
+    if not isinstance(job,dict) or set(job)!={'operation'} or job['operation'] not in ('inspect01','repair01','repair02','repair03','repair04'):
         raise ValueError('Fixed underarm inspection only')
     if foundation.SOURCE.is_symlink() or foundation.digest(foundation.SOURCE)!=foundation.SOURCE_SHA:
         raise ValueError('Protected foundation mismatch')
@@ -30,9 +30,9 @@ def main():
     foundation.check_protected()
     rig,_,_=foundation.clean_foundation();dress_actor(rig)
     correction=None
-    if job['operation']=='repair01':
+    if job['operation'].startswith('repair'):
         from wardrobe_underarm179_repair import repair
-        correction=repair(rig)
+        correction=repair(rig,job['operation'])
         (out/'wardrobe_underarm179_repair.py').write_bytes((ROOT/'scripts/wardrobe_underarm179_repair.py').read_bytes())
     controls.animate(rig,neutral_entry=True)
     # Record the actual protected-hair exclusion contour alongside the views;
