@@ -2,6 +2,10 @@
 
 ## Current acceptance — exchange152
 
+### Exchange183 — applying the lessons to the selected double-wrap target
+
+Director retains at least two visible wraparounds and requests an explicit process that applies182's lessons. The authoritative [construction and review contract](../planning/SERIES_01_WARDROBE_TACK_FIT.md#exchange183--double-wrap-construction-and-review-contract) now maps failures to actions and evidence: route/support design, representative contact capability, whole-garment coarse motion, then finish and integrated exit. It supersedes the pending creative-choice language in historical181/182, not their FAIL/NOT_RUN evidence. No renewed native result is claimed. AGENTS and the Efficient Quality workflow point to the same contract to prevent a future continuation from silently reverting to single-wrap or static-first work.
+
 ### Exchange182 — explaining the boundary, not authorizing another rebuild
 
 Director requests an accessible technical explanation, expert-versus-agent comparison, implications for studio-quality production and carry-forward learning before selecting another direction. No new garment construction, simulation, tool installation, spending or costume simplification is authorized by this explanation. Existing acceptance and failed evidence remain unchanged.

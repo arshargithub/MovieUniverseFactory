@@ -48,6 +48,12 @@ A generated turnaround is useful exploration, not a calibrated measurement of a 
 
 ## A concrete stopping and change policy
 
+### Learning must change the next action — exchange183
+
+For a failed asset route, turn each material lesson into a named prerequisite or falsifiable check in the active asset brief: failure → changed method → evidence → consequence of failure. Do not substitute a longer retrospective or more test counts for this link. Consult the current contract at session start, record the hypothesis before costly work, and keep cheap construction/contact/temporal proof ahead of finish. Repeated failures trigger representation reassessment, not renamed allowances. Evidence-backed manual visual review and automated technical checks remain separate; neither record-keeping nor model escalation guarantees judgment or feasibility.
+
+The [current double-wrap contract](../planning/SERIES_01_WARDROBE_TACK_FIT.md#exchange183--double-wrap-construction-and-review-contract) applies this rule: Director183 chooses at least two wraparounds, superseding the179 single-wrap target and subsequent pending-choice language. The agent owns reversible construction/control choices; a cheaper single-wrap screen result cannot be silently substituted. Protect accepted assets, test the required motion envelope early, and move a qualified garment into footage rather than pursue universal cloth behavior. No new spend, specialist or tool-installation authority follows from this process correction.
+
 ### Feedback triage adopted at exchange156
 
 **Exchange175 garment exit correction:**174's connected mesh/replay did not establish a credible shawl route. The Director identifies vanished shoulder transitions, rear wraps stuffed inside the headfall and the wrong harness layer order. Withdraw affected appearance passes without deleting technical evidence. Compare approved front/portrait: shawl is above chest harness. Trace both cloth edges at both shoulders and the exterior rear courses; explain legitimate occlusion by the intended layer, not by numerical connectivity. A crowded return cannot be passed as an optional creative-volume choice. Inspect mounted upper arms against an unclothed control before attributing a distortion to pose or anatomy. Keep ambiguous blockers internal. Cheap revealing views precede full selected packaging; do not substitute more process records for a corrected screen result.
