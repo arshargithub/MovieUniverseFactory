@@ -37,7 +37,7 @@ def weld(record):
     return p[keep],faces,pins
 
 def validate(job):
-    if not isinstance(job,dict) or set(job)!={'operation'} or job['operation'] not in ('initial01','initial02','initial03','solve01','windoff01'):
+    if not isinstance(job,dict) or set(job)!={'operation'} or job['operation'] not in ('initial01','initial02','initial03','solve01','windoff01','solve02','windoff02'):
         raise ValueError('Fixed welded construction operation only')
     if foundation.SOURCE.is_symlink() or foundation.digest(foundation.SOURCE)!=foundation.SOURCE_SHA:
         raise ValueError('Protected foundation mismatch')
