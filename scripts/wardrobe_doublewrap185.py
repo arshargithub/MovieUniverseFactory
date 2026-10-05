@@ -26,6 +26,24 @@ OPERATIONS += ('isolate03',)
 OPERATIONS += ('proxy01',)
 OPERATIONS += ('proxy02',)
 OPERATIONS += ('isolate04',)
+OPERATIONS += ('screen04',)
+OPERATIONS += ('cut01',)
+OPERATIONS += ('cut02',)
+OPERATIONS += ('cut03',)
+OPERATIONS += ('restunit01','screen05')
+OPERATIONS += ('restunit02',)
+OPERATIONS += ('restunit03',)
+OPERATIONS += ('cut04',)
+OPERATIONS += ('cut05',)
+OPERATIONS += ('screen06',)
+OPERATIONS += ('intersections01',)
+OPERATIONS += ('cut06',)
+OPERATIONS += ('cut07',)
+OPERATIONS += ('cut08',)
+OPERATIONS += ('cut09',)
+OPERATIONS += ('screen07',)
+OPERATIONS += ('cut10',)
+OPERATIONS += ('screen08',)
 HEAD = base.BASE / 'wardrobe180-xpbdhead08/trajectory.npz'
 HEAD_SHA = '55ce2f99edfbb45a7cf8a5898be31caa1f20bd7da3bb2ae2be9c43e49d7095e8'
 
@@ -138,6 +156,40 @@ def route(out):
         'source_sha256':base.SOURCE_SHA,'head_input_sha256':HEAD_SHA},indent=2)+'\n')
 
 
+def screen(out):
+    import bpy
+    import wardrobe_studio as studio
+    from wardrobe_motion178_proof import dress_actor
+    from wardrobe_underarm179_repair import repair
+    from wardrobe_shawl179 import screens
+    source=base.BASE/('wardrobe185-cut03/trajectory.npz' if out.name.endswith('screen05') else 'wardrobe185-isolate04/envelope_clear.npz')
+    sha='a5eb72e643d31e76197cb6bf92387e3bb0aa3cba3dd112ab74f4169985d27ac6' if out.name.endswith('screen05') else '08d85408c30497043c9d05ab2d8782579219d6317f36b272f0f397dbf113a2c1'
+    if out.name.endswith('screen06'):
+        source=base.BASE/'wardrobe185-cut05/trajectory.npz';sha='b58d4b35d26c686014565630ed7debdd18a5ed77fb095e6436901cadc405ba3a'
+    if out.name.endswith('screen07'):
+        source=base.BASE/'wardrobe185-cut09/trajectory.npz';sha='8c49f81757a678d4f0db3dd24ff8c7f1d5268f2c9fc8e88c27f5b0e24b6f7762'
+    if out.name.endswith('screen08'):
+        source=base.BASE/'wardrobe185-cut10/trajectory.npz';sha='50d88a05d9652c7e368c738406553d89d9bafea7d1c9cf22b04f89b7eff95aaf'
+    if base.digest(source)!=sha:raise ValueError('Screen input changed')
+    with np.load(source,allow_pickle=False) as d:points=d['frames'][-1];faces=d['faces'];counts=d['counts'];source_frame=len(d['frames'])
+    from mathutils.bvhtree import BVHTree
+    trees=[];offset=0
+    for count in counts:
+        f=faces[(faces[:,0]>=offset)&(faces[:,0]<offset+count)]
+        trees.append(BVHTree.FromPolygons(points.tolist(),f.tolist()));offset+=count
+    overlaps={str((i,j)):len(trees[i].overlap(trees[j])) for i,j in ((0,1),(0,2),(1,2))}
+    (out/'layer-intersections.json').write_text(json.dumps(overlaps,indent=2)+'\n')
+    bpy.ops.wm.open_mainfile(filepath=str(base.SOURCE),load_ui=False,use_scripts=False)
+    base.check_protected();rig,mats,_=base.clean_foundation();dress_actor(rig);repair(rig,'repair04')
+    offset=0
+    for k,(count,rgb) in enumerate(zip(counts,((.06,.10,.18),(.16,.30,.27),(.27,.17,.08)))):
+        f=faces[(faces[:,0]>=offset)&(faces[:,0]<offset+count)]-offset
+        studio.panel('MF185_screen_'+str(k),points[offset:offset+count].tolist(),f.tolist(),color('screen'+str(k),rgb),.012,1)
+        offset+=count
+    screens(out,(1,));base.check_protected()
+    (out/'result.json').write_text(json.dumps({'source':str(source),'source_frame':source_frame,'protected_exact':True,'visual_gate':'NOT_RUN'},indent=2)+'\n')
+
+
 def cloth_settings(ob, area, collection=None):
     mod=ob.modifiers.new('Legacy cloth with self contact','CLOTH')
     s=mod.settings;s.quality=12;s.mass=.24*area/len(ob.data.vertices)
@@ -237,6 +289,17 @@ def main():
     elif job['operation'] in ('proxy01','proxy02'):
         from wardrobe185_proxy import run
         run(out)
+    elif job['operation'].startswith('screen'):screen(out)
+    elif job['operation'].startswith('cut'):
+        from wardrobe185_cut_solve import run
+        run(out)
+    elif job['operation'] in ('restunit01','restunit02','restunit03'):
+        from wardrobe185_rest_unit import run
+        run(out)
+    elif job['operation']=='intersections01':
+        from wardrobe185_intersections import run
+        run(out)
+    else:raise ValueError('Validated operation has no implementation')
 
 
 if __name__=='__main__':main()

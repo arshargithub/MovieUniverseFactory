@@ -55,3 +55,53 @@ def test_contact_envelope_closing_preserves_solid_cube():
     cells=np.zeros((9,9,9),dtype=bool);cells[3:6,3:6,3:6]=True
     result=proxy.neighborhood(proxy.neighborhood(cells,True),False)
     np.testing.assert_array_equal(result,cells)
+
+def test_open_wrap_strips_have_rectangular_rest_and_open_ends():
+    import wardrobe185_cut as cut
+    for layer in (0,1):
+        p,f,r,pins=cut.strips(layer)
+        assert p.shape==r.shape==(113*21,3)
+        assert f.shape==(112*20,4)
+        assert np.isfinite(p).all() and np.isfinite(r).all()
+        assert np.all(r[:,2]==0)
+        edges=np.concatenate([r[f[:,i]]-r[f[:,(i+1)%4]] for i in range(4)])
+        assert np.linalg.norm(edges,axis=1).min()>.02
+        assert max(pins)<len(p) and all(0<w<=1 for w in pins.values())
+        assert not any(min(face)<21 and max(face)>=112*21 for face in f)
+
+def test_solid_angle_interior_on_closed_tetrahedron():
+    import wardrobe185_cut as cut
+    p=np.array([[0,0,0],[1,0,0],[0,1,0],[0,0,1]])
+    f=np.array([[0,2,1],[0,1,3],[0,3,2],[1,2,3]])
+    assert cut.winding_inside([.1,.1,.1],p[f])
+    assert not cut.winding_inside([2,2,2],p[f])
+
+
+def test_rectangular_metric_preserves_flat_sheet_dimensions():
+    import wardrobe185_cut as cut
+    p=np.array([(i*.2,j*.3,4.) for i in range(5) for j in range(7)])
+    rest=cut.rectangular_metric(p,5,7)
+    np.testing.assert_allclose(np.ptp(rest,axis=0),[.8,1.8,0.])
+    assert np.isfinite(rest).all()
+
+
+@pytest.mark.parametrize('operation',module.OPERATIONS)
+def test_dispatch_has_an_explicit_handler_for_every_admitted_operation(operation,monkeypatch,tmp_path):
+    import sys,types
+    target=tmp_path/'out';job=tmp_path/'job.json';job.write_text('{"operation":"'+operation+'"}')
+    monkeypatch.setattr(module,'validate',lambda _:target)
+    calls=[]
+    def record(*_):calls.append(operation)
+    for name in ('route','contact','screen'):monkeypatch.setattr(module,name,record)
+    for name,methods in {
+        'wardrobe_doublewrap185_solve':('settle','volumecheck'),
+        'wardrobe185_isolate':('run',),'wardrobe185_proxy':('run',),
+        'wardrobe185_cut_solve':('run',),'wardrobe185_rest_unit':('run',),
+        'wardrobe185_intersections':('run',),
+    }.items():
+        fake=types.ModuleType(name)
+        for method in methods:setattr(fake,method,record)
+        monkeypatch.setitem(sys.modules,name,fake)
+    monkeypatch.setattr(sys,'argv',['test','--',str(job)])
+    module.main()
+    assert calls==[operation]
