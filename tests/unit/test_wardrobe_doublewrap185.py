@@ -124,6 +124,21 @@ def test_fabric_coordinates_have_two_directions_and_only_edge_wear():
     with pytest.raises(ValueError):fabric_coordinates(np.zeros((5,3)))
 
 
+def test_vertical_shot_path_has_bounded_continuous_travel():
+    from wardrobe185_shot import camera_path
+    np.testing.assert_allclose(camera_path(0),[0,42,42])
+    np.testing.assert_allclose(camera_path(1),[-7,-17,2.6])
+    p=np.array([camera_path(t) for t in np.linspace(0,1,144)])
+    assert np.isfinite(p).all() and np.linalg.norm(p,axis=1).min()>15
+    assert np.max(np.linalg.norm(np.diff(p,axis=0),axis=1))<1.5
+    for t in (.55,.72):
+        h=1e-6
+        np.testing.assert_allclose((camera_path(t)-camera_path(t-h))/h,
+            (camera_path(t+h)-camera_path(t))/h,atol=.003)
+    with pytest.raises(ValueError):camera_path(-.1)
+    with pytest.raises(ValueError):camera_path(1.1)
+
+
 def test_double_precision_contact_hull_contains_original_and_near_coplanar_samples():
     from wardrobe185_convex import robust_hull,convex_outside
     rng=np.random.default_rng(185)
@@ -234,6 +249,7 @@ def test_dispatch_has_an_explicit_handler_for_every_admitted_operation(operation
         'wardrobe185_intersections':('run',),
         'wardrobe185_head_dress':('run','screen'),
         'wardrobe185_belt':('screen','inspect'),
+        'wardrobe185_shot':('layout','motion'),
         'wardrobe185_harness_contact':('run',),
         'wardrobe185_motion':('prep','simulate','screen'),
         'wardrobe185_integration':('audit','gaze_screen','garment_screen'),
