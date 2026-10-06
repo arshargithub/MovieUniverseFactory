@@ -300,6 +300,7 @@ def test_dispatch_has_an_explicit_handler_for_every_admitted_operation(operation
         'wardrobe185_belt':('screen','inspect'),
         'wardrobe185_shot':('layout','motion'),
         'wardrobe185_exit_audit':('run',),
+        'wardrobe185_interface_audit':('run',),
         'wardrobe185_lower':('inspect','capture'),
             'wardrobe185_lower_drape':('dress',),
             'wardrobe185_lower_surface':('capture',),

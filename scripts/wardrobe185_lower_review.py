@@ -27,7 +27,8 @@ def run(out):
     from mathutils.bvhtree import BVHTree
     source=BASE/'wardrobe185-finishreview01/integration-working.blend';working_sha=WORKING_SHA
     mounted=BASE/'wardrobe185-lowercloth01/mounted.npz';standing=mounted.parent/'standing.npz'
-    outer_only=out.name.endswith('lowerreview06')
+    repaired=out.name.endswith('lowerreview07')
+    outer_only=repaired or out.name.endswith('lowerreview06')
     complete=outer_only or out.name.endswith('lowerreview05')
     refined=complete or out.name.endswith('lowerreview04')
     belt=refined or out.name.endswith('lowerreview03')
@@ -48,6 +49,11 @@ def run(out):
         mounted_sha=COMPLETE_MOUNTED_SHA;standing_sha=COMPLETE_STANDING_SHA
     if outer_only:
         mounted=BASE/'wardrobe185-lowerouter08/mounted.npz';mounted_sha=OUTER_MOUNTED_SHA
+    if repaired:
+        source=BASE/'wardrobe185-trouserseat03/integration-working.blend'
+        working_sha='3dc4f8f14c88ff8fd4fb0c98ecb58a9348326ca2e1b4e24537d6c31783547626'
+        mounted=BASE/'wardrobe185-lowercloth11/mounted.npz'
+        mounted_sha='a9f5dbd8c92fe6b24e0d0fcf8eec31d0e9565663a2e2456db494f4b812a937f8'
     for p,h in ((source,working_sha),(mounted,mounted_sha),(standing,standing_sha)):
         if h is None or digest(p)!=h:raise ValueError('Unbound lower review input')
     (out/Path(__file__).name).write_bytes(Path(__file__).read_bytes())
@@ -98,7 +104,7 @@ def run(out):
         self_pairs=[(a,b) for a,b in tree.overlap(tree) if a<b and not set(f[a])&set(f[b])]
         record['nonadjacent_self_pairs']=len(self_pairs);contact_report[frame]=record
         sub.show_viewport=True;solid.show_viewport=True
-        if frame in ((169,217,peak_frame) if complete and not outer_only else (169,193,217,360,peak_frame)):
+        if repaired or frame in ((169,217,peak_frame) if complete and not outer_only else (169,193,217,360,peak_frame)):
             for angle,view in ((90,'left'),(180,'rear'),(270,'right')):
                 fit_render(out,'lower-'+view+'-'+str(frame),angle,(0,-.2,-6.5),7.,(640,640))
     if cache_error>2e-5:raise ValueError('Lower cache does not reproduce simulated samples')

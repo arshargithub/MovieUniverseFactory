@@ -28,7 +28,7 @@ def samples():
     import bpy
     from wardrobe_riding_fit import evaluated_surfaces
     names=['MF_studio_adult_body','MF185_moving_shawl','MF185_fitted_upper_tunic',
-        'MF_fit_tunic_173_visible','MF_fit_trousers_173_visible','MF_173_waist_belt',
+        'MF185_free_lower_tunic','MF_fit_trousers_173_visible','MF_173_waist_belt',
         'MF185_gait_horse','MF185_gait_saddle.stirrup']
     names.extend(ob.name for ob in bpy.context.scene.objects if 'buckle' in ob.name and ob.type=='MESH' and not ob.hide_render)
     output={}
@@ -47,16 +47,16 @@ def seal(out):
     import shutil
     import bpy
     from wardrobe_motion178 import BASE,ROOT,digest,check_protected
-    from wardrobe185_shot import WORKING_SHA,setup_camera,setup_lighting
+    from wardrobe185_shot import REPAIRED_SHA,setup_camera,setup_lighting
     from wardrobe_riding_fit import fit_render
     import subprocess
-    source=BASE/'wardrobe185-finishreview01/integration-working.blend'
+    source=BASE/'wardrobe185-lowerreview07/integration-working.blend'
     review_path=BASE/'wardrobe185-operating/visual-review.json'
     review_gate(json.loads(review_path.read_text()),BASE)
-    if digest(source)!=WORKING_SHA:raise ValueError('Selected working source changed')
-    camera_proof=BASE/'wardrobe185-shotmotion01/motion-render.json'
+    if digest(source)!=REPAIRED_SHA:raise ValueError('Selected working source changed')
+    camera_proof=BASE/'wardrobe185-shotmotion02/motion-render.json'
     camera_record=json.loads(camera_proof.read_text())
-    if camera_record['source_sha256']!=WORKING_SHA or [p['frame'] for p in camera_record['poses']]!=list(range(217,361)):
+    if camera_record['source_sha256']!=REPAIRED_SHA or [p['frame'] for p in camera_record['poses']]!=list(range(217,361)):
         raise ValueError('Incomplete matching camera proof')
     (out/'camera-proof.json').write_bytes(camera_proof.read_bytes())
     # This certifies the selection/packaging source, not retrospectively every
@@ -65,13 +65,13 @@ def seal(out):
     import hashlib
     rows=[]
     paths=[Path(__file__),ROOT/'scripts/wardrobe185_shot.py',ROOT/'scripts/wardrobe_doublewrap185.py',
-        ROOT/'scripts/wardrobe_motion178.py',ROOT/'scripts/wardrobe185_gallop.py',
+        ROOT/'scripts/wardrobe_motion178.py',ROOT/'scripts/wardrobe185_gallop.py',ROOT/'scripts/wardrobe185_interface_audit.py',
         ROOT/'src/movie_factory/adapters/blender/wardrobe_riding_fit.py']
     for path in paths:
         relative=str(path.relative_to(ROOT));blob=subprocess.check_output(['git','show',commit+':'+relative],cwd=ROOT)
         if hashlib.sha256(blob).hexdigest()!=digest(path):raise ValueError('Commit packaging handlers before selection')
         rows.append({'path':relative,'sha256':digest(path)});(out/path.name).write_bytes(blob)
-    binding={'commit':commit,'files':rows,'working_source_sha256':WORKING_SHA,'manual_review_sha256':digest(review_path),
+    binding={'commit':commit,'files':rows,'working_source_sha256':REPAIRED_SHA,'manual_review_sha256':digest(review_path),
         'camera_proof_sha256':digest(camera_proof),
         'scope':'Selection and portable packaging source; upstream discovery inputs retained, not retrospective source certification'}
     (out/'source-binding.json').write_text(json.dumps(binding,indent=2)+'\n')
@@ -108,13 +108,15 @@ def seal(out):
     bpy.ops.wm.save_as_mainfile(filepath=str(out/'riding-entrance.blend'),check_existing=False,compress=True)
     shot_sha=digest(out/'riding-entrance.blend')
     scene.camera.animation_data_clear();scene.camera.data.type='ORTHO';neutral=neutral_state()
+    from wardrobe185_interface_audit import neutral_lower
+    neutral_lower()
     for ob in list(scene.objects):
         if ob.name.startswith(('MF185_gait_','MF185_rein_','MF185_stirrup_')):bpy.data.objects.remove(ob,do_unlink=True)
     scene.cycles.device='CPU';scene.cycles.samples=8
     fit_render(out,'neutral-master-front',0,(0,.15,-1.7),8.,(640,640))
     from wardrobe_riding_fit import evaluated_surfaces
     names=['MF_studio_adult_body','MF185_moving_shawl','MF185_fitted_upper_tunic',
-        'MF_fit_tunic_173_visible','MF_fit_trousers_173_visible','MF_173_waist_belt']
+        'MF185_free_lower_tunic','MF_fit_trousers_173_visible','MF_173_waist_belt']
     np.savez_compressed(out/'neutral-surfaces.npz',**evaluated_surfaces(names))
     scene.render.filepath='//renders/neutral-'
     check_protected();bpy.ops.wm.save_as_mainfile(filepath=str(out/'neutral-look-master.blend'),check_existing=False,compress=True)

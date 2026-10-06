@@ -4,6 +4,7 @@ from pathlib import Path
 import numpy as np
 
 WORKING_SHA='91fa8fd8dde5dcccb3831641b1f06df110873d6042ee8ec112cc15dffb3b2efe'
+REPAIRED_SHA='65a36ea7a0f7c73d6ac19101841d28ba06dd896bc213e1c5f475645608196a29'
 
 
 def camera_path(t):
@@ -73,10 +74,14 @@ def motion(out):
     from mathutils import Vector
     from wardrobe_motion178 import BASE,digest,check_protected
     source=BASE/'wardrobe185-finishreview01/integration-working.blend'
-    if digest(source)!=WORKING_SHA:raise ValueError('Unbound integrated motion source')
+    source_sha=WORKING_SHA
+    if out.name.endswith('shotmotion02'):
+        source=BASE/'wardrobe185-lowerreview07/integration-working.blend';source_sha=REPAIRED_SHA
+    if digest(source)!=source_sha:raise ValueError('Unbound integrated motion source')
     (out/Path(__file__).name).write_bytes(Path(__file__).read_bytes())
     bpy.ops.wm.open_mainfile(filepath=str(source),load_ui=False,use_scripts=False)
     scene=bpy.context.scene;rig=bpy.data.objects['MF_body156_fit_rig']
+    scene.camera.animation_data_clear()
     scene.render.resolution_x=432;scene.render.resolution_y=768;scene.render.resolution_percentage=100
     scene.cycles.device='CPU';scene.cycles.samples=4;scene.render.use_persistent_data=True
     setup_lighting(scene)
@@ -94,6 +99,6 @@ def motion(out):
         scene.frame_set(frame);bpy.context.view_layer.update()
         fit_render(out,'side-%03d'%frame,90,(0,-1.8,-8),30.,(640,640))
     check_protected()
-    (out/'motion-render.json').write_text(json.dumps({'source_sha256':WORKING_SHA,'poses':records,
+    (out/'motion-render.json').write_text(json.dumps({'source_sha256':source_sha,'poses':records,
         'frame_range':[217,360],'fps':24,'rendered_frames':len(records),'scope':'Neutral-backdrop character entrance proof, not final trailer footage',
         'visual_gate':'NOT_RUN','temporal_gate':'NOT_RUN'},indent=2)+'\n')

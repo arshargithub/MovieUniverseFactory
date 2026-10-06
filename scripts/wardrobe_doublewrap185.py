@@ -167,6 +167,10 @@ OPERATIONS += ('lowerrecontact01',)
 OPERATIONS += ('lowerrecontact02',)
 OPERATIONS += ('lowerrecontact03',)
 OPERATIONS += ('lowercloth11',)
+OPERATIONS += ('lowerreview07',)
+OPERATIONS += ('lowerwindoff12',)
+OPERATIONS += ('shotmotion02',)
+OPERATIONS += ('interfaceaudit02',)
 HEAD = base.BASE / 'wardrobe180-xpbdhead08/trajectory.npz'
 HEAD_SHA = '55ce2f99edfbb45a7cf8a5898be31caa1f20bd7da3bb2ae2be9c43e49d7095e8'
 
@@ -175,7 +179,13 @@ def validate(job):
     if not isinstance(job, dict) or set(job) != {'operation'} or job['operation'] not in OPERATIONS:
         raise ValueError('Fixed structured operation required')
     inputs=[(base.SOURCE,base.SOURCE_SHA)]
-    if job['operation'] in ('lowergap02','mountfit01','mountfit02','mountfit03','mountclear01','lowercloth10','trouserseat01','trouserseat02','trouserseat03','seatcheck01','seatcheck02','seatcheck03','lowersurface07','lowerhold01','lowerhold02','lowerhold03','lowermaterial01','lowerisolate01','lowerradial01','lowerhold04','lowerradial02','lowerisolate02','lowerrecontact01','lowerrecontact02','lowerrecontact03','lowercloth11'):
+    if job['operation']=='interfaceaudit02':
+        out=base.BASE/('wardrobe185-'+job['operation'])
+        for path,sha in inputs:
+            if path.is_symlink() or base.digest(path)!=sha:raise ValueError('Protected input changed')
+        if out.exists() or out.is_symlink():raise ValueError('Preserve previous evidence')
+        return out
+    if job['operation'] in ('shotmotion02','lowergap02','mountfit01','mountfit02','mountfit03','mountclear01','lowercloth10','trouserseat01','trouserseat02','trouserseat03','seatcheck01','seatcheck02','seatcheck03','lowersurface07','lowerhold01','lowerhold02','lowerhold03','lowermaterial01','lowerisolate01','lowerradial01','lowerhold04','lowerradial02','lowerisolate02','lowerrecontact01','lowerrecontact02','lowerrecontact03','lowercloth11','lowerreview07','lowerwindoff12'):
         out=base.BASE/('wardrobe185-'+job['operation'])
         for path,sha in inputs:
             if path.is_symlink() or base.digest(path)!=sha:raise ValueError('Protected input changed')
@@ -539,12 +549,15 @@ def main():
     elif job['operation']=='shotlayout01':
         from wardrobe185_shot import layout as shot_layout
         shot_layout(out)
-    elif job['operation']=='shotmotion01':
+    elif job['operation'] in ('shotmotion01','shotmotion02'):
         from wardrobe185_shot import motion as shot_motion
         shot_motion(out)
     elif job['operation']=='exitaudit01':
         from wardrobe185_exit_audit import run as exit_audit
         exit_audit(out)
+    elif job['operation']=='interfaceaudit02':
+        from wardrobe185_interface_audit import run as interface_audit
+        interface_audit(out)
     elif job['operation']=='lowerinspect01':
         from wardrobe185_lower import inspect as lower_inspect
         lower_inspect(out)
@@ -593,10 +606,10 @@ def main():
     elif job['operation'] in ('lowerpants01','lowerpants02'):
         from wardrobe185_lower_pants import run as trouser_rise
         trouser_rise(out)
-    elif job['operation'] in ('lowerreview01','lowerreview02','lowerreview03','lowerreview04','lowerreview05','lowerreview06'):
+    elif job['operation'] in ('lowerreview01','lowerreview02','lowerreview03','lowerreview04','lowerreview05','lowerreview06','lowerreview07'):
         from wardrobe185_lower_review import run as lower_review
         lower_review(out)
-    elif job['operation'] in ('lowercloth01','lowercloth02','lowercloth03','lowercloth04','lowercloth05','lowerwindoff06','lowerwindoff07','lowerouter08','lowerwindoff09','lowercloth10','lowercloth11'):
+    elif job['operation'] in ('lowercloth01','lowercloth02','lowercloth03','lowercloth04','lowercloth05','lowerwindoff06','lowerwindoff07','lowerouter08','lowerwindoff09','lowercloth10','lowercloth11','lowerwindoff12'):
         from wardrobe185_lower_cloth import solve as lower_cloth
         lower_cloth(out)
     elif job['operation'] in ('lowersurface01','lowersurface02','lowersurface03','lowersurface04','lowersurface05','lowersurface06','lowersurface07'):

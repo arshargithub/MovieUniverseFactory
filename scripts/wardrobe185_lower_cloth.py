@@ -70,9 +70,10 @@ def solve(out):
     layout=BASE/'wardrobe185-lowerdress07/initial-layout.npz'
     contacts=BASE/'wardrobe185-lowersurface02/surfaces.npz'
     source=BASE/'wardrobe185-lowercapture02/moving-source.npz'
-    remeshed=out.name.endswith('lowercloth11')
+    remeshed_control=out.name.endswith('lowerwindoff12')
+    remeshed=remeshed_control or out.name.endswith('lowercloth11')
     mount_fixed=out.name.endswith('lowercloth10')
-    outer_control=out.name.endswith('lowerwindoff09')
+    outer_control=remeshed_control or out.name.endswith('lowerwindoff09')
     outer_only=remeshed or mount_fixed or outer_control or out.name.endswith('lowerouter08')
     matched_control=outer_control or out.name.endswith('lowerwindoff07')
     windoff=matched_control or out.name.endswith('lowerwindoff06')
@@ -181,6 +182,9 @@ def solve(out):
             if matched_control and frame==120:
                 reference=BASE/('wardrobe185-lowerouter08/mounted.npz' if outer_control else 'wardrobe185-lowercloth05/mounted.npz')
                 expected='cdf0becef0b57694bba353e48e0fe71e5f7625e756a4f19386ce30b74823fc17' if outer_control else '751e1421a6f9905a3c1f9bc9daf774e80b1e0f9e5f95701e6eda764060872c0b'
+                if remeshed_control:
+                    reference=BASE/'wardrobe185-lowercloth11/mounted.npz'
+                    expected='a9f5dbd8c92fe6b24e0d0fcf8eec31d0e9565663a2e2456db494f4b812a937f8'
                 if digest(reference)!=expected:raise ValueError('Control reference changed')
                 with np.load(reference,allow_pickle=False) as previous:
                     error=float(np.max(abs(np.array(trajectory)-previous['frames'][:120])))
