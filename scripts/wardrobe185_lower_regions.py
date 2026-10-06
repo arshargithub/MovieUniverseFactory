@@ -31,13 +31,22 @@ def masks(rest):
         'thighR':(x<0)&(z<-6.15)&(z>-9.25)}
 
 
-def main():
+def semantic_sources(data):
+    """Never fit thigh envelopes to arms selected by a shared height mask."""
+    pants=data['pants_frames'];upper=data['upper_frames']
+    p=masks(pants[0]);u=masks(upper[0])
+    return {'thighL':pants[:,p['thighL']], 'thighR':pants[:,p['thighR']],
+        'pelvis':pants[:,p['pelvis']], 'abdomen':upper[:,u['abdomen']]}
+
+
+def main(current=False):
     digest=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
-    contact=BASE/'wardrobe185-lowersurface06/surfaces.npz'
+    contact=BASE/('wardrobe185-lowersurface07/surfaces.npz' if current else 'wardrobe185-lowersurface06/surfaces.npz')
     motion=BASE/'wardrobe185-lowercapture02/moving-source.npz'
-    if digest(contact)!='3bf762fe9244188ef563a8ce1f235fb83c07614e7f538c8bc6209ff076e0499e':raise ValueError('Contact source changed')
+    expected='6bf419b205c5bc909a325fde898575a443136aae0ae07dd708a9104ef76f4e57' if current else '3bf762fe9244188ef563a8ce1f235fb83c07614e7f538c8bc6209ff076e0499e'
+    if digest(contact)!=expected:raise ValueError('Contact source changed')
     if digest(motion)!='20b06605833f46561db93ba3c25ef27e934b96abe39854958e8f1b101a284d0e':raise ValueError('Rig source changed')
-    out=BASE/'wardrobe185-lowerregions01'
+    out=BASE/('wardrobe185-lowerregions02' if current else 'wardrobe185-lowerregions01')
     if out.exists():raise ValueError('Preserve previous contact evidence')
     out.mkdir();(out/Path(__file__).name).write_bytes(Path(__file__).read_bytes())
     with np.load(contact,allow_pickle=False) as d:data={k:d[k] for k in d.files}
@@ -47,21 +56,26 @@ def main():
     abdomen=np.array([rigid_fit(body[0,selection],q[selection]) for q in body])
     transforms={k:rig[k+'_matrices'][ids-1] for k in ('pelvis','thighL','thighR')};transforms['abdomen']=abdomen
     payload={k:v for k,v in data.items() if k.split('_')[0] not in ('body','upper','pants')};report={}
-    for name,selected in masks(points[0]).items():
-        mats=transforms[name];inv=np.linalg.inv(mats);source=points[:,selected]
+    sources=semantic_sources(data) if current else {name:points[:,selected] for name,selected in masks(points[0]).items()}
+    for name,source in sources.items():
+        mats=transforms[name];inv=np.linalg.inv(mats)
         local=np.einsum('fij,fnj->fni',inv[:,:3,:3],source)+inv[:,None,:3,3]
         # Mounted-only envelope. Standing uses its already admitted separate
         # solve, so do not inflate the riding proxy to an unrelated leg pose.
         q,f=build_hull(local[1:].reshape(-1,3))
         frames=np.einsum('fij,nj->fni',mats[:,:3,:3],q)+mats[:,None,:3,3]
         payload[name+'_frames']=frames.astype(np.float32);payload[name+'_faces']=f
-        report[name]={'vertices':len(q),'triangles':len(f),'selected_source_points_per_pose':int(selected.sum()),
+        report[name]={'vertices':len(q),'triangles':len(f),'selected_source_points_per_pose':int(source.shape[1]),
             'fit_source_frames':len(ids)-1,'source_containment':'PASS by convex half spaces',
             'local_bounds': [q.min(0).tolist(),q.max(0).tolist()]}
     np.savez_compressed(out/'surfaces.npz',**payload)
     (out/'result.json').write_text(json.dumps({'source_sha256':digest(contact),'rig_sha256':digest(motion),
         'surfaces_sha256':digest(out/'surfaces.npz'),'regions':report,'rendered_actor_unchanged':True,
+        'semantic_source_selection':current,
         'admission':'NOT_RUN','visual_gate':'NOT_RUN','scope':'Mounted regional proxy candidate; actual horse/tack retained; independent standing solve'},indent=2)+'\n')
 
 
-if __name__=='__main__':main()
+if __name__=='__main__':
+    import sys
+    if sys.argv[1:] not in ([],['--current']):raise ValueError('Only fixed current contact control is accepted')
+    main(current=sys.argv[1:]==['--current'])

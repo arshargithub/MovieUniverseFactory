@@ -289,6 +289,9 @@ def test_dispatch_has_an_explicit_handler_for_every_admitted_operation(operation
         'wardrobe185_lower_gap':('run',),
         'wardrobe185_mount_fit':('run',),
         'wardrobe185_trouser_seat':('run',),
+        'wardrobe185_lower_hold':('run',),
+        'wardrobe185_lower_material':('run',),
+        'wardrobe185_lower_isolate':('run',),
         'wardrobe185_cut_solve':('run',),'wardrobe185_rest_unit':('run',),
         'wardrobe185_intersections':('run',),
         'wardrobe185_head_dress':('run','screen'),
@@ -543,3 +546,30 @@ def test_fitted_seat_preserves_waist_and_lower_legs_and_is_rigid_covariant():
     p=fixed_surface(t,w,.012);r=np.array([[0.,0,1],[1.,0,0],[0,1.,0]])
     np.testing.assert_allclose(fixed_surface(t@r.T+2,w,.012),p@r.T+2)
     np.testing.assert_allclose(fixed_surface(t,w,np.array([.012])),p)
+
+
+def test_held_layout_moves_once_in_pelvis_frame_without_stretch():
+    from wardrobe185_lower_hold import rigid_layout
+    p=np.array([[1.,0,0],[2,0,0],[1,2,0]])
+    a=np.eye(4);a[:3,3]=[1,0,0]
+    b=np.eye(4);b[:3,:3]=[[0,-1,0],[1,0,0],[0,0,1]];b[:3,3]=[3,2,1]
+    q=rigid_layout(p,a,b)
+    np.testing.assert_allclose(q,[[3,2,1],[3,3,1],[1,2,1]])
+    np.testing.assert_allclose(rigid_layout(q,b,a),p)
+
+
+def test_material_area_scales_with_square_of_scene_scale():
+    from wardrobe185_lower_material import area
+    p=np.array([[0.,0,0],[2,0,0],[2,3,0],[0,3,0]]);f=np.array([[0,1,2,3]])
+    assert area(p,f)==6
+    assert area(p*.1,f)==pytest.approx(.06)
+
+
+def test_lower_regions_cannot_collect_arms_into_thigh_envelopes():
+    from wardrobe185_lower_regions import semantic_sources
+    pants=np.array([[[1.,0,-7],[-1,0,-7],[0,0,-5.5]]])
+    upper=np.array([[[1.,-4,-7],[-1,-4,-7],[0,0,-4.5]]])
+    selected=semantic_sources({'pants_frames':pants,'upper_frames':upper})
+    np.testing.assert_array_equal(selected['thighL'],pants[:,:1])
+    np.testing.assert_array_equal(selected['thighR'],pants[:,1:2])
+    np.testing.assert_array_equal(selected['abdomen'],upper[:,2:3])

@@ -26,7 +26,7 @@ def fixed_surface(triangles,weights,clearance):
 
 
 def run(out):
-    if out.name.endswith('seatcheck01'):return audit(out)
+    if out.name.endswith(('seatcheck01','seatcheck02','seatcheck03')):return audit(out)
     import bpy
     from mathutils import Vector
     from mathutils.bvhtree import BVHTree
@@ -140,6 +140,9 @@ def audit(out):
     from wardrobe185_lower import fast_geometry
     source=BASE/'wardrobe185-trouserseat01/integration-working.blend'
     expected='b3a4e413c9d43e001b4b627769fac07c029643b1bfd9e053352c0f3d5d94be65'
+    if out.name.endswith(('seatcheck02','seatcheck03')):
+        source=BASE/'wardrobe185-trouserseat03/integration-working.blend'
+        expected='3dc4f8f14c88ff8fd4fb0c98ecb58a9348326ca2e1b4e24537d6c31783547626'
     if digest(source)!=expected:raise ValueError('Unbound seat audit source')
     bpy.ops.wm.open_mainfile(filepath=str(source),load_ui=False,use_scripts=False)
     (out/Path(__file__).name).write_bytes(Path(__file__).read_bytes())
@@ -151,7 +154,8 @@ def audit(out):
     with path.open('rb') as stream:nframes,npoints=struct.unpack('>2i',stream.read(8))
     data=np.memmap(path,dtype='>f4',mode='r',offset=8+4*nframes,shape=(nframes,npoints,3))
     fit=np.zeros(npoints)
-    with np.load(source.parent/'binding.npz',allow_pickle=False) as d:fit[d['vertex_indices']]=d['fit_weights']
+    with np.load(source.parent/'binding.npz',allow_pickle=False) as d:
+        binding={k:d[k] for k in d.files};fit[d['vertex_indices']]=d['fit_weights']
     rows={};error=0.
     for frame in (1,169,193,217,223,226,326,360,217):
         scene.frame_set(frame);bpy.context.view_layer.update();p,f=fast_geometry(ob)
@@ -161,6 +165,11 @@ def audit(out):
         for name in ('MF_studio_adult_body','MF185_gait_saddle','MF185_gait_horse'):
             if frame==1 and name!='MF_studio_adult_body':continue
             q,g=fast_geometry(bpy.data.objects[name]);tri=q[g]
+            if name=='MF_studio_adult_body' and out.name.endswith('seatcheck03'):
+                intended=fixed_surface(q[binding['body_triangle_indices']],binding['barycentric_weights'],binding['clearance'])
+                delta=np.linalg.norm(p[binding['vertex_indices']]-intended,axis=1)
+                row['actual_body_correspondence_error_native']={'quantiles':np.quantile(delta,[0,.5,.99,1]).tolist(),
+                    'above_2e5_tolerance':int(np.count_nonzero(delta>2e-5))}
             g=g[np.all(tri.max(1)>p[np.unique(claimed)].min(0)-.05,axis=1)&np.all(tri.min(1)<p[np.unique(claimed)].max(0)+.05,axis=1)]
             ct=BVHTree.FromPolygons(q.tolist(),g.tolist(),all_triangles=True);pairs=tree.overlap(ct)
             record={'midsurface_claimed_region_pairs':len(pairs)}

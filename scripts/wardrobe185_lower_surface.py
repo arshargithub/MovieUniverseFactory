@@ -34,13 +34,17 @@ def capture(out):
     source=BASE/'wardrobe185-finishreview01/integration-working.blend';source_sha=WORKING_SHA
     pants_only=out.name.endswith('lowersurface04')
     body_only=out.name.endswith('lowersurface05')
-    revised_pants=out.name.endswith('lowersurface06')
+    fitted_seat=out.name.endswith('lowersurface07')
+    revised_pants=fitted_seat or out.name.endswith('lowersurface06')
     if pants_only or body_only:
         source=BASE/'wardrobe185-lowerpants01/integration-working.blend'
         source_sha='0375835df0b9543d13368d7d9ba294aec836182d7617b1b78cbf57afa8930f22'
     if revised_pants:
         source=BASE/'wardrobe185-lowerpants02/integration-working.blend'
         source_sha='b9cf3b8c3f07d9ad650279903c5f81d54e85c6d553f801c0fb353cb2bf298f0b'
+    if fitted_seat:
+        source=BASE/'wardrobe185-trouserseat03/integration-working.blend'
+        source_sha='3dc4f8f14c88ff8fd4fb0c98ecb58a9348326ca2e1b4e24537d6c31783547626'
     if digest(source)!=source_sha:raise ValueError('Unbound actual-surface input')
     (out/Path(__file__).name).write_bytes(Path(__file__).read_bytes())
     bpy.ops.wm.open_mainfile(filepath=str(source),load_ui=False,use_scripts=False)
@@ -58,10 +62,14 @@ def capture(out):
     for m,_ in flags:m.show_viewport=False
     mapping={};records={};payload={}
     if revised_pants:
-        prior=BASE/'wardrobe185-lowersurface05/surfaces.npz'
-        if digest(prior)!='4d13cc5e504700836d04770864ec8a5f7bfbbee00346a5eb18c3c053945cd40f':raise ValueError('Complete contact source changed')
+        prior=BASE/('wardrobe185-lowersurface06/surfaces.npz' if fitted_seat else 'wardrobe185-lowersurface05/surfaces.npz')
+        prior_sha='3bf762fe9244188ef563a8ce1f235fb83c07614e7f538c8bc6209ff076e0499e' if fitted_seat else '4d13cc5e504700836d04770864ec8a5f7bfbbee00346a5eb18c3c053945cd40f'
+        if digest(prior)!=prior_sha:raise ValueError('Complete contact source changed')
         with np.load(prior,allow_pickle=False) as data:
             payload={k:data[k] for k in data.files if k not in ('frame_ids','pants_frames','pants_faces')}
+        if fitted_seat:
+            from wardrobe185_mount_fit import HORSE_SHIFT
+            payload['horse_frames']=payload['horse_frames']+HORSE_SHIFT
         records=json.loads((prior.parent/'result.json').read_text())['objects']
     if body_only:
         prior=BASE/'wardrobe185-lowersurface04/surfaces.npz'
