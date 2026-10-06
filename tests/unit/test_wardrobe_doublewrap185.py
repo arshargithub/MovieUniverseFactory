@@ -139,6 +139,14 @@ def test_vertical_shot_path_has_bounded_continuous_travel():
     with pytest.raises(ValueError):camera_path(1.1)
 
 
+def test_lower_contact_broadphase_keeps_triangles_spanning_query_box():
+    from wardrobe185_exit_audit import broadphase
+    p=np.array([[-2.,0,0],[2,0,0],[0,2,0],[8,0,0],[9,0,0],[9,1,0]])
+    f=np.array([[0,1,2],[3,4,5]])
+    np.testing.assert_array_equal(broadphase(p,f,[-.1,-.1,-.1],[.1,.1,.1]),f[:1])
+    with pytest.raises(ValueError):broadphase(p,f,[2,2,2],[-2,-2,-2])
+
+
 def test_double_precision_contact_hull_contains_original_and_near_coplanar_samples():
     from wardrobe185_convex import robust_hull,convex_outside
     rng=np.random.default_rng(185)
@@ -250,6 +258,7 @@ def test_dispatch_has_an_explicit_handler_for_every_admitted_operation(operation
         'wardrobe185_head_dress':('run','screen'),
         'wardrobe185_belt':('screen','inspect'),
         'wardrobe185_shot':('layout','motion'),
+        'wardrobe185_exit_audit':('run',),
         'wardrobe185_harness_contact':('run',),
         'wardrobe185_motion':('prep','simulate','screen'),
         'wardrobe185_integration':('audit','gaze_screen','garment_screen'),

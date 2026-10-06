@@ -140,6 +140,7 @@ OPERATIONS += ('beltinspect01',)
 OPERATIONS += ('beltfit02',)
 OPERATIONS += ('shotlayout01',)
 OPERATIONS += ('shotmotion01',)
+OPERATIONS += ('exitaudit01',)
 HEAD = base.BASE / 'wardrobe180-xpbdhead08/trajectory.npz'
 HEAD_SHA = '55ce2f99edfbb45a7cf8a5898be31caa1f20bd7da3bb2ae2be9c43e49d7095e8'
 
@@ -503,6 +504,9 @@ def main():
     elif job['operation']=='shotmotion01':
         from wardrobe185_shot import motion as shot_motion
         shot_motion(out)
+    elif job['operation']=='exitaudit01':
+        from wardrobe185_exit_audit import run as exit_audit
+        exit_audit(out)
     elif job['operation']=='beltinspect01':
         from wardrobe185_belt import inspect as belt_inspect
         belt_inspect(out)
