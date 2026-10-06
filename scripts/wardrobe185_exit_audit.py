@@ -31,7 +31,7 @@ def run(out):
     from mathutils import Vector
     from mathutils.bvhtree import BVHTree
     from wardrobe_motion178 import BASE,digest,check_protected
-    from wardrobe185_shot import WORKING_SHA
+    from wardrobe185_shot import WORKING_SHA,setup_camera
     from wardrobe185_gallop import JOINED_TRAJECTORY_SHA
     from wardrobe_shawl180_cache import cache
     from wardrobe_riding_fit import fit_render
@@ -70,9 +70,10 @@ def run(out):
     for m,_ in skirt_states:m.show_viewport=False
     targets=['MF_fit_trousers_173_visible','MF185_gait_horse','MF185_gait_saddle','MF185_gait_saddle.pad']
     if any(n not in bpy.data.objects for n in targets):raise ValueError('Missing lower garment contact target')
-    lower=[];points=[];edges=None
+    lower=[];points=[];edges=None;camera_eulers=[]
     for frame in range(217,361):
-        scene.frame_set(frame);bpy.context.view_layer.update();p,f,_=geometry(skirt)
+        scene.frame_set(frame);bpy.context.view_layer.update();setup_camera(scene,rig,frame)
+        camera_eulers.append(list(scene.camera.rotation_euler));p,f,_=geometry(skirt)
         if edges is None:edges=np.unique(np.sort(np.concatenate([f[:,[0,1]],f[:,[1,2]],f[:,[2,0]]]),axis=1),axis=0)
         points.append(p);tree=BVHTree.FromPolygons(p.tolist(),f.tolist(),all_triangles=True);pairs={}
         for name in targets:
@@ -86,6 +87,8 @@ def run(out):
     for m,state in skirt_states:m.show_viewport=state
     np.savez_compressed(out/'lower-motion.npz',frames=np.array(points),edges=edges)
     (out/'lower-contact.json').write_text(json.dumps({'frames':lower,'visual_gate':'NOT_RUN'},indent=2)+'\n')
+    (out/'camera-rotation-check.json').write_text(json.dumps({'max_adjacent_euler_component_delta_radians':float(np.max(abs(np.diff(camera_eulers,axis=0)))),
+        'rotations':camera_eulers,'scope':'Detect Euler branch jumps before reusable native camera keyframes; not an artistic camera pass'},indent=2)+'\n')
     # The filmed range starts after dressing/lean. Inspect the intermediate
     # position separately instead of inheriting an older construction's pass.
     for ob in scene.objects:
