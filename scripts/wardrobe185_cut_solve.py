@@ -6,7 +6,8 @@ import numpy as np
 
 def run(out, motion=False):
     version=25 if motion else int(out.name.removeprefix('wardrobe185-cut'))
-    articulated=out.name.endswith(('holdcheck01','motion03','motionoff03'))
+    gallop=out.name.endswith(('gallopcloth01','gallopoff01'))
+    articulated=gallop or out.name.endswith(('holdcheck01','motion03','motionoff03'))
     import bpy
     from mathutils import Vector
     from mathutils.bvhtree import BVHTree
@@ -69,6 +70,10 @@ def run(out, motion=False):
     if motion:
         library=base.BASE/('wardrobe185-motionprep02/motion-rig.blend' if articulated else 'wardrobe185-motionprep01/motion-rig.blend')
         library_sha='a76ec35c1268ab77bbfc6fc9bdb8e330cdad8dbcee11b27b2eee9c7390df3b7f' if articulated else '49f17f288ab056a3620a8eb8d94c4123ef3318097b78f8b1e527fe3716196835'
+        if gallop:
+            from wardrobe185_gallop import PREP_SHA
+            if PREP_SHA is None:raise ValueError('Gallop contact not hash-bound')
+            library=base.BASE/'wardrobe185-gallopprep03/motion-rig.blend';library_sha=PREP_SHA
         if base.digest(library)!=library_sha:raise ValueError('Diagnostic motion library changed')
         names=['MF178_metres_rig','MF178_support_185_contact']
         with bpy.data.libraries.load(str(library),link=False) as (available,loaded):
@@ -84,7 +89,7 @@ def run(out, motion=False):
         import math
         bpy.ops.object.effector_add(type='WIND',location=(4*scale,-3*scale,0))
         wind=bpy.context.object;wind.name='MF185_diagnostic_wind';wind.rotation_euler=(math.radians(72),0,math.radians(-25))
-        gain=0. if out.name.endswith(('motionoff01','motionoff03')) else 1.
+        gain=0. if out.name.endswith(('motionoff01','motionoff03','gallopoff01')) else 1.
         for frame in list(range(1,361,4))+[360]:
             wind.field.strength=schedule(frame)['wind']*gain;wind.keyframe_insert(data_path='field.strength',frame=frame)
         scene.frame_set(1)
@@ -256,7 +261,7 @@ def run(out, motion=False):
     if version==24:
         mod.collision_settings.collision_quality=8
         mod.collision_settings.self_distance_min=.003
-    samples=[];matrices=[];contact_samples=[];contact_frames=[]
+    samples=[];matrices=[];head_matrices=[];contact_samples=[];contact_frames=[]
     for frame in range(1,end+1):
         scene.frame_set(frame);bpy.context.view_layer.update()
         ev=ob.evaluated_get(bpy.context.evaluated_depsgraph_get());m=ev.to_mesh()
@@ -273,13 +278,17 @@ def run(out, motion=False):
             from mathutils import Matrix
             delta=canonical.matrix_world@canonical.pose.bones['chest'].matrix@canonical.data.bones['chest'].matrix_local.inverted()@canonical.matrix_world.inverted()
             matrices.append(np.array(Matrix.Scale(1/scale,4)@delta@Matrix.Scale(scale,4)))
+            if gallop:
+                head=canonical.pose.bones['MF185_head']
+                hd=canonical.matrix_world@head.matrix@head.bone.matrix_local.inverted()@canonical.matrix_world.inverted()
+                head_matrices.append(np.array(Matrix.Scale(1/scale,4)@hd@Matrix.Scale(scale,4)))
             if frame in (1,169,193,217,265,360):
                 ev=contact.evaluated_get(bpy.context.evaluated_depsgraph_get());m=ev.to_mesh()
                 contact_samples.append(np.array([v.co[:] for v in m.vertices])/scale);contact_frames.append(frame);ev.to_mesh_clear()
         if frame%12==0:print('185 tailored drape',frame,flush=True)
     np.savez_compressed(out/'trajectory.npz',points=p,faces=f,rest=rest,frames=np.array(samples),counts=counts,pin_indices=list(pins),pin_weights=list(pins.values()))
     if motion:
-        np.savez_compressed(out/'motion-proof.npz',chest_matrices=np.array(matrices),contact_frames=contact_frames,contact_points=np.array(contact_samples),contact_faces=cf)
+        np.savez_compressed(out/'motion-proof.npz',chest_matrices=np.array(matrices),head_matrices=np.array(head_matrices),contact_frames=contact_frames,contact_points=np.array(contact_samples),contact_faces=cf)
     report={'dressed_metric':measures(p,f,{1:samples[0],48:samples[47],end:samples[-1]},scale),
         'fabric_metric':measures(rest,f,{1:samples[0],48:samples[47],end:samples[-1]},scale),
         'mass_is_physical_calibration':False,'visual_gate':'NOT_RUN','motion_gate':'NOT_RUN',

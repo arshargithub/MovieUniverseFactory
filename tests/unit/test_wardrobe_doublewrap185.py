@@ -25,6 +25,15 @@ def test_fixed_length_limb_solver_preserves_both_lengths_and_pole_side():
     with pytest.raises(ValueError):hinge_point(root,(0,0,0),pole,1.,.8)
     with pytest.raises(ValueError):hinge_point(root,(1,0,0),(2,0,0),1.,.8)
 
+
+def test_whole_motion_reach_has_reserve_without_per_frame_clipping():
+    from wardrobe185_riding import comfortable_reach
+    direction=np.array([0.,-4.,0.]);offsets=np.array([[0,0,0],[0,-.5,.2],[0,.3,-.1]])
+    gain=comfortable_reach(direction,offsets,4.1)
+    assert .65<gain<.93
+    assert np.linalg.norm(direction*gain+offsets,axis=1).max()<=4.1-.18+1e-12
+    with pytest.raises(ValueError):comfortable_reach(direction,[[0,-8,0]],4.1)
+
 @pytest.mark.parametrize('revised',[False,True,3])
 def test_section_continuity_and_course_topology(revised):
     for layer in (0,1):
@@ -117,6 +126,8 @@ def test_dispatch_has_an_explicit_handler_for_every_admitted_operation(operation
         'wardrobe185_integration':('audit','gaze_screen','garment_screen'),
         'wardrobe185_horse':('probe','gait_cache'),
         'wardrobe185_riding':('preview',),
+        'wardrobe185_grip':('audit',),
+        'wardrobe185_gallop':('prep','screen'),
     }.items():
         fake=types.ModuleType(name)
         for method in methods:setattr(fake,method,record)

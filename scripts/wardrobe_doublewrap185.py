@@ -94,6 +94,19 @@ OPERATIONS += ('horseprobe01',)
 OPERATIONS += ('motionreview03',)
 OPERATIONS += ('horsecache01',)
 OPERATIONS += ('riding01',)
+OPERATIONS += ('riding02',)
+OPERATIONS += ('riding03',)
+OPERATIONS += ('riding04',)
+OPERATIONS += ('riding05',)
+OPERATIONS += ('gripcheck01',)
+OPERATIONS += ('gripcheck02',)
+OPERATIONS += ('gripcheck03',)
+OPERATIONS += ('riding06',)
+OPERATIONS += ('gallopprep01',)
+OPERATIONS += ('gallopcloth01','gallopoff01')
+OPERATIONS += ('gallopprep02',)
+OPERATIONS += ('gallopprep03',)
+OPERATIONS += ('gallopscreen01',)
 HEAD = base.BASE / 'wardrobe180-xpbdhead08/trajectory.npz'
 HEAD_SHA = '55ce2f99edfbb45a7cf8a5898be31caa1f20bd7da3bb2ae2be9c43e49d7095e8'
 
@@ -427,9 +440,21 @@ def main():
     elif job['operation']=='horsecache01':
         from wardrobe185_horse import gait_cache
         gait_cache(out)
-    elif job['operation']=='riding01':
+    elif job['operation'] in ('riding01','riding02','riding03','riding04','riding05','riding06'):
         from wardrobe185_riding import preview
         preview(out)
+    elif job['operation']=='gallopscreen01':
+        from wardrobe185_gallop import screen as gallop_screen
+        gallop_screen(out)
+    elif job['operation'] in ('gallopcloth01','gallopoff01'):
+        from wardrobe185_motion import simulate
+        simulate(out)
+    elif job['operation'] in ('gallopprep01','gallopprep02','gallopprep03'):
+        from wardrobe185_gallop import prep as gallop_prep
+        gallop_prep(out)
+    elif job['operation'] in ('gripcheck01','gripcheck02','gripcheck03'):
+        from wardrobe185_grip import audit
+        audit(out)
     elif job['operation'] in ('motionreview02','motionreview03'):
         from wardrobe185_motion import screen as motion_screen
         motion_screen(out)
