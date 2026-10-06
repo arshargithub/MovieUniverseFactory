@@ -70,8 +70,9 @@ def solve(out):
     layout=BASE/'wardrobe185-lowerdress07/initial-layout.npz'
     contacts=BASE/'wardrobe185-lowersurface02/surfaces.npz'
     source=BASE/'wardrobe185-lowercapture02/moving-source.npz'
+    mount_fixed=out.name.endswith('lowercloth10')
     outer_control=out.name.endswith('lowerwindoff09')
-    outer_only=outer_control or out.name.endswith('lowerouter08')
+    outer_only=mount_fixed or outer_control or out.name.endswith('lowerouter08')
     matched_control=outer_control or out.name.endswith('lowerwindoff07')
     windoff=matched_control or out.name.endswith('lowerwindoff06')
     complete=outer_only or windoff or out.name.endswith('lowercloth05')
@@ -92,6 +93,23 @@ def solve(out):
     with np.load(layout,allow_pickle=False) as d:cut={k:d[k] for k in d.files}
     with np.load(contacts,allow_pickle=False) as d:contact={k:d[k] for k in d.files}
     with np.load(source,allow_pickle=False) as d:pelvis=d['pelvis_matrices']
+    if mount_fixed:
+        from wardrobe185_mount_fit import HORSE_SHIFT
+        from wardrobe185_lower_surface import winding_numbers
+        from mathutils.bvhtree import BVHTree
+        native=BASE/'wardrobe185-mountfit02/integration-working.blend'
+        native_sha='601cf7c620f8fc7a3bb7c51c62ad12aa534ad3d4d6e724e7e2eb75baffa0708a'
+        if digest(native)!=native_sha:raise ValueError('Unbound corrected mount')
+        contact['horse_frames']=contact['horse_frames']+HORSE_SHIFT
+        horse=contact['horse_frames'][1];hf=contact['horse_faces'];points=cut['mounted']
+        ht=BVHTree.FromPolygons(horse.tolist(),hf.tolist(),all_triangles=True)
+        ct=BVHTree.FromPolygons(points.tolist(),cut['faces'].tolist())
+        inside=int(np.count_nonzero(abs(winding_numbers(points,horse,hf))>.5))
+        pairs=ht.overlap(ct)
+        (out/'changed-contact-preflight.json').write_text(json.dumps({'native_sha256':native_sha,
+            'horse_shift_native':HORSE_SHIFT.tolist(),'inside_vertices':inside,'initial_face_pairs':len(pairs),
+            'unchanged_domains':'Prior14 admission retained for exact unchanged body/upper/pants/saddle/pad and self geometry'})+'\n')
+        if inside or pairs:raise ValueError('Corrected horse invalidates mounted initial cloth')
     metric_control(out)
     record={};outputs={};faces=cut['faces'];rest=cut['rest'];pins=cut['pin_indices'];weights=cut['pin_weights']
     for label in (('mounted',) if (windoff or outer_only) else ('standing','mounted')):
@@ -174,4 +192,5 @@ def solve(out):
         if digest(p)!=h:raise ValueError('Lower cloth changed an input')
     (out/'result.json').write_text(json.dumps({'layout_sha256':layout_sha,'contacts_sha256':contact_sha,
         'cases':record,'inputs_unchanged':True,'accepted_masters_not_opened':True,'visual_gate':'NOT_RUN',
+        'horse_registration_native':HORSE_SHIFT.tolist() if mount_fixed else [0.,0.,0.],
         'scope':'Separate free standing/mounted lower cloth; not a mounting animation or final character pass'},indent=2)+'\n')

@@ -288,6 +288,7 @@ def test_dispatch_has_an_explicit_handler_for_every_admitted_operation(operation
         'wardrobe185_lower_pants':('run',),'wardrobe185_airflow_control':('run',),'wardrobe185_lower_union':('run','audit','gap_audit'),
         'wardrobe185_lower_gap':('run',),
         'wardrobe185_mount_fit':('run',),
+        'wardrobe185_trouser_seat':('run',),
         'wardrobe185_cut_solve':('run',),'wardrobe185_rest_unit':('run',),
         'wardrobe185_intersections':('run',),
         'wardrobe185_head_dress':('run','screen'),
@@ -521,3 +522,24 @@ def test_exact_gap_crop_keeps_crossing_triangles_not_only_inside_vertices():
     p=np.array([[-2.,0,0],[2.,0,0],[0,2.,0],[3,3,3],[4,3,3],[3,4,3]])
     f=np.array([[0,1,2],[3,4,5]])
     np.testing.assert_array_equal(local_faces(p,f,(-.1,-.1,-.1),(.1,.1,.1)),f[:1])
+
+
+def test_rein_route_is_absolute_and_preserves_both_contacts_and_channel():
+    from wardrobe185_mount_fit import rein_points
+    bit=np.array([0.,-3.,-2.]);channel=np.array([[0.,0,0],[.1,0,0],[.1,.1,0],[.2,.1,0]])
+    p=rein_points(bit,channel)
+    np.testing.assert_allclose(p[0],bit);np.testing.assert_allclose(p[16:20],channel)
+    np.testing.assert_allclose(rein_points(bit,channel),p)
+    np.testing.assert_allclose(rein_points(bit+1,channel+1),p+1)
+
+
+def test_fitted_seat_preserves_waist_and_lower_legs_and_is_rigid_covariant():
+    from wardrobe185_trouser_seat import seat_weight,fixed_surface
+    assert seat_weight(np.array([[0,0,-5.5],[1,0,-10],[3,0,-7]])).tolist()==[0,0,0]
+    assert seat_weight(np.array([[.4,0,-7.4]]))[0]==1
+    assert seat_weight(np.array([[0,0,-6.3]]),True)[0]==1
+    assert seat_weight(np.array([[0,0,-5.5]]),True)[0]==0
+    t=np.array([[[0.,0,0],[1.,0,0],[0,1.,0]]]);w=np.array([[.2,.3,.5]])
+    p=fixed_surface(t,w,.012);r=np.array([[0.,0,1],[1.,0,0],[0,1.,0]])
+    np.testing.assert_allclose(fixed_surface(t@r.T+2,w,.012),p@r.T+2)
+    np.testing.assert_allclose(fixed_surface(t,w,np.array([.012])),p)
