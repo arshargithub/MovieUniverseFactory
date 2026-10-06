@@ -111,6 +111,19 @@ def test_buckle_surface_frame_is_rigid_and_covariant():
     with pytest.raises(ValueError,match='Degenerate'):band_frame(np.zeros_like(q))
 
 
+def test_fabric_coordinates_have_two_directions_and_only_edge_wear():
+    from wardrobe185_finish import fabric_coordinates
+    from wardrobe185_head_dress import pattern
+    from wardrobe185_cut import closed_course
+    _,_,head=pattern();_,_,a,_=closed_course(0);_,_,b,_=closed_course(1)
+    uv,wear=fabric_coordinates(np.concatenate([head,a,b]))
+    assert uv.shape==(7205,3) and np.isfinite(uv).all()
+    assert np.ptp(uv[:2501,0])>1 and np.ptp(uv[:2501,2])>1
+    assert np.ptp(uv[2501:4853,0])>1 and np.ptp(uv[2501:4853,2])>1
+    assert wear.max()==.1 and wear[30*61+30]==0
+    with pytest.raises(ValueError):fabric_coordinates(np.zeros((5,3)))
+
+
 def test_double_precision_contact_hull_contains_original_and_near_coplanar_samples():
     from wardrobe185_convex import robust_hull,convex_outside
     rng=np.random.default_rng(185)
@@ -220,7 +233,7 @@ def test_dispatch_has_an_explicit_handler_for_every_admitted_operation(operation
         'wardrobe185_cut_solve':('run',),'wardrobe185_rest_unit':('run',),
         'wardrobe185_intersections':('run',),
         'wardrobe185_head_dress':('run','screen'),
-        'wardrobe185_belt':('screen',),
+        'wardrobe185_belt':('screen','inspect'),
         'wardrobe185_harness_contact':('run',),
         'wardrobe185_motion':('prep','simulate','screen'),
         'wardrobe185_integration':('audit','gaze_screen','garment_screen'),

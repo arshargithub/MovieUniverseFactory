@@ -25,11 +25,29 @@ def frame_from_band(q):
     return Matrix(band_frame(q))
 
 
+def inspect(out):
+    import bpy
+    from wardrobe_motion178 import BASE,digest
+    from wardrobe185_gallop import DIAGNOSTIC_SHA
+    source=BASE/'wardrobe185-gallopscreen01/diagnostic.blend'
+    if digest(source)!=DIAGNOSTIC_SHA:raise ValueError('Unbound buckle inspection')
+    bpy.ops.wm.open_mainfile(filepath=str(source),load_ui=False,use_scripts=False)
+    bpy.context.scene.frame_set(1);bpy.context.view_layer.update();record={}
+    for name in ('MF_173_belt_buckle','MF_173_buckle_tongue','MF_173_waist_belt'):
+        ob=bpy.data.objects[name]
+        record[name]={'type':ob.type,'parent':ob.parent.name if ob.parent else None,
+            'modifiers':[{'type':m.type,'name':m.name,'target':getattr(getattr(m,'object',None),'name',None)} for m in ob.modifiers],
+            'constraints':[{'type':c.type,'target':getattr(getattr(c,'target',None),'name',None),'bone':getattr(c,'subtarget',None)} for c in ob.constraints],
+            'delta_location':list(ob.delta_location),'delta_rotation':list(ob.delta_rotation_euler),'delta_scale':list(ob.delta_scale),
+            'world_matrix':np.array(ob.matrix_world).tolist()}
+    (out/'inspection.json').write_text(json.dumps(record,indent=2)+'\n');print(json.dumps(record),flush=True)
+
+
 def fit(out):
     import bpy
     from mathutils import Vector,Matrix
     from mathutils.bvhtree import BVHTree
-    from wardrobe_motion178_controls import render_surface_target,bind_render_surface,render_geometry_paused
+    from wardrobe_motion178_controls import render_surface_target,bind_render_surface,render_geometry_paused,smooth
     scene=bpy.context.scene;scene.frame_set(1);bpy.context.view_layer.update()
     belt=bpy.data.objects['MF_173_waist_belt']
     old=np.array([belt.matrix_world@v.co for v in belt.data.vertices])
@@ -39,6 +57,24 @@ def fit(out):
     vertices=np.array([target.matrix_world@v.co for v in mesh.vertices]);faces=np.array([t.vertices[:] for t in mesh.loop_triangles]);ev.to_mesh_clear()
     points=vertices[faces];mask=(abs(points[:,:,0]).max(1)<2)&(points[:,:,2].min(1)>z0-1)&(points[:,:,2].max(1)<z0+1)
     tree=BVHTree.FromPolygons(vertices.tolist(),faces[mask].tolist(),all_triangles=True)
+    strap_changes={}
+    for sign in (-1,1):
+        strap=bpy.data.objects['MF_173_tension_harness_'+str(sign)];strap.data=strap.data.copy()
+        for mod in list(strap.modifiers):
+            if mod.type=='SURFACE_DEFORM':strap.modifiers.remove(mod)
+        changed=0;maximum=0.
+        for i in range(0,len(strap.data.vertices),2):
+            a,b=strap.data.vertices[i:i+2];pa=strap.matrix_world@a.co;pb=strap.matrix_world@b.co;center=(pa+pb)*.5
+            weight=smooth((z0+.24-center.z)/.22)
+            if not weight:continue
+            hit,normal,_,_=tree.find_nearest(center)
+            if normal.dot(center-Vector((0,.14,center.z)))<0:normal=-normal
+            shift=(hit+normal*.075-center)*weight
+            if shift.length>.10:raise ValueError('Harness end needs more than a local under-belt seat')
+            inverse=strap.matrix_world.inverted();a.co=inverse@(pa+shift);b.co=inverse@(pb+shift)
+            changed+=2;maximum=max(maximum,shift.length)
+        strap.data.update();bind_render_surface(strap,target)
+        strap_changes[str(sign)]={'vertices':changed,'maximum_native':maximum,'scope':'Coherent end-band translation beneath waist belt'}
     q=[];f=[];rows=96;cols=5;distances=[]
     for row in range(rows):
         theta=math.tau*row/rows;direction=Vector((math.sin(theta),math.cos(theta),0))
@@ -72,22 +108,30 @@ def fit(out):
     buckles=[]
     for name in ('MF_173_belt_buckle','MF_173_buckle_tongue'):
         ob=bpy.data.objects[name];world=ob.matrix_world.copy()
+        for mod in list(ob.modifiers):
+            if mod.type in ('SURFACE_DEFORM','ARMATURE'):ob.modifiers.remove(mod)
         ob.constraints.clear();ob.parent=None;ob.animation_data_clear();world.translation+=shift
         ob.matrix_world=world;ob.rotation_mode='QUATERNION';buckles.append((ob,world.copy()))
-    traces=[]
+    traces=[];rigid_errors=[]
     with render_geometry_paused():
         belt.hide_viewport=False;target.hide_viewport=False
+        for ob,_ in buckles:ob.hide_viewport=False
         for frame in range(1,361):
             scene.frame_set(frame);bpy.context.view_layer.update();points=evaluated();transform=frame_from_band(points)@basis.inverted()
             traces.append(np.array(transform))
             for ob,world in buckles:
                 ob.matrix_world=transform@world
                 for path in ('location','rotation_quaternion','scale'):ob.keyframe_insert(data_path=path,frame=frame)
+                bpy.context.view_layer.update();ev=ob.evaluated_get(bpy.context.evaluated_depsgraph_get());me=ev.to_mesh()
+                actual=np.array([ev.matrix_world@v.co for v in me.vertices]);expected=np.array([transform@world@v.co for v in ob.data.vertices]);ev.to_mesh_clear()
+                if actual.shape!=expected.shape:raise ValueError('Buckle rigid geometry changed')
+                error=float(np.max(abs(actual-expected)));rigid_errors.append(error)
+                if error>1e-5:raise ValueError('Buckle evaluated twice or detached from target frame')
             if frame%60==0:print('185 fitted waist',frame,flush=True)
     for m,state in flags:m.show_viewport=state
     scene.frame_set(1);bpy.context.view_layer.update()
     np.savez_compressed(out/'buckle-transforms.npz',matrices=np.array(traces))
-    return {'rest_center_z':z0,'retained_width_native':width,'clearance_native':distances[0],
+    return {'rest_center_z':z0,'retained_width_native':width,'clearance_native':distances[0],'harness_ends':strap_changes,'buckle_rigid_error_all_frames':max(rigid_errors),
         'attachment':'Leather surface-deformed with current waist; rigid buckle follows evaluated front-band frame',
         'visual_gate':'NOT_RUN'}
 

@@ -106,7 +106,8 @@ def screen(out):
     from wardrobe185_riding import fit_tack
     from wardrobe_riding_fit import fit_render
     foundation=BASE/'wardrobe185-motionreview03/diagnostic.blend'
-    joined=out.name.endswith('regionalreview05')
+    finished=out.name.endswith('finishreview01')
+    joined=finished or out.name.endswith('regionalreview05')
     regional=joined or out.name.endswith('regionalreview04')
     rider=BASE/('wardrobe185-riding07/rider-rig.blend' if regional else 'wardrobe185-riding06/rider-rig.blend')
     horse=BASE/'wardrobe185-horsecache01/horse-library.blend'
@@ -122,7 +123,7 @@ def screen(out):
     for path,sha in sources:
         if sha is None or path.is_symlink() or digest(path)!=sha:raise ValueError('Unbound integrated gallop source '+str(path))
     (out/Path(__file__).name).write_bytes(Path(__file__).read_bytes())
-    with np.load(trajectory,allow_pickle=False) as d:frames=d['frames']
+    with np.load(trajectory,allow_pickle=False) as d:frames=d['frames'];fabric_rest=d['rest'];counts=d['counts']
     with np.load(proof,allow_pickle=False) as d:matrices={n:d[n+'_matrices'] for n in ('chest','head')}
     with np.load(contacts,allow_pickle=False) as d:contact_data={n:d[n] for n in d.files}
     if frames.shape!=(360,7205,3) or any(a.shape!=(360,4,4) for a in matrices.values()):raise ValueError('Incomplete gallop trace')
@@ -140,6 +141,12 @@ def screen(out):
     if len(loaded.objects)!=10:raise ValueError('Incomplete horse assembly')
     for item in loaded.objects:scene.collection.objects.link(item)
     fit_tack(rig,contact_data,out,grasp=True)
+    if finished:
+        from wardrobe185_belt import fit as fit_belt
+        from wardrobe185_finish import apply as finish_cloth
+        waist=out/'waist';waist.mkdir();record=fit_belt(waist)
+        (waist/'result.json').write_text(json.dumps(record,indent=2)+'\n')
+        finish_cloth(ob,fabric_rest,counts,out)
     states=[(m,m.show_viewport) for m in ob.modifiers if m!=mod]
     for m,_ in states:m.show_viewport=False
     errors=[];cache_errors=[]
@@ -157,27 +164,36 @@ def screen(out):
                 cache_errors.append(float(np.max(abs(q-frames[frame-1]))))
     for m,state in states:m.show_viewport=state
     if max(errors)>1e-5 or max(cache_errors)>2e-6:raise ValueError('Integrated rig/cloth mismatch')
+    if finished:
+        from wardrobe185_finish import intersections
+        intersections(ob,(169,217,265,360),out)
     scene.frame_start=217;scene.frame_end=360;scene.frame_set(217)
-    scene.cycles.device='CPU';scene.cycles.samples=8;scene.render.use_persistent_data=True
+    scene.cycles.device='CPU';scene.cycles.samples=16 if finished else 8;scene.render.use_persistent_data=True
     if not regional:bpy.ops.wm.save_as_mainfile(filepath=str(out/'diagnostic.blend'),check_existing=False,compress=True)
     horse_objects=[o for o in scene.objects if o.name.startswith(('MF185_gait_','MF185_rein_','MF185_stirrup_'))]
     visibility={o:o.hide_render for o in horse_objects}
     if regional:
         for o in horse_objects:o.hide_render=True
-    for frame in (217,265,360):
+    for frame in ((169,217,360) if finished else (217,265,360)):
         scene.frame_set(frame);bpy.context.view_layer.update()
         head=rig.matrix_world@rig.pose.bones['MF185_head'].head
         center=tuple(head+Vector((0,0,-.6)))
         for angle,label in ((0,'front'),(90,'left'),(180,'rear'),(270,'right')):
-            fit_render(out,label+'-%03d'%frame,angle,center,8.,(640,640))
+            fit_render(out,label+'-%03d'%frame,angle,center,8.,(768,768) if finished else (640,640))
     for o,state in visibility.items():o.hide_render=state
     for frame in (217,220,223,226):
         scene.frame_set(frame);bpy.context.view_layer.update()
         fit_render(out,'whole-%03d'%frame,35,(0,-1.8,-8),32.,(720,540))
     check_protected()
+    if finished:
+        # One working integration file enables cache/control/temporal reviews
+        # without repeatedly rebuilding the dense fastening motion. It is
+        # explicitly NOT a selected or visually approved production native.
+        scene.frame_set(217);bpy.ops.wm.save_as_mainfile(filepath=str(out/'integration-working.blend'),check_existing=False,compress=True)
     (out/'result.json').write_text(json.dumps({'source_hashes':{str(p):h for p,h in sources},
         'head_chest_action_error':max(errors),'cloth_cache_error':max(cache_errors),
         'protected_local_data_exact':True,'native_sha256':None if regional else digest(out/'diagnostic.blend'),
+        'working_native_sha256':digest(out/'integration-working.blend') if finished else None,
         'visual_gate':'NOT_RUN','full_playback':'NOT_RUN','wind_causality':'NOT_RUN','production_ready':False},indent=2)+'\n')
 
 
