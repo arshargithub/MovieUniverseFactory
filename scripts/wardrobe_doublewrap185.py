@@ -116,6 +116,16 @@ OPERATIONS += ('gallopcontact04',)
 OPERATIONS += ('gallopcontact05',)
 OPERATIONS += ('gallopcontact06',)
 OPERATIONS += ('gallopfidelity01',)
+OPERATIONS += ('gallopcontact07','gallopfidelity02')
+OPERATIONS += ('gallopstructure01',)
+OPERATIONS += ('gallopcontact08',)
+OPERATIONS += ('gallopstructure02',)
+OPERATIONS += ('convexcontact01',)
+OPERATIONS += ('convexcontact02',)
+OPERATIONS += ('convexcontact03',)
+OPERATIONS += ('riding07',)
+OPERATIONS += ('convexsource01',)
+OPERATIONS += ('convexscreen01',)
 HEAD = base.BASE / 'wardrobe180-xpbdhead08/trajectory.npz'
 HEAD_SHA = '55ce2f99edfbb45a7cf8a5898be31caa1f20bd7da3bb2ae2be9c43e49d7095e8'
 
@@ -449,13 +459,22 @@ def main():
     elif job['operation']=='horsecache01':
         from wardrobe185_horse import gait_cache
         gait_cache(out)
-    elif job['operation'] in ('riding01','riding02','riding03','riding04','riding05','riding06'):
+    elif job['operation'] in ('riding01','riding02','riding03','riding04','riding05','riding06','riding07'):
         from wardrobe185_riding import preview
         preview(out)
-    elif job['operation']=='gallopfidelity01':
+    elif job['operation']=='convexscreen01':
+        from wardrobe185_convex import screen as convex_screen
+        convex_screen(out)
+    elif job['operation'] in ('convexcontact01','convexcontact02','convexcontact03','convexsource01'):
+        from wardrobe185_convex import capture
+        capture(out)
+    elif job['operation'] in ('gallopstructure01','gallopstructure02'):
+        from wardrobe185_contact import structure
+        structure(out)
+    elif job['operation'] in ('gallopfidelity01','gallopfidelity02'):
         from wardrobe185_contact import fidelity
         fidelity(out)
-    elif job['operation'] in ('gallopcontact02','gallopcontact03','gallopcontact04','gallopcontact05','gallopcontact06'):
+    elif job['operation'] in ('gallopcontact02','gallopcontact03','gallopcontact04','gallopcontact05','gallopcontact06','gallopcontact07','gallopcontact08'):
         from wardrobe185_contact import capture
         capture(out)
     elif job['operation']=='gallopcontact01':

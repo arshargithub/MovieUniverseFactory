@@ -54,7 +54,7 @@ def limb(rig,upper,lower,end,target,pole,orientation):
     return error
 
 
-def animate_gallop(rig,contacts,racing=False,grasp=False):
+def animate_gallop(rig,contacts,racing=False,grasp=False,hip_hinge=False):
     import bpy
     from mathutils import Matrix,Quaternion,Vector
     from wardrobe_riding_fit import riding_pose
@@ -66,15 +66,22 @@ def animate_gallop(rig,contacts,racing=False,grasp=False):
     records=[]
     with render_geometry_paused():
         rig.animation_data_clear();riding_pose(rig,1)
+        original_feet={s:(rig.pose.bones['foot.'+s].head.copy(),rig.pose.bones['shin.'+s].head.copy(),rig.pose.bones['foot.'+s].matrix.copy()) for s in ('L','R')}
+        pre_legs={b.name:b.matrix_basis.decompose() for b in rig.pose.bones if b.name.startswith(('thigh.','shin.','foot.','toe.'))}
         if grasp:
             from wardrobe185_grip import riding_grip
             riding_grip(rig)
         if racing:
-            rig.pose.bones['spine'].rotation_euler.x=math.radians(32)
-            rig.pose.bones['chest'].rotation_euler.x=math.radians(16)
+            rig.pose.bones['spine'].rotation_euler.x=math.radians(18 if hip_hinge else 32)
+            rig.pose.bones['chest'].rotation_euler.x=math.radians(10 if hip_hinge else 16)
+            if hip_hinge:
+                pelvis=rig.pose.bones['pelvis'];pelvis.rotation_mode='XYZ';pelvis.rotation_euler.x=math.radians(20)
         for name,angle in (('MF185_neck',-22 if racing else -18),('MF185_head',-22 if racing else -12)):
             rig.pose.bones[name].rotation_mode='QUATERNION';rig.pose.bones[name].rotation_quaternion=Quaternion((1,0,0),math.radians(angle))
         bpy.context.view_layer.update()
+        if hip_hinge:
+            for side,(target,pole,orientation) in original_feet.items():
+                limb(rig,'thigh.'+side,'shin.'+side,'foot.'+side,target,pole,orientation)
         # The old static reach was nearly extended. Reserve elbow flexion for
         # absorption before deriving the complete motion, not per-frame limb
         # stretching or discontinuous target clipping.
@@ -96,10 +103,15 @@ def animate_gallop(rig,contacts,racing=False,grasp=False):
             bpy.context.scene.frame_set(frame);phase=schedule(frame)
             for bone in rig.pose.bones:
                 t=phase['legs'] if bone.name.startswith(('thigh.','shin.','foot.','toe.')) else phase['lean']
-                loc,rot,scale=goals[bone.name];bone.rotation_mode='QUATERNION'
+                loc,rot,scale=(pre_legs[bone.name] if hip_hinge and bone.name in pre_legs else goals[bone.name]);bone.rotation_mode='QUATERNION'
                 bone.location=loc*t;bone.rotation_quaternion=identity.slerp(rot,t);bone.scale=Vector((1,1,1)).lerp(scale,t)
             row={'frame':frame,'limb_residuals_native':{}}
             if frame==1:row['whole_gait_arm_feasibility']=reach_record
+            if hip_hinge and frame==1:row['authored_lean_degrees']={'pelvis':20,'spine':18,'chest':10,'neck_counter':22,'head_counter':22}
+            if hip_hinge and 169<=frame<217:
+                bpy.context.view_layer.update()
+                for side,(target,pole,orientation) in original_feet.items():
+                    row['limb_residuals_native']['leg.'+side]=limb(rig,'thigh.'+side,'shin.'+side,'foot.'+side,target,pole,orientation)
             if frame>=217:
                 f=frame-217;delta=inverse@Vector(saddles[f,:3,3]-saddles[0,:3,3])
                 bpy.context.view_layer.update()
@@ -240,8 +252,9 @@ def preview(out):
         loaded.objects=[n for n in available.objects if n.startswith('MF185_gait_')]
     if len(loaded.objects)!=10:raise ValueError('Incomplete cached horse assembly')
     for ob in loaded.objects:scene.collection.objects.link(ob)
-    racing=out.name.endswith(('riding05','riding06'));grasp=out.name.endswith('riding06')
-    try:records=animate_gallop(rig,contacts,racing=racing,grasp=grasp)
+    hinge=out.name.endswith('riding07')
+    racing=out.name.endswith(('riding05','riding06','riding07'));grasp=out.name.endswith(('riding06','riding07'))
+    try:records=animate_gallop(rig,contacts,racing=racing,grasp=grasp,hip_hinge=hinge)
     except Exception as error:
         (out/'failure.json').write_text(json.dumps({'frame':scene.frame_current,'error':str(error)},indent=2)+'\n')
         raise
@@ -261,6 +274,18 @@ def preview(out):
     # Small rig library for the corresponding collision/cloth replay. It is
     # a diagnostic output, not a selected character or accepted performance.
     bpy.data.libraries.write(str(out/'rider-rig.blend'),{rig},fake_user=True,compress=True)
+    if hinge:
+        from mathutils import Vector
+        for ob in scene.objects:
+            if ob.type in ('MESH','CURVE','CURVES'):ob.hide_render=True
+        bpy.data.objects['MF_studio_adult_body'].hide_render=False
+        clay=bpy.data.materials.new('Diagnostic anatomy');clay.use_nodes=True
+        bsdf=clay.node_tree.nodes.get('Principled BSDF');bsdf.inputs['Base Color'].default_value=(.3,.3,.3,1);bsdf.inputs['Roughness'].default_value=.8
+        scene.view_layers[0].material_override=clay
+        for frame in (193,217,223):
+            scene.frame_set(frame);bpy.context.view_layer.update()
+            target=rig.matrix_world@rig.pose.bones['chest'].head+Vector((0,0,-.1))
+            for angle,label in ((0,'front'),(90,'left'),(180,'rear'),(270,'right')):fit_render(out,'body-'+label+'-'+str(frame),angle,tuple(target),9.,(640,640))
     (out/'result.json').write_text(json.dumps({'protected_local_data_exact':True,'visual_gate':'NOT_RUN',
         'cloth':'NOT_RUN for changed gallop; intentionally hidden','contacts':'Authored stirrup/bit/hand contacts; rendered fit and complete temporal gate remain separate' if racing else 'Tack fit pending',
         'rig_sha256':digest(out/'rider-rig.blend')},indent=2)+'\n')

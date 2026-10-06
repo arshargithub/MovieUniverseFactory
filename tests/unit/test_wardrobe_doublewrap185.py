@@ -65,6 +65,27 @@ def test_racing_airflow_opposes_travel_and_is_steady_during_gallop():
     assert strength==apparent_airflow(360)[1]==4.
 
 
+def test_convex_half_spaces_reject_outside_points():
+    from wardrobe185_convex import convex_outside,region_masks
+    v=np.array([[0.,0.,0.],[1,0,0],[0,1,0],[0,0,1]])
+    f=np.array([[0,2,1],[0,1,3],[0,3,2],[1,2,3]])
+    assert convex_outside(np.array([[.1,.1,.1],[1.,1.,1.],[-.1,0,0]]),v,f).tolist()==[False,True,True]
+    assert not convex_outside(v,v,f).any()
+    masks=region_masks(np.array([[0,0,-2],[1.6,0,-2],[-1.6,0,-2],[0,0,-6]]))
+    assert masks['torso'].tolist()==[True,False,False,False]
+
+
+def test_double_precision_contact_hull_contains_original_and_near_coplanar_samples():
+    from wardrobe185_convex import robust_hull,convex_outside
+    rng=np.random.default_rng(185)
+    p=rng.normal(size=(600,3));p/=np.linalg.norm(p,axis=1)[:,None]
+    p=np.concatenate([p,p[:200]+1e-7])
+    q,f=robust_hull(p)
+    assert not convex_outside(p,q,f).any()
+    assert not convex_outside(q,q,f).any()
+    assert len(q)<len(p)*6
+
+
 def test_surface_contact_binding_preserves_rigid_motion_and_offset():
     from wardrobe185_contact import deform
     p=np.array([[0.,0,0],[1,0,0],[0,1,0]])
@@ -170,7 +191,8 @@ def test_dispatch_has_an_explicit_handler_for_every_admitted_operation(operation
         'wardrobe185_riding':('preview',),
         'wardrobe185_grip':('audit',),
         'wardrobe185_gallop':('prep','screen','rescreen','contact_audit'),
-        'wardrobe185_contact':('capture','fidelity'),
+        'wardrobe185_contact':('capture','fidelity','structure'),
+        'wardrobe185_convex':('capture','screen'),
     }.items():
         fake=types.ModuleType(name)
         for method in methods:setattr(fake,method,record)

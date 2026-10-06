@@ -21,6 +21,53 @@ def deform(points,ids,bary,offsets):
     return np.einsum('ni,nij->nj',bary,triangles)+np.einsum('nij,nj->ni',basis,offsets)
 
 
+def structure(out):
+    """Trace visible clothing's actual deformation dependencies against skin."""
+    import bpy
+    from wardrobe_motion178 import BASE,digest,check_protected
+    from wardrobe185_gallop import DIAGNOSTIC_SHA
+    source=BASE/'wardrobe185-gallopscreen01/diagnostic.blend'
+    if digest(source)!=DIAGNOSTIC_SHA:raise ValueError('Actor input changed')
+    (out/Path(__file__).name).write_bytes(Path(__file__).read_bytes())
+    bpy.ops.wm.open_mainfile(filepath=str(source),load_ui=False,use_scripts=False)
+    body=bpy.data.objects['MF_studio_adult_body'];objects={body.name:body}
+    for name in ('MF185_fitted_upper_tunic','MF_173_tension_harness_-1','MF_173_tension_harness_1'):
+        ob=bpy.data.objects[name];objects[name]=ob
+        for mod in ob.modifiers:
+            if mod.type=='SURFACE_DEFORM':objects[mod.target.name]=mod.target
+    description={}
+    for name,ob in objects.items():
+        description[name]={'data':ob.data.name,'vertices':len(ob.data.vertices),'matrix':np.array(ob.matrix_world).tolist(),
+            'modifiers':[{'name':m.name,'type':m.type,'viewport':m.show_viewport,'render':m.show_render,
+                'target':getattr(getattr(m,'target',None),'name',None),'object':getattr(getattr(m,'object',None),'name',None)} for m in ob.modifiers]}
+        for m in ob.modifiers:
+            if m.type=='SUBSURF':m.show_viewport=False
+    poses=[]
+    for frame in (1,193,217,348):
+        bpy.context.scene.frame_set(frame);bpy.context.view_layer.update();points={}
+        for name,ob in objects.items():
+            ev=ob.evaluated_get(bpy.context.evaluated_depsgraph_get());mesh=ev.to_mesh()
+            points[name]=np.array([ob.matrix_world@v.co for v in mesh.vertices]);ev.to_mesh_clear()
+        diffs={name:float(np.max(abs(p-points[body.name]))) if p.shape==points[body.name].shape else None for name,p in points.items()}
+        poses.append({'frame':frame,'body_target_max_coordinate_difference':diffs,
+            'shape_keys':{name:{k.name:k.value for k in ob.data.shape_keys.key_blocks if k.value} if ob.data.shape_keys else {} for name,ob in objects.items()}})
+    (out/'structure.json').write_text(json.dumps({'objects':description,'poses':poses},indent=2)+'\n');check_protected()
+    if out.name.endswith('gallopstructure02'):
+        from mathutils import Vector
+        from wardrobe_riding_fit import fit_render
+        rig=bpy.data.objects['MF_body156_fit_rig'];scene=bpy.context.scene
+        for ob in scene.objects:
+            if ob.type in ('MESH','CURVE','CURVES'):ob.hide_render=True
+        body.hide_render=False;body.hide_viewport=False
+        clay=bpy.data.materials.new('Diagnostic skin geometry only');clay.diffuse_color=(.45,.45,.45,1)
+        scene.view_layers[0].material_override=clay;scene.cycles.device='CPU';scene.cycles.samples=8
+        for frame in (169,193,217):
+            scene.frame_set(frame);bpy.context.view_layer.update()
+            target=rig.matrix_world@rig.pose.bones['chest'].head+Vector((0,0,.2))
+            for angle,label in ((0,'front'),(90,'left'),(180,'rear'),(270,'right')):
+                fit_render(out,'body-'+label+'-'+str(frame),angle,tuple(target),8.,(640,640))
+
+
 def fidelity(out):
     """Sample actual visible upper garment/leather, not an obsolete rest suit."""
     import bpy
@@ -31,7 +78,10 @@ def fidelity(out):
     from wardrobe_doublewrap185_solve import inside
     source=BASE/'wardrobe185-gallopscreen01/diagnostic.blend'
     contact=BASE/'wardrobe185-gallopcontact06/surface-contact.npz'
-    if digest(source)!=DIAGNOSTIC_SHA or digest(contact)!='805e076fe6f33d4dcf63a80556541c1973e0b4c4789875860b40a46473d584cf':raise ValueError('Contact fidelity inputs changed')
+    expected='805e076fe6f33d4dcf63a80556541c1973e0b4c4789875860b40a46473d584cf'
+    if out.name.endswith('gallopfidelity02'):
+        contact=BASE/'wardrobe185-gallopcontact07/surface-contact.npz';expected='d5a5d2f4d04dc14a8b72fe19bce2f5932ab4556570446a7cca77a72624634f91'
+    if expected is None or digest(source)!=DIAGNOSTIC_SHA or digest(contact)!=expected:raise ValueError('Contact fidelity inputs changed')
     with np.load(contact,allow_pickle=False) as d:data={k:d[k] for k in d.files}
     (out/Path(__file__).name).write_bytes(Path(__file__).read_bytes())
     bpy.ops.wm.open_mainfile(filepath=str(source),load_ui=False,use_scripts=False)
@@ -44,7 +94,10 @@ def fidelity(out):
         for name in ('MF185_fitted_upper_tunic','MF_173_tension_harness_-1','MF_173_tension_harness_1'):
             ob=bpy.data.objects[name];ev=ob.evaluated_get(bpy.context.evaluated_depsgraph_get());mesh=ev.to_mesh()
             points=[ob.matrix_world@v.co for v in mesh.vertices]
-            ev.to_mesh_clear();selected=[p for p in points if -3.8<(inverse@p).z<-1.4 and abs((inverse@p).x)<2.1]
+            attr=mesh.attributes.get('MF_173_material_coords')
+            if not attr or len(attr.data)!=len(points):raise ValueError('Missing stable garment region coordinates')
+            rest=[a.vector.copy() for a in attr.data]
+            ev.to_mesh_clear();selected=[p for p,r in zip(points,rest) if -3.8<r.z<-1.4 and abs(r.x)<2.1]
             selected=selected[::max(1,len(selected)//2500)]
             outside=[];ambiguous=0
             for p in selected:
@@ -92,7 +145,9 @@ def capture(out):
     groups={g.index:g.name for g in body.vertex_groups}
     arm=np.array([sum(g.weight for g in v.groups if groups[g.group].startswith(('upperarm.','forearm.','hand.','MF_fit_finger'))) for v in body.data.vertices])
     t=np.clip((-p0[:,2]-1.)/.75,0,1);t=t*t*(3-2*t)
-    padding=.025*(1-t)+(.15*(1-arm)+.08*arm)*t
+    normal_field=out.name.endswith('gallopcontact08')
+    torso_padding=.25 if out.name.endswith(('gallopcontact07','gallopcontact08')) else .15
+    padding=.025*(1-t)+(torso_padding*(1-arm)+.08*arm)*t
     keep=np.all(p0[body_faces,2]>-5.8,axis=1);selected=body_faces[keep]
     ids=np.unique(selected);lookup=np.full(len(p0),-1,dtype=int);lookup[ids]=np.arange(len(ids))
     data=bpy.data.meshes.new('185 body collision cage');data.from_pydata((p0+normal*padding[:,None])[ids].tolist(),[],lookup[selected].tolist());data.update()
@@ -118,10 +173,13 @@ def capture(out):
     centers=np.einsum('ni,nij->nj',barys,p0[anchors]);offsets=np.einsum('nji,nj->ni',basis,q0-centers)
     parity=float(np.max(abs(deform(p0,anchors,barys,offsets)-q0)))
     if parity>1e-5:raise ValueError('Cage neutral correspondence mismatch')
-    smooth_binding=out.name.endswith(('gallopcontact05','gallopcontact06'))
+    if normal_field:
+        neutral_normals=np.einsum('ni,nij->nj',barys,normal[anchors]);neutral_normals/=np.linalg.norm(neutral_normals,axis=1)[:,None]
+        normal_offsets=np.einsum('ni,ni->n',q0-centers,neutral_normals)
+    smooth_binding=out.name.endswith(('gallopcontact05','gallopcontact06','gallopcontact07'))
     if smooth_binding:
         target=body
-        if out.name.endswith('gallopcontact06'):
+        if out.name.endswith(('gallopcontact06','gallopcontact07')):
             target=body.copy();target.name='MF185_triangulated_contact_target';scene.collection.objects.link(target)
             target.hide_render=True;target.hide_viewport=False
             tri=target.modifiers.new('Fixed diagonal surface correspondence','TRIANGULATE');tri.quad_method='FIXED';tri.ngon_method='CLIP'
@@ -140,7 +198,7 @@ def capture(out):
     groom_nonmanifold=sum(not e.is_manifold for e in bm.edges);bm.free();gm.calc_loop_triangles()
     gf=np.array([t.vertices[:] for t in gm.loop_triangles])
     if groom_nonmanifold:raise ValueError('Groom envelope not closed')
-    if smooth_binding:
+    if smooth_binding or normal_field:
         temporary=bpy.data.objects.new('185 groom fairing',gm);scene.collection.objects.link(temporary)
         bpy.context.view_layer.objects.active=temporary
         fair=temporary.modifiers.new('Remove envelope section ridges','SMOOTH');fair.factor=.6;fair.iterations=12
@@ -151,9 +209,9 @@ def capture(out):
     with render_geometry_paused():
         body.hide_viewport=False;cage.hide_viewport=False
         if smooth_binding:target.hide_viewport=False
-        frame_ids=sample_frames if out.name.endswith(('gallopcontact03','gallopcontact04','gallopcontact05','gallopcontact06')) else range(1,361)
+        frame_ids=sample_frames if out.name.endswith(('gallopcontact03','gallopcontact04','gallopcontact05','gallopcontact06','gallopcontact07','gallopcontact08')) else range(1,361)
         for frame in frame_ids:
-            scene.frame_set(frame);p,_,_,topology=body_mesh()
+            scene.frame_set(frame);p,normals,_,topology=body_mesh()
             # Loop triangulation may flip a quad diagonal under deformation.
             # Polygon connectivity is the invariant; correspondence retains
             # the neutral triangles and their stable source vertex indices.
@@ -162,6 +220,13 @@ def capture(out):
                 if smooth_binding:
                     ev=cage.evaluated_get(bpy.context.evaluated_depsgraph_get());cm=ev.to_mesh()
                     q=np.array([v.co[:] for v in cm.vertices]);ev.to_mesh_clear()
+                elif normal_field:
+                    nn=np.einsum('ni,nij->nj',barys,normals[anchors]);nn/=np.linalg.norm(nn,axis=1)[:,None]
+                    q=np.einsum('ni,nij->nj',barys,p[anchors])+nn*normal_offsets[:,None]
+                    # Closing cap is not an outward skin offset. Retain its
+                    # correspondence while offsetting only the actual surface.
+                    cap=q0[:,2]<-5.55
+                    q[cap]=deform(p,anchors[cap],barys[cap],offsets[cap])
                 else:q=deform(p,anchors,barys,offsets)
             except ValueError as exc:
                 np.savez_compressed(out/'failed-correspondence.npz',points=p,anchors=anchors,barycentric=barys,offsets=offsets)
