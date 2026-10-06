@@ -285,6 +285,7 @@ def test_dispatch_has_an_explicit_handler_for_every_admitted_operation(operation
     for name,methods in {
         'wardrobe_doublewrap185_solve':('settle','volumecheck'),
         'wardrobe185_isolate':('run',),'wardrobe185_proxy':('run',),
+        'wardrobe185_lower_pants':('run',),
         'wardrobe185_cut_solve':('run',),'wardrobe185_rest_unit':('run',),
         'wardrobe185_intersections':('run',),
         'wardrobe185_head_dress':('run','screen'),
@@ -459,3 +460,12 @@ def test_continuous_belt_boundary_preserves_free_hem_and_rigid_motion():
     np.testing.assert_allclose(cut[r[:,2]<-6.3],r[r[:,2]<-6.3])
     np.testing.assert_allclose(targets[1]-targets[0],np.tile(shift,(len(pins),1)))
     np.testing.assert_allclose(cut[list(pins)],targets[0])
+
+
+def test_trouser_rise_changes_only_upper_garment_and_preserves_order():
+    from wardrobe185_lower_pants import rise
+    p=np.array([[1.,.3,z] for z in np.linspace(-10,-5.72,100)])
+    q,w=rise(p)
+    np.testing.assert_allclose(q[p[:,2]<=-6.8],p[p[:,2]<=-6.8])
+    np.testing.assert_allclose(q[:,:2],p[:,:2])
+    assert np.all(np.diff(q[:,2])>0) and q[-1,2]==pytest.approx(-5.12)

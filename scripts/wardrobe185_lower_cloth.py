@@ -69,7 +69,8 @@ def solve(out):
     layout=BASE/'wardrobe185-lowerdress07/initial-layout.npz'
     contacts=BASE/'wardrobe185-lowersurface02/surfaces.npz'
     source=BASE/'wardrobe185-lowercapture02/moving-source.npz'
-    belt_bound=out.name.endswith('lowercloth03')
+    convergence=out.name.endswith('lowercloth04')
+    belt_bound=convergence or out.name.endswith('lowercloth03')
     waist=belt_bound or out.name.endswith('lowercloth02');layout_sha=LAYOUT_SHA;contact_sha=SURFACE_SHA
     if waist:
         layout=BASE/'wardrobe185-lowerdress09/initial-layout.npz';layout_sha=WAIST_LAYOUT_SHA
@@ -111,6 +112,10 @@ def solve(out):
             co.modifiers.new('Actual moving collision','COLLISION')
             co.collision.thickness_outer=.0015;co.collision.cloth_friction=15
         mod=profile(ob,domain);mod.settings.rest_shape_key=key;mod.point_cache.frame_end=len(frames)
+        if convergence:
+            # Numerical refinement only: unchanged cut, contacts, material,
+            # wind and supports distinguish resolution from design changes.
+            mod.settings.quality=48;mod.collision_settings.collision_quality=8
         if label=='mounted':
             bpy.ops.object.effector_add(type='WIND');wind=bpy.context.object
             wind.rotation_euler=Vector(apparent_airflow(217)[0]).to_track_quat('Z','Y').to_euler()
@@ -127,6 +132,7 @@ def solve(out):
         lengths=np.linalg.norm(rest[edges[:,0]]-rest[edges[:,1]],axis=1)
         ratios=np.linalg.norm(trajectory[:,edges[:,0]]-trajectory[:,edges[:,1]],axis=2)/lengths
         record[label]={'physics_frames':len(frames),'source_frame_ids':frames.tolist(),
+            'quality_steps':mod.settings.quality,'collision_quality':mod.collision_settings.collision_quality,
             'maximum_edge_ratio':float(ratios.max()),'last_edge_quantiles':np.quantile(ratios[-1],[.01,.5,.99,1]).tolist(),
             'free_cloth':True,'mass_per_vertex_authored_not_calibrated':.3,'visual_gate':'NOT_RUN'}
         np.savez_compressed(out/(label+'.npz'),frames=trajectory,source_frame_ids=frames,faces=faces,rest=rest,pin_indices=pins)

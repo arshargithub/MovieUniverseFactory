@@ -31,8 +31,12 @@ def capture(out):
     from wardrobe185_lower import fast_geometry
     from wardrobe185_lower_drape import triangle_weights
     from wardrobe_motion178_controls import render_geometry_paused
-    source=BASE/'wardrobe185-finishreview01/integration-working.blend'
-    if digest(source)!=WORKING_SHA:raise ValueError('Unbound actual-surface input')
+    source=BASE/'wardrobe185-finishreview01/integration-working.blend';source_sha=WORKING_SHA
+    pants_only=out.name.endswith('lowersurface04')
+    if pants_only:
+        source=BASE/'wardrobe185-lowerpants01/integration-working.blend'
+        source_sha='0375835df0b9543d13368d7d9ba294aec836182d7617b1b78cbf57afa8930f22'
+    if digest(source)!=source_sha:raise ValueError('Unbound actual-surface input')
     (out/Path(__file__).name).write_bytes(Path(__file__).read_bytes())
     bpy.ops.wm.open_mainfile(filepath=str(source),load_ui=False,use_scripts=False)
     scene=bpy.context.scene;scene.frame_set(1);bpy.context.view_layer.update()
@@ -40,10 +44,17 @@ def capture(out):
            'saddle':'MF185_gait_saddle','pad':'MF185_gait_saddle.pad'}
     waist_only=out.name.endswith('lowersurface03')
     if waist_only:names={'waist':'MF_studio_adult_body'}
+    if pants_only:names={'pants':'MF_fit_trousers_173_visible'}
     objects={key:bpy.data.objects[name] for key,name in names.items()}
     flags=[(m,m.show_viewport) for ob in objects.values() for m in ob.modifiers if m.type=='SOLIDIFY']
     for m,_ in flags:m.show_viewport=False
     mapping={};records={};payload={}
+    if pants_only:
+        from wardrobe185_lower_drape import WAIST_SURFACE_SHA
+        prior=BASE/'wardrobe185-waistcontact01/contact.npz'
+        if digest(prior)!=WAIST_SURFACE_SHA:raise ValueError('Previous contact source changed')
+        with np.load(prior,allow_pickle=False) as data:
+            payload={k:data[k] for k in data.files if k not in ('frame_ids','pants_frames','pants_faces')}
     if waist_only:
         prior=BASE/'wardrobe185-lowersurface02/surfaces.npz'
         if digest(prior)!='03c1143677e97891fecb66bc09a3ac9212db98c7fee63a557bc64b0b280124e8':raise ValueError('Previous actual contacts changed')
@@ -115,6 +126,6 @@ def capture(out):
     np.savez_compressed(out/'surfaces.npz',frame_ids=frames,**payload,
         **{key+'_frames':np.array(value) for key,value in samples.items()})
     check_protected()
-    (out/'result.json').write_text(json.dumps({'working_sha256':WORKING_SHA,'surfaces_sha256':digest(out/'surfaces.npz'),
+    (out/'result.json').write_text(json.dumps({'working_sha256':source_sha,'surfaces_sha256':digest(out/'surfaces.npz'),
         'objects':records,'protected_exact':True,'visual_gate':'NOT_RUN',
         'scope':'Actual moving coarse contacts; coverage and self-contact still require admission'},indent=2)+'\n')
