@@ -377,3 +377,15 @@ def test_lower_world_transform_is_vectorized_affine_without_mutation():
     np.testing.assert_allclose(world_points(p,m),[[7.,12.,19.],[3.,6.,23.]])
     np.testing.assert_array_equal(p,before)
     with pytest.raises(ValueError):world_points([[np.nan,0,0]],np.eye(4))
+
+
+def test_lower_pattern_is_connected_with_real_vents_and_only_waist_support():
+    from wardrobe185_lower_pattern import pattern,lower_region_masks
+    p,f,pins=pattern();assert np.isfinite(p).all()
+    assert len(np.unique(f))==len(p) and len(f)==1920
+    e=np.sort(np.concatenate([f[:,[0,1]],f[:,[1,2]],f[:,[2,3]],f[:,[3,0]]]),axis=1)
+    edges,counts=np.unique(e,axis=0,return_counts=True)
+    assert counts.max()==2 and np.linalg.norm(p[edges[:,0]]-p[edges[:,1]],axis=1).min()>.01
+    assert all(p[i,2]>-5.5 for i in pins)
+    assert np.ptp(p[:,2])*.12292759120464325==pytest.approx(.2581479415297508)
+    assert set(lower_region_masks(p))=={'pelvis','thighL','thighR'}

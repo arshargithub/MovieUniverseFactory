@@ -15,13 +15,18 @@ def world_points(local,matrix):
     return p@m[:3,:3].T+m[:3,3]
 
 
-def fast_geometry(ob):
+def fast_geometry(ob,with_signature=False):
     import bpy
+    import hashlib
     ev=ob.evaluated_get(bpy.context.evaluated_depsgraph_get());mesh=ev.to_mesh();mesh.calc_loop_triangles()
     p=np.empty(len(mesh.vertices)*3,dtype=np.float32);mesh.vertices.foreach_get('co',p)
     f=np.empty(len(mesh.loop_triangles)*3,dtype=np.int32);mesh.loop_triangles.foreach_get('vertices',f)
+    loops=np.empty(len(mesh.loops),dtype=np.int32);mesh.loops.foreach_get('vertex_index',loops)
+    sizes=np.empty(len(mesh.polygons),dtype=np.int32);mesh.polygons.foreach_get('loop_total',sizes)
+    signature=hashlib.sha256(loops.tobytes()+sizes.tobytes()+str(len(mesh.vertices)).encode()).hexdigest()
     ev.to_mesh_clear()
-    return world_points(p.reshape(-1,3),np.array(ob.matrix_world)),f.reshape(-1,3)
+    result=(world_points(p.reshape(-1,3),np.array(ob.matrix_world)),f.reshape(-1,3))
+    return (*result,signature) if with_signature else result
 
 
 def capture(out):
@@ -41,7 +46,7 @@ def capture(out):
     for m,_ in states:m.show_viewport=False
     sample_frames=(1,169,193,217,220,223,226,265,300,324,348,360)
     bones={'pelvis':'pelvis','thighL':'thigh.L','thighR':'thigh.R'}
-    matrices={n:[] for n in bones};guide=[];sampled={};faces=None
+    matrices={n:[] for n in bones};guide=[];sampled={};faces=None;guide_signature=None;pants_signature=None;retessellated=[]
     required={skirt,pants}
     for _ in range(8):
         prior=len(required)
@@ -59,19 +64,24 @@ def capture(out):
             for label,bone in bones.items():
                 b=rig.pose.bones[bone]
                 matrices[label].append(np.array(rig.matrix_world@b.matrix@b.bone.matrix_local.inverted()@rig.matrix_world.inverted()))
-            p,f=fast_geometry(skirt)
-            if faces is None:faces=f
-            elif not np.array_equal(f,faces):raise ValueError('Lower guide topology changes')
+            p,f,signature=fast_geometry(skirt,with_signature=True)
+            if faces is None:faces=f;guide_signature=signature
+            elif signature!=guide_signature:
+                (out/'topology-failure.json').write_text(json.dumps({'frame':frame,'object':skirt.name,'expected':guide_signature,'actual':signature}))
+                raise ValueError('Lower guide polygon topology changes')
+            elif not np.array_equal(f,faces):retessellated.append(frame)
             guide.append(p)
             if frame in sample_frames:
-                p,pf=fast_geometry(pants)
+                p,pf,signature=fast_geometry(pants,with_signature=True)
                 sampled['pants_'+str(frame)]=p
-                if frame==1:sampled['pants_faces']=pf
-                elif not np.array_equal(pf,sampled['pants_faces']):raise ValueError('Pant sampling topology changes')
+                if frame==1:sampled['pants_faces']=pf;pants_signature=signature
+                elif signature!=pants_signature:raise ValueError('Pant sampling polygon topology changes')
             if frame%48==0:print('185 lower source',frame,flush=True)
     for m,state in states:m.show_viewport=state
     np.savez_compressed(out/'moving-source.npz',guide=np.array(guide),guide_faces=faces,
         **sampled,**{k+'_matrices':np.array(v) for k,v in matrices.items()})
+    (out/'topology.json').write_text(json.dumps({'guide_polygon_signature':guide_signature,'pants_polygon_signature':pants_signature,
+        'guide_frames_with_changed_triangle_diagonals':retessellated,'polygon_topology_and_point_count_exact':True},indent=2)+'\n')
     buckle=[]
     for ob in scene.objects:
         if ob.type=='MESH' and any(s in ob.name.lower() for s in ('buckle','rivet','keeper','tongue')):
