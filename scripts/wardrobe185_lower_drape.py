@@ -8,17 +8,30 @@ CONTACT_SHA='577b9e0ee50a0350424d64aecf25b4965637c2bf23d6b8e9e6b9f878a377e0b5'
 SCALE=.12292759120464325
 
 
+def triangle_weights(point,triangle):
+    """Double-precision closest convex coordinates, including edge hits."""
+    t=np.asarray(triangle,dtype=float);p=np.asarray(point,dtype=float)
+    basis=np.stack([t[1]-t[0],t[2]-t[0]],axis=1)
+    uv=np.linalg.lstsq(basis,p-t[0],rcond=None)[0]
+    w=np.array([1-uv.sum(),uv[0],uv[1]])
+    candidates=[]
+    if np.min(w)>=0:candidates.append(w)
+    for a,b in ((0,1),(1,2),(2,0)):
+        delta=t[b]-t[a];den=float(delta@delta)
+        u=np.clip((p-t[a])@delta/den,0,1) if den else 0.
+        edge=np.zeros(3);edge[a]=1-u;edge[b]=u;candidates.append(edge)
+    return min(candidates,key=lambda v:np.linalg.norm(v@t-p))
+
+
 def mapped_guides(rest,source,faces,matrices):
     from mathutils import Vector
     from mathutils.bvhtree import BVHTree
-    from mathutils.geometry import barycentric_transform
     tree=BVHTree.FromPolygons(source[0].tolist(),faces.tolist(),all_triangles=True)
     indices=[];weights=[];offsets=[]
     for point in rest:
         hit,normal,index,distance=tree.find_nearest(Vector(point));tri=faces[index]
-        a,b,c=[Vector(q) for q in source[0,tri]]
-        w=barycentric_transform(hit,a,b,c,Vector((1,0,0)),Vector((0,1,0)),Vector((0,0,1)))
-        indices.append(tri);weights.append(list(w));offsets.append(point-np.array(hit))
+        w=triangle_weights(hit,source[0,tri])
+        indices.append(tri);weights.append(w);offsets.append(point-w@source[0,tri])
     weights=np.array(weights);indices=np.array(indices);offsets=np.array(offsets)
     if not np.isfinite(weights).all() or np.min(weights)<-1e-4 or np.max(abs(weights.sum(1)-1))>1e-5:
         raise ValueError('Invalid lower guide barycentric mapping')
@@ -58,7 +71,7 @@ def condition(points,faces,union,volumes,pins):
     inside=np.zeros(len(q),dtype=bool)
     for p,f in volumes:inside|=~convex_outside(q,p,f,tolerance=1e-7)
     moves=[]
-    for i,point in enumerate(q):
+    for i,point in enumerate(np.array(q,copy=True)):
         hit,normal,_,distance=tree.find_nearest(Vector(point))
         if inside[i] or distance<.004/SCALE:
             q[i]=np.array(hit+normal*(.005/SCALE))
@@ -72,7 +85,8 @@ def condition(points,faces,union,volumes,pins):
     actor_crossings=cloth_tree.overlap(tree)
     report={'max_initial_move_m':max(moves),'max_waist_move_m':max(moves[i] for i in pins),
         'remaining_inside_vertices':int((~outside).sum()),'min_edge_m':float(lengths.min()),
-        'nonadjacent_crossings':crossings,'actor_crossing_pairs':len(actor_crossings)}
+        'nonadjacent_crossings':crossings,'actor_crossing_pairs':len(actor_crossings),
+        'actor_crossing_cloth_faces':sorted(set(a for a,b in actor_crossings))}
     return q,report
 
 
@@ -102,17 +116,20 @@ def dress(out):
             ob.hide_render=True
     scene.camera.animation_data_clear();scene.camera.data.type='ORTHO';scene.cycles.device='CPU';scene.cycles.samples=8
     scene.render.use_persistent_data=True
-    records={};layouts={}
+    records={};layouts={};failures=[]
     for frame,label in ((1,'standing'),(169,'mounted')):
         scene.frame_set(frame);bpy.context.view_layer.update();union,volumes=contact_union(contacts,frame,frame==1)
         p,report=condition(guided[frame-1],faces,union,volumes,pins);records[label]=report;layouts[label]=p
+        np.savez_compressed(out/(label+'-contact.npz'),points=np.array([v.co[:] for v in union.data.vertices]),
+            **{'volume_'+str(i)+'_points':v[0] for i,v in enumerate(volumes)},
+            **{'volume_'+str(i)+'_faces':v[1] for i,v in enumerate(volumes)})
         np.savez_compressed(out/'initial-layout.npz',rest=rest,faces=faces,guided=guided,
             pin_indices=np.array(list(pins)),pin_weights=np.array(list(pins.values())),**layouts)
         (out/'admission.json').write_text(json.dumps(records,indent=2)+'\n')
         if report['remaining_inside_vertices'] or report['nonadjacent_crossings'] or report['actor_crossing_pairs'] or report['min_edge_m']<.001:
-            raise ValueError('Lower starting cut not admissible')
+            failures.append(label+': lower starting cut not admissible')
         if report['max_initial_move_m']>.10 or report['max_waist_move_m']>.015:
-            raise ValueError('Lower cut requires construction or proxy reconsideration')
+            failures.append(label+': lower cut requires construction or proxy reconsideration')
         mesh=bpy.data.meshes.new('185 coarse vented tunic');mesh.from_pydata(p.tolist(),[],faces.tolist());mesh.update()
         ob=bpy.data.objects.new('MF185_lower_dressing',mesh);scene.collection.objects.link(ob)
         for mat in old.data.materials:mesh.materials.append(mat)
@@ -127,4 +144,6 @@ def dress(out):
     check_protected()
     (out/'result.json').write_text(json.dumps({'working_sha256':WORKING_SHA,'motion_sha256':SOURCE_SHA,'contact_sha256':CONTACT_SHA,
         'layout_sha256':digest(out/'initial-layout.npz'),'retired_unattached_old_tunic_toggles':retired,
-        'protected_exact':True,'visual_gate':'NOT_RUN','scope':'Initial cloth dressing, no dynamic or final-looking garment claim'},indent=2)+'\n')
+        'protected_exact':True,'visual_gate':'NOT_RUN','admission':'FAIL' if failures else 'PASS',
+        'failures':failures,'scope':'Initial cloth dressing, no dynamic or final-looking garment claim'},indent=2)+'\n')
+    if failures:raise ValueError('; '.join(failures))

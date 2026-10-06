@@ -398,3 +398,12 @@ def test_lower_hull_support_reduction_preserves_dense_enclosure():
     p=np.random.default_rng(185).normal(size=(9000,3))
     small=support_candidates(p);assert len(small)<=102
     q,f=build_hull(p);assert not convex_outside(p,q,f).any()
+
+
+def test_lower_mapping_uses_convex_coordinates_for_edges_and_degenerate_faces():
+    from wardrobe185_lower_drape import triangle_weights
+    t=np.array([[0.,0,0],[1.,0,0],[0.,1,0]])
+    np.testing.assert_allclose(triangle_weights([.2,.3,.1],t),[.5,.2,.3])
+    np.testing.assert_allclose(triangle_weights([.5,-1e-5,0],t),[.5,.5,0])
+    w=triangle_weights([2,0,0],np.zeros((3,3)))
+    assert np.isfinite(w).all() and w.min()>=0 and w.sum()==pytest.approx(1)
