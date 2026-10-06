@@ -15,8 +15,10 @@ PROOF_SHA='92451328328b2e754d45bbfbc0fb01492dc6bd30c61a90644a46fb784e4e4810'
 DIAGNOSTIC_SHA='e54765e71e5f9ffdb2e1185d9efb4f85b7fedef7f817ca8e6bad18334ec2ee4e'
 OFF_SHA='c660199a170bd77695e1afbed8d4420d27ac78ac103438b4506291e38aed8ff4'
 AIRFLOW_SHA=None
-REGIONAL_TRAJECTORY_SHA=None
-REGIONAL_PROOF_SHA=None
+REGIONAL_TRAJECTORY_SHA='c1a99331bc654b1e7ee2a3652b6c1e2050db59691ed09c6e21c495fbab724d44'
+REGIONAL_PROOF_SHA='08d94f2f642fa21478966342024e21cd85e5b97ee2296217b08ba446cac624b3'
+JOINED_TRAJECTORY_SHA='76fef335445adfbe180c01d0f632d18d29a729ef620e1e0e5f7edd3350276d31'
+JOINED_PROOF_SHA='08d94f2f642fa21478966342024e21cd85e5b97ee2296217b08ba446cac624b3'
 
 
 def apparent_airflow(frame):
@@ -104,16 +106,19 @@ def screen(out):
     from wardrobe185_riding import fit_tack
     from wardrobe_riding_fit import fit_render
     foundation=BASE/'wardrobe185-motionreview03/diagnostic.blend'
-    regional=out.name.endswith('regionalreview04')
+    joined=out.name.endswith('regionalreview05')
+    regional=joined or out.name.endswith('regionalreview04')
     rider=BASE/('wardrobe185-riding07/rider-rig.blend' if regional else 'wardrobe185-riding06/rider-rig.blend')
     horse=BASE/'wardrobe185-horsecache01/horse-library.blend'
     contacts=horse.parent/'contacts.npz'
     trajectory=BASE/('wardrobe185-gallopcloth04/trajectory.npz' if regional else 'wardrobe185-gallopcloth01/trajectory.npz');proof=trajectory.parent/'motion-proof.npz'
+    if joined:trajectory=BASE/'wardrobe185-gallopcloth05/trajectory.npz';proof=trajectory.parent/'motion-proof.npz'
     from wardrobe185_convex import RIDER07_SHA
     sources=((foundation,'0f128ba60947d4451f7e0bbaa3a5f6f275173702e3d4bddd245cef73d2310bd7'),
         (rider,RIDER07_SHA if regional else RIDER_SHA),(horse,'8bccbbf45000cb61b8d50f014ff9db13973c97dd122b35b6bc6f77827e9e97a7'),
         (contacts,'15c434d960df8f9720b81d1d7d044ef0a29bca309631f310c7e1ba996de590c9'),
-        (trajectory,REGIONAL_TRAJECTORY_SHA if regional else TRAJECTORY_SHA),(proof,REGIONAL_PROOF_SHA if regional else PROOF_SHA))
+        (trajectory,JOINED_TRAJECTORY_SHA if joined else REGIONAL_TRAJECTORY_SHA if regional else TRAJECTORY_SHA),
+        (proof,JOINED_PROOF_SHA if joined else REGIONAL_PROOF_SHA if regional else PROOF_SHA))
     for path,sha in sources:
         if sha is None or path.is_symlink() or digest(path)!=sha:raise ValueError('Unbound integrated gallop source '+str(path))
     (out/Path(__file__).name).write_bytes(Path(__file__).read_bytes())

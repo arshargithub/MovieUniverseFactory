@@ -319,12 +319,20 @@ def solver_contacts(canonical,out,scale):
     return union,contacts
 
 
-def bind_regions(ob,canonical,head_count):
+def rear_support_indices(head_count):
+    """Two concealed rear seams ride on the headfall, not the upper torso."""
+    return [head_count+layer*2352+row*21+col for layer in (0,1)
+            for row in (110,111,0,1,2) for col in range(8,13)]
+
+
+def bind_regions(ob,canonical,head_count,rear_on_head=False):
     """Declared crown-to-head and outer-course-to-torso support semantics."""
     import bpy
     ob.vertex_groups.clear()
     head=ob.vertex_groups.new(name='MF185_head');head.add(list(range(head_count)),1.,'REPLACE')
     chest=ob.vertex_groups.new(name='chest');chest.add(list(range(head_count,len(ob.data.vertices))),1.,'REPLACE')
+    if rear_on_head:
+        rear=rear_support_indices(head_count);chest.remove(rear);head.add(rear,1.,'REPLACE')
     mod=ob.modifiers.new('Explicit regional support motion','ARMATURE');mod.object=canonical;mod.use_deform_preserve_volume=True
     bpy.context.view_layer.objects.active=ob
     while list(ob.modifiers).index(mod)>0:bpy.ops.object.modifier_move_up(modifier=mod.name)

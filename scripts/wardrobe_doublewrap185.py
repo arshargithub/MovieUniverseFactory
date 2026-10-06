@@ -131,6 +131,10 @@ OPERATIONS += ('headdress05',)
 OPERATIONS += ('headscreen05',)
 OPERATIONS += ('gallopcloth04','gallopoff04')
 OPERATIONS += ('regionalreview04',)
+OPERATIONS += ('headdress06',)
+OPERATIONS += ('gallopcloth05','gallopoff05')
+OPERATIONS += ('beltfit01',)
+OPERATIONS += ('regionalreview05',)
 HEAD = base.BASE / 'wardrobe180-xpbdhead08/trajectory.npz'
 HEAD_SHA = '55ce2f99edfbb45a7cf8a5898be31caa1f20bd7da3bb2ae2be9c43e49d7095e8'
 
@@ -488,13 +492,16 @@ def main():
     elif job['operation']=='gallopcontact01':
         from wardrobe185_gallop import contact_audit
         contact_audit(out)
+    elif job['operation']=='beltfit01':
+        from wardrobe185_belt import screen as belt_screen
+        belt_screen(out)
     elif job['operation'] in ('gallopscreen02','gallopscreen03'):
         from wardrobe185_gallop import rescreen
         rescreen(out)
-    elif job['operation'] in ('gallopscreen01','regionalreview04'):
+    elif job['operation'] in ('gallopscreen01','regionalreview04','regionalreview05'):
         from wardrobe185_gallop import screen as gallop_screen
         gallop_screen(out)
-    elif job['operation'] in ('gallopcloth01','gallopoff01','gallopcloth02','gallopcloth03','gallopoff03','gallopcloth04','gallopoff04'):
+    elif job['operation'] in ('gallopcloth01','gallopoff01','gallopcloth02','gallopcloth03','gallopoff03','gallopcloth04','gallopoff04','gallopcloth05','gallopoff05'):
         from wardrobe185_motion import simulate
         simulate(out)
     elif job['operation'] in ('gallopprep01','gallopprep02','gallopprep03'):

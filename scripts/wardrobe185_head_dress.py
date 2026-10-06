@@ -4,6 +4,7 @@ from pathlib import Path
 import numpy as np
 
 HEAD05_SHA='81a6e84910e54cc41d7c0a4b72e2a1b8bea09e38ca89fdccb6109df983b98e09'
+HEAD06_SHA='c2be9aa725e106b6af3e7fb373953b0d53f5ec0e966fc59403fe922b26ea5f48'
 
 
 def screen(out):
@@ -55,11 +56,11 @@ def run(out):
     from wardrobe_doublewrap185 import cloth_settings
     from wardrobe_shawl180 import measures
     (out/Path(__file__).name).write_bytes(Path(__file__).read_bytes())
-    regional=out.name.endswith('05')
+    regional=out.name.endswith(('05','06'))
     bpy.ops.wm.read_factory_settings(use_empty=True);scene=bpy.context.scene;scene.render.fps=24;scene.gravity=(0,0,-9.81)
-    revised=out.name.endswith(('02','03','04','05'))
-    front_width=.94 if out.name.endswith(('03','04','05')) else .78
-    scale=.12292759120464325;p,f,r=pattern(1.10 if revised else 1.30,front_width,spread_tails=out.name.endswith(('04','05')))
+    revised=out.name.endswith(('02','03','04','05','06'))
+    front_width=1.18 if out.name.endswith('06') else .94 if out.name.endswith(('03','04','05')) else .78
+    scale=.12292759120464325;p,f,r=pattern(1.10 if revised else 1.30,front_width,spread_tails=out.name.endswith(('04','05','06')))
     if regional:
         from wardrobe185_convex import static_contacts
         contact=static_contacts(out,scale)

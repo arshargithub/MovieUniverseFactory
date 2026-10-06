@@ -6,7 +6,8 @@ import numpy as np
 
 def run(out, motion=False):
     version=25 if motion else int(out.name.removeprefix('wardrobe185-cut'))
-    regional=out.name.endswith(('gallopcloth03','gallopoff03','gallopcloth04','gallopoff04'))
+    integrated_tails=out.name.endswith(('gallopcloth05','gallopoff05'))
+    regional=integrated_tails or out.name.endswith(('gallopcloth03','gallopoff03','gallopcloth04','gallopoff04'))
     gallop=regional or out.name.endswith(('gallopcloth01','gallopoff01','gallopcloth02'))
     articulated=gallop or out.name.endswith(('holdcheck01','motion03','motionoff03'))
     import bpy
@@ -35,6 +36,9 @@ def run(out, motion=False):
         if out.name.endswith(('gallopcloth04','gallopoff04')):
             from wardrobe185_head_dress import HEAD05_SHA
             head_path=base.BASE/'wardrobe185-headdress05/trajectory.npz';head_sha=HEAD05_SHA
+        if integrated_tails:
+            from wardrobe185_head_dress import HEAD06_SHA
+            head_path=base.BASE/'wardrobe185-headdress06/trajectory.npz';head_sha=HEAD06_SHA
         if base.digest(head_path)!=head_sha:raise ValueError('Staged head changed')
         with np.load(head_path,allow_pickle=False) as d:
             hp=d['frames'][-1];hf=d['faces'];head_rest=d['rest'];head_pins=dict(zip(d['pin_indices'].tolist(),d['pin_weights'].tolist()))
@@ -96,7 +100,7 @@ def run(out, motion=False):
         import math
         bpy.ops.object.effector_add(type='WIND',location=(4*scale,-3*scale,0))
         wind=bpy.context.object;wind.name='MF185_diagnostic_wind';wind.rotation_euler=(math.radians(72),0,math.radians(-25))
-        gain=0. if out.name.endswith(('motionoff01','motionoff03','gallopoff01','gallopoff03','gallopoff04')) else 1.
+        gain=0. if out.name.endswith(('motionoff01','motionoff03','gallopoff01','gallopoff03','gallopoff04','gallopoff05')) else 1.
         relative_airflow=regional or out.name.endswith('gallopcloth02')
         if relative_airflow:
             from wardrobe185_gallop import apparent_airflow
@@ -201,13 +205,17 @@ def run(out, motion=False):
     domain=bpy.data.collections.new('Contact domain');scene.collection.children.link(domain)
     for collider in moving_contacts:
         collider.modifiers.new('Collision','COLLISION');collider.collision.thickness_outer=.0015;collider.collision.cloth_friction=15;domain.objects.link(collider)
-    mesh=bpy.data.meshes.new('Scarf');mesh.from_pydata((p*scale).tolist(),[],f.tolist());mesh.update()
+    stitches=cut.front_tail_stitches(p) if integrated_tails else []
+    mesh=bpy.data.meshes.new('Scarf');mesh.from_pydata((p*scale).tolist(),stitches,f.tolist());mesh.update()
+    if stitches:
+        (out/'front-tail-seams.json').write_text(json.dumps({'pairs':stitches,'initial_distances_m':[float(np.linalg.norm(p[a]-p[b])*scale) for a,b in stitches],
+            'scope':'Concealed cloth-to-cloth joins; not extra body pins','rear_support':'Headfall relative, not torso'},indent=2)+'\n')
     ob=bpy.data.objects.new('Scarf',mesh);scene.collection.objects.link(ob)
     if motion:
         from wardrobe_motion178_controls import bind
         if regional:
             from wardrobe185_convex import bind_regions
-            bind_regions(ob,canonical,int(counts[0]))
+            bind_regions(ob,canonical,int(counts[0]),rear_on_head=integrated_tails)
         elif articulated:
             from wardrobe185_motion import support_sampler
             bind(ob,canonical,support_sampler(contact,scale),scale=scale)
@@ -274,6 +282,7 @@ def run(out, motion=False):
     mod=recipe.cloth_settings(ob,1,domain);mod.settings.rest_shape_key=flat
     mod.settings.use_dynamic_mesh=False
     mod.settings.mass=.3;mod.settings.air_damping=.2;mod.settings.bending_stiffness=.05
+    if stitches:mod.settings.use_sewing_springs=True;mod.settings.sewing_force_max=20.
     if version==11:mod.settings.bending_stiffness=.0005
     mod.settings.tension_stiffness=200;mod.settings.compression_stiffness=200;mod.settings.shear_stiffness=100
     end=360 if motion else 168 if version>=23 else 96
@@ -317,6 +326,10 @@ def run(out, motion=False):
                 contact_samples.append(np.array(points)/scale);contact_frames.append(frame);cf=np.array(polygons)
         if frame%12==0:print('185 tailored drape',frame,flush=True)
     np.savez_compressed(out/'trajectory.npz',points=p,faces=f,rest=rest,frames=np.array(samples),counts=counts,pin_indices=list(pins),pin_weights=list(pins.values()))
+    if stitches:
+        errors=np.array([[np.linalg.norm(q[a]-q[b])*scale for a,b in stitches] for q in samples])
+        (out/'seam-residuals.json').write_text(json.dumps({'pairs':stitches,'review_max_m':float(errors[168:].max()),'final_m':errors[-1].tolist(),
+            'visual_gate':'NOT_RUN','native_sewing_force_is_calibrated':False},indent=2)+'\n')
     if motion:
         np.savez_compressed(out/'motion-proof.npz',chest_matrices=np.array(matrices),head_matrices=np.array(head_matrices),contact_frames=contact_frames,contact_points=np.array(contact_samples),contact_faces=cf)
     report={'dressed_metric':measures(p,f,{1:samples[0],48:samples[47],end:samples[-1]},scale),

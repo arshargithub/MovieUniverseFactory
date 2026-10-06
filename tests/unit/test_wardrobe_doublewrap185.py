@@ -75,6 +75,42 @@ def test_convex_half_spaces_reject_outside_points():
     assert masks['torso'].tolist()==[True,False,False,False]
 
 
+def test_rear_wrap_supports_are_declared_headfall_seams_not_shoulders():
+    from wardrobe185_convex import rear_support_indices
+    ids=rear_support_indices(2501)
+    assert len(ids)==len(set(ids))==50
+    assert min(ids)>=2501 and max(ids)<7205
+    for i in ids:
+        row,col=divmod((i-2501)%2352,21)
+        assert row in (110,111,0,1,2) and 8<=col<=12
+
+
+def test_tail_seams_use_free_inner_course_and_reject_distant_join():
+    from wardrobe185_cut import front_tail_stitches
+    p=np.zeros((7205,3))
+    for side,heads,rows in ((-1,[0,61,122],range(64,85)),(1,[60,121,182],range(28,49))):
+        p[heads]=[side,-1,-2]
+        for row in rows:
+            for col in range(14,21):p[2501+row*21+col]=[side,-1,-2+col*.001]
+    pairs=front_tail_stitches(p)
+    assert len(pairs)==6 and len({b for a,b in pairs})==6
+    assert {a for a,b in pairs}=={0,61,122,60,121,182}
+    assert all(2501<=b<4853 and (b-2501)%21>=14 for a,b in pairs)
+    p[:2501,2]+=10
+    with pytest.raises(ValueError,match='re-cutting'):front_tail_stitches(p)
+
+
+def test_buckle_surface_frame_is_rigid_and_covariant():
+    from wardrobe185_belt import band_frame
+    q=np.array([(np.sin(i*np.pi*2/96),np.cos(i*np.pi*2/96),j*.1) for i in range(96) for j in range(5)])
+    a=band_frame(q);np.testing.assert_allclose(a[:3,:3].T@a[:3,:3],np.eye(3),atol=1e-12)
+    assert np.linalg.det(a[:3,:3])==pytest.approx(1)
+    r=np.array([[0.,0,1],[1,0,0],[0,1,0]]);shift=np.array([2.,3,4]);b=band_frame(q@r.T+shift)
+    np.testing.assert_allclose(b[:3,:3],r@a[:3,:3],atol=1e-12)
+    np.testing.assert_allclose(b[:3,3],r@a[:3,3]+shift,atol=1e-12)
+    with pytest.raises(ValueError,match='Degenerate'):band_frame(np.zeros_like(q))
+
+
 def test_double_precision_contact_hull_contains_original_and_near_coplanar_samples():
     from wardrobe185_convex import robust_hull,convex_outside
     rng=np.random.default_rng(185)
@@ -184,6 +220,7 @@ def test_dispatch_has_an_explicit_handler_for_every_admitted_operation(operation
         'wardrobe185_cut_solve':('run',),'wardrobe185_rest_unit':('run',),
         'wardrobe185_intersections':('run',),
         'wardrobe185_head_dress':('run','screen'),
+        'wardrobe185_belt':('screen',),
         'wardrobe185_harness_contact':('run',),
         'wardrobe185_motion':('prep','simulate','screen'),
         'wardrobe185_integration':('audit','gaze_screen','garment_screen'),

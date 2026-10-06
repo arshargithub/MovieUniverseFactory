@@ -19,6 +19,26 @@ def winding_inside(point, triangles):
     raise ValueError('Unresolved solid-angle interior: '+str(winding))
 
 
+def front_tail_stitches(points,head_count=2501,scale=.12292759120464325):
+    """Concealed head-tail to inner-course joins; no body pinning.
+
+    The three points along each tip join nearby free cloth in the inner
+    course. Preserve open face/neck and avoid tacking a broad shoulder panel.
+    Guard the initial travel instead of silently sewing distant regions.
+    """
+    p=np.asarray(points);pairs=[];used=set()
+    for side,heads,rows in ((-1,[0,61,122],range(64,85)),(1,[60,121,182],range(28,49))):
+        candidates=[head_count+row*21+col for row in rows for col in range(14,21)]
+        for head in heads:
+            pool=[i for i in candidates if i not in used and p[i,0]*side>0 and p[i,1]<-.15]
+            if not pool:raise ValueError('No concealed front-tail join target')
+            target=min(pool,key=lambda i:np.linalg.norm(p[i]-p[head]))
+            distance=float(np.linalg.norm(p[target]-p[head])*scale)
+            if distance>.14:raise ValueError('Tail cannot reach wrap without re-cutting')
+            pairs.append((head,target));used.add(target)
+    return pairs
+
+
 def headfall(source):
     grid=np.asarray(source).reshape(25,49,3)
     result=grid.copy()
