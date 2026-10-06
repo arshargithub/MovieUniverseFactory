@@ -291,7 +291,7 @@ def test_dispatch_has_an_explicit_handler_for_every_admitted_operation(operation
         'wardrobe185_belt':('screen','inspect'),
         'wardrobe185_shot':('layout','motion'),
         'wardrobe185_exit_audit':('run',),
-        'wardrobe185_lower':('inspect',),
+        'wardrobe185_lower':('inspect','capture'),
         'wardrobe185_delivery':('seal','verify'),
         'wardrobe185_harness_contact':('run',),
         'wardrobe185_motion':('prep','simulate','screen'),
@@ -369,3 +369,11 @@ def test_head_weights_keep_face_rigid_and_lower_clavicles_unchanged():
         assert min(weights.values())>=0 and sum(weights.values())==pytest.approx(1)
     assert head_weights(-1.72)=={'chest':1.,'MF185_neck':0.,'MF185_head':0.}
     assert head_weights(-1.)=={'chest':0.,'MF185_neck':0.,'MF185_head':1.}
+
+
+def test_lower_world_transform_is_vectorized_affine_without_mutation():
+    from wardrobe185_lower import world_points
+    p=np.array([[1.,2.,3.],[-1.,0.,4.]]);before=p.copy();m=np.diag([2.,3.,4.,1.]);m[:3,3]=[5.,6.,7.]
+    np.testing.assert_allclose(world_points(p,m),[[7.,12.,19.],[3.,6.,23.]])
+    np.testing.assert_array_equal(p,before)
+    with pytest.raises(ValueError):world_points([[np.nan,0,0]],np.eye(4))

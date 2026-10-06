@@ -144,6 +144,7 @@ OPERATIONS += ('exitaudit01',)
 OPERATIONS += ('seal01',)
 OPERATIONS += ('verify01',)
 OPERATIONS += ('lowerinspect01',)
+OPERATIONS += ('lowercapture01',)
 HEAD = base.BASE / 'wardrobe180-xpbdhead08/trajectory.npz'
 HEAD_SHA = '55ce2f99edfbb45a7cf8a5898be31caa1f20bd7da3bb2ae2be9c43e49d7095e8'
 
@@ -155,7 +156,7 @@ def validate(job):
     # These handlers bind their own integrated source/current caches. Do not
     # retain an obsolete experimental head solve as an accidental dependency
     # of merely viewing, checking or packaging the current character.
-    if job['operation'] not in ('shotlayout01','shotmotion01','exitaudit01','seal01','verify01','lowerinspect01'):
+    if job['operation'] not in ('shotlayout01','shotmotion01','exitaudit01','seal01','verify01','lowerinspect01','lowercapture01'):
         inputs.append((HEAD,HEAD_SHA))
     for path, sha in inputs:
         if path.is_symlink() or base.digest(path) != sha:
@@ -519,6 +520,9 @@ def main():
     elif job['operation']=='lowerinspect01':
         from wardrobe185_lower import inspect as lower_inspect
         lower_inspect(out)
+    elif job['operation']=='lowercapture01':
+        from wardrobe185_lower import capture as lower_capture
+        lower_capture(out)
     elif job['operation']=='seal01':
         from wardrobe185_delivery import seal
         seal(out)
