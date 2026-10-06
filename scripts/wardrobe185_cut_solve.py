@@ -6,7 +6,7 @@ import numpy as np
 
 def run(out, motion=False):
     version=25 if motion else int(out.name.removeprefix('wardrobe185-cut'))
-    gallop=out.name.endswith(('gallopcloth01','gallopoff01'))
+    gallop=out.name.endswith(('gallopcloth01','gallopoff01','gallopcloth02'))
     articulated=gallop or out.name.endswith(('holdcheck01','motion03','motionoff03'))
     import bpy
     from mathutils import Vector
@@ -90,8 +90,16 @@ def run(out, motion=False):
         bpy.ops.object.effector_add(type='WIND',location=(4*scale,-3*scale,0))
         wind=bpy.context.object;wind.name='MF185_diagnostic_wind';wind.rotation_euler=(math.radians(72),0,math.radians(-25))
         gain=0. if out.name.endswith(('motionoff01','motionoff03','gallopoff01')) else 1.
+        relative_airflow=out.name.endswith('gallopcloth02')
+        if relative_airflow:
+            from wardrobe185_gallop import apparent_airflow
+            wind.rotation_euler=Vector(apparent_airflow(217)[0]).to_track_quat('Z','Y').to_euler()
         for frame in list(range(1,361,4))+[360]:
-            wind.field.strength=schedule(frame)['wind']*gain;wind.keyframe_insert(data_path='field.strength',frame=frame)
+            wind.field.strength=(apparent_airflow(frame)[1] if relative_airflow else schedule(frame)['wind'])*gain
+            wind.keyframe_insert(data_path='field.strength',frame=frame)
+        (out/'wind-design.json').write_text(json.dumps({'direction_world':list(wind.rotation_euler.to_matrix()@Vector((0,0,1))),
+            'profile':'Opposes -Y horse travel; ramps during lean, remains steady during gait' if relative_airflow else 'Inherited generic test gust',
+            'gain':gain,'force_is_velocity_calibration':False},indent=2)+'\n')
         scene.frame_set(1)
     else:
         mesh=bpy.data.meshes.new('Contact');mesh.from_pydata((cp*scale).tolist(),[],cf.tolist());mesh.update()
@@ -258,6 +266,13 @@ def run(out, motion=False):
     mod.settings.tension_stiffness=200;mod.settings.compression_stiffness=200;mod.settings.shear_stiffness=100
     end=360 if motion else 168 if version>=23 else 96
     mod.settings.quality=24;mod.point_cache.frame_end=end
+    (out/'effective-physics.json').write_text(json.dumps({
+        'vertex_count':len(p),'mass_property_description':mod.settings.bl_rna.properties['mass'].description,
+        'mass_hard_min':mod.settings.bl_rna.properties['mass'].hard_min,
+        'mass':mod.settings.mass,'mass_times_vertex_count':mod.settings.mass*len(p),
+        'bending_stiffness':mod.settings.bending_stiffness,'air_damping':mod.settings.air_damping,
+        'quality':mod.settings.quality,'scene_fps':scene.render.fps,
+        'note':'Record native parameters; no physically calibrated textile claim'},indent=2)+'\n')
     if version==24:
         mod.collision_settings.collision_quality=8
         mod.collision_settings.self_distance_min=.003

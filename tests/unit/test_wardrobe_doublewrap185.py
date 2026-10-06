@@ -34,6 +34,36 @@ def test_whole_motion_reach_has_reserve_without_per_frame_clipping():
     assert np.linalg.norm(direction*gain+offsets,axis=1).max()<=4.1-.18+1e-12
     with pytest.raises(ValueError):comfortable_reach(direction,[[0,-8,0]],4.1)
 
+
+def test_gallop_action_transfer_refuses_rest_or_hierarchy_drift():
+    from types import SimpleNamespace as NS
+    from wardrobe185_gallop import rest_parity
+    class Bones(dict):
+        def __iter__(self):return iter(self.values())
+    def rig():
+        root=NS(name='root',length=1.,matrix_local=np.eye(4),parent=None)
+        tip=NS(name='tip',length=.5,matrix_local=np.eye(4),parent=root)
+        return NS(data=NS(bones=Bones(root=root,tip=tip)))
+    a,b=rig(),rig();assert rest_parity(a,b)==0
+    b.data.bones['tip'].length+=.01
+    with pytest.raises(ValueError):rest_parity(a,b)
+    b=rig();b.data.bones['tip'].matrix_local[0,3]=.01
+    with pytest.raises(ValueError):rest_parity(a,b)
+    b=rig();b.data.bones['tip'].parent=None
+    with pytest.raises(ValueError):rest_parity(a,b)
+    b=rig();del b.data.bones['tip']
+    with pytest.raises(ValueError):rest_parity(a,b)
+
+
+def test_racing_airflow_opposes_travel_and_is_steady_during_gallop():
+    from wardrobe185_gallop import apparent_airflow
+    direction,strength=apparent_airflow(217)
+    assert np.linalg.norm(direction)==pytest.approx(1.)
+    assert direction@np.array([0,-1,0])<-.98
+    assert apparent_airflow(169)[1]==0
+    assert 0<apparent_airflow(193)[1]<strength
+    assert strength==apparent_airflow(360)[1]==4.
+
 @pytest.mark.parametrize('revised',[False,True,3])
 def test_section_continuity_and_course_topology(revised):
     for layer in (0,1):
@@ -127,7 +157,7 @@ def test_dispatch_has_an_explicit_handler_for_every_admitted_operation(operation
         'wardrobe185_horse':('probe','gait_cache'),
         'wardrobe185_riding':('preview',),
         'wardrobe185_grip':('audit',),
-        'wardrobe185_gallop':('prep','screen'),
+        'wardrobe185_gallop':('prep','screen','rescreen','contact_audit'),
     }.items():
         fake=types.ModuleType(name)
         for method in methods:setattr(fake,method,record)
