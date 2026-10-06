@@ -110,6 +110,12 @@ OPERATIONS += ('gallopscreen01',)
 OPERATIONS += ('gallopcloth02',)
 OPERATIONS += ('gallopscreen02','gallopscreen03')
 OPERATIONS += ('gallopcontact01',)
+OPERATIONS += ('gallopcontact02',)
+OPERATIONS += ('gallopcontact03',)
+OPERATIONS += ('gallopcontact04',)
+OPERATIONS += ('gallopcontact05',)
+OPERATIONS += ('gallopcontact06',)
+OPERATIONS += ('gallopfidelity01',)
 HEAD = base.BASE / 'wardrobe180-xpbdhead08/trajectory.npz'
 HEAD_SHA = '55ce2f99edfbb45a7cf8a5898be31caa1f20bd7da3bb2ae2be9c43e49d7095e8'
 
@@ -446,6 +452,12 @@ def main():
     elif job['operation'] in ('riding01','riding02','riding03','riding04','riding05','riding06'):
         from wardrobe185_riding import preview
         preview(out)
+    elif job['operation']=='gallopfidelity01':
+        from wardrobe185_contact import fidelity
+        fidelity(out)
+    elif job['operation'] in ('gallopcontact02','gallopcontact03','gallopcontact04','gallopcontact05','gallopcontact06'):
+        from wardrobe185_contact import capture
+        capture(out)
     elif job['operation']=='gallopcontact01':
         from wardrobe185_gallop import contact_audit
         contact_audit(out)

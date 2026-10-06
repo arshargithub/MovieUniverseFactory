@@ -64,6 +64,18 @@ def test_racing_airflow_opposes_travel_and_is_steady_during_gallop():
     assert 0<apparent_airflow(193)[1]<strength
     assert strength==apparent_airflow(360)[1]==4.
 
+
+def test_surface_contact_binding_preserves_rigid_motion_and_offset():
+    from wardrobe185_contact import deform
+    p=np.array([[0.,0,0],[1,0,0],[0,1,0]])
+    ids=np.array([[0,1,2]]);bary=np.array([[.2,.3,.5]]);offset=np.array([[.1,-.1,.2]])
+    q=deform(p,ids,bary,offset)
+    np.testing.assert_allclose(q,[[.4,.4,.2]])
+    rotation=np.array([[0.,0,1],[1,0,0],[0,1,0]])
+    shift=np.array([.4,-.3,2.])
+    np.testing.assert_allclose(deform(p@rotation.T+shift,ids,bary,offset),q@rotation.T+shift)
+    with pytest.raises(ValueError):deform(np.zeros_like(p),ids,bary,offset)
+
 @pytest.mark.parametrize('revised',[False,True,3])
 def test_section_continuity_and_course_topology(revised):
     for layer in (0,1):
@@ -158,6 +170,7 @@ def test_dispatch_has_an_explicit_handler_for_every_admitted_operation(operation
         'wardrobe185_riding':('preview',),
         'wardrobe185_grip':('audit',),
         'wardrobe185_gallop':('prep','screen','rescreen','contact_audit'),
+        'wardrobe185_contact':('capture','fidelity'),
     }.items():
         fake=types.ModuleType(name)
         for method in methods:setattr(fake,method,record)
