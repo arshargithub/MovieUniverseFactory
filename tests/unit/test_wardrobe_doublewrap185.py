@@ -292,6 +292,7 @@ def test_dispatch_has_an_explicit_handler_for_every_admitted_operation(operation
         'wardrobe185_shot':('layout','motion'),
         'wardrobe185_exit_audit':('run',),
         'wardrobe185_lower':('inspect','capture'),
+        'wardrobe185_lower_drape':('dress',),
         'wardrobe185_delivery':('seal','verify'),
         'wardrobe185_harness_contact':('run',),
         'wardrobe185_motion':('prep','simulate','screen'),
@@ -389,3 +390,11 @@ def test_lower_pattern_is_connected_with_real_vents_and_only_waist_support():
     assert all(p[i,2]>-5.5 for i in pins)
     assert np.ptp(p[:,2])*.12292759120464325==pytest.approx(.2581479415297508)
     assert set(lower_region_masks(p))=={'pelvis','thighL','thighR'}
+
+
+def test_lower_hull_support_reduction_preserves_dense_enclosure():
+    from wardrobe185_lower_prepare import build_hull,support_candidates
+    from wardrobe185_convex import convex_outside
+    p=np.random.default_rng(185).normal(size=(9000,3))
+    small=support_candidates(p);assert len(small)<=102
+    q,f=build_hull(p);assert not convex_outside(p,q,f).any()

@@ -19,7 +19,7 @@ def pattern():
                 key=('side',panel if i==0 else 1-panel,j) if i in (0,around) and j<=4 else (panel,i,j)
                 if key not in lookup:
                     # A narrow real opening avoids coincident unsewn edges.
-                    theta+=(.018*max(0.,(t-.2)/.8))*(1 if i==0 else -1 if i==around else 0)
+                    theta+=((.012+.020*(t-.2)/.8) if t>.2 else 0.)*(1 if i==0 else -1 if i==around else 0)
                     rx=1.42+.57*t;ry=1.14+.25*t;cy=.085+.025*t
                     lookup[key]=len(points);points.append((rx*math.sin(theta),cy+ry*math.cos(theta),-5.35-2.10*t))
                     if j<=1:pins[lookup[key]]=1. if j==0 else .8
