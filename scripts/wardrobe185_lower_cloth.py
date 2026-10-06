@@ -70,7 +70,8 @@ def solve(out):
     layout=BASE/'wardrobe185-lowerdress07/initial-layout.npz'
     contacts=BASE/'wardrobe185-lowersurface02/surfaces.npz'
     source=BASE/'wardrobe185-lowercapture02/moving-source.npz'
-    windoff=out.name.endswith('lowerwindoff06')
+    matched_control=out.name.endswith('lowerwindoff07')
+    windoff=matched_control or out.name.endswith('lowerwindoff06')
     complete=windoff or out.name.endswith('lowercloth05')
     convergence=complete or out.name.endswith('lowercloth04')
     belt_bound=convergence or out.name.endswith('lowercloth03')
@@ -121,16 +122,26 @@ def solve(out):
             # Numerical refinement only: unchanged cut, contacts, material,
             # wind and supports distinguish resolution from design changes.
             mod.settings.quality=48;mod.collision_settings.collision_quality=8
-        if label=='mounted' and not windoff:
+        if label=='mounted' and (not windoff or matched_control):
             bpy.ops.object.effector_add(type='WIND');wind=bpy.context.object
             wind.rotation_euler=Vector(apparent_airflow(217)[0]).to_track_quat('Z','Y').to_euler()
             for i,source_frame in enumerate(frames):
-                wind.field.strength=apparent_airflow(int(source_frame))[1];wind.keyframe_insert(data_path='field.strength',frame=i+1)
+                wind.field.strength=0. if windoff else apparent_airflow(int(source_frame))[1]
+                wind.keyframe_insert(data_path='field.strength',frame=i+1)
         trajectory=[]
         for frame in range(1,len(frames)+1):
             scene.frame_set(frame);bpy.context.view_layer.update();q=sample(ob)/SCALE
             if q.shape!=p.shape or not np.isfinite(q).all():raise ValueError('Invalid lower free cloth output')
             trajectory.append(q)
+            if matched_control and frame==120:
+                reference=BASE/'wardrobe185-lowercloth05/mounted.npz'
+                if digest(reference)!='751e1421a6f9905a3c1f9bc9daf774e80b1e0f9e5f95701e6eda764060872c0b':raise ValueError('Control reference changed')
+                with np.load(reference,allow_pickle=False) as previous:
+                    error=float(np.max(abs(np.array(trajectory)-previous['frames'][:120])))
+                (out/'prewind-control.json').write_text(json.dumps({'maximum_native_difference':error,'same_zero_strength_effector':True})+'\n')
+                if error>2e-5:
+                    np.savez_compressed(out/'diverged-prewind.npz',frames=np.array(trajectory))
+                    raise ValueError('Wind control diverges before airflow; do not infer wind causality')
             if frame%24==0:print('185 lower cloth',label,frame,flush=True)
         trajectory=np.array(trajectory);outputs[label]=trajectory
         edges=np.unique(np.sort(np.concatenate([faces[:,[i,(i+1)%4]] for i in range(4)]),axis=1),axis=0)

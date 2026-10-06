@@ -285,7 +285,7 @@ def test_dispatch_has_an_explicit_handler_for_every_admitted_operation(operation
     for name,methods in {
         'wardrobe_doublewrap185_solve':('settle','volumecheck'),
         'wardrobe185_isolate':('run',),'wardrobe185_proxy':('run',),
-        'wardrobe185_lower_pants':('run',),
+        'wardrobe185_lower_pants':('run',),'wardrobe185_airflow_control':('run',),
         'wardrobe185_cut_solve':('run',),'wardrobe185_rest_unit':('run',),
         'wardrobe185_intersections':('run',),
         'wardrobe185_head_dress':('run','screen'),
