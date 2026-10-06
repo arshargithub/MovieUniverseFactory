@@ -54,6 +54,11 @@ def seal(out):
     review_path=BASE/'wardrobe185-operating/visual-review.json'
     review_gate(json.loads(review_path.read_text()),BASE)
     if digest(source)!=WORKING_SHA:raise ValueError('Selected working source changed')
+    camera_proof=BASE/'wardrobe185-shotmotion01/motion-render.json'
+    camera_record=json.loads(camera_proof.read_text())
+    if camera_record['source_sha256']!=WORKING_SHA or [p['frame'] for p in camera_record['poses']]!=list(range(217,361)):
+        raise ValueError('Incomplete matching camera proof')
+    (out/'camera-proof.json').write_bytes(camera_proof.read_bytes())
     # This certifies the selection/packaging source, not retrospectively every
     # exploratory simulation. Their frozen inputs and snapshots stay explicit.
     commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
@@ -67,6 +72,7 @@ def seal(out):
         if hashlib.sha256(blob).hexdigest()!=digest(path):raise ValueError('Commit packaging handlers before selection')
         rows.append({'path':relative,'sha256':digest(path)});(out/path.name).write_bytes(blob)
     binding={'commit':commit,'files':rows,'working_source_sha256':WORKING_SHA,'manual_review_sha256':digest(review_path),
+        'camera_proof_sha256':digest(camera_proof),
         'scope':'Selection and portable packaging source; upstream discovery inputs retained, not retrospective source certification'}
     (out/'source-binding.json').write_text(json.dumps(binding,indent=2)+'\n')
     bpy.ops.wm.open_mainfile(filepath=str(source),load_ui=False,use_scripts=False)
@@ -142,6 +148,17 @@ def verify(out):
         if set(actual)!=set(ref.files):raise ValueError('Surface sample inventory changed')
         errors={key:float(np.max(abs(actual[key]-ref[key]))) if actual[key].shape==ref[key].shape else None for key in ref.files}
     if any(v is None or not np.isfinite(v) or v>2e-5 for v in errors.values()):raise ValueError('Fresh-open moving surfaces differ')
+    binding=json.loads((source/'source-binding.json').read_text())
+    if digest(source/'camera-proof.json')!=binding['camera_proof_sha256']:raise ValueError('Camera proof changed')
+    camera_errors=[]
+    for row in json.loads((source/'camera-proof.json').read_text())['poses']:
+        if row['frame'] not in (217,253,289,325,360):continue
+        scene.frame_set(row['frame']);bpy.context.view_layer.update();camera=scene.camera
+        direction=(Vector(row['target'])-camera.location).normalized()
+        forward=camera.matrix_world.to_quaternion()@Vector((0,0,-1))
+        error=max((camera.location-Vector(row['position'])).length,(forward-direction).length,abs(camera.data.lens-row['lens_mm']))
+        if not np.isfinite(error) or error>2e-5:raise ValueError('Reopened camera differs from rendered proof')
+        camera_errors.append({'frame':row['frame'],'max_component_error':error})
     # Representative reuse: opposite-side camera on existing action/cache.
     scene.frame_set(325);bpy.context.view_layer.update();before=evaluated_surfaces(['MF185_moving_shawl'])['MF185_moving_shawl']
     alternate=scene.camera.copy();alternate.data=scene.camera.data.copy();alternate.animation_data_clear()
@@ -164,6 +181,7 @@ def verify(out):
     if unpacked:raise ValueError('Neutral image dependencies are not packed')
     (out/'result.json').write_text(json.dumps({'shot_sha256':record['shot_sha256'],'neutral_sha256':record['neutral_sha256'],
         'moving_surface_errors':errors,'neutral_surface_errors':neutral_errors,'camera_reuse_geometry_error':reuse_error,
+        'camera_proof_errors':camera_errors,
         'packed_images':True,'local_cache_paths':True,'protected_exact':True,'visual_gate':'NOT_RUN',
         'reuse_scope':'Opposite-side camera without rebuilding actor or resimulating cloth; new performances still require resimulation'},indent=2)+'\n')
 
