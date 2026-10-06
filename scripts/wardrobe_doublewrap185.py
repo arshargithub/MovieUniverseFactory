@@ -149,11 +149,12 @@ OPERATIONS += ('lowercapture02',)
 OPERATIONS += ('lowerdress01','lowerdress02','lowerdress03','lowerdress04')
 OPERATIONS += ('lowersurface01','lowersurface02','lowersurface03','lowersurface04','lowersurface05','lowersurface06')
 OPERATIONS += ('lowerdress05','lowerdress06','lowerdress07','lowerdress08','lowerdress09','lowerdress10','lowerdress11','lowerdress12','lowerdress13','lowerdress14')
-OPERATIONS += ('lowerairtest01','lowerunion01','lowerunion02','lowerunion03','lowerunionaudit01',)
-OPERATIONS += ('lowercloth01','lowercloth02','lowercloth03','lowercloth04','lowercloth05','lowerwindoff06','lowerwindoff07','lowerouter08')
-OPERATIONS += ('lowerreview01','lowerreview02','lowerreview03','lowerreview04','lowerreview05')
+OPERATIONS += ('lowerairtest01','lowerunion01','lowerunion02','lowerunion03','lowerunionaudit01','lowergap01',)
+OPERATIONS += ('lowercloth01','lowercloth02','lowercloth03','lowercloth04','lowercloth05','lowerwindoff06','lowerwindoff07','lowerouter08','lowerwindoff09')
+OPERATIONS += ('lowerreview01','lowerreview02','lowerreview03','lowerreview04','lowerreview05','lowerreview06')
 OPERATIONS += ('lowerbelt01',)
 OPERATIONS += ('lowerpants01','lowerpants02')
+OPERATIONS += ('lowergap02','mountfit01','mountfit02')
 HEAD = base.BASE / 'wardrobe180-xpbdhead08/trajectory.npz'
 HEAD_SHA = '55ce2f99edfbb45a7cf8a5898be31caa1f20bd7da3bb2ae2be9c43e49d7095e8'
 
@@ -162,10 +163,16 @@ def validate(job):
     if not isinstance(job, dict) or set(job) != {'operation'} or job['operation'] not in OPERATIONS:
         raise ValueError('Fixed structured operation required')
     inputs=[(base.SOURCE,base.SOURCE_SHA)]
+    if job['operation'] in ('lowergap02','mountfit01','mountfit02'):
+        out=base.BASE/('wardrobe185-'+job['operation'])
+        for path,sha in inputs:
+            if path.is_symlink() or base.digest(path)!=sha:raise ValueError('Protected input changed')
+        if out.exists() or out.is_symlink():raise ValueError('Preserve previous evidence')
+        return out
     # These handlers bind their own integrated source/current caches. Do not
     # retain an obsolete experimental head solve as an accidental dependency
     # of merely viewing, checking or packaging the current character.
-    if job['operation'] not in ('shotlayout01','shotmotion01','exitaudit01','seal01','verify01','lowerinspect01','lowercapture01','lowercapture02','lowerdress01','lowerdress02','lowerdress03','lowerdress04','lowerdress05','lowerdress06','lowerdress07','lowerdress08','lowerdress09','lowerdress10','lowerdress11','lowerdress12','lowerdress13','lowerdress14','lowersurface01','lowersurface02','lowersurface03','lowersurface04','lowersurface05','lowersurface06','lowercloth01','lowercloth02','lowercloth03','lowercloth04','lowercloth05','lowerwindoff06','lowerwindoff07','lowerouter08','lowerairtest01','lowerunion01','lowerunion02','lowerunion03','lowerunionaudit01','lowerreview01','lowerreview02','lowerreview03','lowerreview04','lowerreview05','lowerbelt01','lowerpants01','lowerpants02'):
+    if job['operation'] not in ('shotlayout01','shotmotion01','exitaudit01','seal01','verify01','lowerinspect01','lowercapture01','lowercapture02','lowerdress01','lowerdress02','lowerdress03','lowerdress04','lowerdress05','lowerdress06','lowerdress07','lowerdress08','lowerdress09','lowerdress10','lowerdress11','lowerdress12','lowerdress13','lowerdress14','lowersurface01','lowersurface02','lowersurface03','lowersurface04','lowersurface05','lowersurface06','lowercloth01','lowercloth02','lowercloth03','lowercloth04','lowercloth05','lowerwindoff06','lowerwindoff07','lowerouter08','lowerwindoff09','lowerairtest01','lowerunion01','lowerunion02','lowerunion03','lowerunionaudit01','lowergap01','lowerreview01','lowerreview02','lowerreview03','lowerreview04','lowerreview05','lowerreview06','lowerbelt01','lowerpants01','lowerpants02'):
         inputs.append((HEAD,HEAD_SHA))
     for path, sha in inputs:
         if path.is_symlink() or base.digest(path) != sha:
@@ -535,6 +542,15 @@ def main():
     elif job['operation']=='lowerbelt01':
         from wardrobe185_lower_belt import capture as belt_capture
         belt_capture(out)
+    elif job['operation']=='lowergap01':
+        from wardrobe185_lower_union import gap_audit
+        gap_audit(out)
+    elif job['operation']=='lowergap02':
+        from wardrobe185_lower_gap import run
+        run(out)
+    elif job['operation'] in ('mountfit01','mountfit02'):
+        from wardrobe185_mount_fit import run
+        run(out)
     elif job['operation']=='lowerunionaudit01':
         from wardrobe185_lower_union import audit as exterior_audit
         exterior_audit(out)
@@ -547,10 +563,10 @@ def main():
     elif job['operation'] in ('lowerpants01','lowerpants02'):
         from wardrobe185_lower_pants import run as trouser_rise
         trouser_rise(out)
-    elif job['operation'] in ('lowerreview01','lowerreview02','lowerreview03','lowerreview04','lowerreview05'):
+    elif job['operation'] in ('lowerreview01','lowerreview02','lowerreview03','lowerreview04','lowerreview05','lowerreview06'):
         from wardrobe185_lower_review import run as lower_review
         lower_review(out)
-    elif job['operation'] in ('lowercloth01','lowercloth02','lowercloth03','lowercloth04','lowercloth05','lowerwindoff06','lowerwindoff07','lowerouter08'):
+    elif job['operation'] in ('lowercloth01','lowercloth02','lowercloth03','lowercloth04','lowercloth05','lowerwindoff06','lowerwindoff07','lowerouter08','lowerwindoff09'):
         from wardrobe185_lower_cloth import solve as lower_cloth
         lower_cloth(out)
     elif job['operation'] in ('lowersurface01','lowersurface02','lowersurface03','lowersurface04','lowersurface05','lowersurface06'):

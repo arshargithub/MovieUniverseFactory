@@ -70,8 +70,9 @@ def solve(out):
     layout=BASE/'wardrobe185-lowerdress07/initial-layout.npz'
     contacts=BASE/'wardrobe185-lowersurface02/surfaces.npz'
     source=BASE/'wardrobe185-lowercapture02/moving-source.npz'
-    outer_only=out.name.endswith('lowerouter08')
-    matched_control=out.name.endswith('lowerwindoff07')
+    outer_control=out.name.endswith('lowerwindoff09')
+    outer_only=outer_control or out.name.endswith('lowerouter08')
+    matched_control=outer_control or out.name.endswith('lowerwindoff07')
     windoff=matched_control or out.name.endswith('lowerwindoff06')
     complete=outer_only or windoff or out.name.endswith('lowercloth05')
     convergence=complete or out.name.endswith('lowercloth04')
@@ -138,8 +139,9 @@ def solve(out):
             if q.shape!=p.shape or not np.isfinite(q).all():raise ValueError('Invalid lower free cloth output')
             trajectory.append(q)
             if matched_control and frame==120:
-                reference=BASE/'wardrobe185-lowercloth05/mounted.npz'
-                if digest(reference)!='751e1421a6f9905a3c1f9bc9daf774e80b1e0f9e5f95701e6eda764060872c0b':raise ValueError('Control reference changed')
+                reference=BASE/('wardrobe185-lowerouter08/mounted.npz' if outer_control else 'wardrobe185-lowercloth05/mounted.npz')
+                expected='cdf0becef0b57694bba353e48e0fe71e5f7625e756a4f19386ce30b74823fc17' if outer_control else '751e1421a6f9905a3c1f9bc9daf774e80b1e0f9e5f95701e6eda764060872c0b'
+                if digest(reference)!=expected:raise ValueError('Control reference changed')
                 with np.load(reference,allow_pickle=False) as previous:
                     error=float(np.max(abs(np.array(trajectory)-previous['frames'][:120])))
                 (out/'prewind-control.json').write_text(json.dumps({'maximum_native_difference':error,'same_zero_strength_effector':True})+'\n')

@@ -138,3 +138,39 @@ def audit(out):
         records[frame]=row
     (out/'result.json').write_text(json.dumps({'frames':records,'visual_gate':'NOT_RUN',
         'scope':'Collision exterior diagnostic; 2mm is a coverage investigation threshold, not a visual acceptance claim'},indent=2)+'\n')
+
+
+def gap_audit(out):
+    from mathutils import Vector
+    from mathutils.bvhtree import BVHTree
+    from wardrobe_motion178 import BASE,digest
+    path=BASE/'wardrobe185-lowersurface06/surfaces.npz'
+    cloth=BASE/'wardrobe185-lowerouter08/mounted.npz'
+    for p,h in ((path,'3bf762fe9244188ef563a8ce1f235fb83c07614e7f538c8bc6209ff076e0499e'),
+                (cloth,'cdf0becef0b57694bba353e48e0fe71e5f7625e756a4f19386ce30b74823fc17')):
+        if digest(p)!=h:raise ValueError('Unbound contact-gap input')
+    (out/Path(__file__).name).write_bytes(Path(__file__).read_bytes())
+    with np.load(path,allow_pickle=False) as d:data={k:d[k] for k in d.files}
+    with np.load(cloth,allow_pickle=False) as d:points=d['frames'][119:]
+    records={}
+    for frame in (169,193,216,217,223,265,326,360):
+        i=list(data['frame_ids']).index(frame);trees={};row={'overlaps':{},'opposed_close_contacts':{}}
+        for name in ('body','upper','pants','horse','saddle','pad'):
+            trees[name]=BVHTree.FromPolygons(data[name+'_frames'][i].tolist(),data[name+'_faces'].tolist(),all_triangles=True)
+        for actor in ('body','upper','pants'):
+            for mount in ('horse','saddle','pad'):
+                pairs=trees[actor].overlap(trees[mount]);f=data[actor+'_faces'];p=data[actor+'_frames'][i]
+                central=[a for a,b in pairs if abs(p[f[a],0].mean())<.8 and -7.<p[f[a],2].mean()<-4.5]
+                r={'all_pairs':len(pairs),'central_waist_pairs':len(central)}
+                if central:
+                    patch=p[np.unique(f[central])];r['central_patch_bounds']=[patch.min(0).tolist(),patch.max(0).tolist()]
+                row['overlaps'][actor+'__'+mount]=r
+            near=[]
+            for index,p in enumerate(points[frame-169]):
+                a,an,_,ad=trees[actor].find_nearest(Vector(p));b,bn,_,bd=trees['horse'].find_nearest(Vector(p))
+                if ad<.0035/.12292759120464325 and bd<.0035/.12292759120464325 and an.dot(bn)<-.5:
+                    near.append({'vertex':index,'position':p.tolist(),'actor_mm':ad*122.92759120464325,'horse_mm':bd*122.92759120464325})
+            row['opposed_close_contacts'][actor]=near
+        records[frame]=row
+    (out/'result.json').write_text(json.dumps({'frames':records,'visual_gate':'NOT_RUN',
+        'scope':'Coarse actor/horse contact compatibility; confirm any structural inference on exact rendered geometry'},indent=2)+'\n')

@@ -13,6 +13,7 @@ REFINED_MOUNTED_SHA='637b6b08fb95092ad321233a5efd89cb58d1b8993c446cb851b46111790
 REFINED_STANDING_SHA='7f8bb11137da0781a40b777e6f0baa8e2c59d6235130008b8141fd66ad3aca82'
 COMPLETE_MOUNTED_SHA='751e1421a6f9905a3c1f9bc9daf774e80b1e0f9e5f95701e6eda764060872c0b'
 COMPLETE_STANDING_SHA='160e4ca1c9eb2b54d388badd3ae5ba6aa9754b32b4868463d3843b696e85c566'
+OUTER_MOUNTED_SHA='cdf0becef0b57694bba353e48e0fe71e5f7625e756a4f19386ce30b74823fc17'
 
 
 def run(out):
@@ -26,7 +27,8 @@ def run(out):
     from mathutils.bvhtree import BVHTree
     source=BASE/'wardrobe185-finishreview01/integration-working.blend';working_sha=WORKING_SHA
     mounted=BASE/'wardrobe185-lowercloth01/mounted.npz';standing=mounted.parent/'standing.npz'
-    complete=out.name.endswith('lowerreview05')
+    outer_only=out.name.endswith('lowerreview06')
+    complete=outer_only or out.name.endswith('lowerreview05')
     refined=complete or out.name.endswith('lowerreview04')
     belt=refined or out.name.endswith('lowerreview03')
     waist=belt or out.name.endswith('lowerreview02');mounted_sha=MOUNTED_SHA;standing_sha=STANDING_SHA
@@ -44,6 +46,8 @@ def run(out):
         working_sha='b9cf3b8c3f07d9ad650279903c5f81d54e85c6d553f801c0fb353cb2bf298f0b'
         mounted=BASE/'wardrobe185-lowercloth05/mounted.npz';standing=mounted.parent/'standing.npz'
         mounted_sha=COMPLETE_MOUNTED_SHA;standing_sha=COMPLETE_STANDING_SHA
+    if outer_only:
+        mounted=BASE/'wardrobe185-lowerouter08/mounted.npz';mounted_sha=OUTER_MOUNTED_SHA
     for p,h in ((source,working_sha),(mounted,mounted_sha),(standing,standing_sha)):
         if h is None or digest(p)!=h:raise ValueError('Unbound lower review input')
     (out/Path(__file__).name).write_bytes(Path(__file__).read_bytes())
@@ -94,7 +98,7 @@ def run(out):
         self_pairs=[(a,b) for a,b in tree.overlap(tree) if a<b and not set(f[a])&set(f[b])]
         record['nonadjacent_self_pairs']=len(self_pairs);contact_report[frame]=record
         sub.show_viewport=True;solid.show_viewport=True
-        if frame in ((169,217,peak_frame) if complete else (169,193,217,360,peak_frame)):
+        if frame in ((169,217,peak_frame) if complete and not outer_only else (169,193,217,360,peak_frame)):
             for angle,view in ((90,'left'),(180,'rear'),(270,'right')):
                 fit_render(out,'lower-'+view+'-'+str(frame),angle,(0,-.2,-6.5),7.,(640,640))
     if cache_error>2e-5:raise ValueError('Lower cache does not reproduce simulated samples')

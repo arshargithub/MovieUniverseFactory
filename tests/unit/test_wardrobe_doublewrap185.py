@@ -285,7 +285,9 @@ def test_dispatch_has_an_explicit_handler_for_every_admitted_operation(operation
     for name,methods in {
         'wardrobe_doublewrap185_solve':('settle','volumecheck'),
         'wardrobe185_isolate':('run',),'wardrobe185_proxy':('run',),
-        'wardrobe185_lower_pants':('run',),'wardrobe185_airflow_control':('run',),'wardrobe185_lower_union':('run','audit'),
+        'wardrobe185_lower_pants':('run',),'wardrobe185_airflow_control':('run',),'wardrobe185_lower_union':('run','audit','gap_audit'),
+        'wardrobe185_lower_gap':('run',),
+        'wardrobe185_mount_fit':('run',),
         'wardrobe185_cut_solve':('run',),'wardrobe185_rest_unit':('run',),
         'wardrobe185_intersections':('run',),
         'wardrobe185_head_dress':('run','screen'),
@@ -512,3 +514,10 @@ def test_lower_regional_rigid_fit_preserves_rotation_translation():
     np.testing.assert_allclose(m[:3,:3],r,atol=1e-12)
     np.testing.assert_allclose(m[:3,3],[1,2,3],atol=1e-12)
     assert not masks(np.array([[0.,0,-7.]]))['pelvis'][0]
+
+
+def test_exact_gap_crop_keeps_crossing_triangles_not_only_inside_vertices():
+    from wardrobe185_lower_gap import local_faces
+    p=np.array([[-2.,0,0],[2.,0,0],[0,2.,0],[3,3,3],[4,3,3],[3,4,3]])
+    f=np.array([[0,1,2],[3,4,5]])
+    np.testing.assert_array_equal(local_faces(p,f,(-.1,-.1,-.1),(.1,.1,.1)),f[:1])
