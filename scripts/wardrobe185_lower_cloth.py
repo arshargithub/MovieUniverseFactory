@@ -8,6 +8,7 @@ from pathlib import Path
 import numpy as np
 
 LAYOUT_SHA='2ed3c210125f020c6e361b0d573136675f5e49decb82fe5b165e31306aae7f4e'
+WAIST_LAYOUT_SHA='6409b42c2d04cd37d22035146ef2c5566da9d92a011f4f3e62129fccd07d7f80'
 
 
 def sample(ob):
@@ -61,13 +62,17 @@ def solve(out):
     import bpy
     from mathutils import Vector
     from wardrobe_motion178 import BASE,digest
-    from wardrobe185_lower_drape import SCALE,SURFACE_SHA,SOURCE_SHA
+    from wardrobe185_lower_drape import SCALE,SURFACE_SHA,SOURCE_SHA,WAIST_SURFACE_SHA
     from wardrobe_shawl180_cache import cache
     from wardrobe185_gallop import apparent_airflow
     layout=BASE/'wardrobe185-lowerdress07/initial-layout.npz'
     contacts=BASE/'wardrobe185-lowersurface02/surfaces.npz'
     source=BASE/'wardrobe185-lowercapture02/moving-source.npz'
-    for p,h in ((layout,LAYOUT_SHA),(contacts,SURFACE_SHA),(source,SOURCE_SHA)):
+    waist=out.name.endswith('lowercloth02');layout_sha=LAYOUT_SHA;contact_sha=SURFACE_SHA
+    if waist:
+        layout=BASE/'wardrobe185-lowerdress09/initial-layout.npz';layout_sha=WAIST_LAYOUT_SHA
+        contacts=BASE/'wardrobe185-waistcontact01/contact.npz';contact_sha=WAIST_SURFACE_SHA
+    for p,h in ((layout,layout_sha),(contacts,contact_sha),(source,SOURCE_SHA)):
         if h is None or digest(p)!=h:raise ValueError('Unbound lower cloth input')
     if json.loads((layout.parent/'result.json').read_text())['admission']!='PASS':raise ValueError('Initial lower cloth not admitted')
     (out/Path(__file__).name).write_bytes(Path(__file__).read_bytes())
@@ -95,6 +100,7 @@ def solve(out):
         weld=ob.modifiers.new('Explicit rest evaluation','WELD');weld.merge_threshold=1e-7
         domain=bpy.data.collections.new('Actual lower contacts');scene.collection.children.link(domain)
         names=('pants',) if label=='standing' else ('pants','horse','saddle','pad')
+        if waist:names=names+('waist',)
         for name in names:
             samples=contact[name+'_frames'][contact_ids]*SCALE
             co=panel('MF185_contact_'+name,samples[0],contact[name+'_faces']);domain.objects.link(co)
@@ -122,8 +128,8 @@ def solve(out):
             'free_cloth':True,'mass_per_vertex_authored_not_calibrated':.3,'visual_gate':'NOT_RUN'}
         np.savez_compressed(out/(label+'.npz'),frames=trajectory,source_frame_ids=frames,faces=faces,rest=rest,pin_indices=pins)
         (out/'progress.json').write_text(json.dumps(record,indent=2)+'\n')
-    for p,h in ((layout,LAYOUT_SHA),(contacts,SURFACE_SHA),(source,SOURCE_SHA)):
+    for p,h in ((layout,layout_sha),(contacts,contact_sha),(source,SOURCE_SHA)):
         if digest(p)!=h:raise ValueError('Lower cloth changed an input')
-    (out/'result.json').write_text(json.dumps({'layout_sha256':LAYOUT_SHA,'contacts_sha256':SURFACE_SHA,
+    (out/'result.json').write_text(json.dumps({'layout_sha256':layout_sha,'contacts_sha256':contact_sha,
         'cases':record,'inputs_unchanged':True,'accepted_masters_not_opened':True,'visual_gate':'NOT_RUN',
         'scope':'Separate free standing/mounted lower cloth; not a mounting animation or final character pass'},indent=2)+'\n')

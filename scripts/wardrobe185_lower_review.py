@@ -5,6 +5,8 @@ import numpy as np
 
 MOUNTED_SHA='f792307a9a22a9ee6fb8039dacf11f2a826855c3bb2820e0a34e8abd6a8feaae'
 STANDING_SHA='5e38a63debc3f9e8b0a7466bbd157a1506c33820e93f24ade588439163b35533'
+WAIST_MOUNTED_SHA='0f3989c1e41482c48f4f20c94750a9860bb47dc2f349c0a33ac4f258fb902b19'
+WAIST_STANDING_SHA='5e5e9ed57f883d47f170359f106fabbc5664ec8c0bdd8ee62daf549a192ac4e9'
 
 
 def run(out):
@@ -18,7 +20,11 @@ def run(out):
     from mathutils.bvhtree import BVHTree
     source=BASE/'wardrobe185-finishreview01/integration-working.blend'
     mounted=BASE/'wardrobe185-lowercloth01/mounted.npz';standing=mounted.parent/'standing.npz'
-    for p,h in ((source,WORKING_SHA),(mounted,MOUNTED_SHA),(standing,STANDING_SHA)):
+    waist=out.name.endswith('lowerreview02');mounted_sha=MOUNTED_SHA;standing_sha=STANDING_SHA
+    if waist:
+        mounted=BASE/'wardrobe185-lowercloth02/mounted.npz';standing=mounted.parent/'standing.npz'
+        mounted_sha=WAIST_MOUNTED_SHA;standing_sha=WAIST_STANDING_SHA
+    for p,h in ((source,WORKING_SHA),(mounted,mounted_sha),(standing,standing_sha)):
         if h is None or digest(p)!=h:raise ValueError('Unbound lower review input')
     (out/Path(__file__).name).write_bytes(Path(__file__).read_bytes())
     with np.load(mounted,allow_pickle=False) as d:
@@ -39,17 +45,25 @@ def run(out):
     scene.camera.animation_data_clear();scene.camera.data.type='ORTHO';scene.cycles.device='CPU';scene.cycles.samples=8
     scene.render.use_persistent_data=True
     contact_report={};cache_error=0.
-    for frame in (169,193,217,223,265,326,360):
+    edges=np.unique(np.sort(np.concatenate([faces[:,[i,(i+1)%4]] for i in range(4)]),axis=1),axis=0)
+    ratio=np.linalg.norm(frames[:,edges[:,0]]-frames[:,edges[:,1]],axis=2)/np.linalg.norm(rest[edges[:,0]]-rest[edges[:,1]],axis=1)
+    peak_frame=int(np.unravel_index(ratio.argmax(),ratio.shape)[0])+169
+    for frame in sorted(set((169,193,217,223,265,326,360,peak_frame))):
         scene.frame_set(frame);bpy.context.view_layer.update();sub.show_viewport=False;solid.show_viewport=False
         p,f=fast_geometry(ob);cache_error=max(cache_error,float(np.max(abs(p-frames[frame-169]))))
         tree=BVHTree.FromPolygons(p.tolist(),f.tolist(),all_triangles=True);record={}
-        for name in ('MF_fit_trousers_173_visible','MF185_gait_horse','MF185_gait_saddle','MF185_gait_saddle.pad'):
-            q,cf=fast_geometry(bpy.data.objects[name]);ct=BVHTree.FromPolygons(q.tolist(),cf.tolist(),all_triangles=True)
+        names=('MF_fit_trousers_173_visible','MF185_gait_horse','MF185_gait_saddle','MF185_gait_saddle.pad')
+        if waist:names=names+('MF_studio_adult_body',)
+        for name in names:
+            q,cf=fast_geometry(bpy.data.objects[name])
+            if name=='MF_studio_adult_body':
+                tri=q[cf];mask=np.all(tri.max(1)>=p.min(0)-.05,axis=1)&np.all(tri.min(1)<=p.max(0)+.05,axis=1);cf=cf[mask]
+            ct=BVHTree.FromPolygons(q.tolist(),cf.tolist(),all_triangles=True)
             pairs=tree.overlap(ct);record[name]=len(pairs)
         self_pairs=[(a,b) for a,b in tree.overlap(tree) if a<b and not set(f[a])&set(f[b])]
         record['nonadjacent_self_pairs']=len(self_pairs);contact_report[frame]=record
         sub.show_viewport=True;solid.show_viewport=True
-        if frame in (169,193,217,360):
+        if frame in (169,193,217,360,peak_frame):
             for angle,view in ((90,'left'),(180,'rear'),(270,'right')):
                 fit_render(out,'lower-'+view+'-'+str(frame),angle,(0,-.2,-6.5),7.,(640,640))
     if cache_error>2e-5:raise ValueError('Lower cache does not reproduce simulated samples')
@@ -71,6 +85,7 @@ def run(out):
     for angle,view in ((0,'front'),(90,'left'),(180,'rear'),(270,'right')):
         fit_render(out,'neutral-lower-'+view,angle,(0,-.2,-6.5),7.,(640,640))
     check_protected()
-    (out/'result.json').write_text(json.dumps({'source_sha256':WORKING_SHA,'mounted_sha256':MOUNTED_SHA,'standing_sha256':STANDING_SHA,
+    (out/'result.json').write_text(json.dumps({'source_sha256':WORKING_SHA,'mounted_sha256':mounted_sha,'standing_sha256':standing_sha,
+        'performance_peak_edge_ratio':float(ratio.max()),'peak_frame':peak_frame,
         'native_sha256':native_sha,'cache_max_error':cache_error,'protected_exact':True,'visual_gate':'NOT_RUN',
         'scope':'Integrated free lower garment diagnostic; not selected or Director approved'},indent=2)+'\n')

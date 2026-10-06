@@ -428,3 +428,22 @@ def test_lower_solid_angle_interiors_are_independent_of_ray_edge_hits():
     reverse=np.einsum('ij,ij->i',np.cross(t[:,1]-t[:,0],t[:,2]-t[:,0]),h.equations[:,:3])<0
     f[reverse]=f[reverse,::-1]
     np.testing.assert_allclose(winding_numbers([[0,0,0],[2,0,0],[.999,0,0]],p,f),[1,0,1],atol=1e-9)
+
+
+def test_body_bound_cloth_support_tracks_rotating_surface_not_world_normal():
+    from wardrobe185_lower_drape import attachment_targets
+    p=np.array([[0.,0,0],[1.,0,0],[0.,1,0]])
+    rotation=np.array([[1.,0,0],[0.,0,-1],[0.,1,0]])
+    shift=np.array([2.,3,4]);sequence=np.array([p,p@rotation.T+shift])
+    q=attachment_targets(sequence,[[0,1,2]],[[.5,.2,.3]],.04)
+    np.testing.assert_allclose(q[0,0],[.2,.3,.04])
+    np.testing.assert_allclose(q[1],q[0]@rotation.T+shift)
+    q=attachment_targets(sequence,[[0,1,2]],[[.5,.2,.3]],.04,[[.02,.01,.10]])
+    np.testing.assert_allclose(q[0,0],[.22,.31,.10])
+    np.testing.assert_allclose(q[1],q[0]@rotation.T+shift)
+
+
+def test_clipped_body_contact_components_do_not_join_detached_limbs():
+    from wardrobe185_lower_waist import components
+    groups=components(np.array([[0,1,2],[2,1,3],[4,5,6]]),7)
+    assert {frozenset(g) for g in groups}=={frozenset((0,1,2,3)),frozenset((4,5,6))}

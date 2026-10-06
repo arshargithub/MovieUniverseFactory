@@ -6,6 +6,7 @@ import numpy as np
 SOURCE_SHA='20b06605833f46561db93ba3c25ef27e934b96abe39854958e8f1b101a284d0e'
 CONTACT_SHA='577b9e0ee50a0350424d64aecf25b4965637c2bf23d6b8e9e6b9f878a377e0b5'
 SURFACE_SHA='03c1143677e97891fecb66bc09a3ac9212db98c7fee63a557bc64b0b280124e8'
+WAIST_SURFACE_SHA='45a5bb64fac88d648b212e112518554601d231b8c6cbd94c77d974fddf86651f'
 SCALE=.12292759120464325
 
 
@@ -45,6 +46,55 @@ def standing_dressing(rest):
     return p
 
 
+def attachment_targets(points,indices,weights,clearance,local_offsets=None):
+    tri=np.asarray(points)[:,np.asarray(indices)];w=np.asarray(weights)
+    normal=np.cross(tri[:,:,1]-tri[:,:,0],tri[:,:,2]-tri[:,:,0]);norm=np.linalg.norm(normal,axis=2)
+    if norm.min()<1e-10:raise ValueError('Degenerate moving waist support face')
+    normal=normal/norm[:,:,None]
+    position=np.einsum('fnjk,nj->fnk',tri,w)
+    if local_offsets is None:return position+normal*clearance
+    tangent=tri[:,:,1]-tri[:,:,0];tangent/=np.linalg.norm(tangent,axis=2)[:,:,None]
+    across=np.cross(normal,tangent);offset=np.asarray(local_offsets)
+    return position+tangent*offset[None,:,0,None]+across*offset[None,:,1,None]+normal*offset[None,:,2,None]
+
+
+def supported_edge(rest,pins,contacts):
+    """Sew the small supported band to fixed actual-body correspondence.
+
+    Free cloth does not use this mapping. No framewise nearest-point clamp.
+    """
+    from mathutils import Vector
+    from mathutils.bvhtree import BVHTree
+    points=contacts['waist_frames'];faces=contacts['waist_faces'];indices=[];weights=[];offsets=[]
+    tree=BVHTree.FromPolygons(points[0].tolist(),faces.tolist(),all_triangles=True)
+    for i in pins:
+        hit,_,index,_=tree.find_nearest(Vector(rest[i]));tri=faces[index]
+        w=triangle_weights(hit,points[0,tri]);triangle=points[0,tri]
+        tangent=triangle[1]-triangle[0];tangent/=np.linalg.norm(tangent)
+        normal=np.cross(tangent,triangle[2]-triangle[0]);normal/=np.linalg.norm(normal)
+        across=np.cross(normal,tangent);delta=rest[i]-w@triangle
+        offsets.append([float(delta@tangent),float(delta@across),max(float(delta@normal),.004/SCALE)])
+        indices.append(tri);weights.append(w)
+    targets=attachment_targets(points,indices,weights,.004/SCALE,offsets)
+    max_move=float(np.linalg.norm(targets[0]-rest[list(pins)],axis=1).max()*SCALE)
+    if max_move>.02:raise ValueError('Body-bound waist support requires more than 20mm initial refit: '+str(max_move))
+    return targets,{'method':'Fixed actual-waist triangle correspondence; preserve designed garment offset in rotating local frame, minimum 4mm normal clearance',
+        'max_neutral_refit_m':max_move,'free_vertices_mapped':False}
+
+
+def support_preflight(targets,contacts,out):
+    from wardrobe185_lower_surface import winding_numbers
+    failures=[]
+    for j,frame in enumerate(contacts['frame_ids']):
+        for name in ('waist','pants'):
+            w=winding_numbers(targets[j],contacts[name+'_frames'][j],contacts[name+'_faces'])
+            count=int(np.sum(abs(w)>.5));ambiguous=int(np.sum(abs(w-np.rint(w))>1e-3))
+            if count or ambiguous:failures.append({'frame':int(frame),'contact':name,'inside':count,'ambiguous':ambiguous})
+    (out/'support-admission.json').write_text(json.dumps({'source_frames':len(targets),'failures':failures,
+        'gate':'FAIL' if failures else 'PASS','scope':'Supported band vs actual waist and pants, not free-cloth or visual qualification'},indent=2)+'\n')
+    if failures:raise ValueError('Moving lower support targets fail actual contact preflight')
+
+
 def mapped_guides(rest,source,faces,matrices):
     from mathutils import Vector
     from mathutils.bvhtree import BVHTree
@@ -69,6 +119,7 @@ def contact_union(data,frame,standing):
     contacts=[];arrays=[]
     surface='frame_ids' in data
     names=(('pants',) if standing else ('pants','horse','saddle','pad')) if surface else (('pelvis','thighL','thighR') if standing else ('pelvis','thighL','thighR','seat'))
+    if 'waist_frames' in data:names=names+('waist',)
     for name in names:
         p=data[name+'_frames'][list(data['frame_ids']).index(frame)] if surface else world_points(data[name+'_points'],data[name+'_matrices'][frame-1])
         f=data[name+'_faces'];arrays.append((p,f))
@@ -133,9 +184,11 @@ def dress(out):
     from wardrobe_riding_fit import fit_render
     source=BASE/'wardrobe185-finishreview01/integration-working.blend'
     motion=BASE/'wardrobe185-lowercapture02/moving-source.npz';contact=BASE/'wardrobe185-lowercontact01/contact.npz'
-    surface=out.name.endswith(('lowerdress05','lowerdress06','lowerdress07'))
+    waist=out.name.endswith(('lowerdress08','lowerdress09'))
+    surface=waist or out.name.endswith(('lowerdress05','lowerdress06','lowerdress07'))
     if surface:contact=BASE/'wardrobe185-lowersurface02/surfaces.npz'
     contact_sha=SURFACE_SHA if surface else CONTACT_SHA
+    if waist:contact=BASE/'wardrobe185-waistcontact01/contact.npz';contact_sha=WAIST_SURFACE_SHA
     for p,h in ((source,WORKING_SHA),(motion,SOURCE_SHA),(contact,contact_sha)):
         if digest(p)!=h:raise ValueError('Unbound lower dressing input')
     (out/Path(__file__).name).write_bytes(Path(__file__).read_bytes())
@@ -143,6 +196,12 @@ def dress(out):
     with np.load(motion,allow_pickle=False) as data:
         guided=mapped_guides(rest,data['guide'],data['guide_faces'],data['pelvis_matrices'])
     with np.load(contact,allow_pickle=False) as data:contacts={k:data[k] for k in data.files}
+    support=None
+    if waist:
+        support,support_record=supported_edge(rest,pins,contacts)
+        (out/'support-binding.json').write_text(json.dumps(support_record,indent=2)+'\n')
+        support_preflight(support,contacts,out)
+        for j,frame in enumerate(contacts['frame_ids']):guided[frame-1,list(pins)]=support[j]
     bpy.ops.wm.open_mainfile(filepath=str(source),load_ui=False,use_scripts=False)
     scene=bpy.context.scene;old=bpy.data.objects['MF_fit_tunic_173_visible'];old.hide_render=True
     # Retired tunic toggles were fitted to the replaced old tunic, not this
@@ -158,7 +217,8 @@ def dress(out):
     for frame,label in ((1,'standing'),(169,'mounted')):
         scene.frame_set(frame);bpy.context.view_layer.update();union,volumes=contact_union(contacts,frame,frame==1)
         initial=mounted_dressing(rest,guided[frame-1]) if surface and frame!=1 else guided[frame-1]
-        if out.name.endswith('lowerdress07') and frame==1:initial=standing_dressing(rest)
+        if out.name.endswith(('lowerdress07','lowerdress08','lowerdress09')) and frame==1:initial=standing_dressing(rest)
+        if waist:initial[list(pins)]=guided[frame-1,list(pins)]
         p,report=condition(initial,faces,union,volumes,pins,convex=not surface);records[label]=report;layouts[label]=p
         np.savez_compressed(out/(label+'-contact.npz'),points=np.array([v.co[:] for v in union.data.vertices]),
             **{'volume_'+str(i)+'_points':v[0] for i,v in enumerate(volumes)},
