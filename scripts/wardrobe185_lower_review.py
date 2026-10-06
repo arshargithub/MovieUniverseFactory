@@ -7,6 +7,8 @@ MOUNTED_SHA='f792307a9a22a9ee6fb8039dacf11f2a826855c3bb2820e0a34e8abd6a8feaae'
 STANDING_SHA='5e38a63debc3f9e8b0a7466bbd157a1506c33820e93f24ade588439163b35533'
 WAIST_MOUNTED_SHA='0f3989c1e41482c48f4f20c94750a9860bb47dc2f349c0a33ac4f258fb902b19'
 WAIST_STANDING_SHA='5e5e9ed57f883d47f170359f106fabbc5664ec8c0bdd8ee62daf549a192ac4e9'
+BELT_MOUNTED_SHA='05a15cb89b5e923da8912ca8c6732a4ebc7ec3e4d4b4da9c1dfce18974a1d3b6'
+BELT_STANDING_SHA='74b58c790d0a280ff9b7934760af2fbc505eb26d5f00ad02eb13846f1dac98e1'
 
 
 def run(out):
@@ -20,10 +22,14 @@ def run(out):
     from mathutils.bvhtree import BVHTree
     source=BASE/'wardrobe185-finishreview01/integration-working.blend'
     mounted=BASE/'wardrobe185-lowercloth01/mounted.npz';standing=mounted.parent/'standing.npz'
-    waist=out.name.endswith('lowerreview02');mounted_sha=MOUNTED_SHA;standing_sha=STANDING_SHA
+    belt=out.name.endswith('lowerreview03')
+    waist=belt or out.name.endswith('lowerreview02');mounted_sha=MOUNTED_SHA;standing_sha=STANDING_SHA
     if waist:
         mounted=BASE/'wardrobe185-lowercloth02/mounted.npz';standing=mounted.parent/'standing.npz'
         mounted_sha=WAIST_MOUNTED_SHA;standing_sha=WAIST_STANDING_SHA
+    if belt:
+        mounted=BASE/'wardrobe185-lowercloth03/mounted.npz';standing=mounted.parent/'standing.npz'
+        mounted_sha=BELT_MOUNTED_SHA;standing_sha=BELT_STANDING_SHA
     for p,h in ((source,WORKING_SHA),(mounted,mounted_sha),(standing,standing_sha)):
         if h is None or digest(p)!=h:raise ValueError('Unbound lower review input')
     (out/Path(__file__).name).write_bytes(Path(__file__).read_bytes())
@@ -51,7 +57,12 @@ def run(out):
     for frame in sorted(set((169,193,217,223,265,326,360,peak_frame))):
         scene.frame_set(frame);bpy.context.view_layer.update();sub.show_viewport=False;solid.show_viewport=False
         p,f=fast_geometry(ob);cache_error=max(cache_error,float(np.max(abs(p-frames[frame-169]))))
-        tree=BVHTree.FromPolygons(p.tolist(),f.tolist(),all_triangles=True);record={}
+        coarse_tree=BVHTree.FromPolygons(p.tolist(),f.tolist(),all_triangles=True)
+        coarse_self=[(a,b) for a,b in coarse_tree.overlap(coarse_tree) if a<b and not set(f[a])&set(f[b])]
+        sub.show_viewport=True;p,f=fast_geometry(ob)
+        tree=BVHTree.FromPolygons(p.tolist(),f.tolist(),all_triangles=True)
+        record={'scope':'Render-subdivided midsurface; solid thickness excluded',
+            'coarse_simulation_self_pairs_separate':len(coarse_self)}
         names=('MF_fit_trousers_173_visible','MF185_gait_horse','MF185_gait_saddle','MF185_gait_saddle.pad')
         if waist:names=names+('MF_studio_adult_body',)
         for name in names:

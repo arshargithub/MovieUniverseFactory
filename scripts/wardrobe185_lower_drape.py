@@ -25,21 +25,24 @@ def triangle_weights(point,triangle):
     return min(candidates,key=lambda v:np.linalg.norm(v@t-p))
 
 
-def mounted_dressing(rest,guided):
+def mounted_dressing(rest,guided,parameter_rest=None):
     """Smooth initial layout over lap/back, never a prescribed animation."""
-    t=np.clip((-5.35-rest[:,2])/2.10,0,1)
-    theta=np.arctan2(rest[:,0]/(1.42+.57*t),(rest[:,1]-.085-.025*t)/(1.14+.25*t))
+    parameter=rest if parameter_rest is None else parameter_rest
+    t=np.clip((-5.35-parameter[:,2])/2.10,0,1)
+    theta=np.arctan2(parameter[:,0]/(1.42+.57*t),(parameter[:,1]-.085-.025*t)/(1.14+.25*t))
     cosine=np.cos(theta);p=np.array(rest,copy=True)
     p[:,0]=(1.42+1.20*t)*np.sin(theta)
     p[:,1]=.085+(1.14+1.40*t)*cosine
     p[:,2]=-5.35-2.10*t*(1-.72*abs(cosine))
+    p+=rest-parameter
     blend=np.clip((t-.10)/.20,0,1);blend=blend*blend*(3-2*blend)
     return guided*(1-blend[:,None])+p*blend[:,None]
 
 
-def standing_dressing(rest):
+def standing_dressing(rest,parameter_rest=None):
     """Small initial air gap below the fixed waist; gravity will settle it."""
-    p=np.array(rest,copy=True);t=np.clip((-5.35-rest[:,2])/2.10,0,1)
+    parameter=rest if parameter_rest is None else parameter_rest
+    p=np.array(rest,copy=True);t=np.clip((-5.35-parameter[:,2])/2.10,0,1)
     ease=np.clip((t-.05)/.15,0,1);ease=ease*ease*(3-2*ease)
     p[:,0]*=1+.09*ease
     center=.085+.025*t;p[:,1]=center+(p[:,1]-center)*(1+.09*ease)
@@ -184,7 +187,8 @@ def dress(out):
     from wardrobe_riding_fit import fit_render
     source=BASE/'wardrobe185-finishreview01/integration-working.blend'
     motion=BASE/'wardrobe185-lowercapture02/moving-source.npz';contact=BASE/'wardrobe185-lowercontact01/contact.npz'
-    waist=out.name.endswith(('lowerdress08','lowerdress09'))
+    belt_bound=out.name.endswith('lowerdress10')
+    waist=belt_bound or out.name.endswith(('lowerdress08','lowerdress09'))
     surface=waist or out.name.endswith(('lowerdress05','lowerdress06','lowerdress07'))
     if surface:contact=BASE/'wardrobe185-lowersurface02/surfaces.npz'
     contact_sha=SURFACE_SHA if surface else CONTACT_SHA
@@ -192,14 +196,30 @@ def dress(out):
     for p,h in ((source,WORKING_SHA),(motion,SOURCE_SHA),(contact,contact_sha)):
         if digest(p)!=h:raise ValueError('Unbound lower dressing input')
     (out/Path(__file__).name).write_bytes(Path(__file__).read_bytes())
-    rest,faces,pins=pattern()
+    rest,faces,pins=pattern();parameter_rest=rest.copy()
     with np.load(motion,allow_pickle=False) as data:
-        guided=mapped_guides(rest,data['guide'],data['guide_faces'],data['pelvis_matrices'])
+        guided=mapped_guides(rest,data['guide'],data['guide_faces'],data['pelvis_matrices']);pelvis=data['pelvis_matrices']
     with np.load(contact,allow_pickle=False) as data:contacts={k:data[k] for k in data.files}
     support=None
     if waist:
-        support,support_record=supported_edge(rest,pins,contacts)
+        if belt_bound:
+            from wardrobe185_lower_belt import boundary
+            path=BASE/'wardrobe185-lowerbelt01/belt.npz'
+            if digest(path)!='e8425da7986f87d90a55d26ca5781f7ca4a347618736fb84245c283291cb6031':raise ValueError('Belt source changed')
+            with np.load(path,allow_pickle=False) as data:
+                if not np.array_equal(data['frame_ids'],contacts['frame_ids']):raise ValueError('Belt/contact frame mismatch')
+                rest,support=boundary(parameter_rest,pins,data['frames'])
+            guided+=np.einsum('fij,nj->fni',pelvis[:,:3,:3],rest-parameter_rest)
+            support_record={'method':'Continuous lower edge of fitted belt; tailor top of cut to this interface, preserve free hem',
+                'max_neutral_cut_refit_m':float(np.linalg.norm(rest-parameter_rest,axis=1).max()*SCALE)}
+        else:support,support_record=supported_edge(rest,pins,contacts)
+        edges=np.unique(np.sort(np.concatenate([faces[:,[i,(i+1)%4]] for i in range(4)]),axis=1),axis=0)
+        selected=np.all(np.isin(edges,list(pins)),axis=1);edges=edges[selected]
+        lookup={int(n):j for j,n in enumerate(pins)};e=np.array([[lookup[int(n)] for n in edge] for edge in edges])
+        ratio=np.linalg.norm(support[:,e[:,0]]-support[:,e[:,1]],axis=2)/np.linalg.norm(support[0,e[:,0]]-support[0,e[:,1]],axis=1)
+        support_record['edge_ratio_range']=[float(ratio.min()),float(ratio.max())]
         (out/'support-binding.json').write_text(json.dumps(support_record,indent=2)+'\n')
+        if belt_bound and (ratio.max()>1.15 or ratio.min()<.8):raise ValueError('Continuous supported seam is dimensionally incompatible')
         support_preflight(support,contacts,out)
         for j,frame in enumerate(contacts['frame_ids']):guided[frame-1,list(pins)]=support[j]
     bpy.ops.wm.open_mainfile(filepath=str(source),load_ui=False,use_scripts=False)
@@ -216,8 +236,8 @@ def dress(out):
     records={};layouts={};failures=[]
     for frame,label in ((1,'standing'),(169,'mounted')):
         scene.frame_set(frame);bpy.context.view_layer.update();union,volumes=contact_union(contacts,frame,frame==1)
-        initial=mounted_dressing(rest,guided[frame-1]) if surface and frame!=1 else guided[frame-1]
-        if out.name.endswith(('lowerdress07','lowerdress08','lowerdress09')) and frame==1:initial=standing_dressing(rest)
+        initial=mounted_dressing(rest,guided[frame-1],parameter_rest) if surface and frame!=1 else guided[frame-1]
+        if out.name.endswith(('lowerdress07','lowerdress08','lowerdress09','lowerdress10')) and frame==1:initial=standing_dressing(rest,parameter_rest)
         if waist:initial[list(pins)]=guided[frame-1,list(pins)]
         p,report=condition(initial,faces,union,volumes,pins,convex=not surface);records[label]=report;layouts[label]=p
         np.savez_compressed(out/(label+'-contact.npz'),points=np.array([v.co[:] for v in union.data.vertices]),

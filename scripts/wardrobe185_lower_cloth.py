@@ -9,6 +9,7 @@ import numpy as np
 
 LAYOUT_SHA='2ed3c210125f020c6e361b0d573136675f5e49decb82fe5b165e31306aae7f4e'
 WAIST_LAYOUT_SHA='6409b42c2d04cd37d22035146ef2c5566da9d92a011f4f3e62129fccd07d7f80'
+BELT_LAYOUT_SHA='0cee805f1e5f54aaef195280a408872da200d68f9b496fb2389342dc062cfbdc'
 
 
 def sample(ob):
@@ -68,10 +69,12 @@ def solve(out):
     layout=BASE/'wardrobe185-lowerdress07/initial-layout.npz'
     contacts=BASE/'wardrobe185-lowersurface02/surfaces.npz'
     source=BASE/'wardrobe185-lowercapture02/moving-source.npz'
-    waist=out.name.endswith('lowercloth02');layout_sha=LAYOUT_SHA;contact_sha=SURFACE_SHA
+    belt_bound=out.name.endswith('lowercloth03')
+    waist=belt_bound or out.name.endswith('lowercloth02');layout_sha=LAYOUT_SHA;contact_sha=SURFACE_SHA
     if waist:
         layout=BASE/'wardrobe185-lowerdress09/initial-layout.npz';layout_sha=WAIST_LAYOUT_SHA
         contacts=BASE/'wardrobe185-waistcontact01/contact.npz';contact_sha=WAIST_SURFACE_SHA
+    if belt_bound:layout=BASE/'wardrobe185-lowerdress10/initial-layout.npz';layout_sha=BELT_LAYOUT_SHA
     for p,h in ((layout,layout_sha),(contacts,contact_sha),(source,SOURCE_SHA)):
         if h is None or digest(p)!=h:raise ValueError('Unbound lower cloth input')
     if json.loads((layout.parent/'result.json').read_text())['admission']!='PASS':raise ValueError('Initial lower cloth not admitted')

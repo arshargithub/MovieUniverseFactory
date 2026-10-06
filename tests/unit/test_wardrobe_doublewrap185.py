@@ -448,3 +448,14 @@ def test_clipped_body_contact_components_do_not_join_detached_limbs():
     from wardrobe185_lower_waist import components
     groups=components(np.array([[0,1,2],[2,1,3],[4,5,6]]),7)
     assert {frozenset(g) for g in groups}=={frozenset((0,1,2,3)),frozenset((4,5,6))}
+
+
+def test_continuous_belt_boundary_preserves_free_hem_and_rigid_motion():
+    from wardrobe185_lower_belt import boundary
+    from wardrobe185_lower_pattern import pattern
+    r,f,pins=pattern();theta=np.arange(96)*2*np.pi/96
+    grid=np.array([[[1.4*np.sin(a),1.0*np.cos(a),-5.4+.1*j] for j in range(5)] for a in theta])
+    shift=np.array([1.,2.,3.]);cut,targets=boundary(r,pins,np.array([grid,grid+shift]))
+    np.testing.assert_allclose(cut[r[:,2]<-6.3],r[r[:,2]<-6.3])
+    np.testing.assert_allclose(targets[1]-targets[0],np.tile(shift,(len(pins),1)))
+    np.testing.assert_allclose(cut[list(pins)],targets[0])
