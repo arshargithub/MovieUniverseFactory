@@ -70,7 +70,8 @@ def solve(out):
     layout=BASE/'wardrobe185-lowerdress07/initial-layout.npz'
     contacts=BASE/'wardrobe185-lowersurface02/surfaces.npz'
     source=BASE/'wardrobe185-lowercapture02/moving-source.npz'
-    complete=out.name.endswith('lowercloth05')
+    windoff=out.name.endswith('lowerwindoff06')
+    complete=windoff or out.name.endswith('lowercloth05')
     convergence=complete or out.name.endswith('lowercloth04')
     belt_bound=convergence or out.name.endswith('lowercloth03')
     waist=belt_bound or out.name.endswith('lowercloth02');layout_sha=LAYOUT_SHA;contact_sha=SURFACE_SHA
@@ -90,7 +91,7 @@ def solve(out):
     with np.load(source,allow_pickle=False) as d:pelvis=d['pelvis_matrices']
     metric_control(out)
     record={};outputs={};faces=cut['faces'];rest=cut['rest'];pins=cut['pin_indices'];weights=cut['pin_weights']
-    for label in ('standing','mounted'):
+    for label in (('mounted',) if windoff else ('standing','mounted')):
         bpy.ops.wm.read_factory_settings(use_empty=True);scene=bpy.context.scene
         scene.render.fps=24;scene.unit_settings.scale_length=1.;scene.gravity=(0,0,-9.81)
         frames=np.ones(120,dtype=int) if label=='standing' else np.r_[np.full(120,169),np.arange(170,361)]
@@ -120,7 +121,7 @@ def solve(out):
             # Numerical refinement only: unchanged cut, contacts, material,
             # wind and supports distinguish resolution from design changes.
             mod.settings.quality=48;mod.collision_settings.collision_quality=8
-        if label=='mounted':
+        if label=='mounted' and not windoff:
             bpy.ops.object.effector_add(type='WIND');wind=bpy.context.object
             wind.rotation_euler=Vector(apparent_airflow(217)[0]).to_track_quat('Z','Y').to_euler()
             for i,source_frame in enumerate(frames):
@@ -135,7 +136,7 @@ def solve(out):
         edges=np.unique(np.sort(np.concatenate([faces[:,[i,(i+1)%4]] for i in range(4)]),axis=1),axis=0)
         lengths=np.linalg.norm(rest[edges[:,0]]-rest[edges[:,1]],axis=1)
         ratios=np.linalg.norm(trajectory[:,edges[:,0]]-trajectory[:,edges[:,1]],axis=2)/lengths
-        record[label]={'physics_frames':len(frames),'source_frame_ids':frames.tolist(),
+        record[label]={'physics_frames':len(frames),'source_frame_ids':frames.tolist(),'wind_enabled':label=='mounted' and not windoff,
             'quality_steps':mod.settings.quality,'collision_quality':mod.collision_settings.collision_quality,
             'maximum_edge_ratio':float(ratios.max()),'last_edge_quantiles':np.quantile(ratios[-1],[.01,.5,.99,1]).tolist(),
             'free_cloth':True,'mass_per_vertex_authored_not_calibrated':.3,'visual_gate':'NOT_RUN'}

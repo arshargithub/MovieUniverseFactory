@@ -11,6 +11,8 @@ BELT_MOUNTED_SHA='05a15cb89b5e923da8912ca8c6732a4ebc7ec3e4d4b4da9c1dfce18974a1d3
 BELT_STANDING_SHA='74b58c790d0a280ff9b7934760af2fbc505eb26d5f00ad02eb13846f1dac98e1'
 REFINED_MOUNTED_SHA='637b6b08fb95092ad321233a5efd89cb58d1b8993c446cb851b461117902157b'
 REFINED_STANDING_SHA='7f8bb11137da0781a40b777e6f0baa8e2c59d6235130008b8141fd66ad3aca82'
+COMPLETE_MOUNTED_SHA='751e1421a6f9905a3c1f9bc9daf774e80b1e0f9e5f95701e6eda764060872c0b'
+COMPLETE_STANDING_SHA='160e4ca1c9eb2b54d388badd3ae5ba6aa9754b32b4868463d3843b696e85c566'
 
 
 def run(out):
@@ -22,9 +24,10 @@ def run(out):
     from wardrobe185_lower_cloth import panel
     from wardrobe185_lower import fast_geometry
     from mathutils.bvhtree import BVHTree
-    source=BASE/'wardrobe185-finishreview01/integration-working.blend'
+    source=BASE/'wardrobe185-finishreview01/integration-working.blend';working_sha=WORKING_SHA
     mounted=BASE/'wardrobe185-lowercloth01/mounted.npz';standing=mounted.parent/'standing.npz'
-    refined=out.name.endswith('lowerreview04')
+    complete=out.name.endswith('lowerreview05')
+    refined=complete or out.name.endswith('lowerreview04')
     belt=refined or out.name.endswith('lowerreview03')
     waist=belt or out.name.endswith('lowerreview02');mounted_sha=MOUNTED_SHA;standing_sha=STANDING_SHA
     if waist:
@@ -36,7 +39,12 @@ def run(out):
     if refined:
         mounted=BASE/'wardrobe185-lowercloth04/mounted.npz';standing=mounted.parent/'standing.npz'
         mounted_sha=REFINED_MOUNTED_SHA;standing_sha=REFINED_STANDING_SHA
-    for p,h in ((source,WORKING_SHA),(mounted,mounted_sha),(standing,standing_sha)):
+    if complete:
+        source=BASE/'wardrobe185-lowerpants02/integration-working.blend'
+        working_sha='b9cf3b8c3f07d9ad650279903c5f81d54e85c6d553f801c0fb353cb2bf298f0b'
+        mounted=BASE/'wardrobe185-lowercloth05/mounted.npz';standing=mounted.parent/'standing.npz'
+        mounted_sha=COMPLETE_MOUNTED_SHA;standing_sha=COMPLETE_STANDING_SHA
+    for p,h in ((source,working_sha),(mounted,mounted_sha),(standing,standing_sha)):
         if h is None or digest(p)!=h:raise ValueError('Unbound lower review input')
     (out/Path(__file__).name).write_bytes(Path(__file__).read_bytes())
     with np.load(mounted,allow_pickle=False) as d:
@@ -71,9 +79,10 @@ def run(out):
             'coarse_simulation_self_pairs_separate':len(coarse_self)}
         names=('MF_fit_trousers_173_visible','MF185_gait_horse','MF185_gait_saddle','MF185_gait_saddle.pad')
         if waist:names=names+('MF_studio_adult_body',)
+        if complete:names=names+('MF185_fitted_upper_tunic','MF185_moving_shawl','MF_173_waist_belt')
         for name in names:
             q,cf=fast_geometry(bpy.data.objects[name])
-            if name=='MF_studio_adult_body':
+            if name in ('MF_studio_adult_body','MF185_fitted_upper_tunic'):
                 tri=q[cf];mask=np.all(tri.max(1)>=p.min(0)-.05,axis=1)&np.all(tri.min(1)<=p.max(0)+.05,axis=1);cf=cf[mask]
             ct=BVHTree.FromPolygons(q.tolist(),cf.tolist(),all_triangles=True)
             pairs=tree.overlap(ct);record[name]=len(pairs)
@@ -85,7 +94,7 @@ def run(out):
         self_pairs=[(a,b) for a,b in tree.overlap(tree) if a<b and not set(f[a])&set(f[b])]
         record['nonadjacent_self_pairs']=len(self_pairs);contact_report[frame]=record
         sub.show_viewport=True;solid.show_viewport=True
-        if frame in (169,193,217,360,peak_frame):
+        if frame in ((169,217,peak_frame) if complete else (169,193,217,360,peak_frame)):
             for angle,view in ((90,'left'),(180,'rear'),(270,'right')):
                 fit_render(out,'lower-'+view+'-'+str(frame),angle,(0,-.2,-6.5),7.,(640,640))
     if cache_error>2e-5:raise ValueError('Lower cache does not reproduce simulated samples')
@@ -107,7 +116,7 @@ def run(out):
     for angle,view in ((0,'front'),(90,'left'),(180,'rear'),(270,'right')):
         fit_render(out,'neutral-lower-'+view,angle,(0,-.2,-6.5),7.,(640,640))
     check_protected()
-    (out/'result.json').write_text(json.dumps({'source_sha256':WORKING_SHA,'mounted_sha256':mounted_sha,'standing_sha256':standing_sha,
+    (out/'result.json').write_text(json.dumps({'source_sha256':working_sha,'mounted_sha256':mounted_sha,'standing_sha256':standing_sha,
         'performance_peak_edge_ratio':float(ratio.max()),'peak_frame':peak_frame,
         'native_sha256':native_sha,'cache_max_error':cache_error,'protected_exact':True,'visual_gate':'NOT_RUN',
         'scope':'Integrated free lower garment diagnostic; not selected or Director approved'},indent=2)+'\n')
