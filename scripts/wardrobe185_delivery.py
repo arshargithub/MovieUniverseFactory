@@ -101,7 +101,7 @@ def seal(out):
     bpy.ops.file.make_paths_relative()
     bpy.ops.wm.save_as_mainfile(filepath=str(out/'riding-entrance.blend'),check_existing=False,compress=True)
     shot_sha=digest(out/'riding-entrance.blend')
-    scene.camera.animation_data_clear();neutral=neutral_state()
+    scene.camera.animation_data_clear();scene.camera.data.type='ORTHO';neutral=neutral_state()
     for ob in list(scene.objects):
         if ob.name.startswith(('MF185_gait_','MF185_rein_','MF185_stirrup_')):bpy.data.objects.remove(ob,do_unlink=True)
     scene.cycles.device='CPU';scene.cycles.samples=8

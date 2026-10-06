@@ -91,6 +91,11 @@ def run(out):
         'rotations':camera_eulers,'scope':'Detect Euler branch jumps before reusable native camera keyframes; not an artistic camera pass'},indent=2)+'\n')
     # The filmed range starts after dressing/lean. Inspect the intermediate
     # position separately instead of inheriting an older construction's pass.
+    scene.camera.animation_data_clear();scene.camera.data.type='ORTHO'
+    scene.cycles.device='CPU';scene.cycles.samples=8;scene.render.use_persistent_data=True
+    for frame in (217,219,221,223,225,227):
+        scene.frame_set(frame);bpy.context.view_layer.update()
+        fit_render(out,'side-'+str(frame),90,(0,-1.8,-8),30.,(640,640))
     for ob in scene.objects:
         if ob.name.startswith(('MF185_gait_','MF185_rein_','MF185_stirrup_')):ob.hide_render=True
     scene.cycles.device='CPU';scene.cycles.samples=8;scene.render.use_persistent_data=True

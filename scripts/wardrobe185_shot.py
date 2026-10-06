@@ -89,6 +89,7 @@ def motion(out):
     # A travelling camera does not expose both garment/leg interfaces equally.
     # Inspect a full gait cycle from the unoccluded side as a separate control.
     from wardrobe_riding_fit import fit_render
+    scene.camera.animation_data_clear();scene.camera.data.type='ORTHO'
     for frame in (217,219,221,223,225,227):
         scene.frame_set(frame);bpy.context.view_layer.update()
         fit_render(out,'side-%03d'%frame,90,(0,-1.8,-8),30.,(640,640))
