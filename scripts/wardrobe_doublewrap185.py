@@ -84,6 +84,16 @@ OPERATIONS += ('motion02',)
 OPERATIONS += ('motionreview02',)
 OPERATIONS += ('integration01',)
 OPERATIONS += ('gaze01',)
+OPERATIONS += ('upper01',)
+OPERATIONS += ('upper02',)
+OPERATIONS += ('upper03',)
+OPERATIONS += ('upper04',)
+OPERATIONS += ('motionprep02',)
+OPERATIONS += ('holdcheck01','motion03','motionoff03')
+OPERATIONS += ('horseprobe01',)
+OPERATIONS += ('motionreview03',)
+OPERATIONS += ('horsecache01',)
+OPERATIONS += ('riding01',)
 HEAD = base.BASE / 'wardrobe180-xpbdhead08/trajectory.npz'
 HEAD_SHA = '55ce2f99edfbb45a7cf8a5898be31caa1f20bd7da3bb2ae2be9c43e49d7095e8'
 
@@ -396,19 +406,31 @@ def main():
     elif job['operation']=='harnesscontact01':
         from wardrobe185_harness_contact import run
         run(out)
-    elif job['operation']=='motionprep01':
+    elif job['operation'] in ('motionprep01','motionprep02'):
         from wardrobe185_motion import prep
         prep(out)
-    elif job['operation'] in ('motion01','motion02','motionoff01'):
+    elif job['operation'] in ('motion01','motion02','motionoff01','holdcheck01','motion03','motionoff03'):
         from wardrobe185_motion import simulate
         simulate(out)
+    elif job['operation'] in ('upper01','upper02','upper03','upper04'):
+        from wardrobe185_integration import garment_screen
+        garment_screen(out)
     elif job['operation']=='gaze01':
         from wardrobe185_integration import gaze_screen
         gaze_screen(out)
     elif job['operation']=='integration01':
         from wardrobe185_integration import audit
         audit(out)
-    elif job['operation']=='motionreview02':
+    elif job['operation']=='horseprobe01':
+        from wardrobe185_horse import probe
+        probe(out)
+    elif job['operation']=='horsecache01':
+        from wardrobe185_horse import gait_cache
+        gait_cache(out)
+    elif job['operation']=='riding01':
+        from wardrobe185_riding import preview
+        preview(out)
+    elif job['operation'] in ('motionreview02','motionreview03'):
         from wardrobe185_motion import screen as motion_screen
         motion_screen(out)
     else:raise ValueError('Validated operation has no implementation')

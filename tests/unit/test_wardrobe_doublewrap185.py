@@ -12,6 +12,19 @@ module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
 def test_rejects_arbitrary_payload(job):
     with pytest.raises(ValueError):module.validate(job)
 
+
+def test_fixed_length_limb_solver_preserves_both_lengths_and_pole_side():
+    from wardrobe185_riding import hinge_point
+    for target in ((1,0,0),(1.2,.2,.1),(.2,-1.5,.3)):
+        root=np.array([0.,0.,0.]);pole=np.array([0.,0.,2.])
+        hinge=hinge_point(root,target,pole,1.,.8)
+        assert np.linalg.norm(hinge-root)==pytest.approx(1.)
+        assert np.linalg.norm(hinge-target)==pytest.approx(.8)
+        assert hinge[2]>0
+    with pytest.raises(ValueError):hinge_point(root,(3,0,0),pole,1.,.8)
+    with pytest.raises(ValueError):hinge_point(root,(0,0,0),pole,1.,.8)
+    with pytest.raises(ValueError):hinge_point(root,(1,0,0),(2,0,0),1.,.8)
+
 @pytest.mark.parametrize('revised',[False,True,3])
 def test_section_continuity_and_course_topology(revised):
     for layer in (0,1):
@@ -101,7 +114,9 @@ def test_dispatch_has_an_explicit_handler_for_every_admitted_operation(operation
         'wardrobe185_head_dress':('run',),
         'wardrobe185_harness_contact':('run',),
         'wardrobe185_motion':('prep','simulate','screen'),
-        'wardrobe185_integration':('audit','gaze_screen'),
+        'wardrobe185_integration':('audit','gaze_screen','garment_screen'),
+        'wardrobe185_horse':('probe','gait_cache'),
+        'wardrobe185_riding':('preview',),
     }.items():
         fake=types.ModuleType(name)
         for method in methods:setattr(fake,method,record)

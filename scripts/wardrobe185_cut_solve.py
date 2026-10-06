@@ -6,6 +6,7 @@ import numpy as np
 
 def run(out, motion=False):
     version=25 if motion else int(out.name.removeprefix('wardrobe185-cut'))
+    articulated=out.name.endswith(('holdcheck01','motion03','motionoff03'))
     import bpy
     from mathutils import Vector
     from mathutils.bvhtree import BVHTree
@@ -66,8 +67,9 @@ def run(out, motion=False):
     scene=bpy.context.scene;scene.render.fps=24;scene.gravity=(0,0,-9.81);scene.unit_settings.scale_length=scale
     canonical=None
     if motion:
-        library=base.BASE/'wardrobe185-motionprep01/motion-rig.blend'
-        if base.digest(library)!='49f17f288ab056a3620a8eb8d94c4123ef3318097b78f8b1e527fe3716196835':raise ValueError('Diagnostic motion library changed')
+        library=base.BASE/('wardrobe185-motionprep02/motion-rig.blend' if articulated else 'wardrobe185-motionprep01/motion-rig.blend')
+        library_sha='a76ec35c1268ab77bbfc6fc9bdb8e330cdad8dbcee11b27b2eee9c7390df3b7f' if articulated else '49f17f288ab056a3620a8eb8d94c4123ef3318097b78f8b1e527fe3716196835'
+        if base.digest(library)!=library_sha:raise ValueError('Diagnostic motion library changed')
         names=['MF178_metres_rig','MF178_support_185_contact']
         with bpy.data.libraries.load(str(library),link=False) as (available,loaded):
             if not all(n in available.objects for n in names):raise ValueError('Incomplete motion library')
@@ -82,7 +84,7 @@ def run(out, motion=False):
         import math
         bpy.ops.object.effector_add(type='WIND',location=(4*scale,-3*scale,0))
         wind=bpy.context.object;wind.name='MF185_diagnostic_wind';wind.rotation_euler=(math.radians(72),0,math.radians(-25))
-        gain=0. if out.name.endswith('motionoff01') else 1.
+        gain=0. if out.name.endswith(('motionoff01','motionoff03')) else 1.
         for frame in list(range(1,361,4))+[360]:
             wind.field.strength=schedule(frame)['wind']*gain;wind.keyframe_insert(data_path='field.strength',frame=frame)
         scene.frame_set(1)
@@ -181,7 +183,10 @@ def run(out, motion=False):
     ob=bpy.data.objects.new('Scarf',mesh);scene.collection.objects.link(ob)
     if motion:
         from wardrobe_motion178_controls import bind
-        bind(ob,canonical,scale=scale,chest_only=True)
+        if articulated:
+            from wardrobe185_motion import support_sampler
+            bind(ob,canonical,support_sampler(contact,scale),scale=scale)
+        else:bind(ob,canonical,scale=scale,chest_only=True)
     group=ob.vertex_groups.new(name='support')
     for i,w in pins.items():group.add([i],w,'REPLACE')
     ob.shape_key_add(name='Basis');flat=ob.shape_key_add(name='Tailored head and flat scarf metrics')
@@ -237,6 +242,10 @@ def run(out, motion=False):
         if evaluated.shape!=p.shape or not np.allclose(evaluated,p*scale,atol=1e-7) or not np.array_equal(evaluated_faces,f):
             raise ValueError('Rest metric workaround changed geometry or indexing')
         (out/'rest-workaround.json').write_text(json.dumps({'vertex_positions_and_face_indices_preserved':True,'threshold_m':1e-6,'positive_control':'wardrobe185-restunit03/weld'},indent=2)+'\n')
+    if articulated:
+        from wardrobe185_motion import hold_preflight
+        hold_preflight(ob,contact,pins,out,scale)
+        if out.name.endswith('holdcheck01'):return
     mod=recipe.cloth_settings(ob,1,domain);mod.settings.rest_shape_key=flat
     mod.settings.use_dynamic_mesh=False
     mod.settings.mass=.3;mod.settings.air_damping=.2;mod.settings.bending_stiffness=.05
