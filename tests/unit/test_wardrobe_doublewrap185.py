@@ -485,3 +485,11 @@ def test_conditioned_support_motion_rotates_initial_offset_once():
     target=np.array([[[1.,0,0]],[[2.,1,0]]])
     actual=support_motion([[1.1,0,0]],target,matrices,matrices[0])
     np.testing.assert_allclose(actual,[[[1.1,0,0]],[[2.,1.1,0]]])
+
+
+def test_sewn_margin_exception_does_not_waive_skin_pants_or_soft_anchors():
+    from wardrobe185_lower_drape import constraint_clearance
+    assert constraint_clearance([.001,.004],'upper',[0])==.004
+    assert constraint_clearance([.004,.001],'upper',[0])==.001
+    for name in ('body','pants'):
+        assert constraint_clearance([.001,.004],name,[0])==.001

@@ -8,6 +8,7 @@ CONTACT_SHA='577b9e0ee50a0350424d64aecf25b4965637c2bf23d6b8e9e6b9f878a377e0b5'
 SURFACE_SHA='03c1143677e97891fecb66bc09a3ac9212db98c7fee63a557bc64b0b280124e8'
 WAIST_SURFACE_SHA='45a5bb64fac88d648b212e112518554601d231b8c6cbd94c77d974fddf86651f'
 COMPLETE_SURFACE_SHA='4d13cc5e504700836d04770864ec8a5f7bfbbee00346a5eb18c3c053945cd40f'
+FITTED_SURFACE_SHA='3bf762fe9244188ef563a8ce1f235fb83c07614e7f538c8bc6209ff076e0499e'
 SCALE=.12292759120464325
 
 
@@ -92,7 +93,13 @@ def support_motion(initial,targets,matrices,reference_matrix):
     return np.asarray(targets)+np.einsum('fij,nj->fni',np.asarray(matrices)[:,:3,:3],local)
 
 
-def support_preflight(targets,contacts,out,label='support',minimum_clearance_m=0.):
+def constraint_clearance(distances,contact,sewn_indices):
+    d=np.asarray(distances);eligible=np.ones(len(d),dtype=bool)
+    if contact=='upper':eligible[list(sewn_indices)]=False
+    return float(d[eligible].min()) if eligible.any() else float('inf')
+
+
+def support_preflight(targets,contacts,out,label='support',minimum_clearance_m=0.,sewn_indices=()):
     from wardrobe185_lower_surface import winding_numbers
     from mathutils import Vector
     from mathutils.bvhtree import BVHTree
@@ -104,14 +111,21 @@ def support_preflight(targets,contacts,out,label='support',minimum_clearance_m=0
             count=int(np.sum(abs(w)>.5));ambiguous=int(np.sum(abs(w-np.rint(w))>1e-3))
             if count or ambiguous:failures.append({'frame':int(frame),'contact':name,'inside':count,'ambiguous':ambiguous})
             tree=BVHTree.FromPolygons(contacts[name+'_frames'][j].tolist(),contacts[name+'_faces'].tolist(),all_triangles=True)
-            distance=min(tree.find_nearest(Vector(p))[3] for p in targets[j])*SCALE
-            if distance<minimum_clearance_m-1e-5:
-                failures.append({'frame':int(frame),'contact':name,'clearance_m':float(distance),
+            distances=np.array([tree.find_nearest(Vector(p))[3] for p in targets[j]])*SCALE
+            distance=float(distances.min())
+            # The declared sewn edge may sit inside the upper garment's
+            # inflated solver margin, but never inside its actual geometry.
+            # Do not exempt skin/pants, soft anchors, or any inside test.
+            constraint_distance=constraint_clearance(distances,name,sewn_indices)
+            if constraint_distance<minimum_clearance_m-1e-5:
+                failures.append({'frame':int(frame),'contact':name,'clearance_m':constraint_distance,
                     'required_clearance_m':minimum_clearance_m})
             if name not in clearance or distance<clearance[name]['minimum_distance_m']:
                 clearance[name]={'frame':int(frame),'minimum_distance_m':float(distance)}
     (out/(label+'-admission.json')).write_text(json.dumps({'source_frames':len(targets),'failures':failures,
         'unsigned_clearance_diagnostics':clearance,
+        'upper_sewn_margin_exemption_indices':list(map(int,sewn_indices)),
+        'exemption_scope':'Only upper garment inflated solver margin at fully sewn edge; no geometry penetration exemption',
         'gate':'FAIL' if failures else 'PASS','scope':'Supported band vs available body and garment contacts, not free-cloth or visual qualification'},indent=2)+'\n')
     if failures:raise ValueError('Moving lower support targets fail actual contact preflight')
 
@@ -161,7 +175,7 @@ def contact_union(data,frame,standing):
     return union,arrays
 
 
-def condition(points,faces,union,volumes,pins,convex=True):
+def condition(points,faces,union,volumes,pins,convex=True,preserve_sewn=False,face_clearance=False):
     from mathutils import Vector
     from mathutils.bvhtree import BVHTree
     from wardrobe185_convex import convex_outside
@@ -180,9 +194,39 @@ def condition(points,faces,union,volumes,pins,convex=True):
     moves=[]
     for i,point in enumerate(np.array(q,copy=True)):
         hit,normal,_,distance=tree.find_nearest(Vector(point))
-        if inside[i] or distance<.004/SCALE:
+        if (inside[i] or distance<.004/SCALE) and not (preserve_sewn and pins.get(i)==1.):
             q[i]=np.array(hit+normal*(.005/SCALE))
         moves.append(float(np.linalg.norm(q[i]-point)*SCALE))
+    cell_history=[]
+    if face_clearance:
+        neighbors=[set() for _ in q]
+        for face in faces:
+            for a,b in zip(face,np.roll(face,-1)):neighbors[a].add(b);neighbors[b].add(a)
+        for iteration in range(8):
+            ct=BVHTree.FromPolygons(q.tolist(),faces.tolist());pairs=ct.overlap(tree)
+            cell_history.append({'iteration':iteration,'actor_pairs':len(pairs)})
+            if not pairs:break
+            delta=np.zeros_like(q);counts=np.zeros(len(q))
+            for index in sorted({a for a,b in pairs}):
+                face=faces[index];v=q[face]
+                sample=np.array([(1-u)*(1-vv)*v[0]+u*(1-vv)*v[1]+u*vv*v[2]+(1-u)*vv*v[3]
+                    for u in (.0,.25,.5,.75,1.) for vv in (.0,.25,.5,.75,1.)])
+                buried=contained(sample);corrections=[]
+                for point,is_inside in zip(sample,buried):
+                    hit,normal,_,distance=tree.find_nearest(Vector(point))
+                    if is_inside or distance<.004/SCALE:corrections.append(np.array(hit+normal*(.005/SCALE))-point)
+                if not corrections:raise ValueError('Crossing cell has no resolved clearance direction')
+                change=max(corrections,key=np.linalg.norm)
+                for i in face:delta[i]+=change;counts[i]+=1
+            selected=counts>0;delta[selected]/=counts[selected,None]
+            # Spread the cell displacement into its immediate free neighbors;
+            # do not turn a smooth starting patch into a point-wise dent.
+            expanded=delta.copy()
+            for i in np.flatnonzero(~selected):
+                near=[j for j in neighbors[i] if selected[j]]
+                if near:expanded[i]=.5*delta[near].mean(0)
+            expanded[list(pins)]=0;q+=expanded
+        moves=np.linalg.norm(q-np.asarray(points),axis=1)*SCALE
     outside=np.ones(len(q),dtype=bool)
     if convex:
         for p,f in volumes:outside&=convex_outside(q,p,f,tolerance=1e-7)
@@ -192,7 +236,7 @@ def condition(points,faces,union,volumes,pins,convex=True):
     cloth_tree=BVHTree.FromPolygons(q.tolist(),faces.tolist())
     crossings=[(a,b) for a,b in cloth_tree.overlap(cloth_tree) if a<b and not set(faces[a])&set(faces[b])]
     actor_crossings=cloth_tree.overlap(tree)
-    report={'max_initial_move_m':max(moves),'max_waist_move_m':max(moves[i] for i in pins),
+    report={'max_initial_move_m':max(moves),'max_waist_move_m':max(moves[i] for i in pins),'cell_clearance_history':cell_history,
         'remaining_inside_vertices':int((~outside).sum()),'min_edge_m':float(lengths.min()),
         'nonadjacent_crossings':crossings,'actor_crossing_pairs':len(actor_crossings),
         'actor_crossing_cloth_faces':sorted(set(a for a,b in actor_crossings))}
@@ -207,7 +251,8 @@ def dress(out):
     from wardrobe_riding_fit import fit_render
     source=BASE/'wardrobe185-finishreview01/integration-working.blend';working_sha=WORKING_SHA
     motion=BASE/'wardrobe185-lowercapture02/moving-source.npz';contact=BASE/'wardrobe185-lowercontact01/contact.npz'
-    complete=out.name.endswith('lowerdress11')
+    fitted=out.name.endswith(('lowerdress12','lowerdress13','lowerdress14'))
+    complete=fitted or out.name.endswith('lowerdress11')
     belt_bound=complete or out.name.endswith('lowerdress10')
     waist=belt_bound or out.name.endswith(('lowerdress08','lowerdress09'))
     surface=waist or out.name.endswith(('lowerdress05','lowerdress06','lowerdress07'))
@@ -218,6 +263,10 @@ def dress(out):
         source=BASE/'wardrobe185-lowerpants01/integration-working.blend'
         working_sha='0375835df0b9543d13368d7d9ba294aec836182d7617b1b78cbf57afa8930f22'
         contact=BASE/'wardrobe185-lowersurface05/surfaces.npz';contact_sha=COMPLETE_SURFACE_SHA
+    if fitted:
+        source=BASE/'wardrobe185-lowerpants02/integration-working.blend'
+        working_sha='b9cf3b8c3f07d9ad650279903c5f81d54e85c6d553f801c0fb353cb2bf298f0b'
+        contact=BASE/'wardrobe185-lowersurface06/surfaces.npz';contact_sha=FITTED_SURFACE_SHA
     for p,h in ((source,working_sha),(motion,SOURCE_SHA),(contact,contact_sha)):
         if h is None or digest(p)!=h:raise ValueError('Unbound lower dressing input')
     (out/Path(__file__).name).write_bytes(Path(__file__).read_bytes())
@@ -262,9 +311,10 @@ def dress(out):
     for frame,label in ((1,'standing'),(169,'mounted')):
         scene.frame_set(frame);bpy.context.view_layer.update();union,volumes=contact_union(contacts,frame,frame==1)
         initial=mounted_dressing(rest,guided[frame-1],parameter_rest) if surface and frame!=1 else guided[frame-1]
-        if out.name.endswith(('lowerdress07','lowerdress08','lowerdress09','lowerdress10','lowerdress11')) and frame==1:initial=standing_dressing(rest,parameter_rest)
+        if out.name.endswith(('lowerdress07','lowerdress08','lowerdress09','lowerdress10','lowerdress11','lowerdress12','lowerdress13','lowerdress14')) and frame==1:initial=standing_dressing(rest,parameter_rest)
         if waist:initial[list(pins)]=guided[frame-1,list(pins)]
-        p,report=condition(initial,faces,union,volumes,pins,convex=not surface);records[label]=report;layouts[label]=p
+        cells=out.name.endswith('lowerdress14');sewn=cells or out.name.endswith('lowerdress13')
+        p,report=condition(initial,faces,union,volumes,pins,convex=not surface,preserve_sewn=sewn,face_clearance=cells);records[label]=report;layouts[label]=p
         np.savez_compressed(out/(label+'-contact.npz'),points=np.array([v.co[:] for v in union.data.vertices]),
             **{'volume_'+str(i)+'_points':v[0] for i,v in enumerate(volumes)},
             **{'volume_'+str(i)+'_faces':v[1] for i,v in enumerate(volumes)})
@@ -276,7 +326,8 @@ def dress(out):
             subset={k:(v[ids] if k=='frame_ids' or k.endswith('_frames') else v) for k,v in contacts.items()}
             source_ids=subset['frame_ids']-1
             actual=support_motion(p[list(pins)],guided[source_ids][:,list(pins)],pelvis[source_ids],pelvis[frame-1])
-            support_preflight(actual,subset,out,label+'-conditioned-support',minimum_clearance_m=.0035)
+            hard=np.flatnonzero(np.array(list(pins.values()))==1.) if sewn else ()
+            support_preflight(actual,subset,out,label+'-conditioned-support',minimum_clearance_m=.0035,sewn_indices=hard)
         if report['remaining_inside_vertices'] or report['nonadjacent_crossings'] or report['actor_crossing_pairs'] or report['min_edge_m']<.001:
             failures.append(label+': lower starting cut not admissible')
         if report['max_initial_move_m']>.10 or report['max_waist_move_m']>.015:
