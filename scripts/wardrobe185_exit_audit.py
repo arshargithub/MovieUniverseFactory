@@ -86,6 +86,15 @@ def run(out):
     for m,state in skirt_states:m.show_viewport=state
     np.savez_compressed(out/'lower-motion.npz',frames=np.array(points),edges=edges)
     (out/'lower-contact.json').write_text(json.dumps({'frames':lower,'visual_gate':'NOT_RUN'},indent=2)+'\n')
+    # The filmed range starts after dressing/lean. Inspect the intermediate
+    # position separately instead of inheriting an older construction's pass.
+    for ob in scene.objects:
+        if ob.name.startswith(('MF185_gait_','MF185_rein_','MF185_stirrup_')):ob.hide_render=True
+    scene.cycles.device='CPU';scene.cycles.samples=8;scene.render.use_persistent_data=True
+    scene.frame_set(193);bpy.context.view_layer.update()
+    center=tuple(rig.matrix_world@rig.pose.bones['MF185_head'].head+Vector((0,0,-.6)))
+    for angle,label in ((0,'front'),(90,'left'),(180,'rear')):
+        fit_render(out,'partial-'+label+'-193',angle,center,8.,(640,640))
     # Wind-off preserves topology, construction, supports and actor action.
     with np.load(off,allow_pickle=False) as data:frames=data['frames']
     for m in list(cloth.modifiers):
@@ -100,5 +109,15 @@ def run(out):
         center=tuple(rig.matrix_world@rig.pose.bones['MF185_head'].head+Vector((0,0,-.6)))
         for angle,label in ((0,'front'),(180,'rear')):fit_render(out,'off-'+label+'-%03d'%frame,angle,center,8.,(640,640))
     check_protected()
+    # Reuse the settled upper drape in the compatible actual standing rest.
+    # Review this derivative before any neutral-master selection.
+    from wardrobe185_delivery import neutral_state
+    bpy.ops.wm.open_mainfile(filepath=str(source),load_ui=False,use_scripts=False)
+    neutral_record=neutral_state();scene=bpy.context.scene;scene.cycles.device='CPU';scene.cycles.samples=8
+    (out/'wardrobe185_delivery.py').write_bytes(Path(__file__).with_name('wardrobe185_delivery.py').read_bytes())
+    for angle,label in ((0,'front'),(90,'left'),(180,'rear'),(270,'right')):
+        fit_render(out,'neutral-'+label,angle,(0,.15,-1.7),8.,(640,640))
+    fit_render(out,'neutral-whole',0,(0,0,-6.4),18.,(576,864))
     (out/'result.json').write_text(json.dumps({'source_sha256':WORKING_SHA,'windoff_sha256':OFF_SHA,
-        'protected_exact':True,'native_changed':False,'visual_gate':'NOT_RUN','selected':False},indent=2)+'\n')
+        'protected_exact':True,'native_changed':False,'neutral_staging':neutral_record,
+        'visual_gate':'NOT_RUN','selected':False},indent=2)+'\n')

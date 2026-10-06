@@ -147,6 +147,25 @@ def test_lower_contact_broadphase_keeps_triangles_spanning_query_box():
     with pytest.raises(ValueError):broadphase(p,f,[2,2,2],[-2,-2,-2])
 
 
+def test_neutral_staging_refuses_incompatible_settled_pose():
+    from wardrobe185_delivery import compatible_rest
+    proof={n:np.tile(np.eye(4),(360,1,1)) for n in ('head_matrices','chest_matrices')}
+    compatible_rest(proof)
+    proof['head_matrices'][168,2,3]=.01
+    with pytest.raises(ValueError):compatible_rest(proof)
+
+
+def test_asset_selection_needs_every_visual_criterion_and_real_evidence(tmp_path):
+    from wardrobe185_delivery import review_gate,CRITERIA
+    evidence=tmp_path/'review.png';evidence.write_bytes(b'diagnostic fixture')
+    record={'status':'INTERNAL_REVIEW_READY','criteria':{n:{'status':'PASS','judgment':'manually reviewed fixture','evidence':['review.png']} for n in CRITERIA}}
+    review_gate(record,tmp_path)
+    first=record['criteria'][next(iter(CRITERIA))];first['status']='NOT_RUN'
+    with pytest.raises(ValueError):review_gate(record,tmp_path)
+    first['status']='PASS';first['evidence']=['absent.png']
+    with pytest.raises(ValueError):review_gate(record,tmp_path)
+
+
 def test_double_precision_contact_hull_contains_original_and_near_coplanar_samples():
     from wardrobe185_convex import robust_hull,convex_outside
     rng=np.random.default_rng(185)
@@ -259,6 +278,7 @@ def test_dispatch_has_an_explicit_handler_for_every_admitted_operation(operation
         'wardrobe185_belt':('screen','inspect'),
         'wardrobe185_shot':('layout','motion'),
         'wardrobe185_exit_audit':('run',),
+        'wardrobe185_delivery':('seal','verify'),
         'wardrobe185_harness_contact':('run',),
         'wardrobe185_motion':('prep','simulate','screen'),
         'wardrobe185_integration':('audit','gaze_screen','garment_screen'),

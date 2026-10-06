@@ -30,6 +30,13 @@ def setup_camera(scene,rig,frame):
     return {'frame':frame,'t':t,'position':list(camera.location),'target':list(target),'lens_mm':42,'format':'9:16'}
 
 
+def setup_lighting(scene):
+    from mathutils import Vector
+    lights=sorted((ob for ob in scene.objects if ob.name.startswith('MF_body156_softbox')),key=lambda ob:ob.name)
+    for light,point in zip(lights,((-7,-9,7),(7,-6,4))):
+        light.location=point;light.rotation_euler=(Vector((0,-1,-2))-light.location).to_track_quat('-Z','Y').to_euler()
+
+
 def layout(out):
     import bpy
     from mathutils import Vector
@@ -48,9 +55,7 @@ def layout(out):
     (out/'garment-inspection.json').write_text(json.dumps(inspected,indent=2)+'\n')
     scene.render.resolution_x=576;scene.render.resolution_y=1024;scene.render.resolution_percentage=100
     scene.cycles.device='CPU';scene.cycles.samples=8;scene.render.use_persistent_data=True
-    lights=sorted((ob for ob in scene.objects if ob.name.startswith('MF_body156_softbox')),key=lambda ob:ob.name)
-    for light,point in zip(lights,((-7,-9,7),(7,-6,4))):
-        light.location=point;light.rotation_euler=(Vector((0,-1,-2))-light.location).to_track_quat('-Z','Y').to_euler()
+    setup_lighting(scene)
     records=[]
     for frame in (217,253,289,325,360):
         scene.frame_set(frame);bpy.context.view_layer.update();records.append(setup_camera(scene,rig,frame))
@@ -74,9 +79,7 @@ def motion(out):
     scene=bpy.context.scene;rig=bpy.data.objects['MF_body156_fit_rig']
     scene.render.resolution_x=432;scene.render.resolution_y=768;scene.render.resolution_percentage=100
     scene.cycles.device='CPU';scene.cycles.samples=4;scene.render.use_persistent_data=True
-    lights=sorted((ob for ob in scene.objects if ob.name.startswith('MF_body156_softbox')),key=lambda ob:ob.name)
-    for light,point in zip(lights,((-7,-9,7),(7,-6,4))):
-        light.location=point;light.rotation_euler=(Vector((0,-1,-2))-light.location).to_track_quat('-Z','Y').to_euler()
+    setup_lighting(scene)
     records=[]
     for frame in range(217,361):
         scene.frame_set(frame);bpy.context.view_layer.update();records.append(setup_camera(scene,rig,frame))
