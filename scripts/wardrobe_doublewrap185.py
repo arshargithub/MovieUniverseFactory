@@ -159,6 +159,14 @@ OPERATIONS += ('seatcheck02','seatcheck03','lowersurface07')
 OPERATIONS += ('lowerhold02','lowerhold03')
 OPERATIONS += ('lowermaterial01',)
 OPERATIONS += ('lowerisolate01',)
+OPERATIONS += ('lowerradial01',)
+OPERATIONS += ('lowerhold04',)
+OPERATIONS += ('lowerradial02',)
+OPERATIONS += ('lowerisolate02',)
+OPERATIONS += ('lowerrecontact01',)
+OPERATIONS += ('lowerrecontact02',)
+OPERATIONS += ('lowerrecontact03',)
+OPERATIONS += ('lowercloth11',)
 HEAD = base.BASE / 'wardrobe180-xpbdhead08/trajectory.npz'
 HEAD_SHA = '55ce2f99edfbb45a7cf8a5898be31caa1f20bd7da3bb2ae2be9c43e49d7095e8'
 
@@ -167,7 +175,7 @@ def validate(job):
     if not isinstance(job, dict) or set(job) != {'operation'} or job['operation'] not in OPERATIONS:
         raise ValueError('Fixed structured operation required')
     inputs=[(base.SOURCE,base.SOURCE_SHA)]
-    if job['operation'] in ('lowergap02','mountfit01','mountfit02','mountfit03','mountclear01','lowercloth10','trouserseat01','trouserseat02','trouserseat03','seatcheck01','seatcheck02','seatcheck03','lowersurface07','lowerhold01','lowerhold02','lowerhold03','lowermaterial01','lowerisolate01'):
+    if job['operation'] in ('lowergap02','mountfit01','mountfit02','mountfit03','mountclear01','lowercloth10','trouserseat01','trouserseat02','trouserseat03','seatcheck01','seatcheck02','seatcheck03','lowersurface07','lowerhold01','lowerhold02','lowerhold03','lowermaterial01','lowerisolate01','lowerradial01','lowerhold04','lowerradial02','lowerisolate02','lowerrecontact01','lowerrecontact02','lowerrecontact03','lowercloth11'):
         out=base.BASE/('wardrobe185-'+job['operation'])
         for path,sha in inputs:
             if path.is_symlink() or base.digest(path)!=sha:raise ValueError('Protected input changed')
@@ -552,14 +560,20 @@ def main():
     elif job['operation']=='lowergap02':
         from wardrobe185_lower_gap import run
         run(out)
-    elif job['operation'] in ('lowerhold01','lowerhold02','lowerhold03'):
+    elif job['operation'] in ('lowerhold01','lowerhold02','lowerhold03','lowerhold04'):
         from wardrobe185_lower_hold import run
         run(out)
     elif job['operation']=='lowermaterial01':
         from wardrobe185_lower_material import run
         run(out)
-    elif job['operation']=='lowerisolate01':
+    elif job['operation'] in ('lowerisolate01','lowerisolate02'):
         from wardrobe185_lower_isolate import run
+        run(out)
+    elif job['operation'] in ('lowerrecontact01','lowerrecontact02','lowerrecontact03'):
+        from wardrobe185_lower_recontact import run
+        run(out)
+    elif job['operation'] in ('lowerradial01','lowerradial02'):
+        from wardrobe185_lower_radial import run
         run(out)
     elif job['operation'] in ('mountfit01','mountfit02','mountfit03','mountclear01'):
         from wardrobe185_mount_fit import run
@@ -582,7 +596,7 @@ def main():
     elif job['operation'] in ('lowerreview01','lowerreview02','lowerreview03','lowerreview04','lowerreview05','lowerreview06'):
         from wardrobe185_lower_review import run as lower_review
         lower_review(out)
-    elif job['operation'] in ('lowercloth01','lowercloth02','lowercloth03','lowercloth04','lowercloth05','lowerwindoff06','lowerwindoff07','lowerouter08','lowerwindoff09','lowercloth10'):
+    elif job['operation'] in ('lowercloth01','lowercloth02','lowercloth03','lowercloth04','lowercloth05','lowerwindoff06','lowerwindoff07','lowerouter08','lowerwindoff09','lowercloth10','lowercloth11'):
         from wardrobe185_lower_cloth import solve as lower_cloth
         lower_cloth(out)
     elif job['operation'] in ('lowersurface01','lowersurface02','lowersurface03','lowersurface04','lowersurface05','lowersurface06','lowersurface07'):

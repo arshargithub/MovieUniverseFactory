@@ -70,9 +70,10 @@ def solve(out):
     layout=BASE/'wardrobe185-lowerdress07/initial-layout.npz'
     contacts=BASE/'wardrobe185-lowersurface02/surfaces.npz'
     source=BASE/'wardrobe185-lowercapture02/moving-source.npz'
+    remeshed=out.name.endswith('lowercloth11')
     mount_fixed=out.name.endswith('lowercloth10')
     outer_control=out.name.endswith('lowerwindoff09')
-    outer_only=mount_fixed or outer_control or out.name.endswith('lowerouter08')
+    outer_only=remeshed or mount_fixed or outer_control or out.name.endswith('lowerouter08')
     matched_control=outer_control or out.name.endswith('lowerwindoff07')
     windoff=matched_control or out.name.endswith('lowerwindoff06')
     complete=outer_only or windoff or out.name.endswith('lowercloth05')
@@ -86,6 +87,9 @@ def solve(out):
     if complete:
         layout=BASE/'wardrobe185-lowerdress14/initial-layout.npz';layout_sha=COMPLETE_LAYOUT_SHA
         contacts=BASE/'wardrobe185-lowersurface06/surfaces.npz';contact_sha=FITTED_SURFACE_SHA
+    if remeshed:
+        contacts=BASE/'wardrobe185-lowerrecontact02/surfaces.npz'
+        contact_sha='88479a1a2e6dc0e839bf58507b65a462e58da37bebc1529105823bbc8dfde329'
     for p,h in ((layout,layout_sha),(contacts,contact_sha),(source,SOURCE_SHA)):
         if h is None or digest(p)!=h:raise ValueError('Unbound lower cloth input')
     if json.loads((layout.parent/'result.json').read_text())['admission']!='PASS':raise ValueError('Initial lower cloth not admitted')
@@ -93,6 +97,24 @@ def solve(out):
     with np.load(layout,allow_pickle=False) as d:cut={k:d[k] for k in d.files}
     with np.load(contacts,allow_pickle=False) as d:contact={k:d[k] for k in d.files}
     with np.load(source,allow_pickle=False) as d:pelvis=d['pelvis_matrices']
+    if remeshed:
+        from wardrobe185_lower_surface import winding_numbers
+        from mathutils.bvhtree import BVHTree
+        initial=BASE/'wardrobe185-lowerhold02/initial-169.npz'
+        if digest(initial)!='b088f7fb5779df6136906a90906110e97cb17f39dcb9c2943d50156592b3605d':raise ValueError('Admitted initial cloth changed')
+        with np.load(initial,allow_pickle=False) as d:
+            if not np.array_equal(d['faces'],cut['faces']) or np.max(abs(d['rest']-cut['rest']))>1e-10:raise ValueError('Different initial garment cut')
+            cut['mounted']=d['points']
+        p=cut['mounted'];ct=BVHTree.FromPolygons(p.tolist(),cut['faces'].tolist());checks={}
+        for name in ('pants','upper','horse','saddle','pad'):
+            q=contact[name+'_frames'][1];f=contact[name+'_faces'];tree=BVHTree.FromPolygons(q.tolist(),f.tolist(),all_triangles=True)
+            inside=int(np.count_nonzero(abs(winding_numbers(p,q,f))>.5));pairs=len(ct.overlap(tree))
+            checks[name]={'inside':inside,'initial_face_pairs':pairs}
+            if inside or pairs:raise ValueError('Repaired contact invalidates initial cloth: '+name)
+        (out/'changed-contact-preflight.json').write_text(json.dumps({'contacts':checks,
+            'proxy_status':'DIAGNOSTIC_ONLY: partial/full pose self-fold warnings retained; test actual cloth, not proxy certification',
+            'source02_process_note':'Geometry export completed; final actor-signature guard failed because contact-only scene has no actor. No actor source file was opened or edited.',
+            'scope':'Diagnostic performance test, not waived rendered contact or visual gates'},indent=2)+'\n')
     if mount_fixed:
         from wardrobe185_mount_fit import HORSE_SHIFT
         from wardrobe185_lower_surface import winding_numbers
@@ -192,5 +214,5 @@ def solve(out):
         if digest(p)!=h:raise ValueError('Lower cloth changed an input')
     (out/'result.json').write_text(json.dumps({'layout_sha256':layout_sha,'contacts_sha256':contact_sha,
         'cases':record,'inputs_unchanged':True,'accepted_masters_not_opened':True,'visual_gate':'NOT_RUN',
-        'horse_registration_native':HORSE_SHIFT.tolist() if mount_fixed else [0.,0.,0.],
+        'horse_registration_native':[0.,0.,-1.05] if remeshed or mount_fixed else [0.,0.,0.],
         'scope':'Separate free standing/mounted lower cloth; not a mounting animation or final character pass'},indent=2)+'\n')

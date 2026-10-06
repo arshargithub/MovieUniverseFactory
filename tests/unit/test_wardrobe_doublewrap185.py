@@ -292,6 +292,8 @@ def test_dispatch_has_an_explicit_handler_for_every_admitted_operation(operation
         'wardrobe185_lower_hold':('run',),
         'wardrobe185_lower_material':('run',),
         'wardrobe185_lower_isolate':('run',),
+        'wardrobe185_lower_radial':('run',),
+        'wardrobe185_lower_recontact':('run',),
         'wardrobe185_cut_solve':('run',),'wardrobe185_rest_unit':('run',),
         'wardrobe185_intersections':('run',),
         'wardrobe185_head_dress':('run','screen'),
@@ -573,3 +575,23 @@ def test_lower_regions_cannot_collect_arms_into_thigh_envelopes():
     np.testing.assert_array_equal(selected['thighL'],pants[:,:1])
     np.testing.assert_array_equal(selected['thighR'],pants[:,1:2])
     np.testing.assert_array_equal(selected['abdomen'],upper[:,2:3])
+
+
+def test_radial_contact_sections_are_closed_and_outward():
+    from wardrobe185_lower_radial import section_faces
+    n=16;theta=np.arange(n)*2*np.pi/n
+    p=np.array([(np.sin(t),np.cos(t),z) for z in (1.,0.,-1.) for t in theta]+[(0,0,1),(0,0,-1)])
+    f=section_faces(n,3);tri=p[f]
+    assert np.sum(np.einsum('ij,ij->i',tri[:,0],np.cross(tri[:,1],tri[:,2])))/6>0
+    edges=np.sort(np.concatenate([f[:,[i,(i+1)%3]] for i in range(3)]),axis=1)
+    _,counts=np.unique(edges,axis=0,return_counts=True)
+    assert np.all(counts==2)
+
+
+def test_trunk_rays_cannot_select_lowered_sleeves_or_raised_knees():
+    from wardrobe185_lower_radial import trunk_faces
+    p=np.array([[0.,0,-5],[1,0,-5],[0,1,-5],[2.5,0,-5],[2.6,0,-5],[2.5,.1,-5],
+        [0,0,-8],[1,0,-8],[0,1,-8]])
+    f=np.arange(9).reshape(3,3)
+    np.testing.assert_array_equal(trunk_faces('upper',p,f),f[:1])
+    np.testing.assert_array_equal(trunk_faces('pants',p,f),f[:2])

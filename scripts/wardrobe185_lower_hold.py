@@ -25,7 +25,8 @@ def contact_components(data,frame):
     """
     from wardrobe185_lower_cloth import panel
     j=list(data['frame_ids']).index(frame);points=[];faces=[];volumes=[];offset=0
-    for name in ('pants','upper','body','horse','saddle','pad'):
+    names=('trunk','thighL','thighR','horse','saddle','pad') if 'trunk_frames' in data else ('pants','upper','body','horse','saddle','pad')
+    for name in names:
         p=data[name+'_frames'][j];f=data[name+'_faces']
         points.append(p);faces.append(f+offset);volumes.append((p,f));offset+=len(p)
     ob=panel('Initial closed components',np.concatenate(points),np.concatenate(faces))
@@ -60,12 +61,19 @@ def run(out):
         (BASE/'wardrobe185-lowersurface07/surfaces.npz',SURFACE_SHA),
         (BASE/'wardrobe185-lowercapture02/moving-source.npz',SOURCE_SHA),
         (BASE/'wardrobe185-trouserseat03/integration-working.blend',NATIVE_SHA)]
+    regional=out.name.endswith('lowerhold04')
+    if regional:
+        paths.append(paths[1])
+        paths[1]=(BASE/'wardrobe185-lowerradial01/surfaces.npz','9b688516a5af0d4e424952912719b787f6545dbb66b940a4c7fa33de98a802ed')
     for p,h in paths:
         if digest(p)!=h:raise ValueError('Held-pose input changed: '+p.name)
     (out/Path(__file__).name).write_bytes(Path(__file__).read_bytes())
     with np.load(paths[0][0],allow_pickle=False) as d:cut={k:d[k] for k in d.files}
     with np.load(paths[1][0],allow_pickle=False) as d:contact={k:d[k] for k in d.files}
     with np.load(paths[2][0],allow_pickle=False) as d:pelvis=d['pelvis_matrices']
+    if regional:
+        with np.load(paths[4][0],allow_pickle=False) as d:actual_contacts={k:d[k] for k in d.files}
+    else:actual_contacts=contact
     rest=cut['rest'];faces=cut['faces'];pins=cut['pin_indices'];weights=cut['pin_weights']
     edges=np.unique(np.sort(np.concatenate([faces[:,[i,(i+1)%4]] for i in range(4)]),axis=1),axis=0)
     lengths=np.linalg.norm(rest[edges[:,0]]-rest[edges[:,1]],axis=1)
@@ -78,7 +86,7 @@ def run(out):
         initial[pins]=cut['guided'][frame-1,pins]
         exterior=out.name.endswith('lowerhold03')
         union,volumes=(exterior_contact(contact,frame) if exterior else
-            contact_components(contact,frame) if out.name.endswith('lowerhold02') else contact_union(contact,frame,False))
+            contact_components(contact,frame) if regional or out.name.endswith('lowerhold02') else contact_union(contact,frame,False))
         union.data.calc_loop_triangles()
         exterior_points=np.array([v.co[:] for v in union.data.vertices])
         exterior_faces=np.array([t.vertices[:] for t in union.data.loop_triangles])
@@ -88,13 +96,17 @@ def run(out):
         from wardrobe185_lower_surface import winding_numbers
         admission['individual_volume_inside_counts']=[int(np.count_nonzero(abs(winding_numbers(p,v,f))>.5)) for v,f in volumes]
         admission['remaining_inside_vertices']=max(admission['remaining_inside_vertices'],sum(admission['individual_volume_inside_counts']))
+        if regional:
+            admission['actual_inside_counts']={name:int(np.count_nonzero(abs(winding_numbers(p,actual_contacts[name+'_frames'][j],actual_contacts[name+'_faces']))>.5))
+                for name in ('body','pants','upper','horse','saddle','pad')}
+            admission['remaining_inside_vertices']=max(admission['remaining_inside_vertices'],sum(admission['actual_inside_counts'].values()))
         (out/('admission-'+str(frame)+'.json')).write_text(json.dumps(admission,indent=2)+'\n')
         np.savez_compressed(out/('initial-'+str(frame)+'.npz'),points=p,faces=faces,rest=rest)
         if admission['remaining_inside_vertices'] or admission['nonadjacent_crossings'] or admission['actor_crossing_pairs']:
             records[str(frame)]={'state':'INITIAL_CONTACT_FAIL','admission':admission};continue
         if admission['max_initial_move_m']>.1 or admission['max_waist_move_m']>.015 or admission['min_edge_m']<.001:
             records[str(frame)]={'state':'INITIAL_CONSTRUCTION_FAIL','admission':admission};continue
-        subset={k:(v[j:j+1] if k=='frame_ids' or k.endswith('_frames') else v) for k,v in contact.items()}
+        subset={k:(v[j:j+1] if k=='frame_ids' or k.endswith('_frames') else v) for k,v in actual_contacts.items()}
         support_preflight(p[None,pins],subset,out,'held-'+str(frame),.0035,np.flatnonzero(weights==1.))
         ob=panel('MF185_held_lower',p*SCALE,faces)
         ob.shape_key_add(name='Basis');key=ob.shape_key_add(name='Unstressed cut')
@@ -106,7 +118,7 @@ def run(out):
         cache(ob,np.repeat(p[None]*SCALE,120,axis=0),out/('held-'+str(frame)+'.mdd'))
         weld=ob.modifiers.new('Explicit rest evaluation','WELD');weld.merge_threshold=1e-7
         domain=bpy.data.collections.new('Outer clothing and mount');scene.collection.children.link(domain)
-        for name in (('exterior',) if exterior else ('pants','upper','horse','saddle','pad')):
+        for name in (('exterior',) if exterior else ('trunk','thighL','thighR','horse','saddle','pad') if regional else ('pants','upper','horse','saddle','pad')):
             cp,cf=(exterior_points,exterior_faces) if exterior else (contact[name+'_frames'][j],contact[name+'_faces'])
             co=panel('MF185_held_'+name,cp*SCALE,cf)
             domain.objects.link(co);co.modifiers.new('Stationary contact','COLLISION')
