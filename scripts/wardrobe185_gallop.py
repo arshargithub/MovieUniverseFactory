@@ -15,6 +15,8 @@ PROOF_SHA='92451328328b2e754d45bbfbc0fb01492dc6bd30c61a90644a46fb784e4e4810'
 DIAGNOSTIC_SHA='e54765e71e5f9ffdb2e1185d9efb4f85b7fedef7f817ca8e6bad18334ec2ee4e'
 OFF_SHA='c660199a170bd77695e1afbed8d4420d27ac78ac103438b4506291e38aed8ff4'
 AIRFLOW_SHA=None
+REGIONAL_TRAJECTORY_SHA=None
+REGIONAL_PROOF_SHA=None
 
 
 def apparent_airflow(frame):
@@ -102,14 +104,16 @@ def screen(out):
     from wardrobe185_riding import fit_tack
     from wardrobe_riding_fit import fit_render
     foundation=BASE/'wardrobe185-motionreview03/diagnostic.blend'
-    rider=BASE/'wardrobe185-riding06/rider-rig.blend'
+    regional=out.name.endswith('regionalreview04')
+    rider=BASE/('wardrobe185-riding07/rider-rig.blend' if regional else 'wardrobe185-riding06/rider-rig.blend')
     horse=BASE/'wardrobe185-horsecache01/horse-library.blend'
     contacts=horse.parent/'contacts.npz'
-    trajectory=BASE/'wardrobe185-gallopcloth01/trajectory.npz';proof=trajectory.parent/'motion-proof.npz'
+    trajectory=BASE/('wardrobe185-gallopcloth04/trajectory.npz' if regional else 'wardrobe185-gallopcloth01/trajectory.npz');proof=trajectory.parent/'motion-proof.npz'
+    from wardrobe185_convex import RIDER07_SHA
     sources=((foundation,'0f128ba60947d4451f7e0bbaa3a5f6f275173702e3d4bddd245cef73d2310bd7'),
-        (rider,RIDER_SHA),(horse,'8bccbbf45000cb61b8d50f014ff9db13973c97dd122b35b6bc6f77827e9e97a7'),
+        (rider,RIDER07_SHA if regional else RIDER_SHA),(horse,'8bccbbf45000cb61b8d50f014ff9db13973c97dd122b35b6bc6f77827e9e97a7'),
         (contacts,'15c434d960df8f9720b81d1d7d044ef0a29bca309631f310c7e1ba996de590c9'),
-        (trajectory,TRAJECTORY_SHA),(proof,PROOF_SHA))
+        (trajectory,REGIONAL_TRAJECTORY_SHA if regional else TRAJECTORY_SHA),(proof,REGIONAL_PROOF_SHA if regional else PROOF_SHA))
     for path,sha in sources:
         if sha is None or path.is_symlink() or digest(path)!=sha:raise ValueError('Unbound integrated gallop source '+str(path))
     (out/Path(__file__).name).write_bytes(Path(__file__).read_bytes())
@@ -150,20 +154,25 @@ def screen(out):
     if max(errors)>1e-5 or max(cache_errors)>2e-6:raise ValueError('Integrated rig/cloth mismatch')
     scene.frame_start=217;scene.frame_end=360;scene.frame_set(217)
     scene.cycles.device='CPU';scene.cycles.samples=8;scene.render.use_persistent_data=True
-    bpy.ops.wm.save_as_mainfile(filepath=str(out/'diagnostic.blend'),check_existing=False,compress=True)
+    if not regional:bpy.ops.wm.save_as_mainfile(filepath=str(out/'diagnostic.blend'),check_existing=False,compress=True)
+    horse_objects=[o for o in scene.objects if o.name.startswith(('MF185_gait_','MF185_rein_','MF185_stirrup_'))]
+    visibility={o:o.hide_render for o in horse_objects}
+    if regional:
+        for o in horse_objects:o.hide_render=True
     for frame in (217,265,360):
         scene.frame_set(frame);bpy.context.view_layer.update()
         head=rig.matrix_world@rig.pose.bones['MF185_head'].head
         center=tuple(head+Vector((0,0,-.6)))
         for angle,label in ((0,'front'),(90,'left'),(180,'rear'),(270,'right')):
             fit_render(out,label+'-%03d'%frame,angle,center,8.,(640,640))
+    for o,state in visibility.items():o.hide_render=state
     for frame in (217,220,223,226):
         scene.frame_set(frame);bpy.context.view_layer.update()
         fit_render(out,'whole-%03d'%frame,35,(0,-1.8,-8),32.,(720,540))
     check_protected()
     (out/'result.json').write_text(json.dumps({'source_hashes':{str(p):h for p,h in sources},
         'head_chest_action_error':max(errors),'cloth_cache_error':max(cache_errors),
-        'protected_local_data_exact':True,'native_sha256':digest(out/'diagnostic.blend'),
+        'protected_local_data_exact':True,'native_sha256':None if regional else digest(out/'diagnostic.blend'),
         'visual_gate':'NOT_RUN','full_playback':'NOT_RUN','wind_causality':'NOT_RUN','production_ready':False},indent=2)+'\n')
 
 

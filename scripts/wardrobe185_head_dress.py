@@ -3,6 +3,30 @@ import json,math
 from pathlib import Path
 import numpy as np
 
+HEAD05_SHA='81a6e84910e54cc41d7c0a4b72e2a1b8bea09e38ca89fdccb6109df983b98e09'
+
+
+def screen(out):
+    import bpy
+    import wardrobe_studio as studio
+    from wardrobe_motion178 import BASE,digest,check_protected
+    from wardrobe_riding_fit import fit_render
+    from wardrobe_doublewrap185 import color
+    source=BASE/'wardrobe185-motionreview03/diagnostic.blend'
+    head=BASE/'wardrobe185-headdress05/trajectory.npz'
+    if digest(source)!='0f128ba60947d4451f7e0bbaa3a5f6f275173702e3d4bddd245cef73d2310bd7' or digest(head)!=HEAD05_SHA:raise ValueError('Unbound head review')
+    (out/Path(__file__).name).write_bytes(Path(__file__).read_bytes())
+    with np.load(head,allow_pickle=False) as d:p=d['frames'][-1];f=d['faces']
+    bpy.ops.wm.open_mainfile(filepath=str(source),load_ui=False,use_scripts=False)
+    scene=bpy.context.scene;scene.frame_set(1);bpy.context.view_layer.update()
+    bpy.data.objects['MF185_moving_shawl'].hide_render=True
+    studio.panel('MF185_redressed_head',p.tolist(),f.tolist(),color('new indigo head',(.06,.10,.18)),.012,1)
+    scene.cycles.device='CPU';scene.cycles.samples=8;scene.render.use_persistent_data=True
+    for angle,label in ((0,'front'),(60,'left-quarter'),(90,'left'),(180,'rear'),(270,'right'),(300,'right-quarter')):
+        fit_render(out,label,angle,(0,.1,-1.3),7.,(640,640))
+    check_protected()
+    (out/'result.json').write_text(json.dumps({'head_sha256':HEAD05_SHA,'visual_gate':'NOT_RUN','motion_gate':'NOT_RUN'},indent=2)+'\n')
+
 
 def pattern(crown=1.30, front_width=.78, spread_tails=False):
     rows,cols=41,61;scale=.12292759120464325
@@ -31,16 +55,21 @@ def run(out):
     from wardrobe_doublewrap185 import cloth_settings
     from wardrobe_shawl180 import measures
     (out/Path(__file__).name).write_bytes(Path(__file__).read_bytes())
-    path=base.BASE/'wardrobe185-proxy02/proxy.npz'
-    if base.digest(path)!='19cce587247a325e2f0b081f49e14eb0a40bf6c3364896a327af4639a6d4f7eb':raise ValueError('Proxy changed')
-    with np.load(path,allow_pickle=False) as d:cp=d['points'];cf=d['faces']
+    regional=out.name.endswith('05')
     bpy.ops.wm.read_factory_settings(use_empty=True);scene=bpy.context.scene;scene.render.fps=24;scene.gravity=(0,0,-9.81)
-    revised=out.name.endswith(('02','03','04'))
-    front_width=.94 if out.name.endswith(('03','04')) else .78
-    scale=.12292759120464325;p,f,r=pattern(1.10 if revised else 1.30,front_width,spread_tails=out.name.endswith('04'))
-    mesh=bpy.data.meshes.new('Actor');mesh.from_pydata((cp*scale).tolist(),[],cf.tolist());mesh.update()
-    contact=bpy.data.objects.new('Actor',mesh);scene.collection.objects.link(contact);bpy.context.view_layer.objects.active=contact
-    dec=contact.modifiers.new('Contact reduction','DECIMATE');dec.ratio=min(1,12000/len(cf));bpy.ops.object.modifier_apply(modifier=dec.name)
+    revised=out.name.endswith(('02','03','04','05'))
+    front_width=.94 if out.name.endswith(('03','04','05')) else .78
+    scale=.12292759120464325;p,f,r=pattern(1.10 if revised else 1.30,front_width,spread_tails=out.name.endswith(('04','05')))
+    if regional:
+        from wardrobe185_convex import static_contacts
+        contact=static_contacts(out,scale)
+    else:
+        path=base.BASE/'wardrobe185-proxy02/proxy.npz'
+        if base.digest(path)!='19cce587247a325e2f0b081f49e14eb0a40bf6c3364896a327af4639a6d4f7eb':raise ValueError('Proxy changed')
+        with np.load(path,allow_pickle=False) as d:cp=d['points'];cf=d['faces']
+        mesh=bpy.data.meshes.new('Actor');mesh.from_pydata((cp*scale).tolist(),[],cf.tolist());mesh.update()
+        contact=bpy.data.objects.new('Actor',mesh);scene.collection.objects.link(contact);bpy.context.view_layer.objects.active=contact
+        dec=contact.modifiers.new('Contact reduction','DECIMATE');dec.ratio=min(1,12000/len(cf));bpy.ops.object.modifier_apply(modifier=dec.name)
     mesh=contact.data
     mesh.calc_loop_triangles();v=np.array([x.co[:] for x in mesh.vertices]);t=np.array([x.vertices[:] for x in mesh.loop_triangles])
     tree=BVHTree.FromPolygons(v.tolist(),t.tolist(),all_triangles=True);deltas=[]

@@ -183,7 +183,7 @@ def test_dispatch_has_an_explicit_handler_for_every_admitted_operation(operation
         'wardrobe185_isolate':('run',),'wardrobe185_proxy':('run',),
         'wardrobe185_cut_solve':('run',),'wardrobe185_rest_unit':('run',),
         'wardrobe185_intersections':('run',),
-        'wardrobe185_head_dress':('run',),
+        'wardrobe185_head_dress':('run','screen'),
         'wardrobe185_harness_contact':('run',),
         'wardrobe185_motion':('prep','simulate','screen'),
         'wardrobe185_integration':('audit','gaze_screen','garment_screen'),

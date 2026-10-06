@@ -146,15 +146,19 @@ def hold_preflight(ob,contact,pins,out,scale):
     scene=bpy.context.scene;records=[];failures=[];point_samples=[]
     for frame in sorted(set([1,72,169,193,217,360]+list(range(169,361,4)))):
         scene.frame_set(frame);bpy.context.view_layer.update()
-        ev=contact.evaluated_get(bpy.context.evaluated_depsgraph_get());m=ev.to_mesh();m.calc_loop_triangles()
-        p=np.array([v.co[:] for v in m.vertices]);f=np.array([t.vertices[:] for t in m.loop_triangles]);ev.to_mesh_clear()
-        tree=BVHTree.FromPolygons(p.tolist(),f.tolist(),all_triangles=True)
+        components=[]
+        for collider in (contact if isinstance(contact,list) else [contact]):
+            ev=collider.evaluated_get(bpy.context.evaluated_depsgraph_get());m=ev.to_mesh();m.calc_loop_triangles()
+            p=np.array([v.co[:] for v in m.vertices]);f=np.array([t.vertices[:] for t in m.loop_triangles]);ev.to_mesh_clear()
+            components.append((BVHTree.FromPolygons(p.tolist(),f.tolist(),all_triangles=True),p,f))
         ev=ob.evaluated_get(bpy.context.evaluated_depsgraph_get());m=ev.to_mesh();q=np.array([v.co[:] for v in m.vertices]);ev.to_mesh_clear()
         signed=[]
         for i,w in pins.items():
-            point=Vector(q[i]);distance=tree.find_nearest(point)[3]
-            try:within=inside(tree,point)
-            except ValueError:within=winding_inside(q[i],p[f])
+            point=Vector(q[i]);distance=min(tree.find_nearest(point)[3] for tree,_,_ in components);within=False
+            for tree,p,f in components:
+                try:part_inside=inside(tree,point)
+                except ValueError:part_inside=winding_inside(q[i],p[f])
+                within|=part_inside
             signed.append(-distance if within else distance)
             if within or distance<.0015:failures.append({'frame':frame,'index':i,'weight':w,'signed_m':signed[-1]})
         records.append({'frame':frame,'minimum_signed_m':min(signed),'maximum_gap_m':max(signed)})

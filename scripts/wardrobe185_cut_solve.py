@@ -6,7 +6,8 @@ import numpy as np
 
 def run(out, motion=False):
     version=25 if motion else int(out.name.removeprefix('wardrobe185-cut'))
-    gallop=out.name.endswith(('gallopcloth01','gallopoff01','gallopcloth02'))
+    regional=out.name.endswith(('gallopcloth03','gallopoff03','gallopcloth04','gallopoff04'))
+    gallop=regional or out.name.endswith(('gallopcloth01','gallopoff01','gallopcloth02'))
     articulated=gallop or out.name.endswith(('holdcheck01','motion03','motionoff03'))
     import bpy
     from mathutils import Vector
@@ -31,6 +32,9 @@ def run(out, motion=False):
         if version>=21:
             head_path=base.BASE/'wardrobe185-headdress04/trajectory.npz'
             head_sha='23c22dd0088aae880dca4cda8f42eb441c9b8d11e305690e5753895255871051'
+        if out.name.endswith(('gallopcloth04','gallopoff04')):
+            from wardrobe185_head_dress import HEAD05_SHA
+            head_path=base.BASE/'wardrobe185-headdress05/trajectory.npz';head_sha=HEAD05_SHA
         if base.digest(head_path)!=head_sha:raise ValueError('Staged head changed')
         with np.load(head_path,allow_pickle=False) as d:
             hp=d['frames'][-1];hf=d['faces'];head_rest=d['rest'];head_pins=dict(zip(d['pin_indices'].tolist(),d['pin_weights'].tolist()))
@@ -75,22 +79,25 @@ def run(out, motion=False):
             if PREP_SHA is None:raise ValueError('Gallop contact not hash-bound')
             library=base.BASE/'wardrobe185-gallopprep03/motion-rig.blend';library_sha=PREP_SHA
         if base.digest(library)!=library_sha:raise ValueError('Diagnostic motion library changed')
-        names=['MF178_metres_rig','MF178_support_185_contact']
+        names=['MF178_metres_rig'] if regional else ['MF178_metres_rig','MF178_support_185_contact']
         with bpy.data.libraries.load(str(library),link=False) as (available,loaded):
             if not all(n in available.objects for n in names):raise ValueError('Incomplete motion library')
             loaded.objects=names
         for ob in loaded.objects:scene.collection.objects.link(ob)
         # Blender replaces entries of data_to.objects with loaded IDs; it
         # may mutate the assigned list rather than preserving name strings.
-        canonical,contact=loaded.objects
+        if regional:
+            from wardrobe185_convex import solver_contacts
+            canonical=loaded.objects[0];contact,moving_contacts=solver_contacts(canonical,out,scale)
+        else:canonical,contact=loaded.objects
         if canonical.type!='ARMATURE' or contact.type!='MESH':raise ValueError('Unexpected motion library object types')
-        if not np.allclose(np.array([v.co[:] for v in contact.data.vertices]),cp*scale,atol=2e-7):raise ValueError('Motion contact basis changed')
+        if not regional and not np.allclose(np.array([v.co[:] for v in contact.data.vertices]),cp*scale,atol=2e-7):raise ValueError('Motion contact basis changed')
         from wardrobe185_motion import schedule
         import math
         bpy.ops.object.effector_add(type='WIND',location=(4*scale,-3*scale,0))
         wind=bpy.context.object;wind.name='MF185_diagnostic_wind';wind.rotation_euler=(math.radians(72),0,math.radians(-25))
-        gain=0. if out.name.endswith(('motionoff01','motionoff03','gallopoff01')) else 1.
-        relative_airflow=out.name.endswith('gallopcloth02')
+        gain=0. if out.name.endswith(('motionoff01','motionoff03','gallopoff01','gallopoff03','gallopoff04')) else 1.
+        relative_airflow=regional or out.name.endswith('gallopcloth02')
         if relative_airflow:
             from wardrobe185_gallop import apparent_airflow
             wind.rotation_euler=Vector(apparent_airflow(217)[0]).to_track_quat('Z','Y').to_euler()
@@ -190,13 +197,18 @@ def run(out, motion=False):
         (out/'initial-self-contact.json').write_text(json.dumps({'nonadjacent_crossings':self_pairs})+'\n')
         if any(self_pairs):raise ValueError('Reject initial self-crossing garment')
     np.savez_compressed(out/'construction.npz',points=p,raw=raw,faces=f,rest=rest,counts=counts,pin_indices=list(pins),pin_weights=list(pins.values()))
-    contact.modifiers.new('Collision','COLLISION');contact.collision.thickness_outer=.0015;contact.collision.cloth_friction=15
-    domain=bpy.data.collections.new('Contact domain');scene.collection.children.link(domain);domain.objects.link(contact)
+    if not regional:moving_contacts=[contact]
+    domain=bpy.data.collections.new('Contact domain');scene.collection.children.link(domain)
+    for collider in moving_contacts:
+        collider.modifiers.new('Collision','COLLISION');collider.collision.thickness_outer=.0015;collider.collision.cloth_friction=15;domain.objects.link(collider)
     mesh=bpy.data.meshes.new('Scarf');mesh.from_pydata((p*scale).tolist(),[],f.tolist());mesh.update()
     ob=bpy.data.objects.new('Scarf',mesh);scene.collection.objects.link(ob)
     if motion:
         from wardrobe_motion178_controls import bind
-        if articulated:
+        if regional:
+            from wardrobe185_convex import bind_regions
+            bind_regions(ob,canonical,int(counts[0]))
+        elif articulated:
             from wardrobe185_motion import support_sampler
             bind(ob,canonical,support_sampler(contact,scale),scale=scale)
         else:bind(ob,canonical,scale=scale,chest_only=True)
@@ -257,7 +269,7 @@ def run(out, motion=False):
         (out/'rest-workaround.json').write_text(json.dumps({'vertex_positions_and_face_indices_preserved':True,'threshold_m':1e-6,'positive_control':'wardrobe185-restunit03/weld'},indent=2)+'\n')
     if articulated:
         from wardrobe185_motion import hold_preflight
-        hold_preflight(ob,contact,pins,out,scale)
+        hold_preflight(ob,moving_contacts if regional else contact,pins,out,scale)
         if out.name.endswith('holdcheck01'):return
     mod=recipe.cloth_settings(ob,1,domain);mod.settings.rest_shape_key=flat
     mod.settings.use_dynamic_mesh=False
@@ -298,8 +310,11 @@ def run(out, motion=False):
                 hd=canonical.matrix_world@head.matrix@head.bone.matrix_local.inverted()@canonical.matrix_world.inverted()
                 head_matrices.append(np.array(Matrix.Scale(1/scale,4)@hd@Matrix.Scale(scale,4)))
             if frame in (1,169,193,217,265,360):
-                ev=contact.evaluated_get(bpy.context.evaluated_depsgraph_get());m=ev.to_mesh()
-                contact_samples.append(np.array([v.co[:] for v in m.vertices])/scale);contact_frames.append(frame);ev.to_mesh_clear()
+                points=[];polygons=[];offset=0
+                for collider in moving_contacts:
+                    ev=collider.evaluated_get(bpy.context.evaluated_depsgraph_get());m=ev.to_mesh();m.calc_loop_triangles()
+                    points.extend([v.co[:] for v in m.vertices]);polygons.extend([np.array(t.vertices[:])+offset for t in m.loop_triangles]);offset+=len(m.vertices);ev.to_mesh_clear()
+                contact_samples.append(np.array(points)/scale);contact_frames.append(frame);cf=np.array(polygons)
         if frame%12==0:print('185 tailored drape',frame,flush=True)
     np.savez_compressed(out/'trajectory.npz',points=p,faces=f,rest=rest,frames=np.array(samples),counts=counts,pin_indices=list(pins),pin_weights=list(pins.values()))
     if motion:
@@ -309,5 +324,6 @@ def run(out, motion=False):
         'mass_is_physical_calibration':False,'visual_gate':'NOT_RUN','motion_gate':'NOT_RUN',
         'construction':('Staged clean headfall and two concealed-join courses with developable cylindrical rest metrics' if closed else 'Clean lower headfall; open overlapping strips with rectangular rest metrics and concealed rear holds'),
         'source_actor_not_loaded_or_changed':True,'scale':scale,'diagnostic_motion_executed':motion,
-        'actual_trailer_gallop_qualified':False}
+        'actual_trailer_gallop_qualified':False,'regional_contacts':regional,
+        'contact_proof_membership':'Union of separate overlapping closed volumes; concatenated proof faces are not a single parity domain' if regional else 'Single closed collider'}
     (out/'result.json').write_text(json.dumps(report,indent=2)+'\n');print(json.dumps(report),flush=True)

@@ -248,4 +248,86 @@ def screen(out):
     check_protected();(out/'result.json').write_text(json.dumps({'parts':report,'visual_gate':'NOT_RUN','contact_sha256':CONTACT_SHA},indent=2)+'\n')
 
 
+def static_contacts(out,scale):
+    """Neutral union for staging only; no action, rig or moving cache."""
+    import bpy,bmesh
+    from wardrobe_motion178 import BASE,digest
+    path=BASE/'wardrobe185-convexcontact04/contact.npz'
+    if digest(path)!=CONTACT_SHA:raise ValueError('Unbound neutral regional contacts')
+    contacts=[]
+    with np.load(path,allow_pickle=False) as data:
+        for key in ('torso','armL','armR','head','groom'):
+            mesh=bpy.data.meshes.new('185 static '+key);mesh.from_pydata((data[key+'_points']*scale).tolist(),[],data[key+'_faces'].tolist());mesh.update()
+            ob=bpy.data.objects.new('MF185_static_'+key,mesh);bpy.context.scene.collection.objects.link(ob);contacts.append(ob)
+    union=contacts[0].copy();union.data=union.data.copy();bpy.context.scene.collection.objects.link(union)
+    union.name='MF185_neutral_dressing_union';bpy.context.view_layer.objects.active=union
+    for ob in contacts[1:]:
+        mod=union.modifiers.new('Neutral union','BOOLEAN');mod.operation='UNION';mod.solver='EXACT';mod.object=ob
+        bpy.ops.object.modifier_apply(modifier=mod.name)
+    bm=bmesh.new();bm.from_mesh(union.data);bad=sum(not e.is_manifold for e in bm.edges)
+    bmesh.ops.recalc_face_normals(bm,faces=list(bm.faces));bm.to_mesh(union.data);bm.free()
+    for ob in contacts:bpy.data.objects.remove(ob,do_unlink=True)
+    if bad:raise ValueError('Neutral contact union is not closed')
+    (out/'contact-binding.json').write_text(json.dumps({'contact_sha256':CONTACT_SHA,'neutral_only':True,'nonmanifold_edges':bad},indent=2)+'\n')
+    (out/Path(__file__).name).write_bytes(Path(__file__).read_bytes())
+    return union
+
+
+def solver_contacts(canonical,out,scale):
+    """Load exact regional trajectories; union only for initial dressing.
+
+    Moving collision uses distinct overlapping volumes. The stationary union
+    is NEVER a collider and must not be mistaken for a moving actor proxy.
+    """
+    import bpy,bmesh
+    (out/Path(__file__).name).write_bytes(Path(__file__).read_bytes())
+    from mathutils import Matrix
+    from wardrobe_motion178 import BASE,digest
+    from wardrobe185_gallop import transfer_action
+    from wardrobe_shawl180_cache import cache
+    path=BASE/'wardrobe185-convexcontact04/contact.npz';rider=BASE/'wardrobe185-riding07/rider-rig.blend'
+    if CONTACT_SHA is None or digest(path)!=CONTACT_SHA or digest(rider)!=RIDER07_SHA:raise ValueError('Unbound regional solver input')
+    with np.load(path,allow_pickle=False) as d:data={k:d[k] for k in d.files}
+    with bpy.data.libraries.load(str(rider),link=False) as (_,loaded):loaded.objects=['MF_body156_fit_rig']
+    donor=loaded.objects[0];bpy.context.scene.collection.objects.link(donor)
+    transfer_action(donor,canonical);bpy.data.objects.remove(donor,do_unlink=True)
+    errors=[];scene=bpy.context.scene
+    for frame in range(1,361):
+        scene.frame_set(frame);bpy.context.view_layer.update()
+        for key,name in (('torso','chest'),('head','MF185_head'),('armL','upperarm.L'),('armR','upperarm.R')):
+            b=canonical.pose.bones[name];delta=canonical.matrix_world@b.matrix@b.bone.matrix_local.inverted()@canonical.matrix_world.inverted()
+            native=Matrix.Scale(1/scale,4)@delta@Matrix.Scale(scale,4)
+            errors.append(float(np.max(abs(np.array(native)-data[key+'_matrices'][frame-1]))))
+    if max(errors)>1e-5:raise ValueError('Regional contact action mismatch')
+    scene.frame_set(1);bpy.context.view_layer.update();contacts=[]
+    for key in ('torso','armL','armR','head','groom'):
+        mesh=bpy.data.meshes.new('185 contact '+key);mesh.from_pydata((data[key+'_points']*scale).tolist(),[],data[key+'_faces'].tolist());mesh.update()
+        ob=bpy.data.objects.new('MF185_collision_'+key,mesh);scene.collection.objects.link(ob)
+        cache(ob,data[key+'_frames']*scale,out/(key+'-contact.mdd'));contacts.append(ob)
+    union=contacts[0].copy();union.data=union.data.copy();union.name='MF185_initial_union_NOT_COLLIDER';scene.collection.objects.link(union)
+    for m in list(union.modifiers):union.modifiers.remove(m)
+    bpy.context.view_layer.objects.active=union;union.select_set(True)
+    for ob in contacts[1:]:
+        mod=union.modifiers.new('Initial volume union','BOOLEAN');mod.operation='UNION';mod.solver='EXACT';mod.object=ob
+        bpy.ops.object.modifier_apply(modifier=mod.name)
+    bm=bmesh.new();bm.from_mesh(union.data);bad=sum(not e.is_manifold for e in bm.edges)
+    bmesh.ops.recalc_face_normals(bm,faces=list(bm.faces));bm.to_mesh(union.data);bm.free()
+    if bad:raise ValueError('Initial regional union is not closed')
+    (out/'regional-contact-binding.json').write_text(json.dumps({'contact_sha256':CONTACT_SHA,'rider_sha256':RIDER07_SHA,
+        'canonical_pose_error_all_frames':max(errors),'moving_colliders':[o.name for o in contacts],
+        'static_union_is_collider':False,'initial_union_nonmanifold_edges':bad},indent=2)+'\n')
+    return union,contacts
+
+
+def bind_regions(ob,canonical,head_count):
+    """Declared crown-to-head and outer-course-to-torso support semantics."""
+    import bpy
+    ob.vertex_groups.clear()
+    head=ob.vertex_groups.new(name='MF185_head');head.add(list(range(head_count)),1.,'REPLACE')
+    chest=ob.vertex_groups.new(name='chest');chest.add(list(range(head_count,len(ob.data.vertices))),1.,'REPLACE')
+    mod=ob.modifiers.new('Explicit regional support motion','ARMATURE');mod.object=canonical;mod.use_deform_preserve_volume=True
+    bpy.context.view_layer.objects.active=ob
+    while list(ob.modifiers).index(mod)>0:bpy.ops.object.modifier_move_up(modifier=mod.name)
+
+
 if __name__=='__main__':prepare_offline()
