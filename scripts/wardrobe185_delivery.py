@@ -1,4 +1,4 @@
-"""Reusable neutral staging of the integrated character; not asset selection.
+"""Neutral staging and evidence-gated portable character selection.
 
 The resting look is a frozen drape. New performances still need the declared
 cloth recipe/contact fit and resimulation; it is not an all-motion cloth rig.
@@ -93,6 +93,7 @@ def seal(out):
         scene.camera.keyframe_insert(data_path='location',frame=frame);scene.camera.keyframe_insert(data_path='rotation_euler',frame=frame)
     scene.render.resolution_x=432;scene.render.resolution_y=768;scene.render.resolution_percentage=100
     scene.render.fps=24;scene.frame_start=217;scene.frame_end=360
+    (out/'renders').mkdir();scene.render.filepath=str(out/'renders/frame-')
     np.savez_compressed(out/'evaluated-surfaces.npz',**samples())
     scene.frame_set(325);scene['MF185_scope']='Internal reviewed entrance asset; Director acceptance and release rights separate'
     bpy.context.preferences.filepaths.save_version=0
@@ -109,6 +110,7 @@ def seal(out):
     names=['MF_studio_adult_body','MF185_moving_shawl','MF185_fitted_upper_tunic',
         'MF_fit_tunic_173_visible','MF_fit_trousers_173_visible','MF_173_waist_belt']
     np.savez_compressed(out/'neutral-surfaces.npz',**evaluated_surfaces(names))
+    scene.render.filepath='//renders/neutral-'
     check_protected();bpy.ops.wm.save_as_mainfile(filepath=str(out/'neutral-look-master.blend'),check_existing=False,compress=True)
     (out/'result.json').write_text(json.dumps({'source_binding_sha256':digest(out/'source-binding.json'),
         'shot_sha256':shot_sha,'neutral_sha256':digest(out/'neutral-look-master.blend'),
