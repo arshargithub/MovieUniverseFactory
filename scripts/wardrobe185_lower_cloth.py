@@ -63,7 +63,7 @@ def solve(out):
     import bpy
     from mathutils import Vector
     from wardrobe_motion178 import BASE,digest
-    from wardrobe185_lower_drape import SCALE,SURFACE_SHA,SOURCE_SHA,WAIST_SURFACE_SHA
+    from wardrobe185_lower_drape import SCALE,SURFACE_SHA,SOURCE_SHA,WAIST_SURFACE_SHA,support_motion
     from wardrobe_shawl180_cache import cache
     from wardrobe185_gallop import apparent_airflow
     layout=BASE/'wardrobe185-lowerdress07/initial-layout.npz'
@@ -96,10 +96,8 @@ def solve(out):
         group=ob.vertex_groups.new(name='support')
         for i,w in zip(pins,weights):group.add([int(i)],float(w),'REPLACE')
         drive=np.repeat(p[None,:,:],len(frames),axis=0)
-        start=frames[0]-1;offset=p[pins]-cut['guided'][start,pins]
-        local=offset@np.linalg.inv(pelvis[start,:3,:3]).T
-        for j,frame in enumerate(frames):
-            drive[j,pins]=cut['guided'][frame-1,pins]+local@pelvis[frame-1,:3,:3].T
+        start=frames[0]-1
+        drive[:,pins]=support_motion(p[pins],cut['guided'][frames-1][:,pins],pelvis[frames-1],pelvis[start])
         cache(ob,drive*SCALE,out/(label+'-support.mdd'))
         weld=ob.modifiers.new('Explicit rest evaluation','WELD');weld.merge_threshold=1e-7
         domain=bpy.data.collections.new('Actual lower contacts');scene.collection.children.link(domain)

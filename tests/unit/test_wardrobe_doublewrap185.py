@@ -469,3 +469,19 @@ def test_trouser_rise_changes_only_upper_garment_and_preserves_order():
     np.testing.assert_allclose(q[p[:,2]<=-6.8],p[p[:,2]<=-6.8])
     np.testing.assert_allclose(q[:,:2],p[:,:2])
     assert np.all(np.diff(q[:,2])>0) and q[-1,2]==pytest.approx(-5.12)
+
+
+def test_trouser_rise_fits_under_sewn_waist_without_changing_lower_region():
+    from wardrobe185_lower_pants import rise_fit
+    w,c=rise_fit(np.array([-7.,-6.4,-5.8,-5.4,-5.1]))
+    np.testing.assert_allclose(w,[0,0,1,1,1])
+    assert np.all((c>=.03)&(c<=.075)) and c[-1]==pytest.approx(.03)
+
+
+def test_conditioned_support_motion_rotates_initial_offset_once():
+    from wardrobe185_lower_drape import support_motion
+    matrices=np.repeat(np.eye(4)[None],2,axis=0)
+    matrices[1,:3,:3]=[[0,-1,0],[1,0,0],[0,0,1]]
+    target=np.array([[[1.,0,0]],[[2.,1,0]]])
+    actual=support_motion([[1.1,0,0]],target,matrices,matrices[0])
+    np.testing.assert_allclose(actual,[[[1.1,0,0]],[[2.,1.1,0]]])

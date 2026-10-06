@@ -14,6 +14,12 @@ def rise(points):
     return q,w
 
 
+def rise_fit(z):
+    t=np.clip((np.asarray(z)+6.4)/.6,0,1);weight=t*t*(3-2*t)
+    s=np.clip((np.asarray(z)+5.9)/.5,0,1);clearance=.075-.045*s*s*(3-2*s)
+    return weight,clearance
+
+
 def run(out):
     import bpy
     from mathutils import Vector
@@ -46,11 +52,13 @@ def run(out):
     p,f=fast_geometry(bpy.data.objects['MF_studio_adult_body'])
     tri=p[f];f=f[(tri[:,:,2].max(1)>-6.9)&(tri[:,:,2].min(1)<-4.7)&(np.abs(tri[:,:,0]).max(1)<2.)]
     tree=BVHTree.FromPolygons(p.tolist(),f.tolist(),all_triangles=True)
+    fitted=out.name.endswith('lowerpants02')
+    fit_weight,clearance=rise_fit(proposed[:,2]) if fitted else (weight,np.full(len(weight),.075))
     for i in np.flatnonzero(weight>0):
         hit,normal,_,distance=tree.find_nearest(Vector(proposed[i]))
         if hit is None or distance>.8:raise ValueError('Trouser rise has no local torso support')
         # Preserve the existing lower construction; fit only the raised rise.
-        proposed[i]=(1-weight[i])*proposed[i]+weight[i]*np.array(hit+normal*.075)
+        proposed[i]=(1-fit_weight[i])*proposed[i]+fit_weight[i]*np.array(hit+normal*float(clearance[i]))
     for mod in deform:ob.modifiers.remove(mod)
     ob.data=ob.data.copy();local=world_points(proposed,np.linalg.inv(np.array(ob.matrix_world)))
     ob.data.vertices.foreach_set('co',local.astype(np.float32).ravel());ob.data.update()

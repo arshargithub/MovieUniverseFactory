@@ -33,9 +33,14 @@ def capture(out):
     from wardrobe_motion178_controls import render_geometry_paused
     source=BASE/'wardrobe185-finishreview01/integration-working.blend';source_sha=WORKING_SHA
     pants_only=out.name.endswith('lowersurface04')
-    if pants_only:
+    body_only=out.name.endswith('lowersurface05')
+    revised_pants=out.name.endswith('lowersurface06')
+    if pants_only or body_only:
         source=BASE/'wardrobe185-lowerpants01/integration-working.blend'
         source_sha='0375835df0b9543d13368d7d9ba294aec836182d7617b1b78cbf57afa8930f22'
+    if revised_pants:
+        source=BASE/'wardrobe185-lowerpants02/integration-working.blend'
+        source_sha='b9cf3b8c3f07d9ad650279903c5f81d54e85c6d553f801c0fb353cb2bf298f0b'
     if digest(source)!=source_sha:raise ValueError('Unbound actual-surface input')
     (out/Path(__file__).name).write_bytes(Path(__file__).read_bytes())
     bpy.ops.wm.open_mainfile(filepath=str(source),load_ui=False,use_scripts=False)
@@ -44,11 +49,27 @@ def capture(out):
            'saddle':'MF185_gait_saddle','pad':'MF185_gait_saddle.pad'}
     waist_only=out.name.endswith('lowersurface03')
     if waist_only:names={'waist':'MF_studio_adult_body'}
-    if pants_only:names={'pants':'MF_fit_trousers_173_visible'}
+    if pants_only:
+        names={'pants':'MF_fit_trousers_173_visible','upper':'MF185_fitted_upper_tunic'}
+    if body_only:names={'body':'MF_studio_adult_body'}
+    if revised_pants:names={'pants':'MF_fit_trousers_173_visible'}
     objects={key:bpy.data.objects[name] for key,name in names.items()}
     flags=[(m,m.show_viewport) for ob in objects.values() for m in ob.modifiers if m.type=='SOLIDIFY']
     for m,_ in flags:m.show_viewport=False
     mapping={};records={};payload={}
+    if revised_pants:
+        prior=BASE/'wardrobe185-lowersurface05/surfaces.npz'
+        if digest(prior)!='4d13cc5e504700836d04770864ec8a5f7bfbbee00346a5eb18c3c053945cd40f':raise ValueError('Complete contact source changed')
+        with np.load(prior,allow_pickle=False) as data:
+            payload={k:data[k] for k in data.files if k not in ('frame_ids','pants_frames','pants_faces')}
+        records=json.loads((prior.parent/'result.json').read_text())['objects']
+    if body_only:
+        prior=BASE/'wardrobe185-lowersurface04/surfaces.npz'
+        expected='604f520ee9a43cfb0467da1cb184d3d32911830abf3a0111caef422597436806'
+        if expected is None or digest(prior)!=expected:raise ValueError('Complete garment contacts are not bound')
+        with np.load(prior,allow_pickle=False) as data:
+            payload={k:data[k] for k in data.files if k not in ('frame_ids','waist_frames','waist_faces')}
+        records=json.loads((prior.parent/'result.json').read_text())['objects']
     if pants_only:
         from wardrobe185_lower_drape import WAIST_SURFACE_SHA
         prior=BASE/'wardrobe185-waistcontact01/contact.npz'
@@ -77,7 +98,8 @@ def capture(out):
         boundary=[e for e in bm.edges if e.is_boundary]
         if boundary:bmesh.ops.holes_fill(bm,edges=boundary,sides=0)
         bmesh.ops.recalc_face_normals(bm,faces=list(bm.faces));bm.to_mesh(proxy.data);bm.free()
-        mod=proxy.modifiers.new('Contact-only reduction','DECIMATE');mod.ratio=min(1,(1200 if key=='waist' else 4000)/len(proxy.data.polygons))
+        target_count=12000 if key=='body' else 1200 if key=='waist' else 4000
+        mod=proxy.modifiers.new('Contact-only reduction','DECIMATE');mod.ratio=min(1,target_count/len(proxy.data.polygons))
         bpy.ops.object.modifier_apply(modifier=mod.name)
         bm=bmesh.new();bm.from_mesh(proxy.data)
         isolated=[v for v in bm.verts if not v.link_faces]

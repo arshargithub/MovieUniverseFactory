@@ -147,12 +147,12 @@ OPERATIONS += ('lowerinspect01',)
 OPERATIONS += ('lowercapture01',)
 OPERATIONS += ('lowercapture02',)
 OPERATIONS += ('lowerdress01','lowerdress02','lowerdress03','lowerdress04')
-OPERATIONS += ('lowersurface01','lowersurface02','lowersurface03','lowersurface04')
-OPERATIONS += ('lowerdress05','lowerdress06','lowerdress07','lowerdress08','lowerdress09','lowerdress10')
+OPERATIONS += ('lowersurface01','lowersurface02','lowersurface03','lowersurface04','lowersurface05','lowersurface06')
+OPERATIONS += ('lowerdress05','lowerdress06','lowerdress07','lowerdress08','lowerdress09','lowerdress10','lowerdress11')
 OPERATIONS += ('lowercloth01','lowercloth02','lowercloth03','lowercloth04')
 OPERATIONS += ('lowerreview01','lowerreview02','lowerreview03','lowerreview04')
 OPERATIONS += ('lowerbelt01',)
-OPERATIONS += ('lowerpants01',)
+OPERATIONS += ('lowerpants01','lowerpants02')
 HEAD = base.BASE / 'wardrobe180-xpbdhead08/trajectory.npz'
 HEAD_SHA = '55ce2f99edfbb45a7cf8a5898be31caa1f20bd7da3bb2ae2be9c43e49d7095e8'
 
@@ -164,7 +164,7 @@ def validate(job):
     # These handlers bind their own integrated source/current caches. Do not
     # retain an obsolete experimental head solve as an accidental dependency
     # of merely viewing, checking or packaging the current character.
-    if job['operation'] not in ('shotlayout01','shotmotion01','exitaudit01','seal01','verify01','lowerinspect01','lowercapture01','lowercapture02','lowerdress01','lowerdress02','lowerdress03','lowerdress04','lowerdress05','lowerdress06','lowerdress07','lowerdress08','lowerdress09','lowerdress10','lowersurface01','lowersurface02','lowersurface03','lowersurface04','lowercloth01','lowercloth02','lowercloth03','lowercloth04','lowerreview01','lowerreview02','lowerreview03','lowerreview04','lowerbelt01','lowerpants01'):
+    if job['operation'] not in ('shotlayout01','shotmotion01','exitaudit01','seal01','verify01','lowerinspect01','lowercapture01','lowercapture02','lowerdress01','lowerdress02','lowerdress03','lowerdress04','lowerdress05','lowerdress06','lowerdress07','lowerdress08','lowerdress09','lowerdress10','lowerdress11','lowersurface01','lowersurface02','lowersurface03','lowersurface04','lowersurface05','lowersurface06','lowercloth01','lowercloth02','lowercloth03','lowercloth04','lowerreview01','lowerreview02','lowerreview03','lowerreview04','lowerbelt01','lowerpants01','lowerpants02'):
         inputs.append((HEAD,HEAD_SHA))
     for path, sha in inputs:
         if path.is_symlink() or base.digest(path) != sha:
@@ -534,7 +534,7 @@ def main():
     elif job['operation']=='lowerbelt01':
         from wardrobe185_lower_belt import capture as belt_capture
         belt_capture(out)
-    elif job['operation']=='lowerpants01':
+    elif job['operation'] in ('lowerpants01','lowerpants02'):
         from wardrobe185_lower_pants import run as trouser_rise
         trouser_rise(out)
     elif job['operation'] in ('lowerreview01','lowerreview02','lowerreview03','lowerreview04'):
@@ -543,10 +543,10 @@ def main():
     elif job['operation'] in ('lowercloth01','lowercloth02','lowercloth03','lowercloth04'):
         from wardrobe185_lower_cloth import solve as lower_cloth
         lower_cloth(out)
-    elif job['operation'] in ('lowersurface01','lowersurface02','lowersurface03','lowersurface04'):
+    elif job['operation'] in ('lowersurface01','lowersurface02','lowersurface03','lowersurface04','lowersurface05','lowersurface06'):
         from wardrobe185_lower_surface import capture as surface_capture
         surface_capture(out)
-    elif job['operation'] in ('lowerdress01','lowerdress02','lowerdress03','lowerdress04','lowerdress05','lowerdress06','lowerdress07','lowerdress08','lowerdress09','lowerdress10'):
+    elif job['operation'] in ('lowerdress01','lowerdress02','lowerdress03','lowerdress04','lowerdress05','lowerdress06','lowerdress07','lowerdress08','lowerdress09','lowerdress10','lowerdress11'):
         from wardrobe185_lower_drape import dress as lower_dress
         lower_dress(out)
     elif job['operation']=='seal01':

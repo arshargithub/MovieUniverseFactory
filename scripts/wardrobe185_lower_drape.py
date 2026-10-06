@@ -7,6 +7,7 @@ SOURCE_SHA='20b06605833f46561db93ba3c25ef27e934b96abe39854958e8f1b101a284d0e'
 CONTACT_SHA='577b9e0ee50a0350424d64aecf25b4965637c2bf23d6b8e9e6b9f878a377e0b5'
 SURFACE_SHA='03c1143677e97891fecb66bc09a3ac9212db98c7fee63a557bc64b0b280124e8'
 WAIST_SURFACE_SHA='45a5bb64fac88d648b212e112518554601d231b8c6cbd94c77d974fddf86651f'
+COMPLETE_SURFACE_SHA='4d13cc5e504700836d04770864ec8a5f7bfbbee00346a5eb18c3c053945cd40f'
 SCALE=.12292759120464325
 
 
@@ -85,16 +86,33 @@ def supported_edge(rest,pins,contacts):
         'max_neutral_refit_m':max_move,'free_vertices_mapped':False}
 
 
-def support_preflight(targets,contacts,out):
+def support_motion(initial,targets,matrices,reference_matrix):
+    offset=np.asarray(initial)-np.asarray(targets)[0]
+    local=offset@np.linalg.inv(np.asarray(reference_matrix)[:3,:3]).T
+    return np.asarray(targets)+np.einsum('fij,nj->fni',np.asarray(matrices)[:,:3,:3],local)
+
+
+def support_preflight(targets,contacts,out,label='support',minimum_clearance_m=0.):
     from wardrobe185_lower_surface import winding_numbers
-    failures=[]
+    from mathutils import Vector
+    from mathutils.bvhtree import BVHTree
+    failures=[];clearance={}
     for j,frame in enumerate(contacts['frame_ids']):
-        for name in ('waist','pants'):
+        names=(('body' if 'body_frames' in contacts else 'waist'),'pants')+(('upper',) if 'upper_frames' in contacts else ())
+        for name in names:
             w=winding_numbers(targets[j],contacts[name+'_frames'][j],contacts[name+'_faces'])
             count=int(np.sum(abs(w)>.5));ambiguous=int(np.sum(abs(w-np.rint(w))>1e-3))
             if count or ambiguous:failures.append({'frame':int(frame),'contact':name,'inside':count,'ambiguous':ambiguous})
-    (out/'support-admission.json').write_text(json.dumps({'source_frames':len(targets),'failures':failures,
-        'gate':'FAIL' if failures else 'PASS','scope':'Supported band vs actual waist and pants, not free-cloth or visual qualification'},indent=2)+'\n')
+            tree=BVHTree.FromPolygons(contacts[name+'_frames'][j].tolist(),contacts[name+'_faces'].tolist(),all_triangles=True)
+            distance=min(tree.find_nearest(Vector(p))[3] for p in targets[j])*SCALE
+            if distance<minimum_clearance_m-1e-5:
+                failures.append({'frame':int(frame),'contact':name,'clearance_m':float(distance),
+                    'required_clearance_m':minimum_clearance_m})
+            if name not in clearance or distance<clearance[name]['minimum_distance_m']:
+                clearance[name]={'frame':int(frame),'minimum_distance_m':float(distance)}
+    (out/(label+'-admission.json')).write_text(json.dumps({'source_frames':len(targets),'failures':failures,
+        'unsigned_clearance_diagnostics':clearance,
+        'gate':'FAIL' if failures else 'PASS','scope':'Supported band vs available body and garment contacts, not free-cloth or visual qualification'},indent=2)+'\n')
     if failures:raise ValueError('Moving lower support targets fail actual contact preflight')
 
 
@@ -123,6 +141,8 @@ def contact_union(data,frame,standing):
     surface='frame_ids' in data
     names=(('pants',) if standing else ('pants','horse','saddle','pad')) if surface else (('pelvis','thighL','thighR') if standing else ('pelvis','thighL','thighR','seat'))
     if 'waist_frames' in data:names=names+('waist',)
+    if 'body_frames' in data:names=names+('body',)
+    if 'upper_frames' in data:names=names+('upper',)
     for name in names:
         p=data[name+'_frames'][list(data['frame_ids']).index(frame)] if surface else world_points(data[name+'_points'],data[name+'_matrices'][frame-1])
         f=data[name+'_faces'];arrays.append((p,f))
@@ -185,16 +205,21 @@ def dress(out):
     from wardrobe185_shot import WORKING_SHA
     from wardrobe185_lower_pattern import pattern
     from wardrobe_riding_fit import fit_render
-    source=BASE/'wardrobe185-finishreview01/integration-working.blend'
+    source=BASE/'wardrobe185-finishreview01/integration-working.blend';working_sha=WORKING_SHA
     motion=BASE/'wardrobe185-lowercapture02/moving-source.npz';contact=BASE/'wardrobe185-lowercontact01/contact.npz'
-    belt_bound=out.name.endswith('lowerdress10')
+    complete=out.name.endswith('lowerdress11')
+    belt_bound=complete or out.name.endswith('lowerdress10')
     waist=belt_bound or out.name.endswith(('lowerdress08','lowerdress09'))
     surface=waist or out.name.endswith(('lowerdress05','lowerdress06','lowerdress07'))
     if surface:contact=BASE/'wardrobe185-lowersurface02/surfaces.npz'
     contact_sha=SURFACE_SHA if surface else CONTACT_SHA
     if waist:contact=BASE/'wardrobe185-waistcontact01/contact.npz';contact_sha=WAIST_SURFACE_SHA
-    for p,h in ((source,WORKING_SHA),(motion,SOURCE_SHA),(contact,contact_sha)):
-        if digest(p)!=h:raise ValueError('Unbound lower dressing input')
+    if complete:
+        source=BASE/'wardrobe185-lowerpants01/integration-working.blend'
+        working_sha='0375835df0b9543d13368d7d9ba294aec836182d7617b1b78cbf57afa8930f22'
+        contact=BASE/'wardrobe185-lowersurface05/surfaces.npz';contact_sha=COMPLETE_SURFACE_SHA
+    for p,h in ((source,working_sha),(motion,SOURCE_SHA),(contact,contact_sha)):
+        if h is None or digest(p)!=h:raise ValueError('Unbound lower dressing input')
     (out/Path(__file__).name).write_bytes(Path(__file__).read_bytes())
     rest,faces,pins=pattern();parameter_rest=rest.copy()
     with np.load(motion,allow_pickle=False) as data:
@@ -237,7 +262,7 @@ def dress(out):
     for frame,label in ((1,'standing'),(169,'mounted')):
         scene.frame_set(frame);bpy.context.view_layer.update();union,volumes=contact_union(contacts,frame,frame==1)
         initial=mounted_dressing(rest,guided[frame-1],parameter_rest) if surface and frame!=1 else guided[frame-1]
-        if out.name.endswith(('lowerdress07','lowerdress08','lowerdress09','lowerdress10')) and frame==1:initial=standing_dressing(rest,parameter_rest)
+        if out.name.endswith(('lowerdress07','lowerdress08','lowerdress09','lowerdress10','lowerdress11')) and frame==1:initial=standing_dressing(rest,parameter_rest)
         if waist:initial[list(pins)]=guided[frame-1,list(pins)]
         p,report=condition(initial,faces,union,volumes,pins,convex=not surface);records[label]=report;layouts[label]=p
         np.savez_compressed(out/(label+'-contact.npz'),points=np.array([v.co[:] for v in union.data.vertices]),
@@ -246,6 +271,12 @@ def dress(out):
         np.savez_compressed(out/'initial-layout.npz',rest=rest,faces=faces,guided=guided,
             pin_indices=np.array(list(pins)),pin_weights=np.array(list(pins.values())),**layouts)
         (out/'admission.json').write_text(json.dumps(records,indent=2)+'\n')
+        if complete:
+            ids=np.array([0]) if frame==1 else np.arange(1,len(contacts['frame_ids']))
+            subset={k:(v[ids] if k=='frame_ids' or k.endswith('_frames') else v) for k,v in contacts.items()}
+            source_ids=subset['frame_ids']-1
+            actual=support_motion(p[list(pins)],guided[source_ids][:,list(pins)],pelvis[source_ids],pelvis[frame-1])
+            support_preflight(actual,subset,out,label+'-conditioned-support',minimum_clearance_m=.0035)
         if report['remaining_inside_vertices'] or report['nonadjacent_crossings'] or report['actor_crossing_pairs'] or report['min_edge_m']<.001:
             failures.append(label+': lower starting cut not admissible')
         if report['max_initial_move_m']>.10 or report['max_waist_move_m']>.015:
@@ -262,7 +293,7 @@ def dress(out):
             fit_render(out,label+'-'+view,angle,(0,-.2,-6.5),7.,(640,640))
         ob.hide_render=True;bpy.data.objects.remove(union,do_unlink=True)
     check_protected()
-    (out/'result.json').write_text(json.dumps({'working_sha256':WORKING_SHA,'motion_sha256':SOURCE_SHA,'contact_sha256':contact_sha,
+    (out/'result.json').write_text(json.dumps({'working_sha256':working_sha,'motion_sha256':SOURCE_SHA,'contact_sha256':contact_sha,
         'layout_sha256':digest(out/'initial-layout.npz'),'retired_unattached_old_tunic_toggles':retired,
         'protected_exact':True,'visual_gate':'NOT_RUN','admission':'FAIL' if failures else 'PASS',
         'failures':failures,'scope':'Initial cloth dressing, no dynamic or final-looking garment claim'},indent=2)+'\n')
