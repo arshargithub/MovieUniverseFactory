@@ -148,6 +148,8 @@ OPERATIONS += ('lowercapture01',)
 OPERATIONS += ('lowercapture02',)
 OPERATIONS += ('lowerdress01','lowerdress02','lowerdress03','lowerdress04')
 OPERATIONS += ('lowersurface01','lowersurface02')
+OPERATIONS += ('lowerdress05','lowerdress06','lowerdress07')
+OPERATIONS += ('lowercloth01',)
 HEAD = base.BASE / 'wardrobe180-xpbdhead08/trajectory.npz'
 HEAD_SHA = '55ce2f99edfbb45a7cf8a5898be31caa1f20bd7da3bb2ae2be9c43e49d7095e8'
 
@@ -159,7 +161,7 @@ def validate(job):
     # These handlers bind their own integrated source/current caches. Do not
     # retain an obsolete experimental head solve as an accidental dependency
     # of merely viewing, checking or packaging the current character.
-    if job['operation'] not in ('shotlayout01','shotmotion01','exitaudit01','seal01','verify01','lowerinspect01','lowercapture01','lowercapture02','lowerdress01','lowerdress02','lowerdress03','lowerdress04','lowersurface01','lowersurface02'):
+    if job['operation'] not in ('shotlayout01','shotmotion01','exitaudit01','seal01','verify01','lowerinspect01','lowercapture01','lowercapture02','lowerdress01','lowerdress02','lowerdress03','lowerdress04','lowerdress05','lowerdress06','lowerdress07','lowersurface01','lowersurface02','lowercloth01'):
         inputs.append((HEAD,HEAD_SHA))
     for path, sha in inputs:
         if path.is_symlink() or base.digest(path) != sha:
@@ -526,10 +528,13 @@ def main():
     elif job['operation'] in ('lowercapture01','lowercapture02'):
         from wardrobe185_lower import capture as lower_capture
         lower_capture(out)
+    elif job['operation']=='lowercloth01':
+        from wardrobe185_lower_cloth import solve as lower_cloth
+        lower_cloth(out)
     elif job['operation'] in ('lowersurface01','lowersurface02'):
         from wardrobe185_lower_surface import capture as surface_capture
         surface_capture(out)
-    elif job['operation'] in ('lowerdress01','lowerdress02','lowerdress03','lowerdress04'):
+    elif job['operation'] in ('lowerdress01','lowerdress02','lowerdress03','lowerdress04','lowerdress05','lowerdress06','lowerdress07'):
         from wardrobe185_lower_drape import dress as lower_dress
         lower_dress(out)
     elif job['operation']=='seal01':

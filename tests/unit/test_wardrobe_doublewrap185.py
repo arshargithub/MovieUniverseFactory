@@ -292,7 +292,9 @@ def test_dispatch_has_an_explicit_handler_for_every_admitted_operation(operation
         'wardrobe185_shot':('layout','motion'),
         'wardrobe185_exit_audit':('run',),
         'wardrobe185_lower':('inspect','capture'),
-        'wardrobe185_lower_drape':('dress',),
+            'wardrobe185_lower_drape':('dress',),
+            'wardrobe185_lower_surface':('capture',),
+            'wardrobe185_lower_cloth':('solve',),
         'wardrobe185_delivery':('seal','verify'),
         'wardrobe185_harness_contact':('run',),
         'wardrobe185_motion':('prep','simulate','screen'),
@@ -407,3 +409,21 @@ def test_lower_mapping_uses_convex_coordinates_for_edges_and_degenerate_faces():
     np.testing.assert_allclose(triangle_weights([.5,-1e-5,0],t),[.5,.5,0])
     w=triangle_weights([2,0,0],np.zeros((3,3)))
     assert np.isfinite(w).all() and w.min()>=0 and w.sum()==pytest.approx(1)
+
+
+def test_lower_mounted_dressing_preserves_support_and_leaves_free_hem():
+    from wardrobe185_lower_pattern import pattern
+    from wardrobe185_lower_drape import mounted_dressing
+    p,f,pins=pattern();q=mounted_dressing(p,p)
+    np.testing.assert_allclose(q[list(pins)],p[list(pins)])
+    assert np.isfinite(q).all() and np.max(np.linalg.norm(q-p,axis=1))>1.
+
+
+def test_lower_solid_angle_interiors_are_independent_of_ray_edge_hits():
+    from wardrobe185_lower_surface import winding_numbers
+    from scipy.spatial import ConvexHull
+    p=np.array([[x,y,z] for x in (-1.,1.) for y in (-1.,1.) for z in (-1.,1.)])
+    h=ConvexHull(p);f=h.simplices.copy();t=p[f]
+    reverse=np.einsum('ij,ij->i',np.cross(t[:,1]-t[:,0],t[:,2]-t[:,0]),h.equations[:,:3])<0
+    f[reverse]=f[reverse,::-1]
+    np.testing.assert_allclose(winding_numbers([[0,0,0],[2,0,0],[.999,0,0]],p,f),[1,0,1],atol=1e-9)

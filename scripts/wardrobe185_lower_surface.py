@@ -9,6 +9,19 @@ from pathlib import Path
 import numpy as np
 
 
+def winding_numbers(points,vertices,faces):
+    """Double precision solid-angle interior test for closed triangle meshes."""
+    tri=np.asarray(vertices,dtype=float)[faces];result=[]
+    for start in range(0,len(points),32):
+        d=tri[None,:,:,:]-np.asarray(points[start:start+32],dtype=float)[:,None,None,:]
+        a,b,c=d[:,:,0],d[:,:,1],d[:,:,2]
+        la,lb,lc=np.linalg.norm(a,axis=2),np.linalg.norm(b,axis=2),np.linalg.norm(c,axis=2)
+        det=np.einsum('nfi,nfi->nf',a,np.cross(b,c))
+        den=la*lb*lc+np.einsum('nfi,nfi->nf',a,b)*lc+np.einsum('nfi,nfi->nf',b,c)*la+np.einsum('nfi,nfi->nf',c,a)*lb
+        result.extend(np.sum(2*np.arctan2(det,den),axis=1)/(4*np.pi))
+    return np.array(result)
+
+
 def capture(out):
     import bpy,bmesh
     from mathutils import Vector

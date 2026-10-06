@@ -5,6 +5,7 @@ import numpy as np
 
 SOURCE_SHA='20b06605833f46561db93ba3c25ef27e934b96abe39854958e8f1b101a284d0e'
 CONTACT_SHA='577b9e0ee50a0350424d64aecf25b4965637c2bf23d6b8e9e6b9f878a377e0b5'
+SURFACE_SHA='03c1143677e97891fecb66bc09a3ac9212db98c7fee63a557bc64b0b280124e8'
 SCALE=.12292759120464325
 
 
@@ -21,6 +22,27 @@ def triangle_weights(point,triangle):
         u=np.clip((p-t[a])@delta/den,0,1) if den else 0.
         edge=np.zeros(3);edge[a]=1-u;edge[b]=u;candidates.append(edge)
     return min(candidates,key=lambda v:np.linalg.norm(v@t-p))
+
+
+def mounted_dressing(rest,guided):
+    """Smooth initial layout over lap/back, never a prescribed animation."""
+    t=np.clip((-5.35-rest[:,2])/2.10,0,1)
+    theta=np.arctan2(rest[:,0]/(1.42+.57*t),(rest[:,1]-.085-.025*t)/(1.14+.25*t))
+    cosine=np.cos(theta);p=np.array(rest,copy=True)
+    p[:,0]=(1.42+1.20*t)*np.sin(theta)
+    p[:,1]=.085+(1.14+1.40*t)*cosine
+    p[:,2]=-5.35-2.10*t*(1-.72*abs(cosine))
+    blend=np.clip((t-.10)/.20,0,1);blend=blend*blend*(3-2*blend)
+    return guided*(1-blend[:,None])+p*blend[:,None]
+
+
+def standing_dressing(rest):
+    """Small initial air gap below the fixed waist; gravity will settle it."""
+    p=np.array(rest,copy=True);t=np.clip((-5.35-rest[:,2])/2.10,0,1)
+    ease=np.clip((t-.05)/.15,0,1);ease=ease*ease*(3-2*ease)
+    p[:,0]*=1+.09*ease
+    center=.085+.025*t;p[:,1]=center+(p[:,1]-center)*(1+.09*ease)
+    return p
 
 
 def mapped_guides(rest,source,faces,matrices):
@@ -45,8 +67,11 @@ def contact_union(data,frame,standing):
     import bpy,bmesh
     from wardrobe185_lower import world_points
     contacts=[];arrays=[]
-    for name in ('pelvis','thighL','thighR') if standing else ('pelvis','thighL','thighR','seat'):
-        p=world_points(data[name+'_points'],data[name+'_matrices'][frame-1]);f=data[name+'_faces'];arrays.append((p,f))
+    surface='frame_ids' in data
+    names=(('pants',) if standing else ('pants','horse','saddle','pad')) if surface else (('pelvis','thighL','thighR') if standing else ('pelvis','thighL','thighR','seat'))
+    for name in names:
+        p=data[name+'_frames'][list(data['frame_ids']).index(frame)] if surface else world_points(data[name+'_points'],data[name+'_matrices'][frame-1])
+        f=data[name+'_faces'];arrays.append((p,f))
         mesh=bpy.data.meshes.new('Lower '+name);mesh.from_pydata(p.tolist(),[],f.tolist());mesh.update()
         ob=bpy.data.objects.new('MF185_lower_contact_'+name,mesh);bpy.context.scene.collection.objects.link(ob);contacts.append(ob)
     union=contacts[0].copy();union.data=union.data.copy();bpy.context.scene.collection.objects.link(union)
@@ -62,14 +87,22 @@ def contact_union(data,frame,standing):
     return union,arrays
 
 
-def condition(points,faces,union,volumes,pins):
+def condition(points,faces,union,volumes,pins,convex=True):
     from mathutils import Vector
     from mathutils.bvhtree import BVHTree
     from wardrobe185_convex import convex_outside
+    from wardrobe185_lower_surface import winding_numbers
     q=np.array(points,copy=True);mesh=union.data
     tree=BVHTree.FromPolygons([v.co[:] for v in mesh.vertices],[p.vertices[:] for p in mesh.polygons])
+    mesh.calc_loop_triangles();vp=np.array([v.co[:] for v in mesh.vertices]);vf=np.array([t.vertices[:] for t in mesh.loop_triangles])
+    def contained(points):
+        w=winding_numbers(points,vp,vf)
+        if np.max(abs(w-np.rint(w)))>1e-3:raise ValueError('Nonintegral lower contact winding requires review')
+        return abs(w)>.5
     inside=np.zeros(len(q),dtype=bool)
-    for p,f in volumes:inside|=~convex_outside(q,p,f,tolerance=1e-7)
+    if convex:
+        for p,f in volumes:inside|=~convex_outside(q,p,f,tolerance=1e-7)
+    else:inside=contained(q)
     moves=[]
     for i,point in enumerate(np.array(q,copy=True)):
         hit,normal,_,distance=tree.find_nearest(Vector(point))
@@ -77,7 +110,9 @@ def condition(points,faces,union,volumes,pins):
             q[i]=np.array(hit+normal*(.005/SCALE))
         moves.append(float(np.linalg.norm(q[i]-point)*SCALE))
     outside=np.ones(len(q),dtype=bool)
-    for p,f in volumes:outside&=convex_outside(q,p,f,tolerance=1e-7)
+    if convex:
+        for p,f in volumes:outside&=convex_outside(q,p,f,tolerance=1e-7)
+    else:outside=~contained(q)
     edges=np.unique(np.sort(np.concatenate([faces[:,[i,(i+1)%4]] for i in range(4)]),axis=1),axis=0)
     lengths=np.linalg.norm(q[edges[:,0]]-q[edges[:,1]],axis=1)*SCALE
     cloth_tree=BVHTree.FromPolygons(q.tolist(),faces.tolist())
@@ -98,7 +133,10 @@ def dress(out):
     from wardrobe_riding_fit import fit_render
     source=BASE/'wardrobe185-finishreview01/integration-working.blend'
     motion=BASE/'wardrobe185-lowercapture02/moving-source.npz';contact=BASE/'wardrobe185-lowercontact01/contact.npz'
-    for p,h in ((source,WORKING_SHA),(motion,SOURCE_SHA),(contact,CONTACT_SHA)):
+    surface=out.name.endswith(('lowerdress05','lowerdress06','lowerdress07'))
+    if surface:contact=BASE/'wardrobe185-lowersurface02/surfaces.npz'
+    contact_sha=SURFACE_SHA if surface else CONTACT_SHA
+    for p,h in ((source,WORKING_SHA),(motion,SOURCE_SHA),(contact,contact_sha)):
         if digest(p)!=h:raise ValueError('Unbound lower dressing input')
     (out/Path(__file__).name).write_bytes(Path(__file__).read_bytes())
     rest,faces,pins=pattern()
@@ -119,7 +157,9 @@ def dress(out):
     records={};layouts={};failures=[]
     for frame,label in ((1,'standing'),(169,'mounted')):
         scene.frame_set(frame);bpy.context.view_layer.update();union,volumes=contact_union(contacts,frame,frame==1)
-        p,report=condition(guided[frame-1],faces,union,volumes,pins);records[label]=report;layouts[label]=p
+        initial=mounted_dressing(rest,guided[frame-1]) if surface and frame!=1 else guided[frame-1]
+        if out.name.endswith('lowerdress07') and frame==1:initial=standing_dressing(rest)
+        p,report=condition(initial,faces,union,volumes,pins,convex=not surface);records[label]=report;layouts[label]=p
         np.savez_compressed(out/(label+'-contact.npz'),points=np.array([v.co[:] for v in union.data.vertices]),
             **{'volume_'+str(i)+'_points':v[0] for i,v in enumerate(volumes)},
             **{'volume_'+str(i)+'_faces':v[1] for i,v in enumerate(volumes)})
@@ -142,7 +182,7 @@ def dress(out):
             fit_render(out,label+'-'+view,angle,(0,-.2,-6.5),7.,(640,640))
         ob.hide_render=True;bpy.data.objects.remove(union,do_unlink=True)
     check_protected()
-    (out/'result.json').write_text(json.dumps({'working_sha256':WORKING_SHA,'motion_sha256':SOURCE_SHA,'contact_sha256':CONTACT_SHA,
+    (out/'result.json').write_text(json.dumps({'working_sha256':WORKING_SHA,'motion_sha256':SOURCE_SHA,'contact_sha256':contact_sha,
         'layout_sha256':digest(out/'initial-layout.npz'),'retired_unattached_old_tunic_toggles':retired,
         'protected_exact':True,'visual_gate':'NOT_RUN','admission':'FAIL' if failures else 'PASS',
         'failures':failures,'scope':'Initial cloth dressing, no dynamic or final-looking garment claim'},indent=2)+'\n')
