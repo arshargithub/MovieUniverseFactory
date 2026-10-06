@@ -38,10 +38,17 @@ def capture(out):
     scene=bpy.context.scene;scene.frame_set(1);bpy.context.view_layer.update()
     names={'pants':'MF_fit_trousers_173_visible','horse':'MF185_gait_horse',
            'saddle':'MF185_gait_saddle','pad':'MF185_gait_saddle.pad'}
+    waist_only=out.name.endswith('lowersurface03')
+    if waist_only:names={'waist':'MF_studio_adult_body'}
     objects={key:bpy.data.objects[name] for key,name in names.items()}
     flags=[(m,m.show_viewport) for ob in objects.values() for m in ob.modifiers if m.type=='SOLIDIFY']
     for m,_ in flags:m.show_viewport=False
     mapping={};records={};payload={}
+    if waist_only:
+        prior=BASE/'wardrobe185-lowersurface02/surfaces.npz'
+        if digest(prior)!='03c1143677e97891fecb66bc09a3ac9212db98c7fee63a557bc64b0b280124e8':raise ValueError('Previous actual contacts changed')
+        with np.load(prior,allow_pickle=False) as data:payload={k:data[k] for k in data.files if k!='frame_ids'}
+        records=json.loads((prior.parent/'result.json').read_text())['objects']
     for key,ob in objects.items():
         p,f,sig=fast_geometry(ob,True)
         mesh=bpy.data.meshes.new('Lower contact '+key);mesh.from_pydata(p.tolist(),[],f.tolist());mesh.update()
@@ -49,13 +56,17 @@ def capture(out):
         bpy.context.view_layer.objects.active=proxy
         # Close existing render-mask boundaries before simplifying them.
         bm=bmesh.new();bm.from_mesh(proxy.data)
+        if key=='waist':
+            for z,normal in ((-4.6,(0,0,1)),(-6.6,(0,0,-1))):
+                bmesh.ops.bisect_plane(bm,geom=list(bm.verts)+list(bm.edges)+list(bm.faces),
+                    plane_co=(0,0,z),plane_no=normal,clear_outer=True,clear_inner=False,dist=1e-6)
         bmesh.ops.remove_doubles(bm,verts=list(bm.verts),dist=1e-5)
         loose=[v for v in bm.verts if not v.link_faces]
         if loose:bmesh.ops.delete(bm,geom=loose,context='VERTS')
         boundary=[e for e in bm.edges if e.is_boundary]
         if boundary:bmesh.ops.holes_fill(bm,edges=boundary,sides=0)
         bmesh.ops.recalc_face_normals(bm,faces=list(bm.faces));bm.to_mesh(proxy.data);bm.free()
-        mod=proxy.modifiers.new('Contact-only reduction','DECIMATE');mod.ratio=min(1,4000/len(f))
+        mod=proxy.modifiers.new('Contact-only reduction','DECIMATE');mod.ratio=min(1,(1200 if key=='waist' else 4000)/len(proxy.data.polygons))
         bpy.ops.object.modifier_apply(modifier=mod.name)
         bm=bmesh.new();bm.from_mesh(proxy.data)
         isolated=[v for v in bm.verts if not v.link_faces]
