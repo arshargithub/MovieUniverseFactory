@@ -285,7 +285,7 @@ def test_dispatch_has_an_explicit_handler_for_every_admitted_operation(operation
     for name,methods in {
         'wardrobe_doublewrap185_solve':('settle','volumecheck'),
         'wardrobe185_isolate':('run',),'wardrobe185_proxy':('run',),
-        'wardrobe185_lower_pants':('run',),'wardrobe185_airflow_control':('run',),
+        'wardrobe185_lower_pants':('run',),'wardrobe185_airflow_control':('run',),'wardrobe185_lower_union':('run','audit'),
         'wardrobe185_cut_solve':('run',),'wardrobe185_rest_unit':('run',),
         'wardrobe185_intersections':('run',),
         'wardrobe185_head_dress':('run','screen'),
@@ -493,3 +493,22 @@ def test_sewn_margin_exception_does_not_waive_skin_pants_or_soft_anchors():
     assert constraint_clearance([.004,.001],'upper',[0])==.001
     for name in ('body','pants'):
         assert constraint_clearance([.001,.004],name,[0])==.001
+
+
+def test_exterior_contact_frame_is_rigid_covariant_and_rejects_degenerate():
+    from wardrobe185_lower_union import surface_frames
+    tri=np.array([[0.,0,0],[2.,0,0],[0.,3.,0]])
+    rotation=np.array([[0.,0,1],[1.,0,0],[0,1.,0]])
+    np.testing.assert_allclose(surface_frames(tri),np.eye(3))
+    np.testing.assert_allclose(surface_frames(tri@rotation.T+2),rotation)
+    with pytest.raises(ValueError):surface_frames(np.zeros((3,3)))
+
+
+def test_lower_regional_rigid_fit_preserves_rotation_translation():
+    from wardrobe185_lower_regions import rigid_fit,masks
+    p=np.array([[0.,0,0],[1.,0,0],[0,2.,0],[0,0,3.]])
+    r=np.array([[0.,-1.,0],[1.,0,0],[0,0,1.]])
+    m=rigid_fit(p,p@r.T+[1,2,3])
+    np.testing.assert_allclose(m[:3,:3],r,atol=1e-12)
+    np.testing.assert_allclose(m[:3,3],[1,2,3],atol=1e-12)
+    assert not masks(np.array([[0.,0,-7.]]))['pelvis'][0]

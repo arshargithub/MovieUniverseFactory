@@ -70,9 +70,10 @@ def solve(out):
     layout=BASE/'wardrobe185-lowerdress07/initial-layout.npz'
     contacts=BASE/'wardrobe185-lowersurface02/surfaces.npz'
     source=BASE/'wardrobe185-lowercapture02/moving-source.npz'
+    outer_only=out.name.endswith('lowerouter08')
     matched_control=out.name.endswith('lowerwindoff07')
     windoff=matched_control or out.name.endswith('lowerwindoff06')
-    complete=windoff or out.name.endswith('lowercloth05')
+    complete=outer_only or windoff or out.name.endswith('lowercloth05')
     convergence=complete or out.name.endswith('lowercloth04')
     belt_bound=convergence or out.name.endswith('lowercloth03')
     waist=belt_bound or out.name.endswith('lowercloth02');layout_sha=LAYOUT_SHA;contact_sha=SURFACE_SHA
@@ -92,7 +93,7 @@ def solve(out):
     with np.load(source,allow_pickle=False) as d:pelvis=d['pelvis_matrices']
     metric_control(out)
     record={};outputs={};faces=cut['faces'];rest=cut['rest'];pins=cut['pin_indices'];weights=cut['pin_weights']
-    for label in (('mounted',) if windoff else ('standing','mounted')):
+    for label in (('mounted',) if (windoff or outer_only) else ('standing','mounted')):
         bpy.ops.wm.read_factory_settings(use_empty=True);scene=bpy.context.scene
         scene.render.fps=24;scene.unit_settings.scale_length=1.;scene.gravity=(0,0,-9.81)
         frames=np.ones(120,dtype=int) if label=='standing' else np.r_[np.full(120,169),np.arange(170,361)]
@@ -113,7 +114,8 @@ def solve(out):
             if name+'_frames' in contact:names=names+(name,)
         for name in names:
             samples=contact[name+'_frames'][contact_ids]*SCALE
-            co=panel('MF185_contact_'+name,samples[0],contact[name+'_faces']);domain.objects.link(co)
+            co=panel('MF185_contact_'+name,samples[0],contact[name+'_faces'])
+            if not (outer_only and name=='body'):domain.objects.link(co)
             cache(co,samples,out/(label+'-'+name+'.mdd'))
             co.modifiers.new('Actual moving collision','COLLISION')
             co.collision.thickness_outer=.0015;co.collision.cloth_friction=15
@@ -129,6 +131,8 @@ def solve(out):
                 wind.field.strength=0. if windoff else apparent_airflow(int(source_frame))[1]
                 wind.keyframe_insert(data_path='field.strength',frame=i+1)
         trajectory=[]
+        progress_edges=np.unique(np.sort(np.concatenate([faces[:,[i,(i+1)%4]] for i in range(4)]),axis=1),axis=0)
+        progress_lengths=np.linalg.norm(rest[progress_edges[:,0]]-rest[progress_edges[:,1]],axis=1)
         for frame in range(1,len(frames)+1):
             scene.frame_set(frame);bpy.context.view_layer.update();q=sample(ob)/SCALE
             if q.shape!=p.shape or not np.isfinite(q).all():raise ValueError('Invalid lower free cloth output')
@@ -142,12 +146,23 @@ def solve(out):
                 if error>2e-5:
                     np.savez_compressed(out/'diverged-prewind.npz',frames=np.array(trajectory))
                     raise ValueError('Wind control diverges before airflow; do not infer wind causality')
-            if frame%24==0:print('185 lower cloth',label,frame,flush=True)
+            if frame%24==0:
+                progress_ratio=np.linalg.norm(q[progress_edges[:,0]]-q[progress_edges[:,1]],axis=1)/progress_lengths
+                progress={'case':label,'physics_frame':frame,'source_frame':int(frames[frame-1]),
+                    'edge_quantiles':np.quantile(progress_ratio,[.01,.5,.99,1]).tolist()}
+                (out/'live-metrics.json').write_text(json.dumps(progress,indent=2)+'\n')
+                print('185 lower cloth',json.dumps(progress),flush=True)
+                if outer_only and frames[frame-1]>=217 and progress['edge_quantiles'][2]>2.:
+                    np.savez_compressed(out/'failed-prefix.npz',frames=np.array(trajectory),faces=faces,rest=rest,source_frame_ids=frames[:frame])
+                    (out/'failure.json').write_text(json.dumps({'reason':'At least one percent of required-pose cloth edges exceed twice rest length',
+                        'diagnostic':progress,'complete_motion':'NOT_RUN','visual_gate':'FAIL_INTERNAL_ONLY'})+'\n')
+                    raise ValueError('Required-pose cloth metric severely fails; preserve prefix, do not finish an invalid solve')
         trajectory=np.array(trajectory);outputs[label]=trajectory
         edges=np.unique(np.sort(np.concatenate([faces[:,[i,(i+1)%4]] for i in range(4)]),axis=1),axis=0)
         lengths=np.linalg.norm(rest[edges[:,0]]-rest[edges[:,1]],axis=1)
         ratios=np.linalg.norm(trajectory[:,edges[:,0]]-trajectory[:,edges[:,1]],axis=2)/lengths
         record[label]={'physics_frames':len(frames),'source_frame_ids':frames.tolist(),'wind_enabled':label=='mounted' and not windoff,
+            'body_collider_in_domain':not outer_only,
             'quality_steps':mod.settings.quality,'collision_quality':mod.collision_settings.collision_quality,
             'maximum_edge_ratio':float(ratios.max()),'last_edge_quantiles':np.quantile(ratios[-1],[.01,.5,.99,1]).tolist(),
             'free_cloth':True,'mass_per_vertex_authored_not_calibrated':.3,'visual_gate':'NOT_RUN'}
