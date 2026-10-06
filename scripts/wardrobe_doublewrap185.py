@@ -150,7 +150,13 @@ HEAD_SHA = '55ce2f99edfbb45a7cf8a5898be31caa1f20bd7da3bb2ae2be9c43e49d7095e8'
 def validate(job):
     if not isinstance(job, dict) or set(job) != {'operation'} or job['operation'] not in OPERATIONS:
         raise ValueError('Fixed structured operation required')
-    for path, sha in ((base.SOURCE, base.SOURCE_SHA), (HEAD, HEAD_SHA)):
+    inputs=[(base.SOURCE,base.SOURCE_SHA)]
+    # These handlers bind their own integrated source/current caches. Do not
+    # retain an obsolete experimental head solve as an accidental dependency
+    # of merely viewing, checking or packaging the current character.
+    if job['operation'] not in ('shotlayout01','shotmotion01','exitaudit01','seal01','verify01'):
+        inputs.append((HEAD,HEAD_SHA))
+    for path, sha in inputs:
         if path.is_symlink() or base.digest(path) != sha:
             raise ValueError('Protected or diagnostic input changed')
     out = base.BASE / ('wardrobe185-' + job['operation'])

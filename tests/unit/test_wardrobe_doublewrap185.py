@@ -13,6 +13,19 @@ def test_rejects_arbitrary_payload(job):
     with pytest.raises(ValueError):module.validate(job)
 
 
+def test_current_delivery_does_not_require_obsolete_failed_head_input(tmp_path,monkeypatch):
+    protected=tmp_path/'protected.blend';protected.write_bytes(b'protected fixture')
+    monkeypatch.setattr(module.base,'SOURCE',protected);monkeypatch.setattr(module.base,'SOURCE_SHA','expected')
+    monkeypatch.setattr(module.base,'BASE',tmp_path)
+    monkeypatch.setattr(module,'HEAD',tmp_path/'absent-obsolete-head.npz')
+    def digest(path):
+        if path==protected:return 'expected'
+        raise FileNotFoundError(path)
+    monkeypatch.setattr(module.base,'digest',digest)
+    assert module.validate({'operation':'shotlayout01'})==tmp_path/'wardrobe185-shotlayout01'
+    with pytest.raises(FileNotFoundError):module.validate({'operation':'route01'})
+
+
 def test_fixed_length_limb_solver_preserves_both_lengths_and_pole_side():
     from wardrobe185_riding import hinge_point
     for target in ((1,0,0),(1.2,.2,.1),(.2,-1.5,.3)):
