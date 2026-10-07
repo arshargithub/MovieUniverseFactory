@@ -50,6 +50,22 @@ Exchange184 places this asset workflow under [production strategy before executi
 
 ## A concrete stopping and change policy
 
+### Engineering-model escalation — adopted at exchange187
+
+The Director reports switching from Astra High to Sol6.1 High and delegates detection of when Astra is needed. Sol6.1 High is the current execution default; settings are user-reported, not runtime-verified. This supersedes the older Astra-Medium default for this continuation, not historical observations or API-provider routing.
+
+**Detect and act, rather than wait for the Director to suggest a switch:**
+
+1. Keep a hypothesis, observable success/failure test and cumulative failed-attempt record in the active work package. Three materially similar failed variants, recurring adjacent regressions, or machine PASS versus obvious visual FAIL trigger immediate method reassessment, not another renamed pass.
+2. First separate reasoning/strategy uncertainty from environment, missing evidence, inadequate assets or a demonstrated tool limit. Use a cheap discriminating control and inspect dependencies. Correct an understood implementation error on Sol; don't use a model switch to replace missing visual review.
+3. Request **Astra High** if that reassessment still cannot establish a defensible cause and integrated repair path, competing evidence cannot be reconciled, or the next consequential step rests on an unresolved structural assumption. Escalate earlier, before expensive execution, if a foundational uncertainty risks protected work or the whole production path. No arbitrary elapsed-time limit is required; elapsed effort informs reassessment, not automatic switching.
+4. At that actual model boundary, stop the failing route and ask the Director to switch. Supply a concise escalation packet: intended screen result/protected anchors; exact source and failed evidence; hypotheses/controls tried; the unresolved question; one diagnostic assignment for Astra; and the proof required to resume. Preserve successful components and failure history. Continue independent safe work only where it cannot compromise that diagnosis.
+5. After a demonstrated cause/strategy and representative integrated proof, recommend returning to **Sol6.1 High** for specified execution. The Director changes the setting; never claim an automatic switch. Record announcements and outcomes in engineering events and the operating ledger, including rejected outcomes and unknown usage. If Astra also fails, reassess representation/requirements or present a genuine authority decision; don't cycle models indefinitely or lower quality silently.
+
+Not escalation triggers by themselves: a slow render, one exception, memory pressure, a missing file, unfamiliar API syntax, ordinary taste refinement or an uninspected image. A capability limit needs evidence and alternatives, not a stronger-model promise. The switch grants no spend, new tool, specialist, publication, identity or scope authority. Existing no-routine-handover rules remain; requesting a necessary manual model switch is a genuine execution dependency, not algorithm approval.
+
+Official [model-selection guidance](https://developers.openai.com/api/docs/guides/model-selection) supports task-specific quality/latency/cost tradeoffs; the triggers above are our adopted workflow, not an OpenAI guarantee or controlled Sol/Astra benchmark. Current Factory automation remains unimplemented.
+
 ### Learning must change the next action — exchange183
 
 For a failed asset route, turn each material lesson into a named prerequisite or falsifiable check in the active asset brief: failure → changed method → evidence → consequence of failure. Do not substitute a longer retrospective or more test counts for this link. Consult the current contract at session start, record the hypothesis before costly work, and keep cheap construction/contact/temporal proof ahead of finish. Repeated failures trigger representation reassessment, not renamed allowances. Evidence-backed manual visual review and automated technical checks remain separate; neither record-keeping nor model escalation guarantees judgment or feasibility.

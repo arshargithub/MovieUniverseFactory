@@ -24,6 +24,8 @@ Keep observations and causal claims separate. A model that inherits a diagnosis,
 
 ## Feedback into the Factory design
 
+**Active continuation policy, exchange187:** Sol6.1 High is user-reported; the agent now owns detection and evidence-bound requests for Astra High under the [adopted escalation/stopping rule](../knowledge/EFFICIENT_QUALITY_ASSET_WORKFLOW.md#engineering-model-escalation--adopted-at-exchange187). This supersedes the next-run Astra-Medium default below for current production. It is a manual workflow, not automatic Factory routing or a model benchmark.
+
 The historical Sol/Astra routing proposals below are preserved as evidence of the earlier approach. The prospective next-run policy is now in [OPERATING_LEDGER.md](OPERATING_LEDGER.md): Astra Medium for specified work, High for unfamiliar design or unresolved diagnosis, with observed setting/usage attribution. This is a hypothesis, not an automatic switch or controlled comparison.
 
 The Factory should consume this record as an engineering-routing input alongside experiment telemetry. Initial policy hypotheses are:

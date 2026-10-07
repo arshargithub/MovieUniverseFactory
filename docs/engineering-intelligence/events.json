@@ -1342,6 +1342,23 @@
       "controlled_model_comparison": false,
       "evidence": ["docs/planning/SERIES_01_WARDROBE_TACK_FIT.md", ".runtime/art-direction/series01-facebuilder-trial-01/wardrobe186-operating/visual-review.json", ".runtime/art-direction/series01-facebuilder-trial-01/wardrobe186-verify05/result.json", ".runtime/art-direction/series01-facebuilder-trial-01/wardrobe186-reopen06/result.json"]
     }
+    , {
+    "event_id": "series01-exchange187-sol-high-user-report",
+    "event_type": "engineering_model_switch",
+    "recorded_date": "2026-10-07",
+    "occurred_at": null,
+    "experiment_id": "SERIES01-LIKENESS-ASSET",
+    "task_phase": "entrance scene context after riding correction",
+    "before": {"model": "Astra", "reasoning_effort": "high", "attribution": "user_reported"},
+    "after": {"model": "Sol 6.1", "reasoning_effort": "high", "attribution": "user_reported"},
+    "runtime_verified": false,
+    "controlled_model_comparison": false,
+    "trigger": "Director announces switch and delegates detecting a required Astra escalation",
+    "engineering_subscription_usage": null,
+    "engineering_cost_usd": null,
+    "outcome": "CONTINUATION_AUTHORIZED_NOT_YET_COMPLETED",
+    "evidence": ["docs/knowledge/EFFICIENT_QUALITY_ASSET_WORKFLOW.md", "docs/planning/SERIES_01_WARDROBE_TACK_FIT.md"]
+    }
   ],
   "recording_mode": "manual_evidence_backfill_and_future_event_capture",
   "schema_version": "1.0",
