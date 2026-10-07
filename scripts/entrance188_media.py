@@ -6,11 +6,19 @@ from pathlib import Path
 from PIL import Image,ImageDraw,ImageOps
 
 ROOT=Path(__file__).resolve().parents[1]
-OUT=ROOT/'.runtime/art-direction/series01-facebuilder-trial-01/entrance188-motion10'
+OUT=ROOT/'.runtime/art-direction/series01-facebuilder-trial-01/entrance188-motion13'
 
 
 def main():
     frames=[OUT/('frame-%04d.png'%f) for f in range(217,361)]
+    overview=[OUT/('frame-%04d.png'%f) for f in list(range(217,361,6))+[360]]
+    target=OUT/'overview.png'
+    if not target.exists() and all(p.exists() for p in overview):
+        sheet=Image.new('RGB',(900,1700),(240,240,240));draw=ImageDraw.Draw(sheet)
+        for i,path in enumerate(overview):
+            with Image.open(path) as im:thumb=ImageOps.contain(im.convert('RGB'),(180,320))
+            x=(i%5)*180;y=(i//5)*340;sheet.paste(thumb,(x,y));draw.text((x+5,y+321),path.stem,fill=(15,15,15))
+        sheet.save(target)
     for start in range(0,144,12):
         group=frames[start:start+12];target=OUT/('review-%04d.png'%(217+start))
         if target.exists() or not all(p.exists() for p in group):continue

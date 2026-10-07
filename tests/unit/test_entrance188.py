@@ -45,6 +45,15 @@ def test_fixed_frame_transport_preserves_rigid_motion():
     assert np.allclose(np.einsum('nji,njk->nik',b,b),np.eye(3))
 
 
+def test_backdrop_coverage_detects_side_edge_and_opaque_ground():
+    spec=importlib.util.spec_from_file_location('backdrop188',PATH.parent/'entrance188_backdrop.py')
+    module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+    row=module.required_angles(np.array([0.,0.,10.]),np.array([[1.,-1.,0.]]),-20.)
+    assert row['min_angle']==pytest.approx(-45)
+    assert row['min_angle']< -20
+    assert module.required_angles(np.array([0.,0.,10.]),np.array([[.1,0.,-1.]]),-20.) is None
+
+
 def test_reject_invalid_source():
     with pytest.raises(ValueError):groom.guides(np.zeros((1,2,3)))
     a=fixture();a[0,0,0,0]=np.nan
