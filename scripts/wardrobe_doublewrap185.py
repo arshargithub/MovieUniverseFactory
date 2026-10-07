@@ -183,6 +183,7 @@ OPERATIONS += ('redressmotion01','redressoff01','redressreview01')
 OPERATIONS += ('redressmotion02','redressoff02','redressreview02')
 OPERATIONS += ('redressoffreview02',)
 OPERATIONS += ('shotmotion03',)
+OPERATIONS += ('seal02','verify02')
 HEAD = base.BASE / 'wardrobe180-xpbdhead08/trajectory.npz'
 HEAD_SHA = '55ce2f99edfbb45a7cf8a5898be31caa1f20bd7da3bb2ae2be9c43e49d7095e8'
 
@@ -191,7 +192,7 @@ def validate(job):
     if not isinstance(job, dict) or set(job) != {'operation'} or job['operation'] not in OPERATIONS:
         raise ValueError('Fixed structured operation required')
     inputs=[(base.SOURCE,base.SOURCE_SHA)]
-    if job['operation'] in ('redressmotion01','redressoff01','redressreview01','redressmotion02','redressoff02','redressreview02','redressoffreview02','shotmotion03'):
+    if job['operation'] in ('seal02','verify02','redressmotion01','redressoff01','redressreview01','redressmotion02','redressoff02','redressreview02','redressoffreview02','shotmotion03'):
         out=base.BASE/('wardrobe185-'+job['operation'])
         for path,sha in inputs:
             if path.is_symlink() or base.digest(path)!=sha:raise ValueError('Protected input changed')
@@ -651,10 +652,10 @@ def main():
     elif job['operation'] in ('lowerdress01','lowerdress02','lowerdress03','lowerdress04','lowerdress05','lowerdress06','lowerdress07','lowerdress08','lowerdress09','lowerdress10','lowerdress11','lowerdress12','lowerdress13','lowerdress14'):
         from wardrobe185_lower_drape import dress as lower_dress
         lower_dress(out)
-    elif job['operation']=='seal01':
+    elif job['operation'] in ('seal01','seal02'):
         from wardrobe185_delivery import seal
         seal(out)
-    elif job['operation']=='verify01':
+    elif job['operation'] in ('verify01','verify02'):
         from wardrobe185_delivery import verify
         verify(out)
     elif job['operation']=='beltinspect01':

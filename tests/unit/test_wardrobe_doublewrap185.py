@@ -13,6 +13,17 @@ def test_rejects_arbitrary_payload(job):
     with pytest.raises(ValueError):module.validate(job)
 
 
+def test_bound_camera_records_require_complete_finite_nondegenerate_keys():
+    from wardrobe185_delivery import camera_keys
+    rows=[{'frame':f,'position':[0,2,3],'target':[0,0,0],'lens_mm':42} for f in range(217,361)]
+    assert camera_keys({'poses':rows})==rows
+    with pytest.raises(ValueError):camera_keys({'poses':rows[:-1]})
+    broken=[dict(r) for r in rows];broken[0]['position']=[0,float('nan'),3]
+    with pytest.raises(ValueError):camera_keys({'poses':broken})
+    broken[0]['position']=[0,0,0]
+    with pytest.raises(ValueError):camera_keys({'poses':broken})
+
+
 def test_current_delivery_does_not_require_obsolete_failed_head_input(tmp_path,monkeypatch):
     protected=tmp_path/'protected.blend';protected.write_bytes(b'protected fixture')
     monkeypatch.setattr(module.base,'SOURCE',protected);monkeypatch.setattr(module.base,'SOURCE_SHA','expected')

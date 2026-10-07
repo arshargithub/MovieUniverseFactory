@@ -12,6 +12,20 @@ CRITERIA={'construction_route','reference_layering','neutral_partial_full_interf
     'adjacent_regressions','finished_appearance'}
 
 
+def camera_keys(record):
+    rows=record.get('poses',[])
+    if [r.get('frame') for r in rows]!=list(range(217,361)):
+        raise ValueError('Incomplete camera key sequence')
+    for row in rows:
+        position=np.asarray(row.get('position'),dtype=float)
+        target=np.asarray(row.get('target'),dtype=float)
+        if (position.shape!=(3,) or target.shape!=(3,) or
+            not np.isfinite(position).all() or not np.isfinite(target).all() or
+            np.linalg.norm(target-position)<1e-6 or row.get('lens_mm')!=42):
+            raise ValueError('Invalid camera proof key')
+    return rows
+
+
 def review_gate(record,base):
     """Selection is unavailable until a deliberate evidence-backed review."""
     if record.get('status')!='INTERNAL_REVIEW_READY' or set(record.get('criteria',{}))!=CRITERIA:
@@ -99,9 +113,19 @@ def seal(out):
     bpy.ops.file.pack_all()
     unpacked=[im.name for im in bpy.data.images if im.source=='FILE' and not im.packed_file and not im.packed_files]
     if unpacked:raise ValueError('Unpacked image dependencies: '+str(unpacked))
-    for frame in range(217,361):
-        scene.frame_set(frame);bpy.context.view_layer.update();setup_camera(scene,rig,frame)
-        scene.camera.keyframe_insert(data_path='location',frame=frame);scene.camera.keyframe_insert(data_path='rotation_euler',frame=frame)
+    # The bound rendered proof already records every camera pose. Re-keying it
+    # must not re-evaluate the entire groom/body at all144 frames again.
+    from mathutils import Vector
+    scene.camera.animation_data_clear()
+    scene.camera.data.type='PERSP';scene.camera.data.lens=42
+    scene.camera.data.sensor_fit='VERTICAL';scene.camera.data.sensor_height=24
+    scene.camera.data.dof.use_dof=False
+    for row in camera_keys(camera_record):
+        scene.camera.location=Vector(row['position'])
+        scene.camera.rotation_euler=(Vector(row['target'])-scene.camera.location).to_track_quat('-Z','Y').to_euler()
+        scene.camera.keyframe_insert(data_path='location',frame=row['frame'])
+        scene.camera.keyframe_insert(data_path='rotation_euler',frame=row['frame'])
+    print('Portable camera keys copied from bound144-frame proof',flush=True)
     scene.render.resolution_x=432;scene.render.resolution_y=768;scene.render.resolution_percentage=100
     scene.render.fps=24;scene.frame_start=217;scene.frame_end=360
     (out/'renders').mkdir();scene.render.filepath=str(out/'renders/frame-')
@@ -139,7 +163,8 @@ def verify(out):
     from wardrobe_motion178 import BASE,digest,check_protected
     from wardrobe185_shot import setup_camera,setup_lighting
     from wardrobe_riding_fit import evaluated_surfaces,fit_render
-    source=BASE/'wardrobe185-seal01';record=json.loads((source/'result.json').read_text())
+    source=BASE/('wardrobe185-seal02' if out.name.endswith('verify02') else 'wardrobe185-seal01')
+    record=json.loads((source/'result.json').read_text())
     if digest(source/'source-binding.json')!=record['source_binding_sha256']:raise ValueError('Selection binding changed')
     if digest(source/'riding-entrance.blend')!=record['shot_sha256']:raise ValueError('Selected native changed')
     (out/Path(__file__).name).write_bytes(Path(__file__).read_bytes())

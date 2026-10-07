@@ -14,7 +14,7 @@ GALLERY=Path('/Users/adisharma/.codex/visualizations/2026/09/09/01a0878c-e7a2-75
 
 
 def main():
-    selected=BASE/'wardrobe185-seal01';fresh=BASE/'wardrobe185-verify01'
+    selected=BASE/'wardrobe185-seal02';fresh=BASE/'wardrobe185-verify02'
     verified=json.loads((fresh/'result.json').read_text())
     if not all(verified[k] for k in ('packed_images','local_cache_paths','protected_exact')):raise ValueError('Incomplete native verification')
     for key in ('moving_surface_errors','neutral_surface_errors'):
