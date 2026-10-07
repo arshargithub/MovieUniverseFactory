@@ -4,6 +4,14 @@ Exchange169, 2026-10-03. Director accepts the displayed body168-hip66 and author
 
 ## Deliverable and authority
 
+### Exchange186 — riding arm and collarbone correction
+
+Director says the overall result looks good, but identifies bent-looking upper arms and unusually stark collarbones in the front riding view. This is not final moving-character acceptance. Withdraw the affected185 adjacent-anatomy/finished-appearance readiness claims pending correction; retain immutable185 evidence and its technical successes.
+
+Strategy under decision0005: preserve the double-wrap design, accepted152/169 originals and neutral identity. First compare actual skin and fitted sleeves in the same riding pose, and clay versus textured neck under controlled light; inspect rig weights, corrective deformation and body-to-garment dependencies. Correct the demonstrated deformation/shading mechanism in a derivative, not the accepted rest sculpt to compensate for lighting. Earliest proof is matched front/both-side upper-body views at neutral, partial and full racing poses. Any changed support/contact motion invalidates dependent caches unless exact containment/interface evidence demonstrates their continued compatibility; renew those dependencies before final moving review. Finish with actual gait/shot, adjacent interfaces and fresh-open checks. No new spending, tools, publication or arbitrary time cutoff; effort remains cumulative in doublewrap185. Three similar unsuccessful fixes trigger method reassessment. Exit is a corrected integrated visual deliverable, not a diagnosis or technical milestone. Then resume trailer assembly.
+
+Model recommendation, not a switch: retain user-reported Astra High through unresolved diagnosis; consider Sol6.1 High for bounded implementation after the mechanism is proven. Historical improvement is confounded with strategy changes, not a controlled model comparison.
+
 ### Exchange185 sustained implementation and trailer readiness
 
 Director authorizes the double-wrap rebuild and discovered structural corrections needed for the envisioned trailer animation, without arbitrary time limits. Method checkpoints remain internal; they are not deadlines or automatic handovers. Current source is preserved174 solely as an actor/wardrobe foundation, not as approved shawl construction. Accepted152/169 masters and the repaired underarms stay protected. Necessary rig/contact/integration derivatives may be corrected and verified; changes to identity/style or spending/rights still require explicit authority. No paid calls, purchases, installations or publication.
