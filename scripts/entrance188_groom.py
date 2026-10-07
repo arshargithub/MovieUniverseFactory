@@ -99,7 +99,7 @@ def build(scene,out,source):
     return report
 
 
-def clear_mane(curves,horse):
+def clear_mane(curves,horse,frames=None):
     """Keep authored hairs outside the actual cached neck/head, not a guessed ellipsoid."""
     import struct
     import bpy
@@ -119,7 +119,7 @@ def clear_mane(curves,horse):
     if not forehead:raise ValueError('No semantic forehead support')
     fore=np.repeat(curves[0,:,0,1]<-6.8,11)
     count=0;worst=0.
-    for f in range(nf):
+    for f in range(nf) if frames is None else frames:
         bvh=BVHTree.FromPolygons(np.asarray(samples[f],dtype=float).tolist(),polys)
         brow=BVHTree.FromPolygons(np.asarray(samples[f],dtype=float).tolist(),forehead)
         flat=curves[f,:,1:].reshape(-1,3).copy()
@@ -134,6 +134,76 @@ def clear_mane(curves,horse):
         if f%36==0:print('188 groom surface clearance',f,flush=True)
     return {'corrected_control_points':count,'max_preprojection_penetration_native':worst,
             'method':'Nearest actual head/neck surface normal projection of interior guide controls; segment/visual checks separate'}
+
+
+def triangle_frames(tri):
+    e=tri[:,1]-tri[:,0]
+    u=e/np.maximum(np.linalg.norm(e,axis=1,keepdims=True),1e-10)
+    n=np.cross(e,tri[:,2]-tri[:,0]);n/=np.maximum(np.linalg.norm(n,axis=1,keepdims=True),1e-10)
+    v=np.cross(n,u)
+    return np.stack([u,v,n],axis=2)
+
+
+def fixed_transport(scene,out,horse,source):
+    """Bind each rest guide point once. Never choose a new surface in motion."""
+    import bpy
+    import struct
+    from pathlib import Path
+    from mathutils import Vector
+    from mathutils.bvhtree import BVHTree
+    from wardrobe_shawl180_cache import cache
+    roots=np.load(source)['points']
+    curves,report=guides(roots)
+    report['rest_clearance']=clear_mane(curves,horse,frames=(0,))
+    path=Path(bpy.path.abspath(next(m.filepath for m in horse.modifiers if m.type=='MESH_CACHE')))
+    with path.open('rb') as stream:nf,nv=struct.unpack('>ii',stream.read(8))
+    samples=np.memmap(path,dtype='>f4',mode='r',offset=8+nf*4,shape=(nf,nv,3))
+    p0=np.asarray(samples[0],dtype=float)
+    horse.data.calc_loop_triangles()
+    tris=np.array([tuple(t.vertices) for t in horse.data.loop_triangles
+                   if horse.data.polygons[t.polygon_index].material_index==0 and
+                   np.all(p0[list(t.vertices),1]<1) and np.all(p0[list(t.vertices),2]>-11)])
+    bvh=BVHTree.FromPolygons(p0.tolist(),tris.tolist(),all_triangles=True)
+    rest=curves[0].reshape(-1,3).astype(float)
+    ids=[];nearest=[]
+    for p in rest:
+        loc,normal,face,distance=bvh.find_nearest(Vector(p.tolist()))
+        if face is None:raise ValueError('Unbound guide control')
+        ids.append(tris[face]);nearest.append(tuple(loc))
+    ids=np.array(ids);nearest=np.array(nearest);tri=p0[ids]
+    basis=np.stack([tri[:,1]-tri[:,0],tri[:,2]-tri[:,0]],axis=2)
+    uv=np.einsum('nij,nj->ni',np.linalg.pinv(basis),nearest-tri[:,0])
+    bary=np.column_stack([1-uv.sum(1),uv])
+    if np.min(bary)<-1e-4 or np.max(bary)>1.0001:raise ValueError('Surface binding outside triangle')
+    frame0=triangle_frames(tri)
+    offset=np.einsum('ni,nij->nj',rest-nearest,frame0)
+    t=np.tile(np.linspace(0,1,12),3141)
+    phase=np.repeat(curves[0,:,0,1]*3.7,12)
+    amplitude=np.minimum(.12,np.maximum(0,offset[:,2])*.20)*t*t
+    rows=[]
+    for f in range(144):
+        tri=np.asarray(samples[f][ids],dtype=float);frames=triangle_frames(tri)
+        placed=(tri*bary[:,:,None]).sum(1)+np.einsum('ni,nji->nj',offset,frames)
+        flutter=amplitude*(np.sin(phase+f/24*5)-np.sin(phase))
+        placed+=frames[:,:,2]*flutter[:,None]
+        placed=placed.reshape(3141,12,3)
+        placed[:,0]=np.repeat(roots[f,:,0],3,axis=0)
+        rows.append(placed)
+    curves=np.asarray(rows,dtype=np.float32)
+    vertices,faces=tube_frames(curves)
+    ob=bpy.data.objects['MF188_flowing_mane']
+    if len(ob.data.vertices)!=vertices.shape[1]:raise ValueError('Groom topology changed')
+    ob.data=ob.data.copy();ob.data.vertices.foreach_set('co',vertices[0].ravel());ob.data.update()
+    for mod in list(ob.modifiers):
+        if mod.type=='MESH_CACHE':ob.modifiers.remove(mod)
+    mod=cache(ob,vertices,out/'mane.mdd');mod.frame_start=217
+    local=curves-curves[:,:,:1]
+    report.update({'method':'Fixed per-control triangle and barycentric binding with transported offset and restrained native flutter',
+        'motion':'Rest-authored flow transported through fixed surface bindings; no per-frame reprojection or root-motion lag',
+        'source_root_error':float(abs(curves[:,:,0]-np.repeat(roots[:,:,0],3,axis=1)).max()),
+        'second_difference_native_percentiles':np.percentile(np.linalg.norm(np.diff(local,n=2,axis=0),axis=-1),[50,95,99,99.9,100]).tolist(),
+        'scope':'Authored attached motion; not physical hair dynamics or a collision pass'})
+    return report
 
 
 def coat(horse):
