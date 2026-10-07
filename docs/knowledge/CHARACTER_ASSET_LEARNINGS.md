@@ -2,6 +2,14 @@
 
 ## Current acceptance — exchange152
 
+### Exchange187 — do not confuse an integrated asset with finished scene art
+
+The186 corrected actor is preserved, but three entrance-context candidates fail the illustrated-world visual floor. Correct camera/ground checks, saved natives and richer procedural detail are not a cohesive environment. Solid shrub volumes read as green rocks; replacing them with leaf cards can instead produce exaggerated spikes. Changing local detail does not establish believable plant scale/silhouette, environmental depth or consistency with a much stronger character. A new coat material does not finish the diagnostic horse/tack. See the evidence-bound Astra strategy packet in the wardrobe/tack work package; no scene promoted or model-superiority claim.
+
+Audit only the necessary dependency: an unnecessary full-character144-state ground audit is deliberately stopped; isolated horse evaluation supplies the actual world bounds. Raw MDD minima are local coordinates, not ground height—the existing object transform changes the measured floor. Preserve matrix-aware controls. Reuse recorded world travel and shared caches without double-transforming the actor; camera motion must be checked against the new terrain before rendering. Keep recorded technical progress separate from art failure.
+
+Current scoped outputs retain1,282,722,468 bytes across inspection/look/operating folders before this note; no cache duplication, deletion or off-device backup is claimed. Saving a native for every rough look adds substantial storage even with shared caches: prefer a reusable source-bound preview recipe and save a selected native only after the representative visual gate unless a specific downstream proof requires it. Engineering tokens/cost and exact cumulative active effort remain unknown. Applied escalation is a request for a strategic route and earliest coherent proof, not another model-assisted cosmetic pass or automatic Factory switch.
+
 ### Exchange186 — upstream arm deformation and matched lighting
 
 Director's positive overall costume feedback does not approve the identified riding arms or stark clavicles. The body-only control reproduces the arm shape beneath fitted sleeves. Inspect the actual deformation region before widening/smoothing clothes: the inherited geodesic shoulder blend carries torso influence well down the humerus. A localized support remap changes the moving shoulder/upper arm while preserving accepted rest coordinates; all fitted-body support copies must receive the same change. Linear skinning and removal of fairing are retained negative alternatives, not selected fixes.
