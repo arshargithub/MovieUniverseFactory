@@ -2,9 +2,7 @@
 <div id="pashtun-doublewrap-review">
   <div class="viz-controls" aria-label="Character views" data-views></div>
   <figure>
-    <button type="button" class="btn btn-ghost btn-block" data-picture aria-label="Enlarge current image">
-      <img data-image alt="" />
-    </button>
+    <img class="cursor-interaction" data-image alt="" />
     <figcaption class="text-small text-muted" data-caption aria-live="polite"></figcaption>
   </figure>
   <div class="viz-controls">
@@ -30,7 +28,7 @@
   const count = root.querySelector('[data-count]');
   const controls = root.querySelector('[data-views]');
   const size = root.querySelector('[data-size]');
-  const picture = root.querySelector('[data-picture]');
+  const picture = image;
   let index = 0, large = false;
   const buttons = rows.map((row, i) => {
     const button = document.createElement('button');
@@ -53,7 +51,6 @@
     caption.textContent = rows[index].label; count.textContent = `${index + 1} / ${rows.length}`;
     buttons.forEach((button, i) => button.setAttribute('aria-pressed', String(i === index)));
     root.classList.toggle('large', large); size.textContent = large ? 'Compact' : 'Enlarge';
-    picture.setAttribute('aria-label', large ? 'Show compact image' : 'Enlarge current image');
   }
   function resize() { large = !large; render(); save(); }
   root.querySelector('[data-prev]').addEventListener('click', () => { index = (index + rows.length - 1) % rows.length; render(); save(); });
