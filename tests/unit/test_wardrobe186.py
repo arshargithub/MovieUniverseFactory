@@ -37,3 +37,10 @@ def test_comparison_is_fixed_and_preserves_prior_evidence(tmp_path,monkeypatch):
     output=comparison.validate({'operation':'matched-original-front'})
     output.mkdir()
     with pytest.raises(ValueError):comparison.validate({'operation':'matched-original-front'})
+
+
+def test_comparison_bootstraps_script_import_in_isolated_interpreter():
+    import subprocess
+    import sys
+    path=Path(__file__).parents[2]/'scripts/wardrobe186_comparison.py'
+    subprocess.run([sys.executable,'-I','-c','import runpy,sys; runpy.run_path(sys.argv[1])',str(path)],check=True)
