@@ -174,6 +174,11 @@ OPERATIONS += ('interfaceaudit02',)
 OPERATIONS += ('shapeaudit01','shapeaudit02')
 OPERATIONS += ('supportrelax01','supportrelax02','supportrelax03','supportscreen01','supportscreen02')
 OPERATIONS += ('headdress07',)
+OPERATIONS += ('headscreen07',)
+OPERATIONS += ('redress01','redressscreen01')
+OPERATIONS += ('redress02','redressscreen02')
+OPERATIONS += ('redress03','redressscreen03')
+OPERATIONS += ('redress04','redressscreen04')
 HEAD = base.BASE / 'wardrobe180-xpbdhead08/trajectory.npz'
 HEAD_SHA = '55ce2f99edfbb45a7cf8a5898be31caa1f20bd7da3bb2ae2be9c43e49d7095e8'
 
@@ -182,7 +187,7 @@ def validate(job):
     if not isinstance(job, dict) or set(job) != {'operation'} or job['operation'] not in OPERATIONS:
         raise ValueError('Fixed structured operation required')
     inputs=[(base.SOURCE,base.SOURCE_SHA)]
-    if job['operation'] in ('interfaceaudit02','shapeaudit01','shapeaudit02','supportrelax01','supportrelax02','supportrelax03','supportscreen01','supportscreen02'):
+    if job['operation'] in ('interfaceaudit02','shapeaudit01','shapeaudit02','supportrelax01','supportrelax02','supportrelax03','supportscreen01','supportscreen02','redress01','redressscreen01','redress02','redressscreen02','redress03','redressscreen03','redress04','redressscreen04'):
         out=base.BASE/('wardrobe185-'+job['operation'])
         for path,sha in inputs:
             if path.is_symlink() or base.digest(path)!=sha:raise ValueError('Protected input changed')
@@ -498,7 +503,7 @@ def main():
     elif job['operation'].startswith('intersections'):
         from wardrobe185_intersections import run
         run(out)
-    elif job['operation']=='headscreen05':
+    elif job['operation'] in ('headscreen05','headscreen07'):
         from wardrobe185_head_dress import screen as head_screen
         head_screen(out)
     elif job['operation'].startswith('headdress'):
@@ -564,10 +569,10 @@ def main():
     elif job['operation'] in ('shapeaudit01','shapeaudit02'):
         from wardrobe185_shape_audit import run as shape_audit
         shape_audit(out)
-    elif job['operation'] in ('supportrelax01','supportrelax02','supportrelax03'):
+    elif job['operation'] in ('supportrelax01','supportrelax02','supportrelax03','redress01','redress02','redress03','redress04'):
         from wardrobe185_support_relax import run as support_relax
         support_relax(out)
-    elif job['operation'] in ('supportscreen01','supportscreen02'):
+    elif job['operation'] in ('supportscreen01','supportscreen02','redressscreen01','redressscreen02','redressscreen03','redressscreen04'):
         from wardrobe185_support_relax import screen as support_screen
         support_screen(out)
     elif job['operation']=='lowerinspect01':

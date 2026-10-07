@@ -336,6 +336,17 @@ def test_fresh_head_sheet_has_authored_dimensions_and_regular_metric():
     assert np.isfinite(p).all()
 
 
+def test_rear_cut_changes_fabric_distribution_not_front_width():
+    import wardrobe185_head_dress as head
+    p,f,r=head.pattern(1.10,1.18,True,rear_width=.58,length_m=.62)
+    metric=r.reshape(41,61,3)*.12292759120464325
+    assert np.ptp(metric[0,:,1])==pytest.approx(1.18)
+    assert np.ptp(metric[-1,:,1])==pytest.approx(.58)
+    assert np.ptp(metric[:,:,0])==pytest.approx(.62)
+    assert np.isfinite(p).all() and f.shape==(2400,4)
+    with pytest.raises(ValueError):head.pattern(rear_width=.1)
+
+
 def test_closed_course_uses_uniform_periodic_fabric_metric():
     import wardrobe185_cut as cut
     for layer in (0,1):

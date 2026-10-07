@@ -52,11 +52,16 @@ def run(out):
     scale=.12292759120464325;released=shoulder_supports(ids)
     if released.sum()!=36:raise ValueError('Unexpected support semantics')
     report={}
+    redress=out.name.endswith(('redress01','redress02','redress03','redress04'))
+    if redress:
+        from wardrobe185_redress import prepare
+        p,rest,ids,weights,stitches=prepare(out,f,rest);released=np.zeros(len(ids),dtype=bool)
     sewn=out.name.endswith('supportrelax03')
     if sewn:
         joins=shoulder_stitches(p);stitches=stitches+joins
         (out/'shoulder-joins.json').write_text(json.dumps({'pairs':joins,'initial_distances_m':[float(np.linalg.norm(p[a]-p[b])*.12292759120464325) for a,b in joins]},indent=2)+'\n')
-    for label,release in ((('sewn',True),) if sewn else (('unchanged',False),('released',True))):
+    cases=(('redressed',False),) if redress else (('sewn',True),) if sewn else (('unchanged',False),('released',True))
+    for label,release in cases:
         bpy.ops.wm.read_factory_settings(use_empty=True);scene=bpy.context.scene
         scene.render.fps=24;scene.gravity=(0,0,-9.81);scene.unit_settings.scale_length=1.
         domain=bpy.data.collections.new('Same regional contacts');scene.collection.children.link(domain)
@@ -72,12 +77,26 @@ def run(out):
         ob.shape_key_add(name='Basis');key=ob.shape_key_add(name='Original fabric metric')
         key.data.foreach_set('co',(rest*scale).astype(np.float32).ravel())
         key.value=0.;ob.active_shape_key_index=0;ob.show_only_shape_key=False
+        if out.name.endswith(('redress03','redress04')):
+            from wardrobe185_redress import rear_targets
+            targets=rear_targets(p,f);draw=ob.shape_key_add(name='Concealed rear support dressing')
+            if out.name.endswith('redress04'):
+                from wardrobe185_redress import shoulder_targets
+                shoulder,record=shoulder_targets(p,f);targets+=shoulder-p
+                (out/'shoulder-support-dressing.json').write_text(json.dumps(record,indent=2)+'\n')
+            draw.data.foreach_set('co',(targets*scale).astype(np.float32).ravel())
+            draw.value=0.;draw.keyframe_insert(data_path='value',frame=1)
+            draw.value=1.;draw.keyframe_insert(data_path='value',frame=72)
+            draw.value=0.;ob.active_shape_key_index=0;scene.frame_set(1)
+            (out/'rear-support-dressing.json').write_text(json.dumps({'max_initial_travel_m':float(np.linalg.norm(targets-p,axis=1).max()*scale),
+                'scope':'Existing hybrid rear-return pre-roll, fitted to revised headfall rather than old cut'},indent=2)+'\n')
         weld=ob.modifiers.new('Verified rest metric evaluation','WELD');weld.merge_threshold=1e-6
         mod=cloth_settings(ob,1,domain);s=mod.settings;s.rest_shape_key=key;s.use_dynamic_mesh=False
         s.mass=.3;s.air_damping=.2;s.bending_stiffness=.05;s.tension_stiffness=200;s.compression_stiffness=200;s.shear_stiffness=100;s.quality=24
-        s.use_sewing_springs=True;s.sewing_force_max=20.;mod.point_cache.frame_end=120
+        end=240 if redress else 120
+        s.use_sewing_springs=True;s.sewing_force_max=20.;mod.point_cache.frame_end=end
         frames=[]
-        for frame in range(1,121):
+        for frame in range(1,end+1):
             scene.frame_set(frame);bpy.context.view_layer.update()
             ev=ob.evaluated_get(bpy.context.evaluated_depsgraph_get());m=ev.to_mesh()
             q=np.array([v.co[:] for v in m.vertices])/scale;ev.to_mesh_clear()
@@ -88,7 +107,7 @@ def run(out):
             frames.append(q)
             if frame%24==0:print('185 support control',label,frame,flush=True)
         np.savez_compressed(out/(label+'.npz'),frames=np.array(frames),faces=f,rest=rest,counts=counts,pin_indices=ids[~released] if release else ids)
-        report[label]={'released_count':int(released.sum()) if release else 0,'fabric_metric':measures(rest,f,{120:q},scale),
+        report[label]={'released_count':int(released.sum()) if release else 0,'fabric_metric':measures(rest,f,{end:q},scale),
             'last_step_m':float(np.linalg.norm(frames[-1]-frames[-2],axis=1).max()*scale)}
     (out/'result.json').write_text(json.dumps({'source_sha256':JOINED_TRAJECTORY_SHA,'cases':report,
         'hypothesis':'Shoulder holds suspend courses above actual supporting fabric; removal permits contact-supported drape',
@@ -109,6 +128,10 @@ def screen(out):
     scene.camera.animation_data_clear();scene.camera.data.type='ORTHO';scene.cycles.device='CPU';scene.cycles.samples=8;scene.render.use_persistent_data=True
     cloth=bpy.data.objects['MF185_moving_shawl']
     cases=(('wardrobe185-supportrelax03','sewn'),) if out.name.endswith('supportscreen02') else tuple(('wardrobe185-supportrelax02',label) for label in ('unchanged','released'))
+    if out.name.endswith('redressscreen01'):cases=(('wardrobe185-redress01','redressed'),)
+    if out.name.endswith('redressscreen02'):cases=(('wardrobe185-redress02','redressed'),)
+    if out.name.endswith('redressscreen03'):cases=(('wardrobe185-redress03','redressed'),)
+    if out.name.endswith('redressscreen04'):cases=(('wardrobe185-redress04','redressed'),)
     for folder,label in cases:
         with np.load(BASE/folder/(label+'.npz'),allow_pickle=False) as data:p=data['frames'][-1]
         if p.shape!=(len(cloth.data.vertices),3):raise ValueError('Unexpected relaxed topology')

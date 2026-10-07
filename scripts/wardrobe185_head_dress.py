@@ -5,6 +5,7 @@ import numpy as np
 
 HEAD05_SHA='81a6e84910e54cc41d7c0a4b72e2a1b8bea09e38ca89fdccb6109df983b98e09'
 HEAD06_SHA='c2be9aa725e106b6af3e7fb373953b0d53f5ec0e966fc59403fe922b26ea5f48'
+HEAD07_SHA='dd588c547ce0a10795c40f623be16c5bca6042d90b0ae83c57b19e212e5a33f3'
 
 
 def screen(out):
@@ -14,8 +15,10 @@ def screen(out):
     from wardrobe_riding_fit import fit_render
     from wardrobe_doublewrap185 import color
     source=BASE/'wardrobe185-motionreview03/diagnostic.blend'
-    head=BASE/'wardrobe185-headdress05/trajectory.npz'
-    if digest(source)!='0f128ba60947d4451f7e0bbaa3a5f6f275173702e3d4bddd245cef73d2310bd7' or digest(head)!=HEAD05_SHA:raise ValueError('Unbound head review')
+    revised=out.name.endswith('headscreen07')
+    head=BASE/('wardrobe185-headdress07/trajectory.npz' if revised else 'wardrobe185-headdress05/trajectory.npz')
+    head_sha=HEAD07_SHA if revised else HEAD05_SHA
+    if digest(source)!='0f128ba60947d4451f7e0bbaa3a5f6f275173702e3d4bddd245cef73d2310bd7' or digest(head)!=head_sha:raise ValueError('Unbound head review')
     (out/Path(__file__).name).write_bytes(Path(__file__).read_bytes())
     with np.load(head,allow_pickle=False) as d:p=d['frames'][-1];f=d['faces']
     bpy.ops.wm.open_mainfile(filepath=str(source),load_ui=False,use_scripts=False)
@@ -26,7 +29,7 @@ def screen(out):
     for angle,label in ((0,'front'),(60,'left-quarter'),(90,'left'),(180,'rear'),(270,'right'),(300,'right-quarter')):
         fit_render(out,label,angle,(0,.1,-1.3),7.,(640,640))
     check_protected()
-    (out/'result.json').write_text(json.dumps({'head_sha256':HEAD05_SHA,'visual_gate':'NOT_RUN','motion_gate':'NOT_RUN'},indent=2)+'\n')
+    (out/'result.json').write_text(json.dumps({'head_sha256':head_sha,'visual_gate':'NOT_RUN','motion_gate':'NOT_RUN'},indent=2)+'\n')
 
 
 def pattern(crown=1.30, front_width=.78, spread_tails=False, rear_width=.78, length_m=.55):
