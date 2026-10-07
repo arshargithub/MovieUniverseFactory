@@ -171,6 +171,9 @@ OPERATIONS += ('lowerreview07',)
 OPERATIONS += ('lowerwindoff12',)
 OPERATIONS += ('shotmotion02',)
 OPERATIONS += ('interfaceaudit02',)
+OPERATIONS += ('shapeaudit01','shapeaudit02')
+OPERATIONS += ('supportrelax01','supportrelax02','supportrelax03','supportscreen01','supportscreen02')
+OPERATIONS += ('headdress07',)
 HEAD = base.BASE / 'wardrobe180-xpbdhead08/trajectory.npz'
 HEAD_SHA = '55ce2f99edfbb45a7cf8a5898be31caa1f20bd7da3bb2ae2be9c43e49d7095e8'
 
@@ -179,7 +182,7 @@ def validate(job):
     if not isinstance(job, dict) or set(job) != {'operation'} or job['operation'] not in OPERATIONS:
         raise ValueError('Fixed structured operation required')
     inputs=[(base.SOURCE,base.SOURCE_SHA)]
-    if job['operation']=='interfaceaudit02':
+    if job['operation'] in ('interfaceaudit02','shapeaudit01','shapeaudit02','supportrelax01','supportrelax02','supportrelax03','supportscreen01','supportscreen02'):
         out=base.BASE/('wardrobe185-'+job['operation'])
         for path,sha in inputs:
             if path.is_symlink() or base.digest(path)!=sha:raise ValueError('Protected input changed')
@@ -558,6 +561,15 @@ def main():
     elif job['operation']=='interfaceaudit02':
         from wardrobe185_interface_audit import run as interface_audit
         interface_audit(out)
+    elif job['operation'] in ('shapeaudit01','shapeaudit02'):
+        from wardrobe185_shape_audit import run as shape_audit
+        shape_audit(out)
+    elif job['operation'] in ('supportrelax01','supportrelax02','supportrelax03'):
+        from wardrobe185_support_relax import run as support_relax
+        support_relax(out)
+    elif job['operation'] in ('supportscreen01','supportscreen02'):
+        from wardrobe185_support_relax import screen as support_screen
+        support_screen(out)
     elif job['operation']=='lowerinspect01':
         from wardrobe185_lower import inspect as lower_inspect
         lower_inspect(out)

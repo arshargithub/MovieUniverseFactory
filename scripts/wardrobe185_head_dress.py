@@ -29,13 +29,14 @@ def screen(out):
     (out/'result.json').write_text(json.dumps({'head_sha256':HEAD05_SHA,'visual_gate':'NOT_RUN','motion_gate':'NOT_RUN'},indent=2)+'\n')
 
 
-def pattern(crown=1.30, front_width=.78, spread_tails=False):
+def pattern(crown=1.30, front_width=.78, spread_tails=False, rear_width=.78, length_m=.55):
     rows,cols=41,61;scale=.12292759120464325
-    width=.78/scale;length=.55/scale
+    if not (.45<=rear_width<=1.2 and .4<=length_m<=.8):raise ValueError('Cut outside scoped headfall dimensions')
+    length=length_m/scale
     p=[];r=[];f=[]
     for i in range(rows):
         u=i/(rows-1)
-        local_width=(front_width*(1-u)+.78*u)/scale
+        local_width=(front_width*(1-u)+rear_width*u)/scale
         for j in range(cols):
             s=(j/(cols-1)-.5)*local_width;a=max(-math.pi/2,min(math.pi/2,s/1.36))
             extra=max(0,abs(s)-1.36*math.pi/2)
@@ -56,11 +57,12 @@ def run(out):
     from wardrobe_doublewrap185 import cloth_settings
     from wardrobe_shawl180 import measures
     (out/Path(__file__).name).write_bytes(Path(__file__).read_bytes())
-    regional=out.name.endswith(('05','06'))
+    regional=out.name.endswith(('05','06','07'))
     bpy.ops.wm.read_factory_settings(use_empty=True);scene=bpy.context.scene;scene.render.fps=24;scene.gravity=(0,0,-9.81)
-    revised=out.name.endswith(('02','03','04','05','06'))
-    front_width=1.18 if out.name.endswith('06') else .94 if out.name.endswith(('03','04','05')) else .78
-    scale=.12292759120464325;p,f,r=pattern(1.10 if revised else 1.30,front_width,spread_tails=out.name.endswith(('04','05','06')))
+    revised=out.name.endswith(('02','03','04','05','06','07'))
+    front_width=1.18 if out.name.endswith(('06','07')) else .94 if out.name.endswith(('03','04','05')) else .78
+    rear_width=.58 if out.name.endswith('07') else .78;length_m=.62 if out.name.endswith('07') else .55
+    scale=.12292759120464325;p,f,r=pattern(1.10 if revised else 1.30,front_width,spread_tails=out.name.endswith(('04','05','06','07')),rear_width=rear_width,length_m=length_m)
     if regional:
         from wardrobe185_convex import static_contacts
         contact=static_contacts(out,scale)
@@ -83,7 +85,7 @@ def run(out):
             if direction.length<1e-7:direction=n
             q=h+direction.normalized()*.005
         deltas.append((q-Vector(point)).length);p[i]=np.array(q)/scale
-    (out/'construction.json').write_text(json.dumps({'max_adjustment_m':max(deltas),'front_width_m':front_width,'rear_width_m':.78,'length_m':.55},indent=2)+'\n')
+    (out/'construction.json').write_text(json.dumps({'max_adjustment_m':max(deltas),'front_width_m':front_width,'rear_width_m':rear_width,'length_m':length_m},indent=2)+'\n')
     if max(deltas)>.03:raise ValueError('Fresh pattern penetrates actor; correct initial drape')
     contact.modifiers.new('Collision','COLLISION');contact.collision.thickness_outer=.0015;contact.collision.cloth_friction=15
     domain=bpy.data.collections.new('Domain');scene.collection.children.link(domain);domain.objects.link(contact)

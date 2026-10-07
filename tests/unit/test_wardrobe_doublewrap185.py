@@ -301,6 +301,8 @@ def test_dispatch_has_an_explicit_handler_for_every_admitted_operation(operation
         'wardrobe185_shot':('layout','motion'),
         'wardrobe185_exit_audit':('run',),
         'wardrobe185_interface_audit':('run',),
+        'wardrobe185_shape_audit':('run',),
+        'wardrobe185_support_relax':('run','screen'),
         'wardrobe185_lower':('inspect','capture'),
             'wardrobe185_lower_drape':('dress',),
             'wardrobe185_lower_surface':('capture',),
@@ -345,6 +347,28 @@ def test_closed_course_uses_uniform_periodic_fabric_metric():
         assert np.ptp(circum)<1e-10 and np.ptp(across)<1e-10
         assert across[0,0]*20*.12292759120464325==pytest.approx(.175)
         assert np.isfinite(p).all() and len(pins)==18
+
+
+def test_shoulder_release_does_not_select_crown_or_rear_holds():
+    from wardrobe185_support_relax import shoulder_supports
+    from wardrobe185_convex import rear_support_indices
+    crown=np.arange(25,36)
+    rear=np.array(rear_support_indices(2501))
+    shoulders=np.array([offset+row*21+col for offset in (2501,4853)
+                        for row in (27,28,29,83,84,85) for col in (11,12,13)])
+    assert shoulder_supports(shoulders).all()
+    assert not shoulder_supports(crown).any()
+    assert not shoulder_supports(rear).any()
+
+
+def test_shoulder_seams_join_adjacent_panels_and_reject_wrong_topology():
+    from wardrobe185_support_relax import shoulder_stitches
+    points=np.zeros((7205,3));points[:,0]=1.
+    pairs=shoulder_stitches(points)
+    assert len(pairs)==12 and len({b for _,b in pairs})==12
+    assert all(2501<=a<4853 and 0<=b<2501 for a,b in pairs[:6])
+    assert all(4853<=a<7205 and 2501<=b<4853 for a,b in pairs[6:])
+    with pytest.raises(ValueError):shoulder_stitches(np.zeros((4,3)))
 
 
 def test_tailored_courses_have_concealed_rear_support_and_uniform_width():
