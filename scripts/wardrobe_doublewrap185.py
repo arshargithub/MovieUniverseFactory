@@ -181,6 +181,8 @@ OPERATIONS += ('redress03','redressscreen03')
 OPERATIONS += ('redress04','redressscreen04')
 OPERATIONS += ('redressmotion01','redressoff01','redressreview01')
 OPERATIONS += ('redressmotion02','redressoff02','redressreview02')
+OPERATIONS += ('redressoffreview02',)
+OPERATIONS += ('shotmotion03',)
 HEAD = base.BASE / 'wardrobe180-xpbdhead08/trajectory.npz'
 HEAD_SHA = '55ce2f99edfbb45a7cf8a5898be31caa1f20bd7da3bb2ae2be9c43e49d7095e8'
 
@@ -189,7 +191,7 @@ def validate(job):
     if not isinstance(job, dict) or set(job) != {'operation'} or job['operation'] not in OPERATIONS:
         raise ValueError('Fixed structured operation required')
     inputs=[(base.SOURCE,base.SOURCE_SHA)]
-    if job['operation'] in ('redressmotion01','redressoff01','redressreview01','redressmotion02','redressoff02','redressreview02'):
+    if job['operation'] in ('redressmotion01','redressoff01','redressreview01','redressmotion02','redressoff02','redressreview02','redressoffreview02','shotmotion03'):
         out=base.BASE/('wardrobe185-'+job['operation'])
         for path,sha in inputs:
             if path.is_symlink() or base.digest(path)!=sha:raise ValueError('Protected input changed')
@@ -565,7 +567,7 @@ def main():
     elif job['operation']=='shotlayout01':
         from wardrobe185_shot import layout as shot_layout
         shot_layout(out)
-    elif job['operation'] in ('shotmotion01','shotmotion02'):
+    elif job['operation'] in ('shotmotion01','shotmotion02','shotmotion03'):
         from wardrobe185_shot import motion as shot_motion
         shot_motion(out)
     elif job['operation']=='exitaudit01':
@@ -580,7 +582,7 @@ def main():
     elif job['operation'] in ('redressmotion01','redressoff01','redressmotion02','redressoff02'):
         from wardrobe185_redress_motion import solve as redress_motion
         redress_motion(out)
-    elif job['operation'] in ('redressreview01','redressreview02'):
+    elif job['operation'] in ('redressreview01','redressreview02','redressoffreview02'):
         from wardrobe185_redress_motion import screen as redress_review
         redress_review(out)
     elif job['operation'] in ('supportrelax01','supportrelax02','supportrelax03','redress01','redress02','redress03','redress04'):

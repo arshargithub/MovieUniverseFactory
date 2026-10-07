@@ -9,7 +9,9 @@ import numpy as np
 
 STATIC_SHA='862a828f2d2de822929e7e55d37eacaa14b5a9a3c66abbd0daace9a217ee3864'
 CONSTRUCTION_SHA='35e3c7a3cc1aa08a6da129d812c88404da70a10c34817c993f3509f2714b6a47'
-MOTION_SHA=None
+MOTION_SHA='0c24c8e25c7e4f0e7c4aedb6511a038ba08b85d99436e452dd8914aea49caa74'
+OFF_SHA='2d91d0978a038496658b7320dc73acef2c1064eaf55baf6a88ec4bc6c672a484'
+REVIEW_SHA='72568c5841436b86b212761c3a89e50a913ac339cc69c7b9d6c44fc1fa19cdca'
 
 
 def support_selection(ids,weights):
@@ -127,8 +129,10 @@ def screen(out):
     from wardrobe185_finish import apply
     from wardrobe_riding_fit import fit_render
     source=BASE/'wardrobe185-lowerreview07/integration-working.blend'
-    trace=BASE/('wardrobe185-redressmotion02/trajectory.npz' if out.name.endswith('redressreview02') else 'wardrobe185-redressmotion01/trajectory.npz')
-    if digest(source)!=REPAIRED_SHA or MOTION_SHA is None or digest(trace)!=MOTION_SHA:raise ValueError('Unbound recut review')
+    control=out.name.endswith('redressoffreview02')
+    trace=BASE/('wardrobe185-redressoff02/trajectory.npz' if control else 'wardrobe185-redressmotion02/trajectory.npz' if out.name.endswith('redressreview02') else 'wardrobe185-redressmotion01/trajectory.npz')
+    sha=OFF_SHA if control else MOTION_SHA
+    if digest(source)!=REPAIRED_SHA or sha is None or digest(trace)!=sha:raise ValueError('Unbound recut review')
     with np.load(trace,allow_pickle=False) as data:frames=data['frames'];rest=data['rest'];counts=data['counts']
     bpy.ops.wm.open_mainfile(filepath=str(source),load_ui=False,use_scripts=False);check_protected()
     scene=bpy.context.scene;cloth=bpy.data.objects['MF185_moving_shawl']
@@ -142,12 +146,12 @@ def screen(out):
     horse=[(o,o.hide_render) for o in scene.objects if o.name.startswith(('MF185_gait_','MF185_rein_','MF185_stirrup_'))]
     for o,_ in horse:o.hide_render=True
     rig=bpy.data.objects['MF_body156_fit_rig']
-    for frame in (169,193,217,265,360):
+    for frame in ((217,265,360) if control else (169,193,217,265,360)):
         scene.frame_set(frame);bpy.context.view_layer.update()
         center=tuple(rig.matrix_world@rig.pose.bones['MF185_head'].head+Vector((0,0,-1.4)))
         for angle,label in ((0,'front'),(90,'left'),(180,'rear'),(270,'right')):fit_render(out,label+'-'+str(frame),angle,center,9.,(640,640))
     for o,state in horse:o.hide_render=state
     scene.frame_set(217);check_protected()
-    bpy.ops.wm.save_as_mainfile(filepath=str(out/'integration-working.blend'),check_existing=False,compress=True)
-    (out/'result.json').write_text(json.dumps({'source_sha256':REPAIRED_SHA,'trajectory_sha256':MOTION_SHA,
-        'native_sha256':digest(out/'integration-working.blend'),'visual_gate':'NOT_RUN','protected_exact':True},indent=2)+'\n')
+    if not control:bpy.ops.wm.save_as_mainfile(filepath=str(out/'integration-working.blend'),check_existing=False,compress=True)
+    (out/'result.json').write_text(json.dumps({'source_sha256':REPAIRED_SHA,'trajectory_sha256':sha,
+        'native_sha256':None if control else digest(out/'integration-working.blend'),'visual_gate':'NOT_RUN','protected_exact':True},indent=2)+'\n')

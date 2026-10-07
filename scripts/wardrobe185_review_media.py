@@ -14,8 +14,9 @@ BASE=ROOT/'.runtime/art-direction/series01-facebuilder-trial-01'
 
 
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--final',action='store_true');args=parser.parse_args()
-    out=BASE/'wardrobe185-shotmotion02'
+    parser=argparse.ArgumentParser();parser.add_argument('--final',action='store_true')
+    parser.add_argument('--recut',action='store_true');args=parser.parse_args()
+    out=BASE/('wardrobe185-shotmotion03' if args.recut else 'wardrobe185-shotmotion02')
     names=[out/('frame-%04d.png'%f) for f in range(217,361)]
     if args.final and (not all(p.is_file() for p in names) or not (out/'motion-render.json').is_file()):
         raise ValueError('Incomplete native sequence')

@@ -77,10 +77,40 @@ def motion(out):
     source_sha=WORKING_SHA
     if out.name.endswith('shotmotion02'):
         source=BASE/'wardrobe185-lowerreview07/integration-working.blend';source_sha=REPAIRED_SHA
+    if out.name.endswith('shotmotion03'):
+        from wardrobe185_redress_motion import REVIEW_SHA
+        source=BASE/'wardrobe185-redressreview02/integration-working.blend';source_sha=REVIEW_SHA
     if digest(source)!=source_sha:raise ValueError('Unbound integrated motion source')
     (out/Path(__file__).name).write_bytes(Path(__file__).read_bytes())
     bpy.ops.wm.open_mainfile(filepath=str(source),load_ui=False,use_scripts=False)
     scene=bpy.context.scene;rig=bpy.data.objects['MF_body156_fit_rig']
+    if out.name.endswith('shotmotion03'):
+        from wardrobe185_redress_motion import MOTION_SHA
+        from wardrobe_motion178_controls import render_geometry_paused
+        trajectory=BASE/'wardrobe185-redressmotion02/trajectory.npz'
+        if digest(trajectory)!=MOTION_SHA:raise ValueError('Recut trajectory changed')
+        with np.load(trajectory,allow_pickle=False) as data:expected=data['frames']
+        with np.load(trajectory.parent/'motion-proof.npz',allow_pickle=False) as data:proof={k:data[k] for k in data.files}
+        cloth=bpy.data.objects['MF185_moving_shawl'];flags=[(m,m.show_viewport) for m in cloth.modifiers if m.type!='MESH_CACHE']
+        errors=[];pose_errors=[]
+        try:
+            for m,_ in flags:m.show_viewport=False
+            with render_geometry_paused():
+                cloth.hide_viewport=False
+                for frame in list(range(1,361))+[217,169,360,220]:
+                    scene.frame_set(frame);bpy.context.view_layer.update()
+                    ev=cloth.evaluated_get(bpy.context.evaluated_depsgraph_get());mesh=ev.to_mesh()
+                    q=np.array([v.co[:] for v in mesh.vertices]);ev.to_mesh_clear()
+                    if q.shape!=expected[frame-1].shape:raise ValueError('Recut cache topology differs')
+                    errors.append(float(abs(q-expected[frame-1]).max()))
+                    for label,name in (('chest','chest'),('head','MF185_head')):
+                        b=rig.pose.bones[name];delta=rig.matrix_world@b.matrix@b.bone.matrix_local.inverted()@rig.matrix_world.inverted()
+                        pose_errors.append(float(abs(np.array(delta)-proof[label+'_matrices'][frame-1]).max()))
+        finally:
+            for m,state in flags:m.show_viewport=state
+        if max(errors)>2e-6 or max(pose_errors)>1e-5:raise ValueError('Recut assembly differs from simulation')
+        (out/'cache-proof.json').write_text(json.dumps({'all360_frames_and_backward_seeks':True,'max_cache_error_native':max(errors),
+            'max_head_chest_error':max(pose_errors),'trajectory_sha256':MOTION_SHA,'source_sha256':source_sha},indent=2)+'\n')
     scene.camera.animation_data_clear()
     scene.render.resolution_x=432;scene.render.resolution_y=768;scene.render.resolution_percentage=100
     scene.cycles.device='CPU';scene.cycles.samples=4;scene.render.use_persistent_data=True
