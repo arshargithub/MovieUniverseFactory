@@ -1,0 +1,65 @@
+<!-- Native evidence carousel; data is inserted only after delivery verification. -->
+<div id="pashtun-doublewrap-review">
+  <div class="viz-controls" aria-label="Character views" data-views></div>
+  <figure>
+    <button type="button" class="btn btn-ghost btn-block" data-picture aria-label="Enlarge current image">
+      <img data-image alt="" />
+    </button>
+    <figcaption class="text-small text-muted" data-caption aria-live="polite"></figcaption>
+  </figure>
+  <div class="viz-controls">
+    <button type="button" class="btn" data-prev aria-label="Previous view">← Previous</button>
+    <span class="tabular-nums" data-count></span>
+    <button type="button" class="btn" data-next aria-label="Next view">Next →</button>
+    <button type="button" class="btn" data-size>Enlarge</button>
+  </div>
+</div>
+<style>
+#pashtun-doublewrap-review figure { margin: 12px 0; text-align: center; }
+#pashtun-doublewrap-review img { display: block; max-width: 100%; width: auto; height: auto; max-height: 460px; margin: auto; object-fit: contain; }
+#pashtun-doublewrap-review.large img { max-height: 820px; }
+#pashtun-doublewrap-review figcaption { margin-top: 8px; }
+</style>
+<script>
+(() => {
+  const root = document.getElementById('pashtun-doublewrap-review');
+  const rows = /* REVIEW_DATA */[];
+  if (!root || !rows.length) return;
+  const image = root.querySelector('[data-image]');
+  const caption = root.querySelector('[data-caption]');
+  const count = root.querySelector('[data-count]');
+  const controls = root.querySelector('[data-views]');
+  const size = root.querySelector('[data-size]');
+  const picture = root.querySelector('[data-picture]');
+  let index = 0, large = false;
+  const buttons = rows.map((row, i) => {
+    const button = document.createElement('button');
+    button.type = 'button'; button.className = 'btn'; button.textContent = row.short;
+    button.addEventListener('click', () => { index = i; render(); save(); });
+    controls.appendChild(button); return button;
+  });
+  function restore(state) {
+    const value = state?.privateContent;
+    if (value && Number.isInteger(value.index) && value.index >= 0 && value.index < rows.length) index = value.index;
+    if (value && typeof value.large === 'boolean') large = value.large;
+    render();
+  }
+  function save() {
+    const api = window.openai;
+    if (api?.setWidgetState) api.setWidgetState({ modelContent: { view: rows[index].short }, privateContent: { index, large } }).catch(() => {});
+  }
+  function render() {
+    image.src = rows[index].image; image.alt = rows[index].label;
+    caption.textContent = rows[index].label; count.textContent = `${index + 1} / ${rows.length}`;
+    buttons.forEach((button, i) => button.setAttribute('aria-pressed', String(i === index)));
+    root.classList.toggle('large', large); size.textContent = large ? 'Compact' : 'Enlarge';
+    picture.setAttribute('aria-label', large ? 'Show compact image' : 'Enlarge current image');
+  }
+  function resize() { large = !large; render(); save(); }
+  root.querySelector('[data-prev]').addEventListener('click', () => { index = (index + rows.length - 1) % rows.length; render(); save(); });
+  root.querySelector('[data-next]').addEventListener('click', () => { index = (index + 1) % rows.length; render(); save(); });
+  size.addEventListener('click', resize); picture.addEventListener('click', resize);
+  window.addEventListener('openai:set_globals', event => restore(event.detail?.globals?.widgetState));
+  restore(window.openai?.widgetState);
+})();
+</script>

@@ -31,7 +31,7 @@ def main():
     refs=ROOT/'.runtime/art-direction/series01-pashtun-baseline-v01'
     rows.extend([(refs/'frontal-v02-individualized.png','Illustrated front','Approved illustrated art direction · accepted native differences retained'),
         (refs/'portrait-v07-individualized.png','Illustrated portrait','Approved illustrated portrait · folds are not a literal reconstruction target')])
-    template=(BASE/'wardrobe185-operating/review-template.html').read_text()
+    template=(ROOT/'scripts/templates/wardrobe185-review.html').read_text()
     if template.count('/* REVIEW_DATA */[]')!=1:raise ValueError('Unexpected gallery template')
     for quality in (86,82,78,74):
         data=[]
@@ -42,9 +42,10 @@ def main():
         content=template.replace('/* REVIEW_DATA */[]',json.dumps(data))
         if len(content.encode())<970000:break
     if len(content.encode())>=1000000:raise ValueError('Gallery exceeds host limit')
-    GALLERY.write_text(content)
     delta=ImageChops.difference(Image.open(selected/'neutral-master-front.png').convert('RGB'),Image.open(fresh/'reopened-neutral-front.png').convert('RGB'))
     comparison=max(v[1] for v in delta.getextrema())
+    if comparison>4:raise ValueError('Fresh-open appearance differs; inspect before handoff')
+    GALLERY.write_text(content)
     record={'gallery':str(GALLERY),'gallery_bytes':len(content.encode()),'views':len(data),
         'jpeg_quality':quality,'reopened_front_max_channel_difference':comparison,
         'scope':'Presentation encoding only; original PNGs and native retained; Director appearance acceptance pending'}
