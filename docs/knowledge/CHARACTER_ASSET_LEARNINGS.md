@@ -2,6 +2,14 @@
 
 ## Current acceptance — exchange152
 
+###187 Astra escalation — asset recovery is not art direction
+
+Inspect the original before repainting a diagnostic derivative. The early horse demonstrator overwrote material slots with brown; original packed coat/eyes/saddle maps survive. Subdividing its original mesh once gives exact UV-corner correspondence with all89,680 cached faces, permitting material-region recovery without changing geometry/motion. This technical recovery does not supply a finished horse: omitted native mane samples are only a1–4cm donor groom and the first restored reveal has stubbly artifacts. Preserve it as diagnostic data, not an accepted flowing mane.
+
+Scanned assets improve individual shapes but do not compose a world. Native scene proofs still show obvious texture tiling, distributed saplings, weak hierarchy and an incompatible finish. A partial cliff scan is not a closed freestanding rock: careless placement exposes thin/projecting fragments. Check actual geometry, scale, support and shot silhouette before scattering it. Artist-authored inputs and license provenance remain dependencies; this is not de-novo agent sculpting.
+
+An invisible matte was a camera clipping failure, not evidence against hybrid rendering. Diagnose rendering visibility before drawing a capability conclusion. Once visible, reusing a small mirrored concept-art crop exposes repeated mountains, inadequate resolution and native/painted mismatch. Concept approval does not make every crop a production background. The next proposed route requires purpose-built environment artwork and representative parallax/motion proof; no new generation or route acceptance is implied. Do not switch models repeatedly to solve missing artistic inputs, or label a technically valid scene movie-studio quality. Current escalation stops without a visual pass and requests a real realization/resource decision.
+
 ### Exchange187 — do not confuse an integrated asset with finished scene art
 
 The186 corrected actor is preserved, but three entrance-context candidates fail the illustrated-world visual floor. Correct camera/ground checks, saved natives and richer procedural detail are not a cohesive environment. Solid shrub volumes read as green rocks; replacing them with leaf cards can instead produce exaggerated spikes. Changing local detail does not establish believable plant scale/silhouette, environmental depth or consistency with a much stronger character. A new coat material does not finish the diagnostic horse/tack. See the evidence-bound Astra strategy packet in the wardrobe/tack work package; no scene promoted or model-superiority claim.
