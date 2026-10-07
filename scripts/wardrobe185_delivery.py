@@ -47,16 +47,18 @@ def seal(out):
     import shutil
     import bpy
     from wardrobe_motion178 import BASE,ROOT,digest,check_protected
-    from wardrobe185_shot import REPAIRED_SHA,setup_camera,setup_lighting
+    from wardrobe185_shot import setup_camera,setup_lighting
+    from wardrobe185_redress_motion import REVIEW_SHA
     from wardrobe_riding_fit import fit_render
     import subprocess
-    source=BASE/'wardrobe185-lowerreview07/integration-working.blend'
+    source=BASE/'wardrobe185-redressreview02/integration-working.blend'
     review_path=BASE/'wardrobe185-operating/visual-review.json'
-    review_gate(json.loads(review_path.read_text()),BASE)
-    if digest(source)!=REPAIRED_SHA:raise ValueError('Selected working source changed')
-    camera_proof=BASE/'wardrobe185-shotmotion02/motion-render.json'
+    review_record=json.loads(review_path.read_text());review_gate(review_record,BASE)
+    if review_record.get('source_sha256')!=REVIEW_SHA:raise ValueError('Visual review covers a different assembly')
+    if digest(source)!=REVIEW_SHA:raise ValueError('Selected working source changed')
+    camera_proof=BASE/'wardrobe185-shotmotion03/motion-render.json'
     camera_record=json.loads(camera_proof.read_text())
-    if camera_record['source_sha256']!=REPAIRED_SHA or [p['frame'] for p in camera_record['poses']]!=list(range(217,361)):
+    if camera_record['source_sha256']!=REVIEW_SHA or [p['frame'] for p in camera_record['poses']]!=list(range(217,361)):
         raise ValueError('Incomplete matching camera proof')
     (out/'camera-proof.json').write_bytes(camera_proof.read_bytes())
     # This certifies the selection/packaging source, not retrospectively every
@@ -66,12 +68,15 @@ def seal(out):
     rows=[]
     paths=[Path(__file__),ROOT/'scripts/wardrobe185_shot.py',ROOT/'scripts/wardrobe_doublewrap185.py',
         ROOT/'scripts/wardrobe_motion178.py',ROOT/'scripts/wardrobe185_gallop.py',ROOT/'scripts/wardrobe185_interface_audit.py',
-        ROOT/'src/movie_factory/adapters/blender/wardrobe_riding_fit.py']
+        ROOT/'src/movie_factory/adapters/blender/wardrobe_riding_fit.py',ROOT/'scripts/wardrobe185_redress_motion.py',
+        ROOT/'scripts/wardrobe185_redress.py',ROOT/'scripts/wardrobe185_support_relax.py',ROOT/'scripts/wardrobe185_head_dress.py',
+        ROOT/'scripts/wardrobe185_cut.py',ROOT/'scripts/wardrobe185_convex.py',ROOT/'scripts/wardrobe185_finish.py',
+        ROOT/'scripts/wardrobe_shawl180_cache.py']
     for path in paths:
         relative=str(path.relative_to(ROOT));blob=subprocess.check_output(['git','show',commit+':'+relative],cwd=ROOT)
         if hashlib.sha256(blob).hexdigest()!=digest(path):raise ValueError('Commit packaging handlers before selection')
         rows.append({'path':relative,'sha256':digest(path)});(out/path.name).write_bytes(blob)
-    binding={'commit':commit,'files':rows,'working_source_sha256':REPAIRED_SHA,'manual_review_sha256':digest(review_path),
+    binding={'commit':commit,'files':rows,'working_source_sha256':REVIEW_SHA,'manual_review_sha256':digest(review_path),
         'camera_proof_sha256':digest(camera_proof),
         'scope':'Selection and portable packaging source; upstream discovery inputs retained, not retrospective source certification'}
     (out/'source-binding.json').write_text(json.dumps(binding,indent=2)+'\n')
@@ -107,13 +112,15 @@ def seal(out):
     bpy.ops.file.make_paths_relative()
     bpy.ops.wm.save_as_mainfile(filepath=str(out/'riding-entrance.blend'),check_existing=False,compress=True)
     shot_sha=digest(out/'riding-entrance.blend')
-    scene.camera.animation_data_clear();scene.camera.data.type='ORTHO';neutral=neutral_state()
+    scene.camera.animation_data_clear();scene.camera.data.type='ORTHO';neutral=neutral_state(recut=True)
     from wardrobe185_interface_audit import neutral_lower
     neutral_lower()
     for ob in list(scene.objects):
         if ob.name.startswith(('MF185_gait_','MF185_rein_','MF185_stirrup_')):bpy.data.objects.remove(ob,do_unlink=True)
     scene.cycles.device='CPU';scene.cycles.samples=8
-    fit_render(out,'neutral-master-front',0,(0,.15,-1.7),8.,(640,640))
+    for angle,label in ((0,'front'),(90,'left'),(180,'rear'),(270,'right')):
+        fit_render(out,'neutral-master-'+label,angle,(0,.15,-1.7),8.,(640,640))
+        fit_render(out,'neutral-whole-'+label,angle,(0,0,-6.4),18.,(576,864))
     from wardrobe_riding_fit import evaluated_surfaces
     names=['MF_studio_adult_body','MF185_moving_shawl','MF185_fitted_upper_tunic',
         'MF185_free_lower_tunic','MF_fit_trousers_173_visible','MF_173_waist_belt']
@@ -195,12 +202,17 @@ def compatible_rest(proof):
             raise ValueError('Settled cloth is not in the neutral upper-body frame')
 
 
-def neutral_state():
+def neutral_state(recut=False):
     import bpy
     from wardrobe_motion178 import BASE,digest,check_protected
     from wardrobe185_gallop import JOINED_TRAJECTORY_SHA,JOINED_PROOF_SHA
     source=BASE/'wardrobe185-gallopcloth05/trajectory.npz';proof=source.parent/'motion-proof.npz'
-    if digest(source)!=JOINED_TRAJECTORY_SHA or digest(proof)!=JOINED_PROOF_SHA:raise ValueError('Neutral drape input changed')
+    source_sha=JOINED_TRAJECTORY_SHA;proof_sha=JOINED_PROOF_SHA
+    if recut:
+        from wardrobe185_redress_motion import MOTION_SHA
+        source=BASE/'wardrobe185-redressmotion02/trajectory.npz';proof=source.parent/'motion-proof.npz'
+        source_sha=MOTION_SHA;proof_sha='0eb0a9da3650e440c691002e064043a9a43a62f722dc609ab7426d53cdb8bd40'
+    if digest(source)!=source_sha or digest(proof)!=proof_sha:raise ValueError('Neutral drape input changed')
     with np.load(proof,allow_pickle=False) as data:compatible_rest(data)
     with np.load(source,allow_pickle=False) as data:points=data['frames'][168]
     scene=bpy.context.scene;scene.frame_set(1);bpy.context.view_layer.update()
