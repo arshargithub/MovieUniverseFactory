@@ -1281,6 +1281,38 @@
       "engineering_cost_usd": null,
       "evidence": ["docs/planning/SERIES_01_BODY_ASSEMBLY_BRIEF.md", ".runtime/art-direction/series01-facebuilder-trial-01/body162-operating/visual-review.json", ".runtime/art-direction/series01-facebuilder-trial-01/body162-fit52/result.json"]
     }
+    , {
+      "event_id": "series01-wardrobe-astra-escalation-user-report",
+      "event_type": "engineering_model_switch",
+      "recorded_date": "2026-10-07",
+      "occurred_at": null,
+      "experiment_id": "SERIES01-LIKENESS-ASSET",
+      "task_phase": "double-wrap construction and moving wardrobe integration",
+      "trigger": "Director requested revisiting failed single and double wraps, then explicitly reported switching to Astra High",
+      "before": {"model": "Sol 6.1", "reasoning_effort": null, "attribution": "user_reported"},
+      "after": {"model": "Astra", "reasoning_effort": "high", "attribution": "user_reported"},
+      "runtime_verified": false,
+      "controlled_model_comparison": false,
+      "observation": "Backfilled from the explicit conversation announcements, not inferred from improvement. The ensuing work inherited failed construction, assets, tests and Director feedback, and changed the strategy, contact representation, rest evaluation, supports and integrated motion. Earlier rejected outcomes remain failures. The current recut moving candidate is still undergoing its exit review; no model superiority or Director acceptance is established.",
+      "engineering_subscription_usage": null,
+      "engineering_cost_usd": null,
+      "evidence": ["docs/planning/SERIES_01_WARDROBE_TACK_FIT.md", "docs/knowledge/CHARACTER_ASSET_LEARNINGS.md"]
+    }
+    , {
+      "event_id": "series01-doublewrap185-selected-moving-review",
+      "event_type": "engineering_review_outcome",
+      "recorded_date": "2026-10-07",
+      "experiment_id": "SERIES01-LIKENESS-ASSET",
+      "outcome": "SCOPED_INTERNAL_MOVING_AND_REUSE_PASS_DIRECTOR_PENDING",
+      "observation": "Recut04/motion02 retains two outer wraps during the six-second144-frame riding/camera proof, with matched airflow controls, all-angle pose views and six side gait controls. Selected seal02 neutral/riding files fresh-open with exact sampled geometry, identical neutral front pixels and camera reuse without cloth change. Prior failed routes and the deliberately stopped inefficient selector01 remain preserved. The method changed contact representation, rest evaluation, construction and support preflight; this is not a controlled model comparison or general studio-quality/autonomous clothing qualification. Director appearance, release rights and final trailer context remain pending.",
+      "source_commits": ["a27afda", "a133b3a"],
+      "runtime_model": null,
+      "reasoning_effort": null,
+      "engineering_subscription_usage": null,
+      "engineering_cost_usd": null,
+      "controlled_model_comparison": false,
+      "evidence": ["docs/planning/SERIES_01_WARDROBE_TACK_FIT.md", ".runtime/art-direction/series01-facebuilder-trial-01/wardrobe185-operating/delivery-review.json", ".runtime/art-direction/series01-facebuilder-trial-01/wardrobe185-verify02/result.json"]
+    }
   ],
   "recording_mode": "manual_evidence_backfill_and_future_event_capture",
   "schema_version": "1.0",

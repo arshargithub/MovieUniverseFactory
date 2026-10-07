@@ -2,7 +2,15 @@
 
 ## Current acceptance — exchange152
 
-### Exchange185 — foundational controls, garment still unqualified
+### Exchange185 — scoped moving result ready for Director review
+
+Current internal exit is recorded in `wardrobe185-operating/delivery-review.json`; selected neutral/riding natives are `wardrobe185-seal02`. The complete144-frame scoped passage, all-angle poses, fresh-open appearance and alternate-camera reuse have been checked. Director acceptance, release rights and final trailer context remain open. The failed methods below stay failed; this result does not retrospectively qualify them or establish universal cloth authoring.
+
+**Keep proof and production scope separate.** The recut04/motion02 candidate now survives direct inspection of all144 frames of the six-second camera passage, twenty all-angle pose views and six side gait controls. This supports a scoped internal visual review; fresh portable reopen and Director acceptance remain separate. A neutral-backdrop contact horse, low-sample render and silent proof are not finished trailer footage. Do not convert a useful moving asset into a claim of universal acting, physical textile calibration or release clearance. Conversely, once the scoped asset passes its complete exit, move into the trailer edit/context instead of commissioning another isolated garment experiment.
+
+**Use the matched wind control to explain movement, not to force stillness.** The new upper solve has exact169-frame prewind parity and then a measured response, but the no-wind late views also billow. Gallop inertia and cloth motion are part of the tested appearance. Adding anchors or removing wind merely to suppress all movement would undo the goal. Judge plausible support, coverage, temporal continuity and the actual screen silhouette; do not infer measured metres/second from an authored force strength.
+
+**Do not repeat dense evaluation for presentation bookkeeping.** The initial portable selector rebuilds144 camera keys through full scene frame evaluation even though the bound camera-proof record already contains those exact positions/targets. A read-only worker stack sample confirms curve/mesh deformation during that loop. The task-owned attempt is deliberately stopped and preserved, not labelled an asset failure. Replacement selector02 keys validated finite, complete recorded poses directly, with the independent surface/attachment/reopened-camera checks retained. Do not optimize by reading stale hidden geometry or dropping required checks. No controlled runtime speedup is measured here.
 
 **A stable simulation can preserve an unsupported costume.** The complete144-frame shot retained coverage, yet matched neutral profiles exposed projecting chest cloth and rear tabs. Component colors localized the tabs to the headfall; measuring distances to both actor and underlying fabric exposed shoulder pins suspended above support. A pin can make a numerically stable solve look plausible from a travelling camera while imposing an artificial resting shape. Use actual fabric-to-fabric support/seams or contact, test their load path, and review neutral close-ups alongside intended motion before selecting. Releasing every support is not automatically correct: the matched control slid a course onto the upper arm. Preserve this failed counterexample and successful lower-body work separately.
 
