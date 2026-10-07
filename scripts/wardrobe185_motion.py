@@ -136,7 +136,7 @@ def support_sampler(contact,scale):
     return sample
 
 
-def hold_preflight(ob,contact,pins,out,scale):
+def hold_preflight(ob,contact,pins,out,scale,dense=False):
     """Check actual animated targets before physics; never repair solved frames."""
     import bpy
     from mathutils import Vector
@@ -144,7 +144,7 @@ def hold_preflight(ob,contact,pins,out,scale):
     from wardrobe_doublewrap185_solve import inside
     from wardrobe185_cut import winding_inside
     scene=bpy.context.scene;records=[];failures=[];point_samples=[]
-    for frame in sorted(set([1,72,169,193,217,360]+list(range(169,361,4)))):
+    for frame in (range(1,361) if dense else sorted(set([1,72,169,193,217,360]+list(range(169,361,4))))):
         scene.frame_set(frame);bpy.context.view_layer.update()
         components=[]
         for collider in (contact if isinstance(contact,list) else [contact]):

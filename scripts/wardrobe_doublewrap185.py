@@ -179,6 +179,8 @@ OPERATIONS += ('redress01','redressscreen01')
 OPERATIONS += ('redress02','redressscreen02')
 OPERATIONS += ('redress03','redressscreen03')
 OPERATIONS += ('redress04','redressscreen04')
+OPERATIONS += ('redressmotion01','redressoff01','redressreview01')
+OPERATIONS += ('redressmotion02','redressoff02','redressreview02')
 HEAD = base.BASE / 'wardrobe180-xpbdhead08/trajectory.npz'
 HEAD_SHA = '55ce2f99edfbb45a7cf8a5898be31caa1f20bd7da3bb2ae2be9c43e49d7095e8'
 
@@ -187,6 +189,12 @@ def validate(job):
     if not isinstance(job, dict) or set(job) != {'operation'} or job['operation'] not in OPERATIONS:
         raise ValueError('Fixed structured operation required')
     inputs=[(base.SOURCE,base.SOURCE_SHA)]
+    if job['operation'] in ('redressmotion01','redressoff01','redressreview01','redressmotion02','redressoff02','redressreview02'):
+        out=base.BASE/('wardrobe185-'+job['operation'])
+        for path,sha in inputs:
+            if path.is_symlink() or base.digest(path)!=sha:raise ValueError('Protected input changed')
+        if out.exists() or out.is_symlink():raise ValueError('Preserve previous evidence')
+        return out
     if job['operation'] in ('interfaceaudit02','shapeaudit01','shapeaudit02','supportrelax01','supportrelax02','supportrelax03','supportscreen01','supportscreen02','redress01','redressscreen01','redress02','redressscreen02','redress03','redressscreen03','redress04','redressscreen04'):
         out=base.BASE/('wardrobe185-'+job['operation'])
         for path,sha in inputs:
@@ -569,6 +577,12 @@ def main():
     elif job['operation'] in ('shapeaudit01','shapeaudit02'):
         from wardrobe185_shape_audit import run as shape_audit
         shape_audit(out)
+    elif job['operation'] in ('redressmotion01','redressoff01','redressmotion02','redressoff02'):
+        from wardrobe185_redress_motion import solve as redress_motion
+        redress_motion(out)
+    elif job['operation'] in ('redressreview01','redressreview02'):
+        from wardrobe185_redress_motion import screen as redress_review
+        redress_review(out)
     elif job['operation'] in ('supportrelax01','supportrelax02','supportrelax03','redress01','redress02','redress03','redress04'):
         from wardrobe185_support_relax import run as support_relax
         support_relax(out)

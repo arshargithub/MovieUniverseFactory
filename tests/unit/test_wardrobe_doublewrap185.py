@@ -303,6 +303,7 @@ def test_dispatch_has_an_explicit_handler_for_every_admitted_operation(operation
         'wardrobe185_interface_audit':('run',),
         'wardrobe185_shape_audit':('run',),
         'wardrobe185_support_relax':('run','screen'),
+        'wardrobe185_redress_motion':('solve','screen'),
         'wardrobe185_lower':('inspect','capture'),
             'wardrobe185_lower_drape':('dress',),
             'wardrobe185_lower_surface':('capture',),
@@ -370,6 +371,20 @@ def test_shoulder_release_does_not_select_crown_or_rear_holds():
     assert shoulder_supports(shoulders).all()
     assert not shoulder_supports(crown).any()
     assert not shoulder_supports(rear).any()
+
+
+def test_recut_support_release_preserves_crown_rear_and_shoulder_center():
+    from wardrobe185_redress_motion import support_selection
+    from wardrobe185_convex import rear_support_indices
+    crown=np.arange(25,36);rear=np.array(rear_support_indices(2501))
+    shoulders=np.array([offset+row*21+col for offset in (2501,4853)
+        for row in (27,28,29,83,84,85) for col in (11,12,13)])
+    ids=np.r_[crown,shoulders,rear];weights=np.ones(len(ids))
+    retained,values=support_selection(ids,weights)
+    assert len(retained)==94 and len(values)==94
+    assert set(ids)-set(retained)=={4255,4256,4276}
+    assert set(crown)|set(rear)<=set(retained) and 4277 in retained
+    with pytest.raises(ValueError):support_selection(ids[:-1],weights[:-1])
 
 
 def test_shoulder_seams_join_adjacent_panels_and_reject_wrong_topology():
