@@ -102,12 +102,12 @@ def dust(scene):
     mat=bpy.data.materials.new('MF188_dry_hoof_dust');mat.use_nodes=True
     n,l=mat.node_tree.nodes,mat.node_tree.links;n.clear()
     out=n.new('ShaderNodeOutputMaterial');volume=n.new('ShaderNodeVolumePrincipled')
-    volume.inputs['Color'].default_value=(.94,.84,.65,1);volume.inputs['Anisotropy'].default_value=.25
+    volume.inputs['Color'].default_value=(.99,.93,.78,1);volume.inputs['Anisotropy'].default_value=.05
     l.new(volume.outputs['Volume'],out.inputs['Volume'])
     coord=n.new('ShaderNodeTexCoord');sub=n.new('ShaderNodeVectorMath');sub.operation='SUBTRACT';sub.inputs[1].default_value=(.5,.5,.5)
     l.new(coord.outputs['Generated'],sub.inputs[0])
     length=n.new('ShaderNodeVectorMath');length.operation='LENGTH';l.new(sub.outputs[0],length.inputs[0])
-    fall=n.new('ShaderNodeMapRange');fall.inputs['From Min'].default_value=.12;fall.inputs['From Max'].default_value=.5;fall.inputs['To Min'].default_value=.14;fall.inputs['To Max'].default_value=0
+    fall=n.new('ShaderNodeMapRange');fall.inputs['From Min'].default_value=.12;fall.inputs['From Max'].default_value=.5;fall.inputs['To Min'].default_value=.035;fall.inputs['To Max'].default_value=0
     l.new(length.outputs['Value'],fall.inputs['Value'])
     noise=n.new('ShaderNodeTexNoise');noise.noise_dimensions='4D';noise.inputs['Scale'].default_value=8;noise.inputs['Detail'].default_value=3
     l.new(coord.outputs['Generated'],noise.inputs['Vector'])
@@ -119,8 +119,8 @@ def dust(scene):
         vertices=[(-1,-1,-1),(-1,-1,1),(-1,1,-1),(-1,1,1),(1,-1,-1),(1,-1,1),(1,1,-1),(1,1,1)]
         faces=[(0,4,6,2),(1,3,7,5),(0,1,5,4),(2,6,7,3),(0,2,3,1),(4,5,7,6)]
         ob=mesh_object('MF188_dust_'+str(i),vertices,[tuple(reversed(face)) for face in faces],scene.collection)
-        ob.location=(math.sin(i*2.3)*(1+i*.45),5+i*6,FLOOR+1+i*.35)
-        ob.scale=(2+i*.60,5+i*.8,1.6+i*.5);ob.data.materials.append(mat)
+        ob.location=(.4*math.sin(i*2.3)*(1+i*.45),5+i*6,FLOOR+1+i*.35)
+        ob.scale=(2+i*.60,1.2*(5+i*.8),1.6+i*.5);ob.data.materials.append(mat)
     return {'representation':'Nine soft bounded native volumes, shot-limited advected look, not fluid dynamics'}
 
 

@@ -6,7 +6,7 @@ from pathlib import Path
 from PIL import Image,ImageDraw,ImageOps
 
 ROOT=Path(__file__).resolve().parents[1]
-OUT=ROOT/'.runtime/art-direction/series01-facebuilder-trial-01/entrance188-motion07'
+OUT=ROOT/'.runtime/art-direction/series01-facebuilder-trial-01/entrance188-motion10'
 
 
 def main():

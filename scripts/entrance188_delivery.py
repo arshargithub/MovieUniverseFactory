@@ -10,9 +10,10 @@ SOURCE=base.BASE/'entrance188-candidate05'
 
 
 def validate(job):
-    if job not in ({'operation':'audit01'},{'operation':'reopen01'},{'operation':'motion01'},{'operation':'transport06'},{'operation':'audit07'},{'operation':'reopen07'},{'operation':'motion07'}):
+    if job not in ({'operation':'audit01'},{'operation':'reopen01'},{'operation':'motion01'},{'operation':'transport06'},{'operation':'audit07'},{'operation':'reopen07'},{'operation':'motion07'},{'operation':'dust08'},{'operation':'finish09'},{'operation':'reopen10'},{'operation':'motion10'}):
         raise ValueError('Fixed delivery operation required')
-    source=base.BASE/'entrance188-transport06' if job['operation'].endswith('07') else SOURCE
+    source=base.BASE/'entrance188-transport06' if job['operation'].endswith('07') or job['operation'] in ('dust08','finish09') else SOURCE
+    if job['operation'].endswith('10'):source=base.BASE/'entrance188-finish09'
     record=json.loads((source/'result.json').read_text())
     path=source/'scene.blend'
     if path.is_symlink() or base.digest(path)!=record['native_sha256']:raise ValueError('Candidate changed')
@@ -61,15 +62,17 @@ def main():
     bpy.ops.wm.open_mainfile(filepath=str(path),load_ui=False,use_scripts=False)
     base.check_protected();scene=bpy.context.scene
     result={'native_sha256':record['native_sha256'],'cache_count':len(record['caches']),'visual_gate':'NOT_RUN'}
-    if job['operation']=='transport06':
-        import entrance188_groom as groom
+    if job['operation'] in ('transport06','finish09'):
         import os
-        (out/'groom-handler.py').write_bytes(Path(groom.__file__).read_bytes())
-        result['groom']=groom.fixed_transport(scene,out,bpy.data.objects['MF185_gait_horse'],base.BASE/'entrance-astra-mane-cache01/samples.npz')
+        if job['operation']=='transport06':
+            import entrance188_groom as groom
+            (out/'groom-handler.py').write_bytes(Path(groom.__file__).read_bytes())
+            result['groom']=groom.fixed_transport(scene,out,bpy.data.objects['MF185_gait_horse'],base.BASE/'entrance-astra-mane-cache01/samples.npz')
+        else:result['dust']=light_dust(scene)
         scene.cycles.device='CPU';scene.render.use_persistent_data=True
         for frame in (217,265,309,360):
             scene.frame_set(frame);bpy.context.view_layer.update();scene.render.filepath=str(out/('frame-%04d.png'%frame));bpy.ops.render.render(write_still=True)
-            print('188 transported groom',frame,flush=True)
+            print('188 selected native',job['operation'],frame,flush=True)
         scene.frame_set(217);bpy.context.preferences.filepaths.save_version=0
         destination=out/'scene.blend'
         bpy.ops.wm.save_as_mainfile(filepath=str(destination),relative_remap=True,compress=True)
@@ -82,10 +85,16 @@ def main():
         bpy.ops.file.make_paths_relative()
         bpy.ops.wm.save_as_mainfile(filepath=str(destination),relative_remap=False,compress=True)
         result['native_sha256']=base.digest(destination)
+    elif job['operation']=='dust08':
+        result['dust']=light_dust(scene)
+        scene.cycles.device='CPU';scene.render.use_persistent_data=True
+        for frame in (217,309):
+            scene.frame_set(frame);bpy.context.view_layer.update();scene.render.filepath=str(out/('frame-%04d.png'%frame));bpy.ops.render.render(write_still=True)
+            print('188 dust control',frame,flush=True)
     elif job['operation'].startswith('audit'):result.update(audit(scene))
     else:
         scene.cycles.device='CPU';scene.render.use_persistent_data=True
-        frames=(217,265,309,360) if job['operation'].startswith('reopen') else list(range(337,361))+list(range(217,337))
+        frames=(217,265,309,360) if job['operation'].startswith('reopen') else list(range(217,241))+list(range(337,361))+list(range(241,337))
         if job['operation'].startswith('motion'):
             scene.render.resolution_x=288;scene.render.resolution_y=512;scene.cycles.samples=8
         for frame in frames:
@@ -95,6 +104,26 @@ def main():
                        'samples':scene.cycles.samples,'renderer':'CPU','fps':24})
     result['protected_sources_unchanged']=True;base.check_protected()
     (out/'result.json').write_text(json.dumps(result,indent=2)+'\n')
+
+
+def light_dust(scene):
+    import bpy
+    import math
+    mat=bpy.data.materials['MF188_dry_hoof_dust']
+    n=mat.node_tree.nodes
+    volume=next(node for node in n if node.type=='PRINCIPLED_VOLUME')
+    fall=next(node for node in n if node.type=='MAP_RANGE')
+    fall.inputs['To Min'].default_value=.035
+    volume.inputs['Color'].default_value=(.99,.93,.78,1)
+    volume.inputs['Anisotropy'].default_value=.05
+    objects=[ob for ob in scene.objects if ob.name.startswith('MF188_dust_')]
+    if len(objects)!=9:raise ValueError('Unexpected dust domain')
+    for ob in objects:
+        i=int(ob.name.removeprefix('MF188_dust_'))
+        ob.location.x=.4*math.sin(i*2.3)*(1+i*.45);ob.scale.y=1.2*(5+i*.8)
+    return {'peak_density_per_native_unit':.035,'color':[.99,.93,.78],
+            'method':'Reduced optical thickness and overlapping trail supports; physical volume shading retained',
+            'scope':'Authored shot effect, not calibrated dust fluid dynamics'}
 
 
 if __name__=='__main__':main()

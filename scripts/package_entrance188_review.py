@@ -11,9 +11,9 @@ GALLERY=Path('/Users/adisharma/.codex/visualizations/2026/09/09/01a0878c-e7a2-75
 
 
 def main():
-    review=json.loads((BASE/'entrance188-operating/visual-review.json').read_text())
+    review=json.loads((BASE/'entrance188-operating/visual-review-final.json').read_text())
     if review['scoped_internal_visual_gate']!='PASS':raise ValueError('No visual exit')
-    fresh=BASE/'entrance188-reopen07'
+    fresh=BASE/'entrance188-reopen10'
     record=json.loads((fresh/'result.json').read_text())
     if record['frames']!=[217,265,309,360] or not record['protected_sources_unchanged']:
         raise ValueError('Incomplete reopen')

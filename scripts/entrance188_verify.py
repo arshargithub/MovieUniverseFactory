@@ -14,9 +14,12 @@ def digest(path):
 
 
 def main():
-    selected=BASE/'entrance188-transport06'
+    import argparse
+    parser=argparse.ArgumentParser();parser.add_argument('--final',action='store_true');args=parser.parse_args()
+    selected=BASE/('entrance188-finish09' if args.final else 'entrance188-transport06')
+    fresh=BASE/('entrance188-reopen10' if args.final else 'entrance188-reopen07')
     source=json.loads((selected/'result.json').read_text())
-    reopened=json.loads((BASE/'entrance188-reopen07/result.json').read_text())
+    reopened=json.loads((fresh/'result.json').read_text())
     audit=json.loads((BASE/'entrance188-audit07/result.json').read_text())
     if digest(selected/'scene.blend')!=source['native_sha256']:raise ValueError('Native changed')
     if source['native_sha256']!=reopened['native_sha256']:raise ValueError('Wrong reopened native')
@@ -26,6 +29,10 @@ def main():
         path=(selected/row['path']).resolve()
         if not path.is_relative_to(BASE.resolve()) or digest(path)!=row['sha256']:raise ValueError('Cache changed')
         caches.append({**row,'bytes':path.stat().st_size})
+    if args.final:
+        previous=json.loads((BASE/'entrance188-transport06/result.json').read_text())
+        if {r['object']:r['sha256'] for r in source['caches']}!={r['object']:r['sha256'] for r in previous['caches']}:
+            raise ValueError('Dust-only edit changed a motion cache')
     protected={
         'natural152-seal-16/natural-hair.blend':'9a204ec2e3951274aeff52aeb554de6b8bc7fa169933e27bfea7073bb62f323f',
         'body168-hip66/adult-body-fit.blend':'1ed613b16dc5b618ae601b9645f6042927e036f60f74314a31fc07e3c5e5c327',
@@ -37,7 +44,7 @@ def main():
     for frame in reopened['frames']:
         name='frame-%04d.png'%frame
         with Image.open(selected/name) as im:a=np.asarray(im).astype(np.int16)
-        with Image.open(BASE/'entrance188-reopen07'/name) as im:b=np.asarray(im).astype(np.int16)
+        with Image.open(fresh/name) as im:b=np.asarray(im).astype(np.int16)
         error=np.abs(a-b)
         if error.max()>1:raise ValueError('Reopened appearance changed')
         pixel.append({'frame':frame,'max_channel_difference_8bit':int(error.max()),'mean_channel_difference_8bit':float(error.mean())})
@@ -46,7 +53,7 @@ def main():
     art=ROOT/'.runtime/art-direction/series01-entrance-art188'
     inputs=[{'path':str(p.relative_to(ROOT)),'sha256':digest(p)} for p in sorted(art.iterdir()) if p.is_file()]
     output=BASE/'entrance188-operating';output.mkdir(exist_ok=True)
-    target=output/'technical-verification.json'
+    target=output/('technical-verification-final.json' if args.final else 'technical-verification.json')
     if target.exists():raise ValueError('Preserve existing verification')
     result={'native_sha256':source['native_sha256'],'caches':caches,'protected_files':protected,
         'reopen_pixel_differences':pixel,'appearance_tolerance':'One 8-bit channel level; not bit-identical',
