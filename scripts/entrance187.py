@@ -14,7 +14,7 @@ FRAMES = (217, 265, 309, 360)
 
 
 def validate(job):
-    if not isinstance(job, dict) or set(job) != {'operation'} or job['operation'] not in ('inspect01', 'inspect02', 'look01'):
+    if not isinstance(job, dict) or set(job) != {'operation'} or job['operation'] not in ('inspect01', 'inspect02', 'look01', 'look02'):
         raise ValueError('Fixed enum operation required')
     if SOURCE.is_symlink() or not SOURCE.is_file() or actor.base.digest(SOURCE) != SOURCE_SHA:
         raise ValueError('Actor source mismatch')
@@ -105,8 +105,15 @@ def look(out):
             scene.frame_set(frame)
             bpy.context.view_layer.update()
             keys.append(context.camera(scene, rig, frame))
+            row = keys[-1]
+            travel = context.TRAVEL_NATIVE_PER_SECOND * (frame - 217) / 24
+            ground = context.height(row['position'][0], row['position'][1] - travel, audit['ground_z'])
+            if row['position'][2] - ground < 2:
+                raise ValueError('Camera crosses terrain at frame %d' % frame)
+            row['ground_clearance'] = row['position'][2] - ground
             scene.camera.keyframe_insert(data_path='location', frame=frame)
             scene.camera.keyframe_insert(data_path='rotation_euler', frame=frame)
+            scene.camera.data.keyframe_insert(data_path='lens', frame=frame)
     scene.cycles.device = 'CPU'
     scene.cycles.samples = 12
     scene.cycles.use_denoising = True
