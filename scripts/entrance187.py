@@ -14,7 +14,7 @@ FRAMES = (217, 265, 309, 360)
 
 
 def validate(job):
-    if not isinstance(job, dict) or set(job) != {'operation'} or job['operation'] not in ('inspect01', 'inspect02', 'look01', 'look02'):
+    if not isinstance(job, dict) or set(job) != {'operation'} or job['operation'] not in ('inspect01', 'inspect02', 'look01', 'look02', 'look03'):
         raise ValueError('Fixed enum operation required')
     if SOURCE.is_symlink() or not SOURCE.is_file() or actor.base.digest(SOURCE) != SOURCE_SHA:
         raise ValueError('Actor source mismatch')
@@ -135,7 +135,8 @@ def look(out):
                    'camera_keys': keys, 'frames': list(FRAMES), 'cache_dependencies': dependencies,
                    'visual_gate': 'NOT_RUN', 'director_acceptance': 'PENDING',
                    'limitations': ['Look candidate only', 'Full camera playback not rendered',
-                                   'Dust/sound/fork/branch and final horse/tack art unfinished',
+                                   'Dust is authored static look preview, not a calibrated or moving effect',
+                                   'Sound/fork/branch and final horse/tack art unfinished',
                                    'Not standalone export; shared185 caches required']})
     (out / 'result.json').write_text(json.dumps(record, indent=2) + '\n')
     for frame in FRAMES:
