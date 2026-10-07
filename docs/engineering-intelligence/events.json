@@ -1356,8 +1356,27 @@
     "trigger": "Director announces switch and delegates detecting a required Astra escalation",
     "engineering_subscription_usage": null,
     "engineering_cost_usd": null,
-    "outcome": "CONTINUATION_AUTHORIZED_NOT_YET_COMPLETED",
+    "outcome": "USER_REPORTED_SWITCH_CONTINUATION_OBSERVED",
     "evidence": ["docs/knowledge/EFFICIENT_QUALITY_ASSET_WORKFLOW.md", "docs/planning/SERIES_01_WARDROBE_TACK_FIT.md"]
+    },
+    {
+      "event_id": "series01-exchange187-context-strategy-escalation",
+      "event_type": "engineering_review_outcome",
+      "recorded_date": "2026-10-07",
+      "experiment_id": "SERIES01-LIKENESS-ASSET",
+      "outcome": "THREE_SCENE_CONTEXT_CANDIDATES_INTERNAL_FAIL_ASTRA_HIGH_REQUESTED",
+      "observation": "User-reported Sol6.1 High continuation preserves186 actor and15 caches. First full-character ground audit deliberately stopped; isolated144-state horse audit replaces it. Camera-ground crossing, separate-strip clipping and framing are corrected; all144 analytic clearance samples pass. Three four-keyframe native candidates still fail coherent illustrated landscape/plant form/horse-world finish and readable dust. Request Astra High for an evidence-bound representation strategy rather than a fourth procedural detail pass. No scene promoted, new motion/reopen/release qualification or controlled model finding. Preserve technical progress and visual failures separately.",
+      "reported_model": "Sol 6.1",
+      "reasoning_effort": "high",
+      "setting_attribution": "user_reported",
+      "requested_model": "Astra",
+      "requested_reasoning_effort": "high",
+      "switch_observed": false,
+      "controlled_model_comparison": false,
+      "engineering_subscription_usage": null,
+      "engineering_cost_usd": null,
+      "source_commits": ["ac34482", "affc658", "85efdc6"],
+      "evidence": ["docs/planning/SERIES_01_WARDROBE_TACK_FIT.md", ".runtime/art-direction/series01-facebuilder-trial-01/entrance187-look03/internal-review.json"]
     }
   ],
   "recording_mode": "manual_evidence_backfill_and_future_event_capture",
