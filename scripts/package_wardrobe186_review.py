@@ -7,15 +7,17 @@ from PIL import Image
 
 ROOT=Path(__file__).resolve().parents[1]
 BASE=ROOT/'.runtime/art-direction/series01-facebuilder-trial-01'
-GALLERY=Path('/Users/adisharma/.codex/visualizations/2026/09/09/01a0878c-e7a2-75e0-873c-c31d97f879a1/pashtun-riding-arms-review.html')
+GALLERY=Path('/Users/adisharma/.codex/visualizations/2026/09/09/01a0878c-e7a2-75e0-873c-c31d97f879a1/pashtun-riding-arms-review-v02.html')
 
 
 def main():
     fresh=BASE/'wardrobe186-reopen06';record=json.loads((fresh/'result.json').read_text())
     if not record['protected_exact'] or max(record['surface_errors'].values())>2e-5:raise ValueError('Reopen not verified')
+    comparison=json.loads((BASE/'wardrobe186-comparison07/result.json').read_text())
+    if comparison['ortho_scale']!=8 or comparison['frame']!=265:raise ValueError('Mismatched original framing')
     if GALLERY.exists():raise ValueError('Preserve existing gallery')
     views=[(fresh/'front-265.png','Corrected front','Corrected riding arms · broad fill lighting'),
-           (BASE/'wardrobe185-redressreview02/front-265.png','Previous front','Previous riding arms and lighting · retained comparison'),
+           (BASE/'wardrobe186-comparison07/original-front.png','Previous front','Previous riding arms and lighting · matched camera and scale'),
            (BASE/'wardrobe186-delivery06/repaired-original-light-front.png','Same-light correction','Corrected arms with previous lighting · isolates the arm change'),
            (fresh/'left-265.png','Left','Corrected riding left profile'),
            (fresh/'right-265.png','Right','Corrected riding right profile'),

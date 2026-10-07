@@ -25,3 +25,15 @@ def test_shoulder_support_bounds_and_locality():
     assert values==sorted(values)
     assert module.arm_support(.65)==1
     assert module.arm_support(.3)>.3
+
+
+def test_comparison_is_fixed_and_preserves_prior_evidence(tmp_path,monkeypatch):
+    import wardrobe186_comparison as comparison
+    source=tmp_path/'original.blend';source.write_bytes(b'fixture')
+    monkeypatch.setattr(comparison.correction,'SOURCE',source)
+    monkeypatch.setattr(comparison.correction,'SOURCE_SHA',comparison.correction.base.digest(source))
+    monkeypatch.setattr(comparison.correction.base,'BASE',tmp_path)
+    with pytest.raises(ValueError):comparison.validate({'operation':'matched-original-front','code':'no'})
+    output=comparison.validate({'operation':'matched-original-front'})
+    output.mkdir()
+    with pytest.raises(ValueError):comparison.validate({'operation':'matched-original-front'})
