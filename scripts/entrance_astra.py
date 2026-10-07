@@ -11,7 +11,7 @@ ASSETS = ROOT / '.runtime/assets/entrance-astra'
 
 
 def validate(job):
-    if not isinstance(job, dict) or set(job) != {'operation'} or job['operation'] not in ('audit01', 'proof01', 'proof02'):
+    if not isinstance(job, dict) or set(job) != {'operation'} or job['operation'] not in ('audit01', 'proof01', 'proof02', 'hybrid03', 'hybrid04'):
         raise ValueError('Fixed art operation required')
     if prior.actor.base.digest(prior.SOURCE) != prior.SOURCE_SHA:
         raise ValueError('Actor source mismatch')

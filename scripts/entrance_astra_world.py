@@ -210,6 +210,11 @@ def build_and_render(out):
     from wardrobe_motion178_controls import render_geometry_paused
     scene=bpy.context.scene
     result=world(scene)
+    if 'hybrid' in out.name:
+        import entrance_astra_hybrid as hybrid
+        from pathlib import Path
+        (out/'hybrid-handler.py').write_bytes(Path(hybrid.__file__).read_bytes())
+        result.update(hybrid.backdrop(scene));result['mane']=hybrid.mane(scene,out)
     scene.camera.animation_data_clear()
     keys=[]
     with render_geometry_paused():
