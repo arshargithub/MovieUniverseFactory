@@ -4,6 +4,8 @@
 
 ## Constructive challenge — adopted at exchange153
 
+**Exchange188 authority clarification:** Astra High is the top escalation tier for this workflow; step down only after a demonstrated route. Do not offer a higher tier or repeated model cycling when the missing ingredient is method or artistic input. Routine built-in image generation and its image count are agent-owned within the authorized outcome, not a new approval boundary. The proposed two-call permission gate is withdrawn. New external charges, purchases/tools, specialists, publication and material creative changes remain separate Director decisions. Judge generated inputs in their actual consumer; a good concept does not qualify the native moving result.
+
 2026-09-28: the Director explicitly asks the agent to assume Factory's principled creative-partner role now. Apply this to both Director requests and the agent's own proposed work. The next Pashtun whole-character feasibility step is authorized, with accepted head/hair frozen and no new spending. This does not automatically approve every future costume or workflow detail.
 
 Before consequential rework, identify: **which accepted principle is at risk; the observed conflict; likely downstream cost/quality/reuse consequence (unknowns marked); and the recommended alternative**. Challenge literal-reference obsession, optional polish after acceptance, a donor that erases character identity, repeated ineffective methods, premature canon and bookkeeping without useful creative evidence. Do not treat every preference as a principle violation or confuse protecting identity with perfectionism.

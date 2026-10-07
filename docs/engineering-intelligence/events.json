@@ -1392,6 +1392,20 @@
     "engineering_subscription_usage": null,
     "engineering_cost_usd": null
   }
+  , {
+    "event_id": "series01-exchange188-routing-authority-correction",
+    "event_type": "engineering_review_outcome",
+    "recorded_date": "2026-10-07",
+    "attribution": "Director statement",
+    "current_reported_model": "Astra",
+    "current_reported_effort": "high",
+    "runtime_verified": false,
+    "policy": "Astra is the top escalation tier in this workflow; a return to Sol is a step down. Reassess inputs/method/representation after a failed Astra route, not a nonexistent higher tier. Routine built-in image generation including more than two images requires no new approval within authorized scope.",
+    "prior_handoff_correction": "The187 two-image authorization gate was unnecessary; it is withdrawn without changing its retained visual failures.",
+    "engineering_subscription_usage": null,
+    "engineering_cost_usd": null,
+    "controlled_model_comparison": false
+  }
   ],
   "recording_mode": "manual_evidence_backfill_and_future_event_capture",
   "schema_version": "1.0",
