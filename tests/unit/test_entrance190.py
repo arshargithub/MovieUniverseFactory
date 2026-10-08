@@ -94,3 +94,12 @@ def test_reopen_parity_rejects_known_differences():
     assert compare(a,a+1)['status']=='PASS'
     assert compare(a,a+2)['status']=='FAIL'
     with pytest.raises(ValueError,match='dimensions'):compare(a,a[:1])
+
+def test_blink_replacement_covers_every_changed_integer_frame():
+    old=load('entrance189_performance').facial_values
+    new=load('entrance190_blink').blink
+    changed={f for f in range(217,361) if abs(old(f)['eyeBlinkLeft']-new(f))>1e-6}
+    assert changed=={310,311,313,314}
+    assert changed.issubset(set(range(310,315)))
+    assert old(309)['eyeBlinkLeft']==new(309)==0
+    assert old(315)['eyeBlinkLeft']==new(315)==0

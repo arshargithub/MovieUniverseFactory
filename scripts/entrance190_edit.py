@@ -22,6 +22,7 @@ def main():
     prior=json.loads((old/'manifest.json').read_text())
     action=admitted(BASE/'entrance190-motion33','motion-proof.mp4')
     geographic=admitted(BASE/'entrance190-geography23','geography-proof.mp4')
+    opening=admitted(BASE/'entrance190-opening-review35','entrance-proof.mp4')
     blinkfolder=BASE/'entrance190-blink-review04';blink=blinkfolder/'decision-proof.mp4'
     br=json.loads((blinkfolder/'media.json').read_text());bg=json.loads((blinkfolder/'internal-review.json').read_text())
     if bg.get('status')!='PROCEED_TO_EDIT' or bg.get('source_sha256')!=br['source_sha256'] or digest(blink)!=br['video_sha256']:raise ValueError('Blink review missing')
@@ -29,7 +30,7 @@ def main():
         if digest(blinkfolder/row['name'])!=row['sha256']:raise ValueError('Reviewed blink frame changed')
     if out.exists():raise ValueError('Preserve previous edit')
     out.mkdir();(out/'handler.py').write_bytes(Path(__file__).read_bytes());clips={}
-    removed={'route-reveal','route-decision','gather-and-turn','uphill-drive'}
+    removed={'pashtun-opening','route-reveal','route-decision','gather-and-turn','uphill-drive'}
     for row in prior['clips']:
         if row['name'] in removed:continue
         # Prior finished review edit is immutable; record exact copied hashes.
@@ -44,6 +45,7 @@ def main():
             filters.append(f"drawtext=fontfile={FONT}:text='{text}':fontsize={size}:fontcolor=white:x=(w-tw)/2:y={y}")
         run(['-i',str(source),'-vf',','.join(filters),'-frames:v',str(frames),'-an','-c:v','libx264','-crf','20','-pix_fmt','yuv420p','-movflags','+faststart',str(target)])
         clips[name]={'name':name,'frames':frames,'fps':24,'source_start_frame':start_frame,'status':'NATIVE_PREVIEW','source':str(source.relative_to(ROOT)),'source_sha256':digest(source),'path':target.name,'sha256':digest(target),'caption':title,'note':note}
+    clip('pashtun-opening',opening,144,'NATIVE PREVIEW - riding entrance','Original opening with corrected blink timing')
     clip('route-reveal',geographic,48,'NATIVE PREVIEW - the route choice','Shared geography - neutral barrier remains provisional')
     clip('route-decision',blink,48,'NATIVE PREVIEW - attention and decision','Faster asymmetric blink - selected likeness preserved')
     clip('gather-turn-uphill',action,192,'NATIVE PREVIEW - gather turn and climb','Actual coordinated route - preview resolution - no sound')
