@@ -2,6 +2,12 @@
 
 ## Current acceptance — exchange152
 
+### Exchange191 — contact stability and static detail are not lively performance
+
+Director likes190 generally but still sees rider stiffness and a floating tail. Source behavior explains a validation gap: fixed-length reach/contact checks and small head adjustments can pass while the rider does not visibly absorb the gait through coordinated joints. Increasing a tail's cross-section is not equivalent to adding convincing flexible motion;190 transports the selected initial shape with restrained authored lag. Internal review must distinguish attachment, joint reach and silhouette fullness from visible weight, propagation and effort. Preserve technical passes but reopen the affected performance claims. Compare at playback speed and in phase-labelled sequences; do not solve this by uncorrelated noise or excessive head bounce.
+
+The Director's concern about mediocre near-realism is a coherent moving-art-direction question, not permission to hide mechanical motion beneath a painterly filter. Original illustrated-world C already calls for non-photoreal surfaces and credible acting. A still approval cannot qualify temporal texture stability, material/light/background coherence or performance timing. Proposed next look proof should reuse one representative native shot and protected assets; mark style proposals unaccepted until Director selection, and do not restart a full character reconstruction. See the191 discussion in the C art-direction brief.
+
 ### Exchange190 — extending motion exposes shot-domain assumptions
 
 **A new path is a coordinated performance change, not a transform on a straight cache.** One sampled clock now owns speed, path, heading, grade and gait phase. Shortened gathered strides require renewed actual-hoof contact checks; rider pelvis, fixed-length limbs, reins, stirrups, fitted clothing, free fabric and groom follow the resulting motion. Preserve the approved character and costume while renewing invalidated dependencies. The horse04 controls measure contacts and all192 coarse frames were inspected, but this does not certify biological gait or the later integrated image.
