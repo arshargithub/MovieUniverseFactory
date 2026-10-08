@@ -1,6 +1,19 @@
 {
   "events": [
     {
+      "event_id": "series01-entrance190-integrated-route-delivery",
+      "event_type": "implementation_outcome",
+      "experiment_id": "SERIES01-LIKENESS-ASSET",
+      "phase": "blink correction and shared route performance",
+      "engineering_model": {"reported_name": "Astra", "reasoning_effort": "high", "attribution_basis": "user_reported", "runtime_verified": false},
+      "controlled_model_comparison": false,
+      "outcome": "INTERNAL_PREVIEW_PASS_DIRECTOR_REVIEW_PENDING",
+      "observation": "Complete18-second native preview entrance incorporates corrected blink in opening and close, shared-route cutaway and coordinated8-second gathering/turn/uphill exit. Full new frame sequences and edited boundaries reviewed;58 focused tests and both full video decodes pass.75-second silent trailer rough retains15seconds native and60seconds explicit unbuilt/art-direction cards. Four protected native masters and sixteen cache dependencies verified. Preserve failed contact, cloth, scene and camera trials; viewport-only evaluation control matches representative renders within1/255, not a general performance/model benchmark.39 captured jobs include38 native and one local,32 successful exits and seven nonzero exits including deliberate stops. Known native monotonic process sum12992.51528025209seconds, not net engineering time. No paid provider calls, new image generation, remote push or native backup in190. Director acceptance, final resolution, sound, rights and release remain separate.",
+      "engineering_usage": {"input_tokens": null, "output_tokens": null, "reasoning_tokens": null, "cost_usd": null, "exact_net_elapsed_seconds": null},
+      "captured_native_process_seconds": 12992.51528025209,
+      "sources": [{"kind": "repository_artifact", "path": "docs/planning/SERIES_01_WARDROBE_TACK_FIT.md"}, {"kind": "local_evidence", "path": ".runtime/art-direction/series01-trailer-edit190/qa/visual-review.json"}, {"kind": "local_evidence", "path": ".runtime/art-direction/series01-facebuilder-trial-01/entrance190-operating-progress/summary.json"}]
+    },
+    {
       "event_id": "series01-entrance190-director-blink-route-feedback",
       "event_type": "director_review",
       "experiment_id": "SERIES01-LIKENESS-ASSET",
