@@ -2,6 +2,12 @@
 
 ## Current acceptance — exchange152
 
+### Exchange189 — performance is not asset attachment
+
+Director reopens188's integrated appearance: a mechanically attached but neutral face and unchanging local head orientation read as a doll in an action shot. Test intention, facial attention and coordinated secondary response in the actual close reveal, not just identity preservation. Keep composed strength separate from anger. A clay control retains the central neck hollow; broader neck-weight distribution improves it, while toggling volume-preserving skinning alone does not. Retain the accepted neutral anatomy and evaluate changed deformation, rather than assuming every hollow is painted shading.
+
+When replacing a mesh cache, preserve its position relative to subdivision/solidify:189-candidate04's valid7205-vertex cache is rejected after being appended below topology-changing modifiers. Stop the render, retain its failure and repair the modifier interface before assessing appearance. A hash-valid cache is not proof that it is actually applied. Retain simulation provenance separately from small authored shot-corrective transport; altered head/cloth motion requires renewed contact/visual checks, not inheritance of old motion qualification.
+
 ### Exchange188 — technical discretion includes artwork inputs
 
 The187 handoff incorrectly converted a routine image-generation implementation choice into a Director permission gate. Director explicitly authorizes built-in generation, including more than two images, within the agreed deliverable. Keep real external-spend/tool/creative boundaries, not arbitrary image-count gates. Astra is the top workflow escalation tier; persistent failure there requires a method/input/representation reassessment rather than an imaginary higher model. A majestic horse is not achieved by restoring a diagnostic color alone: coat response, attached short fuzz, mane/forelock flow and actual moving silhouette must be reviewed together. New generated backgrounds must be evaluated inside the camera passage, not presented as evidence that the native scene already works.
