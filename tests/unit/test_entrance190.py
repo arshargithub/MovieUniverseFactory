@@ -76,3 +76,21 @@ def test_wake_history_continues_preceding_straight_motion():
     np.testing.assert_allclose(m.path_sample(r,0),[0,0,0])
     np.testing.assert_allclose(m.path_sample(r,8),r['position'][-1])
     assert m.path_sample(r,6)[0]<m.path_sample(r,4)[0]
+
+def test_perspective_exit_recedes_and_camera_path_is_continuous():
+    import numpy as np
+    m=load('entrance190_perspective');r=load('entrance190_route_math').trajectory()
+    a,ta=m.camera(r,6);b,tb=m.camera(r,8)
+    assert np.linalg.norm(b-tb)>np.linalg.norm(a-ta)*1.5
+    before,_=m.camera(r,6-1e-5);after,_=m.camera(r,6+1e-5)
+    assert np.linalg.norm(after-before)<.01
+    assert np.isfinite(m.project(np.array([[0,0,0]]),np.array([0.,2,2]),np.array([0.,0,0]))).all()
+
+def test_reopen_parity_rejects_known_differences():
+    import numpy as np
+    compare=load('entrance190_verify').compare
+    a=np.zeros((2,2,3),dtype=np.uint8)
+    assert compare(a,a)['status']=='PASS'
+    assert compare(a,a+1)['status']=='PASS'
+    assert compare(a,a+2)['status']=='FAIL'
+    with pytest.raises(ValueError,match='dimensions'):compare(a,a[:1])
