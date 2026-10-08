@@ -36,9 +36,10 @@ def cache_parity(record,out):
 
 
 def validate(job):
-    allowed=('controls03','motion04','lookA10','lookB11','parityA14','parityB15')
+    allowed=('controls03','motion04','lookA10','lookB11','parityA14','parityB15','lookB18','parityB19')
     if job not in [{'operation':x} for x in allowed]:raise ValueError('Fixed render operation required')
     stage='entrance193-painter13' if job['operation'] in ('lookB11','parityB15') else 'entrance193-bind03'
+    if job['operation'] in ('lookB18','parityB19'):stage='entrance193-sampling16'
     source=base.BASE/stage/'scene.blend';out=base.BASE/('entrance193-'+job['operation'])
     r=json.loads((source.parent/'result.json').read_text())
     if out.exists() or base.digest(source)!=r['native_sha256']:raise ValueError('Changed source or prior evidence')
@@ -46,8 +47,9 @@ def validate(job):
     for row in manifest['caches']:
         p=(common/row['path']).resolve()
         if not p.is_relative_to(base.BASE.resolve()) or base.digest(p)!=row['sha256']:raise ValueError('Changed cache')
-    if job['operation'] in ('lookA10','lookB11','parityA14','parityB15'):
-        gate=json.loads((base.BASE/'entrance193-painter13/internal-review.json').read_text())
+    if job['operation'] in ('lookA10','lookB11','parityA14','parityB15','lookB18','parityB19'):
+        gate_stage=stage if job['operation'] in ('lookB18','parityB19') else 'entrance193-painter13'
+        gate=json.loads((base.BASE/gate_stage/'internal-review.json').read_text())
         if gate.get('status')!='PROCEED_TO_COMPLETE_MOTION':raise ValueError('Matched still review is missing')
     return source,out,r
 
@@ -59,13 +61,15 @@ def main():
     bpy.ops.wm.open_mainfile(filepath=str(source),load_ui=False,use_scripts=False);base.check_protected()
     scene=bpy.context.scene;control=job['operation']=='controls03'
     if control:cache_parity(r,out)
+    if job['operation']=='parityB19':
+        cache_parity(json.loads((base.BASE/'entrance193-bind03/result.json').read_text()),out)
     # Only nonpersistent viewport flags: rendering retains original modifiers.
-    flags=[];parity=job['operation'] in ('parityA14','parityB15')
+    flags=[];parity=job['operation'] in ('parityA14','parityB15','parityB19')
     for ob in scene.objects:
         for m in ob.modifiers:
             if not parity and m.type in ('SMOOTH','CORRECTIVE_SMOOTH','SUBSURF') and m.show_viewport:
                 flags.append((ob.name,m.name,m.show_render));m.show_viewport=False
-    final=job['operation'] in ('lookA10','lookB11') or parity
+    final=job['operation'] in ('lookA10','lookB11','lookB18') or parity
     scene.cycles.device='CPU';scene.cycles.samples=8 if control or final else 4
     scene.render.use_persistent_data=True;scene.render.resolution_percentage=100
     scene.render.resolution_x=432 if control else 216;scene.render.resolution_y=768 if control else 384
@@ -74,7 +78,8 @@ def main():
     rows=[]
     for f in frames:
         start=time.monotonic();scene.frame_set(f)
-        scene.render.filepath=str(out/f'frame-{f:04d}.png');bpy.ops.render.render(write_still=True)
+        scene.render.filepath=str(out/f'frame-{f:04d}.png');result=bpy.ops.render.render(write_still=True)
+        if result!={'FINISHED'} or not Path(scene.render.filepath).is_file():raise RuntimeError('Render canceled or missing frame')
         rows.append({'frame':f,'seconds':time.monotonic()-start})
         (out/'progress.json').write_text(json.dumps({'completed':len(rows),'total':len(frames),'last_frame':f,'measured_seconds':sum(x['seconds'] for x in rows)},indent=2)+'\n')
     base.check_protected()

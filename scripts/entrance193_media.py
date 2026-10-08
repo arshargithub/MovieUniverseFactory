@@ -4,6 +4,8 @@ import hashlib
 import json
 import subprocess
 from pathlib import Path
+from PIL import Image
+import numpy as np
 from entrance189_media import sheet
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -15,9 +17,19 @@ def sha(path):
     with path.open('rb') as f:return hashlib.file_digest(f,'sha256').hexdigest()
 
 
+def pixel_parity(first,second):
+    with Image.open(first) as im:a=np.asarray(im.convert('RGBA')).astype(np.int16)
+    with Image.open(second) as im:b=np.asarray(im.convert('RGBA')).astype(np.int16)
+    if a.shape!=b.shape:raise ValueError('Reopen dimensions differ')
+    d=np.abs(a-b)
+    if d.max()>1:raise ValueError('Reopen differs by more than one 8-bit channel level')
+    return {'status':'PASS','max_channel_error':int(d.max()),'changed_channels':int(np.count_nonzero(d)),
+            'mean_channel_error':float(d.mean()),'tolerance':1,'first_sha256':sha(first),'second_sha256':sha(second)}
+
+
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--finish',action='store_true');args=parser.parse_args()
-    folders=[BASE/'entrance193-lookA10',BASE/'entrance193-lookB11']
+    folders=[BASE/'entrance193-lookA10',BASE/'entrance193-lookB18']
     for folder in folders:
         if not folder.exists():continue
         paths=[folder/f'frame-{f:04d}.png' for f in range(217,361)]
@@ -27,8 +39,20 @@ def main():
     if not args.finish:return
     records=[json.loads((p/'result.json').read_text()) for p in folders]
     if records[0]['animation_sha256']!=records[1]['animation_sha256']:raise ValueError('A/B animation differs')
+    parity=[]
+    for folder,control,record in zip(folders,('entrance193-parityA14','entrance193-parityB19'),records):
+        p=BASE/control;r=json.loads((p/'result.json').read_text())
+        if r['source_sha256']!=record['source_sha256'] or r['animation_sha256']!=record['animation_sha256'] or r['viewport_only_flags']:
+            raise ValueError('Independent control source/action/flags mismatch')
+        if record['resolution']!=[360,640] or record['fps']!=24 or [row['frame'] for row in record['frames']]!=list(range(217,361)):
+            raise ValueError('Unexpected native frame sequence')
+        parity.append({'treatment':folder.name,**pixel_parity(folder/'frame-0360.png',p/'frame-0360.png')})
     if OUT.exists():raise ValueError('Preserve delivered comparison')
     OUT.mkdir();(OUT/'handler.py').write_bytes(Path(__file__).read_bytes())
+    pair_image=Image.new('RGB',(720,640))
+    for i,folder in enumerate(folders):
+        with Image.open(folder/'frame-0360.png') as im:pair_image.paste(im.convert('RGB'),(i*360,0))
+    pair_image.save(OUT/'matched-close.png')
     videos=[]
     for folder,label in zip(folders,('current','illustrated')):
         paths=[folder/f'frame-{f:04d}.png' for f in range(217,361)]
@@ -52,6 +76,7 @@ def main():
         'sources':[{'folder':str(p.relative_to(ROOT)),'native_sha256':r['source_sha256']} for p,r in zip(folders,records)],
         'frame_hashes':{p.name:{f.name:sha(f) for f in sorted(p.glob('frame-*.png'))} for p in folders},
         'processing':'Exact native frames and ordinary H264; synchronized hstack, no interpolation/generative video',
+        'independent_reopen':parity,'close_comparison_sha256':sha(OUT/'matched-close.png'),
         'visual_gate':'NOT_RUN','scope':'Silent preview-resolution visual-language comparison, not a finished trailer'},indent=2)+'\n')
 
 

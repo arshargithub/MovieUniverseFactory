@@ -37,3 +37,19 @@ def test_phase_finite_and_bounded():
 def test_render_rejects_unreviewed_operation(job):
     import entrance193_render as render
     with pytest.raises(ValueError):render.validate(job)
+
+
+def test_media_parity_preserves_one_level_tolerance(tmp_path):
+    from PIL import Image
+    from entrance193_media import pixel_parity
+    a=tmp_path/'a.png';b=tmp_path/'b.png'
+    Image.new('RGB',(4,4),(50,60,70)).save(a)
+    Image.new('RGB',(4,4),(51,60,70)).save(b)
+    assert pixel_parity(a,b)['max_channel_error']==1
+    Image.new('RGB',(4,4),(52,60,70)).save(b)
+    with pytest.raises(ValueError):pixel_parity(a,b)
+
+
+def test_sampling_control_rejects_custom_operation():
+    from entrance193_sampling import validate
+    with pytest.raises(ValueError):validate({'operation':'sampling16','source':'other.blend'})
