@@ -17,8 +17,9 @@ def main():
     from wardrobe185_gallop import apparent_airflow
     from wardrobe_shawl180_cache import cache
     job=json.loads(Path(sys.argv[sys.argv.index('--')+1]).read_text())
-    if job!={'operation':'lower13'}:raise ValueError('Fixed lower cloth operation required')
-    out=base.BASE/'entrance190-lower13';folder=base.BASE/'entrance190-fitted12'
+    if job not in ({'operation':'lower13'},{'operation':'lower16'}):raise ValueError('Fixed lower cloth operation required')
+    translating=job['operation']=='lower16'
+    out=base.BASE/('entrance190-'+job['operation']);folder=base.BASE/'entrance190-fitted12'
     manifest=json.loads((folder/'result.json').read_text());source=folder/'lower-contacts.npz'
     if out.exists() or base.digest(source)!=manifest['lower_contacts_sha256']:raise ValueError('Unbound new contact source')
     paths={
@@ -40,6 +41,20 @@ def main():
     oldids=np.r_[np.full(120,169),np.arange(170,361)];frames=np.r_[oldids,np.arange(361,554)]
     lookup={int(f):i for i,f in enumerate(old['frame_ids'])};indices=[lookup[int(f)] for f in oldids]
     world=loaded['world']['world_inertial'][frames-1]
+    gravity=np.repeat(np.array([[0.,0.,-9.81]]),len(frames),axis=0)
+    if translating:
+        # Nonrotating coordinates whose origin follows the path: rotations
+        # still occur in the solver. Include -a_origin explicitly; do not
+        # delete turning/braking inertia along with bulk translation.
+        velocity=np.gradient(route['position'],route['time'],axis=0)
+        acceleration=np.gradient(velocity,route['time'],axis=0)*8.3*SCALE
+        for i,frame in enumerate(frames):
+            if frame>361:
+                j=(frame-361)*8
+                residual=route['position'][j]-np.array([0,-12*route['time'][j],0])
+                world[i,:3,3]-=8.3*residual
+                gravity[i]-=acceleration[j]
+        np.savez_compressed(out/'reference-frame.npz',world=world,gravity=gravity,source_frame_ids=frames)
     drive=np.repeat(p[None],len(frames),axis=0)
     drive[:311,pins]=support_motion(p[pins],cut['guided'][oldids-1][:,pins],pelvis[oldids-1],pelvis[168])
     rel=np.einsum('fij,jk->fik',new['pelvis_matrices'],np.linalg.inv(new['reference_pelvis']))
@@ -47,6 +62,8 @@ def main():
     drive=np.einsum('fij,fnj->fni',world[:,:3,:3],drive)+world[:,:3,3,None].transpose(0,2,1)
     bpy.ops.wm.read_factory_settings(use_empty=True);scene=bpy.context.scene
     scene.render.fps=24;scene.unit_settings.scale_length=1.;scene.gravity=(0,0,-9.81)
+    if translating:
+        for i,g in enumerate(gravity):scene.gravity=tuple(g);scene.keyframe_insert(data_path='gravity',frame=i+1)
     ob=panel('190 free riding skirt',p*SCALE,faces);ob.shape_key_add(name='Basis');key=ob.shape_key_add(name='Unstressed cut')
     key.data.foreach_set('co',(cut['rest']*SCALE).astype(np.float32).ravel());key.value=0
     group=ob.vertex_groups.new(name='support')
@@ -84,7 +101,8 @@ def main():
     np.savez_compressed(out/'trajectory.npz',frames=np.array(trajectory),source_frame_ids=frames,faces=faces,rest=cut['rest'],pin_indices=pins)
     (out/'frame-metrics.json').write_text(json.dumps(metrics,indent=2)+'\n')
     (out/'result.json').write_text(json.dumps({'lower_contacts_sha256':manifest['lower_contacts_sha256'],
-        'trajectory_sha256':base.digest(out/'trajectory.npz'),'scope':'Free skirt with original settled prefix and new rigid-frame support/contact motion; not a visual or contact pass','visual_gate':'NOT_RUN'},indent=2)+'\n')
+        'trajectory_sha256':base.digest(out/'trajectory.npz'),'reference_frame':'Translating nonrotating origin with gravity minus path acceleration' if translating else 'Constant-velocity origin',
+        'scope':'Free skirt with original settled prefix and new rigid-frame support/contact motion; not a visual or contact pass','visual_gate':'NOT_RUN'},indent=2)+'\n')
 
 
 if __name__=='__main__':main()

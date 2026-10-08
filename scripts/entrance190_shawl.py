@@ -26,8 +26,9 @@ def main():
     from wardrobe185_gallop import apparent_airflow
     from wardrobe185_cut import winding_inside
     job=json.loads(Path(sys.argv[sys.argv.index('--')+1]).read_text())
-    if job!={'operation':'shawl11'}:raise ValueError('Fixed shawl continuation required')
-    source=base.BASE/'entrance190-contacts10/contacts.npz';out=base.BASE/'entrance190-shawl11'
+    if job not in ({'operation':'shawl11'},{'operation':'shawl17'}):raise ValueError('Fixed shawl continuation required')
+    translating=job['operation']=='shawl17'
+    source=base.BASE/'entrance190-contacts10/contacts.npz';out=base.BASE/('entrance190-'+job['operation'])
     if out.exists() or source.is_symlink() or base.digest(source)!=CONTACT_SHA:raise ValueError('Changed support source or prior output')
     record=json.loads((source.parent/'result.json').read_text())
     if not record['old_envelope_reusable']:raise ValueError('New anatomy not enclosed by colliders')
@@ -36,7 +37,16 @@ def main():
     p,f,rest,counts,ids,weights,stitches=inputs();ids,weights=support_selection(ids,weights)
     head=np.zeros(len(p),bool);head[:2501]=True;head[rear_support_indices(2501)]=True
     local=transformed(p,d['torso_matrices']);local[:,head]=transformed(p[head],d['head_matrices'])
-    world=d['world_inertial'];drive=np.einsum('fij,fnj->fni',world[:,:3,:3],local)+world[:,:3,3,None].transpose(0,2,1)
+    world=d['world_inertial'];gravity=np.repeat(np.array([[0.,0.,-9.81]]),553,axis=0)
+    with np.load(base.BASE/'entrance190-rider09/route.npz',allow_pickle=False) as z:route={k:z[k] for k in z.files}
+    if translating:
+        velocity=np.gradient(route['position'],route['time'],axis=0)
+        acceleration=np.gradient(velocity,route['time'],axis=0)*8.3*SCALE
+        for frame in range(362,554):
+            j=(frame-361)*8;residual=route['position'][j]-np.array([0,-12*route['time'][j],0])
+            world[frame-1,:3,3]-=8.3*residual;gravity[frame-1]-=acceleration[j]
+        np.savez_compressed(out/'reference-frame.npz',world=world,gravity=gravity)
+    drive=np.einsum('fij,fnj->fni',world[:,:3,:3],local)+world[:,:3,3,None].transpose(0,2,1)
     # Test actual pin positions against every overlapping regional volume in
     # local actor coordinates. Global rigid motion cannot change clearance.
     violations=[];rows=[]
@@ -59,6 +69,8 @@ def main():
     if violations:raise ValueError('Held cloth target conflicts with collision support')
     bpy.ops.wm.read_factory_settings(use_empty=True);scene=bpy.context.scene
     scene.render.fps=24;scene.gravity=(0,0,-9.81);scene.unit_settings.scale_length=1.
+    if translating:
+        for i,g in enumerate(gravity):scene.gravity=tuple(g);scene.keyframe_insert(data_path='gravity',frame=i+1)
     mesh=bpy.data.meshes.new('190 double wrap');mesh.from_pydata((p*SCALE).tolist(),stitches.tolist(),f.tolist());mesh.update()
     ob=bpy.data.objects.new('190 continuous double wrap',mesh);scene.collection.objects.link(ob)
     ob.shape_key_add(name='Basis');metric=ob.shape_key_add(name='Unstressed fabric')
@@ -74,7 +86,6 @@ def main():
         cache(co,q,out/(key+'-contact.mdd'));co.modifiers.new('Collision','COLLISION')
         co.collision.thickness_outer=.0015;co.collision.cloth_friction=15
     bpy.ops.object.effector_add(type='WIND');wind=bpy.context.object
-    with np.load(base.BASE/'entrance190-rider09/route.npz',allow_pickle=False) as z:route={k:z[k] for k in z.files}
     for frame in range(1,554):
         direction,strength=apparent_airflow(frame)
         if frame>361:
@@ -101,7 +112,7 @@ def main():
     np.savez_compressed(out/'trajectory.npz',frames=np.array(frames),faces=f,rest=rest,counts=counts,pin_indices=ids,pin_weights=weights)
     (out/'frame-metrics.json').write_text(json.dumps(metrics,indent=2)+'\n')
     (out/'result.json').write_text(json.dumps({'contact_sha256':CONTACT_SHA,'trajectory_sha256':base.digest(out/'trajectory.npz'),
-        'frames':553,'coordinate_frame':'Constant-velocity simulation frame; delivered cache transformed back to actor-local space',
+        'frames':553,'coordinate_frame':('Translating nonrotating origin with gravity minus path acceleration' if translating else 'Constant-velocity simulation frame')+'; delivered cache transformed back to actor-local space',
         'wind':'Authored apparent airflow force; not calibrated airspeed','visual_gate':'NOT_RUN'},indent=2)+'\n')
 
 

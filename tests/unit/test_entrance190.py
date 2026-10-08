@@ -58,3 +58,21 @@ def test_cloth_support_rigid_transform_preserves_distances():
     np.testing.assert_allclose(q[0],points)
     np.testing.assert_allclose(q[1],points@matrices[1,:3,:3].T+matrices[1,:3,3])
     np.testing.assert_allclose(np.linalg.norm(q[:,1]-q[:,0],axis=1),np.linalg.norm(points[1]-points[0]))
+
+def test_shared_geography_matches_contact_route():
+    import numpy as np
+    r=load('entrance190_route_math').trajectory();m=load('entrance190_geography')
+    points=r['position'][::8]
+    height,distance=m.fields(points[:,:2],r)
+    np.testing.assert_allclose(height,points[:,2],atol=1e-9)
+    np.testing.assert_allclose(distance,0,atol=1e-9)
+    height,_=m.fields(np.array([[0.,-40],[0,-60],[0,5]]),r)
+    np.testing.assert_allclose(height,0,atol=1e-9)
+
+def test_wake_history_continues_preceding_straight_motion():
+    import numpy as np
+    m=load('entrance190_scene');r=load('entrance190_route_math').trajectory()
+    np.testing.assert_allclose(m.path_sample(r,-2),[0,24,0])
+    np.testing.assert_allclose(m.path_sample(r,0),[0,0,0])
+    np.testing.assert_allclose(m.path_sample(r,8),r['position'][-1])
+    assert m.path_sample(r,6)[0]<m.path_sample(r,4)[0]
