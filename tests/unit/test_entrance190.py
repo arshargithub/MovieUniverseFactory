@@ -35,3 +35,26 @@ def test_route_single_clock_continuity():
     measured=np.linalg.norm(np.diff(r['position'],axis=0),axis=1)*24*8
     np.testing.assert_allclose(measured,(r['speed'][:-1]+r['speed'][1:])/2,atol=.0001)
     assert m.sample(0)['position'].tolist()==[0,0,0]
+
+def test_rider_uses_source_phase_not_cache_length():
+    import numpy as np
+    m=load('entrance190_rider');period=24/2.2
+    for sf in np.linspace(144,310,333):
+        f=m.source_pose_frame(sf)
+        assert 360-period<f<=360
+        assert abs(((f-217-sf)/period)-round((f-217-sf)/period))<1e-10
+    assert m.gathered(0)==0
+    assert m.gathered(2)==1
+    assert m.gathered(8)==pytest.approx(.35)
+
+def test_cloth_support_rigid_transform_preserves_distances():
+    import numpy as np
+    m=load('entrance190_shawl')
+    points=np.array([[0.,1,2],[3,4,5],[-1,0,2]])
+    matrices=np.repeat(np.eye(4)[None],2,axis=0)
+    matrices[1,:3,:3]=[[0,-1,0],[1,0,0],[0,0,1]]
+    matrices[1,:3,3]=[10,20,30]
+    q=m.transformed(points,matrices)
+    np.testing.assert_allclose(q[0],points)
+    np.testing.assert_allclose(q[1],points@matrices[1,:3,:3].T+matrices[1,:3,3])
+    np.testing.assert_allclose(np.linalg.norm(q[:,1]-q[:,0],axis=1),np.linalg.norm(points[1]-points[0]))
