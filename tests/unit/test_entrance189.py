@@ -58,3 +58,23 @@ def test_decision_camera_rejects_payload_expansion(job):
     module()
     import entrance189_decision as decision
     with pytest.raises(ValueError,match='Fixed'):decision.validate(job)
+
+
+def test_edit_rejects_stale_review_and_changed_frames(tmp_path):
+    module()
+    import entrance189_edit as edit
+    import hashlib
+    import json
+    video=tmp_path/'proof.mp4';video.write_bytes(b'fixture video')
+    frame=tmp_path/'frame-0001.png';frame.write_bytes(b'fixture frame')
+    source='a'*64
+    (tmp_path/'result.json').write_text(json.dumps({'source_sha256':source}))
+    (tmp_path/'media.json').write_text(json.dumps({'video_sha256':edit.digest(video),
+        'frames':[{'name':frame.name,'sha256':hashlib.sha256(frame.read_bytes()).hexdigest()}]}))
+    gate=tmp_path/'internal-review.json'
+    gate.write_text(json.dumps({'status':'PROCEED_TO_EDIT','source_sha256':'b'*64}))
+    with pytest.raises(ValueError,match='Source-bound'):edit.admit_review(tmp_path,video)
+    gate.write_text(json.dumps({'status':'PROCEED_TO_EDIT','source_sha256':source}))
+    edit.admit_review(tmp_path,video)
+    frame.write_bytes(b'changed frame')
+    with pytest.raises(ValueError,match='frame changed'):edit.admit_review(tmp_path,video)

@@ -1,0 +1,49 @@
+<div id="entrance189-review">
+  <div class="viz-controls" data-views aria-label="Rendered views"></div>
+  <div class="text-center">
+    <img data-image alt="" style="display:block;max-width:100%;height:440px;object-fit:contain;margin:12px auto">
+    <div data-label class="text-small" aria-live="polite"></div>
+  </div>
+  <div class="viz-controls">
+    <button type="button" class="btn" data-prev>← Previous</button>
+    <span data-count class="tabular-nums text-small"></span>
+    <button type="button" class="btn" data-next>Next →</button>
+    <button type="button" class="btn" data-size aria-pressed="false">Enlarge</button>
+  </div>
+</div>
+<script>
+(() => {
+  const root=document.getElementById('entrance189-review');
+  const views=__VIEWS__;
+  const image=root.querySelector('[data-image]');
+  const label=root.querySelector('[data-label]');
+  const count=root.querySelector('[data-count]');
+  const toolbar=root.querySelector('[data-views]');
+  const size=root.querySelector('[data-size]');
+  let index=0,large=false;
+  const buttons=views.map((view,i)=>{
+    const button=document.createElement('button');button.type='button';button.className='btn';
+    button.textContent=view.name;button.addEventListener('click',()=>{index=i;draw();save();});
+    toolbar.appendChild(button);return button;
+  });
+  function draw(){
+    const view=views[index];image.src=view.image;image.alt=view.description;label.textContent=view.description;
+    image.style.height=large?'720px':'440px';count.textContent=`${index+1} / ${views.length}`;
+    buttons.forEach((button,i)=>button.setAttribute('aria-pressed',String(i===index)));
+    size.setAttribute('aria-pressed',String(large));size.textContent=large?'Compact':'Enlarge';
+  }
+  function apply(state){
+    const value=state?.privateContent;
+    if(value&&Number.isInteger(value.index)&&value.index>=0&&value.index<views.length){index=value.index;large=!!value.large;}
+    draw();
+  }
+  function save(){
+    window.openai?.setWidgetState?.({modelContent:{selectedView:views[index].name},privateContent:{index,large}}).catch(()=>{});
+  }
+  root.querySelector('[data-prev]').addEventListener('click',()=>{index=(index+views.length-1)%views.length;draw();save();});
+  root.querySelector('[data-next]').addEventListener('click',()=>{index=(index+1)%views.length;draw();save();});
+  size.addEventListener('click',()=>{large=!large;draw();save();});
+  window.addEventListener('openai:set_globals',event=>{const state=event.detail?.globals?.widgetState;if(state)apply(state);});
+  apply(window.openai?.widgetState);
+})();
+</script>

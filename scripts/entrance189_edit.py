@@ -19,17 +19,25 @@ def digest(path):
     with path.open('rb') as f:return hashlib.file_digest(f,'sha256').hexdigest()
 
 
+def admit_review(folder,video):
+    gate=json.loads((folder/'internal-review.json').read_text())
+    media=json.loads((folder/'media.json').read_text())
+    source=json.loads((folder/'result.json').read_text())
+    if (gate.get('status')!='PROCEED_TO_EDIT' or
+        gate.get('source_sha256')!=source.get('source_sha256') or
+        not source.get('source_sha256') or media['video_sha256']!=digest(video)):
+        raise ValueError('Source-bound integrated motion review required')
+    for row in media['frames']:
+        path=folder/row['name']
+        if path.parent!=folder or digest(path)!=row['sha256']:
+            raise ValueError('Reviewed frame changed')
+
+
 def main():
     motion=BASE/'entrance189-motion16';native=motion/'entrance-proof.mp4'
-    gate=json.loads((motion/'internal-review.json').read_text())
-    media=json.loads((motion/'media.json').read_text())
-    if gate.get('status')!='PROCEED_TO_EDIT' or media['video_sha256']!=digest(native):
-        raise ValueError('Integrated motion review required before onward edit')
+    admit_review(motion,native)
     decision=BASE/'entrance189-decision-motion20';decision_native=decision/'decision-proof.mp4'
-    decision_gate=json.loads((decision/'internal-review.json').read_text())
-    decision_media=json.loads((decision/'media.json').read_text())
-    if decision_gate.get('status')!='PROCEED_TO_EDIT' or decision_media['video_sha256']!=digest(decision_native):
-        raise ValueError('Complete decision camera review required')
+    admit_review(decision,decision_native)
     out=ART/'series01-trailer-edit189'
     if out.exists():raise ValueError('Preserve existing edit')
     out.mkdir();(out/'handler.py').write_bytes(Path(__file__).read_bytes())
