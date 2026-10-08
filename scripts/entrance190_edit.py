@@ -35,18 +35,23 @@ def main():
         # Prior finished review edit is immutable; record exact copied hashes.
         source=old/row['path'];target=out/row['path'];shutil.copy2(source,target)
         clips[row['name']]={**row,'reused_from':str(source.relative_to(ROOT)),'sha256':digest(target)}
-    def clip(name,source,frames,title,note):
+    def clip(name,source,frames,title,note,start_frame=0):
         target=out/(name+'.mp4')
-        filters=['scale=648:1152:force_original_aspect_ratio=decrease','pad=720:1280:(ow-iw)/2:(oh-ih)/2:color=0x202735','setsar=1','fps=24']
+        filters=[f'trim=start_frame={start_frame}:end_frame={start_frame+frames}','setpts=PTS-STARTPTS','scale=648:1152:force_original_aspect_ratio=decrease','pad=720:1280:(ow-iw)/2:(oh-ih)/2:color=0x202735','setsar=1','fps=24']
         for text,y,size in ((title,24,24),(note,1218,19)):
             if any(c in text for c in "':\\"):raise ValueError('Unsafe production caption')
             size=min(size,int(648/max(1,len(text))/.57))
             filters.append(f"drawtext=fontfile={FONT}:text='{text}':fontsize={size}:fontcolor=white:x=(w-tw)/2:y={y}")
         run(['-i',str(source),'-vf',','.join(filters),'-frames:v',str(frames),'-an','-c:v','libx264','-crf','20','-pix_fmt','yuv420p','-movflags','+faststart',str(target)])
-        clips[name]={'name':name,'frames':frames,'fps':24,'status':'NATIVE_PREVIEW','source':str(source.relative_to(ROOT)),'source_sha256':digest(source),'path':target.name,'sha256':digest(target),'caption':title,'note':note}
+        clips[name]={'name':name,'frames':frames,'fps':24,'source_start_frame':start_frame,'status':'NATIVE_PREVIEW','source':str(source.relative_to(ROOT)),'source_sha256':digest(source),'path':target.name,'sha256':digest(target),'caption':title,'note':note}
     clip('route-reveal',geographic,48,'NATIVE PREVIEW - the route choice','Shared geography - neutral barrier remains provisional')
     clip('route-decision',blink,48,'NATIVE PREVIEW - attention and decision','Faster asymmetric blink - selected likeness preserved')
     clip('gather-turn-uphill',action,192,'NATIVE PREVIEW - gather turn and climb','Actual coordinated route - preview resolution - no sound')
+    # Keep the complete18-second proof while respecting the established60-75s
+    # trailer range. Excerpt actual motion, never accelerate or synthesize it.
+    clip('route-reveal-trailer',geographic,36,'NATIVE PREVIEW - the route choice','Shared geography - neutral barrier remains provisional')
+    clip('route-decision-trailer',blink,36,'NATIVE PREVIEW - attention and decision','Faster asymmetric blink - selected likeness preserved',start_frame=6)
+    clip('gather-turn-uphill-trailer',action,144,'NATIVE PREVIEW - gather turn and climb','Native excerpt - complete maneuver in the entrance proof',start_frame=24)
     def assemble(name,names):
         listing=out/(name+'.ffconcat');listing.write_text('ffconcat version 1.0\n'+''.join("file '"+clips[n]['path']+"'\n" for n in names))
         target=out/(name+'.mp4');run(['-f','concat','-safe','1','-i',str(listing),'-c','copy','-movflags','+faststart',str(target)])
@@ -56,8 +61,9 @@ def main():
         return {'path':target.name,'frames':cursor,'duration_seconds':cursor/24,'timeline':timeline,'sha256':digest(target)}
     continuation=['route-reveal','route-decision','gather-turn-uphill']
     entrance=assemble('pashtun-entrance-rough-v03',['pashtun-opening',*continuation])
-    trailer=assemble('trailer-timing-rough-v02',['pashtun-opening','archival-contrast','sikh-confrontation','gurkha-protection','missing-informant',*continuation,'action-and-chemistry','three-before-the-officer','the-martials'])
-    if entrance['frames']!=432 or trailer['frames']!=1872:raise ValueError('Unexpected editorial duration')
-    (out/'manifest.json').write_text(json.dumps({'exchange':190,'clips':list(clips.values()),'entrance':entrance,'trailer':trailer,'audio':False,'release_ready':False,'visual_review':'NOT_RUN','limits':['18-second entrance now entirely native preview coverage, not final-resolution film','78-second whole-trailer timing rough retains60seconds of explicitly unbuilt/art-direction/archival cards','Provisional neutral obstruction does not establish guard affiliation or story canon','No final sound, voice, music, quotation rights or release qualification']},indent=2)+'\n')
+    trailer_continuation=['route-reveal-trailer','route-decision-trailer','gather-turn-uphill-trailer']
+    trailer=assemble('trailer-timing-rough-v02',['pashtun-opening','archival-contrast','sikh-confrontation','gurkha-protection','missing-informant',*trailer_continuation,'action-and-chemistry','three-before-the-officer','the-martials'])
+    if entrance['frames']!=432 or trailer['frames']!=1800:raise ValueError('Unexpected editorial duration')
+    (out/'manifest.json').write_text(json.dumps({'exchange':190,'clips':list(clips.values()),'entrance':entrance,'trailer':trailer,'audio':False,'release_ready':False,'visual_review':'NOT_RUN','limits':['18-second entrance now entirely native preview coverage, not final-resolution film','75-second whole-trailer timing rough uses15seconds of native excerpts and retains60seconds of explicitly unbuilt/art-direction/archival cards','Provisional neutral obstruction does not establish guard affiliation or story canon','No final sound, voice, music, quotation rights or release qualification']},indent=2)+'\n')
 
 if __name__=='__main__':main()

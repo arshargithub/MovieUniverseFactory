@@ -19,6 +19,37 @@ def geography_camera(scene,t=0.):
         cam.data.ortho_scale*=1.05
     raise ValueError('Geographic landmarks do not fit portrait frustum')
 
+def contact_terrain(scene,out):
+    """Source-evaluated hoof low points against the actual shared terrain.
+
+    Not an all-vertex collision proof. Preserves the original contact record
+    and declares the registration/measurement domain explicitly.
+    """
+    import bpy
+    from mathutils import Vector
+    path=base.BASE/'entrance190-route-horse04/contact.json'
+    expected='2788ec52a2e776532b802672bece0dda23ad492c30a96302a53d5a0dad811890'
+    if base.digest(path)!=expected:raise ValueError('Contact source changed')
+    source=json.loads(path.read_text());land=bpy.data.objects['AS_valley_landform']
+    scene.frame_set(361);bpy.context.view_layer.update();inverse=land.matrix_world.inverted()
+    rows=[]
+    for row in source['samples']:
+        for leg,data in row['legs'].items():
+            p=Vector(np.array(data['lowest_point'])*8.3+np.array([0,.2,-20.931]))
+            local=inverse@p;hit=land.ray_cast(local+Vector((0,0,1000)),Vector((0,0,-1)))
+            if not hit[0]:raise ValueError('Hoof low point leaves actual terrain')
+            q=land.matrix_world@hit[1]
+            rows.append({'source_frame':row['frame'],'leg':leg,'stance':data['stance'],
+                         'clearance_native':float(p.z-q.z),
+                         'source_plane_clearance_native':data['clearance']*8.3})
+    result={'contact_source_sha256':expected,'rows':rows,'sample_count':len(rows),
+            'minimum_clearance_native':min(r['clearance_native'] for r in rows),
+            'maximum_stance_clearance_native':max(r['clearance_native'] for r in rows if r['stance']),
+            'maximum_plane_difference_native':max(abs(r['clearance_native']-r['source_plane_clearance_native']) for r in rows),
+            'visual_gate':'NOT_RUN','scope':'Four source-evaluated hoof low points per subframe versus native terrain. Not whole-hoof re-evaluation or physical gait certification.'}
+    (out/'terrain-contact.json').write_text(json.dumps(result,indent=2)+'\n')
+    if result['minimum_clearance_native']<-.025:raise ValueError('Hoof low point penetrates terrain beyond the three-millimeter diagnostic tolerance')
+
 def validate(job):
     if job not in ({'operation':'motion22'},{'operation':'geography23'},{'operation':'coverage24'},{'operation':'coverage25'},{'operation':'coverage26'},{'operation':'coverage27'}):raise ValueError('Fixed complete motion operation required')
     folder=base.BASE/'entrance190-ground21';source=folder/'scene.blend';r=json.loads((folder/'result.json').read_text())
@@ -74,6 +105,7 @@ def main():
         (out/'result.json').write_text(json.dumps({'source_sha256':r['native_sha256'],'cache_checks':checks,'landmark_projections':landmarks,'visual_gate':'NOT_RUN'},indent=2)+'\n');return
     if job['operation']=='geography23':
         cam.animation_data_clear();cam.data.animation_data_clear();scene.frame_set(361)
+        contact_terrain(scene,out)
         # Native moving geographic cutaway; actor is outside its forward crop.
         # No frozen rider presented as action and no image zoom substituted.
         for i in range(48):
