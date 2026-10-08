@@ -15,19 +15,22 @@ SOURCE_SHA = '5387bb35da1a209d432e50ed7992e6aaa7a9d41bf78fabe6ebe36cc616fa944d'
 
 
 def validate(job):
-    if job not in ({'operation': 'diagnose01'}, {'operation': 'neck02'}, {'operation':'world03'}, {'operation':'candidate04'}):
+    if job not in ({'operation': 'diagnose01'}, {'operation': 'neck02'}, {'operation':'world03'}, {'operation':'candidate04'}, {'operation':'candidate05'}, {'operation':'attention06'}, {'operation':'attention07'}):
         raise ValueError('Fixed189 operation required')
     if SOURCE.is_symlink() or base.digest(SOURCE) != SOURCE_SHA:
         raise ValueError('Pinned188 source changed')
-    record = json.loads((SOURCE.parent / 'result.json').read_text())
+    source=SOURCE
+    if job['operation'] in ('attention06','attention07'):source=base.BASE/'entrance189-candidate05/scene.blend'
+    record = json.loads((source.parent / 'result.json').read_text())
+    if source.is_symlink() or base.digest(source)!=record['native_sha256']:raise ValueError('Candidate changed')
     for row in record['caches']:
-        path = (SOURCE.parent / row['path']).resolve()
+        path = (source.parent / row['path']).resolve()
         if not path.is_relative_to(base.BASE.resolve()) or base.digest(path) != row['sha256']:
             raise ValueError('Bound cache changed')
     out = base.BASE / ('entrance189-'+job['operation'])
     if out.exists() or out.is_symlink():
         raise ValueError('Preserve previous evidence')
-    return out
+    return out,source
 
 
 def diagnose(scene, out):
@@ -82,9 +85,9 @@ def main():
     import bpy
     args=sys.argv[sys.argv.index('--')+1:]
     if len(args)!=1:raise ValueError('One structured job required')
-    job=json.loads(Path(args[0]).read_text());out=validate(job);out.mkdir()
+    job=json.loads(Path(args[0]).read_text());out,source=validate(job);out.mkdir()
     (out/'handler.py').write_bytes(Path(__file__).read_bytes())
-    bpy.ops.wm.open_mainfile(filepath=str(SOURCE),load_ui=False,use_scripts=False)
+    bpy.ops.wm.open_mainfile(filepath=str(source),load_ui=False,use_scripts=False)
     base.check_protected()
     scene=bpy.context.scene
     if job['operation']=='diagnose01':diagnose(scene,out)
@@ -99,8 +102,81 @@ def main():
             scene.frame_set(frame);bpy.context.view_layer.update()
             scene.render.filepath=str(out/('frame-%04d.png'%frame));bpy.ops.render.render(write_still=True)
         (out/'result.json').write_text(json.dumps(result,indent=2)+'\n')
-    elif job['operation']=='candidate04':candidate(scene,out)
+    elif job['operation'] in ('candidate04','candidate05'):candidate(scene,out)
+    elif job['operation'] in ('attention06','attention07'):attention(scene,out,source)
     base.check_protected()
+
+
+def attention(scene,out,source):
+    import bpy
+    import os
+    import entrance189_performance as performance
+    from wardrobe_motion178_controls import render_geometry_paused
+    (out/'performance-handler.py').write_bytes(Path(performance.__file__).read_bytes())
+    body=bpy.data.objects['MF_studio_adult_body']
+    controls={};driver_rows=[]
+    for name in performance.facial_values(217):
+        key=body.data.shape_keys.key_blocks[name]
+        curves=[f for f in body.data.shape_keys.animation_data.drivers if f.data_path==key.path_from_id('value')]
+        if len(curves)!=1 or len(curves[0].driver.variables)!=1:raise ValueError('Unexpected facial driver contract')
+        variable=curves[0].driver.variables[0];target=variable.targets[0]
+        if variable.type!='SINGLE_PROP' or target.id_type!='KEY':raise ValueError('Unexpected face source')
+        controller=target.id
+        if target.data_path!=controller.key_blocks[name].path_from_id('value'):raise ValueError('Unexpected driver path')
+        controls[name]=controller.key_blocks[name]
+        driver_rows.append({'name':name,'controller_id':controller.name,'expression':curves[0].driver.expression,'valid':curves[0].is_valid})
+    # This assembly intentionally drives body blendshapes from the retained
+    # accepted face controller. Animate the source, never its driven output.
+    if body.data.shape_keys.animation_data:body.data.shape_keys.animation_data.action=None
+    for key in controls.values():
+        if key.id_data.animation_data:key.id_data.animation_data.action=None
+    rows=[]
+    with render_geometry_paused():
+        body.hide_viewport=False
+        for f in range(217,361):
+            for name,value in performance.facial_values(f).items():
+                k=controls[name];k.value=value;k.keyframe_insert(data_path='value',frame=f)
+        for f in (217,265,309,312,337,360):
+            scene.frame_set(f);bpy.context.view_layer.update()
+            expected=performance.facial_values(f)
+            actual={n:float(body.data.shape_keys.key_blocks[n].value) for n in expected}
+            if max(abs(actual[n]-v) for n,v in expected.items())>1e-5:
+                (out/'failure.json').write_text(json.dumps({'frame':f,'actual':actual,'expected':expected,'drivers':driver_rows},indent=2)+'\n')
+                raise ValueError('Face driver transfer failed')
+            rows.append({'frame':f,'actual':actual})
+    scene.cycles.device='CPU';scene.cycles.samples=12;scene.render.use_persistent_data=True
+    scene.render.resolution_x=540;scene.render.resolution_y=960;scene.render.resolution_percentage=100
+    # Hold the revealing camera, not the body, to inspect blink and effort.
+    scene.frame_set(360);bpy.context.view_layer.update();camera=scene.camera.matrix_world.copy()
+    camera_action=scene.camera.animation_data.action
+    camera_slot=scene.camera.animation_data.action_slot
+    lens_action=scene.camera.data.animation_data.action if scene.camera.data.animation_data else None
+    lens_slot=scene.camera.data.animation_data.action_slot if scene.camera.data.animation_data else None
+    scene.camera.animation_data_clear();scene.camera.matrix_world=camera
+    scene.camera.data.animation_data_clear()
+    for f in (360,312,265):
+        scene.frame_set(f);bpy.context.view_layer.update()
+        scene.render.filepath=str(out/('close-%04d.png'%f));bpy.ops.render.render(write_still=True)
+    # Restore the exact existing actions/slots, without appending scene data.
+    if not camera_action:raise ValueError('Source camera action missing')
+    scene.camera.animation_data_create();scene.camera.animation_data.action=camera_action
+    if camera_slot:scene.camera.animation_data.action_slot=camera_slot
+    if lens_action:
+        scene.camera.data.animation_data_create();scene.camera.data.animation_data.action=lens_action
+        if lens_slot:scene.camera.data.animation_data.action_slot=lens_slot
+    scene.frame_set(217);bpy.context.preferences.filepaths.save_version=0
+    destination=out/'scene.blend';bpy.ops.wm.save_as_mainfile(filepath=str(destination),relative_remap=True,compress=True)
+    result={'source_sha256':base.digest(source),'face_transfer':rows,'visual_gate':'NOT_RUN','caches':[]}
+    for ob in scene.objects:
+        for mod in ob.modifiers:
+            if mod.type=='MESH_CACHE':
+                p=Path(bpy.path.abspath(mod.filepath)).resolve()
+                if not p.is_relative_to(base.BASE.resolve()):raise ValueError('Cache escaped asset root')
+                rel=os.path.relpath(p,out);mod.filepath='//'+rel
+                result['caches'].append({'object':ob.name,'path':rel,'sha256':base.digest(p)})
+    bpy.ops.wm.save_as_mainfile(filepath=str(destination),relative_remap=True,compress=True)
+    result['native_sha256']=base.digest(destination)
+    (out/'result.json').write_text(json.dumps(result,indent=2)+'\n')
 
 
 def candidate(scene,out):

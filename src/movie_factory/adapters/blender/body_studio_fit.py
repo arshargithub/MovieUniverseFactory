@@ -641,12 +641,15 @@ def unify_surface(body,bust):
     for v in bust.data.vertices:tree.insert(bust.matrix_world@v.co,v.index)
     tree.balance()
     mapping=[tree.find(p)[1] for p in vertices[:head_count]]
-    body.shape_key_add(name='Basis')
+    body.shape_key_add(name='Basis',from_mix=False)
     keys=bust.data.shape_keys.key_blocks;basis=keys[0]
     matrix=bust.matrix_world.to_3x3()
     for key in list(keys)[1:]:
-        target=body.shape_key_add(name=key.name);target.slider_min=-1.;target.slider_max=1.
-        for i,j in enumerate(mapping):target.data[i].co+=matrix@(key.data[j].co-basis.data[j].co)
+        # Never inherit the current driven mix when constructing another key.
+        # Every expression is an independent delta from the frozen joined base.
+        target=body.shape_key_add(name=key.name,from_mix=False);target.slider_min=-1.;target.slider_max=1.
+        for i,j in enumerate(mapping):
+            target.data[i].co=body.data.shape_keys.key_blocks[0].data[i].co+matrix@(key.data[j].co-basis.data[j].co)
         driver=target.driver_add('value').driver;driver.type='SCRIPTED'
         variable=driver.variables.new();variable.name='source';variable.type='SINGLE_PROP'
         variable.targets[0].id_type='KEY';variable.targets[0].id=bust.data.shape_keys

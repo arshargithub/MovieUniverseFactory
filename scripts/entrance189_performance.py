@@ -10,13 +10,13 @@ def smooth(x):
 
 def facial_values(frame):
     t=(frame-217)/24
-    blink=max(0.,1-abs(t-3.95)/.115)**1.4
+    blink=max(0.,1-abs(t-95/24)/.115)**1.4
     effort=.5+.5*math.sin(t*2.1+.6)
     return {'eyeBlinkLeft':blink,'eyeBlinkRight':blink,
-        'eyeSquintLeft':.10+.035*effort,'eyeSquintRight':.10+.035*effort,
-        'browDownLeft':.055,'browDownRight':.045,
-        'mouthPressLeft':.07,'mouthPressRight':.07,
-        'jawOpen':.025+.018*effort,'cheekSquintLeft':.025,'cheekSquintRight':.025}
+        'eyeSquintLeft':.22+.06*effort,'eyeSquintRight':.22+.06*effort,
+        'browDownLeft':.15,'browDownRight':.13,'browInnerUp':.045,
+        'mouthPressLeft':.10,'mouthPressRight':.10,
+        'jawOpen':.055+.04*effort,'cheekSquintLeft':.065,'cheekSquintRight':.065}
 
 
 def neck_weights(body):

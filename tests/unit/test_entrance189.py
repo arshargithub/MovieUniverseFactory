@@ -30,10 +30,25 @@ def test_scoped_face_controls():
     import math
     values=[performance.facial_values(f) for f in range(217,361)]
     assert all(math.isfinite(v) and 0<=v<=1 for row in values for v in row.values())
-    assert max(row['jawOpen'] for row in values)<.05
-    assert max(row['browDownLeft'] for row in values)<.1
+    assert max(row['jawOpen'] for row in values)<.10
+    assert max(row['browDownLeft'] for row in values)<.2
+    assert values[312-217]['eyeBlinkLeft']==1.
 
 def test_wake_widens():
     module()
     import entrance189_world as world
     assert world.plume_width(0)<world.plume_width(50)<world.plume_width(200)
+
+def test_facial_shapes_are_independent_and_do_not_accumulate():
+    module()
+    import entrance189_face as face
+    import numpy as np
+    basis=np.ones((10,3),dtype=np.float32)
+    original=basis.copy()
+    for amount in (.01,.02,.04,.08):
+        delta=np.full_like(basis,amount)
+        result=face.independent_shape(basis,delta)
+        np.testing.assert_allclose(result-basis,delta,atol=1e-7)
+        np.testing.assert_array_equal(basis,original)
+    for delta in (np.full_like(basis,float('nan')),np.ones_like(basis)):
+        with pytest.raises(ValueError):face.independent_shape(basis,delta)

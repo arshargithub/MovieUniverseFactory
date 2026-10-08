@@ -25,12 +25,20 @@ def write_mdd(path,nf,nv,frames):
 
 
 def attach_cache(ob,path,start=217):
+    import bpy
+    previous=[i for i,m in enumerate(ob.modifiers) if m.type=='MESH_CACHE']
+    index=previous[0] if previous else 0
     for m in list(ob.modifiers):
         if m.type=='MESH_CACHE':ob.modifiers.remove(m)
     m=ob.modifiers.new('189 source-derived groom trajectory','MESH_CACHE')
     m.cache_format='MDD';m.filepath=str(path);m.deform_mode='OVERWRITE'
     m.forward_axis='POS_Y';m.up_axis='POS_Z';m.frame_start=start;m.frame_scale=1.
     m.play_mode='SCENE';m.time_mode='FRAME'
+    # Cache topology belongs before the same downstream subdivision/solidify
+    # stages as its source; appending it can silently invalidate all frames.
+    bpy.context.view_layer.objects.active=ob
+    while list(ob.modifiers).index(m)>index:
+        bpy.ops.object.modifier_move_up(modifier=m.name)
     return m
 
 
