@@ -16,21 +16,21 @@ def digest(path):
 def main():
     import argparse
     parser=argparse.ArgumentParser();choice=parser.add_mutually_exclusive_group()
-    choice.add_argument('--final',action='store_true');choice.add_argument('--selected',action='store_true');args=parser.parse_args()
-    selected=BASE/('entrance188-seal12' if args.selected else 'entrance188-finish09' if args.final else 'entrance188-transport06')
-    fresh=BASE/('entrance188-reopen13' if args.selected else 'entrance188-reopen10' if args.final else 'entrance188-reopen07')
+    choice.add_argument('--final',action='store_true');choice.add_argument('--selected',action='store_true');choice.add_argument('--delivery',action='store_true');args=parser.parse_args()
+    selected=BASE/('entrance188-seal19' if args.delivery else 'entrance188-seal12' if args.selected else 'entrance188-finish09' if args.final else 'entrance188-transport06')
+    fresh=BASE/('entrance188-reopen20' if args.delivery else 'entrance188-reopen13' if args.selected else 'entrance188-reopen10' if args.final else 'entrance188-reopen07')
     source=json.loads((selected/'result.json').read_text())
     reopened=json.loads((fresh/'result.json').read_text())
     audit=json.loads((BASE/'entrance188-audit07/result.json').read_text())
     if digest(selected/'scene.blend')!=source['native_sha256']:raise ValueError('Native changed')
     if source['native_sha256']!=reopened['native_sha256']:raise ValueError('Wrong reopened native')
-    if reopened['frames']!=([217,265,276,309,360] if args.selected else [217,265,309,360]):raise ValueError('Incomplete reopen')
+    if reopened['frames']!=([217,276,309,325,360] if args.delivery else [217,265,276,309,360] if args.selected else [217,265,309,360]):raise ValueError('Incomplete reopen')
     caches=[]
     for row in source['caches']:
         path=(selected/row['path']).resolve()
         if not path.is_relative_to(BASE.resolve()) or digest(path)!=row['sha256']:raise ValueError('Cache changed')
         caches.append({**row,'bytes':path.stat().st_size})
-    if args.final or args.selected:
+    if args.final or args.selected or args.delivery:
         previous=json.loads((BASE/'entrance188-transport06/result.json').read_text())
         if {r['object']:r['sha256'] for r in source['caches']}!={r['object']:r['sha256'] for r in previous['caches']}:
             raise ValueError('World-only edit changed a motion cache')
@@ -54,7 +54,7 @@ def main():
     art=ROOT/'.runtime/art-direction/series01-entrance-art188'
     inputs=[{'path':str(p.relative_to(ROOT)),'sha256':digest(p)} for p in sorted(art.iterdir()) if p.is_file()]
     output=BASE/'entrance188-operating';output.mkdir(exist_ok=True)
-    target=output/('technical-verification-selected.json' if args.selected else 'technical-verification-final.json' if args.final else 'technical-verification.json')
+    target=output/('technical-verification-delivery.json' if args.delivery else 'technical-verification-selected.json' if args.selected else 'technical-verification-final.json' if args.final else 'technical-verification.json')
     if target.exists():raise ValueError('Preserve existing verification')
     result={'native_sha256':source['native_sha256'],'caches':caches,'protected_files':protected,
         'reopen_pixel_differences':pixel,'appearance_tolerance':'One 8-bit channel level; not bit-identical',

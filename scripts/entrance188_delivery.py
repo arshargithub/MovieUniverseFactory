@@ -10,11 +10,12 @@ SOURCE=base.BASE/'entrance188-candidate05'
 
 
 def validate(job):
-    if job not in ({'operation':'audit01'},{'operation':'reopen01'},{'operation':'motion01'},{'operation':'transport06'},{'operation':'audit07'},{'operation':'reopen07'},{'operation':'motion07'},{'operation':'dust08'},{'operation':'finish09'},{'operation':'reopen10'},{'operation':'motion10'},{'operation':'coverage11'},{'operation':'seal12'},{'operation':'reopen13'},{'operation':'motion13'}):
+    if job not in ({'operation':'audit01'},{'operation':'reopen01'},{'operation':'motion01'},{'operation':'transport06'},{'operation':'audit07'},{'operation':'reopen07'},{'operation':'motion07'},{'operation':'dust08'},{'operation':'finish09'},{'operation':'reopen10'},{'operation':'motion10'},{'operation':'coverage11'},{'operation':'seal12'},{'operation':'reopen13'},{'operation':'motion13'},{'operation':'floor14'},{'operation':'ground15'},{'operation':'ground16'},{'operation':'ground17'},{'operation':'bank18'},{'operation':'seal19'},{'operation':'reopen20'},{'operation':'motion20'}):
         raise ValueError('Fixed delivery operation required')
     source=base.BASE/'entrance188-transport06' if job['operation'].endswith('07') or job['operation'] in ('dust08','finish09') else SOURCE
     if job['operation'].endswith('10') or job['operation'] in ('coverage11','seal12'):source=base.BASE/'entrance188-finish09'
-    if job['operation'].endswith('13'):source=base.BASE/'entrance188-seal12'
+    if job['operation'].endswith('13') or job['operation'] in ('floor14','ground15','ground16','ground17','bank18','seal19'):source=base.BASE/'entrance188-seal12'
+    if job['operation'].endswith('20'):source=base.BASE/'entrance188-seal19'
     record=json.loads((source/'result.json').read_text())
     path=source/'scene.blend'
     if path.is_symlink() or base.digest(path)!=record['native_sha256']:raise ValueError('Candidate changed')
@@ -63,19 +64,61 @@ def main():
     bpy.ops.wm.open_mainfile(filepath=str(path),load_ui=False,use_scripts=False)
     base.check_protected();scene=bpy.context.scene
     result={'native_sha256':record['native_sha256'],'cache_count':len(record['caches']),'visual_gate':'NOT_RUN'}
-    if job['operation'] in ('transport06','finish09','seal12'):
+    if job['operation']=='floor14':
+        from mathutils import Vector
+        from wardrobe_motion178_controls import render_geometry_paused
+        with render_geometry_paused():
+            scene.frame_set(325);bpy.context.view_layer.update()
+        rows=[]
+        for ob in scene.objects:
+            if ob.type!='MESH' or ob.hide_render:continue
+            if ob.name.startswith(('MF188_bank_','MF188_grove_')):continue
+            bounds=[list(ob.matrix_world@Vector(corner)) for corner in ob.bound_box]
+            rows.append({'name':ob.name,'vertices':len(ob.data.vertices),'bounds':bounds,
+                'materials':[m.name if m else None for m in ob.data.materials],
+                'parent':ob.parent.name if ob.parent else None})
+        result['visible_meshes']=rows
+    elif job['operation']=='bank18':
+        import entrance188_ground as ground
+        (out/'ground-handler.py').write_bytes(Path(ground.__file__).read_bytes())
+        result['bank']=ground.repair_bank(scene)
+        scene.cycles.device='CPU';scene.render.use_persistent_data=True
+        scene.render.resolution_x=288;scene.render.resolution_y=512;scene.cycles.samples=8
+        for frame in (325,331,309,217):
+            scene.frame_set(frame);bpy.context.view_layer.update();scene.render.filepath=str(out/('frame-%04d.png'%frame));bpy.ops.render.render(write_still=True)
+    elif job['operation']=='ground17':
+        import entrance188_ground as ground
+        (out/'ground-handler.py').write_bytes(Path(ground.__file__).read_bytes())
+        result['camera_surfaces']=ground.rays(scene)
+    elif job['operation']=='ground16':
+        import entrance188_ground as ground
+        (out/'ground-handler.py').write_bytes(Path(ground.__file__).read_bytes())
+        result['ground_controls']=ground.controls(scene,out)
+    elif job['operation']=='ground15':
+        import entrance188_ground as ground
+        (out/'ground-handler.py').write_bytes(Path(ground.__file__).read_bytes())
+        result['ground']=ground.refine(scene)
+        scene.cycles.device='CPU';scene.render.use_persistent_data=True
+        scene.render.resolution_x=288;scene.render.resolution_y=512;scene.cycles.samples=8
+        for frame in (325,331):
+            scene.frame_set(frame);bpy.context.view_layer.update();scene.render.filepath=str(out/('frame-%04d.png'%frame));bpy.ops.render.render(write_still=True)
+    elif job['operation'] in ('transport06','finish09','seal12','seal19'):
         import os
         if job['operation']=='transport06':
             import entrance188_groom as groom
             (out/'groom-handler.py').write_bytes(Path(groom.__file__).read_bytes())
             result['groom']=groom.fixed_transport(scene,out,bpy.data.objects['MF185_gait_horse'],base.BASE/'entrance-astra-mane-cache01/samples.npz')
         elif job['operation']=='finish09':result['dust']=light_dust(scene)
+        elif job['operation']=='seal19':
+            import entrance188_ground as ground
+            (out/'ground-handler.py').write_bytes(Path(ground.__file__).read_bytes())
+            result['bank']=ground.repair_bank(scene)
         else:
             import entrance188_backdrop as backdrop
             (out/'backdrop-handler.py').write_bytes(Path(backdrop.__file__).read_bytes())
             result['coverage']=backdrop.orient(scene)
         scene.cycles.device='CPU';scene.render.use_persistent_data=True
-        for frame in ((217,265,276,309,360) if job['operation']=='seal12' else (217,265,309,360)):
+        for frame in ((217,276,309,325,360) if job['operation']=='seal19' else (217,265,276,309,360) if job['operation']=='seal12' else (217,265,309,360)):
             scene.frame_set(frame);bpy.context.view_layer.update();scene.render.filepath=str(out/('frame-%04d.png'%frame));bpy.ops.render.render(write_still=True)
             print('188 selected native',job['operation'],frame,flush=True)
         scene.frame_set(217);bpy.context.preferences.filepaths.save_version=0
@@ -109,7 +152,7 @@ def main():
     else:
         scene.cycles.device='CPU';scene.render.use_persistent_data=True
         overview=list(range(217,361,6))+[360]
-        frames=(217,265,276,309,360) if job['operation']=='reopen13' else (217,265,309,360) if job['operation'].startswith('reopen') else overview+[f for f in range(217,361) if f not in overview]
+        frames=(217,276,309,325,360) if job['operation']=='reopen20' else (217,265,276,309,360) if job['operation']=='reopen13' else (217,265,309,360) if job['operation'].startswith('reopen') else overview+[f for f in range(217,361) if f not in overview]
         if job['operation'].startswith('motion'):
             scene.render.resolution_x=288;scene.render.resolution_y=512;scene.cycles.samples=8
         for frame in frames:

@@ -11,14 +11,14 @@ GALLERY=Path('/Users/adisharma/.codex/visualizations/2026/09/09/01a0878c-e7a2-75
 
 
 def main():
-    review=json.loads((BASE/'entrance188-operating/visual-review-selected.json').read_text())
+    review=json.loads((BASE/'entrance188-operating/visual-review-delivery.json').read_text())
     if review['scoped_internal_visual_gate']!='PASS':raise ValueError('No visual exit')
-    fresh=BASE/'entrance188-reopen13'
+    fresh=BASE/'entrance188-reopen20'
     record=json.loads((fresh/'result.json').read_text())
-    if record['frames']!=[217,265,276,309,360] or not record['protected_sources_unchanged']:
+    if record['frames']!=[217,276,309,325,360] or not record['protected_sources_unchanged']:
         raise ValueError('Incomplete reopen')
     if GALLERY.exists():raise ValueError('Preserve previous presentation')
-    views=[(360,'Close reveal'),(309,'Lateral gallop'),(265,'Descending camera'),(217,'High opening')]
+    views=[(360,'Close reveal'),(309,'Lateral gallop'),(276,'Descending camera'),(217,'High opening')]
     rows=[]
     for frame,label in views:
         with Image.open(fresh/('frame-%04d.png'%frame)) as im:

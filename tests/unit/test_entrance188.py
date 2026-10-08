@@ -73,3 +73,33 @@ def test_delivery_rejects_payload(job):
     spec=importlib.util.spec_from_file_location('delivery188',PATH.parent/'entrance188_delivery.py')
     module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
     with pytest.raises(ValueError):module.validate(job)
+
+
+def test_refined_ground_keeps_contact_corridor_and_analytic_placement():
+    import sys
+    sys.path.insert(0,str(PATH.parent))
+    from entrance188_ground import geometry
+    from entrance188_world import trail_height
+    points,faces=geometry()
+    floor=trail_height(0,0)
+    assert np.allclose(points[abs(points[:,0])<=12,2],floor)
+    assert len(points)>100000 and np.isfinite(points).all()
+    for i in range(0,len(points),631):
+        x,y,z=points[i]
+        assert z==pytest.approx(trail_height(float(x),float(y)),abs=3e-6)
+    assert max(max(f) for f in faces)<len(points)
+
+
+def test_low_bank_preserves_contact_far_bank_and_coverage_floor():
+    import sys
+    sys.path.insert(0,str(PATH.parent))
+    from entrance188_ground import bank_height
+    from entrance188_world import trail_height
+    floor=trail_height(0,0)
+    for y in range(-1500,1201,11):
+        for x in range(-120,121,4):
+            z=bank_height(x,y)
+            assert z>=floor
+            if abs(x)<=12:assert z==floor
+            if x>=0:assert z==trail_height(x,y)
+            else:assert z<=floor+2.4
