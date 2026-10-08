@@ -52,3 +52,9 @@ def test_facial_shapes_are_independent_and_do_not_accumulate():
         np.testing.assert_array_equal(basis,original)
     for delta in (np.full_like(basis,float('nan')),np.ones_like(basis)):
         with pytest.raises(ValueError):face.independent_shape(basis,delta)
+
+@pytest.mark.parametrize('job',[{}, {'operation':'decision-motion20','path':'other'}, {'operation':'exec'}])
+def test_decision_camera_rejects_payload_expansion(job):
+    module()
+    import entrance189_decision as decision
+    with pytest.raises(ValueError,match='Fixed'):decision.validate(job)
