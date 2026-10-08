@@ -24,7 +24,7 @@ def compare(a, b):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('operation', choices=['reopen', 'delivery'])
+    parser.add_argument('operation', choices=['reopen', 'render', 'delivery'])
     args = parser.parse_args()
     folder = BASE/'entrance190-perspective29'
     result = json.loads((folder/'result.json').read_text())
@@ -54,6 +54,29 @@ def main():
         receipt['frames'] = rows
         receipt['status'] = 'PASS' if all(r['status'] == 'PASS' for r in rows) else 'FAIL'
         target = reopened/'pixel-comparison.json'
+    elif args.operation == 'render':
+        controlled = BASE/'entrance190-render32'
+        r = json.loads((controlled/'result.json').read_text())
+        if r['source_sha256'] != sha:
+            raise ValueError('Render control source differs')
+        rows = []
+        for f in (362,457,552):
+            original = BASE/'entrance190-motion30' if f == 362 else folder
+            a,b = original/f'frame-{f:04d}.png', controlled/f'frame-{f:04d}.png'
+            rows.append({'frame':f,'original_sha256':digest(a),'control_sha256':digest(b),
+                         **compare(np.asarray(Image.open(a)),np.asarray(Image.open(b)))})
+        receipt['frames'] = rows
+        receipt['status'] = 'PASS' if all(r['status']=='PASS' for r in rows) else 'FAIL'
+        retained = []
+        for p in sorted((BASE/'entrance190-motion30').glob('frame-*.png')):
+            with Image.open(p) as im: im.verify()
+            retained.append({'name':p.name,'sha256':digest(p)})
+        if [p['name'] for p in retained] != [f'frame-{f:04d}.png' for f in range(361,361+len(retained))]:
+            raise ValueError('Stopped render is not a complete contiguous prefix')
+        receipt['retained_original_frames'] = retained
+        receipt['retained_original_source_sha256'] = sha
+        receipt['retained_original_handler_sha256'] = digest(BASE/'entrance190-motion30/handler.py')
+        target = controlled/'pixel-comparison.json'
     else:
         target = BASE/'entrance190-operating-progress/delivery-integrity.json'
     if target.exists():

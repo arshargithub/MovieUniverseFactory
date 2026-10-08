@@ -20,11 +20,13 @@ def admitted(folder,filename):
 def main():
     old=ART/'series01-trailer-edit189';out=ART/'series01-trailer-edit190'
     prior=json.loads((old/'manifest.json').read_text())
-    action=admitted(BASE/'entrance190-motion30','motion-proof.mp4')
+    action=admitted(BASE/'entrance190-motion33','motion-proof.mp4')
     geographic=admitted(BASE/'entrance190-geography23','geography-proof.mp4')
     blinkfolder=BASE/'entrance190-blink-review04';blink=blinkfolder/'decision-proof.mp4'
     br=json.loads((blinkfolder/'media.json').read_text());bg=json.loads((blinkfolder/'internal-review.json').read_text())
     if bg.get('status')!='PROCEED_TO_EDIT' or bg.get('source_sha256')!=br['source_sha256'] or digest(blink)!=br['video_sha256']:raise ValueError('Blink review missing')
+    for row in br['frames']:
+        if digest(blinkfolder/row['name'])!=row['sha256']:raise ValueError('Reviewed blink frame changed')
     if out.exists():raise ValueError('Preserve previous edit')
     out.mkdir();(out/'handler.py').write_bytes(Path(__file__).read_bytes());clips={}
     removed={'route-reveal','route-decision','gather-and-turn','uphill-drive'}
@@ -38,6 +40,7 @@ def main():
         filters=['scale=648:1152:force_original_aspect_ratio=decrease','pad=720:1280:(ow-iw)/2:(oh-ih)/2:color=0x202735','setsar=1','fps=24']
         for text,y,size in ((title,24,24),(note,1218,19)):
             if any(c in text for c in "':\\"):raise ValueError('Unsafe production caption')
+            size=min(size,int(648/max(1,len(text))/.57))
             filters.append(f"drawtext=fontfile={FONT}:text='{text}':fontsize={size}:fontcolor=white:x=(w-tw)/2:y={y}")
         run(['-i',str(source),'-vf',','.join(filters),'-frames:v',str(frames),'-an','-c:v','libx264','-crf','20','-pix_fmt','yuv420p','-movflags','+faststart',str(target)])
         clips[name]={'name':name,'frames':frames,'fps':24,'status':'NATIVE_PREVIEW','source':str(source.relative_to(ROOT)),'source_sha256':digest(source),'path':target.name,'sha256':digest(target),'caption':title,'note':note}

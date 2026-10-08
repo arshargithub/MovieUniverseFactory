@@ -8,7 +8,7 @@ from entrance189_edit import digest
 
 def main():
     p=argparse.ArgumentParser();p.add_argument('coverage',choices=['motion','geography']);args=p.parse_args()
-    first,last,folder=(361,553,'entrance190-motion30') if args.coverage=='motion' else (0,48,'entrance190-geography23')
+    first,last,folder=(361,553,'entrance190-motion33') if args.coverage=='motion' else (0,48,'entrance190-geography23')
     out=BASE/folder;paths=[out/('frame-%04d.png'%i) for i in range(first,last)]
     for i in range(0,len(paths),12):
         group=paths[i:i+12]

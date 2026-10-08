@@ -28,7 +28,7 @@ def main():
     from entrance190_contacts import world_transform
     from entrance189_groom import read_mdd
     job=json.loads(Path(sys.argv[sys.argv.index('--')+1]).read_text())
-    if job not in ({'operation':'perspective29'},{'operation':'motion30'},{'operation':'reopen31'}):raise ValueError('Fixed perspective operation required')
+    if job not in ({'operation':'perspective29'},{'operation':'motion30'},{'operation':'reopen31'},{'operation':'motion33'}):raise ValueError('Fixed perspective operation required')
     stage='entrance190-ground21' if job['operation']=='perspective29' else 'entrance190-perspective29'
     source=base.BASE/stage/'scene.blend';out=base.BASE/('entrance190-'+job['operation']);r=json.loads((source.parent/'result.json').read_text())
     if out.exists() or base.digest(source)!=r['native_sha256']:raise ValueError('Unbound source')
@@ -46,7 +46,18 @@ def main():
         m=mods[0][1];p=Path(bpy.path.abspath(m.filepath)).resolve()
         if base.digest(p)!=row['sha256'] or not p.is_relative_to(base.BASE.resolve()) or m.frame_start!=361:raise ValueError('Cache changed')
         checks.append({'object':ob.name,'path':str(p.relative_to(base.BASE)),'sha256':row['sha256']})
-    cam=scene.camera;camera_rows=[]
+    cam=scene.camera;camera_rows=[];retained={};render_control=None
+    if job['operation']=='motion33':
+        render_control=json.loads((base.BASE/'entrance190-render32/pixel-comparison.json').read_text())
+        if render_control.get('status')!='PASS' or render_control.get('native_sha256')!=r['native_sha256']:raise ValueError('Render-only evaluation needs pixel parity')
+        old=base.BASE/'entrance190-motion30'
+        if base.digest(old/'handler.py')!=render_control['retained_original_handler_sha256']:raise ValueError('Original render handler changed')
+        retained={int(row['name'][6:10]):row for row in render_control['retained_original_frames']}
+        for row in retained.values():
+            if base.digest(old/row['name'])!=row['sha256']:raise ValueError('Retained render changed')
+        for ob in scene.objects:
+            for m in ob.modifiers:
+                if m.type in ('SMOOTH','CORRECTIVE_SMOOTH','SUBSURF') and m.show_viewport:m.show_viewport=False
     if job['operation']=='perspective29':
         cam.animation_data_clear();cam.data.animation_data_clear();cam.data.type='PERSP';cam.data.sensor_fit='VERTICAL';cam.data.sensor_height=36;cam.data.lens=32;cam.data.clip_start=.1;cam.data.clip_end=12000
         # Conservative complete actor bounds; project actual cached horse and
@@ -74,18 +85,25 @@ def main():
             camera_rows.append({'frame':361+i,'location':loc.tolist(),'target':target.tolist(),'fit_factor':factor,'actor_uv':project(bounds[i],loc,target).tolist()})
         (out/'camera.json').write_text(json.dumps(camera_rows,indent=2)+'\n')
     scene.cycles.device='CPU';scene.cycles.samples=8;scene.render.use_persistent_data=True;scene.render.resolution_x=288;scene.render.resolution_y=512;scene.render.resolution_percentage=100
-    frames=range(361,553) if job['operation']=='motion30' else (361,385,409,433,457,481,505,529,552) if job['operation']=='perspective29' else (361,457,552)
+    frames=range(361,553) if job['operation'] in ('motion30','motion33') else (361,385,409,433,457,481,505,529,552) if job['operation']=='perspective29' else (361,457,552)
     rows=[]
     for f in frames:
-        scene.frame_set(f);bpy.context.view_layer.update();scene.render.filepath=str(out/('frame-%04d.png'%f))
+        import time
+        started=time.monotonic();scene.frame_set(f)
+        if job['operation']!='motion33':bpy.context.view_layer.update()
+        scene.render.filepath=str(out/('frame-%04d.png'%f))
         reused=False
-        if job['operation']=='motion30' and f in (361,385,409,433,457,481,505,529,552):
+        reused_original=False
+        if f in retained:
+            import shutil
+            shutil.copy2(base.BASE/'entrance190-motion30'/retained[f]['name'],scene.render.filepath);reused_original=True
+        elif job['operation'] in ('motion30','motion33') and f in (361,385,409,433,457,481,505,529,552):
             import shutil
             parity=json.loads((base.BASE/'entrance190-reopen31/pixel-comparison.json').read_text())
             if parity.get('status')!='PASS' or parity.get('native_sha256')!=r['native_sha256']:raise ValueError('Overview reuse needs actual reopen parity')
             shutil.copy2(source.parent/('frame-%04d.png'%f),scene.render.filepath);reused=True
         else:bpy.ops.render.render(write_still=True)
-        rows.append({'frame':f,'camera':list(cam.matrix_world.translation),'reused_from_overview':reused})
+        rows.append({'frame':f,'camera':list(cam.matrix_world.translation),'reused_from_overview':reused,'reused_from_stopped_original':reused_original,'seconds':time.monotonic()-started})
     native_sha=None
     if job['operation']=='perspective29':
         scene.frame_start=361;scene.frame_end=552;scene.frame_set(361)
