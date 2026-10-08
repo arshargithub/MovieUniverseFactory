@@ -1,6 +1,18 @@
 {
   "events": [
     {
+      "event_id": "series01-entrance190-director-blink-route-feedback",
+      "event_type": "director_review",
+      "experiment_id": "SERIES01-LIKENESS-ASSET",
+      "phase": "blink timing and shared route continuation",
+      "engineering_model": {"reported_name": "Astra", "reasoning_effort": "high", "attribution_basis": "user_reported", "runtime_verified": false},
+      "controlled_model_comparison": false,
+      "outcome": "189_OVERALL_POSITIVE_BLINK_RECHECK_AND_SHARED_ROUTE_CONTINUATION_AUTHORIZED",
+      "observation": "Director likes189 overall, questions the blink's visible/slow quality, and authorizes shared geography plus coordinated gathering, turn and uphill movement. Preserve the selected character/world look and technical evidence; this is not final-resolution release qualification or an instruction to reopen portrait detail. Correct every affected coverage, not only the close shot. New spend, tools and publication remain unauthorized.",
+      "engineering_usage": {"input_tokens": null, "output_tokens": null, "reasoning_tokens": null, "cost_usd": null},
+      "sources": [{"kind": "user_statement_in_current_conversation", "text": "i like it overall ... something's off about the blink ... keep working on the shared route geography and coordinated gathering, turn and uphill movement"}, {"kind": "repository_artifact", "path": "docs/planning/SERIES_01_WARDROBE_TACK_FIT.md"}]
+    },
+    {
       "event_id": "series01-entrance189-correction-and-rough-edit-outcome",
       "event_type": "implementation_outcome",
       "experiment_id": "SERIES01-LIKENESS-ASSET",
