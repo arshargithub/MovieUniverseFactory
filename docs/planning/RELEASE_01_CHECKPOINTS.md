@@ -1,5 +1,14 @@
 # Release 01 — checkpoints
 
+## CP-019 — exchange190, 2026-10-08; native entrance continuation
+
+- Current deliverable: B4/A5/E1, a complete Pashtun entrance in the chosen illustrated world, feeding the trailer and episodes1/2. Director likes189 overall; blink timing/appearance is reopened and native shared-route/gather/turn/climb is authorized. The six-second opening and two-second attention coverage are real native footage; the remaining entrance boards and other-lead/trailer cards are not.
+- Since CP-018: double-wrap moving wardrobe, mounted anatomy, scene/horse look, groom, dust, terrain and restrained performance now have scoped native evidence and Director feedback. The15-second entrance and75-second silent trailer roughs make remaining footage visible. Failed historical methods are retained, not retrospectively promoted.
+- Overall accepted deliverable gates remain **1/25 = 4%**; creative foundation1/5 =20%, other streams0/4 completed each. This deliberately coarse readiness measure is not time spent, asset completion or a claim that96percent of the effort remains. There is not enough evidence for a defensible percentage of this new maneuver. Required performance, whole-trailer storytelling, other leads, voice/music/sound, rights and delivery are still open.
+- Immediate dependency: fix the short blink, establish same-world obstruction/branch, prove contact-aware full maneuver, integrate rider/wardrobe/groom/effects and replace the boards. Preserve accepted character/look instead of reopening cosmetic work. Routine technical diagnoses stay internal; only a review-ready integrated result or actual Director-owned decision justifies handover.
+- Broader remainder: production-ready trailer/script/boards; episode1/2 causal outlines/scripts; complete ensemble/world rules; channel delivery/rights/audience measurement; applicable historical architecture decisions, portable production state and Factory handover; sound and end-to-end release proof. No new paid call, tool, specialist, publication or unrelated experiment is authorized.
+- Durability: design/implementation commits remain separate. Scheduled text-only checkpoint push is pending outgoing ancestry/intermediate-blob scope and credential checks; native-media backup is separate and not claimed. Next checkpoint200. Current work remains active, not closed merely by recording this checkpoint.
+
 ## CP-018 — due180, recorded181, 2026-10-05; escalation stopped without costume success
 
 - Counter correction: the model-recommendation exchange180 was not persisted.181 is the Director's explicit Astra High escalation authorization; tool calls and internal iterations do not increment this counter. Next checkpoint190.
