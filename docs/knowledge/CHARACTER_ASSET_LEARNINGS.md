@@ -2,6 +2,16 @@
 
 ## Current acceptance — exchange152
 
+### Exchange193 — measure performance, isolate style, preserve instancing
+
+**Measure before blaming the wrong joint.** The full opening inspection shows elbows already flexing approximately116–146degrees while pelvis and spine pitch remain constant. That falsifies a literal “no arm movement” diagnosis. Coordinate the body response around preserved hand/foot contacts, then review the complete shot; a bigger angle range alone is not natural acting. The new root-driven tail chain retains attachment and controls length, but that numerical evidence cannot substitute for motion review.
+
+**A stylistic treatment needs material-specific restraint.** The first render mostly darkened/flattened PBR and was rejected internally. Stronger grouped shadow planes distinguish illustration, but applying the same sharp bands to skin makes neck anatomy look patched and harsh.13 retains strong non-skin planes and softens skin, preserving existing authored texture. These are scoped still-control findings; complete motion and Director look selection remain pending. Do not sell a diffuse/emission mix as a finished studio look or stylization as automatically cheaper.
+
+**Protect shared data deliberately.** Editing visible materials in place also changed hidden accepted controllers in the derivative; the protection check correctly failed. Copying every shared mesh to isolate materials then expanded a511MB scene to5.2GB. Per-object material overrides avoided file growth but the first render failed with process return-9; resource exhaustion is plausible, not proven. Assigning copied materials once per unprotected shared datablock preserves instancing and completed matching controls in ordinary render times. Preserve these failures; do not infer a controlled causal benchmark from different runs. Keep protected-data ownership, material ownership and render-instance cost as separate interfaces.
+
+**Resolve cache paths from the current native location.** Writing a destination-relative path before Save As can make Blender rebase it a second time.193-motion02 saved missing references; bind03 restores paths from the verified manifest, saves with absolute paths and only then makes paths relative. All48 actual reopened raw-cache samples match exactly. Source hashes alone would not have caught the unapplied-cache failure. The small skeletal-space garment corrective retains original simulation motion; it is not a new cloth solve or qualification for arbitrary action.
+
 ### Exchange191 — contact stability and static detail are not lively performance
 
 Director likes190 generally but still sees rider stiffness and a floating tail. Source behavior explains a validation gap: fixed-length reach/contact checks and small head adjustments can pass while the rider does not visibly absorb the gait through coordinated joints. Increasing a tail's cross-section is not equivalent to adding convincing flexible motion;190 transports the selected initial shape with restrained authored lag. Internal review must distinguish attachment, joint reach and silhouette fullness from visible weight, propagation and effort. Preserve technical passes but reopen the affected performance claims. Compare at playback speed and in phase-labelled sequences; do not solve this by uncorrelated noise or excessive head bounce.
