@@ -103,3 +103,17 @@ def test_low_bank_preserves_contact_far_bank_and_coverage_floor():
             if abs(x)<=12:assert z==floor
             if x>=0:assert z==trail_height(x,y)
             else:assert z<=floor+2.4
+
+
+def test_reopen_preserves_strict_failure_for_isolated_numerical_difference():
+    import sys
+    sys.path.insert(0,str(PATH.parent))
+    from entrance188_verify import pixel_metrics
+    a=np.zeros((200,200,4),dtype=np.uint8);b=a.copy();b[0,0,0]=2
+    row=pixel_metrics(a,b)
+    assert row['strict_one_level_gate']=='FAIL'
+    assert row['channels_above_one_level']==1 and row['isolated_numerical_exception']
+    b[0,1,0]=2
+    with pytest.raises(ValueError):pixel_metrics(a,b)
+    b[:]=0;b[0,0,0]=3
+    with pytest.raises(ValueError):pixel_metrics(a,b)
