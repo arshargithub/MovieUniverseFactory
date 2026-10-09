@@ -32,5 +32,31 @@ def test_render_clock_and_closed_schema():
     assert OPS['motion07']==tuple(range(217,361))
     assert OPS['motion18']==tuple(range(217,361))
     assert {343,350}.issubset(OPS['verify19'])
+    assert OPS['repeat20']==(360,)
     assert OPS['fixed05']==OPS['before06']
     with pytest.raises(ValueError):validate({'operation':'controls04','source':'bad'})
+
+def test_pixel_exception_is_exact_and_stays_a_strict_failure(tmp_path,monkeypatch):
+    import json,numpy as np
+    from PIL import Image
+    import entrance200_media as media
+    monkeypatch.setattr(media,'BASE',tmp_path)
+    full=tmp_path/'full';verify=tmp_path/'verify';repeat=tmp_path/'entrance200-repeat20'
+    for p in (full,verify,repeat):p.mkdir()
+    a=np.zeros((768,432,4),dtype=np.uint8);a[:,:,3]=255
+    Image.fromarray(a).save(full/'frame-0360.png')
+    a[116,97,:2]=2
+    for p in (verify,repeat):Image.fromarray(a).save(p/'frame-0360.png')
+    (repeat/'result.json').write_text(json.dumps({'source_sha256':'source'}))
+    (repeat/'structural-parity.json').write_text(json.dumps({'status':'PASS'}))
+    record={'status':'SCOPED_BACKGROUND_ROUNDING_EXCEPTION','source_sha256':'source',
+            'full_frame_sha256':media.sha(full/'frame-0360.png'),
+            'verify_frame_sha256':media.sha(verify/'frame-0360.png'),
+            'repeat_sha256':media.sha(repeat/'frame-0360.png')}
+    (verify/'pixel-review.json').write_text(json.dumps(record))
+    assert media.reviewed_final_parity(full,verify,'source')['status'].startswith('STRICT_FAIL')
+    a[117,97,:2]=2
+    for p in (verify,repeat):Image.fromarray(a).save(p/'frame-0360.png')
+    record.update(verify_frame_sha256=media.sha(verify/'frame-0360.png'),repeat_sha256=media.sha(repeat/'frame-0360.png'))
+    (verify/'pixel-review.json').write_text(json.dumps(record))
+    with pytest.raises(ValueError,match='specifically inspected'):media.reviewed_final_parity(full,verify,'source')

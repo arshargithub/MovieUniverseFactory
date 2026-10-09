@@ -8,12 +8,12 @@ from entrance198_terrain import fingerprint
 OPS={'controls04':(217,265,295,325,349,360),'fixed05':tuple(range(337,361)),
      'before06':tuple(range(337,361)),'motion07':tuple(range(217,361)),'verify08':(223,295,360),
      'diagnostic09':(217,265,295,325,349,360),'controls11':(217,265,295,325,349,360),
-     'hair14':(235,343,350,349,360),'motion18':tuple(range(217,361)), 'verify19':(223,295,343,350,360)}
+     'hair14':(235,343,350,349,360),'motion18':tuple(range(217,361)), 'verify19':(223,295,343,350,360),'repeat20':(360,)}
 
 def validate(job):
     if set(job)!={'operation'} or job['operation'] not in OPS:raise ValueError('Fixed render only')
     op=job['operation'];stage='entrance198-build02' if op=='before06' else ('entrance200-candidate03' if op in ('controls04','diagnostic09') else 'entrance200-candidate10')
-    if op in ('motion18','verify19'):stage='entrance200-seal17'
+    if op in ('motion18','verify19','repeat20'):stage='entrance200-seal17'
     source=base.BASE/stage/'scene.blend';out=base.BASE/('entrance200-'+op);r=json.loads((source.parent/'result.json').read_text())
     if out.exists() or base.digest(source)!=r['native_sha256']:raise ValueError('Source or output mismatch')
     for row in r['caches']:
@@ -89,12 +89,12 @@ def main():
                 errors.append(float(abs(actual-expected[f-217]).max()))
         (out/'pose-parity.json').write_text(json.dumps({'status':'PASS' if max(errors)<2e-5 else 'FAIL','max_error':max(errors),'frames':[217,223,265,295,325,349,360]},indent=2)+'\n')
         if max(errors)>=2e-5:raise ValueError('Reopened pose differs')
-    else:
+    elif op!='repeat20':
         for o in scene.objects:
             for m in o.modifiers:
                 if m.type in ('SMOOTH','CORRECTIVE_SMOOTH','SUBSURF'):m.show_viewport=False
     scene.render.resolution_x=432;scene.render.resolution_y=768;scene.render.resolution_percentage=100
-    scene.cycles.device='CPU';scene.cycles.samples=12;scene.render.use_persistent_data=op not in ('hair14','motion18','verify19')
+    scene.cycles.device='CPU';scene.cycles.samples=12;scene.render.use_persistent_data=op not in ('hair14','motion18','verify19','repeat20')
     if op in ('fixed05','before06'):
         scene.frame_set(360);matrix=scene.camera.matrix_world.copy();scene.camera.animation_data_clear();scene.camera.matrix_world=matrix
         scene.render.resolution_x=288;scene.render.resolution_y=512;scene.cycles.samples=8
