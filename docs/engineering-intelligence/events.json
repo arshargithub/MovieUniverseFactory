@@ -1484,6 +1484,27 @@
     "engineering_cost_usd": null,
     "evidence": ["docs/planning/SERIES_01_WARDROBE_TACK_FIT.md", ".runtime/art-direction/series01-facebuilder-trial-01/entrance188-operating/visual-review-delivery.json", ".runtime/art-direction/series01-facebuilder-trial-01/entrance188-operating/technical-verification-delivery.json", ".runtime/art-direction/series01-facebuilder-trial-01/entrance188-operating/delivery-instructions.json"]
   }
+  , {
+    "event_id": "series01-exchange193-matched-motion-style-proof",
+    "event_type": "engineering_review_outcome",
+    "recorded_date": "2026-10-08",
+    "experiment_id": "SERIES01-LIKENESS-ASSET",
+    "reported_model": "Astra",
+    "reported_reasoning_effort": "high",
+    "setting_attribution": "user_reported_continuation_of_exchange188",
+    "runtime_verified": false,
+    "controlled_model_comparison": false,
+    "outcome": "PAIRED_SIX_SECOND_PREVIEW_READY_DIRECTOR_STYLE_AND_PLAYBACK_RESPONSE_PENDING",
+    "observation": "Measured original elbow movement despite fixed pelvis/spine pitch; new coordinated gait absorption preserves original hand/foot transforms within5e-6 native units. Root-driven length-constrained tail retains attachment. Small corrective transport of prior cloth simulation is shot-local, not a new/general cloth solve. Current and illustrated full144-frame sequences share an exact action fingerprint; all288 native frames reviewed chronologically plus selected full-size controls. Both unoptimized native close reopens agree within1/255;96 actual raw-cache checks total are exact;37 focused tests pass and all three encoded six-second videos fully decode. Recommend harder-edged illustrated B as a Director aesthetic choice, not objective quality or final studio readiness. Preserve failed shared-material edit,5.2GB mesh duplication, object-override return-9, harsh-skin style, interrupted slow B and sandbox startup crash. One-variable emission-sampling control preserves appearance; full B frame-render time remains1.40times A. No normal-speed human perceptual acceptance, final-resolution qualification, broader action qualification or release-gate advancement is inferred.",
+    "source_commits": ["ac71858", "f5cb487"],
+    "engineering_subscription_usage": null,
+    "engineering_cost_usd": null,
+    "new_external_paid_provider_calls": 0,
+    "built_in_image_generation_calls": 0,
+    "known_native_process_seconds": 5656.690557292895,
+    "timing_coverage": "16 native jobs reconciled;15 have same-process monotonic duration. Interrupted painter08 has unknown exact duration; known sum is not the full turn elapsed or complete experiment economics.",
+    "evidence": ["docs/planning/SERIES_01_ART_DIRECTION_C.md", ".runtime/art-direction/series01-facebuilder-trial-01/entrance193-review/visual-review.json", ".runtime/art-direction/series01-motion-style193/manifest.json"]
+  }
   ],
   "recording_mode": "manual_evidence_backfill_and_future_event_capture",
   "schema_version": "1.0",
