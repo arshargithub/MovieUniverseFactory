@@ -1,0 +1,59 @@
+<div id="rider-treatment-200">
+  <div class="viz-controls" aria-label="Comparison version">
+    <button class="btn" type="button" data-version="before" aria-pressed="false">Previous look</button>
+    <button class="btn" type="button" data-version="after" aria-pressed="true">Integrated treatment</button>
+  </div>
+  <div class="viz-controls" aria-label="Camera view">
+    <button class="btn" type="button" data-view="close" aria-pressed="true">Close reveal</button>
+    <button class="btn" type="button" data-view="side" aria-pressed="false">Costume</button>
+    <button class="btn" type="button" data-view="grip" aria-pressed="false">Rein grip</button>
+    <button class="btn btn-ghost" type="button" data-size aria-pressed="false">Enlarge</button>
+  </div>
+  <figure>
+    <img alt="Integrated rider costume and skin treatment" />
+    <figcaption class="text-small" aria-live="polite"></figcaption>
+  </figure>
+</div>
+<style>
+  #rider-treatment-200 figure { margin: 12px 0 0; text-align: center; color: var(--foreground); }
+  #rider-treatment-200 img { display: block; max-width: 100%; max-height: 520px; width: auto; height: auto; margin: 0 auto; object-fit: contain; }
+  #rider-treatment-200.expanded img { max-height: 900px; }
+  #rider-treatment-200 figcaption { margin-top: 8px; }
+</style>
+<script>
+(() => {
+  const root = document.getElementById('rider-treatment-200');
+  const images = __IMAGES__;
+  const versions = {before: 'Previous look · 198', after: 'Integrated treatment · 200'};
+  const views = {close: 'Close reveal', side: 'Costume', grip: 'Rein grip'};
+  let version = 'after', view = 'close', expanded = false;
+  function restore(state) {
+    const s = state?.modelContent;
+    if (s?.review === 'rider-treatment-200') {
+      if (versions[s.version]) version = s.version;
+      if (views[s.view]) view = s.view;
+      expanded = Boolean(state?.privateContent?.expanded);
+    }
+  }
+  function draw() {
+    const img = root.querySelector('img');
+    img.src = images[version][view];
+    img.alt = versions[version] + ' — ' + views[view];
+    root.querySelector('figcaption').textContent = img.alt;
+    root.querySelectorAll('[data-version]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.version === version)));
+    root.querySelectorAll('[data-view]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.view === view)));
+    root.classList.toggle('expanded', expanded);
+    const size = root.querySelector('[data-size]');
+    size.textContent = expanded ? 'Fit view' : 'Enlarge';
+    size.setAttribute('aria-pressed', String(expanded));
+  }
+  function save() {
+    window.openai?.setWidgetState?.({modelContent: {review:'rider-treatment-200', version, view}, privateContent:{expanded}})?.catch(() => {});
+  }
+  root.querySelectorAll('[data-version]').forEach(b => b.addEventListener('click', () => {version=b.dataset.version;draw();save();}));
+  root.querySelectorAll('[data-view]').forEach(b => b.addEventListener('click', () => {view=b.dataset.view;draw();save();}));
+  root.querySelector('[data-size]').addEventListener('click', () => {expanded=!expanded;draw();save();});
+  window.addEventListener('openai:set_globals', e => {restore(e.detail?.globals?.widgetState);draw();});
+  restore(window.openai?.widgetState);draw();
+})();
+</script>
