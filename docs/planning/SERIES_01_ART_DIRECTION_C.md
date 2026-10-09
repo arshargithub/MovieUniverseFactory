@@ -2,6 +2,14 @@
 
 Draft v0.1, exchange 75, 2026-09-17. Director authorized development of the brief after reaffirming C. The rules below are proposals for review, not blanket approval or completion of A5.
 
+## Exchange195 — richness includes terrain and physical interaction, not just shading
+
+Director agrees rich surface detail is missing and cites rocky terrain and pebbles thrown into the horse's wake in the illustrative images. Confirmed reference: original selected `series01-entrances-v04/C-illustrated-landscape.png`, especially the Pashtun panel; C is the illustrated triptych, not a third moving render. The image depicts angular foreground rocks, varied loose stones, airborne debris and broken dust shapes alongside selectively textured cloth, horse and distant landscape.
+
+Carry-forward distinction: (1) scene content/form — rock outcrops, gravel clusters and an irregular but traversable path; (2) material/mark language — directional, broken value/color variation that describes stone, hair and cloth rather than uniform noise; (3) physical interaction — localized hoof-driven debris, small arcs/bounces and an overlapping dust wake. Pebbles in flight are action/effects, not a surface texture; a shader-only alternative cannot deliver this richness. These are proposed realization methods, not verified dynamics or instructions to copy every illustrated stone.
+
+Use selective detail hierarchy: more readable texture and contact events in foreground/action, simplified painted distance, preserved rider/horse silhouette at phone size. Richness does not mean photorealism or noise everywhere. This clarifies the accepted aesthetic intent without finalizing A, authorizing a new render campaign, repairing motion in this discussion, or reopening protected character masters. Recommended A-derived development must consider content, surfaces and interaction together rather than another global filter. Counter195; checkpoint200 and release gates unchanged.
+
 ## Exchange194 — reassessment, discussion before further execution
 
 Director is uncertain between retaining A and another alternative, finds A more painted than B, and still finds the head/neck stiff. They explicitly request the aesthetic opinion first. No third treatment, motion repair or native change is dispatched in this exchange. This is not final Director approval of A or rejection of every possible illustrated treatment.
