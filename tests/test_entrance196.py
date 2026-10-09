@@ -37,14 +37,14 @@ def test_render_rejects_runtime_paths():
 
 def test_final_render_contract_has_exact_common_clock():
     from entrance196_render import OPERATIONS,FULL_CONTROLS
-    source,frames,w,h,samples=OPERATIONS['motion38']
-    assert source=='entrance196-integrate36'
+    source,frames,w,h,samples=OPERATIONS['motion43']
+    assert source=='entrance196-particles40'
     assert frames==tuple(range(217,361))
     assert (w,h,samples)==(432,768,12)
-    assert FULL_CONTROLS['motion38']=='controls37'
-    assert OPERATIONS['controls37'][0]==source
-    assert OPERATIONS['verify39'][0]==source
-    assert OPERATIONS['verify39'][1]==(265,295,360)
+    assert FULL_CONTROLS['motion43']=='controls42'
+    assert OPERATIONS['controls42'][0]==source
+    assert OPERATIONS['verify45'][0]==source
+    assert OPERATIONS['verify45'][1]==(223,265,295,360)
 
 def test_ballistic_settles_and_remains_in_ground_coordinates():
     import numpy as np
@@ -58,3 +58,25 @@ def test_ballistic_settles_and_remains_in_ground_coordinates():
     # Translating world geography does not change the local ballistic arc.
     shift=np.array([0.,57.,0.])
     assert np.allclose(ballistic(origin+shift,velocity,.42,.1),ballistic(origin,velocity,.42,.1)+shift)
+
+def test_particle_object_binding_preserves_active_trajectory():
+    import numpy as np
+    from entrance196_build import prototype
+    from entrance196_particles import fit_transform
+    p,_=prototype(np.random.default_rng(19604));q=p*.19+np.array([4.,-430.,-20.])
+    m=fit_transform(p,q)
+    assert np.allclose(p@m[:3,:3].T+m[:3,3],q)
+    with pytest.raises(ValueError):fit_transform(p,q[:8])
+
+def test_preview_retains_strict_failure_and_rejects_larger_variation(tmp_path):
+    import numpy as np
+    from PIL import Image
+    from entrance196_media import preview_pixel_review
+    a=np.zeros((100,100,4),dtype=np.uint8);a[:,:,3]=255;b=a.copy();b[0,0,:2]=2
+    first=tmp_path/'a.png';second=tmp_path/'b.png';Image.fromarray(a).save(first);Image.fromarray(b).save(second)
+    r=preview_pixel_review(first,second,295)
+    assert r['strict_one_level_gate']=='FAIL_RETAINED'
+    assert r['channels_at_two']==2
+    with pytest.raises(ValueError):preview_pixel_review(first,second,223)
+    b[0,0,0]=3;Image.fromarray(b).save(second)
+    with pytest.raises(ValueError):preview_pixel_review(first,second,295)
