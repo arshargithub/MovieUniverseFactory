@@ -2,6 +2,16 @@
 
 Draft v0.1, exchange 75, 2026-09-17. Director authorized development of the brief after reaffirming C. The rules below are proposals for review, not blanket approval or completion of A5.
 
+## Exchange194 — reassessment, discussion before further execution
+
+Director is uncertain between retaining A and another alternative, finds A more painted than B, and still finds the head/neck stiff. They explicitly request the aesthetic opinion first. No third treatment, motion repair or native change is dispatched in this exchange. This is not final Director approval of A or rejection of every possible illustrated treatment.
+
+**Revised agent recommendation:** retain A as the working base for now; withdraw193's preference for B. Matched close coverage against the original selected C illustration shows that B's broader hard shadow bands and flatter, warmer horse/cloth treatment make it more graphic/cel-like, but not necessarily more painterly. A retains softer tonal modeling and richer material variation. C combines designed light masses with directional marks, broken edges and selective textured detail; flat color grouping alone does not reproduce that language. Neither moving treatment fully realizes C. Do not silently change the accepted character or promise studio-quality painting through one global shader.
+
+**Recommended sequencing, not new execution approval:** keep A while resolving the visible riding-performance issue before another full style campaign. If a further look alternative is desired, make one A-derived candidate with a specific surface/edge-language hypothesis, demonstrated first in matched side/close stills, then tested in motion for mark stability and coherence. It must be more than another palette or shadow-ramp variant. Do not spend another full-sequence render merely to show a different filter.
+
+The Director's repeated stiff head/neck observation leaves that screen-result gate unresolved. Joint displacement, valid contacts and chronological frame inspection do not establish convincing performance in playback. Preserve193's technical evidence and original recommendation as historical records, but do not carry its motion forward as Director-accepted. No precise cause is claimed by this discussion; coordinated head/neck response needs an actual moving review when execution resumes. Technical success, aesthetic preference and performance acceptance are separate gates. Counter194; checkpoint200 and release gates unchanged.
+
 ## Exchange193 — authorized matched moving proof / production strategy
 
 Director approves192's recommendation. Execute one shared rider/tail correction, then A/current versus B/coherent painterly treatment of the existing six-second opening (frames217–360). The chosen treatment itself remains a Director decision. Preserve C, accepted native identity/anatomy/hair, double-wrap wardrobe, horse, route, camera and duration. No new spend, installation, specialist or publication authority; no automatic third style or whole-character rebuild.
