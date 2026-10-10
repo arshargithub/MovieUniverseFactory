@@ -2,6 +2,18 @@
 
 ## Current acceptance — exchange152
 
+### Exchange201 — integrated style transfer must preserve contact and storytelling signals
+
+**Selected integrated preview, not release qualification:** Director likes200, requests a dramatic dust cloud on the pale ground, and modestly more head coverage. The first denser wake restores visibility but becomes a dark opaque core from behind. A matched density/ambient control retains mass with warmer light and internal variation. Review effects from every required camera: brightness alone and attractive lateral views do not establish a successful cloud. Curved motion needs path-history emission, not a straight plume rotated with the horse.
+
+**Material reuse must retain semantic masks.** Applying the painted ground recipe to the shared fork removed the old shader's route distinction. The overhead control correctly fails even though the barrier is visible and terrain contacts are unchanged. Restore the existing actual-road distance signal within the new palette; do not declare the story readable from geometry validity or style consistency alone.
+
+**Fit to actual supported volume, not a guessed pivot.** Rotating the headfall forward lowers its crown into the voluminous accepted hair.20's anatomical-space guide inspection measures hair reaching approximately1.84 on the local up axis where the twice-rotated cloth sits near1.68; the apparent missing coverage is partly occlusion. Hair coordinates differ by at most3.41e-5 between289/360, supporting a fixed hair-envelope contact correction transported with the head rather than frame-wise nearest-point fitting. This is a scoped current-motion correction, not universal cloth simulation or approval of arbitrary wind.
+
+**Hidden evaluated transforms can be stale.** With render geometry paused, the route's hidden shawl reports an old world matrix while its visible animated parent and rig move.20's control measures zero mismatch at361 but up to397.57native matrix-entry difference by552. Resolve the known parent transform and inverse/basis explicitly for coordinate conversion; do not reinterpret this as enormous cloth deformation, relax the displacement guard or compensate by artist offsets. The18 attempt remains failed and preserved. Numerical/structural corrections still require actual-camera review before handoff.
+
+**Close the integration loop before another portrait pass.** Selected opening21/route22 carry the modest coverage change, warm path-following cloud, restored road mask and200 rider/look through all432 entrance frames. Every source frame was inspected in chronological contact sheets with targeted full-size controls; this is not a claim of human real-time playback. Independent reopening preserves scene fingerprints/cache hashes, evaluates caches exactly and reproduces sampled renders within the existing one8-bit-level tolerance;200's prior exception is not inherited.43 focused tests pass. These scoped proofs support this silent preview, not arbitrary cloth/wind/riding or final-resolution release. Preserve source dispatch snapshots separately from later verification-code commits. Next production effort belongs to missing ensemble/story/sound beats, not unsolicited accepted-character polishing.
+
 ### Exchange200 — correct the contact target and pose response before grading the look
 
 The Director authorizes one integrated performance/contact/costume/skin handover, not a neck-only milestone. Preserve152's neutral anatomy and authored surface character; use shot-scoped derivatives. Darker pale-ground bounce and retained skin maps must be assessed together. More skin noise is not a substitute for correcting washed-out material response.
