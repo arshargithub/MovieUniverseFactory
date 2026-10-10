@@ -11,6 +11,7 @@ import wardrobe_motion178 as base
 
 OPS={
  'opening11':('opening04',(217,265,291,303,315,327,339,360),'controls'),
+ 'opening47':('opening45',(217,291,297,303,309,315,321,327,333,339,360),'controls'),
  'route12':('scene10',(361,384,391,409,427,445,469,487,505,529,553,577,613,648),'controls'),
  'opening13':('opening04',tuple(range(217,361,2)),'motion'),
  'route14':('scene41',tuple(range(361,649,2)),'motion'),
@@ -41,7 +42,7 @@ def main():
   if not p.is_relative_to(base.BASE.resolve()) or base.digest(p)!=row['sha256']:raise ValueError('Changed native cache')
  out.mkdir();(out/'handler.py').write_bytes(Path(__file__).read_bytes())
  bpy.ops.wm.open_mainfile(filepath=str(src),load_ui=False,use_scripts=False);scene=bpy.context.scene;base.check_protected()
- scene.frame_set(217 if folder=='opening04' else 361);bpy.context.view_layer.update();structure=fingerprint(scene)
+ scene.frame_set(217 if folder.startswith('opening') else 361);bpy.context.view_layer.update();structure=fingerprint(scene)
  for ob in scene.objects:
   for m in ob.modifiers:
    if m.type=='MESH_CACHE':
@@ -52,7 +53,7 @@ def main():
  scene.render.engine='CYCLES';scene.cycles.device='CPU';scene.cycles.samples=8;scene.render.use_persistent_data=False
  rig=bpy.data.objects['MF_body156_fit_rig'];bones=('pelvis','chest','MF185_neck','MF185_head','hand.L','hand.R','foot.L','foot.R');rows=[]
  tree=None
- if folder!='opening04' and kind=='controls':
+ if not folder.startswith('opening') and kind=='controls':
   from mathutils import Vector
   from mathutils.bvhtree import BVHTree
   land=bpy.data.objects['AS_valley_landform'];land.data.calc_loop_triangles()

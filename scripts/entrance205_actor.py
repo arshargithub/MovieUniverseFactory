@@ -65,7 +65,7 @@ def save(scene,out,record):
     (out/'result.json').write_text(json.dumps(record,indent=2)+'\n');base.check_protected()
 
 
-def opening(scene,out):
+def opening(scene,out,track_subject=False):
     import bpy
     from mathutils import Vector
     from entrance205_motion import smooth
@@ -80,13 +80,20 @@ def opening(scene,out):
             w=float(smooth((f-292)/45))
             pos=cam.matrix_world.translation.lerp(loc,w)
             rot=cam.matrix_world.to_quaternion().slerp(desired,w)
+            if track_subject:
+                oldpos=cam.matrix_world.translation
+                axis=cam.matrix_world.to_3x3()@Vector((0,0,-1))
+                depth=(h-oldpos).dot(axis)
+                if depth<=0:raise ValueError('Opening target behind old camera')
+                aim=(oldpos+axis*depth).lerp(target,w)
+                rot=(aim-pos).to_track_quat('-Z','Y')
             rows.append((f,pos,rot,cam.data.lens*(1-w)+62*w))
         if cam.animation_data and cam.animation_data.action:cam.animation_data.action.use_fake_user=True
         cam.animation_data_clear();cam.data.animation_data_clear();cam.rotation_mode='QUATERNION'
         for f,pos,rot,lens in rows:
             cam.location=pos;cam.rotation_quaternion=rot;cam.data.lens=lens
             cam.keyframe_insert('location',frame=f);cam.keyframe_insert('rotation_quaternion',frame=f);cam.data.keyframe_insert('lens',frame=f)
-    record={'source_sha256':OPENING_SHA,'camera':'Single chronological217..360 move; continuous settle into recognition, no cut or source replay','face':facial(scene,list(range(217,361)),True)}
+    record={'source_sha256':OPENING_SHA,'camera':'Single chronological217..360 move; continuous settle into recognition, no cut or source replay','subject_tracking':track_subject,'face':facial(scene,list(range(217,361)),True)}
     np.savez_compressed(out/'camera.npz',frames=[r[0] for r in rows],positions=[r[1][:] for r in rows],quaternions=[r[2][:] for r in rows],lenses=[r[3] for r in rows])
     scene.frame_set(217);save(scene,out,record)
 
@@ -180,12 +187,12 @@ def rider(scene,out,uphill=False,newhorse=False):
 def main():
     import bpy
     job=json.loads(Path(sys.argv[sys.argv.index('--')+1]).read_text())
-    if job not in ({'operation':'opening04'},{'operation':'rider05'},{'operation':'rider19'},{'operation':'rider30'},{'operation':'rider35'}):raise ValueError('Fixed205 actor operation')
+    if job not in ({'operation':'opening04'},{'operation':'opening45'},{'operation':'rider05'},{'operation':'rider19'},{'operation':'rider30'},{'operation':'rider35'}):raise ValueError('Fixed205 actor operation')
     out=base.BASE/('entrance205-'+job['operation'])
     if out.exists() or base.digest(OPENING)!=OPENING_SHA:raise ValueError('Source/output')
     out.mkdir();(out/'handler.py').write_bytes(Path(__file__).read_bytes())
     bpy.ops.wm.open_mainfile(filepath=str(OPENING),load_ui=False,use_scripts=False);scene=bpy.context.scene;base.check_protected()
-    if job['operation']=='opening04':opening(scene,out)
+    if job['operation'].startswith('opening'):opening(scene,out,track_subject=job['operation']=='opening45')
     else:rider(scene,out,uphill=job['operation'] in ('rider19','rider30','rider35'),newhorse=job['operation'] in ('rider30','rider35'))
 
 

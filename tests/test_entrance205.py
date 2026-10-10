@@ -50,7 +50,7 @@ def test_route_support_and_exposed_edge():
         assert camera[2]>ground[0]+.5
 
 
-def test_front_camera_is_on_actual_rider_right():
+def test_front_camera_is_on_downhill_outboard_side():
     for t in np.linspace(1.25,4.59,30):
         d=sample(t);right=np.array([np.cos(d['heading']),np.sin(d['heading']),0.])
         assert np.dot(route_camera(t)[0]-d['position'],right)>2

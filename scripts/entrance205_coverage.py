@@ -1,7 +1,7 @@
 """Closed camera-side control: no actor, terrain, or timing edits.
 
-The former named right vector was actually rider-left. Test screen evidence
-before rebuilding any geometry or making compensating grooming changes.
+This tests the opposite terrain flank (outboard instead of inboard). Anatomical
+right/left naming is ambiguous here; the screen geography is the evidence.
 """
 import json,sys,time
 from pathlib import Path
