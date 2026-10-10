@@ -25,8 +25,8 @@ def main():
    if kind in sources and sources[kind]!=r['source_sha256']:raise ValueError('Interleaved source changed')
    sources[kind]=r['source_sha256']
    for row in r['frames']:records[row['index']]=row
- for label,step in (('even',2),('all',1)):
-  for first in range(0,432,12*step):
+ for label,step,offset in (('even',2,0),('odd',2,1),('all',1,0)):
+  for first in range(offset,432,12*step):
    ids=list(range(first,min(first+12*step,432),step))
    if all(i in available for i in ids):sheet([available[i] for i in ids],qa/f'{label}-{first:04d}.png')
  if a.verify:
