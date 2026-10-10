@@ -10,6 +10,8 @@ ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'scripts'))
 import wardrobe_motion178 as base
 
 OPS={
+ 'arc53':('arc52',(472,481,487,493,505,517,529,553,577,613,648),'controls'),
+ 'arc51':('arc50',(472,481,493,505,517,529,553,577,613,648),'controls'),
  'opening11':('opening04',(217,265,291,303,315,327,339,360),'controls'),
  'opening47':('opening45',(217,291,297,303,309,315,321,327,333,339,360),'controls'),
  'route12':('scene10',(361,384,391,409,427,445,469,487,505,529,553,577,613,648),'controls'),

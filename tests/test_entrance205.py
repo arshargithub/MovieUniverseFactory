@@ -5,6 +5,31 @@ sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
 from entrance205_motion import trajectory, profile, sample
 from entrance205_camera import route_camera,glance
 from entrance205_geography import fields
+from entrance205_face_arc import face_camera
+
+
+def test_face_arc_continuity_and_clearance():
+    times=np.linspace(4.6,12,1781)
+    points=np.array([face_camera(t,np.zeros(3))[0] for t in times])
+    assert np.min(np.linalg.norm(points[:,:2],axis=1))>1.8
+    assert np.max(np.linalg.norm(np.diff(points,axis=0),axis=1))<.025
+    y=sample(6.5)['heading'];out=np.array([np.cos(y),np.sin(y),0])
+    assert np.dot(face_camera(6.5,np.zeros(3))[0],out)>2
+    assert face_camera(12,np.zeros(3))[2]==50
+
+
+def test_checkpoint_and_head_share_initial_final_shot():
+    # Proxy framing guard; actual shaded geometry is still the visual gate.
+    for t in (4.625,4.9,5.05):
+        head=sample(t)['position']+np.array([0,0,2.6])
+        camera,target,lens=face_camera(t,head)
+        forward=target-camera;forward/=np.linalg.norm(forward)
+        right=np.cross(forward,[0,0,1]);right/=np.linalg.norm(right)
+        up=np.cross(right,forward)
+        for point in (head,np.array([0,-66.3,1.1])):
+            v=point-camera
+            screen=np.array([v@right,v@up])/(v@forward)*lens/np.array([10.125,18])
+            assert np.max(abs(screen))<.85
 
 
 def test_real_time_coordinated_trajectory():
