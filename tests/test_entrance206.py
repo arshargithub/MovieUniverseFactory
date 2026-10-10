@@ -50,3 +50,14 @@ def test_bank_setback_preserves_traversed_support():
  p=np.array([[-5,-18],[-10,-20],[-20,-40],[-40,-18]],float);h=np.array([2.,5.,10.,12.]);d=np.array([1.,5.,5.,5.])
  a=cutback(p,h,d)
  assert a[0]==h[0] and a[1]==0 and np.array_equal(a[2:],h[2:])
+
+def test_protected_motion_gate():
+ import copy
+ from entrance206_media import protected_motion
+ bones=('pelvis','chest','hand.L','hand.R','foot.L','foot.R')
+ old={i:dict(source_frame=i+217,pose={n:np.eye(4).tolist() for n in bones},camera=np.eye(4).tolist(),lens=44.) for i in range(432)}
+ new=copy.deepcopy(old)
+ assert protected_motion(old,new)['status']=='PASS'
+ new[200]['camera'][0][3]=1
+ with pytest.raises(ValueError):protected_motion(old,new)
+ with pytest.raises(ValueError):protected_motion({},new)

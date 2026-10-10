@@ -7,6 +7,18 @@ from entrance193_media import sha,pixel_parity
 ROOT=Path(__file__).resolve().parents[1];BASE=ROOT/'.runtime/art-direction/series01-facebuilder-trial-01';OUT=ROOT/'.runtime/art-direction/series01-entrance206'
 PARTS=('attention16','hair14','opening10','route11')
 
+def protected_motion(previous,current):
+ if set(previous)!=set(range(432)) or set(current)!=set(range(432)):raise ValueError('Incomplete protected-motion evidence')
+ bodies=[];cameras=[]
+ for i,row in current.items():
+  old=previous[i]
+  if row['source_frame']!=old['source_frame']:raise ValueError('Changed source clock')
+  bodies.append(max(float(np.max(abs(np.array(row['pose'][n])-np.array(old['pose'][n])))) for n in ('pelvis','chest','hand.L','hand.R','foot.L','foot.R')))
+  if 391<=row['source_frame']<=471:
+   cameras.append(max(float(np.max(abs(np.array(row['camera'])-np.array(old['camera'])))),abs(row['lens']-old['lens'])))
+ if max(bodies)>2e-5 or max(cameras)>2e-5:raise ValueError('Protected body/contact or dramatic-turn camera changed')
+ return dict(status='PASS',body_contact_matrix_max_error=max(bodies),turn_camera_max_error=max(cameras),turn_camera_frames=[391,471],scope='Same native clock, contact-bearing body poses and accepted frontal-turn camera; not aesthetic approval')
+
 def main():
  p=argparse.ArgumentParser();p.add_argument('--encode',action='store_true');p.add_argument('--verify',action='store_true');args=p.parse_args();available={};records={};sources={}
  OUT.mkdir(exist_ok=True);qa=OUT/'qa';qa.mkdir(exist_ok=True)
@@ -31,15 +43,20 @@ def main():
   for first in range(0,len(files),12):
    if len(files[first:first+12])==12 or (BASE/('entrance206-'+part)/'result.json').exists():sheet(files[first:first+12],qa/f'{part}-{first:03d}.png')
  if args.verify:
+  previous={}
+  for part in ('opening13','route14','opening15','route16'):
+   old=json.loads((BASE/('entrance205-'+part)/'result.json').read_text())
+   for row in old['frames']:previous[row['index']]=row
+  protected=protected_motion(previous,records)
   rows=[]
-  for folder,frames in (('opening20',(311,321,327,339,350,360)),('route07',(361,372,384,390,409,472,487,529,577,648))):
+  for folder,frames in (('opening20',(311,321,327,339,350,360)),('route28',(361,372,384,390,409,472,487,529,577,648))):
    source=BASE/('entrance206-'+folder);r=json.loads((source/'result.json').read_text())
    for f in frames:
     i=f-217
     if i not in available:raise ValueError('Missing fresh-open frame')
     if r['native_sha256']!=sources['opening' if folder.startswith('opening') else 'route']:raise ValueError('Control source differs')
     rows.append(dict(frame=f,**pixel_parity(source/f'control-{f}.png',available[i])))
-  (qa/'fresh-open.json').write_text(json.dumps(dict(status='PASS',samples=rows,scope='Construction controls versus independent factory-startup full-motion workers; source/pixel reproduction, not Director approval'),indent=2)+'\n')
+  (qa/'fresh-open.json').write_text(json.dumps(dict(status='PASS',samples=rows,protected_motion=protected,scope='Construction controls versus independent factory-startup full-motion workers; source/pixel reproduction, not Director approval'),indent=2)+'\n')
  if not args.encode:return
  if set(available)!=set(range(432)) or set(records)!=set(range(432)):raise ValueError('Incomplete chronological footage')
  for part in PARTS:

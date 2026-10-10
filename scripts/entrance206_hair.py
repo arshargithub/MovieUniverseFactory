@@ -95,11 +95,15 @@ def install(scene,out,kind):
   local=np.array([np.linalg.solve(m[:3,:3],a) for m,a in zip(matrices,acc)]);local=np.clip(local,-60,60)
   # Warm-up under constant wind avoids an artificial wind-on event at217.
   label='main' if ob.name.endswith('main') else 'strands'
+  continuity=None
   if kind=='opening':
    _,_,state=simulate(rest,offsets,np.tile(wind[0],(72,1)),np.zeros((72,3)),phase_start=-72)
   else:
    import wardrobe_motion178 as base
    state_path=base.BASE/'entrance206-opening20'/f'hair-{label}-state.npz'
+   expected={'main':'ab18bd0139cb073b39f900d7add5e2ee3d2114df63fb511417605338fba13e91','strands':'1309a3a6efc152e128328f4f2ff4452a1c4c440be347f4e6877368cd4ef679c9'}[label]
+   if base.digest(state_path)!=expected:raise ValueError('Hair continuity state changed')
+   continuity=dict(source=str(state_path.relative_to(base.ROOT)) if hasattr(base,'ROOT') else str(state_path),sha256=expected)
    z=np.load(state_path);state=(z['p'],z['v'])
    if not np.array_equal(rest,z['rest']):raise ValueError('Hair continuity topology mismatch')
   collide,counts=cloth_guard(scene,ob,rest,offsets,frames,matrices)
@@ -115,5 +119,5 @@ def install(scene,out,kind):
   mod=ob.modifiers.new('206 root-pinned guide simulation','NODES');mod.node_group=group;bpy.context.view_layer.objects.active=ob
   while list(ob.modifiers).index(mod)>0:bpy.ops.object.modifier_move_up(modifier=mod.name)
   np.savez_compressed(out/f'hair-{label}-metrics.npz',frames=frames,metrics=metrics,rest=rest,offsets=offsets,matrices=matrices,wind=wind,inertia=local)
-  records.append(dict(object=ob.name,points=len(rest),maximum_tip_displacement_native=float(metrics[:,0].max()),maximum_edge_length_error_native=float(metrics[:,1].max()),root_error=float(metrics[:,2].max()),method='96Hz damped rest-shape springs plus12 length projections/substep; covered crown/roots/rear restrained; wind/inertia from source support; swept-rest one-way contact against current shawl sheet',contact_corrections=sum(counts),contact_gate='NOT_RUN'))
+  records.append(dict(object=ob.name,points=len(rest),maximum_tip_displacement_native=float(metrics[:,0].max()),maximum_edge_length_error_native=float(metrics[:,1].max()),root_error=float(metrics[:,2].max()),method='96Hz damped rest-shape springs plus12 length projections/substep; covered crown/roots/rear restrained; wind/inertia from source support; swept-rest one-way contact against current shawl sheet',continuity_source=continuity,contact_corrections=sum(counts),contact_gate='NOT_RUN'))
  return records

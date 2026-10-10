@@ -8,7 +8,9 @@ OPS={
  'opening09':('opening','entrance205-opening45','f63e6fb06268f32ecfb691b836b9fed4b21b00dd9e49f90893531da54cb8446a'),
  'opening15':('opening','entrance205-opening45','f63e6fb06268f32ecfb691b836b9fed4b21b00dd9e49f90893531da54cb8446a'),
  'opening17':('opening','entrance205-opening45','f63e6fb06268f32ecfb691b836b9fed4b21b00dd9e49f90893531da54cb8446a'),
- 'route07':('route','entrance206-geography19','0e2b4752779873de15befd1012f88fb8b1ff83a0e64140c5d3d4775f8b8fff49')}
+ 'route07':('route','entrance206-geography19','0e2b4752779873de15befd1012f88fb8b1ff83a0e64140c5d3d4775f8b8fff49'),
+ 'route21':('route','entrance206-geography19','0e2b4752779873de15befd1012f88fb8b1ff83a0e64140c5d3d4775f8b8fff49'),
+ 'route22':('route','entrance206-geography19','0e2b4752779873de15befd1012f88fb8b1ff83a0e64140c5d3d4775f8b8fff49')}
 
 def validate(job):
  if not isinstance(job,dict) or set(job)!={'operation'} or job['operation'] not in OPS:raise ValueError('Closed206 integrated operation')

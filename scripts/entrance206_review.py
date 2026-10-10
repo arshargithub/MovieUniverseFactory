@@ -4,16 +4,16 @@ from pathlib import Path
 import numpy as np
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'scripts'))
 import wardrobe_motion178 as base
-ATTENTION=tuple(range(309,361,2));HAIR=tuple(range(577,602,2))
+ATTENTION=tuple(range(309,361,2));HAIR=tuple(range(505,602,2))
 def overview_first(frames):
  overview=tuple(f for f in frames if (f-217)%12==0)
  return overview+tuple(f for f in frames if f not in overview)
 OPS={
  'opening10':('opening20',overview_first(tuple(f for f in range(217,361) if f not in ATTENTION)),True),
- 'route11':('route07',overview_first(tuple(f for f in range(361,649) if f not in HAIR)),True),
+ 'route11':('route28',overview_first(tuple(f for f in range(361,649) if f not in HAIR)),True),
  'reopen12':('opening20',(217,321,327,339,360),False),
- 'reopen13':('route07',(361,384,409,487,529,577,648),False),
- 'hair14':('route07',HAIR,False),
+ 'reopen13':('route28',(361,384,409,487,529,577,648),False),
+ 'hair14':('route28',HAIR,False),
  'attention16':('opening20',ATTENTION,False)}
 
 def validate(job):

@@ -74,15 +74,30 @@ def camera(scene):
    scene.frame_set(f);bpy.context.view_layer.update();head=np.array((rig.matrix_world@rig.pose.bones['MF185_head'].matrix).translation)
    y=sample((f-361)/24)['heading'];forward=np.array([np.sin(y),-np.cos(y),0]);out=np.array([np.cos(y),np.sin(y),0])
    from entrance205_scene import FLOOR
-   escape=FLOOR+8.3*sample(4.)['position'];threat=np.array([0.,CHECKPOINT_Y,-10.])
+   escape=FLOOR+8.3*sample(3.5)['position'];threat=np.array([0.,CHECKPOINT_Y,-10.])
    a=np.arctan2(escape[0]-head[0],-(escape[1]-head[1]));b=np.arctan2(threat[0]-head[0],-(threat[1]-head[1]));mid=(a+b)*.5
    # Fit the two real directions, not two nominal points at the same depth.
    # Slightly elevated shoulder coverage leaves the threat above her head.
    offset=-10*np.tan(mid+np.arctan(.4*20.25/20.))
    loc=head-forward*10+np.array([offset,0,4.5]);target=head+np.array([np.sin(mid)*500,-np.cos(mid)*500,-115.])
    cam.location=Vector(loc);cam.rotation_euler=(Vector(target)-cam.location).to_track_quat('-Z','Y').to_euler();cam.data.lens=20
+   # Fit actual decision landmarks throughout the moving OTS, not merely a
+   # nominal bisector at its first frame. Keep a silhouette margin at both edges.
+   from bpy_extras.object_utils import world_to_camera_view
+   landmarks=[Vector((x,CHECKPOINT_Y,-5)) for x in (-29,29)]
+   landmarks += [Vector((x,y,0)) for x,y in ((-48,-790),(48,-770))]
+   landmarks += [Vector(FLOOR+8.3*(sample(t)['position']+np.array([0,0,.3]))) for t in (2.5,3.,3.5)]
+   aim=Vector(target)
+   for iteration in range(8):
+    bpy.context.view_layer.update();xs=[world_to_camera_view(scene,cam,p).x for p in landmarks];lo,hi=min(xs),max(xs)
+    if abs((lo+hi)*.5-.5)<.002:break
+    center=(lo+hi)*.5;depth=(aim-cam.location).length;right=cam.rotation_euler.to_matrix()@Vector((1,0,0))
+    aim+=right*((center-.5)*20.25/cam.data.lens*depth)
+    cam.rotation_euler=(aim-cam.location).to_track_quat('-Z','Y').to_euler()
+   bpy.context.view_layer.update();xs=[world_to_camera_view(scene,cam,p).x for p in landmarks]
+   if min(xs)<.08 or max(xs)>.92:raise ValueError('OTS decision landmarks clipped')
    cam.keyframe_insert('location',frame=f);cam.keyframe_insert('rotation_euler',frame=f);cam.data.keyframe_insert('lens',frame=f)
-   rows.append(dict(frame=f,location=loc.tolist(),target=target.tolist(),lens=20))
+   rows.append(dict(frame=f,location=loc.tolist(),target=list(aim),lens=cam.data.lens,landmark_x=[min(xs),max(xs)]))
   # Establish the farther checkpoint below before the admitted face-first
   # arc. A changed world target cannot inherit the old66m background framing.
   from entrance205_face_arc import face_camera
