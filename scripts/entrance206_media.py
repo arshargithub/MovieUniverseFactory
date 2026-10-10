@@ -5,7 +5,7 @@ import numpy as np
 from entrance189_media import sheet
 from entrance193_media import sha,pixel_parity
 ROOT=Path(__file__).resolve().parents[1];BASE=ROOT/'.runtime/art-direction/series01-facebuilder-trial-01';OUT=ROOT/'.runtime/art-direction/series01-entrance206'
-PARTS=('attention16','hair14','opening10','route11')
+PARTS=('attention16','hair31','opening10','route11')
 
 def protected_motion(previous,current):
  if set(previous)!=set(range(432)) or set(current)!=set(range(432)):raise ValueError('Incomplete protected-motion evidence')
@@ -38,7 +38,7 @@ def main():
  for first in range(0,432,12):
   ids=list(range(first,first+12))
   if all(i in available for i in ids):sheet([available[i] for i in ids],qa/f'all-{first:04d}.png')
- for part in ('attention16','hair14'):
+ for part in ('attention16','hair31'):
   files=sorted((BASE/('entrance206-'+part)).glob('frame-*.png'))
   for first in range(0,len(files),12):
    if len(files[first:first+12])==12 or (BASE/('entrance206-'+part)/'result.json').exists():sheet(files[first:first+12],qa/f'{part}-{first:03d}.png')
@@ -49,7 +49,7 @@ def main():
    for row in old['frames']:previous[row['index']]=row
   protected=protected_motion(previous,records)
   rows=[]
-  for folder,frames in (('opening20',(311,321,327,339,350,360)),('route28',(361,372,384,390,409,472,487,529,577,648))):
+  for folder,frames in (('opening20',(311,321,327,339,350,360)),('route32',(361,372,384,390,409,472,487,505,509,511,515,517,529,577,648))):
    source=BASE/('entrance206-'+folder);r=json.loads((source/'result.json').read_text())
    for f in frames:
     i=f-217

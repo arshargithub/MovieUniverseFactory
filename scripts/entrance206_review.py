@@ -10,10 +10,11 @@ def overview_first(frames):
  return overview+tuple(f for f in frames if f not in overview)
 OPS={
  'opening10':('opening20',overview_first(tuple(f for f in range(217,361) if f not in ATTENTION)),True),
- 'route11':('route28',overview_first(tuple(f for f in range(361,649) if f not in HAIR)),True),
+ 'route11':('route32',overview_first(tuple(f for f in range(361,649) if f not in HAIR)),True),
  'reopen12':('opening20',(217,321,327,339,360),False),
- 'reopen13':('route28',(361,384,409,487,529,577,648),False),
+ 'reopen13':('route32',(361,384,409,487,529,577,648),False),
  'hair14':('route28',HAIR,False),
+ 'hair31':('route32',HAIR,False),
  'attention16':('opening20',ATTENTION,False)}
 
 def validate(job):
@@ -41,10 +42,21 @@ def main():
    if m.type in ('SMOOTH','CORRECTIVE_SMOOTH','SUBSURF'):m.show_viewport=False
  scene.render.resolution_x=432;scene.render.resolution_y=768;scene.render.resolution_percentage=100;scene.render.engine='CYCLES';scene.cycles.device='CPU';scene.cycles.samples=8;scene.render.use_persistent_data=False
  rig=bpy.data.objects['MF_body156_fit_rig'];bones=('pelvis','chest','MF185_neck','MF185_head','hand.L','hand.R','foot.L','foot.R');rows=[]
+ tree=None
+ if folder.startswith('route'):
+  from mathutils import Vector
+  from mathutils.bvhtree import BVHTree
+  land=bpy.data.objects['AS_valley_landform'];land.data.calc_loop_triangles();tree=BVHTree.FromPolygons([tuple(land.matrix_world@v.co) for v in land.data.vertices],[tuple(t.vertices) for t in land.data.loop_triangles],all_triangles=True)
  for f in frames:
   start=time.monotonic();scene.frame_set(f);bpy.context.view_layer.update();p=out/f'frame-{f-217:04d}.png';scene.render.filepath=str(p)
+  geography=None
+  if tree is not None:
+   eye=bpy.data.objects['MF_aimable_eye_Left'].matrix_world.translation;target=Vector((0,-900,-9.5));delta=target-eye;hit=tree.ray_cast(eye,delta.normalized(),delta.length)
+   geography=dict(eye_world=list(eye),checkpoint_target=list(target),eye_to_checkpoint_land_occlusion=None if hit[0] is None else list(hit[0]))
+   if 505<=f<=553 and hit[0] is not None:raise ValueError('Uphill checking glance blocked by terrain: '+repr(geography))
   if bpy.ops.render.render(write_still=True)!={'FINISHED'} or not p.is_file():raise ValueError('Native render incomplete')
   row=dict(index=f-217,source_frame=f,sha256=base.digest(p),seconds=time.monotonic()-start,camera=np.array(scene.camera.matrix_world).tolist(),lens=scene.camera.data.lens,pose={n:np.array(rig.matrix_world@rig.pose.bones[n].matrix).tolist() for n in bones});rows.append(row)
+  row['geography']=geography
   (out/'progress.json').write_text(json.dumps(dict(source_sha256=r['native_sha256'],frames=rows,complete=False),indent=2)+'\n');print('206 FRAME',op,f,round(row['seconds'],2),flush=True)
  base.check_protected();(out/'result.json').write_text(json.dumps(dict(source_sha256=r['native_sha256'],frames=rows,fingerprint=structure,fps=24,resolution=[432,768],samples=8,visual_gate='NOT_RUN',limits='Silent native chronological preview; not release-resolution or final secondary-motion finishing'),indent=2)+'\n')
 

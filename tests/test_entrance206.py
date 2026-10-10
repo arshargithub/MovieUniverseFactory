@@ -39,7 +39,7 @@ def test_integrated_closed_enum():
 
 def test_full_review_clock_and_gate_schema():
  from entrance206_review import OPS,validate
- all_frames=sum((OPS[k][1] for k in ('opening10','route11','attention16','hair14')),())
+ all_frames=sum((OPS[k][1] for k in ('opening10','route11','attention16','hair31')),())
  assert sorted(all_frames)==list(range(217,649))
  assert OPS['opening10'][2] and OPS['route11'][2]
  validate({'operation':'hair14'})

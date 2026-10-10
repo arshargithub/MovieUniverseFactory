@@ -7,10 +7,10 @@ import wardrobe_motion178 as base
 from entrance205_motion import smooth
 
 def cutback(xy,height,distance):
- p=np.asarray(xy);release=(1-smooth((-p[:,1]-22)/10))*smooth((distance-1.35)/1.5)*smooth((p[:,0]+32)/8)
+ p=np.asarray(xy);release=(1-smooth((-p[:,1]-22)/10))*smooth((distance-1.35)/1.5)*smooth((p[:,0]+14)/4)
  return np.where(height>0,height*(1-release),height)
 
-def terrain(scene):
+def terrain(scene,previous_world=None):
  import bpy
  from mathutils import Vector
  from mathutils.bvhtree import BVHTree
@@ -22,7 +22,7 @@ def terrain(scene):
  _,distance=fields(xy,trajectory());height=(old[:,2]-FLOOR[2])/8.3;new=old.copy();new[:,2]=FLOOR[2]+8.3*cutback(xy,height,distance)
  protected=distance<=1.35;error=float(np.max(abs(new[protected]-old[protected])))
  if error>1e-5:raise ValueError('Traversed support changed')
- oldtree=BVHTree.FromPolygons(old.tolist(),tris,all_triangles=True);tree=BVHTree.FromPolygons(new.tolist(),tris,all_triangles=True);inv=np.linalg.inv(matrix);q=new@inv[:3,:3].T+inv[:3,3];land.data.vertices.foreach_set('co',q.ravel());land.data.update()
+ oldtree=BVHTree.FromPolygons((old if previous_world is None else previous_world).tolist(),tris,all_triangles=True);tree=BVHTree.FromPolygons(new.tolist(),tris,all_triangles=True);inv=np.linalg.inv(matrix);q=new@inv[:3,:3].T+inv[:3,3];land.data.vertices.foreach_set('co',q.ravel());land.data.update()
  def ground(tree,x,y):
   hit=tree.ray_cast(Vector((x,y,2000)),Vector((0,0,-1)),4000)
   if hit[0] is None:raise ValueError('Stone outside actual terrain')
