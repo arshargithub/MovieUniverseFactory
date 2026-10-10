@@ -9,7 +9,7 @@ import numpy as np
 from pathlib import Path
 import entrance190_route_math as route
 
-def build(out, corrected=False):
+def build(out, corrected=False, route_data=None, tighten_stance=False):
     import bpy
     from mathutils import Matrix,Vector
     from worker import action_channels
@@ -25,7 +25,9 @@ def build(out, corrected=False):
         if o.type in ('MESH','CURVE','CURVES'):o.hide_viewport=o.name not in names
     for m in horse.modifiers:
         if m.type in ('PARTICLE_SYSTEM','COLLISION'):m.show_viewport=False;m.show_render=False
-    data=route.trajectory();frames=data['time']*24
+    data=route.trajectory() if route_data is None else route_data
+    frames=data['time']*24
+    if any(not np.isfinite(a).all() for a in data.values()):raise ValueError('Nonfinite route')
     # Resample existing whole-control source action and tack using one clock.
     for name in ('horse.rig',)+names:
         o=bpy.data.objects[name]
@@ -116,7 +118,8 @@ def build(out, corrected=False):
                 check=feet();changed=False
                 for leg,pts in check.items():
                     deficit=.002-float((pts[:,2]-ground(pts)).min())
-                    if deficit<=.0002:continue
+                    contact=row['legs'][leg]['stance']
+                    if deficit<=.0002 and not (tighten_stance and contact and deficit<-.004):continue
                     pb=rig.pose.bones[LEGS[leg][0]];mat=pb.matrix.copy()
                     mat.translation+=rig.matrix_world.inverted().to_3x3()@Vector((0,0,deficit));pb.matrix=mat;changed=True
                 if not changed:break
@@ -143,6 +146,6 @@ def build(out, corrected=False):
     penetration=max(0.,-min(v['clearance'] for r in records for v in r['legs'].values()))
     (out/'contact.json').write_text(json.dumps({'source_sha256':HORSE_SHA,'maximum_projection_m':maximum,'maximum_penetration_m':penetration,'samples':records,'visual_gate':'NOT_RUN','scope':'Coarse horse contact diagnostic, no rider or renewed cloth'},indent=2)+'\n')
     np.savez_compressed(out/'route.npz',**data)
-    scene.frame_start=0;scene.frame_end=192;scene.render.fps=24
+    scene.frame_start=0;scene.frame_end=round(float(frames[-1]));scene.render.fps=24
     bpy.ops.wm.save_as_mainfile(filepath=str(out/'horse-route.blend'),check_existing=False)
     if digest(HORSE)!=HORSE_SHA:raise ValueError('Source changed')
