@@ -22,9 +22,9 @@ def reverse_backdrop(scene):
     if len(primary.data.vertices)!=322:raise ValueError('Unexpected primary matte topology')
     primary.parent=None;primary.matrix_world=Matrix.Identity(4)
     for i in range(161):
-        a=math.radians(-72+190*i/160)
-        primary.data.vertices[2*i].co=(math.cos(a)*4000,math.sin(a)*4000,FLOOR[2]-500)
-        primary.data.vertices[2*i+1].co=(math.cos(a)*4000,math.sin(a)*4000,FLOOR[2]+2500)
+        a=math.radians(-76+212*i/160)
+        primary.data.vertices[2*i].co=(math.cos(a)*8000,math.sin(a)*8000,FLOOR[2]-1000)
+        primary.data.vertices[2*i+1].co=(math.cos(a)*8000,math.sin(a)*8000,FLOOR[2]+5000)
     primary.data.update()
     mat=bpy.data.materials.new('MF205_reverse_matte_painting');mat.use_nodes=True
     n,l=mat.node_tree.nodes,mat.node_tree.links;n.clear()
@@ -33,9 +33,9 @@ def reverse_backdrop(scene):
     l.new(tex.outputs['Color'],em.inputs['Color']);l.new(em.outputs[0],out.inputs['Surface'])
     points=[];faces=[];segments=180
     for i in range(segments+1):
-        a=math.radians(118+170*i/segments)
-        points.extend([(math.cos(a)*4000,math.sin(a)*4000,FLOOR[2]-500),
-                       (math.cos(a)*4000,math.sin(a)*4000,FLOOR[2]+2500)])
+        a=math.radians(136+148*i/segments)
+        points.extend([(math.cos(a)*8000,math.sin(a)*8000,FLOOR[2]-1000),
+                       (math.cos(a)*8000,math.sin(a)*8000,FLOOR[2]+5000)])
     for i in range(segments):faces.append((2*i,2*i+2,2*i+3,2*i+1))
     ob=mesh_object('MF205_fixed_reverse_matte',points,faces,col,None);ob.data.materials.append(mat)
     uv=ob.data.uv_layers.new(name='Unique opposite world panorama')
@@ -43,10 +43,10 @@ def reverse_backdrop(scene):
         for li in p.loop_indices:
             vi=ob.data.loops[li].vertex_index;uv.data[li].uv=((vi//2)/segments,vi%2)
     ob.visible_shadow=False;ob.visible_diffuse=False;ob.visible_glossy=False
-    return {'path':str(path),'sha256':base.digest(path),'fixed_azimuth':[118,288],
+    return {'path':str(path),'sha256':base.digest(path),'fixed_azimuth':[136,284],
             'prompt':str(path.with_suffix('.prompt.txt')),'prompt_sha256':base.digest(path.with_suffix('.prompt.txt')),
             'generation':'Built-in image generation, reference-guided opposite-direction matte; no external paid provider call',
-            'original_matte':'Image unchanged; route derivative uses fixed -72..118-degree art panel about same world centre. Opening source preserved.',
+            'original_matte':'Image unchanged; route derivative uses fixed -76..136-degree art panel about same world centre, radius8000. Opening source preserved.',
             'limitation':'Shot-corridor matte layout; artwork joins are not qualified for arbitrary360-degree cameras','visual_gate':'NOT_RUN'}
 
 

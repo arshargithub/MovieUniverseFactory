@@ -50,6 +50,21 @@ def test_route_support_and_exposed_edge():
         assert camera[2]>ground[0]+.5
 
 
+def test_front_camera_is_on_actual_rider_right():
+    for t in np.linspace(1.25,4.59,30):
+        d=sample(t);right=np.array([np.cos(d['heading']),np.sin(d['heading']),0.])
+        assert np.dot(route_camera(t)[0]-d['position'],right)>2
+
+
+def test_rough_bank_does_not_intrude_into_hoof_support():
+    d=trajectory()
+    for t in np.linspace(3.3,12,40):
+        p=sample(t);right=np.array([np.cos(p['heading']),np.sin(p['heading'])])
+        xy=np.array([p['position'][:2]+right*x for x in (-.75,0,.75)])
+        z,_=fields(xy,d)
+        assert np.max(abs(z-p['position'][2]))<.01
+
+
 def test_fixed_matte_seams_outside_camera_horizontal_coverage():
     # Numerical guard only; the actual rendered corners still need review.
     for t in np.linspace(0,12,145):
@@ -60,6 +75,9 @@ def test_fixed_matte_seams_outside_camera_horizontal_coverage():
         for side in (-1,1):
             for vertical in (-1,1):
                 ray=forward+right*side*(20.25/(2*lens))+up*vertical*(36/(2*lens))
-                angle=np.rad2deg(np.arctan2(ray[1],ray[0]))
-                if shot=='ots':assert -242<angle<-72
-                else:assert -72<angle<118
+                a=ray[:2]@ray[:2];b=2*(camera[:2]@ray[:2]);c=camera[:2]@camera[:2]-(8000/8.3)**2
+                distance=(-b+np.sqrt(b*b-4*a*c))/(2*a)
+                hit=camera[:2]+distance*ray[:2]
+                angle=np.rad2deg(np.arctan2(hit[1],hit[0]))
+                if shot=='ots':assert -224<angle<-76
+                else:assert -76<angle<136

@@ -26,13 +26,18 @@ def main():
     from entrance205_camera import glance
     from wardrobe_motion178_controls import render_geometry_paused
     job=json.loads(Path(sys.argv[sys.argv.index('--')+1]).read_text())
-    if job not in ({'operation':'support09'},{'operation':'scene10'},{'operation':'support21'},{'operation':'scene22'}):raise ValueError('Fixed205 integration operation')
-    revised=job['operation'] in ('support21','scene22');support=job['operation'].startswith('support')
+    if job not in ({'operation':'support09'},{'operation':'scene10'},{'operation':'support21'},{'operation':'scene22'},{'operation':'support32'},{'operation':'scene33'},{'operation':'support37'},{'operation':'scene38'},{'operation':'support40'},{'operation':'scene41'}):raise ValueError('Fixed205 integration operation')
+    newhorse=job['operation'] in ('support32','scene33','support37','scene38','support40','scene41');revised=job['operation'] in ('support21','scene22') or newhorse;support=job['operation'].startswith('support')
     folder=('entrance205-fitted20' if support else 'entrance205-support21') if revised else ('entrance205-fitted08' if support else 'entrance205-support09')
+    if newhorse:folder='entrance205-fitted31' if support else 'entrance205-support32'
+    if job['operation'] in ('support37','scene38'):folder='entrance205-fitted36' if support else 'entrance205-support37'
+    if job['operation'] in ('support40','scene41'):folder='entrance205-fitted36' if support else 'entrance205-support40'
     src=base.BASE/folder/'scene.blend';out=base.BASE/('entrance205-'+job['operation']);r=json.loads((src.parent/'result.json').read_text())
     if out.exists() or base.digest(src)!=r['native_sha256']:raise ValueError('Source/output')
     out.mkdir();(out/'handler.py').write_bytes(Path(__file__).read_bytes());bpy.ops.wm.open_mainfile(filepath=str(src),load_ui=False,use_scripts=False);scene=bpy.context.scene;base.check_protected()
     riderfolder='entrance205-rider19' if revised else 'entrance205-rider05'
+    if newhorse:riderfolder='entrance205-rider30'
+    if job['operation'] in ('support37','scene38','support40','scene41'):riderfolder='entrance205-rider35'
     with np.load(base.BASE/riderfolder/'rig.npz') as z:data={k:z[k] for k in z.files}
     with np.load(base.BASE/riderfolder/'route.npz') as z:route={k:z[k] for k in z.files}
     record={'source_sha256':r['native_sha256']}

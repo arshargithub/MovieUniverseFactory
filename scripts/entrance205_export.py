@@ -11,10 +11,14 @@ def main():
     from mathutils import Matrix
     from entrance189_groom import read_mdd,write_mdd
     job=json.loads(Path(sys.argv[sys.argv.index('--')+1]).read_text())
-    if job!={'operation':'export03'}:raise ValueError('Fixed205 export operation')
-    src=base.BASE/'entrance205-horse07/horse-route.blend';out=base.BASE/'entrance205-export03'
+    if job not in ({'operation':'export03'},{'operation':'export29'}):raise ValueError('Fixed205 export operation')
+    revised=job['operation']=='export29'
+    src=base.BASE/('entrance205-horse27' if revised else 'entrance205-horse07')/'horse-route.blend';out=base.BASE/('entrance205-'+job['operation'])
     r=json.loads((src.parent/'result.json').read_text())
     if out.exists() or base.digest(src)!=r['native_sha256']:raise ValueError('Source/output')
+    if revised:
+        proof=json.loads((base.BASE/'entrance205-verify27/result.json').read_text())
+        if proof['status']!='FRESH_OPEN_HOOF_PRESERVATION_PASS' or proof['sources']['horse27']!=r['native_sha256']:raise ValueError('Missing recovery check')
     out.mkdir();(out/'handler.py').write_bytes(Path(__file__).read_bytes())
     bpy.ops.wm.open_mainfile(filepath=str(src),load_ui=False,use_scripts=False);scene=bpy.context.scene
     with np.load(src.parent/'route.npz') as z:route={k:z[k] for k in z.files}

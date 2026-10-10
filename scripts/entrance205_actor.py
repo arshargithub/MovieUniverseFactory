@@ -97,7 +97,7 @@ def linear_sample(a,f):
     return np.asarray(a[i])*(1-u)+np.asarray(a[min(i+1,len(a)-1)])*u
 
 
-def rider(scene,out,uphill=False):
+def rider(scene,out,uphill=False,newhorse=False):
     import bpy
     from mathutils import Matrix,Quaternion,Vector
     from entrance190_rider import source_pose_frame
@@ -107,9 +107,14 @@ def rider(scene,out,uphill=False):
     from wardrobe_motion178_controls import render_geometry_paused
     from entrance200_pose_control import contact
     from entrance189_groom import attach_cache
-    exp=base.BASE/'entrance205-export03';result=json.loads((exp/'result.json').read_text())
+    exp=base.BASE/('entrance205-export29' if newhorse else 'entrance205-export03');result=json.loads((exp/'result.json').read_text())
     if base.digest(exp/'contacts.npz')!=result['contacts_sha256']:raise ValueError('Contact source changed')
     with np.load(exp/'contacts.npz') as z:data={k:z[k] for k in z.files}
+    # Hands own the rein grip; a neck reach changes rein span, not arm length.
+    # Keep the admitted19 hand targets instead of pulling elbows straight.
+    hand_bits=data['bit_points']
+    if newhorse:
+        with np.load(base.BASE/'entrance205-export03/contacts.npz') as z:hand_bits=z['bit_points'].copy()
     with np.load(base.BASE/'wardrobe185-horsecache01/contacts.npz') as z:old_s=z['saddle_matrices'];old_b=z['bit_points']
     frames=list(range(361,361+len(data['saddle_matrices'])))
     phases=[source_pose_frame(s) for s in data['source_frame'][::8]]
@@ -147,7 +152,7 @@ def rider(scene,out,uphill=False):
                 row.append(limb(rig,'thigh.'+side,shin,foot,old[foot].translation+ds,old[shin].translation+ds*.5,old[foot]))
                 upper='upperarm.'+side;lower='forearm.'+side;hand='hand.'+side
                 shoulder=rig.pose.bones[upper].head-old[upper].translation
-                db=Vector(data['bit_points'][i,j]-old_bit[j])
+                db=Vector(hand_bits[i,j]-old_bit[j])
                 row.append(limb(rig,upper,lower,hand,old[hand].translation+shoulder+.2*(db-ds),old[lower].translation+shoulder,old[hand]))
                 contact(rig,side,1)
             for b in rig.pose.bones:
@@ -175,13 +180,13 @@ def rider(scene,out,uphill=False):
 def main():
     import bpy
     job=json.loads(Path(sys.argv[sys.argv.index('--')+1]).read_text())
-    if job not in ({'operation':'opening04'},{'operation':'rider05'},{'operation':'rider19'}):raise ValueError('Fixed205 actor operation')
+    if job not in ({'operation':'opening04'},{'operation':'rider05'},{'operation':'rider19'},{'operation':'rider30'},{'operation':'rider35'}):raise ValueError('Fixed205 actor operation')
     out=base.BASE/('entrance205-'+job['operation'])
     if out.exists() or base.digest(OPENING)!=OPENING_SHA:raise ValueError('Source/output')
     out.mkdir();(out/'handler.py').write_bytes(Path(__file__).read_bytes())
     bpy.ops.wm.open_mainfile(filepath=str(OPENING),load_ui=False,use_scripts=False);scene=bpy.context.scene;base.check_protected()
     if job['operation']=='opening04':opening(scene,out)
-    else:rider(scene,out,uphill=job['operation']=='rider19')
+    else:rider(scene,out,uphill=job['operation'] in ('rider19','rider30','rider35'),newhorse=job['operation'] in ('rider30','rider35'))
 
 
 if __name__=='__main__':main()

@@ -103,8 +103,13 @@ def groom(scene,out,data,caches):
     from entrance189_groom import read_mdd,write_mdd,attach_cache
     from entrance188_groom import triangle_frames
     from wardrobe185_lower_drape import triangle_weights
-    phases=data['source_frames'];oldhorse,start=caches['MF185_gait_horse'];newhorse=read_mdd(base.BASE/'entrance205-export03/horse.mdd')
     horse=bpy.data.objects['MF185_gait_horse'];horse.data.calc_loop_triangles()
+    phases=data['source_frames'];oldhorse,start=caches['MF185_gait_horse']
+    mods=[m for m in horse.modifiers if m.type=='MESH_CACHE']
+    if len(mods)!=1 or mods[0].frame_start!=361:raise ValueError('Expected the selected route horse cache')
+    path=__import__('pathlib').Path(bpy.path.abspath(mods[0].filepath)).resolve()
+    if not path.is_relative_to(base.BASE.resolve()):raise ValueError('Foreign groom support source')
+    newhorse=read_mdd(path)
     tris=np.array([tuple(t.vertices) for t in horse.data.loop_triangles if horse.data.polygons[t.polygon_index].material_index==0])
     h0=linear_sample(oldhorse,phases[0]-start);records={}
     for kind,name in (('mane','MF188_flowing_mane'),('tail','MF185_gait_Full Bushy Flowing Horse Tail')):
@@ -133,5 +138,5 @@ def groom(scene,out,data,caches):
                 yield q.astype(np.float32)
         path=out/(kind+'.mdd');write_mdd(path,len(phases),len(rest),frames());attach_cache(ob,path,361)
         np.savez_compressed(out/(kind+'-binding.npz'),triangles=ids,barycentric=bary)
-        records[kind]={'method':'Fixed triangle correspondence from phase-registered source to re-solved horse; retained source response, no new aerodynamic claim','visual_gate':'NOT_RUN'}
+        records[kind]={'method':'Fixed triangle correspondence from phase-registered source to re-solved horse; retained source response, no new aerodynamic claim','horse_cache_sha256':base.digest(__import__('pathlib').Path(bpy.path.abspath(mods[0].filepath))),'visual_gate':'NOT_RUN'}
     return records

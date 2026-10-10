@@ -13,12 +13,15 @@ OPS={
  'opening11':('opening04',(217,265,291,303,315,327,339,360),'controls'),
  'route12':('scene10',(361,384,391,409,427,445,469,487,505,529,553,577,613,648),'controls'),
  'opening13':('opening04',tuple(range(217,361,2)),'motion'),
- 'route14':('scene22',tuple(range(361,649,2)),'motion'),
+ 'route14':('scene41',tuple(range(361,649,2)),'motion'),
  'opening15':('opening04',tuple(range(218,361,2)),'motion'),
- 'route16':('scene22',tuple(range(362,649,2)),'motion'),
+ 'route16':('scene41',tuple(range(362,649,2)),'motion'),
  'reopen17':('opening04',(217,315,360),'reopen'),
- 'reopen18':('scene22',(361,409,487,529,577,648),'reopen'),
+ 'reopen18':('scene41',(361,409,487,529,577,648),'reopen'),
  'route23':('scene22',(361,391,409,445,469,487,505,529,577,648),'controls'),
+ 'route25':('backdrop24',(391,469,487,529,551,577,648),'controls'),
+ 'route39':('scene38',(361,391,409,427,445,469,481,493,505,529,553,577,613,648),'controls'),
+ 'route42':('scene41',(361,391,409,427,445,469,481,493,505,529,553,577,613,648),'controls'),
 }
 
 
@@ -49,7 +52,7 @@ def main():
  scene.render.engine='CYCLES';scene.cycles.device='CPU';scene.cycles.samples=8;scene.render.use_persistent_data=False
  rig=bpy.data.objects['MF_body156_fit_rig'];bones=('pelvis','chest','MF185_neck','MF185_head','hand.L','hand.R','foot.L','foot.R');rows=[]
  tree=None
- if folder.startswith('scene') and kind=='controls':
+ if folder!='opening04' and kind=='controls':
   from mathutils import Vector
   from mathutils.bvhtree import BVHTree
   land=bpy.data.objects['AS_valley_landform'];land.data.calc_loop_triangles()

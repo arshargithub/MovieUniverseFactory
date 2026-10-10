@@ -26,9 +26,15 @@ def fields(xy, route):
         # The turn has room to gather; the steep escape has ~2m support.
         steep=smooth(grade[ids]/.35)
         width=2.2*(1-steep)+(1.05+.12*np.sin(centers[ids,1]*1.1))*steep
-        outside=smooth((cross-width)/(4.5-1.5*steep))
+        outside=smooth((cross-width)/(4.5-3.0*steep))
         inside=smooth((-cross-width)/5.)
         terrain=z*(1-outside)+inside*(2.4+.9*np.maximum(-cross-width,0)+.5*np.sin(p[:,1]/5))
+        # Broken bedrock relief outside the traversed support envelope. The
+        # previous perfectly swept bank read as a built channel, not scree.
+        rock=(.55*np.sin(.63*p[:,0]+.31*p[:,1])
+              +.32*np.sin(1.71*p[:,0]-.83*p[:,1])
+              +.14*np.sin(3.9*p[:,0]+2.73*p[:,1]))
+        terrain+=steep*smooth((-cross-width)/2.0)*rock
         terrain+=outside*(.45*np.sin(p[:,1]/8)+.3*np.cos(p[:,0]/6))
         terrain=np.maximum(terrain,-.6)
         main=smooth((abs(p[:,0])-2.8)/3.5)

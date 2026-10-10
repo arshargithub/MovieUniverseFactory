@@ -24,8 +24,9 @@ def main():
     from entrance189_groom import attach_cache,write_mdd,read_mdd
     from entrance188_groom import triangle_frames
     job=json.loads(Path(sys.argv[sys.argv.index('--')+1]).read_text())
-    if job not in ({'operation':'fitted08'},{'operation':'fitted20'}):raise ValueError('Fixed fitted continuation required')
-    source=base.BASE/('entrance205-rider19' if job['operation']=='fitted20' else 'entrance205-rider05')/'scene.blend';out=base.BASE/('entrance205-'+job['operation'])
+    if job not in ({'operation':'fitted08'},{'operation':'fitted20'},{'operation':'fitted31'},{'operation':'fitted36'}):raise ValueError('Fixed fitted continuation required')
+    folders={'fitted08':'rider05','fitted20':'rider19','fitted31':'rider30','fitted36':'rider35'}
+    source=base.BASE/('entrance205-'+folders[job['operation']])/'scene.blend';out=base.BASE/('entrance205-'+job['operation'])
     SOURCE_SHA=json.loads((source.parent/'result.json').read_text())['native_sha256']
     binding=base.BASE/'wardrobe185-trouserseat03/binding.npz'
     contact=base.BASE/'wardrobe185-lowerrecontact02/surfaces.npz'
@@ -33,7 +34,7 @@ def main():
     out.mkdir();(out/'handler.py').write_bytes(Path(__file__).read_bytes())
     with np.load(binding,allow_pickle=False) as z:bind={k:z[k] for k in z.files}
     with np.load(contact,allow_pickle=False) as z:old={k:z[k] for k in z.files}
-    with np.load(base.BASE/'entrance205-export03/contacts.npz',allow_pickle=False) as z:contacts={k:z[k] for k in z.files}
+    with np.load(base.BASE/('entrance205-export29' if job['operation'] in ('fitted31','fitted36') else 'entrance205-export03')/'contacts.npz',allow_pickle=False) as z:contacts={k:z[k] for k in z.files}
     with np.load(base.BASE/'wardrobe185-horsecache01/contacts.npz',allow_pickle=False) as z:saddle_reference=z['saddle_matrices'][0,:3,3].copy()
     bpy.ops.wm.open_mainfile(filepath=str(source),load_ui=False,use_scripts=False);base.check_protected()
     scene=bpy.context.scene;rig=bpy.data.objects['MF_body156_fit_rig'];body=bpy.data.objects['MF_studio_adult_body']
