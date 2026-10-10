@@ -17,7 +17,7 @@ def cover_points(points,head_matrix):
     if np.linalg.norm(p-np.asarray(points),axis=1).max()>.33:raise ValueError('Cover exceeds modest fit change')
     return p.astype(np.float32)
 
-def apply_opening(out):
+def apply_opening(out,first=217,count=144):
     import bpy
     from pathlib import Path
     import wardrobe_motion178 as base
@@ -26,11 +26,15 @@ def apply_opening(out):
     ob=bpy.data.objects['MF185_moving_shawl'];rig=bpy.data.objects['MF_body156_fit_rig'];scene=bpy.context.scene
     m=next(m for m in ob.modifiers if m.type=='MESH_CACHE');source=Path(bpy.path.abspath(m.filepath));a=read_mdd(source);start=int(m.frame_start);heads=[]
     with render_geometry_paused():
-        for f in range(217,361):
-            scene.frame_set(f);bpy.context.view_layer.update();heads.append(np.array(ob.matrix_world.inverted()@rig.matrix_world@rig.pose.bones['MF185_head'].matrix))
+        for f in range(first,first+count):
+            scene.frame_set(f);bpy.context.view_layer.update()
+            # Hidden mesh matrix_world can remain stale while its animated
+            # parent continues moving. Resolve the hierarchy explicitly.
+            world=ob.parent.matrix_world@ob.matrix_parent_inverse@ob.matrix_basis if ob.parent else ob.matrix_basis
+            heads.append(np.array(world.inverted()@rig.matrix_world@rig.pose.bones['MF185_head'].matrix))
     def frames():
         for k,p in enumerate(a):
-            i=start+k-217
-            yield cover_points(p,heads[i]) if 0<=i<144 else np.array(p,dtype=np.float32)
+            i=start+k-first
+            yield cover_points(p,heads[i]) if 0<=i<count else np.array(p,dtype=np.float32)
     path=out/'shawl-cover.mdd';write_mdd(path,len(a),a.shape[1],frames());attach_cache(ob,path,start)
     return {'source_sha256':base.digest(source),'maximum_rotation_degrees':9,'scope':'Front headfall only, feathered toward crown/rear and ear level; two outer wrap courses unchanged','new_simulation':False,'visual_gate':'NOT_RUN'}

@@ -29,3 +29,11 @@ def test_cover_only_advances_supported_headfall():
     assert np.array_equal(q[2501:],p[2501:])
     assert np.allclose(q[15*61:2501],p[15*61:2501])
     assert np.linalg.norm(q-p,axis=1).max()<.2
+
+def test_crown_envelope_is_bounded_and_not_chest_projection():
+    from entrance201_clearance import clearance_delta
+    x,z=np.meshgrid(np.linspace(-.9,.9,100),np.linspace(-.3,.8,100));hair=np.column_stack((x.ravel(),np.full(x.size,1.8),z.ravel()))
+    cloth=np.zeros((2501,3));cloth[30]=[0,1.7,.4]
+    d=clearance_delta(hair,cloth)
+    assert .14<d[30]<.15 and d.max()<.15
+    assert d.reshape(41,61)[10:].max()==0
