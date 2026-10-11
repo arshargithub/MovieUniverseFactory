@@ -135,6 +135,27 @@ Build only a thin pilot: compact approved lesson/decision records, a typed relat
 
 First measure the pilot's retrieval and application. Add semantic search if the observed recall failures justify it; add a dedicated graph engine only if simple relationship queries become inadequate. After the tested pilot, shorten the always-loaded entry instructions into a stable governing contract and routing map, while preserving detailed history and checking that no binding rule is lost. Do not delete the current rules before the replacement demonstrates coverage.
 
+### Next deliverable and coverage clarified at exchange212
+
+The internal review obligation is to **form and test hypotheses**, not merely ask what might distract viewers. Before reviewing a shot, predict plausible failures from its intended audience experience, including problems the Director has not named. Inspect the actual passage at intended speed/framing, then use targeted views or controls to distinguish causes. Record the hypothesis, evidence, disposition (supported, not observed or unresolved), correction and adjacent regression checks. Seek evidence against the preferred explanation as well as for it. If playback or another necessary observation is unavailable, state that limit; frame inspection alone does not establish temporal naturalness. Correct understood in-scope failures internally. Director feedback calibrates judgment but is not a prerequisite for identifying a defect, nor a measurement of the whole audience.
+
+Recommended next implementation: a small local knowledge/application pilot before the next substantial production pass, not a complete Factory platform. Its first deliverable is a source coverage map, versioned records and relationships, a reproducible full-text index, task context packets and preflight/exit checks. Test these against the separately prepared applicability matrix, held-out cases and a fresh-context restart. Use real rein-contact, narration/audio and render-profile tasks to verify that retrieved lessons change the work and that failed or stale checks prevent a ready-for-review claim. Keep manual source review as a safety net until measured results support reliance on the pilot. This exchange clarifies sequencing and scope; no implementation or production correction is claimed.
+
+The pilot must cover the following adopted material and carry proposals as proposals:
+
+| Area | What must be carried into relevant work |
+|---|---|
+| Creative direction and continuity | Character intent, story/shot purpose, approved visual language, accepted native versions, reference scope and protected decisions. |
+| Technical production and reuse | Representation choices, anatomy/rigging, contact, cloth/hair, camera/geography, effects, interfaces, failed methods and limits of qualification. |
+| Anticipation and review | Agent-authored audience brief, tested distraction hypotheses, actual-motion evidence, failure-seeking adjacent review, agreed Director gates and escalation conditions. |
+| Efficient Quality and optimization | Quality floor before optional polish, shot-specific visibility/reuse, re-ranking residuals after major fixes, stopping/reopening rules and measured versus unknown effort/cost. |
+| Local rendering | Hardware/scene/profile-specific evidence, image and temporal checks, replay tolerance, source/cache safety and fallback. Metal210 is a promising scoped candidate with mixed preview benefit and a strict repeatability exception, not a universal GPU recommendation or approved production default. |
+| Finished-unit delivery and authority | Narration/source integrity, voice/music decisions, captions, rights, budget, publishing authority and remaining trailer/episode dependencies. |
+
+“Everything discussed” is the continuity objective, not an immediate completeness claim. Inventory the current documented learnings and binding decisions in full within a named, version-pinned initial corpus; give every section a mapped, superseded, deferred or unresolved disposition. Preserve links to underlying history and inventory missing conversations/attachments. Reconcile release-critical historical decisions before their dependent tasks, without making all742 captured exchanges or588 candidate decisions a prerequisite for this pilot. The known truncated source and unreconciled candidates remain explicit gaps. Distinguish source preservation, interpretation, retrieval and demonstrated application in the coverage report.
+
+The exit is a tested mechanism used on a real work package, not merely a populated database. After that proof, return to the scoped rein-grasp finishing concern and the narration/voice decision, then the integrated picture/sound/text unit and final delivery validation. Do not use knowledge tooling to defer production indefinitely or reopen accepted character polish. The bridge should expose the same task/record/evidence interface for the current agent and eventual Factory; it must not make this conversation the only store of operational state.
+
 ## Continuity with original decisions
 
 Full source proposals/user replies were read from the local historical capture for these specific topics; this is not a complete historical audit.
