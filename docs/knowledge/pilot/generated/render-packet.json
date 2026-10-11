@@ -1,0 +1,364 @@
+{
+  "schema_version": 1,
+  "task": {
+    "id": "local-finishing-render-next",
+    "operation": "render",
+    "entities": [
+      "renderer"
+    ],
+    "query": "Metal persistent data black groom dust rectangle final sampling repeat pixel tolerance",
+    "intent": "Carry the scoped local acceleration evidence into the next needed finishing render. Preserve appearance and existing CPU fallback; do not promote a profile from two fast frames.",
+    "phase": "planning",
+    "inputs": {
+      "docs/knowledge/pilot/catalog.json": "cde3d3964a2164ef94b943642bccdd9dfb35f0a4d32d42a174e89bf06999ef65",
+      ".runtime/art-direction/series01-render210/visual-review.json": "44e5710022b81cebb5413ef81f7eb7614a2cf39b002f7503295cdb1976d492d1"
+    },
+    "open_decisions": [],
+    "hypotheses_to_test": [
+      "A profile that looks correct in sparse controls may produce groom/dust discontinuity in the complete motion.",
+      "Higher-resolution speed gains may not survive final sampling and memory pressure; measure the actual workload.",
+      "A visually negligible numerical change can still violate the declared replay contract; do not silently relax it."
+    ],
+    "execution_prerequisites": [
+      "Source/caches and exact final profile must be bound at dispatch.",
+      "Full-sequence final-sampling and reproducibility remain NOT_RUN; Metal217 strict repeat failed.",
+      "No renderer defaults or power/application settings change through this planning packet."
+    ]
+  },
+  "corpus_digest": "bdb23a98847c1af6ee21074908d7b17cc95675bd29714956f227761d001c7acb",
+  "engine_sha256": "66e4b1439a05ead4ccd212586e3b407bbf3faa35d8b62f5fa0545c03dda2182b",
+  "entity_versions": {
+    "renderer": "210-metal-candidate-not-promoted"
+  },
+  "entity_reasons": {
+    "renderer": "explicit task entity"
+  },
+  "traversed_edges": [],
+  "facets": [
+    "render",
+    "visual"
+  ],
+  "obligations": [
+    {
+      "id": "authority",
+      "status": "adopted",
+      "kind": "constraint",
+      "tags": [
+        "*"
+      ],
+      "sources": [
+        "workflow",
+        "strategy",
+        "context",
+        "unit"
+      ],
+      "check_kind": "process",
+      "action": "Confirm scope and genuine Director decisions. No new spend, installs, specialists, publication or protected creative changes by inference. Routine in-scope technical fixes remain agent-owned. Astra is top tier; failed method needs reassessment, not a nonexistent higher model.",
+      "reason": "global binding rule",
+      "citations": [
+        "docs/knowledge/EFFICIENT_QUALITY_ASSET_WORKFLOW.md",
+        "docs/decisions/0005-production-strategy-before-execution.md",
+        "docs/planning/CONTEXT_AND_DIRECTOR_REVIEW_CONTRACT.md",
+        "docs/planning/SERIES_01_PASHTUN_FINISHED_UNIT_PLAN.md"
+      ],
+      "authority": "adopted"
+    },
+    {
+      "id": "strategy",
+      "status": "adopted",
+      "kind": "constraint",
+      "tags": [
+        "*"
+      ],
+      "sources": [
+        "strategy",
+        "workflow"
+      ],
+      "check_kind": "process",
+      "action": "Read current strategy; name outcome, quality floor, interfaces, assumptions, earliest integrated proof, resources, reuse and replan/exit. Repeated compensating patches trigger method reassessment, not renamed passes.",
+      "reason": "global binding rule",
+      "citations": [
+        "docs/decisions/0005-production-strategy-before-execution.md",
+        "docs/knowledge/EFFICIENT_QUALITY_ASSET_WORKFLOW.md"
+      ],
+      "authority": "adopted"
+    },
+    {
+      "id": "visual_gate",
+      "status": "adopted",
+      "kind": "constraint",
+      "tags": [
+        "*"
+      ],
+      "sources": [
+        "context",
+        "workflow",
+        "index"
+      ],
+      "check_kind": "review",
+      "action": "Compare the complete claimed result to accepted references and required use, seeking known and new failures plus adjacent regressions. Actual motion/audio where applicable; distinguish frame inspection from playback. Tests, better-than-before and source hashes do not establish perceptual PASS. Known FAIL/NOT_RUN blocks handoff.",
+      "reason": "global binding rule",
+      "citations": [
+        "docs/planning/CONTEXT_AND_DIRECTOR_REVIEW_CONTRACT.md",
+        "docs/knowledge/EFFICIENT_QUALITY_ASSET_WORKFLOW.md",
+        "docs/knowledge/PRODUCTION_LEARNING_APPLICATION_INDEX.md"
+      ],
+      "authority": "adopted"
+    },
+    {
+      "id": "anticipation",
+      "status": "adopted",
+      "kind": "constraint",
+      "tags": [
+        "*"
+      ],
+      "sources": [
+        "context"
+      ],
+      "check_kind": "review",
+      "action": "Write audience intent and distraction hypotheses before a defect list. Test them against actual evidence, seek counterevidence and unlisted problems, record observations and corrections. Director feedback calibrates fallible judgment; it is not the primary defect detector.",
+      "reason": "global binding rule",
+      "citations": [
+        "docs/planning/CONTEXT_AND_DIRECTOR_REVIEW_CONTRACT.md"
+      ],
+      "authority": "adopted"
+    },
+    {
+      "id": "stopping",
+      "status": "adopted",
+      "kind": "constraint",
+      "tags": [
+        "*"
+      ],
+      "sources": [
+        "context",
+        "workflow",
+        "strategy"
+      ],
+      "check_kind": "review",
+      "action": "Meet the quality floor first. Then weigh visible benefit, dramatic value, reuse and regression/opportunity cost. Re-rank residuals after larger fixes. Prior tolerance is not acceptance. Record deferred details and reopening triggers; no arbitrary timer waives quality or creates handoff.",
+      "reason": "global binding rule",
+      "citations": [
+        "docs/planning/CONTEXT_AND_DIRECTOR_REVIEW_CONTRACT.md",
+        "docs/knowledge/EFFICIENT_QUALITY_ASSET_WORKFLOW.md",
+        "docs/decisions/0005-production-strategy-before-execution.md"
+      ],
+      "authority": "adopted"
+    },
+    {
+      "id": "versioning",
+      "status": "adopted",
+      "kind": "constraint",
+      "tags": [
+        "*"
+      ],
+      "sources": [
+        "context",
+        "index",
+        "accepted"
+      ],
+      "check_kind": "technical",
+      "action": "Bind actual inputs, accepted scope, source hashes and dependencies. Revalidate affected checks after camera/motion/version changes. Preserve originals and failed evidence. A local commit is not native-media backup; a reopened scene is not proof of portable or general reuse.",
+      "reason": "global binding rule",
+      "citations": [
+        "docs/planning/CONTEXT_AND_DIRECTOR_REVIEW_CONTRACT.md",
+        "docs/knowledge/PRODUCTION_LEARNING_APPLICATION_INDEX.md",
+        "docs/knowledge/PASHTUN_CHARACTER_RETROSPECTIVE.md"
+      ],
+      "authority": "adopted"
+    },
+    {
+      "id": "economics",
+      "status": "adopted",
+      "kind": "constraint",
+      "tags": [
+        "*"
+      ],
+      "sources": [
+        "index",
+        "workflow",
+        "accepted",
+        "render"
+      ],
+      "check_kind": "process",
+      "action": "Track active effort, waits, jobs, actual provider spend and usable output separately; leave unavailable tokens/cost null. Do not add overlapping process/activity time. Diagnostic investment is not repeatable unit cost. Advance the trailer and two episodes, not tooling or polish for its own sake.",
+      "reason": "global binding rule",
+      "citations": [
+        "docs/knowledge/PRODUCTION_LEARNING_APPLICATION_INDEX.md",
+        "docs/knowledge/EFFICIENT_QUALITY_ASSET_WORKFLOW.md",
+        "docs/knowledge/PASHTUN_CHARACTER_RETROSPECTIVE.md",
+        "docs/planning/LOCAL_RENDER_ACCELERATION_210.md"
+      ],
+      "authority": "adopted"
+    },
+    {
+      "id": "look",
+      "status": "supported",
+      "kind": "lesson",
+      "tags": [
+        "visual",
+        "look"
+      ],
+      "sources": [
+        "index",
+        "render"
+      ],
+      "check_kind": "review",
+      "action": "Preserve illustrated-C richness through form, designed marks, palette/selective darks and physical interaction, not simply flattened shading. Judge moving foreground against painted distance and phone-size hierarchy. Render acceleration cannot trade away selected style or dust/hair readability.",
+      "reason": "matched facets: visual",
+      "citations": [
+        "docs/knowledge/PRODUCTION_LEARNING_APPLICATION_INDEX.md",
+        "docs/planning/LOCAL_RENDER_ACCELERATION_210.md"
+      ],
+      "authority": "supported"
+    },
+    {
+      "id": "render_profile",
+      "status": "supported",
+      "kind": "lesson",
+      "tags": [
+        "render"
+      ],
+      "sources": [
+        "render"
+      ],
+      "check_kind": "technical",
+      "action": "Metal210 is a YELLOW candidate: fresh process, MetalRT ON, persistent data OFF, M4,8 samples. Two1080x1920 controls were2.43x faster end-to-end, previews mixed; strict217 repeat exceeded1/255. No full-final-sequence qualification or default promotion. Preserve CPU fallback and validate actual final profile/replay before adoption.",
+      "reason": "matched facets: render",
+      "citations": [
+        "docs/planning/LOCAL_RENDER_ACCELERATION_210.md"
+      ],
+      "authority": "supported"
+    },
+    {
+      "id": "cache_safety",
+      "status": "supported",
+      "kind": "lesson",
+      "tags": [
+        "render"
+      ],
+      "sources": [
+        "render"
+      ],
+      "check_kind": "technical",
+      "action": "Keep protected natives/caches unchanged, no embedded scripts/credentials/global preference changes. One worker, memory headroom. Persistent data previously caused black groom; require chronological/reopen proof before enabling. Do not equate swap footprint with measured throttling or claim MetalRT isolated the old artifact cause.",
+      "reason": "matched facets: render",
+      "citations": [
+        "docs/planning/LOCAL_RENDER_ACCELERATION_210.md"
+      ],
+      "authority": "supported"
+    }
+  ],
+  "excluded": [
+    {
+      "id": "identity",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "representation",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "anatomy",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "motion",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "contact",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "garment",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "secondary",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "geography",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "sword",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "narrative",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "quotation",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "sound",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "captions",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "rights",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "retrieval",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "narration_a",
+      "reason": "not current authority/workflow"
+    },
+    {
+      "id": "single_wrap",
+      "reason": "not current authority/workflow"
+    },
+    {
+      "id": "gpu_ban",
+      "reason": "not current authority/workflow"
+    }
+  ],
+  "supporting_search": [
+    {
+      "id": "cache_safety",
+      "status": "supported",
+      "role": "supporting_only"
+    },
+    {
+      "id": "gpu_ban",
+      "status": "contradicted",
+      "role": "supporting_only"
+    },
+    {
+      "id": "render_profile",
+      "status": "supported",
+      "role": "supporting_only"
+    },
+    {
+      "id": "look",
+      "status": "supported",
+      "role": "supporting_only"
+    },
+    {
+      "id": "economics",
+      "status": "adopted",
+      "role": "supporting_only"
+    }
+  ],
+  "blockers": [],
+  "dispatch_ready": true,
+  "gaps": [
+    "Detailed linked asset/experiment histories are not exhaustively re-audited in this nine-document pilot.",
+    "Legacy742-turn capture has one truncated response;588 candidates are not all reconciled or approved.",
+    "Task/entity descriptors and dependency relationships are manually curated, not extracted from Blender automatically.",
+    "No new visual/audio review, paid generation, production renderer promotion or release authorization is supplied by a context packet."
+  ],
+  "open_decisions": [],
+  "limits": "Planning readiness is not execution authorization. Manually curated scope and authority records require agent verification. CLI enforces evidence structure/freshness, not honesty or perceptual quality.",
+  "packet_digest": "1f3526a94330a60a076b3aac72a44a89b94b92de725589c585ea726c4901ceba"
+}

@@ -1,0 +1,478 @@
+{
+  "schema_version": 1,
+  "task": {
+    "id": "rein-finishing-next",
+    "operation": "contact",
+    "entities": [
+      "hand"
+    ],
+    "query": "credible grasp thumb rein enclosure sliding coordinated arm and sleeve motion",
+    "intent": "Plan the smallest actual-shot correction that makes her control of the galloping horse believable, while preserving accepted identity, action and staging. No universal hand rig or portrait reopening.",
+    "phase": "planning",
+    "inputs": {
+      "docs/knowledge/pilot/catalog.json": "cde3d3964a2164ef94b943642bccdd9dfb35f0a4d32d42a174e89bf06999ef65",
+      ".runtime/art-direction/series01-entrance209/prop-source.json": "1b8bdbe6ccb1d3147e256d9eb7ad2bff9fa7467b0da2d4b983688931ac9f58e0"
+    },
+    "open_decisions": [],
+    "hypotheses_to_test": [
+      "Thumb/finger silhouette may fail to visibly enclose the reins at normal viewing size even where attachment transforms pass.",
+      "A plausible static grip may slide or look disconnected during the dramatic turn; inspect the whole visible contact passage.",
+      "A contact correction may over-lock the arm and reintroduce stiff neck/shoulder performance or sleeve deformation."
+    ],
+    "execution_prerequisites": [
+      "Read character-specific deep history required by AGENTS.md; this catalog does not replace it.",
+      "Bind actual current native files and shared caches, not only this planning provenance record.",
+      "Inspect full actual-motion and interface controls before deciding what needs repair. No new visual pass is claimed here."
+    ]
+  },
+  "corpus_digest": "bdb23a98847c1af6ee21074908d7b17cc95675bd29714956f227761d001c7acb",
+  "engine_sha256": "66e4b1439a05ead4ccd212586e3b407bbf3faa35d8b62f5fa0545c03dda2182b",
+  "entity_versions": {
+    "arm": "entrance209",
+    "hand": "entrance209-open-finishing",
+    "horse": "entrance209",
+    "pashtun": "accepted152-head169-body; derivative209",
+    "rein": "entrance209",
+    "shawl": "double-wrap-current209"
+  },
+  "entity_reasons": {
+    "hand": "explicit task entity",
+    "rein": "hand contacts rein",
+    "arm": "hand depends_on arm",
+    "horse": "rein connects_to horse",
+    "shawl": "arm adjacent_to shawl",
+    "pashtun": "arm part_of pashtun"
+  },
+  "traversed_edges": [
+    [
+      "hand",
+      "contacts",
+      "rein"
+    ],
+    [
+      "hand",
+      "depends_on",
+      "arm"
+    ],
+    [
+      "rein",
+      "connects_to",
+      "horse"
+    ],
+    [
+      "arm",
+      "depends_on",
+      "hand"
+    ],
+    [
+      "arm",
+      "adjacent_to",
+      "shawl"
+    ],
+    [
+      "arm",
+      "part_of",
+      "pashtun"
+    ],
+    [
+      "shawl",
+      "supported_by",
+      "pashtun"
+    ],
+    [
+      "shawl",
+      "depends_on",
+      "arm"
+    ]
+  ],
+  "facets": [
+    "anatomy",
+    "cloth",
+    "contact",
+    "identity",
+    "motion",
+    "secondary"
+  ],
+  "obligations": [
+    {
+      "id": "authority",
+      "status": "adopted",
+      "kind": "constraint",
+      "tags": [
+        "*"
+      ],
+      "sources": [
+        "workflow",
+        "strategy",
+        "context",
+        "unit"
+      ],
+      "check_kind": "process",
+      "action": "Confirm scope and genuine Director decisions. No new spend, installs, specialists, publication or protected creative changes by inference. Routine in-scope technical fixes remain agent-owned. Astra is top tier; failed method needs reassessment, not a nonexistent higher model.",
+      "reason": "global binding rule",
+      "citations": [
+        "docs/knowledge/EFFICIENT_QUALITY_ASSET_WORKFLOW.md",
+        "docs/decisions/0005-production-strategy-before-execution.md",
+        "docs/planning/CONTEXT_AND_DIRECTOR_REVIEW_CONTRACT.md",
+        "docs/planning/SERIES_01_PASHTUN_FINISHED_UNIT_PLAN.md"
+      ],
+      "authority": "adopted"
+    },
+    {
+      "id": "strategy",
+      "status": "adopted",
+      "kind": "constraint",
+      "tags": [
+        "*"
+      ],
+      "sources": [
+        "strategy",
+        "workflow"
+      ],
+      "check_kind": "process",
+      "action": "Read current strategy; name outcome, quality floor, interfaces, assumptions, earliest integrated proof, resources, reuse and replan/exit. Repeated compensating patches trigger method reassessment, not renamed passes.",
+      "reason": "global binding rule",
+      "citations": [
+        "docs/decisions/0005-production-strategy-before-execution.md",
+        "docs/knowledge/EFFICIENT_QUALITY_ASSET_WORKFLOW.md"
+      ],
+      "authority": "adopted"
+    },
+    {
+      "id": "visual_gate",
+      "status": "adopted",
+      "kind": "constraint",
+      "tags": [
+        "*"
+      ],
+      "sources": [
+        "context",
+        "workflow",
+        "index"
+      ],
+      "check_kind": "review",
+      "action": "Compare the complete claimed result to accepted references and required use, seeking known and new failures plus adjacent regressions. Actual motion/audio where applicable; distinguish frame inspection from playback. Tests, better-than-before and source hashes do not establish perceptual PASS. Known FAIL/NOT_RUN blocks handoff.",
+      "reason": "global binding rule",
+      "citations": [
+        "docs/planning/CONTEXT_AND_DIRECTOR_REVIEW_CONTRACT.md",
+        "docs/knowledge/EFFICIENT_QUALITY_ASSET_WORKFLOW.md",
+        "docs/knowledge/PRODUCTION_LEARNING_APPLICATION_INDEX.md"
+      ],
+      "authority": "adopted"
+    },
+    {
+      "id": "anticipation",
+      "status": "adopted",
+      "kind": "constraint",
+      "tags": [
+        "*"
+      ],
+      "sources": [
+        "context"
+      ],
+      "check_kind": "review",
+      "action": "Write audience intent and distraction hypotheses before a defect list. Test them against actual evidence, seek counterevidence and unlisted problems, record observations and corrections. Director feedback calibrates fallible judgment; it is not the primary defect detector.",
+      "reason": "global binding rule",
+      "citations": [
+        "docs/planning/CONTEXT_AND_DIRECTOR_REVIEW_CONTRACT.md"
+      ],
+      "authority": "adopted"
+    },
+    {
+      "id": "stopping",
+      "status": "adopted",
+      "kind": "constraint",
+      "tags": [
+        "*"
+      ],
+      "sources": [
+        "context",
+        "workflow",
+        "strategy"
+      ],
+      "check_kind": "review",
+      "action": "Meet the quality floor first. Then weigh visible benefit, dramatic value, reuse and regression/opportunity cost. Re-rank residuals after larger fixes. Prior tolerance is not acceptance. Record deferred details and reopening triggers; no arbitrary timer waives quality or creates handoff.",
+      "reason": "global binding rule",
+      "citations": [
+        "docs/planning/CONTEXT_AND_DIRECTOR_REVIEW_CONTRACT.md",
+        "docs/knowledge/EFFICIENT_QUALITY_ASSET_WORKFLOW.md",
+        "docs/decisions/0005-production-strategy-before-execution.md"
+      ],
+      "authority": "adopted"
+    },
+    {
+      "id": "versioning",
+      "status": "adopted",
+      "kind": "constraint",
+      "tags": [
+        "*"
+      ],
+      "sources": [
+        "context",
+        "index",
+        "accepted"
+      ],
+      "check_kind": "technical",
+      "action": "Bind actual inputs, accepted scope, source hashes and dependencies. Revalidate affected checks after camera/motion/version changes. Preserve originals and failed evidence. A local commit is not native-media backup; a reopened scene is not proof of portable or general reuse.",
+      "reason": "global binding rule",
+      "citations": [
+        "docs/planning/CONTEXT_AND_DIRECTOR_REVIEW_CONTRACT.md",
+        "docs/knowledge/PRODUCTION_LEARNING_APPLICATION_INDEX.md",
+        "docs/knowledge/PASHTUN_CHARACTER_RETROSPECTIVE.md"
+      ],
+      "authority": "adopted"
+    },
+    {
+      "id": "economics",
+      "status": "adopted",
+      "kind": "constraint",
+      "tags": [
+        "*"
+      ],
+      "sources": [
+        "index",
+        "workflow",
+        "accepted",
+        "render"
+      ],
+      "check_kind": "process",
+      "action": "Track active effort, waits, jobs, actual provider spend and usable output separately; leave unavailable tokens/cost null. Do not add overlapping process/activity time. Diagnostic investment is not repeatable unit cost. Advance the trailer and two episodes, not tooling or polish for its own sake.",
+      "reason": "global binding rule",
+      "citations": [
+        "docs/knowledge/PRODUCTION_LEARNING_APPLICATION_INDEX.md",
+        "docs/knowledge/EFFICIENT_QUALITY_ASSET_WORKFLOW.md",
+        "docs/knowledge/PASHTUN_CHARACTER_RETROSPECTIVE.md",
+        "docs/planning/LOCAL_RENDER_ACCELERATION_210.md"
+      ],
+      "authority": "adopted"
+    },
+    {
+      "id": "identity",
+      "status": "adopted",
+      "kind": "decision",
+      "tags": [
+        "identity"
+      ],
+      "sources": [
+        "accepted",
+        "workflow",
+        "unit"
+      ],
+      "check_kind": "review",
+      "action": "Preserve accepted152 head/neck/hair and169 body within their accepted scopes;209 is a derivative preview. Images retain identity/art-direction value, not an instruction to repair accepted native differences. Composed self-possession, not aggression; no portrait reopening without use-specific failure or creative revision.",
+      "reason": "matched facets: identity",
+      "citations": [
+        "docs/knowledge/PASHTUN_CHARACTER_RETROSPECTIVE.md",
+        "docs/knowledge/EFFICIENT_QUALITY_ASSET_WORKFLOW.md",
+        "docs/planning/SERIES_01_PASHTUN_FINISHED_UNIT_PLAN.md"
+      ],
+      "authority": "adopted"
+    },
+    {
+      "id": "anatomy",
+      "status": "supported",
+      "kind": "lesson",
+      "tags": [
+        "anatomy"
+      ],
+      "sources": [
+        "accepted",
+        "index",
+        "motion"
+      ],
+      "check_kind": "review",
+      "action": "Compare accepted anatomical transitions with matched camera/scale/light. Separate clay, colour and lighting when diagnostic; preserve throat/clavicles, shoulder and hip volume across full/partial poses. Clothes cannot waive anatomy. Extend approved cheek character outward rather than flatten it.",
+      "reason": "matched facets: anatomy",
+      "citations": [
+        "docs/knowledge/PASHTUN_CHARACTER_RETROSPECTIVE.md",
+        "docs/knowledge/PRODUCTION_LEARNING_APPLICATION_INDEX.md",
+        "docs/planning/MOTION_DESIGN_TEMPLATE.md"
+      ],
+      "authority": "supported"
+    },
+    {
+      "id": "motion",
+      "status": "adopted",
+      "kind": "constraint",
+      "tags": [
+        "motion"
+      ],
+      "sources": [
+        "motion",
+        "index"
+      ],
+      "check_kind": "review",
+      "action": "Complete motion brief; establish transform spaces, evaluated parent state and one contact/travel owner. Test coordinated joints, transition interiors, neutral return and complete motion. Nonzero keys do not prove neck absorption, emotion or natural movement.",
+      "reason": "matched facets: motion",
+      "citations": [
+        "docs/planning/MOTION_DESIGN_TEMPLATE.md",
+        "docs/knowledge/PRODUCTION_LEARNING_APPLICATION_INDEX.md"
+      ],
+      "authority": "adopted"
+    },
+    {
+      "id": "contact",
+      "status": "supported",
+      "kind": "lesson",
+      "tags": [
+        "contact"
+      ],
+      "sources": [
+        "context",
+        "motion",
+        "unit"
+      ],
+      "check_kind": "review",
+      "action": "Rein grasp remains OPEN: inspect moving silhouette/enclosure, penetration/sliding, wrist/arm coordination and rein response at actual framing; include sleeve/shoulder regression controls. Preserve staging rather than hide defect. Credible required-shot grasp, not a universal hand rig, is the exit.",
+      "reason": "matched facets: contact",
+      "citations": [
+        "docs/planning/CONTEXT_AND_DIRECTOR_REVIEW_CONTRACT.md",
+        "docs/planning/MOTION_DESIGN_TEMPLATE.md",
+        "docs/planning/SERIES_01_PASHTUN_FINISHED_UNIT_PLAN.md"
+      ],
+      "authority": "supported"
+    },
+    {
+      "id": "garment",
+      "status": "adopted",
+      "kind": "decision",
+      "tags": [
+        "cloth"
+      ],
+      "sources": [
+        "workflow",
+        "index",
+        "unit"
+      ],
+      "check_kind": "review",
+      "action": "Keep at least two legible outer wraps and shawl above chest harness. Trace both edges across shoulders and outside rear headfall. Check support, moving contact and body-versus-cloth control before surface detail. Connectivity/clearance numbers alone do not qualify drape; single-wrap simplification is superseded.",
+      "reason": "matched facets: cloth",
+      "citations": [
+        "docs/knowledge/EFFICIENT_QUALITY_ASSET_WORKFLOW.md",
+        "docs/knowledge/PRODUCTION_LEARNING_APPLICATION_INDEX.md",
+        "docs/planning/SERIES_01_PASHTUN_FINISHED_UNIT_PLAN.md"
+      ],
+      "authority": "adopted"
+    },
+    {
+      "id": "secondary",
+      "status": "supported",
+      "kind": "lesson",
+      "tags": [
+        "secondary"
+      ],
+      "sources": [
+        "index",
+        "accepted"
+      ],
+      "check_kind": "review",
+      "action": "Check hair/mane/tail/cloth/dust response coherently in actual motion; protect roots/supports and scale forcing by length. Dust needs world-space continuity through turns and contrast without obscuring action. New motion/camera/palette invalidates relevant checks; authored lag is not general physics.",
+      "reason": "matched facets: secondary",
+      "citations": [
+        "docs/knowledge/PRODUCTION_LEARNING_APPLICATION_INDEX.md",
+        "docs/knowledge/PASHTUN_CHARACTER_RETROSPECTIVE.md"
+      ],
+      "authority": "supported"
+    }
+  ],
+  "excluded": [
+    {
+      "id": "representation",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "look",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "geography",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "sword",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "render_profile",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "cache_safety",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "narrative",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "quotation",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "sound",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "captions",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "rights",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "retrieval",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "narration_a",
+      "reason": "not current authority/workflow"
+    },
+    {
+      "id": "single_wrap",
+      "reason": "not current authority/workflow"
+    },
+    {
+      "id": "gpu_ban",
+      "reason": "not current authority/workflow"
+    }
+  ],
+  "supporting_search": [
+    {
+      "id": "contact",
+      "status": "supported",
+      "role": "supporting_only"
+    },
+    {
+      "id": "anticipation",
+      "status": "adopted",
+      "role": "supporting_only"
+    },
+    {
+      "id": "retrieval",
+      "status": "adopted",
+      "role": "supporting_only"
+    },
+    {
+      "id": "versioning",
+      "status": "adopted",
+      "role": "supporting_only"
+    },
+    {
+      "id": "stopping",
+      "status": "adopted",
+      "role": "supporting_only"
+    }
+  ],
+  "blockers": [],
+  "dispatch_ready": true,
+  "gaps": [
+    "Detailed linked asset/experiment histories are not exhaustively re-audited in this nine-document pilot.",
+    "Legacy742-turn capture has one truncated response;588 candidates are not all reconciled or approved.",
+    "Task/entity descriptors and dependency relationships are manually curated, not extracted from Blender automatically.",
+    "No new visual/audio review, paid generation, production renderer promotion or release authorization is supplied by a context packet."
+  ],
+  "open_decisions": [],
+  "limits": "Planning readiness is not execution authorization. Manually curated scope and authority records require agent verification. CLI enforces evidence structure/freshness, not honesty or perceptual quality.",
+  "packet_digest": "3d82f51f9b722a1d27ce6e50a25e042c6da7dacc8a52708c25fbdb05fd907813"
+}

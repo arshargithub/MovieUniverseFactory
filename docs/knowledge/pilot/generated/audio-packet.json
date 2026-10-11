@@ -1,0 +1,414 @@
+{
+  "schema_version": 1,
+  "task": {
+    "id": "finished-unit-audio-next",
+    "operation": "audio",
+    "entities": [
+      "officer"
+    ],
+    "query": "narration fictional officer historical quotation voice music hoof sound captions",
+    "intent": "Prepare the meaningful script and in-context voice choice for the18-second entrance while protecting her agency, officer arc and the dramatic turn. No paid generation or selection of treatment A by inference.",
+    "phase": "planning",
+    "inputs": {
+      "docs/knowledge/pilot/catalog.json": "cde3d3964a2164ef94b943642bccdd9dfb35f0a4d32d42a174e89bf06999ef65"
+    },
+    "open_decisions": [
+      "select narration wording and officer voice direction",
+      "approve an eligible bounded external audio route before paid calls"
+    ],
+    "hypotheses_to_test": [
+      "An admiring colonial quotation may sound like the film endorsing racial classification unless voice and action establish viewpoint.",
+      "Opening text plus captions and voice may overload attention or hide route information.",
+      "Continuous music or speech may weaken recognition and the turn instead of supporting them."
+    ],
+    "execution_prerequisites": [
+      "Director script/voice choice remains open.",
+      "Reverify route eligibility, current terms and available budget;210/209 provider notes are not live authority.",
+      "Use an integrated sound/text preview, actual listening, cue provenance and clean/captioned masters before final qualification."
+    ]
+  },
+  "corpus_digest": "bdb23a98847c1af6ee21074908d7b17cc95675bd29714956f227761d001c7acb",
+  "engine_sha256": "66e4b1439a05ead4ccd212586e3b407bbf3faa35d8b62f5fa0545c03dda2182b",
+  "entity_versions": {
+    "officer": "209-proposal-voice-unselected"
+  },
+  "entity_reasons": {
+    "officer": "explicit task entity"
+  },
+  "traversed_edges": [],
+  "facets": [
+    "audio",
+    "narration",
+    "text"
+  ],
+  "obligations": [
+    {
+      "id": "authority",
+      "status": "adopted",
+      "kind": "constraint",
+      "tags": [
+        "*"
+      ],
+      "sources": [
+        "workflow",
+        "strategy",
+        "context",
+        "unit"
+      ],
+      "check_kind": "process",
+      "action": "Confirm scope and genuine Director decisions. No new spend, installs, specialists, publication or protected creative changes by inference. Routine in-scope technical fixes remain agent-owned. Astra is top tier; failed method needs reassessment, not a nonexistent higher model.",
+      "reason": "global binding rule",
+      "citations": [
+        "docs/knowledge/EFFICIENT_QUALITY_ASSET_WORKFLOW.md",
+        "docs/decisions/0005-production-strategy-before-execution.md",
+        "docs/planning/CONTEXT_AND_DIRECTOR_REVIEW_CONTRACT.md",
+        "docs/planning/SERIES_01_PASHTUN_FINISHED_UNIT_PLAN.md"
+      ],
+      "authority": "adopted"
+    },
+    {
+      "id": "strategy",
+      "status": "adopted",
+      "kind": "constraint",
+      "tags": [
+        "*"
+      ],
+      "sources": [
+        "strategy",
+        "workflow"
+      ],
+      "check_kind": "process",
+      "action": "Read current strategy; name outcome, quality floor, interfaces, assumptions, earliest integrated proof, resources, reuse and replan/exit. Repeated compensating patches trigger method reassessment, not renamed passes.",
+      "reason": "global binding rule",
+      "citations": [
+        "docs/decisions/0005-production-strategy-before-execution.md",
+        "docs/knowledge/EFFICIENT_QUALITY_ASSET_WORKFLOW.md"
+      ],
+      "authority": "adopted"
+    },
+    {
+      "id": "visual_gate",
+      "status": "adopted",
+      "kind": "constraint",
+      "tags": [
+        "*"
+      ],
+      "sources": [
+        "context",
+        "workflow",
+        "index"
+      ],
+      "check_kind": "review",
+      "action": "Compare the complete claimed result to accepted references and required use, seeking known and new failures plus adjacent regressions. Actual motion/audio where applicable; distinguish frame inspection from playback. Tests, better-than-before and source hashes do not establish perceptual PASS. Known FAIL/NOT_RUN blocks handoff.",
+      "reason": "global binding rule",
+      "citations": [
+        "docs/planning/CONTEXT_AND_DIRECTOR_REVIEW_CONTRACT.md",
+        "docs/knowledge/EFFICIENT_QUALITY_ASSET_WORKFLOW.md",
+        "docs/knowledge/PRODUCTION_LEARNING_APPLICATION_INDEX.md"
+      ],
+      "authority": "adopted"
+    },
+    {
+      "id": "anticipation",
+      "status": "adopted",
+      "kind": "constraint",
+      "tags": [
+        "*"
+      ],
+      "sources": [
+        "context"
+      ],
+      "check_kind": "review",
+      "action": "Write audience intent and distraction hypotheses before a defect list. Test them against actual evidence, seek counterevidence and unlisted problems, record observations and corrections. Director feedback calibrates fallible judgment; it is not the primary defect detector.",
+      "reason": "global binding rule",
+      "citations": [
+        "docs/planning/CONTEXT_AND_DIRECTOR_REVIEW_CONTRACT.md"
+      ],
+      "authority": "adopted"
+    },
+    {
+      "id": "stopping",
+      "status": "adopted",
+      "kind": "constraint",
+      "tags": [
+        "*"
+      ],
+      "sources": [
+        "context",
+        "workflow",
+        "strategy"
+      ],
+      "check_kind": "review",
+      "action": "Meet the quality floor first. Then weigh visible benefit, dramatic value, reuse and regression/opportunity cost. Re-rank residuals after larger fixes. Prior tolerance is not acceptance. Record deferred details and reopening triggers; no arbitrary timer waives quality or creates handoff.",
+      "reason": "global binding rule",
+      "citations": [
+        "docs/planning/CONTEXT_AND_DIRECTOR_REVIEW_CONTRACT.md",
+        "docs/knowledge/EFFICIENT_QUALITY_ASSET_WORKFLOW.md",
+        "docs/decisions/0005-production-strategy-before-execution.md"
+      ],
+      "authority": "adopted"
+    },
+    {
+      "id": "versioning",
+      "status": "adopted",
+      "kind": "constraint",
+      "tags": [
+        "*"
+      ],
+      "sources": [
+        "context",
+        "index",
+        "accepted"
+      ],
+      "check_kind": "technical",
+      "action": "Bind actual inputs, accepted scope, source hashes and dependencies. Revalidate affected checks after camera/motion/version changes. Preserve originals and failed evidence. A local commit is not native-media backup; a reopened scene is not proof of portable or general reuse.",
+      "reason": "global binding rule",
+      "citations": [
+        "docs/planning/CONTEXT_AND_DIRECTOR_REVIEW_CONTRACT.md",
+        "docs/knowledge/PRODUCTION_LEARNING_APPLICATION_INDEX.md",
+        "docs/knowledge/PASHTUN_CHARACTER_RETROSPECTIVE.md"
+      ],
+      "authority": "adopted"
+    },
+    {
+      "id": "economics",
+      "status": "adopted",
+      "kind": "constraint",
+      "tags": [
+        "*"
+      ],
+      "sources": [
+        "index",
+        "workflow",
+        "accepted",
+        "render"
+      ],
+      "check_kind": "process",
+      "action": "Track active effort, waits, jobs, actual provider spend and usable output separately; leave unavailable tokens/cost null. Do not add overlapping process/activity time. Diagnostic investment is not repeatable unit cost. Advance the trailer and two episodes, not tooling or polish for its own sake.",
+      "reason": "global binding rule",
+      "citations": [
+        "docs/knowledge/PRODUCTION_LEARNING_APPLICATION_INDEX.md",
+        "docs/knowledge/EFFICIENT_QUALITY_ASSET_WORKFLOW.md",
+        "docs/knowledge/PASHTUN_CHARACTER_RETROSPECTIVE.md",
+        "docs/planning/LOCAL_RENDER_ACCELERATION_210.md"
+      ],
+      "authority": "adopted"
+    },
+    {
+      "id": "narrative",
+      "status": "adopted",
+      "kind": "constraint",
+      "tags": [
+        "narration"
+      ],
+      "sources": [
+        "audio",
+        "unit"
+      ],
+      "check_kind": "review",
+      "unresolved_decision": "select_narration_and_voice",
+      "action": "Script/voice remain UNSELECTED. Officer is sincere and beginning to question empire, not consciously transactional or a cartoon villain. Preserve her agency and action breathing room; do not silently choose treatment A or lengthen the turn for exposition. Audition voice in context before paid production.",
+      "reason": "matched facets: narration",
+      "citations": [
+        "docs/planning/SERIES_01_PASHTUN_NARRATIVE_AUDIO_PROPOSAL.md",
+        "docs/planning/SERIES_01_PASHTUN_FINISHED_UNIT_PLAN.md"
+      ],
+      "authority": "adopted"
+    },
+    {
+      "id": "quotation",
+      "status": "adopted",
+      "kind": "constraint",
+      "tags": [
+        "narration",
+        "text"
+      ],
+      "sources": [
+        "audio",
+        "unit"
+      ],
+      "check_kind": "review",
+      "action": "Separate fictional dialogue from verified historical quotation; retain author/work/edition/page/context and colonial viewpoint, not racial claims as fact. Churchill1898 verified against1916 edition; Warburton1900 context does not select her tribe. Designed typography is not an authentic scan. Old research does not itself clear release rights.",
+      "reason": "matched facets: narration, text",
+      "citations": [
+        "docs/planning/SERIES_01_PASHTUN_NARRATIVE_AUDIO_PROPOSAL.md",
+        "docs/planning/SERIES_01_PASHTUN_FINISHED_UNIT_PLAN.md"
+      ],
+      "authority": "adopted"
+    },
+    {
+      "id": "sound",
+      "status": "proposed",
+      "kind": "workflow",
+      "tags": [
+        "audio"
+      ],
+      "sources": [
+        "audio",
+        "unit"
+      ],
+      "check_kind": "review",
+      "action": "Proposed execution after selection: prove voice, hoof/breath/tack/gravel, music and text in complete18s edit; preserve recognition/turn space and determined continuation. Keep stems/cue IDs and rights. Test intelligibility and physical perspective on real playback. No actual-series audio qualification exists yet.",
+      "reason": "matched facets: audio",
+      "citations": [
+        "docs/planning/SERIES_01_PASHTUN_NARRATIVE_AUDIO_PROPOSAL.md",
+        "docs/planning/SERIES_01_PASHTUN_FINISHED_UNIT_PLAN.md"
+      ],
+      "authority": "recommended check, not creative approval"
+    },
+    {
+      "id": "captions",
+      "status": "proposed",
+      "kind": "workflow",
+      "tags": [
+        "text",
+        "delivery"
+      ],
+      "sources": [
+        "audio",
+        "unit"
+      ],
+      "check_kind": "review",
+      "action": "Proposed delivery: corrected English SRT/VTT, clean master and intentional captioned derivative; avoid duplicate platform/burned captions. Quotation graphics are not accessibility captions. Verify actual account/device safe zones and playback; historical feature announcements do not verify current platform menus.",
+      "reason": "matched facets: text",
+      "citations": [
+        "docs/planning/SERIES_01_PASHTUN_NARRATIVE_AUDIO_PROPOSAL.md",
+        "docs/planning/SERIES_01_PASHTUN_FINISHED_UNIT_PLAN.md"
+      ],
+      "authority": "recommended check, not creative approval"
+    },
+    {
+      "id": "rights",
+      "status": "adopted",
+      "kind": "constraint",
+      "tags": [
+        "audio",
+        "delivery",
+        "modeling"
+      ],
+      "sources": [
+        "index",
+        "audio",
+        "accepted",
+        "unit"
+      ],
+      "check_kind": "process",
+      "action": "Check source/scan/font/recording/donor rights separately; free is not cleared. Provider feature, balance, terms and retry allowance require fresh eligible-route preflight and budget reservation before external calls. Old workspace/API credits are not interchangeable. Release/publication is separately authorized.",
+      "reason": "matched facets: audio",
+      "citations": [
+        "docs/knowledge/PRODUCTION_LEARNING_APPLICATION_INDEX.md",
+        "docs/planning/SERIES_01_PASHTUN_NARRATIVE_AUDIO_PROPOSAL.md",
+        "docs/knowledge/PASHTUN_CHARACTER_RETROSPECTIVE.md",
+        "docs/planning/SERIES_01_PASHTUN_FINISHED_UNIT_PLAN.md"
+      ],
+      "authority": "adopted"
+    }
+  ],
+  "excluded": [
+    {
+      "id": "identity",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "representation",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "anatomy",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "motion",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "contact",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "garment",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "secondary",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "look",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "geography",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "sword",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "render_profile",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "cache_safety",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "retrieval",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "narration_a",
+      "reason": "not current authority/workflow"
+    },
+    {
+      "id": "single_wrap",
+      "reason": "not current authority/workflow"
+    },
+    {
+      "id": "gpu_ban",
+      "reason": "not current authority/workflow"
+    }
+  ],
+  "supporting_search": [
+    {
+      "id": "sound",
+      "status": "proposed",
+      "role": "supporting_only"
+    },
+    {
+      "id": "captions",
+      "status": "proposed",
+      "role": "supporting_only"
+    },
+    {
+      "id": "narrative",
+      "status": "adopted",
+      "role": "supporting_only"
+    },
+    {
+      "id": "quotation",
+      "status": "adopted",
+      "role": "supporting_only"
+    },
+    {
+      "id": "narration_a",
+      "status": "proposed",
+      "role": "supporting_only"
+    }
+  ],
+  "blockers": [],
+  "dispatch_ready": true,
+  "gaps": [
+    "Detailed linked asset/experiment histories are not exhaustively re-audited in this nine-document pilot.",
+    "Legacy742-turn capture has one truncated response;588 candidates are not all reconciled or approved.",
+    "Task/entity descriptors and dependency relationships are manually curated, not extracted from Blender automatically.",
+    "No new visual/audio review, paid generation, production renderer promotion or release authorization is supplied by a context packet."
+  ],
+  "open_decisions": [
+    "select narration wording and officer voice direction",
+    "approve an eligible bounded external audio route before paid calls"
+  ],
+  "limits": "Planning readiness is not execution authorization. Manually curated scope and authority records require agent verification. CLI enforces evidence structure/freshness, not honesty or perceptual quality.",
+  "packet_digest": "601e67985558e9c135d91d130f30b4e7f7c36913db427b7bc8cfedb3705402e7"
+}
