@@ -4,6 +4,8 @@ Exchange210, 2026-10-11. The current records preserve useful knowledge, but appl
 
 The Director reaffirms predictable agreed reviews, clear intent/process, shot-specific perceptual priorities and agent-owned internal correction. The mechanism below is a proposed implementation slice, not an already running service or an approved set of new production gates. Existing authority, quality and spending boundaries remain in force. Current209 narration/voice selection is still open; this process discussion does not select treatment A.
 
+Exchange211 endorses the direction and asks for stronger retrieval assurance, agent-anticipated audience priorities and an explicit stopping rule. The design is supported; implementation and measured reliability are not claimed. Director-reported rein-grip discomfort is a remaining finishing concern, not silently accepted because it was previously tolerated. This exchange changes planning records only, not the asset or renderer.
+
 ## Current mechanism and its gaps
 
 Today the entry points are AGENTS.md, the current work package, release state, the production learning index and topic-specific histories. The agent selects applicable lessons, reads their evidence, writes a learning delta, carries the checks into execution and records an internal exit review. Original decisions and accepted native versions remain authoritative within their scopes. This is more durable than chat-only memory, but it is a procedural bridge.
@@ -57,6 +59,31 @@ Evaluate required-constraint recall, erroneous promotion of rejected history, ve
 
 Rebuild from the source records, test a fresh context/model and confirm that pinned old productions keep their old versions. Inspect the packet's explanation of relevance. Retrieval quality and execution compliance are separate evaluations. A model saying it read a lesson does not prove that it applied it.
 
+## Retrieval assurance and task selection
+
+### Establishing an independent coverage baseline
+
+Before trusting the pilot, inventory a defined, version-pinned corpus of current documented production learnings and applicable decisions, not just the14 summary headings. Reconcile each source section to a record, a duplicate/supersession link, an explicit out-of-scope disposition or an unresolved item. Linked technical evidence and approval scope travel with the record. Audit this tractable corpus now; do not claim that it includes all588 historical decision candidates or the unresolved source tail.
+
+Create a task-by-lesson applicability matrix through a separate exhaustive reading pass over that corpus, without using retrieval results to choose what gets read. For each representative task, record mandatory, useful, irrelevant and unresolved lessons with source citations and reasons. Freeze these expected sets before running the retriever. This reduces circular evaluation; an agent-authored reference set remains fallible and needs spot audits and correction history. It is not independent human ground truth.
+
+Test actual and held-out tasks, paraphrases, overlapping disciplines, changed cameras/versions and deliberately stale/conflicting/missing records. Measure critical-obligation recall, useful-lesson recall, irrelevant context burden, version/authority errors and context size separately. Require all known critical obligations in the finite test set and no rejected/superseded record promoted as current authority. An unresolved critical requirement must stop dispatch; surfacing uncertainty is correct detection, not a passing executable task. Do not dilute a critical miss into a high average score or tune solely on the test cases.
+
+Run the retriever in shadow mode against the full-corpus audit on the first real packages. Keep the manual safety net until discrepancies are understood. Then test action compliance: does a selected lesson yield the prescribed check, does a failing check prevent a ready-for-review handoff, and does changing a dependency invalidate the right evidence? Controlled omission/staleness tests belong in test copies, never deliberate violations in production. Re-run affected cases when lessons, taxonomy, dependencies or retrieval logic change; periodically audit the complete small corpus. The Director receives an exceptions/coverage summary, not responsibility for discovering omissions.
+
+### How graph selection works in a real task
+
+The task descriptor is multi-label: discipline(s), operation, entities, versions, shot/beat, phase, visibility, desired audience reading and requested change. A category is an entry point, not an exclusive folder. For example, a hand/rein fix touches rigging, animation, prop contact and camera readability even if initially labeled character modeling.
+
+1. Resolve current shot, character, hand rig, rein and horse versions from production state; union any explicitly named objects with relationships found in the scene manifest. Missing high-impact links remain visible gaps, not an empty successful query.
+2. Always load global authority/quality rules and binding entity/shot decisions. Select stage-wide obligations and operation-specific lessons by explicit applicability conditions; these do not depend on search ranking.
+3. Follow typed edges: hand `contacts` rein; rein `connects_to` bridle; hand `depends_on` arm controls; shot `shows` hand; contact lesson `requires_check` grasp readability. Pull in affected sleeves/shoulders as adjacent-regression checks. An operation's impact set can expand beyond its original discipline.
+4. Filter by version, accepted scope, pose and visibility. Retrieve exact lesson summaries and supporting history; use text/semantic discovery as an additional route for missing vocabulary, not as the only way to find binding obligations. Unclassified material gets audit attention rather than silent exclusion.
+5. Compile checks for readable grip, stable moving contact and unchanged arm/shoulder/costume behavior in the relevant frames. Keep resolved face identity as a protected invariant, not a new facial-polish task. Keep distant unrelated failures out of active context while retaining their source links.
+6. Record an inclusion explanation for each obligation and a disposition for audited exclusions. Expand further when inspection reveals a new dependency. On a later closer camera, stale the visibility-dependent decision and re-run those checks.
+
+The dependency expansion is a worklist over declared relevant edges until required obligations stabilize, not an arbitrary one-hop cutoff or a traversal of every connected record. If the mandatory packet grows too large, split the task into explicit substeps; do not drop hard requirements. The graph cannot discover every missing relationship by itself: source coverage audits, broad supporting search and scene/interface inspection remain necessary. These are proposed behaviors for the local pilot, not implemented automatic enforcement.
+
 ## Predictable reviews without removing creative control
 
 The production agreement defines review stages before execution. A render finishing, a commit, an internal test or a method reassessment is not a Director review. Internal cycles may be numerous; external decision points should be few, explicit and useful. No promise of a fixed number of revision rounds can prevent a genuine creative revision or newly discovered scope conflict.
@@ -87,9 +114,24 @@ Calibrate against actual Director feedback: record the predicted concern, actual
 
 Additional requirements are stable authority/version state; early proof of risky interfaces; quality criteria before expensive work; confidence/uncertainty handling; and a handoff policy that cannot be satisfied by merely writing a passing score. Track planned versus unplanned reviews, avoidable handoffs, escaped known defects, rework after creative changes and first-pass acceptance by gate. Fewer reviews alone is not success if failures reach the audience or the Director loses control.
 
+## Anticipation and the stopping decision
+
+The agent authors the audience-reading brief before receiving a defect list. Predict likely distractions from character intent, shot emphasis, causal action, style, platform framing and known audience expectations. Mark predictions as hypotheses until supported by Director or audience evidence. Retrieval supplies known failure patterns; it is not a substitute for inspecting the current screen result or noticing new problems.
+
+Use two ordered decisions, not a single weighted score that can average away a blocker:
+
+- **Quality floor:** is there a visible failure of intended action, anatomy/contact, identity, continuity or rights in required use? If yes, repair within scope, change the method, or surface a real creative/scope decision. Elapsed effort alone cannot make the failure acceptable.
+- **Optional improvement:** after the floor is met, estimate perceptual benefit, exposure, dramatic importance, reuse, confidence, regression risk and the production work displaced. Prefer the smallest correction that preserves the accepted result. Estimates are not measured audience behavior.
+
+Stop when the integrated result meets the brief and floor, adjacent checks pass, and remaining refinements have little likely audience value relative to risk/opportunity cost. Record residuals and reopening triggers. Harmless shot-specific imperfections can be deferred by the agent; a material known compromise needs Director acceptance at a planned review where possible. If repeated repair produces regressions, reassess the method rather than rationalizing the defect or expanding into a universal subsystem rewrite. No arbitrary time cutoff is introduced.
+
+Silence and prioritization are not approval. The Director may tolerate a defect while attending to larger problems; when those problems clear, re-rank the remaining issues in context. A raw flaw count or microscopic similarity score is not the target. Conversely, an issue detectable only in a diagnostic crop is not automatically harmless if it signals a structural failure in required motion/reuse.
+
+**Current rein grip:** the Director reports repeated distraction and uncertainty about accepting it. Existing transform/contact checks do not settle perceived believability. The current close-up360 still shows part of the hand near the lower edge, but a single still cannot establish the whole moving grasp. Treat grasp readability as OPEN before final finishing, not accepted or freshly diagnosed as fixed. Recommend a targeted actual-shot assessment/correction when production execution resumes: plausible hand/rein silhouette and enclosure, no conspicuous penetration/sliding, preserved wrist/arm performance and relevant rein tension/response. Test the front/side/turn coverage where visible. Stop at a credible shot-specific result; do not require a universal equestrian hand rig or change approved staging merely to hide it. This discussion does not itself dispatch that repair.
+
 ## Minimum implementation recommendation
 
-Build only a thin pilot: compact approved lesson/decision records, a typed relationship table, local full-text index, a context-packet builder and a preflight/exit checker for one real work package. Use the next audio unit and a retained neck/camera case as the first production/regression examples. Do not migrate all742 exchanges, reconcile all588 candidates, build a graph UI, install a vector stack or make a complete Factory app the prerequisite for the trailer.
+Build only a thin pilot: compact approved lesson/decision records, a typed relationship table, local full-text index, a context-packet builder and a preflight/exit checker for one real work package. Use the next audio unit and retained neck/camera/rein cases as the first production/regression examples. Do not migrate all742 exchanges, reconcile all588 candidates, build a graph UI, install a vector stack or make a complete Factory app the prerequisite for the trailer.
 
 First measure the pilot's retrieval and application. Add semantic search if the observed recall failures justify it; add a dedicated graph engine only if simple relationship queries become inadequate. After the tested pilot, shorten the always-loaded entry instructions into a stable governing contract and routing map, while preserving detailed history and checking that no binding rule is lost. Do not delete the current rules before the replacement demonstrates coverage.
 
