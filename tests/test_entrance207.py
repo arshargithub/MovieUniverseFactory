@@ -6,6 +6,8 @@ sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
 from entrance207_motion import flexion,expression,mane_step,tail_response
 from entrance207_inspect import validate
 from entrance207_build import validate as build_validate
+from entrance207_review import validate as review_validate
+from entrance207_threat import validate as threat_validate
 
 def test_closed_inspection():
  validate({'operation':'inspect01'})
@@ -13,6 +15,10 @@ def test_closed_inspection():
   with pytest.raises(ValueError):validate(job)
  for op in ('opening01','route02'):build_validate({'operation':op})
  with pytest.raises(ValueError):build_validate({'operation':'opening01','source':'/tmp/no'})
+ threat_validate({'operation':'threat10'})
+ with pytest.raises(ValueError):threat_validate({'operation':'threat10','path':'/tmp/no'})
+ review_validate({'operation':'opening03'})
+ with pytest.raises(ValueError):review_validate({'operation':'opening03','code':'x'})
 
 def test_attention_bounded_and_visible_delta():
  for f in range(217,649):assert all(0<=v<=1 for v in expression(f).values())

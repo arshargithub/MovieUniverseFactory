@@ -5,10 +5,10 @@ import numpy as np
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'scripts'))
 import wardrobe_motion178 as base
 OPFRAMES=tuple(range(313,345));ROFRAMES=tuple(range(577,615))
-OPS={'opening03':('opening09',OPFRAMES,False),'route04':('route02',ROFRAMES,False),
+OPS={'opening03':('opening09',OPFRAMES,False),'route04':('threat10',ROFRAMES,False),
  'opening05':('opening09',tuple(f for f in range(217,361) if f not in OPFRAMES),True),
- 'route06':('route02',tuple(f for f in range(361,649) if f not in ROFRAMES),True),
- 'reopen07':('opening09',(313,325,337,360),False),'reopen08':('route02',(361,384,409,487,589,607,648),False)}
+ 'route06':('threat10',tuple(f for f in range(361,649) if f not in ROFRAMES),True),
+ 'reopen07':('opening09',(313,325,337,360),False),'reopen08':('threat10',(361,384,409,487,589,607,648),False)}
 def validate(job):
  if not isinstance(job,dict) or set(job)!={'operation'} or job['operation'] not in OPS:raise ValueError('Closed207 review')
 def main():

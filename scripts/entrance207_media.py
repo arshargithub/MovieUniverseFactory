@@ -43,7 +43,7 @@ def main():
    camera.append(max(float(np.max(abs(np.array(r['camera'])-np.array(old['camera'])))),abs(r['lens']-old['lens'])))
   if max(body)>2e-5 or max(camera)>2e-5:raise ValueError('Protected contact/choreography camera changed')
   rows=[]
-  for folder,fs in (('opening09',(313,319,325,331,337,343,350,360)),('route02',(361,372,384,390,409,427,472,487,577,583,589,595,601,607,648))):
+  for folder,fs in (('opening09',(313,319,325,331,337,343,350,360)),('threat10',(361,372,384,390,409,427,472,487,577,583,589,595,601,607,648))):
    src=BASE/('entrance207-'+folder);r=json.loads((src/'result.json').read_text());kind='opening' if folder.startswith('opening') else 'route'
    if sources[kind]!=r['native_sha256']:raise ValueError('Control source mismatch')
    for f in fs:rows.append(dict(frame=f,**pixel_parity(src/f'control-{f}.png',available[f-217])))
