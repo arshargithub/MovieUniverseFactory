@@ -18,10 +18,17 @@ def main():
   meta=folder/'result.json'
   if not meta.exists():meta=folder/'progress.json'
   if meta.exists():
-   r=json.loads(meta.read_text());kind='opening' if part.startswith('opening') else 'route'
+   try:r=json.loads(meta.read_text())
+   except json.JSONDecodeError:
+    if meta.name=='progress.json':continue
+    raise
+   kind='opening' if part.startswith('opening') else 'route'
    if kind in sources and sources[kind]!=r['source_sha256']:raise ValueError('Interleaved source changed')
    sources[kind]=r['source_sha256']
    for row in r['frames']:records[row['index']]=row
+ # A PNG can exist briefly before its render/write has completed. Review
+ # only frames acknowledged by the worker, never a partially written file.
+ available={i:path for i,path in available.items() if i in records}
  for first in range(0,432,12):
   ids=list(range(first,first+12))
   if all(i in available for i in ids):sheet([available[i] for i in ids],qa/f'all-{first:04d}.png')
