@@ -1416,10 +1416,16 @@
       "label": "So now we have a clean chain: > **Decision** explains why something changed.  ",
       "statement_excerpt": "Locked.\n\nSo now we have a clean chain:\n\n> **Decision** explains why something changed.  \n> **Domain Version** records the meaningful state change.  \n> **Execution History** records what the machinery did to realize it.\n\nThat gives us traceability without turning the whole system into a log dump.\n\n# Architecture Question 6 — How should Factory represent “truth” technically?\n\nWe now have several kinds of state:\n\n- Canonical truth in the Universe\n- Production overlays\n- Production-local entities\n- Proposed canon changes\n- Audience assumptions and evidence\n- Decisions\n- Versions\n- Risks\n- Artifact lineage\n\nThe temptation would be to put all of this into one giant flexible document model.\n\nI think that would be a mistake.\n\nMy recommendation is a **hybrid state architecture**:\n\n### Structured domain state\n\nFor things Factory must reason about reliably:\n\n- characters\n- locations\n- relationships\n- story events\n- timeline/state\n- canon\n- productions\n- scenes/shots\n- audience models\n- decisions\n- risks\n- constraints\n- versions\n- dependencies\n\nThese need explicit typed schemas and stable identifiers.\n\n### Rich documents/artifacts\n\nFor things that are naturally less structured:\n\n- screenplay\n- creative briefs\n- research reports\n- visual bibles\n- music bibles\n- long-form rationale\n- notes\n- generated evaluations\n\n### Media/binary artifacts\n\n- images\n- video\n- audio\n- 3D scenes/models\n- text",
       "statement_excerpt_is_complete": false,
-      "status": "CANDIDATE_REQUIRES_CONTEXT_REVIEW",
-      "applicability": null,
+      "status": "CONTEXT_REVIEWED_ACCEPTED",
+      "applicability": "ADOPT",
       "supersedes": [],
-      "verification": null
+      "verification": {
+        "reviewed_date": "2026-10-11",
+        "approval_turn": "9701d930-0073-4eeb-8ff8-e246e2aadb52",
+        "normalized_statement": "Typed structured truth plus versioned documents/media remain authoritative; search and embeddings are derived navigation, not canon or permissions.",
+        "evidence": "docs/planning/CONTEXT_AND_DIRECTOR_REVIEW_CONTRACT.md",
+        "scope": "Full source proposal and following Director approval reviewed at exchange210. Adopts the historical ownership principle; the new SQLite context-packet implementation remains proposed, not built or approved by this mapping."
+      }
     },
     {
       "id": "legacy-9701d930-0073-4eeb-8ff8-e246e2aadb52",
@@ -6618,10 +6624,16 @@
       "label": "Exactly. I’d broaden Decision 51 so we’re not just checking the movie against **goals and strategy**, but against the whole relevant body of knowledge around the work.",
       "statement_excerpt": "Exactly. I’d broaden Decision 51 so we’re not just checking the movie against **goals and strategy**, but against the whole relevant body of knowledge around the work.\n\n### UX Decision 52 — Contextual coherence\n\nFactory should continuously ask:\n\n> **“Given everything relevant that we know and intend, does what we’re doing still make sense?”**\n\nThat context includes, when applicable:\n\n- Production Purpose and creative intent\n- Audience Objective and Success Criteria\n- Format and Distribution Strategy\n- Universe Creative Language and established creative truth\n- Director preferences and prior decisions\n- relevant audience/production learnings\n- known successful patterns and failure modes\n- material assumptions and risks\n- relevant evidence from previous releases\n- newly available capabilities\n- the actual movie as it is currently emerging\n\nThe key is that **coherence does not mean obedience to precedent**.\n\nSuppose prior evidence says:\n\n> “Fast openings have historically produced better continuation.”\n\nBut this film deliberately needs a slow, uneasy opening.\n\nFactory should not keep nagging:\n\n> “Retention data says make it faster.”\n\nIt should understand the conflict:\n\n> “This opening differs from what has historically performed best, but the slower build appears deliberate and strongly serves the current creative intent. I recommend keeping it.”\n\nLikewise, if a learned Director p",
       "statement_excerpt_is_complete": false,
-      "status": "CANDIDATE_REQUIRES_CONTEXT_REVIEW",
-      "applicability": null,
+      "status": "CONTEXT_REVIEWED_ACCEPTED",
+      "applicability": "ADOPT",
       "supersedes": [],
-      "verification": null
+      "verification": {
+        "reviewed_date": "2026-10-11",
+        "approval_turn": "48f8f3e3-3804-4256-b2e6-6eb1ac2ba79e",
+        "normalized_statement": "Production judgment should stay coherent with applicable goals, strategy, decisions and learnings; deliberate current intent takes precedence over inferred historical preferences within hard boundaries.",
+        "evidence": "docs/planning/CONTEXT_AND_DIRECTOR_REVIEW_CONTRACT.md",
+        "scope": "Full proposal, preceding contextual-coherence discussion and following Director agreement reviewed at exchange210. This maps the historical principle, not automatic enforcement or approval of the new three-stage review default."
+      }
     },
     {
       "id": "legacy-48f8f3e3-3804-4256-b2e6-6eb1ac2ba79e",
