@@ -2,6 +2,16 @@
 
 Established exchange208; execution authorized at exchange209 · 2026-10-11. This is the work strategy, not an acceptance report.
 
+## Exchange209 pass1 result — combined review ready
+
+The [complete18-second sword-integrated preview](../../.runtime/art-direction/series01-entrance209/director-preview/pashtun-complete-entrance.mp4), [learning application index](../knowledge/PRODUCTION_LEARNING_APPLICATION_INDEX.md) and [two verified narration/voice treatments](SERIES_01_PASHTUN_NARRATIVE_AUDIO_PROPOSAL.md) are ready together. The sword is on her anatomical right, with rearward curvature, paired belt suspension and restrained authored lag. Current207 performance, camera and timing are preserved. This is one prop construction candidate, not a renewed portrait/costume campaign.
+
+[Internal review](../../.runtime/art-direction/series01-entrance209/visual-review.json): all432 frames plus encoded-cut neighborhoods inspected; eight independent reopen images agree within1/255; all432 camera and eight tracked pose matrices match207 exactly; eight sampled scabbard/six-surface controls have zero triangle intersections. Protected original geometry/actions, accepted-source checks, two new/two original scene hashes and38 cache references pass; eight focused tests pass and the18-second24fps file fully decodes. These scoped checks are not general collision/physics, final-resolution or Director qualification. Preserve the sandbox startup failure and an encode attempt correctly refused before worker completion.
+
+Implementation is committed separately as `76846d1`; initial design/source work as `1779c97`, with completion notes in a subsequent scoped design commit. Build-before-seal provenance and reusable-versus-rider-specific bindings are disclosed in the [prop source record](../../.runtime/art-direction/series01-entrance209/prop-source.json). Native/cache evidence remains local; a Git commit is not media backup. No remote push, new paid generation, purchase, installation or publication occurred.
+
+Next Director-owned choice: recommend narration A and a restrained, lived-in British officer voice. Then establish an eligible bounded audio route and produce one complete inexpensive sound/text preview before final rendering. The connected Runway workspace is Free and its music connector requires a paid workspace; no subscription is recommended or bought on that evidence alone. The broader finished-unit lifecycle remains OPEN pending narrative/audio/final delivery, not falsely closed by this silent preview. Counter209; checkpoint210; release gates unchanged.
+
 ## Exchange209 execution authority and applied lessons
 
 Director approves the plan and specifies that the suspended sword's curve sweeps backwards. Interpret as the scabbard tip/curvature sweeping toward the rider's rear, away from the horse's neck. Retain Astra High as requested; setting is user-reported, not independently runtime-verified. Pass1 is now authorized; exact narrative/voice selection, paid audio, publication and final acceptance remain separate.

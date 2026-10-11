@@ -2,6 +2,14 @@
 
 ## Current acceptance — exchange152
 
+### Exchange209 — supported prop, unchanged performance and actionable reuse
+
+The right-hip palwar pass applies the [production learning application index](PRODUCTION_LEARNING_APPLICATION_INDEX.md) rather than reopening approved identity or wardrobe. Inspect the evaluated belt/horse interface, choose an explicit rearward route and paired support, then prove the prop in actual turn/uphill poses before the full shot. Editable geometry is reusable; belt anchors, reference scale and authored lag remain rider-specific. A scene also retains shared-cache dependencies and is not portable merely because it opens locally.
+
+[Internal evidence](../../.runtime/art-direction/series01-entrance209/visual-review.json) records all432 frames and encoded cuts, eight independent reopen controls within1/255, exact protected camera/performance transforms and eight sampled scabbard intersection checks. Triangle intersection is not containment, full attachment clearance or continuous physics. Natural far-side occlusion is not a reason to alter the camera or expose the prop unnaturally. Exact source-bound proof frames are reused, not rerendered merely to enter a differently named full campaign. Keep the failed sandbox startup and premature encode guard as process evidence. This is a silent prop-integration preview, not Director acceptance, an unsheathing rig or a complete audiovisual unit.
+
+One construction candidate still required a long full render. Capture render time separately from modeling iteration and unknown subscription tokens. Future acceleration/compositing needs appearance parity through dust, shadows and occlusion; do not silently substitute a faster unqualified profile. The next release dependency is narrative/sound and final delivery, not further portrait polishing.
+
 ### Exchange207 — test visible absorption and coherent secondary motion
 
 206's nonzero neck keys did not satisfy the Director's visible-flex requirement. Inspect both the motion relative to the chest and the spatial distribution of skin weights: a mostly single-bone cervical region can move but still read as a block.207's scoped derivative broadens the neck's chest/neck/head blend and adds gait-driven base flexion with partial head counterrotation to retain attention. Rest anatomy, face shapes and contact-bearing body motion are protected separately. These are construction choices, not a visual pass; evaluate the close4–5s and15–18s intervals in consecutive frames, including garment/hair adjacency.
