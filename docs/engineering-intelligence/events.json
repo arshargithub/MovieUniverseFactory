@@ -1,6 +1,18 @@
 {
   "events": [
     {
+      "event_id":"series01-finished-unit209-retain-astra",
+      "event_type":"model_setting_observed",
+      "experiment_id":"SERIES01-FINISHED-UNIT",
+      "phase":"right-hip sword integration and narrative handoff",
+      "engineering_model":{"reported_name":"Astra","reasoning_effort":"high","attribution_basis":"user_reported","runtime_verified":false},
+      "controlled_model_comparison":false,
+      "outcome":"EXECUTION_IN_PROGRESS",
+      "observation":"Director approves the planned sword, retrospective and narrative package and asks to keep Astra High. Retained for integrated prop/costume/motion and consequential narrative work; no model superiority or runtime-setting verification claimed. Right hip clarified by Director as viewer right from behind; scabbard sweeps rearward.",
+      "engineering_usage":{"input_tokens":null,"output_tokens":null,"reasoning_tokens":null,"cost_usd":null},
+      "sources":[{"kind":"repository_artifact","path":"docs/planning/SERIES_01_PASHTUN_FINISHED_UNIT_PLAN.md"},{"kind":"user_statement_in_current_conversation","text":"keep the model at astra high for now; sword on her right, viewer right from behind"}]
+    },
+    {
       "event_id":"series01-entrance198-painted-terrain-outcome",
       "event_type":"implementation_outcome",
       "experiment_id":"SERIES01-LIKENESS-ASSET",

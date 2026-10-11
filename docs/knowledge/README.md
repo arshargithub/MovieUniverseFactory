@@ -20,6 +20,8 @@ Contextual review: [Release 01 applicability](RELEASE_01_APPLICABILITY.md) maps 
 
 ## How to use it without rereading the entire conversation
 
+Exchange209 adds the [production learning application index](PRODUCTION_LEARNING_APPLICATION_INDEX.md): evidence and scope from3D-01 through the present entrance, with triggers and required checks for creative references, representation, anatomy, motion, garments/props, effects, style, camera/story geography, QA, escalation, reuse, economics, rights and forthcoming audio. Select relevant lesson IDs in the existing learning delta; link actual exit evidence. This is agent-owned application, not an implemented automatic retrieval service. Detailed historical records and rejected results remain unchanged.
+
 Exchange184 adopts [production strategy before execution](../decisions/0005-production-strategy-before-execution.md) across story, assets, motion, sound, edit, delivery and software. Start substantial work with a concise current strategy and an early integrated proof of its riskiest assumptions. Existing asset/motion rules remain domain-specific applications. This extends Efficient Quality and progressive commitment; it does not authorize new builds or certify automated Factory enforcement.
 
 Exchange154 reaffirms [Factory ownership of forward momentum](../planning/RELEASE_01_PLAN.md#current-path-to-audience) toward the trailer and two episodes. Full original UX proposal, actual approval and the Director's publication-oriented clarification were reviewed; the corresponding two register entries are mapped to current operating instructions. The rejected full-body blockout is not accepted costume canon. Next body sourcing must support a usable character-to-shot path, not another isolated perfection loop.

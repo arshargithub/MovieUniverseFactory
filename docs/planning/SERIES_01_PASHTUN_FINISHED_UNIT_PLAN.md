@@ -1,12 +1,20 @@
 # Pashtun entrance — first finished production unit
 
-Exchange208 · 2026-10-11 · planning handoff, not an execution or acceptance report.
+Established exchange208; execution authorized at exchange209 · 2026-10-11. This is the work strategy, not an acceptance report.
+
+## Exchange209 execution authority and applied lessons
+
+Director approves the plan and specifies that the suspended sword's curve sweeps backwards. Interpret as the scabbard tip/curvature sweeping toward the rider's rear, away from the horse's neck. Retain Astra High as requested; setting is user-reported, not independently runtime-verified. Pass1 is now authorized; exact narrative/voice selection, paid audio, publication and final acceptance remain separate.
+
+Applied learning delta: inspect actual belt/hip/horse geometry before prop construction (support compatibility); preserve all actor/camera animation and source caches (dependency-scoped change); test the complete action and back/side clearance before material polish (whole-result proof); bind reference/rights/source scope and inspect internally before handoff (evidence separate from acceptance). Earliest proof is the sword mounted in the actual turn and uphill pose, not a standalone model. Selected source hashes are fixed in `scripts/entrance209_sword.py`.
+
+Motion brief: human performance is unchanged. The sword follows the pelvis/belt with restricted authored suspension lag, two leather suspension supports and rearward curved tip. Opening gallop, braking/turn and uphill motion must retain support and clearance. No drawing, handoff or combat. If the mounting cannot clear the moving assembly without materially changing costume/performance, reassess orientation/support first and seek a Director decision only for a genuine screen-design tradeoff. Forecast two derivative natives sharing existing caches (~1–2GB plus frames), inexpensive sampled controls then one complete18-second preview; exact runtime unknown until measured. No arbitrary elapsed-time stop. Current bookkeeping begins prospectively after initial context recovery; that earlier effort is not included in captured activity time.
 
 ## Outcome and current authority
 
 Complete the current Pashtun entrance with its sheathed hip sword, deliberate narrative, sound, music, archival typography and accessible delivery. Establish a reusable production pattern for the trailer and episodes1–2. Production-complete does not mean published.
 
-The Director calls the current work “almost there,” requests the sword and retrospective, proposes officer narration with real colonial quotations, and asks for thoughts and a plan first. This exchange does not execute asset/media work, approve a particular script/voice/quote/music provider, authorize new paid calls, or accept207 as final footage. This document records the recommended next pass; narration and audio choices remain proposed until selected.
+At208 the Director called the current work “almost there,” requested the sword and retrospective, proposed officer narration with real colonial quotations, and asked for a plan first. At209 the Director approved pass1 and specified the sword's side/orientation. That approval does not select a particular script, voice, quote or music provider, authorize new paid calls, or accept207 as final footage. Narration and audio choices remain proposed until selected.
 
 Current evidence: entrance207 is an internally reviewed18-second24fps silent432×768 preview, not final-resolution footage. Preserve its successful turn, causal geography and camera sequence, accepted152 identity/head/hair and169 body within their recorded scopes. Existing motion/contact/cloth evidence is scoped; changing dependent geometry or timing invalidates affected checks. No portrait reopening or general-purpose combat rig is required.
 
@@ -30,15 +38,15 @@ Resources: existing Blender/tooling and repository assets; custom low-complexity
 
 Recommend a simple editable native palwar/pulwar-inspired hilt and curved scabbard, unless a verified free asset materially reduces integration work. Consult museum images and catalogues for silhouette, grip, scabbard and suspension; a catalogue without an image is not a visual reference. Prefer worn practical equipment over a large ornamental hero weapon.
 
-Left hip is an initial mounting hypothesis, not a new canon decision. Test it against existing harness, riding leg and actual camera. Suspend from the waist belt with believable leather attachments and limited weight-driven movement. Preserve the shawl-above-harness order; do not expose the sword by arbitrarily moving approved cloth. Model the visible sheathed prop; unsheathing, combat and a fully detailed hidden blade are deferred until a shot requires them.
+Exchange209 supersedes the initial left-hip hypothesis: use her anatomical RIGHT hip, which is the viewer's right when looking from behind. The Director chooses this side for visibility during the opening camera move. The scabbard curves rearward, away from the horse's neck. Test it against existing harness, riding leg and actual camera. Suspend from the waist belt with believable leather attachments and limited weight-driven movement. Preserve the shawl-above-harness order; do not expose the sword by arbitrarily moving approved cloth. Model the visible sheathed prop; unsheathing, combat and a fully detailed hidden blade are deferred until a shot requires them.
 
 Internal review: full action plus turn/uphill extremes, belt attachment, thigh/saddle/horse/cloth clearance, silhouette at normal review size, no floating or excessive pendulum motion. Reopen and verify affected dependencies. Deliver the whole entrance, not an isolated prop turntable.
 
 ### Evidence-based retrospective
 
-Review existing experiment records from the early Blender qualification through horse/rider, generative-video trials, image-to-native character development and entrance207. Do not rerun closed experiments merely to write the retrospective. This audit is pending; this plan is not a claim that all historical conclusions have been verified.
+Review existing experiment records from the early Blender qualification through horse/rider, generative-video trials, image-to-native character development and entrance207. Do not rerun closed experiments merely to write the retrospective. Exchange209's application index records the reviewed reports and existing acceptance evidence; it is a synthesis, not a fresh independent replay or a claim that every historical conclusion has been requalified.
 
-Produce a concise overview and a linked application index, preserving detailed history in its current homes:
+The [production learning application index](../knowledge/PRODUCTION_LEARNING_APPLICATION_INDEX.md) now consolidates the reviewed evidence and its application triggers, preserving detailed history in its current homes:
 
 | Learning domain | Evidence/capture home | Why it matters and when to apply |
 |---|---|---|
@@ -57,7 +65,7 @@ Application mechanism: a compact index entry has lesson ID, evidence, scope, tri
 
 ### Narrative and voice proposal
 
-Recommend the British officer as an in-world narrator: professionally assured, human, not a theatrical villain or omniscient historian. His classification of people can be complicated by the agency we see. Preserve his gradual moral arc; do not start him as fully disillusioned without a creative decision.
+Recommend the British officer as an in-world narrator: professionally assured, human, not a theatrical villain or omniscient historian. His classification of people can be complicated by the agency we see. Preserve his gradual moral arc; do not start him as fully disillusioned without a creative decision. The [two narrative treatments and verified source records](SERIES_01_PASHTUN_NARRATIVE_AUDIO_PROPOSAL.md) are prepared for selection after the integrated visual pass.
 
 Do not compress a general martial-races lecture, a Pashtun lecture and the escape story into18seconds. Prefer one short verified quotation plus sparse original officer framing. Prepare at most two meaningfully different short treatments with one recommendation, timed against the existing edit. Preserve breath and sound space around recognition, the spectacular turn and determined continuation. Exact wording and voice remain unselected.
 
