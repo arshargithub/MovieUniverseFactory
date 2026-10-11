@@ -1,0 +1,19 @@
+{
+  "id":"rein-finishing-next",
+  "operation":"contact",
+  "entities":["hand"],
+  "query":"credible grasp thumb rein enclosure sliding coordinated arm and sleeve motion",
+  "intent":"Plan the smallest actual-shot correction that makes her control of the galloping horse believable, while preserving accepted identity, action and staging. No universal hand rig or portrait reopening.",
+  "phase":"planning",
+  "inputs":{
+    "docs/knowledge/pilot/catalog.json":"cde3d3964a2164ef94b943642bccdd9dfb35f0a4d32d42a174e89bf06999ef65",
+    ".runtime/art-direction/series01-entrance209/prop-source.json":"1b8bdbe6ccb1d3147e256d9eb7ad2bff9fa7467b0da2d4b983688931ac9f58e0"
+  },
+  "open_decisions":[],
+  "hypotheses_to_test":[
+    "Thumb/finger silhouette may fail to visibly enclose the reins at normal viewing size even where attachment transforms pass.",
+    "A plausible static grip may slide or look disconnected during the dramatic turn; inspect the whole visible contact passage.",
+    "A contact correction may over-lock the arm and reintroduce stiff neck/shoulder performance or sleeve deformation."
+  ],
+  "execution_prerequisites":["Read character-specific deep history required by AGENTS.md; this catalog does not replace it.","Bind actual current native files and shared caches, not only this planning provenance record.","Inspect full actual-motion and interface controls before deciding what needs repair. No new visual pass is claimed here."]
+}
