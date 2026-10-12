@@ -1,6 +1,7 @@
 """One-request, free-tier-only public-reference pilot. No billing or retry route."""
 import json
 import os
+import re
 from pathlib import Path
 import httpx
 from ..settings import _read_dotenv
@@ -8,7 +9,7 @@ from ..telemetry import utc_now
 from .runway_provider import save_json
 
 URL = 'https://www.youtube.com/watch?v=O9QgHF1gtC8'
-MODEL = 'gemini-2.5-flash'
+MODEL = 'gemini-3.8-flash'
 PROMPT = ('Analyze only the audible music from 01:10 to 01:45 of this video. '
           'Do not use the title, imagery, lyrics, or prior knowledge to infer musical events. '
           'If audio is inaccessible, say AUDIO_UNAVAILABLE and do not guess. '
@@ -19,8 +20,16 @@ PROMPT = ('Analyze only the audible music from 01:10 to 01:45 of this video. '
 
 def payload():
     return {'contents':[{'parts':[{'fileData':{'fileUri':URL}}, {'text':PROMPT}]}],
-            'generationConfig':{'temperature':0.2,'maxOutputTokens':1400,
-                                'thinkingConfig':{'thinkingBudget':0}}}
+            'generationConfig':{'maxOutputTokens':3000}}
+
+def redact_error(value, key=''):
+    """Retain diagnostic explanation, excluding credentials/account identifiers."""
+    text = str(value)
+    if key:
+        text = text.replace(key, '[REDACTED]')
+    text = re.sub(r'AIza[\w-]{20,}', '[REDACTED]', text)
+    text = re.sub(r'projects/[\w-]+', 'projects/[REDACTED]', text)
+    return text[:4000]
 
 def load_key(root):
     p=Path(root)/'.env'; expected=Path.home()/'.config/movie-factory/.env'
@@ -37,15 +46,17 @@ def run(root, output, *, free_tier_confirmed, client=None):
     claim=out/'request-ledger.json'
     # Fixed single-request campaign. An uncertain or failed request is never retried.
     with os.fdopen(os.open(claim,os.O_WRONLY|os.O_CREAT|os.O_EXCL,0o600),'w') as f:
-        json.dump({'utc':utc_now(),'campaign':'music-reference229','request_limit':1,
+        json.dump({'utc':utc_now(),'campaign':'music-reference229-38','request_limit':1,
                    'paid_spend_authorized_usd':0,'tier_basis':'Director reports free tier',
                    'estimated_cost_usd':0,'actual_cost_usd':None,'model':MODEL,
                    'payload':payload(),'state':'CLAIMED_NO_RETRY'},f)
         f.flush();os.fsync(f.fileno())
     owned=client is None
+    key=''
     if owned:
+        key=load_key(root)
         client=httpx.Client(base_url='https://generativelanguage.googleapis.com',
-                            headers={'x-goog-api-key':load_key(root)},timeout=90,
+                            headers={'x-goog-api-key':key},timeout=90,
                             follow_redirects=False)
     try:
         response=client.post(f'/v1beta/models/{MODEL}:generateContent',json=payload())
@@ -59,10 +70,11 @@ def run(root, output, *, free_tier_confirmed, client=None):
                           prompt_feedback=data.get('promptFeedback'),
                           provider_model=data.get('modelVersion'))
         else:
-            # Do not retain raw headers, error text, URLs or request objects with credentials.
+            # Keep useful error semantics, never request headers or secret values.
             try:
                 error=response.json().get('error',{})
                 result.update(error_status=error.get('status'),error_code=error.get('code'))
+                result['error_message']=redact_error(error.get('message',''), key)
             except (ValueError,AttributeError): pass
         save_json(out/'result.json',result)
         return result
