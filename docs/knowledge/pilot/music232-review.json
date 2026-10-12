@@ -1,0 +1,155 @@
+{
+  "task_id": "music232-planning",
+  "scope": "Planning proposal and rejection record ONLY",
+  "review": {
+    "packet_digest": "09c032b62289acc7853396fcdf2bcd4f4cef53182a8c11bf1fb82990293fa32f",
+    "checks": [
+      {
+        "id": "authority",
+        "kind": "process",
+        "status": "PASS",
+        "action_taken": "Discussion only; no provider calls or creative acceptance inferred.",
+        "observation": "Discussion only; no provider calls or creative acceptance inferred.",
+        "evidence": [
+          {
+            "path": "docs/planning/SERIES_01_PASHTUN_NARRATIVE_AUDIO_PROPOSAL.md",
+            "sha256": "728b3ae9251c4c47fd3242d9dbca15d011c500a8cef99059c2dd1501b881772f"
+          }
+        ]
+      },
+      {
+        "id": "strategy",
+        "kind": "process",
+        "status": "PASS",
+        "action_taken": "Reassessed motion-first prompt recipe; proposed musical identity before exact sync.",
+        "observation": "Reassessed motion-first prompt recipe; proposed musical identity before exact sync.",
+        "evidence": [
+          {
+            "path": "docs/planning/SERIES_01_PASHTUN_NARRATIVE_AUDIO_PROPOSAL.md",
+            "sha256": "728b3ae9251c4c47fd3242d9dbca15d011c500a8cef99059c2dd1501b881772f"
+          }
+        ]
+      },
+      {
+        "id": "visual_gate",
+        "kind": "review",
+        "status": "PASS",
+        "action_taken": "Director rejected both; technical results retained without sonic PASS. No media result claimed in this planning review.",
+        "observation": "Director rejected both; technical results retained without sonic PASS. No media result claimed in this planning review.",
+        "evidence": [
+          {
+            "path": "docs/planning/SERIES_01_PASHTUN_NARRATIVE_AUDIO_PROPOSAL.md",
+            "sha256": "728b3ae9251c4c47fd3242d9dbca15d011c500a8cef99059c2dd1501b881772f"
+          }
+        ]
+      },
+      {
+        "id": "anticipation",
+        "kind": "review",
+        "status": "PASS",
+        "action_taken": "New proposed audience test asks for compelling melody and scene fit; preserves immediate visual hook.",
+        "observation": "New proposed audience test asks for compelling melody and scene fit; preserves immediate visual hook.",
+        "evidence": [
+          {
+            "path": "docs/planning/SERIES_01_PASHTUN_NARRATIVE_AUDIO_PROPOSAL.md",
+            "sha256": "728b3ae9251c4c47fd3242d9dbca15d011c500a8cef99059c2dd1501b881772f"
+          }
+        ]
+      },
+      {
+        "id": "stopping",
+        "kind": "review",
+        "status": "PASS",
+        "action_taken": "Stops generation for a real musical direction discussion, not another cosmetic variant.",
+        "observation": "Stops generation for a real musical direction discussion, not another cosmetic variant.",
+        "evidence": [
+          {
+            "path": "docs/planning/SERIES_01_PASHTUN_NARRATIVE_AUDIO_PROPOSAL.md",
+            "sha256": "728b3ae9251c4c47fd3242d9dbca15d011c500a8cef99059c2dd1501b881772f"
+          }
+        ]
+      },
+      {
+        "id": "versioning",
+        "kind": "technical",
+        "status": "PASS",
+        "action_taken": "Rejected originals and503 review evidence preserved; new source section separates proposal from adopted taste.",
+        "observation": "Rejected originals and503 review evidence preserved; new source section separates proposal from adopted taste.",
+        "evidence": [
+          {
+            "path": "docs/planning/SERIES_01_PASHTUN_NARRATIVE_AUDIO_PROPOSAL.md",
+            "sha256": "728b3ae9251c4c47fd3242d9dbca15d011c500a8cef99059c2dd1501b881772f"
+          }
+        ]
+      },
+      {
+        "id": "economics",
+        "kind": "process",
+        "status": "PASS",
+        "action_taken": "No new provider expense; existing ledger and cap unchanged.",
+        "observation": "No new provider expense; existing ledger and cap unchanged.",
+        "evidence": [
+          {
+            "path": "docs/planning/SERIES_01_PASHTUN_NARRATIVE_AUDIO_PROPOSAL.md",
+            "sha256": "728b3ae9251c4c47fd3242d9dbca15d011c500a8cef99059c2dd1501b881772f"
+          }
+        ]
+      },
+      {
+        "id": "sound",
+        "kind": "review",
+        "status": "PASS",
+        "action_taken": "Melody, harmonic lift and contrast proposed; final narration/hoof mix not claimed tested.",
+        "observation": "Melody, harmonic lift and contrast proposed; final narration/hoof mix not claimed tested.",
+        "evidence": [
+          {
+            "path": "docs/planning/SERIES_01_PASHTUN_NARRATIVE_AUDIO_PROPOSAL.md",
+            "sha256": "728b3ae9251c4c47fd3242d9dbca15d011c500a8cef99059c2dd1501b881772f"
+          }
+        ]
+      },
+      {
+        "id": "rights",
+        "kind": "process",
+        "status": "PASS",
+        "action_taken": "No reference sampling, publication, new provider or upload in this exchange.",
+        "observation": "No reference sampling, publication, new provider or upload in this exchange.",
+        "evidence": [
+          {
+            "path": "docs/planning/SERIES_01_PASHTUN_NARRATIVE_AUDIO_PROPOSAL.md",
+            "sha256": "728b3ae9251c4c47fd3242d9dbca15d011c500a8cef99059c2dd1501b881772f"
+          }
+        ]
+      },
+      {
+        "id": "music_reference",
+        "kind": "review",
+        "status": "PASS",
+        "action_taken": "All five references remain taste inputs; Director rejection overrides any inferred success from prompt or source-analysis match.",
+        "observation": "All five references remain taste inputs; Director rejection overrides any inferred success from prompt or source-analysis match.",
+        "evidence": [
+          {
+            "path": "docs/planning/SERIES_01_PASHTUN_NARRATIVE_AUDIO_PROPOSAL.md",
+            "sha256": "728b3ae9251c4c47fd3242d9dbca15d011c500a8cef99059c2dd1501b881772f"
+          }
+        ]
+      }
+    ],
+    "hypotheses": [
+      {
+        "prediction": "Swapping lead instruments without changing the motion-first arrangement may repeat the same rejected idea.",
+        "observation": "Both prompts used the same124BPM segmented driving arrangement; Director rejects both as too train-focused. This is prompt and Director evidence, not direct backend listening.",
+        "response": "Revised proposed strategy prioritizes melodic and emotional identity before synchronization.",
+        "result": "resolved"
+      }
+    ],
+    "adjacent_regressions": "Planning only: protected picture, narration choice, North American identity, budget, failed auditions and release gates unchanged.",
+    "stopping_reason": "Completed creative rethink for Director discussion. New musical direction and sketch format remain proposed, no sonic qualification."
+  },
+  "gate": {
+    "ready_for_review": true,
+    "failures": [],
+    "scope": "planning",
+    "limits": "Evidence checked for presence and hashes, not artistic truth or Director acceptance. Planning evidence cannot qualify a production result."
+  }
+}
