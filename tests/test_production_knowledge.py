@@ -31,6 +31,18 @@ def task(root, operation="contact", entities=None):
             "phase": "planning", "inputs": {pk.CATALOG: pk.file_hash(root / pk.CATALOG)}, "open_decisions": []}
 
 
+def test_only_catalog_authorized_audition_bypasses_final_voice_choice(root):
+    t = task(root, 'audio', ['officer'])
+    source = 'docs/planning/SERIES_01_PASHTUN_FINISHED_UNIT_PLAN.md'
+    t.update(id='audio223-preview', phase='execution',
+             execution_authority={'source': source, 'scope': 'authorized audition only'})
+    t['inputs'][source] = pk.file_hash(root / source)
+    assert pk.task_packet(root, t)['dispatch_ready']
+    for change in ({'id': 'unapproved-audition'}, {'operation': 'delivery'}):
+        candidate = {**t, **change}
+        assert 'DIRECTOR_DECISION:select_performed_voice' in pk.task_packet(root, candidate)['blockers']
+
+
 def review(root, packet):
     evidence = {"path": pk.CATALOG, "sha256": pk.file_hash(root / pk.CATALOG)}
     return {"packet_digest": packet["packet_digest"],

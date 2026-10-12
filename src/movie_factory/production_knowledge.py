@@ -204,7 +204,16 @@ def task_packet(root, task):
         # Current canonical state cannot be overridden by omitting the task's decision list.
         for r in obligations:
             if r.get("unresolved_decision"):
-                blockers.append("DIRECTOR_DECISION:" + r["unresolved_decision"])
+                # Only a catalog-reviewed audition can precede final selection.
+                authority = task.get("execution_authority")
+                exception = any(
+                    e.get("task_id") == task["id"] and e.get("operation") == task["operation"]
+                    and isinstance(authority, dict)
+                    and e.get("authority_source") == authority.get("source")
+                    for e in r.get("decision_exceptions", [])
+                )
+                if not exception:
+                    blockers.append("DIRECTOR_DECISION:" + r["unresolved_decision"])
         if not task.get("execution_authority"):
             blockers.append("MISSING_EXECUTION_AUTHORITY")
         else:
