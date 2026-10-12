@@ -4,6 +4,8 @@ Use this pilot before covered production work and before its internal handoff. I
 
 ## What is authoritative
 
+**218 amendment:** Director rejects217's glove/fist appearance and removes gloves. Use [218 reconciliation](reconciliation218.md) and the fresh `tasks/rein218.json` packet for the bare-fist correction. Prior217 visual admissions are explicitly withdrawn. Retrieval had supplied the right rule; the failure was the agent's application and perceptual judgment, not proof that more retrieval alone would solve it.
+
 **217 amendment:** [reviewed reconciliation](reconciliation217.md) adopts Director215's narration A, keeps the performed voice/paid route open, and maps Director217's glove/whole-fist correction. Current coverage is nine documents/89 sections/28 records; the original213 figures and generated files below are historical. Fresh task packets, not those historical files, govern current work. Manual anatomical review remains essential: earlier thumb contact math did not prevent a visible backward-bending pose.
 
 Existing source documents and actual Director approvals remain authority. `catalog.json` is a curated, versioned interpretation:28 records, typed entity relationships, applicability facets and explicit status. `source-pins.json` binds nine reviewed documents and their88 sections. `expectations.json` was authored from the source reading before retrieval code ran; it is a finite, agent-authored oracle, not independent human ground truth. Search results are supporting material, never approval.
