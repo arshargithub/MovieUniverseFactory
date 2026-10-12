@@ -13,26 +13,37 @@ SOURCES = {
     'route': ('entrance209-route04', '411c1b9916dc4ccd508becb7e95622ea0e42d3367200f359279dec9c29d4deee'),
 }
 OPS = {'inspect01': 'opening', 'inspect02':'opening','candidate03':'opening','candidate04':'opening',
-       'candidate05':'opening','opening06':'opening','route07':'route','opening08':'opening'}
+       'candidate05':'opening','opening06':'opening','route07':'route','opening08':'opening',
+       'opening14':'opening','route15':'route','candidate20':'opening'}
 
-def thumb(rig, side):
+def thumb(rig, side, target_local=None):
     import bpy
     from mathutils import Vector
     from entrance200_pose_control import aim
     sign=1 if side=='L' else -1
     hand=rig.pose.bones['hand.'+side]
     chain=[rig.pose.bones[f'MF_fit_finger_4_{j}.{side}'] for j in range(3)]
-    origin=chain[0].head.copy();target=hand.matrix@Vector((sign*.075,.665,-.355))
+    # Matrix aiming can leave float32 decomposition residue in location/scale.
+    # This is a rotation-only correction: retain the source channels explicitly.
+    original=[(b.location.copy(),b.scale.copy()) for b in chain]
+    origin=chain[0].head.copy();target=hand.matrix@Vector(target_local if target_local is not None else (sign*.075,.665,-.355))
     lengths=[b.bone.length for b in chain];a=lengths[0];b=sum(lengths[1:])
     delta=target-origin;d=delta.length
     if not abs(a-b)+.001<d<a+b-.001:raise ValueError('Unreachable thumb target')
-    axis=delta.normalized();bend=hand.matrix.to_3x3()@Vector((-sign,0.,-.1))
+    # MCP must bow toward the anatomical thumb side, not across the palm and
+    # back toward the target. The previous negative-X elbow was hyperextended.
+    axis=delta.normalized();bend=hand.matrix.to_3x3()@Vector((sign,0.,-.1))
     bend-=axis*bend.dot(axis);bend.normalize()
     c=(a*a+d*d-b*b)/(2*a*d)
     joint=origin+axis*(a*c)+bend*(a*np.sqrt(1-c*c))
     aim(chain[0],joint);bpy.context.view_layer.update()
     aim(chain[1],target);bpy.context.view_layer.update()
     aim(chain[2],target);bpy.context.view_layer.update()
+    for bone,(location,scale) in zip(chain,original):
+        q=bone.matrix_basis.to_quaternion().normalized()
+        bone.rotation_mode='QUATERNION';bone.rotation_quaternion=q
+        bone.location=location;bone.scale=scale
+    bpy.context.view_layer.update()
 
 def return_path(start, tangent, middle):
     """Cubic supported loose return; endpoints and tangent are explicit."""
@@ -77,7 +88,7 @@ def reins(scene):
         inv=ob.matrix_world.inverted()
         for p,co in zip(sp.points,points):p.co=(*(inv@Vector(co)),1)
 
-def build(scene,out,kind):
+def build(scene,out,kind,pose_fn=thumb,changed_digits=(4,),additions=None):
     import bpy
     from mathutils import Vector
     from wardrobe_motion178_controls import render_geometry_paused
@@ -86,7 +97,7 @@ def build(scene,out,kind):
     from entrance205_actor import save
     from worker import action_channels
     rig=bpy.data.objects['MF_body156_fit_rig'];original_frame=scene.frame_current;before=fingerprint(scene)
-    changed=[f'MF_fit_finger_4_{j}.{s}' for s in ('L','R') for j in range(3)]
+    changed=[f'MF_fit_finger_{d}_{j}.{s}' for s in ('L','R') for d in changed_digits for j in range(3)]
     preserved=[b.name for b in rig.pose.bones if b.name not in changed]
     frames=list(range(217,361)) if kind=='opening' else list(range(361,649))
     old=[];world=[];poses=[];cameras=[];lenses=[]
@@ -114,7 +125,7 @@ def build(scene,out,kind):
         for side in ('L','R'):bpy.data.objects['MF185_rein_'+side].hide_viewport=False
         for i,f in enumerate(frames):
             scene.frame_set(f);bpy.context.view_layer.update()
-            for side in ('L','R'):thumb(rig,side)
+            for side in ('L','R'):pose_fn(rig,side)
             for n in changed:
                 b=rig.pose.bones[n];q=b.matrix_basis.to_quaternion();b.rotation_mode='QUATERNION';b.rotation_quaternion=q
                 b.keyframe_insert('rotation_quaternion',frame=f)
@@ -125,7 +136,11 @@ def build(scene,out,kind):
                 inv=ob.matrix_world.inverted()
                 if len(points)!=len(ob.data.splines[0].points):raise ValueError('Rein topology')
                 for p,co in zip(ob.data.splines[0].points,points):p.co=(*(inv@Vector(co)),1);p.keyframe_insert('co',frame=f)
-            reins_after.append(row);thumb_bases.append([np.array(rig.pose.bones[n].matrix_basis) for n in changed])
+            # Reopen compares the actual stored float32 curve, not an ideal
+            # float64 construction path hundreds of scene units from origin.
+            reins_after.append([[list(ob.matrix_world@p.co.to_3d()) for p in ob.data.splines[0].points]
+                                 for ob in [bpy.data.objects['MF185_rein_'+s] for s in ('L','R')]])
+            thumb_bases.append([np.array(rig.pose.bones[n].matrix_basis) for n in changed])
             after.append([np.array(rig.matrix_world@rig.pose.bones[n].matrix) for n in preserved])
             camera_error=max(camera_error,float(abs(np.array(scene.camera.matrix_world)-cameras[i]).max()),abs(scene.camera.data.lens-lenses[i]))
             if i%48==0:print('214 contact keyed',f,flush=True)
@@ -136,10 +151,12 @@ def build(scene,out,kind):
         raise ValueError('Protected geometry or camera/light changed')
     np.savez_compressed(out/'contact.npz',frames=frames,names=preserved,before=poses,after=after,old_reins=old,
                         reins=reins_after,thumb_names=changed,thumb_bases=thumb_bases,cameras=cameras,lenses=lenses)
+    if additions:additions(scene)
+    final_geometry=fingerprint(scene)['geometry']
     scene.frame_set(360 if kind=='opening' else 427)
     save(scene,out,dict(source_sha256=SOURCES[kind][1],nonthumb_world_max_error=error,camera_max_error=camera_error,
-                       protected_geometry_sha256=before['geometry'],contact_sha256=base.digest(out/'contact.npz'),
-                       scope='Thumb rotations and split rein free ends only; all other rig motion and mesh/shape geometry retained',
+                       protected_geometry_sha256=final_geometry,source_geometry_sha256=before['geometry'],contact_sha256=base.digest(out/'contact.npz'),
+                       scope='Declared finger rotations and split reins; optional fitted glove derivative. All other rig motion and original mesh/shape geometry retained',
                        limits='Authored scoped contact, not general equestrian physics; visual review pending'))
 
 def validate(job):
@@ -196,7 +213,7 @@ def controls(scene, out):
             hidden=[]
             if label=='palm':
                 for ob in scene.objects:
-                    if ob.type in ('MESH','CURVE','CURVES') and ob.name not in ('MF_studio_adult_body','MF185_rein_L','MF185_rein_R'):
+                    if ob.type in ('MESH','CURVE','CURVES') and ob.name not in ('MF_studio_adult_body','MF185_rein_L','MF185_rein_R','MF217 fitted leather gloves'):
                         hidden.append((ob,ob.hide_render));ob.hide_render=True
                 data=bpy.data.lights.new('214 diagnostic fill','AREA');data.energy=180;data.size=3
                 fill=bpy.data.objects.new('214 diagnostic fill',data);scene.collection.objects.link(fill)
@@ -212,7 +229,7 @@ def main():
     if out.exists():raise ValueError('Preserve previous output')
     out.mkdir();(out/'handler.py').write_bytes(Path(__file__).read_bytes())
     scene=load(kind)
-    building=job['operation'] in ('opening06','route07','opening08')
+    building=job['operation'] in ('opening06','route07','opening08','opening14','route15')
     if building:build(scene,out,kind)
     for ob in scene.objects:
         for m in ob.modifiers:

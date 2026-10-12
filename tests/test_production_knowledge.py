@@ -75,7 +75,7 @@ def test_fts_handles_punctuation_and_does_not_promote(root):
     finally:
         conn.close()
     packet = pk.task_packet(root, task(root, "audio", ["officer"]))
-    assert "narration_a" not in {r["id"] for r in packet["obligations"]}
+    assert next(r for r in packet["obligations"] if r["id"] == "narration_a")["status"] == "adopted"
     assert next(r for r in packet["obligations"] if r["id"] == "sound")["status"] == "proposed"
 
 
@@ -119,7 +119,17 @@ def test_execution_needs_authority_and_decisions(root):
     assert "UNBOUND_EXECUTION_AUTHORITY" in pk.task_packet(root, t)["blockers"]
     t["open_decisions"] = []
     t["execution_authority"] = {"source": pk.CATALOG, "scope": "synthetic claimed authority"}
-    assert "DIRECTOR_DECISION:select_narration_and_voice" in pk.task_packet(root, t)["blockers"]
+    assert "DIRECTOR_DECISION:select_performed_voice" in pk.task_packet(root, t)["blockers"]
+
+
+def test_proposed_creative_option_is_not_promoted_by_search(root):
+    catalog=json.loads((root/pk.CATALOG).read_text())
+    record=next(r for r in catalog['records'] if r['id']=='narration_a')
+    record.update(status='proposed',kind='creative_option')
+    (root/pk.CATALOG).write_text(json.dumps(catalog))
+    (root/pk.PINS).write_text(json.dumps(pk.freeze(root)))
+    t=task(root,'audio',['officer']);t['query']='Use narration A'
+    assert 'narration_a' not in {r['id'] for r in pk.task_packet(root,t)['obligations']}
 
 
 def test_context_limit_blocks_without_dropping_obligations(root):

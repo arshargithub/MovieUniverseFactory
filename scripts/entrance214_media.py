@@ -11,9 +11,11 @@ BASE=ROOT/'.runtime/art-direction/series01-facebuilder-trial-01'
 OUT=ROOT/'.runtime/art-direction/series01-entrance214'
 
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--encode',action='store_true');args=parser.parse_args()
-    qa=OUT/'qa';qa.mkdir(exist_ok=True);available={};records={};sources={}
-    for name in ('motion11','motion12'):
+    parser=argparse.ArgumentParser();parser.add_argument('--encode',action='store_true');parser.add_argument('--gloved',action='store_true');args=parser.parse_args()
+    output=ROOT/'.runtime/art-direction/series01-entrance217' if args.gloved else OUT
+    output.mkdir(exist_ok=True)
+    qa=output/'qa';qa.mkdir(exist_ok=True);available={};records={};sources={}
+    for name in (('motion28','motion29') if args.gloved else ('motion18','motion19')):
         folder=BASE/('entrance214-'+name);p=folder/'result.json'
         if not p.exists():p=folder/'progress.json'
         if not p.exists():continue
@@ -29,8 +31,10 @@ def main():
     if not args.encode:return
     if set(records)!=set(range(432)) or any(records[i]['native_frame']!=i+217 for i in records):raise ValueError('Incomplete chronology')
     comparisons=[]
-    for src,proof,full,frames in [('opening08','proof09','motion11',(277,330,360)),('route07','proof10','motion12',(390,427,472,550,620))]:
-        native=BASE/('entrance214-'+src);r=json.loads((native/'result.json').read_text())
+    comparisons_source=([('217-opening24','proof26','motion28',(277,330,360)),('217-route25','proof27','motion29',(390,427,472,550,620))]
+                        if args.gloved else [('214-opening14','proof16','motion18',(277,330,360)),('214-route15','proof17','motion19',(390,427,472,550,620))])
+    for src,proof,full,frames in comparisons_source:
+        native=BASE/('entrance'+src);r=json.loads((native/'result.json').read_text())
         if r['native_sha256']!=sources[full] or sha(native/'scene.blend')!=r['native_sha256']:raise ValueError('Source changed')
         result=BASE/('entrance214-'+proof)/'result.json'
         if not result.exists():raise ValueError('Reopen proof missing')
@@ -39,10 +43,11 @@ def main():
         for f in frames:
             proofpath=result.parent/f'frame-{f-217:04d}.png'
             comparisons.append(dict(frame=f,build_vs_reopen=pixel_parity(native/f'actual-{f}.png',proofpath),
-                                    full_vs_reopen=pixel_parity(available[f-217],proofpath)))
+                                    delivery_vs_proof=pixel_parity(available[f-217],proofpath),
+                                    delivery_reuses_proof=bool(records[f-217].get('reused_from'))))
         complete=BASE/('entrance214-'+full)/'result.json'
         if not complete.exists() or not json.loads(complete.read_text()).get('complete'):raise ValueError('Worker not complete')
-    target=OUT/'director-preview'
+    target=output/'director-preview'
     if target.exists():raise ValueError('Preserve prior delivery')
     target.mkdir()
     for i in range(432):os.link(available[i],target/f'frame-{i:04d}.png')

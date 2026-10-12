@@ -27,4 +27,6 @@ def test_review_clock_and_authority_boundary():
     review=importlib.util.module_from_spec(spec);spec.loader.exec_module(review)
     assert review.validate({'operation':'motion11'})[1]==tuple(range(217,361))
     assert review.validate({'operation':'motion12'})[1]==tuple(range(361,649))
+    assert review.validate({'operation':'motion18'})[1]==tuple(range(217,361))
+    assert review.validate({'operation':'motion19'})[1]==tuple(range(361,649))
     with pytest.raises(ValueError):review.validate({'operation':'motion11','source':'/tmp/untrusted.blend'})

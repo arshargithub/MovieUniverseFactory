@@ -27,7 +27,7 @@ def test_incomplete_sequence_is_not_encoded(monkeypatch,tmp_path):
 
 def test_modified_frame_is_not_used(monkeypatch,tmp_path):
     base,out=setup(monkeypatch,tmp_path,[])
-    folder=base/'entrance214-motion11';folder.mkdir()
+    folder=base/'entrance214-motion18';folder.mkdir()
     (folder/'frame-0000.png').write_bytes(b'changed')
     (folder/'progress.json').write_text(json.dumps({'source_sha256':'source','frames':[
         {'index':0,'native_frame':217,'sha256':'original'}]}))
