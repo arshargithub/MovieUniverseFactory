@@ -1,5 +1,21 @@
 # Pashtun entrance narration and sound proposal
 
+## Exchange238 — Director-selected Suno theme candidate and export
+
+Director reports a goosebump-inducing instrumental, calls it the likely theme song, and has purchased monthly Suno Pro independently. The actual track, ID, generation/download dates and audio have not yet been supplied or reviewed here; preserve the Director's enthusiasm/selection without inventing its instrumentation, timing, rights or final integrated acceptance. Agent finishing237 continues independently; no agent purchase or additional music generation follows.
+
+Recommend original full-song WAV as editing master, plus optional Auto Split WAV stems; MP3 is a convenient listening copy, MP4/M4A unnecessary for this workflow. Preserve the original mix rather than assume separated stems improve it. Bring song link/ID, prompt/settings and subscription/download evidence with the source; exact cue selection follows the Director's marked favorite/surge moments and actual picture.
+
+Official Suno help checked2026-10-12: [download formats](https://help.suno.com/en/articles/13926081) lists Pro WAV on the web; [Get Stems](https://help.suno.com/en/articles/13925185) lists Pro/Premier Auto Split up to12 stems for50 credits and Split from Mix, while Advanced Split is Premier-only. A second subscription should not be necessary for ordinary extraction. Recommended route: Library → song More Actions → Get Stems → Auto Split. Specific account upgrade prompt has not been inspected; Advanced Split/Studio gating is a hypothesis, not a confirmed account diagnosis. No recommendation to upgrade. Extraction artifacts and final rights checks remain separate from access entitlement.
+
+## Exchange237 — second Suno discovery prompt; production continues
+
+Director experiments with Suno while agent completes authorized21s timing, narration, book quote and physical effects. Additional LOAD SHIFT-inspired exploratory prompt supplied, not a request to copy an artist or an adopted score:
+
+> Melodic electronic rock with a dark, expansive synth sound. A soaring, memorable analog-synth lead over deep bass and punchy drums. Tension opens into a powerful, exhilarating melodic release. Bold, futuristic and emotionally charged, with strong contrasts between restrained passages and full-bodied peaks. Instrumental.
+
+Optional synth-led alternative: replace the opening genre phrase with “dark melodic synthwave, sequenced bass, punchy electronic drums and a soaring synth lead.” No train metaphor, imposed short duration, reference upload or new automated music judgment.237 implementation/result evidence belongs in the finished-unit work package; no finished preview claim from this prompt alone.
+
 ## Exchanges235–236 — editing limits and first Suno prompt
 
 235 clarification: practical editability depends on stereo versus stems versus an editable composition, not merely licensed versus AI origin. Generation offers variations/extensions, not deterministic editing or guaranteed identity preservation. No track selection or purchase follows.236 Director chooses to try Suno and requests the first prompt; user-operated exploration, not authority for agent billing, uploads or generation. Gemini music-opinion gate remains removed.
