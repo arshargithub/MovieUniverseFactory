@@ -2,6 +2,10 @@
 
 Established exchange208; execution authorized at exchange209 · 2026-10-11. This is the work strategy, not an acceptance report.
 
+## Exchange225 — revised duration allocation, proposed
+
+Director wants a gentler continuous side-to-face camera approach and readable composed baseline before recognition, without losing fast-paced energy. Current recommendation replaces224's extra aerial coverage with +0.75s camera approach, +1.5s facial setup/recognition and +0.75s OTS geography, preserving original-speed turn and ending for21s total. See current narrative proposal for timing, native-motion dependencies and internal normal-speed performance/hook review. No execution/approval claim: this turn weighs options and proposes the final plan. Corrected Kirk fit remains an early proof, not a guaranteed outcome of adding exactly3s. Next substantial execution requires source reconciliation/fresh packet and motion brief, then cheap integrated chronology before beauty rendering.
+
 ## Exchange224 — audition feedback and hook-preserving timing proposal
 
 Director prefers Kirk's voice, with Pathan pronunciation unresolved/rejected in the current take, and wants weighty rather than tinny hoof sound judged in context. Director rejects the three-second book prologue; preserve the immediate aerial gallop/dust hook. See the current narrative proposal for verified existing cut boundaries and a proposed2s full-speed approach plus1s geography extension, not a slowed turn. Correct pronunciation and shape pauses before locking exact duration;21s remains a recommendation, not implemented/approved timing. No new paid call or media edit this discussion. Next integrated preview must distinguish current209 full footage from218 contact diagnostics and apply the hook-first editorial check. Updated source docs stale prior packets; reconcile them before further dispatch. No final auditory PASS or release acceptance.
