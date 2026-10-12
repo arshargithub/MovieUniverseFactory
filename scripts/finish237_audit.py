@@ -24,9 +24,8 @@ def main():
         scene.frame_set(f);bpy.context.view_layer.update()
         mats={o.name:np.array(o.matrix_world) for o in scene.objects if not o.hide_viewport}
         geometry={};deps=bpy.context.evaluated_depsgraph_get()
-        for n in ('MF185_gait_horse','MF185_moving_shawl','MF_body156_body'):
-            ob=bpy.data.objects.get(n)
-            if ob is None:continue
+        for n in ('MF185_gait_horse','MF185_moving_shawl','MF_studio_adult_body'):
+            ob=bpy.data.objects[n]
             ev=ob.evaluated_get(deps);mesh=ev.to_mesh();v=np.empty(len(mesh.vertices)*3);mesh.vertices.foreach_get('co',v)
             v=v.reshape(-1,3);m=np.array(ev.matrix_world);geometry[n]=v@m[:3,:3].T+m[:3,3];ev.to_mesh_clear()
         cache={o.name:[dict(start=m.frame_start,mode=m.play_mode,eval=m.eval_frame) for m in o.modifiers if m.type=='MESH_CACHE'] for o in scene.objects if any(m.type=='MESH_CACHE' for m in o.modifiers)}

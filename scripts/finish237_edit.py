@@ -16,16 +16,16 @@ ScaledBorderAndShadow: yes
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
 Style: Page,Baskerville,20,&H00332D26,&H00332D26,&H004A4134,&H60000000,0,0,0,0,100,100,0,0,1,0,0,7,0,0,0,1
-Style: Quote,Baskerville,24,&H003B3027,&H003B3027,&H003B3027,&H00000000,0,-1,0,0,100,100,0,0,1,0,0,8,0,0,0,1
-Style: Author,Baskerville,15,&H003B3027,&H003B3027,&H003B3027,&H00000000,0,0,0,0,100,100,0,0,1,0,0,8,0,0,0,1
+Style: Quote,Baskerville,28,&H003B3027,&H003B3027,&H003B3027,&H00000000,0,-1,0,0,100,100,0,0,1,0,0,8,0,0,0,1
+Style: Author,Baskerville,18,&H003B3027,&H003B3027,&H003B3027,&H00000000,0,0,0,0,100,100,0,0,1,0,0,8,0,0,0,1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 Dialogue: 0,0:00:05.00,0:00:08.18,Page,,0,0,0,,{\pos(0,0)\fad(400,350)\c&H9AB5C9&\alpha&H28&\p1}m 30 20 l 396 25 399 153 377 151 334 154 283 150 210 153 154 151 85 154 33 150 31 113 34 73 30 20{\p0}
-Dialogue: 1,0:00:05.00,0:00:08.18,Page,,0,0,0,,{\pos(0,0)\fad(400,350)\c&H718AA1&\alpha&H60&\p1}m 43 31 l 386 35 385 37 43 33 m 44 139 l 386 140 386 141 44 140{\p0}
+Dialogue: 1,0:00:05.00,0:00:08.18,Page,,0,0,0,,{\pos(0,0)\fad(400,350)\c&H718AA1&\alpha&H60&\p1}m 43 31 l 386 35 385 37 43 33 m 44 148 l 386 148 386 149 44 149{\p0}
 Dialogue: 2,0:00:05.05,0:00:08.18,Author,,0,0,0,,{\pos(216,38)\fad(350,350)\fs14\fsp2}THE PATHANS
 Dialogue: 2,0:00:05.15,0:00:08.18,Quote,,0,0,0,,{\pos(216,62)\fad(350,350)}“a hardy and\Nmartial people”
-Dialogue: 2,0:00:05.30,0:00:08.18,Author,,0,0,0,,{\pos(216,119)\fad(350,350)}— Sir Winston Churchill
+Dialogue: 2,0:00:05.30,0:00:08.18,Author,,0,0,0,,{\pos(216,125)\fad(350,350)}— Sir Winston Churchill
 '''
 SRT='''1
 00:00:00,150 --> 00:00:02,010
@@ -69,6 +69,12 @@ def inspect_sources():
             rows.append(dict(index=row['index'],path=str(path),sha256=row['sha256']))
     return rows
 def main():
+    if sys.argv[1:]==['proof']:
+        ass=BASE/'quote-proof02.ass';image=BASE/'book-on-native02.png'
+        if ass.exists() or image.exists():raise ValueError('Preserve prior graphic proof')
+        ass.write_text(PAGE)
+        subprocess.run(['ffmpeg','-v','error','-i',str(BASE/'opening03-full/frame-0136.png'),'-vf',f'setpts=PTS+5.666667/TB,ass={ass}','-frames:v','1',str(image)],check=True)
+        print(str(image));return
     if sys.argv[1:]:raise ValueError('No free-form edit commands')
     rows=inspect_sources();out=BASE/'edit01'
     if out.exists():raise ValueError('Preserve prior edit')

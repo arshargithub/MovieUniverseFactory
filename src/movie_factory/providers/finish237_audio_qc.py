@@ -1,11 +1,12 @@
 """Bounded free-tier non-music listening check; no taste scoring or retries."""
 import base64,json,os,hashlib,sys
+from datetime import datetime,timezone
 from pathlib import Path
 import httpx
 from .gemini_reference_provider import load_key,MODEL,redact_error
 from ..telemetry import utc_now
 ROOT=Path(__file__).resolve().parents[3]
-def run(pronunciation_only=False,transport_control=False):
+def run(pronunciation_only=False,transport_control=False,capacity_recheck=False):
     out=ROOT/'.runtime/art-direction/series01-finish237'
     source=ROOT/'.runtime/art-direction/series01-audio223/provider'
     names=['finish237-voice-1.mp3','finish237-hoof-1.mp3','finish237-wind-1.mp3','turn-1.mp3']
@@ -27,6 +28,10 @@ def run(pronunciation_only=False,transport_control=False):
         prior=json.loads((out/'audio-qc-result-pronunciation.json').read_text())
         if prior!={'state':'UNCERTAIN_NO_RETRY'}:raise ValueError('Expected preserved failed diagnostic')
         suffix='-transport-control'
+    if capacity_recheck:
+        prior=json.loads((out/'audio-qc-result-transport-control.json').read_text())
+        if prior.get('http_status')!=503 or (datetime.now(timezone.utc)-datetime.fromisoformat(prior['utc'])).total_seconds()<600:raise ValueError('Requires documented503 and ten-minute recovery interval')
+        suffix='-capacity-recheck'
     parts=[];hashes={}
     for name in names:
         p=source/name
@@ -45,5 +50,5 @@ def run(pronunciation_only=False,transport_control=False):
     except (httpx.HTTPError,ValueError) as exc:result={'state':'UNCERTAIN_NO_RETRY','error_type':type(exc).__name__}
     (out/('audio-qc-result'+suffix+'.json')).write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result))
 if __name__=='__main__':
-    if sys.argv[1:] not in ([],['pronunciation'],['transport-control']):raise ValueError('Closed request')
-    run(sys.argv[1:]==['pronunciation'],sys.argv[1:]==['transport-control'])
+    if sys.argv[1:] not in ([],['pronunciation'],['transport-control'],['capacity-recheck']):raise ValueError('Closed request')
+    run(sys.argv[1:]==['pronunciation'],sys.argv[1:]==['transport-control'],sys.argv[1:]==['capacity-recheck'])
