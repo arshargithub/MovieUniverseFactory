@@ -1,5 +1,21 @@
 # Pashtun entrance narration and sound proposal
 
+## Corrected sequence storyboard — exchange222, 2026-10-11
+
+Director requires the full spoken/displayed attribution **Sir Winston Churchill**, superseding221's surname-only treatment. The following corrected18-second board is proposed editorial timing, not measured footage boundaries or a completed read test. Keep actual approved choreography/cameras; reconcile narration timing against the edit before generation. Opening is19 spoken words, with pauses.
+
+| Time | Visual/action | Narration | Sound/music |
+|---|---|---|---|
+|0–2.2s|High, slightly behind; galloping horse, rocky landscape, dust; camera descends.|We call them martial races.|Propulsive but restrained under voice; hooves establish speed.|
+|2.2–5s|Continuous descent and move toward her face; composed determination.|Their credentials are … impeccable.|Maintain momentum; admiring pause, not sarcasm.|
+|5–8s|Face registers danger then alternative route. Aged-book quotation fades in clear of face, showing The Pathans: “a hardy and martial people.” — Sir Winston Churchill, then fades out before geography coverage.|The Pathans: “a hardy and martial people.”|Score thins as she assesses the threat.|
+|8–10s|Over-shoulder checkpoint AND escape route; no book overlay obscuring geography.|Short pause. Sir Winston Churchill.|Low tension/forward pulse; last spoken words complete before turn.|
+|10–13s|Front coverage of spectacular turn and explosive uphill acceleration.|None.|Main musical surge synchronized to decisive movement; hoof/gravel transients remain clear.|
+|13–15.5s|Close elevated uphill coverage; checkpoint below established; sideways/downward checking glance.|None.|Sustain surge through climb, with effort and physical detail.|
+|15.5–18s|Forward gaze and determined continuation; close enough to read resolve.|None.|Carry energy into next sequence; no arbitrary musical full stop.|
+
+Attribution appears with the excerpt before its spoken reading completes; this lets the visual clear for geography while narration supplies the name. No new closing line or expression of the officer's doubts inside this unit. Aged-book graphic is designed retrospective attribution, not a facsimile claim or proof that this later honorific appeared in the1898 publication. Retain Q01 context/rights limitations. No paid generation or image work; narrative/performance timing remains to be validated. Source-pin reconciliation remains a prerequisite for production dispatch.
+
 ## Sequence storyboard correction — exchange221, 2026-10-11
 
 Director limits the current storyboard to the existing18-second Pashtun entrance, not the whole trailer. Correct the220 next-step recommendation accordingly: the full-trailer arc is context, not a new planning prerequisite. The inexpensive text board proposed opening narration0–8s, geography8–10s, spectacular turn10–13s, uphill glance13–15.5s and determined continuation15.5–18s; these are editorial timing hypotheses, not measured current cut boundaries or authority to rebuild approved choreography.
