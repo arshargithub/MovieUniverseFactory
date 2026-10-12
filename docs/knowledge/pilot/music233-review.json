@@ -1,0 +1,236 @@
+{
+  "packet_digest": "a48db2a3e92e001df29f9f9d235a69c3a9f8f4a14d9227991a540813d4bd9874",
+  "checks": [
+    {
+      "id": "authority",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Director233 approves melody-first sketch; one call within existing cap, no retime or final acceptance.",
+      "observation": "Director233 approves melody-first sketch; one call within existing cap, no retime or final acceptance.",
+      "evidence": [
+        {
+          "path": "docs/planning/SERIES_01_PASHTUN_NARRATIVE_AUDIO_PROPOSAL.md",
+          "sha256": "1eb7ca8d0dd94eac0a0b284b87ddb4e009cb13c368fb0d107c435c3878201524"
+        },
+        {
+          "path": ".runtime/art-direction/series01-music233/packaging-sketch.json",
+          "sha256": "f3b1e810250d7e98fac2caee6d70641e251bc59a896fcfe260b760559faa9093"
+        },
+        {
+          "path": ".runtime/art-direction/series01-music233/model-review.json",
+          "sha256": "e8958a89875dd1fe518d3810423ced0b28bcf8e96c43ecece4f86875371addc7"
+        }
+      ]
+    },
+    {
+      "id": "strategy",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Trailer-level arc recorded; full sketch retained; excerpt awaits listening rather than arbitrary cuts.",
+      "observation": "Trailer-level arc recorded; full sketch retained; excerpt awaits listening rather than arbitrary cuts.",
+      "evidence": [
+        {
+          "path": "docs/planning/SERIES_01_PASHTUN_NARRATIVE_AUDIO_PROPOSAL.md",
+          "sha256": "1eb7ca8d0dd94eac0a0b284b87ddb4e009cb13c368fb0d107c435c3878201524"
+        },
+        {
+          "path": ".runtime/art-direction/series01-music233/packaging-sketch.json",
+          "sha256": "f3b1e810250d7e98fac2caee6d70641e251bc59a896fcfe260b760559faa9093"
+        },
+        {
+          "path": ".runtime/art-direction/series01-music233/model-review.json",
+          "sha256": "e8958a89875dd1fe518d3810423ced0b28bcf8e96c43ecece4f86875371addc7"
+        }
+      ]
+    },
+    {
+      "id": "visual_gate",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Actual music review did not return an assessment; complete integrated claim withheld.",
+      "observation": "Actual music review did not return an assessment; complete integrated claim withheld.",
+      "evidence": [
+        {
+          "path": "docs/planning/SERIES_01_PASHTUN_NARRATIVE_AUDIO_PROPOSAL.md",
+          "sha256": "1eb7ca8d0dd94eac0a0b284b87ddb4e009cb13c368fb0d107c435c3878201524"
+        },
+        {
+          "path": ".runtime/art-direction/series01-music233/packaging-sketch.json",
+          "sha256": "f3b1e810250d7e98fac2caee6d70641e251bc59a896fcfe260b760559faa9093"
+        },
+        {
+          "path": ".runtime/art-direction/series01-music233/model-review.json",
+          "sha256": "e8958a89875dd1fe518d3810423ced0b28bcf8e96c43ecece4f86875371addc7"
+        }
+      ]
+    },
+    {
+      "id": "anticipation",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Hypotheses about melody, release and non-mechanical feel could not be tested by listening service.",
+      "observation": "Hypotheses about melody, release and non-mechanical feel could not be tested by listening service.",
+      "evidence": [
+        {
+          "path": "docs/planning/SERIES_01_PASHTUN_NARRATIVE_AUDIO_PROPOSAL.md",
+          "sha256": "1eb7ca8d0dd94eac0a0b284b87ddb4e009cb13c368fb0d107c435c3878201524"
+        },
+        {
+          "path": ".runtime/art-direction/series01-music233/packaging-sketch.json",
+          "sha256": "f3b1e810250d7e98fac2caee6d70641e251bc59a896fcfe260b760559faa9093"
+        },
+        {
+          "path": ".runtime/art-direction/series01-music233/model-review.json",
+          "sha256": "e8958a89875dd1fe518d3810423ced0b28bcf8e96c43ecece4f86875371addc7"
+        }
+      ]
+    },
+    {
+      "id": "stopping",
+      "kind": "review",
+      "status": "PASS",
+      "action_taken": "Real review infrastructure failure; no blind retry/generation or lowered sonic gate.",
+      "observation": "Real review infrastructure failure; no blind retry/generation or lowered sonic gate.",
+      "evidence": [
+        {
+          "path": "docs/planning/SERIES_01_PASHTUN_NARRATIVE_AUDIO_PROPOSAL.md",
+          "sha256": "1eb7ca8d0dd94eac0a0b284b87ddb4e009cb13c368fb0d107c435c3878201524"
+        },
+        {
+          "path": ".runtime/art-direction/series01-music233/packaging-sketch.json",
+          "sha256": "f3b1e810250d7e98fac2caee6d70641e251bc59a896fcfe260b760559faa9093"
+        },
+        {
+          "path": ".runtime/art-direction/series01-music233/model-review.json",
+          "sha256": "e8958a89875dd1fe518d3810423ced0b28bcf8e96c43ecece4f86875371addc7"
+        }
+      ]
+    },
+    {
+      "id": "versioning",
+      "kind": "technical",
+      "status": "PASS",
+      "action_taken": "Original40s waveform preserved with hashes;209 picture unchanged and no excerpt exported.",
+      "observation": "Original40s waveform preserved with hashes;209 picture unchanged and no excerpt exported.",
+      "evidence": [
+        {
+          "path": "docs/planning/SERIES_01_PASHTUN_NARRATIVE_AUDIO_PROPOSAL.md",
+          "sha256": "1eb7ca8d0dd94eac0a0b284b87ddb4e009cb13c368fb0d107c435c3878201524"
+        },
+        {
+          "path": ".runtime/art-direction/series01-music233/packaging-sketch.json",
+          "sha256": "f3b1e810250d7e98fac2caee6d70641e251bc59a896fcfe260b760559faa9093"
+        },
+        {
+          "path": ".runtime/art-direction/series01-music233/model-review.json",
+          "sha256": "e8958a89875dd1fe518d3810423ced0b28bcf8e96c43ecece4f86875371addc7"
+        }
+      ]
+    },
+    {
+      "id": "economics",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Account674 to664credits; conservative reservations1.35USD of3, individual cost unknown.",
+      "observation": "Account674 to664credits; conservative reservations1.35USD of3, individual cost unknown.",
+      "evidence": [
+        {
+          "path": "docs/planning/SERIES_01_PASHTUN_NARRATIVE_AUDIO_PROPOSAL.md",
+          "sha256": "1eb7ca8d0dd94eac0a0b284b87ddb4e009cb13c368fb0d107c435c3878201524"
+        },
+        {
+          "path": ".runtime/art-direction/series01-music233/packaging-sketch.json",
+          "sha256": "f3b1e810250d7e98fac2caee6d70641e251bc59a896fcfe260b760559faa9093"
+        },
+        {
+          "path": ".runtime/art-direction/series01-music233/model-review.json",
+          "sha256": "e8958a89875dd1fe518d3810423ced0b28bcf8e96c43ecece4f86875371addc7"
+        }
+      ]
+    },
+    {
+      "id": "sound",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Duration/levels/decode verified; expressive melody and scene suitability unassessed.",
+      "observation": "Duration/levels/decode verified; expressive melody and scene suitability unassessed.",
+      "evidence": [
+        {
+          "path": "docs/planning/SERIES_01_PASHTUN_NARRATIVE_AUDIO_PROPOSAL.md",
+          "sha256": "1eb7ca8d0dd94eac0a0b284b87ddb4e009cb13c368fb0d107c435c3878201524"
+        },
+        {
+          "path": ".runtime/art-direction/series01-music233/packaging-sketch.json",
+          "sha256": "f3b1e810250d7e98fac2caee6d70641e251bc59a896fcfe260b760559faa9093"
+        },
+        {
+          "path": ".runtime/art-direction/series01-music233/model-review.json",
+          "sha256": "e8958a89875dd1fe518d3810423ced0b28bcf8e96c43ecece4f86875371addc7"
+        }
+      ]
+    },
+    {
+      "id": "rights",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Only original generic prompt to paid existing provider and original MP3 to authorized free-tier reviewer; no reference sampling/publication.",
+      "observation": "Only original generic prompt to paid existing provider and original MP3 to authorized free-tier reviewer; no reference sampling/publication.",
+      "evidence": [
+        {
+          "path": "docs/planning/SERIES_01_PASHTUN_NARRATIVE_AUDIO_PROPOSAL.md",
+          "sha256": "1eb7ca8d0dd94eac0a0b284b87ddb4e009cb13c368fb0d107c435c3878201524"
+        },
+        {
+          "path": ".runtime/art-direction/series01-music233/packaging-sketch.json",
+          "sha256": "f3b1e810250d7e98fac2caee6d70641e251bc59a896fcfe260b760559faa9093"
+        },
+        {
+          "path": ".runtime/art-direction/series01-music233/model-review.json",
+          "sha256": "e8958a89875dd1fe518d3810423ced0b28bcf8e96c43ecece4f86875371addc7"
+        }
+      ]
+    },
+    {
+      "id": "music_reference",
+      "kind": "review",
+      "status": "PASS",
+      "action_taken": "Director-rejected231 maintained;233 brief changes approach, not evidence of resulting taste success.",
+      "observation": "Director-rejected231 maintained;233 brief changes approach, not evidence of resulting taste success.",
+      "evidence": [
+        {
+          "path": "docs/planning/SERIES_01_PASHTUN_NARRATIVE_AUDIO_PROPOSAL.md",
+          "sha256": "1eb7ca8d0dd94eac0a0b284b87ddb4e009cb13c368fb0d107c435c3878201524"
+        },
+        {
+          "path": ".runtime/art-direction/series01-music233/packaging-sketch.json",
+          "sha256": "f3b1e810250d7e98fac2caee6d70641e251bc59a896fcfe260b760559faa9093"
+        },
+        {
+          "path": ".runtime/art-direction/series01-music233/model-review.json",
+          "sha256": "e8958a89875dd1fe518d3810423ced0b28bcf8e96c43ecece4f86875371addc7"
+        }
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "prediction": "Developed melodic phrasing and harmonic lift avoid excessive mechanical train feel.",
+      "observation": "One40s artifact exists; no listening assessment returned.",
+      "response": "Preserve full audition, withhold quality pass and excerpt selection.",
+      "result": "unresolved"
+    }
+  ],
+  "adjacent_regressions": "No native/picture/narration changes. Rejected231 outputs preserved. Final mix, rights and approval remain separate.",
+  "stopping_reason": "Listening infrastructure blocker: diagnostic audition may be shared with disclosure, but no qualified music or integrated excerpt claimed.",
+  "gate_result": {
+    "ready_for_review": false,
+    "failures": [
+      "UNRESOLVED_HYPOTHESIS",
+      "anticipation:FAIL_OR_NOT_RUN",
+      "sound:FAIL_OR_NOT_RUN",
+      "visual_gate:FAIL_OR_NOT_RUN"
+    ],
+    "scope": "execution",
+    "limits": "Evidence checked for presence and hashes, not artistic truth or Director acceptance. Planning evidence cannot qualify a production result."
+  }
+}

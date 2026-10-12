@@ -1,5 +1,30 @@
 # Pashtun entrance narration and sound proposal
 
+## Exchange233 — melody-first sketch authorized
+
+Result: one40s original sketch generated and normalized, [full audition](../../.runtime/art-direction/series01-music233/sketch.mp3). Stereo48kHz, no source full-scale samples, normalized-18LUFS/-3.35dBTP. These are technical checks, not musical approval. Gemini's single review ended `UNCERTAIN_NO_RETRY` after its request timeout without an assessment; unlike231 there is no explicit503 permitting the scoped retry. Preserve the claim and do not redispatch blindly. Melody/development, excerpt choice and picture integration remain NOT_RUN; no18s passage manufactured from unverified timing. The full playable sketch can be shared only as a diagnostic audition with the real listening blocker disclosed. No sonic recommendation or completed in-picture deliverable claimed. Account674→664credits (10credits decrease); conservative ledgerUS$1.35/US$3, task reservationUS$0.30 held, individual invoice unknown.59 focused offline tests pass. New review/code changes are not independent musical qualification. Next: Director can assess the full sketch at the already planned taste review; successful internal listening evidence is still required before selecting the in-picture passage. No new generation or automatic retry scheduled.
+
+Director agrees to232 and says go ahead. Execute one original developed musical sketch and an excerpt against protected209 picture, under the existing AUDIO-220 effective US$3 cap and production-media privacy permission. This accepts the revised audition method, not a resulting composition, full trailer score or retime. No new provider/subscription/publication. Counter233; next checkpoint240.
+
+### Musical arc and strategy
+
+Use the accepted working trailer progression, not obsolete exact times in the early75s board: immediate Pashtun spectacle; distinct Sikh and Gurkha entrances; mission/chemistry; assembly before the officer; unresolved promise. Current18s Pashtun expansion means old individual slots are not a locked edit. This sketch is a source of musical identity, not a finished trailer-length arrangement.
+
+| Trailer function | Musical intention, not new story approval |
+|---|---|
+| Pashtun freedom and decisive action | A clear expressive phrase, restrained tension then broad harmonic/melodic opening; rhythm supports rather than impersonates speed. |
+| Sikh presence / Gurkha composure, ferocity and care | Develop the same musical vocabulary through weight, spacing and articulation; no ethnic instruments or three unrelated genre resets. Exact variants await their footage. |
+| Mission and reliance on each other | Tighten harmony/texture and build the shared phrase, leaving room for dialogue and physical sound. |
+| Assembly / officer's emerging conflict / unresolved ending | Withdraw some musical certainty and expose a fragment of the phrase, rather than another triumphant peak. Exact ending remains a later trailer decision. |
+
+First proof: request about40s of original instrumental melodic development, without BPM or second-by-second cue instructions. Breathy blues harmonica foreground, warm bass, spacious electric-keyboard/guitar support and broad atmosphere; expressive repeated-and-developed phrase and harmonic release, not busy chugging or stock trailer percussion. Source references remain descriptive inspiration, never copied audio/melodies. Broad opening should work alongside fast images without slowing them. Melody need not be incessant to hook.
+
+Route: reuse reviewed SeedAudio provider and existing persistent ledger, reservingUS$0.30 worst case per request (not claiming prompt duration limits billing); current account674credits and ledgerUS$1.05 committed. Official endpoint still lists0.25credits/s, minimum5 (https://dev.runwayml.com/endpoints/sound_effect checked2026-10-12). One request first, no blind generation retry. No new global packages. About40s may not be obeyed; measure rather than silently repeat/stretch the output. A short response with insufficient development is a capability failure, not an excuse to loop it into a fake sketch.
+
+Internal review: technical duration/decode/levels first, then free-tier Gemini on this generated sketch only, up to one explicit503 retry, sequentially and outside5RPM. Ask neutral timestamped observations before revealing the intended effect; actual lead, melodic recurrence, harmonic/dynamic development, train-like repetition, voices and artifacts. This is model-mediated evidence, not direct agent hearing or taste acceptance. Select a defensible18s passage only from observed structure; retain the whole sketch. Align a musically suitable lift with the actual7.25s turn using source offset only, not pitch/time stretch; disclose imperfect alignment instead of forcing it. Judge normal-speed picture relationship separately from audio observations. Original waveform and prompt/receipts preserved; final mix/narration/hooves, stems and general composer capability remain unqualified.
+
+Replan/exit: if melody/development still fail, do not manufacture a pass via volume or extra layers. Reassess representation/provider capability before more spending. If listening service remains unavailable, preserve NOT_RUN and report the real review blocker with playable diagnostic material, not a successful sonic result. Deliver only this sketch/excerpt and a clear taste decision; no further hair/asset polish or full trailer rebuild. Effort before prospective233 lifecycle capture is unknown; engineering tokens unknown. Existing eight other pinned sources unchanged; reconcile only reviewed audio233 and music-reference authority.
+
 ## Exchange232 — both auditions rejected; musical identity before exact scoring
 
 Director rejects both231 auditions and identifies excessive emphasis on the train idea. Preserve both as rejected creative evidence, with their successful technical checks and failed503 listening attempts unchanged. No composition is accepted; no additional provider call is made or authorized by this discussion.

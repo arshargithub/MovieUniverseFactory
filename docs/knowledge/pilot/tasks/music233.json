@@ -1,0 +1,32 @@
+{
+  "id": "music233",
+  "operation": "music_audition",
+  "entities": [
+    "music_reference"
+  ],
+  "query": "melody emotional lift coherent sketch trailer arc",
+  "intent": "Generate one original melody-first sketch, critically review, select and package excerpt against unchanged209 picture.",
+  "phase": "execution",
+  "inputs": {
+    "docs/planning/SERIES_01_PASHTUN_NARRATIVE_AUDIO_PROPOSAL.md": "1eb7ca8d0dd94eac0a0b284b87ddb4e009cb13c368fb0d107c435c3878201524",
+    "docs/planning/SERIES_01_TRAILER_BEAT_SHEET_V01.md": "bee3969abeaf124cf065a52de816aae84affac4e80ef8a5612d6115c6a08c632",
+    ".runtime/art-direction/series01-music233/sketch.json": "024e321055a9f07b01d6878b9a7326f4c932589649b69858a8d7d542b3897d6b",
+    "src/movie_factory/providers/runway_audio_provider.py": "df1a2e9b9ee7e26beb7c0861b875f42473c394b48ae570db018243e772081ed0",
+    "src/movie_factory/providers/gemini_audition_review.py": "9a9dd880e48235d6468c57da6042317368c9b763eaea029ad669d83e3915e78a",
+    "scripts/package_music233.py": "7a174c62a328d8b52900d6ebefd2027ec67cc3d20b31e6240db080d65fa8bef0",
+    ".runtime/art-direction/series01-music233/sketch.mp3": "59963a0c664f7328726d64fce322057711ae07a4a66fe6664eb579a11fc54c42",
+    ".runtime/art-direction/series01-entrance209/director-preview/pashtun-complete-entrance.mp4": "54ba077b32d1ad4e0e1cc79119a60ba9795833c157d743e243f997eab1e59563"
+  },
+  "open_decisions": [],
+  "execution_authority": {
+    "source": "docs/planning/SERIES_01_PASHTUN_NARRATIVE_AUDIO_PROPOSAL.md",
+    "scope": "Director233 agrees232 proposal; existing AUDIO220 effective US$3 and relevant media-review permission only."
+  },
+  "strategy": {
+    "reference": "docs/planning/SERIES_01_PASHTUN_NARRATIVE_AUDIO_PROPOSAL.md",
+    "outcome": "Coherent original musical sketch and in-picture excerpt for Director taste review."
+  },
+  "execution_prerequisites": [
+    "Persistent ledger reservation before submit; no repeat POST; no final mix claim."
+  ]
+}
