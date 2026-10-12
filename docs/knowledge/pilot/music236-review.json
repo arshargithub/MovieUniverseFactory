@@ -1,0 +1,167 @@
+{
+  "task": {
+    "id": "music236-prompt",
+    "operation": "music_audition",
+    "entities": [
+      "music_reference"
+    ],
+    "phase": "planning",
+    "inputs": {
+      "docs/planning/SERIES_01_PASHTUN_NARRATIVE_AUDIO_PROPOSAL.md": "2cd8f6994211f38f9968f14f907d32aa660e98df35db91fcecb8220efbadfca5"
+    },
+    "open_decisions": [],
+    "query": "Suno first instrumental prompt Director taste",
+    "intent": "Provide initial user-operated Suno prompt, no generation or purchase."
+  },
+  "review": {
+    "packet_digest": "336bdb352326e5d840ebebec1a251d825379801eb9ee47b28d6e4313f50c73d9",
+    "checks": [
+      {
+        "id": "authority",
+        "kind": "process",
+        "status": "PASS",
+        "action_taken": "Only user-operated prompt advice; no account/purchase/generation action.",
+        "observation": "Only user-operated prompt advice; no account/purchase/generation action.",
+        "evidence": [
+          {
+            "path": "docs/planning/SERIES_01_PASHTUN_NARRATIVE_AUDIO_PROPOSAL.md",
+            "sha256": "2cd8f6994211f38f9968f14f907d32aa660e98df35db91fcecb8220efbadfca5"
+          }
+        ]
+      },
+      {
+        "id": "strategy",
+        "kind": "process",
+        "status": "PASS",
+        "action_taken": "One focused hook experiment, default settings, no exact shot timing.",
+        "observation": "One focused hook experiment, default settings, no exact shot timing.",
+        "evidence": [
+          {
+            "path": "docs/planning/SERIES_01_PASHTUN_NARRATIVE_AUDIO_PROPOSAL.md",
+            "sha256": "2cd8f6994211f38f9968f14f907d32aa660e98df35db91fcecb8220efbadfca5"
+          }
+        ]
+      },
+      {
+        "id": "visual_gate",
+        "kind": "review",
+        "status": "PASS",
+        "action_taken": "No audio generated or sonic pass claimed. Director will listen directly.",
+        "observation": "No audio generated or sonic pass claimed. Director will listen directly.",
+        "evidence": [
+          {
+            "path": "docs/planning/SERIES_01_PASHTUN_NARRATIVE_AUDIO_PROPOSAL.md",
+            "sha256": "2cd8f6994211f38f9968f14f907d32aa660e98df35db91fcecb8220efbadfca5"
+          }
+        ]
+      },
+      {
+        "id": "anticipation",
+        "kind": "review",
+        "status": "PASS",
+        "action_taken": "Avoid train metaphor and overconstrained timing; initial phrase and later lift both matter.",
+        "observation": "Avoid train metaphor and overconstrained timing; initial phrase and later lift both matter.",
+        "evidence": [
+          {
+            "path": "docs/planning/SERIES_01_PASHTUN_NARRATIVE_AUDIO_PROPOSAL.md",
+            "sha256": "2cd8f6994211f38f9968f14f907d32aa660e98df35db91fcecb8220efbadfca5"
+          }
+        ]
+      },
+      {
+        "id": "stopping",
+        "kind": "review",
+        "status": "PASS",
+        "action_taken": "Deliver requested prompt now; do not start another generation loop.",
+        "observation": "Deliver requested prompt now; do not start another generation loop.",
+        "evidence": [
+          {
+            "path": "docs/planning/SERIES_01_PASHTUN_NARRATIVE_AUDIO_PROPOSAL.md",
+            "sha256": "2cd8f6994211f38f9968f14f907d32aa660e98df35db91fcecb8220efbadfca5"
+          }
+        ]
+      },
+      {
+        "id": "versioning",
+        "kind": "technical",
+        "status": "PASS",
+        "action_taken": "Prompt persisted verbatim as proposed experiment, not accepted score; prior failures remain.",
+        "observation": "Prompt persisted verbatim as proposed experiment, not accepted score; prior failures remain.",
+        "evidence": [
+          {
+            "path": "docs/planning/SERIES_01_PASHTUN_NARRATIVE_AUDIO_PROPOSAL.md",
+            "sha256": "2cd8f6994211f38f9968f14f907d32aa660e98df35db91fcecb8220efbadfca5"
+          }
+        ]
+      },
+      {
+        "id": "economics",
+        "kind": "process",
+        "status": "PASS",
+        "action_taken": "No spend this exchange; preserve current budget boundary.",
+        "observation": "No spend this exchange; preserve current budget boundary.",
+        "evidence": [
+          {
+            "path": "docs/planning/SERIES_01_PASHTUN_NARRATIVE_AUDIO_PROPOSAL.md",
+            "sha256": "2cd8f6994211f38f9968f14f907d32aa660e98df35db91fcecb8220efbadfca5"
+          }
+        ]
+      },
+      {
+        "id": "sound",
+        "kind": "review",
+        "status": "PASS",
+        "action_taken": "Instrumental discovery only; Gemini taste gate removed, final integration later.",
+        "observation": "Instrumental discovery only; Gemini taste gate removed, final integration later.",
+        "evidence": [
+          {
+            "path": "docs/planning/SERIES_01_PASHTUN_NARRATIVE_AUDIO_PROPOSAL.md",
+            "sha256": "2cd8f6994211f38f9968f14f907d32aa660e98df35db91fcecb8220efbadfca5"
+          }
+        ]
+      },
+      {
+        "id": "rights",
+        "kind": "process",
+        "status": "PASS",
+        "action_taken": "No reference upload/artist imitation; later exact-output rights/export verification retained.",
+        "observation": "No reference upload/artist imitation; later exact-output rights/export verification retained.",
+        "evidence": [
+          {
+            "path": "docs/planning/SERIES_01_PASHTUN_NARRATIVE_AUDIO_PROPOSAL.md",
+            "sha256": "2cd8f6994211f38f9968f14f907d32aa660e98df35db91fcecb8220efbadfca5"
+          }
+        ]
+      },
+      {
+        "id": "music_reference",
+        "kind": "review",
+        "status": "PASS",
+        "action_taken": "Actual harmonica preference is tested; all-five-track recipe and precise timeline not imposed.",
+        "observation": "Actual harmonica preference is tested; all-five-track recipe and precise timeline not imposed.",
+        "evidence": [
+          {
+            "path": "docs/planning/SERIES_01_PASHTUN_NARRATIVE_AUDIO_PROPOSAL.md",
+            "sha256": "2cd8f6994211f38f9968f14f907d32aa660e98df35db91fcecb8220efbadfca5"
+          }
+        ]
+      }
+    ],
+    "hypotheses": [
+      {
+        "prediction": "Prompt may be mistaken for an accepted genre or a locked timed score.",
+        "observation": "Document explicitly labels discovery hypothesis and excludes fixed duration/action.",
+        "response": "Preserve Director listening as next evidence; no model-taste inference.",
+        "result": "resolved"
+      }
+    ],
+    "adjacent_regressions": "No picture, music asset, privacy/budget or release changes.",
+    "stopping_reason": "Requested starting prompt delivered; not a sonic result."
+  },
+  "gate": {
+    "ready_for_review": true,
+    "failures": [],
+    "scope": "planning",
+    "limits": "Evidence checked for presence and hashes, not artistic truth or Director acceptance. Planning evidence cannot qualify a production result."
+  }
+}

@@ -1,5 +1,17 @@
 # Pashtun entrance narration and sound proposal
 
+## Exchanges235–236 — editing limits and first Suno prompt
+
+235 clarification: practical editability depends on stereo versus stems versus an editable composition, not merely licensed versus AI origin. Generation offers variations/extensions, not deterministic editing or guaranteed identity preservation. No track selection or purchase follows.236 Director chooses to try Suno and requests the first prompt; user-operated exploration, not authority for agent billing, uploads or generation. Gemini music-opinion gate remains removed.
+
+First experiment: test the expressive harmonica hook/surge preference from the promptgenix references, not the train metaphor, exact18s action timing, or a forced blend of all five tracks. Instrumental mode; paste this proposed text into the style/description field:
+
+> Blues-inflected electronic rock instrumental. Gritty, soaring harmonica lead with expressive bends and a memorable melodic hook. Deep electric bass, punchy drums and broad synth chords. Swagger and tension opening into an exhilarating release. Bold, modern and larger-than-life, with space for the lead to sing.
+
+This is a discovery hypothesis, not adopted musical identity. Keep initial advanced controls at their defaults, no reference uploads/artist imitation, no requested18s/40s duration or horse/period/ethnicity exposition. Start with one generation batch and listen directly; retain the version/model/prompt and exact moments liked/disliked. Do not judge only the introduction or select merely tolerable music. If bland or the wrong genre, change the dominant premise, not append many adjectives. Explore the more synth-led LOAD SHIFT direction separately if this lane fails. Final source rights/export checks remain234's separate requirement.
+
+Current official guidance supports Create plus instrumental option and descriptive styles; UI mode names may vary: [instrumental guide](https://suno.com/tools/instrumental-generator), [creation guide](https://suno.com/hub/how-to-make-a-song), checked2026-10-12. No new provider call, media, account change or release gate. Counter236 includes235's substantive editing-flexibility discussion; next checkpoint240.
+
 ## Exchange234 — rejected sketch; Director-led music discovery
 
 ADOPTED: Director rejects233's40s sketch for personal taste, sequence, trailer and series fit. Do not repair this candidate or infer that its prompt's melodic/harmonic description is now the correct musical identity. Director discontinues Gemini music opinion/review: no further music-taste calls and no dependency on its approval or service recovery. This supersedes233's pending internal-listening requirement. Director listening is the creative authority; agents still own technical QC, transparent capability limits, rights/provenance, timing and integrated believability checks. No failed evidence or technical achievements erased; no soundtrack accepted.
