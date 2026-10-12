@@ -43,6 +43,17 @@ def test_only_catalog_authorized_audition_bypasses_final_voice_choice(root):
         assert 'DIRECTOR_DECISION:select_performed_voice' in pk.task_packet(root, candidate)['blockers']
 
 
+def test_reference_analysis_keeps_rights_without_selecting_voice(root):
+    t = task(root, 'audio_analysis', ['music_reference'])
+    p = pk.task_packet(root, t)
+    ids = {r['id'] for r in p['obligations']}
+    assert {'music_reference', 'sound', 'rights', 'authority'} <= ids
+    assert not {'narrative', 'narration_a'} & ids
+    # The same operation cannot hide an explicitly affected officer/voice.
+    t.update(entities=['officer'], phase='execution')
+    assert 'DIRECTOR_DECISION:select_performed_voice' in pk.task_packet(root, t)['blockers']
+
+
 def review(root, packet):
     evidence = {"path": pk.CATALOG, "sha256": pk.file_hash(root / pk.CATALOG)}
     return {"packet_digest": packet["packet_digest"],
