@@ -1,10 +1,28 @@
 # Pashtun entrance narration and sound proposal
 
+## Exchange239 — Harmonic Release imported; exact Director landmarks
+
+Director supplies the original and stem exports, [Suno song link](https://suno.com/s/RGBRq5orlkHoiJRF), exact prompt and listening notes. Local export title is **Harmonic Release**; the share page was inaccessible to the research tool, so no extra website metadata is invented. Director loves the entire song and selects it as the theme source; final excerpt, arrangement and integrated mix remain open.
+
+Exact prompt:
+
+> Blues-inflected electronic rock instrumental, Gritty, soaring harmonica lead with expressive bends and a memorable melodic hook, Deep electric bass, punchy drums and broad synth chords, Swagger and tension opening into an exhilarating release, Bold, modern and larger-than-life, with space for the lead to sing
+
+Exact Director notes:
+
+> I love the whole song, but check out the beat that picks up around second 37, and then the harmonica piece from second 52 - 1:10 (goosebumps), and then the harmonica piece that starts at around 1:28 - 1:50 (double goosebumps!)
+
+These are approximate Director listening landmarks:37s rhythmic pickup,52–70s loved harmonica,88–110s strongest stated reaction. They are not agent listening findings. Preserve the whole original mix and do not reduce the musical brief to an instrument keyword again. Source details: `artifacts/imports/suno-theme-01/source-details/director-selection.json`; hashes, format/duration and decode checks are in the adjacent `media-inventory.json`. Original media stay unchanged and outside Git. This is local intake, not backup, final sound qualification or publication clearance. No music generation, paid call or new excerpt edit in this capture.237 music-free sequence work continues; use these concrete anchors when integrating the selected theme.
+
+Intake verified: original236.36s stereo48kHz16-bit PCM WAV, SHA256 `42234a4a8e44c70daf384d233a29b4e52bfb707f5ff22aa1b18efd5d97b1080b`;12 WAV stems and12 MP3 copies, all25 files fully decode. Inventory SHA256 `7755038299423b7c2b700b541498b6295d19c2d2401f722b16de357ecc814274`. Timing/format checks do not establish audible stem quality, instrumentation or perfect mix reconstruction.
+
 ## Exchange238 — Director-selected Suno theme candidate and export
 
 Director reports a goosebump-inducing instrumental, calls it the likely theme song, and has purchased monthly Suno Pro independently. The actual track, ID, generation/download dates and audio have not yet been supplied or reviewed here; preserve the Director's enthusiasm/selection without inventing its instrumentation, timing, rights or final integrated acceptance. Agent finishing237 continues independently; no agent purchase or additional music generation follows.
 
 Recommend original full-song WAV as editing master, plus optional Auto Split WAV stems; MP3 is a convenient listening copy, MP4/M4A unnecessary for this workflow. Preserve the original mix rather than assume separated stems improve it. Bring song link/ID, prompt/settings and subscription/download evidence with the source; exact cue selection follows the Director's marked favorite/surge moments and actual picture.
+
+Director-requested SSD intake folder created: `artifacts/imports/suno-theme-01/`, with `original/`, `stems/` and `source-details/`. Media are excluded from Git by the existing artifacts rule; creation/import is not a verified backup or rights clearance. Keep source names and original exports intact when ingesting.
 
 Official Suno help checked2026-10-12: [download formats](https://help.suno.com/en/articles/13926081) lists Pro WAV on the web; [Get Stems](https://help.suno.com/en/articles/13925185) lists Pro/Premier Auto Split up to12 stems for50 credits and Split from Mix, while Advanced Split is Premier-only. A second subscription should not be necessary for ordinary extraction. Recommended route: Library → song More Actions → Get Stems → Auto Split. Specific account upgrade prompt has not been inspected; Advanced Split/Studio gating is a hypothesis, not a confirmed account diagnosis. No recommendation to upgrade. Extraction artifacts and final rights checks remain separate from access entitlement.
 
