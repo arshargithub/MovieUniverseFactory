@@ -1,5 +1,15 @@
 # Pashtun entrance narration and sound proposal
 
+## Sequence storyboard correction — exchange221, 2026-10-11
+
+Director limits the current storyboard to the existing18-second Pashtun entrance, not the whole trailer. Correct the220 next-step recommendation accordingly: the full-trailer arc is context, not a new planning prerequisite. The inexpensive text board proposed opening narration0–8s, geography8–10s, spectacular turn10–13s, uphill glance13–15.5s and determined continuation15.5–18s; these are editorial timing hypotheses, not measured current cut boundaries or authority to rebuild approved choreography.
+
+Director explicitly requires a musical surge during the spectacular turn at10–13s, not only afterward. Thin the score for recognition/geography, launch its main payoff with the turn and uphill acceleration, preserve clear hoof/gravel transients, and carry momentum into the climb. Exact cue synchronization must follow the actual footage.
+
+Director explicitly requires spoken authorship: `The Pathans: “a hardy and martial people.” [short pause] Churchill.` An aged journal/book visual fades in and out with the displayed heading `The Pathans:`, the quoted five-word excerpt, and `— Churchill`. This is a designed archival quotation treatment, not a claim that this assembled heading and excerpt reproduce an original page. Keep text/author readable without masking her face or the escape geography. Only the five-word phrase is a verbatim quotation; the heading is editorial. Source rechecked against Chapter I of https://www.gutenberg.org/cache/epub/9404/pg9404-images.html on2026-10-11 local; retain Q01's edition/context/rights record below.
+
+Working spoken opening now totals17 words including Churchill: `We call them martial races. Their credentials are … impeccable. The Pathans: “a hardy and martial people.” [pause] Churchill.` Do not squeeze the final eight words and pause into the previous2.5-second quote slot. Rebalance the opening delivery against current footage before generation; do not rush the reading, conceal geography or slow the approved turn. Final voice/timing and whole-sequence acceptance remain open; closing narration is still omitted in the proposed board, not a separately asserted approval. No paid calls or image generation this discussion. Audio execution remains blocked pending explicit reconciliation of stale knowledge-source bindings, not silently repinned.
+
 ## Current direction — exchange220, 2026-10-11
 
 Director clarifies that the officer speaks privately. The trailer narration will ultimately expose his emerging inner conflict, but that doubt need not occur inside the Pashtun entrance: its intended reveal is at the trailer's end, after all three protagonists have been introduced and assembled before him. Do not force a miniature complete moral arc into each entrance. Private narration is adopted; a literal journal-writing scene is not established.
