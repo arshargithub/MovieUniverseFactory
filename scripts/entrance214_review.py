@@ -37,6 +37,8 @@ OPS={
     'proof41':('218-route13',(390,427,472,550,620),False),
     'diagnostic42':('218-opening12',tuple(range(217,361)),True),
     'diagnostic43':('218-route13',tuple(range(361,649)),True),
+    'diagnostic44':('218-route13',tuple(range(433,505)),True),
+    'diagnostic45':('218-route13',tuple(range(505,649)),True),
 }
 
 def validate(job):
@@ -63,7 +65,7 @@ def main():
     job=json.loads(Path(sys.argv[sys.argv.index('--')+1]).read_text());folder,frames,full=validate(job)
     diagnostic=job['operation'].startswith('diagnostic')
     isolated=diagnostic and job['operation'] not in ('diagnostic30','diagnostic31')
-    coarse=job['operation'] in ('diagnostic38','diagnostic39','diagnostic42','diagnostic43')
+    coarse=job['operation'] in ('diagnostic38','diagnostic39','diagnostic42','diagnostic43','diagnostic44','diagnostic45')
     src=base.BASE/(('entrance'+folder) if folder.startswith(('217-','218-')) else ('entrance214-'+folder));out=base.BASE/('entrance214-'+job['operation'])
     record=json.loads((src/'result.json').read_text())
     if out.exists() or base.digest(src/'scene.blend')!=record['native_sha256'] or base.digest(src/'contact.npz')!=record['contact_sha256']:
@@ -150,6 +152,20 @@ def main():
             p=proof/f"frame-{r['index']:04d}.png"
             if base.digest(p)!=r['sha256']:raise ValueError('Modified proof frame')
             reuse[r['native_frame']]=p
+    hand_mask=None;hand_groups={}
+    if job['operation'] in ('diagnostic44','diagnostic45'):
+        # Supplement the obscured turn interval without changing production.
+        # Preserve evaluated hand vertices; hide the opposite arm/body only.
+        body=bpy.data.objects['MF_studio_adult_body']
+        names={g.index:g.name for g in body.vertex_groups}
+        for side in ('L','R'):
+            group=body.vertex_groups.new(name='218 diagnostic hand '+side)
+            ids=[v.index for v in body.data.vertices if sum(g.weight for g in v.groups
+                if names.get(g.group,'').endswith('.'+side) and
+                ('finger' in names[g.group] or names[g.group]=='hand.'+side))>.01]
+            group.add(ids,1.,'REPLACE');hand_groups[side]=group.name
+        hand_mask=body.modifiers.new('218 diagnostic visibility only','MASK')
+        hand_mask.show_render=False;hand_mask.show_viewport=False
     rig=bpy.data.objects['MF_body156_fit_rig'];rows=[]
     for f in frames:
         t=time.monotonic();scene.frame_set(f);bpy.context.view_layer.update();i=list(data['frames']).index(f)
@@ -176,11 +192,14 @@ def main():
                     hidden.append((ob,ob.hide_render));ob.hide_render=True
             scene.camera=diagnostic_camera;scene.render.resolution_x=320;scene.render.resolution_y=320
             for side,sign in (('L',1),('R',-1)):
+                if hand_mask:
+                    hand_mask.vertex_group=hand_groups[side];hand_mask.show_render=True
                 target=rig.matrix_world@rig.pose.bones['hand.'+side].head.lerp(rig.pose.bones['hand.'+side].tail,.6)
                 diagnostic_camera.location=target+Vector((-sign*2,-3,-.4))
                 diagnostic_camera.rotation_euler=(target-diagnostic_camera.location).to_track_quat('-Z','Y').to_euler()
                 scene.render.filepath=str(out/f'{side}-{f-217:04d}.png')
                 if bpy.ops.render.render(write_still=True)!={'FINISHED'}:raise ValueError('Contact render interrupted')
+            if hand_mask:hand_mask.show_render=False
             for ob,flag in hidden:ob.hide_render=flag
             scene.camera=actual_camera;scene.render.resolution_x=432;scene.render.resolution_y=768
         row=dict(index=f-217,native_frame=f,sha256=base.digest(p),seconds=time.monotonic()-t,

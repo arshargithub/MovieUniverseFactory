@@ -35,4 +35,6 @@ def test_review_clock_and_authority_boundary():
     assert review.validate({'operation':'diagnostic33'})==('217-route25',tuple(range(361,649)),True)
     assert review.validate({'operation':'diagnostic34'})==('217-opening24',tuple(range(217,361)),True)
     assert review.validate({'operation':'diagnostic35'})==('217-route25',tuple(range(361,649)),True)
+    assert review.validate({'operation':'diagnostic44'})==('218-route13',tuple(range(433,505)),True)
+    assert review.validate({'operation':'diagnostic45'})==('218-route13',tuple(range(505,649)),True)
     with pytest.raises(ValueError):review.validate({'operation':'motion11','source':'/tmp/untrusted.blend'})

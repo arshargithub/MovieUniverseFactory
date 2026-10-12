@@ -9,7 +9,7 @@ from entrance193_media import sha, pixel_parity
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = ROOT / '.runtime/art-direction/series01-facebuilder-trial-01'
-OUT = ROOT / '.runtime/art-direction/series01-entrance218/motion-diagnostic'
+OUT = ROOT / '.runtime/art-direction/series01-entrance218/motion-diagnostic-reviewed'
 
 
 def collect():
@@ -44,6 +44,21 @@ def collect():
             if max(row[k] for k in ('protected_pose_error', 'camera_error', 'thumb_error', 'rein_error')) > 2e-5:
                 raise ValueError('Motion preservation failure')
             records[i] = (row, paths)
+    # Earlier R camera is obscured by the opposite forearm after the turn.
+    # Replace only that view with bound, per-hand masked diagnostic evidence.
+    for operation, expected in (('diagnostic44',range(216,288)),('diagnostic45',range(288,432))):
+        folder=BASE/('entrance214-'+operation);p=folder/'result.json'
+        if not p.exists():complete=False;continue
+        data=json.loads(p.read_text());native=BASE/'entrance218-route13'
+        if not data.get('complete') or data['source_sha256']!=sha(native/'scene.blend') or [r['index'] for r in data['frames']]!=list(expected):
+            raise ValueError('Invalid supplemental chronology or source')
+        for row in data['frames']:
+            i=row['index'];p=folder/f'R-{i:04d}.png'
+            if i not in records or row['native_frame']!=i+217 or sha(p)!=row['contacts']['R'] or max(row[k] for k in ('protected_pose_error','camera_error','thumb_error','rein_error'))>2e-5:
+                raise ValueError('Invalid supplemental contact evidence')
+            old,paths=records[i];old=dict(old);old['contacts']=dict(old['contacts'])
+            old['contacts']['R']=row['contacts']['R'];old['right_view_override']=operation
+            records[i]=(old,{**paths,'R':p})
     return records, complete
 
 
