@@ -1,5 +1,9 @@
 # Pashtun entrance narration and sound proposal
 
+## Exchange242 — integrated audition authorized
+
+Director says go ahead to241's music-first approach. Execute the [242 strategy](SERIES_01_PASHTUN_FINISHED_UNIT_PLAN.md#exchange242--authorized-integrated-music-first-audition): one reversible local audition combining selected original music, existing Kirk take, stronger hoof weight and original manuscript graphics.22.5s is a provisional editorial proxy, not locked native timing. No final performance/mix acceptance, replacement voice call, additional music generation or publication. Preserve240's accepted pronunciation and the unchanged post-turn ending. Actual listening remains a disclosed limitation; do not use signal measurements or genre text as evidence of emotional fit.
+
 ## Exchange241 — actual selected music before narration decisions
 
 Director emphasizes that the officer also contrasts with the larger-than-life selected music, not just fast action, and asks that the actual music inform narration finalization. ADOPTED sequencing: assess the selected source and its marked passages in context with existing Kirk narration, physical sound and picture before changing performance, locking cue/duration or generating a replacement take.240's delivery interpretation and22.5s arithmetic are hypotheses, not established defects or a locked edit. Do not judge voice/action and subsequently bolt on music. A restrained voice may provide a compelling human anchor against monumental music; whether that happens must be tested, not asserted from genre descriptions.
