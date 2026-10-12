@@ -4,7 +4,7 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
-**229 free-tier listening test:** one public reference request to Gemini returned404/NOT_FOUND; no audio analysis, retry or billing change. Read-only model discovery succeeds and lists the selected model; direct-URL failure is unresolved. Prefer an authorized clean excerpt, not paid fallback. North American music direction and rejected generic score remain unchanged. [Outcome and limits](../knowledge/pilot/music229-outcome.md). Trailer + two episodes remain the goal; no release gate advance.
+**229 free-tier listening diagnosis:** Director-requested reproduction preserved error.message: Google rejects2.5 Flash for new users despite listing it; recommends3.8 Flash. Prior clean-excerpt recommendation withdrawn as premature. Next: supported free-tier model/configuration and same-reference test, not billing or a new upload. [Diagnosis](../knowledge/pilot/music229-diagnosis-result.json); earlier failed evidence retained. Listening unqualified; music direction/rejected generic score unchanged; no release gate advance.
 
 **228 audio access:** microphone/live-voice experiment supplied this backend text only, not music. Recommend one bounded direct-audio understanding pilot using Gemini's documented file-input capability before more score generation; no assumption of actual accuracy, provider access or new upload/spend authority. [Pilot proposal and limits](SERIES_01_PASHTUN_NARRATIVE_AUDIO_PROPOSAL.md#exchange228--direct-audio-understanding-pilot-proposed). Keep it a small enabling check for this unit, not a knowledge/tooling detour. Counter228; next230; no media/spend/gate advance.
 

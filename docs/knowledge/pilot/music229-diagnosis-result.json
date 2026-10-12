@@ -1,0 +1,20 @@
+{
+  "scope": "Diagnosis only; production listening remains NOT_RUN",
+  "finding": "Google rejects gemini-2.5-flash for new users despite listing it in models. Error directs gemini-3.8-flash.",
+  "provider_error": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.8-flash for the latest features and improvements.",
+  "evidence": {
+    "path": ".runtime/art-direction/series01-music-reference229/diagnosis/original-result.json",
+    "sha256": "ab7e826cd686de1f290e2594bb9d08429230a22e7ccf32a833dc7b0559ab923a"
+  },
+  "cause_of_prior_uncertainty": "Original adapter discarded error.message; model listing was incorrectly treated as sufficient evidence of usable access. Recommending audio upload was premature.",
+  "next": "Update model and model-specific request settings to documented supported free-tier route, then test same public reference. No new file from Director indicated by this404.",
+  "bounds": "One newly authorized reproduction; unused text/video controls not run. No migration implemented because current request is diagnosis. No paid fallback/billing change/private upload.",
+  "pricing": {
+    "url": "https://ai.google.dev/gemini-api/docs/pricing",
+    "checked": "2026-10-12",
+    "gemini_3_8_flash_standard": "Free-tier input and output listed free; actual account cost not independently verified."
+  },
+  "learning": "Preserve credential-redacted provider error messages; listModels is discovery, not per-account invocation eligibility. Read explicit cause before requesting different input or changing provider.",
+  "tests": "55 offline tests pass plus diagnostic redaction and exact-payload assertions.",
+  "time_usage": "Live reproduction0.248seconds; full engineering time/tokens unknown. No candidate/usage metadata."
+}

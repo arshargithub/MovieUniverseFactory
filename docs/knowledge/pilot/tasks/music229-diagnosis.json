@@ -1,0 +1,37 @@
+{
+  "id": "music229-diagnosis",
+  "operation": "audio_analysis",
+  "entities": [
+    "music_reference"
+  ],
+  "query": "diagnose Gemini 404 public YouTube request distinguish model URI error preserve auditory uncertainty",
+  "intent": "Diagnose exact cause of prior404. No production implementation or artistic qualification.",
+  "phase": "execution",
+  "inputs": {
+    "scripts/diagnose_gemini_reference.py": "ba61d78927ae6127523a709a75c300617006e305ce25a3e593ec703bcfbf00a5",
+    "src/movie_factory/providers/gemini_reference_provider.py": "79f4929ca9fcebbff3e55f76c85a0a2b4953a5e6472695e5d6d881666d6864fb",
+    "docs/knowledge/pilot/reconciliation229.md": "02ad6dfdfb27ee8ea537a5325d807f718f944e4d91f1ae5377707ae23eae95ec"
+  },
+  "open_decisions": [],
+  "execution_authority": {
+    "source": "docs/knowledge/pilot/reconciliation229.md",
+    "scope": "Current user explicitly requests diagnosis of404, reopening diagnostics beyond prior one-call stop. Free-tier-only remains. At most original reproduction plus text and documented-video controls, one each; no automatic retry, private upload, billing or paid fallback."
+  },
+  "strategy": {
+    "outcome": "Provider error semantics and discriminating control establish cause or exact remaining uncertainty.",
+    "approach": "First reproduce original retaining redacted error.message, then only necessary controls. Inspect public URL metadata separately. Avoid changing models blindly.",
+    "protected": "No production assets/music/voice choices modified. Paid authority zero; actualcost unknown.",
+    "exit": "Stop once causal evidence sufficient; stop401/403/429; original packet's audio qualification remains blocked.",
+    "reconciliation": "Same source corpus/impact as229 reviewed current packet. Diagnostic error reading is not audio hearing. Bound only public reference and generic text. New explicit request supersedes assistant self-imposed single-call stopping point for diagnosis."
+  },
+  "hypotheses_to_test": [
+    "Selected model/path fails even without video.",
+    "Reference file URI is wrong or inaccessible.",
+    "Request shape differs from documented supported API."
+  ],
+  "execution_prerequisites": [
+    "Fixed host and known key via trusted module; redaction test before live.",
+    "Exclusive persistent claims maxthree cases no retries.",
+    "Free pricebook verified; user reports free tier; no billing escalation."
+  ]
+}
