@@ -1,5 +1,14 @@
 # Release 01 — checkpoints
 
+## CP-022 — exchange220, 2026-10-11; narrative before paid sound
+
+- Current item: A5/E1 supporting B4, completing the first audiovisual Pashtun unit for the trailer plus episodes1/2. Visual footage exists; exact narration, performed voice, integrated sound/text and final delivery remain open. No defensible artistic-completion percentage; overall accepted broad gates remain1/25 =4%, counting accepted deliverables, not effort or time remaining.
+- Since210: bounded local knowledge pilot implemented with manual review retained; rein work produced a known knuckle-pivot compromise carried into the preview under Director delegation, not a correct-hand PASS. Narration A was preferred, then explicitly reopened before generation. Private officer narration and full-trailer-end emerging conflict are now direction; exact script is not locked.
+- Immediate next move: establish the full trailer's narration progression, then time the Pashtun excerpt and audition two useful voices. Do not require each entrance to resolve the theme. US$3 initial audio permission, conditional US$5 hard total, does not authorize skipping narrative review. No paid audio generation in this continuation.
+- Remaining unit gates: narrative/voice decision, actual sound and music review, text/captions, final-resolution and contact review, rights/device checks and delivery acceptance. Overall: other leads/ensemble footage, trailer edit, episode1/2 stories/scripts/shared breakdown and release readiness remain. No new broad gate is claimed.
+- Knowledge safety: changing the narrative source invalidates existing pinned packets. Reconcile reviewed decisions and records before audio dispatch; do not rehash merely to bypass the stale-source gate.
+- Durability: scoped design record only; no remote push or native-media backup claimed. CP019/021's accumulated-range approval exception remains in force. Next checkpoint230. Balance questions, authorization clarifications and these script follow-ups are consolidated into this substantive narrative decision exchange, not counted as production progress.
+
 ## CP-021 — exchange210, 2026-10-11; finished-unit path and knowledge/review assessment
 
 - Current item A5/E1 supporting B4: turn the18-second Pashtun entrance into the first complete audiovisual unit, then reuse the pattern for the trailer and episodes1/2. Since200: full shared geography, readable threat/alternative route, continuous recognition coverage, forceful turn/steep escape, closer final acting, riding absorption, secondary motion and the right-hip sheathed sword.209's silent432×768 preview has432 internally reviewed frames; it is not final audiovisual acceptance.

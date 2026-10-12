@@ -1,5 +1,17 @@
 # Pashtun entrance narration and sound proposal
 
+## Current direction — exchange220, 2026-10-11
+
+Director clarifies that the officer speaks privately. The trailer narration will ultimately expose his emerging inner conflict, but that doubt need not occur inside the Pashtun entrance: its intended reveal is at the trailer's end, after all three protagonists have been introduced and assembled before him. Do not force a miniature complete moral arc into each entrance. Private narration is adopted; a literal journal-writing scene is not established.
+
+Director likes “We call them martial races” and proposes “Their credentials are … impeccable” before the Pathan quotation. Exact wording, pause, placement and performed voice remain provisional. Treat the collective opening as potentially belonging to the full ensemble trailer rather than making all exposition fit the existing five-second Pashtun opening. Preserve recognition/turn silence and the liked action timing; first map the trailer-level narration, then test the individual unit's timing without paid generation.
+
+Agent recommendation, NOT YET ADOPTED: omit a closing narration line from the Pashtun entrance; let the determined continuation and physical sound complete it. Withdraw “I trust her to find another way” as the default. “What would she write of us?” was suggested before the Director clarified the full-trailer placement; it is not selected and should not be inserted here. Reserve the substantive expression of doubt for the ensemble ending, with its exact subject/wording to be developed.
+
+Authority: Director approves US$3 for the audio preview, with up to US$2 additional only if the first US$3 is exhausted and observed results support a confident specific completion path. Record that rationale before expansion; US$5 hard total, persistent ledger, no top-up/subscription/publication. Subsequent direction puts narrative review before paid generation. Budget permission does not lock a script. No paid audio generation has occurred in this continuation. This clarification supersedes215's wording being treated as finalized; preserve that earlier treatment as history.
+
+Retrieval consequence: this source has changed. Existing source-pinned audio packets must remain stale/blocked until the new decisions and their affected records are explicitly reconciled; no execution from the old215 selection. This discussion and source update are not a production packet or visual/audio PASS.
+
 **Current decision, exchange215:** Director selects treatment A ("yeah I think A too") in response to the explicit A/B question. Use classification followed by personal trust, with a restrained, experienced officer and silence over danger/turn. The performed voice, provider, paid-call allowance, final mix and release acceptance are not selected by this decision. B remains an unselected alternative. The209 proposal and research below are retained as history; its statements that both treatments are unselected are superseded by this paragraph only.
 
 Exchange209, 2026-10-11. Proposed creative decision for the existing18-second entrance; no voice, script, music provider or paid generation is selected. Keep the approved action and camera timing. The purpose is to introduce a particular capable woman inside the officer's imperial frame, not deliver a history lecture or claim that colonial racial categories are true.
