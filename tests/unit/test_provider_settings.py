@@ -39,6 +39,18 @@ def test_dotenv_never_executes_or_interpolates(tmp_path):
     assert not (tmp_path / "NEVER_CREATED").exists()
 
 
+@pytest.mark.parametrize("name", ["GEMINI_API_KEY", "gemini_api_key"])
+def test_gemini_credential_is_known_redacted_and_private(tmp_path, name):
+    path = write_env(tmp_path, f"{name}=synthetic-gemini-secret\n")
+    settings = load_settings(tmp_path)
+    assert settings["GEMINI_API_KEY"] == "synthetic-gemini-secret"
+    assert safe_settings(settings)["GEMINI_API_KEY"] == "<set>"
+    assert "synthetic-gemini-secret" not in repr(settings)
+    path.chmod(0o644)
+    with pytest.raises(SettingsError, match="owner-only"):
+        load_settings(tmp_path)
+
+
 @pytest.mark.parametrize("content", ["not_a_setting=private-value", "openai_api_key=one\nOPENAI_API_KEY=two", "MF_MAX_INITIAL_CALLS=not-an-integer"])
 def test_invalid_settings_fail_without_values(tmp_path, content):
     write_env(tmp_path, content)
