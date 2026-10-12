@@ -1,5 +1,44 @@
 # Pashtun entrance narration and sound proposal
 
+## Exchange230 — five-reference analysis and proposed musical brief
+
+2026-10-12. Director authorizes Gemini's observations as the working basis and asks for all five tracks, especially the named passages, with Cosmic Freight Train focused on1:22 onward. All five public YouTube titles/artists verified by oEmbed; four successful model requests cover five tracks, with two retained temporary503 failures, six attempts total. No quota rejection, paid fallback, media download, private upload or new music generation. [Full model observations and usage](../knowledge/pilot/music230-result.json); [strategy and recovery record](../knowledge/pilot/reconciliation230.md). Observations below are model-derived, not direct backend listening or independently measured musicology. Timings are approximate. Director's harmonica preference remains creative input even where the model identifies processed guitar/synth/vocal-like sounds differently.
+
+### Reference comparison
+
+| Reference and focus | Gemini's account of the passage | Useful principle for our entrance |
+|---|---|---|
+| [Galactic Jukebox](https://www.youtube.com/watch?v=eLI7ZDDY1VQ),2:46 onward | Vocal climax hands the foreground to an expressive bending/vibrato instrumental lead while bass/drums continue. Model calls the lead guitar-like or processed synth, not confidently harmonica. | Let narration yield the foreground to a singing, gritty lead without interrupting momentum. Lead personality and breathing space, not just more layers. |
+| [Calls That Never Connected](https://www.youtube.com/watch?v=MaDGVf9Pz-o),1:37 onward | Sparse/dry passage around1:25 opens at1:37 into higher gliding phrases, organ/guitar activity and wider space. Model uncertain whether prominent high sound is treated voice or synth. | A rise in register and a sense of opening space can create emotional release without simply increasing volume. Borrow the expressive gesture, not the relaxed song tempo or literal arrangement. |
+| [Cosmic Freight Train](https://www.youtube.com/watch?v=O9QgHF1gtC8),1:22 onward | Vocal/harmonic density falls away around1:18–1:22, exposing punchy bass and continuous ticking/shuffling percussion; fills/layers return through roughly1:36–1:45. | Space can reveal propulsion rather than weaken it. Keep a rolling engine through recognition and route choice, then open the lead at the maneuver. Do not force the entire1:22 passage into a simple 'everything gets louder' label. |
+| [Rise of the Machine, Pt.2](https://www.youtube.com/watch?v=wJoVRX4Jx58),whole track | Sequenced bass, electronic drums and singing synth lead. Candidate lifts around0:17 and2:14; reported2:04–2:14 subtraction/re-entry restores low-end mass with higher/doubled lead. | Dependable forward drive plus a coordinated low-end and melodic arrival. Borrow weight and inevitability, not a stock dance drop or brass fanfare. |
+| [New Dawn89'](https://www.youtube.com/watch?v=vJ9SEPrJX9A),whole track | Rolling arpeggio/bass and synth melody; candidate lifts around0:13 and2:49. Reported2:09–2:49 breakdown/build narrows then reopens frequency range and rhythmic weight. | Width, brightness and melodic height make a release feel larger. Compress preparation into our action rather than importing a40-second build. |
+
+Specific uncertainty: the new Cosmic response and229 differ on the detailed1:29 event. Keep the requested1:22-onward focus and the common rhythm/space interpretation; do not treat exact transition times as verified sync markers. Exact BPM, instrument models, frequency bands and percentage density claims are not retained as facts. The references are taste/arrangement inputs, not sampling or publication licenses.
+
+### Proposed direction — engine underneath, expressive lead above
+
+Recommendation: a gritty North American roots/electronic hybrid, with **an original harmonica-led phrase over muscular bass and a rolling electronic/acoustic rhythm**, restrained electric-guitar texture, and synth width opening selectively at the turn/uphill. Harmonica is recommended from the Director's taste, not asserted as a verified instrument in every recording. This is more specific than generic cinematic action scoring, but remains a proposed composition brief, not an approved track or a fixed series-wide formula.
+
+The promptgenix side supplies human-feeling bends, breath, grit and swagger; the LOAD SHIFT242 side supplies relentless propulsion and scale. Preserve an identifiable short original melodic idea with room between phrases. Do not combine all five arrangements, add competing sung vocals under the officer, turn the cue into a retro novelty or map instruments to ethnicity. Avoid endlessly layering because a generated draft feels emotionally weak: test the lead's gesture and the contrast first.
+
+Apply by beat, not by unapproved new timing:
+
+1. Opening gallop: immediate groove with physical bass/body and a restrained hint of the lead. No ambient/book prelude. The hook begins on frame one; leave space for private officer narration.
+2. Face/recognition and route read: reduce midrange density while retaining the rhythmic engine and hoof presence. Slight musical tightening supports alert calculation, not terror or a motion-stopping silence.
+3. Spectacular turn and launch: the main original lead phrase opens here, with bass/drum weight and selective width. Musical emphasis starts during the maneuver, not only afterward. Avoid an arbitrary tempo change or a borrowed EDM stop/build.
+4. Uphill, checking glance and determined continuation: sustain the opened melody/drive; allow the glance to breathe without collapsing energy. Leave a controlled musical handoff into the next entrance, not the abrupt final cutoff suggested by the model.
+
+This beat mapping applies to existing18s or a later approved21s retime; it does not approve225's proposed timing or overwrite actual picture boundaries. Arrange around a corrected Kirk take and full spoken Sir Winston Churchill; keep quote graphics clear of face/geography. Hoof weight must remain audible on small speakers without competing with score sub-bass.
+
+### Internal review, next proof and reusable lessons
+
+Model descriptions inform direction; model adaptation suggestions are not instructions. Rejected in synthesis: long synth risers, dropping all motion cues at recognition, generic brass/string fanfares, frantic/fearful tone, and abrupt ending—all conflict with existing direction or replace the desired musical identity. Groove need not literally imitate every hoof strike, and musical tempo need not equal stride rate. Let sound effects carry physical contact while score carries intent and momentum.
+
+Next creative decision: endorse/refine this compact direction, then audition two materially different ORIGINAL interpretations of the same brief in the scene—(A) harmonica-led with electronic engine, recommended; (B) synth-led with harmonica answering at the release. Do not generate five disconnected genre experiments. Before paid generation, reconcile existing ledger/remaining allowance and provider capabilities/rights; this analysis authorizes none. Selection should ask: immediate hook? original memorable lead? surge felt at turn? narration clear? hooves meaty? determined continuation sustained? recognizable musical identity beyond generic trailer sound? Check at normal playback and intended phone scale, not an isolated loud excerpt. Final Director taste acceptance remains separate from model-mediated description.
+
+Process learning: timestamp a passage with lead-in and aftermath; specify desired effect before selecting instruments/providers; preserve observation versus interpretation versus proposal; don't let uncertain source-instrument taxonomy erase the Director's desired sound. Shared free-tier ceilings are not remaining quota,503 is not429, and retries need persistent claims. Six attempts yielded five track analyses with88,346 input,6,850 output and5,611 reported thinking tokens across successful calls (100,807 total); failed-call usage unavailable. Published/user-reported free-tier estimateUS$0; actual invoice cost unknown. Engineering time/tokens unknown rather than inferred from provider totals. The knowledge bridge supports these distinctions but does not certify musical perception.
+
 ## Exchange228 — direct audio-understanding pilot proposed
 
 2026-10-12. Live-voice microphone test delivered only spoken transcript to this backend, including the Director's cue before a surge; no music payload was available for backend inspection. This does not establish what the frontend heard, nor a reliable end-to-end music-review route. Do not repeat the same test or claim direct listening. Director asks for next recommendation.

@@ -1,0 +1,232 @@
+{
+  "packet_digest": "c763d715fd69c02b1af5fba4406c527674f016b35628dc190dba375432143325",
+  "scope": "Director-authorized reference-analysis handoff only; no production-audio or assessor qualification",
+  "checks": [
+    {
+      "id": "authority",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Kept five-reference analysis separate from music generation and production acceptance.",
+      "observation": "Director authorizes Gemini working basis; six total free-tier attempts, no billing/private upload/publication.",
+      "evidence": [
+        {
+          "path": "docs/knowledge/pilot/music230-result.json",
+          "sha256": "8440a149678ef16dc4a1522b928963079219757357295ce6a753d01991b4b409"
+        },
+        {
+          "path": "docs/planning/SERIES_01_PASHTUN_NARRATIVE_AUDIO_PROPOSAL.md",
+          "sha256": "c6e43e00a5cea7970a771ff830a21ba46d2f32d84b3023da66fa3f19518c1195"
+        },
+        {
+          "path": "docs/knowledge/pilot/reconciliation230.md",
+          "sha256": "6e7e14fa73d4f86085f983a0aec1d4c4cec1a2f8f1253da3604380c7305c684a"
+        }
+      ]
+    },
+    {
+      "id": "strategy",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Verified sources; analyzed passages; derived a concrete original cue proposal with preserved sequence boundaries.",
+      "observation": "All five covered; transient503s recovered with final combined request rather than unbounded retries.",
+      "evidence": [
+        {
+          "path": "docs/knowledge/pilot/music230-result.json",
+          "sha256": "8440a149678ef16dc4a1522b928963079219757357295ce6a753d01991b4b409"
+        },
+        {
+          "path": "docs/planning/SERIES_01_PASHTUN_NARRATIVE_AUDIO_PROPOSAL.md",
+          "sha256": "c6e43e00a5cea7970a771ff830a21ba46d2f32d84b3023da66fa3f19518c1195"
+        },
+        {
+          "path": "docs/knowledge/pilot/reconciliation230.md",
+          "sha256": "6e7e14fa73d4f86085f983a0aec1d4c4cec1a2f8f1253da3604380c7305c684a"
+        }
+      ]
+    },
+    {
+      "id": "visual_gate",
+      "kind": "review",
+      "status": "PASS",
+      "action_taken": "Reviewed complete model reports against requested tracks/timestamps; handoff is an attributed analysis, not an auditory quality PASS.",
+      "observation": "Exact focus passages covered; instrument/timestamp uncertainty retained and unsupported numerical claims excluded. Actual finished-mix listening remains NOT_RUN outside this scope.",
+      "evidence": [
+        {
+          "path": "docs/knowledge/pilot/music230-result.json",
+          "sha256": "8440a149678ef16dc4a1522b928963079219757357295ce6a753d01991b4b409"
+        },
+        {
+          "path": "docs/planning/SERIES_01_PASHTUN_NARRATIVE_AUDIO_PROPOSAL.md",
+          "sha256": "c6e43e00a5cea7970a771ff830a21ba46d2f32d84b3023da66fa3f19518c1195"
+        },
+        {
+          "path": "docs/knowledge/pilot/reconciliation230.md",
+          "sha256": "6e7e14fa73d4f86085f983a0aec1d4c4cec1a2f8f1253da3604380c7305c684a"
+        }
+      ]
+    },
+    {
+      "id": "anticipation",
+      "kind": "review",
+      "status": "PASS",
+      "action_taken": "Tested for generic genre labels, copying, loss of hook, narration masking and importing long builds.",
+      "observation": "Synthesis protects immediate pulse, private voice, turn surge, hoof weight and continuation; rejects provider suggestions for stops/abrupt ending/fanfares.",
+      "evidence": [
+        {
+          "path": "docs/knowledge/pilot/music230-result.json",
+          "sha256": "8440a149678ef16dc4a1522b928963079219757357295ce6a753d01991b4b409"
+        },
+        {
+          "path": "docs/planning/SERIES_01_PASHTUN_NARRATIVE_AUDIO_PROPOSAL.md",
+          "sha256": "c6e43e00a5cea7970a771ff830a21ba46d2f32d84b3023da66fa3f19518c1195"
+        },
+        {
+          "path": "docs/knowledge/pilot/reconciliation230.md",
+          "sha256": "6e7e14fa73d4f86085f983a0aec1d4c4cec1a2f8f1253da3604380c7305c684a"
+        }
+      ]
+    },
+    {
+      "id": "stopping",
+      "kind": "review",
+      "status": "PASS",
+      "action_taken": "Stopped after all five analyzed; no further control or generation calls.",
+      "observation": "Complete requested reference analysis, proposed direction awaiting creative response; not a new production acceptance.",
+      "evidence": [
+        {
+          "path": "docs/knowledge/pilot/music230-result.json",
+          "sha256": "8440a149678ef16dc4a1522b928963079219757357295ce6a753d01991b4b409"
+        },
+        {
+          "path": "docs/planning/SERIES_01_PASHTUN_NARRATIVE_AUDIO_PROPOSAL.md",
+          "sha256": "c6e43e00a5cea7970a771ff830a21ba46d2f32d84b3023da66fa3f19518c1195"
+        },
+        {
+          "path": "docs/knowledge/pilot/reconciliation230.md",
+          "sha256": "6e7e14fa73d4f86085f983a0aec1d4c4cec1a2f8f1253da3604380c7305c684a"
+        }
+      ]
+    },
+    {
+      "id": "versioning",
+      "kind": "technical",
+      "status": "PASS",
+      "action_taken": "Preserved all six requests/results, failed503s, source hashes and original dispatch packets; reviewed only new audio source/rule for pins.",
+      "observation": "Eight other source pins identical; prior229 NOT_RUN remains historical. No native assets altered.",
+      "evidence": [
+        {
+          "path": "docs/knowledge/pilot/music230-result.json",
+          "sha256": "8440a149678ef16dc4a1522b928963079219757357295ce6a753d01991b4b409"
+        },
+        {
+          "path": "docs/planning/SERIES_01_PASHTUN_NARRATIVE_AUDIO_PROPOSAL.md",
+          "sha256": "c6e43e00a5cea7970a771ff830a21ba46d2f32d84b3023da66fa3f19518c1195"
+        },
+        {
+          "path": "docs/knowledge/pilot/reconciliation230.md",
+          "sha256": "6e7e14fa73d4f86085f983a0aec1d4c4cec1a2f8f1253da3604380c7305c684a"
+        }
+      ]
+    },
+    {
+      "id": "economics",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Recorded successful provider counts, unknown failed/engineering usage and invoice cost separately.",
+      "observation": "Six attempts, four successful responses covering five tracks;100807reported tokens, estimated free-tierUSD0, actual invoice null. No remaining quota inferred from historical peaks.",
+      "evidence": [
+        {
+          "path": "docs/knowledge/pilot/music230-result.json",
+          "sha256": "8440a149678ef16dc4a1522b928963079219757357295ce6a753d01991b4b409"
+        },
+        {
+          "path": "docs/planning/SERIES_01_PASHTUN_NARRATIVE_AUDIO_PROPOSAL.md",
+          "sha256": "c6e43e00a5cea7970a771ff830a21ba46d2f32d84b3023da66fa3f19518c1195"
+        },
+        {
+          "path": "docs/knowledge/pilot/reconciliation230.md",
+          "sha256": "6e7e14fa73d4f86085f983a0aec1d4c4cec1a2f8f1253da3604380c7305c684a"
+        }
+      ]
+    },
+    {
+      "id": "sound",
+      "kind": "review",
+      "status": "PASS",
+      "action_taken": "Separated proposed musical identity from actual cue/mix acceptance.",
+      "observation": "Harmonica-led roots/electronic recommendation reflects Director taste and arrangement synthesis; rejected score remains rejected. Voice/timing/mix still open.",
+      "evidence": [
+        {
+          "path": "docs/knowledge/pilot/music230-result.json",
+          "sha256": "8440a149678ef16dc4a1522b928963079219757357295ce6a753d01991b4b409"
+        },
+        {
+          "path": "docs/planning/SERIES_01_PASHTUN_NARRATIVE_AUDIO_PROPOSAL.md",
+          "sha256": "c6e43e00a5cea7970a771ff830a21ba46d2f32d84b3023da66fa3f19518c1195"
+        },
+        {
+          "path": "docs/knowledge/pilot/reconciliation230.md",
+          "sha256": "6e7e14fa73d4f86085f983a0aec1d4c4cec1a2f8f1253da3604380c7305c684a"
+        }
+      ]
+    },
+    {
+      "id": "rights",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Sent only verified public YouTube URLs and generic analysis prompts.",
+      "observation": "No media downloading, transcription, sampling, private upload, score generation or release. Reference access is not recording reuse rights.",
+      "evidence": [
+        {
+          "path": "docs/knowledge/pilot/music230-result.json",
+          "sha256": "8440a149678ef16dc4a1522b928963079219757357295ce6a753d01991b4b409"
+        },
+        {
+          "path": "docs/planning/SERIES_01_PASHTUN_NARRATIVE_AUDIO_PROPOSAL.md",
+          "sha256": "c6e43e00a5cea7970a771ff830a21ba46d2f32d84b3023da66fa3f19518c1195"
+        },
+        {
+          "path": "docs/knowledge/pilot/reconciliation230.md",
+          "sha256": "6e7e14fa73d4f86085f983a0aec1d4c4cec1a2f8f1253da3604380c7305c684a"
+        }
+      ]
+    },
+    {
+      "id": "music_reference",
+      "kind": "review",
+      "status": "PASS",
+      "action_taken": "Applied Director230 working-use approval without converting uncertain instrumentation into fact.",
+      "observation": "All five and three named passages retained. Cosmic1:29variation disclosed. Harmonica remains desired instrument, not asserted universal source identification.",
+      "evidence": [
+        {
+          "path": "docs/knowledge/pilot/music230-result.json",
+          "sha256": "8440a149678ef16dc4a1522b928963079219757357295ce6a753d01991b4b409"
+        },
+        {
+          "path": "docs/planning/SERIES_01_PASHTUN_NARRATIVE_AUDIO_PROPOSAL.md",
+          "sha256": "c6e43e00a5cea7970a771ff830a21ba46d2f32d84b3023da66fa3f19518c1195"
+        },
+        {
+          "path": "docs/knowledge/pilot/reconciliation230.md",
+          "sha256": "6e7e14fa73d4f86085f983a0aec1d4c4cec1a2f8f1253da3604380c7305c684a"
+        }
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "prediction": "Metadata or adjacent-track substitution could yield wrong analysis.",
+      "observation": "Five exact oEmbed titles/artists verified and fixed URLs used; all targeted passages represented.",
+      "response": "Retain exact links and model uncertainty.",
+      "result": "resolved"
+    },
+    {
+      "prediction": "Model descriptions/adaptation suggestions may overclaim or violate creative direction.",
+      "observation": "Instrument labels differ from Director descriptors; Cosmic timing varies; model suggests stops/fanfare/abrupt cutoff.",
+      "response": "Do not adopt literal labels or bad adaptations; preserve uncertainty and independently map arrangement principles to approved beats. No direct listening qualification claim.",
+      "result": "resolved"
+    }
+  ],
+  "adjacent_regressions": "52 focused offline tests pass; no picture, native, narration, timing or generated score changes. Source change intentionally invalidates earlier corpus packets; current review packet reconciles actual amendment.",
+  "stopping_reason": "Requested five-track analysis complete, evidence attributed and reusable proposal persisted. Next Director-relevant choice is musical treatment, not technical provider setup. Actual mix/creative acceptance remains open."
+}

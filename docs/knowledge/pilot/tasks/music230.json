@@ -1,0 +1,34 @@
+{
+  "id": "music230",
+  "operation": "audio_analysis",
+  "entities": [
+    "music_reference"
+  ],
+  "query": "all five music reference analysis and original cue direction",
+  "intent": "Analyze five verified public music references, especially Director timestamps, using Gemini as authorized working evidence.",
+  "phase": "execution",
+  "inputs": {
+    "src/movie_factory/providers/gemini_music_batch.py": "5257bbe7c24694fca5d8d2bfc9dad8c91fbd13dd87716a1f4216ca39be73e6fe",
+    "src/movie_factory/providers/gemini_reference_provider.py": "73cdd2e19fd021d982fa44302b0eb4285cb08594e34a43839e51bf5ada76b7d4",
+    "docs/knowledge/pilot/reconciliation230.md": "6e7e14fa73d4f86085f983a0aec1d4c4cec1a2f8f1253da3604380c7305c684a"
+  },
+  "open_decisions": [],
+  "execution_authority": {
+    "source": "docs/knowledge/pilot/reconciliation230.md",
+    "scope": "Director230 five-track free-tier analysis; explicit recovery of observed503 under same scope, six total calls maximum. No paid fallback/private upload/generation."
+  },
+  "strategy": {
+    "outcome": "All five attributed analyses plus proposed musical brief; not production audio qualification.",
+    "approach": "Verified full public recordings, specified focus, serial paced calls; after two explicit503 failures, final combined call covers two remaining tracks within six-attempt ceiling. Synthesis is local, not another provider call. See reconciliation230.",
+    "resources": "Six total attempts maximum across original/continuation/final ledgers; original2 plus continuation3 plus final combined1. Zero paid authority. Both failed503s retained; each failed track retried once in final combined request.",
+    "exit": "Report complete analysis or exact quota/access blocker. No musical choice or spend inferred."
+  },
+  "hypotheses_to_test": [
+    "Verified titles avoid wrong-track substitution.",
+    "Passage-specific observations can inform a concrete brief despite uncertain instrument identities."
+  ],
+  "execution_prerequisites": [
+    "Mock tests of pacing, no retry, quota stop and neutral prompts pass.",
+    "Read fresh packet and apply230 manual reconciliation; no broad listening qualification claim."
+  ]
+}
