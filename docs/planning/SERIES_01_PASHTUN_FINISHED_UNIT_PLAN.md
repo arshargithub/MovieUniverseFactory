@@ -2,6 +2,10 @@
 
 Established exchange208; execution authorized at exchange209 · 2026-10-11. This is the work strategy, not an acceptance report.
 
+## Exchange224 — audition feedback and hook-preserving timing proposal
+
+Director prefers Kirk's voice, with Pathan pronunciation unresolved/rejected in the current take, and wants weighty rather than tinny hoof sound judged in context. Director rejects the three-second book prologue; preserve the immediate aerial gallop/dust hook. See the current narrative proposal for verified existing cut boundaries and a proposed2s full-speed approach plus1s geography extension, not a slowed turn. Correct pronunciation and shape pauses before locking exact duration;21s remains a recommendation, not implemented/approved timing. No new paid call or media edit this discussion. Next integrated preview must distinguish current209 full footage from218 contact diagnostics and apply the hook-first editorial check. Updated source docs stale prior packets; reconcile them before further dispatch. No final auditory PASS or release acceptance.
+
 ## Exchange223 — approved storyboard and bounded sound preview
 
 Director approves222's18-second storyboard: private officer narration,19 words including spoken/displayed Sir Winston Churchill, no closing line, music surging with the turn. This supersedes215's personal-trust ending and219's missing spending authority. Exact performed voice remains a Director audition choice, not a prerequisite for authorized audition production. Audio preview budget is US$3 initially; total may rise to US$5 only after exhaustion with evidence-backed confidence in a specific completion path. No subscription/top-up/publication.
