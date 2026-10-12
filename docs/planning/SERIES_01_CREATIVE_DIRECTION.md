@@ -6,6 +6,10 @@ Established at exchange 51, 2026-09-17. Decision brief, not an approved style or
 
 ## Director inputs and status
 
+### Musical identity — exchange227, adopted direction
+
+The Director explicitly chooses a Western, distinctly American/North American musical identity informed by their Canadian/American history, bringing culturally specific South Asian stories to Western audiences without assigning ethnic instruments to characters. This is intentional cross-cultural authorship, not a requirement for historically local scoring or a single musical genre. Named promptgenix harmonica passages and LOAD SHIFT242 tracks are taste references for surging, goosebump-inducing music; see the current [audio brief](SERIES_01_PASHTUN_NARRATIVE_AUDIO_PROPOSAL.md#exchange227--north-american-musical-identity-and-named-references) for exact titles/timestamps and evidence limits. No particular composition, recording, audition, license or genre blend is accepted by this direction. The prior generic generated score remains rejected.
+
 ### Creative guiding principles — exchange 96
 
 Acceptance, exchange 97: Director approves the preceding guiding-principles proposal, including the conservative launch treatment (no visible blood/graphic injury, no lingering suffering or graphic injury sounds), action revealing character, real vulnerability, cultural specificity, warmth and phone-size clarity. These now guide boards and release review; no formal rating or platform guarantee inferred. Illustrative choreography remains illustrative, not approved story canon. Earlier proposal-status language below records the discussion history.

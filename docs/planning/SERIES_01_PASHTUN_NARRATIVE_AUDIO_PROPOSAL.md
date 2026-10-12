@@ -1,5 +1,27 @@
 # Pashtun entrance narration and sound proposal
 
+## Exchange227 — North American musical identity and named references
+
+2026-10-12. ADOPTED Director direction: music is deliberately Western, distinctly American/North American, reflecting the Director's Canadian/American history while bringing stories from another part of the world to Western audiences. No ethnic-instrument assignments to characters. Cultural specificity in story/characters does not require ethnographic scoring. This clarifies226: Western musical association is not itself a failure; unintentional genre pastiche or flattening the characters remains a creative risk. It does not select a single genre for every scene or authorize using existing recordings.
+
+Director-supplied references (times and reactions are Director evidence, NOT agent listening analysis):
+
+| Reference | Director's focus | Located source |
+|---|---|---|
+| promptgenix — Galactic Jukebox | Harmonica starting about2:46 | https://www.youtube.com/watch?v=eLI7ZDDY1VQ |
+| promptgenix — Calls That Never Connected | Harmonica starting about1:37 | https://distrokid.com/hyperfollow/promptgenix/calls-that-never-connected |
+| promptgenix — Cosmic Freight Train | Harmonica surge about1:22; train-like surging motion especially relevant | https://www.youtube.com/watch?v=O9QgHF1gtC8 |
+| LOAD SHIFT 242 — Rise of the Machine, Pt.2 | Loves track; no passage specified | https://www.beatport.com/release/rise-of-the-machine-pt-2/6443608 |
+| LOAD SHIFT 242 — New Dawn 89' | Surging/goosebump-inducing reference; no passage specified | https://soundcloud.com/loadshift242/new-dawn-89 |
+
+Web verification located the releases, not their exact audible passages. Beatport release copy describes Rise as dark sci-fi synthwave; the artist's SoundCloud lists New Dawn as Electronic. Those metadata support a broad reference axis, not a listening-derived account of instruments, phrasing, harmony or emotional mechanism. No audio perception is available in this session. Do not claim to have heard these references, evaluated the generated score by ear, or established a controlled sonic match. Do not silently replace the timestamps with preview clips that miss the selected passage.
+
+Agent synthesis, PROPOSED: North American roots/blues character with muscular electronic propulsion; a working design description, not a fixed genre or accepted composition. For this entrance, favor a harmonica-led original cue with physical bass/drums, restrained gritty guitar support and selective synth depth. Alternate audition could be synth-led with harmonica used as a contrasting expressive lift. Avoid combining every reference into a crowded arrangement. Common emotional objective: forward pull, grit, controlled swagger and melodic release rather than anonymous scale/loudness. No selected BPM/key or claim these are actual properties of every referenced track.
+
+Proposed cue: immediate rhythmic hook (no slow musical preamble), space for private officer narration, reduced density but continuing pulse during recognition/geography, then the strongest harmonica phrase opening across the decisive turn and uphill launch. The phrase is an original melodic idea, not a copied passage or recording; shape a small anticipation/release within this short unit rather than expecting a late-song climax's effect without its buildup. Carry energy through determined continuation, no abrupt full stop. Keep score subordinate to neither generic action convention nor literal imitation of hooves; avoid masking the weighty physical hoof sound.
+
+Next: agree this compact brief and compare at most two meaningfully different original in-context directions under existing budget/rights controls, once listening/review limitations and fresh source-packet requirements are explicitly addressed. No further paid generation this exchange; rejected223 music remains rejected,225 timing stays proposed, Kirk pronunciation still open. These references inform taste, not permission to sample/upload/release their recordings. Full-series musical grammar can grow from a successful cue; do not postpone this unit to design every character theme.
+
 ## Exchange226 — musical identity before further generation
 
 2026-10-12. Director says music will be HUGE for the production, does not connect with the generated music and rejects generating without first discussing a musical direction. Preserve music-1.wav as rejected audition evidence, not a selected theme or template. Electronic synth beats and harmonica/electric guitar are illustrative possibilities supplied by the Director, not selected instruments or genres. Pause further music generation and integrated score commitment while developing this direction.225's timing proposal remains proposed, not withdrawn or implemented.
