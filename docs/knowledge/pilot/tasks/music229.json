@@ -1,0 +1,29 @@
+{
+  "id": "music229-reference",
+  "operation": "audio_analysis",
+  "entities": [
+    "music_reference"
+  ],
+  "query": "music reference free audio understanding North American hearing rights",
+  "intent": "Test one public reference using Gemini free tier, without leading instrument/transition cues. No music generation or production-audio qualification.",
+  "phase": "execution",
+  "inputs": {
+    "docs/knowledge/pilot/reconciliation229.md": "02ad6dfdfb27ee8ea537a5325d807f718f944e4d91f1ae5377707ae23eae95ec",
+    "src/movie_factory/providers/gemini_reference_provider.py": "79f4929ca9fcebbff3e55f76c85a0a2b4953a5e6472695e5d6d881666d6864fb",
+    "docs/planning/SERIES_01_PASHTUN_NARRATIVE_AUDIO_PROPOSAL.md": "5596ad4f443eb5f0b908177096b5b5f4f8a51988112ee566698b93e2770d4549"
+  },
+  "open_decisions": [],
+  "execution_authority": {
+    "source": "docs/knowledge/pilot/reconciliation229.md",
+    "scope": "User supplied key then confirmed free tier for proposed listening pilot. One public URL request, zero paid authority, no retries or private uploads."
+  },
+  "hypotheses_to_test": [
+    "Audio may be inaccessible despite metadata access.",
+    "A plausible generic description may not reflect the actual passage; withhold Director cue and require further control before qualification."
+  ],
+  "execution_prerequisites": [
+    "Mock tests pass; fixed endpoint and persistent exclusive one-request zero-paid-budget claim.",
+    "User-reported free tier; no billing changes or fallback.",
+    "No direct backend hearing; model observations are not perceptual PASS."
+  ]
+}

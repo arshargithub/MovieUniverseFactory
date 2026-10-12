@@ -1,0 +1,266 @@
+{
+  "packet_digest": "c30755b7eb9342bcaa48cd4d810ba55dbf7d355f2d5912a609b6f2f95ac152f4",
+  "scope": "Failed availability pilot; not production audio qualification",
+  "checks": [
+    {
+      "id": "authority",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Made only the single public URL analysis request under user-reported free tier; no fallback or private upload.",
+      "observation": "HTTP404; no retry/billing changes; zero paid authority in persistent claim.",
+      "evidence": [
+        {
+          "path": "docs/knowledge/pilot/music229-outcome.md",
+          "sha256": "e313a8389a85f8fada1f23cfc95e681552ef1d3548df9227ead68db044c15f12"
+        },
+        {
+          "path": ".runtime/art-direction/series01-music-reference229/result.json",
+          "sha256": "0f96dc7628051e439b7ba92bd2d763fa5d2ad55749cee311df586934a88063c9"
+        },
+        {
+          "path": ".runtime/art-direction/series01-music-reference229/request-ledger.json",
+          "sha256": "1409dd10a1d26b2618dfca267e2bcd1598eaf08b70611edfa0f4b392bb4c318d"
+        },
+        {
+          "path": "src/movie_factory/providers/gemini_reference_provider.py",
+          "sha256": "79f4929ca9fcebbff3e55f76c85a0a2b4953a5e6472695e5d6d881666d6864fb"
+        }
+      ]
+    },
+    {
+      "id": "strategy",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Used neutral timestamped prompt and earliest one-call proof before more generation.",
+      "observation": "Direct URL analysis404; read-only discovery200 lists selected model. Prefer authorized clean excerpt; no paid upgrade.",
+      "evidence": [
+        {
+          "path": "docs/knowledge/pilot/music229-outcome.md",
+          "sha256": "e313a8389a85f8fada1f23cfc95e681552ef1d3548df9227ead68db044c15f12"
+        },
+        {
+          "path": ".runtime/art-direction/series01-music-reference229/result.json",
+          "sha256": "0f96dc7628051e439b7ba92bd2d763fa5d2ad55749cee311df586934a88063c9"
+        },
+        {
+          "path": ".runtime/art-direction/series01-music-reference229/request-ledger.json",
+          "sha256": "1409dd10a1d26b2618dfca267e2bcd1598eaf08b70611edfa0f4b392bb4c318d"
+        },
+        {
+          "path": "src/movie_factory/providers/gemini_reference_provider.py",
+          "sha256": "79f4929ca9fcebbff3e55f76c85a0a2b4953a5e6472695e5d6d881666d6864fb"
+        }
+      ]
+    },
+    {
+      "id": "visual_gate",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Withheld perceptual qualification.",
+      "observation": "No audio analysis returned; actual listening comparison unavailable.",
+      "evidence": [
+        {
+          "path": "docs/knowledge/pilot/music229-outcome.md",
+          "sha256": "e313a8389a85f8fada1f23cfc95e681552ef1d3548df9227ead68db044c15f12"
+        },
+        {
+          "path": ".runtime/art-direction/series01-music-reference229/result.json",
+          "sha256": "0f96dc7628051e439b7ba92bd2d763fa5d2ad55749cee311df586934a88063c9"
+        },
+        {
+          "path": ".runtime/art-direction/series01-music-reference229/request-ledger.json",
+          "sha256": "1409dd10a1d26b2618dfca267e2bcd1598eaf08b70611edfa0f4b392bb4c318d"
+        },
+        {
+          "path": "src/movie_factory/providers/gemini_reference_provider.py",
+          "sha256": "79f4929ca9fcebbff3e55f76c85a0a2b4953a5e6472695e5d6d881666d6864fb"
+        }
+      ]
+    },
+    {
+      "id": "anticipation",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Withheld harmonica cue and anticipated metadata-only hallucination.",
+      "observation": "HTTP404 prevents testing audible-event accuracy; hypothesis remains unresolved.",
+      "evidence": [
+        {
+          "path": "docs/knowledge/pilot/music229-outcome.md",
+          "sha256": "e313a8389a85f8fada1f23cfc95e681552ef1d3548df9227ead68db044c15f12"
+        },
+        {
+          "path": ".runtime/art-direction/series01-music-reference229/result.json",
+          "sha256": "0f96dc7628051e439b7ba92bd2d763fa5d2ad55749cee311df586934a88063c9"
+        },
+        {
+          "path": ".runtime/art-direction/series01-music-reference229/request-ledger.json",
+          "sha256": "1409dd10a1d26b2618dfca267e2bcd1598eaf08b70611edfa0f4b392bb4c318d"
+        },
+        {
+          "path": "src/movie_factory/providers/gemini_reference_provider.py",
+          "sha256": "79f4929ca9fcebbff3e55f76c85a0a2b4953a5e6472695e5d6d881666d6864fb"
+        }
+      ]
+    },
+    {
+      "id": "stopping",
+      "kind": "review",
+      "status": "PASS",
+      "action_taken": "Stopped at promised one-call access failure; did not relabel failure success.",
+      "observation": "External availability blocker, not a production-complete handoff.",
+      "evidence": [
+        {
+          "path": "docs/knowledge/pilot/music229-outcome.md",
+          "sha256": "e313a8389a85f8fada1f23cfc95e681552ef1d3548df9227ead68db044c15f12"
+        },
+        {
+          "path": ".runtime/art-direction/series01-music-reference229/result.json",
+          "sha256": "0f96dc7628051e439b7ba92bd2d763fa5d2ad55749cee311df586934a88063c9"
+        },
+        {
+          "path": ".runtime/art-direction/series01-music-reference229/request-ledger.json",
+          "sha256": "1409dd10a1d26b2618dfca267e2bcd1598eaf08b70611edfa0f4b392bb4c318d"
+        },
+        {
+          "path": "src/movie_factory/providers/gemini_reference_provider.py",
+          "sha256": "79f4929ca9fcebbff3e55f76c85a0a2b4953a5e6472695e5d6d881666d6864fb"
+        }
+      ]
+    },
+    {
+      "id": "versioning",
+      "kind": "technical",
+      "status": "PASS",
+      "action_taken": "Bound provider/authority/source inputs and retained immutable request claim plus sanitized receipt.",
+      "observation": "Fresh packet matches; existing media and failed score untouched.",
+      "evidence": [
+        {
+          "path": "docs/knowledge/pilot/music229-outcome.md",
+          "sha256": "e313a8389a85f8fada1f23cfc95e681552ef1d3548df9227ead68db044c15f12"
+        },
+        {
+          "path": ".runtime/art-direction/series01-music-reference229/result.json",
+          "sha256": "0f96dc7628051e439b7ba92bd2d763fa5d2ad55749cee311df586934a88063c9"
+        },
+        {
+          "path": ".runtime/art-direction/series01-music-reference229/request-ledger.json",
+          "sha256": "1409dd10a1d26b2618dfca267e2bcd1598eaf08b70611edfa0f4b392bb4c318d"
+        },
+        {
+          "path": "src/movie_factory/providers/gemini_reference_provider.py",
+          "sha256": "79f4929ca9fcebbff3e55f76c85a0a2b4953a5e6472695e5d6d881666d6864fb"
+        }
+      ]
+    },
+    {
+      "id": "economics",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Recorded zero paid authorization and one claim; left actual billing/tokens/time unknown.",
+      "observation": "HTTP404 supplied no usage. User reports free tier; no invoice verification.",
+      "evidence": [
+        {
+          "path": "docs/knowledge/pilot/music229-outcome.md",
+          "sha256": "e313a8389a85f8fada1f23cfc95e681552ef1d3548df9227ead68db044c15f12"
+        },
+        {
+          "path": ".runtime/art-direction/series01-music-reference229/result.json",
+          "sha256": "0f96dc7628051e439b7ba92bd2d763fa5d2ad55749cee311df586934a88063c9"
+        },
+        {
+          "path": ".runtime/art-direction/series01-music-reference229/request-ledger.json",
+          "sha256": "1409dd10a1d26b2618dfca267e2bcd1598eaf08b70611edfa0f4b392bb4c318d"
+        },
+        {
+          "path": "src/movie_factory/providers/gemini_reference_provider.py",
+          "sha256": "79f4929ca9fcebbff3e55f76c85a0a2b4953a5e6472695e5d6d881666d6864fb"
+        }
+      ]
+    },
+    {
+      "id": "sound",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Preserved music hold and Director direction; no generation.",
+      "observation": "Music passage unassessed. No auditory quality claim.",
+      "evidence": [
+        {
+          "path": "docs/knowledge/pilot/music229-outcome.md",
+          "sha256": "e313a8389a85f8fada1f23cfc95e681552ef1d3548df9227ead68db044c15f12"
+        },
+        {
+          "path": ".runtime/art-direction/series01-music-reference229/result.json",
+          "sha256": "0f96dc7628051e439b7ba92bd2d763fa5d2ad55749cee311df586934a88063c9"
+        },
+        {
+          "path": ".runtime/art-direction/series01-music-reference229/request-ledger.json",
+          "sha256": "1409dd10a1d26b2618dfca267e2bcd1598eaf08b70611edfa0f4b392bb4c318d"
+        },
+        {
+          "path": "src/movie_factory/providers/gemini_reference_provider.py",
+          "sha256": "79f4929ca9fcebbff3e55f76c85a0a2b4953a5e6472695e5d6d881666d6864fb"
+        }
+      ]
+    },
+    {
+      "id": "rights",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Submitted public reference link and generic analysis question only; no sampling/release/private upload.",
+      "observation": "Fixed Google endpoint; no billing change or reuse rights claimed.",
+      "evidence": [
+        {
+          "path": "docs/knowledge/pilot/music229-outcome.md",
+          "sha256": "e313a8389a85f8fada1f23cfc95e681552ef1d3548df9227ead68db044c15f12"
+        },
+        {
+          "path": ".runtime/art-direction/series01-music-reference229/result.json",
+          "sha256": "0f96dc7628051e439b7ba92bd2d763fa5d2ad55749cee311df586934a88063c9"
+        },
+        {
+          "path": ".runtime/art-direction/series01-music-reference229/request-ledger.json",
+          "sha256": "1409dd10a1d26b2618dfca267e2bcd1598eaf08b70611edfa0f4b392bb4c318d"
+        },
+        {
+          "path": "src/movie_factory/providers/gemini_reference_provider.py",
+          "sha256": "79f4929ca9fcebbff3e55f76c85a0a2b4953a5e6472695e5d6d881666d6864fb"
+        }
+      ]
+    },
+    {
+      "id": "music_reference",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Separated Director-provided music identity from listening evidence.",
+      "observation": "No reference analysis returned; no known-cue comparison or independent control completed.",
+      "evidence": [
+        {
+          "path": "docs/knowledge/pilot/music229-outcome.md",
+          "sha256": "e313a8389a85f8fada1f23cfc95e681552ef1d3548df9227ead68db044c15f12"
+        },
+        {
+          "path": ".runtime/art-direction/series01-music-reference229/result.json",
+          "sha256": "0f96dc7628051e439b7ba92bd2d763fa5d2ad55749cee311df586934a88063c9"
+        },
+        {
+          "path": ".runtime/art-direction/series01-music-reference229/request-ledger.json",
+          "sha256": "1409dd10a1d26b2618dfca267e2bcd1598eaf08b70611edfa0f4b392bb4c318d"
+        },
+        {
+          "path": "src/movie_factory/providers/gemini_reference_provider.py",
+          "sha256": "79f4929ca9fcebbff3e55f76c85a0a2b4953a5e6472695e5d6d881666d6864fb"
+        }
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "prediction": "A plausible description may reflect metadata instead of audible events.",
+      "observation": "HTTP404 produced no candidate.",
+      "response": "No perceptual pass; model discovery succeeded but direct URL failure unresolved. Prefer clean excerpt.",
+      "result": "NOT_RUN"
+    }
+  ],
+  "adjacent_regressions": "55 offline tests pass including reference routing and preserved unresolved narration gate. No production media changed.",
+  "stopping_reason": "One-request pilot blocked by404; no retry or paid fallback. Listening remains unqualified."
+}
