@@ -4,6 +4,8 @@ Use this pilot before covered production work and before its internal handoff. I
 
 ## What is authoritative
 
+**217 amendment:** [reviewed reconciliation](reconciliation217.md) adopts Director215's narration A, keeps the performed voice/paid route open, and maps Director217's glove/whole-fist correction. Current coverage is nine documents/89 sections/28 records; the original213 figures and generated files below are historical. Fresh task packets, not those historical files, govern current work. Manual anatomical review remains essential: earlier thumb contact math did not prevent a visible backward-bending pose.
+
 Existing source documents and actual Director approvals remain authority. `catalog.json` is a curated, versioned interpretation:28 records, typed entity relationships, applicability facets and explicit status. `source-pins.json` binds nine reviewed documents and their88 sections. `expectations.json` was authored from the source reading before retrieval code ran; it is a finite, agent-authored oracle, not independent human ground truth. Search results are supporting material, never approval.
 
 The derived SQLite index is local at `.runtime/knowledge-pilot213/search.sqlite3`. Packets rebuild a fresh in-memory index from pinned sources, so a stale on-disk index cannot silently govern execution. No server, embedding model, API key, cloud call or new dependency is used. Fine-grained source invalidation, automatic scene extraction, independent-model review and integration into every production launcher are not implemented. The current conservative source hash check blocks on any change in the nine-document corpus.

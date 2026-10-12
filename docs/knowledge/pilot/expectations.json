@@ -1,16 +1,256 @@
 {
   "schema_version": 1,
   "method": "Authored from the nine-document reading before retrieval code or results. Frozen expectations are a separate agent-authored oracle, not independent human truth. Held-out cases are not used to tune initial routing; all results and any later corrections must be disclosed.",
-  "global_required": ["authority", "strategy", "visual_gate", "anticipation", "stopping", "versioning", "economics"],
+  "global_required": [
+    "authority",
+    "strategy",
+    "visual_gate",
+    "anticipation",
+    "stopping",
+    "versioning",
+    "economics"
+  ],
   "cases": [
-    {"id":"rein","split":"development","operation":"contact","entities":["hand"],"query":"fix her grasp","required":["identity","anatomy","motion","contact","garment","secondary"],"useful":["look"],"forbidden":["narration_a","single_wrap","gpu_ban"],"reason":"A grip edit changes arm chains, garment adjacency and rider/horse contact, not just fingers."},
-    {"id":"audio","split":"development","operation":"audio","entities":["officer"],"query":"narrate the entrance","required":["narrative","quotation","sound","captions","rights"],"useful":["geography"],"forbidden":["narration_a","single_wrap","gpu_ban"],"reason":"Story state and selected script/voice precede paid audio; verified text is not release clearance."},
-    {"id":"render","split":"development","operation":"render","entities":["renderer"],"query":"speed up final rendering","required":["render_profile","cache_safety","look"],"useful":["secondary"],"forbidden":["gpu_ban","narration_a"],"reason":"Current Metal evidence is conditional and strict replay failed; no production promotion."},
-    {"id":"neck","split":"held_out","operation":"motion","entities":["neck"],"query":"she looks detached from the gallop","required":["identity","anatomy","motion","contact","garment","secondary"],"useful":["look"],"forbidden":["single_wrap"],"reason":"Relative neck motion, neighboring shoulder/hand contact and supported cloth must be inspected together."},
-    {"id":"camera","split":"held_out","operation":"camera","entities":["shot"],"query":"raise and orbit the view","required":["identity","geography","secondary","garment","contact","sword","look"],"useful":["anatomy"],"forbidden":["single_wrap"],"reason":"A camera change exposes route, terrain, effects, contact and prop interfaces; prior visibility checks expire."},
-    {"id":"shawl","split":"held_out","operation":"wardrobe","entities":["shawl"],"query":"the drape looks stuffed at the back","required":["identity","garment","secondary","motion","anatomy","contact"],"useful":["look"],"forbidden":["single_wrap"],"reason":"Two outer wraps above harness are binding; body versus cloth control and moving support are required."},
-    {"id":"sword","split":"held_out","operation":"prop","entities":["sword"],"query":"revise suspension","required":["identity","sword","garment","motion","contact"],"useful":["secondary"],"forbidden":["single_wrap"],"reason":"Right hip and rearward curve remain binding; belt/horse/thigh clearance needs actual moving checks."},
-    {"id":"release","split":"held_out","operation":"delivery","entities":["film"],"query":"make the final social master","required":["rights","captions","sound","render_profile","look","narrative","quotation"],"useful":["geography"],"forbidden":["narration_a","gpu_ban"],"reason":"Final output needs selected narrative, rights, clean/captioned masters and actual device/audio review."},
-    {"id":"memory","split":"development","operation":"knowledge","entities":["knowledge"],"query":"carry learning into future work","required":["retrieval"],"useful":[],"forbidden":["narration_a","single_wrap","gpu_ban"],"reason":"Coverage and independent applicability, stale checks, restart and demonstrated application, not storing alone."}
+    {
+      "id": "rein",
+      "split": "development",
+      "operation": "contact",
+      "entities": [
+        "hand"
+      ],
+      "query": "fix her grasp",
+      "required": [
+        "identity",
+        "anatomy",
+        "motion",
+        "contact",
+        "garment",
+        "secondary"
+      ],
+      "useful": [
+        "look"
+      ],
+      "forbidden": [
+        "narration_a",
+        "single_wrap",
+        "gpu_ban"
+      ],
+      "reason": "A grip edit changes arm chains, garment adjacency and rider/horse contact, not just fingers."
+    },
+    {
+      "id": "audio",
+      "split": "development",
+      "operation": "audio",
+      "entities": [
+        "officer"
+      ],
+      "query": "narrate the entrance",
+      "required": [
+        "narrative",
+        "quotation",
+        "sound",
+        "captions",
+        "rights",
+        "narration_a"
+      ],
+      "useful": [
+        "geography"
+      ],
+      "forbidden": [
+        "single_wrap",
+        "gpu_ban"
+      ],
+      "reason": "Story state and selected script/voice precede paid audio; verified text is not release clearance. Director215 explicitly adopts A; performed voice and paid route remain open."
+    },
+    {
+      "id": "render",
+      "split": "development",
+      "operation": "render",
+      "entities": [
+        "renderer"
+      ],
+      "query": "speed up final rendering",
+      "required": [
+        "render_profile",
+        "cache_safety",
+        "look"
+      ],
+      "useful": [
+        "secondary"
+      ],
+      "forbidden": [
+        "gpu_ban",
+        "narration_a"
+      ],
+      "reason": "Current Metal evidence is conditional and strict replay failed; no production promotion."
+    },
+    {
+      "id": "neck",
+      "split": "held_out",
+      "operation": "motion",
+      "entities": [
+        "neck"
+      ],
+      "query": "she looks detached from the gallop",
+      "required": [
+        "identity",
+        "anatomy",
+        "motion",
+        "contact",
+        "garment",
+        "secondary"
+      ],
+      "useful": [
+        "look"
+      ],
+      "forbidden": [
+        "single_wrap"
+      ],
+      "reason": "Relative neck motion, neighboring shoulder/hand contact and supported cloth must be inspected together."
+    },
+    {
+      "id": "camera",
+      "split": "held_out",
+      "operation": "camera",
+      "entities": [
+        "shot"
+      ],
+      "query": "raise and orbit the view",
+      "required": [
+        "identity",
+        "geography",
+        "secondary",
+        "garment",
+        "contact",
+        "sword",
+        "look"
+      ],
+      "useful": [
+        "anatomy"
+      ],
+      "forbidden": [
+        "single_wrap"
+      ],
+      "reason": "A camera change exposes route, terrain, effects, contact and prop interfaces; prior visibility checks expire."
+    },
+    {
+      "id": "shawl",
+      "split": "held_out",
+      "operation": "wardrobe",
+      "entities": [
+        "shawl"
+      ],
+      "query": "the drape looks stuffed at the back",
+      "required": [
+        "identity",
+        "garment",
+        "secondary",
+        "motion",
+        "anatomy",
+        "contact"
+      ],
+      "useful": [
+        "look"
+      ],
+      "forbidden": [
+        "single_wrap"
+      ],
+      "reason": "Two outer wraps above harness are binding; body versus cloth control and moving support are required."
+    },
+    {
+      "id": "sword",
+      "split": "held_out",
+      "operation": "prop",
+      "entities": [
+        "sword"
+      ],
+      "query": "revise suspension",
+      "required": [
+        "identity",
+        "sword",
+        "garment",
+        "motion",
+        "contact"
+      ],
+      "useful": [
+        "secondary"
+      ],
+      "forbidden": [
+        "single_wrap"
+      ],
+      "reason": "Right hip and rearward curve remain binding; belt/horse/thigh clearance needs actual moving checks."
+    },
+    {
+      "id": "release",
+      "split": "held_out",
+      "operation": "delivery",
+      "entities": [
+        "film"
+      ],
+      "query": "make the final social master",
+      "required": [
+        "rights",
+        "captions",
+        "sound",
+        "render_profile",
+        "look",
+        "narrative",
+        "quotation",
+        "narration_a"
+      ],
+      "useful": [
+        "geography"
+      ],
+      "forbidden": [
+        "gpu_ban"
+      ],
+      "reason": "Final output needs selected narrative, rights, clean/captioned masters and actual device/audio review. Director215 explicitly adopts A; performed voice and paid route remain open."
+    },
+    {
+      "id": "memory",
+      "split": "development",
+      "operation": "knowledge",
+      "entities": [
+        "knowledge"
+      ],
+      "query": "carry learning into future work",
+      "required": [
+        "retrieval"
+      ],
+      "useful": [],
+      "forbidden": [
+        "narration_a",
+        "single_wrap",
+        "gpu_ban"
+      ],
+      "reason": "Coverage and independent applicability, stale checks, restart and demonstrated application, not storing alone."
+    },
+    {
+      "id": "gloved_rein217",
+      "split": "development",
+      "operation": "contact",
+      "entities": [
+        "hand",
+        "glove"
+      ],
+      "query": "fitted glove relaxed closed fist",
+      "required": [
+        "identity",
+        "anatomy",
+        "motion",
+        "contact",
+        "garment",
+        "secondary",
+        "representation",
+        "rights"
+      ],
+      "useful": [],
+      "forbidden": [
+        "narration_a",
+        "single_wrap",
+        "gpu_ban"
+      ],
+      "reason": "Director217 adds modeled clothing to hand contact; manually reconcile body support, sleeve/rein/horse interfaces and original procedural asset rights."
+    }
   ]
 }

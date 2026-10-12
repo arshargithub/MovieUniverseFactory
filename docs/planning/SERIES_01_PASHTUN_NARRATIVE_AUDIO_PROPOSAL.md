@@ -1,5 +1,7 @@
 # Pashtun entrance narration and sound proposal
 
+**Current decision, exchange215:** Director selects treatment A ("yeah I think A too") in response to the explicit A/B question. Use classification followed by personal trust, with a restrained, experienced officer and silence over danger/turn. The performed voice, provider, paid-call allowance, final mix and release acceptance are not selected by this decision. B remains an unselected alternative. The209 proposal and research below are retained as history; its statements that both treatments are unselected are superseded by this paragraph only.
+
 Exchange209, 2026-10-11. Proposed creative decision for the existing18-second entrance; no voice, script, music provider or paid generation is selected. Keep the approved action and camera timing. The purpose is to introduce a particular capable woman inside the officer's imperial frame, not deliver a history lecture or claim that colonial racial categories are true.
 
 ## Recommendation

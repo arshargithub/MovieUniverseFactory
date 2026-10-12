@@ -2,6 +2,14 @@
 
 ## Current acceptance — exchange152
 
+### Exchange214 — review the grasp and the thing being grasped together
+
+The rein correction finds two coupled readability problems: an open thumb hook and a cut-off rein end that reads as a peg. A plausible thumb target alone cannot fix the second. Inspect entry, finger enclosure, thumb/index exit and the supported/free span together. Preserve the current split-rein design; an attempted cross-neck return intersected the horse, and an early-bending loose end crossed the hand. Those controls remain failures. Only the corrected required-shot result can close the issue; no universal equestrian grip or rope simulation is implied. See [the bounded work package](../planning/SERIES_01_REIN_CONTACT_214.md).
+
+Check actual hand coordinate axes before mirroring offsets: a mirrored lateral axis does not mean every local axis changes sign. Keep rotation-only edits rotation-only. Matrix aiming introduced tiny unkeyed location/scale residue; the fresh-open check caught it despite unchanged arms/camera and plausible stills. Preserve original translation/scale explicitly and compare stored curve coordinates rather than double-precision construction ideals after float32 storage. Do not merely widen a failed tolerance. These are technical reproducibility lessons, not substitutes for visual contact review.
+
+The knowledge pilot retrieved contact, motion, anatomy, garment and secondary-motion interfaces plus the global process gates. Manual reading still supplied the detailed200 thumb and185 evaluated-state history. This first use demonstrates application, not universal recall: capture newly discovered details here and bind the work package for continuation rather than assume the nine-document catalog automatically learns them. Full-motion handoff remains pending until the actual214 review completes.
+
 ### Exchange209 — supported prop, unchanged performance and actionable reuse
 
 The right-hip palwar pass applies the [production learning application index](PRODUCTION_LEARNING_APPLICATION_INDEX.md) rather than reopening approved identity or wardrobe. Inspect the evaluated belt/horse interface, choose an explicit rearward route and paired support, then prove the prop in actual turn/uphill poses before the full shot. Editable geometry is reusable; belt anchors, reference scale and authored lag remain rider-specific. A scene also retains shared-cache dependencies and is not portable merely because it opens locally.
@@ -652,6 +660,10 @@ No new release gate passes. Planning checkpoint remains 140. This is a scoped lo
 The agent recommended193 B because it more clearly announced illustration; the Director finds A more painted and remains undecided. Matched comparison with selected C supports revising that preference: broad flatter shadow bands and warmer saturation can produce cel-like/posterized form while losing the tonal/material richness the Director values. Review the actual approved language (directional marks, broken edges, selective detail and textured light masses), not the proxy criterion "less photoreal." Keep A as the recommended working base, not an invented final approval. Any further alternative needs a distinct, testable surface/edge hypothesis and cheap matched still evidence before a full moving render; global shader variation is not automatically a new art language.
 
 The repeated stiff head/neck feedback also demonstrates that nonzero joint movement and chronological frame review cannot establish natural performance in playback. Preserve contacts/reopen/reproducibility successes separately; the screen-result gate remains unresolved. Do not propagate a correction as accepted merely because technical checks pass. Director explicitly requests opinion before further changes this exchange, so no motion/style implementation is authorized by the discussion itself.
+
+# Rein grip correction — exchanges216–217
+
+The agent's contact-first thumb control was rejected for backward bending. Its internal admission is withdrawn, while numerical replay fixes remain technical evidence only. A target reached by a joint chain is not proof of anatomically plausible articulation. Review the whole relaxed fist against riding references, including fingertips/palm, thumb over index, rein entry/exit and both mirror sides. Director217 adds fitted gloves; inspect the bare grasp first so clothing does not conceal a structural failure. Do not promote old failed controls or spend a full-motion render before the discriminating hand proof passes.
 
 # Garment routing and layer authority — exchange175
 

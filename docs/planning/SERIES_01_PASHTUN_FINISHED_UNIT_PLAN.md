@@ -2,6 +2,12 @@
 
 Established exchange208; execution authorized at exchange209 · 2026-10-11. This is the work strategy, not an acceptance report.
 
+## Exchange215 — narration A selected; contact correction continues
+
+Exchange216 rejects backward thumb bending in the contact controls. Exchange217 authorizes fitted riding gloves and a relaxed closed-fist correction, with the rein above the little finger and under the thumb. The current correction strategy is [rein214](SERIES_01_REIN_CONTACT_214.md); these are requirements, not a passed grasp.
+
+Director selects treatment A from the [narrative proposal](SERIES_01_PASHTUN_NARRATIVE_AUDIO_PROPOSAL.md): classification at the opening, silence through danger/turn, personal trust during determined continuation. The restrained, experienced officer direction is retained; the actual performed voice and eligible bounded paid route remain separate decisions. Do not keep asking A versus B, silently select a provider or treat this as final voice/audio acceptance. Complete the authorized214 rein correction and internal actual-shot review; then advance the integrated sound/text preview through the remaining real voice/spend boundary. No release gate advances from a script choice alone. Earlier unselected-script statements below describe209 history.
+
 ## Exchange209 pass1 result — combined review ready
 
 The [complete18-second sword-integrated preview](../../.runtime/art-direction/series01-entrance209/director-preview/pashtun-complete-entrance.mp4), [learning application index](../knowledge/PRODUCTION_LEARNING_APPLICATION_INDEX.md) and [two verified narration/voice treatments](SERIES_01_PASHTUN_NARRATIVE_AUDIO_PROPOSAL.md) are ready together. The sword is on her anatomical right, with rearward curvature, paired belt suspension and restrained authored lag. Current207 performance, camera and timing are preserved. This is one prop construction candidate, not a renewed portrait/costume campaign.

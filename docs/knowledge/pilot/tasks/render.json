@@ -1,19 +1,25 @@
 {
-  "id":"local-finishing-render-next",
-  "operation":"render",
-  "entities":["renderer"],
-  "query":"Metal persistent data black groom dust rectangle final sampling repeat pixel tolerance",
-  "intent":"Carry the scoped local acceleration evidence into the next needed finishing render. Preserve appearance and existing CPU fallback; do not promote a profile from two fast frames.",
-  "phase":"planning",
-  "inputs":{
-    "docs/knowledge/pilot/catalog.json":"cde3d3964a2164ef94b943642bccdd9dfb35f0a4d32d42a174e89bf06999ef65",
-    ".runtime/art-direction/series01-render210/visual-review.json":"44e5710022b81cebb5413ef81f7eb7614a2cf39b002f7503295cdb1976d492d1"
+  "id": "local-finishing-render-next",
+  "operation": "render",
+  "entities": [
+    "renderer"
+  ],
+  "query": "Metal persistent data black groom dust rectangle final sampling repeat pixel tolerance",
+  "intent": "Carry the scoped local acceleration evidence into the next needed finishing render. Preserve appearance and existing CPU fallback; do not promote a profile from two fast frames.",
+  "phase": "planning",
+  "inputs": {
+    "docs/knowledge/pilot/catalog.json": "9ce0f72703e8d109d9c486df8d86339fde9a789c3cca6c2d278e04d610f265f3",
+    ".runtime/art-direction/series01-render210/visual-review.json": "44e5710022b81cebb5413ef81f7eb7614a2cf39b002f7503295cdb1976d492d1"
   },
-  "open_decisions":[],
-  "hypotheses_to_test":[
+  "open_decisions": [],
+  "hypotheses_to_test": [
     "A profile that looks correct in sparse controls may produce groom/dust discontinuity in the complete motion.",
     "Higher-resolution speed gains may not survive final sampling and memory pressure; measure the actual workload.",
     "A visually negligible numerical change can still violate the declared replay contract; do not silently relax it."
   ],
-  "execution_prerequisites":["Source/caches and exact final profile must be bound at dispatch.","Full-sequence final-sampling and reproducibility remain NOT_RUN; Metal217 strict repeat failed.","No renderer defaults or power/application settings change through this planning packet."]
+  "execution_prerequisites": [
+    "Source/caches and exact final profile must be bound at dispatch.",
+    "Full-sequence final-sampling and reproducibility remain NOT_RUN; Metal217 strict repeat failed.",
+    "No renderer defaults or power/application settings change through this planning packet."
+  ]
 }

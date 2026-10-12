@@ -1,14 +1,19 @@
 {
-  "id":"knowledge213-implementation",
-  "operation":"knowledge",
-  "entities":["knowledge"],
-  "query":"retrieval independent coverage anticipation evidence stopping restart",
-  "intent":"Build and verify the bounded local knowledge bridge, demonstrate real planning use and return to the finished production unit without a platform detour.",
-  "phase":"execution",
-  "inputs":{
-    "docs/knowledge/pilot/catalog.json":"cde3d3964a2164ef94b943642bccdd9dfb35f0a4d32d42a174e89bf06999ef65",
-    "docs/knowledge/pilot/authorization.json":"f05295be15c1c5dd995d3a1af5117949270aa8591fbef75b378e78913ff41cfa"
+  "id": "knowledge213-implementation",
+  "operation": "knowledge",
+  "entities": [
+    "knowledge"
+  ],
+  "query": "retrieval independent coverage anticipation evidence stopping restart",
+  "intent": "Build and verify the bounded local knowledge bridge, demonstrate real planning use and return to the finished production unit without a platform detour.",
+  "phase": "execution",
+  "inputs": {
+    "docs/knowledge/pilot/catalog.json": "9ce0f72703e8d109d9c486df8d86339fde9a789c3cca6c2d278e04d610f265f3",
+    "docs/knowledge/pilot/authorization.json": "f05295be15c1c5dd995d3a1af5117949270aa8591fbef75b378e78913ff41cfa"
   },
-  "execution_authority":{"source":"docs/knowledge/pilot/authorization.json","scope":"Local knowledge pilot only; no production asset edit or new external spend"},
-  "open_decisions":[]
+  "execution_authority": {
+    "source": "docs/knowledge/pilot/authorization.json",
+    "scope": "Local knowledge pilot only; no production asset edit or new external spend"
+  },
+  "open_decisions": []
 }

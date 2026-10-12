@@ -1,0 +1,7 @@
+# Reviewed knowledge amendment — exchanges215–217
+
+The source gate correctly became stale after the new Director decisions. Reviewed the exact source diff: only `unit` and `audio` changed among the nine pinned documents.215 explicitly selects narration A;216 rejects the backward thumb;217 adds fitted riding gloves and closed-fist correction. Retained old proposals/history and failed native controls; no approval is inferred from search or from rehashing.
+
+Updated A's status to adopted, while performed voice and paid route remain open. Added a glove entity with hand support, rein contact and arm adjacency. Manually reconciled modeling/rights and garment obligations in addition to the existing hand/arm/rein/horse impact set. A new development applicability case expects those obligations; this is not an independent held-out test. Existing213 generated evidence remains historical, not overwritten.
+
+The fresh217 packet selects15 obligations with no missing expected checks in the finite applicability run:126 required case/obligation pairs across ten cases, nine documents/89 sections/28 records.63 focused knowledge/contact/scene tests passed after adding the closed217 handler test. Source pins were amended only after this reviewed difference; corpus coverage and tested counts must be reported with their version, not as universal memory accuracy. The agent still owns actual anatomical and visual judgment, which failed on the earlier thumb even though contact math passed.
