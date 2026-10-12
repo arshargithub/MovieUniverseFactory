@@ -1,5 +1,13 @@
 # Rein contact correction
 
+## Current disposition — exchange219
+
+Director correctly identifies a remaining anatomical defect: the fingers extend beyond the apparent palm/knuckle line before bending.218 improved closure but did not establish correct MCP/knuckle placement. Withdraw its unqualified anatomical/visual PASS; preserve replay, source preservation and closed-silhouette observations as narrower evidence. This is another missed structural comparison, not a new taste or a request for perfection.
+
+Director explicitly delegates the Efficient Quality carry-forward decision. Agent decision: retain opening12/route13 for the integrated sound/edit preview as a **known shot-specific compromise**, not a reusable qualified hand or final release approval. At actual360 the hand is low/peripheral; at620 the grasp is small compared with face/action. The enlarged diagnostic exposes the defect much more strongly. This is an agent salience hypothesis from inspected stills, not measured audience evidence. Do not change staging to hide it. Do not launch another general hand-repair cycle now. Reopen if complete normal-speed final-resolution review remains distracting, closer hand coverage is introduced, or new use reveals another failure. Carrying forward does not erase the defect.
+
+Next deliverable: complete18-second sound/text preview with selected narration A, restrained officer voice, physical gallop/gravel/leather/horse sound, restrained music motif, archival quotation treatment and captions. Keep danger/turn free of narration and intrusive text. First establish an eligible provider/rights route and exact bounded audition budget; performed voice and new paid calls remain unapproved. No media changed in219. Counter219, checkpoint220. Historical218 admissions below are superseded within the anatomy/visual scope stated here.
+
 ## Current authority — exchange218
 
 Director rejects217: glove does not read as a glove, separated curled fingers do not read as a closed riding fist. Remove gloves. Withdraw control23 and opening24/route25 visual admissions; retain their technical replay evidence separately. No217 candidate is a qualified production dependency. The original209 scenes remain the derivative inputs.

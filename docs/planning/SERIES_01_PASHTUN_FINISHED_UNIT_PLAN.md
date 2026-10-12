@@ -4,6 +4,8 @@ Established exchange208; execution authorized at exchange209 · 2026-10-11. This
 
 ## Exchange215 — narration A selected; contact correction continues
 
+Current219 supersedes the218 visual admission: Director identifies distal knuckle/pivot placement and delegates carry-forward judgment. Agent retains218 bare grip as a known shot-specific compromise for the integrated audio preview, not anatomical qualification or final acceptance. Reopen at distracting normal-speed final-resolution review, closer coverage or new use. No further hand repair now; next is eligible voice/audio route and bounded audition budget, then complete sound/text preview. No new paid-call authority follows.
+
 Current218: Director rejects217 glove/fist appearance and withdraws gloves. The bare compact riding fist is rebuilt in opening12/route13 and internally review-ready after432 coarse chronological contact frames, eight actual-shot Cycles controls and independent reopen.217 visual admissions are withdrawn, numerical replay retained only as technical evidence. No Director grasp or release acceptance; no new full beauty clip is claimed. Follow the current218 section of rein214 and its final review evidence. Advance next to the performed voice/eligible bounded audio route; narration A is already selected. Final audiovisual render still needs delivery QC.
 
 Exchange216 rejects backward thumb bending in the contact controls. Exchange217 authorizes fitted riding gloves and a relaxed closed-fist correction, with the rein above the little finger and under the thumb. The current correction strategy is [rein214](SERIES_01_REIN_CONTACT_214.md); these are requirements, not a passed grasp.
