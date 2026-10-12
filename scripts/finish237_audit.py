@@ -25,6 +25,10 @@ def main():
             for fc in action_channels(owner.animation_data.action):
                 authored[f'{label}:{fc.data_path}:{fc.array_index}']=np.array([fc.evaluate(int(q)) for q in sample_frames])
         with render_geometry_paused():
+            camera_world=[]
+            for q in sample_frames:
+                scene.frame_set(int(q));bpy.context.view_layer.update()
+                camera_world.append(np.array(scene.camera.matrix_world))
             scene.frame_set(f);bpy.context.view_layer.update()
             mats={o.name:np.array(o.matrix_world) for o in scene.objects}
             rig=bpy.data.objects['MF_body156_fit_rig'];bones={b.name:np.array(rig.matrix_world@b.matrix) for b in rig.pose.bones}
@@ -39,10 +43,18 @@ def main():
         cache={o.name:[dict(start=m.frame_start,mode=m.play_mode,eval=m.eval_frame) for m in o.modifiers if m.type=='MESH_CACHE'] for o in scene.objects if any(m.type=='MESH_CACHE' for m in o.modifiers)}
         scene.frame_set(364 if folder.startswith('entrance') else 415);bpy.context.view_layer.update()
         prefix={n:dict(location=list(bpy.data.objects[n].location),world=list(bpy.data.objects[n].matrix_world.translation),hidden=bpy.data.objects[n].hide_render) for n in ('MF205_shared_route_actor','MF_body156_camera','MF201_dramatic_dust','MF201_dramatic_dust.001')}
-        rows.append(dict(mats=mats,bones=bones,lens=lens,cache=cache,prefix=prefix,geometry=geometry,authored=authored))
+        rows.append(dict(mats=mats,bones=bones,lens=lens,cache=cache,prefix=prefix,geometry=geometry,authored=authored,camera_world=np.array(camera_world)))
     result={k:sorted([(n,float(np.max(abs(v-rows[1][k][n])))) for n,v in rows[0][k].items() if n in rows[1][k]],key=lambda x:-x[1])[:25] for k in ('mats','bones','geometry')}
     result['lenses']=[r['lens'] for r in rows];result['caches']=[r['cache'] for r in rows];result['prefix']=[r['prefix'] for r in rows]
-    if set(rows[0]['authored'])!=set(rows[1]['authored']):raise ValueError('Preserved route action schema changed')
-    result['preserved_route_authored_channels']=dict(frames=258,channels=len(rows[0]['authored']),maximum_difference=max(float(np.max(abs(v-rows[1]['authored'][k]))) for k,v in rows[0]['authored'].items()))
+    common=set(rows[0]['authored'])&set(rows[1]['authored'])
+    # Report representation differences before deciding equivalence. A newly
+    # keyed camera rotation is not automatically a changed camera pose.
+    differences=sorted([(k,float(np.max(abs(rows[0]['authored'][k]-rows[1]['authored'][k])))) for k in common],key=lambda x:-x[1])
+    result['preserved_route_authored_channels']=dict(frames=258,common_channels=len(common),
+        removed=sorted(set(rows[0]['authored'])-set(rows[1]['authored'])),
+        added=sorted(set(rows[1]['authored'])-set(rows[0]['authored'])),
+        differences=differences,maximum_difference=max(v for _,v in differences),
+        evaluated_camera_world_maximum_difference=float(np.max(abs(rows[0]['camera_world']-rows[1]['camera_world']))),
+        interpretation='Diagnostic measurement only; inspect added channels and evaluated geometry before asserting preservation.')
     out.write_text(json.dumps(result,indent=2)+'\n');print(json.dumps({k:v for k,v in result.items() if k!='caches'}))
 if __name__=='__main__':main()
