@@ -10,6 +10,8 @@ def clocks(kind,index):
     if kind=='route':
         if not 0<=index<306:raise ValueError('Route index')
         physical=361+index-18 if index>=18 else 361+(index-18)%PERIOD
-        editorial=361+index*30/48 if index<48 else physical
+        # The original391 camera is a hard cut, not a continuous camera move.
+        # Never interpolate390..391 while stretching the preceding OTS shot.
+        editorial=min(390,361+index*30/48) if index<48 else physical
         return physical,editorial,361+index-18
     raise ValueError('Unknown part')

@@ -4,7 +4,7 @@ from pathlib import Path
 from PIL import Image,ImageDraw
 ROOT=Path(__file__).resolve().parents[1]
 BASE=ROOT/'.runtime/art-direction/series01-finish237'
-OPS={'opening03-full','route04-full','edit01'}
+OPS={'opening03-full','route04-full','route05-full','edit01'}
 def main():
     if len(sys.argv)!=2 or sys.argv[1] not in OPS:raise ValueError('Closed contact-sheet operation')
     op=sys.argv[1];src=BASE/op;out=BASE/'sheets'/op;out.mkdir(parents=True,exist_ok=True)

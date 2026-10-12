@@ -58,7 +58,7 @@ def digest(p):
     return h.hexdigest()
 def inspect_sources():
     rows=[]
-    for folder,start,count in [('opening03-full',0,198),('route04-full',198,306)]:
+    for folder,start,count in [('opening03-full',0,198),('route05-full',198,306)]:
         src=BASE/folder;r=json.loads((src/'result.json').read_text())
         if not r['complete'] or [x['index'] for x in r['frames']]!=list(range(start,start+count)):raise ValueError('Incomplete chronology '+folder)
         native=ROOT/'.runtime/art-direction/series01-facebuilder-trial-01'/('finish237-'+folder.removesuffix('-full'))/'scene.blend'

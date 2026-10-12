@@ -99,7 +99,10 @@ def test_fts_handles_punctuation_and_does_not_promote(root):
         conn.close()
     packet = pk.task_packet(root, task(root, "audio", ["officer"]))
     assert next(r for r in packet["obligations"] if r["id"] == "narration_a")["status"] == "adopted"
-    assert next(r for r in packet["obligations"] if r["id"] == "sound")["status"] == "proposed"
+    #239 adopts Director-led discovery/local finishing, not every delivery
+    # proposal. Retrieval must preserve both states rather than promote all.
+    assert next(r for r in packet["obligations"] if r["id"] == "sound")["status"] == "adopted"
+    assert next(r for r in packet["obligations"] if r["id"] == "captions")["status"] == "proposed"
 
 
 @pytest.mark.parametrize("mutation", ["source", "catalog", "pins"])

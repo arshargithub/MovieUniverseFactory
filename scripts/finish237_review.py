@@ -15,7 +15,8 @@ OPS.update({'opening03-clay':('opening03',range(217,415,2),432,0),
     'opening03-full':('opening03',range(217,415),432,8),
     'route04-full':('route04',range(415,721),432,8),
     'opening03-reopen':('opening03',[217,270,271,331,354,414],432,8),
-    'route04-reopen':('route04',[415,422,432,433,462,463,620,720],432,8)})
+    'route04-reopen':('route04',[415,422,432,433,462,463,620,720],432,8),
+    'route05-reopen':('route05',[415,422,432,433,462,463,620,720],432,8)})
 def main():
     import bpy
     job=json.loads(Path(sys.argv[sys.argv.index('--')+1]).read_text())

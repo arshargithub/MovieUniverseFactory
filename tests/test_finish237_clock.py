@@ -8,6 +8,8 @@ def test_duration_and_turn():
     assert 198+306==21*24
     for i in range(18,306):assert clocks('route',i)[0]==361+i-18
     assert clocks('route',48)==(391,391,391)
+    assert clocks('route',47)==(390,390,390)
+    assert all(clocks('route',i)[1]<=390 for i in range(48))
 def test_opening_speed():
     for i in range(197):assert clocks('opening',i+1)[2]-clocks('opening',i)[2]==1
     assert clocks('opening',114)[1]==313
