@@ -1,0 +1,166 @@
+{
+  "exchange": 231,
+  "status": "GENERATED_TECHNICALLY_VERIFIED_LISTENING_BLOCKED",
+  "requests": [
+    {
+      "name": "music231-harmonica",
+      "attempt": 1,
+      "status": "SUCCEEDED",
+      "task_id": "24ee6e3c-9d94-44ba-b131-9a4d2c74621f",
+      "reserved_usd": 0.3,
+      "actual_cost_usd": null,
+      "payload": {
+        "model": "seed_audio",
+        "promptText": "Original instrumental music, no vocals or speech. An18-second cinematic North American blues-rock/electronic hybrid cue. LEAD: real breathy blues harmonica, expressive bent notes, raspy attack, soulful rising short phrases and space between phrases. Memorable melodic phrase. Underneath: muscular warm electric bass, tight punchy acoustic/electronic drums, rolling syncopated subdivisions, restrained gritty electric guitar and subtle analog synth depth.124BPM energetic steady groove from first instant, no intro.0-4s restrained harmonica hint over driving pulse;4-7s thin the middle while bass/percussion keep going, anticipating a decision. At7s a glorious harmonica phrase opens with full bass/drum weight and wider harmony, surging through18s; confident gritty freedom, not fear. Finish with continuing momentum and a short musical tail, no hard stop. Keep early midrange sparse for a private narrator. No orchestral brass/strings, choir, ethnic flute, horses, wind or sound effects.",
+        "outputFormat": "wav",
+        "sampleRate": 48000
+      },
+      "output_sha256": "9de47585dca44abb9fb27d72c82232ead184e3db65b53c6c3756b253661f3869",
+      "output_bytes": 3456044,
+      "submitted_utc": "2026-10-12T06:11:53.419287+00:00",
+      "checked_utc": "2026-10-12T06:12:41.770082+00:00"
+    },
+    {
+      "name": "music231-synth",
+      "attempt": 1,
+      "status": "SUCCEEDED",
+      "task_id": "edf39c0c-511c-4fba-9f68-d3c1c3ddc70e",
+      "reserved_usd": 0.3,
+      "actual_cost_usd": null,
+      "payload": {
+        "model": "seed_audio",
+        "promptText": "Original instrumental music, no vocals.18-second cinematic North American electronic/blues cue. LEAD: singing analog synth with clear original rising motif, expressive glides and sustained notes; rolling sequenced bass and punchy electronic/acoustic drums.124BPM groove from first instant, no intro. Warm low-end weight, gritty guitar accents, modern scale without retro novelty.0-4s restrained synth motif over driving pulse;4-7s narrow texture while rhythm keeps moving. At7s synth melody opens higher and wider over full bass/drums; THEN clearly audible breathy blues HARMONICA answers its phrases, organic call-and-response through18s. Exhilarating self-possession, grit and freedom, not fear. Early midrange sparse for narration. Finish with continuing momentum and a short musical tail, no hard stop. No orchestral fanfare, choir, ethnic flute, horses, wind or sound effects.",
+        "outputFormat": "wav",
+        "sampleRate": 48000
+      },
+      "output_sha256": "a9ce646e2feb26d420d842ec10881ed92c711c4a436ab208c002198b952a8562",
+      "output_bytes": 3456044,
+      "submitted_utc": "2026-10-12T06:12:44.256516+00:00",
+      "checked_utc": "2026-10-12T06:14:08.638735+00:00"
+    }
+  ],
+  "technical_packaging": [
+    {
+      "name": "harmonica",
+      "source": ".runtime/art-direction/series01-audio223/provider/music231-harmonica-1.wav",
+      "duration": "18.000000",
+      "source_sha256": "9de47585dca44abb9fb27d72c82232ead184e3db65b53c6c3756b253661f3869",
+      "source_loudness": {
+        "input_i": "-9.57",
+        "input_tp": "-0.00",
+        "input_lra": "4.60",
+        "input_thresh": "-19.57",
+        "output_i": "-17.58",
+        "output_tp": "-7.99",
+        "output_lra": "3.60",
+        "output_thresh": "-27.58",
+        "normalization_type": "dynamic",
+        "target_offset": "-0.42"
+      },
+      "normalized_loudness": {
+        "input_i": "-18.00",
+        "input_tp": "-8.43",
+        "input_lra": "4.50",
+        "input_thresh": "-28.00",
+        "output_i": "-17.57",
+        "output_tp": "-7.98",
+        "output_lra": "3.60",
+        "output_thresh": "-27.57",
+        "normalization_type": "dynamic",
+        "target_offset": "-0.43"
+      },
+      "mp3_loudness": {
+        "input_i": "-18.26",
+        "input_tp": "-8.65",
+        "input_lra": "4.50",
+        "input_thresh": "-28.26",
+        "output_i": "-17.58",
+        "output_tp": "-7.83",
+        "output_lra": "3.60",
+        "output_thresh": "-27.58",
+        "normalization_type": "dynamic",
+        "target_offset": "-0.42"
+      },
+      "video_packets_identical": true,
+      "outputs": {
+        ".runtime/art-direction/series01-music231/audition-harmonica.wav": "a58b375b95a44a1f2f76aced1c7edba45deb2c8b96a91583a5eacd129daf7926",
+        ".runtime/art-direction/series01-music231/audition-harmonica.mp3": "4f3eb102b6862070886b63cbd34334ae516987c92f73c694233e29f446a76473",
+        ".runtime/art-direction/series01-music231/audition-harmonica.mp4": "0d88408ca5288d4fd6ebb3c8028af325b7c322480949485e29552620a6775bb3"
+      }
+    },
+    {
+      "name": "synth",
+      "source": ".runtime/art-direction/series01-audio223/provider/music231-synth-1.wav",
+      "duration": "18.000000",
+      "source_sha256": "a9ce646e2feb26d420d842ec10881ed92c711c4a436ab208c002198b952a8562",
+      "source_loudness": {
+        "input_i": "-17.32",
+        "input_tp": "-1.84",
+        "input_lra": "1.90",
+        "input_thresh": "-27.32",
+        "output_i": "-18.25",
+        "output_tp": "-2.69",
+        "output_lra": "1.70",
+        "output_thresh": "-28.25",
+        "normalization_type": "dynamic",
+        "target_offset": "0.25"
+      },
+      "normalized_loudness": {
+        "input_i": "-18.00",
+        "input_tp": "-2.52",
+        "input_lra": "1.90",
+        "input_thresh": "-28.00",
+        "output_i": "-18.25",
+        "output_tp": "-2.69",
+        "output_lra": "1.70",
+        "output_thresh": "-28.25",
+        "normalization_type": "dynamic",
+        "target_offset": "0.25"
+      },
+      "mp3_loudness": {
+        "input_i": "-18.27",
+        "input_tp": "-2.64",
+        "input_lra": "1.90",
+        "input_thresh": "-28.27",
+        "output_i": "-18.25",
+        "output_tp": "-2.63",
+        "output_lra": "1.70",
+        "output_thresh": "-28.25",
+        "normalization_type": "dynamic",
+        "target_offset": "0.25"
+      },
+      "video_packets_identical": true,
+      "outputs": {
+        ".runtime/art-direction/series01-music231/audition-synth.wav": "8158ed4ac0a6b2c219d8789c351cbaedcf263f27129217ae94913c07791a24cc",
+        ".runtime/art-direction/series01-music231/audition-synth.mp3": "56f174f4e24fd35d3492bdd75981251e3bfe91b5015231f610cd1f31e277bfb2",
+        ".runtime/art-direction/series01-music231/audition-synth.mp4": "1becf20bbc91fcf42f502c1ac0894e8cc60a098c368df8714166e6c086f8313e"
+      }
+    }
+  ],
+  "review_attempts": [
+    {
+      "utc": "2026-10-12T06:20:16.462775+00:00",
+      "http_status": 503,
+      "model": "gemini-3.8-flash",
+      "error": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later."
+    },
+    {
+      "utc": "2026-10-12T06:22:01.218255+00:00",
+      "http_status": 503,
+      "model": "gemini-3.8-flash",
+      "error": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later."
+    }
+  ],
+  "observed_account_credit_decrease": 10,
+  "account_credit_balance_after": 674,
+  "observed_decrease_usd_equivalent": 0.1,
+  "individually_invoiced_cost_usd": null,
+  "conservative_campaign_committed_usd": 1.05,
+  "campaign_effective_ceiling_usd": 3,
+  "auditory_pass": null,
+  "director_selection": null,
+  "engineering_tokens": null,
+  "pre_capture_engineering_seconds": null,
+  "permission": "Director expressly permits relevant production media sharing excluding credentials/tokens. Only two original musicMP3s sent; no voice/video/native/reference recording sent.",
+  "next": "Listen after service recovery or Director review. No autonomous background retry. No final mix/retime/rights acceptance."
+}

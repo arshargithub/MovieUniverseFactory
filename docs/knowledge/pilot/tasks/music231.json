@@ -1,0 +1,38 @@
+{
+  "id": "music231",
+  "operation": "music_audition",
+  "entities": [
+    "music_reference"
+  ],
+  "query": "original music auditions harmonica synth groove turn budget hook",
+  "intent": "Two distinct original music-only auditions against protected209 picture, no final voice or retime approval.",
+  "phase": "execution",
+  "inputs": {
+    "docs/knowledge/pilot/reconciliation231.md": "68176d255a42241b0cac319eabed27beafe3691f506219b86903268b75cd84ff",
+    "src/movie_factory/providers/runway_audio_provider.py": "df1a2e9b9ee7e26beb7c0861b875f42473c394b48ae570db018243e772081ed0",
+    ".runtime/art-direction/series01-music231/harmonica.json": "bc261ea54444a28ab601baa0aeb06732ffc282967f01b45d290e993cbd3cc3c8",
+    ".runtime/art-direction/series01-music231/synth.json": "4fc98173bb1d5c1149787037fa921cc9dabfe85dbdd50a53941dfc18e0bdd63b",
+    ".runtime/art-direction/series01-entrance209/director-preview/pashtun-complete-entrance.mp4": "54ba077b32d1ad4e0e1cc79119a60ba9795833c157d743e243f997eab1e59563",
+    "docs/planning/SERIES_01_PASHTUN_NARRATIVE_AUDIO_PROPOSAL.md": "aa047989cf8fd91fbc451ad3baaf900d422a183650559d50d9c5a24157c0a0c9",
+    "src/movie_factory/providers/gemini_audition_review.py": "4afd3285f8151df7acbf8bbad105236f6cabf5a689c6200c4ecc99d823b76320",
+    "scripts/package_music231.py": "1dd2a63b00d829ac1aa5b8d9315c11f7a6de6530df6f3f168e4c1f126d7c2ea8",
+    ".runtime/art-direction/series01-music231/audition-harmonica.mp3": "4f3eb102b6862070886b63cbd34334ae516987c92f73c694233e29f446a76473",
+    ".runtime/art-direction/series01-music231/audition-synth.mp3": "56f174f4e24fd35d3492bdd75981251e3bfe91b5015231f610cd1f31e277bfb2"
+  },
+  "open_decisions": [],
+  "execution_authority": {
+    "source": "docs/planning/SERIES_01_PASHTUN_NARRATIVE_AUDIO_PROPOSAL.md",
+    "scope": "Director231 approves two230 music auditions under existing AUDIO220 US$3 effective cap; not final acceptance or new subscription.Director follow-up explicitly permits content/audio review uploads without credentials/tokens; this dispatch only two original audition MP3s to Gemini free tier."
+  },
+  "strategy": {
+    "reference": "docs/knowledge/pilot/reconciliation231.md",
+    "outcome": "Playable distinct original matched-level A/B auditions, evidence and recommendation."
+  },
+  "hypotheses_to_test": [
+    "Lead hierarchies distinguish A from B.",
+    "Immediate hook and turn surge must be audible, not merely prompted."
+  ],
+  "execution_prerequisites": [
+    "Fresh source packet, reviewed existing budget/account, validated payloads."
+  ]
+}
