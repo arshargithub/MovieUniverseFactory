@@ -1,0 +1,152 @@
+{
+  "packet_digest": "07ee9c3f26ab491c06d0c2bafe247264498c3d4540e07981c52fd706b6a9df49",
+  "scope": "Technical connection succeeded; audio-review qualification blocked",
+  "checks": [
+    {
+      "id": "authority",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "One authorized same-reference free-tier test; no billing/private upload/generation changes.",
+      "observation": "One authorized same-reference free-tier test; no billing/private upload/generation changes.",
+      "evidence": [
+        {
+          "path": ".runtime/art-direction/series01-music-reference229-38/result.json",
+          "sha256": "e4c4e3e62631dd068de7a7b472ebca20bbcb709ef6572ea6b71ceab4eb521444"
+        }
+      ]
+    },
+    {
+      "id": "strategy",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Migrated exactly provider-identified restriction; confirmed200 then checked reference metadata before accepting musical claims.",
+      "observation": "Migrated exactly provider-identified restriction; confirmed200 then checked reference metadata before accepting musical claims.",
+      "evidence": [
+        {
+          "path": ".runtime/art-direction/series01-music-reference229-38/result.json",
+          "sha256": "e4c4e3e62631dd068de7a7b472ebca20bbcb709ef6572ea6b71ceab4eb521444"
+        }
+      ]
+    },
+    {
+      "id": "visual_gate",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "No direct backend hearing; contradictory instrument/transition account is not a perceptual pass.",
+      "observation": "No direct backend hearing; contradictory instrument/transition account is not a perceptual pass.",
+      "evidence": [
+        {
+          "path": ".runtime/art-direction/series01-music-reference229-38/result.json",
+          "sha256": "e4c4e3e62631dd068de7a7b472ebca20bbcb709ef6572ea6b71ceab4eb521444"
+        }
+      ]
+    },
+    {
+      "id": "anticipation",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Guarded against plausible-but-wrong analysis. Correct title confirmed; harmonica cue not recovered.",
+      "observation": "Guarded against plausible-but-wrong analysis. Correct title confirmed; harmonica cue not recovered.",
+      "evidence": [
+        {
+          "path": ".runtime/art-direction/series01-music-reference229-38/result.json",
+          "sha256": "e4c4e3e62631dd068de7a7b472ebca20bbcb709ef6572ea6b71ceab4eb521444"
+        }
+      ]
+    },
+    {
+      "id": "stopping",
+      "kind": "review",
+      "status": "PASS",
+      "action_taken": "Connection goal achieved; assessor still unqualified. Do not produce music from unverified analysis.",
+      "observation": "Connection goal achieved; assessor still unqualified. Do not produce music from unverified analysis.",
+      "evidence": [
+        {
+          "path": ".runtime/art-direction/series01-music-reference229-38/result.json",
+          "sha256": "e4c4e3e62631dd068de7a7b472ebca20bbcb709ef6572ea6b71ceab4eb521444"
+        }
+      ]
+    },
+    {
+      "id": "versioning",
+      "kind": "technical",
+      "status": "PASS",
+      "action_taken": "Source, authority, request, result and prior failure preserved; no production assets changed.",
+      "observation": "Source, authority, request, result and prior failure preserved; no production assets changed.",
+      "evidence": [
+        {
+          "path": ".runtime/art-direction/series01-music-reference229-38/result.json",
+          "sha256": "e4c4e3e62631dd068de7a7b472ebca20bbcb709ef6572ea6b71ceab4eb521444"
+        }
+      ]
+    },
+    {
+      "id": "economics",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "19,817 provider-reported total tokens including18,273input403output1141thinking. Free tier reported; actualcostnull. No automatic retry.",
+      "observation": "19,817 provider-reported total tokens including18,273input403output1141thinking. Free tier reported; actualcostnull. No automatic retry.",
+      "evidence": [
+        {
+          "path": ".runtime/art-direction/series01-music-reference229-38/result.json",
+          "sha256": "e4c4e3e62631dd068de7a7b472ebca20bbcb709ef6572ea6b71ceab4eb521444"
+        }
+      ]
+    },
+    {
+      "id": "sound",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "No musical quality/brief acceptance. Existing rejected score remains rejected.",
+      "observation": "No musical quality/brief acceptance. Existing rejected score remains rejected.",
+      "evidence": [
+        {
+          "path": ".runtime/art-direction/series01-music-reference229-38/result.json",
+          "sha256": "e4c4e3e62631dd068de7a7b472ebca20bbcb709ef6572ea6b71ceab4eb521444"
+        }
+      ]
+    },
+    {
+      "id": "rights",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Public URL and neutral prompt only; no reproduction/publication or paid fallback. Reference metadata confirmed.",
+      "observation": "Public URL and neutral prompt only; no reproduction/publication or paid fallback. Reference metadata confirmed.",
+      "evidence": [
+        {
+          "path": ".runtime/art-direction/series01-music-reference229-38/result.json",
+          "sha256": "e4c4e3e62631dd068de7a7b472ebca20bbcb709ef6572ea6b71ceab4eb521444"
+        }
+      ]
+    },
+    {
+      "id": "music_reference",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Director says harmonica surge1:22; model says thinning1:22/synth lift1:29. Accuracy unresolved; no independent control.",
+      "observation": "Director says harmonica surge1:22; model says thinning1:22/synth lift1:29. Accuracy unresolved; no independent control.",
+      "evidence": [
+        {
+          "path": ".runtime/art-direction/series01-music-reference229-38/result.json",
+          "sha256": "e4c4e3e62631dd068de7a7b472ebca20bbcb709ef6572ea6b71ceab4eb521444"
+        }
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "prediction": "Provider-recommended model resolves new-user access rejection.",
+      "observation": "HTTP200 and complete output.",
+      "response": "Retain3.8 route with safe error handling.",
+      "result": "resolved"
+    },
+    {
+      "prediction": "Plausible analysis might not match actual audible events.",
+      "observation": "Correct video metadata, but missing harmonica and differing transition direction/timing.",
+      "response": "Withhold musical qualification; further blind control needed.",
+      "result": "NOT_RUN"
+    }
+  ],
+  "adjacent_regressions": "56 offline tests pass. No picture, timing, voice or score edits. Properly distinguish technical success from listening trust.",
+  "stopping_reason": "Approved model migration/same-reference test complete; perception validation remains unresolved and no score-generation handoff permitted."
+}

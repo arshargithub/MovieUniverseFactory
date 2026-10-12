@@ -1,0 +1,46 @@
+{
+  "scope": "Model migration and one public-reference test; not production-audio qualification",
+  "outcome": "HTTP200 with gemini-3.8-flash; prior new-user404 resolved.",
+  "changes": [
+    "Updated model from2.5 to3.8; removed obsolete thinkingBudget0 and temperature override; default thinking with3000output-token cap.",
+    "Retain credential-redacted error.message; no request-header logging."
+  ],
+  "tests": "56 offline tests passed",
+  "source": {
+    "url": "https://www.youtube.com/watch?v=O9QgHF1gtC8",
+    "oembed_http": 200,
+    "title": "Cosmic Freight Train",
+    "author": "promptgenix - Topic"
+  },
+  "usage": {
+    "promptTokenCount": 18273,
+    "candidatesTokenCount": 403,
+    "totalTokenCount": 19817,
+    "promptTokensDetails": [
+      {
+        "modality": "VIDEO",
+        "tokenCount": 18155
+      },
+      {
+        "modality": "TEXT",
+        "tokenCount": 118
+      }
+    ],
+    "thoughtsTokenCount": 1141,
+    "serviceTier": "standard"
+  },
+  "actual_cost_usd": null,
+  "cost_basis": "Director free tier; published standard free input/output; billing not independently verified. No top-up/billing change.",
+  "model_observations": "**Timestamped Breakdown (01:10 – 01:45)**\n\n* **01:10 – 01:21 | Vocal Chorus (High Energy, Dense Texture):**  \n  The passage opens in a high-energy chorus section driven by an upbeat, four-on-the-floor drum groove and a prominent, rhythmic bassline (likely electric bass). The harmonic support consists of syncopated rhythm comping (likely guitars and synthesizers). A gritty lead male vocal dominates, accompanied by full, layered vocal harmonies. \n\n* **01:21 – 01:29 | Breakdown / Rhythm Groove (Moderate Energy, Thinned Texture):**  \n  Following the conclusion of the vocal phrase, the arrangement abruptly strips down. The dense wall of sound and lead vocals drop out, shifting the focus to a sparser, funk-driven interplay between bass and crisp percussion/drums. Tension builds through syncopated rhythmic accents and rising background textures.\n\n* **01:29 – 01:45 | Instrumental Dance Groove (Peak Energy, Dynamic Texture):**  \n  Around 01:29–01:30, after a percussive cue, the track bursts into an intense instrumental dance section. The four-on-the-floor kick and driving hi-hats return in full force. The lead role shifts from continuous sung lyrics to melodic synthesizer figures, active bass riffs, and periodic vocal shouts/chants (such as \"Hey!\"). The texture is dense, punchy, and highly energetic.\n\n**Most Prominent Transition**\n* **Approximate Onset:** **01:21 – 01:22**  \n* The most prominent structural shift occurs as the vocal chorus ends and the dense instrumentation strips away into an exposed, funk-oriented rhythm breakdown before surging into the instrumental dance section at 01:29.",
+  "review": {
+    "technical": "PASS: successful invocation and complete STOP response. Correct public reference metadata confirmed.",
+    "music": "NOT_RUN/unqualified. Model describes1:21-1:22 thinning/breakdown and1:29 synth-led surge; no harmonica identified. Director describes harmonica surge around1:22. Coarse event timestamp overlap is insufficient validation; do not override Director evidence.",
+    "limits": "VIDEO token modality in usage does not prove audio was absent or faithfully analyzed. Backend has not listened. No independent control yet.",
+    "next": "One blind second-reference control before trusting assessor; investigate audio ingestion versus musical misidentification if discrepancy repeats. Do not generate score from this unverified interpretation."
+  },
+  "evidence": {
+    "path": ".runtime/art-direction/series01-music-reference229-38/result.json",
+    "sha256": "e4c4e3e62631dd068de7a7b472ebca20bbcb709ef6572ea6b71ceab4eb521444"
+  },
+  "preserved": "No production media, music choices, voice selection or release gates changed. Old404 evidence retained. One request, no automatic retry."
+}

@@ -1,0 +1,34 @@
+{
+  "id": "music229-38",
+  "operation": "audio_analysis",
+  "entities": [
+    "music_reference"
+  ],
+  "query": "reference music audio understanding free Gemini model migration",
+  "intent": "Retry original public reference using provider-recommended3.8 Flash; recover timestamped observations without implying creative approval.",
+  "phase": "execution",
+  "inputs": {
+    "src/movie_factory/providers/gemini_reference_provider.py": "73cdd2e19fd021d982fa44302b0eb4285cb08594e34a43839e51bf5ada76b7d4",
+    "docs/knowledge/pilot/music229-diagnosis-result.json": "8644163ee2b28e79f322ce45825c2e7868427f8efbea283180329b59ee19a8a0",
+    "docs/knowledge/pilot/reconciliation229.md": "02ad6dfdfb27ee8ea537a5325d807f718f944e4d91f1ae5377707ae23eae95ec"
+  },
+  "open_decisions": [],
+  "execution_authority": {
+    "source": "docs/knowledge/pilot/music229-diagnosis-result.json",
+    "scope": "Director go ahead approves recommended model/config update and same-reference free-tier test after diagnosed2.5 access rejection. One request, no automatic retry/private upload/billing change."
+  },
+  "strategy": {
+    "outcome": "Successful response or accurately explained failure; model observations distinct from direct listening.",
+    "approach": "Same URL/prompt;3.8 model with documented default thinking, capped3000output tokens. Keep reviewed prior source/impact reconciliation; no production choices.",
+    "resources": "User-reported free tier, published3.8 free input/output. Actual billing unknown; exclusive persistent claim before dispatch, no fallback.",
+    "exit": "Review actual response, withhold cue in request; music qualification requires further control. Stop quota/access errors. Protect old evidence."
+  },
+  "hypotheses_to_test": [
+    "New-user model restriction resolves with recommended model.",
+    "Direct YouTube audio may still be inaccessible or descriptions unreliable."
+  ],
+  "execution_prerequisites": [
+    "Mock tests pass including error redaction and removed obsolete thinkingBudget0.",
+    "Fresh packet checked; rights, uncertainty and music direction retained."
+  ]
+}
