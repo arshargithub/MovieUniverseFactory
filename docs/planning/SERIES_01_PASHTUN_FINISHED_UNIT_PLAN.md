@@ -2,6 +2,10 @@
 
 Established exchange208; execution authorized at exchange209 · 2026-10-11. This is the work strategy, not an acceptance report.
 
+## Exchange226 — music direction first
+
+Director rejects the generated music as a creative fit and requires deliberate musical identity before more generation. Preserve the sample as failed audition history; do not refine/mix it by default. Next is a concise musical brief and listening-reference discussion, followed by one selected direction and at most one meaningful contrasting in-context audition under existing authority. See current narrative/audio proposal. Treat soundtrack as a major storytelling and series-recognition component, not incidental finishing.225 timing remains a proposal; do not lock picture/audio around an unchosen score. No generation, spend or asset changes this exchange.
+
 ## Exchange225 — revised duration allocation, proposed
 
 Director wants a gentler continuous side-to-face camera approach and readable composed baseline before recognition, without losing fast-paced energy. Current recommendation replaces224's extra aerial coverage with +0.75s camera approach, +1.5s facial setup/recognition and +0.75s OTS geography, preserving original-speed turn and ending for21s total. See current narrative proposal for timing, native-motion dependencies and internal normal-speed performance/hook review. No execution/approval claim: this turn weighs options and proposes the final plan. Corrected Kirk fit remains an early proof, not a guaranteed outcome of adding exactly3s. Next substantial execution requires source reconciliation/fresh packet and motion brief, then cheap integrated chronology before beauty rendering.
