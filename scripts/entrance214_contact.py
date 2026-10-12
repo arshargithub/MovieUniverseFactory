@@ -73,7 +73,7 @@ def leather_profile(scene):
     ob=bpy.data.objects.new(name,data);scene.collection.objects.link(ob);ob.hide_render=True;ob.hide_viewport=True
     return ob
 
-def reins(scene):
+def reins(scene,shape_fn=rein_shape):
     import bpy
     from mathutils import Vector
     rig=bpy.data.objects['MF_body156_fit_rig'];exits={};channels={};old={}
@@ -83,12 +83,12 @@ def reins(scene):
         channels[side]=rein_channel(rig,side);exits[side]=np.array(channels[side][-1])
     for side in ('L','R'):
         ob=bpy.data.objects['MF185_rein_'+side];ob.data=ob.data.copy();ob.data.animation_data_clear()
-        points=rein_shape(old[side],channels[side],rig.matrix_world,side)
+        points=shape_fn(old[side],channels[side],rig.matrix_world,side)
         ob.data.splines.clear();sp=ob.data.splines.new('POLY');sp.points.add(len(points)-1)
         inv=ob.matrix_world.inverted()
         for p,co in zip(sp.points,points):p.co=(*(inv@Vector(co)),1)
 
-def build(scene,out,kind,pose_fn=thumb,changed_digits=(4,),additions=None):
+def build(scene,out,kind,pose_fn=thumb,changed_digits=(4,),additions=None,key_transform=False,shape_fn=rein_shape):
     import bpy
     from mathutils import Vector
     from wardrobe_motion178_controls import render_geometry_paused
@@ -129,10 +129,12 @@ def build(scene,out,kind,pose_fn=thumb,changed_digits=(4,),additions=None):
             for n in changed:
                 b=rig.pose.bones[n];q=b.matrix_basis.to_quaternion();b.rotation_mode='QUATERNION';b.rotation_quaternion=q
                 b.keyframe_insert('rotation_quaternion',frame=f)
+                if key_transform:
+                    b.keyframe_insert('location',frame=f);b.keyframe_insert('scale',frame=f)
             bpy.context.view_layer.update();row=[]
             for j,side in enumerate(('L','R')):
                 ob=bpy.data.objects['MF185_rein_'+side]
-                points=rein_shape(old[i,j],rein_channel(rig,side),rig.matrix_world,side);row.append(points)
+                points=shape_fn(old[i,j],rein_channel(rig,side),rig.matrix_world,side);row.append(points)
                 inv=ob.matrix_world.inverted()
                 if len(points)!=len(ob.data.splines[0].points):raise ValueError('Rein topology')
                 for p,co in zip(ob.data.splines[0].points,points):p.co=(*(inv@Vector(co)),1);p.keyframe_insert('co',frame=f)
@@ -156,7 +158,8 @@ def build(scene,out,kind,pose_fn=thumb,changed_digits=(4,),additions=None):
     scene.frame_set(360 if kind=='opening' else 427)
     save(scene,out,dict(source_sha256=SOURCES[kind][1],nonthumb_world_max_error=error,camera_max_error=camera_error,
                        protected_geometry_sha256=final_geometry,source_geometry_sha256=before['geometry'],contact_sha256=base.digest(out/'contact.npz'),
-                       scope='Declared finger rotations and split reins; optional fitted glove derivative. All other rig motion and original mesh/shape geometry retained',
+                       scope='Declared finger transforms and split reins; optional fitted glove derivative. All other rig motion and original mesh/shape geometry retained',
+                       keyed_finger_location_scale=key_transform,
                        limits='Authored scoped contact, not general equestrian physics; visual review pending'))
 
 def validate(job):
