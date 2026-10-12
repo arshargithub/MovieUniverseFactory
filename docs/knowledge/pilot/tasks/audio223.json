@@ -1,0 +1,32 @@
+{
+  "id": "audio223-preview",
+  "operation": "audio",
+  "entities": [
+    "officer"
+  ],
+  "query": "narration quote private officer caption music turn hoof budget rights",
+  "intent": "Produce two bounded integrated audio auditions of approved222 storyboard; existing209 video timing carrier explicitly not218 hand/final render. No final voice or release acceptance.",
+  "phase": "execution",
+  "inputs": {
+    "docs/planning/SERIES_01_PASHTUN_FINISHED_UNIT_PLAN.md": "77b808ca8fab659f67b4ca733ce351152e03130ffa1016cafb725c6cfed48227",
+    "docs/planning/SERIES_01_PASHTUN_NARRATIVE_AUDIO_PROPOSAL.md": "52abaa282d228b56803b74c90252878e18a9b8abb5abddb7bb4f0e4a8f1c1de6",
+    "src/movie_factory/providers/runway_audio_provider.py": "df1a2e9b9ee7e26beb7c0861b875f42473c394b48ae570db018243e772081ed0",
+    ".runtime/art-direction/series01-entrance209/director-preview/pashtun-complete-entrance.mp4": "54ba077b32d1ad4e0e1cc79119a60ba9795833c157d743e243f997eab1e59563"
+  },
+  "open_decisions": [],
+  "execution_authority": {
+    "source": "docs/planning/SERIES_01_PASHTUN_FINISHED_UNIT_PLAN.md",
+    "scope": "Director223 approves222 storyboard and two performed voice audition preview under USD3 initial and conditional USD5 total. Final voice remains Director decision after audition."
+  },
+  "hypotheses_to_test": [
+    "Attribution can fit naturally before turn without rushing.",
+    "Book text may mask face or route unless faded before geography.",
+    "Music surge and physical effects may mask dialogue or lose synchronization.",
+    "Preset voice may sound like announcer instead of private officer."
+  ],
+  "execution_prerequisites": [
+    "Mock-tested bounded adapter and ledger; no auto POST retries.",
+    "No publishing or final mix qualification.",
+    "Actual auditory review required; unavailable hearing remains NOT_RUN not inferred from meters."
+  ]
+}

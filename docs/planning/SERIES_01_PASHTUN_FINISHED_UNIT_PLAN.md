@@ -2,6 +2,18 @@
 
 Established exchange208; execution authorized at exchange209 · 2026-10-11. This is the work strategy, not an acceptance report.
 
+## Exchange223 — approved storyboard and bounded sound preview
+
+Director approves222's18-second storyboard: private officer narration,19 words including spoken/displayed Sir Winston Churchill, no closing line, music surging with the turn. This supersedes215's personal-trust ending and219's missing spending authority. Exact performed voice remains a Director audition choice, not a prerequisite for authorized audition production. Audio preview budget is US$3 initially; total may rise to US$5 only after exhaustion with evidence-backed confidence in a specific completion path. No subscription/top-up/publication.
+
+Strategy: use the existing209 timing footage for a clearly labeled SOUND AUDITION, with its older grip disclosed; do not claim218's hand is in209 video. Preserve approved native218 for subsequent final rendering after voice/sound selection. First prove natural narration within0–10s using two contrasting British presets, then licensed/provider-generated separate sound/score stems, non-obscuring aged-book typography, corrected captions and complete18-second mixes. No paid rendering or image generation. A text edit/mix is cheaper and more diagnostic now than another full native render. Keep all scripts, source receipts, stems and cue timings reproducible.
+
+Risks/proof: attribution must finish before turn; the quote must clear face/geography; the officer must sound private and respectful, not triumphalist or a trailer announcer. Music thins for danger and surges at the actual turn. Hoof/gravel sound must convey speed without drowning voice. Validate actual audio as well as timing/loudness: if no listening-capable tool is available, retain an explicit NOT_RUN and disclose the genuine review limitation rather than claim a perceptual PASS. Rights at preview scope are distinct from final publication clearance.
+
+Provider route: existing developer API key via trusted provider loader only; API credits are separate from Free workspace credits. Initial conservative reservations, immutable per-request claims and no automatic POST retry. No SDK/install needed. Speech/effects are bounded by published rates; SeedAudio instrumental capability is a test, reserve120s worst case rather than treating prompt duration as a hard billing limit. Record unknown charges as reserved until verified. Reassess after initial voice/music proof, not after exhausting the budget blindly. End goal is two meaningful in-context voice choices with one recommended mix, not many unrelated provider samples. Final-resolution/device/rights/revision proof follows creative selection; no release-gate PASS now.
+
+Capture note: preflight activity crossed uncaptured Director waits. Exact cumulative active time is UNKNOWN; do not report that bridged interval as net working time.223 captures prospectively. Engineering tokens remain unknown.
+
 ## Exchange215 — narration A selected; contact correction continues
 
 Current219 supersedes the218 visual admission: Director identifies distal knuckle/pivot placement and delegates carry-forward judgment. Agent retains218 bare grip as a known shot-specific compromise for the integrated audio preview, not anatomical qualification or final acceptance. Reopen at distracting normal-speed final-resolution review, closer coverage or new use. No further hand repair now; next is eligible voice/audio route and bounded audition budget, then complete sound/text preview. No new paid-call authority follows.

@@ -1,5 +1,7 @@
 # Pashtun entrance narration and sound proposal
 
+**223 approval:** Director says “ok good go ahead” to222's corrected storyboard. Execute that script/quote/name, no closing narration, turn music surge and bounded audition plan. Two performed voices remain candidates for review; this approval authorizes producing them, not declaring either final. The US$3 initial / conditional US$5 total budget remains binding. Earlier narrative-review hold is lifted for this exact scope. Follow the current223 strategy in the finished-unit plan.
+
 ## Corrected sequence storyboard — exchange222, 2026-10-11
 
 Director requires the full spoken/displayed attribution **Sir Winston Churchill**, superseding221's surname-only treatment. The following corrected18-second board is proposed editorial timing, not measured footage boundaries or a completed read test. Keep actual approved choreography/cameras; reconcile narration timing against the edit before generation. Opening is19 spoken words, with pauses.
