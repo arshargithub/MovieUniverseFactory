@@ -89,6 +89,18 @@ def test_query_paraphrase_cannot_drop_mandatory_rules(root):
     assert pk.task_packet(root, first)["obligations"] == pk.task_packet(root, second)["obligations"]
 
 
+def test_248_director_style_and_quality_survive_task_routing(root):
+    for operation,entities in [('contact',['hand']),('camera',['shot']),('audio',['officer']),('modeling',['pashtun'])]:
+        packet=pk.task_packet(root,task(root,operation,entities))
+        actions={r['id']:r['action'] for r in packet['obligations']}
+        assert 'larger-than-life' in actions['anticipation']
+        assert 'not lowering' in actions['stopping']
+    # A new lead is not silently covered by a Pashtun-only entity graph.
+    for character in ('sikh','gurkha'):
+        with pytest.raises(pk.KnowledgeError,match='UNRESOLVED'):
+            pk.task_packet(root,task(root,'modeling',[character]))
+
+
 def test_fts_handles_punctuation_and_does_not_promote(root):
     catalog, _ = pk.load(root)
     conn = pk.build_index(root, catalog)

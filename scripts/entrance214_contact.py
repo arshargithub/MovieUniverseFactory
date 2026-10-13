@@ -88,7 +88,7 @@ def reins(scene,shape_fn=rein_shape):
         inv=ob.matrix_world.inverted()
         for p,co in zip(sp.points,points):p.co=(*(inv@Vector(co)),1)
 
-def build(scene,out,kind,pose_fn=thumb,changed_digits=(4,),additions=None,key_transform=False,shape_fn=rein_shape):
+def build(scene,out,kind,pose_fn=thumb,changed_digits=(4,),additions=None,key_transform=False,shape_fn=rein_shape,frames_override=None,source_sha256=None):
     import bpy
     from mathutils import Vector
     from wardrobe_motion178_controls import render_geometry_paused
@@ -99,7 +99,8 @@ def build(scene,out,kind,pose_fn=thumb,changed_digits=(4,),additions=None,key_tr
     rig=bpy.data.objects['MF_body156_fit_rig'];original_frame=scene.frame_current;before=fingerprint(scene)
     changed=[f'MF_fit_finger_{d}_{j}.{s}' for s in ('L','R') for d in changed_digits for j in range(3)]
     preserved=[b.name for b in rig.pose.bones if b.name not in changed]
-    frames=list(range(217,361)) if kind=='opening' else list(range(361,649))
+    frames=list(frames_override) if frames_override is not None else (list(range(217,361)) if kind=='opening' else list(range(361,649)))
+    if not frames or frames!=list(range(frames[0],frames[-1]+1)):raise ValueError('Contiguous frame interval required')
     old=[];world=[];poses=[];cameras=[];lenses=[]
     with render_geometry_paused():
         for side in ('L','R'):bpy.data.objects['MF185_rein_'+side].hide_viewport=False
@@ -155,8 +156,8 @@ def build(scene,out,kind,pose_fn=thumb,changed_digits=(4,),additions=None,key_tr
                         reins=reins_after,thumb_names=changed,thumb_bases=thumb_bases,cameras=cameras,lenses=lenses)
     if additions:additions(scene)
     final_geometry=fingerprint(scene)['geometry']
-    scene.frame_set(360 if kind=='opening' else 427)
-    save(scene,out,dict(source_sha256=SOURCES[kind][1],nonthumb_world_max_error=error,camera_max_error=camera_error,
+    scene.frame_set((360 if kind=='opening' else 427) if frames_override is None else frames[len(frames)//2])
+    save(scene,out,dict(source_sha256=source_sha256 or SOURCES[kind][1],nonthumb_world_max_error=error,camera_max_error=camera_error,
                        protected_geometry_sha256=final_geometry,source_geometry_sha256=before['geometry'],contact_sha256=base.digest(out/'contact.npz'),
                        scope='Declared finger transforms and split reins; optional fitted glove derivative. All other rig motion and original mesh/shape geometry retained',
                        keyed_finger_location_scale=key_transform,
