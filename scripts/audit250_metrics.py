@@ -208,6 +208,8 @@ def publish():
     frame=json.loads((OUT/'frame-costs.json').read_text())
     token_usage=json.loads((OUT/'token-usage.json').read_text())
     rows=classified['cases'];p=raw['profiles']['shared_visual_development']
+    avoidable={r['prior_final_id'] for r in rows if r['avoidable_final_id']}
+    defect_followed={r['prior_final_id'] for r in rows if 'defect_or_missed_requirement' in r['labels'] and r['fresh_final_since_prior_input']}
     stages=[]
     for lo,hi,name,lesson in STAGES:
         members=rows[lo-1:hi]
@@ -226,6 +228,7 @@ def publish():
         'profiles':{name:{k:v for k,v in value.items() if k!='task_intervals'} for name,value in raw['profiles'].items()},
         'classification':{k:classified[k] for k in ('method','counts','human_inputs','distinct_avoidable_final_ids')},
         'handover_confidence':dict(collections.Counter(r['confidence'] for r in rows if r['avoidable_final_id'])),
+        'handover_burden':{'fresh_final_messages_followed_by_defect_related_feedback':len(defect_followed),'overlap_with_avoidable_process_stops':len(avoidable&defect_followed),'union_not_all_wholly_unnecessary':len(avoidable|defect_followed),'qualification':'Defect-bearing review can also contain necessary creative decisions or planned listening; do not label the union wholly wasteful.'},
         'rates':{'defect_related_inputs_per_human_input':classified['counts']['defect_or_missed_requirement']/classified['human_inputs'],'repeat_related_inputs_per_human_input':classified['counts']['repeated_correction']/classified['human_inputs'],'avoidable_stops_per_assistant_final':classified['distinct_avoidable_final_ids']/p['assistant_final_messages']},
         'partial_frame_timings':{k:v for k,v in frame.items() if k!='records'},
         'recorded_codex_usage':{k:v for k,v in token_usage.items() if k!='records'},
