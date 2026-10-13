@@ -1,0 +1,33 @@
+{
+  "id": "finish243-audio",
+  "operation": "audio",
+  "entities": [
+    "officer",
+    "music_reference"
+  ],
+  "query": "music co-lead shallow phrase duck narration pause sound",
+  "intent": "Local sound-only repair of rejected deep duck, post-impeccable pause; same picture and source music.",
+  "phase": "execution",
+  "inputs": {
+    "docs/planning/SERIES_01_PASHTUN_FINISHED_UNIT_PLAN.md": "f9c6d0221f9e52676abfd311dfab6451c87296f3aca6b04a7cd9048fc27eabe1",
+    "docs/planning/SERIES_01_PASHTUN_NARRATIVE_AUDIO_PROPOSAL.md": "ff9fba95f7cead961c80fa569870106b8d641ac1ca9731e34fa91d2a0615d8bf",
+    ".runtime/art-direction/series01-finish237/edit01/manifest.json": "1dc358913519bb2cfc570ea347eef11fa0af508a9cd003d044a718ca7642764a",
+    ".runtime/art-direction/series01-finish237/audio02/voice.wav": "72eb14c9302aae4b92d3241dd0b5820588cbd33e8c791f47d7f804dcbeedaeab",
+    ".runtime/art-direction/series01-finish237/hoof-contacts.json": "d205bfd302a1bef6b6c59abe4067060dd1c6d1e7ce0850ff0085d969773a33f1",
+    "artifacts/imports/suno-theme-01/original/Harmonic Release.wav": "42234a4a8e44c70daf384d233a29b4e52bfb707f5ff22aa1b18efd5d97b1080b",
+    ".runtime/art-direction/series01-finish242/edit03/pashtun-music-first-audition.mp4": "ec53fd5dd2c4b8350e50b0e0bc6084a2de308aedbba2742d75a8b7ecf9ad7c79"
+  },
+  "open_decisions": [],
+  "execution_authority": {
+    "source": "docs/planning/SERIES_01_PASHTUN_FINISHED_UNIT_PLAN.md",
+    "scope": "Director243 requests correction; inherited local-only audition authority. No new paid calls."
+  },
+  "hypotheses_to_test": [
+    "Music remains present under voice and returns within1.39s pause.",
+    "No speech clipping or speed change; all narration ends before turn; encoded picture unchanged."
+  ],
+  "execution_prerequisites": [
+    "Read243 Director rejection and strategy; preserve242 failed mix and protected sources.",
+    "Bind source audio and unchanged encoded picture; no invented listening acceptance."
+  ]
+}

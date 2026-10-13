@@ -2,6 +2,12 @@
 
 Established exchange208; execution authorized at exchange209 · 2026-10-11. This is the work strategy, not an acceptance report.
 
+## Exchange243 — repair music/voice balance and breathing space
+
+Director rejects242's deep sustained music duck and asks for1–2s after “impeccable,” with music rising before the quotation. Apply the existing242 strategy as a bounded sound-only correction. Keep the exact22.5s encoded picture, music source/rate/turn anchor, physical effects and accepted Kirk performance; remux new sound without re-rendering visuals. Move initial speech to1.10s (still within the agreed1–2s opening), insert1.12s of silence in the existing post-impeccable gap, yielding approximately1.39s between phrases and speech ending11.496s before11.75s turn. No spoken sample is sped up or regenerated; picture/ending unchanged.
+
+Replace blanket9–9.5dB music suppression with approximately3dB shallow phrase-shaped dips, full music through the new pause and a smooth return before the turn. Preserve sustained musical identity rather than treating it as disposable background. Earliest proof: one remuxed combined audition, sample-preservation/silent-splice controls, explicit automation curve, measured nonclipping export and byte-identical encoded video stream. Technical checks cannot establish audible coherence; Director listening calibrates this hypothesis. No new paid calls, native work, music generation, upload or expanded scope. Stop at this planned listening result; if it fails, reassess performance/arrangement rather than repeatedly pushing levels. Known proxy-motion/rights/hand-compromise limits remain.
+
 ## Exchange242 — authorized integrated music-first audition
 
 Director approves241's next step. Deliver one local integrated audition, not a finalized narrator or production master: actual selected Harmonic Release, unchanged accepted-pronunciation Kirk speech, weightier physical sound and an original manuscript treatment. Protect all native assets, the spectacular turn and the duration of the post-turn ending. No new paid calls, music generation, installation, upload or publication. Known219 grip compromise remains scoped to this preview.

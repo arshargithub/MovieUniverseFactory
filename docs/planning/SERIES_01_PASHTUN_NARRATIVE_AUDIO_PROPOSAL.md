@@ -1,5 +1,9 @@
 # Pashtun entrance narration and sound proposal
 
+## Exchange243 — music must remain a co-lead
+
+Director reports242 feels as though music stops when the officer begins; rejects that balance and requests a1–2s pause after “impeccable” with a musical rise then renewed shallow dip. Code corroborates the suspected mechanism: gain falls from0.62 to0.22 for almost the entire narration, plus broad midrange reduction. This is source-level evidence, not direct agent hearing. Adopt phrase-shaped shallow space for speech, not a near-muted continuous bed. Preserve the chosen theme and voice/pronunciation; no new generation. Follow the sound-only243 strategy in the finished-unit plan.242's technical successes remain evidence, not sonic acceptance. Carry-forward lesson: mix hierarchy must reflect music's explicit dramatic importance; a generic dialogue-first duck can defeat the creative brief even with intelligible speech and correct meters.
+
 ## Exchange242 — integrated audition authorized
 
 Director says go ahead to241's music-first approach. Execute the [242 strategy](SERIES_01_PASHTUN_FINISHED_UNIT_PLAN.md#exchange242--authorized-integrated-music-first-audition): one reversible local audition combining selected original music, existing Kirk take, stronger hoof weight and original manuscript graphics.22.5s is a provisional editorial proxy, not locked native timing. No final performance/mix acceptance, replacement voice call, additional music generation or publication. Preserve240's accepted pronunciation and the unchanged post-turn ending. Actual listening remains a disclosed limitation; do not use signal measurements or genre text as evidence of emotional fit.
