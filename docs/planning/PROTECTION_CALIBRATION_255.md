@@ -61,4 +61,12 @@ Freeze preparation was deliberately stopped and resumed after measuring an ineff
 
 The next freeze correctly blocked on additional matches inside that same SVG: all16 were then inspected as XML mask IDs, labels or URIs. The disposition is now limited to its exact SHA256, path and sole finding category. A separate synthetic test exposed a GitHub fine-grained-token prefilter omission; corrected and regression-tested before any upload. The final freeze must rescan every object with the corrected scanner; previous preparations do not count as a successful screening receipt.
 
-No new paid provider calls, production edits, public release or deletions. The protected clean clip remains SHA256 `1004ed9f2e06d2eafb008c925eb9d266e8a13b8603086020e28d19e3b606722b`. Remote snapshot, Git push and remote restoration remain pending until their verification receipts exist. New sequence production does not start merely because calibration tests pass.
+No new paid provider calls, production edits, public release or deletions. The protected clean clip remains SHA256 `1004ed9f2e06d2eafb008c925eb9d266e8a13b8603086020e28d19e3b606722b`. New sequence production does not start merely because calibration tests pass.
+
+### Approved remote recovery continuation
+
+The Director's subsequent “Go ahead” approves the presented 304-commit range and private S3 transfer, including a bounded final delta. GitHub main was verified at the original base, then pushed and independently read back at `adff3bd1af362952c12f132ffe4dc820a004cadb`. All 1,438 outgoing Git blobs passed the credential-pattern screen. This protects committed source/history, not the untracked native media.
+
+The completed immutable local snapshot contains 39,454 paths, 30,605 unique objects and 136,483,569,017 unique bytes. Its expanded full-byte screening completed; the exact-hash SVG false positive remains documented. The manifest is `results/backup/protect255/frozen-manifest.json`. Later ledger and recovery evidence belong in the bounded final delta.
+
+AWS SSO expired before transfer. The sign-in flow was opened; no S3 upload or remote media-restore success is claimed. The full protection gate remains NOT_RUN until authenticated transfer, remote inventory/checksums and the native dependency restore succeed. This is an authentication blocker, not a request to reapprove the payload.
