@@ -94,6 +94,8 @@ def test_248_director_style_and_quality_survive_task_routing(root):
         packet=pk.task_packet(root,task(root,operation,entities))
         actions={r['id']:r['action'] for r in packet['obligations']}
         assert 'larger-than-life' in actions['anticipation']
+        assert 'shot/beat performance and believability brief' in actions['anticipation']
+        assert 'early proof and observable failure conditions' in actions['anticipation']
         assert 'not lowering' in actions['stopping']
     # A new lead is not silently covered by a Pashtun-only entity graph.
     for character in ('sikh','gurkha'):

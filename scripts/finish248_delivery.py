@@ -14,6 +14,7 @@ def prepare():
     task=json.loads((ROOT/'docs/knowledge/pilot/tasks/finish247-audio.json').read_text())
     task.update(id='finish248-audio',intent='Preserve accepted247 B sound and graphics in20 second finger-corrected derivative; trim ending only, with unfaded join master and brief review-only tail fade.')
     paths=[ROOT/'docs/planning/SERIES_01_PASHTUN_FINISHED_UNIT_PLAN.md',Path(__file__),PREV/'audio02/mix.wav',PREV/'audio02/manifest.json',PREV/'graphics01/aged-paper.png']
+    paths.append(ROOT/'docs/planning/SHOT_BEAT_QUALITY_BRIEF.md')
     paths.extend(PREV/'graphics02'/name for name in ('manuscript.ass','narration.ass','narration.srt','narration.vtt'))
     for name in ('opening-final','route-final'):
         if (OUT/name/'result.json').exists():paths.append(OUT/name/'result.json')

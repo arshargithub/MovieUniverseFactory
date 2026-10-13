@@ -44,6 +44,7 @@ def prepare():
     task.update(id='rein248-final-fist',intent='Correct Director-reopened distal knuckle bend in final20 second unit; preserve non-finger performance and sound',query='bare fist anatomical MCP pivot palm finger roots weights rein contact final screen believability')
     task['entities']=['hand','rein','shot','renderer']
     files=['scripts/finish248_fist.py','scripts/finish248_render.py','scripts/entrance214_contact.py','scripts/finish248_run.py','docs/knowledge/pilot/rein248-authority.json','docs/planning/SERIES_01_PASHTUN_FINISHED_UNIT_PLAN.md']
+    files.append('docs/planning/SHOT_BEAT_QUALITY_BRIEF.md')
     for name in ('opening08','route09'):
         if (OUT/name/'result.json').exists():
             files.extend(str((OUT/name/x).relative_to(ROOT)) for x in ('scene.blend','result.json','contact.npz'))
