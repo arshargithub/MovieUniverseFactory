@@ -44,6 +44,23 @@ Their credentials are …
 impeccable.
 '''
 
+def caption_ass():
+    """Explicit portrait design space; SRT's inferred 288px height scales poorly."""
+    return '''[Script Info]
+ScriptType: v4.00+
+PlayResX: 432
+PlayResY: 768
+ScaledBorderAndShadow: yes
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Caption,Baskerville,20,&H00FFFFFF,&H00FFFFFF,&H00222222,&H00000000,0,0,0,0,100,100,0,0,1,1,0,2,28,28,90,1
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:01.50,0:00:03.65,Caption,,0,0,0,,We call them martial races.
+Dialogue: 0,0:00:04.05,0:00:05.48,Caption,,0,0,0,,Their credentials are …
+Dialogue: 0,0:00:05.92,0:00:06.69,Caption,,0,0,0,,impeccable.
+'''
+
 def prepare_graphics():
     folder=OUT/'graphics01'
     if folder.exists():raise ValueError('Preserve graphics')
@@ -67,13 +84,13 @@ def main():
     rows=sources();folder.mkdir();graphic=OUT/'graphics01/manuscript.ass';sound=OUT/'audio02/mix.wav'
     (folder/'narration.srt').write_text(SRT)
     (folder/'narration.vtt').write_text('WEBVTT\n\n'+SRT.replace(',','.'))
+    (folder/'narration.ass').write_text(caption_ass())
     concat=folder/'frames.ffconcat';concat.write_text('ffconcat version 1.0\n'+''.join("file '"+r['path']+"'\noption framerate 24\nduration 0.0416666666667\n" for r in rows))
     clean=folder/'pashtun-entrance-complete.mp4'
     color=['-colorspace','bt709','-color_trc','bt709','-color_primaries','bt709','-color_range','tv']
     subprocess.run(['ffmpeg','-v','error','-f','concat','-safe','0','-i',str(concat),'-i',str(sound),'-map','0:v:0','-map','1:a:0','-vf','ass='+str(graphic)+',scale=out_color_matrix=bt709:out_range=tv','-r','24','-frames:v','540','-c:v','libx264','-preset','slow','-crf','17','-pix_fmt','yuv420p',*color,'-c:a','aac','-b:a','256k','-ar','48000','-t','22.5','-movflags','+faststart',str(clean)],check=True)
     captioned=folder/'pashtun-entrance-captioned.mp4'
-    style='FontName=Baskerville,FontSize=20,PrimaryColour=&H00FFFFFF,OutlineColour=&H00222222,BorderStyle=1,Outline=1,Shadow=0,Alignment=2,MarginV=100'
-    subprocess.run(['ffmpeg','-v','error','-i',str(clean),'-vf',f"subtitles={OUT/'graphics01/narration.srt'}:force_style='{style}'",'-c:v','libx264','-crf','17','-preset','slow','-pix_fmt','yuv420p',*color,'-c:a','copy','-movflags','+faststart',str(captioned)],check=True)
+    subprocess.run(['ffmpeg','-v','error','-i',str(clean),'-vf','ass='+str(folder/'narration.ass'),'-c:v','libx264','-crf','17','-preset','slow','-pix_fmt','yuv420p',*color,'-c:a','copy','-movflags','+faststart',str(captioned)],check=True)
     for p in [clean,captioned]:subprocess.run(['ffmpeg','-v','error','-i',str(p),'-f','null','-'],check=True)
-    (folder/'manifest.json').write_text(json.dumps({'frames':rows,'unique_native_frames':540,'duration':22.5,'resolution':[1080,1920],'audio':sha(sound),'manuscript':sha(graphic),'deliveries':{p.name:sha(p) for p in [clean,captioned,folder/'narration.srt',folder/'narration.vtt']},'publication_authorized':False},indent=2)+'\n')
+    (folder/'manifest.json').write_text(json.dumps({'frames':rows,'unique_native_frames':540,'duration':22.5,'resolution':[1080,1920],'audio':sha(sound),'manuscript':sha(graphic),'deliveries':{p.name:sha(p) for p in [clean,captioned,folder/'narration.srt',folder/'narration.vtt',folder/'narration.ass']},'publication_authorized':False},indent=2)+'\n')
 if __name__=='__main__':main()
