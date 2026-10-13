@@ -20,6 +20,8 @@ Historical verification: full source `acd44697-1c15-4ee0-b20e-304603b1f006` prop
 
 ## Asset objective
 
+**Director248 clarification:** hold the high quality bar fixed; become continuously better at achieving it efficiently. Measure cost-to-accepted usable footage, avoided reconstruction, escaped visible defects and Director review burden, not speed alone. Efficient Quality is not a permanently low-fidelity aesthetic, nor a reason to waive the fist defect once final viewing exposes it. Larger-than-life screen impact is part of this production's quality target; see the adopted principle in the C-led art-direction brief and the Director review contract. Deliberate quiet beats and economical representations remain valid when they support that result.
+
 Exchange154 reaffirms the constructive-challenge duty and adds explicit agent ownership of [forward momentum toward release](../planning/RELEASE_01_PLAN.md#current-path-to-audience). The rejected body blockout is a quality-floor failure, not Director perfectionism. Recommend replacing its anatomical foundation before garment polish. Efficiency means reducing cost to an accepted screen result, not defending a cheap-looking shortcut or optimizing test counts. Every work package should name which production dependency it closes and the next usable film-level artifact it enables.
 
 Make the strongest coherent, recognizable, culturally specific screen result we can sustain—not the cheapest mesh, the closest pixel reconstruction, or a technically perfect asset in isolation. Spend where it improves audience experience, continuity, needed control or credible reuse. Change scope/realization strategy before degrading those essentials.

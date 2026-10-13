@@ -1,0 +1,34 @@
+{
+  "id": "finish248-audio",
+  "operation": "audio",
+  "entities": [
+    "officer",
+    "music_reference"
+  ],
+  "query": "native full speed attention camera checkpoint support contact motion narration intelligibility quotation sound music",
+  "intent": "Preserve accepted247 B sound and graphics in20 second finger-corrected derivative; trim ending only, with unfaded join master and brief review-only tail fade.",
+  "phase": "execution",
+  "inputs": {
+    "docs/planning/SERIES_01_PASHTUN_FINISHED_UNIT_PLAN.md": "87c98c76ea378ad53bb2b45a42096052a0fc642cf1a7a5c0482bfe1d6f296fb3",
+    "scripts/finish248_delivery.py": "cc749b8f29648a3893c19bd40c04cdbaab174bbc7ad0ebf65259ff1581af2d24",
+    ".runtime/art-direction/series01-finish247/audio02/mix.wav": "906b81b320c8a09fac919b7db9b3981f1cbb48c942d7a79904803b96b46b3db1",
+    ".runtime/art-direction/series01-finish247/audio02/manifest.json": "dc21431c969b4798cb5a7cdd5d7b2bbfccf56e1086ca1f87632b89ddfed7821c",
+    ".runtime/art-direction/series01-finish247/graphics01/aged-paper.png": "cf4d93c74c86f8e2f9c7f848551414dab4fc6c5834c86b2ddd5deca2edcf716e",
+    ".runtime/art-direction/series01-finish247/graphics02/manuscript.ass": "ea520ae2d69238cf2f23dd53f7b60769728147bd2c1bc4d7ecaaed34a9d480e4",
+    ".runtime/art-direction/series01-finish247/graphics02/narration.ass": "25f3d7a36fceaf550291eea44c10794ea2d840deb30c804dc01fa71625a57ad3",
+    ".runtime/art-direction/series01-finish247/graphics02/narration.srt": "53677b49891bfe61b0271eba02899c2ace0fe5139e2de8185c073c9140f4d816",
+    ".runtime/art-direction/series01-finish247/graphics02/narration.vtt": "ff735ea06dd1c29e98c763a88d83a0c26edf3a73d0f9e42581829429e4824120"
+  },
+  "open_decisions": [],
+  "execution_authority": {
+    "source": "docs/planning/SERIES_01_PASHTUN_FINISHED_UNIT_PLAN.md",
+    "scope": "248 explicitly accepts247 and authorizes20s cut; preserve accepted sound, no new take/call/publication."
+  },
+  "hypotheses_to_test": [
+    "Ending trim must preserve determined continuation and not click or introduce a new music timing change.",
+    "Preserved quotation/captions must remain legible in encoded derivative."
+  ],
+  "execution_prerequisites": [
+    "Read248 strategy, review final247 sound provenance and image/caption treatment."
+  ]
+}

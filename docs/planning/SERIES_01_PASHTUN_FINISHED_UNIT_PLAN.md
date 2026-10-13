@@ -2,6 +2,18 @@
 
 Established exchange208; execution authorized at exchange209 · 2026-10-11. This is the work strategy, not an acceptance report.
 
+## Exchange248 — final fist, 20-second cut and production carry-forward
+
+Director accepts247 overall and explicitly reopens the219 deferred knuckle defect: it now distracts in the complete shot. Finish the bare riding fist and shorten only the ending to20.0s; preserve the selected B music placement, narration, quote and spectacular turn. Quality remains a high bar; efficiency means improving repeatability and cost-to-acceptance over successive units, not accepting obvious defects to save effort.
+
+Strategy/motion brief: compare the current evaluated hand with its rest mesh and anatomical knuckle line before changing more curl. Inspect bare palm, side and dorsal views for both hands; identify whether joint origins/weights rather than pose cause the distal bend. Repair only a reversible derivative of the current245 opening/route. The hand owns rein contact; preserve wrist/arm/chest/head/gait/camera and secondary caches. Across opening217–450 and route451–696, fingers maintain a relaxed closed grasp; all whole-body phase response stays inherited. No reach/transfer or new acting is introduced. Correct the rein channel only as required by the repaired fingers. Earliest proof is a believable knuckle-to-palm silhouette without cord or gloves; then actual-shot surface/contact, turn interiors, full chronology and independent reopen. Numerical contact alone cannot pass anatomy. Repeated failed variants trigger method reassessment, not more thumb-tip offsets. Rendering is local, one heavy worker; no new paid calls, installation, upload or push. Preserve failed sources. The shorter cut must retain her resolved continuation after the glance; review that before calling it complete.
+
+Same-pass review: audit reusable assets/recipes and creative, modeling, rigging, simulation, staging, sound, review, rights, rendering and recovery learnings; distinguish demonstrated reuse from planned reuse. Audit live Git/S3 read-only and report actual recovery coverage, not login status. Propose parallel Sikh/Gurkha work with shared continuity/music contracts and bounded Director gates; this is not authority to begin both productions or purchase assets. Record known operating effort; unknown tokens remain unknown.
+
+### Additional Director principle — larger than life
+
+Adopted for **The Martials** and recorded as a **Director style preference**: larger-than-life characters, music, dramatic staging, shots, beats and pace. This is not photorealism, generic loudness or constant speed. Heightened presence and legible decisive action should create awe, swagger, tension and release while retaining character truth, physical weight and the illustrated visual language. Contrast, restraint and intimate humanity make peaks meaningful. Do not exaggerate every gesture, turn cultural specificity into caricature, sacrifice intelligibility or manufacture supernatural powers beyond approved scope. For each major beat ask both what the audience understands and what makes it extraordinary. Carry this into character/shot/music briefs and internal review; preference informs future proposals but does not silently impose The Martials style on unrelated productions.
+
 ## Exchange247 — selected B finishing correction
 
 Director selects B and accepts the gallop rhythm; keep narration unchanged. Authorized correction: punchier/slightly louder impacts, visibly worn original quote graphic, and musical arrival1–2s earlier. Preserve all native frames, camera/action, text/timing, voice samples/gain, wind and turn effect. No new call, render, installation or upload.

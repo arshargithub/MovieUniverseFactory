@@ -1,5 +1,11 @@
 # Local rendering acceleration investigation
 
+## Current use-specific evidence, reconciled at248
+
+The210 investigation below remains historical evidence, including its failed strict repeat. Subsequent245 finishing used a complete540-frame1080×1920,16-sample Cycles Metal sequence on this M4, MetalRT ON and persistent data OFF. Its ten independent fresh-process controls all meet the strict maximum1/255 channel-difference check: [245 replay record](../../.runtime/art-direction/series01-finish245/reopen-verification.json). This establishes a usable profile for that specific source/caches and tested finishing sequence, not every future scene, hardware configuration or denoising setting. It does not erase210's failure or establish the original artifact's cause. Full chronological images and Director review are separate from pixel parity.
+
+248 reuses this demonstrated configuration for the authorized finger-only derivative and20s cut, with new source bindings, representative surface controls and fresh-open replay required. Preserve CPU fallback, one heavy worker, source caches and disabled persistent data. About27–28s per newly rendered245 frame is an observed workload measure, not a guaranteed248 deadline or a reason to lower quality. Early fitting controls and independent reopen jobs are not the final full render. No remote compute, new software, paid call or global preference change follows from this update.
+
 Director exchange210, 2026-10-11. Investigate faster rendering on the current Mac without cloud compute, new purchases, installations or changes to accepted production scenes. This is a diagnostic work package, not a new renderer selection or permission to reduce quality.
 
 ## Strategy and protected result

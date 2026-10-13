@@ -2,6 +2,16 @@
 
 Draft v0.1, exchange 75, 2026-09-17. Director authorized development of the brief after reaffirming C. The rules below are proposals for review, not blanket approval or completion of A5.
 
+## Adopted production principle — larger than life
+
+Director248 explicitly adopts **larger than life** across The Martials: character presence, music, dramatic shots and beats, pacing and the complete audience experience. It is also a stated personal Director preference, not merely a Pashtun-entrance effect. This adopted principle governs compatible proposals below; it does not retrospectively approve every draft detail.
+
+Aim for heightened, memorable cinema rather than an adequate depiction of events: strong silhouettes and composed presence; decisive character-specific action; impactful scale and camera reveals; a musical hook with tension, swagger and exhilarating release; tactile, weighty sound; visually rich authored surfaces. Preserve the illustrated-C language rather than pursuing uncertain imitation of live action. Physical weight, readable motivation, cultural specificity and recognizable humanity remain the foundation.
+
+Contrast is essential. Not every beat is faster, every sound louder or every expression larger. The Pashtun's composed assessment makes her explosive route choice stronger; the Sikh's mounted stillness can carry power without copying her gallop; the Gurkha's care for another person can make his ferocity more affecting. Do not convert the three into interchangeable action poses or caricatures. No additional powers, violence, assets, spending or fixed choreography are authorized by this principle.
+
+Internal review must name the signature moment, its preparation and payoff, what makes it extraordinary at normal viewing size, and what would break its credibility. Review music, performance, composition, sound and pacing together. The rule should appear in each new sequence's audience brief, not be applied as a late generic spectacle filter.
+
 ## Exchanges199–200 — integrated rider performance and painted costume/skin
 
 199: Director likes198's terrain direction but identifies rigid neck performance, overly pronounced neck/clavicle relief, awkward thumb/rein contact and a bleached face. Requests thoughts first; no native edit in that discussion. Recommendation: isolate deformation versus illumination, preserve accepted neutral anatomy, repair actual hand contact, then one coordinated richer indigo/warm leather/skin treatment rather than blanket darkening or new skin noise.200 authorizes this complete recommendation and explicitly forbids an intermediate neck/grip handover. Phone delivery remains parked; no upload authorized.
