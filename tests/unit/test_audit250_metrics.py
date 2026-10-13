@@ -66,3 +66,16 @@ def test_classification_rates_are_not_additive_defect_counts():
     defects={r['case'] for r in d['cases'] if 'defect_or_missed_requirement' in r['labels']}
     assert len(repeated)==58 and len(defects)==93 and repeated<=defects
     assert sum(d['counts'].values())>len(d['cases'])
+
+def test_recorded_usage_does_not_double_count_cached_or_reasoning_subsets():
+    import json
+    root=Path(__file__).resolve().parents[2]
+    d=json.loads((root/'docs/knowledge/PASHTUN_PRODUCTION_AUDIT250_METRICS.json').read_text())['recorded_codex_usage']
+    t=d['totals']
+    assert t['input_tokens']+t['output_tokens']==t['total_tokens']
+    assert t['cached_input_tokens']+d['uncached_input_tokens']==t['input_tokens']
+    assert 0<t['reasoning_output_tokens']<=t['output_tokens']
+    assert d['responses']==14383 and d['duplicate_records_excluded']==0
+    assert not d['invalid_record_offsets']
+    assert d['cumulative_cross_check']['matches_per_response_sum']
+    assert d['cumulative_cross_check']['thread_counter_delta']==t

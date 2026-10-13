@@ -73,6 +73,7 @@ def cases():
 def packet():
     paths=['docs/knowledge/PASHTUN_PRODUCTION_AUDIT250.md', 'docs/engineering-intelligence/OPERATING_LEDGER.md', '.runtime/production-audit250/history.json']
     paths += ['docs/knowledge/PASHTUN_PRODUCTION_AUDIT250_CASES.json','docs/knowledge/PASHTUN_PRODUCTION_AUDIT250_METRICS.json','scripts/audit_pashtun250.py','scripts/audit250_metrics.py','scripts/audit250_classification.py','tests/unit/test_audit250_metrics.py']
+    paths.append('.runtime/production-audit250/token-usage.json')
     task={'id':'audit250','operation':'knowledge','entities':['knowledge'], 'query':'retrospective review director handovers knowledge application time intervals operating ledger baseline metrics', 'intent':'Audit source-indexed Director inputs and observed time without charging Director idle gaps or inventing visual judgments.', 'phase':'planning','inputs':{p:hashlib.sha256((ROOT/p).read_bytes()).hexdigest() for p in paths},'open_decisions':[], 'hypotheses_to_test':['Process rules existed but application and visual judgment failed; retrieval alone does not repair this.','Task intervals and native jobs overlap and must not be summed as net elapsed time.']}
     (OUT/'task.json').write_text(json.dumps(task,indent=2)+'\n')
 
@@ -154,12 +155,58 @@ def frame_costs():
     (OUT/'frame-costs.json').write_text(json.dumps(report,indent=2)+'\n')
     print(json.dumps({k:v for k,v in report.items() if k!='records'},indent=2))
 
+def usage():
+    """Read only per-response usage metadata within the existing snapshot."""
+    history=read();begin=stamp(history['messages'][333]['timestamp']);end=stamp(history['messages'][3456]['timestamp'])
+    fields=('input_tokens','cached_input_tokens','cache_write_input_tokens','output_tokens','reasoning_output_tokens','total_tokens')
+    responses={};duplicates=0;bad=[];offset=0
+    with Path(history['source_path']).open('rb') as source:
+        while offset<history['snapshot_bytes']:
+            line=source.readline()
+            if not line or offset+len(line)>history['snapshot_bytes']:break
+            at=offset;offset+=len(line)
+            if b'"type":"token_usage_record"' not in line[:220]:continue
+            event=json.loads(line)
+            if event.get('type')!='token_usage_record' or not begin<=stamp(event['timestamp'])<=end:continue
+            p=event['payload']
+            if p.get('thread_id')!='01a0878c-e7a2-75e0-873c-c31d97f879a1':raise ValueError('Wrong task usage')
+            ident=p.get('response_id');u=p.get('usage',{})
+            if not ident or any(not isinstance(u.get(k),int) or u[k]<0 for k in fields):
+                bad.append(at);continue
+            if u['input_tokens']+u['output_tokens']!=u['total_tokens'] or u['cached_input_tokens']>u['input_tokens'] or u['reasoning_output_tokens']>u['output_tokens']:
+                raise ValueError(('Inconsistent usage',at))
+            row={'timestamp':event['timestamp'],'turn_id':p.get('turn_id'),'response_id':ident,'source_byte_offset':at,'usage':{k:u[k] for k in fields}}
+            if ident in responses:
+                if responses[ident]['usage']!=row['usage']:raise ValueError('Conflicting duplicate usage')
+                duplicates+=1;continue
+            responses[ident]=row
+    totals={k:sum(r['usage'][k] for r in responses.values()) for k in fields}
+    cumulative_check=None
+    if responses:
+        selected=list(responses.values())
+        with Path(history['source_path']).open('rb') as source:
+            source.seek(selected[0]['source_byte_offset']);first=json.loads(source.readline())['payload']
+            source.seek(selected[-1]['source_byte_offset']);last=json.loads(source.readline())['payload']
+        if all(k in first.get('thread_token_usage',{}) and k in last.get('thread_token_usage',{}) for k in fields):
+            delta={k:last['thread_token_usage'][k]-(first['thread_token_usage'][k]-first['usage'][k]) for k in fields}
+            cumulative_check={'matches_per_response_sum':delta==totals,'thread_counter_delta':delta}
+    result={'scope':'Recorded per-response Codex usage in fixed historical snapshot and first-image-to-audit interval; excludes cumulative turn/thread counters and all subsequent audit work.',
+        'responses':len(responses),'distinct_turns':len({r['turn_id'] for r in responses.values()}),'duplicate_records_excluded':duplicates,'invalid_record_offsets':bad,'totals':totals,
+        'uncached_input_tokens':totals['input_tokens']-totals['cached_input_tokens'],
+        'cached_input_fraction':totals['cached_input_tokens']/totals['input_tokens'] if totals['input_tokens'] else None,
+        'cumulative_cross_check':cumulative_check,
+        'limitations':['Recorded token throughput is not unique text, plan quota percentage, billed API dollars or human labor.','Cached input is included in input; reasoning is included in output. Do not add subsets again.','Only emitted records are measured; completeness of unreported/failed provider requests is not certified.','No API-pricing conversion or inferred subscription allocation is made.'],
+        'records':list(responses.values())}
+    (OUT/'token-usage.json').write_text(json.dumps(result,indent=2)+'\n')
+    print(json.dumps({k:v for k,v in result.items() if k!='records'},indent=2))
+
 def publish():
     """Small portable baseline; detailed local captures stay out of Git."""
     from audit250_classification import STAGES
     raw=json.loads((OUT/'metrics-initial.json').read_text())
     classified=json.loads((ROOT/'docs/knowledge/PASHTUN_PRODUCTION_AUDIT250_CASES.json').read_text())
     frame=json.loads((OUT/'frame-costs.json').read_text())
+    token_usage=json.loads((OUT/'token-usage.json').read_text())
     rows=classified['cases'];p=raw['profiles']['shared_visual_development']
     stages=[]
     for lo,hi,name,lesson in STAGES:
@@ -181,10 +228,11 @@ def publish():
         'handover_confidence':dict(collections.Counter(r['confidence'] for r in rows if r['avoidable_final_id'])),
         'rates':{'defect_related_inputs_per_human_input':classified['counts']['defect_or_missed_requirement']/classified['human_inputs'],'repeat_related_inputs_per_human_input':classified['counts']['repeated_correction']/classified['human_inputs'],'avoidable_stops_per_assistant_final':classified['distinct_avoidable_final_ids']/p['assistant_final_messages']},
         'partial_frame_timings':{k:v for k,v in frame.items() if k!='records'},
+        'recorded_codex_usage':{k:v for k,v in token_usage.items() if k!='records'},
         'stages':stages,'timing_anomalies_over_5_seconds':raw['task_pairing']['anomalies_over_5_seconds'],
-        'unknowns':['Exact net human/agent effort after all in-turn wait subtraction','Whole-history pure render time','Distinct defect count and first-pass review acceptance rate','Director active review and music-discovery time','Engineering token usage and dollar cost','Counterfactual hours saved by a better process'],
+        'unknowns':['Exact net human/agent effort after all in-turn wait subtraction','Whole-history pure render time','Distinct defect count and first-pass review acceptance rate','Director active review and music-discovery time','Unreported provider usage and engineering dollar cost or subscription quota allocation','Counterfactual hours saved by a better process'],
         'caveats':raw['caveats']+['Classifications overlap; input counts are not independent defects or visual review rounds.','The reported runtime sum and timestamp envelope disagree; neither establishes exact net working time.','Stage timing is chronological task occupancy, not discipline-specific labor or waste.'],
-        'source_artifacts':{name:hashlib.sha256((OUT/name).read_bytes()).hexdigest() for name in ('history.json','metrics-initial.json','frame-costs.json','operating-events.json')}
+        'source_artifacts':{name:hashlib.sha256((OUT/name).read_bytes()).hexdigest() for name in ('history.json','metrics-initial.json','frame-costs.json','operating-events.json','token-usage.json')}
     }
     destination=ROOT/'docs/knowledge/PASHTUN_PRODUCTION_AUDIT250_METRICS.json'
     destination.write_text(json.dumps(report,indent=2)+'\n')
@@ -197,7 +245,7 @@ def review():
     packet_path=ROOT/'.runtime/knowledge-pilot213/audit250.json'
     p=json.loads(packet_path.read_text())
     tests=OUT/'tests.xml';suites=ET.parse(tests).getroot()
-    if sum(int(s.get('tests',0)) for s in suites.iter('testsuite'))!=10 or any(int(s.get(k,0)) for s in suites.iter('testsuite') for k in ('failures','errors')):
+    if sum(int(s.get('tests',0)) for s in suites.iter('testsuite'))!=11 or any(int(s.get(k,0)) for s in suites.iter('testsuite') for k in ('failures','errors')):
         raise ValueError('Audit tests missing or failed')
     evidence_paths=['docs/knowledge/PASHTUN_PRODUCTION_AUDIT250.md','docs/knowledge/PASHTUN_PRODUCTION_AUDIT250_CASES.json','docs/knowledge/PASHTUN_PRODUCTION_AUDIT250_METRICS.json','.runtime/production-audit250/tests.xml']
     evidence=[{'path':path,'sha256':hashlib.sha256((ROOT/path).read_bytes()).hexdigest()} for path in evidence_paths]
@@ -214,7 +262,7 @@ def review():
     r={'packet_digest':p['packet_digest'],'scope':'Source-indexed retrospective and qualified metrics only; no character/audio/sequence acceptance.', 'checks':checks,
        'hypotheses':[{'prediction':'Known requirements can still fail through application and visual judgment.','observation':'Repeated fist, neck and garment feedback persisted despite recorded rules.','response':'Separate requirement/retrieval/method/evidence/judgment causes and require actual review evidence.','result':'resolved'},
         {'prediction':'Summing jobs and calendar intervals would inflate net work.','observation':'Native jobs overlap tasks; reported runtime differs from timestamp spans and waits contain capture gaps.','response':'Publish distinct measured views, exclude outside-task idle, retain unknown exact net effort.','result':'resolved'}],
-       'adjacent_regressions':'Preserved legitimate creative authority, early budget boundaries, intermediate versus final feedback, current unfinished native scope, source privacy and local-only durability. Ten accounting/coverage tests pass; no artistic judgment accuracy claim.',
+       'adjacent_regressions':'Preserved legitimate creative authority, early budget boundaries, intermediate versus final feedback, current unfinished native scope, source privacy and local-only durability. Eleven accounting/coverage tests pass, including recorded-token subset arithmetic and cumulative cross-check; no artistic judgment accuracy claim.',
        'stopping_reason':'Every in-scope input classified with provenance; report and repeatable baseline complete with uncertainty. Additional database/semantic platform or inferred time saved would not improve this scoped answer.'}
     (OUT/'review.json').write_text(json.dumps(r,indent=2)+'\n')
     result=check_review(ROOT,p,r)
@@ -223,4 +271,4 @@ def review():
     if not result.get('ready_for_review'):raise ValueError('Audit evidence gate blocked')
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('mode',choices=['cases','packet','metrics','frame_costs','publish','review']);args=p.parse_args();globals()[args.mode]()
+    p=argparse.ArgumentParser();p.add_argument('mode',choices=['cases','packet','metrics','frame_costs','usage','publish','review']);args=p.parse_args();globals()[args.mode]()
