@@ -1,0 +1,485 @@
+{
+  "schema_version": 1,
+  "status": "HISTORICAL_SNAPSHOT_NOT_SEQUENCE_CLOSURE",
+  "thread_id": "01a0878c-e7a2-75e0-873c-c31d97f879a1",
+  "capture_sha256": "d60b8e5ccb23657a33eb24d1686cd5a9c27ea1142cbf327a355f0c61ad5d2975",
+  "capture_bytes": 9470427510,
+  "source_prefix_sha256": "89e0a0729cffaf5d3789a3f2ba354059001c3f5a51a037fc50ad4d7b569948a6",
+  "start_message_id": "01a0b1ae-9ec7-7713-b7bf-3c4f7bd8aedc",
+  "cutoff_message_id": "01a13647-3591-7631-890e-4674a36e1d97",
+  "profiles": {
+    "shared_visual_development": {
+      "start": "2026-09-17T23:23:26.279Z",
+      "cutoff": "2026-10-13T17:19:58.874Z",
+      "calendar_seconds": 2224592.5950000286,
+      "observed_task_active_union_seconds": 539617.6460018158,
+      "reported_completed_task_runtime_seconds": 510422.435,
+      "open_task_observed_seconds": 11284.381000041962,
+      "outside_recorded_task_seconds": 1684974.9489982128,
+      "completed_turns": 263,
+      "aborted_turns": 2,
+      "open_turns": 1,
+      "user_inputs_raw": 292,
+      "assistant_final_messages": 260,
+      "native_matched_jobs": 1501,
+      "native_outcomes": {
+        "FAILED": 184,
+        "PASSED": 1316,
+        "RUNNING_AT_CUTOFF": 1
+      },
+      "native_union_seconds": 316372.90679216385,
+      "native_sum_seconds": 321318.7111046314,
+      "native_outside_tasks_seconds": 3247.917351961136,
+      "task_or_native_union_seconds": 542865.5633537769,
+      "recorded_activity_union_seconds": 515336.9800314903,
+      "recorded_wait_union_seconds_untrusted": 1403383.6009998322,
+      "wait_overlap_task_seconds_untrusted": 24432.305999994278
+    },
+    "individual_portrait_baseline": {
+      "start": "2026-09-18T20:26:45.829Z",
+      "cutoff": "2026-10-13T17:19:58.874Z",
+      "calendar_seconds": 2148793.0450000763,
+      "observed_task_active_union_seconds": 536099.2610011101,
+      "reported_completed_task_runtime_seconds": 506904.025,
+      "open_task_observed_seconds": 11284.381000041962,
+      "outside_recorded_task_seconds": 1612693.7839989662,
+      "completed_turns": 248,
+      "aborted_turns": 2,
+      "open_turns": 1,
+      "user_inputs_raw": 277,
+      "assistant_final_messages": 245,
+      "native_matched_jobs": 1501,
+      "native_outcomes": {
+        "FAILED": 184,
+        "PASSED": 1316,
+        "RUNNING_AT_CUTOFF": 1
+      },
+      "native_union_seconds": 316372.90679216385,
+      "native_sum_seconds": 321318.7111046314,
+      "native_outside_tasks_seconds": 3247.917351961136,
+      "task_or_native_union_seconds": 539347.1783530712,
+      "recorded_activity_union_seconds": 514390.18297982216,
+      "recorded_wait_union_seconds_untrusted": 1379956.3751616478,
+      "wait_overlap_task_seconds_untrusted": 24008.064161539078
+    }
+  },
+  "classification": {
+    "method": "Manual retrospective multi-label review; prior/following handoffs linked in local capture. Not independent ground truth or inferred time saved. Early best-process judgments are not retroactive policy violations.",
+    "counts": {
+      "creative": 123,
+      "continuation_or_acceptance": 93,
+      "defect_or_missed_requirement": 93,
+      "avoidable_handover": 44,
+      "review_presentation": 16,
+      "process_correction": 85,
+      "authority": 39,
+      "access_or_logistics": 42,
+      "learning_or_explanation": 65,
+      "adjacent_setup": 9,
+      "repeated_correction": 58,
+      "intermediate_observation": 39,
+      "system_handoff": 1
+    },
+    "human_inputs": 291,
+    "distinct_avoidable_final_ids": 44
+  },
+  "handover_confidence": {
+    "medium": 14,
+    "high": 30
+  },
+  "rates": {
+    "defect_related_inputs_per_human_input": 0.31958762886597936,
+    "repeat_related_inputs_per_human_input": 0.19931271477663232,
+    "avoidable_stops_per_assistant_final": 0.16923076923076924
+  },
+  "partial_frame_timings": {
+    "scope": "Partial known-handler frame timing recovery. Excludes active248 and earlier uninstrumented asset work; no whole-history pure-render claim. Render/frame-loop times include evaluation/write as indicated and are process-seconds, not additive to task/native union. Identical copied timing records and explicit reused frames excluded.",
+    "frames": 4066,
+    "sum_seconds": 71639.56108144531,
+    "copied_records_excluded": 0,
+    "reused_records_excluded": 13
+  },
+  "stages": [
+    {
+      "id": "AU01",
+      "name": "Shared visual-language discovery",
+      "first_case": 1,
+      "last_case": 9,
+      "human_inputs": 9,
+      "labels": {
+        "creative": 5,
+        "continuation_or_acceptance": 3,
+        "defect_or_missed_requirement": 2,
+        "avoidable_handover": 2,
+        "review_presentation": 1
+      },
+      "task_wall_seconds": 1851.270000219345
+    },
+    {
+      "id": "AU02",
+      "name": "Initial generative-motion test",
+      "first_case": 10,
+      "last_case": 13,
+      "human_inputs": 4,
+      "labels": {
+        "process_correction": 1,
+        "authority": 3,
+        "access_or_logistics": 1,
+        "continuation_or_acceptance": 1,
+        "defect_or_missed_requirement": 1
+      },
+      "task_wall_seconds": 1549.0600004196167
+    },
+    {
+      "id": "AU03",
+      "name": "Individual portrait identity",
+      "first_case": 14,
+      "last_case": 28,
+      "human_inputs": 15,
+      "labels": {
+        "creative": 11,
+        "review_presentation": 3,
+        "avoidable_handover": 1,
+        "continuation_or_acceptance": 1
+      },
+      "task_wall_seconds": 1364.1749994754791
+    },
+    {
+      "id": "AU04",
+      "name": "Entrance boards and realization strategy",
+      "first_case": 29,
+      "last_case": 53,
+      "human_inputs": 25,
+      "labels": {
+        "continuation_or_acceptance": 11,
+        "defect_or_missed_requirement": 2,
+        "process_correction": 2,
+        "learning_or_explanation": 6,
+        "creative": 14,
+        "avoidable_handover": 3,
+        "authority": 2
+      },
+      "task_wall_seconds": 11296.303000688553
+    },
+    {
+      "id": "AU05",
+      "name": "Authoring access and setup",
+      "first_case": 54,
+      "last_case": 64,
+      "human_inputs": 11,
+      "labels": {
+        "defect_or_missed_requirement": 1,
+        "process_correction": 1,
+        "learning_or_explanation": 5,
+        "access_or_logistics": 8,
+        "adjacent_setup": 9,
+        "continuation_or_acceptance": 3,
+        "authority": 4
+      },
+      "task_wall_seconds": 2026.2360002994537
+    },
+    {
+      "id": "AU06",
+      "name": "Face bust anatomy and skin",
+      "first_case": 65,
+      "last_case": 114,
+      "human_inputs": 50,
+      "labels": {
+        "avoidable_handover": 14,
+        "continuation_or_acceptance": 17,
+        "process_correction": 17,
+        "creative": 9,
+        "defect_or_missed_requirement": 20,
+        "repeated_correction": 12,
+        "access_or_logistics": 11,
+        "learning_or_explanation": 6,
+        "authority": 4,
+        "review_presentation": 4,
+        "intermediate_observation": 2
+      },
+      "task_wall_seconds": 30653.537999153137
+    },
+    {
+      "id": "AU07",
+      "name": "Facial performance readiness",
+      "first_case": 115,
+      "last_case": 117,
+      "human_inputs": 3,
+      "labels": {
+        "authority": 2,
+        "continuation_or_acceptance": 3,
+        "creative": 1
+      },
+      "task_wall_seconds": 3867.438999891281
+    },
+    {
+      "id": "AU08",
+      "name": "Hair and accepted static character",
+      "first_case": 118,
+      "last_case": 153,
+      "human_inputs": 36,
+      "labels": {
+        "defect_or_missed_requirement": 14,
+        "process_correction": 15,
+        "repeated_correction": 11,
+        "learning_or_explanation": 5,
+        "avoidable_handover": 16,
+        "continuation_or_acceptance": 17,
+        "review_presentation": 2,
+        "creative": 11,
+        "authority": 7,
+        "intermediate_observation": 2
+      },
+      "task_wall_seconds": 42822.016000032425
+    },
+    {
+      "id": "AU09",
+      "name": "Body integration and deformation",
+      "first_case": 154,
+      "last_case": 172,
+      "human_inputs": 19,
+      "labels": {
+        "process_correction": 9,
+        "authority": 2,
+        "learning_or_explanation": 8,
+        "continuation_or_acceptance": 4,
+        "defect_or_missed_requirement": 12,
+        "avoidable_handover": 5,
+        "repeated_correction": 9,
+        "review_presentation": 3,
+        "creative": 1
+      },
+      "task_wall_seconds": 39709.399000406265
+    },
+    {
+      "id": "AU10",
+      "name": "Wardrobe contact and motion",
+      "first_case": 173,
+      "last_case": 198,
+      "human_inputs": 26,
+      "labels": {
+        "creative": 12,
+        "defect_or_missed_requirement": 11,
+        "repeated_correction": 7,
+        "process_correction": 11,
+        "intermediate_observation": 8,
+        "learning_or_explanation": 7,
+        "continuation_or_acceptance": 8,
+        "authority": 5,
+        "access_or_logistics": 3
+      },
+      "task_wall_seconds": 168187.93800067902
+    },
+    {
+      "id": "AU11",
+      "name": "Rider horse terrain and moving look",
+      "first_case": 199,
+      "last_case": 216,
+      "human_inputs": 18,
+      "labels": {
+        "defect_or_missed_requirement": 9,
+        "avoidable_handover": 1,
+        "process_correction": 3,
+        "learning_or_explanation": 4,
+        "repeated_correction": 5,
+        "access_or_logistics": 3,
+        "continuation_or_acceptance": 6,
+        "intermediate_observation": 3,
+        "creative": 10
+      },
+      "task_wall_seconds": 83375.83699965477
+    },
+    {
+      "id": "AU12",
+      "name": "Complete choreography and geography",
+      "first_case": 217,
+      "last_case": 226,
+      "human_inputs": 10,
+      "labels": {
+        "creative": 9,
+        "defect_or_missed_requirement": 4,
+        "repeated_correction": 4,
+        "process_correction": 4,
+        "continuation_or_acceptance": 3,
+        "intermediate_observation": 3,
+        "access_or_logistics": 1
+      },
+      "task_wall_seconds": 58067.97600007057
+    },
+    {
+      "id": "AU13",
+      "name": "Prop knowledge and rein contact",
+      "first_case": 227,
+      "last_case": 240,
+      "human_inputs": 14,
+      "labels": {
+        "creative": 8,
+        "learning_or_explanation": 4,
+        "authority": 2,
+        "continuation_or_acceptance": 4,
+        "intermediate_observation": 5,
+        "process_correction": 7,
+        "avoidable_handover": 1,
+        "defect_or_missed_requirement": 3,
+        "repeated_correction": 3,
+        "review_presentation": 1
+      },
+      "task_wall_seconds": 32085.24900007248
+    },
+    {
+      "id": "AU14",
+      "name": "Narration music discovery and audio",
+      "first_case": 241,
+      "last_case": 278,
+      "human_inputs": 37,
+      "labels": {
+        "continuation_or_acceptance": 8,
+        "access_or_logistics": 13,
+        "authority": 7,
+        "intermediate_observation": 10,
+        "defect_or_missed_requirement": 7,
+        "process_correction": 8,
+        "learning_or_explanation": 13,
+        "creative": 21,
+        "review_presentation": 2,
+        "system_handoff": 1,
+        "avoidable_handover": 1,
+        "repeated_correction": 1
+      },
+      "task_wall_seconds": 25525.688000679016
+    },
+    {
+      "id": "AU15",
+      "name": "Integrated audiovisual finishing",
+      "first_case": 279,
+      "last_case": 288,
+      "human_inputs": 10,
+      "labels": {
+        "creative": 9,
+        "defect_or_missed_requirement": 6,
+        "repeated_correction": 5,
+        "access_or_logistics": 2,
+        "learning_or_explanation": 3,
+        "process_correction": 3,
+        "continuation_or_acceptance": 4,
+        "authority": 1,
+        "intermediate_observation": 3
+      },
+      "task_wall_seconds": 25951.168999910355
+    },
+    {
+      "id": "AU16",
+      "name": "Final contact closure and audit",
+      "first_case": 289,
+      "last_case": 292,
+      "human_inputs": 4,
+      "labels": {
+        "creative": 2,
+        "defect_or_missed_requirement": 1,
+        "repeated_correction": 1,
+        "process_correction": 4,
+        "learning_or_explanation": 4,
+        "intermediate_observation": 3
+      },
+      "task_wall_seconds": 11284.353000164032
+    }
+  ],
+  "timing_anomalies_over_5_seconds": [
+    {
+      "turn_id": "01a0b6fc-03b9-7b60-a8f3-b914c1a21d06",
+      "start": 1789776364.481,
+      "end": 1789784136.912,
+      "wall_seconds": 7772.430999994278,
+      "reported_seconds": 381.054,
+      "unexplained_delta_seconds": 7391.376999994278
+    },
+    {
+      "turn_id": "01a0e3b5-a888-7991-b654-7c235d17f928",
+      "start": 1790526728.339,
+      "end": 1790529487.104,
+      "wall_seconds": 2758.765000104904,
+      "reported_seconds": 1213.15,
+      "unexplained_delta_seconds": 1545.615000104904
+    },
+    {
+      "turn_id": "01a0fea2-1ab1-74f2-863c-2b9c8ced542d",
+      "start": 1790978431.67,
+      "end": 1790980397.79,
+      "wall_seconds": 1966.119999885559,
+      "reported_seconds": 1824.393,
+      "unexplained_delta_seconds": 141.72699988555905
+    },
+    {
+      "turn_id": "01a0fec6-84bb-7a41-af6a-eed18c821c3a",
+      "start": 1790980818.112,
+      "end": 1790986396.491,
+      "wall_seconds": 5578.378999948502,
+      "reported_seconds": 4654.554,
+      "unexplained_delta_seconds": 923.8249999485015
+    },
+    {
+      "turn_id": "01a0ff5e-dbd6-7ab1-84ca-40ccdabae2db",
+      "start": 1790990801.896,
+      "end": 1790994061.138,
+      "wall_seconds": 3259.242000102997,
+      "reported_seconds": 2157.797,
+      "unexplained_delta_seconds": 1101.4450001029968
+    },
+    {
+      "turn_id": "01a1026d-fa92-7223-a82a-fe79e21cde41",
+      "start": 1791042124.448,
+      "end": 1791054045.523,
+      "wall_seconds": 11921.075000047684,
+      "reported_seconds": 9514.644,
+      "unexplained_delta_seconds": 2406.4310000476835
+    },
+    {
+      "turn_id": "01a10ce7-4478-75b1-b848-e9b76a6482f5",
+      "start": 1791217845.39,
+      "end": 1791228315.716,
+      "wall_seconds": 10470.325999975204,
+      "reported_seconds": 6162.965,
+      "unexplained_delta_seconds": 4307.360999975204
+    },
+    {
+      "turn_id": "01a11d8d-9c8a-7511-8c56-3e2c10930113",
+      "start": 1791497182.361,
+      "end": 1791502683.792,
+      "wall_seconds": 5501.430999994278,
+      "reported_seconds": 5464.888,
+      "unexplained_delta_seconds": 36.542999994278034
+    },
+    {
+      "turn_id": "01a122a7-22f7-7cd2-966d-efac9213186f",
+      "start": 1791582741.677,
+      "end": 1791586727.588,
+      "wall_seconds": 3985.9110000133514,
+      "reported_seconds": 3931.299,
+      "unexplained_delta_seconds": 54.61200001335146
+    }
+  ],
+  "unknowns": [
+    "Exact net human/agent effort after all in-turn wait subtraction",
+    "Whole-history pure render time",
+    "Distinct defect count and first-pass review acceptance rate",
+    "Director active review and music-discovery time",
+    "Engineering token usage and dollar cost",
+    "Counterfactual hours saved by a better process"
+  ],
+  "caveats": [
+    "Observed task-active wall time includes reasoning, tools, rendering waits and any stalls inside a task; it is not active labor.",
+    "Outside-task gaps are excluded here, not all proven Director wait. Continuing native work is separately unioned.",
+    "This cutoff is the audit request, before current final render completion and before Director acceptance.",
+    "Retrospectively entered waits explicitly contain capture gaps; they are not a trustworthy exact idle-time subtraction.",
+    "Native job occupancy includes construction/simulation/render/replay, not pure render time.",
+    "Classifications overlap; input counts are not independent defects or visual review rounds.",
+    "The reported runtime sum and timestamp envelope disagree; neither establishes exact net working time.",
+    "Stage timing is chronological task occupancy, not discipline-specific labor or waste."
+  ],
+  "source_artifacts": {
+    "history.json": "d60b8e5ccb23657a33eb24d1686cd5a9c27ea1142cbf327a355f0c61ad5d2975",
+    "metrics-initial.json": "8f99e8d4a8ad1100503056df1945dc5bab20c9b4d768aebd2f869c7347144aa5",
+    "frame-costs.json": "aec6332e352e792b0e72794288c783dc7d5cac5796926a3d4c3c815889d4e5b3",
+    "operating-events.json": "10a5cc741b1f46c93ec5d94ad02b6eab64b1aa6678602ba648084b8b041a214d"
+  }
+}
