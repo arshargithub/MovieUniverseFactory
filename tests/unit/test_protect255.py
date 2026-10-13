@@ -18,6 +18,16 @@ def test_unprefixed_provider_assignment():
     assert 'credential_assignment' in p.scan(b'runway_api_key='+b'Q'*40)
     assert 'credential_assignment' in p.scan(b'GEMINI_API_KEY="'+b'Q'*40+b'"')
 
+def test_github_fine_grained_token_prefilter():
+    assert 'github_token' in p.scan(b'github_' + b'pat_' + b'A'*40)
+
+def test_false_positive_disposition_is_content_bound():
+    from freeze_protect255 import reviewed_false_positive
+    row={'sha256':'7519ee9c40d3b896db2212ce6647734d12d289568ea446a0d274a581d605ba55','paths':['.runtime/brushstroke-tools-1.2.3-inspection/icons/random.svg']}
+    assert reviewed_false_positive(row,['provider_key'])
+    assert not reviewed_false_positive({**row,'sha256':'changed'},['provider_key'])
+    assert not reviewed_false_positive(row,['provider_key','github_token'])
+
 def test_private_paths_excluded():
     for name in ['.env','.env.local','.aws/credentials','.runtime/a/private-link.txt','.runtime/protection255-restore/a','.runtime/protection255-frozen/a']:
         assert p.excluded(Path(name))

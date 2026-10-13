@@ -22,7 +22,7 @@ RULES = [
     (b'ASIA', re.compile(rb'ASIA[A-Z0-9]{16}'), 'aws_temporary_access'),
     (b'sk-', re.compile(rb'sk-[A-Za-z0-9_-]{20,}'), 'provider_key'),
     (b'AIza', re.compile(rb'AIza[0-9A-Za-z_-]{30,}'), 'google_key'),
-    (b'gh', re.compile(rb'gh[pousr]_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,}'), 'github_token'),
+    (b'g', re.compile(rb'gh[pousr]_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,}'), 'github_token'),
     (b'PRIVATE KEY', re.compile(rb'-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----'), 'private_key'),
     (b'X-Amz-Signature=', re.compile(rb'X-Amz-Signature=[0-9a-f]{64}'), 'signed_url'),
     (b'Bearer ', re.compile(rb'Bearer [A-Za-z0-9._-]{30,}'), 'bearer'),

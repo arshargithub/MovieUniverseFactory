@@ -15,6 +15,12 @@ ROOT=p.ROOT
 STAGE=ROOT/'.runtime/protection255-frozen'
 OUT=p.OUT
 
+def reviewed_false_positive(item,flags):
+    # All16 matches reviewed as XML mask id/label/URI attributes; exact bytes only.
+    return (item['sha256']=='7519ee9c40d3b896db2212ce6647734d12d289568ea446a0d274a581d605ba55'
+      and item['paths']==['.runtime/brushstroke-tools-1.2.3-inspection/icons/random.svg']
+      and flags==['provider_key'])
+
 def copy_independent(source,dest):
     dest.parent.mkdir(parents=True,exist_ok=True)
     if dest.exists(): raise RuntimeError('Refuse overwrite: '+str(dest))
@@ -87,12 +93,8 @@ def main():
         disposition=None
         if flags:
             # Narrow, content-bound inspected false positive: Inkscape SVG mask fragment.
-            if item['paths']==['.runtime/brushstroke-tools-1.2.3-inspection/icons/random.svg'] and flags==['provider_key']:
-                import re
-                data=dest.read_bytes()
-                matches=list(re.finditer(rb'sk-[A-Za-z0-9_-]{20,}',data))
-                if all(data[max(0,m.start()-8):m.start()]==b'uri="#ma' for m in matches):
-                    disposition='Reviewed SVG mask fragment, not a provider key'
+            if reviewed_false_positive(item,flags):
+                disposition='All16 matches reviewed in XML mask id/label/URI attributes, not provider keys; exact hash allowlist only'
             if not disposition:raise RuntimeError('Unresolved credential-like content: '+item['paths'][0])
         return {'sha256':actual,'bytes':item['bytes'],'paths':item['paths']},flags,disposition
     objects=[]
