@@ -50,7 +50,7 @@ def main():
           'query':'Verify current authority, retrospective retrieval, application blocking, review calibration and recovery prerequisites',
           'intent':'Preserve accepted production; calibrate finite mechanisms and prepare/verify authorized protection, not new production.',
           'phase':'execution','inputs':{p:pk.file_hash(ROOT/p) for p in paths},
-          'execution_authority':{'source':'docs/planning/PROTECTION_CALIBRATION_255.md','scope':'Director255 local protection preparation and knowledge/internal review calibration. Remote writes require exact scope approval.'},
+          'execution_authority':{'source':'docs/planning/PROTECTION_CALIBRATION_255.md','scope':'Director255 protection and calibration plus subsequent Go ahead for the stated Git range, private S3 snapshot and bounded final delta. No deletion, new production, paid models or release.'},
           'open_decisions':[], 'hypotheses_to_test':['Original regression success does not establish coverage of latest lessons/current approval.','Structural evidence validation cannot prove a visual observation is true.']}
     write('task.json',task)
     packet=pk.task_packet(ROOT,task);write('packet.json',packet)
