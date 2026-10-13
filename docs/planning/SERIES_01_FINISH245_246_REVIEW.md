@@ -1,5 +1,13 @@
 # Pashtun complete sequence: finishing245 and music comparison246
 
+## Exchange253 — Director provisional production pass
+
+Director: “Record provisional pass. Final pass will be provided once the full trailer is approved for release.” This provisionally accepts the complete20s Pashtun sequence delivered at252, clean MP4 SHA256 `1004ed9f2e06d2eafb008c925eb9d266e8a13b8603086020e28d19e3b606722b`. Preserve this as the current accepted sequence for trailer assembly; do not reopen its look, fist or mix for routine polish. Reopen only for demonstrated integration/regression or a Director-requested change. This is Director audiovisual acceptance following the requested phone-review delivery, not agent-observed device telemetry or a fresh claim of agent listening.
+
+**Final pass is explicitly deferred until the full trailer is approved for release.** No release/publication, new sequence dispatch, spending or broad backup/push authority follows. The strict fresh-open pixel discrepancy below remains a technical FAIL, separate from creative acceptance; rights, trailer integration and recovery completeness are not waived. Historical blocked evidence gates remain preserved, not retroactively changed to PASS. This approval supersedes the pending Director-acceptance wording in the252 snapshot below.
+
+Carry-forward records: [process, discipline lessons, reuse and recovery](../knowledge/PRODUCTION_LEARNING_APPLICATION_INDEX.md#current-carry-forward-review-at-exchange248), [shot/beat review brief](SHOT_BEAT_QUALITY_BRIEF.md), [historical audit and prospective scorecard](../knowledge/PASHTUN_PRODUCTION_AUDIT250.md). The audit cutoff remains exchange250; later finishing, upload and approval do not silently change its totals. Counter253; next checkpoint260. Source/media recovery remains the recommended next operational priority; coordinated trailer/music mapping follows, not another cosmetic Pashtun pass.
+
 ## Exchange248 /252 — complete20s derivative for phone review
 
 Director calls247 fantastic, requests the final fist/knuckle correction and a20s ending, and adopts larger-than-life style across the series. The corrected480-frame derivative is complete: [clean20s MP4](../../.runtime/art-direction/series01-finish248/delivery01/pashtun-20s.mp4) and [captioned20s MP4](../../.runtime/art-direction/series01-finish248/delivery01/pashtun-20s-captioned.mp4). The B sound is unchanged before19.75s, with a quarter-second standalone end fade and an unfaded20s join master preserved. Existing247 is retained, not overwritten. All480 raw and encoded frames were inspected as chronological stills, with scoped full-size contact/text controls; this is not actual-speed playback or direct listening. See runtime chronology and encoded-review notes.
