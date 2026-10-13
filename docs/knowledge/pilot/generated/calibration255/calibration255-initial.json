@@ -1,0 +1,465 @@
+{
+  "schema_version": 1,
+  "oracle_sha256": "9fd95325e87ad0de907da2ae09c943b6a61515e6ea26dbdf8114088c3e17f1dd",
+  "passed": false,
+  "cases": [
+    {
+      "id": "c255-grasp",
+      "split": "calibration",
+      "expected": [
+        "anatomy",
+        "anticipation",
+        "au_contact",
+        "au_deformation",
+        "au_performance",
+        "authority",
+        "contact",
+        "current_state",
+        "economics",
+        "garment",
+        "motion",
+        "secondary",
+        "stopping",
+        "strategy",
+        "versioning",
+        "visual_gate"
+      ],
+      "selected": [
+        "anatomy",
+        "anticipation",
+        "authority",
+        "contact",
+        "economics",
+        "garment",
+        "identity",
+        "motion",
+        "secondary",
+        "stopping",
+        "strategy",
+        "versioning",
+        "visual_gate"
+      ],
+      "missing_critical": [
+        "au_contact",
+        "au_deformation",
+        "au_performance",
+        "current_state"
+      ],
+      "unrecognized_expected": [
+        "au_contact",
+        "au_deformation",
+        "au_performance",
+        "current_state"
+      ],
+      "forbidden_selected": [],
+      "extra_context": [],
+      "useful_recall": 0.3333333333333333,
+      "critical_recall": 0.75,
+      "context_characters": 10173,
+      "packet_digest": "0112c899299914d77df874ecfdff198acd732824f80aa6d4dc9330907fcc3f4e"
+    },
+    {
+      "id": "c255-neck",
+      "split": "calibration",
+      "expected": [
+        "anatomy",
+        "anticipation",
+        "au_deformation",
+        "au_performance",
+        "authority",
+        "contact",
+        "current_state",
+        "economics",
+        "motion",
+        "stopping",
+        "strategy",
+        "versioning",
+        "visual_gate"
+      ],
+      "selected": [
+        "anatomy",
+        "anticipation",
+        "authority",
+        "contact",
+        "economics",
+        "garment",
+        "identity",
+        "motion",
+        "secondary",
+        "stopping",
+        "strategy",
+        "versioning",
+        "visual_gate"
+      ],
+      "missing_critical": [
+        "au_deformation",
+        "au_performance",
+        "current_state"
+      ],
+      "unrecognized_expected": [
+        "au_contact",
+        "au_deformation",
+        "au_performance",
+        "current_state"
+      ],
+      "forbidden_selected": [],
+      "extra_context": [],
+      "useful_recall": 0.6,
+      "critical_recall": 0.7692307692307693,
+      "context_characters": 10173,
+      "packet_digest": "d056c6821397554303f4a49e625e70a6770e1850fbf5621b287be651c221d3d0"
+    },
+    {
+      "id": "c255-wrap",
+      "split": "calibration",
+      "expected": [
+        "anticipation",
+        "au_contact",
+        "au_deformation",
+        "authority",
+        "contact",
+        "current_state",
+        "economics",
+        "garment",
+        "motion",
+        "stopping",
+        "strategy",
+        "versioning",
+        "visual_gate"
+      ],
+      "selected": [
+        "anatomy",
+        "anticipation",
+        "authority",
+        "contact",
+        "economics",
+        "garment",
+        "identity",
+        "motion",
+        "secondary",
+        "stopping",
+        "strategy",
+        "versioning",
+        "visual_gate"
+      ],
+      "missing_critical": [
+        "au_contact",
+        "au_deformation",
+        "current_state"
+      ],
+      "unrecognized_expected": [
+        "au_contact",
+        "au_deformation",
+        "au_performance",
+        "current_state"
+      ],
+      "forbidden_selected": [],
+      "extra_context": [],
+      "useful_recall": 0.6,
+      "critical_recall": 0.7692307692307693,
+      "context_characters": 10173,
+      "packet_digest": "57ed956c09d6cfa83b84b2875ea6bece323633c73e1bde544320bec870f18a82"
+    },
+    {
+      "id": "c255-visibility",
+      "split": "calibration",
+      "expected": [
+        "anticipation",
+        "au_performance",
+        "au_staging",
+        "au_surface",
+        "authority",
+        "contact",
+        "current_state",
+        "economics",
+        "geography",
+        "secondary",
+        "stopping",
+        "strategy",
+        "versioning",
+        "visual_gate"
+      ],
+      "selected": [
+        "anatomy",
+        "anticipation",
+        "authority",
+        "contact",
+        "economics",
+        "garment",
+        "geography",
+        "identity",
+        "look",
+        "motion",
+        "secondary",
+        "stopping",
+        "strategy",
+        "sword",
+        "versioning",
+        "visual_gate"
+      ],
+      "missing_critical": [
+        "au_performance",
+        "au_staging",
+        "au_surface",
+        "current_state"
+      ],
+      "unrecognized_expected": [
+        "au_contact",
+        "au_deformation",
+        "au_performance",
+        "au_staging",
+        "au_surface",
+        "current_state"
+      ],
+      "forbidden_selected": [],
+      "extra_context": [
+        "motion"
+      ],
+      "useful_recall": 0.7142857142857143,
+      "critical_recall": 0.7142857142857143,
+      "context_characters": 11987,
+      "packet_digest": "80e71dd07925f4d77e6903a5a556600eeeb27df43b190ab08be7e762a909894a"
+    },
+    {
+      "id": "c255-audio",
+      "split": "calibration",
+      "expected": [
+        "anticipation",
+        "au_audio",
+        "authority",
+        "current_state",
+        "economics",
+        "narrative",
+        "rights",
+        "sound",
+        "stopping",
+        "strategy",
+        "versioning",
+        "visual_gate"
+      ],
+      "selected": [
+        "anticipation",
+        "authority",
+        "captions",
+        "economics",
+        "narration_a",
+        "narrative",
+        "quotation",
+        "rights",
+        "sound",
+        "stopping",
+        "strategy",
+        "versioning",
+        "visual_gate"
+      ],
+      "missing_critical": [
+        "au_audio",
+        "current_state"
+      ],
+      "unrecognized_expected": [
+        "au_audio",
+        "current_state"
+      ],
+      "forbidden_selected": [],
+      "extra_context": [],
+      "useful_recall": 1.0,
+      "critical_recall": 0.8333333333333334,
+      "context_characters": 12839,
+      "packet_digest": "8b18bc0ffdb3fcc3f675635297d7279b2c65d44ce17263a96be5a8e5e04f3fd4"
+    },
+    {
+      "id": "c255-render",
+      "split": "calibration",
+      "expected": [
+        "anticipation",
+        "au_reuse",
+        "authority",
+        "cache_safety",
+        "current_state",
+        "economics",
+        "render_profile",
+        "stopping",
+        "strategy",
+        "versioning",
+        "visual_gate"
+      ],
+      "selected": [
+        "anticipation",
+        "authority",
+        "cache_safety",
+        "economics",
+        "look",
+        "render_profile",
+        "stopping",
+        "strategy",
+        "versioning",
+        "visual_gate"
+      ],
+      "missing_critical": [
+        "au_reuse",
+        "current_state"
+      ],
+      "unrecognized_expected": [
+        "au_reuse",
+        "au_surface",
+        "current_state"
+      ],
+      "forbidden_selected": [],
+      "extra_context": [],
+      "useful_recall": 0.5,
+      "critical_recall": 0.8181818181818182,
+      "context_characters": 7840,
+      "packet_digest": "e9e0c4fd95017345cbb17bde95f5b18093e5f41c87703b28492d958df9f5adf7"
+    },
+    {
+      "id": "c255-memory",
+      "split": "calibration",
+      "expected": [
+        "anticipation",
+        "au_reuse",
+        "au_review",
+        "authority",
+        "current_state",
+        "economics",
+        "retrieval",
+        "stopping",
+        "strategy",
+        "versioning",
+        "visual_gate"
+      ],
+      "selected": [
+        "anticipation",
+        "authority",
+        "economics",
+        "retrieval",
+        "stopping",
+        "strategy",
+        "versioning",
+        "visual_gate"
+      ],
+      "missing_critical": [
+        "au_reuse",
+        "au_review",
+        "current_state"
+      ],
+      "unrecognized_expected": [
+        "au_reuse",
+        "au_review",
+        "current_state"
+      ],
+      "forbidden_selected": [],
+      "extra_context": [],
+      "useful_recall": null,
+      "critical_recall": 0.7272727272727273,
+      "context_characters": 6494,
+      "packet_digest": "39d63a3761ae27b53cd0ce95d5efdac09b43fdf84f1e1079c3e382dce6cd784a"
+    },
+    {
+      "id": "c255-look",
+      "split": "transfer_check",
+      "expected": [
+        "anticipation",
+        "au_deformation",
+        "au_reference",
+        "authority",
+        "current_state",
+        "economics",
+        "identity",
+        "stopping",
+        "strategy",
+        "versioning",
+        "visual_gate"
+      ],
+      "selected": [
+        "anatomy",
+        "anticipation",
+        "authority",
+        "economics",
+        "identity",
+        "look",
+        "representation",
+        "rights",
+        "stopping",
+        "strategy",
+        "versioning",
+        "visual_gate"
+      ],
+      "missing_critical": [
+        "au_deformation",
+        "au_reference",
+        "current_state"
+      ],
+      "unrecognized_expected": [
+        "au_deformation",
+        "au_reference",
+        "au_surface",
+        "current_state"
+      ],
+      "forbidden_selected": [],
+      "extra_context": [
+        "anatomy"
+      ],
+      "useful_recall": 0.75,
+      "critical_recall": 0.7272727272727273,
+      "context_characters": 9455,
+      "packet_digest": "ffd96ea9e48d3034f5c00f26661ccfb7d9493c407b04ac1d93136020092502ed"
+    },
+    {
+      "id": "c255-release",
+      "split": "transfer_check",
+      "expected": [
+        "anticipation",
+        "au_audio",
+        "au_reuse",
+        "authority",
+        "captions",
+        "current_state",
+        "economics",
+        "rights",
+        "sound",
+        "stopping",
+        "strategy",
+        "versioning",
+        "visual_gate"
+      ],
+      "selected": [
+        "anticipation",
+        "authority",
+        "cache_safety",
+        "captions",
+        "economics",
+        "look",
+        "narration_a",
+        "narrative",
+        "quotation",
+        "render_profile",
+        "rights",
+        "sound",
+        "stopping",
+        "strategy",
+        "versioning",
+        "visual_gate"
+      ],
+      "missing_critical": [
+        "au_audio",
+        "au_reuse",
+        "current_state"
+      ],
+      "unrecognized_expected": [
+        "au_audio",
+        "au_reuse",
+        "au_surface",
+        "current_state"
+      ],
+      "forbidden_selected": [],
+      "extra_context": [
+        "cache_safety"
+      ],
+      "useful_recall": 0.8333333333333334,
+      "critical_recall": 0.7692307692307693,
+      "context_characters": 14827,
+      "packet_digest": "79d54d4e3568c2aac9eecf997c1fde909df4f0bb861c5b458f7f679911a047ea"
+    }
+  ],
+  "limit": "Finite agent-authored applicability oracle, authored before routing. Structured descriptors supplied by agent; no independent-model or audience validation. Useful recall and irrelevant burden are separate from critical recall."
+}

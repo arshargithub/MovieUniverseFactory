@@ -1,0 +1,32 @@
+# Current production authority and carry forward
+
+## Accepted state
+
+Director253 provisionally accepts the complete20-second Pashtun audiovisual unit. Exact clean MP4 SHA256: `1004ed9f2e06d2eafb008c925eb9d266e8a13b8603086020e28d19e3b606722b`, at `.runtime/art-direction/series01-finish248/delivery01/pashtun-20s.mp4`. Final pass occurs only when the full trailer is approved for release. Preserve this picture, fist correction, selected B music, Kirk voice, short script, quote and ending; do not reopen for routine polish. Changed use, regression or Director request can reopen affected checks. Source approval: [253 record](../planning/SERIES_01_FINISH245_246_REVIEW.md#exchange253--director-provisional-production-pass).
+
+The spoken script ends at “Their credentials are … impeccable.” The Pathans quotation and full Churchill attribution are visual only. The accepted music is the Director-selected original theme, not the rejected generated auditions. Final247 B starts at source40.18s; measured source52.436 aligns with edit12.256 shuffle. The clean20s master contains a last0.25s standalone fade; an unfaded trailer-join WAV is preserved. Voice selection is no longer pending for reuse of this exact accepted sequence. This does not approve a new voice/script or further paid generation.
+
+Technical248 strict replay remains FAIL: ten controls within1/255, one control with two red-channel values differing2/255. Creative acceptance is not renderer qualification. Rights/release clearance and full-trailer integration remain distinct. Agent frame inspection is not real-time listening; do not invent audio or device telemetry from the Director's approval.
+
+## Current authorized work
+
+Director255 authorizes current-work protection plus calibration of learning retrieval, application and internal review. New Sikh/Gurkha production waits for those prerequisites. No new paid models, tools, specialists, public release, deletion or bucket-policy changes. Remote protection is governed by exact outgoing-range/payload review, secret exclusion and restore verification, not permission to copy credential stores. Source: [254/255 work plan](../planning/PROTECTION_CALIBRATION_255.md). No new sequence authority follows from a passing packet.
+
+Current records take precedence over historical pending wording in dated sections. Preserve rejected/failed evidence as history, not current targets. A task that cannot reconcile conflicting evidence must surface the conflict rather than pick whichever search result ranks first. This page is a source-bound current entry point, not a replacement for the original decision sources or a claim that every older status field is reconciled.
+
+## Learning application requirements
+
+The [250 retrospective](PASHTUN_PRODUCTION_AUDIT250.md) supplies AU01–AU16. Before each work package, select relevant lessons plus adjacent interfaces and bind each to a concrete action and observable test. The [shot/beat brief](../planning/SHOT_BEAT_QUALITY_BRIEF.md) defines the audience read and failure hypotheses; the [strategy requirement](../decisions/0005-production-strategy-before-execution.md) defines representation, interfaces and earliest useful proof. Correct retrieval is not proof that a render was judged correctly.
+
+Larger-than-life impact and a fixed high quality floor remain global requirements. Efficient Quality means fewer avoidable failures at that bar, not lower acceptance. Images guide identity and look; accepted native differences remain accepted. New Sikh/Gurkha entities remain deliberately unmapped until their distinct source decisions/interfaces have been reconciled; unknown is a blocker, not empty success.
+
+Measure escaped and repeated defects, unnecessary handovers, discovery phase, actual reuse adaptation, work/wait/native jobs and recorded usage separately. Historical250 approximately145h is a fixed-cutoff, qualified baseline, not the completed sequence's exact net cost or a forecast. Do not charge Director waits or add overlapping jobs twice.
+
+## Evidence and reuse entry points
+
+- Accepted delivery, source render manifests and unchanged sound: `.runtime/art-direction/series01-finish248/`; review and exact acceptance in the253 record.
+- Human classifications and metrics: `PASHTUN_PRODUCTION_AUDIT250_CASES.json` and `PASHTUN_PRODUCTION_AUDIT250_METRICS.json`.
+- Triggered lessons/reuse limits: [application index](PRODUCTION_LEARNING_APPLICATION_INDEX.md). Its248 recovery snapshot is historical; current recovery status must come from a new verification receipt, not its prose.
+- Current protection/calibration status: [255 report](../planning/PROTECTION_CALIBRATION_255.md). A private MP4 copy is not a recoverable project backup. Neither source hashes nor a scene reopen prove all native dependencies are portable.
+
+No successful recovery/calibration is claimed by this index. New evidence must update the receipt/report; stale source bindings must block until reviewed reconciliation.

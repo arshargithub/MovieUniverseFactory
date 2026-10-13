@@ -4,6 +4,10 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+### Exchange255 — protection and calibration execution
+
+Director authorizes the254 prerequisites. See [current work/results](PROTECTION_CALIBRATION_255.md) and [current authority](../knowledge/CURRENT_PRODUCTION_STATE.md). Preserve provisional253 acceptance; no new character production or release authority. Source/lesson routing and enforcement tests are being calibrated against actual negative/accepted examples, not merely rerunning old regressions. Exact remote range/payload authorization and restoration remain separate from local preparation. Counter255; next checkpoint260.
+
 ### Exchange254 — protect and calibrate before new sequence production
 
 Director correctly identifies the missing prerequisite in253's final ordering. Protection and learning-system calibration come before new Sikh/Gurkha production. This records sequencing and the recommended readiness contract; it does not claim calibration is complete, authorize an unspecified cloud payload/push, or start new character production. Preserve the253 provisional pass; final acceptance remains at full-trailer release approval.
