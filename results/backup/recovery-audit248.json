@@ -1,0 +1,20 @@
+{
+  "kind": "read-only-recovery-audit-not-backup-receipt",
+  "observed_utc": "2026-10-13T14:40:56Z",
+  "local_head_before_pass_commits": "1832ebd8e919d2cc61cfa68d3b4853e2facd163c",
+  "live_github_main": "fd5ca98002ae074e62c88b8c9ac514cf3b29aff0",
+  "unpushed_commits_before_pass": 282,
+  "bucket": "movie-factory-archive",
+  "active_snapshot_ids_observed": ["20260917T021807Z"],
+  "latest_backup_object_date": "2026-09-17",
+  "closed_archive_latest_date": "2026-09-15",
+  "controls": {"all_public_access_blocks": true, "versioning": "Enabled", "default_encryption": "AES256", "ownership": "BucketOwnerEnforced"},
+  "current_eligible_worktree_inventory": {"file_count": 36948, "logical_bytes": 142950270171, "deduplication": "NOT_RUN", "secret_screening": "NOT_RUN", "consistent_frozen_manifest": false},
+  "uploaded": false,
+  "pushed": false,
+  "new_restore_test": "NOT_RUN",
+  "current_recovery_copy_verified": false,
+  "scope": "Observed project GitHub and configured S3 locations only; not a search of unrelated cloud accounts or a Time Machine audit. Current work remains writable.",
+  "consequence": "Latest production and unpushed history are not protected by the observed off-device copies. Existing September snapshot receipt does not cover later work.",
+  "next": "Obtain exact-range/payload authority, freeze and screen a current manifest, push approved history, upload immutable deduplicated content, verify inventory/checksums and streamed restore, then reopen a representative complete dependency closure in a fresh location. No deletion."
+}
