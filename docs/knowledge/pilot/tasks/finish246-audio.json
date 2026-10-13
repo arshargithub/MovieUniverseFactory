@@ -1,0 +1,32 @@
+{
+  "id": "finish246-audio",
+  "operation": "audio",
+  "entities": [
+    "officer",
+    "music_reference"
+  ],
+  "query": "native full speed attention camera checkpoint support contact motion narration intelligibility quotation sound music",
+  "intent": "Deliver two complete22.5s clips with identical encoded picture and non-music sound: A88s turn, B51s turn; no new calls or taste claims.",
+  "phase": "execution",
+  "inputs": {
+    ".runtime/art-direction/series01-facebuilder-trial-01/finish245-opening01/scene.blend": "0442db9c875f2c0c337fbb5f3e3d11f5f0d125ad923d38eb3efb4ebad39ca4c2",
+    ".runtime/art-direction/series01-facebuilder-trial-01/finish245-route03/scene.blend": "cc5f164e435d93c3f34f1391970ee276137c4850a11c8980276624eb103b69af",
+    "docs/planning/SERIES_01_PASHTUN_FINISHED_UNIT_PLAN.md": "af3597d64de2e979ffa02ec421fd3f445e107b68139a8fcabc0aab0c47ee90ab",
+    "docs/planning/SERIES_01_PASHTUN_NARRATIVE_AUDIO_PROPOSAL.md": "30933caf703631b77e2660a3ffe3680df150251f03419aa42ea6bc16b6e8b1c9",
+    ".runtime/art-direction/series01-facebuilder-trial-01/entrance218-opening12/scene.blend": "f6ec2a861766bcefb4346de750d2892842bc9dbbff8e9ae72cb9c5a75c4abc66",
+    ".runtime/art-direction/series01-facebuilder-trial-01/entrance218-route13/scene.blend": "eea43072ceed01dc0f6f2b35954432f02fcd2a0d15eb0ddde783e2761382dc58"
+  },
+  "open_decisions": [],
+  "execution_authority": {
+    "source": "docs/planning/SERIES_01_PASHTUN_FINISHED_UNIT_PLAN.md",
+    "scope": "Director246 explicitly requests both full clips, changing only music passage. Continue245 native render unchanged; no new call, upload, spend or selection."
+  },
+  "hypotheses_to_test": [
+    "Earlier source51s turn leaves88s peak available for later trailer use; emotional success needs Director listening.",
+    "Video packets and common narration/effects PCM remain identical; only music changes, without new masking/clipping."
+  ],
+  "execution_prerequisites": [
+    "Read246 additions and reconciliation; use same245 source stems, master gain and full native edit.",
+    "Preserve A and verify B anchor and encoded-video identity; no automatic listening/rights PASS."
+  ]
+}

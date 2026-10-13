@@ -1,5 +1,15 @@
 # Pashtun entrance narration and sound proposal
 
+## Exchange246 — preserve later peak; compare an earlier musical passage
+
+Director identifies35–105s as the strongest region and wants to reserve musical headroom for Sikh, Gurkha and ensemble/ending. Deliver both full clips: A retains76.25–98.75s/88s turn anchor; B tests39.25–61.75s/51s turn anchor and subsequent52s surge. Same picture, voice, physical sound, timing, graphics and gain ramp; no regeneration, tempo change, new spend or new musical selection. Current theme remains selected; excerpt choice stays open until Director comparison. See the246 strategy in the finished-unit plan. The88s passage may support the Sikh sequence later, but this request does not lock its timing or the remaining trailer arrangement.
+
+## Exchange245 — approved shorter script and integrated finishing
+
+Director approves244's complete pass; confirms “races” and “impeccable” are barely audible personally as well as to partner. Their clarity is a blocking mix/performance requirement. Spoken script now ends at impeccable; Pathans quotation and full Sir Winston Churchill attribution are visual only. One directed short Kirk take within existing ledger is authorized by approval of the244 plan; no new cap or music generation. Private, compact, quietly invested delivery, no early doubt/sarcasm or announcer affect.
+
+Music should take ownership after speech but reach its intended maximum shortly before11.75s turn: approximately five seconds separate narration end and turn, enough for a purposeful build. Preserve original88s musical anchor, no tempo stretch, no longer ending. The exact spoken timing follows the actual take, not forced speedup. See245 integrated strategy. No production-ready claim until actual evidence supports the complete deliverable; direct auditory judgments remain unavailable to the agent and are explicitly distinguished from signal tests.
+
 ## Exchange244 — shorten speech and change foreground priorities
 
 Director requests discussion/agreement before one combined revision.243 is not accepted: Director still feels voice/music disconnect; partner reportedly cannot clearly hear “races” and “impeccable.” Both observations can coexist when broad gain suppression kills musical momentum but shallow suppression fails intelligibility. Do not chase a compromise level indefinitely; change the arrangement and foreground priorities.
