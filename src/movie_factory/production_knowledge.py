@@ -204,6 +204,13 @@ def task_packet(root, task):
         # Current canonical state cannot be overridden by omitting the task's decision list.
         for r in obligations:
             if r.get("unresolved_decision"):
+                # Reuse of a reviewed artifact is narrower than a new creative call.
+                # Both the exact artifact and current authority source must be bound.
+                accepted = r.get("accepted_artifact", {})
+                if (accepted and task.get("preserve_accepted_artifact") == accepted.get("sha256")
+                    and task["inputs"].get(accepted.get("path")) == accepted.get("sha256")
+                    and accepted.get("authority_source") in task["inputs"]):
+                    continue
                 # Only a catalog-reviewed audition can precede final selection.
                 authority = task.get("execution_authority")
                 exception = any(

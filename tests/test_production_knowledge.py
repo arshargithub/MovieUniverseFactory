@@ -12,6 +12,16 @@ from movie_factory import production_knowledge as pk
 
 ROOT = Path(__file__).resolve().parents[1]
 
+def historical_voice_fixture(root):
+    """Synthetic pending-selection state; do not pretend current253 is pending."""
+    catalog=json.loads((root/pk.CATALOG).read_text())
+    record=next(r for r in catalog['records'] if r['id']=='narrative')
+    record.pop('accepted_artifact',None)
+    record['unresolved_decision']='select_performed_voice'
+    record['decision_exceptions']=[{'task_id':'audio223-preview','operation':'audio','authority_source':'docs/planning/SERIES_01_PASHTUN_FINISHED_UNIT_PLAN.md'}]
+    (root/pk.CATALOG).write_text(json.dumps(catalog))
+    (root/pk.PINS).write_text(json.dumps(pk.freeze(root)))
+
 
 @pytest.fixture
 def root(tmp_path):
@@ -32,6 +42,7 @@ def task(root, operation="contact", entities=None):
 
 
 def test_only_catalog_authorized_audition_bypasses_final_voice_choice(root):
+    historical_voice_fixture(root)
     t = task(root, 'audio', ['officer'])
     source = 'docs/planning/SERIES_01_PASHTUN_FINISHED_UNIT_PLAN.md'
     t.update(id='audio223-preview', phase='execution',
@@ -44,6 +55,7 @@ def test_only_catalog_authorized_audition_bypasses_final_voice_choice(root):
 
 
 def test_reference_analysis_keeps_rights_without_selecting_voice(root):
+    historical_voice_fixture(root)
     t = task(root, 'audio_analysis', ['music_reference'])
     p = pk.task_packet(root, t)
     ids = {r['id'] for r in p['obligations']}
@@ -67,7 +79,7 @@ def review(root, packet):
 
 def test_coverage_partitions_all_lines(root):
     report = pk.coverage(root)
-    assert report["sources"] == 9
+    assert report["sources"] == len(pk.load(root)[0]['sources'])
     for source in pk.load(root)[1]["sources"].values():
         sections = source["sections"]
         assert sections[0]["start_line"] == 1
@@ -150,6 +162,7 @@ def test_missing_and_wrong_input_bindings(root):
 
 
 def test_execution_needs_authority_and_decisions(root):
+    historical_voice_fixture(root)
     t = task(root, "audio", ["officer"])
     t.update(phase="execution", open_decisions=["script and voice"])
     result = pk.task_packet(root, t)
