@@ -99,6 +99,40 @@
     "copied_records_excluded": 0,
     "reused_records_excluded": 13
   },
+  "recorded_codex_usage": {
+    "scope": "Recorded per-response Codex usage in fixed historical snapshot and first-image-to-audit interval; excludes cumulative turn/thread counters and all subsequent audit work.",
+    "responses": 14383,
+    "distinct_turns": 263,
+    "duplicate_records_excluded": 0,
+    "invalid_record_offsets": [],
+    "totals": {
+      "input_tokens": 2374033902,
+      "cached_input_tokens": 2326836608,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 9426226,
+      "reasoning_output_tokens": 3675334,
+      "total_tokens": 2383460128
+    },
+    "uncached_input_tokens": 47197294,
+    "cached_input_fraction": 0.9801193681521402,
+    "cumulative_cross_check": {
+      "matches_per_response_sum": true,
+      "thread_counter_delta": {
+        "input_tokens": 2374033902,
+        "cached_input_tokens": 2326836608,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 9426226,
+        "reasoning_output_tokens": 3675334,
+        "total_tokens": 2383460128
+      }
+    },
+    "limitations": [
+      "Recorded token throughput is not unique text, plan quota percentage, billed API dollars or human labor.",
+      "Cached input is included in input; reasoning is included in output. Do not add subsets again.",
+      "Only emitted records are measured; completeness of unreported/failed provider requests is not certified.",
+      "No API-pricing conversion or inferred subscription allocation is made."
+    ]
+  },
   "stages": [
     {
       "id": "AU01",
@@ -463,7 +497,7 @@
     "Whole-history pure render time",
     "Distinct defect count and first-pass review acceptance rate",
     "Director active review and music-discovery time",
-    "Engineering token usage and dollar cost",
+    "Unreported provider usage and engineering dollar cost or subscription quota allocation",
     "Counterfactual hours saved by a better process"
   ],
   "caveats": [
@@ -480,6 +514,7 @@
     "history.json": "d60b8e5ccb23657a33eb24d1686cd5a9c27ea1142cbf327a355f0c61ad5d2975",
     "metrics-initial.json": "8f99e8d4a8ad1100503056df1945dc5bab20c9b4d768aebd2f869c7347144aa5",
     "frame-costs.json": "aec6332e352e792b0e72794288c783dc7d5cac5796926a3d4c3c815889d4e5b3",
-    "operating-events.json": "10a5cc741b1f46c93ec5d94ad02b6eab64b1aa6678602ba648084b8b041a214d"
+    "operating-events.json": "10a5cc741b1f46c93ec5d94ad02b6eab64b1aa6678602ba648084b8b041a214d",
+    "token-usage.json": "456737505b383e543286b7d1a919f8c1db0ed344e7e291f9a3d6bbc25bdad6e6"
   }
 }

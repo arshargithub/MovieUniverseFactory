@@ -60,6 +60,25 @@ Waiting for a render is different from waiting for the Director: it remains a pr
 
 Starting only with the first individual Pashtun portrait on September18 at16:26 gives **276 human inputs,251 execution turns,245 finals,140.8h completed-task runtime plus3.1h open**, with the same native-job total. This alternative prevents the shared initial visual-language selection from being silently charged entirely to her. Neither total is a prediction for the Sikh or Gurkha: much of this work established reusable foundations, while their distinctive production risks remain unproved.
 
+### Recorded engineering tokens — now measurable, not a price estimate
+
+The exact local session also contains per-response usage records. Within the same broad first-image-to-audit interval, **14,383 distinct response records across263 turn IDs** report:
+
+| Token measure | Recorded count | Interpretation |
+|---|---:|---|
+| Input tokens |2,374,033,902 | Includes repeated cached context; not unique content |
+| Cached input subset |2,326,836,608 |98.01% of input; already included above |
+| Uncached input |**47,197,294** | Input minus cached subset |
+| Output tokens |**9,426,226** | Includes the reasoning subset below |
+| Reasoning output subset |3,675,334 | Already included in output; do not add again |
+| Total recorded throughput |2,383,460,128 | Input plus output; not2.38billion newly written tokens |
+
+The sum of per-response usage matches the difference in the session's cumulative thread counters exactly. There are zero duplicate response IDs and no malformed/inconsistent selected usage records. Cumulative turn/thread totals are **not** summed again. Records cover emitted Codex usage, not guaranteed unreported failed calls or separate image/video/audio provider consumption. Model responses are internal processing steps, not14,383 Director conversation turns.
+
+This is a useful engineering baseline, **not a dollar charge, subscription-quota percentage, or equivalent API invoice**. No pricing conversion is justified without the actual model/routing, cache/pricing and billing terms. The new finding supersedes the earlier assumption that all engineering token counts were unavailable; billed/allocated cost remains unknown. Preserve the detailed usage metadata locally and the aggregate in the portable metrics.
+
+The practical efficiency lever is to reduce failed reasoning/implementation loops and redundant context/tool interactions while retaining quality: use focused task packets, avoid repeated full-source scans after an adequate capture, reuse unchanged picture for editorial/audio variants, and prefer job-completion handling over frequent model-driven polling where the runtime supports it. The records do not quantify how much of the14,383 responses was avoidable, so no token-savings forecast is asserted.
+
 ### Where the work and interventions accumulated
 
 Hours below are **chronological task-timestamp occupancy**, not pure labor, render cost, exact net time or waste. Stage boundaries follow the conversation and can include cross-disciplinary work. D=defect-related input, R=repeated correction, H=avoidable stop; labels overlap. The current closure is incomplete at the cutoff.
@@ -172,6 +191,7 @@ Start with the next authorized work package and aggregate per sequence and relea
 | Render burden | Native occupancy union and sum; render-call/frame-loop durations separately; peak concurrent jobs and critical-path waiting when observed |87.9h native union;19.9h partial frame loops. Never add concurrent time twice |
 | Rework cost | Time/jobs linked to issue cause: defect/regression, changed creative decision, capability exploration or infrastructure | UNKNOWN retrospectively; avoid treating all exploration as failure |
 | Reuse benefit | Reused component, accepted version, tested scope and adaptation time; new defects introduced by reuse | Record actual adaptation, not imagined “hours saved” |
+| Engineering tokens | Deduplicated per-response input, cached subset, output and reasoning subset; preserve actual provenance and separate provider ledgers |47.2M uncached input +9.43M output, plus2.327B cached input historically; compare scoped work packages, not raw context throughput alone |
 | Cost per accepted output | Net observed work and native process time per accepted sequence/shot; output seconds as secondary context | Current20s unit not closed at cutoff; amortize shared foundation separately, do not forecast by dividing145h by20s |
 | Durability | Last verified remote source commit and media recovery snapshot, age, missing active dependencies |248 found sourceOct3/mediaSept17; current work not protected off-device. Do not substitute commit counts for a restore test |
 
@@ -186,8 +206,8 @@ Record review admission and its artifact version, issue IDs, new-versus-repeat s
 ## Evidence, reproducibility and limits
 
 - Exact task: `01a0878c-e7a2-75e0-873c-c31d97f879a1`, local session snapshot9,470,427,510bytes; captured prefixSHA256 `89e0a0729cffaf5d3789a3f2ba354059001c3f5a51a037fc50ad4d7b569948a6`. Sanitized extractionSHA256 `d60b8e5ccb23657a33eb24d1686cd5a9c27ea1142cbf327a355f0c61ad5d2975`.
-- Local detailed evidence: `.runtime/production-audit250/history.json`, `cases.json`, `operating-events.json`, `metrics-initial.json`, `frame-costs.json`. Portable Git artifacts are the report, abbreviated source-indexed case ledger and compact metrics. This is not a lossless conversation backup.
+- Local detailed evidence: `.runtime/production-audit250/history.json`, `cases.json`, `operating-events.json`, `metrics-initial.json`, `frame-costs.json`, `token-usage.json`. Portable Git artifacts are the report, abbreviated source-indexed case ledger and compact metrics. This is not a lossless conversation backup.
 - Scripts: `scripts/audit_pashtun250.py` captures exact-task message/lifecycle/tool metadata without copying reasoning, tool arguments/results, image payloads or credential files; `scripts/audit250_classification.py` holds explicit human-readable case judgments; `scripts/audit250_metrics.py` computes unions/censoring and publishes the baseline. Classification is manual agent judgment, not model-independent ground truth.
 - Review covers every in-scope Director input, linked assistant handovers, documented methods/outcomes and source records. It does **not** claim a fresh visual inspection of every historical render or replay of every failed native file. Historical visual failures are grounded in the Director's actual feedback and records. Present finishing images have separate current review evidence.
 - Tests cover interval union, excluded gaps with continuing jobs, clipping at cutoff, overlap subtraction, superseded/orphan ledger events, complete case coverage and unique handover IDs. A passing test proves bookkeeping behavior, not that all artistic classifications are correct.
-- Unknowns remain exact net labor, complete pure-render time, Director active review time, distinct historical defect count, first-pass review denominator, engineering tokens/cost and counterfactual saved effort. No guesses are substituted. No new paid call, external upload or remote push was performed for this audit.
+- Unknowns remain exact net labor, complete pure-render time, Director active review time, distinct historical defect count, first-pass review denominator, unreported provider usage, engineering dollar cost/quota allocation and counterfactual saved effort. No guesses are substituted. No new paid call, external upload or remote push was performed for this audit.
