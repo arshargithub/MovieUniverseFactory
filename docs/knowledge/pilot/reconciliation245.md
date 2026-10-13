@@ -1,5 +1,9 @@
 # Exchange245 source reconciliation
 
+## Continuation247: selected B correction
+
+Read247 Director feedback and new bounded strategy. B and hoof rhythm are selected, narration explicitly unchanged; earlier requests for A/B selection and key-word repair are historical. Only unit source changes in this reconciliation; audio source stays historical and is overridden by this explicit later authority. Add catalog sound/narrative exceptions and bind exact source audio plus245 frames. Manual impact set includes graphic weathering/readability and sound-layer preservation, not new motion. No new provider calls or release rights. Direct listening cannot be certified by meters. Preserve earlier gates and render evidence.
+
 ## Continuation246: music-only comparison
 
 Read Director246 request, both new246 work-package sections and unchanged245 source/audio strategy. Only unit/audio pinned sources changed; compared the remaining seven hashes before repinning. Add one scoped audio decision exception, not new voice authority. A retains88s source turn; B uses51s with the following52s surge. All current native dispatch inputs and render strategy remain unchanged. Old245 packets remain historical dispatch evidence; fresh246 audio and refreshed245 motion packets must bind the amended documents before further dispatch/handoff. Compare identical encoded picture and common non-music stems, fixed master gain, source mapping and clipping/masking. Direct listening remains NOT_RUN; source51s cue is based on Director's musical landmark, not fabricated hearing. No new render, provider call, upload or final musical choice follows.

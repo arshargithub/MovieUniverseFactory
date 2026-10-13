@@ -1,5 +1,21 @@
 # Pashtun complete sequence: finishing245 and music comparison246
 
+## Exchange247 — selected B refinement
+
+Director selects B and preserves narration and gallop rhythm. [Complete revised clip](../../.runtime/art-direction/series01-finish247/delivery02/pashtun-B-refined.mp4), [captioned version](../../.runtime/art-direction/series01-finish247/delivery02/pashtun-B-refined-captioned.mp4). Both retain22.5s/540frames/1080x1920, all native action and camera, exact voice timing/gain and wind/turn sound.
+
+- Hoof impact body and short attack strengthened; measured approximately1.2dB lift outside speech,0dB during speech. Saved cue times/gains/pan unchanged. Hoof-only transient control supplies headroom, never a new whole-mix normalization. Common voice/wind/turn residual is below3e-7 PCM. User feedback that rhythm/narration work is scoped acceptance, not agent hearing.
+- Music moves0.93s earlier than original B: source40.18–62.68s. Source52 at11.82s; measured low-mid source peak52.436 aligns with the first strong shuffle impact12.256. Director follow-up supplies the shuffle anchor. No tempo changes, extension or altered animation. Exact subjective impact remains a listening review.
+- Quote remains3.80–8.50s with readable full attribution; new original aged-paper material has organic worn edges, foxing, fibers and creases. Built-in image generation supplied only paper, not lettering or a fake archival scan. Exact prompt saved at `.runtime/art-direction/series01-finish247/graphics01/generation-prompt.txt`; paper at adjacent `aged-paper.png`. The first procedural/vector texture was rejected internally and preserved. Final text/captions remain editable separately.
+
+Inspected45 chronological encoded samples across the complete sequence plus full-size quote/caption evidence. Weathering remains visible at normal size, text/attribution are complete, face and OTS geography remain clear; no new sampled picture regression.540 native source hashes verified; final delivery02 video payloads are byte-identical to visually reviewed delivery01, with only the final shuffle-aligned music change. Full decode checks and technical sound preservation are separate from unperformed direct listening. Prior245 native/reopen controls remain scoped unchanged-picture evidence. Known219 grasp compromise is unchanged, not repaired or newly accepted.
+
+No new external paid calls, Blender render, upload or publication. One built-in image generation, usage/cost unknown. AWS SSO was separately requested and completed; future upload still requires the Director's request. First finished-unit lifecycle remains open, not production/release-qualified. Next review is this integrated correction, not another isolated sample; after acceptance move to remaining trailer entrances/music allocation.50 focused offline tests pass; no test count substitutes for listening or rights/device checks.
+
+Learning: musical timestamp labels are approximate taste references. Bind the chosen audible event to the actual physical/cinematic cue, retain reversible offsets, and use Director listening rather than meters as emotional acceptance. Tactile graphic wear must survive delivery scale; prefer a suitable material representation over piling more decorative procedural marks onto a failing one.
+
+---
+
 2026-10-13. **Complete comparison files produced; Director listening/selection and production qualification remain open.** Counter246, next checkpoint250. This does not close the first unit or advance release gates.
 
 ## Review deliverables

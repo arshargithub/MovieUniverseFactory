@@ -2,6 +2,16 @@
 
 Established exchange208; execution authorized at exchange209 · 2026-10-11. This is the work strategy, not an acceptance report.
 
+## Exchange247 — selected B finishing correction
+
+Director selects B and accepts the gallop rhythm; keep narration unchanged. Authorized correction: punchier/slightly louder impacts, visibly worn original quote graphic, and musical arrival1–2s earlier. Preserve all native frames, camera/action, text/timing, voice samples/gain, wind and turn effect. No new call, render, installation or upload.
+
+Strategy: advance B source start39.25 to40.25s, aligning source52s with11.75s OTS-to-front cut. Reconstruct existing hoof events deterministically, alter impact body/attack and lift modestly without changing onsets; leave voice-period competition controlled. Replace clean paper with editable irregular edges, foxing, creases and uneven ink using original vector artwork, not copied archive photographs. Earliest proof: integrated quote frame plus sample-level sound preservation/headroom checks, then one complete22.5s derivative. Compare actual encoded quote at review size; retained readable text and face clearance outrank decorative distress. Direct listening remains a Director review, not an invented agent PASS. If extra impact clips, constrain that layer rather than changing accepted narration. Stop at one integrated review-ready correction; retain prior clips and release/rights limits.
+
+Carry-forward: distinguish the source cue onset from its expressive arrival; align the latter to the intended screen event using Director listening. Surface wear must survive normal display size, not exist only as microscopic marks.
+
+247 follow-up/result: Director clarifies that the musical hit should coincide with the hard-turn shuffle and its following surge carry her uphill. Refine start to40.18s (0.93s earlier than B); measured source low-mid peak52.436s aligns with the turn effect's first strong low-mid impact12.256s. This is signal-timing evidence, not claimed hearing. Source52 now lands11.82s, just after the11.75s frontal cut. No gait or shot change. First vector-only paper distress was internally rejected as decorative/cartoonish; one original built-in-generated aged-paper asset supplies tactile wear under editable ASS lettering. No external paid call; built-in usage/cost unknown. Hoof-only peak control protects exact narration/wind/turn; measured impact lift about1.2dB outside speech,0dB during speech. Complete corrected clips and scoped review are in the247 section of `SERIES_01_FINISH245_246_REVIEW.md`; release gates remain separate. AWS SSO login separately requested and completed, no upload authorized or performed.
+
 ## Exchange246 — music-only A/B within the complete delivery
 
 Director requests both complete clips while245's native render continues. Preserve A: original Harmonic Release76.25–98.75s, source88s at the11.75s turn. Add B: contiguous39.25–61.75s, source51s at that identical turn, followed by the Director-liked52s harmonica surge. This uses more of the preferred35–105s region and leaves the88s peak available for a later Sikh entrance; that future placement is a possibility, not a locked trailer music edit. Neither variant is newly accepted by requesting the comparison.
