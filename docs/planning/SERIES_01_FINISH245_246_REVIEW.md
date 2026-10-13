@@ -1,5 +1,11 @@
 # Pashtun complete sequence: finishing245 and music comparison246
 
+## Exchange248 — current finishing pass in progress
+
+Director calls247 fantastic, requests the final fist/knuckle correction and a20s ending, and adopts larger-than-life style across the series. The source-bound corrected opening/route have passed scoped static/actual-shot admission; full480-frame rendering and independent reopening are running. **No new completed20s clip or final motion PASS yet.** The B sound is unchanged before19.75s, with a quarter-second standalone end fade and an unfaded20s join master preserved. Existing247 is retained below, not overwritten.
+
+The requested [comprehensive carry-forward review](../knowledge/PRODUCTION_LEARNING_APPLICATION_INDEX.md#current-carry-forward-review-at-exchange248) records the next-sequence process, discipline-specific learning/application, reuse boundaries, knowledge-system limits, proposed parallel work and the verified Git/S3 recovery gap. [Art direction](SERIES_01_ART_DIRECTION_C.md#adopted-production-principle--larger-than-life) and the Director contract now contain the style principle. Design, implementation and recovery-audit commits are separate and local only. Current outputs are under `.runtime/art-direction/series01-finish248/`; final review, not a technical milestone, remains the handover condition.
+
 ## Exchange247 — selected B refinement
 
 Director selects B and preserves narration and gallop rhythm. [Complete revised clip](../../.runtime/art-direction/series01-finish247/delivery02/pashtun-B-refined.mp4), [captioned version](../../.runtime/art-direction/series01-finish247/delivery02/pashtun-B-refined-captioned.mp4). Both retain22.5s/540frames/1080x1920, all native action and camera, exact voice timing/gain and wind/turn sound.

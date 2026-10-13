@@ -1,5 +1,13 @@
 # Rein contact correction
 
+## Current correction — exchange248
+
+Director explicitly reopens219's tolerated defect after accepting the integrated247 sequence: the fist now stands out as the remaining visible distraction. Do not apply219's no-more-repair instruction to this new authority. Current source is245's full-speed opening/route, selected247 sound, with a20s ending requested.
+
+The new derivative moves the four non-thumb MCP rest origins0.12 native units toward the palm, reconstructs continuous finger-weight transitions and curls the PIP/DIP chain into a closed grasp. Earlier partial-weight and insufficient-closure controls remain failed evidence; no gloves or camera concealment. Bare six-view controls, both actual-surface hands and eleven actual-camera opening/turn/uphill controls were inspected before full-render admission. Both full native intervals preserve all measured non-finger world matrices and camera with0.0 maximum error, and unchanged original mesh/shape geometry; rest origins/weights/finger actions and rein curves are the declared changes. Scoped technical success is not a universal anatomical rig qualification.
+
+Current candidate sources and controls: `.runtime/art-direction/series01-finish248/opening08/`, `route09/`, `shape06/`, `fit07/`, `render-admission.json`. Full480-frame render and independent reopening are in progress; final chronological review is NOT_RUN/incomplete, not PASS. Preserve219/218 records below as history. The integrated20s deliverable, not another diagnosis-only handover, is the current exit.
+
 ## Current disposition — exchange219
 
 Director correctly identifies a remaining anatomical defect: the fingers extend beyond the apparent palm/knuckle line before bending.218 improved closure but did not establish correct MCP/knuckle placement. Withdraw its unqualified anatomical/visual PASS; preserve replay, source preservation and closed-silhouette observations as narrower evidence. This is another missed structural comparison, not a new taste or a request for perfection.
