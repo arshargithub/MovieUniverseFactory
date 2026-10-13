@@ -2,6 +2,8 @@
 
 Complete this brief before production animation changes. Label unknowns and draft values; freeze numeric thresholds before scoring. This is an engineering artifact, not an extra permission form.
 
+Exchange249: use this as the motion-specific portion of the [shot/beat performance and believability brief](SHOT_BEAT_QUALITY_BRIEF.md), not a separate duplicate form. Every planned shot/beat needs audience-visible requirements, applicable expertise lenses, strategy and proof, including anatomy/contact and secondary response even if the Director has not flagged them. Shared rows may be inherited explicitly; omissions require reasons. Current known issues are a floor, not the complete review scope.
+
 Start the [operating ledger](../engineering-intelligence/OPERATING_LEDGER.md) with authorized design work. Include a short [learning-delta table](LEARNING_DELTA_TEMPLATE.md) before freeze and a [closure card](EXPERIMENT_CARD_TEMPLATE.md) at disposition. Forecast net time, variants, tests, disk/output growth and packaging; use the 20-minute diagnostic and 60-minute overall checkpoints unless a task budget overrides them.
 
 ## Intention and scope

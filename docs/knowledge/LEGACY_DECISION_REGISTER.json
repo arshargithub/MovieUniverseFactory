@@ -248,10 +248,10 @@
       "label": "Yes — **a little bit.** 😄 And I'm glad you caught that, because I think we've reached an important architectural fork. I **still love your original idea** of agents corresponding to real filmmaking r",
       "statement_excerpt": "Yes — **a little bit.** 😄 And I'm glad you caught that, because I think we've reached an important architectural fork.\n\nI **still love your original idea** of agents corresponding to real filmmaking roles. I don't want to abandon it.\n\nBut after going through the workflow with you, I think there's a danger in making that the **literal architecture**.\n\n## The problem with a 1:1 org-chart architecture\n\nIf we literally build:\n\n```text\nDirector Agent\n   ↓\nScreenwriter Agent\n   ↓\nProduction Designer Agent\n   ↓\nCinematographer Agent\n   ↓\nAnimator Agent\n   ↓\nLighting Agent\n   ↓\nVFX Agent\n   ↓\nEditor Agent\n```\n\nwe've accidentally recreated a **human film studio as a software pipeline**.\n\nAnd that's not necessarily what we want.\n\nBecause in a real film, these roles exist partly because:\n\n- humans have limited bandwidth\n- people specialize\n- departments work somewhat independently\n- communication happens through organizational boundaries\n- physical production creates handoffs\n\nOur Factory doesn't have those constraints.\n\nA single strong reasoning model might be capable of considering:\n\n> story + character + cinematography + continuity\n\nsimultaneously.\n\nAnd an agent might need to perform several \"roles\" during one task.\n\n---\n\n# I think we want two different concepts\n\n### 1. **Roles — the mental model**\n\nThese correspond to the real filmmaking disciplines.\n\nThey are extremely useful becaus",
       "statement_excerpt_is_complete": false,
-      "status": "CANDIDATE_REQUIRES_CONTEXT_REVIEW",
-      "applicability": null,
+      "status": "CONTEXT_REVIEWED_MAPPED",
+      "applicability": {"disposition": "ADOPT", "statement": "Roles describe expertise; agents perform work; artifacts hold truth; no literal studio org chart.", "mapped_to": "docs/planning/SHOT_BEAT_QUALITY_BRIEF.md", "exchange": 249},
       "supersedes": [],
-      "verification": null
+      "verification": {"full_source_read": true, "following_user_approval_turn": "245cd028-d5f4-40f5-872d-1512c522517a", "scope": "Only this principle context-reviewed, not whole legacy register."}
     },
     {
       "id": "legacy-334ece3c-e088-48e1-9a0d-569424541b7f",
@@ -1934,10 +1934,10 @@
       "label": "So the runtime stack is now: > **Goal** → what must be achieved  ",
       "statement_excerpt": "Locked.\n\nSo the runtime stack is now:\n\n> **Goal** → what must be achieved  \n> **Plan** → current strategy  \n> **Task** → meaningful unit of domain work  \n> **Job** → executable technical attempt  \n> **Action** → atomic operation/state transition\n\nThat gives us a clean place to define agents next.\n\n# Architecture Question 36 — What exactly is an Agent?\n\nWe already agreed very strongly that we should **not** build a fake Hollywood org chart out of agents.\n\nSo I think an Agent should be defined by **computational responsibility**, not by job title.\n\nFor example, instead of:\n\n> Cinematographer Agent  \n> Production Designer Agent  \n> Editor Agent\n\nas permanent autonomous personas, we might have agents like:\n\n### Planning Agent\nTurns Goals into adaptive Plans and Tasks.\n\n### Creative Reasoning Agent\nWorks on story, scene, visual, performance, music, etc. using whichever role/expertise perspectives are relevant.\n\n### Evaluation Agent\nAssesses outputs against intent, audience objective, constraints, continuity, perceptual quality, etc.\n\n### Production Agent\nCoordinates technical realization of a scene/shot/artifact.\n\n### Research Agent\nBuilds or updates audience/research knowledge from external evidence.\n\n### Continuity Agent\nPerforms structured continuity and dependency reasoning.\n\nThose are examples, not names I want to lock yet.\n\nThe important principle would be:\n\n> **Agents are dur",
       "statement_excerpt_is_complete": false,
-      "status": "CANDIDATE_REQUIRES_CONTEXT_REVIEW",
-      "applicability": null,
+      "status": "CONTEXT_REVIEWED_MAPPED",
+      "applicability": {"disposition": "ADOPT", "statement": "Agent reasoning responsibility, worker capability execution, role expertise perspective.", "mapped_to": "docs/planning/SHOT_BEAT_QUALITY_BRIEF.md", "exchange": 249},
       "supersedes": [],
-      "verification": null
+      "verification": {"full_source_read": true, "following_user_approval_turn": "3353cdea-3717-44ca-bc81-5b6868fdf194", "scope": "Only this principle context-reviewed, not whole legacy register."}
     },
     {
       "id": "legacy-3353cdea-3717-44ca-bc81-5b6868fdf194",
@@ -2318,10 +2318,10 @@
       "label": "So: > **Shot** = intended cinematic unit  ",
       "statement_excerpt": "Locked.\n\nSo:\n\n> **Shot** = intended cinematic unit  \n> **Take** = a concrete creative/performance realization of that Shot  \n> **Build** = technical realization of that Take\n\nThat gives editorial a clean basis for selecting performances without confusing creative variation with render/export iterations.\n\n# Architecture Question 62 — Shot Specification vs Shot Intent\n\nWe’ve been using both **Shot Intent** and **Shot** as if they were the same thing, but I think they should be separated slightly.\n\nA Shot has at least two layers:\n\n### Shot Intent\n\nWhy the shot exists creatively.\n\nFor example:\n\n> Keep us trapped with Sarah as she realizes Maya has lied.\n\nThat includes things like:\n\n- narrative purpose\n- emotional beat\n- audience knowledge change\n- performance priority\n- perceptual importance\n- director notes\n\n### Shot Specification\n\nThe current concrete cinematic realization we intend to produce.\n\nFor example:\n\n- medium close-up on Sarah\n- 50mm-equivalent lens\n- camera slowly pushes in\n- Maya remains soft in foreground\n- hold 2 seconds after dialogue\n- rain visible behind Sarah\n- dialogue line X\n- target duration ~7 seconds\n\nSo:\n\n> **Intent = what the shot must accomplish.**  \n> **Specification = our current plan for how the shot accomplishes it.**\n\nThat distinction becomes useful because the **Specification can change while preserving the Intent**.\n\nSuppose the 50mm push-in repeat",
       "statement_excerpt_is_complete": false,
-      "status": "CANDIDATE_REQUIRES_CONTEXT_REVIEW",
-      "applicability": null,
+      "status": "CONTEXT_REVIEWED_MAPPED",
+      "applicability": {"disposition": "ADOPT", "statement": "Preserve Shot Intent separately from versioned Shot Specification.", "mapped_to": "docs/planning/SHOT_BEAT_QUALITY_BRIEF.md", "exchange": 249},
       "supersedes": [],
-      "verification": null
+      "verification": {"full_source_read": true, "following_user_approval_turn": "061a6ce4-34f6-4114-95db-4581cd7aa647", "scope": "Only this principle context-reviewed, not whole legacy register."}
     },
     {
       "id": "legacy-061a6ce4-34f6-4114-95db-4581cd7aa647",
