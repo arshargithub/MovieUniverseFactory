@@ -4,6 +4,10 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+### Exchange259 — Sikh original-source reset
+
+Director rejects v02's pointed beard and polished face. Restart from original C center Sikh alone, not the newer portrait chain; preserve rugged elongated facial structure and a broad natural beard while keeping his humanity. New v03 illustration is proposed, not accepted native identity. [Method change and review](SERIES_01_SIKH_EXECUTION_257.md#director259--restart-from-original-rather-than-polish-the-wrong-face). Native gate remains BLOCK; next dependency is the broad character decision before final cloth fitting. Counter259; next checkpoint260. No new paid API call, push or backup.
+
 ### Exchange258 — Sikh character proportion preference
 
 Director prefers the original illustrated-C Sikh's slightly longer face and longer beard. One targeted close-up revision preserves current wardrobe/night treatment; v02 is proposed, not accepted or a literal future model target. [Recorded direction and pending review](SERIES_01_SIKH_EXECUTION_257.md#director258--original-face-and-beard-character). Native cloth/contact/staging gate remains blocked; no production acceptance or music mapping. Counter258; next checkpoint260. Display-only comparisons were not substantive exchanges.
