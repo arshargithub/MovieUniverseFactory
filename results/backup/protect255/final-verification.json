@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "kind": "active-project-backup-verification",
+  "snapshot_id": "protect255-20261013-final",
+  "verified_at": "2026-10-14T02:19:02.442727+00:00",
+  "bucket": "movie-factory-archive",
+  "region": "ca-central-1",
+  "bucket_controls": {
+    "block_public_access": true,
+    "versioning": "Enabled",
+    "server_side_encryption": [
+      "AES256"
+    ],
+    "object_ownership": "BucketOwnerEnforced"
+  },
+  "object_prefix": "movie-factory/backup/objects/sha256/",
+  "manifest": {
+    "local_path": "/Volumes/MovieFactorySSD/MovieUniverseFactory/results/backup/protect255/final-manifest.json",
+    "remote_key": "movie-factory/backup/active/movie-universe-factory/snapshots/protect255-20261013-final/manifest.json",
+    "sha256": "32286cfc167531214c0185dc9059f22bc64e9e2f7cd99ef7efd2d38547d2db16",
+    "bytes": 17253458,
+    "remote_version_id": "V69N6Gycas.jlowXyMxRxxkTSRuJobys",
+    "remote_checksum_type": "COMPOSITE",
+    "streamed_restore_verified": true
+  },
+  "inventory": {
+    "path_count": 39459,
+    "expected_object_count": 30613,
+    "expected_object_bytes": 136483624540,
+    "available_object_store_count": 30640,
+    "all_expected_keys_and_sizes_match": true,
+    "missing": 0,
+    "size_mismatches": 0
+  },
+  "checksum_samples": [
+    {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "checksum_type": "FULL_OBJECT",
+      "ordinary_sha256_comparable": true,
+      "checksum_matches": true
+    },
+    {
+      "sha256": "05542a20c1bab518ecf5342b29d6bf7d80b712aba5fe1d81541fbabd84471624",
+      "bytes": 41870,
+      "checksum_type": "FULL_OBJECT",
+      "ordinary_sha256_comparable": true,
+      "checksum_matches": true
+    },
+    {
+      "sha256": "f737acc6c903f6f21fdfcd4a48f65d0901acd4a50ccf5731325ca4931b0ba28b",
+      "bytes": 316817,
+      "checksum_type": "FULL_OBJECT",
+      "ordinary_sha256_comparable": true,
+      "checksum_matches": true
+    },
+    {
+      "sha256": "77662aa9a7447aaa41cd090e810bd40864d3f6f9d520e021ccffcec5ab4970e5",
+      "bytes": 589212,
+      "checksum_type": "FULL_OBJECT",
+      "ordinary_sha256_comparable": true,
+      "checksum_matches": true
+    },
+    {
+      "sha256": "5b31dc63185a1f0b4ae62535dbd72a214a90a3eb617a50638e0583cc6200d13a",
+      "bytes": 5622222630,
+      "checksum_type": "COMPOSITE",
+      "ordinary_sha256_comparable": false,
+      "checksum_matches": null
+    }
+  ],
+  "streamed_restore": {
+    "remote_key": "movie-factory/backup/objects/sha256/1e/1ed613b16dc5b618ae601b9645f6042927e036f60f74314a31fc07e3c5e5c327",
+    "sha256": "1ed613b16dc5b618ae601b9645f6042927e036f60f74314a31fc07e3c5e5c327",
+    "bytes": 133463480,
+    "matches": true
+  },
+  "recovery_copy_verified": true
+}
