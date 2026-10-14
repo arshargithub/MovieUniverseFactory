@@ -7,12 +7,17 @@ from pathlib import Path
 from freeze_protect255 import scanned,copy_independent,STAGE
 from upload_protect255 import ROOT,OUT,BUCKET,PREFIX,PROFILE,REGION,AWS,object_key
 from protect255 import excluded
+from verify_active_backup import stream_sha256
 
 BASE_HEAD='adff3bd1af362952c12f132ffe4dc820a004cadb'
 
 def put(path,key):
+    expected,flags=scanned(path)
+    if flags:raise ValueError('Unscreened final upload: '+str(path.relative_to(ROOT)))
     subprocess.run([AWS,'s3','cp',str(path),f's3://{BUCKET}/{key}',
         '--checksum-algorithm','SHA256','--only-show-errors','--profile',PROFILE,'--region',REGION],check=True)
+    size,actual=stream_sha256(f's3://{BUCKET}/{key}',PROFILE,REGION)
+    if size!=path.stat().st_size or actual!=expected:raise ValueError('Final upload streamed verification mismatch')
 
 def main():
     restore=json.loads((OUT/'remote-capsule-restore.json').read_text())
@@ -29,7 +34,6 @@ def main():
     changed.update(str(p.relative_to(ROOT)) for p in (ROOT/'.runtime/knowledge-pilot213/calibration255').rglob('*') if p.is_file())
     changed.add('.runtime/experiment-ops.sqlite3')
     # Backup records are intentionally outside the worktree manifest and travel separately.
-    records=sorted(p for p in changed if p.startswith('results/backup/'))
     selected=sorted(p for p in changed if not excluded(Path(p)))
     stage=STAGE/'final-delta';stage.mkdir(exist_ok=False)
     uploads={}
