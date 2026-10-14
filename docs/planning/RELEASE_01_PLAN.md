@@ -4,6 +4,12 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+### Exchange257 — connected cloth and encounter meaning
+
+Director adopts personal recognition between protagonist and mounted leader, with the leader **not currently expected to recur**. No mentor/father role follows. Turban and face covering are **one cloth**, secured around the crown with a slack free end. The earlier brief missed this structural dependency: construction, uncovering, resting drape and relaunch response now form an early integrated risk proof, before detailed folds. [Current strategy and motion contract](SERIES_01_SIKH_SEQUENCE.md#connected-cloth-construction-and-motion-brief-257). Continue to the complete rough moving sequence, not a technical-go-ahead handover. Sikh only; music follows action; accepted Pashtun stays protected. Native/visual acceptance remains pending. Counter257; next checkpoint260; no new spend, installation or publication.
+
+Execution257 now has a complete26s diagnostic layout, preserved failed cloth controls and two **proposed** illustrated character/look studies. [Assessment and next dependency](SERIES_01_SIKH_EXECUTION_257.md#end-of-pass-assessment--not-a-native-visual-pass): native review gate remains BLOCK, not presented as completed animation. The surfaced Director choice is the Sikh's broad masked/uncovered character realization, before permanent cloth fitting to a disposable head. No literal image-reconstruction commitment. Complete internally reviewed rough sequence is still owed; Gurkha and music mapping remain queued. Two built-in image generations; no new external paid API call, remote push or257 media backup.
+
 ### Exchange256 — Sikh motorcycle sequence first
 
 Director chooses **Sikh only**, not concurrent Sikh/Gurkha production, and action/sequence development **before music mapping**. [Sikh sequence strategy](SERIES_01_SIKH_SEQUENCE.md) captures the masked motorcycle entrance, moonlit cultivated Punjab, foot Nihang gathering and mounted leader, controlled skid, uncovered respectful greeting, reference-based leader response, parting and acceleration. This deliberately replaces the Sikh protagonist's mounted entrance and admits the particular1940s-inspired machine; no wider technology package is inferred. Protection/calibration255 is complete; accepted Pashtun253 stays protected. New-reference originals are preserved locally with [hash inventory](SERIES_01_SIKH_REFERENCE_INTAKE_256.json), not yet remotely backed up.
