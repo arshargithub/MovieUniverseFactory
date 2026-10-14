@@ -109,10 +109,43 @@ def test_248_director_style_and_quality_survive_task_routing(root):
         assert 'shot/beat performance and believability brief' in actions['anticipation']
         assert 'early proof and observable failure conditions' in actions['anticipation']
         assert 'not lowering' in actions['stopping']
-    # A new lead is not silently covered by a Pashtun-only entity graph.
-    for character in ('sikh','gurkha'):
+    #257 explicitly reconciles Sikh; unreviewed leads still fail closed.
+    for character in ('gurkha','unmapped_lead'):
         with pytest.raises(pk.KnowledgeError,match='UNRESOLVED'):
             pk.task_packet(root,task(root,'modeling',[character]))
+
+
+def test_sikh257_distinct_identity_and_connected_cloth(root):
+    p = pk.task_packet(root, task(root, 'motion', ['sikh']))
+    ids = {r['id'] for r in p['obligations']}
+    assert {'sikh_scope','sikh_cloth','sikh_motion','motion','au_contact','au_deformation'} <= ids
+    assert not {'garment','geography','contact'} & ids  # Pashtun-specific contracts.
+    assert not {'pashtun','hand','shawl','horse','rein'} & set(p['entity_versions'])
+    assert 'identity' not in ids  # Pashtun-specific identity is not Sikh authority.
+    assert 'narrative' not in ids  # Action first, not automatic narration.
+    actions = {r['id']:r['action'] for r in p['obligations']}
+    assert 'one cloth' in actions['sikh_cloth']
+    assert 'not expected recurring' in actions['sikh_scope']
+    assert '256-257' in actions['current_state']
+    assert 'sikh_beard' in p['entity_versions']
+    assert 'sikh_weapon' in p['entity_versions']
+
+
+def test_sikh257_camera_exposes_actor_and_environment_interfaces(root):
+    p = pk.task_packet(root, task(root, 'camera', ['sikh_camera']))
+    assert {'sikh','sikh_turban_cover','motorcycle','nihang_crowd','nihang_horse','punjab_night'} <= set(p['entity_versions'])
+    assert {'sikh_cloth','sikh_geography','anticipation','visual_gate'} <= {r['id'] for r in p['obligations']}
+
+
+def test_sikh257_authority_remains_input_bound(root):
+    t = task(root, 'motion', ['sikh'])
+    t['phase'] = 'execution'
+    assert 'MISSING_EXECUTION_AUTHORITY' in pk.task_packet(root,t)['blockers']
+    source = 'docs/planning/SERIES_01_SIKH_SEQUENCE.md'
+    t['execution_authority'] = {'source': source, 'scope': 'rough sequence only'}
+    assert 'UNBOUND_EXECUTION_AUTHORITY' in pk.task_packet(root,t)['blockers']
+    t['inputs'][source] = pk.file_hash(root/source)
+    assert pk.task_packet(root,t)['dispatch_ready']
 
 
 def test_fts_handles_punctuation_and_does_not_promote(root):
@@ -204,7 +237,9 @@ def test_missing_contact_edge_reproduces_held_out_miss(root):
     (root / pk.PINS).write_text(json.dumps(pk.freeze(root)))
     report = pk.evaluate(root)
     assert not report["passed"]
-    assert [r["id"] for r in report["cases"] if "contact" in r["missing_critical"]] == ["neck", "shawl"]
+    #257 removes generic contact-tag leakage: sword must also traverse its
+    # actual arm/hand interface instead of acquiring a Pashtun hand rule by tag.
+    assert [r["id"] for r in report["cases"] if "contact" in r["missing_critical"]] == ["neck", "shawl", "sword"]
 
 
 def test_gate_accepts_only_complete_current_synthetic_evidence(root):

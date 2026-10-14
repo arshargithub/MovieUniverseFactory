@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "version": "255-reviewed-current-state-and-audit-actions",
-  "scope": "Current Pashtun finished-unit work and this knowledge pilot; manually declared task descriptors, not automatic scene understanding. Original source documents remain authority.",
+  "version": "257-reviewed-sikh-connected-cloth-onboarding",
+  "scope": "Protected Pashtun unit plus authorized Sikh sequence development and knowledge pilot; explicit source/impact routing, not automatic scene understanding.",
   "sources": {
     "index": {
       "path": "docs/knowledge/PRODUCTION_LEARNING_APPLICATION_INDEX.md",
@@ -148,7 +148,17 @@
         "narrative",
         "render_profile"
       ],
-      "reason": "Reconciled Director253 exact provisional approval and254/255 prerequisites with delivery SHA and recorded replay exception; not final release approval."
+      "reason": "Reviewed original253-255 authority plus exact257 current-work amendment; preserved accepted Pashtun/replay and remote authorization boundaries."
+    },
+    "sikh257": {
+      "path": "docs/planning/SERIES_01_SIKH_SEQUENCE.md",
+      "records": [
+        "sikh_scope",
+        "sikh_cloth",
+        "sikh_motion",
+        "sikh_geography"
+      ],
+      "reason": "Reviewed Director256-257, full sequence strategy, continuous-cloth clarification, new interfaces, one-off leader scope, changed-use limits and early proof requirements."
     }
   },
   "operations": {
@@ -226,7 +236,8 @@
     "hand": {
       "tags": [
         "contact",
-        "anatomy"
+        "anatomy",
+        "pashtun_contact"
       ],
       "version": "finish248-20s-director253-provisional-not-release"
     },
@@ -255,7 +266,8 @@
     },
     "rein": {
       "tags": [
-        "contact"
+        "contact",
+        "pashtun_contact"
       ],
       "version": "finish248-20s-director253-provisional-not-release"
     },
@@ -269,7 +281,8 @@
     "shawl": {
       "tags": [
         "cloth",
-        "secondary"
+        "secondary",
+        "pashtun_cloth"
       ],
       "version": "double-wrap-current209"
     },
@@ -283,14 +296,16 @@
     "shot": {
       "tags": [
         "camera",
-        "visual"
+        "visual",
+        "pashtun_geography"
       ],
       "version": "finish248-20s-director253-provisional-not-release"
     },
     "terrain": {
       "tags": [
         "camera",
-        "visual"
+        "visual",
+        "pashtun_geography"
       ],
       "version": "entrance209"
     },
@@ -318,6 +333,102 @@
         "delivery"
       ],
       "version": "finish248-20s-director253-provisional-not-release"
+    },
+    "sikh": {
+      "tags": [
+        "sikh_scope",
+        "motion",
+        "modeling"
+      ],
+      "version": "257-unqualified-development-not-Pashtun"
+    },
+    "sikh_hand": {
+      "tags": [
+        "sikh_scope",
+        "contact",
+        "anatomy"
+      ],
+      "version": "257-unqualified-development-not-Pashtun"
+    },
+    "sikh_turban_cover": {
+      "tags": [
+        "sikh_scope",
+        "sikh_cloth",
+        "cloth",
+        "secondary"
+      ],
+      "version": "257-unqualified-development-not-Pashtun"
+    },
+    "sikh_beard": {
+      "tags": [
+        "sikh_scope",
+        "contact",
+        "secondary"
+      ],
+      "version": "257-unqualified-development-not-Pashtun"
+    },
+    "sikh_weapon": {
+      "tags": [
+        "sikh_scope",
+        "prop",
+        "contact"
+      ],
+      "version": "257-unqualified-development-not-Pashtun"
+    },
+    "motorcycle": {
+      "tags": [
+        "sikh_scope",
+        "sikh_motion",
+        "prop",
+        "contact",
+        "motion"
+      ],
+      "version": "257-unqualified-development-not-Pashtun"
+    },
+    "nihang_crowd": {
+      "tags": [
+        "sikh_scope",
+        "sikh_motion",
+        "motion"
+      ],
+      "version": "257-unqualified-development-not-Pashtun"
+    },
+    "nihang_leader": {
+      "tags": [
+        "sikh_scope",
+        "sikh_motion",
+        "motion"
+      ],
+      "version": "257-unqualified-development-not-Pashtun"
+    },
+    "nihang_horse": {
+      "tags": [
+        "sikh_scope",
+        "sikh_motion",
+        "motion",
+        "contact",
+        "secondary"
+      ],
+      "version": "257-unqualified-development-not-Pashtun"
+    },
+    "punjab_night": {
+      "tags": [
+        "sikh_scope",
+        "sikh_geography",
+        "camera",
+        "visual",
+        "look"
+      ],
+      "version": "257-unqualified-development-not-Pashtun"
+    },
+    "sikh_camera": {
+      "tags": [
+        "sikh_scope",
+        "sikh_geography",
+        "camera",
+        "visual"
+      ],
+      "version": "257-unqualified-development-not-Pashtun"
     }
   },
   "edges": [
@@ -415,6 +526,61 @@
       "shot",
       "shows",
       "terrain"
+    ],
+    [
+      "sikh",
+      "depends_on",
+      "motorcycle"
+    ],
+    [
+      "sikh",
+      "depends_on",
+      "sikh_turban_cover"
+    ],
+    [
+      "sikh_turban_cover",
+      "contacts",
+      "sikh_hand"
+    ],
+    [
+      "sikh_turban_cover",
+      "contacts",
+      "sikh_beard"
+    ],
+    [
+      "sikh_turban_cover",
+      "adjacent_to",
+      "sikh_weapon"
+    ],
+    [
+      "sikh_hand",
+      "contacts",
+      "motorcycle"
+    ],
+    [
+      "motorcycle",
+      "adjacent_to",
+      "nihang_crowd"
+    ],
+    [
+      "nihang_crowd",
+      "depends_on",
+      "nihang_leader"
+    ],
+    [
+      "nihang_leader",
+      "supported_by",
+      "nihang_horse"
+    ],
+    [
+      "sikh_camera",
+      "shows",
+      "sikh"
+    ],
+    [
+      "sikh_camera",
+      "shows",
+      "punjab_night"
     ]
   ],
   "records": [
@@ -586,7 +752,7 @@
       "status": "supported",
       "kind": "lesson",
       "tags": [
-        "contact"
+        "pashtun_contact"
       ],
       "sources": [
         "context",
@@ -601,7 +767,7 @@
       "status": "adopted",
       "kind": "decision",
       "tags": [
-        "cloth"
+        "pashtun_cloth"
       ],
       "sources": [
         "workflow",
@@ -645,7 +811,7 @@
       "status": "supported",
       "kind": "lesson",
       "tags": [
-        "camera"
+        "pashtun_geography"
       ],
       "sources": [
         "index",
@@ -742,7 +908,7 @@
         "unit"
       ],
       "check_kind": "review",
-      "action": "245 integrated finishing approved: strong hoof-led opening with near-zero music, continuous rise under clearly intelligible short speech, full music shortly before11.75s turn. Original Harmonic Release source76.25\u201398.75s preserves88s anchor without tempo change. Prior242/243 mixes rejected. Existing ledger authorizes one short directed Kirk take only; no new budget or music generation. No Gemini taste adjudication. Technical signal checks do not establish hearing/fit; transparent direct-auditory limitations remain. Protect physical contact phase and full-rate gait. 246 adds a music-only A/B: preserve A76.25-98.75/88s turn; B39.25-61.75/51s turn with52s surge. Identical picture, voice/effects, timing and music ramp; no new call/render. Preserve future trailer peak headroom without locking the Sikh cue. Exchange247 selects B and preserves exact narrator; correct hoof impact punch without onset changes, final247 music source start40.18s (52s at11.82s and measured52.436s impact at12.256s shuffle), with tactile original aged-paper visual.248 authorizes20s ending trim and preserves this sound; no new take or remixed balance. No new calls. Director listening remains authority."
+      "action": "245 integrated finishing approved: strong hoof-led opening with near-zero music, continuous rise under clearly intelligible short speech, full music shortly before11.75s turn. Original Harmonic Release source76.25–98.75s preserves88s anchor without tempo change. Prior242/243 mixes rejected. Existing ledger authorizes one short directed Kirk take only; no new budget or music generation. No Gemini taste adjudication. Technical signal checks do not establish hearing/fit; transparent direct-auditory limitations remain. Protect physical contact phase and full-rate gait. 246 adds a music-only A/B: preserve A76.25-98.75/88s turn; B39.25-61.75/51s turn with52s surge. Identical picture, voice/effects, timing and music ramp; no new call/render. Preserve future trailer peak headroom without locking the Sikh cue. Exchange247 selects B and preserves exact narrator; correct hoof impact punch without onset changes, final247 music source start40.18s (52s at11.82s and measured52.436s impact at12.256s shuffle), with tactile original aged-paper visual.248 authorizes20s ending trim and preserves this sound; no new take or remixed balance. No new calls. Director listening remains authority."
     },
     {
       "id": "captions",
@@ -855,7 +1021,7 @@
         "current255"
       ],
       "check_kind": "process",
-      "action": "Read CURRENT_PRODUCTION_STATE.md before acting on historical pending wording.253 provisionally accepts exact finish24820s unit, including corrected fist and selected B/Kirk sound. Final pass only at full-trailer release approval; no routine reopening. Strict248 pixel replay FAIL and rights/recovery limits persist.255 authorizes protection/calibration, not new character production, paid calls or public release. Resolve conflicting/current authority rather than accepting top search hit."
+      "action": "Read CURRENT_PRODUCTION_STATE.md:253 exact Pashtun20s provisional acceptance stays protected; strict replay FAIL and final release/rights remain separate. Protection/calibration255 complete. Director256-257 authorizes Sikh-only sequence development, continuous turban/cover, personal recognition and nonrecurring leader; action before music. Unknown domains still block; no paid calls/publication by inference."
     },
     {
       "id": "au_reference",
@@ -982,6 +1148,58 @@
       ],
       "check_kind": "review",
       "action": "AU13/251: distinguish requirement, retrieval, method, evidence and judgment failures. Compare known rejected AND accepted controls, record specific observations and uncertainty, and test omitted/failed evidence blocking. Earlier falsification and fewer repeat escapes matter more than fewer messages. Calibration is familiar non-independent evidence, not universal judgment."
+    },
+    {
+      "id": "sikh_scope",
+      "status": "adopted",
+      "kind": "constraint",
+      "tags": [
+        "sikh_scope"
+      ],
+      "sources": [
+        "sikh257"
+      ],
+      "check_kind": "process",
+      "action": "Director256-257 authorizes Sikh only, complete rough action before music mapping. New motorcycle entrance overrides older mounted protagonist. Preserve Sikh character brief, warmth and agency/influence tension; reference art is ingredients not literal likeness/name. Leader recognizes him personally, not expected recurring; no mentor/father role. Protected Pashtun is not donor identity or automatic action qualification. No paid calls, tools, installs, purchases, publication."
+    },
+    {
+      "id": "sikh_cloth",
+      "status": "adopted",
+      "kind": "constraint",
+      "tags": [
+        "sikh_cloth"
+      ],
+      "sources": [
+        "sikh257"
+      ],
+      "check_kind": "review",
+      "action": "257: turban and face covering are one cloth. Prove secured crown plus slack free end, declared exit/support and visible continuous edge route. Complete covered/uncover/release/bow/relaunch passage before detailed folds. Test hand/beard/ear/bandolier/weapon contacts, rest length, clean initial layers, crown stability, resting drape and acceleration response. Connectivity or finite simulation alone is not a visual pass; no separate mask substitution."
+    },
+    {
+      "id": "sikh_motion",
+      "status": "adopted",
+      "kind": "constraint",
+      "tags": [
+        "sikh_motion"
+      ],
+      "sources": [
+        "sikh257"
+      ],
+      "check_kind": "review",
+      "action": "Use the seven-beat motion strategy: wheel rolling versus declared slip, supported stationary bike before both hands leave controls, actual knuckle pivots and palms together, coordinated torso/neck, cloth ownership, new horse rear/support proof, stepped crowd clearance before respectful launch. Old gallop/rein qualification does not transfer. Full causal rough sequence before finish; no arbitrary technical handover."
+    },
+    {
+      "id": "sikh_geography",
+      "status": "adopted",
+      "kind": "constraint",
+      "tags": [
+        "sikh_geography"
+      ],
+      "sources": [
+        "sikh257"
+      ],
+      "check_kind": "review",
+      "action": "Moonlit cultivated Punjab with divided fields, trees interrupting horizon and low leader mound, not Pashtun desert/mountain reuse. Opening rider anatomical right/viewer left; widening then OTS must establish crowd and leader. Illustrated richness and readable night values at phone size. Exact crop/season/style realization remains proposed; do not manufacture documentary authenticity."
     }
   ],
   "gaps": [
