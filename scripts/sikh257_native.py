@@ -47,13 +47,21 @@ def camera_at(cam,loc,target=(0,0,1.48)):
     from mathutils import Vector
     cam.location=loc;cam.rotation_euler=(Vector(target)-cam.location).to_track_quat('-Z','Y').to_euler()
 
-def male_bust():
+def male_bust(detailed=False):
     import bpy
     from mathutils import Matrix
     source=ROOT/next(iter(SOURCES))
     with bpy.data.libraries.load(str(source),link=False) as (_,loaded):loaded.objects=['GEO-body_male_realistic']
     ob=loaded.objects[0];bpy.context.scene.collection.objects.link(ob)
     bpy.context.view_layer.update()
+    if detailed:
+        print('DONOR_DETAIL',json.dumps({'base_vertices':len(ob.data.vertices),'modifiers':[(m.name,m.type,getattr(m,'levels',None),getattr(m,'total_levels',None)) for m in ob.modifiers]}),flush=True)
+        for m in ob.modifiers:
+            if m.type=='MULTIRES':m.levels=min(m.total_levels,2)
+        bpy.context.view_layer.update()
+        ob.data=bpy.data.meshes.new_from_object(ob.evaluated_get(bpy.context.evaluated_depsgraph_get()))
+        ob.modifiers.clear()
+        print('EVALUATED_DONOR_VERTICES',len(ob.data.vertices),flush=True)
     world=ob.matrix_world.copy();points=[world@v.co for v in ob.data.vertices]
     center=(-2.705880880355835-1.8228728771209717)/2
     ids={i for i,p in enumerate(points) if p.z>1.19};remap={i:j for j,i in enumerate(sorted(ids))}
@@ -198,7 +206,24 @@ def main():
     (out/'source.py').write_bytes(Path(__file__).read_bytes())
     for relative in ('src/movie_factory/sikh257_geometry.py','src/movie_factory/sikh257_contract.py','scripts/sikh257_run.py'):
         (out/Path(relative).name).write_bytes((ROOT/relative).read_bytes())
-    if job['operation']=='inspect':inspect(out)
+    if job['operation']=='facebuilder_status':
+        # Existing vendor library, read-only entitlement check. No activation,
+        # purchase, credentials, complete response, or hardware ID is recorded.
+        core=Path('/Users/adisharma/Library/Application Support/Blender/5.2/extensions/user_default/keentools/blender_independent_packages/pykeentools_loader/pykeentools/pykeentools_installation/pykeentools')
+        sys.path.insert(0,str(core))
+        import pykeentools as pkt
+        result={'library_sha256':digest(core/'pykeentools.cpython-313-darwin.so'),'status':'UNKNOWN'}
+        try:
+            res=pkt.FaceBuilder.license_manager().perform_license_and_trial_check(strategy=pkt.LicenseCheckStrategy.FORCE)[0]
+            result.update(status='CHECKED',licensed=res.license_status.status=='succeed',trial_licensed=res.trial_status.status=='succeed',days_left=res.days_left)
+        except Exception as exc:
+            result.update(status='CHECK_FAILED',exception_type=type(exc).__name__)
+        (out/'license-status.json').write_text(json.dumps(result,indent=2)+'\n')
+    elif job['operation']=='inspect':inspect(out)
+    elif job['operation']=='hero':
+        from sikh261_character import proof
+        (out/'sikh261_character.py').write_bytes((ROOT/'scripts/sikh261_character.py').read_bytes())
+        proof(out)
     elif job['operation'].startswith('cloth_'):cloth_control(out,job['operation'])
     elif job['operation'].startswith('layout'):
         from sikh257_layout import build

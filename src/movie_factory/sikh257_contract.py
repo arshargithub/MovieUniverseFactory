@@ -9,6 +9,8 @@ SOURCES = {
     '.runtime/assets/demonstrator-01/horse.blend': 'b848037332fe62064989f250a94faa04c75e3fb21ae93f6a100f19079c1b21aa',
 }
 OPS = ('inspect', 'cloth_control', 'cloth_self_off', 'cloth_rest_off', 'cloth_contact_off', 'cloth_free', 'cloth_proxy', 'cloth_release', 'layout', 'layout_stills', 'layout_eevee_stills', 'layout_eevee')
+OPS += ('hero', 'facebuilder_status')
+HERO_SOURCES = {'.runtime/assets/series01-sikh261-turban/sikh_turban.glb':'7cd1afb48a62bbbac8a71cdc59da22a5fd8c07addfac5ddb8f80f49f0653eecb'}
 LAYOUT_CACHE = '.runtime/art-direction/series01-sikh257/cloth_release-03/evaluated-cloth.npz'
 LAYOUT_CACHE_SHA = 'd8cc6ec0b94eb21b2a3ea0260e28dc55a604383b05ae7314bcde0b0307d7e006'
 
@@ -24,6 +26,10 @@ def validate(job, root=ROOT):
         p = root/relative
         if p.is_symlink() or p.resolve() != p.absolute() or digest(p) != expected:
             raise ValueError('Pinned input mismatch: '+relative)
+    if job['operation']=='hero':
+        for relative,expected in HERO_SOURCES.items():
+            p=root/relative
+            if p.is_symlink() or digest(p)!=expected:raise ValueError('Hero source mismatch')
     if job['operation'].startswith('layout'):
         p=root/LAYOUT_CACHE
         if p.is_symlink() or digest(p)!=LAYOUT_CACHE_SHA:raise ValueError('Cloth derivative changed')

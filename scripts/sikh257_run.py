@@ -6,7 +6,7 @@ import subprocess
 import sys
 import time
 from movie_factory import production_knowledge as pk
-from movie_factory.sikh257_contract import ROOT, SOURCES, validate, digest, LAYOUT_CACHE
+from movie_factory.sikh257_contract import ROOT, SOURCES, HERO_SOURCES, validate, digest, LAYOUT_CACHE
 
 def main():
     if len(sys.argv) not in (3,4) or (len(sys.argv)==4 and sys.argv[3]!='--prepare'):raise ValueError('operation attempt [--prepare] required')
@@ -16,6 +16,7 @@ def main():
            'docs/planning/SERIES_01_SIKH_FAMILY_OPTIONS.md','docs/knowledge/CURRENT_PRODUCTION_STATE.md',
            'scripts/sikh257_native.py','src/movie_factory/sikh257_contract.py','src/movie_factory/sikh257_geometry.py','scripts/sikh257_run.py',*SOURCES]
     if job['operation'].startswith('layout'):bound.extend(['scripts/sikh257_layout.py',LAYOUT_CACHE])
+    if job['operation']=='hero':bound.extend(['scripts/sikh261_character.py','docs/planning/SERIES_01_SIKH_BASELINE_V01.md','docs/planning/SERIES_01_SIKH_EXECUTION_257.md','.runtime/art-direction/series01-sikh257/sikh-uncovered-concept-v03.png',*HERO_SOURCES])
     task={'id':f'sikh257-{job["operation"]}-{job["attempt"]:02d}', 'operation':'modeling' if job['operation']=='inspect' else 'motion',
           'entities':['sikh_camera','renderer'],'query':'connected turban face cover uncovering motorcycle supported greeting leader rear Punjab night',
           'intent':'Authorized local source inspection and early complete-sequence construction; no production acceptance, paid generation or release.',
