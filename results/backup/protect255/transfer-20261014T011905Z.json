@@ -1,0 +1,20 @@
+{
+  "snapshot_id": "protect255-20261013",
+  "started_at": "20261014T011905Z",
+  "bucket": "movie-factory-archive",
+  "controls": {
+    "block_public_access": true,
+    "versioning": "Enabled",
+    "server_side_encryption": [
+      "AES256"
+    ],
+    "object_ownership": "BucketOwnerEnforced"
+  },
+  "missing_objects": 26134,
+  "missing_bytes": 123342151822,
+  "source_manifest_sha256": "fef4e6d0153dddc7571acc6366d577cc4ea38a8b84ab9ba22f00572dc3915fd2",
+  "upload_root": "/Volumes/MovieFactorySSD/MovieUniverseFactory/.runtime/protection255-frozen/upload-20261014T011905Z",
+  "remote_verified": true,
+  "verification_receipt": "results/backup/protect255/remote-verification.json",
+  "upload_completed_at": "2026-10-14T02:12:50.315827+00:00"
+}

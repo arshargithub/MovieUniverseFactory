@@ -68,6 +68,9 @@ def main():
     subprocess.run([str(ROOT/'.venv/bin/python'),str(ROOT/'tools/verify_active_backup.py'),
         '--manifest',str(manifest_path),'--receipt',str(OUT/'remote-verification.json'),
         '--bucket',BUCKET,'--object-prefix',PREFIX,'--manifest-key',key,'--profile',PROFILE,'--region',REGION],check=True)
+    receipt['remote_verified']=True
+    receipt['verification_receipt']='results/backup/protect255/remote-verification.json'
+    receipt_path.write_text(json.dumps(receipt,indent=2)+'\n')
     print('Remote inventory and representative stream verified; native capsule restore is separate.',flush=True)
 
 if __name__=='__main__':main()
