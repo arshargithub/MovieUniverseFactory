@@ -1,0 +1,23 @@
+{
+  "unit_tests": {
+    "command": ".venv/bin/pytest -q tests/test_sikh269_character.py tests/test_sikh265_character.py tests/test_mpfb264_setup.py",
+    "passed": 28,
+    "failed": 0,
+    "scope": "Offline structured-operation/source-contract tests, not visual validation"
+  },
+  "gallery_script": {
+    "result": "PASS",
+    "checks": ["initial image populated", "nine view controls", "next changes image and count", "previous restores image"],
+    "method": "Actual fragment script evaluated with a small DOM test double",
+    "browser_layout": "NOT_RUN"
+  },
+  "native": {
+    "source": ".runtime/art-direction/series01-sikh269/candidate-24/reopen.json",
+    "inventory_matches": true,
+    "embedded_cloth_max_error_m": 2.9802322387695312e-08,
+    "frames": [1,16,34,54,72,96],
+    "fresh_solver_replay": "NOT_RUN",
+    "visual_finish": "FAIL"
+  },
+  "authority": "No production acceptance, paid acquisition, remote push or backup inferred"
+}
