@@ -4,6 +4,10 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+### Exchange262 — Free face and sequence asset strategy
+
+FaceBuilder is an **open, deferred spending decision**, not the sole route forward. [Asset strategy](SERIES_01_SIKH_ASSET_STRATEGY_262.md) ranks a coherent MakeHuman/MPFB male base and free beard donors, records a Royal Enfield candidate, and maps procurement versus custom integration and existing reuse. Accepted rugged Sikh direction remains protected without literal portrait matching. Next production proof is whole character/bike fit and the supported uncover/greeting passage, then the complete rough entrance. No new native acceptance, purchases, installation or remote push. Counter reconciles261's continuation/method decision and262's substantive research request; next checkpoint270.
+
 ### Exchange260 / CP-026 — Sikh direction accepted
 
 Director accepts v03's original-derived rugged face and broad beard. [Accepted reference and limits](SERIES_01_SIKH_BASELINE_V01.md). Stop portrait variants; use this as the creative input to coherent native head/beard/cloth fitting and the complete rough entrance. Picture/action still precedes music mapping; Gurkha remains queued. [Checkpoint](RELEASE_01_CHECKPOINTS.md#cp-026--exchange260-2026-10-14-sikh-character-direction-accepted) records current progress and remaining gates. Broad accepted release gates remain1/25=4%, not an effort estimate. Next checkpoint270.

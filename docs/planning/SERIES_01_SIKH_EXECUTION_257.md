@@ -1,5 +1,7 @@
 # Sikh entrance — execution record257
 
+**Current262:** Director defers FaceBuilder as open decision SIKH-FACE-01; free alternatives and broader asset procurement are being evaluated. [Current free asset strategy](SERIES_01_SIKH_ASSET_STRATEGY_262.md) supersedes261's purchase-first recommendation, not its failed evidence. Prioritize a coherent configurable male base and authored beard donor, plus a suitable motorcycle. No purchase is necessary to continue research; no new native acceptance follows. The right-hand cross-body release specified below remains adopted.
+
 **Current260:** Director accepts v03 as the [illustrated Sikh character direction](SERIES_01_SIKH_BASELINE_V01.md). Earlier pending/rejected portrait wording below is retained history. Native257 remains BLOCK; character approval is not native acceptance. Next proof is integrated reveal/contact/cloth motion followed by the complete rough entrance, not further routine portrait polish.
 
 ## Continuation261 — approval advances execution, not another go-ahead
