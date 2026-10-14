@@ -8,6 +8,8 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 Director authorizes the254 prerequisites. See [current work/results](PROTECTION_CALIBRATION_255.md) and [current authority](../knowledge/CURRENT_PRODUCTION_STATE.md). Preserve provisional253 acceptance; no new character production or release authority. Source/lesson routing and enforcement tests are being calibrated against actual negative/accepted examples, not merely rerunning old regressions. Exact remote range/payload authorization and restoration remain separate from local preparation. Counter255; next checkpoint260.
 
+**Completed protection and scoped calibration:** the approved private final snapshot and Git history are protected; the61-file accepted-unit set was actually restored from S3 and both native scenes reopened with their38 checked cache references. The114-pair finite retrieval regression passes; perceptual calibration remains manual and non-independent. See the255 report for final receipts and limitations. The next recommended work is the trailer-wide music/beat map and distinct Sikh/Gurkha briefs/source reconciliation, not further routine Pashtun polish or a larger knowledge platform. No new production dispatch follows automatically.
+
 ### Exchange254 — protect and calibrate before new sequence production
 
 Director correctly identifies the missing prerequisite in253's final ordering. Protection and learning-system calibration come before new Sikh/Gurkha production. This records sequencing and the recommended readiness contract; it does not claim calibration is complete, authorize an unspecified cloud payload/push, or start new character production. Preserve the253 provisional pass; final acceptance remains at full-trailer release approval.

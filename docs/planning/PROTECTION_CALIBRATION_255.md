@@ -20,7 +20,7 @@ Reuse: existing S3 bucket/content-addressed layout, knowledge pilot, operating l
 
 ## Evidence and outcome
 
-Protection is IN_PROGRESS; calibration results below are bounded, not a universal reviewer qualification. Runtime recovery evidence is under `results/backup/protect255/`; calibration evidence under `.runtime/knowledge-pilot213/calibration255/`. Passing retrieval is separate from meaningful application, perceptual review, rights, renderer qualification and restore success.
+Protection and scoped calibration are COMPLETE. Calibration results below are bounded, not a universal reviewer qualification. Runtime recovery evidence is under `results/backup/protect255/`; calibration evidence under `.runtime/knowledge-pilot213/calibration255/`. Passing retrieval is separate from meaningful application, perceptual review, rights and renderer qualification.
 
 ### What the calibration actually found and changed
 
@@ -77,4 +77,8 @@ The base snapshot is now verified in private S3: all 30,605 expected objects / 1
 
 The stronger accepted-unit test also passed: 61 files / 4,972,783,935 bytes downloaded from S3 only into a separate root, all hashes matched, and both final Blender natives reopened with auto-execution disabled. All 38 checked mesh-cache references resolved within that restored root and representative frames evaluated. No fresh render or exhaustive historical-project restore is claimed. See `remote-capsule-restore.json` and the two `native-inspect-remote-*.json` records in the same folder.
 
-The expanded recovery and calibration suite passes 107 tests. The final bounded delta captures committed recovery changes, calibration evidence and a consistent current operating database. Its remote verification remains required before closing this pass; subsequent closure receipts are protected separately rather than pretending an immutable snapshot includes its own future verification.
+The final recovery and calibration suite passes110 focused tests, including missing remote evidence, insufficient inventory-only proof and wrong accepted-film identity controls. The final bounded delta updates27 paths, including recovery changes, calibration evidence and a consistent operating database. Snapshot `protect255-20261013-final` passes remote verification for39,459 paths /30,613 objects /136,483,624,540 unique bytes. Every newly uploaded delta file and its seven recovery records was streamed back and SHA256-verified. Its manifest binds source commit `03e9f9ab8ab5cb545cc72c90115a242dc8d37d60`; subsequent closure receipts are protected separately rather than pretending an immutable snapshot includes its own future verification.
+
+The scoped recovery episode closes GREEN, not the movie or renderer. The operating report deliberately leaves exact net time and engineering tokens unknown: the original wrongly named rehearsal episode and a small uncovered interval remain disclosed rather than silently repaired. Account/MFA recovery is the owner's separate responsibility; credentials are not backed up. No data was deleted, no new paid model calls were made, and no public permissions or release approval changed.
+
+The next production prerequisite is now satisfied within this tested scope. Next: map the remaining trailer's musical and dramatic beats, then reconcile distinct Sikh/Gurkha source decisions into briefs and early integrated proofs. This does not authorize new builds, paid calls or release by itself. Keep manual source and perceptual review beside retrieval; no new knowledge platform is justified by this calibration. Protect the accepted Pashtun unit from routine polish. Final-trailer approval, rights and the recorded strict pixel-replay failure remain separate.

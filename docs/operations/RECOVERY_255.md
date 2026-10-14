@@ -4,9 +4,9 @@
 
 Current receipt/report: `results/backup/protect255/` and
 [protection/calibration255](../planning/PROTECTION_CALIBRATION_255.md).
-The base snapshot `protect255-20261013` has passed remote verification and a
+The final snapshot `protect255-20261013-final` has passed remote verification;
+`final-verification.json` binds its exact manifest. The base snapshot also passed a
 61-file accepted-unit recovery test, including both final Blender scene reopens.
-Use `final-verification.json` when present for the subsequent bounded delta.
 The older September17 snapshot and the252 phone-review MP4 are not the full current project.
 
 The active worktree snapshot includes native assets, failed evidence, renders,
