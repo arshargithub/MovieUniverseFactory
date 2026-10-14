@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "inspected_on": "2026-10-14",
+  "scope": "Data acquisition and static file/thumbnail inspection only; not native qualification",
+  "archive": {
+    "source": "https://files.makehumancommunity.org/asset_packs/bodyparts05/bodyparts05_cc0.zip",
+    "catalog": "https://static.makehumancommunity.org/assets/assetpacks/bodyparts05.html",
+    "path": ".runtime/assets/series01-sikh263-donors/bodyparts05_cc0.zip",
+    "sha256": "262bba42246f85b2a91f493dd920296b258a3b4544eb495c91c4d08e57c528fd",
+    "extracted_to": ".runtime/assets/series01-sikh263-donors/bodyparts05",
+    "extraction_policy": "Reject absolute/traversal/symlink entries; data-only extensions json,mhclo,obj,mhmat,png,thumb",
+    "embedded_code_executed": false
+  },
+  "candidates": [
+    {
+      "id": "rehmanpolanski_beard_viking",
+      "author": "Rehman Polanski",
+      "package_license": "CC0",
+      "embedded_license": "CC0",
+      "obj_sha256": "517f4005fecc8b63e05115103295d755e6eaa22e9a72f94cbe1431808e81d515",
+      "vertices": 6557,
+      "polygons": 2841,
+      "triangles": 5682,
+      "connected_components": 468,
+      "boundary_edges": 6496,
+      "nonmanifold_edges_more_than_two_faces": 0,
+      "texture_size": [1024, 1024],
+      "texture_alpha_range": [0, 218],
+      "fit_base": "hm08",
+      "disposition": "ADAPTATION_CONTROL_ONLY",
+      "visual_observation": "Thumbnail has strand breakup and broad cheek branches but narrows toward bottom; not accepted broad irregular Sikh beard yet. Transparency, roots, colour and movement untested."
+    },
+    {
+      "id": "rehmanpolanski_moustache_viking",
+      "author": "Rehman Polanski",
+      "package_license": "CC0",
+      "embedded_license": "CC0",
+      "obj_sha256": "297c14a76a9d0796d95129afdf8e614efa0a080558b4034d56926932bc69ed3e",
+      "vertices": 1598,
+      "polygons": 682,
+      "triangles": 1364,
+      "connected_components": 119,
+      "boundary_edges": 1594,
+      "nonmanifold_edges_more_than_two_faces": 0,
+      "texture_size": [512, 512],
+      "texture_alpha_range": [0, 255],
+      "fit_base": "hm08",
+      "disposition": "ADAPTATION_CONTROL_ONLY",
+      "visual_observation": "Layered downward cards; fit, lip clearance and integration with beard remain untested."
+    },
+    {
+      "id": "culturalibre_faun_beard",
+      "package_license": "CC0",
+      "embedded_license": "CC-0",
+      "obj_sha256": "a4724d225b813d31aa98846541cff8002e7c4d311ecd6abcc83ef4fcc3141084",
+      "vertices": 5218,
+      "polygons": 5216,
+      "connected_components": 1,
+      "boundary_edges": 0,
+      "disposition": "NOT_PREFERRED",
+      "visual_observation": "Closed shell and pointed goatee silhouette; weak match for broad substantial beard."
+    },
+    {
+      "id": "wdg_scruffy_beard",
+      "package_license": "CC0",
+      "embedded_license": "AGPL3",
+      "obj_sha256": "03df2bc4be18525e2e54408bdbb1b38021645c198d095dcebdad302c90a7f5fd",
+      "disposition": "EXCLUDE_PENDING_RIGHTS_CLARIFICATION"
+    },
+    {
+      "id": "grinsegold_beard_sigmund_wip",
+      "package_license": "CC0",
+      "embedded_license": "AGPL3",
+      "obj_sha256": "35b82ecf0526498128752686729fe19701fce642e4fef0fbed78a7cbfeaf9653",
+      "disposition": "EXCLUDE_PENDING_RIGHTS_CLARIFICATION"
+    }
+  ],
+  "local_base": {
+    "path": ".runtime/assets/series01-body-mpfb/base.obj",
+    "sha256": "8e761e6624b8f54536409135d1636da63b32486a90d4897f84e121d144f6fb4c",
+    "vertices": 19158,
+    "only_macro_target_decompressed_bytes": 0,
+    "complete_male_morph_pipeline": false
+  },
+  "pending": [
+    {
+      "id": "SIKH-TOOL-02",
+      "status": "AWAITING_DIRECTOR_INSTALLATION_APPROVAL",
+      "source": "https://extensions.blender.org/add-ons/mpfb/",
+      "version": "2.0.18",
+      "listed_minimum_blender": "4.2.0",
+      "actual_blender_5_2_1_compatibility": "NOT_RUN",
+      "installed_this_turn": false
+    },
+    {
+      "id": "SIKH-DONOR-03",
+      "status": "AWAITING_MANUAL_DOWNLOAD",
+      "source": "https://sketchfab.com/3d-models/royal-enfield-2d17cbb6c8be4d4ca0d0ba5f115ff364",
+      "creator": "rohitart3d",
+      "listing_license": "CC-BY4.0",
+      "requested_format": "GLB 17MB",
+      "observation": "Chrome blocked download host with ERR_BLOCKED_BY_CLIENT; no bypass attempted; native file not acquired."
+    }
+  ],
+  "protected_assets_changed": false,
+  "new_paid_calls": 0,
+  "new_installations": 0,
+  "native_visual_qualification": "NOT_RUN",
+  "remote_backup": "NOT_RUN"
+}
