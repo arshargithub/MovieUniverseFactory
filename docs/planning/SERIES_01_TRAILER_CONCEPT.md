@@ -1,5 +1,7 @@
 # Series 01 — trailer/intro concept
 
+**Current Sikh entrance amendment, exchange256:** the Director replaces his horseback entrance with a masked,1940s British-style motorcycle arrival through moonlit Punjab, a controlled skid, face reveal/respectful greeting to a mounted Nihang leader, reciprocal response, crowd parting and forceful departure. Develop Sikh alone and sequence first, music mapping later. [Current treatment and strategy](SERIES_01_SIKH_SEQUENCE.md). Earlier mounted-protagonist and no-motorcycle wording below is historical within this scoped change; other world/character decisions remain protected.
+
 Exchange 54. Director-supplied creative direction plus clearly separated treatment proposals. Not an approved script, shot list, duration or production authorization.
 
 **Exchange 55:** Director endorses the proposed broad trailer direction, with an explicit reuse priority below. Exact source quotations, individual shots, dialogue, runtime and scene placement are not thereby locked.

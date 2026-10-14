@@ -4,6 +4,12 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+### Exchange256 — Sikh motorcycle sequence first
+
+Director chooses **Sikh only**, not concurrent Sikh/Gurkha production, and action/sequence development **before music mapping**. [Sikh sequence strategy](SERIES_01_SIKH_SEQUENCE.md) captures the masked motorcycle entrance, moonlit cultivated Punjab, foot Nihang gathering and mounted leader, controlled skid, uncovered respectful greeting, reference-based leader response, parting and acceleration. This deliberately replaces the Sikh protagonist's mounted entrance and admits the particular1940s-inspired machine; no wider technology package is inferred. Protection/calibration255 is complete; accepted Pashtun253 stays protected. New-reference originals are preserved locally with [hash inventory](SERIES_01_SIKH_REFERENCE_INTAKE_256.json), not yet remotely backed up.
+
+Current deliverable: researched reference intake and proposed complete treatment/strategy. Next: settle whether the leader personally recognizes him, reconcile the distinct new entity/interfaces into the knowledge bridge, then produce a complete rough moving sequence before detailed asset polish. The actual new-domain packet correctly blocks unknown entities; source-intake planning does not authorize bypassing it. No new paid calls, production acceptance, public release or remote push. Counter256; next checkpoint260; broad accepted release gates remain1/25. Earlier music-first/parallel recommendations below are superseded for current work.
+
 ### Exchange255 — protection and calibration execution
 
 Director authorizes the254 prerequisites. See [current work/results](PROTECTION_CALIBRATION_255.md) and [current authority](../knowledge/CURRENT_PRODUCTION_STATE.md). Preserve provisional253 acceptance; no new character production or release authority. Source/lesson routing and enforcement tests are being calibrated against actual negative/accepted examples, not merely rerunning old regressions. Exact remote range/payload authorization and restoration remain separate from local preparation. Counter255; next checkpoint260.

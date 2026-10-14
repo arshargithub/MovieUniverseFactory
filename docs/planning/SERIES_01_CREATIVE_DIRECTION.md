@@ -6,6 +6,10 @@ Established at exchange 51, 2026-09-17. Decision brief, not an approved style or
 
 ## Director inputs and status
 
+### Sikh motorcycle entrance — exchange256
+
+The Director now deliberately selects the Sikh's1940s British military/Enfield-inspired motorcycle, low drag bar, covered face, double barrel and cartridge-bandolier reference in moonlit cultivated Punjab. See [the current sequence brief](SERIES_01_SIKH_SEQUENCE.md). This is the scoped exception anticipated by exchange63's “until deliberately designed” clause and replaces his earlier horseback entrance. It does not approve the exploratory jeep/AK package, exact documentary chronology, supernatural abilities or the name/identity on supplied artwork. Sikh alone is next; stage the sequence before selecting its music mapping. The adopted larger-than-life, illustrated-world and audience-first principles remain in force.
+
 ### Musical identity — exchange227, adopted direction
 
 The Director explicitly chooses a Western, distinctly American/North American musical identity informed by their Canadian/American history, bringing culturally specific South Asian stories to Western audiences without assigning ethnic instruments to characters. This is intentional cross-cultural authorship, not a requirement for historically local scoring or a single musical genre. Named promptgenix harmonica passages and LOAD SHIFT242 tracks are taste references for surging, goosebump-inducing music; see the current [audio brief](SERIES_01_PASHTUN_NARRATIVE_AUDIO_PROPOSAL.md#exchange227--north-american-musical-identity-and-named-references) for exact titles/timestamps and evidence limits. No particular composition, recording, audition, license or genre blend is accepted by this direction. The prior generic generated score remains rejected.
