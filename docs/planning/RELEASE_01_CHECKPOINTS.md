@@ -1,5 +1,15 @@
 # Release 01 — checkpoints
 
+## CP-026 — exchange260, 2026-10-14; Sikh character direction accepted
+
+- Current item: A5/E1 supporting B4, Sikh-only entrance following the provisionally accepted20s Pashtun unit. Protection/calibration255 is complete for its declared scope; it does not automatically cover new Sikh assets.
+- Since250:253 provisional Pashtun acceptance;255 protection/calibration;256–257 Sikh motorcycle/encounter strategy and connected turban/face-cover requirement; complete26s diagnostic native layout with failed visual gates retained;258–259 facial direction corrections;260 acceptance of the original-derived v03 illustration. Leader is a nonrecurring personal acquaintance, no mentor/father story inferred. Sequence/action before music mapping; no parallel Gurkha production.
+- Current sub-deliverable: illustrated Sikh direction accepted. Native head/body/beard identity, face-cover removal, supporting contacts, greeting/relaunch, horse rear, crowd parting and complete readable rough remain to pass. No defensible artistic percent-complete for that work; a generated portrait and312 draft frames do not qualify a production-ready sequence.
+- Broad release acceptance remains1/25=4%, equal-weight deliverable gates, **not** effort, footage fraction or time remaining. Still needed: reviewed Sikh and Gurkha entrances, ensemble ending/coherent trailer edit and sound, episode1/2 scripts/shared breakdown, remaining world/distribution/rights and Factory handover/release work.
+- Process correction: select the right original source when an edit chain retains the wrong character. Review facial structure, beard silhouette and whole-character read together; avoid scalar fixes and literal reconstruction. Native controls remain a separate test rather than becoming accepted through illustration approval.
+- Next recommended move: coherent native identity/envelope with the accepted beard, then connected-cloth reveal and supported greeting as an early integrated proof; carry into the complete rough sequence before finish/music. Stop routine portrait variants.
+- Durability: scoped design records locally committed; media ignored/local-only. Previous255 recovery does not cover257–259 media. Checkpoint remote push requires review of the actual outgoing range, which includes the unpublished257 implementation commit; no push or media backup claimed in this approval record. Next checkpoint270.
+
 ## CP-025 — exchange250, 2026-10-13; production retrospective and final-unit closure in progress
 
 - Current item remains A5/E1 supporting B4: first complete Pashtun audiovisual unit for the trailer and episodes1/2. Director calls247 fantastic;248 reopens the knuckle defect and requests20s. Corrected native control views were internally reviewed and admitted to full rendering, not final acceptance. Native20s render/reopen remains underway at this audit checkpoint; selected B soundtrack/look and complete action protected.

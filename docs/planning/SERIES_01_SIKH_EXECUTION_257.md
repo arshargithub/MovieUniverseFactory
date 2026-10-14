@@ -1,5 +1,7 @@
 # Sikh entrance — execution record257
 
+**Current260:** Director accepts v03 as the [illustrated Sikh character direction](SERIES_01_SIKH_BASELINE_V01.md). Earlier pending/rejected portrait wording below is retained history. Native257 remains BLOCK; character approval is not native acceptance. Next proof is integrated reveal/contact/cloth motion followed by the complete rough entrance, not further routine portrait polish.
+
 Scope: Director256–257 authorizes the Sikh-only rough sequence. The cloth clarification is adopted: one continuous length forms the turban and lower-face covering. Personal recognition by the mounted leader is adopted; he is not expected to recur. No recurring-cast biography is inferred. Accepted Pashtun253 remains protected. Music mapping follows action.
 
 This is a development record, not a production or visual PASS. The strategy and intended review remain in [the sequence brief](SERIES_01_SIKH_SEQUENCE.md). No new paid services, purchases, installations, uploads or publication occurred in this work.

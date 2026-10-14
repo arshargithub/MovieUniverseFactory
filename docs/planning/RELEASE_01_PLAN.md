@@ -4,6 +4,10 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+### Exchange260 / CP-026 — Sikh direction accepted
+
+Director accepts v03's original-derived rugged face and broad beard. [Accepted reference and limits](SERIES_01_SIKH_BASELINE_V01.md). Stop portrait variants; use this as the creative input to coherent native head/beard/cloth fitting and the complete rough entrance. Picture/action still precedes music mapping; Gurkha remains queued. [Checkpoint](RELEASE_01_CHECKPOINTS.md#cp-026--exchange260-2026-10-14-sikh-character-direction-accepted) records current progress and remaining gates. Broad accepted release gates remain1/25=4%, not an effort estimate. Next checkpoint270.
+
 ### Exchange259 — Sikh original-source reset
 
 Director rejects v02's pointed beard and polished face. Restart from original C center Sikh alone, not the newer portrait chain; preserve rugged elongated facial structure and a broad natural beard while keeping his humanity. New v03 illustration is proposed, not accepted native identity. [Method change and review](SERIES_01_SIKH_EXECUTION_257.md#director259--restart-from-original-rather-than-polish-the-wrong-face). Native gate remains BLOCK; next dependency is the broad character decision before final cloth fitting. Counter259; next checkpoint260. No new paid API call, push or backup.
