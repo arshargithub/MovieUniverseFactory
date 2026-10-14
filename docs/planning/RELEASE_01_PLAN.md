@@ -4,6 +4,10 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+### Exchange263 — Directional references and MPFB selected
+
+Director selects MPFB rather than FaceBuilder: the illustrations guide character design, not literal reconstruction of a real person. FaceBuilder decision SIKH-FACE-01 is closed as declined for this route. Installation of the official free MPFB extension is authorized; the motorcycle file will be provided later. [Current strategy and standalone proof](SERIES_01_SIKH_ASSET_STRATEGY_262.md#director263--mpfb-installation-and-standalone-proof-work-item264). Continue independent character setup, then whole rider/bike fit and reveal. No native acceptance, new paid calls or remote publication. The prior acquisition-only continuation did not increment the planning counter; this substantive method choice advances it to263, next checkpoint270.
+
 ### Exchange262 — Free face and sequence asset strategy
 
 FaceBuilder is an **open, deferred spending decision**, not the sole route forward. [Asset strategy](SERIES_01_SIKH_ASSET_STRATEGY_262.md) ranks a coherent MakeHuman/MPFB male base and free beard donors, records a Royal Enfield candidate, and maps procurement versus custom integration and existing reuse. Accepted rugged Sikh direction remains protected without literal portrait matching. Next production proof is whole character/bike fit and the supported uncover/greeting passage, then the complete rough entrance. No new native acceptance, purchases, installation or remote push. Counter reconciles261's continuation/method decision and262's substantive research request; next checkpoint270.

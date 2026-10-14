@@ -1,5 +1,7 @@
 # Sikh entrance — execution record257
 
+**Current263 / setup264:** Director selects MPFB and declines FaceBuilder for this character; references remain directional. Authorized official MPFB2.0.18 installation and standalone male/morph/rig/beard save-reopen proof completed in Blender5.2.1. [Strategy and evidence](SERIES_01_SIKH_ASSET_STRATEGY_262.md#director263--mpfb-installation-and-standalone-proof-work-item264). Motorcycle will be supplied manually later. No native visual acceptance; coherent character adaptation and reveal proof remain. Earlier262 open-FaceBuilder wording below is superseded, not a pending spending request.
+
 **Current262:** Director defers FaceBuilder as open decision SIKH-FACE-01; free alternatives and broader asset procurement are being evaluated. [Current free asset strategy](SERIES_01_SIKH_ASSET_STRATEGY_262.md) supersedes261's purchase-first recommendation, not its failed evidence. Prioritize a coherent configurable male base and authored beard donor, plus a suitable motorcycle. No purchase is necessary to continue research; no new native acceptance follows. The right-hand cross-body release specified below remains adopted.
 
 **Current260:** Director accepts v03 as the [illustrated Sikh character direction](SERIES_01_SIKH_BASELINE_V01.md). Earlier pending/rejected portrait wording below is retained history. Native257 remains BLOCK; character approval is not native acceptance. Next proof is integrated reveal/contact/cloth motion followed by the complete rough entrance, not further routine portrait polish.

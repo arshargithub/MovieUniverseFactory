@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "installation_source": "https://extensions.blender.org/add-ons/mpfb/",
+  "installation_method": "Blender built-in extension install-file --repo user_default --enable; offline; explicit Director263 approval",
+  "installation_status": "INSTALLED_ENABLED",
+  "preferences_backup": "/Users/adisharma/Library/Application Support/Blender/5.2/config/userpref.before-mpfb264.blend",
+  "verification": {
+    "configure": {
+      "blender": "5.2.1 LTS",
+      "mpfb": [
+        2,
+        0,
+        18
+      ],
+      "verified_extension_files": 2422,
+      "archive_sha256": "c075b3e9b94b8e5556a5f03f4653602d02ea306de08126e8f55ed6dee28a2dad",
+      "online_access": false,
+      "production_acceptance": false,
+      "user_data": "/Volumes/MovieFactorySSD/MovieUniverseFactory/.runtime/mpfb-user-data",
+      "preferences_saved": true
+    },
+    "prove": {
+      "blender": "5.2.1 LTS",
+      "mpfb": [
+        2,
+        0,
+        18
+      ],
+      "verified_extension_files": 2422,
+      "archive_sha256": "c075b3e9b94b8e5556a5f03f4653602d02ea306de08126e8f55ed6dee28a2dad",
+      "online_access": false,
+      "production_acceptance": false,
+      "macro_settings": {
+        "gender": 1,
+        "age": 0.5,
+        "muscle": 0.65,
+        "weight": 0.5,
+        "proportions": 0.5,
+        "height": 0.6,
+        "cupsize": 0.5,
+        "firmness": 0.5,
+        "race": {
+          "asian": 0.33,
+          "caucasian": 0.33,
+          "african": 0.33
+        }
+      },
+      "body_vertices": 19158,
+      "shape_keys": 8,
+      "morph_max_delta_m": 0.142678057420041,
+      "bones": 163,
+      "donors": [
+        {
+          "name": "MPFB264_Male_Compatibility_Control.rehmanpolanski_beard_viking",
+          "vertices": 6557,
+          "materials": 1,
+          "armature_modifiers": 1
+        },
+        {
+          "name": "MPFB264_Male_Compatibility_Control.rehmanpolanski_moustache_viking",
+          "vertices": 1598,
+          "materials": 1,
+          "armature_modifiers": 1
+        }
+      ],
+      "user_data": "/Volumes/MovieFactorySSD/MovieUniverseFactory/.runtime/mpfb-user-data",
+      "objects": [
+        "MPFB264_Male_Compatibility_Control",
+        "MPFB264_Male_Compatibility_Control.rehmanpolanski_beard_viking",
+        "MPFB264_Male_Compatibility_Control.rehmanpolanski_moustache_viking",
+        "MPFB264_Male_Compatibility_Control.rig"
+      ],
+      "native_sha256": "3957fd9a1da8b0fd3c152fb5edb13328dcd9247c2ab4c8f4251656e4318aac21"
+    },
+    "reopen": {
+      "blender": "5.2.1 LTS",
+      "mpfb": [
+        2,
+        0,
+        18
+      ],
+      "verified_extension_files": 2422,
+      "archive_sha256": "c075b3e9b94b8e5556a5f03f4653602d02ea306de08126e8f55ed6dee28a2dad",
+      "online_access": false,
+      "production_acceptance": false,
+      "object_inventory_matches": true,
+      "body_vertices": 19158,
+      "shape_keys": 8,
+      "packed_images": 2,
+      "native_sha256": "3957fd9a1da8b0fd3c152fb5edb13328dcd9247c2ab4c8f4251656e4318aac21"
+    }
+  },
+  "tests": {
+    "command": ".venv/bin/pytest -q tests/test_mpfb264_setup.py tests/test_sikh257.py",
+    "passed": 28
+  },
+  "limits": [
+    "Technical setup proof only; no final character visual or motion review.",
+    "No new paid calls or remote protection.",
+    "Generic tool-proof morph settings are not accepted Sikh proportions or an ethnicity preset.",
+    "Existing Blender GUI may require restart before seeing newly installed extension; do not discard unsaved work."
+  ],
+  "next": "Coherent Sikh character adaptation; actual motorcycle fit after manual asset arrival."
+}
