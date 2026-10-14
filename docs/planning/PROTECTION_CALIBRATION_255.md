@@ -70,3 +70,11 @@ The Director's subsequent “Go ahead” approves the presented 304-commit range
 The completed immutable local snapshot contains 39,454 paths, 30,605 unique objects and 136,483,569,017 unique bytes. Its expanded full-byte screening completed; the exact-hash SVG false positive remains documented. The manifest is `results/backup/protect255/frozen-manifest.json`. Later ledger and recovery evidence belong in the bounded final delta.
 
 AWS SSO initially expired before transfer. After the Director completed the restarted sign-in, the account and private bucket controls were verified again. Transfer now covers 26,134 missing objects / 123,342,151,822 bytes. Every selected frozen file is independently rehashed before being linked into an upload-only tree; no live worktree hardlinks or delete-propagating sync are used. The full protection gate remains NOT_RUN until remote inventory/checksums and the native dependency restore succeed.
+
+### Verified remote recovery
+
+The base snapshot is now verified in private S3: all 30,605 expected objects / 136,483,569,017 bytes are present, with no missing keys or size mismatches. Four ordinary SHA256 checksum samples match; the largest sample has a multipart composite checksum, not a directly comparable whole-file digest. The manifest and a 133,463,480-byte representative object were streamed back and matched their full SHA256 hashes. See `results/backup/protect255/remote-verification.json`.
+
+The stronger accepted-unit test also passed: 61 files / 4,972,783,935 bytes downloaded from S3 only into a separate root, all hashes matched, and both final Blender natives reopened with auto-execution disabled. All 38 checked mesh-cache references resolved within that restored root and representative frames evaluated. No fresh render or exhaustive historical-project restore is claimed. See `remote-capsule-restore.json` and the two `native-inspect-remote-*.json` records in the same folder.
+
+The expanded recovery and calibration suite passes 107 tests. The final bounded delta captures committed recovery changes, calibration evidence and a consistent current operating database. Its remote verification remains required before closing this pass; subsequent closure receipts are protected separately rather than pretending an immutable snapshot includes its own future verification.

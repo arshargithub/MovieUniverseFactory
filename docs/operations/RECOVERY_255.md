@@ -4,9 +4,10 @@
 
 Current receipt/report: `results/backup/protect255/` and
 [protection/calibration255](../planning/PROTECTION_CALIBRATION_255.md).
-Until remote verification explicitly passes, this is a prepared recovery procedure,
-not a claim that current work is independently protected. The older September17
-snapshot and the252 phone-review MP4 are not the full current project.
+The base snapshot `protect255-20261013` has passed remote verification and a
+61-file accepted-unit recovery test, including both final Blender scene reopens.
+Use `final-verification.json` when present for the subsequent bounded delta.
+The older September17 snapshot and the252 phone-review MP4 are not the full current project.
 
 The active worktree snapshot includes native assets, failed evidence, renders,
 source, design, selected music/stems and ledgers. Git independently preserves
@@ -46,6 +47,14 @@ archive/delete active work, publish the film or qualify all source rights.
 7. Rebuild the derived knowledge index from reviewed pinned sources; read
    `CURRENT_PRODUCTION_STATE.md`. Director253 approval is provisional for the unit;
    full trailer release, rights and strict renderer replay remain separate.
+
+The media snapshot records a fixed source point. Later Git commits carry closure
+receipts and current status; do not overwrite those newer records with the older
+snapshot copies. For exact historical reproduction, use the manifest's source
+commit in a separate checkout. An operating database recovered from a snapshot
+can contain jobs that were still running at capture time: reconcile its later
+closure records before resuming any work, rather than treating that stale state
+as permission to dispatch jobs.
 
 ## Verification boundaries
 
