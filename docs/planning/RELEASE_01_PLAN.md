@@ -4,6 +4,10 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+### Exchange268 — separate face and turban shortlists
+
+Director requests three alternatives each, including weak options; Harsh remains fallback only. [Comparison and acquisition limitations](SERIES_01_SIKH_ASSET_STRATEGY_262.md#exchange268--three-by-three-comparison-not-procurement-clearance) includes Dr toxic's full body, Daniel's clean-shaven head and holmen's facial rig; Remeshy's turban-bearing bust, Harsh and an unavailable Sukhman Singh comparison. Three cleared free turbans have not been found. Native character remains unaccepted; no return to literal illustration matching. Next is permitted donor inspection and the integrated uncover/bow proof, not texture polish. Counter268; next checkpoint270; broad release acceptance remains unchanged.
+
 ### Exchange263 — Directional references and MPFB selected
 
 Director selects MPFB rather than FaceBuilder: the illustrations guide character design, not literal reconstruction of a real person. FaceBuilder decision SIKH-FACE-01 is closed as declined for this route. Installation of the official free MPFB extension is authorized; the motorcycle file will be provided later. [Current strategy and standalone proof](SERIES_01_SIKH_ASSET_STRATEGY_262.md#director263--mpfb-installation-and-standalone-proof-work-item264). Continue independent character setup, then whole rider/bike fit and reveal. No native acceptance, new paid calls or remote publication. The prior acquisition-only continuation did not increment the planning counter; this substantive method choice advances it to263, next checkpoint270.
