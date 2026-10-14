@@ -4,6 +4,12 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+### Exchange269 — native Sikh construction resumed
+
+Director authorizes sustained Blender development of face and authentic turban after the donor shortlist fails to convince, with no arbitrary elapsed-time cutoff. [Current construction strategy](SERIES_01_SIKH_ASSET_STRATEGY_262.md#exchange269--sustained-native-face-and-turban-construction-authorized) supersedes acquisition-first sequencing. Reuse the installed coherent anatomical base while changing the failed individual face/facial-hair/crown construction; validate revealing views and cloth interfaces before finish. No native acceptance or new spend. Sikh remains the only active sequence; approved Pashtun is protected, music mapping follows action. Counter269; next checkpoint270.
+
+269 result: candidate24 preserves an editable coherent native face/rig, layered curve beard, adapted Harsh crown and embedded96-frame fixed-body cloth control. Fresh reopen verifies inventory and six sampled cloth states (maximum coordinate difference2.98e-8m). **Finish remains FAIL:** crown/rear panels too inflated/simple, beard/moustache still constructed, illustrated surface character missing; actual hand-driven uncover and motorcycle acting NOT_RUN. See strategy262's method reassessment and `results/sikh269/`. This is diagnostic capability evidence, not a qualified Sikh character or elapsed-time-based quality waiver. Retain the anatomical foundation; next method should author sparse pleat/hair guides with silhouette proof before dense detail, not repeat global offsets/noise or buy an uninspected model.
+
 ### Exchange268 — separate face and turban shortlists
 
 Director requests three alternatives each, including weak options; Harsh remains fallback only. [Comparison and acquisition limitations](SERIES_01_SIKH_ASSET_STRATEGY_262.md#exchange268--three-by-three-comparison-not-procurement-clearance) includes Dr toxic's full body, Daniel's clean-shaven head and holmen's facial rig; Remeshy's turban-bearing bust, Harsh and an unavailable Sukhman Singh comparison. Three cleared free turbans have not been found. Native character remains unaccepted; no return to literal illustration matching. Next is permitted donor inspection and the integrated uncover/bow proof, not texture polish. Counter268; next checkpoint270; broad release acceptance remains unchanged.
