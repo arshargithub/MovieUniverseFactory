@@ -4,6 +4,10 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+### Exchange258 — Sikh character proportion preference
+
+Director prefers the original illustrated-C Sikh's slightly longer face and longer beard. One targeted close-up revision preserves current wardrobe/night treatment; v02 is proposed, not accepted or a literal future model target. [Recorded direction and pending review](SERIES_01_SIKH_EXECUTION_257.md#director258--original-face-and-beard-character). Native cloth/contact/staging gate remains blocked; no production acceptance or music mapping. Counter258; next checkpoint260. Display-only comparisons were not substantive exchanges.
+
 ### Exchange257 — connected cloth and encounter meaning
 
 Director adopts personal recognition between protagonist and mounted leader, with the leader **not currently expected to recur**. No mentor/father role follows. Turban and face covering are **one cloth**, secured around the crown with a slack free end. The earlier brief missed this structural dependency: construction, uncovering, resting drape and relaunch response now form an early integrated risk proof, before detailed folds. [Current strategy and motion contract](SERIES_01_SIKH_SEQUENCE.md#connected-cloth-construction-and-motion-brief-257). Continue to the complete rough moving sequence, not a technical-go-ahead handover. Sikh only; music follows action; accepted Pashtun stays protected. Native/visual acceptance remains pending. Counter257; next checkpoint260; no new spend, installation or publication.

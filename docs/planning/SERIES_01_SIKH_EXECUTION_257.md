@@ -63,3 +63,11 @@ These are **creative ingredients**, not an adopted literal likeness or new pixel
 5. Do not promote cheap whole-sequence proxy rendering into final quality, nor repeatedly refine proxies before the identity/representation boundary is settled. Keep the failed native gate visible; request only the genuine creative choice, not technical endorsement.
 
 No remote push or new S3 backup occurred.257 media remain local SSD artifacts;255 protection is not retroactively extended.
+
+## Director258 — original face and beard character
+
+The two display-only comparisons did not increment the substantive counter. Director258 says the original Sikh in the illustrated-C trio feels more authentic, specifically a slightly longer face and longer beard. Adopt those concrete character-design preferences; do not turn this into a general claim about how Sikh men must look. The original C center panel, not the recently supplied JAGGA drawing or the motorcycle illustration, is the comparison authority for this correction.
+
+One built-in image edit produces `.runtime/art-direction/series01-sikh257/sikh-uncovered-concept-v02.png` (SHA256 `319441adab748d938e1b6a16cf423ccdef5b6bc8577094fdeba7238c03de755c`). Exact prompt: `portrait-v02-prompt.txt` in the same folder. Inputs are the preserved v01 portrait and original C triptych; only the central Sikh is a character reference. The intended change is restrained facial elongation plus a longer, more naturally tapering beard, retaining the current camera, warmth, costume and painted nighttime treatment. Internal visual inspection finds the beard extension clear and facial elongation modest; clothing/background and broad identity remain consistent, not pixel-identical. Creative approval of v02 is **pending**. Neither v01 nor v02 is an accepted native head or garment.
+
+This is a bounded proposal revision under the existing suitability study, not a new image-matching campaign. The longer beard adds a clearance dependency to face-cover removal; record that for final fit rather than assuming the earlier proxy control transfers. No Blender changes, paid external API calls or new native qualification. New images remain local only; existing native gate remains BLOCK.
