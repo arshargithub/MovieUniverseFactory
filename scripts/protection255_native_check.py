@@ -6,11 +6,15 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 RESTORE=ROOT/'.runtime/protection255-restore'
 OPS={'inspect-restored-opening':'opening08','inspect-restored-route':'route09'}
+OPS.update({'inspect-remote-opening':'opening08','inspect-remote-route':'route09'})
+
+def restore_root(operation):
+    return RESTORE/'remote-source' if operation.startswith('inspect-remote-') else RESTORE
 
 def validate(job):
     if not isinstance(job,dict) or set(job)!={'operation'} or job.get('operation') not in OPS:
         raise ValueError('Closed protection inspection operation')
-    return RESTORE/'.runtime/art-direction/series01-finish248'/OPS[job['operation']]/'scene.blend'
+    return restore_root(job['operation'])/'.runtime/art-direction/series01-finish248'/OPS[job['operation']]/'scene.blend'
 
 def main():
     import bpy
@@ -29,7 +33,7 @@ def main():
     checked=[]
     for kind,name,path in refs:
         resolved=Path(bpy.path.abspath(path)).resolve()
-        checked.append({'kind':kind,'name':name,'path':path,'inside_restore':resolved.is_relative_to(RESTORE.resolve()),'exists':resolved.is_file()})
+        checked.append({'kind':kind,'name':name,'path':path,'inside_restore':resolved.is_relative_to(restore_root(job['operation']).resolve()),'exists':resolved.is_file()})
     errors=[r for r in checked if not r['inside_restore'] or not r['exists']]
     # Dependency access/evaluation only; no pixel replay or motion-quality claim.
     for frame in (217,360) if 'opening' in job['operation'] else (475,631):

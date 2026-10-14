@@ -45,7 +45,9 @@ def main():
     paths=['docs/knowledge/CURRENT_PRODUCTION_STATE.md','docs/knowledge/PASHTUN_PRODUCTION_AUDIT250.md',
            'docs/operations/ACTIVE_S3_BACKUP_POLICY.md','docs/planning/PROTECTION_CALIBRATION_255.md',
            'docs/knowledge/pilot/calibration255-cases.json','src/movie_factory/production_knowledge.py',
-           'tests/test_calibration255.py','tools/protect255.py']
+           'tests/test_calibration255.py','tools/protect255.py','tools/upload_protect255.py',
+           'tools/restore_protect255_remote.py','scripts/protection255_native_check.py',
+           'tools/finalize_protect255_delta.py']
     task={'id':'protection-calibration255','operation':'knowledge','entities':['knowledge'],
           'query':'Verify current authority, retrospective retrieval, application blocking, review calibration and recovery prerequisites',
           'intent':'Preserve accepted production; calibrate finite mechanisms and prepare/verify authorized protection, not new production.',
