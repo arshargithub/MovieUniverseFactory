@@ -4,6 +4,10 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+### Exchange270 / CP-027 — guide-based native Sikh continuation
+
+Director authorizes269's explicit guide method. [Current strategy and method evidence](SERIES_01_SIKH_ASSET_STRATEGY_262.md#exchange270--explicit-guide-construction-adopted) preserves the coherent anatomical foundation while rebuilding crown/facial hair and refitting the free end against the actual compressed groom. `results/sikh270/` binds the final candidate, manual observations and evidence gate; no static identity or sequence acceptance is inferred from successful construction. The next production dependency is the actual crossed-hand uncover and supported greeting, then the complete causal rough entrance. No new spend, installation, acquisition or remote publication. [CP-027](RELEASE_01_CHECKPOINTS.md#cp-027--exchange270-2026-10-14-native-sikh-construction-and-limits) records unchanged1/25 broad acceptance, concrete progress, missing work and durability limits. Counter270; next checkpoint280.
+
 ### Exchange269 — native Sikh construction resumed
 
 Director authorizes sustained Blender development of face and authentic turban after the donor shortlist fails to convince, with no arbitrary elapsed-time cutoff. [Current construction strategy](SERIES_01_SIKH_ASSET_STRATEGY_262.md#exchange269--sustained-native-face-and-turban-construction-authorized) supersedes acquisition-first sequencing. Reuse the installed coherent anatomical base while changing the failed individual face/facial-hair/crown construction; validate revealing views and cloth interfaces before finish. No native acceptance or new spend. Sikh remains the only active sequence; approved Pashtun is protected, music mapping follows action. Counter269; next checkpoint270.

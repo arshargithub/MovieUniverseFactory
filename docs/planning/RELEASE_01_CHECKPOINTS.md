@@ -1,5 +1,15 @@
 # Release 01 — checkpoints
 
+## CP-027 — exchange270, 2026-10-14; native Sikh construction and limits
+
+- Current item: A5/E1 supporting B4, Sikh character foundation for the masked motorcycle entrance and personal-recognition reveal. Pashtun253 remains protected; Gurkha remains queued; action precedes music.
+- Since260: face-method review, approved MPFB installation, Director rejection of the first eye/face treatment, broader donor research and separate Sikh-turban search, three-by-three comparisons, then authorized sustained native construction269–270. No paid asset or new specialist was procured. Approved illustrated v03 remains directional; no native identity approval is inferred.
+- Concrete progress: coherent editable body/head rig, registered dark eyes with individual lid controls, broad rooted beard/moustache, authored crown guides and recomputed96-frame fixed-body face-end contact. Failed pigment, blade moustache, crumpled starting cloth and helmet-like crown controls are retained. Current evidence and exact review disposition live in `results/sikh270/`; native technical success does not establish studio-quality finish or performance.
+- Remaining for this item: Director choice of native individual when the scoped visual candidate is suitable; then actual crossed-hand ear release, supported motorcycle greeting, facial acting/bow and acceleration/contact proof. Complete causal rough entrance still owed, including motorcycle fit, moonlit Punjab, Nihang encounter, crowd clearance and departure. Static cloth samples do not pass that sequence.
+- Broad release acceptance remains **1/25=4%**, a coarse accepted-deliverable count, not effort, percentage of footage or time remaining. Still needed: Sikh/Gurkha/ensemble footage, coherent trailer/edit/sound, episode1/2 scripts/shared breakdown, distribution/rights/Factory handover and release approval. No defensible percent-complete for the current artistic asset.
+- Carry-forward: independent root coverage and guide flow; oblique moustache silhouette checks; worn-state hair compression before cloth solving; full crown/rear review before finish; clean initial shape-key state; serialized native workers; decisive failure angles first. These observations are in the required work strategy, not silently added to or repinned as universal retrieval knowledge.
+- Durability: design and implementation remain separate local commits; no remote push or off-device backup of new270 natives. Protection255 is not current-media protection. Review the exact accumulated outgoing range before a checkpoint push; do not upload native files or secrets by inference. Timing records contain overlap and a clock discontinuity; exact net time/tokens remain unknown. Next checkpoint280.
+
 ## CP-026 — exchange260, 2026-10-14; Sikh character direction accepted
 
 - Current item: A5/E1 supporting B4, Sikh-only entrance following the provisionally accepted20s Pashtun unit. Protection/calibration255 is complete for its declared scope; it does not automatically cover new Sikh assets.
