@@ -4,6 +4,10 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+### Exchange273 — sculpt-donor preflight requires a rights/visibility choice
+
+Director approves the zero-spend Meshy test conditionally. Published free6Lite export is confirmed, but free-output ownership/public visibility and non-Enterprise training permissions require a material choice before uploading the unreleased Sikh design. [Current preflight and continuation strategy](SERIES_01_SIKH_ASSET_STRATEGY_262.md#exchange273--approved-zero-spend-test-visibilityrights-preflight-blocks-upload). No asset uploaded/generated, payment, native change, push or backup. Actual account eligibility and geometry test remain NOT_RUN. Counter273; next checkpoint280; broad acceptance unchanged1/25. This is a permission boundary, not character completion.
+
 ### Exchange272 — native reconstruction failed internally
 
 Five completed form controls tested wrap fans, continuous fold relief, existing donor refinement, rooted beard changes and eye registration. None clears the approved Sikh/same-film floor. [272 assessment](../../results/sikh272/ASSESSMENT.md) records failures, protected sources and the explicit method boundary; no diagnostic candidate is offered as a foundation. One generated form-study sheet is raster interpretation only. Recommended next route is a static image-to-3D sculpt donor test, subject to the Director's service/license decision and verified free export/visibility; no paid fallback or production admission. Sikh remains the sole active sequence; trailer plus episodes1/2 unchanged,1/25 broad acceptance. Counter272; next checkpoint280. No remote push or new-media backup.
