@@ -4,6 +4,10 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+### Exchange272 — native reconstruction failed internally
+
+Five completed form controls tested wrap fans, continuous fold relief, existing donor refinement, rooted beard changes and eye registration. None clears the approved Sikh/same-film floor. [272 assessment](../../results/sikh272/ASSESSMENT.md) records failures, protected sources and the explicit method boundary; no diagnostic candidate is offered as a foundation. One generated form-study sheet is raster interpretation only. Recommended next route is a static image-to-3D sculpt donor test, subject to the Director's service/license decision and verified free export/visibility; no paid fallback or production admission. Sikh remains the sole active sequence; trailer plus episodes1/2 unchanged,1/25 broad acceptance. Counter272; next checkpoint280. No remote push or new-media backup.
+
 ### Exchange271 — Sikh foundation rejection and internal-review correction
 
 Director rejects270/17 as far below the approved character and inconsistent with the accepted Pashtun. The foundation recommendation is withdrawn. [Audit and mandatory same-film gate](../knowledge/SIKH_FOUNDATION_REJECTION_271.md) identifies visual failures and the blocked-gate handoff bypass; strategy262 now requires whole-form and ensemble proof before detail or native admission. This turn completes the requested audit, not a new character. Sikh remains the only active sequence; Pashtun stays protected. Next production dependency is a genuinely viable native character, not automatic motion work on17. Counter271; next checkpoint280; broad acceptance remains1/25. No paid call, native change, push or media backup.

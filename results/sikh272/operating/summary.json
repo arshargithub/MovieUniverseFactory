@@ -1,0 +1,215 @@
+{
+  "closed_episode_count": 1,
+  "consumption_per_outcome": {
+    "closed_episodes": {
+      "engineering_tokens": null,
+      "net_seconds": null
+    },
+    "closed_experiments": {
+      "engineering_tokens": null,
+      "net_seconds": null
+    },
+    "director_accepted_outputs": {
+      "engineering_tokens": null,
+      "net_seconds": null
+    },
+    "technically_successful_outputs": {
+      "engineering_tokens": null,
+      "net_seconds": null
+    }
+  },
+  "cost_scope": "Development investment; repeatable runtime cost remains in the campaign provider records.",
+  "engineering_usage": {
+    "account_allowance": {
+      "observations": [],
+      "scope": "account-wide; not experiment token attribution"
+    },
+    "actual_engineering_charge_usd": null,
+    "api_equivalent_estimate_usd": null,
+    "blocks": [],
+    "captured_tasks": [],
+    "category_coverage": {
+      "cache_write_input_tokens": {
+        "observed_blocks": 0,
+        "total_blocks": 0
+      },
+      "cached_input_tokens": {
+        "observed_blocks": 0,
+        "total_blocks": 0
+      },
+      "input_tokens": {
+        "observed_blocks": 0,
+        "total_blocks": 0
+      },
+      "output_tokens": {
+        "observed_blocks": 0,
+        "total_blocks": 0
+      },
+      "reasoning_output_tokens": {
+        "observed_blocks": 0,
+        "total_blocks": 0
+      },
+      "total_tokens": {
+        "observed_blocks": 0,
+        "total_blocks": 0
+      }
+    },
+    "exact_attributable_tokens": null,
+    "expected_tasks": [],
+    "missing_tasks": [],
+    "observed_tokens": {
+      "cache_write_input_tokens": null,
+      "cached_input_tokens": null,
+      "input_tokens": null,
+      "output_tokens": null,
+      "reasoning_output_tokens": null,
+      "total_tokens": null
+    },
+    "status": "UNKNOWN",
+    "subscription": {
+      "allocation_usd": null,
+      "treatment": "shared fixed overhead"
+    },
+    "token_definitions": {
+      "cache_write_input_tokens": "Retained as reported; not added to total.",
+      "cached_input_tokens": "Subset of input; do not add to total.",
+      "input_tokens": "Reported input total; cached input is a subset.",
+      "output_tokens": "Reported output total; reasoning output is a subset.",
+      "reasoning_output_tokens": "Subset of output; do not add to total.",
+      "total_tokens": "Reported total; input plus output, without subset double counting."
+    },
+    "uncertainties": [
+      "capture_completeness_not_established"
+    ],
+    "window_end": "2026-10-15T03:09:31.424998+00:00",
+    "window_start": "2026-10-15T02:42:32.377920+00:00"
+  },
+  "episodes": [
+    {
+      "assistant_active_union_seconds": 1618.9697210788727,
+      "assistant_time_scope": "Recorded activity intervals only; not token generation time",
+      "calendar_elapsed_seconds": 1619.0470781326294,
+      "coverage_fraction": 0.999952220627305,
+      "disposition": "RED",
+      "episode_id": "reconstruction",
+      "excluded_input_wait_seconds": null,
+      "human_review_seconds": null,
+      "jobs": [
+        {
+          "job_id": "sikh272-construct01",
+          "job_kind": "native",
+          "monotonic_seconds": 0.9602220407687128,
+          "outcome": "FAILED",
+          "utc_seconds": 0.9613969326019287
+        },
+        {
+          "job_id": "sikh272-construct02",
+          "job_kind": "native",
+          "monotonic_seconds": 14.00122549990192,
+          "outcome": "PASSED",
+          "utc_seconds": 14.001320838928223
+        },
+        {
+          "job_id": "sikh272-construct03",
+          "job_kind": "native",
+          "monotonic_seconds": 12.944174333941191,
+          "outcome": "PASSED",
+          "utc_seconds": 12.944298028945923
+        },
+        {
+          "job_id": "sikh272-construct04",
+          "job_kind": "native",
+          "monotonic_seconds": 16.393790333997458,
+          "outcome": "PASSED",
+          "utc_seconds": 16.394078016281128
+        },
+        {
+          "job_id": "sikh272-construct05",
+          "job_kind": "native",
+          "monotonic_seconds": 18.97164975013584,
+          "outcome": "PASSED",
+          "utc_seconds": 18.971834182739258
+        },
+        {
+          "job_id": "sikh272-construct06",
+          "job_kind": "native",
+          "monotonic_seconds": 19.564267667010427,
+          "outcome": "PASSED",
+          "utc_seconds": 19.564556121826172
+        }
+      ],
+      "lifecycle": "CLOSED",
+      "native_job_wall_sum_seconds": 82.83532962575555,
+      "native_job_wall_union_seconds": null,
+      "native_jobs": [
+        {
+          "job_id": "sikh272-construct01",
+          "job_kind": "native",
+          "monotonic_seconds": 0.9602220407687128,
+          "outcome": "FAILED",
+          "utc_seconds": 0.9613969326019287
+        },
+        {
+          "job_id": "sikh272-construct02",
+          "job_kind": "native",
+          "monotonic_seconds": 14.00122549990192,
+          "outcome": "PASSED",
+          "utc_seconds": 14.001320838928223
+        },
+        {
+          "job_id": "sikh272-construct03",
+          "job_kind": "native",
+          "monotonic_seconds": 12.944174333941191,
+          "outcome": "PASSED",
+          "utc_seconds": 12.944298028945923
+        },
+        {
+          "job_id": "sikh272-construct04",
+          "job_kind": "native",
+          "monotonic_seconds": 16.393790333997458,
+          "outcome": "PASSED",
+          "utc_seconds": 16.394078016281128
+        },
+        {
+          "job_id": "sikh272-construct05",
+          "job_kind": "native",
+          "monotonic_seconds": 18.97164975013584,
+          "outcome": "PASSED",
+          "utc_seconds": 18.971834182739258
+        },
+        {
+          "job_id": "sikh272-construct06",
+          "job_kind": "native",
+          "monotonic_seconds": 19.564267667010427,
+          "outcome": "PASSED",
+          "utc_seconds": 19.564556121826172
+        }
+      ],
+      "net_elapsed_seconds": null,
+      "observed_excluded_input_wait_seconds": 0,
+      "operational_proxies": {},
+      "phase_net_seconds": null,
+      "uncertainties": [
+        "unexplained_gap"
+      ],
+      "unknown_gap_seconds": 0.07735705375671387
+    }
+  ],
+  "experiment_id": "SIKH272",
+  "factory_api": {
+    "known_api_cost_usd": null,
+    "provider_calls": null,
+    "reason": "No provider ledger evidence supplied; absence is not zero.",
+    "status": "UNKNOWN"
+  },
+  "model_setting_observations": [],
+  "net_episode_sum_seconds": null,
+  "note": "Episode totals exclude inter-episode gaps. Job sums are process-seconds, not CPU time.",
+  "outcome_denominators": {
+    "closed_episodes": 1,
+    "closed_experiments": 1,
+    "director_accepted_outputs": 0,
+    "technically_successful_outputs": 5
+  },
+  "schema_version": "1.0"
+}
