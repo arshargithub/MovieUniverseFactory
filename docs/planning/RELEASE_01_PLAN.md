@@ -4,6 +4,10 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+### Exchange278 — bounded free Meshy evaluation selected
+
+Director selects the generic free test after274–277's rights/FaceBuilder/conversion/cost discussion. [Current strategy](SERIES_01_SIKH_ASSET_STRATEGY_262.md#exchange278--generic-free-evaluation-authorized-sign-in-required) preserves approved Sikh imagery, zero spend, geometry-first proof and separate performance admission. Browser is signed out; account sign-in is the present dependency. No image upload, generation, native construction or release-progress increment. Counter reconciled to278; next checkpoint280; broad acceptance remains1/25. Paid Pro and FaceBuilder are discussion options, not authorized purchases.
+
 ### Exchange273 — sculpt-donor preflight requires a rights/visibility choice
 
 Director approves the zero-spend Meshy test conditionally. Published free6Lite export is confirmed, but free-output ownership/public visibility and non-Enterprise training permissions require a material choice before uploading the unreleased Sikh design. [Current preflight and continuation strategy](SERIES_01_SIKH_ASSET_STRATEGY_262.md#exchange273--approved-zero-spend-test-visibilityrights-preflight-blocks-upload). No asset uploaded/generated, payment, native change, push or backup. Actual account eligibility and geometry test remain NOT_RUN. Counter273; next checkpoint280; broad acceptance unchanged1/25. This is a permission boundary, not character completion.

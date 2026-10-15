@@ -4,6 +4,14 @@
 
 ## Open decision
 
+### Exchange278 — generic free evaluation authorized; sign-in required
+
+Following274–277's licence, modification-rights, FaceBuilder comparison, downstream conversion and pricing discussion, Director explicitly selects the bounded free Meshy evaluation. Interpret this as the recommended disposable generic Sikh head/turban study, not upload of approved v03 or a paid plan. Local adaptation is not a licence reset; neither static generation nor retopology automatically establishes exclusive character rights or animation readiness. FaceBuilder remains unpurchased; discussing its merits does not reverse263's purchase boundary.
+
+**Execution:** verify account free6Lite/export entitlement, then prepare one independently generated generic study without production references; use only free credits, initially one geometry candidate and at most two discriminating retries if justified by the failure. No arbitrary time cutoff, paid fallback, voluntary community publication, subscription, new installation or production-source upload. Inspect the downloaded neutral geometry from front/both obliques/profile/rear/crown; report useful components separately from fused/absent anatomy, turban structure and the later rebuild burden. No hero adoption or same-film pass follows from a generic test. If actual free export is unavailable, stop rather than generate a paywalled preview.
+
+**Current blocker:** Meshy opened in the in-app browser on2026-10-15 and shows the signed-out welcome panel, offering Google/email and other sign-in methods with terms acceptance. User must sign in/create the free account. No account created, reference generated/uploaded, credits consumed, download or Blender dispatch. Login page retained for continuation; account balance and eligibility NOT_RUN. Existing273 packet is historical preflight only; create a fresh bound execution packet after actual entitlement/input selection. Protected sources and failed history unchanged. This is an authentication handoff, not a routine technical milestone.
+
 ### Exchange273 — approved zero-spend test; visibility/rights preflight blocks upload
 
 Director approves the proposed Meshy static sculpt-donor test conditional on free export and acceptable terms. Read-only checks on2026-10-15 confirm advertised100 monthly free credits and10 Meshy6Lite downloads; Meshy6/7 downloads and API access require paid plans. Actual account entitlement remains NOT_RUN. Integration discovery returned no Meshy plugin; nothing was installed.
