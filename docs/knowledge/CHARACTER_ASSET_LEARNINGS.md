@@ -1,5 +1,9 @@
 # Character asset learning and review contract
 
+## Exchange271 — visual admission and shared-world failure
+
+The Sikh270/17 foundation recommendation is withdrawn after Director rejection. Read the [specific critique, negative control and mandatory admission contract](SIKH_FOUNDATION_REJECTION_271.md) before new principal-character work. Retrieval supplied the quality rules; the agent nevertheless relabeled a blocked result as an identity choice. Require approved individual direction, production look and accepted co-star evidence together; independent design/ensemble/technical/performance verdicts; whole-form proof before detail; and a final check that the handoff recommendation agrees with the gate. No noise, fiber count, clean reopen or relative improvement compensates for a doll-like face, attached-looking groom or shell-like turban. Preserve technical substrates without promoting their failed artistic realization. Do not simplify the accepted character to make the weaker one fit. This adds a mandatory manual review relationship, not an automatic artistic judge.
+
 ## Current acceptance — exchange152
 
 ### Exchange214 — review the grasp and the thing being grasped together

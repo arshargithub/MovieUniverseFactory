@@ -1,0 +1,13 @@
+{
+  "exchange": 271,
+  "audit_completed": true,
+  "asset_admitted": false,
+  "knowledge_unit_tests": {"command": ".venv/bin/python -m pytest -q tests/test_production_knowledge.py", "passed": 48, "failed": 0, "scope": "Existing retrieval and evidence-structure regressions, not perceptual accuracy or automatic compliance"},
+  "evidence_gate": {"command": ".venv/bin/python -m movie_factory.production_knowledge check --packet .runtime/knowledge-pilot213/sikh271-packet.json --review results/sikh271/review.json --output .runtime/knowledge-pilot213/sikh271-gate.json", "exit_code": 2, "expected": true, "ready_for_review": false, "meaning": "Rejected character remains blocked; audit completion does not admit it"},
+  "source_pin_changes": false,
+  "manual_relationship_added": "New principal character must be compared with accepted co-star native and shot evidence; routed through mandatory AGENTS and active strategy, not automatically inferred by the pilot graph",
+  "native_edits": false,
+  "new_external_calls": 0,
+  "remote_push": false,
+  "off_device_backup": false
+}

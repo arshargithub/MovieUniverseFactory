@@ -2,6 +2,8 @@
 
 ## CP-027 — exchange270, 2026-10-14; native Sikh construction and limits
 
+**271 amendment:** Director rejects candidate17; the foundation recommendation and pending-identity-choice framing below are withdrawn. Technical history remains, but next work must establish a viable design and same-film coherence, not assume readiness for motion integration. [Audit](../knowledge/SIKH_FOUNDATION_REJECTION_271.md). Accepted broad gates remain unchanged; next checkpoint280.
+
 - Current item: A5/E1 supporting B4, Sikh character foundation for the masked motorcycle entrance and personal-recognition reveal. Pashtun253 remains protected; Gurkha remains queued; action precedes music.
 - Since260: face-method review, approved MPFB installation, Director rejection of the first eye/face treatment, broader donor research and separate Sikh-turban search, three-by-three comparisons, then authorized sustained native construction269–270. No paid asset or new specialist was procured. Approved illustrated v03 remains directional; no native identity approval is inferred.
 - Concrete progress: coherent editable body/head rig, registered dark eyes with individual lid controls, broad rooted beard/moustache, authored crown guides and recomputed96-frame fixed-body face-end contact. Failed pigment, blade moustache, crumpled starting cloth and helmet-like crown controls are retained. Current evidence and exact review disposition live in `results/sikh270/`; native technical success does not establish studio-quality finish or performance.

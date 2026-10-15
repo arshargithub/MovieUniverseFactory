@@ -4,7 +4,15 @@
 
 ## Open decision
 
+### Exchange271 — candidate17 rejected; foundation recommendation withdrawn
+
+The Director rejects the entire proposed foundation, not a few finishing details. [Evidence-linked critique and mandatory review contract](../knowledge/SIKH_FOUNDATION_REJECTION_271.md) supersedes270's recommendation below. Face/eyes, beard/moustache, tied-turban construction, cloth/readability and shared production language fail the approved floor. Existing270 technical evidence remains historical; visual hypotheses marked resolved are not accepted as resolved. No native Sikh identity is approved. Do not proceed to full performance/wardrobe polish on the assumption that17 is a viable artistic base.
+
+Current work is the requested audit and review correction. Next production preparation must reassess whole forms and bind v03, illustrated-C authority and accepted Pashtun native/shot controls before expensive detail. Treat editable topology/rig and code as potential reusable substrates, not protected visual design. Same-film and individual-design gates must pass internally before a foundation recommendation; actual use/performance remains separately required. Preserve all failed candidates and accepted Pashtun. No new spend, installation, asset procurement or remote publication is authorized.
+
 ### Exchange270 — explicit guide construction adopted
+
+Historical section: its candidate17 recommendation and artistic resolution claims are withdrawn by271; retain the method/evidence trail.
 
 Director approves269's recommended native method change. Preserve the coherent24 face/body and protected references; rebuild the turban and facial-hair forms in new270 derivatives. This is not approval of24's appearance. No new spend, procurement, installation, publication or accepted-master edits.
 

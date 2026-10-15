@@ -4,6 +4,10 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+### Exchange271 — Sikh foundation rejection and internal-review correction
+
+Director rejects270/17 as far below the approved character and inconsistent with the accepted Pashtun. The foundation recommendation is withdrawn. [Audit and mandatory same-film gate](../knowledge/SIKH_FOUNDATION_REJECTION_271.md) identifies visual failures and the blocked-gate handoff bypass; strategy262 now requires whole-form and ensemble proof before detail or native admission. This turn completes the requested audit, not a new character. Sikh remains the only active sequence; Pashtun stays protected. Next production dependency is a genuinely viable native character, not automatic motion work on17. Counter271; next checkpoint280; broad acceptance remains1/25. No paid call, native change, push or media backup.
+
 ### Exchange270 / CP-027 — guide-based native Sikh continuation
 
 Director authorizes269's explicit guide method. [Current strategy and method evidence](SERIES_01_SIKH_ASSET_STRATEGY_262.md#exchange270--explicit-guide-construction-adopted) preserves the coherent anatomical foundation while rebuilding crown/facial hair and refitting the free end against the actual compressed groom. `results/sikh270/` binds the final candidate, manual observations and evidence gate; no static identity or sequence acceptance is inferred from successful construction. The next production dependency is the actual crossed-hand uncover and supported greeting, then the complete causal rough entrance. No new spend, installation, acquisition or remote publication. [CP-027](RELEASE_01_CHECKPOINTS.md#cp-027--exchange270-2026-10-14-native-sikh-construction-and-limits) records unchanged1/25 broad acceptance, concrete progress, missing work and durability limits. Counter270; next checkpoint280.

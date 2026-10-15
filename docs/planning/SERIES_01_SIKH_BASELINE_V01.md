@@ -1,5 +1,7 @@
 # Sikh — approved illustrated character direction
 
+**271 current native disposition:** candidate270/17 is Director-rejected, not a foundation. The illustrated approval below is unchanged. Apply the [271 critique and same-film admission contract](../knowledge/SIKH_FOUNDATION_REJECTION_271.md); directional interpretation does not waive ruggedness, credible construction or shared quality with the accepted Pashtun.
+
 Director260, 2026-10-14: **“Yup this is it”** approves the v03 portrait presented after the original-source reset at259.
 
 - Asset: `.runtime/art-direction/series01-sikh257/sikh-uncovered-concept-v03.png`
