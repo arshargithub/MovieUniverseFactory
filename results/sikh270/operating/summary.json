@@ -1,0 +1,330 @@
+{
+  "closed_episode_count": 0,
+  "consumption_per_outcome": {
+    "closed_episodes": {
+      "engineering_tokens": null,
+      "net_seconds": null
+    },
+    "closed_experiments": {
+      "engineering_tokens": null,
+      "net_seconds": null
+    },
+    "director_accepted_outputs": {
+      "engineering_tokens": null,
+      "net_seconds": null
+    },
+    "technically_successful_outputs": {
+      "engineering_tokens": null,
+      "net_seconds": null
+    }
+  },
+  "cost_scope": "Development investment; repeatable runtime cost remains in the campaign provider records.",
+  "engineering_usage": {
+    "account_allowance": {
+      "observations": [],
+      "scope": "account-wide; not experiment token attribution"
+    },
+    "actual_engineering_charge_usd": null,
+    "api_equivalent_estimate_usd": null,
+    "blocks": [],
+    "captured_tasks": [],
+    "category_coverage": {
+      "cache_write_input_tokens": {
+        "observed_blocks": 0,
+        "total_blocks": 0
+      },
+      "cached_input_tokens": {
+        "observed_blocks": 0,
+        "total_blocks": 0
+      },
+      "input_tokens": {
+        "observed_blocks": 0,
+        "total_blocks": 0
+      },
+      "output_tokens": {
+        "observed_blocks": 0,
+        "total_blocks": 0
+      },
+      "reasoning_output_tokens": {
+        "observed_blocks": 0,
+        "total_blocks": 0
+      },
+      "total_tokens": {
+        "observed_blocks": 0,
+        "total_blocks": 0
+      }
+    },
+    "exact_attributable_tokens": null,
+    "expected_tasks": [],
+    "missing_tasks": [],
+    "observed_tokens": {
+      "cache_write_input_tokens": null,
+      "cached_input_tokens": null,
+      "input_tokens": null,
+      "output_tokens": null,
+      "reasoning_output_tokens": null,
+      "total_tokens": null
+    },
+    "status": "UNKNOWN",
+    "subscription": {
+      "allocation_usd": null,
+      "treatment": "shared fixed overhead"
+    },
+    "token_definitions": {
+      "cache_write_input_tokens": "Retained as reported; not added to total.",
+      "cached_input_tokens": "Subset of input; do not add to total.",
+      "input_tokens": "Reported input total; cached input is a subset.",
+      "output_tokens": "Reported output total; reasoning output is a subset.",
+      "reasoning_output_tokens": "Subset of output; do not add to total.",
+      "total_tokens": "Reported total; input plus output, without subset double counting."
+    },
+    "uncertainties": [
+      "capture_completeness_not_established"
+    ],
+    "window_end": "2026-10-15T01:04:12.294993+00:00",
+    "window_start": "2026-10-14T23:53:07.229366+00:00"
+  },
+  "episodes": [
+    {
+      "assistant_active_union_seconds": 4264.948807954788,
+      "assistant_time_scope": "Recorded activity intervals only; not token generation time",
+      "calendar_elapsed_seconds": null,
+      "coverage_fraction": 0.9999726102913538,
+      "disposition": null,
+      "episode_id": "guide-construction",
+      "excluded_input_wait_seconds": null,
+      "human_review_seconds": null,
+      "jobs": [
+        {
+          "job_id": "sikh270-detail03",
+          "job_kind": "native",
+          "monotonic_seconds": 107.84393962519243,
+          "outcome": "PASSED",
+          "utc_seconds": 1047.3668620586395
+        },
+        {
+          "job_id": "sikh270-detail04",
+          "job_kind": "native",
+          "monotonic_seconds": 135.6638542911969,
+          "outcome": "PASSED",
+          "utc_seconds": 135.66436409950256
+        },
+        {
+          "job_id": "sikh270-detail05",
+          "job_kind": "native",
+          "monotonic_seconds": 144.95954258274287,
+          "outcome": "PASSED",
+          "utc_seconds": 144.95958185195923
+        },
+        {
+          "job_id": "sikh270-look06",
+          "job_kind": "native",
+          "monotonic_seconds": 76.55655008321628,
+          "outcome": "PASSED",
+          "utc_seconds": 76.55663990974426
+        },
+        {
+          "job_id": "sikh270-detail07",
+          "job_kind": "native",
+          "monotonic_seconds": 207.8961712908931,
+          "outcome": "PASSED",
+          "utc_seconds": 207.89602494239807
+        },
+        {
+          "job_id": "sikh270-look08",
+          "job_kind": "native",
+          "monotonic_seconds": 73.13692391710356,
+          "outcome": "PASSED",
+          "utc_seconds": 73.13689589500427
+        },
+        {
+          "job_id": "sikh270-cloth10",
+          "job_kind": "native",
+          "monotonic_seconds": 140.0282847499475,
+          "outcome": "PASSED",
+          "utc_seconds": 140.02795314788818
+        },
+        {
+          "job_id": "sikh270-cloth12",
+          "job_kind": "native",
+          "monotonic_seconds": 127.55921570770442,
+          "outcome": "PASSED",
+          "utc_seconds": 127.55928087234497
+        },
+        {
+          "job_id": "sikh270-assemble13",
+          "job_kind": "native",
+          "monotonic_seconds": 229.47403558297083,
+          "outcome": "PASSED",
+          "utc_seconds": 229.4779360294342
+        },
+        {
+          "job_id": "sikh270-crown14",
+          "job_kind": "native",
+          "monotonic_seconds": 179.13908020872623,
+          "outcome": "PASSED",
+          "utc_seconds": 179.13899898529053
+        },
+        {
+          "job_id": "sikh270-crown15",
+          "job_kind": "native",
+          "monotonic_seconds": 244.2044916660525,
+          "outcome": "PASSED",
+          "utc_seconds": 244.2053999900818
+        },
+        {
+          "job_id": "sikh270-crown16",
+          "job_kind": "native",
+          "monotonic_seconds": 197.22089154087007,
+          "outcome": "PASSED",
+          "utc_seconds": 197.22167205810547
+        },
+        {
+          "job_id": "sikh270-crown17",
+          "job_kind": "native",
+          "monotonic_seconds": 248.58303020801395,
+          "outcome": "PASSED",
+          "utc_seconds": 248.58341884613037
+        },
+        {
+          "job_id": "sikh270-reopen17",
+          "job_kind": "native",
+          "monotonic_seconds": 38.53105116682127,
+          "outcome": "PASSED",
+          "utc_seconds": 38.53110885620117
+        }
+      ],
+      "lifecycle": "OPEN",
+      "native_job_wall_sum_seconds": 2150.797062621452,
+      "native_job_wall_union_seconds": null,
+      "native_jobs": [
+        {
+          "job_id": "sikh270-detail03",
+          "job_kind": "native",
+          "monotonic_seconds": 107.84393962519243,
+          "outcome": "PASSED",
+          "utc_seconds": 1047.3668620586395
+        },
+        {
+          "job_id": "sikh270-detail04",
+          "job_kind": "native",
+          "monotonic_seconds": 135.6638542911969,
+          "outcome": "PASSED",
+          "utc_seconds": 135.66436409950256
+        },
+        {
+          "job_id": "sikh270-detail05",
+          "job_kind": "native",
+          "monotonic_seconds": 144.95954258274287,
+          "outcome": "PASSED",
+          "utc_seconds": 144.95958185195923
+        },
+        {
+          "job_id": "sikh270-look06",
+          "job_kind": "native",
+          "monotonic_seconds": 76.55655008321628,
+          "outcome": "PASSED",
+          "utc_seconds": 76.55663990974426
+        },
+        {
+          "job_id": "sikh270-detail07",
+          "job_kind": "native",
+          "monotonic_seconds": 207.8961712908931,
+          "outcome": "PASSED",
+          "utc_seconds": 207.89602494239807
+        },
+        {
+          "job_id": "sikh270-look08",
+          "job_kind": "native",
+          "monotonic_seconds": 73.13692391710356,
+          "outcome": "PASSED",
+          "utc_seconds": 73.13689589500427
+        },
+        {
+          "job_id": "sikh270-cloth10",
+          "job_kind": "native",
+          "monotonic_seconds": 140.0282847499475,
+          "outcome": "PASSED",
+          "utc_seconds": 140.02795314788818
+        },
+        {
+          "job_id": "sikh270-cloth12",
+          "job_kind": "native",
+          "monotonic_seconds": 127.55921570770442,
+          "outcome": "PASSED",
+          "utc_seconds": 127.55928087234497
+        },
+        {
+          "job_id": "sikh270-assemble13",
+          "job_kind": "native",
+          "monotonic_seconds": 229.47403558297083,
+          "outcome": "PASSED",
+          "utc_seconds": 229.4779360294342
+        },
+        {
+          "job_id": "sikh270-crown14",
+          "job_kind": "native",
+          "monotonic_seconds": 179.13908020872623,
+          "outcome": "PASSED",
+          "utc_seconds": 179.13899898529053
+        },
+        {
+          "job_id": "sikh270-crown15",
+          "job_kind": "native",
+          "monotonic_seconds": 244.2044916660525,
+          "outcome": "PASSED",
+          "utc_seconds": 244.2053999900818
+        },
+        {
+          "job_id": "sikh270-crown16",
+          "job_kind": "native",
+          "monotonic_seconds": 197.22089154087007,
+          "outcome": "PASSED",
+          "utc_seconds": 197.22167205810547
+        },
+        {
+          "job_id": "sikh270-crown17",
+          "job_kind": "native",
+          "monotonic_seconds": 248.58303020801395,
+          "outcome": "PASSED",
+          "utc_seconds": 248.58341884613037
+        },
+        {
+          "job_id": "sikh270-reopen17",
+          "job_kind": "native",
+          "monotonic_seconds": 38.53105116682127,
+          "outcome": "PASSED",
+          "utc_seconds": 38.53110885620117
+        }
+      ],
+      "net_elapsed_seconds": null,
+      "observed_excluded_input_wait_seconds": 0,
+      "operational_proxies": {},
+      "phase_net_seconds": null,
+      "uncertainties": [
+        "clock_discontinuity",
+        "missing_interval_end",
+        "missing_or_duplicate_lifecycle_boundary",
+        "unexplained_gap"
+      ],
+      "unknown_gap_seconds": 0.11681890487670898
+    }
+  ],
+  "experiment_id": "SIKH270",
+  "factory_api": {
+    "known_api_cost_usd": null,
+    "provider_calls": null,
+    "reason": "No provider ledger evidence supplied; absence is not zero.",
+    "status": "UNKNOWN"
+  },
+  "model_setting_observations": [],
+  "net_episode_sum_seconds": null,
+  "note": "Episode totals exclude inter-episode gaps. Job sums are process-seconds, not CPU time.",
+  "outcome_denominators": {
+    "closed_episodes": 0,
+    "closed_experiments": 0,
+    "director_accepted_outputs": null,
+    "technically_successful_outputs": null
+  },
+  "schema_version": "1.0"
+}

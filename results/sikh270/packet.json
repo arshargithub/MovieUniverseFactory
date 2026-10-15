@@ -1,0 +1,706 @@
+{
+  "schema_version": 1,
+  "task": {
+    "id": "sikh270-native-design-review",
+    "operation": "modeling",
+    "entities": [
+      "sikh"
+    ],
+    "query": "explicit crown fold guides beard cheek chin moustache volume eyes cloth ear release contact",
+    "intent": "Static native Sikh identity/design decision. This is not a finished-character, continuous-textile, actual uncovering or motorcycle-sequence admission.",
+    "phase": "execution",
+    "inputs": {
+      "AGENTS.md": "32986d2a8a1698b1c0d54d12d0b5f30e3ad09ef95216a146fac50c5dc956516a",
+      "docs/planning/SERIES_01_SIKH_ASSET_STRATEGY_262.md": "7afa7193970afc128b52283e7125255aca66690ddf643b6e40ea80117797b6d4",
+      "docs/planning/SERIES_01_SIKH_BASELINE_V01.md": "6e49947ea677f078a6cd35f4ad8893ab5f2128c86fc7ab4f350fc388dae7eb74",
+      "scripts/sikh270_guides.py": "b1c8ee1fb643d2eec50f2fa543c8605da0c3a561749f92620e42118efc1c2d0a",
+      "scripts/sikh269_character.py": "741ab9c46e6a2b1ebe1a48ce7bfdecf200c694b083e1b808e0204902ccb01cdc",
+      "scripts/sikh257_native.py": "3bf6dc0f84dc75db702770d66872e4af928bdfac784e7f4bf21518d78a2ad86e",
+      "scripts/sikh261_character.py": "91451377786eb3ffcef85e822c02875256fb22d54f7f8fbe7876a64d2bcde7c4",
+      "scripts/mpfb264_setup.py": "4de0ec79aa5b9db475bed431600fa13dc561ce3de1f9ef7a9a23347777468a4a",
+      "tests/test_sikh270_guides.py": "d7560be092b719d5c76bbcfa1ae35058601f5f3854916f650f515f138369a4b2",
+      ".runtime/art-direction/series01-sikh269/candidate-24/character.blend": "13353e4e11cc1c31ae45341ede0e38d9dc6d5f8f157d4578dff35f4ccb5b81d7",
+      ".runtime/art-direction/series01-sikh257/sikh-uncovered-concept-v03.png": "7aaa7a8433d85024681e427b5cd290ec35fd5b78adfa0aea67035847665a151f",
+      "results/sikh269/observations.json": "f01e49809514ecb3756f9fbdb6d2de894a3986991082800720847bba2261748f",
+      "scripts/sikh270_cloth.py": "9b9105b2c4036d4862cb1cd544d075ae3c37cf67d030a8a4de35a52927eaefdd",
+      ".runtime/art-direction/series01-sikh270/candidate-08/character.blend": "5c1094ba7d9683b8e98a6bc45aecde3e0b5b62cf87ce44eb943961b319e7a30b",
+      ".runtime/art-direction/series01-sikh270/candidate-08/build.json": "7659f80b74105822cb7502516e275f0775ffd6036fd56c250f936d009002ff7c",
+      ".runtime/art-direction/series01-sikh270/candidate-12/cloth.json": "a20ee596dc31bc88ae6338a130af1f7be6b4638aa8f64d8ea417d63b8b16a29d",
+      ".runtime/art-direction/series01-sikh270/candidate-12/cloth-motion.npz": "5c2a970078ecf1b0c4c889015eab1647b9f8e5d305ccbe63449b2915f3487ec3",
+      ".runtime/art-direction/series01-sikh270/candidate-12/groom-compression.json": "032a53843122665f42517655bef676cc0d7e64cb009c36c0439356f41707a681",
+      "scripts/sikh270_crown.py": "5130296271c9ce0b0e996a40fc71639ca6d1e00dd17e95a8d205da3a61687f59",
+      ".runtime/art-direction/series01-sikh270/candidate-13/character.blend": "68bd093f98d8b353d5e9746f9240713cea349abf8b418f8b9788ce678281f668",
+      ".runtime/art-direction/series01-sikh270/candidate-13/build.json": "41c19069c41c4d23ca8fdec8e7336d043050a8aa3bbfdc4db45cf0394848ddda",
+      ".runtime/art-direction/series01-sikh270/candidate-17/character.blend": "d32a2152b7bee216cfb2e727291c8f2d147a8987401985ac75c24bec12e3fa5b",
+      "results/sikh270/observations.json": "5186172204b8f3086c888306efb2dc1195b109ed8959ea5f32bf33f669a5ded8",
+      "results/sikh270/file-manifest.json": "b94ff746b8f007df1d9730b934cb9987e07710a975ae5c7c22884b79751f0cb6",
+      "scripts/package_sikh270_review.py": "2734dbabd0073d7adb72b4dbec7069f72550eb8236481d453f8357ee95733430"
+    },
+    "open_decisions": [],
+    "execution_authority": {
+      "source": "docs/planning/SERIES_01_SIKH_ASSET_STRATEGY_262.md",
+      "scope": "Director270 guide reconstruction and internal proof; no paid calls or new assets"
+    },
+    "max_context_characters": 42000
+  },
+  "corpus_digest": "bc5c47d1a3e4deb983757e30e26ebf369f3186fba82b75f223fe5622680f5157",
+  "engine_sha256": "b922002901667b45e63b1f4867a94782593a1f96499396b4662c99780308ab18",
+  "entity_versions": {
+    "motorcycle": "257-unqualified-development-not-Pashtun",
+    "nihang_crowd": "257-unqualified-development-not-Pashtun",
+    "nihang_horse": "257-unqualified-development-not-Pashtun",
+    "nihang_leader": "257-unqualified-development-not-Pashtun",
+    "sikh": "257-unqualified-development-not-Pashtun",
+    "sikh_beard": "257-unqualified-development-not-Pashtun",
+    "sikh_hand": "257-unqualified-development-not-Pashtun",
+    "sikh_turban_cover": "257-unqualified-development-not-Pashtun",
+    "sikh_weapon": "257-unqualified-development-not-Pashtun"
+  },
+  "entity_reasons": {
+    "sikh": "explicit task entity",
+    "motorcycle": "sikh depends_on motorcycle",
+    "sikh_turban_cover": "sikh depends_on sikh_turban_cover",
+    "nihang_crowd": "motorcycle adjacent_to nihang_crowd",
+    "sikh_hand": "sikh_turban_cover contacts sikh_hand",
+    "sikh_beard": "sikh_turban_cover contacts sikh_beard",
+    "sikh_weapon": "sikh_turban_cover adjacent_to sikh_weapon",
+    "nihang_leader": "nihang_crowd depends_on nihang_leader",
+    "nihang_horse": "nihang_leader supported_by nihang_horse"
+  },
+  "traversed_edges": [
+    [
+      "sikh",
+      "depends_on",
+      "motorcycle"
+    ],
+    [
+      "sikh",
+      "depends_on",
+      "sikh_turban_cover"
+    ],
+    [
+      "motorcycle",
+      "adjacent_to",
+      "nihang_crowd"
+    ],
+    [
+      "sikh_turban_cover",
+      "contacts",
+      "sikh_hand"
+    ],
+    [
+      "sikh_turban_cover",
+      "contacts",
+      "sikh_beard"
+    ],
+    [
+      "sikh_turban_cover",
+      "adjacent_to",
+      "sikh_weapon"
+    ],
+    [
+      "nihang_crowd",
+      "depends_on",
+      "nihang_leader"
+    ],
+    [
+      "sikh_hand",
+      "contacts",
+      "motorcycle"
+    ],
+    [
+      "nihang_leader",
+      "supported_by",
+      "nihang_horse"
+    ]
+  ],
+  "facets": [
+    "anatomy",
+    "cloth",
+    "contact",
+    "modeling",
+    "motion",
+    "prop",
+    "secondary",
+    "sikh_cloth",
+    "sikh_motion",
+    "sikh_scope",
+    "visual"
+  ],
+  "obligations": [
+    {
+      "id": "authority",
+      "status": "adopted",
+      "kind": "constraint",
+      "tags": [
+        "*"
+      ],
+      "sources": [
+        "workflow",
+        "strategy",
+        "context",
+        "unit"
+      ],
+      "check_kind": "process",
+      "action": "Confirm scope and genuine Director decisions. No new spend, installs, specialists, publication or protected creative changes by inference. Routine in-scope technical fixes remain agent-owned. Astra is top tier; failed method needs reassessment, not a nonexistent higher model.",
+      "reason": "global binding rule",
+      "citations": [
+        "docs/knowledge/EFFICIENT_QUALITY_ASSET_WORKFLOW.md",
+        "docs/decisions/0005-production-strategy-before-execution.md",
+        "docs/planning/CONTEXT_AND_DIRECTOR_REVIEW_CONTRACT.md",
+        "docs/planning/SERIES_01_PASHTUN_FINISHED_UNIT_PLAN.md"
+      ],
+      "authority": "adopted"
+    },
+    {
+      "id": "strategy",
+      "status": "adopted",
+      "kind": "constraint",
+      "tags": [
+        "*"
+      ],
+      "sources": [
+        "strategy",
+        "workflow"
+      ],
+      "check_kind": "process",
+      "action": "Read current strategy; name outcome, quality floor, interfaces, assumptions, earliest integrated proof, resources, reuse and replan/exit. Repeated compensating patches trigger method reassessment, not renamed passes.",
+      "reason": "global binding rule",
+      "citations": [
+        "docs/decisions/0005-production-strategy-before-execution.md",
+        "docs/knowledge/EFFICIENT_QUALITY_ASSET_WORKFLOW.md"
+      ],
+      "authority": "adopted"
+    },
+    {
+      "id": "visual_gate",
+      "status": "adopted",
+      "kind": "constraint",
+      "tags": [
+        "*"
+      ],
+      "sources": [
+        "context",
+        "workflow",
+        "index"
+      ],
+      "check_kind": "review",
+      "action": "Compare the complete claimed result to accepted references and required use, seeking known and new failures plus adjacent regressions. Use explicit failing-shape controls before expensive integration; contact targets and material cannot substitute for the required silhouette. An occluded region is NOT_RUN until visibly inspected. Actual motion/audio where applicable; distinguish frame inspection from playback. Tests, better-than-before and source hashes do not establish perceptual PASS. Known FAIL/NOT_RUN blocks handoff.",
+      "reason": "global binding rule",
+      "citations": [
+        "docs/planning/CONTEXT_AND_DIRECTOR_REVIEW_CONTRACT.md",
+        "docs/knowledge/EFFICIENT_QUALITY_ASSET_WORKFLOW.md",
+        "docs/knowledge/PRODUCTION_LEARNING_APPLICATION_INDEX.md"
+      ],
+      "authority": "adopted"
+    },
+    {
+      "id": "anticipation",
+      "status": "adopted",
+      "kind": "constraint",
+      "tags": [
+        "*"
+      ],
+      "sources": [
+        "context"
+      ],
+      "check_kind": "review",
+      "action": "Write audience intent and distraction hypotheses before a defect list. Test them against actual evidence, seek counterevidence and unlisted problems, record observations and corrections. Director feedback calibrates fallible judgment; it is not the primary defect detector.224: test opening hook, pacing and causal geography, not merely fit duration.248 adopts larger-than-life impact for The Martials and records it as a Director preference: name the extraordinary character-specific beat and its preparation/payoff; use contrast and believability, not constant maximum speed/loudness or unapproved powers. 249 requires a shot/beat performance and believability brief before execution: apply relevant expertise lenses, predict audience-visible anatomy/contact/physical-response failures, and bind each critical behavior to strategy, interfaces, early proof and observable failure conditions. Cover each beat or explicit inheritance; consult docs/planning/SHOT_BEAT_QUALITY_BRIEF.md. Roles are perspectives, not an org chart. Automatic brief completeness and perceptual judgment are not implemented.",
+      "reason": "global binding rule",
+      "citations": [
+        "docs/planning/CONTEXT_AND_DIRECTOR_REVIEW_CONTRACT.md"
+      ],
+      "authority": "adopted"
+    },
+    {
+      "id": "stopping",
+      "status": "adopted",
+      "kind": "constraint",
+      "tags": [
+        "*"
+      ],
+      "sources": [
+        "context",
+        "workflow",
+        "strategy"
+      ],
+      "check_kind": "review",
+      "action": "Meet the high quality floor first;248 clarifies efficiency means progressively more reliable and economical achievement of that bar, not lowering it. Then weigh visible benefit, dramatic value, reuse and regression/opportunity cost. Re-rank residuals after larger fixes. Prior tolerance is not acceptance. Record deferred details and reopening triggers; no arbitrary timer waives quality or creates handoff.",
+      "reason": "global binding rule",
+      "citations": [
+        "docs/planning/CONTEXT_AND_DIRECTOR_REVIEW_CONTRACT.md",
+        "docs/knowledge/EFFICIENT_QUALITY_ASSET_WORKFLOW.md",
+        "docs/decisions/0005-production-strategy-before-execution.md"
+      ],
+      "authority": "adopted"
+    },
+    {
+      "id": "versioning",
+      "status": "adopted",
+      "kind": "constraint",
+      "tags": [
+        "*"
+      ],
+      "sources": [
+        "context",
+        "index",
+        "accepted"
+      ],
+      "check_kind": "technical",
+      "action": "Bind actual inputs, accepted scope, source hashes and dependencies. Revalidate affected checks after camera/motion/version changes. Preserve originals and failed evidence. A local commit is not native-media backup; a reopened scene is not proof of portable or general reuse.",
+      "reason": "global binding rule",
+      "citations": [
+        "docs/planning/CONTEXT_AND_DIRECTOR_REVIEW_CONTRACT.md",
+        "docs/knowledge/PRODUCTION_LEARNING_APPLICATION_INDEX.md",
+        "docs/knowledge/PASHTUN_CHARACTER_RETROSPECTIVE.md"
+      ],
+      "authority": "adopted"
+    },
+    {
+      "id": "economics",
+      "status": "adopted",
+      "kind": "constraint",
+      "tags": [
+        "*"
+      ],
+      "sources": [
+        "index",
+        "workflow",
+        "accepted",
+        "render"
+      ],
+      "check_kind": "process",
+      "action": "Track active effort, waits, jobs, actual provider spend and usable output separately; leave unavailable tokens/cost null. Do not add overlapping process/activity time. Diagnostic investment is not repeatable unit cost. Advance the trailer and two episodes, not tooling or polish for its own sake.",
+      "reason": "global binding rule",
+      "citations": [
+        "docs/knowledge/PRODUCTION_LEARNING_APPLICATION_INDEX.md",
+        "docs/knowledge/EFFICIENT_QUALITY_ASSET_WORKFLOW.md",
+        "docs/knowledge/PASHTUN_CHARACTER_RETROSPECTIVE.md",
+        "docs/planning/LOCAL_RENDER_ACCELERATION_210.md"
+      ],
+      "authority": "adopted"
+    },
+    {
+      "id": "representation",
+      "status": "supported",
+      "kind": "lesson",
+      "tags": [
+        "modeling"
+      ],
+      "sources": [
+        "index",
+        "accepted",
+        "workflow"
+      ],
+      "check_kind": "review",
+      "action": "Inspect actual geometry, scale, roots, controls, rights and integrated silhouette before polish. Donor/tool feasibility informs design but does not erase identity. Painted-plus-native hair conflict and knight-body mismatch require representation reassessment, not more noise or local offsets.",
+      "reason": "matched facets: modeling",
+      "citations": [
+        "docs/knowledge/PRODUCTION_LEARNING_APPLICATION_INDEX.md",
+        "docs/knowledge/PASHTUN_CHARACTER_RETROSPECTIVE.md",
+        "docs/knowledge/EFFICIENT_QUALITY_ASSET_WORKFLOW.md"
+      ],
+      "authority": "supported"
+    },
+    {
+      "id": "anatomy",
+      "status": "supported",
+      "kind": "lesson",
+      "tags": [
+        "anatomy"
+      ],
+      "sources": [
+        "accepted",
+        "index",
+        "motion"
+      ],
+      "check_kind": "review",
+      "action": "Compare accepted anatomical transitions with matched camera/scale/light. Separate clay, colour and lighting when diagnostic; preserve throat/clavicles, shoulder and hip volume across full/partial poses. Clothes cannot waive anatomy. Extend approved cheek character outward rather than flatten it.",
+      "reason": "matched facets: anatomy",
+      "citations": [
+        "docs/knowledge/PASHTUN_CHARACTER_RETROSPECTIVE.md",
+        "docs/knowledge/PRODUCTION_LEARNING_APPLICATION_INDEX.md",
+        "docs/planning/MOTION_DESIGN_TEMPLATE.md"
+      ],
+      "authority": "supported"
+    },
+    {
+      "id": "motion",
+      "status": "adopted",
+      "kind": "constraint",
+      "tags": [
+        "motion"
+      ],
+      "sources": [
+        "motion",
+        "index"
+      ],
+      "check_kind": "review",
+      "action": "Complete motion brief; establish transform spaces, evaluated parent state and one contact/travel owner. Test coordinated joints, transition interiors, neutral return and complete motion. Nonzero keys do not prove neck absorption, emotion or natural movement.",
+      "reason": "matched facets: motion",
+      "citations": [
+        "docs/planning/MOTION_DESIGN_TEMPLATE.md",
+        "docs/knowledge/PRODUCTION_LEARNING_APPLICATION_INDEX.md"
+      ],
+      "authority": "adopted"
+    },
+    {
+      "id": "secondary",
+      "status": "supported",
+      "kind": "lesson",
+      "tags": [
+        "secondary"
+      ],
+      "sources": [
+        "index",
+        "accepted"
+      ],
+      "check_kind": "review",
+      "action": "Check hair/mane/tail/cloth/dust response coherently in actual motion; protect roots/supports and scale forcing by length. Dust needs world-space continuity through turns and contrast without obscuring action. New motion/camera/palette invalidates relevant checks; authored lag is not general physics.",
+      "reason": "matched facets: secondary",
+      "citations": [
+        "docs/knowledge/PRODUCTION_LEARNING_APPLICATION_INDEX.md",
+        "docs/knowledge/PASHTUN_CHARACTER_RETROSPECTIVE.md"
+      ],
+      "authority": "supported"
+    },
+    {
+      "id": "look",
+      "status": "supported",
+      "kind": "lesson",
+      "tags": [
+        "visual",
+        "look"
+      ],
+      "sources": [
+        "index",
+        "render"
+      ],
+      "check_kind": "review",
+      "action": "Preserve illustrated-C richness through form, designed marks, palette/selective darks and physical interaction, not simply flattened shading. Judge moving foreground against painted distance and phone-size hierarchy. Render acceleration cannot trade away selected style or dust/hair readability.",
+      "reason": "matched facets: visual",
+      "citations": [
+        "docs/knowledge/PRODUCTION_LEARNING_APPLICATION_INDEX.md",
+        "docs/planning/LOCAL_RENDER_ACCELERATION_210.md"
+      ],
+      "authority": "supported"
+    },
+    {
+      "id": "rights",
+      "status": "adopted",
+      "kind": "constraint",
+      "tags": [
+        "audio",
+        "delivery",
+        "modeling"
+      ],
+      "sources": [
+        "index",
+        "audio",
+        "accepted",
+        "unit"
+      ],
+      "check_kind": "process",
+      "action": "Check source/scan/font/recording/donor rights separately; free is not cleared. Provider feature, balance, terms and retry allowance require fresh eligible-route preflight and budget reservation before external calls. Old workspace/API credits are not interchangeable. Release/publication is separately authorized.",
+      "reason": "matched facets: modeling",
+      "citations": [
+        "docs/knowledge/PRODUCTION_LEARNING_APPLICATION_INDEX.md",
+        "docs/planning/SERIES_01_PASHTUN_NARRATIVE_AUDIO_PROPOSAL.md",
+        "docs/knowledge/PASHTUN_CHARACTER_RETROSPECTIVE.md",
+        "docs/planning/SERIES_01_PASHTUN_FINISHED_UNIT_PLAN.md"
+      ],
+      "authority": "adopted"
+    },
+    {
+      "id": "current_state",
+      "status": "adopted",
+      "kind": "constraint",
+      "tags": [
+        "*"
+      ],
+      "sources": [
+        "current255"
+      ],
+      "check_kind": "process",
+      "action": "Read CURRENT_PRODUCTION_STATE.md:253 exact Pashtun20s provisional acceptance stays protected; strict replay FAIL and final release/rights remain separate. Protection/calibration255 complete. Director256-257 authorizes Sikh-only sequence development, continuous turban/cover, personal recognition and nonrecurring leader; action before music. Director260 accepts illustrated portrait v03; read SERIES_01_SIKH_BASELINE_V01.md before Sikh identity/cloth work. Broad natural beard and rugged face govern; rejected v01/v02 do not. No literal pixel matching, native acceptance or incidental background/cloth-topology approval. Native257 remains BLOCK. Unknown domains still block; no paid calls/publication by inference.",
+      "reason": "global binding rule",
+      "citations": [
+        "docs/knowledge/CURRENT_PRODUCTION_STATE.md"
+      ],
+      "authority": "adopted"
+    },
+    {
+      "id": "au_reference",
+      "status": "adopted",
+      "kind": "workflow",
+      "tags": [
+        "modeling",
+        "identity"
+      ],
+      "sources": [
+        "audit250"
+      ],
+      "check_kind": "review",
+      "action": "AU01-AU05/AU08: preserve approved identity/native differences; images are art-direction references, not literal reconstruction mandates. Inspect candidate license, editable topology and whole-character fit before commitment. Test genuinely different visual languages, not filters; interpret unseen views explicitly.",
+      "reason": "matched facets: modeling",
+      "citations": [
+        "docs/knowledge/PASHTUN_PRODUCTION_AUDIT250.md"
+      ],
+      "authority": "adopted"
+    },
+    {
+      "id": "au_deformation",
+      "status": "adopted",
+      "kind": "workflow",
+      "tags": [
+        "anatomy",
+        "cloth"
+      ],
+      "sources": [
+        "audit250"
+      ],
+      "check_kind": "review",
+      "action": "AU06/AU09-AU10: separate geometry/texture/light and pivot/weight/corrective hypotheses using matched controls. Test full and partial bends, landmark volumes and neighboring regions. Trace both shawl edges over shoulders/rear above harness with supports in actual motion; do not hide anatomy with clothes or polish a failing representation.",
+      "reason": "matched facets: anatomy, cloth",
+      "citations": [
+        "docs/knowledge/PASHTUN_PRODUCTION_AUDIT250.md"
+      ],
+      "authority": "adopted"
+    },
+    {
+      "id": "au_performance",
+      "status": "adopted",
+      "kind": "workflow",
+      "tags": [
+        "motion",
+        "secondary"
+      ],
+      "sources": [
+        "audit250"
+      ],
+      "check_kind": "review",
+      "action": "AU07/AU11-AU12: stable gaze is not a rigid torso/neck. Brief coordinated absorption, intent phases, support/forcing/lag/recovery and actual screen visibility. Inspect real motion where available; still samples cannot certify speed, acting or temporal naturalness. New camera/action invalidates affected checks.",
+      "reason": "matched facets: motion, secondary",
+      "citations": [
+        "docs/knowledge/PASHTUN_PRODUCTION_AUDIT250.md"
+      ],
+      "authority": "adopted"
+    },
+    {
+      "id": "au_contact",
+      "status": "adopted",
+      "kind": "workflow",
+      "tags": [
+        "contact",
+        "prop"
+      ],
+      "sources": [
+        "audit250"
+      ],
+      "check_kind": "review",
+      "action": "AU13: touching reins does not prove a fist. First inspect bare joint origins and closed silhouette, then thumb/rein/sleeve/mane integration and partial motion. Include known-bad controls and preserve tolerated-defect reopening triggers; no false pass from constraint distance or relative improvement.",
+      "reason": "matched facets: contact, prop",
+      "citations": [
+        "docs/knowledge/PASHTUN_PRODUCTION_AUDIT250.md"
+      ],
+      "authority": "adopted"
+    },
+    {
+      "id": "au_surface",
+      "status": "adopted",
+      "kind": "workflow",
+      "tags": [
+        "visual",
+        "look"
+      ],
+      "sources": [
+        "audit250"
+      ],
+      "check_kind": "review",
+      "action": "AU06/AU11: preserve approved surface texture at multiple scales and matched lighting. Terrain, dust contrast, skin, costume and background form one look; light/palette changes reopen dependent visibility. Rich illustrated detail is not flat simplification or photorealistic noise.",
+      "reason": "matched facets: visual",
+      "citations": [
+        "docs/knowledge/PASHTUN_PRODUCTION_AUDIT250.md"
+      ],
+      "authority": "adopted"
+    },
+    {
+      "id": "sikh_scope",
+      "status": "adopted",
+      "kind": "constraint",
+      "tags": [
+        "sikh_scope"
+      ],
+      "sources": [
+        "sikh257"
+      ],
+      "check_kind": "process",
+      "action": "Director256-257 authorizes Sikh only, complete rough action before music mapping. New motorcycle entrance overrides older mounted protagonist. Preserve Sikh character brief, warmth and agency/influence tension; reference art is ingredients not literal likeness/name. Leader recognizes him personally, not expected recurring; no mentor/father role. Protected Pashtun is not donor identity or automatic action qualification. No paid calls, tools, installs, purchases, publication.",
+      "reason": "matched facets: sikh_scope",
+      "citations": [
+        "docs/planning/SERIES_01_SIKH_SEQUENCE.md"
+      ],
+      "authority": "adopted"
+    },
+    {
+      "id": "sikh_cloth",
+      "status": "adopted",
+      "kind": "constraint",
+      "tags": [
+        "sikh_cloth"
+      ],
+      "sources": [
+        "sikh257"
+      ],
+      "check_kind": "review",
+      "action": "257: turban and face covering are one cloth. Prove secured crown plus slack free end, declared exit/support and visible continuous edge route. Complete covered/uncover/release/bow/relaunch passage before detailed folds. Test hand/beard/ear/bandolier/weapon contacts, rest length, clean initial layers, crown stability, resting drape and acceleration response. Connectivity or finite simulation alone is not a visual pass; no separate mask substitution.",
+      "reason": "matched facets: sikh_cloth",
+      "citations": [
+        "docs/planning/SERIES_01_SIKH_SEQUENCE.md"
+      ],
+      "authority": "adopted"
+    },
+    {
+      "id": "sikh_motion",
+      "status": "adopted",
+      "kind": "constraint",
+      "tags": [
+        "sikh_motion"
+      ],
+      "sources": [
+        "sikh257"
+      ],
+      "check_kind": "review",
+      "action": "Use the seven-beat motion strategy: wheel rolling versus declared slip, supported stationary bike before both hands leave controls, actual knuckle pivots and palms together, coordinated torso/neck, cloth ownership, new horse rear/support proof, stepped crowd clearance before respectful launch. Old gallop/rein qualification does not transfer. Full causal rough sequence before finish; no arbitrary technical handover.",
+      "reason": "matched facets: sikh_motion",
+      "citations": [
+        "docs/planning/SERIES_01_SIKH_SEQUENCE.md"
+      ],
+      "authority": "adopted"
+    }
+  ],
+  "excluded": [
+    {
+      "id": "identity",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "contact",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "garment",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "geography",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "sword",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "render_profile",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "cache_safety",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "narrative",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "quotation",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "sound",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "captions",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "retrieval",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "narration_a",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "single_wrap",
+      "reason": "not current authority/workflow"
+    },
+    {
+      "id": "gpu_ban",
+      "reason": "not current authority/workflow"
+    },
+    {
+      "id": "music_reference",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "au_staging",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "au_audio",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "au_reuse",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "au_review",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "sikh_geography",
+      "reason": "outside declared impact facets"
+    }
+  ],
+  "supporting_search": [
+    {
+      "id": "sikh_cloth",
+      "status": "adopted",
+      "role": "supporting_only"
+    },
+    {
+      "id": "sikh_geography",
+      "status": "adopted",
+      "role": "supporting_only"
+    },
+    {
+      "id": "sikh_motion",
+      "status": "adopted",
+      "role": "supporting_only"
+    },
+    {
+      "id": "sikh_scope",
+      "status": "adopted",
+      "role": "supporting_only"
+    },
+    {
+      "id": "representation",
+      "status": "supported",
+      "role": "supporting_only"
+    }
+  ],
+  "blockers": [],
+  "dispatch_ready": true,
+  "gaps": [
+    "Detailed linked asset/experiment histories are not exhaustively re-audited in this nine-document pilot.",
+    "Legacy742-turn capture has one truncated response;588 candidates are not all reconciled or approved.",
+    "Task/entity descriptors and dependency relationships are manually curated, not extracted from Blender automatically.",
+    "No new visual/audio review, paid generation, production renderer promotion or release authorization is supplied by a context packet."
+  ],
+  "open_decisions": [],
+  "limits": "Planning readiness is not execution authorization. Manually curated scope and authority records require agent verification. CLI enforces evidence structure/freshness, not honesty or perceptual quality.",
+  "packet_digest": "b18633d50dbdf9c143e73a84afefef985e75847b9a86ad9fed4550bf76baa6d8"
+}
