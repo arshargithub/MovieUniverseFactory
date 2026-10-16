@@ -1,0 +1,134 @@
+{
+  "source_sha256": "58131039f2b34d17c6c5c97a1bf52d7a405ef13ef41ca9cd9404e0d5fde14d97",
+  "source_bytes": 3834700,
+  "gltf_summary": {
+    "meshes": 1,
+    "nodes": 1,
+    "materials": 0,
+    "images": 0,
+    "skins": 0,
+    "animations": 0
+  },
+  "imported_geometry": [
+    {
+      "name": "mesh_node",
+      "vertices": 106499,
+      "faces": 212994,
+      "polygon_sizes": [
+        3
+      ],
+      "connected_component_vertex_counts": [
+        106499
+      ],
+      "coordinate_sha256": "fe7379d6dc9f1b24731a18292485e2e4b7d37132cd334f68eeb742dcf4d09f5b",
+      "loop_sha256": "299135bd933554a8eb3f10255c721f24431f127121c0032a855c5e5fa7953fee",
+      "uv_layers": 0,
+      "shape_keys": 0,
+      "vertex_groups": 0,
+      "modifiers": [],
+      "materials": [],
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    }
+  ],
+  "normalized_geometry": [
+    {
+      "name": "mesh_node",
+      "vertices": 106499,
+      "faces": 212994,
+      "polygon_sizes": [
+        3
+      ],
+      "connected_component_vertex_counts": [
+        106499
+      ],
+      "coordinate_sha256": "fe7379d6dc9f1b24731a18292485e2e4b7d37132cd334f68eeb742dcf4d09f5b",
+      "loop_sha256": "299135bd933554a8eb3f10255c721f24431f127121c0032a855c5e5fa7953fee",
+      "uv_layers": 0,
+      "shape_keys": 0,
+      "vertex_groups": 0,
+      "modifiers": [],
+      "materials": [
+        "Neutral diagnostic clay"
+      ],
+      "world_matrix": [
+        [
+          0.5274531245231628,
+          0.0,
+          0.0,
+          0.0013786479830741882
+        ],
+        [
+          0.0,
+          0.5274531245231628,
+          0.0,
+          -0.0014887932920828462
+        ],
+        [
+          0.0,
+          0.0,
+          0.5274531245231628,
+          0.0003754089993890375
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    }
+  ],
+  "input_bounds": [
+    [
+      -0.9281403422355652,
+      -0.5511994957923889,
+      -0.9486632347106934
+    ],
+    [
+      0.9229127764701843,
+      0.5568447113037109,
+      0.9472397565841675
+    ]
+  ],
+  "presentation_scale": 0.5274531474403242,
+  "native_sha256": "d31b6a6eb0e934efc7fa9d9293f399012906520342f919aa3265f8ee498aff30",
+  "views": [
+    "front",
+    "right-quarter",
+    "left-quarter",
+    "profile",
+    "rear",
+    "crown"
+  ],
+  "limits": [
+    "Static data inspection only",
+    "No rig or performance qualification",
+    "Generic disposable identity",
+    "No texture or sculpt edits; rigid normalization only"
+  ]
+}
