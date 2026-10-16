@@ -4,6 +4,10 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+### Exchange283 — integrated Sikh head fails internal admission
+
+[Local construction assessment](../../results/sikh283/ASSESSMENT.md) retains eleven completed head controls, six-second144-frame motion evidence and sampled reopen integrity, but rejects the character against v03 and accepted Pashtun. Procedural grooming and two generated surface studies did not close the individual/same-film gap. No foundation review or release progress is claimed. [Strategy262](SERIES_01_SIKH_ASSET_STRATEGY_262.md#exchange283--integrated-head-attempted-internal-admission-denied) proposes a character-specific sculpt-donor test with an explicit paid/content-use decision before any external action; not authorized by this completed local pass. Head admission remains before uncover/greeting and full Sikh entrance. Counter283; next290. New media remains local and existing push/backup gaps are unchanged.
+
 ### Exchange282 — integrated Sikh head proposed as the next pass
 
 The281 single-eye proof is an internal dependency, not a character review. [The next work package](SERIES_01_SIKH_ASSET_STRATEGY_262.md#exchange282--meaningful-handoff-and-proposed-integrated-head-pass) combines a rugged individualized face, both working eyes, natural broad beard, authentic tied turban and a short recognition/respect performance. Its review asks whether he is the intended Sikh and belongs beside the accepted Pashtun. Actual hand-driven uncovering and bike greeting follow head admission, then the full rough entrance; no full-sequence readiness is implied. Handoffs must recommend one bounded audience-visible deliverable, not list unfinished components. Rules/scope updated only; no construction or new release acceptance in282. Counter282; next checkpoint290. Existing remote push audit and new-media protection remain outstanding.

@@ -4,6 +4,14 @@
 
 ## Open decision
 
+### Exchange283 — integrated head attempted; internal admission denied
+
+Director authorizes282. [Sustained local construction and method review](../../results/sikh283/ASSESSMENT.md) preserves twelve build dispatches (one startup failure, eleven completed controls), a six-second144-frame diagnostic, sampled fresh reopen, two built-in surface-paint studies and explicit failed visual checks. Bilateral eyes/gaze and attachment controls supply reusable engineering evidence, not an acceptable actor. Facial character, schematic eye anatomy, beard/moustache integration, crown and rear bust remain below the agreed floor; illustrated projection does not cure this. No bad foundation is offered for Director approval. Read this result alongside271 before continuing; it is manually linked, not automatically added to the bounded knowledge graph.
+
+**Material decision now proposed:** replace the generic-source adaptation route with a character-specific sculpt-donor trial using a head-only derivative of approved v03. Recommend one month of paid/private Meshy only with explicit approval of a proposed US$25 ceiling and non-Enterprise content-use terms, at most two head candidates, no additional purchase. Actual checkout amount and input must be confirmed before transaction/upload. A stronger generator is a hypothesis, not an established solution to topology, grooming or animation. First source-form gate, then one integrated eye proof; fail early if either misses the co-star floor. No upload, purchase, new Meshy generation or specialist executed. Keeping zero spend is valid but leaves this failed route blocked rather than lowering quality. FaceBuilder remains declined. Actual uncovered greeting/bike and complete entrance still follow viable head admission; Sikh only and action before music.
+
+Counter283; next checkpoint290. No new accepted production output, remote push or new-media backup. Approved references/masters and all rejected evidence preserved.
+
 ### Exchange282 — meaningful handoff and proposed integrated head pass
 
 **Director request:** strengthen the rules and identify a meaningful next pass. The281 handoff listed bilateral eyes, gaze, face, beard and turban without specifying the deliverable or the next action. The eye proof is an internal dependency, not a finished character or a useful artistic decision. This exchange completes planning only; the following construction package is recommended, not a claim that it has been dispatched or achieved.
