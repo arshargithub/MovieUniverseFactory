@@ -4,13 +4,13 @@
 
 ## Open decision
 
-### Exchange278 — generic free evaluation authorized; sign-in required
+### Exchange278 — generic free evaluation generated; export transfer blocked
 
 Following274–277's licence, modification-rights, FaceBuilder comparison, downstream conversion and pricing discussion, Director explicitly selects the bounded free Meshy evaluation. Interpret this as the recommended disposable generic Sikh head/turban study, not upload of approved v03 or a paid plan. Local adaptation is not a licence reset; neither static generation nor retopology automatically establishes exclusive character rights or animation readiness. FaceBuilder remains unpurchased; discussing its merits does not reverse263's purchase boundary.
 
 **Execution:** verify account free6Lite/export entitlement, then prepare one independently generated generic study without production references; use only free credits, initially one geometry candidate and at most two discriminating retries if justified by the failure. No arbitrary time cutoff, paid fallback, voluntary community publication, subscription, new installation or production-source upload. Inspect the downloaded neutral geometry from front/both obliques/profile/rear/crown; report useful components separately from fused/absent anatomy, turban structure and the later rebuild burden. No hero adoption or same-film pass follows from a generic test. If actual free export is unavailable, stop rather than generate a paywalled preview.
 
-**Current blocker:** Meshy opened in the in-app browser on2026-10-15 and shows the signed-out welcome panel, offering Google/email and other sign-in methods with terms acceptance. User must sign in/create the free account. No account created, reference generated/uploaded, credits consumed, download or Blender dispatch. Login page retained for continuation; account balance and eligibility NOT_RUN. Existing273 packet is historical preflight only; create a fresh bound execution packet after actual entitlement/input selection. Protected sources and failed history unchanged. This is an authentication handoff, not a routine technical milestone.
+**Current continuation:** user completed sign-in. Free plan,100credits and6Lite selection verified. One independent generic clay bust generated without production references, uploaded and converted with6Lite.10freecredits charged;30daily and5first-model rewards produce observed125balance. No paid spend, purchase or Community post. GLB export offered10allowances; two attempts decrement to8 but the browser download interface returns no local file. Stop further export clicks. Native all-angle inspection remains NOT_RUN, not a visual pass. Retrieve the existing GLB manually to unblock local inspection; no additional generation required. [Evidence and limits](../../results/sikh278/ASSESSMENT.md). Fresh execution packet bound exact generic input before upload; protected sources and failed history unchanged. Browser-tool blocked elapsed time is not active modeling effort. No push/S3 backup in this continuation.
 
 ### Exchange273 — approved zero-spend test; visibility/rights preflight blocks upload
 
