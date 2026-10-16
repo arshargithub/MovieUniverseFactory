@@ -4,6 +4,10 @@
 
 ## Open decision
 
+### Exchange285 — AWS cost path and dependency licensing prerequisite
+
+[TRELLIS.2 AWS proposal](../../results/sikh285/AWS_HOSTING.md) verifies public GPU rates and recommends temporary workers, then queued scale-to-zero only after a representative conversion proof. No deployment/spend authorized. The documented nvdiffrast v0.4.0 and nvdiffrec renderutils dependencies have noncommercial restrictions; standard textured GLB export uses nvdiffrast. Core MIT is not full-stack commercial clearance. Amend284's shortlist accordingly: resolve dependency rights and qualify any replacement before production adoption. Runtime, memory fit and cost per usable actor remain unmeasured. Protected work and failed283 unchanged.
+
 ### Exchange284 — separate generator quality from actor conversion
 
 [Meshy assumptions and open-model research](../../results/sikh284/RESEARCH.md) supersedes283's immediate paid-plan recommendation: defer purchase, compare raw shape and conversion loss, then evaluate a small number of free routes before choosing a provider. Paid download/private-ownership features do not prove better facial design, deformable eyes, moving beard or connected cloth. TRELLIS.2 is the first proposed hosted candidate; TripoSG is conditional on dependency clearance, Stable Fast3D the experimental Mac fallback. M4/16GiB verified; CUDA-heavy model requirements are not automatically met. Hunyuan2.1/mini territorial output terms conflict with frictionless worldwide use and require clarification before adoption. Research only: no installation, generation, protagonist upload, spend, asset acceptance or cloud-compute authorization. Keep283 failure and all accepted references intact; do not interpret a planning packet as an actor pass.

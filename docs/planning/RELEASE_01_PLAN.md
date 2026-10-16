@@ -4,6 +4,10 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+### Exchange285 — conditional TRELLIS.2 AWS hosting proposal
+
+[Hosting path and costs](../../results/sikh285/AWS_HOSTING.md) records verified On-Demand GPU prices, session-based usage, proposed Factory integration and an unresolved noncommercial dependency/export constraint. Research only; no AWS deployment, spend, model adoption, native acceptance, push or S3 backup. Resolve rights and source-to-performance usefulness before infrastructure. Counter285; next checkpoint290; release progress unchanged.
+
 ### Exchange284 — free model research before a Meshy purchase
 
 Director challenges the paid-route assumptions and requests open/free alternatives. [Research and proposed comparison](../../results/sikh284/RESEARCH.md) distinguishes image-to-mesh quality, native conversion, performance and rights. Defer the subscription recommendation; first establish a useful source and conversion-preservation proof through cleared free routes. No native acceptance or production progress increment. No installation, new generation/upload, spend, push or S3 backup. Counter284; next checkpoint290. Existing protection gaps unchanged.
