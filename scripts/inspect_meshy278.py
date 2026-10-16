@@ -13,6 +13,9 @@ ROOT = Path(__file__).resolve().parents[1]
 RAW = ROOT/'.runtime/assets/series01-sikh278-meshy/original.glb'
 EXPECTED = '58131039f2b34d17c6c5c97a1bf52d7a405ef13ef41ca9cd9404e0d5fde14d97'
 OUT = ROOT/'.runtime/art-direction/series01-sikh278/native-inspection02'
+VIEW_YAW = math.atan2(2, 3)
+TASK = ROOT/'results/sikh278/task-native.json'
+WORKER = Path(__file__).resolve()
 
 def sha(p):
     return hashlib.sha256(p.read_bytes()).hexdigest()
@@ -120,7 +123,7 @@ def run(job):
         ('profile',(3,0,.05)),('rear',(0,3,.08)),('crown',(1,-1,3))]
     # Source has a fixed head turn. Register views approximately to facial
     # forward direction, not torso forward. Never call torso-front face-front.
-    yaw=math.atan2(2,3)
+    yaw=VIEW_YAW
     for name,pos in views:
         pos=Vector((pos[0]*math.cos(yaw)-pos[1]*math.sin(yaw),
                     pos[0]*math.sin(yaw)+pos[1]*math.cos(yaw),pos[2]))
@@ -148,7 +151,7 @@ def launch(job):
     if log.exists():raise ValueError('Preserve previous run')
     sys.path.insert(0,str(ROOT/'src'))
     from movie_factory import production_knowledge as pk
-    task=json.loads((ROOT/'results/sikh278/task-native.json').read_text())
+    task=json.loads(TASK.read_text())
     packet=pk.task_packet(ROOT,task)
     if not packet['dispatch_ready']:raise ValueError(packet['blockers'])
     (OUT/(op+'-packet.json')).write_text(json.dumps(packet,indent=2))
@@ -157,7 +160,7 @@ def launch(job):
     with log.open('w') as handle:
         result=subprocess.run(['/Applications/Blender.app/Contents/MacOS/Blender','--background',
             '--offline-mode','--factory-startup','--disable-autoexec','--python-exit-code','7',
-            '--python',str(Path(__file__).resolve()),'--',json.dumps(job)],env=env,stdout=handle,stderr=subprocess.STDOUT)
+            '--python',str(WORKER),'--',json.dumps(job)],env=env,stdout=handle,stderr=subprocess.STDOUT)
     (OUT/(op+'-receipt.json')).write_text(json.dumps({'seconds':time.monotonic()-start,
         'returncode':result.returncode,'packet_digest':packet['packet_digest']},indent=2))
     if result.returncode:raise RuntimeError(str(log))
