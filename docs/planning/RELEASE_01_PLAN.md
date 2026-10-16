@@ -4,6 +4,10 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+### Exchange281 — working eye proof completed
+
+Director clarifies that280 should have continued through the already-approved landmark and eye conversion. [Local component proof](../../results/sikh281/ASSESSMENT.md) now includes an editable eyelid/globe interface, full short blink and exact fresh reopen. No new character or release acceptance; same-film finish and full actor performance remain open. Carry bilateral eye/gaze and facial controls into the complete Sikh head before beard/turban admission. Counter281; next290. Existing checkpoint push audit and new-media protection remain outstanding.
+
 ### Exchange280 — head source generation and checkpoint28
 
 One authorized generic unobscured head generated on Meshy6Lite free route, separate from the reusable crown donor. Browser preview improves anatomy visibility; native inspection is blocked by failed GLB transfer. Manual download is the remaining dependency, not a new design approval. [Result, limits and checkpoint](../../results/sikh280/ASSESSMENT.md). No actor/sequence/release gate advanced; accepted Pashtun protected. Counter280; next290. Checkpoint remote push remains pending exact outgoing-history audit; no new media backup claimed.

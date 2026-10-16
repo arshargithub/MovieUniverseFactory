@@ -4,6 +4,10 @@
 
 ## Open decision
 
+### Exchange281 — complete the already approved working eye proof
+
+Director corrects the unnecessary280 inspection handoff: landmark registration and working-eye proof were already agreed. [Completed local proof](../../results/sikh281/ASSESSMENT.md) now supplies a separate globe, locally blended editable eyelids,36-frame closure/return and exact eight-state fresh reopen. Controls01/02 remain rejected;04 passes the scoped component screen, not hero identity, full facial topology or same-film appearance. No paid calls or new generation. Do not require another technical go-ahead at a prerequisite: reconcile the outstanding agreed deliverable before yielding. Next production dependency is bilateral eye/gaze and facial-control integration, then the complete face/beard/turban assembly against v03 and accepted Pashtun quality. No crown/cloth or full actor pass is inherited from this eye test.
+
 ### Exchange280 — unobscured head-only generation authorized
 
 Director authorizes the next free Meshy generation after279's failed conversion. Prepare one independent generic adult male anatomical head image with open eyes, neutral straight-on pose, bald scalp, clean-shaven face, visible ears/jaw/neck and no clothing. This is a disposable source-observability test, not a new Sikh identity or approval of shaving the protagonist. Keep279's separate turban donor unchanged. Approved character images remain local review references, not uploads.
