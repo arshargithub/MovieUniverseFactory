@@ -1,0 +1,16 @@
+{
+  "id": "sikh282-handoff-and-next-scope",
+  "operation": "knowledge",
+  "entities": ["knowledge"],
+  "phase": "planning",
+  "query": "handoff completion forward momentum meaningful integrated deliverable strategy internal review same film",
+  "intent": "Tighten handoff rules and define the proposed next integrated Sikh head pass. Documentation only; no asset construction or production admission.",
+  "inputs": {
+    "docs/decisions/0005-production-strategy-before-execution.md": "c29e2898553d26f56ac5fab7f7e126b1eda84c04643ab7a4bf12466c630dbd1e",
+    "docs/knowledge/SIKH_FOUNDATION_REJECTION_271.md": "813411158cb1122cfa476c1148e6ae81e662822372704d0b33a60cf61e3428ef",
+    "docs/planning/SERIES_01_SIKH_BASELINE_V01.md": "8d588dad3970aa7c2f8de09fc537ae2f4d928a7725791d8ed6132bb1ffebb8ab"
+  },
+  "open_decisions": [],
+  "execution_prerequisites": ["This knowledge packet covers planning only. Generate a separate Sikh modeling and performance packet with actual native and reference hashes before construction."],
+  "max_context_characters": 42000
+}

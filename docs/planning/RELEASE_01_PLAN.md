@@ -4,6 +4,10 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+### Exchange282 — integrated Sikh head proposed as the next pass
+
+The281 single-eye proof is an internal dependency, not a character review. [The next work package](SERIES_01_SIKH_ASSET_STRATEGY_262.md#exchange282--meaningful-handoff-and-proposed-integrated-head-pass) combines a rugged individualized face, both working eyes, natural broad beard, authentic tied turban and a short recognition/respect performance. Its review asks whether he is the intended Sikh and belongs beside the accepted Pashtun. Actual hand-driven uncovering and bike greeting follow head admission, then the full rough entrance; no full-sequence readiness is implied. Handoffs must recommend one bounded audience-visible deliverable, not list unfinished components. Rules/scope updated only; no construction or new release acceptance in282. Counter282; next checkpoint290. Existing remote push audit and new-media protection remain outstanding.
+
 ### Exchange281 — working eye proof completed
 
 Director clarifies that280 should have continued through the already-approved landmark and eye conversion. [Local component proof](../../results/sikh281/ASSESSMENT.md) now includes an editable eyelid/globe interface, full short blink and exact fresh reopen. No new character or release acceptance; same-film finish and full actor performance remain open. Carry bilateral eye/gaze and facial controls into the complete Sikh head before beard/turban admission. Counter281; next290. Existing checkpoint push audit and new-media protection remain outstanding.
