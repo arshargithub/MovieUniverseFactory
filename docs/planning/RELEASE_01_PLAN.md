@@ -4,6 +4,10 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+### Exchange288 — local TRELLIS adapter tested and Canada selected
+
+[Local qualification](../../results/sikh288/README.md) implements the permissive exporter/prepared-alpha adapter,26 synthetic tests and independent Blender import/reopen/UV checks. Director approves US$15 total synthetic AWS qualification and isolated installations. Canada Central24GB L4 is selected; GPU quota is zero and AWS has opened the increase case. No paid worker or protagonist trial launched. Full CUDA exporter and inference/license closure remain blocked; continue the authorized qualification after infrastructure admission, not another character polish loop. Counter288; next290; no release gate advances. Local implementation and design commits remain separate; no remote push or new S3 backup.
+
 ### Exchange287 — TRELLIS first production path investigation
 
 [TRELLIS production alternatives](../../results/sikh287/TRELLIS_PRODUCTION_PATHS.md) finds existing replacement/export implementations and recommends a minimal headless official TRELLIS.2 adapter rather than a general model tournament. The next proposed deliverable is dependency/right closure and synthetic export qualification before protagonist generation, not a beautiful static mesh without an actor-conversion path. Runtime, visual and production admission remain unqualified; no installation, spending, cloud deployment, upload, push or S3 backup. Counter287; next290; no release gate advance.

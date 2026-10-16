@@ -1,0 +1,50 @@
+{
+  "scope": "Emission UV orientation only; not material beauty or actor quality",
+  "image": ".runtime/trellis288/fixture/uv-diagnostic.png",
+  "sha256": "0c9c651999eb84207a5cc77b09b6b8b137507fc98eb06e77b8c316ff5c64fca5",
+  "expected": {
+    "(112, 112)": [
+      0,
+      255,
+      51
+    ],
+    "(272, 112)": [
+      255,
+      255,
+      51
+    ],
+    "(112, 272)": [
+      0,
+      0,
+      51
+    ],
+    "(272, 272)": [
+      255,
+      0,
+      51
+    ]
+  },
+  "observed": {
+    "(112, 112)": [
+      0,
+      255,
+      51
+    ],
+    "(272, 112)": [
+      255,
+      255,
+      51
+    ],
+    "(112, 272)": [
+      0,
+      0,
+      51
+    ],
+    "(272, 272)": [
+      255,
+      0,
+      51
+    ]
+  },
+  "pass": true
+}

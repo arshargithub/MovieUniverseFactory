@@ -4,6 +4,10 @@
 
 ## Open decision
 
+### Exchange288 — adapter qualification and Canadian compute
+
+Director authorizes the next qualification and explicitly approves US$15 aggregate AWS synthetic-test spend and isolated dependency installation. Local [adapter qualification](../../results/sikh288/README.md) passes26 tests plus independent Blender geometry/material/UV/reopen checks. Restricted raster/BRIA paths are removed from the adapted source; full CUDA and inference rights/integration remain unqualified. Canada Central L4/24GB is selected after Director's regional question; actual API shows g6/g5 but not48GB g6e. GPU quota is zero; eight-vCPU Canadian request is CASE_OPENED. No worker launched, no protagonist generation/upload, no cloud resources/spend. Continue the authorized synthetic GPU test after quota and safeguards; do not ask for another routine go-ahead or infer character acceptance. Protected masters and failed283 unchanged. Local implementation/design commits separate; no push/S3. Counter288; next checkpoint290.
+
 ### Exchange287 — TRELLIS production alternatives first
 
 Director focuses the investigation on TRELLIS before other model families. [Source-level assessment](../../results/sikh287/TRELLIS_PRODUCTION_PATHS.md) identifies three concrete routes: minimal official TRELLIS.2 plus permissive UV baking and prepared RGBA (recommended), an independent C/Vulkan implementation (second route), and geometry-only generation with Blender surfacing (reduced-scope fallback). Hosted TRELLIS remains conditional on endpoint-specific rights/privacy assurance. Existing replacement code makes this more than a hypothetical rewrite; it does not supply a qualified runtime. The pure-Torch rasterizer has a documented source-derived memory-bound defect. DINOv3 has a custom, not noncommercial-only, license; default BRIA/NVIDIA restrictions must be excluded by actual code/build configuration.
