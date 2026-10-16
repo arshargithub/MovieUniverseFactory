@@ -8,6 +8,8 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 One authorized generic unobscured head generated on Meshy6Lite free route, separate from the reusable crown donor. Browser preview improves anatomy visibility; native inspection is blocked by failed GLB transfer. Manual download is the remaining dependency, not a new design approval. [Result, limits and checkpoint](../../results/sikh280/ASSESSMENT.md). No actor/sequence/release gate advanced; accepted Pashtun protected. Counter280; next290. Checkpoint remote push remains pending exact outgoing-history audit; no new media backup claimed.
 
+280 download continuation resolves that blocker: [six-view native assessment](../../results/sikh280/NATIVE_ASSESSMENT.md) and exact geometry reopen are complete. The unobscured head offers clearer landmarks but remains one connected static sculpt without independent eyes or animation topology. Retain as a shape donor, not a native identity. Next recommended proof is landmark registration and one clean integrated eye closure before grooming. No new generation/spend or release acceptance; continuation does not increment the planning exchange counter.
+
 ### Exchange279 — disposable native conversion proof
 
 Director authorizes278's recommended local conversion before considering a paid/hero route. Strategy262 binds face/eye topology, separate crown and real groom, then blink/head-turn and contact proof. This is an unresolved production dependency, not another accepted release gate. Sikh only, action before music; approved Pashtun and v03 unchanged. Counter279, checkpoint280; no external call, new spend or new-media backup authority.
