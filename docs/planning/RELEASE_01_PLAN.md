@@ -4,6 +4,10 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+### Exchange287 — TRELLIS first production path investigation
+
+[TRELLIS production alternatives](../../results/sikh287/TRELLIS_PRODUCTION_PATHS.md) finds existing replacement/export implementations and recommends a minimal headless official TRELLIS.2 adapter rather than a general model tournament. The next proposed deliverable is dependency/right closure and synthetic export qualification before protagonist generation, not a beautiful static mesh without an actor-conversion path. Runtime, visual and production admission remain unqualified; no installation, spending, cloud deployment, upload, push or S3 backup. Counter287; next290; no release gate advance.
+
 ### Exchange286 — establish the production route before testing quality
 
 Director requires production viability before model trials. [Current gate and next scope](SERIES_01_SIKH_ASSET_STRATEGY_262.md#exchange286--production-viability-before-quality-trials) parks TRELLIS.2 and supersedes the recommendation to test it while resolving restricted dependencies. First screen end-to-end rights, privacy, deployment, export/integration and plausible cost; then test quality on eligible routes. No new test, infrastructure, spend or production acceptance. Rule persisted in AGENTS.md for future work; no claim of automated enforcement or expanded knowledge-pilot coverage. Counter286; next290; release progress unchanged.

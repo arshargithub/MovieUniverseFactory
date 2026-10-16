@@ -4,6 +4,12 @@
 
 ## Open decision
 
+### Exchange287 — TRELLIS production alternatives first
+
+Director focuses the investigation on TRELLIS before other model families. [Source-level assessment](../../results/sikh287/TRELLIS_PRODUCTION_PATHS.md) identifies three concrete routes: minimal official TRELLIS.2 plus permissive UV baking and prepared RGBA (recommended), an independent C/Vulkan implementation (second route), and geometry-only generation with Blender surfacing (reduced-scope fallback). Hosted TRELLIS remains conditional on endpoint-specific rights/privacy assurance. Existing replacement code makes this more than a hypothetical rewrite; it does not supply a qualified runtime. The pure-Torch rasterizer has a documented source-derived memory-bound defect. DINOv3 has a custom, not noncommercial-only, license; default BRIA/NVIDIA restrictions must be excluded by actual code/build configuration.
+
+**Next meaningful scope proposed:** a reviewed minimal adapter, exact package/model/notice inventory, synthetic export and prohibited-import checks, reproducible Linux build recipe and explicit AWS execution/budget proposal. No generation until286's route gate closes; no native asset acceptance, implementation/install/deploy/spend/upload authority is implied. This supersedes286's broad comparison scope, not its viability requirement. Failed283 and approved Sikh/Pashtun remain unchanged. Manual source reconciliation supplements the pilot; source pins unchanged. Counter287; next checkpoint290.
+
 ### Exchange286 — production viability before quality trials
 
 Director rejects evaluating a candidate without an established viable production path as wasteful. **Adopt:** screen actual commercial-use/output/dependency rights, input privacy, deployability, usable export/integration and a plausible total cost envelope before generation/quality trials. The trial may still test uncertain visual quality and performance; it must not be used to justify postponing a known rights/deployment blocker. Research-only availability does not satisfy this gate. A hypothetical replacement for restricted code is not a cleared route.

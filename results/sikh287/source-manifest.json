@@ -1,0 +1,213 @@
+{
+  "observed_at_utc": "2026-10-16T19:43:51.454256+00:00",
+  "scope": "Public source and metadata only; no weights installed or downloaded; receipts do not establish runtime qualification or full transitive SBOM.",
+  "repository_pins": {
+    "official": "microsoft/TRELLIS.2/75fbf0183001ed9876c8dbb35de6b68552ee08bd",
+    "torch_fork": "andrakis/TRELLIS.2-stableprojectorz/1481f4995870460b6442be50b6265307b6d6d07f",
+    "native_c": "Wimacs/trellis2.c/51b364e3a4dbc1ea076b186bcf86665f507bfde4",
+    "cumesh": "JeffreyXiang/CuMesh/12289e1062f0603f2f0d0771b02e1395d247f26f",
+    "flexgemm": "JeffreyXiang/FlexGEMM/6dd94a859c26ee8246888502eada3dd8ad85532e",
+    "dinov3": "facebookresearch/dinov3/6876159a11b4df116f30f667f8c9888617df0751",
+    "legacy": "kg-git-dev/trellis-refactored/cbbb8111daa591c632f6dbb60c9abc6dc58fbb34"
+  },
+  "sources": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/TRELLIS.2/75fbf0183001ed9876c8dbb35de6b68552ee08bd/LICENSE",
+      "sha256": "d9a1b1e30d633d5732ea18e3cba9538d293ebc53e1a9e4e96ab739e0c5c4f1cb",
+      "bytes": 1140,
+      "status": "READ_AS_TEXT_NOT_EXECUTED"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/TRELLIS.2/75fbf0183001ed9876c8dbb35de6b68552ee08bd/setup.sh",
+      "sha256": "76ae48346aa8596be366baf8f3e801ed90bbe352404052f912ce6dd4d9ec5ef6",
+      "bytes": 4506,
+      "status": "READ_AS_TEXT_NOT_EXECUTED"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/TRELLIS.2/75fbf0183001ed9876c8dbb35de6b68552ee08bd/trellis2/pipelines/trellis2_image_to_3d.py",
+      "sha256": "e2addfca672354284b23d1541a8f49228d5a727d49220fcb8512cca2cdd38ce9",
+      "bytes": 24143,
+      "status": "READ_AS_TEXT_NOT_EXECUTED"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/TRELLIS.2/75fbf0183001ed9876c8dbb35de6b68552ee08bd/trellis2/modules/image_feature_extractor.py",
+      "sha256": "12530b23e8b6a2cc6b87d8cd01922c7b0085199a365b731f19dd0e7ef4919150",
+      "bytes": 4460,
+      "status": "READ_AS_TEXT_NOT_EXECUTED"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/TRELLIS.2/75fbf0183001ed9876c8dbb35de6b68552ee08bd/trellis2/renderers/__init__.py",
+      "sha256": "8d20a7c625571b05958251efce5814c30819ce28bbeb5643cef68231be71b2d9",
+      "bytes": 976,
+      "status": "READ_AS_TEXT_NOT_EXECUTED"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/TRELLIS.2/75fbf0183001ed9876c8dbb35de6b68552ee08bd/o-voxel/o_voxel/postprocess.py",
+      "sha256": "ef51a1ba0f2748ffb4c265b47d382cee956f23c6a52d0f3587e6d8beccb7e54a",
+      "bytes": 13770,
+      "status": "READ_AS_TEXT_NOT_EXECUTED"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/TRELLIS.2/75fbf0183001ed9876c8dbb35de6b68552ee08bd/o-voxel/o_voxel/__init__.py",
+      "sha256": "ca30e1545d11f3e862b7d11b31af6200427c91482f11d8b543982d692cd8588b",
+      "bytes": 84,
+      "status": "READ_AS_TEXT_NOT_EXECUTED"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/andrakis/TRELLIS.2-stableprojectorz/1481f4995870460b6442be50b6265307b6d6d07f/LICENSE",
+      "sha256": "d9a1b1e30d633d5732ea18e3cba9538d293ebc53e1a9e4e96ab739e0c5c4f1cb",
+      "bytes": 1140,
+      "status": "READ_AS_TEXT_NOT_EXECUTED"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/andrakis/TRELLIS.2-stableprojectorz/1481f4995870460b6442be50b6265307b6d6d07f/README.md",
+      "sha256": "d9384a29e5099247cb5c0b4ecb6e33f2d77b1b514916379ece392ee8eb8d6276",
+      "bytes": 15614,
+      "status": "READ_AS_TEXT_NOT_EXECUTED"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/andrakis/TRELLIS.2-stableprojectorz/1481f4995870460b6442be50b6265307b6d6d07f/o-voxel/o_voxel/uvraster.py",
+      "sha256": "e459a352052b46e384e0df732e9f4f0a80cc19e6b6ee29fe944314abf5c92ecd",
+      "bytes": 6235,
+      "status": "READ_AS_TEXT_NOT_EXECUTED"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/andrakis/TRELLIS.2-stableprojectorz/1481f4995870460b6442be50b6265307b6d6d07f/o-voxel/o_voxel/postprocess.py",
+      "sha256": "c3f32a391c671d9be76d5ffbf7124fdd95b95c62c17f4545c4d9780dac786d9e",
+      "bytes": 18920,
+      "status": "READ_AS_TEXT_NOT_EXECUTED"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/andrakis/TRELLIS.2-stableprojectorz/1481f4995870460b6442be50b6265307b6d6d07f/trellis2/pipelines/trellis2_image_to_3d.py",
+      "sha256": "d31cc6a7f3725e024a06c74c84721a489b0224b29ff0a04557cf40b5f5e88de1",
+      "bytes": 38305,
+      "status": "READ_AS_TEXT_NOT_EXECUTED"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/andrakis/TRELLIS.2-stableprojectorz/1481f4995870460b6442be50b6265307b6d6d07f/api_spz/routes/generation.py",
+      "sha256": "e6288bc604bb79b03dcb294b0f7aa88cc1763b8ce54d8b3fe9518158fd2c40f6",
+      "bytes": 26282,
+      "status": "READ_AS_TEXT_NOT_EXECUTED"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Wimacs/trellis2.c/51b364e3a4dbc1ea076b186bcf86665f507bfde4/LICENSE",
+      "sha256": "98b73aa90281890ddc74bb4a617e461acf8d4c4e6a12b02f5f6d5532736781c9",
+      "bytes": 1063,
+      "status": "READ_AS_TEXT_NOT_EXECUTED"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Wimacs/trellis2.c/51b364e3a4dbc1ea076b186bcf86665f507bfde4/THIRD_PARTY_NOTICES.md",
+      "sha256": "f9c7cdd4a2c5f71e982fe6a2695ba5f6cf03a145d403908bd45e3e0f0bd3e789",
+      "bytes": 6073,
+      "status": "READ_AS_TEXT_NOT_EXECUTED"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Wimacs/trellis2.c/51b364e3a4dbc1ea076b186bcf86665f507bfde4/README.md",
+      "sha256": "745e6795c02b6ca1e4b71affe8f98d78b247293c34b20d959abf6d8bd12634b9",
+      "bytes": 8339,
+      "status": "READ_AS_TEXT_NOT_EXECUTED"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Wimacs/trellis2.c/51b364e3a4dbc1ea076b186bcf86665f507bfde4/CMakeLists.txt",
+      "sha256": "0c2c0722dea1e8bb73f5f279f50de465dcd2d25f4dc2dcf75f2e09522edd5c78",
+      "bytes": 70594,
+      "status": "READ_AS_TEXT_NOT_EXECUTED"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Wimacs/trellis2.c/51b364e3a4dbc1ea076b186bcf86665f507bfde4/src/tasks/image_to_3d/export/gltf.c",
+      "sha256": "debc60e4ec80cb49abb84bcf4b18dc7b875c304e9fb8d4912065f917648842b2",
+      "bytes": 137902,
+      "status": "READ_AS_TEXT_NOT_EXECUTED"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Wimacs/trellis2.c/51b364e3a4dbc1ea076b186bcf86665f507bfde4/src/tasks/image_to_3d/export/shaders/trellis_gltf_bake.frag",
+      "sha256": "4ed9780e4d899dbaa36f6dd1c5ae9c214195392fb9bd9712f74077efcd71a376",
+      "bytes": 10250,
+      "status": "READ_AS_TEXT_NOT_EXECUTED"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Wimacs/trellis2.c/51b364e3a4dbc1ea076b186bcf86665f507bfde4/tools/download_weights.py",
+      "sha256": "47515c98ba11bcd0415a16045807dae40acc9a2561c9520cc7d2f301e0e131fd",
+      "bytes": 13076,
+      "status": "READ_AS_TEXT_NOT_EXECUTED"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/JeffreyXiang/CuMesh/12289e1062f0603f2f0d0771b02e1395d247f26f/LICENSE",
+      "sha256": "8eef85c2c0648a4d42a898f5e6d8bf35f532c477a6233a9647718b61228d275a",
+      "bytes": 1093,
+      "status": "READ_AS_TEXT_NOT_EXECUTED"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/JeffreyXiang/CuMesh/12289e1062f0603f2f0d0771b02e1395d247f26f/third_party/xatlas/LICENSE",
+      "sha256": "2c16d5b1c2808277fe975b4f70f0fd9afc9b3bcf04e6c676665a82cb2d5579e3",
+      "bytes": 1075,
+      "status": "READ_AS_TEXT_NOT_EXECUTED"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/JeffreyXiang/CuMesh/12289e1062f0603f2f0d0771b02e1395d247f26f/.gitmodules",
+      "sha256": "a82975e17f9d80c954b9b94152787c866259c0b51f557be49a600076d105541f",
+      "bytes": 127,
+      "status": "READ_AS_TEXT_NOT_EXECUTED"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/JeffreyXiang/FlexGEMM/6dd94a859c26ee8246888502eada3dd8ad85532e/LICENSE",
+      "sha256": "d98159921cc2bfa41fff0cea296bd9876ed8fc7b64ae8ef314e5e47c787e705d",
+      "bytes": 1093,
+      "status": "READ_AS_TEXT_NOT_EXECUTED"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/facebookresearch/dinov3/6876159a11b4df116f30f667f8c9888617df0751/LICENSE.md",
+      "sha256": "25d122eb8f5b880fd23c736fb6ea8018ee45c12237e00b8a86d14c653904999e",
+      "bytes": 7503,
+      "status": "READ_AS_TEXT_NOT_EXECUTED"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/kg-git-dev/trellis-refactored/cbbb8111daa591c632f6dbb60c9abc6dc58fbb34/README.md",
+      "sha256": "cd4a3af0ac97861399c41cc048efc3baa6e0b178349d300cceac0dfcb5b93072",
+      "bytes": 2792,
+      "status": "READ_AS_TEXT_NOT_EXECUTED"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/NVlabs/nvdiffrast/v0.4.0/LICENSE.txt",
+      "sha256": "ce20436c2730611757d3c7ed2b4d9bef8315a8a0af0540ff8baa5dce7a94f5da",
+      "bytes": 4445,
+      "status": "READ_AS_TEXT_NOT_EXECUTED"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/JeffreyXiang/nvdiffrec/renderutils/LICENSE.txt",
+      "sha256": "010b1f83d9e87e360e6530ea5395fa3592d719c248c6fd905edcb5e045ddedaf",
+      "bytes": 4312,
+      "status": "READ_AS_TEXT_NOT_EXECUTED"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/JeffreyXiang/cubvh/ce92267a24ef6ad7d2c8ccbc2ae2c021a6597e70/LICENSE",
+      "sha256": "5d7b1ba932e22dbea220f52ce2cc8827a6ef7b1eca3a5084adf293b5bb20c567",
+      "bytes": 1061,
+      "status": "READ_AS_TEXT_NOT_EXECUTED"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/EasternJournalist/utils3d/9a4eb15e4021b67b12c460c7057d642626897ec8/LICENSE",
+      "sha256": "197b6e9eeec3ebf5ff80edc89c0eecc9f33fff0b9074500c042ce67ff6665d3d",
+      "bytes": 1074,
+      "status": "READ_AS_TEXT_NOT_EXECUTED"
+    },
+    {
+      "url": "https://huggingface.co/microsoft/TRELLIS.2-4B/raw/main/pipeline.json",
+      "sha256": "222c359ab1ed9bc6735a640a34f95d47f8681b9bc4aaa101bfb80274676253c6",
+      "bytes": 4186,
+      "status": "READ_AS_TEXT_NOT_EXECUTED"
+    },
+    {
+      "url": "https://huggingface.co/microsoft/TRELLIS.2-4B/raw/main/README.md",
+      "sha256": "ab08bd7f555372317d166220dbd2c17c73b5a238d45da018ef301c1e32aec8a8",
+      "bytes": 6417,
+      "status": "READ_AS_TEXT_NOT_EXECUTED"
+    },
+    {
+      "url": "https://huggingface.co/microsoft/TRELLIS-image-large/raw/main/README.md",
+      "sha256": "9b64b43ea1d58635f14f2ebe5664c22be6fee8943943ece39a14e98b1da4378c",
+      "bytes": 464,
+      "status": "READ_AS_TEXT_NOT_EXECUTED"
+    }
+  ]
+}
