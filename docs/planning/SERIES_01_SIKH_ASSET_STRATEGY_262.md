@@ -4,6 +4,10 @@
 
 ## Open decision
 
+### Exchange284 — separate generator quality from actor conversion
+
+[Meshy assumptions and open-model research](../../results/sikh284/RESEARCH.md) supersedes283's immediate paid-plan recommendation: defer purchase, compare raw shape and conversion loss, then evaluate a small number of free routes before choosing a provider. Paid download/private-ownership features do not prove better facial design, deformable eyes, moving beard or connected cloth. TRELLIS.2 is the first proposed hosted candidate; TripoSG is conditional on dependency clearance, Stable Fast3D the experimental Mac fallback. M4/16GiB verified; CUDA-heavy model requirements are not automatically met. Hunyuan2.1/mini territorial output terms conflict with frictionless worldwide use and require clarification before adoption. Research only: no installation, generation, protagonist upload, spend, asset acceptance or cloud-compute authorization. Keep283 failure and all accepted references intact; do not interpret a planning packet as an actor pass.
+
 ### Exchange283 — integrated head attempted; internal admission denied
 
 Director authorizes282. [Sustained local construction and method review](../../results/sikh283/ASSESSMENT.md) preserves twelve build dispatches (one startup failure, eleven completed controls), a six-second144-frame diagnostic, sampled fresh reopen, two built-in surface-paint studies and explicit failed visual checks. Bilateral eyes/gaze and attachment controls supply reusable engineering evidence, not an acceptable actor. Facial character, schematic eye anatomy, beard/moustache integration, crown and rear bust remain below the agreed floor; illustrated projection does not cure this. No bad foundation is offered for Director approval. Read this result alongside271 before continuing; it is manually linked, not automatically added to the bounded knowledge graph.

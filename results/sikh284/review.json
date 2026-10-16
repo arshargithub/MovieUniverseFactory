@@ -1,0 +1,395 @@
+{
+  "packet_digest": "e83ee56a645c7b60f19bbcd5f64a5e2499f7f69948f5c4c81873f35e1f959954",
+  "checks": [
+    {
+      "id": "authority",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Reconcile research scope and current authority in RESEARCH.md.",
+      "observation": "Read-only research with local planning persistence; no install, upload, generation, purchase or protected asset change.",
+      "evidence": [
+        {
+          "path": "results/sikh284/RESEARCH.md",
+          "sha256": "8246d870dc63a42192c4d20bdf6adea4642e3c6ad24981c6284c8f23c1742dea"
+        },
+        {
+          "path": "results/sikh283/ASSESSMENT.md",
+          "sha256": "3d2c348a9736eb9abbd06ecc53f2fd3e5eb4d52fd27bb804316dd175bbf2d39f"
+        }
+      ]
+    },
+    {
+      "id": "strategy",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Reconcile research scope and current authority in RESEARCH.md.",
+      "observation": "Separate generator, input and conversion hypotheses. Proposed zero-dollar proof, gates and alternatives recorded; immediate purchase recommendation superseded.",
+      "evidence": [
+        {
+          "path": "results/sikh284/RESEARCH.md",
+          "sha256": "8246d870dc63a42192c4d20bdf6adea4642e3c6ad24981c6284c8f23c1742dea"
+        },
+        {
+          "path": "results/sikh283/ASSESSMENT.md",
+          "sha256": "3d2c348a9736eb9abbd06ecc53f2fd3e5eb4d52fd27bb804316dd175bbf2d39f"
+        }
+      ]
+    },
+    {
+      "id": "visual_gate",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Carry obligation into proposed source/conversion proof; do not award a native or visual pass from documentation.",
+      "observation": "No new native or visual test in this research turn. Failed283 and unqualified downstream interfaces remain blocked.",
+      "evidence": [
+        {
+          "path": "results/sikh284/RESEARCH.md",
+          "sha256": "8246d870dc63a42192c4d20bdf6adea4642e3c6ad24981c6284c8f23c1742dea"
+        },
+        {
+          "path": "results/sikh283/ASSESSMENT.md",
+          "sha256": "3d2c348a9736eb9abbd06ecc53f2fd3e5eb4d52fd27bb804316dd175bbf2d39f"
+        }
+      ]
+    },
+    {
+      "id": "anticipation",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Carry obligation into proposed source/conversion proof; do not award a native or visual pass from documentation.",
+      "observation": "No new native or visual test in this research turn. Failed283 and unqualified downstream interfaces remain blocked.",
+      "evidence": [
+        {
+          "path": "results/sikh284/RESEARCH.md",
+          "sha256": "8246d870dc63a42192c4d20bdf6adea4642e3c6ad24981c6284c8f23c1742dea"
+        },
+        {
+          "path": "results/sikh283/ASSESSMENT.md",
+          "sha256": "3d2c348a9736eb9abbd06ecc53f2fd3e5eb4d52fd27bb804316dd175bbf2d39f"
+        }
+      ]
+    },
+    {
+      "id": "stopping",
+      "kind": "review",
+      "status": "PASS",
+      "action_taken": "Reconcile research scope and current authority in RESEARCH.md.",
+      "observation": "Requested research complete. No actor admission or routine implementation go-ahead is claimed; execution authority remains separate.",
+      "evidence": [
+        {
+          "path": "results/sikh284/RESEARCH.md",
+          "sha256": "8246d870dc63a42192c4d20bdf6adea4642e3c6ad24981c6284c8f23c1742dea"
+        },
+        {
+          "path": "results/sikh283/ASSESSMENT.md",
+          "sha256": "3d2c348a9736eb9abbd06ecc53f2fd3e5eb4d52fd27bb804316dd175bbf2d39f"
+        }
+      ]
+    },
+    {
+      "id": "versioning",
+      "kind": "technical",
+      "status": "PASS",
+      "action_taken": "Reconcile research scope and current authority in RESEARCH.md.",
+      "observation": "Existing source and failed283 records unchanged. Research task binds deep sources; accepted assets not touched.",
+      "evidence": [
+        {
+          "path": "results/sikh284/RESEARCH.md",
+          "sha256": "8246d870dc63a42192c4d20bdf6adea4642e3c6ad24981c6284c8f23c1742dea"
+        },
+        {
+          "path": "results/sikh283/ASSESSMENT.md",
+          "sha256": "3d2c348a9736eb9abbd06ecc53f2fd3e5eb4d52fd27bb804316dd175bbf2d39f"
+        }
+      ]
+    },
+    {
+      "id": "economics",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Reconcile research scope and current authority in RESEARCH.md.",
+      "observation": "Zero new provider generations and native jobs. Exact research active time and engineering usage unknown; no invented total.",
+      "evidence": [
+        {
+          "path": "results/sikh284/RESEARCH.md",
+          "sha256": "8246d870dc63a42192c4d20bdf6adea4642e3c6ad24981c6284c8f23c1742dea"
+        },
+        {
+          "path": "results/sikh283/ASSESSMENT.md",
+          "sha256": "3d2c348a9736eb9abbd06ecc53f2fd3e5eb4d52fd27bb804316dd175bbf2d39f"
+        }
+      ]
+    },
+    {
+      "id": "representation",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Carry obligation into proposed source/conversion proof; do not award a native or visual pass from documentation.",
+      "observation": "No new native or visual test in this research turn. Failed283 and unqualified downstream interfaces remain blocked.",
+      "evidence": [
+        {
+          "path": "results/sikh284/RESEARCH.md",
+          "sha256": "8246d870dc63a42192c4d20bdf6adea4642e3c6ad24981c6284c8f23c1742dea"
+        },
+        {
+          "path": "results/sikh283/ASSESSMENT.md",
+          "sha256": "3d2c348a9736eb9abbd06ecc53f2fd3e5eb4d52fd27bb804316dd175bbf2d39f"
+        }
+      ]
+    },
+    {
+      "id": "anatomy",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Carry obligation into proposed source/conversion proof; do not award a native or visual pass from documentation.",
+      "observation": "No new native or visual test in this research turn. Failed283 and unqualified downstream interfaces remain blocked.",
+      "evidence": [
+        {
+          "path": "results/sikh284/RESEARCH.md",
+          "sha256": "8246d870dc63a42192c4d20bdf6adea4642e3c6ad24981c6284c8f23c1742dea"
+        },
+        {
+          "path": "results/sikh283/ASSESSMENT.md",
+          "sha256": "3d2c348a9736eb9abbd06ecc53f2fd3e5eb4d52fd27bb804316dd175bbf2d39f"
+        }
+      ]
+    },
+    {
+      "id": "motion",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Carry obligation into proposed source/conversion proof; do not award a native or visual pass from documentation.",
+      "observation": "No new native or visual test in this research turn. Failed283 and unqualified downstream interfaces remain blocked.",
+      "evidence": [
+        {
+          "path": "results/sikh284/RESEARCH.md",
+          "sha256": "8246d870dc63a42192c4d20bdf6adea4642e3c6ad24981c6284c8f23c1742dea"
+        },
+        {
+          "path": "results/sikh283/ASSESSMENT.md",
+          "sha256": "3d2c348a9736eb9abbd06ecc53f2fd3e5eb4d52fd27bb804316dd175bbf2d39f"
+        }
+      ]
+    },
+    {
+      "id": "secondary",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Carry obligation into proposed source/conversion proof; do not award a native or visual pass from documentation.",
+      "observation": "No new native or visual test in this research turn. Failed283 and unqualified downstream interfaces remain blocked.",
+      "evidence": [
+        {
+          "path": "results/sikh284/RESEARCH.md",
+          "sha256": "8246d870dc63a42192c4d20bdf6adea4642e3c6ad24981c6284c8f23c1742dea"
+        },
+        {
+          "path": "results/sikh283/ASSESSMENT.md",
+          "sha256": "3d2c348a9736eb9abbd06ecc53f2fd3e5eb4d52fd27bb804316dd175bbf2d39f"
+        }
+      ]
+    },
+    {
+      "id": "look",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Carry obligation into proposed source/conversion proof; do not award a native or visual pass from documentation.",
+      "observation": "No new native or visual test in this research turn. Failed283 and unqualified downstream interfaces remain blocked.",
+      "evidence": [
+        {
+          "path": "results/sikh284/RESEARCH.md",
+          "sha256": "8246d870dc63a42192c4d20bdf6adea4642e3c6ad24981c6284c8f23c1742dea"
+        },
+        {
+          "path": "results/sikh283/ASSESSMENT.md",
+          "sha256": "3d2c348a9736eb9abbd06ecc53f2fd3e5eb4d52fd27bb804316dd175bbf2d39f"
+        }
+      ]
+    },
+    {
+      "id": "rights",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Reconcile research scope and current authority in RESEARCH.md.",
+      "observation": "Official licenses and dependencies inspected, including Hunyuan output territory and BRIA noncommercial constraints; final route clearance still pending.",
+      "evidence": [
+        {
+          "path": "results/sikh284/RESEARCH.md",
+          "sha256": "8246d870dc63a42192c4d20bdf6adea4642e3c6ad24981c6284c8f23c1742dea"
+        },
+        {
+          "path": "results/sikh283/ASSESSMENT.md",
+          "sha256": "3d2c348a9736eb9abbd06ecc53f2fd3e5eb4d52fd27bb804316dd175bbf2d39f"
+        }
+      ]
+    },
+    {
+      "id": "current_state",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Reconcile research scope and current authority in RESEARCH.md.",
+      "observation": "Sikh remains blocked; approved Pashtun and directional v03 unchanged. Planning counter284; next290.",
+      "evidence": [
+        {
+          "path": "results/sikh284/RESEARCH.md",
+          "sha256": "8246d870dc63a42192c4d20bdf6adea4642e3c6ad24981c6284c8f23c1742dea"
+        },
+        {
+          "path": "results/sikh283/ASSESSMENT.md",
+          "sha256": "3d2c348a9736eb9abbd06ecc53f2fd3e5eb4d52fd27bb804316dd175bbf2d39f"
+        }
+      ]
+    },
+    {
+      "id": "au_reference",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Carry obligation into proposed source/conversion proof; do not award a native or visual pass from documentation.",
+      "observation": "No new native or visual test in this research turn. Failed283 and unqualified downstream interfaces remain blocked.",
+      "evidence": [
+        {
+          "path": "results/sikh284/RESEARCH.md",
+          "sha256": "8246d870dc63a42192c4d20bdf6adea4642e3c6ad24981c6284c8f23c1742dea"
+        },
+        {
+          "path": "results/sikh283/ASSESSMENT.md",
+          "sha256": "3d2c348a9736eb9abbd06ecc53f2fd3e5eb4d52fd27bb804316dd175bbf2d39f"
+        }
+      ]
+    },
+    {
+      "id": "au_deformation",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Carry obligation into proposed source/conversion proof; do not award a native or visual pass from documentation.",
+      "observation": "No new native or visual test in this research turn. Failed283 and unqualified downstream interfaces remain blocked.",
+      "evidence": [
+        {
+          "path": "results/sikh284/RESEARCH.md",
+          "sha256": "8246d870dc63a42192c4d20bdf6adea4642e3c6ad24981c6284c8f23c1742dea"
+        },
+        {
+          "path": "results/sikh283/ASSESSMENT.md",
+          "sha256": "3d2c348a9736eb9abbd06ecc53f2fd3e5eb4d52fd27bb804316dd175bbf2d39f"
+        }
+      ]
+    },
+    {
+      "id": "au_performance",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Carry obligation into proposed source/conversion proof; do not award a native or visual pass from documentation.",
+      "observation": "No new native or visual test in this research turn. Failed283 and unqualified downstream interfaces remain blocked.",
+      "evidence": [
+        {
+          "path": "results/sikh284/RESEARCH.md",
+          "sha256": "8246d870dc63a42192c4d20bdf6adea4642e3c6ad24981c6284c8f23c1742dea"
+        },
+        {
+          "path": "results/sikh283/ASSESSMENT.md",
+          "sha256": "3d2c348a9736eb9abbd06ecc53f2fd3e5eb4d52fd27bb804316dd175bbf2d39f"
+        }
+      ]
+    },
+    {
+      "id": "au_contact",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Carry obligation into proposed source/conversion proof; do not award a native or visual pass from documentation.",
+      "observation": "No new native or visual test in this research turn. Failed283 and unqualified downstream interfaces remain blocked.",
+      "evidence": [
+        {
+          "path": "results/sikh284/RESEARCH.md",
+          "sha256": "8246d870dc63a42192c4d20bdf6adea4642e3c6ad24981c6284c8f23c1742dea"
+        },
+        {
+          "path": "results/sikh283/ASSESSMENT.md",
+          "sha256": "3d2c348a9736eb9abbd06ecc53f2fd3e5eb4d52fd27bb804316dd175bbf2d39f"
+        }
+      ]
+    },
+    {
+      "id": "au_surface",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Carry obligation into proposed source/conversion proof; do not award a native or visual pass from documentation.",
+      "observation": "No new native or visual test in this research turn. Failed283 and unqualified downstream interfaces remain blocked.",
+      "evidence": [
+        {
+          "path": "results/sikh284/RESEARCH.md",
+          "sha256": "8246d870dc63a42192c4d20bdf6adea4642e3c6ad24981c6284c8f23c1742dea"
+        },
+        {
+          "path": "results/sikh283/ASSESSMENT.md",
+          "sha256": "3d2c348a9736eb9abbd06ecc53f2fd3e5eb4d52fd27bb804316dd175bbf2d39f"
+        }
+      ]
+    },
+    {
+      "id": "sikh_scope",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Reconcile research scope and current authority in RESEARCH.md.",
+      "observation": "Sikh research only, Gurkha queued; no music, character identity or cloth substitution.",
+      "evidence": [
+        {
+          "path": "results/sikh284/RESEARCH.md",
+          "sha256": "8246d870dc63a42192c4d20bdf6adea4642e3c6ad24981c6284c8f23c1742dea"
+        },
+        {
+          "path": "results/sikh283/ASSESSMENT.md",
+          "sha256": "3d2c348a9736eb9abbd06ecc53f2fd3e5eb4d52fd27bb804316dd175bbf2d39f"
+        }
+      ]
+    },
+    {
+      "id": "sikh_cloth",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Carry obligation into proposed source/conversion proof; do not award a native or visual pass from documentation.",
+      "observation": "No new native or visual test in this research turn. Failed283 and unqualified downstream interfaces remain blocked.",
+      "evidence": [
+        {
+          "path": "results/sikh284/RESEARCH.md",
+          "sha256": "8246d870dc63a42192c4d20bdf6adea4642e3c6ad24981c6284c8f23c1742dea"
+        },
+        {
+          "path": "results/sikh283/ASSESSMENT.md",
+          "sha256": "3d2c348a9736eb9abbd06ecc53f2fd3e5eb4d52fd27bb804316dd175bbf2d39f"
+        }
+      ]
+    },
+    {
+      "id": "sikh_motion",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Carry obligation into proposed source/conversion proof; do not award a native or visual pass from documentation.",
+      "observation": "No new native or visual test in this research turn. Failed283 and unqualified downstream interfaces remain blocked.",
+      "evidence": [
+        {
+          "path": "results/sikh284/RESEARCH.md",
+          "sha256": "8246d870dc63a42192c4d20bdf6adea4642e3c6ad24981c6284c8f23c1742dea"
+        },
+        {
+          "path": "results/sikh283/ASSESSMENT.md",
+          "sha256": "3d2c348a9736eb9abbd06ecc53f2fd3e5eb4d52fd27bb804316dd175bbf2d39f"
+        }
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "prediction": "Paid entitlement alone resolves the integrated actor failure.",
+      "observation": "Docs establish entitlement/rights, not our required actor behavior;283 includes local conversion defects.",
+      "response": "Withdraw immediate purchase recommendation and isolate input/generator/conversion variables.",
+      "result": "resolved"
+    },
+    {
+      "prediction": "Open weights necessarily give a practical commercially usable local substitute.",
+      "observation": "Verified M4/16GiB differs from CUDA requirements; experimental Mac paths and territory/dependency restrictions require separate proofs.",
+      "response": "Shortlist hosted comparison and Mac fallback without claiming execution or release clearance.",
+      "result": "resolved"
+    }
+  ],
+  "adjacent_regressions": "No production assets edited. No creative identity/cloth or acceptance change. Historical failures retained; current recommendation only superseded.",
+  "stopping_reason": "Deliver requested research and assumptions critique, not an asset handoff. Native visual/performance obligations remain NOT_RUN and production gate blocked. Proposed free comparison requires route/input preflight before dispatch."
+}

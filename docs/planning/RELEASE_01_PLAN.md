@@ -4,6 +4,10 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+### Exchange284 — free model research before a Meshy purchase
+
+Director challenges the paid-route assumptions and requests open/free alternatives. [Research and proposed comparison](../../results/sikh284/RESEARCH.md) distinguishes image-to-mesh quality, native conversion, performance and rights. Defer the subscription recommendation; first establish a useful source and conversion-preservation proof through cleared free routes. No native acceptance or production progress increment. No installation, new generation/upload, spend, push or S3 backup. Counter284; next checkpoint290. Existing protection gaps unchanged.
+
 ### Exchange283 — integrated Sikh head fails internal admission
 
 [Local construction assessment](../../results/sikh283/ASSESSMENT.md) retains eleven completed head controls, six-second144-frame motion evidence and sampled reopen integrity, but rejects the character against v03 and accepted Pashtun. Procedural grooming and two generated surface studies did not close the individual/same-film gap. No foundation review or release progress is claimed. [Strategy262](SERIES_01_SIKH_ASSET_STRATEGY_262.md#exchange283--integrated-head-attempted-internal-admission-denied) proposes a character-specific sculpt-donor test with an explicit paid/content-use decision before any external action; not authorized by this completed local pass. Head admission remains before uncover/greeting and full Sikh entrance. Counter283; next290. New media remains local and existing push/backup gaps are unchanged.
