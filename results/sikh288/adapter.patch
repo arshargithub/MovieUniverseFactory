@@ -1,0 +1,380 @@
+--- a/o-voxel/o_voxel/postprocess.py
++++ b/o-voxel/o_voxel/postprocess.py
+@@ -7,7 +7,8 @@
+ import trimesh
+ import trimesh.visual
+ from flex_gemm.ops.grid_sample import grid_sample_3d
+-import nvdiffrast.torch as dr
++from ._mf_uvraster import rasterize_uv
++from ._mf_material import finish_glb
+ import cumesh
+ 
+ 
+@@ -226,29 +227,12 @@
+     if verbose:
+         print("Sampling attributes...", end='', flush=True)
+         
+-    # Setup differentiable rasterizer context
+-    ctx = dr.RasterizeCudaContext()
+-    # Prepare UV coordinates for rasterization (rendering in UV space)
+-    uvs_rast = torch.cat([out_uvs * 2 - 1, torch.zeros_like(out_uvs[:, :1]), torch.ones_like(out_uvs[:, :1])], dim=-1).unsqueeze(0)
+-    rast = torch.zeros((1, texture_size, texture_size, 4), device='cuda', dtype=torch.float32)
+-    
+-    # Rasterize in chunks to save memory
+-    for i in range(0, out_faces.shape[0], 100000):
+-        rast_chunk, _ = dr.rasterize(
+-            ctx, uvs_rast, out_faces[i:i+100000],
+-            resolution=[texture_size, texture_size],
+-        )
+-        mask_chunk = rast_chunk[..., 3:4] > 0
+-        rast_chunk[..., 3:4] += i # Store face ID in alpha channel
+-        rast = torch.where(mask_chunk, rast_chunk, rast)
+-    
+-    # Mask of valid pixels in texture
+-    mask = rast[0, ..., 3] > 0
+-    
+-    # Interpolate 3D positions in UV space (finding 3D coord for every texel)
+-    pos = dr.interpolate(out_vertices.unsqueeze(0), rast, out_faces)[0][0]
+-    valid_pos = pos[mask]
+-    
++    # No auto-selection or fallback to restricted rasterization.
++    mask, triangle_ids, weights = rasterize_uv(out_uvs, out_faces, texture_size)
++    if not bool(mask.any()):
++        raise ValueError("UV unwrap produced no covered texels")
++    valid_pos = (out_vertices[out_faces[triangle_ids[mask]].long()] * weights[mask].unsqueeze(-1)).sum(1)
++
+     # Map these positions back to the *original* high-res mesh to get accurate attributes
+     # This corrects geometric errors introduced by simplification/remeshing
+     _, face_id, uvw = bvh.unsigned_distance(valid_pos, return_uvw=True)
+@@ -275,57 +259,9 @@
+     if verbose:
+         print("Finalizing mesh...", end='', flush=True)
+     
+-    mask = mask.cpu().numpy()
+-    
+-    # Extract channels based on layout (BaseColor, Metallic, Roughness, Alpha)
+-    base_color = np.clip(attrs[..., attr_layout['base_color']].cpu().numpy() * 255, 0, 255).astype(np.uint8)
+-    metallic = np.clip(attrs[..., attr_layout['metallic']].cpu().numpy() * 255, 0, 255).astype(np.uint8)
+-    roughness = np.clip(attrs[..., attr_layout['roughness']].cpu().numpy() * 255, 0, 255).astype(np.uint8)
+-    alpha = np.clip(attrs[..., attr_layout['alpha']].cpu().numpy() * 255, 0, 255).astype(np.uint8)
+-    alpha_mode = 'OPAQUE'
+-    
+-    # Inpainting: fill gaps (dilation) to prevent black seams at UV boundaries
+-    mask_inv = (~mask).astype(np.uint8)
+-    base_color = cv2.inpaint(base_color, mask_inv, 3, cv2.INPAINT_TELEA)
+-    metallic = cv2.inpaint(metallic, mask_inv, 1, cv2.INPAINT_TELEA)[..., None]
+-    roughness = cv2.inpaint(roughness, mask_inv, 1, cv2.INPAINT_TELEA)[..., None]
+-    alpha = cv2.inpaint(alpha, mask_inv, 1, cv2.INPAINT_TELEA)[..., None]
+-    
+-    # Create PBR material
+-    # Standard PBR packs Metallic and Roughness into Blue and Green channels
+-    material = trimesh.visual.material.PBRMaterial(
+-        baseColorTexture=Image.fromarray(np.concatenate([base_color, alpha], axis=-1)),
+-        baseColorFactor=np.array([255, 255, 255, 255], dtype=np.uint8),
+-        metallicRoughnessTexture=Image.fromarray(np.concatenate([np.zeros_like(metallic), roughness, metallic], axis=-1)),
+-        metallicFactor=1.0,
+-        roughnessFactor=1.0,
+-        alphaMode=alpha_mode,
+-        doubleSided=True if not remesh else False,
+-    )
+-    
+-    # --- Coordinate System Conversion & Final Object ---
+-    vertices_np = out_vertices.cpu().numpy()
+-    faces_np = out_faces.cpu().numpy()
+-    uvs_np = out_uvs.cpu().numpy()
+-    normals_np = out_normals.cpu().numpy()
+-    
+-    # Swap Y and Z axes, invert Y (common conversion for GLB compatibility)
+-    vertices_np[:, 1], vertices_np[:, 2] = vertices_np[:, 2], -vertices_np[:, 1]
+-    normals_np[:, 1], normals_np[:, 2] = normals_np[:, 2], -normals_np[:, 1]
+-    uvs_np[:, 1] = 1 - uvs_np[:, 1] # Flip UV V-coordinate
+-    
+-    textured_mesh = trimesh.Trimesh(
+-        vertices=vertices_np,
+-        faces=faces_np,
+-        vertex_normals=normals_np,
+-        process=False,
+-        visual=trimesh.visual.TextureVisuals(uv=uvs_np, material=material)
+-    )
+-    
++    result = finish_glb(out_vertices, out_faces, out_uvs, out_normals,
++                        attrs, mask, attr_layout, remesh)
+     if use_tqdm:
+         pbar.update(1)
+         pbar.close()
+-    if verbose:
+-        print("Done")
+-    
+-    return textured_mesh
+\ No newline at end of file
++    return result
+--- a/trellis2/pipelines/trellis2_image_to_3d.py
++++ b/trellis2/pipelines/trellis2_image_to_3d.py
+@@ -4,7 +4,8 @@
+ import numpy as np
+ from PIL import Image
+ from .base import Pipeline
+-from . import samplers, rembg
++from . import samplers
++from ._mf_alpha import prepare_rgba
+ from ..modules.sparse import SparseTensor
+ from ..modules import image_feature_extractor
+ from ..representations import Mesh, MeshWithVoxel
+@@ -67,7 +68,9 @@
+         self.shape_slat_normalization = shape_slat_normalization
+         self.tex_slat_normalization = tex_slat_normalization
+         self.image_cond_model = image_cond_model
+-        self.rembg_model = rembg_model
++        if rembg_model is not None:
++            raise ValueError("Background model prohibited in this adapter")
++        self.rembg_model = None
+         self.low_vram = low_vram
+         self.default_pipeline_type = default_pipeline_type
+         self.pbr_attr_layout = {
+@@ -102,7 +105,7 @@
+         pipeline.tex_slat_normalization = args['tex_slat_normalization']
+ 
+         pipeline.image_cond_model = getattr(image_feature_extractor, args['image_cond_model']['name'])(**args['image_cond_model']['args'])
+-        pipeline.rembg_model = getattr(rembg, args['rembg_model']['name'])(**args['rembg_model']['args'])
++        pipeline.rembg_model = None  # prepared alpha only; never load BRIA
+         
+         pipeline.low_vram = args.get('low_vram', True)
+         pipeline.default_pipeline_type = args.get('default_pipeline_type', '1024_cascade')
+@@ -125,42 +128,8 @@
+                 self.rembg_model.to(device)
+ 
+     def preprocess_image(self, input: Image.Image) -> Image.Image:
+-        """
+-        Preprocess the input image.
+-        """
+-        # if has alpha channel, use it directly; otherwise, remove background
+-        has_alpha = False
+-        if input.mode == 'RGBA':
+-            alpha = np.array(input)[:, :, 3]
+-            if not np.all(alpha == 255):
+-                has_alpha = True
+-        max_size = max(input.size)
+-        scale = min(1, 1024 / max_size)
+-        if scale < 1:
+-            input = input.resize((int(input.width * scale), int(input.height * scale)), Image.Resampling.LANCZOS)
+-        if has_alpha:
+-            output = input
+-        else:
+-            input = input.convert('RGB')
+-            if self.low_vram:
+-                self.rembg_model.to(self.device)
+-            output = self.rembg_model(input)
+-            if self.low_vram:
+-                self.rembg_model.cpu()
+-        output_np = np.array(output)
+-        alpha = output_np[:, :, 3]
+-        bbox = np.argwhere(alpha > 0.8 * 255)
+-        bbox = np.min(bbox[:, 1]), np.min(bbox[:, 0]), np.max(bbox[:, 1]), np.max(bbox[:, 0])
+-        center = (bbox[0] + bbox[2]) / 2, (bbox[1] + bbox[3]) / 2
+-        size = max(bbox[2] - bbox[0], bbox[3] - bbox[1])
+-        size = int(size * 1)
+-        bbox = center[0] - size // 2, center[1] - size // 2, center[0] + size // 2, center[1] + size // 2
+-        output = output.crop(bbox)  # type: ignore
+-        output = np.array(output).astype(np.float32) / 255
+-        output = output[:, :, :3] * output[:, :, 3:4]
+-        output = Image.fromarray((output * 255).astype(np.uint8))
+-        return output
+-        
++        return prepare_rgba(input)
++
+     def get_cond(self, image: Union[torch.Tensor, list[Image.Image]], resolution: int, include_neg_cond: bool = True) -> dict:
+         """
+         Get the conditioning information for the model.
+@@ -533,8 +502,9 @@
+         else:
+             raise ValueError(f"Invalid pipeline type: {pipeline_type}")
+         
+-        if preprocess_image:
+-            image = self.preprocess_image(image)
++        if not preprocess_image:
++            raise ValueError("Prepared-alpha admission cannot be bypassed")
++        image = self.preprocess_image(image)
+         torch.manual_seed(seed)
+         cond_512 = self.get_cond([image], 512)
+         cond_1024 = self.get_cond([image], 1024) if pipeline_type != '512' else None
+--- /dev/null
++++ b/o-voxel/o_voxel/_mf_uvraster.py
+@@ -0,0 +1,83 @@
++"""Permissive UV bake adapter, derived from andrakis' MIT rasterizer.
++
++See third_party/trellis288/NOTICE.md. Rows increase with UV v; samples are texel
++centres. This is NOT a renderer. Overlap winner is highest source triangle id.
++Bounded ragged candidate scheduling replaces the unsafe shared bounding grid.
++Budget bounds candidate count, NOT total bytes (outputs and mesh also occupy RAM).
++"""
++import math
++import torch
++
++
++@torch.no_grad()
++def rasterize_uv(uvs, faces, size, candidate_budget=262144, eps=1e-6, *, stats=None):
++    if type(size) is not int or not 1 <= size <= 8192:
++        raise ValueError("texture size must be integer 1..8192")
++    if type(candidate_budget) is not int or not 1 <= candidate_budget <= 24_000_000:
++        raise ValueError("candidate budget must be integer 1..24000000")
++    if not math.isfinite(eps) or not 0 <= eps <= 1e-4:
++        raise ValueError("invalid edge tolerance")
++    if uvs.ndim != 2 or uvs.shape[1] != 2 or not uvs.is_floating_point():
++        raise ValueError("UVs must be floating (V,2)")
++    if faces.ndim != 2 or faces.shape[1] != 3 or faces.dtype not in (torch.int32, torch.int64):
++        raise ValueError("faces must be integer (F,3)")
++    if uvs.device != faces.device:
++        raise ValueError("UV and face devices must match")
++    if not torch.isfinite(uvs).all() or ((uvs < 0) | (uvs > 1)).any():
++        raise ValueError("UVs must be finite within [0,1]")
++    if faces.numel() and (faces.min() < 0 or faces.max() >= len(uvs)):
++        raise ValueError("face index outside vertex array")
++    device = uvs.device
++    uvs, faces = uvs.to(torch.float32), faces.to(torch.long)
++    tri_out = torch.full((size, size), -1, dtype=torch.long, device=device)
++    bary_out = torch.zeros((size, size, 3), dtype=torch.float32, device=device)
++    if stats is not None:
++        stats.update(candidate_budget=candidate_budget, peak_candidates=0, chunks=0, total_candidates=0)
++    if not len(faces):
++        return tri_out >= 0, tri_out, bary_out
++    p = uvs[faces] * size - 0.5
++    x, y = p[..., 0], p[..., 1]
++    d = (x[:, 1]-x[:, 0])*(y[:, 2]-y[:, 0]) - (x[:, 2]-x[:, 0])*(y[:, 1]-y[:, 0])
++    xmin, ymin = p.amin(1).ceil().clamp(0, size-1).long().unbind(-1)
++    xmax, ymax = p.amax(1).floor().clamp(0, size-1).long().unbind(-1)
++    bw, bh = (xmax-xmin+1).clamp(min=0), (ymax-ymin+1).clamp(min=0)
++    ids = torch.nonzero((d.abs() > 1e-12) & (bw > 0) & (bh > 0)).flatten()
++    if not ids.numel():
++        return tri_out >= 0, tri_out, bary_out
++    # Concatenate each triangle's own rectangle conceptually, not physically.
++    # Split this linear stream, including individual oversized rectangles.
++    ends = torch.cumsum((bw*bh)[ids], 0)
++    starts = ends - (bw*bh)[ids]
++    total = int(ends[-1])
++    if stats is not None:
++        stats['total_candidates'] = total
++    for start in range(0, total, candidate_budget):
++        q = torch.arange(start, min(start+candidate_budget, total), device=device)
++        slot = torch.searchsorted(ends, q, right=True)
++        face_ids = ids[slot]
++        local = q-starts[slot]
++        cx = xmin[face_ids] + local % bw[face_ids]
++        cy = ymin[face_ids] + local // bw[face_ids]
++        px, py = cx.to(torch.float32), cy.to(torch.float32)
++        x0, x1, x2 = (x[face_ids, k] for k in range(3))
++        y0, y1, y2 = (y[face_ids, k] for k in range(3))
++        dd = d[face_ids]
++        w0 = ((x1-px)*(y2-py)-(x2-px)*(y1-py))/dd
++        w1 = ((x2-px)*(y0-py)-(x0-px)*(y2-py))/dd
++        w2 = 1-w0-w1
++        inside = (w0 >= -eps) & (w1 >= -eps) & (w2 >= -eps)
++        flat = (cy*size+cx)[inside]
++        fs = face_ids[inside]
++        weights = torch.stack([w0, w1, w2], -1)[inside]
++        # Select once for both id and weights; avoid racing duplicate CUDA writes.
++        order = torch.argsort(flat, stable=True)
++        ordered = flat[order]
++        last = torch.ones_like(ordered, dtype=torch.bool)
++        last[:-1] = ordered[1:] != ordered[:-1]
++        keep = order[last]
++        tri_out.view(-1)[flat[keep]] = fs[keep]
++        bary_out.view(-1, 3)[flat[keep]] = weights[keep]
++        if stats is not None:
++            stats['chunks'] += 1
++            stats['peak_candidates'] = max(stats['peak_candidates'], len(q))
++    return tri_out >= 0, tri_out, bary_out
+--- /dev/null
++++ b/trellis2/pipelines/_mf_alpha.py
+@@ -0,0 +1,26 @@
++"""Prepared-alpha admission only. No automatic segmentation or downloads."""
++import numpy as np
++from PIL import Image
++
++
++def prepare_rgba(image):
++    if not isinstance(image, Image.Image) or image.mode != 'RGBA':
++        raise ValueError('Prepared RGBA image required; background removal disabled')
++    alpha = np.asarray(image)[:, :, 3]
++    if np.all(alpha == 255):
++        raise ValueError('Opaque alpha is not a prepared foreground mask')
++    if not np.any(alpha > 204):
++        raise ValueError('No sufficiently opaque foreground')
++    scale = min(1, 1024 / max(image.size))
++    if scale < 1:
++        image = image.resize((max(1, int(image.width*scale)), max(1, int(image.height*scale))), Image.Resampling.LANCZOS)
++    arr = np.asarray(image)
++    yy, xx = np.where(arr[:, :, 3] > 204)
++    if not len(xx):
++        raise ValueError('Foreground disappears at admitted resolution')
++    # Inclusive bounds: retain last row/column; avoid upstream one-pixel empty crop.
++    side = max(int(xx.max()-xx.min()+1), int(yy.max()-yy.min()+1))
++    left = int((int(xx.min())+int(xx.max())+1-side)//2)
++    top = int((int(yy.min())+int(yy.max())+1-side)//2)
++    crop = np.asarray(image.crop((left, top, left+side, top+side))).astype(np.float32)/255
++    return Image.fromarray((crop[:, :, :3]*crop[:, :, 3:4]*255).astype(np.uint8))
+--- /dev/null
++++ b/o-voxel/o_voxel/_mf_material.py
+@@ -0,0 +1,63 @@
++"""Upstream PBR/GLB finishing extracted for CPU synthetic tests.
++
++Microsoft MIT notice: third_party/trellis288/NOTICE.md. Shared with the patched
++GPU exporter, not an independent substitute used to claim full export.
++"""
++import numpy as np
++import cv2
++from PIL import Image
++import trimesh
++import trimesh.visual
++
++
++def finish_glb(out_vertices, out_faces, out_uvs, out_normals, attrs, mask, attr_layout, remesh=False):
++    mask = mask.cpu().numpy()
++
++    # Extract channels based on layout (BaseColor, Metallic, Roughness, Alpha)
++    base_color = np.clip(attrs[..., attr_layout['base_color']].cpu().numpy() * 255, 0, 255).astype(np.uint8)
++    metallic = np.clip(attrs[..., attr_layout['metallic']].cpu().numpy() * 255, 0, 255).astype(np.uint8)
++    roughness = np.clip(attrs[..., attr_layout['roughness']].cpu().numpy() * 255, 0, 255).astype(np.uint8)
++    alpha = np.clip(attrs[..., attr_layout['alpha']].cpu().numpy() * 255, 0, 255).astype(np.uint8)
++    alpha_mode = 'OPAQUE'
++
++    # Inpainting: fill gaps (dilation) to prevent black seams at UV boundaries
++    mask_inv = (~mask).astype(np.uint8)
++    base_color = cv2.inpaint(base_color, mask_inv, 3, cv2.INPAINT_TELEA)
++    metallic = cv2.inpaint(metallic, mask_inv, 1, cv2.INPAINT_TELEA)[..., None]
++    roughness = cv2.inpaint(roughness, mask_inv, 1, cv2.INPAINT_TELEA)[..., None]
++    alpha = cv2.inpaint(alpha, mask_inv, 1, cv2.INPAINT_TELEA)[..., None]
++
++    # Create PBR material
++    # Standard PBR packs Metallic and Roughness into Blue and Green channels
++    material = trimesh.visual.material.PBRMaterial(
++        baseColorTexture=Image.fromarray(np.concatenate([base_color, alpha], axis=-1)),
++        baseColorFactor=np.array([255, 255, 255, 255], dtype=np.uint8),
++        metallicRoughnessTexture=Image.fromarray(np.concatenate([np.zeros_like(metallic), roughness, metallic], axis=-1)),
++        metallicFactor=1.0,
++        roughnessFactor=1.0,
++        alphaMode=alpha_mode,
++        doubleSided=True if not remesh else False,
++    )
++
++    # --- Coordinate System Conversion & Final Object ---
++    # CPU qualification must not mutate caller tensors through NumPy aliases.
++    vertices_np = out_vertices.cpu().numpy().copy()
++    faces_np = out_faces.cpu().numpy().copy()
++    uvs_np = out_uvs.cpu().numpy().copy()
++    normals_np = out_normals.cpu().numpy().copy()
++
++    # Swap Y and Z axes, invert Y (common conversion for GLB compatibility)
++    vertices_np[:, 1], vertices_np[:, 2] = vertices_np[:, 2], -vertices_np[:, 1]
++    normals_np[:, 1], normals_np[:, 2] = normals_np[:, 2], -normals_np[:, 1]
++    uvs_np[:, 1] = 1 - uvs_np[:, 1] # Flip UV V-coordinate
++
++    textured_mesh = trimesh.Trimesh(
++        vertices=vertices_np,
++        faces=faces_np,
++        vertex_normals=normals_np,
++        process=False,
++        visual=trimesh.visual.TextureVisuals(uv=uvs_np, material=material)
++    )
++
++    return textured_mesh
++
