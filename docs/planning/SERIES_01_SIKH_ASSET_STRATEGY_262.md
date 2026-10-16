@@ -4,6 +4,13 @@
 
 ## Open decision
 
+### Exchange280 — unobscured head-only generation authorized
+
+Director authorizes the next free Meshy generation after279's failed conversion. Prepare one independent generic adult male anatomical head image with open eyes, neutral straight-on pose, bald scalp, clean-shaven face, visible ears/jaw/neck and no clothing. This is a disposable source-observability test, not a new Sikh identity or approval of shaving the protagonist. Keep279's separate turban donor unchanged. Approved character images remain local review references, not uploads.
+
+**Strategy and proof:** use eligible free Meshy6Lite geometry; preserve input/output and service credit observations. Inspect front/obliques/profile/rear and actual downloadable geometry for coherent facial planes, identifiable eye openings, nose/lips and neck. Do not infer animation topology from detail or request grooming/material polish before this source gate. Downstream conversion still requires anatomical landmark correspondence and one integrated eyelid closure proof; a static generation does not qualify either. Compare utility against278's fused clothed/bearded bust, not against a lowered hero quality floor. Stop at paywall, unsafe transmission, unavailable export or failed input anatomy; no subscription, new installation, specialist, production-reference upload or community publication. One initial generation, free credits only, no new dollar spend. Scope is generation and source assessment, not another uncontrolled multi-pass actor reconstruction. Operating episode SIKH280/head-only tracks prospective activity; earlier retrieval and tokens remain unknown.
+
+
 ### Exchange279 — local conversion proof authorized
 
 Director's go-ahead authorizes the recommended disposable conversion, not adoption of the elder as the lead. The release dependency is an editable Sikh actor; this proof asks whether Meshy's recovered forms materially help that path. Protected: approved v03, original C, accepted Pashtun masters, and all failed evidence. No provider calls, new purchases/installations or production-image upload.
