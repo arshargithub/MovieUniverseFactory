@@ -4,6 +4,14 @@
 
 ## Open decision
 
+### Exchange286 — production viability before quality trials
+
+Director rejects evaluating a candidate without an established viable production path as wasteful. **Adopt:** screen actual commercial-use/output/dependency rights, input privacy, deployability, usable export/integration and a plausible total cost envelope before generation/quality trials. The trial may still test uncertain visual quality and performance; it must not be used to justify postponing a known rights/deployment blocker. Research-only availability does not satisfy this gate. A hypothetical replacement for restricted code is not a cleared route.
+
+**TRELLIS.2 is parked, not the next test candidate.** This supersedes284's hosted-first recommendation and285's suggestion to continue quality evaluation while resolving dependencies. Preserve285's pricing and license research as historical evidence; no commercial route, generation, deployment or rights clearance has been demonstrated. Do not automatically substitute TripoSG, Hunyuan or another open-weight model: apply the same full-route screen. Do not start a custom export-library project merely to salvage this candidate.
+
+**Next meaningful scope:** a production-viability comparison of a small number of image-to-3D routes, before any generation. Deliver the actual model/dependency/license chain, output/input rights, obtainable export, feasible hardware/hosting, cost assumptions, known conversion burden and GO/BLOCKED disposition for each; recommend one eligible route or state none qualifies. A GO permits proposing a bounded representative quality/conversion test, not paid execution or character acceptance. No new spend, installs, uploads, subscriptions, native edits or infrastructure are authorized. This is manual source/authority reconciliation outside the bounded pilot's infrastructure coverage; source pins unchanged. Counter286; next checkpoint290; protected masters and failed283 unchanged.
+
 ### Exchange285 — AWS cost path and dependency licensing prerequisite
 
 [TRELLIS.2 AWS proposal](../../results/sikh285/AWS_HOSTING.md) verifies public GPU rates and recommends temporary workers, then queued scale-to-zero only after a representative conversion proof. No deployment/spend authorized. The documented nvdiffrast v0.4.0 and nvdiffrec renderutils dependencies have noncommercial restrictions; standard textured GLB export uses nvdiffrast. Core MIT is not full-stack commercial clearance. Amend284's shortlist accordingly: resolve dependency rights and qualify any replacement before production adoption. Runtime, memory fit and cost per usable actor remain unmeasured. Protected work and failed283 unchanged.

@@ -4,6 +4,10 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+### Exchange286 — establish the production route before testing quality
+
+Director requires production viability before model trials. [Current gate and next scope](SERIES_01_SIKH_ASSET_STRATEGY_262.md#exchange286--production-viability-before-quality-trials) parks TRELLIS.2 and supersedes the recommendation to test it while resolving restricted dependencies. First screen end-to-end rights, privacy, deployment, export/integration and plausible cost; then test quality on eligible routes. No new test, infrastructure, spend or production acceptance. Rule persisted in AGENTS.md for future work; no claim of automated enforcement or expanded knowledge-pilot coverage. Counter286; next290; release progress unchanged.
+
 ### Exchange285 — conditional TRELLIS.2 AWS hosting proposal
 
 [Hosting path and costs](../../results/sikh285/AWS_HOSTING.md) records verified On-Demand GPU prices, session-based usage, proposed Factory integration and an unresolved noncommercial dependency/export constraint. Research only; no AWS deployment, spend, model adoption, native acceptance, push or S3 backup. Resolve rights and source-to-performance usefulness before infrastructure. Counter285; next checkpoint290; release progress unchanged.
