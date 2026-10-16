@@ -4,6 +4,12 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+### Exchange279 — disposable native conversion proof
+
+Director authorizes278's recommended local conversion before considering a paid/hero route. Strategy262 binds face/eye topology, separate crown and real groom, then blink/head-turn and contact proof. This is an unresolved production dependency, not another accepted release gate. Sikh only, action before music; approved Pashtun and v03 unchanged. Counter279, checkpoint280; no external call, new spend or new-media backup authority.
+
+279 evaluation complete: both tested facial conversion approaches fail internal review. A separate crown study and reproducible limited-motion diagnostic are retained, not promoted as a character. [Findings](../../results/sikh279/ASSESSMENT.md) recommend an unobscured head-only input test before a paid plan; no further external generation or cloth-release work was dispatched. Broad acceptance remains1/25.
+
 ### Exchange278 — bounded free Meshy evaluation selected
 
 Director selects the generic free test after274–277's rights/FaceBuilder/conversion/cost discussion. [Current strategy](SERIES_01_SIKH_ASSET_STRATEGY_262.md#exchange278--generic-free-evaluation-complete-static-donor-only) preserves approved Sikh imagery, zero spend, geometry-first proof and separate performance admission. One disposable generic6Lite model generated; Director manual GLB download resolved browser-transfer failure. Six native clay views and fresh reopen confirm useful turban primary forms but a fused static face/beard/shirt surface without performance components. Test complete, character blocked; local conversion proof recommended before any paid/hero route. No release-progress increment. Counter278; next checkpoint280; broad acceptance remains1/25. Paid Pro and FaceBuilder remain unpurchased; no new provider calls or remote backup in native inspection.
