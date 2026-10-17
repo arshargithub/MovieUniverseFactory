@@ -4,6 +4,10 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+### Exchange295 — GPU export/integration passes; actor access prerequisite
+
+Director extends this pass to a viable TRELLIS.2 Sikh head/beard/turban/body candidate, retaining15USD working cap and authorizing up to10USD more only if necessary and high-confidence. [295 evidence](../../results/trellis295/README.md): one corrected US L4 worker compiles CuMesh/FlexGEMM and passes the permitted synthetic exporter in25.7857s; both GLBs pass independent Blender geometry/UV/material-link/reopen checks.42 local tests pass. This is not model inference or actor qualification. Official DINOv3 account access/terms remain unresolved; Director action was requested while GPU work continued. No mirror, protagonist upload or generation. One transparent approved-portrait derivative is prepared locally as input, not a production candidate. Historical reservation liability is conservatively reconciled without inventing bills; extra10 not activated. Independent teardown verification confirms every temporary resource absent; current-run compute upper estimate0.4431USD, actual invoice unknown. Preserve292/Pashtun; next is access then agent-owned bounded inference and integrated candidate, not another environment-polish pass. Counter295; checkpoint300.
+
 ### Exchange294 — US synthetic qualification authorized
 
 Director selects US regional retry within the same cumulative US$15. [294 strategy](../../results/trellis294/STRATEGY.md) preserves Canada's unknown10USD reservation and allocates only5USD to the US attempt, with aggregate checks. Live US quota8 and L4 rate0.9776USD/hour verified; one worker launched under independent termination controls. No protagonist upload, weights, new creative acceptance or production admission. Accepted292 joined development preview and protected Pashtun remain unchanged. Next checkpoint300.

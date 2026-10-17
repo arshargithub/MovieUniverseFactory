@@ -4,6 +4,10 @@
 
 ## Open decision
 
+### Exchange295 — source generation authorized; official access pending
+
+Director authorizes a viable TRELLIS.2 Sikh head/beard/turban/body candidate in the GPU continuation, under15USD plus conditional necessary/high-confidence10USD. [295](../../results/trellis295/README.md) now qualifies the small synthetic CUDA exporter and independent Blender GLB import/reopen, not inference or a character. No extra10 activated. Official Meta DINOv3 access/terms need the Director's account action before model generation; no mirror or silent encoder substitution. Transparent head input derived from260 is prepared locally; original remains authoritative and body/performance remain owed. Exact worker teardown and bounded cost receipts are in295. Continue access admission → minimal pinned inference stack → privately generated donor →271 multiview/same-film/conversion proof; don't rebrand a portrait, statue or passing cube as a viable actor. Existing native/staging/Pashtun protections remain. This amendment supersedes historical quota/synthetic-pending wording below, not the286 production-viability gate.
+
 ### Exchange288 — adapter qualification and Canadian compute
 
 Director authorizes the next qualification and explicitly approves US$15 aggregate AWS synthetic-test spend and isolated dependency installation. Local [adapter qualification](../../results/sikh288/README.md) passes26 tests plus independent Blender geometry/material/UV/reopen checks. Restricted raster/BRIA paths are removed from the adapted source; full CUDA and inference rights/integration remain unqualified. Canada Central L4/24GB is selected after Director's regional question; actual API shows g6/g5 but not48GB g6e. GPU quota is zero; eight-vCPU Canadian request is CASE_OPENED. No worker launched, no protagonist generation/upload, no cloud resources/spend. Continue the authorized synthetic GPU test after quota and safeguards; do not ask for another routine go-ahead or infer character acceptance. Protected masters and failed283 unchanged. Local implementation/design commits separate; no push/S3. Counter288; next checkpoint290.

@@ -1,0 +1,99 @@
+{
+  "synthetic_gpu_export": "PASS",
+  "independent_blender": "PASS",
+  "candidate_generation": "NOT_RUN",
+  "production_candidate": "BLOCKED_OFFICIAL_DINOV3_ACCESS",
+  "actual_billed_usd": null,
+  "extra_contingency_activated_usd": 0,
+  "aggregate": {
+    "effective_ceiling_usd": 15,
+    "conditional_extra_usd_activated": 0,
+    "closed_liability_bound_usd": 2,
+    "closed_actual_bill_usd": null,
+    "historical_holds_preserved_not_added_as_cost": {
+      "293": 10,
+      "294": 5
+    },
+    "new": {
+      "calls": 1,
+      "known_cost_usd": 0.0,
+      "reserved_unknown_usd": 4.0,
+      "committed_usd": 4.0,
+      "unresolved_calls": 1,
+      "reservation_exceeded": false,
+      "campaign_limit_usd": 13.0,
+      "effective_campaign_limit_usd": 13.0,
+      "scopes": {
+        "qualification": {
+          "calls": 1,
+          "known_cost_usd": 0.0,
+          "reserved_unknown_usd": 4.0,
+          "committed_usd": 4.0,
+          "unresolved_calls": 1,
+          "reservation_exceeded": false
+        }
+      },
+      "runs": {
+        "trellis295a": {
+          "gpu_session": {
+            "calls": 1,
+            "known_cost_usd": 0.0,
+            "reserved_unknown_usd": 4.0,
+            "committed_usd": 4.0,
+            "unresolved_calls": 1,
+            "reservation_exceeded": false
+          }
+        }
+      }
+    },
+    "admission_total_usd": 6.0,
+    "basis": "results/trellis295/STRATEGY.md",
+    "teardown_bindings": {
+      "trellis293": "8efd73d82d53fadcf1bffb72fd16ebf1f8b21082379f65b7ba757d0d3c42f33b",
+      "trellis294": "363f6a30a0828f3ce6706598cd71030241509a9a4a5c0a946bd63f483f61a13c"
+    }
+  },
+  "scope": "No inference, weights, actor quality or performance qualification",
+  "evidence": [
+    {
+      "path": "results/trellis295/STRATEGY.md",
+      "sha256": "ee5c2ef79b31eb87c22974edef80144a126a3e29e55f876f0f8df8ca77d6cdf6"
+    },
+    {
+      "path": "results/trellis295/README.md",
+      "sha256": "0a5ff5a2f224fbce49e3a100d3d9ec6ebf9da565b332123f923faaf279394ad3"
+    },
+    {
+      "path": "results/trellis295/INPUT_PREPARATION.md",
+      "sha256": "69c29721c21cc371129128b3b84da1838f7432dbe16d4f186884bedfa41405e4"
+    },
+    {
+      "path": "results/trellis295/tests.xml",
+      "sha256": "9d837304fd3758d18bbdcd9d577a42c02597618fa4dd9747d931348eca601366"
+    },
+    {
+      "path": "results/trellis295/cloud-a/gpu-receipt.json",
+      "sha256": "143c1f652b89578fbc181f7d1a35524f27a2d58b6eb1fd69cf888ff540846204"
+    },
+    {
+      "path": "results/trellis295/cloud-a/blender-verification.json",
+      "sha256": "ba6ef9c49e5100a051b2da19d5ff6b2445a8d0c5323b7742e29a9cd6a93257af"
+    },
+    {
+      "path": "results/trellis295/cloud-a/teardown-verification.json",
+      "sha256": "a096a3d9eb3e2cd2c75ce8f7de0a1e7e3dd01037e3d1c132df1abc419746c3eb"
+    },
+    {
+      "path": "results/trellis295/cloud-a/runtime-link.json",
+      "sha256": "6c7470436bf9e9263c7b9250ea13197829294247c19410ad3c1b156ee607ff53"
+    },
+    {
+      "path": "results/trellis295/cloud-a/worker-log.txt",
+      "sha256": "e27694a175cc57bef11d8fd92322eaca8617463f9ca20c29381d97d50dc1cfc5"
+    },
+    {
+      "path": "results/trellis295/cloud-a/payload-manifest.json",
+      "sha256": "18fc38ecfff0acef99ea3d212fb604406e96fd6f15b07630432883df8e7c7b71"
+    }
+  ]
+}

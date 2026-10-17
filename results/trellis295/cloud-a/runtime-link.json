@@ -1,0 +1,19 @@
+{
+  "parent": {
+    "prefix": "/opt/pytorch",
+    "version": [
+      3,
+      12
+    ],
+    "purelib": "/opt/pytorch/lib/python3.12/site-packages"
+  },
+  "child": {
+    "prefix": "/opt/mf-trellis293/venv",
+    "version": [
+      3,
+      12
+    ],
+    "purelib": "/opt/mf-trellis293/venv/lib/python3.12/site-packages"
+  },
+  "link": "/opt/mf-trellis293/venv/lib/python3.12/site-packages/movie_factory_parent_packages.pth"
+}

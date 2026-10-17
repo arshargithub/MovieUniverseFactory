@@ -1,0 +1,177 @@
+{
+  "Reservations": [
+    {
+      "ReservationId": "r-01e6b0a33b5dd8749",
+      "OwnerId": "281482331395",
+      "Groups": [],
+      "Instances": [
+        {
+          "Architecture": "x86_64",
+          "BlockDeviceMappings": [
+            {
+              "DeviceName": "/dev/sda1",
+              "Ebs": {
+                "AttachTime": "2026-10-17T19:43:43+00:00",
+                "DeleteOnTermination": true,
+                "Status": "attached",
+                "VolumeId": "vol-02d105ca05abbb719"
+              }
+            }
+          ],
+          "ClientToken": "trellis295a-one-worker",
+          "EbsOptimized": false,
+          "EnaSupport": true,
+          "Hypervisor": "xen",
+          "IamInstanceProfile": {
+            "Arn": "arn:aws:iam::281482331395:instance-profile/mf-trellis295a-worker",
+            "Id": "AIPAUDCNHQUBURN3B43YH"
+          },
+          "NetworkInterfaces": [
+            {
+              "Association": {
+                "IpOwnerId": "amazon",
+                "PublicDnsName": "ec2-3-85-10-71.compute-1.amazonaws.com",
+                "PublicIp": "3.85.10.71"
+              },
+              "Attachment": {
+                "AttachTime": "2026-10-17T19:43:42+00:00",
+                "AttachmentId": "eni-attach-06a1ac985b78fa342",
+                "DeleteOnTermination": true,
+                "DeviceIndex": 0,
+                "Status": "attached",
+                "NetworkCardIndex": 0
+              },
+              "Description": "",
+              "Groups": [
+                {
+                  "GroupId": "sg-0b486d98fc4993072",
+                  "GroupName": "trellis295a-synthetic"
+                }
+              ],
+              "Ipv6Addresses": [],
+              "MacAddress": "0a:ff:d6:ff:b8:99",
+              "NetworkInterfaceId": "eni-0efadf75eeace2653",
+              "OwnerId": "281482331395",
+              "PrivateDnsName": "ip-172-31-27-49.ec2.internal",
+              "PrivateIpAddress": "172.31.27.49",
+              "PrivateIpAddresses": [
+                {
+                  "Association": {
+                    "IpOwnerId": "amazon",
+                    "PublicDnsName": "ec2-3-85-10-71.compute-1.amazonaws.com",
+                    "PublicIp": "3.85.10.71"
+                  },
+                  "Primary": true,
+                  "PrivateDnsName": "ip-172-31-27-49.ec2.internal",
+                  "PrivateIpAddress": "172.31.27.49"
+                }
+              ],
+              "SourceDestCheck": true,
+              "Status": "in-use",
+              "SubnetId": "subnet-06b0dcf65205ee1a8",
+              "VpcId": "vpc-0b4a0b22ad2150a91",
+              "InterfaceType": "interface",
+              "Operator": {
+                "Managed": false
+              }
+            }
+          ],
+          "RootDeviceName": "/dev/sda1",
+          "RootDeviceType": "ebs",
+          "SecurityGroups": [
+            {
+              "GroupId": "sg-0b486d98fc4993072",
+              "GroupName": "trellis295a-synthetic"
+            }
+          ],
+          "SourceDestCheck": true,
+          "StateReason": {
+            "Code": "Client.InstanceInitiatedShutdown",
+            "Message": "Client.InstanceInitiatedShutdown: Instance initiated shutdown"
+          },
+          "Tags": [
+            {
+              "Key": "Name",
+              "Value": "trellis295a-synthetic"
+            },
+            {
+              "Key": "ExpiresAt",
+              "Value": "2026-10-17T21:43:40.628913+00:00"
+            },
+            {
+              "Key": "MovieFactoryJob",
+              "Value": "trellis295a-synthetic"
+            }
+          ],
+          "VirtualizationType": "hvm",
+          "CpuOptions": {
+            "CoreCount": 4,
+            "ThreadsPerCore": 2
+          },
+          "CapacityReservationSpecification": {
+            "CapacityReservationPreference": "open"
+          },
+          "HibernationOptions": {
+            "Configured": false
+          },
+          "MetadataOptions": {
+            "State": "pending",
+            "HttpTokens": "required",
+            "HttpPutResponseHopLimit": 1,
+            "HttpEndpoint": "enabled",
+            "HttpProtocolIpv6": "disabled",
+            "InstanceMetadataTags": "disabled"
+          },
+          "EnclaveOptions": {
+            "Enabled": false
+          },
+          "BootMode": "uefi-preferred",
+          "PlatformDetails": "Linux/UNIX",
+          "UsageOperation": "RunInstances",
+          "UsageOperationUpdateTime": "2026-10-17T19:43:42+00:00",
+          "PrivateDnsNameOptions": {
+            "HostnameType": "ip-name",
+            "EnableResourceNameDnsARecord": false,
+            "EnableResourceNameDnsAAAARecord": false
+          },
+          "MaintenanceOptions": {
+            "AutoRecovery": "default",
+            "RebootMigration": "default"
+          },
+          "CurrentInstanceBootMode": "uefi",
+          "NetworkPerformanceOptions": {
+            "BandwidthWeighting": "default"
+          },
+          "Operator": {
+            "Managed": false
+          },
+          "InstanceId": "i-0edc29fa39ef925df",
+          "ImageId": "ami-012ba162b9cd2729c",
+          "State": {
+            "Code": 32,
+            "Name": "shutting-down"
+          },
+          "PrivateDnsName": "ip-172-31-27-49.ec2.internal",
+          "PublicDnsName": "ec2-3-85-10-71.compute-1.amazonaws.com",
+          "StateTransitionReason": "User initiated",
+          "AmiLaunchIndex": 0,
+          "ProductCodes": [],
+          "InstanceType": "g6.2xlarge",
+          "LaunchTime": "2026-10-17T19:43:42+00:00",
+          "Placement": {
+            "GroupName": "",
+            "Tenancy": "default",
+            "AvailabilityZone": "us-east-1a"
+          },
+          "Monitoring": {
+            "State": "disabled"
+          },
+          "SubnetId": "subnet-06b0dcf65205ee1a8",
+          "VpcId": "vpc-0b4a0b22ad2150a91",
+          "PrivateIpAddress": "172.31.27.49",
+          "PublicIpAddress": "3.85.10.71"
+        }
+      ]
+    }
+  ]
+}

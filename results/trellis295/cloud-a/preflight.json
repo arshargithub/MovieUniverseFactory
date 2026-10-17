@@ -1,0 +1,165 @@
+{
+  "identity": {
+    "UserId": "AROAUDCNHQUBWHQQOHBDY:adi",
+    "Account": "281482331395",
+    "Arn": "arn:aws:sts::281482331395:assumed-role/AWSReservedSSO_AdministratorAccessSet_0542c25cda448077/adi"
+  },
+  "quota": {
+    "ServiceCode": "ec2",
+    "ServiceName": "Amazon Elastic Compute Cloud (Amazon EC2)",
+    "QuotaArn": "arn:aws:servicequotas:us-east-1:281482331395:ec2/L-DB2E81BA",
+    "QuotaCode": "L-DB2E81BA",
+    "QuotaName": "Running On-Demand G and VT instances",
+    "Value": 8.0,
+    "Unit": "None",
+    "Adjustable": true,
+    "GlobalQuota": false,
+    "UsageMetric": {
+      "MetricNamespace": "AWS/Usage",
+      "MetricName": "ResourceCount",
+      "MetricDimensions": {
+        "Class": "G/OnDemand",
+        "Resource": "vCPU",
+        "Service": "EC2",
+        "Type": "Resource"
+      },
+      "MetricStatisticRecommendation": "Maximum"
+    },
+    "QuotaAppliedAtLevel": "ACCOUNT",
+    "Description": "Maximum number of vCPUs assigned to the Running On-Demand G and VT instances."
+  },
+  "price": {
+    "XCA3J9EEM739PU6M.JRTCKXETXF": {
+      "priceDimensions": {
+        "XCA3J9EEM739PU6M.JRTCKXETXF.6YS6EN2CT7": {
+          "unit": "Hrs",
+          "endRange": "Inf",
+          "description": "$0.9776 per On Demand Linux g6.2xlarge Instance Hour",
+          "appliesTo": [],
+          "rateCode": "XCA3J9EEM739PU6M.JRTCKXETXF.6YS6EN2CT7",
+          "beginRange": "0",
+          "pricePerUnit": {
+            "USD": "0.9776000000"
+          }
+        }
+      },
+      "sku": "XCA3J9EEM739PU6M",
+      "effectiveDate": "2026-10-01T00:00:00Z",
+      "offerTermCode": "JRTCKXETXF",
+      "termAttributes": {}
+    }
+  },
+  "image": {
+    "PlatformDetails": "Linux/UNIX",
+    "UsageOperation": "RunInstances",
+    "BlockDeviceMappings": [
+      {
+        "Ebs": {
+          "DeleteOnTermination": true,
+          "Iops": 3000,
+          "SnapshotId": "snap-00f98d51f80f15fb5",
+          "VolumeSize": 40,
+          "VolumeType": "gp3",
+          "Throughput": 125,
+          "Encrypted": false
+        },
+        "DeviceName": "/dev/sda1"
+      },
+      {
+        "DeviceName": "/dev/sdb",
+        "VirtualName": "ephemeral0"
+      },
+      {
+        "DeviceName": "/dev/sdc",
+        "VirtualName": "ephemeral1"
+      }
+    ],
+    "Description": "Supported EC2 instances: G4dn, G5, G6, Gr6, G6e, P4, P4de, P5, P5e, P5en, P6-B200. Release notes: https://docs.aws.amazon.com/dlami/latest/devguide/appendix-ami-release-notes.html",
+    "EnaSupport": true,
+    "Hypervisor": "xen",
+    "ImageOwnerAlias": "amazon",
+    "Name": "Deep Learning OSS Nvidia Driver AMI GPU PyTorch 2.7 (Ubuntu 22.04) 20260427",
+    "RootDeviceName": "/dev/sda1",
+    "RootDeviceType": "ebs",
+    "SriovNetSupport": "simple",
+    "VirtualizationType": "hvm",
+    "BootMode": "uefi-preferred",
+    "DeprecationTime": "2028-04-28T15:00:35.000Z",
+    "SourceImageId": "ami-0d93ad3acb953359b",
+    "SourceImageRegion": "us-east-1",
+    "ImageId": "ami-012ba162b9cd2729c",
+    "ImageLocation": "amazon/Deep Learning OSS Nvidia Driver AMI GPU PyTorch 2.7 (Ubuntu 22.04) 20260427",
+    "State": "available",
+    "OwnerId": "898082745236",
+    "CreationDate": "2026-04-28T15:00:35.000Z",
+    "Public": true,
+    "Architecture": "x86_64",
+    "ImageType": "machine"
+  },
+  "subnet": {
+    "AvailabilityZoneId": "use1-az4",
+    "MapCustomerOwnedIpOnLaunch": false,
+    "OwnerId": "281482331395",
+    "AssignIpv6AddressOnCreation": false,
+    "Ipv6CidrBlockAssociationSet": [],
+    "SubnetArn": "arn:aws:ec2:us-east-1:281482331395:subnet/subnet-06b0dcf65205ee1a8",
+    "EnableDns64": false,
+    "Ipv6Native": false,
+    "PrivateDnsNameOptionsOnLaunch": {
+      "HostnameType": "ip-name",
+      "EnableResourceNameDnsARecord": false,
+      "EnableResourceNameDnsAAAARecord": false
+    },
+    "BlockPublicAccessStates": {
+      "InternetGatewayBlockMode": "off"
+    },
+    "SubnetId": "subnet-06b0dcf65205ee1a8",
+    "State": "available",
+    "VpcId": "vpc-0b4a0b22ad2150a91",
+    "CidrBlock": "172.31.16.0/20",
+    "AvailableIpAddressCount": 4091,
+    "AvailabilityZone": "us-east-1a",
+    "DefaultForAz": true,
+    "MapPublicIpOnLaunch": true
+  },
+  "payload_sha256": "c1535447dac9cac772447822aa4f139b4375c356c1d383075e12ded8ded0221c",
+  "payload_files": 2045,
+  "watchdog_sha256": "ea93bfc33477d6b69dc4b516724aa86b72bc0c9dead9684a1525e82763831a26",
+  "aggregate": {
+    "effective_ceiling_usd": 15,
+    "conditional_extra_usd_activated": 0,
+    "closed_liability_bound_usd": 2,
+    "closed_actual_bill_usd": null,
+    "historical_holds_preserved_not_added_as_cost": {
+      "293": 10,
+      "294": 5
+    },
+    "new": {
+      "calls": 0,
+      "known_cost_usd": 0.0,
+      "reserved_unknown_usd": 0.0,
+      "committed_usd": 0.0,
+      "unresolved_calls": 0,
+      "reservation_exceeded": false,
+      "campaign_limit_usd": 13.0,
+      "effective_campaign_limit_usd": 13.0,
+      "scopes": {
+        "qualification": {
+          "calls": 0,
+          "known_cost_usd": 0.0,
+          "reserved_unknown_usd": 0.0,
+          "committed_usd": 0.0,
+          "unresolved_calls": 0,
+          "reservation_exceeded": false
+        }
+      },
+      "runs": {}
+    },
+    "admission_total_usd": 6.0,
+    "basis": "results/trellis295/STRATEGY.md",
+    "teardown_bindings": {
+      "trellis293": "8efd73d82d53fadcf1bffb72fd16ebf1f8b21082379f65b7ba757d0d3c42f33b",
+      "trellis294": "363f6a30a0828f3ce6706598cd71030241509a9a4a5c0a946bd63f483f61a13c"
+    }
+  }
+}

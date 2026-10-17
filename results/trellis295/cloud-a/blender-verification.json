@@ -1,0 +1,86 @@
+{
+  "jobs": [
+    {
+      "fixture": "uv-control",
+      "operation": "inspect",
+      "seconds": 1.7976496666669846,
+      "returncode": 0
+    },
+    {
+      "fixture": "uv-control",
+      "operation": "reopen",
+      "seconds": 0.5072003328241408,
+      "returncode": 0
+    },
+    {
+      "fixture": "cube",
+      "operation": "inspect",
+      "seconds": 0.5086187920533121,
+      "returncode": 0
+    },
+    {
+      "fixture": "cube",
+      "operation": "reopen",
+      "seconds": 0.4757634997367859,
+      "returncode": 0
+    }
+  ],
+  "uv_expected": {
+    "(112, 112)": [
+      0,
+      255,
+      51
+    ],
+    "(272, 112)": [
+      255,
+      255,
+      51
+    ],
+    "(112, 272)": [
+      0,
+      0,
+      51
+    ],
+    "(272, 272)": [
+      255,
+      0,
+      51
+    ]
+  },
+  "uv_observed": {
+    "(112, 112)": [
+      0,
+      255,
+      51
+    ],
+    "(272, 112)": [
+      255,
+      255,
+      51
+    ],
+    "(112, 272)": [
+      0,
+      0,
+      51
+    ],
+    "(272, 272)": [
+      255,
+      0,
+      51
+    ]
+  },
+  "scope": "Synthetic geometry, UV orientation, PBR links and fresh-process reopen only",
+  "artifacts": {
+    ".runtime/trellis295a/blender/cube-inspect.log": "a889029ecd0e3a8627ed88e87e6ff1ab29744918a945b99ed909c9613e97411b",
+    ".runtime/trellis295a/blender/cube-reopen.json": "8a173e7eeefc53a894d405e14b59ea0b740ea7b3dd33dbbcd3d332c49d07b638",
+    ".runtime/trellis295a/blender/uv-control-reopen.log": "893f273e94fafa22585d72420c97c36e9958d30835dddd35fc6701a6f7c31199",
+    ".runtime/trellis295a/blender/uv-diagnostic.png": "5bf0a16031a091143d0768ac90681c5c2b094010e11a3e0b8e55b482ab50a24a",
+    ".runtime/trellis295a/blender/cube-reopen.log": "4756a70321a263efb549f1d83f851e6b902e4f1d79c23fa8817f26616ee5134e",
+    ".runtime/trellis295a/blender/cube.blend": "6a21d1e227344039b333d98484b4a20af480e25a5fefc0e457061ac164c53cb8",
+    ".runtime/trellis295a/blender/uv-control.blend": "10ee15e397b0b6adc26dd5ae1fc379ebc963c5cc75448bcf0cbb88925d869aca",
+    ".runtime/trellis295a/blender/cube-inspect.json": "6baf1cef40fa4912d2c2f1e8cc1dc4bbb370c2d7cb596dcf699139c9e1518782",
+    ".runtime/trellis295a/blender/uv-control-inspect.json": "01e50480ba0b6e7f8dfda9a0de9b84a0aa7e2ca53f06ed2ca3d60bdb0e710326",
+    ".runtime/trellis295a/blender/uv-control-inspect.log": "3148e9bf6349e655d1632453efa9e70434978f00e6a95e5b0551ad9ca8bb98dc",
+    ".runtime/trellis295a/blender/uv-control-reopen.json": "41045b528fc0e66b60df044bc34ce45b4cde86d7bb7ade3b2d7b8857d3751e14"
+  }
+}

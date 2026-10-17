@@ -1,0 +1,22 @@
+{
+  "GroupId": "sg-0b486d98fc4993072",
+  "IpPermissionsEgress": [
+    {
+      "IpProtocol": "-1",
+      "UserIdGroupPairs": [],
+      "IpRanges": [
+        {
+          "CidrIp": "0.0.0.0/0"
+        }
+      ],
+      "Ipv6Ranges": [],
+      "PrefixListIds": []
+    }
+  ],
+  "VpcId": "vpc-0b4a0b22ad2150a91",
+  "SecurityGroupArn": "arn:aws:ec2:us-east-1:281482331395:security-group/sg-0b486d98fc4993072",
+  "OwnerId": "281482331395",
+  "GroupName": "trellis295a-synthetic",
+  "Description": "Synthetic qualification no inbound",
+  "IpPermissions": []
+}
