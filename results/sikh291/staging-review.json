@@ -1,0 +1,147 @@
+{
+  "scope": "Authorized corrected proxy staging only",
+  "director_acceptance": "PENDING",
+  "findings": {
+    "disposition": "READY_FOR_DIRECTOR_CORRECTED_STAGING_REVIEW_NOT_PRODUCTION_ADMISSION",
+    "director_acceptance": "PENDING",
+    "delivery": ".runtime/art-direction/series01-sikh291/movie-03/sikh-staging-22s.mp4",
+    "review_method": "All528 chronological frames, enlarged key frames and side/assembly controls; not real-time playback or listening.",
+    "observations": [
+      {
+        "id": "S291-01",
+        "finding": "Fixed fork/shock fittings remain stationary during wheel cycle; parked-stand pieces removed. Final opening no longer shows rotating linkage or detached low stand piece.",
+        "evidence": "diagnose-01/wheel-cycle-0.png through wheel-cycle-3.png; controls-05/beat-00.0.png through beat-00.5.png; movie-03/chronology-01.png; bike-adaptation.json"
+      },
+      {
+        "id": "S291-02",
+        "finding": "Saddle/pelvis shifted rearward9cm; short supports replace protruding original springs. Supported stop and travel retain reach without changing limb lengths.",
+        "evidence": "controls-05/support-side.png; movie-03/frames/frame-0179.png and frame-0445.png"
+      },
+      {
+        "id": "S291-03",
+        "finding": "Faster world travel, earlier controlled braking and farther stop implemented. Crowd established before braking; corridor opens before explosive departure. Perceived tempo remains Director judgment.",
+        "evidence": "movie-03/chronology-01.png through chronology-03.png and chronology-07.png through chronology-09.png; tests/test_sikh291.py"
+      },
+      {
+        "id": "S291-04",
+        "finding": "Lamp lens is visibly inside fitted bezel/backing, with shared steer ownership. First backing obstruction rejected internally.",
+        "evidence": "movie-03/frames/frame-0001.png; frame-0179.png; controls-05/support-side.png; reopen-01/reopen.json"
+      },
+      {
+        "id": "S291-05",
+        "finding": "Close cut holds before cross-body reach. Uncovering hand lowers into palms-together without returning to bar; supporting foot remains down. This is staging, not final cloth/finger qualification.",
+        "evidence": "movie-03/chronology-03.png through chronology-05.png; frame-0213.png; reopen-01/contact-trace.json"
+      },
+      {
+        "id": "S291-06",
+        "finding": "Gun lies diagonally behind torso, stock above seat and sling over shoulder. Rear OTS no longer has a transverse neck strap. Final costume contact must be rechecked with admitted geometry.",
+        "evidence": "controls-05/beat-04.8.png; support-side.png; movie-03/chronology-02.png and chronology-08.png"
+      },
+      {
+        "id": "S291-07",
+        "finding": "Moon has visible surface values and an explicit clear sky opening, with clouds surrounding it. Same nocturnal palette retained.",
+        "evidence": "controls-05/beat-04.8.png; movie-03/chronology-02.png and chronology-08.png"
+      },
+      {
+        "id": "S291-08",
+        "finding": "Pole rises and drops during horse rear, then remains at actual bank surface while hand/rider move. Close side control and full final leader passage inspected.",
+        "evidence": "controls-05/horse-side-14.6.png through horse-side-17.2.png; movie-03/chronology-05.png and chronology-06.png; frame-0315.png; reopen-01/contact-trace.json"
+      }
+    ],
+    "internal_rejections": [
+      "Radial wheel membership included fixed fittings",
+      "Original tall seat springs protruded after saddle lowering",
+      "controls01 lamp backing obscured lens",
+      "controls02 sling crossed neck; movie01 canceled",
+      "Earlier braking interval implied approximately1.9g at increased speed"
+    ],
+    "director_scope_refinement": "movie02 canceled to incorporate the in-pass request for a cloud-free moon; not a renderer failure",
+    "not_qualified": [
+      "final actor identity and same-film finish",
+      "connected turban cloth and fingers",
+      "general bike/horse physics",
+      "final landscape/look",
+      "sound/music",
+      "release rights",
+      "mobile review",
+      "new native-media remote recovery"
+    ]
+  },
+  "evidence": [
+    {
+      "path": "results/sikh291/REVIEW.md",
+      "sha256": "ed769f41d0b5261131806e6d7735e0c72b9abb89dbb496a6ab2e87b57e5d1dcc"
+    },
+    {
+      "path": "results/sikh291/staging-observations.json",
+      "sha256": "9c24e8d2adac22fbba2780202ddcb875816286821de5f8a4447e50cd7f1a6e70"
+    },
+    {
+      "path": "results/sikh291/metrics.json",
+      "sha256": "a2cff5ecb002900177e1b5252cbaba27a70b831a4415ccb373dadace3a65ccb2"
+    },
+    {
+      "path": ".runtime/art-direction/series01-sikh291/movie-03/sikh-staging-22s.mp4",
+      "sha256": "386e302eefe74047635b1d9b72d0d238223db8d432a7f1ee3819a67a0eb105ca"
+    }
+  ],
+  "technical": {
+    "native_receipt_count": 10,
+    "successful_exit_count": 8,
+    "failed_or_cancelled_exit_count": 2,
+    "native_process_seconds": 1684.6578042530455,
+    "native_time_definition": "Monotonic worker elapsed includes setup/save/render, not only render wait; jobs sequential.",
+    "net_work_seconds": null,
+    "director_wait_seconds": null,
+    "render_wait_seconds": null,
+    "engineering_tokens": null,
+    "reason": "No precise cognitive-effort allocation or token telemetry; partial initial ledger capture. Do not add worker time to activity span.",
+    "contact_trace_maxima_m": {
+      "front_center_x": 4.880130290985107e-07,
+      "front_ground_gap": 5.960464477539063e-08,
+      "rear_ground_gap": 0.0,
+      "greeting_support_boot_max": 0.004999998956918716
+    },
+    "component_ownership_checks": "PASS: fixed fork/shocks, removed parked stands and old saddle springs",
+    "sampled_reopen_pixels": [
+      {
+        "frame": 1,
+        "maximum_channel_difference": 0,
+        "mean_channel_difference": 0.0
+      },
+      {
+        "frame": 41,
+        "maximum_channel_difference": 0,
+        "mean_channel_difference": 0.0
+      },
+      {
+        "frame": 179,
+        "maximum_channel_difference": 0,
+        "mean_channel_difference": 0.0
+      },
+      {
+        "frame": 213,
+        "maximum_channel_difference": 0,
+        "mean_channel_difference": 0.0
+      },
+      {
+        "frame": 315,
+        "maximum_channel_difference": 0,
+        "mean_channel_difference": 0.0
+      },
+      {
+        "frame": 445,
+        "maximum_channel_difference": 0,
+        "mean_channel_difference": 0.0
+      },
+      {
+        "frame": 505,
+        "maximum_channel_difference": 0,
+        "mean_channel_difference": 0.0
+      }
+    ],
+    "external_provider_calls": 0,
+    "aws_launches": 0,
+    "new_media_remote_backed_up": false
+  }
+}
