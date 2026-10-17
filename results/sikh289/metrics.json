@@ -1,0 +1,43 @@
+{
+  "native_receipt_count": 20,
+  "successful_exit_count": 13,
+  "failed_or_cancelled_exit_count": 7,
+  "native_process_seconds": 1017.6671715402044,
+  "source": "same-process monotonic elapsed in per-job receipts; includes setup/save/render, not only render waiting",
+  "exact_net_work_seconds": null,
+  "director_wait_seconds": null,
+  "render_wait_seconds": null,
+  "engineering_tokens": null,
+  "reason": "Early context/capture gap and unmatched work interval across download reply; process overlap not added to agent effort.",
+  "contact_trace_maxima_m": {
+    "front_center_x": 6.966292858123779e-07,
+    "front_ground_gap": 5.960464477539063e-08,
+    "rear_ground_gap": 0.0,
+    "greeting_support_boot_max": 0.004999998956918716
+  },
+  "sampled_reopen_pixels": [
+    {
+      "frame": 1,
+      "maximum_channel_difference": 0,
+      "mean_channel_difference": 0.0
+    },
+    {
+      "frame": 169,
+      "maximum_channel_difference": 0,
+      "mean_channel_difference": 0.0
+    },
+    {
+      "frame": 199,
+      "maximum_channel_difference": 0,
+      "mean_channel_difference": 0.0
+    },
+    {
+      "frame": 271,
+      "maximum_channel_difference": 0,
+      "mean_channel_difference": 0.0
+    }
+  ],
+  "external_provider_calls_this_pass": 0,
+  "aws_launches_this_pass": 0,
+  "new_media_remote_backed_up": false
+}
