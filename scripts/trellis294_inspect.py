@@ -46,10 +46,13 @@ def worker(job):
     scene.render.resolution_x=384;scene.render.resolution_y=384;scene.render.resolution_percentage=100
     scene.view_settings.view_transform='Standard';scene.view_settings.look='None';scene.view_settings.exposure=0;scene.view_settings.gamma=1
     scene.render.image_settings.file_format='PNG';scene.render.filepath=str(OUT/'uv-diagnostic.png');bpy.ops.render.render(write_still=True)
-def main():
+def main(packet_loader=None, worker_path=None):
     OUT.mkdir(parents=True,exist_ok=True)
-    import trellis294_cloud as c
-    c.configure();packet=c.packet()
+    if packet_loader is None:
+        import trellis294_cloud as c
+        c.configure();c.packet()
+    else:
+        packet_loader()
     task=json.loads((RECORD/'task.json').read_text());task['inputs'][str(Path(__file__).relative_to(ROOT))]=sha(Path(__file__))
     for p in SOURCE.glob('*'):
         if p.is_file():task['inputs'][str(p.relative_to(ROOT))]=sha(p)
@@ -62,7 +65,7 @@ def main():
         for op in ('inspect','reopen'):
             start=time.monotonic()
             with (OUT/(name+'-'+op+'.log')).open('w') as log:
-                result=subprocess.run(['/Applications/Blender.app/Contents/MacOS/Blender','--background','--offline-mode','--factory-startup','--disable-autoexec','--python-exit-code','7','--python',str(Path(__file__).resolve()),'--',json.dumps({'operation':op,'fixture':name})],env=env,stdout=log,stderr=subprocess.STDOUT)
+                result=subprocess.run(['/Applications/Blender.app/Contents/MacOS/Blender','--background','--offline-mode','--factory-startup','--disable-autoexec','--python-exit-code','7','--python',str(worker_path or Path(__file__).resolve()),'--',json.dumps({'operation':op,'fixture':name})],env=env,stdout=log,stderr=subprocess.STDOUT)
             timings.append({'fixture':name,'operation':op,'seconds':time.monotonic()-start,'returncode':result.returncode});assert result.returncode==0
     from PIL import Image
     im=Image.open(OUT/'uv-diagnostic.png');expected={(112,112):(0,255,51),(272,112):(255,255,51),(112,272):(0,0,51),(272,272):(255,0,51)}

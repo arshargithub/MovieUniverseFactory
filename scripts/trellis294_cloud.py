@@ -36,9 +36,9 @@ def packet():
     (c.OUT/'packet.md').write_text(pk.packet_markdown(p))
     if not p['dispatch_ready']:raise RuntimeError(p['blockers'])
     return p
-def prepare():
+def prepare(reservation_usd=5):
     assert not c.state();c.LOCAL.mkdir(parents=True,exist_ok=True)
-    packet();aggregate(add=5)
+    packet();aggregate(add=reservation_usd)
     identity=aws('sts','get-caller-identity');assert identity['Account']==c.ACCOUNT
     quota=aws('service-quotas','get-service-quota','--service-code','ec2','--quota-code','L-DB2E81BA')['Quota'];assert quota['Value']>=8
     prices=aws('pricing','get-products','--service-code','AmazonEC2','--filters',
@@ -61,16 +61,16 @@ def prepare():
     watchdog=(c.ROOT/'scripts/trellis293_watchdog.py').read_text().replace('trellis293-synthetic',c.JOB).replace('ca-central-1',REGION)
     with zipfile.ZipFile(c.LOCAL/'watchdog.zip','w') as z:z.writestr('watchdog.py',watchdog)
     c.dump(c.OUT/'preflight.json',{'identity':identity,'quota':quota,'price':product['terms']['OnDemand'],'image':image,'subnet':subnet,
-        'payload_sha256':c.sha(source),'payload_files':len(manifest),'watchdog_sha256':c.sha(c.LOCAL/'watchdog.zip'),'aggregate':aggregate(add=5)})
+        'payload_sha256':c.sha(source),'payload_files':len(manifest),'watchdog_sha256':c.sha(c.LOCAL/'watchdog.zip'),'aggregate':aggregate(add=reservation_usd)})
     c.save('prepared',True);c.save('rate',rates[0]);c.save('payload_sha256',c.sha(source));print('Prepared, no cloud mutations')
 def guards():
     aggregate(add=5);c.guards(amount_usd=5,run_id='trellis294');c.dump(c.OUT/'aggregate-reserved.json',aggregate())
-def launch(zone='us-east-1a'):
+def launch(zone='us-east-1a',reserved_usd=5,client_token='trellis294-one-worker'):
     s=c.state();assert s.get('guard_verified') and not s.get('instance') and not s.get('worker_created')
-    assert ledger().summary()['reserved_unknown_usd']==5;aggregate();packet()
+    assert ledger().summary()['reserved_unknown_usd']>=reserved_usd;aggregate();packet()
     rows=aws('ec2','describe-instances','--filters',c.j([{'Name':'tag:MovieFactoryJob','Values':[c.JOB]}]))['Reservations']
     assert not rows,'Any prior worker, including terminated, consumes this attempt'
-    token='trellis294-one-worker'
+    token=client_token
     assert not aws('ec2','describe-instances','--filters',c.j([{'Name':'client-token','Values':[token]}]))['Reservations']
     assert aws('events','describe-rule','--name',c.GUARD)['State']=='ENABLED'
     assert aws('events','list-targets-by-rule','--rule',c.GUARD)['Targets'][0]['Arn']==s['function']
