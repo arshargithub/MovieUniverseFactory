@@ -4,6 +4,10 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+### Exchange289 — actual motorcycle and independent Sikh staging study
+
+Director authorizes the staging/motion study while the separate TRELLIS GPU prerequisite is pending, then explicitly rejects the bike stand-in and supplies the Royal Enfield GLB. [Strategy](../../results/sikh289/STRATEGY.md), [source credit](../../results/sikh289/ATTRIBUTION.md) and [review/carry-forward](../../results/sikh289/REVIEW.md) preserve that boundary: actual bike, deliberately provisional people, silent action before music, no Sikh foundation or final production admission. The pending manual motorcycle download is resolved. Reuse the mechanical part map and motion strategy; do not carry proxy hands, face cloth, horse dynamics or rough night surfaces forward as qualified production assets. Counter289; next checkpoint290. No paid calls, GPU launch, push or S3 backup; new native media remains local. Exact active/wait time is unknown because early capture spans a prompt gap; native process receipts are separate evidence.
+
 ### Exchange288 — local TRELLIS adapter tested and Canada selected
 
 [Local qualification](../../results/sikh288/README.md) implements the permissive exporter/prepared-alpha adapter,26 synthetic tests and independent Blender import/reopen/UV checks. Director approves US$15 total synthetic AWS qualification and isolated installations. Canada Central24GB L4 is selected; GPU quota is zero and AWS has opened the increase case. No paid worker or protagonist trial launched. Full CUDA exporter and inference/license closure remain blocked; continue the authorized qualification after infrastructure admission, not another character polish loop. Counter288; next290; no release gate advances. Local implementation and design commits remain separate; no remote push or new S3 backup.
