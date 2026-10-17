@@ -1,0 +1,741 @@
+{
+  "packet_digest": "cdd2349edc1737ea3b19f52b9e611ae46bff07d64863ee65eb0b244fdfd02a41",
+  "checks": [
+    {
+      "id": "authority",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Applied approved synthetic-only scope, exact source payload, private resource controls, budget reservation and teardown; retained all unrun production gates.",
+      "observation": "Scoped process evidence is recorded; no production acceptance.",
+      "evidence": [
+        {
+          "path": "results/trellis293/STRATEGY.md",
+          "sha256": "452b780c9d262b38311187f0ae8a7f55352cb880459a8d5742c8c034b341510d"
+        },
+        {
+          "path": "results/trellis293/README.md",
+          "sha256": "ba83e69b86ac28116e1405b5677defd3a0d60a4455a9049dc50feb0fea7e0e76"
+        },
+        {
+          "path": "results/trellis293/preflight.json",
+          "sha256": "e1fe136ef6f3e2243bc742fdf6f551046a7e794e35deae83205fdbc5f2c70f1c"
+        },
+        {
+          "path": "results/trellis293/guard-test.json",
+          "sha256": "3127d0246fff1b4e74494e7d3ce6783fae89b844cf925ac0d2876216fc8ff7ea"
+        },
+        {
+          "path": "results/trellis293/teardown-verification.json",
+          "sha256": "8efd73d82d53fadcf1bffb72fd16ebf1f8b21082379f65b7ba757d0d3c42f33b"
+        },
+        {
+          "path": "results/trellis293/tests.xml",
+          "sha256": "87c6568a39ce03357ce3c7939e3c642ef12ab7826cf5d1620264770b85f24583"
+        }
+      ]
+    },
+    {
+      "id": "strategy",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Applied approved synthetic-only scope, exact source payload, private resource controls, budget reservation and teardown; retained all unrun production gates.",
+      "observation": "Scoped process evidence is recorded; no production acceptance.",
+      "evidence": [
+        {
+          "path": "results/trellis293/STRATEGY.md",
+          "sha256": "452b780c9d262b38311187f0ae8a7f55352cb880459a8d5742c8c034b341510d"
+        },
+        {
+          "path": "results/trellis293/README.md",
+          "sha256": "ba83e69b86ac28116e1405b5677defd3a0d60a4455a9049dc50feb0fea7e0e76"
+        },
+        {
+          "path": "results/trellis293/preflight.json",
+          "sha256": "e1fe136ef6f3e2243bc742fdf6f551046a7e794e35deae83205fdbc5f2c70f1c"
+        },
+        {
+          "path": "results/trellis293/guard-test.json",
+          "sha256": "3127d0246fff1b4e74494e7d3ce6783fae89b844cf925ac0d2876216fc8ff7ea"
+        },
+        {
+          "path": "results/trellis293/teardown-verification.json",
+          "sha256": "8efd73d82d53fadcf1bffb72fd16ebf1f8b21082379f65b7ba757d0d3c42f33b"
+        },
+        {
+          "path": "results/trellis293/tests.xml",
+          "sha256": "87c6568a39ce03357ce3c7939e3c642ef12ab7826cf5d1620264770b85f24583"
+        }
+      ]
+    },
+    {
+      "id": "visual_gate",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Applied approved synthetic-only scope, exact source payload, private resource controls, budget reservation and teardown; retained all unrun production gates.",
+      "observation": "GPU execution blocked by regional capacity. No new asset, performance, full runtime rights or production quality claim.",
+      "evidence": [
+        {
+          "path": "results/trellis293/STRATEGY.md",
+          "sha256": "452b780c9d262b38311187f0ae8a7f55352cb880459a8d5742c8c034b341510d"
+        },
+        {
+          "path": "results/trellis293/README.md",
+          "sha256": "ba83e69b86ac28116e1405b5677defd3a0d60a4455a9049dc50feb0fea7e0e76"
+        },
+        {
+          "path": "results/trellis293/preflight.json",
+          "sha256": "e1fe136ef6f3e2243bc742fdf6f551046a7e794e35deae83205fdbc5f2c70f1c"
+        },
+        {
+          "path": "results/trellis293/guard-test.json",
+          "sha256": "3127d0246fff1b4e74494e7d3ce6783fae89b844cf925ac0d2876216fc8ff7ea"
+        },
+        {
+          "path": "results/trellis293/teardown-verification.json",
+          "sha256": "8efd73d82d53fadcf1bffb72fd16ebf1f8b21082379f65b7ba757d0d3c42f33b"
+        },
+        {
+          "path": "results/trellis293/tests.xml",
+          "sha256": "87c6568a39ce03357ce3c7939e3c642ef12ab7826cf5d1620264770b85f24583"
+        }
+      ]
+    },
+    {
+      "id": "anticipation",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Applied approved synthetic-only scope, exact source payload, private resource controls, budget reservation and teardown; retained all unrun production gates.",
+      "observation": "GPU execution blocked by regional capacity. No new asset, performance, full runtime rights or production quality claim.",
+      "evidence": [
+        {
+          "path": "results/trellis293/STRATEGY.md",
+          "sha256": "452b780c9d262b38311187f0ae8a7f55352cb880459a8d5742c8c034b341510d"
+        },
+        {
+          "path": "results/trellis293/README.md",
+          "sha256": "ba83e69b86ac28116e1405b5677defd3a0d60a4455a9049dc50feb0fea7e0e76"
+        },
+        {
+          "path": "results/trellis293/preflight.json",
+          "sha256": "e1fe136ef6f3e2243bc742fdf6f551046a7e794e35deae83205fdbc5f2c70f1c"
+        },
+        {
+          "path": "results/trellis293/guard-test.json",
+          "sha256": "3127d0246fff1b4e74494e7d3ce6783fae89b844cf925ac0d2876216fc8ff7ea"
+        },
+        {
+          "path": "results/trellis293/teardown-verification.json",
+          "sha256": "8efd73d82d53fadcf1bffb72fd16ebf1f8b21082379f65b7ba757d0d3c42f33b"
+        },
+        {
+          "path": "results/trellis293/tests.xml",
+          "sha256": "87c6568a39ce03357ce3c7939e3c642ef12ab7826cf5d1620264770b85f24583"
+        }
+      ]
+    },
+    {
+      "id": "stopping",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Applied approved synthetic-only scope, exact source payload, private resource controls, budget reservation and teardown; retained all unrun production gates.",
+      "observation": "GPU execution blocked by regional capacity. No new asset, performance, full runtime rights or production quality claim.",
+      "evidence": [
+        {
+          "path": "results/trellis293/STRATEGY.md",
+          "sha256": "452b780c9d262b38311187f0ae8a7f55352cb880459a8d5742c8c034b341510d"
+        },
+        {
+          "path": "results/trellis293/README.md",
+          "sha256": "ba83e69b86ac28116e1405b5677defd3a0d60a4455a9049dc50feb0fea7e0e76"
+        },
+        {
+          "path": "results/trellis293/preflight.json",
+          "sha256": "e1fe136ef6f3e2243bc742fdf6f551046a7e794e35deae83205fdbc5f2c70f1c"
+        },
+        {
+          "path": "results/trellis293/guard-test.json",
+          "sha256": "3127d0246fff1b4e74494e7d3ce6783fae89b844cf925ac0d2876216fc8ff7ea"
+        },
+        {
+          "path": "results/trellis293/teardown-verification.json",
+          "sha256": "8efd73d82d53fadcf1bffb72fd16ebf1f8b21082379f65b7ba757d0d3c42f33b"
+        },
+        {
+          "path": "results/trellis293/tests.xml",
+          "sha256": "87c6568a39ce03357ce3c7939e3c642ef12ab7826cf5d1620264770b85f24583"
+        }
+      ]
+    },
+    {
+      "id": "versioning",
+      "kind": "technical",
+      "status": "PASS",
+      "action_taken": "Applied approved synthetic-only scope, exact source payload, private resource controls, budget reservation and teardown; retained all unrun production gates.",
+      "observation": "Scoped process evidence is recorded; no production acceptance.",
+      "evidence": [
+        {
+          "path": "results/trellis293/STRATEGY.md",
+          "sha256": "452b780c9d262b38311187f0ae8a7f55352cb880459a8d5742c8c034b341510d"
+        },
+        {
+          "path": "results/trellis293/README.md",
+          "sha256": "ba83e69b86ac28116e1405b5677defd3a0d60a4455a9049dc50feb0fea7e0e76"
+        },
+        {
+          "path": "results/trellis293/preflight.json",
+          "sha256": "e1fe136ef6f3e2243bc742fdf6f551046a7e794e35deae83205fdbc5f2c70f1c"
+        },
+        {
+          "path": "results/trellis293/guard-test.json",
+          "sha256": "3127d0246fff1b4e74494e7d3ce6783fae89b844cf925ac0d2876216fc8ff7ea"
+        },
+        {
+          "path": "results/trellis293/teardown-verification.json",
+          "sha256": "8efd73d82d53fadcf1bffb72fd16ebf1f8b21082379f65b7ba757d0d3c42f33b"
+        },
+        {
+          "path": "results/trellis293/tests.xml",
+          "sha256": "87c6568a39ce03357ce3c7939e3c642ef12ab7826cf5d1620264770b85f24583"
+        }
+      ]
+    },
+    {
+      "id": "economics",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Applied approved synthetic-only scope, exact source payload, private resource controls, budget reservation and teardown; retained all unrun production gates.",
+      "observation": "Scoped process evidence is recorded; no production acceptance.",
+      "evidence": [
+        {
+          "path": "results/trellis293/STRATEGY.md",
+          "sha256": "452b780c9d262b38311187f0ae8a7f55352cb880459a8d5742c8c034b341510d"
+        },
+        {
+          "path": "results/trellis293/README.md",
+          "sha256": "ba83e69b86ac28116e1405b5677defd3a0d60a4455a9049dc50feb0fea7e0e76"
+        },
+        {
+          "path": "results/trellis293/preflight.json",
+          "sha256": "e1fe136ef6f3e2243bc742fdf6f551046a7e794e35deae83205fdbc5f2c70f1c"
+        },
+        {
+          "path": "results/trellis293/guard-test.json",
+          "sha256": "3127d0246fff1b4e74494e7d3ce6783fae89b844cf925ac0d2876216fc8ff7ea"
+        },
+        {
+          "path": "results/trellis293/teardown-verification.json",
+          "sha256": "8efd73d82d53fadcf1bffb72fd16ebf1f8b21082379f65b7ba757d0d3c42f33b"
+        },
+        {
+          "path": "results/trellis293/tests.xml",
+          "sha256": "87c6568a39ce03357ce3c7939e3c642ef12ab7826cf5d1620264770b85f24583"
+        }
+      ]
+    },
+    {
+      "id": "representation",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Applied approved synthetic-only scope, exact source payload, private resource controls, budget reservation and teardown; retained all unrun production gates.",
+      "observation": "GPU execution blocked by regional capacity. No new asset, performance, full runtime rights or production quality claim.",
+      "evidence": [
+        {
+          "path": "results/trellis293/STRATEGY.md",
+          "sha256": "452b780c9d262b38311187f0ae8a7f55352cb880459a8d5742c8c034b341510d"
+        },
+        {
+          "path": "results/trellis293/README.md",
+          "sha256": "ba83e69b86ac28116e1405b5677defd3a0d60a4455a9049dc50feb0fea7e0e76"
+        },
+        {
+          "path": "results/trellis293/preflight.json",
+          "sha256": "e1fe136ef6f3e2243bc742fdf6f551046a7e794e35deae83205fdbc5f2c70f1c"
+        },
+        {
+          "path": "results/trellis293/guard-test.json",
+          "sha256": "3127d0246fff1b4e74494e7d3ce6783fae89b844cf925ac0d2876216fc8ff7ea"
+        },
+        {
+          "path": "results/trellis293/teardown-verification.json",
+          "sha256": "8efd73d82d53fadcf1bffb72fd16ebf1f8b21082379f65b7ba757d0d3c42f33b"
+        },
+        {
+          "path": "results/trellis293/tests.xml",
+          "sha256": "87c6568a39ce03357ce3c7939e3c642ef12ab7826cf5d1620264770b85f24583"
+        }
+      ]
+    },
+    {
+      "id": "anatomy",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Applied approved synthetic-only scope, exact source payload, private resource controls, budget reservation and teardown; retained all unrun production gates.",
+      "observation": "GPU execution blocked by regional capacity. No new asset, performance, full runtime rights or production quality claim.",
+      "evidence": [
+        {
+          "path": "results/trellis293/STRATEGY.md",
+          "sha256": "452b780c9d262b38311187f0ae8a7f55352cb880459a8d5742c8c034b341510d"
+        },
+        {
+          "path": "results/trellis293/README.md",
+          "sha256": "ba83e69b86ac28116e1405b5677defd3a0d60a4455a9049dc50feb0fea7e0e76"
+        },
+        {
+          "path": "results/trellis293/preflight.json",
+          "sha256": "e1fe136ef6f3e2243bc742fdf6f551046a7e794e35deae83205fdbc5f2c70f1c"
+        },
+        {
+          "path": "results/trellis293/guard-test.json",
+          "sha256": "3127d0246fff1b4e74494e7d3ce6783fae89b844cf925ac0d2876216fc8ff7ea"
+        },
+        {
+          "path": "results/trellis293/teardown-verification.json",
+          "sha256": "8efd73d82d53fadcf1bffb72fd16ebf1f8b21082379f65b7ba757d0d3c42f33b"
+        },
+        {
+          "path": "results/trellis293/tests.xml",
+          "sha256": "87c6568a39ce03357ce3c7939e3c642ef12ab7826cf5d1620264770b85f24583"
+        }
+      ]
+    },
+    {
+      "id": "motion",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Applied approved synthetic-only scope, exact source payload, private resource controls, budget reservation and teardown; retained all unrun production gates.",
+      "observation": "GPU execution blocked by regional capacity. No new asset, performance, full runtime rights or production quality claim.",
+      "evidence": [
+        {
+          "path": "results/trellis293/STRATEGY.md",
+          "sha256": "452b780c9d262b38311187f0ae8a7f55352cb880459a8d5742c8c034b341510d"
+        },
+        {
+          "path": "results/trellis293/README.md",
+          "sha256": "ba83e69b86ac28116e1405b5677defd3a0d60a4455a9049dc50feb0fea7e0e76"
+        },
+        {
+          "path": "results/trellis293/preflight.json",
+          "sha256": "e1fe136ef6f3e2243bc742fdf6f551046a7e794e35deae83205fdbc5f2c70f1c"
+        },
+        {
+          "path": "results/trellis293/guard-test.json",
+          "sha256": "3127d0246fff1b4e74494e7d3ce6783fae89b844cf925ac0d2876216fc8ff7ea"
+        },
+        {
+          "path": "results/trellis293/teardown-verification.json",
+          "sha256": "8efd73d82d53fadcf1bffb72fd16ebf1f8b21082379f65b7ba757d0d3c42f33b"
+        },
+        {
+          "path": "results/trellis293/tests.xml",
+          "sha256": "87c6568a39ce03357ce3c7939e3c642ef12ab7826cf5d1620264770b85f24583"
+        }
+      ]
+    },
+    {
+      "id": "secondary",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Applied approved synthetic-only scope, exact source payload, private resource controls, budget reservation and teardown; retained all unrun production gates.",
+      "observation": "GPU execution blocked by regional capacity. No new asset, performance, full runtime rights or production quality claim.",
+      "evidence": [
+        {
+          "path": "results/trellis293/STRATEGY.md",
+          "sha256": "452b780c9d262b38311187f0ae8a7f55352cb880459a8d5742c8c034b341510d"
+        },
+        {
+          "path": "results/trellis293/README.md",
+          "sha256": "ba83e69b86ac28116e1405b5677defd3a0d60a4455a9049dc50feb0fea7e0e76"
+        },
+        {
+          "path": "results/trellis293/preflight.json",
+          "sha256": "e1fe136ef6f3e2243bc742fdf6f551046a7e794e35deae83205fdbc5f2c70f1c"
+        },
+        {
+          "path": "results/trellis293/guard-test.json",
+          "sha256": "3127d0246fff1b4e74494e7d3ce6783fae89b844cf925ac0d2876216fc8ff7ea"
+        },
+        {
+          "path": "results/trellis293/teardown-verification.json",
+          "sha256": "8efd73d82d53fadcf1bffb72fd16ebf1f8b21082379f65b7ba757d0d3c42f33b"
+        },
+        {
+          "path": "results/trellis293/tests.xml",
+          "sha256": "87c6568a39ce03357ce3c7939e3c642ef12ab7826cf5d1620264770b85f24583"
+        }
+      ]
+    },
+    {
+      "id": "look",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Applied approved synthetic-only scope, exact source payload, private resource controls, budget reservation and teardown; retained all unrun production gates.",
+      "observation": "GPU execution blocked by regional capacity. No new asset, performance, full runtime rights or production quality claim.",
+      "evidence": [
+        {
+          "path": "results/trellis293/STRATEGY.md",
+          "sha256": "452b780c9d262b38311187f0ae8a7f55352cb880459a8d5742c8c034b341510d"
+        },
+        {
+          "path": "results/trellis293/README.md",
+          "sha256": "ba83e69b86ac28116e1405b5677defd3a0d60a4455a9049dc50feb0fea7e0e76"
+        },
+        {
+          "path": "results/trellis293/preflight.json",
+          "sha256": "e1fe136ef6f3e2243bc742fdf6f551046a7e794e35deae83205fdbc5f2c70f1c"
+        },
+        {
+          "path": "results/trellis293/guard-test.json",
+          "sha256": "3127d0246fff1b4e74494e7d3ce6783fae89b844cf925ac0d2876216fc8ff7ea"
+        },
+        {
+          "path": "results/trellis293/teardown-verification.json",
+          "sha256": "8efd73d82d53fadcf1bffb72fd16ebf1f8b21082379f65b7ba757d0d3c42f33b"
+        },
+        {
+          "path": "results/trellis293/tests.xml",
+          "sha256": "87c6568a39ce03357ce3c7939e3c642ef12ab7826cf5d1620264770b85f24583"
+        }
+      ]
+    },
+    {
+      "id": "rights",
+      "kind": "process",
+      "status": "NOT_RUN",
+      "action_taken": "Applied approved synthetic-only scope, exact source payload, private resource controls, budget reservation and teardown; retained all unrun production gates.",
+      "observation": "GPU execution blocked by regional capacity. No new asset, performance, full runtime rights or production quality claim.",
+      "evidence": [
+        {
+          "path": "results/trellis293/STRATEGY.md",
+          "sha256": "452b780c9d262b38311187f0ae8a7f55352cb880459a8d5742c8c034b341510d"
+        },
+        {
+          "path": "results/trellis293/README.md",
+          "sha256": "ba83e69b86ac28116e1405b5677defd3a0d60a4455a9049dc50feb0fea7e0e76"
+        },
+        {
+          "path": "results/trellis293/preflight.json",
+          "sha256": "e1fe136ef6f3e2243bc742fdf6f551046a7e794e35deae83205fdbc5f2c70f1c"
+        },
+        {
+          "path": "results/trellis293/guard-test.json",
+          "sha256": "3127d0246fff1b4e74494e7d3ce6783fae89b844cf925ac0d2876216fc8ff7ea"
+        },
+        {
+          "path": "results/trellis293/teardown-verification.json",
+          "sha256": "8efd73d82d53fadcf1bffb72fd16ebf1f8b21082379f65b7ba757d0d3c42f33b"
+        },
+        {
+          "path": "results/trellis293/tests.xml",
+          "sha256": "87c6568a39ce03357ce3c7939e3c642ef12ab7826cf5d1620264770b85f24583"
+        }
+      ]
+    },
+    {
+      "id": "current_state",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Applied approved synthetic-only scope, exact source payload, private resource controls, budget reservation and teardown; retained all unrun production gates.",
+      "observation": "Scoped process evidence is recorded; no production acceptance.",
+      "evidence": [
+        {
+          "path": "results/trellis293/STRATEGY.md",
+          "sha256": "452b780c9d262b38311187f0ae8a7f55352cb880459a8d5742c8c034b341510d"
+        },
+        {
+          "path": "results/trellis293/README.md",
+          "sha256": "ba83e69b86ac28116e1405b5677defd3a0d60a4455a9049dc50feb0fea7e0e76"
+        },
+        {
+          "path": "results/trellis293/preflight.json",
+          "sha256": "e1fe136ef6f3e2243bc742fdf6f551046a7e794e35deae83205fdbc5f2c70f1c"
+        },
+        {
+          "path": "results/trellis293/guard-test.json",
+          "sha256": "3127d0246fff1b4e74494e7d3ce6783fae89b844cf925ac0d2876216fc8ff7ea"
+        },
+        {
+          "path": "results/trellis293/teardown-verification.json",
+          "sha256": "8efd73d82d53fadcf1bffb72fd16ebf1f8b21082379f65b7ba757d0d3c42f33b"
+        },
+        {
+          "path": "results/trellis293/tests.xml",
+          "sha256": "87c6568a39ce03357ce3c7939e3c642ef12ab7826cf5d1620264770b85f24583"
+        }
+      ]
+    },
+    {
+      "id": "au_reference",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Applied approved synthetic-only scope, exact source payload, private resource controls, budget reservation and teardown; retained all unrun production gates.",
+      "observation": "GPU execution blocked by regional capacity. No new asset, performance, full runtime rights or production quality claim.",
+      "evidence": [
+        {
+          "path": "results/trellis293/STRATEGY.md",
+          "sha256": "452b780c9d262b38311187f0ae8a7f55352cb880459a8d5742c8c034b341510d"
+        },
+        {
+          "path": "results/trellis293/README.md",
+          "sha256": "ba83e69b86ac28116e1405b5677defd3a0d60a4455a9049dc50feb0fea7e0e76"
+        },
+        {
+          "path": "results/trellis293/preflight.json",
+          "sha256": "e1fe136ef6f3e2243bc742fdf6f551046a7e794e35deae83205fdbc5f2c70f1c"
+        },
+        {
+          "path": "results/trellis293/guard-test.json",
+          "sha256": "3127d0246fff1b4e74494e7d3ce6783fae89b844cf925ac0d2876216fc8ff7ea"
+        },
+        {
+          "path": "results/trellis293/teardown-verification.json",
+          "sha256": "8efd73d82d53fadcf1bffb72fd16ebf1f8b21082379f65b7ba757d0d3c42f33b"
+        },
+        {
+          "path": "results/trellis293/tests.xml",
+          "sha256": "87c6568a39ce03357ce3c7939e3c642ef12ab7826cf5d1620264770b85f24583"
+        }
+      ]
+    },
+    {
+      "id": "au_deformation",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Applied approved synthetic-only scope, exact source payload, private resource controls, budget reservation and teardown; retained all unrun production gates.",
+      "observation": "GPU execution blocked by regional capacity. No new asset, performance, full runtime rights or production quality claim.",
+      "evidence": [
+        {
+          "path": "results/trellis293/STRATEGY.md",
+          "sha256": "452b780c9d262b38311187f0ae8a7f55352cb880459a8d5742c8c034b341510d"
+        },
+        {
+          "path": "results/trellis293/README.md",
+          "sha256": "ba83e69b86ac28116e1405b5677defd3a0d60a4455a9049dc50feb0fea7e0e76"
+        },
+        {
+          "path": "results/trellis293/preflight.json",
+          "sha256": "e1fe136ef6f3e2243bc742fdf6f551046a7e794e35deae83205fdbc5f2c70f1c"
+        },
+        {
+          "path": "results/trellis293/guard-test.json",
+          "sha256": "3127d0246fff1b4e74494e7d3ce6783fae89b844cf925ac0d2876216fc8ff7ea"
+        },
+        {
+          "path": "results/trellis293/teardown-verification.json",
+          "sha256": "8efd73d82d53fadcf1bffb72fd16ebf1f8b21082379f65b7ba757d0d3c42f33b"
+        },
+        {
+          "path": "results/trellis293/tests.xml",
+          "sha256": "87c6568a39ce03357ce3c7939e3c642ef12ab7826cf5d1620264770b85f24583"
+        }
+      ]
+    },
+    {
+      "id": "au_performance",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Applied approved synthetic-only scope, exact source payload, private resource controls, budget reservation and teardown; retained all unrun production gates.",
+      "observation": "GPU execution blocked by regional capacity. No new asset, performance, full runtime rights or production quality claim.",
+      "evidence": [
+        {
+          "path": "results/trellis293/STRATEGY.md",
+          "sha256": "452b780c9d262b38311187f0ae8a7f55352cb880459a8d5742c8c034b341510d"
+        },
+        {
+          "path": "results/trellis293/README.md",
+          "sha256": "ba83e69b86ac28116e1405b5677defd3a0d60a4455a9049dc50feb0fea7e0e76"
+        },
+        {
+          "path": "results/trellis293/preflight.json",
+          "sha256": "e1fe136ef6f3e2243bc742fdf6f551046a7e794e35deae83205fdbc5f2c70f1c"
+        },
+        {
+          "path": "results/trellis293/guard-test.json",
+          "sha256": "3127d0246fff1b4e74494e7d3ce6783fae89b844cf925ac0d2876216fc8ff7ea"
+        },
+        {
+          "path": "results/trellis293/teardown-verification.json",
+          "sha256": "8efd73d82d53fadcf1bffb72fd16ebf1f8b21082379f65b7ba757d0d3c42f33b"
+        },
+        {
+          "path": "results/trellis293/tests.xml",
+          "sha256": "87c6568a39ce03357ce3c7939e3c642ef12ab7826cf5d1620264770b85f24583"
+        }
+      ]
+    },
+    {
+      "id": "au_contact",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Applied approved synthetic-only scope, exact source payload, private resource controls, budget reservation and teardown; retained all unrun production gates.",
+      "observation": "GPU execution blocked by regional capacity. No new asset, performance, full runtime rights or production quality claim.",
+      "evidence": [
+        {
+          "path": "results/trellis293/STRATEGY.md",
+          "sha256": "452b780c9d262b38311187f0ae8a7f55352cb880459a8d5742c8c034b341510d"
+        },
+        {
+          "path": "results/trellis293/README.md",
+          "sha256": "ba83e69b86ac28116e1405b5677defd3a0d60a4455a9049dc50feb0fea7e0e76"
+        },
+        {
+          "path": "results/trellis293/preflight.json",
+          "sha256": "e1fe136ef6f3e2243bc742fdf6f551046a7e794e35deae83205fdbc5f2c70f1c"
+        },
+        {
+          "path": "results/trellis293/guard-test.json",
+          "sha256": "3127d0246fff1b4e74494e7d3ce6783fae89b844cf925ac0d2876216fc8ff7ea"
+        },
+        {
+          "path": "results/trellis293/teardown-verification.json",
+          "sha256": "8efd73d82d53fadcf1bffb72fd16ebf1f8b21082379f65b7ba757d0d3c42f33b"
+        },
+        {
+          "path": "results/trellis293/tests.xml",
+          "sha256": "87c6568a39ce03357ce3c7939e3c642ef12ab7826cf5d1620264770b85f24583"
+        }
+      ]
+    },
+    {
+      "id": "au_surface",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Applied approved synthetic-only scope, exact source payload, private resource controls, budget reservation and teardown; retained all unrun production gates.",
+      "observation": "GPU execution blocked by regional capacity. No new asset, performance, full runtime rights or production quality claim.",
+      "evidence": [
+        {
+          "path": "results/trellis293/STRATEGY.md",
+          "sha256": "452b780c9d262b38311187f0ae8a7f55352cb880459a8d5742c8c034b341510d"
+        },
+        {
+          "path": "results/trellis293/README.md",
+          "sha256": "ba83e69b86ac28116e1405b5677defd3a0d60a4455a9049dc50feb0fea7e0e76"
+        },
+        {
+          "path": "results/trellis293/preflight.json",
+          "sha256": "e1fe136ef6f3e2243bc742fdf6f551046a7e794e35deae83205fdbc5f2c70f1c"
+        },
+        {
+          "path": "results/trellis293/guard-test.json",
+          "sha256": "3127d0246fff1b4e74494e7d3ce6783fae89b844cf925ac0d2876216fc8ff7ea"
+        },
+        {
+          "path": "results/trellis293/teardown-verification.json",
+          "sha256": "8efd73d82d53fadcf1bffb72fd16ebf1f8b21082379f65b7ba757d0d3c42f33b"
+        },
+        {
+          "path": "results/trellis293/tests.xml",
+          "sha256": "87c6568a39ce03357ce3c7939e3c642ef12ab7826cf5d1620264770b85f24583"
+        }
+      ]
+    },
+    {
+      "id": "sikh_scope",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Applied approved synthetic-only scope, exact source payload, private resource controls, budget reservation and teardown; retained all unrun production gates.",
+      "observation": "Scoped process evidence is recorded; no production acceptance.",
+      "evidence": [
+        {
+          "path": "results/trellis293/STRATEGY.md",
+          "sha256": "452b780c9d262b38311187f0ae8a7f55352cb880459a8d5742c8c034b341510d"
+        },
+        {
+          "path": "results/trellis293/README.md",
+          "sha256": "ba83e69b86ac28116e1405b5677defd3a0d60a4455a9049dc50feb0fea7e0e76"
+        },
+        {
+          "path": "results/trellis293/preflight.json",
+          "sha256": "e1fe136ef6f3e2243bc742fdf6f551046a7e794e35deae83205fdbc5f2c70f1c"
+        },
+        {
+          "path": "results/trellis293/guard-test.json",
+          "sha256": "3127d0246fff1b4e74494e7d3ce6783fae89b844cf925ac0d2876216fc8ff7ea"
+        },
+        {
+          "path": "results/trellis293/teardown-verification.json",
+          "sha256": "8efd73d82d53fadcf1bffb72fd16ebf1f8b21082379f65b7ba757d0d3c42f33b"
+        },
+        {
+          "path": "results/trellis293/tests.xml",
+          "sha256": "87c6568a39ce03357ce3c7939e3c642ef12ab7826cf5d1620264770b85f24583"
+        }
+      ]
+    },
+    {
+      "id": "sikh_cloth",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Applied approved synthetic-only scope, exact source payload, private resource controls, budget reservation and teardown; retained all unrun production gates.",
+      "observation": "GPU execution blocked by regional capacity. No new asset, performance, full runtime rights or production quality claim.",
+      "evidence": [
+        {
+          "path": "results/trellis293/STRATEGY.md",
+          "sha256": "452b780c9d262b38311187f0ae8a7f55352cb880459a8d5742c8c034b341510d"
+        },
+        {
+          "path": "results/trellis293/README.md",
+          "sha256": "ba83e69b86ac28116e1405b5677defd3a0d60a4455a9049dc50feb0fea7e0e76"
+        },
+        {
+          "path": "results/trellis293/preflight.json",
+          "sha256": "e1fe136ef6f3e2243bc742fdf6f551046a7e794e35deae83205fdbc5f2c70f1c"
+        },
+        {
+          "path": "results/trellis293/guard-test.json",
+          "sha256": "3127d0246fff1b4e74494e7d3ce6783fae89b844cf925ac0d2876216fc8ff7ea"
+        },
+        {
+          "path": "results/trellis293/teardown-verification.json",
+          "sha256": "8efd73d82d53fadcf1bffb72fd16ebf1f8b21082379f65b7ba757d0d3c42f33b"
+        },
+        {
+          "path": "results/trellis293/tests.xml",
+          "sha256": "87c6568a39ce03357ce3c7939e3c642ef12ab7826cf5d1620264770b85f24583"
+        }
+      ]
+    },
+    {
+      "id": "sikh_motion",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Applied approved synthetic-only scope, exact source payload, private resource controls, budget reservation and teardown; retained all unrun production gates.",
+      "observation": "GPU execution blocked by regional capacity. No new asset, performance, full runtime rights or production quality claim.",
+      "evidence": [
+        {
+          "path": "results/trellis293/STRATEGY.md",
+          "sha256": "452b780c9d262b38311187f0ae8a7f55352cb880459a8d5742c8c034b341510d"
+        },
+        {
+          "path": "results/trellis293/README.md",
+          "sha256": "ba83e69b86ac28116e1405b5677defd3a0d60a4455a9049dc50feb0fea7e0e76"
+        },
+        {
+          "path": "results/trellis293/preflight.json",
+          "sha256": "e1fe136ef6f3e2243bc742fdf6f551046a7e794e35deae83205fdbc5f2c70f1c"
+        },
+        {
+          "path": "results/trellis293/guard-test.json",
+          "sha256": "3127d0246fff1b4e74494e7d3ce6783fae89b844cf925ac0d2876216fc8ff7ea"
+        },
+        {
+          "path": "results/trellis293/teardown-verification.json",
+          "sha256": "8efd73d82d53fadcf1bffb72fd16ebf1f8b21082379f65b7ba757d0d3c42f33b"
+        },
+        {
+          "path": "results/trellis293/tests.xml",
+          "sha256": "87c6568a39ce03357ce3c7939e3c642ef12ab7826cf5d1620264770b85f24583"
+        }
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "prediction": "Quota approval may not ensure available hardware.",
+      "observation": "Live quota8; five type/zone requests rejected for capacity; no instance created.",
+      "response": "Preserve fixture package, stop retries, verify full support-resource teardown.",
+      "result": "resolved"
+    }
+  ],
+  "adjacent_regressions": "Production masters unchanged. No model images/weights or credentials uploaded. Temporary synthetic input removed after retaining local payload.",
+  "stopping_reason": "Genuine regional capacity blocker after all offered L4 and A10G zones; no US launch authority inferred. GPU qualification and production remain blocked."
+}

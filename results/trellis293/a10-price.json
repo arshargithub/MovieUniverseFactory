@@ -1,0 +1,67 @@
+{
+  "product": {
+    "productFamily": "Compute Instance",
+    "attributes": {
+      "enhancedNetworkingSupported": "Yes",
+      "intelTurboAvailable": "No",
+      "memory": "32 GiB",
+      "dedicatedEbsThroughput": "Up to 3500 Mbps",
+      "vcpu": "8",
+      "classicnetworkingsupport": "false",
+      "capacitystatus": "Used",
+      "locationType": "AWS Region",
+      "storage": "1 x 450 GB NVMe SSD",
+      "instanceFamily": "GPU instance",
+      "operatingSystem": "Linux",
+      "intelAvx2Available": "No",
+      "instanceFamilyCategory": "Accelerated Computing",
+      "regionCode": "ca-central-1",
+      "physicalProcessor": "AMD EPYC 7R32",
+      "clockSpeed": "2.8 GHz",
+      "ecu": "NA",
+      "networkPerformance": "Up to 10 Gigabit",
+      "servicename": "Amazon Elastic Compute Cloud",
+      "gpuMemory": "24 GB",
+      "dedicatedEbsThroughputDescription": "850 Mbps",
+      "vpcnetworkingsupport": "true",
+      "instanceType": "g5.2xlarge",
+      "tenancy": "Shared",
+      "usagetype": "CAN1-BoxUsage:g5.2xlarge",
+      "normalizationSizeFactor": "1.204771372",
+      "gpu": "1",
+      "intelAvxAvailable": "No",
+      "processorFeatures": "AMD Turbo; AVX; AVX2",
+      "servicecode": "AmazonEC2",
+      "licenseModel": "No License required",
+      "currentGeneration": "Yes",
+      "preInstalledSw": "NA",
+      "location": "Canada (Central)",
+      "processorArchitecture": "64-bit",
+      "marketoption": "OnDemand",
+      "operation": "RunInstances",
+      "availabilityzone": "NA"
+    },
+    "sku": "UAZRYUEBXTP3Z7U3"
+  },
+  "on_demand": {
+    "UAZRYUEBXTP3Z7U3.JRTCKXETXF": {
+      "priceDimensions": {
+        "UAZRYUEBXTP3Z7U3.JRTCKXETXF.6YS6EN2CT7": {
+          "unit": "Hrs",
+          "endRange": "Inf",
+          "description": "$1.34573 per On Demand Linux g5.2xlarge Instance Hour",
+          "appliesTo": [],
+          "rateCode": "UAZRYUEBXTP3Z7U3.JRTCKXETXF.6YS6EN2CT7",
+          "beginRange": "0",
+          "pricePerUnit": {
+            "USD": "1.3457300000"
+          }
+        }
+      },
+      "sku": "UAZRYUEBXTP3Z7U3",
+      "effectiveDate": "2026-10-01T00:00:00Z",
+      "offerTermCode": "JRTCKXETXF",
+      "termAttributes": {}
+    }
+  }
+}
