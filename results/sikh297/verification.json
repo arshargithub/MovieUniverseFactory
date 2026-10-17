@@ -1,0 +1,156 @@
+{
+  "sampled_reopen_pixels": [
+    {
+      "frame": 1,
+      "maximum_channel_difference": 0,
+      "mean_channel_difference": 0.0
+    },
+    {
+      "frame": 99,
+      "maximum_channel_difference": 1,
+      "mean_channel_difference": 4.238552517361111e-07
+    },
+    {
+      "frame": 215,
+      "maximum_channel_difference": 0,
+      "mean_channel_difference": 0.0
+    },
+    {
+      "frame": 300,
+      "maximum_channel_difference": 1,
+      "mean_channel_difference": 4.238552517361111e-07
+    },
+    {
+      "frame": 335,
+      "maximum_channel_difference": 1,
+      "mean_channel_difference": 4.238552517361111e-07
+    },
+    {
+      "frame": 435,
+      "maximum_channel_difference": 1,
+      "mean_channel_difference": 4.238552517361111e-07
+    }
+  ],
+  "strict_sampled_reopen_pass": true,
+  "protection": {
+    "frames": 528,
+    "protected_geometry_objects": 41,
+    "protected_transform_objects": 68,
+    "geometry_equal": true,
+    "all_frame_transforms_equal": true
+  },
+  "movie_source_snapshot_verified": true,
+  "pashtun_source_hash_unchanged": true,
+  "pashtun_native_rerendered": false,
+  "pashtun_reencode_ssim": "[Parsed_ssim_2 @ 0x92d2a6400] SSIM Y:0.987038 (18.873411) U:0.992878 (21.473900) V:0.993348 (21.770786) All:0.989063 (19.611144)",
+  "native_receipts": [
+    {
+      "job": "controls-1",
+      "returncode": -11,
+      "process_seconds": 0.827574874740094,
+      "packet_digest": "d89e9f78e906d26262fb62165ec55c91d34d4cb81ab43ff29ed178322274c89c",
+      "output": ".runtime/art-direction/series01-sikh297/controls-01"
+    },
+    {
+      "job": "movie-1",
+      "returncode": 0,
+      "process_seconds": 2152.7668043747544,
+      "packet_digest": "c38c5a2b161f10ab73574af0e4f3617ea8489686a29120a73e1645197d81dc3d",
+      "output": ".runtime/art-direction/series01-sikh297/movie-01"
+    },
+    {
+      "job": "controls-5",
+      "returncode": 0,
+      "process_seconds": 156.90219033323228,
+      "packet_digest": "21bd93747bc300625b71cc452392c3371d39173f280c70549d3789e9f11d70d2",
+      "output": ".runtime/art-direction/series01-sikh297/controls-05"
+    },
+    {
+      "job": "controls-2",
+      "returncode": 0,
+      "process_seconds": 60.3842431246303,
+      "packet_digest": "9e3828d24bf2885d0cac2cd8faca22ac3e8a2b8498d26d3e579d0e6359538322",
+      "output": ".runtime/art-direction/series01-sikh297/controls-02"
+    },
+    {
+      "job": "controls-3",
+      "returncode": 0,
+      "process_seconds": 80.91063287528232,
+      "packet_digest": "3741ca2fc230ca3e94cb296d770c79bfd64cdb873d40fb46ac6e8facbdead069",
+      "output": ".runtime/art-direction/series01-sikh297/controls-03"
+    },
+    {
+      "job": "controls-4",
+      "returncode": 0,
+      "process_seconds": 144.7430686247535,
+      "packet_digest": "b4067405c792a657705222ea82ceabb4e9dca2ef489fce53a43edfac2b73bfe5",
+      "output": ".runtime/art-direction/series01-sikh297/controls-04"
+    },
+    {
+      "job": "reopen-1",
+      "returncode": 0,
+      "process_seconds": 75.00350849982351,
+      "packet_digest": "bf3a874fc0e3cab09096820e12059ae48a912aa7b0b28c8f17b9c1ee86410977",
+      "output": ".runtime/art-direction/series01-sikh297/reopen-01"
+    }
+  ],
+  "native_process_seconds": 2671.5380227072164,
+  "native_time_definition": "Setup, scene construction, save and render process occupancy; not additive to assistant activity and not pure render wait.",
+  "engineering_tokens": null,
+  "direct_listening": "NOT_RUN",
+  "realtime_perceptual_playback": "NOT_RUN",
+  "provider_calls": 0,
+  "new_cloud_jobs": 0,
+  "new_media_off_device_backup": false,
+  "encoded_streams": {
+    "pashtun-sikh-42s.mp4": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 1080,
+          "height": 1920,
+          "nb_frames": "1008"
+        },
+        {
+          "codec_name": "aac",
+          "codec_type": "audio",
+          "sample_rate": "48000",
+          "nb_frames": "1970"
+        }
+      ],
+      "format": {
+        "duration": "42.000000"
+      }
+    },
+    "sikh-22s.mp4": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 576,
+          "height": 1024,
+          "nb_frames": "528"
+        },
+        {
+          "codec_name": "aac",
+          "codec_type": "audio",
+          "sample_rate": "48000",
+          "nb_frames": "1033"
+        }
+      ],
+      "format": {
+        "duration": "22.000000"
+      }
+    }
+  },
+  "delivery_hashes": {
+    "sikh-22s.mp4": "3f7326ffa5efe492bd34e5023e0db26bbcb8376c42ecdfc0f829c94b4523b96e",
+    "sikh-picture.mp4": "49c280612a80d14f5ac74b6e2d79c5425bcf575bd479fcb58b19a0b19a972768",
+    "pashtun-sikh-42s.mp4": "8c7982611e0d42b68eed08ffe67861dc1136671be71a78499cd63d1c69d45d0f"
+  }
+}
