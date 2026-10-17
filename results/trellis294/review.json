@@ -1,0 +1,741 @@
+{
+  "packet_digest": "ad202e8e97c318be4d214668a9620384f20ec2adaad45bf7af30a5298895091f",
+  "checks": [
+    {
+      "id": "authority",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Bound synthetic-only US authority, cumulative10+5 reservation, exact dependency payload, scoped resource guards and verified teardown.",
+      "observation": "Process evidence recorded; no production admission.",
+      "evidence": [
+        {
+          "path": "results/trellis294/STRATEGY.md",
+          "sha256": "3739be86ca9cf2b1994befd7a293c138d10c9541f1c4aacecf7e0fb62f72243b"
+        },
+        {
+          "path": "results/trellis294/README.md",
+          "sha256": "5b7010c870f009e4082f5bd9e2883bcc67eeff08ff1fb1a75aeae51606bb2551"
+        },
+        {
+          "path": "results/trellis294/preflight.json",
+          "sha256": "ae5f22f691af4c3ecbb3d3a7590d38513fc7c8ed8fdc72410e3dc85b53547e16"
+        },
+        {
+          "path": "results/trellis294/guard-test.json",
+          "sha256": "01bdd4db33a62dfd9bf612302ec2211e575ec9abeb7403e717cb68f522c17937"
+        },
+        {
+          "path": "results/trellis294/teardown-verification.json",
+          "sha256": "363f6a30a0828f3ce6706598cd71030241509a9a4a5c0a946bd63f483f61a13c"
+        },
+        {
+          "path": "results/trellis294/tests.xml",
+          "sha256": "cb6e8a45b6a290a803c41d6e71c211993bdca7e622796a2ea59a41cd7107a845"
+        }
+      ]
+    },
+    {
+      "id": "strategy",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Bound synthetic-only US authority, cumulative10+5 reservation, exact dependency payload, scoped resource guards and verified teardown.",
+      "observation": "Process evidence recorded; no production admission.",
+      "evidence": [
+        {
+          "path": "results/trellis294/STRATEGY.md",
+          "sha256": "3739be86ca9cf2b1994befd7a293c138d10c9541f1c4aacecf7e0fb62f72243b"
+        },
+        {
+          "path": "results/trellis294/README.md",
+          "sha256": "5b7010c870f009e4082f5bd9e2883bcc67eeff08ff1fb1a75aeae51606bb2551"
+        },
+        {
+          "path": "results/trellis294/preflight.json",
+          "sha256": "ae5f22f691af4c3ecbb3d3a7590d38513fc7c8ed8fdc72410e3dc85b53547e16"
+        },
+        {
+          "path": "results/trellis294/guard-test.json",
+          "sha256": "01bdd4db33a62dfd9bf612302ec2211e575ec9abeb7403e717cb68f522c17937"
+        },
+        {
+          "path": "results/trellis294/teardown-verification.json",
+          "sha256": "363f6a30a0828f3ce6706598cd71030241509a9a4a5c0a946bd63f483f61a13c"
+        },
+        {
+          "path": "results/trellis294/tests.xml",
+          "sha256": "cb6e8a45b6a290a803c41d6e71c211993bdca7e622796a2ea59a41cd7107a845"
+        }
+      ]
+    },
+    {
+      "id": "visual_gate",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Bound synthetic-only US authority, cumulative10+5 reservation, exact dependency payload, scoped resource guards and verified teardown.",
+      "observation": "Character, full inference rights and production review outside this synthetic infrastructure test.",
+      "evidence": [
+        {
+          "path": "results/trellis294/STRATEGY.md",
+          "sha256": "3739be86ca9cf2b1994befd7a293c138d10c9541f1c4aacecf7e0fb62f72243b"
+        },
+        {
+          "path": "results/trellis294/README.md",
+          "sha256": "5b7010c870f009e4082f5bd9e2883bcc67eeff08ff1fb1a75aeae51606bb2551"
+        },
+        {
+          "path": "results/trellis294/preflight.json",
+          "sha256": "ae5f22f691af4c3ecbb3d3a7590d38513fc7c8ed8fdc72410e3dc85b53547e16"
+        },
+        {
+          "path": "results/trellis294/guard-test.json",
+          "sha256": "01bdd4db33a62dfd9bf612302ec2211e575ec9abeb7403e717cb68f522c17937"
+        },
+        {
+          "path": "results/trellis294/teardown-verification.json",
+          "sha256": "363f6a30a0828f3ce6706598cd71030241509a9a4a5c0a946bd63f483f61a13c"
+        },
+        {
+          "path": "results/trellis294/tests.xml",
+          "sha256": "cb6e8a45b6a290a803c41d6e71c211993bdca7e622796a2ea59a41cd7107a845"
+        }
+      ]
+    },
+    {
+      "id": "anticipation",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Bound synthetic-only US authority, cumulative10+5 reservation, exact dependency payload, scoped resource guards and verified teardown.",
+      "observation": "Character, full inference rights and production review outside this synthetic infrastructure test.",
+      "evidence": [
+        {
+          "path": "results/trellis294/STRATEGY.md",
+          "sha256": "3739be86ca9cf2b1994befd7a293c138d10c9541f1c4aacecf7e0fb62f72243b"
+        },
+        {
+          "path": "results/trellis294/README.md",
+          "sha256": "5b7010c870f009e4082f5bd9e2883bcc67eeff08ff1fb1a75aeae51606bb2551"
+        },
+        {
+          "path": "results/trellis294/preflight.json",
+          "sha256": "ae5f22f691af4c3ecbb3d3a7590d38513fc7c8ed8fdc72410e3dc85b53547e16"
+        },
+        {
+          "path": "results/trellis294/guard-test.json",
+          "sha256": "01bdd4db33a62dfd9bf612302ec2211e575ec9abeb7403e717cb68f522c17937"
+        },
+        {
+          "path": "results/trellis294/teardown-verification.json",
+          "sha256": "363f6a30a0828f3ce6706598cd71030241509a9a4a5c0a946bd63f483f61a13c"
+        },
+        {
+          "path": "results/trellis294/tests.xml",
+          "sha256": "cb6e8a45b6a290a803c41d6e71c211993bdca7e622796a2ea59a41cd7107a845"
+        }
+      ]
+    },
+    {
+      "id": "stopping",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Bound synthetic-only US authority, cumulative10+5 reservation, exact dependency payload, scoped resource guards and verified teardown.",
+      "observation": "Character, full inference rights and production review outside this synthetic infrastructure test.",
+      "evidence": [
+        {
+          "path": "results/trellis294/STRATEGY.md",
+          "sha256": "3739be86ca9cf2b1994befd7a293c138d10c9541f1c4aacecf7e0fb62f72243b"
+        },
+        {
+          "path": "results/trellis294/README.md",
+          "sha256": "5b7010c870f009e4082f5bd9e2883bcc67eeff08ff1fb1a75aeae51606bb2551"
+        },
+        {
+          "path": "results/trellis294/preflight.json",
+          "sha256": "ae5f22f691af4c3ecbb3d3a7590d38513fc7c8ed8fdc72410e3dc85b53547e16"
+        },
+        {
+          "path": "results/trellis294/guard-test.json",
+          "sha256": "01bdd4db33a62dfd9bf612302ec2211e575ec9abeb7403e717cb68f522c17937"
+        },
+        {
+          "path": "results/trellis294/teardown-verification.json",
+          "sha256": "363f6a30a0828f3ce6706598cd71030241509a9a4a5c0a946bd63f483f61a13c"
+        },
+        {
+          "path": "results/trellis294/tests.xml",
+          "sha256": "cb6e8a45b6a290a803c41d6e71c211993bdca7e622796a2ea59a41cd7107a845"
+        }
+      ]
+    },
+    {
+      "id": "versioning",
+      "kind": "technical",
+      "status": "PASS",
+      "action_taken": "Bound synthetic-only US authority, cumulative10+5 reservation, exact dependency payload, scoped resource guards and verified teardown.",
+      "observation": "Process evidence recorded; no production admission.",
+      "evidence": [
+        {
+          "path": "results/trellis294/STRATEGY.md",
+          "sha256": "3739be86ca9cf2b1994befd7a293c138d10c9541f1c4aacecf7e0fb62f72243b"
+        },
+        {
+          "path": "results/trellis294/README.md",
+          "sha256": "5b7010c870f009e4082f5bd9e2883bcc67eeff08ff1fb1a75aeae51606bb2551"
+        },
+        {
+          "path": "results/trellis294/preflight.json",
+          "sha256": "ae5f22f691af4c3ecbb3d3a7590d38513fc7c8ed8fdc72410e3dc85b53547e16"
+        },
+        {
+          "path": "results/trellis294/guard-test.json",
+          "sha256": "01bdd4db33a62dfd9bf612302ec2211e575ec9abeb7403e717cb68f522c17937"
+        },
+        {
+          "path": "results/trellis294/teardown-verification.json",
+          "sha256": "363f6a30a0828f3ce6706598cd71030241509a9a4a5c0a946bd63f483f61a13c"
+        },
+        {
+          "path": "results/trellis294/tests.xml",
+          "sha256": "cb6e8a45b6a290a803c41d6e71c211993bdca7e622796a2ea59a41cd7107a845"
+        }
+      ]
+    },
+    {
+      "id": "economics",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Bound synthetic-only US authority, cumulative10+5 reservation, exact dependency payload, scoped resource guards and verified teardown.",
+      "observation": "Process evidence recorded; no production admission.",
+      "evidence": [
+        {
+          "path": "results/trellis294/STRATEGY.md",
+          "sha256": "3739be86ca9cf2b1994befd7a293c138d10c9541f1c4aacecf7e0fb62f72243b"
+        },
+        {
+          "path": "results/trellis294/README.md",
+          "sha256": "5b7010c870f009e4082f5bd9e2883bcc67eeff08ff1fb1a75aeae51606bb2551"
+        },
+        {
+          "path": "results/trellis294/preflight.json",
+          "sha256": "ae5f22f691af4c3ecbb3d3a7590d38513fc7c8ed8fdc72410e3dc85b53547e16"
+        },
+        {
+          "path": "results/trellis294/guard-test.json",
+          "sha256": "01bdd4db33a62dfd9bf612302ec2211e575ec9abeb7403e717cb68f522c17937"
+        },
+        {
+          "path": "results/trellis294/teardown-verification.json",
+          "sha256": "363f6a30a0828f3ce6706598cd71030241509a9a4a5c0a946bd63f483f61a13c"
+        },
+        {
+          "path": "results/trellis294/tests.xml",
+          "sha256": "cb6e8a45b6a290a803c41d6e71c211993bdca7e622796a2ea59a41cd7107a845"
+        }
+      ]
+    },
+    {
+      "id": "representation",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Bound synthetic-only US authority, cumulative10+5 reservation, exact dependency payload, scoped resource guards and verified teardown.",
+      "observation": "Character, full inference rights and production review outside this synthetic infrastructure test.",
+      "evidence": [
+        {
+          "path": "results/trellis294/STRATEGY.md",
+          "sha256": "3739be86ca9cf2b1994befd7a293c138d10c9541f1c4aacecf7e0fb62f72243b"
+        },
+        {
+          "path": "results/trellis294/README.md",
+          "sha256": "5b7010c870f009e4082f5bd9e2883bcc67eeff08ff1fb1a75aeae51606bb2551"
+        },
+        {
+          "path": "results/trellis294/preflight.json",
+          "sha256": "ae5f22f691af4c3ecbb3d3a7590d38513fc7c8ed8fdc72410e3dc85b53547e16"
+        },
+        {
+          "path": "results/trellis294/guard-test.json",
+          "sha256": "01bdd4db33a62dfd9bf612302ec2211e575ec9abeb7403e717cb68f522c17937"
+        },
+        {
+          "path": "results/trellis294/teardown-verification.json",
+          "sha256": "363f6a30a0828f3ce6706598cd71030241509a9a4a5c0a946bd63f483f61a13c"
+        },
+        {
+          "path": "results/trellis294/tests.xml",
+          "sha256": "cb6e8a45b6a290a803c41d6e71c211993bdca7e622796a2ea59a41cd7107a845"
+        }
+      ]
+    },
+    {
+      "id": "anatomy",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Bound synthetic-only US authority, cumulative10+5 reservation, exact dependency payload, scoped resource guards and verified teardown.",
+      "observation": "Character, full inference rights and production review outside this synthetic infrastructure test.",
+      "evidence": [
+        {
+          "path": "results/trellis294/STRATEGY.md",
+          "sha256": "3739be86ca9cf2b1994befd7a293c138d10c9541f1c4aacecf7e0fb62f72243b"
+        },
+        {
+          "path": "results/trellis294/README.md",
+          "sha256": "5b7010c870f009e4082f5bd9e2883bcc67eeff08ff1fb1a75aeae51606bb2551"
+        },
+        {
+          "path": "results/trellis294/preflight.json",
+          "sha256": "ae5f22f691af4c3ecbb3d3a7590d38513fc7c8ed8fdc72410e3dc85b53547e16"
+        },
+        {
+          "path": "results/trellis294/guard-test.json",
+          "sha256": "01bdd4db33a62dfd9bf612302ec2211e575ec9abeb7403e717cb68f522c17937"
+        },
+        {
+          "path": "results/trellis294/teardown-verification.json",
+          "sha256": "363f6a30a0828f3ce6706598cd71030241509a9a4a5c0a946bd63f483f61a13c"
+        },
+        {
+          "path": "results/trellis294/tests.xml",
+          "sha256": "cb6e8a45b6a290a803c41d6e71c211993bdca7e622796a2ea59a41cd7107a845"
+        }
+      ]
+    },
+    {
+      "id": "motion",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Bound synthetic-only US authority, cumulative10+5 reservation, exact dependency payload, scoped resource guards and verified teardown.",
+      "observation": "Character, full inference rights and production review outside this synthetic infrastructure test.",
+      "evidence": [
+        {
+          "path": "results/trellis294/STRATEGY.md",
+          "sha256": "3739be86ca9cf2b1994befd7a293c138d10c9541f1c4aacecf7e0fb62f72243b"
+        },
+        {
+          "path": "results/trellis294/README.md",
+          "sha256": "5b7010c870f009e4082f5bd9e2883bcc67eeff08ff1fb1a75aeae51606bb2551"
+        },
+        {
+          "path": "results/trellis294/preflight.json",
+          "sha256": "ae5f22f691af4c3ecbb3d3a7590d38513fc7c8ed8fdc72410e3dc85b53547e16"
+        },
+        {
+          "path": "results/trellis294/guard-test.json",
+          "sha256": "01bdd4db33a62dfd9bf612302ec2211e575ec9abeb7403e717cb68f522c17937"
+        },
+        {
+          "path": "results/trellis294/teardown-verification.json",
+          "sha256": "363f6a30a0828f3ce6706598cd71030241509a9a4a5c0a946bd63f483f61a13c"
+        },
+        {
+          "path": "results/trellis294/tests.xml",
+          "sha256": "cb6e8a45b6a290a803c41d6e71c211993bdca7e622796a2ea59a41cd7107a845"
+        }
+      ]
+    },
+    {
+      "id": "secondary",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Bound synthetic-only US authority, cumulative10+5 reservation, exact dependency payload, scoped resource guards and verified teardown.",
+      "observation": "Character, full inference rights and production review outside this synthetic infrastructure test.",
+      "evidence": [
+        {
+          "path": "results/trellis294/STRATEGY.md",
+          "sha256": "3739be86ca9cf2b1994befd7a293c138d10c9541f1c4aacecf7e0fb62f72243b"
+        },
+        {
+          "path": "results/trellis294/README.md",
+          "sha256": "5b7010c870f009e4082f5bd9e2883bcc67eeff08ff1fb1a75aeae51606bb2551"
+        },
+        {
+          "path": "results/trellis294/preflight.json",
+          "sha256": "ae5f22f691af4c3ecbb3d3a7590d38513fc7c8ed8fdc72410e3dc85b53547e16"
+        },
+        {
+          "path": "results/trellis294/guard-test.json",
+          "sha256": "01bdd4db33a62dfd9bf612302ec2211e575ec9abeb7403e717cb68f522c17937"
+        },
+        {
+          "path": "results/trellis294/teardown-verification.json",
+          "sha256": "363f6a30a0828f3ce6706598cd71030241509a9a4a5c0a946bd63f483f61a13c"
+        },
+        {
+          "path": "results/trellis294/tests.xml",
+          "sha256": "cb6e8a45b6a290a803c41d6e71c211993bdca7e622796a2ea59a41cd7107a845"
+        }
+      ]
+    },
+    {
+      "id": "look",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Bound synthetic-only US authority, cumulative10+5 reservation, exact dependency payload, scoped resource guards and verified teardown.",
+      "observation": "Character, full inference rights and production review outside this synthetic infrastructure test.",
+      "evidence": [
+        {
+          "path": "results/trellis294/STRATEGY.md",
+          "sha256": "3739be86ca9cf2b1994befd7a293c138d10c9541f1c4aacecf7e0fb62f72243b"
+        },
+        {
+          "path": "results/trellis294/README.md",
+          "sha256": "5b7010c870f009e4082f5bd9e2883bcc67eeff08ff1fb1a75aeae51606bb2551"
+        },
+        {
+          "path": "results/trellis294/preflight.json",
+          "sha256": "ae5f22f691af4c3ecbb3d3a7590d38513fc7c8ed8fdc72410e3dc85b53547e16"
+        },
+        {
+          "path": "results/trellis294/guard-test.json",
+          "sha256": "01bdd4db33a62dfd9bf612302ec2211e575ec9abeb7403e717cb68f522c17937"
+        },
+        {
+          "path": "results/trellis294/teardown-verification.json",
+          "sha256": "363f6a30a0828f3ce6706598cd71030241509a9a4a5c0a946bd63f483f61a13c"
+        },
+        {
+          "path": "results/trellis294/tests.xml",
+          "sha256": "cb6e8a45b6a290a803c41d6e71c211993bdca7e622796a2ea59a41cd7107a845"
+        }
+      ]
+    },
+    {
+      "id": "rights",
+      "kind": "process",
+      "status": "NOT_RUN",
+      "action_taken": "Bound synthetic-only US authority, cumulative10+5 reservation, exact dependency payload, scoped resource guards and verified teardown.",
+      "observation": "Character, full inference rights and production review outside this synthetic infrastructure test.",
+      "evidence": [
+        {
+          "path": "results/trellis294/STRATEGY.md",
+          "sha256": "3739be86ca9cf2b1994befd7a293c138d10c9541f1c4aacecf7e0fb62f72243b"
+        },
+        {
+          "path": "results/trellis294/README.md",
+          "sha256": "5b7010c870f009e4082f5bd9e2883bcc67eeff08ff1fb1a75aeae51606bb2551"
+        },
+        {
+          "path": "results/trellis294/preflight.json",
+          "sha256": "ae5f22f691af4c3ecbb3d3a7590d38513fc7c8ed8fdc72410e3dc85b53547e16"
+        },
+        {
+          "path": "results/trellis294/guard-test.json",
+          "sha256": "01bdd4db33a62dfd9bf612302ec2211e575ec9abeb7403e717cb68f522c17937"
+        },
+        {
+          "path": "results/trellis294/teardown-verification.json",
+          "sha256": "363f6a30a0828f3ce6706598cd71030241509a9a4a5c0a946bd63f483f61a13c"
+        },
+        {
+          "path": "results/trellis294/tests.xml",
+          "sha256": "cb6e8a45b6a290a803c41d6e71c211993bdca7e622796a2ea59a41cd7107a845"
+        }
+      ]
+    },
+    {
+      "id": "current_state",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Bound synthetic-only US authority, cumulative10+5 reservation, exact dependency payload, scoped resource guards and verified teardown.",
+      "observation": "Process evidence recorded; no production admission.",
+      "evidence": [
+        {
+          "path": "results/trellis294/STRATEGY.md",
+          "sha256": "3739be86ca9cf2b1994befd7a293c138d10c9541f1c4aacecf7e0fb62f72243b"
+        },
+        {
+          "path": "results/trellis294/README.md",
+          "sha256": "5b7010c870f009e4082f5bd9e2883bcc67eeff08ff1fb1a75aeae51606bb2551"
+        },
+        {
+          "path": "results/trellis294/preflight.json",
+          "sha256": "ae5f22f691af4c3ecbb3d3a7590d38513fc7c8ed8fdc72410e3dc85b53547e16"
+        },
+        {
+          "path": "results/trellis294/guard-test.json",
+          "sha256": "01bdd4db33a62dfd9bf612302ec2211e575ec9abeb7403e717cb68f522c17937"
+        },
+        {
+          "path": "results/trellis294/teardown-verification.json",
+          "sha256": "363f6a30a0828f3ce6706598cd71030241509a9a4a5c0a946bd63f483f61a13c"
+        },
+        {
+          "path": "results/trellis294/tests.xml",
+          "sha256": "cb6e8a45b6a290a803c41d6e71c211993bdca7e622796a2ea59a41cd7107a845"
+        }
+      ]
+    },
+    {
+      "id": "au_reference",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Bound synthetic-only US authority, cumulative10+5 reservation, exact dependency payload, scoped resource guards and verified teardown.",
+      "observation": "Character, full inference rights and production review outside this synthetic infrastructure test.",
+      "evidence": [
+        {
+          "path": "results/trellis294/STRATEGY.md",
+          "sha256": "3739be86ca9cf2b1994befd7a293c138d10c9541f1c4aacecf7e0fb62f72243b"
+        },
+        {
+          "path": "results/trellis294/README.md",
+          "sha256": "5b7010c870f009e4082f5bd9e2883bcc67eeff08ff1fb1a75aeae51606bb2551"
+        },
+        {
+          "path": "results/trellis294/preflight.json",
+          "sha256": "ae5f22f691af4c3ecbb3d3a7590d38513fc7c8ed8fdc72410e3dc85b53547e16"
+        },
+        {
+          "path": "results/trellis294/guard-test.json",
+          "sha256": "01bdd4db33a62dfd9bf612302ec2211e575ec9abeb7403e717cb68f522c17937"
+        },
+        {
+          "path": "results/trellis294/teardown-verification.json",
+          "sha256": "363f6a30a0828f3ce6706598cd71030241509a9a4a5c0a946bd63f483f61a13c"
+        },
+        {
+          "path": "results/trellis294/tests.xml",
+          "sha256": "cb6e8a45b6a290a803c41d6e71c211993bdca7e622796a2ea59a41cd7107a845"
+        }
+      ]
+    },
+    {
+      "id": "au_deformation",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Bound synthetic-only US authority, cumulative10+5 reservation, exact dependency payload, scoped resource guards and verified teardown.",
+      "observation": "Character, full inference rights and production review outside this synthetic infrastructure test.",
+      "evidence": [
+        {
+          "path": "results/trellis294/STRATEGY.md",
+          "sha256": "3739be86ca9cf2b1994befd7a293c138d10c9541f1c4aacecf7e0fb62f72243b"
+        },
+        {
+          "path": "results/trellis294/README.md",
+          "sha256": "5b7010c870f009e4082f5bd9e2883bcc67eeff08ff1fb1a75aeae51606bb2551"
+        },
+        {
+          "path": "results/trellis294/preflight.json",
+          "sha256": "ae5f22f691af4c3ecbb3d3a7590d38513fc7c8ed8fdc72410e3dc85b53547e16"
+        },
+        {
+          "path": "results/trellis294/guard-test.json",
+          "sha256": "01bdd4db33a62dfd9bf612302ec2211e575ec9abeb7403e717cb68f522c17937"
+        },
+        {
+          "path": "results/trellis294/teardown-verification.json",
+          "sha256": "363f6a30a0828f3ce6706598cd71030241509a9a4a5c0a946bd63f483f61a13c"
+        },
+        {
+          "path": "results/trellis294/tests.xml",
+          "sha256": "cb6e8a45b6a290a803c41d6e71c211993bdca7e622796a2ea59a41cd7107a845"
+        }
+      ]
+    },
+    {
+      "id": "au_performance",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Bound synthetic-only US authority, cumulative10+5 reservation, exact dependency payload, scoped resource guards and verified teardown.",
+      "observation": "Character, full inference rights and production review outside this synthetic infrastructure test.",
+      "evidence": [
+        {
+          "path": "results/trellis294/STRATEGY.md",
+          "sha256": "3739be86ca9cf2b1994befd7a293c138d10c9541f1c4aacecf7e0fb62f72243b"
+        },
+        {
+          "path": "results/trellis294/README.md",
+          "sha256": "5b7010c870f009e4082f5bd9e2883bcc67eeff08ff1fb1a75aeae51606bb2551"
+        },
+        {
+          "path": "results/trellis294/preflight.json",
+          "sha256": "ae5f22f691af4c3ecbb3d3a7590d38513fc7c8ed8fdc72410e3dc85b53547e16"
+        },
+        {
+          "path": "results/trellis294/guard-test.json",
+          "sha256": "01bdd4db33a62dfd9bf612302ec2211e575ec9abeb7403e717cb68f522c17937"
+        },
+        {
+          "path": "results/trellis294/teardown-verification.json",
+          "sha256": "363f6a30a0828f3ce6706598cd71030241509a9a4a5c0a946bd63f483f61a13c"
+        },
+        {
+          "path": "results/trellis294/tests.xml",
+          "sha256": "cb6e8a45b6a290a803c41d6e71c211993bdca7e622796a2ea59a41cd7107a845"
+        }
+      ]
+    },
+    {
+      "id": "au_contact",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Bound synthetic-only US authority, cumulative10+5 reservation, exact dependency payload, scoped resource guards and verified teardown.",
+      "observation": "Character, full inference rights and production review outside this synthetic infrastructure test.",
+      "evidence": [
+        {
+          "path": "results/trellis294/STRATEGY.md",
+          "sha256": "3739be86ca9cf2b1994befd7a293c138d10c9541f1c4aacecf7e0fb62f72243b"
+        },
+        {
+          "path": "results/trellis294/README.md",
+          "sha256": "5b7010c870f009e4082f5bd9e2883bcc67eeff08ff1fb1a75aeae51606bb2551"
+        },
+        {
+          "path": "results/trellis294/preflight.json",
+          "sha256": "ae5f22f691af4c3ecbb3d3a7590d38513fc7c8ed8fdc72410e3dc85b53547e16"
+        },
+        {
+          "path": "results/trellis294/guard-test.json",
+          "sha256": "01bdd4db33a62dfd9bf612302ec2211e575ec9abeb7403e717cb68f522c17937"
+        },
+        {
+          "path": "results/trellis294/teardown-verification.json",
+          "sha256": "363f6a30a0828f3ce6706598cd71030241509a9a4a5c0a946bd63f483f61a13c"
+        },
+        {
+          "path": "results/trellis294/tests.xml",
+          "sha256": "cb6e8a45b6a290a803c41d6e71c211993bdca7e622796a2ea59a41cd7107a845"
+        }
+      ]
+    },
+    {
+      "id": "au_surface",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Bound synthetic-only US authority, cumulative10+5 reservation, exact dependency payload, scoped resource guards and verified teardown.",
+      "observation": "Character, full inference rights and production review outside this synthetic infrastructure test.",
+      "evidence": [
+        {
+          "path": "results/trellis294/STRATEGY.md",
+          "sha256": "3739be86ca9cf2b1994befd7a293c138d10c9541f1c4aacecf7e0fb62f72243b"
+        },
+        {
+          "path": "results/trellis294/README.md",
+          "sha256": "5b7010c870f009e4082f5bd9e2883bcc67eeff08ff1fb1a75aeae51606bb2551"
+        },
+        {
+          "path": "results/trellis294/preflight.json",
+          "sha256": "ae5f22f691af4c3ecbb3d3a7590d38513fc7c8ed8fdc72410e3dc85b53547e16"
+        },
+        {
+          "path": "results/trellis294/guard-test.json",
+          "sha256": "01bdd4db33a62dfd9bf612302ec2211e575ec9abeb7403e717cb68f522c17937"
+        },
+        {
+          "path": "results/trellis294/teardown-verification.json",
+          "sha256": "363f6a30a0828f3ce6706598cd71030241509a9a4a5c0a946bd63f483f61a13c"
+        },
+        {
+          "path": "results/trellis294/tests.xml",
+          "sha256": "cb6e8a45b6a290a803c41d6e71c211993bdca7e622796a2ea59a41cd7107a845"
+        }
+      ]
+    },
+    {
+      "id": "sikh_scope",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Bound synthetic-only US authority, cumulative10+5 reservation, exact dependency payload, scoped resource guards and verified teardown.",
+      "observation": "Process evidence recorded; no production admission.",
+      "evidence": [
+        {
+          "path": "results/trellis294/STRATEGY.md",
+          "sha256": "3739be86ca9cf2b1994befd7a293c138d10c9541f1c4aacecf7e0fb62f72243b"
+        },
+        {
+          "path": "results/trellis294/README.md",
+          "sha256": "5b7010c870f009e4082f5bd9e2883bcc67eeff08ff1fb1a75aeae51606bb2551"
+        },
+        {
+          "path": "results/trellis294/preflight.json",
+          "sha256": "ae5f22f691af4c3ecbb3d3a7590d38513fc7c8ed8fdc72410e3dc85b53547e16"
+        },
+        {
+          "path": "results/trellis294/guard-test.json",
+          "sha256": "01bdd4db33a62dfd9bf612302ec2211e575ec9abeb7403e717cb68f522c17937"
+        },
+        {
+          "path": "results/trellis294/teardown-verification.json",
+          "sha256": "363f6a30a0828f3ce6706598cd71030241509a9a4a5c0a946bd63f483f61a13c"
+        },
+        {
+          "path": "results/trellis294/tests.xml",
+          "sha256": "cb6e8a45b6a290a803c41d6e71c211993bdca7e622796a2ea59a41cd7107a845"
+        }
+      ]
+    },
+    {
+      "id": "sikh_cloth",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Bound synthetic-only US authority, cumulative10+5 reservation, exact dependency payload, scoped resource guards and verified teardown.",
+      "observation": "Character, full inference rights and production review outside this synthetic infrastructure test.",
+      "evidence": [
+        {
+          "path": "results/trellis294/STRATEGY.md",
+          "sha256": "3739be86ca9cf2b1994befd7a293c138d10c9541f1c4aacecf7e0fb62f72243b"
+        },
+        {
+          "path": "results/trellis294/README.md",
+          "sha256": "5b7010c870f009e4082f5bd9e2883bcc67eeff08ff1fb1a75aeae51606bb2551"
+        },
+        {
+          "path": "results/trellis294/preflight.json",
+          "sha256": "ae5f22f691af4c3ecbb3d3a7590d38513fc7c8ed8fdc72410e3dc85b53547e16"
+        },
+        {
+          "path": "results/trellis294/guard-test.json",
+          "sha256": "01bdd4db33a62dfd9bf612302ec2211e575ec9abeb7403e717cb68f522c17937"
+        },
+        {
+          "path": "results/trellis294/teardown-verification.json",
+          "sha256": "363f6a30a0828f3ce6706598cd71030241509a9a4a5c0a946bd63f483f61a13c"
+        },
+        {
+          "path": "results/trellis294/tests.xml",
+          "sha256": "cb6e8a45b6a290a803c41d6e71c211993bdca7e622796a2ea59a41cd7107a845"
+        }
+      ]
+    },
+    {
+      "id": "sikh_motion",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Bound synthetic-only US authority, cumulative10+5 reservation, exact dependency payload, scoped resource guards and verified teardown.",
+      "observation": "Character, full inference rights and production review outside this synthetic infrastructure test.",
+      "evidence": [
+        {
+          "path": "results/trellis294/STRATEGY.md",
+          "sha256": "3739be86ca9cf2b1994befd7a293c138d10c9541f1c4aacecf7e0fb62f72243b"
+        },
+        {
+          "path": "results/trellis294/README.md",
+          "sha256": "5b7010c870f009e4082f5bd9e2883bcc67eeff08ff1fb1a75aeae51606bb2551"
+        },
+        {
+          "path": "results/trellis294/preflight.json",
+          "sha256": "ae5f22f691af4c3ecbb3d3a7590d38513fc7c8ed8fdc72410e3dc85b53547e16"
+        },
+        {
+          "path": "results/trellis294/guard-test.json",
+          "sha256": "01bdd4db33a62dfd9bf612302ec2211e575ec9abeb7403e717cb68f522c17937"
+        },
+        {
+          "path": "results/trellis294/teardown-verification.json",
+          "sha256": "363f6a30a0828f3ce6706598cd71030241509a9a4a5c0a946bd63f483f61a13c"
+        },
+        {
+          "path": "results/trellis294/tests.xml",
+          "sha256": "cb6e8a45b6a290a803c41d6e71c211993bdca7e622796a2ea59a41cd7107a845"
+        }
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "prediction": "US quota may permit hardware unavailable in Canada.",
+      "observation": "One US L4 worker launched; outcome recorded in README and retained logs.",
+      "response": "Retrieve evidence and fully tear down; assess exporter separately from inference.",
+      "result": "resolved"
+    }
+  ],
+  "adjacent_regressions": "No production master modification, protagonist upload, weights or secret payload; historical Canadian reservation unchanged.",
+  "stopping_reason": "Scoped worker attempt finished and removed; any runtime failure is preserved, not waived by local tests. Downstream production remains unqualified."
+}

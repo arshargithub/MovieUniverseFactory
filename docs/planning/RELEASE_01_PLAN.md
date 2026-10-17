@@ -4,6 +4,12 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+### Exchange294 — US synthetic qualification authorized
+
+Director selects US regional retry within the same cumulative US$15. [294 strategy](../../results/trellis294/STRATEGY.md) preserves Canada's unknown10USD reservation and allocates only5USD to the US attempt, with aggregate checks. Live US quota8 and L4 rate0.9776USD/hour verified; one worker launched under independent termination controls. No protagonist upload, weights, new creative acceptance or production admission. Accepted292 joined development preview and protected Pashtun remain unchanged. Next checkpoint300.
+
+[294 outcome](../../results/trellis294/README.md): US hardware allocation and parent PyTorch/CUDA work, but nested worker venv cannot import parent Torch. Exporter/GLB stage NOT_RUN. Failure logs recovered, worker and disposable resources removed. Local reproduction plus explicit parent-package linkage passes37 tests; corrected bootstrap not yet GPU-validated. Reconcile held reservations before another paid worker; do not confuse15USD held with15USD spent. No further native work or budget expansion inferred.
+
 ### Exchange293 — development preview accepted; Canadian quota reported approved
 
 Director says292 looks good: retain that joined development treatment, not a final protagonist/cloth/release approval. Director also reports AWS quota approval. Live confirmation is initially blocked by expired `adi-sso` authentication; restarted SSO after the sandbox could not reach the authentication endpoint. No cloud worker or charges initiated. After sign-in, verify the Canada Central request and effective quota, then continue288's already authorized synthetic qualification within aggregate US$15, with its resource, dependency, budget and independent termination safeguards. No protagonist upload/generation follows from quota approval. Next planning checkpoint300.

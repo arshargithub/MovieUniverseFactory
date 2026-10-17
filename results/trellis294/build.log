@@ -1,0 +1,46 @@
+RUN ['/opt/pytorch/bin/python', '-c', 'import torch; print(torch.__version__,torch.version.cuda,torch.cuda.get_device_name())']
+/opt/pytorch/lib/python3.12/site-packages/torch/cuda/__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+2.7.0+cu128 12.8 NVIDIA L4
+RUN ['/opt/pytorch/bin/python', '-m', 'venv', '--system-site-packages', '/opt/mf-trellis293/venv']
+RUN ['/opt/mf-trellis293/venv/bin/python', '-m', 'pip', 'install', '--only-binary=:all:', '--no-deps', '--report', '/opt/mf-trellis293/evidence/pip-report.json', 'numpy==2.2.6', 'trimesh==4.7.4', 'opencv-python-headless==4.12.0.88', 'pillow==11.3.0', 'tqdm==4.67.1', 'ninja==1.11.1.4']
+Collecting numpy==2.2.6
+  Downloading numpy-2.2.6-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (62 kB)
+Collecting trimesh==4.7.4
+  Downloading trimesh-4.7.4-py3-none-any.whl.metadata (18 kB)
+Collecting opencv-python-headless==4.12.0.88
+  Downloading opencv_python_headless-4.12.0.88-cp37-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (19 kB)
+Collecting pillow==11.3.0
+  Downloading pillow-11.3.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.0 kB)
+Collecting tqdm==4.67.1
+  Downloading tqdm-4.67.1-py3-none-any.whl.metadata (57 kB)
+Collecting ninja==1.11.1.4
+  Downloading ninja-1.11.1.4-py3-none-manylinux_2_12_x86_64.manylinux2010_x86_64.whl.metadata (5.0 kB)
+Downloading numpy-2.2.6-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (16.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.5/16.5 MB 116.7 MB/s eta 0:00:00
+Downloading trimesh-4.7.4-py3-none-any.whl (709 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 709.8/709.8 kB 52.1 MB/s eta 0:00:00
+Downloading opencv_python_headless-4.12.0.88-cp37-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (54.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 54.0/54.0 MB 81.1 MB/s eta 0:00:00
+Downloading pillow-11.3.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (6.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.6/6.6 MB 71.6 MB/s eta 0:00:00
+Downloading tqdm-4.67.1-py3-none-any.whl (78 kB)
+Downloading ninja-1.11.1.4-py3-none-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (422 kB)
+Installing collected packages: trimesh, tqdm, pillow, opencv-python-headless, numpy, ninja
+Successfully installed ninja-1.11.1.4 numpy-2.2.6 opencv-python-headless-4.12.0.88 pillow-11.3.0 tqdm-4.67.1 trimesh-4.7.4
+
+[notice] A new release of pip is available: 25.0.1 -> 26.2.1
+[notice] To update, run: /opt/mf-trellis293/venv/bin/python -m pip install --upgrade pip
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+ModuleNotFoundError: No module named 'torch'
+Traceback (most recent call last):
+  File "/opt/mf-trellis293/scripts/trellis293_worker.py", line 53, in <module>
+    if __name__=='__main__':main()
+  File "/opt/mf-trellis293/scripts/trellis293_worker.py", line 36, in main
+    arch=subprocess.check_output([vp,'-c','import torch; print("%s.%s" % torch.cuda.get_device_capability())'],text=True).strip()
+  File "/usr/lib/python3.10/subprocess.py", line 421, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "/usr/lib/python3.10/subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/opt/mf-trellis293/venv/bin/python', '-c', 'import torch; print("%s.%s" % torch.cuda.get_device_capability())']' returned non-zero exit status 1.
