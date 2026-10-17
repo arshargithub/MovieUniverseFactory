@@ -1,0 +1,24 @@
+{
+  "review_date": "2026-10-17",
+  "license_title": "DINOv3 License",
+  "license_date": "2025-08-14",
+  "official_source": "https://ai.meta.com/resources/models-and-libraries/dinov3-license/",
+  "provided_attachment_sha256": "03872a5e95a6f9939e97a86f57f13f7b0593392e87edb726ad02927274a87bcb",
+  "verification": "Read user-supplied text in full and compared substantive clauses with current official page; same dated terms and clauses observed.",
+  "director_report": "Direct Meta access request submitted in addition to Hugging Face request; approval not confirmed.",
+  "intended_use": "Private internal inference for fictional commercial film characters and scenery, followed by distribution of generated assets/rendered films; no public model distribution or functional weapons design.",
+  "assessment_status": "PRELIMINARY_PRACTICAL_INTERPRETATION_NOT_LEGAL_OPINION_OR_FULL_STACK_CLEARANCE",
+  "findings": [
+    {"clause": "1a", "finding": "Royalty-free use/modification grant without research-only or noncommercial limitation; appears compatible with intended commercial filmmaking. Compute and other providers remain separately charged."},
+    {"clause": "Definitions;1bi;3;5a", "finding": "License distinguishes model materials from outputs. No express clause makes generated characters public, assigns them to Meta, or requires movie credit solely because inference was used. This is not an affirmative guarantee of copyright, exclusivity or freedom from third-party claims. Section5a ownership provision addresses modified model materials, not expressly all outputs."},
+    {"clause": "1bi", "finding": "Distributing or making model materials/derivatives available to third parties requires same Agreement and prominent Built with DINOv3 notice. Reassess before shipping bundled weights/runtime or exposing model access in a product; internal pipeline and finished-film release are distinct."},
+    {"clause": "1bii", "finding": "Published research using DINO requires acknowledgement; do not confuse this with every fictional film release."},
+    {"clause": "1biii;1bv", "finding": "Trade-control/ITAR/end-use restrictions are not read here as a blanket ban on depicting fictional warriors or weapons. That distinction is an interpretation, not a Meta determination; functional weapons design, military applications or changed downstream use require renewed review."},
+    {"clause": "1biv", "finding": "Reverse-engineering/decompilation/discovery restriction coexists with modification grant. Current route uses documented inference and permitted surrounding exporter adaptation, not extraction or reverse engineering of encoder internals."},
+    {"clause": "3;4;5b", "finding": "No title/noninfringement/fitness warranty, broad liability exclusion, third-party claim indemnity and IP-litigation termination; meaningful commercial risk remains with licensee."},
+    {"clause": "6;8", "finding": "Breach can terminate use; license can change with continued use constituting agreement. Preserve version/source and recheck before deployment/distribution changes. Dated copy is evidence, not insulation from future terms."}
+  ],
+  "next_gate": "Official access approval and private authentication, then exact inference package/weight inventory and bounded generation; synthetic GPU pass does not satisfy this gate.",
+  "execution": "No terms accepted by agent, model download, cloud launch, paid call, upload, alternative-provider adoption or production pass.",
+  "scope": "Narrow legal-source assessment and planning record; no knowledge source pins or previous failed evidence altered."
+}
