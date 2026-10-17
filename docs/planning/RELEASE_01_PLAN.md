@@ -4,6 +4,10 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+### Exchange293 — development preview accepted; Canadian quota reported approved
+
+Director says292 looks good: retain that joined development treatment, not a final protagonist/cloth/release approval. Director also reports AWS quota approval. Live confirmation is initially blocked by expired `adi-sso` authentication; restarted SSO after the sandbox could not reach the authentication endpoint. No cloud worker or charges initiated. After sign-in, verify the Canada Central request and effective quota, then continue288's already authorized synthetic qualification within aggregate US$15, with its resource, dependency, budget and independent termination safeguards. No protagonist upload/generation follows from quota approval. Next planning checkpoint300.
+
 ### Exchange292 — fuller Sikh setting and first joined musical preview
 
 Director accepts291 overall for now and requests farther crowd clearance, irregular clouds, tire dirt/skids, more environment/secondary-cast/horse fidelity and a joined music preview. [Completed development review](../../results/sikh292/REVIEW.md) provides42s: protected20s Pashtun reused without native rendering, then22s Sikh. Stop clearance measures12.942m;84 tests pass and six reopen images are pixel-identical. All528 Sikh frames inspected chronologically; direct listening/realtime playback remain unclaimed. Main Sikh remains an explicit proxy, final actor/connected cloth and same-film finish blocked; no final production admission from this preview. Read [carry-forward learnings](../../results/sikh292/LEARNINGS.md) at next integration. Next major dependency is the admitted actor/uncover/greeting insert, not more background decoration. Selected theme continues provisionally with temporary locally synthesized engine/contact effects. No paid calls, remote push or new media backup; checkpoint300.
