@@ -82,11 +82,12 @@ def role(name,service,policy):
     save(name,arn)
     aws('iam','put-role-policy','--role-name',name,'--policy-name','bounded-test','--policy-document',j({'Version':'2012-10-17','Statement':policy}))
     return arn
-def guards():
+def guards(amount_usd=10, run_id='trellis293'):
     s=state();assert s.get('prepared') and not s.get('reservation')
-    packet();rid=ledger().reserve(amount_usd=10,stage='gpu_session',scope='qualification',run_id='trellis293',purpose='synthetic_aws_session')
+    packet();rid=ledger().reserve(amount_usd=amount_usd,stage='gpu_session',scope='qualification',run_id=run_id,purpose='synthetic_aws_session')
     save('reservation',rid);dump(OUT/'budget-reserved.json',ledger().summary())
-    aws('s3api','create-bucket','--bucket',BUCKET,'--create-bucket-configuration',j({'LocationConstraint':REGION}));save('bucket',BUCKET)
+    location=[] if REGION=='us-east-1' else ['--create-bucket-configuration',j({'LocationConstraint':REGION})]
+    aws('s3api','create-bucket','--bucket',BUCKET,*location);save('bucket',BUCKET)
     aws('s3api','put-public-access-block','--bucket',BUCKET,'--public-access-block-configuration',j(dict(BlockPublicAcls=True,IgnorePublicAcls=True,BlockPublicPolicy=True,RestrictPublicBuckets=True)))
     aws('s3api','put-bucket-encryption','--bucket',BUCKET,'--server-side-encryption-configuration',j({'Rules':[{'ApplyServerSideEncryptionByDefault':{'SSEAlgorithm':'AES256'}}]}))
     aws('s3api','put-bucket-lifecycle-configuration','--bucket',BUCKET,'--lifecycle-configuration',j({'Rules':[{'ID':'temporary-only','Status':'Enabled','Filter':{'Prefix':''},'Expiration':{'Days':1},'AbortIncompleteMultipartUpload':{'DaysAfterInitiation':1}}]}))
