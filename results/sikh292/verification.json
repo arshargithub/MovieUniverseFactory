@@ -1,0 +1,140 @@
+{
+  "sampled_reopen_pixels": [
+    {
+      "frame": 1,
+      "maximum_channel_difference": 0,
+      "mean_channel_difference": 0.0
+    },
+    {
+      "frame": 99,
+      "maximum_channel_difference": 0,
+      "mean_channel_difference": 0.0
+    },
+    {
+      "frame": 150,
+      "maximum_channel_difference": 0,
+      "mean_channel_difference": 0.0
+    },
+    {
+      "frame": 245,
+      "maximum_channel_difference": 0,
+      "mean_channel_difference": 0.0
+    },
+    {
+      "frame": 315,
+      "maximum_channel_difference": 0,
+      "mean_channel_difference": 0.0
+    },
+    {
+      "frame": 445,
+      "maximum_channel_difference": 0,
+      "mean_channel_difference": 0.0
+    }
+  ],
+  "front_rear_ground_max_m": 5.960464477539063e-08,
+  "spear_bank_max_m": 0.0,
+  "minimum_stopped_crowd_clearance_m": 12.942094680070877,
+  "rein_length_range_m": [
+    1.0164229486194754,
+    1.0962305957759895
+  ],
+  "movie_source_snapshot_verified": true,
+  "pashtun_source_hash_unchanged": true,
+  "pashtun_editorial_reencode_ssim": "[Parsed_ssim_2 @ 0xa314030c0] SSIM Y:0.987038 (18.873437) U:0.992878 (21.473929) V:0.993349 (21.770855) All:0.989063 (19.611175)",
+  "native_receipts": [
+    {
+      "job": "controls-1",
+      "returncode": 0,
+      "process_seconds": 292.3746473751962,
+      "packet_digest": "494b51c14007319d75c89784b15717c21ac8073114824910f96810299366541a",
+      "output": ".runtime/art-direction/series01-sikh292/controls-01"
+    },
+    {
+      "job": "movie-1",
+      "returncode": 0,
+      "process_seconds": 1982.2263688328676,
+      "packet_digest": "8d325415ecec095b0b6a48fc45a228a6d0b9d41288b15e0dd3b5edb80cba9c1e",
+      "output": ".runtime/art-direction/series01-sikh292/movie-01"
+    },
+    {
+      "job": "controls-2",
+      "returncode": 0,
+      "process_seconds": 291.5985667500645,
+      "packet_digest": "a4ef11b35935ac2b82a22b822a3ad30ec455ab0008c080b30099831d5db4bcf9",
+      "output": ".runtime/art-direction/series01-sikh292/controls-02"
+    },
+    {
+      "job": "controls-3",
+      "returncode": 0,
+      "process_seconds": 371.19495374988765,
+      "packet_digest": "40b1046f9599a0d719fc8c9ffbc3406fdbc7fe3e1bc3548b2c3e7c18a450fe19",
+      "output": ".runtime/art-direction/series01-sikh292/controls-03"
+    },
+    {
+      "job": "reopen-1",
+      "returncode": 0,
+      "process_seconds": 27.013191708829254,
+      "packet_digest": "3657183d119d65668ecf1b37ecb72fed2fbf5e27a5f0a86814a26c341ea6f6c5",
+      "output": ".runtime/art-direction/series01-sikh292/reopen-01"
+    }
+  ],
+  "native_process_seconds": 2964.407728416845,
+  "native_time_definition": "Worker setup, save and rendering occupancy; not total net effort or pure render wait.",
+  "engineering_tokens": null,
+  "direct_listening": "NOT_RUN",
+  "realtime_perceptual_playback": "NOT_RUN",
+  "provider_calls": 0,
+  "new_cloud_jobs": 0,
+  "new_media_off_device_backup": false,
+  "encoded_streams": {
+    "pashtun-sikh-42s.mp4": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 1080,
+          "height": 1920,
+          "nb_frames": "1008"
+        },
+        {
+          "codec_name": "aac",
+          "codec_type": "audio",
+          "sample_rate": "48000",
+          "nb_frames": "1970"
+        }
+      ],
+      "format": {
+        "duration": "42.000000"
+      }
+    },
+    "sikh-22s.mp4": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 576,
+          "height": 1024,
+          "nb_frames": "528"
+        },
+        {
+          "codec_name": "aac",
+          "codec_type": "audio",
+          "sample_rate": "48000",
+          "nb_frames": "1033"
+        }
+      ],
+      "format": {
+        "duration": "22.000000"
+      }
+    }
+  },
+  "delivery_hashes": {
+    "sikh-22s.mp4": "5a268fb46779edc0ddd368bc446201e17d3b985adb2984b4d09afb507b72ccbd",
+    "sikh-picture.mp4": "656988b5c34bfc041ee959d6295410349b251860c54bd4bb88fb051919c4a4a1",
+    "pashtun-sikh-42s.mp4": "f4ff3b56eb4e74b47c5943f72c7328e21201dfd46e1d2f9de06dc5780bb77420"
+  }
+}

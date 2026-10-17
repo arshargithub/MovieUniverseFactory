@@ -1,0 +1,28 @@
+{
+  "id": "sikh292-joined-audio",
+  "operation": "audio",
+  "entities": [
+    "music_reference",
+    "officer"
+  ],
+  "query": "accepted Pashtun reuse music edit sound timing Sikh engine no new narration",
+  "intent": "Director292 joined Pashtun Sikh preview with original selected music; preserve accepted narration and exact picture; new locally authored effect stems, no provider calls",
+  "phase": "execution",
+  "inputs": {
+    "scripts/sikh292_edit.py": "0a026cc2ea317a20670c1dacbd143e676ba967810475f89884205344567e348a",
+    "results/sikh292/STRATEGY.md": "ccb34980e429008a1779b99c49f75f83ec52b8c459383a4bac2e8e15615b3522",
+    ".runtime/art-direction/series01-finish248/delivery01/pashtun-20s.mp4": "1004ed9f2e06d2eafb008c925eb9d266e8a13b8603086020e28d19e3b606722b",
+    ".runtime/art-direction/series01-finish248/audio02/unfaded-trailer-join.wav": "e991f5fecf4d2805b10c6a9857e08104984d31036c05f7cd2996a40abbbd76c8",
+    "artifacts/imports/suno-theme-01/original/Harmonic Release.wav": "42234a4a8e44c70daf384d233a29b4e52bfb707f5ff22aa1b18efd5d97b1080b",
+    ".runtime/art-direction/series01-finish245/audio02/manifest.json": "5fe07e974faa970042e41679f754c923422775025801f957d89c5851e706986a",
+    ".runtime/art-direction/series01-finish248/audio02/manifest.json": "3770e2f7422fb06684f4663806a146660d7b9e9cd898cb26ab1faeb8518c7c54",
+    "docs/knowledge/CURRENT_PRODUCTION_STATE.md": "e02bd103e221eb2cd55963288045f650e7eccc1c9df42fed8cd7046703cf0119"
+  },
+  "open_decisions": [],
+  "execution_authority": {
+    "source": "results/sikh292/STRATEGY.md",
+    "scope": "Director292 requests stitched music review; no new narration, paid generation or publication"
+  },
+  "max_context_characters": 42000,
+  "preserve_accepted_artifact": "1004ed9f2e06d2eafb008c925eb9d266e8a13b8603086020e28d19e3b606722b"
+}

@@ -1,0 +1,68 @@
+{
+  "scope": "Director292 substantial development fidelity and joined music preview; not actor admission or final production",
+  "status": "READY_FOR_DIRECTOR_DEVELOPMENT_REVIEW",
+  "director_acceptance": "PENDING",
+  "evidence": [
+    {
+      "path": "results/sikh292/observations.json",
+      "sha256": "36c0d09a07d699359f5c69c86d21a24699ea31786d634bd49474549f8c9b797b"
+    },
+    {
+      "path": "results/sikh292/verification.json",
+      "sha256": "d7745ff0c00459fe72e4540f6e228fb4b9e2df609f125e5f0922e39eb4d5b4cc"
+    },
+    {
+      "path": "results/sikh292/REVIEW.md",
+      "sha256": "7265ace37cacf4c2bca3851fde8e7a56349ac03165effe3087f5da63c7f3a3df"
+    },
+    {
+      "path": ".runtime/art-direction/series01-sikh292/edit-01/pashtun-sikh-42s.mp4",
+      "sha256": "f4ff3b56eb4e74b47c5943f72c7328e21201dfd46e1d2f9de06dc5780bb77420"
+    }
+  ],
+  "checks": [
+    {
+      "id": "stop_spacing",
+      "status": "PASS",
+      "observation": "Stop displaced6m farther from unchanged crowd; measured minimum12.942m tire-to-front-row clearance. Approach, stopped coverage and departure remain framed.",
+      "evidence": ".runtime/art-direction/series01-sikh292/edit-01/chronology-03.png; results/sikh292/verification.json"
+    },
+    {
+      "id": "cloud_pattern",
+      "status": "PASS",
+      "observation": "Irregular patches replace mirrored pattern; clear textured moon retained. This verifies the requested development change, not final atmospheric realism.",
+      "evidence": ".runtime/art-direction/series01-sikh292/reopen-01/frame-0099.png"
+    },
+    {
+      "id": "wheel_response",
+      "status": "PASS",
+      "observation": "Braking and launch emit low chips/puffs at rear tire, fresh marks grow after contact and persistent dust stays in world space. Shot-authored flat-road approximation, not general soil simulation.",
+      "evidence": ".runtime/art-direction/series01-sikh292/edit-01/chronology-03.png; .runtime/art-direction/series01-sikh292/edit-01/chronology-08.png"
+    },
+    {
+      "id": "fidelity_additions",
+      "status": "PASS",
+      "observation": "Road aggregate/ruts, bowed crops, branching trees, irregular bank, secondary heads/beards/crowns/robes and horse coat/mane/tack added and visible. Provisional forms remain; no final same-film finish claim.",
+      "evidence": ".runtime/art-direction/series01-sikh292/reopen-01/frame-0315.png; .runtime/art-direction/series01-sikh292/movie-01/frames/frame-0384.png"
+    },
+    {
+      "id": "joined_delivery",
+      "status": "PASS",
+      "observation": "42s encoded preview joins protected20s Pashtun and22s Sikh with selected theme continuation and temporary local effects. No Pashtun native rerender. Decoded join images inspected; stream/source/PCM checks pass. Listening and musical acceptance remain NOT_RUN/PENDING.",
+      "evidence": ".runtime/art-direction/series01-sikh292/edit-01/encoded-review.png; results/sikh292/verification.json"
+    },
+    {
+      "id": "reproducibility",
+      "status": "PASS",
+      "observation": "84 tests pass; frozen source bindings match, six independent reopen samples pixel-identical; complete contact trace checked.",
+      "evidence": "results/sikh292/verification.json"
+    }
+  ],
+  "limitations": [
+    "Principal Sikh identity, connected cloth and final hand/face performance are not admitted; remains explicitly labeled proxy.",
+    "Secondary cast, landscape and horse improvements are development fidelity, not final illustrated studio finish.",
+    "No direct listening or real-time perceptual playback; engine is temporary original synthesis, not recorded Enfield.",
+    "No final trailer/rights/device/release acceptance or new off-device backup.",
+    "Native worker occupancy is not net engineering time; engineering tokens unknown."
+  ]
+}

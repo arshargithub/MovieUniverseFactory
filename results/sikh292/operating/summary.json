@@ -1,0 +1,406 @@
+{
+  "closed_episode_count": 0,
+  "consumption_per_outcome": {
+    "closed_episodes": {
+      "engineering_tokens": null,
+      "net_seconds": null
+    },
+    "closed_experiments": {
+      "engineering_tokens": null,
+      "net_seconds": null
+    },
+    "director_accepted_outputs": {
+      "engineering_tokens": null,
+      "net_seconds": null
+    },
+    "technically_successful_outputs": {
+      "engineering_tokens": null,
+      "net_seconds": null
+    }
+  },
+  "cost_scope": "Development investment; repeatable runtime cost remains in the campaign provider records.",
+  "engineering_usage": {
+    "account_allowance": {
+      "observations": [],
+      "scope": "account-wide; not experiment token attribution"
+    },
+    "actual_engineering_charge_usd": null,
+    "api_equivalent_estimate_usd": null,
+    "blocks": [],
+    "captured_tasks": [],
+    "category_coverage": {
+      "cache_write_input_tokens": {
+        "observed_blocks": 0,
+        "total_blocks": 0
+      },
+      "cached_input_tokens": {
+        "observed_blocks": 0,
+        "total_blocks": 0
+      },
+      "input_tokens": {
+        "observed_blocks": 0,
+        "total_blocks": 0
+      },
+      "output_tokens": {
+        "observed_blocks": 0,
+        "total_blocks": 0
+      },
+      "reasoning_output_tokens": {
+        "observed_blocks": 0,
+        "total_blocks": 0
+      },
+      "total_tokens": {
+        "observed_blocks": 0,
+        "total_blocks": 0
+      }
+    },
+    "exact_attributable_tokens": null,
+    "expected_tasks": [],
+    "missing_tasks": [],
+    "observed_tokens": {
+      "cache_write_input_tokens": null,
+      "cached_input_tokens": null,
+      "input_tokens": null,
+      "output_tokens": null,
+      "reasoning_output_tokens": null,
+      "total_tokens": null
+    },
+    "status": "UNKNOWN",
+    "subscription": {
+      "allocation_usd": null,
+      "treatment": "shared fixed overhead"
+    },
+    "token_definitions": {
+      "cache_write_input_tokens": "Retained as reported; not added to total.",
+      "cached_input_tokens": "Subset of input; do not add to total.",
+      "input_tokens": "Reported input total; cached input is a subset.",
+      "output_tokens": "Reported output total; reasoning output is a subset.",
+      "reasoning_output_tokens": "Subset of output; do not add to total.",
+      "total_tokens": "Reported total; input plus output, without subset double counting."
+    },
+    "uncertainties": [
+      "capture_completeness_not_established"
+    ],
+    "window_end": "2026-10-17T05:12:05.580354+00:00",
+    "window_start": "2026-10-17T00:49:45.390471+00:00"
+  },
+  "episodes": [
+    {
+      "assistant_active_union_seconds": 2680.5757460594177,
+      "assistant_time_scope": "Recorded activity intervals only; not token generation time",
+      "calendar_elapsed_seconds": null,
+      "coverage_fraction": 0.9999660953478591,
+      "disposition": null,
+      "episode_id": "staging289",
+      "excluded_input_wait_seconds": null,
+      "human_review_seconds": null,
+      "jobs": [
+        {
+          "job_id": "staging289-inspect01",
+          "job_kind": "native",
+          "monotonic_seconds": 2.000253665726632,
+          "outcome": "FAILED",
+          "utc_seconds": 2.0006790161132812
+        },
+        {
+          "job_id": "staging289-inspect02",
+          "job_kind": "native",
+          "monotonic_seconds": 8.83320266706869,
+          "outcome": "PASSED",
+          "utc_seconds": 8.833697080612183
+        },
+        {
+          "job_id": "staging289-inspect03",
+          "job_kind": "native",
+          "monotonic_seconds": 6.019593500066549,
+          "outcome": "PASSED",
+          "utc_seconds": 6.0198729038238525
+        },
+        {
+          "job_id": "staging289-movie01",
+          "job_kind": "native",
+          "monotonic_seconds": 277.9436143748462,
+          "outcome": "PASSED",
+          "utc_seconds": 277.94429087638855
+        },
+        {
+          "job_id": "staging289-movie02",
+          "job_kind": "native",
+          "monotonic_seconds": 105.01523079210892,
+          "outcome": "FAILED",
+          "utc_seconds": 105.01575708389282
+        },
+        {
+          "job_id": "staging289-movie03",
+          "job_kind": "native",
+          "monotonic_seconds": 277.9855590420775,
+          "outcome": "PASSED",
+          "utc_seconds": 277.9849359989166
+        },
+        {
+          "job_id": "staging289-reopen01",
+          "job_kind": "native",
+          "monotonic_seconds": 6.9361140839755535,
+          "outcome": "PASSED",
+          "utc_seconds": 6.935999155044556
+        },
+        {
+          "job_id": "staging289-camera01",
+          "job_kind": "native",
+          "monotonic_seconds": 45.91520220832899,
+          "outcome": "PASSED",
+          "utc_seconds": 45.915688037872314
+        },
+        {
+          "job_id": "staging289-reopen02",
+          "job_kind": "native",
+          "monotonic_seconds": 6.756155415903777,
+          "outcome": "PASSED",
+          "utc_seconds": 6.756448030471802
+        }
+      ],
+      "lifecycle": "OPEN",
+      "native_job_wall_sum_seconds": 737.4049257501028,
+      "native_job_wall_union_seconds": null,
+      "native_jobs": [
+        {
+          "job_id": "staging289-inspect01",
+          "job_kind": "native",
+          "monotonic_seconds": 2.000253665726632,
+          "outcome": "FAILED",
+          "utc_seconds": 2.0006790161132812
+        },
+        {
+          "job_id": "staging289-inspect02",
+          "job_kind": "native",
+          "monotonic_seconds": 8.83320266706869,
+          "outcome": "PASSED",
+          "utc_seconds": 8.833697080612183
+        },
+        {
+          "job_id": "staging289-inspect03",
+          "job_kind": "native",
+          "monotonic_seconds": 6.019593500066549,
+          "outcome": "PASSED",
+          "utc_seconds": 6.0198729038238525
+        },
+        {
+          "job_id": "staging289-movie01",
+          "job_kind": "native",
+          "monotonic_seconds": 277.9436143748462,
+          "outcome": "PASSED",
+          "utc_seconds": 277.94429087638855
+        },
+        {
+          "job_id": "staging289-movie02",
+          "job_kind": "native",
+          "monotonic_seconds": 105.01523079210892,
+          "outcome": "FAILED",
+          "utc_seconds": 105.01575708389282
+        },
+        {
+          "job_id": "staging289-movie03",
+          "job_kind": "native",
+          "monotonic_seconds": 277.9855590420775,
+          "outcome": "PASSED",
+          "utc_seconds": 277.9849359989166
+        },
+        {
+          "job_id": "staging289-reopen01",
+          "job_kind": "native",
+          "monotonic_seconds": 6.9361140839755535,
+          "outcome": "PASSED",
+          "utc_seconds": 6.935999155044556
+        },
+        {
+          "job_id": "staging289-camera01",
+          "job_kind": "native",
+          "monotonic_seconds": 45.91520220832899,
+          "outcome": "PASSED",
+          "utc_seconds": 45.915688037872314
+        },
+        {
+          "job_id": "staging289-reopen02",
+          "job_kind": "native",
+          "monotonic_seconds": 6.756155415903777,
+          "outcome": "PASSED",
+          "utc_seconds": 6.756448030471802
+        }
+      ],
+      "net_elapsed_seconds": null,
+      "observed_excluded_input_wait_seconds": 0,
+      "operational_proxies": {
+        "capture_gap": 1
+      },
+      "phase_net_seconds": null,
+      "uncertainties": [
+        "missing_interval_end",
+        "missing_or_duplicate_lifecycle_boundary",
+        "unexplained_gap"
+      ],
+      "unknown_gap_seconds": 0.09088706970214844
+    },
+    {
+      "assistant_active_union_seconds": 1682.2331550121307,
+      "assistant_time_scope": "Recorded activity intervals only; not token generation time",
+      "calendar_elapsed_seconds": null,
+      "coverage_fraction": 0.9761009898645928,
+      "disposition": null,
+      "episode_id": "staging290",
+      "excluded_input_wait_seconds": null,
+      "human_review_seconds": null,
+      "jobs": [],
+      "lifecycle": "OPEN",
+      "native_job_wall_sum_seconds": 0,
+      "native_job_wall_union_seconds": null,
+      "native_jobs": [],
+      "net_elapsed_seconds": null,
+      "observed_excluded_input_wait_seconds": 1489.7331628799438,
+      "operational_proxies": {},
+      "phase_net_seconds": null,
+      "uncertainties": [
+        "missing_or_duplicate_lifecycle_boundary",
+        "unexplained_gap"
+      ],
+      "unknown_gap_seconds": 77.66292214393616
+    },
+    {
+      "assistant_active_union_seconds": 2575.7380900382996,
+      "assistant_time_scope": "Recorded activity intervals only; not token generation time",
+      "calendar_elapsed_seconds": null,
+      "coverage_fraction": 0.9999551794230864,
+      "disposition": null,
+      "episode_id": "staging291",
+      "excluded_input_wait_seconds": null,
+      "human_review_seconds": null,
+      "jobs": [],
+      "lifecycle": "OPEN",
+      "native_job_wall_sum_seconds": 0,
+      "native_job_wall_union_seconds": null,
+      "native_jobs": [],
+      "net_elapsed_seconds": null,
+      "observed_excluded_input_wait_seconds": 575.5992188453674,
+      "operational_proxies": {},
+      "phase_net_seconds": null,
+      "uncertainties": [
+        "missing_or_duplicate_lifecycle_boundary",
+        "unexplained_gap"
+      ],
+      "unknown_gap_seconds": 0.1412510871887207
+    },
+    {
+      "assistant_active_union_seconds": 3778.518406152725,
+      "assistant_time_scope": "Recorded activity intervals only; not token generation time",
+      "calendar_elapsed_seconds": null,
+      "coverage_fraction": 0.9958943247689059,
+      "disposition": null,
+      "episode_id": "fidelity292",
+      "excluded_input_wait_seconds": null,
+      "human_review_seconds": null,
+      "jobs": [
+        {
+          "job_id": "sikh292-controls1",
+          "job_kind": "native",
+          "monotonic_seconds": 293.76815445907414,
+          "outcome": "PASSED",
+          "utc_seconds": 293.7724220752716
+        },
+        {
+          "job_id": "sikh292-controls2",
+          "job_kind": "native",
+          "monotonic_seconds": 292.45949033414945,
+          "outcome": "PASSED",
+          "utc_seconds": 292.4619710445404
+        },
+        {
+          "job_id": "sikh292-controls3",
+          "job_kind": "native",
+          "monotonic_seconds": 372.03650945890695,
+          "outcome": "PASSED",
+          "utc_seconds": 372.03893518447876
+        },
+        {
+          "job_id": "sikh292-movie1",
+          "job_kind": "native",
+          "monotonic_seconds": 1982.9105446250178,
+          "outcome": "PASSED",
+          "utc_seconds": 1982.923861026764
+        },
+        {
+          "job_id": "sikh292-reopen1",
+          "job_kind": "native",
+          "monotonic_seconds": 27.908896250184625,
+          "outcome": "PASSED",
+          "utc_seconds": 27.90956401824951
+        }
+      ],
+      "lifecycle": "OPEN",
+      "native_job_wall_sum_seconds": 2969.083595127333,
+      "native_job_wall_union_seconds": null,
+      "native_jobs": [
+        {
+          "job_id": "sikh292-controls1",
+          "job_kind": "native",
+          "monotonic_seconds": 293.76815445907414,
+          "outcome": "PASSED",
+          "utc_seconds": 293.7724220752716
+        },
+        {
+          "job_id": "sikh292-controls2",
+          "job_kind": "native",
+          "monotonic_seconds": 292.45949033414945,
+          "outcome": "PASSED",
+          "utc_seconds": 292.4619710445404
+        },
+        {
+          "job_id": "sikh292-controls3",
+          "job_kind": "native",
+          "monotonic_seconds": 372.03650945890695,
+          "outcome": "PASSED",
+          "utc_seconds": 372.03893518447876
+        },
+        {
+          "job_id": "sikh292-movie1",
+          "job_kind": "native",
+          "monotonic_seconds": 1982.9105446250178,
+          "outcome": "PASSED",
+          "utc_seconds": 1982.923861026764
+        },
+        {
+          "job_id": "sikh292-reopen1",
+          "job_kind": "native",
+          "monotonic_seconds": 27.908896250184625,
+          "outcome": "PASSED",
+          "utc_seconds": 27.90956401824951
+        }
+      ],
+      "net_elapsed_seconds": null,
+      "observed_excluded_input_wait_seconds": 0,
+      "operational_proxies": {},
+      "phase_net_seconds": null,
+      "uncertainties": [
+        "missing_interval_end",
+        "missing_or_duplicate_lifecycle_boundary",
+        "unexplained_gap"
+      ],
+      "unknown_gap_seconds": 15.577324867248535
+    }
+  ],
+  "experiment_id": "SIKH-STAGING",
+  "factory_api": {
+    "known_api_cost_usd": null,
+    "provider_calls": null,
+    "reason": "No provider ledger evidence supplied; absence is not zero.",
+    "status": "UNKNOWN"
+  },
+  "model_setting_observations": [],
+  "net_episode_sum_seconds": null,
+  "note": "Episode totals exclude inter-episode gaps. Job sums are process-seconds, not CPU time.",
+  "outcome_denominators": {
+    "closed_episodes": 0,
+    "closed_experiments": 0,
+    "director_accepted_outputs": null,
+    "technically_successful_outputs": null
+  },
+  "schema_version": "1.0"
+}
