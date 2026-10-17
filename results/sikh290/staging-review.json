@@ -1,0 +1,132 @@
+{
+  "scope": "Director-authorized action/geography study with actual motorcycle and declared character proxies; not final production admission",
+  "director_acceptance": "PENDING",
+  "manual_findings": {
+    "disposition": "READY_FOR_DIRECTOR_STAGING_REVIEW_NOT_PRODUCTION_ADMISSION",
+    "director_acceptance": "PENDING",
+    "review_method": "Complete chronological frame-sequence inspection plus enlarged opening, side fit, leader and launch controls; not real-time playback or listening.",
+    "delivery": ".runtime/art-direction/series01-sikh290/camera_patch-02/sikh-staging-22s.mp4",
+    "observations": [
+      {
+        "request": "Lower more centered opening",
+        "finding": "Initial low near-frontal silhouette reads larger; side sweep opens to farmland. Brief side framing is close, not the final shot-composition qualification.",
+        "evidence": "camera_patch-02/frames/frame-0001.png; chronology-01.png; chronology-02.png"
+      },
+      {
+        "request": "Lower seat forward pegs larger bike",
+        "finding": "Actual donor, saddle support and contact assembly adapted together; side control and full-pose reach checks retained. Not a final anatomical rig.",
+        "evidence": "controls-01/support-side.png; camera_patch-02/bike-adaptation.json"
+      },
+      {
+        "request": "Remove slow feel",
+        "finding": "22s at24fps, faster world travel and bounded acceleration implemented; deliberate stop remains. Temporal feel remains a Director review question, not established by frame counts.",
+        "evidence": "camera_patch-02/media-probe.json; tests/test_sikh290.py; chronology-01.png through chronology-09.png"
+      },
+      {
+        "request": "Explosive takeoff",
+        "finding": "Crowd clears before launch; short yaw/slip followed by acceleration and visible world-relative dust burst. Camera widened at closest pass. Fine tire texture/spin readability remains a finishing dependency.",
+        "evidence": "camera_patch-02/frames/frame-0445.png through frame-0470.png; chronology-07.png through chronology-09.png"
+      },
+      {
+        "request": "Higher farther Nihang leader",
+        "finding": "Bank and leader raised/moved back; camera clears feet and sky silhouette, rider looks upward. Original reference-b reviewed as staging authority, not copied media.",
+        "evidence": "camera_patch-02/frames/frame-0337.png; chronology-06.png; series01-sikh256/references/b-gesture-10-20.jpg"
+      }
+    ],
+    "internal_rejections": [
+      "controls01 bank occlusion",
+      "controls02 feet occlusion",
+      "movie01 unreachable arm during stop",
+      "movie02 camera edge crops",
+      "camera_patch01 close-pass front-wheel edge crop"
+    ],
+    "protected": [
+      "actual source GLB",
+      "all289 media",
+      "accepted Sikh v03 illustration",
+      "accepted Pashtun253 sequence"
+    ],
+    "not_qualified": [
+      "final actor identity",
+      "connected turban and face-cloth performance",
+      "hands and fingers",
+      "general vehicle or horse dynamics",
+      "final illustrated night look",
+      "sound and music",
+      "release rights",
+      "mobile review",
+      "new native-media remote recovery"
+    ]
+  },
+  "evidence": [
+    {
+      "path": "results/sikh290/REVIEW.md",
+      "sha256": "a78e7f42bb336487b127ffff55ff0851ea0d731f9465d62386cc1d487969d11c"
+    },
+    {
+      "path": "results/sikh290/staging-observations.json",
+      "sha256": "f59d0f60617b67a9e00ec55d44ef1a7041ff22996f19c0842297c9a0f225dc2f"
+    },
+    {
+      "path": "results/sikh290/metrics.json",
+      "sha256": "2f4772e5e8ec02726a8d2b5ed8c3fe52c37209718f1bd57677812da072a08966"
+    },
+    {
+      "path": ".runtime/art-direction/series01-sikh290/camera_patch-02/sikh-staging-22s.mp4",
+      "sha256": "16d6143125ba082cb7b465c695b660da152cd257672e68e856d2c7e63c7f5305"
+    }
+  ],
+  "technical_metrics": {
+    "native_receipt_count": 8,
+    "successful_exit_count": 7,
+    "failed_or_cancelled_exit_count": 1,
+    "native_process_seconds": 978.0184436249547,
+    "source": "same-process monotonic elapsed in per-job receipts; includes setup/save/render, not only render waiting",
+    "exact_net_work_seconds": null,
+    "director_wait_seconds": null,
+    "render_wait_seconds": null,
+    "engineering_tokens": null,
+    "reason": "Initial read/brief before ledger capture is not included; active span includes native waits. No exact cognitive effort or token allocation claimed.",
+    "contact_trace_maxima_m": {
+      "front_center_x": 8.903443813323975e-07,
+      "front_ground_gap": 5.960464477539063e-08,
+      "rear_ground_gap": 0.0,
+      "greeting_support_boot_max": 0.004999998956918716
+    },
+    "sampled_reopen_pixels": [
+      {
+        "frame": 1,
+        "maximum_channel_difference": 0,
+        "mean_channel_difference": 0.0
+      },
+      {
+        "frame": 65,
+        "maximum_channel_difference": 0,
+        "mean_channel_difference": 0.0
+      },
+      {
+        "frame": 265,
+        "maximum_channel_difference": 0,
+        "mean_channel_difference": 0.0
+      },
+      {
+        "frame": 337,
+        "maximum_channel_difference": 1,
+        "mean_channel_difference": 6.098750975800156e-07
+      },
+      {
+        "frame": 445,
+        "maximum_channel_difference": 0,
+        "mean_channel_difference": 0.0
+      },
+      {
+        "frame": 505,
+        "maximum_channel_difference": 0,
+        "mean_channel_difference": 0.0
+      }
+    ],
+    "external_provider_calls_this_pass": 0,
+    "aws_launches_this_pass": 0,
+    "new_media_remote_backed_up": false
+  }
+}

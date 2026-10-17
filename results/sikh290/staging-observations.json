@@ -1,0 +1,16 @@
+{
+  "disposition": "READY_FOR_DIRECTOR_STAGING_REVIEW_NOT_PRODUCTION_ADMISSION",
+  "director_acceptance": "PENDING",
+  "review_method": "Complete chronological frame-sequence inspection plus enlarged opening, side fit, leader and launch controls; not real-time playback or listening.",
+  "delivery": ".runtime/art-direction/series01-sikh290/camera_patch-02/sikh-staging-22s.mp4",
+  "observations": [
+    {"request": "Lower more centered opening", "finding": "Initial low near-frontal silhouette reads larger; side sweep opens to farmland. Brief side framing is close, not the final shot-composition qualification.", "evidence": "camera_patch-02/frames/frame-0001.png; chronology-01.png; chronology-02.png"},
+    {"request": "Lower seat forward pegs larger bike", "finding": "Actual donor, saddle support and contact assembly adapted together; side control and full-pose reach checks retained. Not a final anatomical rig.", "evidence": "controls-01/support-side.png; camera_patch-02/bike-adaptation.json"},
+    {"request": "Remove slow feel", "finding": "22s at24fps, faster world travel and bounded acceleration implemented; deliberate stop remains. Temporal feel remains a Director review question, not established by frame counts.", "evidence": "camera_patch-02/media-probe.json; tests/test_sikh290.py; chronology-01.png through chronology-09.png"},
+    {"request": "Explosive takeoff", "finding": "Crowd clears before launch; short yaw/slip followed by acceleration and visible world-relative dust burst. Camera widened at closest pass. Fine tire texture/spin readability remains a finishing dependency.", "evidence": "camera_patch-02/frames/frame-0445.png through frame-0470.png; chronology-07.png through chronology-09.png"},
+    {"request": "Higher farther Nihang leader", "finding": "Bank and leader raised/moved back; camera clears feet and sky silhouette, rider looks upward. Original reference-b reviewed as staging authority, not copied media.", "evidence": "camera_patch-02/frames/frame-0337.png; chronology-06.png; series01-sikh256/references/b-gesture-10-20.jpg"}
+  ],
+  "internal_rejections": ["controls01 bank occlusion", "controls02 feet occlusion", "movie01 unreachable arm during stop", "movie02 camera edge crops", "camera_patch01 close-pass front-wheel edge crop"],
+  "protected": ["actual source GLB", "all289 media", "accepted Sikh v03 illustration", "accepted Pashtun253 sequence"],
+  "not_qualified": ["final actor identity", "connected turban and face-cloth performance", "hands and fingers", "general vehicle or horse dynamics", "final illustrated night look", "sound and music", "release rights", "mobile review", "new native-media remote recovery"]
+}

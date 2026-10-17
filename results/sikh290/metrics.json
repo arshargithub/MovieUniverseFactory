@@ -1,0 +1,53 @@
+{
+  "native_receipt_count": 8,
+  "successful_exit_count": 7,
+  "failed_or_cancelled_exit_count": 1,
+  "native_process_seconds": 978.0184436249547,
+  "source": "same-process monotonic elapsed in per-job receipts; includes setup/save/render, not only render waiting",
+  "exact_net_work_seconds": null,
+  "director_wait_seconds": null,
+  "render_wait_seconds": null,
+  "engineering_tokens": null,
+  "reason": "Initial read/brief before ledger capture is not included; active span includes native waits. No exact cognitive effort or token allocation claimed.",
+  "contact_trace_maxima_m": {
+    "front_center_x": 8.903443813323975e-07,
+    "front_ground_gap": 5.960464477539063e-08,
+    "rear_ground_gap": 0.0,
+    "greeting_support_boot_max": 0.004999998956918716
+  },
+  "sampled_reopen_pixels": [
+    {
+      "frame": 1,
+      "maximum_channel_difference": 0,
+      "mean_channel_difference": 0.0
+    },
+    {
+      "frame": 65,
+      "maximum_channel_difference": 0,
+      "mean_channel_difference": 0.0
+    },
+    {
+      "frame": 265,
+      "maximum_channel_difference": 0,
+      "mean_channel_difference": 0.0
+    },
+    {
+      "frame": 337,
+      "maximum_channel_difference": 1,
+      "mean_channel_difference": 6.098750975800156e-07
+    },
+    {
+      "frame": 445,
+      "maximum_channel_difference": 0,
+      "mean_channel_difference": 0.0
+    },
+    {
+      "frame": 505,
+      "maximum_channel_difference": 0,
+      "mean_channel_difference": 0.0
+    }
+  ],
+  "external_provider_calls_this_pass": 0,
+  "aws_launches_this_pass": 0,
+  "new_media_remote_backed_up": false
+}
