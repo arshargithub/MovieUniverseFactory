@@ -1,0 +1,28 @@
+# 300 shot / motion and interface proof
+
+Shot Intent remains the complete22s arrival, controlled stop, respectful recognition and explosive departure in rural moonlit Punjab. The main actor remains an explicit staging proxy. Reuse299 moon/fire, camera clock, music and existing leader design; do not transfer299's rejected motion admission. Pashtun20s is protected. This manually authored brief applies0004/0005/249, AU06/09–13/16 and299 contact/attention findings; the pilot does not independently understand horse anatomy or farming.
+
+All beat times below use the inherited source clock. Output time = source time / (26/22); frame = 1 + output time ×24. Thus source18–26 is output15.23–22, not an extension beyond the22-second deliverable. This rate conversion is inherited, not a new speed-up to disguise braking problems.
+
+| Beat, source seconds | Audience requirement / predicted failure | Strategy and ownership | Early proof / failure condition |
+|---|---|---|---|
+| Arrival0–4.5 | Powerful machine in credible cultivated land, not grass spikes beside a ribbon | One joined road/ditch/berm cross-section; wheat stalks, heads, leaves rooted in that surface; motorcycle paint/metal/rubber/leather retain distinct roughness | Opening actual camera and low roadside control. Fail floating plants, road plane overlap, trench like canal, grain as random spikes or material noise overpowering form |
+| Widen/OTS4.5–5.55 | Obstruction and broad rural geography legible at night | Existing camera/light, full soil section, varied crop density and crowd silhouette | Actual framing, no black crowd blobs or transplanted desert geography |
+| First lock5.55–6.15 | Fast confident brake with restrained lean | Bike root yaw/roll, separately bounded steering; actual tire support solve; rider IK | Lean target approximately9 degrees, not prior16.6; correct direction into skid, no float or reach distortion |
+| Release6.15–6.55 | Clearly upright recovery while rear wheel resumes rotation | Roll returns near0, rear rotation unlocked, no time warp; retain deceleration | Actual-camera contiguous frames plus marked wheel trace; fail release visually indistinguishable from first lean |
+| Second skid6.55–7.5 | Distinct shorter lock and42-degree settled heading | Smaller second roll, yaw resolves42 degrees, planted foot and re-solved greeting attention | Contact/steering/arms, skid marks and dust timing; fail53-degree rest, abrupt lean reversal or eye contact lost |
+| Uncover/respect7.5–14 | Held support, familiar leader recognized | Inherit proxy uncover/greeting with target-bound head and hand correction, no final-identity claim | Before/after head-space reach and palms; zero cosmetic hero changes |
+| Leader response14–17 | Powerful but anatomically coherent rear, not broken forehooves | Inspect rig rest axes and IK/FK ownership; gather forelimbs through knee/carpus and fetlock, hind contacts remain planted; chest/head/rider/spear follow same load phases | Bare horse side/front neutral, rise, apex and landing plus actual camera chronology. Fail reverse-bending hoof, disconnected joints, belly collapse, sliding hind feet, floating reins or rider |
+| Crowd part/depart18–26 | Formidable adult warriors deliberately allow passage; bike launches with force | Preserve crowd identity palette, improve garment/weapon/feet and silhouette variation at actual framing; crowd root owns translation, leg pose owns steps; exit effects use actual contact | Full parting with overlap/feet/route controls, no repeated clones or detached sleeves/boots; launch remains same approved timing |
+
+## Constraints and revision radius
+
+One actual rendered road owns tire support, all road/ditch transforms identity. Road geometry changes invalidate wheel, foot, dust and scuff height. Rebuild these against the new surface. Yaw changes invalidate head attention and uncover hand frame; call actor pose before eye/reach correction. Horse root/pivot changes invalidate IK targets, bone-parented groom/bridle, rider support and world spear; inspect full hierarchy before choosing controls. Rest-world hoof matrices are not automatically valid airborne orientations. Crowd refinements must not mutate mounted leader design.
+
+Earliest dispatch is read-only native inspection with existing source geometry, followed by focused300 controls, continuous cheap stop/rear frames, independent root visual check, then full528-frame render. Known-negative controls:299 insufficient release/excessive roll, inherited rear forehooves, old wheat/ribbon boundary. Compare support and same-film material hierarchy, not only differences from negatives. Direct realtime perception/listening remains NOT_RUN if tools supply only frames; numeric traces cannot substitute.
+
+## Manual domain reconciliation
+
+The retrieved Sikh motion/geography rules cover these entities broadly; add explicit horse hoof orientation→forelimb bend→hind support→rider/rein/spear edges and road cross-section→crop roots→tire contact edges here. Reference-b.mov is Director-supplied action authority, not a general equine dataset. Inspect its relevant phases and declare what is visible. No new third-party assets/rights are introduced; inherited donor/source rights remain separately recorded, not requalified. Complete source-bound scene development is the scope; final protagonist, general rig reuse, release/audio taste are not admitted.
+
+Unknown engineering usage remains null. No arbitrary time cutoff. Repeat local failures trigger representation reassessment; keep failed evidence, avoid another Director algorithm handoff. Final review records cold audience read followed by failure-seeking anatomy/contact/surface controls and an honest modality limit.

@@ -1,0 +1,66 @@
+{
+  "scope": "Director300 scene development: restrained two-stage stop, coherent Punjab road/ditch/cereal fields, bike materials, first crowd fidelity and corrected leader-horse performance; principal rider remains proxy",
+  "status": "READY_FOR_DIRECTOR_DEVELOPMENT_REVIEW",
+  "director_acceptance": "PENDING",
+  "evidence": [
+    {
+      "path": "results/sikh300/observations.json",
+      "sha256": "8faf11ee59a40f67c714cdacff9bc7189ae8784ce9af9400038c4b224c22f5ed"
+    },
+    {
+      "path": "results/sikh300/verification.json",
+      "sha256": "6bd033398ba7f0d85da452db952e59af2d41bb46e3fa1a2f5c5b02890c7b5358"
+    },
+    {
+      "path": "results/sikh300/REVIEW.md",
+      "sha256": "5ffa140bcfd5211f5e06fd062ab81bf2cee4b74f7d7905ef13232940b1a00f99"
+    },
+    {
+      "path": "results/sikh300/LEARNINGS.md",
+      "sha256": "0bedbbba0bccddaca21330b165259d9f041284c432a5f0cb05d4e3381a995948"
+    },
+    {
+      "path": "results/sikh299/MOON_PROVENANCE.md",
+      "sha256": "f1382b4680e76f4cdc6825bd6a74439d6bcf0ef9545a8b7d96a15e34e46f28fb"
+    },
+    {
+      "path": ".runtime/art-direction/series01-sikh300/edit-01/pashtun-sikh-42s.mp4",
+      "sha256": "d0bfc33a4204615e32b0fd9ea6c5945a8e2a12da057132dcb85427fb3fdf1c25"
+    },
+    {
+      "path": "results/sikh300/ROOT_REVIEW.md",
+      "sha256": "bfc439d0e8ecab6d3cd5834e4133576f71396992784ac49a11a246239ba94fd0"
+    }
+  ],
+  "limitations": [
+    "Strict final-native replay FAIL: five road-view samples exceed1/255 in5\u201322 isolated canopy pixels each, maximum4/255; unchanged threshold, no renderer promotion. Retained leader-shot controls all meet1/255.",
+    "Principal Sikh remains an explicit staging proxy; no final identity, anatomy, cloth, facial acting or hand performance admission.",
+    "Supporting crowd and close botanical details remain development assets; no final same-film cast/hero-plant qualification.",
+    "Authored action/contact, volume fire and local occlusion are shot-specific representations, not general physical simulation.",
+    "Chronological image inspection is not real-time perceptual playback; direct listening remains NOT_RUN.",
+    "Changed native and media are local until separately verified off-device protection; root owns shared release and Git records."
+  ],
+  "production_admission": {
+    "ready_for_review": false,
+    "failures": [
+      "anatomy:FAIL_OR_NOT_RUN",
+      "au_contact:FAIL_OR_NOT_RUN",
+      "au_deformation:FAIL_OR_NOT_RUN",
+      "au_performance:FAIL_OR_NOT_RUN",
+      "au_reference:FAIL_OR_NOT_RUN",
+      "au_reuse:FAIL_OR_NOT_RUN",
+      "au_surface:FAIL_OR_NOT_RUN",
+      "look:FAIL_OR_NOT_RUN",
+      "motion:FAIL_OR_NOT_RUN",
+      "render_profile:FAIL_OR_NOT_RUN",
+      "representation:FAIL_OR_NOT_RUN",
+      "rights:FAIL_OR_NOT_RUN",
+      "secondary:FAIL_OR_NOT_RUN",
+      "sikh_cloth:FAIL_OR_NOT_RUN",
+      "sikh_motion:FAIL_OR_NOT_RUN",
+      "visual_gate:FAIL_OR_NOT_RUN"
+    ],
+    "scope": "execution",
+    "limits": "Evidence checked for presence and hashes, not artistic truth or Director acceptance. Planning evidence cannot qualify a production result."
+  }
+}

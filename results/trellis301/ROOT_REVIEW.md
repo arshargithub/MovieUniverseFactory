@@ -30,6 +30,10 @@ Only one L4 worker is admitted, with no inbound ports, encrypted 80 GiB delete-o
 
 **Execution boundary:** the tool safety reviewer rejected the guard command before execution, requiring explicit approval for this exact sensitive payload/destination. Root's technical/budget admission above is therefore not execution authority through that boundary. The exact private-upload request was sent to the Director; no indirect retry is permitted. No upload, guard, reservation or worker was created. Local opacity controls and scene work remain unaffected.
 
+## Exact transfer authority — Director continuation302
+
+Director responded on 2026-10-18, “sorry i never saw a render for the sikh scene. and yes approved”, immediately following the exact413MB private-upload request. This supplies the missing transfer approval for the frozen payload to `mf-trellis301-export-281482331395`; original cumulative15USD budget, temporary-resource cleanup and exclusions remain binding. It does not approve public release or qualify the source as an actor. Refresh live resource checks and the execution packet before dispatch; do not repack the approved payload unnecessarily.
+
 ## Opacity control — completed, not a quality rescue
 
 Root independently inspected all four actual rendered two-up comparisons at `.runtime/trellis301/opacity/comparison-{front,left-quarter,right-quarter,back}.jpg`, alongside the original generated front and approved Sikh v03 portrait. Same native geometry, cameras and light are retained; only the image alpha connection changes.

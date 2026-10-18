@@ -1,0 +1,9 @@
+# Ground integration replan —300-L02
+
+The full movie exposed a rectangular leader-bank apron intersecting the new lowered road shoulder. Four lighting/overlay controls exclude shadows, headlamp and skid/contact decals. Opposite-side camera rays identify the road versus `low field bank for leader`; clay/emission discriminate actual geometry rather than a colour impression.
+
+Correct only the bank foot and road winding in a reversible native derivative. Remove3559 entirely flat apron polygons, conform/blend the low bank edge into the common ground, preserve all912 plateau vertices above3m exactly and leave every actor/action unchanged. Road normals must point upward; original quads were wound downward. Native is `ground-fix-01/sequence.blend`; original08 and full528 movie01 remain intact.
+
+Matched360/435/467 controls resolve the sharp rectangle. Positive road winding changes fine lighting/bump response across all road-view shots, even where the bank is offscreen; it cannot be dismissed because mean differences are small. Therefore replace frames1–275 and356–528 (448 frames). Reuse only the fixed leader-camera frames276–355, where controls300/335 have maximum1/255 difference; final reopen also checks276/355 endpoints. The plateau, leader appearance, fore/hind performance and practical lights remain unchanged.
+
+The final528 frame set must have a per-frame source/hash manifest:448 repaired frames plus80 unchanged leader frames. Independent final-native reopen controls compare against that assembled set, with the same1/255 maximum. Inspect all replaced chronology, preserve the declared realtime/listening limitations, and bind the final native/source rather than presenting the earlier failed movie as delivery. No new paid calls, assets, installations, protected Pashtun render or creative authority is involved.
