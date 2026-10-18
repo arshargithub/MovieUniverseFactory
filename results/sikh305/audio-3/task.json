@@ -1,0 +1,35 @@
+{
+  "id": "sikh305-recorded-audio-3",
+  "operation": "audio",
+  "entities": [
+    "music_reference",
+    "officer"
+  ],
+  "query": "accepted Pashtun reuse music edit sound timing Sikh engine no new narration",
+  "intent": "Replace shuffle-only effects with recorded engine, tire, hoof and neigh; synchronize revised action, preserve selected music and Pashtun PCM",
+  "phase": "execution",
+  "inputs": {
+    "scripts/sikh305_recorded_audio.py": "0aa0a5eb6d9a4aee3a75060af86260eb6e2cffceb2281f0a60091330ac5fb556",
+    "scripts/sikh304_audio.py": "00dba946529cc7ae57f1dd603aa83d96cfe296bbf94e8f377023ca57d0c6d9d6",
+    "src/movie_factory/sikh305_motion.py": "a7693489923317f46fa776703b132d8cf3d5202b1b0a81ccf20009df3d71c573",
+    "results/sikh305/STRATEGY.md": "849391f95865b49852a65441a744588446372a2e8207d068bfb9eeeaf3aa075f",
+    ".runtime/art-direction/series01-finish248/delivery01/pashtun-20s.mp4": "1004ed9f2e06d2eafb008c925eb9d266e8a13b8603086020e28d19e3b606722b",
+    ".runtime/art-direction/series01-finish248/audio02/unfaded-trailer-join.wav": "e991f5fecf4d2805b10c6a9857e08104984d31036c05f7cd2996a40abbbd76c8",
+    "artifacts/imports/suno-theme-01/original/Harmonic Release.wav": "42234a4a8e44c70daf384d233a29b4e52bfb707f5ff22aa1b18efd5d97b1080b",
+    ".runtime/art-direction/series01-sikh305/build-11/impact-events.json": "d67c4f56acef350cc927d616cc6055d75a4cc450215787289ae7f54ee91d5798",
+    ".runtime/art-direction/series01-finish245/audio02/manifest.json": "5fe07e974faa970042e41679f754c923422775025801f957d89c5851e706986a",
+    "docs/knowledge/CURRENT_PRODUCTION_STATE.md": "e02bd103e221eb2cd55963288045f650e7eccc1c9df42fed8cd7046703cf0119",
+    ".runtime/art-direction/series01-sikh305/sound-sources/enfield-350.mp3": "823bcc76a210ccbf12ea1d19450d1291bc08fe52dd9675d172596586f7657986",
+    ".runtime/art-direction/series01-sikh305/sound-sources/acceleration.mp3": "804bc02601575053bc6083bfcc2e084309c1456e0e9013dffa66b00c7be9d439",
+    ".runtime/art-direction/series01-sikh305/sound-sources/tire-skid.mp3": "09ab2f7447c511229169333952de7ac44cb11fa497feb11a51b5852e4bb6a22b",
+    ".runtime/art-direction/series01-sikh305/sound-sources/hoof-foley.mp3": "b38db2984d6d4f156256890fb303a5592e21187787c2b09b9fba9ac366fe08c1",
+    ".runtime/art-direction/series01-sikh305/sound-sources/horse-neigh.wav": "cbc7cc2041478b1c8bfc1ef561edced80402536b0b1d614da62c4f5058f47541"
+  },
+  "open_decisions": [],
+  "execution_authority": {
+    "source": "results/sikh305/STRATEGY.md",
+    "scope": "Director-requested free-source local sound correction; no purchase, provider call or publication"
+  },
+  "max_context_characters": 42000,
+  "preserve_accepted_artifact": "1004ed9f2e06d2eafb008c925eb9d266e8a13b8603086020e28d19e3b606722b"
+}

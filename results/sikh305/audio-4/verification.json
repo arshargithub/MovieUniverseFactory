@@ -1,0 +1,96 @@
+{
+  "signal_provenance_and_sync": "PASS",
+  "listening": "NOT_RUN",
+  "auditory_quality": "NOT_CERTIFIED_BY_SIGNAL_CHECKS",
+  "metrics": {
+    "friction-stem.wav": {
+      "seconds": 29.0,
+      "peak": 0.30662158131599426,
+      "rms_dbfs": -38.385428053537495,
+      "mono_power_ratio": 0.9397235979516957
+    },
+    "engine-stem.wav": {
+      "seconds": 29.0,
+      "peak": 0.34073036909103394,
+      "rms_dbfs": -26.173817239264476,
+      "mono_power_ratio": 0.999535451231847
+    },
+    "sikh-mix.wav": {
+      "seconds": 29.0,
+      "peak": 0.46764180064201355,
+      "rms_dbfs": -22.34072231477931,
+      "mono_power_ratio": 0.9634081101844995
+    },
+    "horse-stem.wav": {
+      "seconds": 29.0,
+      "peak": 0.3510185778141022,
+      "rms_dbfs": -38.19623467661398,
+      "mono_power_ratio": 1.0
+    },
+    "joined-mix.wav": {
+      "seconds": 49.0,
+      "peak": 0.8700000047683716,
+      "rms_dbfs": -20.55354316653976,
+      "mono_power_ratio": 0.9785728434657098
+    },
+    "sikh-music.wav": {
+      "seconds": 29.0,
+      "peak": 0.24661317467689514,
+      "rms_dbfs": -24.9842846438175,
+      "mono_power_ratio": 0.934929389057482
+    },
+    "sikh-effects.wav": {
+      "seconds": 29.0,
+      "peak": 0.35730797052383423,
+      "rms_dbfs": -25.673138673663342,
+      "mono_power_ratio": 0.9963576323569703
+    }
+  },
+  "event_windows": [
+    {
+      "label": "brake1",
+      "seconds": [
+        4.696,
+        5.204
+      ],
+      "effects_rms_dbfs": -21.712984031950345,
+      "music_rms_dbfs": -24.96271079945696,
+      "effects_50_250hz_rms_dbfs": -24.92818393014329
+    },
+    {
+      "label": "brake2",
+      "seconds": [
+        5.669,
+        6.346
+      ],
+      "effects_rms_dbfs": -25.369889754398706,
+      "music_rms_dbfs": -25.2464645905073,
+      "effects_50_250hz_rms_dbfs": -33.32254910598674
+    },
+    {
+      "label": "rear",
+      "seconds": [
+        12.083,
+        13.9
+      ],
+      "effects_rms_dbfs": -26.000646882123867,
+      "music_rms_dbfs": -25.01102595621012,
+      "effects_50_250hz_rms_dbfs": -31.22813053907175
+    },
+    {
+      "label": "launch",
+      "seconds": [
+        17.928,
+        19.5
+      ],
+      "effects_rms_dbfs": -20.34577857352084,
+      "music_rms_dbfs": -25.182318804647004,
+      "effects_50_250hz_rms_dbfs": -21.62503772634189
+    }
+  ],
+  "loudness_summary": "\n\n  Integrated loudness:\n    I:         -20.2 LUFS\n    Threshold: -30.2 LUFS\n\n  Loudness range:\n    LRA:         4.9 LU\n    Threshold: -40.3 LUFS\n    LRA low:   -22.5 LUFS\n    LRA high:  -17.6 LUFS\n\n  True peak:\n    Peak:       -6.6 dBFS\n[out#0/null @ 0x7370a4180] video:0KiB audio:5438KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown\nsize=N/A time=00:00:29.00 bitrate=N/A speed=77.4x elapsed=0:00:00.37    \n",
+  "pashtun_pcm_exact": true,
+  "source_hashes_verified": 5,
+  "contact_timing_verified": 7,
+  "new_paid_calls": 0
+}

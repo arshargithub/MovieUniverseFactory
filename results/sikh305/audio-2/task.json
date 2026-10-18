@@ -1,0 +1,29 @@
+{
+  "id": "sikh305-extended-audio",
+  "operation": "audio",
+  "entities": [
+    "music_reference",
+    "officer"
+  ],
+  "query": "accepted Pashtun reuse music edit sound timing Sikh engine no new narration",
+  "intent": "Extend same selected musical treatment and synchronize local effects with corrected rear/launch; preserve accepted Pashtun PCM",
+  "phase": "execution",
+  "inputs": {
+    "scripts/sikh305_audio.py": "8a905b60a625e6ed2c83b7709f9b9dc3cefaf67e96e6cea5cfd1f574ca6b6cf0",
+    "scripts/sikh304_audio.py": "00dba946529cc7ae57f1dd603aa83d96cfe296bbf94e8f377023ca57d0c6d9d6",
+    "src/movie_factory/sikh305_motion.py": "e9302cbf418edef80f7bd8120bf0ec0419d09e0e0581dba83fea6c5b1ca85e22",
+    "results/sikh305/STRATEGY.md": "601bbfe321f394054369f36dd2eab0931a77c397226559f30b1545f2f65f0849",
+    ".runtime/art-direction/series01-finish248/delivery01/pashtun-20s.mp4": "1004ed9f2e06d2eafb008c925eb9d266e8a13b8603086020e28d19e3b606722b",
+    ".runtime/art-direction/series01-finish248/audio02/unfaded-trailer-join.wav": "e991f5fecf4d2805b10c6a9857e08104984d31036c05f7cd2996a40abbbd76c8",
+    "artifacts/imports/suno-theme-01/original/Harmonic Release.wav": "42234a4a8e44c70daf384d233a29b4e52bfb707f5ff22aa1b18efd5d97b1080b",
+    ".runtime/art-direction/series01-finish245/audio02/manifest.json": "5fe07e974faa970042e41679f754c923422775025801f957d89c5851e706986a",
+    "docs/knowledge/CURRENT_PRODUCTION_STATE.md": "e02bd103e221eb2cd55963288045f650e7eccc1c9df42fed8cd7046703cf0119"
+  },
+  "open_decisions": [],
+  "execution_authority": {
+    "source": "results/sikh305/STRATEGY.md",
+    "scope": "Local authorized scene edit and effects timing; no new composition, voice or paid calls"
+  },
+  "max_context_characters": 42000,
+  "preserve_accepted_artifact": "1004ed9f2e06d2eafb008c925eb9d266e8a13b8603086020e28d19e3b606722b"
+}

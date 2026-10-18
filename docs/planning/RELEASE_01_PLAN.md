@@ -4,6 +4,48 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+### Exchange305 — complete performance correction; stopping distance protected
+
+The Director requires all thirteen listed camera, physical-response, landscape
+and leader-horse observations addressed before review. A subsequent amendment
+withdraws only the request to stop farther from the crowd. Keep the current
+stopped motorcycle and crowd positions. The first braking phase's accepted feel
+is protected; the OTS lunge must be corrected through camera/action ownership,
+not by moving the stop. Remove the22-second cap and show the departure toward
+the horizon. [305 strategy](../../results/sikh305/STRATEGY.md) binds each beat,
+method, interface and failure test. [Internal iterations](../../results/sikh305/INTERNAL_ITERATIONS.md)
+record failures retained internally, including preload/landing support and
+expanding-but-overdense dust; they are not Director review admissions.
+
+The agreed deliverable remains the corrected whole Sikh sequence and an
+unchanged-Pashtun joined preview with the selected music. Principal proxy and
+final character admission stay separate. No new TRELLIS, cloud, paid generation,
+installation, publication or remote push is authorized.304 technical receipts
+remain historical evidence; visual claims contradicted by this feedback are
+withdrawn rather than reused as the quality floor. Counter305; next checkpoint310.
+
+[305 delivery and review](../../results/sikh305/REVIEW.md):29s Sikh and49s joined
+development media assembled with recorded Enfield/acceleration/tire-friction,
+hoof foley and real neigh. Shared spear/grip/rear/landing clocks replace the
+earlier slow foreleg-only response. All696 finishing frames and23 decoded
+controls inspected;68 offline tests and full media decoding pass. Fresh native
+open succeeds, but strict replay FAIL remains: one red-channel value differs
+2/255 in140; seven other controls meet1/255. Direct real-time audiovisual
+judgment is unavailable and NOT_RUN, not replaced by signal statistics. The
+complete media are surfaced at that genuine perception boundary, not certified
+production-ready. Principal proxy, final cloth/contact, release and new backup
+remain separate. Local implementation/design records are separate; no push/S3.
+
+Next recommended work package after the complete action/sound treatment is
+reviewed: integrate the qualified rugged Sikh principal into this scene and
+prove the full uncover, respectful greeting and relaunch. Director judges
+identity/same-film presence and the exchange, not rig methods. Include body,
+connected turban/face cloth, hands, motorcycle/sling interfaces and actual shot
+motion; exclude Gurkha work, new score and unrelated landscape polish. Internal
+exit requires the approved direction, the connected cloth route, readable
+contact/acting, full shot evidence and fresh reopen without knowingly passing
+failed controls. No fresh GPU/model expenditure is authorized by this package.
+
 ### Exchange304 — complete scene correction, TRELLIS parked
 
 Director reopens the overall Sikh sequence: coupled bike/rider two-stage braking and support, modest slip-to-traction launch, believable rural track/ditch/parcel fields/breeze/trees, leader-horse rear and bank, and visible motorcycle material character. [304 strategy](../../results/sikh304/STRATEGY.md) binds the22s Sikh/42s joined deliverable; accepted20s Pashtun and selected music remain protected. No new character-generation, cloud, installation, paid asset or publication authority. Prior300 visual admissions contradicted by this feedback are withdrawn, not used as a lowered target.

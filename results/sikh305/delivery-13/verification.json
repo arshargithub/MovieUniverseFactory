@@ -1,0 +1,34 @@
+{
+  "technical_checks": "PASS",
+  "media": [
+    {
+      "path": ".runtime/art-direction/series01-sikh305/delivery-13/sikh-29s.mp4",
+      "sha256": "7deb1bda524bff95f5917cf8f5c8b1eac6aa7ea15308232d014affcf08346e82",
+      "duration": 29.0,
+      "decode": "PASS"
+    },
+    {
+      "path": ".runtime/art-direction/series01-sikh305/delivery-13/pashtun-sikh-49s.mp4",
+      "sha256": "6f00f0672dabc8155ebcfadb4cccc2b215ee21335c036e5d5752bf03f80e3a72",
+      "duration": 49.0,
+      "decode": "PASS"
+    }
+  ],
+  "pashtun_source_unchanged": true,
+  "pashtun_join_pcm_exact": true,
+  "frames": 696,
+  "tire_gap_max_m": {
+    "front": 0.0008004888075517913,
+    "rear": 0.0008207680085449143
+  },
+  "boot_gap_m": [
+    0.0009995999488941996,
+    0.000999606943809777
+  ],
+  "OTS_screen_drift_xy": [
+    0.00018233060836791992,
+    0.0007971525192260742
+  ],
+  "direct_real_time_playback_and_listening": "NOT_RUN",
+  "artistic_admission": "SEPARATE_REVIEW_REQUIRED"
+}
