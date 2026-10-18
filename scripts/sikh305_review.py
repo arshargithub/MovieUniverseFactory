@@ -31,8 +31,8 @@ OBS = {
                   'Frame chronology checked for disappearance/intersection; natural temporal response is not certified without playback.'),
     'look': ('NOT_RUN', 'Inspected revised ground, hill, fields and lighting at delivery scale.',
              'Supporting look is a scoped candidate; principal proxy and lack of real-time review prevent whole-film artistic admission.'),
-    'render_profile': ('PASS', 'Rendered all696 frames at720x1280/64 Eevee samples; independently reopened eight32-sample diagnostic controls.',
-                       'Matched-profile controls and media decoding verified. No1080 native or general renderer qualification claim.'),
+    'render_profile': ('FAIL', 'Rendered all696 frames at720x1280/64 Eevee samples; independently reopened eight32-sample diagnostic controls.',
+                       'Strict1/255 repeat threshold failed: one red-channel value differs2/255 in frame140; seven controls meet threshold. No1080 native or general renderer qualification claim.'),
     'cache_safety': ('PASS', 'Used one serialized isolated offline Blender worker and protected source natives.',
                      'No embedded script execution, credentials or global preference changes; actual saved-scene reopening tested.'),
     'narrative': ('PASS', 'Reused exact accepted20s Pashtun source and PCM.',
@@ -83,7 +83,7 @@ def main():
     verification = read(folder/'verification.json')
     reopening = read(ROOT/'results/sikh305/reopen-13/comparison.json')
     assert verification['technical_checks'] == 'PASS'
-    assert reopening['status'] == 'PASS'
+    assert reopening['status'] in {'PASS','FAIL'}
     assert {r['id'] for r in packet['obligations']} == set(OBS)
     refs = [ROOT/'results/sikh305/STRATEGY.md', ROOT/'results/sikh305/INTERNAL_ITERATIONS.md',
             ROOT/'results/sikh305/CHRONOLOGICAL_REVIEW.md', ROOT/'results/sikh305/REVIEW.md',
@@ -111,7 +111,7 @@ def main():
             dict(prediction='Recorded sources and correct sync may still sound unconvincing in the mix.',
                  observation='No direct listening tool exists here; signal checks cannot decide this.',
                  response='Keep auditory admission blocked; present the complete mix with explicit capability limitation.',result='unresolved')],
-        adjacent_regressions='Protected Pashtun source/PCM exact; current stop/crowd retained; all696 chronological frames plus encoded controls and eight native reopen controls checked. Proxy hands/cloth and real-time motion/audio remain unadmitted.',
+        adjacent_regressions='Protected Pashtun source/PCM exact; current stop/crowd retained; all696 chronological frames plus encoded controls and eight native reopen controls checked. Strict repeat FAIL at one2/255 red-channel value in frame140 remains visible. Proxy hands/cloth and real-time motion/audio remain unadmitted.',
         stopping_reason='Integrated development media and all available local checks complete. Genuine perception boundary: no direct real-time playback/listening tool. No full production-ready claim; Director can judge complete action/sound treatment, not a technical method choice.')
     gate = pk.check_review(ROOT,packet,review)
     assert not gate['ready_for_review'], 'Missing perception must not be promoted to production PASS'
