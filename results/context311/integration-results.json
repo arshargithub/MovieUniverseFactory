@@ -1,0 +1,130 @@
+{
+  "original_bytes": 25424,
+  "core_bytes": 9304,
+  "core_byte_reduction_percent": 63.4,
+  "preserved_paragraphs": 42,
+  "routes": 20,
+  "frozen_cases_passed": 10,
+  "measurements": [
+    {
+      "topics": [
+        "horse"
+      ],
+      "selected_rules": 11,
+      "route_bytes": 9320,
+      "core_plus_route_bytes": 18624,
+      "reduction_vs_original_core_percent": 26.75
+    },
+    {
+      "topics": [
+        "horse",
+        "wardrobe",
+        "sound",
+        "pashtun"
+      ],
+      "selected_rules": 17,
+      "route_bytes": 13171,
+      "core_plus_route_bytes": 22475,
+      "reduction_vs_original_core_percent": 11.6
+    },
+    {
+      "topics": [
+        "character"
+      ],
+      "selected_rules": 9,
+      "route_bytes": 8003,
+      "core_plus_route_bytes": 17307,
+      "reduction_vs_original_core_percent": 31.93
+    },
+    {
+      "topics": [
+        "trellis"
+      ],
+      "selected_rules": 14,
+      "route_bytes": 8525,
+      "core_plus_route_bytes": 17829,
+      "reduction_vs_original_core_percent": 29.87
+    },
+    {
+      "topics": [
+        "planning"
+      ],
+      "selected_rules": 8,
+      "route_bytes": 5971,
+      "core_plus_route_bytes": 15275,
+      "reduction_vs_original_core_percent": 39.92
+    },
+    {
+      "topics": [
+        "architecture"
+      ],
+      "selected_rules": 7,
+      "route_bytes": 5546,
+      "core_plus_route_bytes": 14850,
+      "reduction_vs_original_core_percent": 41.59
+    },
+    {
+      "topics": [
+        "environment"
+      ],
+      "selected_rules": 6,
+      "route_bytes": 5948,
+      "core_plus_route_bytes": 15252,
+      "reduction_vs_original_core_percent": 40.01
+    },
+    {
+      "topics": [
+        "escalation"
+      ],
+      "selected_rules": 7,
+      "route_bytes": 6306,
+      "core_plus_route_bytes": 15610,
+      "reduction_vs_original_core_percent": 38.6
+    },
+    {
+      "topics": [
+        "operations"
+      ],
+      "selected_rules": 8,
+      "route_bytes": 5582,
+      "core_plus_route_bytes": 14886,
+      "reduction_vs_original_core_percent": 41.45
+    },
+    {
+      "topics": [
+        "context"
+      ],
+      "selected_rules": 5,
+      "route_bytes": 4510,
+      "core_plus_route_bytes": 13814,
+      "reduction_vs_original_core_percent": 45.67
+    }
+  ],
+  "fresh_process_state_equal": true,
+  "current_exchange": 311,
+  "open_defects": [
+    "D305-rear",
+    "D305-terrain",
+    "D305-field_boundaries",
+    "D305-debris"
+  ],
+  "capabilities": {
+    "image": true,
+    "timed_images": true,
+    "technical": true,
+    "authority": true,
+    "direct_motion": false,
+    "direct_audio": false
+  },
+  "protected_bindings_verified": true,
+  "fresh_knowledge_packet": true,
+  "knowledge_obligations": 11,
+  "bindings": {
+    "AGENTS.md": "7423056e44733216f7b06081815f4eb1ffda6cd522f07c557ded67fd8acc0a41",
+    "docs/knowledge/context/rules.json": "95a38317d4c5f2897368f97041f533e0a1276e381b3d714b6566c73983250b71",
+    "src/movie_factory/context_hygiene.py": "d74c6c82a78ce9ae0bbe754f18905cd602012256a9df179c08a53bfad540dc5c",
+    "results/context311/routing-expectations.json": "adb28b5944ac097b32f4b94b7ac2fdcdaaf4446f140a6afb3edd44024fdd3a4e",
+    "docs/planning/RELEASE_01_STATUS.json": "f54ac1e87c09bf8554b5ba4462c777d4a36a53edd1272da835d6d9da9a72523a"
+  },
+  "limits": "Byte counts only. Core-plus-route excludes deep source reads, conversation and app instructions. Negative reduction means expansion. Separate Python processes are not fresh LLM admission tests. No overall token/time/quality improvement measured."
+}

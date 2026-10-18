@@ -1,59 +1,150 @@
 # Movie Factory implementation instructions
 
-- Exchange307 implements a scoped local review-admission command, not a perceptual oracle. Read `docs/knowledge/review_control/README.md` and recover `python -m movie_factory.review_control capsule` through the project venv before continuation. Current305 remains blocked; production is paused pending the audiovisual-review capability gap. Before a review-ready production-media handoff covered by this contract, obtain a fresh `review_control deliver` receipt; exit2, missing evidence, stale pins and open defects cannot be waived by a development label. Explicit failure audits and process-only results remain allowed, labeled with their scope. Do not repin unreviewed state or enable direct motion/audio capability without qualification. The7.4KB capsule/restart test and102 software tests do not prove independent artistic judgment. New production tasks still need their own domain knowledge reconciliation;307's knowledge-only packet is not universal coverage.
+## Mandatory core
 
-- Exchange287 narrows the viability investigation to TRELLIS first, not a broad model tournament. Read `results/sikh287/TRELLIS_PRODUCTION_PATHS.md` before continuation: existing MIT-labelled UV-baking replacement and independent C/Vulkan runtime substantiate alternatives, but no installation or commercial production qualification has passed. Preferred proposal is a minimal official TRELLIS.2 adapter, prepared RGBA, prohibited dependencies absent and a fail-closed exporter; do not install the Windows fork wholesale or ignore its recorded memory-bound defect. Preserve286's pre-generation gate and source/conversion/actor distinction. No new engineering installation, cloud deployment, paid calls or protagonist uploads follow from this research.
+These rules remain binding for every task. Detailed task routes preserve the
+original instructions verbatim; they are not optional when applicable. Latest
+explicit Director decisions take precedence over historical state. Read this
+core plus the relevant route, not every historical exchange.
 
-- Exchange286 requires a credible production path before a model/tool quality trial. First establish applicable commercial-use and output rights across the actual model, weights, dependencies and export route; permitted input/privacy handling; a feasible deployment/export/Blender integration route; and a plausible cost envelope. Unknown or incompatible mandatory rights are a blocker before generation tests, not a caveat to resolve after promising images. Research availability is not production suitability. A hypothetical dependency replacement or hoped-for permission is not an established path: park the candidate until the alternative is substantiated. Quality/performance may remain the question the subsequent trial tests; this rule does not demand proving every outcome in advance. No infrastructure, replacement-library engineering, purchases or paid calls are authorized by this gate. TRELLIS.2 is parked under strategy262 exchange286; the next work is production-viability screening, not its generation or AWS deployment. Any exception requires an explicit Director choice.
+### Scope and authority
 
-- Exchange282 requires a concrete next work package at every completed-pass handoff: name the audience-visible outcome, what the Director will receive and judge, included and excluded scope, internal exit criteria, and the single recommended next action toward the release. A list of unfinished components is not a next-step recommendation. Before yielding, compare the result with the agreed integrated deliverable, not the last successful technical test. Continue already-authorized prerequisites without another go-ahead; a proposed work package adds no new spending or creative authority. For an explicitly requested planning/rules response, deliver that plan without silently launching construction. During execution, stop only for integrated scope completion or a genuine Director-owned decision/blocker, with evidence, viable alternatives and one recommendation. Check this contract against the actual final response; documenting it is not proof of compliance. See strategy262 exchange282 for the next integrated Sikh head scope.
+Own forward momentum toward the trailer and episodes 1 and 2, preserving the
+accepted quality floor and larger-than-life direction. The Director owns
+material creative choices, acceptance, release priorities and new authority;
+the agent owns methods, diagnosis, sequencing and internal review. Explicit
+planning/read-only requests do not authorize construction. A diagnosis question
+during an unfinished correction does not cancel that goal unless the Director
+explicitly pauses or limits work.
 
-- Exchange271 rejects Sikh270 candidate17 and withdraws its foundation recommendation. Before new principal-character work or visual admission, read `docs/knowledge/SIKH_FOUNDATION_REJECTION_271.md`. Bind the individual approved direction, production look authority and accepted co-star native/shot evidence; explicitly review same-film coherence as well as identity. Prove whole forms before fibers/noise/polish. Calibrate against the recorded17 negative control, inspect revealing reverse angles, and keep design, ensemble, technical and performance verdicts separate. A blocked visual gate cannot be bypassed by relabeling the result an identity/design/foundation choice. Known failures stay internal unless the Director explicitly requests their audit/view or a genuine method/authority decision is required. Technical substrates are not accepted artistic foundations; do not lower or reopen the accepted Pashtun to match a weaker new character. This is a mandatory manual application contract, not automatic perceptual validation or new spending authority.
+Continue authorized reversible work through the integrated deliverable; setup,
+tests, commits, slow renders and routine technical choices are not handover
+gates. If feedback is substantially correct, diagnose AND repair without asking
+another go-ahead. If one branch is blocked, continue independent authorized work.
+Pause only for completion or a genuine Director-owned decision/blocker: give
+evidence, viable alternatives, consequences and one recommendation. Never ask
+the Director to approve an algorithm. Each completed-pass handoff names the
+audience-visible outcome, included/excluded scope, evidence, remaining blocker
+and one concrete next work package with its exit criteria. Check the actual
+response against this contract; recording a rule is not applying it.
 
-- Exchange264 closes the setup-completion loophole: permission to install/configure a dependency inside an authorized unfinished deliverable does not narrow the goal to installation. After setup, tests, commits or clarification of a non-blocking UI action, resume the next ready production task in the same turn. Before any final handover, explicitly check (1) whether the agreed integrated deliverable is complete, (2) whether a genuine Director-owned decision is required, and (3) whether all useful independent authorized work is exhausted if one branch is blocked. A pending motorcycle download blocks actual-bike fitting, not independent character, beard, cloth or performance work. Do not ask another go-ahead, imply the Director must restart their GUI for headless work, or relabel an intermediate technical milestone as completion. Explain progress in commentary and continue; maintain all spend, installation, rights and creative boundaries.
+No inferred authority for new spend, tools/installations, specialists, cloud,
+uploads, publication or material identity/style changes. Routine built-in image
+generation is agent-owned within scope, without a two-image approval gate.
+Provider calls require the persistent campaign budget ledger; tests use mocks.
+Before model/tool generation trials establish actual commercial/output rights,
+dependencies/export rights, input/privacy handling, deployment/Blender route and
+plausible costs. Unknown mandatory rights block trials; hypothetical replacement
+dependencies are not a proven production path.
 
-- Exchange255 calibrates the bounded bridge against AU01–AU16 and current253 approval. Read `docs/knowledge/CURRENT_PRODUCTION_STATE.md` and `docs/planning/PROTECTION_CALIBRATION_255.md` before interpreting historical pending fields. Current pilot:11 reviewed sources/38 records; finite routing tests and evidence-shape checks are not independent visual judgment. Preserve exact accepted20s scope and the strict replay FAIL separately. Reuse thirteen recorded controls to calibrate relevant review lenses; insufficient motion/audio evidence stays NOT_RUN, never a static-image PASS. New-lead source/relationship reconciliation and a shot-specific early proof remain required. Protection status is determined by remote verification/restore receipts, never by a local clone or prepared manifest.
+### Strategy and quality
 
-- Exchange250 establishes the source-indexed Pashtun production retrospective and baseline in `docs/knowledge/PASHTUN_PRODUCTION_AUDIT250.md` (case ledger and metrics linked there). At each new character/shot/work package, reconcile the applicable AU lessons with the fresh knowledge packet and shot/beat brief; this audit is not automatically covered by the nine-source retrieval pilot. Track distinct defect/review IDs, predicted-versus-escaped failures, repeated regressions and actual Director-owned decisions. Compare to the accepted quality floor, not the last rejected candidate. Record work/wait/job intervals prospectively, exclude verified Director/next-prompt idle while retaining continuing jobs, union overlaps and disclose capture gaps. Historical approximately145h reported runtime is provisional, not exact net effort;291 inputs/44 broadly avoidable stops are retrospective classifications, not a quota or time limit. Improve efficiency without suppressing useful creative input or relaxing quality.
+Before substantial work read `docs/decisions/0005-production-strategy-before-execution.md`
+and the current work strategy. Define outcome/quality floor, complete path and
+interfaces, chosen method, critical assumptions, earliest integrated proof,
+resources, revision/reuse and replan/exit conditions. Repeated compensating
+patches, adjacent regressions or failed downstream use trigger reassessment.
+Checkpoints are internal method reviews, not arbitrary time limits or approval
+gates. Do not reset cumulative effort by renaming a pass or perfect hypothetical
+future uses. Challenge the Director's or your own approach when it conflicts
+with established principles; explain the consequence and better route. Respect
+a knowingly approved scoped exception without repeated relitigation.
 
-- Exchange249 requires a shot/beat performance and believability brief before substantial shot work: follow `docs/planning/SHOT_BEAT_QUALITY_BRIEF.md`. Cover every planned beat, inheriting shared rows explicitly. Predict audience-visible anatomy, animation, contact, simulation/physical-response and adjacent failures using appropriate expertise lenses; bind strategy, interfaces, early proof and observable failure conditions. Roles are expertise perspectives, not a mandated org chart or automatic subagent dispatch. Current defect lists and retrieved lessons are not exhaustive. Cold audience review plus failure-seeking interface review must use actual evidence; no new Director gate for technical methods. Preserve Shot Intent separately from the realization plan. Record escaped defects as requirement/retrieval/method/evidence/judgment failures and carry the corrective test forward.
+Triage observations: repair blocking structure, reassess dependent symptoms,
+defer optional polish only with a visibility test and reopening trigger. Never
+hide structural defects with clothes. Use applicable approved references and
+accepted native/shot evidence, not rejected predecessors. Keep identity,
+same-film coherence, technical validity, performance and Director acceptance
+separate. Do not lower or reopen the accepted Pashtun to accommodate a weaker
+new character or chase intentionally accepted differences back to an image.
 
-- Exchange213 implements the bounded local knowledge bridge. For covered work, follow `docs/knowledge/pilot/README.md`: generate/read a fresh task packet before substantial dispatch, reconcile its impact set with the required deep sources, and run the evidence gate before handoff. Honor exit-code2 blockers; do not rehash unreviewed sources to bypass staleness. Keep manual review alongside retrieval: the nine-document/28-record pilot is not universal memory, automatic scene understanding or automatic visual judgment. Unknown domains need source/relationship reconciliation. Preserve proposed versus adopted status, source gaps and Director authority; no new paid calls or production choices follow from a passing planning packet.
+Before handoff inspect the entire claimed region/beat at intended framing and
+timing, matched reference controls, interfaces and revealing reverse/partial
+poses. Known blockers require actual evidence-backed closure; ambiguous/missing
+evidence is FAIL/NOT_RUN. Improvement, YELLOW, hashes, tests and successful reopen
+are not artistic approval. Static images do not qualify motion/audio. Predict
+unreported failures using the shot brief and appropriate expertise lenses;
+these are not an org chart or authority to dispatch subagents. Record escaped
+defects and adjacent regressions. Do not surface predictable failures as ready;
+requested audits or genuine method decisions may show clearly labeled failures.
 
-- Exchange188 clarifies authority: Astra High is the top escalation tier in this workflow; returning to Sol is a step down after a demonstrated route, not an escalation. Failure on Astra requires a method/input/representation reassessment, not a request for a nonexistent higher model. Routine built-in image generation, including more than two images, is agent-owned within the authorized deliverable; image count is not a Director approval gate. External paid calls, purchases, new installations, specialists, publication and material creative changes retain their separate authority boundaries. Horse art must include a majestic screen presence, convincing coat texture/fuzz and a legible mane/forelock in the actual gallop, not just diagnostic brown geometry.
+### Knowledge and current state
 
-- Exchange187 adopts agent-owned model escalation: Sol6.1 High is the user-reported execution default; detect stalled hypotheses, repeated adjacent regressions and unresolved foundational/contradictory evidence. Reassess the method and run a discriminating control first; if a defensible cause/integrated path remains unresolved, request a manual switch to Astra High with an evidence-bound diagnostic packet. Escalate earlier for consequential unsupported structural assumptions; do not switch merely for slow renders, environment failures or missing review. Return to Sol only after demonstrated cause/strategy and representative proof. Record reported switches/outcomes without inventing runtime settings or usage; no extra spend/scope authority. Follow `docs/knowledge/EFFICIENT_QUALITY_ASSET_WORKFLOW.md#engineering-model-escalation--adopted-at-exchange187`.
+Use `.venv/bin/python -m movie_factory.context_hygiene current` at continuation,
+then `... route --topics TOPIC [TOPIC ...]` using the table below. Read all returned
+instructions and their applicable required deep sources. Unknown or mixed scope
+needs explicit source/interface reconciliation; compose routes rather than pick
+the smallest. On ambiguity inspect the exact original rule in
+`docs/knowledge/context/rules.json` or the preserved snapshot.
 
-- Exchange185 authorizes sustained double-wrap construction and correction of discovered structural blockers to the envisioned trailer animation. No arbitrary elapsed-time cutoff: 20/60-minute checks are internal method reassessments only, not stop/approval gates. Track effort and change ineffective strategies; do not lower quality because work is slow. Test readiness in the actual required motion/framing, not merely a standing costume. Preserve accepted masters and correct necessary integration/deformation in reversible derivatives; material identity/style changes, new spend/tools/specialists/publication still require authority. Do not expand this into perfecting every hypothetical future use.
-- Production strategy before execution is required across all disciplines (Director exchange184), not only assets. Before substantial work, follow `docs/decisions/0005-production-strategy-before-execution.md`: record the intended outcome/quality floor, end-to-end path and interfaces, chosen approach, critical assumptions, earliest representative proof, resources, revision/reuse needs and replan/exit conditions in the existing work package. Read it on continuation; update it when evidence changes the approach. Routine bounded fixes may reference the current plan. Repeated compensating patches, adjacent regressions or failed downstream use trigger strategy reassessment, not endless local repair or an automatic total rewrite. The agent owns methods and momentum; planning adds no routine Director approval, spend or scope authority. Preserve the double-wrap target and other accepted choices.
-- Constructive challenge is required (Director exchange153): proactively flag requests or the agent's own approach that conflict with accepted principles, protected work, Efficient Quality or the agreed process. Name the principle and concrete consequence, distinguish evidence from estimates, and recommend a better route. Challenge before consequential change; once the Director knowingly chooses a scoped exception, record it and execute without repeated relitigation. This is not a veto, a license to lower accepted quality, or permission to exceed spending/safety boundaries. See `docs/knowledge/EFFICIENT_QUALITY_ASSET_WORKFLOW.md#constructive-challenge--adopted-at-exchange153`.
-- Own forward momentum toward the trailer and episodes 1 and 2 (reaffirmed exchange154). Maintain the current deliverable, its release dependency, evidence of progress, remaining blocker and one recommended next move. Continue authorized reversible work; do not make the Director manage routine sequencing. Challenge asset polish, tooling and documentation that displace usable footage or necessary story, sound, edit and release work. At meaningful reviews orient the Director briefly; keep the full ten-exchange checkpoint cadence. This is prioritization responsibility, not authority for new spend, publication, background work or material creative changes. See the current Path to Audience section in `docs/planning/RELEASE_01_PLAN.md`.
+Before covered substantial dispatch generate/read a fresh task packet through
+`docs/knowledge/pilot/README.md`; reconcile applicable AU audit lessons and the
+impact set manually. Run the evidence gate before handoff. Exit2 blocks; never
+rehash unreviewed sources to clear staleness. Candidate extraction is not approval.
+The pilot, routing tests and state recovery are not universal memory or automatic
+perceptual judgment. Before covered production-media handoff follow
+`docs/knowledge/review_control/README.md` and obtain a fresh `review_control deliver`
+receipt. No development-label waiver, stale receipt or fabricated modality.
+Current production remains paused under306/307; context cleanup does not resume it.
 
-- Director working preference: continue through the agreed plan without yielding for routine milestones or reversible implementation choices. Use commentary for progress; pause only for material creative/plan changes, new authorization, genuine blockers, or completion of the agreed scope. A local commit or technical milestone alone is not a reason to ask for another go-ahead.
-- Exchange158 makes the feedback rule explicit: when the agent substantially agrees with Director feedback and the correction is within the authorized goal, diagnose and implement it without a diagnosis-only final response or another go-ahead. Continue internal review and reversible corrections until the integrated deliverable is ready. Use commentary for progress; interrupt mid-goal only for a decision requiring Director authority or a genuine blocker. Do not invent approval gates at commits, tests, or routine reassessments; do not relax quality, expand spend/scope, or claim completion to avoid escalation.
-- Exchange164 strengthens the handover test: the Director supplies creative intent and acceptance, not modeling/rigging/animation expertise. Within an already authorized correction goal, feedback such as "check this" is not a diagnosis-only stopping boundary when the agent agrees a defect needs repair. Own diagnosis, method selection, implementation, verification and internal visual review together. Before yielding mid-goal, identify the actual Director-relevant decision and its consequences (identity/style/story or screen result, scope/schedule, spending/rights, protected work, release priority), concrete viable alternatives and one recommendation. If there is no such choice or genuine blocker, continue; do not ask the Director to approve a technical algorithm or endorse the agent's diagnosis. Keep routine technical findings in commentary and return with a review-ready visual result. Explicit read-only/no-change requests still prohibit implementation; budgets/safety/creative authority remain binding.
-- Exchange168 closes the explanation loophole: a request to explain/challenge a failed internal pass during an authorized unfinished correction does not cancel that goal. Explain briefly in commentary, retract the invalid pass, then execute the agreed in-scope repair in the same continuation unless the Director explicitly limits work to explanation/read-only or a real authority/blocker boundary exists. Before a final handover, name either the completed integrated deliverable or the exact Director-owned decision/blocker; a diagnosis, recommendation, rules update or commit alone is not completion. Compare against the quality floor, not just a rejected predecessor. Require a deliberate failure-seeking review of full and partial poses, anatomical landmarks/volume and adjacent regressions; if a known defect is ambiguous, it is NOT_RUN/FAIL, not a generous PASS. Do not reclassify missing anatomy as hidden polish or waive it for future clothes. Preserve technical successes separately from withdrawn visual passes. See the exchange168 contract in the Efficient Quality workflow.
-- Exchange161 requires a recorded internal visual exit gate before asset handoff. Compare the entire claimed region directly with its accepted reference under matched camera/scale/light, then inspect the required pose at normal review size and joint/interface crops. Every known blocking defect must be PASS with named image evidence, or remain FAIL/NOT_RUN and internal. Relative improvement, a YELLOW label, test counts, source hashes and a successful reopen are not substitutes. Check adjacent regions for regressions; for this body include throat/clavicles/shoulders, both elbows and arm streaks, knees and lower abdomen. Do not ask the Director to repeat a predictable rejection. Escalate only a concrete authority/method blocker with evidence and alternatives; never present a known-failing candidate as a completed result.
-- Exchange175 requires an actual visual garment-route/layer test: compare approved front/portrait layer order (shawl above chest harness), trace both cloth edges through each shoulder and around the outside of the rear headfall, and inspect required mounted upper arms with a body-versus-cloth control. A connected mesh can still disappear visually, turn into a stuffed rear bundle or violate the reference. Unknown occlusion stays FAIL/NOT_RUN; do not rationalize a structural failure as a creative choice or show it as ready because the native reopens.
-- Historical175 and subsequent178–181 constructions remain failed, not qualified sources. Exchange183 resolves the current creative target: at least two legible wraparounds, not a single-wrap substitute. Follow `docs/planning/SERIES_01_WARDROBE_TACK_FIT.md#exchange183--double-wrap-construction-and-review-contract`: explicit route/support design, representative contact-capability control, coarse integrated construction and short motion before material polish, then evidence-backed visual and technical exit. Do not reopen the same simplification question after routine failures, silently lower quality, or alter accepted152/169. No new spend/tools/specialists/publication is authorized. This process contract is not a passing garment or a guarantee of feasibility.
-- Triage Director observations rather than automatically implementing every detail (exchange156): fix production-blocking structure now, reassess dependent symptoms after upstream changes, and defer polish to a named shot/pose/visibility test. State reasons and reopening triggers; do not hide structural failures with clothes or turn feedback into an unbounded task list. See the Efficient Quality workflow's feedback triage section.
-- Anchor every evaluation in the applicable Director-approved references and decisions, identifying them explicitly. Separate reference fidelity and creative acceptance from technical validation. Rejected candidates are diagnostic history, never replacement acceptance targets. For this character, the approved frontal-v02-individualized.png and portrait-v07-individualized.png pair remains the illustrated identity and hair-look authority.
-- Exchange142 adds the four Director-approved images in `.runtime/art-direction/series01-pashtun-uncovered-v01/` to that baseline, clarifying uncovered crown, side flow and rear/length. Consult `docs/planning/SERIES_01_PASHTUN_BASELINE_V01.md` for exact files/hashes and scope. Preserve the original pair; the generated rear costume artifact is not a garment reference. Reference approval does not approve native hair or animation.
-- For character-asset continuation, read `docs/knowledge/CHARACTER_ASSET_LEARNINGS.md` and apply its integrated review-readiness checklist. Known reference mismatches stay in internal iteration; routine partial improvement is not a Director gate. Carry diagnostic budgets across prompts/pass names for the same agreed deliverable; escalate a real method/budget decision rather than requesting repeated cosmetic go-aheads.
-- Exchange152 closes/accepts the static Pashtun head, neck/upper shoulders, skin and natural hair at `natural152-seal-16`. Read `docs/knowledge/PASHTUN_CHARACTER_RETROSPECTIVE.md` before continuation. Preserve this accepted production representation; do not repair deliberately accepted differences back toward the original images. Images retain identity/art-direction and provenance value; motion, wardrobe and rights remain separate. Consult `docs/knowledge/EFFICIENT_QUALITY_ASSET_WORKFLOW.md` and the Pashtun completion plan for proposed next work; do not mistake proposed policy or stages for execution/spend authorization.
+### Execution and records
 
-- For ongoing series/release planning, read `docs/planning/RELEASE_01_PLAN.md` and `RELEASE_01_STATUS.json`; preserve accepted decisions and update the substantive-exchange counter. Provide the specified checkpoint every ten substantive planning exchanges. Do not increment it for tools, automatic continuations or unrelated implementation tasks.
-- Before new product/architecture/capability/UX specifications, consult `docs/knowledge/README.md` and the historical decision register; review relevant original context and record adoption/deviation rather than silently replacing earlier decisions. Candidate extraction is not approval.
-- Persist planning changes each substantive exchange and make scoped local commits for coherent design decisions. Batch remote design pushes at ten-exchange checkpoints; push sooner only on explicit Director request. Exclude unrelated changes, secrets and native assets. Report local commit versus remote push/backup distinctly; no force-push or automatic publication.
-- Keep design/planning commits separate from implementation commits. Both may push directly to `main` under the Director's current workflow; inspect outgoing ancestry and do not mix unrelated work into a commit.
+Use project `.venv` for outer Python; never install globally. Keep `.env` private:
+never print/log/commit/pass values to Blender; only trusted provider code reads
+known settings. Blender workers execute validated structured operations and
+reviewed/tested trusted repository handlers, never arbitrary model/API code,
+code strings or embedded asset scripts. Preserve accepted masters, failed
+evidence and unrelated edits; use reversible derivatives. Follow
+`MOVIE_FACTORY_3D_FEASIBILITY_SPEC.md` for applicable3D work; prerequisites or
+Director reviews missing stay NOT_RUN/YELLOW. Houdini/Unreal remain later-phase.
 
-- Use this project's `.venv` for all outer Python commands and dependencies. Never install packages globally.
-- Treat `.env` as private. Never print, log, commit, or pass its values to Blender. Only the trusted provider module may read known settings.
-- Follow `MOVIE_FACTORY_3D_FEASIBILITY_SPEC.md`. Preserve failed evidence and report `NOT_RUN` or YELLOW when a prerequisite or Director review is missing.
-- Blender workers execute only validated structured operations. Do not add arbitrary model-generated Python execution on the developer account.
-- Reviewed and tested model-proposed code may become trusted repository handlers. Blender may execute those handlers only through validated structured operations. Arbitrary runtime-generated Python remains prohibited. This clarification is explicitly authorized by the Director for the Demonstrator 01 workflow; it does not authorize executing unreviewed API responses, code strings, or embedded asset scripts.
-- Do not run live provider calls outside the persistent campaign budget ledger. Mocks are the default for tests.
-- Houdini and Unreal remain later-phase design notes until the Blender qualification is complete.
-- Record announced engineering-model switches, handoffs, and their outcomes in `docs/engineering-intelligence/events.json`, following its README. Keep Codex engineering attribution separate from experiment API models, mark unknown effort/usage as unknown, and include Director-rejected outcomes after escalation. Consult this record when proposing Factory model routing; do not treat it as a controlled model benchmark.
-- Before implementing human performance changes, complete the motion brief in `docs/planning/MOTION_DESIGN_TEMPLATE.md` and follow `docs/decisions/0004-motion-design-before-implementation.md`. Check coordinated joint motion and constraint compatibility before production edits; inspect complete inexpensive motion before freezing a scored campaign. This is an engineering planning requirement, not an extra user-approval requirement.
-- For new authorized experiments, follow `docs/engineering-intelligence/OPERATING_LEDGER.md`: begin lifecycle capture at design start, end activity and record waits at yields, reconcile ongoing jobs, and export a compact closure report/card. Capture known model/usage metadata with provenance; leave unknowns null. Use the 20-net-minute diagnostic / three-variant / 60-net-minute overall checkpoints unless an explicit task budget overrides them. Link reopened work as a new episode. Do not reopen 3D-05 or start 3D-06A animation from a bookkeeping task.
+Record engineering-model switches/outcomes in `docs/engineering-intelligence/events.json`
+following its README, separate from experiment API models; unknown usage stays
+unknown. Astra High is the top workflow escalation tier. Reassess methods and
+run a discriminating control before requesting a manual escalation from Sol;
+escalate earlier for consequential unsupported assumptions. No higher tier is
+available in this workflow. Return to Sol only after demonstrated cause/path;
+never infer runtime settings, savings or superiority from a model name.
+
+Persist substantive planning decisions; maintain the release exchange counter
+and ten-exchange checkpoints. Keep scoped local design/planning commits separate
+from implementation. Batch remote design pushes at checkpoints, sooner only on
+explicit request; inspect outgoing ancestry, exclude unrelated work, secrets and
+native assets, never force-push. Local commit is not remote protection. Backup
+claims require remote verification and restore receipts, not prepared manifests.
+Experiments use the operating ledger for work/wait/job intervals, exclude verified
+Director/next-prompt idle, retain continuing jobs, union overlaps, disclose gaps
+and export closure. Do not reopen3D-05 or start3D-06A from bookkeeping work.
+
+### Bounded context
+
+Use `context_hygiene run` for trusted non-sensitive verbose local commands and
+`read` for bounded evidence excerpts. Full logs remain on disk. Inspect flagged
+warnings/errors and omitted regions as needed; truncation never means success.
+Do not send credentials to either helper. Avoid repeated whole-plan/status/log
+dumps; retrieve relevant sections. Helper telemetry covers only helper use,
+not total tokens or app context. Do not silently truncate mandatory rules to fit
+a budget. See `docs/knowledge/context/README.md` for commands, limits and rollback.
+
+## Task routes
+
+Select all applicable topics. `workflow` supplies exact universal-rule history
+when interpretation is uncertain; it is not required for routine core compliance.
+
+| Topic | When required |
+|---|---|
+| knowledge, context | Retrieval, review controls, context/process changes |
+| planning | Story, release planning, checkpoints, distribution |
+| architecture | Factory product, capability, UX or system specifications |
+| character | Any character asset or new principal; add actor-specific route |
+| pashtun | Accepted Pashtun identity/hair/body reuse or changes |
+| wardrobe | Garments/cloth/contact; add pashtun for her double-wrap authority |
+| motion, horse | Performance/rigging/simulation; horse includes rider interfaces |
+| shot, environment, sound | Camera/beat, terrain/fields/FX, voice/music/audio respectively |
+| review | Any production visual/technical review or delivery |
+| model-source, trellis | Model/tool rights and trials; TRELLIS-specific continuation |
+| engineering, escalation | Code/runtime work; model-switch decisions |
+| experiment, operations | Experiment lifecycle; backup/Git/security work |
+
+Routes add prerequisites; they do not grant execution authority. See current
+task source decisions before treating historical pending fields as current.

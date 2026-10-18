@@ -1,0 +1,16 @@
+{
+  "purpose": "Frozen before route implementation; finite agent-authored expectations, not independent semantic proof",
+  "cases": [
+    {"topics":["horse"], "required":["R01","R07","R08","R09","R10","R11","R21","R27","R41"], "forbidden":["R22","R23","R25","R28"]},
+    {"topics":["horse","wardrobe","sound","pashtun"], "required":["R01","R09","R13","R22","R23","R25","R26","R28","R41"]},
+    {"topics":["character"], "required":["R05","R08","R21","R24","R27"], "forbidden":["R25","R26","R28"]},
+    {"topics":["trellis"], "required":["R02","R03","R35","R38","R42"]},
+    {"topics":["planning"], "required":["R16","R29","R31","R32"], "forbidden":["R22","R23","R25"]},
+    {"topics":["architecture"], "required":["R14","R30","R39"]},
+    {"topics":["environment"], "required":["R01","R08","R09","R21"]},
+    {"topics":["escalation"], "required":["R11","R12","R40"]},
+    {"topics":["operations"], "required":["R07","R31","R32","R34","R42"]},
+    {"topics":["context"], "required":["R01","R10","R29"]}
+  ],
+  "unknown_topics_must_block": ["unreconciled-water-simulation", "everything", ""]
+}

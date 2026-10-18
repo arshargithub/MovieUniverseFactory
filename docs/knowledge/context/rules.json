@@ -1,0 +1,752 @@
+{
+  "schema": 1,
+  "original": {
+    "path": "results/context311/AGENTS.before.md",
+    "sha256": "1aedbb9494c80566eb4df7519d94ca0c54b2863b1cee55dae77506d97d56ce5a"
+  },
+  "core": {
+    "path": "AGENTS.md",
+    "sha256": "7423056e44733216f7b06081815f4eb1ffda6cd522f07c557ded67fd8acc0a41"
+  },
+  "topics": {
+    "workflow": {
+      "rules": [
+        "R04",
+        "R06",
+        "R14",
+        "R15",
+        "R16",
+        "R17",
+        "R18",
+        "R19",
+        "R20",
+        "R24",
+        "R31",
+        "R32"
+      ],
+      "requires": []
+    },
+    "knowledge": {
+      "rules": [
+        "R01",
+        "R07",
+        "R08",
+        "R10"
+      ],
+      "requires": []
+    },
+    "context": {
+      "rules": [
+        "R29"
+      ],
+      "requires": [
+        "knowledge"
+      ]
+    },
+    "planning": {
+      "rules": [
+        "R16",
+        "R29",
+        "R31",
+        "R32"
+      ],
+      "requires": [
+        "knowledge"
+      ]
+    },
+    "architecture": {
+      "rules": [
+        "R14",
+        "R30",
+        "R39"
+      ],
+      "requires": [
+        "knowledge"
+      ]
+    },
+    "character": {
+      "rules": [
+        "R05",
+        "R08",
+        "R21",
+        "R24",
+        "R27"
+      ],
+      "requires": [
+        "review"
+      ]
+    },
+    "pashtun": {
+      "rules": [
+        "R13",
+        "R22",
+        "R23",
+        "R25",
+        "R26",
+        "R28"
+      ],
+      "requires": [
+        "character"
+      ]
+    },
+    "wardrobe": {
+      "rules": [
+        "R27",
+        "R41"
+      ],
+      "requires": [
+        "character",
+        "motion"
+      ]
+    },
+    "motion": {
+      "rules": [
+        "R09",
+        "R21",
+        "R41"
+      ],
+      "requires": [
+        "review"
+      ]
+    },
+    "horse": {
+      "rules": [
+        "R11",
+        "R27"
+      ],
+      "requires": [
+        "motion",
+        "character"
+      ]
+    },
+    "shot": {
+      "rules": [
+        "R09"
+      ],
+      "requires": [
+        "review",
+        "motion"
+      ]
+    },
+    "environment": {
+      "rules": [
+        "R08",
+        "R09"
+      ],
+      "requires": [
+        "review"
+      ]
+    },
+    "sound": {
+      "rules": [
+        "R08",
+        "R09"
+      ],
+      "requires": [
+        "review"
+      ]
+    },
+    "review": {
+      "rules": [
+        "R01",
+        "R07",
+        "R08",
+        "R09",
+        "R21"
+      ],
+      "requires": [
+        "knowledge"
+      ]
+    },
+    "model-source": {
+      "rules": [
+        "R03"
+      ],
+      "requires": [
+        "knowledge"
+      ]
+    },
+    "trellis": {
+      "rules": [
+        "R02"
+      ],
+      "requires": [
+        "model-source",
+        "experiment"
+      ]
+    },
+    "engineering": {
+      "rules": [
+        "R33",
+        "R34",
+        "R36",
+        "R37",
+        "R38",
+        "R40"
+      ],
+      "requires": [
+        "knowledge"
+      ]
+    },
+    "escalation": {
+      "rules": [
+        "R11",
+        "R12",
+        "R40"
+      ],
+      "requires": [
+        "knowledge"
+      ]
+    },
+    "experiment": {
+      "rules": [
+        "R35",
+        "R42"
+      ],
+      "requires": [
+        "engineering"
+      ]
+    },
+    "operations": {
+      "rules": [
+        "R07",
+        "R31",
+        "R32",
+        "R34",
+        "R42"
+      ],
+      "requires": [
+        "knowledge"
+      ]
+    }
+  },
+  "rules": [
+    {
+      "id": "R01",
+      "original_text": "Exchange307 implements a scoped local review-admission command, not a perceptual oracle. Read `docs/knowledge/review_control/README.md` and recover `python -m movie_factory.review_control capsule` through the project venv before continuation. Current305 remains blocked; production is paused pending the audiovisual-review capability gap. Before a review-ready production-media handoff covered by this contract, obtain a fresh `review_control deliver` receipt; exit2, missing evidence, stale pins and open defects cannot be waived by a development label. Explicit failure audits and process-only results remain allowed, labeled with their scope. Do not repin unreviewed state or enable direct motion/audio capability without qualification. The7.4KB capsule/restart test and102 software tests do not prove independent artistic judgment. New production tasks still need their own domain knowledge reconciliation;307's knowledge-only packet is not universal coverage.",
+      "sha256": "126e4db7d3a4b249965881f36e360c603bfc1207008402ac1b01fa13574b946f",
+      "topics": [
+        "knowledge",
+        "review"
+      ],
+      "core_sections": [
+        "knowledge-and-current-state"
+      ],
+      "reconciliation": "Original instruction retained verbatim; current Director decisions resolve historical pending states. Core is mandatory; routed specifics remain mandatory when applicable."
+    },
+    {
+      "id": "R02",
+      "original_text": "Exchange287 narrows the viability investigation to TRELLIS first, not a broad model tournament. Read `results/sikh287/TRELLIS_PRODUCTION_PATHS.md` before continuation: existing MIT-labelled UV-baking replacement and independent C/Vulkan runtime substantiate alternatives, but no installation or commercial production qualification has passed. Preferred proposal is a minimal official TRELLIS.2 adapter, prepared RGBA, prohibited dependencies absent and a fail-closed exporter; do not install the Windows fork wholesale or ignore its recorded memory-bound defect. Preserve286's pre-generation gate and source/conversion/actor distinction. No new engineering installation, cloud deployment, paid calls or protagonist uploads follow from this research.",
+      "sha256": "e3aa4a9a9628b609f589150caf3475a5bf7e92f66bf57465e4cf55d367cf203d",
+      "topics": [
+        "trellis"
+      ],
+      "core_sections": [],
+      "reconciliation": "Original instruction retained verbatim; current Director decisions resolve historical pending states. Core is mandatory; routed specifics remain mandatory when applicable."
+    },
+    {
+      "id": "R03",
+      "original_text": "Exchange286 requires a credible production path before a model/tool quality trial. First establish applicable commercial-use and output rights across the actual model, weights, dependencies and export route; permitted input/privacy handling; a feasible deployment/export/Blender integration route; and a plausible cost envelope. Unknown or incompatible mandatory rights are a blocker before generation tests, not a caveat to resolve after promising images. Research availability is not production suitability. A hypothetical dependency replacement or hoped-for permission is not an established path: park the candidate until the alternative is substantiated. Quality/performance may remain the question the subsequent trial tests; this rule does not demand proving every outcome in advance. No infrastructure, replacement-library engineering, purchases or paid calls are authorized by this gate. TRELLIS.2 is parked under strategy262 exchange286; the next work is production-viability screening, not its generation or AWS deployment. Any exception requires an explicit Director choice.",
+      "sha256": "a4cfb9170fe64a5b102e8a0cf13b1f2b864d771f89768b97f267a2a2bab32f63",
+      "topics": [
+        "model-source"
+      ],
+      "core_sections": [
+        "scope-and-authority"
+      ],
+      "reconciliation": "Original instruction retained verbatim; current Director decisions resolve historical pending states. Core is mandatory; routed specifics remain mandatory when applicable."
+    },
+    {
+      "id": "R04",
+      "original_text": "Exchange282 requires a concrete next work package at every completed-pass handoff: name the audience-visible outcome, what the Director will receive and judge, included and excluded scope, internal exit criteria, and the single recommended next action toward the release. A list of unfinished components is not a next-step recommendation. Before yielding, compare the result with the agreed integrated deliverable, not the last successful technical test. Continue already-authorized prerequisites without another go-ahead; a proposed work package adds no new spending or creative authority. For an explicitly requested planning/rules response, deliver that plan without silently launching construction. During execution, stop only for integrated scope completion or a genuine Director-owned decision/blocker, with evidence, viable alternatives and one recommendation. Check this contract against the actual final response; documenting it is not proof of compliance. See strategy262 exchange282 for the next integrated Sikh head scope.",
+      "sha256": "c0a1f6dbe7129325bf073b1e26a9cae5bdc5fff773e95c8dbddb5b6a9dc492c3",
+      "topics": [
+        "workflow"
+      ],
+      "core_sections": [
+        "scope-and-authority"
+      ],
+      "reconciliation": "Original instruction retained verbatim; current Director decisions resolve historical pending states. Core is mandatory; routed specifics remain mandatory when applicable."
+    },
+    {
+      "id": "R05",
+      "original_text": "Exchange271 rejects Sikh270 candidate17 and withdraws its foundation recommendation. Before new principal-character work or visual admission, read `docs/knowledge/SIKH_FOUNDATION_REJECTION_271.md`. Bind the individual approved direction, production look authority and accepted co-star native/shot evidence; explicitly review same-film coherence as well as identity. Prove whole forms before fibers/noise/polish. Calibrate against the recorded17 negative control, inspect revealing reverse angles, and keep design, ensemble, technical and performance verdicts separate. A blocked visual gate cannot be bypassed by relabeling the result an identity/design/foundation choice. Known failures stay internal unless the Director explicitly requests their audit/view or a genuine method/authority decision is required. Technical substrates are not accepted artistic foundations; do not lower or reopen the accepted Pashtun to match a weaker new character. This is a mandatory manual application contract, not automatic perceptual validation or new spending authority.",
+      "sha256": "69dc5aff933700adc382f2319b68d5df8f2ef5a3ee48b4b2ba1fa593d8399a89",
+      "topics": [
+        "character"
+      ],
+      "core_sections": [
+        "strategy-and-quality"
+      ],
+      "reconciliation": "Original instruction retained verbatim; current Director decisions resolve historical pending states. Core is mandatory; routed specifics remain mandatory when applicable."
+    },
+    {
+      "id": "R06",
+      "original_text": "Exchange264 closes the setup-completion loophole: permission to install/configure a dependency inside an authorized unfinished deliverable does not narrow the goal to installation. After setup, tests, commits or clarification of a non-blocking UI action, resume the next ready production task in the same turn. Before any final handover, explicitly check (1) whether the agreed integrated deliverable is complete, (2) whether a genuine Director-owned decision is required, and (3) whether all useful independent authorized work is exhausted if one branch is blocked. A pending motorcycle download blocks actual-bike fitting, not independent character, beard, cloth or performance work. Do not ask another go-ahead, imply the Director must restart their GUI for headless work, or relabel an intermediate technical milestone as completion. Explain progress in commentary and continue; maintain all spend, installation, rights and creative boundaries.",
+      "sha256": "2d04b222be5c5002a6df3decd4ee99bab8888708e0c1c89d96cabc11f740bb50",
+      "topics": [
+        "workflow"
+      ],
+      "core_sections": [
+        "scope-and-authority"
+      ],
+      "reconciliation": "Original instruction retained verbatim; current Director decisions resolve historical pending states. Core is mandatory; routed specifics remain mandatory when applicable."
+    },
+    {
+      "id": "R07",
+      "original_text": "Exchange255 calibrates the bounded bridge against AU01\u2013AU16 and current253 approval. Read `docs/knowledge/CURRENT_PRODUCTION_STATE.md` and `docs/planning/PROTECTION_CALIBRATION_255.md` before interpreting historical pending fields. Current pilot:11 reviewed sources/38 records; finite routing tests and evidence-shape checks are not independent visual judgment. Preserve exact accepted20s scope and the strict replay FAIL separately. Reuse thirteen recorded controls to calibrate relevant review lenses; insufficient motion/audio evidence stays NOT_RUN, never a static-image PASS. New-lead source/relationship reconciliation and a shot-specific early proof remain required. Protection status is determined by remote verification/restore receipts, never by a local clone or prepared manifest.",
+      "sha256": "d050f386196c8645136c3ffc04a57a8166ec2f469050c6757ab033c95071b7c2",
+      "topics": [
+        "knowledge",
+        "review",
+        "operations"
+      ],
+      "core_sections": [
+        "knowledge-and-current-state"
+      ],
+      "reconciliation": "Original instruction retained verbatim; current Director decisions resolve historical pending states. Core is mandatory; routed specifics remain mandatory when applicable."
+    },
+    {
+      "id": "R08",
+      "original_text": "Exchange250 establishes the source-indexed Pashtun production retrospective and baseline in `docs/knowledge/PASHTUN_PRODUCTION_AUDIT250.md` (case ledger and metrics linked there). At each new character/shot/work package, reconcile the applicable AU lessons with the fresh knowledge packet and shot/beat brief; this audit is not automatically covered by the nine-source retrieval pilot. Track distinct defect/review IDs, predicted-versus-escaped failures, repeated regressions and actual Director-owned decisions. Compare to the accepted quality floor, not the last rejected candidate. Record work/wait/job intervals prospectively, exclude verified Director/next-prompt idle while retaining continuing jobs, union overlaps and disclose capture gaps. Historical approximately145h reported runtime is provisional, not exact net effort;291 inputs/44 broadly avoidable stops are retrospective classifications, not a quota or time limit. Improve efficiency without suppressing useful creative input or relaxing quality.",
+      "sha256": "0f124afc7827e05e01ea1f9ed48236ccd2928211f241dcefd3431f30c43c707e",
+      "topics": [
+        "knowledge",
+        "character",
+        "environment",
+        "sound",
+        "review"
+      ],
+      "core_sections": [
+        "strategy-and-quality"
+      ],
+      "reconciliation": "Original instruction retained verbatim; current Director decisions resolve historical pending states. Core is mandatory; routed specifics remain mandatory when applicable."
+    },
+    {
+      "id": "R09",
+      "original_text": "Exchange249 requires a shot/beat performance and believability brief before substantial shot work: follow `docs/planning/SHOT_BEAT_QUALITY_BRIEF.md`. Cover every planned beat, inheriting shared rows explicitly. Predict audience-visible anatomy, animation, contact, simulation/physical-response and adjacent failures using appropriate expertise lenses; bind strategy, interfaces, early proof and observable failure conditions. Roles are expertise perspectives, not a mandated org chart or automatic subagent dispatch. Current defect lists and retrieved lessons are not exhaustive. Cold audience review plus failure-seeking interface review must use actual evidence; no new Director gate for technical methods. Preserve Shot Intent separately from the realization plan. Record escaped defects as requirement/retrieval/method/evidence/judgment failures and carry the corrective test forward.",
+      "sha256": "208005d829ad4e81e303c73c512966de73eca7328a67a54865f2d84b2dc92018",
+      "topics": [
+        "motion",
+        "shot",
+        "environment",
+        "sound",
+        "review"
+      ],
+      "core_sections": [
+        "strategy-and-quality"
+      ],
+      "reconciliation": "Original instruction retained verbatim; current Director decisions resolve historical pending states. Core is mandatory; routed specifics remain mandatory when applicable."
+    },
+    {
+      "id": "R10",
+      "original_text": "Exchange213 implements the bounded local knowledge bridge. For covered work, follow `docs/knowledge/pilot/README.md`: generate/read a fresh task packet before substantial dispatch, reconcile its impact set with the required deep sources, and run the evidence gate before handoff. Honor exit-code2 blockers; do not rehash unreviewed sources to bypass staleness. Keep manual review alongside retrieval: the nine-document/28-record pilot is not universal memory, automatic scene understanding or automatic visual judgment. Unknown domains need source/relationship reconciliation. Preserve proposed versus adopted status, source gaps and Director authority; no new paid calls or production choices follow from a passing planning packet.",
+      "sha256": "5259a67c61c3acb97881d080838bdbcb78aa1b57caaeb99cc870c5dcd404c481",
+      "topics": [
+        "knowledge"
+      ],
+      "core_sections": [
+        "knowledge-and-current-state"
+      ],
+      "reconciliation": "Original instruction retained verbatim; current Director decisions resolve historical pending states. Core is mandatory; routed specifics remain mandatory when applicable."
+    },
+    {
+      "id": "R11",
+      "original_text": "Exchange188 clarifies authority: Astra High is the top escalation tier in this workflow; returning to Sol is a step down after a demonstrated route, not an escalation. Failure on Astra requires a method/input/representation reassessment, not a request for a nonexistent higher model. Routine built-in image generation, including more than two images, is agent-owned within the authorized deliverable; image count is not a Director approval gate. External paid calls, purchases, new installations, specialists, publication and material creative changes retain their separate authority boundaries. Horse art must include a majestic screen presence, convincing coat texture/fuzz and a legible mane/forelock in the actual gallop, not just diagnostic brown geometry.",
+      "sha256": "585e1fcbb5bef32c9be32f4171a1a3a67dd827005d7f2b27ef8385822ceaf77b",
+      "topics": [
+        "horse",
+        "escalation"
+      ],
+      "core_sections": [
+        "execution-and-records"
+      ],
+      "reconciliation": "Original instruction retained verbatim; current Director decisions resolve historical pending states. Core is mandatory; routed specifics remain mandatory when applicable."
+    },
+    {
+      "id": "R12",
+      "original_text": "Exchange187 adopts agent-owned model escalation: Sol6.1 High is the user-reported execution default; detect stalled hypotheses, repeated adjacent regressions and unresolved foundational/contradictory evidence. Reassess the method and run a discriminating control first; if a defensible cause/integrated path remains unresolved, request a manual switch to Astra High with an evidence-bound diagnostic packet. Escalate earlier for consequential unsupported structural assumptions; do not switch merely for slow renders, environment failures or missing review. Return to Sol only after demonstrated cause/strategy and representative proof. Record reported switches/outcomes without inventing runtime settings or usage; no extra spend/scope authority. Follow `docs/knowledge/EFFICIENT_QUALITY_ASSET_WORKFLOW.md#engineering-model-escalation--adopted-at-exchange187`.",
+      "sha256": "cd28f178684370f9af611df891d1ed8667850a3b3d7d747074368a224544f379",
+      "topics": [
+        "escalation"
+      ],
+      "core_sections": [
+        "execution-and-records"
+      ],
+      "reconciliation": "Original instruction retained verbatim; current Director decisions resolve historical pending states. Core is mandatory; routed specifics remain mandatory when applicable."
+    },
+    {
+      "id": "R13",
+      "original_text": "Exchange185 authorizes sustained double-wrap construction and correction of discovered structural blockers to the envisioned trailer animation. No arbitrary elapsed-time cutoff: 20/60-minute checks are internal method reassessments only, not stop/approval gates. Track effort and change ineffective strategies; do not lower quality because work is slow. Test readiness in the actual required motion/framing, not merely a standing costume. Preserve accepted masters and correct necessary integration/deformation in reversible derivatives; material identity/style changes, new spend/tools/specialists/publication still require authority. Do not expand this into perfecting every hypothetical future use.",
+      "sha256": "475d09e2f4d7d56fb2ba3c3ffc3bec394a7755532e7136d40da859b3ff382b73",
+      "topics": [
+        "pashtun"
+      ],
+      "core_sections": [
+        "strategy-and-quality"
+      ],
+      "reconciliation": "Original instruction retained verbatim; current Director decisions resolve historical pending states. Core is mandatory; routed specifics remain mandatory when applicable."
+    },
+    {
+      "id": "R14",
+      "original_text": "Production strategy before execution is required across all disciplines (Director exchange184), not only assets. Before substantial work, follow `docs/decisions/0005-production-strategy-before-execution.md`: record the intended outcome/quality floor, end-to-end path and interfaces, chosen approach, critical assumptions, earliest representative proof, resources, revision/reuse needs and replan/exit conditions in the existing work package. Read it on continuation; update it when evidence changes the approach. Routine bounded fixes may reference the current plan. Repeated compensating patches, adjacent regressions or failed downstream use trigger strategy reassessment, not endless local repair or an automatic total rewrite. The agent owns methods and momentum; planning adds no routine Director approval, spend or scope authority. Preserve the double-wrap target and other accepted choices.",
+      "sha256": "9b809a979e071d80ea2457005f1523abe9e5a71269bdc3439c25ed65ef20a53d",
+      "topics": [
+        "workflow",
+        "architecture"
+      ],
+      "core_sections": [
+        "strategy-and-quality"
+      ],
+      "reconciliation": "Original instruction retained verbatim; current Director decisions resolve historical pending states. Core is mandatory; routed specifics remain mandatory when applicable."
+    },
+    {
+      "id": "R15",
+      "original_text": "Constructive challenge is required (Director exchange153): proactively flag requests or the agent's own approach that conflict with accepted principles, protected work, Efficient Quality or the agreed process. Name the principle and concrete consequence, distinguish evidence from estimates, and recommend a better route. Challenge before consequential change; once the Director knowingly chooses a scoped exception, record it and execute without repeated relitigation. This is not a veto, a license to lower accepted quality, or permission to exceed spending/safety boundaries. See `docs/knowledge/EFFICIENT_QUALITY_ASSET_WORKFLOW.md#constructive-challenge--adopted-at-exchange153`.",
+      "sha256": "23f0cef76fa8c33a9bfb3ae9ffef832c94d26232525c1e0134db495edc321b1c",
+      "topics": [
+        "workflow"
+      ],
+      "core_sections": [
+        "scope-and-authority"
+      ],
+      "reconciliation": "Original instruction retained verbatim; current Director decisions resolve historical pending states. Core is mandatory; routed specifics remain mandatory when applicable."
+    },
+    {
+      "id": "R16",
+      "original_text": "Own forward momentum toward the trailer and episodes 1 and 2 (reaffirmed exchange154). Maintain the current deliverable, its release dependency, evidence of progress, remaining blocker and one recommended next move. Continue authorized reversible work; do not make the Director manage routine sequencing. Challenge asset polish, tooling and documentation that displace usable footage or necessary story, sound, edit and release work. At meaningful reviews orient the Director briefly; keep the full ten-exchange checkpoint cadence. This is prioritization responsibility, not authority for new spend, publication, background work or material creative changes. See the current Path to Audience section in `docs/planning/RELEASE_01_PLAN.md`.",
+      "sha256": "0fe74410a4e038fe2f271e47f9b57d7e73b1adab63074bd8f3873e3811716aa7",
+      "topics": [
+        "workflow",
+        "planning"
+      ],
+      "core_sections": [
+        "scope-and-authority"
+      ],
+      "reconciliation": "Original instruction retained verbatim; current Director decisions resolve historical pending states. Core is mandatory; routed specifics remain mandatory when applicable."
+    },
+    {
+      "id": "R17",
+      "original_text": "Director working preference: continue through the agreed plan without yielding for routine milestones or reversible implementation choices. Use commentary for progress; pause only for material creative/plan changes, new authorization, genuine blockers, or completion of the agreed scope. A local commit or technical milestone alone is not a reason to ask for another go-ahead.",
+      "sha256": "e015e2ca6f4dc8defc1656669b48720fdbc723da670f7d82012fcd95ee697f78",
+      "topics": [
+        "workflow"
+      ],
+      "core_sections": [
+        "scope-and-authority"
+      ],
+      "reconciliation": "Original instruction retained verbatim; current Director decisions resolve historical pending states. Core is mandatory; routed specifics remain mandatory when applicable."
+    },
+    {
+      "id": "R18",
+      "original_text": "Exchange158 makes the feedback rule explicit: when the agent substantially agrees with Director feedback and the correction is within the authorized goal, diagnose and implement it without a diagnosis-only final response or another go-ahead. Continue internal review and reversible corrections until the integrated deliverable is ready. Use commentary for progress; interrupt mid-goal only for a decision requiring Director authority or a genuine blocker. Do not invent approval gates at commits, tests, or routine reassessments; do not relax quality, expand spend/scope, or claim completion to avoid escalation.",
+      "sha256": "0791c10b5f36c4b709cc08b4fd94a1480aa820af464a61a0ca3f7dd0ea0eb71f",
+      "topics": [
+        "workflow"
+      ],
+      "core_sections": [
+        "scope-and-authority"
+      ],
+      "reconciliation": "Original instruction retained verbatim; current Director decisions resolve historical pending states. Core is mandatory; routed specifics remain mandatory when applicable."
+    },
+    {
+      "id": "R19",
+      "original_text": "Exchange164 strengthens the handover test: the Director supplies creative intent and acceptance, not modeling/rigging/animation expertise. Within an already authorized correction goal, feedback such as \"check this\" is not a diagnosis-only stopping boundary when the agent agrees a defect needs repair. Own diagnosis, method selection, implementation, verification and internal visual review together. Before yielding mid-goal, identify the actual Director-relevant decision and its consequences (identity/style/story or screen result, scope/schedule, spending/rights, protected work, release priority), concrete viable alternatives and one recommendation. If there is no such choice or genuine blocker, continue; do not ask the Director to approve a technical algorithm or endorse the agent's diagnosis. Keep routine technical findings in commentary and return with a review-ready visual result. Explicit read-only/no-change requests still prohibit implementation; budgets/safety/creative authority remain binding.",
+      "sha256": "80ef5f4a2535c0d4377147df828039cd4c0dafdc7ca6cd9a3813b57f6f185243",
+      "topics": [
+        "workflow"
+      ],
+      "core_sections": [
+        "scope-and-authority"
+      ],
+      "reconciliation": "Original instruction retained verbatim; current Director decisions resolve historical pending states. Core is mandatory; routed specifics remain mandatory when applicable."
+    },
+    {
+      "id": "R20",
+      "original_text": "Exchange168 closes the explanation loophole: a request to explain/challenge a failed internal pass during an authorized unfinished correction does not cancel that goal. Explain briefly in commentary, retract the invalid pass, then execute the agreed in-scope repair in the same continuation unless the Director explicitly limits work to explanation/read-only or a real authority/blocker boundary exists. Before a final handover, name either the completed integrated deliverable or the exact Director-owned decision/blocker; a diagnosis, recommendation, rules update or commit alone is not completion. Compare against the quality floor, not just a rejected predecessor. Require a deliberate failure-seeking review of full and partial poses, anatomical landmarks/volume and adjacent regressions; if a known defect is ambiguous, it is NOT_RUN/FAIL, not a generous PASS. Do not reclassify missing anatomy as hidden polish or waive it for future clothes. Preserve technical successes separately from withdrawn visual passes. See the exchange168 contract in the Efficient Quality workflow.",
+      "sha256": "fee2238bfd15fca8f10f7c3390ef642fe8f6aae71ef6747ea77e1e5b7deb3aaa",
+      "topics": [
+        "workflow"
+      ],
+      "core_sections": [
+        "scope-and-authority"
+      ],
+      "reconciliation": "Original instruction retained verbatim; current Director decisions resolve historical pending states. Core is mandatory; routed specifics remain mandatory when applicable."
+    },
+    {
+      "id": "R21",
+      "original_text": "Exchange161 requires a recorded internal visual exit gate before asset handoff. Compare the entire claimed region directly with its accepted reference under matched camera/scale/light, then inspect the required pose at normal review size and joint/interface crops. Every known blocking defect must be PASS with named image evidence, or remain FAIL/NOT_RUN and internal. Relative improvement, a YELLOW label, test counts, source hashes and a successful reopen are not substitutes. Check adjacent regions for regressions; for this body include throat/clavicles/shoulders, both elbows and arm streaks, knees and lower abdomen. Do not ask the Director to repeat a predictable rejection. Escalate only a concrete authority/method blocker with evidence and alternatives; never present a known-failing candidate as a completed result.",
+      "sha256": "bf78a2308a2b937610b2b5fac4084ba930694ad20e74895fcf2bc460a21e96b6",
+      "topics": [
+        "character",
+        "motion",
+        "review"
+      ],
+      "core_sections": [
+        "strategy-and-quality"
+      ],
+      "reconciliation": "Original instruction retained verbatim; current Director decisions resolve historical pending states. Core is mandatory; routed specifics remain mandatory when applicable."
+    },
+    {
+      "id": "R22",
+      "original_text": "Exchange175 requires an actual visual garment-route/layer test: compare approved front/portrait layer order (shawl above chest harness), trace both cloth edges through each shoulder and around the outside of the rear headfall, and inspect required mounted upper arms with a body-versus-cloth control. A connected mesh can still disappear visually, turn into a stuffed rear bundle or violate the reference. Unknown occlusion stays FAIL/NOT_RUN; do not rationalize a structural failure as a creative choice or show it as ready because the native reopens.",
+      "sha256": "304337c1ac8ec50b8d171691183c073a94c02d651d5924192c730b6d7c08b4f2",
+      "topics": [
+        "pashtun"
+      ],
+      "core_sections": [],
+      "reconciliation": "Original instruction retained verbatim; current Director decisions resolve historical pending states. Core is mandatory; routed specifics remain mandatory when applicable."
+    },
+    {
+      "id": "R23",
+      "original_text": "Historical175 and subsequent178\u2013181 constructions remain failed, not qualified sources. Exchange183 resolves the current creative target: at least two legible wraparounds, not a single-wrap substitute. Follow `docs/planning/SERIES_01_WARDROBE_TACK_FIT.md#exchange183--double-wrap-construction-and-review-contract`: explicit route/support design, representative contact-capability control, coarse integrated construction and short motion before material polish, then evidence-backed visual and technical exit. Do not reopen the same simplification question after routine failures, silently lower quality, or alter accepted152/169. No new spend/tools/specialists/publication is authorized. This process contract is not a passing garment or a guarantee of feasibility.",
+      "sha256": "b403db93dfda7a4e1bee968d6202d08c738189ae3fbe5a246ce002fb3008bc82",
+      "topics": [
+        "pashtun"
+      ],
+      "core_sections": [],
+      "reconciliation": "Original instruction retained verbatim; current Director decisions resolve historical pending states. Core is mandatory; routed specifics remain mandatory when applicable."
+    },
+    {
+      "id": "R24",
+      "original_text": "Triage Director observations rather than automatically implementing every detail (exchange156): fix production-blocking structure now, reassess dependent symptoms after upstream changes, and defer polish to a named shot/pose/visibility test. State reasons and reopening triggers; do not hide structural failures with clothes or turn feedback into an unbounded task list. See the Efficient Quality workflow's feedback triage section.",
+      "sha256": "2eed1a6f7f40d6f0e8c8d36ba8acc50fe585448ceef42ae6fda9063a03e64b28",
+      "topics": [
+        "workflow",
+        "character"
+      ],
+      "core_sections": [
+        "strategy-and-quality"
+      ],
+      "reconciliation": "Original instruction retained verbatim; current Director decisions resolve historical pending states. Core is mandatory; routed specifics remain mandatory when applicable."
+    },
+    {
+      "id": "R25",
+      "original_text": "Anchor every evaluation in the applicable Director-approved references and decisions, identifying them explicitly. Separate reference fidelity and creative acceptance from technical validation. Rejected candidates are diagnostic history, never replacement acceptance targets. For this character, the approved frontal-v02-individualized.png and portrait-v07-individualized.png pair remains the illustrated identity and hair-look authority.",
+      "sha256": "7697d5287a79a553d498c11cca6ebddd7e6cb0f398ce308f250f63e1f5485cec",
+      "topics": [
+        "pashtun"
+      ],
+      "core_sections": [
+        "strategy-and-quality"
+      ],
+      "reconciliation": "Original instruction retained verbatim; current Director decisions resolve historical pending states. Core is mandatory; routed specifics remain mandatory when applicable."
+    },
+    {
+      "id": "R26",
+      "original_text": "Exchange142 adds the four Director-approved images in `.runtime/art-direction/series01-pashtun-uncovered-v01/` to that baseline, clarifying uncovered crown, side flow and rear/length. Consult `docs/planning/SERIES_01_PASHTUN_BASELINE_V01.md` for exact files/hashes and scope. Preserve the original pair; the generated rear costume artifact is not a garment reference. Reference approval does not approve native hair or animation.",
+      "sha256": "6c706dad60be3853079ffdd7e2b9b32e5eddd08c854c62d0965b3248584d625e",
+      "topics": [
+        "pashtun"
+      ],
+      "core_sections": [
+        "execution-and-records"
+      ],
+      "reconciliation": "Original instruction retained verbatim; current Director decisions resolve historical pending states. Core is mandatory; routed specifics remain mandatory when applicable."
+    },
+    {
+      "id": "R27",
+      "original_text": "For character-asset continuation, read `docs/knowledge/CHARACTER_ASSET_LEARNINGS.md` and apply its integrated review-readiness checklist. Known reference mismatches stay in internal iteration; routine partial improvement is not a Director gate. Carry diagnostic budgets across prompts/pass names for the same agreed deliverable; escalate a real method/budget decision rather than requesting repeated cosmetic go-aheads.",
+      "sha256": "40c5c0547eb5bdf5fcabd805410b97d7627e6eb1a8ad503576230667cd70010c",
+      "topics": [
+        "character",
+        "wardrobe",
+        "horse"
+      ],
+      "core_sections": [
+        "strategy-and-quality"
+      ],
+      "reconciliation": "Original instruction retained verbatim; current Director decisions resolve historical pending states. Core is mandatory; routed specifics remain mandatory when applicable."
+    },
+    {
+      "id": "R28",
+      "original_text": "Exchange152 closes/accepts the static Pashtun head, neck/upper shoulders, skin and natural hair at `natural152-seal-16`. Read `docs/knowledge/PASHTUN_CHARACTER_RETROSPECTIVE.md` before continuation. Preserve this accepted production representation; do not repair deliberately accepted differences back toward the original images. Images retain identity/art-direction and provenance value; motion, wardrobe and rights remain separate. Consult `docs/knowledge/EFFICIENT_QUALITY_ASSET_WORKFLOW.md` and the Pashtun completion plan for proposed next work; do not mistake proposed policy or stages for execution/spend authorization.",
+      "sha256": "3dcadf48f380852a72734761272bceca88e725c17641aa5420c16fd4394b7ef1",
+      "topics": [
+        "pashtun"
+      ],
+      "core_sections": [
+        "strategy-and-quality"
+      ],
+      "reconciliation": "Original instruction retained verbatim; current Director decisions resolve historical pending states. Core is mandatory; routed specifics remain mandatory when applicable."
+    },
+    {
+      "id": "R29",
+      "original_text": "For ongoing series/release planning, read `docs/planning/RELEASE_01_PLAN.md` and `RELEASE_01_STATUS.json`; preserve accepted decisions and update the substantive-exchange counter. Provide the specified checkpoint every ten substantive planning exchanges. Do not increment it for tools, automatic continuations or unrelated implementation tasks.",
+      "sha256": "a10d8b1bad10278a92a16e3f020725907e7c3a27bfbe4406da2d365d913e26b3",
+      "topics": [
+        "context",
+        "planning"
+      ],
+      "core_sections": [
+        "knowledge-and-current-state"
+      ],
+      "reconciliation": "Planning reads current state and relevant plan sections, not the entire accumulated history; Director311 explicitly authorizes this retrieval change."
+    },
+    {
+      "id": "R30",
+      "original_text": "Before new product/architecture/capability/UX specifications, consult `docs/knowledge/README.md` and the historical decision register; review relevant original context and record adoption/deviation rather than silently replacing earlier decisions. Candidate extraction is not approval.",
+      "sha256": "648fcd8ba13dbb1cb50cb149b9eac3ce4623be2e777d82b8d053f11d5e1eb3d9",
+      "topics": [
+        "architecture"
+      ],
+      "core_sections": [
+        "knowledge-and-current-state"
+      ],
+      "reconciliation": "Original instruction retained verbatim; current Director decisions resolve historical pending states. Core is mandatory; routed specifics remain mandatory when applicable."
+    },
+    {
+      "id": "R31",
+      "original_text": "Persist planning changes each substantive exchange and make scoped local commits for coherent design decisions. Batch remote design pushes at ten-exchange checkpoints; push sooner only on explicit Director request. Exclude unrelated changes, secrets and native assets. Report local commit versus remote push/backup distinctly; no force-push or automatic publication.",
+      "sha256": "f0b103bd22ec3eabc4d04546e8b7df960872092d0e101fe2d7bee72868bb9287",
+      "topics": [
+        "workflow",
+        "planning",
+        "operations"
+      ],
+      "core_sections": [
+        "execution-and-records"
+      ],
+      "reconciliation": "Original instruction retained verbatim; current Director decisions resolve historical pending states. Core is mandatory; routed specifics remain mandatory when applicable."
+    },
+    {
+      "id": "R32",
+      "original_text": "Keep design/planning commits separate from implementation commits. Both may push directly to `main` under the Director's current workflow; inspect outgoing ancestry and do not mix unrelated work into a commit.",
+      "sha256": "64f3b28efb825b56f9627adee7abb28922fd6da7cbd53c1feb8bf94bc3b44508",
+      "topics": [
+        "workflow",
+        "planning",
+        "operations"
+      ],
+      "core_sections": [
+        "execution-and-records"
+      ],
+      "reconciliation": "Original instruction retained verbatim; current Director decisions resolve historical pending states. Core is mandatory; routed specifics remain mandatory when applicable."
+    },
+    {
+      "id": "R33",
+      "original_text": "Use this project's `.venv` for all outer Python commands and dependencies. Never install packages globally.",
+      "sha256": "fd298d3923694fc9afab9b956e4b8b414bea8e0f2e63781a80c37bf67f80881f",
+      "topics": [
+        "engineering"
+      ],
+      "core_sections": [
+        "execution-and-records"
+      ],
+      "reconciliation": "Original instruction retained verbatim; current Director decisions resolve historical pending states. Core is mandatory; routed specifics remain mandatory when applicable."
+    },
+    {
+      "id": "R34",
+      "original_text": "Treat `.env` as private. Never print, log, commit, or pass its values to Blender. Only the trusted provider module may read known settings.",
+      "sha256": "bdda8e1bb8750557d5d10dde4cfa7c055a31c29bff532a7b69bdae20d904a320",
+      "topics": [
+        "engineering",
+        "operations"
+      ],
+      "core_sections": [
+        "execution-and-records"
+      ],
+      "reconciliation": "Original instruction retained verbatim; current Director decisions resolve historical pending states. Core is mandatory; routed specifics remain mandatory when applicable."
+    },
+    {
+      "id": "R35",
+      "original_text": "Follow `MOVIE_FACTORY_3D_FEASIBILITY_SPEC.md`. Preserve failed evidence and report `NOT_RUN` or YELLOW when a prerequisite or Director review is missing.",
+      "sha256": "c743962b865a2dd0c7c9d16761368ae95344f31c089bb425851a2c4a6b8f41d0",
+      "topics": [
+        "experiment"
+      ],
+      "core_sections": [
+        "execution-and-records"
+      ],
+      "reconciliation": "Original instruction retained verbatim; current Director decisions resolve historical pending states. Core is mandatory; routed specifics remain mandatory when applicable."
+    },
+    {
+      "id": "R36",
+      "original_text": "Blender workers execute only validated structured operations. Do not add arbitrary model-generated Python execution on the developer account.",
+      "sha256": "64338f601307a019bea073f3bd0ca755eea0f476d1d508407235bbbdebb8f648",
+      "topics": [
+        "engineering"
+      ],
+      "core_sections": [
+        "execution-and-records"
+      ],
+      "reconciliation": "Original instruction retained verbatim; current Director decisions resolve historical pending states. Core is mandatory; routed specifics remain mandatory when applicable."
+    },
+    {
+      "id": "R37",
+      "original_text": "Reviewed and tested model-proposed code may become trusted repository handlers. Blender may execute those handlers only through validated structured operations. Arbitrary runtime-generated Python remains prohibited. This clarification is explicitly authorized by the Director for the Demonstrator 01 workflow; it does not authorize executing unreviewed API responses, code strings, or embedded asset scripts.",
+      "sha256": "d5451eefdea5656b75675fe1e3e2bf2a522a280cc8ee04f7470d73815db3b753",
+      "topics": [
+        "engineering"
+      ],
+      "core_sections": [
+        "execution-and-records"
+      ],
+      "reconciliation": "Original instruction retained verbatim; current Director decisions resolve historical pending states. Core is mandatory; routed specifics remain mandatory when applicable."
+    },
+    {
+      "id": "R38",
+      "original_text": "Do not run live provider calls outside the persistent campaign budget ledger. Mocks are the default for tests.",
+      "sha256": "56f3349a7f47c6136814d590dce5a7917ba2e706139239cb7547ae13cac29e9f",
+      "topics": [
+        "engineering"
+      ],
+      "core_sections": [
+        "scope-and-authority"
+      ],
+      "reconciliation": "Original instruction retained verbatim; current Director decisions resolve historical pending states. Core is mandatory; routed specifics remain mandatory when applicable."
+    },
+    {
+      "id": "R39",
+      "original_text": "Houdini and Unreal remain later-phase design notes until the Blender qualification is complete.",
+      "sha256": "e16e0ddb8147f6c2ac54a7d0c5a95b43963aa1eb37fafc4524c8b66c5325b690",
+      "topics": [
+        "architecture"
+      ],
+      "core_sections": [
+        "execution-and-records"
+      ],
+      "reconciliation": "Original instruction retained verbatim; current Director decisions resolve historical pending states. Core is mandatory; routed specifics remain mandatory when applicable."
+    },
+    {
+      "id": "R40",
+      "original_text": "Record announced engineering-model switches, handoffs, and their outcomes in `docs/engineering-intelligence/events.json`, following its README. Keep Codex engineering attribution separate from experiment API models, mark unknown effort/usage as unknown, and include Director-rejected outcomes after escalation. Consult this record when proposing Factory model routing; do not treat it as a controlled model benchmark.",
+      "sha256": "9b0a039c80da6f894f8d8bb75095dcc714e5f300d34de2843c3015ebb349c857",
+      "topics": [
+        "engineering",
+        "escalation"
+      ],
+      "core_sections": [
+        "execution-and-records"
+      ],
+      "reconciliation": "Original instruction retained verbatim; current Director decisions resolve historical pending states. Core is mandatory; routed specifics remain mandatory when applicable."
+    },
+    {
+      "id": "R41",
+      "original_text": "Before implementing human performance changes, complete the motion brief in `docs/planning/MOTION_DESIGN_TEMPLATE.md` and follow `docs/decisions/0004-motion-design-before-implementation.md`. Check coordinated joint motion and constraint compatibility before production edits; inspect complete inexpensive motion before freezing a scored campaign. This is an engineering planning requirement, not an extra user-approval requirement.",
+      "sha256": "2efae136e6c3dba2b0b165cd8d882a4cf802ddf2faf6ec0c35d396e94e8a6dc2",
+      "topics": [
+        "wardrobe",
+        "motion"
+      ],
+      "core_sections": [
+        "strategy-and-quality"
+      ],
+      "reconciliation": "Original instruction retained verbatim; current Director decisions resolve historical pending states. Core is mandatory; routed specifics remain mandatory when applicable."
+    },
+    {
+      "id": "R42",
+      "original_text": "For new authorized experiments, follow `docs/engineering-intelligence/OPERATING_LEDGER.md`: begin lifecycle capture at design start, end activity and record waits at yields, reconcile ongoing jobs, and export a compact closure report/card. Capture known model/usage metadata with provenance; leave unknowns null. Use the 20-net-minute diagnostic / three-variant / 60-net-minute overall checkpoints unless an explicit task budget overrides them. Link reopened work as a new episode. Do not reopen 3D-05 or start 3D-06A animation from a bookkeeping task.",
+      "sha256": "5862bd5556922561529ff454083c62d48fc68f6790e220abb41f3c974224c84b",
+      "topics": [
+        "experiment",
+        "operations"
+      ],
+      "core_sections": [
+        "execution-and-records"
+      ],
+      "reconciliation": "Original instruction retained verbatim; current Director decisions resolve historical pending states. Core is mandatory; routed specifics remain mandatory when applicable."
+    }
+  ],
+  "limits": "Explicit topic routing, not semantic task classification. Preserve core and reconcile adjacent domains manually."
+}

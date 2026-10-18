@@ -1,0 +1,21 @@
+{
+  "id": "context311-cleanup",
+  "operation": "knowledge",
+  "entities": [
+    "knowledge"
+  ],
+  "query": "Context routing current-state recovery instruction preservation bounded tool output",
+  "intent": "Local instruction/context cleanup only. Production paused; no providers/cloud/uploads/settings changes.",
+  "phase": "execution",
+  "open_decisions": [],
+  "inputs": {
+    "results/context311/STRATEGY.md": "4ae98bfd047b3d5d9c611a7e3f3465a483fc466d36259a8c85ba9d17df0e445b",
+    "results/context311/AGENTS.before.md": "1aedbb9494c80566eb4df7519d94ca0c54b2863b1cee55dae77506d97d56ce5a",
+    "results/context311/routing-expectations.json": "adb28b5944ac097b32f4b94b7ac2fdcdaaf4446f140a6afb3edd44024fdd3a4e"
+  },
+  "execution_authority": {
+    "source": "results/context311/STRATEGY.md",
+    "scope": "Director311 local reversible context cleanup"
+  },
+  "max_context_characters": 48000
+}

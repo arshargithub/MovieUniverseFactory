@@ -1,0 +1,165 @@
+{
+  "packet_digest": "3b3b2742c266432a9f0aae25cf92f4de75b482fb40c1feacee604882c35374ad",
+  "scope": "Local context cleanup only; no production acceptance.",
+  "checks": [
+    {
+      "id": "authority",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Kept authorized local cleanup separate from production.",
+      "observation": "No new calls, installs, uploads or scene changes; protected bindings verify.",
+      "evidence": [
+        {
+          "path": "results/context311/integration-results.json",
+          "sha256": "2d6285ec9db8e2a2f151afe07c2aa7474a6ff717b2c625f5353637a71c5076ab"
+        }
+      ]
+    },
+    {
+      "id": "strategy",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Applied the staged plan and preserved reversible originals.",
+      "observation": "Frozen expectations precede routes; coverage and known limitations are explicit.",
+      "evidence": [
+        {
+          "path": "results/context311/MANUAL_RECONCILIATION.md",
+          "sha256": "aff839bb3a86d90cb48bd9f242a0aaacebd819a94fb4dc39b825256066775212"
+        }
+      ]
+    },
+    {
+      "id": "visual_gate",
+      "kind": "review",
+      "status": "PASS",
+      "action_taken": "Did not reinterpret software checks as artistic admission.",
+      "observation": "All four scene defects and false direct motion/audio flags remain.",
+      "evidence": [
+        {
+          "path": "results/context311/integration-results.json",
+          "sha256": "2d6285ec9db8e2a2f151afe07c2aa7474a6ff717b2c625f5353637a71c5076ab"
+        }
+      ]
+    },
+    {
+      "id": "anticipation",
+      "kind": "review",
+      "status": "PASS",
+      "action_taken": "Tested omission, staleness, source and adjacent-route failure modes.",
+      "observation": "140 tests pass, including failure controls and102 prior regression cases.",
+      "evidence": [
+        {
+          "path": "results/context311/tests.xml",
+          "sha256": "4e663434d52f68cf6aa5c875af1931f8ae69a9445607c044d14387345b1ffe5a"
+        }
+      ]
+    },
+    {
+      "id": "stopping",
+      "kind": "review",
+      "status": "PASS",
+      "action_taken": "Completed the scoped cleanup and retained the next capability prerequisite.",
+      "observation": "No intermediate scene candidate or repeated go-ahead requested.",
+      "evidence": [
+        {
+          "path": "results/context311/REVIEW.md",
+          "sha256": "0e8381a62f8739613b7740648343ee774ee3380f86be8688095a93844de311be"
+        }
+      ]
+    },
+    {
+      "id": "versioning",
+      "kind": "technical",
+      "status": "PASS",
+      "action_taken": "Bound exact original text, core, inputs, state and records.",
+      "observation": "Changes invalidate helpers/packets rather than automatically rehashing sources.",
+      "evidence": [
+        {
+          "path": "results/context311/integration-results.json",
+          "sha256": "2d6285ec9db8e2a2f151afe07c2aa7474a6ff717b2c625f5353637a71c5076ab"
+        }
+      ]
+    },
+    {
+      "id": "economics",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Measured local byte payloads without inventing token savings.",
+      "observation": "Core-plus-route reductions vary; actual app tokens and total savings unknown.",
+      "evidence": [
+        {
+          "path": "results/context311/REVIEW.md",
+          "sha256": "0e8381a62f8739613b7740648343ee774ee3380f86be8688095a93844de311be"
+        }
+      ]
+    },
+    {
+      "id": "retrieval",
+      "kind": "technical",
+      "status": "PASS",
+      "action_taken": "Read fresh11-obligation packet and manually reconciled42 original paragraphs.",
+      "observation": "Routes do not replace deep-source reading or new-domain reconciliation.",
+      "evidence": [
+        {
+          "path": "results/context311/MANUAL_RECONCILIATION.md",
+          "sha256": "aff839bb3a86d90cb48bd9f242a0aaacebd819a94fb4dc39b825256066775212"
+        }
+      ]
+    },
+    {
+      "id": "current_state",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Recovered current paused state in separate processes.",
+      "observation": "Fresh311 status retains four open defects and protected scope.",
+      "evidence": [
+        {
+          "path": "results/context311/integration-results.json",
+          "sha256": "2d6285ec9db8e2a2f151afe07c2aa7474a6ff717b2c625f5353637a71c5076ab"
+        }
+      ]
+    },
+    {
+      "id": "au_reuse",
+      "kind": "review",
+      "status": "PASS",
+      "action_taken": "Kept accepted quality floor, reference authority and source integrity mandatory.",
+      "observation": "No accepted Pashtun work reopened or weakened to accommodate Sikh.",
+      "evidence": [
+        {
+          "path": "results/context311/MANUAL_RECONCILIATION.md",
+          "sha256": "aff839bb3a86d90cb48bd9f242a0aaacebd819a94fb4dc39b825256066775212"
+        }
+      ]
+    },
+    {
+      "id": "au_review",
+      "kind": "review",
+      "status": "PASS",
+      "action_taken": "Separated technical preservation, finite coverage and actual judgment.",
+      "observation": "Tests and source hashes are explicitly not independent perceptual validation.",
+      "evidence": [
+        {
+          "path": "results/context311/REVIEW.md",
+          "sha256": "0e8381a62f8739613b7740648343ee774ee3380f86be8688095a93844de311be"
+        }
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "prediction": "Compression could lose mandatory instructions or adjacent obligations.",
+      "observation": "Exact42-paragraph preservation, manual mapping and finite frozen cases pass.",
+      "response": "Retain originals and explicit manual reconciliation; do not claim universal semantic coverage.",
+      "result": "resolved"
+    },
+    {
+      "prediction": "Output truncation could conceal errors or revive old scene approvals.",
+      "observation": "Middle-warning/exit/stale-state tests pass; existing defects remain open.",
+      "response": "Preserve complete logs and capability limits; inspect ambiguous evidence.",
+      "result": "resolved"
+    }
+  ],
+  "adjacent_regressions": "Existing102 tests and protected source bindings remain valid; no production media changed.",
+  "stopping_reason": "Authorized cleanup complete. Next is audiovisual review capability qualification, not scene acceptance."
+}

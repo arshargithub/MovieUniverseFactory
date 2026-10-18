@@ -4,6 +4,25 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+### Exchanges308 to311 and checkpoint31
+
+308 distinguishes document-payload savings from unmeasured total token/time
+savings.309 identifies low-risk cleanup;310 retains rules/evidence, unknown-scope
+blocking and reversible rollout as safeguards.311 authorizes implementation:
+[context cleanup](../../results/context311/REVIEW.md). Bounded output and verified
+current state precede activation of the shorter core; all42 original instruction
+paragraphs remain verbatim in task routes. No production assets or settings change.
+
+Checkpoint31 catches up the310 planning boundary: accepted Pashtun20s remains
+protected/provisional; Sikh supporting sequence remains rejected with four open
+defects; principal admission and Gurkha remain unfinished. Trailer and episodes1/2
+remain the release goal, with no newly measured overall completion percentage.
+Next production prerequisite is audiovisual-review qualification on existing
+controls, then integrated Sikh correction. Cleanup is not a substitute for that
+qualification or a reason to restart accepted work. Counter311; next checkpoint320.
+Scoped local commits only in this cleanup; checkpoint remote batching is deferred
+pending outgoing-range review, and no new off-device backup is claimed.
+
 ### Exchange307 — scoped controls tested; production still paused
 
 [307 process results](../../results/review307/REVIEW.md):102 offline tests pass;
