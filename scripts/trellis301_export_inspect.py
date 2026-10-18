@@ -24,8 +24,8 @@ def validate(job):
 def worker(job):
     validate(job)
     import bpy
-    from mathutils import Matrix
     sys.path.insert(0, str(ROOT / 'scripts'))
+    sys.path.insert(0, str(ROOT / 'src'))
     from trellis301_prepare import sha, dump
     from trellis298_inspect import aim, snapshot
     assert not bpy.app.online_access
@@ -128,6 +128,23 @@ def main():
             dump(OUT / f'{variant}-{op}-job.json', {'returncode':result.returncode,'process_seconds':time.monotonic()-start})
             if result.returncode:
                 raise RuntimeError(f'{variant} {op} failed')
+    sheets()
+
+
+def sheets():
+    from PIL import Image, ImageDraw, ImageFont
+    font = ImageFont.truetype('/System/Library/Fonts/Helvetica.ttc', 18)
+    labels = ('300k faces / 2K', '1M faces / 2K', '1M faces / 4K')
+    for view in [v[0] for v in VIEWS] + ['front-clay','left-quarter-clay','right-quarter-clay']:
+        images = [Image.open(OUT / variant / f'{view}.png').convert('RGB') for variant in VARIANTS]
+        assert len({im.size for im in images}) == 1
+        w,h = images[0].size
+        board = Image.new('RGB', (w*3,h+40), '#eeeeee')
+        draw = ImageDraw.Draw(board)
+        for i,(label,im) in enumerate(zip(labels,images)):
+            draw.text((i*w+12,10),label,font=font,fill='#161616')
+            board.paste(im,(i*w,40))
+        board.save(OUT / f'comparison-{view}.jpg',quality=95)
 
 
 if __name__ == '__main__':
