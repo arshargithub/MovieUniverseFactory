@@ -1,0 +1,247 @@
+{
+  "packet_digest": "242d446e0c6daaf830cb95da9c43a5f6c81a45bd512a4508dd9f3989707579e3",
+  "scope": "Capability investigation and authority handoff only, not perceptual qualification",
+  "checks": [
+    {
+      "id": "authority",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "No external requests or production changes; new media/API authority is explicitly pending.",
+      "observation": "No external requests or production changes; new media/API authority is explicitly pending.",
+      "evidence": [
+        {
+          "path": "results/av312/REVIEW.md",
+          "sha256": "bd44701f89d9fbd5d090c1c03095d6b9b18486c9fcbfc58bd4edbc50e9bef0c8"
+        },
+        {
+          "path": "results/av312/controls.json",
+          "sha256": "5e5a25422c45c44649d86cd41943208b709f583126dac6a1ffbb216eaae9dc5f"
+        },
+        {
+          "path": "results/av312/tests.xml",
+          "sha256": "c0dc6c56c7d95cce03497c4fb4b733227be0d8e21e9a6ec4091a7d94cc7cb46b"
+        }
+      ]
+    },
+    {
+      "id": "strategy",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Earliest audio probe failed; avoided repeating known static reviews as new perceptual qualification. Written strategy followed initial probe; this ordering limitation is disclosed.",
+      "observation": "Earliest audio probe failed; avoided repeating known static reviews as new perceptual qualification. Written strategy followed initial probe; this ordering limitation is disclosed.",
+      "evidence": [
+        {
+          "path": "results/av312/REVIEW.md",
+          "sha256": "bd44701f89d9fbd5d090c1c03095d6b9b18486c9fcbfc58bd4edbc50e9bef0c8"
+        },
+        {
+          "path": "results/av312/controls.json",
+          "sha256": "5e5a25422c45c44649d86cd41943208b709f583126dac6a1ffbb216eaae9dc5f"
+        },
+        {
+          "path": "results/av312/tests.xml",
+          "sha256": "c0dc6c56c7d95cce03497c4fb4b733227be0d8e21e9a6ec4091a7d94cc7cb46b"
+        }
+      ]
+    },
+    {
+      "id": "visual_gate",
+      "kind": "review",
+      "status": "PASS",
+      "action_taken": "No full-motion/audio pass. Actual audio input was omitted. Four defects remain open and protected master bindings verify.",
+      "observation": "No full-motion/audio pass. Actual audio input was omitted. Four defects remain open and protected master bindings verify.",
+      "evidence": [
+        {
+          "path": "results/av312/REVIEW.md",
+          "sha256": "bd44701f89d9fbd5d090c1c03095d6b9b18486c9fcbfc58bd4edbc50e9bef0c8"
+        },
+        {
+          "path": "results/av312/controls.json",
+          "sha256": "5e5a25422c45c44649d86cd41943208b709f583126dac6a1ffbb216eaae9dc5f"
+        },
+        {
+          "path": "results/av312/tests.xml",
+          "sha256": "c0dc6c56c7d95cce03497c4fb4b733227be0d8e21e9a6ec4091a7d94cc7cb46b"
+        }
+      ]
+    },
+    {
+      "id": "anticipation",
+      "kind": "review",
+      "status": "PASS",
+      "action_taken": "Prepared silent, delayed and slowed controls to test hallucination/timing alongside positive and known-failed material. External judgments NOT_RUN.",
+      "observation": "Prepared silent, delayed and slowed controls to test hallucination/timing alongside positive and known-failed material. External judgments NOT_RUN.",
+      "evidence": [
+        {
+          "path": "results/av312/REVIEW.md",
+          "sha256": "bd44701f89d9fbd5d090c1c03095d6b9b18486c9fcbfc58bd4edbc50e9bef0c8"
+        },
+        {
+          "path": "results/av312/controls.json",
+          "sha256": "5e5a25422c45c44649d86cd41943208b709f583126dac6a1ffbb216eaae9dc5f"
+        },
+        {
+          "path": "results/av312/tests.xml",
+          "sha256": "c0dc6c56c7d95cce03497c4fb4b733227be0d8e21e9a6ec4091a7d94cc7cb46b"
+        }
+      ]
+    },
+    {
+      "id": "stopping",
+      "kind": "review",
+      "status": "PASS",
+      "action_taken": "Handoff is for new media egress/provider authority, not another technical go-ahead or incremental scene approval.",
+      "observation": "Handoff is for new media egress/provider authority, not another technical go-ahead or incremental scene approval.",
+      "evidence": [
+        {
+          "path": "results/av312/REVIEW.md",
+          "sha256": "bd44701f89d9fbd5d090c1c03095d6b9b18486c9fcbfc58bd4edbc50e9bef0c8"
+        },
+        {
+          "path": "results/av312/controls.json",
+          "sha256": "5e5a25422c45c44649d86cd41943208b709f583126dac6a1ffbb216eaae9dc5f"
+        },
+        {
+          "path": "results/av312/tests.xml",
+          "sha256": "c0dc6c56c7d95cce03497c4fb4b733227be0d8e21e9a6ec4091a7d94cc7cb46b"
+        }
+      ]
+    },
+    {
+      "id": "versioning",
+      "kind": "technical",
+      "status": "PASS",
+      "action_taken": "Eight derivative hashes, source hashes, durations and decode results recorded; masters untouched.",
+      "observation": "Eight derivative hashes, source hashes, durations and decode results recorded; masters untouched.",
+      "evidence": [
+        {
+          "path": "results/av312/REVIEW.md",
+          "sha256": "bd44701f89d9fbd5d090c1c03095d6b9b18486c9fcbfc58bd4edbc50e9bef0c8"
+        },
+        {
+          "path": "results/av312/controls.json",
+          "sha256": "5e5a25422c45c44649d86cd41943208b709f583126dac6a1ffbb216eaae9dc5f"
+        },
+        {
+          "path": "results/av312/tests.xml",
+          "sha256": "c0dc6c56c7d95cce03497c4fb4b733227be0d8e21e9a6ec4091a7d94cc7cb46b"
+        }
+      ]
+    },
+    {
+      "id": "economics",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Local jobs captured, no provider spend; proposed six-call cost ceiling is not execution authority.",
+      "observation": "Local jobs captured, no provider spend; proposed six-call cost ceiling is not execution authority.",
+      "evidence": [
+        {
+          "path": "results/av312/REVIEW.md",
+          "sha256": "bd44701f89d9fbd5d090c1c03095d6b9b18486c9fcbfc58bd4edbc50e9bef0c8"
+        },
+        {
+          "path": "results/av312/controls.json",
+          "sha256": "5e5a25422c45c44649d86cd41943208b709f583126dac6a1ffbb216eaae9dc5f"
+        },
+        {
+          "path": "results/av312/tests.xml",
+          "sha256": "c0dc6c56c7d95cce03497c4fb4b733227be0d8e21e9a6ec4091a7d94cc7cb46b"
+        }
+      ]
+    },
+    {
+      "id": "retrieval",
+      "kind": "technical",
+      "status": "PASS",
+      "action_taken": "Fresh process packet generated before fixtures and read immediately afterward; not falsely reported as pre-dispatch manual reading. Relevant AU11\u201316,255 and307 scope reconciled.",
+      "observation": "Fresh process packet generated before fixtures and read immediately afterward; not falsely reported as pre-dispatch manual reading. Relevant AU11\u201316,255 and307 scope reconciled.",
+      "evidence": [
+        {
+          "path": "results/av312/REVIEW.md",
+          "sha256": "bd44701f89d9fbd5d090c1c03095d6b9b18486c9fcbfc58bd4edbc50e9bef0c8"
+        },
+        {
+          "path": "results/av312/controls.json",
+          "sha256": "5e5a25422c45c44649d86cd41943208b709f583126dac6a1ffbb216eaae9dc5f"
+        },
+        {
+          "path": "results/av312/tests.xml",
+          "sha256": "c0dc6c56c7d95cce03497c4fb4b733227be0d8e21e9a6ec4091a7d94cc7cb46b"
+        }
+      ]
+    },
+    {
+      "id": "current_state",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Current312 state records missing channel and pending authority; existing acceptance and four open defects preserved.",
+      "observation": "Current312 state records missing channel and pending authority; existing acceptance and four open defects preserved.",
+      "evidence": [
+        {
+          "path": "results/av312/REVIEW.md",
+          "sha256": "bd44701f89d9fbd5d090c1c03095d6b9b18486c9fcbfc58bd4edbc50e9bef0c8"
+        },
+        {
+          "path": "results/av312/controls.json",
+          "sha256": "5e5a25422c45c44649d86cd41943208b709f583126dac6a1ffbb216eaae9dc5f"
+        },
+        {
+          "path": "results/av312/tests.xml",
+          "sha256": "c0dc6c56c7d95cce03497c4fb4b733227be0d8e21e9a6ec4091a7d94cc7cb46b"
+        }
+      ]
+    },
+    {
+      "id": "au_reuse",
+      "kind": "review",
+      "status": "PASS",
+      "action_taken": "Reused excerpts and infrastructure rather than new renders; no new backup or complete production-readiness claim.",
+      "observation": "Reused excerpts and infrastructure rather than new renders; no new backup or complete production-readiness claim.",
+      "evidence": [
+        {
+          "path": "results/av312/REVIEW.md",
+          "sha256": "bd44701f89d9fbd5d090c1c03095d6b9b18486c9fcbfc58bd4edbc50e9bef0c8"
+        },
+        {
+          "path": "results/av312/controls.json",
+          "sha256": "5e5a25422c45c44649d86cd41943208b709f583126dac6a1ffbb216eaae9dc5f"
+        },
+        {
+          "path": "results/av312/tests.xml",
+          "sha256": "c0dc6c56c7d95cce03497c4fb4b733227be0d8e21e9a6ec4091a7d94cc7cb46b"
+        }
+      ]
+    },
+    {
+      "id": "au_review",
+      "kind": "review",
+      "status": "PASS",
+      "action_taken": "Distinguished missing perceptual input from rule failure; external hypothesis untested, no calibration accuracy claim.",
+      "observation": "Distinguished missing perceptual input from rule failure; external hypothesis untested, no calibration accuracy claim.",
+      "evidence": [
+        {
+          "path": "results/av312/REVIEW.md",
+          "sha256": "bd44701f89d9fbd5d090c1c03095d6b9b18486c9fcbfc58bd4edbc50e9bef0c8"
+        },
+        {
+          "path": "results/av312/controls.json",
+          "sha256": "5e5a25422c45c44649d86cd41943208b709f583126dac6a1ffbb216eaae9dc5f"
+        },
+        {
+          "path": "results/av312/tests.xml",
+          "sha256": "c0dc6c56c7d95cce03497c4fb4b733227be0d8e21e9a6ec4091a7d94cc7cb46b"
+        }
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "prediction": "An audio return may create a player without giving the agent audible content.",
+      "observation": "Tool explicitly omitted audio because audio input is unsupported.",
+      "response": "No hearing claim or capability enablement; request scoped alternative.",
+      "result": "resolved"
+    }
+  ],
+  "adjacent_regressions": "Protected source fingerprints unchanged;140 existing/new state regressions pass; scene untouched.",
+  "stopping_reason": "Concrete external media/provider/spend choice. Perceptual qualification remains blocked."
+}

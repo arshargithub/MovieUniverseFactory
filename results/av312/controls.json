@@ -1,0 +1,248 @@
+{
+  "status": "LOCAL_ONLY_NOT_SENT",
+  "controls": [
+    {
+      "id": "C01",
+      "path": ".runtime/av312/controls/C01.mp4",
+      "sha256": "28f58aba78828455378ee6e842ccccd7ebec1229513bdea870bd89b35994266a",
+      "source": ".runtime/art-direction/series01-sikh256/references/reference-b.mov",
+      "source_sha256": "78d0d691e8712c02931876cf0bc405e4869de357f337f531708be7a7da4898e2",
+      "start": 15.5,
+      "source_duration": 3.5,
+      "transform": null,
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_type": "video",
+            "r_frame_rate": "30/1"
+          },
+          {
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 2,
+            "r_frame_rate": "0/0"
+          }
+        ],
+        "format": {
+          "duration": "3.500000",
+          "size": "444627"
+        }
+      }
+    },
+    {
+      "id": "C02",
+      "path": ".runtime/av312/controls/C02.mp4",
+      "sha256": "2dbae392974ab9edd73d8193c771aebc7f7c52deb1c352908aa1662bed6eedd1",
+      "source": ".runtime/art-direction/series01-sikh305/delivery-13/sikh-29s.mp4",
+      "source_sha256": "7deb1bda524bff95f5917cf8f5c8b1eac6aa7ea15308232d014affcf08346e82",
+      "start": 11.5,
+      "source_duration": 3.5,
+      "transform": null,
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_type": "video",
+            "r_frame_rate": "24/1"
+          },
+          {
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 2,
+            "r_frame_rate": "0/0"
+          }
+        ],
+        "format": {
+          "duration": "3.500000",
+          "size": "526650"
+        }
+      }
+    },
+    {
+      "id": "C03",
+      "path": ".runtime/av312/controls/C03.mp4",
+      "sha256": "ff4a3da4cdc9f2cc84852c5cc45d4b1b09076f9087bf5e14cc493eb3443a5dea",
+      "source": ".runtime/art-direction/series01-finish248/delivery01/pashtun-20s.mp4",
+      "source_sha256": "1004ed9f2e06d2eafb008c925eb9d266e8a13b8603086020e28d19e3b606722b",
+      "start": 11,
+      "source_duration": 4,
+      "transform": null,
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_type": "video",
+            "r_frame_rate": "24/1"
+          },
+          {
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 2,
+            "r_frame_rate": "0/0"
+          }
+        ],
+        "format": {
+          "duration": "4.000000",
+          "size": "2887648"
+        }
+      }
+    },
+    {
+      "id": "C04",
+      "path": ".runtime/av312/controls/C04.mp4",
+      "sha256": "f1e467bdecb3bb61b4d8b9f9b6a46108e420745e5089979e75e1f5bc48ffacd1",
+      "source": ".runtime/av312/controls/C03.mp4",
+      "source_sha256": "ff4a3da4cdc9f2cc84852c5cc45d4b1b09076f9087bf5e14cc493eb3443a5dea",
+      "start": 0,
+      "source_duration": 4,
+      "transform": "slow",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_type": "video",
+            "r_frame_rate": "24/1"
+          },
+          {
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 2,
+            "r_frame_rate": "0/0"
+          }
+        ],
+        "format": {
+          "duration": "6.000000",
+          "size": "3229906"
+        }
+      }
+    },
+    {
+      "id": "C05",
+      "path": ".runtime/av312/controls/C05.mp4",
+      "sha256": "87a671a6c43eebfb999d6a02548733eb349eea02c73af2a1a3b37907a1a7b000",
+      "source": ".runtime/av312/controls/C03.mp4",
+      "source_sha256": "ff4a3da4cdc9f2cc84852c5cc45d4b1b09076f9087bf5e14cc493eb3443a5dea",
+      "start": 0,
+      "source_duration": 4,
+      "transform": "delay",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_type": "video",
+            "r_frame_rate": "24/1"
+          },
+          {
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 2,
+            "r_frame_rate": "0/0"
+          }
+        ],
+        "format": {
+          "duration": "4.000000",
+          "size": "2718195"
+        }
+      }
+    },
+    {
+      "id": "C06",
+      "path": ".runtime/av312/controls/C06.mp4",
+      "sha256": "b72f2608ef752817f4bbd45ac2609b683ebbbb5da91d5d4193749df815bc6aac",
+      "source": ".runtime/av312/controls/C03.mp4",
+      "source_sha256": "ff4a3da4cdc9f2cc84852c5cc45d4b1b09076f9087bf5e14cc493eb3443a5dea",
+      "start": 0,
+      "source_duration": 4,
+      "transform": "mute",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_type": "video",
+            "r_frame_rate": "24/1"
+          },
+          {
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 2,
+            "r_frame_rate": "0/0"
+          }
+        ],
+        "format": {
+          "duration": "4.000000",
+          "size": "2645612"
+        }
+      }
+    },
+    {
+      "id": "C07",
+      "path": ".runtime/av312/controls/C07.mp4",
+      "sha256": "6ea14c6edbf1dd466f5861614667482826bd3b35e3c157017280d49dbf1fcbad",
+      "source": ".runtime/art-direction/series01-sikh305/delivery-13/sikh-29s.mp4",
+      "source_sha256": "7deb1bda524bff95f5917cf8f5c8b1eac6aa7ea15308232d014affcf08346e82",
+      "start": 5,
+      "source_duration": 3,
+      "transform": null,
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_type": "video",
+            "r_frame_rate": "24/1"
+          },
+          {
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 2,
+            "r_frame_rate": "0/0"
+          }
+        ],
+        "format": {
+          "duration": "3.000000",
+          "size": "820686"
+        }
+      }
+    },
+    {
+      "id": "C08",
+      "path": ".runtime/av312/controls/C08.mp4",
+      "sha256": "62184e70e4157f561783b79d13ac2e082ed7b1f404035578c334772d4207f616",
+      "source": ".runtime/art-direction/series01-sikh305/delivery-13/sikh-29s.mp4",
+      "source_sha256": "7deb1bda524bff95f5917cf8f5c8b1eac6aa7ea15308232d014affcf08346e82",
+      "start": 24,
+      "source_duration": 5,
+      "transform": null,
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_type": "video",
+            "r_frame_rate": "24/1"
+          },
+          {
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 2,
+            "r_frame_rate": "0/0"
+          }
+        ],
+        "format": {
+          "duration": "5.000000",
+          "size": "417573"
+        }
+      }
+    }
+  ],
+  "total_bytes": 13690897,
+  "production_fingerprint_unchanged": "e69207dc4b119287ce967f44d985e43608cd29fb1c32e92adb7d3b0d7abb905c",
+  "limits": "Decode and transform provenance only. Not personally heard or viewed as continuous video. Synthetic modifications are known controls, not independent natural defects."
+}

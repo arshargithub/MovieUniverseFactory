@@ -4,6 +4,17 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+### Exchange312 — actual media-input limitation; bounded external review decision
+
+[AV312](../../results/av312/REVIEW.md) attempted a short audio return; the session
+explicitly omitted it as unsupported audio input. Continuous video review remains
+unqualified. Eight local controls13.69MB were prepared/decode-checked; no upload,
+provider call or scene change. Recommend up to six Gemini3.8 technical-review
+requests with a proposed$1 ceiling, subject to explicit Director authority and
+data-use disclosure. No music-taste delegation, automatic pass or personal-hearing
+claim. The four Sikh defects remain open; accepted Pashtun is unchanged. Await
+this provider/egress decision before execution; next checkpoint remains320.
+
 ### Exchanges308 to311 and checkpoint31
 
 308 distinguishes document-payload savings from unmeasured total token/time

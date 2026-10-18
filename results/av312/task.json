@@ -1,0 +1,20 @@
+{
+  "id": "av312-channel-qualification",
+  "operation": "knowledge",
+  "entities": [
+    "knowledge"
+  ],
+  "query": "review evidence modalities capability calibration authority",
+  "intent": "Qualify existing local media review path; no production or external model authority.",
+  "phase": "execution",
+  "open_decisions": [],
+  "inputs": {
+    "results/av312/STRATEGY.md": "b85949e9f7a8990364e440506e260fabc3086c418cb6630b15f5c1fb880cffad",
+    "docs/knowledge/review_control/README.md": "95851101bc325697e8a5f053bb61bf5ea80c4f665cd0bc33def4e149e9de96f7"
+  },
+  "execution_authority": {
+    "source": "results/av312/STRATEGY.md",
+    "scope": "Director312 local capability probe and fixture preparation"
+  },
+  "max_context_characters": 48000
+}
