@@ -1,0 +1,1276 @@
+{
+  "packet_digest": "7d170ca4cae4202f8ac034656820bb823d2f2ac3120fdd393a6f2eb6799ab0f7",
+  "scope": "Research answer only; production admission deliberately blocked",
+  "checks": [
+    {
+      "id": "authority",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Performed documentary reconciliation; retained existing actor failures and unexecuted controls separately.",
+      "observation": "Read-only model research only; no new GPU, paid call, upload or production choice.",
+      "evidence": [
+        {
+          "path": "results/trellis300/QUALITY_REVIEW.md",
+          "sha256": "8dfb6baae75ac9341b79a2c24f601812ee6d2a925cd0bb93d99a4d5ac3c463da"
+        },
+        {
+          "path": "results/trellis298/ASSESSMENT.md",
+          "sha256": "ca6f292acfa91bf3ebbc4ecbd17781afbc0ddd9a7288dbb34ff5ae2ebaa287df"
+        },
+        {
+          "path": "scripts/trellis298_worker.py",
+          "sha256": "d9167b124f8e93c117fc828e8fabcf2e4e2be5573f9e4f6ccb5100675fbd7470"
+        },
+        {
+          "path": "docs/knowledge/SIKH_FOUNDATION_REJECTION_271.md",
+          "sha256": "813411158cb1122cfa476c1148e6ae81e662822372704d0b33a60cf61e3428ef"
+        },
+        {
+          "path": "docs/planning/SERIES_01_SIKH_BASELINE_V01.md",
+          "sha256": "8d588dad3970aa7c2f8de09fc537ae2f4d928a7725791d8ed6132bb1ffebb8ab"
+        },
+        {
+          "path": "docs/decisions/0005-production-strategy-before-execution.md",
+          "sha256": "c29e2898553d26f56ac5fab7f7e126b1eda84c04643ab7a4bf12466c630dbd1e"
+        },
+        {
+          "path": ".runtime/trellis298c/retrieved/evidence/build.log",
+          "sha256": "e59c464c4b8b86af8871b829d00f09fe8ba5a13a9c871f03dff9e4313c78b8e1"
+        },
+        {
+          "path": ".runtime/trellis298c/retrieved/evidence/weight-manifest.json",
+          "sha256": "5bfca84c82e834edccfccfabacd0aec481441106d0b0d81d2cf3fb136b933b2a"
+        },
+        {
+          "path": ".runtime/trellis298-source/trellis2/pipelines/trellis2_image_to_3d.py",
+          "sha256": "e2addfca672354284b23d1541a8f49228d5a727d49220fcb8512cca2cdd38ce9"
+        },
+        {
+          "path": ".runtime/trellis298-source/trellis2/modules/norm.py",
+          "sha256": "f89c40abf3356f7b06fc85f0498cd77eefb677a0e0d370a43d14a735f4c40172"
+        },
+        {
+          "path": ".runtime/trellis298-source/trellis2/models/sc_vaes/sparse_unet_vae.py",
+          "sha256": "aeb41237d1c93cf3a666870c3d18e7044ba420a4e7a29aad5795bb5204731a00"
+        },
+        {
+          "path": "results/trellis298/cloud-d/aggregate-reserved.json",
+          "sha256": "bd675d6dd5a580b5c132703f99d12ae2e1aad3dd58f3efaf750d5b7bae269d53"
+        }
+      ]
+    },
+    {
+      "id": "strategy",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Performed documentary reconciliation; retained existing actor failures and unexecuted controls separately.",
+      "observation": "Controlled export preservation precedes resolution and sampler comparisons; prospective tests remain unexecuted.",
+      "evidence": [
+        {
+          "path": "results/trellis300/QUALITY_REVIEW.md",
+          "sha256": "8dfb6baae75ac9341b79a2c24f601812ee6d2a925cd0bb93d99a4d5ac3c463da"
+        },
+        {
+          "path": "results/trellis298/ASSESSMENT.md",
+          "sha256": "ca6f292acfa91bf3ebbc4ecbd17781afbc0ddd9a7288dbb34ff5ae2ebaa287df"
+        },
+        {
+          "path": "scripts/trellis298_worker.py",
+          "sha256": "d9167b124f8e93c117fc828e8fabcf2e4e2be5573f9e4f6ccb5100675fbd7470"
+        },
+        {
+          "path": "docs/knowledge/SIKH_FOUNDATION_REJECTION_271.md",
+          "sha256": "813411158cb1122cfa476c1148e6ae81e662822372704d0b33a60cf61e3428ef"
+        },
+        {
+          "path": "docs/planning/SERIES_01_SIKH_BASELINE_V01.md",
+          "sha256": "8d588dad3970aa7c2f8de09fc537ae2f4d928a7725791d8ed6132bb1ffebb8ab"
+        },
+        {
+          "path": "docs/decisions/0005-production-strategy-before-execution.md",
+          "sha256": "c29e2898553d26f56ac5fab7f7e126b1eda84c04643ab7a4bf12466c630dbd1e"
+        },
+        {
+          "path": ".runtime/trellis298c/retrieved/evidence/build.log",
+          "sha256": "e59c464c4b8b86af8871b829d00f09fe8ba5a13a9c871f03dff9e4313c78b8e1"
+        },
+        {
+          "path": ".runtime/trellis298c/retrieved/evidence/weight-manifest.json",
+          "sha256": "5bfca84c82e834edccfccfabacd0aec481441106d0b0d81d2cf3fb136b933b2a"
+        },
+        {
+          "path": ".runtime/trellis298-source/trellis2/pipelines/trellis2_image_to_3d.py",
+          "sha256": "e2addfca672354284b23d1541a8f49228d5a727d49220fcb8512cca2cdd38ce9"
+        },
+        {
+          "path": ".runtime/trellis298-source/trellis2/modules/norm.py",
+          "sha256": "f89c40abf3356f7b06fc85f0498cd77eefb677a0e0d370a43d14a735f4c40172"
+        },
+        {
+          "path": ".runtime/trellis298-source/trellis2/models/sc_vaes/sparse_unet_vae.py",
+          "sha256": "aeb41237d1c93cf3a666870c3d18e7044ba420a4e7a29aad5795bb5204731a00"
+        },
+        {
+          "path": "results/trellis298/cloud-d/aggregate-reserved.json",
+          "sha256": "bd675d6dd5a580b5c132703f99d12ae2e1aad3dd58f3efaf750d5b7bae269d53"
+        }
+      ]
+    },
+    {
+      "id": "visual_gate",
+      "kind": "review",
+      "status": "FAIL",
+      "action_taken": "Performed documentary reconciliation; retained existing actor failures and unexecuted controls separately.",
+      "observation": "No new visual, motion or asset qualification performed. Existing298 actor rejection remains; proposed controls are untested.",
+      "evidence": [
+        {
+          "path": "results/trellis300/QUALITY_REVIEW.md",
+          "sha256": "8dfb6baae75ac9341b79a2c24f601812ee6d2a925cd0bb93d99a4d5ac3c463da"
+        },
+        {
+          "path": "results/trellis298/ASSESSMENT.md",
+          "sha256": "ca6f292acfa91bf3ebbc4ecbd17781afbc0ddd9a7288dbb34ff5ae2ebaa287df"
+        },
+        {
+          "path": "scripts/trellis298_worker.py",
+          "sha256": "d9167b124f8e93c117fc828e8fabcf2e4e2be5573f9e4f6ccb5100675fbd7470"
+        },
+        {
+          "path": "docs/knowledge/SIKH_FOUNDATION_REJECTION_271.md",
+          "sha256": "813411158cb1122cfa476c1148e6ae81e662822372704d0b33a60cf61e3428ef"
+        },
+        {
+          "path": "docs/planning/SERIES_01_SIKH_BASELINE_V01.md",
+          "sha256": "8d588dad3970aa7c2f8de09fc537ae2f4d928a7725791d8ed6132bb1ffebb8ab"
+        },
+        {
+          "path": "docs/decisions/0005-production-strategy-before-execution.md",
+          "sha256": "c29e2898553d26f56ac5fab7f7e126b1eda84c04643ab7a4bf12466c630dbd1e"
+        },
+        {
+          "path": ".runtime/trellis298c/retrieved/evidence/build.log",
+          "sha256": "e59c464c4b8b86af8871b829d00f09fe8ba5a13a9c871f03dff9e4313c78b8e1"
+        },
+        {
+          "path": ".runtime/trellis298c/retrieved/evidence/weight-manifest.json",
+          "sha256": "5bfca84c82e834edccfccfabacd0aec481441106d0b0d81d2cf3fb136b933b2a"
+        },
+        {
+          "path": ".runtime/trellis298-source/trellis2/pipelines/trellis2_image_to_3d.py",
+          "sha256": "e2addfca672354284b23d1541a8f49228d5a727d49220fcb8512cca2cdd38ce9"
+        },
+        {
+          "path": ".runtime/trellis298-source/trellis2/modules/norm.py",
+          "sha256": "f89c40abf3356f7b06fc85f0498cd77eefb677a0e0d370a43d14a735f4c40172"
+        },
+        {
+          "path": ".runtime/trellis298-source/trellis2/models/sc_vaes/sparse_unet_vae.py",
+          "sha256": "aeb41237d1c93cf3a666870c3d18e7044ba420a4e7a29aad5795bb5204731a00"
+        },
+        {
+          "path": "results/trellis298/cloud-d/aggregate-reserved.json",
+          "sha256": "bd675d6dd5a580b5c132703f99d12ae2e1aad3dd58f3efaf750d5b7bae269d53"
+        }
+      ]
+    },
+    {
+      "id": "anticipation",
+      "kind": "review",
+      "status": "PASS",
+      "action_taken": "Performed documentary reconciliation; retained existing actor failures and unexecuted controls separately.",
+      "observation": "Investigated false quality-ceiling inference, export-versus-decoder confusion and generation-versus-actor readiness.",
+      "evidence": [
+        {
+          "path": "results/trellis300/QUALITY_REVIEW.md",
+          "sha256": "8dfb6baae75ac9341b79a2c24f601812ee6d2a925cd0bb93d99a4d5ac3c463da"
+        },
+        {
+          "path": "results/trellis298/ASSESSMENT.md",
+          "sha256": "ca6f292acfa91bf3ebbc4ecbd17781afbc0ddd9a7288dbb34ff5ae2ebaa287df"
+        },
+        {
+          "path": "scripts/trellis298_worker.py",
+          "sha256": "d9167b124f8e93c117fc828e8fabcf2e4e2be5573f9e4f6ccb5100675fbd7470"
+        },
+        {
+          "path": "docs/knowledge/SIKH_FOUNDATION_REJECTION_271.md",
+          "sha256": "813411158cb1122cfa476c1148e6ae81e662822372704d0b33a60cf61e3428ef"
+        },
+        {
+          "path": "docs/planning/SERIES_01_SIKH_BASELINE_V01.md",
+          "sha256": "8d588dad3970aa7c2f8de09fc537ae2f4d928a7725791d8ed6132bb1ffebb8ab"
+        },
+        {
+          "path": "docs/decisions/0005-production-strategy-before-execution.md",
+          "sha256": "c29e2898553d26f56ac5fab7f7e126b1eda84c04643ab7a4bf12466c630dbd1e"
+        },
+        {
+          "path": ".runtime/trellis298c/retrieved/evidence/build.log",
+          "sha256": "e59c464c4b8b86af8871b829d00f09fe8ba5a13a9c871f03dff9e4313c78b8e1"
+        },
+        {
+          "path": ".runtime/trellis298c/retrieved/evidence/weight-manifest.json",
+          "sha256": "5bfca84c82e834edccfccfabacd0aec481441106d0b0d81d2cf3fb136b933b2a"
+        },
+        {
+          "path": ".runtime/trellis298-source/trellis2/pipelines/trellis2_image_to_3d.py",
+          "sha256": "e2addfca672354284b23d1541a8f49228d5a727d49220fcb8512cca2cdd38ce9"
+        },
+        {
+          "path": ".runtime/trellis298-source/trellis2/modules/norm.py",
+          "sha256": "f89c40abf3356f7b06fc85f0498cd77eefb677a0e0d370a43d14a735f4c40172"
+        },
+        {
+          "path": ".runtime/trellis298-source/trellis2/models/sc_vaes/sparse_unet_vae.py",
+          "sha256": "aeb41237d1c93cf3a666870c3d18e7044ba420a4e7a29aad5795bb5204731a00"
+        },
+        {
+          "path": "results/trellis298/cloud-d/aggregate-reserved.json",
+          "sha256": "bd675d6dd5a580b5c132703f99d12ae2e1aad3dd58f3efaf750d5b7bae269d53"
+        }
+      ]
+    },
+    {
+      "id": "stopping",
+      "kind": "review",
+      "status": "PASS",
+      "action_taken": "Performed documentary reconciliation; retained existing actor failures and unexecuted controls separately.",
+      "observation": "Research question is answered; poor existing actor remains failed, not admitted to avoid more work.",
+      "evidence": [
+        {
+          "path": "results/trellis300/QUALITY_REVIEW.md",
+          "sha256": "8dfb6baae75ac9341b79a2c24f601812ee6d2a925cd0bb93d99a4d5ac3c463da"
+        },
+        {
+          "path": "results/trellis298/ASSESSMENT.md",
+          "sha256": "ca6f292acfa91bf3ebbc4ecbd17781afbc0ddd9a7288dbb34ff5ae2ebaa287df"
+        },
+        {
+          "path": "scripts/trellis298_worker.py",
+          "sha256": "d9167b124f8e93c117fc828e8fabcf2e4e2be5573f9e4f6ccb5100675fbd7470"
+        },
+        {
+          "path": "docs/knowledge/SIKH_FOUNDATION_REJECTION_271.md",
+          "sha256": "813411158cb1122cfa476c1148e6ae81e662822372704d0b33a60cf61e3428ef"
+        },
+        {
+          "path": "docs/planning/SERIES_01_SIKH_BASELINE_V01.md",
+          "sha256": "8d588dad3970aa7c2f8de09fc537ae2f4d928a7725791d8ed6132bb1ffebb8ab"
+        },
+        {
+          "path": "docs/decisions/0005-production-strategy-before-execution.md",
+          "sha256": "c29e2898553d26f56ac5fab7f7e126b1eda84c04643ab7a4bf12466c630dbd1e"
+        },
+        {
+          "path": ".runtime/trellis298c/retrieved/evidence/build.log",
+          "sha256": "e59c464c4b8b86af8871b829d00f09fe8ba5a13a9c871f03dff9e4313c78b8e1"
+        },
+        {
+          "path": ".runtime/trellis298c/retrieved/evidence/weight-manifest.json",
+          "sha256": "5bfca84c82e834edccfccfabacd0aec481441106d0b0d81d2cf3fb136b933b2a"
+        },
+        {
+          "path": ".runtime/trellis298-source/trellis2/pipelines/trellis2_image_to_3d.py",
+          "sha256": "e2addfca672354284b23d1541a8f49228d5a727d49220fcb8512cca2cdd38ce9"
+        },
+        {
+          "path": ".runtime/trellis298-source/trellis2/modules/norm.py",
+          "sha256": "f89c40abf3356f7b06fc85f0498cd77eefb677a0e0d370a43d14a735f4c40172"
+        },
+        {
+          "path": ".runtime/trellis298-source/trellis2/models/sc_vaes/sparse_unet_vae.py",
+          "sha256": "aeb41237d1c93cf3a666870c3d18e7044ba420a4e7a29aad5795bb5204731a00"
+        },
+        {
+          "path": "results/trellis298/cloud-d/aggregate-reserved.json",
+          "sha256": "bd675d6dd5a580b5c132703f99d12ae2e1aad3dd58f3efaf750d5b7bae269d53"
+        }
+      ]
+    },
+    {
+      "id": "versioning",
+      "kind": "technical",
+      "status": "PASS",
+      "action_taken": "Performed documentary reconciliation; retained existing actor failures and unexecuted controls separately.",
+      "observation": "Bound worker, pinned source, execution manifest and OOM log; exact public config hash matched execution manifest.",
+      "evidence": [
+        {
+          "path": "results/trellis300/QUALITY_REVIEW.md",
+          "sha256": "8dfb6baae75ac9341b79a2c24f601812ee6d2a925cd0bb93d99a4d5ac3c463da"
+        },
+        {
+          "path": "results/trellis298/ASSESSMENT.md",
+          "sha256": "ca6f292acfa91bf3ebbc4ecbd17781afbc0ddd9a7288dbb34ff5ae2ebaa287df"
+        },
+        {
+          "path": "scripts/trellis298_worker.py",
+          "sha256": "d9167b124f8e93c117fc828e8fabcf2e4e2be5573f9e4f6ccb5100675fbd7470"
+        },
+        {
+          "path": "docs/knowledge/SIKH_FOUNDATION_REJECTION_271.md",
+          "sha256": "813411158cb1122cfa476c1148e6ae81e662822372704d0b33a60cf61e3428ef"
+        },
+        {
+          "path": "docs/planning/SERIES_01_SIKH_BASELINE_V01.md",
+          "sha256": "8d588dad3970aa7c2f8de09fc537ae2f4d928a7725791d8ed6132bb1ffebb8ab"
+        },
+        {
+          "path": "docs/decisions/0005-production-strategy-before-execution.md",
+          "sha256": "c29e2898553d26f56ac5fab7f7e126b1eda84c04643ab7a4bf12466c630dbd1e"
+        },
+        {
+          "path": ".runtime/trellis298c/retrieved/evidence/build.log",
+          "sha256": "e59c464c4b8b86af8871b829d00f09fe8ba5a13a9c871f03dff9e4313c78b8e1"
+        },
+        {
+          "path": ".runtime/trellis298c/retrieved/evidence/weight-manifest.json",
+          "sha256": "5bfca84c82e834edccfccfabacd0aec481441106d0b0d81d2cf3fb136b933b2a"
+        },
+        {
+          "path": ".runtime/trellis298-source/trellis2/pipelines/trellis2_image_to_3d.py",
+          "sha256": "e2addfca672354284b23d1541a8f49228d5a727d49220fcb8512cca2cdd38ce9"
+        },
+        {
+          "path": ".runtime/trellis298-source/trellis2/modules/norm.py",
+          "sha256": "f89c40abf3356f7b06fc85f0498cd77eefb677a0e0d370a43d14a735f4c40172"
+        },
+        {
+          "path": ".runtime/trellis298-source/trellis2/models/sc_vaes/sparse_unet_vae.py",
+          "sha256": "aeb41237d1c93cf3a666870c3d18e7044ba420a4e7a29aad5795bb5204731a00"
+        },
+        {
+          "path": "results/trellis298/cloud-d/aggregate-reserved.json",
+          "sha256": "bd675d6dd5a580b5c132703f99d12ae2e1aad3dd58f3efaf750d5b7bae269d53"
+        }
+      ]
+    },
+    {
+      "id": "economics",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Performed documentary reconciliation; retained existing actor failures and unexecuted controls separately.",
+      "observation": "No new paid compute;14USD liability/reservation is not actual spend; extra10 remains inactive.",
+      "evidence": [
+        {
+          "path": "results/trellis300/QUALITY_REVIEW.md",
+          "sha256": "8dfb6baae75ac9341b79a2c24f601812ee6d2a925cd0bb93d99a4d5ac3c463da"
+        },
+        {
+          "path": "results/trellis298/ASSESSMENT.md",
+          "sha256": "ca6f292acfa91bf3ebbc4ecbd17781afbc0ddd9a7288dbb34ff5ae2ebaa287df"
+        },
+        {
+          "path": "scripts/trellis298_worker.py",
+          "sha256": "d9167b124f8e93c117fc828e8fabcf2e4e2be5573f9e4f6ccb5100675fbd7470"
+        },
+        {
+          "path": "docs/knowledge/SIKH_FOUNDATION_REJECTION_271.md",
+          "sha256": "813411158cb1122cfa476c1148e6ae81e662822372704d0b33a60cf61e3428ef"
+        },
+        {
+          "path": "docs/planning/SERIES_01_SIKH_BASELINE_V01.md",
+          "sha256": "8d588dad3970aa7c2f8de09fc537ae2f4d928a7725791d8ed6132bb1ffebb8ab"
+        },
+        {
+          "path": "docs/decisions/0005-production-strategy-before-execution.md",
+          "sha256": "c29e2898553d26f56ac5fab7f7e126b1eda84c04643ab7a4bf12466c630dbd1e"
+        },
+        {
+          "path": ".runtime/trellis298c/retrieved/evidence/build.log",
+          "sha256": "e59c464c4b8b86af8871b829d00f09fe8ba5a13a9c871f03dff9e4313c78b8e1"
+        },
+        {
+          "path": ".runtime/trellis298c/retrieved/evidence/weight-manifest.json",
+          "sha256": "5bfca84c82e834edccfccfabacd0aec481441106d0b0d81d2cf3fb136b933b2a"
+        },
+        {
+          "path": ".runtime/trellis298-source/trellis2/pipelines/trellis2_image_to_3d.py",
+          "sha256": "e2addfca672354284b23d1541a8f49228d5a727d49220fcb8512cca2cdd38ce9"
+        },
+        {
+          "path": ".runtime/trellis298-source/trellis2/modules/norm.py",
+          "sha256": "f89c40abf3356f7b06fc85f0498cd77eefb677a0e0d370a43d14a735f4c40172"
+        },
+        {
+          "path": ".runtime/trellis298-source/trellis2/models/sc_vaes/sparse_unet_vae.py",
+          "sha256": "aeb41237d1c93cf3a666870c3d18e7044ba420a4e7a29aad5795bb5204731a00"
+        },
+        {
+          "path": "results/trellis298/cloud-d/aggregate-reserved.json",
+          "sha256": "bd675d6dd5a580b5c132703f99d12ae2e1aad3dd58f3efaf750d5b7bae269d53"
+        }
+      ]
+    },
+    {
+      "id": "representation",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Performed documentary reconciliation; retained existing actor failures and unexecuted controls separately.",
+      "observation": "No new visual, motion or asset qualification performed. Existing298 actor rejection remains; proposed controls are untested.",
+      "evidence": [
+        {
+          "path": "results/trellis300/QUALITY_REVIEW.md",
+          "sha256": "8dfb6baae75ac9341b79a2c24f601812ee6d2a925cd0bb93d99a4d5ac3c463da"
+        },
+        {
+          "path": "results/trellis298/ASSESSMENT.md",
+          "sha256": "ca6f292acfa91bf3ebbc4ecbd17781afbc0ddd9a7288dbb34ff5ae2ebaa287df"
+        },
+        {
+          "path": "scripts/trellis298_worker.py",
+          "sha256": "d9167b124f8e93c117fc828e8fabcf2e4e2be5573f9e4f6ccb5100675fbd7470"
+        },
+        {
+          "path": "docs/knowledge/SIKH_FOUNDATION_REJECTION_271.md",
+          "sha256": "813411158cb1122cfa476c1148e6ae81e662822372704d0b33a60cf61e3428ef"
+        },
+        {
+          "path": "docs/planning/SERIES_01_SIKH_BASELINE_V01.md",
+          "sha256": "8d588dad3970aa7c2f8de09fc537ae2f4d928a7725791d8ed6132bb1ffebb8ab"
+        },
+        {
+          "path": "docs/decisions/0005-production-strategy-before-execution.md",
+          "sha256": "c29e2898553d26f56ac5fab7f7e126b1eda84c04643ab7a4bf12466c630dbd1e"
+        },
+        {
+          "path": ".runtime/trellis298c/retrieved/evidence/build.log",
+          "sha256": "e59c464c4b8b86af8871b829d00f09fe8ba5a13a9c871f03dff9e4313c78b8e1"
+        },
+        {
+          "path": ".runtime/trellis298c/retrieved/evidence/weight-manifest.json",
+          "sha256": "5bfca84c82e834edccfccfabacd0aec481441106d0b0d81d2cf3fb136b933b2a"
+        },
+        {
+          "path": ".runtime/trellis298-source/trellis2/pipelines/trellis2_image_to_3d.py",
+          "sha256": "e2addfca672354284b23d1541a8f49228d5a727d49220fcb8512cca2cdd38ce9"
+        },
+        {
+          "path": ".runtime/trellis298-source/trellis2/modules/norm.py",
+          "sha256": "f89c40abf3356f7b06fc85f0498cd77eefb677a0e0d370a43d14a735f4c40172"
+        },
+        {
+          "path": ".runtime/trellis298-source/trellis2/models/sc_vaes/sparse_unet_vae.py",
+          "sha256": "aeb41237d1c93cf3a666870c3d18e7044ba420a4e7a29aad5795bb5204731a00"
+        },
+        {
+          "path": "results/trellis298/cloud-d/aggregate-reserved.json",
+          "sha256": "bd675d6dd5a580b5c132703f99d12ae2e1aad3dd58f3efaf750d5b7bae269d53"
+        }
+      ]
+    },
+    {
+      "id": "anatomy",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Performed documentary reconciliation; retained existing actor failures and unexecuted controls separately.",
+      "observation": "No new visual, motion or asset qualification performed. Existing298 actor rejection remains; proposed controls are untested.",
+      "evidence": [
+        {
+          "path": "results/trellis300/QUALITY_REVIEW.md",
+          "sha256": "8dfb6baae75ac9341b79a2c24f601812ee6d2a925cd0bb93d99a4d5ac3c463da"
+        },
+        {
+          "path": "results/trellis298/ASSESSMENT.md",
+          "sha256": "ca6f292acfa91bf3ebbc4ecbd17781afbc0ddd9a7288dbb34ff5ae2ebaa287df"
+        },
+        {
+          "path": "scripts/trellis298_worker.py",
+          "sha256": "d9167b124f8e93c117fc828e8fabcf2e4e2be5573f9e4f6ccb5100675fbd7470"
+        },
+        {
+          "path": "docs/knowledge/SIKH_FOUNDATION_REJECTION_271.md",
+          "sha256": "813411158cb1122cfa476c1148e6ae81e662822372704d0b33a60cf61e3428ef"
+        },
+        {
+          "path": "docs/planning/SERIES_01_SIKH_BASELINE_V01.md",
+          "sha256": "8d588dad3970aa7c2f8de09fc537ae2f4d928a7725791d8ed6132bb1ffebb8ab"
+        },
+        {
+          "path": "docs/decisions/0005-production-strategy-before-execution.md",
+          "sha256": "c29e2898553d26f56ac5fab7f7e126b1eda84c04643ab7a4bf12466c630dbd1e"
+        },
+        {
+          "path": ".runtime/trellis298c/retrieved/evidence/build.log",
+          "sha256": "e59c464c4b8b86af8871b829d00f09fe8ba5a13a9c871f03dff9e4313c78b8e1"
+        },
+        {
+          "path": ".runtime/trellis298c/retrieved/evidence/weight-manifest.json",
+          "sha256": "5bfca84c82e834edccfccfabacd0aec481441106d0b0d81d2cf3fb136b933b2a"
+        },
+        {
+          "path": ".runtime/trellis298-source/trellis2/pipelines/trellis2_image_to_3d.py",
+          "sha256": "e2addfca672354284b23d1541a8f49228d5a727d49220fcb8512cca2cdd38ce9"
+        },
+        {
+          "path": ".runtime/trellis298-source/trellis2/modules/norm.py",
+          "sha256": "f89c40abf3356f7b06fc85f0498cd77eefb677a0e0d370a43d14a735f4c40172"
+        },
+        {
+          "path": ".runtime/trellis298-source/trellis2/models/sc_vaes/sparse_unet_vae.py",
+          "sha256": "aeb41237d1c93cf3a666870c3d18e7044ba420a4e7a29aad5795bb5204731a00"
+        },
+        {
+          "path": "results/trellis298/cloud-d/aggregate-reserved.json",
+          "sha256": "bd675d6dd5a580b5c132703f99d12ae2e1aad3dd58f3efaf750d5b7bae269d53"
+        }
+      ]
+    },
+    {
+      "id": "motion",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Performed documentary reconciliation; retained existing actor failures and unexecuted controls separately.",
+      "observation": "No new visual, motion or asset qualification performed. Existing298 actor rejection remains; proposed controls are untested.",
+      "evidence": [
+        {
+          "path": "results/trellis300/QUALITY_REVIEW.md",
+          "sha256": "8dfb6baae75ac9341b79a2c24f601812ee6d2a925cd0bb93d99a4d5ac3c463da"
+        },
+        {
+          "path": "results/trellis298/ASSESSMENT.md",
+          "sha256": "ca6f292acfa91bf3ebbc4ecbd17781afbc0ddd9a7288dbb34ff5ae2ebaa287df"
+        },
+        {
+          "path": "scripts/trellis298_worker.py",
+          "sha256": "d9167b124f8e93c117fc828e8fabcf2e4e2be5573f9e4f6ccb5100675fbd7470"
+        },
+        {
+          "path": "docs/knowledge/SIKH_FOUNDATION_REJECTION_271.md",
+          "sha256": "813411158cb1122cfa476c1148e6ae81e662822372704d0b33a60cf61e3428ef"
+        },
+        {
+          "path": "docs/planning/SERIES_01_SIKH_BASELINE_V01.md",
+          "sha256": "8d588dad3970aa7c2f8de09fc537ae2f4d928a7725791d8ed6132bb1ffebb8ab"
+        },
+        {
+          "path": "docs/decisions/0005-production-strategy-before-execution.md",
+          "sha256": "c29e2898553d26f56ac5fab7f7e126b1eda84c04643ab7a4bf12466c630dbd1e"
+        },
+        {
+          "path": ".runtime/trellis298c/retrieved/evidence/build.log",
+          "sha256": "e59c464c4b8b86af8871b829d00f09fe8ba5a13a9c871f03dff9e4313c78b8e1"
+        },
+        {
+          "path": ".runtime/trellis298c/retrieved/evidence/weight-manifest.json",
+          "sha256": "5bfca84c82e834edccfccfabacd0aec481441106d0b0d81d2cf3fb136b933b2a"
+        },
+        {
+          "path": ".runtime/trellis298-source/trellis2/pipelines/trellis2_image_to_3d.py",
+          "sha256": "e2addfca672354284b23d1541a8f49228d5a727d49220fcb8512cca2cdd38ce9"
+        },
+        {
+          "path": ".runtime/trellis298-source/trellis2/modules/norm.py",
+          "sha256": "f89c40abf3356f7b06fc85f0498cd77eefb677a0e0d370a43d14a735f4c40172"
+        },
+        {
+          "path": ".runtime/trellis298-source/trellis2/models/sc_vaes/sparse_unet_vae.py",
+          "sha256": "aeb41237d1c93cf3a666870c3d18e7044ba420a4e7a29aad5795bb5204731a00"
+        },
+        {
+          "path": "results/trellis298/cloud-d/aggregate-reserved.json",
+          "sha256": "bd675d6dd5a580b5c132703f99d12ae2e1aad3dd58f3efaf750d5b7bae269d53"
+        }
+      ]
+    },
+    {
+      "id": "secondary",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Performed documentary reconciliation; retained existing actor failures and unexecuted controls separately.",
+      "observation": "No new visual, motion or asset qualification performed. Existing298 actor rejection remains; proposed controls are untested.",
+      "evidence": [
+        {
+          "path": "results/trellis300/QUALITY_REVIEW.md",
+          "sha256": "8dfb6baae75ac9341b79a2c24f601812ee6d2a925cd0bb93d99a4d5ac3c463da"
+        },
+        {
+          "path": "results/trellis298/ASSESSMENT.md",
+          "sha256": "ca6f292acfa91bf3ebbc4ecbd17781afbc0ddd9a7288dbb34ff5ae2ebaa287df"
+        },
+        {
+          "path": "scripts/trellis298_worker.py",
+          "sha256": "d9167b124f8e93c117fc828e8fabcf2e4e2be5573f9e4f6ccb5100675fbd7470"
+        },
+        {
+          "path": "docs/knowledge/SIKH_FOUNDATION_REJECTION_271.md",
+          "sha256": "813411158cb1122cfa476c1148e6ae81e662822372704d0b33a60cf61e3428ef"
+        },
+        {
+          "path": "docs/planning/SERIES_01_SIKH_BASELINE_V01.md",
+          "sha256": "8d588dad3970aa7c2f8de09fc537ae2f4d928a7725791d8ed6132bb1ffebb8ab"
+        },
+        {
+          "path": "docs/decisions/0005-production-strategy-before-execution.md",
+          "sha256": "c29e2898553d26f56ac5fab7f7e126b1eda84c04643ab7a4bf12466c630dbd1e"
+        },
+        {
+          "path": ".runtime/trellis298c/retrieved/evidence/build.log",
+          "sha256": "e59c464c4b8b86af8871b829d00f09fe8ba5a13a9c871f03dff9e4313c78b8e1"
+        },
+        {
+          "path": ".runtime/trellis298c/retrieved/evidence/weight-manifest.json",
+          "sha256": "5bfca84c82e834edccfccfabacd0aec481441106d0b0d81d2cf3fb136b933b2a"
+        },
+        {
+          "path": ".runtime/trellis298-source/trellis2/pipelines/trellis2_image_to_3d.py",
+          "sha256": "e2addfca672354284b23d1541a8f49228d5a727d49220fcb8512cca2cdd38ce9"
+        },
+        {
+          "path": ".runtime/trellis298-source/trellis2/modules/norm.py",
+          "sha256": "f89c40abf3356f7b06fc85f0498cd77eefb677a0e0d370a43d14a735f4c40172"
+        },
+        {
+          "path": ".runtime/trellis298-source/trellis2/models/sc_vaes/sparse_unet_vae.py",
+          "sha256": "aeb41237d1c93cf3a666870c3d18e7044ba420a4e7a29aad5795bb5204731a00"
+        },
+        {
+          "path": "results/trellis298/cloud-d/aggregate-reserved.json",
+          "sha256": "bd675d6dd5a580b5c132703f99d12ae2e1aad3dd58f3efaf750d5b7bae269d53"
+        }
+      ]
+    },
+    {
+      "id": "look",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Performed documentary reconciliation; retained existing actor failures and unexecuted controls separately.",
+      "observation": "No new visual, motion or asset qualification performed. Existing298 actor rejection remains; proposed controls are untested.",
+      "evidence": [
+        {
+          "path": "results/trellis300/QUALITY_REVIEW.md",
+          "sha256": "8dfb6baae75ac9341b79a2c24f601812ee6d2a925cd0bb93d99a4d5ac3c463da"
+        },
+        {
+          "path": "results/trellis298/ASSESSMENT.md",
+          "sha256": "ca6f292acfa91bf3ebbc4ecbd17781afbc0ddd9a7288dbb34ff5ae2ebaa287df"
+        },
+        {
+          "path": "scripts/trellis298_worker.py",
+          "sha256": "d9167b124f8e93c117fc828e8fabcf2e4e2be5573f9e4f6ccb5100675fbd7470"
+        },
+        {
+          "path": "docs/knowledge/SIKH_FOUNDATION_REJECTION_271.md",
+          "sha256": "813411158cb1122cfa476c1148e6ae81e662822372704d0b33a60cf61e3428ef"
+        },
+        {
+          "path": "docs/planning/SERIES_01_SIKH_BASELINE_V01.md",
+          "sha256": "8d588dad3970aa7c2f8de09fc537ae2f4d928a7725791d8ed6132bb1ffebb8ab"
+        },
+        {
+          "path": "docs/decisions/0005-production-strategy-before-execution.md",
+          "sha256": "c29e2898553d26f56ac5fab7f7e126b1eda84c04643ab7a4bf12466c630dbd1e"
+        },
+        {
+          "path": ".runtime/trellis298c/retrieved/evidence/build.log",
+          "sha256": "e59c464c4b8b86af8871b829d00f09fe8ba5a13a9c871f03dff9e4313c78b8e1"
+        },
+        {
+          "path": ".runtime/trellis298c/retrieved/evidence/weight-manifest.json",
+          "sha256": "5bfca84c82e834edccfccfabacd0aec481441106d0b0d81d2cf3fb136b933b2a"
+        },
+        {
+          "path": ".runtime/trellis298-source/trellis2/pipelines/trellis2_image_to_3d.py",
+          "sha256": "e2addfca672354284b23d1541a8f49228d5a727d49220fcb8512cca2cdd38ce9"
+        },
+        {
+          "path": ".runtime/trellis298-source/trellis2/modules/norm.py",
+          "sha256": "f89c40abf3356f7b06fc85f0498cd77eefb677a0e0d370a43d14a735f4c40172"
+        },
+        {
+          "path": ".runtime/trellis298-source/trellis2/models/sc_vaes/sparse_unet_vae.py",
+          "sha256": "aeb41237d1c93cf3a666870c3d18e7044ba420a4e7a29aad5795bb5204731a00"
+        },
+        {
+          "path": "results/trellis298/cloud-d/aggregate-reserved.json",
+          "sha256": "bd675d6dd5a580b5c132703f99d12ae2e1aad3dd58f3efaf750d5b7bae269d53"
+        }
+      ]
+    },
+    {
+      "id": "rights",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Performed documentary reconciliation; retained existing actor failures and unexecuted controls separately.",
+      "observation": "Existing scope retained; no new model/provider or asset upload; research is not rights clearance.",
+      "evidence": [
+        {
+          "path": "results/trellis300/QUALITY_REVIEW.md",
+          "sha256": "8dfb6baae75ac9341b79a2c24f601812ee6d2a925cd0bb93d99a4d5ac3c463da"
+        },
+        {
+          "path": "results/trellis298/ASSESSMENT.md",
+          "sha256": "ca6f292acfa91bf3ebbc4ecbd17781afbc0ddd9a7288dbb34ff5ae2ebaa287df"
+        },
+        {
+          "path": "scripts/trellis298_worker.py",
+          "sha256": "d9167b124f8e93c117fc828e8fabcf2e4e2be5573f9e4f6ccb5100675fbd7470"
+        },
+        {
+          "path": "docs/knowledge/SIKH_FOUNDATION_REJECTION_271.md",
+          "sha256": "813411158cb1122cfa476c1148e6ae81e662822372704d0b33a60cf61e3428ef"
+        },
+        {
+          "path": "docs/planning/SERIES_01_SIKH_BASELINE_V01.md",
+          "sha256": "8d588dad3970aa7c2f8de09fc537ae2f4d928a7725791d8ed6132bb1ffebb8ab"
+        },
+        {
+          "path": "docs/decisions/0005-production-strategy-before-execution.md",
+          "sha256": "c29e2898553d26f56ac5fab7f7e126b1eda84c04643ab7a4bf12466c630dbd1e"
+        },
+        {
+          "path": ".runtime/trellis298c/retrieved/evidence/build.log",
+          "sha256": "e59c464c4b8b86af8871b829d00f09fe8ba5a13a9c871f03dff9e4313c78b8e1"
+        },
+        {
+          "path": ".runtime/trellis298c/retrieved/evidence/weight-manifest.json",
+          "sha256": "5bfca84c82e834edccfccfabacd0aec481441106d0b0d81d2cf3fb136b933b2a"
+        },
+        {
+          "path": ".runtime/trellis298-source/trellis2/pipelines/trellis2_image_to_3d.py",
+          "sha256": "e2addfca672354284b23d1541a8f49228d5a727d49220fcb8512cca2cdd38ce9"
+        },
+        {
+          "path": ".runtime/trellis298-source/trellis2/modules/norm.py",
+          "sha256": "f89c40abf3356f7b06fc85f0498cd77eefb677a0e0d370a43d14a735f4c40172"
+        },
+        {
+          "path": ".runtime/trellis298-source/trellis2/models/sc_vaes/sparse_unet_vae.py",
+          "sha256": "aeb41237d1c93cf3a666870c3d18e7044ba420a4e7a29aad5795bb5204731a00"
+        },
+        {
+          "path": "results/trellis298/cloud-d/aggregate-reserved.json",
+          "sha256": "bd675d6dd5a580b5c132703f99d12ae2e1aad3dd58f3efaf750d5b7bae269d53"
+        }
+      ]
+    },
+    {
+      "id": "current_state",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Performed documentary reconciliation; retained existing actor failures and unexecuted controls separately.",
+      "observation": "Pashtun master and approved Sikh v03 protected; failed static source is not a production actor.",
+      "evidence": [
+        {
+          "path": "results/trellis300/QUALITY_REVIEW.md",
+          "sha256": "8dfb6baae75ac9341b79a2c24f601812ee6d2a925cd0bb93d99a4d5ac3c463da"
+        },
+        {
+          "path": "results/trellis298/ASSESSMENT.md",
+          "sha256": "ca6f292acfa91bf3ebbc4ecbd17781afbc0ddd9a7288dbb34ff5ae2ebaa287df"
+        },
+        {
+          "path": "scripts/trellis298_worker.py",
+          "sha256": "d9167b124f8e93c117fc828e8fabcf2e4e2be5573f9e4f6ccb5100675fbd7470"
+        },
+        {
+          "path": "docs/knowledge/SIKH_FOUNDATION_REJECTION_271.md",
+          "sha256": "813411158cb1122cfa476c1148e6ae81e662822372704d0b33a60cf61e3428ef"
+        },
+        {
+          "path": "docs/planning/SERIES_01_SIKH_BASELINE_V01.md",
+          "sha256": "8d588dad3970aa7c2f8de09fc537ae2f4d928a7725791d8ed6132bb1ffebb8ab"
+        },
+        {
+          "path": "docs/decisions/0005-production-strategy-before-execution.md",
+          "sha256": "c29e2898553d26f56ac5fab7f7e126b1eda84c04643ab7a4bf12466c630dbd1e"
+        },
+        {
+          "path": ".runtime/trellis298c/retrieved/evidence/build.log",
+          "sha256": "e59c464c4b8b86af8871b829d00f09fe8ba5a13a9c871f03dff9e4313c78b8e1"
+        },
+        {
+          "path": ".runtime/trellis298c/retrieved/evidence/weight-manifest.json",
+          "sha256": "5bfca84c82e834edccfccfabacd0aec481441106d0b0d81d2cf3fb136b933b2a"
+        },
+        {
+          "path": ".runtime/trellis298-source/trellis2/pipelines/trellis2_image_to_3d.py",
+          "sha256": "e2addfca672354284b23d1541a8f49228d5a727d49220fcb8512cca2cdd38ce9"
+        },
+        {
+          "path": ".runtime/trellis298-source/trellis2/modules/norm.py",
+          "sha256": "f89c40abf3356f7b06fc85f0498cd77eefb677a0e0d370a43d14a735f4c40172"
+        },
+        {
+          "path": ".runtime/trellis298-source/trellis2/models/sc_vaes/sparse_unet_vae.py",
+          "sha256": "aeb41237d1c93cf3a666870c3d18e7044ba420a4e7a29aad5795bb5204731a00"
+        },
+        {
+          "path": "results/trellis298/cloud-d/aggregate-reserved.json",
+          "sha256": "bd675d6dd5a580b5c132703f99d12ae2e1aad3dd58f3efaf750d5b7bae269d53"
+        }
+      ]
+    },
+    {
+      "id": "au_reference",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Performed documentary reconciliation; retained existing actor failures and unexecuted controls separately.",
+      "observation": "No new visual, motion or asset qualification performed. Existing298 actor rejection remains; proposed controls are untested.",
+      "evidence": [
+        {
+          "path": "results/trellis300/QUALITY_REVIEW.md",
+          "sha256": "8dfb6baae75ac9341b79a2c24f601812ee6d2a925cd0bb93d99a4d5ac3c463da"
+        },
+        {
+          "path": "results/trellis298/ASSESSMENT.md",
+          "sha256": "ca6f292acfa91bf3ebbc4ecbd17781afbc0ddd9a7288dbb34ff5ae2ebaa287df"
+        },
+        {
+          "path": "scripts/trellis298_worker.py",
+          "sha256": "d9167b124f8e93c117fc828e8fabcf2e4e2be5573f9e4f6ccb5100675fbd7470"
+        },
+        {
+          "path": "docs/knowledge/SIKH_FOUNDATION_REJECTION_271.md",
+          "sha256": "813411158cb1122cfa476c1148e6ae81e662822372704d0b33a60cf61e3428ef"
+        },
+        {
+          "path": "docs/planning/SERIES_01_SIKH_BASELINE_V01.md",
+          "sha256": "8d588dad3970aa7c2f8de09fc537ae2f4d928a7725791d8ed6132bb1ffebb8ab"
+        },
+        {
+          "path": "docs/decisions/0005-production-strategy-before-execution.md",
+          "sha256": "c29e2898553d26f56ac5fab7f7e126b1eda84c04643ab7a4bf12466c630dbd1e"
+        },
+        {
+          "path": ".runtime/trellis298c/retrieved/evidence/build.log",
+          "sha256": "e59c464c4b8b86af8871b829d00f09fe8ba5a13a9c871f03dff9e4313c78b8e1"
+        },
+        {
+          "path": ".runtime/trellis298c/retrieved/evidence/weight-manifest.json",
+          "sha256": "5bfca84c82e834edccfccfabacd0aec481441106d0b0d81d2cf3fb136b933b2a"
+        },
+        {
+          "path": ".runtime/trellis298-source/trellis2/pipelines/trellis2_image_to_3d.py",
+          "sha256": "e2addfca672354284b23d1541a8f49228d5a727d49220fcb8512cca2cdd38ce9"
+        },
+        {
+          "path": ".runtime/trellis298-source/trellis2/modules/norm.py",
+          "sha256": "f89c40abf3356f7b06fc85f0498cd77eefb677a0e0d370a43d14a735f4c40172"
+        },
+        {
+          "path": ".runtime/trellis298-source/trellis2/models/sc_vaes/sparse_unet_vae.py",
+          "sha256": "aeb41237d1c93cf3a666870c3d18e7044ba420a4e7a29aad5795bb5204731a00"
+        },
+        {
+          "path": "results/trellis298/cloud-d/aggregate-reserved.json",
+          "sha256": "bd675d6dd5a580b5c132703f99d12ae2e1aad3dd58f3efaf750d5b7bae269d53"
+        }
+      ]
+    },
+    {
+      "id": "au_deformation",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Performed documentary reconciliation; retained existing actor failures and unexecuted controls separately.",
+      "observation": "No new visual, motion or asset qualification performed. Existing298 actor rejection remains; proposed controls are untested.",
+      "evidence": [
+        {
+          "path": "results/trellis300/QUALITY_REVIEW.md",
+          "sha256": "8dfb6baae75ac9341b79a2c24f601812ee6d2a925cd0bb93d99a4d5ac3c463da"
+        },
+        {
+          "path": "results/trellis298/ASSESSMENT.md",
+          "sha256": "ca6f292acfa91bf3ebbc4ecbd17781afbc0ddd9a7288dbb34ff5ae2ebaa287df"
+        },
+        {
+          "path": "scripts/trellis298_worker.py",
+          "sha256": "d9167b124f8e93c117fc828e8fabcf2e4e2be5573f9e4f6ccb5100675fbd7470"
+        },
+        {
+          "path": "docs/knowledge/SIKH_FOUNDATION_REJECTION_271.md",
+          "sha256": "813411158cb1122cfa476c1148e6ae81e662822372704d0b33a60cf61e3428ef"
+        },
+        {
+          "path": "docs/planning/SERIES_01_SIKH_BASELINE_V01.md",
+          "sha256": "8d588dad3970aa7c2f8de09fc537ae2f4d928a7725791d8ed6132bb1ffebb8ab"
+        },
+        {
+          "path": "docs/decisions/0005-production-strategy-before-execution.md",
+          "sha256": "c29e2898553d26f56ac5fab7f7e126b1eda84c04643ab7a4bf12466c630dbd1e"
+        },
+        {
+          "path": ".runtime/trellis298c/retrieved/evidence/build.log",
+          "sha256": "e59c464c4b8b86af8871b829d00f09fe8ba5a13a9c871f03dff9e4313c78b8e1"
+        },
+        {
+          "path": ".runtime/trellis298c/retrieved/evidence/weight-manifest.json",
+          "sha256": "5bfca84c82e834edccfccfabacd0aec481441106d0b0d81d2cf3fb136b933b2a"
+        },
+        {
+          "path": ".runtime/trellis298-source/trellis2/pipelines/trellis2_image_to_3d.py",
+          "sha256": "e2addfca672354284b23d1541a8f49228d5a727d49220fcb8512cca2cdd38ce9"
+        },
+        {
+          "path": ".runtime/trellis298-source/trellis2/modules/norm.py",
+          "sha256": "f89c40abf3356f7b06fc85f0498cd77eefb677a0e0d370a43d14a735f4c40172"
+        },
+        {
+          "path": ".runtime/trellis298-source/trellis2/models/sc_vaes/sparse_unet_vae.py",
+          "sha256": "aeb41237d1c93cf3a666870c3d18e7044ba420a4e7a29aad5795bb5204731a00"
+        },
+        {
+          "path": "results/trellis298/cloud-d/aggregate-reserved.json",
+          "sha256": "bd675d6dd5a580b5c132703f99d12ae2e1aad3dd58f3efaf750d5b7bae269d53"
+        }
+      ]
+    },
+    {
+      "id": "au_performance",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Performed documentary reconciliation; retained existing actor failures and unexecuted controls separately.",
+      "observation": "No new visual, motion or asset qualification performed. Existing298 actor rejection remains; proposed controls are untested.",
+      "evidence": [
+        {
+          "path": "results/trellis300/QUALITY_REVIEW.md",
+          "sha256": "8dfb6baae75ac9341b79a2c24f601812ee6d2a925cd0bb93d99a4d5ac3c463da"
+        },
+        {
+          "path": "results/trellis298/ASSESSMENT.md",
+          "sha256": "ca6f292acfa91bf3ebbc4ecbd17781afbc0ddd9a7288dbb34ff5ae2ebaa287df"
+        },
+        {
+          "path": "scripts/trellis298_worker.py",
+          "sha256": "d9167b124f8e93c117fc828e8fabcf2e4e2be5573f9e4f6ccb5100675fbd7470"
+        },
+        {
+          "path": "docs/knowledge/SIKH_FOUNDATION_REJECTION_271.md",
+          "sha256": "813411158cb1122cfa476c1148e6ae81e662822372704d0b33a60cf61e3428ef"
+        },
+        {
+          "path": "docs/planning/SERIES_01_SIKH_BASELINE_V01.md",
+          "sha256": "8d588dad3970aa7c2f8de09fc537ae2f4d928a7725791d8ed6132bb1ffebb8ab"
+        },
+        {
+          "path": "docs/decisions/0005-production-strategy-before-execution.md",
+          "sha256": "c29e2898553d26f56ac5fab7f7e126b1eda84c04643ab7a4bf12466c630dbd1e"
+        },
+        {
+          "path": ".runtime/trellis298c/retrieved/evidence/build.log",
+          "sha256": "e59c464c4b8b86af8871b829d00f09fe8ba5a13a9c871f03dff9e4313c78b8e1"
+        },
+        {
+          "path": ".runtime/trellis298c/retrieved/evidence/weight-manifest.json",
+          "sha256": "5bfca84c82e834edccfccfabacd0aec481441106d0b0d81d2cf3fb136b933b2a"
+        },
+        {
+          "path": ".runtime/trellis298-source/trellis2/pipelines/trellis2_image_to_3d.py",
+          "sha256": "e2addfca672354284b23d1541a8f49228d5a727d49220fcb8512cca2cdd38ce9"
+        },
+        {
+          "path": ".runtime/trellis298-source/trellis2/modules/norm.py",
+          "sha256": "f89c40abf3356f7b06fc85f0498cd77eefb677a0e0d370a43d14a735f4c40172"
+        },
+        {
+          "path": ".runtime/trellis298-source/trellis2/models/sc_vaes/sparse_unet_vae.py",
+          "sha256": "aeb41237d1c93cf3a666870c3d18e7044ba420a4e7a29aad5795bb5204731a00"
+        },
+        {
+          "path": "results/trellis298/cloud-d/aggregate-reserved.json",
+          "sha256": "bd675d6dd5a580b5c132703f99d12ae2e1aad3dd58f3efaf750d5b7bae269d53"
+        }
+      ]
+    },
+    {
+      "id": "au_contact",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Performed documentary reconciliation; retained existing actor failures and unexecuted controls separately.",
+      "observation": "No new visual, motion or asset qualification performed. Existing298 actor rejection remains; proposed controls are untested.",
+      "evidence": [
+        {
+          "path": "results/trellis300/QUALITY_REVIEW.md",
+          "sha256": "8dfb6baae75ac9341b79a2c24f601812ee6d2a925cd0bb93d99a4d5ac3c463da"
+        },
+        {
+          "path": "results/trellis298/ASSESSMENT.md",
+          "sha256": "ca6f292acfa91bf3ebbc4ecbd17781afbc0ddd9a7288dbb34ff5ae2ebaa287df"
+        },
+        {
+          "path": "scripts/trellis298_worker.py",
+          "sha256": "d9167b124f8e93c117fc828e8fabcf2e4e2be5573f9e4f6ccb5100675fbd7470"
+        },
+        {
+          "path": "docs/knowledge/SIKH_FOUNDATION_REJECTION_271.md",
+          "sha256": "813411158cb1122cfa476c1148e6ae81e662822372704d0b33a60cf61e3428ef"
+        },
+        {
+          "path": "docs/planning/SERIES_01_SIKH_BASELINE_V01.md",
+          "sha256": "8d588dad3970aa7c2f8de09fc537ae2f4d928a7725791d8ed6132bb1ffebb8ab"
+        },
+        {
+          "path": "docs/decisions/0005-production-strategy-before-execution.md",
+          "sha256": "c29e2898553d26f56ac5fab7f7e126b1eda84c04643ab7a4bf12466c630dbd1e"
+        },
+        {
+          "path": ".runtime/trellis298c/retrieved/evidence/build.log",
+          "sha256": "e59c464c4b8b86af8871b829d00f09fe8ba5a13a9c871f03dff9e4313c78b8e1"
+        },
+        {
+          "path": ".runtime/trellis298c/retrieved/evidence/weight-manifest.json",
+          "sha256": "5bfca84c82e834edccfccfabacd0aec481441106d0b0d81d2cf3fb136b933b2a"
+        },
+        {
+          "path": ".runtime/trellis298-source/trellis2/pipelines/trellis2_image_to_3d.py",
+          "sha256": "e2addfca672354284b23d1541a8f49228d5a727d49220fcb8512cca2cdd38ce9"
+        },
+        {
+          "path": ".runtime/trellis298-source/trellis2/modules/norm.py",
+          "sha256": "f89c40abf3356f7b06fc85f0498cd77eefb677a0e0d370a43d14a735f4c40172"
+        },
+        {
+          "path": ".runtime/trellis298-source/trellis2/models/sc_vaes/sparse_unet_vae.py",
+          "sha256": "aeb41237d1c93cf3a666870c3d18e7044ba420a4e7a29aad5795bb5204731a00"
+        },
+        {
+          "path": "results/trellis298/cloud-d/aggregate-reserved.json",
+          "sha256": "bd675d6dd5a580b5c132703f99d12ae2e1aad3dd58f3efaf750d5b7bae269d53"
+        }
+      ]
+    },
+    {
+      "id": "au_surface",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Performed documentary reconciliation; retained existing actor failures and unexecuted controls separately.",
+      "observation": "No new visual, motion or asset qualification performed. Existing298 actor rejection remains; proposed controls are untested.",
+      "evidence": [
+        {
+          "path": "results/trellis300/QUALITY_REVIEW.md",
+          "sha256": "8dfb6baae75ac9341b79a2c24f601812ee6d2a925cd0bb93d99a4d5ac3c463da"
+        },
+        {
+          "path": "results/trellis298/ASSESSMENT.md",
+          "sha256": "ca6f292acfa91bf3ebbc4ecbd17781afbc0ddd9a7288dbb34ff5ae2ebaa287df"
+        },
+        {
+          "path": "scripts/trellis298_worker.py",
+          "sha256": "d9167b124f8e93c117fc828e8fabcf2e4e2be5573f9e4f6ccb5100675fbd7470"
+        },
+        {
+          "path": "docs/knowledge/SIKH_FOUNDATION_REJECTION_271.md",
+          "sha256": "813411158cb1122cfa476c1148e6ae81e662822372704d0b33a60cf61e3428ef"
+        },
+        {
+          "path": "docs/planning/SERIES_01_SIKH_BASELINE_V01.md",
+          "sha256": "8d588dad3970aa7c2f8de09fc537ae2f4d928a7725791d8ed6132bb1ffebb8ab"
+        },
+        {
+          "path": "docs/decisions/0005-production-strategy-before-execution.md",
+          "sha256": "c29e2898553d26f56ac5fab7f7e126b1eda84c04643ab7a4bf12466c630dbd1e"
+        },
+        {
+          "path": ".runtime/trellis298c/retrieved/evidence/build.log",
+          "sha256": "e59c464c4b8b86af8871b829d00f09fe8ba5a13a9c871f03dff9e4313c78b8e1"
+        },
+        {
+          "path": ".runtime/trellis298c/retrieved/evidence/weight-manifest.json",
+          "sha256": "5bfca84c82e834edccfccfabacd0aec481441106d0b0d81d2cf3fb136b933b2a"
+        },
+        {
+          "path": ".runtime/trellis298-source/trellis2/pipelines/trellis2_image_to_3d.py",
+          "sha256": "e2addfca672354284b23d1541a8f49228d5a727d49220fcb8512cca2cdd38ce9"
+        },
+        {
+          "path": ".runtime/trellis298-source/trellis2/modules/norm.py",
+          "sha256": "f89c40abf3356f7b06fc85f0498cd77eefb677a0e0d370a43d14a735f4c40172"
+        },
+        {
+          "path": ".runtime/trellis298-source/trellis2/models/sc_vaes/sparse_unet_vae.py",
+          "sha256": "aeb41237d1c93cf3a666870c3d18e7044ba420a4e7a29aad5795bb5204731a00"
+        },
+        {
+          "path": "results/trellis298/cloud-d/aggregate-reserved.json",
+          "sha256": "bd675d6dd5a580b5c132703f99d12ae2e1aad3dd58f3efaf750d5b7bae269d53"
+        }
+      ]
+    },
+    {
+      "id": "sikh_scope",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Performed documentary reconciliation; retained existing actor failures and unexecuted controls separately.",
+      "observation": "Sikh-only research remains separate from300 local scene corrections; no new leader design or Gurkha work.",
+      "evidence": [
+        {
+          "path": "results/trellis300/QUALITY_REVIEW.md",
+          "sha256": "8dfb6baae75ac9341b79a2c24f601812ee6d2a925cd0bb93d99a4d5ac3c463da"
+        },
+        {
+          "path": "results/trellis298/ASSESSMENT.md",
+          "sha256": "ca6f292acfa91bf3ebbc4ecbd17781afbc0ddd9a7288dbb34ff5ae2ebaa287df"
+        },
+        {
+          "path": "scripts/trellis298_worker.py",
+          "sha256": "d9167b124f8e93c117fc828e8fabcf2e4e2be5573f9e4f6ccb5100675fbd7470"
+        },
+        {
+          "path": "docs/knowledge/SIKH_FOUNDATION_REJECTION_271.md",
+          "sha256": "813411158cb1122cfa476c1148e6ae81e662822372704d0b33a60cf61e3428ef"
+        },
+        {
+          "path": "docs/planning/SERIES_01_SIKH_BASELINE_V01.md",
+          "sha256": "8d588dad3970aa7c2f8de09fc537ae2f4d928a7725791d8ed6132bb1ffebb8ab"
+        },
+        {
+          "path": "docs/decisions/0005-production-strategy-before-execution.md",
+          "sha256": "c29e2898553d26f56ac5fab7f7e126b1eda84c04643ab7a4bf12466c630dbd1e"
+        },
+        {
+          "path": ".runtime/trellis298c/retrieved/evidence/build.log",
+          "sha256": "e59c464c4b8b86af8871b829d00f09fe8ba5a13a9c871f03dff9e4313c78b8e1"
+        },
+        {
+          "path": ".runtime/trellis298c/retrieved/evidence/weight-manifest.json",
+          "sha256": "5bfca84c82e834edccfccfabacd0aec481441106d0b0d81d2cf3fb136b933b2a"
+        },
+        {
+          "path": ".runtime/trellis298-source/trellis2/pipelines/trellis2_image_to_3d.py",
+          "sha256": "e2addfca672354284b23d1541a8f49228d5a727d49220fcb8512cca2cdd38ce9"
+        },
+        {
+          "path": ".runtime/trellis298-source/trellis2/modules/norm.py",
+          "sha256": "f89c40abf3356f7b06fc85f0498cd77eefb677a0e0d370a43d14a735f4c40172"
+        },
+        {
+          "path": ".runtime/trellis298-source/trellis2/models/sc_vaes/sparse_unet_vae.py",
+          "sha256": "aeb41237d1c93cf3a666870c3d18e7044ba420a4e7a29aad5795bb5204731a00"
+        },
+        {
+          "path": "results/trellis298/cloud-d/aggregate-reserved.json",
+          "sha256": "bd675d6dd5a580b5c132703f99d12ae2e1aad3dd58f3efaf750d5b7bae269d53"
+        }
+      ]
+    },
+    {
+      "id": "sikh_cloth",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Performed documentary reconciliation; retained existing actor failures and unexecuted controls separately.",
+      "observation": "No new visual, motion or asset qualification performed. Existing298 actor rejection remains; proposed controls are untested.",
+      "evidence": [
+        {
+          "path": "results/trellis300/QUALITY_REVIEW.md",
+          "sha256": "8dfb6baae75ac9341b79a2c24f601812ee6d2a925cd0bb93d99a4d5ac3c463da"
+        },
+        {
+          "path": "results/trellis298/ASSESSMENT.md",
+          "sha256": "ca6f292acfa91bf3ebbc4ecbd17781afbc0ddd9a7288dbb34ff5ae2ebaa287df"
+        },
+        {
+          "path": "scripts/trellis298_worker.py",
+          "sha256": "d9167b124f8e93c117fc828e8fabcf2e4e2be5573f9e4f6ccb5100675fbd7470"
+        },
+        {
+          "path": "docs/knowledge/SIKH_FOUNDATION_REJECTION_271.md",
+          "sha256": "813411158cb1122cfa476c1148e6ae81e662822372704d0b33a60cf61e3428ef"
+        },
+        {
+          "path": "docs/planning/SERIES_01_SIKH_BASELINE_V01.md",
+          "sha256": "8d588dad3970aa7c2f8de09fc537ae2f4d928a7725791d8ed6132bb1ffebb8ab"
+        },
+        {
+          "path": "docs/decisions/0005-production-strategy-before-execution.md",
+          "sha256": "c29e2898553d26f56ac5fab7f7e126b1eda84c04643ab7a4bf12466c630dbd1e"
+        },
+        {
+          "path": ".runtime/trellis298c/retrieved/evidence/build.log",
+          "sha256": "e59c464c4b8b86af8871b829d00f09fe8ba5a13a9c871f03dff9e4313c78b8e1"
+        },
+        {
+          "path": ".runtime/trellis298c/retrieved/evidence/weight-manifest.json",
+          "sha256": "5bfca84c82e834edccfccfabacd0aec481441106d0b0d81d2cf3fb136b933b2a"
+        },
+        {
+          "path": ".runtime/trellis298-source/trellis2/pipelines/trellis2_image_to_3d.py",
+          "sha256": "e2addfca672354284b23d1541a8f49228d5a727d49220fcb8512cca2cdd38ce9"
+        },
+        {
+          "path": ".runtime/trellis298-source/trellis2/modules/norm.py",
+          "sha256": "f89c40abf3356f7b06fc85f0498cd77eefb677a0e0d370a43d14a735f4c40172"
+        },
+        {
+          "path": ".runtime/trellis298-source/trellis2/models/sc_vaes/sparse_unet_vae.py",
+          "sha256": "aeb41237d1c93cf3a666870c3d18e7044ba420a4e7a29aad5795bb5204731a00"
+        },
+        {
+          "path": "results/trellis298/cloud-d/aggregate-reserved.json",
+          "sha256": "bd675d6dd5a580b5c132703f99d12ae2e1aad3dd58f3efaf750d5b7bae269d53"
+        }
+      ]
+    },
+    {
+      "id": "sikh_motion",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Performed documentary reconciliation; retained existing actor failures and unexecuted controls separately.",
+      "observation": "No new visual, motion or asset qualification performed. Existing298 actor rejection remains; proposed controls are untested.",
+      "evidence": [
+        {
+          "path": "results/trellis300/QUALITY_REVIEW.md",
+          "sha256": "8dfb6baae75ac9341b79a2c24f601812ee6d2a925cd0bb93d99a4d5ac3c463da"
+        },
+        {
+          "path": "results/trellis298/ASSESSMENT.md",
+          "sha256": "ca6f292acfa91bf3ebbc4ecbd17781afbc0ddd9a7288dbb34ff5ae2ebaa287df"
+        },
+        {
+          "path": "scripts/trellis298_worker.py",
+          "sha256": "d9167b124f8e93c117fc828e8fabcf2e4e2be5573f9e4f6ccb5100675fbd7470"
+        },
+        {
+          "path": "docs/knowledge/SIKH_FOUNDATION_REJECTION_271.md",
+          "sha256": "813411158cb1122cfa476c1148e6ae81e662822372704d0b33a60cf61e3428ef"
+        },
+        {
+          "path": "docs/planning/SERIES_01_SIKH_BASELINE_V01.md",
+          "sha256": "8d588dad3970aa7c2f8de09fc537ae2f4d928a7725791d8ed6132bb1ffebb8ab"
+        },
+        {
+          "path": "docs/decisions/0005-production-strategy-before-execution.md",
+          "sha256": "c29e2898553d26f56ac5fab7f7e126b1eda84c04643ab7a4bf12466c630dbd1e"
+        },
+        {
+          "path": ".runtime/trellis298c/retrieved/evidence/build.log",
+          "sha256": "e59c464c4b8b86af8871b829d00f09fe8ba5a13a9c871f03dff9e4313c78b8e1"
+        },
+        {
+          "path": ".runtime/trellis298c/retrieved/evidence/weight-manifest.json",
+          "sha256": "5bfca84c82e834edccfccfabacd0aec481441106d0b0d81d2cf3fb136b933b2a"
+        },
+        {
+          "path": ".runtime/trellis298-source/trellis2/pipelines/trellis2_image_to_3d.py",
+          "sha256": "e2addfca672354284b23d1541a8f49228d5a727d49220fcb8512cca2cdd38ce9"
+        },
+        {
+          "path": ".runtime/trellis298-source/trellis2/modules/norm.py",
+          "sha256": "f89c40abf3356f7b06fc85f0498cd77eefb677a0e0d370a43d14a735f4c40172"
+        },
+        {
+          "path": ".runtime/trellis298-source/trellis2/models/sc_vaes/sparse_unet_vae.py",
+          "sha256": "aeb41237d1c93cf3a666870c3d18e7044ba420a4e7a29aad5795bb5204731a00"
+        },
+        {
+          "path": "results/trellis298/cloud-d/aggregate-reserved.json",
+          "sha256": "bd675d6dd5a580b5c132703f99d12ae2e1aad3dd58f3efaf750d5b7bae269d53"
+        }
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "prediction": "The512 result demonstrates the quality ceiling.",
+      "observation": "Only one input/seed/default run and limited export tested;1024 produced no mesh.",
+      "response": "Reject ceiling claim; propose controlled comparisons.",
+      "result": "resolved"
+    },
+    {
+      "prediction": "Lower texture or export polygon count could fix the1024 failure.",
+      "observation": "Traceback fails at FP32 shape-decoder normalization before export.",
+      "response": "Reject downstream-knob fix; isolate decoder capacity and preserve latents.",
+      "result": "resolved"
+    }
+  ],
+  "adjacent_regressions": "No native asset or prior evidence modified; no new output claims.",
+  "stopping_reason": "Documentary question answered. Production visual/performance gate remains blocked, and proposed quality tests are NOT_RUN."
+}

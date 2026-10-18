@@ -1,0 +1,32 @@
+{
+  "id": "trellis300-quality-research",
+  "operation": "modeling",
+  "phase": "planning",
+  "entities": [
+    "sikh",
+    "sikh_beard",
+    "sikh_turban_cover"
+  ],
+  "query": "Sikh source quality export preservation generation limits and actor admission",
+  "intent": "Documentary quality-ceiling diagnosis and proposed controlled comparison; no actor creation or new cloud dispatch",
+  "inputs": {
+    "results/trellis300/QUALITY_REVIEW.md": "8dfb6baae75ac9341b79a2c24f601812ee6d2a925cd0bb93d99a4d5ac3c463da",
+    "results/trellis298/ASSESSMENT.md": "ca6f292acfa91bf3ebbc4ecbd17781afbc0ddd9a7288dbb34ff5ae2ebaa287df",
+    "scripts/trellis298_worker.py": "d9167b124f8e93c117fc828e8fabcf2e4e2be5573f9e4f6ccb5100675fbd7470",
+    "docs/knowledge/SIKH_FOUNDATION_REJECTION_271.md": "813411158cb1122cfa476c1148e6ae81e662822372704d0b33a60cf61e3428ef",
+    "docs/planning/SERIES_01_SIKH_BASELINE_V01.md": "8d588dad3970aa7c2f8de09fc537ae2f4d928a7725791d8ed6132bb1ffebb8ab",
+    "docs/decisions/0005-production-strategy-before-execution.md": "c29e2898553d26f56ac5fab7f7e126b1eda84c04643ab7a4bf12466c630dbd1e",
+    ".runtime/trellis298c/retrieved/evidence/build.log": "e59c464c4b8b86af8871b829d00f09fe8ba5a13a9c871f03dff9e4313c78b8e1",
+    ".runtime/trellis298c/retrieved/evidence/weight-manifest.json": "5bfca84c82e834edccfccfabacd0aec481441106d0b0d81d2cf3fb136b933b2a",
+    ".runtime/trellis298-source/trellis2/pipelines/trellis2_image_to_3d.py": "e2addfca672354284b23d1541a8f49228d5a727d49220fcb8512cca2cdd38ce9",
+    ".runtime/trellis298-source/trellis2/modules/norm.py": "f89c40abf3356f7b06fc85f0498cd77eefb677a0e0d370a43d14a735f4c40172",
+    ".runtime/trellis298-source/trellis2/models/sc_vaes/sparse_unet_vae.py": "aeb41237d1c93cf3a666870c3d18e7044ba420a4e7a29aad5795bb5204731a00",
+    "results/trellis298/cloud-d/aggregate-reserved.json": "bd675d6dd5a580b5c132703f99d12ae2e1aad3dd58f3efaf750d5b7bae269d53"
+  },
+  "open_decisions": [],
+  "max_context_characters": 42000,
+  "execution_authority": {
+    "source": "results/trellis300/QUALITY_REVIEW.md",
+    "scope": "Read-only research; proposed controls are not execution authority"
+  }
+}

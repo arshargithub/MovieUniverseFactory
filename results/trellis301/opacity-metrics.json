@@ -1,0 +1,65 @@
+{
+  "metrics": [
+    {
+      "angle": "front",
+      "mean_absolute_rgb_difference_0_255": 1.2662708333333332,
+      "whole_frame_fraction_any_channel_difference_gt10": 0.04195486111111111,
+      "images": [
+        {
+          "path": ".runtime/trellis301/opacity/opaque-front.png",
+          "sha256": "b9f9084900356f17e71fd9a9fe39ec6fd6e1aceec82080dc4d19c76f0900f584"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/alpha-front.png",
+          "sha256": "9430d9202a40ebadcd3088eb74ee6fd7b6ea47e25a8f099df744ced833a41506"
+        }
+      ]
+    },
+    {
+      "angle": "left-quarter",
+      "mean_absolute_rgb_difference_0_255": 1.2614317129629629,
+      "whole_frame_fraction_any_channel_difference_gt10": 0.04125694444444444,
+      "images": [
+        {
+          "path": ".runtime/trellis301/opacity/opaque-left-quarter.png",
+          "sha256": "c4100f6407d63dd3e8ddfa5a2f1e18aff36ceb770a6361cedd7a435bfe9bcaa7"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/alpha-left-quarter.png",
+          "sha256": "45b9f49ec02a1738a894d55af5efd9b1753a1d69d0dbe2a63562fc7c9aa60286"
+        }
+      ]
+    },
+    {
+      "angle": "right-quarter",
+      "mean_absolute_rgb_difference_0_255": 1.4214976851851853,
+      "whole_frame_fraction_any_channel_difference_gt10": 0.043854166666666666,
+      "images": [
+        {
+          "path": ".runtime/trellis301/opacity/opaque-right-quarter.png",
+          "sha256": "fc53c743453291b4755401e8eb0c6e87dea7dc8e7f736d4ef2754f26f711f440"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/alpha-right-quarter.png",
+          "sha256": "a37321a7a230d681c8655d18f5bfb5a0a47eea656130f5079b81db5a0e596578"
+        }
+      ]
+    },
+    {
+      "angle": "back",
+      "mean_absolute_rgb_difference_0_255": 0.5172569444444445,
+      "whole_frame_fraction_any_channel_difference_gt10": 0.021409722222222222,
+      "images": [
+        {
+          "path": ".runtime/trellis301/opacity/opaque-back.png",
+          "sha256": "baeabd57efe4de99e7be9511a7d439c2c5cfdb1f38bcdf22dfcc1e68e038f842"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/alpha-back.png",
+          "sha256": "f312bbd91b8a556d86027444c6dd771e4f974b8e0f3dba09205ed3841b138ed4"
+        }
+      ]
+    }
+  ],
+  "interpretation": "Reproducibility diagnostics only; not quality scores or evidence of improved hair"
+}

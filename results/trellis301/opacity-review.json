@@ -1,0 +1,1358 @@
+{
+  "packet_digest": "e722a7678153a42a996cbf441c239f8b608988a0f86ce802324c169e4ceff55e",
+  "scope": "Completed opacity diagnostic; production admission blocked",
+  "checks": [
+    {
+      "id": "authority",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Reviewed only the local static opacity diagnostic and preserved separate production obligations.",
+      "observation": "Authorized local diagnostic only. Exact sensitive-payload cloud approval is pending; no indirect retry.",
+      "evidence": [
+        {
+          "path": "results/trellis301/OPACITY_REVIEW.md",
+          "sha256": "90f5ae3ed41a137d295ab6fa052dd9cd3f7014bf80a023af95b590d10fb0cdf9"
+        },
+        {
+          "path": "results/trellis301/opacity-metrics.json",
+          "sha256": "7e28080a764ae6d418b8aad667f5f40d390d6efe883308d04356760f95ebd5e7"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/opaque.json",
+          "sha256": "33e60fb1f12df3b66d75a2f06862d65dfa9f7df71ecc400067d41a31f368d880"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/alpha.json",
+          "sha256": "d15d9735994f6efc4c96e904ca40ecc3ea15d53200ba68f47795e3125a829951"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/render.log",
+          "sha256": "eb78ad70cada4a9a7a0b9a33af5e97fc3ef77b6a87ade71383667ea771b17ad9"
+        },
+        {
+          "path": "scripts/trellis301_inspect.py",
+          "sha256": "25dde4903242d865fdba5bc779ff8158dde2f5b4b1e552a688e89f8bce93b259"
+        },
+        {
+          "path": ".runtime/art-direction/series01-sikh257/sikh-uncovered-concept-v03.png",
+          "sha256": "7aaa7a8433d85024681e427b5cd290ec35fd5b78adfa0aea67035847665a151f"
+        },
+        {
+          "path": ".runtime/art-direction/series01-finish248/opening-final/frame-0200.png",
+          "sha256": "ee30bbe77f6d7f4c3bcdaf298406fd9f3645f08c15403f7eafcd06e91b5a9b0c"
+        },
+        {
+          "path": ".runtime/art-direction/series01-finish248/delivery01/manifest.json",
+          "sha256": "73e20abaf887dd907b989780ca9803a0fcce82b9cd4da032b319004da92640e5"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-front.jpg",
+          "sha256": "89ee4f80a94a4c4b5d728abb8edaa661ef4b9d06111cebf8afda8808952cefe2"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-left-quarter.jpg",
+          "sha256": "6bc18723ba63fb6a2fe7db28e9f42fd6f9b638012ba265b3c88c70a912f9aa9d"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-right-quarter.jpg",
+          "sha256": "e21b767313329d6eed0709e4e0164d1fe49cf75d2de44aa671c64bffe1f63298"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-back.jpg",
+          "sha256": "c68f4dbdf4135c6c1692bc244415be0e716e61f42d886ad45acc3387e942c09f"
+        }
+      ]
+    },
+    {
+      "id": "strategy",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Reviewed only the local static opacity diagnostic and preserved separate production obligations.",
+      "observation": "Opacity was isolated before fixed-source retention and contingent resolution controls.",
+      "evidence": [
+        {
+          "path": "results/trellis301/OPACITY_REVIEW.md",
+          "sha256": "90f5ae3ed41a137d295ab6fa052dd9cd3f7014bf80a023af95b590d10fb0cdf9"
+        },
+        {
+          "path": "results/trellis301/opacity-metrics.json",
+          "sha256": "7e28080a764ae6d418b8aad667f5f40d390d6efe883308d04356760f95ebd5e7"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/opaque.json",
+          "sha256": "33e60fb1f12df3b66d75a2f06862d65dfa9f7df71ecc400067d41a31f368d880"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/alpha.json",
+          "sha256": "d15d9735994f6efc4c96e904ca40ecc3ea15d53200ba68f47795e3125a829951"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/render.log",
+          "sha256": "eb78ad70cada4a9a7a0b9a33af5e97fc3ef77b6a87ade71383667ea771b17ad9"
+        },
+        {
+          "path": "scripts/trellis301_inspect.py",
+          "sha256": "25dde4903242d865fdba5bc779ff8158dde2f5b4b1e552a688e89f8bce93b259"
+        },
+        {
+          "path": ".runtime/art-direction/series01-sikh257/sikh-uncovered-concept-v03.png",
+          "sha256": "7aaa7a8433d85024681e427b5cd290ec35fd5b78adfa0aea67035847665a151f"
+        },
+        {
+          "path": ".runtime/art-direction/series01-finish248/opening-final/frame-0200.png",
+          "sha256": "ee30bbe77f6d7f4c3bcdaf298406fd9f3645f08c15403f7eafcd06e91b5a9b0c"
+        },
+        {
+          "path": ".runtime/art-direction/series01-finish248/delivery01/manifest.json",
+          "sha256": "73e20abaf887dd907b989780ca9803a0fcce82b9cd4da032b319004da92640e5"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-front.jpg",
+          "sha256": "89ee4f80a94a4c4b5d728abb8edaa661ef4b9d06111cebf8afda8808952cefe2"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-left-quarter.jpg",
+          "sha256": "6bc18723ba63fb6a2fe7db28e9f42fd6f9b638012ba265b3c88c70a912f9aa9d"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-right-quarter.jpg",
+          "sha256": "e21b767313329d6eed0709e4e0164d1fe49cf75d2de44aa671c64bffe1f63298"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-back.jpg",
+          "sha256": "c68f4dbdf4135c6c1692bc244415be0e716e61f42d886ad45acc3387e942c09f"
+        }
+      ]
+    },
+    {
+      "id": "visual_gate",
+      "kind": "review",
+      "status": "FAIL",
+      "action_taken": "Reviewed only the local static opacity diagnostic and preserved separate production obligations.",
+      "observation": "Unresolved eye anatomy, chunky beard and crown cavities fail the existing quality floor.",
+      "evidence": [
+        {
+          "path": "results/trellis301/OPACITY_REVIEW.md",
+          "sha256": "90f5ae3ed41a137d295ab6fa052dd9cd3f7014bf80a023af95b590d10fb0cdf9"
+        },
+        {
+          "path": "results/trellis301/opacity-metrics.json",
+          "sha256": "7e28080a764ae6d418b8aad667f5f40d390d6efe883308d04356760f95ebd5e7"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/opaque.json",
+          "sha256": "33e60fb1f12df3b66d75a2f06862d65dfa9f7df71ecc400067d41a31f368d880"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/alpha.json",
+          "sha256": "d15d9735994f6efc4c96e904ca40ecc3ea15d53200ba68f47795e3125a829951"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/render.log",
+          "sha256": "eb78ad70cada4a9a7a0b9a33af5e97fc3ef77b6a87ade71383667ea771b17ad9"
+        },
+        {
+          "path": "scripts/trellis301_inspect.py",
+          "sha256": "25dde4903242d865fdba5bc779ff8158dde2f5b4b1e552a688e89f8bce93b259"
+        },
+        {
+          "path": ".runtime/art-direction/series01-sikh257/sikh-uncovered-concept-v03.png",
+          "sha256": "7aaa7a8433d85024681e427b5cd290ec35fd5b78adfa0aea67035847665a151f"
+        },
+        {
+          "path": ".runtime/art-direction/series01-finish248/opening-final/frame-0200.png",
+          "sha256": "ee30bbe77f6d7f4c3bcdaf298406fd9f3645f08c15403f7eafcd06e91b5a9b0c"
+        },
+        {
+          "path": ".runtime/art-direction/series01-finish248/delivery01/manifest.json",
+          "sha256": "73e20abaf887dd907b989780ca9803a0fcce82b9cd4da032b319004da92640e5"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-front.jpg",
+          "sha256": "89ee4f80a94a4c4b5d728abb8edaa661ef4b9d06111cebf8afda8808952cefe2"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-left-quarter.jpg",
+          "sha256": "6bc18723ba63fb6a2fe7db28e9f42fd6f9b638012ba265b3c88c70a912f9aa9d"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-right-quarter.jpg",
+          "sha256": "e21b767313329d6eed0709e4e0164d1fe49cf75d2de44aa671c64bffe1f63298"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-back.jpg",
+          "sha256": "c68f4dbdf4135c6c1692bc244415be0e716e61f42d886ad45acc3387e942c09f"
+        }
+      ]
+    },
+    {
+      "id": "anticipation",
+      "kind": "review",
+      "status": "PASS",
+      "action_taken": "Reviewed only the local static opacity diagnostic and preserved separate production obligations.",
+      "observation": "Actual beard, moustache, brow and crown surfaces were inspected in all four angles; alpha does not resolve the predicted visual failures.",
+      "evidence": [
+        {
+          "path": "results/trellis301/OPACITY_REVIEW.md",
+          "sha256": "90f5ae3ed41a137d295ab6fa052dd9cd3f7014bf80a023af95b590d10fb0cdf9"
+        },
+        {
+          "path": "results/trellis301/opacity-metrics.json",
+          "sha256": "7e28080a764ae6d418b8aad667f5f40d390d6efe883308d04356760f95ebd5e7"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/opaque.json",
+          "sha256": "33e60fb1f12df3b66d75a2f06862d65dfa9f7df71ecc400067d41a31f368d880"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/alpha.json",
+          "sha256": "d15d9735994f6efc4c96e904ca40ecc3ea15d53200ba68f47795e3125a829951"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/render.log",
+          "sha256": "eb78ad70cada4a9a7a0b9a33af5e97fc3ef77b6a87ade71383667ea771b17ad9"
+        },
+        {
+          "path": "scripts/trellis301_inspect.py",
+          "sha256": "25dde4903242d865fdba5bc779ff8158dde2f5b4b1e552a688e89f8bce93b259"
+        },
+        {
+          "path": ".runtime/art-direction/series01-sikh257/sikh-uncovered-concept-v03.png",
+          "sha256": "7aaa7a8433d85024681e427b5cd290ec35fd5b78adfa0aea67035847665a151f"
+        },
+        {
+          "path": ".runtime/art-direction/series01-finish248/opening-final/frame-0200.png",
+          "sha256": "ee30bbe77f6d7f4c3bcdaf298406fd9f3645f08c15403f7eafcd06e91b5a9b0c"
+        },
+        {
+          "path": ".runtime/art-direction/series01-finish248/delivery01/manifest.json",
+          "sha256": "73e20abaf887dd907b989780ca9803a0fcce82b9cd4da032b319004da92640e5"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-front.jpg",
+          "sha256": "89ee4f80a94a4c4b5d728abb8edaa661ef4b9d06111cebf8afda8808952cefe2"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-left-quarter.jpg",
+          "sha256": "6bc18723ba63fb6a2fe7db28e9f42fd6f9b638012ba265b3c88c70a912f9aa9d"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-right-quarter.jpg",
+          "sha256": "e21b767313329d6eed0709e4e0164d1fe49cf75d2de44aa671c64bffe1f63298"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-back.jpg",
+          "sha256": "c68f4dbdf4135c6c1692bc244415be0e716e61f42d886ad45acc3387e942c09f"
+        }
+      ]
+    },
+    {
+      "id": "stopping",
+      "kind": "review",
+      "status": "PASS",
+      "action_taken": "Reviewed only the local static opacity diagnostic and preserved separate production obligations.",
+      "observation": "Diagnostic complete, character not ready. Export is blocked on exact-payload approval; shared Blender slot released.",
+      "evidence": [
+        {
+          "path": "results/trellis301/OPACITY_REVIEW.md",
+          "sha256": "90f5ae3ed41a137d295ab6fa052dd9cd3f7014bf80a023af95b590d10fb0cdf9"
+        },
+        {
+          "path": "results/trellis301/opacity-metrics.json",
+          "sha256": "7e28080a764ae6d418b8aad667f5f40d390d6efe883308d04356760f95ebd5e7"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/opaque.json",
+          "sha256": "33e60fb1f12df3b66d75a2f06862d65dfa9f7df71ecc400067d41a31f368d880"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/alpha.json",
+          "sha256": "d15d9735994f6efc4c96e904ca40ecc3ea15d53200ba68f47795e3125a829951"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/render.log",
+          "sha256": "eb78ad70cada4a9a7a0b9a33af5e97fc3ef77b6a87ade71383667ea771b17ad9"
+        },
+        {
+          "path": "scripts/trellis301_inspect.py",
+          "sha256": "25dde4903242d865fdba5bc779ff8158dde2f5b4b1e552a688e89f8bce93b259"
+        },
+        {
+          "path": ".runtime/art-direction/series01-sikh257/sikh-uncovered-concept-v03.png",
+          "sha256": "7aaa7a8433d85024681e427b5cd290ec35fd5b78adfa0aea67035847665a151f"
+        },
+        {
+          "path": ".runtime/art-direction/series01-finish248/opening-final/frame-0200.png",
+          "sha256": "ee30bbe77f6d7f4c3bcdaf298406fd9f3645f08c15403f7eafcd06e91b5a9b0c"
+        },
+        {
+          "path": ".runtime/art-direction/series01-finish248/delivery01/manifest.json",
+          "sha256": "73e20abaf887dd907b989780ca9803a0fcce82b9cd4da032b319004da92640e5"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-front.jpg",
+          "sha256": "89ee4f80a94a4c4b5d728abb8edaa661ef4b9d06111cebf8afda8808952cefe2"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-left-quarter.jpg",
+          "sha256": "6bc18723ba63fb6a2fe7db28e9f42fd6f9b638012ba265b3c88c70a912f9aa9d"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-right-quarter.jpg",
+          "sha256": "e21b767313329d6eed0709e4e0164d1fe49cf75d2de44aa671c64bffe1f63298"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-back.jpg",
+          "sha256": "c68f4dbdf4135c6c1692bc244415be0e716e61f42d886ad45acc3387e942c09f"
+        }
+      ]
+    },
+    {
+      "id": "versioning",
+      "kind": "technical",
+      "status": "PASS",
+      "action_taken": "Reviewed only the local static opacity diagnostic and preserved separate production obligations.",
+      "observation": "Source was reopened independently for each variant and never saved; original geometry/material bindings were checked.",
+      "evidence": [
+        {
+          "path": "results/trellis301/OPACITY_REVIEW.md",
+          "sha256": "90f5ae3ed41a137d295ab6fa052dd9cd3f7014bf80a023af95b590d10fb0cdf9"
+        },
+        {
+          "path": "results/trellis301/opacity-metrics.json",
+          "sha256": "7e28080a764ae6d418b8aad667f5f40d390d6efe883308d04356760f95ebd5e7"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/opaque.json",
+          "sha256": "33e60fb1f12df3b66d75a2f06862d65dfa9f7df71ecc400067d41a31f368d880"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/alpha.json",
+          "sha256": "d15d9735994f6efc4c96e904ca40ecc3ea15d53200ba68f47795e3125a829951"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/render.log",
+          "sha256": "eb78ad70cada4a9a7a0b9a33af5e97fc3ef77b6a87ade71383667ea771b17ad9"
+        },
+        {
+          "path": "scripts/trellis301_inspect.py",
+          "sha256": "25dde4903242d865fdba5bc779ff8158dde2f5b4b1e552a688e89f8bce93b259"
+        },
+        {
+          "path": ".runtime/art-direction/series01-sikh257/sikh-uncovered-concept-v03.png",
+          "sha256": "7aaa7a8433d85024681e427b5cd290ec35fd5b78adfa0aea67035847665a151f"
+        },
+        {
+          "path": ".runtime/art-direction/series01-finish248/opening-final/frame-0200.png",
+          "sha256": "ee30bbe77f6d7f4c3bcdaf298406fd9f3645f08c15403f7eafcd06e91b5a9b0c"
+        },
+        {
+          "path": ".runtime/art-direction/series01-finish248/delivery01/manifest.json",
+          "sha256": "73e20abaf887dd907b989780ca9803a0fcce82b9cd4da032b319004da92640e5"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-front.jpg",
+          "sha256": "89ee4f80a94a4c4b5d728abb8edaa661ef4b9d06111cebf8afda8808952cefe2"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-left-quarter.jpg",
+          "sha256": "6bc18723ba63fb6a2fe7db28e9f42fd6f9b638012ba265b3c88c70a912f9aa9d"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-right-quarter.jpg",
+          "sha256": "e21b767313329d6eed0709e4e0164d1fe49cf75d2de44aa671c64bffe1f63298"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-back.jpg",
+          "sha256": "c68f4dbdf4135c6c1692bc244415be0e716e61f42d886ad45acc3387e942c09f"
+        }
+      ]
+    },
+    {
+      "id": "economics",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Reviewed only the local static opacity diagnostic and preserved separate production obligations.",
+      "observation": "Fresh read-only price and residual-resource inventory are recorded; prospective14USD admission is not an invoice or a paid dispatch.",
+      "evidence": [
+        {
+          "path": "results/trellis301/OPACITY_REVIEW.md",
+          "sha256": "90f5ae3ed41a137d295ab6fa052dd9cd3f7014bf80a023af95b590d10fb0cdf9"
+        },
+        {
+          "path": "results/trellis301/opacity-metrics.json",
+          "sha256": "7e28080a764ae6d418b8aad667f5f40d390d6efe883308d04356760f95ebd5e7"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/opaque.json",
+          "sha256": "33e60fb1f12df3b66d75a2f06862d65dfa9f7df71ecc400067d41a31f368d880"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/alpha.json",
+          "sha256": "d15d9735994f6efc4c96e904ca40ecc3ea15d53200ba68f47795e3125a829951"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/render.log",
+          "sha256": "eb78ad70cada4a9a7a0b9a33af5e97fc3ef77b6a87ade71383667ea771b17ad9"
+        },
+        {
+          "path": "scripts/trellis301_inspect.py",
+          "sha256": "25dde4903242d865fdba5bc779ff8158dde2f5b4b1e552a688e89f8bce93b259"
+        },
+        {
+          "path": ".runtime/art-direction/series01-sikh257/sikh-uncovered-concept-v03.png",
+          "sha256": "7aaa7a8433d85024681e427b5cd290ec35fd5b78adfa0aea67035847665a151f"
+        },
+        {
+          "path": ".runtime/art-direction/series01-finish248/opening-final/frame-0200.png",
+          "sha256": "ee30bbe77f6d7f4c3bcdaf298406fd9f3645f08c15403f7eafcd06e91b5a9b0c"
+        },
+        {
+          "path": ".runtime/art-direction/series01-finish248/delivery01/manifest.json",
+          "sha256": "73e20abaf887dd907b989780ca9803a0fcce82b9cd4da032b319004da92640e5"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-front.jpg",
+          "sha256": "89ee4f80a94a4c4b5d728abb8edaa661ef4b9d06111cebf8afda8808952cefe2"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-left-quarter.jpg",
+          "sha256": "6bc18723ba63fb6a2fe7db28e9f42fd6f9b638012ba265b3c88c70a912f9aa9d"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-right-quarter.jpg",
+          "sha256": "e21b767313329d6eed0709e4e0164d1fe49cf75d2de44aa671c64bffe1f63298"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-back.jpg",
+          "sha256": "c68f4dbdf4135c6c1692bc244415be0e716e61f42d886ad45acc3387e942c09f"
+        }
+      ]
+    },
+    {
+      "id": "representation",
+      "kind": "review",
+      "status": "FAIL",
+      "action_taken": "Reviewed only the local static opacity diagnostic and preserved separate production obligations.",
+      "observation": "Unresolved eye anatomy, chunky beard and crown cavities fail the existing quality floor.",
+      "evidence": [
+        {
+          "path": "results/trellis301/OPACITY_REVIEW.md",
+          "sha256": "90f5ae3ed41a137d295ab6fa052dd9cd3f7014bf80a023af95b590d10fb0cdf9"
+        },
+        {
+          "path": "results/trellis301/opacity-metrics.json",
+          "sha256": "7e28080a764ae6d418b8aad667f5f40d390d6efe883308d04356760f95ebd5e7"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/opaque.json",
+          "sha256": "33e60fb1f12df3b66d75a2f06862d65dfa9f7df71ecc400067d41a31f368d880"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/alpha.json",
+          "sha256": "d15d9735994f6efc4c96e904ca40ecc3ea15d53200ba68f47795e3125a829951"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/render.log",
+          "sha256": "eb78ad70cada4a9a7a0b9a33af5e97fc3ef77b6a87ade71383667ea771b17ad9"
+        },
+        {
+          "path": "scripts/trellis301_inspect.py",
+          "sha256": "25dde4903242d865fdba5bc779ff8158dde2f5b4b1e552a688e89f8bce93b259"
+        },
+        {
+          "path": ".runtime/art-direction/series01-sikh257/sikh-uncovered-concept-v03.png",
+          "sha256": "7aaa7a8433d85024681e427b5cd290ec35fd5b78adfa0aea67035847665a151f"
+        },
+        {
+          "path": ".runtime/art-direction/series01-finish248/opening-final/frame-0200.png",
+          "sha256": "ee30bbe77f6d7f4c3bcdaf298406fd9f3645f08c15403f7eafcd06e91b5a9b0c"
+        },
+        {
+          "path": ".runtime/art-direction/series01-finish248/delivery01/manifest.json",
+          "sha256": "73e20abaf887dd907b989780ca9803a0fcce82b9cd4da032b319004da92640e5"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-front.jpg",
+          "sha256": "89ee4f80a94a4c4b5d728abb8edaa661ef4b9d06111cebf8afda8808952cefe2"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-left-quarter.jpg",
+          "sha256": "6bc18723ba63fb6a2fe7db28e9f42fd6f9b638012ba265b3c88c70a912f9aa9d"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-right-quarter.jpg",
+          "sha256": "e21b767313329d6eed0709e4e0164d1fe49cf75d2de44aa671c64bffe1f63298"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-back.jpg",
+          "sha256": "c68f4dbdf4135c6c1692bc244415be0e716e61f42d886ad45acc3387e942c09f"
+        }
+      ]
+    },
+    {
+      "id": "anatomy",
+      "kind": "review",
+      "status": "FAIL",
+      "action_taken": "Reviewed only the local static opacity diagnostic and preserved separate production obligations.",
+      "observation": "Unresolved eye anatomy, chunky beard and crown cavities fail the existing quality floor.",
+      "evidence": [
+        {
+          "path": "results/trellis301/OPACITY_REVIEW.md",
+          "sha256": "90f5ae3ed41a137d295ab6fa052dd9cd3f7014bf80a023af95b590d10fb0cdf9"
+        },
+        {
+          "path": "results/trellis301/opacity-metrics.json",
+          "sha256": "7e28080a764ae6d418b8aad667f5f40d390d6efe883308d04356760f95ebd5e7"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/opaque.json",
+          "sha256": "33e60fb1f12df3b66d75a2f06862d65dfa9f7df71ecc400067d41a31f368d880"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/alpha.json",
+          "sha256": "d15d9735994f6efc4c96e904ca40ecc3ea15d53200ba68f47795e3125a829951"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/render.log",
+          "sha256": "eb78ad70cada4a9a7a0b9a33af5e97fc3ef77b6a87ade71383667ea771b17ad9"
+        },
+        {
+          "path": "scripts/trellis301_inspect.py",
+          "sha256": "25dde4903242d865fdba5bc779ff8158dde2f5b4b1e552a688e89f8bce93b259"
+        },
+        {
+          "path": ".runtime/art-direction/series01-sikh257/sikh-uncovered-concept-v03.png",
+          "sha256": "7aaa7a8433d85024681e427b5cd290ec35fd5b78adfa0aea67035847665a151f"
+        },
+        {
+          "path": ".runtime/art-direction/series01-finish248/opening-final/frame-0200.png",
+          "sha256": "ee30bbe77f6d7f4c3bcdaf298406fd9f3645f08c15403f7eafcd06e91b5a9b0c"
+        },
+        {
+          "path": ".runtime/art-direction/series01-finish248/delivery01/manifest.json",
+          "sha256": "73e20abaf887dd907b989780ca9803a0fcce82b9cd4da032b319004da92640e5"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-front.jpg",
+          "sha256": "89ee4f80a94a4c4b5d728abb8edaa661ef4b9d06111cebf8afda8808952cefe2"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-left-quarter.jpg",
+          "sha256": "6bc18723ba63fb6a2fe7db28e9f42fd6f9b638012ba265b3c88c70a912f9aa9d"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-right-quarter.jpg",
+          "sha256": "e21b767313329d6eed0709e4e0164d1fe49cf75d2de44aa671c64bffe1f63298"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-back.jpg",
+          "sha256": "c68f4dbdf4135c6c1692bc244415be0e716e61f42d886ad45acc3387e942c09f"
+        }
+      ]
+    },
+    {
+      "id": "motion",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Reviewed only the local static opacity diagnostic and preserved separate production obligations.",
+      "observation": "Static material-only control does not test actor motion, deformation, contact or cloth performance.",
+      "evidence": [
+        {
+          "path": "results/trellis301/OPACITY_REVIEW.md",
+          "sha256": "90f5ae3ed41a137d295ab6fa052dd9cd3f7014bf80a023af95b590d10fb0cdf9"
+        },
+        {
+          "path": "results/trellis301/opacity-metrics.json",
+          "sha256": "7e28080a764ae6d418b8aad667f5f40d390d6efe883308d04356760f95ebd5e7"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/opaque.json",
+          "sha256": "33e60fb1f12df3b66d75a2f06862d65dfa9f7df71ecc400067d41a31f368d880"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/alpha.json",
+          "sha256": "d15d9735994f6efc4c96e904ca40ecc3ea15d53200ba68f47795e3125a829951"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/render.log",
+          "sha256": "eb78ad70cada4a9a7a0b9a33af5e97fc3ef77b6a87ade71383667ea771b17ad9"
+        },
+        {
+          "path": "scripts/trellis301_inspect.py",
+          "sha256": "25dde4903242d865fdba5bc779ff8158dde2f5b4b1e552a688e89f8bce93b259"
+        },
+        {
+          "path": ".runtime/art-direction/series01-sikh257/sikh-uncovered-concept-v03.png",
+          "sha256": "7aaa7a8433d85024681e427b5cd290ec35fd5b78adfa0aea67035847665a151f"
+        },
+        {
+          "path": ".runtime/art-direction/series01-finish248/opening-final/frame-0200.png",
+          "sha256": "ee30bbe77f6d7f4c3bcdaf298406fd9f3645f08c15403f7eafcd06e91b5a9b0c"
+        },
+        {
+          "path": ".runtime/art-direction/series01-finish248/delivery01/manifest.json",
+          "sha256": "73e20abaf887dd907b989780ca9803a0fcce82b9cd4da032b319004da92640e5"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-front.jpg",
+          "sha256": "89ee4f80a94a4c4b5d728abb8edaa661ef4b9d06111cebf8afda8808952cefe2"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-left-quarter.jpg",
+          "sha256": "6bc18723ba63fb6a2fe7db28e9f42fd6f9b638012ba265b3c88c70a912f9aa9d"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-right-quarter.jpg",
+          "sha256": "e21b767313329d6eed0709e4e0164d1fe49cf75d2de44aa671c64bffe1f63298"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-back.jpg",
+          "sha256": "c68f4dbdf4135c6c1692bc244415be0e716e61f42d886ad45acc3387e942c09f"
+        }
+      ]
+    },
+    {
+      "id": "secondary",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Reviewed only the local static opacity diagnostic and preserved separate production obligations.",
+      "observation": "Static material-only control does not test actor motion, deformation, contact or cloth performance.",
+      "evidence": [
+        {
+          "path": "results/trellis301/OPACITY_REVIEW.md",
+          "sha256": "90f5ae3ed41a137d295ab6fa052dd9cd3f7014bf80a023af95b590d10fb0cdf9"
+        },
+        {
+          "path": "results/trellis301/opacity-metrics.json",
+          "sha256": "7e28080a764ae6d418b8aad667f5f40d390d6efe883308d04356760f95ebd5e7"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/opaque.json",
+          "sha256": "33e60fb1f12df3b66d75a2f06862d65dfa9f7df71ecc400067d41a31f368d880"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/alpha.json",
+          "sha256": "d15d9735994f6efc4c96e904ca40ecc3ea15d53200ba68f47795e3125a829951"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/render.log",
+          "sha256": "eb78ad70cada4a9a7a0b9a33af5e97fc3ef77b6a87ade71383667ea771b17ad9"
+        },
+        {
+          "path": "scripts/trellis301_inspect.py",
+          "sha256": "25dde4903242d865fdba5bc779ff8158dde2f5b4b1e552a688e89f8bce93b259"
+        },
+        {
+          "path": ".runtime/art-direction/series01-sikh257/sikh-uncovered-concept-v03.png",
+          "sha256": "7aaa7a8433d85024681e427b5cd290ec35fd5b78adfa0aea67035847665a151f"
+        },
+        {
+          "path": ".runtime/art-direction/series01-finish248/opening-final/frame-0200.png",
+          "sha256": "ee30bbe77f6d7f4c3bcdaf298406fd9f3645f08c15403f7eafcd06e91b5a9b0c"
+        },
+        {
+          "path": ".runtime/art-direction/series01-finish248/delivery01/manifest.json",
+          "sha256": "73e20abaf887dd907b989780ca9803a0fcce82b9cd4da032b319004da92640e5"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-front.jpg",
+          "sha256": "89ee4f80a94a4c4b5d728abb8edaa661ef4b9d06111cebf8afda8808952cefe2"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-left-quarter.jpg",
+          "sha256": "6bc18723ba63fb6a2fe7db28e9f42fd6f9b638012ba265b3c88c70a912f9aa9d"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-right-quarter.jpg",
+          "sha256": "e21b767313329d6eed0709e4e0164d1fe49cf75d2de44aa671c64bffe1f63298"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-back.jpg",
+          "sha256": "c68f4dbdf4135c6c1692bc244415be0e716e61f42d886ad45acc3387e942c09f"
+        }
+      ]
+    },
+    {
+      "id": "look",
+      "kind": "review",
+      "status": "FAIL",
+      "action_taken": "Reviewed only the local static opacity diagnostic and preserved separate production obligations.",
+      "observation": "Unresolved eye anatomy, chunky beard and crown cavities fail the existing quality floor.",
+      "evidence": [
+        {
+          "path": "results/trellis301/OPACITY_REVIEW.md",
+          "sha256": "90f5ae3ed41a137d295ab6fa052dd9cd3f7014bf80a023af95b590d10fb0cdf9"
+        },
+        {
+          "path": "results/trellis301/opacity-metrics.json",
+          "sha256": "7e28080a764ae6d418b8aad667f5f40d390d6efe883308d04356760f95ebd5e7"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/opaque.json",
+          "sha256": "33e60fb1f12df3b66d75a2f06862d65dfa9f7df71ecc400067d41a31f368d880"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/alpha.json",
+          "sha256": "d15d9735994f6efc4c96e904ca40ecc3ea15d53200ba68f47795e3125a829951"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/render.log",
+          "sha256": "eb78ad70cada4a9a7a0b9a33af5e97fc3ef77b6a87ade71383667ea771b17ad9"
+        },
+        {
+          "path": "scripts/trellis301_inspect.py",
+          "sha256": "25dde4903242d865fdba5bc779ff8158dde2f5b4b1e552a688e89f8bce93b259"
+        },
+        {
+          "path": ".runtime/art-direction/series01-sikh257/sikh-uncovered-concept-v03.png",
+          "sha256": "7aaa7a8433d85024681e427b5cd290ec35fd5b78adfa0aea67035847665a151f"
+        },
+        {
+          "path": ".runtime/art-direction/series01-finish248/opening-final/frame-0200.png",
+          "sha256": "ee30bbe77f6d7f4c3bcdaf298406fd9f3645f08c15403f7eafcd06e91b5a9b0c"
+        },
+        {
+          "path": ".runtime/art-direction/series01-finish248/delivery01/manifest.json",
+          "sha256": "73e20abaf887dd907b989780ca9803a0fcce82b9cd4da032b319004da92640e5"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-front.jpg",
+          "sha256": "89ee4f80a94a4c4b5d728abb8edaa661ef4b9d06111cebf8afda8808952cefe2"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-left-quarter.jpg",
+          "sha256": "6bc18723ba63fb6a2fe7db28e9f42fd6f9b638012ba265b3c88c70a912f9aa9d"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-right-quarter.jpg",
+          "sha256": "e21b767313329d6eed0709e4e0164d1fe49cf75d2de44aa671c64bffe1f63298"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-back.jpg",
+          "sha256": "c68f4dbdf4135c6c1692bc244415be0e716e61f42d886ad45acc3387e942c09f"
+        }
+      ]
+    },
+    {
+      "id": "rights",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Reviewed only the local static opacity diagnostic and preserved separate production obligations.",
+      "observation": "No new model/dependency or output-rights path introduced by local opacity control; prior admitted sources retained.",
+      "evidence": [
+        {
+          "path": "results/trellis301/OPACITY_REVIEW.md",
+          "sha256": "90f5ae3ed41a137d295ab6fa052dd9cd3f7014bf80a023af95b590d10fb0cdf9"
+        },
+        {
+          "path": "results/trellis301/opacity-metrics.json",
+          "sha256": "7e28080a764ae6d418b8aad667f5f40d390d6efe883308d04356760f95ebd5e7"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/opaque.json",
+          "sha256": "33e60fb1f12df3b66d75a2f06862d65dfa9f7df71ecc400067d41a31f368d880"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/alpha.json",
+          "sha256": "d15d9735994f6efc4c96e904ca40ecc3ea15d53200ba68f47795e3125a829951"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/render.log",
+          "sha256": "eb78ad70cada4a9a7a0b9a33af5e97fc3ef77b6a87ade71383667ea771b17ad9"
+        },
+        {
+          "path": "scripts/trellis301_inspect.py",
+          "sha256": "25dde4903242d865fdba5bc779ff8158dde2f5b4b1e552a688e89f8bce93b259"
+        },
+        {
+          "path": ".runtime/art-direction/series01-sikh257/sikh-uncovered-concept-v03.png",
+          "sha256": "7aaa7a8433d85024681e427b5cd290ec35fd5b78adfa0aea67035847665a151f"
+        },
+        {
+          "path": ".runtime/art-direction/series01-finish248/opening-final/frame-0200.png",
+          "sha256": "ee30bbe77f6d7f4c3bcdaf298406fd9f3645f08c15403f7eafcd06e91b5a9b0c"
+        },
+        {
+          "path": ".runtime/art-direction/series01-finish248/delivery01/manifest.json",
+          "sha256": "73e20abaf887dd907b989780ca9803a0fcce82b9cd4da032b319004da92640e5"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-front.jpg",
+          "sha256": "89ee4f80a94a4c4b5d728abb8edaa661ef4b9d06111cebf8afda8808952cefe2"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-left-quarter.jpg",
+          "sha256": "6bc18723ba63fb6a2fe7db28e9f42fd6f9b638012ba265b3c88c70a912f9aa9d"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-right-quarter.jpg",
+          "sha256": "e21b767313329d6eed0709e4e0164d1fe49cf75d2de44aa671c64bffe1f63298"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-back.jpg",
+          "sha256": "c68f4dbdf4135c6c1692bc244415be0e716e61f42d886ad45acc3387e942c09f"
+        }
+      ]
+    },
+    {
+      "id": "current_state",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Reviewed only the local static opacity diagnostic and preserved separate production obligations.",
+      "observation": "Accepted Pashtun253 and Sikh illustratedv03 preserved; failed298 actor admission remains failed.",
+      "evidence": [
+        {
+          "path": "results/trellis301/OPACITY_REVIEW.md",
+          "sha256": "90f5ae3ed41a137d295ab6fa052dd9cd3f7014bf80a023af95b590d10fb0cdf9"
+        },
+        {
+          "path": "results/trellis301/opacity-metrics.json",
+          "sha256": "7e28080a764ae6d418b8aad667f5f40d390d6efe883308d04356760f95ebd5e7"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/opaque.json",
+          "sha256": "33e60fb1f12df3b66d75a2f06862d65dfa9f7df71ecc400067d41a31f368d880"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/alpha.json",
+          "sha256": "d15d9735994f6efc4c96e904ca40ecc3ea15d53200ba68f47795e3125a829951"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/render.log",
+          "sha256": "eb78ad70cada4a9a7a0b9a33af5e97fc3ef77b6a87ade71383667ea771b17ad9"
+        },
+        {
+          "path": "scripts/trellis301_inspect.py",
+          "sha256": "25dde4903242d865fdba5bc779ff8158dde2f5b4b1e552a688e89f8bce93b259"
+        },
+        {
+          "path": ".runtime/art-direction/series01-sikh257/sikh-uncovered-concept-v03.png",
+          "sha256": "7aaa7a8433d85024681e427b5cd290ec35fd5b78adfa0aea67035847665a151f"
+        },
+        {
+          "path": ".runtime/art-direction/series01-finish248/opening-final/frame-0200.png",
+          "sha256": "ee30bbe77f6d7f4c3bcdaf298406fd9f3645f08c15403f7eafcd06e91b5a9b0c"
+        },
+        {
+          "path": ".runtime/art-direction/series01-finish248/delivery01/manifest.json",
+          "sha256": "73e20abaf887dd907b989780ca9803a0fcce82b9cd4da032b319004da92640e5"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-front.jpg",
+          "sha256": "89ee4f80a94a4c4b5d728abb8edaa661ef4b9d06111cebf8afda8808952cefe2"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-left-quarter.jpg",
+          "sha256": "6bc18723ba63fb6a2fe7db28e9f42fd6f9b638012ba265b3c88c70a912f9aa9d"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-right-quarter.jpg",
+          "sha256": "e21b767313329d6eed0709e4e0164d1fe49cf75d2de44aa671c64bffe1f63298"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-back.jpg",
+          "sha256": "c68f4dbdf4135c6c1692bc244415be0e716e61f42d886ad45acc3387e942c09f"
+        }
+      ]
+    },
+    {
+      "id": "au_reference",
+      "kind": "review",
+      "status": "PASS",
+      "action_taken": "Reviewed only the local static opacity diagnostic and preserved separate production obligations.",
+      "observation": "Directly inspected approved Sikhv03 and accepted Pashtun close-shot frame0200; rejected candidates are not quality targets.",
+      "evidence": [
+        {
+          "path": "results/trellis301/OPACITY_REVIEW.md",
+          "sha256": "90f5ae3ed41a137d295ab6fa052dd9cd3f7014bf80a023af95b590d10fb0cdf9"
+        },
+        {
+          "path": "results/trellis301/opacity-metrics.json",
+          "sha256": "7e28080a764ae6d418b8aad667f5f40d390d6efe883308d04356760f95ebd5e7"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/opaque.json",
+          "sha256": "33e60fb1f12df3b66d75a2f06862d65dfa9f7df71ecc400067d41a31f368d880"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/alpha.json",
+          "sha256": "d15d9735994f6efc4c96e904ca40ecc3ea15d53200ba68f47795e3125a829951"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/render.log",
+          "sha256": "eb78ad70cada4a9a7a0b9a33af5e97fc3ef77b6a87ade71383667ea771b17ad9"
+        },
+        {
+          "path": "scripts/trellis301_inspect.py",
+          "sha256": "25dde4903242d865fdba5bc779ff8158dde2f5b4b1e552a688e89f8bce93b259"
+        },
+        {
+          "path": ".runtime/art-direction/series01-sikh257/sikh-uncovered-concept-v03.png",
+          "sha256": "7aaa7a8433d85024681e427b5cd290ec35fd5b78adfa0aea67035847665a151f"
+        },
+        {
+          "path": ".runtime/art-direction/series01-finish248/opening-final/frame-0200.png",
+          "sha256": "ee30bbe77f6d7f4c3bcdaf298406fd9f3645f08c15403f7eafcd06e91b5a9b0c"
+        },
+        {
+          "path": ".runtime/art-direction/series01-finish248/delivery01/manifest.json",
+          "sha256": "73e20abaf887dd907b989780ca9803a0fcce82b9cd4da032b319004da92640e5"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-front.jpg",
+          "sha256": "89ee4f80a94a4c4b5d728abb8edaa661ef4b9d06111cebf8afda8808952cefe2"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-left-quarter.jpg",
+          "sha256": "6bc18723ba63fb6a2fe7db28e9f42fd6f9b638012ba265b3c88c70a912f9aa9d"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-right-quarter.jpg",
+          "sha256": "e21b767313329d6eed0709e4e0164d1fe49cf75d2de44aa671c64bffe1f63298"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-back.jpg",
+          "sha256": "c68f4dbdf4135c6c1692bc244415be0e716e61f42d886ad45acc3387e942c09f"
+        }
+      ]
+    },
+    {
+      "id": "au_deformation",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Reviewed only the local static opacity diagnostic and preserved separate production obligations.",
+      "observation": "Static material-only control does not test actor motion, deformation, contact or cloth performance.",
+      "evidence": [
+        {
+          "path": "results/trellis301/OPACITY_REVIEW.md",
+          "sha256": "90f5ae3ed41a137d295ab6fa052dd9cd3f7014bf80a023af95b590d10fb0cdf9"
+        },
+        {
+          "path": "results/trellis301/opacity-metrics.json",
+          "sha256": "7e28080a764ae6d418b8aad667f5f40d390d6efe883308d04356760f95ebd5e7"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/opaque.json",
+          "sha256": "33e60fb1f12df3b66d75a2f06862d65dfa9f7df71ecc400067d41a31f368d880"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/alpha.json",
+          "sha256": "d15d9735994f6efc4c96e904ca40ecc3ea15d53200ba68f47795e3125a829951"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/render.log",
+          "sha256": "eb78ad70cada4a9a7a0b9a33af5e97fc3ef77b6a87ade71383667ea771b17ad9"
+        },
+        {
+          "path": "scripts/trellis301_inspect.py",
+          "sha256": "25dde4903242d865fdba5bc779ff8158dde2f5b4b1e552a688e89f8bce93b259"
+        },
+        {
+          "path": ".runtime/art-direction/series01-sikh257/sikh-uncovered-concept-v03.png",
+          "sha256": "7aaa7a8433d85024681e427b5cd290ec35fd5b78adfa0aea67035847665a151f"
+        },
+        {
+          "path": ".runtime/art-direction/series01-finish248/opening-final/frame-0200.png",
+          "sha256": "ee30bbe77f6d7f4c3bcdaf298406fd9f3645f08c15403f7eafcd06e91b5a9b0c"
+        },
+        {
+          "path": ".runtime/art-direction/series01-finish248/delivery01/manifest.json",
+          "sha256": "73e20abaf887dd907b989780ca9803a0fcce82b9cd4da032b319004da92640e5"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-front.jpg",
+          "sha256": "89ee4f80a94a4c4b5d728abb8edaa661ef4b9d06111cebf8afda8808952cefe2"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-left-quarter.jpg",
+          "sha256": "6bc18723ba63fb6a2fe7db28e9f42fd6f9b638012ba265b3c88c70a912f9aa9d"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-right-quarter.jpg",
+          "sha256": "e21b767313329d6eed0709e4e0164d1fe49cf75d2de44aa671c64bffe1f63298"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-back.jpg",
+          "sha256": "c68f4dbdf4135c6c1692bc244415be0e716e61f42d886ad45acc3387e942c09f"
+        }
+      ]
+    },
+    {
+      "id": "au_performance",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Reviewed only the local static opacity diagnostic and preserved separate production obligations.",
+      "observation": "Static material-only control does not test actor motion, deformation, contact or cloth performance.",
+      "evidence": [
+        {
+          "path": "results/trellis301/OPACITY_REVIEW.md",
+          "sha256": "90f5ae3ed41a137d295ab6fa052dd9cd3f7014bf80a023af95b590d10fb0cdf9"
+        },
+        {
+          "path": "results/trellis301/opacity-metrics.json",
+          "sha256": "7e28080a764ae6d418b8aad667f5f40d390d6efe883308d04356760f95ebd5e7"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/opaque.json",
+          "sha256": "33e60fb1f12df3b66d75a2f06862d65dfa9f7df71ecc400067d41a31f368d880"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/alpha.json",
+          "sha256": "d15d9735994f6efc4c96e904ca40ecc3ea15d53200ba68f47795e3125a829951"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/render.log",
+          "sha256": "eb78ad70cada4a9a7a0b9a33af5e97fc3ef77b6a87ade71383667ea771b17ad9"
+        },
+        {
+          "path": "scripts/trellis301_inspect.py",
+          "sha256": "25dde4903242d865fdba5bc779ff8158dde2f5b4b1e552a688e89f8bce93b259"
+        },
+        {
+          "path": ".runtime/art-direction/series01-sikh257/sikh-uncovered-concept-v03.png",
+          "sha256": "7aaa7a8433d85024681e427b5cd290ec35fd5b78adfa0aea67035847665a151f"
+        },
+        {
+          "path": ".runtime/art-direction/series01-finish248/opening-final/frame-0200.png",
+          "sha256": "ee30bbe77f6d7f4c3bcdaf298406fd9f3645f08c15403f7eafcd06e91b5a9b0c"
+        },
+        {
+          "path": ".runtime/art-direction/series01-finish248/delivery01/manifest.json",
+          "sha256": "73e20abaf887dd907b989780ca9803a0fcce82b9cd4da032b319004da92640e5"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-front.jpg",
+          "sha256": "89ee4f80a94a4c4b5d728abb8edaa661ef4b9d06111cebf8afda8808952cefe2"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-left-quarter.jpg",
+          "sha256": "6bc18723ba63fb6a2fe7db28e9f42fd6f9b638012ba265b3c88c70a912f9aa9d"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-right-quarter.jpg",
+          "sha256": "e21b767313329d6eed0709e4e0164d1fe49cf75d2de44aa671c64bffe1f63298"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-back.jpg",
+          "sha256": "c68f4dbdf4135c6c1692bc244415be0e716e61f42d886ad45acc3387e942c09f"
+        }
+      ]
+    },
+    {
+      "id": "au_contact",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Reviewed only the local static opacity diagnostic and preserved separate production obligations.",
+      "observation": "Static material-only control does not test actor motion, deformation, contact or cloth performance.",
+      "evidence": [
+        {
+          "path": "results/trellis301/OPACITY_REVIEW.md",
+          "sha256": "90f5ae3ed41a137d295ab6fa052dd9cd3f7014bf80a023af95b590d10fb0cdf9"
+        },
+        {
+          "path": "results/trellis301/opacity-metrics.json",
+          "sha256": "7e28080a764ae6d418b8aad667f5f40d390d6efe883308d04356760f95ebd5e7"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/opaque.json",
+          "sha256": "33e60fb1f12df3b66d75a2f06862d65dfa9f7df71ecc400067d41a31f368d880"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/alpha.json",
+          "sha256": "d15d9735994f6efc4c96e904ca40ecc3ea15d53200ba68f47795e3125a829951"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/render.log",
+          "sha256": "eb78ad70cada4a9a7a0b9a33af5e97fc3ef77b6a87ade71383667ea771b17ad9"
+        },
+        {
+          "path": "scripts/trellis301_inspect.py",
+          "sha256": "25dde4903242d865fdba5bc779ff8158dde2f5b4b1e552a688e89f8bce93b259"
+        },
+        {
+          "path": ".runtime/art-direction/series01-sikh257/sikh-uncovered-concept-v03.png",
+          "sha256": "7aaa7a8433d85024681e427b5cd290ec35fd5b78adfa0aea67035847665a151f"
+        },
+        {
+          "path": ".runtime/art-direction/series01-finish248/opening-final/frame-0200.png",
+          "sha256": "ee30bbe77f6d7f4c3bcdaf298406fd9f3645f08c15403f7eafcd06e91b5a9b0c"
+        },
+        {
+          "path": ".runtime/art-direction/series01-finish248/delivery01/manifest.json",
+          "sha256": "73e20abaf887dd907b989780ca9803a0fcce82b9cd4da032b319004da92640e5"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-front.jpg",
+          "sha256": "89ee4f80a94a4c4b5d728abb8edaa661ef4b9d06111cebf8afda8808952cefe2"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-left-quarter.jpg",
+          "sha256": "6bc18723ba63fb6a2fe7db28e9f42fd6f9b638012ba265b3c88c70a912f9aa9d"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-right-quarter.jpg",
+          "sha256": "e21b767313329d6eed0709e4e0164d1fe49cf75d2de44aa671c64bffe1f63298"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-back.jpg",
+          "sha256": "c68f4dbdf4135c6c1692bc244415be0e716e61f42d886ad45acc3387e942c09f"
+        }
+      ]
+    },
+    {
+      "id": "au_surface",
+      "kind": "review",
+      "status": "FAIL",
+      "action_taken": "Reviewed only the local static opacity diagnostic and preserved separate production obligations.",
+      "observation": "Unresolved eye anatomy, chunky beard and crown cavities fail the existing quality floor.",
+      "evidence": [
+        {
+          "path": "results/trellis301/OPACITY_REVIEW.md",
+          "sha256": "90f5ae3ed41a137d295ab6fa052dd9cd3f7014bf80a023af95b590d10fb0cdf9"
+        },
+        {
+          "path": "results/trellis301/opacity-metrics.json",
+          "sha256": "7e28080a764ae6d418b8aad667f5f40d390d6efe883308d04356760f95ebd5e7"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/opaque.json",
+          "sha256": "33e60fb1f12df3b66d75a2f06862d65dfa9f7df71ecc400067d41a31f368d880"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/alpha.json",
+          "sha256": "d15d9735994f6efc4c96e904ca40ecc3ea15d53200ba68f47795e3125a829951"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/render.log",
+          "sha256": "eb78ad70cada4a9a7a0b9a33af5e97fc3ef77b6a87ade71383667ea771b17ad9"
+        },
+        {
+          "path": "scripts/trellis301_inspect.py",
+          "sha256": "25dde4903242d865fdba5bc779ff8158dde2f5b4b1e552a688e89f8bce93b259"
+        },
+        {
+          "path": ".runtime/art-direction/series01-sikh257/sikh-uncovered-concept-v03.png",
+          "sha256": "7aaa7a8433d85024681e427b5cd290ec35fd5b78adfa0aea67035847665a151f"
+        },
+        {
+          "path": ".runtime/art-direction/series01-finish248/opening-final/frame-0200.png",
+          "sha256": "ee30bbe77f6d7f4c3bcdaf298406fd9f3645f08c15403f7eafcd06e91b5a9b0c"
+        },
+        {
+          "path": ".runtime/art-direction/series01-finish248/delivery01/manifest.json",
+          "sha256": "73e20abaf887dd907b989780ca9803a0fcce82b9cd4da032b319004da92640e5"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-front.jpg",
+          "sha256": "89ee4f80a94a4c4b5d728abb8edaa661ef4b9d06111cebf8afda8808952cefe2"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-left-quarter.jpg",
+          "sha256": "6bc18723ba63fb6a2fe7db28e9f42fd6f9b638012ba265b3c88c70a912f9aa9d"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-right-quarter.jpg",
+          "sha256": "e21b767313329d6eed0709e4e0164d1fe49cf75d2de44aa671c64bffe1f63298"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-back.jpg",
+          "sha256": "c68f4dbdf4135c6c1692bc244415be0e716e61f42d886ad45acc3387e942c09f"
+        }
+      ]
+    },
+    {
+      "id": "sikh_scope",
+      "kind": "process",
+      "status": "FAIL",
+      "action_taken": "Reviewed only the local static opacity diagnostic and preserved separate production obligations.",
+      "observation": "Unresolved eye anatomy, chunky beard and crown cavities fail the existing quality floor.",
+      "evidence": [
+        {
+          "path": "results/trellis301/OPACITY_REVIEW.md",
+          "sha256": "90f5ae3ed41a137d295ab6fa052dd9cd3f7014bf80a023af95b590d10fb0cdf9"
+        },
+        {
+          "path": "results/trellis301/opacity-metrics.json",
+          "sha256": "7e28080a764ae6d418b8aad667f5f40d390d6efe883308d04356760f95ebd5e7"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/opaque.json",
+          "sha256": "33e60fb1f12df3b66d75a2f06862d65dfa9f7df71ecc400067d41a31f368d880"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/alpha.json",
+          "sha256": "d15d9735994f6efc4c96e904ca40ecc3ea15d53200ba68f47795e3125a829951"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/render.log",
+          "sha256": "eb78ad70cada4a9a7a0b9a33af5e97fc3ef77b6a87ade71383667ea771b17ad9"
+        },
+        {
+          "path": "scripts/trellis301_inspect.py",
+          "sha256": "25dde4903242d865fdba5bc779ff8158dde2f5b4b1e552a688e89f8bce93b259"
+        },
+        {
+          "path": ".runtime/art-direction/series01-sikh257/sikh-uncovered-concept-v03.png",
+          "sha256": "7aaa7a8433d85024681e427b5cd290ec35fd5b78adfa0aea67035847665a151f"
+        },
+        {
+          "path": ".runtime/art-direction/series01-finish248/opening-final/frame-0200.png",
+          "sha256": "ee30bbe77f6d7f4c3bcdaf298406fd9f3645f08c15403f7eafcd06e91b5a9b0c"
+        },
+        {
+          "path": ".runtime/art-direction/series01-finish248/delivery01/manifest.json",
+          "sha256": "73e20abaf887dd907b989780ca9803a0fcce82b9cd4da032b319004da92640e5"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-front.jpg",
+          "sha256": "89ee4f80a94a4c4b5d728abb8edaa661ef4b9d06111cebf8afda8808952cefe2"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-left-quarter.jpg",
+          "sha256": "6bc18723ba63fb6a2fe7db28e9f42fd6f9b638012ba265b3c88c70a912f9aa9d"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-right-quarter.jpg",
+          "sha256": "e21b767313329d6eed0709e4e0164d1fe49cf75d2de44aa671c64bffe1f63298"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-back.jpg",
+          "sha256": "c68f4dbdf4135c6c1692bc244415be0e716e61f42d886ad45acc3387e942c09f"
+        }
+      ]
+    },
+    {
+      "id": "sikh_cloth",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Reviewed only the local static opacity diagnostic and preserved separate production obligations.",
+      "observation": "Static material-only control does not test actor motion, deformation, contact or cloth performance.",
+      "evidence": [
+        {
+          "path": "results/trellis301/OPACITY_REVIEW.md",
+          "sha256": "90f5ae3ed41a137d295ab6fa052dd9cd3f7014bf80a023af95b590d10fb0cdf9"
+        },
+        {
+          "path": "results/trellis301/opacity-metrics.json",
+          "sha256": "7e28080a764ae6d418b8aad667f5f40d390d6efe883308d04356760f95ebd5e7"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/opaque.json",
+          "sha256": "33e60fb1f12df3b66d75a2f06862d65dfa9f7df71ecc400067d41a31f368d880"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/alpha.json",
+          "sha256": "d15d9735994f6efc4c96e904ca40ecc3ea15d53200ba68f47795e3125a829951"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/render.log",
+          "sha256": "eb78ad70cada4a9a7a0b9a33af5e97fc3ef77b6a87ade71383667ea771b17ad9"
+        },
+        {
+          "path": "scripts/trellis301_inspect.py",
+          "sha256": "25dde4903242d865fdba5bc779ff8158dde2f5b4b1e552a688e89f8bce93b259"
+        },
+        {
+          "path": ".runtime/art-direction/series01-sikh257/sikh-uncovered-concept-v03.png",
+          "sha256": "7aaa7a8433d85024681e427b5cd290ec35fd5b78adfa0aea67035847665a151f"
+        },
+        {
+          "path": ".runtime/art-direction/series01-finish248/opening-final/frame-0200.png",
+          "sha256": "ee30bbe77f6d7f4c3bcdaf298406fd9f3645f08c15403f7eafcd06e91b5a9b0c"
+        },
+        {
+          "path": ".runtime/art-direction/series01-finish248/delivery01/manifest.json",
+          "sha256": "73e20abaf887dd907b989780ca9803a0fcce82b9cd4da032b319004da92640e5"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-front.jpg",
+          "sha256": "89ee4f80a94a4c4b5d728abb8edaa661ef4b9d06111cebf8afda8808952cefe2"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-left-quarter.jpg",
+          "sha256": "6bc18723ba63fb6a2fe7db28e9f42fd6f9b638012ba265b3c88c70a912f9aa9d"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-right-quarter.jpg",
+          "sha256": "e21b767313329d6eed0709e4e0164d1fe49cf75d2de44aa671c64bffe1f63298"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-back.jpg",
+          "sha256": "c68f4dbdf4135c6c1692bc244415be0e716e61f42d886ad45acc3387e942c09f"
+        }
+      ]
+    },
+    {
+      "id": "sikh_motion",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Reviewed only the local static opacity diagnostic and preserved separate production obligations.",
+      "observation": "Static material-only control does not test actor motion, deformation, contact or cloth performance.",
+      "evidence": [
+        {
+          "path": "results/trellis301/OPACITY_REVIEW.md",
+          "sha256": "90f5ae3ed41a137d295ab6fa052dd9cd3f7014bf80a023af95b590d10fb0cdf9"
+        },
+        {
+          "path": "results/trellis301/opacity-metrics.json",
+          "sha256": "7e28080a764ae6d418b8aad667f5f40d390d6efe883308d04356760f95ebd5e7"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/opaque.json",
+          "sha256": "33e60fb1f12df3b66d75a2f06862d65dfa9f7df71ecc400067d41a31f368d880"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/alpha.json",
+          "sha256": "d15d9735994f6efc4c96e904ca40ecc3ea15d53200ba68f47795e3125a829951"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/render.log",
+          "sha256": "eb78ad70cada4a9a7a0b9a33af5e97fc3ef77b6a87ade71383667ea771b17ad9"
+        },
+        {
+          "path": "scripts/trellis301_inspect.py",
+          "sha256": "25dde4903242d865fdba5bc779ff8158dde2f5b4b1e552a688e89f8bce93b259"
+        },
+        {
+          "path": ".runtime/art-direction/series01-sikh257/sikh-uncovered-concept-v03.png",
+          "sha256": "7aaa7a8433d85024681e427b5cd290ec35fd5b78adfa0aea67035847665a151f"
+        },
+        {
+          "path": ".runtime/art-direction/series01-finish248/opening-final/frame-0200.png",
+          "sha256": "ee30bbe77f6d7f4c3bcdaf298406fd9f3645f08c15403f7eafcd06e91b5a9b0c"
+        },
+        {
+          "path": ".runtime/art-direction/series01-finish248/delivery01/manifest.json",
+          "sha256": "73e20abaf887dd907b989780ca9803a0fcce82b9cd4da032b319004da92640e5"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-front.jpg",
+          "sha256": "89ee4f80a94a4c4b5d728abb8edaa661ef4b9d06111cebf8afda8808952cefe2"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-left-quarter.jpg",
+          "sha256": "6bc18723ba63fb6a2fe7db28e9f42fd6f9b638012ba265b3c88c70a912f9aa9d"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-right-quarter.jpg",
+          "sha256": "e21b767313329d6eed0709e4e0164d1fe49cf75d2de44aa671c64bffe1f63298"
+        },
+        {
+          "path": ".runtime/trellis301/opacity/comparison-back.jpg",
+          "sha256": "c68f4dbdf4135c6c1692bc244415be0e716e61f42d886ad45acc3387e942c09f"
+        }
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "prediction": "Enabling generated alpha may recover convincing facial-hair detail.",
+      "observation": "Moustache/brows become patchy and translucent while coarse beard and crown defects remain.",
+      "response": "Reject opacity-only rescue; preserve original control and await admitted fixed-source export comparison.",
+      "result": "resolved"
+    }
+  ],
+  "adjacent_regressions": "Alpha degrades moustache/brow/nape solidity; no source asset was changed. Motion and actor interfaces remain NOT_RUN.",
+  "stopping_reason": "Local diagnostic complete; exact sensitive-payload upload approval pending. No character or full-comparison completion claimed."
+}
