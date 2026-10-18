@@ -77,7 +77,7 @@ def current(root):
     status=json.loads(status_path.read_text())
     return {'outcome':status['outcome'],'exchange':status['substantive_exchange_count'],
         'next_checkpoint':status['next_checkpoint_exchange'],
-        'latest_process':status.get('context_cleanup_311',status.get('review_control_307')),
+        'latest_process':status.get('current_process',status.get('context_cleanup_311',status.get('review_control_307'))),
         'production_review_state':'BLOCKED: '+', '.join(d['id'] for d in state['open_defects']),
         'protected':state['protected'],'open_defects':state['open_defects'],
         'review_fingerprint':state['fingerprint'],'capabilities':state['capabilities'],

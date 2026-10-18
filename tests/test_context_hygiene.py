@@ -149,6 +149,9 @@ def test_current_reads_fresh_state_and_preserves_mode_limits(workspace,monkeypat
     assert result['exchange']==311 and result['capabilities']['direct_motion'] is False
     p.write_text(p.read_text().replace('311','312'))
     assert ch.current(workspace)['exchange']==312
+    updated=json.loads(p.read_text());updated['current_process']='awaiting media-review authority'
+    p.write_text(json.dumps(updated))
+    assert ch.current(workspace)['latest_process']=='awaiting media-review authority'
     def stale(root):raise rc.Blocked('STALE_BINDING')
     monkeypatch.setattr(rc,'capsule',stale)
     with pytest.raises(rc.Blocked):ch.current(workspace)
