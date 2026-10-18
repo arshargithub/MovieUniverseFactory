@@ -42,9 +42,14 @@ def test_bound_reuse_requires_real_content_and_authority(root):
 def test_current_authority_excludes_old_pending_claim(root):
     packet=pk.task_packet(root,task(root,'knowledge',['knowledge']))
     current=next(r for r in packet['obligations'] if r['id']=='current_state')['action']
-    assert '253 provisionally accepts' in current and 'Final pass only' in current
-    assert 'Strict248 pixel replay FAIL' in current
-    for name in ['sikh','gurkha','unmapped_new_asset']:
+    #257 added Sikh onboarding and revised wording; test current authority,
+    #not obsolete literal phrases or a deliberately superseded unknown entity.
+    assert '253 exact Pashtun20s provisional acceptance stays protected' in current
+    assert 'strict replay FAIL and final release/rights remain separate' in current
+    source=(root/'docs/knowledge/CURRENT_PRODUCTION_STATE.md').read_text()
+    assert 'Final pass occurs only when the full trailer is approved for release' in source
+    assert pk.task_packet(root,task(root,'modeling',['sikh']))['obligations']
+    for name in ['gurkha','unmapped_new_asset']:
         with pytest.raises(pk.KnowledgeError,match='UNRESOLVED_ENTITY'):
             pk.task_packet(root,task(root,'modeling',[name]))
 
