@@ -1,0 +1,577 @@
+{
+  "packet_digest": "e29dcaa4568be59b01f7fff2b0198a3417998aab2fa3e4a43e9af62ca4d1e68a",
+  "scope": "Full production-admission audit; scoped scene-development findings do not override NOT_RUN obligations",
+  "checks": [
+    {
+      "id": "authority",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Execute only Director304's local sequence corrections.",
+      "observation": "No new cloud deployment, asset purchase, paid generation, installation, publication or principal admission; TRELLIS parked.",
+      "evidence": [
+        {
+          "path": "results/sikh304/STRATEGY.md",
+          "sha256": "4324042926c2a7e2ec5a5c24b072b49d003894a2f3ca31af01c8089cfecd4231"
+        },
+        {
+          "path": "results/sikh304/INTERNAL_REVIEW.md",
+          "sha256": "0810174435f31b3e6b633236274020020026af972a65427b5272fc9661728c43"
+        }
+      ]
+    },
+    {
+      "id": "strategy",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Apply whole-scene strategy and replan when controls fail.",
+      "observation": "Integrated braking, contact, launch and environment rebuilt; late forelimb diagnosis changed joint distribution rather than adding another offset.",
+      "evidence": [
+        {
+          "path": "results/sikh304/STRATEGY.md",
+          "sha256": "4324042926c2a7e2ec5a5c24b072b49d003894a2f3ca31af01c8089cfecd4231"
+        },
+        {
+          "path": "results/sikh304/INTERNAL_REVIEW.md",
+          "sha256": "0810174435f31b3e6b633236274020020026af972a65427b5272fc9661728c43"
+        }
+      ]
+    },
+    {
+      "id": "visual_gate",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Inspect every selected frame plus full-size and alternate controls; separate scope.",
+      "observation": "Scoped action/environment findings are recorded, but full principal, real-time audiovisual and final release visual admission are not established.",
+      "evidence": [
+        {
+          "path": "results/sikh304/INTERNAL_REVIEW.md",
+          "sha256": "0810174435f31b3e6b633236274020020026af972a65427b5272fc9661728c43"
+        },
+        {
+          "path": ".runtime/art-direction/series01-sikh304/delivery-02/encoded-controls.png",
+          "sha256": "a0f7a4cb1f3c870f10a89b5fcaa737b62ac416a120389311761e9f8c12091a08"
+        },
+        {
+          "path": ".runtime/art-direction/series01-sikh304/repair-control-03/side.png",
+          "sha256": "664a951273a7ae9062eafa50478d6d6a2ef5733a01861de9eab372bba3f734fd"
+        }
+      ]
+    },
+    {
+      "id": "anticipation",
+      "kind": "review",
+      "status": "PASS",
+      "action_taken": "Test predicted and newly discovered failures before handing over.",
+      "observation": "Caught inherited excessive braking, launch acceleration, hidden bike, floating canopy and incorrect carpal folding internally; corrected and rechecked.",
+      "evidence": [
+        {
+          "path": "results/sikh304/INTERNAL_REVIEW.md",
+          "sha256": "0810174435f31b3e6b633236274020020026af972a65427b5272fc9661728c43"
+        },
+        {
+          "path": "results/sikh304/CARRY_FORWARD.md",
+          "sha256": "128c30104fbe54671f845ad51b14bf38362053b5320cf32188934635f45c3fe1"
+        }
+      ]
+    },
+    {
+      "id": "stopping",
+      "kind": "review",
+      "status": "PASS",
+      "action_taken": "Compare against the integrated authorized deliverable, not the latest technical milestone.",
+      "observation": "22s Sikh and42s joined clips complete with all requested scene categories addressed; final actor and release remain separate. No arbitrary timer used.",
+      "evidence": [
+        {
+          "path": "results/sikh304/verification.json",
+          "sha256": "9a96548bdd22092f3ced52fcce5ef1b9ff3a894a0f5f0ab51c1c0ebde5d9d823"
+        },
+        {
+          "path": "results/sikh304/INTERNAL_REVIEW.md",
+          "sha256": "0810174435f31b3e6b633236274020020026af972a65427b5272fc9661728c43"
+        }
+      ]
+    },
+    {
+      "id": "versioning",
+      "kind": "technical",
+      "status": "PASS",
+      "action_taken": "Bind both original and repaired render histories and protected co-star.",
+      "observation": "528 hashes verified;448 original frames retained exactly,80 replaced; selected native and accepted Pashtun bound separately.",
+      "evidence": [
+        {
+          "path": "results/sikh304/verification.json",
+          "sha256": "9a96548bdd22092f3ced52fcce5ef1b9ff3a894a0f5f0ab51c1c0ebde5d9d823"
+        },
+        {
+          "path": ".runtime/art-direction/series01-sikh304/delivery-02/frames.json",
+          "sha256": "81a667eb7f26c8a17186a2f14e8208812b8fe5e280eaa3ed17593891b119c6c4"
+        }
+      ]
+    },
+    {
+      "id": "economics",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Capture work and native/local jobs with unknown usage explicit.",
+      "observation": "Prospective ledger captures render jobs; full movie process3611s. No attributable engineering token measurement; no claimed repeatable unit cost.",
+      "evidence": [
+        {
+          "path": "results/sikh304/movie-8/receipt.json",
+          "sha256": "8339e729d339139416c59e06d71888701b089450a2547d76f92d58e55c210ba5"
+        },
+        {
+          "path": "results/sikh304/CARRY_FORWARD.md",
+          "sha256": "128c30104fbe54671f845ad51b14bf38362053b5320cf32188934635f45c3fe1"
+        }
+      ]
+    },
+    {
+      "id": "representation",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Retain proxy boundary while changing environment and horse realization.",
+      "observation": "No final principal face/body/beard/turban source or same-film character admission is supplied.",
+      "evidence": [
+        {
+          "path": "results/sikh304/INTERNAL_REVIEW.md",
+          "sha256": "0810174435f31b3e6b633236274020020026af972a65427b5272fc9661728c43"
+        },
+        {
+          "path": "results/sikh304/STRATEGY.md",
+          "sha256": "4324042926c2a7e2ec5a5c24b072b49d003894a2f3ca31af01c8089cfecd4231"
+        }
+      ]
+    },
+    {
+      "id": "anatomy",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Inspect horse joints and supported vehicle poses; do not generalize to actor.",
+      "observation": "Corrected forelimb shape and hind support reviewed; complete principal anatomy and deformation remain unqualified.",
+      "evidence": [
+        {
+          "path": "results/sikh304/INTERNAL_REVIEW.md",
+          "sha256": "0810174435f31b3e6b633236274020020026af972a65427b5272fc9661728c43"
+        },
+        {
+          "path": ".runtime/art-direction/series01-sikh304/repair-control-03/side.png",
+          "sha256": "664a951273a7ae9062eafa50478d6d6a2ef5733a01861de9eab372bba3f734fd"
+        }
+      ]
+    },
+    {
+      "id": "motion",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Review full frame progression and whole-clock derivatives.",
+      "observation": "Scoped choreography and contact pass recorded tests; real-time naturalness and final actor performance remain unqualified.",
+      "evidence": [
+        {
+          "path": "results/sikh304/verification.json",
+          "sha256": "9a96548bdd22092f3ced52fcce5ef1b9ff3a894a0f5f0ab51c1c0ebde5d9d823"
+        },
+        {
+          "path": "results/sikh304/INTERNAL_REVIEW.md",
+          "sha256": "0810174435f31b3e6b633236274020020026af972a65427b5272fc9661728c43"
+        }
+      ]
+    },
+    {
+      "id": "secondary",
+      "kind": "review",
+      "status": "PASS",
+      "action_taken": "Check rooted breeze, dust path and horse interfaces in scoped scene.",
+      "observation": "Fixed field24/48 differ; production chronology shows moving crops/dirt and attached reins. No claim of general wind/cloth physics.",
+      "evidence": [
+        {
+          "path": "results/sikh304/INTERNAL_REVIEW.md",
+          "sha256": "0810174435f31b3e6b633236274020020026af972a65427b5272fc9661728c43"
+        },
+        {
+          "path": "results/sikh304/STRATEGY.md",
+          "sha256": "4324042926c2a7e2ec5a5c24b072b49d003894a2f3ca31af01c8089cfecd4231"
+        }
+      ]
+    },
+    {
+      "id": "look",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Check new materials/landscape in actual lighting; preserve co-star.",
+      "observation": "Scene-level ground/bike/bank/foliage observations pass manual scoped review; final same-film principal/cast fidelity is not admitted.",
+      "evidence": [
+        {
+          "path": "results/sikh304/INTERNAL_REVIEW.md",
+          "sha256": "0810174435f31b3e6b633236274020020026af972a65427b5272fc9661728c43"
+        },
+        {
+          "path": ".runtime/art-direction/series01-sikh304/delivery-02/encoded-controls.png",
+          "sha256": "a0f7a4cb1f3c870f10a89b5fcaa737b62ac416a120389311761e9f8c12091a08"
+        }
+      ]
+    },
+    {
+      "id": "render_profile",
+      "kind": "technical",
+      "status": "PASS",
+      "action_taken": "Fresh-process compare selected native to delivered frame sources.",
+      "observation": "Five reopen and four outside-range controls all maximum1/255. This is this-scene repeatability, not promotion of all EEVEE sources.",
+      "evidence": [
+        {
+          "path": "results/sikh304/verification.json",
+          "sha256": "9a96548bdd22092f3ced52fcce5ef1b9ff3a894a0f5f0ab51c1c0ebde5d9d823"
+        }
+      ]
+    },
+    {
+      "id": "cache_safety",
+      "kind": "technical",
+      "status": "PASS",
+      "action_taken": "Run one sanitized Blender worker with embedded scripts disabled.",
+      "observation": "Saved derivatives preserve original natives; fixed handlers only; no credential or global preference transfer.",
+      "evidence": [
+        {
+          "path": "results/sikh304/movie-8/receipt.json",
+          "sha256": "8339e729d339139416c59e06d71888701b089450a2547d76f92d58e55c210ba5"
+        },
+        {
+          "path": "results/sikh304/INTERNAL_REVIEW.md",
+          "sha256": "0810174435f31b3e6b633236274020020026af972a65427b5272fc9661728c43"
+        }
+      ]
+    },
+    {
+      "id": "narrative",
+      "kind": "review",
+      "status": "PASS",
+      "action_taken": "Bind exact accepted20s unit and original join PCM.",
+      "observation": "Pashtun input hash unchanged and first20s joined PCM exact; no new spoken text or performance.",
+      "evidence": [
+        {
+          "path": "results/sikh304/verification.json",
+          "sha256": "9a96548bdd22092f3ced52fcce5ef1b9ff3a894a0f5f0ab51c1c0ebde5d9d823"
+        },
+        {
+          "path": ".runtime/art-direction/series01-sikh304/audio-01/audio-manifest.json",
+          "sha256": "e601d3aea2f2d29e4a68d8f86c3712f35851b68c3497408a797d3b73e1d67a1c"
+        }
+      ]
+    },
+    {
+      "id": "quotation",
+      "kind": "review",
+      "status": "PASS",
+      "action_taken": "Reuse protected Pashtun picture without new quote graphics.",
+      "observation": "Accepted picture input unchanged; no archival photo import or new historical assertion.",
+      "evidence": [
+        {
+          "path": "results/sikh304/verification.json",
+          "sha256": "9a96548bdd22092f3ced52fcce5ef1b9ff3a894a0f5f0ab51c1c0ebde5d9d823"
+        }
+      ]
+    },
+    {
+      "id": "sound",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Preserve selected theme and locally timed effects; decode both files.",
+      "observation": "Audio source timing/protection and full decoding checked, but direct auditory fit/intelligibility evaluation was not performed.",
+      "evidence": [
+        {
+          "path": "results/sikh304/verification.json",
+          "sha256": "9a96548bdd22092f3ced52fcce5ef1b9ff3a894a0f5f0ab51c1c0ebde5d9d823"
+        },
+        {
+          "path": ".runtime/art-direction/series01-sikh304/audio-01/audio-manifest.json",
+          "sha256": "e601d3aea2f2d29e4a68d8f86c3712f35851b68c3497408a797d3b73e1d67a1c"
+        }
+      ]
+    },
+    {
+      "id": "captions",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Keep existing accepted visual unit; do not imply release packaging.",
+      "observation": "New full-trailer accessibility captions and account/device safe-zone review are outside this scoped pass and not qualified.",
+      "evidence": [
+        {
+          "path": "results/sikh304/verification.json",
+          "sha256": "9a96548bdd22092f3ced52fcce5ef1b9ff3a894a0f5f0ab51c1c0ebde5d9d823"
+        },
+        {
+          "path": "results/sikh304/STRATEGY.md",
+          "sha256": "4324042926c2a7e2ec5a5c24b072b49d003894a2f3ca31af01c8089cfecd4231"
+        }
+      ]
+    },
+    {
+      "id": "rights",
+      "kind": "process",
+      "status": "NOT_RUN",
+      "action_taken": "Avoid new third-party production assets/calls and publication.",
+      "observation": "Existing assets reused under current development scope. This pass does not establish final distribution/license closure.",
+      "evidence": [
+        {
+          "path": "results/sikh304/STRATEGY.md",
+          "sha256": "4324042926c2a7e2ec5a5c24b072b49d003894a2f3ca31af01c8089cfecd4231"
+        }
+      ]
+    },
+    {
+      "id": "narration_a",
+      "kind": "review",
+      "status": "PASS",
+      "action_taken": "Retain accepted short officer performance with no new narration.",
+      "observation": "Exact protected audio portion verified; Sikh segment adds no dialogue.",
+      "evidence": [
+        {
+          "path": "results/sikh304/verification.json",
+          "sha256": "9a96548bdd22092f3ced52fcce5ef1b9ff3a894a0f5f0ab51c1c0ebde5d9d823"
+        },
+        {
+          "path": ".runtime/art-direction/series01-sikh304/audio-01/audio-manifest.json",
+          "sha256": "e601d3aea2f2d29e4a68d8f86c3712f35851b68c3497408a797d3b73e1d67a1c"
+        }
+      ]
+    },
+    {
+      "id": "current_state",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Respect253 acceptance and current Sikh-only continuation.",
+      "observation": "Accepted Pashtun20s protected, principal proxy retained, TRELLIS parked and Gurkha not started.",
+      "evidence": [
+        {
+          "path": "results/sikh304/STRATEGY.md",
+          "sha256": "4324042926c2a7e2ec5a5c24b072b49d003894a2f3ca31af01c8089cfecd4231"
+        },
+        {
+          "path": "results/sikh304/verification.json",
+          "sha256": "9a96548bdd22092f3ced52fcce5ef1b9ff3a894a0f5f0ab51c1c0ebde5d9d823"
+        }
+      ]
+    },
+    {
+      "id": "au_reference",
+      "kind": "review",
+      "status": "PASS",
+      "action_taken": "Keep art-direction/native acceptance distinct from staging proxy.",
+      "observation": "No approved protagonist reference changed or weakened to match proxy; rejected scenes retained as diagnostic evidence.",
+      "evidence": [
+        {
+          "path": "results/sikh304/INTERNAL_REVIEW.md",
+          "sha256": "0810174435f31b3e6b633236274020020026af972a65427b5272fc9661728c43"
+        },
+        {
+          "path": "results/sikh304/STRATEGY.md",
+          "sha256": "4324042926c2a7e2ec5a5c24b072b49d003894a2f3ca31af01c8089cfecd4231"
+        }
+      ]
+    },
+    {
+      "id": "au_deformation",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Map horse generic FK names to anatomical segments before pose repair.",
+      "observation": "Horse-specific comparison completed; final principal body/cloth deformation not qualified.",
+      "evidence": [
+        {
+          "path": ".runtime/art-direction/series01-sikh304/repair-control-03/side.png",
+          "sha256": "664a951273a7ae9062eafa50478d6d6a2ef5733a01861de9eab372bba3f734fd"
+        },
+        {
+          "path": "results/sikh304/INTERNAL_REVIEW.md",
+          "sha256": "0810174435f31b3e6b633236274020020026af972a65427b5272fc9661728c43"
+        }
+      ]
+    },
+    {
+      "id": "au_performance",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Inspect complete action and intermediate transitions; disclose evidence limits.",
+      "observation": "Frame chronology and derivative envelopes checked; no claim of real-time acting/perceptual certification.",
+      "evidence": [
+        {
+          "path": "results/sikh304/INTERNAL_REVIEW.md",
+          "sha256": "0810174435f31b3e6b633236274020020026af972a65427b5272fc9661728c43"
+        },
+        {
+          "path": "results/sikh304/verification.json",
+          "sha256": "9a96548bdd22092f3ced52fcce5ef1b9ff3a894a0f5f0ab51c1c0ebde5d9d823"
+        }
+      ]
+    },
+    {
+      "id": "au_contact",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Verify actual tire/boot geometry after final transforms and inspect horse interfaces.",
+      "observation": "Tires under2.8mm, boot about1mm, reins/spear attached; final human hands/knuckles/cloth contact still require principal integration.",
+      "evidence": [
+        {
+          "path": "results/sikh304/verification.json",
+          "sha256": "9a96548bdd22092f3ced52fcce5ef1b9ff3a894a0f5f0ab51c1c0ebde5d9d823"
+        },
+        {
+          "path": "results/sikh304/INTERNAL_REVIEW.md",
+          "sha256": "0810174435f31b3e6b633236274020020026af972a65427b5272fc9661728c43"
+        }
+      ]
+    },
+    {
+      "id": "au_surface",
+      "kind": "review",
+      "status": "PASS",
+      "action_taken": "Review designed ground/ditch/crop/bike variation in production light.",
+      "observation": "Protruding gravel removed; compacted lanes, sediment/verge plants, curved crop forms and restrained dust/rubbed metal reviewed.",
+      "evidence": [
+        {
+          "path": "results/sikh304/INTERNAL_REVIEW.md",
+          "sha256": "0810174435f31b3e6b633236274020020026af972a65427b5272fc9661728c43"
+        },
+        {
+          "path": ".runtime/art-direction/series01-sikh304/delivery-02/encoded-controls.png",
+          "sha256": "a0f7a4cb1f3c870f10a89b5fcaa737b62ac416a120389311761e9f8c12091a08"
+        }
+      ]
+    },
+    {
+      "id": "au_staging",
+      "kind": "review",
+      "status": "PASS",
+      "action_taken": "Review all cameras and transitions, plus terrain occlusion tests.",
+      "observation": "No bank hiding rider across528frame rays; full chronology retains approach, crowd/leader relation and clear departure.",
+      "evidence": [
+        {
+          "path": "results/sikh304/verification.json",
+          "sha256": "9a96548bdd22092f3ced52fcce5ef1b9ff3a894a0f5f0ab51c1c0ebde5d9d823"
+        },
+        {
+          "path": "results/sikh304/INTERNAL_REVIEW.md",
+          "sha256": "0810174435f31b3e6b633236274020020026af972a65427b5272fc9661728c43"
+        }
+      ]
+    },
+    {
+      "id": "au_audio",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Protect approved music choice and sound boundaries.",
+      "observation": "No Gemini taste gate or new paid audio; exact approved join segment protected, but fresh listening/phone review is not done.",
+      "evidence": [
+        {
+          "path": "results/sikh304/verification.json",
+          "sha256": "9a96548bdd22092f3ced52fcce5ef1b9ff3a894a0f5f0ab51c1c0ebde5d9d823"
+        },
+        {
+          "path": ".runtime/art-direction/series01-sikh304/audio-01/audio-manifest.json",
+          "sha256": "e601d3aea2f2d29e4a68d8f86c3712f35851b68c3497408a797d3b73e1d67a1c"
+        }
+      ]
+    },
+    {
+      "id": "au_reuse",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Record exact sources and scoped applicability; distinguish local from remote.",
+      "observation": "Local source/frame provenance complete; no new off-device protection/restore or final portable actor qualification.",
+      "evidence": [
+        {
+          "path": ".runtime/art-direction/series01-sikh304/delivery-02/frames.json",
+          "sha256": "81a667eb7f26c8a17186a2f14e8208812b8fe5e280eaa3ed17593891b119c6c4"
+        },
+        {
+          "path": "results/sikh304/CARRY_FORWARD.md",
+          "sha256": "128c30104fbe54671f845ad51b14bf38362053b5320cf32188934635f45c3fe1"
+        }
+      ]
+    },
+    {
+      "id": "sikh_scope",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Keep this work Sikh-only scene correction under304.",
+      "observation": "No Gurkha, new protagonist design, new music choice or unapproved cloud action.",
+      "evidence": [
+        {
+          "path": "results/sikh304/STRATEGY.md",
+          "sha256": "4324042926c2a7e2ec5a5c24b072b49d003894a2f3ca31af01c8089cfecd4231"
+        },
+        {
+          "path": "results/sikh304/INTERNAL_REVIEW.md",
+          "sha256": "0810174435f31b3e6b633236274020020026af972a65427b5272fc9661728c43"
+        }
+      ]
+    },
+    {
+      "id": "sikh_cloth",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Leave principal source/one-cloth qualification with its separate work package.",
+      "observation": "Proxy uncover exists, but authentic final turban/face-cloth continuity and final performance are not newly admitted.",
+      "evidence": [
+        {
+          "path": "results/sikh304/STRATEGY.md",
+          "sha256": "4324042926c2a7e2ec5a5c24b072b49d003894a2f3ca31af01c8089cfecd4231"
+        }
+      ]
+    },
+    {
+      "id": "sikh_motion",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Correct requested coupled vehicle/horse action and retain principal boundary.",
+      "observation": "Scene-level stop, support, launch, rear and contacts reviewed; final principal greeting/uncover/anatomical fidelity remain unqualified.",
+      "evidence": [
+        {
+          "path": "results/sikh304/INTERNAL_REVIEW.md",
+          "sha256": "0810174435f31b3e6b633236274020020026af972a65427b5272fc9661728c43"
+        },
+        {
+          "path": "results/sikh304/verification.json",
+          "sha256": "9a96548bdd22092f3ced52fcce5ef1b9ff3a894a0f5f0ab51c1c0ebde5d9d823"
+        }
+      ]
+    },
+    {
+      "id": "sikh_geography",
+      "kind": "review",
+      "status": "PASS",
+      "action_taken": "Build divided moonlit Punjab-inspired agricultural land.",
+      "observation": "Fields extend beyond roadside strips with access gaps/bunds, ditch vegetation/sediment, boundary trees and breeze. Generic landscape is not documentary species/season verification.",
+      "evidence": [
+        {
+          "path": "results/sikh304/INTERNAL_REVIEW.md",
+          "sha256": "0810174435f31b3e6b633236274020020026af972a65427b5272fc9661728c43"
+        },
+        {
+          "path": ".runtime/art-direction/series01-sikh304/delivery-02/encoded-controls.png",
+          "sha256": "a0f7a4cb1f3c870f10a89b5fcaa737b62ac416a120389311761e9f8c12091a08"
+        }
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "prediction": "Uncoupled position and angular curves can imply impossible braking/launch.",
+      "observation": "Whole-clock differentiation found >20m/s2 braking and28.53m/s2 launch in rejected predecessors.",
+      "response": "Integrated bounded velocity/acceleration curves and rebuilt contact, camera and dust.",
+      "result": "resolved"
+    },
+    {
+      "prediction": "Changing the leader bank may hide the moving motorcycle between controls.",
+      "observation": "Frames450–469 revealed occlusion in rejected build02/03.",
+      "response": "Reshaped road-facing bank; all528ray checks and actual final frames clear.",
+      "result": "resolved"
+    },
+    {
+      "prediction": "Generic FK names and small images may hide wrong horse joint folding.",
+      "observation": "Final-size320 showed the radius tucked back with too little carpal articulation.",
+      "response": "Mapped neutral endpoints, compared three controls, selected3 and reviewed all80leader frames.",
+      "result": "resolved"
+    }
+  ],
+  "adjacent_regressions": "Protected Pashtun source and first20s PCM unchanged. Nine matched fresh-native controls within1/255. Complete selected chronology inspected; contact/dust/camera and horse support/reins/spear rechecked. No observed new scoped blocker. Proxy identity, real-time listening, final rights/protection remain unqualified.",
+  "stopping_reason": "Integrated scene-development clips complete for Director review under the already declared proxy scope. This audit intentionally blocks full production admission; it is not a release-ready result."
+}

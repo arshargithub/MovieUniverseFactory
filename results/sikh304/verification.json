@@ -1,0 +1,115 @@
+{
+  "status": "TECHNICAL_DELIVERY_CHECKS_PASS",
+  "media": [
+    {
+      "path": ".runtime/art-direction/series01-sikh304/delivery-02/sikh-22s.mp4",
+      "sha256": "113babbde18320c94af8724102b4ee9a1bf29cc6d07bb7d4edeae05be9b5083c",
+      "duration": 22.0,
+      "size": [
+        720,
+        1280
+      ],
+      "decode": "PASS"
+    },
+    {
+      "path": ".runtime/art-direction/series01-sikh304/delivery-02/pashtun-sikh-42s.mp4",
+      "sha256": "d7ae6561203e51b5a110e8ea9bd5c537cb796544acb19de5cc94b3a30035ed3a",
+      "duration": 42.0,
+      "size": [
+        1080,
+        1920
+      ],
+      "decode": "PASS"
+    }
+  ],
+  "native": ".runtime/art-direction/series01-sikh304/repair-build-03/sequence.blend",
+  "frames": 528,
+  "rendered_replacement": 80,
+  "retained_exact_frames": 448,
+  "pashtun_source_sha256": "1004ed9f2e06d2eafb008c925eb9d266e8a13b8603086020e28d19e3b606722b",
+  "pashtun_join_pcm_exact": true,
+  "outside_range_controls": [
+    {
+      "frame": 1,
+      "max_channel_error": 1,
+      "mean_abs_error": 7.233796296296296e-07,
+      "pixels_over_1": 0
+    },
+    {
+      "frame": 275,
+      "max_channel_error": 1,
+      "mean_abs_error": 6.908275462962963e-05,
+      "pixels_over_1": 0
+    },
+    {
+      "frame": 356,
+      "max_channel_error": 0,
+      "mean_abs_error": 0.0,
+      "pixels_over_1": 0
+    },
+    {
+      "frame": 450,
+      "max_channel_error": 1,
+      "mean_abs_error": 1.8084490740740741e-06,
+      "pixels_over_1": 0
+    }
+  ],
+  "reopen": {
+    "scope": "Five fresh-process controls against assembled retained/repaired sequence",
+    "rows": [
+      {
+        "frame": 1,
+        "max_channel_error": 1,
+        "mean_abs_error": 3.616898148148148e-07,
+        "pixels_over_1": 0
+      },
+      {
+        "frame": 130,
+        "max_channel_error": 1,
+        "mean_abs_error": 1.4467592592592592e-06,
+        "pixels_over_1": 0
+      },
+      {
+        "frame": 148,
+        "max_channel_error": 1,
+        "mean_abs_error": 2.423321759259259e-05,
+        "pixels_over_1": 0
+      },
+      {
+        "frame": 315,
+        "max_channel_error": 0,
+        "mean_abs_error": 0.0,
+        "pixels_over_1": 0
+      },
+      {
+        "frame": 450,
+        "max_channel_error": 1,
+        "mean_abs_error": 2.5318287037037036e-06,
+        "pixels_over_1": 0
+      }
+    ],
+    "strict_1_pass": true
+  },
+  "tire_contact_max_gap_m": {
+    "front": 0.0009546596556901932,
+    "rear": 0.002787431702017784
+  },
+  "supported_boot_gap_m": [
+    0.0009995947125979836,
+    0.0009995970646020681
+  ],
+  "bank_occlusions": 0,
+  "launch_acceleration_m_s2": [
+    0.8380165188705442,
+    3.6314050011146386
+  ],
+  "braking_acceleration_m_s2": [
+    -7.287100267000387,
+    7.75321037858064e-11
+  ],
+  "limits": [
+    "Frame inspection and decoding are not real-time viewing or listening.",
+    "Principal proxy is not production admission.",
+    "No new remote backup or publication."
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "status": "SCENE_DEVELOPMENT_REVIEW_READY_DIRECTOR_PENDING",
+  "production_admission": "NOT_GRANTED",
+  "evidence_level": "All selected frames in chronological sheets, full-size/alternate controls, encoded sampled controls and numeric/source checks; not real-time audiovisual perception.",
+  "known_scoped_blockers": [],
+  "defects": [
+    {
+      "id": "304-BRAKE",
+      "status": "SCOPED_FRAME_REVIEW_PASS",
+      "observation": "Two ramped braking phases, upright rolling recovery,42degree final heading."
+    },
+    {
+      "id": "304-BALANCE",
+      "status": "SCOPED_FRAME_REVIEW_PASS",
+      "observation": "Independent torso counterbalance/bracing and re-solved reaches."
+    },
+    {
+      "id": "304-FOOT",
+      "status": "SCOPED_FRAME_REVIEW_PASS",
+      "observation": "Support foot descends at low speed; measured boot bottom about1mm above actual ground."
+    },
+    {
+      "id": "304-LAUNCH",
+      "status": "SCOPED_FRAME_REVIEW_PASS",
+      "observation": "Moderate extra rear rotation and23cm displacement, then bounded acceleration."
+    },
+    {
+      "id": "304-ROAD",
+      "status": "SCOPED_FRAME_REVIEW_PASS",
+      "observation": "Removed decorative gravel; fine shared soil and wheel-worn variation."
+    },
+    {
+      "id": "304-DITCH",
+      "status": "SCOPED_FRAME_REVIEW_PASS",
+      "observation": "Sediment pockets, curved verge grass and eroded edges."
+    },
+    {
+      "id": "304-CROP",
+      "status": "SCOPED_FRAME_REVIEW_PASS",
+      "observation": "Broader divided cultivated parcels with access strips and cross-bunds."
+    },
+    {
+      "id": "304-WIND",
+      "status": "SCOPED_FRAME_REVIEW_PASS",
+      "observation": "Rooted spatially phased cereal motion, fixed-camera difference control."
+    },
+    {
+      "id": "304-TREE",
+      "status": "SCOPED_FRAME_REVIEW_PASS",
+      "observation": "Branch/leaf silhouettes replace blob crowns and remove floating legacy foliage."
+    },
+    {
+      "id": "304-BANK",
+      "status": "SCOPED_FRAME_REVIEW_PASS",
+      "observation": "Asymmetric earth bank integrated with fields; no bike occlusion."
+    },
+    {
+      "id": "304-REAR",
+      "status": "SCOPED_FRAME_REVIEW_PASS",
+      "observation": "Selected repair3 carpal fold with supported hindquarters; full rise/landing inspected."
+    },
+    {
+      "id": "304-BIKE",
+      "status": "SCOPED_FRAME_REVIEW_PASS",
+      "observation": "Restrained low dust, rubbed olive paint, leather and steel response."
+    }
+  ],
+  "limits": [
+    "Final principal not admitted.",
+    "Real-time playback/listening and mobile review not performed.",
+    "Final release rights and new S3 recovery verification not performed.",
+    "Generic species/shot-authored dynamics are not general physical qualification."
+  ],
+  "evidence": [
+    {
+      "path": "results/sikh304/verification.json",
+      "sha256": "9a96548bdd22092f3ced52fcce5ef1b9ff3a894a0f5f0ab51c1c0ebde5d9d823"
+    },
+    {
+      "path": "results/sikh304/INTERNAL_REVIEW.md",
+      "sha256": "0810174435f31b3e6b633236274020020026af972a65427b5272fc9661728c43"
+    },
+    {
+      "path": "results/sikh304/STRATEGY.md",
+      "sha256": "4324042926c2a7e2ec5a5c24b072b49d003894a2f3ca31af01c8089cfecd4231"
+    },
+    {
+      "path": "results/sikh304/CARRY_FORWARD.md",
+      "sha256": "128c30104fbe54671f845ad51b14bf38362053b5320cf32188934635f45c3fe1"
+    },
+    {
+      "path": "results/sikh304/movie-8/receipt.json",
+      "sha256": "8339e729d339139416c59e06d71888701b089450a2547d76f92d58e55c210ba5"
+    },
+    {
+      "path": ".runtime/art-direction/series01-sikh304/delivery-02/frames.json",
+      "sha256": "81a667eb7f26c8a17186a2f14e8208812b8fe5e280eaa3ed17593891b119c6c4"
+    },
+    {
+      "path": ".runtime/art-direction/series01-sikh304/delivery-02/encoded-controls.png",
+      "sha256": "a0f7a4cb1f3c870f10a89b5fcaa737b62ac416a120389311761e9f8c12091a08"
+    },
+    {
+      "path": ".runtime/art-direction/series01-sikh304/repair-control-03/side.png",
+      "sha256": "664a951273a7ae9062eafa50478d6d6a2ef5733a01861de9eab372bba3f734fd"
+    },
+    {
+      "path": ".runtime/art-direction/series01-sikh304/audio-01/audio-manifest.json",
+      "sha256": "e601d3aea2f2d29e4a68d8f86c3712f35851b68c3497408a797d3b73e1d67a1c"
+    }
+  ]
+}

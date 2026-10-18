@@ -1,0 +1,391 @@
+{
+  "closed_episode_count": 1,
+  "consumption_per_outcome": {
+    "closed_episodes": {
+      "engineering_tokens": null,
+      "net_seconds": null
+    },
+    "closed_experiments": {
+      "engineering_tokens": null,
+      "net_seconds": null
+    },
+    "director_accepted_outputs": {
+      "engineering_tokens": null,
+      "net_seconds": null
+    },
+    "technically_successful_outputs": {
+      "engineering_tokens": null,
+      "net_seconds": null
+    }
+  },
+  "cost_scope": "Development investment; repeatable runtime cost remains in the campaign provider records.",
+  "engineering_usage": {
+    "account_allowance": {
+      "observations": [],
+      "scope": "account-wide; not experiment token attribution"
+    },
+    "actual_engineering_charge_usd": null,
+    "api_equivalent_estimate_usd": null,
+    "blocks": [],
+    "captured_tasks": [],
+    "category_coverage": {
+      "cache_write_input_tokens": {
+        "observed_blocks": 0,
+        "total_blocks": 0
+      },
+      "cached_input_tokens": {
+        "observed_blocks": 0,
+        "total_blocks": 0
+      },
+      "input_tokens": {
+        "observed_blocks": 0,
+        "total_blocks": 0
+      },
+      "output_tokens": {
+        "observed_blocks": 0,
+        "total_blocks": 0
+      },
+      "reasoning_output_tokens": {
+        "observed_blocks": 0,
+        "total_blocks": 0
+      },
+      "total_tokens": {
+        "observed_blocks": 0,
+        "total_blocks": 0
+      }
+    },
+    "exact_attributable_tokens": null,
+    "expected_tasks": [],
+    "missing_tasks": [],
+    "observed_tokens": {
+      "cache_write_input_tokens": null,
+      "cached_input_tokens": null,
+      "input_tokens": null,
+      "output_tokens": null,
+      "reasoning_output_tokens": null,
+      "total_tokens": null
+    },
+    "status": "UNKNOWN",
+    "subscription": {
+      "allocation_usd": null,
+      "treatment": "shared fixed overhead"
+    },
+    "token_definitions": {
+      "cache_write_input_tokens": "Retained as reported; not added to total.",
+      "cached_input_tokens": "Subset of input; do not add to total.",
+      "input_tokens": "Reported input total; cached input is a subset.",
+      "output_tokens": "Reported output total; reasoning output is a subset.",
+      "reasoning_output_tokens": "Subset of output; do not add to total.",
+      "total_tokens": "Reported total; input plus output, without subset double counting."
+    },
+    "uncertainties": [
+      "capture_completeness_not_established"
+    ],
+    "window_end": "2026-10-18T08:23:12.580070+00:00",
+    "window_start": "2026-10-18T06:04:50.392810+00:00"
+  },
+  "episodes": [
+    {
+      "assistant_active_union_seconds": 8302.102303981781,
+      "assistant_time_scope": "Recorded activity intervals only; not token generation time",
+      "calendar_elapsed_seconds": 8302.18725991249,
+      "coverage_fraction": 0.9999897670423408,
+      "disposition": "YELLOW",
+      "episode_id": "scene",
+      "excluded_input_wait_seconds": null,
+      "human_review_seconds": null,
+      "jobs": [
+        {
+          "job_id": "sikh304-inspect-1",
+          "job_kind": "native",
+          "monotonic_seconds": 2.130171457771212,
+          "outcome": "FAILED",
+          "utc_seconds": 2.1303560733795166
+        },
+        {
+          "job_id": "sikh304-inspect-2",
+          "job_kind": "native",
+          "monotonic_seconds": 3.614317625295371,
+          "outcome": "PASSED",
+          "utc_seconds": 3.615185022354126
+        },
+        {
+          "job_id": "sikh304-build-1",
+          "job_kind": "native",
+          "monotonic_seconds": 227.8094613328576,
+          "outcome": "PASSED",
+          "utc_seconds": 227.81168699264526
+        },
+        {
+          "job_id": "sikh304-audio-1",
+          "job_kind": "local",
+          "monotonic_seconds": 2.360923500265926,
+          "outcome": "PASSED",
+          "utc_seconds": 2.361017942428589
+        },
+        {
+          "job_id": "sikh304-build-2",
+          "job_kind": "native",
+          "monotonic_seconds": 265.51328995777294,
+          "outcome": "PASSED",
+          "utc_seconds": 265.5146601200104
+        },
+        {
+          "job_id": "sikh304-proof-2",
+          "job_kind": "native",
+          "monotonic_seconds": 572.0739129995927,
+          "outcome": "PASSED",
+          "utc_seconds": 572.0777060985565
+        },
+        {
+          "job_id": "sikh304-build-3",
+          "job_kind": "native",
+          "monotonic_seconds": 331.36632770858705,
+          "outcome": "PASSED",
+          "utc_seconds": 331.36740016937256
+        },
+        {
+          "job_id": "sikh304-build-4",
+          "job_kind": "native",
+          "monotonic_seconds": 398.6810994162224,
+          "outcome": "FAILED",
+          "utc_seconds": 398.6860010623932
+        },
+        {
+          "job_id": "sikh304-finish-5",
+          "job_kind": "native",
+          "monotonic_seconds": 165.6008113338612,
+          "outcome": "PASSED",
+          "utc_seconds": 165.60196709632874
+        },
+        {
+          "job_id": "sikh304-movie-5",
+          "job_kind": "native",
+          "monotonic_seconds": 231.6354795000516,
+          "outcome": "FAILED",
+          "utc_seconds": 231.63766384124756
+        },
+        {
+          "job_id": "sikh304-build-8",
+          "job_kind": "native",
+          "monotonic_seconds": 330.5753170000389,
+          "outcome": "PASSED",
+          "utc_seconds": 330.57768416404724
+        },
+        {
+          "job_id": "sikh304-movie-8",
+          "job_kind": "native",
+          "monotonic_seconds": 3612.1136137908325,
+          "outcome": "PASSED",
+          "utc_seconds": 3612.137929916382
+        },
+        {
+          "job_id": "sikh304-repair-control-1",
+          "job_kind": "native",
+          "monotonic_seconds": 14.524661332834512,
+          "outcome": "PASSED",
+          "utc_seconds": 14.524393081665039
+        },
+        {
+          "job_id": "sikh304-repair-control-2",
+          "job_kind": "native",
+          "monotonic_seconds": 13.00346799986437,
+          "outcome": "PASSED",
+          "utc_seconds": 13.003692865371704
+        },
+        {
+          "job_id": "sikh304-repair-control-3",
+          "job_kind": "native",
+          "monotonic_seconds": 11.99889629194513,
+          "outcome": "PASSED",
+          "utc_seconds": 11.999134063720703
+        },
+        {
+          "job_id": "sikh304-repair-build-3",
+          "job_kind": "native",
+          "monotonic_seconds": 15.825370125006884,
+          "outcome": "PASSED",
+          "utc_seconds": 15.825639963150024
+        },
+        {
+          "job_id": "sikh304-repair-render-3",
+          "job_kind": "native",
+          "monotonic_seconds": 377.86130637535825,
+          "outcome": "PASSED",
+          "utc_seconds": 377.86334705352783
+        },
+        {
+          "job_id": "sikh304-repair-reopen-3",
+          "job_kind": "native",
+          "monotonic_seconds": 27.999115083832294,
+          "outcome": "PASSED",
+          "utc_seconds": 27.999619960784912
+        },
+        {
+          "job_id": "sikh304-edit-delivery02",
+          "job_kind": "local",
+          "monotonic_seconds": 27.555401499848813,
+          "outcome": "PASSED",
+          "utc_seconds": 27.555622100830078
+        },
+        {
+          "job_id": "sikh304-final-verify",
+          "job_kind": "local",
+          "monotonic_seconds": 3.2205952922813594,
+          "outcome": "PASSED",
+          "utc_seconds": 3.2206859588623047
+        }
+      ],
+      "lifecycle": "CLOSED",
+      "native_job_wall_sum_seconds": 6602.326619331725,
+      "native_job_wall_union_seconds": null,
+      "native_jobs": [
+        {
+          "job_id": "sikh304-inspect-1",
+          "job_kind": "native",
+          "monotonic_seconds": 2.130171457771212,
+          "outcome": "FAILED",
+          "utc_seconds": 2.1303560733795166
+        },
+        {
+          "job_id": "sikh304-inspect-2",
+          "job_kind": "native",
+          "monotonic_seconds": 3.614317625295371,
+          "outcome": "PASSED",
+          "utc_seconds": 3.615185022354126
+        },
+        {
+          "job_id": "sikh304-build-1",
+          "job_kind": "native",
+          "monotonic_seconds": 227.8094613328576,
+          "outcome": "PASSED",
+          "utc_seconds": 227.81168699264526
+        },
+        {
+          "job_id": "sikh304-build-2",
+          "job_kind": "native",
+          "monotonic_seconds": 265.51328995777294,
+          "outcome": "PASSED",
+          "utc_seconds": 265.5146601200104
+        },
+        {
+          "job_id": "sikh304-proof-2",
+          "job_kind": "native",
+          "monotonic_seconds": 572.0739129995927,
+          "outcome": "PASSED",
+          "utc_seconds": 572.0777060985565
+        },
+        {
+          "job_id": "sikh304-build-3",
+          "job_kind": "native",
+          "monotonic_seconds": 331.36632770858705,
+          "outcome": "PASSED",
+          "utc_seconds": 331.36740016937256
+        },
+        {
+          "job_id": "sikh304-build-4",
+          "job_kind": "native",
+          "monotonic_seconds": 398.6810994162224,
+          "outcome": "FAILED",
+          "utc_seconds": 398.6860010623932
+        },
+        {
+          "job_id": "sikh304-finish-5",
+          "job_kind": "native",
+          "monotonic_seconds": 165.6008113338612,
+          "outcome": "PASSED",
+          "utc_seconds": 165.60196709632874
+        },
+        {
+          "job_id": "sikh304-movie-5",
+          "job_kind": "native",
+          "monotonic_seconds": 231.6354795000516,
+          "outcome": "FAILED",
+          "utc_seconds": 231.63766384124756
+        },
+        {
+          "job_id": "sikh304-build-8",
+          "job_kind": "native",
+          "monotonic_seconds": 330.5753170000389,
+          "outcome": "PASSED",
+          "utc_seconds": 330.57768416404724
+        },
+        {
+          "job_id": "sikh304-movie-8",
+          "job_kind": "native",
+          "monotonic_seconds": 3612.1136137908325,
+          "outcome": "PASSED",
+          "utc_seconds": 3612.137929916382
+        },
+        {
+          "job_id": "sikh304-repair-control-1",
+          "job_kind": "native",
+          "monotonic_seconds": 14.524661332834512,
+          "outcome": "PASSED",
+          "utc_seconds": 14.524393081665039
+        },
+        {
+          "job_id": "sikh304-repair-control-2",
+          "job_kind": "native",
+          "monotonic_seconds": 13.00346799986437,
+          "outcome": "PASSED",
+          "utc_seconds": 13.003692865371704
+        },
+        {
+          "job_id": "sikh304-repair-control-3",
+          "job_kind": "native",
+          "monotonic_seconds": 11.99889629194513,
+          "outcome": "PASSED",
+          "utc_seconds": 11.999134063720703
+        },
+        {
+          "job_id": "sikh304-repair-build-3",
+          "job_kind": "native",
+          "monotonic_seconds": 15.825370125006884,
+          "outcome": "PASSED",
+          "utc_seconds": 15.825639963150024
+        },
+        {
+          "job_id": "sikh304-repair-render-3",
+          "job_kind": "native",
+          "monotonic_seconds": 377.86130637535825,
+          "outcome": "PASSED",
+          "utc_seconds": 377.86334705352783
+        },
+        {
+          "job_id": "sikh304-repair-reopen-3",
+          "job_kind": "native",
+          "monotonic_seconds": 27.999115083832294,
+          "outcome": "PASSED",
+          "utc_seconds": 27.999619960784912
+        }
+      ],
+      "net_elapsed_seconds": null,
+      "observed_excluded_input_wait_seconds": 0,
+      "operational_proxies": {},
+      "phase_net_seconds": null,
+      "uncertainties": [
+        "unexplained_gap"
+      ],
+      "unknown_gap_seconds": 0.08495593070983887
+    }
+  ],
+  "experiment_id": "SIKH304",
+  "factory_api": {
+    "evidence_ref": "results/sikh304/STRATEGY.md",
+    "known_api_cost_usd": 0,
+    "provider_calls": 0,
+    "reason": "Scene304 used existing local assets, Blender, local audio synthesis and encoding. No cloud compute, image/music provider generation, new installation or paid asset was dispatched. Public web reference reads are not counted as creative-provider calls. Codex subscription usage and engineering token quantities remain unknown, not zero.",
+    "status": "NO_NEW_PAID_PROVIDER_CALLS_IN_LOCAL_SCENE_PASS"
+  },
+  "model_setting_observations": [],
+  "net_episode_sum_seconds": null,
+  "note": "Episode totals exclude inter-episode gaps. Job sums are process-seconds, not CPU time.",
+  "outcome_denominators": {
+    "closed_episodes": 1,
+    "closed_experiments": 1,
+    "director_accepted_outputs": 0,
+    "technically_successful_outputs": 1
+  },
+  "schema_version": "1.0"
+}
