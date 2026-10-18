@@ -1,0 +1,53 @@
+[
+  {
+    "event_hash": "9217d7e913b8c8d7ca512c53e03be58f2686904e3da9eebfa01de9b31d57aa68",
+    "event_id": "f2f1d40d-84c1-4990-9734-8b9ca9d77bb5",
+    "event_type": "policy",
+    "policy": {
+      "campaign_limit_units": 3500000000,
+      "request_ceiling_units": 3500000000,
+      "request_limit": 1,
+      "scope_limits_units": {
+        "qualification": 3500000000
+      },
+      "stage_limits": {
+        "gpu_session": {
+          "amount_units": 3500000000,
+          "calls": 1
+        }
+      }
+    },
+    "previous_hash": null,
+    "schema_version": "1.0",
+    "utc": "2026-10-18T04:47:46.338421+00:00"
+  },
+  {
+    "amount_units": 3500000000,
+    "event_hash": "97eca7b418df28ca41d8159ef6fda8ce2906cdbadcfb3d0053879c6befab0655",
+    "event_id": "1303afd5-b45c-4fcf-9a95-bf1b1c8de094",
+    "event_type": "reserved",
+    "previous_hash": "9217d7e913b8c8d7ca512c53e03be58f2686904e3da9eebfa01de9b31d57aa68",
+    "purpose": "synthetic_aws_session",
+    "reservation_id": "0840ceee-0cb9-4dd1-8863-91fbf6414614",
+    "run_id": "trellis301-1024",
+    "schema_version": "1.0",
+    "scope": "qualification",
+    "stage": "gpu_session",
+    "utc": "2026-10-18T04:48:28.904232+00:00"
+  },
+  {
+    "cost_units": null,
+    "error": "Actual AWS billing pending; retain reservation, do not equate estimate with invoice",
+    "event_hash": "431e7ce2ffa7eb0cac49ae02d436cdbb675decea13d3c8eca6b104ba79a1a453",
+    "event_id": "e2558191-a143-4569-bf6d-8718a5154332",
+    "event_type": "settled",
+    "previous_hash": "97eca7b418df28ca41d8159ef6fda8ce2906cdbadcfb3d0053879c6befab0655",
+    "reservation_exceeded": false,
+    "reservation_id": "0840ceee-0cb9-4dd1-8863-91fbf6414614",
+    "response_id": null,
+    "schema_version": "1.0",
+    "usage": {},
+    "usage_unknown": true,
+    "utc": "2026-10-18T04:50:49.175086+00:00"
+  }
+]

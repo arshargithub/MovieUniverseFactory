@@ -1,0 +1,50 @@
+{
+  "effective_ceiling_usd": 15,
+  "closed_liability_bound_usd": 10,
+  "closed_actual_bill_usd": null,
+  "conditional_extra_usd_activated": 0,
+  "admission_total_usd": 14.0,
+  "new": {
+    "calls": 1,
+    "known_cost_usd": 0.0,
+    "reserved_unknown_usd": 4.0,
+    "committed_usd": 4.0,
+    "unresolved_calls": 1,
+    "reservation_exceeded": false,
+    "campaign_limit_usd": 5.0,
+    "effective_campaign_limit_usd": 5.0,
+    "scopes": {
+      "qualification": {
+        "calls": 1,
+        "known_cost_usd": 0.0,
+        "reserved_unknown_usd": 4.0,
+        "committed_usd": 4.0,
+        "unresolved_calls": 1,
+        "reservation_exceeded": false
+      }
+    },
+    "runs": {
+      "trellis301-export": {
+        "gpu_session": {
+          "calls": 1,
+          "known_cost_usd": 0.0,
+          "reserved_unknown_usd": 4.0,
+          "committed_usd": 4.0,
+          "unresolved_calls": 1,
+          "reservation_exceeded": false
+        }
+      }
+    }
+  },
+  "basis": "results/trellis301/STRATEGY.md",
+  "historical_holds_preserved_not_invoice": true,
+  "teardown_bindings": {
+    "results/trellis293/teardown-verification.json": "8efd73d82d53fadcf1bffb72fd16ebf1f8b21082379f65b7ba757d0d3c42f33b",
+    "results/trellis294/teardown-verification.json": "363f6a30a0828f3ce6706598cd71030241509a9a4a5c0a946bd63f483f61a13c",
+    "results/trellis295/cloud-a/teardown-verification.json": "a096a3d9eb3e2cd2c75ce8f7de0a1e7e3dd01037e3d1c132df1abc419746c3eb",
+    "results/trellis298/teardown-verification.json": "832d91d819b9c25bbff98193c092915a3ac2333cb48c4ada13f1608f4078cc24",
+    "results/trellis298/cloud-b/teardown-verification.json": "e4a271b3c9baa942316caf631eda776838f89bba08619f6e44fec59e72898f57",
+    "results/trellis298/cloud-c/teardown-verification.json": "2912bdeef6d0e180577783c44525bbde03445ddc39f12fa5d51b88e433e4910a",
+    "results/trellis298/cloud-d/teardown-verification.json": "d5fe0c1c695bd58180e6ecda8e3e4f10f632fcdaaaaccf066e5c8d4ca42c0d10"
+  }
+}

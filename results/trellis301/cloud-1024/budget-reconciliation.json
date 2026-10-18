@@ -1,0 +1,11 @@
+{
+  "reservation_id": "0840ceee-0cb9-4dd1-8863-91fbf6414614",
+  "raw_ledger_sha256": "23664e7f263b90b5d4b14f72447b76bcfec9d331c65e17ec67cc84e0f3ba5ece",
+  "raw_events_changed": false,
+  "original_unknown_settlement_event": "e2558191-a143-4569-bf6d-8718a5154332",
+  "worker_instance": "i-0fdc266d5cc5b0883",
+  "teardown_receipt_sha256": "d883b9c048ec1d0463274ebe9fed1cec5031db4cfddd7054cc64ed5e51c1677e",
+  "held_usd": 3.5,
+  "actual_total_billed_usd": null,
+  "reason": "Pre-launch cleanup recorded unknown settlement with null response; preserve it and link the actual single worker separately. No refund/released allowance inferred."
+}

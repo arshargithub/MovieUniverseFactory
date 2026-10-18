@@ -1,0 +1,2150 @@
+{
+  "packet_digest": "58b5d8d7ee2546cbe9a98b031ed9c7d55d3cddb92d35a0f615ea10bc25694c93",
+  "scope": "Completed fixed-source export comparison; principal admission blocked",
+  "checks": [
+    {
+      "id": "authority",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Manual static source review and separate technical checks.",
+      "observation": "Director301 controlled comparison and302 exact payload approval; original15USD preserved, no production acceptance.",
+      "evidence": [
+        {
+          "path": "results/trellis301/EXPORT_REVIEW.md",
+          "sha256": "413f2b8c4e1941a5d26dfacc69540553b8731814b02f0ef822c41eca3ab0bcb8"
+        },
+        {
+          "path": "scripts/trellis301_export_inspect.py",
+          "sha256": "378a0b63378cd204d82d608804322ca4936557f7395c8f20278362909d21471f"
+        },
+        {
+          "path": ".runtime/trellis301/export/retrieved/evidence/comparison-receipt.json",
+          "sha256": "1a3e74320981852a3107b82a922d1415024aa19b3d18211a633039fd833387d5"
+        },
+        {
+          "path": "results/trellis301/cloud-export/teardown-verification.json",
+          "sha256": "61e3b03d9be44e8b04eed3557084f18e78c1575fd256d2b5ee6be7bb172642b8"
+        },
+        {
+          "path": ".runtime/art-direction/series01-sikh257/sikh-uncovered-concept-v03.png",
+          "sha256": "7aaa7a8433d85024681e427b5cd290ec35fd5b78adfa0aea67035847665a151f"
+        },
+        {
+          "path": ".runtime/art-direction/series01-finish248/opening-final/frame-0200.png",
+          "sha256": "ee30bbe77f6d7f4c3bcdaf298406fd9f3645f08c15403f7eafcd06e91b5a9b0c"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/300000-2048/inspection.json",
+          "sha256": "21fbbd4b6ffcb495bd9d62f88846b30af851f5205d3b3dd079ec4675157d23b5"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/300000-2048/reopen.json",
+          "sha256": "c1ce6bec93a07109742a54b79e95bdd80df1de147ed49582f9abc903e7d7bf76"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-2048/inspection.json",
+          "sha256": "780eb29c2ca34499954c57f7d06d1300a8532944a9448cb76cac94d8baff3f47"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-2048/reopen.json",
+          "sha256": "c1ce6bec93a07109742a54b79e95bdd80df1de147ed49582f9abc903e7d7bf76"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-4096/inspection.json",
+          "sha256": "f47fe6f6cb7117bc35aaaf0bcffa574968039d3d1918321808f1924bc29652d8"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-4096/reopen.json",
+          "sha256": "c1ce6bec93a07109742a54b79e95bdd80df1de147ed49582f9abc903e7d7bf76"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-front.jpg",
+          "sha256": "13cbd21746445fa715dfddf984f41b7f1e7bf72485adae2863d5b3e235262383"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-left-quarter.jpg",
+          "sha256": "129befed6d505fc707c5351338710db92745c1fe3492365777f04bb42c9f6060"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-left-profile.jpg",
+          "sha256": "d225f360e3d68358111ee14c022ec78b1faecfacdea8eafcb93b9f54afa48c31"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-back.jpg",
+          "sha256": "d2a1f581a3d5ffefeeb79f21ec2906bdfb243bf225dfefe6d3d78840e032b963"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-right-profile.jpg",
+          "sha256": "5218eaad89f0f85bc81d17be50a307569c5d70307b91f4210a22d09f7924d8d9"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-right-quarter.jpg",
+          "sha256": "1af30387664c9cf31529f08d0a947da0de8bd7f4d919848cb04a92d075321fd7"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-front-clay.jpg",
+          "sha256": "4c838fae856ba7893da53017b140fc2342c4a07dd779545efa5a8ee4dfd3224e"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-left-quarter-clay.jpg",
+          "sha256": "cfa633f7608f5b85ca49413ba1a0b74085143070fe4eb5ab50d191b2fe301aaf"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-right-quarter-clay.jpg",
+          "sha256": "8674ab8908c517fabfac5fff50ab1a00fffce256bd8011f4791fd2a8a618c951"
+        },
+        {
+          "path": "results/trellis301/export-metrics.json",
+          "sha256": "7a6a73be408476eca6a3f7fc482d61a3de491cace0a81f4bf377b0e112c66af4"
+        }
+      ]
+    },
+    {
+      "id": "strategy",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Manual static source review and separate technical checks.",
+      "observation": "Fixed source/geometry and atlas controls completed before contingent1024; no second reconstruction of saved shell.",
+      "evidence": [
+        {
+          "path": "results/trellis301/EXPORT_REVIEW.md",
+          "sha256": "413f2b8c4e1941a5d26dfacc69540553b8731814b02f0ef822c41eca3ab0bcb8"
+        },
+        {
+          "path": "scripts/trellis301_export_inspect.py",
+          "sha256": "378a0b63378cd204d82d608804322ca4936557f7395c8f20278362909d21471f"
+        },
+        {
+          "path": ".runtime/trellis301/export/retrieved/evidence/comparison-receipt.json",
+          "sha256": "1a3e74320981852a3107b82a922d1415024aa19b3d18211a633039fd833387d5"
+        },
+        {
+          "path": "results/trellis301/cloud-export/teardown-verification.json",
+          "sha256": "61e3b03d9be44e8b04eed3557084f18e78c1575fd256d2b5ee6be7bb172642b8"
+        },
+        {
+          "path": ".runtime/art-direction/series01-sikh257/sikh-uncovered-concept-v03.png",
+          "sha256": "7aaa7a8433d85024681e427b5cd290ec35fd5b78adfa0aea67035847665a151f"
+        },
+        {
+          "path": ".runtime/art-direction/series01-finish248/opening-final/frame-0200.png",
+          "sha256": "ee30bbe77f6d7f4c3bcdaf298406fd9f3645f08c15403f7eafcd06e91b5a9b0c"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/300000-2048/inspection.json",
+          "sha256": "21fbbd4b6ffcb495bd9d62f88846b30af851f5205d3b3dd079ec4675157d23b5"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/300000-2048/reopen.json",
+          "sha256": "c1ce6bec93a07109742a54b79e95bdd80df1de147ed49582f9abc903e7d7bf76"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-2048/inspection.json",
+          "sha256": "780eb29c2ca34499954c57f7d06d1300a8532944a9448cb76cac94d8baff3f47"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-2048/reopen.json",
+          "sha256": "c1ce6bec93a07109742a54b79e95bdd80df1de147ed49582f9abc903e7d7bf76"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-4096/inspection.json",
+          "sha256": "f47fe6f6cb7117bc35aaaf0bcffa574968039d3d1918321808f1924bc29652d8"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-4096/reopen.json",
+          "sha256": "c1ce6bec93a07109742a54b79e95bdd80df1de147ed49582f9abc903e7d7bf76"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-front.jpg",
+          "sha256": "13cbd21746445fa715dfddf984f41b7f1e7bf72485adae2863d5b3e235262383"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-left-quarter.jpg",
+          "sha256": "129befed6d505fc707c5351338710db92745c1fe3492365777f04bb42c9f6060"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-left-profile.jpg",
+          "sha256": "d225f360e3d68358111ee14c022ec78b1faecfacdea8eafcb93b9f54afa48c31"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-back.jpg",
+          "sha256": "d2a1f581a3d5ffefeeb79f21ec2906bdfb243bf225dfefe6d3d78840e032b963"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-right-profile.jpg",
+          "sha256": "5218eaad89f0f85bc81d17be50a307569c5d70307b91f4210a22d09f7924d8d9"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-right-quarter.jpg",
+          "sha256": "1af30387664c9cf31529f08d0a947da0de8bd7f4d919848cb04a92d075321fd7"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-front-clay.jpg",
+          "sha256": "4c838fae856ba7893da53017b140fc2342c4a07dd779545efa5a8ee4dfd3224e"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-left-quarter-clay.jpg",
+          "sha256": "cfa633f7608f5b85ca49413ba1a0b74085143070fe4eb5ab50d191b2fe301aaf"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-right-quarter-clay.jpg",
+          "sha256": "8674ab8908c517fabfac5fff50ab1a00fffce256bd8011f4791fd2a8a618c951"
+        },
+        {
+          "path": "results/trellis301/export-metrics.json",
+          "sha256": "7a6a73be408476eca6a3f7fc482d61a3de491cace0a81f4bf377b0e112c66af4"
+        }
+      ]
+    },
+    {
+      "id": "visual_gate",
+      "kind": "review",
+      "status": "FAIL",
+      "action_taken": "Manual static source review and separate technical checks.",
+      "observation": "Malformed eye forms, solid coarse facial hair and noisy turban remain below approved reference/co-star floor.",
+      "evidence": [
+        {
+          "path": "results/trellis301/EXPORT_REVIEW.md",
+          "sha256": "413f2b8c4e1941a5d26dfacc69540553b8731814b02f0ef822c41eca3ab0bcb8"
+        },
+        {
+          "path": "scripts/trellis301_export_inspect.py",
+          "sha256": "378a0b63378cd204d82d608804322ca4936557f7395c8f20278362909d21471f"
+        },
+        {
+          "path": ".runtime/trellis301/export/retrieved/evidence/comparison-receipt.json",
+          "sha256": "1a3e74320981852a3107b82a922d1415024aa19b3d18211a633039fd833387d5"
+        },
+        {
+          "path": "results/trellis301/cloud-export/teardown-verification.json",
+          "sha256": "61e3b03d9be44e8b04eed3557084f18e78c1575fd256d2b5ee6be7bb172642b8"
+        },
+        {
+          "path": ".runtime/art-direction/series01-sikh257/sikh-uncovered-concept-v03.png",
+          "sha256": "7aaa7a8433d85024681e427b5cd290ec35fd5b78adfa0aea67035847665a151f"
+        },
+        {
+          "path": ".runtime/art-direction/series01-finish248/opening-final/frame-0200.png",
+          "sha256": "ee30bbe77f6d7f4c3bcdaf298406fd9f3645f08c15403f7eafcd06e91b5a9b0c"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/300000-2048/inspection.json",
+          "sha256": "21fbbd4b6ffcb495bd9d62f88846b30af851f5205d3b3dd079ec4675157d23b5"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/300000-2048/reopen.json",
+          "sha256": "c1ce6bec93a07109742a54b79e95bdd80df1de147ed49582f9abc903e7d7bf76"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-2048/inspection.json",
+          "sha256": "780eb29c2ca34499954c57f7d06d1300a8532944a9448cb76cac94d8baff3f47"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-2048/reopen.json",
+          "sha256": "c1ce6bec93a07109742a54b79e95bdd80df1de147ed49582f9abc903e7d7bf76"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-4096/inspection.json",
+          "sha256": "f47fe6f6cb7117bc35aaaf0bcffa574968039d3d1918321808f1924bc29652d8"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-4096/reopen.json",
+          "sha256": "c1ce6bec93a07109742a54b79e95bdd80df1de147ed49582f9abc903e7d7bf76"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-front.jpg",
+          "sha256": "13cbd21746445fa715dfddf984f41b7f1e7bf72485adae2863d5b3e235262383"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-left-quarter.jpg",
+          "sha256": "129befed6d505fc707c5351338710db92745c1fe3492365777f04bb42c9f6060"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-left-profile.jpg",
+          "sha256": "d225f360e3d68358111ee14c022ec78b1faecfacdea8eafcb93b9f54afa48c31"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-back.jpg",
+          "sha256": "d2a1f581a3d5ffefeeb79f21ec2906bdfb243bf225dfefe6d3d78840e032b963"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-right-profile.jpg",
+          "sha256": "5218eaad89f0f85bc81d17be50a307569c5d70307b91f4210a22d09f7924d8d9"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-right-quarter.jpg",
+          "sha256": "1af30387664c9cf31529f08d0a947da0de8bd7f4d919848cb04a92d075321fd7"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-front-clay.jpg",
+          "sha256": "4c838fae856ba7893da53017b140fc2342c4a07dd779545efa5a8ee4dfd3224e"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-left-quarter-clay.jpg",
+          "sha256": "cfa633f7608f5b85ca49413ba1a0b74085143070fe4eb5ab50d191b2fe301aaf"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-right-quarter-clay.jpg",
+          "sha256": "8674ab8908c517fabfac5fff50ab1a00fffce256bd8011f4791fd2a8a618c951"
+        },
+        {
+          "path": "results/trellis301/export-metrics.json",
+          "sha256": "7a6a73be408476eca6a3f7fc482d61a3de491cace0a81f4bf377b0e112c66af4"
+        }
+      ]
+    },
+    {
+      "id": "anticipation",
+      "kind": "review",
+      "status": "PASS",
+      "action_taken": "Manual static source review and separate technical checks.",
+      "observation": "Whole face, beard, crown and reverse angles reviewed in textured/clay controls; eyes remain malformed and beard solid.",
+      "evidence": [
+        {
+          "path": "results/trellis301/EXPORT_REVIEW.md",
+          "sha256": "413f2b8c4e1941a5d26dfacc69540553b8731814b02f0ef822c41eca3ab0bcb8"
+        },
+        {
+          "path": "scripts/trellis301_export_inspect.py",
+          "sha256": "378a0b63378cd204d82d608804322ca4936557f7395c8f20278362909d21471f"
+        },
+        {
+          "path": ".runtime/trellis301/export/retrieved/evidence/comparison-receipt.json",
+          "sha256": "1a3e74320981852a3107b82a922d1415024aa19b3d18211a633039fd833387d5"
+        },
+        {
+          "path": "results/trellis301/cloud-export/teardown-verification.json",
+          "sha256": "61e3b03d9be44e8b04eed3557084f18e78c1575fd256d2b5ee6be7bb172642b8"
+        },
+        {
+          "path": ".runtime/art-direction/series01-sikh257/sikh-uncovered-concept-v03.png",
+          "sha256": "7aaa7a8433d85024681e427b5cd290ec35fd5b78adfa0aea67035847665a151f"
+        },
+        {
+          "path": ".runtime/art-direction/series01-finish248/opening-final/frame-0200.png",
+          "sha256": "ee30bbe77f6d7f4c3bcdaf298406fd9f3645f08c15403f7eafcd06e91b5a9b0c"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/300000-2048/inspection.json",
+          "sha256": "21fbbd4b6ffcb495bd9d62f88846b30af851f5205d3b3dd079ec4675157d23b5"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/300000-2048/reopen.json",
+          "sha256": "c1ce6bec93a07109742a54b79e95bdd80df1de147ed49582f9abc903e7d7bf76"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-2048/inspection.json",
+          "sha256": "780eb29c2ca34499954c57f7d06d1300a8532944a9448cb76cac94d8baff3f47"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-2048/reopen.json",
+          "sha256": "c1ce6bec93a07109742a54b79e95bdd80df1de147ed49582f9abc903e7d7bf76"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-4096/inspection.json",
+          "sha256": "f47fe6f6cb7117bc35aaaf0bcffa574968039d3d1918321808f1924bc29652d8"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-4096/reopen.json",
+          "sha256": "c1ce6bec93a07109742a54b79e95bdd80df1de147ed49582f9abc903e7d7bf76"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-front.jpg",
+          "sha256": "13cbd21746445fa715dfddf984f41b7f1e7bf72485adae2863d5b3e235262383"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-left-quarter.jpg",
+          "sha256": "129befed6d505fc707c5351338710db92745c1fe3492365777f04bb42c9f6060"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-left-profile.jpg",
+          "sha256": "d225f360e3d68358111ee14c022ec78b1faecfacdea8eafcb93b9f54afa48c31"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-back.jpg",
+          "sha256": "d2a1f581a3d5ffefeeb79f21ec2906bdfb243bf225dfefe6d3d78840e032b963"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-right-profile.jpg",
+          "sha256": "5218eaad89f0f85bc81d17be50a307569c5d70307b91f4210a22d09f7924d8d9"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-right-quarter.jpg",
+          "sha256": "1af30387664c9cf31529f08d0a947da0de8bd7f4d919848cb04a92d075321fd7"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-front-clay.jpg",
+          "sha256": "4c838fae856ba7893da53017b140fc2342c4a07dd779545efa5a8ee4dfd3224e"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-left-quarter-clay.jpg",
+          "sha256": "cfa633f7608f5b85ca49413ba1a0b74085143070fe4eb5ab50d191b2fe301aaf"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-right-quarter-clay.jpg",
+          "sha256": "8674ab8908c517fabfac5fff50ab1a00fffce256bd8011f4791fd2a8a618c951"
+        },
+        {
+          "path": "results/trellis301/export-metrics.json",
+          "sha256": "7a6a73be408476eca6a3f7fc482d61a3de491cace0a81f4bf377b0e112c66af4"
+        }
+      ]
+    },
+    {
+      "id": "stopping",
+      "kind": "review",
+      "status": "PASS",
+      "action_taken": "Manual static source review and separate technical checks.",
+      "observation": "Export-only rescue rejected; continue the authorized contingent1024 test only after its separate cost/payload admission.",
+      "evidence": [
+        {
+          "path": "results/trellis301/EXPORT_REVIEW.md",
+          "sha256": "413f2b8c4e1941a5d26dfacc69540553b8731814b02f0ef822c41eca3ab0bcb8"
+        },
+        {
+          "path": "scripts/trellis301_export_inspect.py",
+          "sha256": "378a0b63378cd204d82d608804322ca4936557f7395c8f20278362909d21471f"
+        },
+        {
+          "path": ".runtime/trellis301/export/retrieved/evidence/comparison-receipt.json",
+          "sha256": "1a3e74320981852a3107b82a922d1415024aa19b3d18211a633039fd833387d5"
+        },
+        {
+          "path": "results/trellis301/cloud-export/teardown-verification.json",
+          "sha256": "61e3b03d9be44e8b04eed3557084f18e78c1575fd256d2b5ee6be7bb172642b8"
+        },
+        {
+          "path": ".runtime/art-direction/series01-sikh257/sikh-uncovered-concept-v03.png",
+          "sha256": "7aaa7a8433d85024681e427b5cd290ec35fd5b78adfa0aea67035847665a151f"
+        },
+        {
+          "path": ".runtime/art-direction/series01-finish248/opening-final/frame-0200.png",
+          "sha256": "ee30bbe77f6d7f4c3bcdaf298406fd9f3645f08c15403f7eafcd06e91b5a9b0c"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/300000-2048/inspection.json",
+          "sha256": "21fbbd4b6ffcb495bd9d62f88846b30af851f5205d3b3dd079ec4675157d23b5"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/300000-2048/reopen.json",
+          "sha256": "c1ce6bec93a07109742a54b79e95bdd80df1de147ed49582f9abc903e7d7bf76"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-2048/inspection.json",
+          "sha256": "780eb29c2ca34499954c57f7d06d1300a8532944a9448cb76cac94d8baff3f47"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-2048/reopen.json",
+          "sha256": "c1ce6bec93a07109742a54b79e95bdd80df1de147ed49582f9abc903e7d7bf76"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-4096/inspection.json",
+          "sha256": "f47fe6f6cb7117bc35aaaf0bcffa574968039d3d1918321808f1924bc29652d8"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-4096/reopen.json",
+          "sha256": "c1ce6bec93a07109742a54b79e95bdd80df1de147ed49582f9abc903e7d7bf76"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-front.jpg",
+          "sha256": "13cbd21746445fa715dfddf984f41b7f1e7bf72485adae2863d5b3e235262383"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-left-quarter.jpg",
+          "sha256": "129befed6d505fc707c5351338710db92745c1fe3492365777f04bb42c9f6060"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-left-profile.jpg",
+          "sha256": "d225f360e3d68358111ee14c022ec78b1faecfacdea8eafcb93b9f54afa48c31"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-back.jpg",
+          "sha256": "d2a1f581a3d5ffefeeb79f21ec2906bdfb243bf225dfefe6d3d78840e032b963"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-right-profile.jpg",
+          "sha256": "5218eaad89f0f85bc81d17be50a307569c5d70307b91f4210a22d09f7924d8d9"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-right-quarter.jpg",
+          "sha256": "1af30387664c9cf31529f08d0a947da0de8bd7f4d919848cb04a92d075321fd7"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-front-clay.jpg",
+          "sha256": "4c838fae856ba7893da53017b140fc2342c4a07dd779545efa5a8ee4dfd3224e"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-left-quarter-clay.jpg",
+          "sha256": "cfa633f7608f5b85ca49413ba1a0b74085143070fe4eb5ab50d191b2fe301aaf"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-right-quarter-clay.jpg",
+          "sha256": "8674ab8908c517fabfac5fff50ab1a00fffce256bd8011f4791fd2a8a618c951"
+        },
+        {
+          "path": "results/trellis301/export-metrics.json",
+          "sha256": "7a6a73be408476eca6a3f7fc482d61a3de491cace0a81f4bf377b0e112c66af4"
+        }
+      ]
+    },
+    {
+      "id": "versioning",
+      "kind": "technical",
+      "status": "PASS",
+      "action_taken": "Manual static source review and separate technical checks.",
+      "observation": "GLB hashes verified, identical geometryUV for atlas pair, independent Blender reopen bindings exact; originals unchanged.",
+      "evidence": [
+        {
+          "path": "results/trellis301/EXPORT_REVIEW.md",
+          "sha256": "413f2b8c4e1941a5d26dfacc69540553b8731814b02f0ef822c41eca3ab0bcb8"
+        },
+        {
+          "path": "scripts/trellis301_export_inspect.py",
+          "sha256": "378a0b63378cd204d82d608804322ca4936557f7395c8f20278362909d21471f"
+        },
+        {
+          "path": ".runtime/trellis301/export/retrieved/evidence/comparison-receipt.json",
+          "sha256": "1a3e74320981852a3107b82a922d1415024aa19b3d18211a633039fd833387d5"
+        },
+        {
+          "path": "results/trellis301/cloud-export/teardown-verification.json",
+          "sha256": "61e3b03d9be44e8b04eed3557084f18e78c1575fd256d2b5ee6be7bb172642b8"
+        },
+        {
+          "path": ".runtime/art-direction/series01-sikh257/sikh-uncovered-concept-v03.png",
+          "sha256": "7aaa7a8433d85024681e427b5cd290ec35fd5b78adfa0aea67035847665a151f"
+        },
+        {
+          "path": ".runtime/art-direction/series01-finish248/opening-final/frame-0200.png",
+          "sha256": "ee30bbe77f6d7f4c3bcdaf298406fd9f3645f08c15403f7eafcd06e91b5a9b0c"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/300000-2048/inspection.json",
+          "sha256": "21fbbd4b6ffcb495bd9d62f88846b30af851f5205d3b3dd079ec4675157d23b5"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/300000-2048/reopen.json",
+          "sha256": "c1ce6bec93a07109742a54b79e95bdd80df1de147ed49582f9abc903e7d7bf76"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-2048/inspection.json",
+          "sha256": "780eb29c2ca34499954c57f7d06d1300a8532944a9448cb76cac94d8baff3f47"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-2048/reopen.json",
+          "sha256": "c1ce6bec93a07109742a54b79e95bdd80df1de147ed49582f9abc903e7d7bf76"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-4096/inspection.json",
+          "sha256": "f47fe6f6cb7117bc35aaaf0bcffa574968039d3d1918321808f1924bc29652d8"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-4096/reopen.json",
+          "sha256": "c1ce6bec93a07109742a54b79e95bdd80df1de147ed49582f9abc903e7d7bf76"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-front.jpg",
+          "sha256": "13cbd21746445fa715dfddf984f41b7f1e7bf72485adae2863d5b3e235262383"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-left-quarter.jpg",
+          "sha256": "129befed6d505fc707c5351338710db92745c1fe3492365777f04bb42c9f6060"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-left-profile.jpg",
+          "sha256": "d225f360e3d68358111ee14c022ec78b1faecfacdea8eafcb93b9f54afa48c31"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-back.jpg",
+          "sha256": "d2a1f581a3d5ffefeeb79f21ec2906bdfb243bf225dfefe6d3d78840e032b963"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-right-profile.jpg",
+          "sha256": "5218eaad89f0f85bc81d17be50a307569c5d70307b91f4210a22d09f7924d8d9"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-right-quarter.jpg",
+          "sha256": "1af30387664c9cf31529f08d0a947da0de8bd7f4d919848cb04a92d075321fd7"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-front-clay.jpg",
+          "sha256": "4c838fae856ba7893da53017b140fc2342c4a07dd779545efa5a8ee4dfd3224e"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-left-quarter-clay.jpg",
+          "sha256": "cfa633f7608f5b85ca49413ba1a0b74085143070fe4eb5ab50d191b2fe301aaf"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-right-quarter-clay.jpg",
+          "sha256": "8674ab8908c517fabfac5fff50ab1a00fffce256bd8011f4791fd2a8a618c951"
+        },
+        {
+          "path": "results/trellis301/export-metrics.json",
+          "sha256": "7a6a73be408476eca6a3f7fc482d61a3de491cace0a81f4bf377b0e112c66af4"
+        }
+      ]
+    },
+    {
+      "id": "economics",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Manual static source review and separate technical checks.",
+      "observation": "Verified temporary teardown and compute upper bound recorded; actual AWS invoice unknown; raw budget holds retained.",
+      "evidence": [
+        {
+          "path": "results/trellis301/EXPORT_REVIEW.md",
+          "sha256": "413f2b8c4e1941a5d26dfacc69540553b8731814b02f0ef822c41eca3ab0bcb8"
+        },
+        {
+          "path": "scripts/trellis301_export_inspect.py",
+          "sha256": "378a0b63378cd204d82d608804322ca4936557f7395c8f20278362909d21471f"
+        },
+        {
+          "path": ".runtime/trellis301/export/retrieved/evidence/comparison-receipt.json",
+          "sha256": "1a3e74320981852a3107b82a922d1415024aa19b3d18211a633039fd833387d5"
+        },
+        {
+          "path": "results/trellis301/cloud-export/teardown-verification.json",
+          "sha256": "61e3b03d9be44e8b04eed3557084f18e78c1575fd256d2b5ee6be7bb172642b8"
+        },
+        {
+          "path": ".runtime/art-direction/series01-sikh257/sikh-uncovered-concept-v03.png",
+          "sha256": "7aaa7a8433d85024681e427b5cd290ec35fd5b78adfa0aea67035847665a151f"
+        },
+        {
+          "path": ".runtime/art-direction/series01-finish248/opening-final/frame-0200.png",
+          "sha256": "ee30bbe77f6d7f4c3bcdaf298406fd9f3645f08c15403f7eafcd06e91b5a9b0c"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/300000-2048/inspection.json",
+          "sha256": "21fbbd4b6ffcb495bd9d62f88846b30af851f5205d3b3dd079ec4675157d23b5"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/300000-2048/reopen.json",
+          "sha256": "c1ce6bec93a07109742a54b79e95bdd80df1de147ed49582f9abc903e7d7bf76"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-2048/inspection.json",
+          "sha256": "780eb29c2ca34499954c57f7d06d1300a8532944a9448cb76cac94d8baff3f47"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-2048/reopen.json",
+          "sha256": "c1ce6bec93a07109742a54b79e95bdd80df1de147ed49582f9abc903e7d7bf76"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-4096/inspection.json",
+          "sha256": "f47fe6f6cb7117bc35aaaf0bcffa574968039d3d1918321808f1924bc29652d8"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-4096/reopen.json",
+          "sha256": "c1ce6bec93a07109742a54b79e95bdd80df1de147ed49582f9abc903e7d7bf76"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-front.jpg",
+          "sha256": "13cbd21746445fa715dfddf984f41b7f1e7bf72485adae2863d5b3e235262383"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-left-quarter.jpg",
+          "sha256": "129befed6d505fc707c5351338710db92745c1fe3492365777f04bb42c9f6060"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-left-profile.jpg",
+          "sha256": "d225f360e3d68358111ee14c022ec78b1faecfacdea8eafcb93b9f54afa48c31"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-back.jpg",
+          "sha256": "d2a1f581a3d5ffefeeb79f21ec2906bdfb243bf225dfefe6d3d78840e032b963"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-right-profile.jpg",
+          "sha256": "5218eaad89f0f85bc81d17be50a307569c5d70307b91f4210a22d09f7924d8d9"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-right-quarter.jpg",
+          "sha256": "1af30387664c9cf31529f08d0a947da0de8bd7f4d919848cb04a92d075321fd7"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-front-clay.jpg",
+          "sha256": "4c838fae856ba7893da53017b140fc2342c4a07dd779545efa5a8ee4dfd3224e"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-left-quarter-clay.jpg",
+          "sha256": "cfa633f7608f5b85ca49413ba1a0b74085143070fe4eb5ab50d191b2fe301aaf"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-right-quarter-clay.jpg",
+          "sha256": "8674ab8908c517fabfac5fff50ab1a00fffce256bd8011f4791fd2a8a618c951"
+        },
+        {
+          "path": "results/trellis301/export-metrics.json",
+          "sha256": "7a6a73be408476eca6a3f7fc482d61a3de491cace0a81f4bf377b0e112c66af4"
+        }
+      ]
+    },
+    {
+      "id": "representation",
+      "kind": "review",
+      "status": "FAIL",
+      "action_taken": "Manual static source review and separate technical checks.",
+      "observation": "Malformed eye forms, solid coarse facial hair and noisy turban remain below approved reference/co-star floor.",
+      "evidence": [
+        {
+          "path": "results/trellis301/EXPORT_REVIEW.md",
+          "sha256": "413f2b8c4e1941a5d26dfacc69540553b8731814b02f0ef822c41eca3ab0bcb8"
+        },
+        {
+          "path": "scripts/trellis301_export_inspect.py",
+          "sha256": "378a0b63378cd204d82d608804322ca4936557f7395c8f20278362909d21471f"
+        },
+        {
+          "path": ".runtime/trellis301/export/retrieved/evidence/comparison-receipt.json",
+          "sha256": "1a3e74320981852a3107b82a922d1415024aa19b3d18211a633039fd833387d5"
+        },
+        {
+          "path": "results/trellis301/cloud-export/teardown-verification.json",
+          "sha256": "61e3b03d9be44e8b04eed3557084f18e78c1575fd256d2b5ee6be7bb172642b8"
+        },
+        {
+          "path": ".runtime/art-direction/series01-sikh257/sikh-uncovered-concept-v03.png",
+          "sha256": "7aaa7a8433d85024681e427b5cd290ec35fd5b78adfa0aea67035847665a151f"
+        },
+        {
+          "path": ".runtime/art-direction/series01-finish248/opening-final/frame-0200.png",
+          "sha256": "ee30bbe77f6d7f4c3bcdaf298406fd9f3645f08c15403f7eafcd06e91b5a9b0c"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/300000-2048/inspection.json",
+          "sha256": "21fbbd4b6ffcb495bd9d62f88846b30af851f5205d3b3dd079ec4675157d23b5"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/300000-2048/reopen.json",
+          "sha256": "c1ce6bec93a07109742a54b79e95bdd80df1de147ed49582f9abc903e7d7bf76"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-2048/inspection.json",
+          "sha256": "780eb29c2ca34499954c57f7d06d1300a8532944a9448cb76cac94d8baff3f47"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-2048/reopen.json",
+          "sha256": "c1ce6bec93a07109742a54b79e95bdd80df1de147ed49582f9abc903e7d7bf76"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-4096/inspection.json",
+          "sha256": "f47fe6f6cb7117bc35aaaf0bcffa574968039d3d1918321808f1924bc29652d8"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-4096/reopen.json",
+          "sha256": "c1ce6bec93a07109742a54b79e95bdd80df1de147ed49582f9abc903e7d7bf76"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-front.jpg",
+          "sha256": "13cbd21746445fa715dfddf984f41b7f1e7bf72485adae2863d5b3e235262383"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-left-quarter.jpg",
+          "sha256": "129befed6d505fc707c5351338710db92745c1fe3492365777f04bb42c9f6060"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-left-profile.jpg",
+          "sha256": "d225f360e3d68358111ee14c022ec78b1faecfacdea8eafcb93b9f54afa48c31"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-back.jpg",
+          "sha256": "d2a1f581a3d5ffefeeb79f21ec2906bdfb243bf225dfefe6d3d78840e032b963"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-right-profile.jpg",
+          "sha256": "5218eaad89f0f85bc81d17be50a307569c5d70307b91f4210a22d09f7924d8d9"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-right-quarter.jpg",
+          "sha256": "1af30387664c9cf31529f08d0a947da0de8bd7f4d919848cb04a92d075321fd7"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-front-clay.jpg",
+          "sha256": "4c838fae856ba7893da53017b140fc2342c4a07dd779545efa5a8ee4dfd3224e"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-left-quarter-clay.jpg",
+          "sha256": "cfa633f7608f5b85ca49413ba1a0b74085143070fe4eb5ab50d191b2fe301aaf"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-right-quarter-clay.jpg",
+          "sha256": "8674ab8908c517fabfac5fff50ab1a00fffce256bd8011f4791fd2a8a618c951"
+        },
+        {
+          "path": "results/trellis301/export-metrics.json",
+          "sha256": "7a6a73be408476eca6a3f7fc482d61a3de491cace0a81f4bf377b0e112c66af4"
+        }
+      ]
+    },
+    {
+      "id": "anatomy",
+      "kind": "review",
+      "status": "FAIL",
+      "action_taken": "Manual static source review and separate technical checks.",
+      "observation": "Malformed eye forms, solid coarse facial hair and noisy turban remain below approved reference/co-star floor.",
+      "evidence": [
+        {
+          "path": "results/trellis301/EXPORT_REVIEW.md",
+          "sha256": "413f2b8c4e1941a5d26dfacc69540553b8731814b02f0ef822c41eca3ab0bcb8"
+        },
+        {
+          "path": "scripts/trellis301_export_inspect.py",
+          "sha256": "378a0b63378cd204d82d608804322ca4936557f7395c8f20278362909d21471f"
+        },
+        {
+          "path": ".runtime/trellis301/export/retrieved/evidence/comparison-receipt.json",
+          "sha256": "1a3e74320981852a3107b82a922d1415024aa19b3d18211a633039fd833387d5"
+        },
+        {
+          "path": "results/trellis301/cloud-export/teardown-verification.json",
+          "sha256": "61e3b03d9be44e8b04eed3557084f18e78c1575fd256d2b5ee6be7bb172642b8"
+        },
+        {
+          "path": ".runtime/art-direction/series01-sikh257/sikh-uncovered-concept-v03.png",
+          "sha256": "7aaa7a8433d85024681e427b5cd290ec35fd5b78adfa0aea67035847665a151f"
+        },
+        {
+          "path": ".runtime/art-direction/series01-finish248/opening-final/frame-0200.png",
+          "sha256": "ee30bbe77f6d7f4c3bcdaf298406fd9f3645f08c15403f7eafcd06e91b5a9b0c"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/300000-2048/inspection.json",
+          "sha256": "21fbbd4b6ffcb495bd9d62f88846b30af851f5205d3b3dd079ec4675157d23b5"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/300000-2048/reopen.json",
+          "sha256": "c1ce6bec93a07109742a54b79e95bdd80df1de147ed49582f9abc903e7d7bf76"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-2048/inspection.json",
+          "sha256": "780eb29c2ca34499954c57f7d06d1300a8532944a9448cb76cac94d8baff3f47"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-2048/reopen.json",
+          "sha256": "c1ce6bec93a07109742a54b79e95bdd80df1de147ed49582f9abc903e7d7bf76"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-4096/inspection.json",
+          "sha256": "f47fe6f6cb7117bc35aaaf0bcffa574968039d3d1918321808f1924bc29652d8"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-4096/reopen.json",
+          "sha256": "c1ce6bec93a07109742a54b79e95bdd80df1de147ed49582f9abc903e7d7bf76"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-front.jpg",
+          "sha256": "13cbd21746445fa715dfddf984f41b7f1e7bf72485adae2863d5b3e235262383"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-left-quarter.jpg",
+          "sha256": "129befed6d505fc707c5351338710db92745c1fe3492365777f04bb42c9f6060"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-left-profile.jpg",
+          "sha256": "d225f360e3d68358111ee14c022ec78b1faecfacdea8eafcb93b9f54afa48c31"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-back.jpg",
+          "sha256": "d2a1f581a3d5ffefeeb79f21ec2906bdfb243bf225dfefe6d3d78840e032b963"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-right-profile.jpg",
+          "sha256": "5218eaad89f0f85bc81d17be50a307569c5d70307b91f4210a22d09f7924d8d9"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-right-quarter.jpg",
+          "sha256": "1af30387664c9cf31529f08d0a947da0de8bd7f4d919848cb04a92d075321fd7"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-front-clay.jpg",
+          "sha256": "4c838fae856ba7893da53017b140fc2342c4a07dd779545efa5a8ee4dfd3224e"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-left-quarter-clay.jpg",
+          "sha256": "cfa633f7608f5b85ca49413ba1a0b74085143070fe4eb5ab50d191b2fe301aaf"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-right-quarter-clay.jpg",
+          "sha256": "8674ab8908c517fabfac5fff50ab1a00fffce256bd8011f4791fd2a8a618c951"
+        },
+        {
+          "path": "results/trellis301/export-metrics.json",
+          "sha256": "7a6a73be408476eca6a3f7fc482d61a3de491cace0a81f4bf377b0e112c66af4"
+        }
+      ]
+    },
+    {
+      "id": "motion",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Manual static source review and separate technical checks.",
+      "observation": "Static export controls do not qualify motion, deformation, contact or one-cloth performance.",
+      "evidence": [
+        {
+          "path": "results/trellis301/EXPORT_REVIEW.md",
+          "sha256": "413f2b8c4e1941a5d26dfacc69540553b8731814b02f0ef822c41eca3ab0bcb8"
+        },
+        {
+          "path": "scripts/trellis301_export_inspect.py",
+          "sha256": "378a0b63378cd204d82d608804322ca4936557f7395c8f20278362909d21471f"
+        },
+        {
+          "path": ".runtime/trellis301/export/retrieved/evidence/comparison-receipt.json",
+          "sha256": "1a3e74320981852a3107b82a922d1415024aa19b3d18211a633039fd833387d5"
+        },
+        {
+          "path": "results/trellis301/cloud-export/teardown-verification.json",
+          "sha256": "61e3b03d9be44e8b04eed3557084f18e78c1575fd256d2b5ee6be7bb172642b8"
+        },
+        {
+          "path": ".runtime/art-direction/series01-sikh257/sikh-uncovered-concept-v03.png",
+          "sha256": "7aaa7a8433d85024681e427b5cd290ec35fd5b78adfa0aea67035847665a151f"
+        },
+        {
+          "path": ".runtime/art-direction/series01-finish248/opening-final/frame-0200.png",
+          "sha256": "ee30bbe77f6d7f4c3bcdaf298406fd9f3645f08c15403f7eafcd06e91b5a9b0c"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/300000-2048/inspection.json",
+          "sha256": "21fbbd4b6ffcb495bd9d62f88846b30af851f5205d3b3dd079ec4675157d23b5"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/300000-2048/reopen.json",
+          "sha256": "c1ce6bec93a07109742a54b79e95bdd80df1de147ed49582f9abc903e7d7bf76"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-2048/inspection.json",
+          "sha256": "780eb29c2ca34499954c57f7d06d1300a8532944a9448cb76cac94d8baff3f47"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-2048/reopen.json",
+          "sha256": "c1ce6bec93a07109742a54b79e95bdd80df1de147ed49582f9abc903e7d7bf76"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-4096/inspection.json",
+          "sha256": "f47fe6f6cb7117bc35aaaf0bcffa574968039d3d1918321808f1924bc29652d8"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-4096/reopen.json",
+          "sha256": "c1ce6bec93a07109742a54b79e95bdd80df1de147ed49582f9abc903e7d7bf76"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-front.jpg",
+          "sha256": "13cbd21746445fa715dfddf984f41b7f1e7bf72485adae2863d5b3e235262383"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-left-quarter.jpg",
+          "sha256": "129befed6d505fc707c5351338710db92745c1fe3492365777f04bb42c9f6060"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-left-profile.jpg",
+          "sha256": "d225f360e3d68358111ee14c022ec78b1faecfacdea8eafcb93b9f54afa48c31"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-back.jpg",
+          "sha256": "d2a1f581a3d5ffefeeb79f21ec2906bdfb243bf225dfefe6d3d78840e032b963"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-right-profile.jpg",
+          "sha256": "5218eaad89f0f85bc81d17be50a307569c5d70307b91f4210a22d09f7924d8d9"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-right-quarter.jpg",
+          "sha256": "1af30387664c9cf31529f08d0a947da0de8bd7f4d919848cb04a92d075321fd7"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-front-clay.jpg",
+          "sha256": "4c838fae856ba7893da53017b140fc2342c4a07dd779545efa5a8ee4dfd3224e"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-left-quarter-clay.jpg",
+          "sha256": "cfa633f7608f5b85ca49413ba1a0b74085143070fe4eb5ab50d191b2fe301aaf"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-right-quarter-clay.jpg",
+          "sha256": "8674ab8908c517fabfac5fff50ab1a00fffce256bd8011f4791fd2a8a618c951"
+        },
+        {
+          "path": "results/trellis301/export-metrics.json",
+          "sha256": "7a6a73be408476eca6a3f7fc482d61a3de491cace0a81f4bf377b0e112c66af4"
+        }
+      ]
+    },
+    {
+      "id": "secondary",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Manual static source review and separate technical checks.",
+      "observation": "Static export controls do not qualify motion, deformation, contact or one-cloth performance.",
+      "evidence": [
+        {
+          "path": "results/trellis301/EXPORT_REVIEW.md",
+          "sha256": "413f2b8c4e1941a5d26dfacc69540553b8731814b02f0ef822c41eca3ab0bcb8"
+        },
+        {
+          "path": "scripts/trellis301_export_inspect.py",
+          "sha256": "378a0b63378cd204d82d608804322ca4936557f7395c8f20278362909d21471f"
+        },
+        {
+          "path": ".runtime/trellis301/export/retrieved/evidence/comparison-receipt.json",
+          "sha256": "1a3e74320981852a3107b82a922d1415024aa19b3d18211a633039fd833387d5"
+        },
+        {
+          "path": "results/trellis301/cloud-export/teardown-verification.json",
+          "sha256": "61e3b03d9be44e8b04eed3557084f18e78c1575fd256d2b5ee6be7bb172642b8"
+        },
+        {
+          "path": ".runtime/art-direction/series01-sikh257/sikh-uncovered-concept-v03.png",
+          "sha256": "7aaa7a8433d85024681e427b5cd290ec35fd5b78adfa0aea67035847665a151f"
+        },
+        {
+          "path": ".runtime/art-direction/series01-finish248/opening-final/frame-0200.png",
+          "sha256": "ee30bbe77f6d7f4c3bcdaf298406fd9f3645f08c15403f7eafcd06e91b5a9b0c"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/300000-2048/inspection.json",
+          "sha256": "21fbbd4b6ffcb495bd9d62f88846b30af851f5205d3b3dd079ec4675157d23b5"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/300000-2048/reopen.json",
+          "sha256": "c1ce6bec93a07109742a54b79e95bdd80df1de147ed49582f9abc903e7d7bf76"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-2048/inspection.json",
+          "sha256": "780eb29c2ca34499954c57f7d06d1300a8532944a9448cb76cac94d8baff3f47"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-2048/reopen.json",
+          "sha256": "c1ce6bec93a07109742a54b79e95bdd80df1de147ed49582f9abc903e7d7bf76"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-4096/inspection.json",
+          "sha256": "f47fe6f6cb7117bc35aaaf0bcffa574968039d3d1918321808f1924bc29652d8"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-4096/reopen.json",
+          "sha256": "c1ce6bec93a07109742a54b79e95bdd80df1de147ed49582f9abc903e7d7bf76"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-front.jpg",
+          "sha256": "13cbd21746445fa715dfddf984f41b7f1e7bf72485adae2863d5b3e235262383"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-left-quarter.jpg",
+          "sha256": "129befed6d505fc707c5351338710db92745c1fe3492365777f04bb42c9f6060"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-left-profile.jpg",
+          "sha256": "d225f360e3d68358111ee14c022ec78b1faecfacdea8eafcb93b9f54afa48c31"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-back.jpg",
+          "sha256": "d2a1f581a3d5ffefeeb79f21ec2906bdfb243bf225dfefe6d3d78840e032b963"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-right-profile.jpg",
+          "sha256": "5218eaad89f0f85bc81d17be50a307569c5d70307b91f4210a22d09f7924d8d9"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-right-quarter.jpg",
+          "sha256": "1af30387664c9cf31529f08d0a947da0de8bd7f4d919848cb04a92d075321fd7"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-front-clay.jpg",
+          "sha256": "4c838fae856ba7893da53017b140fc2342c4a07dd779545efa5a8ee4dfd3224e"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-left-quarter-clay.jpg",
+          "sha256": "cfa633f7608f5b85ca49413ba1a0b74085143070fe4eb5ab50d191b2fe301aaf"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-right-quarter-clay.jpg",
+          "sha256": "8674ab8908c517fabfac5fff50ab1a00fffce256bd8011f4791fd2a8a618c951"
+        },
+        {
+          "path": "results/trellis301/export-metrics.json",
+          "sha256": "7a6a73be408476eca6a3f7fc482d61a3de491cace0a81f4bf377b0e112c66af4"
+        }
+      ]
+    },
+    {
+      "id": "look",
+      "kind": "review",
+      "status": "FAIL",
+      "action_taken": "Manual static source review and separate technical checks.",
+      "observation": "Malformed eye forms, solid coarse facial hair and noisy turban remain below approved reference/co-star floor.",
+      "evidence": [
+        {
+          "path": "results/trellis301/EXPORT_REVIEW.md",
+          "sha256": "413f2b8c4e1941a5d26dfacc69540553b8731814b02f0ef822c41eca3ab0bcb8"
+        },
+        {
+          "path": "scripts/trellis301_export_inspect.py",
+          "sha256": "378a0b63378cd204d82d608804322ca4936557f7395c8f20278362909d21471f"
+        },
+        {
+          "path": ".runtime/trellis301/export/retrieved/evidence/comparison-receipt.json",
+          "sha256": "1a3e74320981852a3107b82a922d1415024aa19b3d18211a633039fd833387d5"
+        },
+        {
+          "path": "results/trellis301/cloud-export/teardown-verification.json",
+          "sha256": "61e3b03d9be44e8b04eed3557084f18e78c1575fd256d2b5ee6be7bb172642b8"
+        },
+        {
+          "path": ".runtime/art-direction/series01-sikh257/sikh-uncovered-concept-v03.png",
+          "sha256": "7aaa7a8433d85024681e427b5cd290ec35fd5b78adfa0aea67035847665a151f"
+        },
+        {
+          "path": ".runtime/art-direction/series01-finish248/opening-final/frame-0200.png",
+          "sha256": "ee30bbe77f6d7f4c3bcdaf298406fd9f3645f08c15403f7eafcd06e91b5a9b0c"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/300000-2048/inspection.json",
+          "sha256": "21fbbd4b6ffcb495bd9d62f88846b30af851f5205d3b3dd079ec4675157d23b5"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/300000-2048/reopen.json",
+          "sha256": "c1ce6bec93a07109742a54b79e95bdd80df1de147ed49582f9abc903e7d7bf76"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-2048/inspection.json",
+          "sha256": "780eb29c2ca34499954c57f7d06d1300a8532944a9448cb76cac94d8baff3f47"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-2048/reopen.json",
+          "sha256": "c1ce6bec93a07109742a54b79e95bdd80df1de147ed49582f9abc903e7d7bf76"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-4096/inspection.json",
+          "sha256": "f47fe6f6cb7117bc35aaaf0bcffa574968039d3d1918321808f1924bc29652d8"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-4096/reopen.json",
+          "sha256": "c1ce6bec93a07109742a54b79e95bdd80df1de147ed49582f9abc903e7d7bf76"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-front.jpg",
+          "sha256": "13cbd21746445fa715dfddf984f41b7f1e7bf72485adae2863d5b3e235262383"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-left-quarter.jpg",
+          "sha256": "129befed6d505fc707c5351338710db92745c1fe3492365777f04bb42c9f6060"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-left-profile.jpg",
+          "sha256": "d225f360e3d68358111ee14c022ec78b1faecfacdea8eafcb93b9f54afa48c31"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-back.jpg",
+          "sha256": "d2a1f581a3d5ffefeeb79f21ec2906bdfb243bf225dfefe6d3d78840e032b963"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-right-profile.jpg",
+          "sha256": "5218eaad89f0f85bc81d17be50a307569c5d70307b91f4210a22d09f7924d8d9"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-right-quarter.jpg",
+          "sha256": "1af30387664c9cf31529f08d0a947da0de8bd7f4d919848cb04a92d075321fd7"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-front-clay.jpg",
+          "sha256": "4c838fae856ba7893da53017b140fc2342c4a07dd779545efa5a8ee4dfd3224e"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-left-quarter-clay.jpg",
+          "sha256": "cfa633f7608f5b85ca49413ba1a0b74085143070fe4eb5ab50d191b2fe301aaf"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-right-quarter-clay.jpg",
+          "sha256": "8674ab8908c517fabfac5fff50ab1a00fffce256bd8011f4791fd2a8a618c951"
+        },
+        {
+          "path": "results/trellis301/export-metrics.json",
+          "sha256": "7a6a73be408476eca6a3f7fc482d61a3de491cace0a81f4bf377b0e112c66af4"
+        }
+      ]
+    },
+    {
+      "id": "rights",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Manual static source review and separate technical checks.",
+      "observation": "Same admitted runtime/source and export path, no new rights route; private temporary files removed after verified retrieval.",
+      "evidence": [
+        {
+          "path": "results/trellis301/EXPORT_REVIEW.md",
+          "sha256": "413f2b8c4e1941a5d26dfacc69540553b8731814b02f0ef822c41eca3ab0bcb8"
+        },
+        {
+          "path": "scripts/trellis301_export_inspect.py",
+          "sha256": "378a0b63378cd204d82d608804322ca4936557f7395c8f20278362909d21471f"
+        },
+        {
+          "path": ".runtime/trellis301/export/retrieved/evidence/comparison-receipt.json",
+          "sha256": "1a3e74320981852a3107b82a922d1415024aa19b3d18211a633039fd833387d5"
+        },
+        {
+          "path": "results/trellis301/cloud-export/teardown-verification.json",
+          "sha256": "61e3b03d9be44e8b04eed3557084f18e78c1575fd256d2b5ee6be7bb172642b8"
+        },
+        {
+          "path": ".runtime/art-direction/series01-sikh257/sikh-uncovered-concept-v03.png",
+          "sha256": "7aaa7a8433d85024681e427b5cd290ec35fd5b78adfa0aea67035847665a151f"
+        },
+        {
+          "path": ".runtime/art-direction/series01-finish248/opening-final/frame-0200.png",
+          "sha256": "ee30bbe77f6d7f4c3bcdaf298406fd9f3645f08c15403f7eafcd06e91b5a9b0c"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/300000-2048/inspection.json",
+          "sha256": "21fbbd4b6ffcb495bd9d62f88846b30af851f5205d3b3dd079ec4675157d23b5"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/300000-2048/reopen.json",
+          "sha256": "c1ce6bec93a07109742a54b79e95bdd80df1de147ed49582f9abc903e7d7bf76"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-2048/inspection.json",
+          "sha256": "780eb29c2ca34499954c57f7d06d1300a8532944a9448cb76cac94d8baff3f47"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-2048/reopen.json",
+          "sha256": "c1ce6bec93a07109742a54b79e95bdd80df1de147ed49582f9abc903e7d7bf76"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-4096/inspection.json",
+          "sha256": "f47fe6f6cb7117bc35aaaf0bcffa574968039d3d1918321808f1924bc29652d8"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-4096/reopen.json",
+          "sha256": "c1ce6bec93a07109742a54b79e95bdd80df1de147ed49582f9abc903e7d7bf76"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-front.jpg",
+          "sha256": "13cbd21746445fa715dfddf984f41b7f1e7bf72485adae2863d5b3e235262383"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-left-quarter.jpg",
+          "sha256": "129befed6d505fc707c5351338710db92745c1fe3492365777f04bb42c9f6060"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-left-profile.jpg",
+          "sha256": "d225f360e3d68358111ee14c022ec78b1faecfacdea8eafcb93b9f54afa48c31"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-back.jpg",
+          "sha256": "d2a1f581a3d5ffefeeb79f21ec2906bdfb243bf225dfefe6d3d78840e032b963"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-right-profile.jpg",
+          "sha256": "5218eaad89f0f85bc81d17be50a307569c5d70307b91f4210a22d09f7924d8d9"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-right-quarter.jpg",
+          "sha256": "1af30387664c9cf31529f08d0a947da0de8bd7f4d919848cb04a92d075321fd7"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-front-clay.jpg",
+          "sha256": "4c838fae856ba7893da53017b140fc2342c4a07dd779545efa5a8ee4dfd3224e"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-left-quarter-clay.jpg",
+          "sha256": "cfa633f7608f5b85ca49413ba1a0b74085143070fe4eb5ab50d191b2fe301aaf"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-right-quarter-clay.jpg",
+          "sha256": "8674ab8908c517fabfac5fff50ab1a00fffce256bd8011f4791fd2a8a618c951"
+        },
+        {
+          "path": "results/trellis301/export-metrics.json",
+          "sha256": "7a6a73be408476eca6a3f7fc482d61a3de491cace0a81f4bf377b0e112c66af4"
+        }
+      ]
+    },
+    {
+      "id": "current_state",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Manual static source review and separate technical checks.",
+      "observation": "Accepted Pashtun253 and Sikhv03 preserved; failed source is not a new actor/design approval.",
+      "evidence": [
+        {
+          "path": "results/trellis301/EXPORT_REVIEW.md",
+          "sha256": "413f2b8c4e1941a5d26dfacc69540553b8731814b02f0ef822c41eca3ab0bcb8"
+        },
+        {
+          "path": "scripts/trellis301_export_inspect.py",
+          "sha256": "378a0b63378cd204d82d608804322ca4936557f7395c8f20278362909d21471f"
+        },
+        {
+          "path": ".runtime/trellis301/export/retrieved/evidence/comparison-receipt.json",
+          "sha256": "1a3e74320981852a3107b82a922d1415024aa19b3d18211a633039fd833387d5"
+        },
+        {
+          "path": "results/trellis301/cloud-export/teardown-verification.json",
+          "sha256": "61e3b03d9be44e8b04eed3557084f18e78c1575fd256d2b5ee6be7bb172642b8"
+        },
+        {
+          "path": ".runtime/art-direction/series01-sikh257/sikh-uncovered-concept-v03.png",
+          "sha256": "7aaa7a8433d85024681e427b5cd290ec35fd5b78adfa0aea67035847665a151f"
+        },
+        {
+          "path": ".runtime/art-direction/series01-finish248/opening-final/frame-0200.png",
+          "sha256": "ee30bbe77f6d7f4c3bcdaf298406fd9f3645f08c15403f7eafcd06e91b5a9b0c"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/300000-2048/inspection.json",
+          "sha256": "21fbbd4b6ffcb495bd9d62f88846b30af851f5205d3b3dd079ec4675157d23b5"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/300000-2048/reopen.json",
+          "sha256": "c1ce6bec93a07109742a54b79e95bdd80df1de147ed49582f9abc903e7d7bf76"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-2048/inspection.json",
+          "sha256": "780eb29c2ca34499954c57f7d06d1300a8532944a9448cb76cac94d8baff3f47"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-2048/reopen.json",
+          "sha256": "c1ce6bec93a07109742a54b79e95bdd80df1de147ed49582f9abc903e7d7bf76"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-4096/inspection.json",
+          "sha256": "f47fe6f6cb7117bc35aaaf0bcffa574968039d3d1918321808f1924bc29652d8"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-4096/reopen.json",
+          "sha256": "c1ce6bec93a07109742a54b79e95bdd80df1de147ed49582f9abc903e7d7bf76"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-front.jpg",
+          "sha256": "13cbd21746445fa715dfddf984f41b7f1e7bf72485adae2863d5b3e235262383"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-left-quarter.jpg",
+          "sha256": "129befed6d505fc707c5351338710db92745c1fe3492365777f04bb42c9f6060"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-left-profile.jpg",
+          "sha256": "d225f360e3d68358111ee14c022ec78b1faecfacdea8eafcb93b9f54afa48c31"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-back.jpg",
+          "sha256": "d2a1f581a3d5ffefeeb79f21ec2906bdfb243bf225dfefe6d3d78840e032b963"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-right-profile.jpg",
+          "sha256": "5218eaad89f0f85bc81d17be50a307569c5d70307b91f4210a22d09f7924d8d9"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-right-quarter.jpg",
+          "sha256": "1af30387664c9cf31529f08d0a947da0de8bd7f4d919848cb04a92d075321fd7"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-front-clay.jpg",
+          "sha256": "4c838fae856ba7893da53017b140fc2342c4a07dd779545efa5a8ee4dfd3224e"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-left-quarter-clay.jpg",
+          "sha256": "cfa633f7608f5b85ca49413ba1a0b74085143070fe4eb5ab50d191b2fe301aaf"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-right-quarter-clay.jpg",
+          "sha256": "8674ab8908c517fabfac5fff50ab1a00fffce256bd8011f4791fd2a8a618c951"
+        },
+        {
+          "path": "results/trellis301/export-metrics.json",
+          "sha256": "7a6a73be408476eca6a3f7fc482d61a3de491cace0a81f4bf377b0e112c66af4"
+        }
+      ]
+    },
+    {
+      "id": "au_reference",
+      "kind": "review",
+      "status": "PASS",
+      "action_taken": "Manual static source review and separate technical checks.",
+      "observation": "Root directly inspected approved Sikhv03 and accepted Pashtun frame0200; accepted differences not repaired away.",
+      "evidence": [
+        {
+          "path": "results/trellis301/EXPORT_REVIEW.md",
+          "sha256": "413f2b8c4e1941a5d26dfacc69540553b8731814b02f0ef822c41eca3ab0bcb8"
+        },
+        {
+          "path": "scripts/trellis301_export_inspect.py",
+          "sha256": "378a0b63378cd204d82d608804322ca4936557f7395c8f20278362909d21471f"
+        },
+        {
+          "path": ".runtime/trellis301/export/retrieved/evidence/comparison-receipt.json",
+          "sha256": "1a3e74320981852a3107b82a922d1415024aa19b3d18211a633039fd833387d5"
+        },
+        {
+          "path": "results/trellis301/cloud-export/teardown-verification.json",
+          "sha256": "61e3b03d9be44e8b04eed3557084f18e78c1575fd256d2b5ee6be7bb172642b8"
+        },
+        {
+          "path": ".runtime/art-direction/series01-sikh257/sikh-uncovered-concept-v03.png",
+          "sha256": "7aaa7a8433d85024681e427b5cd290ec35fd5b78adfa0aea67035847665a151f"
+        },
+        {
+          "path": ".runtime/art-direction/series01-finish248/opening-final/frame-0200.png",
+          "sha256": "ee30bbe77f6d7f4c3bcdaf298406fd9f3645f08c15403f7eafcd06e91b5a9b0c"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/300000-2048/inspection.json",
+          "sha256": "21fbbd4b6ffcb495bd9d62f88846b30af851f5205d3b3dd079ec4675157d23b5"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/300000-2048/reopen.json",
+          "sha256": "c1ce6bec93a07109742a54b79e95bdd80df1de147ed49582f9abc903e7d7bf76"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-2048/inspection.json",
+          "sha256": "780eb29c2ca34499954c57f7d06d1300a8532944a9448cb76cac94d8baff3f47"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-2048/reopen.json",
+          "sha256": "c1ce6bec93a07109742a54b79e95bdd80df1de147ed49582f9abc903e7d7bf76"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-4096/inspection.json",
+          "sha256": "f47fe6f6cb7117bc35aaaf0bcffa574968039d3d1918321808f1924bc29652d8"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-4096/reopen.json",
+          "sha256": "c1ce6bec93a07109742a54b79e95bdd80df1de147ed49582f9abc903e7d7bf76"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-front.jpg",
+          "sha256": "13cbd21746445fa715dfddf984f41b7f1e7bf72485adae2863d5b3e235262383"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-left-quarter.jpg",
+          "sha256": "129befed6d505fc707c5351338710db92745c1fe3492365777f04bb42c9f6060"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-left-profile.jpg",
+          "sha256": "d225f360e3d68358111ee14c022ec78b1faecfacdea8eafcb93b9f54afa48c31"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-back.jpg",
+          "sha256": "d2a1f581a3d5ffefeeb79f21ec2906bdfb243bf225dfefe6d3d78840e032b963"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-right-profile.jpg",
+          "sha256": "5218eaad89f0f85bc81d17be50a307569c5d70307b91f4210a22d09f7924d8d9"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-right-quarter.jpg",
+          "sha256": "1af30387664c9cf31529f08d0a947da0de8bd7f4d919848cb04a92d075321fd7"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-front-clay.jpg",
+          "sha256": "4c838fae856ba7893da53017b140fc2342c4a07dd779545efa5a8ee4dfd3224e"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-left-quarter-clay.jpg",
+          "sha256": "cfa633f7608f5b85ca49413ba1a0b74085143070fe4eb5ab50d191b2fe301aaf"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-right-quarter-clay.jpg",
+          "sha256": "8674ab8908c517fabfac5fff50ab1a00fffce256bd8011f4791fd2a8a618c951"
+        },
+        {
+          "path": "results/trellis301/export-metrics.json",
+          "sha256": "7a6a73be408476eca6a3f7fc482d61a3de491cace0a81f4bf377b0e112c66af4"
+        }
+      ]
+    },
+    {
+      "id": "au_deformation",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Manual static source review and separate technical checks.",
+      "observation": "Static export controls do not qualify motion, deformation, contact or one-cloth performance.",
+      "evidence": [
+        {
+          "path": "results/trellis301/EXPORT_REVIEW.md",
+          "sha256": "413f2b8c4e1941a5d26dfacc69540553b8731814b02f0ef822c41eca3ab0bcb8"
+        },
+        {
+          "path": "scripts/trellis301_export_inspect.py",
+          "sha256": "378a0b63378cd204d82d608804322ca4936557f7395c8f20278362909d21471f"
+        },
+        {
+          "path": ".runtime/trellis301/export/retrieved/evidence/comparison-receipt.json",
+          "sha256": "1a3e74320981852a3107b82a922d1415024aa19b3d18211a633039fd833387d5"
+        },
+        {
+          "path": "results/trellis301/cloud-export/teardown-verification.json",
+          "sha256": "61e3b03d9be44e8b04eed3557084f18e78c1575fd256d2b5ee6be7bb172642b8"
+        },
+        {
+          "path": ".runtime/art-direction/series01-sikh257/sikh-uncovered-concept-v03.png",
+          "sha256": "7aaa7a8433d85024681e427b5cd290ec35fd5b78adfa0aea67035847665a151f"
+        },
+        {
+          "path": ".runtime/art-direction/series01-finish248/opening-final/frame-0200.png",
+          "sha256": "ee30bbe77f6d7f4c3bcdaf298406fd9f3645f08c15403f7eafcd06e91b5a9b0c"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/300000-2048/inspection.json",
+          "sha256": "21fbbd4b6ffcb495bd9d62f88846b30af851f5205d3b3dd079ec4675157d23b5"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/300000-2048/reopen.json",
+          "sha256": "c1ce6bec93a07109742a54b79e95bdd80df1de147ed49582f9abc903e7d7bf76"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-2048/inspection.json",
+          "sha256": "780eb29c2ca34499954c57f7d06d1300a8532944a9448cb76cac94d8baff3f47"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-2048/reopen.json",
+          "sha256": "c1ce6bec93a07109742a54b79e95bdd80df1de147ed49582f9abc903e7d7bf76"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-4096/inspection.json",
+          "sha256": "f47fe6f6cb7117bc35aaaf0bcffa574968039d3d1918321808f1924bc29652d8"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-4096/reopen.json",
+          "sha256": "c1ce6bec93a07109742a54b79e95bdd80df1de147ed49582f9abc903e7d7bf76"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-front.jpg",
+          "sha256": "13cbd21746445fa715dfddf984f41b7f1e7bf72485adae2863d5b3e235262383"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-left-quarter.jpg",
+          "sha256": "129befed6d505fc707c5351338710db92745c1fe3492365777f04bb42c9f6060"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-left-profile.jpg",
+          "sha256": "d225f360e3d68358111ee14c022ec78b1faecfacdea8eafcb93b9f54afa48c31"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-back.jpg",
+          "sha256": "d2a1f581a3d5ffefeeb79f21ec2906bdfb243bf225dfefe6d3d78840e032b963"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-right-profile.jpg",
+          "sha256": "5218eaad89f0f85bc81d17be50a307569c5d70307b91f4210a22d09f7924d8d9"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-right-quarter.jpg",
+          "sha256": "1af30387664c9cf31529f08d0a947da0de8bd7f4d919848cb04a92d075321fd7"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-front-clay.jpg",
+          "sha256": "4c838fae856ba7893da53017b140fc2342c4a07dd779545efa5a8ee4dfd3224e"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-left-quarter-clay.jpg",
+          "sha256": "cfa633f7608f5b85ca49413ba1a0b74085143070fe4eb5ab50d191b2fe301aaf"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-right-quarter-clay.jpg",
+          "sha256": "8674ab8908c517fabfac5fff50ab1a00fffce256bd8011f4791fd2a8a618c951"
+        },
+        {
+          "path": "results/trellis301/export-metrics.json",
+          "sha256": "7a6a73be408476eca6a3f7fc482d61a3de491cace0a81f4bf377b0e112c66af4"
+        }
+      ]
+    },
+    {
+      "id": "au_performance",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Manual static source review and separate technical checks.",
+      "observation": "Static export controls do not qualify motion, deformation, contact or one-cloth performance.",
+      "evidence": [
+        {
+          "path": "results/trellis301/EXPORT_REVIEW.md",
+          "sha256": "413f2b8c4e1941a5d26dfacc69540553b8731814b02f0ef822c41eca3ab0bcb8"
+        },
+        {
+          "path": "scripts/trellis301_export_inspect.py",
+          "sha256": "378a0b63378cd204d82d608804322ca4936557f7395c8f20278362909d21471f"
+        },
+        {
+          "path": ".runtime/trellis301/export/retrieved/evidence/comparison-receipt.json",
+          "sha256": "1a3e74320981852a3107b82a922d1415024aa19b3d18211a633039fd833387d5"
+        },
+        {
+          "path": "results/trellis301/cloud-export/teardown-verification.json",
+          "sha256": "61e3b03d9be44e8b04eed3557084f18e78c1575fd256d2b5ee6be7bb172642b8"
+        },
+        {
+          "path": ".runtime/art-direction/series01-sikh257/sikh-uncovered-concept-v03.png",
+          "sha256": "7aaa7a8433d85024681e427b5cd290ec35fd5b78adfa0aea67035847665a151f"
+        },
+        {
+          "path": ".runtime/art-direction/series01-finish248/opening-final/frame-0200.png",
+          "sha256": "ee30bbe77f6d7f4c3bcdaf298406fd9f3645f08c15403f7eafcd06e91b5a9b0c"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/300000-2048/inspection.json",
+          "sha256": "21fbbd4b6ffcb495bd9d62f88846b30af851f5205d3b3dd079ec4675157d23b5"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/300000-2048/reopen.json",
+          "sha256": "c1ce6bec93a07109742a54b79e95bdd80df1de147ed49582f9abc903e7d7bf76"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-2048/inspection.json",
+          "sha256": "780eb29c2ca34499954c57f7d06d1300a8532944a9448cb76cac94d8baff3f47"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-2048/reopen.json",
+          "sha256": "c1ce6bec93a07109742a54b79e95bdd80df1de147ed49582f9abc903e7d7bf76"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-4096/inspection.json",
+          "sha256": "f47fe6f6cb7117bc35aaaf0bcffa574968039d3d1918321808f1924bc29652d8"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-4096/reopen.json",
+          "sha256": "c1ce6bec93a07109742a54b79e95bdd80df1de147ed49582f9abc903e7d7bf76"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-front.jpg",
+          "sha256": "13cbd21746445fa715dfddf984f41b7f1e7bf72485adae2863d5b3e235262383"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-left-quarter.jpg",
+          "sha256": "129befed6d505fc707c5351338710db92745c1fe3492365777f04bb42c9f6060"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-left-profile.jpg",
+          "sha256": "d225f360e3d68358111ee14c022ec78b1faecfacdea8eafcb93b9f54afa48c31"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-back.jpg",
+          "sha256": "d2a1f581a3d5ffefeeb79f21ec2906bdfb243bf225dfefe6d3d78840e032b963"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-right-profile.jpg",
+          "sha256": "5218eaad89f0f85bc81d17be50a307569c5d70307b91f4210a22d09f7924d8d9"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-right-quarter.jpg",
+          "sha256": "1af30387664c9cf31529f08d0a947da0de8bd7f4d919848cb04a92d075321fd7"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-front-clay.jpg",
+          "sha256": "4c838fae856ba7893da53017b140fc2342c4a07dd779545efa5a8ee4dfd3224e"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-left-quarter-clay.jpg",
+          "sha256": "cfa633f7608f5b85ca49413ba1a0b74085143070fe4eb5ab50d191b2fe301aaf"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-right-quarter-clay.jpg",
+          "sha256": "8674ab8908c517fabfac5fff50ab1a00fffce256bd8011f4791fd2a8a618c951"
+        },
+        {
+          "path": "results/trellis301/export-metrics.json",
+          "sha256": "7a6a73be408476eca6a3f7fc482d61a3de491cace0a81f4bf377b0e112c66af4"
+        }
+      ]
+    },
+    {
+      "id": "au_contact",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Manual static source review and separate technical checks.",
+      "observation": "Static export controls do not qualify motion, deformation, contact or one-cloth performance.",
+      "evidence": [
+        {
+          "path": "results/trellis301/EXPORT_REVIEW.md",
+          "sha256": "413f2b8c4e1941a5d26dfacc69540553b8731814b02f0ef822c41eca3ab0bcb8"
+        },
+        {
+          "path": "scripts/trellis301_export_inspect.py",
+          "sha256": "378a0b63378cd204d82d608804322ca4936557f7395c8f20278362909d21471f"
+        },
+        {
+          "path": ".runtime/trellis301/export/retrieved/evidence/comparison-receipt.json",
+          "sha256": "1a3e74320981852a3107b82a922d1415024aa19b3d18211a633039fd833387d5"
+        },
+        {
+          "path": "results/trellis301/cloud-export/teardown-verification.json",
+          "sha256": "61e3b03d9be44e8b04eed3557084f18e78c1575fd256d2b5ee6be7bb172642b8"
+        },
+        {
+          "path": ".runtime/art-direction/series01-sikh257/sikh-uncovered-concept-v03.png",
+          "sha256": "7aaa7a8433d85024681e427b5cd290ec35fd5b78adfa0aea67035847665a151f"
+        },
+        {
+          "path": ".runtime/art-direction/series01-finish248/opening-final/frame-0200.png",
+          "sha256": "ee30bbe77f6d7f4c3bcdaf298406fd9f3645f08c15403f7eafcd06e91b5a9b0c"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/300000-2048/inspection.json",
+          "sha256": "21fbbd4b6ffcb495bd9d62f88846b30af851f5205d3b3dd079ec4675157d23b5"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/300000-2048/reopen.json",
+          "sha256": "c1ce6bec93a07109742a54b79e95bdd80df1de147ed49582f9abc903e7d7bf76"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-2048/inspection.json",
+          "sha256": "780eb29c2ca34499954c57f7d06d1300a8532944a9448cb76cac94d8baff3f47"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-2048/reopen.json",
+          "sha256": "c1ce6bec93a07109742a54b79e95bdd80df1de147ed49582f9abc903e7d7bf76"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-4096/inspection.json",
+          "sha256": "f47fe6f6cb7117bc35aaaf0bcffa574968039d3d1918321808f1924bc29652d8"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-4096/reopen.json",
+          "sha256": "c1ce6bec93a07109742a54b79e95bdd80df1de147ed49582f9abc903e7d7bf76"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-front.jpg",
+          "sha256": "13cbd21746445fa715dfddf984f41b7f1e7bf72485adae2863d5b3e235262383"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-left-quarter.jpg",
+          "sha256": "129befed6d505fc707c5351338710db92745c1fe3492365777f04bb42c9f6060"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-left-profile.jpg",
+          "sha256": "d225f360e3d68358111ee14c022ec78b1faecfacdea8eafcb93b9f54afa48c31"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-back.jpg",
+          "sha256": "d2a1f581a3d5ffefeeb79f21ec2906bdfb243bf225dfefe6d3d78840e032b963"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-right-profile.jpg",
+          "sha256": "5218eaad89f0f85bc81d17be50a307569c5d70307b91f4210a22d09f7924d8d9"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-right-quarter.jpg",
+          "sha256": "1af30387664c9cf31529f08d0a947da0de8bd7f4d919848cb04a92d075321fd7"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-front-clay.jpg",
+          "sha256": "4c838fae856ba7893da53017b140fc2342c4a07dd779545efa5a8ee4dfd3224e"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-left-quarter-clay.jpg",
+          "sha256": "cfa633f7608f5b85ca49413ba1a0b74085143070fe4eb5ab50d191b2fe301aaf"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-right-quarter-clay.jpg",
+          "sha256": "8674ab8908c517fabfac5fff50ab1a00fffce256bd8011f4791fd2a8a618c951"
+        },
+        {
+          "path": "results/trellis301/export-metrics.json",
+          "sha256": "7a6a73be408476eca6a3f7fc482d61a3de491cace0a81f4bf377b0e112c66af4"
+        }
+      ]
+    },
+    {
+      "id": "au_surface",
+      "kind": "review",
+      "status": "FAIL",
+      "action_taken": "Manual static source review and separate technical checks.",
+      "observation": "Malformed eye forms, solid coarse facial hair and noisy turban remain below approved reference/co-star floor.",
+      "evidence": [
+        {
+          "path": "results/trellis301/EXPORT_REVIEW.md",
+          "sha256": "413f2b8c4e1941a5d26dfacc69540553b8731814b02f0ef822c41eca3ab0bcb8"
+        },
+        {
+          "path": "scripts/trellis301_export_inspect.py",
+          "sha256": "378a0b63378cd204d82d608804322ca4936557f7395c8f20278362909d21471f"
+        },
+        {
+          "path": ".runtime/trellis301/export/retrieved/evidence/comparison-receipt.json",
+          "sha256": "1a3e74320981852a3107b82a922d1415024aa19b3d18211a633039fd833387d5"
+        },
+        {
+          "path": "results/trellis301/cloud-export/teardown-verification.json",
+          "sha256": "61e3b03d9be44e8b04eed3557084f18e78c1575fd256d2b5ee6be7bb172642b8"
+        },
+        {
+          "path": ".runtime/art-direction/series01-sikh257/sikh-uncovered-concept-v03.png",
+          "sha256": "7aaa7a8433d85024681e427b5cd290ec35fd5b78adfa0aea67035847665a151f"
+        },
+        {
+          "path": ".runtime/art-direction/series01-finish248/opening-final/frame-0200.png",
+          "sha256": "ee30bbe77f6d7f4c3bcdaf298406fd9f3645f08c15403f7eafcd06e91b5a9b0c"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/300000-2048/inspection.json",
+          "sha256": "21fbbd4b6ffcb495bd9d62f88846b30af851f5205d3b3dd079ec4675157d23b5"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/300000-2048/reopen.json",
+          "sha256": "c1ce6bec93a07109742a54b79e95bdd80df1de147ed49582f9abc903e7d7bf76"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-2048/inspection.json",
+          "sha256": "780eb29c2ca34499954c57f7d06d1300a8532944a9448cb76cac94d8baff3f47"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-2048/reopen.json",
+          "sha256": "c1ce6bec93a07109742a54b79e95bdd80df1de147ed49582f9abc903e7d7bf76"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-4096/inspection.json",
+          "sha256": "f47fe6f6cb7117bc35aaaf0bcffa574968039d3d1918321808f1924bc29652d8"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-4096/reopen.json",
+          "sha256": "c1ce6bec93a07109742a54b79e95bdd80df1de147ed49582f9abc903e7d7bf76"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-front.jpg",
+          "sha256": "13cbd21746445fa715dfddf984f41b7f1e7bf72485adae2863d5b3e235262383"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-left-quarter.jpg",
+          "sha256": "129befed6d505fc707c5351338710db92745c1fe3492365777f04bb42c9f6060"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-left-profile.jpg",
+          "sha256": "d225f360e3d68358111ee14c022ec78b1faecfacdea8eafcb93b9f54afa48c31"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-back.jpg",
+          "sha256": "d2a1f581a3d5ffefeeb79f21ec2906bdfb243bf225dfefe6d3d78840e032b963"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-right-profile.jpg",
+          "sha256": "5218eaad89f0f85bc81d17be50a307569c5d70307b91f4210a22d09f7924d8d9"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-right-quarter.jpg",
+          "sha256": "1af30387664c9cf31529f08d0a947da0de8bd7f4d919848cb04a92d075321fd7"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-front-clay.jpg",
+          "sha256": "4c838fae856ba7893da53017b140fc2342c4a07dd779545efa5a8ee4dfd3224e"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-left-quarter-clay.jpg",
+          "sha256": "cfa633f7608f5b85ca49413ba1a0b74085143070fe4eb5ab50d191b2fe301aaf"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-right-quarter-clay.jpg",
+          "sha256": "8674ab8908c517fabfac5fff50ab1a00fffce256bd8011f4791fd2a8a618c951"
+        },
+        {
+          "path": "results/trellis301/export-metrics.json",
+          "sha256": "7a6a73be408476eca6a3f7fc482d61a3de491cace0a81f4bf377b0e112c66af4"
+        }
+      ]
+    },
+    {
+      "id": "sikh_scope",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Manual static source review and separate technical checks.",
+      "observation": "Head-only source comparison, no body/cloth/identity rewrite or new character scope.",
+      "evidence": [
+        {
+          "path": "results/trellis301/EXPORT_REVIEW.md",
+          "sha256": "413f2b8c4e1941a5d26dfacc69540553b8731814b02f0ef822c41eca3ab0bcb8"
+        },
+        {
+          "path": "scripts/trellis301_export_inspect.py",
+          "sha256": "378a0b63378cd204d82d608804322ca4936557f7395c8f20278362909d21471f"
+        },
+        {
+          "path": ".runtime/trellis301/export/retrieved/evidence/comparison-receipt.json",
+          "sha256": "1a3e74320981852a3107b82a922d1415024aa19b3d18211a633039fd833387d5"
+        },
+        {
+          "path": "results/trellis301/cloud-export/teardown-verification.json",
+          "sha256": "61e3b03d9be44e8b04eed3557084f18e78c1575fd256d2b5ee6be7bb172642b8"
+        },
+        {
+          "path": ".runtime/art-direction/series01-sikh257/sikh-uncovered-concept-v03.png",
+          "sha256": "7aaa7a8433d85024681e427b5cd290ec35fd5b78adfa0aea67035847665a151f"
+        },
+        {
+          "path": ".runtime/art-direction/series01-finish248/opening-final/frame-0200.png",
+          "sha256": "ee30bbe77f6d7f4c3bcdaf298406fd9f3645f08c15403f7eafcd06e91b5a9b0c"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/300000-2048/inspection.json",
+          "sha256": "21fbbd4b6ffcb495bd9d62f88846b30af851f5205d3b3dd079ec4675157d23b5"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/300000-2048/reopen.json",
+          "sha256": "c1ce6bec93a07109742a54b79e95bdd80df1de147ed49582f9abc903e7d7bf76"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-2048/inspection.json",
+          "sha256": "780eb29c2ca34499954c57f7d06d1300a8532944a9448cb76cac94d8baff3f47"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-2048/reopen.json",
+          "sha256": "c1ce6bec93a07109742a54b79e95bdd80df1de147ed49582f9abc903e7d7bf76"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-4096/inspection.json",
+          "sha256": "f47fe6f6cb7117bc35aaaf0bcffa574968039d3d1918321808f1924bc29652d8"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-4096/reopen.json",
+          "sha256": "c1ce6bec93a07109742a54b79e95bdd80df1de147ed49582f9abc903e7d7bf76"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-front.jpg",
+          "sha256": "13cbd21746445fa715dfddf984f41b7f1e7bf72485adae2863d5b3e235262383"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-left-quarter.jpg",
+          "sha256": "129befed6d505fc707c5351338710db92745c1fe3492365777f04bb42c9f6060"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-left-profile.jpg",
+          "sha256": "d225f360e3d68358111ee14c022ec78b1faecfacdea8eafcb93b9f54afa48c31"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-back.jpg",
+          "sha256": "d2a1f581a3d5ffefeeb79f21ec2906bdfb243bf225dfefe6d3d78840e032b963"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-right-profile.jpg",
+          "sha256": "5218eaad89f0f85bc81d17be50a307569c5d70307b91f4210a22d09f7924d8d9"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-right-quarter.jpg",
+          "sha256": "1af30387664c9cf31529f08d0a947da0de8bd7f4d919848cb04a92d075321fd7"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-front-clay.jpg",
+          "sha256": "4c838fae856ba7893da53017b140fc2342c4a07dd779545efa5a8ee4dfd3224e"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-left-quarter-clay.jpg",
+          "sha256": "cfa633f7608f5b85ca49413ba1a0b74085143070fe4eb5ab50d191b2fe301aaf"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-right-quarter-clay.jpg",
+          "sha256": "8674ab8908c517fabfac5fff50ab1a00fffce256bd8011f4791fd2a8a618c951"
+        },
+        {
+          "path": "results/trellis301/export-metrics.json",
+          "sha256": "7a6a73be408476eca6a3f7fc482d61a3de491cace0a81f4bf377b0e112c66af4"
+        }
+      ]
+    },
+    {
+      "id": "sikh_cloth",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Manual static source review and separate technical checks.",
+      "observation": "Static export controls do not qualify motion, deformation, contact or one-cloth performance.",
+      "evidence": [
+        {
+          "path": "results/trellis301/EXPORT_REVIEW.md",
+          "sha256": "413f2b8c4e1941a5d26dfacc69540553b8731814b02f0ef822c41eca3ab0bcb8"
+        },
+        {
+          "path": "scripts/trellis301_export_inspect.py",
+          "sha256": "378a0b63378cd204d82d608804322ca4936557f7395c8f20278362909d21471f"
+        },
+        {
+          "path": ".runtime/trellis301/export/retrieved/evidence/comparison-receipt.json",
+          "sha256": "1a3e74320981852a3107b82a922d1415024aa19b3d18211a633039fd833387d5"
+        },
+        {
+          "path": "results/trellis301/cloud-export/teardown-verification.json",
+          "sha256": "61e3b03d9be44e8b04eed3557084f18e78c1575fd256d2b5ee6be7bb172642b8"
+        },
+        {
+          "path": ".runtime/art-direction/series01-sikh257/sikh-uncovered-concept-v03.png",
+          "sha256": "7aaa7a8433d85024681e427b5cd290ec35fd5b78adfa0aea67035847665a151f"
+        },
+        {
+          "path": ".runtime/art-direction/series01-finish248/opening-final/frame-0200.png",
+          "sha256": "ee30bbe77f6d7f4c3bcdaf298406fd9f3645f08c15403f7eafcd06e91b5a9b0c"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/300000-2048/inspection.json",
+          "sha256": "21fbbd4b6ffcb495bd9d62f88846b30af851f5205d3b3dd079ec4675157d23b5"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/300000-2048/reopen.json",
+          "sha256": "c1ce6bec93a07109742a54b79e95bdd80df1de147ed49582f9abc903e7d7bf76"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-2048/inspection.json",
+          "sha256": "780eb29c2ca34499954c57f7d06d1300a8532944a9448cb76cac94d8baff3f47"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-2048/reopen.json",
+          "sha256": "c1ce6bec93a07109742a54b79e95bdd80df1de147ed49582f9abc903e7d7bf76"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-4096/inspection.json",
+          "sha256": "f47fe6f6cb7117bc35aaaf0bcffa574968039d3d1918321808f1924bc29652d8"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-4096/reopen.json",
+          "sha256": "c1ce6bec93a07109742a54b79e95bdd80df1de147ed49582f9abc903e7d7bf76"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-front.jpg",
+          "sha256": "13cbd21746445fa715dfddf984f41b7f1e7bf72485adae2863d5b3e235262383"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-left-quarter.jpg",
+          "sha256": "129befed6d505fc707c5351338710db92745c1fe3492365777f04bb42c9f6060"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-left-profile.jpg",
+          "sha256": "d225f360e3d68358111ee14c022ec78b1faecfacdea8eafcb93b9f54afa48c31"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-back.jpg",
+          "sha256": "d2a1f581a3d5ffefeeb79f21ec2906bdfb243bf225dfefe6d3d78840e032b963"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-right-profile.jpg",
+          "sha256": "5218eaad89f0f85bc81d17be50a307569c5d70307b91f4210a22d09f7924d8d9"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-right-quarter.jpg",
+          "sha256": "1af30387664c9cf31529f08d0a947da0de8bd7f4d919848cb04a92d075321fd7"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-front-clay.jpg",
+          "sha256": "4c838fae856ba7893da53017b140fc2342c4a07dd779545efa5a8ee4dfd3224e"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-left-quarter-clay.jpg",
+          "sha256": "cfa633f7608f5b85ca49413ba1a0b74085143070fe4eb5ab50d191b2fe301aaf"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-right-quarter-clay.jpg",
+          "sha256": "8674ab8908c517fabfac5fff50ab1a00fffce256bd8011f4791fd2a8a618c951"
+        },
+        {
+          "path": "results/trellis301/export-metrics.json",
+          "sha256": "7a6a73be408476eca6a3f7fc482d61a3de491cace0a81f4bf377b0e112c66af4"
+        }
+      ]
+    },
+    {
+      "id": "sikh_motion",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Manual static source review and separate technical checks.",
+      "observation": "Static export controls do not qualify motion, deformation, contact or one-cloth performance.",
+      "evidence": [
+        {
+          "path": "results/trellis301/EXPORT_REVIEW.md",
+          "sha256": "413f2b8c4e1941a5d26dfacc69540553b8731814b02f0ef822c41eca3ab0bcb8"
+        },
+        {
+          "path": "scripts/trellis301_export_inspect.py",
+          "sha256": "378a0b63378cd204d82d608804322ca4936557f7395c8f20278362909d21471f"
+        },
+        {
+          "path": ".runtime/trellis301/export/retrieved/evidence/comparison-receipt.json",
+          "sha256": "1a3e74320981852a3107b82a922d1415024aa19b3d18211a633039fd833387d5"
+        },
+        {
+          "path": "results/trellis301/cloud-export/teardown-verification.json",
+          "sha256": "61e3b03d9be44e8b04eed3557084f18e78c1575fd256d2b5ee6be7bb172642b8"
+        },
+        {
+          "path": ".runtime/art-direction/series01-sikh257/sikh-uncovered-concept-v03.png",
+          "sha256": "7aaa7a8433d85024681e427b5cd290ec35fd5b78adfa0aea67035847665a151f"
+        },
+        {
+          "path": ".runtime/art-direction/series01-finish248/opening-final/frame-0200.png",
+          "sha256": "ee30bbe77f6d7f4c3bcdaf298406fd9f3645f08c15403f7eafcd06e91b5a9b0c"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/300000-2048/inspection.json",
+          "sha256": "21fbbd4b6ffcb495bd9d62f88846b30af851f5205d3b3dd079ec4675157d23b5"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/300000-2048/reopen.json",
+          "sha256": "c1ce6bec93a07109742a54b79e95bdd80df1de147ed49582f9abc903e7d7bf76"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-2048/inspection.json",
+          "sha256": "780eb29c2ca34499954c57f7d06d1300a8532944a9448cb76cac94d8baff3f47"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-2048/reopen.json",
+          "sha256": "c1ce6bec93a07109742a54b79e95bdd80df1de147ed49582f9abc903e7d7bf76"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-4096/inspection.json",
+          "sha256": "f47fe6f6cb7117bc35aaaf0bcffa574968039d3d1918321808f1924bc29652d8"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/1000000-4096/reopen.json",
+          "sha256": "c1ce6bec93a07109742a54b79e95bdd80df1de147ed49582f9abc903e7d7bf76"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-front.jpg",
+          "sha256": "13cbd21746445fa715dfddf984f41b7f1e7bf72485adae2863d5b3e235262383"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-left-quarter.jpg",
+          "sha256": "129befed6d505fc707c5351338710db92745c1fe3492365777f04bb42c9f6060"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-left-profile.jpg",
+          "sha256": "d225f360e3d68358111ee14c022ec78b1faecfacdea8eafcb93b9f54afa48c31"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-back.jpg",
+          "sha256": "d2a1f581a3d5ffefeeb79f21ec2906bdfb243bf225dfefe6d3d78840e032b963"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-right-profile.jpg",
+          "sha256": "5218eaad89f0f85bc81d17be50a307569c5d70307b91f4210a22d09f7924d8d9"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-right-quarter.jpg",
+          "sha256": "1af30387664c9cf31529f08d0a947da0de8bd7f4d919848cb04a92d075321fd7"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-front-clay.jpg",
+          "sha256": "4c838fae856ba7893da53017b140fc2342c4a07dd779545efa5a8ee4dfd3224e"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-left-quarter-clay.jpg",
+          "sha256": "cfa633f7608f5b85ca49413ba1a0b74085143070fe4eb5ab50d191b2fe301aaf"
+        },
+        {
+          "path": ".runtime/trellis301/export-review/comparison-right-quarter-clay.jpg",
+          "sha256": "8674ab8908c517fabfac5fff50ab1a00fffce256bd8011f4791fd2a8a618c951"
+        },
+        {
+          "path": "results/trellis301/export-metrics.json",
+          "sha256": "7a6a73be408476eca6a3f7fc482d61a3de491cace0a81f4bf377b0e112c66af4"
+        }
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "prediction": "Final decimation/atlas loss explains unacceptable facial source quality.",
+      "observation": "Higher retention adds beard detail but does not fix eye/moustache anatomy;4K has little visible benefit.",
+      "response": "Reject export-only rescue and test the separately admitted1024 source next.",
+      "result": "resolved"
+    }
+  ],
+  "adjacent_regressions": "Higher retention makes rough beard crevices more explicit; no accepted source changed. Performance remains NOT_RUN.",
+  "stopping_reason": "Diagnostic substage complete, integrated quality investigation continues; not a character handoff."
+}

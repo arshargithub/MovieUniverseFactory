@@ -1,0 +1,84 @@
+{
+  "utc": "2026-10-18T04:55:44.012188+00:00",
+  "prior_outcome": "Prior capacity failure; zero matching workers independently confirmed",
+  "subnet": {
+    "AvailabilityZoneId": "use1-az2",
+    "MapCustomerOwnedIpOnLaunch": false,
+    "OwnerId": "281482331395",
+    "AssignIpv6AddressOnCreation": false,
+    "Ipv6CidrBlockAssociationSet": [],
+    "SubnetArn": "arn:aws:ec2:us-east-1:281482331395:subnet/subnet-00b0b5c574ee5794e",
+    "EnableDns64": false,
+    "Ipv6Native": false,
+    "PrivateDnsNameOptionsOnLaunch": {
+      "HostnameType": "ip-name",
+      "EnableResourceNameDnsARecord": false,
+      "EnableResourceNameDnsAAAARecord": false
+    },
+    "BlockPublicAccessStates": {
+      "InternetGatewayBlockMode": "off"
+    },
+    "SubnetId": "subnet-00b0b5c574ee5794e",
+    "State": "available",
+    "VpcId": "vpc-0b4a0b22ad2150a91",
+    "CidrBlock": "172.31.80.0/20",
+    "AvailableIpAddressCount": 4091,
+    "AvailabilityZone": "us-east-1d",
+    "DefaultForAz": true,
+    "MapPublicIpOnLaunch": true
+  },
+  "client_token": "trellis301-1024-one-worker",
+  "reservation_unchanged": "0840ceee-0cb9-4dd1-8863-91fbf6414614",
+  "source_sha256": "24a08274dbb4aa8589d322051b2e0baabd75899d1a14d23062fc8407057f84bc",
+  "aggregate": {
+    "admission_total_usd": 15.0,
+    "closed_liability_bound_usd": 11.5,
+    "actual_billed_usd": null,
+    "effective_ceiling_usd": 15,
+    "extra10_activated": false,
+    "current": {
+      "calls": 1,
+      "known_cost_usd": 0.0,
+      "reserved_unknown_usd": 3.5,
+      "committed_usd": 3.5,
+      "unresolved_calls": 1,
+      "reservation_exceeded": false,
+      "campaign_limit_usd": 3.5,
+      "effective_campaign_limit_usd": 3.5,
+      "scopes": {
+        "qualification": {
+          "calls": 1,
+          "known_cost_usd": 0.0,
+          "reserved_unknown_usd": 3.5,
+          "committed_usd": 3.5,
+          "unresolved_calls": 1,
+          "reservation_exceeded": false
+        }
+      },
+      "runs": {
+        "trellis301-1024": {
+          "gpu_session": {
+            "calls": 1,
+            "known_cost_usd": 0.0,
+            "reserved_unknown_usd": 3.5,
+            "committed_usd": 3.5,
+            "unresolved_calls": 1,
+            "reservation_exceeded": false
+          }
+        }
+      }
+    },
+    "basis": "results/trellis301/EXPORT_REVIEW.md",
+    "historical_raw_ledgers_preserved": true,
+    "teardown_bindings": {
+      "results/trellis293/teardown-verification.json": "8efd73d82d53fadcf1bffb72fd16ebf1f8b21082379f65b7ba757d0d3c42f33b",
+      "results/trellis294/teardown-verification.json": "363f6a30a0828f3ce6706598cd71030241509a9a4a5c0a946bd63f483f61a13c",
+      "results/trellis295/cloud-a/teardown-verification.json": "a096a3d9eb3e2cd2c75ce8f7de0a1e7e3dd01037e3d1c132df1abc419746c3eb",
+      "results/trellis298/teardown-verification.json": "832d91d819b9c25bbff98193c092915a3ac2333cb48c4ada13f1608f4078cc24",
+      "results/trellis298/cloud-b/teardown-verification.json": "e4a271b3c9baa942316caf631eda776838f89bba08619f6e44fec59e72898f57",
+      "results/trellis298/cloud-c/teardown-verification.json": "2912bdeef6d0e180577783c44525bbde03445ddc39f12fa5d51b88e433e4910a",
+      "results/trellis298/cloud-d/teardown-verification.json": "d5fe0c1c695bd58180e6ecda8e3e4f10f632fcdaaaaccf066e5c8d4ca42c0d10",
+      "results/trellis301/cloud-export/teardown-verification.json": "61e3b03d9be44e8b04eed3557084f18e78c1575fd256d2b5ee6be7bb172642b8"
+    }
+  }
+}

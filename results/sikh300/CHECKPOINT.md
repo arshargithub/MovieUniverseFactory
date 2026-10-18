@@ -31,3 +31,9 @@ After this scene correction, resume the **controlled Sikh source-quality proof**
 Scheduled checkpoint Git protection covers reviewed project text/source/evidence commits only, after outgoing-ancestry and secret/blob screening. Design and implementation commits remain separate. A push receipt, if completed, records exact range and remote verification; this document alone does not claim a push. Native scenes, rendered films, downloaded donors, model weights and private credentials are excluded. New native/media still require separately verified off-device protection; Git is not a substitute for their S3 recovery copy. No force-push, public release or automatic native upload is authorized by the checkpoint.
 
 Next checkpoint: exchange310. Unknown model usage, exact net effort and actual AWS invoice remain unknown rather than estimated from account allowance or held reservations.
+
+## Continuation302 delivery and protection update
+
+The completed scene30022s Sikh clip and42s joined musical clip were surfaced directly after the Director reported not seeing the render. They remain development footage with the principal proxy, not a final actor/trailer pass. Root reviewed all528 frames chronologically; direct real-time listening is not claimed. Strict renderer pixel replay remainsFAIL(max4/255), separately from scene review. See [root review](ROOT_REVIEW.md).
+
+[Git protection receipt](GIT_PROTECTION.md) confirms the screened22-commit checkpoint push through0f9dde1. Newer301/302implementation/evidence changes are local until the next authorized checkpoint; ignored native assets and movies were not protected by that push. [Controlled head-quality outcome](../trellis301/CASCADE_REVIEW.md) records failed export-only rescue and a narrower1024native-repair memory blocker with recovered predecode checkpoint. The next release-critical work remains getting an admissible Sikh actor, not another environment-polish detour.
