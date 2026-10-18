@@ -1,0 +1,924 @@
+{
+  "packet_digest": "f53cb65934ab7356dc33abedda3d15420702e5808b63956d348820b43b6e41ad",
+  "scope": "Prepared recovery blocked by AWS capacity; not source/actor admission",
+  "checks": [
+    {
+      "id": "authority",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Manual capacity outcome review; no invented GPU or visual pass.",
+      "observation": "Exact18.33MB private payload and one3.50USD recovery approved; no GPU launched.",
+      "evidence": [
+        {
+          "path": "results/trellis303/REVIEW.md",
+          "sha256": "38b983b448a8106a12189c5891c5a217b2a83a074b092c43577e502e12b312b4"
+        },
+        {
+          "path": "results/trellis303/INTERNAL_REVIEW.md",
+          "sha256": "11355c22e898c866d57b9d8aa10fe4e01908c6b2d60ea1bd78e5183686fe76cd"
+        },
+        {
+          "path": "results/trellis303/authority.json",
+          "sha256": "6a8c38024a412d94733814752d3434f963d71e289a4bea9417d69bf442c169a1"
+        },
+        {
+          "path": "results/trellis303/local-checkpoint-check.json",
+          "sha256": "89d03937234b0c081e166c57b8c7dfa2604f9ceab6d0d85dcb2b764c68729b69"
+        },
+        {
+          "path": "results/trellis303/preflight.json",
+          "sha256": "3f54750f38d27e56a1c63ad8047aee24dc676bf94a70544e6a6364b93e45fb5a"
+        },
+        {
+          "path": "results/trellis303/guard-test.json",
+          "sha256": "c10aa4eac2c8529eee34963b679ca0e6407433ede8d3fc9b26408bbfd327c0dc"
+        },
+        {
+          "path": "results/trellis303/payload.json",
+          "sha256": "526e05288af2c0410a1c69e524ca7707d6e13fc7744638d0686be6925a116bee"
+        },
+        {
+          "path": "results/trellis303/teardown-verification.json",
+          "sha256": "06f00c671b2945c4bb60f0848ec305ef9cf6b406a8cf4a3621c7e977f3d6df18"
+        }
+      ]
+    },
+    {
+      "id": "strategy",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Manual capacity outcome review; no invented GPU or visual pass.",
+      "observation": "Saved-latent decode and fresh-process repair/export implemented; GPU proof blocked by capacity.",
+      "evidence": [
+        {
+          "path": "results/trellis303/REVIEW.md",
+          "sha256": "38b983b448a8106a12189c5891c5a217b2a83a074b092c43577e502e12b312b4"
+        },
+        {
+          "path": "results/trellis303/INTERNAL_REVIEW.md",
+          "sha256": "11355c22e898c866d57b9d8aa10fe4e01908c6b2d60ea1bd78e5183686fe76cd"
+        },
+        {
+          "path": "results/trellis303/authority.json",
+          "sha256": "6a8c38024a412d94733814752d3434f963d71e289a4bea9417d69bf442c169a1"
+        },
+        {
+          "path": "results/trellis303/local-checkpoint-check.json",
+          "sha256": "89d03937234b0c081e166c57b8c7dfa2604f9ceab6d0d85dcb2b764c68729b69"
+        },
+        {
+          "path": "results/trellis303/preflight.json",
+          "sha256": "3f54750f38d27e56a1c63ad8047aee24dc676bf94a70544e6a6364b93e45fb5a"
+        },
+        {
+          "path": "results/trellis303/guard-test.json",
+          "sha256": "c10aa4eac2c8529eee34963b679ca0e6407433ede8d3fc9b26408bbfd327c0dc"
+        },
+        {
+          "path": "results/trellis303/payload.json",
+          "sha256": "526e05288af2c0410a1c69e524ca7707d6e13fc7744638d0686be6925a116bee"
+        },
+        {
+          "path": "results/trellis303/teardown-verification.json",
+          "sha256": "06f00c671b2945c4bb60f0848ec305ef9cf6b406a8cf4a3621c7e977f3d6df18"
+        }
+      ]
+    },
+    {
+      "id": "visual_gate",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Manual capacity outcome review; no invented GPU or visual pass.",
+      "observation": "No recovered1024 render or performance evidence; corresponding admission unrun.",
+      "evidence": [
+        {
+          "path": "results/trellis303/REVIEW.md",
+          "sha256": "38b983b448a8106a12189c5891c5a217b2a83a074b092c43577e502e12b312b4"
+        },
+        {
+          "path": "results/trellis303/INTERNAL_REVIEW.md",
+          "sha256": "11355c22e898c866d57b9d8aa10fe4e01908c6b2d60ea1bd78e5183686fe76cd"
+        },
+        {
+          "path": "results/trellis303/authority.json",
+          "sha256": "6a8c38024a412d94733814752d3434f963d71e289a4bea9417d69bf442c169a1"
+        },
+        {
+          "path": "results/trellis303/local-checkpoint-check.json",
+          "sha256": "89d03937234b0c081e166c57b8c7dfa2604f9ceab6d0d85dcb2b764c68729b69"
+        },
+        {
+          "path": "results/trellis303/preflight.json",
+          "sha256": "3f54750f38d27e56a1c63ad8047aee24dc676bf94a70544e6a6364b93e45fb5a"
+        },
+        {
+          "path": "results/trellis303/guard-test.json",
+          "sha256": "c10aa4eac2c8529eee34963b679ca0e6407433ede8d3fc9b26408bbfd327c0dc"
+        },
+        {
+          "path": "results/trellis303/payload.json",
+          "sha256": "526e05288af2c0410a1c69e524ca7707d6e13fc7744638d0686be6925a116bee"
+        },
+        {
+          "path": "results/trellis303/teardown-verification.json",
+          "sha256": "06f00c671b2945c4bb60f0848ec305ef9cf6b406a8cf4a3621c7e977f3d6df18"
+        }
+      ]
+    },
+    {
+      "id": "anticipation",
+      "kind": "review",
+      "status": "PASS",
+      "action_taken": "Manual capacity outcome review; no invented GPU or visual pass.",
+      "observation": "Recorded raw geometry checkpoint, memory telemetry and source/ensemble visual failure hypotheses before dispatch.",
+      "evidence": [
+        {
+          "path": "results/trellis303/REVIEW.md",
+          "sha256": "38b983b448a8106a12189c5891c5a217b2a83a074b092c43577e502e12b312b4"
+        },
+        {
+          "path": "results/trellis303/INTERNAL_REVIEW.md",
+          "sha256": "11355c22e898c866d57b9d8aa10fe4e01908c6b2d60ea1bd78e5183686fe76cd"
+        },
+        {
+          "path": "results/trellis303/authority.json",
+          "sha256": "6a8c38024a412d94733814752d3434f963d71e289a4bea9417d69bf442c169a1"
+        },
+        {
+          "path": "results/trellis303/local-checkpoint-check.json",
+          "sha256": "89d03937234b0c081e166c57b8c7dfa2604f9ceab6d0d85dcb2b764c68729b69"
+        },
+        {
+          "path": "results/trellis303/preflight.json",
+          "sha256": "3f54750f38d27e56a1c63ad8047aee24dc676bf94a70544e6a6364b93e45fb5a"
+        },
+        {
+          "path": "results/trellis303/guard-test.json",
+          "sha256": "c10aa4eac2c8529eee34963b679ca0e6407433ede8d3fc9b26408bbfd327c0dc"
+        },
+        {
+          "path": "results/trellis303/payload.json",
+          "sha256": "526e05288af2c0410a1c69e524ca7707d6e13fc7744638d0686be6925a116bee"
+        },
+        {
+          "path": "results/trellis303/teardown-verification.json",
+          "sha256": "06f00c671b2945c4bb60f0848ec305ef9cf6b406a8cf4a3621c7e977f3d6df18"
+        }
+      ]
+    },
+    {
+      "id": "stopping",
+      "kind": "review",
+      "status": "PASS",
+      "action_taken": "Manual capacity outcome review; no invented GPU or visual pass.",
+      "observation": "Eight capacity failures; no created worker. Temporary resources removed, no blind model retry.",
+      "evidence": [
+        {
+          "path": "results/trellis303/REVIEW.md",
+          "sha256": "38b983b448a8106a12189c5891c5a217b2a83a074b092c43577e502e12b312b4"
+        },
+        {
+          "path": "results/trellis303/INTERNAL_REVIEW.md",
+          "sha256": "11355c22e898c866d57b9d8aa10fe4e01908c6b2d60ea1bd78e5183686fe76cd"
+        },
+        {
+          "path": "results/trellis303/authority.json",
+          "sha256": "6a8c38024a412d94733814752d3434f963d71e289a4bea9417d69bf442c169a1"
+        },
+        {
+          "path": "results/trellis303/local-checkpoint-check.json",
+          "sha256": "89d03937234b0c081e166c57b8c7dfa2604f9ceab6d0d85dcb2b764c68729b69"
+        },
+        {
+          "path": "results/trellis303/preflight.json",
+          "sha256": "3f54750f38d27e56a1c63ad8047aee24dc676bf94a70544e6a6364b93e45fb5a"
+        },
+        {
+          "path": "results/trellis303/guard-test.json",
+          "sha256": "c10aa4eac2c8529eee34963b679ca0e6407433ede8d3fc9b26408bbfd327c0dc"
+        },
+        {
+          "path": "results/trellis303/payload.json",
+          "sha256": "526e05288af2c0410a1c69e524ca7707d6e13fc7744638d0686be6925a116bee"
+        },
+        {
+          "path": "results/trellis303/teardown-verification.json",
+          "sha256": "06f00c671b2945c4bb60f0848ec305ef9cf6b406a8cf4a3621c7e977f3d6df18"
+        }
+      ]
+    },
+    {
+      "id": "versioning",
+      "kind": "technical",
+      "status": "PASS",
+      "action_taken": "Manual capacity outcome review; no invented GPU or visual pass.",
+      "observation": "Latent SHA and payload frozen; originals preserved. No new native exists.",
+      "evidence": [
+        {
+          "path": "results/trellis303/REVIEW.md",
+          "sha256": "38b983b448a8106a12189c5891c5a217b2a83a074b092c43577e502e12b312b4"
+        },
+        {
+          "path": "results/trellis303/INTERNAL_REVIEW.md",
+          "sha256": "11355c22e898c866d57b9d8aa10fe4e01908c6b2d60ea1bd78e5183686fe76cd"
+        },
+        {
+          "path": "results/trellis303/authority.json",
+          "sha256": "6a8c38024a412d94733814752d3434f963d71e289a4bea9417d69bf442c169a1"
+        },
+        {
+          "path": "results/trellis303/local-checkpoint-check.json",
+          "sha256": "89d03937234b0c081e166c57b8c7dfa2604f9ceab6d0d85dcb2b764c68729b69"
+        },
+        {
+          "path": "results/trellis303/preflight.json",
+          "sha256": "3f54750f38d27e56a1c63ad8047aee24dc676bf94a70544e6a6364b93e45fb5a"
+        },
+        {
+          "path": "results/trellis303/guard-test.json",
+          "sha256": "c10aa4eac2c8529eee34963b679ca0e6407433ede8d3fc9b26408bbfd327c0dc"
+        },
+        {
+          "path": "results/trellis303/payload.json",
+          "sha256": "526e05288af2c0410a1c69e524ca7707d6e13fc7744638d0686be6925a116bee"
+        },
+        {
+          "path": "results/trellis303/teardown-verification.json",
+          "sha256": "06f00c671b2945c4bb60f0848ec305ef9cf6b406a8cf4a3621c7e977f3d6df18"
+        }
+      ]
+    },
+    {
+      "id": "economics",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Manual capacity outcome review; no invented GPU or visual pass.",
+      "observation": "One3.50USD hold, prior15 retained, actual billing unknown. No GPU inference ran.",
+      "evidence": [
+        {
+          "path": "results/trellis303/REVIEW.md",
+          "sha256": "38b983b448a8106a12189c5891c5a217b2a83a074b092c43577e502e12b312b4"
+        },
+        {
+          "path": "results/trellis303/INTERNAL_REVIEW.md",
+          "sha256": "11355c22e898c866d57b9d8aa10fe4e01908c6b2d60ea1bd78e5183686fe76cd"
+        },
+        {
+          "path": "results/trellis303/authority.json",
+          "sha256": "6a8c38024a412d94733814752d3434f963d71e289a4bea9417d69bf442c169a1"
+        },
+        {
+          "path": "results/trellis303/local-checkpoint-check.json",
+          "sha256": "89d03937234b0c081e166c57b8c7dfa2604f9ceab6d0d85dcb2b764c68729b69"
+        },
+        {
+          "path": "results/trellis303/preflight.json",
+          "sha256": "3f54750f38d27e56a1c63ad8047aee24dc676bf94a70544e6a6364b93e45fb5a"
+        },
+        {
+          "path": "results/trellis303/guard-test.json",
+          "sha256": "c10aa4eac2c8529eee34963b679ca0e6407433ede8d3fc9b26408bbfd327c0dc"
+        },
+        {
+          "path": "results/trellis303/payload.json",
+          "sha256": "526e05288af2c0410a1c69e524ca7707d6e13fc7744638d0686be6925a116bee"
+        },
+        {
+          "path": "results/trellis303/teardown-verification.json",
+          "sha256": "06f00c671b2945c4bb60f0848ec305ef9cf6b406a8cf4a3621c7e977f3d6df18"
+        }
+      ]
+    },
+    {
+      "id": "representation",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Manual capacity outcome review; no invented GPU or visual pass.",
+      "observation": "No recovered1024 render or performance evidence; corresponding admission unrun.",
+      "evidence": [
+        {
+          "path": "results/trellis303/REVIEW.md",
+          "sha256": "38b983b448a8106a12189c5891c5a217b2a83a074b092c43577e502e12b312b4"
+        },
+        {
+          "path": "results/trellis303/INTERNAL_REVIEW.md",
+          "sha256": "11355c22e898c866d57b9d8aa10fe4e01908c6b2d60ea1bd78e5183686fe76cd"
+        },
+        {
+          "path": "results/trellis303/authority.json",
+          "sha256": "6a8c38024a412d94733814752d3434f963d71e289a4bea9417d69bf442c169a1"
+        },
+        {
+          "path": "results/trellis303/local-checkpoint-check.json",
+          "sha256": "89d03937234b0c081e166c57b8c7dfa2604f9ceab6d0d85dcb2b764c68729b69"
+        },
+        {
+          "path": "results/trellis303/preflight.json",
+          "sha256": "3f54750f38d27e56a1c63ad8047aee24dc676bf94a70544e6a6364b93e45fb5a"
+        },
+        {
+          "path": "results/trellis303/guard-test.json",
+          "sha256": "c10aa4eac2c8529eee34963b679ca0e6407433ede8d3fc9b26408bbfd327c0dc"
+        },
+        {
+          "path": "results/trellis303/payload.json",
+          "sha256": "526e05288af2c0410a1c69e524ca7707d6e13fc7744638d0686be6925a116bee"
+        },
+        {
+          "path": "results/trellis303/teardown-verification.json",
+          "sha256": "06f00c671b2945c4bb60f0848ec305ef9cf6b406a8cf4a3621c7e977f3d6df18"
+        }
+      ]
+    },
+    {
+      "id": "anatomy",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Manual capacity outcome review; no invented GPU or visual pass.",
+      "observation": "No recovered1024 render or performance evidence; corresponding admission unrun.",
+      "evidence": [
+        {
+          "path": "results/trellis303/REVIEW.md",
+          "sha256": "38b983b448a8106a12189c5891c5a217b2a83a074b092c43577e502e12b312b4"
+        },
+        {
+          "path": "results/trellis303/INTERNAL_REVIEW.md",
+          "sha256": "11355c22e898c866d57b9d8aa10fe4e01908c6b2d60ea1bd78e5183686fe76cd"
+        },
+        {
+          "path": "results/trellis303/authority.json",
+          "sha256": "6a8c38024a412d94733814752d3434f963d71e289a4bea9417d69bf442c169a1"
+        },
+        {
+          "path": "results/trellis303/local-checkpoint-check.json",
+          "sha256": "89d03937234b0c081e166c57b8c7dfa2604f9ceab6d0d85dcb2b764c68729b69"
+        },
+        {
+          "path": "results/trellis303/preflight.json",
+          "sha256": "3f54750f38d27e56a1c63ad8047aee24dc676bf94a70544e6a6364b93e45fb5a"
+        },
+        {
+          "path": "results/trellis303/guard-test.json",
+          "sha256": "c10aa4eac2c8529eee34963b679ca0e6407433ede8d3fc9b26408bbfd327c0dc"
+        },
+        {
+          "path": "results/trellis303/payload.json",
+          "sha256": "526e05288af2c0410a1c69e524ca7707d6e13fc7744638d0686be6925a116bee"
+        },
+        {
+          "path": "results/trellis303/teardown-verification.json",
+          "sha256": "06f00c671b2945c4bb60f0848ec305ef9cf6b406a8cf4a3621c7e977f3d6df18"
+        }
+      ]
+    },
+    {
+      "id": "motion",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Manual capacity outcome review; no invented GPU or visual pass.",
+      "observation": "No recovered1024 render or performance evidence; corresponding admission unrun.",
+      "evidence": [
+        {
+          "path": "results/trellis303/REVIEW.md",
+          "sha256": "38b983b448a8106a12189c5891c5a217b2a83a074b092c43577e502e12b312b4"
+        },
+        {
+          "path": "results/trellis303/INTERNAL_REVIEW.md",
+          "sha256": "11355c22e898c866d57b9d8aa10fe4e01908c6b2d60ea1bd78e5183686fe76cd"
+        },
+        {
+          "path": "results/trellis303/authority.json",
+          "sha256": "6a8c38024a412d94733814752d3434f963d71e289a4bea9417d69bf442c169a1"
+        },
+        {
+          "path": "results/trellis303/local-checkpoint-check.json",
+          "sha256": "89d03937234b0c081e166c57b8c7dfa2604f9ceab6d0d85dcb2b764c68729b69"
+        },
+        {
+          "path": "results/trellis303/preflight.json",
+          "sha256": "3f54750f38d27e56a1c63ad8047aee24dc676bf94a70544e6a6364b93e45fb5a"
+        },
+        {
+          "path": "results/trellis303/guard-test.json",
+          "sha256": "c10aa4eac2c8529eee34963b679ca0e6407433ede8d3fc9b26408bbfd327c0dc"
+        },
+        {
+          "path": "results/trellis303/payload.json",
+          "sha256": "526e05288af2c0410a1c69e524ca7707d6e13fc7744638d0686be6925a116bee"
+        },
+        {
+          "path": "results/trellis303/teardown-verification.json",
+          "sha256": "06f00c671b2945c4bb60f0848ec305ef9cf6b406a8cf4a3621c7e977f3d6df18"
+        }
+      ]
+    },
+    {
+      "id": "secondary",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Manual capacity outcome review; no invented GPU or visual pass.",
+      "observation": "No recovered1024 render or performance evidence; corresponding admission unrun.",
+      "evidence": [
+        {
+          "path": "results/trellis303/REVIEW.md",
+          "sha256": "38b983b448a8106a12189c5891c5a217b2a83a074b092c43577e502e12b312b4"
+        },
+        {
+          "path": "results/trellis303/INTERNAL_REVIEW.md",
+          "sha256": "11355c22e898c866d57b9d8aa10fe4e01908c6b2d60ea1bd78e5183686fe76cd"
+        },
+        {
+          "path": "results/trellis303/authority.json",
+          "sha256": "6a8c38024a412d94733814752d3434f963d71e289a4bea9417d69bf442c169a1"
+        },
+        {
+          "path": "results/trellis303/local-checkpoint-check.json",
+          "sha256": "89d03937234b0c081e166c57b8c7dfa2604f9ceab6d0d85dcb2b764c68729b69"
+        },
+        {
+          "path": "results/trellis303/preflight.json",
+          "sha256": "3f54750f38d27e56a1c63ad8047aee24dc676bf94a70544e6a6364b93e45fb5a"
+        },
+        {
+          "path": "results/trellis303/guard-test.json",
+          "sha256": "c10aa4eac2c8529eee34963b679ca0e6407433ede8d3fc9b26408bbfd327c0dc"
+        },
+        {
+          "path": "results/trellis303/payload.json",
+          "sha256": "526e05288af2c0410a1c69e524ca7707d6e13fc7744638d0686be6925a116bee"
+        },
+        {
+          "path": "results/trellis303/teardown-verification.json",
+          "sha256": "06f00c671b2945c4bb60f0848ec305ef9cf6b406a8cf4a3621c7e977f3d6df18"
+        }
+      ]
+    },
+    {
+      "id": "look",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Manual capacity outcome review; no invented GPU or visual pass.",
+      "observation": "No recovered1024 render or performance evidence; corresponding admission unrun.",
+      "evidence": [
+        {
+          "path": "results/trellis303/REVIEW.md",
+          "sha256": "38b983b448a8106a12189c5891c5a217b2a83a074b092c43577e502e12b312b4"
+        },
+        {
+          "path": "results/trellis303/INTERNAL_REVIEW.md",
+          "sha256": "11355c22e898c866d57b9d8aa10fe4e01908c6b2d60ea1bd78e5183686fe76cd"
+        },
+        {
+          "path": "results/trellis303/authority.json",
+          "sha256": "6a8c38024a412d94733814752d3434f963d71e289a4bea9417d69bf442c169a1"
+        },
+        {
+          "path": "results/trellis303/local-checkpoint-check.json",
+          "sha256": "89d03937234b0c081e166c57b8c7dfa2604f9ceab6d0d85dcb2b764c68729b69"
+        },
+        {
+          "path": "results/trellis303/preflight.json",
+          "sha256": "3f54750f38d27e56a1c63ad8047aee24dc676bf94a70544e6a6364b93e45fb5a"
+        },
+        {
+          "path": "results/trellis303/guard-test.json",
+          "sha256": "c10aa4eac2c8529eee34963b679ca0e6407433ede8d3fc9b26408bbfd327c0dc"
+        },
+        {
+          "path": "results/trellis303/payload.json",
+          "sha256": "526e05288af2c0410a1c69e524ca7707d6e13fc7744638d0686be6925a116bee"
+        },
+        {
+          "path": "results/trellis303/teardown-verification.json",
+          "sha256": "06f00c671b2945c4bb60f0848ec305ef9cf6b406a8cf4a3621c7e977f3d6df18"
+        }
+      ]
+    },
+    {
+      "id": "rights",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Manual capacity outcome review; no invented GPU or visual pass.",
+      "observation": "Same admitted runtime/models/export route; no new provider, input image, encoder or credential upload.",
+      "evidence": [
+        {
+          "path": "results/trellis303/REVIEW.md",
+          "sha256": "38b983b448a8106a12189c5891c5a217b2a83a074b092c43577e502e12b312b4"
+        },
+        {
+          "path": "results/trellis303/INTERNAL_REVIEW.md",
+          "sha256": "11355c22e898c866d57b9d8aa10fe4e01908c6b2d60ea1bd78e5183686fe76cd"
+        },
+        {
+          "path": "results/trellis303/authority.json",
+          "sha256": "6a8c38024a412d94733814752d3434f963d71e289a4bea9417d69bf442c169a1"
+        },
+        {
+          "path": "results/trellis303/local-checkpoint-check.json",
+          "sha256": "89d03937234b0c081e166c57b8c7dfa2604f9ceab6d0d85dcb2b764c68729b69"
+        },
+        {
+          "path": "results/trellis303/preflight.json",
+          "sha256": "3f54750f38d27e56a1c63ad8047aee24dc676bf94a70544e6a6364b93e45fb5a"
+        },
+        {
+          "path": "results/trellis303/guard-test.json",
+          "sha256": "c10aa4eac2c8529eee34963b679ca0e6407433ede8d3fc9b26408bbfd327c0dc"
+        },
+        {
+          "path": "results/trellis303/payload.json",
+          "sha256": "526e05288af2c0410a1c69e524ca7707d6e13fc7744638d0686be6925a116bee"
+        },
+        {
+          "path": "results/trellis303/teardown-verification.json",
+          "sha256": "06f00c671b2945c4bb60f0848ec305ef9cf6b406a8cf4a3621c7e977f3d6df18"
+        }
+      ]
+    },
+    {
+      "id": "current_state",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Manual capacity outcome review; no invented GPU or visual pass.",
+      "observation": "Approved Sikhv03 and accepted Pashtun/scene300 preserved; actor admission still blocked.",
+      "evidence": [
+        {
+          "path": "results/trellis303/REVIEW.md",
+          "sha256": "38b983b448a8106a12189c5891c5a217b2a83a074b092c43577e502e12b312b4"
+        },
+        {
+          "path": "results/trellis303/INTERNAL_REVIEW.md",
+          "sha256": "11355c22e898c866d57b9d8aa10fe4e01908c6b2d60ea1bd78e5183686fe76cd"
+        },
+        {
+          "path": "results/trellis303/authority.json",
+          "sha256": "6a8c38024a412d94733814752d3434f963d71e289a4bea9417d69bf442c169a1"
+        },
+        {
+          "path": "results/trellis303/local-checkpoint-check.json",
+          "sha256": "89d03937234b0c081e166c57b8c7dfa2604f9ceab6d0d85dcb2b764c68729b69"
+        },
+        {
+          "path": "results/trellis303/preflight.json",
+          "sha256": "3f54750f38d27e56a1c63ad8047aee24dc676bf94a70544e6a6364b93e45fb5a"
+        },
+        {
+          "path": "results/trellis303/guard-test.json",
+          "sha256": "c10aa4eac2c8529eee34963b679ca0e6407433ede8d3fc9b26408bbfd327c0dc"
+        },
+        {
+          "path": "results/trellis303/payload.json",
+          "sha256": "526e05288af2c0410a1c69e524ca7707d6e13fc7744638d0686be6925a116bee"
+        },
+        {
+          "path": "results/trellis303/teardown-verification.json",
+          "sha256": "06f00c671b2945c4bb60f0848ec305ef9cf6b406a8cf4a3621c7e977f3d6df18"
+        }
+      ]
+    },
+    {
+      "id": "au_reference",
+      "kind": "review",
+      "status": "PASS",
+      "action_taken": "Manual capacity outcome review; no invented GPU or visual pass.",
+      "observation": "Root inspected v03, known-failing512 and accepted Pashtun shot; preserved their distinct scopes.",
+      "evidence": [
+        {
+          "path": "results/trellis303/REVIEW.md",
+          "sha256": "38b983b448a8106a12189c5891c5a217b2a83a074b092c43577e502e12b312b4"
+        },
+        {
+          "path": "results/trellis303/INTERNAL_REVIEW.md",
+          "sha256": "11355c22e898c866d57b9d8aa10fe4e01908c6b2d60ea1bd78e5183686fe76cd"
+        },
+        {
+          "path": "results/trellis303/authority.json",
+          "sha256": "6a8c38024a412d94733814752d3434f963d71e289a4bea9417d69bf442c169a1"
+        },
+        {
+          "path": "results/trellis303/local-checkpoint-check.json",
+          "sha256": "89d03937234b0c081e166c57b8c7dfa2604f9ceab6d0d85dcb2b764c68729b69"
+        },
+        {
+          "path": "results/trellis303/preflight.json",
+          "sha256": "3f54750f38d27e56a1c63ad8047aee24dc676bf94a70544e6a6364b93e45fb5a"
+        },
+        {
+          "path": "results/trellis303/guard-test.json",
+          "sha256": "c10aa4eac2c8529eee34963b679ca0e6407433ede8d3fc9b26408bbfd327c0dc"
+        },
+        {
+          "path": "results/trellis303/payload.json",
+          "sha256": "526e05288af2c0410a1c69e524ca7707d6e13fc7744638d0686be6925a116bee"
+        },
+        {
+          "path": "results/trellis303/teardown-verification.json",
+          "sha256": "06f00c671b2945c4bb60f0848ec305ef9cf6b406a8cf4a3621c7e977f3d6df18"
+        }
+      ]
+    },
+    {
+      "id": "au_deformation",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Manual capacity outcome review; no invented GPU or visual pass.",
+      "observation": "No recovered1024 render or performance evidence; corresponding admission unrun.",
+      "evidence": [
+        {
+          "path": "results/trellis303/REVIEW.md",
+          "sha256": "38b983b448a8106a12189c5891c5a217b2a83a074b092c43577e502e12b312b4"
+        },
+        {
+          "path": "results/trellis303/INTERNAL_REVIEW.md",
+          "sha256": "11355c22e898c866d57b9d8aa10fe4e01908c6b2d60ea1bd78e5183686fe76cd"
+        },
+        {
+          "path": "results/trellis303/authority.json",
+          "sha256": "6a8c38024a412d94733814752d3434f963d71e289a4bea9417d69bf442c169a1"
+        },
+        {
+          "path": "results/trellis303/local-checkpoint-check.json",
+          "sha256": "89d03937234b0c081e166c57b8c7dfa2604f9ceab6d0d85dcb2b764c68729b69"
+        },
+        {
+          "path": "results/trellis303/preflight.json",
+          "sha256": "3f54750f38d27e56a1c63ad8047aee24dc676bf94a70544e6a6364b93e45fb5a"
+        },
+        {
+          "path": "results/trellis303/guard-test.json",
+          "sha256": "c10aa4eac2c8529eee34963b679ca0e6407433ede8d3fc9b26408bbfd327c0dc"
+        },
+        {
+          "path": "results/trellis303/payload.json",
+          "sha256": "526e05288af2c0410a1c69e524ca7707d6e13fc7744638d0686be6925a116bee"
+        },
+        {
+          "path": "results/trellis303/teardown-verification.json",
+          "sha256": "06f00c671b2945c4bb60f0848ec305ef9cf6b406a8cf4a3621c7e977f3d6df18"
+        }
+      ]
+    },
+    {
+      "id": "au_performance",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Manual capacity outcome review; no invented GPU or visual pass.",
+      "observation": "No recovered1024 render or performance evidence; corresponding admission unrun.",
+      "evidence": [
+        {
+          "path": "results/trellis303/REVIEW.md",
+          "sha256": "38b983b448a8106a12189c5891c5a217b2a83a074b092c43577e502e12b312b4"
+        },
+        {
+          "path": "results/trellis303/INTERNAL_REVIEW.md",
+          "sha256": "11355c22e898c866d57b9d8aa10fe4e01908c6b2d60ea1bd78e5183686fe76cd"
+        },
+        {
+          "path": "results/trellis303/authority.json",
+          "sha256": "6a8c38024a412d94733814752d3434f963d71e289a4bea9417d69bf442c169a1"
+        },
+        {
+          "path": "results/trellis303/local-checkpoint-check.json",
+          "sha256": "89d03937234b0c081e166c57b8c7dfa2604f9ceab6d0d85dcb2b764c68729b69"
+        },
+        {
+          "path": "results/trellis303/preflight.json",
+          "sha256": "3f54750f38d27e56a1c63ad8047aee24dc676bf94a70544e6a6364b93e45fb5a"
+        },
+        {
+          "path": "results/trellis303/guard-test.json",
+          "sha256": "c10aa4eac2c8529eee34963b679ca0e6407433ede8d3fc9b26408bbfd327c0dc"
+        },
+        {
+          "path": "results/trellis303/payload.json",
+          "sha256": "526e05288af2c0410a1c69e524ca7707d6e13fc7744638d0686be6925a116bee"
+        },
+        {
+          "path": "results/trellis303/teardown-verification.json",
+          "sha256": "06f00c671b2945c4bb60f0848ec305ef9cf6b406a8cf4a3621c7e977f3d6df18"
+        }
+      ]
+    },
+    {
+      "id": "au_contact",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Manual capacity outcome review; no invented GPU or visual pass.",
+      "observation": "No recovered1024 render or performance evidence; corresponding admission unrun.",
+      "evidence": [
+        {
+          "path": "results/trellis303/REVIEW.md",
+          "sha256": "38b983b448a8106a12189c5891c5a217b2a83a074b092c43577e502e12b312b4"
+        },
+        {
+          "path": "results/trellis303/INTERNAL_REVIEW.md",
+          "sha256": "11355c22e898c866d57b9d8aa10fe4e01908c6b2d60ea1bd78e5183686fe76cd"
+        },
+        {
+          "path": "results/trellis303/authority.json",
+          "sha256": "6a8c38024a412d94733814752d3434f963d71e289a4bea9417d69bf442c169a1"
+        },
+        {
+          "path": "results/trellis303/local-checkpoint-check.json",
+          "sha256": "89d03937234b0c081e166c57b8c7dfa2604f9ceab6d0d85dcb2b764c68729b69"
+        },
+        {
+          "path": "results/trellis303/preflight.json",
+          "sha256": "3f54750f38d27e56a1c63ad8047aee24dc676bf94a70544e6a6364b93e45fb5a"
+        },
+        {
+          "path": "results/trellis303/guard-test.json",
+          "sha256": "c10aa4eac2c8529eee34963b679ca0e6407433ede8d3fc9b26408bbfd327c0dc"
+        },
+        {
+          "path": "results/trellis303/payload.json",
+          "sha256": "526e05288af2c0410a1c69e524ca7707d6e13fc7744638d0686be6925a116bee"
+        },
+        {
+          "path": "results/trellis303/teardown-verification.json",
+          "sha256": "06f00c671b2945c4bb60f0848ec305ef9cf6b406a8cf4a3621c7e977f3d6df18"
+        }
+      ]
+    },
+    {
+      "id": "au_surface",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Manual capacity outcome review; no invented GPU or visual pass.",
+      "observation": "No recovered1024 render or performance evidence; corresponding admission unrun.",
+      "evidence": [
+        {
+          "path": "results/trellis303/REVIEW.md",
+          "sha256": "38b983b448a8106a12189c5891c5a217b2a83a074b092c43577e502e12b312b4"
+        },
+        {
+          "path": "results/trellis303/INTERNAL_REVIEW.md",
+          "sha256": "11355c22e898c866d57b9d8aa10fe4e01908c6b2d60ea1bd78e5183686fe76cd"
+        },
+        {
+          "path": "results/trellis303/authority.json",
+          "sha256": "6a8c38024a412d94733814752d3434f963d71e289a4bea9417d69bf442c169a1"
+        },
+        {
+          "path": "results/trellis303/local-checkpoint-check.json",
+          "sha256": "89d03937234b0c081e166c57b8c7dfa2604f9ceab6d0d85dcb2b764c68729b69"
+        },
+        {
+          "path": "results/trellis303/preflight.json",
+          "sha256": "3f54750f38d27e56a1c63ad8047aee24dc676bf94a70544e6a6364b93e45fb5a"
+        },
+        {
+          "path": "results/trellis303/guard-test.json",
+          "sha256": "c10aa4eac2c8529eee34963b679ca0e6407433ede8d3fc9b26408bbfd327c0dc"
+        },
+        {
+          "path": "results/trellis303/payload.json",
+          "sha256": "526e05288af2c0410a1c69e524ca7707d6e13fc7744638d0686be6925a116bee"
+        },
+        {
+          "path": "results/trellis303/teardown-verification.json",
+          "sha256": "06f00c671b2945c4bb60f0848ec305ef9cf6b406a8cf4a3621c7e977f3d6df18"
+        }
+      ]
+    },
+    {
+      "id": "sikh_scope",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Manual capacity outcome review; no invented GPU or visual pass.",
+      "observation": "Static-source recovery only; no body/cloth/scene edits.",
+      "evidence": [
+        {
+          "path": "results/trellis303/REVIEW.md",
+          "sha256": "38b983b448a8106a12189c5891c5a217b2a83a074b092c43577e502e12b312b4"
+        },
+        {
+          "path": "results/trellis303/INTERNAL_REVIEW.md",
+          "sha256": "11355c22e898c866d57b9d8aa10fe4e01908c6b2d60ea1bd78e5183686fe76cd"
+        },
+        {
+          "path": "results/trellis303/authority.json",
+          "sha256": "6a8c38024a412d94733814752d3434f963d71e289a4bea9417d69bf442c169a1"
+        },
+        {
+          "path": "results/trellis303/local-checkpoint-check.json",
+          "sha256": "89d03937234b0c081e166c57b8c7dfa2604f9ceab6d0d85dcb2b764c68729b69"
+        },
+        {
+          "path": "results/trellis303/preflight.json",
+          "sha256": "3f54750f38d27e56a1c63ad8047aee24dc676bf94a70544e6a6364b93e45fb5a"
+        },
+        {
+          "path": "results/trellis303/guard-test.json",
+          "sha256": "c10aa4eac2c8529eee34963b679ca0e6407433ede8d3fc9b26408bbfd327c0dc"
+        },
+        {
+          "path": "results/trellis303/payload.json",
+          "sha256": "526e05288af2c0410a1c69e524ca7707d6e13fc7744638d0686be6925a116bee"
+        },
+        {
+          "path": "results/trellis303/teardown-verification.json",
+          "sha256": "06f00c671b2945c4bb60f0848ec305ef9cf6b406a8cf4a3621c7e977f3d6df18"
+        }
+      ]
+    },
+    {
+      "id": "sikh_cloth",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Manual capacity outcome review; no invented GPU or visual pass.",
+      "observation": "No recovered1024 render or performance evidence; corresponding admission unrun.",
+      "evidence": [
+        {
+          "path": "results/trellis303/REVIEW.md",
+          "sha256": "38b983b448a8106a12189c5891c5a217b2a83a074b092c43577e502e12b312b4"
+        },
+        {
+          "path": "results/trellis303/INTERNAL_REVIEW.md",
+          "sha256": "11355c22e898c866d57b9d8aa10fe4e01908c6b2d60ea1bd78e5183686fe76cd"
+        },
+        {
+          "path": "results/trellis303/authority.json",
+          "sha256": "6a8c38024a412d94733814752d3434f963d71e289a4bea9417d69bf442c169a1"
+        },
+        {
+          "path": "results/trellis303/local-checkpoint-check.json",
+          "sha256": "89d03937234b0c081e166c57b8c7dfa2604f9ceab6d0d85dcb2b764c68729b69"
+        },
+        {
+          "path": "results/trellis303/preflight.json",
+          "sha256": "3f54750f38d27e56a1c63ad8047aee24dc676bf94a70544e6a6364b93e45fb5a"
+        },
+        {
+          "path": "results/trellis303/guard-test.json",
+          "sha256": "c10aa4eac2c8529eee34963b679ca0e6407433ede8d3fc9b26408bbfd327c0dc"
+        },
+        {
+          "path": "results/trellis303/payload.json",
+          "sha256": "526e05288af2c0410a1c69e524ca7707d6e13fc7744638d0686be6925a116bee"
+        },
+        {
+          "path": "results/trellis303/teardown-verification.json",
+          "sha256": "06f00c671b2945c4bb60f0848ec305ef9cf6b406a8cf4a3621c7e977f3d6df18"
+        }
+      ]
+    },
+    {
+      "id": "sikh_motion",
+      "kind": "review",
+      "status": "NOT_RUN",
+      "action_taken": "Manual capacity outcome review; no invented GPU or visual pass.",
+      "observation": "No recovered1024 render or performance evidence; corresponding admission unrun.",
+      "evidence": [
+        {
+          "path": "results/trellis303/REVIEW.md",
+          "sha256": "38b983b448a8106a12189c5891c5a217b2a83a074b092c43577e502e12b312b4"
+        },
+        {
+          "path": "results/trellis303/INTERNAL_REVIEW.md",
+          "sha256": "11355c22e898c866d57b9d8aa10fe4e01908c6b2d60ea1bd78e5183686fe76cd"
+        },
+        {
+          "path": "results/trellis303/authority.json",
+          "sha256": "6a8c38024a412d94733814752d3434f963d71e289a4bea9417d69bf442c169a1"
+        },
+        {
+          "path": "results/trellis303/local-checkpoint-check.json",
+          "sha256": "89d03937234b0c081e166c57b8c7dfa2604f9ceab6d0d85dcb2b764c68729b69"
+        },
+        {
+          "path": "results/trellis303/preflight.json",
+          "sha256": "3f54750f38d27e56a1c63ad8047aee24dc676bf94a70544e6a6364b93e45fb5a"
+        },
+        {
+          "path": "results/trellis303/guard-test.json",
+          "sha256": "c10aa4eac2c8529eee34963b679ca0e6407433ede8d3fc9b26408bbfd327c0dc"
+        },
+        {
+          "path": "results/trellis303/payload.json",
+          "sha256": "526e05288af2c0410a1c69e524ca7707d6e13fc7744638d0686be6925a116bee"
+        },
+        {
+          "path": "results/trellis303/teardown-verification.json",
+          "sha256": "06f00c671b2945c4bb60f0848ec305ef9cf6b406a8cf4a3621c7e977f3d6df18"
+        }
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "prediction": "A same48GB worker can run within the approved reservation.",
+      "observation": "Both fitting host sizes unavailable in four zones; no instance created.",
+      "response": "Preserve frozen package, remove staging, retry only after renewed capacity/ledger admission.",
+      "result": "resolved"
+    },
+    {
+      "prediction": "Separate decoder and native repair lifetimes recover the checkpoint.",
+      "observation": "No GPU launched, so hypothesis is untested.",
+      "response": "Do not infer quality or runtime failure from capacity.",
+      "result": "not_observed"
+    }
+  ],
+  "adjacent_regressions": "Accepted assets unchanged; new geometry, materials and motion NOT_RUN.",
+  "stopping_reason": "AWS capacity unavailable; safe prepared independent work complete; integrated GPU comparison unfinished."
+}

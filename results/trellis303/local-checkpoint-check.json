@@ -1,0 +1,46 @@
+{
+  "sha256": "1676894daec0ef9006db5ecc6abf2251b4eca41882ed378c6acbc8652aadfbc6",
+  "records": {
+    "shape_feats": {
+      "shape": [
+        38362,
+        32
+      ],
+      "dtype": "float32",
+      "min": -25.765844345092773,
+      "max": 26.009748458862305
+    },
+    "texture_feats": {
+      "shape": [
+        38362,
+        32
+      ],
+      "dtype": "float32",
+      "min": -10.86799144744873,
+      "max": 13.280893325805664
+    },
+    "shape_coords": {
+      "shape": [
+        38362,
+        4
+      ],
+      "dtype": "int32",
+      "min": 0.0,
+      "max": 63.0
+    },
+    "texture_coords": {
+      "shape": [
+        38362,
+        4
+      ],
+      "dtype": "int32",
+      "min": 0.0,
+      "max": 63.0
+    }
+  },
+  "coordinates_match": true,
+  "unique_coordinates": true,
+  "finite": true,
+  "gpu_reconstruction": "NOT_RUN",
+  "decoder_equivalence": "NOT_RUN"
+}

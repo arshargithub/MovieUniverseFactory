@@ -1,0 +1,72 @@
+{
+  "utc": "2026-10-18T05:45:21.891211+00:00",
+  "subnet": {
+    "AvailabilityZoneId": "use1-az1",
+    "MapCustomerOwnedIpOnLaunch": false,
+    "OwnerId": "281482331395",
+    "AssignIpv6AddressOnCreation": false,
+    "Ipv6CidrBlockAssociationSet": [],
+    "SubnetArn": "arn:aws:ec2:us-east-1:281482331395:subnet/subnet-0d2bd31a7e499936e",
+    "EnableDns64": false,
+    "Ipv6Native": false,
+    "PrivateDnsNameOptionsOnLaunch": {
+      "HostnameType": "ip-name",
+      "EnableResourceNameDnsARecord": false,
+      "EnableResourceNameDnsAAAARecord": false
+    },
+    "BlockPublicAccessStates": {
+      "InternetGatewayBlockMode": "off"
+    },
+    "SubnetId": "subnet-0d2bd31a7e499936e",
+    "State": "available",
+    "VpcId": "vpc-0b4a0b22ad2150a91",
+    "CidrBlock": "172.31.0.0/20",
+    "AvailableIpAddressCount": 4091,
+    "AvailabilityZone": "us-east-1c",
+    "DefaultForAz": true,
+    "MapPublicIpOnLaunch": true
+  },
+  "reason": "Same approved48GB worker; previous zone capacity failure created no instance",
+  "source_sha256": "5f63834e7cd038cede7c635095599f61bc9b4a978dbea3e8ae1c00ab22622c10",
+  "aggregate": {
+    "admission_total_usd": 18.5,
+    "prior_liability_held_usd": 15,
+    "actual_billed_usd": null,
+    "effective_ceiling_usd": 18.5,
+    "conditional_extra_authority_used_usd": 3.5,
+    "current": {
+      "calls": 1,
+      "known_cost_usd": 0.0,
+      "reserved_unknown_usd": 3.5,
+      "committed_usd": 3.5,
+      "unresolved_calls": 1,
+      "reservation_exceeded": false,
+      "campaign_limit_usd": 3.5,
+      "effective_campaign_limit_usd": 3.5,
+      "scopes": {
+        "qualification": {
+          "calls": 1,
+          "known_cost_usd": 0.0,
+          "reserved_unknown_usd": 3.5,
+          "committed_usd": 3.5,
+          "unresolved_calls": 1,
+          "reservation_exceeded": false
+        }
+      },
+      "runs": {
+        "trellis303-recovery": {
+          "gpu_session": {
+            "calls": 1,
+            "known_cost_usd": 0.0,
+            "reserved_unknown_usd": 3.5,
+            "committed_usd": 3.5,
+            "unresolved_calls": 1,
+            "reservation_exceeded": false
+          }
+        }
+      }
+    },
+    "basis": "results/trellis303/STRATEGY.md",
+    "prior_receipt_sha256": "d883b9c048ec1d0463274ebe9fed1cec5031db4cfddd7054cc64ed5e51c1677e"
+  }
+}

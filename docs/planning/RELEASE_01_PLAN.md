@@ -4,6 +4,10 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+### Exchange303 — saved1024 checkpoint recovery
+
+Director authorizes the checkpoint-recovery pass and explicitly approves the exact18.33MB private payload and one guarded48GB test. [303 strategy](../../results/trellis303/STRATEGY.md) separates decode from native repair/export, preserves raw decoded geometry before repair and records allocator telemetry. No new sampling, input-image or encoder upload. Hold the previous15USD liability conservatively and reserve3.50USD from the earlier conditional extra10, aggregate ceiling18.50USD; actual billing remains unknown. Static source, conversion and animated actor admission remain distinct. Approved Sikhv03, accepted Pashtun and scene300 are protected. Counter303; next checkpoint310. [303 outcome](../../results/trellis303/REVIEW.md):65 local tests pass, checkpoint validated, exact payload staged and guard tested, but both fitting48GB host sizes in all fourUS-East zones returned insufficient capacity. No GPU created; recovery and matched visual comparison remain NOT_RUN. Temporary resources were cleaned up; independent receipt governs closure. Retry the frozen package after renewed capacity/budget admission, not new sampling. No visual/source/actor pass or remote backup is claimed.
+
 ### Exchange302 — scene delivery surfaced and private comparison transfer approved
 
 Director had not seen the finished Sikh render and explicitly approves the exact413MB private transfer requested at301. The22s Sikh development clip and42s Pashtun/Sikh musical assembly were surfaced directly. [Final scene review](../../results/sikh300/REVIEW.md) and [independent root review](../../results/sikh300/ROOT_REVIEW.md) retain proxy status, unrun real-time listening and strict renderer replay FAIL; the corrected terrain boundary and scoped motion/supporting changes do not admit the protagonist or final trailer. Pashtun source and music are preserved.

@@ -1,0 +1,50 @@
+{
+  "id": "trellis303-checkpoint-recovery",
+  "operation": "modeling",
+  "phase": "execution",
+  "entities": [
+    "sikh",
+    "sikh_beard",
+    "sikh_turban_cover"
+  ],
+  "query": "Controlled source export opacity geometry texture comparison same-film source quality",
+  "intent": "Recover saved1024; no sampling; source quality not actor admission",
+  "inputs": {
+    "results/trellis301/STRATEGY.md": "be9528cc18a6923123dcbf2914abbf21bef416b9f5a9437970fc76534f753251",
+    "results/trellis300/QUALITY_REVIEW.md": "8dfb6baae75ac9341b79a2c24f601812ee6d2a925cd0bb93d99a4d5ac3c463da",
+    "results/trellis298/ASSESSMENT.md": "ca6f292acfa91bf3ebbc4ecbd17781afbc0ddd9a7288dbb34ff5ae2ebaa287df",
+    "results/trellis298/STRATEGY.md": "0e0001b919242dab7ddcd68b2d5205dcd971c6f4fd19cedaa70603e34896f9a4",
+    "results/trellis295/license-review296.json": "7164d97f8e33a6456d5e4f3ff3af64076068d7d33e10937d5cc22027ae8d0bf5",
+    "results/trellis295/access-confirmed297.json": "366aef88345dbe35faec51a590685e4fc1e64c47d34b7a6881374ffed6f52ee9",
+    "results/sikh287/TRELLIS_PRODUCTION_PATHS.md": "28fc33a3a2223df8bdf834111a9c2ea553d81680bfe3bbf37042cf395400bdfd",
+    "docs/knowledge/SIKH_FOUNDATION_REJECTION_271.md": "813411158cb1122cfa476c1148e6ae81e662822372704d0b33a60cf61e3428ef",
+    "docs/knowledge/CURRENT_PRODUCTION_STATE.md": "e02bd103e221eb2cd55963288045f650e7eccc1c9df42fed8cd7046703cf0119",
+    "docs/knowledge/PASHTUN_PRODUCTION_AUDIT250.md": "3e26bd9a2f9188d87f907f9f4c07a3fce8888b83fd75027bc4a44857a70344fc",
+    "docs/planning/PROTECTION_CALIBRATION_255.md": "dd6312df9f584c00c8c8ae76939aa6d27b4a519b8acf3883d558155ecc7ff8b0",
+    "docs/planning/SHOT_BEAT_QUALITY_BRIEF.md": "f76a2f4b78597bd19605425a6fb4569e5ed3c68e17e16029e03a572880a34dda",
+    "docs/planning/SERIES_01_SIKH_BASELINE_V01.md": "8d588dad3970aa7c2f8de09fc537ae2f4d928a7725791d8ed6132bb1ffebb8ab",
+    "docs/decisions/0005-production-strategy-before-execution.md": "c29e2898553d26f56ac5fab7f7e126b1eda84c04643ab7a4bf12466c630dbd1e",
+    ".runtime/trellis298d/retrieved/evidence/candidate.glb": "9678b00014314123640e9a5437ae81f738e143d30d528a2df1f5f6e8fc11d915",
+    ".runtime/trellis298d/retrieved/evidence/remeshed-source.safetensors": "95f8e7abf28c883942cface5966c7dadbe44ad9baefce78c9a9d9652927ef208",
+    ".runtime/trellis298c/retrieved/evidence/head512/source.safetensors": "bdd085b6b86ad2dd731beda22cb9b1f03fd6b3da961bf6d72a91e792d9a8b6ff",
+    ".runtime/trellis298c/retrieved/evidence/head512/geometry.json": "59f4a39b07fc29274a91ad930bbdc02f503466bdcf11900571fab6375b266018",
+    "results/trellis298/cloud-c/teardown-verification.json": "2912bdeef6d0e180577783c44525bbde03445ddc39f12fa5d51b88e433e4910a",
+    "results/trellis298/cloud-d/teardown-verification.json": "d5fe0c1c695bd58180e6ecda8e3e4f10f632fcdaaaaccf066e5c8d4ca42c0d10",
+    "scripts/trellis301_cascade.py": "732444c4ba4fc230c80798be32d39f4723d17dbe318f5288c2d16afd97790318",
+    "scripts/trellis301_infer_worker.py": "5f1034c42a26e66e47f4590947a21b53186a4c3cf3cee7a91f47b8b12fcce70f",
+    "results/trellis301/CASCADE_PLAN.md": "08a79b9466dd5765a5b2f418c0256a754d107a324c9f4b525c9ff2c2847b9b10",
+    "results/trellis301/EXPORT_REVIEW.md": "413f2b8c4e1941a5d26dfacc69540553b8731814b02f0ef822c41eca3ab0bcb8",
+    "scripts/trellis303_cloud.py": "e5f8a1898adf3bbf9822195d18c59c0f961a36b75de71e9c86235fa5e309348c",
+    "scripts/trellis303_worker.py": "3a8ccb1ce37ea960970f84fc0ecb3e18984c0b2cbd7aa574557ad4f138d05073",
+    "results/trellis303/STRATEGY.md": "71a71cef4fecaebcbe54c77587fe3a856487fa90128e944f96413fdda541a38b",
+    "results/trellis301/CASCADE_REVIEW.md": "4891d50ff9452d5e63be590201bcbd12e2185c720886b1cd9bfaea94904dadfe",
+    ".runtime/trellis301/cascade/retrieved/evidence/predecode/latents.safetensors": "1676894daec0ef9006db5ecc6abf2251b4eca41882ed378c6acbc8652aadfbc6",
+    ".runtime/trellis301/cascade/retrieved/evidence/predecode/latents.json": "13662e0a5fc739ffe15fbef189b9e44fc4af2edf0936ef8bf9b6c71ffc3987a5"
+  },
+  "open_decisions": [],
+  "max_context_characters": 42000,
+  "execution_authority": {
+    "source": "results/trellis303/STRATEGY.md",
+    "scope": "One recovery worker; exact payload approval and3.50USD reservation"
+  }
+}
