@@ -1,0 +1,99 @@
+{
+  "Reservations": [
+    {
+      "ReservationId": "r-01c38e514f2293810",
+      "OwnerId": "281482331395",
+      "Groups": [],
+      "Instances": [
+        {
+          "Architecture": "x86_64",
+          "BlockDeviceMappings": [],
+          "ClientToken": "trellis298-one-worker",
+          "EbsOptimized": false,
+          "EnaSupport": true,
+          "Hypervisor": "xen",
+          "NetworkInterfaces": [],
+          "RootDeviceName": "/dev/sda1",
+          "RootDeviceType": "ebs",
+          "SecurityGroups": [],
+          "StateReason": {
+            "Code": "Client.UserInitiatedShutdown",
+            "Message": "Client.UserInitiatedShutdown: User initiated shutdown"
+          },
+          "Tags": [
+            {
+              "Key": "ExpiresAt",
+              "Value": "2026-10-18T01:02:41.643108+00:00"
+            },
+            {
+              "Key": "Name",
+              "Value": "trellis298-inference"
+            },
+            {
+              "Key": "MovieFactoryJob",
+              "Value": "trellis298-inference"
+            }
+          ],
+          "VirtualizationType": "hvm",
+          "CpuOptions": {
+            "CoreCount": 4,
+            "ThreadsPerCore": 2
+          },
+          "CapacityReservationSpecification": {
+            "CapacityReservationPreference": "open"
+          },
+          "HibernationOptions": {
+            "Configured": false
+          },
+          "MetadataOptions": {
+            "State": "pending",
+            "HttpTokens": "required",
+            "HttpPutResponseHopLimit": 1,
+            "HttpEndpoint": "enabled",
+            "HttpProtocolIpv6": "disabled",
+            "InstanceMetadataTags": "disabled"
+          },
+          "EnclaveOptions": {
+            "Enabled": false
+          },
+          "BootMode": "uefi-preferred",
+          "PlatformDetails": "Linux/UNIX",
+          "UsageOperation": "RunInstances",
+          "UsageOperationUpdateTime": "2026-10-17T23:02:43+00:00",
+          "MaintenanceOptions": {
+            "AutoRecovery": "default",
+            "RebootMigration": "default"
+          },
+          "CurrentInstanceBootMode": "uefi",
+          "NetworkPerformanceOptions": {
+            "BandwidthWeighting": "default"
+          },
+          "Operator": {
+            "Managed": false
+          },
+          "InstanceId": "i-07d1f2adb4f16e0bf",
+          "ImageId": "ami-012ba162b9cd2729c",
+          "State": {
+            "Code": 48,
+            "Name": "terminated"
+          },
+          "PrivateDnsName": "",
+          "PublicDnsName": "",
+          "StateTransitionReason": "User initiated (2026-10-17 23:03:57 GMT)",
+          "AmiLaunchIndex": 0,
+          "ProductCodes": [],
+          "InstanceType": "g6.2xlarge",
+          "LaunchTime": "2026-10-17T23:02:43+00:00",
+          "Placement": {
+            "GroupName": "",
+            "Tenancy": "default",
+            "AvailabilityZone": "us-east-1a"
+          },
+          "Monitoring": {
+            "State": "disabled"
+          }
+        }
+      ]
+    }
+  ]
+}

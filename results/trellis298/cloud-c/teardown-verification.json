@@ -1,0 +1,67 @@
+{
+  "remaining": {
+    "instances": [],
+    "buckets": [],
+    "roles": [],
+    "profiles": [],
+    "functions": [],
+    "rules": [],
+    "groups": [],
+    "volumes": []
+  },
+  "verified_utc": "2026-10-18T00:28:06.471298+00:00",
+  "terminated_instances": [
+    "i-0632f983d8c2c1c3f"
+  ],
+  "lifetime_upper_bound_seconds": 2736.471298,
+  "compute_estimate_upper_usd": 0.7431039835902222,
+  "actual_total_billed_usd": null,
+  "aggregate": {
+    "effective_ceiling_usd": 15,
+    "conditional_extra_usd_activated": 0,
+    "closed_liability_bound_usd": 6,
+    "actual_total_billed_usd": null,
+    "raw_prior_holds_preserved_not_invoice": true,
+    "new": {
+      "calls": 1,
+      "known_cost_usd": 0.0,
+      "reserved_unknown_usd": 4.0,
+      "committed_usd": 4.0,
+      "unresolved_calls": 1,
+      "reservation_exceeded": false,
+      "campaign_limit_usd": 9.0,
+      "effective_campaign_limit_usd": 9.0,
+      "scopes": {
+        "qualification": {
+          "calls": 1,
+          "known_cost_usd": 0.0,
+          "reserved_unknown_usd": 4.0,
+          "committed_usd": 4.0,
+          "unresolved_calls": 1,
+          "reservation_exceeded": false
+        }
+      },
+      "runs": {
+        "trellis298c": {
+          "gpu_session": {
+            "calls": 1,
+            "known_cost_usd": 0.0,
+            "reserved_unknown_usd": 4.0,
+            "committed_usd": 4.0,
+            "unresolved_calls": 1,
+            "reservation_exceeded": false
+          }
+        }
+      }
+    },
+    "admission_total_usd": 10.0,
+    "basis": "results/trellis298/STRATEGY.md",
+    "teardown_bindings": {
+      "results/trellis293/teardown-verification.json": "8efd73d82d53fadcf1bffb72fd16ebf1f8b21082379f65b7ba757d0d3c42f33b",
+      "results/trellis294/teardown-verification.json": "363f6a30a0828f3ce6706598cd71030241509a9a4a5c0a946bd63f483f61a13c",
+      "results/trellis295/cloud-a/teardown-verification.json": "a096a3d9eb3e2cd2c75ce8f7de0a1e7e3dd01037e3d1c132df1abc419746c3eb",
+      "results/trellis298/teardown-verification.json": "832d91d819b9c25bbff98193c092915a3ac2333cb48c4ada13f1608f4078cc24",
+      "results/trellis298/cloud-b/teardown-verification.json": "e4a271b3c9baa942316caf631eda776838f89bba08619f6e44fec59e72898f57"
+    }
+  }
+}

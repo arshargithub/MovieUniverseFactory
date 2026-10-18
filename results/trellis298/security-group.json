@@ -1,0 +1,22 @@
+{
+  "GroupId": "sg-05bb469be3beabec2",
+  "IpPermissionsEgress": [
+    {
+      "IpProtocol": "-1",
+      "UserIdGroupPairs": [],
+      "IpRanges": [
+        {
+          "CidrIp": "0.0.0.0/0"
+        }
+      ],
+      "Ipv6Ranges": [],
+      "PrefixListIds": []
+    }
+  ],
+  "VpcId": "vpc-0b4a0b22ad2150a91",
+  "SecurityGroupArn": "arn:aws:ec2:us-east-1:281482331395:security-group/sg-05bb469be3beabec2",
+  "OwnerId": "281482331395",
+  "GroupName": "trellis298-inference",
+  "Description": "Synthetic qualification no inbound",
+  "IpPermissions": []
+}

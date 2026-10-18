@@ -1,0 +1,68 @@
+{
+  "effective_ceiling_usd": 15,
+  "conditional_extra_usd_activated": 0,
+  "closed_liability_bound_usd": 2,
+  "closed_actual_bill_usd": null,
+  "historical_holds_preserved_not_added_as_cost": {
+    "293": 10,
+    "294": 5
+  },
+  "new": {
+    "calls": 3,
+    "known_cost_usd": 0.0,
+    "reserved_unknown_usd": 12.0,
+    "committed_usd": 12.0,
+    "unresolved_calls": 3,
+    "reservation_exceeded": false,
+    "campaign_limit_usd": 13.0,
+    "effective_campaign_limit_usd": 13.0,
+    "scopes": {
+      "qualification": {
+        "calls": 3,
+        "known_cost_usd": 0.0,
+        "reserved_unknown_usd": 12.0,
+        "committed_usd": 12.0,
+        "unresolved_calls": 3,
+        "reservation_exceeded": false
+      }
+    },
+    "runs": {
+      "trellis295a": {
+        "gpu_session": {
+          "calls": 1,
+          "known_cost_usd": 0.0,
+          "reserved_unknown_usd": 4.0,
+          "committed_usd": 4.0,
+          "unresolved_calls": 1,
+          "reservation_exceeded": false
+        }
+      },
+      "trellis298": {
+        "gpu_session": {
+          "calls": 1,
+          "known_cost_usd": 0.0,
+          "reserved_unknown_usd": 4.0,
+          "committed_usd": 4.0,
+          "unresolved_calls": 1,
+          "reservation_exceeded": false
+        }
+      },
+      "trellis298b": {
+        "gpu_session": {
+          "calls": 1,
+          "known_cost_usd": 0.0,
+          "reserved_unknown_usd": 4.0,
+          "committed_usd": 4.0,
+          "unresolved_calls": 1,
+          "reservation_exceeded": false
+        }
+      }
+    }
+  },
+  "admission_total_usd": 14.0,
+  "basis": "results/trellis295/STRATEGY.md",
+  "teardown_bindings": {
+    "trellis293": "8efd73d82d53fadcf1bffb72fd16ebf1f8b21082379f65b7ba757d0d3c42f33b",
+    "trellis294": "363f6a30a0828f3ce6706598cd71030241509a9a4a5c0a946bd63f483f61a13c"
+  }
+}

@@ -1,0 +1,173 @@
+{
+  "Reservations": [
+    {
+      "ReservationId": "r-0e1461b696d77198d",
+      "OwnerId": "281482331395",
+      "Groups": [],
+      "Instances": [
+        {
+          "Architecture": "x86_64",
+          "BlockDeviceMappings": [
+            {
+              "DeviceName": "/dev/sda1",
+              "Ebs": {
+                "AttachTime": "2026-10-17T23:42:31+00:00",
+                "DeleteOnTermination": true,
+                "Status": "attached",
+                "VolumeId": "vol-00091b2ac327722e1"
+              }
+            }
+          ],
+          "ClientToken": "trellis298c-inference-one-worker",
+          "EbsOptimized": false,
+          "EnaSupport": true,
+          "Hypervisor": "xen",
+          "IamInstanceProfile": {
+            "Arn": "arn:aws:iam::281482331395:instance-profile/mf-trellis298c-worker",
+            "Id": "AIPAUDCNHQUB5D2FJCXM4"
+          },
+          "NetworkInterfaces": [
+            {
+              "Association": {
+                "IpOwnerId": "amazon",
+                "PublicDnsName": "ec2-100-53-193-163.compute-1.amazonaws.com",
+                "PublicIp": "100.53.193.163"
+              },
+              "Attachment": {
+                "AttachTime": "2026-10-17T23:42:30+00:00",
+                "AttachmentId": "eni-attach-08ce681d0281afe17",
+                "DeleteOnTermination": true,
+                "DeviceIndex": 0,
+                "Status": "attached",
+                "NetworkCardIndex": 0
+              },
+              "Description": "",
+              "Groups": [
+                {
+                  "GroupId": "sg-0a7468acefde74157",
+                  "GroupName": "trellis298c-inference"
+                }
+              ],
+              "Ipv6Addresses": [],
+              "MacAddress": "0a:ff:f4:00:3a:bf",
+              "NetworkInterfaceId": "eni-0fd7ff39975189b4e",
+              "OwnerId": "281482331395",
+              "PrivateDnsName": "ip-172-31-24-193.ec2.internal",
+              "PrivateIpAddress": "172.31.24.193",
+              "PrivateIpAddresses": [
+                {
+                  "Association": {
+                    "IpOwnerId": "amazon",
+                    "PublicDnsName": "ec2-100-53-193-163.compute-1.amazonaws.com",
+                    "PublicIp": "100.53.193.163"
+                  },
+                  "Primary": true,
+                  "PrivateDnsName": "ip-172-31-24-193.ec2.internal",
+                  "PrivateIpAddress": "172.31.24.193"
+                }
+              ],
+              "SourceDestCheck": true,
+              "Status": "in-use",
+              "SubnetId": "subnet-06b0dcf65205ee1a8",
+              "VpcId": "vpc-0b4a0b22ad2150a91",
+              "InterfaceType": "interface",
+              "Operator": {
+                "Managed": false
+              }
+            }
+          ],
+          "RootDeviceName": "/dev/sda1",
+          "RootDeviceType": "ebs",
+          "SecurityGroups": [
+            {
+              "GroupId": "sg-0a7468acefde74157",
+              "GroupName": "trellis298c-inference"
+            }
+          ],
+          "SourceDestCheck": true,
+          "Tags": [
+            {
+              "Key": "ExpiresAt",
+              "Value": "2026-10-18T01:42:28.975561+00:00"
+            },
+            {
+              "Key": "MovieFactoryJob",
+              "Value": "trellis298c-inference"
+            },
+            {
+              "Key": "Name",
+              "Value": "trellis298c-inference"
+            }
+          ],
+          "VirtualizationType": "hvm",
+          "CpuOptions": {
+            "CoreCount": 4,
+            "ThreadsPerCore": 2
+          },
+          "CapacityReservationSpecification": {
+            "CapacityReservationPreference": "open"
+          },
+          "HibernationOptions": {
+            "Configured": false
+          },
+          "MetadataOptions": {
+            "State": "applied",
+            "HttpTokens": "required",
+            "HttpPutResponseHopLimit": 1,
+            "HttpEndpoint": "enabled",
+            "HttpProtocolIpv6": "disabled",
+            "InstanceMetadataTags": "disabled"
+          },
+          "EnclaveOptions": {
+            "Enabled": false
+          },
+          "BootMode": "uefi-preferred",
+          "PlatformDetails": "Linux/UNIX",
+          "UsageOperation": "RunInstances",
+          "UsageOperationUpdateTime": "2026-10-17T23:42:30+00:00",
+          "PrivateDnsNameOptions": {
+            "HostnameType": "ip-name",
+            "EnableResourceNameDnsARecord": false,
+            "EnableResourceNameDnsAAAARecord": false
+          },
+          "MaintenanceOptions": {
+            "AutoRecovery": "default",
+            "RebootMigration": "default"
+          },
+          "CurrentInstanceBootMode": "uefi",
+          "NetworkPerformanceOptions": {
+            "BandwidthWeighting": "default"
+          },
+          "Operator": {
+            "Managed": false
+          },
+          "InstanceId": "i-0632f983d8c2c1c3f",
+          "ImageId": "ami-012ba162b9cd2729c",
+          "State": {
+            "Code": 16,
+            "Name": "running"
+          },
+          "PrivateDnsName": "ip-172-31-24-193.ec2.internal",
+          "PublicDnsName": "ec2-100-53-193-163.compute-1.amazonaws.com",
+          "StateTransitionReason": "",
+          "AmiLaunchIndex": 0,
+          "ProductCodes": [],
+          "InstanceType": "g6.2xlarge",
+          "LaunchTime": "2026-10-17T23:42:30+00:00",
+          "Placement": {
+            "GroupName": "",
+            "Tenancy": "default",
+            "AvailabilityZone": "us-east-1a"
+          },
+          "Monitoring": {
+            "State": "disabled"
+          },
+          "SubnetId": "subnet-06b0dcf65205ee1a8",
+          "VpcId": "vpc-0b4a0b22ad2150a91",
+          "PrivateIpAddress": "172.31.24.193",
+          "PublicIpAddress": "100.53.193.163"
+        }
+      ]
+    }
+  ]
+}

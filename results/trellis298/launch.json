@@ -1,0 +1,136 @@
+{
+  "Architecture": "x86_64",
+  "BlockDeviceMappings": [],
+  "ClientToken": "trellis298-one-worker",
+  "EbsOptimized": false,
+  "EnaSupport": true,
+  "Hypervisor": "xen",
+  "IamInstanceProfile": {
+    "Arn": "arn:aws:iam::281482331395:instance-profile/mf-trellis298-worker",
+    "Id": "AIPAUDCNHQUBTC6O44W2J"
+  },
+  "NetworkInterfaces": [
+    {
+      "Attachment": {
+        "AttachTime": "2026-10-17T23:02:43+00:00",
+        "AttachmentId": "eni-attach-04103c4b6755092c7",
+        "DeleteOnTermination": true,
+        "DeviceIndex": 0,
+        "Status": "attaching",
+        "NetworkCardIndex": 0
+      },
+      "Description": "",
+      "Groups": [
+        {
+          "GroupId": "sg-05bb469be3beabec2",
+          "GroupName": "trellis298-inference"
+        }
+      ],
+      "Ipv6Addresses": [],
+      "MacAddress": "0a:ff:fc:ac:49:c5",
+      "NetworkInterfaceId": "eni-089ad1105ce28ed30",
+      "OwnerId": "281482331395",
+      "PrivateDnsName": "ip-172-31-16-165.ec2.internal",
+      "PrivateIpAddress": "172.31.16.165",
+      "PrivateIpAddresses": [
+        {
+          "Primary": true,
+          "PrivateDnsName": "ip-172-31-16-165.ec2.internal",
+          "PrivateIpAddress": "172.31.16.165"
+        }
+      ],
+      "SourceDestCheck": true,
+      "Status": "in-use",
+      "SubnetId": "subnet-06b0dcf65205ee1a8",
+      "VpcId": "vpc-0b4a0b22ad2150a91",
+      "InterfaceType": "interface",
+      "Operator": {
+        "Managed": false
+      }
+    }
+  ],
+  "RootDeviceName": "/dev/sda1",
+  "RootDeviceType": "ebs",
+  "SecurityGroups": [
+    {
+      "GroupId": "sg-05bb469be3beabec2",
+      "GroupName": "trellis298-inference"
+    }
+  ],
+  "SourceDestCheck": true,
+  "StateReason": {
+    "Code": "pending",
+    "Message": "pending"
+  },
+  "Tags": [
+    {
+      "Key": "ExpiresAt",
+      "Value": "2026-10-18T01:02:41.643108+00:00"
+    },
+    {
+      "Key": "Name",
+      "Value": "trellis298-inference"
+    },
+    {
+      "Key": "MovieFactoryJob",
+      "Value": "trellis298-inference"
+    }
+  ],
+  "VirtualizationType": "hvm",
+  "CpuOptions": {
+    "CoreCount": 4,
+    "ThreadsPerCore": 2
+  },
+  "CapacityReservationSpecification": {
+    "CapacityReservationPreference": "open"
+  },
+  "MetadataOptions": {
+    "State": "pending",
+    "HttpTokens": "required",
+    "HttpPutResponseHopLimit": 1,
+    "HttpEndpoint": "enabled",
+    "HttpProtocolIpv6": "disabled",
+    "InstanceMetadataTags": "disabled"
+  },
+  "EnclaveOptions": {
+    "Enabled": false
+  },
+  "BootMode": "uefi-preferred",
+  "PrivateDnsNameOptions": {
+    "HostnameType": "ip-name",
+    "EnableResourceNameDnsARecord": false,
+    "EnableResourceNameDnsAAAARecord": false
+  },
+  "MaintenanceOptions": {
+    "AutoRecovery": "default",
+    "RebootMigration": "default"
+  },
+  "CurrentInstanceBootMode": "uefi",
+  "Operator": {
+    "Managed": false
+  },
+  "InstanceId": "i-07d1f2adb4f16e0bf",
+  "ImageId": "ami-012ba162b9cd2729c",
+  "State": {
+    "Code": 0,
+    "Name": "pending"
+  },
+  "PrivateDnsName": "ip-172-31-16-165.ec2.internal",
+  "PublicDnsName": "",
+  "StateTransitionReason": "",
+  "AmiLaunchIndex": 0,
+  "ProductCodes": [],
+  "InstanceType": "g6.2xlarge",
+  "LaunchTime": "2026-10-17T23:02:43+00:00",
+  "Placement": {
+    "GroupName": "",
+    "Tenancy": "default",
+    "AvailabilityZone": "us-east-1a"
+  },
+  "Monitoring": {
+    "State": "disabled"
+  },
+  "SubnetId": "subnet-06b0dcf65205ee1a8",
+  "VpcId": "vpc-0b4a0b22ad2150a91",
+  "PrivateIpAddress": "172.31.16.165"
+}

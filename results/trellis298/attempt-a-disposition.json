@@ -1,0 +1,11 @@
+{
+  "state": "AGENT_ABORTED_BEFORE_INFERENCE",
+  "instance": "i-07d1f2adb4f16e0bf",
+  "reason": "Post-launch dependency reconciliation found regex absent from both inherited295 package inventory and new no-deps install list. Transformers requires it. Termination requested rather than waiting for a predictable import failure after CUDA compilation.",
+  "observed_runtime_exception": null,
+  "candidate_generated": false,
+  "source_manifest": "payload-manifest.json",
+  "original_payload": ".runtime/trellis298/payload.tar.gz",
+  "correction": "Pin regex2025.9.18 and execute all new inference imports before native compilation. Existing historical failed evidence is retained.",
+  "cost": "Actual invoice unknown; preserve4USD hold until reconciliation; original15USD ceiling remains, conditional10 not activated."
+}
