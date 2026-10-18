@@ -45,3 +45,10 @@ def test_cascade_review_rejects_unstructured_jobs(monkeypatch):
                 {'operation':'render','variant':'1024-4096','code':'extra'}):
         with pytest.raises(ValueError):
             candidate.worker(bad)
+
+
+def test_cascade_configure_admits_helpers_before_import():
+    path = Path(__file__).resolve().parents[1] / 'scripts/trellis301_cascade_inspect.py'
+    source = path.read_text().split('def configure():',1)[1].split('def worker(job):',1)[0]
+    assert source.index("sys.path.insert(0,str(ROOT/'scripts'))") < source.index('import trellis301_export_inspect')
+    assert source.index("sys.path.insert(0,str(ROOT/'src'))") < source.index('import trellis301_export_inspect')

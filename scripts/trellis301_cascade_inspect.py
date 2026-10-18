@@ -13,6 +13,10 @@ ALIASES=ROOT/'.runtime/trellis301/cascade-review-input'
 
 
 def configure():
+    # Blender's --python does not promise to put this script's folder on sys.path.
+    # Admit only the trusted repository helpers before importing the shared worker.
+    sys.path.insert(0,str(ROOT/'scripts'))
+    sys.path.insert(0,str(ROOT/'src'))
     import trellis301_export_inspect as shared
     shared.OUT=OUT; shared.SOURCE=ALIASES;shared.VARIANTS=('1024-4096',)
     for name,target in [('head-1024-4096.glb',SOURCE/'candidate.glb'),('head-1024-4096.json',SOURCE/'receipt.json')]:
