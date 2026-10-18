@@ -4,6 +4,25 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+### Exchange306 — production paused for review-process audit
+
+Director rejects305's rearing, terrain/ditch, green inter-plot strips and
+vanishing brake debris, and requests process resolution before construction.
+[Evidence and process audit](../knowledge/SIKH305_REVIEW_FAILURE_AUDIT306.md)
+supports these observations. The305 gate already said `ready_for_review:false`;
+the development-label handoff did not satisfy the agreed correction contract.
+Withdraw that handoff recommendation; retain technical receipts and failed media.
+This is primarily application/judgment/enforcement failure, not absent rules.
+
+Runtime metadata confirms258,400-token context and six compactions in305;
+causation is not established. Proposed next package is a compact current-state
+packet, scoped handoff enforcement and calibrated review/restart tests in the
+existing local bridge, not a full replacement harness. It is not implemented
+or newly authorized by this audit. No production, provider, cloud or app-setting
+changes. Counter306; next checkpoint310. Resume scene correction only after
+the process discussion, not principal integration on top of rejected supporting
+work. Protected Pashtun, first braking feel and current stopping location remain.
+
 ### Exchange305 — complete performance correction; stopping distance protected
 
 The Director requires all thirteen listed camera, physical-response, landscape
