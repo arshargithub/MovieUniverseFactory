@@ -81,7 +81,7 @@ def current(root):
         'production_review_state':'BLOCKED: '+', '.join(d['id'] for d in state['open_defects']),
         'protected':state['protected'],'open_defects':state['open_defects'],
         'review_fingerprint':state['fingerprint'],'capabilities':state['capabilities'],
-        'next':'Qualify audiovisual review on existing controls before production correction; cleanup grants no production authority.',
+        'next':status.get('current_next_action','Qualify audiovisual review on existing controls before production correction; cleanup grants no production authority.'),
         'source_bindings':{'status_sha256':sha(status_path),'review_registry_sha256':sha(safe(root,rc.REGISTRY))},
         'details':'Use review_control capsule for full13 scoped requirements; status is read fresh, not copied from a cached summary.'}
 

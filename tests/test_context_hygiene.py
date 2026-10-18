@@ -16,7 +16,7 @@ REPO=Path(__file__).resolve().parents[1]
 def workspace(tmp_path):
     for name in ['docs/knowledge/context/rules.json','results/context311/AGENTS.before.md']:
         dst=tmp_path/name;dst.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(REPO/name,dst)
-    shutil.copyfile(REPO/'results/context311/AGENTS.proposed.md',tmp_path/'AGENTS.md')
+    shutil.copyfile(REPO/'AGENTS.md',tmp_path/'AGENTS.md')
     return tmp_path
 
 
@@ -152,6 +152,12 @@ def test_current_reads_fresh_state_and_preserves_mode_limits(workspace,monkeypat
     updated=json.loads(p.read_text());updated['current_process']='awaiting media-review authority'
     p.write_text(json.dumps(updated))
     assert ch.current(workspace)['latest_process']=='awaiting media-review authority'
+    updated['current_next_action']='Correct known defects; Director AV review pending'
+    p.write_text(json.dumps(updated))
+    result=ch.current(workspace)
+    assert result['next']==updated['current_next_action']
+    assert result['capabilities']['direct_motion'] is False
+    assert result['production_review_state']=='BLOCKED: D1'
     def stale(root):raise rc.Blocked('STALE_BINDING')
     monkeypatch.setattr(rc,'capsule',stale)
     with pytest.raises(rc.Blocked):ch.current(workspace)
