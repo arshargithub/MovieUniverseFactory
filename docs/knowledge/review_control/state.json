@@ -1,0 +1,91 @@
+{
+  "schema": 1,
+  "contract_id": "sikh-supporting-review307",
+  "checks": {
+    "policy": "NOT_RUN",
+    "references": "NOT_RUN",
+    "camera": "NOT_RUN",
+    "rear": "FAIL",
+    "terrain": "FAIL",
+    "field_boundaries": "FAIL",
+    "debris": "FAIL",
+    "horse_surface": "NOT_RUN",
+    "departure": "NOT_RUN",
+    "wind": "NOT_RUN",
+    "sound": "NOT_RUN",
+    "technical": "FAIL",
+    "protected": "NOT_RUN"
+  },
+  "defects": [
+    {
+      "id": "D305-rear",
+      "requirement": "rear",
+      "status": "OPEN",
+      "description": "Schematic articulated pose progression is not reference-level performance"
+    },
+    {
+      "id": "D305-terrain",
+      "requirement": "terrain",
+      "status": "OPEN",
+      "description": "Smooth repeated drainage scoops and unconvincing ground"
+    },
+    {
+      "id": "D305-field_boundaries",
+      "requirement": "field_boundaries",
+      "status": "OPEN",
+      "description": "Flat green strips with straight exposed edges"
+    },
+    {
+      "id": "D305-debris",
+      "requirement": "debris",
+      "status": "OPEN",
+      "description": "Solid chips hidden after settling at fixed lifetime"
+    }
+  ],
+  "artifacts": {
+    "sikh": {
+      "path": ".runtime/art-direction/series01-sikh305/delivery-13/sikh-29s.mp4",
+      "sha256": "7deb1bda524bff95f5917cf8f5c8b1eac6aa7ea15308232d014affcf08346e82"
+    },
+    "joined": {
+      "path": ".runtime/art-direction/series01-sikh305/delivery-13/pashtun-sikh-49s.mp4",
+      "sha256": "6f00f0672dabc8155ebcfadb4cccc2b215ee21335c036e5d5752bf03f80e3a72"
+    }
+  },
+  "bindings": {
+    "authority": {
+      "path": "docs/knowledge/SIKH305_REVIEW_FAILURE_AUDIT306.md",
+      "sha256": "d3e8c19a4264f3e35e48049a2f1e14d7d107b8ae15f2bbb61b2de852639cb477"
+    },
+    "rear_reference": {
+      "path": ".runtime/art-direction/series01-sikh256/references/reference-b.mov",
+      "sha256": "78d0d691e8712c02931876cf0bc405e4869de357f337f531708be7a7da4898e2"
+    },
+    "pashtun": {
+      "path": ".runtime/art-direction/series01-finish248/delivery01/pashtun-20s.mp4",
+      "sha256": "1004ed9f2e06d2eafb008c925eb9d266e8a13b8603086020e28d19e3b606722b"
+    },
+    "replay": {
+      "path": "results/sikh305/reopen-13/comparison.json",
+      "sha256": "ca32ecf23974472244d3cddffee9791351dbed625c998d19b21549bb4fe06991"
+    },
+    "old_gate": {
+      "path": "results/sikh305/delivery-13/production-gate.json",
+      "sha256": "c909bd73a0d388d7ab774d744628de7b85b03c7a888fc055d4842776e041261d"
+    },
+    "knowledge_task": {
+      "path": "results/review307/task.json",
+      "sha256": "3e1b6e670b9a4247988ddf938dbd7fc2b9e4aff0cfd50c4d4ae19166370123fe"
+    }
+  },
+  "knowledge_task": "results/review307/task.json",
+  "knowledge_digest": "8528d73fcc9a219bf1570895c9e3a946ccecebd971bd9a7cfc8b6897c756de24",
+  "capabilities": {
+    "image": true,
+    "timed_images": true,
+    "technical": true,
+    "authority": true,
+    "direct_motion": false,
+    "direct_audio": false
+  }
+}

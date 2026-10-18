@@ -1,0 +1,165 @@
+{
+  "closed_episode_count": 1,
+  "consumption_per_outcome": {
+    "closed_episodes": {
+      "engineering_tokens": null,
+      "net_seconds": null
+    },
+    "closed_experiments": {
+      "engineering_tokens": null,
+      "net_seconds": null
+    },
+    "director_accepted_outputs": {
+      "engineering_tokens": null,
+      "net_seconds": null
+    },
+    "technically_successful_outputs": {
+      "engineering_tokens": null,
+      "net_seconds": null
+    }
+  },
+  "cost_scope": "Development investment; repeatable runtime cost remains in the campaign provider records.",
+  "engineering_usage": {
+    "account_allowance": {
+      "observations": [],
+      "scope": "account-wide; not experiment token attribution"
+    },
+    "actual_engineering_charge_usd": null,
+    "api_equivalent_estimate_usd": null,
+    "blocks": [],
+    "captured_tasks": [],
+    "category_coverage": {
+      "cache_write_input_tokens": {
+        "observed_blocks": 0,
+        "total_blocks": 0
+      },
+      "cached_input_tokens": {
+        "observed_blocks": 0,
+        "total_blocks": 0
+      },
+      "input_tokens": {
+        "observed_blocks": 0,
+        "total_blocks": 0
+      },
+      "output_tokens": {
+        "observed_blocks": 0,
+        "total_blocks": 0
+      },
+      "reasoning_output_tokens": {
+        "observed_blocks": 0,
+        "total_blocks": 0
+      },
+      "total_tokens": {
+        "observed_blocks": 0,
+        "total_blocks": 0
+      }
+    },
+    "exact_attributable_tokens": null,
+    "expected_tasks": [],
+    "missing_tasks": [],
+    "observed_tokens": {
+      "cache_write_input_tokens": null,
+      "cached_input_tokens": null,
+      "input_tokens": null,
+      "output_tokens": null,
+      "reasoning_output_tokens": null,
+      "total_tokens": null
+    },
+    "status": "UNKNOWN",
+    "subscription": {
+      "allocation_usd": null,
+      "treatment": "shared fixed overhead"
+    },
+    "token_definitions": {
+      "cache_write_input_tokens": "Retained as reported; not added to total.",
+      "cached_input_tokens": "Subset of input; do not add to total.",
+      "input_tokens": "Reported input total; cached input is a subset.",
+      "output_tokens": "Reported output total; reasoning output is a subset.",
+      "reasoning_output_tokens": "Subset of output; do not add to total.",
+      "total_tokens": "Reported total; input plus output, without subset double counting."
+    },
+    "uncertainties": [
+      "capture_completeness_not_established"
+    ],
+    "window_end": "2026-10-18T20:22:21.735492+00:00",
+    "window_start": "2026-10-18T20:08:20.240787+00:00"
+  },
+  "episodes": [
+    {
+      "assistant_active_union_seconds": 841.3584020137787,
+      "assistant_time_scope": "Recorded activity intervals only; not token generation time",
+      "calendar_elapsed_seconds": 841.4947049617767,
+      "coverage_fraction": 0.9998380228096572,
+      "disposition": "YELLOW",
+      "episode_id": "first",
+      "excluded_input_wait_seconds": null,
+      "human_review_seconds": null,
+      "jobs": [
+        {
+          "job_id": "review307-tests1",
+          "job_kind": "local",
+          "monotonic_seconds": 5.40962779102847,
+          "outcome": "FAILED",
+          "utc_seconds": 5.409729957580566
+        },
+        {
+          "job_id": "review307-tests2",
+          "job_kind": "local",
+          "monotonic_seconds": 5.526136249769479,
+          "outcome": "PASSED",
+          "utc_seconds": 5.5262250900268555
+        },
+        {
+          "job_id": "review307-integration1",
+          "job_kind": "local",
+          "monotonic_seconds": 0.8186430828645825,
+          "outcome": "PASSED",
+          "utc_seconds": 0.8187398910522461
+        },
+        {
+          "job_id": "review307-tests3",
+          "job_kind": "local",
+          "monotonic_seconds": 5.53900383412838,
+          "outcome": "PASSED",
+          "utc_seconds": 5.5390729904174805
+        },
+        {
+          "job_id": "review307-integration2",
+          "job_kind": "local",
+          "monotonic_seconds": 0.8715734160505235,
+          "outcome": "PASSED",
+          "utc_seconds": 0.8716459274291992
+        }
+      ],
+      "lifecycle": "CLOSED",
+      "native_job_wall_sum_seconds": 0,
+      "native_job_wall_union_seconds": null,
+      "native_jobs": [],
+      "net_elapsed_seconds": null,
+      "observed_excluded_input_wait_seconds": 0,
+      "operational_proxies": {},
+      "phase_net_seconds": null,
+      "uncertainties": [
+        "unexplained_gap"
+      ],
+      "unknown_gap_seconds": 0.13630294799804688
+    }
+  ],
+  "experiment_id": "REVIEW307",
+  "factory_api": {
+    "known_api_cost_usd": 0,
+    "provider_calls": 0,
+    "reason": "REVIEW307 used local source, images, tests and records; no external model/provider or cloud invocation. Codex subscription usage and attributable engineering tokens are not represented by this zero.",
+    "status": "OBSERVED_LOCAL_ONLY"
+  },
+  "model_setting_observations": [],
+  "net_episode_sum_seconds": null,
+  "note": "Episode totals exclude inter-episode gaps. Job sums are process-seconds, not CPU time.",
+  "outcome_denominators": {
+    "closed_episodes": 1,
+    "closed_experiments": 1,
+    "director_accepted_outputs": 0,
+    "technically_successful_outputs": 1
+  },
+  "schema_version": "1.0"
+}

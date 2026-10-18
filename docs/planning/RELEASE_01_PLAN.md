@@ -4,6 +4,19 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+### Exchange307 — scoped controls tested; production still paused
+
+[307 process results](../../results/review307/REVIEW.md):102 offline tests pass;
+real305 is blocked with no review-ready receipt. Two fresh processes recover the
+same7.4KB current-state packet, thirteen requirements and four open escaped
+defects. No production assets changed. Known visual negatives and limited static
+positive controls were inspected, but this is same-agent/unblinded calibration,
+not independent perception qualification. Actual motion/audio review remains
+unqualified and NOT_RUN. Next: qualify that route on existing clips before a new
+full render, then resume the integrated Sikh correction. No new paid/provider,
+cloud, upload, publication or principal-generation authority. Counter307; next
+checkpoint310. Local implementation and design commits remain separate.
+
 ### Exchange306 — production paused for review-process audit
 
 Director rejects305's rearing, terrain/ditch, green inter-plot strips and

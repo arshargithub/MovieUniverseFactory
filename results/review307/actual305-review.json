@@ -1,0 +1,159 @@
+{
+  "fingerprint": "e69207dc4b119287ce967f44d985e43608cd29fb1c32e92adb7d3b0d7abb905c",
+  "purpose": "scoped_review",
+  "candidate": {
+    "sikh": {
+      "path": ".runtime/art-direction/series01-sikh305/delivery-13/sikh-29s.mp4",
+      "sha256": "7deb1bda524bff95f5917cf8f5c8b1eac6aa7ea15308232d014affcf08346e82"
+    },
+    "joined": {
+      "path": ".runtime/art-direction/series01-sikh305/delivery-13/pashtun-sikh-49s.mp4",
+      "sha256": "6f00f0672dabc8155ebcfadb4cccc2b215ee21335c036e5d5752bf03f80e3a72"
+    }
+  },
+  "evidence": {
+    "rear": {
+      "binding": {
+        "path": ".runtime/audit306/candidate-rear.jpg",
+        "sha256": "d31a3f835bd6a077b9be8b7e82119ad02f0a2f3b4c1eb7a9f4c987ae52b3f77e"
+      },
+      "mode": "timed_images",
+      "observation_scope": "Matched 4 fps image sequences: candidate 11.5-15 s versus reference 15.5-19 s. Rejects pose progression; not real-time cadence or audio acceptance.",
+      "candidate_digest": "7806322b2befc56e7272c0903226ab1b5fe27a1b1b481d6b0c40ff1e1c3ce1fb"
+    },
+    "terrain": {
+      "binding": {
+        "path": ".runtime/art-direction/series01-sikh305/movie-13/frames/frame-0648.png",
+        "sha256": "0ec5b537d294844e3ccb4198d1533ae7585e07020c344873425a411f7e9ea494"
+      },
+      "mode": "image",
+      "observation_scope": "Compare road-to-ditch-to-field continuity against the agreed rural Punjab scene intent; visual judgment, not a quantified realism score.",
+      "candidate_digest": "7806322b2befc56e7272c0903226ab1b5fe27a1b1b481d6b0c40ff1e1c3ce1fb"
+    },
+    "field_boundaries": {
+      "binding": {
+        "path": ".runtime/art-direction/series01-sikh305/movie-13/frames/frame-0080.png",
+        "sha256": "da7db8aba2dde1925690bf1ac106fd391e6a559c1fda0cd649325ec1a85c4fec"
+      },
+      "mode": "image",
+      "observation_scope": "The Director asks for agricultural plot divisions, not rectangular carpet strips. Known regression, not a novel blind discovery.",
+      "candidate_digest": "7806322b2befc56e7272c0903226ab1b5fe27a1b1b481d6b0c40ff1e1c3ce1fb"
+    },
+    "debris": {
+      "binding": {
+        "path": ".runtime/audit306/brake-aftermath.jpg",
+        "sha256": "4d11308406a62dd25102bc14f8354e6e14000f50ab571c46e9b54f4b789eded5"
+      },
+      "mode": "timed_images",
+      "observation_scope": "5-7.5 s at 8 fps image sequence plus source diagnosis in audit306. Solid chips must settle/persist or leave view; dust may dissipate.",
+      "candidate_digest": "7806322b2befc56e7272c0903226ab1b5fe27a1b1b481d6b0c40ff1e1c3ce1fb"
+    }
+  },
+  "checks": [
+    {
+      "id": "policy",
+      "status": "NOT_RUN",
+      "observation": "No new acceptance judgment in this process-calibration pass.",
+      "comparison": "Required criterion retained; no inherited PASS.",
+      "evidence": []
+    },
+    {
+      "id": "references",
+      "status": "NOT_RUN",
+      "observation": "No new acceptance judgment in this process-calibration pass.",
+      "comparison": "Required criterion retained; no inherited PASS.",
+      "evidence": []
+    },
+    {
+      "id": "camera",
+      "status": "NOT_RUN",
+      "observation": "No new acceptance judgment in this process-calibration pass.",
+      "comparison": "Required criterion retained; no inherited PASS.",
+      "evidence": []
+    },
+    {
+      "id": "rear",
+      "status": "FAIL",
+      "observation": "Candidate torso pitches around a largely fixed hind support with paired foreleg shapes; the reference has distinct preparation, head/neck change, forefoot support, apex and landing articulation.",
+      "comparison": "Matched 4 fps image sequences: candidate 11.5-15 s versus reference 15.5-19 s. Rejects pose progression; not real-time cadence or audio acceptance.",
+      "evidence": [
+        "rear"
+      ]
+    },
+    {
+      "id": "terrain",
+      "status": "FAIL",
+      "observation": "Broad uniform gray road and long smooth, nearly symmetric drainage furrows with repeated tufts still read as constructed surfaces rather than a worked rural track and drainage system.",
+      "comparison": "Compare road-to-ditch-to-field continuity against the agreed rural Punjab scene intent; visual judgment, not a quantified realism score.",
+      "evidence": [
+        "terrain"
+      ]
+    },
+    {
+      "id": "field_boundaries",
+      "status": "FAIL",
+      "observation": "Hard straight edges and flat green strips are plainly exposed between plots; the earth bund/vegetation transition is not believable.",
+      "comparison": "The Director asks for agricultural plot divisions, not rectangular carpet strips. Known regression, not a novel blind discovery.",
+      "evidence": [
+        "field_boundaries"
+      ]
+    },
+    {
+      "id": "debris",
+      "status": "FAIL",
+      "observation": "Brake fragments disappear without a credible persistent settled residue; audit306 separately traces fixed-lifetime hide_render after landing.",
+      "comparison": "5-7.5 s at 8 fps image sequence plus source diagnosis in audit306. Solid chips must settle/persist or leave view; dust may dissipate.",
+      "evidence": [
+        "debris"
+      ]
+    },
+    {
+      "id": "horse_surface",
+      "status": "NOT_RUN",
+      "observation": "No new acceptance judgment in this process-calibration pass.",
+      "comparison": "Required criterion retained; no inherited PASS.",
+      "evidence": []
+    },
+    {
+      "id": "departure",
+      "status": "NOT_RUN",
+      "observation": "No new acceptance judgment in this process-calibration pass.",
+      "comparison": "Required criterion retained; no inherited PASS.",
+      "evidence": []
+    },
+    {
+      "id": "wind",
+      "status": "NOT_RUN",
+      "observation": "No new acceptance judgment in this process-calibration pass.",
+      "comparison": "Required criterion retained; no inherited PASS.",
+      "evidence": []
+    },
+    {
+      "id": "sound",
+      "status": "NOT_RUN",
+      "observation": "No new acceptance judgment in this process-calibration pass.",
+      "comparison": "Required criterion retained; no inherited PASS.",
+      "evidence": []
+    },
+    {
+      "id": "technical",
+      "status": "NOT_RUN",
+      "observation": "No new acceptance judgment in this process-calibration pass.",
+      "comparison": "Required criterion retained; no inherited PASS.",
+      "evidence": []
+    },
+    {
+      "id": "protected",
+      "status": "NOT_RUN",
+      "observation": "No new acceptance judgment in this process-calibration pass.",
+      "comparison": "Required criterion retained; no inherited PASS.",
+      "evidence": []
+    }
+  ],
+  "defect_closures": {},
+  "adjacent_review": {
+    "status": "NOT_RUN",
+    "observation": "No full-sequence acceptance in this audit.",
+    "evidence": []
+  }
+}

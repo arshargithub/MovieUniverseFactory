@@ -1,0 +1,165 @@
+{
+  "packet_digest": "8528d73fcc9a219bf1570895c9e3a946ccecebd971bd9a7cfc8b6897c756de24",
+  "scope": "Software/process307 only. No motion, audio or scene artistic acceptance.",
+  "checks": [
+    {
+      "id": "authority",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Kept production paused and all external actions out of scope.",
+      "observation": "Only local code, tests and records changed; protected candidate and Pashtun bindings still verify.",
+      "evidence": [
+        {
+          "path": "results/review307/integration-results.json",
+          "sha256": "e9fed1f5d6468557cea9bd9e6f47362aa7ac37715ceb700bdb6b7247bd834c94"
+        }
+      ]
+    },
+    {
+      "id": "strategy",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Implemented the frozen strategy with a supported-path boundary and recovery proof.",
+      "observation": "Real305 rejection, synthetic positive tests and subprocess recovery are demonstrated; perception limitations are not hidden.",
+      "evidence": [
+        {
+          "path": "results/review307/REVIEW.md",
+          "sha256": "fe964584e8d27d6dd28f2637bb16c27adea5621bed3612d1a74f0c3f32371171"
+        }
+      ]
+    },
+    {
+      "id": "visual_gate",
+      "kind": "review",
+      "status": "PASS",
+      "action_taken": "Kept scene readiness separate from software admission.",
+      "observation": "Four known visual regressions remain open; timed images were not promoted to direct motion/audio.",
+      "evidence": [
+        {
+          "path": "results/review307/manual-calibration.json",
+          "sha256": "1647750e8a3f5f0184e268ffe4a0fa93ec263c64f1cbf282261719a62f0da25a"
+        }
+      ]
+    },
+    {
+      "id": "anticipation",
+      "kind": "review",
+      "status": "PASS",
+      "action_taken": "Injected stale, missing, relabeled and unsupported evidence cases; inspected transfer controls.",
+      "observation": "102 tests pass; adjacent crop-edge hypothesis remains unconfirmed rather than being silently accepted.",
+      "evidence": [
+        {
+          "path": "results/review307/tests.xml",
+          "sha256": "3b9868bb1a1852c2684a050a6d7558eb6dcc73cddc37271112afad23f1062937"
+        }
+      ]
+    },
+    {
+      "id": "stopping",
+      "kind": "review",
+      "status": "PASS",
+      "action_taken": "Completed process package without starting construction or claiming visual readiness.",
+      "observation": "Review route qualification is the named next prerequisite; no incremental scene handed off as complete.",
+      "evidence": [
+        {
+          "path": "results/review307/REVIEW.md",
+          "sha256": "fe964584e8d27d6dd28f2637bb16c27adea5621bed3612d1a74f0c3f32371171"
+        }
+      ]
+    },
+    {
+      "id": "versioning",
+      "kind": "technical",
+      "status": "PASS",
+      "action_taken": "Bound current contract/state/candidate/engine/knowledge and rehashed at delivery.",
+      "observation": "Both actual delivery and restart tests use current hashes; no receipt is emitted for305.",
+      "evidence": [
+        {
+          "path": "results/review307/integration-results.json",
+          "sha256": "e9fed1f5d6468557cea9bd9e6f47362aa7ac37715ceb700bdb6b7247bd834c94"
+        }
+      ]
+    },
+    {
+      "id": "economics",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Recorded lifecycle/test jobs locally and used no paid providers or installations.",
+      "observation": "Byte counts are not token counts; capture gap and unknown usage are disclosed.",
+      "evidence": [
+        {
+          "path": "results/review307/REVIEW.md",
+          "sha256": "fe964584e8d27d6dd28f2637bb16c27adea5621bed3612d1a74f0c3f32371171"
+        }
+      ]
+    },
+    {
+      "id": "retrieval",
+      "kind": "technical",
+      "status": "PASS",
+      "action_taken": "Read fresh knowledge packet and manually reconciled thirteen305 scope requirements.",
+      "observation": "Eleven global/process obligations remain; the knowledge-only task is explicitly not a future domain production packet.",
+      "evidence": [
+        {
+          "path": "results/review307/review-capsule.json",
+          "sha256": "9bc303020b8848ae8abb5bc5867e7088567cf3fcea250b78682587659bfbb905"
+        }
+      ]
+    },
+    {
+      "id": "current_state",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Preserved exact253 acceptance and current306 rejection over historical optimistic statuses.",
+      "observation": "Fresh processes preserve protected Pashtun and all four open scene defects.",
+      "evidence": [
+        {
+          "path": "results/review307/integration-results.json",
+          "sha256": "e9fed1f5d6468557cea9bd9e6f47362aa7ac37715ceb700bdb6b7247bd834c94"
+        }
+      ]
+    },
+    {
+      "id": "au_reuse",
+      "kind": "review",
+      "status": "PASS",
+      "action_taken": "Carried reference/quality-floor, provenance and review-escape lessons into admission.",
+      "observation": "Accepted Pashtun anchor is not reopened; negative controls stay negative and tests are not artistic proof.",
+      "evidence": [
+        {
+          "path": "results/review307/manual-calibration.json",
+          "sha256": "1647750e8a3f5f0184e268ffe4a0fa93ec263c64f1cbf282261719a62f0da25a"
+        }
+      ]
+    },
+    {
+      "id": "au_review",
+      "kind": "review",
+      "status": "PASS",
+      "action_taken": "Recorded regression versus transfer controls and perception limits explicitly.",
+      "observation": "Familiar same-agent controls are not reported as independent held-out accuracy.",
+      "evidence": [
+        {
+          "path": "results/review307/manual-calibration.json",
+          "sha256": "1647750e8a3f5f0184e268ffe4a0fa93ec263c64f1cbf282261719a62f0da25a"
+        }
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "prediction": "A development label or stale state could bypass the agreed scoped checks.",
+      "observation": "Injected failures and real305 block in the supported command.",
+      "response": "Use the fresh delivery receipt; arbitrary chat remains outside enforcement.",
+      "result": "resolved"
+    },
+    {
+      "prediction": "Structured tests could be misreported as artistic qualification.",
+      "observation": "Same-agent controls and absent direct motion/audio are insufficient for that claim.",
+      "response": "Retain false modality flags and scoped claims; route qualification remains separate.",
+      "result": "resolved"
+    }
+  ],
+  "adjacent_regressions": "Existing knowledge and255 tests retained; obsolete assertion corrected with recorded explanation. Protected production hashes unchanged. No visual acceptance inferred.",
+  "stopping_reason": "Authorized local control package complete; independent perception and direct motion/audio qualification explicitly remain unproven. Production remains paused."
+}

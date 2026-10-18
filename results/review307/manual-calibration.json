@@ -1,0 +1,89 @@
+{
+  "known305_regressions": [
+    {
+      "id": "rear",
+      "mode": "timed_images",
+      "status": "FAIL",
+      "observation": "Candidate torso pitches around a largely fixed hind support with paired foreleg shapes; the reference has distinct preparation, head/neck change, forefoot support, apex and landing articulation.",
+      "comparison": "Matched 4 fps image sequences: candidate 11.5-15 s versus reference 15.5-19 s. Rejects pose progression; not real-time cadence or audio acceptance.",
+      "binding": {
+        "path": ".runtime/audit306/candidate-rear.jpg",
+        "sha256": "d31a3f835bd6a077b9be8b7e82119ad02f0a2f3b4c1eb7a9f4c987ae52b3f77e"
+      },
+      "comparison_binding": {
+        "path": ".runtime/audit306/reference-rear.jpg",
+        "sha256": "0745e0b70b8115176b2a80bb1d6712887c7dc975c9cae16b47f0bf9c81a25733"
+      }
+    },
+    {
+      "id": "terrain",
+      "mode": "image",
+      "status": "FAIL",
+      "observation": "Broad uniform gray road and long smooth, nearly symmetric drainage furrows with repeated tufts still read as constructed surfaces rather than a worked rural track and drainage system.",
+      "comparison": "Compare road-to-ditch-to-field continuity against the agreed rural Punjab scene intent; visual judgment, not a quantified realism score.",
+      "binding": {
+        "path": ".runtime/art-direction/series01-sikh305/movie-13/frames/frame-0648.png",
+        "sha256": "0ec5b537d294844e3ccb4198d1533ae7585e07020c344873425a411f7e9ea494"
+      }
+    },
+    {
+      "id": "field_boundaries",
+      "mode": "image",
+      "status": "FAIL",
+      "observation": "Hard straight edges and flat green strips are plainly exposed between plots; the earth bund/vegetation transition is not believable.",
+      "comparison": "The Director asks for agricultural plot divisions, not rectangular carpet strips. Known regression, not a novel blind discovery.",
+      "binding": {
+        "path": ".runtime/art-direction/series01-sikh305/movie-13/frames/frame-0080.png",
+        "sha256": "da7db8aba2dde1925690bf1ac106fd391e6a559c1fda0cd649325ec1a85c4fec"
+      }
+    },
+    {
+      "id": "debris",
+      "mode": "timed_images",
+      "status": "FAIL",
+      "observation": "Brake fragments disappear without a credible persistent settled residue; audit306 separately traces fixed-lifetime hide_render after landing.",
+      "comparison": "5-7.5 s at 8 fps image sequence plus source diagnosis in audit306. Solid chips must settle/persist or leave view; dust may dissipate.",
+      "binding": {
+        "path": ".runtime/audit306/brake-aftermath.jpg",
+        "sha256": "4d11308406a62dd25102bc14f8354e6e14000f50ab571c46e9b54f4b789eded5"
+      }
+    }
+  ],
+  "transfer_controls": [
+    {
+      "id": "historical175-negative",
+      "binding": {
+        "path": ".runtime/art-direction/series01-facebuilder-trial-01/wardrobe175-preview01/upper-rear.png",
+        "sha256": "005cf01501a539b2f3a6561769201e1e07a014914436226a2714eed5e7ed0e05"
+      },
+      "status": "FAIL_STATIC_ROUTE",
+      "observation": "Stiff parallel corrugated rear band, rectangular silhouette and abrupt joins fail a naturally supported cloth route."
+    },
+    {
+      "id": "historical185-limited-positive",
+      "binding": {
+        "path": ".runtime/art-direction/series01-facebuilder-trial-01/wardrobe185-redressreview02/rear-217.png",
+        "sha256": "fc65787201068e5651e2bd58963cdcd1f2d730e621d85a7b1cd8e0cfe273d50b"
+      },
+      "status": "PASS_VISIBLE_STATIC_REAR_FOLDS_ONLY",
+      "observation": "Overlapping irregular folds sit outside rear headfall, with nonrectangular edges. Occluded shoulder connections and dynamics are not accepted by this still."
+    },
+    {
+      "id": "accepted253-anchor",
+      "binding": {
+        "path": ".runtime/art-direction/series01-finish248/encoded-qc01/controls/clean-14.png",
+        "sha256": "093b082e934900619761ff700cc524e9d10011edee429f1f83985581a67f3e66"
+      },
+      "status": "PASS_STATIC_GEOGRAPHY_READABILITY_ONLY",
+      "observation": "Checkpoint figures and the rocky detour read as distinct options in a detailed illustrated environment. Existing Director acceptance is preserved; this is not new motion/audio approval."
+    }
+  ],
+  "method": "Same-agent visual inspection. Labels and historical context known. Controls selected after implementation, not blind or statistically independent.",
+  "limits": "No measured general visual accuracy, fresh-model review or direct playback/listening qualification. No claim that tests detect fabricated well-formed perceptual PASS declarations.",
+  "adjacent_hypothesis": {
+    "id": "H307-crop-root-density",
+    "status": "UNCONFIRMED",
+    "observation": "Exposed thin repeated crop stalk bases at field edges may remain artificial even after green strips are fixed.",
+    "test": "Inspect actual framing and closer ground/crop boundary proof after upstream terrain correction; do not declare a Director-approved defect or start unrelated polish."
+  }
+}
