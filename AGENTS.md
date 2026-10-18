@@ -83,9 +83,11 @@ impact set manually. Run the evidence gate before handoff. Exit2 blocks; never
 rehash unreviewed sources to clear staleness. Candidate extraction is not approval.
 The pilot, routing tests and state recovery are not universal memory or automatic
 perceptual judgment. Before covered production-media handoff follow
-`docs/knowledge/review_control/README.md` and obtain a fresh `review_control deliver`
-receipt. No development-label waiver, stale receipt or fabricated modality.
-Current production remains paused under306/307; context cleanup does not resume it.
+`docs/knowledge/review_control/README.md`. Exchange313 assigns full-speed audiovisual
+judgment to the Director and parks Gemini qualification; this is no longer a
+production prerequisite. Use its explicit manual Director-review queue contract
+for pending human AV judgment; keep the strict `review_control deliver` route
+unchanged for complete scoped checks. No known-defect waiver or fabricated modality.
 
 ### Execution and records
 

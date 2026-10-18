@@ -4,6 +4,25 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+### Exchange313 — Director owns audiovisual judgment; Gemini parked
+
+Director decision: skip Gemini for now; Director judges integrated audiovisual
+playback. No provider calls/uploads/spend. Agent visual, timed-frame, source and
+technical review remain mandatory, without claiming direct hearing/continuous
+video perception. The [manual review queue contract](../knowledge/review_control/README.md#current-authority--exchange313)
+separates agent-tested evidence from pending Director AV judgments; the strict
+automated gate remains unchanged. Four305 defects and strict replay failure are
+not waived. External AV qualification no longer blocks authorized corrections.
+
+Next work package: correct the Sikh rearing, trail/ditch, field boundaries and
+debris lifecycle; check adjacent camera/action, wind and audio technical integrity;
+deliver one integrated Sikh clip and its join to the protected Pashtun20s for
+Director playback review. Exit: known visually/source-detectable failures resolved
+with reference comparisons and artifact-bound evidence, human AV checks explicitly
+pending. No principal replacement, Gurkha work, paid provider or Pashtun re-render.
+This exchange records the review-role decision, not scene completion or acceptance.
+Counter313; next checkpoint320. Local records are not an off-device backup.
+
 ### Exchange312 — actual media-input limitation; bounded external review decision
 
 [AV312](../../results/av312/REVIEW.md) attempted a short audio return; the session

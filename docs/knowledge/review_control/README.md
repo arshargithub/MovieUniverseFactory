@@ -4,6 +4,42 @@ This is a local admission boundary, not an automated art critic or a replacement
 for the existing knowledge bridge. [307 results](../../../results/review307/REVIEW.md).
 The current Sikh305 candidate is **blocked**, not ready for Director review.
 
+## Current authority — exchange313
+
+The Director chooses to be the audiovisual judge for now and parks Gemini.
+This supersedes the external-review prerequisite below and the306/307 production
+pause for that missing capability. No Gemini requests, uploads or spend; the
+AV312 controls remain local. Agent direct-motion/direct-audio capabilities remain
+false. Existing strict `check`/`deliver` semantics are unchanged.
+
+Production correction may resume within existing authority. For the next integrated
+candidate, a **manual Director AV review queue record** is permitted instead of
+pretending the agent has passed direct audiovisual checks. This is not a successful
+`deliver` receipt or production approval. Before queueing, record:
+
+- exact candidate paths/hashes, current requirements and protected-master bindings;
+- evidence-backed agent visual/timed-frame/source/technical checks, including
+  explicit tests of each known defect and adjacent regressions;
+- separate pending human judgments for full-speed motion, timing, listening and
+  overall audiovisual effect, labeled `AWAITING_DIRECTOR_AV`, not PASS;
+- unresolved technical limitations separately (including strict replay failure),
+  with no claim of technical qualification from human visual acceptance.
+
+Known frame/source-visible failures must stay internal; the four305 defects are
+still open until corrected and tested. When closure also needs real-time judgment,
+record the agent-tested portion and the human-pending portion separately; do not
+erase the defect before its required human judgment. This narrow manual queue is
+an intentional review stage, not a generic development-label exception. Capture
+the Director's verdict against the exact candidate and scope afterward; do not
+infer final release approval. It is a manual policy, not a newly automated gate.
+
+The agent still owns diagnosis and correction, not a stream of micro-review
+requests. Next deliverable: one corrected integrated Sikh sequence, also joined
+to the unchanged accepted Pashtun20s, for Director playback judgment. Include
+reference-grounded rearing, believable trail/ditch/field boundaries and persistent
+settling debris plus adjacent motion/audio checks. Exclude new principal admission,
+Gurkha work, new providers/spend and re-rendering the accepted Pashtun.
+
 ## Start or recover work
 
 1. Read the current approved work package and its exclusions. Run
@@ -81,6 +117,6 @@ The7.4KB packet is measured serialized size, not a token count or a claim that
 the app's total prompt shrank. Fresh-process recovery was tested; actual LLM
 behavior after compaction and independent perceptual accuracy remain unproven.
 
-Next proposed package: qualify the missing audiovisual review route on existing
+Historical307 proposal (superseded by313 above): qualify the missing audiovisual review route on existing
 clips before new full-sequence rendering. Local tests may use existing artifacts;
 new tools/providers, uploads and spending retain their separate authority gates.
