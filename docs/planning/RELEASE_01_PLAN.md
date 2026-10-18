@@ -4,6 +4,29 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+### Exchange314 — integrated correction, Director audiovisual review
+
+Director resumes313. [Strategy and internal failures](../../results/sikh314/STRATEGY.md)
+record independent horse-joint phases, asymmetric earth drainage/field divisions,
+and persistent settled solid debris. Protected Pashtun20s, first brake, stop/crowd
+placement and camera motion remain unchanged. Current implementation is local
+commit `ade44bb`; native build7 and17 matched fresh-open controls are complete.
+The full696-frame Sikh29s render and its unchanged-Pashtun49s join are complete.
+All696 native frames,23 encoded controls and the join boundary were inspected;
+both files decode and the protected Pashtun source/hash and pre-encode PCM match.
+[Exact review queue](../../results/sikh314/review-queue.json) and
+[review observations](../../results/sikh314/review-notes.json) separate agent-tested
+evidence from pending Director playback. No artistic admission is implied by
+tests or still controls. Gemini is parked.
+No paid calls, uploads, installs, cloud, push or new off-device backup this pass.
+
+The handoff is one complete supporting-scene correction candidate for Director
+AV judgment, with exact-bound evidence and human timing/listening explicitly
+pending. Final principal integration, Gurkha and release approval are excluded.
+After supporting-action/look acceptance, recommend a shot-specific final Sikh
+character integration proof within this staging, with a fresh source/rights gate
+and no inferred new GPU/spending authority. Counter314; next checkpoint320.
+
 ### Exchange313 — Director owns audiovisual judgment; Gemini parked
 
 Director decision: skip Gemini for now; Director judges integrated audiovisual
