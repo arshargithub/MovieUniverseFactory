@@ -46,6 +46,7 @@ def compare(v):
 def edit(v,prepare=False):
     out=BASE/'delivery-02';audio=BASE/'audio-01';task=read(ROOT/f'results/sikh304/repair-render-{v}/task.json')
     task.update(id='sikh304-delivery02',operation='audio',phase='execution')
+    task['preserve_accepted_artifact']=EXPECTED
     for p in (Path(__file__),out/'frames.json',PROTECTED,audio/'sikh-mix.wav',audio/'joined-mix.wav'):
         task['inputs'][str(p.relative_to(ROOT))]=sha(p)
     packet=pk.task_packet(ROOT,task);proof=ROOT/'results/sikh304/delivery02';proof.mkdir(exist_ok=True)
