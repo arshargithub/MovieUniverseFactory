@@ -4,6 +4,22 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+### Exchange316 — feedback verified; strategic discussion before construction
+
+Director calls315 much improved, with unresolved bike jerk, horse preparation/
+hoof orientation/apex/coat, ditch enrichment and statue-like supporting cast/
+cartoonish crowd parting. [Verification and assessment](../../results/review316/REVIEW.md)
+records six defect groups, actual source/frame evidence and audiovisual limits.
+315's exact queue is preserved; no artistic or strict-replay failure is waived.
+Two attached provider/library proposals are assessed against official sources
+and the original reuse-first decisions. Reuse means evaluate adaptation first,
+not force it. Provider reassignment and new library infrastructure remain proposals;
+Gemini remains parked, accepted music protected. Construction is explicitly
+deferred for this requested discussion. Recommended next package: reuse-informed
+integrated Sikh performance/surface repair with early actual-shot proofs, then
+the complete Sikh clip joined to unchanged Pashtun. No new spend/tools/uploads,
+final principal integration or Gurkha. Counter316; next checkpoint320.
+
 ### Exchange315 — integrated reconstruction; Director AV review pending
 
 Director rejects314's robotic rear, flat-looking ground, one-speed launch and
