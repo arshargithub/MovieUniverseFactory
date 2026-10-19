@@ -1,4 +1,5 @@
 import math
+import pytest
 from movie_factory import sikh315_motion as m
 from movie_factory import sikh305_motion as old
 def test_preserved_first_stop_and_rest():
@@ -25,3 +26,9 @@ def test_active_apex_and_asymmetry():
     differences=[abs(m.pose(t)['elbow']-m.pose(t,'R')['elbow']) for t in (15.35,15.55,15.7,15.9,16.1,16.3)]
     assert max(differences)>.10 and sum(differences)/len(differences)>.03
     assert m.gather(14.4)>.9 and m.landing(17.17)>.9
+
+def test_bounded_render_jobs():
+    from scripts.sikh315_run import validate_job
+    assert validate_job({'operation':'movie','version':6,'start':1,'end':24})==('movie',6)
+    for job in ({'operation':'movie','version':6,'start':1,'end':25},{'operation':'proof','version':6,'start':1,'end':24},{'operation':'movie','version':6,'start':True,'end':24},{'operation':'reopen','version':6,'code':'x'}):
+        with pytest.raises(ValueError):validate_job(job)

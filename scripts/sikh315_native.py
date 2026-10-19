@@ -4,13 +4,13 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'src'),str(ROOT/'scripts')]
 import bpy
 from mathutils import Vector
-from sikh315_run import OPS,BASE,SOURCE,source_for
+from sikh315_run import OPS,BASE,SOURCE,source_for,validate_job
 from sikh257_native import camera_at
 def main():
     path=Path(sys.argv[sys.argv.index('--')+1]);job=json.loads(path.read_text())
-    if set(job)!={'operation','version'} or job['operation'] not in OPS or type(job['version']) is not int or not 1<=job['version']<=16:raise ValueError('Unadmitted job')
-    op,v=job['operation'],job['version'];out=BASE/f'{op}-{v:02d}'
-    if path.resolve()!=out/'job.json':raise ValueError('Unadmitted path')
+    op,v=validate_job(job);out=BASE/f'{op}-{v:02d}'
+    admitted=out/'chunks'/f"{job['start']:04d}"/'job.json' if 'start' in job else out/'job.json'
+    if path.resolve()!=admitted:raise ValueError('Unadmitted path')
     bpy.ops.wm.open_mainfile(filepath=str(source_for(op,v)),load_ui=False,use_scripts=False)
     s=bpy.context.scene;s.frame_set(1)
     if op=='inspect':
@@ -35,24 +35,37 @@ def main():
         from sikh315_verify import verify
         verify(out,source_for(op,v).parent)
     s.render.resolution_x=480;s.render.resolution_y=854;s.eevee.taa_render_samples=32
+    if op!='profile' and v>=7:
+        # Profile6 matched720 controls retain soft sun shadows; point lights
+        # keep their existing physical size without expensive emitter jitter.
+        s.eevee.shadow_ray_count=1
+        for light in bpy.data.lights:
+            if hasattr(light,'use_shadow_jitter'):light.use_shadow_jitter=light.type=='SUN'
+            if v>=8 and hasattr(light,'shadow_maximum_resolution'):light.shadow_maximum_resolution=.01
     if op=='profile':
         fields={p.identifier:getattr(s.eevee,p.identifier) for p in s.eevee.bl_rna.properties if 'shadow' in p.identifier and p.type in ('INT','FLOAT','BOOLEAN')}
         if not hasattr(s.eevee,'shadow_ray_count'):raise ValueError('No admitted shadow sampling control')
         original=s.eevee.shadow_ray_count;rows=[];s.render.resolution_x=720;s.render.resolution_y=1280
-        for label,samples,rays in (('reference',48,original),('candidate',32,1)):
+        profiles=(('reference',48,original),('candidate',32,1),('selective',32,1)) if v==6 else (('inherited',32,1),('bounded_shadow',32,1))
+        for label,samples,rays in profiles:
             s.eevee.taa_render_samples=samples;s.eevee.shadow_ray_count=rays
+            for light in bpy.data.lights:
+                if hasattr(light,'use_shadow_jitter'):light.use_shadow_jitter=(light.type=='SUN' or (v==6 and label!='selective'))
+                if v!=6 and hasattr(light,'shadow_maximum_resolution'):light.shadow_maximum_resolution=.01 if label=='bounded_shadow' else .0005
             for f in (315,480):
                 s.frame_set(f);s.render.filepath=str(out/f'{label}-{f:04d}.png');start=time.monotonic();bpy.ops.render.render(write_still=True);rows.append({'profile':label,'frame':f,'samples':samples,'shadow_rays':rays,'seconds':time.monotonic()-start})
         (out/'profile.json').write_text(json.dumps({'initial':fields,'renders':rows,'selection':'NOT_RUN_VISUAL_COMPARISON'},indent=2));return
     if op in ('movie','proof'):
-        (out/'frames').mkdir();s.render.resolution_x=720 if op=='movie' else 360;s.render.resolution_y=1280 if op=='movie' else 640;s.eevee.taa_render_samples=48 if op=='movie' else 20
-        windows=((1,696),) if op=='movie' else ((275,356),(414,506))
+        (out/'frames').mkdir(exist_ok=op=='movie');s.render.resolution_x=720 if op=='movie' else 360;s.render.resolution_y=1280 if op=='movie' else 640;s.eevee.taa_render_samples=32 if op=='movie' else 20
+        windows=((job.get('start',1),job.get('end',696)),) if op=='movie' else ((275,356),(414,506))
         for a,b in windows:
+            if any((out/'frames'/f'frame-{f:04d}.png').exists() for f in range(a,b+1)):raise ValueError('Refusing to overwrite rendered evidence')
             s.frame_start=a;s.frame_end=b;s.render.filepath=str(out/'frames/frame-');bpy.ops.render.render(animation=True)
         return
     for f in (80,126,150,283,294,306,315,324,333,342,350,420,435,450,465,480,500,600,680):
         s.frame_set(f);s.render.filepath=str(out/f'frame-{f:04d}.png');bpy.ops.render.render(write_still=True)
     if op in ('build','finish'):
+        if op=='finish' and v>=8:return
         if op=='finish' and v==5:
             s.frame_set(480)
             fx=[o for o in bpy.data.objects if o.name.startswith(('315 detached world wake','305 hoof earth puff'))]

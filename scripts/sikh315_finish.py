@@ -56,6 +56,44 @@ def earth_finish(out,source):
 def finish(out):
     from sikh315_run import source_for
     job=json.loads((out/'job.json').read_text());source=source_for('finish',job['version']).parent
+    if job['version']==8:
+        import shutil
+        for p in source.glob('*.json'):
+            if p.name not in ('job.json','bindings.json'):shutil.copy2(p,out/p.name)
+        mat=bpy.data.materials['305 expanding advected dust'].copy();mat.name='315 moonlit departure loam'
+        vol=next(n for n in mat.node_tree.nodes if n.bl_idname=='ShaderNodeVolumePrincipled')
+        vol.inputs['Color'].default_value=(.72,.64,.51,1);vol.inputs['Anisotropy'].default_value=.30
+        changed=[]
+        for row in json.loads((source/'dust-ownership.json').read_text()):
+            if row['birth_frame']<435:continue
+            ob=bpy.data.objects[row['name']];ob.data=ob.data.copy();ob.data.materials.clear();ob.data.materials.append(mat)
+            action=ob.animation_data.action
+            for layer in action.layers:
+                for strip in layer.strips:
+                    for bag in strip.channelbags:
+                        for fc in bag.fcurves:
+                            gain=1.8 if fc.data_path=='color' and fc.array_index==3 else (1.3,1.2,1.6)[fc.array_index] if fc.data_path=='scale' else 1
+                            if gain==1:continue
+                            for p in fc.keyframe_points:p.co.y*=gain;p.handle_left.y*=gain;p.handle_right.y*=gain
+            changed.append(ob.name)
+        (out/'departure-dust-readability.json').write_text(json.dumps({'changed':changed,'density_gain':1.8,'scale_gain':[1.3,1.2,1.6],'albedo':[.72,.64,.51],'emission':0,'unchanged':'world births, drift, lifetimes, mass dilution and opening/stop dust; camera and geometry preserved'},indent=2))
+        return
+    if job['version']==7:
+        import shutil
+        from movie_factory import sikh315_motion as motion
+        from sikh257_native import camera_at
+        from sikh257_layout import key
+        for p in source.glob('*.json'):
+            if p.name not in ('job.json','bindings.json'):shutil.copy2(p,out/p.name)
+        s=bpy.context.scene;cam=s.camera
+        for f in range(1,697):
+            t=(f-1)/24*motion.RATE
+            if t<23.45:continue
+            s.frame_set(f);u=motion.ease((t-23.45)/4);y=motion.travel(t)
+            loc=Vector((-2.8,motion.travel(22.6)+3.8,2.1)).lerp(Vector((-4.8,-36,4.5)),u)
+            camera_at(cam,loc,Vector((0,y-.15,1.05)).lerp(Vector((0,-145,1.2)),u));cam.data.lens=34+8*u;key(cam,f);cam.data.keyframe_insert('lens',frame=f)
+        (out/'departure-framing.json').write_text(json.dumps({'reason':'Keep focus on accelerating rider, not close foreground crowd; follow beyond crowd then hold road recession','changed':'camera after source23.45 only','motion_geometry_lighting_unchanged':True},indent=2))
+        return
     if job['version']==6:
         import shutil
         for p in source.glob('*.json'):
