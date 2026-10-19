@@ -27,3 +27,15 @@ def test_original_source_pins_preserved():
     assert len(old['sources'])==12
     assert all(current['sources'][key]==value for key,value in old['sources'].items())
     assert len(current['sources'])==13
+
+def test_delivery_preserves_exact_accepted_unit_without_new_narration_authority():
+    import copy
+    task=json.loads((ROOT/'results/sikh317/delivery-8/task.json').read_text())
+    p=pk.task_packet(ROOT,task)
+    assert p['dispatch_ready'],p['blockers']
+    broken=copy.deepcopy(task)
+    broken.pop('preserve_accepted_artifact')
+    assert 'DIRECTOR_DECISION:approve_new_narration_or_bind_accepted_unit' in pk.task_packet(ROOT,broken)['blockers']
+    broken=copy.deepcopy(task)
+    broken['inputs'].pop('docs/knowledge/CURRENT_PRODUCTION_STATE.md')
+    assert 'DIRECTOR_DECISION:approve_new_narration_or_bind_accepted_unit' in pk.task_packet(ROOT,broken)['blockers']

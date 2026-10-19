@@ -9,6 +9,8 @@ OUT=ROOT/'results/sikh317'
 BASE=ROOT/'.runtime/art-direction/series01-sikh317'
 VERSION=8
 SUFFIX=f'{VERSION:02d}'
+ACCEPTED='.runtime/art-direction/series01-finish248/delivery01/pashtun-20s.mp4'
+ACCEPTED_SHA='1004ed9f2e06d2eafb008c925eb9d266e8a13b8603086020e28d19e3b606722b'
 def read(p):return json.loads(p.read_text())
 def bind(p):return {'path':str(p.relative_to(ROOT)),'sha256':pk.file_hash(p)}
 def prepare():
@@ -16,11 +18,14 @@ def prepare():
     task.update(id=f'sikh317-integrated-delivery-{VERSION}',operation='audio',
         query='Complete scene, synchronized existing sound, protected music, tested interfaces and scoped reuse')
     task['entities']=sorted(set(task['entities']+['music_reference']))
+    assert pk.file_hash(ROOT/ACCEPTED)==ACCEPTED_SHA
+    task['preserve_accepted_artifact']=ACCEPTED_SHA
     paths=[ROOT/pk.CATALOG,ROOT/pk.PINS,Path(__file__),OUT/'STRATEGY.md',
         BASE/f'build-{SUFFIX}/sequence.blend',BASE/f'delivery-{SUFFIX}/verification.json',
         BASE/f'audio-{SUFFIX}/manifest.json',OUT/'FINAL_OBSERVATIONS.json',
-        OUT/f'reopen-{VERSION}/comparison.json',OUT/f'movie-{VERSION}/receipt.json']
-    task['inputs']={str(p.relative_to(ROOT)):pk.file_hash(p) for p in paths}
+        OUT/f'reopen-{VERSION}/comparison.json',OUT/f'movie-{VERSION}/receipt.json',
+        ROOT/ACCEPTED,ROOT/'docs/knowledge/CURRENT_PRODUCTION_STATE.md']
+    task['inputs'].update({str(p.relative_to(ROOT)):pk.file_hash(p) for p in paths})
     packet=pk.task_packet(ROOT,task)
     if not packet['dispatch_ready']:raise ValueError(packet['blockers'])
     dest=OUT/f'delivery-{VERSION}';dest.mkdir(exist_ok=False)
@@ -49,6 +54,7 @@ def main():
     paths=[OUT/p for p in ('STRATEGY.md','FINAL_OBSERVATIONS.json','REVIEW_PROGRESS.md',
         'CARRY_FORWARD.md','knowledge/RECONCILIATION.md',f'reopen-{VERSION}/comparison.json')]
     paths += [native,delivery/'verification.json',BASE/f'check-{SUFFIX}/interfaces.json',
+        delivery/'join-boundary-01.png',delivery/'join-boundary-02.png',
         BASE/f'check-{SUFFIX}/native-checks.json',BASE/f'audio-{SUFFIX}/manifest.json',
         BASE/f'build-{SUFFIX}/hoof-ownership.json',BASE/f'build-{SUFFIX}/coat-reuse.json',
         BASE/f'build-{SUFFIX}/crowd-seams.json',BASE/f'build-{SUFFIX}/leader-seams.json']
