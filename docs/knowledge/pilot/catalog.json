@@ -1,8 +1,19 @@
 {
   "schema_version": 1,
-  "version": "260-reviewed-sikh-portrait-acceptance",
+  "version": "317-reviewed-cinematic-reuse-interfaces",
   "scope": "Protected Pashtun unit plus authorized Sikh sequence development and knowledge pilot; explicit source/impact routing, not automatic scene understanding.",
   "sources": {
+    "reuse317": {
+      "path": "docs/knowledge/CINEMATIC_REUSE_317.md",
+      "records": [
+        "reuse_envelope",
+        "vehicle_response",
+        "animal_coordination",
+        "crowd_support",
+        "drainage_use"
+      ],
+      "reason": "Reviewed Director316 findings and317 adoption. Repair methods remain hypotheses until actual evidence; reuse qualification is scoped and does not replace manual rights or visual judgment."
+    },
     "index": {
       "path": "docs/knowledge/PRODUCTION_LEARNING_APPLICATION_INDEX.md",
       "records": [
@@ -377,6 +388,7 @@
     },
     "motorcycle": {
       "tags": [
+        "vehicle_response",
         "sikh_scope",
         "sikh_motion",
         "prop",
@@ -387,6 +399,7 @@
     },
     "nihang_crowd": {
       "tags": [
+        "crowd_support",
         "sikh_scope",
         "sikh_motion",
         "motion"
@@ -403,6 +416,7 @@
     },
     "nihang_horse": {
       "tags": [
+        "animal_coordination",
         "sikh_scope",
         "sikh_motion",
         "motion",
@@ -413,6 +427,7 @@
     },
     "punjab_night": {
       "tags": [
+        "drainage_use",
         "sikh_scope",
         "sikh_geography",
         "camera",
@@ -584,6 +599,74 @@
     ]
   ],
   "records": [
+    {
+      "id": "reuse_envelope",
+      "status": "adopted",
+      "kind": "constraint",
+      "tags": [
+        "modeling",
+        "motion",
+        "look",
+        "knowledge"
+      ],
+      "sources": [
+        "reuse317"
+      ],
+      "check_kind": "process",
+      "action": "317: evaluate reuse before custom construction without forcing it; compare total adaptation/revalidation cost and quality. Extend existing provenance with source/version/rights/dependencies, tested conditions, failures/evidence and measured-or-unknown effort. Run resource_manifest for the requested use; missing/stale evidence, untested conditions, unresolved rights or open failures block qualification. Assessed resources stay useful but unqualified. Manually verify applicability, rights and perceptual truth; a valid record is not an artistic pass. No new database, installation, spend or upload."
+    },
+    {
+      "id": "vehicle_response",
+      "status": "adopted",
+      "kind": "constraint",
+      "tags": [
+        "vehicle_response"
+      ],
+      "sources": [
+        "reuse317"
+      ],
+      "check_kind": "review",
+      "action": "D316-01: separate chassis response from wheel/terrain contact; preserve rough road, rolling/slip and brake intent. Check fork/axle, lamp, hand/grip, boot/peg and planted-foot interfaces, not just reduced chassis jerk.317 filter is shot-authored, not general dynamics. Changed speed, road, wheelbase or framing requires revalidation."
+    },
+    {
+      "id": "animal_coordination",
+      "status": "adopted",
+      "kind": "constraint",
+      "tags": [
+        "animal_coordination"
+      ],
+      "sources": [
+        "reuse317"
+      ],
+      "check_kind": "review",
+      "action": "D316-02-04: compare elapsed reference phases, joint/hoof axes, support/weight transfer, brief active apex, head/neck and rider/spear/reins through landing. More keyed joints are not naturalness. Distinguish coat from clay/metal under matched lighting; preserve eyes/muzzle/hooves and bind short nap to actual deformation. Keep direct motion judgment pending under313; source/timed frames do not certify continuous performance. Trace constraints through the actual visible hoof endpoint and test grounded/airborne ownership transfer; keyed evaluated quaternion controls, not temporary property edits, are valid diagnostics."
+    },
+    {
+      "id": "crowd_support",
+      "status": "adopted",
+      "kind": "constraint",
+      "tags": [
+        "crowd_support"
+      ],
+      "sources": [
+        "reuse317"
+      ],
+      "check_kind": "review",
+      "action": "D316-06: purposeful anticipation, weight transfer, staggered non-crossing steps and world-planted support, with torso/gaze and connected costume/props. Rebuild visible clothing when joints change. Verify near/far actors and corridor clearance. Random sway or upright root translation is not life; donor motion requires actual skeleton/contact compatibility. Keep bake sources evaluated but render-hidden; bind full timeline explicitly and measure actual evaluated garment-to-boot/hand interfaces. Reachable targets can still create split-like strides; inspect clothed support and natural step width separately."
+    },
+    {
+      "id": "drainage_use",
+      "status": "adopted",
+      "kind": "constraint",
+      "tags": [
+        "drainage_use"
+      ],
+      "sources": [
+        "reuse317"
+      ],
+      "check_kind": "review",
+      "action": "D316-05: cluster rooted growth, broken stubble, erosion and deposits by drainage/use; preserve lane and occupied crossings. Avoid uniform scatter or continuous green strips. Ground-support changes invalidate wheel, foot and FX checks."
+    },
     {
       "id": "authority",
       "status": "adopted",

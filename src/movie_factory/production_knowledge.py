@@ -199,6 +199,18 @@ def task_packet(root, task):
             blockers.append("STALE_INPUT:" + path)
     if not task["inputs"]:
         blockers.append("MISSING_INPUT_BINDINGS")
+    #317 optional declared qualified reuse. Adaptation work is not disguised
+    # as qualification; callers still reconcile undeclared scene dependencies.
+    resource_checks=[]
+    for use in task.get("resource_uses",[]):
+        if not isinstance(use,dict) or set(use)!={"manifest","conditions"}:
+            raise KnowledgeError("INVALID_RESOURCE_USE")
+        if use['manifest'] not in task['inputs'] or use['conditions'] not in task['inputs']:
+            blockers.append('UNBOUND_RESOURCE_USE');continue
+        from movie_factory.resource_manifest import validate as validate_resource
+        record=read_json(root,use['manifest']);conditions=read_json(root,use['conditions'])
+        result=validate_resource(root,record,conditions);resource_checks.append(result)
+        blockers.extend('RESOURCE:'+result['resource_id']+':'+b for b in result['blockers'])
     if task["phase"] == "execution":
         blockers += ["DIRECTOR_DECISION:" + d for d in task["open_decisions"]]
         # Current canonical state cannot be overridden by omitting the task's decision list.
@@ -244,6 +256,7 @@ def task_packet(root, task):
               "entity_versions": {e: catalog["entities"][e]["version"] for e in sorted(reached)},
               "entity_reasons": reached, "traversed_edges": traversed, "facets": sorted(tags),
               "obligations": obligations, "excluded": excluded, "supporting_search": supporting,
+              "resource_checks": resource_checks,
               "blockers": blockers, "dispatch_ready": not blockers,
               "gaps": catalog["gaps"], "open_decisions": task["open_decisions"],
               "limits": "Planning readiness is not execution authorization. Manually curated scope and authority records require agent verification. CLI enforces evidence structure/freshness, not honesty or perceptual quality."}

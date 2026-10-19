@@ -117,6 +117,10 @@
     }
   ],
   "knowledge_mapping": {
+    "reuse_envelope": {
+      "checks": ["policy", "references", "technical"],
+      "reason": "317 reviewed extension: preserve source and rights evidence, explicit compatibility and tested scope; rejected/in-progress resources do not become qualified from a valid schema. Domain-specific317 motion obligations use the fresh production packet, not this historical knowledge-only control."
+    },
     "authority": {
       "checks": [
         "policy",
