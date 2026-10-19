@@ -56,6 +56,10 @@ def earth_finish(out,source):
 def finish(out):
     from sikh315_run import source_for
     job=json.loads((out/'job.json').read_text());source=source_for('finish',job['version']).parent
+    if job['version']==10:
+        from sikh315_drainage import refine
+        refine(out,source)
+        return
     if job['version']==9:
         import shutil
         for p in source.glob('*.json'):

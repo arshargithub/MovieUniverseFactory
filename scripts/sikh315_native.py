@@ -65,7 +65,8 @@ def main():
             if any((out/'frames'/f'frame-{f:04d}.png').exists() for f in range(a,b+1)):raise ValueError('Refusing to overwrite rendered evidence')
             s.frame_start=a;s.frame_end=b;s.render.filepath=str(out/'frames/frame-');bpy.ops.render.render(animation=True)
         return
-    for f in (80,126,150,283,294,306,315,324,333,342,350,420,435,450,465,480,500,600,680):
+    controls=(41,80,91,126,315,450,600) if op=='finish' and v==10 else (80,126,150,283,294,306,315,324,333,342,350,420,435,450,465,480,500,600,680)
+    for f in controls:
         s.frame_set(f);s.render.filepath=str(out/f'frame-{f:04d}.png');bpy.ops.render.render(write_still=True)
     if op in ('build','finish'):
         if op=='finish' and v>=8:return
