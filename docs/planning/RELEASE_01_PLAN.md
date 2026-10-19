@@ -13,10 +13,17 @@ grounded ditch enrichment and purposeful supporting-cast motion. Protected
 Pashtun/music, first brake and stop/crowd position stay unchanged. New knowledge
 source and five routed actions retain all twelve prior source snapshots; resource
 sidecars distinguish investigated/in-progress/rejected from scoped qualification.
-Native corrections and full integrated AV review remain unfinished; software
-checks are not artistic passes. No Gemini/cloud/provider/install/spend/upload,
-principal replacement or Gurkha work. Continue short proofs into complete Sikh29s
-and unchanged-Pashtun49s delivery, with Director AV pending under313.
+Candidate08 now supplies the complete Sikh29s and protected-Pashtun49s join.
+[Review](../../results/sikh317/REVIEW.md) binds all696 source frames,26 decoded
+controls, the join boundary and exact manual313 AV queue.180 regression tests
+pass, including accepted-unit authority and reuse-routing negative controls.
+The bounded pilot is13 sources/48 records; four resource records remain in-progress,
+not qualified library assets. Strict fresh-open pixel replay remains FAIL in5of16
+controls:16 channel values over1/255, maximum3/255. Director motion/audio verdict,
+artistic defect closure and final principal/supporting-character admission remain
+pending. No Gemini/cloud/provider/install/spend/upload, principal replacement or
+Gurkha work. Review the complete integrated candidate next; resolve rejection
+before final Sikh principal integration. Local commits are not remote backup.
 Counter317; next checkpoint320. Routine continuations do not increment it.
 
 ### Exchange316 — feedback verified; strategic discussion before construction

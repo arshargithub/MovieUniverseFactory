@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "id": "motorcycle-response",
+  "state": "in_progress",
+  "reuse_mode": "adapt",
+  "source": [
+    {
+      "path": ".runtime/assets/series01-motorcycle289/royal_enfield.glb",
+      "sha256": "931e8559aad216c41797ab6d5740e243a4868f222b581ede5d10e7340b715d7d"
+    }
+  ],
+  "provenance": [
+    {
+      "path": "results/sikh289/ATTRIBUTION.md",
+      "sha256": "c8dee6bb265b5c54347245e6b59e8d978a0adec28d05d867c936437441537b67"
+    },
+    {
+      "path": "results/sikh317/STRATEGY.md",
+      "sha256": "c8ba8dd09ed724bcb707803d9e252f3d2c7db3cedc32068ddf8ac2268c56e986"
+    }
+  ],
+  "rights": {
+    "status": "verified_for_use",
+    "scope": "Existing local derivative review only; no new redistribution clearance. Horse upstream CC-BY version and supporting donor reconciliation remain open where stated.",
+    "evidence_paths": [
+      "results/sikh289/ATTRIBUTION.md"
+    ]
+  },
+  "dependencies": [
+    {
+      "path": ".runtime/art-direction/series01-sikh317/build-05/sequence.blend",
+      "sha256": "1ba94be0b27a06f297899bc73afca4d5851fa9b5aef7a2a3b9ef307453fdb4af"
+    },
+    {
+      "path": "scripts/sikh317_scene.py",
+      "sha256": "bd7dfff25b8e24c4e117eedd58b517b888127192419319efd69379a42885c612"
+    },
+    {
+      "path": "src/movie_factory/sikh317_motion.py",
+      "sha256": "6fa7754a50487510a4f9b35a5476d25b254ae99b204ebf318d64e533bdcb70bf"
+    },
+    {
+      "path": "scripts/finish317_native.py",
+      "sha256": "192c0af082dbb31c529a8b3e524f8665ac228c080218144d28f254e23eb6c779"
+    },
+    {
+      "path": "scripts/surface317.py",
+      "sha256": "e54b484da77405542c3607aff59b6396a73f86aaf1877f3b6a32254ebbb3d7ab"
+    }
+  ],
+  "tested_conditions": {
+    "runtime": "Blender5.2.1",
+    "sequence": "Sikh317 candidate 5",
+    "scope": "local_internal_review",
+    "representation": "inherited315 scene and rig only"
+  },
+  "evidence": [
+    {
+      "path": ".runtime/art-direction/series01-sikh317/build-05/suspension.json",
+      "sha256": "304f3d3fd0e66147017e8dbab3e7bfc1d63b32afee9607e99a8b6a67a061a333"
+    }
+  ],
+  "failures": [
+    {
+      "id": "D316-01",
+      "status": "open",
+      "reason": "Technical/frame checks and Director AV disposition must be recorded separately; no artistic closure inferred."
+    }
+  ],
+  "effort": {
+    "active_seconds": null,
+    "evidence_path": null,
+    "note": "Operating ledger tracks jobs; no exact asset-specific net-effort attribution yet."
+  }
+}

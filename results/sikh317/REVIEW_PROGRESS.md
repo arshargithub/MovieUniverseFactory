@@ -91,7 +91,7 @@ for D317-I02. Reachability and continuous cloth are necessary, not sufficient
 for plausible stepping. Candidate07 tests0.425m step-and-close pairs, reduced
 bob/lift, unchanged total1.7m clearance, and explicit whole-clothed-pose controls.
 Both rejections and their native/image evidence remain available.
-# Candidate07 and adjacent interface review
+## Candidate07 and adjacent interface review
 
 Viewed375/380/390/402/415/430/450 actual-camera controls. The detached boots and
 split-like stance from05/06 are absent in these samples. No crowd motion PASS:
@@ -106,4 +106,59 @@ was reauthored, but the rein sleeve retained an earlier bake.08 binds visible
 cuffs to actual palms through the full timeline and requires new image review.
 Prepared movie07 was not dispatched. Its resource sidecars remain historical,
 not current qualification, after the strategy changed for this correction.
+
+## Candidate08 current full-resolution review
+
+Fresh native08 all696-frame checks: actual tire/ground maximum0.006102m;
+planted boot drift0.00000764m; evaluated crowd cuff/boot maximum0.000001924m;
+leader sleeve/palm maximum0.000004102m. These are technical interface results.
+Direct controls283/294/306/315/324/350/375 were viewed before dispatch.
+
+Delivery-resolution crowd375 and380/390/402 inspected, followed by the complete
+359–430 chronological window. Detached clothing and the earlier split-like
+stance are not visible in these controls. The staggered foot placements and
+pelvis changes are present; this does not close D316-06 naturalness.
+
+Viewed full-resolution chronological275–358 against the preserved reference-b
+rear sheet: preparation/head response precedes lift; front legs fold with soles
+down; body rises and the rider compensates; feet return before landing debris.
+No cuff separation or detached hoof is apparent in this window. Reference
+performance is not a pixel/trajectory match. Timing, weight and force at speed
+remain pending Director AV, not inferred from pose sequence or technical tests.
+See movie08/interim-review-03; opening frames were beginning to render while
+that snapshot was generated, so its first page includes1–3 before275 onward.
+
+The final179-test regression capture passed after source13/routing reconciliation:
+`.runtime/context-hygiene/runs/sikh317-final-regressions/`. It tests declarations,
+bindings, routing and numerical controls, not perceptual acceptance.
+
+Reviewed movie08/interim-review04 pages1–12 and19–21: consecutive opening,
+approach, protected brake/greeting and departure through504. Wheels, forks,
+lamp and rider attachments remain connected in these image sequences. The
+stopped bike and planted boot remain stable through the greeting; the previous
+brake is intentionally preserved. Ditch bank clusters are visible on the
+approach and beyond the crowd. Departure retains initial wheel disturbance,
+lateral heading change and then forward travel; dust remains behind the bike
+as the camera passes the crowd. No new detached clothing is visible in these
+samples. This is a timed-frame review, not a full-speed motion judgment. The
+principal proxy and unfinished supporting-actor design are not admitted by it.
+
+Full-resolution450 and480 were also inspected separately for bike contacts,
+crowd cuff/boot continuity and the hill/road boundary. Remaining departure
+frames, encoded controls and independent reopen checks are still pending.
+
+## Completed08 review evidence
+
+Remaining505–696 chronology and all26 decoded controls inspected. No missing
+frame or detached component found in the claimed correction scope. Departure
+continues to the horizon, with deposited/airborne dust retained behind it.
+Two decoded join-boundary frames show the protected Pashtun ending followed
+by the labeled Sikh proxy opening. Both29s/49s files decode; first20s PCM is
+exact before AAC. There was no Pashtun native rerender or music substitution.
+
+Independent16-frame reopen comparison is **FAIL**:5 controls exceed1/255,
+16 channel values are above threshold, maximum3/255. Historical315 FAIL remains
+unchanged. This technical limitation is separate from the Director AV queue.
+See FINAL_OBSERVATIONS.json for source/frame observations and still-pending
+motion/listening judgments. No artistic defect is closed by test counts.
 

@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "id": "drainage-detail",
+  "state": "in_progress",
+  "reuse_mode": "adapt",
+  "source": [
+    {
+      "path": ".runtime/art-direction/series01-sikh315/finish-11/sequence.blend",
+      "sha256": "390f9f72c6f781afb690946d5706904ffd1162444edea4f11df730865e5d8fed"
+    }
+  ],
+  "provenance": [
+    {
+      "path": "results/review316/REVIEW.md",
+      "sha256": "695e3433d028e9afd12321c80bf39bedb3c06633cce0a8264168e9475432a18b"
+    },
+    {
+      "path": "results/sikh317/STRATEGY.md",
+      "sha256": "c8ba8dd09ed724bcb707803d9e252f3d2c7db3cedc32068ddf8ac2268c56e986"
+    }
+  ],
+  "rights": {
+    "status": "verified_for_use",
+    "scope": "Existing local derivative review only; no new redistribution clearance. Horse upstream CC-BY version and supporting donor reconciliation remain open where stated.",
+    "evidence_paths": [
+      "results/review316/REVIEW.md"
+    ]
+  },
+  "dependencies": [
+    {
+      "path": ".runtime/art-direction/series01-sikh317/build-05/sequence.blend",
+      "sha256": "1ba94be0b27a06f297899bc73afca4d5851fa9b5aef7a2a3b9ef307453fdb4af"
+    },
+    {
+      "path": "scripts/sikh317_scene.py",
+      "sha256": "bd7dfff25b8e24c4e117eedd58b517b888127192419319efd69379a42885c612"
+    },
+    {
+      "path": "src/movie_factory/sikh317_motion.py",
+      "sha256": "6fa7754a50487510a4f9b35a5476d25b254ae99b204ebf318d64e533bdcb70bf"
+    },
+    {
+      "path": "scripts/finish317_native.py",
+      "sha256": "192c0af082dbb31c529a8b3e524f8665ac228c080218144d28f254e23eb6c779"
+    },
+    {
+      "path": "scripts/surface317.py",
+      "sha256": "e54b484da77405542c3607aff59b6396a73f86aaf1877f3b6a32254ebbb3d7ab"
+    }
+  ],
+  "tested_conditions": {
+    "runtime": "Blender5.2.1",
+    "sequence": "Sikh317 candidate 5",
+    "scope": "local_internal_review",
+    "representation": "inherited315 scene and rig only"
+  },
+  "evidence": [
+    {
+      "path": ".runtime/art-direction/series01-sikh317/build-05/ditch.json",
+      "sha256": "9efa9e7350402dc1ac2ec0a8b8a1b1b2b191082b8104ae54e22c7faa81ffd76b"
+    }
+  ],
+  "failures": [
+    {
+      "id": "D316-05",
+      "status": "open",
+      "reason": "Technical/frame checks and Director AV disposition must be recorded separately; no artistic closure inferred."
+    }
+  ],
+  "effort": {
+    "active_seconds": null,
+    "evidence_path": null,
+    "note": "Operating ledger tracks jobs; no exact asset-specific net-effort attribution yet."
+  }
+}

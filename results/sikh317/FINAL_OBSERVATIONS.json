@@ -1,0 +1,71 @@
+{
+  "version": 8,
+  "native_sha256": "3d7b23624d07a490ce40857db917c7ed99c052650146573f27f4b3f87f4a71af",
+  "review_modalities": ["source", "still_images", "timed_frames", "numerical"],
+  "direct_motion": false,
+  "direct_audio": false,
+  "known_frame_visible_blockers": [],
+  "scope": "D316 supporting-scene correction; explicitly excludes final principal and supporting-actor design admission. Empty frame-blocker list is not an audiovisual or production pass.",
+  "requirements": [
+    {
+      "id": "D316-01",
+      "agent_observation": "Chassis response is filtered independently of tire contact. The inherited source-clock 5.3-19.8 interval remains protected. Opening chronological frames1-90 show connected forks, lamp, rider grips and pegs; stop/greeting109-275 retains planted support. All696-frame evaluated tire/terrain maximum is about0.0061m and planted-boot drift below0.000008m. These support mechanical continuity, not perceived smoothness.",
+      "evidence": [".runtime/art-direction/series01-sikh317/build-08/suspension.json", ".runtime/art-direction/series01-sikh317/check-08/interfaces.json", ".runtime/art-direction/series01-sikh317/delivery-08/chronology/chronology-01.jpg", ".runtime/art-direction/series01-sikh317/delivery-08/encoded-controls/frame-0080.png"],
+      "director_pending": "Full-speed rough-road weight and smoothness, without losing speed or terrain response.",
+      "status": "AWAITING_DIRECTOR_AV"
+    },
+    {
+      "id": "D316-02",
+      "agent_observation": "Compared chronological275-358 with the preserved reference-b rear: preparation includes head/chest loading before rise; legs fold, body rises, rider compensates and front feet return with impact debris. Brief active apex replaces the earlier longer hold. This is not a literal reference trajectory match; sampled chronology cannot establish force, rhythm or absence of robotic motion at playback speed.",
+      "evidence": [".runtime/art-direction/series01-sikh317/build-08/whole-horse-motion.json", ".runtime/art-direction/series01-sikh317/build-08/impact-events.json", ".runtime/art-direction/series01-sikh317/delivery-08/encoded-controls/frame-0294.png", ".runtime/art-direction/series01-sikh317/delivery-08/encoded-controls/frame-0315.png", ".runtime/art-direction/series01-sikh317/delivery-08/encoded-controls/frame-0350.png", ".runtime/art-direction/series01-sikh256/references/reference-b.mov"],
+      "director_pending": "Preparation naturalness, apex duration, weight, force and reference-level dramatic read.",
+      "status": "AWAITING_DIRECTOR_AV"
+    },
+    {
+      "id": "D316-03",
+      "agent_observation": "Saved-native tracing found that the visible front hoof retained a ground-oriented IK copy while the leg used FK. Airborne ownership now follows the folded lower leg and returns to the original socket before ground support. Full-resolution315/324 and the consecutive rear window show downward-facing soles rather than the previous outward hoof presentation; no detached fetlock is apparent in the reviewed views.",
+      "evidence": [".runtime/art-direction/series01-sikh317/build-08/hoof-ownership.json", ".runtime/art-direction/series01-sikh317/check-08/hoof-chain.json", ".runtime/art-direction/series01-sikh317/delivery-08/encoded-controls/frame-0315.png", ".runtime/art-direction/series01-sikh317/delivery-08/encoded-controls/frame-0324.png", ".runtime/art-direction/series01-sikh317/delivery-08/encoded-controls/frame-0342.png"],
+      "director_pending": "Integrated leg articulation and transfer read in motion.",
+      "status": "AWAITING_DIRECTOR_AV"
+    },
+    {
+      "id": "D316-04",
+      "agent_observation": "Reused the authored Pashtun coat image as UV-bound luminance breakup while retaining the grey horse colour, eye, muzzle and hoof regions. Short nap shares the actual horse armature and expected pigmentation attribute. Actual-camera283/315/324 show directional surface variation rather than the previous broad uniform sheen. No claim that node count or fuzz geometry establishes the final aesthetic.",
+      "evidence": [".runtime/art-direction/series01-sikh317/build-08/coat-reuse.json", ".runtime/art-direction/series01-sikh317/check-08/native-checks.json", ".runtime/art-direction/series01-sikh317/delivery-08/encoded-controls/frame-0283.png", ".runtime/art-direction/series01-sikh317/delivery-08/encoded-controls/frame-0324.png"],
+      "director_pending": "Horse rather than clay/metal read under the actual moving night lighting, and ensemble quality.",
+      "status": "AWAITING_DIRECTOR_AV"
+    },
+    {
+      "id": "D316-05",
+      "agent_observation": "Grounded clusters of broken stubble, rooted growth and deposits enrich the existing ditch without changing the occupied lane/crossing. Opening80, departure480/600 and the complete later chronology show bank detail continuing through the shot, rather than a new continuous green carpet. The original field divisions and travel remain intact.",
+      "evidence": [".runtime/art-direction/series01-sikh317/build-08/ditch.json", ".runtime/art-direction/series01-sikh317/delivery-08/encoded-controls/frame-0080.png", ".runtime/art-direction/series01-sikh317/delivery-08/encoded-controls/frame-0480.png", ".runtime/art-direction/series01-sikh317/delivery-08/encoded-controls/frame-0600.png"],
+      "director_pending": "Ditch richness and believable ground at playback size.",
+      "status": "AWAITING_DIRECTOR_AV"
+    },
+    {
+      "id": "D316-06",
+      "agent_observation": "Purposeful leader head/crown response and staggered crowd step-and-close placement replace the prior uniform parting. Full-resolution review internally rejected detached trousers and over-wide split stances before08. Actual evaluated cuff/boot separation is below0.000002m over696frames; a separate stale leader sleeve was repaired, with cuff/palm separation below0.000005m. Reviewed whole-clothed359-430 window and departure to504; these defects are absent in those frames. Final leader/crowd character design remains outside this admission.",
+      "evidence": [".runtime/art-direction/series01-sikh317/build-08/crowd-seams.json", ".runtime/art-direction/series01-sikh317/build-08/leader-seams.json", ".runtime/art-direction/series01-sikh317/check-08/leader-clothing-interface.json", ".runtime/art-direction/series01-sikh317/delivery-08/encoded-controls/frame-0375.png", ".runtime/art-direction/series01-sikh317/delivery-08/encoded-controls/frame-0390.png", ".runtime/art-direction/series01-sikh317/delivery-08/encoded-controls/frame-0402.png", ".runtime/art-direction/series01-sikh317/delivery-08/encoded-controls/frame-0415.png"],
+      "director_pending": "People yielding intentionally rather than sliding or moving cartoonishly; leader performance, not final design acceptance.",
+      "status": "AWAITING_DIRECTOR_AV"
+    },
+    {
+      "id": "integrated-edit-protection",
+      "agent_observation": "All696 source frames inspected chronologically through interim/final sheets, plus26 decoded controls and the two join-boundary frames. Departure reaches the horizon; dust remains behind the traveling bike. Both29s and49s media decode successfully. Accepted Pashtun source hash is unchanged, no native rerender, first20s mixed PCM exactly preserved before AAC; selected Sikh music WAV unchanged. Horse event audio retimed from existing cleared sources only. Encoded picture is a derivative, not byte-identical to the input MP4.",
+      "evidence": [".runtime/art-direction/series01-sikh317/delivery-08/verification.json", ".runtime/art-direction/series01-sikh317/audio-08/manifest.json", ".runtime/art-direction/series01-sikh317/delivery-08/join-boundary-01.png", ".runtime/art-direction/series01-sikh317/delivery-08/join-boundary-02.png"],
+      "director_pending": "Full-speed continuity, effects/music balance and overall dramatic experience. Agent did not directly listen or watch continuous motion.",
+      "status": "AWAITING_DIRECTOR_AV"
+    },
+    {
+      "id": "reopen-technical",
+      "agent_observation": "16 fresh-process controls rendered. Strict maximum1/255 threshold fails in5controls, with16channel values above threshold and maximum3/255. Preserve FAIL independently of any visual acceptance and of historical315 replay failure. No renderer determinism qualification.",
+      "evidence": ["results/sikh317/reopen-8/comparison.json"],
+      "director_pending": "No Director choice is requested to waive this technical threshold.",
+      "status": "FAIL"
+    }
+  ],
+  "open_defects": ["D305-rear", "D305-terrain", "D305-field_boundaries", "D305-debris", "D315-01", "D315-02", "D315-03", "D315-04", "D315-05", "D316-01", "D316-02", "D316-03", "D316-04", "D316-05", "D316-06"],
+  "internal_corrections": ["D317-I01 rendered trouser-to-boot separation", "D317-I02 split-like crowd stride", "D317-I03 stale opposite leader sleeve"],
+  "strict_replay": {"status": "FAIL", "threshold_8bit": 1, "controls": 16, "failed_controls": 5, "channels_above_threshold": 16, "maximum_8bit": 3},
+  "qualification": "Manual Director313 queue only; no production, final character, rights or general reuse qualification. Resource records remain in_progress."
+}

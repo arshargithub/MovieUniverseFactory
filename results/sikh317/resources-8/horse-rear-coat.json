@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "id": "horse-rear-coat",
+  "state": "in_progress",
+  "reuse_mode": "adapt",
+  "source": [
+    {
+      "path": ".runtime/assets/demonstrator-01/horse.blend",
+      "sha256": "b848037332fe62064989f250a94faa04c75e3fb21ae93f6a100f19079c1b21aa"
+    }
+  ],
+  "provenance": [
+    {
+      "path": "results/demonstrator-01/stage-a/asset-manifest.json",
+      "sha256": "eda7c3d6582275fec9c105bad4dce35706aecea58f2a3776fa8944fc82e25c57"
+    },
+    {
+      "path": "results/sikh317/STRATEGY.md",
+      "sha256": "1a99df6dbc1c79c26ec13b46a569ac458e171bb5188434fe1003f6cb4752a3f4"
+    },
+    {
+      "path": ".runtime/art-direction/series01-entrance-art188/horse-coat-v01.prompt.txt",
+      "sha256": "8cc75d97d05f93fe3bf6d002fa0945635d73127e4690a1b455241bbd8520d360"
+    }
+  ],
+  "rights": {
+    "status": "unresolved",
+    "scope": "Existing local derivative review only; no new redistribution clearance. Horse upstream CC-BY version and supporting donor reconciliation remain open where stated.",
+    "evidence_paths": [
+      "results/demonstrator-01/stage-a/asset-manifest.json"
+    ]
+  },
+  "dependencies": [
+    {
+      "path": ".runtime/art-direction/series01-sikh317/build-08/sequence.blend",
+      "sha256": "3d7b23624d07a490ce40857db917c7ed99c052650146573f27f4b3f87f4a71af"
+    },
+    {
+      "path": "scripts/sikh317_scene.py",
+      "sha256": "e11c5b0b6ecd06d668ed066c496d0603c8372b941f8e006c47af3e24c25e1db4"
+    },
+    {
+      "path": "src/movie_factory/sikh317_motion.py",
+      "sha256": "af84099e1e58606c3aebf39142422cfae2db285f94384000a3c789d47a28c595"
+    },
+    {
+      "path": "scripts/finish317_native.py",
+      "sha256": "192c0af082dbb31c529a8b3e524f8665ac228c080218144d28f254e23eb6c779"
+    },
+    {
+      "path": "scripts/surface317.py",
+      "sha256": "e54b484da77405542c3607aff59b6396a73f86aaf1877f3b6a32254ebbb3d7ab"
+    },
+    {
+      "path": ".runtime/art-direction/series01-entrance-art188/horse-coat-v01.png",
+      "sha256": "ce76d6ae72e42e446725515fc209420239a534f4d9d4170cdd65f3177846449e"
+    },
+    {
+      "path": "scripts/crowdfix317.py",
+      "sha256": "44ea725c468546b018cccb46792697f7a1f40875da0ed1c4bd1c97261502ccf6"
+    },
+    {
+      "path": "scripts/leaderfix317.py",
+      "sha256": "7fc2745679c8b4ca76cd6d080c7635ce12ba455665626ee5e2c4488c332959e8"
+    }
+  ],
+  "tested_conditions": {
+    "runtime": "Blender5.2.1",
+    "sequence": "Sikh317 candidate 8",
+    "scope": "local_internal_review",
+    "representation": "inherited315 scene and rig only",
+    "coat_reuse": "authored188 luminance only, UV tiled4; grey pigmentation retained"
+  },
+  "evidence": [
+    {
+      "path": ".runtime/art-direction/series01-sikh317/build-08/whole-horse-motion.json",
+      "sha256": "51a4abfbe3474f7b453dd6adef8678a2b812c085e8e21293840037942dd3ac90"
+    },
+    {
+      "path": ".runtime/art-direction/series01-sikh317/build-08/coat.json",
+      "sha256": "e79cbb5f4e2739971b74e6e4b3d59fc16f59c5337691e4c1ac2b505d727a6ebf"
+    },
+    {
+      "path": ".runtime/art-direction/series01-sikh317/build-08/finish.json",
+      "sha256": "086d22d147cdd042ec251159f3e40bdbbc2e9024c24a412246e81d226d6d4e3d"
+    },
+    {
+      "path": ".runtime/art-direction/series01-sikh317/build-08/hoof-ownership.json",
+      "sha256": "c6fd3c3d1d28f8af08d31435097376fc239bc2573bb09262ac62394bcc74769e"
+    },
+    {
+      "path": ".runtime/art-direction/series01-sikh317/build-08/coat-reuse.json",
+      "sha256": "8b3f0b939de1b282b979373f779e9199142747093cd3104edfd53ec52282e3a3"
+    },
+    {
+      "path": ".runtime/art-direction/series01-sikh317/build-08/leader-seams.json",
+      "sha256": "84293603188d79c7ad66e606b72e860375fdd0eac156b41bd387c32e5b123a91"
+    }
+  ],
+  "failures": [
+    {
+      "id": "D316-02",
+      "status": "open",
+      "reason": "Technical/frame checks and Director AV disposition must be recorded separately; no artistic closure inferred."
+    },
+    {
+      "id": "D316-03",
+      "status": "open",
+      "reason": "Technical/frame checks and Director AV disposition must be recorded separately; no artistic closure inferred."
+    },
+    {
+      "id": "D316-04",
+      "status": "open",
+      "reason": "Technical/frame checks and Director AV disposition must be recorded separately; no artistic closure inferred."
+    }
+  ],
+  "effort": {
+    "active_seconds": null,
+    "evidence_path": null,
+    "note": "Operating ledger tracks jobs; no exact asset-specific net-effort attribution yet."
+  }
+}

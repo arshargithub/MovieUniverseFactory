@@ -1,0 +1,49 @@
+{
+  "records": [
+    {
+      "schema_valid": true,
+      "resource_id": "horse-rear-coat",
+      "reuse_admissible": false,
+      "blockers": [
+        "NOT_QUALIFIED:in_progress",
+        "RIGHTS:unresolved",
+        "OPEN_FAILURE:D316-02",
+        "OPEN_FAILURE:D316-03",
+        "OPEN_FAILURE:D316-04"
+      ],
+      "limit": "Hash/schema/scope checks only; manual rights and perceptual review still required."
+    },
+    {
+      "schema_valid": true,
+      "resource_id": "motorcycle-response",
+      "reuse_admissible": false,
+      "blockers": [
+        "NOT_QUALIFIED:in_progress",
+        "OPEN_FAILURE:D316-01"
+      ],
+      "limit": "Hash/schema/scope checks only; manual rights and perceptual review still required."
+    },
+    {
+      "schema_valid": true,
+      "resource_id": "supporting-crowd",
+      "reuse_admissible": false,
+      "blockers": [
+        "NOT_QUALIFIED:in_progress",
+        "RIGHTS:unresolved",
+        "OPEN_FAILURE:D316-06"
+      ],
+      "limit": "Hash/schema/scope checks only; manual rights and perceptual review still required."
+    },
+    {
+      "schema_valid": true,
+      "resource_id": "drainage-detail",
+      "reuse_admissible": false,
+      "blockers": [
+        "NOT_QUALIFIED:in_progress",
+        "OPEN_FAILURE:D316-05"
+      ],
+      "limit": "Hash/schema/scope checks only; manual rights and perceptual review still required."
+    }
+  ],
+  "meaning": "Useful sidecars, explicitly not qualified library entries. Historical manifests unchanged."
+}

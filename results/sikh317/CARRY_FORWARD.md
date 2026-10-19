@@ -63,6 +63,14 @@ clothed stance, step width relative to leg length and body support before final
 rendering. The new hypothesis uses shorter0.425m steps without changing the
 required clearance. Do not close naturalness from this numerical bound alone.
 
+An adjacent check then found a66.6mm leader cuff/palm separation: one sleeve
+had been rebaked in305 while the opposite sleeve still carried an older bake.
+Treat both sides of a coupled performance as dependencies, even when only one
+side received an explicit edit. Candidate08 retains proximal/elbow form and
+binds the distal visible sleeve to the actual palm throughout696 frames;
+fresh evaluated separation is below0.005mm. That measurement establishes the
+specific interface, not sleeve aesthetics or the actor's performance.
+
 ## Render scheduling is separate from visual quality
 
 Record per-frame or per-batch timings before blaming a renderer/model. The first
@@ -80,6 +88,13 @@ source, dependencies, conditions, evidence and failures. Declared reuse requests
 are checked inside the task gate. Undeclared dependencies still require manual
 reconciliation; schema and hash checks do not establish license interpretation,
 visual truth or continuous audiovisual quality.
+
+The practical improvement in this pass is not an estimated percentage of saved
+tokens or time. Full-resolution review rejected detached trousers and excessive
+stride width internally, and an adjacent numerical check found the stale sleeve
+before handoff. Preserve those distinct internal defects and their evidence.
+Measure future Director escapes against them; do not count test passes or more
+documentation as proof that the production process is now efficient.
 
 No production resource is promoted merely because the new validator passes its
 schema. Current scene-specific resources remain in progress pending their exact

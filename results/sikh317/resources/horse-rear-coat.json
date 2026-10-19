@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "id": "horse-rear-coat",
+  "state": "in_progress",
+  "reuse_mode": "adapt",
+  "source": [
+    {
+      "path": ".runtime/assets/demonstrator-01/horse.blend",
+      "sha256": "b848037332fe62064989f250a94faa04c75e3fb21ae93f6a100f19079c1b21aa"
+    }
+  ],
+  "provenance": [
+    {
+      "path": "results/demonstrator-01/stage-a/asset-manifest.json",
+      "sha256": "eda7c3d6582275fec9c105bad4dce35706aecea58f2a3776fa8944fc82e25c57"
+    },
+    {
+      "path": "results/sikh317/STRATEGY.md",
+      "sha256": "c8ba8dd09ed724bcb707803d9e252f3d2c7db3cedc32068ddf8ac2268c56e986"
+    },
+    {
+      "path": ".runtime/art-direction/series01-entrance-art188/horse-coat-v01.prompt.txt",
+      "sha256": "8cc75d97d05f93fe3bf6d002fa0945635d73127e4690a1b455241bbd8520d360"
+    }
+  ],
+  "rights": {
+    "status": "unresolved",
+    "scope": "Existing local derivative review only; no new redistribution clearance. Horse upstream CC-BY version and supporting donor reconciliation remain open where stated.",
+    "evidence_paths": [
+      "results/demonstrator-01/stage-a/asset-manifest.json"
+    ]
+  },
+  "dependencies": [
+    {
+      "path": ".runtime/art-direction/series01-sikh317/build-05/sequence.blend",
+      "sha256": "1ba94be0b27a06f297899bc73afca4d5851fa9b5aef7a2a3b9ef307453fdb4af"
+    },
+    {
+      "path": "scripts/sikh317_scene.py",
+      "sha256": "bd7dfff25b8e24c4e117eedd58b517b888127192419319efd69379a42885c612"
+    },
+    {
+      "path": "src/movie_factory/sikh317_motion.py",
+      "sha256": "6fa7754a50487510a4f9b35a5476d25b254ae99b204ebf318d64e533bdcb70bf"
+    },
+    {
+      "path": "scripts/finish317_native.py",
+      "sha256": "192c0af082dbb31c529a8b3e524f8665ac228c080218144d28f254e23eb6c779"
+    },
+    {
+      "path": "scripts/surface317.py",
+      "sha256": "e54b484da77405542c3607aff59b6396a73f86aaf1877f3b6a32254ebbb3d7ab"
+    },
+    {
+      "path": ".runtime/art-direction/series01-entrance-art188/horse-coat-v01.png",
+      "sha256": "ce76d6ae72e42e446725515fc209420239a534f4d9d4170cdd65f3177846449e"
+    }
+  ],
+  "tested_conditions": {
+    "runtime": "Blender5.2.1",
+    "sequence": "Sikh317 candidate 5",
+    "scope": "local_internal_review",
+    "representation": "inherited315 scene and rig only",
+    "coat_reuse": "authored188 luminance only, UV tiled4; grey pigmentation retained"
+  },
+  "evidence": [
+    {
+      "path": ".runtime/art-direction/series01-sikh317/build-05/whole-horse-motion.json",
+      "sha256": "51a4abfbe3474f7b453dd6adef8678a2b812c085e8e21293840037942dd3ac90"
+    },
+    {
+      "path": ".runtime/art-direction/series01-sikh317/build-05/coat.json",
+      "sha256": "e79cbb5f4e2739971b74e6e4b3d59fc16f59c5337691e4c1ac2b505d727a6ebf"
+    },
+    {
+      "path": ".runtime/art-direction/series01-sikh317/build-05/finish.json",
+      "sha256": "086d22d147cdd042ec251159f3e40bdbbc2e9024c24a412246e81d226d6d4e3d"
+    },
+    {
+      "path": ".runtime/art-direction/series01-sikh317/build-05/hoof-ownership.json",
+      "sha256": "c6fd3c3d1d28f8af08d31435097376fc239bc2573bb09262ac62394bcc74769e"
+    },
+    {
+      "path": ".runtime/art-direction/series01-sikh317/build-05/coat-reuse.json",
+      "sha256": "8b3f0b939de1b282b979373f779e9199142747093cd3104edfd53ec52282e3a3"
+    }
+  ],
+  "failures": [
+    {
+      "id": "D316-02",
+      "status": "open",
+      "reason": "Technical/frame checks and Director AV disposition must be recorded separately; no artistic closure inferred."
+    },
+    {
+      "id": "D316-03",
+      "status": "open",
+      "reason": "Technical/frame checks and Director AV disposition must be recorded separately; no artistic closure inferred."
+    },
+    {
+      "id": "D316-04",
+      "status": "open",
+      "reason": "Technical/frame checks and Director AV disposition must be recorded separately; no artistic closure inferred."
+    }
+  ],
+  "effort": {
+    "active_seconds": null,
+    "evidence_path": null,
+    "note": "Operating ledger tracks jobs; no exact asset-specific net-effort attribution yet."
+  }
+}
