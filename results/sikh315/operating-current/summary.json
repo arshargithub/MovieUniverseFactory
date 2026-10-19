@@ -1,0 +1,443 @@
+{
+  "closed_episode_count": 0,
+  "consumption_per_outcome": {
+    "closed_episodes": {
+      "engineering_tokens": null,
+      "net_seconds": null
+    },
+    "closed_experiments": {
+      "engineering_tokens": null,
+      "net_seconds": null
+    },
+    "director_accepted_outputs": {
+      "engineering_tokens": null,
+      "net_seconds": null
+    },
+    "technically_successful_outputs": {
+      "engineering_tokens": null,
+      "net_seconds": null
+    }
+  },
+  "cost_scope": "Development investment; repeatable runtime cost remains in the campaign provider records.",
+  "engineering_usage": {
+    "account_allowance": {
+      "observations": [],
+      "scope": "account-wide; not experiment token attribution"
+    },
+    "actual_engineering_charge_usd": null,
+    "api_equivalent_estimate_usd": null,
+    "blocks": [],
+    "captured_tasks": [],
+    "category_coverage": {
+      "cache_write_input_tokens": {
+        "observed_blocks": 0,
+        "total_blocks": 0
+      },
+      "cached_input_tokens": {
+        "observed_blocks": 0,
+        "total_blocks": 0
+      },
+      "input_tokens": {
+        "observed_blocks": 0,
+        "total_blocks": 0
+      },
+      "output_tokens": {
+        "observed_blocks": 0,
+        "total_blocks": 0
+      },
+      "reasoning_output_tokens": {
+        "observed_blocks": 0,
+        "total_blocks": 0
+      },
+      "total_tokens": {
+        "observed_blocks": 0,
+        "total_blocks": 0
+      }
+    },
+    "exact_attributable_tokens": null,
+    "expected_tasks": [],
+    "missing_tasks": [],
+    "observed_tokens": {
+      "cache_write_input_tokens": null,
+      "cached_input_tokens": null,
+      "input_tokens": null,
+      "output_tokens": null,
+      "reasoning_output_tokens": null,
+      "total_tokens": null
+    },
+    "status": "UNKNOWN",
+    "subscription": {
+      "allocation_usd": null,
+      "treatment": "shared fixed overhead"
+    },
+    "token_definitions": {
+      "cache_write_input_tokens": "Retained as reported; not added to total.",
+      "cached_input_tokens": "Subset of input; do not add to total.",
+      "input_tokens": "Reported input total; cached input is a subset.",
+      "output_tokens": "Reported output total; reasoning output is a subset.",
+      "reasoning_output_tokens": "Subset of output; do not add to total.",
+      "total_tokens": "Reported total; input plus output, without subset double counting."
+    },
+    "uncertainties": [
+      "capture_completeness_not_established"
+    ],
+    "window_end": "2026-10-19T16:03:49.150031+00:00",
+    "window_start": "2026-10-19T01:28:12.476926+00:00"
+  },
+  "episodes": [
+    {
+      "assistant_active_union_seconds": 52536.616371154785,
+      "assistant_time_scope": "Recorded activity intervals only; not token generation time",
+      "calendar_elapsed_seconds": null,
+      "coverage_fraction": 0.9999989201096432,
+      "disposition": null,
+      "episode_id": "supporting-scene",
+      "excluded_input_wait_seconds": null,
+      "human_review_seconds": null,
+      "jobs": [
+        {
+          "job_id": "build2",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "complete_internal_rejected_launch_geography_dust_and_surface",
+          "utc_seconds": 695.0462410449982
+        },
+        {
+          "job_id": "build3",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "internal_diagnostic_completed_not_artistic_pass",
+          "utc_seconds": 515.397127866745
+        },
+        {
+          "job_id": "finish4",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "internal correction continues; no artistic pass",
+          "utc_seconds": 586.9337999820709
+        },
+        {
+          "job_id": "finish5",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "surface improved; shadow isolation identifies hard-light cause",
+          "utc_seconds": 198.03325700759888
+        },
+        {
+          "job_id": "finish6",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "matched frames inspected; proceed to complete temporal windows",
+          "utc_seconds": 439.4015419483185
+        },
+        {
+          "job_id": "proof6",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "175 consecutive proof frames complete",
+          "utc_seconds": 1809.3375270366669
+        },
+        {
+          "job_id": "sikh315-profile6",
+          "job_kind": "native",
+          "monotonic_seconds": 305.21991037530825,
+          "outcome": "PASSED",
+          "utc_seconds": 305.2212200164795
+        },
+        {
+          "job_id": "sikh315-finish7",
+          "job_kind": "native",
+          "monotonic_seconds": 978.482026417274,
+          "outcome": "PASSED",
+          "utc_seconds": 978.4863641262054
+        },
+        {
+          "job_id": "sikh315-profile7",
+          "job_kind": "native",
+          "monotonic_seconds": 132.33823837479576,
+          "outcome": "PASSED",
+          "utc_seconds": 132.33897399902344
+        },
+        {
+          "job_id": "sikh315-finish8",
+          "job_kind": "native",
+          "monotonic_seconds": 488.7757057081908,
+          "outcome": "PASSED",
+          "utc_seconds": 488.7778730392456
+        },
+        {
+          "job_id": "sikh315-reopen8",
+          "job_kind": "native",
+          "monotonic_seconds": 49.0932953748852,
+          "outcome": "FAILED",
+          "utc_seconds": 49.09386110305786
+        },
+        {
+          "job_id": "sikh315-verify8",
+          "job_kind": "native",
+          "monotonic_seconds": 47.46951562538743,
+          "outcome": "FAILED",
+          "utc_seconds": 47.46966910362244
+        },
+        {
+          "job_id": "sikh315-finish9",
+          "job_kind": "native",
+          "monotonic_seconds": 2.3185510840266943,
+          "outcome": "PASSED",
+          "utc_seconds": 2.3186469078063965
+        },
+        {
+          "job_id": "sikh315-verify9",
+          "job_kind": "native",
+          "monotonic_seconds": 47.88719370821491,
+          "outcome": "PASSED",
+          "utc_seconds": 47.88749408721924
+        },
+        {
+          "job_id": "sikh315-movie9",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "interrupted",
+          "utc_seconds": 33579.48796200752
+        },
+        {
+          "job_id": "sikh315-movie9-recovery",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "stopped_internal_failure",
+          "utc_seconds": 930.8491580486298
+        },
+        {
+          "job_id": "sikh315-finish10",
+          "job_kind": "native",
+          "monotonic_seconds": 77.75884995795786,
+          "outcome": "PASSED",
+          "utc_seconds": 77.75881695747375
+        },
+        {
+          "job_id": "sikh315-verify10",
+          "job_kind": "native",
+          "monotonic_seconds": 17.70468091731891,
+          "outcome": "PASSED",
+          "utc_seconds": 17.70478391647339
+        },
+        {
+          "job_id": "sikh315-movie10",
+          "job_kind": "native",
+          "monotonic_seconds": 3420.266364207957,
+          "outcome": "FAILED",
+          "utc_seconds": 3420.2881162166595
+        },
+        {
+          "job_id": "sikh315-finish11",
+          "job_kind": "native",
+          "monotonic_seconds": 89.77352841710672,
+          "outcome": "PASSED",
+          "utc_seconds": 89.77720999717712
+        },
+        {
+          "job_id": "sikh315-verify11",
+          "job_kind": "native",
+          "monotonic_seconds": 17.487473625224084,
+          "outcome": "PASSED",
+          "utc_seconds": 17.487701892852783
+        },
+        {
+          "job_id": "sikh315-movie11",
+          "job_kind": "native",
+          "monotonic_seconds": 5776.290475707967,
+          "outcome": "PASSED",
+          "utc_seconds": 5776.3283450603485
+        }
+      ],
+      "lifecycle": "OPEN",
+      "native_job_wall_sum_seconds": null,
+      "native_job_wall_union_seconds": null,
+      "native_jobs": [
+        {
+          "job_id": "build2",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "complete_internal_rejected_launch_geography_dust_and_surface",
+          "utc_seconds": 695.0462410449982
+        },
+        {
+          "job_id": "build3",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "internal_diagnostic_completed_not_artistic_pass",
+          "utc_seconds": 515.397127866745
+        },
+        {
+          "job_id": "finish4",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "internal correction continues; no artistic pass",
+          "utc_seconds": 586.9337999820709
+        },
+        {
+          "job_id": "finish5",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "surface improved; shadow isolation identifies hard-light cause",
+          "utc_seconds": 198.03325700759888
+        },
+        {
+          "job_id": "finish6",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "matched frames inspected; proceed to complete temporal windows",
+          "utc_seconds": 439.4015419483185
+        },
+        {
+          "job_id": "proof6",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "175 consecutive proof frames complete",
+          "utc_seconds": 1809.3375270366669
+        },
+        {
+          "job_id": "sikh315-profile6",
+          "job_kind": "native",
+          "monotonic_seconds": 305.21991037530825,
+          "outcome": "PASSED",
+          "utc_seconds": 305.2212200164795
+        },
+        {
+          "job_id": "sikh315-finish7",
+          "job_kind": "native",
+          "monotonic_seconds": 978.482026417274,
+          "outcome": "PASSED",
+          "utc_seconds": 978.4863641262054
+        },
+        {
+          "job_id": "sikh315-profile7",
+          "job_kind": "native",
+          "monotonic_seconds": 132.33823837479576,
+          "outcome": "PASSED",
+          "utc_seconds": 132.33897399902344
+        },
+        {
+          "job_id": "sikh315-finish8",
+          "job_kind": "native",
+          "monotonic_seconds": 488.7757057081908,
+          "outcome": "PASSED",
+          "utc_seconds": 488.7778730392456
+        },
+        {
+          "job_id": "sikh315-reopen8",
+          "job_kind": "native",
+          "monotonic_seconds": 49.0932953748852,
+          "outcome": "FAILED",
+          "utc_seconds": 49.09386110305786
+        },
+        {
+          "job_id": "sikh315-verify8",
+          "job_kind": "native",
+          "monotonic_seconds": 47.46951562538743,
+          "outcome": "FAILED",
+          "utc_seconds": 47.46966910362244
+        },
+        {
+          "job_id": "sikh315-finish9",
+          "job_kind": "native",
+          "monotonic_seconds": 2.3185510840266943,
+          "outcome": "PASSED",
+          "utc_seconds": 2.3186469078063965
+        },
+        {
+          "job_id": "sikh315-verify9",
+          "job_kind": "native",
+          "monotonic_seconds": 47.88719370821491,
+          "outcome": "PASSED",
+          "utc_seconds": 47.88749408721924
+        },
+        {
+          "job_id": "sikh315-movie9",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "interrupted",
+          "utc_seconds": 33579.48796200752
+        },
+        {
+          "job_id": "sikh315-movie9-recovery",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "stopped_internal_failure",
+          "utc_seconds": 930.8491580486298
+        },
+        {
+          "job_id": "sikh315-finish10",
+          "job_kind": "native",
+          "monotonic_seconds": 77.75884995795786,
+          "outcome": "PASSED",
+          "utc_seconds": 77.75881695747375
+        },
+        {
+          "job_id": "sikh315-verify10",
+          "job_kind": "native",
+          "monotonic_seconds": 17.70468091731891,
+          "outcome": "PASSED",
+          "utc_seconds": 17.70478391647339
+        },
+        {
+          "job_id": "sikh315-movie10",
+          "job_kind": "native",
+          "monotonic_seconds": 3420.266364207957,
+          "outcome": "FAILED",
+          "utc_seconds": 3420.2881162166595
+        },
+        {
+          "job_id": "sikh315-finish11",
+          "job_kind": "native",
+          "monotonic_seconds": 89.77352841710672,
+          "outcome": "PASSED",
+          "utc_seconds": 89.77720999717712
+        },
+        {
+          "job_id": "sikh315-verify11",
+          "job_kind": "native",
+          "monotonic_seconds": 17.487473625224084,
+          "outcome": "PASSED",
+          "utc_seconds": 17.487701892852783
+        },
+        {
+          "job_id": "sikh315-movie11",
+          "job_kind": "native",
+          "monotonic_seconds": 5776.290475707967,
+          "outcome": "PASSED",
+          "utc_seconds": 5776.3283450603485
+        }
+      ],
+      "net_elapsed_seconds": null,
+      "observed_excluded_input_wait_seconds": 0,
+      "operational_proxies": {},
+      "phase_net_seconds": null,
+      "uncertainties": [
+        "missing_interval_end",
+        "missing_interval_start",
+        "missing_job_monotonic_clock",
+        "missing_or_duplicate_lifecycle_boundary",
+        "unexplained_gap"
+      ],
+      "unknown_gap_seconds": 0.05673384666442871
+    }
+  ],
+  "experiment_id": "SIKH315",
+  "factory_api": {
+    "known_api_cost_usd": null,
+    "provider_calls": null,
+    "reason": "No provider ledger evidence supplied; absence is not zero.",
+    "status": "UNKNOWN"
+  },
+  "model_setting_observations": [],
+  "net_episode_sum_seconds": null,
+  "note": "Episode totals exclude inter-episode gaps. Job sums are process-seconds, not CPU time.",
+  "outcome_denominators": {
+    "closed_episodes": 0,
+    "closed_experiments": 0,
+    "director_accepted_outputs": null,
+    "technically_successful_outputs": null
+  },
+  "schema_version": "1.0"
+}

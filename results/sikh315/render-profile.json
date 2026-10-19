@@ -1,0 +1,37 @@
+{
+  "scope": "Sikh315 local review export only, not global renderer qualification",
+  "selected": "selective_with_bounded_shadow",
+  "shadow_maximum_resolution_m": 0.01,
+  "resolution": [720, 1280],
+  "samples": 32,
+  "shadow_rays": 1,
+  "jitter": "SUN only",
+  "evidence_root": ".runtime/art-direction/series01-sikh315/profile-06",
+  "controls": {
+    "reference-0315.png": "55fbc01bfd0d7eae9649c08e55898e9c905c960baef98caab69c6d0c80e0868c",
+    "reference-0480.png": "268c438802147dbd7fb2c9cd8f57b591e9f0e85292360c97c8ed83c0090b0232",
+    "selective-0315.png": "56d76993cd8965c7f981eef0446b00ebf1cbb22837361e2efd7b6ec66e81397f",
+    "selective-0480.png": "93ba56d227bd655c68091aaa84e9591de44f12f45dc7dcd4c611a93c37bade23"
+  },
+  "observation": "Matched controls retain hoof/eye separation, terrain grain and soft broad ground shadows. Selective point-light shadow differences are localized, without the former large hard orange ground silhouettes. Full-sequence temporal quality remains pending.",
+  "measured_seconds": {
+    "reference_315": 41.4771,
+    "reference_480": 96.3153,
+    "selective_315": 26.3123,
+    "selective_480": 44.6413
+  },
+  "followup": {
+    "root": ".runtime/art-direction/series01-sikh315/profile-07",
+    "inherited_seconds": [25.4041,45.3376],
+    "bounded_seconds": [19.9384,39.3416],
+    "inherited_shadow_maximum_resolution_m": 0.0005,
+    "controls": {
+      "inherited-0315.png": "abefea21dbdc9508a941303bbe196edad7b09ab5c9ba02f12d00f99253ac06c9",
+      "inherited-0480.png": "d6c939ec55fbf9759cd5466c7ce16eba965ffb215b34a72c738312ecfabe7711",
+      "bounded_shadow-0315.png": "d9f28d8e59229e808eabc548b079f55a672d6d55b7c5515557c9344133e17c5c",
+      "bounded_shadow-0480.png": "cc68b8c64de7b7a2e4cc446f62dfd7806cf09581b7fd038ba7d65151d6085122"
+    },
+    "observation": "Horse contour/contact and ground shadows retain readable soft edges in matched720 controls. No large tile artifacts observed. Adopt for8 onward; limited modest control-frame gain, not a dramatic rendering breakthrough."
+  },
+  "limits": "Fixed-order controls, not randomized benchmark. No end-to-end speedup, memory-cause or temporal stability claim. Fresh24-frame processes are a resource safeguard, not proven acceleration."
+}

@@ -4,6 +4,27 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+### Exchange315 — integrated reconstruction; Director AV review pending
+
+Director rejects314's robotic rear, flat-looking ground, one-speed launch and
+attached-looking dust. The recommendation to proceed to final principal integration
+is withdrawn. [Current strategy](../../results/sikh315/STRATEGY.md) binds five defect
+groups to source-comparison, actual geometry/contact, coupled traction and world-space
+FX proofs, then supporting Nihang/horse/crowd finish. First brake and stopped position
+remain protected;315 authorizes changing launch and contact terrain, superseding314's
+overbroad exact-preservation constraints there. All artistic closures remain open.
+The integrated Sikh29s and unchanged-Pashtun49s join are complete as candidate11.
+[Review and exact manual queue](../../results/sikh315/REVIEW.md) bind all696 source
+frames,21 decoded controls and joined-boundary inspection.145 focused tests pass;
+contact/dust checks reproduce. Strict19-control pixel replay remains FAIL:
+four controls exceed1/255 in14 channel values, maximum3/255. No threshold waiver,
+direct-motion/listening claim, artistic closure or final actor admission.
+Known internal ditch/dust rejections and corrections are retained. Director313
+judges the exact integrated playback next; resolve rejected supporting action/look
+before final Sikh actor integration. No routine technical checkpoint handover.
+No Gemini, cloud, paid calls, installs, uploads, principal admission or release authority.
+Counter315; next checkpoint320. Operating capture acknowledges an initial discovery gap.
+
 ### Exchange314 — integrated correction, Director audiovisual review
 
 Director resumes313. [Strategy and internal failures](../../results/sikh314/STRATEGY.md)
