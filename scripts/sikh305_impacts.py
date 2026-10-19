@@ -7,7 +7,7 @@ from mathutils.bvhtree import BVHTree
 from sikh257_layout import key
 from movie_factory import sikh305_motion as c
 
-def build_impacts(out):
+def build_impacts(out, event_definitions=None, follow_terrain=False):
     for ob in list(bpy.data.objects):
         if ob.name.startswith(('305 hoof earth puff','305 kicked soil clod')):
             bpy.data.objects.remove(ob,do_unlink=True)
@@ -17,6 +17,7 @@ def build_impacts(out):
     definitions=[('spear',14.28,None,.20),('grip-left',14.45,'DEF-f_toe.L',.25),('grip-right',14.55,'DEF-f_toe.R',.25),
                  ('hind-drive-left',14.89,'DEF-r_toe.L',.35),('hind-drive-right',14.92,'DEF-r_toe.R',.35),
                  ('landing-left',16.02,'DEF-f_toe.L',1.0),('landing-right',16.055,'DEF-f_toe.R',.85)]
+    if event_definitions is not None:definitions=event_definitions
     dust=bpy.data.materials['305 expanding advected dust'];earth=bpy.data.materials['305 weathered loam bank']
     for label,t,bone,power in definitions:
         birth=round(t/c.RATE*c.FPS)+1;s.frame_set(birth);bpy.context.view_layer.update()
@@ -41,11 +42,16 @@ def build_impacts(out):
                 age=(f-birth)/24;a=min(age,flight);q=start+Vector((v.x*a,v.y*a,v.z*a-4.905*a*a))
                 if age>flight:
                     u=age-flight;bounce=min(u,flight*.3);q+=Vector((v.x*bounce*.3,v.y*bounce*.3,v.z*.3*bounce-4.905*bounce*bounce))
-                q.z=max(start.z,q.z);ob.location=q;ob.rotation_euler=(min(age,flight*1.3)*5,min(age,flight*1.3)*7,theta);key(ob,f)
+                floor=start.z
+                if follow_terrain:
+                    support=ground.ray_cast(Vector((q.x,q.y,10)),Vector((0,0,-1)))[0]
+                    if support is None:raise ValueError('Clod escaped supported terrain')
+                    floor=support.z+rad*.6
+                q.z=max(floor,q.z);ob.location=q;ob.rotation_euler=(min(age,flight*1.3)*5,min(age,flight*1.3)*7,theta);key(ob,f)
     for action in bpy.data.actions:
         for layer in action.layers:
             for strip in layer.strips:
                 for bag in strip.channelbags:
                     for fc in bag.fcurves:
                         for p in fc.keyframe_points:p.interpolation='CONSTANT' if fc.data_path=='hide_render' else 'LINEAR'
-    (out/'impact-events.json').write_text(json.dumps({'events':events,'physical_scope':'Authored ballistic clods with one damped bounce on the flat supported hill core; expanding dilute dust, no general terrain simulator'},indent=2))
+    (out/'impact-events.json').write_text(json.dumps({'events':events,'physical_scope':'Authored ballistic clods with one damped bounce; '+('actual terrain lower bound' if follow_terrain else 'flat supported hill core')+'; expanding dilute dust, no general terrain simulator'},indent=2))

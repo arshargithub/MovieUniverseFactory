@@ -55,7 +55,7 @@ def greeting_eyeline(out):
         rows.append({'frame':f,'hold':hold,'before_error_deg':math.degrees(math.atan2(old_forward.x,-old_forward.y)-target_world),'after_error_deg':math.degrees(math.atan2(forward.x,-forward.y)-target_world),'local_head_yaw_deg':math.degrees(head.rotation_euler.z)})
     (out/'greeting-eyeline.json').write_text(json.dumps(rows,indent=2))
 
-def motion(out):
+def motion(out, support_height=None):
     s=bpy.context.scene;root=bpy.data.objects['BIKE travel owner'];steer=bpy.data.objects['BIKE steering owner']
     front=bpy.data.objects['BIKE front rolling owner'];rear=bpy.data.objects['BIKE rear rolling owner'];actor=actor_objects();trace=[]
     axis=(-front.location).normalized();first_front_y=None
@@ -99,7 +99,7 @@ def motion(out):
         hold=pulse(t,7.35,.45,18.4,.5)
         if hold:
             foot=actor['limbs'][-1,'boot'];world=root.matrix_world@foot.location
-            world.z=.065;target=root.matrix_world.inverted()@world
+            world.z=(support_height(world.x,world.y) if support_height else 0)+.065;target=root.matrix_world.inverted()@world
             foot.location=foot.location.lerp(target,hold)
             hip=Vector((-.13,.40,.85));knee=joint_between(hip,foot.location,.46,.45,(-.30,-1,.05))
             segment(actor['limbs'][-1,'thigh'],hip,knee,.088);segment(actor['limbs'][-1,'shin'],knee,foot.location,.064)
