@@ -22,7 +22,7 @@ Contextual review: [Release 01 applicability](RELEASE_01_APPLICABILITY.md) maps 
 
 Exchange317 extends the existing [local bridge](pilot/README.md) with
 [cinematic reuse and interface lessons](CINEMATIC_REUSE_317.md). The reviewed
-corpus now has13 sources and47 records. Component routing covers motorcycle
+corpus now has13 sources and48 records. Component routing covers motorcycle
 response, animal coordination, crowd support and drainage detail. Scoped resource
 sidecars retain existing provenance and distinguish investigated/adapted resources
 from qualified reuse. Declared resource uses are checked by the task gate for

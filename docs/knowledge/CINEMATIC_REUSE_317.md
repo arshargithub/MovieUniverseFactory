@@ -2,7 +2,8 @@
 
 Status: Director317 authorizes the reuse-informed integrated Sikh repair and
 explicitly includes extending the existing knowledge system and manifests.
-This source records requirements and hypotheses, **not successful repairs**.
+This source records requirements, observed technical failures and bounded repair
+evidence, **not audiovisual acceptance or qualified production resources**.
 Authority: `results/review316/REVIEW.md`, its cited original reuse decisions,
 Director317 confirmation, and `results/sikh317/STRATEGY.md`. No new provider,
 installation, payment, upload, publication or actor admission follows.
@@ -49,6 +50,13 @@ rider balance, reins/spear and landing effects together. A large wrist rotation
 is a diagnostic finding, not proof of the entire cause. Preserve pending direct
 motion judgment under313; timed frames are not continuous playback.
 
+317's saved-native probe found an IK socket still driving the visible hoof
+downstream of the FK leg. Trace ownership through the rendered endpoint, not
+only the named wrist/toe controls. Grounded versus airborne ownership changes
+require both seam and support checks throughout the transfer. Quaternion bones
+and render-time animation evaluation also invalidated two earlier diagnostic
+edits: a control must demonstrably affect the evaluated rendered pose.
+
 Coat must read as an animal at intended framing: anatomical regions, muzzle/eyes,
 pigmentation, restrained highlights, directional short nap and groom response.
 Macro noise and sheen alone can read as clay/metal. Test material versus lighting
@@ -63,6 +71,18 @@ Random perpetual sway or synchronized sideways translation is not life. Rebake
 visible trousers and sleeves when hidden joints change; verify near and far actors
 and corridor clearance in actual shots. A rigged motion library still requires
 compatible skeleton, proportions, support and prop handling.
+
+317's crowd375 frame exposed separated trousers and boots despite passing
+boot-to-ground checks. Viewport-excluded source limbs had not evaluated during
+the garment bake; animation curves alone were not evidence of motion. Keep bake
+sources evaluated but render-hidden, bind the actual sequence range (the old
+helper ended at528 while this sequence has696 frames), and measure evaluated
+garment endpoints against visible boots/hands through the required timeline.
+Candidate06 corrected the seam but exposed0.85m split-like strides. Reachability
+and contact are necessary, not sufficient: inspect clothed stance, step width,
+body support and temporal naturalness separately. Shorter steps remain a motion
+hypothesis until the complete performance is judged. See
+`results/sikh317/CARRY_FORWARD.md` and preserved rejected candidate evidence.
 
 Enrich a ditch by drainage and use: rooted clusters, broken stubble, deposits,
 erosion and irregular transitions. Keep paths and occupied crossings usable;

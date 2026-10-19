@@ -34,3 +34,16 @@ could still pass a declarative record. Directorial motion/listening is pending
 under313. Individual source verification, frame comparison and interface tests
 are mandatory, and known visible failures remain internal. No efficiency
 percentage is inferred from test counts or serialized context size.
+
+## Evidence-driven revision within317
+
+Reviewed the saved-native hoof ownership finding, excluded-control clothing bake
+failure,528/696 timeline mismatch and split-like crowd stride against preserved
+candidate records. Added these findings to source13 and the animal/crowd routed
+actions. Refreshed only the reviewed source13 snapshot and catalog digest; all12
+prior source snapshots remain unchanged. Reconciled the historical307 negative
+control's knowledge digest again without changing its checks, defects, candidate
+or direct-motion/audio capability flags. Previously issued317 task packets are
+historical snapshots; subsequent render/delivery packets use the fresh corpus.
+The relevant regression suite passed179 tests before this source revision;
+rerun after revision and bind the final receipt. No AV acceptance follows.

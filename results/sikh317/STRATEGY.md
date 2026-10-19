@@ -91,3 +91,28 @@ both hoof orientation and the fetlock/hoof seam throughout the transition.
 Reuse the already-authored Pashtun coat image as UV-attached luminance detail
 while retaining this horse's grey colour, eye/muzzle/hoof materials and rig.
 This is a local adaptation, not a new asset/provider acquisition or qualification.
+
+Full-resolution375 revealed detached boots/trousers during crowd stepping.
+Probe06 isolated excluded-source evaluation: making the hidden limb sources
+evaluated reduced control-to-boot error from0.466m to under0.000002m, while the
+already-baked visible trousers remained wrong. Rebuild visible trousers from
+evaluated, render-hidden controls, and test the actual evaluated ankle ring to
+boot through all696 frames. Inspect actual camera375/390/402/415/430 before
+another full render. Candidate05 is not an accepted integrated result; preserve
+its interrupted render and failed evidence. Boot-to-ground checks alone never
+established clothing continuity. This fixes an interface, not a new crowd design.
+
+Candidate06 corrected the detached clothing but exposed an overly broad split
+stance: each outward step covered0.85m. Candidate07 uses four shorter0.425m
+step-and-close pairs to preserve total clearance and the established exit time,
+with reduced pelvis bob and foot lift. Reachability is not a naturalness test.
+Inspect whole clothed stance and motion samples before rendering the sequence;
+do not promote a smaller seam error to a crowd-performance pass.
+
+Candidate07's adjacent sleeve check found a0.0666m cuff/palm separation during
+leader preparation. The spear-side sleeve was reauthored by305, but the opposite
+visible sleeve still carried an earlier bake. Candidate08 preserves the current
+proximal arm and elbow form, binds its distal cuff to the actual palm, and bakes
+both visible sleeves through696 frames. Verify the evaluated cuff ring in world
+space, inspect preparation/rear controls, then render the frozen integrated scene.
+This does not admit the supporting character design or waive motion review.

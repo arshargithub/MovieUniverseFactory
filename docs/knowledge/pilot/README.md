@@ -5,7 +5,7 @@ Use this pilot before covered production work and before its internal handoff. I
 ## What is authoritative
 
 **317 extension:** [cinematic reuse/interface lessons](../CINEMATIC_REUSE_317.md)
-add one reviewed source and five routed actions (13 sources/47 records).
+add one reviewed source and five routed actions (13 sources/48 records).
 The twelve existing source snapshots are preserved unchanged. Resource records
 are sidecars to existing provenance, not replacement asset ownership or artistic
 approval. `python -m movie_factory.resource_manifest MANIFEST --use USE.json`
