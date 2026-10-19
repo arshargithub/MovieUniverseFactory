@@ -4,6 +4,21 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+### Exchange317 — integrated repair and bounded knowledge extension authorized
+
+Director authorizes316's recommended pass and explicitly confirms extending the
+existing knowledge system and manifests in the same deliverable. [Strategy](../../results/sikh317/STRATEGY.md)
+binds D316-01–06, suspension/contact separation, reference-phased horse/coat,
+grounded ditch enrichment and purposeful supporting-cast motion. Protected
+Pashtun/music, first brake and stop/crowd position stay unchanged. New knowledge
+source and five routed actions retain all twelve prior source snapshots; resource
+sidecars distinguish investigated/in-progress/rejected from scoped qualification.
+Native corrections and full integrated AV review remain unfinished; software
+checks are not artistic passes. No Gemini/cloud/provider/install/spend/upload,
+principal replacement or Gurkha work. Continue short proofs into complete Sikh29s
+and unchanged-Pashtun49s delivery, with Director AV pending under313.
+Counter317; next checkpoint320. Routine continuations do not increment it.
+
 ### Exchange316 — feedback verified; strategic discussion before construction
 
 Director calls315 much improved, with unresolved bike jerk, horse preparation/

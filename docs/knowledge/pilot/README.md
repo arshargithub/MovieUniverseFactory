@@ -4,6 +4,19 @@ Use this pilot before covered production work and before its internal handoff. I
 
 ## What is authoritative
 
+**317 extension:** [cinematic reuse/interface lessons](../CINEMATIC_REUSE_317.md)
+add one reviewed source and five routed actions (13 sources/47 records).
+The twelve existing source snapshots are preserved unchanged. Resource records
+are sidecars to existing provenance, not replacement asset ownership or artistic
+approval. `python -m movie_factory.resource_manifest MANIFEST --use USE.json`
+returns exit2 for unqualified, stale, unsupported or unresolved uses. Callers
+must enforce it; it cannot intercept arbitrary Blender commands.317 tests cover
+task routing and negative qualifications; repairs and Director AV remain separate.
+Tasks may declare `resource_uses` entries with `manifest` and `conditions` paths.
+Both must appear in input bindings. The existing packet engine validates those
+records and blocks unsupported qualified reuse. This does not infer undeclared
+resources from Blender, and adaptation is not a qualified-reuse claim.
+
 **257 amendment:** Director256–257 authorizes Sikh-only sequence development after255's completed protection/calibration, with action before music mapping. [Reviewed onboarding](reconciliation257.md) adds distinct actor/motorcycle/cloth/crowd/leader/Punjab interfaces and the one-cloth turban/face-cover requirement. The leader recognizes him personally but is not expected to recur. Current corpus:12 sources/42 records; original nine source pins unchanged. Pashtun-specific garment/contact/geography rules no longer leak through generic tags into Sikh requirements. Unknown Gurkha/other domains still block. Passing routing/admission is not cloth, motion, identity or production acceptance; failed native controls remain failed.
 
 **255 current amendment:** start with [current production authority](../CURRENT_PRODUCTION_STATE.md), not historical pending wording below. Director253 provisionally accepted the exact20s film; final trailer release, rights and strict pixel replay remain separate. The reviewed pilot now has **11 sources and38 records**. The nine original source pins are unchanged; the250 audit and current-state entry point add ten routed actions. [Calibration255](../../planning/PROTECTION_CALIBRATION_255.md) preserves the initial27 missed required pairs and tests the expanded114-pair set. These cases are now regressions, not independent held-out proof. Unknown Sikh/Gurkha entities still block until their distinct sources/interfaces are reconciled. Exact accepted-unit reuse requires bound content and authority; it does not permit a new narration choice. The evidence gate checks declarations/hashes, not their semantic truth: manual failure-seeking visual/audio review is still essential. Prior numeric coverage/status paragraphs below describe historical snapshots.

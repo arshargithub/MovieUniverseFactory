@@ -20,6 +20,17 @@ Contextual review: [Release 01 applicability](RELEASE_01_APPLICABILITY.md) maps 
 
 ## How to use it without rereading the entire conversation
 
+Exchange317 extends the existing [local bridge](pilot/README.md) with
+[cinematic reuse and interface lessons](CINEMATIC_REUSE_317.md). The reviewed
+corpus now has13 sources and47 records. Component routing covers motorcycle
+response, animal coordination, crowd support and drainage detail. Scoped resource
+sidecars retain existing provenance and distinguish investigated/adapted resources
+from qualified reuse. Declared resource uses are checked by the task gate for
+freshness, rights status, tested conditions and open defects. This remains a
+bounded, manually reconciled system—not automatic scene understanding or artistic
+acceptance. [317 reconciliation](../../results/sikh317/knowledge/RECONCILIATION.md)
+records coverage and negative tests.
+
 Exchange249 maps three further full historical proposals and their following Director approvals: roles as expertise rather than a literal studio org chart; Agent/Worker/Role distinction; Shot Intent separate from versioned Shot Specification. The [shot/beat performance and believability brief](../planning/SHOT_BEAT_QUALITY_BRIEF.md) records exact source/approval IDs and applies them to audience-visible anatomy, animation, contact, physical response and cross-discipline strategy/proof. This is mandatory agent-owned planning, not new departments, automatic specialist judgment or an extra Director form. Register entries are context-reviewed only for these principles; wider reconciliation remains incomplete.
 
 Exchange213 implements the [bounded local bridge](pilot/README.md):28 curated records, nine pinned current documents, graph-expanded requirements, supporting full-text search and version/evidence gates. The [pilot report](../planning/KNOWLEDGE_PILOT_213.md) records the first failed retrieval cases and subsequent correction. Use it alongside manual source review; it does not reconcile all historical candidates or replace fresh visual/listening judgment. Older210 proposal descriptions below remain historical, not current implementation status.
