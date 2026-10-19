@@ -9,7 +9,7 @@ from movie_factory import sikh317_motion as m
 import sikh305_recorded_audio as old
 import sikh315_delivery as delivery
 ROOT=old.ROOT;BASE=ROOT/'.runtime/art-direction/series01-sikh317';SR=48000
-def audio(v):
+def audio(v,neigh_source_time=15.13):
     native=BASE/f'build-{v:02d}';out=BASE/f'audio-{v:02d}';out.mkdir(exist_ok=False)
     source=ROOT/'.runtime/art-direction/series01-sikh305/audio-04';manifest=json.loads((source/'manifest.json').read_text())
     for name,h in manifest['files'].items():assert old.p.sha(source/name)==h
@@ -29,7 +29,7 @@ def audio(v):
         gain=.15 if e['event']=='spear' else .10 if 'grip' in e['event'] else .13 if 'drive' in e['event'] else .34*e['power']
         place(horse,x,e['edit_seconds'],gain,e['event'])
     neigh=old.fade(old.norm(old.filt(old.p.load(old.SRC/'horse-neigh.wav'),110,7500)),.008,.07)
-    place(horse,neigh,15.13/m.RATE,.31,'rear neigh on drive')
+    place(horse,neigh,neigh_source_time/m.RATE,.31,'rear neigh on drive')
     effects=engine+friction+horse;pre=music+effects
     peak=ndimage.maximum_filter1d(np.max(np.abs(pre),axis=1),481);gain=ndimage.minimum_filter1d(np.minimum(1,.94/np.maximum(peak,1e-9)),241)
     t=np.arange(len(pre))/SR;mix=pre*gain[:,None]*np.clip((29-t)/.35,0,1)[:,None]

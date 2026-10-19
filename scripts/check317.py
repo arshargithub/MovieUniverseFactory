@@ -25,7 +25,8 @@ def worker():
     pants=[sorted([o for o in r.children if o.name.startswith('317 evaluated crowd trousers')],key=lambda o:o.name) for r in roots]
     assert all(len(p)==2 for p in pants)
     leader=bpy.data.objects['mounted leader']
-    sleeves=sorted([o for o in leader.children if o.name.startswith('317 endpoint-bound leader sleeve')],key=lambda o:o.name)
+    sleeves=sorted([o for o in leader.children if o.name.startswith(globals().get('SLEEVE_PREFIX','317 endpoint-bound leader sleeve'))],key=lambda o:o.name)
+    assert len(sleeves)==2,'Must inspect both visible sleeves'
     palms=sorted([o for o in leader.children if o.name.startswith('leader palm')],key=lambda o:o.name)
     leader_interfaces=[]
     previous={};wheel_errors=[];stance_errors=[];support_errors=[];seam_errors=[]

@@ -151,12 +151,12 @@ def coat(out):
         if mod.type=='ARMATURE':new=fur.modifiers.new('317 shared coat deformation','ARMATURE');new.object=mod.object;new.use_deform_preserve_volume=mod.use_deform_preserve_volume
     (out/'coat.json').write_text(json.dumps({'triangles':len(fs),'length_m':[.004,.009],'rights':'derivative of existing admitted local horse; no external input','weights':'sampled from underlying horse mesh','exclusions':'eyes mouth hooves by material'},indent=2))
 
-def ditch(out):
+def ditch(out,seed=3175,count=2600):
     from sikh315_scene import noise
-    road=bpy.data.objects['irregular packed farm track'];ground=BVHTree.FromPolygons([v.co.copy() for v in road.data.vertices],[list(p.vertices) for p in road.data.polygons]);rng=np.random.default_rng(3175)
+    road=bpy.data.objects['irregular packed farm track'];ground=BVHTree.FromPolygons([v.co.copy() for v in road.data.vertices],[list(p.vertices) for p in road.data.polygons]);rng=np.random.default_rng(seed)
     mats=[surface('317 drainage growth '+str(i),[a,b],25,rough=.97,bump=.0002) for i,(a,b) in enumerate([((.085,.069,.031),(.24,.19,.09)),((.04,.05,.017),(.10,.13,.035)),((.05,.034,.019),(.14,.095,.04))])]
     vs=[];fs=[];inds=[];roots=0
-    for i in range(2600):
+    for i in range(count):
         y=float(rng.uniform(-170,80));side=-1 if i%2 else 1
         if -30<y<-6 or noise(side*8,y,.19)<-.08:continue
         x=side*float(rng.uniform(2.2,3.9));p=ground.ray_cast(Vector((x,y,9)),Vector((0,0,-1)))[0]
