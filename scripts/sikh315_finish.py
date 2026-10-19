@@ -56,6 +56,21 @@ def earth_finish(out,source):
 def finish(out):
     from sikh315_run import source_for
     job=json.loads((out/'job.json').read_text());source=source_for('finish',job['version']).parent
+    if job['version']==9:
+        import shutil
+        for p in source.glob('*.json'):
+            if p.name not in ('job.json','bindings.json'):shutil.copy2(p,out/p.name)
+        changed=0
+        for ob in bpy.data.objects:
+            if not ob.name.startswith('315 detached world wake'):continue
+            for layer in ob.animation_data.action.layers:
+                for strip in layer.strips:
+                    for bag in strip.channelbags:
+                        for fc in bag.fcurves:
+                            if fc.data_path!='location':continue
+                            for p in fc.keyframe_points:p.interpolation='LINEAR';changed+=1
+        (out/'dust-drift-correction.json').write_text(json.dumps({'cause':'Bezier endpoint easing on two pre-roll clouds differed from constant recorded drift by13.35mm and4.06mm in opening frames','change':'Linear location interpolation for declared constant advection; preserve density/scale curves, all key positions and non-dust motion','location_keys':changed,'threshold_m':.002},indent=2))
+        return
     if job['version']==8:
         import shutil
         for p in source.glob('*.json'):

@@ -18,16 +18,18 @@ def verify(out,source):
     for f in range(275,357):
         s.frame_set(f);bpy.context.view_layer.update()
         hind.append({'frame':f,**{n:(rig.matrix_world@rig.pose.bones[n].head-original[n]).length for n in original}})
-    births=json.loads((source/'dust-ownership.json').read_text());drift=[]
+    births=json.loads((source/'dust-ownership.json').read_text());drift=[];failures=[]
     for b in births:
         ob=bpy.data.objects[b['name']];assert ob.parent is None
         times=sorted(set([max(1,b['birth_frame']),min(696,max(1,b['birth_frame']+24)),min(696,max(1,b['birth_frame']+72))]));prev=None
         for f in times:
             s.frame_set(f);age=(f-b['birth_frame'])/24;expected=Vector(b['world_birth'])+Vector(b['world_drift_mps'])*age+Vector((0,0,.16))
-            err=(ob.location-expected).length;assert err<.002
+            err=(ob.location-expected).length
+            if err>=.002:failures.append({'object':ob.name,'frame':f,'error_m':err,'actual':list(ob.location),'expected':list(expected),'birth':b})
             if prev is not None:assert min(ob.scale)>=prev-.001
             prev=min(ob.scale)
         drift.append({'object':ob.name,'parent':None,'tested_frames':times,'world_drift_error_m':err})
     chips=[o for o in bpy.data.objects if o.name.startswith('299 tire-contact earth chip')];s.frame_set(696)
     assert all(not o.hide_render for o in chips)
-    (out/'native-checks.json').write_text(json.dumps({'wheel_contact_max_abs_m':max(abs(r['signed_m']) for r in errors),'wheel_contacts':errors,'hind_support_control_drift':hind,'world_space_dust':drift,'persistent_tire_chips_at_end':len(chips),'limits':'Support-control and source-curve checks do not establish rendered anatomy, naturalness, timing or sound.'},indent=2))
+    (out/'native-checks.json').write_text(json.dumps({'wheel_contact_max_abs_m':max(abs(r['signed_m']) for r in errors),'wheel_contacts':errors,'hind_support_control_drift':hind,'world_space_dust':drift,'dust_failures':failures,'persistent_tire_chips_at_end':len(chips),'limits':'Support-control and source-curve checks do not establish rendered anatomy, naturalness, timing or sound.'},indent=2))
+    assert not failures, 'World drift does not match recorded contract; inspect native-checks.json'

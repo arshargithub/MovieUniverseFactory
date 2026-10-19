@@ -5,7 +5,7 @@ from movie_factory import production_knowledge as pk
 ROOT=Path(__file__).resolve().parents[1]
 BASE=ROOT/'.runtime/art-direction/series01-sikh315'
 SOURCE=ROOT/'.runtime/art-direction/series01-sikh314/build-07/sequence.blend'
-OPS=('inspect','build','finish','proof','movie','reopen','profile')
+OPS=('inspect','build','finish','proof','movie','reopen','profile','verify')
 def source_for(op,v):
     if op in ('inspect','build'):return SOURCE
     if op=='finish':

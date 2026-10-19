@@ -18,10 +18,11 @@ def main():
             run('-framerate','24','-start_number',str(start),'-i',str(p/'frames/frame-%04d.png'),'-frames:v',str(count),'-c:v','libx264','-crf','17','-pix_fmt','yuv420p','-movflags','+faststart',str(p/(label+'.mp4')))
         return
     if op=='reopencheck':
+        original=BASE/f'movie-{v:02d}/frames' if v>=9 else native
         rows=[]
         for p in sorted((BASE/f'reopen-{v:02d}').glob('frame-*.png')):
-            a=np.asarray(Image.open(native/p.name)).astype(np.int16);b=np.asarray(Image.open(p)).astype(np.int16);assert a.shape==b.shape
-            rows.append({'frame':p.name,'maximum_channel_difference':int(np.max(abs(a-b))),'original_sha':sha(native/p.name),'reopen_sha':sha(p)})
+            a=np.asarray(Image.open(original/p.name)).astype(np.int16);b=np.asarray(Image.open(p)).astype(np.int16);assert a.shape==b.shape
+            rows.append({'frame':p.name,'maximum_channel_difference':int(np.max(abs(a-b))),'original_sha':sha(original/p.name),'reopen_sha':sha(p)})
         assert len(rows)==19
         (ROOT/f'results/sikh315/reopen-{v}/comparison.json').write_text(json.dumps({'threshold':1,'status':'PASS' if all(r['maximum_channel_difference']<=1 for r in rows) else 'FAIL','controls':rows},indent=2));return
     if op=='controls':

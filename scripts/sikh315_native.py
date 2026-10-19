@@ -31,9 +31,11 @@ def main():
     if op=='finish':
         from sikh315_finish import finish
         finish(out);s.frame_set(1);bpy.ops.wm.save_as_mainfile(filepath=str(out/'sequence.blend'))
-    if op=='reopen':
+        if v==9:return
+    if op in ('reopen','verify'):
         from sikh315_verify import verify
         verify(out,source_for(op,v).parent)
+        if op=='verify':return
     s.render.resolution_x=480;s.render.resolution_y=854;s.eevee.taa_render_samples=32
     if op!='profile' and v>=7:
         # Profile6 matched720 controls retain soft sun shadows; point lights
@@ -42,6 +44,7 @@ def main():
         for light in bpy.data.lights:
             if hasattr(light,'use_shadow_jitter'):light.use_shadow_jitter=light.type=='SUN'
             if v>=8 and hasattr(light,'shadow_maximum_resolution'):light.shadow_maximum_resolution=.01
+    if op=='reopen' and v>=9:s.render.resolution_x=720;s.render.resolution_y=1280
     if op=='profile':
         fields={p.identifier:getattr(s.eevee,p.identifier) for p in s.eevee.bl_rna.properties if 'shadow' in p.identifier and p.type in ('INT','FLOAT','BOOLEAN')}
         if not hasattr(s.eevee,'shadow_ray_count'):raise ValueError('No admitted shadow sampling control')
