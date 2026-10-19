@@ -60,7 +60,11 @@ def main():
     jobs=[path]
     if op=='movie':
         jobs=[]
-        for a in range(1,697,24):
+        first=1
+        if v==11:
+            from sikh315_reuse import seed_opening
+            first=seed_opening(out)
+        for a in range(first,697,24):
             p=out/'chunks'/f'{a:04d}'/'job.json';p.parent.mkdir(parents=True);p.write_text(json.dumps({'operation':op,'version':v,'start':a,'end':min(696,a+23)}));jobs.append(p)
     receipts=[]
     for jobpath in jobs:

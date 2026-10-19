@@ -45,6 +45,7 @@ def main():
             if hasattr(light,'use_shadow_jitter'):light.use_shadow_jitter=light.type=='SUN'
             if v>=8 and hasattr(light,'shadow_maximum_resolution'):light.shadow_maximum_resolution=.01
     if op=='reopen' and v>=9:s.render.resolution_x=720;s.render.resolution_y=1280
+    if op=='finish' and v==11:s.render.resolution_x=720;s.render.resolution_y=1280
     if op=='profile':
         fields={p.identifier:getattr(s.eevee,p.identifier) for p in s.eevee.bl_rna.properties if 'shadow' in p.identifier and p.type in ('INT','FLOAT','BOOLEAN')}
         if not hasattr(s.eevee,'shadow_ray_count'):raise ValueError('No admitted shadow sampling control')
@@ -65,7 +66,7 @@ def main():
             if any((out/'frames'/f'frame-{f:04d}.png').exists() for f in range(a,b+1)):raise ValueError('Refusing to overwrite rendered evidence')
             s.frame_start=a;s.frame_end=b;s.render.filepath=str(out/'frames/frame-');bpy.ops.render.render(animation=True)
         return
-    controls=(41,80,91,126,315,450,600) if op=='finish' and v==10 else (80,126,150,283,294,306,315,324,333,342,350,420,435,450,465,480,500,600,680)
+    controls=(80,126,150,200,240,270,315,450,600) if op=='finish' and v==11 else (41,80,91,126,315,450,600) if op=='finish' and v==10 else (80,126,150,283,294,306,315,324,333,342,350,420,435,450,465,480,500,600,680)
     for f in controls:
         s.frame_set(f);s.render.filepath=str(out/f'frame-{f:04d}.png');bpy.ops.render.render(write_still=True)
     if op in ('build','finish'):

@@ -56,6 +56,39 @@ def earth_finish(out,source):
 def finish(out):
     from sikh315_run import source_for
     job=json.loads((out/'job.json').read_text());source=source_for('finish',job['version']).parent
+    if job['version']==11:
+        import shutil
+        for p in source.glob('*.json'):
+            if p.name not in ('job.json','bindings.json'):shutil.copy2(p,out/p.name)
+        # The source shader already uses object alpha. Correct accumulated
+        # optical depth, not geometry/lifetime or the independent departure wake.
+        copies={};changed=[]
+        for row in json.loads((source/'dust-ownership.json').read_text()):
+            if row['birth_frame']>=435:continue
+            ob=bpy.data.objects[row['name']]
+            ob.data=ob.data.copy()
+            for slot in ob.material_slots:
+                old=slot.material
+                if old.name not in copies:
+                    mat=old.copy();mat.name='315 settling dilution '+old.name
+                    nodes=mat.node_tree.nodes;links=mat.node_tree.links
+                    vol=next(n for n in nodes if n.bl_idname=='ShaderNodeVolumePrincipled')
+                    density=vol.inputs['Density'].links[0].from_socket
+                    gain=nodes.new('ShaderNodeValue');gain.name='315 accumulated stop dust dilution'
+                    for f,value in ((1,1.),(173,1.),(200,.65),(240,.12),(285,.08),(696,.08)):
+                        gain.outputs[0].default_value=value;gain.outputs[0].keyframe_insert('default_value',frame=f)
+                    for layer in mat.node_tree.animation_data.action.layers:
+                        for strip in layer.strips:
+                            for bag in strip.channelbags:
+                                for fc in bag.fcurves:
+                                    for p in fc.keyframe_points:p.interpolation='LINEAR'
+                    mul=nodes.new('ShaderNodeMath');mul.operation='MULTIPLY'
+                    links.new(density,mul.inputs[0]);links.new(gain.outputs[0],mul.inputs[1]);links.new(mul.outputs[0],vol.inputs['Density'])
+                    copies[old.name]=mat
+                slot.material=copies[old.name]
+            changed.append(ob.name)
+        (out/'settling-dilution.json').write_text(json.dumps({'cause':'Overlapping expanding stop clouds accumulate optical depth despite working object-alpha fade','changed':changed,'gain_keys':[[1,1],[173,1],[200,.65],[240,.12],[285,.08],[696,.08]],'unchanged':'Geometry, motion, scale, drift, lifetime, departure births435+; gain exactly1 through173','qualification':'Authored optical dilution; not a physical fluid simulation'},indent=2))
+        return
     if job['version']==10:
         from sikh315_drainage import refine
         refine(out,source)
