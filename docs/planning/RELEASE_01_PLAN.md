@@ -4,6 +4,29 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+### Exchange318 — continuous rear, dark horse and supporting-cast review
+
+Director finds317 improved but still mechanical/slow, with an unreadable coat
+and blocky horse face. Authorizes dark colour and further ditch enrichment;
+requests fidelity recommendations for leader/crowd. [Scoped strategy](../../results/sikh318/STRATEGY.md)
+preserves the motorcycle, cameras/geography, music and accepted Pashtun20s.
+Correct the motion representation and affected interfaces together, not by
+adding arbitrary micro-jitter. Review shape, material and lighting separately.
+[Supporting-cast review](../../results/sikh318/SUPPORTING_CAST_REVIEW.md) proposes
+one close-shot leader and one near crowd proof before bounded variants; this
+review does not silently authorize replacing the actors. [Carry forward](../../results/sikh318/CARRY_FORWARD.md)
+supplements the existing pilot without rehashing its sources or qualifying
+historical resources. Direct AV judgment remains Director313; no Gemini, paid
+calls, cloud work, upload or release admission. Counter318; checkpoint320.
+
+318 candidate04 now delivers29s Sikh plus49s protected join for manual AV review.
+Continuous rear timing, dark coat/smoother silhouette and ditch enrichment are
+implemented; all696 source frames and26 encoded controls inspected.164 tests
+pass. Strict fresh-open replay remains FAIL (2/8 controls maximum2/255 against
+1/255); no motion/audio or production PASS inferred. See
+[complete evidence](../../results/sikh318/REVIEW.md). Next recommended package is
+the supporting-cast integration described above, following this AV review.
+
 ### Exchange317 — integrated repair and bounded knowledge extension authorized
 
 Director authorizes316's recommended pass and explicitly confirms extending the

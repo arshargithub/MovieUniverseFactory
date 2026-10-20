@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "id": "drainage-detail",
+  "state": "in_progress",
+  "reuse_mode": "adapt",
+  "source": [
+    {
+      "path": ".runtime/art-direction/series01-sikh315/finish-11/sequence.blend",
+      "sha256": "390f9f72c6f781afb690946d5706904ffd1162444edea4f11df730865e5d8fed"
+    }
+  ],
+  "provenance": [
+    {
+      "path": "results/review316/REVIEW.md",
+      "sha256": "695e3433d028e9afd12321c80bf39bedb3c06633cce0a8264168e9475432a18b"
+    },
+    {
+      "path": "results/sikh317/STRATEGY.md",
+      "sha256": "1a99df6dbc1c79c26ec13b46a569ac458e171bb5188434fe1003f6cb4752a3f4"
+    },
+    {
+      "path": "results/sikh317/resources-8/drainage-detail.json",
+      "sha256": "047b6684c7dd5e35424a11202992be7c1f55313b7d12308e4115e305900fe447"
+    },
+    {
+      "path": "results/sikh318/STRATEGY.md",
+      "sha256": "69b497efcca5b38905ae1288edef0986e36c54b912cb38154f58cae514e8e135"
+    },
+    {
+      "path": "results/sikh318/CARRY_FORWARD.md",
+      "sha256": "5a325e42d67499900fada72bb06ebc37da49f826ec27692d04c453fef02ecbad"
+    }
+  ],
+  "rights": {
+    "status": "verified_for_use",
+    "scope": "Existing local derivative review only; no new redistribution clearance. Horse upstream CC-BY version and supporting donor reconciliation remain open where stated.",
+    "evidence_paths": [
+      "results/review316/REVIEW.md"
+    ]
+  },
+  "dependencies": [
+    {
+      "path": ".runtime/art-direction/series01-sikh318/build-04/sequence.blend",
+      "sha256": "d8862059765d08e9158ad65db014b3a247bfeaeb18405fe2ad92f3105dfafa00"
+    },
+    {
+      "path": "scripts/sikh318_native.py",
+      "sha256": "a30b01804fe9cf03f09bae2f66a9b06eb340a782c85a1adedfae0a038c09f8f6"
+    },
+    {
+      "path": "src/movie_factory/sikh318_motion.py",
+      "sha256": "6468dd43a73be49328e038d8206b31d6466b5a8d09975add2b1708341e53d561"
+    }
+  ],
+  "tested_conditions": {
+    "runtime": "Blender5.2.1",
+    "sequence": "Sikh318 candidate4",
+    "scope": "local_internal_review",
+    "representation": "inherited317 rig with318 scoped corrections"
+  },
+  "evidence": [
+    {
+      "path": ".runtime/art-direction/series01-sikh318/build-04/ditch.json",
+      "sha256": "ca81462fb74f122a2f294d3184eabb6a269c4511fceea50640122769b647a106"
+    },
+    {
+      "path": "results/sikh318/FINAL_OBSERVATIONS.json",
+      "sha256": "c13bd6d382d63004ea3c19744626271f2aee05c593b45f29d12181f4cf09d921"
+    },
+    {
+      "path": ".runtime/art-direction/series01-sikh318/check-04/interfaces.json",
+      "sha256": "8b63a69aa6b0602ac188214237e3947ecda741405374fafcc37f10f4e8331088"
+    }
+  ],
+  "failures": [
+    {
+      "id": "D316-05",
+      "status": "open",
+      "reason": "Technical/frame checks and Director AV disposition must be recorded separately; no artistic closure inferred."
+    },
+    {
+      "id": "D318-pending",
+      "status": "open",
+      "reason": "Director318 rejects317 rear/coat; new full-speed judgment pending; supporting cast remains unadmitted."
+    }
+  ],
+  "effort": {
+    "active_seconds": null,
+    "evidence_path": null,
+    "note": "Operating ledger tracks jobs; no exact asset-specific net-effort attribution yet."
+  }
+}

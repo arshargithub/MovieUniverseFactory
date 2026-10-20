@@ -1,0 +1,17 @@
+{
+  "version": 4,
+  "native_sha256": "d8862059765d08e9158ad65db014b3a247bfeaeb18405fe2ad92f3105dfafa00",
+  "direct_motion": false,
+  "direct_audio": false,
+  "known_frame_visible_blockers": [],
+  "scope_note": "No observed new frame-visible blocker in scoped318 corrections. This is not whole-film admission: requested supporting-cast review identifies known fidelity failures; principal remains proxy; full-speed judgment pending.",
+  "open_defects": ["D305-rear", "D305-terrain", "D305-field_boundaries", "D305-debris", "D315-01", "D315-02", "D315-03", "D315-04", "D315-05", "D316-01", "D316-02", "D316-03", "D316-04", "D316-05", "D316-06", "D318-rear-naturalness", "D318-horse-screen-read", "D318-supporting-cast", "D318-ditch-read", "D318-strict-replay"],
+  "requirements": [
+    {"id":"rear_continuity", "agent_status":"SOURCE_TIMED_FRAMES_CHECKED", "observation":"All84 frames275–358 inspected; continuous drive/crest/return, connected rider/clothing and clean throat silhouette. Source no longer resets speed at each monotone height knot; near-peak interval shortened. This does not establish fluidity at playback speed.", "human_pending":"Full-speed fluidity, weight, natural preparation and absence of slow-motion impression."},
+    {"id":"dark_horse", "agent_status":"STILLS_CHECKED", "observation":"Actual283/333 controls and decoded rear frames show warm dark-brown coat, retained eyes/muzzle highlights and smoother cheek/silhouette. Misplaced ventral mane originals and duplicate companions corrected internally before delivery.", "human_pending":"Coat and anatomical readability during action under scene lighting."},
+    {"id":"ditch", "agent_status":"STILLS_CHECKED", "observation":"Added clustered low plants, stubble and embedded deposits on existing banks; approach/departure controls show detail outside occupied riding line without a continuous green strip. Ground support geometry unchanged.", "human_pending":"Believable environmental richness at intended playback size."},
+    {"id":"supporting_cast", "agent_status":"REVIEW_COMPLETE_NOT_ASSET_PASS", "observation":"Leader retains cylindrical crown, bar-like beard and tube garments. Near crowd repeats silhouettes and bright simplified faces. Recommend whole-form/material/performance proof for leader and one near figure before variants; compare accepted Pashtun without lowering her quality.", "human_pending":"Next proposed supporting-cast scope; existing actors remain unadmitted."},
+    {"id":"adjacent_integrity", "agent_status":"FRAME_AND_NUMERICAL_CHECKS", "observation":"696 source frames,26 decoded controls and two join-boundary frames inspected. Bike/lamp/rider and clothing interfaces remain connected; numerical tire/boot/cuff checks pass. Existing music unchanged; impact/neigh timing updated to rear clock. Pashtun source hash and pre-AAC PCM protected; no native rerender.", "human_pending":"Whole-sequence rhythm, sound balance and synchronization."},
+    {"id":"strict_replay", "agent_status":"FAIL", "observation":"Fresh reopen8 controls:80 and380 exceed1/255 threshold with maximum2/255. Other six maximum1/255. This remains a technical qualification failure separate from AV acceptance.", "human_pending":"None: do not ask Director to waive technical threshold."}
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "id": "horse-rear-coat",
+  "state": "in_progress",
+  "reuse_mode": "adapt",
+  "source": [
+    {
+      "path": ".runtime/assets/demonstrator-01/horse.blend",
+      "sha256": "b848037332fe62064989f250a94faa04c75e3fb21ae93f6a100f19079c1b21aa"
+    }
+  ],
+  "provenance": [
+    {
+      "path": "results/demonstrator-01/stage-a/asset-manifest.json",
+      "sha256": "eda7c3d6582275fec9c105bad4dce35706aecea58f2a3776fa8944fc82e25c57"
+    },
+    {
+      "path": "results/sikh317/STRATEGY.md",
+      "sha256": "1a99df6dbc1c79c26ec13b46a569ac458e171bb5188434fe1003f6cb4752a3f4"
+    },
+    {
+      "path": ".runtime/art-direction/series01-entrance-art188/horse-coat-v01.prompt.txt",
+      "sha256": "8cc75d97d05f93fe3bf6d002fa0945635d73127e4690a1b455241bbd8520d360"
+    },
+    {
+      "path": "results/sikh317/resources-8/horse-rear-coat.json",
+      "sha256": "24984a23156da53bd1d2203330828fbca59495fb0451e48a2683b30af408f700"
+    },
+    {
+      "path": "results/sikh318/STRATEGY.md",
+      "sha256": "69b497efcca5b38905ae1288edef0986e36c54b912cb38154f58cae514e8e135"
+    },
+    {
+      "path": "results/sikh318/CARRY_FORWARD.md",
+      "sha256": "5a325e42d67499900fada72bb06ebc37da49f826ec27692d04c453fef02ecbad"
+    }
+  ],
+  "rights": {
+    "status": "unresolved",
+    "scope": "Existing local derivative review only; no new redistribution clearance. Horse upstream CC-BY version and supporting donor reconciliation remain open where stated.",
+    "evidence_paths": [
+      "results/demonstrator-01/stage-a/asset-manifest.json"
+    ]
+  },
+  "dependencies": [
+    {
+      "path": ".runtime/art-direction/series01-sikh318/build-04/sequence.blend",
+      "sha256": "d8862059765d08e9158ad65db014b3a247bfeaeb18405fe2ad92f3105dfafa00"
+    },
+    {
+      "path": "scripts/sikh318_native.py",
+      "sha256": "a30b01804fe9cf03f09bae2f66a9b06eb340a782c85a1adedfae0a038c09f8f6"
+    },
+    {
+      "path": "src/movie_factory/sikh318_motion.py",
+      "sha256": "6468dd43a73be49328e038d8206b31d6466b5a8d09975add2b1708341e53d561"
+    }
+  ],
+  "tested_conditions": {
+    "runtime": "Blender5.2.1",
+    "sequence": "Sikh318 candidate4",
+    "scope": "local_internal_review",
+    "representation": "inherited317 rig with318 scoped corrections"
+  },
+  "evidence": [
+    {
+      "path": ".runtime/art-direction/series01-sikh318/build-04/whole-horse-motion.json",
+      "sha256": "6e15f9fe9a0fbb99d70083f92cd6a8dc36a8ef63462b0ec5b385b08367ebbb9f"
+    },
+    {
+      "path": ".runtime/art-direction/series01-sikh318/build-04/coat318.json",
+      "sha256": "292cacd78877fb9cfaa3cc76fd2cf89436d6ccca3554a61d96af9e696af8fb3e"
+    },
+    {
+      "path": ".runtime/art-direction/series01-sikh318/build-04/groom318.json",
+      "sha256": "24ebbd8920b170b4b02b5e15fd46dea5fd6a7c9408c188eecead84070bbd3452"
+    },
+    {
+      "path": ".runtime/art-direction/series01-sikh318/build-04/impact-events.json",
+      "sha256": "45a693bf63d595a42aeeea5043b55652e3488dd0eeb74cc5efbe5853d1698b3d"
+    },
+    {
+      "path": "results/sikh318/FINAL_OBSERVATIONS.json",
+      "sha256": "c13bd6d382d63004ea3c19744626271f2aee05c593b45f29d12181f4cf09d921"
+    },
+    {
+      "path": ".runtime/art-direction/series01-sikh318/check-04/interfaces.json",
+      "sha256": "8b63a69aa6b0602ac188214237e3947ecda741405374fafcc37f10f4e8331088"
+    }
+  ],
+  "failures": [
+    {
+      "id": "D316-02",
+      "status": "open",
+      "reason": "Technical/frame checks and Director AV disposition must be recorded separately; no artistic closure inferred."
+    },
+    {
+      "id": "D316-03",
+      "status": "open",
+      "reason": "Technical/frame checks and Director AV disposition must be recorded separately; no artistic closure inferred."
+    },
+    {
+      "id": "D316-04",
+      "status": "open",
+      "reason": "Technical/frame checks and Director AV disposition must be recorded separately; no artistic closure inferred."
+    },
+    {
+      "id": "D318-pending",
+      "status": "open",
+      "reason": "Director318 rejects317 rear/coat; new full-speed judgment pending; supporting cast remains unadmitted."
+    }
+  ],
+  "effort": {
+    "active_seconds": null,
+    "evidence_path": null,
+    "note": "Operating ledger tracks jobs; no exact asset-specific net-effort attribution yet."
+  }
+}
