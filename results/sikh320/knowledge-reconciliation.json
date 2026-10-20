@@ -1,0 +1,50 @@
+{
+  "status": "REVIEWED_RECONCILIATION",
+  "authority": "Director320 supporting-shot scope and continued rider attention; Director313 manual AV boundary",
+  "changed": [
+    "current255"
+  ],
+  "added": [
+    "support320"
+  ],
+  "preserved": [
+    "construction319",
+    "reuse317",
+    "index",
+    "workflow",
+    "accepted",
+    "strategy",
+    "motion",
+    "context",
+    "render",
+    "unit",
+    "audio",
+    "audit250",
+    "sikh257"
+  ],
+  "catalog_sha256": "4d39f54fee2f87345896076023f84329dbd963da9f6fd43c708b08a5c6543148",
+  "reviewed_files": {
+    "docs/knowledge/CURRENT_PRODUCTION_STATE.md": "fcbd3501515872265928982f428cc06018a2a5b4c82608663dd158d8a264c6fb",
+    "docs/knowledge/SUPPORTING_SHOT_REVIEW_320.md": "ba879c2b70e68b3f67f6edcdca514fa11676c3da0a6abd901b3a652780aa7ccb"
+  },
+  "records": 49,
+  "sources": 15,
+  "read_sources": [
+    "docs/knowledge/SUPPORTING_SHOT_REVIEW_320.md",
+    "docs/knowledge/CURRENT_PRODUCTION_STATE.md"
+  ],
+  "changed_actions": [
+    "construction_interfaces",
+    "crowd_support",
+    "animal_coordination",
+    "look",
+    "current_state"
+  ],
+  "method": "Explicit source and action review after native/render/edit jobs completed. No mechanical rehash of other changed inputs. New regression cases are agent-authored, not independent perceptual validation.",
+  "routing_failure": "Initial320 regression missed look for a crowd-only motion task. Added explicit look facets to crowd, leader and horse entities; no acceptance status change.",
+  "changed_entities": [
+    "nihang_crowd",
+    "nihang_leader",
+    "nihang_horse"
+  ]
+}

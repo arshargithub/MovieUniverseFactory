@@ -1,0 +1,49 @@
+{
+  "status": "PASS",
+  "threshold_maximum_channel_255": 1,
+  "controls": [
+    {
+      "frame": 276,
+      "maximum_channel_difference_255": 0,
+      "channels_over_one": 0,
+      "source_sha": "3e05f567b1ad0fc43666ec3b136f285e079ed08315c20533a0a388a7dd2e6e31",
+      "repeat_sha": "8a67606594942dc3fbbb446609225db088bdf8f264f185ae087f9c379af0ce4e"
+    },
+    {
+      "frame": 298,
+      "maximum_channel_difference_255": 1,
+      "channels_over_one": 0,
+      "source_sha": "8f56ec6ebb860e8116890d5a50ef7e2ac0febafe31177e57fd5504cc4df52191",
+      "repeat_sha": "c1190153b694ac807c9dde1dcea80b3111d141830ce674a87c922bc0f0435f2b"
+    },
+    {
+      "frame": 321,
+      "maximum_channel_difference_255": 1,
+      "channels_over_one": 0,
+      "source_sha": "c9cbd3d618a648ecd877f5b55bb5921405c1203cfe7f9668c9db9e673d856952",
+      "repeat_sha": "e4e595158cfdb34a40de4f4367a139475a5811c30091d8279ad0290a4b63a1ab"
+    },
+    {
+      "frame": 344,
+      "maximum_channel_difference_255": 0,
+      "channels_over_one": 0,
+      "source_sha": "2ef8332fe46405982c5a32cb773443c44eec5e4cc41ba3667dae5d27002f4b6a",
+      "repeat_sha": "9687ebbb92e0339185fe3a4420471338c9ab805fd6487454a847f0842b7d0d55"
+    },
+    {
+      "frame": 381,
+      "maximum_channel_difference_255": 1,
+      "channels_over_one": 0,
+      "source_sha": "6b2694b0150831a76e36af4393653a9d78699afd62747ad127674f319fc61cce",
+      "repeat_sha": "0809e10a53978e65f33763291f38a588d0ef6df6a77f32e43c21a48b1681599a"
+    },
+    {
+      "frame": 417,
+      "maximum_channel_difference_255": 1,
+      "channels_over_one": 0,
+      "source_sha": "7a8672f2b1bf5a8962059dc29956ea1d80f73acc9360a6cff93e80fb8378800d",
+      "repeat_sha": "d5651cb89fd7f37888b09a9981a54b85fcbc5c35a53f584995eece13dff151bf"
+    }
+  ],
+  "scope": "Six independently reopened same-frame controls; not motion or production acceptance."
+}
