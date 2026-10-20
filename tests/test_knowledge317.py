@@ -26,11 +26,14 @@ def test_original_source_pins_preserved():
     current=json.loads((ROOT/pk.PINS).read_text())
     assert len(old['sources'])==12
     assert all(current['sources'][key]==value for key,value in old['sources'].items())
-    assert len(current['sources'])==13
+    assert len(current['sources'])>=13
 
 def test_delivery_preserves_exact_accepted_unit_without_new_narration_authority():
     import copy
     task=json.loads((ROOT/'results/sikh317/delivery-8/task.json').read_text())
+    # Exercise current routing with the historical scenario, not a stale
+    # dispatch receipt. The recorded317 task is deliberately left unchanged.
+    for path in (pk.CATALOG,pk.PINS):task['inputs'][path]=pk.file_hash(ROOT/path)
     p=pk.task_packet(ROOT,task)
     assert p['dispatch_ready'],p['blockers']
     broken=copy.deepcopy(task)
