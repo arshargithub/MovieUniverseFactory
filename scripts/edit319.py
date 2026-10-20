@@ -21,8 +21,10 @@ def main():
     for name,h in audio['files'].items():assert pk.file_hash(AUDIO/name)==h
     task=json.loads((ROOT/f'results/sikh319/movie-{v}/task.json').read_text())
     task.update(id=f'sikh319-delivery-{v}',operation='audio',
-        intent='Updated supporting cast integrated with unchanged318 timing/audio and protected Pashtun20s.')
-    inputs=[Path(__file__),ROOT/'scripts/sikh305_delivery.py',native,PASHTUN,AUDIO/'manifest.json']+[AUDIO/n for n in audio['files']]
+        intent='Updated supporting cast integrated with unchanged318 timing/audio and protected Pashtun20s.',
+        preserve_accepted_artifact=EXPECTED)
+    inputs=[Path(__file__),ROOT/'scripts/sikh305_delivery.py',native,PASHTUN,
+            ROOT/'docs/knowledge/CURRENT_PRODUCTION_STATE.md',AUDIO/'manifest.json']+[AUDIO/n for n in audio['files']]
     task['inputs'].update({str(p.relative_to(ROOT)):pk.file_hash(p) for p in inputs})
     packet=pk.task_packet(ROOT,task);assert packet['dispatch_ready'],packet['blockers']
     record=ROOT/f'results/sikh319/delivery-{v}';record.mkdir(exist_ok=True)

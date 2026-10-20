@@ -32,7 +32,7 @@ def main():
     resource['source'].append(bind(source_for('build',v)))
     resource['provenance'] += [bind(prior),bind(OUT/'STRATEGY.md'),bind(OUT/'CARRY_FORWARD.md')]
     resource['dependencies']=[bind(native)]+[bind(ROOT/'scripts'/n) for n in (
-        'sikh319_cast.py','sikh319_contacts.py','sikh319_finish.py','sikh319_native.py')]
+        'sikh319_cast.py','sikh319_contacts.py','sikh319_finish.py','sikh319_refine.py','sikh319_native.py')]
     resource['tested_conditions']={
         'runtime':'Blender5.2.1','sequence':f'Sikh319 candidate{v}',
         'scope':'local_internal_review','representation':'shot-bound donor-derived supporting cast'}
@@ -52,6 +52,7 @@ def main():
     evidence += [native,interfaces,media/'verification.json',OUT/f'reopen-{v}/comparison.json',
                  OUT/f'render-benchmark-{v}.json',resources/'validation.json']
     evidence += sorted((media/'chronology').glob('*.jpg'))+sorted((media/'encoded-controls').glob('*.png'))
+    evidence += [media/'join-exact-0479.png',media/'join-exact-0480.png']
     assert len(list((media/'encoded-controls').glob('*.png')))==26
     candidates={}
     for item in verification['media']:
