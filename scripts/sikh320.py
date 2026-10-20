@@ -37,7 +37,7 @@ def main():
     for p in paths:
         if p.suffix in ('.py','.md'):
             dest=record/'source-snapshot'/p.relative_to(ROOT);dest.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(p,dest)
-    frames=list(range(START,END+1)) if op=='motion' else [276,298,321,344,381,417] if op in ('look','reopen') else [START]
+    frames=list(range(START,END+1)) if op=='motion' else [252,344,351,400,417,441] if op=='look' and v>=10 else [276,298,321,344,381,417] if op in ('look','reopen') else [START]
     for k in range(0,len(frames),6):
         fs=frames[k:k+6];folder=out/'chunks'/str(fs[0]);folder.mkdir(parents=True)
         j=folder/'job.json';j.write_text(json.dumps(validate({'operation':op,'version':v,'frames':fs})))

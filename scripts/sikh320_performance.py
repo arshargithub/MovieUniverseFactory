@@ -121,7 +121,7 @@ def crowd(out):
         lows=sorted([o for o in r.children if o.name.startswith('PROXY calf')],key=lambda o:o.name)
         starts=[o.matrix_world.translation.copy() for o in feet]
         start=17.58+(0,.23,.48,.12,.60,.32,.71,.43,.83,.55)[i]
-        duration=.43+.025*(i%3);stepcount=6;stride=1.7/3
+        duration=.32+.015*(i%3);stepcount=8
         # People turn to move diagonally BACK toward the verge, rather than
         # remaining rigidly face-on while translating sideways. Head tracking
         # remains on rider; settle nearly forward as he approaches the corridor.
@@ -147,7 +147,7 @@ def crowd(out):
                     u=(t-start-n*(duration*.83))/duration
                     steps+=ease(u)
                     if 0<u<1:lift=.085*math.sin(math.pi*u)**1.4
-                frac=steps/3;target=starts[k]+direction*frac
+                frac=steps/4;target=starts[k]+direction*frac
                 # Sideways spacing rotates into a narrow walking stance.
                 rot=Euler((0,0,yaw)).to_matrix();local=Vector(((-.11 if k==0 else .11),0,0))
                 target+=(rot@local-local)*ease(frac*4)
@@ -156,14 +156,33 @@ def crowd(out):
                 target.z=hit.z+.055*r.scale.z+lift
                 targets.append(target);progress.append(frac);lifts.append(lift)
             center=(targets[0]+targets[1])/2
-            r.location=origin+direction*(sum(progress)/2);r.location.z=center.z-.055*r.scale.z-.012*max(lifts)/.085
-            r.rotation_euler=(0,side*.025*(lifts[0]-lifts[1])/.085,yaw);key(r,f);bpy.context.view_layer.update()
+            r.location=origin+direction*(sum(progress)/2)
+            r.location.z=min(p.z for p in targets)-.055*r.scale.z
+            r.rotation_euler=(0,side*.025*(lifts[0]-lifts[1])/.085,yaw)
+            bpy.context.view_layer.update()
+            # Rest hip-to-ankle height is .785m, not .9m. The old .45+.45
+            # links forced a deep bend even at rest. Solve pelvis support once
+            # for BOTH .40m links before either visible leg is authored.
+            # Work in root-local space: the legacy actors have nonuniform
+            # scale, so a world-space sphere based on scale.z is not valid.
+            inverse=r.matrix_world.inverted()
+            downward_local=inverse.to_3x3()@Vector((0,0,1))
+            drop=0.
+            for k,target in enumerate(targets):
+                delta=inverse@target-Vector((-.11 if k==0 else .11,0,.84))
+                if delta.length<=.797:continue
+                a=downward_local.length_squared;b=2*delta.dot(downward_local);c=delta.length_squared-.797**2
+                disc=b*b-4*a*c
+                if disc<0:raise ValueError(f'Crowd step exceeds supported leg reach: {i=} {f=} {k=}')
+                needed=(-b-math.sqrt(disc))/(2*a)
+                if needed<0:raise ValueError('Invalid downward pelvis correction')
+                drop=max(drop,needed)
+            r.location.z-=drop;key(r,f);bpy.context.view_layer.update()
             inv=r.matrix_world.inverted()
             for k,(up,lo,foot) in enumerate(zip(ups,lows,feet)):
                 p=inv@targets[k];hip=Vector((-.11 if k==0 else .11,0,.84))
-                if (p-hip).length>.895:
-                    r.location.z-=((p-hip).length-.89)*r.scale.z;key(r,f);bpy.context.view_layer.update();inv=r.matrix_world.inverted();p=inv@targets[k]
-                knee=Vector(joint_between(hip,p,.45,.45,(0,1,0)))
+                if not 1e-6<(p-hip).length<.7999:raise ValueError(f'Crowd pelvis support failed: {i=} {f=} {k=} distance={(p-hip).length}')
+                knee=Vector(joint_between(hip,p,.40,.40,(0,1,0)))
                 segment(up,hip,knee,.074);segment(lo,knee,p,.057);foot.location=p
                 foot.rotation_euler=(.20*lifts[k]/.085,0,0)
                 for ob in (up,lo,foot):key(ob,f)
