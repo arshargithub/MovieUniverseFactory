@@ -1,0 +1,15 @@
+{
+  "benchserial": {
+    "wall_seconds": 239.0300908088684,
+    "peak_worker_rss_bytes": 6156500992,
+    "summed_worker_peak_bytes": 11612176384
+  },
+  "status": "PASS",
+  "workers": 1,
+  "native_sha256": "6849cd475dd8f8a7ff9b4e7ff08e0359de1e1ffb0dafd3902aa58463e83bd046",
+  "conservative_prior": {
+    "path": "results/sikh319/render-benchmark-16.json",
+    "sha256": "41712869565c444b688170c5c34109d4641e3dbe2e4bd78224c35e4b4d283c34"
+  },
+  "limits": "Current twelve-frame serial measurement only. Prior candidate16 rejected concurrency; no parallel speedup or memory claim for this changed native."
+}

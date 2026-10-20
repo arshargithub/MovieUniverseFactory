@@ -4,6 +4,34 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+### Exchange319 — supporting cast integration
+
+Director authorizes318's recommended supporting-cast package. Build the
+nonrecurring Nihang leader and a near warrior to the required shot quality,
+then derive bounded variants and integrate their performance and contacts.
+Deliver the complete Sikh29s and protected Pashtun20s/Sikh29s join. Preserve
+motorcycle action, horse/rear, geography, cameras, timing and selected music.
+The principal remains a proxy. [Strategy](../../results/sikh319/STRATEGY.md)
+binds whole-form proof, accepted co-star comparison and contact checks before
+full rendering. Director313 remains the direct audiovisual judge; internal
+still/timed-frame checks are not production acceptance. No new provider,
+spending, installation, cloud, upload or publication authority. Checkpoint320.
+
+Candidate19 now supplies the complete29s Sikh and49s protected joined clips.
+Leader/near-crowd whole forms, garment ownership and prop contacts were rebuilt;
+19 internal construction/refinement versions are retained, not19 Director reviews.
+All696 frames and26 encoded controls were inspected;26 selected regressions pass.
+Six-control fresh-open strict pixel replay remains FAIL (three exceed1/255).
+[Manual AV queue](../../results/sikh319/DIRECTOR_AV_QUEUE.json) keeps current
+performance/ensemble judgment with the Director and preserves earlier open defects.
+[Carry-forward findings](../../results/sikh319/CARRY_FORWARD.md) are routed through
+the extended14-source49-record pilot with prior pins preserved; this remains finite
+retrieval regression coverage, not independent perceptual calibration.
+Recommended next package: qualify the existing local principal source, then
+integrate the rugged Sikh face/beard/turban/body and uncover/greeting performance.
+No new GPU attempt or spending follows automatically. Main rider remains proxy.
+Local source/evidence commits and native files are not an off-device backup.
+
 ### Exchange318 — continuous rear, dark horse and supporting-cast review
 
 Director finds317 improved but still mechanical/slow, with an unreadable coat

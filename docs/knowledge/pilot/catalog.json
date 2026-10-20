@@ -1,8 +1,13 @@
 {
   "schema_version": 1,
-  "version": "317-reviewed-cinematic-reuse-interfaces",
+  "version": "319-reviewed-construction-interfaces",
   "scope": "Protected Pashtun unit plus authorized Sikh sequence development and knowledge pilot; explicit source/impact routing, not automatic scene understanding.",
   "sources": {
+    "construction319": {
+      "path": "docs/knowledge/CONSTRUCTION_INTERFACES_319.md",
+      "records": ["construction_interfaces"],
+      "reason": "Reviewed319 construction failures, discriminating controls and full-timeline contact checks. Supported methods only; Director AV and reusable-asset acceptance remain pending."
+    },
     "reuse317": {
       "path": "docs/knowledge/CINEMATIC_REUSE_317.md",
       "records": [
@@ -599,6 +604,15 @@
     ]
   ],
   "records": [
+    {
+      "id": "construction_interfaces",
+      "status": "supported",
+      "kind": "lesson",
+      "tags": ["modeling", "anatomy", "cloth", "contact", "crowd_support"],
+      "sources": ["construction319"],
+      "check_kind": "review",
+      "action": "319: bind semantic front/up, head-versus-torso ownership and visible prop/cuff frames before adaptation. Freeze coordinates/normals before surface mutation; prove one complete actor/pose before variants. Test the fastest dependent motion at every rendered frame where needed: four-frame sleeve sampling missed a109.5mm spear-plant cuff gap. Preserve working whole forms during local fixes; pointwise hair projection can jump between surfaces. Keep actual per-version recipes, reconcile file-level rights, and measure identical-frame render profiles. Numeric contact, source hashes and strand counts do not establish visible grip, same-film coherence or full-speed AV acceptance."
+    },
     {
       "id": "reuse_envelope",
       "status": "adopted",

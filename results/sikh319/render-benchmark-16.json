@@ -1,0 +1,67 @@
+{
+  "benchserial": {
+    "wall_seconds": 296.1354560852051,
+    "peak_worker_rss_bytes": 6251610112,
+    "summed_worker_peak_bytes": 12067389440
+  },
+  "benchpair": {
+    "wall_seconds": 331.405189037323,
+    "peak_worker_rss_bytes": 5658984448,
+    "summed_worker_peak_bytes": 9592930304
+  },
+  "status": "PASS",
+  "workers": 1,
+  "measured_wall_reduction": -0.11910000044699132,
+  "native_sha256": "bed95a5635754fd7cbde5c0939c7865418f5b4bd05dcfad94737d7955268d328",
+  "comparisons": [
+    {
+      "frame": "frame-0283.png",
+      "max_channel_difference": 0
+    },
+    {
+      "frame": "frame-0294.png",
+      "max_channel_difference": 1
+    },
+    {
+      "frame": "frame-0306.png",
+      "max_channel_difference": 1
+    },
+    {
+      "frame": "frame-0315.png",
+      "max_channel_difference": 0
+    },
+    {
+      "frame": "frame-0324.png",
+      "max_channel_difference": 0
+    },
+    {
+      "frame": "frame-0333.png",
+      "max_channel_difference": 0
+    },
+    {
+      "frame": "frame-0342.png",
+      "max_channel_difference": 1
+    },
+    {
+      "frame": "frame-0350.png",
+      "max_channel_difference": 1
+    },
+    {
+      "frame": "frame-0375.png",
+      "max_channel_difference": 1
+    },
+    {
+      "frame": "frame-0420.png",
+      "max_channel_difference": 1
+    },
+    {
+      "frame": "frame-0450.png",
+      "max_channel_difference": 1
+    },
+    {
+      "frame": "frame-0480.png",
+      "max_channel_difference": 0
+    }
+  ],
+  "limits": "Twelve-frame throughput/memory check, not a full-scene deadline, general concurrency qualification or AV pass."
+}

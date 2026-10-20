@@ -1,0 +1,133 @@
+{
+  "schema_version": 1,
+  "id": "supporting-cast319",
+  "state": "in_progress",
+  "reuse_mode": "adapt",
+  "source": [
+    {
+      "path": ".runtime/art-direction/series01-sikh315/finish-11/sequence.blend",
+      "sha256": "390f9f72c6f781afb690946d5706904ffd1162444edea4f11df730865e5d8fed"
+    },
+    {
+      "path": ".runtime/art-direction/series01-sikh318/build-04/sequence.blend",
+      "sha256": "d8862059765d08e9158ad65db014b3a247bfeaeb18405fe2ad92f3105dfafa00"
+    }
+  ],
+  "provenance": [
+    {
+      "path": "results/review316/REVIEW.md",
+      "sha256": "695e3433d028e9afd12321c80bf39bedb3c06633cce0a8264168e9475432a18b"
+    },
+    {
+      "path": "results/sikh317/STRATEGY.md",
+      "sha256": "1a99df6dbc1c79c26ec13b46a569ac458e171bb5188434fe1003f6cb4752a3f4"
+    },
+    {
+      "path": "results/sikh317/resources-8/supporting-crowd.json",
+      "sha256": "a66d2b09805a9131bacb98d16485d5fd7d1295714a575d6eeb78084d274f5a77"
+    },
+    {
+      "path": "results/sikh318/STRATEGY.md",
+      "sha256": "69b497efcca5b38905ae1288edef0986e36c54b912cb38154f58cae514e8e135"
+    },
+    {
+      "path": "results/sikh318/CARRY_FORWARD.md",
+      "sha256": "5a325e42d67499900fada72bb06ebc37da49f826ec27692d04c453fef02ecbad"
+    },
+    {
+      "path": "results/sikh318/resources-4/supporting-crowd.json",
+      "sha256": "f008521b0cf504f88d2db0313eeb1dd9983d6e498689fdae8b873c3e7de3d3e1"
+    },
+    {
+      "path": "results/sikh319/STRATEGY.md",
+      "sha256": "0295c859ff53137eac933d4e843f04a3831342f3694756889c3e5dc52278f2ce"
+    },
+    {
+      "path": "results/sikh319/CARRY_FORWARD.md",
+      "sha256": "5e9d9adee9211eb14dc410214229dd36e4bb9df03c5523cbc42ada3a15c22488"
+    }
+  ],
+  "rights": {
+    "status": "unresolved",
+    "scope": "Existing local derivative review only; no new redistribution clearance. Horse upstream CC-BY version and supporting donor reconciliation remain open where stated.",
+    "evidence_paths": [
+      "results/review316/REVIEW.md"
+    ]
+  },
+  "dependencies": [
+    {
+      "path": ".runtime/art-direction/series01-sikh319/refine-19/sequence.blend",
+      "sha256": "6849cd475dd8f8a7ff9b4e7ff08e0359de1e1ffb0dafd3902aa58463e83bd046"
+    },
+    {
+      "path": "scripts/sikh319_cast.py",
+      "sha256": "cf61adea573aa0939a496b4c389d79e302fe8a1be4dec10c3d5c3dcb8fa45a20"
+    },
+    {
+      "path": "scripts/sikh319_contacts.py",
+      "sha256": "0bd7a35beec3f3419d337aeb170002922d23b7345e4c7514e41aadbd4c74961f"
+    },
+    {
+      "path": "scripts/sikh319_finish.py",
+      "sha256": "1e7111aa8e9efc1d9fdd82d52baf01343cfff7e608bb77830de04f99d86eb349"
+    },
+    {
+      "path": "scripts/sikh319_refine.py",
+      "sha256": "e6b984810bcf4c3e0f1982dbc5dfc28d16ed13c2c56be0fe6b99520e0e99c906"
+    },
+    {
+      "path": "scripts/sikh319_native.py",
+      "sha256": "dda6eaad7d68d6c44fc67ebe25b8dc7aca487952897edef185f5d6424f24dd6c"
+    }
+  ],
+  "tested_conditions": {
+    "runtime": "Blender5.2.1",
+    "sequence": "Sikh319 candidate19",
+    "scope": "local_internal_review",
+    "representation": "shot-bound donor-derived supporting cast"
+  },
+  "evidence": [
+    {
+      "path": "results/sikh319/FINAL_OBSERVATIONS.json",
+      "sha256": "bbd2b880cabc867948574293118a16968b06d43aa2333fbff215e0f9b08606aa"
+    },
+    {
+      "path": "results/sikh319/REVIEW_PROGRESS.md",
+      "sha256": "792917ac648c929cdf6e06f32bfba57a4357d795d48a76c3a0f8159ef7f6ba3f"
+    },
+    {
+      "path": ".runtime/art-direction/series01-sikh319/verify-19/interfaces.json",
+      "sha256": "083494da65166f5d409880c8e04f791e637f7bf6314b224cafd5b1dbd54d1389"
+    },
+    {
+      "path": ".runtime/art-direction/series01-sikh319/refine-19/cast.json",
+      "sha256": "8d97af49fb89c184547467dcf7c724d16b3fab855950d9c0f1532cc6274d1e8b"
+    },
+    {
+      "path": ".runtime/art-direction/series01-sikh319/refine-19/finish.json",
+      "sha256": "7a1c908f34c7aa908c9e23e0628ce62def4c5c749cb1c931e142c8cdbbe5d489"
+    }
+  ],
+  "failures": [
+    {
+      "id": "D316-06",
+      "status": "open",
+      "reason": "Technical/frame checks and Director AV disposition must be recorded separately; no artistic closure inferred."
+    },
+    {
+      "id": "D318-pending",
+      "status": "open",
+      "reason": "Director318 rejects317 rear/coat; new full-speed judgment pending; supporting cast remains unadmitted."
+    },
+    {
+      "id": "D319-AV",
+      "status": "open",
+      "reason": "Full-speed performance and ensemble acceptance await the Director. No general reusable-character qualification."
+    }
+  ],
+  "effort": {
+    "active_seconds": null,
+    "evidence_path": null,
+    "note": "Operating ledger tracks jobs; no exact asset-specific net-effort attribution yet."
+  }
+}

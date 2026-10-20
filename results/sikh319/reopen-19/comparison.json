@@ -1,0 +1,50 @@
+{
+  "status": "FAIL",
+  "threshold": 1,
+  "channels": "RGBA 8bit",
+  "controls": [
+    {
+      "frame": 80,
+      "maximum_channel_difference": 3,
+      "different_channels": 123,
+      "original_sha256": "b54868e9cbe8e24bba5436a1002d89fc94122f3e6cb45d4f6ed5675fd9a0ecff",
+      "reopen_sha256": "fb9e786cc8f787608e9cfd0bc4137e1e15c09d1297aea3c83e9af6db1d3c5f62"
+    },
+    {
+      "frame": 283,
+      "maximum_channel_difference": 2,
+      "different_channels": 1727,
+      "original_sha256": "fd217414615e6eff74f447a07c96d44d3fe664e731166dda9722712434b538ec",
+      "reopen_sha256": "f7831f734536bfa6963e16d4d4e36877ac21d0dc8964eed25517cfd652743ee6"
+    },
+    {
+      "frame": 333,
+      "maximum_channel_difference": 1,
+      "different_channels": 4,
+      "original_sha256": "aba204608b3f0b761f46042e8f3f95a7bbd9daedc3632e9d78afa4576ff4171e",
+      "reopen_sha256": "1cc287e31be95e7a35b2a747b62de4048b72a11397b3cdb336181dbabbb89037"
+    },
+    {
+      "frame": 350,
+      "maximum_channel_difference": 1,
+      "different_channels": 3,
+      "original_sha256": "1c3d1da436f7ae8a8d96976777db81d9a9b2deb0123d699afc531183968b0de9",
+      "reopen_sha256": "78e022b5ad6bb5ad7bc4ac5c1e5e18fb6f84fbda05c6755a76d53d5dd9d09d9e"
+    },
+    {
+      "frame": 380,
+      "maximum_channel_difference": 2,
+      "different_channels": 25,
+      "original_sha256": "8ac73e17ad267392aefb73c36c5e577f601c4433b077c42f26a314c29e57e640",
+      "reopen_sha256": "18197f4b17e20dd9a7ce8e9483ba3bc3b410bf5ad52a43e1fbbd68a7ff8e9206"
+    },
+    {
+      "frame": 480,
+      "maximum_channel_difference": 1,
+      "different_channels": 1,
+      "original_sha256": "0cdd45d75d65b1e4564f911d266506d54cdc22840bd1855e24f5ea3f80906205",
+      "reopen_sha256": "64a6cf2e73fc35193cd1b7e2784613ca63d4791860bf54c9961675fc54a63bf1"
+    }
+  ],
+  "limit": "Six exact-source/frame controls only; no general renderer qualification or artistic acceptance."
+}

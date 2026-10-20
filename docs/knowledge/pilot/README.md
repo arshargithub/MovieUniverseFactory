@@ -4,6 +4,13 @@ Use this pilot before covered production work and before its internal handoff. I
 
 ## What is authoritative
 
+**319 extension:** [construction interfaces](../CONSTRUCTION_INTERFACES_319.md)
+adds one supported, source-backed action (14 sources/49 records). All thirteen
+prior source snapshots remain unchanged. It routes semantic orientation,
+deformation/contact sampling and construction controls to affected asset work;
+unrelated music analysis excludes it. This is finite agent-authored regression
+coverage, not measured independent recall or artistic qualification.
+
 **317 extension:** [cinematic reuse/interface lessons](../CINEMATIC_REUSE_317.md)
 add one reviewed source and five routed actions (13 sources/48 records).
 The twelve existing source snapshots are preserved unchanged. Resource records

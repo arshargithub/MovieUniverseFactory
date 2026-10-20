@@ -1,0 +1,37 @@
+# Blender 5.2.1, Commit date: 2026-08-24 16:50, Hash 9e2066aef7ef
+
+# backtrace
+0   Blender                             0x0000000101354878 _ZN7blender33BLI_system_backtrace_with_os_infoEP7__sFILEPKv + 56
+1   Blender                             0x0000000100a53170 _ZNSt3__117__call_once_proxyB8ne200100INS_5tupleIJRZN7blenderL19sig_handle_crash_fnEiE3$_0EEEEEvPv + 376
+2   libc++.1.dylib                      0x0000000184bae4e4 _ZNSt3__111__call_onceERVmPvPFvS2_E + 196
+3   Blender                             0x0000000100a52f6c _ZN7blenderL19sig_handle_crash_fnEi + 84
+4   libsystem_platform.dylib            0x0000000184c9d764 _sigtramp + 56
+5   Blender                             0x0000000100dc2d40 _ZN7blender3bke14node_free_nodeEPNS_9bNodeTreeERNS_5bNodeE + 44
+6   Blender                             0x0000000100dbca7c _ZN7blender3bkeL15ntree_free_dataEPNS_2IDE + 232
+7   Blender                             0x0000000100dc32f8 _ZN7blender3bke28node_tree_free_embedded_treeEPNS_9bNodeTreeE + 20
+8   Blender                             0x0000000100cc8410 _ZN7blenderL15light_free_dataEPNS_2IDE + 28
+9   Blender                             0x0000000100cb3910 _ZN7blenderL7id_freeEPNS_4MainEPvib + 260
+10  Blender                             0x0000000100cb37a4 _ZN7blender14BKE_id_free_exEPNS_4MainEPvib + 100
+11  Blender                             0x0000000100cccc30 _ZN7blender14BKE_main_clearERNS_4MainE + 356
+12  Blender                             0x0000000100ccc9e8 _ZN7blender4MainD2Ev + 56
+13  Blender                             0x0000000100cccfec _ZN7blender13BKE_main_freeEPNS_4MainE + 16
+14  Blender                             0x00000001018c7170 _ZN7blender22BLO_blendfiledata_freeEPNS_13BlendFileDataE + 28
+15  Blender                             0x0000000100ad9fe0 _ZN7blender18BKE_blendfile_readEPKcPKNS_19BlendFileReadParamsEPNS_19BlendFileReadReportE + 188
+16  Blender                             0x0000000101837e74 _ZN7blender12WM_file_readEPNS_8bContextEPKcbPNS_10ReportListE + 336
+17  Blender                             0x0000000101840a28 _ZN7blenderL22wm_open_mainfile__openEPNS_8bContextEPNS_10wmOperatorE + 348
+18  Blender                             0x0000000101834f0c _ZN7blenderL18wm_operator_invokeEPNS_8bContextEPNS_14wmOperatorTypeEPKNS_7wmEventEPNS_10PointerRNAEPNS_10ReportListEbb + 648
+19  Blender                             0x000000010182ddec _ZN7blender19WM_operator_call_pyEPNS_8bContextEPNS_14wmOperatorTypeENS_2wm13OpCallContextEPNS_10PointerRNAEPNS_10ReportListEb + 108
+20  Blender                             0x0000000102393634 _ZN7blenderL14bpy_op_fn_callEPNS_13BPyOpFunctionEP7_objectS3_ + 1096
+21  Blender                             0x0000000105fb1c40 _PyObject_MakeTpCall + 300
+22  Blender                             0x00000001060e2e7c _PyEval_EvalFrameDefault + 14724
+23  Blender                             0x00000001060defcc PyEval_EvalCode + 252
+24  Blender                             0x000000010614cb54 run_eval_code_obj + 180
+25  Blender                             0x000000010614c808 run_mod + 328
+26  Blender                             0x000000010614bc20 PyRun_FileExFlags + 176
+27  Blender                             0x00000001023905d4 _ZN7blenderL18python_script_execEPNS_8bContextEPKcPNS_4TextEPNS_10ReportListEb + 472
+28  Blender                             0x0000000100a51414 _ZN7blenderL26arg_handle_python_file_runEiPPKcPv + 256
+29  Blender                             0x000000010135f72c _ZN7blender14BLI_args_parseEPNS_5bArgsEiPFiiPPKcPvES5_ + 188
+30  Blender                             0x0000000100a4d750 main + 944
+31  dyld                                0x00000001848c9d54 start + 7184
+
+# Python backtrace
