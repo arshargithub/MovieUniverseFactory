@@ -137,6 +137,23 @@ def test_sikh257_camera_exposes_actor_and_environment_interfaces(root):
     assert {'sikh_cloth','sikh_geography','anticipation','visual_gate'} <= {r['id'] for r in p['obligations']}
 
 
+def test_supporting320_attention_and_quality_route_to_crowd(root):
+    p=pk.task_packet(root,task(root,'motion',['nihang_crowd']))
+    rows={r['id']:r for r in p['obligations']}
+    assert 'keeps watching the rider' in rows['crowd_support']['action']
+    assert 'torso opening' in rows['crowd_support']['action']
+    assert 'nonuniform transforms' in rows['construction_interfaces']['action']
+    assert 'supporting status' in rows['look']['action']
+    assert 'Director320' in rows['current_state']['action']
+    assert 'SUPPORTING_SHOT_REVIEW_320.md' in str(rows)
+
+
+def test_supporting320_lessons_do_not_become_music_requirements(root):
+    p=pk.task_packet(root,task(root,'audio',['music_reference']))
+    ids={r['id'] for r in p['obligations']}
+    assert not {'construction_interfaces','crowd_support','animal_coordination'} & ids
+
+
 def test_sikh257_authority_remains_input_bound(root):
     t = task(root, 'motion', ['sikh'])
     t['phase'] = 'execution'

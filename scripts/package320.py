@@ -26,11 +26,18 @@ def main():
     replay={'status':'PASS' if all(x['maximum_channel_difference_255']<=1 for x in comparison) else 'FAIL','threshold_maximum_channel_255':1,'controls':comparison,'scope':'Six independently reopened same-frame controls; not motion or production acceptance.'}
     (dest/'replay.json').write_text(json.dumps(replay,indent=2))
     def bound(p):return {'path':str(p.relative_to(ROOT)),'sha256':pk.file_hash(p)}
-    evidence=[dest/'STRATEGY.md',dest/'REVIEW.md',dest/'CARRY_FORWARD.md',dest/'replay.json',BASE/f'build-{v:02d}/sequence.blend',BASE/f'verify-{v:02d}/interfaces.json',BASE/f'audit-{v:02d}/protection.json',delivery/'verification.json']
+    evidence=[dest/'STRATEGY.md',dest/'REVIEW.md',dest/'CARRY_FORWARD.md',dest/'knowledge-reconciliation.json',dest/'replay.json',BASE/f'build-{v:02d}/sequence.blend',BASE/f'verify-{v:02d}/interfaces.json',BASE/f'audit-{v:02d}/protection.json',delivery/'verification.json']
     evidence+=sorted((delivery/'chronology').glob('*.jpg'))+sorted((delivery/'encoded-review').glob('*.jpg'))
     queue={'status':'AWAITING_DIRECTOR_AV','authority':'docs/knowledge/review_control/README.md#current-authority--exchange313','scope':{'core_frames':[276,417],'rendered_frames':[252,441],'fps':24,'seconds':190/24,'context_frames_each_side':24},'candidate':bound(delivery/'nihang-crowd-review.mp4'),'protected_pashtun':bound(ROOT/'.runtime/art-direction/series01-finish248/delivery01/pashtun-20s.mp4'),'evidence':[bound(p) for p in evidence],'pending_director_judgments':['Coordinated leader and horse performance at full speed, especially gather-to-lift and forceful landing','Individual crowd clearance while continuing to watch rider','Supporting wardrobe and accessories belong in the accepted Pashtun film language','Sound/contact timing and continuity across both handles'],'limitations':{'direct_motion':False,'direct_audio':False,'strict_replay':replay['status'],'full_sequence_reintegration':'NOT_RUN','principal_sikh':'protected unfinished proxy','production_pass':False,'s3_upload':False}}
     (dest/'DIRECTOR_AV_QUEUE.json').write_text(json.dumps(queue,indent=2))
     task=json.loads((dest/f'delivery-{v}/task.json').read_text());task['id']=f'sikh320-final-review-{v}'
+    # Only these explicitly reviewed320 source amendments are rebound. Do not
+    # sweep/rehash other inherited inputs to bypass a stale packet.
+    reconciliation=json.loads((dest/'knowledge-reconciliation.json').read_text())
+    assert reconciliation['status']=='REVIEWED_RECONCILIATION'
+    for name in ('docs/knowledge/CURRENT_PRODUCTION_STATE.md','docs/knowledge/SUPPORTING_SHOT_REVIEW_320.md'):
+        assert pk.file_hash(ROOT/name)==reconciliation['reviewed_files'][name]
+        task['inputs'][name]=pk.file_hash(ROOT/name)
     for p in [*evidence,Path(__file__).resolve()]:task['inputs'][str(p.relative_to(ROOT))]=pk.file_hash(p)
     packet=pk.task_packet(ROOT,task);assert packet['dispatch_ready'],packet['blockers']
     checks=[]
