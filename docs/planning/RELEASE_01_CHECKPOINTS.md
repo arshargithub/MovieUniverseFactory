@@ -1,5 +1,45 @@
 # Release 01 — checkpoints
 
+## CP-032 — exchange320, 2026-10-20
+
+Current item is the Sikh entrance supporting the trailer, specifically the
+Nihang/rearing and crowd passage. The Director rejected319's supporting-character
+look and acting.320 narrows correction renders to190 frames with one-second
+handles, rather than rerendering all696 frames. The incoming rider remains a
+protected proxy; the Pashtun20s unit remains provisionally accepted and unchanged.
+
+Since the preceding checkpoint, production resumed with the Director as the
+audiovisual judge and Gemini parked. Scene corrections, supporting-character
+construction, source/evidence binding and retrieval extensions have advanced,
+but repeated rejections show that technical completeness has not established
+the intended visible quality. No new accepted release gate is claimed.
+
+Broad accepted gates remain1/25 (4%), a coarse deliverable-acceptance count, not
+percent of effort, footage or time remaining. There is no defensible percentage
+for the current artistic correction. Remaining release work includes the Sikh
+principal and completed entrance, Gurkha and assembly/end sequences, full trailer
+edit/sound, episode1/2 scripts and shared breakdown, rights/distribution and final
+release approval. Do not translate the4% figure into96% of work remaining.
+
+320's immediate review covers coordinated leader/horse motion, believable
+supporting wardrobe, and individualized crowd clearance with continued attention
+on the rider. After approval, validate the splice and continued actor states in
+the full sequence, then return to principal-character integration. The smaller
+render scope is an efficiency improvement in frame count, not proof of a total
+effort saving or a lower quality threshold.
+
+Current records: [strategy](../../results/sikh320/STRATEGY.md),
+[review](../../results/sikh320/REVIEW.md), and
+[carry-forward findings](../../results/sikh320/CARRY_FORWARD.md).
+Candidate10 is now a complete7.9167s scoped AV review with both handles, not a
+production pass. Six fresh-open controls pass the fixed1/255 threshold;66
+selected tests pass. The15-source/49-record knowledge extension carries the
+attention/support and shot-tier quality lessons, including a corrected look
+routing miss. Full-speed acting, appearance and sound remain Director-pending.
+Local commits are distinct from remote protection. An accumulated outgoing Git
+range still requires review before any broad push; no new media backup or S3
+upload is claimed. The S3 viewing request was cancelled. Next checkpoint330.
+
 ## CP-027 — exchange270, 2026-10-14; native Sikh construction and limits
 
 **271 amendment:** Director rejects candidate17; the foundation recommendation and pending-identity-choice framing below are withdrawn. Technical history remains, but next work must establish a viable design and same-film coherence, not assume readiness for motion integration. [Audit](../knowledge/SIKH_FOUNDATION_REJECTION_271.md). Accepted broad gates remain unchanged; next checkpoint280.

@@ -1,11 +1,13 @@
 {
   "schema_version": 1,
-  "version": "319-reviewed-construction-interfaces",
+  "version": "320-supporting-performance-attention",
   "scope": "Protected Pashtun unit plus authorized Sikh sequence development and knowledge pilot; explicit source/impact routing, not automatic scene understanding.",
   "sources": {
     "construction319": {
       "path": "docs/knowledge/CONSTRUCTION_INTERFACES_319.md",
-      "records": ["construction_interfaces"],
+      "records": [
+        "construction_interfaces"
+      ],
       "reason": "Reviewed319 construction failures, discriminating controls and full-timeline contact checks. Supported methods only; Director AV and reusable-asset acceptance remain pending."
     },
     "reuse317": {
@@ -175,6 +177,16 @@
         "sikh_geography"
       ],
       "reason": "Reviewed Director256-257, full sequence strategy, continuous-cloth clarification, new interfaces, one-off leader scope, changed-use limits and early proof requirements."
+    },
+    "support320": {
+      "path": "docs/knowledge/SUPPORTING_SHOT_REVIEW_320.md",
+      "records": [
+        "construction_interfaces",
+        "crowd_support",
+        "animal_coordination",
+        "look"
+      ],
+      "reason": "Director320 supporting-shot quality and continuous rider-attention requirements, plus internal support/layer failures. Methods remain scoped; direct AV and artistic acceptance remain human-pending."
     }
   },
   "operations": {
@@ -407,17 +419,19 @@
         "crowd_support",
         "sikh_scope",
         "sikh_motion",
-        "motion"
+        "motion",
+        "look"
       ],
-      "version": "257-unqualified-development-not-Pashtun"
+      "version": "320-shot-tier-quality-unqualified-development"
     },
     "nihang_leader": {
       "tags": [
         "sikh_scope",
         "sikh_motion",
-        "motion"
+        "motion",
+        "look"
       ],
-      "version": "257-unqualified-development-not-Pashtun"
+      "version": "320-shot-tier-quality-unqualified-development"
     },
     "nihang_horse": {
       "tags": [
@@ -426,9 +440,10 @@
         "sikh_motion",
         "motion",
         "contact",
-        "secondary"
+        "secondary",
+        "look"
       ],
-      "version": "257-unqualified-development-not-Pashtun"
+      "version": "320-shot-tier-quality-unqualified-development"
     },
     "punjab_night": {
       "tags": [
@@ -608,10 +623,19 @@
       "id": "construction_interfaces",
       "status": "supported",
       "kind": "lesson",
-      "tags": ["modeling", "anatomy", "cloth", "contact", "crowd_support"],
-      "sources": ["construction319"],
+      "tags": [
+        "modeling",
+        "anatomy",
+        "cloth",
+        "contact",
+        "crowd_support"
+      ],
+      "sources": [
+        "construction319",
+        "support320"
+      ],
       "check_kind": "review",
-      "action": "319: bind semantic front/up, head-versus-torso ownership and visible prop/cuff frames before adaptation. Freeze coordinates/normals before surface mutation; prove one complete actor/pose before variants. Test the fastest dependent motion at every rendered frame where needed: four-frame sleeve sampling missed a109.5mm spear-plant cuff gap. Preserve working whole forms during local fixes; pointwise hair projection can jump between surfaces. Keep actual per-version recipes, reconcile file-level rights, and measure identical-frame render profiles. Numeric contact, source hashes and strand counts do not establish visible grip, same-film coherence or full-speed AV acceptance."
+      "action": "319: bind semantic front/up, head-versus-torso ownership and visible prop/cuff frames before adaptation. Freeze coordinates/normals before surface mutation; prove one complete actor/pose before variants. Test the fastest dependent motion at every rendered frame where needed: four-frame sleeve sampling missed a109.5mm spear-plant cuff gap. Preserve working whole forms during local fixes; pointwise hair projection can jump between surfaces. Keep actual per-version recipes, reconcile file-level rights, and measure identical-frame render profiles. Numeric contact, source hashes and strand counts do not establish visible grip, same-film coherence or full-speed AV acceptance. 320: select the intended garment exterior, not an ambiguous nearest side. Calibrate limb lengths to rest anatomy, solve both feet against one pelvis, and respect nonuniform transforms. Inspect clothed partial poses before propagation."
     },
     {
       "id": "reuse_envelope",
@@ -650,10 +674,11 @@
         "animal_coordination"
       ],
       "sources": [
-        "reuse317"
+        "reuse317",
+        "support320"
       ],
       "check_kind": "review",
-      "action": "D316-02-04: compare elapsed reference phases, joint/hoof axes, support/weight transfer, brief active apex, head/neck and rider/spear/reins through landing. More keyed joints are not naturalness. Distinguish coat from clay/metal under matched lighting; preserve eyes/muzzle/hooves and bind short nap to actual deformation. Keep direct motion judgment pending under313; source/timed frames do not certify continuous performance. Trace constraints through the actual visible hoof endpoint and test grounded/airborne ownership transfer; keyed evaluated quaternion controls, not temporary property edits, are valid diagnostics."
+      "action": "D316-02-04: compare elapsed reference phases, joint/hoof axes, support/weight transfer, brief active apex, head/neck and rider/spear/reins through landing. More keyed joints are not naturalness. Distinguish coat from clay/metal under matched lighting; preserve eyes/muzzle/hooves and bind short nap to actual deformation. Keep direct motion judgment pending under313; source/timed frames do not certify continuous performance. Trace constraints through the actual visible hoof endpoint and test grounded/airborne ownership transfer; keyed evaluated quaternion controls, not temporary property edits, are valid diagnostics. 320: trace the complete saddle/pelvis/thigh/knee/ankle/stirrup chain; animated torso/root can conceal static legs. Keep descent momentum into contact before absorption, and judge actual full-speed fluidity separately."
     },
     {
       "id": "crowd_support",
@@ -663,10 +688,11 @@
         "crowd_support"
       ],
       "sources": [
-        "reuse317"
+        "reuse317",
+        "support320"
       ],
       "check_kind": "review",
-      "action": "D316-06: purposeful anticipation, weight transfer, staggered non-crossing steps and world-planted support, with torso/gaze and connected costume/props. Rebuild visible clothing when joints change. Verify near/far actors and corridor clearance. Random sway or upright root translation is not life; donor motion requires actual skeleton/contact compatibility. Keep bake sources evaluated but render-hidden; bind full timeline explicitly and measure actual evaluated garment-to-boot/hand interfaces. Reachable targets can still create split-like strides; inspect clothed support and natural step width separately."
+      "action": "D316-06: purposeful anticipation, weight transfer, staggered non-crossing steps and world-planted support, with torso/gaze and connected costume/props. Rebuild visible clothing when joints change. Verify near/far actors and corridor clearance. Random sway or upright root translation is not life; donor motion requires actual skeleton/contact compatibility. Keep bake sources evaluated but render-hidden; bind full timeline explicitly and measure actual evaluated garment-to-boot/hand interfaces. Reachable targets can still create split-like strides; inspect clothed support and natural step width separately. 320: this crowd keeps watching the rider while making room. Couple gaze, torso opening, supported feet and final stance; a head-only correction can exceed neck range. Test all actors and visible attention, not just staggered timing or target angles."
     },
     {
       "id": "drainage_use",
@@ -898,10 +924,11 @@
       ],
       "sources": [
         "index",
-        "render"
+        "render",
+        "support320"
       ],
       "check_kind": "review",
-      "action": "Preserve illustrated-C richness through form, designed marks, palette/selective darks and physical interaction, not simply flattened shading. Judge moving foreground against painted distance and phone-size hierarchy. Render acceleration cannot trade away selected style or dust/hair readability."
+      "action": "Preserve illustrated-C richness through form, designed marks, palette/selective darks and physical interaction, not simply flattened shading. Judge moving foreground against painted distance and phone-size hierarchy. Render acceleration cannot trade away selected style or dust/hair readability. 320: supporting status saves unseen-detail work, not visible quality. Compare leader and near crowd cloth/accessories/anatomy with accepted co-star footage, not distant guards or an unfinished principal proxy."
     },
     {
       "id": "geography",
@@ -1118,7 +1145,7 @@
         "current255"
       ],
       "check_kind": "process",
-      "action": "Read CURRENT_PRODUCTION_STATE.md:253 exact Pashtun20s provisional acceptance stays protected; strict replay FAIL and final release/rights remain separate. Protection/calibration255 complete. Director256-257 authorizes Sikh-only sequence development, continuous turban/cover, personal recognition and nonrecurring leader; action before music. Director260 accepts illustrated portrait v03; read SERIES_01_SIKH_BASELINE_V01.md before Sikh identity/cloth work. Broad natural beard and rugged face govern; rejected v01/v02 do not. No literal pixel matching, native acceptance or incidental background/cloth-topology approval. Native257 remains BLOCK. Unknown domains still block; no paid calls/publication by inference."
+      "action": "Read CURRENT_PRODUCTION_STATE.md:253 exact Pashtun20s provisional acceptance stays protected; strict replay FAIL and final release/rights remain separate. Protection/calibration255 complete. Director256-257 authorizes Sikh-only sequence development, continuous turban/cover, personal recognition and nonrecurring leader; action before music. Director260 accepts illustrated portrait v03; read SERIES_01_SIKH_BASELINE_V01.md before Sikh identity/cloth work. Broad natural beard and rugged face govern; rejected v01/v02 do not. No literal pixel matching, native acceptance or incidental background/cloth-topology approval. Native257 remains BLOCK. Unknown domains still block; no paid calls/publication by inference. Director320 narrows current correction to the contiguous Nihang/rear and crowd passage with one-second handles.319 supporting performance/look is rejected; crowd attention remains on the rider. Director313 is the direct AV judge; source/frame checks cannot confer playback or production acceptance."
     },
     {
       "id": "au_reference",

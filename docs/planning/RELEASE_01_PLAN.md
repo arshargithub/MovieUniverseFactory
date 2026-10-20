@@ -4,6 +4,30 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+### Exchange320 — isolated leader/rearing and attentive crowd
+
+Director rejects319 supporting-character appearance and acting; that candidate
+is not a completed artistic pass. Work is narrowed to the Nihang/rearing and
+crowd shots with one second before and after (frames252–441,24fps). Do not render
+the complete sequence for each correction. Supporting actors inherit the same
+visible realism standard as the Pashtun, without hero-closeup investment in
+unseen detail. The leader needs coordinated saddle/legs/torso/head/arms/props;
+the horse needs continuous gather/lift and a forceful descent before absorption.
+The crowd makes room individually **while continuing to watch the rider**, not
+turning away and walking off. [Strategy](../../results/sikh320/STRATEGY.md) and
+[internal record](../../results/sikh320/REVIEW.md) bind the correction scope.
+
+Current stage: candidate10 complete at7.9167s with handles; awaiting scoped
+Director AV review, not production acceptance. All190 source frames and17 encoded
+controls inspected; six fresh-open controls meet maximum1/255. Learning routing
+extended to15 sources/49 records, with66 selected tests passing. Main Sikh proxy,
+motorcycle, scenery, cameras/music and accepted
+Pashtun remain protected. S3 request cancelled; no new upload, provider, spend
+or installation. Director313 remains the direct audiovisual judge, with source,
+still/consecutive-frame and technical failure checks owned by the agent. After
+this scoped review passes, reintegrate the corrected passage and verify boundary
+and continued actor states before returning to principal Sikh construction.
+
 ### Exchange319 — supporting cast integration
 
 Director authorizes318's recommended supporting-cast package. Build the

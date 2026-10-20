@@ -4,6 +4,14 @@ Use this pilot before covered production work and before its internal handoff. I
 
 ## What is authoritative
 
+**320 extension:** [supporting-shot quality and attention](../SUPPORTING_SHOT_REVIEW_320.md)
+adds one reviewed source and extends four existing actions, plus current authority
+(15 sources/49 records). Thirteen prior sources remain unchanged; current-state
+text explicitly records320's isolated scope and319 rejection. Crowd work routes
+continuous rider attention, coupled body/feet support and shot-tier appearance;
+unrelated music work excludes these construction rules. New cases are finite
+agent-authored regressions, not independent recall or audiovisual qualification.
+
 **319 extension:** [construction interfaces](../CONSTRUCTION_INTERFACES_319.md)
 adds one supported, source-backed action (14 sources/49 records). All thirteen
 prior source snapshots remain unchanged. It routes semantic orientation,
