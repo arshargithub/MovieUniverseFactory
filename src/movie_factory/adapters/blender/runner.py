@@ -14,8 +14,10 @@ import subprocess
 import time
 
 
-def run_blender(job: dict, *, blender_bin: str, timeout: float = 300) -> dict:
+def run_blender(job: dict, *, blender_bin: str, timeout: float = 300, _admission=None) -> dict:
     """Run one immutable input job, retaining diagnostics even on failure."""
+    from movie_factory.native_admission import check_capability
+    check_capability(_admission, job)
     output = Path(job["output_dir"])
     if not output.is_absolute():
         raise ValueError("output_dir must be an absolute path")

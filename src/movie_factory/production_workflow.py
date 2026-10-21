@@ -23,7 +23,7 @@ class Blocked(ValueError):
     pass
 
 
-ROUTES = {'production', 'show', 'research', 'plan', 'operations'}
+ROUTES = {'production', 'show', 'research', 'plan', 'operations', 'engineering'}
 ROLES = {'faithful_motion', 'directional_design', 'accepted_quality',
          'exact_asset', 'negative_control', 'source_evidence'}
 STAGES = {'BRIEFING': 'planner', 'EXECUTING': 'builder', 'REVIEWING': 'reviewer',
@@ -65,7 +65,7 @@ def validate_brief(root, brief, route, mode='offline'):
     for field in ('intent', 'audience_result', 'strategy', 'early_proof', 'scope', 'exclusions'):
         require(nonempty(brief.get(field)), 'MISSING_BRIEF:' + field)
     require(brief.get('open_decisions') == [], 'DIRECTOR_DECISION_REQUIRED')
-    require(mode in {'offline', 'frozen_evidence'}, 'LIVE_DRIVER_NOT_QUALIFIED')
+    require(mode in {'offline', 'frozen_evidence', 'local_native'}, 'LIVE_DRIVER_NOT_QUALIFIED')
     require(brief.get('offline_only') is (mode == 'offline'), 'WORKFLOW_MODE_MISMATCH')
     if mode == 'frozen_evidence':
         require(brief.get('frozen_evidence_only') is True, 'FROZEN_EVIDENCE_REQUIRED')
@@ -218,7 +218,44 @@ class Controller:
                     job_id TEXT PRIMARY KEY, task TEXT, status TEXT NOT NULL);
                 CREATE TABLE IF NOT EXISTS deliverables (
                     deliverable_id TEXT PRIMARY KEY, task TEXT UNIQUE NOT NULL);
+                CREATE TABLE IF NOT EXISTS routing (
+                    id TEXT PRIMARY KEY, utc TEXT NOT NULL, decision TEXT NOT NULL);
+                CREATE TRIGGER IF NOT EXISTS routing_no_update BEFORE UPDATE ON routing
+                    BEGIN SELECT RAISE(ABORT, 'immutable routing'); END;
+                CREATE TRIGGER IF NOT EXISTS routing_no_delete BEFORE DELETE ON routing
+                    BEGIN SELECT RAISE(ABORT, 'immutable routing'); END;
             ''')
+
+    def route_request(self, request_id, request, continuation=None):
+        from . import task_router as tr
+        require(nonempty(request_id), 'REQUEST_ID_REQUIRED')
+        rc.binding(self.root, request['authority'])
+        with self.transaction() as con:
+            parent = None
+            if continuation:
+                state = self._state(con, continuation)
+                require(state.get('routing'), 'LEGACY_ROUTE_REQUIRES_MIGRATION')
+                self._fresh(state)
+                parent = state['routing']
+                require(request.get('continuation') is True, 'CONTINUATION_DECLARATION_REQUIRED')
+            decision = tr.decide(request, parent)
+            decision.update(id=request_id, continuation_task=continuation)
+            old = con.execute('SELECT decision FROM routing WHERE id=?', (request_id,)).fetchone()
+            if old:
+                require(json.loads(old[0]) == decision, 'REQUEST_ID_CONFLICT')
+            else:
+                con.execute('INSERT INTO routing VALUES(?,?,?)',
+                            (request_id, datetime.now(timezone.utc).isoformat(), json.dumps(decision, sort_keys=True)))
+        return decision
+
+    def routing(self, request_id):
+        from . import task_router as tr
+        with closing(self.connect()) as con:
+            row = con.execute('SELECT decision FROM routing WHERE id=?', (request_id,)).fetchone()
+        require(row is not None, 'ROUTE_FIRST_REQUIRED')
+        value = json.loads(row[0])
+        tr.validate(self.root, value)
+        return value
 
     def connect(self):
         con = sqlite3.connect(self.database, timeout=10)
@@ -295,12 +332,29 @@ class Controller:
         state['ticket'] = secrets.token_hex(24) if stage in STAGES else None
         return state
 
-    def create(self, task, route, authority, event_id, max_corrections=2, direction=None, mode='offline'):
+    def create(self, task, route, authority, event_id, max_corrections=2, direction=None, mode='offline', admission=None):
+        from . import task_router as tr
         require(route in ROUTES and type(max_corrections) is int and 0 <= max_corrections <= 20,
                 'INVALID_ROUTE_OR_LIMIT')
-        require(mode in {'offline', 'frozen_evidence'} and (mode == 'offline' or route == 'production'),
+        require(mode in {'offline', 'frozen_evidence', 'local_native'} and (mode == 'offline' or route == 'production'),
                 'LIVE_DRIVER_NOT_QUALIFIED')
         rc.binding(self.root, authority)
+        if admission is None:
+            require(mode != 'local_native', 'ROUTE_FIRST_REQUIRED')
+            # Historical offline fixtures remain reproducible, but now enter
+            # routing first. This is not a prospectively classified live request.
+            op = {'production': 'render', 'show': 'display', 'research': 'research',
+                  'plan': 'plan', 'operations': 'backup', 'engineering': 'code'}[route]
+            admission = 'legacy-simulation:' + event_id
+            self.route_request(admission, {'text': (direction or {}).get('intent', 'Legacy ' + route),
+                'operations': [op], 'authority': authority,
+                'rationale': 'Offline/frozen compatibility record; not native authorization.'})
+        routed = self.routing(admission)
+        require(routed['route'] == route, 'REQUEST_ROUTE_MISMATCH')
+        require(routed['request']['authority'] == authority, 'REQUEST_AUTHORITY_MISMATCH')
+        require(routed.get('continuation_task') is None, 'CONTINUE_EXISTING_TASK_NO_NEW_LIMIT')
+        if mode == 'local_native':
+            require(self.database == self.root / tr.DATABASE, 'NATIVE_CANONICAL_CONTROLLER_REQUIRED')
         if route == 'production':
             from . import planning_pipeline as pp
             require(isinstance(direction, dict) and nonempty(direction.get('intent'))
@@ -323,15 +377,18 @@ class Controller:
             return self._stage({'task': task, 'route': route, 'cycle': 0,
                                 'max_corrections': max_corrections, 'authority': authority,
                                 'direction': direction,
+                                'routing': routed,
                                 'planning_step': 'GROUNDING' if route == 'production' else None,
                                 'planning_artifacts': {}, 'planning_version': 1,
                                 'planning_engine': pp.engine_digest() if route == 'production' else None,
                                 'mode': mode, 'offline_only': mode == 'offline',
                                 'frozen_evidence_only': mode == 'frozen_evidence', 'production_approved': False},
                                'BRIEFING' if route == 'production' else 'LIGHTWEIGHT')
-        return self._change(task, event_id, 'create', [route, authority, max_corrections, direction, mode], apply)
+        return self._change(task, event_id, 'create', [route, authority, max_corrections, direction, mode, admission], apply)
 
     def _fresh(self, state):
+        if state.get('routing'):
+            require(self.routing(state['routing']['id']) == state['routing'], 'ROUTE_CHANGED')
         rc.binding(self.root, state['authority'])
         if state.get('revision_authority'):
             rc.binding(self.root, state['revision_authority'])
@@ -412,6 +469,9 @@ class Controller:
                 candidate = result['candidate']
                 require(nonempty(candidate.get('version')), 'CANDIDATE_VERSION')
                 bindings(self.root, candidate['artifacts'])
+                if state.get('mode') == 'local_native':
+                    from .native_admission import validate_candidate
+                    validate_candidate(self, state, result)
                 state['candidate'] = candidate
                 state['builder_record'] = result
                 state['evidence_cycles'] = 0

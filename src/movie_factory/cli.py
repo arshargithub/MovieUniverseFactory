@@ -598,7 +598,14 @@ def parser() -> argparse.ArgumentParser:
 
 def main(argv=None):
     args=parser().parse_args(argv)
-    try: return args.func(args)
+    try:
+        # Historical experiment commands predate request admission. Do not let a
+        # command reach provider/settings/native side effects before routing.
+        # Keep --help available for inventory; migrate individual handlers, not
+        # a blanket bypass switch. Direct Python imports are not an OS sandbox.
+        raise ValueError('ROUTE_FIRST: legacy mf3d dispatch is quarantined. Use '
+                         'movie_factory.task_router and an admitted registered handler; '
+                         'no historical experiment is reopened by this command.')
     except Exception as exc:
         print(f"mf3d: {type(exc).__name__}: {exc}",file=sys.stderr); return 2
 
