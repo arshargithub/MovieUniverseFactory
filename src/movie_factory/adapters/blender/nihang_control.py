@@ -16,7 +16,9 @@ LEGACY_DRIVER_DEFECT = '054bf94aeb90448916005e7c0e8c5dbe163e7fbbea52cde230adf8c3
 
 def validate(recipe):
     fields={'operation', 'frame', 'width', 'height', 'samples'}
-    if isinstance(recipe,dict) and recipe.get('operation')=='nihang_frames':fields.add('frames')
+    if isinstance(recipe,dict) and recipe.get('operation')=='nihang_frames':
+        fields.add('frames')
+        if 'view' in recipe:fields.add('view')
     if not isinstance(recipe, dict) or set(recipe) != fields:
         raise ValueError('NIHANG_RECIPE_FIELDS')
     if recipe['operation'] not in {'nihang_save', 'nihang_render', 'nihang_rig_inspect','nihang_cast_inspect','nihang_frames'}:
@@ -25,12 +27,34 @@ def validate(recipe):
         if type(recipe[key]) is not int or not lo <= recipe[key] <= hi:
             raise ValueError('NIHANG_RECIPE_BOUND:' + key)
     if recipe['operation']=='nihang_frames':
+        if not isinstance(recipe.get('view','production'),str) or recipe.get('view','production') not in {'production','leader_front','leader_reverse','crowd_front'}:
+            raise ValueError('NIHANG_DIAGNOSTIC_VIEW')
         frames=recipe['frames']
         if (not isinstance(frames,list) or not 1<=len(frames)<=16 or
                 any(type(f) is not int or not 252<=f<=441 for f in frames) or
                 len(set(frames))!=len(frames) or recipe['frame'] not in frames):
             raise ValueError('NIHANG_FRAME_SET')
     return recipe
+
+
+def diagnostic_camera(bpy,view):
+    """Temporary evidence camera only. No production-camera key edits or save."""
+    from mathutils import Vector
+    leader=view.startswith('leader_')
+    root=bpy.data.objects['mounted leader' if leader else 'FOOT WARRIOR 0']
+    upper=next(o for o in root.children if o.name.startswith('320 articulated upper body'))
+    head=next(o for o in upper.children if o.name.startswith('secondary adult head'))
+    target=head.matrix_world.translation+Vector((0,0,-.22 if leader else -.35))
+    facing=-1 if leader else 1
+    if view=='leader_reverse':facing=1
+    offset=root.matrix_world.to_quaternion()@Vector((.6,facing*1.9,.12))
+    data=bpy.data.cameras.new('MF diagnostic camera temporary')
+    camera=bpy.data.objects.new('MF diagnostic camera temporary',data)
+    bpy.context.scene.collection.objects.link(camera)
+    camera.location=target+offset
+    camera.rotation_euler=(target-camera.location).to_track_quat('-Z','Y').to_euler()
+    data.lens=55
+    return camera
 
 
 def cast_inventory(bpy):
@@ -278,6 +302,9 @@ def run(out, job):
         scene.cycles.device = 'CPU'
         scene.cycles.samples = recipe['samples']
         scene.cycles.seed = 333
+        # Reuse static render data within this serial chunk. This is not a new
+        # render style; repeated327 image controls must still match exactly.
+        scene.render.use_persistent_data = True
         scene.render.resolution_x = recipe['width']
         scene.render.resolution_y = recipe['height']
         scene.render.resolution_percentage = 100
@@ -285,10 +312,20 @@ def run(out, job):
         frames=recipe.get('frames',[recipe['frame']]);manifest=[]
         for frame in frames:
             scene.frame_set(frame);bpy.context.view_layer.update()
+            view=recipe.get('view','production');original_camera=scene.camera
+            temp=diagnostic_camera(bpy,view) if view!='production' else None
+            if temp:scene.camera=temp
+            bpy.context.view_layer.update()
             filename='frame.png' if frame==recipe['frame'] else f'frame-{frame:04d}.png'
             scene.render.filepath = str(out / filename)
-            bpy.ops.render.render(write_still=True)
-            manifest.append({'frame':frame,'file':filename,'sha256':digest_file(out/filename)})
+            camera_matrix=[[float(v) for v in row] for row in scene.camera.matrix_world]
+            try:bpy.ops.render.render(write_still=True)
+            finally:
+                scene.camera=original_camera
+                if temp:
+                    data=temp.data;bpy.data.objects.remove(temp,do_unlink=True);bpy.data.cameras.remove(data)
+            manifest.append({'frame':frame,'file':filename,'sha256':digest_file(out/filename),
+                             'view':view,'camera_matrix':camera_matrix})
         if recipe['operation']=='nihang_frames':
             (out/'frames.json').write_text(json.dumps(manifest,indent=2)+'\n')
             artifacts.append('frames.json')

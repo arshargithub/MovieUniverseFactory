@@ -6,8 +6,23 @@ Preserve animated owners and every garment cache. Prove two actors before spread
 import math
 
 
-def mesh(bpy,name,points,faces,material,parent):
+def drape_module():
+    # Worker imports handlers by fixed file location, without a package context.
+    import importlib.util
+    from pathlib import Path
+    spec=importlib.util.spec_from_file_location('mf_nihang_drape',Path(__file__).with_name('nihang_drape.py'))
+    module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+    return module
+
+
+def mesh(bpy,name,points,faces,material,parent,weld=False):
     data=bpy.data.meshes.new(name);data.from_pydata(points,[],faces);data.update()
+    if weld:
+        import bmesh
+        bm=bmesh.new();bm.from_mesh(data)
+        bmesh.ops.remove_doubles(bm,verts=list(bm.verts),dist=.000001)
+        bmesh.ops.recalc_face_normals(bm,faces=list(bm.faces))
+        bm.to_mesh(data);bm.free();data.update()
     for p in data.polygons:p.use_smooth=True
     obj=bpy.data.objects.new(name,data);bpy.context.scene.collection.objects.link(obj)
     obj.parent=parent;data.materials.append(material)
@@ -18,6 +33,29 @@ def grid(rows,cols):
     return [(j*cols+k,j*cols+k+1,(j+1)*cols+k+1,(j+1)*cols+k) for j in range(rows-1) for k in range(cols-1)]
 
 
+def garment_envelope(u):
+    """Nonnegative waist-to-shoulder support, including float32 endpoints."""
+    import numpy as np
+    values=np.asarray(u)
+    if not np.isfinite(values).all():raise ValueError('ENVELOPE_NONFINITE')
+    clipped=np.clip(values,0,1)
+    wave=np.maximum(0,np.sin(math.pi*clipped))
+    return np.where((clipped>0)&(clipped<1),wave**.7,0)
+
+
+def crown_point(angle,z,height,width,offset=0):
+    """Rounded supported crown; distinct cloth courses provide the layering."""
+    u=max(0,min(1,(z-.042)/height))
+    knots=((0,1),(.18,1.11),(.43,1.02),(.67,.87),(.87,.60),(1,.09))
+    j=next((i for i in range(len(knots)-1) if u<=knots[i+1][0]),len(knots)-2)
+    a,ra=knots[j];b,rb=knots[j+1];t=(u-a)/(b-a);t=t*t*(3-2*t)
+    radius=width*(ra+(rb-ra)*t)
+    radius*=1+.023*math.sin(angle*3+.7+u*4)+.018*math.cos(angle*5-u*3)
+    radius+=offset
+    return (radius*math.sin(angle)+.009*u*u,
+            .012-radius*(1.12-.12*u)*math.cos(angle)+.008*u*u,z)
+
+
 def wrapped_crown(bpy,frame,material,leader):
     """Tapered supported crown and one continuous oblique cloth winding.
 
@@ -26,31 +64,38 @@ def wrapped_crown(bpy,frame,material,leader):
     for obj in frame.children:
         if obj.name.startswith(('319 supported dumalla','319 overlapping tied cloth','319 restrained chakram')):
             obj.hide_render=True;obj.hide_viewport=True
-    height=.275 if leader else .225
+    height=.270 if leader else .220
     width=.114 if leader else .108
     def point(angle,z,offset=0):
-        u=max(0,min(1,(z-.045)/height))
-        # Full wrapped lower bowl; narrower raised crown rather than a cap.
-        radius=width*(1+.13*math.sin(math.pi*min(1,u/.55)))*(1-.78*u**2.2)
-        radius+=offset
-        return (radius*math.sin(angle),.012-radius*1.1*math.cos(angle),z)
+        return crown_point(angle,z,height,width,offset)
     points=[];rows=41;cols=97
     for j in range(rows):
         z=.045+height*j/(rows-1)
         for k in range(cols):points.append(point(math.tau*k/(cols-1),z))
     faces=grid(rows,cols);faces.append(tuple(range((rows-1)*cols,rows*cols)))
-    core=mesh(bpy,'MF Nihang wrapped crown core',points,faces,material,frame)
-    turns=7 if leader else 6;rows=turns*96+1;cols=11;points=[]
-    for j in range(rows):
-        progress=j/(rows-1);angle=math.tau*turns*progress
-        center=.059+(height-.030)*progress+.038*math.sin(angle+.3)*(1-.45*progress)
-        for k in range(cols):
-            u=k/(cols-1)
-            z=center+.049*(u-.5)
-            ridge=.0045*math.sin(math.pi*u)+.0018*math.sin(u*math.pi*3+.4*math.sin(angle*2))
-            points.append(point(angle,z,.0025+ridge))
-    wrap=mesh(bpy,'MF Nihang continuous oblique cloth winding',points,grid(rows,cols),material,frame)
-    solid=wrap.modifiers.new('Folded fabric thickness','SOLIDIFY');solid.thickness=.0015
+    core=mesh(bpy,'MF Nihang wrapped crown core',points,faces,material,frame,weld=True)
+    cloth=[]
+    # Overlapping broad courses, not a constant-pitch spiral. Each course has a
+    # different crossing angle and local compression where another layer holds it.
+    courses=((.075,.040,.2,.066),(.107,-.031,-.5,.070),
+             (.143,.037,.8,.067),(.181,.029,1.7,.071),
+             (.220,-.023,.1,.060),(.253,.017,1.2,.048))
+    for index,(center,slant,phase,bandwidth) in enumerate(courses):
+        rows=129;cols=17;points=[];scale=height/.270
+        for j in range(rows):
+            angle=math.tau*j/(rows-1)
+            pinch=.55+.45*abs(math.sin(angle+phase))
+            middle=.042+(center-.042)*scale+slant*scale*math.sin(angle+phase)
+            for k in range(cols):
+                u=k/(cols-1)
+                z=middle+bandwidth*scale*(u-.5)*pinch
+                broad=.0028*math.sin(math.pi*u)
+                crease=.0015*math.sin(3*math.pi*u+.5*math.sin(angle*2+index))
+                edge=.0007*math.exp(-((u-.94)/.08)**2)
+                points.append(point(angle,z,.0015+index*.00045+broad+crease+edge))
+        wrap=mesh(bpy,'MF Nihang overlapped cloth course',points,grid(rows,cols),material,frame,weld=True)
+        solid=wrap.modifiers.new('Thin folded cloth edge','SOLIDIFY');solid.thickness=.0012
+        cloth.append(wrap.name)
     # Deliberate compressed cloth pleats near the raised top, not a smooth lid.
     points=[];rows=17;cols=65
     for j in range(rows):
@@ -60,8 +105,8 @@ def wrapped_crown(bpy,frame,material,leader):
             p=point(a,z,.0015*(1-u)*math.cos(a*9))
             shrink=1-.80*u
             points.append((p[0]*shrink,.012+(p[1]-.012)*shrink,z))
-    top=mesh(bpy,'MF Nihang gathered crown cloth',points,grid(rows,cols),material,frame)
-    return [core.name,wrap.name,top.name]
+    top=mesh(bpy,'MF Nihang gathered crown cloth',points,grid(rows,cols),material,frame,weld=True)
+    return [core.name,*cloth,top.name]
 
 
 def garment_form(bpy,root,leader):
@@ -74,21 +119,15 @@ def garment_form(bpy,root,leader):
     # untouched on disk and no motion owner is renamed or reparented.
     shirt.data=shirt.data.copy();shirt['mf_supporting_appearance']=True
     blocks=[k.data for k in shirt.data.shape_keys.key_blocks] if shirt.data.shape_keys else [shirt.data.vertices]
-    z0=.055 if leader else .885;zt=.455 if leader else 1.285
-    for block in blocks:
-        pts=np.empty(len(block)*3,dtype=np.float32);block.foreach_get('co',pts);pts=pts.reshape(-1,3)
-        x=pts[:,0].copy();y=pts[:,1].copy();z=pts[:,2].copy()
-        u=np.clip((z-z0)/(zt-z0),0,1)
-        trunk=np.clip((.225-np.abs(x))/.065,0,1)*np.sin(math.pi*u)**.7
-        fold=np.zeros_like(x)
-        # Folds originate at the waist; oblique ridges spread toward shoulders.
-        for anchor,slope,width,amp in ((-.13,-.15,.012,.009),(-.065,-.10,.010,.008),(.035,.12,.014,.010),(.13,.18,.012,.008)):
-            d=x-(anchor+slope*(z-z0))
-            fold+=amp*np.exp(-(d/width)**2)-amp*.38*np.exp(-((d-width*1.8)/(width*1.3))**2)
-        pts[:,1]+=np.sign(y)*trunk*(.012+fold)
-        pts[:,0]+=np.sign(x)*trunk*.008
-        if not np.isfinite(pts).all():raise ValueError('LOOK_NONFINITE_GARMENT')
-        block.foreach_set('co',pts.ravel())
+    drape=drape_module().settle(bpy,shirt,leader)
+    for obj in upper.children:
+        if obj.name.startswith('319 overlapping chola chest panel'):
+            # Continuous shirt exists underneath; retain the separate narrow placket.
+            obj.hide_render=True;obj.hide_viewport=True
+        if obj.name.startswith('319 bound chola neckline'):
+            obj.data=obj.data.copy()
+            base=min(v.co.z for v in obj.data.vertices)
+            for v in obj.data.vertices:v.co.z=base+(v.co.z-base)*.28
     # Refit only actual existing outside-facing layers to this changed torso.
     bpy.context.view_layer.update()
     evaluated=shirt.evaluated_get(bpy.context.evaluated_depsgraph_get())
@@ -105,7 +144,47 @@ def garment_form(bpy,root,leader):
                 p.co.y=hit.y+facing*(.013 if obj.name.startswith('297 woven') else .004);hits+=1
         if obj.name.startswith('297 woven') and hits<.95*len(points):raise ValueError('LOOK_INCOMPLETE_SASH_FIT')
         layers.append({'object':obj.name,'hits':hits,'points':len(points)})
-    return {'shirt':shirt.name,'vertices':len(shirt.data.vertices),'cached_poses':len(blocks),'layers':layers}
+    return {'shirt':shirt.name,'vertices':len(shirt.data.vertices),'cached_poses':len(blocks),'layers':layers,'drape':drape}
+
+
+def beard_volume(frame):
+    """Broaden hanging masses without shifting skin-rooted upper hairs."""
+    changed=[]
+    for obj in frame.children:
+        if not obj.name.startswith('319 tapered beard fibers') or obj.type!='CURVE':continue
+        obj.data=obj.data.copy()
+        blocks=([key.data for key in obj.data.shape_keys.key_blocks] if obj.data.shape_keys
+                else [spline.points for spline in obj.data.splines])
+        for block in blocks:
+            for point in block:
+                x,y,z=point.co[:3]
+                u=max(0,min(1,(-z-.075)/.14))
+                weight=u*u*(3-2*u)
+                point.co.x=x*(1+.24*weight)
+                point.co.y=y+.018*weight
+        changed.append(obj.name)
+    return changed
+
+
+def horse_finish(bpy):
+    """Preserve dark authored UV coat; separate short coat from polished tack."""
+    body=bpy.data.objects['horse'];mat=body.data.materials[0].copy()
+    mat.name='MF Nihang dark short coat'
+    nodes=mat.node_tree.nodes;links=mat.node_tree.links
+    bs=nodes.get('Principled BSDF')
+    for link in list(bs.inputs['Roughness'].links):links.remove(link)
+    bs.inputs['Roughness'].default_value=.73
+    bs.inputs['Specular IOR Level'].default_value=.18
+    bs.inputs['Sheen Weight'].default_value=.23
+    for node in nodes:
+        if node.bl_idname=='ShaderNodeValToRGB':
+            node.color_ramp.elements[0].color=(.027,.014,.009,1)
+            node.color_ramp.elements[-1].color=(.125,.063,.034,1)
+        if node.bl_idname=='ShaderNodeBump':
+            node.inputs['Strength'].default_value=.19
+            node.inputs['Distance'].default_value=.00035
+    body.data.materials[0]=mat
+    return {'material':mat.name,'scope':'Existing dark UV source and rig retained; no shape, light or motion change.'}
 
 
 def saddle_pad(bpy):
@@ -160,6 +239,7 @@ def run(bpy):
         core=next(o for o in frame.children if o.name.startswith('319 supported dumalla'))
         material=core.data.materials[0]
         report.append({'actor':root.name,'crown':wrapped_crown(bpy,frame,material,leader),
-                       'garment':garment_form(bpy,root,leader)})
+                       'garment':garment_form(bpy,root,leader),'beard':beard_volume(frame)})
     pad=saddle_pad(bpy)
-    return {'actors':report,'saddle':pad,'scope':'Initial structure-first supporting appearance candidate; no motion or appearance acceptance. Existing head/beard and horse surface unchanged for now.'}
+    coat=horse_finish(bpy)
+    return {'actors':report,'saddle':pad,'coat':coat,'scope':'Two-actor cloth and beard-volume proof plus existing dark horse coat treatment; no motion or appearance acceptance.'}

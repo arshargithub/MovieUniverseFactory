@@ -7,6 +7,7 @@ An in-process capability is accidental-bypass protection, not an OS sandbox.
 from contextlib import closing
 from pathlib import Path
 import json
+import math
 import re
 from . import production_knowledge as pk
 from . import review_control as rc
@@ -197,6 +198,13 @@ class Bridge:
                         require(isinstance(manifest,list) and [r.get('frame') for r in manifest]==recipe_data['frames'],
                                 'NATIVE_FRAME_MANIFEST')
                         for row in manifest:
+                            if 'view' in recipe_data:
+                                require(row.get('view')==recipe_data['view'], 'NATIVE_DIAGNOSTIC_VIEW')
+                                matrix=row.get('camera_matrix')
+                                require(isinstance(matrix,list) and len(matrix)==4 and
+                                        all(isinstance(r,list) and len(r)==4 and
+                                            all(type(v) in (int,float) and math.isfinite(v) for v in r)
+                                            for r in matrix), 'NATIVE_DIAGNOSTIC_CAMERA')
                             expected='frame.png' if row['frame']==recipe_data['frame'] else f"frame-{row['frame']:04d}.png"
                             require(row.get('file')==expected,'NATIVE_FRAME_NAME')
                             image=output/expected

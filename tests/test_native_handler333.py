@@ -23,7 +23,7 @@ def test_recipe_rejects_unbounded_or_edit_inputs(bad):
     with pytest.raises(ValueError): validate(bad)
 
 
-def prepare(setup, monkeypatch, *, render_route=True, authoring=False, edit_route=True, inspection=False,frame_set=False):
+def prepare(setup, monkeypatch, *, render_route=True, authoring=False, edit_route=True, inspection=False,frame_set=False,view=None):
     root, _, brief, _ = setup
     c = wf.Controller(root, tr.DATABASE)
     (root / 'parent.blend').write_bytes(b'SYNTHETIC BLEND')
@@ -31,6 +31,7 @@ def prepare(setup, monkeypatch, *, render_route=True, authoring=False, edit_rout
     for name, op in [('save.json', 'nihang_save'), ('render.json', 'nihang_render')]:
         value = recipe(op)
         if frame_set and op=='nihang_render':value.update(operation='nihang_frames',frames=[300,327,350])
+        if view is not None and frame_set and op=='nihang_render':value['view']=view
         if inspection and op == 'nihang_save': value['operation'] = 'nihang_rig_inspect'
         if authoring and op == 'nihang_save':
             value.update(operation='nihang_patch', edits=[{'kind':'bone_pose', 'target':'horse.rig',
@@ -71,6 +72,7 @@ def prepare(setup, monkeypatch, *, render_route=True, authoring=False, edit_rout
                     name='frame.png' if frame==job['recipe']['frame'] else f'frame-{frame:04d}.png'
                     Image.new('RGB',(64,64),(40,50,60)).save(out/name)
                     manifest.append({'frame':frame,'file':name,'sha256':file_hash(out/name)})
+                    if view is not None:manifest[-1].update(view=view,camera_matrix=[[int(i==j) for j in range(4)] for i in range(4)])
                 (out/'frames.json').write_text(json.dumps(manifest))
         return {'ok': True}
     monkeypatch.setattr(runner, 'run_blender', worker)
