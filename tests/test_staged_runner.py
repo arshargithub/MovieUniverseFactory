@@ -1,11 +1,13 @@
 """Offline runner controls; these fixtures are not a live runtime qualification."""
 import copy
 import json
+from pathlib import Path
 
 import pytest
 
 from movie_factory import production_workflow as wf
 from movie_factory import staged_runner as sr
+from movie_factory import stage_routing as routing
 from test_production_workflow import setup, bind, direction, review, make_brief
 
 
@@ -175,7 +177,8 @@ def test_scoped_knowledge_survives_stage_dispatch(setup):
     assert seen[0]['knowledge_context'] == context
 
 
-def test_protocol_fresh_thread_no_environment_and_structured_result():
+@pytest.mark.parametrize('selected', [routing.SOL, routing.ASTRA])
+def test_protocol_fresh_thread_no_environment_and_structured_result(selected):
     proto = object.__new__(sr.CodexProtocol)
     proto.cwd, proto.mcp_off, proto.history = '/private/tmp/fixture', {'mcp_servers.fixture.enabled': False}, []
     proto.preflight = lambda: {'auth_type': 'chatgpt'}
@@ -183,8 +186,9 @@ def test_protocol_fresh_thread_no_environment_and_structured_result():
     calls = []
     def rpc(method, params):
         calls.append((method, params))
+        if method == 'model/list': return {'data': [{'model': selected, 'supportedReasoningEfforts': [{'reasoningEffort': 'high'}]}]}
         if method == 'thread/start':
-            return {'thread': {'id': 'fresh'}, 'approvalPolicy': 'never', 'model': 'observed'}
+            return {'thread': {'id': 'fresh'}, 'approvalPolicy': 'never', 'model': selected, 'reasoningEffort': 'high'}
         return {'turn': {'id': 'turn'}}
     proto.rpc = rpc
     events = iter([
@@ -192,15 +196,20 @@ def test_protocol_fresh_thread_no_environment_and_structured_result():
          'text': json.dumps({'result_json': json.dumps({'verdict': 'NOT_RUN'})})}}},
         {'method': 'turn/completed', 'params': {'turn': {'id': 'turn', 'status': 'completed'}}}])
     proto.read = lambda **kw: next(events)
-    result = proto.infer({'actor': 'reviewer', 'image_paths': ['/private/tmp/fixture.png']})
-    start, turn = calls[0][1], calls[1][1]
+    route = routing.resolve(routing.policy('general'), 'reviewer', Path('/private/tmp'))
+    route['model'] = selected
+    result = proto.infer({'actor': 'reviewer', 'runtime_route': route, 'image_paths': ['/private/tmp/fixture.png']})
+    start, turn = calls[1][1], calls[2][1]
     assert start['ephemeral'] and start['environments'] == turn['environments'] == []
     assert start['dynamicTools'] == start['selectedCapabilityRoots'] == []
     assert start['config']['mcp_servers.fixture.enabled'] is False
     assert all(start['config']['features.' + feature] is False for feature in sr.DISABLED)
     assert turn['outputSchema'] == sr.OUTPUT_SCHEMA
     assert result['result'] == {'verdict': 'NOT_RUN'}
-    assert result['runtime']['reasoning_effort'] is None
+    assert result['runtime']['reasoning_effort'] == 'high'
+    assert start['model'] == turn['model'] == selected
+    assert start['config']['model_reasoning_effort'] == turn['effort'] == 'high'
+    assert result['runtime']['requested_route'] == route
 
 
 def test_preflight_rejects_api_auth():
@@ -248,9 +257,110 @@ def test_runtime_setting_mismatch_blocks_before_inference():
     calls = []
     def rpc(method, params):
         calls.append(method)
+        if method == 'model/list': return {'data': [{'model': routing.SOL, 'supportedReasoningEfforts': [{'reasoningEffort': 'high'}]}]}
         return {'thread': {'id': 'fresh'}, 'approvalPolicy': 'never',
                 'model': 'different-model', 'reasoningEffort': 'low'}
     proto.rpc = rpc
     with pytest.raises(wf.Blocked, match='RUNTIME_SETTING_MISMATCH'):
-        proto.infer({'actor': 'reviewer'})
-    assert calls == ['thread/start']
+        proto.infer({'actor': 'reviewer', 'runtime_route': routing.resolve(routing.policy('general'), 'reviewer', Path('/private/tmp'))})
+    assert calls == ['model/list', 'thread/start']
+
+
+@pytest.mark.parametrize('profile,expected', [('general', [routing.SOL]*3),
+                                          ('specialist_3d', [routing.SOL, routing.ASTRA, routing.SOL])])
+def test_routing_defaults(tmp_path, profile, expected):
+    assert [routing.resolve(routing.policy(profile), a, tmp_path)['model'] for a in routing.ACTORS] == expected
+
+
+def test_escalation_requires_reason_current_evidence_and_valid_actor(tmp_path):
+    (tmp_path / 'diagnosis.txt').write_text('Structural assumption unresolved')
+    escalation = {'trigger': 'foundational_strategy', 'reason': 'Must select representation before building',
+                  'evidence': {'diagnosis.txt': wf.pk.file_hash(tmp_path / 'diagnosis.txt')}}
+    p = routing.policy('specialist_3d', {'planner': escalation})
+    assert routing.resolve(p, 'planner', tmp_path)['model'] == routing.ASTRA
+    assert routing.resolve(p, 'reviewer', tmp_path)['model'] == routing.SOL
+    (tmp_path / 'diagnosis.txt').write_text('changed')
+    with pytest.raises(wf.Blocked, match='STALE_ESCALATION'): routing.resolve(p, 'planner', tmp_path)
+    with pytest.raises(wf.Blocked, match='ROUTING_ACTOR'): routing.policy('general', {'director': escalation})
+    escalation['trigger'] = 'want_a_pass'
+    with pytest.raises(wf.Blocked, match='ESCALATION_REASON'): routing.policy('general', {'reviewer': escalation})
+
+
+def routed_adapter(result, seen):
+    def call(request):
+        seen.append(copy.deepcopy(request))
+        route = request['runtime_route']
+        return {'result': result, 'runtime': {'model': route['model'], 'reasoning_effort': route['effort'],
+                                            'requested_route': route}}
+    return call
+
+
+def test_routed_three_stage_chain_and_policy_restart(setup):
+    root, c, brief, _, events = prepare(setup)
+    p = routing.policy('specialist_3d')
+    runner = sr.SerialRunner(c, 'routed.sqlite3', events.append, routing=p)
+    seen = []
+    runner.step('t', routed_adapter(brief, seen), {})
+    # Caller mutation cannot change a constructed runner's policy.
+    p['profile'] = 'general'
+    with pytest.raises(wf.Blocked, match='ROUTING_POLICY_CHANGED'):
+        sr.SerialRunner(c, 'routed.sqlite3', routing=p).step('t', routed_adapter({}, seen), {})
+    with pytest.raises(wf.Blocked, match='ROUTING_POLICY_CHANGED'):
+        sr.SerialRunner(c, 'routed.sqlite3').step('t', routed_adapter({}, seen), {})
+    runner = sr.SerialRunner(c, 'routed.sqlite3', routing=routing.policy('specialist_3d'))
+    runner.step('t', routed_adapter(build(root, c), seen), {})
+    runner.step('t', routed_adapter(review(root, c, status='FAIL'), seen), {})
+    assert [r['runtime_route']['model'] for r in seen] == [routing.SOL, routing.ASTRA, routing.SOL]
+    assert all('ticket' not in r for r in seen) and 'builder_record' not in seen[-1]
+    with pytest.raises(wf.Blocked, match='NOT_READY'): runner.present('t')
+
+
+def test_runtime_mismatch_never_admitted_or_retried(setup):
+    _, c, brief, _, _ = prepare(setup)
+    runner = sr.SerialRunner(c, 'routed.sqlite3', routing=routing.policy('general'))
+    with pytest.raises(wf.Blocked, match='RETURNED_ROUTING_MISMATCH'):
+        runner.step('t', lambda req: {'result': brief, 'runtime': {'model': routing.ASTRA}}, {})
+    assert c.state('t')['stage'] == 'BRIEFING'
+    with pytest.raises(wf.Blocked, match='RETURNED_ROUTING_MISMATCH'): runner.recover('t')
+    assert len(runner.calls()) == 1
+
+
+def test_no_live_inference_without_route():
+    proto = object.__new__(sr.CodexProtocol)
+    proto.preflight = lambda: pytest.fail('must not start runtime')
+    with pytest.raises(wf.Blocked, match='EXPLICIT_RUNTIME_ROUTE_REQUIRED'): proto.infer({'actor': 'planner'})
+
+
+def test_explicit_escalation_preserves_state_and_cap(setup):
+    root, c, brief, _, _ = prepare(setup)
+    runner = sr.SerialRunner(c, 'routed.sqlite3', max_calls=1, routing=routing.policy('general'))
+    runner.step('t', routed_adapter(brief, []), {})
+    before = c.state('t')
+    record = {'trigger': 'unresolved_diagnosis', 'reason': 'Fixture method ambiguity',
+              'evidence': {'authority.md': wf.pk.file_hash(root / 'authority.md')}}
+    runner.escalate('t', record)
+    assert c.state('t') == before
+    with runner.connection() as con:
+        assert con.execute('SELECT count(*) FROM route_events').fetchone()[0] == 1
+        updated = json.loads(con.execute('SELECT policy FROM routing').fetchone()[0])
+    assert routing.resolve(updated, 'builder', root)['model'] == routing.ASTRA
+    assert routing.resolve(updated, 'reviewer', root)['model'] == routing.SOL
+    with pytest.raises(wf.Blocked, match='ALREADY_TOP'): runner.escalate('t', record)
+    resumed = sr.SerialRunner(c, 'routed.sqlite3', max_calls=1, routing=updated)
+    with pytest.raises(wf.Blocked, match='CAP_EXHAUSTED'):
+        resumed.step('t', routed_adapter(build(root, c), []), {})
+
+
+@pytest.mark.parametrize('models,error', [([], 'MODEL_UNAVAILABLE'),
+    ([{'model': routing.ASTRA, 'supportedReasoningEfforts': [{'reasoningEffort': 'high'}]}], 'MODEL_UNAVAILABLE'),
+    ([{'model': routing.SOL, 'supportedReasoningEfforts': [{'reasoningEffort': 'low'}]}], 'EFFORT_UNAVAILABLE')])
+def test_unavailable_routes_do_not_fallback(tmp_path, models, error):
+    proto = object.__new__(sr.CodexProtocol)
+    proto.preflight = lambda: {}
+    calls = []
+    def rpc(method, params):
+        calls.append(method); return {'data': models}
+    proto.rpc = rpc
+    with pytest.raises(wf.Blocked, match=error):
+        proto.infer({'actor': 'planner', 'runtime_route': routing.resolve(routing.policy('general'), 'planner', tmp_path)})
+    assert calls == ['model/list']

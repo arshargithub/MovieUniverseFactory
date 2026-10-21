@@ -107,7 +107,10 @@ def main():
     parser.add_argument('--live-chatgpt', action='store_true')
     parser.add_argument('--preflight-only', action='store_true')
     parser.add_argument('--resume', action='store_true')
+    parser.add_argument('--routing-policy', help='Explicit scoped routing JSON; does not renew exhausted call authority')
     args = parser.parse_args()
+    if args.live_chatgpt and not args.preflight_only and not args.routing_policy:
+        raise ValueError('Live dispatch requires --routing-policy; historical installed-default mode is closed')
     out = (ROOT / args.output).resolve()
     if not out.is_relative_to(ROOT / 'results/workflow324'):
         raise ValueError('Use results/workflow324 output')
@@ -130,7 +133,8 @@ def main():
             base = brief324()
             # Output folders do not reset the live qualification allowance.
             c = Controller(ROOT, 'results/workflow324/live-controller.sqlite3')
-            runner = SerialRunner(c, 'results/workflow324/live-runner.sqlite3', progress)
+            routing = json.loads((ROOT / args.routing_policy).read_text())
+            runner = SerialRunner(c, 'results/workflow324/live-runner.sqlite3', progress, routing=routing)
             task = 'frozen-nihang324'
             if not args.resume:
                 c.create(task, 'production', binding(AUTHORITY), 'create324', 2,

@@ -20,6 +20,7 @@ import time
 
 from . import production_knowledge as pk
 from .production_workflow import Blocked, Controller, require
+from . import stage_routing
 
 
 DISABLED = ('shell_tool', 'apps', 'plugins', 'remote_plugin', 'browser_use',
@@ -140,9 +141,26 @@ class CodexProtocol:
                 'mcp_servers_disabled_count': len(self.mcp_off), 'inference_started': False}
 
     def infer(self, request):
+        route = request.get('runtime_route')
+        stage_routing.validate_route(route, request['actor'])
         preflight = self.preflight()
+        models, cursor = [], None
+        seen = set()
+        while True:
+            page = self.rpc('model/list', {'includeHidden': False, **({'cursor': cursor} if cursor else {})})
+            models.extend(page.get('data', []))
+            cursor = page.get('nextCursor')
+            if not cursor: break
+            require(cursor not in seen and len(seen) < 20, 'MODEL_LIST_PAGINATION')
+            seen.add(cursor)
+        model = next((m for m in models if m.get('model') == route['model']), None)
+        require(model is not None, 'ROUTED_MODEL_UNAVAILABLE')
+        require(route['effort'] in [e.get('reasoningEffort') for e in model.get('supportedReasoningEfforts', [])],
+                'ROUTED_EFFORT_UNAVAILABLE')
         config = dict(CONFIG, **self.mcp_off)
+        config['model_reasoning_effort'] = route['effort']
         start = self.rpc('thread/start', {
+            'model': route['model'],
             'cwd': self.cwd, 'runtimeWorkspaceRoots': [self.cwd],
             'environments': [], 'selectedCapabilityRoots': [], 'dynamicTools': [],
             'ephemeral': True, 'approvalPolicy': 'never', 'sandbox': 'read-only',
@@ -153,6 +171,8 @@ class CodexProtocol:
                 'Return only the requested structured result; do not claim Director acceptance or direct audio/video perception.'})
         thread = start['thread']['id']
         require(start.get('approvalPolicy') == 'never', 'APPROVAL_POLICY_CHANGED')
+        require(start.get('model') == route['model'] and start.get('reasoningEffort') == route['effort'],
+                'ROUTED_RUNTIME_SETTING_MISMATCH')
         for field, expected in [('model', getattr(self, 'expected_model', None)),
                                 ('reasoningEffort', getattr(self, 'expected_effort', None))]:
             require(expected is None or start.get(field) == expected,
@@ -164,6 +184,7 @@ class CodexProtocol:
         for path in request.get('image_paths', []):
             inputs.append({'type': 'localImage', 'path': path})
         turn = self.rpc('turn/start', {'threadId': thread, 'environments': [],
+                         'model': route['model'], 'effort': route['effort'],
                          'input': inputs, 'outputSchema': OUTPUT_SCHEMA})
         turn_id = turn['turn']['id']
         messages = []
@@ -191,6 +212,7 @@ class CodexProtocol:
         return {'result': result, 'runtime': {**preflight, 'inference_started': True,
                 'thread_id': thread, 'turn_id': turn_id, 'model': start.get('model'),
                 'reasoning_effort': start.get('reasoningEffort'), 'usage': usage[-1] if usage else None,
+                'requested_route': route,
                 'environment_access_requested': False, 'new_context': True}}
 
     def close(self):
@@ -204,16 +226,20 @@ class CodexProtocol:
 class SerialRunner:
     """At-most-once dispatch; uncertain calls block rather than repeat silently."""
 
-    def __init__(self, controller: Controller, database, progress=None, max_calls=4):
+    def __init__(self, controller: Controller, database, progress=None, max_calls=4, routing=None):
         self.controller = controller
         self.root = controller.root
         self.database = controller.root / database
         require(self.database.resolve().is_relative_to(self.root), 'RUNNER_PATH')
         self.database.parent.mkdir(parents=True, exist_ok=True)
         self.progress = progress or (lambda event: None)
+        self.routing = json.loads(json.dumps(routing)) if routing is not None else None
+        if self.routing is not None: stage_routing.validate(self.routing)
         require(type(max_calls) is int and 0 < max_calls <= 4, 'QUALIFICATION_CALL_CAP')
         with self.connection() as con:
             con.executescript('CREATE TABLE IF NOT EXISTS policy (id INTEGER PRIMARY KEY, max_calls INTEGER);'
+                'CREATE TABLE IF NOT EXISTS routing (task TEXT PRIMARY KEY, policy TEXT);'
+                'CREATE TABLE IF NOT EXISTS route_events (id INTEGER PRIMARY KEY, task TEXT, previous TEXT, current TEXT);'
                 'CREATE TABLE IF NOT EXISTS calls (id TEXT PRIMARY KEY, task TEXT, actor TEXT, ticket TEXT, '
                 'request TEXT, request_hash TEXT, status TEXT, response TEXT, response_hash TEXT);')
             con.execute('INSERT OR IGNORE INTO policy VALUES(1,?)', (max_calls,))
@@ -242,9 +268,43 @@ class SerialRunner:
         with self.connection() as con:
             return [dict(r) for r in con.execute('SELECT id,task,actor,status,request_hash,response_hash FROM calls ORDER BY rowid')]
 
+    def escalate(self, task, record):
+        """Trusted operator reassessment only; never triggered by a failed verdict.
+
+        The active stage may move from Sol to Astra with bound evidence, without
+        changing controller state, correction counts or the existing call cap.
+        A running/uncertain call must be reconciled before changing settings.
+        """
+        with self.exclusive():
+            packet = self.controller.packet(task)
+            actor = packet['actor']
+            require(self.routing is not None, 'EXPLICIT_RUNTIME_ROUTE_REQUIRED')
+            current = stage_routing.resolve(self.routing, actor, self.root)
+            require(current['model'] == stage_routing.SOL, 'ALREADY_TOP_ROUTING_TIER')
+            updated = json.loads(json.dumps(self.routing))
+            updated['escalations'][actor] = record
+            stage_routing.resolve(updated, actor, self.root)
+            previous, following = json.dumps(self.routing, sort_keys=True), json.dumps(updated, sort_keys=True)
+            with self.connection() as con:
+                require(not con.execute("SELECT 1 FROM calls WHERE status NOT IN ('SUBMITTED','ABORTED')").fetchone(), 'UNRESOLVED_CALL')
+                stored = con.execute('SELECT policy FROM routing WHERE task=?', (task,)).fetchone()
+                require(stored is not None and stored[0] == previous, 'ROUTING_POLICY_CHANGED_REPLAN_REQUIRED')
+                con.execute('UPDATE routing SET policy=? WHERE task=?', (following, task))
+                con.execute('INSERT INTO route_events(task,previous,current) VALUES(?,?,?)', (task, previous, following))
+            self.routing = updated
+            self.progress({'event': 'route_escalated', 'task': task, 'actor': actor,
+                           'route': stage_routing.resolve(updated, actor, self.root), 'call_cap_unchanged': True})
+
     def _admit_returned(self, row):
+        require(pk.digest(json.loads(row['request'])) == row['request_hash'], 'CORRUPT_RESERVED_REQUEST')
         require(pk.digest(json.loads(row['response'])) == row['response_hash'], 'CORRUPT_RETURNED_RESULT')
         response = json.loads(row['response'])
+        request = json.loads(row['request'])
+        route = request.get('runtime_route')
+        if route:
+            runtime = response.get('runtime', {})
+            require(runtime.get('model') == route['model'] and runtime.get('reasoning_effort') == route['effort']
+                    and runtime.get('requested_route') == route, 'RETURNED_ROUTING_MISMATCH')
         state = self.controller.submit(row['task'], row['actor'], row['ticket'], response['result'], 'runner-submit-' + row['id'])
         with self.connection() as con:
             con.execute('UPDATE calls SET status=? WHERE id=?', ('SUBMITTED', row['id']))
@@ -288,6 +348,8 @@ class SerialRunner:
             require(packet.get('frozen_evidence_only') is True, 'FROZEN_EVIDENCE_MODE_REQUIRED')
             call_id = pk.digest({'task': task, 'ticket': packet['ticket']})
             request = {k: v for k, v in packet.items() if k != 'ticket'}
+            if self.routing is not None:
+                request['runtime_route'] = stage_routing.resolve(self.routing, packet['actor'], self.root)
             require(set(supplement) <= {'instruction', 'result_template', 'image_paths', 'image_hashes', 'evidence_notes', 'knowledge_context'},
                     'UNSCOPED_STAGE_SUPPLEMENT')
             require(not (set(request) & set(supplement)), 'SUPPLEMENT_CANNOT_OVERRIDE_CONTRACT')
@@ -298,6 +360,10 @@ class SerialRunner:
                 require(p.is_relative_to(self.root) and p.suffix.lower() in {'.jpg', '.jpeg', '.png'}, 'UNAPPROVED_IMAGE_PATH')
                 require(pk.file_hash(p) == request.get('image_hashes', {}).get(path), 'STALE_IMAGE')
             with self.connection() as con:
+                serialized_route = json.dumps(self.routing, sort_keys=True)
+                con.execute('INSERT OR IGNORE INTO routing VALUES(?,?)', (task, serialized_route))
+                require(con.execute('SELECT policy FROM routing WHERE task=?', (task,)).fetchone()[0] == serialized_route,
+                        'ROUTING_POLICY_CHANGED_REPLAN_REQUIRED')
                 abandoned = con.execute("SELECT count(*) FROM calls WHERE task=? AND ticket=? AND status='ABORTED'",
                                         (task, packet['ticket'])).fetchone()[0]
                 if abandoned:
@@ -308,7 +374,8 @@ class SerialRunner:
                 require(con.execute('SELECT count(*) FROM calls').fetchone()[0] < con.execute('SELECT max_calls FROM policy').fetchone()[0], 'CALL_CAP_EXHAUSTED')
                 con.execute('INSERT INTO calls VALUES(?,?,?,?,?,?,?,?,?)', (call_id, task, packet['actor'], packet['ticket'],
                             json.dumps(request), pk.digest(request), 'STARTED', None, None))
-            self.progress({'event': 'stage_started', 'actor': packet['actor'], 'cycle': packet['cycle'], 'context_bytes': len(json.dumps(request).encode())})
+            self.progress({'event': 'stage_started', 'actor': packet['actor'], 'cycle': packet['cycle'],
+                           'runtime_route': request.get('runtime_route'), 'context_bytes': len(json.dumps(request).encode())})
             response = adapter(request)
             require(isinstance(response, dict) and isinstance(response.get('result'), dict), 'INVALID_ADAPTER_RESULT')
             with self.connection() as con:
