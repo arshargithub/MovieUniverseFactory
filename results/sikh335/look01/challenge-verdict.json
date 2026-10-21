@@ -1,0 +1,97 @@
+{
+  "input_digest": "aa6613dc8ed88af15ff871f8d8fa4db9851d8c0eeb513377da3491023f6cc3af",
+  "outcome": "revise",
+  "checks": {
+    "grounding": {
+      "status": "PASS",
+      "observation": "Existing335 local supporting-appearance scope and actual cast findings are bound.",
+      "comparison": "No motion retry, new spend, replacement principal or appearance pass is authorized by this plan.",
+      "source_ids": [
+        "direction",
+        "cast_findings"
+      ]
+    },
+    "expert_coverage": {
+      "status": "PASS",
+      "observation": "Existing335 local supporting-appearance scope and actual cast findings are bound.",
+      "comparison": "No motion retry, new spend, replacement principal or appearance pass is authorized by this plan.",
+      "source_ids": [
+        "direction",
+        "cast_findings"
+      ]
+    },
+    "film_alignment": {
+      "status": "PASS",
+      "observation": "Existing335 local supporting-appearance scope and actual cast findings are bound.",
+      "comparison": "No motion retry, new spend, replacement principal or appearance pass is authorized by this plan.",
+      "source_ids": [
+        "direction",
+        "cast_findings"
+      ]
+    },
+    "preferences": {
+      "status": "PASS",
+      "observation": "Existing335 local supporting-appearance scope and actual cast findings are bound.",
+      "comparison": "No motion retry, new spend, replacement principal or appearance pass is authorized by this plan.",
+      "source_ids": [
+        "direction",
+        "cast_findings"
+      ]
+    },
+    "reference_roles": {
+      "status": "FAIL",
+      "observation": "Accepted Pashtun PNG inherited faithful_motion role,14\u201319s interval and rear-specific authority from copied reference.",
+      "comparison": "The source is an accepted appearance-quality still, not a faithful-motion authority. Correct binding bytes alone do not correct its role.",
+      "source_ids": [
+        "film_language",
+        "references"
+      ]
+    },
+    "method": {
+      "status": "NOT_RUN",
+      "observation": "No appearance native job launched; handler tests pass but shape hypothesis remains untested.",
+      "comparison": "Do not admit construction with wrong source-role authority. Preserve initial method and evaluate only after grounded repair.",
+      "source_ids": [
+        "controls",
+        "cast_findings"
+      ]
+    },
+    "interfaces": {
+      "status": "PASS",
+      "observation": "Existing335 local supporting-appearance scope and actual cast findings are bound.",
+      "comparison": "No motion retry, new spend, replacement principal or appearance pass is authorized by this plan.",
+      "source_ids": [
+        "direction",
+        "cast_findings"
+      ]
+    },
+    "efficient_quality": {
+      "status": "PASS",
+      "observation": "Existing335 local supporting-appearance scope and actual cast findings are bound.",
+      "comparison": "No motion retry, new spend, replacement principal or appearance pass is authorized by this plan.",
+      "source_ids": [
+        "direction",
+        "cast_findings"
+      ]
+    },
+    "authority": {
+      "status": "PASS",
+      "observation": "Existing335 local supporting-appearance scope and actual cast findings are bound.",
+      "comparison": "No motion retry, new spend, replacement principal or appearance pass is authorized by this plan.",
+      "source_ids": [
+        "direction",
+        "cast_findings"
+      ]
+    }
+  },
+  "strongest_counterexample": "Copying a structurally valid reference contract can preserve all required fields while changing its semantic meaning. Source type and actual Director role must be checked before admission.",
+  "issues": [
+    {
+      "id": "incorrect-still-role",
+      "target": "GROUNDING",
+      "reason": "Accepted quality still mislabeled as faithful motion.",
+      "counterexample": "A PNG cannot contain a14\u201319second performance interval; the text also claims the wrong Director instruction.",
+      "repair": "Construct an explicit accepted_quality reference from the original same-film authority; remove temporal fields, retain original rearing contract separately, regenerate affected downstream artifacts without resetting history or allowances."
+    }
+  ]
+}

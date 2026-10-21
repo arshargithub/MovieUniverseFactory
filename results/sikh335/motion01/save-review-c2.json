@@ -1,0 +1,29 @@
+{
+  "verdict": "PASS",
+  "run_digest": "cee8cb3c628416c948216bd76c7f3c31af4a1f9bf382dc84691e8cd0c949aeeb",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh335-motion-c2-save/snapshot.json",
+      "sha256": "04e927902c3af08e625f028ac5994748653718331279d5269cc4a7aba884eed7"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh335-motion-c2-save/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh335-motion-c2-save/script-diagnostics.json",
+      "sha256": "d8c950e68c5c42eb08e3ba4cd795b716e2b5ac082b76301b8697edb7667b2ad9"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh335-motion-c2-save/scene.blend",
+      "sha256": "e06f83970c091a0287c51acd5224dabb96467cb868e880e46285d5ef991c720f"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh335-motion-c2-save/patch-evidence.json",
+      "sha256": "89090c7534a36474c36fbae6db4956f9f6dcac60ab7d0a6b4c5a6daae8f3cf0c"
+    }
+  },
+  "observation": "190 authored frames; maximum visible hind endpoint error0.00007058m, airborne wrist retraction0.00722882m; zero invalid used drivers.",
+  "comparison": "Technical persistence/support gate only. Phase silhouettes, actual rider/rein/spear fit, anatomy, appearance and full-speed motion are NOT_RUN; no integrated pass.",
+  "open_defects": []
+}

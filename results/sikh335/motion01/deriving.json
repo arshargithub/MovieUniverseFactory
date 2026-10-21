@@ -1,0 +1,522 @@
+{
+  "input_digest": "2829ec14682f64e438d6d24cf1104ff4e3119a06b394d0cdf92899dc6e50edf8",
+  "outcome": "complete",
+  "artifact": {
+    "requirements": [
+      {
+        "id": "preservation",
+        "criterion": "Original320/Pashtun unchanged; new serial derivative and fresh reopen.",
+        "modes": [
+          "technical"
+        ],
+        "director_av": false
+      },
+      {
+        "id": "support",
+        "criterion": "Visible hind endpoints stay grounded, segment lengths fixed; forelegs return to stance without outward twist or inverted hooves.",
+        "modes": [
+          "technical",
+          "image"
+        ],
+        "director_av": false
+      },
+      {
+        "id": "phases",
+        "criterion": "Coordinated gather drives rise; active short crest; forelegs reach and descend without stopping above ground; absorption follows contact.",
+        "modes": [
+          "technical",
+          "image"
+        ],
+        "director_av": false
+      },
+      {
+        "id": "rider",
+        "criterion": "Seat follows horse support while torso counterbalances; no rigid statue or floating/disconnected reins and spear. Limb/garment defects remain blockers, not hidden by contact metrics.",
+        "modes": [
+          "technical",
+          "image"
+        ],
+        "director_av": false
+      },
+      {
+        "id": "evidence",
+        "criterion": "All phase images and contact evidence available; static samples never certify full-speed motion, audio or appearance.",
+        "modes": [
+          "technical",
+          "image"
+        ],
+        "director_av": false
+      }
+    ],
+    "beats": [
+      {
+        "id": "rear",
+        "audience_read": "One powerful living animal and mounted rider executing a deliberate salute, not pose interpolation.",
+        "framing": "Existing shot camera with8 phase samples; later continuous clip plus revealing side checks.",
+        "lenses": {
+          "story_performance": {
+            "applies": true,
+            "requirements": [
+              "rider"
+            ],
+            "why": "Needed for support, whole-body coordination, contacts or evidence validity."
+          },
+          "camera_editorial": {
+            "applies": true,
+            "requirements": [
+              "evidence"
+            ],
+            "why": "Needed for support, whole-body coordination, contacts or evidence validity."
+          },
+          "animation_physics": {
+            "applies": true,
+            "requirements": [
+              "phases"
+            ],
+            "why": "Needed for support, whole-body coordination, contacts or evidence validity."
+          },
+          "anatomy_contact": {
+            "applies": true,
+            "requirements": [
+              "support"
+            ],
+            "why": "Needed for support, whole-body coordination, contacts or evidence validity."
+          },
+          "effects_environment": {
+            "applies": false,
+            "requirements": [],
+            "why": "Appearance, dust, audio and crowd remain inherited blockers for next integrated stages; not passed by this motion construction."
+          },
+          "sound_music": {
+            "applies": false,
+            "requirements": [],
+            "why": "Appearance, dust, audio and crowd remain inherited blockers for next integrated stages; not passed by this motion construction."
+          },
+          "production_reuse": {
+            "applies": true,
+            "requirements": [
+              "preservation"
+            ],
+            "why": "Needed for support, whole-body coordination, contacts or evidence validity."
+          }
+        }
+      }
+    ],
+    "derivations": {
+      "preservation": {
+        "beats": [
+          "rear"
+        ],
+        "lenses": [
+          "production_reuse"
+        ],
+        "derivation": "Original320/Pashtun unchanged; new serial derivative and fresh reopen.",
+        "origin": "craft_inference",
+        "priority": "quality_floor",
+        "reference_ids": [
+          "reference_rear"
+        ]
+      },
+      "support": {
+        "beats": [
+          "rear"
+        ],
+        "lenses": [
+          "anatomy_contact"
+        ],
+        "derivation": "Visible hind endpoints stay grounded, segment lengths fixed; forelegs return to stance without outward twist or inverted hooves.",
+        "origin": "craft_inference",
+        "priority": "quality_floor",
+        "reference_ids": [
+          "reference_rear"
+        ]
+      },
+      "phases": {
+        "beats": [
+          "rear"
+        ],
+        "lenses": [
+          "animation_physics"
+        ],
+        "derivation": "Coordinated gather drives rise; active short crest; forelegs reach and descend without stopping above ground; absorption follows contact.",
+        "origin": "craft_inference",
+        "priority": "quality_floor",
+        "reference_ids": [
+          "reference_rear"
+        ]
+      },
+      "rider": {
+        "beats": [
+          "rear"
+        ],
+        "lenses": [
+          "story_performance"
+        ],
+        "derivation": "Seat follows horse support while torso counterbalances; no rigid statue or floating/disconnected reins and spear. Limb/garment defects remain blockers, not hidden by contact metrics.",
+        "origin": "craft_inference",
+        "priority": "quality_floor",
+        "reference_ids": [
+          "reference_rear"
+        ]
+      },
+      "evidence": {
+        "beats": [
+          "rear"
+        ],
+        "lenses": [
+          "camera_editorial"
+        ],
+        "derivation": "All phase images and contact evidence available; static samples never certify full-speed motion, audio or appearance.",
+        "origin": "craft_inference",
+        "priority": "quality_floor",
+        "reference_ids": [
+          "reference_rear"
+        ]
+      }
+    },
+    "context_mapping": {
+      "direction": {
+        "requirements": [
+          "preservation",
+          "support",
+          "phases",
+          "rider",
+          "evidence"
+        ],
+        "reason": "Resume the integrated isolated production package; this precursor discovers rig ownership before any new pose authoring."
+      },
+      "learnings": {
+        "requirements": [
+          "preservation",
+          "support",
+          "phases",
+          "rider",
+          "evidence"
+        ],
+        "reason": "331 failed whole-pose support and same-film character fidelity despite incremental offset corrections; those attempts remain closed."
+      },
+      "film_language": {
+        "requirements": [
+          "preservation",
+          "support",
+          "phases",
+          "rider",
+          "evidence"
+        ],
+        "reason": "Accepted Pashtun quality stays fixed; a supporting actor cannot be a schematic statue."
+      },
+      "director_preferences": {
+        "requirements": [
+          "preservation",
+          "support",
+          "phases",
+          "rider",
+          "evidence"
+        ],
+        "reason": "Predict failure through expert lenses and fix internally; setup and routine algorithms are not handovers."
+      },
+      "references": {
+        "requirements": [
+          "preservation",
+          "support",
+          "phases",
+          "rider",
+          "evidence"
+        ],
+        "reason": "Reference14\u201319s governs faithful action phases; accepted film governs appearance; rejected poses are negative controls."
+      },
+      "controls": {
+        "requirements": [
+          "preservation",
+          "support",
+          "phases",
+          "rider",
+          "evidence"
+        ],
+        "reason": "Fresh motion-domain packet and manual AU09\u201313,16 plus317\u2013334 reconciliation accompany this inspection."
+      },
+      "constraints": {
+        "requirements": [
+          "preservation",
+          "support",
+          "phases",
+          "rider",
+          "evidence"
+        ],
+        "reason": "Inspect64 invalid used-armature drivers, removed object drivers and FK bypasses; no blind restoration or defect waiver."
+      },
+      "ownership_diagnosis": {
+        "requirements": [
+          "preservation",
+          "support",
+          "phases",
+          "rider",
+          "evidence"
+        ],
+        "reason": "64 missing targets are BBone ease; missing object drivers leave IK/FK properties ineffective. Select actual constraints and solve bone lengths explicitly."
+      },
+      "crest_control": {
+        "requirements": [
+          "preservation",
+          "support",
+          "phases",
+          "rider",
+          "evidence"
+        ],
+        "reason": "Two static corrections are retained and closed. Crest supports anatomy but reins/spear disconnected and appearance rejected; capture immutable stance before continuous keys."
+      }
+    },
+    "knowledge_mapping": {
+      "construction_interfaces": {
+        "requirements": [
+          "preservation",
+          "support",
+          "phases",
+          "rider",
+          "evidence"
+        ],
+        "reason": "Inspect bone local/rest/world transforms and visible endpoint ownership before adapting; later prove one clothed actor and partial poses before crowd copies."
+      },
+      "reuse_envelope": {
+        "requirements": [
+          "preservation",
+          "support",
+          "phases",
+          "rider",
+          "evidence"
+        ],
+        "reason": "Existing horse is an unqualified adaptation source, not a qualified rearing asset; diagnose its actual reuse envelope before reconstruction."
+      },
+      "animal_coordination": {
+        "requirements": [
+          "preservation",
+          "support",
+          "phases",
+          "rider",
+          "evidence"
+        ],
+        "reason": "Trace hind support, chest, poll, forefeet and rider contact together; reference phases govern, not number of keys."
+      },
+      "crowd_support": {
+        "requirements": [
+          "preservation",
+          "support",
+          "phases",
+          "rider",
+          "evidence"
+        ],
+        "reason": "Retain rider attention and coordinated supported stepping in the integrated package; no crowd mutation in the ownership precursor."
+      },
+      "authority": {
+        "requirements": [
+          "preservation",
+          "support",
+          "phases",
+          "rider",
+          "evidence"
+        ],
+        "reason": "Resume authorized local production; no spend, installation, cloud, external calls, identity changes or higher-model assumptions."
+      },
+      "strategy": {
+        "requirements": [
+          "preservation",
+          "support",
+          "phases",
+          "rider",
+          "evidence"
+        ],
+        "reason": "Ownership inspection discriminates repair versus rebuild before authored poses;331 root-offset failures remain closed and inform the method change."
+      },
+      "visual_gate": {
+        "requirements": [
+          "preservation",
+          "support",
+          "phases",
+          "rider",
+          "evidence"
+        ],
+        "reason": "Inventory success only qualifies completeness of evidence; rejected native art and unreviewed motion remain rejected or NOT_RUN."
+      },
+      "anticipation": {
+        "requirements": [
+          "preservation",
+          "support",
+          "phases",
+          "rider",
+          "evidence"
+        ],
+        "reason": "Predict unsupported hind legs, straight neck, rigid rider and slow contact before editing; include phase interiors and reverse views in the next proof."
+      },
+      "stopping": {
+        "requirements": [
+          "preservation",
+          "support",
+          "phases",
+          "rider",
+          "evidence"
+        ],
+        "reason": "No technical setup handover; continue toward integrated isolated clip unless a genuine material blocker requires the Director."
+      },
+      "versioning": {
+        "requirements": [
+          "preservation",
+          "support",
+          "phases",
+          "rider",
+          "evidence"
+        ],
+        "reason": "Bind parent, handler, recipe and dependencies; preserve original320,331 failure evidence and accepted Pashtun unchanged."
+      },
+      "economics": {
+        "requirements": [
+          "preservation",
+          "support",
+          "phases",
+          "rider",
+          "evidence"
+        ],
+        "reason": "Record serial worker and active intervals inSIKH335; no invented savings, cost or denominator from old sequence effort."
+      },
+      "anatomy": {
+        "requirements": [
+          "preservation",
+          "support",
+          "phases",
+          "rider",
+          "evidence"
+        ],
+        "reason": "Read rest joint lengths and evaluated chain before diagnosing deformation; later separate anatomical pose from shader and lighting problems."
+      },
+      "motion": {
+        "requirements": [
+          "preservation",
+          "support",
+          "phases",
+          "rider",
+          "evidence"
+        ],
+        "reason": "Establish one owner per control and endpoint before keys; no nonzero-key or numeric-distance claim of natural performance."
+      },
+      "secondary": {
+        "requirements": [
+          "preservation",
+          "support",
+          "phases",
+          "rider",
+          "evidence"
+        ],
+        "reason": "Changed primary motion reopens mane, tail, reins, cloth and earth response; defer these until the primary representation works, not waive them."
+      },
+      "look": {
+        "requirements": [
+          "preservation",
+          "support",
+          "phases",
+          "rider",
+          "evidence"
+        ],
+        "reason": "Keep same-film Pashtun richness as fixed floor for leader and near crowd; source320 schematic costumes are negative controls."
+      },
+      "render_profile": {
+        "requirements": [
+          "preservation",
+          "support",
+          "phases",
+          "rider",
+          "evidence"
+        ],
+        "reason": "Read-only precursor does not render; later measure actual source/profile and retain CPU fallback without assuming previous Metal qualification transfers."
+      },
+      "cache_safety": {
+        "requirements": [
+          "preservation",
+          "support",
+          "phases",
+          "rider",
+          "evidence"
+        ],
+        "reason": "One owned worker, disabled embedded scripts, credential-free job and no source/cache overwrite; future motion invalidates dependent caches."
+      },
+      "current_state": {
+        "requirements": [
+          "preservation",
+          "support",
+          "phases",
+          "rider",
+          "evidence"
+        ],
+        "reason": "253 provisional Pashtun stays protected;335 resumes isolated leader/crowd, not Sikh identity or full trailer. Director313 retains AV judgment."
+      },
+      "au_deformation": {
+        "requirements": [
+          "preservation",
+          "support",
+          "phases",
+          "rider",
+          "evidence"
+        ],
+        "reason": "Test control ownership and deformation separately from material/light; never hide unsupported anatomy with costume."
+      },
+      "au_performance": {
+        "requirements": [
+          "preservation",
+          "support",
+          "phases",
+          "rider",
+          "evidence"
+        ],
+        "reason": "Reference-like loading, forcing and recovery require coupled torso/neck and support; still inventory cannot certify continuous motion."
+      },
+      "au_contact": {
+        "requirements": [
+          "preservation",
+          "support",
+          "phases",
+          "rider",
+          "evidence"
+        ],
+        "reason": "Endpoint contact does not prove anatomical pose; inspect actual hoof/joint axes and rider hand/seat chains, retaining known-bad controls."
+      },
+      "au_surface": {
+        "requirements": [
+          "preservation",
+          "support",
+          "phases",
+          "rider",
+          "evidence"
+        ],
+        "reason": "Subsequent look proof compares matched lighting and scale with accepted film; no flat color or noise substitute for designed forms."
+      },
+      "au_reuse": {
+        "requirements": [
+          "preservation",
+          "support",
+          "phases",
+          "rider",
+          "evidence"
+        ],
+        "reason": "Record exact tested-use limits and native jobs; do not call local artifacts a remote backup or whole-scene portable bundle."
+      },
+      "sikh_scope": {
+        "requirements": [
+          "preservation",
+          "support",
+          "phases",
+          "rider",
+          "evidence"
+        ],
+        "reason": "Sikh sequence only, nonrecurring leader recognizes rider, no new story or music mapping in this correction."
+      },
+      "sikh_motion": {
+        "requirements": [
+          "preservation",
+          "support",
+          "phases",
+          "rider",
+          "evidence"
+        ],
+        "reason": "Rearing and crowd have their own support proof; keep causal exchange and corridor clearance in integrated isolated output. No reuse of gallop qualification as rear proof."
+      }
+    }
+  }
+}

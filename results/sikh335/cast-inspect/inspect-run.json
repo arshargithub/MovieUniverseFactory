@@ -1,0 +1,37 @@
+{
+  "id": "sikh335-cast-inspection",
+  "task": "sikh335-cast-inventory",
+  "step": "inspect",
+  "cycle": 0,
+  "fingerprint": "04116838df53815f4ec201c20d2dd25650521be282cc41709af1a48515839825",
+  "parent": {
+    "path": ".runtime/art-direction/series01-sikh320/build-10/sequence.blend",
+    "sha256": "c7af07ec8ea14e1f321cf7bb7d5ec4e5cd6b8bbccabfaa886c3622e7cacc3a00"
+  },
+  "job_digest": "3a19049311765582efdc4a0ec0075fa9a125dd28b2a47945e51322c1f4dfdfe1",
+  "handler_digest": "a010f9ce2a3df76a4d39df66ac5398cb11320e32beb70da7daa86f6687de48c6",
+  "status": "RETURNED",
+  "artifacts": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh335-cast-inspection/snapshot.json",
+      "sha256": "94a014ca1d8fe5404b79ae0cf826d8102e14a66d7ffd2ba85130259c34dcc565"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh335-cast-inspection/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh335-cast-inspection/script-diagnostics.json",
+      "sha256": "de08f61ac7f048bff58b77f9cac8916755c9a7de80e49d4139d0bac34e728c20"
+    },
+    "cast": {
+      "path": ".runtime/factory-native/sikh335-cast-inspection/cast.json",
+      "sha256": "abdcad5b056013ffad67149b10d03f5c45a2955f35ada3b77b3f8da0523dc407"
+    }
+  },
+  "dependencies": {},
+  "recipe": {
+    "path": "results/sikh335/cast-inspect/recipe.json",
+    "sha256": "d0b3e93d67e4fc65fc62be43c3136890f3d02b4c29b319d905c8d29863f79149"
+  }
+}

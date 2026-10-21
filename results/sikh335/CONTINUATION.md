@@ -2,10 +2,78 @@
 
 This is an internal continuation record, not a Director handoff or completion.
 The integrated leader/rearing/crowd objective is active in the goal mechanism.
-No new approval is needed for the authorized reversible work. Do not restart
-bootstrap, replay the closed scripts or present the diagnostic images as ready.
+General production authority remains, but the configured motion correction
+allowance is exhausted. An asynchronous request for four additional corrections
+is pending; no reply is recorded. Do not silently reset counters or task names.
+The two-correction configuration was agent-selected for this proof, not a new
+Director-wide policy. The appearance task's zero-repair configuration was also
+agent-selected and has exposed unnecessary workflow friction. Do not describe
+either setting as a Director-imposed universal limit. Do not restart bootstrap,
+replay closed scripts or present diagnostic images as ready.
 
-## Current evidence
+## Latest state — supersedes the earlier static-control snapshot below
+
+- `sikh335-continuous-performance`: REPLAN_REQUIRED, cycle2/max2. Candidate0
+  failed a fixed-length forelimb reach check. Candidate1 fixed flight reach but
+  failed reference preparation (no alternating forefoot placement). Candidate2
+  added placement and was rejected for slowing before impact. All failures remain.
+- Current failed derivative:
+  `.runtime/factory-native/sikh335-motion-c2-save/scene.blend`, SHA256
+  `e06f83970c091a0287c51acd5224dabb96467cb868e880e46285d5ef991c720f`.
+  Nine actual phase renders in `sikh335-motion-c2-render` were visually inspected.
+  Detailed failure: `motion01/PHASE_REVIEW_C2.md`. Actual forehoof descent slows
+  from2.961m/s to0.520m/s before contact. Fixed support and a smooth interpolator
+  do not waive this. The contact boundary needs finite downward flight velocity,
+  then grounded support and body absorption after contact, not before it.
+-190 authored frames retain fixed hind support; selected state survives reopen.
+  Reins now use correct curve-local coordinates and spear follows hand/ground
+  ownership. These limited checks do not qualify the whole rider or motion.
+- `sikh335-cast-inventory`: independent read-only inventory completed. See
+  `cast-inspect/FINDINGS.md`: actual50k-vertex head,24k-vertex garment,207 pose
+  keys and correctly assigned woven material. Cylindrical crown and smooth
+  costume/saddle construction—not absence of topology or texture—are problems.
+- `sikh335-supporting-appearance`: initial plan reached challenge but was rejected
+  before any native launch. An accepted Pashtun PNG inherited a faithful-motion
+  role/time interval from a copied contract. See `look01/challenge-verdict.json`.
+  State REPLAN_REQUIRED, cycle0/max0; no appearance candidate exists. Trusted
+  `nihang_look.py` handler and tests are prepared but unqualified. Preserve its
+  initial plan; fix source-role construction before any dispatch. Do not rerun
+  the create script or silently rebind the failed plan.
+- No full-speed clip, integrated appearance pass or Director AV queue exists.
+  Head/beard, horse coat, rider articulation, crowd performance, ground/contact
+  effects and contiguous handles remain unfinished. Accepted Pashtun unchanged.
+
+## Resume after the allowance decision
+
+Record the exact decision and scope. If extended, retain original task identity,
+failed evidence and cycle counters. A prospective audited allowance amendment is
+needed; current Controller has no extension method. Do not misuse `revise` as a
+counter reset. The pending question concerns motion; if appearance repairs are
+included, record that explicitly rather than inventing extra cycles per subtask.
+
+First repair contact-boundary interpolation and test actual deformed-hoof speed,
+not just the scalar fold parameter or interior anchor derivatives. Independently
+repair the accepted-quality reference contract (no time range; no motion role),
+then prove one leader/near-crowd costume and saddle before propagation. New motion
+invalidates dependent garment/tack/contact checks. Keep all work serial and local.
+
+## New process lessons
+
+1. Interpolator continuity tests covered interior anchors, not flight-to-contact
+   boundary semantics. Add a regression for finite pre-contact descent and
+   post-contact absorption, backed by actual deformed endpoints.
+2. Do not deep-copy a reference contract and change only its file. Construct and
+   validate role, authority, allowed variation and time scope explicitly.
+3. Do not copy a pilot's correction count into each new substage or choose zero
+   repairs merely to avoid granting authority. This manufactures handovers.
+   Establish the shared package allowance with the Director, distinguish source
+   drafting mistakes from production trials, and retain cumulative accounting.
+4. Source topology/material inventory overturned a texture-only diagnosis.
+   More polygons/noise would not fix schematic clothing and supported drape.
+5. No measured efficiency gain: manual plan cloning and controller plumbing
+   remain substantial overhead, including the newly caught reference-role error.
+
+## Earlier static-control evidence (historical, not current motion acceptance)
 
 - Canonical router: `sikh335-resume`, followed by internal `sikh335-support`.
 - Read-only task `sikh335-control-ownership`: inventory complete.456 bones,
