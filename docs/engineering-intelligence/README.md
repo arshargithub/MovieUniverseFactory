@@ -24,6 +24,12 @@ Keep observations and causal claims separate. A model that inherits a diagnosis,
 
 ## Feedback into the Factory design
 
+**Exchange326 separate runtime:** [stage-specific routing](STAGE_MODEL_ROUTING.md)
+is adopted and implemented with offline tests: Sol High planning/review and
+general work, Astra High difficult3D execution, evidence-backed strategy/review
+escalations. It does not switch the main chat or authorize calls. Historical325
+Sol Low remains the only observed live mix; no superiority benchmark follows.
+
 **Exchange188 clarification:** Director reports Astra High as the current top escalation tier. There is no higher-model escalation in this workflow; a return to Sol is a step down after an evidenced route. Failure on Astra requires method/input/representation reassessment, not model cycling. Built-in image generation, including more than two images for the agreed deliverable, is agent-owned implementation; external spending, new tools and material creative changes retain their authority boundaries. Runtime settings and engineering usage are not independently verified.
 
 **Active continuation policy, exchange187:** Sol6.1 High is user-reported; the agent now owns detection and evidence-bound requests for Astra High under the [adopted escalation/stopping rule](../knowledge/EFFICIENT_QUALITY_ASSET_WORKFLOW.md#engineering-model-escalation--adopted-at-exchange187). This supersedes the next-run Astra-Medium default below for current production. It is a manual workflow, not automatic Factory routing or a model benchmark.

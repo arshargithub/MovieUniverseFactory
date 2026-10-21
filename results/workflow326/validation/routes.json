@@ -1,0 +1,32 @@
+{
+  "planner": {
+    "model": "gpt-6-astra",
+    "effort": "high",
+    "actor": "planner",
+    "policy_digest": "03304977596eed5554d5f2c28d4c1164f4ee2e9cc0a5ee7bee7db5f8c11461d1",
+    "reason": "The321 audit exposes unresolved whole-body motion and same-film appearance failures; reassess representation and coordinated performance before execution.",
+    "escalation": {
+      "trigger": "foundational_strategy",
+      "reason": "The321 audit exposes unresolved whole-body motion and same-film appearance failures; reassess representation and coordinated performance before execution.",
+      "evidence": {
+        "docs/knowledge/NIHANG_REARING_REVIEW_FAILURE_321.md": "36d8cbec705017972bb1a80b5b0f7fe8af7b5c17d0669760d5b35ffbf48b1157"
+      }
+    }
+  },
+  "builder": {
+    "model": "gpt-6-astra",
+    "effort": "high",
+    "actor": "builder",
+    "policy_digest": "03304977596eed5554d5f2c28d4c1164f4ee2e9cc0a5ee7bee7db5f8c11461d1",
+    "reason": "difficult_3d_execution",
+    "escalation": null
+  },
+  "reviewer": {
+    "model": "gpt-6.1-sol",
+    "effort": "high",
+    "actor": "reviewer",
+    "policy_digest": "03304977596eed5554d5f2c28d4c1164f4ee2e9cc0a5ee7bee7db5f8c11461d1",
+    "reason": "default_sol_high",
+    "escalation": null
+  }
+}

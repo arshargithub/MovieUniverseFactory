@@ -4,6 +4,19 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+### Exchange326 — stage routing adopted and implemented locally
+
+[Stage-specific model policy](../engineering-intelligence/STAGE_MODEL_ROUTING.md)
+pins Sol6.1 High for planning/review/general work and Astra High for difficult3D
+execution, with evidenced strategy/review escalation. Dispatch refuses unavailable
+or mismatched settings; restart/escalation preserves call and correction limits.
+This is offline-tested routing, not production authoring or a quality benchmark.
+The [Nihang package route](../../results/workflow326/nihang-routing.json) selects
+Astra for foundational planning and execution, Sol for fresh review. No live call,
+render or media change. Next connect trusted structured authoring and bind the
+package-specific call allowance for the isolated leader/rearing/crowd deliverable;
+325 allowance remains exhausted. Checkpoint330 remains unchanged.
+
 ### Exchange325 — live serial control path demonstrated
 
 Director approved324's exact scoped payload. Three fresh serial model stages

@@ -1,0 +1,364 @@
+{
+  "packet_digest": "25eee35a924907aed65ad9a15b3cc7593b67e0ba348bca46ad011191b7a76e8a",
+  "scope": "Offline routing implementation only",
+  "checks": [
+    {
+      "id": "reuse_envelope",
+      "status": "PASS",
+      "kind": "process",
+      "action_taken": "Extended existing SerialRunner, protocol and controller contracts; no replacement harness.",
+      "observation": "Current local regressions support the scoped code claim; no production or live quality claim.",
+      "evidence": [
+        {
+          "path": "results/workflow326/validation/tests.txt",
+          "sha256": "d132678295ff7e69cb53c8966a99fb0d6f08162b5a37bc5472afaa98ecb173c5"
+        },
+        {
+          "path": "results/workflow326/validation/routes.json",
+          "sha256": "ff4f95287e1b8f9b215a6aaf27c0338daecbd4aa1d84c85d670327188991f3a0"
+        },
+        {
+          "path": "src/movie_factory/stage_routing.py",
+          "sha256": "df60025fd031e2a0f0351055b98a5f2c98642ee842bfabec165759b98e8c0bfd"
+        },
+        {
+          "path": "src/movie_factory/staged_runner.py",
+          "sha256": "94cd308418c19f27f277f60693123702a89f1cbca07180b6a6a25b2a520ca28c"
+        },
+        {
+          "path": "docs/engineering-intelligence/STAGE_MODEL_ROUTING.md",
+          "sha256": "cd6e55843f2c2992bb7628d1323ac86f1cb4610b33676a2f945ef5b45e2a0811"
+        }
+      ]
+    },
+    {
+      "id": "authority",
+      "status": "PASS",
+      "kind": "process",
+      "action_taken": "No new inference;325 allowance remains exhausted. Escalation cannot increase call cap.",
+      "observation": "Current local regressions support the scoped code claim; no production or live quality claim.",
+      "evidence": [
+        {
+          "path": "results/workflow326/validation/tests.txt",
+          "sha256": "d132678295ff7e69cb53c8966a99fb0d6f08162b5a37bc5472afaa98ecb173c5"
+        },
+        {
+          "path": "results/workflow326/validation/routes.json",
+          "sha256": "ff4f95287e1b8f9b215a6aaf27c0338daecbd4aa1d84c85d670327188991f3a0"
+        },
+        {
+          "path": "src/movie_factory/stage_routing.py",
+          "sha256": "df60025fd031e2a0f0351055b98a5f2c98642ee842bfabec165759b98e8c0bfd"
+        },
+        {
+          "path": "src/movie_factory/staged_runner.py",
+          "sha256": "94cd308418c19f27f277f60693123702a89f1cbca07180b6a6a25b2a520ca28c"
+        },
+        {
+          "path": "docs/engineering-intelligence/STAGE_MODEL_ROUTING.md",
+          "sha256": "cd6e55843f2c2992bb7628d1323ac86f1cb4610b33676a2f945ef5b45e2a0811"
+        }
+      ]
+    },
+    {
+      "id": "strategy",
+      "status": "PASS",
+      "kind": "process",
+      "action_taken": "Strategy recorded before code edits; tested dispatch and bad-runtime controls before handoff.",
+      "observation": "Current local regressions support the scoped code claim; no production or live quality claim.",
+      "evidence": [
+        {
+          "path": "results/workflow326/validation/tests.txt",
+          "sha256": "d132678295ff7e69cb53c8966a99fb0d6f08162b5a37bc5472afaa98ecb173c5"
+        },
+        {
+          "path": "results/workflow326/validation/routes.json",
+          "sha256": "ff4f95287e1b8f9b215a6aaf27c0338daecbd4aa1d84c85d670327188991f3a0"
+        },
+        {
+          "path": "src/movie_factory/stage_routing.py",
+          "sha256": "df60025fd031e2a0f0351055b98a5f2c98642ee842bfabec165759b98e8c0bfd"
+        },
+        {
+          "path": "src/movie_factory/staged_runner.py",
+          "sha256": "94cd308418c19f27f277f60693123702a89f1cbca07180b6a6a25b2a520ca28c"
+        },
+        {
+          "path": "docs/engineering-intelligence/STAGE_MODEL_ROUTING.md",
+          "sha256": "cd6e55843f2c2992bb7628d1323ac86f1cb4610b33676a2f945ef5b45e2a0811"
+        }
+      ]
+    },
+    {
+      "id": "visual_gate",
+      "status": "PASS",
+      "kind": "review",
+      "action_taken": "No visual admission asserted. Failed review still returns to correction in routed fixture.",
+      "observation": "Current local regressions support the scoped code claim; no production or live quality claim.",
+      "evidence": [
+        {
+          "path": "results/workflow326/validation/tests.txt",
+          "sha256": "d132678295ff7e69cb53c8966a99fb0d6f08162b5a37bc5472afaa98ecb173c5"
+        },
+        {
+          "path": "results/workflow326/validation/routes.json",
+          "sha256": "ff4f95287e1b8f9b215a6aaf27c0338daecbd4aa1d84c85d670327188991f3a0"
+        },
+        {
+          "path": "src/movie_factory/stage_routing.py",
+          "sha256": "df60025fd031e2a0f0351055b98a5f2c98642ee842bfabec165759b98e8c0bfd"
+        },
+        {
+          "path": "src/movie_factory/staged_runner.py",
+          "sha256": "94cd308418c19f27f277f60693123702a89f1cbca07180b6a6a25b2a520ca28c"
+        },
+        {
+          "path": "docs/engineering-intelligence/STAGE_MODEL_ROUTING.md",
+          "sha256": "cd6e55843f2c2992bb7628d1323ac86f1cb4610b33676a2f945ef5b45e2a0811"
+        }
+      ]
+    },
+    {
+      "id": "anticipation",
+      "status": "PASS",
+      "kind": "review",
+      "action_taken": "Tested fallback, restart, stale escalation evidence, metadata mismatch and model override loss.",
+      "observation": "Current local regressions support the scoped code claim; no production or live quality claim.",
+      "evidence": [
+        {
+          "path": "results/workflow326/validation/tests.txt",
+          "sha256": "d132678295ff7e69cb53c8966a99fb0d6f08162b5a37bc5472afaa98ecb173c5"
+        },
+        {
+          "path": "results/workflow326/validation/routes.json",
+          "sha256": "ff4f95287e1b8f9b215a6aaf27c0338daecbd4aa1d84c85d670327188991f3a0"
+        },
+        {
+          "path": "src/movie_factory/stage_routing.py",
+          "sha256": "df60025fd031e2a0f0351055b98a5f2c98642ee842bfabec165759b98e8c0bfd"
+        },
+        {
+          "path": "src/movie_factory/staged_runner.py",
+          "sha256": "94cd308418c19f27f277f60693123702a89f1cbca07180b6a6a25b2a520ca28c"
+        },
+        {
+          "path": "docs/engineering-intelligence/STAGE_MODEL_ROUTING.md",
+          "sha256": "cd6e55843f2c2992bb7628d1323ac86f1cb4610b33676a2f945ef5b45e2a0811"
+        }
+      ]
+    },
+    {
+      "id": "stopping",
+      "status": "PASS",
+      "kind": "review",
+      "action_taken": "Approved routing implementation complete; production authoring and live qualification excluded.",
+      "observation": "Current local regressions support the scoped code claim; no production or live quality claim.",
+      "evidence": [
+        {
+          "path": "results/workflow326/validation/tests.txt",
+          "sha256": "d132678295ff7e69cb53c8966a99fb0d6f08162b5a37bc5472afaa98ecb173c5"
+        },
+        {
+          "path": "results/workflow326/validation/routes.json",
+          "sha256": "ff4f95287e1b8f9b215a6aaf27c0338daecbd4aa1d84c85d670327188991f3a0"
+        },
+        {
+          "path": "src/movie_factory/stage_routing.py",
+          "sha256": "df60025fd031e2a0f0351055b98a5f2c98642ee842bfabec165759b98e8c0bfd"
+        },
+        {
+          "path": "src/movie_factory/staged_runner.py",
+          "sha256": "94cd308418c19f27f277f60693123702a89f1cbca07180b6a6a25b2a520ca28c"
+        },
+        {
+          "path": "docs/engineering-intelligence/STAGE_MODEL_ROUTING.md",
+          "sha256": "cd6e55843f2c2992bb7628d1323ac86f1cb4610b33676a2f945ef5b45e2a0811"
+        }
+      ]
+    },
+    {
+      "id": "versioning",
+      "status": "PASS",
+      "kind": "technical",
+      "action_taken": "Request and policy hashes bind stages; silent changes fail; explicit escalation retains history.",
+      "observation": "Current local regressions support the scoped code claim; no production or live quality claim.",
+      "evidence": [
+        {
+          "path": "results/workflow326/validation/tests.txt",
+          "sha256": "d132678295ff7e69cb53c8966a99fb0d6f08162b5a37bc5472afaa98ecb173c5"
+        },
+        {
+          "path": "results/workflow326/validation/routes.json",
+          "sha256": "ff4f95287e1b8f9b215a6aaf27c0338daecbd4aa1d84c85d670327188991f3a0"
+        },
+        {
+          "path": "src/movie_factory/stage_routing.py",
+          "sha256": "df60025fd031e2a0f0351055b98a5f2c98642ee842bfabec165759b98e8c0bfd"
+        },
+        {
+          "path": "src/movie_factory/staged_runner.py",
+          "sha256": "94cd308418c19f27f277f60693123702a89f1cbca07180b6a6a25b2a520ca28c"
+        },
+        {
+          "path": "docs/engineering-intelligence/STAGE_MODEL_ROUTING.md",
+          "sha256": "cd6e55843f2c2992bb7628d1323ac86f1cb4610b33676a2f945ef5b45e2a0811"
+        }
+      ]
+    },
+    {
+      "id": "economics",
+      "status": "PASS",
+      "kind": "process",
+      "action_taken": "No model call or render. Early work capture gap disclosed; no savings estimate.",
+      "observation": "Current local regressions support the scoped code claim; no production or live quality claim.",
+      "evidence": [
+        {
+          "path": "results/workflow326/validation/tests.txt",
+          "sha256": "d132678295ff7e69cb53c8966a99fb0d6f08162b5a37bc5472afaa98ecb173c5"
+        },
+        {
+          "path": "results/workflow326/validation/routes.json",
+          "sha256": "ff4f95287e1b8f9b215a6aaf27c0338daecbd4aa1d84c85d670327188991f3a0"
+        },
+        {
+          "path": "src/movie_factory/stage_routing.py",
+          "sha256": "df60025fd031e2a0f0351055b98a5f2c98642ee842bfabec165759b98e8c0bfd"
+        },
+        {
+          "path": "src/movie_factory/staged_runner.py",
+          "sha256": "94cd308418c19f27f277f60693123702a89f1cbca07180b6a6a25b2a520ca28c"
+        },
+        {
+          "path": "docs/engineering-intelligence/STAGE_MODEL_ROUTING.md",
+          "sha256": "cd6e55843f2c2992bb7628d1323ac86f1cb4610b33676a2f945ef5b45e2a0811"
+        }
+      ]
+    },
+    {
+      "id": "retrieval",
+      "status": "PASS",
+      "kind": "technical",
+      "action_taken": "Fresh packet read and reconciled before handoff, but generated after initial implementation; process sequencing gap disclosed. New routing source linked manually, not universal retrieval.",
+      "observation": "Current local regressions support the scoped code claim; no production or live quality claim.",
+      "evidence": [
+        {
+          "path": "results/workflow326/validation/tests.txt",
+          "sha256": "d132678295ff7e69cb53c8966a99fb0d6f08162b5a37bc5472afaa98ecb173c5"
+        },
+        {
+          "path": "results/workflow326/validation/routes.json",
+          "sha256": "ff4f95287e1b8f9b215a6aaf27c0338daecbd4aa1d84c85d670327188991f3a0"
+        },
+        {
+          "path": "src/movie_factory/stage_routing.py",
+          "sha256": "df60025fd031e2a0f0351055b98a5f2c98642ee842bfabec165759b98e8c0bfd"
+        },
+        {
+          "path": "src/movie_factory/staged_runner.py",
+          "sha256": "94cd308418c19f27f277f60693123702a89f1cbca07180b6a6a25b2a520ca28c"
+        },
+        {
+          "path": "docs/engineering-intelligence/STAGE_MODEL_ROUTING.md",
+          "sha256": "cd6e55843f2c2992bb7628d1323ac86f1cb4610b33676a2f945ef5b45e2a0811"
+        }
+      ]
+    },
+    {
+      "id": "current_state",
+      "status": "PASS",
+      "kind": "process",
+      "action_taken": "Accepted253 and rejected320/321 preserved; no new production pass.",
+      "observation": "Current local regressions support the scoped code claim; no production or live quality claim.",
+      "evidence": [
+        {
+          "path": "results/workflow326/validation/tests.txt",
+          "sha256": "d132678295ff7e69cb53c8966a99fb0d6f08162b5a37bc5472afaa98ecb173c5"
+        },
+        {
+          "path": "results/workflow326/validation/routes.json",
+          "sha256": "ff4f95287e1b8f9b215a6aaf27c0338daecbd4aa1d84c85d670327188991f3a0"
+        },
+        {
+          "path": "src/movie_factory/stage_routing.py",
+          "sha256": "df60025fd031e2a0f0351055b98a5f2c98642ee842bfabec165759b98e8c0bfd"
+        },
+        {
+          "path": "src/movie_factory/staged_runner.py",
+          "sha256": "94cd308418c19f27f277f60693123702a89f1cbca07180b6a6a25b2a520ca28c"
+        },
+        {
+          "path": "docs/engineering-intelligence/STAGE_MODEL_ROUTING.md",
+          "sha256": "cd6e55843f2c2992bb7628d1323ac86f1cb4610b33676a2f945ef5b45e2a0811"
+        }
+      ]
+    },
+    {
+      "id": "au_reuse",
+      "status": "PASS",
+      "kind": "review",
+      "action_taken": "Protected source media untouched; local commits do not imply remote backup.",
+      "observation": "Current local regressions support the scoped code claim; no production or live quality claim.",
+      "evidence": [
+        {
+          "path": "results/workflow326/validation/tests.txt",
+          "sha256": "d132678295ff7e69cb53c8966a99fb0d6f08162b5a37bc5472afaa98ecb173c5"
+        },
+        {
+          "path": "results/workflow326/validation/routes.json",
+          "sha256": "ff4f95287e1b8f9b215a6aaf27c0338daecbd4aa1d84c85d670327188991f3a0"
+        },
+        {
+          "path": "src/movie_factory/stage_routing.py",
+          "sha256": "df60025fd031e2a0f0351055b98a5f2c98642ee842bfabec165759b98e8c0bfd"
+        },
+        {
+          "path": "src/movie_factory/staged_runner.py",
+          "sha256": "94cd308418c19f27f277f60693123702a89f1cbca07180b6a6a25b2a520ca28c"
+        },
+        {
+          "path": "docs/engineering-intelligence/STAGE_MODEL_ROUTING.md",
+          "sha256": "cd6e55843f2c2992bb7628d1323ac86f1cb4610b33676a2f945ef5b45e2a0811"
+        }
+      ]
+    },
+    {
+      "id": "au_review",
+      "status": "PASS",
+      "kind": "review",
+      "action_taken": "Offline protocol and control tests only; live runtime settings and reviewer accuracy not qualified.",
+      "observation": "Current local regressions support the scoped code claim; no production or live quality claim.",
+      "evidence": [
+        {
+          "path": "results/workflow326/validation/tests.txt",
+          "sha256": "d132678295ff7e69cb53c8966a99fb0d6f08162b5a37bc5472afaa98ecb173c5"
+        },
+        {
+          "path": "results/workflow326/validation/routes.json",
+          "sha256": "ff4f95287e1b8f9b215a6aaf27c0338daecbd4aa1d84c85d670327188991f3a0"
+        },
+        {
+          "path": "src/movie_factory/stage_routing.py",
+          "sha256": "df60025fd031e2a0f0351055b98a5f2c98642ee842bfabec165759b98e8c0bfd"
+        },
+        {
+          "path": "src/movie_factory/staged_runner.py",
+          "sha256": "94cd308418c19f27f277f60693123702a89f1cbca07180b6a6a25b2a520ca28c"
+        },
+        {
+          "path": "docs/engineering-intelligence/STAGE_MODEL_ROUTING.md",
+          "sha256": "cd6e55843f2c2992bb7628d1323ac86f1cb4610b33676a2f945ef5b45e2a0811"
+        }
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "prediction": "Changing stage model might erase call limit or bypass failed review",
+      "observation": "Escalation-cap and failed routed-chain fixtures block both paths.",
+      "response": "Retain controller and ledger authority across model changes.",
+      "result": "resolved"
+    }
+  ],
+  "adjacent_regressions": "Existing focused controller, review, knowledge and context suites pass; legacy corpus tests outside this suite unchanged.",
+  "stopping_reason": "Routing code complete; no live calls allowed by this scoped implementation."
+}
