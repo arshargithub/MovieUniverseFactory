@@ -1,0 +1,21 @@
+{
+  "exchange": 321,
+  "status": "DIRECTOR_REJECTED_REVIEW_RECOMMENDATION_WITHDRAWN",
+  "candidate_sha256": "ad7d980eb064a03837989f27d68ebacfe08576cb30625f92696c20b5fc50d452",
+  "supersedes_queue": "results/sikh320/DIRECTOR_AV_QUEUE.json",
+  "source": "Director321 requests full reference comparison and admission failure diagnosis before further construction",
+  "defects": [
+    {"id":"D321-01","scope":"whole-horse rear pose and timing","status":"FAIL","classification":["method","evidence","judgment"]},
+    {"id":"D321-02","scope":"coordinated rider response","status":"FAIL","classification":["method","judgment"]},
+    {"id":"D321-03","scope":"leader face beard turban costume","status":"FAIL","classification":["method","judgment","admission"]},
+    {"id":"D321-04","scope":"saddle tack and horse appearance","status":"FAIL","classification":["method","judgment","admission"]}
+  ],
+  "technical_successes_preserved": true,
+  "direct_motion_review": false,
+  "direct_audio_review": false,
+  "scene_changes": false,
+  "new_production_render": false,
+  "audit": "docs/knowledge/NIHANG_REARING_REVIEW_FAILURE_321.md",
+  "knowledge": "Fresh planning packet routes applicable rules; manual321 authority/rejection and deep271/313/320 reconciliation govern audit. Indexed corpus unchanged; no automatic321 coverage claim.",
+  "operating": "One rejected handoff; not one input per defect. Early audit inspection before work_started capture remains a timing gap. No exact net effort claim."
+}

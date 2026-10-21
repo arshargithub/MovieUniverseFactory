@@ -4,6 +4,22 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+### Exchange321 — rejected supporting shot and reference audit
+
+Director rejects320/10's robotic rearing and leader face/outfit/saddle. The
+recommendation for review is withdrawn; the historical320 queue is superseded
+by [321 disposition](../../results/sikh321/disposition.json). Do not integrate it.
+The requested comparison/process audit is complete without scene edits or new
+production rendering. Read [the reference and admission audit](../knowledge/NIHANG_REARING_REVIEW_FAILURE_321.md)
+before the next supporting-cast pass. It is a mandatory manual reconciliation,
+not an already indexed knowledge extension. Existing technical successes remain
+technical history, not artistic approval. Recommended next work is whole-pose
+horse/rider reconstruction plus visible leader/horse/tack appearance proof,
+then one near crowd actor and the isolated passage with handles. Do not substitute
+another retime or surface-noise pass for this proof. Director313's temporal/audio
+review does not waive frame-visible failures. No construction is launched from
+this analysis request; no new spend, provider, upload or full-trailer render.
+
 ### Exchange320 — isolated leader/rearing and attentive crowd
 
 Director rejects319 supporting-character appearance and acting; that candidate
