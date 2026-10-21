@@ -1,0 +1,297 @@
+{
+  "intent": "Keep the larger-than-life music and punchy horse opening while making the private officer narration work with it.",
+  "protected": [
+    "Existing creative authority; no production change in this evaluation"
+  ],
+  "references": [
+    {
+      "id": "cutoff-direction",
+      "role": "Chosen music and voice are retained creative authorities; this test uses the written integration direction, not a fresh listening claim."
+    }
+  ],
+  "requirements": [
+    {
+      "id": "attention_budget",
+      "criterion": "Key words disappear, score seems switched off, or reading the quote sacrifices the action."
+    },
+    {
+      "id": "word_proof",
+      "criterion": "A listener cannot repeat the central words or must strain while music seems fine."
+    },
+    {
+      "id": "impact_and_reuse",
+      "criterion": "Impact lacks weight, slips from contact or masks speech."
+    }
+  ],
+  "expert_plan": {
+    "version": 1,
+    "beat_intents": {
+      "hook": "Horse and music establish energy before speech",
+      "speech": "Understand key words without making the score feel switched off",
+      "release": "Let music carry the action after the thought"
+    },
+    "beats": [
+      {
+        "id": "hook",
+        "audience_read": "Horse and music establish energy before speech",
+        "framing": "Opening action with immediate sound hook",
+        "lenses": {
+          "story_performance": {
+            "applies": true,
+            "requirements": [
+              "attention_budget"
+            ],
+            "why": "Voice, readable quote and melodic lead compete for attention; a fixed duck amount cannot decide the hierarchy."
+          },
+          "camera_editorial": {
+            "applies": true,
+            "requirements": [
+              "attention_budget"
+            ],
+            "why": "Voice, readable quote and melodic lead compete for attention; a fixed duck amount cannot decide the hierarchy."
+          },
+          "animation_physics": {
+            "applies": true,
+            "requirements": [
+              "impact_and_reuse"
+            ],
+            "why": "Punch and exact event placement must survive retiming without rerendering the scene."
+          },
+          "anatomy_contact": {
+            "applies": false,
+            "requirements": [],
+            "why": "No geometry or contact change is authorized by this sound test; existing motion remains a protected input."
+          },
+          "effects_environment": {
+            "applies": false,
+            "requirements": [],
+            "why": "No new visual effects construction; preserve existing dust/action while testing the mix."
+          },
+          "sound_music": {
+            "applies": true,
+            "requirements": [
+              "attention_budget",
+              "impact_and_reuse"
+            ],
+            "why": "Voice, readable quote and melodic lead compete for attention; a fixed duck amount cannot decide the hierarchy. Punch and exact event placement must survive retiming without rerendering the scene."
+          },
+          "production_reuse": {
+            "applies": true,
+            "requirements": [
+              "impact_and_reuse"
+            ],
+            "why": "Punch and exact event placement must survive retiming without rerendering the scene."
+          }
+        }
+      },
+      {
+        "id": "speech",
+        "audience_read": "Understand key words without making the score feel switched off",
+        "framing": "Face/action and quote visual compete for attention",
+        "lenses": {
+          "story_performance": {
+            "applies": true,
+            "requirements": [
+              "attention_budget"
+            ],
+            "why": "Voice, readable quote and melodic lead compete for attention; a fixed duck amount cannot decide the hierarchy."
+          },
+          "camera_editorial": {
+            "applies": true,
+            "requirements": [
+              "attention_budget"
+            ],
+            "why": "Voice, readable quote and melodic lead compete for attention; a fixed duck amount cannot decide the hierarchy."
+          },
+          "animation_physics": {
+            "applies": false,
+            "requirements": [],
+            "why": "No separate requirement owned by this lens in this beat; coupled concerns are linked in the other applicable beat/lens rows. Reassess if framing or scope changes."
+          },
+          "anatomy_contact": {
+            "applies": false,
+            "requirements": [],
+            "why": "No geometry or contact change is authorized by this sound test; existing motion remains a protected input."
+          },
+          "effects_environment": {
+            "applies": false,
+            "requirements": [],
+            "why": "No new visual effects construction; preserve existing dust/action while testing the mix."
+          },
+          "sound_music": {
+            "applies": true,
+            "requirements": [
+              "attention_budget",
+              "word_proof"
+            ],
+            "why": "Voice, readable quote and melodic lead compete for attention; a fixed duck amount cannot decide the hierarchy. The important claim relies on races and impeccable being understandable, not merely on average voice loudness."
+          },
+          "production_reuse": {
+            "applies": false,
+            "requirements": [],
+            "why": "No separate requirement owned by this lens in this beat; coupled concerns are linked in the other applicable beat/lens rows. Reassess if framing or scope changes."
+          }
+        }
+      },
+      {
+        "id": "release",
+        "audience_read": "Let music carry the action after the thought",
+        "framing": "Dramatic turn and uphill carry",
+        "lenses": {
+          "story_performance": {
+            "applies": true,
+            "requirements": [
+              "attention_budget"
+            ],
+            "why": "Voice, readable quote and melodic lead compete for attention; a fixed duck amount cannot decide the hierarchy."
+          },
+          "camera_editorial": {
+            "applies": true,
+            "requirements": [
+              "attention_budget"
+            ],
+            "why": "Voice, readable quote and melodic lead compete for attention; a fixed duck amount cannot decide the hierarchy."
+          },
+          "animation_physics": {
+            "applies": true,
+            "requirements": [
+              "impact_and_reuse"
+            ],
+            "why": "Punch and exact event placement must survive retiming without rerendering the scene."
+          },
+          "anatomy_contact": {
+            "applies": false,
+            "requirements": [],
+            "why": "No geometry or contact change is authorized by this sound test; existing motion remains a protected input."
+          },
+          "effects_environment": {
+            "applies": false,
+            "requirements": [],
+            "why": "No new visual effects construction; preserve existing dust/action while testing the mix."
+          },
+          "sound_music": {
+            "applies": true,
+            "requirements": [
+              "attention_budget",
+              "impact_and_reuse"
+            ],
+            "why": "Voice, readable quote and melodic lead compete for attention; a fixed duck amount cannot decide the hierarchy. Punch and exact event placement must survive retiming without rerendering the scene."
+          },
+          "production_reuse": {
+            "applies": true,
+            "requirements": [
+              "impact_and_reuse"
+            ],
+            "why": "Punch and exact event placement must survive retiming without rerendering the scene."
+          }
+        }
+      }
+    ],
+    "realizations": {
+      "attention_budget": {
+        "beats": [
+          "hook",
+          "speech",
+          "release"
+        ],
+        "lenses": [
+          "story_performance",
+          "sound_music",
+          "camera_editorial"
+        ],
+        "derivation": "Voice, readable quote and melodic lead compete for attention; a fixed duck amount cannot decide the hierarchy.",
+        "method": "Map the intended focus by phrase and action beat. Audition a coherent musical phrase with speech spacing, word audibility and music continuity together, using the selected track rather than isolated voice.",
+        "interfaces": [
+          "narration/music",
+          "quote/action",
+          "mix/edit"
+        ],
+        "early_proof": "Same short integrated mix through all three beats at normal and phone listening level; Director judges direct audio.",
+        "failure_condition": "Key words disappear, score seems switched off, or reading the quote sacrifices the action.",
+        "reopen_when": "Camera, source authority, performance, contacts or coupled assets change; previous evidence no longer covers the shot.",
+        "priority": "quality_floor",
+        "origin": "craft_inference",
+        "reference_ids": [
+          "cutoff-direction"
+        ]
+      },
+      "word_proof": {
+        "beats": [
+          "speech"
+        ],
+        "lenses": [
+          "sound_music"
+        ],
+        "derivation": "The important claim relies on races and impeccable being understandable, not merely on average voice loudness.",
+        "method": "Check those phrase endings separately from overall loudness; use automation and spectral room before indiscriminate global ducking.",
+        "interfaces": [
+          "consonants/lead masking",
+          "phrase pause/music breath"
+        ],
+        "early_proof": "First-listen transcription check at ordinary volume plus waveform/peak checks; latter alone cannot PASS intelligibility.",
+        "failure_condition": "A listener cannot repeat the central words or must strain while music seems fine.",
+        "reopen_when": "Camera, source authority, performance, contacts or coupled assets change; previous evidence no longer covers the shot.",
+        "priority": "quality_floor",
+        "origin": "craft_inference",
+        "reference_ids": [
+          "cutoff-direction"
+        ]
+      },
+      "impact_and_reuse": {
+        "beats": [
+          "hook",
+          "release"
+        ],
+        "lenses": [
+          "sound_music",
+          "production_reuse",
+          "animation_physics"
+        ],
+        "derivation": "Punch and exact event placement must survive retiming without rerendering the scene.",
+        "method": "Keep contact-event anchors and separate stems; test attack plus low body in context and avoid clipped peaks.",
+        "interfaces": [
+          "hoof events/retiming",
+          "stems/mix"
+        ],
+        "early_proof": "Aligned opening/turn impacts with reusable edit decision and stem offsets.",
+        "failure_condition": "Impact lacks weight, slips from contact or masks speech.",
+        "reopen_when": "Camera, source authority, performance, contacts or coupled assets change; previous evidence no longer covers the shot.",
+        "priority": "quality_floor",
+        "origin": "craft_inference",
+        "reference_ids": [
+          "cutoff-direction"
+        ]
+      }
+    },
+    "challenge": {
+      "plan_digest": "bbd5ed44de7ca5fffda76de2ff30e9e6e2429db17081a8c17079f9cfcd3bb0d9",
+      "open_issues": [],
+      "intent_coverage": {
+        "hook": {
+          "reason": "Horse and music establish energy before speech",
+          "requirements": [
+            "attention_budget",
+            "impact_and_reuse"
+          ]
+        },
+        "speech": {
+          "reason": "Understand key words without making the score feel switched off",
+          "requirements": [
+            "attention_budget",
+            "word_proof"
+          ]
+        },
+        "release": {
+          "reason": "Let music carry the action after the thought",
+          "requirements": [
+            "attention_budget",
+            "impact_and_reuse"
+          ]
+        }
+      },
+      "cross_discipline_conflicts": "Intelligibility and uninterrupted musical force can conflict. Surface script-density or voice-character tradeoffs to the Director if mix remedies cannot satisfy both. Do not silently remove the quote narration or claim the later chosen ramp was inevitable.",
+      "omission_probe": "Intelligibility and uninterrupted musical force can conflict. Surface script-density or voice-character tradeoffs to the Director if mix remedies cannot satisfy both. Do not silently remove the quote narration or claim the later chosen ramp was inevitable.",
+      "scope_tradeoff": "Early representative proof before polish. No exact later Director preference is made mandatory; this is a planning hypothesis, not approved scene dispatch."
+    }
+  }
+}

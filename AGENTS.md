@@ -39,6 +39,15 @@ dependencies are not a proven production path.
 
 ### Strategy and quality
 
+Before substantial production planning read `docs/knowledge/EXPERT_LENS_PLANNING_328.md`.
+Derive beat-specific requirements from intent using applicable expert lenses;
+bind methods, interfaces, early proofs, failure conditions and reference roles.
+The staged controller requires this traceability and a completeness challenge.
+Review original intent for omissions as well as the checklist; a planning gap
+requires in-scope replanning, not blind patching or another routine approval.
+Structural validation is not perceptual judgment; preserve the semantic negative
+control and track prospective escapes. Lightweight non-production routes stay light.
+
 Before substantial work read `docs/decisions/0005-production-strategy-before-execution.md`
 and the current work strategy. Define outcome/quality floor, complete path and
 interfaces, chosen method, critical assumptions, earliest integrated proof,

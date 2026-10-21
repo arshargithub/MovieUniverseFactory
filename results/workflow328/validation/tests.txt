@@ -1,0 +1,453 @@
+........................................................................ [ 27%]
+........................................................................ [ 55%]
+..........FFFFFFFFFFFFFFFF......F..............F........................ [ 83%]
+..........................................                               [100%]
+=================================== FAILURES ===================================
+__________ test_all_original_paragraphs_preserved_with_core_or_routes __________
+
+workspace = PosixPath('/private/var/folders/xn/hbr015hn5hb3tjr53f9ccntr0000gn/T/pytest-of-adisharma/pytest-1425/test_all_original_paragraphs_p0')
+
+    def test_all_original_paragraphs_preserved_with_core_or_routes(workspace):
+>       data,records=ch.load(workspace)
+                     ^^^^^^^^^^^^^^^^^^
+
+tests/test_context_hygiene.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/private/var/folders/xn/hbr015hn5hb3tjr53f9ccntr0000gn/T/pytest-of-adisharma/pytest-1425/test_all_original_paragraphs_p0')
+
+    def load(root):
+        data=json.loads(safe(root,CATALOG).read_text())
+        if data['schema']!=1:raise rc.Blocked('UNKNOWN_SCHEMA')
+        for key in ['original','core']:
+            if sha(safe(root,data[key]['path']))!=data[key]['sha256']:
+>               raise rc.Blocked('STALE_'+key.upper())
+E               movie_factory.review_control.Blocked: STALE_CORE
+
+src/movie_factory/context_hygiene.py:39: Blocked
+_______________ test_frozen_cross_discipline_expectations[horse] _______________
+
+workspace = PosixPath('/private/var/folders/xn/hbr015hn5hb3tjr53f9ccntr0000gn/T/pytest-of-adisharma/pytest-1425/test_frozen_cross_discipline_e0')
+case = {'topics': ['horse'], 'required': ['R01', 'R07', 'R08', 'R09', 'R10', 'R11', ...], 'forbidden': ['R22', 'R23', 'R25', 'R28']}
+
+    @pytest.mark.parametrize('case',CASES,ids=lambda c:'+'.join(c['topics']))
+    def test_frozen_cross_discipline_expectations(workspace,case):
+>       result=ch.route(workspace,case['topics'])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_context_hygiene.py:41: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/movie_factory/context_hygiene.py:59: in route
+    data,records=load(root)
+                 ^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/private/var/folders/xn/hbr015hn5hb3tjr53f9ccntr0000gn/T/pytest-of-adisharma/pytest-1425/test_frozen_cross_discipline_e0')
+
+    def load(root):
+        data=json.loads(safe(root,CATALOG).read_text())
+        if data['schema']!=1:raise rc.Blocked('UNKNOWN_SCHEMA')
+        for key in ['original','core']:
+            if sha(safe(root,data[key]['path']))!=data[key]['sha256']:
+>               raise rc.Blocked('STALE_'+key.upper())
+E               movie_factory.review_control.Blocked: STALE_CORE
+
+src/movie_factory/context_hygiene.py:39: Blocked
+___ test_frozen_cross_discipline_expectations[horse+wardrobe+sound+pashtun] ____
+
+workspace = PosixPath('/private/var/folders/xn/hbr015hn5hb3tjr53f9ccntr0000gn/T/pytest-of-adisharma/pytest-1425/test_frozen_cross_discipline_e1')
+case = {'topics': ['horse', 'wardrobe', 'sound', 'pashtun'], 'required': ['R01', 'R09', 'R13', 'R22', 'R23', 'R25', ...]}
+
+    @pytest.mark.parametrize('case',CASES,ids=lambda c:'+'.join(c['topics']))
+    def test_frozen_cross_discipline_expectations(workspace,case):
+>       result=ch.route(workspace,case['topics'])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_context_hygiene.py:41: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/movie_factory/context_hygiene.py:59: in route
+    data,records=load(root)
+                 ^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/private/var/folders/xn/hbr015hn5hb3tjr53f9ccntr0000gn/T/pytest-of-adisharma/pytest-1425/test_frozen_cross_discipline_e1')
+
+    def load(root):
+        data=json.loads(safe(root,CATALOG).read_text())
+        if data['schema']!=1:raise rc.Blocked('UNKNOWN_SCHEMA')
+        for key in ['original','core']:
+            if sha(safe(root,data[key]['path']))!=data[key]['sha256']:
+>               raise rc.Blocked('STALE_'+key.upper())
+E               movie_factory.review_control.Blocked: STALE_CORE
+
+src/movie_factory/context_hygiene.py:39: Blocked
+_____________ test_frozen_cross_discipline_expectations[character] _____________
+
+workspace = PosixPath('/private/var/folders/xn/hbr015hn5hb3tjr53f9ccntr0000gn/T/pytest-of-adisharma/pytest-1425/test_frozen_cross_discipline_e2')
+case = {'topics': ['character'], 'required': ['R05', 'R08', 'R21', 'R24', 'R27'], 'forbidden': ['R25', 'R26', 'R28']}
+
+    @pytest.mark.parametrize('case',CASES,ids=lambda c:'+'.join(c['topics']))
+    def test_frozen_cross_discipline_expectations(workspace,case):
+>       result=ch.route(workspace,case['topics'])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_context_hygiene.py:41: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/movie_factory/context_hygiene.py:59: in route
+    data,records=load(root)
+                 ^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/private/var/folders/xn/hbr015hn5hb3tjr53f9ccntr0000gn/T/pytest-of-adisharma/pytest-1425/test_frozen_cross_discipline_e2')
+
+    def load(root):
+        data=json.loads(safe(root,CATALOG).read_text())
+        if data['schema']!=1:raise rc.Blocked('UNKNOWN_SCHEMA')
+        for key in ['original','core']:
+            if sha(safe(root,data[key]['path']))!=data[key]['sha256']:
+>               raise rc.Blocked('STALE_'+key.upper())
+E               movie_factory.review_control.Blocked: STALE_CORE
+
+src/movie_factory/context_hygiene.py:39: Blocked
+______________ test_frozen_cross_discipline_expectations[trellis] ______________
+
+workspace = PosixPath('/private/var/folders/xn/hbr015hn5hb3tjr53f9ccntr0000gn/T/pytest-of-adisharma/pytest-1425/test_frozen_cross_discipline_e3')
+case = {'topics': ['trellis'], 'required': ['R02', 'R03', 'R35', 'R38', 'R42']}
+
+    @pytest.mark.parametrize('case',CASES,ids=lambda c:'+'.join(c['topics']))
+    def test_frozen_cross_discipline_expectations(workspace,case):
+>       result=ch.route(workspace,case['topics'])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_context_hygiene.py:41: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/movie_factory/context_hygiene.py:59: in route
+    data,records=load(root)
+                 ^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/private/var/folders/xn/hbr015hn5hb3tjr53f9ccntr0000gn/T/pytest-of-adisharma/pytest-1425/test_frozen_cross_discipline_e3')
+
+    def load(root):
+        data=json.loads(safe(root,CATALOG).read_text())
+        if data['schema']!=1:raise rc.Blocked('UNKNOWN_SCHEMA')
+        for key in ['original','core']:
+            if sha(safe(root,data[key]['path']))!=data[key]['sha256']:
+>               raise rc.Blocked('STALE_'+key.upper())
+E               movie_factory.review_control.Blocked: STALE_CORE
+
+src/movie_factory/context_hygiene.py:39: Blocked
+_____________ test_frozen_cross_discipline_expectations[planning] ______________
+
+workspace = PosixPath('/private/var/folders/xn/hbr015hn5hb3tjr53f9ccntr0000gn/T/pytest-of-adisharma/pytest-1425/test_frozen_cross_discipline_e4')
+case = {'topics': ['planning'], 'required': ['R16', 'R29', 'R31', 'R32'], 'forbidden': ['R22', 'R23', 'R25']}
+
+    @pytest.mark.parametrize('case',CASES,ids=lambda c:'+'.join(c['topics']))
+    def test_frozen_cross_discipline_expectations(workspace,case):
+>       result=ch.route(workspace,case['topics'])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_context_hygiene.py:41: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/movie_factory/context_hygiene.py:59: in route
+    data,records=load(root)
+                 ^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/private/var/folders/xn/hbr015hn5hb3tjr53f9ccntr0000gn/T/pytest-of-adisharma/pytest-1425/test_frozen_cross_discipline_e4')
+
+    def load(root):
+        data=json.loads(safe(root,CATALOG).read_text())
+        if data['schema']!=1:raise rc.Blocked('UNKNOWN_SCHEMA')
+        for key in ['original','core']:
+            if sha(safe(root,data[key]['path']))!=data[key]['sha256']:
+>               raise rc.Blocked('STALE_'+key.upper())
+E               movie_factory.review_control.Blocked: STALE_CORE
+
+src/movie_factory/context_hygiene.py:39: Blocked
+___________ test_frozen_cross_discipline_expectations[architecture] ____________
+
+workspace = PosixPath('/private/var/folders/xn/hbr015hn5hb3tjr53f9ccntr0000gn/T/pytest-of-adisharma/pytest-1425/test_frozen_cross_discipline_e5')
+case = {'topics': ['architecture'], 'required': ['R14', 'R30', 'R39']}
+
+    @pytest.mark.parametrize('case',CASES,ids=lambda c:'+'.join(c['topics']))
+    def test_frozen_cross_discipline_expectations(workspace,case):
+>       result=ch.route(workspace,case['topics'])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_context_hygiene.py:41: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/movie_factory/context_hygiene.py:59: in route
+    data,records=load(root)
+                 ^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/private/var/folders/xn/hbr015hn5hb3tjr53f9ccntr0000gn/T/pytest-of-adisharma/pytest-1425/test_frozen_cross_discipline_e5')
+
+    def load(root):
+        data=json.loads(safe(root,CATALOG).read_text())
+        if data['schema']!=1:raise rc.Blocked('UNKNOWN_SCHEMA')
+        for key in ['original','core']:
+            if sha(safe(root,data[key]['path']))!=data[key]['sha256']:
+>               raise rc.Blocked('STALE_'+key.upper())
+E               movie_factory.review_control.Blocked: STALE_CORE
+
+src/movie_factory/context_hygiene.py:39: Blocked
+____________ test_frozen_cross_discipline_expectations[environment] ____________
+
+workspace = PosixPath('/private/var/folders/xn/hbr015hn5hb3tjr53f9ccntr0000gn/T/pytest-of-adisharma/pytest-1425/test_frozen_cross_discipline_e6')
+case = {'topics': ['environment'], 'required': ['R01', 'R08', 'R09', 'R21']}
+
+    @pytest.mark.parametrize('case',CASES,ids=lambda c:'+'.join(c['topics']))
+    def test_frozen_cross_discipline_expectations(workspace,case):
+>       result=ch.route(workspace,case['topics'])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_context_hygiene.py:41: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/movie_factory/context_hygiene.py:59: in route
+    data,records=load(root)
+                 ^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/private/var/folders/xn/hbr015hn5hb3tjr53f9ccntr0000gn/T/pytest-of-adisharma/pytest-1425/test_frozen_cross_discipline_e6')
+
+    def load(root):
+        data=json.loads(safe(root,CATALOG).read_text())
+        if data['schema']!=1:raise rc.Blocked('UNKNOWN_SCHEMA')
+        for key in ['original','core']:
+            if sha(safe(root,data[key]['path']))!=data[key]['sha256']:
+>               raise rc.Blocked('STALE_'+key.upper())
+E               movie_factory.review_control.Blocked: STALE_CORE
+
+src/movie_factory/context_hygiene.py:39: Blocked
+____________ test_frozen_cross_discipline_expectations[escalation] _____________
+
+workspace = PosixPath('/private/var/folders/xn/hbr015hn5hb3tjr53f9ccntr0000gn/T/pytest-of-adisharma/pytest-1425/test_frozen_cross_discipline_e7')
+case = {'topics': ['escalation'], 'required': ['R11', 'R12', 'R40']}
+
+    @pytest.mark.parametrize('case',CASES,ids=lambda c:'+'.join(c['topics']))
+    def test_frozen_cross_discipline_expectations(workspace,case):
+>       result=ch.route(workspace,case['topics'])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_context_hygiene.py:41: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/movie_factory/context_hygiene.py:59: in route
+    data,records=load(root)
+                 ^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/private/var/folders/xn/hbr015hn5hb3tjr53f9ccntr0000gn/T/pytest-of-adisharma/pytest-1425/test_frozen_cross_discipline_e7')
+
+    def load(root):
+        data=json.loads(safe(root,CATALOG).read_text())
+        if data['schema']!=1:raise rc.Blocked('UNKNOWN_SCHEMA')
+        for key in ['original','core']:
+            if sha(safe(root,data[key]['path']))!=data[key]['sha256']:
+>               raise rc.Blocked('STALE_'+key.upper())
+E               movie_factory.review_control.Blocked: STALE_CORE
+
+src/movie_factory/context_hygiene.py:39: Blocked
+____________ test_frozen_cross_discipline_expectations[operations] _____________
+
+workspace = PosixPath('/private/var/folders/xn/hbr015hn5hb3tjr53f9ccntr0000gn/T/pytest-of-adisharma/pytest-1425/test_frozen_cross_discipline_e8')
+case = {'topics': ['operations'], 'required': ['R07', 'R31', 'R32', 'R34', 'R42']}
+
+    @pytest.mark.parametrize('case',CASES,ids=lambda c:'+'.join(c['topics']))
+    def test_frozen_cross_discipline_expectations(workspace,case):
+>       result=ch.route(workspace,case['topics'])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_context_hygiene.py:41: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/movie_factory/context_hygiene.py:59: in route
+    data,records=load(root)
+                 ^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/private/var/folders/xn/hbr015hn5hb3tjr53f9ccntr0000gn/T/pytest-of-adisharma/pytest-1425/test_frozen_cross_discipline_e8')
+
+    def load(root):
+        data=json.loads(safe(root,CATALOG).read_text())
+        if data['schema']!=1:raise rc.Blocked('UNKNOWN_SCHEMA')
+        for key in ['original','core']:
+            if sha(safe(root,data[key]['path']))!=data[key]['sha256']:
+>               raise rc.Blocked('STALE_'+key.upper())
+E               movie_factory.review_control.Blocked: STALE_CORE
+
+src/movie_factory/context_hygiene.py:39: Blocked
+______________ test_frozen_cross_discipline_expectations[context] ______________
+
+workspace = PosixPath('/private/var/folders/xn/hbr015hn5hb3tjr53f9ccntr0000gn/T/pytest-of-adisharma/pytest-1425/test_frozen_cross_discipline_e9')
+case = {'topics': ['context'], 'required': ['R01', 'R10', 'R29']}
+
+    @pytest.mark.parametrize('case',CASES,ids=lambda c:'+'.join(c['topics']))
+    def test_frozen_cross_discipline_expectations(workspace,case):
+>       result=ch.route(workspace,case['topics'])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_context_hygiene.py:41: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/movie_factory/context_hygiene.py:59: in route
+    data,records=load(root)
+                 ^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/private/var/folders/xn/hbr015hn5hb3tjr53f9ccntr0000gn/T/pytest-of-adisharma/pytest-1425/test_frozen_cross_discipline_e9')
+
+    def load(root):
+        data=json.loads(safe(root,CATALOG).read_text())
+        if data['schema']!=1:raise rc.Blocked('UNKNOWN_SCHEMA')
+        for key in ['original','core']:
+            if sha(safe(root,data[key]['path']))!=data[key]['sha256']:
+>               raise rc.Blocked('STALE_'+key.upper())
+E               movie_factory.review_control.Blocked: STALE_CORE
+
+src/movie_factory/context_hygiene.py:39: Blocked
+________________ test_unknown_or_missing_topic_blocks[topics0] _________________
+
+workspace = PosixPath('/private/var/folders/xn/hbr015hn5hb3tjr53f9ccntr0000gn/T/pytest-of-adisharma/pytest-1425/test_unknown_or_missing_topic_0')
+topics = []
+
+    @pytest.mark.parametrize('topics',[[],['everything'],['horse','unmapped'],['']])
+    def test_unknown_or_missing_topic_blocks(workspace,topics):
+>       with pytest.raises(rc.Blocked,match='UNKNOWN_TOPIC'):ch.route(workspace,topics)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'UNKNOWN_TOPIC'
+E         Actual message: 'STALE_CORE'
+
+tests/test_context_hygiene.py:50: AssertionError
+________________ test_unknown_or_missing_topic_blocks[topics1] _________________
+
+workspace = PosixPath('/private/var/folders/xn/hbr015hn5hb3tjr53f9ccntr0000gn/T/pytest-of-adisharma/pytest-1425/test_unknown_or_missing_topic_1')
+topics = ['everything']
+
+    @pytest.mark.parametrize('topics',[[],['everything'],['horse','unmapped'],['']])
+    def test_unknown_or_missing_topic_blocks(workspace,topics):
+>       with pytest.raises(rc.Blocked,match='UNKNOWN_TOPIC'):ch.route(workspace,topics)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'UNKNOWN_TOPIC'
+E         Actual message: 'STALE_CORE'
+
+tests/test_context_hygiene.py:50: AssertionError
+________________ test_unknown_or_missing_topic_blocks[topics2] _________________
+
+workspace = PosixPath('/private/var/folders/xn/hbr015hn5hb3tjr53f9ccntr0000gn/T/pytest-of-adisharma/pytest-1425/test_unknown_or_missing_topic_2')
+topics = ['horse', 'unmapped']
+
+    @pytest.mark.parametrize('topics',[[],['everything'],['horse','unmapped'],['']])
+    def test_unknown_or_missing_topic_blocks(workspace,topics):
+>       with pytest.raises(rc.Blocked,match='UNKNOWN_TOPIC'):ch.route(workspace,topics)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'UNKNOWN_TOPIC'
+E         Actual message: 'STALE_CORE'
+
+tests/test_context_hygiene.py:50: AssertionError
+________________ test_unknown_or_missing_topic_blocks[topics3] _________________
+
+workspace = PosixPath('/private/var/folders/xn/hbr015hn5hb3tjr53f9ccntr0000gn/T/pytest-of-adisharma/pytest-1425/test_unknown_or_missing_topic_3')
+topics = ['']
+
+    @pytest.mark.parametrize('topics',[[],['everything'],['horse','unmapped'],['']])
+    def test_unknown_or_missing_topic_blocks(workspace,topics):
+>       with pytest.raises(rc.Blocked,match='UNKNOWN_TOPIC'):ch.route(workspace,topics)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'UNKNOWN_TOPIC'
+E         Actual message: 'STALE_CORE'
+
+tests/test_context_hygiene.py:50: AssertionError
+_____________ test_budget_never_silently_truncates_required_rules ______________
+
+workspace = PosixPath('/private/var/folders/xn/hbr015hn5hb3tjr53f9ccntr0000gn/T/pytest-of-adisharma/pytest-1425/test_budget_never_silently_tru0')
+
+    def test_budget_never_silently_truncates_required_rules(workspace):
+>       with pytest.raises(rc.Blocked,match='EXCEEDS_BUDGET'):ch.route(workspace,['horse'],100)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'EXCEEDS_BUDGET'
+E         Actual message: 'STALE_CORE'
+
+tests/test_context_hygiene.py:54: AssertionError
+_______________ test_frozen_cases_detect_removed_adjacent_route ________________
+
+workspace = PosixPath('/private/var/folders/xn/hbr015hn5hb3tjr53f9ccntr0000gn/T/pytest-of-adisharma/pytest-1425/test_frozen_cases_detect_remov0')
+
+    def test_frozen_cases_detect_removed_adjacent_route(workspace):
+        edit_catalog(workspace,lambda d:d['topics']['horse'].update(requires=[]))
+>       ids={r['id'] for r in ch.route(workspace,['horse'])['rules']}
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_context_hygiene.py:70: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/movie_factory/context_hygiene.py:59: in route
+    data,records=load(root)
+                 ^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/private/var/folders/xn/hbr015hn5hb3tjr53f9ccntr0000gn/T/pytest-of-adisharma/pytest-1425/test_frozen_cases_detect_remov0')
+
+    def load(root):
+        data=json.loads(safe(root,CATALOG).read_text())
+        if data['schema']!=1:raise rc.Blocked('UNKNOWN_SCHEMA')
+        for key in ['original','core']:
+            if sha(safe(root,data[key]['path']))!=data[key]['sha256']:
+>               raise rc.Blocked('STALE_'+key.upper())
+E               movie_factory.review_control.Blocked: STALE_CORE
+
+src/movie_factory/context_hygiene.py:39: Blocked
+___________ test_current_reads_fresh_state_and_preserves_mode_limits ___________
+
+workspace = PosixPath('/private/var/folders/xn/hbr015hn5hb3tjr53f9ccntr0000gn/T/pytest-of-adisharma/pytest-1425/test_current_reads_fresh_state0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1092571a0>
+
+    def test_current_reads_fresh_state_and_preserves_mode_limits(workspace,monkeypatch):
+        p=workspace/'docs/planning/RELEASE_01_STATUS.json';p.parent.mkdir(parents=True)
+        p.write_text(json.dumps({'outcome':'trailer','substantive_exchange_count':311,'next_checkpoint_exchange':320,'context_cleanup_311':'paused'}))
+        state={'open_defects':[{'id':'D1'}],'protected':['accepted'],'fingerprint':'bound','capabilities':{'direct_motion':False}}
+        monkeypatch.setattr(rc,'capsule',lambda root:copy.deepcopy(state))
+        reg=workspace/rc.REGISTRY;reg.parent.mkdir(parents=True);reg.write_text('{}')
+>       result=ch.current(workspace)
+               ^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_context_hygiene.py:148: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/movie_factory/context_hygiene.py:74: in current
+    load(root)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/private/var/folders/xn/hbr015hn5hb3tjr53f9ccntr0000gn/T/pytest-of-adisharma/pytest-1425/test_current_reads_fresh_state0')
+
+    def load(root):
+        data=json.loads(safe(root,CATALOG).read_text())
+        if data['schema']!=1:raise rc.Blocked('UNKNOWN_SCHEMA')
+        for key in ['original','core']:
+            if sha(safe(root,data[key]['path']))!=data[key]['sha256']:
+>               raise rc.Blocked('STALE_'+key.upper())
+E               movie_factory.review_control.Blocked: STALE_CORE
+
+src/movie_factory/context_hygiene.py:39: Blocked
+=========================== short test summary info ============================
+FAILED tests/test_context_hygiene.py::test_all_original_paragraphs_preserved_with_core_or_routes
+FAILED tests/test_context_hygiene.py::test_frozen_cross_discipline_expectations[horse]
+FAILED tests/test_context_hygiene.py::test_frozen_cross_discipline_expectations[horse+wardrobe+sound+pashtun]
+FAILED tests/test_context_hygiene.py::test_frozen_cross_discipline_expectations[character]
+FAILED tests/test_context_hygiene.py::test_frozen_cross_discipline_expectations[trellis]
+FAILED tests/test_context_hygiene.py::test_frozen_cross_discipline_expectations[planning]
+FAILED tests/test_context_hygiene.py::test_frozen_cross_discipline_expectations[architecture]
+FAILED tests/test_context_hygiene.py::test_frozen_cross_discipline_expectations[environment]
+FAILED tests/test_context_hygiene.py::test_frozen_cross_discipline_expectations[escalation]
+FAILED tests/test_context_hygiene.py::test_frozen_cross_discipline_expectations[operations]
+FAILED tests/test_context_hygiene.py::test_frozen_cross_discipline_expectations[context]
+FAILED tests/test_context_hygiene.py::test_unknown_or_missing_topic_blocks[topics0]
+FAILED tests/test_context_hygiene.py::test_unknown_or_missing_topic_blocks[topics1]
+FAILED tests/test_context_hygiene.py::test_unknown_or_missing_topic_blocks[topics2]
+FAILED tests/test_context_hygiene.py::test_unknown_or_missing_topic_blocks[topics3]
+FAILED tests/test_context_hygiene.py::test_budget_never_silently_truncates_required_rules
+FAILED tests/test_context_hygiene.py::test_frozen_cases_detect_removed_adjacent_route
+FAILED tests/test_context_hygiene.py::test_current_reads_fresh_state_and_preserves_mode_limits
+18 failed, 240 passed in 5.63s

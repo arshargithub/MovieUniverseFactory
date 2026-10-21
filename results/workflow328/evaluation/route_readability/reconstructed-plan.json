@@ -1,0 +1,287 @@
+{
+  "intent": "She recognizes danger at a checkpoint and chooses a treacherous uphill escape without losing composure.",
+  "protected": [
+    "Existing creative authority; no production change in this evaluation"
+  ],
+  "references": [
+    {
+      "id": "cutoff-direction",
+      "role": "Director shot intent; precise later camera-side correction is withheld from the input."
+    }
+  ],
+  "requirements": [
+    {
+      "id": "cause",
+      "criterion": "Either route hidden, direction reverses without reorientation, or viewer cannot connect glance to choice."
+    },
+    {
+      "id": "decision_distance",
+      "criterion": "Horse is already at the barrier before the apparent decision could take effect."
+    },
+    {
+      "id": "continuous_weight",
+      "criterion": "Turn reads as teleport, floating slide or rider detached from acceleration."
+    }
+  ],
+  "expert_plan": {
+    "version": 1,
+    "beat_intents": {
+      "recognize": "Perceptible recognition, then resolve without terror",
+      "survey": "Understand checkpoint danger and an available alternative",
+      "turn": "Understand her spectacular turn as an intentional escape"
+    },
+    "beats": [
+      {
+        "id": "recognize",
+        "audience_read": "Perceptible recognition, then resolve without terror",
+        "framing": "Continuous move into a readable face",
+        "lenses": {
+          "story_performance": {
+            "applies": true,
+            "requirements": [
+              "cause"
+            ],
+            "why": "A viewer cannot understand a chosen detour without perceiving both the threat and the option."
+          },
+          "camera_editorial": {
+            "applies": true,
+            "requirements": [
+              "cause"
+            ],
+            "why": "A viewer cannot understand a chosen detour without perceiving both the threat and the option."
+          },
+          "animation_physics": {
+            "applies": false,
+            "requirements": [],
+            "why": "No separate requirement owned by this lens in this beat; coupled concerns are linked in the other applicable beat/lens rows. Reassess if framing or scope changes."
+          },
+          "anatomy_contact": {
+            "applies": false,
+            "requirements": [],
+            "why": "No separate requirement owned by this lens in this beat; coupled concerns are linked in the other applicable beat/lens rows. Reassess if framing or scope changes."
+          },
+          "effects_environment": {
+            "applies": false,
+            "requirements": [],
+            "why": "No separate requirement owned by this lens in this beat; coupled concerns are linked in the other applicable beat/lens rows. Reassess if framing or scope changes."
+          },
+          "sound_music": {
+            "applies": false,
+            "requirements": [],
+            "why": "No score choice is being made in this geometry/readability proof; retain event anchors for later sound."
+          },
+          "production_reuse": {
+            "applies": false,
+            "requirements": [],
+            "why": "This retrospective tests shot planning only; no new assets or reuse admissions."
+          }
+        }
+      },
+      {
+        "id": "survey",
+        "audience_read": "Understand checkpoint danger and an available alternative",
+        "framing": "Over shoulder with rider, danger and route relationships legible",
+        "lenses": {
+          "story_performance": {
+            "applies": true,
+            "requirements": [
+              "cause"
+            ],
+            "why": "A viewer cannot understand a chosen detour without perceiving both the threat and the option."
+          },
+          "camera_editorial": {
+            "applies": true,
+            "requirements": [
+              "cause",
+              "decision_distance"
+            ],
+            "why": "A viewer cannot understand a chosen detour without perceiving both the threat and the option. Speed, sight distance and response time must support the maneuver."
+          },
+          "animation_physics": {
+            "applies": true,
+            "requirements": [
+              "decision_distance"
+            ],
+            "why": "Speed, sight distance and response time must support the maneuver."
+          },
+          "anatomy_contact": {
+            "applies": false,
+            "requirements": [],
+            "why": "No separate requirement owned by this lens in this beat; coupled concerns are linked in the other applicable beat/lens rows. Reassess if framing or scope changes."
+          },
+          "effects_environment": {
+            "applies": false,
+            "requirements": [],
+            "why": "No separate requirement owned by this lens in this beat; coupled concerns are linked in the other applicable beat/lens rows. Reassess if framing or scope changes."
+          },
+          "sound_music": {
+            "applies": false,
+            "requirements": [],
+            "why": "No score choice is being made in this geometry/readability proof; retain event anchors for later sound."
+          },
+          "production_reuse": {
+            "applies": false,
+            "requirements": [],
+            "why": "This retrospective tests shot planning only; no new assets or reuse admissions."
+          }
+        }
+      },
+      {
+        "id": "turn",
+        "audience_read": "Understand her spectacular turn as an intentional escape",
+        "framing": "Full action readable before following uphill",
+        "lenses": {
+          "story_performance": {
+            "applies": false,
+            "requirements": [],
+            "why": "No separate requirement owned by this lens in this beat; coupled concerns are linked in the other applicable beat/lens rows. Reassess if framing or scope changes."
+          },
+          "camera_editorial": {
+            "applies": true,
+            "requirements": [
+              "decision_distance"
+            ],
+            "why": "Speed, sight distance and response time must support the maneuver."
+          },
+          "animation_physics": {
+            "applies": true,
+            "requirements": [
+              "decision_distance",
+              "continuous_weight"
+            ],
+            "why": "Speed, sight distance and response time must support the maneuver. A dramatic change of direction requires rider balance, hoof purchase and displaced dirt to agree."
+          },
+          "anatomy_contact": {
+            "applies": true,
+            "requirements": [
+              "continuous_weight"
+            ],
+            "why": "A dramatic change of direction requires rider balance, hoof purchase and displaced dirt to agree."
+          },
+          "effects_environment": {
+            "applies": true,
+            "requirements": [
+              "continuous_weight"
+            ],
+            "why": "A dramatic change of direction requires rider balance, hoof purchase and displaced dirt to agree."
+          },
+          "sound_music": {
+            "applies": false,
+            "requirements": [],
+            "why": "No score choice is being made in this geometry/readability proof; retain event anchors for later sound."
+          },
+          "production_reuse": {
+            "applies": false,
+            "requirements": [],
+            "why": "This retrospective tests shot planning only; no new assets or reuse admissions."
+          }
+        }
+      }
+    ],
+    "realizations": {
+      "cause": {
+        "beats": [
+          "recognize",
+          "survey"
+        ],
+        "lenses": [
+          "story_performance",
+          "camera_editorial"
+        ],
+        "derivation": "A viewer cannot understand a chosen detour without perceiving both the threat and the option.",
+        "method": "Block threat and route as two screen-space targets; test head occlusion and screen direction across the camera move. Label viewer-right versus actor-right explicitly.",
+        "interfaces": [
+          "gaze/camera",
+          "head/route occlusion",
+          "route geography/edit"
+        ],
+        "early_proof": "Untextured intended-framing sequence: identify both targets without explanatory captions.",
+        "failure_condition": "Either route hidden, direction reverses without reorientation, or viewer cannot connect glance to choice.",
+        "reopen_when": "Camera, source authority, performance, contacts or coupled assets change; previous evidence no longer covers the shot.",
+        "priority": "quality_floor",
+        "origin": "craft_inference",
+        "reference_ids": [
+          "cutoff-direction"
+        ]
+      },
+      "decision_distance": {
+        "beats": [
+          "survey",
+          "turn"
+        ],
+        "lenses": [
+          "animation_physics",
+          "camera_editorial"
+        ],
+        "derivation": "Speed, sight distance and response time must support the maneuver.",
+        "method": "Measure remaining path distance against approach speed, recognition duration and stop/turn travel before fixing checkpoint placement.",
+        "interfaces": [
+          "speed/visibility",
+          "horse path/checkpoint"
+        ],
+        "early_proof": "Top-down trajectory and actual-camera rough motion from recognition to turn.",
+        "failure_condition": "Horse is already at the barrier before the apparent decision could take effect.",
+        "reopen_when": "Camera, source authority, performance, contacts or coupled assets change; previous evidence no longer covers the shot.",
+        "priority": "quality_floor",
+        "origin": "craft_inference",
+        "reference_ids": [
+          "cutoff-direction"
+        ]
+      },
+      "continuous_weight": {
+        "beats": [
+          "turn"
+        ],
+        "lenses": [
+          "animation_physics",
+          "anatomy_contact",
+          "effects_environment"
+        ],
+        "derivation": "A dramatic change of direction requires rider balance, hoof purchase and displaced dirt to agree.",
+        "method": "Author shared contact events for body lean, hoof plants and world-space dirt release; reserve full-body visibility during the decisive movement.",
+        "interfaces": [
+          "rider/horse",
+          "hooves/ground",
+          "impact/dust"
+        ],
+        "early_proof": "Whole-body motion and contact crops, not independently passing components.",
+        "failure_condition": "Turn reads as teleport, floating slide or rider detached from acceleration.",
+        "reopen_when": "Camera, source authority, performance, contacts or coupled assets change; previous evidence no longer covers the shot.",
+        "priority": "quality_floor",
+        "origin": "craft_inference",
+        "reference_ids": [
+          "cutoff-direction"
+        ]
+      }
+    },
+    "challenge": {
+      "plan_digest": "26f1f4e6895ddc25f0e3d426a2ff0d128fdb24a66536c122c3455cdae21d768c",
+      "open_issues": [],
+      "intent_coverage": {
+        "recognize": {
+          "reason": "Perceptible recognition, then resolve without terror",
+          "requirements": [
+            "cause"
+          ]
+        },
+        "survey": {
+          "reason": "Understand checkpoint danger and an available alternative",
+          "requirements": [
+            "cause",
+            "decision_distance"
+          ]
+        },
+        "turn": {
+          "reason": "Understand her spectacular turn as an intentional escape",
+          "requirements": [
+            "decision_distance",
+            "continuous_weight"
+          ]
+        }
+      },
+      "cross_discipline_conflicts": "Camera proximity for facial acting can hide the route. Preserve the two-target establishing view before face priority. Probe whether the viewer can explain why she turns; do not prescribe the Director's later exact camera choice.",
+      "omission_probe": "Camera proximity for facial acting can hide the route. Preserve the two-target establishing view before face priority. Probe whether the viewer can explain why she turns; do not prescribe the Director's later exact camera choice.",
+      "scope_tradeoff": "Early representative proof before polish. No exact later Director preference is made mandatory; this is a planning hypothesis, not approved scene dispatch."
+    }
+  }
+}

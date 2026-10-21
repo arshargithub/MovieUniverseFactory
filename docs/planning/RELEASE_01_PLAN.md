@@ -4,6 +4,29 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+### Exchange329 — proposed decomposition within planning
+
+Director identifies that required plan contents do not guarantee a reliable
+reasoning sequence. Recommend [four serial planning substages](PLANNING_SUBSTAGES_329.md):
+grounding, expert requirements, integrated strategy, fresh challenge/admission.
+This remains proposed, not another implemented capability or runtime call grant.
+Keep the three outer phases, lightweight routes and shared budgets. Next package
+is scoped controller implementation/offline qualification before prospective
+Nihang application; no new media work in this discussion. Checkpoint330.
+
+### Exchanges327–328 — expert planning gap audited and closed locally
+
+327 identified that expert lenses existed in manual guidance but were not required
+derivations in the staged planner.328 implements [beat-to-proof expert planning](../knowledge/EXPERT_LENS_PLANNING_328.md),
+execution traceability and original-intent review/replanning vetoes. Four source-indexed
+retrospective cases distinguish preventable omissions from existing-requirement
+method/judgment failures. No blind accuracy, saved-input percentage or improved
+footage is claimed. No render, provider call, upload or production approval.
+Next apply the plan prospectively to the isolated Nihang/rearing/crowd package,
+first proving coupled poses and one leader/near warrior at actual framing before
+replication. Trusted authoring integration and a scoped live allowance remain
+separate prerequisites;325's allowance remains exhausted. Checkpoint330 unchanged.
+
 ### Exchange326 — stage routing adopted and implemented locally
 
 [Stage-specific model policy](../engineering-intelligence/STAGE_MODEL_ROUTING.md)

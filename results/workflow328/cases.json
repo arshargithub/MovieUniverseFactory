@@ -1,0 +1,383 @@
+{
+  "evaluation": "Retrospective analyst-authored counterfactual; NOT blind or an independent LLM trial",
+  "cases": [
+    {
+      "id": "route_readability",
+      "cutoff_message": "01a123d1-45d8-7ca1-abef-e9b804d5a076",
+      "later_messages": [
+        "01a12724-e045-7b90-b5f3-eb99bb1a1c3f"
+      ],
+      "intent": "She recognizes danger at a checkpoint and chooses a treacherous uphill escape without losing composure.",
+      "reference_role": "Director shot intent; precise later camera-side correction is withheld from the input.",
+      "beats": {
+        "recognize": "Perceptible recognition, then resolve without terror",
+        "survey": "Understand checkpoint danger and an available alternative",
+        "turn": "Understand her spectacular turn as an intentional escape"
+      },
+      "framing": {
+        "recognize": "Continuous move into a readable face",
+        "survey": "Over shoulder with rider, danger and route relationships legible",
+        "turn": "Full action readable before following uphill"
+      },
+      "requirements": [
+        {
+          "id": "cause",
+          "beats": [
+            "recognize",
+            "survey"
+          ],
+          "lenses": [
+            "story_performance",
+            "camera_editorial"
+          ],
+          "derivation": "A viewer cannot understand a chosen detour without perceiving both the threat and the option.",
+          "method": "Block threat and route as two screen-space targets; test head occlusion and screen direction across the camera move. Label viewer-right versus actor-right explicitly.",
+          "interfaces": [
+            "gaze/camera",
+            "head/route occlusion",
+            "route geography/edit"
+          ],
+          "proof": "Untextured intended-framing sequence: identify both targets without explanatory captions.",
+          "failure": "Either route hidden, direction reverses without reorientation, or viewer cannot connect glance to choice."
+        },
+        {
+          "id": "decision_distance",
+          "beats": [
+            "survey",
+            "turn"
+          ],
+          "lenses": [
+            "animation_physics",
+            "camera_editorial"
+          ],
+          "derivation": "Speed, sight distance and response time must support the maneuver.",
+          "method": "Measure remaining path distance against approach speed, recognition duration and stop/turn travel before fixing checkpoint placement.",
+          "interfaces": [
+            "speed/visibility",
+            "horse path/checkpoint"
+          ],
+          "proof": "Top-down trajectory and actual-camera rough motion from recognition to turn.",
+          "failure": "Horse is already at the barrier before the apparent decision could take effect."
+        },
+        {
+          "id": "continuous_weight",
+          "beats": [
+            "turn"
+          ],
+          "lenses": [
+            "animation_physics",
+            "anatomy_contact",
+            "effects_environment"
+          ],
+          "derivation": "A dramatic change of direction requires rider balance, hoof purchase and displaced dirt to agree.",
+          "method": "Author shared contact events for body lean, hoof plants and world-space dirt release; reserve full-body visibility during the decisive movement.",
+          "interfaces": [
+            "rider/horse",
+            "hooves/ground",
+            "impact/dust"
+          ],
+          "proof": "Whole-body motion and contact crops, not independently passing components.",
+          "failure": "Turn reads as teleport, floating slide or rider detached from acceleration."
+        }
+      ],
+      "unused": {
+        "sound_music": "No score choice is being made in this geometry/readability proof; retain event anchors for later sound.",
+        "production_reuse": "This retrospective tests shot planning only; no new assets or reuse admissions."
+      },
+      "challenge": "Camera proximity for facial acting can hide the route. Preserve the two-target establishing view before face priority. Probe whether the viewer can explain why she turns; do not prescribe the Director's later exact camera choice.",
+      "outcome": "Plausibly prevents or surfaces route occlusion, ambiguous right/left and implausible decision distance before a costly render. Does not predict the later exact preferred camera side or degree of menace.",
+      "enhancement": "Treat her glance and route reveal as one causal unit, strengthening resourceful agency rather than merely displaying a turn."
+    },
+    {
+      "id": "gallop_coupling",
+      "cutoff_message": "01a0b6f6-e5eb-7592-809a-f9cc66217256",
+      "later_messages": [
+        "01a12886-a2f0-77a3-8e3d-b39324db343b"
+      ],
+      "intent": "Horse-racing energy: almost flying, with an aggressive riding posture.",
+      "reference_role": "Director motion intention, not a demand to copy a specific jockey or fabricate measured biomechanics.",
+      "beats": {
+        "gallop": "Feel forceful speed through a living rider and horse"
+      },
+      "framing": {
+        "gallop": "Test intended close face/torso framing as well as whole horse silhouette"
+      },
+      "requirements": [
+        {
+          "id": "distributed_response",
+          "beats": [
+            "gallop"
+          ],
+          "lenses": [
+            "animation_physics",
+            "anatomy_contact",
+            "story_performance"
+          ],
+          "derivation": "Aggressive posture is not a frozen pose. A balanced rider absorbs a moving support while maintaining attention.",
+          "method": "Give pelvis saddle-follow, torso damping, neck counter-motion, gaze stabilization and yielding elbows a common stride driver with distinct response. Avoid independent random shaking.",
+          "interfaces": [
+            "saddle/pelvis",
+            "torso/neck/head",
+            "hands/reins"
+          ],
+          "proof": "Short intended-speed cycle in close framing plus support/contact overlays.",
+          "failure": "Neck and chest move as one rigid block, head floats independently or hands lose contact."
+        },
+        {
+          "id": "secondary_motion",
+          "beats": [
+            "gallop"
+          ],
+          "lenses": [
+            "effects_environment",
+            "animation_physics"
+          ],
+          "derivation": "Loose hair, mane, tail and cloth are highly visible indicators of speed and inertia.",
+          "method": "Drive delayed secondary response from acceleration, stride and wind; use attached roots, varied clump response and collision checks.",
+          "interfaces": [
+            "hair/scalp",
+            "mane/hands",
+            "tail/horse",
+            "cloth/body"
+          ],
+          "proof": "Actual-shot loop with near and far hanging elements visible through acceleration and steady stride.",
+          "failure": "Loose elements freeze, uniformly oscillate, penetrate hands or drift without rooted attachment."
+        },
+        {
+          "id": "coverage_exposes",
+          "beats": [
+            "gallop"
+          ],
+          "lenses": [
+            "camera_editorial",
+            "production_reuse"
+          ],
+          "derivation": "A distant convincing silhouette does not qualify the same rig for a face reveal.",
+          "method": "Declare framing envelope and reuse only within tested close and wide coverage; prioritize neck/contact proof before expensive surface polish.",
+          "interfaces": [
+            "camera/rig qualification",
+            "reuse/evidence"
+          ],
+          "proof": "Matched wide and face-reveal views of the same cycle.",
+          "failure": "Wide-only proof is used to admit close coverage."
+        },
+        {
+          "id": "weight_sound",
+          "beats": [
+            "gallop"
+          ],
+          "lenses": [
+            "sound_music"
+          ],
+          "derivation": "Perceived power depends on timing and weight, not only visual speed.",
+          "method": "Reserve hoof-contact timing and test transient/body impact against the music without changing gait for a sample.",
+          "interfaces": [
+            "hoof contacts/sound events",
+            "music/impact masking"
+          ],
+          "proof": "Later intended playback mix with contact sync and weight judged by Director.",
+          "failure": "Tinny or masked impact weakens racing energy; no audio evidence must remain NOT_RUN."
+        }
+      ],
+      "unused": {},
+      "challenge": "Head stabilization must not erase neck response. Probe hands, clumps and cloth interfaces, not only center-of-mass motion. Do not spend on invisible micro-detail before close-framing support works.",
+      "outcome": "The later rigid-neck and stiff mane/tail observations are foreseeable from the original racing intention. This improves requirements and early proof coverage; it does not prove the agent would have judged the resulting motion correctly.",
+      "enhancement": "One coordinated support/response model can supply readable speed while keeping her self-possession, rather than adding unrelated wiggles after each complaint."
+    },
+    {
+      "id": "sound_hierarchy",
+      "cutoff_message": "01a1325d-a4e2-7b93-82a9-cf2a16a0b9d5",
+      "additional_input_messages": [
+        "01a13255-62e3-74e3-94db-c04214dac8d8"
+      ],
+      "later_messages": [
+        "01a132a4-c7e1-79a1-9f75-c65d451492a2",
+        "01a13313-e25f-7db1-9420-0f33bf66037f"
+      ],
+      "intent": "Keep the larger-than-life music and punchy horse opening while making the private officer narration work with it.",
+      "reference_role": "Chosen music and voice are retained creative authorities; this test uses the written integration direction, not a fresh listening claim.",
+      "beats": {
+        "hook": "Horse and music establish energy before speech",
+        "speech": "Understand key words without making the score feel switched off",
+        "release": "Let music carry the action after the thought"
+      },
+      "framing": {
+        "hook": "Opening action with immediate sound hook",
+        "speech": "Face/action and quote visual compete for attention",
+        "release": "Dramatic turn and uphill carry"
+      },
+      "requirements": [
+        {
+          "id": "attention_budget",
+          "beats": [
+            "hook",
+            "speech",
+            "release"
+          ],
+          "lenses": [
+            "story_performance",
+            "sound_music",
+            "camera_editorial"
+          ],
+          "derivation": "Voice, readable quote and melodic lead compete for attention; a fixed duck amount cannot decide the hierarchy.",
+          "method": "Map the intended focus by phrase and action beat. Audition a coherent musical phrase with speech spacing, word audibility and music continuity together, using the selected track rather than isolated voice.",
+          "interfaces": [
+            "narration/music",
+            "quote/action",
+            "mix/edit"
+          ],
+          "proof": "Same short integrated mix through all three beats at normal and phone listening level; Director judges direct audio.",
+          "failure": "Key words disappear, score seems switched off, or reading the quote sacrifices the action."
+        },
+        {
+          "id": "word_proof",
+          "beats": [
+            "speech"
+          ],
+          "lenses": [
+            "sound_music"
+          ],
+          "derivation": "The important claim relies on races and impeccable being understandable, not merely on average voice loudness.",
+          "method": "Check those phrase endings separately from overall loudness; use automation and spectral room before indiscriminate global ducking.",
+          "interfaces": [
+            "consonants/lead masking",
+            "phrase pause/music breath"
+          ],
+          "proof": "First-listen transcription check at ordinary volume plus waveform/peak checks; latter alone cannot PASS intelligibility.",
+          "failure": "A listener cannot repeat the central words or must strain while music seems fine."
+        },
+        {
+          "id": "impact_and_reuse",
+          "beats": [
+            "hook",
+            "release"
+          ],
+          "lenses": [
+            "sound_music",
+            "production_reuse",
+            "animation_physics"
+          ],
+          "derivation": "Punch and exact event placement must survive retiming without rerendering the scene.",
+          "method": "Keep contact-event anchors and separate stems; test attack plus low body in context and avoid clipped peaks.",
+          "interfaces": [
+            "hoof events/retiming",
+            "stems/mix"
+          ],
+          "proof": "Aligned opening/turn impacts with reusable edit decision and stem offsets.",
+          "failure": "Impact lacks weight, slips from contact or masks speech."
+        }
+      ],
+      "unused": {
+        "anatomy_contact": "No geometry or contact change is authorized by this sound test; existing motion remains a protected input.",
+        "effects_environment": "No new visual effects construction; preserve existing dust/action while testing the mix."
+      },
+      "challenge": "Intelligibility and uninterrupted musical force can conflict. Surface script-density or voice-character tradeoffs to the Director if mix remedies cannot satisfy both. Do not silently remove the quote narration or claim the later chosen ramp was inevitable.",
+      "outcome": "Could have caught word masking and disruptive ducking in an integrated proof. The later decision to stop narration at impeccable and use a specific ramp remains a legitimate Director choice, not a supposedly avoidable input.",
+      "enhancement": "Design attention over the whole phrase rather than treating music as background whenever speech exists."
+    },
+    {
+      "id": "nihang_known_failure",
+      "cutoff_file": "results/sikh320/STRATEGY.md",
+      "later_files": [
+        "docs/knowledge/NIHANG_REARING_REVIEW_FAILURE_321.md"
+      ],
+      "intent": "Believable leader and attentive crowd in the same film as the Pashtun; faithful powerful horse rear with a heavy landing.",
+      "reference_role": "Rearing clip governs coupled motion; accepted Pashtun governs same-film appearance, not leader identity.320 plan is already informed by Director feedback.",
+      "beats": {
+        "rear": "Leader and horse acknowledge the rider with coordinated power",
+        "clearance": "Individuals deliberately make room while attending to the rider"
+      },
+      "framing": {
+        "rear": "Actual leader close framing including full horse and saddle interfaces",
+        "clearance": "Near and middle crowd at the outgoing shot size"
+      },
+      "requirements": [
+        {
+          "id": "pose_family",
+          "beats": [
+            "rear"
+          ],
+          "lenses": [
+            "animation_physics",
+            "anatomy_contact"
+          ],
+          "derivation": "Faithful rear is a coupled shape sequence, not just matching duration or lifting front legs.",
+          "method": "Reconstruct gather, support compression, drive, apex, descent, contact and absorption as overlapping full-body poses. Compare hocks, chest, poll, foreleg folds and support before retiming.",
+          "interfaces": [
+            "hind support/chest",
+            "poll/neck",
+            "hoof impact/compression",
+            "saddle/rider"
+          ],
+          "proof": "Matched reference/candidate pose families at intended angle followed by continuous playback; visible mismatch rejects before Director AV queue.",
+          "failure": "Column neck, straight hind supports, frozen rider or deceleration before landing persists despite timing similarity."
+        },
+        {
+          "id": "human_acknowledgment",
+          "beats": [
+            "rear",
+            "clearance"
+          ],
+          "lenses": [
+            "story_performance",
+            "camera_editorial",
+            "animation_physics"
+          ],
+          "derivation": "An exchange must read as intentional social response, not a prop action followed by synchronized obstacles moving aside.",
+          "method": "Anchor leader eyeline and body balance to rider; derive varied but causal crowd reactions from permission, with pelvis support and limited torso yaw preserving comfortable gaze.",
+          "interfaces": [
+            "leader/rider eyeline",
+            "head/torso/feet",
+            "permission/crowd timing"
+          ],
+          "proof": "No-dialogue rough sequence: identify who acknowledges whom and why people clear the path.",
+          "failure": "Statue torso, heads snap, synchronized side shuffles or people turn attention away from rider."
+        },
+        {
+          "id": "same_film_forms",
+          "beats": [
+            "rear",
+            "clearance"
+          ],
+          "lenses": [
+            "production_reuse",
+            "effects_environment",
+            "anatomy_contact"
+          ],
+          "derivation": "Supporting role reduces close-up expenditure, not the requirement for credible garment, face and tack forms.",
+          "method": "Prove one leader and one nearest warrior at actual shot size before replication: cloth mass and edge thickness, face planes, saddle construction and contact. Texture cannot qualify cylinder clothes or slab tack.",
+          "interfaces": [
+            "cloth/body",
+            "saddle/horse/rider",
+            "variant/quality floor"
+          ],
+          "proof": "Matched intended-framing comparison with accepted film evidence plus revealing crop; preserve separate design and technical verdicts.",
+          "failure": "Primitive garment shells, block face or slab saddle remains visibly out of film even if files and tests succeed."
+        },
+        {
+          "id": "impact_event",
+          "beats": [
+            "rear"
+          ],
+          "lenses": [
+            "sound_music",
+            "effects_environment"
+          ],
+          "derivation": "The landing must convey force with contact, debris and sound sharing the same event.",
+          "method": "Trigger dirt and grounded impact after hoof contact; retain neigh and spear timing, avoid dust disappearance and screen-space attached particles.",
+          "interfaces": [
+            "hoof/sound",
+            "debris/world",
+            "spear/ground"
+          ],
+          "proof": "Contact frames and timed event audit, then Director playback.",
+          "failure": "Debris precedes contact, collapses, impact is weak or hoof descent floats."
+        }
+      ],
+      "unused": {},
+      "challenge": "Existing320 already named many of these obligations. Challenge the method: retiming existing inadequate poses is not reconstruction. Hold replication until actual leader/warrior appearance proof. A missing playback capability is not permission to pass visible defects.",
+      "outcome": "Primarily method/evidence/judgment failure, not missing rules. New traceability would expose unsupported method claims, but only an honest comparison and willingness to reject can stop this escape. Cannot claim prevention from schema alone.",
+      "enhancement": "Integrate the leader's permission and individual crowd responses into a readable relationship, while testing the full reference pose family before expensive polish."
+    }
+  ]
+}

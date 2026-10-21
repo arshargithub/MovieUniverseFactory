@@ -1,0 +1,210 @@
+{
+  "intent": "Horse-racing energy: almost flying, with an aggressive riding posture.",
+  "protected": [
+    "Existing creative authority; no production change in this evaluation"
+  ],
+  "references": [
+    {
+      "id": "cutoff-direction",
+      "role": "Director motion intention, not a demand to copy a specific jockey or fabricate measured biomechanics."
+    }
+  ],
+  "requirements": [
+    {
+      "id": "distributed_response",
+      "criterion": "Neck and chest move as one rigid block, head floats independently or hands lose contact."
+    },
+    {
+      "id": "secondary_motion",
+      "criterion": "Loose elements freeze, uniformly oscillate, penetrate hands or drift without rooted attachment."
+    },
+    {
+      "id": "coverage_exposes",
+      "criterion": "Wide-only proof is used to admit close coverage."
+    },
+    {
+      "id": "weight_sound",
+      "criterion": "Tinny or masked impact weakens racing energy; no audio evidence must remain NOT_RUN."
+    }
+  ],
+  "expert_plan": {
+    "version": 1,
+    "beat_intents": {
+      "gallop": "Feel forceful speed through a living rider and horse"
+    },
+    "beats": [
+      {
+        "id": "gallop",
+        "audience_read": "Feel forceful speed through a living rider and horse",
+        "framing": "Test intended close face/torso framing as well as whole horse silhouette",
+        "lenses": {
+          "story_performance": {
+            "applies": true,
+            "requirements": [
+              "distributed_response"
+            ],
+            "why": "Aggressive posture is not a frozen pose. A balanced rider absorbs a moving support while maintaining attention."
+          },
+          "camera_editorial": {
+            "applies": true,
+            "requirements": [
+              "coverage_exposes"
+            ],
+            "why": "A distant convincing silhouette does not qualify the same rig for a face reveal."
+          },
+          "animation_physics": {
+            "applies": true,
+            "requirements": [
+              "distributed_response",
+              "secondary_motion"
+            ],
+            "why": "Aggressive posture is not a frozen pose. A balanced rider absorbs a moving support while maintaining attention. Loose hair, mane, tail and cloth are highly visible indicators of speed and inertia."
+          },
+          "anatomy_contact": {
+            "applies": true,
+            "requirements": [
+              "distributed_response"
+            ],
+            "why": "Aggressive posture is not a frozen pose. A balanced rider absorbs a moving support while maintaining attention."
+          },
+          "effects_environment": {
+            "applies": true,
+            "requirements": [
+              "secondary_motion"
+            ],
+            "why": "Loose hair, mane, tail and cloth are highly visible indicators of speed and inertia."
+          },
+          "sound_music": {
+            "applies": true,
+            "requirements": [
+              "weight_sound"
+            ],
+            "why": "Perceived power depends on timing and weight, not only visual speed."
+          },
+          "production_reuse": {
+            "applies": true,
+            "requirements": [
+              "coverage_exposes"
+            ],
+            "why": "A distant convincing silhouette does not qualify the same rig for a face reveal."
+          }
+        }
+      }
+    ],
+    "realizations": {
+      "distributed_response": {
+        "beats": [
+          "gallop"
+        ],
+        "lenses": [
+          "animation_physics",
+          "anatomy_contact",
+          "story_performance"
+        ],
+        "derivation": "Aggressive posture is not a frozen pose. A balanced rider absorbs a moving support while maintaining attention.",
+        "method": "Give pelvis saddle-follow, torso damping, neck counter-motion, gaze stabilization and yielding elbows a common stride driver with distinct response. Avoid independent random shaking.",
+        "interfaces": [
+          "saddle/pelvis",
+          "torso/neck/head",
+          "hands/reins"
+        ],
+        "early_proof": "Short intended-speed cycle in close framing plus support/contact overlays.",
+        "failure_condition": "Neck and chest move as one rigid block, head floats independently or hands lose contact.",
+        "reopen_when": "Camera, source authority, performance, contacts or coupled assets change; previous evidence no longer covers the shot.",
+        "priority": "quality_floor",
+        "origin": "craft_inference",
+        "reference_ids": [
+          "cutoff-direction"
+        ]
+      },
+      "secondary_motion": {
+        "beats": [
+          "gallop"
+        ],
+        "lenses": [
+          "effects_environment",
+          "animation_physics"
+        ],
+        "derivation": "Loose hair, mane, tail and cloth are highly visible indicators of speed and inertia.",
+        "method": "Drive delayed secondary response from acceleration, stride and wind; use attached roots, varied clump response and collision checks.",
+        "interfaces": [
+          "hair/scalp",
+          "mane/hands",
+          "tail/horse",
+          "cloth/body"
+        ],
+        "early_proof": "Actual-shot loop with near and far hanging elements visible through acceleration and steady stride.",
+        "failure_condition": "Loose elements freeze, uniformly oscillate, penetrate hands or drift without rooted attachment.",
+        "reopen_when": "Camera, source authority, performance, contacts or coupled assets change; previous evidence no longer covers the shot.",
+        "priority": "quality_floor",
+        "origin": "craft_inference",
+        "reference_ids": [
+          "cutoff-direction"
+        ]
+      },
+      "coverage_exposes": {
+        "beats": [
+          "gallop"
+        ],
+        "lenses": [
+          "camera_editorial",
+          "production_reuse"
+        ],
+        "derivation": "A distant convincing silhouette does not qualify the same rig for a face reveal.",
+        "method": "Declare framing envelope and reuse only within tested close and wide coverage; prioritize neck/contact proof before expensive surface polish.",
+        "interfaces": [
+          "camera/rig qualification",
+          "reuse/evidence"
+        ],
+        "early_proof": "Matched wide and face-reveal views of the same cycle.",
+        "failure_condition": "Wide-only proof is used to admit close coverage.",
+        "reopen_when": "Camera, source authority, performance, contacts or coupled assets change; previous evidence no longer covers the shot.",
+        "priority": "quality_floor",
+        "origin": "craft_inference",
+        "reference_ids": [
+          "cutoff-direction"
+        ]
+      },
+      "weight_sound": {
+        "beats": [
+          "gallop"
+        ],
+        "lenses": [
+          "sound_music"
+        ],
+        "derivation": "Perceived power depends on timing and weight, not only visual speed.",
+        "method": "Reserve hoof-contact timing and test transient/body impact against the music without changing gait for a sample.",
+        "interfaces": [
+          "hoof contacts/sound events",
+          "music/impact masking"
+        ],
+        "early_proof": "Later intended playback mix with contact sync and weight judged by Director.",
+        "failure_condition": "Tinny or masked impact weakens racing energy; no audio evidence must remain NOT_RUN.",
+        "reopen_when": "Camera, source authority, performance, contacts or coupled assets change; previous evidence no longer covers the shot.",
+        "priority": "quality_floor",
+        "origin": "craft_inference",
+        "reference_ids": [
+          "cutoff-direction"
+        ]
+      }
+    },
+    "challenge": {
+      "plan_digest": "0e82248c923a91e618e41adca42750001f6c04f3778f10744c68d21b1c7662e0",
+      "open_issues": [],
+      "intent_coverage": {
+        "gallop": {
+          "reason": "Feel forceful speed through a living rider and horse",
+          "requirements": [
+            "distributed_response",
+            "secondary_motion",
+            "coverage_exposes",
+            "weight_sound"
+          ]
+        }
+      },
+      "cross_discipline_conflicts": "Head stabilization must not erase neck response. Probe hands, clumps and cloth interfaces, not only center-of-mass motion. Do not spend on invisible micro-detail before close-framing support works.",
+      "omission_probe": "Head stabilization must not erase neck response. Probe hands, clumps and cloth interfaces, not only center-of-mass motion. Do not spend on invisible micro-detail before close-framing support works.",
+      "scope_tradeoff": "Early representative proof before polish. No exact later Director preference is made mandatory; this is a planning hypothesis, not approved scene dispatch."
+    }
+  }
+}

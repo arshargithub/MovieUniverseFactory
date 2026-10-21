@@ -1,0 +1,280 @@
+{
+  "intent": "Believable leader and attentive crowd in the same film as the Pashtun; faithful powerful horse rear with a heavy landing.",
+  "protected": [
+    "Existing creative authority; no production change in this evaluation"
+  ],
+  "references": [
+    {
+      "id": "cutoff-direction",
+      "role": "Rearing clip governs coupled motion; accepted Pashtun governs same-film appearance, not leader identity.320 plan is already informed by Director feedback."
+    }
+  ],
+  "requirements": [
+    {
+      "id": "pose_family",
+      "criterion": "Column neck, straight hind supports, frozen rider or deceleration before landing persists despite timing similarity."
+    },
+    {
+      "id": "human_acknowledgment",
+      "criterion": "Statue torso, heads snap, synchronized side shuffles or people turn attention away from rider."
+    },
+    {
+      "id": "same_film_forms",
+      "criterion": "Primitive garment shells, block face or slab saddle remains visibly out of film even if files and tests succeed."
+    },
+    {
+      "id": "impact_event",
+      "criterion": "Debris precedes contact, collapses, impact is weak or hoof descent floats."
+    }
+  ],
+  "expert_plan": {
+    "version": 1,
+    "beat_intents": {
+      "rear": "Leader and horse acknowledge the rider with coordinated power",
+      "clearance": "Individuals deliberately make room while attending to the rider"
+    },
+    "beats": [
+      {
+        "id": "rear",
+        "audience_read": "Leader and horse acknowledge the rider with coordinated power",
+        "framing": "Actual leader close framing including full horse and saddle interfaces",
+        "lenses": {
+          "story_performance": {
+            "applies": true,
+            "requirements": [
+              "human_acknowledgment"
+            ],
+            "why": "An exchange must read as intentional social response, not a prop action followed by synchronized obstacles moving aside."
+          },
+          "camera_editorial": {
+            "applies": true,
+            "requirements": [
+              "human_acknowledgment"
+            ],
+            "why": "An exchange must read as intentional social response, not a prop action followed by synchronized obstacles moving aside."
+          },
+          "animation_physics": {
+            "applies": true,
+            "requirements": [
+              "pose_family",
+              "human_acknowledgment"
+            ],
+            "why": "Faithful rear is a coupled shape sequence, not just matching duration or lifting front legs. An exchange must read as intentional social response, not a prop action followed by synchronized obstacles moving aside."
+          },
+          "anatomy_contact": {
+            "applies": true,
+            "requirements": [
+              "pose_family",
+              "same_film_forms"
+            ],
+            "why": "Faithful rear is a coupled shape sequence, not just matching duration or lifting front legs. Supporting role reduces close-up expenditure, not the requirement for credible garment, face and tack forms."
+          },
+          "effects_environment": {
+            "applies": true,
+            "requirements": [
+              "same_film_forms",
+              "impact_event"
+            ],
+            "why": "Supporting role reduces close-up expenditure, not the requirement for credible garment, face and tack forms. The landing must convey force with contact, debris and sound sharing the same event."
+          },
+          "sound_music": {
+            "applies": true,
+            "requirements": [
+              "impact_event"
+            ],
+            "why": "The landing must convey force with contact, debris and sound sharing the same event."
+          },
+          "production_reuse": {
+            "applies": true,
+            "requirements": [
+              "same_film_forms"
+            ],
+            "why": "Supporting role reduces close-up expenditure, not the requirement for credible garment, face and tack forms."
+          }
+        }
+      },
+      {
+        "id": "clearance",
+        "audience_read": "Individuals deliberately make room while attending to the rider",
+        "framing": "Near and middle crowd at the outgoing shot size",
+        "lenses": {
+          "story_performance": {
+            "applies": true,
+            "requirements": [
+              "human_acknowledgment"
+            ],
+            "why": "An exchange must read as intentional social response, not a prop action followed by synchronized obstacles moving aside."
+          },
+          "camera_editorial": {
+            "applies": true,
+            "requirements": [
+              "human_acknowledgment"
+            ],
+            "why": "An exchange must read as intentional social response, not a prop action followed by synchronized obstacles moving aside."
+          },
+          "animation_physics": {
+            "applies": true,
+            "requirements": [
+              "human_acknowledgment"
+            ],
+            "why": "An exchange must read as intentional social response, not a prop action followed by synchronized obstacles moving aside."
+          },
+          "anatomy_contact": {
+            "applies": true,
+            "requirements": [
+              "same_film_forms"
+            ],
+            "why": "Supporting role reduces close-up expenditure, not the requirement for credible garment, face and tack forms."
+          },
+          "effects_environment": {
+            "applies": true,
+            "requirements": [
+              "same_film_forms"
+            ],
+            "why": "Supporting role reduces close-up expenditure, not the requirement for credible garment, face and tack forms."
+          },
+          "sound_music": {
+            "applies": false,
+            "requirements": [],
+            "why": "No separate requirement owned by this lens in this beat; coupled concerns are linked in the other applicable beat/lens rows. Reassess if framing or scope changes."
+          },
+          "production_reuse": {
+            "applies": true,
+            "requirements": [
+              "same_film_forms"
+            ],
+            "why": "Supporting role reduces close-up expenditure, not the requirement for credible garment, face and tack forms."
+          }
+        }
+      }
+    ],
+    "realizations": {
+      "pose_family": {
+        "beats": [
+          "rear"
+        ],
+        "lenses": [
+          "animation_physics",
+          "anatomy_contact"
+        ],
+        "derivation": "Faithful rear is a coupled shape sequence, not just matching duration or lifting front legs.",
+        "method": "Reconstruct gather, support compression, drive, apex, descent, contact and absorption as overlapping full-body poses. Compare hocks, chest, poll, foreleg folds and support before retiming.",
+        "interfaces": [
+          "hind support/chest",
+          "poll/neck",
+          "hoof impact/compression",
+          "saddle/rider"
+        ],
+        "early_proof": "Matched reference/candidate pose families at intended angle followed by continuous playback; visible mismatch rejects before Director AV queue.",
+        "failure_condition": "Column neck, straight hind supports, frozen rider or deceleration before landing persists despite timing similarity.",
+        "reopen_when": "Camera, source authority, performance, contacts or coupled assets change; previous evidence no longer covers the shot.",
+        "priority": "quality_floor",
+        "origin": "craft_inference",
+        "reference_ids": [
+          "cutoff-direction"
+        ]
+      },
+      "human_acknowledgment": {
+        "beats": [
+          "rear",
+          "clearance"
+        ],
+        "lenses": [
+          "story_performance",
+          "camera_editorial",
+          "animation_physics"
+        ],
+        "derivation": "An exchange must read as intentional social response, not a prop action followed by synchronized obstacles moving aside.",
+        "method": "Anchor leader eyeline and body balance to rider; derive varied but causal crowd reactions from permission, with pelvis support and limited torso yaw preserving comfortable gaze.",
+        "interfaces": [
+          "leader/rider eyeline",
+          "head/torso/feet",
+          "permission/crowd timing"
+        ],
+        "early_proof": "No-dialogue rough sequence: identify who acknowledges whom and why people clear the path.",
+        "failure_condition": "Statue torso, heads snap, synchronized side shuffles or people turn attention away from rider.",
+        "reopen_when": "Camera, source authority, performance, contacts or coupled assets change; previous evidence no longer covers the shot.",
+        "priority": "quality_floor",
+        "origin": "craft_inference",
+        "reference_ids": [
+          "cutoff-direction"
+        ]
+      },
+      "same_film_forms": {
+        "beats": [
+          "rear",
+          "clearance"
+        ],
+        "lenses": [
+          "production_reuse",
+          "effects_environment",
+          "anatomy_contact"
+        ],
+        "derivation": "Supporting role reduces close-up expenditure, not the requirement for credible garment, face and tack forms.",
+        "method": "Prove one leader and one nearest warrior at actual shot size before replication: cloth mass and edge thickness, face planes, saddle construction and contact. Texture cannot qualify cylinder clothes or slab tack.",
+        "interfaces": [
+          "cloth/body",
+          "saddle/horse/rider",
+          "variant/quality floor"
+        ],
+        "early_proof": "Matched intended-framing comparison with accepted film evidence plus revealing crop; preserve separate design and technical verdicts.",
+        "failure_condition": "Primitive garment shells, block face or slab saddle remains visibly out of film even if files and tests succeed.",
+        "reopen_when": "Camera, source authority, performance, contacts or coupled assets change; previous evidence no longer covers the shot.",
+        "priority": "quality_floor",
+        "origin": "craft_inference",
+        "reference_ids": [
+          "cutoff-direction"
+        ]
+      },
+      "impact_event": {
+        "beats": [
+          "rear"
+        ],
+        "lenses": [
+          "sound_music",
+          "effects_environment"
+        ],
+        "derivation": "The landing must convey force with contact, debris and sound sharing the same event.",
+        "method": "Trigger dirt and grounded impact after hoof contact; retain neigh and spear timing, avoid dust disappearance and screen-space attached particles.",
+        "interfaces": [
+          "hoof/sound",
+          "debris/world",
+          "spear/ground"
+        ],
+        "early_proof": "Contact frames and timed event audit, then Director playback.",
+        "failure_condition": "Debris precedes contact, collapses, impact is weak or hoof descent floats.",
+        "reopen_when": "Camera, source authority, performance, contacts or coupled assets change; previous evidence no longer covers the shot.",
+        "priority": "quality_floor",
+        "origin": "craft_inference",
+        "reference_ids": [
+          "cutoff-direction"
+        ]
+      }
+    },
+    "challenge": {
+      "plan_digest": "59aabb74b645965a2d36b7bb32e7db56163e52d49c3cbea24df3c8aea6e017cb",
+      "open_issues": [],
+      "intent_coverage": {
+        "rear": {
+          "reason": "Leader and horse acknowledge the rider with coordinated power",
+          "requirements": [
+            "pose_family",
+            "human_acknowledgment",
+            "same_film_forms",
+            "impact_event"
+          ]
+        },
+        "clearance": {
+          "reason": "Individuals deliberately make room while attending to the rider",
+          "requirements": [
+            "human_acknowledgment",
+            "same_film_forms"
+          ]
+        }
+      },
+      "cross_discipline_conflicts": "Existing320 already named many of these obligations. Challenge the method: retiming existing inadequate poses is not reconstruction. Hold replication until actual leader/warrior appearance proof. A missing playback capability is not permission to pass visible defects.",
+      "omission_probe": "Existing320 already named many of these obligations. Challenge the method: retiming existing inadequate poses is not reconstruction. Hold replication until actual leader/warrior appearance proof. A missing playback capability is not permission to pass visible defects.",
+      "scope_tradeoff": "Early representative proof before polish. No exact later Director preference is made mandatory; this is a planning hypothesis, not approved scene dispatch."
+    }
+  }
+}
