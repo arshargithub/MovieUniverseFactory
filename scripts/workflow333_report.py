@@ -1,5 +1,6 @@
 """Evidence report; unsuccessful native qualification must remain explicit."""
 import json
+import sqlite3
 from movie_factory import production_knowledge as pk, context_hygiene as ch
 from movie_factory.production_workflow import Controller
 from movie_factory.task_router import DATABASE
@@ -69,6 +70,10 @@ def main():
         'controller_state': c.state(TASK)['stage'], 'measured_efficiency_gain': None,
         'engineering_tokens': None, 'remote_protection_performed': False, 'evidence': evidence}
     save('report.json', report)
+    with sqlite3.connect(f'file:{ROOT / ".runtime/experiment-ops.sqlite3"}?mode=ro', uri=True) as con:
+        events = [json.loads(row[0]) for row in con.execute(
+            "SELECT payload FROM events WHERE json_extract(payload, '$.experiment_id')=? ORDER BY seq", ('WORKFLOW333',))]
+    save('operating-events.json', events)
     print(json.dumps({k: report[k] for k in ['overall', 'tests', 'native_processes', 'native_elapsed_seconds', 'controller_state']}))
 
 
