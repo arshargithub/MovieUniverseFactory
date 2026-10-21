@@ -1,0 +1,29 @@
+{
+  "verdict": "PASS",
+  "run_digest": "3aad160ae279e4573dc89f1df3ea06ae4a25bbb30ca729a0496d1f3a47449d83",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh337-look-c3-save/snapshot.json",
+      "sha256": "c7ceafbc0754a29f47651e8bd8e745e8371bb3514a2d632439c47dd97948d6bd"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh337-look-c3-save/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh337-look-c3-save/script-diagnostics.json",
+      "sha256": "d8c950e68c5c42eb08e3ba4cd795b716e2b5ac082b76301b8697edb7667b2ad9"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh337-look-c3-save/scene.blend",
+      "sha256": "5f15330db8c7c3716d348ffc2b8da2f27d72e6afc64151ecb51b9ea8ce2b8d8f"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh337-look-c3-save/patch-evidence.json",
+      "sha256": "e3c5d59ba411edf71f320923050caa69a2ac04a246f19fabca256ac72e6dc7c2"
+    }
+  },
+  "observation": "Technical construction: two actors,207 leader garment caches and existing beard inertial keys retained; saved finite derivative with no blocked or orphan drivers.",
+  "comparison": "Only construction/persistence checked. Actual camera, form, contact, materials and motion are not passed; five diagnostic images follow.",
+  "open_defects": []
+}

@@ -1,0 +1,25 @@
+{
+  "verdict": "PASS",
+  "run_digest": "c55998b6e2c467adb4694376cd27896ebc2544543895e14ef4704b3306a4457d",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh336-c6-preserve/snapshot.json",
+      "sha256": "ba6b3c9373d0d3f2456721fce15100c3aef9d468058f472d4236668e6afb68fb"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh336-c6-preserve/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh336-c6-preserve/script-diagnostics.json",
+      "sha256": "99bbbecec312f933855a69b1d853770138fd35ab62669f2fe652484d335f4ec7"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh336-c6-preserve/scene.blend",
+      "sha256": "5a4523d6d17b28e605ca21f304f57fde349e680875ca1d07800d802c1f72b604"
+    }
+  },
+  "observation": "Read-only preservation/extraction receipt: exact selected native state and dependencies; requested frame hashes/profile validated by Bridge.",
+  "comparison": "This step proves evidence integrity only. Motion, appearance, sound and Director acceptance are not passed; manual continuous_review remains required.",
+  "open_defects": []
+}

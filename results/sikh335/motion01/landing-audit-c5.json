@@ -1,0 +1,161 @@
+{
+  "cycle": 5,
+  "source": {
+    "path": ".runtime/factory-native/sikh335-motion-c5-save/patch-evidence.json",
+    "sha256": "e0e4c04f679879d9a1c00ad138e1e9235a3e3c5b20ebed3bd6d8c9c184d7b07e"
+  },
+  "legs": {
+    "L": {
+      "contact_frame": 350,
+      "contact_speed": 2.235128402709961,
+      "preceding_peak_speed": 1.9771156311035156,
+      "ratio": 1.1304995861382356,
+      "passed": true,
+      "samples": [
+        {
+          "frame": 342,
+          "height": 0.7298426628112793,
+          "vertical_velocity": -2.4596214294433594
+        },
+        {
+          "frame": 343,
+          "height": 0.6245362758636475,
+          "vertical_velocity": -2.527353286743164
+        },
+        {
+          "frame": 344,
+          "height": 0.5209572315216064,
+          "vertical_velocity": -2.4858970642089844
+        },
+        {
+          "frame": 345,
+          "height": 0.4232192039489746,
+          "vertical_velocity": -2.345712661743164
+        },
+        {
+          "frame": 346,
+          "height": 0.33550381660461426,
+          "vertical_velocity": -2.1051692962646484
+        },
+        {
+          "frame": 347,
+          "height": 0.2548654079437256,
+          "vertical_velocity": -1.9353218078613281
+        },
+        {
+          "frame": 348,
+          "height": 0.17551016807556152,
+          "vertical_velocity": -1.9045257568359375
+        },
+        {
+          "frame": 349,
+          "height": 0.09313035011291504,
+          "vertical_velocity": -1.9771156311035156
+        },
+        {
+          "frame": 350,
+          "height": 0.0,
+          "vertical_velocity": -2.235128402709961
+        },
+        {
+          "frame": 351,
+          "height": -2.384185791015625e-07,
+          "vertical_velocity": -5.7220458984375e-06
+        },
+        {
+          "frame": 352,
+          "height": -2.384185791015625e-07,
+          "vertical_velocity": 0.0
+        },
+        {
+          "frame": 353,
+          "height": -7.152557373046875e-07,
+          "vertical_velocity": -1.1444091796875e-05
+        },
+        {
+          "frame": 354,
+          "height": -1.1920928955078125e-06,
+          "vertical_velocity": -1.1444091796875e-05
+        }
+      ]
+    },
+    "R": {
+      "contact_frame": 351,
+      "contact_speed": 2.0810394287109375,
+      "preceding_peak_speed": 1.826751708984375,
+      "ratio": 1.1392021249937352,
+      "passed": true,
+      "samples": [
+        {
+          "frame": 343,
+          "height": 0.70003342628479,
+          "vertical_velocity": -2.465555191040039
+        },
+        {
+          "frame": 344,
+          "height": 0.595512866973877,
+          "vertical_velocity": -2.508493423461914
+        },
+        {
+          "frame": 345,
+          "height": 0.4937326908111572,
+          "vertical_velocity": -2.4427242279052734
+        },
+        {
+          "frame": 346,
+          "height": 0.39253759384155273,
+          "vertical_velocity": -2.428682327270508
+        },
+        {
+          "frame": 347,
+          "height": 0.301983118057251,
+          "vertical_velocity": -2.173307418823242
+        },
+        {
+          "frame": 348,
+          "height": 0.22586846351623535,
+          "vertical_velocity": -1.826751708984375
+        },
+        {
+          "frame": 349,
+          "height": 0.15675806999206543,
+          "vertical_velocity": -1.6586494445800781
+        },
+        {
+          "frame": 350,
+          "height": 0.08670997619628906,
+          "vertical_velocity": -1.6811542510986328
+        },
+        {
+          "frame": 351,
+          "height": 0.0,
+          "vertical_velocity": -2.0810394287109375
+        },
+        {
+          "frame": 352,
+          "height": -2.384185791015625e-07,
+          "vertical_velocity": -5.7220458984375e-06
+        },
+        {
+          "frame": 353,
+          "height": 0.0,
+          "vertical_velocity": 5.7220458984375e-06
+        },
+        {
+          "frame": 354,
+          "height": -1.6689300537109375e-06,
+          "vertical_velocity": -4.00543212890625e-05
+        },
+        {
+          "frame": 355,
+          "height": 9.5367431640625e-07,
+          "vertical_velocity": 6.29425048828125e-05
+        }
+      ]
+    }
+  },
+  "passed": true,
+  "limits": "DEF hoof bone landmarks, not a whole deformed mesh collision test. Proposed shot-specific anti-braking threshold; phase silhouettes and full-speed AV still required.",
+  "maximum_hind_error": 7.057995363618321e-05,
+  "maximum_flight_retraction": 0.0
+}

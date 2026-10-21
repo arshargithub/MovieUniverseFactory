@@ -1,0 +1,90 @@
+{
+  "verdict": "FAIL",
+  "run_digest": "8e8526b55afa887d0922c022b37b768a5bd59f1ca63d5d10b90bc52818abde75",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh335-motion-c3-render/snapshot.json",
+      "sha256": "04e927902c3af08e625f028ac5994748653718331279d5269cc4a7aba884eed7"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh335-motion-c3-render/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh335-motion-c3-render/script-diagnostics.json",
+      "sha256": "99bbbecec312f933855a69b1d853770138fd35ab62669f2fe652484d335f4ec7"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh335-motion-c3-render/frame.png",
+      "sha256": "889eff21c03fbdd1001a7a448336c7f50a880bdc63de59b9677f3d59c3e79e96"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh335-motion-c3-render/frames.json",
+      "sha256": "639df3350c67a99fd7f5d7d75045844fc8e408cbff82d2f70eb5b063c308c379"
+    },
+    "frame_294": {
+      "path": ".runtime/factory-native/sikh335-motion-c3-render/frame-0294.png",
+      "sha256": "0a2f11cf821b4727a56d047af25ee6d5b6f3b086e436f37cb76bb776deabd863"
+    },
+    "frame_301": {
+      "path": ".runtime/factory-native/sikh335-motion-c3-render/frame-0301.png",
+      "sha256": "5fe53164d2fe531271800df1f3026e76e6e8bd369600c27ca953b4b362e07890"
+    },
+    "frame_307": {
+      "path": ".runtime/factory-native/sikh335-motion-c3-render/frame-0307.png",
+      "sha256": "fa360e04a0ffb542b3f7bf7340f1f2dcc11abf36ee45e525506eb389a1d107fd"
+    },
+    "frame_327": {
+      "path": ".runtime/factory-native/sikh335-motion-c3-render/frame.png",
+      "sha256": "889eff21c03fbdd1001a7a448336c7f50a880bdc63de59b9677f3d59c3e79e96"
+    },
+    "frame_343": {
+      "path": ".runtime/factory-native/sikh335-motion-c3-render/frame-0343.png",
+      "sha256": "126418bd909af4a128a79a1bcc5d671d7313c29b83b5f263cb9d6203812f2555"
+    },
+    "frame_345": {
+      "path": ".runtime/factory-native/sikh335-motion-c3-render/frame-0345.png",
+      "sha256": "bc66bb2653a8e2a6deece06bec00bf69f7a4e52c384ee17710db855015cb5fcb"
+    },
+    "frame_347": {
+      "path": ".runtime/factory-native/sikh335-motion-c3-render/frame-0347.png",
+      "sha256": "a3b5e83f105b68571f841e1a2285326a166a87e99fb00d00c11c2a0b3ae4b827"
+    },
+    "frame_348": {
+      "path": ".runtime/factory-native/sikh335-motion-c3-render/frame-0348.png",
+      "sha256": "8a3517dd1b1bcdc773b2fd149b334298a0f7aa7dcc685a9b1183280cec664468"
+    },
+    "frame_349": {
+      "path": ".runtime/factory-native/sikh335-motion-c3-render/frame-0349.png",
+      "sha256": "60066e68df5b5871b41174684fcb7b3c28a2b936885504e82dca68b99867f675"
+    },
+    "frame_350": {
+      "path": ".runtime/factory-native/sikh335-motion-c3-render/frame-0350.png",
+      "sha256": "7ee7790408dd4d1db83081cd3fe0df5584866115205dbf79abbd07ba9e9ec470"
+    },
+    "frame_351": {
+      "path": ".runtime/factory-native/sikh335-motion-c3-render/frame-0351.png",
+      "sha256": "d498eb0dc099fa3885e3642456ca4c26dc27cca75b2dd9623e5a2608e22bc457"
+    },
+    "frame_353": {
+      "path": ".runtime/factory-native/sikh335-motion-c3-render/frame-0353.png",
+      "sha256": "f03c81945792f36887c4f2e8a1bed6c9486945ae58de6141e664c5fea8b02a45"
+    },
+    "frame_357": {
+      "path": ".runtime/factory-native/sikh335-motion-c3-render/frame-0357.png",
+      "sha256": "f101e0790cc5be83610ea10ebb0de909b80fa3293ce8cae98ebc8f32bca0b37e"
+    },
+    "landing": {
+      "path": "results/sikh335/motion01/landing-audit-c3.json",
+      "sha256": "1e51d18bbed9b1544b2aa291a2c35feba8da4408444682ffe70e45356b9ea8ff"
+    }
+  },
+  "observation": "All13 phase images inspected, including351/353/357. Forehoof landmark contact speed is2.235m/s left and2.081m/s right, no last-frame collapse. Preparation294/301 and crest327 show too little poll articulation. Dirt appears at349 before left350/right351 contact. Cast and wardrobe remain schematic;353 shows absorption but cannot prove full-speed motion.",
+  "comparison": "Reference strips2/3 show marked head lowering during load, muzzle lift on rise/crest, rapid arrival and post-impact debris. Finite-speed contact resolves the narrow c2 endpoint defect, not the complete coupled reference performance.",
+  "open_defects": [
+    "Head/neck preparation and crest do not yet convey reference action",
+    "Landing debris precedes actual contact",
+    "Rider performance and supporting appearance remain unqualified",
+    "Full-speed audiovisual review NOT_RUN"
+  ]
+}

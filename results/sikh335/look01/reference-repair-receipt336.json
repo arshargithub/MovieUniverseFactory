@@ -1,0 +1,59 @@
+{
+  "task": "sikh335-supporting-appearance",
+  "before_reference": {
+    "allowed_variation": "Adapt to shot geography and existing horse proportions without robotic phase boundaries.",
+    "aspects": [
+      {
+        "id": "whole_pose",
+        "instruction": "Compare believable textile structure and integrated supporting character against accepted film image, not rejected320 alone.",
+        "requirements": [
+          "form",
+          "evidence"
+        ]
+      }
+    ],
+    "authority": "Director requires faithful rearing, not a simplified approximation.",
+    "binding": {
+      "path": ".runtime/art-direction/series01-finish248/opening08/actual-450.png",
+      "sha256": "c874497d244bb8b896d952a8ee30536d33b79bee3d62d4cefd50c8221a37498a"
+    },
+    "fidelity": "Comparable material, cloth construction and living-character readability at intended framing.",
+    "id": "accepted_film",
+    "not_authority": "Not a new identity, wardrobe license or exemption from same-film quality.",
+    "role": "faithful_motion",
+    "scope": "Accepted Pashtun quality comparator; no identity copying or modification.",
+    "time_range_seconds": [
+      14,
+      19
+    ]
+  },
+  "after_reference": {
+    "id": "accepted_film",
+    "role": "accepted_quality",
+    "binding": {
+      "path": ".runtime/art-direction/series01-finish248/opening08/actual-450.png",
+      "sha256": "c874497d244bb8b896d952a8ee30536d33b79bee3d62d4cefd50c8221a37498a"
+    },
+    "authority": "Director requires the supporting leader and crowd to inhabit the accepted Pashtun film language, with materially credible clothing and characters rather than caricature stand-ins.",
+    "scope": "Accepted appearance-quality comparator for visible material, garment and character integration at intended framing.",
+    "fidelity": "Comparable believable whole forms, supported cloth, differentiated materials and readable living-character detail; not equal pixel density across different shot sizes.",
+    "allowed_variation": "Different identity, gender, garments, cultural tying style and moonlit lighting, while preserving the established quality floor.",
+    "not_authority": "Not a motion reference, identity-copy target, wardrobe pattern, lighting match or permission to modify the accepted Pashtun.",
+    "aspects": [
+      {
+        "id": "supporting_same_film",
+        "instruction": "Compare actual supporting-character renders with accepted material and garment integration. Do not pass a smooth mannequin because it improves over the rejected predecessor.",
+        "requirements": [
+          "form",
+          "evidence"
+        ]
+      }
+    ]
+  },
+  "cycle": 0,
+  "max_corrections": 0,
+  "stage": "REPLAN_REQUIRED",
+  "native_dispatch": false,
+  "appearance_pass": false,
+  "scope": "Repair the documented clerical role error using original same-film Director authority: the accepted PNG is an appearance-quality comparator, not a14\u201319s motion source. Original motion reference, assets, intent, task, failure history and exhausted counters stay unchanged. This records a corrected input contract only; full regrounding/challenge follows the approved extension."
+}

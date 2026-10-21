@@ -1,0 +1,79 @@
+{
+  "status": "HISTORICAL_WORKER_OUTPUT_NOT_NATIVE_ADMITTED",
+  "artifacts": {
+    "frame_327": {
+      "path": ".runtime/factory-native/sikh337-c8-clip06/frame.png",
+      "sha256": "06fdaef21e1ba16ed6d8286af681e7dd6c5eb61716e8645d458685d03c201102"
+    },
+    "frame_342": {
+      "path": ".runtime/factory-native/sikh337-c8-clip06/frame-0342.png",
+      "sha256": "4472cefad785826a30d16d73676c487c360e748b160854d962ca62529585f755"
+    },
+    "frame_343": {
+      "path": ".runtime/factory-native/sikh337-c8-clip06/frame-0343.png",
+      "sha256": "0fbd22f5ebeea7f29e8afa81b90e76c8fba556ca87b8cadb238468266557e9a1"
+    },
+    "frame_344": {
+      "path": ".runtime/factory-native/sikh337-c8-clip06/frame-0344.png",
+      "sha256": "80c7f598298b094fee91a8ca1d2d059bbe860b4a07a00244124020470bfffe0b"
+    },
+    "frame_345": {
+      "path": ".runtime/factory-native/sikh337-c8-clip06/frame-0345.png",
+      "sha256": "3bd485bc678aa54aef0a84a6c93f8676640ad12e83567c7743394e67658d3cfb"
+    },
+    "frame_346": {
+      "path": ".runtime/factory-native/sikh337-c8-clip06/frame-0346.png",
+      "sha256": "b560a7261c1fd7db9ad12b405943c13455ac55727e7d5a3cf486ec362222d239"
+    },
+    "frame_347": {
+      "path": ".runtime/factory-native/sikh337-c8-clip06/frame-0347.png",
+      "sha256": "13e9b0bd05c8d35a9dd6bebb1ea43e79f8bdd3dacba04167c2fbeff4af32cd7e"
+    },
+    "frame_348": {
+      "path": ".runtime/factory-native/sikh337-c8-clip06/frame-0348.png",
+      "sha256": "ca68afded7614e6ce0ae98d19d117bada086a5915761313a095d35c18a9a5bad"
+    },
+    "frame_349": {
+      "path": ".runtime/factory-native/sikh337-c8-clip06/frame-0349.png",
+      "sha256": "9d01e9f5316a27c13ea4ceae5200d053c03a83bd1c795a0a9143679b69da7d75"
+    },
+    "frame_350": {
+      "path": ".runtime/factory-native/sikh337-c8-clip06/frame-0350.png",
+      "sha256": "a6e922e32515cf3e2c25faf6677faee0b2b929015716ab8c3a66260df9279795"
+    },
+    "frame_351": {
+      "path": ".runtime/factory-native/sikh337-c8-clip06/frame-0351.png",
+      "sha256": "0313a5083ee7d4e19400b0f165aaba1661485c25e63c91a68ebbbdd0f3494add"
+    },
+    "frame_352": {
+      "path": ".runtime/factory-native/sikh337-c8-clip06/frame-0352.png",
+      "sha256": "3f97e31668f75eea3ece082b922ce01b4ef14bfd88ac6a787a30935a466ab33d"
+    },
+    "frame_353": {
+      "path": ".runtime/factory-native/sikh337-c8-clip06/frame-0353.png",
+      "sha256": "ac5e832815506dd3bd6eff7281c01279cd36d99accb0ce195b25fe72bf632bf2"
+    },
+    "frame_354": {
+      "path": ".runtime/factory-native/sikh337-c8-clip06/frame-0354.png",
+      "sha256": "a810e8e258a03e5ffca666108959e044c6bb08f034eadd61ec4ffd57dd18622b"
+    },
+    "frame_355": {
+      "path": ".runtime/factory-native/sikh337-c8-clip06/frame-0355.png",
+      "sha256": "0c2365922a3d9badff74a0f086091384f1a74a4b9235ed207dd0364a84b9ee49"
+    },
+    "frame_356": {
+      "path": ".runtime/factory-native/sikh337-c8-clip06/frame-0356.png",
+      "sha256": "ab306dcf4f339bc6579906b96b61b416f65cdc750c6da903210f35d9402583f2"
+    }
+  },
+  "original_failed_run": "results/sikh335/motion01/clip06-run-c8.json",
+  "worker_seconds": 423.87666812492535,
+  "control_rgba_sha256": "cbc304d59c39f0c2bd6e01154d9e0bd548983988a6fcc3f2385fb233779bd38a",
+  "checks": [
+    "worker reported successful extraction",
+    "selected snapshot/dependencies match candidate5",
+    "all16 requested PNG file hashes verified",
+    "327 decoded RGBA pixels exactly match earlier control; PNG Date/File/RenderTime metadata differs"
+  ],
+  "limits": "Native receipt remains FAILED; this source audit does not promote it or establish motion/appearance approval."
+}

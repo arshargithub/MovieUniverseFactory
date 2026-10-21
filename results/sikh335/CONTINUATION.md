@@ -1,5 +1,112 @@
 # Nihang work remains active
 
+## Live continuation after appearance correction4 (supersedes all snapshots below)
+
+- Appearance is `REPLAN_REQUIRED`, cycle4/max4. c1 failed before save on a
+  float32 endpoint; c2 and c3 saved but failed actual visual review; c4 failed
+  before simulation because the standalone worker could not resolve a relative
+  import. No cloth simulation result exists. The fixed-path loader and its
+  standalone-import regression now pass locally, but no fifth native attempt is
+  authorized. `look01/exhaustion-c4.json` is the current boundary. A request for
+  four additional appearance corrections is pending; do not treat it as approved.
+- Motion is cycle8/max10, EXECUTING. `scripts/sikh337_motion_evidence_run.py`
+  completes only missing chunks06–12, preserving original candidate5 and the
+  verified first90 frames from c6. This is independent timing evidence, not an
+  appearance retry. Session67729 was active when this note was written; verify
+  live status rather than blindly relaunching. Receipt files prevent overwrite.
+- No source handler may change while these native chunks run: the bridge pins
+  the entire handler set. The fixed import was made before motion dispatch.
+- Complete190-frame assembly has not yet been confirmed. The script requires
+  matching repeated327 frame hashes and a190-frame24fps probe. Full-speed AV is
+  NOT_RUN and all known appearance defects remain FAIL.
+- Actual c3 five-image review is in the four `*-review-c3.json` files. The close
+  leader view reveals the collar, crown seam and weak face/cloth integration.
+  Do not show it as ready or count a passing code test as a visual repair.
+- Latest focused regression:190 passed in20.15s, helper wall20.56s; captured at
+  `.runtime/context-hygiene/runs/sikh337-controller-regression/`. Tests include
+  the missing standalone import contract, not a native cloth qualification.
+
+No new spend, provider, upload, push or protected-master mutation occurred.
+
+## Latest decision at exchange337
+
+Current live state (supersedes the historical paragraphs below): both approved
+amendments are applied. Motion is cycle7/max10, GROUNDING. Appearance is
+cycle2/max4, EXECUTING. Appearance correction1 failed before save on a float32
+fractional-power endpoint; the tested fix has saved correction2 successfully.
+Its stance/crest/crowd render is running as `sikh337-look-c2-render`.
+
+Motion cycle6's six completed chunks are preserved (partial evidence only).
+The remaining unchanged-candidate extraction was explicitly deferred, not passed;
+`motion01/partial-evidence-review-c6.json` records the FAIL. The old dispatcher
+PID2507 was terminated only after its Blender child finished and the heavy-job
+lease cleared. It is NOT suspended and must NOT be resumed. The integrated
+candidate still requires complete continuous evidence. Read `REASSESSMENT_337.md`
+for the unsupported manual-step planning error and corrected sequencing.
+
+The tested appearance repair does not alter primary motion. Both the original
+masters and failed attempt remain preserved. No user review is warranted yet.
+
+The Director subsequently approved **four further corrections for each existing
+task**, on top of the earlier extension. Exact reply is preserved in
+`additional-allowance-336.json`. The resulting limits will be motion10 and
+appearance4. Do not confuse this with the earlier motion-only approval or count
+it twice. No new spending. Native render cycle6 is still running; amendments
+must wait until there is no active native lease and the motion review is recorded.
+
+The appearance source-role mistake has now been corrected through the existing
+audited `revise` API while the task remained exhausted at0/max0. No count was
+reset or extra correction invented. See `look01/reference-repair-receipt336.json`.
+Apply the approved extension next, then rebuild the four planning stages and
+fresh challenge. The corrected metadata is not appearance qualification.
+`look01/REPLAN_DRAFT_336.md` records additional method risks and scope omissions.
+
+## Current continuation at exchange336
+
+The Director explicitly approved four additional corrections to the existing
+motion task. `motion01/allowance-336.json` records the exact reply. The controller
+amendment preserves prior failures, extends max2 to max6, and starts correction3;
+it does not grant a separate appearance allowance or reset any task. The goal
+tool still reports its earlier blocked state; that is not a new prohibition on
+the explicitly resumed work and must not be represented as completion.
+
+Correction3 resolved the measured last-frame arrival slowdown: forehoof landmark
+speed at contact is2.235m/s left and2.081m/s right. All13 phase images were
+inspected. Whole-performance verdict remains FAIL because head/poll preparation
+and crest are too restrained compared with the reference, and landing debris
+starts before contact. See `motion01/render-review-c3.json`.
+
+Correction4 strengthened head load/lift/recovery and shifted existing landing
+FX to actual contact350/351, preserving64 settled clods. All13 frames were
+inspected; rigid rider balance remained an internal rejection. Correction5
+removed compounded backward rider pitch, adds damped forward counterbalance
+and post-contact absorption, and makes head position ownership explicit. Its
+four measured neck segments remain within0.01% of rest length; the long-neck
+impression is not established as structural stretching. All13 phase frames
+were inspected, but they cannot qualify full-speed motion or supporting look.
+
+Current candidate5:
+`.runtime/factory-native/sikh335-motion-c5-save/scene.blend`, SHA256
+`8ac5220519e712dbc2d9e19e305a05971b883d7879b2a6289fc937f1975a98c4`.
+Correction6/max6 is EXECUTING: a planning repair adds previously missing
+continuous evidence, preserving candidate5 without further pose edits. The
+allowance has funded three changed candidates and one planning repair, not four
+new native poses. Do not reset this history. Thirteen serial low-resolution
+chunks cover every frame252–441; assembly checks190 source hashes and24fps.
+`scripts/sikh336_continuous_dispatch.py` resumes verified completed chunks only.
+No artifact may be called a production pass merely because extraction succeeds.
+
+The appearance task remains separately blocked at its pre-native reference-role
+error. No appearance candidate, complete excerpt, AV pass or release approval
+exists. Accepted Pashtun and original320 sources remain protected. All work is
+local; no new provider call, spending, upload, push or remote backup occurred.
+
+Resume by completing continuous evidence and recording its actual review
+before changing any bound handler. Remaining known scope includes rider/crowd
+performance and same-film appearance. Native/technical passes do not waive those.
+
+## Historical status before the approved extension
+
 This is an internal continuation record, not a Director handoff or completion.
 The integrated leader/rearing/crowd objective is active in the goal mechanism.
 General production authority remains, but the configured motion correction

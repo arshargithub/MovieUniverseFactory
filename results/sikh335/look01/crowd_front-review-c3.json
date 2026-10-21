@@ -1,0 +1,37 @@
+{
+  "verdict": "FAIL",
+  "run_digest": "ea9a637d9e8ffee7f36a98f7d1d96c53fbd970bb9cb3ea941204d3540ec4a647",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh337-look-c3-crowd_front/snapshot.json",
+      "sha256": "c7ceafbc0754a29f47651e8bd8e745e8371bb3514a2d632439c47dd97948d6bd"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh337-look-c3-crowd_front/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh337-look-c3-crowd_front/script-diagnostics.json",
+      "sha256": "99bbbecec312f933855a69b1d853770138fd35ab62669f2fe652484d335f4ec7"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh337-look-c3-crowd_front/frame.png",
+      "sha256": "5a17411a4ae64293ca189f00921c1af2243b59dc52ae1737d35a47e858c9b5a4"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh337-look-c3-crowd_front/frames.json",
+      "sha256": "94c21ccfbedca6745a223f13fb36df49c81bba12ebc38d4ed16487f031d4a342"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh337-look-c3-crowd_front/frame.png",
+      "sha256": "5a17411a4ae64293ca189f00921c1af2243b59dc52ae1737d35a47e858c9b5a4"
+    }
+  },
+  "observation": "The test warrior is visible behind a foreground actor, but the crop is still not a clean complete-body proof. Crown has a vertical seam and cheek/beard junction is abrupt; mannequin surface persists. Camera manifest records stale identity before dependency update; images are real but recorded camera transform is not trustworthy.",
+  "comparison": "Compared with accepted Pashtun supported cloth and integrated face/hair, and the faithful rearing source for mounted contacts. Improvement over c2 does not pass same-film quality.",
+  "open_defects": [
+    "Whole supporting appearance remains below quality floor",
+    "No continuous performance acceptance",
+    "Diagnostic camera matrix captured before evaluated update"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "verdict": "PASS",
+  "run_digest": "95eea73aa708dcc6fffc9e597f96529ef4ab173228518001930fb6f7f250ed5b",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh337-look-c2-save/snapshot.json",
+      "sha256": "0f5e3dd99a01de86a8fcd006554a12ae175a2283a6073a43007c8467524170c9"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh337-look-c2-save/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh337-look-c2-save/script-diagnostics.json",
+      "sha256": "d8c950e68c5c42eb08e3ba4cd795b716e2b5ac082b76301b8697edb7667b2ad9"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh337-look-c2-save/scene.blend",
+      "sha256": "21ed0e838125c18c0de0e63ea0e57d5d28b50ebdc07f43caa938793c6156a728"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh337-look-c2-save/patch-evidence.json",
+      "sha256": "32e8bd8569dac4e54612ba64fa2d46f055abd7286e2c4dc113dc6d6156bbdae3"
+    }
+  },
+  "observation": "Technical construction only: two actors, all existing garment cache poses, source derivative and finite output saved; no blocked drivers in actual diagnostics.",
+  "comparison": "This enables the three diagnostic renders; no form, same-film appearance or motion pass is claimed. Those are next-step checks.",
+  "open_defects": []
+}

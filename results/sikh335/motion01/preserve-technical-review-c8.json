@@ -1,0 +1,25 @@
+{
+  "verdict": "PASS",
+  "run_digest": "0f6948c70733e0dfce581f8f0581cea87458652f70cdb7b1318f8efca5b674a9",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh337-c8-preserve/snapshot.json",
+      "sha256": "ba6b3c9373d0d3f2456721fce15100c3aef9d468058f472d4236668e6afb68fb"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh337-c8-preserve/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh337-c8-preserve/script-diagnostics.json",
+      "sha256": "99bbbecec312f933855a69b1d853770138fd35ab62669f2fe652484d335f4ec7"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh337-c8-preserve/scene.blend",
+      "sha256": "f929b0155ddf21a11b1c0b3511d099bba46cee3b72840a381e04c4f831c74907"
+    }
+  },
+  "observation": "Exact selected candidate5 state/dependencies retained; native frame/profile hashes verified. Evidence extraction only.",
+  "comparison": "No motion, appearance, audio or Director acceptance. Actual-frame review remains required; known appearance defects remain open outside extraction scope.",
+  "open_defects": []
+}

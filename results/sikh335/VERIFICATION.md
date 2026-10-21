@@ -1,5 +1,18 @@
 # Exchange335 internal status — not a production pass
 
+## Exchange337 update (supersedes historical pending approvals below)
+
+Both exact four-correction amendments applied. Appearance4/max4 is exhausted:
+two pre-save implementation failures and two visually rejected candidates.
+Motion8/max10 is extracting its missing continuous evidence; no integrated clip
+or full-speed AV pass yet. Read CONTINUATION.md and the immutable run receipts.
+
+Current regression:190 passed in20.15s, helper wall20.56s, stderr empty. Exact
+command/output is `.runtime/context-hygiene/runs/sikh337-controller-regression/`.
+These are code/contract tests, including the standalone loader correction;
+they do not qualify the cloth simulation or appearance. No new spending, cloud
+or remote protection claim. Local records/commits are not a verified backup.
+
 - Latest focused regression:236 passed in8.38s; helper wall8.50s, stderr empty.
   Exact command and full output remain in
   `.runtime/context-hygiene/runs/sikh335-final-targeted/`.

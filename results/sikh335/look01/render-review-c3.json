@@ -1,0 +1,40 @@
+{
+  "verdict": "FAIL",
+  "run_digest": "6b41073583543c9136b0d65eb86da2528d53fcdbe4e02d34a7912521eac3a656",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh337-look-c3-render/snapshot.json",
+      "sha256": "c7ceafbc0754a29f47651e8bd8e745e8371bb3514a2d632439c47dd97948d6bd"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh337-look-c3-render/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh337-look-c3-render/script-diagnostics.json",
+      "sha256": "99bbbecec312f933855a69b1d853770138fd35ab62669f2fe652484d335f4ec7"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh337-look-c3-render/frame.png",
+      "sha256": "ad163b1bba9f878570b52efa6b3441378408eb052c9822c9dbae02e8a30b6b45"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh337-look-c3-render/frames.json",
+      "sha256": "4126af670edc6ccbe6d941bd4230086f20b674f9f7cef99351797d10fc8a189e"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh337-look-c3-render/frame.png",
+      "sha256": "ad163b1bba9f878570b52efa6b3441378408eb052c9822c9dbae02e8a30b6b45"
+    },
+    "frame_327": {
+      "path": ".runtime/factory-native/sikh337-look-c3-render/frame-0327.png",
+      "sha256": "39b74661b25c896b337099d225941f9fd95fcfdbbbfc25c0634a1d693a674ae8"
+    }
+  },
+  "observation": "Both283 and327 inspected. Horse has less polished highlights, but rider cloth still reads as smooth anatomical clothing, headwear remains too mechanically layered and face/beard do not yet share accepted film richness.",
+  "comparison": "Compared with accepted Pashtun supported cloth and integrated face/hair, and the faithful rearing source for mounted contacts. Improvement over c2 does not pass same-film quality.",
+  "open_defects": [
+    "Whole supporting appearance remains below quality floor",
+    "No continuous performance acceptance"
+  ]
+}

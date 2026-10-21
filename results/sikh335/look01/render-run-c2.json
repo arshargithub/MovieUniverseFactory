@@ -1,0 +1,53 @@
+{
+  "id": "sikh337-look-c2-render",
+  "task": "sikh335-supporting-appearance",
+  "step": "render",
+  "cycle": 2,
+  "fingerprint": "154d08d8c4c64d21ea6836c3dd9b47dd464c5e78f27c27c7296a1be8a6f6cfb0",
+  "parent": {
+    "path": ".runtime/factory-native/sikh337-look-c2-save/scene.blend",
+    "sha256": "21ed0e838125c18c0de0e63ea0e57d5d28b50ebdc07f43caa938793c6156a728"
+  },
+  "job_digest": "552c5c0bfba16179d5297ed60cfd57e1342bd18e637e7f3b94177681dc30ab0e",
+  "handler_digest": "d0cb653a667d9ccc1c7a2f1cb887117aede7f697ac3687e86b76955fa388fb17",
+  "status": "RETURNED",
+  "artifacts": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh337-look-c2-render/snapshot.json",
+      "sha256": "0f5e3dd99a01de86a8fcd006554a12ae175a2283a6073a43007c8467524170c9"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh337-look-c2-render/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh337-look-c2-render/script-diagnostics.json",
+      "sha256": "99bbbecec312f933855a69b1d853770138fd35ab62669f2fe652484d335f4ec7"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh337-look-c2-render/frame.png",
+      "sha256": "999f5121eee7553aa2d9d04b32629b5e3a11999c616acf16608b1bd3b79583cb"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh337-look-c2-render/frames.json",
+      "sha256": "4700ecef15de5f2f6dfc83a342a05cb54083b1c84c95d7d95acae94d890c5b35"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh337-look-c2-render/frame.png",
+      "sha256": "999f5121eee7553aa2d9d04b32629b5e3a11999c616acf16608b1bd3b79583cb"
+    },
+    "frame_327": {
+      "path": ".runtime/factory-native/sikh337-look-c2-render/frame-0327.png",
+      "sha256": "aef7dace4e3bd98c31c5056b431fc5e28a0ee5bfcab91a0964fc500a745b1237"
+    },
+    "frame_390": {
+      "path": ".runtime/factory-native/sikh337-look-c2-render/frame-0390.png",
+      "sha256": "6f6fd9482c86ea96e47a9c951b62a92bce98ddcfda161f4ffa16504f2fb5aee5"
+    }
+  },
+  "dependencies": {},
+  "recipe": {
+    "path": "results/sikh335/look01/render-recipe.json",
+    "sha256": "ad96287b3665051eef1155dae31bcfddd4158744eb2c732d763d6c685d3072f7"
+  }
+}
