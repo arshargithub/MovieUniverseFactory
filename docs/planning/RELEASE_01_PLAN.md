@@ -4,6 +4,22 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+### Exchange322 — proposed deterministic production workflow
+
+Director requests process design before more construction. Preserve321's audit
+and rejection; its seven comparison sheets now also have a hash-verified local
+copy under `results/sikh321/preserved-comparisons/`. Source runtime media remain
+separate from these Git-sized audit derivatives; no new remote backup is claimed.
+The [workflow proposal](DETERMINISTIC_PRODUCTION_WORKFLOW_322.md) separates task
+routing, versioned brief, execution, candidate freeze and review, with bounded
+correction cycles and explicit Director review eligibility. It is proposed, not
+implemented or adopted. Recommended initial correction ceiling is two cycles
+after the initial candidate; Director selection remains open. Recommend an
+offline controller/replay pilot before returning to Nihang construction. No
+scene work, subagent dispatch, paid calls, new installation or publication is
+authorized by this process discussion. Existing knowledge/review modules remain
+fallible and do not intercept arbitrary chat handoffs. Checkpoint remains330.
+
 ### Exchange321 — rejected supporting shot and reference audit
 
 Director rejects320/10's robotic rearing and leader face/outfit/saddle. The
