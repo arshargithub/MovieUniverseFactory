@@ -4,6 +4,19 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+### Exchange325 — live serial control path demonstrated
+
+Director approved324's exact scoped payload. Three fresh serial model stages
+completed after one retained interrupted attempt, exhausting the four-call
+allowance. The reviewer named visible reference mismatches, left full-speed AV
+NOT_RUN, and the controller routed to correction and blocked delivery. See
+[live qualification](../../results/workflow324/LIVE_REVIEW_325.md). This is not
+Blender authoring or independent reviewer accuracy qualification. Runtime
+defaults were Sol6.1 Low; future production must bind model/effort explicitly.
+Next recommended package connects existing trusted structured authoring to the
+isolated Nihang/rearing/crowd deliverable, preserving one-second handles and
+accepted Pashtun media. No new construction or render occurred in this pass.
+
 ### Exchange324 — serial runner implementation and live approval boundary
 
 The serial runner now carries scoped knowledge and reference roles across fresh

@@ -1,5 +1,7 @@
 # Serial runner qualification status
 
+**Continuation:** Director325 approved the exact payload and the live serial chain completed. See [current live review](LIVE_REVIEW_325.md). The report below preserves324's pre-approval state, not the current blocker.
+
 The serial runner is implemented and locally tested. The no-inference runtime preflight passed. Live stage qualification remains blocked by the host approval check, which requires explicit consent for this selected project payload to enter a separate ChatGPT-authenticated runtime. No stage inference was started and no workaround was attempted.
 
 ## Implemented safeguards

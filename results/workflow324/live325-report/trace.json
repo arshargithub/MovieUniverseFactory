@@ -1,0 +1,404 @@
+{
+  "scope": "Live serial frozen-evidence control path only",
+  "call_reservations": [
+    {
+      "id": "69fc40198bda9dcd9ec33c7337b118e0a7f82e618f302171c5fba8b71603bdba",
+      "task": "frozen-nihang324",
+      "actor": "planner",
+      "status": "ABORTED",
+      "request_hash": "6cf11c6ff1097c6066d0b544c18c331e291fc0046c903604f87bf2d0d0ee39e8",
+      "response_hash": "ab144c4624258368493013babe56f6ab4668199184fe075db28de2ac23a22dd7"
+    },
+    {
+      "id": "b2f74938e20a737facdf472bc57ee1a2c4e9e04f14b483711b090eca05c0a557",
+      "task": "frozen-nihang324",
+      "actor": "planner",
+      "status": "SUBMITTED",
+      "request_hash": "6cf11c6ff1097c6066d0b544c18c331e291fc0046c903604f87bf2d0d0ee39e8",
+      "response_hash": "03aff5ca166d34f0538bab9fdf6ad093f1e2b3a8d9d15b3920566ffa6a28bdc3"
+    },
+    {
+      "id": "b1b343bd6d445d3dcb478df4a54e4c40e47e3355c412205b5349124f68d58d29",
+      "task": "frozen-nihang324",
+      "actor": "builder",
+      "status": "SUBMITTED",
+      "request_hash": "4e59fe2036ddde091d69d537a0e23ddcaa84e7dece1be3e2fef059562a4fb13d",
+      "response_hash": "b66238c7c406a5af8505b532015f6d5602071895141e39413d30aab07e18fcf4"
+    },
+    {
+      "id": "d1ef0c6958cf3318ce55a47140fd76ae49c59f7310031439c68b64f7227c0295",
+      "task": "frozen-nihang324",
+      "actor": "reviewer",
+      "status": "SUBMITTED",
+      "request_hash": "f578df538cf56ba321440ed7f7f913897a887cbaa40e6f38d1e4f615811b3669",
+      "response_hash": "ec8da68509c79bcdc3fbfd82d30c3bf7f386d017abb02bf0b26ded37876fd0b4"
+    }
+  ],
+  "completed_stages": [
+    {
+      "actor": "planner",
+      "runtime": {
+        "auth_type": "chatgpt",
+        "user_agent": "movie_factory_stage_qualification/0.162.0-alpha.17.2 (Mac OS 26.3.1; arm64) unknown (movie_factory_stage_qualification; 324)",
+        "disabled_features": [
+          "shell_tool",
+          "apps",
+          "plugins",
+          "remote_plugin",
+          "browser_use",
+          "in_app_browser",
+          "multi_agent",
+          "memories",
+          "hooks",
+          "view_image",
+          "workspace_dependencies",
+          "goals"
+        ],
+        "web_search": "disabled",
+        "mcp_servers_disabled_count": 2,
+        "inference_started": true,
+        "thread_id": "01a15e8b-7a7a-71b0-ac7f-b39630da4bba",
+        "turn_id": "01a15e8b-7abb-7a21-9590-4da53b6abcad",
+        "model": "gpt-6.1-sol",
+        "reasoning_effort": "low",
+        "usage": {
+          "total": {
+            "totalTokens": 15152,
+            "inputTokens": 14325,
+            "cachedInputTokens": 0,
+            "cacheWriteInputTokens": 0,
+            "outputTokens": 827,
+            "reasoningOutputTokens": 26
+          },
+          "last": {
+            "totalTokens": 15152,
+            "inputTokens": 14325,
+            "cachedInputTokens": 0,
+            "cacheWriteInputTokens": 0,
+            "outputTokens": 827,
+            "reasoningOutputTokens": 26
+          },
+          "modelContextWindow": 475000
+        },
+        "environment_access_requested": false,
+        "new_context": true
+      },
+      "context_bytes": 18645,
+      "knowledge_digest": "c8c2f68acb41ebb8c110218a648aa481fb0c4292c993b3b585c72d40d9b25af0",
+      "reference_ids": [
+        "accepted_film",
+        "rear_motion",
+        "rejected320"
+      ],
+      "reference_roles": {
+        "accepted_film": "accepted_quality",
+        "rear_motion": "faithful_motion",
+        "rejected320": "negative_control"
+      },
+      "builder_advocacy_present": false,
+      "result": {
+        "strategy": "Run a serial, frozen-evidence qualification: planning \u2192 execution record \u2192 reference-grounded review, with fresh stage contexts carrying pinned inputs, reference roles, observations, uncertainties and blocking statuses. Audience intent: the leader\u2019s prepared rear should convey extraordinary control and weight while crowd attention supports the rider. Distraction hypotheses: disconnected horse/rider transitions, weak landing or recovery, construction defects, and competing crowd action; these are review hypotheses, not observed findings. Quality floor: applicable accepted-film construction quality and faithful whole-body rear performance, including full-speed rhythm and contact. Bind the supplied strategy and media hashes as declared inputs; their bytes have not been independently verified here. Reuse the existing frozen candidate and references solely for this test; no custom construction or media changes. Missing resource-manifest, rights, dependency and tested-use evidence prevents broader reuse qualification. Preserve accepted Pashtun20s and all source/native media. No tools, generation, spending, publication or repair. Stop on failed, missing, stale or occluded required evidence; preserve failures and reassess the method rather than relabeling a pass. At most two workflow corrections may address evidence handling, never media. Workflow qualification, perceptual judgment, renderer replay, release and Director acceptance remain separate.",
+        "early_proof": "Before any downstream success claim, carry rejected320 into the execution record with its supplied identity and prior rejection intact. The earliest integrated proof is that the serial handoff preserves all three distinct reference roles and blocks this unchanged known-rejected candidate. Expected candidate disposition: FAIL on supplied rejection history, not a newly observed visual finding. No media or images are supplied for inspection here, so fresh construction inspection, whole-body/contact comparison and full-speed temporal review are NOT_RUN. A reviewer must distinguish those missing checks from the known historical failure. Omitted evidence, an occluded required region, or a frame-only claim of temporal success must block handoff. This response supplies a plan, not proof that the runner executed or passed. Familiar controls demonstrate bounded calibration only; they do not establish independent artistic-review reliability.",
+        "applications": {
+          "accepted_film": "Use accepted_film (supplied SHA-256 1004ed9f2e06d2eafb008c925eb9d266e8a13b8603086020e28d19e3b606722b) to calibrate visible same-film forms, materials and construction quality within its accepted scope. Allow different character, costume, lighting and action. Do not transfer identity, demand pixel matching, or infer release approval or strict renderer replay qualification. Fresh comparison is NOT_RUN with the supplied text-only evidence.",
+          "rear_motion": "Use rear_motion (supplied SHA-256 78d0d691e8712c02931876cf0bc405e4869de357f337f531708be7a7da4898e2) for the 14\u201319s horse/rider passage: coordinated gather, drive, active crest, descent, weight and recovery. Review whole-body transitions and contact, then full-speed rhythm, fluidity and landing; isolated keyframes cannot satisfy the temporal requirement. Camera, actor and scenery may vary within accepted direction. Do not infer motion-capture measurements or copy incidental background. Temporal and visible comparisons are NOT_RUN here.",
+          "rejected320": "Use rejected320 (supplied SHA-256 ad7d980eb064a03837989f27d68ebacfe08576cb30625f92696c20b5fc50d452) as the negative control and frozen candidate. Its unchanged known-rejected identity must remain blocked; it is never an aesthetic target. Preserve prior rejection provenance and test that downstream stages cannot convert missing review or valid evidence structure into PASS. Specific visible defects cannot be newly described from this packet alone; fresh defect inspection remains NOT_RUN."
+        }
+      }
+    },
+    {
+      "actor": "builder",
+      "runtime": {
+        "auth_type": "chatgpt",
+        "user_agent": "movie_factory_stage_qualification/0.162.0-alpha.17.2 (Mac OS 26.3.1; arm64) unknown (movie_factory_stage_qualification; 324)",
+        "disabled_features": [
+          "shell_tool",
+          "apps",
+          "plugins",
+          "remote_plugin",
+          "browser_use",
+          "in_app_browser",
+          "multi_agent",
+          "memories",
+          "hooks",
+          "view_image",
+          "workspace_dependencies",
+          "goals"
+        ],
+        "web_search": "disabled",
+        "mcp_servers_disabled_count": 2,
+        "inference_started": true,
+        "thread_id": "01a15e8b-f30d-7fa2-912a-3cb9e6ec2314",
+        "turn_id": "01a15e8b-f34f-7db1-90dd-cd29ad715b5d",
+        "model": "gpt-6.1-sol",
+        "reasoning_effort": "low",
+        "usage": {
+          "total": {
+            "totalTokens": 17547,
+            "inputTokens": 16858,
+            "cachedInputTokens": 0,
+            "cacheWriteInputTokens": 0,
+            "outputTokens": 689,
+            "reasoningOutputTokens": 0
+          },
+          "last": {
+            "totalTokens": 17547,
+            "inputTokens": 16858,
+            "cachedInputTokens": 0,
+            "cacheWriteInputTokens": 0,
+            "outputTokens": 689,
+            "reasoningOutputTokens": 0
+          },
+          "modelContextWindow": 475000
+        },
+        "environment_access_requested": false,
+        "new_context": true
+      },
+      "context_bytes": 29009,
+      "knowledge_digest": "c8c2f68acb41ebb8c110218a648aa481fb0c4292c993b3b585c72d40d9b25af0",
+      "reference_ids": [
+        "accepted_film",
+        "rear_motion",
+        "rejected320"
+      ],
+      "reference_roles": {
+        "accepted_film": "accepted_quality",
+        "rear_motion": "faithful_motion",
+        "rejected320": "negative_control"
+      },
+      "builder_advocacy_present": false,
+      "result": {
+        "applications": {
+          "accepted_film": "Preserve accepted_quality role: .runtime/art-direction/series01-finish248/delivery01/pashtun-20s.mp4; supplied SHA-256 1004ed9f2e06d2eafb008c925eb9d266e8a13b8603086020e28d19e3b606722b. Use only to calibrate applicable same-film visible forms, materials and construction quality. Allow different character, costume, lighting and action; do not transfer identity, require pixel matching, or infer release approval or renderer replay qualification. Fresh construction comparison: NOT_RUN; no images or media supplied. Preserve accepted Pashtun20s unchanged.",
+          "rear_motion": "Preserve faithful_motion role: .runtime/art-direction/series01-sikh256/references/reference-b.mov; supplied SHA-256 78d0d691e8712c02931876cf0bc405e4869de357f337f531708be7a7da4898e2. For the 14\u201319s passage, require whole-body horse/rider transitions and contact through gather, drive, active crest, descent, weight and recovery, followed by full-speed rhythm, fluidity and landing review. Camera, actor and scenery may vary within accepted direction. Do not infer motion-capture measurements or copy incidental background. Whole-body/contact comparison and full-speed temporal review: NOT_RUN. Frames alone cannot establish temporal success; direct audiovisual judgment remains with Director.",
+          "rejected320": "Preserve negative_control and frozen-candidate roles: .runtime/art-direction/series01-sikh320/delivery-10/nihang-crowd-review.mp4; supplied SHA-256 ad7d980eb064a03837989f27d68ebacfe08576cb30625f92696c20b5fc50d452. Carry prior321 rejection provenance, as supplied under Director323 reference roles, into every downstream record. Candidate disposition: FAIL on supplied rejection history. This unchanged known-rejected identity must remain blocked and must never become an aesthetic target. Fresh defect inspection: NOT_RUN; no specific visible defect is newly observed here. Missing review or valid evidence structure cannot convert this FAIL into PASS."
+        },
+        "execution_note": "This text record pins the supplied candidate identity for controller-managed freezing without alteration; it does not establish that bytes were independently verified, a runner executed, or qualification passed. Preserve all three distinct reference roles, prior rejection, uncertainties and blocking statuses through the serial handoff. No media or images were supplied: fresh construction inspection, whole-body/contact comparison and full-speed temporal review are NOT_RUN, separately from the historical candidate FAIL. FAIL, missing or stale required evidence, occluded required regions, and frame-only temporal success claims block handoff. No tools, media generation, repairs, geometry changes, spending, publication or source/native edits were performed. Broader reuse remains unqualified because resource-manifest, rights, dependency and tested-use evidence is missing. Familiar controls provide bounded calibration only, not independent artistic-review reliability. Workflow qualification, perceptual judgment, renderer replay, release and Director acceptance remain separate; none is established by this record. Any evidence-handling correction is limited to the supplied maximum of two and cannot alter media or erase the rejection."
+      }
+    },
+    {
+      "actor": "reviewer",
+      "runtime": {
+        "auth_type": "chatgpt",
+        "user_agent": "movie_factory_stage_qualification/0.162.0-alpha.17.2 (Mac OS 26.3.1; arm64) unknown (movie_factory_stage_qualification; 324)",
+        "disabled_features": [
+          "shell_tool",
+          "apps",
+          "plugins",
+          "remote_plugin",
+          "browser_use",
+          "in_app_browser",
+          "multi_agent",
+          "memories",
+          "hooks",
+          "view_image",
+          "workspace_dependencies",
+          "goals"
+        ],
+        "web_search": "disabled",
+        "mcp_servers_disabled_count": 2,
+        "inference_started": true,
+        "thread_id": "01a15e8c-531c-70b0-b990-6bb9d7c29a3f",
+        "turn_id": "01a15e8c-5367-7352-98c3-5a9f9844093b",
+        "model": "gpt-6.1-sol",
+        "reasoning_effort": "low",
+        "usage": {
+          "total": {
+            "totalTokens": 21730,
+            "inputTokens": 20661,
+            "cachedInputTokens": 0,
+            "cacheWriteInputTokens": 0,
+            "outputTokens": 1069,
+            "reasoningOutputTokens": 21
+          },
+          "last": {
+            "totalTokens": 21730,
+            "inputTokens": 20661,
+            "cachedInputTokens": 0,
+            "cacheWriteInputTokens": 0,
+            "outputTokens": 1069,
+            "reasoningOutputTokens": 21
+          },
+          "modelContextWindow": 475000
+        },
+        "environment_access_requested": false,
+        "new_context": true
+      },
+      "context_bytes": 31478,
+      "knowledge_digest": "c8c2f68acb41ebb8c110218a648aa481fb0c4292c993b3b585c72d40d9b25af0",
+      "reference_ids": [
+        "accepted_film",
+        "rear_motion",
+        "rejected320"
+      ],
+      "reference_roles": {
+        "accepted_film": "accepted_quality",
+        "rear_motion": "faithful_motion",
+        "rejected320": "negative_control"
+      },
+      "builder_advocacy_present": false,
+      "result": {
+        "checks": [
+          {
+            "id": "visible",
+            "status": "FAIL",
+            "observation": "The unchanged candidate remains rejected on supplied history. Supplied sheets additionally show a narrow, smooth horse neck/chest, minimally articulated blue clothing, and weakly differentiated preparation/recovery poses. These frame observations do not establish playback behavior.",
+            "comparison": "Accepted Pashtun shows layered scarf folds, garment seams and clearer tack/material separation. Rear reference shows more gathered hindquarter and foreleg configurations than candidate f298/f310, and a more differentiated contact pose than f350.",
+            "evidence": [
+              "appearance",
+              "poses"
+            ]
+          },
+          {
+            "id": "temporal",
+            "status": "NOT_RUN",
+            "observation": "No full-speed motion or audio review was performed; phase stills cannot establish rhythm, fluidity, landing timing or recovery.",
+            "comparison": "The required full-speed rear_motion comparison remains unavailable. Director audiovisual judgment remains separate.",
+            "evidence": []
+          }
+        ],
+        "reference_checks": {
+          "accepted_film": {
+            "observation": "Candidate clothing reads as smooth continuous blue volumes with a broad flat hanging panel; the accepted comparator shows layered scarf folds, visible garment seams and distinct saddle/tack surfaces.",
+            "comparison": "This is a construction comparison within accepted scope, allowing different characters, lighting and costumes; it does not require identity or pixel matching. Dark and cropped regions limit further inspection.",
+            "evidence": [
+              "appearance"
+            ],
+            "aspects": [
+              {
+                "id": "screen_requirement",
+                "status": "FAIL",
+                "observation": "Visible clothing articulation and material separation fall below the supplied accepted comparator in the shown regions; hidden construction remains uninspected."
+              }
+            ]
+          },
+          "rear_motion": {
+            "observation": "Candidate f298/f310 retain a relatively upright rider and extended supporting hindlegs; f318/f326 show a long narrow neck, raised paired forelegs and limited visible rider articulation. Candidate f350 closely resembles its starting stance.",
+            "comparison": "The reference gather/drive frames show greater hindquarter flexion and a foreleg already lifted; crest shows stronger tucked-leg and rider/horse configuration, while contact/recovery shows a distinctly changed body stance. Camera and terrain differ, so these are qualitative pose comparisons, not force measurements or timing findings.",
+            "evidence": [
+              "poses"
+            ],
+            "aspects": [
+              {
+                "id": "screen_requirement",
+                "status": "FAIL",
+                "observation": "The sampled preparation and recovery poses do not convey the reference's differentiated whole-body gathering and contact configuration. Intervening transitions and obscured contact regions remain uninspected."
+              },
+              {
+                "id": "full_speed_performance",
+                "status": "NOT_RUN",
+                "observation": "Stills cannot establish full-speed coordination, weight, fluidity or landing; no direct audiovisual assessment is claimed."
+              }
+            ]
+          },
+          "rejected320": {
+            "observation": "The supplied candidate is existing-rejected320-unchanged, bound by declaration to .runtime/art-direction/series01-sikh320/delivery-10/nihang-crowd-review.mp4, SHA-256 ad7d980eb064a03837989f27d68ebacfe08576cb30625f92696c20b5fc50d452. Prior321 rejection provenance remains binding; bytes were not independently verified.",
+            "comparison": "This is the supplied known-rejected negative control, never an aesthetic target. Its historical rejection independently blocks admission, regardless of evidence structure or missing playback review.",
+            "evidence": [
+              "appearance",
+              "poses"
+            ],
+            "aspects": [
+              {
+                "id": "screen_requirement",
+                "status": "FAIL",
+                "observation": "Unchanged known-rejected identity must remain blocked on supplied rejection history; the frame observations are additional, limited evidence."
+              }
+            ]
+          }
+        },
+        "audience_read": "Intended read: extraordinary control and weight, supported by crowd attention. The raised horse, upright spear and seated rider make the heroic rear legible in stills. Smooth construction and weakly differentiated preparation/recovery poses risk undermining believable weight. Crowd attention and full-speed dramatic payoff cannot be assessed from these sheets.",
+        "strongest_counterexample": "The candidate visibly changes from standing to a high rear and back, with raised folded forelegs and hindfeet near the ground. This counters any claim of no pose change, but does not establish coordinated transitions, convincing contact or temporal success, and cannot overturn prior rejection.",
+        "adjacent_review": "Accepted Pashtun remains protected as a scoped quality comparator. No edits were performed. Crowd behavior, obscured rider/saddle interfaces, intervening whole-body transitions, full-speed landing and audio remain NOT_RUN. Supplied hashes are declared bindings only. FAIL and required NOT_RUN checks block handoff; this review does not prove serial-runner execution, general review reliability, release approval or Director acceptance.",
+        "open_visible_defects": [
+          "Candidate blue clothing has limited visible fold/seam articulation and a broad flat hanging panel compared with the accepted construction reference.",
+          "Candidate horse neck/chest reads as narrow and smoothly continuous in the raised poses, with less articulated anatomical form than the motion reference.",
+          "Sampled gather/drive and contact/recovery poses show insufficient whole-body differentiation relative to the reference."
+        ]
+      }
+    }
+  ],
+  "events": [
+    {
+      "seq": 1,
+      "utc": "2026-10-21T12:57:39.479992+00:00",
+      "action": "create",
+      "stage": "BRIEFING",
+      "cycle": 0,
+      "findings": {}
+    },
+    {
+      "seq": 2,
+      "utc": "2026-10-21T12:59:51.436238+00:00",
+      "action": "submit:planner",
+      "stage": "EXECUTING",
+      "cycle": 0,
+      "findings": {}
+    },
+    {
+      "seq": 3,
+      "utc": "2026-10-21T13:00:16.339416+00:00",
+      "action": "submit:builder",
+      "stage": "REVIEWING",
+      "cycle": 0,
+      "findings": {}
+    },
+    {
+      "seq": 4,
+      "utc": "2026-10-21T13:00:46.918961+00:00",
+      "action": "submit:reviewer",
+      "stage": "EXECUTING",
+      "cycle": 1,
+      "findings": {
+        "director_approved": false,
+        "failures": [
+          "KNOWN_REJECTED_ARTIFACT:rejected320",
+          "reference:accepted_film:screen_requirement",
+          "reference:rear_motion:screen_requirement",
+          "reference:rejected320:screen_requirement",
+          "visible",
+          "visible:Candidate blue clothing has limited visible fold/seam articulation and a broad flat hanging panel compared with the accepted construction reference.",
+          "visible:Candidate horse neck/chest reads as narrow and smoothly continuous in the raised poses, with less articulated anatomical form than the motion reference.",
+          "visible:Sampled gather/drive and contact/recovery poses show insufficient whole-body differentiation relative to the reference."
+        ],
+        "missing_evidence": [],
+        "pending_director_av": [
+          "temporal",
+          "reference:rear_motion:full_speed_performance"
+        ],
+        "production_approved": false
+      }
+    }
+  ],
+  "final_stage": "EXECUTING",
+  "final_cycle": 1,
+  "findings": {
+    "director_approved": false,
+    "failures": [
+      "KNOWN_REJECTED_ARTIFACT:rejected320",
+      "reference:accepted_film:screen_requirement",
+      "reference:rear_motion:screen_requirement",
+      "reference:rejected320:screen_requirement",
+      "visible",
+      "visible:Candidate blue clothing has limited visible fold/seam articulation and a broad flat hanging panel compared with the accepted construction reference.",
+      "visible:Candidate horse neck/chest reads as narrow and smoothly continuous in the raised poses, with less articulated anatomical form than the motion reference.",
+      "visible:Sampled gather/drive and contact/recovery poses show insufficient whole-body differentiation relative to the reference."
+    ],
+    "missing_evidence": [],
+    "pending_director_av": [
+      "temporal",
+      "reference:rear_motion:full_speed_performance"
+    ],
+    "production_approved": false
+  },
+  "delivery_block": "NOT_READY",
+  "production_approved": false,
+  "usage_complete": false,
+  "usage_gap": "Aborted first attempt usage unavailable",
+  "observed_completed_tokens": 54429,
+  "code_bindings": {
+    "src/movie_factory/staged_runner.py": "055dfdefa21a85388e13f7a326dc767f9a691da1502879eb6d8657a83c132c52",
+    "src/movie_factory/production_workflow.py": "899b7b5268ee69be2485d92f8059a4669013bda1179a5aa6f4778859f53295ff",
+    "scripts/workflow324_qualify.py": "bc54195313a2102c6c19a691b910dde16fc168f442536cbe371c8874f9a4d6e9"
+  }
+}

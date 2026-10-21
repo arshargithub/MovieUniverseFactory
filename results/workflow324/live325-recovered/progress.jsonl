@@ -1,0 +1,12 @@
+{"event": "stage_started", "actor": "planner", "cycle": 0, "context_bytes": 18645}
+{"event": "reasoning_started"}
+{"event": "reasoning_completed", "status": "completed"}
+{"event": "stage_admitted", "task": "frozen-nihang324", "stage": "EXECUTING", "cycle": 0, "findings": {}}
+{"event": "stage_started", "actor": "builder", "cycle": 0, "context_bytes": 29009}
+{"event": "reasoning_started"}
+{"event": "reasoning_completed", "status": "completed"}
+{"event": "stage_admitted", "task": "frozen-nihang324", "stage": "REVIEWING", "cycle": 0, "findings": {}}
+{"event": "stage_started", "actor": "reviewer", "cycle": 0, "context_bytes": 31478}
+{"event": "reasoning_started"}
+{"event": "reasoning_completed", "status": "completed"}
+{"event": "stage_admitted", "task": "frozen-nihang324", "stage": "EXECUTING", "cycle": 1, "findings": {"failures": ["KNOWN_REJECTED_ARTIFACT:rejected320", "reference:accepted_film:screen_requirement", "reference:rear_motion:screen_requirement", "reference:rejected320:screen_requirement", "visible", "visible:Candidate blue clothing has limited visible fold/seam articulation and a broad flat hanging panel compared with the accepted construction reference.", "visible:Candidate horse neck/chest reads as narrow and smoothly continuous in the raised poses, with less articulated anatomical form than the motion reference.", "visible:Sampled gather/drive and contact/recovery poses show insufficient whole-body differentiation relative to the reference."], "missing_evidence": [], "pending_director_av": ["temporal", "reference:rear_motion:full_speed_performance"], "production_approved": false, "director_approved": false}}

@@ -1,0 +1,119 @@
+{
+  "scope": "serial frozen-evidence qualification",
+  "production_approved": false,
+  "scene_changes": false,
+  "api_key_billing_allowed": false,
+  "preflight": {
+    "auth_type": "chatgpt",
+    "user_agent": "movie_factory_stage_qualification/0.162.0-alpha.17.2 (Mac OS 26.3.1; arm64) unknown (movie_factory_stage_qualification; 324)",
+    "disabled_features": [
+      "shell_tool",
+      "apps",
+      "plugins",
+      "remote_plugin",
+      "browser_use",
+      "in_app_browser",
+      "multi_agent",
+      "memories",
+      "hooks",
+      "view_image",
+      "workspace_dependencies",
+      "goals"
+    ],
+    "web_search": "disabled",
+    "mcp_servers_disabled_count": 2,
+    "inference_started": false
+  },
+  "state": "EXECUTING",
+  "cycle": 1,
+  "events": [
+    {
+      "seq": 1,
+      "utc": "2026-10-21T12:57:39.479992+00:00",
+      "action": "create",
+      "stage": "BRIEFING",
+      "cycle": 0,
+      "findings": {}
+    },
+    {
+      "seq": 2,
+      "utc": "2026-10-21T12:59:51.436238+00:00",
+      "action": "submit:planner",
+      "stage": "EXECUTING",
+      "cycle": 0,
+      "findings": {}
+    },
+    {
+      "seq": 3,
+      "utc": "2026-10-21T13:00:16.339416+00:00",
+      "action": "submit:builder",
+      "stage": "REVIEWING",
+      "cycle": 0,
+      "findings": {}
+    },
+    {
+      "seq": 4,
+      "utc": "2026-10-21T13:00:46.918961+00:00",
+      "action": "submit:reviewer",
+      "stage": "EXECUTING",
+      "cycle": 1,
+      "findings": {
+        "director_approved": false,
+        "failures": [
+          "KNOWN_REJECTED_ARTIFACT:rejected320",
+          "reference:accepted_film:screen_requirement",
+          "reference:rear_motion:screen_requirement",
+          "reference:rejected320:screen_requirement",
+          "visible",
+          "visible:Candidate blue clothing has limited visible fold/seam articulation and a broad flat hanging panel compared with the accepted construction reference.",
+          "visible:Candidate horse neck/chest reads as narrow and smoothly continuous in the raised poses, with less articulated anatomical form than the motion reference.",
+          "visible:Sampled gather/drive and contact/recovery poses show insufficient whole-body differentiation relative to the reference."
+        ],
+        "missing_evidence": [],
+        "pending_director_av": [
+          "temporal",
+          "reference:rear_motion:full_speed_performance"
+        ],
+        "production_approved": false
+      }
+    }
+  ],
+  "calls": [
+    {
+      "id": "69fc40198bda9dcd9ec33c7337b118e0a7f82e618f302171c5fba8b71603bdba",
+      "task": "frozen-nihang324",
+      "actor": "planner",
+      "status": "ABORTED",
+      "request_hash": "6cf11c6ff1097c6066d0b544c18c331e291fc0046c903604f87bf2d0d0ee39e8",
+      "response_hash": "ab144c4624258368493013babe56f6ab4668199184fe075db28de2ac23a22dd7"
+    },
+    {
+      "id": "b2f74938e20a737facdf472bc57ee1a2c4e9e04f14b483711b090eca05c0a557",
+      "task": "frozen-nihang324",
+      "actor": "planner",
+      "status": "SUBMITTED",
+      "request_hash": "6cf11c6ff1097c6066d0b544c18c331e291fc0046c903604f87bf2d0d0ee39e8",
+      "response_hash": "03aff5ca166d34f0538bab9fdf6ad093f1e2b3a8d9d15b3920566ffa6a28bdc3"
+    },
+    {
+      "id": "b1b343bd6d445d3dcb478df4a54e4c40e47e3355c412205b5349124f68d58d29",
+      "task": "frozen-nihang324",
+      "actor": "builder",
+      "status": "SUBMITTED",
+      "request_hash": "4e59fe2036ddde091d69d537a0e23ddcaa84e7dece1be3e2fef059562a4fb13d",
+      "response_hash": "b66238c7c406a5af8505b532015f6d5602071895141e39413d30aab07e18fcf4"
+    },
+    {
+      "id": "d1ef0c6958cf3318ce55a47140fd76ae49c59f7310031439c68b64f7227c0295",
+      "task": "frozen-nihang324",
+      "actor": "reviewer",
+      "status": "SUBMITTED",
+      "request_hash": "f578df538cf56ba321440ed7f7f913897a887cbaa40e6f38d1e4f615811b3669",
+      "response_hash": "ec8da68509c79bcdc3fbfd82d30c3bf7f386d017abb02bf0b26ded37876fd0b4"
+    }
+  ],
+  "delivery": {
+    "blocked": "NOT_READY"
+  },
+  "qualified_scope": "Recorded fresh serial reasoning and control path only; not production builder or perceptual accuracy"
+}

@@ -1,0 +1,27 @@
+{
+  "scope": "serial frozen-evidence qualification",
+  "production_approved": false,
+  "scene_changes": false,
+  "api_key_billing_allowed": false,
+  "preflight": {
+    "auth_type": "chatgpt",
+    "user_agent": "movie_factory_stage_qualification/0.162.0-alpha.17.2 (Mac OS 26.3.1; arm64) unknown (movie_factory_stage_qualification; 324)",
+    "disabled_features": [
+      "shell_tool",
+      "apps",
+      "plugins",
+      "remote_plugin",
+      "browser_use",
+      "in_app_browser",
+      "multi_agent",
+      "memories",
+      "hooks",
+      "view_image",
+      "workspace_dependencies",
+      "goals"
+    ],
+    "web_search": "disabled",
+    "mcp_servers_disabled_count": 2,
+    "inference_started": false
+  }
+}

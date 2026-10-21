@@ -1,6 +1,22 @@
 {
   "events": [
     {
+      "event_id": "workflow325-live-stage-routing",
+      "event_type": "engineering_review_outcome",
+      "recorded_date": "2026-10-21",
+      "experiment_id": "WORKFLOW324",
+      "reported_model": "gpt-6.1-sol",
+      "reported_reasoning_effort": "low",
+      "setting_attribution": "runtime_thread_start_response",
+      "runtime_verified": true,
+      "controlled_model_comparison": false,
+      "outcome": "THREE_FRESH_SERIAL_STAGES_COMPLETE_KNOWN_REJECTED_MEDIA_BLOCKED",
+      "observation": "Installed standalone defaults, not a model override or proof of inheritance from this chat. Planning/frozen execution/review retain reference roles; fresh reviewer names frame failures and leaves direct AV NOT_RUN. Initial userMessage echo misclassification aborted, reservation retained, explicit reconciliation followed by three completed calls within original four cap. No production builder or independent perceptual accuracy qualification. Future production callers must bind intended model/effort; mismatch assertion tested offline.",
+      "engineering_subscription_usage": {"completed_stage_tokens_observed": 54429, "coverage": "PARTIAL_ABORTED_CALL_UNKNOWN"},
+      "engineering_cost_usd": null,
+      "evidence": ["results/workflow324/live325-report/trace.json", "results/workflow324/LIVE_REVIEW_325.md"]
+    },
+    {
       "event_id": "series01-rein218-bare-fist-internal-review",
       "event_type": "engineering_review_outcome",
       "recorded_date": "2026-10-11",
