@@ -1,0 +1,337 @@
+{
+  "fingerprint": "62d8b60f5f3f73e1c821db7cb818eeecb1bb226e082a4503e9f76f5676f55876",
+  "candidate_digest": "a5d2a55a9b786681fb1b5140c12cad2361799aa9f9866df4748375388e3b7a5f",
+  "evidence": {
+    "298": {
+      "binding": {
+        "path": ".runtime/art-direction/series01-sikh331/pose-03/frames/frame-0298.png",
+        "sha256": "9dca7fce77733e5f45c6397fbe9b31cb2d74fa97e23088e5f766da46487830fa"
+      },
+      "mode": "image",
+      "candidate_digest": "a5d2a55a9b786681fb1b5140c12cad2361799aa9f9866df4748375388e3b7a5f",
+      "scope": "Actual original camera, sampled frame; no temporal certification"
+    },
+    "314": {
+      "binding": {
+        "path": ".runtime/art-direction/series01-sikh331/pose-03/frames/frame-0314.png",
+        "sha256": "c2833b10c07ff53a24c1659f4dba550eb9e396a57515413851041df98b2f8e78"
+      },
+      "mode": "image",
+      "candidate_digest": "a5d2a55a9b786681fb1b5140c12cad2361799aa9f9866df4748375388e3b7a5f",
+      "scope": "Actual original camera, sampled frame; no temporal certification"
+    },
+    "327": {
+      "binding": {
+        "path": ".runtime/art-direction/series01-sikh331/pose-03/frames/frame-0327.png",
+        "sha256": "1d3e19b4d9a4b78942a71ac72fc2605a83dd4683c08b0ccd4951368e654ee70e"
+      },
+      "mode": "image",
+      "candidate_digest": "a5d2a55a9b786681fb1b5140c12cad2361799aa9f9866df4748375388e3b7a5f",
+      "scope": "Actual original camera, sampled frame; no temporal certification"
+    },
+    "344": {
+      "binding": {
+        "path": ".runtime/art-direction/series01-sikh331/pose-03/frames/frame-0344.png",
+        "sha256": "b25462a2966dd6a9815f6b57748733c7469c308d5a10277a7bd157ce6e9c1865"
+      },
+      "mode": "image",
+      "candidate_digest": "a5d2a55a9b786681fb1b5140c12cad2361799aa9f9866df4748375388e3b7a5f",
+      "scope": "Actual original camera, sampled frame; no temporal certification"
+    },
+    "350": {
+      "binding": {
+        "path": ".runtime/art-direction/series01-sikh331/pose-03/frames/frame-0350.png",
+        "sha256": "a0a6c4c1da6d70ac32cd8447376ab24cd2506411ac63c9542837407cdb824076"
+      },
+      "mode": "image",
+      "candidate_digest": "a5d2a55a9b786681fb1b5140c12cad2361799aa9f9866df4748375388e3b7a5f",
+      "scope": "Actual original camera, sampled frame; no temporal certification"
+    },
+    "353": {
+      "binding": {
+        "path": ".runtime/art-direction/series01-sikh331/pose-03/frames/frame-0353.png",
+        "sha256": "333dbdc0c507a5c04b0b933ff58f41c6461d3d69e9991a516f7b3f8e8a124b70"
+      },
+      "mode": "image",
+      "candidate_digest": "a5d2a55a9b786681fb1b5140c12cad2361799aa9f9866df4748375388e3b7a5f",
+      "scope": "Actual original camera, sampled frame; no temporal certification"
+    },
+    "audit": {
+      "binding": {
+        "path": "results/sikh331/PROOF_AUDIT.md",
+        "sha256": "24ed70645393f90aeca5898ca917b88aa6ffa129b3d232d687cadbd06fccbc4f"
+      },
+      "mode": "technical",
+      "candidate_digest": "a5d2a55a9b786681fb1b5140c12cad2361799aa9f9866df4748375388e3b7a5f",
+      "scope": "Chronology/source/known-warning record; not native validity pass"
+    }
+  },
+  "checks": [
+    {
+      "id": "P1",
+      "status": "FAIL",
+      "observation": "298 still presents a long relatively straight neck; pelvis/chest do not gather as a compact whole.",
+      "comparison": "Reference15.9s has conspicuous neck curl and coordinated preparation.",
+      "evidence": [
+        "298",
+        "314",
+        "327",
+        "344",
+        "350",
+        "353"
+      ]
+    },
+    {
+      "id": "P2",
+      "status": "FAIL",
+      "observation": "327 forefeet point down and head flex improves, but support remains extended and forelimb folding abrupt.",
+      "comparison": "Reference17.3s has a compact articulated balance; a better hoof orientation does not qualify that silhouette.",
+      "evidence": [
+        "298",
+        "314",
+        "327",
+        "344",
+        "350",
+        "353"
+      ]
+    },
+    {
+      "id": "P3",
+      "status": "NOT_RUN",
+      "observation": "350/353 lower the body/head; transition interiors and rebuilt dependent contact caches are incomplete.",
+      "comparison": "Sampled compression cannot qualify momentum, contact and distributed recovery.",
+      "evidence": []
+    },
+    {
+      "id": "P4",
+      "status": "FAIL",
+      "observation": "298/327/353 retain a smooth torso shell, cap crown, regular beard, tube lower garments and polished coat.",
+      "comparison": "Accepted Pashtun establishes rich layered forms at readable framing; dark lighting is not a quality waiver.",
+      "evidence": [
+        "298",
+        "314",
+        "327",
+        "344",
+        "350",
+        "353"
+      ]
+    },
+    {
+      "id": "P5",
+      "status": "NOT_RUN",
+      "observation": "No representative near-warrior proof or propagation completed.",
+      "comparison": "The one-actor prerequisite failed; inherited rejected crowd is not a new pass.",
+      "evidence": []
+    },
+    {
+      "id": "P6",
+      "status": "NOT_RUN",
+      "observation": "Six phase renders only; no continuous clip, reverse controls or fresh-open comparison.",
+      "comparison": "The agreed deliverable is the entire contiguous passage, not selected images.",
+      "evidence": []
+    },
+    {
+      "id": "P7",
+      "status": "FAIL",
+      "observation": "Native construction preceded actual stage submission; first two recipe snapshots and some transitive bindings are missing.",
+      "comparison": "Written strategy is not an enforced staged workflow; later replay cannot repair chronology.",
+      "evidence": [
+        "audit"
+      ]
+    },
+    {
+      "id": "AV",
+      "status": "NOT_RUN",
+      "observation": "No direct playback/listening claim or Director queue.",
+      "comparison": "Visible failures cannot be delegated to the Director AV exception.",
+      "evidence": []
+    }
+  ],
+  "reference_checks": {
+    "motion": {
+      "reference_digest": "ffe39038bc018e9305f3ed4340d72d9d21deb54df7e76c543944c5bfc7816d6a",
+      "observation": "Known visible failures and missing integration evidence retained.",
+      "comparison": "Faithful gather/rear/land shape and phase relationships; edited monocular14\u201319s; not mocap.",
+      "evidence": [
+        "298",
+        "314",
+        "327",
+        "344",
+        "350",
+        "353",
+        "audit"
+      ],
+      "aspects": [
+        {
+          "id": "required",
+          "status": "FAIL",
+          "observation": "No complete qualified result for this original requirement."
+        }
+      ]
+    },
+    "film": {
+      "reference_digest": "e666a6b51901ed8508035ffe16dfd60ba635702fc10bfa92da55a8e9c7a966d7",
+      "observation": "Known visible failures and missing integration evidence retained.",
+      "comparison": "Only the accepted Pashtun panel sets the film floor; adjacent320 panel is rejected.",
+      "evidence": [
+        "298",
+        "314",
+        "327",
+        "344",
+        "350",
+        "353",
+        "audit"
+      ],
+      "aspects": [
+        {
+          "id": "required",
+          "status": "FAIL",
+          "observation": "No complete qualified result for this original requirement."
+        }
+      ]
+    },
+    "direction": {
+      "reference_digest": "38ca68983966d4bc16fd35be2c1ea3e1cc89192cf415f506fe4b69fffb5c15b9",
+      "observation": "Known visible failures and missing integration evidence retained.",
+      "comparison": "Frozen original production intent and boundaries.",
+      "evidence": [
+        "298",
+        "314",
+        "327",
+        "344",
+        "350",
+        "353",
+        "audit"
+      ],
+      "aspects": [
+        {
+          "id": "required",
+          "status": "FAIL",
+          "observation": "No complete qualified result for this original requirement."
+        },
+        {
+          "id": "director_av",
+          "status": "NOT_RUN",
+          "observation": "No complete qualified result for this original requirement."
+        }
+      ]
+    }
+  },
+  "audience_read": "Not commanding same-film supporting cast yet.",
+  "strongest_counterexample": "Improved hoof orientation and lower head coexist with the same failed broad forms.",
+  "adjacent_review": "Changed spine/root invalidates old dependent contact caches; not fully requalified.",
+  "open_visible_defects": [
+    "ungathered-preparation",
+    "extended-support-shape",
+    "shell-costume",
+    "sculptural-horse"
+  ],
+  "intent_checks": {
+    "preparation": {
+      "scope": "supported_evidence_only",
+      "status": "FAIL",
+      "observation": "298 still presents a long relatively straight neck; pelvis/chest do not gather as a compact whole.",
+      "comparison": "Gather through neck/poll, chest, pelvis and supported limbs, not detached foot gestures.",
+      "evidence": [
+        "298",
+        "314",
+        "327",
+        "344",
+        "350",
+        "353",
+        "audit"
+      ]
+    },
+    "crest": {
+      "scope": "supported_evidence_only",
+      "status": "FAIL",
+      "observation": "327 forefeet point down and head flex improves, but support remains extended and forelimb folding abrupt.",
+      "comparison": "Articulated active balance with compact unequal forelimbs, plausible hind support and coupled rider.",
+      "evidence": [
+        "298",
+        "314",
+        "327",
+        "344",
+        "350",
+        "353",
+        "audit"
+      ]
+    },
+    "landing": {
+      "scope": "supported_evidence_only",
+      "status": "NOT_RUN",
+      "observation": "350/353 lower the body/head; transition interiors and rebuilt dependent contact caches are incomplete.",
+      "comparison": "Reach, contact, whole-body absorption and coherent seat/rein/stirrup/earth response.",
+      "evidence": [
+        "298",
+        "314",
+        "327",
+        "344",
+        "350",
+        "353",
+        "audit"
+      ]
+    },
+    "appearance": {
+      "scope": "supported_evidence_only",
+      "status": "FAIL",
+      "observation": "298/327/353 retain a smooth torso shell, cap crown, regular beard, tube lower garments and polished coat.",
+      "comparison": "Leader, horse and tack belong beside accepted Pashtun: no shell clothing, cap crown or polished statue coat.",
+      "evidence": [
+        "298",
+        "314",
+        "327",
+        "344",
+        "350",
+        "353",
+        "audit"
+      ]
+    },
+    "crowd": {
+      "scope": "supported_evidence_only",
+      "status": "NOT_RUN",
+      "observation": "No representative near-warrior proof or propagation completed.",
+      "comparison": "Purposeful supported clearance with differentiated body orientation, continuous rider attention and credible near actors.",
+      "evidence": [
+        "298",
+        "314",
+        "327",
+        "344",
+        "350",
+        "353",
+        "audit"
+      ]
+    },
+    "continuity": {
+      "scope": "supported_evidence_only",
+      "status": "NOT_RUN",
+      "observation": "Six phase renders only; no continuous clip, reverse controls or fresh-open comparison.",
+      "comparison": "Contiguous252\u2013441 with one-second handles, coherent exchange and technical/source integrity.",
+      "evidence": [
+        "298",
+        "314",
+        "327",
+        "344",
+        "350",
+        "353",
+        "audit"
+      ]
+    },
+    "admission": {
+      "scope": "supported_evidence_only",
+      "status": "FAIL",
+      "observation": "Native construction preceded actual stage submission; first two recipe snapshots and some transitive bindings are missing.",
+      "comparison": "Original stages precede native dispatch; shared correction bounds and exact recipe/protected-source evidence survive.",
+      "evidence": [
+        "298",
+        "314",
+        "327",
+        "344",
+        "350",
+        "353",
+        "audit"
+      ]
+    }
+  },
+  "planning_gaps": []
+}

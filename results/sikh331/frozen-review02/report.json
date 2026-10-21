@@ -1,0 +1,44 @@
+{
+  "stage": "REPLAN_REQUIRED",
+  "remaining_corrections": 0,
+  "prior_native_attempts": 3,
+  "prior_corrections": 2,
+  "chronology": "RETROSPECTIVE_NOT_PROSPECTIVE",
+  "native_authoring_enforced": false,
+  "independent_reviewer": false,
+  "production_ready": false,
+  "findings": {
+    "failures": [
+      "P1",
+      "P2",
+      "P4",
+      "P7",
+      "intent:admission",
+      "intent:appearance",
+      "intent:crest",
+      "intent:preparation",
+      "reference:direction:required",
+      "reference:film:required",
+      "reference:motion:required",
+      "visible:extended-support-shape",
+      "visible:sculptural-horse",
+      "visible:shell-costume",
+      "visible:ungathered-preparation"
+    ],
+    "missing_evidence": [
+      "P3",
+      "P5",
+      "P6",
+      "intent:continuity",
+      "intent:crowd",
+      "intent:landing"
+    ],
+    "pending_director_av": [
+      "AV",
+      "reference:direction:director_av"
+    ],
+    "planning_gaps": [],
+    "production_approved": false,
+    "director_approved": false
+  }
+}

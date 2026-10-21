@@ -4,6 +4,29 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+### Exchange331 — production proof failed; native-authoring boundary exposed
+
+[Proof audit](../../results/sikh331/PROOF_AUDIT.md): three local native pose/look
+variants and eighteen sampled renders did not meet the reference pose family or
+same-film appearance floor. No near-crowd propagation, continuous clip, Director
+AV queue or release progress. Accepted253 and rejected320 source hashes match.
+
+The native diagnostics used written stages and fresh knowledge packets but **did
+not submit the four controller stages before construction**. This is a workflow
+adoption failure. The controller's later frozen-evidence closeout is explicitly
+retrospective, not qualification of prospective execution or independent judgment.
+It ends `REPLAN_REQUIRED`; initial trial plus two corrections consume this
+package's allowance.331 native dispatch is closed; no renamed retries.
+
+Recommended next scope decision: qualify the local native-authoring admission
+bridge, retaining the current chat for reasoning and existing local handlers,
+before a representation-level pose/look proof. No new provider, cloud or paid
+runtime is required merely to implement this boundary. Require stages before
+dispatch, prerequisite outcomes, shared counters, exact source/candidate binding,
+one-job lease and review-before-presentation. This bridge is not implemented or
+authorized by the retrospective receipt. Checkpoint340 remains next; no remote
+push or native backup was performed in331.
+
 ### Exchange330 / CP-033 — planning stages implemented and tested locally
 
 Director approves rigorous critique and implementation of329. The

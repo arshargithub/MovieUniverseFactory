@@ -1656,6 +1656,25 @@
     "engineering_cost_usd": null,
     "evidence": ["docs/planning/SERIES_01_ART_DIRECTION_C.md#exchange194--reassessment-discussion-before-further-execution"]
   }
+  , {
+    "event_id": "series01-exchange331-production-proof-failure",
+    "event_type": "engineering_review_outcome",
+    "recorded_date": "2026-10-21",
+    "experiment_id": "SIKH331",
+    "reported_model": null,
+    "reported_reasoning_effort": null,
+    "setting_attribution": "UNKNOWN",
+    "runtime_verified": false,
+    "controlled_model_comparison": false,
+    "outcome": "EARLY_POSE_LOOK_FAIL_NATIVE_DISPATCH_CLOSED_REPLAN_REQUIRED",
+    "observation": "Three native pose/look variants and eighteen phase renders fail whole-pose and same-film comparison. Four controller stages were not submitted before native diagnostics. Later frozen-evidence adjudication is retrospective and does not qualify prospective enforcement or independent review. No crowd/full clip, new model call or Director artistic-review queue. Neither model inferiority nor a fundamental agent-only limit is established.",
+    "engineering_subscription_usage": null,
+    "engineering_cost_usd": null,
+    "new_external_paid_provider_calls": 0,
+    "known_native_process_seconds": 207.0133579163812,
+    "timing_coverage": "Five native process receipts; early context recovery predates operating capture. Process sum is not full turn or rendering-only time.",
+    "evidence": ["results/sikh331/PROOF_AUDIT.md", "results/sikh331/verification.json", "results/sikh331/frozen-review02/report.json"]
+  }
   ],
   "recording_mode": "manual_evidence_backfill_and_future_event_capture",
   "schema_version": "1.0",
