@@ -1,0 +1,24 @@
+{
+  "purpose": "Rejected candidate audit only; not new production media",
+  "reference_samples": "ffmpeg fps=10 over source 14-19s; nominal labels within 0.1s, not exact event detection",
+  "reference_crop": [
+    0,
+    338,
+    576,
+    308
+  ],
+  "candidate_times": "(source_frame-252)/24 relative to isolated clip",
+  "inputs": {
+    ".runtime/art-direction/series01-sikh256/references/reference-b.mov": "78d0d691e8712c02931876cf0bc405e4869de357f337f531708be7a7da4898e2",
+    ".runtime/art-direction/series01-sikh320/delivery-10/nihang-crowd-review.mp4": "ad7d980eb064a03837989f27d68ebacfe08576cb30625f92696c20b5fc50d452"
+  },
+  "sheets": [
+    ".runtime/art-direction/series01-sikh321/comparisons/appearance.jpg",
+    ".runtime/art-direction/series01-sikh321/comparisons/candidate-phases.jpg",
+    ".runtime/art-direction/series01-sikh321/comparisons/phase-comparison.jpg",
+    ".runtime/art-direction/series01-sikh321/comparisons/reference-1.jpg",
+    ".runtime/art-direction/series01-sikh321/comparisons/reference-2.jpg",
+    ".runtime/art-direction/series01-sikh321/comparisons/reference-3.jpg",
+    ".runtime/art-direction/series01-sikh321/comparisons/reference-4.jpg"
+  ]
+}

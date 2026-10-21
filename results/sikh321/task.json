@@ -1,0 +1,18 @@
+{
+  "id": "sikh321-reference-and-handoff-audit",
+  "operation": "motion",
+  "entities": ["nihang_horse", "nihang_leader", "nihang_crowd"],
+  "query": "Audit rejected320 rearing against reference, visible leader costume face saddle, and failure of internal review; no construction or new AV provider",
+  "intent": "Explain reference gaps and why technical evidence permitted an artistically unsuitable handoff; define a better next method without starting repairs",
+  "phase": "planning",
+  "inputs": {
+    ".runtime/art-direction/series01-sikh256/references/reference-b.mov": "78d0d691e8712c02931876cf0bc405e4869de357f337f531708be7a7da4898e2",
+    ".runtime/art-direction/series01-sikh320/delivery-10/nihang-crowd-review.mp4": "ad7d980eb064a03837989f27d68ebacfe08576cb30625f92696c20b5fc50d452",
+    "results/sikh320/REVIEW.md": "59e3eac2ec8de2afe147fe40d62c856f73ab470c19415e3d6d47649368607168",
+    "results/sikh320/STRATEGY.md": "cba24118f6b058d8d4eee597325807a1fb00fa1b835586d14a70df045b217141",
+    "docs/knowledge/review_control/README.md": "4208d53a72bac35db0df16efb3ffe9e84ad2415df8710a3471270dfa6caf70ea"
+  },
+  "open_decisions": [],
+  "max_context_characters": 60000,
+  "execution_prerequisites": ["Analysis only. Candidate320 is Director rejected. No scene changes, renders, provider calls, uploads or installations."]
+}
