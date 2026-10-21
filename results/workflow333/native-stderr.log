@@ -1,0 +1,19 @@
+Traceback (most recent call last):
+  File "/Volumes/MovieFactorySSD/MovieUniverseFactory/src/movie_factory/adapters/blender/worker.py", line 1685, in main
+    status["artifacts"].extend(module.run(out,job))
+                               ~~~~~~~~~~^^^^^^^^^
+  File "/Volumes/MovieFactorySSD/MovieUniverseFactory/src/movie_factory/adapters/blender/nihang_control.py", line 93, in run
+    raise ValueError('NIHANG_DISABLED_SCRIPT_DEPENDENCY')
+ValueError: NIHANG_DISABLED_SCRIPT_DEPENDENCY
+Traceback (most recent call last):
+  File "/Volumes/MovieFactorySSD/MovieUniverseFactory/src/movie_factory/adapters/blender/worker.py", line 1813, in <module>
+    main()
+    ~~~~^^
+  File "/Volumes/MovieFactorySSD/MovieUniverseFactory/src/movie_factory/adapters/blender/worker.py", line 1685, in main
+    status["artifacts"].extend(module.run(out,job))
+                               ~~~~~~~~~~^^^^^^^^^
+  File "/Volumes/MovieFactorySSD/MovieUniverseFactory/src/movie_factory/adapters/blender/nihang_control.py", line 93, in run
+    raise ValueError('NIHANG_DISABLED_SCRIPT_DEPENDENCY')
+ValueError: NIHANG_DISABLED_SCRIPT_DEPENDENCY
+
+Error: script failed, file: '/Volumes/MovieFactorySSD/MovieUniverseFactory/src/movie_factory/adapters/blender/worker.py', exiting.
