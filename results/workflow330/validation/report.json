@@ -1,0 +1,51 @@
+{
+  "tests": "330 passed in 9.81s",
+  "test_files": [
+    "tests/test_production_workflow.py",
+    "tests/test_review_control.py",
+    "tests/test_production_knowledge.py",
+    "tests/test_context_hygiene.py",
+    "tests/test_staged_runner.py",
+    "tests/test_expert_planning.py",
+    "tests/test_planning_pipeline.py",
+    "tests/test_resource_manifest.py",
+    "tests/test_resource_routing317.py"
+  ],
+  "knowledge_gate": {
+    "ready_for_review": true,
+    "failures": [],
+    "scope": "execution",
+    "limits": "Evidence checked for presence and hashes, not artistic truth or Director acceptance. Planning evidence cannot qualify a production result."
+  },
+  "planning_engine": "2851191e2b33450a4e880e27801bbfb1057acb25941cfb907b97b6e84637917e",
+  "packet_digest": "51b62f0e114cb4c0246d4cf5169606fbef025cfff14e0e5d89043610449af40b",
+  "evidence": [
+    {
+      "path": "results/workflow330/validation/tests.txt",
+      "sha256": "dbd80bd9e2d8141e637c12b2ad0d2f0b28151b97483ca357a907b2d8d9958ac0"
+    },
+    {
+      "path": "results/workflow330/replay-qualified/report.json",
+      "sha256": "c505af7d066e7417d3e101eb0ad6fbd03787c281f31bad93b56187596dfbc364"
+    },
+    {
+      "path": "src/movie_factory/planning_pipeline.py",
+      "sha256": "ce5046b9e11bb0e1df804c10efd327e9c7543842f17d037f2d744841fad9ebe5"
+    },
+    {
+      "path": "tests/test_planning_pipeline.py",
+      "sha256": "8710b8e6a80e623583a4124dba5dcc92b74de84709a632ebdcd13b4277c41bb8"
+    },
+    {
+      "path": "docs/knowledge/PLANNING_PIPELINE_330.md",
+      "sha256": "513a6a55079bf670e6b8ccaff0491c805425f03e2a8f26950a588886a1e17d1e"
+    },
+    {
+      "path": "results/workflow330/NIHANG_PROSPECTIVE_BRIEF.md",
+      "sha256": "ec6570f24081644d996c6b12d602d10a229f28257c4d18e8c9b67f7cb28b0878"
+    }
+  ],
+  "live_calls": 0,
+  "production_approved": false,
+  "measured_efficiency_gain": null
+}

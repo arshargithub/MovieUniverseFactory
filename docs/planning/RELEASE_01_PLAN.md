@@ -4,6 +4,26 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+### Exchange330 / CP-033 — planning stages implemented and tested locally
+
+Director approves rigorous critique and implementation of329. The
+[serial planning pipeline](../knowledge/PLANNING_PIPELINE_330.md) now enforces
+grounding, expert derivation, integrated strategy and fresh challenge before
+execution. Source excerpts and original authority survive into final review;
+targeted repair preserves shared limits. Offline controls and four known-history
+replays test enforcement, not independent artistic judgment. The deliberate
+well-formed wrong-method negative stays visible. No live inference, scene change,
+render or new release acceptance.325's call allowance remains exhausted.
+
+Next production-facing package is the
+[frozen Nihang/rearing/crowd proof](../../results/workflow330/NIHANG_PROSPECTIVE_BRIEF.md):
+source-grounded coupled poses plus one leader/near warrior at intended framing,
+then the isolated action with one-second handles only after internal gates pass.
+Do not revive cosmetic retiming or repeated full-trailer renders. Current process
+implementation scope closes here; native authoring and live model qualification
+remain separate. Checkpoint340 next; accumulated remote range requires reviewed
+scope approval, not an automatic broad push.
+
 ### Exchange329 — proposed decomposition within planning
 
 Director identifies that required plan contents do not guarantee a reliable

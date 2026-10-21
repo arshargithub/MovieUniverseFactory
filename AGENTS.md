@@ -39,6 +39,18 @@ dependencies are not a proven production path.
 
 ### Strategy and quality
 
+Exchange330 adopts serial planning substages for substantial production work:
+read `docs/knowledge/PLANNING_PIPELINE_330.md`. Ground sources/learnings/film
+language/preferences/reference roles, derive per-beat expert requirements, choose
+integrated strategy/early proof, then fresh challenge before execution. Preserve
+original authority through execution and review. Use bounded verified source
+excerpts, not summaries alone. Route repair to the affected stage; invalidate
+downstream artifacts and preserve shared correction/call limits. No routine
+Director gate for technical methods. Offline enforcement is not semantic or
+Blender-authoring qualification;325 live allowance remains exhausted. Keep the
+wrong-method negative control and prospectively test the Nihang brief330 before
+claiming fewer Director inputs. Lightweight routes remain lightweight.
+
 Before substantial production planning read `docs/knowledge/EXPERT_LENS_PLANNING_328.md`.
 Derive beat-specific requirements from intent using applicable expert lenses;
 bind methods, interfaces, early proofs, failure conditions and reference roles.

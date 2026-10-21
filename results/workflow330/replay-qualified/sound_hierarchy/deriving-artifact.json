@@ -1,0 +1,404 @@
+{
+  "input_digest": "009fe992b24cdb63340fc00d24be3de19bd271dab81d79cf992fa6431320b27c",
+  "outcome": "complete",
+  "artifact": {
+    "requirements": [
+      {
+        "id": "attention_budget",
+        "criterion": "Key words disappear, score seems switched off, or reading the quote sacrifices the action.",
+        "modes": [
+          "timed_images"
+        ],
+        "director_av": false
+      },
+      {
+        "id": "word_proof",
+        "criterion": "A listener cannot repeat the central words or must strain while music seems fine.",
+        "modes": [
+          "timed_images"
+        ],
+        "director_av": false
+      },
+      {
+        "id": "impact_and_reuse",
+        "criterion": "Impact lacks weight, slips from contact or masks speech.",
+        "modes": [
+          "timed_images"
+        ],
+        "director_av": false
+      }
+    ],
+    "beats": [
+      {
+        "id": "hook",
+        "audience_read": "Horse and music establish energy before speech",
+        "framing": "Opening action with immediate sound hook",
+        "lenses": {
+          "story_performance": {
+            "applies": true,
+            "requirements": [
+              "attention_budget"
+            ],
+            "why": "Voice, readable quote and melodic lead compete for attention; a fixed duck amount cannot decide the hierarchy."
+          },
+          "camera_editorial": {
+            "applies": true,
+            "requirements": [
+              "attention_budget"
+            ],
+            "why": "Voice, readable quote and melodic lead compete for attention; a fixed duck amount cannot decide the hierarchy."
+          },
+          "animation_physics": {
+            "applies": true,
+            "requirements": [
+              "impact_and_reuse"
+            ],
+            "why": "Punch and exact event placement must survive retiming without rerendering the scene."
+          },
+          "anatomy_contact": {
+            "applies": false,
+            "requirements": [],
+            "why": "No geometry or contact change is authorized by this sound test; existing motion remains a protected input."
+          },
+          "effects_environment": {
+            "applies": false,
+            "requirements": [],
+            "why": "No new visual effects construction; preserve existing dust/action while testing the mix."
+          },
+          "sound_music": {
+            "applies": true,
+            "requirements": [
+              "attention_budget",
+              "impact_and_reuse"
+            ],
+            "why": "Voice, readable quote and melodic lead compete for attention; a fixed duck amount cannot decide the hierarchy. Punch and exact event placement must survive retiming without rerendering the scene."
+          },
+          "production_reuse": {
+            "applies": true,
+            "requirements": [
+              "impact_and_reuse"
+            ],
+            "why": "Punch and exact event placement must survive retiming without rerendering the scene."
+          }
+        }
+      },
+      {
+        "id": "speech",
+        "audience_read": "Understand key words without making the score feel switched off",
+        "framing": "Face/action and quote visual compete for attention",
+        "lenses": {
+          "story_performance": {
+            "applies": true,
+            "requirements": [
+              "attention_budget"
+            ],
+            "why": "Voice, readable quote and melodic lead compete for attention; a fixed duck amount cannot decide the hierarchy."
+          },
+          "camera_editorial": {
+            "applies": true,
+            "requirements": [
+              "attention_budget"
+            ],
+            "why": "Voice, readable quote and melodic lead compete for attention; a fixed duck amount cannot decide the hierarchy."
+          },
+          "animation_physics": {
+            "applies": false,
+            "requirements": [],
+            "why": "No separate requirement owned by this lens in this beat; coupled concerns are linked in the other applicable beat/lens rows. Reassess if framing or scope changes."
+          },
+          "anatomy_contact": {
+            "applies": false,
+            "requirements": [],
+            "why": "No geometry or contact change is authorized by this sound test; existing motion remains a protected input."
+          },
+          "effects_environment": {
+            "applies": false,
+            "requirements": [],
+            "why": "No new visual effects construction; preserve existing dust/action while testing the mix."
+          },
+          "sound_music": {
+            "applies": true,
+            "requirements": [
+              "attention_budget",
+              "word_proof"
+            ],
+            "why": "Voice, readable quote and melodic lead compete for attention; a fixed duck amount cannot decide the hierarchy. The important claim relies on races and impeccable being understandable, not merely on average voice loudness."
+          },
+          "production_reuse": {
+            "applies": false,
+            "requirements": [],
+            "why": "No separate requirement owned by this lens in this beat; coupled concerns are linked in the other applicable beat/lens rows. Reassess if framing or scope changes."
+          }
+        }
+      },
+      {
+        "id": "release",
+        "audience_read": "Let music carry the action after the thought",
+        "framing": "Dramatic turn and uphill carry",
+        "lenses": {
+          "story_performance": {
+            "applies": true,
+            "requirements": [
+              "attention_budget"
+            ],
+            "why": "Voice, readable quote and melodic lead compete for attention; a fixed duck amount cannot decide the hierarchy."
+          },
+          "camera_editorial": {
+            "applies": true,
+            "requirements": [
+              "attention_budget"
+            ],
+            "why": "Voice, readable quote and melodic lead compete for attention; a fixed duck amount cannot decide the hierarchy."
+          },
+          "animation_physics": {
+            "applies": true,
+            "requirements": [
+              "impact_and_reuse"
+            ],
+            "why": "Punch and exact event placement must survive retiming without rerendering the scene."
+          },
+          "anatomy_contact": {
+            "applies": false,
+            "requirements": [],
+            "why": "No geometry or contact change is authorized by this sound test; existing motion remains a protected input."
+          },
+          "effects_environment": {
+            "applies": false,
+            "requirements": [],
+            "why": "No new visual effects construction; preserve existing dust/action while testing the mix."
+          },
+          "sound_music": {
+            "applies": true,
+            "requirements": [
+              "attention_budget",
+              "impact_and_reuse"
+            ],
+            "why": "Voice, readable quote and melodic lead compete for attention; a fixed duck amount cannot decide the hierarchy. Punch and exact event placement must survive retiming without rerendering the scene."
+          },
+          "production_reuse": {
+            "applies": true,
+            "requirements": [
+              "impact_and_reuse"
+            ],
+            "why": "Punch and exact event placement must survive retiming without rerendering the scene."
+          }
+        }
+      }
+    ],
+    "derivations": {
+      "attention_budget": {
+        "beats": [
+          "hook",
+          "speech",
+          "release"
+        ],
+        "lenses": [
+          "story_performance",
+          "sound_music",
+          "camera_editorial"
+        ],
+        "derivation": "Voice, readable quote and melodic lead compete for attention; a fixed duck amount cannot decide the hierarchy.",
+        "origin": "craft_inference",
+        "priority": "quality_floor",
+        "reference_ids": [
+          "cutoff-direction"
+        ]
+      },
+      "word_proof": {
+        "beats": [
+          "speech"
+        ],
+        "lenses": [
+          "sound_music"
+        ],
+        "derivation": "The important claim relies on races and impeccable being understandable, not merely on average voice loudness.",
+        "origin": "craft_inference",
+        "priority": "quality_floor",
+        "reference_ids": [
+          "cutoff-direction"
+        ]
+      },
+      "impact_and_reuse": {
+        "beats": [
+          "hook",
+          "release"
+        ],
+        "lenses": [
+          "sound_music",
+          "production_reuse",
+          "animation_physics"
+        ],
+        "derivation": "Punch and exact event placement must survive retiming without rerendering the scene.",
+        "origin": "craft_inference",
+        "priority": "quality_floor",
+        "reference_ids": [
+          "cutoff-direction"
+        ]
+      }
+    },
+    "context_mapping": {
+      "direction": {
+        "requirements": [
+          "attention_budget",
+          "word_proof",
+          "impact_and_reuse"
+        ],
+        "reason": "Keep the larger-than-life music and punchy horse opening while making the private officer narration work with it."
+      },
+      "learnings": {
+        "requirements": [
+          "attention_budget",
+          "word_proof",
+          "impact_and_reuse"
+        ],
+        "reason": "Could have caught word masking and disruptive ducking in an integrated proof. The later decision to stop narration at impeccable and use a specific ramp remains a legitimate Director choice, not a supposedly avoidable input."
+      },
+      "film_language": {
+        "requirements": [
+          "attention_budget",
+          "word_proof",
+          "impact_and_reuse"
+        ],
+        "reason": "Judge intended shot at the accepted co-star quality floor, not against the rejected predecessor; illustrated is not a waiver for primitive forms."
+      },
+      "director_preferences": {
+        "requirements": [
+          "attention_budget",
+          "word_proof",
+          "impact_and_reuse"
+        ],
+        "reason": "Preserve larger-than-life readable action and efficient quality; routine technical corrections stay internal, creative authority stays Director-owned."
+      },
+      "references": {
+        "requirements": [
+          "attention_budget",
+          "word_proof",
+          "impact_and_reuse"
+        ],
+        "reason": "Chosen music and voice are retained creative authorities; this test uses the written integration direction, not a fresh listening claim."
+      },
+      "controls": {
+        "requirements": [
+          "attention_budget",
+          "word_proof",
+          "impact_and_reuse"
+        ],
+        "reason": "321 shows correct requirements can coexist with a failed pose method and generous review; require a discriminating integrated proof."
+      },
+      "constraints": {
+        "requirements": [
+          "attention_budget",
+          "word_proof",
+          "impact_and_reuse"
+        ],
+        "reason": "No media, live model, spend or approval follows from this planning reconstruction."
+      },
+      "task": {
+        "requirements": [
+          "attention_budget",
+          "word_proof",
+          "impact_and_reuse"
+        ],
+        "reason": "Use the current scoped knowledge packet; this is not a new motion/render task."
+      }
+    },
+    "knowledge_mapping": {
+      "reuse_envelope": {
+        "requirements": [
+          "attention_budget",
+          "word_proof",
+          "impact_and_reuse"
+        ],
+        "reason": "317: evaluate reuse before custom construction without forcing it; compare total adaptation/revalidation cost and quality. Extend existing provenance with source/version/rights/dependencies, tested conditions, failures/evidence and measured-or-unknown effort. Run resource_manifest for the requested use; missing/stale evidence, untested conditions, unresolved rights or open failures block qualification. Assessed resources stay useful but unqualified. Manually verify applicability, rights and perceptual truth; a valid record is not an artistic pass. No new database, installation, spend or upload."
+      },
+      "authority": {
+        "requirements": [
+          "attention_budget",
+          "word_proof",
+          "impact_and_reuse"
+        ],
+        "reason": "Confirm scope and genuine Director decisions. No new spend, installs, specialists, publication or protected creative changes by inference. Routine in-scope technical fixes remain agent-owned. Astra is top tier; failed method needs reassessment, not a nonexistent higher model."
+      },
+      "strategy": {
+        "requirements": [
+          "attention_budget",
+          "word_proof",
+          "impact_and_reuse"
+        ],
+        "reason": "Read current strategy; name outcome, quality floor, interfaces, assumptions, earliest integrated proof, resources, reuse and replan/exit. Repeated compensating patches trigger method reassessment, not renamed passes."
+      },
+      "visual_gate": {
+        "requirements": [
+          "attention_budget",
+          "word_proof",
+          "impact_and_reuse"
+        ],
+        "reason": "Compare the complete claimed result to accepted references and required use, seeking known and new failures plus adjacent regressions. Use explicit failing-shape controls before expensive integration; contact targets and material cannot substitute for the required silhouette. An occluded region is NOT_RUN until visibly inspected. Actual motion/audio where applicable; distinguish frame inspection from playback. Tests, better-than-before and source hashes do not establish perceptual PASS. Known FAIL/NOT_RUN blocks handoff."
+      },
+      "anticipation": {
+        "requirements": [
+          "attention_budget",
+          "word_proof",
+          "impact_and_reuse"
+        ],
+        "reason": "Write audience intent and distraction hypotheses before a defect list. Test them against actual evidence, seek counterevidence and unlisted problems, record observations and corrections. Director feedback calibrates fallible judgment; it is not the primary defect detector.224: test opening hook, pacing and causal geography, not merely fit duration.248 adopts larger-than-life impact for The Martials and records it as a Director preference: name the extraordinary character-specific beat and its preparation/payoff; use contrast and believability, not constant maximum speed/loudness or unapproved powers. 249 requires a shot/beat performance and believability brief before execution: apply relevant expertise lenses, predict audience-visible anatomy/contact/physical-response failures, and bind each critical behavior to strategy, interfaces, early proof and observable failure conditions. Cover each beat or explicit inheritance; consult docs/planning/SHOT_BEAT_QUALITY_BRIEF.md. Roles are perspectives, not an org chart. Automatic brief completeness and perceptual judgment are not implemented."
+      },
+      "stopping": {
+        "requirements": [
+          "attention_budget",
+          "word_proof",
+          "impact_and_reuse"
+        ],
+        "reason": "Meet the high quality floor first;248 clarifies efficiency means progressively more reliable and economical achievement of that bar, not lowering it. Then weigh visible benefit, dramatic value, reuse and regression/opportunity cost. Re-rank residuals after larger fixes. Prior tolerance is not acceptance. Record deferred details and reopening triggers; no arbitrary timer waives quality or creates handoff."
+      },
+      "versioning": {
+        "requirements": [
+          "attention_budget",
+          "word_proof",
+          "impact_and_reuse"
+        ],
+        "reason": "Bind actual inputs, accepted scope, source hashes and dependencies. Revalidate affected checks after camera/motion/version changes. Preserve originals and failed evidence. A local commit is not native-media backup; a reopened scene is not proof of portable or general reuse."
+      },
+      "economics": {
+        "requirements": [
+          "attention_budget",
+          "word_proof",
+          "impact_and_reuse"
+        ],
+        "reason": "Track active effort, waits, jobs, actual provider spend and usable output separately; leave unavailable tokens/cost null. Do not add overlapping process/activity time. Diagnostic investment is not repeatable unit cost. Advance the trailer and two episodes, not tooling or polish for its own sake."
+      },
+      "retrieval": {
+        "requirements": [
+          "attention_budget",
+          "word_proof",
+          "impact_and_reuse"
+        ],
+        "reason": "Inventory pinned corpus, freeze independently read applicability sets, test held-out/cross-discipline/stale/conflicting cases and actual application. Mandatory constraints bypass search. Ingestion is not approval; preserve gaps. No claim all742 turns/588 candidates reconciled; one source is truncated. Manual audit remains safety net."
+      },
+      "current_state": {
+        "requirements": [
+          "attention_budget",
+          "word_proof",
+          "impact_and_reuse"
+        ],
+        "reason": "Read CURRENT_PRODUCTION_STATE.md:253 exact Pashtun20s provisional acceptance stays protected; strict replay FAIL and final release/rights remain separate. Protection/calibration255 complete. Director256-257 authorizes Sikh-only sequence development, continuous turban/cover, personal recognition and nonrecurring leader; action before music. Director260 accepts illustrated portrait v03; read SERIES_01_SIKH_BASELINE_V01.md before Sikh identity/cloth work. Broad natural beard and rugged face govern; rejected v01/v02 do not. No literal pixel matching, native acceptance or incidental background/cloth-topology approval. Native257 remains BLOCK. Unknown domains still block; no paid calls/publication by inference. Director320 narrows current correction to the contiguous Nihang/rear and crowd passage with one-second handles.319 supporting performance/look is rejected; crowd attention remains on the rider. Director313 is the direct AV judge; source/frame checks cannot confer playback or production acceptance."
+      },
+      "au_reuse": {
+        "requirements": [
+          "attention_budget",
+          "word_proof",
+          "impact_and_reuse"
+        ],
+        "reason": "AU16: package exact accepted versions, dependencies, rights, editable recipe and tested-use limits; verify remote restore and portable dependency closure. Separate foundation from adaptation, native jobs from work/waits and unknown cost; capture issue/review IDs before next sequence. No prediction from145h divided by20s."
+      },
+      "au_review": {
+        "requirements": [
+          "attention_budget",
+          "word_proof",
+          "impact_and_reuse"
+        ],
+        "reason": "AU13/251: distinguish requirement, retrieval, method, evidence and judgment failures. Compare known rejected AND accepted controls, record specific observations and uncertainty, and test omitted/failed evidence blocking. Earlier falsification and fewer repeat escapes matter more than fewer messages. Calibration is familiar non-independent evidence, not universal judgment."
+      }
+    }
+  }
+}

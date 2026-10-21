@@ -1,5 +1,32 @@
 # Release 01 — checkpoints
 
+## CP-033 — exchange330, 2026-10-21
+
+Current release dependency remains the Sikh sequence, specifically credible
+Nihang/rearing/crowd work. This checkpoint closes the authorized process/software
+scope, not a new shot. [330 implementation and limits](../knowledge/PLANNING_PIPELINE_330.md)
+and [qualification evidence](../../results/workflow330/validation/report.json).
+
+- Four serial planning stages now constrain execution, preserve actual bounded
+  sources/roles and route repairs without resetting limits. Final review retains
+  original intent. No heavy concurrent agents or new service required.
+- Four known-history cases exercise the controller;16 malformed controls block.
+  A well-formed bad method still passes rubber-stamp judgment: schema is not art.
+  No live inference, native authoring or production-quality qualification claimed.
+- Next proof: [frozen Nihang package](../../results/workflow330/NIHANG_PROSPECTIVE_BRIEF.md).
+  Prove complete supported pose families and one leader/near warrior's same-film
+  appearance before propagation and final isolated rendering. Direct AV stays
+  Director-owned; visible defects cannot be deferred to that review.
+- Overall accepted broad release gates remain1/25 =4%, counting wholly accepted
+  deliverables, not effort, footage, time remaining or process sophistication.
+  Exact253 Pashtun20s remains provisional until trailer release; Sikh/Gurkha/ending,
+  complete trailer, episode1/2 production and release requirements remain open.
+  There is no defensible artistic percent-complete or measured efficiency uplift.
+- Preservation: scoped local implementation/design commits; no new native assets
+  to back up from this pass. Accumulated outgoing ancestry requires reviewed range
+  approval before remote push. Local commits are not off-device protection; no
+  new S3 or restore verification is claimed. Next checkpoint340.
+
 ## CP-032 — exchange320, 2026-10-20
 
 Current item is the Sikh entrance supporting the trailer, specifically the

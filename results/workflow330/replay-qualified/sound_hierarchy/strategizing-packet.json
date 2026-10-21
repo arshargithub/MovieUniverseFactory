@@ -1,0 +1,1069 @@
+{
+  "task": "sound_hierarchy",
+  "stage": "BRIEFING",
+  "actor": "planner",
+  "cycle": 0,
+  "max_corrections": 2,
+  "offline_only": true,
+  "frozen_evidence_only": false,
+  "direction": {
+    "beat_intents": {
+      "hook": "Horse and music establish energy before speech",
+      "release": "Let music carry the action after the thought",
+      "speech": "Understand key words without making the score feel switched off"
+    },
+    "context_sources": [
+      {
+        "binding": {
+          "path": "results/workflow328/evaluation/sound_hierarchy/prior-input.json",
+          "sha256": "d62e826d3cf9014ca281038d6b0ee337c4ee4e8b5458605078e1a080e4ae84c6"
+        },
+        "category": "direction",
+        "id": "direction",
+        "lines": [
+          1,
+          14
+        ],
+        "required": true,
+        "scope": "Offline planning test; production requirements require a new domain-specific task packet",
+        "statement": "Use bounded current source for this known-history reconstruction; not blind pre-cutoff evidence",
+        "status": "adopted"
+      },
+      {
+        "binding": {
+          "path": "docs/knowledge/EXPERT_LENS_PLANNING_328.md",
+          "sha256": "71b7c3b34557cfdc297b223f8313783055ce12449e08217d55c4a6a9e6d627c7"
+        },
+        "category": "learnings",
+        "id": "learnings",
+        "lines": [
+          1,
+          35
+        ],
+        "required": true,
+        "scope": "Offline planning test; production requirements require a new domain-specific task packet",
+        "statement": "Use bounded current source for this known-history reconstruction; not blind pre-cutoff evidence",
+        "status": "adopted"
+      },
+      {
+        "binding": {
+          "path": "docs/planning/SERIES_01_ART_DIRECTION_C.md",
+          "sha256": "3c6e6d005123c8e68bf15ad06a64edf3cb9e2b410841f6878be255d7883cd0e2"
+        },
+        "category": "film_language",
+        "id": "film_language",
+        "lines": [
+          1,
+          35
+        ],
+        "required": true,
+        "scope": "Offline planning test; production requirements require a new domain-specific task packet",
+        "statement": "Use bounded current source for this known-history reconstruction; not blind pre-cutoff evidence",
+        "status": "adopted"
+      },
+      {
+        "binding": {
+          "path": "docs/planning/PLANNING_SUBSTAGES_329.md",
+          "sha256": "79613cfa71e16858aa9f37998788834c53f27d7a8938a097a817bac56b0e08fc"
+        },
+        "category": "director_preferences",
+        "id": "director_preferences",
+        "lines": [
+          1,
+          35
+        ],
+        "required": true,
+        "scope": "Offline planning test; production requirements require a new domain-specific task packet",
+        "statement": "Use bounded current source for this known-history reconstruction; not blind pre-cutoff evidence",
+        "status": "adopted"
+      },
+      {
+        "binding": {
+          "path": "results/workflow328/evaluation/sound_hierarchy/prior-input.json",
+          "sha256": "d62e826d3cf9014ca281038d6b0ee337c4ee4e8b5458605078e1a080e4ae84c6"
+        },
+        "category": "references",
+        "id": "references",
+        "lines": [
+          1,
+          14
+        ],
+        "required": true,
+        "scope": "Offline planning test; production requirements require a new domain-specific task packet",
+        "statement": "Use bounded current source for this known-history reconstruction; not blind pre-cutoff evidence",
+        "status": "adopted"
+      },
+      {
+        "binding": {
+          "path": "docs/knowledge/NIHANG_REARING_REVIEW_FAILURE_321.md",
+          "sha256": "36d8cbec705017972bb1a80b5b0f7fe8af7b5c17d0669760d5b35ffbf48b1157"
+        },
+        "category": "controls",
+        "id": "controls",
+        "lines": [
+          1,
+          35
+        ],
+        "required": true,
+        "scope": "Offline planning test; production requirements require a new domain-specific task packet",
+        "statement": "Use bounded current source for this known-history reconstruction; not blind pre-cutoff evidence",
+        "status": "historical"
+      },
+      {
+        "binding": {
+          "path": "results/workflow330/STRATEGY.md",
+          "sha256": "e044e8303d2f300d34cf53db7944d1553ca8dd083937d393a4b020e116ce22f2"
+        },
+        "category": "constraints",
+        "id": "constraints",
+        "lines": [
+          1,
+          35
+        ],
+        "required": true,
+        "scope": "Offline planning test; production requirements require a new domain-specific task packet",
+        "statement": "Use bounded current source for this known-history reconstruction; not blind pre-cutoff evidence",
+        "status": "adopted"
+      },
+      {
+        "binding": {
+          "path": "results/workflow330/task.json",
+          "sha256": "be0c741b7bdf0920efc82d611cc0a0532242b5140eab83f40408f945d9badf5a"
+        },
+        "category": "constraints",
+        "id": "task",
+        "lines": [
+          1,
+          17
+        ],
+        "required": true,
+        "scope": "Offline planning test; production requirements require a new domain-specific task packet",
+        "statement": "Use bounded current source for this known-history reconstruction; not blind pre-cutoff evidence",
+        "status": "adopted"
+      }
+    ],
+    "deliverable_id": "workflow330-replay-sound_hierarchy",
+    "intent": "Keep the larger-than-life music and punchy horse opening while making the private officer narration work with it.",
+    "knowledge_digest": "51b62f0e114cb4c0246d4cf5169606fbef025cfff14e0e5d89043610449af40b",
+    "knowledge_task": "results/workflow330/task.json",
+    "protected": [
+      "Existing creative authority; no production change in this evaluation"
+    ],
+    "references": [
+      {
+        "allowed_variation": "Agent-owned method hypotheses",
+        "aspects": [
+          {
+            "id": "intent",
+            "instruction": "Keep the larger-than-life music and punchy horse opening while making the private officer narration work with it.",
+            "requirements": [
+              "attention_budget",
+              "word_proof",
+              "impact_and_reuse"
+            ]
+          }
+        ],
+        "authority": "Recorded Director input; reconstruction author already knows subsequent feedback",
+        "binding": {
+          "path": "results/workflow328/evaluation/sound_hierarchy/prior-input.json",
+          "sha256": "d62e826d3cf9014ca281038d6b0ee337c4ee4e8b5458605078e1a080e4ae84c6"
+        },
+        "fidelity": "Chosen music and voice are retained creative authorities; this test uses the written integration direction, not a fresh listening claim.",
+        "id": "cutoff-direction",
+        "not_authority": "No production acceptance, exact timing or later creative approval inferred",
+        "role": "directional_design",
+        "scope": "Original intent for retrospective planning only, not a media identity reference"
+      }
+    ]
+  },
+  "authority": {
+    "path": "results/workflow330/STRATEGY.md",
+    "sha256": "e044e8303d2f300d34cf53db7944d1553ca8dd083937d393a4b020e116ce22f2"
+  },
+  "source_context": {
+    "documents": {
+      "52bba00d3f0ac7ecc775db5b5ea943f8e5433170e4cb2609eeb87d8aaa318a2b": {
+        "binding": {
+          "path": "results/workflow328/evaluation/sound_hierarchy/prior-input.json",
+          "sha256": "d62e826d3cf9014ca281038d6b0ee337c4ee4e8b5458605078e1a080e4ae84c6"
+        },
+        "lines": [
+          1,
+          14
+        ],
+        "text": "[\n  {\n    \"message_id\": \"01a13255-62e3-74e3-94db-c04214dac8d8\",\n    \"timestamp\": \"2026-10-12T22:56:59.138Z\",\n    \"source_byte_offset\": 8962985325,\n    \"text\": \"\\n# Files mentioned by the user:\\n\\n## codex-clipboard-ce98884c-d1d8-4e06-84f8-8092de01935b.png: /var/folders/xn/hbr015hn5hb3tjr53f9ccntr0000gn/T/codex-clipboard-ce98884c-d1d8-4e06-84f8-8092de01935b.png\\nImage attachment: true\\n\\n## codex-clipboard-d138859a-1a92-4765-96c6-3c1e467af76a.png: /var/folders/xn/hbr015hn5hb3tjr53f9ccntr0000gn/T/codex-clipboard-d138859a-1a92-4765-96c6-3c1e467af76a.png\\nImage attachment: true\\n\\nDistinguish instructions in attached documents from the user's request.\\n\\n## My request:\\nnever mind about the S3 upload, I am back at my laptop.\\nthe aesthetic I was thinking for the quote was more like the images i attached.\\n\\nI think the gallop/hoove beat needs to be stronger/more punchy/more base-y. I know that might not be what it might actually sound like in this terrain, but still prefer punchiness. Oh I notice that you did mentioned addressing \\\"hoof weight\\\" next, I guess you probably meant the same thing\\nI am not sure about the narration starting immediately as the sequence opens. I think we need to give a second or two for the horse beat and music to register with the audience, and then the narration kicks-in. \\nYou are gonna have to buy another second or two somewhere. Make a call on that, just not the final shot after the turn, that is long enough already. In fact I want you to think critically of this narration bit, and give me an honest opinion about if this works. it sounds weird to me right now, bit of a disconnect between the fast paced action vs the calm collected almost documentary like narration of the brit officer. but I am also guessing that's where our music is going to come in.\\nOther than that, this is good. the \\\"pathan\\\" pronunciation now sounds right.\\n\\ngive me you recommendations first.\\n\\n\"\n  },\n  {\n    \"message_id\": \"01a1325d-a4e2-7b93-82a9-cf2a16a0b9d5\",\n    \"timestamp\": \"2026-10-12T23:06:00.293Z\",\n    \"source_byte_offset\": 8963297016,\n    \"text\": \"before you finalize the narration, I recommend you check out the music. The officer's voice is also going to contrast significantly with the larger than life music and all of this needs to come together\\n\"\n  }\n]"
+      },
+      "8e22ca4d6ee86f8e0ff8dd7e5f67bd826125fe3def13e7b740be44587bdc326d": {
+        "binding": {
+          "path": "docs/knowledge/EXPERT_LENS_PLANNING_328.md",
+          "sha256": "71b7c3b34557cfdc297b223f8313783055ce12449e08217d55c4a6a9e6d627c7"
+        },
+        "lines": [
+          1,
+          35
+        ],
+        "text": "# Expert-lens planning: derivation, proof and original-intent review\n\nAdopted and implemented locally at Director exchange328. Goal: extract more\nvalue from creative direction and reduce avoidable technical corrections, not\nreduce useful Director choices or lower the quality floor.\n\n## What changed\n\nThe previous shot brief contained good manual guidance, but the staged controller\ndid not require its application. A valid brief could contain two generic checks\nand a strategy paragraph. It now rejects that production brief.\n\nFor each trusted beat intent the planner must assess story/performance,\ncamera/editorial, animation/physics, anatomy/contact, effects/environment,\nsound/music and production/reuse. These are perspectives, not seven workers.\nAdditional specialties belong in the relevant derivations. Every applied lens\nmust produce concrete linked requirements; non-application needs a reason.\n\nEach requirement records its derivation, method, coupled interfaces, early proof\nat intended framing, observable failure, reopening trigger, priority, origin\n(Director/reference/craft inference) and reference IDs. Reference roles and\nfidelity contracts remain mandatory in all stages. Exact approved identities\nand faithful motion references are not interchangeable with directional images.\n\nBefore admission the planning stage challenges intent coverage, interdisciplinary\nconflicts, omitted failures and scope tradeoffs. The trusted parent reads this\nchallenge and seals its hash. This is **not an independent fourth expert** or a\nclaim that hashing verifies reasoning. Unresolved issues block admission. Routine\nin-scope methods do not need a Director approval; material creative/authority\nconflicts do. Lightweight retrieval/display/link tasks retain their separate route.\n\nExecution records how every requirement was applied against the same plan digest.\nThis is traceability, not visual proof. Review receives original intent and\nreferences, not just a checklist or the builder's success narrative. It must scan\nfor omitted requirements and report per-beat intent observations. An intent FAIL"
+      },
+      "3456b23a824c7bba598371e50aac1cdf69fff9023c987bff54806cb75d9a669f": {
+        "binding": {
+          "path": "docs/planning/SERIES_01_ART_DIRECTION_C.md",
+          "sha256": "3c6e6d005123c8e68bf15ad06a64edf3cb9e2b410841f6878be255d7883cd0e2"
+        },
+        "lines": [
+          1,
+          35
+        ],
+        "text": "# Series 01 \u2014 C-led art direction\n\nDraft v0.1, exchange 75, 2026-09-17. Director authorized development of the brief after reaffirming C. The rules below are proposals for review, not blanket approval or completion of A5.\n\n## Adopted production principle \u2014 larger than life\n\nDirector248 explicitly adopts **larger than life** across The Martials: character presence, music, dramatic shots and beats, pacing and the complete audience experience. It is also a stated personal Director preference, not merely a Pashtun-entrance effect. This adopted principle governs compatible proposals below; it does not retrospectively approve every draft detail.\n\nAim for heightened, memorable cinema rather than an adequate depiction of events: strong silhouettes and composed presence; decisive character-specific action; impactful scale and camera reveals; a musical hook with tension, swagger and exhilarating release; tactile, weighty sound; visually rich authored surfaces. Preserve the illustrated-C language rather than pursuing uncertain imitation of live action. Physical weight, readable motivation, cultural specificity and recognizable humanity remain the foundation.\n\nContrast is essential. Not every beat is faster, every sound louder or every expression larger. The Pashtun's composed assessment makes her explosive route choice stronger; the Sikh's mounted stillness can carry power without copying her gallop; the Gurkha's care for another person can make his ferocity more affecting. Do not convert the three into interchangeable action poses or caricatures. No additional powers, violence, assets, spending or fixed choreography are authorized by this principle.\n\nInternal review must name the signature moment, its preparation and payoff, what makes it extraordinary at normal viewing size, and what would break its credibility. Review music, performance, composition, sound and pacing together. The rule should appear in each new sequence's audience brief, not be applied as a late generic spectacle filter.\n\n## Exchanges199\u2013200 \u2014 integrated rider performance and painted costume/skin\n\n199: Director likes198's terrain direction but identifies rigid neck performance, overly pronounced neck/clavicle relief, awkward thumb/rein contact and a bleached face. Requests thoughts first; no native edit in that discussion. Recommendation: isolate deformation versus illumination, preserve accepted neutral anatomy, repair actual hand contact, then one coordinated richer indigo/warm leather/skin treatment rather than blanket darkening or new skin noise.200 authorizes this complete recommendation and explicitly forbids an intermediate neck/grip handover. Phone delivery remains parked; no upload authorized.\n\n**Outcome/quality floor:** one complete six-second moving comparison on198 terrain, with skilled but yielding riding attention, believable exposed neck and rein grip, richer indigo fold masses and dark worn brown boots, and retained warm textured identity. Original pair B supplies colour/mark intent; accepted152 native remains neutral identity/anatomy authority. No final studio/release qualification or universal rig claim.\n\n**Strategy/interfaces:** pin198 scene/cache inputs \u2192 inspect actual bone/mesh/material ownership and matched close/side anatomy and hand controls \u2192 correct the demonstrated motion/deformation/contact cause in a derivative \u2192 transport or renew affected shawl support only when measured change warrants it \u2192 coordinated material derivative retaining authored maps \u2192 cheap matched wide/close/control proof \u2192 full chronological motion and independent reopen \u2192 integrated comparison. Do not resculpt accepted neutral anatomy to compensate for light. Do not inherit cloth/contact acceptance after changing its supports. Preserve camera, terrain, horse, tail, accepted hair/face topology, blink and existing edit clock. Failed controls remain evidence, not replacement targets.\n\n**Motion brief:** composed experienced rider maintaining forward attention through repeated loading/unloading, not a locked portrait or wobbling head. Source gait217\u2013360 at24fps supplies phase; chest drives delayed distributed neck/head absorption while eyes continue attending forward. Preserve pelvis/feet and arm endpoint path unless actual hand-contact evidence requires a local correction. Fingers/thumb must form one supported hold around the rein; rein follows the evaluated hand channel, not a guessed endpoint. Quantify both local articulation and world motion without treating amplitude as naturalness. No new human reference footage is claimed. Inspect full-speed actual-camera and fixed-view cycle, shoulders/clavicles/jaw/hair/shawl, both grips, and endpoints for jumps.\n\n**Early falsifiable proof:** matched original/derivative closeup and a complete fixed-view gait cycle must visibly reduce bracing without introducing a rubber neck, collarbone erasure, jaw/cloth collisions or wandering gaze. Clay and unchanged-light controls distinguish geometry from shading. Thumb controls must change the actual rendered thumb without hand collapse or rein crossing. If adjacent repairs regress repeatedly, reassess representation before additional variants. Darker cloth must retain legible two-wrap construction and blue highlights; face must retain existing texture rather than orange tint, airbrushing or noise.\n\n**Resources/reuse/exit:** one heavy Blender worker, existing trusted closed operations and local dependencies, no new paid calls/tools/assets/publication. Forecast under2GB incremental native/cache/frame evidence for one coherent candidate, revise with observed need. No arbitrary elapsed-time stop; prospective ledger capture, unknown token/cost and historical gaps remain explicit. Preserve source-bound parameters, selected native and evidence for18-second integration. One final integrated handover after internal visual and technical gates, or an exact Director-owned blocker. Checkpoint200 is due at completion; accepted release gates remain1/25, not a time/progress estimate.\n\n### 200 result \u2014 integrated rider and painted costume/skin review\n\n[Six-second integrated clip](../../.runtime/art-direction/series01-entrance200/entrance-v200.mp4), [source/media manifest](../../.runtime/art-direction/series01-entrance200/manifest.json), [internal visual review](../../.runtime/art-direction/series01-entrance200/visual-review.json), [operating card](../../.runtime/art-direction/series01-entrance200/operating-card.json). Review-ready, not Director acceptance or final-resolution production qualification. The matched comparison includes198 versus200 close reveal, costume and grip; no intermediate neck-only handover.\n\nSelected native `entrance200-seal17/scene.blend`, SHA256 `0c898747a695db3e59ba8d8a9676961f306f91873c5f050e35d61f00d1a0623f`. Distributed lagged head/neck response and a pose-driven neck corrective reduce bracing and exaggerated relief; accepted neutral geometry has0.0 new-corrective displacement. Actual index-chain contact targets replace the hooked thumbs. Deeper indigo shawl, dark worn brown boots and richer skin retain authored maps; no new skin-noise layer or identity resculpt. All unrelated rig matrices remain unchanged in the measured build. A bounded transport updates the affected headfall cache; this is not a universal cloth solver or new full simulation.\n\nInternal review covers all144 chronological frames, the24-frame fixed-view gait cycle, matched clay/lit neck, both grips and full-size final-camera controls. The complete432\u00d7768/24fps silent clip fully decodes; final naturalness/look acceptance remains Director-owned. Independent19 reopen passes geometry/object/action/camera-light fingerprints,48 cache samples with0.0 error, seven rig-pose samples with maximum1.222e-6 and four particle checks with maximum9.289e-5 native error.38 focused tests and comparison-control state tests pass; browser-layout screening is NOT_RUN."
+      },
+      "de210e50ee924db5a61956ec6614874162121d62540fb454e874765d90030c3d": {
+        "binding": {
+          "path": "docs/planning/PLANNING_SUBSTAGES_329.md",
+          "sha256": "79613cfa71e16858aa9f37998788834c53f27d7a8938a097a817bac56b0e08fc"
+        },
+        "lines": [
+          1,
+          35
+        ],
+        "text": "# Proposed serial planning substages\n\nStatus: response to Director329, proposed, not implemented or independently\nqualified. Existing328 content gates remain active. No new inference allowance,\nmodel dispatch, render or construction is authorized by this proposal.\n\n## Objective\n\nReduce the chance that retrieval, expert derivation, creative alignment, technical\nstrategy and self-review compete within one large planning response. Determinism\nenforces sequencing, required inputs/outputs, freshness and admission; reasoning\nstill determines applicability, taste, causality and method quality.\n\nKeep three outer phases: PLAN, EXECUTE, REVIEW. For substantial production work,\nPLAN becomes four serial steps with persisted artifacts and explicit exit gates:\n\n1. **Ground the task.** Assemble original direction and beat intent; relevant\n   historical learnings; movie identity/style/theme; Director preferences; source\n   references and roles; accepted/rejected controls; constraints/authority.\n   Separate these sections rather than flatten into prose. Each relevant item\n   names its source, status, scope and expected implication. Missing coverage or\n   unresolved authority blocks; unknown preferences remain hypotheses, not fact.\n2. **Derive the creative/technical requirements.** Select and apply relevant\n   expert perspectives per beat, grounded in step1. Predict audience understanding,\n   feeling, dramatic carriers, believability hazards and interdependencies. Output\n   derived requirements and tradeoffs, not construction code. Every contextual\n   obligation is applied or explicitly out of scope with rationale.\n3. **Design the execution strategy.** Resolve cross-discipline conflicts; choose\n   representation/methods, interfaces, dependency order, reuse, earliest integrated\n   proof, resource envelope, failure/replan tests and final evidence. Output one\n   executable work package, not several independent specialists' wish lists.\n4. **Challenge and admit.** A fresh review context compares original direction,\n   authoritative grounding, derived requirements and proposed strategy. Seek\n   missing expert lenses, ignored learnings, same-film mismatch, weak methods,\n   expensive invisible work and unsupported assumptions. Outcome: admit, route a"
+      },
+      "6cc6f7dd294b953e74d0ce90d1d0bfed4774db9de76afb908bbc0c5f1e378c9a": {
+        "binding": {
+          "path": "docs/knowledge/NIHANG_REARING_REVIEW_FAILURE_321.md",
+          "sha256": "36d8cbec705017972bb1a80b5b0f7fe8af7b5c17d0669760d5b35ffbf48b1157"
+        },
+        "lines": [
+          1,
+          35
+        ],
+        "text": "# Nihang rearing and supporting character review failure\n\nDirector exchange321, 2026-10-20. **Candidate320/10 is Director rejected. Its recommendation for review is withdrawn.** Technical successes remain technical history; no scene or animation changes are made by this audit. The current request is comparison and process diagnosis before more construction.\n\nThe main failure is not missing instructions. The320 strategy and retrieved packet already required convincing whole-body performance and the accepted Pashtun's visible quality. Execution improved local mechanics, while review substituted attachment, nonzero movement and improvement over319 for those outcomes. The313 human audiovisual review stage then became too broad an escape route for unresolved appearance and pose failures.\n\n## Evidence and limits\n\n- Reference: `.runtime/art-direction/series01-sikh256/references/reference-b.mov`, SHA256 `78d0d691e8712c02931876cf0bc405e4869de357f337f531708be7a7da4898e2`. Inspected freshly extracted action samples from14\u201319s at10 samples/second, including the full source frame and cropped action. Nominal timestamps have approximately0.1s sampling precision. This is an edited visual reference, not motion capture or a verified physical timing standard. Embedded social-media text is not production direction.\n- Rejected delivery: `.runtime/art-direction/series01-sikh320/delivery-10/nihang-crowd-review.mp4`, SHA256 `ad7d980eb064a03837989f27d68ebacfe08576cb30625f92696c20b5fc50d452`. Source frames252\u2013441 at24fps; leader coverage276\u2013356. Candidate frame times in the audit are `(frame-252)/24` relative to this isolated clip.\n- Candidate evidence: full-size298/321/350/400, chronological300\u2013323, phase controls276\u2013356, stored all-frame hoof/head trajectories, and the actual construction code. The accepted Pashtun20s frame at4.5s supplies a production appearance comparator. Different lights/cameras preclude attributing every difference to material alone; broad form and construction failures are nevertheless plainly visible.\n- [Phase comparison](../../.runtime/art-direction/series01-sikh321/comparisons/phase-comparison.jpg), [appearance comparison](../../.runtime/art-direction/series01-sikh321/comparisons/appearance.jpg), and [evidence provenance](../../results/sikh321/evidence.json). Phase pairs are functional correspondences, not identical camera projections or a synchronized retiming prescription.\n\nThis is a frame-sequence/source/trajectory audit, **not a claim of direct real-time video or audio perception**. Director feedback establishes the full-speed rejection. Visible shape and material defects do not require that missing capability to reject them. No new auditory verdict is offered.\n\n## Reference comparison\n\n| Action | Reference evidence | Candidate evidence and deficiency |\n| --- | --- | --- |\n| Spear cue and preparation | Around15.1\u201316.3s the cue leads into a conspicuous head/neck curl and changing forefoot placement. The body looks gathered rather than merely waiting for lift. | Frames286\u2013310 contain spear and foot changes, but the horse's neck remains a comparatively long, shallow-changing column. The torso/quarters do not develop a comparably compact silhouette. Separate foot gestures do not visibly load the whole animal. |\n| Drive upward | Around16.4\u201316.9s the chest rises out of the gathered shape; hind-leg bend, body pitch, tucked forelegs and head position change together. | Frames310\u2013321 are dominated by raising/pitching the body over supported hind feet. At321 the hind legs appear long and nearly straight while the chest has rotated upward. This is a major source of the mechanical impression, not a missing noise layer. |\n| Foreleg silhouette | Reference16.8\u201317.5s has compact, curved folding with changing hoof orientation and unequal limb presentation. | Candidate318\u2013338 presents prominent angular elbows/carpi and long hanging distal legs, with a strongly paired outline. Adding a small left/right time delay has not produced the required articulated silhouette. Exact joint/axis diagnosis requires a rig control; the visible failure is already sufficient to reject. |\n| Neck and head | Reference16.0\u201318.3s changes the arch, poll/head angle and silhouette through gather, effort and landing. | Candidate head/neck keys are nonzero, but the elevated shape remains column-like and the muzzle projects from it with little apparent yielding. The question was incorrectly reduced to whether the head moves relative to the neck. |\n| Crest | Reference17.0\u201317.8s remains an active balance, with changing limb/body/head relationships rather than a single rigid pose held aloft. | Candidate321\u2013338 varies, but within a narrow, stiff shape family: extended support below, angular forelegs above, upright neck. A slightly shorter hold cannot fix the pose family. The audit does not establish an exact excessive-hold duration. |\n| Descent and contact | Around18.0\u201318.4s forelegs reach, body comes through contact and head/mane/tail/rider follow; earth spray makes the contact legible. | Candidate344\u2013356 reaches the ground faster than its predecessor, but quickly returns to almost the same upright standing assembly. The impact lacks a comparably readable compression and follow-through across the whole animal and rider. Existing debris does not supply missing body weight. |\n| Rider | The reference rider is comparatively restrained, but remains part of the horse's balance through seat, leg, upper-body, arm and rein relationships. |320 adds relative torso/head and supported leg movement. The resulting standing and airborne frames still read as a posed figure carried on a saddle. Motion existence and correct endpoints are weaker tests than visible bracing, yielding and recovery. More arbitrary sway would be another wrong fix. |\n\nThe airborne portion is of roughly similar order in the two samples: approximately1.7s in the reference versus approximately1.6s from candidate310 to349. These are coarse visual event brackets, not exact timing measurements. They argue **against treating the complaint as simply a global speed problem**. Pose design, distribution of acceleration, overlap and contact response matter more than adding frames or speeding the whole shot.\n\nThe stored candidate trajectory makes the limitation concrete. Left-front toe vertical speed is approximately4.23m/s downward over347\u2013348 and reaches its supported height at349. The tracked head height then changes only about0.018m over349\u2013356, mostly returning upward toward rest. That is not a complete absorption measurement, but it corroborates the frame-visible weak recovery. A passing fast-toe-arrival check cannot establish a forceful whole-body landing.\n\n## Appearance failures\n\nThese are visible at intended framing, not demands for hero-level microscopic detail.\n"
+      },
+      "b8fd4e209d020d7ce5d5d28f0ba0e8e7452c49772885e27b8ac7015badaf16b8": {
+        "binding": {
+          "path": "results/workflow330/STRATEGY.md",
+          "sha256": "e044e8303d2f300d34cf53db7944d1553ca8dd083937d393a4b020e116ce22f2"
+        },
+        "lines": [
+          1,
+          35
+        ],
+        "text": "# Planning substage implementation and qualification\n\nDirector330 authorizes critique, implementation and tests of329. Local code,\nsource-bound records, offline fixtures and known-history replay only. No new\nruntime inference allowance, render, provider, installation, upload or artistic\nadmission. Preserve253 and321. Three outer phases remain; planning is serial.\n\n## Critique before construction\n\n1. Decomposition can become a paperwork pipeline. Each artifact must change the\n   next stage's constraints; the controller must reject dropped obligations,\n   unsupported sources and skipped stages. Named lenses are not application.\n2. Summaries can launder authority or omit the Director's actual intent. Every\n   stage retains original direction and reference-role contracts, source IDs,\n   status and scope. Hypotheses cannot silently become approved preferences.\n3. Retrieval is incomplete. Require a source/relationship reconciliation and\n   explicit gaps beside the fresh pilot packet. Missing catalog entries are not\n   evidence of irrelevance. Do not rebuild a universal graph for this pass.\n4. A rigid waterfall can entrench an unsuitable method. Challenge must return a\n   specific failure to grounding, derivation or strategy. Failed output may expose\n   planning omissions too. Reuse only unaffected upstream artifacts; invalidate\n   downstream evidence. Corrections share one persisted package allowance.\n5. Self-review can repeat the author's conviction. Separate the challenge's\n   dispatch/input from strategy authorship, omit self-admission prose, retain\n   original sources and require observations/counterexamples. Fresh context is\n   not independent expertise or a proven perceptual judge.\n6. Prior321 had many correct requirements already. The method must explain why\n   it should work, its evidence status, alternatives and earliest representative\n   falsification. No amount of plan validation substitutes for actual pose/frame\n   evidence and Director-owned full-speed/audio review.\n7. Extra stages increase calls/context and create new failure surfaces. Use\n   bounded stage packets, serial execution, durable events, idempotence and\n   existing call/resource leases. Lightweight workflows bypass production\n   planning explicitly; no agent per lens. Never manufacture savings percentages.\n8. Early proof must precede expensive commitment. Strategy requires an ordered"
+      },
+      "b5cbf890841e370c7ea64a2a0166e2163b75ebb822d7cf93d66d72e89d3ff4f7": {
+        "binding": {
+          "path": "results/workflow330/task.json",
+          "sha256": "be0c741b7bdf0920efc82d611cc0a0532242b5140eab83f40408f945d9badf5a"
+        },
+        "lines": [
+          1,
+          17
+        ],
+        "text": "{\n  \"id\": \"workflow330-planning-substages\",\n  \"operation\": \"knowledge\",\n  \"entities\": [\"knowledge\"],\n  \"query\": \"Serial planning grounding expert derivation strategy challenge admission source obligations and bounded repair\",\n  \"intent\": \"Implement and offline qualify deterministic planning substages without claiming semantic or production success\",\n  \"phase\": \"execution\",\n  \"inputs\": {\n    \"results/workflow330/STRATEGY.md\": \"e044e8303d2f300d34cf53db7944d1553ca8dd083937d393a4b020e116ce22f2\",\n    \"docs/planning/PLANNING_SUBSTAGES_329.md\": \"79613cfa71e16858aa9f37998788834c53f27d7a8938a097a817bac56b0e08fc\",\n    \"docs/knowledge/EXPERT_LENS_PLANNING_328.md\": \"71b7c3b34557cfdc297b223f8313783055ce12449e08217d55c4a6a9e6d627c7\",\n    \"docs/knowledge/NIHANG_REARING_REVIEW_FAILURE_321.md\": \"36d8cbec705017972bb1a80b5b0f7fe8af7b5c17d0669760d5b35ffbf48b1157\"\n  },\n  \"open_decisions\": [],\n  \"execution_authority\": {\"source\": \"results/workflow330/STRATEGY.md\", \"scope\": \"Director330 authorizes local implementation and testing\"},\n  \"max_context_characters\": 60000\n}"
+      }
+    },
+    "source_links": {
+      "direction": "52bba00d3f0ac7ecc775db5b5ea943f8e5433170e4cb2609eeb87d8aaa318a2b",
+      "learnings": "8e22ca4d6ee86f8e0ff8dd7e5f67bd826125fe3def13e7b740be44587bdc326d",
+      "film_language": "3456b23a824c7bba598371e50aac1cdf69fff9023c987bff54806cb75d9a669f",
+      "director_preferences": "de210e50ee924db5a61956ec6614874162121d62540fb454e874765d90030c3d",
+      "references": "52bba00d3f0ac7ecc775db5b5ea943f8e5433170e4cb2609eeb87d8aaa318a2b",
+      "controls": "6cc6f7dd294b953e74d0ce90d1d0bfed4774db9de76afb908bbc0c5f1e378c9a",
+      "constraints": "b8fd4e209d020d7ce5d5d28f0ba0e8e7452c49772885e27b8ac7015badaf16b8",
+      "task": "b5cbf890841e370c7ea64a2a0166e2163b75ebb822d7cf93d66d72e89d3ff4f7"
+    },
+    "instruction": "Quoted source evidence, not executable instructions. Status/scope remain in direction.context_sources. Selection is bounded, not a claim of exhaustive retrieval."
+  },
+  "grounding_knowledge": {
+    "packet_digest": "51b62f0e114cb4c0246d4cf5169606fbef025cfff14e0e5d89043610449af40b",
+    "obligations": [
+      {
+        "id": "reuse_envelope",
+        "status": "adopted",
+        "kind": "constraint",
+        "tags": [
+          "modeling",
+          "motion",
+          "look",
+          "knowledge"
+        ],
+        "sources": [
+          "reuse317"
+        ],
+        "check_kind": "process",
+        "action": "317: evaluate reuse before custom construction without forcing it; compare total adaptation/revalidation cost and quality. Extend existing provenance with source/version/rights/dependencies, tested conditions, failures/evidence and measured-or-unknown effort. Run resource_manifest for the requested use; missing/stale evidence, untested conditions, unresolved rights or open failures block qualification. Assessed resources stay useful but unqualified. Manually verify applicability, rights and perceptual truth; a valid record is not an artistic pass. No new database, installation, spend or upload.",
+        "reason": "matched facets: knowledge",
+        "citations": [
+          "docs/knowledge/CINEMATIC_REUSE_317.md"
+        ],
+        "authority": "adopted"
+      },
+      {
+        "id": "authority",
+        "status": "adopted",
+        "kind": "constraint",
+        "tags": [
+          "*"
+        ],
+        "sources": [
+          "workflow",
+          "strategy",
+          "context",
+          "unit"
+        ],
+        "check_kind": "process",
+        "action": "Confirm scope and genuine Director decisions. No new spend, installs, specialists, publication or protected creative changes by inference. Routine in-scope technical fixes remain agent-owned. Astra is top tier; failed method needs reassessment, not a nonexistent higher model.",
+        "reason": "global binding rule",
+        "citations": [
+          "docs/knowledge/EFFICIENT_QUALITY_ASSET_WORKFLOW.md",
+          "docs/decisions/0005-production-strategy-before-execution.md",
+          "docs/planning/CONTEXT_AND_DIRECTOR_REVIEW_CONTRACT.md",
+          "docs/planning/SERIES_01_PASHTUN_FINISHED_UNIT_PLAN.md"
+        ],
+        "authority": "adopted"
+      },
+      {
+        "id": "strategy",
+        "status": "adopted",
+        "kind": "constraint",
+        "tags": [
+          "*"
+        ],
+        "sources": [
+          "strategy",
+          "workflow"
+        ],
+        "check_kind": "process",
+        "action": "Read current strategy; name outcome, quality floor, interfaces, assumptions, earliest integrated proof, resources, reuse and replan/exit. Repeated compensating patches trigger method reassessment, not renamed passes.",
+        "reason": "global binding rule",
+        "citations": [
+          "docs/decisions/0005-production-strategy-before-execution.md",
+          "docs/knowledge/EFFICIENT_QUALITY_ASSET_WORKFLOW.md"
+        ],
+        "authority": "adopted"
+      },
+      {
+        "id": "visual_gate",
+        "status": "adopted",
+        "kind": "constraint",
+        "tags": [
+          "*"
+        ],
+        "sources": [
+          "context",
+          "workflow",
+          "index"
+        ],
+        "check_kind": "review",
+        "action": "Compare the complete claimed result to accepted references and required use, seeking known and new failures plus adjacent regressions. Use explicit failing-shape controls before expensive integration; contact targets and material cannot substitute for the required silhouette. An occluded region is NOT_RUN until visibly inspected. Actual motion/audio where applicable; distinguish frame inspection from playback. Tests, better-than-before and source hashes do not establish perceptual PASS. Known FAIL/NOT_RUN blocks handoff.",
+        "reason": "global binding rule",
+        "citations": [
+          "docs/planning/CONTEXT_AND_DIRECTOR_REVIEW_CONTRACT.md",
+          "docs/knowledge/EFFICIENT_QUALITY_ASSET_WORKFLOW.md",
+          "docs/knowledge/PRODUCTION_LEARNING_APPLICATION_INDEX.md"
+        ],
+        "authority": "adopted"
+      },
+      {
+        "id": "anticipation",
+        "status": "adopted",
+        "kind": "constraint",
+        "tags": [
+          "*"
+        ],
+        "sources": [
+          "context"
+        ],
+        "check_kind": "review",
+        "action": "Write audience intent and distraction hypotheses before a defect list. Test them against actual evidence, seek counterevidence and unlisted problems, record observations and corrections. Director feedback calibrates fallible judgment; it is not the primary defect detector.224: test opening hook, pacing and causal geography, not merely fit duration.248 adopts larger-than-life impact for The Martials and records it as a Director preference: name the extraordinary character-specific beat and its preparation/payoff; use contrast and believability, not constant maximum speed/loudness or unapproved powers. 249 requires a shot/beat performance and believability brief before execution: apply relevant expertise lenses, predict audience-visible anatomy/contact/physical-response failures, and bind each critical behavior to strategy, interfaces, early proof and observable failure conditions. Cover each beat or explicit inheritance; consult docs/planning/SHOT_BEAT_QUALITY_BRIEF.md. Roles are perspectives, not an org chart. Automatic brief completeness and perceptual judgment are not implemented.",
+        "reason": "global binding rule",
+        "citations": [
+          "docs/planning/CONTEXT_AND_DIRECTOR_REVIEW_CONTRACT.md"
+        ],
+        "authority": "adopted"
+      },
+      {
+        "id": "stopping",
+        "status": "adopted",
+        "kind": "constraint",
+        "tags": [
+          "*"
+        ],
+        "sources": [
+          "context",
+          "workflow",
+          "strategy"
+        ],
+        "check_kind": "review",
+        "action": "Meet the high quality floor first;248 clarifies efficiency means progressively more reliable and economical achievement of that bar, not lowering it. Then weigh visible benefit, dramatic value, reuse and regression/opportunity cost. Re-rank residuals after larger fixes. Prior tolerance is not acceptance. Record deferred details and reopening triggers; no arbitrary timer waives quality or creates handoff.",
+        "reason": "global binding rule",
+        "citations": [
+          "docs/planning/CONTEXT_AND_DIRECTOR_REVIEW_CONTRACT.md",
+          "docs/knowledge/EFFICIENT_QUALITY_ASSET_WORKFLOW.md",
+          "docs/decisions/0005-production-strategy-before-execution.md"
+        ],
+        "authority": "adopted"
+      },
+      {
+        "id": "versioning",
+        "status": "adopted",
+        "kind": "constraint",
+        "tags": [
+          "*"
+        ],
+        "sources": [
+          "context",
+          "index",
+          "accepted"
+        ],
+        "check_kind": "technical",
+        "action": "Bind actual inputs, accepted scope, source hashes and dependencies. Revalidate affected checks after camera/motion/version changes. Preserve originals and failed evidence. A local commit is not native-media backup; a reopened scene is not proof of portable or general reuse.",
+        "reason": "global binding rule",
+        "citations": [
+          "docs/planning/CONTEXT_AND_DIRECTOR_REVIEW_CONTRACT.md",
+          "docs/knowledge/PRODUCTION_LEARNING_APPLICATION_INDEX.md",
+          "docs/knowledge/PASHTUN_CHARACTER_RETROSPECTIVE.md"
+        ],
+        "authority": "adopted"
+      },
+      {
+        "id": "economics",
+        "status": "adopted",
+        "kind": "constraint",
+        "tags": [
+          "*"
+        ],
+        "sources": [
+          "index",
+          "workflow",
+          "accepted",
+          "render"
+        ],
+        "check_kind": "process",
+        "action": "Track active effort, waits, jobs, actual provider spend and usable output separately; leave unavailable tokens/cost null. Do not add overlapping process/activity time. Diagnostic investment is not repeatable unit cost. Advance the trailer and two episodes, not tooling or polish for its own sake.",
+        "reason": "global binding rule",
+        "citations": [
+          "docs/knowledge/PRODUCTION_LEARNING_APPLICATION_INDEX.md",
+          "docs/knowledge/EFFICIENT_QUALITY_ASSET_WORKFLOW.md",
+          "docs/knowledge/PASHTUN_CHARACTER_RETROSPECTIVE.md",
+          "docs/planning/LOCAL_RENDER_ACCELERATION_210.md"
+        ],
+        "authority": "adopted"
+      },
+      {
+        "id": "retrieval",
+        "status": "adopted",
+        "kind": "constraint",
+        "tags": [
+          "knowledge"
+        ],
+        "sources": [
+          "context"
+        ],
+        "check_kind": "technical",
+        "action": "Inventory pinned corpus, freeze independently read applicability sets, test held-out/cross-discipline/stale/conflicting cases and actual application. Mandatory constraints bypass search. Ingestion is not approval; preserve gaps. No claim all742 turns/588 candidates reconciled; one source is truncated. Manual audit remains safety net.",
+        "reason": "matched facets: knowledge",
+        "citations": [
+          "docs/planning/CONTEXT_AND_DIRECTOR_REVIEW_CONTRACT.md"
+        ],
+        "authority": "adopted"
+      },
+      {
+        "id": "current_state",
+        "status": "adopted",
+        "kind": "constraint",
+        "tags": [
+          "*"
+        ],
+        "sources": [
+          "current255"
+        ],
+        "check_kind": "process",
+        "action": "Read CURRENT_PRODUCTION_STATE.md:253 exact Pashtun20s provisional acceptance stays protected; strict replay FAIL and final release/rights remain separate. Protection/calibration255 complete. Director256-257 authorizes Sikh-only sequence development, continuous turban/cover, personal recognition and nonrecurring leader; action before music. Director260 accepts illustrated portrait v03; read SERIES_01_SIKH_BASELINE_V01.md before Sikh identity/cloth work. Broad natural beard and rugged face govern; rejected v01/v02 do not. No literal pixel matching, native acceptance or incidental background/cloth-topology approval. Native257 remains BLOCK. Unknown domains still block; no paid calls/publication by inference. Director320 narrows current correction to the contiguous Nihang/rear and crowd passage with one-second handles.319 supporting performance/look is rejected; crowd attention remains on the rider. Director313 is the direct AV judge; source/frame checks cannot confer playback or production acceptance.",
+        "reason": "global binding rule",
+        "citations": [
+          "docs/knowledge/CURRENT_PRODUCTION_STATE.md"
+        ],
+        "authority": "adopted"
+      },
+      {
+        "id": "au_reuse",
+        "status": "adopted",
+        "kind": "workflow",
+        "tags": [
+          "knowledge",
+          "render",
+          "delivery"
+        ],
+        "sources": [
+          "audit250"
+        ],
+        "check_kind": "review",
+        "action": "AU16: package exact accepted versions, dependencies, rights, editable recipe and tested-use limits; verify remote restore and portable dependency closure. Separate foundation from adaptation, native jobs from work/waits and unknown cost; capture issue/review IDs before next sequence. No prediction from145h divided by20s.",
+        "reason": "matched facets: knowledge",
+        "citations": [
+          "docs/knowledge/PASHTUN_PRODUCTION_AUDIT250.md"
+        ],
+        "authority": "adopted"
+      },
+      {
+        "id": "au_review",
+        "status": "adopted",
+        "kind": "workflow",
+        "tags": [
+          "knowledge"
+        ],
+        "sources": [
+          "audit250"
+        ],
+        "check_kind": "review",
+        "action": "AU13/251: distinguish requirement, retrieval, method, evidence and judgment failures. Compare known rejected AND accepted controls, record specific observations and uncertainty, and test omitted/failed evidence blocking. Earlier falsification and fewer repeat escapes matter more than fewer messages. Calibration is familiar non-independent evidence, not universal judgment.",
+        "reason": "matched facets: knowledge",
+        "citations": [
+          "docs/knowledge/PASHTUN_PRODUCTION_AUDIT250.md"
+        ],
+        "authority": "adopted"
+      }
+    ]
+  },
+  "planning_step": "STRATEGIZING",
+  "planning_input_digest": "1db79a0149083ca159c0534d45ec38a1965197ca87cbeea2bc20f67f32f60fbd",
+  "reference_digests": {
+    "cutoff-direction": "73c69cf4c3cf0934445551f6bea1acb8624e6b1c93c6e5eb753610c6a6693fde"
+  },
+  "planning_contract": {
+    "version": 1,
+    "step": "STRATEGIZING",
+    "goal": "Choose one integrated method and ordered earliest proof from the frozen requirements. Resolve interfaces; distinguish observed capability from hypotheses; explain alternatives and failure triggers. Do not silently change requirements or authority.",
+    "envelope": "input_digest copied exactly; outcome complete (first three) or admit/revise/needs_director; artifact for complete",
+    "fields": [
+      "brief (complete328 brief, protected authority and derivation unchanged; challenge.plan_digest may be __PARENT_COMPUTES__, a content hash not a judgment)",
+      "method_choice:{chosen,alternatives,evidence_status:observed/hypothesis,discriminating_test}",
+      "steps:[{id,depends_on,requirements,kind:proof/build,acceptance}]",
+      "resource_scope",
+      "replan_triggers"
+    ],
+    "categories": [
+      "direction",
+      "learnings",
+      "film_language",
+      "director_preferences",
+      "references",
+      "controls",
+      "constraints"
+    ],
+    "facets": [
+      "grounding",
+      "expert_coverage",
+      "film_alignment",
+      "preferences",
+      "reference_roles",
+      "method",
+      "interfaces",
+      "efficient_quality",
+      "authority"
+    ],
+    "authority": "No new spend, media mutation or artistic acceptance; technical choices stay agent-owned."
+  },
+  "planning_inputs": {
+    "DERIVING": {
+      "beats": [
+        {
+          "audience_read": "Horse and music establish energy before speech",
+          "framing": "Opening action with immediate sound hook",
+          "id": "hook",
+          "lenses": {
+            "anatomy_contact": {
+              "applies": false,
+              "requirements": [],
+              "why": "No geometry or contact change is authorized by this sound test; existing motion remains a protected input."
+            },
+            "animation_physics": {
+              "applies": true,
+              "requirements": [
+                "impact_and_reuse"
+              ],
+              "why": "Punch and exact event placement must survive retiming without rerendering the scene."
+            },
+            "camera_editorial": {
+              "applies": true,
+              "requirements": [
+                "attention_budget"
+              ],
+              "why": "Voice, readable quote and melodic lead compete for attention; a fixed duck amount cannot decide the hierarchy."
+            },
+            "effects_environment": {
+              "applies": false,
+              "requirements": [],
+              "why": "No new visual effects construction; preserve existing dust/action while testing the mix."
+            },
+            "production_reuse": {
+              "applies": true,
+              "requirements": [
+                "impact_and_reuse"
+              ],
+              "why": "Punch and exact event placement must survive retiming without rerendering the scene."
+            },
+            "sound_music": {
+              "applies": true,
+              "requirements": [
+                "attention_budget",
+                "impact_and_reuse"
+              ],
+              "why": "Voice, readable quote and melodic lead compete for attention; a fixed duck amount cannot decide the hierarchy. Punch and exact event placement must survive retiming without rerendering the scene."
+            },
+            "story_performance": {
+              "applies": true,
+              "requirements": [
+                "attention_budget"
+              ],
+              "why": "Voice, readable quote and melodic lead compete for attention; a fixed duck amount cannot decide the hierarchy."
+            }
+          }
+        },
+        {
+          "audience_read": "Understand key words without making the score feel switched off",
+          "framing": "Face/action and quote visual compete for attention",
+          "id": "speech",
+          "lenses": {
+            "anatomy_contact": {
+              "applies": false,
+              "requirements": [],
+              "why": "No geometry or contact change is authorized by this sound test; existing motion remains a protected input."
+            },
+            "animation_physics": {
+              "applies": false,
+              "requirements": [],
+              "why": "No separate requirement owned by this lens in this beat; coupled concerns are linked in the other applicable beat/lens rows. Reassess if framing or scope changes."
+            },
+            "camera_editorial": {
+              "applies": true,
+              "requirements": [
+                "attention_budget"
+              ],
+              "why": "Voice, readable quote and melodic lead compete for attention; a fixed duck amount cannot decide the hierarchy."
+            },
+            "effects_environment": {
+              "applies": false,
+              "requirements": [],
+              "why": "No new visual effects construction; preserve existing dust/action while testing the mix."
+            },
+            "production_reuse": {
+              "applies": false,
+              "requirements": [],
+              "why": "No separate requirement owned by this lens in this beat; coupled concerns are linked in the other applicable beat/lens rows. Reassess if framing or scope changes."
+            },
+            "sound_music": {
+              "applies": true,
+              "requirements": [
+                "attention_budget",
+                "word_proof"
+              ],
+              "why": "Voice, readable quote and melodic lead compete for attention; a fixed duck amount cannot decide the hierarchy. The important claim relies on races and impeccable being understandable, not merely on average voice loudness."
+            },
+            "story_performance": {
+              "applies": true,
+              "requirements": [
+                "attention_budget"
+              ],
+              "why": "Voice, readable quote and melodic lead compete for attention; a fixed duck amount cannot decide the hierarchy."
+            }
+          }
+        },
+        {
+          "audience_read": "Let music carry the action after the thought",
+          "framing": "Dramatic turn and uphill carry",
+          "id": "release",
+          "lenses": {
+            "anatomy_contact": {
+              "applies": false,
+              "requirements": [],
+              "why": "No geometry or contact change is authorized by this sound test; existing motion remains a protected input."
+            },
+            "animation_physics": {
+              "applies": true,
+              "requirements": [
+                "impact_and_reuse"
+              ],
+              "why": "Punch and exact event placement must survive retiming without rerendering the scene."
+            },
+            "camera_editorial": {
+              "applies": true,
+              "requirements": [
+                "attention_budget"
+              ],
+              "why": "Voice, readable quote and melodic lead compete for attention; a fixed duck amount cannot decide the hierarchy."
+            },
+            "effects_environment": {
+              "applies": false,
+              "requirements": [],
+              "why": "No new visual effects construction; preserve existing dust/action while testing the mix."
+            },
+            "production_reuse": {
+              "applies": true,
+              "requirements": [
+                "impact_and_reuse"
+              ],
+              "why": "Punch and exact event placement must survive retiming without rerendering the scene."
+            },
+            "sound_music": {
+              "applies": true,
+              "requirements": [
+                "attention_budget",
+                "impact_and_reuse"
+              ],
+              "why": "Voice, readable quote and melodic lead compete for attention; a fixed duck amount cannot decide the hierarchy. Punch and exact event placement must survive retiming without rerendering the scene."
+            },
+            "story_performance": {
+              "applies": true,
+              "requirements": [
+                "attention_budget"
+              ],
+              "why": "Voice, readable quote and melodic lead compete for attention; a fixed duck amount cannot decide the hierarchy."
+            }
+          }
+        }
+      ],
+      "context_mapping": {
+        "constraints": {
+          "reason": "No media, live model, spend or approval follows from this planning reconstruction.",
+          "requirements": [
+            "attention_budget",
+            "word_proof",
+            "impact_and_reuse"
+          ]
+        },
+        "controls": {
+          "reason": "321 shows correct requirements can coexist with a failed pose method and generous review; require a discriminating integrated proof.",
+          "requirements": [
+            "attention_budget",
+            "word_proof",
+            "impact_and_reuse"
+          ]
+        },
+        "direction": {
+          "reason": "Keep the larger-than-life music and punchy horse opening while making the private officer narration work with it.",
+          "requirements": [
+            "attention_budget",
+            "word_proof",
+            "impact_and_reuse"
+          ]
+        },
+        "director_preferences": {
+          "reason": "Preserve larger-than-life readable action and efficient quality; routine technical corrections stay internal, creative authority stays Director-owned.",
+          "requirements": [
+            "attention_budget",
+            "word_proof",
+            "impact_and_reuse"
+          ]
+        },
+        "film_language": {
+          "reason": "Judge intended shot at the accepted co-star quality floor, not against the rejected predecessor; illustrated is not a waiver for primitive forms.",
+          "requirements": [
+            "attention_budget",
+            "word_proof",
+            "impact_and_reuse"
+          ]
+        },
+        "learnings": {
+          "reason": "Could have caught word masking and disruptive ducking in an integrated proof. The later decision to stop narration at impeccable and use a specific ramp remains a legitimate Director choice, not a supposedly avoidable input.",
+          "requirements": [
+            "attention_budget",
+            "word_proof",
+            "impact_and_reuse"
+          ]
+        },
+        "references": {
+          "reason": "Chosen music and voice are retained creative authorities; this test uses the written integration direction, not a fresh listening claim.",
+          "requirements": [
+            "attention_budget",
+            "word_proof",
+            "impact_and_reuse"
+          ]
+        },
+        "task": {
+          "reason": "Use the current scoped knowledge packet; this is not a new motion/render task.",
+          "requirements": [
+            "attention_budget",
+            "word_proof",
+            "impact_and_reuse"
+          ]
+        }
+      },
+      "derivations": {
+        "attention_budget": {
+          "beats": [
+            "hook",
+            "speech",
+            "release"
+          ],
+          "derivation": "Voice, readable quote and melodic lead compete for attention; a fixed duck amount cannot decide the hierarchy.",
+          "lenses": [
+            "story_performance",
+            "sound_music",
+            "camera_editorial"
+          ],
+          "origin": "craft_inference",
+          "priority": "quality_floor",
+          "reference_ids": [
+            "cutoff-direction"
+          ]
+        },
+        "impact_and_reuse": {
+          "beats": [
+            "hook",
+            "release"
+          ],
+          "derivation": "Punch and exact event placement must survive retiming without rerendering the scene.",
+          "lenses": [
+            "sound_music",
+            "production_reuse",
+            "animation_physics"
+          ],
+          "origin": "craft_inference",
+          "priority": "quality_floor",
+          "reference_ids": [
+            "cutoff-direction"
+          ]
+        },
+        "word_proof": {
+          "beats": [
+            "speech"
+          ],
+          "derivation": "The important claim relies on races and impeccable being understandable, not merely on average voice loudness.",
+          "lenses": [
+            "sound_music"
+          ],
+          "origin": "craft_inference",
+          "priority": "quality_floor",
+          "reference_ids": [
+            "cutoff-direction"
+          ]
+        }
+      },
+      "knowledge_mapping": {
+        "anticipation": {
+          "reason": "Write audience intent and distraction hypotheses before a defect list. Test them against actual evidence, seek counterevidence and unlisted problems, record observations and corrections. Director feedback calibrates fallible judgment; it is not the primary defect detector.224: test opening hook, pacing and causal geography, not merely fit duration.248 adopts larger-than-life impact for The Martials and records it as a Director preference: name the extraordinary character-specific beat and its preparation/payoff; use contrast and believability, not constant maximum speed/loudness or unapproved powers. 249 requires a shot/beat performance and believability brief before execution: apply relevant expertise lenses, predict audience-visible anatomy/contact/physical-response failures, and bind each critical behavior to strategy, interfaces, early proof and observable failure conditions. Cover each beat or explicit inheritance; consult docs/planning/SHOT_BEAT_QUALITY_BRIEF.md. Roles are perspectives, not an org chart. Automatic brief completeness and perceptual judgment are not implemented.",
+          "requirements": [
+            "attention_budget",
+            "word_proof",
+            "impact_and_reuse"
+          ]
+        },
+        "au_reuse": {
+          "reason": "AU16: package exact accepted versions, dependencies, rights, editable recipe and tested-use limits; verify remote restore and portable dependency closure. Separate foundation from adaptation, native jobs from work/waits and unknown cost; capture issue/review IDs before next sequence. No prediction from145h divided by20s.",
+          "requirements": [
+            "attention_budget",
+            "word_proof",
+            "impact_and_reuse"
+          ]
+        },
+        "au_review": {
+          "reason": "AU13/251: distinguish requirement, retrieval, method, evidence and judgment failures. Compare known rejected AND accepted controls, record specific observations and uncertainty, and test omitted/failed evidence blocking. Earlier falsification and fewer repeat escapes matter more than fewer messages. Calibration is familiar non-independent evidence, not universal judgment.",
+          "requirements": [
+            "attention_budget",
+            "word_proof",
+            "impact_and_reuse"
+          ]
+        },
+        "authority": {
+          "reason": "Confirm scope and genuine Director decisions. No new spend, installs, specialists, publication or protected creative changes by inference. Routine in-scope technical fixes remain agent-owned. Astra is top tier; failed method needs reassessment, not a nonexistent higher model.",
+          "requirements": [
+            "attention_budget",
+            "word_proof",
+            "impact_and_reuse"
+          ]
+        },
+        "current_state": {
+          "reason": "Read CURRENT_PRODUCTION_STATE.md:253 exact Pashtun20s provisional acceptance stays protected; strict replay FAIL and final release/rights remain separate. Protection/calibration255 complete. Director256-257 authorizes Sikh-only sequence development, continuous turban/cover, personal recognition and nonrecurring leader; action before music. Director260 accepts illustrated portrait v03; read SERIES_01_SIKH_BASELINE_V01.md before Sikh identity/cloth work. Broad natural beard and rugged face govern; rejected v01/v02 do not. No literal pixel matching, native acceptance or incidental background/cloth-topology approval. Native257 remains BLOCK. Unknown domains still block; no paid calls/publication by inference. Director320 narrows current correction to the contiguous Nihang/rear and crowd passage with one-second handles.319 supporting performance/look is rejected; crowd attention remains on the rider. Director313 is the direct AV judge; source/frame checks cannot confer playback or production acceptance.",
+          "requirements": [
+            "attention_budget",
+            "word_proof",
+            "impact_and_reuse"
+          ]
+        },
+        "economics": {
+          "reason": "Track active effort, waits, jobs, actual provider spend and usable output separately; leave unavailable tokens/cost null. Do not add overlapping process/activity time. Diagnostic investment is not repeatable unit cost. Advance the trailer and two episodes, not tooling or polish for its own sake.",
+          "requirements": [
+            "attention_budget",
+            "word_proof",
+            "impact_and_reuse"
+          ]
+        },
+        "retrieval": {
+          "reason": "Inventory pinned corpus, freeze independently read applicability sets, test held-out/cross-discipline/stale/conflicting cases and actual application. Mandatory constraints bypass search. Ingestion is not approval; preserve gaps. No claim all742 turns/588 candidates reconciled; one source is truncated. Manual audit remains safety net.",
+          "requirements": [
+            "attention_budget",
+            "word_proof",
+            "impact_and_reuse"
+          ]
+        },
+        "reuse_envelope": {
+          "reason": "317: evaluate reuse before custom construction without forcing it; compare total adaptation/revalidation cost and quality. Extend existing provenance with source/version/rights/dependencies, tested conditions, failures/evidence and measured-or-unknown effort. Run resource_manifest for the requested use; missing/stale evidence, untested conditions, unresolved rights or open failures block qualification. Assessed resources stay useful but unqualified. Manually verify applicability, rights and perceptual truth; a valid record is not an artistic pass. No new database, installation, spend or upload.",
+          "requirements": [
+            "attention_budget",
+            "word_proof",
+            "impact_and_reuse"
+          ]
+        },
+        "stopping": {
+          "reason": "Meet the high quality floor first;248 clarifies efficiency means progressively more reliable and economical achievement of that bar, not lowering it. Then weigh visible benefit, dramatic value, reuse and regression/opportunity cost. Re-rank residuals after larger fixes. Prior tolerance is not acceptance. Record deferred details and reopening triggers; no arbitrary timer waives quality or creates handoff.",
+          "requirements": [
+            "attention_budget",
+            "word_proof",
+            "impact_and_reuse"
+          ]
+        },
+        "strategy": {
+          "reason": "Read current strategy; name outcome, quality floor, interfaces, assumptions, earliest integrated proof, resources, reuse and replan/exit. Repeated compensating patches trigger method reassessment, not renamed passes.",
+          "requirements": [
+            "attention_budget",
+            "word_proof",
+            "impact_and_reuse"
+          ]
+        },
+        "versioning": {
+          "reason": "Bind actual inputs, accepted scope, source hashes and dependencies. Revalidate affected checks after camera/motion/version changes. Preserve originals and failed evidence. A local commit is not native-media backup; a reopened scene is not proof of portable or general reuse.",
+          "requirements": [
+            "attention_budget",
+            "word_proof",
+            "impact_and_reuse"
+          ]
+        },
+        "visual_gate": {
+          "reason": "Compare the complete claimed result to accepted references and required use, seeking known and new failures plus adjacent regressions. Use explicit failing-shape controls before expensive integration; contact targets and material cannot substitute for the required silhouette. An occluded region is NOT_RUN until visibly inspected. Actual motion/audio where applicable; distinguish frame inspection from playback. Tests, better-than-before and source hashes do not establish perceptual PASS. Known FAIL/NOT_RUN blocks handoff.",
+          "requirements": [
+            "attention_budget",
+            "word_proof",
+            "impact_and_reuse"
+          ]
+        }
+      },
+      "requirements": [
+        {
+          "criterion": "Key words disappear, score seems switched off, or reading the quote sacrifices the action.",
+          "director_av": false,
+          "id": "attention_budget",
+          "modes": [
+            "timed_images"
+          ]
+        },
+        {
+          "criterion": "A listener cannot repeat the central words or must strain while music seems fine.",
+          "director_av": false,
+          "id": "word_proof",
+          "modes": [
+            "timed_images"
+          ]
+        },
+        {
+          "criterion": "Impact lacks weight, slips from contact or masks speech.",
+          "director_av": false,
+          "id": "impact_and_reuse",
+          "modes": [
+            "timed_images"
+          ]
+        }
+      ]
+    },
+    "GROUNDING": {
+      "knowledge_uses": {
+        "anticipation": "Write audience intent and distraction hypotheses before a defect list. Test them against actual evidence, seek counterevidence and unlisted problems, record observations and corrections. Director feedback calibrates fallible judgment; it is not the primary defect detector.224: test opening hook, pacing and causal geography, not merely fit duration.248 adopts larger-than-life impact for The Martials and records it as a Director preference: name the extraordinary character-specific beat and its preparation/payoff; use contrast and believability, not constant maximum speed/loudness or unapproved powers. 249 requires a shot/beat performance and believability brief before execution: apply relevant expertise lenses, predict audience-visible anatomy/contact/physical-response failures, and bind each critical behavior to strategy, interfaces, early proof and observable failure conditions. Cover each beat or explicit inheritance; consult docs/planning/SHOT_BEAT_QUALITY_BRIEF.md. Roles are perspectives, not an org chart. Automatic brief completeness and perceptual judgment are not implemented.",
+        "au_reuse": "AU16: package exact accepted versions, dependencies, rights, editable recipe and tested-use limits; verify remote restore and portable dependency closure. Separate foundation from adaptation, native jobs from work/waits and unknown cost; capture issue/review IDs before next sequence. No prediction from145h divided by20s.",
+        "au_review": "AU13/251: distinguish requirement, retrieval, method, evidence and judgment failures. Compare known rejected AND accepted controls, record specific observations and uncertainty, and test omitted/failed evidence blocking. Earlier falsification and fewer repeat escapes matter more than fewer messages. Calibration is familiar non-independent evidence, not universal judgment.",
+        "authority": "Confirm scope and genuine Director decisions. No new spend, installs, specialists, publication or protected creative changes by inference. Routine in-scope technical fixes remain agent-owned. Astra is top tier; failed method needs reassessment, not a nonexistent higher model.",
+        "current_state": "Read CURRENT_PRODUCTION_STATE.md:253 exact Pashtun20s provisional acceptance stays protected; strict replay FAIL and final release/rights remain separate. Protection/calibration255 complete. Director256-257 authorizes Sikh-only sequence development, continuous turban/cover, personal recognition and nonrecurring leader; action before music. Director260 accepts illustrated portrait v03; read SERIES_01_SIKH_BASELINE_V01.md before Sikh identity/cloth work. Broad natural beard and rugged face govern; rejected v01/v02 do not. No literal pixel matching, native acceptance or incidental background/cloth-topology approval. Native257 remains BLOCK. Unknown domains still block; no paid calls/publication by inference. Director320 narrows current correction to the contiguous Nihang/rear and crowd passage with one-second handles.319 supporting performance/look is rejected; crowd attention remains on the rider. Director313 is the direct AV judge; source/frame checks cannot confer playback or production acceptance.",
+        "economics": "Track active effort, waits, jobs, actual provider spend and usable output separately; leave unavailable tokens/cost null. Do not add overlapping process/activity time. Diagnostic investment is not repeatable unit cost. Advance the trailer and two episodes, not tooling or polish for its own sake.",
+        "retrieval": "Inventory pinned corpus, freeze independently read applicability sets, test held-out/cross-discipline/stale/conflicting cases and actual application. Mandatory constraints bypass search. Ingestion is not approval; preserve gaps. No claim all742 turns/588 candidates reconciled; one source is truncated. Manual audit remains safety net.",
+        "reuse_envelope": "317: evaluate reuse before custom construction without forcing it; compare total adaptation/revalidation cost and quality. Extend existing provenance with source/version/rights/dependencies, tested conditions, failures/evidence and measured-or-unknown effort. Run resource_manifest for the requested use; missing/stale evidence, untested conditions, unresolved rights or open failures block qualification. Assessed resources stay useful but unqualified. Manually verify applicability, rights and perceptual truth; a valid record is not an artistic pass. No new database, installation, spend or upload.",
+        "stopping": "Meet the high quality floor first;248 clarifies efficiency means progressively more reliable and economical achievement of that bar, not lowering it. Then weigh visible benefit, dramatic value, reuse and regression/opportunity cost. Re-rank residuals after larger fixes. Prior tolerance is not acceptance. Record deferred details and reopening triggers; no arbitrary timer waives quality or creates handoff.",
+        "strategy": "Read current strategy; name outcome, quality floor, interfaces, assumptions, earliest integrated proof, resources, reuse and replan/exit. Repeated compensating patches trigger method reassessment, not renamed passes.",
+        "versioning": "Bind actual inputs, accepted scope, source hashes and dependencies. Revalidate affected checks after camera/motion/version changes. Preserve originals and failed evidence. A local commit is not native-media backup; a reopened scene is not proof of portable or general reuse.",
+        "visual_gate": "Compare the complete claimed result to accepted references and required use, seeking known and new failures plus adjacent regressions. Use explicit failing-shape controls before expensive integration; contact targets and material cannot substitute for the required silhouette. An occluded region is NOT_RUN until visibly inspected. Actual motion/audio where applicable; distinguish frame inspection from playback. Tests, better-than-before and source hashes do not establish perceptual PASS. Known FAIL/NOT_RUN blocks handoff."
+      },
+      "reconciliation": "Current328/329/321 sources supplement the bounded pilot. Author knows later feedback. Do not claim prevented Director inputs or universal retrieval.",
+      "unresolved": [],
+      "uses": {
+        "constraints": {
+          "disposition": "apply",
+          "implication": "No media, live model, spend or approval follows from this planning reconstruction.",
+          "reason": "No media, live model, spend or approval follows from this planning reconstruction."
+        },
+        "controls": {
+          "disposition": "apply",
+          "implication": "321 shows correct requirements can coexist with a failed pose method and generous review; require a discriminating integrated proof.",
+          "reason": "321 shows correct requirements can coexist with a failed pose method and generous review; require a discriminating integrated proof."
+        },
+        "direction": {
+          "disposition": "apply",
+          "implication": "Keep the larger-than-life music and punchy horse opening while making the private officer narration work with it.",
+          "reason": "Keep the larger-than-life music and punchy horse opening while making the private officer narration work with it."
+        },
+        "director_preferences": {
+          "disposition": "apply",
+          "implication": "Preserve larger-than-life readable action and efficient quality; routine technical corrections stay internal, creative authority stays Director-owned.",
+          "reason": "Preserve larger-than-life readable action and efficient quality; routine technical corrections stay internal, creative authority stays Director-owned."
+        },
+        "film_language": {
+          "disposition": "apply",
+          "implication": "Judge intended shot at the accepted co-star quality floor, not against the rejected predecessor; illustrated is not a waiver for primitive forms.",
+          "reason": "Judge intended shot at the accepted co-star quality floor, not against the rejected predecessor; illustrated is not a waiver for primitive forms."
+        },
+        "learnings": {
+          "disposition": "apply",
+          "implication": "Could have caught word masking and disruptive ducking in an integrated proof. The later decision to stop narration at impeccable and use a specific ramp remains a legitimate Director choice, not a supposedly avoidable input.",
+          "reason": "Could have caught word masking and disruptive ducking in an integrated proof. The later decision to stop narration at impeccable and use a specific ramp remains a legitimate Director choice, not a supposedly avoidable input."
+        },
+        "references": {
+          "disposition": "apply",
+          "implication": "Chosen music and voice are retained creative authorities; this test uses the written integration direction, not a fresh listening claim.",
+          "reason": "Chosen music and voice are retained creative authorities; this test uses the written integration direction, not a fresh listening claim."
+        },
+        "task": {
+          "disposition": "apply",
+          "implication": "Use the current scoped knowledge packet; this is not a new motion/render task.",
+          "reason": "Use the current scoped knowledge packet; this is not a new motion/render task."
+        }
+      }
+    }
+  },
+  "planning_feedback": [],
+  "expert_instruction": "Choose one integrated method and ordered earliest proof from the frozen requirements. Resolve interfaces; distinguish observed capability from hypotheses; explain alternatives and failure triggers. Do not silently change requirements or authority.",
+  "expert_contract": {
+    "version": 1,
+    "lenses": [
+      "story_performance",
+      "camera_editorial",
+      "animation_physics",
+      "anatomy_contact",
+      "effects_environment",
+      "sound_music",
+      "production_reuse"
+    ],
+    "beat_intents": "Copy trusted direction.beat_intents exactly",
+    "beats": [
+      "id",
+      "audience_read",
+      "framing",
+      "lenses: every lens -> {applies:boolean, why:string, requirements:[requirement IDs]}"
+    ],
+    "realizations": "Every requirement ID -> {beats, lenses, derivation, method, interfaces, early_proof, failure_condition, reopen_when, priority, origin, reference_ids}",
+    "priority": [
+      "quality_floor",
+      "dramatic",
+      "optional"
+    ],
+    "origin": [
+      "director",
+      "reference",
+      "craft_inference"
+    ],
+    "challenge": [
+      "plan_digest: trusted parent hashes after reading this challenge",
+      "intent_coverage: every beat ID -> {reason, requirements}",
+      "cross_discipline_conflicts",
+      "omission_probe",
+      "scope_tradeoff",
+      "open_issues"
+    ],
+    "review_boundary": "Fresh review repeats original intent scan; planning_gaps veto even otherwise passing checks"
+  }
+}

@@ -1,0 +1,458 @@
+{
+  "input_digest": "c6ed30488920e1af70a647c4d66f46a6d7d12c44afd01aaddaf39f43a801d019",
+  "outcome": "complete",
+  "artifact": {
+    "brief": {
+      "intent": "Horse-racing energy: almost flying, with an aggressive riding posture.",
+      "protected": [
+        "Existing creative authority; no production change in this evaluation"
+      ],
+      "references": [
+        {
+          "id": "cutoff-direction",
+          "role": "directional_design",
+          "binding": {
+            "path": "results/workflow328/evaluation/gallop_coupling/prior-input.json",
+            "sha256": "c69f91ab39cb275fa4473f81323abdfd577629e7c589ba46a62a037c5549382e"
+          },
+          "authority": "Recorded Director input; reconstruction author already knows subsequent feedback",
+          "scope": "Original intent for retrospective planning only, not a media identity reference",
+          "fidelity": "Director motion intention, not a demand to copy a specific jockey or fabricate measured biomechanics.",
+          "allowed_variation": "Agent-owned method hypotheses",
+          "not_authority": "No production acceptance, exact timing or later creative approval inferred",
+          "aspects": [
+            {
+              "id": "intent",
+              "instruction": "Horse-racing energy: almost flying, with an aggressive riding posture.",
+              "requirements": [
+                "distributed_response",
+                "secondary_motion",
+                "coverage_exposes",
+                "weight_sound"
+              ]
+            }
+          ]
+        }
+      ],
+      "requirements": [
+        {
+          "id": "distributed_response",
+          "criterion": "Neck and chest move as one rigid block, head floats independently or hands lose contact.",
+          "modes": [
+            "timed_images"
+          ],
+          "director_av": false
+        },
+        {
+          "id": "secondary_motion",
+          "criterion": "Loose elements freeze, uniformly oscillate, penetrate hands or drift without rooted attachment.",
+          "modes": [
+            "timed_images"
+          ],
+          "director_av": false
+        },
+        {
+          "id": "coverage_exposes",
+          "criterion": "Wide-only proof is used to admit close coverage.",
+          "modes": [
+            "timed_images"
+          ],
+          "director_av": false
+        },
+        {
+          "id": "weight_sound",
+          "criterion": "Tinny or masked impact weakens racing energy; no audio evidence must remain NOT_RUN.",
+          "modes": [
+            "timed_images"
+          ],
+          "director_av": false
+        }
+      ],
+      "expert_plan": {
+        "version": 1,
+        "beat_intents": {
+          "gallop": "Feel forceful speed through a living rider and horse"
+        },
+        "beats": [
+          {
+            "id": "gallop",
+            "audience_read": "Feel forceful speed through a living rider and horse",
+            "framing": "Test intended close face/torso framing as well as whole horse silhouette",
+            "lenses": {
+              "story_performance": {
+                "applies": true,
+                "requirements": [
+                  "distributed_response"
+                ],
+                "why": "Aggressive posture is not a frozen pose. A balanced rider absorbs a moving support while maintaining attention."
+              },
+              "camera_editorial": {
+                "applies": true,
+                "requirements": [
+                  "coverage_exposes"
+                ],
+                "why": "A distant convincing silhouette does not qualify the same rig for a face reveal."
+              },
+              "animation_physics": {
+                "applies": true,
+                "requirements": [
+                  "distributed_response",
+                  "secondary_motion"
+                ],
+                "why": "Aggressive posture is not a frozen pose. A balanced rider absorbs a moving support while maintaining attention. Loose hair, mane, tail and cloth are highly visible indicators of speed and inertia."
+              },
+              "anatomy_contact": {
+                "applies": true,
+                "requirements": [
+                  "distributed_response"
+                ],
+                "why": "Aggressive posture is not a frozen pose. A balanced rider absorbs a moving support while maintaining attention."
+              },
+              "effects_environment": {
+                "applies": true,
+                "requirements": [
+                  "secondary_motion"
+                ],
+                "why": "Loose hair, mane, tail and cloth are highly visible indicators of speed and inertia."
+              },
+              "sound_music": {
+                "applies": true,
+                "requirements": [
+                  "weight_sound"
+                ],
+                "why": "Perceived power depends on timing and weight, not only visual speed."
+              },
+              "production_reuse": {
+                "applies": true,
+                "requirements": [
+                  "coverage_exposes"
+                ],
+                "why": "A distant convincing silhouette does not qualify the same rig for a face reveal."
+              }
+            }
+          }
+        ],
+        "realizations": {
+          "distributed_response": {
+            "beats": [
+              "gallop"
+            ],
+            "lenses": [
+              "animation_physics",
+              "anatomy_contact",
+              "story_performance"
+            ],
+            "derivation": "Aggressive posture is not a frozen pose. A balanced rider absorbs a moving support while maintaining attention.",
+            "method": "Give pelvis saddle-follow, torso damping, neck counter-motion, gaze stabilization and yielding elbows a common stride driver with distinct response. Avoid independent random shaking.",
+            "interfaces": [
+              "saddle/pelvis",
+              "torso/neck/head",
+              "hands/reins"
+            ],
+            "early_proof": "Short intended-speed cycle in close framing plus support/contact overlays.",
+            "failure_condition": "Neck and chest move as one rigid block, head floats independently or hands lose contact.",
+            "reopen_when": "Camera, source authority, performance, contacts or coupled assets change; previous evidence no longer covers the shot.",
+            "priority": "quality_floor",
+            "origin": "craft_inference",
+            "reference_ids": [
+              "cutoff-direction"
+            ]
+          },
+          "secondary_motion": {
+            "beats": [
+              "gallop"
+            ],
+            "lenses": [
+              "effects_environment",
+              "animation_physics"
+            ],
+            "derivation": "Loose hair, mane, tail and cloth are highly visible indicators of speed and inertia.",
+            "method": "Drive delayed secondary response from acceleration, stride and wind; use attached roots, varied clump response and collision checks.",
+            "interfaces": [
+              "hair/scalp",
+              "mane/hands",
+              "tail/horse",
+              "cloth/body"
+            ],
+            "early_proof": "Actual-shot loop with near and far hanging elements visible through acceleration and steady stride.",
+            "failure_condition": "Loose elements freeze, uniformly oscillate, penetrate hands or drift without rooted attachment.",
+            "reopen_when": "Camera, source authority, performance, contacts or coupled assets change; previous evidence no longer covers the shot.",
+            "priority": "quality_floor",
+            "origin": "craft_inference",
+            "reference_ids": [
+              "cutoff-direction"
+            ]
+          },
+          "coverage_exposes": {
+            "beats": [
+              "gallop"
+            ],
+            "lenses": [
+              "camera_editorial",
+              "production_reuse"
+            ],
+            "derivation": "A distant convincing silhouette does not qualify the same rig for a face reveal.",
+            "method": "Declare framing envelope and reuse only within tested close and wide coverage; prioritize neck/contact proof before expensive surface polish.",
+            "interfaces": [
+              "camera/rig qualification",
+              "reuse/evidence"
+            ],
+            "early_proof": "Matched wide and face-reveal views of the same cycle.",
+            "failure_condition": "Wide-only proof is used to admit close coverage.",
+            "reopen_when": "Camera, source authority, performance, contacts or coupled assets change; previous evidence no longer covers the shot.",
+            "priority": "quality_floor",
+            "origin": "craft_inference",
+            "reference_ids": [
+              "cutoff-direction"
+            ]
+          },
+          "weight_sound": {
+            "beats": [
+              "gallop"
+            ],
+            "lenses": [
+              "sound_music"
+            ],
+            "derivation": "Perceived power depends on timing and weight, not only visual speed.",
+            "method": "Reserve hoof-contact timing and test transient/body impact against the music without changing gait for a sample.",
+            "interfaces": [
+              "hoof contacts/sound events",
+              "music/impact masking"
+            ],
+            "early_proof": "Later intended playback mix with contact sync and weight judged by Director.",
+            "failure_condition": "Tinny or masked impact weakens racing energy; no audio evidence must remain NOT_RUN.",
+            "reopen_when": "Camera, source authority, performance, contacts or coupled assets change; previous evidence no longer covers the shot.",
+            "priority": "quality_floor",
+            "origin": "craft_inference",
+            "reference_ids": [
+              "cutoff-direction"
+            ]
+          }
+        },
+        "challenge": {
+          "plan_digest": "e1aa1f121e77de73d2e566f32c228eb4464b4eadfd3f131c25e76620a3b28959",
+          "open_issues": [],
+          "intent_coverage": {
+            "gallop": {
+              "reason": "Feel forceful speed through a living rider and horse",
+              "requirements": [
+                "distributed_response",
+                "secondary_motion",
+                "coverage_exposes",
+                "weight_sound"
+              ]
+            }
+          },
+          "cross_discipline_conflicts": "Head stabilization must not erase neck response. Probe hands, clumps and cloth interfaces, not only center-of-mass motion. Do not spend on invisible micro-detail before close-framing support works.",
+          "omission_probe": "Head stabilization must not erase neck response. Probe hands, clumps and cloth interfaces, not only center-of-mass motion. Do not spend on invisible micro-detail before close-framing support works.",
+          "scope_tradeoff": "Early representative proof before polish. No exact later Director preference is made mandatory; this is a planning hypothesis, not approved scene dispatch."
+        }
+      },
+      "schema": 1,
+      "route": "production",
+      "audience_result": "One coordinated support/response model can supply readable speed while keeping her self-possession, rather than adding unrelated wiggles after each complaint.",
+      "strategy": "Give pelvis saddle-follow, torso damping, neck counter-motion, gaze stabilization and yielding elbows a common stride driver with distinct response. Avoid independent random shaking.; Drive delayed secondary response from acceleration, stride and wind; use attached roots, varied clump response and collision checks.; Declare framing envelope and reuse only within tested close and wide coverage; prioritize neck/contact proof before expensive surface polish.; Reserve hoof-contact timing and test transient/body impact against the music without changing gait for a sample.",
+      "early_proof": "Short intended-speed cycle in close framing plus support/contact overlays.; Actual-shot loop with near and far hanging elements visible through acceleration and steady stride.; Matched wide and face-reveal views of the same cycle.; Later intended playback mix with contact sync and weight judged by Director.",
+      "scope": "Known-history offline planning reconstruction",
+      "exclusions": "No execution, assets, model calls or independent quality claim",
+      "open_decisions": [],
+      "offline_only": true,
+      "source_bindings": {
+        "direction": {
+          "path": "results/workflow328/evaluation/gallop_coupling/prior-input.json",
+          "sha256": "c69f91ab39cb275fa4473f81323abdfd577629e7c589ba46a62a037c5549382e"
+        },
+        "learnings": {
+          "path": "docs/knowledge/EXPERT_LENS_PLANNING_328.md",
+          "sha256": "71b7c3b34557cfdc297b223f8313783055ce12449e08217d55c4a6a9e6d627c7"
+        },
+        "film_language": {
+          "path": "docs/planning/SERIES_01_ART_DIRECTION_C.md",
+          "sha256": "3c6e6d005123c8e68bf15ad06a64edf3cb9e2b410841f6878be255d7883cd0e2"
+        },
+        "director_preferences": {
+          "path": "docs/planning/PLANNING_SUBSTAGES_329.md",
+          "sha256": "79613cfa71e16858aa9f37998788834c53f27d7a8938a097a817bac56b0e08fc"
+        },
+        "references": {
+          "path": "results/workflow328/evaluation/gallop_coupling/prior-input.json",
+          "sha256": "c69f91ab39cb275fa4473f81323abdfd577629e7c589ba46a62a037c5549382e"
+        },
+        "controls": {
+          "path": "docs/knowledge/NIHANG_REARING_REVIEW_FAILURE_321.md",
+          "sha256": "36d8cbec705017972bb1a80b5b0f7fe8af7b5c17d0669760d5b35ffbf48b1157"
+        },
+        "constraints": {
+          "path": "results/workflow330/STRATEGY.md",
+          "sha256": "e044e8303d2f300d34cf53db7944d1553ca8dd083937d393a4b020e116ce22f2"
+        },
+        "task": {
+          "path": "results/workflow330/task.json",
+          "sha256": "be0c741b7bdf0920efc82d611cc0a0532242b5140eab83f40408f945d9badf5a"
+        }
+      },
+      "knowledge_task": "results/workflow330/task.json",
+      "knowledge_digest": "51b62f0e114cb4c0246d4cf5169606fbef025cfff14e0e5d89043610449af40b",
+      "knowledge_mapping": {
+        "reuse_envelope": {
+          "requirements": [
+            "distributed_response",
+            "secondary_motion",
+            "coverage_exposes",
+            "weight_sound"
+          ],
+          "reason": "317: evaluate reuse before custom construction without forcing it; compare total adaptation/revalidation cost and quality. Extend existing provenance with source/version/rights/dependencies, tested conditions, failures/evidence and measured-or-unknown effort. Run resource_manifest for the requested use; missing/stale evidence, untested conditions, unresolved rights or open failures block qualification. Assessed resources stay useful but unqualified. Manually verify applicability, rights and perceptual truth; a valid record is not an artistic pass. No new database, installation, spend or upload."
+        },
+        "authority": {
+          "requirements": [
+            "distributed_response",
+            "secondary_motion",
+            "coverage_exposes",
+            "weight_sound"
+          ],
+          "reason": "Confirm scope and genuine Director decisions. No new spend, installs, specialists, publication or protected creative changes by inference. Routine in-scope technical fixes remain agent-owned. Astra is top tier; failed method needs reassessment, not a nonexistent higher model."
+        },
+        "strategy": {
+          "requirements": [
+            "distributed_response",
+            "secondary_motion",
+            "coverage_exposes",
+            "weight_sound"
+          ],
+          "reason": "Read current strategy; name outcome, quality floor, interfaces, assumptions, earliest integrated proof, resources, reuse and replan/exit. Repeated compensating patches trigger method reassessment, not renamed passes."
+        },
+        "visual_gate": {
+          "requirements": [
+            "distributed_response",
+            "secondary_motion",
+            "coverage_exposes",
+            "weight_sound"
+          ],
+          "reason": "Compare the complete claimed result to accepted references and required use, seeking known and new failures plus adjacent regressions. Use explicit failing-shape controls before expensive integration; contact targets and material cannot substitute for the required silhouette. An occluded region is NOT_RUN until visibly inspected. Actual motion/audio where applicable; distinguish frame inspection from playback. Tests, better-than-before and source hashes do not establish perceptual PASS. Known FAIL/NOT_RUN blocks handoff."
+        },
+        "anticipation": {
+          "requirements": [
+            "distributed_response",
+            "secondary_motion",
+            "coverage_exposes",
+            "weight_sound"
+          ],
+          "reason": "Write audience intent and distraction hypotheses before a defect list. Test them against actual evidence, seek counterevidence and unlisted problems, record observations and corrections. Director feedback calibrates fallible judgment; it is not the primary defect detector.224: test opening hook, pacing and causal geography, not merely fit duration.248 adopts larger-than-life impact for The Martials and records it as a Director preference: name the extraordinary character-specific beat and its preparation/payoff; use contrast and believability, not constant maximum speed/loudness or unapproved powers. 249 requires a shot/beat performance and believability brief before execution: apply relevant expertise lenses, predict audience-visible anatomy/contact/physical-response failures, and bind each critical behavior to strategy, interfaces, early proof and observable failure conditions. Cover each beat or explicit inheritance; consult docs/planning/SHOT_BEAT_QUALITY_BRIEF.md. Roles are perspectives, not an org chart. Automatic brief completeness and perceptual judgment are not implemented."
+        },
+        "stopping": {
+          "requirements": [
+            "distributed_response",
+            "secondary_motion",
+            "coverage_exposes",
+            "weight_sound"
+          ],
+          "reason": "Meet the high quality floor first;248 clarifies efficiency means progressively more reliable and economical achievement of that bar, not lowering it. Then weigh visible benefit, dramatic value, reuse and regression/opportunity cost. Re-rank residuals after larger fixes. Prior tolerance is not acceptance. Record deferred details and reopening triggers; no arbitrary timer waives quality or creates handoff."
+        },
+        "versioning": {
+          "requirements": [
+            "distributed_response",
+            "secondary_motion",
+            "coverage_exposes",
+            "weight_sound"
+          ],
+          "reason": "Bind actual inputs, accepted scope, source hashes and dependencies. Revalidate affected checks after camera/motion/version changes. Preserve originals and failed evidence. A local commit is not native-media backup; a reopened scene is not proof of portable or general reuse."
+        },
+        "economics": {
+          "requirements": [
+            "distributed_response",
+            "secondary_motion",
+            "coverage_exposes",
+            "weight_sound"
+          ],
+          "reason": "Track active effort, waits, jobs, actual provider spend and usable output separately; leave unavailable tokens/cost null. Do not add overlapping process/activity time. Diagnostic investment is not repeatable unit cost. Advance the trailer and two episodes, not tooling or polish for its own sake."
+        },
+        "retrieval": {
+          "requirements": [
+            "distributed_response",
+            "secondary_motion",
+            "coverage_exposes",
+            "weight_sound"
+          ],
+          "reason": "Inventory pinned corpus, freeze independently read applicability sets, test held-out/cross-discipline/stale/conflicting cases and actual application. Mandatory constraints bypass search. Ingestion is not approval; preserve gaps. No claim all742 turns/588 candidates reconciled; one source is truncated. Manual audit remains safety net."
+        },
+        "current_state": {
+          "requirements": [
+            "distributed_response",
+            "secondary_motion",
+            "coverage_exposes",
+            "weight_sound"
+          ],
+          "reason": "Read CURRENT_PRODUCTION_STATE.md:253 exact Pashtun20s provisional acceptance stays protected; strict replay FAIL and final release/rights remain separate. Protection/calibration255 complete. Director256-257 authorizes Sikh-only sequence development, continuous turban/cover, personal recognition and nonrecurring leader; action before music. Director260 accepts illustrated portrait v03; read SERIES_01_SIKH_BASELINE_V01.md before Sikh identity/cloth work. Broad natural beard and rugged face govern; rejected v01/v02 do not. No literal pixel matching, native acceptance or incidental background/cloth-topology approval. Native257 remains BLOCK. Unknown domains still block; no paid calls/publication by inference. Director320 narrows current correction to the contiguous Nihang/rear and crowd passage with one-second handles.319 supporting performance/look is rejected; crowd attention remains on the rider. Director313 is the direct AV judge; source/frame checks cannot confer playback or production acceptance."
+        },
+        "au_reuse": {
+          "requirements": [
+            "distributed_response",
+            "secondary_motion",
+            "coverage_exposes",
+            "weight_sound"
+          ],
+          "reason": "AU16: package exact accepted versions, dependencies, rights, editable recipe and tested-use limits; verify remote restore and portable dependency closure. Separate foundation from adaptation, native jobs from work/waits and unknown cost; capture issue/review IDs before next sequence. No prediction from145h divided by20s."
+        },
+        "au_review": {
+          "requirements": [
+            "distributed_response",
+            "secondary_motion",
+            "coverage_exposes",
+            "weight_sound"
+          ],
+          "reason": "AU13/251: distinguish requirement, retrieval, method, evidence and judgment failures. Compare known rejected AND accepted controls, record specific observations and uncertainty, and test omitted/failed evidence blocking. Earlier falsification and fewer repeat escapes matter more than fewer messages. Calibration is familiar non-independent evidence, not universal judgment."
+        }
+      },
+      "capabilities": {
+        "timed_images": true,
+        "authority": true,
+        "direct_audio": false,
+        "direct_motion": false,
+        "technical": true,
+        "image": true
+      },
+      "reference_plan": {
+        "cutoff-direction": {
+          "reference_digest": "55ae44cee09385de576193183004122affa038aa656232b819129ce13da6eb9f",
+          "application": "Head stabilization must not erase neck response. Probe hands, clumps and cloth interfaces, not only center-of-mass motion. Do not spend on invisible micro-detail before close-framing support works."
+        }
+      }
+    },
+    "method_choice": {
+      "chosen": "Give pelvis saddle-follow, torso damping, neck counter-motion, gaze stabilization and yielding elbows a common stride driver with distinct response. Avoid independent random shaking.; Drive delayed secondary response from acceleration, stride and wind; use attached roots, varied clump response and collision checks.; Declare framing envelope and reuse only within tested close and wide coverage; prioritize neck/contact proof before expensive surface polish.; Reserve hoof-contact timing and test transient/body impact against the music without changing gait for a sample.",
+      "alternatives": "Reject isolated cosmetic repair or generic smoothing before coupled proof: Head stabilization must not erase neck response. Probe hands, clumps and cloth interfaces, not only center-of-mass motion. Do not spend on invisible micro-detail before close-framing support works.",
+      "evidence_status": "hypothesis",
+      "discriminating_test": "Short intended-speed cycle in close framing plus support/contact overlays.; Actual-shot loop with near and far hanging elements visible through acceleration and steady stride.; Matched wide and face-reveal views of the same cycle.; Later intended playback mix with contact sync and weight judged by Director."
+    },
+    "steps": [
+      {
+        "id": "proof",
+        "depends_on": [],
+        "requirements": [
+          "distributed_response",
+          "secondary_motion",
+          "coverage_exposes",
+          "weight_sound"
+        ],
+        "kind": "proof",
+        "acceptance": "Short intended-speed cycle in close framing plus support/contact overlays.; Actual-shot loop with near and far hanging elements visible through acceleration and steady stride.; Matched wide and face-reveal views of the same cycle.; Later intended playback mix with contact sync and weight judged by Director."
+      },
+      {
+        "id": "integrate",
+        "depends_on": [
+          "proof"
+        ],
+        "requirements": [
+          "distributed_response",
+          "secondary_motion",
+          "coverage_exposes",
+          "weight_sound"
+        ],
+        "kind": "build",
+        "acceptance": "Original intent and intended framing must pass; direct AV stays pending."
+      }
+    ],
+    "resource_scope": "No execution, assets, model calls or independent quality claim",
+    "replan_triggers": "Neck and chest move as one rigid block, head floats independently or hands lose contact.; Loose elements freeze, uniformly oscillate, penetrate hands or drift without rooted attachment.; Wide-only proof is used to admit close coverage.; Tinny or masked impact weakens racing energy; no audio evidence must remain NOT_RUN."
+  }
+}

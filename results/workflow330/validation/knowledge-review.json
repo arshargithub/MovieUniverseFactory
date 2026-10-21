@@ -1,0 +1,418 @@
+{
+  "packet_digest": "51b62f0e114cb4c0246d4cf5169606fbef025cfff14e0e5d89043610449af40b",
+  "scope": "Offline planning/control qualification only",
+  "checks": [
+    {
+      "id": "reuse_envelope",
+      "status": "PASS",
+      "kind": "process",
+      "action_taken": "Extended the existing controller, knowledge gate and serial runner; no new service or native qualification.",
+      "observation": "Evidence supports bounded workflow claims, not semantic or production acceptance.",
+      "evidence": [
+        {
+          "path": "results/workflow330/validation/tests.txt",
+          "sha256": "dbd80bd9e2d8141e637c12b2ad0d2f0b28151b97483ca357a907b2d8d9958ac0"
+        },
+        {
+          "path": "results/workflow330/replay-qualified/report.json",
+          "sha256": "c505af7d066e7417d3e101eb0ad6fbd03787c281f31bad93b56187596dfbc364"
+        },
+        {
+          "path": "src/movie_factory/planning_pipeline.py",
+          "sha256": "ce5046b9e11bb0e1df804c10efd327e9c7543842f17d037f2d744841fad9ebe5"
+        },
+        {
+          "path": "tests/test_planning_pipeline.py",
+          "sha256": "8710b8e6a80e623583a4124dba5dcc92b74de84709a632ebdcd13b4277c41bb8"
+        },
+        {
+          "path": "docs/knowledge/PLANNING_PIPELINE_330.md",
+          "sha256": "513a6a55079bf670e6b8ccaff0491c805425f03e2a8f26950a588886a1e17d1e"
+        },
+        {
+          "path": "results/workflow330/NIHANG_PROSPECTIVE_BRIEF.md",
+          "sha256": "ec6570f24081644d996c6b12d602d10a229f28257c4d18e8c9b67f7cb28b0878"
+        }
+      ]
+    },
+    {
+      "id": "authority",
+      "status": "PASS",
+      "kind": "process",
+      "action_taken": "No live inference, paid call, render, install, upload or accepted-media mutation. Live cap and exhausted325 allowance unchanged.",
+      "observation": "Evidence supports bounded workflow claims, not semantic or production acceptance.",
+      "evidence": [
+        {
+          "path": "results/workflow330/validation/tests.txt",
+          "sha256": "dbd80bd9e2d8141e637c12b2ad0d2f0b28151b97483ca357a907b2d8d9958ac0"
+        },
+        {
+          "path": "results/workflow330/replay-qualified/report.json",
+          "sha256": "c505af7d066e7417d3e101eb0ad6fbd03787c281f31bad93b56187596dfbc364"
+        },
+        {
+          "path": "src/movie_factory/planning_pipeline.py",
+          "sha256": "ce5046b9e11bb0e1df804c10efd327e9c7543842f17d037f2d744841fad9ebe5"
+        },
+        {
+          "path": "tests/test_planning_pipeline.py",
+          "sha256": "8710b8e6a80e623583a4124dba5dcc92b74de84709a632ebdcd13b4277c41bb8"
+        },
+        {
+          "path": "docs/knowledge/PLANNING_PIPELINE_330.md",
+          "sha256": "513a6a55079bf670e6b8ccaff0491c805425f03e2a8f26950a588886a1e17d1e"
+        },
+        {
+          "path": "results/workflow330/NIHANG_PROSPECTIVE_BRIEF.md",
+          "sha256": "ec6570f24081644d996c6b12d602d10a229f28257c4d18e8c9b67f7cb28b0878"
+        }
+      ]
+    },
+    {
+      "id": "strategy",
+      "status": "PASS",
+      "kind": "process",
+      "action_taken": "Critique preceded implementation. Four enforced planning stages, source excerpts, dependency order and targeted repair.",
+      "observation": "Evidence supports bounded workflow claims, not semantic or production acceptance.",
+      "evidence": [
+        {
+          "path": "results/workflow330/validation/tests.txt",
+          "sha256": "dbd80bd9e2d8141e637c12b2ad0d2f0b28151b97483ca357a907b2d8d9958ac0"
+        },
+        {
+          "path": "results/workflow330/replay-qualified/report.json",
+          "sha256": "c505af7d066e7417d3e101eb0ad6fbd03787c281f31bad93b56187596dfbc364"
+        },
+        {
+          "path": "src/movie_factory/planning_pipeline.py",
+          "sha256": "ce5046b9e11bb0e1df804c10efd327e9c7543842f17d037f2d744841fad9ebe5"
+        },
+        {
+          "path": "tests/test_planning_pipeline.py",
+          "sha256": "8710b8e6a80e623583a4124dba5dcc92b74de84709a632ebdcd13b4277c41bb8"
+        },
+        {
+          "path": "docs/knowledge/PLANNING_PIPELINE_330.md",
+          "sha256": "513a6a55079bf670e6b8ccaff0491c805425f03e2a8f26950a588886a1e17d1e"
+        },
+        {
+          "path": "results/workflow330/NIHANG_PROSPECTIVE_BRIEF.md",
+          "sha256": "ec6570f24081644d996c6b12d602d10a229f28257c4d18e8c9b67f7cb28b0878"
+        }
+      ]
+    },
+    {
+      "id": "visual_gate",
+      "status": "PASS",
+      "kind": "review",
+      "action_taken": "No new artistic pass.321 remains rejected;253 protected. Well-formed wrong-method negative remains visible.",
+      "observation": "Evidence supports bounded workflow claims, not semantic or production acceptance.",
+      "evidence": [
+        {
+          "path": "results/workflow330/validation/tests.txt",
+          "sha256": "dbd80bd9e2d8141e637c12b2ad0d2f0b28151b97483ca357a907b2d8d9958ac0"
+        },
+        {
+          "path": "results/workflow330/replay-qualified/report.json",
+          "sha256": "c505af7d066e7417d3e101eb0ad6fbd03787c281f31bad93b56187596dfbc364"
+        },
+        {
+          "path": "src/movie_factory/planning_pipeline.py",
+          "sha256": "ce5046b9e11bb0e1df804c10efd327e9c7543842f17d037f2d744841fad9ebe5"
+        },
+        {
+          "path": "tests/test_planning_pipeline.py",
+          "sha256": "8710b8e6a80e623583a4124dba5dcc92b74de84709a632ebdcd13b4277c41bb8"
+        },
+        {
+          "path": "docs/knowledge/PLANNING_PIPELINE_330.md",
+          "sha256": "513a6a55079bf670e6b8ccaff0491c805425f03e2a8f26950a588886a1e17d1e"
+        },
+        {
+          "path": "results/workflow330/NIHANG_PROSPECTIVE_BRIEF.md",
+          "sha256": "ec6570f24081644d996c6b12d602d10a229f28257c4d18e8c9b67f7cb28b0878"
+        }
+      ]
+    },
+    {
+      "id": "anticipation",
+      "status": "PASS",
+      "kind": "review",
+      "action_taken": "Adversarial skipped-stage, source drift, lost preferences/learning, wrong roles, unsupported proof, replan and budget tests; future Nihang hypotheses frozen.",
+      "observation": "Evidence supports bounded workflow claims, not semantic or production acceptance.",
+      "evidence": [
+        {
+          "path": "results/workflow330/validation/tests.txt",
+          "sha256": "dbd80bd9e2d8141e637c12b2ad0d2f0b28151b97483ca357a907b2d8d9958ac0"
+        },
+        {
+          "path": "results/workflow330/replay-qualified/report.json",
+          "sha256": "c505af7d066e7417d3e101eb0ad6fbd03787c281f31bad93b56187596dfbc364"
+        },
+        {
+          "path": "src/movie_factory/planning_pipeline.py",
+          "sha256": "ce5046b9e11bb0e1df804c10efd327e9c7543842f17d037f2d744841fad9ebe5"
+        },
+        {
+          "path": "tests/test_planning_pipeline.py",
+          "sha256": "8710b8e6a80e623583a4124dba5dcc92b74de84709a632ebdcd13b4277c41bb8"
+        },
+        {
+          "path": "docs/knowledge/PLANNING_PIPELINE_330.md",
+          "sha256": "513a6a55079bf670e6b8ccaff0491c805425f03e2a8f26950a588886a1e17d1e"
+        },
+        {
+          "path": "results/workflow330/NIHANG_PROSPECTIVE_BRIEF.md",
+          "sha256": "ec6570f24081644d996c6b12d602d10a229f28257c4d18e8c9b67f7cb28b0878"
+        }
+      ]
+    },
+    {
+      "id": "stopping",
+      "status": "PASS",
+      "kind": "review",
+      "action_taken": "Requested integrated software scope complete; technical stages are not routine Director handoffs. Production construction not silently launched.",
+      "observation": "Evidence supports bounded workflow claims, not semantic or production acceptance.",
+      "evidence": [
+        {
+          "path": "results/workflow330/validation/tests.txt",
+          "sha256": "dbd80bd9e2d8141e637c12b2ad0d2f0b28151b97483ca357a907b2d8d9958ac0"
+        },
+        {
+          "path": "results/workflow330/replay-qualified/report.json",
+          "sha256": "c505af7d066e7417d3e101eb0ad6fbd03787c281f31bad93b56187596dfbc364"
+        },
+        {
+          "path": "src/movie_factory/planning_pipeline.py",
+          "sha256": "ce5046b9e11bb0e1df804c10efd327e9c7543842f17d037f2d744841fad9ebe5"
+        },
+        {
+          "path": "tests/test_planning_pipeline.py",
+          "sha256": "8710b8e6a80e623583a4124dba5dcc92b74de84709a632ebdcd13b4277c41bb8"
+        },
+        {
+          "path": "docs/knowledge/PLANNING_PIPELINE_330.md",
+          "sha256": "513a6a55079bf670e6b8ccaff0491c805425f03e2a8f26950a588886a1e17d1e"
+        },
+        {
+          "path": "results/workflow330/NIHANG_PROSPECTIVE_BRIEF.md",
+          "sha256": "ec6570f24081644d996c6b12d602d10a229f28257c4d18e8c9b67f7cb28b0878"
+        }
+      ]
+    },
+    {
+      "id": "versioning",
+      "status": "PASS",
+      "kind": "technical",
+      "action_taken": "Original direction/reference authority, engine, sources and input artifacts bind each step; downstream state invalidates on repair.",
+      "observation": "Evidence supports bounded workflow claims, not semantic or production acceptance.",
+      "evidence": [
+        {
+          "path": "results/workflow330/validation/tests.txt",
+          "sha256": "dbd80bd9e2d8141e637c12b2ad0d2f0b28151b97483ca357a907b2d8d9958ac0"
+        },
+        {
+          "path": "results/workflow330/replay-qualified/report.json",
+          "sha256": "c505af7d066e7417d3e101eb0ad6fbd03787c281f31bad93b56187596dfbc364"
+        },
+        {
+          "path": "src/movie_factory/planning_pipeline.py",
+          "sha256": "ce5046b9e11bb0e1df804c10efd327e9c7543842f17d037f2d744841fad9ebe5"
+        },
+        {
+          "path": "tests/test_planning_pipeline.py",
+          "sha256": "8710b8e6a80e623583a4124dba5dcc92b74de84709a632ebdcd13b4277c41bb8"
+        },
+        {
+          "path": "docs/knowledge/PLANNING_PIPELINE_330.md",
+          "sha256": "513a6a55079bf670e6b8ccaff0491c805425f03e2a8f26950a588886a1e17d1e"
+        },
+        {
+          "path": "results/workflow330/NIHANG_PROSPECTIVE_BRIEF.md",
+          "sha256": "ec6570f24081644d996c6b12d602d10a229f28257c4d18e8c9b67f7cb28b0878"
+        }
+      ]
+    },
+    {
+      "id": "economics",
+      "status": "PASS",
+      "kind": "process",
+      "action_taken": "Recorded observed test work and packet sizes, not token savings. Simulation cannot expand live allowance; no asserted efficiency percentage.",
+      "observation": "Evidence supports bounded workflow claims, not semantic or production acceptance.",
+      "evidence": [
+        {
+          "path": "results/workflow330/validation/tests.txt",
+          "sha256": "dbd80bd9e2d8141e637c12b2ad0d2f0b28151b97483ca357a907b2d8d9958ac0"
+        },
+        {
+          "path": "results/workflow330/replay-qualified/report.json",
+          "sha256": "c505af7d066e7417d3e101eb0ad6fbd03787c281f31bad93b56187596dfbc364"
+        },
+        {
+          "path": "src/movie_factory/planning_pipeline.py",
+          "sha256": "ce5046b9e11bb0e1df804c10efd327e9c7543842f17d037f2d744841fad9ebe5"
+        },
+        {
+          "path": "tests/test_planning_pipeline.py",
+          "sha256": "8710b8e6a80e623583a4124dba5dcc92b74de84709a632ebdcd13b4277c41bb8"
+        },
+        {
+          "path": "docs/knowledge/PLANNING_PIPELINE_330.md",
+          "sha256": "513a6a55079bf670e6b8ccaff0491c805425f03e2a8f26950a588886a1e17d1e"
+        },
+        {
+          "path": "results/workflow330/NIHANG_PROSPECTIVE_BRIEF.md",
+          "sha256": "ec6570f24081644d996c6b12d602d10a229f28257c4d18e8c9b67f7cb28b0878"
+        }
+      ]
+    },
+    {
+      "id": "retrieval",
+      "status": "PASS",
+      "kind": "technical",
+      "action_taken": "Fresh330 packet plus manual328/329/321 source reconciliation; existing stale307 capsule not repinned. New instructions explicitly linked, not universal memory.",
+      "observation": "Evidence supports bounded workflow claims, not semantic or production acceptance.",
+      "evidence": [
+        {
+          "path": "results/workflow330/validation/tests.txt",
+          "sha256": "dbd80bd9e2d8141e637c12b2ad0d2f0b28151b97483ca357a907b2d8d9958ac0"
+        },
+        {
+          "path": "results/workflow330/replay-qualified/report.json",
+          "sha256": "c505af7d066e7417d3e101eb0ad6fbd03787c281f31bad93b56187596dfbc364"
+        },
+        {
+          "path": "src/movie_factory/planning_pipeline.py",
+          "sha256": "ce5046b9e11bb0e1df804c10efd327e9c7543842f17d037f2d744841fad9ebe5"
+        },
+        {
+          "path": "tests/test_planning_pipeline.py",
+          "sha256": "8710b8e6a80e623583a4124dba5dcc92b74de84709a632ebdcd13b4277c41bb8"
+        },
+        {
+          "path": "docs/knowledge/PLANNING_PIPELINE_330.md",
+          "sha256": "513a6a55079bf670e6b8ccaff0491c805425f03e2a8f26950a588886a1e17d1e"
+        },
+        {
+          "path": "results/workflow330/NIHANG_PROSPECTIVE_BRIEF.md",
+          "sha256": "ec6570f24081644d996c6b12d602d10a229f28257c4d18e8c9b67f7cb28b0878"
+        }
+      ]
+    },
+    {
+      "id": "current_state",
+      "status": "PASS",
+      "kind": "process",
+      "action_taken": "Four stages implemented/offline tested; fresh real-model authoring and production proof still unqualified. No scene status changed.",
+      "observation": "Evidence supports bounded workflow claims, not semantic or production acceptance.",
+      "evidence": [
+        {
+          "path": "results/workflow330/validation/tests.txt",
+          "sha256": "dbd80bd9e2d8141e637c12b2ad0d2f0b28151b97483ca357a907b2d8d9958ac0"
+        },
+        {
+          "path": "results/workflow330/replay-qualified/report.json",
+          "sha256": "c505af7d066e7417d3e101eb0ad6fbd03787c281f31bad93b56187596dfbc364"
+        },
+        {
+          "path": "src/movie_factory/planning_pipeline.py",
+          "sha256": "ce5046b9e11bb0e1df804c10efd327e9c7543842f17d037f2d744841fad9ebe5"
+        },
+        {
+          "path": "tests/test_planning_pipeline.py",
+          "sha256": "8710b8e6a80e623583a4124dba5dcc92b74de84709a632ebdcd13b4277c41bb8"
+        },
+        {
+          "path": "docs/knowledge/PLANNING_PIPELINE_330.md",
+          "sha256": "513a6a55079bf670e6b8ccaff0491c805425f03e2a8f26950a588886a1e17d1e"
+        },
+        {
+          "path": "results/workflow330/NIHANG_PROSPECTIVE_BRIEF.md",
+          "sha256": "ec6570f24081644d996c6b12d602d10a229f28257c4d18e8c9b67f7cb28b0878"
+        }
+      ]
+    },
+    {
+      "id": "au_reuse",
+      "status": "PASS",
+      "kind": "review",
+      "action_taken": "Four historical replay inputs and later-feedback boundaries retained; prospective scope frozen separately. Existing artifacts and unrelated working tree preserved.",
+      "observation": "Evidence supports bounded workflow claims, not semantic or production acceptance.",
+      "evidence": [
+        {
+          "path": "results/workflow330/validation/tests.txt",
+          "sha256": "dbd80bd9e2d8141e637c12b2ad0d2f0b28151b97483ca357a907b2d8d9958ac0"
+        },
+        {
+          "path": "results/workflow330/replay-qualified/report.json",
+          "sha256": "c505af7d066e7417d3e101eb0ad6fbd03787c281f31bad93b56187596dfbc364"
+        },
+        {
+          "path": "src/movie_factory/planning_pipeline.py",
+          "sha256": "ce5046b9e11bb0e1df804c10efd327e9c7543842f17d037f2d744841fad9ebe5"
+        },
+        {
+          "path": "tests/test_planning_pipeline.py",
+          "sha256": "8710b8e6a80e623583a4124dba5dcc92b74de84709a632ebdcd13b4277c41bb8"
+        },
+        {
+          "path": "docs/knowledge/PLANNING_PIPELINE_330.md",
+          "sha256": "513a6a55079bf670e6b8ccaff0491c805425f03e2a8f26950a588886a1e17d1e"
+        },
+        {
+          "path": "results/workflow330/NIHANG_PROSPECTIVE_BRIEF.md",
+          "sha256": "ec6570f24081644d996c6b12d602d10a229f28257c4d18e8c9b67f7cb28b0878"
+        }
+      ]
+    },
+    {
+      "id": "au_review",
+      "status": "PASS",
+      "kind": "review",
+      "action_taken": "16 malformed controls blocked across4 known-history replays; semantic false-negative retained. Saved Director inputs and quality uplift unknown.",
+      "observation": "Evidence supports bounded workflow claims, not semantic or production acceptance.",
+      "evidence": [
+        {
+          "path": "results/workflow330/validation/tests.txt",
+          "sha256": "dbd80bd9e2d8141e637c12b2ad0d2f0b28151b97483ca357a907b2d8d9958ac0"
+        },
+        {
+          "path": "results/workflow330/replay-qualified/report.json",
+          "sha256": "c505af7d066e7417d3e101eb0ad6fbd03787c281f31bad93b56187596dfbc364"
+        },
+        {
+          "path": "src/movie_factory/planning_pipeline.py",
+          "sha256": "ce5046b9e11bb0e1df804c10efd327e9c7543842f17d037f2d744841fad9ebe5"
+        },
+        {
+          "path": "tests/test_planning_pipeline.py",
+          "sha256": "8710b8e6a80e623583a4124dba5dcc92b74de84709a632ebdcd13b4277c41bb8"
+        },
+        {
+          "path": "docs/knowledge/PLANNING_PIPELINE_330.md",
+          "sha256": "513a6a55079bf670e6b8ccaff0491c805425f03e2a8f26950a588886a1e17d1e"
+        },
+        {
+          "path": "results/workflow330/NIHANG_PROSPECTIVE_BRIEF.md",
+          "sha256": "ec6570f24081644d996c6b12d602d10a229f28257c4d18e8c9b67f7cb28b0878"
+        }
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "prediction": "A stage may drop authority or bypass an upstream obligation",
+      "observation": "Adversarial deterministic controls reject the tested omissions and stale/substituted inputs.",
+      "response": "Retain original sources and scoped obligation maps beside stage summaries.",
+      "result": "resolved"
+    },
+    {
+      "prediction": "Structured plans could be confused with correct artistic judgment",
+      "observation": "Deliberately wrong well-formed method passes a rubber-stamp challenge.",
+      "response": "Keep semantic limitation explicit; prospective pose/look proof and escape tracking are mandatory.",
+      "result": "resolved"
+    }
+  ],
+  "adjacent_regressions": "Focused controller, runner, expert, knowledge, review, context and reuse tests only; no full-repository or Blender claim.",
+  "stopping_reason": "Integrated critique, implementation, offline tests, historical replay and prospective brief complete. No construction or live runtime authority inferred."
+}
