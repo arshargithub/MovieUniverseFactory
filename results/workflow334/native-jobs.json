@@ -1,0 +1,170 @@
+[
+  {
+    "run": "workflow334-save",
+    "elapsed_seconds": 2.2455883333459496,
+    "worker_ok": false,
+    "error": "ValueError: NIHANG_UNSAFE_OR_INVALID_DRIVER",
+    "toolchain": {
+      "blender": "5.2.1 LTS",
+      "build_hash": "9e2066aef7ef",
+      "python": "3.13.13"
+    },
+    "diagnostic": {
+      "binding": {
+        "path": ".runtime/factory-native/workflow334-save/script-diagnostics.json",
+        "sha256": "af7a6ee0b7f017046b2cd66f7bd6b28d6433de7dc0148c92242b163f22fa1e83"
+      },
+      "embedded_text_hashes": [
+        {
+          "name": "rig_ui.py",
+          "sha256": "2f7de02f6c9a4f6ea2b4c827ac4eae818d4e3ee9105b0761679ef8085dd92e29",
+          "use_module": true
+        }
+      ],
+      "driver_count": 64,
+      "blocking_count": 64,
+      "known_source_defects": 0,
+      "rig_qualified": false
+    }
+  },
+  {
+    "run": "workflow334b-save",
+    "elapsed_seconds": 1.5365482503548265,
+    "worker_ok": false,
+    "error": "ValueError: NIHANG_UNSAFE_OR_INVALID_DRIVER",
+    "toolchain": {
+      "blender": "5.2.1 LTS",
+      "build_hash": "9e2066aef7ef",
+      "python": "3.13.13"
+    },
+    "diagnostic": {
+      "binding": {
+        "path": ".runtime/factory-native/workflow334b-save/script-diagnostics.json",
+        "sha256": "3cb7407b2a76199ba607b4f556d5c0975380733abb67e424a73db6ef45dd70fc"
+      },
+      "embedded_text_hashes": [
+        {
+          "name": "rig_ui.py",
+          "sha256": "2f7de02f6c9a4f6ea2b4c827ac4eae818d4e3ee9105b0761679ef8085dd92e29",
+          "use_module": true
+        }
+      ],
+      "driver_count": 64,
+      "blocking_count": 64,
+      "known_source_defects": 0,
+      "rig_qualified": false
+    }
+  },
+  {
+    "run": "workflow334c-save",
+    "elapsed_seconds": 2.119543083012104,
+    "worker_ok": true,
+    "error": null,
+    "toolchain": {
+      "blender": "5.2.1 LTS",
+      "build_hash": "9e2066aef7ef",
+      "python": "3.13.13"
+    },
+    "diagnostic": {
+      "binding": {
+        "path": ".runtime/factory-native/workflow334c-save/script-diagnostics.json",
+        "sha256": "de08f61ac7f048bff58b77f9cac8916755c9a7de80e49d4139d0bac34e728c20"
+      },
+      "embedded_text_hashes": [
+        {
+          "name": "rig_ui.py",
+          "sha256": "2f7de02f6c9a4f6ea2b4c827ac4eae818d4e3ee9105b0761679ef8085dd92e29",
+          "use_module": true
+        }
+      ],
+      "driver_count": 64,
+      "blocking_count": 0,
+      "known_source_defects": 64,
+      "rig_qualified": false
+    }
+  },
+  {
+    "run": "workflow334c-reopen",
+    "elapsed_seconds": 22.66201216634363,
+    "worker_ok": true,
+    "error": null,
+    "toolchain": {
+      "blender": "5.2.1 LTS",
+      "build_hash": "9e2066aef7ef",
+      "python": "3.13.13"
+    },
+    "diagnostic": {
+      "binding": {
+        "path": ".runtime/factory-native/workflow334c-reopen/script-diagnostics.json",
+        "sha256": "de08f61ac7f048bff58b77f9cac8916755c9a7de80e49d4139d0bac34e728c20"
+      },
+      "embedded_text_hashes": [
+        {
+          "name": "rig_ui.py",
+          "sha256": "2f7de02f6c9a4f6ea2b4c827ac4eae818d4e3ee9105b0761679ef8085dd92e29",
+          "use_module": true
+        }
+      ],
+      "driver_count": 64,
+      "blocking_count": 0,
+      "known_source_defects": 64,
+      "rig_qualified": false
+    }
+  },
+  {
+    "run": "workflow334author-save",
+    "elapsed_seconds": 2.1054472089745104,
+    "worker_ok": true,
+    "error": null,
+    "toolchain": {
+      "blender": "5.2.1 LTS",
+      "build_hash": "9e2066aef7ef",
+      "python": "3.13.13"
+    },
+    "diagnostic": {
+      "binding": {
+        "path": ".runtime/factory-native/workflow334author-save/script-diagnostics.json",
+        "sha256": "3eb4929f6e2b0c47f9982e95281d9fdddb72c95d046231af1916c204e393de0d"
+      },
+      "embedded_text_hashes": [
+        {
+          "name": "rig_ui.py",
+          "sha256": "2f7de02f6c9a4f6ea2b4c827ac4eae818d4e3ee9105b0761679ef8085dd92e29",
+          "use_module": true
+        }
+      ],
+      "driver_count": 64,
+      "blocking_count": 0,
+      "known_source_defects": 64,
+      "rig_qualified": false
+    }
+  },
+  {
+    "run": "workflow334author-reopen",
+    "elapsed_seconds": 21.648903584107757,
+    "worker_ok": true,
+    "error": null,
+    "toolchain": {
+      "blender": "5.2.1 LTS",
+      "build_hash": "9e2066aef7ef",
+      "python": "3.13.13"
+    },
+    "diagnostic": {
+      "binding": {
+        "path": ".runtime/factory-native/workflow334author-reopen/script-diagnostics.json",
+        "sha256": "de08f61ac7f048bff58b77f9cac8916755c9a7de80e49d4139d0bac34e728c20"
+      },
+      "embedded_text_hashes": [
+        {
+          "name": "rig_ui.py",
+          "sha256": "2f7de02f6c9a4f6ea2b4c827ac4eae818d4e3ee9105b0761679ef8085dd92e29",
+          "use_module": true
+        }
+      ],
+      "driver_count": 64,
+      "blocking_count": 0,
+      "known_source_defects": 64,
+      "rig_qualified": false
+    }
+  }
+]

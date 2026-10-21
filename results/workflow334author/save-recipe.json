@@ -1,0 +1,56 @@
+{
+  "operation": "nihang_patch",
+  "frame": 327,
+  "width": 540,
+  "height": 960,
+  "samples": 8,
+  "edits": [
+    {
+      "kind": "bone_pose",
+      "target": "horse.rig",
+      "bone": "head",
+      "frame": 327,
+      "quaternion": [
+        0.9999619230641713,
+        0.008726535498373935,
+        0,
+        0
+      ]
+    },
+    {
+      "kind": "mesh",
+      "target": "MF Nihang transport control",
+      "vertices": [
+        [
+          900,
+          900,
+          900
+        ],
+        [
+          901,
+          900,
+          900
+        ],
+        [
+          900,
+          901,
+          900
+        ]
+      ],
+      "faces": [
+        [
+          0,
+          1,
+          2
+        ]
+      ],
+      "color": [
+        0.1,
+        0.2,
+        0.3,
+        1
+      ],
+      "roughness": 0.7
+    }
+  ]
+}

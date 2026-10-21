@@ -1,0 +1,47 @@
+{
+  "artifacts": [
+    "snapshot.json",
+    "script-diagnostics.json",
+    "dependencies.json",
+    "patch-evidence.json",
+    "scene.blend"
+  ],
+  "command": [
+    "/Applications/Blender.app/Contents/MacOS/Blender",
+    "--background",
+    "--factory-startup",
+    "--disable-autoexec",
+    "--python-exit-code",
+    "7",
+    "--python",
+    "/Volumes/MovieFactorySSD/MovieUniverseFactory/src/movie_factory/adapters/blender/worker.py",
+    "--",
+    "--job",
+    "/Volumes/MovieFactorySSD/MovieUniverseFactory/.runtime/factory-native/workflow334author-save/job.json"
+  ],
+  "elapsed": 2.1054472089745104,
+  "environment_names": [
+    "BLENDER_USER_CONFIG",
+    "BLENDER_USER_DATAFILES",
+    "BLENDER_USER_SCRIPTS",
+    "HOME",
+    "LANG",
+    "LC_ALL",
+    "PATH",
+    "TMPDIR",
+    "XDG_CACHE_HOME"
+  ],
+  "exit_code": 0,
+  "isolation_mode": "trusted_structured_operations",
+  "mode": "nihang_patch",
+  "ok": true,
+  "os_sandbox": false,
+  "timings": {
+    "worker_total_seconds": 1.458669208921492
+  },
+  "toolchain": {
+    "blender": "5.2.1 LTS",
+    "build_hash": "9e2066aef7ef",
+    "python": "3.13.13"
+  }
+}

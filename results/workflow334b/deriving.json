@@ -1,0 +1,328 @@
+{
+  "input_digest": "579d2ac47a3d33203d92e73347429e003cc931f70985b037ca80d8718593086e",
+  "outcome": "complete",
+  "artifact": {
+    "requirements": [
+      {
+        "id": "preservation",
+        "criterion": "Original320 and accepted Pashtun hashes remain unchanged; no creative operations in recipe.",
+        "modes": [
+          "technical"
+        ],
+        "director_av": false
+      },
+      {
+        "id": "persistence",
+        "criterion": "Fresh-process reopened selected rig/object/camera state and scoped external dependencies match saved source evaluation.",
+        "modes": [
+          "technical"
+        ],
+        "director_av": false
+      },
+      {
+        "id": "visible_control",
+        "criterion": "Actual diagnostic PNG decodes at540x960 and exposes the unchanged rejected horse/leader; no artistic pass inferred.",
+        "modes": [
+          "image"
+        ],
+        "director_av": false
+      },
+      {
+        "id": "review_block",
+        "criterion": "No downstream launch after FAIL/NOT_RUN; actual native outputs, not substituted files, enter immutable review.",
+        "modes": [
+          "technical"
+        ],
+        "director_av": false
+      }
+    ],
+    "beats": [
+      {
+        "id": "control",
+        "audience_read": "No production-media promise: actual unchanged rejected scene stays rejected.",
+        "framing": "Original source camera at frame327;540x960 diagnostic, not final quality.",
+        "lenses": {
+          "story_performance": {
+            "applies": false,
+            "why": "No changed performance or audience story beat in a no-edit handler control.",
+            "requirements": []
+          },
+          "camera_editorial": {
+            "applies": true,
+            "why": "Actual source camera at327 must show the actor; a technical render is not a new approved look.",
+            "requirements": [
+              "visible_control"
+            ]
+          },
+          "animation_physics": {
+            "applies": false,
+            "why": "No motion changed or qualified; selected frame state only, not temporal fluidity.",
+            "requirements": []
+          },
+          "anatomy_contact": {
+            "applies": true,
+            "why": "Inspect schematic rider/horse forms as negative-control defects, not attempt new anatomical repair.",
+            "requirements": [
+              "visible_control"
+            ]
+          },
+          "effects_environment": {
+            "applies": false,
+            "why": "Preserve source effects; do not claim simulation-cache portability from scoped file inventory.",
+            "requirements": []
+          },
+          "sound_music": {
+            "applies": false,
+            "why": "No audio output or listening claim in a single-frame technical control.",
+            "requirements": []
+          },
+          "production_reuse": {
+            "applies": true,
+            "why": "Must preserve original, bind dependencies, inspect new-process output and block propagation.",
+            "requirements": [
+              "preservation",
+              "persistence",
+              "visible_control",
+              "review_block"
+            ]
+          }
+        }
+      }
+    ],
+    "derivations": {
+      "preservation": {
+        "beats": [
+          "control"
+        ],
+        "lenses": [
+          "production_reuse"
+        ],
+        "derivation": "Original320 and accepted Pashtun hashes remain unchanged; no creative operations in recipe.",
+        "origin": "craft_inference",
+        "priority": "quality_floor",
+        "reference_ids": [
+          "rejected320"
+        ]
+      },
+      "persistence": {
+        "beats": [
+          "control"
+        ],
+        "lenses": [
+          "production_reuse"
+        ],
+        "derivation": "Fresh-process reopened selected rig/object/camera state and scoped external dependencies match saved source evaluation.",
+        "origin": "craft_inference",
+        "priority": "quality_floor",
+        "reference_ids": [
+          "rejected320"
+        ]
+      },
+      "visible_control": {
+        "beats": [
+          "control"
+        ],
+        "lenses": [
+          "production_reuse",
+          "camera_editorial",
+          "anatomy_contact"
+        ],
+        "derivation": "Actual diagnostic PNG decodes at540x960 and exposes the unchanged rejected horse/leader; no artistic pass inferred.",
+        "origin": "craft_inference",
+        "priority": "quality_floor",
+        "reference_ids": [
+          "rejected320"
+        ]
+      },
+      "review_block": {
+        "beats": [
+          "control"
+        ],
+        "lenses": [
+          "production_reuse"
+        ],
+        "derivation": "No downstream launch after FAIL/NOT_RUN; actual native outputs, not substituted files, enter immutable review.",
+        "origin": "craft_inference",
+        "priority": "quality_floor",
+        "reference_ids": [
+          "rejected320"
+        ]
+      }
+    },
+    "context_mapping": {
+      "direction": {
+        "requirements": [
+          "preservation",
+          "persistence",
+          "visible_control",
+          "review_block"
+        ],
+        "reason": "Qualify safe native persistence and failed-proof blocking, without new artistic correction."
+      },
+      "learnings": {
+        "requirements": [
+          "preservation",
+          "persistence",
+          "visible_control",
+          "review_block"
+        ],
+        "reason": "331 consumed initial plus two corrections and failed; stage chronology cannot be repaired retrospectively."
+      },
+      "film_language": {
+        "requirements": [
+          "preservation",
+          "persistence",
+          "visible_control",
+          "review_block"
+        ],
+        "reason": "Preserve accepted253 film and high quality floor; rejected320 is not an acceptable supporting actor."
+      },
+      "director_preferences": {
+        "requirements": [
+          "preservation",
+          "persistence",
+          "visible_control",
+          "review_block"
+        ],
+        "reason": "Do not ask Director to approve algorithms or repeatedly review predictable failures."
+      },
+      "references": {
+        "requirements": [
+          "preservation",
+          "persistence",
+          "visible_control",
+          "review_block"
+        ],
+        "reason": "331 audit identifies schematic costume and unsupported pose family; use as rejected-control context, not a target."
+      },
+      "controls": {
+        "requirements": [
+          "preservation",
+          "persistence",
+          "visible_control",
+          "review_block"
+        ],
+        "reason": "Fresh knowledge obligations accompany source inventory; missing corpus coverage needs manual reconciliation."
+      },
+      "constraints": {
+        "requirements": [
+          "preservation",
+          "persistence",
+          "visible_control",
+          "review_block"
+        ],
+        "reason": "Canonical router and controller before native work; no quota renewal, arbitrary code or raw launcher."
+      }
+    },
+    "knowledge_mapping": {
+      "reuse_envelope": {
+        "requirements": [
+          "preservation",
+          "persistence",
+          "visible_control",
+          "review_block"
+        ],
+        "reason": "Reuse controller/worker; qualify only no-edit persistence, not arbitrary authoring."
+      },
+      "authority": {
+        "requirements": [
+          "preservation",
+          "persistence",
+          "visible_control",
+          "review_block"
+        ],
+        "reason": "No new331 corrections, paid runtime, external calls or image/identity changes."
+      },
+      "strategy": {
+        "requirements": [
+          "preservation",
+          "persistence",
+          "visible_control",
+          "review_block"
+        ],
+        "reason": "First test native preservation, then fresh-process output, then failed-proof dependency block."
+      },
+      "visual_gate": {
+        "requirements": [
+          "preservation",
+          "persistence",
+          "visible_control",
+          "review_block"
+        ],
+        "reason": "Actual rejected-control PNG remains FAIL despite technical success."
+      },
+      "anticipation": {
+        "requirements": [
+          "preservation",
+          "persistence",
+          "visible_control",
+          "review_block"
+        ],
+        "reason": "Anticipate broken relative paths, disabled-driver dependencies and false positive visual promotion."
+      },
+      "stopping": {
+        "requirements": [
+          "preservation",
+          "persistence",
+          "visible_control",
+          "review_block"
+        ],
+        "reason": "Complete technical qualification or expose failure; no full sequence rendering of known defects."
+      },
+      "versioning": {
+        "requirements": [
+          "preservation",
+          "persistence",
+          "visible_control",
+          "review_block"
+        ],
+        "reason": "Bind original, recipes, handler bytes, outputs and known dependency hashes."
+      },
+      "economics": {
+        "requirements": [
+          "preservation",
+          "persistence",
+          "visible_control",
+          "review_block"
+        ],
+        "reason": "One serial native job per planned step; record time, no inferred percentage gain."
+      },
+      "retrieval": {
+        "requirements": [
+          "preservation",
+          "persistence",
+          "visible_control",
+          "review_block"
+        ],
+        "reason": "Manual330/328/331/332 reconciliation supplements finite pilot."
+      },
+      "current_state": {
+        "requirements": [
+          "preservation",
+          "persistence",
+          "visible_control",
+          "review_block"
+        ],
+        "reason": "253 accepted protected;320/331 rejected;325 allowance exhausted."
+      },
+      "au_reuse": {
+        "requirements": [
+          "preservation",
+          "persistence",
+          "visible_control",
+          "review_block"
+        ],
+        "reason": "Fresh reopen not whole-project portable or remote backup; retain all failures."
+      },
+      "au_review": {
+        "requirements": [
+          "preservation",
+          "persistence",
+          "visible_control",
+          "review_block"
+        ],
+        "reason": "Technical output review and frame-visible rejection distinct from Director AV."
+      }
+    }
+  }
+}

@@ -1,0 +1,54 @@
+[
+  {
+    "authority_granted": false,
+    "continuation_task": "workflow333-native-control",
+    "engine": "f6581ddcbbbd9e31f6a9d5440f485bb401c7270635e3c1d883fa90fef73df6ec",
+    "id": "workflow334-recovery",
+    "production_workflow": true,
+    "request": {
+      "authority": {
+        "path": "results/workflow334/AUTHORITY.md",
+        "sha256": "889e8c905f4be475e80d2e8d00653fa8a6f7462a4703037cf4eba416377765d6"
+      },
+      "continuation": true,
+      "operations": [
+        "code",
+        "test",
+        "document",
+        "native_inspect",
+        "render"
+      ],
+      "rationale": "Same-task technical recovery and native qualification; no artistic budget reset or provider calls",
+      "text": "ok yes, and please only come back to me once the workflow is fully ready to pick up the nihang work again"
+    },
+    "route": "production",
+    "schema": 1,
+    "semantic_classification": "agent_declared_operations"
+  },
+  {
+    "authority_granted": false,
+    "continuation_task": null,
+    "engine": "f6581ddcbbbd9e31f6a9d5440f485bb401c7270635e3c1d883fa90fef73df6ec",
+    "id": "workflow334-authoring",
+    "production_workflow": true,
+    "request": {
+      "authority": {
+        "path": "results/workflow334/AUTHORING_SCOPE.md",
+        "sha256": "dfc297a55c0e76b947347975773a977f2ac0d938218660e60b0c2d03b86dc87d"
+      },
+      "operations": [
+        "code",
+        "test",
+        "document",
+        "native_inspect",
+        "render",
+        "edit"
+      ],
+      "rationale": "Explicit scope reconciliation: distinct disposable numeric authoring transport proof, not another artistic variant or recovery-budget reset",
+      "text": "ok yes, and please only come back to me once the workflow is fully ready to pick up the nihang work again"
+    },
+    "route": "production",
+    "schema": 1,
+    "semantic_classification": "agent_declared_operations"
+  }
+]

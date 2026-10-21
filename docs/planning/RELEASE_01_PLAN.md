@@ -4,6 +4,22 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+### Exchange334 — native workflow ready to resume the Nihang package
+
+[Qualification](../../results/workflow334/CLOSEOUT.md) completes same-task technical
+recovery, real save/reopen/render and separately scoped numeric authoring transport.
+Two actual diagnostic images were inspected and rejected; their dependent jobs
+were blocked.428 focused tests pass. The accepted Pashtun and original320 remain
+unchanged;331 artistic attempts and325 live calls were not reset.
+
+The next production method must account for64 inherited missing-target armature
+drivers, not assume generic Rigify health. [The entry contract](../knowledge/NATIVE_WORKFLOW_334.md)
+now carries that finding into the reference-led coupled pose/rig-ownership proof,
+then one supporting actor/look proof, before crowd propagation and the isolated
+continuous review clip. Workflow readiness is not artistic success or measured
+efficiency improvement. Main-chat operation is qualified within the typed-handler
+envelope; no new multi-model runtime calls or remote backup. Checkpoint340 unchanged.
+
 ### Exchange333 — real native control blocked; qualification incomplete
 
 [Native qualification](../../results/workflow333/CLOSEOUT.md) completed routing

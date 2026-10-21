@@ -1,0 +1,33 @@
+{
+  "verdict": "FAIL",
+  "run_digest": "bd0d27bcc7c3c9a66a2c368f4959b2e8b655293abde8969c029e3f166afdefb8",
+  "open_defects": [
+    "Rejected horse support/whole-pose representation",
+    "Schematic leader costume and facial forms",
+    "64 legacy armature SUM drivers with null targets; rig is not qualified"
+  ],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/workflow334c-reopen/snapshot.json",
+      "sha256": "9834efe4fa2ca7b12495468d025918cf22e28b9af9197907d8e0c7b67c9122cf"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/workflow334c-reopen/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/workflow334c-reopen/script-diagnostics.json",
+      "sha256": "de08f61ac7f048bff58b77f9cac8916755c9a7de80e49d4139d0bac34e728c20"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/workflow334c-reopen/frame.png",
+      "sha256": "07cefa095a0aabb3fe1a4c56aa9401709364a6038519b65160945a6935f1a11a"
+    },
+    "review": {
+      "path": "results/workflow334c/visual-review.json",
+      "sha256": "547da1346b11ddcfe5b81be0624d8472f65e20846319f05361aa0b762ce69c59"
+    }
+  },
+  "observation": "Inspected the actual540x960 frame327 returned by the fresh Blender process. Image is not blank and shows the correct horse/leader rearing shot. Horse reads as a polished rigid form with elongated straight hind support and sharply folded forelimbs. Leader retains a cap-like turban, simplified face/beard and shell-like torso. This reproduces the rejected scene, not the accepted film quality.",
+  "comparison": "Matches the retained320/331 rejection categories. Exact selected-state snapshot and scoped dependency inventory match across save/reopen, but that technical positive cannot override the visible defects or64 known missing-target legacy drivers. No continuous-motion or audio judgment is claimed."
+}

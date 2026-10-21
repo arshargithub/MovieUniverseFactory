@@ -1,0 +1,7 @@
+# Completing the native authoring boundary
+
+Director334 asks for the workflow to be fully ready to resume Nihang work, not another intermediate infrastructure handoff. The persistence negative control has now completed. The remaining qualification is a separate technical transport proof: validated numeric pose keys, bounded mesh data and material values must reach Blender through the admitted controller, survive a fresh reopen and be independently inspected.
+
+This is not a fourth331 artistic attempt or a recovery-counter reset.333's original failure and334's three technical recoveries remain closed and retained. Use a distinctly labeled disposable technical derivative of the rejected320 source, with a one-degree head-control key and an off-camera diagnostic triangle. These are discriminating persistence controls, not proposed creative improvements. Do not use their outcome to approve a horse, leader or crowd. Rejected legacy driver defects remain known and force visual rejection.
+
+One planned authoring operation and one fresh-process render; zero artistic corrections. If a structural control fails, diagnose its interface rather than silently propagate. No provider calls, spending, installation, cloud, upload, new principal or protected-source edit. Methods and tests are within the authorized workflow implementation. The current main chat provides reasoning; no additional live-runtime allowance is inferred.

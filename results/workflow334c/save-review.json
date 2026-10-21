@@ -1,0 +1,25 @@
+{
+  "verdict": "PASS",
+  "run_digest": "1a827fbc60525adfbbedfb6b2200ba9c5905e02ee4ad3a0c7c65ec7b08d91766",
+  "open_defects": [],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/workflow334c-save/snapshot.json",
+      "sha256": "9834efe4fa2ca7b12495468d025918cf22e28b9af9197907d8e0c7b67c9122cf"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/workflow334c-save/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/workflow334c-save/script-diagnostics.json",
+      "sha256": "de08f61ac7f048bff58b77f9cac8916755c9a7de80e49d4139d0bac34e728c20"
+    },
+    "native": {
+      "path": ".runtime/factory-native/workflow334c-save/scene.blend",
+      "sha256": "5a8a7c019e35b5d4d4b096c66ae669e61f41a6e17484236d9d96406747da1786"
+    }
+  },
+  "observation": "Source-preserving derivative, required selected horse/leader state and scoped external inventory present; original hash unchanged.",
+  "comparison": "Meets save-stage technical prerequisite only. Fresh-process state and appearance remain unqualified until reopen; no artistic approval."
+}

@@ -19,7 +19,10 @@ Use explicit continuation against the existing task so limits are not reset.
 Unknown/mixed scope must be reconciled. Routing is not spend/upload authority.
 Do not invoke historical standalone native launchers, raw Blender commands or
 alternative databases to evade admission. Shared Blender calls fail closed;
-the332 bridge currently registers inspection only, not artistic authoring.
+Read `docs/knowledge/NATIVE_WORKFLOW_334.md`: admitted save/reopen/render and
+bounded numeric pose/mesh authoring are locally qualified; artistic judgment and
+the inherited horse rig are not. Technical recovery preserves task/history and
+artistic limits; known legacy driver defects cannot pass visual review.
 Unsupported authoring needs a reviewed handler integration before execution,
 not a fallback to the old script. Raw chat tools are not OS-intercepted: this
 core rule supplies that boundary, and absence of such enforcement must stay

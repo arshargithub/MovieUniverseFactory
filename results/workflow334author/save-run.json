@@ -1,0 +1,41 @@
+{
+  "id": "workflow334author-save",
+  "task": "workflow334author-native-control",
+  "step": "save",
+  "cycle": 0,
+  "fingerprint": "5cd8c1587df8afd4b6c128e62938484df1df137061e709478a1a0b85679a2f69",
+  "parent": {
+    "path": ".runtime/art-direction/series01-sikh320/build-10/sequence.blend",
+    "sha256": "c7af07ec8ea14e1f321cf7bb7d5ec4e5cd6b8bbccabfaa886c3622e7cacc3a00"
+  },
+  "job_digest": "b64f6e9dd37bdb6242370874b5d0cb4b462f48ca906864fb767ee185a1c51421",
+  "handler_digest": "a896701e183708d0032be5432d457b7acfcde1719571657d0bf852fa7a1e28f0",
+  "status": "RETURNED",
+  "artifacts": {
+    "snapshot": {
+      "path": ".runtime/factory-native/workflow334author-save/snapshot.json",
+      "sha256": "1b2f513d43587e1ce4313d86ce9a68ace6f84146f23ade5f8b75bcde77649848"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/workflow334author-save/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/workflow334author-save/script-diagnostics.json",
+      "sha256": "3eb4929f6e2b0c47f9982e95281d9fdddb72c95d046231af1916c204e393de0d"
+    },
+    "native": {
+      "path": ".runtime/factory-native/workflow334author-save/scene.blend",
+      "sha256": "f104821903c77b47fc72f26eff889b71dc0ea690a6ee96b9773e0569ca15a75a"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/workflow334author-save/patch-evidence.json",
+      "sha256": "1f1bda9b1b1a5aec025724f36f585e7acb74c19651fd9fb621118097db88a2a9"
+    }
+  },
+  "dependencies": {},
+  "recipe": {
+    "path": "results/workflow334author/save-recipe.json",
+    "sha256": "15050aefe4dd40ba556fe173eaf34494f91d27adf61a6a36ee7af21f9b2bb20e"
+  }
+}

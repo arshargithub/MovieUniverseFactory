@@ -1,0 +1,37 @@
+{
+  "id": "workflow334author-reopen",
+  "task": "workflow334author-native-control",
+  "step": "reopen",
+  "cycle": 0,
+  "fingerprint": "5cd8c1587df8afd4b6c128e62938484df1df137061e709478a1a0b85679a2f69",
+  "parent": {
+    "path": ".runtime/factory-native/workflow334author-save/scene.blend",
+    "sha256": "f104821903c77b47fc72f26eff889b71dc0ea690a6ee96b9773e0569ca15a75a"
+  },
+  "job_digest": "861ad661a3a16259b73dbf89dc58998de5dbf220ed12ae3f14da5fd83f81c714",
+  "handler_digest": "a896701e183708d0032be5432d457b7acfcde1719571657d0bf852fa7a1e28f0",
+  "status": "RETURNED",
+  "artifacts": {
+    "snapshot": {
+      "path": ".runtime/factory-native/workflow334author-reopen/snapshot.json",
+      "sha256": "1b2f513d43587e1ce4313d86ce9a68ace6f84146f23ade5f8b75bcde77649848"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/workflow334author-reopen/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/workflow334author-reopen/script-diagnostics.json",
+      "sha256": "de08f61ac7f048bff58b77f9cac8916755c9a7de80e49d4139d0bac34e728c20"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/workflow334author-reopen/frame.png",
+      "sha256": "c2295184f654f1a39abcb78d33bb33609acf045998b5472b6ceca4ce6fca73e7"
+    }
+  },
+  "dependencies": {},
+  "recipe": {
+    "path": "results/workflow334author/render-recipe.json",
+    "sha256": "c64b14938c1b9a8e3913687827af4249c22290daa3bb4988286217769ec92374"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "workflow333-native-control": {
+    "stage": "REPLAN_REQUIRED",
+    "cycle": 0,
+    "max_corrections": 0,
+    "technical_recoveries": 3,
+    "recovery_history": [
+      {
+        "admission": "workflow334-recovery",
+        "failed_runs": [
+          "workflow333-save"
+        ],
+        "prior_engine": "9b15c2f0464d5103106c1601eacbdc4357c1850201d7796b15db46929112e4af",
+        "prior_fingerprint": "a5782045a1bf37c512204ec1d0b8b28b052a7d0f84824acb74a1960ef7510e9a",
+        "reason": "Director334 recovery: inspect skipped text as data and simple driver validity; retain disabled execution and prior attempt."
+      },
+      {
+        "admission": "workflow334-recovery",
+        "failed_runs": [
+          "workflow334-save"
+        ],
+        "prior_engine": "04e2e7b6be627f5d00e1ec089eda9e5b6ccac7b5a6364f1a0faeaadb9b71ab4a",
+        "prior_fingerprint": "c6210d80ff720d4882430b5272a2a957110e54679af2f26bcf4d444d8519ff9b",
+        "reason": "Director334 recovery: inspect skipped text as data and simple driver validity; retain disabled execution and prior attempt."
+      },
+      {
+        "admission": "workflow334-recovery",
+        "failed_runs": [
+          "workflow334b-save"
+        ],
+        "prior_engine": "04e2e7b6be627f5d00e1ec089eda9e5b6ccac7b5a6364f1a0faeaadb9b71ab4a",
+        "prior_fingerprint": "54ac49d24e0772ff41e45c2658a239b6ed199d7341d8cd2b8ee2f0a9f1bb0da2",
+        "reason": "Director334 recovery: inspect skipped text as data and simple driver validity; retain disabled execution and prior attempt."
+      }
+    ]
+  },
+  "workflow334author-native-control": {
+    "stage": "REPLAN_REQUIRED",
+    "cycle": 0,
+    "max_corrections": 0,
+    "technical_recoveries": null,
+    "recovery_history": null
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "workflow334c-save",
+  "task": "workflow333-native-control",
+  "step": "save",
+  "cycle": 0,
+  "fingerprint": "c9b3a3157f3474a0abd290976d0d9385756658d5551af3c1369046143bf21285",
+  "parent": {
+    "path": ".runtime/art-direction/series01-sikh320/build-10/sequence.blend",
+    "sha256": "c7af07ec8ea14e1f321cf7bb7d5ec4e5cd6b8bbccabfaa886c3622e7cacc3a00"
+  },
+  "job_digest": "d11ca96df9815ac02e03dd213a0a77953dd5ee1ae114053ab29495d69d995826",
+  "handler_digest": "cd723a4e11e9139153be0073756b35a2ed7e7d4c9fbe6584e06c6d2935b14544",
+  "status": "RETURNED",
+  "artifacts": {
+    "snapshot": {
+      "path": ".runtime/factory-native/workflow334c-save/snapshot.json",
+      "sha256": "9834efe4fa2ca7b12495468d025918cf22e28b9af9197907d8e0c7b67c9122cf"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/workflow334c-save/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/workflow334c-save/script-diagnostics.json",
+      "sha256": "de08f61ac7f048bff58b77f9cac8916755c9a7de80e49d4139d0bac34e728c20"
+    },
+    "native": {
+      "path": ".runtime/factory-native/workflow334c-save/scene.blend",
+      "sha256": "5a8a7c019e35b5d4d4b096c66ae669e61f41a6e17484236d9d96406747da1786"
+    }
+  },
+  "dependencies": {},
+  "recipe": {
+    "path": "results/workflow334c/save-recipe.json",
+    "sha256": "8ab16bb10be8b75397a796fe3506bd07935b1afce67579d20086a9652eaaf4eb"
+  }
+}

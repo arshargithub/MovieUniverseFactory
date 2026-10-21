@@ -1,0 +1,33 @@
+{
+  "verdict": "FAIL",
+  "run_digest": "4a9d3cbfc7be8663b3a84ae4f10da8a26f752a09ac53716b8453471547d537eb",
+  "open_defects": [
+    "Known rejected pose/support and coat",
+    "Schematic leader clothing/face/turban",
+    "Known64 missing-target armature drivers; rig ownership requires explicit production proof"
+  ],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/workflow334author-reopen/snapshot.json",
+      "sha256": "1b2f513d43587e1ce4313d86ce9a68ace6f84146f23ade5f8b75bcde77649848"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/workflow334author-reopen/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/workflow334author-reopen/script-diagnostics.json",
+      "sha256": "de08f61ac7f048bff58b77f9cac8916755c9a7de80e49d4139d0bac34e728c20"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/workflow334author-reopen/frame.png",
+      "sha256": "c2295184f654f1a39abcb78d33bb33609acf045998b5472b6ceca4ce6fca73e7"
+    },
+    "review": {
+      "path": "results/workflow334author/visual-review.json",
+      "sha256": "2e602507c45847a10649e8ae428d64f534e679c0b141d173135b32fea39a78a1"
+    }
+  },
+  "observation": "Inspected the actual540x960 fresh-process frame327. Head orientation visibly differs from the unchanged control, confirming the numeric head-control edit affects the animal. This is an absolute one-degree local quaternion target, not a one-degree delta from the source pose. The off-camera diagnostic triangle is correctly absent from shot framing. Elongated straight hind support, abrupt forelimb folds, polished coat and simplified leader remain visibly unacceptable.",
+  "comparison": "Saved and reopened selected-state hashes match, including the edited head basis and triangle geometry/material. Those transport positives do not qualify horse motion or same-film appearance. The64 inherited missing-target drivers persist. This is a labeled technical control, not a fourth331 proposed artistic solution; no playback/audio judgment."
+}

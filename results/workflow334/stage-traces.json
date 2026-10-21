@@ -1,0 +1,393 @@
+{
+  "workflow333-native-control": [
+    {
+      "seq": 4,
+      "utc": "2026-10-21T17:18:18.660895+00:00",
+      "action": "create",
+      "stage": "BRIEFING",
+      "planning_step": "GROUNDING",
+      "cycle": 0,
+      "findings": {}
+    },
+    {
+      "seq": 5,
+      "utc": "2026-10-21T17:18:18.972230+00:00",
+      "action": "submit:planner",
+      "stage": "BRIEFING",
+      "planning_step": "DERIVING",
+      "cycle": 0,
+      "findings": {}
+    },
+    {
+      "seq": 6,
+      "utc": "2026-10-21T17:18:19.280993+00:00",
+      "action": "submit:planner",
+      "stage": "BRIEFING",
+      "planning_step": "STRATEGIZING",
+      "cycle": 0,
+      "findings": {}
+    },
+    {
+      "seq": 7,
+      "utc": "2026-10-21T17:18:19.845956+00:00",
+      "action": "submit:planner",
+      "stage": "BRIEFING",
+      "planning_step": "CHALLENGING",
+      "cycle": 0,
+      "findings": {}
+    },
+    {
+      "seq": 8,
+      "utc": "2026-10-21T17:19:34.096831+00:00",
+      "action": "submit:reviewer",
+      "stage": "EXECUTING",
+      "planning_step": "CHALLENGING",
+      "cycle": 0,
+      "findings": {}
+    },
+    {
+      "seq": 9,
+      "utc": "2026-10-21T17:19:53.056461+00:00",
+      "action": "job:acquire",
+      "stage": "EXECUTING",
+      "planning_step": "CHALLENGING",
+      "cycle": 0,
+      "findings": {}
+    },
+    {
+      "seq": 10,
+      "utc": "2026-10-21T17:19:55.483611+00:00",
+      "action": "job:release",
+      "stage": "EXECUTING",
+      "planning_step": "CHALLENGING",
+      "cycle": 0,
+      "findings": {}
+    },
+    {
+      "seq": 11,
+      "utc": "2026-10-21T17:24:54.509863+00:00",
+      "action": "replan",
+      "stage": "REPLAN_REQUIRED",
+      "planning_step": "CHALLENGING",
+      "cycle": 0,
+      "findings": {}
+    },
+    {
+      "seq": 12,
+      "utc": "2026-10-21T17:46:44.602008+00:00",
+      "action": "recover_native_control",
+      "stage": "BRIEFING",
+      "planning_step": "GROUNDING",
+      "cycle": 0,
+      "findings": {}
+    },
+    {
+      "seq": 13,
+      "utc": "2026-10-21T17:47:04.544284+00:00",
+      "action": "reconcile_recovery_planner",
+      "stage": "BRIEFING",
+      "planning_step": "GROUNDING",
+      "cycle": 0,
+      "findings": {}
+    },
+    {
+      "seq": 14,
+      "utc": "2026-10-21T17:47:05.159436+00:00",
+      "action": "submit:planner",
+      "stage": "BRIEFING",
+      "planning_step": "DERIVING",
+      "cycle": 0,
+      "findings": {}
+    },
+    {
+      "seq": 15,
+      "utc": "2026-10-21T17:47:05.471358+00:00",
+      "action": "submit:planner",
+      "stage": "BRIEFING",
+      "planning_step": "STRATEGIZING",
+      "cycle": 0,
+      "findings": {}
+    },
+    {
+      "seq": 16,
+      "utc": "2026-10-21T17:47:05.941770+00:00",
+      "action": "submit:planner",
+      "stage": "BRIEFING",
+      "planning_step": "CHALLENGING",
+      "cycle": 0,
+      "findings": {}
+    },
+    {
+      "seq": 17,
+      "utc": "2026-10-21T17:47:20.928612+00:00",
+      "action": "submit:reviewer",
+      "stage": "EXECUTING",
+      "planning_step": "CHALLENGING",
+      "cycle": 0,
+      "findings": {}
+    },
+    {
+      "seq": 18,
+      "utc": "2026-10-21T17:47:25.328247+00:00",
+      "action": "job:acquire",
+      "stage": "EXECUTING",
+      "planning_step": "CHALLENGING",
+      "cycle": 0,
+      "findings": {}
+    },
+    {
+      "seq": 19,
+      "utc": "2026-10-21T17:47:27.873457+00:00",
+      "action": "job:release",
+      "stage": "EXECUTING",
+      "planning_step": "CHALLENGING",
+      "cycle": 0,
+      "findings": {}
+    },
+    {
+      "seq": 20,
+      "utc": "2026-10-21T17:49:05.438132+00:00",
+      "action": "recover_native_control",
+      "stage": "BRIEFING",
+      "planning_step": "GROUNDING",
+      "cycle": 0,
+      "findings": {}
+    },
+    {
+      "seq": 21,
+      "utc": "2026-10-21T17:49:05.751997+00:00",
+      "action": "submit:planner",
+      "stage": "BRIEFING",
+      "planning_step": "DERIVING",
+      "cycle": 0,
+      "findings": {}
+    },
+    {
+      "seq": 22,
+      "utc": "2026-10-21T17:49:06.071867+00:00",
+      "action": "submit:planner",
+      "stage": "BRIEFING",
+      "planning_step": "STRATEGIZING",
+      "cycle": 0,
+      "findings": {}
+    },
+    {
+      "seq": 23,
+      "utc": "2026-10-21T17:49:06.686679+00:00",
+      "action": "submit:planner",
+      "stage": "BRIEFING",
+      "planning_step": "CHALLENGING",
+      "cycle": 0,
+      "findings": {}
+    },
+    {
+      "seq": 24,
+      "utc": "2026-10-21T17:49:20.415557+00:00",
+      "action": "submit:reviewer",
+      "stage": "EXECUTING",
+      "planning_step": "CHALLENGING",
+      "cycle": 0,
+      "findings": {}
+    },
+    {
+      "seq": 25,
+      "utc": "2026-10-21T17:49:25.006965+00:00",
+      "action": "job:acquire",
+      "stage": "EXECUTING",
+      "planning_step": "CHALLENGING",
+      "cycle": 0,
+      "findings": {}
+    },
+    {
+      "seq": 26,
+      "utc": "2026-10-21T17:49:26.843044+00:00",
+      "action": "job:release",
+      "stage": "EXECUTING",
+      "planning_step": "CHALLENGING",
+      "cycle": 0,
+      "findings": {}
+    },
+    {
+      "seq": 27,
+      "utc": "2026-10-21T17:50:58.334569+00:00",
+      "action": "recover_native_control",
+      "stage": "BRIEFING",
+      "planning_step": "GROUNDING",
+      "cycle": 0,
+      "findings": {}
+    },
+    {
+      "seq": 28,
+      "utc": "2026-10-21T17:50:58.646979+00:00",
+      "action": "submit:planner",
+      "stage": "BRIEFING",
+      "planning_step": "DERIVING",
+      "cycle": 0,
+      "findings": {}
+    },
+    {
+      "seq": 29,
+      "utc": "2026-10-21T17:50:58.973567+00:00",
+      "action": "submit:planner",
+      "stage": "BRIEFING",
+      "planning_step": "STRATEGIZING",
+      "cycle": 0,
+      "findings": {}
+    },
+    {
+      "seq": 30,
+      "utc": "2026-10-21T17:50:59.445987+00:00",
+      "action": "submit:planner",
+      "stage": "BRIEFING",
+      "planning_step": "CHALLENGING",
+      "cycle": 0,
+      "findings": {}
+    },
+    {
+      "seq": 31,
+      "utc": "2026-10-21T17:51:17.821769+00:00",
+      "action": "submit:reviewer",
+      "stage": "EXECUTING",
+      "planning_step": "CHALLENGING",
+      "cycle": 0,
+      "findings": {}
+    },
+    {
+      "seq": 32,
+      "utc": "2026-10-21T17:51:21.777363+00:00",
+      "action": "job:acquire",
+      "stage": "EXECUTING",
+      "planning_step": "CHALLENGING",
+      "cycle": 0,
+      "findings": {}
+    },
+    {
+      "seq": 33,
+      "utc": "2026-10-21T17:51:24.628815+00:00",
+      "action": "job:release",
+      "stage": "EXECUTING",
+      "planning_step": "CHALLENGING",
+      "cycle": 0,
+      "findings": {}
+    },
+    {
+      "seq": 34,
+      "utc": "2026-10-21T17:51:55.299424+00:00",
+      "action": "job:acquire",
+      "stage": "EXECUTING",
+      "planning_step": "CHALLENGING",
+      "cycle": 0,
+      "findings": {}
+    },
+    {
+      "seq": 35,
+      "utc": "2026-10-21T17:52:18.989779+00:00",
+      "action": "job:release",
+      "stage": "EXECUTING",
+      "planning_step": "CHALLENGING",
+      "cycle": 0,
+      "findings": {}
+    },
+    {
+      "seq": 36,
+      "utc": "2026-10-21T17:53:36.678558+00:00",
+      "action": "replan",
+      "stage": "REPLAN_REQUIRED",
+      "planning_step": "CHALLENGING",
+      "cycle": 0,
+      "findings": {}
+    }
+  ],
+  "workflow334author-native-control": [
+    {
+      "seq": 37,
+      "utc": "2026-10-21T17:57:16.434971+00:00",
+      "action": "create",
+      "stage": "BRIEFING",
+      "planning_step": "GROUNDING",
+      "cycle": 0,
+      "findings": {}
+    },
+    {
+      "seq": 38,
+      "utc": "2026-10-21T17:57:16.751863+00:00",
+      "action": "submit:planner",
+      "stage": "BRIEFING",
+      "planning_step": "DERIVING",
+      "cycle": 0,
+      "findings": {}
+    },
+    {
+      "seq": 39,
+      "utc": "2026-10-21T17:57:17.056831+00:00",
+      "action": "submit:planner",
+      "stage": "BRIEFING",
+      "planning_step": "STRATEGIZING",
+      "cycle": 0,
+      "findings": {}
+    },
+    {
+      "seq": 40,
+      "utc": "2026-10-21T17:57:17.517639+00:00",
+      "action": "submit:planner",
+      "stage": "BRIEFING",
+      "planning_step": "CHALLENGING",
+      "cycle": 0,
+      "findings": {}
+    },
+    {
+      "seq": 41,
+      "utc": "2026-10-21T17:57:38.330448+00:00",
+      "action": "submit:reviewer",
+      "stage": "EXECUTING",
+      "planning_step": "CHALLENGING",
+      "cycle": 0,
+      "findings": {}
+    },
+    {
+      "seq": 42,
+      "utc": "2026-10-21T17:57:43.168886+00:00",
+      "action": "job:acquire",
+      "stage": "EXECUTING",
+      "planning_step": "CHALLENGING",
+      "cycle": 0,
+      "findings": {}
+    },
+    {
+      "seq": 43,
+      "utc": "2026-10-21T17:57:45.996350+00:00",
+      "action": "job:release",
+      "stage": "EXECUTING",
+      "planning_step": "CHALLENGING",
+      "cycle": 0,
+      "findings": {}
+    },
+    {
+      "seq": 44,
+      "utc": "2026-10-21T17:58:37.375649+00:00",
+      "action": "job:acquire",
+      "stage": "EXECUTING",
+      "planning_step": "CHALLENGING",
+      "cycle": 0,
+      "findings": {}
+    },
+    {
+      "seq": 45,
+      "utc": "2026-10-21T17:59:00.042780+00:00",
+      "action": "job:release",
+      "stage": "EXECUTING",
+      "planning_step": "CHALLENGING",
+      "cycle": 0,
+      "findings": {}
+    },
+    {
+      "seq": 46,
+      "utc": "2026-10-21T17:59:48.583482+00:00",
+      "action": "replan",
+      "stage": "REPLAN_REQUIRED",
+      "planning_step": "CHALLENGING",
+      "cycle": 0,
+      "findings": {}
+    }
+  ]
+}

@@ -1,0 +1,706 @@
+{
+  "packet_digest": "89a4c8abe8e1db175ab4a86076b040a7dc8f46e6aa5247114b0002b243029805",
+  "scope": "Workflow implementation readiness, not production-media handoff",
+  "checks": [
+    {
+      "id": "reuse_envelope",
+      "status": "PASS",
+      "kind": "process",
+      "action_taken": "Existing controller/runner extended. Real selected-state, numeric authoring and fresh reopen qualified; no universal rig/cache claim.",
+      "observation": "Existing controller/runner extended. Real selected-state, numeric authoring and fresh reopen qualified; no universal rig/cache claim.",
+      "evidence": [
+        {
+          "path": "results/workflow334/CLOSEOUT.md",
+          "sha256": "38ad76d4082e5df575f80b1378e6a6a01053c12ce62a29c8bd6009531ca8d5e7"
+        },
+        {
+          "path": "results/workflow334/tests.txt",
+          "sha256": "37c4cea48c37c012bb8c97038aae6224f8d4e428c934e8707948c0a50cf720ed"
+        },
+        {
+          "path": "results/workflow334/protected.json",
+          "sha256": "1cb7c355adde44ed8ec5150e15b7b92bd2b406ae1af9797d3e6f914686e9e790"
+        },
+        {
+          "path": "results/workflow334/native-jobs.json",
+          "sha256": "c2a5fb7ff8cd06cfc3f350f13a067ace09c944ff6e613f89bcc5d23603282664"
+        },
+        {
+          "path": "results/workflow334/counter-state.json",
+          "sha256": "6cbe20c2039677aa5a4cba8a8e7e5baf3574e99dcbfb8279b943d6933a365e92"
+        },
+        {
+          "path": "results/workflow334/delivery-negative.json",
+          "sha256": "46c7741709cbe7773181186ec3898cc6e0f476bd426ce034f1e10d5724843bea"
+        },
+        {
+          "path": "results/workflow334/stage-traces.json",
+          "sha256": "645906fad8f45e9a2586caafe2d3f2ebcb2bd1df90ca94e91ab5049c725f5e07"
+        },
+        {
+          "path": "results/workflow334c/negative-control.json",
+          "sha256": "72111eb339befe7b7c4c99ffc30f70c896ea26ea88535e83248082c30cbe08ab"
+        },
+        {
+          "path": "results/workflow334c/visual-review.json",
+          "sha256": "547da1346b11ddcfe5b81be0624d8472f65e20846319f05361aa0b762ce69c59"
+        },
+        {
+          "path": "results/workflow334author/negative-control.json",
+          "sha256": "eebda950eadc301a7b948f392b08e7629f96d10ebb047e8de1734de2d4033215"
+        },
+        {
+          "path": "results/workflow334author/visual-review.json",
+          "sha256": "2e602507c45847a10649e8ae428d64f534e679c0b141d173135b32fea39a78a1"
+        },
+        {
+          "path": "docs/knowledge/NATIVE_WORKFLOW_334.md",
+          "sha256": "73366bd536e11b5a572114e2a9e7b091024a98ac51063997e5f1909b843575cc"
+        }
+      ]
+    },
+    {
+      "id": "authority",
+      "status": "PASS",
+      "kind": "process",
+      "action_taken": "Routed same-task recovery and distinct disposable transport control; no331 artistic renewal,325 calls, embedded execution, install or egress.",
+      "observation": "Routed same-task recovery and distinct disposable transport control; no331 artistic renewal,325 calls, embedded execution, install or egress.",
+      "evidence": [
+        {
+          "path": "results/workflow334/CLOSEOUT.md",
+          "sha256": "38ad76d4082e5df575f80b1378e6a6a01053c12ce62a29c8bd6009531ca8d5e7"
+        },
+        {
+          "path": "results/workflow334/tests.txt",
+          "sha256": "37c4cea48c37c012bb8c97038aae6224f8d4e428c934e8707948c0a50cf720ed"
+        },
+        {
+          "path": "results/workflow334/protected.json",
+          "sha256": "1cb7c355adde44ed8ec5150e15b7b92bd2b406ae1af9797d3e6f914686e9e790"
+        },
+        {
+          "path": "results/workflow334/native-jobs.json",
+          "sha256": "c2a5fb7ff8cd06cfc3f350f13a067ace09c944ff6e613f89bcc5d23603282664"
+        },
+        {
+          "path": "results/workflow334/counter-state.json",
+          "sha256": "6cbe20c2039677aa5a4cba8a8e7e5baf3574e99dcbfb8279b943d6933a365e92"
+        },
+        {
+          "path": "results/workflow334/delivery-negative.json",
+          "sha256": "46c7741709cbe7773181186ec3898cc6e0f476bd426ce034f1e10d5724843bea"
+        },
+        {
+          "path": "results/workflow334/stage-traces.json",
+          "sha256": "645906fad8f45e9a2586caafe2d3f2ebcb2bd1df90ca94e91ab5049c725f5e07"
+        },
+        {
+          "path": "results/workflow334c/negative-control.json",
+          "sha256": "72111eb339befe7b7c4c99ffc30f70c896ea26ea88535e83248082c30cbe08ab"
+        },
+        {
+          "path": "results/workflow334c/visual-review.json",
+          "sha256": "547da1346b11ddcfe5b81be0624d8472f65e20846319f05361aa0b762ce69c59"
+        },
+        {
+          "path": "results/workflow334author/negative-control.json",
+          "sha256": "eebda950eadc301a7b948f392b08e7629f96d10ebb047e8de1734de2d4033215"
+        },
+        {
+          "path": "results/workflow334author/visual-review.json",
+          "sha256": "2e602507c45847a10649e8ae428d64f534e679c0b141d173135b32fea39a78a1"
+        },
+        {
+          "path": "docs/knowledge/NATIVE_WORKFLOW_334.md",
+          "sha256": "73366bd536e11b5a572114e2a9e7b091024a98ac51063997e5f1909b843575cc"
+        }
+      ]
+    },
+    {
+      "id": "strategy",
+      "status": "PASS",
+      "kind": "process",
+      "action_taken": "Four stages preceded each successful native pair. Known-defect controls deliberately remain rejected.",
+      "observation": "Four stages preceded each successful native pair. Known-defect controls deliberately remain rejected.",
+      "evidence": [
+        {
+          "path": "results/workflow334/CLOSEOUT.md",
+          "sha256": "38ad76d4082e5df575f80b1378e6a6a01053c12ce62a29c8bd6009531ca8d5e7"
+        },
+        {
+          "path": "results/workflow334/tests.txt",
+          "sha256": "37c4cea48c37c012bb8c97038aae6224f8d4e428c934e8707948c0a50cf720ed"
+        },
+        {
+          "path": "results/workflow334/protected.json",
+          "sha256": "1cb7c355adde44ed8ec5150e15b7b92bd2b406ae1af9797d3e6f914686e9e790"
+        },
+        {
+          "path": "results/workflow334/native-jobs.json",
+          "sha256": "c2a5fb7ff8cd06cfc3f350f13a067ace09c944ff6e613f89bcc5d23603282664"
+        },
+        {
+          "path": "results/workflow334/counter-state.json",
+          "sha256": "6cbe20c2039677aa5a4cba8a8e7e5baf3574e99dcbfb8279b943d6933a365e92"
+        },
+        {
+          "path": "results/workflow334/delivery-negative.json",
+          "sha256": "46c7741709cbe7773181186ec3898cc6e0f476bd426ce034f1e10d5724843bea"
+        },
+        {
+          "path": "results/workflow334/stage-traces.json",
+          "sha256": "645906fad8f45e9a2586caafe2d3f2ebcb2bd1df90ca94e91ab5049c725f5e07"
+        },
+        {
+          "path": "results/workflow334c/negative-control.json",
+          "sha256": "72111eb339befe7b7c4c99ffc30f70c896ea26ea88535e83248082c30cbe08ab"
+        },
+        {
+          "path": "results/workflow334c/visual-review.json",
+          "sha256": "547da1346b11ddcfe5b81be0624d8472f65e20846319f05361aa0b762ce69c59"
+        },
+        {
+          "path": "results/workflow334author/negative-control.json",
+          "sha256": "eebda950eadc301a7b948f392b08e7629f96d10ebb047e8de1734de2d4033215"
+        },
+        {
+          "path": "results/workflow334author/visual-review.json",
+          "sha256": "2e602507c45847a10649e8ae428d64f534e679c0b141d173135b32fea39a78a1"
+        },
+        {
+          "path": "docs/knowledge/NATIVE_WORKFLOW_334.md",
+          "sha256": "73366bd536e11b5a572114e2a9e7b091024a98ac51063997e5f1909b843575cc"
+        }
+      ]
+    },
+    {
+      "id": "visual_gate",
+      "status": "PASS",
+      "kind": "review",
+      "action_taken": "Both actual rendered frames inspected and FAIL recorded; successors/delivery blocked. No direct AV claim.",
+      "observation": "Both actual rendered frames inspected and FAIL recorded; successors/delivery blocked. No direct AV claim.",
+      "evidence": [
+        {
+          "path": "results/workflow334/CLOSEOUT.md",
+          "sha256": "38ad76d4082e5df575f80b1378e6a6a01053c12ce62a29c8bd6009531ca8d5e7"
+        },
+        {
+          "path": "results/workflow334/tests.txt",
+          "sha256": "37c4cea48c37c012bb8c97038aae6224f8d4e428c934e8707948c0a50cf720ed"
+        },
+        {
+          "path": "results/workflow334/protected.json",
+          "sha256": "1cb7c355adde44ed8ec5150e15b7b92bd2b406ae1af9797d3e6f914686e9e790"
+        },
+        {
+          "path": "results/workflow334/native-jobs.json",
+          "sha256": "c2a5fb7ff8cd06cfc3f350f13a067ace09c944ff6e613f89bcc5d23603282664"
+        },
+        {
+          "path": "results/workflow334/counter-state.json",
+          "sha256": "6cbe20c2039677aa5a4cba8a8e7e5baf3574e99dcbfb8279b943d6933a365e92"
+        },
+        {
+          "path": "results/workflow334/delivery-negative.json",
+          "sha256": "46c7741709cbe7773181186ec3898cc6e0f476bd426ce034f1e10d5724843bea"
+        },
+        {
+          "path": "results/workflow334/stage-traces.json",
+          "sha256": "645906fad8f45e9a2586caafe2d3f2ebcb2bd1df90ca94e91ab5049c725f5e07"
+        },
+        {
+          "path": "results/workflow334c/negative-control.json",
+          "sha256": "72111eb339befe7b7c4c99ffc30f70c896ea26ea88535e83248082c30cbe08ab"
+        },
+        {
+          "path": "results/workflow334c/visual-review.json",
+          "sha256": "547da1346b11ddcfe5b81be0624d8472f65e20846319f05361aa0b762ce69c59"
+        },
+        {
+          "path": "results/workflow334author/negative-control.json",
+          "sha256": "eebda950eadc301a7b948f392b08e7629f96d10ebb047e8de1734de2d4033215"
+        },
+        {
+          "path": "results/workflow334author/visual-review.json",
+          "sha256": "2e602507c45847a10649e8ae428d64f534e679c0b141d173135b32fea39a78a1"
+        },
+        {
+          "path": "docs/knowledge/NATIVE_WORKFLOW_334.md",
+          "sha256": "73366bd536e11b5a572114e2a9e7b091024a98ac51063997e5f1909b843575cc"
+        }
+      ]
+    },
+    {
+      "id": "anticipation",
+      "status": "PASS",
+      "kind": "review",
+      "action_taken": "Skipped-script warning separated from actual64 missing-target drivers; next pose strategy must prove control ownership.",
+      "observation": "Skipped-script warning separated from actual64 missing-target drivers; next pose strategy must prove control ownership.",
+      "evidence": [
+        {
+          "path": "results/workflow334/CLOSEOUT.md",
+          "sha256": "38ad76d4082e5df575f80b1378e6a6a01053c12ce62a29c8bd6009531ca8d5e7"
+        },
+        {
+          "path": "results/workflow334/tests.txt",
+          "sha256": "37c4cea48c37c012bb8c97038aae6224f8d4e428c934e8707948c0a50cf720ed"
+        },
+        {
+          "path": "results/workflow334/protected.json",
+          "sha256": "1cb7c355adde44ed8ec5150e15b7b92bd2b406ae1af9797d3e6f914686e9e790"
+        },
+        {
+          "path": "results/workflow334/native-jobs.json",
+          "sha256": "c2a5fb7ff8cd06cfc3f350f13a067ace09c944ff6e613f89bcc5d23603282664"
+        },
+        {
+          "path": "results/workflow334/counter-state.json",
+          "sha256": "6cbe20c2039677aa5a4cba8a8e7e5baf3574e99dcbfb8279b943d6933a365e92"
+        },
+        {
+          "path": "results/workflow334/delivery-negative.json",
+          "sha256": "46c7741709cbe7773181186ec3898cc6e0f476bd426ce034f1e10d5724843bea"
+        },
+        {
+          "path": "results/workflow334/stage-traces.json",
+          "sha256": "645906fad8f45e9a2586caafe2d3f2ebcb2bd1df90ca94e91ab5049c725f5e07"
+        },
+        {
+          "path": "results/workflow334c/negative-control.json",
+          "sha256": "72111eb339befe7b7c4c99ffc30f70c896ea26ea88535e83248082c30cbe08ab"
+        },
+        {
+          "path": "results/workflow334c/visual-review.json",
+          "sha256": "547da1346b11ddcfe5b81be0624d8472f65e20846319f05361aa0b762ce69c59"
+        },
+        {
+          "path": "results/workflow334author/negative-control.json",
+          "sha256": "eebda950eadc301a7b948f392b08e7629f96d10ebb047e8de1734de2d4033215"
+        },
+        {
+          "path": "results/workflow334author/visual-review.json",
+          "sha256": "2e602507c45847a10649e8ae428d64f534e679c0b141d173135b32fea39a78a1"
+        },
+        {
+          "path": "docs/knowledge/NATIVE_WORKFLOW_334.md",
+          "sha256": "73366bd536e11b5a572114e2a9e7b091024a98ac51063997e5f1909b843575cc"
+        }
+      ]
+    },
+    {
+      "id": "stopping",
+      "status": "PASS",
+      "kind": "review",
+      "action_taken": "Workflow envelope complete with evidence; no additional infrastructure micro-handoff or artistic acceptance claim.",
+      "observation": "Workflow envelope complete with evidence; no additional infrastructure micro-handoff or artistic acceptance claim.",
+      "evidence": [
+        {
+          "path": "results/workflow334/CLOSEOUT.md",
+          "sha256": "38ad76d4082e5df575f80b1378e6a6a01053c12ce62a29c8bd6009531ca8d5e7"
+        },
+        {
+          "path": "results/workflow334/tests.txt",
+          "sha256": "37c4cea48c37c012bb8c97038aae6224f8d4e428c934e8707948c0a50cf720ed"
+        },
+        {
+          "path": "results/workflow334/protected.json",
+          "sha256": "1cb7c355adde44ed8ec5150e15b7b92bd2b406ae1af9797d3e6f914686e9e790"
+        },
+        {
+          "path": "results/workflow334/native-jobs.json",
+          "sha256": "c2a5fb7ff8cd06cfc3f350f13a067ace09c944ff6e613f89bcc5d23603282664"
+        },
+        {
+          "path": "results/workflow334/counter-state.json",
+          "sha256": "6cbe20c2039677aa5a4cba8a8e7e5baf3574e99dcbfb8279b943d6933a365e92"
+        },
+        {
+          "path": "results/workflow334/delivery-negative.json",
+          "sha256": "46c7741709cbe7773181186ec3898cc6e0f476bd426ce034f1e10d5724843bea"
+        },
+        {
+          "path": "results/workflow334/stage-traces.json",
+          "sha256": "645906fad8f45e9a2586caafe2d3f2ebcb2bd1df90ca94e91ab5049c725f5e07"
+        },
+        {
+          "path": "results/workflow334c/negative-control.json",
+          "sha256": "72111eb339befe7b7c4c99ffc30f70c896ea26ea88535e83248082c30cbe08ab"
+        },
+        {
+          "path": "results/workflow334c/visual-review.json",
+          "sha256": "547da1346b11ddcfe5b81be0624d8472f65e20846319f05361aa0b762ce69c59"
+        },
+        {
+          "path": "results/workflow334author/negative-control.json",
+          "sha256": "eebda950eadc301a7b948f392b08e7629f96d10ebb047e8de1734de2d4033215"
+        },
+        {
+          "path": "results/workflow334author/visual-review.json",
+          "sha256": "2e602507c45847a10649e8ae428d64f534e679c0b141d173135b32fea39a78a1"
+        },
+        {
+          "path": "docs/knowledge/NATIVE_WORKFLOW_334.md",
+          "sha256": "73366bd536e11b5a572114e2a9e7b091024a98ac51063997e5f1909b843575cc"
+        }
+      ]
+    },
+    {
+      "id": "versioning",
+      "status": "PASS",
+      "kind": "technical",
+      "action_taken": "Protected bytes unchanged; exact recipes, handlers, outputs and separate-process state bound. Failures retained.",
+      "observation": "Protected bytes unchanged; exact recipes, handlers, outputs and separate-process state bound. Failures retained.",
+      "evidence": [
+        {
+          "path": "results/workflow334/CLOSEOUT.md",
+          "sha256": "38ad76d4082e5df575f80b1378e6a6a01053c12ce62a29c8bd6009531ca8d5e7"
+        },
+        {
+          "path": "results/workflow334/tests.txt",
+          "sha256": "37c4cea48c37c012bb8c97038aae6224f8d4e428c934e8707948c0a50cf720ed"
+        },
+        {
+          "path": "results/workflow334/protected.json",
+          "sha256": "1cb7c355adde44ed8ec5150e15b7b92bd2b406ae1af9797d3e6f914686e9e790"
+        },
+        {
+          "path": "results/workflow334/native-jobs.json",
+          "sha256": "c2a5fb7ff8cd06cfc3f350f13a067ace09c944ff6e613f89bcc5d23603282664"
+        },
+        {
+          "path": "results/workflow334/counter-state.json",
+          "sha256": "6cbe20c2039677aa5a4cba8a8e7e5baf3574e99dcbfb8279b943d6933a365e92"
+        },
+        {
+          "path": "results/workflow334/delivery-negative.json",
+          "sha256": "46c7741709cbe7773181186ec3898cc6e0f476bd426ce034f1e10d5724843bea"
+        },
+        {
+          "path": "results/workflow334/stage-traces.json",
+          "sha256": "645906fad8f45e9a2586caafe2d3f2ebcb2bd1df90ca94e91ab5049c725f5e07"
+        },
+        {
+          "path": "results/workflow334c/negative-control.json",
+          "sha256": "72111eb339befe7b7c4c99ffc30f70c896ea26ea88535e83248082c30cbe08ab"
+        },
+        {
+          "path": "results/workflow334c/visual-review.json",
+          "sha256": "547da1346b11ddcfe5b81be0624d8472f65e20846319f05361aa0b762ce69c59"
+        },
+        {
+          "path": "results/workflow334author/negative-control.json",
+          "sha256": "eebda950eadc301a7b948f392b08e7629f96d10ebb047e8de1734de2d4033215"
+        },
+        {
+          "path": "results/workflow334author/visual-review.json",
+          "sha256": "2e602507c45847a10649e8ae428d64f534e679c0b141d173135b32fea39a78a1"
+        },
+        {
+          "path": "docs/knowledge/NATIVE_WORKFLOW_334.md",
+          "sha256": "73366bd536e11b5a572114e2a9e7b091024a98ac51063997e5f1909b843575cc"
+        }
+      ]
+    },
+    {
+      "id": "economics",
+      "status": "PASS",
+      "kind": "process",
+      "action_taken": "Six native processes measured; bootstrap/token gaps disclosed. No percentage efficiency claim or remote protection.",
+      "observation": "Six native processes measured; bootstrap/token gaps disclosed. No percentage efficiency claim or remote protection.",
+      "evidence": [
+        {
+          "path": "results/workflow334/CLOSEOUT.md",
+          "sha256": "38ad76d4082e5df575f80b1378e6a6a01053c12ce62a29c8bd6009531ca8d5e7"
+        },
+        {
+          "path": "results/workflow334/tests.txt",
+          "sha256": "37c4cea48c37c012bb8c97038aae6224f8d4e428c934e8707948c0a50cf720ed"
+        },
+        {
+          "path": "results/workflow334/protected.json",
+          "sha256": "1cb7c355adde44ed8ec5150e15b7b92bd2b406ae1af9797d3e6f914686e9e790"
+        },
+        {
+          "path": "results/workflow334/native-jobs.json",
+          "sha256": "c2a5fb7ff8cd06cfc3f350f13a067ace09c944ff6e613f89bcc5d23603282664"
+        },
+        {
+          "path": "results/workflow334/counter-state.json",
+          "sha256": "6cbe20c2039677aa5a4cba8a8e7e5baf3574e99dcbfb8279b943d6933a365e92"
+        },
+        {
+          "path": "results/workflow334/delivery-negative.json",
+          "sha256": "46c7741709cbe7773181186ec3898cc6e0f476bd426ce034f1e10d5724843bea"
+        },
+        {
+          "path": "results/workflow334/stage-traces.json",
+          "sha256": "645906fad8f45e9a2586caafe2d3f2ebcb2bd1df90ca94e91ab5049c725f5e07"
+        },
+        {
+          "path": "results/workflow334c/negative-control.json",
+          "sha256": "72111eb339befe7b7c4c99ffc30f70c896ea26ea88535e83248082c30cbe08ab"
+        },
+        {
+          "path": "results/workflow334c/visual-review.json",
+          "sha256": "547da1346b11ddcfe5b81be0624d8472f65e20846319f05361aa0b762ce69c59"
+        },
+        {
+          "path": "results/workflow334author/negative-control.json",
+          "sha256": "eebda950eadc301a7b948f392b08e7629f96d10ebb047e8de1734de2d4033215"
+        },
+        {
+          "path": "results/workflow334author/visual-review.json",
+          "sha256": "2e602507c45847a10649e8ae428d64f534e679c0b141d173135b32fea39a78a1"
+        },
+        {
+          "path": "docs/knowledge/NATIVE_WORKFLOW_334.md",
+          "sha256": "73366bd536e11b5a572114e2a9e7b091024a98ac51063997e5f1909b843575cc"
+        }
+      ]
+    },
+    {
+      "id": "retrieval",
+      "status": "PASS",
+      "kind": "technical",
+      "action_taken": "Fresh packet and explicit330/328/331/332/333, AU13/16 reconciliation; no exhaustive-memory claim.",
+      "observation": "Fresh packet and explicit330/328/331/332/333, AU13/16 reconciliation; no exhaustive-memory claim.",
+      "evidence": [
+        {
+          "path": "results/workflow334/CLOSEOUT.md",
+          "sha256": "38ad76d4082e5df575f80b1378e6a6a01053c12ce62a29c8bd6009531ca8d5e7"
+        },
+        {
+          "path": "results/workflow334/tests.txt",
+          "sha256": "37c4cea48c37c012bb8c97038aae6224f8d4e428c934e8707948c0a50cf720ed"
+        },
+        {
+          "path": "results/workflow334/protected.json",
+          "sha256": "1cb7c355adde44ed8ec5150e15b7b92bd2b406ae1af9797d3e6f914686e9e790"
+        },
+        {
+          "path": "results/workflow334/native-jobs.json",
+          "sha256": "c2a5fb7ff8cd06cfc3f350f13a067ace09c944ff6e613f89bcc5d23603282664"
+        },
+        {
+          "path": "results/workflow334/counter-state.json",
+          "sha256": "6cbe20c2039677aa5a4cba8a8e7e5baf3574e99dcbfb8279b943d6933a365e92"
+        },
+        {
+          "path": "results/workflow334/delivery-negative.json",
+          "sha256": "46c7741709cbe7773181186ec3898cc6e0f476bd426ce034f1e10d5724843bea"
+        },
+        {
+          "path": "results/workflow334/stage-traces.json",
+          "sha256": "645906fad8f45e9a2586caafe2d3f2ebcb2bd1df90ca94e91ab5049c725f5e07"
+        },
+        {
+          "path": "results/workflow334c/negative-control.json",
+          "sha256": "72111eb339befe7b7c4c99ffc30f70c896ea26ea88535e83248082c30cbe08ab"
+        },
+        {
+          "path": "results/workflow334c/visual-review.json",
+          "sha256": "547da1346b11ddcfe5b81be0624d8472f65e20846319f05361aa0b762ce69c59"
+        },
+        {
+          "path": "results/workflow334author/negative-control.json",
+          "sha256": "eebda950eadc301a7b948f392b08e7629f96d10ebb047e8de1734de2d4033215"
+        },
+        {
+          "path": "results/workflow334author/visual-review.json",
+          "sha256": "2e602507c45847a10649e8ae428d64f534e679c0b141d173135b32fea39a78a1"
+        },
+        {
+          "path": "docs/knowledge/NATIVE_WORKFLOW_334.md",
+          "sha256": "73366bd536e11b5a572114e2a9e7b091024a98ac51063997e5f1909b843575cc"
+        }
+      ]
+    },
+    {
+      "id": "current_state",
+      "status": "PASS",
+      "kind": "process",
+      "action_taken": "253 accepted master protected;320/331 remain rejected. Next coupled pose/representation proof, not another offset variant.",
+      "observation": "253 accepted master protected;320/331 remain rejected. Next coupled pose/representation proof, not another offset variant.",
+      "evidence": [
+        {
+          "path": "results/workflow334/CLOSEOUT.md",
+          "sha256": "38ad76d4082e5df575f80b1378e6a6a01053c12ce62a29c8bd6009531ca8d5e7"
+        },
+        {
+          "path": "results/workflow334/tests.txt",
+          "sha256": "37c4cea48c37c012bb8c97038aae6224f8d4e428c934e8707948c0a50cf720ed"
+        },
+        {
+          "path": "results/workflow334/protected.json",
+          "sha256": "1cb7c355adde44ed8ec5150e15b7b92bd2b406ae1af9797d3e6f914686e9e790"
+        },
+        {
+          "path": "results/workflow334/native-jobs.json",
+          "sha256": "c2a5fb7ff8cd06cfc3f350f13a067ace09c944ff6e613f89bcc5d23603282664"
+        },
+        {
+          "path": "results/workflow334/counter-state.json",
+          "sha256": "6cbe20c2039677aa5a4cba8a8e7e5baf3574e99dcbfb8279b943d6933a365e92"
+        },
+        {
+          "path": "results/workflow334/delivery-negative.json",
+          "sha256": "46c7741709cbe7773181186ec3898cc6e0f476bd426ce034f1e10d5724843bea"
+        },
+        {
+          "path": "results/workflow334/stage-traces.json",
+          "sha256": "645906fad8f45e9a2586caafe2d3f2ebcb2bd1df90ca94e91ab5049c725f5e07"
+        },
+        {
+          "path": "results/workflow334c/negative-control.json",
+          "sha256": "72111eb339befe7b7c4c99ffc30f70c896ea26ea88535e83248082c30cbe08ab"
+        },
+        {
+          "path": "results/workflow334c/visual-review.json",
+          "sha256": "547da1346b11ddcfe5b81be0624d8472f65e20846319f05361aa0b762ce69c59"
+        },
+        {
+          "path": "results/workflow334author/negative-control.json",
+          "sha256": "eebda950eadc301a7b948f392b08e7629f96d10ebb047e8de1734de2d4033215"
+        },
+        {
+          "path": "results/workflow334author/visual-review.json",
+          "sha256": "2e602507c45847a10649e8ae428d64f534e679c0b141d173135b32fea39a78a1"
+        },
+        {
+          "path": "docs/knowledge/NATIVE_WORKFLOW_334.md",
+          "sha256": "73366bd536e11b5a572114e2a9e7b091024a98ac51063997e5f1909b843575cc"
+        }
+      ]
+    },
+    {
+      "id": "au_reuse",
+      "status": "PASS",
+      "kind": "review",
+      "action_taken": "Typed transport tested in actual Blender with new-process comparison; not complete cache portability or off-device restore.",
+      "observation": "Typed transport tested in actual Blender with new-process comparison; not complete cache portability or off-device restore.",
+      "evidence": [
+        {
+          "path": "results/workflow334/CLOSEOUT.md",
+          "sha256": "38ad76d4082e5df575f80b1378e6a6a01053c12ce62a29c8bd6009531ca8d5e7"
+        },
+        {
+          "path": "results/workflow334/tests.txt",
+          "sha256": "37c4cea48c37c012bb8c97038aae6224f8d4e428c934e8707948c0a50cf720ed"
+        },
+        {
+          "path": "results/workflow334/protected.json",
+          "sha256": "1cb7c355adde44ed8ec5150e15b7b92bd2b406ae1af9797d3e6f914686e9e790"
+        },
+        {
+          "path": "results/workflow334/native-jobs.json",
+          "sha256": "c2a5fb7ff8cd06cfc3f350f13a067ace09c944ff6e613f89bcc5d23603282664"
+        },
+        {
+          "path": "results/workflow334/counter-state.json",
+          "sha256": "6cbe20c2039677aa5a4cba8a8e7e5baf3574e99dcbfb8279b943d6933a365e92"
+        },
+        {
+          "path": "results/workflow334/delivery-negative.json",
+          "sha256": "46c7741709cbe7773181186ec3898cc6e0f476bd426ce034f1e10d5724843bea"
+        },
+        {
+          "path": "results/workflow334/stage-traces.json",
+          "sha256": "645906fad8f45e9a2586caafe2d3f2ebcb2bd1df90ca94e91ab5049c725f5e07"
+        },
+        {
+          "path": "results/workflow334c/negative-control.json",
+          "sha256": "72111eb339befe7b7c4c99ffc30f70c896ea26ea88535e83248082c30cbe08ab"
+        },
+        {
+          "path": "results/workflow334c/visual-review.json",
+          "sha256": "547da1346b11ddcfe5b81be0624d8472f65e20846319f05361aa0b762ce69c59"
+        },
+        {
+          "path": "results/workflow334author/negative-control.json",
+          "sha256": "eebda950eadc301a7b948f392b08e7629f96d10ebb047e8de1734de2d4033215"
+        },
+        {
+          "path": "results/workflow334author/visual-review.json",
+          "sha256": "2e602507c45847a10649e8ae428d64f534e679c0b141d173135b32fea39a78a1"
+        },
+        {
+          "path": "docs/knowledge/NATIVE_WORKFLOW_334.md",
+          "sha256": "73366bd536e11b5a572114e2a9e7b091024a98ac51063997e5f1909b843575cc"
+        }
+      ]
+    },
+    {
+      "id": "au_review",
+      "status": "PASS",
+      "kind": "review",
+      "action_taken": "Technical positive and actual visual negative separated; semantic wrong-method regression retained; Director AV remains pending future footage.",
+      "observation": "Technical positive and actual visual negative separated; semantic wrong-method regression retained; Director AV remains pending future footage.",
+      "evidence": [
+        {
+          "path": "results/workflow334/CLOSEOUT.md",
+          "sha256": "38ad76d4082e5df575f80b1378e6a6a01053c12ce62a29c8bd6009531ca8d5e7"
+        },
+        {
+          "path": "results/workflow334/tests.txt",
+          "sha256": "37c4cea48c37c012bb8c97038aae6224f8d4e428c934e8707948c0a50cf720ed"
+        },
+        {
+          "path": "results/workflow334/protected.json",
+          "sha256": "1cb7c355adde44ed8ec5150e15b7b92bd2b406ae1af9797d3e6f914686e9e790"
+        },
+        {
+          "path": "results/workflow334/native-jobs.json",
+          "sha256": "c2a5fb7ff8cd06cfc3f350f13a067ace09c944ff6e613f89bcc5d23603282664"
+        },
+        {
+          "path": "results/workflow334/counter-state.json",
+          "sha256": "6cbe20c2039677aa5a4cba8a8e7e5baf3574e99dcbfb8279b943d6933a365e92"
+        },
+        {
+          "path": "results/workflow334/delivery-negative.json",
+          "sha256": "46c7741709cbe7773181186ec3898cc6e0f476bd426ce034f1e10d5724843bea"
+        },
+        {
+          "path": "results/workflow334/stage-traces.json",
+          "sha256": "645906fad8f45e9a2586caafe2d3f2ebcb2bd1df90ca94e91ab5049c725f5e07"
+        },
+        {
+          "path": "results/workflow334c/negative-control.json",
+          "sha256": "72111eb339befe7b7c4c99ffc30f70c896ea26ea88535e83248082c30cbe08ab"
+        },
+        {
+          "path": "results/workflow334c/visual-review.json",
+          "sha256": "547da1346b11ddcfe5b81be0624d8472f65e20846319f05361aa0b762ce69c59"
+        },
+        {
+          "path": "results/workflow334author/negative-control.json",
+          "sha256": "eebda950eadc301a7b948f392b08e7629f96d10ebb047e8de1734de2d4033215"
+        },
+        {
+          "path": "results/workflow334author/visual-review.json",
+          "sha256": "2e602507c45847a10649e8ae428d64f534e679c0b141d173135b32fea39a78a1"
+        },
+        {
+          "path": "docs/knowledge/NATIVE_WORKFLOW_334.md",
+          "sha256": "73366bd536e11b5a572114e2a9e7b091024a98ac51063997e5f1909b843575cc"
+        }
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "prediction": "Successful save could be mistaken for usable art.",
+      "observation": "Real rendered controls rejected and dependent launches blocked.",
+      "response": "Preserve separation and carry diagnosed rig defect into next strategy.",
+      "result": "resolved"
+    },
+    {
+      "prediction": "Numeric authored state might disappear on fresh reopen.",
+      "observation": "Exact selected-state and new mesh/material hashes persisted.",
+      "response": "Qualify only this typed-operation envelope.",
+      "result": "resolved"
+    }
+  ],
+  "adjacent_regressions": "428 focused tests; unchanged source/reference/accepted hashes; no altered historical source pins.",
+  "stopping_reason": "Supported main-chat workflow ready for Nihang package; artistic readiness not claimed."
+}
