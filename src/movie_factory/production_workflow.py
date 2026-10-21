@@ -31,6 +31,12 @@ STAGES = {'BRIEFING': 'planner', 'EXECUTING': 'builder', 'REVIEWING': 'reviewer'
 READY = {'READY_FOR_DIRECTOR', 'READY_FOR_DIRECTOR_AV', 'COMPLETE'}
 
 
+def stage_actor(state):
+    if state['stage'] == 'BRIEFING' and state.get('planning_step') == 'CHALLENGING':
+        return 'reviewer'
+    return STAGES.get(state['stage'])
+
+
 def require(value, message):
     if not value:
         raise Blocked(message)
@@ -248,6 +254,7 @@ class Controller:
         with closing(self.connect()) as con:
             return [{'seq': r['seq'], 'utc': r['utc'], 'action': r['action'],
                      'stage': json.loads(r['state'])['stage'],
+                     'planning_step': json.loads(r['state']).get('planning_step'),
                      'cycle': json.loads(r['state'])['cycle'],
                      'findings': json.loads(r['state']).get('findings', {})}
                     for r in con.execute('SELECT * FROM events WHERE task=? ORDER BY seq', (task,))]
@@ -295,6 +302,7 @@ class Controller:
                 'LIVE_DRIVER_NOT_QUALIFIED')
         rc.binding(self.root, authority)
         if route == 'production':
+            from . import planning_pipeline as pp
             require(isinstance(direction, dict) and nonempty(direction.get('intent'))
                     and nonempty(direction.get('deliverable_id'))
                     and direction.get('references') and direction.get('protected'), 'DIRECTOR_CONTEXT_REQUIRED')
@@ -304,6 +312,8 @@ class Controller:
             rows(direction['references'])
             for ref in direction['references']:
                 rc.binding(self.root, ref['binding'])
+            pp.sources(self.root, direction)
+            pp.source_context(self.root, direction)
         def apply(con):
             require(not con.execute('SELECT 1 FROM events WHERE task=?', (task,)).fetchone(), 'TASK_EXISTS')
             if route == 'production':
@@ -313,6 +323,9 @@ class Controller:
             return self._stage({'task': task, 'route': route, 'cycle': 0,
                                 'max_corrections': max_corrections, 'authority': authority,
                                 'direction': direction,
+                                'planning_step': 'GROUNDING' if route == 'production' else None,
+                                'planning_artifacts': {}, 'planning_version': 1,
+                                'planning_engine': pp.engine_digest() if route == 'production' else None,
                                 'mode': mode, 'offline_only': mode == 'offline',
                                 'frozen_evidence_only': mode == 'frozen_evidence', 'production_approved': False},
                                'BRIEFING' if route == 'production' else 'LIGHTWEIGHT')
@@ -323,6 +336,10 @@ class Controller:
         if state.get('revision_authority'):
             rc.binding(self.root, state['revision_authority'])
         if state.get('direction'):
+            from . import planning_pipeline as pp
+            require(state.get('planning_version') == 1, 'LEGACY_PLANNING_REQUIRES_MIGRATION')
+            require(state.get('planning_engine') == pp.engine_digest(), 'PLANNING_ENGINE_CHANGED_REVIEWED_MIGRATION_REQUIRED')
+            pp.sources(self.root, state['direction'])
             for ref in state['direction']['references']:
                 rc.binding(self.root, ref['binding'])
         if 'brief' in state:
@@ -338,11 +355,27 @@ class Controller:
             state = self._state(con, task)
         self._fresh(state)
         require(state['stage'] in STAGES, 'NO_STAGE_DISPATCH')
-        packet = {'task': task, 'stage': state['stage'], 'actor': STAGES[state['stage']],
+        packet = {'task': task, 'stage': state['stage'], 'actor': stage_actor(state),
                   'ticket': state['ticket'], 'cycle': state['cycle'],
                   'max_corrections': state['max_corrections'], 'offline_only': state['offline_only'],
                   'frozen_evidence_only': state.get('frozen_evidence_only', False),
                   'direction': state['direction'], 'authority': state['authority']}
+        from . import planning_pipeline as pp
+        if state.get('direction'):
+            packet['source_context'] = pp.source_context(self.root, state['direction'])
+            _, fresh = pp.sources(self.root, state['direction'])
+            packet['grounding_knowledge'] = {'packet_digest': fresh['packet_digest'],
+                                            'obligations': fresh['obligations']}
+        if state.get('revision_authority'):
+            packet['direction_revision'] = {'reason': state['revision_reason'],
+                'source_context': pp.source_context(self.root, {'context_sources': [
+                    {'id': 'revision', 'binding': state['revision_authority'],
+                     **({'lines': state['revision_authority']['lines']} if 'lines' in state['revision_authority'] else {})}]})}
+        if state['stage'] == 'BRIEFING':
+            packet.update(pp.packet(state))
+            packet['expert_instruction'] = pp.GOALS[state['planning_step']]
+            packet['expert_contract'] = ep.contract()
+            return packet
         if 'brief' in state:
             packet.update(brief=state['brief'], fingerprint=state['fingerprint'])
         if packet['actor'] == 'planner':
@@ -360,19 +393,12 @@ class Controller:
     def submit(self, task, actor, ticket, result, event_id):
         def apply(con):
             state = self._state(con, task)
-            require(STAGES.get(state['stage']) == actor and state['ticket'] == ticket,
+            require(stage_actor(state) == actor and state['ticket'] == ticket,
                     'WRONG_STAGE_OR_TICKET')
             require(not con.execute('SELECT 1 FROM heavy_job WHERE task=?', (task,)).fetchone(), 'JOB_STILL_ACTIVE')
             self._fresh(state)
-            if actor == 'planner':
-                require(result.get('references') == state['direction']['references'] and
-                        result.get('protected') == state['direction']['protected'] and
-                        result.get('intent') == state['direction']['intent'], 'PLANNER_CHANGED_DIRECTOR_AUTHORITY')
-                require(result.get('expert_plan', {}).get('beat_intents') == state['direction']['beat_intents'],
-                        'PLANNER_CHANGED_BEAT_INTENT')
-                state['fingerprint'] = validate_brief(self.root, result, state['route'], state.get('mode', 'offline'))
-                state['brief'] = result
-                return self._stage(state, 'EXECUTING')
+            if state['stage'] == 'BRIEFING':
+                return self._planning_submit(state, result)
             if actor == 'builder':
                 from . import expert_planning as ep
                 ep.validate_execution(state['brief'], result)
@@ -394,7 +420,7 @@ class Controller:
             state['review'] = result
             state['findings'] = findings
             if findings['planning_gaps']:
-                return self._stage(state, 'REPLAN_REQUIRED')
+                return self._planning_repair(state, 'DERIVING', findings['planning_gaps'])
             if findings['failures']:
                 if state['cycle'] >= state['max_corrections']:
                     return self._stage(state, 'REPLAN_REQUIRED')
@@ -406,6 +432,62 @@ class Controller:
             return self._stage(state, 'READY_FOR_DIRECTOR_AV' if findings['pending_director_av'] else 'READY_FOR_DIRECTOR')
         return self._change(task, event_id, 'submit:' + actor, [ticket, result], apply)
 
+    def _planning_repair(self, state, target, feedback):
+        from . import planning_pipeline as pp
+        state['planning_feedback'] = feedback
+        if state['cycle'] >= state['max_corrections']:
+            return self._stage(state, 'REPLAN_REQUIRED')
+        state['cycle'] += 1
+        pp.invalidate(state, target)
+        return self._stage(state, 'BRIEFING')
+
+    def _planning_submit(self, state, result):
+        from . import planning_pipeline as pp
+        require(result.get('input_digest') == pp.input_digest(state), 'STALE_PLANNING_INPUT')
+        step, direction = state['planning_step'], state['direction']
+        if result.get('outcome') == 'needs_director':
+            pp.director_decision(result)
+            state['decision'] = result['decision']
+            return self._stage(state, 'DIRECTOR_DECISION')
+        artifacts = state['planning_artifacts']
+        if step == 'CHALLENGING':
+            target = pp.challenge(direction, result)
+            if target:
+                return self._planning_repair(state, target, result['issues'])
+            brief = artifacts['STRATEGIZING']['brief']
+            state['fingerprint'] = validate_brief(self.root, brief, state['route'], state.get('mode', 'offline'))
+            state['brief'] = brief
+            state['planning_admission'] = result
+            return self._stage(state, 'EXECUTING')
+        require(result.get('outcome') == 'complete' and isinstance(result.get('artifact'), dict), 'PLANNING_ARTIFACT_REQUIRED')
+        data = result['artifact']
+        if step == 'GROUNDING': pp.grounding(self.root, direction, data)
+        elif step == 'DERIVING': pp.derivation(self.root, direction, artifacts['GROUNDING'], data)
+        elif step == 'STRATEGIZING':
+            if data.get('brief', {}).get('expert_plan', {}).get('challenge', {}).get('plan_digest') == '__PARENT_COMPUTES__':
+                from . import expert_planning as ep
+                data = json.loads(json.dumps(data))
+                data['brief'] = ep.seal_planner_response(data['brief'])
+            pp.strategy(direction, artifacts['DERIVING'], data)
+            validate_brief(self.root, data['brief'], state['route'], state.get('mode', 'offline'))
+        else: require(False, 'UNKNOWN_PLANNING_STEP')
+        artifacts[step] = data
+        state['planning_step'] = pp.STEPS[pp.STEPS.index(step) + 1]
+        return self._stage(state, 'BRIEFING')
+
+    def replan(self, task, target, reason, event_id):
+        """Agent-owned in-scope method correction; no new authority or counter reset."""
+        from . import planning_pipeline as pp
+        require(target in pp.STEPS[:3] and nonempty(reason), 'REPLAN_TARGET_REASON')
+        def apply(con):
+            state = self._state(con, task)
+            require(state['route'] == 'production' and state['stage'] not in {'DIRECTOR_DECISION', 'REPLAN_REQUIRED'}, 'REPLAN_NOT_AVAILABLE')
+            require(not con.execute('SELECT 1 FROM heavy_job WHERE task=?', (task,)).fetchone(), 'JOB_STILL_ACTIVE')
+            self._fresh(state)
+            require(all(s in state['planning_artifacts'] for s in pp.STEPS[:pp.STEPS.index(target)]), 'MISSING_UPSTREAM_PLAN')
+            return self._planning_repair(state, target, [reason])
+        return self._change(task, event_id, 'replan', [target, reason], apply)
+
     def revise(self, task, brief, decision, reason, event_id):
         """Controller-owned Director direction update. Never resets the retry cap."""
         rc.binding(self.root, decision)
@@ -414,22 +496,49 @@ class Controller:
             state = self._state(con, task)
             require(state['route'] == 'production', 'WRONG_ROUTE')
             require(not con.execute('SELECT 1 FROM heavy_job WHERE task=?', (task,)).fetchone(), 'JOB_STILL_ACTIVE')
-            fingerprint = validate_brief(self.root, brief, state['route'], state.get('mode', 'offline'))
-            state.update(brief=brief, fingerprint=fingerprint, revision_reason=reason, revision_authority=decision)
+            validate_brief(self.root, brief, state['route'], state.get('mode', 'offline'))
+            state.update(revision_reason=reason, revision_authority=decision)
             state['direction'].update(intent=brief['intent'], references=brief['references'], protected=brief['protected'],
-                                      beat_intents=brief['expert_plan']['beat_intents'])
-            for key in ('candidate', 'review', 'builder_record'):
-                state.pop(key, None)
-            # An in-scope planning repair consumes the same persisted correction
-            # budget. It must not create a gratuitous Director approval or reset.
-            if (state['stage'] == 'REPLAN_REQUIRED' and state.get('findings', {}).get('planning_gaps')
-                    and state['cycle'] < state['max_corrections']):
-                state['cycle'] += 1
-                state['findings'] = {}
-                return self._stage(state, 'EXECUTING')
-            # Exhaustion cannot be bypassed by modifying intent/references.
-            return self._stage(state, 'REPLAN_REQUIRED' if state['stage'] == 'REPLAN_REQUIRED' else 'EXECUTING')
+                                      beat_intents=brief['expert_plan']['beat_intents'],
+                                      knowledge_task=brief['knowledge_task'], knowledge_digest=brief['knowledge_digest'])
+            # Explicit reviewed rebase only. Metadata/status cannot be silently
+            # rewritten; source hashes must be bound in the revised brief.
+            for source in state['direction']['context_sources']:
+                matches = list({pk.digest(b): b for b in brief['source_bindings'].values()
+                                if b['path'] == source['binding']['path']}.values())
+                require(len(matches) == 1, 'REVISION_SOURCE_COVERAGE')
+                source['binding'] = matches[0]
+            from . import planning_pipeline as pp
+            pp.sources(self.root, state['direction'])
+            pp.source_context(self.root, state['direction'])
+            state['planning_engine'] = pp.engine_digest()
+            state.pop('decision', None)
+            return self._planning_repair(state, 'GROUNDING', [reason])
         return self._change(task, event_id, 'revise', [brief, decision, reason], apply)
+
+    def reground(self, task, context_sources, knowledge_task, knowledge_digest, reason, event_id):
+        """Trusted source reconciliation, not a model response or new creative authority.
+
+        May add reviewed sources/rebase bytes; cannot drop required sources or
+        promote their status. Original intent, reference roles and limits survive.
+        """
+        from . import planning_pipeline as pp
+        require(nonempty(reason), 'REGROUND_REASON')
+        def apply(con):
+            state = self._state(con, task)
+            require(state['route'] == 'production' and state['stage'] not in {'DIRECTOR_DECISION', 'REPLAN_REQUIRED'}, 'REGROUND_NOT_AVAILABLE')
+            require(not con.execute('SELECT 1 FROM heavy_job WHERE task=?', (task,)).fetchone(), 'JOB_STILL_ACTIVE')
+            rc.binding(self.root, state['authority'])
+            updated = rows(context_sources)
+            for old in state['direction']['context_sources']:
+                require(not old['required'] or old['id'] in updated, 'REQUIRED_SOURCE_DROPPED')
+                if old['id'] in updated:
+                    require(all(updated[old['id']].get(k) == old[k] for k in ('category', 'status', 'required', 'statement', 'scope')), 'REGROUND_AUTHORITY_CHANGED')
+            state['direction'].update(context_sources=context_sources, knowledge_task=knowledge_task, knowledge_digest=knowledge_digest)
+            pp.sources(self.root, state['direction']); pp.source_context(self.root, state['direction'])
+            state['planning_engine'] = pp.engine_digest()
+            return self._planning_repair(state, 'GROUNDING', [reason])
+        return self._change(task, event_id, 'reground', [context_sources, knowledge_task, knowledge_digest, reason], apply)
 
     def complete_lightweight(self, task, result, event_id):
         def apply(con):

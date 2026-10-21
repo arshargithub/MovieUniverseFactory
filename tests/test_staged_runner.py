@@ -10,9 +10,20 @@ from movie_factory import staged_runner as sr
 from movie_factory import stage_routing as routing
 from test_production_workflow import setup, bind, direction, review, make_brief
 import expert_fixtures as ef
+import planning_fixtures as pf
 
 
-def prepare(setup, cap=4):
+@pytest.fixture(autouse=True)
+def simulation_runner(monkeypatch):
+    """Exercise the real serial runner without enlarging live qualification caps."""
+    original = sr.SerialRunner
+    class OfflineRunner(original):
+        def __init__(self, *args, **kwargs):
+            super().__init__(*args, **kwargs, offline_simulation=True)
+    monkeypatch.setattr(sr, 'SerialRunner', OfflineRunner)
+
+
+def prepare(setup, cap=7):
     root, controller, brief, fresh = setup
     brief.update(offline_only=False, frozen_evidence_only=True)
     controller.create('t', 'production', bind(root, 'authority.md'), 'create', 2,
@@ -22,7 +33,13 @@ def prepare(setup, cap=4):
 
 
 def plan(runner, brief):
-    return runner.step('t', lambda req: {'result': brief}, {})
+    for _ in range(4):
+        state = plan_step(runner, brief)
+    return state
+
+
+def plan_step(runner, brief):
+    return runner.step('t', lambda req: {'result': pf.result(req, brief)}, {})
 
 
 def build(root, controller):
@@ -39,17 +56,21 @@ def test_fresh_context_and_successful_presentation(setup):
         def call(request):
             seen.append(copy.deepcopy(request)); return {'result': result}
         return call
-    runner.step('t', adapter(brief), {})
+    for _ in range(4):
+        def planning(request):
+            seen.append(copy.deepcopy(request)); return {'result': pf.result(request, brief)}
+        runner.step('t', planning, {})
     runner.step('t', adapter(build(root, c)), {})
     runner.step('t', adapter(review(root, c)), {})
     receipt = runner.present('t')
     assert receipt['frozen_evidence_only'] and not receipt['offline_replay_only']
     assert not receipt['production_approved']
-    assert [r['actor'] for r in seen] == ['planner', 'builder', 'reviewer']
+    assert [r['actor'] for r in seen] == ['planner', 'planner', 'planner', 'reviewer', 'builder', 'reviewer']
     assert all('ticket' not in r for r in seen)
     assert 'builder_record' not in seen[-1]
     assert seen[0]['direction']['references'] == seen[-1]['brief']['references']
-    assert [e['event'] for e in events].count('stage_admitted') == 3
+    assert [e['event'] for e in events].count('stage_admitted') == 6
+    assert [e['planning_step'] for e in events if e['event'] == 'stage_started'][:4] == list(pf.pp.STEPS)
 
 
 def test_uncertain_call_no_duplicate_after_restart(setup):
@@ -70,7 +91,7 @@ def test_returned_result_recovered_without_inference(setup, monkeypatch):
     monkeypatch.setattr(runner, '_admit_returned', lambda row: (_ for _ in ()).throw(RuntimeError('crash')))
     with pytest.raises(RuntimeError): plan(runner, brief)
     monkeypatch.setattr(runner, '_admit_returned', original)
-    assert sr.SerialRunner(c, 'runner.sqlite3').recover('t')['stage'] == 'EXECUTING'
+    assert sr.SerialRunner(c, 'runner.sqlite3').recover('t')['planning_step'] == 'DERIVING'
     assert len(runner.calls()) == 1
 
 
@@ -82,7 +103,7 @@ def test_crash_after_controller_transition_is_idempotent(setup, monkeypatch):
     monkeypatch.setattr(c, 'submit', crash)
     with pytest.raises(RuntimeError): plan(runner, brief)
     monkeypatch.setattr(c, 'submit', original)
-    assert runner.recover('t')['stage'] == 'EXECUTING'
+    assert runner.recover('t')['planning_step'] == 'DERIVING'
     assert len([e for e in c.events('t') if e['action'] == 'submit:planner']) == 1
 
 
@@ -96,7 +117,7 @@ def test_single_runner_lock_even_with_second_database(setup):
 
 def test_call_cap_cannot_reset_or_grow(setup):
     root, c, brief, runner, _ = prepare(setup, cap=1)
-    plan(runner, brief)
+    plan_step(runner, brief)
     with pytest.raises(wf.Blocked, match='CAP_CHANGE'): sr.SerialRunner(c, 'runner.sqlite3', max_calls=4)
     with pytest.raises(wf.Blocked, match='CAP_EXHAUSTED'): runner.step('t', lambda req: {'result': build(root, c)}, {})
 
@@ -111,7 +132,7 @@ def test_no_contract_override_or_builder_advocacy(setup, supplement):
 def test_no_unreviewed_presentation(setup):
     _, _, brief, runner, _ = prepare(setup)
     plan(runner, brief)
-    with pytest.raises(wf.Blocked, match='REVIEW_REQUIRED'): runner.present('t')
+    with pytest.raises(wf.Blocked, match='REVIEW_STALE'): runner.present('t')
 
 
 def test_failed_visible_review_stays_internal(setup):
@@ -174,7 +195,7 @@ def test_scoped_knowledge_survives_stage_dispatch(setup):
     seen = []
     context = {'packet_digest': 'fixture', 'obligations': ['reference_roles', 'audience_read']}
     def adapter(request):
-        seen.append(request); return {'result': brief}
+        seen.append(request); return {'result': pf.result(request, brief)}
     runner.step('t', adapter, {'knowledge_context': context})
     assert seen[0]['knowledge_context'] == context
 
@@ -245,7 +266,7 @@ def test_explicit_abort_retains_reservation_and_cap(setup):
     runner.reconcile_aborted('t', cid, {'runtime_terminated': True, 'no_result_admitted': True,
                                       'tool_free': True, 'reason': 'Protocol input echo was misclassified'})
     assert runner.recover('t')['stage'] == 'BRIEFING'
-    plan(runner, brief)
+    plan_step(runner, brief)
     assert [r['status'] for r in runner.calls()] == ['ABORTED', 'SUBMITTED']
     with pytest.raises(wf.Blocked, match='CAP_EXHAUSTED'):
         runner.step('t', lambda req: {'result': {}}, {})
@@ -292,7 +313,8 @@ def routed_adapter(result, seen):
     def call(request):
         seen.append(copy.deepcopy(request))
         route = request['runtime_route']
-        return {'result': result, 'runtime': {'model': route['model'], 'reasoning_effort': route['effort'],
+        payload = pf.result(request, result) if request.get('planning_step') and 'expert_plan' in result else result
+        return {'result': payload, 'runtime': {'model': route['model'], 'reasoning_effort': route['effort'],
                                             'requested_route': route}}
     return call
 
@@ -300,7 +322,7 @@ def routed_adapter(result, seen):
 def test_routed_three_stage_chain_and_policy_restart(setup):
     root, c, brief, _, events = prepare(setup)
     p = routing.policy('specialist_3d')
-    runner = sr.SerialRunner(c, 'routed.sqlite3', events.append, routing=p)
+    runner = sr.SerialRunner(c, 'routed.sqlite3', events.append, max_calls=7, routing=p)
     seen = []
     runner.step('t', routed_adapter(brief, seen), {})
     # Caller mutation cannot change a constructed runner's policy.
@@ -310,9 +332,10 @@ def test_routed_three_stage_chain_and_policy_restart(setup):
     with pytest.raises(wf.Blocked, match='ROUTING_POLICY_CHANGED'):
         sr.SerialRunner(c, 'routed.sqlite3').step('t', routed_adapter({}, seen), {})
     runner = sr.SerialRunner(c, 'routed.sqlite3', routing=routing.policy('specialist_3d'))
+    for _ in range(3): runner.step('t', routed_adapter(brief, seen), {})
     runner.step('t', routed_adapter(build(root, c), seen), {})
     runner.step('t', routed_adapter(review(root, c, status='FAIL'), seen), {})
-    assert [r['runtime_route']['model'] for r in seen] == [routing.SOL, routing.ASTRA, routing.SOL]
+    assert [r['runtime_route']['model'] for r in seen] == [routing.SOL]*4 + [routing.ASTRA, routing.SOL]
     assert all('ticket' not in r for r in seen) and 'builder_record' not in seen[-1]
     with pytest.raises(wf.Blocked, match='NOT_READY'): runner.present('t')
 
@@ -345,12 +368,13 @@ def test_explicit_escalation_preserves_state_and_cap(setup):
     with runner.connection() as con:
         assert con.execute('SELECT count(*) FROM route_events').fetchone()[0] == 1
         updated = json.loads(con.execute('SELECT policy FROM routing').fetchone()[0])
-    assert routing.resolve(updated, 'builder', root)['model'] == routing.ASTRA
+    assert routing.resolve(updated, 'planner', root)['model'] == routing.ASTRA
+    assert routing.resolve(updated, 'builder', root)['model'] == routing.SOL
     assert routing.resolve(updated, 'reviewer', root)['model'] == routing.SOL
     with pytest.raises(wf.Blocked, match='ALREADY_TOP'): runner.escalate('t', record)
     resumed = sr.SerialRunner(c, 'routed.sqlite3', max_calls=1, routing=updated)
     with pytest.raises(wf.Blocked, match='CAP_EXHAUSTED'):
-        resumed.step('t', routed_adapter(build(root, c), []), {})
+        resumed.step('t', routed_adapter(brief, []), {})
 
 
 @pytest.mark.parametrize('models,error', [([], 'MODEL_UNAVAILABLE'),

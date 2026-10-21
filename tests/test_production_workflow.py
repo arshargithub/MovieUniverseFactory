@@ -8,6 +8,7 @@ import pytest
 from movie_factory import production_workflow as wf
 from movie_factory import production_knowledge as pk
 import expert_fixtures as ef
+import planning_fixtures as pf
 
 
 def bind(root, name):
@@ -57,10 +58,13 @@ def start(setup, task='t', limit=2):
 
 def direction(brief, task='t'):
     return {**{k: brief[k] for k in ('intent', 'references', 'protected')}, 'deliverable_id': task + '-deliverable',
+            **pf.direction_fields(brief),
             'beat_intents': brief['expert_plan']['beat_intents']}
 
 
 def submit(c, task, result, event):
+    if 'expert_plan' in result and c.state(task)['stage'] == 'BRIEFING':
+        return pf.complete(c, task, result, event)
     packet = c.packet(task)
     return c.submit(task, packet['actor'], packet['ticket'], result, event)
 
@@ -100,7 +104,7 @@ def test_full_path_and_pending_human_is_not_production(setup):
     receipt = c.deliver('t', 'deliver')['receipt']
     assert not receipt['production_approved'] and not receipt['director_approved']
     assert receipt['offline_replay_only']
-    assert [e['stage'] for e in c.events('t')] == ['BRIEFING', 'EXECUTING', 'REVIEWING', 'READY_FOR_DIRECTOR_AV', 'READY_FOR_DIRECTOR_AV']
+    assert [e['stage'] for e in c.events('t')] == ['BRIEFING'] * 4 + ['EXECUTING', 'REVIEWING', 'READY_FOR_DIRECTOR_AV', 'READY_FOR_DIRECTOR_AV']
 
 
 def test_n_two_survives_restart_and_replan(setup):
@@ -204,6 +208,9 @@ def test_revised_reference_role_invalidates_old_ticket_review(setup):
     brief['expert_plan']['challenge']['plan_digest'] = ef.ep.plan_digest(brief)
     c.revise('t', brief, bind(root, 'authority.md'), 'Synthetic explicit Director revision', 'revise')
     with pytest.raises(wf.Blocked, match='WRONG_STAGE'): c.submit('t', 'reviewer', p['ticket'], r, 'old-review')
+    assert c.packet('t')['direction']['references'][0]['role'] == 'directional_design'
+    assert c.packet('t')['planning_step'] == 'GROUNDING'
+    pf.complete(c, 't', brief, 'revised-plan')
     assert c.packet('t')['brief']['references'][0]['role'] == 'directional_design'
 
 
@@ -283,7 +290,7 @@ def test_planning_receives_and_cannot_downgrade_director_reference(setup):
     changed = copy.deepcopy(brief)
     changed['references'][0]['role'] = 'directional_design'
     changed['reference_plan']['rear']['reference_digest'] = pk.digest(changed['references'][0])
-    with pytest.raises(wf.Blocked, match='PLANNER_CHANGED'): submit(c, 't', changed, 'downgrade')
+    with pytest.raises(wf.Blocked, match='STRATEGY_AUTHORITY_CHANGED'): submit(c, 't', changed, 'downgrade')
 
 
 def test_known_rejected_exact_candidate_vetoes_well_formed_false_pass(setup):

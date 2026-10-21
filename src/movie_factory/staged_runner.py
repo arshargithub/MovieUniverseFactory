@@ -141,6 +141,7 @@ class CodexProtocol:
                 'mcp_servers_disabled_count': len(self.mcp_off), 'inference_started': False}
 
     def infer(self, request):
+        require(not request.get('offline_simulation'), 'SIMULATION_CANNOT_CALL_LIVE_RUNTIME')
         route = request.get('runtime_route')
         stage_routing.validate_route(route, request['actor'])
         preflight = self.preflight()
@@ -226,7 +227,7 @@ class CodexProtocol:
 class SerialRunner:
     """At-most-once dispatch; uncertain calls block rather than repeat silently."""
 
-    def __init__(self, controller: Controller, database, progress=None, max_calls=4, routing=None):
+    def __init__(self, controller: Controller, database, progress=None, max_calls=None, routing=None, offline_simulation=False):
         self.controller = controller
         self.root = controller.root
         self.database = controller.root / database
@@ -235,13 +236,21 @@ class SerialRunner:
         self.progress = progress or (lambda event: None)
         self.routing = json.loads(json.dumps(routing)) if routing is not None else None
         if self.routing is not None: stage_routing.validate(self.routing)
-        require(type(max_calls) is int and 0 < max_calls <= 4, 'QUALIFICATION_CALL_CAP')
+        require(type(offline_simulation) is bool, 'RUNNER_MODE')
+        self.offline_simulation = offline_simulation
         with self.connection() as con:
             con.executescript('CREATE TABLE IF NOT EXISTS policy (id INTEGER PRIMARY KEY, max_calls INTEGER);'
+                'CREATE TABLE IF NOT EXISTS runner_mode (id INTEGER PRIMARY KEY, simulation INTEGER);'
                 'CREATE TABLE IF NOT EXISTS routing (task TEXT PRIMARY KEY, policy TEXT);'
                 'CREATE TABLE IF NOT EXISTS route_events (id INTEGER PRIMARY KEY, task TEXT, previous TEXT, current TEXT);'
                 'CREATE TABLE IF NOT EXISTS calls (id TEXT PRIMARY KEY, task TEXT, actor TEXT, ticket TEXT, '
                 'request TEXT, request_hash TEXT, status TEXT, response TEXT, response_hash TEXT);')
+            previous = con.execute('SELECT max_calls FROM policy').fetchone()
+            if max_calls is None: max_calls = previous[0] if previous else 4
+            require(type(max_calls) is int and 0 < max_calls <= (64 if offline_simulation else 4), 'QUALIFICATION_CALL_CAP')
+            # Legacy runner databases were live qualification, never simulations.
+            con.execute('INSERT OR IGNORE INTO runner_mode VALUES(1,?)', (False if previous else offline_simulation,))
+            require(con.execute('SELECT simulation FROM runner_mode').fetchone()[0] == offline_simulation, 'RUNNER_MODE_CHANGE')
             con.execute('INSERT OR IGNORE INTO policy VALUES(1,?)', (max_calls,))
             require(con.execute('SELECT max_calls FROM policy').fetchone()[0] == max_calls, 'CALL_CAP_CHANGE_REQUIRES_AUTHORITY')
 
@@ -309,6 +318,7 @@ class SerialRunner:
         with self.connection() as con:
             con.execute('UPDATE calls SET status=? WHERE id=?', ('SUBMITTED', row['id']))
         self.progress({'event': 'stage_admitted', 'task': row['task'], 'stage': state['stage'],
+                       'planning_step': state.get('planning_step'),
                        'cycle': state['cycle'], 'findings': state.get('findings', {})})
         return state
 
@@ -348,6 +358,7 @@ class SerialRunner:
             require(packet.get('frozen_evidence_only') is True, 'FROZEN_EVIDENCE_MODE_REQUIRED')
             call_id = pk.digest({'task': task, 'ticket': packet['ticket']})
             request = {k: v for k, v in packet.items() if k != 'ticket'}
+            request['offline_simulation'] = self.offline_simulation
             if self.routing is not None:
                 request['runtime_route'] = stage_routing.resolve(self.routing, packet['actor'], self.root)
             require(set(supplement) <= {'instruction', 'result_template', 'image_paths', 'image_hashes', 'evidence_notes', 'knowledge_context'},
@@ -375,6 +386,7 @@ class SerialRunner:
                 con.execute('INSERT INTO calls VALUES(?,?,?,?,?,?,?,?,?)', (call_id, task, packet['actor'], packet['ticket'],
                             json.dumps(request), pk.digest(request), 'STARTED', None, None))
             self.progress({'event': 'stage_started', 'actor': packet['actor'], 'cycle': packet['cycle'],
+                           'planning_step': packet.get('planning_step'),
                            'runtime_route': request.get('runtime_route'), 'context_bytes': len(json.dumps(request).encode())})
             response = adapter(request)
             require(isinstance(response, dict) and isinstance(response.get('result'), dict), 'INVALID_ADAPTER_RESULT')
@@ -391,4 +403,5 @@ class SerialRunner:
                 reviewed = con.execute("SELECT response FROM calls WHERE task=? AND actor='reviewer' AND status='SUBMITTED' ORDER BY rowid DESC LIMIT 1", (task,)).fetchone()
                 require(reviewed is not None, 'RUNNER_REVIEW_REQUIRED')
             require(json.loads(reviewed['response'])['result'] == self.controller.state(task).get('review'), 'RUNNER_REVIEW_STALE')
-            return self.controller.deliver(task, 'runner-present-' + task)['receipt']
+            receipt = self.controller.deliver(task, 'runner-present-' + task)['receipt']
+            return dict(receipt, runner_offline_simulation=self.offline_simulation)

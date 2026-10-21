@@ -35,7 +35,7 @@ def test_planner_cannot_drop_director_beat_even_with_internally_valid_plan(setup
     root, c, b, _ = setup
     d = direction(b); d['beat_intents'] = {**d['beat_intents'], 'exit': 'Continue determinedly'}
     c.create('t', 'production', bind(root, 'authority.md'), 'create', direction=d)
-    with pytest.raises(wf.Blocked, match='PLANNER_CHANGED_BEAT_INTENT'): submit(c, 't', b, 'bad')
+    with pytest.raises(wf.Blocked, match='DERIVATION_BEAT_COVERAGE'): submit(c, 't', b, 'bad')
     assert c.state('t')['stage'] == 'BRIEFING'
 
 
@@ -43,7 +43,8 @@ def test_contract_reaches_real_stage_packets(setup):
     root, c, b, _ = setup
     c.create('t', 'production', bind(root, 'authority.md'), 'create', direction=direction(b))
     p = c.packet('t')
-    assert p['expert_contract'] == ep.contract() and 'derive' in p['expert_instruction']
+    assert p['expert_contract'] == ep.contract() and p['planning_step'] == 'GROUNDING'
+    assert 'authority' in p['expert_instruction']
     submit(c, 't', b, 'plan'); build(root, c)
     assert 'planning_gaps' in c.packet('t')['expert_instruction']
 
@@ -77,9 +78,10 @@ def test_review_must_revisit_intent_and_omissions(setup, field):
 def test_planning_gap_replans_without_resetting_budget_or_requesting_method_approval(setup):
     root, c, b, _ = setup; start(setup); build(root, c)
     r = review(root, c); r['planning_gaps'] = ['Camera obscures the intended route choice']
-    assert submit(c, 't', r, 'gap')['stage'] == 'REPLAN_REQUIRED'
+    state = submit(c, 't', r, 'gap')
+    assert state['stage'] == 'BRIEFING' and state['planning_step'] == 'DERIVING'
     with pytest.raises(wf.Blocked): c.deliver('t', 'bad-delivery')
-    c.revise('t', b, bind(root, 'authority.md'), 'In-scope repair using existing authority', 'revise')
+    submit(c, 't', b, 'agent-repair')
     assert c.state('t')['stage'] == 'EXECUTING' and c.state('t')['cycle'] == 1
 
 
