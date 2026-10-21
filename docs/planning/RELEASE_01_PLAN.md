@@ -4,6 +4,22 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+### Exchange323 — offline workflow pilot and reference roles
+
+Director approves the322 offline pilot and requires reference media plus their
+roles across planning, execution and review. The [implemented pilot](../knowledge/PRODUCTION_WORKFLOW_323.md)
+binds faithful-motion versus directional-design versus accepted-quality and
+negative-control references; planning cannot silently downgrade their roles.
+The pilot uses an initial candidate plus two corrections, persisted across
+restart/replan and stable deliverable identity. No universal future default or
+new production admission follows. Actual source-bound replay and tests are in
+[323 review](../../results/workflow323/REVIEW.md). This is a local API/state-machine
+implementation, not a live model driver, OS sandbox or perceptual oracle.
+No scene edits, production render, provider call, subagent, cloud or upload.
+Review307's stale current capsule stays blocked; current pilot uses its own
+fresh knowledge packet. Next qualify a serial stage runner on frozen evidence
+before new scene dispatch. Keep Director313 AV scope and rejected320 intact.
+
 ### Exchange322 — proposed deterministic production workflow
 
 Director requests process design before more construction. Preserve321's audit
