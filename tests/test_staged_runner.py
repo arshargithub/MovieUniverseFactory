@@ -215,3 +215,42 @@ def test_context_overflow_blocks_before_reservation(setup):
     with pytest.raises(wf.Blocked, match='CONTEXT_BUDGET'):
         runner.step('t', lambda req: {'result': brief}, {'knowledge_context': 'x' * 120_001})
     assert not runner.calls()
+
+
+def test_user_message_echo_is_not_a_tool():
+    proto = object.__new__(sr.CodexProtocol)
+    proto.history, proto.progress = [], lambda event: None
+    proto.event({'method': 'item/started', 'params': {'item': {'type': 'userMessage'}}})
+    assert not proto.history
+
+
+def test_explicit_abort_retains_reservation_and_cap(setup):
+    _, c, brief, runner, _ = prepare(setup, cap=2)
+    def crash(req): raise RuntimeError('owned runtime terminated')
+    with pytest.raises(RuntimeError): runner.step('t', crash, {})
+    cid = runner.calls()[0]['id']
+    with pytest.raises(wf.Blocked, match='ABORT_EVIDENCE'):
+        runner.reconcile_aborted('t', cid, {})
+    runner.reconcile_aborted('t', cid, {'runtime_terminated': True, 'no_result_admitted': True,
+                                      'tool_free': True, 'reason': 'Protocol input echo was misclassified'})
+    assert runner.recover('t')['stage'] == 'BRIEFING'
+    plan(runner, brief)
+    assert [r['status'] for r in runner.calls()] == ['ABORTED', 'SUBMITTED']
+    with pytest.raises(wf.Blocked, match='CAP_EXHAUSTED'):
+        runner.step('t', lambda req: {'result': {}}, {})
+
+
+def test_runtime_setting_mismatch_blocks_before_inference():
+    proto = object.__new__(sr.CodexProtocol)
+    proto.cwd, proto.mcp_off = '/private/tmp/fixture', {}
+    proto.expected_model, proto.expected_effort = 'expected-model', 'high'
+    proto.preflight = lambda: {}
+    calls = []
+    def rpc(method, params):
+        calls.append(method)
+        return {'thread': {'id': 'fresh'}, 'approvalPolicy': 'never',
+                'model': 'different-model', 'reasoningEffort': 'low'}
+    proto.rpc = rpc
+    with pytest.raises(wf.Blocked, match='RUNTIME_SETTING_MISMATCH'):
+        proto.infer({'actor': 'reviewer'})
+    assert calls == ['thread/start']

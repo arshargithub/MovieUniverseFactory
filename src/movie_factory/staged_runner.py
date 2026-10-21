@@ -31,7 +31,7 @@ CONFIG = {**{'features.' + k: False for k in DISABLED},
           'model_reasoning_summary': 'none'}
 OUTPUT_SCHEMA = {'type': 'object', 'properties': {'result_json': {'type': 'string'}},
                  'required': ['result_json'], 'additionalProperties': False}
-SAFE_ITEM_TYPES = {'agentMessage', 'reasoning', 'plan'}
+SAFE_ITEM_TYPES = {'userMessage', 'agentMessage', 'reasoning', 'plan'}
 
 
 def clean_environment():
@@ -44,9 +44,12 @@ def clean_environment():
 class CodexProtocol:
     """Version-specific app-server stdio client. Never logs raw config/auth."""
 
-    def __init__(self, cwd, progress, binary=None):
+    def __init__(self, cwd, progress, binary=None, expected_model=None, expected_effort=None):
         self.cwd = str(Path(cwd).resolve())
         self.progress = progress
+        # Assertions, not overrides. Production callers must explicitly bind
+        # intended runtime settings; this diagnostic retained installed defaults.
+        self.expected_model, self.expected_effort = expected_model, expected_effort
         self.binary = binary or shutil.which('codex')
         require(self.binary, 'CODEX_NOT_INSTALLED')
         command = [self.binary, 'app-server', '--listen', 'stdio://']
@@ -150,6 +153,10 @@ class CodexProtocol:
                 'Return only the requested structured result; do not claim Director acceptance or direct audio/video perception.'})
         thread = start['thread']['id']
         require(start.get('approvalPolicy') == 'never', 'APPROVAL_POLICY_CHANGED')
+        for field, expected in [('model', getattr(self, 'expected_model', None)),
+                                ('reasoningEffort', getattr(self, 'expected_effort', None))]:
+            require(expected is None or start.get(field) == expected,
+                    'RUNTIME_SETTING_MISMATCH:' + field)
         prompt = json.dumps(request, sort_keys=True)
         inputs = [{'type': 'text', 'text': prompt}]
         # Local image paths are controller-selected allowlisted evidence, not
@@ -248,10 +255,32 @@ class SerialRunner:
     def recover(self, task):
         with self.exclusive():
             with self.connection() as con:
-                rows = list(con.execute('SELECT * FROM calls WHERE task=? AND status != ? ORDER BY rowid', (task, 'SUBMITTED')))
+                rows = list(con.execute("SELECT * FROM calls WHERE task=? AND status NOT IN ('SUBMITTED','ABORTED') ORDER BY rowid", (task,)))
             if not rows: return self.controller.state(task)
             require(len(rows) == 1 and rows[0]['status'] == 'RETURNED', 'UNCERTAIN_CALL_REQUIRES_RECONCILIATION')
             return self._admit_returned(rows[0])
+
+    def reconcile_aborted(self, task, call_id, evidence):
+        """Explicit operator reconciliation, never an automatic retry/reset.
+
+        Only a frozen, tool-free call whose owned runtime has terminated may be
+        abandoned. The reservation remains charged and original request retained.
+        Remote token usage may be unknown; no result or production success implied.
+        """
+        require(evidence.get('runtime_terminated') is True and
+                evidence.get('no_result_admitted') is True and
+                evidence.get('tool_free') is True and evidence.get('reason'), 'ABORT_EVIDENCE_REQUIRED')
+        with self.exclusive():
+            require(self.controller.packet(task)['frozen_evidence_only'], 'FROZEN_EVIDENCE_MODE_REQUIRED')
+            with self.connection() as con:
+                row = con.execute('SELECT * FROM calls WHERE id=? AND task=?', (call_id, task)).fetchone()
+                require(row is not None and row['status'] == 'STARTED' and row['response'] is None,
+                        'ABORT_ONLY_UNRETURNED_CALL')
+                require(row['ticket'] == self.controller.packet(task)['ticket'], 'ABORT_STALE_STAGE')
+                con.execute('UPDATE calls SET status=?,response=?,response_hash=? WHERE id=?',
+                            ('ABORTED', json.dumps(evidence), pk.digest(evidence), call_id))
+            self.progress({'event': 'aborted_call_reconciled', 'id': call_id,
+                           'reservation_retained': True, 'usage': 'unknown'})
 
     def step(self, task, adapter, supplement):
         with self.exclusive():
@@ -269,9 +298,13 @@ class SerialRunner:
                 require(p.is_relative_to(self.root) and p.suffix.lower() in {'.jpg', '.jpeg', '.png'}, 'UNAPPROVED_IMAGE_PATH')
                 require(pk.file_hash(p) == request.get('image_hashes', {}).get(path), 'STALE_IMAGE')
             with self.connection() as con:
+                abandoned = con.execute("SELECT count(*) FROM calls WHERE task=? AND ticket=? AND status='ABORTED'",
+                                        (task, packet['ticket'])).fetchone()[0]
+                if abandoned:
+                    call_id = pk.digest({'task': task, 'ticket': packet['ticket'], 'after_aborted': abandoned})
                 prior = con.execute('SELECT * FROM calls WHERE id=?', (call_id,)).fetchone()
                 require(prior is None, 'CALL_ALREADY_RESERVED_USE_RECOVERY')
-                require(not con.execute("SELECT 1 FROM calls WHERE status != 'SUBMITTED'").fetchone(), 'UNRESOLVED_CALL')
+                require(not con.execute("SELECT 1 FROM calls WHERE status NOT IN ('SUBMITTED','ABORTED')").fetchone(), 'UNRESOLVED_CALL')
                 require(con.execute('SELECT count(*) FROM calls').fetchone()[0] < con.execute('SELECT max_calls FROM policy').fetchone()[0], 'CALL_CAP_EXHAUSTED')
                 con.execute('INSERT INTO calls VALUES(?,?,?,?,?,?,?,?,?)', (call_id, task, packet['actor'], packet['ticket'],
                             json.dumps(request), pk.digest(request), 'STARTED', None, None))
@@ -287,7 +320,7 @@ class SerialRunner:
     def present(self, task):
         with self.exclusive():
             with self.connection() as con:
-                require(not con.execute("SELECT 1 FROM calls WHERE task=? AND status != 'SUBMITTED'", (task,)).fetchone(), 'UNRESOLVED_CALL')
+                require(not con.execute("SELECT 1 FROM calls WHERE task=? AND status NOT IN ('SUBMITTED','ABORTED')", (task,)).fetchone(), 'UNRESOLVED_CALL')
                 reviewed = con.execute("SELECT response FROM calls WHERE task=? AND actor='reviewer' AND status='SUBMITTED' ORDER BY rowid DESC LIMIT 1", (task,)).fetchone()
                 require(reviewed is not None, 'RUNNER_REVIEW_REQUIRED')
             require(json.loads(reviewed['response'])['result'] == self.controller.state(task).get('review'), 'RUNNER_REVIEW_STALE')
