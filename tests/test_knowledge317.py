@@ -25,7 +25,12 @@ def test_original_source_pins_preserved():
     old=json.loads((ROOT/'results/sikh317/knowledge/source-pins-before.json').read_text())
     current=json.loads((ROOT/pk.PINS).read_text())
     assert len(old['sources'])==12
-    assert all(current['sources'][key]==value for key,value in old['sources'].items())
+    # Director320 deliberately amended current authority (abcccee); old source
+    # snapshots remain historical, not the current-state pin. Do not rehash them.
+    assert all(current['sources'][key]==value for key,value in old['sources'].items() if key!='current255')
+    authority=current['sources']['current255']
+    assert authority['sha256']==pk.file_hash(ROOT/authority['path'])
+    assert 'Director320 isolated correction' in (ROOT/authority['path']).read_text()
     assert len(current['sources'])>=13
 
 def test_delivery_preserves_exact_accepted_unit_without_new_narration_authority():
@@ -33,7 +38,8 @@ def test_delivery_preserves_exact_accepted_unit_without_new_narration_authority(
     task=json.loads((ROOT/'results/sikh317/delivery-8/task.json').read_text())
     # Exercise current routing with the historical scenario, not a stale
     # dispatch receipt. The recorded317 task is deliberately left unchanged.
-    for path in (pk.CATALOG,pk.PINS):task['inputs'][path]=pk.file_hash(ROOT/path)
+    for path in (pk.CATALOG,pk.PINS,'docs/knowledge/CURRENT_PRODUCTION_STATE.md'):
+        task['inputs'][path]=pk.file_hash(ROOT/path)
     p=pk.task_packet(ROOT,task)
     assert p['dispatch_ready'],p['blockers']
     broken=copy.deepcopy(task)

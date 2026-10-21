@@ -1,4 +1,4 @@
-"""Narrow native dispatch bridge: inspect only until authoring handlers qualify.
+"""Narrow native dispatch bridge with registered source-preserving controls.
 
 Durable pre-dispatch reservation, source/plan/dependency admission, immutable
 output bindings, explicit internal step review. No shell/code-string interface.
@@ -71,13 +71,18 @@ class Bridge:
         require(run['status'] == 'RETURNED', 'NATIVE_JOB_NOT_SUCCESSFUL')
         require(run['handler_digest'] == engine_digest(), 'NATIVE_HANDLER_CHANGED')
         bindings(self.c.root, run['artifacts'])
+        self.check_dependencies(run)
         verdict = self.review(run['id'])
         require(verdict['verdict'] == 'PASS' and not verdict['open_defects'], 'DEPENDENCY_REVIEW_FAILED')
         require(verdict['run_digest'] == pk.digest(run), 'STEP_REVIEW_STALE')
         bindings(self.c.root, verdict['evidence'])
 
-    def dispatch(self, task, step, run_id, *, parent, blender_bin, timeout=300):
-        """Registered read-only scene inspection, not arbitrary authoring."""
+    def check_dependencies(self, run):
+        for dependency in run.get('dependencies', {}).values():
+            rc.binding(self.c.root, dependency)
+
+    def dispatch(self, task, step, run_id, *, parent, blender_bin, timeout=300, recipe=None):
+        """Registered inspection or bound no-edit persistence/render control."""
         from .task_router import DATABASE
         from .adapters.blender.runner import run_blender
         require(blender_bin == BLENDER_BIN, 'UNREGISTERED_NATIVE_EXECUTABLE')
@@ -90,6 +95,17 @@ class Bridge:
         require('native_inspect' in state['routing']['request']['operations'], 'UNROUTED_NATIVE_OPERATION')
         steps = rows(state['planning_artifacts']['STRATEGIZING']['steps'])
         require(step in steps, 'UNPLANNED_NATIVE_STEP')
+        recipe_data = None
+        if recipe is not None:
+            from .adapters.blender.nihang_control import validate
+            require(steps[step].get('native_recipe') == recipe, 'UNPLANNED_NATIVE_RECIPE')
+            require(recipe in state['brief']['source_bindings'].values(), 'UNBOUND_NATIVE_RECIPE')
+            rc.binding(self.c.root, recipe)
+            recipe_data = validate(pk.read_json(self.c.root, recipe['path']))
+            if recipe_data['operation'] == 'nihang_render':
+                require('render' in state['routing']['request']['operations'], 'UNROUTED_RENDER')
+        else:
+            require(not steps[step].get('native_recipe'), 'NATIVE_RECIPE_REQUIRED')
         previous = self.runs(state)
         require(step not in previous, 'NATIVE_STEP_ALREADY_ATTEMPTED_REPLAN_REQUIRED')
         for dep in steps[step]['depends_on']:
@@ -101,6 +117,9 @@ class Bridge:
             admitted.extend(run.get('artifacts', {}).values())
         require(parent in admitted, 'UNBOUND_NATIVE_INPUT')
         require(Path(parent['path']).suffix == '.blend', 'INSPECT_REQUIRES_NATIVE')
+        if recipe_data and recipe_data['operation'] == 'nihang_render':
+            require(any(parent == previous[d].get('artifacts', {}).get('native')
+                        for d in steps[step]['depends_on']), 'RENDER_REQUIRES_REVIEWED_NATIVE')
         require(re.fullmatch(r'[a-zA-Z0-9_-]{1,96}', run_id) is not None, 'NATIVE_RUN_ID')
         output = rc.path(self.c.root, '.runtime/factory-native/' + run_id)
         require(not output.exists(), 'NATIVE_OUTPUT_EXISTS')
@@ -108,6 +127,8 @@ class Bridge:
                'output_dir': str(output), 'seed': 332,
                'profile': {'name': 'inspect332', 'width': 64, 'height': 64,
                            'samples': 1, 'device': 'CPU', 'shots': []}}
+        if recipe_data:
+            job.update(mode='nihang_control', recipe=recipe_data, repository_root=str(self.c.root))
         record = {'id': run_id, 'task': task, 'step': step, 'cycle': state['cycle'],
                   'fingerprint': state['fingerprint'], 'parent': parent,
                   'job_digest': pk.digest(job), 'handler_digest': engine_digest(), 'status': 'RESERVED'}
@@ -137,6 +158,33 @@ class Bridge:
             require(isinstance(json.loads(snapshot.read_text()), dict), 'NATIVE_OUTPUT_INVALID')
             record.update(status='RETURNED', artifacts={'snapshot': {
                 'path': str(snapshot.relative_to(self.c.root)), 'sha256': pk.file_hash(snapshot)}})
+            if recipe_data:
+                names = {'dependencies': 'dependencies.json'}
+                names.update({'native': 'scene.blend'} if recipe_data['operation'] == 'nihang_save'
+                             else {'frame': 'frame.png'})
+                for name, filename in names.items():
+                    artifact = output / filename
+                    require(artifact.is_file() and not artifact.is_symlink() and artifact.stat().st_size > 0,
+                            'NATIVE_OUTPUT_MISSING:' + name)
+                    record['artifacts'][name] = {'path': str(artifact.relative_to(self.c.root)),
+                                                 'sha256': pk.file_hash(artifact)}
+                deps = json.loads((output / 'dependencies.json').read_text())
+                require(isinstance(deps.get('bindings'), dict), 'NATIVE_DEPENDENCY_INVENTORY')
+                record['dependencies'] = deps['bindings']
+                self.check_dependencies(record)
+                record['recipe'] = recipe
+                if recipe_data['operation'] == 'nihang_render':
+                    from PIL import Image
+                    with Image.open(output / 'frame.png') as im:
+                        im.load()
+                        require(im.format == 'PNG' and im.size == (recipe_data['width'], recipe_data['height']),
+                                'NATIVE_IMAGE_PROFILE')
+                    source_run = next(previous[d] for d in steps[step]['depends_on']
+                                      if previous[d].get('artifacts', {}).get('native') == parent)
+                    before = pk.read_json(self.c.root, source_run['artifacts']['snapshot']['path'])
+                    after = json.loads(snapshot.read_text())
+                    require(before == after, 'NATIVE_SELECTED_STATE_DRIFT')
+                    require(source_run.get('dependencies') == record['dependencies'], 'NATIVE_DEPENDENCY_DRIFT')
         except Exception as e:
             record.update(status='FAILED', error=type(e).__name__ + ': ' + str(e))
         finally:

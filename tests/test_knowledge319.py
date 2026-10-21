@@ -24,5 +24,8 @@ def test_unrelated_audio_is_not_loaded_with_construction_lesson():
 def test_all_thirteen_previous_source_snapshots_are_unchanged():
     old=json.loads((ROOT/'results/sikh319/knowledge/source-pins-before.json').read_text())
     current=json.loads((ROOT/pk.PINS).read_text())
-    assert len(old['sources'])==13 and len(current['sources'])==14
-    assert all(current['sources'][k]==v for k,v in old['sources'].items())
+    #320 adds supporting-shot obligations and explicitly updates current authority.
+    assert len(old['sources'])==13 and len(current['sources'])>=15
+    assert all(current['sources'][k]==v for k,v in old['sources'].items() if k!='current255')
+    assert current['sources']['current255']['sha256']==pk.file_hash(ROOT/'docs/knowledge/CURRENT_PRODUCTION_STATE.md')
+    assert 'Director320 isolated correction' in (ROOT/'docs/knowledge/CURRENT_PRODUCTION_STATE.md').read_text()
