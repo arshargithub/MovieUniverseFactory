@@ -9,6 +9,9 @@ from pathlib import Path
 
 OBJECTS = ('horse.rig', 'HORSE hind support pivot', 'mounted leader',
            '320 articulated upper body mounted leader')
+# Exact diagnosed legacy320 defect, permitted ONLY for this unchanged negative
+# control. It is not a working-rig certificate or a general invalid-driver waiver.
+LEGACY_DRIVER_DEFECT = '054bf94aeb90448916005e7c0e8c5dbe163e7fbbea52cde230adf8c32ee0e21c'
 
 
 def validate(recipe):
@@ -52,8 +55,67 @@ def selected_state(bpy, frame):
         raise ValueError('NIHANG_CAMERA_MISSING')
     result['camera_matrix'] = matrix(scene.camera.matrix_world)
     result['camera_lens'] = scene.camera.data.lens
-    result['autoexec_fail'] = bool(bpy.app.autoexec_fail)
+    result['authored_meshes'] = {}
+    for obj in bpy.data.objects:
+        if obj.type == 'MESH' and obj.name.startswith('MF Nihang '):
+            geometry = {'vertices': [[round(float(x), 6) for x in v.co] for v in obj.data.vertices],
+                        'faces': [list(p.vertices) for p in obj.data.polygons]}
+            mats = []
+            for mat in obj.data.materials:
+                node = mat.node_tree.nodes.get('Principled BSDF') if mat and mat.use_nodes else None
+                if node:
+                    mats.append({'color': list(node.inputs['Base Color'].default_value),
+                                 'roughness': node.inputs['Roughness'].default_value})
+            result['authored_meshes'][obj.name] = {'geometry_hash': hashlib.sha256(
+                json.dumps(geometry, sort_keys=True).encode()).hexdigest(),
+                'vertices': len(obj.data.vertices), 'faces': len(obj.data.polygons), 'materials': mats}
     return result
+
+
+def script_diagnostics(bpy):
+    """Inspect untrusted embedded code as DATA; never execute or register it.
+
+    Autoexec warning alone is not a failed dependency. Only Blender's simple
+    expression evaluator is admitted; Python namespace drivers stay blocked.
+    """
+    texts = []
+    for item in bpy.data.texts:
+        body = item.as_string()
+        if len(body.encode()) > 256000:
+            raise ValueError('NIHANG_EMBEDDED_TEXT_TOO_LARGE')
+        texts.append({'name': item.name, 'use_module': bool(item.use_module),
+                      'sha256': hashlib.sha256(body.encode()).hexdigest(), 'body': body})
+    drivers = []
+    # All animation-capable IDs, including shape keys and material node trees.
+    visited = set()
+    def inspect(item):
+        if item.as_pointer() in visited:
+            return
+        visited.add(item.as_pointer())
+        data = getattr(item, 'animation_data', None)
+        for curve in data.drivers if data else []:
+            d = curve.driver
+            drivers.append({'owner': item.name, 'owner_type': type(item).__name__, 'users': item.users,
+                'path': curve.data_path, 'index': curve.array_index,
+                'type': d.type, 'expression': d.expression, 'valid': bool(d.is_valid),
+                'simple': bool(d.is_simple_expression),
+                'targets': [{'name': v.name, 'type': v.type, 'ids': [t.id.name if t.id else None for t in v.targets]}
+                            for v in d.variables]})
+        tree = getattr(item, 'node_tree', None)
+        if tree: inspect(tree)
+    for prop in bpy.data.bl_rna.properties:
+        if prop.type == 'COLLECTION':
+            for item in getattr(bpy.data, prop.identifier):
+                if isinstance(item, bpy.types.ID): inspect(item)
+    blocked = [d for d in drivers if d['users'] > 0 and
+               (not d['valid'] or (d['type'] == 'SCRIPTED' and not d['simple']))]
+    legacy = hashlib.sha256(json.dumps(blocked, sort_keys=True).encode()).hexdigest() == LEGACY_DRIVER_DEFECT
+    return {'autoexec_warning': bool(bpy.app.autoexec_fail),
+            'message': bpy.app.autoexec_fail_message, 'embedded_texts': texts, 'drivers': drivers,
+            'blocked_drivers': [] if legacy else blocked,
+            'known_source_defects': blocked if legacy else [],
+            'rig_qualified': not blocked,
+            'orphan_driver_count': sum(d['users'] == 0 for d in drivers)}
 
 
 def dependencies(bpy, root):
@@ -89,8 +151,10 @@ def run(out, job):
         raise ValueError('NIHANG_PARENT_BOUNDARY')
     bpy.ops.wm.open_mainfile(filepath=str(parent), load_ui=False, use_scripts=False)
     state = selected_state(bpy, recipe['frame'])
-    if state['autoexec_fail']:
-        raise ValueError('NIHANG_DISABLED_SCRIPT_DEPENDENCY')
+    diagnostics = script_diagnostics(bpy)
+    (out / 'script-diagnostics.json').write_text(json.dumps(diagnostics, indent=2) + '\n')
+    if diagnostics['blocked_drivers']:
+        raise ValueError('NIHANG_UNSAFE_OR_INVALID_DRIVER')
     deps = dependencies(bpy, root)
     (out / 'snapshot.json').write_text(json.dumps(state, sort_keys=True, indent=2) + '\n')
     (out / 'dependencies.json').write_text(json.dumps(deps, sort_keys=True, indent=2) + '\n')

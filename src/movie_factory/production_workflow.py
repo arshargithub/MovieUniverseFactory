@@ -548,6 +548,80 @@ class Controller:
             return self._planning_repair(state, target, [reason])
         return self._change(task, event_id, 'replan', [target, reason], apply)
 
+    def recover_native_control(self, task, admission, direction, reason, event_id):
+        """Bounded technical recovery, never an artistic review/correction reset.
+
+        Only failed source-preserving controls qualify. A fresh continuation
+        authority is required and all planning stages are invalidated. Three
+        recoveries total per task, independent of event/admission/plan names.
+        Closed runs and original authority remain in the append-only history.
+        """
+        from . import planning_pipeline as pp
+        require(nonempty(reason), 'RECOVERY_REASON')
+        routed = self.routing(admission)
+        require(routed.get('continuation_task') == task, 'RECOVERY_CONTINUATION_REQUIRED')
+        rc.binding(self.root, routed['request']['authority'])
+        pp.sources(self.root, direction)
+        pp.source_context(self.root, direction)
+        def apply(con):
+            state = self._state(con, task)
+            require(state['mode'] == 'local_native' and state['stage'] in {'EXECUTING', 'REPLAN_REQUIRED'},
+                    'RECOVERY_NATIVE_STATE')
+            require(not con.execute('SELECT 1 FROM heavy_job').fetchone(), 'JOB_STILL_ACTIVE')
+            require(not state.get('candidate') and not state.get('review'), 'RECOVERY_NOT_ARTISTIC_RETRY')
+            require(state.get('technical_recoveries', 0) < 3, 'TECHNICAL_RECOVERY_LIMIT')
+            for key in ('intent', 'deliverable_id', 'references', 'protected', 'beat_intents'):
+                require(direction[key] == state['direction'][key], 'RECOVERY_SCOPE_CHANGED:' + key)
+            runs = [json.loads(r[0]) for r in con.execute(
+                'SELECT record FROM native_runs WHERE task=? AND cycle=? AND fingerprint=?',
+                (task, state['cycle'], state.get('fingerprint')))]
+            require(runs and any(r['status'] == 'FAILED' for r in runs)
+                    and all(r['status'] in {'FAILED', 'RETURNED'} for r in runs), 'RECOVERY_NO_CLOSED_FAILURE')
+            for run in runs:
+                verdict = con.execute('SELECT record FROM native_reviews WHERE run=?', (run['id'],)).fetchone()
+                require(not verdict or json.loads(verdict[0])['verdict'] == 'PASS', 'RECOVERY_NOT_ARTISTIC_RETRY')
+            for step in state['planning_artifacts']['STRATEGIZING']['steps']:
+                recipe = step.get('native_recipe')
+                require(recipe is not None, 'RECOVERY_ONLY_FIXED_CONTROLS')
+                rc.binding(self.root, recipe)
+                require(pk.read_json(self.root, recipe['path'])['operation'] in {'nihang_save', 'nihang_render'},
+                        'RECOVERY_ONLY_FIXED_CONTROLS')
+            old_sources = {s['id']: s for s in state['direction']['context_sources']}
+            new_sources = {s['id']: s for s in direction['context_sources']}
+            require(set(old_sources) <= set(new_sources), 'RECOVERY_SOURCE_OMISSION')
+            for sid, source in old_sources.items():
+                require(source['status'] == new_sources[sid]['status']
+                        and source['required'] == new_sources[sid]['required'], 'RECOVERY_SOURCE_AUTHORITY_CHANGED')
+            state['technical_recoveries'] = state.get('technical_recoveries', 0) + 1
+            state.setdefault('recovery_history', []).append({'admission': admission, 'reason': reason,
+                'failed_runs': [r['id'] for r in runs if r['status'] == 'FAILED'],
+                'prior_fingerprint': state.get('fingerprint'), 'prior_engine': state['planning_engine']})
+            state['revision_authority'] = routed['request']['authority']
+            state['revision_reason'] = reason
+            state['direction'] = direction
+            state['planning_engine'] = pp.engine_digest()
+            pp.invalidate(state, 'GROUNDING')
+            return self._stage(state, 'BRIEFING')
+        return self._change(task, event_id, 'recover_native_control', [admission, direction, reason], apply)
+
+    def reconcile_recovery_planner(self, task, admission, reason, event_id):
+        """Repair planner implementation before any recovered plan/worker exists."""
+        from . import planning_pipeline as pp
+        routed = self.routing(admission)
+        rc.binding(self.root, routed['request']['authority'])
+        require(nonempty(reason), 'RECOVERY_REASON')
+        def apply(con):
+            state = self._state(con, task)
+            require(state['stage'] == 'BRIEFING' and state['planning_step'] == 'GROUNDING'
+                    and not state['planning_artifacts'] and state.get('recovery_history'), 'RECOVERY_PLAN_ALREADY_STARTED')
+            require(state['recovery_history'][-1]['admission'] == admission
+                    and routed.get('continuation_task') == task, 'RECOVERY_CONTINUATION_REQUIRED')
+            require(not con.execute('SELECT 1 FROM heavy_job').fetchone(), 'JOB_STILL_ACTIVE')
+            state['revision_reason'] = reason
+            state['planning_engine'] = pp.engine_digest()
+            return self._stage(state, 'BRIEFING')
+        return self._change(task, event_id, 'reconcile_recovery_planner', [admission, reason], apply)
+
     def revise(self, task, brief, decision, reason, event_id):
         """Controller-owned Director direction update. Never resets the retry cap."""
         rc.binding(self.root, decision)

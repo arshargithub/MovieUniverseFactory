@@ -101,7 +101,11 @@ class Bridge:
             require(steps[step].get('native_recipe') == recipe, 'UNPLANNED_NATIVE_RECIPE')
             require(recipe in state['brief']['source_bindings'].values(), 'UNBOUND_NATIVE_RECIPE')
             rc.binding(self.c.root, recipe)
-            recipe_data = validate(pk.read_json(self.c.root, recipe['path']))
+            raw_recipe = pk.read_json(self.c.root, recipe['path'])
+            if raw_recipe.get('operation') == 'nihang_patch':
+                from .adapters.blender.nihang_patch import validate
+                require('edit' in state['routing']['request']['operations'], 'UNROUTED_NATIVE_EDIT')
+            recipe_data = validate(raw_recipe)
             if recipe_data['operation'] == 'nihang_render':
                 require('render' in state['routing']['request']['operations'], 'UNROUTED_RENDER')
         else:
@@ -129,6 +133,7 @@ class Bridge:
                            'samples': 1, 'device': 'CPU', 'shots': []}}
         if recipe_data:
             job.update(mode='nihang_control', recipe=recipe_data, repository_root=str(self.c.root))
+            if recipe_data['operation'] == 'nihang_patch': job['mode'] = 'nihang_patch'
         record = {'id': run_id, 'task': task, 'step': step, 'cycle': state['cycle'],
                   'fingerprint': state['fingerprint'], 'parent': parent,
                   'job_digest': pk.digest(job), 'handler_digest': engine_digest(), 'status': 'RESERVED'}
@@ -159,9 +164,10 @@ class Bridge:
             record.update(status='RETURNED', artifacts={'snapshot': {
                 'path': str(snapshot.relative_to(self.c.root)), 'sha256': pk.file_hash(snapshot)}})
             if recipe_data:
-                names = {'dependencies': 'dependencies.json'}
-                names.update({'native': 'scene.blend'} if recipe_data['operation'] == 'nihang_save'
+                names = {'dependencies': 'dependencies.json', 'scripts': 'script-diagnostics.json'}
+                names.update({'native': 'scene.blend'} if recipe_data['operation'] in {'nihang_save', 'nihang_patch'}
                              else {'frame': 'frame.png'})
+                if recipe_data['operation'] == 'nihang_patch': names['patch'] = 'patch-evidence.json'
                 for name, filename in names.items():
                     artifact = output / filename
                     require(artifact.is_file() and not artifact.is_symlink() and artifact.stat().st_size > 0,
@@ -204,6 +210,10 @@ class Bridge:
         require(run['status'] == 'RETURNED', 'NATIVE_JOB_NOT_SUCCESSFUL')
         require(run['handler_digest'] == engine_digest(), 'NATIVE_HANDLER_CHANGED')
         require(verdict.get('verdict') in {'PASS', 'FAIL', 'NOT_RUN'}, 'NATIVE_REVIEW_VERDICT')
+        if 'frame' in run['artifacts'] and 'scripts' in run['artifacts']:
+            diagnostics = pk.read_json(self.c.root, run['artifacts']['scripts']['path'])
+            require(not diagnostics.get('known_source_defects') or verdict['verdict'] != 'PASS',
+                    'KNOWN_NATIVE_DEFECT_CANNOT_PASS_VISUAL_REVIEW')
         for key in ('observation', 'comparison'):
             require(nonempty(verdict.get(key)), 'NATIVE_REVIEW_OBSERVATION_REQUIRED')
         require(isinstance(verdict.get('open_defects'), list), 'NATIVE_DEFECTS_REQUIRED')

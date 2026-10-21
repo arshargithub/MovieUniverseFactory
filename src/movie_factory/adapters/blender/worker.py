@@ -1679,10 +1679,15 @@ def main():
             module=importlib.util.module_from_spec(module_spec)
             module_spec.loader.exec_module(module)
             status["artifacts"].extend(module.inspect_asset(sys.modules[__name__],out,job))
-        elif mode=="nihang_control":
+        elif mode in {"nihang_control", "nihang_patch"}:
             spec=importlib.util.spec_from_file_location("mf_nihang_control",Path(__file__).with_name("nihang_control.py"))
             module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
-            status["artifacts"].extend(module.run(out,job))
+            if mode == "nihang_patch":
+                patch_spec=importlib.util.spec_from_file_location("mf_nihang_patch",Path(__file__).with_name("nihang_patch.py"))
+                patch=importlib.util.module_from_spec(patch_spec);patch_spec.loader.exec_module(patch)
+                status["artifacts"].extend(patch.run(out,job,module))
+            else:
+                status["artifacts"].extend(module.run(out,job))
         elif mode=="asset_probe":
             probe=asset_probe(job["asset"])
             write_json(out/"probe.json",probe)

@@ -23,17 +23,22 @@ def test_recipe_rejects_unbounded_or_edit_inputs(bad):
     with pytest.raises(ValueError): validate(bad)
 
 
-def prepare(setup, monkeypatch, *, render_route=True):
+def prepare(setup, monkeypatch, *, render_route=True, authoring=False, edit_route=True):
     root, _, brief, _ = setup
     c = wf.Controller(root, tr.DATABASE)
     (root / 'parent.blend').write_bytes(b'SYNTHETIC BLEND')
     (root / 'texture.png').write_bytes(b'SYNTHETIC INPUT')
     for name, op in [('save.json', 'nihang_save'), ('render.json', 'nihang_render')]:
-        (root / name).write_text(json.dumps(recipe(op)))
+        value = recipe(op)
+        if authoring and op == 'nihang_save':
+            value.update(operation='nihang_patch', edits=[{'kind':'bone_pose', 'target':'horse.rig',
+                'bone':'head', 'frame':327, 'quaternion':[1,0,0,0]}])
+        (root / name).write_text(json.dumps(value))
         brief['source_bindings'][name] = bind(root, name)
     brief['source_bindings']['native'] = bind(root, 'parent.blend')
     brief['offline_only'] = False
     req = request(root, ['native_inspect', 'render'] if render_route else ['native_inspect'])
+    if authoring and edit_route: req['operations'].append('edit')
     c.route_request('request', req)
     c.create('t', 'production', req['authority'], 'create', direction=direction(brief),
              mode='local_native', admission='request')
@@ -48,9 +53,11 @@ def prepare(setup, monkeypatch, *, render_route=True):
         na.check_capability(_admission, job); calls.append(copy.deepcopy(job))
         out = Path(job['output_dir']); out.mkdir(parents=True)
         (out / 'snapshot.json').write_text('{"synthetic":true}')
+        (out / 'script-diagnostics.json').write_text('{"synthetic":true}')
         (out / 'dependencies.json').write_text(json.dumps({'bindings': {'texture': bind(root, 'texture.png')}}))
-        if job['recipe']['operation'] == 'nihang_save':
+        if job['recipe']['operation'] in {'nihang_save', 'nihang_patch'}:
             (out / 'scene.blend').write_bytes(b'SYNTHETIC DERIVATIVE')
+            if authoring: (out / 'patch-evidence.json').write_text('{"synthetic":true}')
         else:
             Image.new('RGB', (64, 64), (40, 50, 60)).save(out / 'frame.png')
         return {'ok': True}
