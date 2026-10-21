@@ -1,0 +1,19 @@
+{
+  "id": "workflow324-serial-runner",
+  "operation": "knowledge",
+  "entities": ["knowledge"],
+  "query": "Serial staged workflow; fresh contexts; reference roles; constrained runtime; evidence review and safe restart",
+  "intent": "Qualify serial runner on frozen evidence without scene construction or new paid API usage",
+  "phase": "execution",
+  "inputs": {
+    "results/workflow324/STRATEGY.md": "a702e301017e4ae0dc866bd75264aa663a863e9fb6c5ae2210b516e30fe264fa",
+    "docs/knowledge/PRODUCTION_WORKFLOW_323.md": "6cb18561b2fb31f1e7cf19254b5afdaddadf7b69c0b89b1a6ffab38ca59e50f9",
+    "docs/knowledge/NIHANG_REARING_REVIEW_FAILURE_321.md": "36d8cbec705017972bb1a80b5b0f7fe8af7b5c17d0669760d5b35ffbf48b1157"
+  },
+  "open_decisions": [],
+  "execution_authority": {
+    "source": "results/workflow324/STRATEGY.md",
+    "scope": "Director324 approval of frozen-evidence serial runner qualification; no scene changes, new API spending or release"
+  },
+  "max_context_characters": 60000
+}

@@ -4,6 +4,19 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+### Exchange324 — serial runner implementation and live approval boundary
+
+The serial runner now carries scoped knowledge and reference roles across fresh
+stage requests, persists dispatch/results, prevents concurrent execution and
+gates presentation on current review. Local tests and the no-inference runtime
+preflight are complete; [live qualification is blocked](../../results/workflow324/REVIEW.md)
+by the host's requirement for explicit project-payload approval. No inference,
+scene change or production admission occurred. Recommend the exact two-sheet
+and scoped-contract payload for at most four serial ChatGPT-authenticated calls,
+with no API-key fallback or public sharing. Do not bypass this boundary or treat
+mock results as runtime qualification. Production remains on the isolated
+Nihang/rearing/crowd dependency; accepted253 and rejected320 remain unchanged.
+
 ### Exchange323 — offline workflow pilot and reference roles
 
 Director approves the322 offline pilot and requires reference media plus their

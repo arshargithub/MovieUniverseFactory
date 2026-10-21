@@ -1,0 +1,268 @@
+{
+  "packet_digest": "c8c2f68acb41ebb8c110218a648aa481fb0c4292c993b3b585c72d40d9b25af0",
+  "scope": "Local implementation and blocked runtime report only",
+  "checks": [
+    {
+      "id": "reuse_envelope",
+      "status": "PASS",
+      "kind": "process",
+      "action_taken": "Reused existing controller, knowledge gate and operating ledger; no scene changes.",
+      "observation": "Local verification and no-inference receipt support only this bounded application; live qualification remains NOT_RUN.",
+      "evidence": [
+        {
+          "path": "results/workflow324/validation01/tests.txt",
+          "sha256": "bce85126394a5ef5a4ff3a6a000dba1a6a4152088a58b9d7a3f39f6aedf8a827"
+        },
+        {
+          "path": "src/movie_factory/staged_runner.py",
+          "sha256": "58af32fc9e30cf538a66d6a67801c086bab3340895fde2e8ace673928f75a5bf"
+        },
+        {
+          "path": "results/workflow324/preflight01/preflight.json",
+          "sha256": "fd7102bf33a7929986ab9d9259d5ce9d4fcafc49a4b86549f7cf6f0a97942e2a"
+        }
+      ]
+    },
+    {
+      "id": "authority",
+      "status": "PASS",
+      "kind": "process",
+      "action_taken": "Live dispatch blocked by host approval before inference; did not retry or bypass.",
+      "observation": "Local verification and no-inference receipt support only this bounded application; live qualification remains NOT_RUN.",
+      "evidence": [
+        {
+          "path": "results/workflow324/validation01/tests.txt",
+          "sha256": "bce85126394a5ef5a4ff3a6a000dba1a6a4152088a58b9d7a3f39f6aedf8a827"
+        },
+        {
+          "path": "src/movie_factory/staged_runner.py",
+          "sha256": "58af32fc9e30cf538a66d6a67801c086bab3340895fde2e8ace673928f75a5bf"
+        },
+        {
+          "path": "results/workflow324/preflight01/preflight.json",
+          "sha256": "fd7102bf33a7929986ab9d9259d5ce9d4fcafc49a4b86549f7cf6f0a97942e2a"
+        }
+      ]
+    },
+    {
+      "id": "strategy",
+      "status": "PASS",
+      "kind": "process",
+      "action_taken": "No-inference preflight and local control tests precede live frozen-evidence qualification.",
+      "observation": "Local verification and no-inference receipt support only this bounded application; live qualification remains NOT_RUN.",
+      "evidence": [
+        {
+          "path": "results/workflow324/validation01/tests.txt",
+          "sha256": "bce85126394a5ef5a4ff3a6a000dba1a6a4152088a58b9d7a3f39f6aedf8a827"
+        },
+        {
+          "path": "src/movie_factory/staged_runner.py",
+          "sha256": "58af32fc9e30cf538a66d6a67801c086bab3340895fde2e8ace673928f75a5bf"
+        },
+        {
+          "path": "results/workflow324/preflight01/preflight.json",
+          "sha256": "fd7102bf33a7929986ab9d9259d5ce9d4fcafc49a4b86549f7cf6f0a97942e2a"
+        }
+      ]
+    },
+    {
+      "id": "visual_gate",
+      "status": "PASS",
+      "kind": "review",
+      "action_taken": "Preserved rejected320 and direct AV NOT_RUN; no new artistic pass from software tests.",
+      "observation": "Local verification and no-inference receipt support only this bounded application; live qualification remains NOT_RUN.",
+      "evidence": [
+        {
+          "path": "results/workflow324/validation01/tests.txt",
+          "sha256": "bce85126394a5ef5a4ff3a6a000dba1a6a4152088a58b9d7a3f39f6aedf8a827"
+        },
+        {
+          "path": "src/movie_factory/staged_runner.py",
+          "sha256": "58af32fc9e30cf538a66d6a67801c086bab3340895fde2e8ace673928f75a5bf"
+        },
+        {
+          "path": "results/workflow324/preflight01/preflight.json",
+          "sha256": "fd7102bf33a7929986ab9d9259d5ce9d4fcafc49a4b86549f7cf6f0a97942e2a"
+        }
+      ]
+    },
+    {
+      "id": "anticipation",
+      "status": "PASS",
+      "kind": "review",
+      "action_taken": "Tested uncertain crash recovery, tool refusal, context overflow, stale evidence and concurrent runners.",
+      "observation": "Local verification and no-inference receipt support only this bounded application; live qualification remains NOT_RUN.",
+      "evidence": [
+        {
+          "path": "results/workflow324/validation01/tests.txt",
+          "sha256": "bce85126394a5ef5a4ff3a6a000dba1a6a4152088a58b9d7a3f39f6aedf8a827"
+        },
+        {
+          "path": "src/movie_factory/staged_runner.py",
+          "sha256": "58af32fc9e30cf538a66d6a67801c086bab3340895fde2e8ace673928f75a5bf"
+        },
+        {
+          "path": "results/workflow324/preflight01/preflight.json",
+          "sha256": "fd7102bf33a7929986ab9d9259d5ce9d4fcafc49a4b86549f7cf6f0a97942e2a"
+        }
+      ]
+    },
+    {
+      "id": "stopping",
+      "status": "PASS",
+      "kind": "review",
+      "action_taken": "Completed safe implementation and local verification; exact sensitive-payload approval is the remaining blocker.",
+      "observation": "Local verification and no-inference receipt support only this bounded application; live qualification remains NOT_RUN.",
+      "evidence": [
+        {
+          "path": "results/workflow324/validation01/tests.txt",
+          "sha256": "bce85126394a5ef5a4ff3a6a000dba1a6a4152088a58b9d7a3f39f6aedf8a827"
+        },
+        {
+          "path": "src/movie_factory/staged_runner.py",
+          "sha256": "58af32fc9e30cf538a66d6a67801c086bab3340895fde2e8ace673928f75a5bf"
+        },
+        {
+          "path": "results/workflow324/preflight01/preflight.json",
+          "sha256": "fd7102bf33a7929986ab9d9259d5ce9d4fcafc49a4b86549f7cf6f0a97942e2a"
+        }
+      ]
+    },
+    {
+      "id": "versioning",
+      "status": "PASS",
+      "kind": "technical",
+      "action_taken": "Reference roles and source bindings survive all stages; changed bytes invalidate admission.",
+      "observation": "Local verification and no-inference receipt support only this bounded application; live qualification remains NOT_RUN.",
+      "evidence": [
+        {
+          "path": "results/workflow324/validation01/tests.txt",
+          "sha256": "bce85126394a5ef5a4ff3a6a000dba1a6a4152088a58b9d7a3f39f6aedf8a827"
+        },
+        {
+          "path": "src/movie_factory/staged_runner.py",
+          "sha256": "58af32fc9e30cf538a66d6a67801c086bab3340895fde2e8ace673928f75a5bf"
+        },
+        {
+          "path": "results/workflow324/preflight01/preflight.json",
+          "sha256": "fd7102bf33a7929986ab9d9259d5ce9d4fcafc49a4b86549f7cf6f0a97942e2a"
+        }
+      ]
+    },
+    {
+      "id": "economics",
+      "status": "PASS",
+      "kind": "process",
+      "action_taken": "Persistent cap and reservations prevent blind retry; existing subscription route only; no speedup claim.",
+      "observation": "Local verification and no-inference receipt support only this bounded application; live qualification remains NOT_RUN.",
+      "evidence": [
+        {
+          "path": "results/workflow324/validation01/tests.txt",
+          "sha256": "bce85126394a5ef5a4ff3a6a000dba1a6a4152088a58b9d7a3f39f6aedf8a827"
+        },
+        {
+          "path": "src/movie_factory/staged_runner.py",
+          "sha256": "58af32fc9e30cf538a66d6a67801c086bab3340895fde2e8ace673928f75a5bf"
+        },
+        {
+          "path": "results/workflow324/preflight01/preflight.json",
+          "sha256": "fd7102bf33a7929986ab9d9259d5ce9d4fcafc49a4b86549f7cf6f0a97942e2a"
+        }
+      ]
+    },
+    {
+      "id": "retrieval",
+      "status": "PASS",
+      "kind": "technical",
+      "action_taken": "Fresh324 task packet plus manual321/322/323 reconciliation; older307 freshness block retained.",
+      "observation": "Local verification and no-inference receipt support only this bounded application; live qualification remains NOT_RUN.",
+      "evidence": [
+        {
+          "path": "results/workflow324/validation01/tests.txt",
+          "sha256": "bce85126394a5ef5a4ff3a6a000dba1a6a4152088a58b9d7a3f39f6aedf8a827"
+        },
+        {
+          "path": "src/movie_factory/staged_runner.py",
+          "sha256": "58af32fc9e30cf538a66d6a67801c086bab3340895fde2e8ace673928f75a5bf"
+        },
+        {
+          "path": "results/workflow324/preflight01/preflight.json",
+          "sha256": "fd7102bf33a7929986ab9d9259d5ce9d4fcafc49a4b86549f7cf6f0a97942e2a"
+        }
+      ]
+    },
+    {
+      "id": "current_state",
+      "status": "PASS",
+      "kind": "process",
+      "action_taken": "253 scope and321 rejection remain unchanged; no production acceptance or full-speed review claimed.",
+      "observation": "Local verification and no-inference receipt support only this bounded application; live qualification remains NOT_RUN.",
+      "evidence": [
+        {
+          "path": "results/workflow324/validation01/tests.txt",
+          "sha256": "bce85126394a5ef5a4ff3a6a000dba1a6a4152088a58b9d7a3f39f6aedf8a827"
+        },
+        {
+          "path": "src/movie_factory/staged_runner.py",
+          "sha256": "58af32fc9e30cf538a66d6a67801c086bab3340895fde2e8ace673928f75a5bf"
+        },
+        {
+          "path": "results/workflow324/preflight01/preflight.json",
+          "sha256": "fd7102bf33a7929986ab9d9259d5ce9d4fcafc49a4b86549f7cf6f0a97942e2a"
+        }
+      ]
+    },
+    {
+      "id": "au_reuse",
+      "status": "PASS",
+      "kind": "review",
+      "action_taken": "Preserved audit media and source assets; local changes do not imply remote protection.",
+      "observation": "Local verification and no-inference receipt support only this bounded application; live qualification remains NOT_RUN.",
+      "evidence": [
+        {
+          "path": "results/workflow324/validation01/tests.txt",
+          "sha256": "bce85126394a5ef5a4ff3a6a000dba1a6a4152088a58b9d7a3f39f6aedf8a827"
+        },
+        {
+          "path": "src/movie_factory/staged_runner.py",
+          "sha256": "58af32fc9e30cf538a66d6a67801c086bab3340895fde2e8ace673928f75a5bf"
+        },
+        {
+          "path": "results/workflow324/preflight01/preflight.json",
+          "sha256": "fd7102bf33a7929986ab9d9259d5ce9d4fcafc49a4b86549f7cf6f0a97942e2a"
+        }
+      ]
+    },
+    {
+      "id": "au_review",
+      "status": "PASS",
+      "kind": "review",
+      "action_taken": "Mock protocol and regression tests are not live runtime or perceptual accuracy qualification.",
+      "observation": "Local verification and no-inference receipt support only this bounded application; live qualification remains NOT_RUN.",
+      "evidence": [
+        {
+          "path": "results/workflow324/validation01/tests.txt",
+          "sha256": "bce85126394a5ef5a4ff3a6a000dba1a6a4152088a58b9d7a3f39f6aedf8a827"
+        },
+        {
+          "path": "src/movie_factory/staged_runner.py",
+          "sha256": "58af32fc9e30cf538a66d6a67801c086bab3340895fde2e8ace673928f75a5bf"
+        },
+        {
+          "path": "results/workflow324/preflight01/preflight.json",
+          "sha256": "fd7102bf33a7929986ab9d9259d5ce9d4fcafc49a4b86549f7cf6f0a97942e2a"
+        }
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "prediction": "Uncertain stage might dispatch twice after restart",
+      "observation": "Restart fixture blocks unknown outcome; returned result re-admits without inference.",
+      "response": "Persist intent and result separately.",
+      "result": "resolved"
+    }
+  ],
+  "adjacent_regressions": "Focused legacy suites pass. Historical corpus failures and307 staleness remain outside this qualification.",
+  "stopping_reason": "Live qualification is blocked by explicit payload approval; all safe local scope complete."
+}
