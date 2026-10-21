@@ -167,6 +167,9 @@ class Bridge:
                 names = {'dependencies': 'dependencies.json', 'scripts': 'script-diagnostics.json'}
                 names.update({'native': 'scene.blend'} if recipe_data['operation'] in {'nihang_save', 'nihang_patch'}
                              else {'frame': 'frame.png'})
+                if recipe_data['operation'] == 'nihang_rig_inspect':
+                    names.pop('frame')
+                    names['rig'] = 'rig.json'
                 if recipe_data['operation'] == 'nihang_patch': names['patch'] = 'patch-evidence.json'
                 for name, filename in names.items():
                     artifact = output / filename

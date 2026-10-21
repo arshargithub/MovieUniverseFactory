@@ -17,12 +17,64 @@ LEGACY_DRIVER_DEFECT = '054bf94aeb90448916005e7c0e8c5dbe163e7fbbea52cde230adf8c3
 def validate(recipe):
     if not isinstance(recipe, dict) or set(recipe) != {'operation', 'frame', 'width', 'height', 'samples'}:
         raise ValueError('NIHANG_RECIPE_FIELDS')
-    if recipe['operation'] not in {'nihang_save', 'nihang_render'}:
+    if recipe['operation'] not in {'nihang_save', 'nihang_render', 'nihang_rig_inspect'}:
         raise ValueError('NIHANG_OPERATION')
     for key, lo, hi in [('frame', 252, 441), ('width', 64, 1080), ('height', 64, 1920), ('samples', 1, 32)]:
         if type(recipe[key]) is not int or not lo <= recipe[key] <= hi:
             raise ValueError('NIHANG_RECIPE_BOUND:' + key)
     return recipe
+
+
+def rig_inventory(bpy):
+    """Read-only ownership evidence. Never execute asset scripts or repair by inference."""
+    rig = bpy.data.objects.get('horse.rig')
+    if rig is None or rig.type != 'ARMATURE':
+        raise ValueError('NIHANG_HORSE_RIG_MISSING')
+    def vector(v): return [float(x) for x in v]
+    def matrix(m): return [vector(row) for row in m]
+    bones = {}
+    for b in rig.pose.bones:
+        constraints = []
+        for c in b.constraints:
+            row = {'name': c.name, 'type': c.type, 'influence': c.influence,
+                   'mute': c.mute, 'valid': c.is_valid}
+            for key in ('target', 'pole_target'):
+                target = getattr(c, key, None)
+                row[key] = target.name if target else None
+            for key in ('subtarget', 'pole_subtarget', 'chain_count', 'pole_angle',
+                        'use_stretch', 'owner_space', 'target_space', 'mix_mode'):
+                if hasattr(c, key): row[key] = getattr(c, key)
+            constraints.append(row)
+        bones[b.name] = {'parent': b.parent.name if b.parent else None,
+            'deform': b.bone.use_deform, 'head_rest': vector(b.bone.head_local),
+            'tail_rest': vector(b.bone.tail_local), 'rest': matrix(b.bone.matrix_local),
+            'head': vector(b.head), 'tail': vector(b.tail), 'matrix': matrix(b.matrix),
+            'basis': matrix(b.matrix_basis), 'constraints': constraints,
+            'properties': {k: v for k, v in b.items() if isinstance(v, (int, float, str, bool))}}
+    drivers = []
+    for owner in (rig, rig.data):
+        ad = owner.animation_data
+        for fc in ad.drivers if ad else []:
+            d = fc.driver
+            drivers.append({'owner': owner.name, 'owner_type': type(owner).__name__,
+                'path': fc.data_path, 'index': fc.array_index, 'type': d.type,
+                'valid': d.is_valid, 'expression': d.expression,
+                'variables': [{'name': v.name, 'type': v.type,
+                    'targets': [{'id': t.id.name if t.id else None, 'id_type': t.id_type,
+                                 'data_path': t.data_path, 'bone_target': t.bone_target}
+                                for t in v.targets]} for v in d.variables]})
+    meshes = []
+    for obj in bpy.data.objects:
+        if obj.type != 'MESH': continue
+        mods = [m for m in obj.modifiers if m.type == 'ARMATURE' and m.object == rig]
+        if not mods: continue
+        meshes.append({'name': obj.name, 'vertices': len(obj.data.vertices),
+            'groups': [g.name for g in obj.vertex_groups],
+            'modifiers': [{'name': m.name, 'type': m.type, 'viewport': m.show_viewport,
+                           'render': m.show_render} for m in obj.modifiers]})
+    return {'rig': rig.name, 'world': matrix(rig.matrix_world), 'bones': bones,
+            'drivers': drivers, 'deformed_meshes': meshes,
+            'scope': 'Read-only horse controls, rest/evaluated joints, constraint ownership and driver target paths.'}
 
 
 def digest_file(path):
@@ -159,7 +211,10 @@ def run(out, job):
     (out / 'snapshot.json').write_text(json.dumps(state, sort_keys=True, indent=2) + '\n')
     (out / 'dependencies.json').write_text(json.dumps(deps, sort_keys=True, indent=2) + '\n')
     artifacts = ['snapshot.json', 'dependencies.json']
-    if recipe['operation'] == 'nihang_save':
+    if recipe['operation'] == 'nihang_rig_inspect':
+        (out / 'rig.json').write_text(json.dumps(rig_inventory(bpy), indent=2) + '\n')
+        artifacts.append('rig.json')
+    elif recipe['operation'] == 'nihang_save':
         bpy.context.preferences.filepaths.save_version = 0
         # Remap relative external paths so relocation does not change their target.
         bpy.ops.wm.save_as_mainfile(filepath=str(out / 'scene.blend'), check_existing=False,

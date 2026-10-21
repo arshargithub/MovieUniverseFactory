@@ -23,13 +23,14 @@ def test_recipe_rejects_unbounded_or_edit_inputs(bad):
     with pytest.raises(ValueError): validate(bad)
 
 
-def prepare(setup, monkeypatch, *, render_route=True, authoring=False, edit_route=True):
+def prepare(setup, monkeypatch, *, render_route=True, authoring=False, edit_route=True, inspection=False):
     root, _, brief, _ = setup
     c = wf.Controller(root, tr.DATABASE)
     (root / 'parent.blend').write_bytes(b'SYNTHETIC BLEND')
     (root / 'texture.png').write_bytes(b'SYNTHETIC INPUT')
     for name, op in [('save.json', 'nihang_save'), ('render.json', 'nihang_render')]:
         value = recipe(op)
+        if inspection and op == 'nihang_save': value['operation'] = 'nihang_rig_inspect'
         if authoring and op == 'nihang_save':
             value.update(operation='nihang_patch', edits=[{'kind':'bone_pose', 'target':'horse.rig',
                 'bone':'head', 'frame':327, 'quaternion':[1,0,0,0]}])
@@ -55,7 +56,9 @@ def prepare(setup, monkeypatch, *, render_route=True, authoring=False, edit_rout
         (out / 'snapshot.json').write_text('{"synthetic":true}')
         (out / 'script-diagnostics.json').write_text('{"synthetic":true}')
         (out / 'dependencies.json').write_text(json.dumps({'bindings': {'texture': bind(root, 'texture.png')}}))
-        if job['recipe']['operation'] in {'nihang_save', 'nihang_patch'}:
+        if job['recipe']['operation'] == 'nihang_rig_inspect':
+            (out / 'rig.json').write_text('{"synthetic":true,"bones":{}}')
+        elif job['recipe']['operation'] in {'nihang_save', 'nihang_patch'}:
             (out / 'scene.blend').write_bytes(b'SYNTHETIC DERIVATIVE')
             if authoring: (out / 'patch-evidence.json').write_text('{"synthetic":true}')
         else:
@@ -63,6 +66,15 @@ def prepare(setup, monkeypatch, *, render_route=True, authoring=False, edit_rout
         return {'ok': True}
     monkeypatch.setattr(runner, 'run_blender', worker)
     return root, c, na.Bridge(c), calls
+
+
+def test_read_only_inventory_has_no_native_or_image_artifact(setup, monkeypatch):
+    root, c, bridge, calls = prepare(setup, monkeypatch, inspection=True)
+    inspected = run(root, bridge)
+    assert inspected['status'] == 'RETURNED'
+    assert 'rig' in inspected['artifacts']
+    assert not {'native', 'frame'} & set(inspected['artifacts'])
+    assert (root / 'parent.blend').read_bytes() == b'SYNTHETIC BLEND'
 
 
 def run(root, bridge, step='proof', parent=None, **kw):

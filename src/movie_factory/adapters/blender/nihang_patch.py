@@ -27,7 +27,18 @@ def validate(recipe):
         name = edit.get('target')
         if not isinstance(name, str) or not name or len(name) > 128 or any(c in name for c in '/\\\n'):
             raise ValueError('PATCH_TARGET')
-        if kind == 'bone_pose':
+        if kind == 'repair_bbone_targets':
+            if set(edit) != {'kind','target'} or name != 'horse.rig':
+                raise ValueError('PATCH_REPAIR_FIELDS')
+        elif kind == 'supported_pose':
+            if set(edit) != {'kind','target','frame','pitch','hip_back','hip_drop','neck_pitch','poll_pitch'} or name != 'horse.rig':
+                raise ValueError('PATCH_SUPPORT_FIELDS')
+            if type(edit['frame']) is not int or not 252 <= edit['frame'] <= 441:
+                raise ValueError('PATCH_SUPPORT_FRAME')
+            for key, lo, hi in [('pitch',-1.1,-.3),('hip_back',-.2,.4),('hip_drop',0,.45),('neck_pitch',-.4,.8),('poll_pitch',0,1.2)]:
+                if type(edit[key]) not in (int,float) or not math.isfinite(edit[key]) or not lo<=edit[key]<=hi:
+                    raise ValueError('PATCH_SUPPORT_BOUND:'+key)
+        elif kind == 'bone_pose':
             if set(edit) != {'kind', 'target', 'bone', 'frame', 'quaternion'} or name != 'horse.rig':
                 raise ValueError('PATCH_BONE_FIELDS')
             if not isinstance(edit['bone'], str) or not edit['bone'] or len(edit['bone']) > 128:
@@ -61,7 +72,10 @@ def apply(bpy, recipe):
     # named derivative; it cannot overwrite an accepted existing object.
     names = set()
     for edit in recipe['edits']:
-        if edit['kind'] == 'bone_pose':
+        if edit['kind'] in {'repair_bbone_targets','supported_pose'}:
+            if bpy.data.objects.get('horse.rig') is None or bpy.data.objects.get('HORSE hind support pivot') is None:
+                raise ValueError('PATCH_SUPPORT_OBJECTS')
+        elif edit['kind'] == 'bone_pose':
             obj = bpy.data.objects.get(edit['target'])
             if obj is None or not obj.pose or edit['bone'] not in obj.pose.bones:
                 raise ValueError('PATCH_BONE_MISSING')
@@ -69,8 +83,17 @@ def apply(bpy, recipe):
             if edit['target'] in bpy.data.objects or edit['target'] in names:
                 raise ValueError('PATCH_EXISTING_MESH')
             names.add(edit['target'])
+    support_evidence=[]
     for edit in recipe['edits']:
-        if edit['kind'] == 'bone_pose':
+        if edit['kind'] in {'repair_bbone_targets','supported_pose'}:
+            import importlib.util
+            spec=importlib.util.spec_from_file_location('mf_nihang_support',Path(__file__).with_name('nihang_support.py'))
+            support=importlib.util.module_from_spec(spec);spec.loader.exec_module(support)
+            if edit['kind']=='repair_bbone_targets':
+                support_evidence.append({'repaired_targets':support.repair_bbone_targets(bpy)})
+            else:
+                support_evidence.append({'frame':edit['frame'],'support':support.apply_pose(bpy,edit)})
+        elif edit['kind'] == 'bone_pose':
             bpy.context.scene.frame_set(edit['frame'])
             pb = bpy.data.objects[edit['target']].pose.bones[edit['bone']]
             pb.rotation_mode = 'QUATERNION'
@@ -87,6 +110,7 @@ def apply(bpy, recipe):
             node.inputs['Roughness'].default_value = edit['roughness']
             mesh.materials.append(mat)
     bpy.context.scene.frame_set(recipe['frame']); bpy.context.view_layer.update()
+    return support_evidence
 
 
 def run(out, job, control):
@@ -101,11 +125,13 @@ def run(out, job, control):
     diagnostics = control.script_diagnostics(bpy)
     if diagnostics['blocked_drivers']: raise ValueError('PATCH_UNSAFE_DRIVER')
     before = control.selected_state(bpy, recipe['frame'])
-    apply(bpy, recipe)
+    support = apply(bpy, recipe)
     after = control.selected_state(bpy, recipe['frame'])
+    diagnostics = control.script_diagnostics(bpy)
+    if diagnostics['blocked_drivers']: raise ValueError('PATCH_INVALID_AFTER_REPAIR')
     for name, data in [('snapshot.json', after), ('script-diagnostics.json', diagnostics),
                        ('dependencies.json', control.dependencies(bpy, root)),
-                       ('patch-evidence.json', {'before': before, 'after': after, 'recipe': recipe})]:
+                       ('patch-evidence.json', {'before': before, 'after': after, 'recipe': recipe, 'support':support})]:
         (out / name).write_text(json.dumps(data, sort_keys=True, indent=2) + '\n')
     bpy.context.preferences.filepaths.save_version = 0
     bpy.ops.wm.save_as_mainfile(filepath=str(out / 'scene.blend'), check_existing=False,
