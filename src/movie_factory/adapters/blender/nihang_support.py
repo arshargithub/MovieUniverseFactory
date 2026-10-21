@@ -49,21 +49,32 @@ def repair_bbone_targets(bpy):
     return len(todo)
 
 
-def apply_pose(bpy, edit):
-    from mathutils import Matrix, Vector, Quaternion
-    scene = bpy.context.scene; frame = edit['frame']
+def capture_stance(bpy):
+    """Capture once before any frame authoring; never re-sample a modified stance."""
+    from mathutils import Vector
+    scene = bpy.context.scene
     rig = bpy.data.objects['horse.rig']; pivot = bpy.data.objects['HORSE hind support pivot']
-    # Capture unchanged standing geometry, then author only the requested frame.
     scene.frame_set(283); bpy.context.view_layer.update()
     base_world = rig.matrix_world.copy(); base_pivot = pivot.matrix_world.copy()
     base_rot = base_world.to_quaternion(); scale = base_world.to_scale()
     if max(scale)-min(scale) > 1e-3: raise ValueError('SUPPORT_NONUNIFORM_RIG_SCALE')
     unit = sum(scale)/3
-    def bw(v): return base_world @ Vector(v)
-    def direction(v): return base_rot @ Vector(v)
     feet = {s: {n: (base_world @ rig.pose.bones[n+'.'+s].matrix).copy()
                 for n in ('hind_foot_fk', 'r_toe_fk', 'r_hoof', 'forefoot_fk', 'f_toe_fk', 'f_hoof')}
             for s in ('L','R')}
+    return {'world':base_world, 'pivot':base_pivot, 'rotation':base_rot, 'unit':unit, 'feet':feet,
+            'rider':bpy.data.objects['mounted leader'].matrix_world.copy()}
+
+
+def apply_pose(bpy, edit, baseline=None):
+    from mathutils import Matrix, Vector, Quaternion
+    scene = bpy.context.scene; frame = edit['frame']
+    rig = bpy.data.objects['horse.rig']; pivot = bpy.data.objects['HORSE hind support pivot']
+    baseline = baseline or capture_stance(bpy)
+    base_world=baseline['world'];base_pivot=baseline['pivot'];base_rot=baseline['rotation']
+    unit=baseline['unit'];feet=baseline['feet']
+    def bw(v): return base_world @ Vector(v)
+    def direction(v): return base_rot @ Vector(v)
     hip = bw((0, .52, 1.63))
     scene.frame_set(frame)
     # Rotate around the hip, not a ground pivot. Translation defines load/height;
@@ -111,7 +122,10 @@ def apply_pose(bpy, edit):
         # physiologically flexed hock above the fetlock, then solve stifle.
         ankle=feet[side]['r_toe_fk'].translation.copy()
         foot_len=length('hind_foot_fk'+suffix)
-        hock=ankle+direction((0,.12,math.sqrt(foot_len**2-(.12*unit)**2)/unit))*unit
+        load=min(1,max(0,abs(edit['pitch'])/.8))
+        standing=(feet[side]['hind_foot_fk'].translation-ankle).normalized()
+        folded=direction((0,.12,math.sqrt(foot_len**2-(.12*unit)**2)/unit)).normalized()
+        hock=ankle+standing.lerp(folded,load).normalized()*foot_len
         start=rig.matrix_world @ rig.pose.bones['thigh_fk'+suffix].head
         knee=Vector(bend_joint(list(start),list(hock),length('thigh_fk'+suffix),
                               length('lower_leg_fk'+suffix),list(direction((0,-1,0)))))
@@ -123,17 +137,44 @@ def apply_pose(bpy, edit):
         shoulder=rig.matrix_world @ rig.pose.bones['upper_arm_fk'+suffix].head
         # World-space sagittal folding; no roll that points hooves outwards.
         elbow=shoulder+direction((0,-.15,-math.sqrt(1-.15**2)))*length('upper_arm_fk'+suffix)
-        wrist=elbow+direction((0,-.9,math.sqrt(1-.9**2)))*length('forearm_fk'+suffix)
-        fetlock=wrist+direction((0,.15,-math.sqrt(1-.15**2)))*length('forefoot_fk'+suffix)
+        folded_wrist=elbow+direction((0,-.9,math.sqrt(1-.9**2)))*length('forearm_fk'+suffix)
+        leg=edit.get('forelegs',{}).get(side,{})
+        fold=leg.get('fold',edit.get('fold',1.0))
+        placement=direction((0,leg.get('back',0)*unit,leg.get('lift',0)*unit))
+        wrist=(feet[side]['forefoot_fk'].translation+placement).lerp(folded_wrist,fold)
+        # A straight interpolation of world-space wrist targets can leave the
+        # reachable sphere as the shoulder rises on its arc. In flight only,
+        # lift/retract the wrist to a flexed reachable target, never stretch a
+        # segment or move a grounded hoof to conceal a bad stance.
+        reach=length('upper_arm_fk'+suffix)+length('forearm_fk'+suffix)
+        requested_distance=(wrist-shoulder).length
+        wrist_adjustment=0.
+        if fold>1e-6 and requested_distance>reach*.992:
+            wrist_adjustment=requested_distance-reach*.992
+            if wrist_adjustment>.12*unit:
+                raise ValueError(f'SUPPORT_FLIGHT_PATH_TOO_FAR frame={frame} side={side} adjustment={wrist_adjustment:.6f}')
+            wrist=shoulder+(wrist-shoulder).normalized()*reach*.992
+        distance=(wrist-shoulder).length
+        if not abs(length('upper_arm_fk'+suffix)-length('forearm_fk'+suffix))+1e-6<distance<reach-1e-6:
+            raise ValueError(f'SUPPORT_FORE_REACH frame={frame} side={side} fold={fold:.6f} distance={distance:.6f} reach={reach:.6f}')
+        elbow=Vector(bend_joint(list(shoulder),list(wrist),length('upper_arm_fk'+suffix),
+                    length('forearm_fk'+suffix),list(direction((0,1,0)))))
+        down=(feet[side]['f_toe_fk'].translation-feet[side]['forefoot_fk'].translation).normalized()
+        down=down.lerp(direction((0,.15,-math.sqrt(1-.15**2))),fold).normalized()
+        fetlock=wrist+down*length('forefoot_fk'+suffix)
         segment('upper_arm_fk'+suffix,shoulder,elbow)
         segment('forearm_fk'+suffix,elbow,wrist)
         segment('forefoot_fk'+suffix,wrist,fetlock)
         toe=feet[side]['f_toe_fk'].copy(); toe.translation=fetlock
-        toe = Matrix.Translation(fetlock) @ Quaternion(direction((1,0,0)), .25).to_matrix().to_4x4() @ Matrix.Translation(-fetlock) @ toe
+        toe = Matrix.Translation(fetlock) @ Quaternion(direction((1,0,0)), .25*fold).to_matrix().to_4x4() @ Matrix.Translation(-fetlock) @ toe
         set_world('f_toe_fk'+suffix,toe)
         hoof=toe @ feet[side]['f_toe_fk'].inverted() @ feet[side]['f_hoof']
         set_world('f_hoof'+suffix,hoof)
         evidence.append({'side':side,'hip':list(start),'stifle':list(knee),'hock':list(hock),'fetlock':list(ankle),
+            'flight_wrist_adjustment':wrist_adjustment,'fore_shoulder':list(shoulder),'fore_elbow':list(elbow),
+            'fore_carpus':list(wrist),'fore_fetlock':list(fetlock),
+            'fore_fold':fold,'fore_placement':list(placement),
+            'fore_visible_hoof':list(rig.matrix_world @ rig.pose.bones['DEF-f_hoof'+suffix].head),
             'support_target':list(feet[side]['r_hoof'].translation),
             'visible_hoof':list(rig.matrix_world @ rig.pose.bones['DEF-r_hoof'+suffix].head)})
     # Independent neck base and poll; the head is not a rigid torso extension.

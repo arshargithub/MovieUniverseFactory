@@ -106,7 +106,7 @@ class Bridge:
                 from .adapters.blender.nihang_patch import validate
                 require('edit' in state['routing']['request']['operations'], 'UNROUTED_NATIVE_EDIT')
             recipe_data = validate(raw_recipe)
-            if recipe_data['operation'] == 'nihang_render':
+            if recipe_data['operation'] in {'nihang_render','nihang_frames'}:
                 require('render' in state['routing']['request']['operations'], 'UNROUTED_RENDER')
         else:
             require(not steps[step].get('native_recipe'), 'NATIVE_RECIPE_REQUIRED')
@@ -121,7 +121,7 @@ class Bridge:
             admitted.extend(run.get('artifacts', {}).values())
         require(parent in admitted, 'UNBOUND_NATIVE_INPUT')
         require(Path(parent['path']).suffix == '.blend', 'INSPECT_REQUIRES_NATIVE')
-        if recipe_data and recipe_data['operation'] == 'nihang_render':
+        if recipe_data and recipe_data['operation'] in {'nihang_render','nihang_frames'}:
             require(any(parent == previous[d].get('artifacts', {}).get('native')
                         for d in steps[step]['depends_on']), 'RENDER_REQUIRES_REVIEWED_NATIVE')
         require(re.fullmatch(r'[a-zA-Z0-9_-]{1,96}', run_id) is not None, 'NATIVE_RUN_ID')
@@ -170,7 +170,11 @@ class Bridge:
                 if recipe_data['operation'] == 'nihang_rig_inspect':
                     names.pop('frame')
                     names['rig'] = 'rig.json'
+                if recipe_data['operation']=='nihang_cast_inspect':
+                    names.pop('frame')
+                    names['cast']='cast.json'
                 if recipe_data['operation'] == 'nihang_patch': names['patch'] = 'patch-evidence.json'
+                if recipe_data['operation'] == 'nihang_frames':names['frames']='frames.json'
                 for name, filename in names.items():
                     artifact = output / filename
                     require(artifact.is_file() and not artifact.is_symlink() and artifact.stat().st_size > 0,
@@ -182,12 +186,28 @@ class Bridge:
                 record['dependencies'] = deps['bindings']
                 self.check_dependencies(record)
                 record['recipe'] = recipe
-                if recipe_data['operation'] == 'nihang_render':
+                if recipe_data['operation'] in {'nihang_render','nihang_frames'}:
                     from PIL import Image
                     with Image.open(output / 'frame.png') as im:
                         im.load()
                         require(im.format == 'PNG' and im.size == (recipe_data['width'], recipe_data['height']),
                                 'NATIVE_IMAGE_PROFILE')
+                    if recipe_data['operation']=='nihang_frames':
+                        manifest=json.loads((output/'frames.json').read_text())
+                        require(isinstance(manifest,list) and [r.get('frame') for r in manifest]==recipe_data['frames'],
+                                'NATIVE_FRAME_MANIFEST')
+                        for row in manifest:
+                            expected='frame.png' if row['frame']==recipe_data['frame'] else f"frame-{row['frame']:04d}.png"
+                            require(row.get('file')==expected,'NATIVE_FRAME_NAME')
+                            image=output/expected
+                            require(image.is_file() and not image.is_symlink() and pk.file_hash(image)==row.get('sha256'),
+                                    'NATIVE_FRAME_HASH')
+                            with Image.open(image) as im:
+                                im.load()
+                                require(im.format=='PNG' and im.size==(recipe_data['width'],recipe_data['height']),
+                                        'NATIVE_IMAGE_PROFILE')
+                            record['artifacts']['frame_'+str(row['frame'])]={'path':str(image.relative_to(self.c.root)),
+                                                                          'sha256':row['sha256']}
                     source_run = next(previous[d] for d in steps[step]['depends_on']
                                       if previous[d].get('artifacts', {}).get('native') == parent)
                     before = pk.read_json(self.c.root, source_run['artifacts']['snapshot']['path'])

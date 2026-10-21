@@ -23,13 +23,14 @@ def test_recipe_rejects_unbounded_or_edit_inputs(bad):
     with pytest.raises(ValueError): validate(bad)
 
 
-def prepare(setup, monkeypatch, *, render_route=True, authoring=False, edit_route=True, inspection=False):
+def prepare(setup, monkeypatch, *, render_route=True, authoring=False, edit_route=True, inspection=False,frame_set=False):
     root, _, brief, _ = setup
     c = wf.Controller(root, tr.DATABASE)
     (root / 'parent.blend').write_bytes(b'SYNTHETIC BLEND')
     (root / 'texture.png').write_bytes(b'SYNTHETIC INPUT')
     for name, op in [('save.json', 'nihang_save'), ('render.json', 'nihang_render')]:
         value = recipe(op)
+        if frame_set and op=='nihang_render':value.update(operation='nihang_frames',frames=[300,327,350])
         if inspection and op == 'nihang_save': value['operation'] = 'nihang_rig_inspect'
         if authoring and op == 'nihang_save':
             value.update(operation='nihang_patch', edits=[{'kind':'bone_pose', 'target':'horse.rig',
@@ -63,6 +64,14 @@ def prepare(setup, monkeypatch, *, render_route=True, authoring=False, edit_rout
             if authoring: (out / 'patch-evidence.json').write_text('{"synthetic":true}')
         else:
             Image.new('RGB', (64, 64), (40, 50, 60)).save(out / 'frame.png')
+            if job['recipe']['operation']=='nihang_frames':
+                from movie_factory.production_knowledge import file_hash
+                manifest=[]
+                for frame in job['recipe']['frames']:
+                    name='frame.png' if frame==job['recipe']['frame'] else f'frame-{frame:04d}.png'
+                    Image.new('RGB',(64,64),(40,50,60)).save(out/name)
+                    manifest.append({'frame':frame,'file':name,'sha256':file_hash(out/name)})
+                (out/'frames.json').write_text(json.dumps(manifest))
         return {'ok': True}
     monkeypatch.setattr(runner, 'run_blender', worker)
     return root, c, na.Bridge(c), calls

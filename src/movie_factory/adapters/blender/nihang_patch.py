@@ -30,6 +30,13 @@ def validate(recipe):
         if kind == 'repair_bbone_targets':
             if set(edit) != {'kind','target'} or name != 'horse.rig':
                 raise ValueError('PATCH_REPAIR_FIELDS')
+        elif kind=='supporting_look':
+            if set(edit)!={'kind','target'} or name!='mounted leader':raise ValueError('PATCH_LOOK_FIELDS')
+        elif kind == 'supported_motion':
+            import importlib.util
+            spec=importlib.util.spec_from_file_location('mf_nihang_motion',Path(__file__).with_name('nihang_motion.py'))
+            motion=importlib.util.module_from_spec(spec);spec.loader.exec_module(motion)
+            motion.validate(edit)
         elif kind == 'supported_pose':
             if set(edit) != {'kind','target','frame','pitch','hip_back','hip_drop','neck_pitch','poll_pitch'} or name != 'horse.rig':
                 raise ValueError('PATCH_SUPPORT_FIELDS')
@@ -72,7 +79,10 @@ def apply(bpy, recipe):
     # named derivative; it cannot overwrite an accepted existing object.
     names = set()
     for edit in recipe['edits']:
-        if edit['kind'] in {'repair_bbone_targets','supported_pose'}:
+        if edit['kind']=='supporting_look':
+            if bpy.data.objects.get('mounted leader') is None or bpy.data.objects.get('fitted saddle blanket292') is None:
+                raise ValueError('PATCH_LOOK_OBJECTS')
+        elif edit['kind'] in {'repair_bbone_targets','supported_pose','supported_motion'}:
             if bpy.data.objects.get('horse.rig') is None or bpy.data.objects.get('HORSE hind support pivot') is None:
                 raise ValueError('PATCH_SUPPORT_OBJECTS')
         elif edit['kind'] == 'bone_pose':
@@ -85,12 +95,21 @@ def apply(bpy, recipe):
             names.add(edit['target'])
     support_evidence=[]
     for edit in recipe['edits']:
-        if edit['kind'] in {'repair_bbone_targets','supported_pose'}:
+        if edit['kind']=='supporting_look':
+            import importlib.util
+            spec=importlib.util.spec_from_file_location('mf_nihang_look',Path(__file__).with_name('nihang_look.py'))
+            look=importlib.util.module_from_spec(spec);spec.loader.exec_module(look)
+            support_evidence.append({'look':look.run(bpy)})
+        elif edit['kind'] in {'repair_bbone_targets','supported_pose','supported_motion'}:
             import importlib.util
             spec=importlib.util.spec_from_file_location('mf_nihang_support',Path(__file__).with_name('nihang_support.py'))
             support=importlib.util.module_from_spec(spec);spec.loader.exec_module(support)
             if edit['kind']=='repair_bbone_targets':
                 support_evidence.append({'repaired_targets':support.repair_bbone_targets(bpy)})
+            elif edit['kind']=='supported_motion':
+                spec=importlib.util.spec_from_file_location('mf_nihang_motion',Path(__file__).with_name('nihang_motion.py'))
+                motion=importlib.util.module_from_spec(spec);spec.loader.exec_module(motion)
+                support_evidence.append({'motion':motion.run(bpy,edit,support)})
             else:
                 support_evidence.append({'frame':edit['frame'],'support':support.apply_pose(bpy,edit)})
         elif edit['kind'] == 'bone_pose':

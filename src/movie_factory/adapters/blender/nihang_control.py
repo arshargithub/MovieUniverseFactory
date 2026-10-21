@@ -15,14 +15,63 @@ LEGACY_DRIVER_DEFECT = '054bf94aeb90448916005e7c0e8c5dbe163e7fbbea52cde230adf8c3
 
 
 def validate(recipe):
-    if not isinstance(recipe, dict) or set(recipe) != {'operation', 'frame', 'width', 'height', 'samples'}:
+    fields={'operation', 'frame', 'width', 'height', 'samples'}
+    if isinstance(recipe,dict) and recipe.get('operation')=='nihang_frames':fields.add('frames')
+    if not isinstance(recipe, dict) or set(recipe) != fields:
         raise ValueError('NIHANG_RECIPE_FIELDS')
-    if recipe['operation'] not in {'nihang_save', 'nihang_render', 'nihang_rig_inspect'}:
+    if recipe['operation'] not in {'nihang_save', 'nihang_render', 'nihang_rig_inspect','nihang_cast_inspect','nihang_frames'}:
         raise ValueError('NIHANG_OPERATION')
     for key, lo, hi in [('frame', 252, 441), ('width', 64, 1080), ('height', 64, 1920), ('samples', 1, 32)]:
         if type(recipe[key]) is not int or not lo <= recipe[key] <= hi:
             raise ValueError('NIHANG_RECIPE_BOUND:' + key)
+    if recipe['operation']=='nihang_frames':
+        frames=recipe['frames']
+        if (not isinstance(frames,list) or not 1<=len(frames)<=16 or
+                any(type(f) is not int or not 252<=f<=441 for f in frames) or
+                len(set(frames))!=len(frames) or recipe['frame'] not in frames):
+            raise ValueError('NIHANG_FRAME_SET')
     return recipe
+
+
+def cast_inventory(bpy):
+    """Read-only first supporting actors; inspect real owners before adapting."""
+    from mathutils import Vector
+    roots=[bpy.data.objects['mounted leader']]
+    crowd=sorted([o for o in bpy.data.objects if o.name.startswith('FOOT WARRIOR ')],key=lambda o:o.name)
+    if not crowd:raise ValueError('CAST_CROWD_MISSING')
+    roots.append(crowd[0]);objects={};materials={}
+    for root in roots:
+        for obj in [root,*root.children_recursive]:
+            row={'type':obj.type,'parent':obj.parent.name if obj.parent else None,'hidden':obj.hide_render,
+                 'world':[[float(v) for v in r] for r in obj.matrix_world],
+                 'local':[[float(v) for v in r] for r in obj.matrix_local]}
+            if obj.type=='MESH':
+                row.update(vertices=len(obj.data.vertices),polygons=len(obj.data.polygons),
+                           smooth_polygons=sum(p.use_smooth for p in obj.data.polygons),
+                           uv_layers=[u.name for u in obj.data.uv_layers],
+                           shape_keys=len(obj.data.shape_keys.key_blocks) if obj.data.shape_keys else 0,
+                           modifiers=[{'name':m.name,'type':m.type,'render':m.show_render} for m in obj.modifiers])
+                points=[Vector(v) for v in obj.bound_box]
+                row['local_bounds']={k:[fun(p[i] for p in points) for i in range(3)] for k,fun in [('min',min),('max',max)]}
+            if obj.type=='CURVE':row.update(splines=len(obj.data.splines),bevel_depth=obj.data.bevel_depth)
+            if obj.data and hasattr(obj.data,'materials'):
+                row['materials']=[m.name if m else None for m in obj.data.materials]
+                for mat in obj.data.materials:
+                    if mat is None or mat.name in materials:continue
+                    nodes={}
+                    for n in mat.node_tree.nodes if mat.use_nodes else []:
+                        inputs={}
+                        for socket in n.inputs:
+                            if not hasattr(socket,'default_value'):continue
+                            value=socket.default_value
+                            if isinstance(value,(str,bool,int,float)):inputs[socket.name]={'value':value,'linked':socket.is_linked}
+                            elif hasattr(value,'__iter__'):inputs[socket.name]={'value':list(value),'linked':socket.is_linked}
+                        nodes[n.name]={'type':n.bl_idname,'inputs':inputs}
+                        if hasattr(n,'color_ramp'):nodes[n.name]['ramp']=[{'position':e.position,'color':list(e.color)} for e in n.color_ramp.elements]
+                    materials[mat.name]={'nodes':nodes}
+            objects[obj.name]=row
+    return {'frame':bpy.context.scene.frame_current,'actors':[r.name for r in roots],
+            'objects':objects,'materials':materials,'scope':'Actual supporting-actor ownership, topology counts, UVs, cached poses and material parameters; no mutation or appearance pass.'}
 
 
 def rig_inventory(bpy):
@@ -109,7 +158,7 @@ def selected_state(bpy, frame):
     result['camera_lens'] = scene.camera.data.lens
     result['authored_meshes'] = {}
     for obj in bpy.data.objects:
-        if obj.type == 'MESH' and obj.name.startswith('MF Nihang '):
+        if obj.type == 'MESH' and (obj.name.startswith('MF Nihang ') or obj.get('mf_supporting_appearance')):
             geometry = {'vertices': [[round(float(x), 6) for x in v.co] for v in obj.data.vertices],
                         'faces': [list(p.vertices) for p in obj.data.polygons]}
             mats = []
@@ -211,7 +260,10 @@ def run(out, job):
     (out / 'snapshot.json').write_text(json.dumps(state, sort_keys=True, indent=2) + '\n')
     (out / 'dependencies.json').write_text(json.dumps(deps, sort_keys=True, indent=2) + '\n')
     artifacts = ['snapshot.json', 'dependencies.json']
-    if recipe['operation'] == 'nihang_rig_inspect':
+    if recipe['operation']=='nihang_cast_inspect':
+        (out/'cast.json').write_text(json.dumps(cast_inventory(bpy),indent=2)+'\n')
+        artifacts.append('cast.json')
+    elif recipe['operation'] == 'nihang_rig_inspect':
         (out / 'rig.json').write_text(json.dumps(rig_inventory(bpy), indent=2) + '\n')
         artifacts.append('rig.json')
     elif recipe['operation'] == 'nihang_save':
@@ -230,7 +282,15 @@ def run(out, job):
         scene.render.resolution_y = recipe['height']
         scene.render.resolution_percentage = 100
         scene.render.image_settings.file_format = 'PNG'
-        scene.render.filepath = str(out / 'frame.png')
-        bpy.ops.render.render(write_still=True)
+        frames=recipe.get('frames',[recipe['frame']]);manifest=[]
+        for frame in frames:
+            scene.frame_set(frame);bpy.context.view_layer.update()
+            filename='frame.png' if frame==recipe['frame'] else f'frame-{frame:04d}.png'
+            scene.render.filepath = str(out / filename)
+            bpy.ops.render.render(write_still=True)
+            manifest.append({'frame':frame,'file':filename,'sha256':digest_file(out/filename)})
+        if recipe['operation']=='nihang_frames':
+            (out/'frames.json').write_text(json.dumps(manifest,indent=2)+'\n')
+            artifacts.append('frames.json')
         artifacts.append('frame.png')
     return artifacts
