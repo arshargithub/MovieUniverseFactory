@@ -4,6 +4,22 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+### Exchange333 — real native control blocked; qualification incomplete
+
+[Native qualification](../../results/workflow333/CLOSEOUT.md) completed routing
+and all four planning stages before one actual Blender job. The source-preserving
+handler stopped before save/render on a skipped embedded `rig_ui.py` warning.
+That warning alone does not establish a broken evaluation dependency. Embedded
+execution stayed disabled. Actual failure blocked its dependent job, a renamed
+retry and delivery;408 focused offline tests pass. No new media or artistic pass.
+
+Next: qualify narrowly bounded native preflight recovery without resetting the
+same task's failure history, inspect script/driver requirements safely, and finish
+the real save/reopen/render plus rejected-output control. Native authoring remains
+unqualified.331/325 remain closed;253 and rejected320 protected. Local records
+only; checkpoint340 unchanged. Do not confuse this engineering result with trailer
+progress or a new allowance for artistic corrections.
+
 ### Exchange332 — mandatory router-first entry
 
 Director adopts routing as the first step for every request. The

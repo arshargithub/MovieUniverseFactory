@@ -1,0 +1,754 @@
+{
+  "packet_digest": "dd13ab98a42b40534733e2a625d536b453f5d3e9bf4b71ae4684c25d8805270a",
+  "scope": "Process reporting of FAILED native qualification, not media delivery.",
+  "checks": [
+    {
+      "id": "reuse_envelope",
+      "status": "PASS",
+      "kind": "process",
+      "action_taken": "Existing runner/controller extended; real native positive use remains unqualified.",
+      "observation": "Existing runner/controller extended; real native positive use remains unqualified.",
+      "evidence": [
+        {
+          "path": "results/workflow333/CLOSEOUT.md",
+          "sha256": "e9670529b10a71cb77e56fa6fbd984bbb303723b30886f7c39ae8eb6543ded20"
+        },
+        {
+          "path": "results/workflow333/tests.txt",
+          "sha256": "6846ac0fbe0dabde66c84096566c86ca03f815497551a730f4b8e7cd935616fa"
+        },
+        {
+          "path": "results/workflow333/negative-control.json",
+          "sha256": "efe25fc6fa48125ae3c9e434411fa874221297c3992d7c28f9eadaef7f12ec1f"
+        },
+        {
+          "path": "results/workflow333/protected.json",
+          "sha256": "1cb7c355adde44ed8ec5150e15b7b92bd2b406ae1af9797d3e6f914686e9e790"
+        },
+        {
+          "path": "results/workflow333/save-run.json",
+          "sha256": "1061ea9f36ed9ac11bd0c822ce7f38fb52498932b517d57ea7735e4d166f2370"
+        },
+        {
+          "path": "results/workflow333/native-worker-status.json",
+          "sha256": "d3750d79155cf196cc23c6a0bc5c8a8b07023ab7aafc426681a0eed17cf9e3a2"
+        },
+        {
+          "path": "results/workflow333/native-stdout.log",
+          "sha256": "8825d68acb9e071eb5cea2f9a6802f28830f54a5c81bb696e0a8da2951a25ef5"
+        },
+        {
+          "path": "results/workflow333/stage-trace.json",
+          "sha256": "fd521f12477fcc70480c073f910db08fc6ad30c89272f38eae3ef8fc5d443889"
+        },
+        {
+          "path": "src/movie_factory/native_admission.py",
+          "sha256": "e1e44761b9b4ee76289ed74d5be85b54beec810a1bc97ee6e46e666d706b4ebb"
+        },
+        {
+          "path": "src/movie_factory/adapters/blender/nihang_control.py",
+          "sha256": "666ff958eb30dfae247e59d3866f83bacb2996e6d9f9cd2958c42cf1ffaea5ce"
+        },
+        {
+          "path": "tests/test_native_handler333.py",
+          "sha256": "c6e63dba1a9fe5b0d46998425e8a9cd91edcb848c5e9e1b30cd6c2a6a17430e7"
+        },
+        {
+          "path": "tests/test_knowledge317.py",
+          "sha256": "c887b1938d2fe82dadbe3d6955bc38b2c1e6c7e6ad39b1540c23a9ab488d73a8"
+        },
+        {
+          "path": "tests/test_knowledge319.py",
+          "sha256": "30ca8fe10a7f1147e93f57ee568239096ad3034680f7f4bf2e6d91ab88d10c0e"
+        }
+      ]
+    },
+    {
+      "id": "authority",
+      "status": "PASS",
+      "kind": "process",
+      "action_taken": "Only source-preserving control attempted. No embedded code enabled, new artist variant, paid call, install or upload.",
+      "observation": "Only source-preserving control attempted. No embedded code enabled, new artist variant, paid call, install or upload.",
+      "evidence": [
+        {
+          "path": "results/workflow333/CLOSEOUT.md",
+          "sha256": "e9670529b10a71cb77e56fa6fbd984bbb303723b30886f7c39ae8eb6543ded20"
+        },
+        {
+          "path": "results/workflow333/tests.txt",
+          "sha256": "6846ac0fbe0dabde66c84096566c86ca03f815497551a730f4b8e7cd935616fa"
+        },
+        {
+          "path": "results/workflow333/negative-control.json",
+          "sha256": "efe25fc6fa48125ae3c9e434411fa874221297c3992d7c28f9eadaef7f12ec1f"
+        },
+        {
+          "path": "results/workflow333/protected.json",
+          "sha256": "1cb7c355adde44ed8ec5150e15b7b92bd2b406ae1af9797d3e6f914686e9e790"
+        },
+        {
+          "path": "results/workflow333/save-run.json",
+          "sha256": "1061ea9f36ed9ac11bd0c822ce7f38fb52498932b517d57ea7735e4d166f2370"
+        },
+        {
+          "path": "results/workflow333/native-worker-status.json",
+          "sha256": "d3750d79155cf196cc23c6a0bc5c8a8b07023ab7aafc426681a0eed17cf9e3a2"
+        },
+        {
+          "path": "results/workflow333/native-stdout.log",
+          "sha256": "8825d68acb9e071eb5cea2f9a6802f28830f54a5c81bb696e0a8da2951a25ef5"
+        },
+        {
+          "path": "results/workflow333/stage-trace.json",
+          "sha256": "fd521f12477fcc70480c073f910db08fc6ad30c89272f38eae3ef8fc5d443889"
+        },
+        {
+          "path": "src/movie_factory/native_admission.py",
+          "sha256": "e1e44761b9b4ee76289ed74d5be85b54beec810a1bc97ee6e46e666d706b4ebb"
+        },
+        {
+          "path": "src/movie_factory/adapters/blender/nihang_control.py",
+          "sha256": "666ff958eb30dfae247e59d3866f83bacb2996e6d9f9cd2958c42cf1ffaea5ce"
+        },
+        {
+          "path": "tests/test_native_handler333.py",
+          "sha256": "c6e63dba1a9fe5b0d46998425e8a9cd91edcb848c5e9e1b30cd6c2a6a17430e7"
+        },
+        {
+          "path": "tests/test_knowledge317.py",
+          "sha256": "c887b1938d2fe82dadbe3d6955bc38b2c1e6c7e6ad39b1540c23a9ab488d73a8"
+        },
+        {
+          "path": "tests/test_knowledge319.py",
+          "sha256": "30ca8fe10a7f1147e93f57ee568239096ad3034680f7f4bf2e6d91ab88d10c0e"
+        }
+      ]
+    },
+    {
+      "id": "strategy",
+      "status": "PASS",
+      "kind": "process",
+      "action_taken": "Frozen four-stage plan preceded worker; first control failed and successor blocked.",
+      "observation": "Frozen four-stage plan preceded worker; first control failed and successor blocked.",
+      "evidence": [
+        {
+          "path": "results/workflow333/CLOSEOUT.md",
+          "sha256": "e9670529b10a71cb77e56fa6fbd984bbb303723b30886f7c39ae8eb6543ded20"
+        },
+        {
+          "path": "results/workflow333/tests.txt",
+          "sha256": "6846ac0fbe0dabde66c84096566c86ca03f815497551a730f4b8e7cd935616fa"
+        },
+        {
+          "path": "results/workflow333/negative-control.json",
+          "sha256": "efe25fc6fa48125ae3c9e434411fa874221297c3992d7c28f9eadaef7f12ec1f"
+        },
+        {
+          "path": "results/workflow333/protected.json",
+          "sha256": "1cb7c355adde44ed8ec5150e15b7b92bd2b406ae1af9797d3e6f914686e9e790"
+        },
+        {
+          "path": "results/workflow333/save-run.json",
+          "sha256": "1061ea9f36ed9ac11bd0c822ce7f38fb52498932b517d57ea7735e4d166f2370"
+        },
+        {
+          "path": "results/workflow333/native-worker-status.json",
+          "sha256": "d3750d79155cf196cc23c6a0bc5c8a8b07023ab7aafc426681a0eed17cf9e3a2"
+        },
+        {
+          "path": "results/workflow333/native-stdout.log",
+          "sha256": "8825d68acb9e071eb5cea2f9a6802f28830f54a5c81bb696e0a8da2951a25ef5"
+        },
+        {
+          "path": "results/workflow333/stage-trace.json",
+          "sha256": "fd521f12477fcc70480c073f910db08fc6ad30c89272f38eae3ef8fc5d443889"
+        },
+        {
+          "path": "src/movie_factory/native_admission.py",
+          "sha256": "e1e44761b9b4ee76289ed74d5be85b54beec810a1bc97ee6e46e666d706b4ebb"
+        },
+        {
+          "path": "src/movie_factory/adapters/blender/nihang_control.py",
+          "sha256": "666ff958eb30dfae247e59d3866f83bacb2996e6d9f9cd2958c42cf1ffaea5ce"
+        },
+        {
+          "path": "tests/test_native_handler333.py",
+          "sha256": "c6e63dba1a9fe5b0d46998425e8a9cd91edcb848c5e9e1b30cd6c2a6a17430e7"
+        },
+        {
+          "path": "tests/test_knowledge317.py",
+          "sha256": "c887b1938d2fe82dadbe3d6955bc38b2c1e6c7e6ad39b1540c23a9ab488d73a8"
+        },
+        {
+          "path": "tests/test_knowledge319.py",
+          "sha256": "30ca8fe10a7f1147e93f57ee568239096ad3034680f7f4bf2e6d91ab88d10c0e"
+        }
+      ]
+    },
+    {
+      "id": "visual_gate",
+      "status": "PASS",
+      "kind": "review",
+      "action_taken": "No render returned; no image or motion PASS supplied. Negative native preflight is not a visual-control success.",
+      "observation": "No render returned; no image or motion PASS supplied. Negative native preflight is not a visual-control success.",
+      "evidence": [
+        {
+          "path": "results/workflow333/CLOSEOUT.md",
+          "sha256": "e9670529b10a71cb77e56fa6fbd984bbb303723b30886f7c39ae8eb6543ded20"
+        },
+        {
+          "path": "results/workflow333/tests.txt",
+          "sha256": "6846ac0fbe0dabde66c84096566c86ca03f815497551a730f4b8e7cd935616fa"
+        },
+        {
+          "path": "results/workflow333/negative-control.json",
+          "sha256": "efe25fc6fa48125ae3c9e434411fa874221297c3992d7c28f9eadaef7f12ec1f"
+        },
+        {
+          "path": "results/workflow333/protected.json",
+          "sha256": "1cb7c355adde44ed8ec5150e15b7b92bd2b406ae1af9797d3e6f914686e9e790"
+        },
+        {
+          "path": "results/workflow333/save-run.json",
+          "sha256": "1061ea9f36ed9ac11bd0c822ce7f38fb52498932b517d57ea7735e4d166f2370"
+        },
+        {
+          "path": "results/workflow333/native-worker-status.json",
+          "sha256": "d3750d79155cf196cc23c6a0bc5c8a8b07023ab7aafc426681a0eed17cf9e3a2"
+        },
+        {
+          "path": "results/workflow333/native-stdout.log",
+          "sha256": "8825d68acb9e071eb5cea2f9a6802f28830f54a5c81bb696e0a8da2951a25ef5"
+        },
+        {
+          "path": "results/workflow333/stage-trace.json",
+          "sha256": "fd521f12477fcc70480c073f910db08fc6ad30c89272f38eae3ef8fc5d443889"
+        },
+        {
+          "path": "src/movie_factory/native_admission.py",
+          "sha256": "e1e44761b9b4ee76289ed74d5be85b54beec810a1bc97ee6e46e666d706b4ebb"
+        },
+        {
+          "path": "src/movie_factory/adapters/blender/nihang_control.py",
+          "sha256": "666ff958eb30dfae247e59d3866f83bacb2996e6d9f9cd2958c42cf1ffaea5ce"
+        },
+        {
+          "path": "tests/test_native_handler333.py",
+          "sha256": "c6e63dba1a9fe5b0d46998425e8a9cd91edcb848c5e9e1b30cd6c2a6a17430e7"
+        },
+        {
+          "path": "tests/test_knowledge317.py",
+          "sha256": "c887b1938d2fe82dadbe3d6955bc38b2c1e6c7e6ad39b1540c23a9ab488d73a8"
+        },
+        {
+          "path": "tests/test_knowledge319.py",
+          "sha256": "30ca8fe10a7f1147e93f57ee568239096ad3034680f7f4bf2e6d91ab88d10c0e"
+        }
+      ]
+    },
+    {
+      "id": "anticipation",
+      "status": "PASS",
+      "kind": "review",
+      "action_taken": "Actual skipped-script warning exposed an overbroad dependency inference; no quiet waiver to continue.",
+      "observation": "Actual skipped-script warning exposed an overbroad dependency inference; no quiet waiver to continue.",
+      "evidence": [
+        {
+          "path": "results/workflow333/CLOSEOUT.md",
+          "sha256": "e9670529b10a71cb77e56fa6fbd984bbb303723b30886f7c39ae8eb6543ded20"
+        },
+        {
+          "path": "results/workflow333/tests.txt",
+          "sha256": "6846ac0fbe0dabde66c84096566c86ca03f815497551a730f4b8e7cd935616fa"
+        },
+        {
+          "path": "results/workflow333/negative-control.json",
+          "sha256": "efe25fc6fa48125ae3c9e434411fa874221297c3992d7c28f9eadaef7f12ec1f"
+        },
+        {
+          "path": "results/workflow333/protected.json",
+          "sha256": "1cb7c355adde44ed8ec5150e15b7b92bd2b406ae1af9797d3e6f914686e9e790"
+        },
+        {
+          "path": "results/workflow333/save-run.json",
+          "sha256": "1061ea9f36ed9ac11bd0c822ce7f38fb52498932b517d57ea7735e4d166f2370"
+        },
+        {
+          "path": "results/workflow333/native-worker-status.json",
+          "sha256": "d3750d79155cf196cc23c6a0bc5c8a8b07023ab7aafc426681a0eed17cf9e3a2"
+        },
+        {
+          "path": "results/workflow333/native-stdout.log",
+          "sha256": "8825d68acb9e071eb5cea2f9a6802f28830f54a5c81bb696e0a8da2951a25ef5"
+        },
+        {
+          "path": "results/workflow333/stage-trace.json",
+          "sha256": "fd521f12477fcc70480c073f910db08fc6ad30c89272f38eae3ef8fc5d443889"
+        },
+        {
+          "path": "src/movie_factory/native_admission.py",
+          "sha256": "e1e44761b9b4ee76289ed74d5be85b54beec810a1bc97ee6e46e666d706b4ebb"
+        },
+        {
+          "path": "src/movie_factory/adapters/blender/nihang_control.py",
+          "sha256": "666ff958eb30dfae247e59d3866f83bacb2996e6d9f9cd2958c42cf1ffaea5ce"
+        },
+        {
+          "path": "tests/test_native_handler333.py",
+          "sha256": "c6e63dba1a9fe5b0d46998425e8a9cd91edcb848c5e9e1b30cd6c2a6a17430e7"
+        },
+        {
+          "path": "tests/test_knowledge317.py",
+          "sha256": "c887b1938d2fe82dadbe3d6955bc38b2c1e6c7e6ad39b1540c23a9ab488d73a8"
+        },
+        {
+          "path": "tests/test_knowledge319.py",
+          "sha256": "30ca8fe10a7f1147e93f57ee568239096ad3034680f7f4bf2e6d91ab88d10c0e"
+        }
+      ]
+    },
+    {
+      "id": "stopping",
+      "status": "PASS",
+      "kind": "review",
+      "action_taken": "Report unsuccessful qualification with explicit recovery gap, not readiness based on test count.",
+      "observation": "Report unsuccessful qualification with explicit recovery gap, not readiness based on test count.",
+      "evidence": [
+        {
+          "path": "results/workflow333/CLOSEOUT.md",
+          "sha256": "e9670529b10a71cb77e56fa6fbd984bbb303723b30886f7c39ae8eb6543ded20"
+        },
+        {
+          "path": "results/workflow333/tests.txt",
+          "sha256": "6846ac0fbe0dabde66c84096566c86ca03f815497551a730f4b8e7cd935616fa"
+        },
+        {
+          "path": "results/workflow333/negative-control.json",
+          "sha256": "efe25fc6fa48125ae3c9e434411fa874221297c3992d7c28f9eadaef7f12ec1f"
+        },
+        {
+          "path": "results/workflow333/protected.json",
+          "sha256": "1cb7c355adde44ed8ec5150e15b7b92bd2b406ae1af9797d3e6f914686e9e790"
+        },
+        {
+          "path": "results/workflow333/save-run.json",
+          "sha256": "1061ea9f36ed9ac11bd0c822ce7f38fb52498932b517d57ea7735e4d166f2370"
+        },
+        {
+          "path": "results/workflow333/native-worker-status.json",
+          "sha256": "d3750d79155cf196cc23c6a0bc5c8a8b07023ab7aafc426681a0eed17cf9e3a2"
+        },
+        {
+          "path": "results/workflow333/native-stdout.log",
+          "sha256": "8825d68acb9e071eb5cea2f9a6802f28830f54a5c81bb696e0a8da2951a25ef5"
+        },
+        {
+          "path": "results/workflow333/stage-trace.json",
+          "sha256": "fd521f12477fcc70480c073f910db08fc6ad30c89272f38eae3ef8fc5d443889"
+        },
+        {
+          "path": "src/movie_factory/native_admission.py",
+          "sha256": "e1e44761b9b4ee76289ed74d5be85b54beec810a1bc97ee6e46e666d706b4ebb"
+        },
+        {
+          "path": "src/movie_factory/adapters/blender/nihang_control.py",
+          "sha256": "666ff958eb30dfae247e59d3866f83bacb2996e6d9f9cd2958c42cf1ffaea5ce"
+        },
+        {
+          "path": "tests/test_native_handler333.py",
+          "sha256": "c6e63dba1a9fe5b0d46998425e8a9cd91edcb848c5e9e1b30cd6c2a6a17430e7"
+        },
+        {
+          "path": "tests/test_knowledge317.py",
+          "sha256": "c887b1938d2fe82dadbe3d6955bc38b2c1e6c7e6ad39b1540c23a9ab488d73a8"
+        },
+        {
+          "path": "tests/test_knowledge319.py",
+          "sha256": "30ca8fe10a7f1147e93f57ee568239096ad3034680f7f4bf2e6d91ab88d10c0e"
+        }
+      ]
+    },
+    {
+      "id": "versioning",
+      "status": "PASS",
+      "kind": "technical",
+      "action_taken": "Parent/reference/accepted hashes rechecked; actual worker error and stage records retained.",
+      "observation": "Parent/reference/accepted hashes rechecked; actual worker error and stage records retained.",
+      "evidence": [
+        {
+          "path": "results/workflow333/CLOSEOUT.md",
+          "sha256": "e9670529b10a71cb77e56fa6fbd984bbb303723b30886f7c39ae8eb6543ded20"
+        },
+        {
+          "path": "results/workflow333/tests.txt",
+          "sha256": "6846ac0fbe0dabde66c84096566c86ca03f815497551a730f4b8e7cd935616fa"
+        },
+        {
+          "path": "results/workflow333/negative-control.json",
+          "sha256": "efe25fc6fa48125ae3c9e434411fa874221297c3992d7c28f9eadaef7f12ec1f"
+        },
+        {
+          "path": "results/workflow333/protected.json",
+          "sha256": "1cb7c355adde44ed8ec5150e15b7b92bd2b406ae1af9797d3e6f914686e9e790"
+        },
+        {
+          "path": "results/workflow333/save-run.json",
+          "sha256": "1061ea9f36ed9ac11bd0c822ce7f38fb52498932b517d57ea7735e4d166f2370"
+        },
+        {
+          "path": "results/workflow333/native-worker-status.json",
+          "sha256": "d3750d79155cf196cc23c6a0bc5c8a8b07023ab7aafc426681a0eed17cf9e3a2"
+        },
+        {
+          "path": "results/workflow333/native-stdout.log",
+          "sha256": "8825d68acb9e071eb5cea2f9a6802f28830f54a5c81bb696e0a8da2951a25ef5"
+        },
+        {
+          "path": "results/workflow333/stage-trace.json",
+          "sha256": "fd521f12477fcc70480c073f910db08fc6ad30c89272f38eae3ef8fc5d443889"
+        },
+        {
+          "path": "src/movie_factory/native_admission.py",
+          "sha256": "e1e44761b9b4ee76289ed74d5be85b54beec810a1bc97ee6e46e666d706b4ebb"
+        },
+        {
+          "path": "src/movie_factory/adapters/blender/nihang_control.py",
+          "sha256": "666ff958eb30dfae247e59d3866f83bacb2996e6d9f9cd2958c42cf1ffaea5ce"
+        },
+        {
+          "path": "tests/test_native_handler333.py",
+          "sha256": "c6e63dba1a9fe5b0d46998425e8a9cd91edcb848c5e9e1b30cd6c2a6a17430e7"
+        },
+        {
+          "path": "tests/test_knowledge317.py",
+          "sha256": "c887b1938d2fe82dadbe3d6955bc38b2c1e6c7e6ad39b1540c23a9ab488d73a8"
+        },
+        {
+          "path": "tests/test_knowledge319.py",
+          "sha256": "30ca8fe10a7f1147e93f57ee568239096ad3034680f7f4bf2e6d91ab88d10c0e"
+        }
+      ]
+    },
+    {
+      "id": "economics",
+      "status": "PASS",
+      "kind": "process",
+      "action_taken": "One local native process; no measured efficiency gain or engineering token claim; capture gap disclosed.",
+      "observation": "One local native process; no measured efficiency gain or engineering token claim; capture gap disclosed.",
+      "evidence": [
+        {
+          "path": "results/workflow333/CLOSEOUT.md",
+          "sha256": "e9670529b10a71cb77e56fa6fbd984bbb303723b30886f7c39ae8eb6543ded20"
+        },
+        {
+          "path": "results/workflow333/tests.txt",
+          "sha256": "6846ac0fbe0dabde66c84096566c86ca03f815497551a730f4b8e7cd935616fa"
+        },
+        {
+          "path": "results/workflow333/negative-control.json",
+          "sha256": "efe25fc6fa48125ae3c9e434411fa874221297c3992d7c28f9eadaef7f12ec1f"
+        },
+        {
+          "path": "results/workflow333/protected.json",
+          "sha256": "1cb7c355adde44ed8ec5150e15b7b92bd2b406ae1af9797d3e6f914686e9e790"
+        },
+        {
+          "path": "results/workflow333/save-run.json",
+          "sha256": "1061ea9f36ed9ac11bd0c822ce7f38fb52498932b517d57ea7735e4d166f2370"
+        },
+        {
+          "path": "results/workflow333/native-worker-status.json",
+          "sha256": "d3750d79155cf196cc23c6a0bc5c8a8b07023ab7aafc426681a0eed17cf9e3a2"
+        },
+        {
+          "path": "results/workflow333/native-stdout.log",
+          "sha256": "8825d68acb9e071eb5cea2f9a6802f28830f54a5c81bb696e0a8da2951a25ef5"
+        },
+        {
+          "path": "results/workflow333/stage-trace.json",
+          "sha256": "fd521f12477fcc70480c073f910db08fc6ad30c89272f38eae3ef8fc5d443889"
+        },
+        {
+          "path": "src/movie_factory/native_admission.py",
+          "sha256": "e1e44761b9b4ee76289ed74d5be85b54beec810a1bc97ee6e46e666d706b4ebb"
+        },
+        {
+          "path": "src/movie_factory/adapters/blender/nihang_control.py",
+          "sha256": "666ff958eb30dfae247e59d3866f83bacb2996e6d9f9cd2958c42cf1ffaea5ce"
+        },
+        {
+          "path": "tests/test_native_handler333.py",
+          "sha256": "c6e63dba1a9fe5b0d46998425e8a9cd91edcb848c5e9e1b30cd6c2a6a17430e7"
+        },
+        {
+          "path": "tests/test_knowledge317.py",
+          "sha256": "c887b1938d2fe82dadbe3d6955bc38b2c1e6c7e6ad39b1540c23a9ab488d73a8"
+        },
+        {
+          "path": "tests/test_knowledge319.py",
+          "sha256": "30ca8fe10a7f1147e93f57ee568239096ad3034680f7f4bf2e6d91ab88d10c0e"
+        }
+      ]
+    },
+    {
+      "id": "retrieval",
+      "status": "PASS",
+      "kind": "technical",
+      "action_taken": "Fresh twelve-obligation packet plus330/328/331/332 and AU13/16 manual reconciliation; no corpus completeness claim.",
+      "observation": "Fresh twelve-obligation packet plus330/328/331/332 and AU13/16 manual reconciliation; no corpus completeness claim.",
+      "evidence": [
+        {
+          "path": "results/workflow333/CLOSEOUT.md",
+          "sha256": "e9670529b10a71cb77e56fa6fbd984bbb303723b30886f7c39ae8eb6543ded20"
+        },
+        {
+          "path": "results/workflow333/tests.txt",
+          "sha256": "6846ac0fbe0dabde66c84096566c86ca03f815497551a730f4b8e7cd935616fa"
+        },
+        {
+          "path": "results/workflow333/negative-control.json",
+          "sha256": "efe25fc6fa48125ae3c9e434411fa874221297c3992d7c28f9eadaef7f12ec1f"
+        },
+        {
+          "path": "results/workflow333/protected.json",
+          "sha256": "1cb7c355adde44ed8ec5150e15b7b92bd2b406ae1af9797d3e6f914686e9e790"
+        },
+        {
+          "path": "results/workflow333/save-run.json",
+          "sha256": "1061ea9f36ed9ac11bd0c822ce7f38fb52498932b517d57ea7735e4d166f2370"
+        },
+        {
+          "path": "results/workflow333/native-worker-status.json",
+          "sha256": "d3750d79155cf196cc23c6a0bc5c8a8b07023ab7aafc426681a0eed17cf9e3a2"
+        },
+        {
+          "path": "results/workflow333/native-stdout.log",
+          "sha256": "8825d68acb9e071eb5cea2f9a6802f28830f54a5c81bb696e0a8da2951a25ef5"
+        },
+        {
+          "path": "results/workflow333/stage-trace.json",
+          "sha256": "fd521f12477fcc70480c073f910db08fc6ad30c89272f38eae3ef8fc5d443889"
+        },
+        {
+          "path": "src/movie_factory/native_admission.py",
+          "sha256": "e1e44761b9b4ee76289ed74d5be85b54beec810a1bc97ee6e46e666d706b4ebb"
+        },
+        {
+          "path": "src/movie_factory/adapters/blender/nihang_control.py",
+          "sha256": "666ff958eb30dfae247e59d3866f83bacb2996e6d9f9cd2958c42cf1ffaea5ce"
+        },
+        {
+          "path": "tests/test_native_handler333.py",
+          "sha256": "c6e63dba1a9fe5b0d46998425e8a9cd91edcb848c5e9e1b30cd6c2a6a17430e7"
+        },
+        {
+          "path": "tests/test_knowledge317.py",
+          "sha256": "c887b1938d2fe82dadbe3d6955bc38b2c1e6c7e6ad39b1540c23a9ab488d73a8"
+        },
+        {
+          "path": "tests/test_knowledge319.py",
+          "sha256": "30ca8fe10a7f1147e93f57ee568239096ad3034680f7f4bf2e6d91ab88d10c0e"
+        }
+      ]
+    },
+    {
+      "id": "current_state",
+      "status": "PASS",
+      "kind": "process",
+      "action_taken": "331/325 not reopened;253 accepted and320 rejected remain unchanged.",
+      "observation": "331/325 not reopened;253 accepted and320 rejected remain unchanged.",
+      "evidence": [
+        {
+          "path": "results/workflow333/CLOSEOUT.md",
+          "sha256": "e9670529b10a71cb77e56fa6fbd984bbb303723b30886f7c39ae8eb6543ded20"
+        },
+        {
+          "path": "results/workflow333/tests.txt",
+          "sha256": "6846ac0fbe0dabde66c84096566c86ca03f815497551a730f4b8e7cd935616fa"
+        },
+        {
+          "path": "results/workflow333/negative-control.json",
+          "sha256": "efe25fc6fa48125ae3c9e434411fa874221297c3992d7c28f9eadaef7f12ec1f"
+        },
+        {
+          "path": "results/workflow333/protected.json",
+          "sha256": "1cb7c355adde44ed8ec5150e15b7b92bd2b406ae1af9797d3e6f914686e9e790"
+        },
+        {
+          "path": "results/workflow333/save-run.json",
+          "sha256": "1061ea9f36ed9ac11bd0c822ce7f38fb52498932b517d57ea7735e4d166f2370"
+        },
+        {
+          "path": "results/workflow333/native-worker-status.json",
+          "sha256": "d3750d79155cf196cc23c6a0bc5c8a8b07023ab7aafc426681a0eed17cf9e3a2"
+        },
+        {
+          "path": "results/workflow333/native-stdout.log",
+          "sha256": "8825d68acb9e071eb5cea2f9a6802f28830f54a5c81bb696e0a8da2951a25ef5"
+        },
+        {
+          "path": "results/workflow333/stage-trace.json",
+          "sha256": "fd521f12477fcc70480c073f910db08fc6ad30c89272f38eae3ef8fc5d443889"
+        },
+        {
+          "path": "src/movie_factory/native_admission.py",
+          "sha256": "e1e44761b9b4ee76289ed74d5be85b54beec810a1bc97ee6e46e666d706b4ebb"
+        },
+        {
+          "path": "src/movie_factory/adapters/blender/nihang_control.py",
+          "sha256": "666ff958eb30dfae247e59d3866f83bacb2996e6d9f9cd2958c42cf1ffaea5ce"
+        },
+        {
+          "path": "tests/test_native_handler333.py",
+          "sha256": "c6e63dba1a9fe5b0d46998425e8a9cd91edcb848c5e9e1b30cd6c2a6a17430e7"
+        },
+        {
+          "path": "tests/test_knowledge317.py",
+          "sha256": "c887b1938d2fe82dadbe3d6955bc38b2c1e6c7e6ad39b1540c23a9ab488d73a8"
+        },
+        {
+          "path": "tests/test_knowledge319.py",
+          "sha256": "30ca8fe10a7f1147e93f57ee568239096ad3034680f7f4bf2e6d91ab88d10c0e"
+        }
+      ]
+    },
+    {
+      "id": "au_reuse",
+      "status": "PASS",
+      "kind": "review",
+      "action_taken": "Local logs/tests retained; no fresh native replay or remote protection claim.",
+      "observation": "Local logs/tests retained; no fresh native replay or remote protection claim.",
+      "evidence": [
+        {
+          "path": "results/workflow333/CLOSEOUT.md",
+          "sha256": "e9670529b10a71cb77e56fa6fbd984bbb303723b30886f7c39ae8eb6543ded20"
+        },
+        {
+          "path": "results/workflow333/tests.txt",
+          "sha256": "6846ac0fbe0dabde66c84096566c86ca03f815497551a730f4b8e7cd935616fa"
+        },
+        {
+          "path": "results/workflow333/negative-control.json",
+          "sha256": "efe25fc6fa48125ae3c9e434411fa874221297c3992d7c28f9eadaef7f12ec1f"
+        },
+        {
+          "path": "results/workflow333/protected.json",
+          "sha256": "1cb7c355adde44ed8ec5150e15b7b92bd2b406ae1af9797d3e6f914686e9e790"
+        },
+        {
+          "path": "results/workflow333/save-run.json",
+          "sha256": "1061ea9f36ed9ac11bd0c822ce7f38fb52498932b517d57ea7735e4d166f2370"
+        },
+        {
+          "path": "results/workflow333/native-worker-status.json",
+          "sha256": "d3750d79155cf196cc23c6a0bc5c8a8b07023ab7aafc426681a0eed17cf9e3a2"
+        },
+        {
+          "path": "results/workflow333/native-stdout.log",
+          "sha256": "8825d68acb9e071eb5cea2f9a6802f28830f54a5c81bb696e0a8da2951a25ef5"
+        },
+        {
+          "path": "results/workflow333/stage-trace.json",
+          "sha256": "fd521f12477fcc70480c073f910db08fc6ad30c89272f38eae3ef8fc5d443889"
+        },
+        {
+          "path": "src/movie_factory/native_admission.py",
+          "sha256": "e1e44761b9b4ee76289ed74d5be85b54beec810a1bc97ee6e46e666d706b4ebb"
+        },
+        {
+          "path": "src/movie_factory/adapters/blender/nihang_control.py",
+          "sha256": "666ff958eb30dfae247e59d3866f83bacb2996e6d9f9cd2958c42cf1ffaea5ce"
+        },
+        {
+          "path": "tests/test_native_handler333.py",
+          "sha256": "c6e63dba1a9fe5b0d46998425e8a9cd91edcb848c5e9e1b30cd6c2a6a17430e7"
+        },
+        {
+          "path": "tests/test_knowledge317.py",
+          "sha256": "c887b1938d2fe82dadbe3d6955bc38b2c1e6c7e6ad39b1540c23a9ab488d73a8"
+        },
+        {
+          "path": "tests/test_knowledge319.py",
+          "sha256": "30ca8fe10a7f1147e93f57ee568239096ad3034680f7f4bf2e6d91ab88d10c0e"
+        }
+      ]
+    },
+    {
+      "id": "au_review",
+      "status": "PASS",
+      "kind": "review",
+      "action_taken": "Gate success below qualifies truthful process reporting only; native failure and missing outputs stay explicit.",
+      "observation": "Gate success below qualifies truthful process reporting only; native failure and missing outputs stay explicit.",
+      "evidence": [
+        {
+          "path": "results/workflow333/CLOSEOUT.md",
+          "sha256": "e9670529b10a71cb77e56fa6fbd984bbb303723b30886f7c39ae8eb6543ded20"
+        },
+        {
+          "path": "results/workflow333/tests.txt",
+          "sha256": "6846ac0fbe0dabde66c84096566c86ca03f815497551a730f4b8e7cd935616fa"
+        },
+        {
+          "path": "results/workflow333/negative-control.json",
+          "sha256": "efe25fc6fa48125ae3c9e434411fa874221297c3992d7c28f9eadaef7f12ec1f"
+        },
+        {
+          "path": "results/workflow333/protected.json",
+          "sha256": "1cb7c355adde44ed8ec5150e15b7b92bd2b406ae1af9797d3e6f914686e9e790"
+        },
+        {
+          "path": "results/workflow333/save-run.json",
+          "sha256": "1061ea9f36ed9ac11bd0c822ce7f38fb52498932b517d57ea7735e4d166f2370"
+        },
+        {
+          "path": "results/workflow333/native-worker-status.json",
+          "sha256": "d3750d79155cf196cc23c6a0bc5c8a8b07023ab7aafc426681a0eed17cf9e3a2"
+        },
+        {
+          "path": "results/workflow333/native-stdout.log",
+          "sha256": "8825d68acb9e071eb5cea2f9a6802f28830f54a5c81bb696e0a8da2951a25ef5"
+        },
+        {
+          "path": "results/workflow333/stage-trace.json",
+          "sha256": "fd521f12477fcc70480c073f910db08fc6ad30c89272f38eae3ef8fc5d443889"
+        },
+        {
+          "path": "src/movie_factory/native_admission.py",
+          "sha256": "e1e44761b9b4ee76289ed74d5be85b54beec810a1bc97ee6e46e666d706b4ebb"
+        },
+        {
+          "path": "src/movie_factory/adapters/blender/nihang_control.py",
+          "sha256": "666ff958eb30dfae247e59d3866f83bacb2996e6d9f9cd2958c42cf1ffaea5ce"
+        },
+        {
+          "path": "tests/test_native_handler333.py",
+          "sha256": "c6e63dba1a9fe5b0d46998425e8a9cd91edcb848c5e9e1b30cd6c2a6a17430e7"
+        },
+        {
+          "path": "tests/test_knowledge317.py",
+          "sha256": "c887b1938d2fe82dadbe3d6955bc38b2c1e6c7e6ad39b1540c23a9ab488d73a8"
+        },
+        {
+          "path": "tests/test_knowledge319.py",
+          "sha256": "30ca8fe10a7f1147e93f57ee568239096ad3034680f7f4bf2e6d91ab88d10c0e"
+        }
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "prediction": "A real failed prerequisite might still allow dependent native work.",
+      "observation": "Dependent launch, renamed retry and delivery all blocked after actual worker failure.",
+      "response": "Preserve exact negative receipts; positive reopen remains NOT_RUN.",
+      "result": "resolved"
+    },
+    {
+      "prediction": "Skipped embedded code might block the no-edit path.",
+      "observation": "It did. Current guard cannot distinguish skipped UI from evaluation dependency.",
+      "response": "Record native qualification FAIL and future diagnostic/recovery requirement; do not enable scripts.",
+      "result": "resolved"
+    }
+  ],
+  "adjacent_regressions": "408 focused tests pass. Three stale historical source assertions corrected against approved320 amendment, without changing pins or historical task records.",
+  "stopping_reason": "Bounded native control ended unsuccessfully before save; actual failure controls verified. Native implementation remains unqualified; no art/media handoff."
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "utc": "2026-10-21T17:18:18.660895+00:00",
+    "action": "create",
+    "stage": "BRIEFING"
+  },
+  {
+    "utc": "2026-10-21T17:18:18.972230+00:00",
+    "action": "submit:planner",
+    "stage": "BRIEFING"
+  },
+  {
+    "utc": "2026-10-21T17:18:19.280993+00:00",
+    "action": "submit:planner",
+    "stage": "BRIEFING"
+  },
+  {
+    "utc": "2026-10-21T17:18:19.845956+00:00",
+    "action": "submit:planner",
+    "stage": "BRIEFING"
+  },
+  {
+    "utc": "2026-10-21T17:19:34.096831+00:00",
+    "action": "submit:reviewer",
+    "stage": "EXECUTING"
+  },
+  {
+    "utc": "2026-10-21T17:19:53.056461+00:00",
+    "action": "job:acquire",
+    "stage": "EXECUTING"
+  },
+  {
+    "utc": "2026-10-21T17:19:55.483611+00:00",
+    "action": "job:release",
+    "stage": "EXECUTING"
+  },
+  {
+    "utc": "2026-10-21T17:24:54.509863+00:00",
+    "action": "replan",
+    "stage": "REPLAN_REQUIRED"
+  }
+]

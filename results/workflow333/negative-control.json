@@ -1,0 +1,21 @@
+{
+  "controls": {
+    "dependent": {
+      "expected": "NATIVE_JOB_NOT_SUCCESSFUL",
+      "actual": "NATIVE_JOB_NOT_SUCCESSFUL",
+      "blocked": true
+    },
+    "rename_retry": {
+      "expected": "NATIVE_STEP_ALREADY_ATTEMPTED_REPLAN_REQUIRED",
+      "actual": "NATIVE_STEP_ALREADY_ATTEMPTED_REPLAN_REQUIRED",
+      "blocked": true
+    },
+    "delivery": {
+      "expected": "NOT_READY",
+      "actual": "NOT_READY",
+      "blocked": true
+    }
+  },
+  "native_runs": 1,
+  "followup_workers_launched": 0
+}
