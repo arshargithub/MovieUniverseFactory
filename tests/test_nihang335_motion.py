@@ -35,6 +35,17 @@ def test_frame_set_strict_limits():
     for fs in ([327,327],[True,327],[1,327],list(range(320,340)),[302]):
         with pytest.raises(ValueError):control(r|{'frames':fs})
 
+def test_flight_arrives_with_velocity_then_ground_constraint_holds():
+    rows=anchors();eps=.0001
+    incoming=(sample(rows,350)['fold']-sample(rows,350-eps)['fold'])/eps
+    assert incoming==pytest.approx(-.125,rel=.001)
+    assert sample(rows,350+eps)['fold']==sample(rows,351)['fold']==0
+    # Monotonic flight with no undershoot, including fractional frames.
+    values=[sample(rows,342+i/100)['fold'] for i in range(801)]
+    assert all(0<=v<=.5 for v in values)
+    assert all(a>=b for a,b in zip(values,values[1:]))
+    assert values[-101]-values[-1]>values[-201]-values[-101]
+
 def test_cast_inspection_has_no_target_or_code():
     r={'operation':'nihang_cast_inspect','frame':283,'width':64,'height':64,'samples':1}
     assert control(r)==r
@@ -60,6 +71,23 @@ def test_foreleg_preparation_and_distinct_contact():
     assert foreleg_phases(rows,350)['L']['fold']==0
     assert foreleg_phases(rows,350)['R']['fold']>0
     assert foreleg_phases(rows,351)['R']['fold']==0
+
+def test_landing_event_follows_actual_independent_contact():
+    from movie_factory.adapters.blender.nihang_motion import foreleg_phases,contact_frames
+    records=[{'frame':f,'phase':{'forelegs':foreleg_phases(anchors(),f)}} for f in range(252,442)]
+    assert contact_frames(records)=={'L':350,'R':351}
+    with pytest.raises(ValueError,match='NO_LANDING'):
+        contact_frames(records[:50])
+
+def test_rider_counterbalances_and_absorbs_after_contact_only():
+    from movie_factory.adapters.blender.nihang_motion import rider_samples
+    r=rider_samples(anchors())
+    assert set(r)==set(range(252,442))
+    assert all(r[f]['absorption']==0 for f in range(252,351))
+    assert r[353]['drop']<-.017
+    assert r[331]['pitch']>.10
+    assert max(abs(r[f]['pitch']-r[f-1]['pitch']) for f in range(253,442))<.07
+    assert abs(r[441]['pitch'])<1e-6
 
 @pytest.mark.parametrize('fault',[None,'path','hash','order','profile','missing'])
 def test_frame_manifest_cannot_fake_success(setup,monkeypatch,fault):

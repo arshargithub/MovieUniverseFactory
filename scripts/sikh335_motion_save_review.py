@@ -14,10 +14,17 @@ error=max(math.dist(s['support_target'],s['visible_hoof']) for r in rows for s i
 retract=max(s['flight_wrist_adjustment'] for r in rows for s in r['hind_support'])
 diag=pk.read_json(root,run['artifacts']['scripts']['path'])
 assert error<.001 and retract<.02 and not diag['blocked_drivers'] and not diag['known_source_defects']
+extra={}
+if cycle>=3:
+    path=f'results/sikh335/motion01/landing-audit-c{cycle}.json'
+    landing=pk.read_json(root,path)
+    assert landing['passed'] and landing['source']==run['artifacts']['patch']
+    extra={'landing':{'path':path,'sha256':pk.file_hash(root/path)}}
 verdict={'verdict':'PASS','run_digest':pk.digest(run),'evidence':run['artifacts'],
     'observation':f'190 authored frames; maximum visible hind endpoint error{error:.8f}m, airborne wrist retraction{retract:.8f}m; zero invalid used drivers.',
     'comparison':'Technical persistence/support gate only. Phase silhouettes, actual rider/rein/spear fit, anatomy, appearance and full-speed motion are NOT_RUN; no integrated pass.',
     'open_defects':[]}
+verdict['evidence']=verdict['evidence']|extra
 Bridge(c).record_review(task,'save',verdict)
 (out/f'save-review-c{cycle}.json').write_text(json.dumps(verdict,indent=2)+'\n')
 print(verdict['observation'])

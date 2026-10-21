@@ -178,9 +178,23 @@ def apply_pose(bpy, edit, baseline=None):
             'support_target':list(feet[side]['r_hoof'].translation),
             'visible_hoof':list(rig.matrix_world @ rig.pose.bones['DEF-r_hoof'+suffix].head)})
     # Independent neck base and poll; the head is not a rigid torso extension.
+    neck_matrix=None
     for name, angle in (('neck',edit['neck_pitch']),('head',edit['poll_pitch'])):
         b=rig.pose.bones[name]; start=rig.matrix_world @ b.head
+        if name=='head':
+            # Head position belongs to the explicitly authored neck endpoint,
+            # not an inherited head-control translation from the old action.
+            local=rig.data.bones['neck'].matrix_local.inverted() @ b.bone.head_local
+            start=neck_matrix @ local
         m=(Quaternion(direction((1,0,0)),angle).to_matrix() @ (base_world.to_3x3() @ b.bone.matrix_local.to_3x3())).to_4x4()
         m.translation=start; set_world(name,m)
+        if name=='neck':neck_matrix=m.copy()
     scene.frame_set(frame); bpy.context.view_layer.update()
+    ratios={}
+    for name in ('DEF-neck.001','DEF-neck.002','DEF-neck.003','DEF-neck.004'):
+        b=rig.pose.bones[name]
+        ratios[name]=((rig.matrix_world@b.tail)-(rig.matrix_world@b.head)).length/(b.bone.length*unit)
+    if any(not .85<r<1.15 for r in ratios.values()):
+        raise ValueError(f'SUPPORT_NECK_LENGTH frame={frame} ratios={ratios}')
+    for row in evidence:row['neck_segment_length_ratios']=ratios
     return evidence

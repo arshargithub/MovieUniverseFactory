@@ -10,7 +10,8 @@ def bind(p):return {'path':p,'sha256':pk.file_hash(root/p)}
 step=sys.argv[1];assert step in {'save','render'}
 state=c.state(task);cycle=state['cycle']
 if step=='save':
-    p=c.packet(task);verdict=json.loads((out/'challenge-verdict.json').read_text())
+    p=c.packet(task);vf=out/f'challenge-verdict-c{cycle}.json'
+    verdict=json.loads((vf if vf.exists() else out/'challenge-verdict.json').read_text())
     verdict['input_digest']=p['planning_input_digest']
     c.submit(task,p['actor'],p['ticket'],verdict,'sikh335-motion-challenge-'+str(cycle))
     parent=bind('.runtime/art-direction/series01-sikh320/build-10/sequence.blend')
@@ -21,3 +22,4 @@ run=b.dispatch(task,step,f'sikh335-motion-c{cycle}-{step}',parent=parent,blender
                timeout=600,recipe=recipe)
 (out/f'{step}-run-c{cycle}.json').write_text(json.dumps(run,indent=2)+'\n')
 print(json.dumps({'status':run['status'],'error':run.get('error'),'id':run['id'],'artifacts':run.get('artifacts')},indent=2))
+if run['status']!='RETURNED':raise SystemExit(2)
