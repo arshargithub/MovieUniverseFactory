@@ -7,6 +7,7 @@ from concurrent.futures import ThreadPoolExecutor
 import pytest
 from movie_factory import production_workflow as wf
 from movie_factory import production_knowledge as pk
+import expert_fixtures as ef
 
 
 def bind(root, name):
@@ -21,7 +22,7 @@ def make_brief(root):
            'not_authority': 'No copying background or inferring measured forces',
            'time_range_seconds': [14, 19],
            'aspects': [{'id': 'poses', 'instruction': 'Compare whole pose family', 'requirements': ['appearance']}]}
-    return {'schema': 1, 'route': 'production', 'intent': 'Synthetic offline proof',
+    return ef.attach({'schema': 1, 'route': 'production', 'intent': 'Synthetic offline proof',
             'audience_result': 'Convincing weight', 'strategy': 'Representative pose proof',
             'early_proof': 'Reject failed silhouette', 'scope': 'Synthetic', 'exclusions': 'Live execution',
             'open_decisions': [], 'offline_only': True, 'protected': ['accepted master'],
@@ -33,7 +34,7 @@ def make_brief(root):
                 {'id': 'temporal', 'criterion': 'Full-speed fluidity', 'modes': ['direct_motion'], 'director_av': True}],
             'capabilities': {m: m not in {'direct_audio', 'direct_motion'} for m in wf.rc.MODES},
             'references': [ref],
-            'reference_plan': {'rear': {'reference_digest': pk.digest(ref), 'application': 'Reconstruct whole poses'}}}
+            'reference_plan': {'rear': {'reference_digest': pk.digest(ref), 'application': 'Reconstruct whole poses'}}})
 
 
 @pytest.fixture
@@ -55,7 +56,8 @@ def start(setup, task='t', limit=2):
 
 
 def direction(brief, task='t'):
-    return {**{k: brief[k] for k in ('intent', 'references', 'protected')}, 'deliverable_id': task + '-deliverable'}
+    return {**{k: brief[k] for k in ('intent', 'references', 'protected')}, 'deliverable_id': task + '-deliverable',
+            'beat_intents': brief['expert_plan']['beat_intents']}
 
 
 def submit(c, task, result, event):
@@ -66,6 +68,7 @@ def submit(c, task, result, event):
 def build(root, c, task='t', event='build'):
     packet = c.packet(task)
     result = {'fingerprint': packet['fingerprint'],
+              'requirement_uses': ef.uses(packet['brief']),
               'reference_uses': {r['id']: {'reference_digest': pk.digest(r), 'application': 'Used full pose mapping'} for r in packet['brief']['references']},
               'candidate': {'version': event, 'artifacts': {'clip': bind(root, 'candidate.bin')}}}
     submit(c, task, result, task + '-' + event)
@@ -77,6 +80,7 @@ def review(root, c, task='t', status='PASS'):
     candidate = pk.digest(packet['candidate'])
     ref = packet['brief']['references'][0]
     return {'fingerprint': packet['fingerprint'], 'candidate_digest': candidate,
+            'intent_checks': ef.intent_checks(packet['brief'], 'FAIL' if status == 'FAIL' else 'PASS'), 'planning_gaps': [],
             'checks': [
                 {'id': 'appearance', 'status': status, 'observation': 'Synthetic whole-form observation', 'comparison': 'Compared reference silhouette', 'evidence': ['frame']},
                 {'id': 'temporal', 'status': 'NOT_RUN', 'observation': 'Director playback pending', 'comparison': 'No direct motion capability', 'evidence': []}],
@@ -139,7 +143,7 @@ def test_reference_contract_required_every_stage(setup, stage):
         start(setup)
         if stage == 'builder':
             p = c.packet('t')
-            result = {'fingerprint': p['fingerprint'], 'reference_uses': {}, 'candidate': {}}
+            result = {'fingerprint': p['fingerprint'], 'reference_uses': {}, 'candidate': {}, 'requirement_uses': ef.uses(p['brief'])}
         else:
             build(root, c); result = review(root, c); result['reference_checks'] = {}
         with pytest.raises(wf.Blocked, match='REFERENCE'): submit(c, 't', result, 'bad')
@@ -197,6 +201,7 @@ def test_revised_reference_role_invalidates_old_ticket_review(setup):
     p = c.packet('t'); r = review(root, c)
     brief['references'][0]['role'] = 'directional_design'
     brief['reference_plan']['rear']['reference_digest'] = pk.digest(brief['references'][0])
+    brief['expert_plan']['challenge']['plan_digest'] = ef.ep.plan_digest(brief)
     c.revise('t', brief, bind(root, 'authority.md'), 'Synthetic explicit Director revision', 'revise')
     with pytest.raises(wf.Blocked, match='WRONG_STAGE'): c.submit('t', 'reviewer', p['ticket'], r, 'old-review')
     assert c.packet('t')['brief']['references'][0]['role'] == 'directional_design'
@@ -285,6 +290,7 @@ def test_known_rejected_exact_candidate_vetoes_well_formed_false_pass(setup):
     root, c, brief, _ = setup
     brief['references'][0].update(role='negative_control', binding=bind(root, 'candidate.bin'))
     brief['reference_plan']['rear']['reference_digest'] = pk.digest(brief['references'][0])
+    brief['expert_plan']['challenge']['plan_digest'] = ef.ep.plan_digest(brief)
     start(setup); build(root, c)
     result = submit(c, 't', review(root, c), 'false-positive')
     assert 'KNOWN_REJECTED_ARTIFACT:rear' in result['findings']['failures']
@@ -298,6 +304,7 @@ def test_directional_image_requires_traits_not_pixel_reconstruction(setup):
                allowed_variation='Coherent native proportions and unseen geometry',
                not_authority='Literal pixels, background and generated cloth topology')
     brief['reference_plan']['rear']['reference_digest'] = pk.digest(ref)
+    brief['expert_plan']['challenge']['plan_digest'] = ef.ep.plan_digest(brief)
     start(setup); build(root, c)
     assert c.packet('t')['brief']['references'][0] == ref
     assert submit(c, 't', review(root, c), 'review')['stage'] == 'READY_FOR_DIRECTOR_AV'
@@ -332,6 +339,7 @@ def test_reference_temporal_aspect_requires_director_not_static_pass(setup):
     root, c, brief, _ = setup
     brief['references'][0]['aspects'].append({'id': 'rhythm', 'instruction': 'Compare full-speed rhythm', 'requirements': ['temporal']})
     brief['reference_plan']['rear']['reference_digest'] = pk.digest(brief['references'][0])
+    brief['expert_plan']['challenge']['plan_digest'] = ef.ep.plan_digest(brief)
     start(setup); build(root, c)
     r = review(root, c)
     r['reference_checks']['rear']['aspects'].append({'id': 'rhythm', 'status': 'PASS', 'observation': 'Not supported by images'})

@@ -9,6 +9,7 @@ from movie_factory import production_workflow as wf
 from movie_factory import staged_runner as sr
 from movie_factory import stage_routing as routing
 from test_production_workflow import setup, bind, direction, review, make_brief
+import expert_fixtures as ef
 
 
 def prepare(setup, cap=4):
@@ -27,6 +28,7 @@ def plan(runner, brief):
 def build(root, controller):
     p = controller.packet('t')
     return {'fingerprint': p['fingerprint'], 'candidate': {'version': 'frozen', 'artifacts': {'clip': bind(root, 'candidate.bin')}},
+            'requirement_uses': ef.uses(p['brief']),
             'reference_uses': {r['id']: {'reference_digest': wf.pk.digest(r), 'application': 'Existing frozen evidence only'} for r in p['brief']['references']}}
 
 

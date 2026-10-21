@@ -131,6 +131,8 @@ def main():
             if args.preflight_only or not args.live_chatgpt:
                 progress({'event': 'preflight_complete', 'inference_started': False}); return 0
             base = brief324()
+            if 'expert_plan' not in base:
+                raise Blocked('LEGACY324_REQUIRES_EXPLICIT_EXPERT_PLAN_MIGRATION_NO_INFERENCE')
             # Output folders do not reset the live qualification allowance.
             c = Controller(ROOT, 'results/workflow324/live-controller.sqlite3')
             routing = json.loads((ROOT / args.routing_policy).read_text())

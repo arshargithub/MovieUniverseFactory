@@ -54,6 +54,7 @@ def bindings(root, items):
 
 
 def validate_brief(root, brief, route, mode='offline'):
+    from . import expert_planning as ep
     require(brief.get('schema') == 1 and brief.get('route') == route, 'BRIEF_ROUTE')
     for field in ('intent', 'audience_result', 'strategy', 'early_proof', 'scope', 'exclusions'):
         require(nonempty(brief.get(field)), 'MISSING_BRIEF:' + field)
@@ -107,12 +108,15 @@ def validate_brief(root, brief, route, mode='offline'):
     for rid, application in brief['reference_plan'].items():
         require(application.get('reference_digest') == pk.digest(references[rid]) and
                 nonempty(application.get('application')), 'PLANNING_REFERENCE_ROLE_LOST')
+    ep.validate(brief)
     # Engine changes invalidate old agreements even if the input media is identical.
     return pk.digest({'brief': brief, 'controller': pk.file_hash(Path(__file__)),
+                      'expert_planning': pk.file_hash(Path(ep.__file__)),
                       'review': pk.file_hash(Path(rc.__file__))})
 
 
 def review_result(root, brief, candidate, review, fingerprint):
+    from . import expert_planning as ep
     require(review.get('fingerprint') == fingerprint, 'STALE_REVIEW')
     require(review.get('candidate_digest') == pk.digest(candidate), 'WRONG_CANDIDATE')
     checks = rows(review['checks'])
@@ -177,7 +181,11 @@ def review_result(root, brief, candidate, review, fingerprint):
         require(nonempty(review.get(field)), 'MISSING_REVIEW:' + field)
     require(isinstance(review.get('open_visible_defects'), list), 'DEFECT_INVENTORY_REQUIRED')
     failures += ['visible:' + d for d in review['open_visible_defects']]
+    intent_failures, intent_missing, gaps = ep.review_intent(brief, review, evidence)
+    failures += intent_failures + ['planning:' + g for g in gaps]
+    missing += intent_missing
     return {'failures': sorted(set(failures)), 'missing_evidence': sorted(set(missing)), 'pending_director_av': pending,
+            'planning_gaps': gaps,
             'production_approved': False, 'director_approved': False}
 
 
@@ -290,6 +298,9 @@ class Controller:
             require(isinstance(direction, dict) and nonempty(direction.get('intent'))
                     and nonempty(direction.get('deliverable_id'))
                     and direction.get('references') and direction.get('protected'), 'DIRECTOR_CONTEXT_REQUIRED')
+            require(isinstance(direction.get('beat_intents'), dict) and direction['beat_intents']
+                    and all(nonempty(k) and nonempty(v) for k, v in direction['beat_intents'].items()),
+                    'DIRECTOR_BEAT_SCOPE_REQUIRED')
             rows(direction['references'])
             for ref in direction['references']:
                 rc.binding(self.root, ref['binding'])
@@ -322,6 +333,7 @@ class Controller:
 
     def packet(self, task):
         """Trusted adapter only: stage-scoped ticket, not included in progress log."""
+        from . import expert_planning as ep
         with closing(self.connect()) as con:
             state = self._state(con, task)
         self._fresh(state)
@@ -333,6 +345,11 @@ class Controller:
                   'direction': state['direction'], 'authority': state['authority']}
         if 'brief' in state:
             packet.update(brief=state['brief'], fingerprint=state['fingerprint'])
+        if packet['actor'] == 'planner':
+            packet['expert_instruction'] = ep.PLANNER_INSTRUCTION
+            packet['expert_contract'] = ep.contract()
+        elif packet['actor'] == 'reviewer':
+            packet['expert_instruction'] = ep.REVIEWER_INSTRUCTION
         if STAGES.get(state['stage']) == 'reviewer':
             packet['candidate'] = state['candidate']
             # Builder's narrative/application claims are deliberately not supplied.
@@ -349,11 +366,16 @@ class Controller:
             self._fresh(state)
             if actor == 'planner':
                 require(result.get('references') == state['direction']['references'] and
-                        result.get('protected') == state['direction']['protected'], 'PLANNER_CHANGED_DIRECTOR_AUTHORITY')
+                        result.get('protected') == state['direction']['protected'] and
+                        result.get('intent') == state['direction']['intent'], 'PLANNER_CHANGED_DIRECTOR_AUTHORITY')
+                require(result.get('expert_plan', {}).get('beat_intents') == state['direction']['beat_intents'],
+                        'PLANNER_CHANGED_BEAT_INTENT')
                 state['fingerprint'] = validate_brief(self.root, result, state['route'], state.get('mode', 'offline'))
                 state['brief'] = result
                 return self._stage(state, 'EXECUTING')
             if actor == 'builder':
+                from . import expert_planning as ep
+                ep.validate_execution(state['brief'], result)
                 require(result['fingerprint'] == state['fingerprint'], 'BUILDER_STALE_BRIEF')
                 references = rows(state['brief']['references'])
                 uses = result['reference_uses']
@@ -371,6 +393,8 @@ class Controller:
             findings = review_result(self.root, state['brief'], state['candidate'], result, state['fingerprint'])
             state['review'] = result
             state['findings'] = findings
+            if findings['planning_gaps']:
+                return self._stage(state, 'REPLAN_REQUIRED')
             if findings['failures']:
                 if state['cycle'] >= state['max_corrections']:
                     return self._stage(state, 'REPLAN_REQUIRED')
@@ -392,9 +416,17 @@ class Controller:
             require(not con.execute('SELECT 1 FROM heavy_job WHERE task=?', (task,)).fetchone(), 'JOB_STILL_ACTIVE')
             fingerprint = validate_brief(self.root, brief, state['route'], state.get('mode', 'offline'))
             state.update(brief=brief, fingerprint=fingerprint, revision_reason=reason, revision_authority=decision)
-            state['direction'].update(intent=brief['intent'], references=brief['references'], protected=brief['protected'])
+            state['direction'].update(intent=brief['intent'], references=brief['references'], protected=brief['protected'],
+                                      beat_intents=brief['expert_plan']['beat_intents'])
             for key in ('candidate', 'review', 'builder_record'):
                 state.pop(key, None)
+            # An in-scope planning repair consumes the same persisted correction
+            # budget. It must not create a gratuitous Director approval or reset.
+            if (state['stage'] == 'REPLAN_REQUIRED' and state.get('findings', {}).get('planning_gaps')
+                    and state['cycle'] < state['max_corrections']):
+                state['cycle'] += 1
+                state['findings'] = {}
+                return self._stage(state, 'EXECUTING')
             # Exhaustion cannot be bypassed by modifying intent/references.
             return self._stage(state, 'REPLAN_REQUIRED' if state['stage'] == 'REPLAN_REQUIRED' else 'EXECUTING')
         return self._change(task, event_id, 'revise', [brief, decision, reason], apply)
