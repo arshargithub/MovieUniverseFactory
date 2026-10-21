@@ -1,0 +1,274 @@
+{
+  "packet_digest": "62fac406c120861200a3ecececcf47850f892ee7cadf8de9524e687c5e5512b9",
+  "scope": "Offline software pilot only",
+  "checks": [
+    {
+      "id": "reuse_envelope",
+      "status": "PASS",
+      "kind": "process",
+      "action_taken": "Reused knowledge/review helpers and lifecycle records without claiming native-asset qualification.",
+      "observation": "Existing review and knowledge tests remain in the focused suite.",
+      "evidence": [
+        {
+          "path": "results/workflow323/validation01/tests.txt",
+          "sha256": "416453c622a0de9ce621af680502362575fd292f8f42c6178840e9e6e7db7760"
+        },
+        {
+          "path": "results/workflow323/replay03/replay.json",
+          "sha256": "7436153402df0a297aea8645b3dd250ab6f1309c6ac098e0bed884f95e4cb649"
+        },
+        {
+          "path": "src/movie_factory/production_workflow.py",
+          "sha256": "bfb5c43f58ad2bef433e2e1256a71f4fbe91905d72e8135097a06ee944011f8a"
+        }
+      ]
+    },
+    {
+      "id": "authority",
+      "status": "PASS",
+      "kind": "process",
+      "action_taken": "Limited implementation to offline code, fixtures and existing-evidence replay.",
+      "observation": "No render, provider, subagent, installation or upload; receipts explicitly deny production/Director approval.",
+      "evidence": [
+        {
+          "path": "results/workflow323/validation01/tests.txt",
+          "sha256": "416453c622a0de9ce621af680502362575fd292f8f42c6178840e9e6e7db7760"
+        },
+        {
+          "path": "results/workflow323/replay03/replay.json",
+          "sha256": "7436153402df0a297aea8645b3dd250ab6f1309c6ac098e0bed884f95e4cb649"
+        },
+        {
+          "path": "src/movie_factory/production_workflow.py",
+          "sha256": "bfb5c43f58ad2bef433e2e1256a71f4fbe91905d72e8135097a06ee944011f8a"
+        }
+      ]
+    },
+    {
+      "id": "strategy",
+      "status": "PASS",
+      "kind": "process",
+      "action_taken": "Followed the322 staged-controller proposal and323 strategy with source-bound proof first.",
+      "observation": "State transitions, stale binding and correction limits exercised before any production integration.",
+      "evidence": [
+        {
+          "path": "results/workflow323/validation01/tests.txt",
+          "sha256": "416453c622a0de9ce621af680502362575fd292f8f42c6178840e9e6e7db7760"
+        },
+        {
+          "path": "results/workflow323/replay03/replay.json",
+          "sha256": "7436153402df0a297aea8645b3dd250ab6f1309c6ac098e0bed884f95e4cb649"
+        },
+        {
+          "path": "src/movie_factory/production_workflow.py",
+          "sha256": "bfb5c43f58ad2bef433e2e1256a71f4fbe91905d72e8135097a06ee944011f8a"
+        }
+      ]
+    },
+    {
+      "id": "visual_gate",
+      "status": "PASS",
+      "kind": "review",
+      "action_taken": "Reinspected321 phase/appearance sheets and kept rejected320 internal to audit/replay.",
+      "observation": "Column neck, extended hind support, shell outfit and slab saddle remain FAIL; no new AV or artistic qualification.",
+      "evidence": [
+        {
+          "path": "results/workflow323/validation01/tests.txt",
+          "sha256": "416453c622a0de9ce621af680502362575fd292f8f42c6178840e9e6e7db7760"
+        },
+        {
+          "path": "results/workflow323/replay03/replay.json",
+          "sha256": "7436153402df0a297aea8645b3dd250ab6f1309c6ac098e0bed884f95e4cb649"
+        },
+        {
+          "path": "src/movie_factory/production_workflow.py",
+          "sha256": "bfb5c43f58ad2bef433e2e1256a71f4fbe91905d72e8135097a06ee944011f8a"
+        }
+      ]
+    },
+    {
+      "id": "anticipation",
+      "status": "PASS",
+      "kind": "review",
+      "action_taken": "Tested stage skipping, role downgrade, false modality, stale retry and resource contention.",
+      "observation": "Known-negative bytes veto a false positive; unfamiliar false observations remain an explicitly tested limitation.",
+      "evidence": [
+        {
+          "path": "results/workflow323/validation01/tests.txt",
+          "sha256": "416453c622a0de9ce621af680502362575fd292f8f42c6178840e9e6e7db7760"
+        },
+        {
+          "path": "results/workflow323/replay03/replay.json",
+          "sha256": "7436153402df0a297aea8645b3dd250ab6f1309c6ac098e0bed884f95e4cb649"
+        },
+        {
+          "path": "src/movie_factory/production_workflow.py",
+          "sha256": "bfb5c43f58ad2bef433e2e1256a71f4fbe91905d72e8135097a06ee944011f8a"
+        }
+      ]
+    },
+    {
+      "id": "stopping",
+      "status": "PASS",
+      "kind": "review",
+      "action_taken": "Finished offline controller and replay rather than resume scene work or install a live harness.",
+      "observation": "Two-correction pilot persists across restart/replan; next dependency is live serial stage-runner qualification.",
+      "evidence": [
+        {
+          "path": "results/workflow323/validation01/tests.txt",
+          "sha256": "416453c622a0de9ce621af680502362575fd292f8f42c6178840e9e6e7db7760"
+        },
+        {
+          "path": "results/workflow323/replay03/replay.json",
+          "sha256": "7436153402df0a297aea8645b3dd250ab6f1309c6ac098e0bed884f95e4cb649"
+        },
+        {
+          "path": "src/movie_factory/production_workflow.py",
+          "sha256": "bfb5c43f58ad2bef433e2e1256a71f4fbe91905d72e8135097a06ee944011f8a"
+        }
+      ]
+    },
+    {
+      "id": "versioning",
+      "status": "PASS",
+      "kind": "technical",
+      "action_taken": "Bound reference bytes plus semantic roles and scoped source authority across every stage.",
+      "observation": "Role/byte changes invalidate submissions; historical negative and accepted positive scopes remain distinct.",
+      "evidence": [
+        {
+          "path": "results/workflow323/validation01/tests.txt",
+          "sha256": "416453c622a0de9ce621af680502362575fd292f8f42c6178840e9e6e7db7760"
+        },
+        {
+          "path": "results/workflow323/replay03/replay.json",
+          "sha256": "7436153402df0a297aea8645b3dd250ab6f1309c6ac098e0bed884f95e4cb649"
+        },
+        {
+          "path": "src/movie_factory/production_workflow.py",
+          "sha256": "bfb5c43f58ad2bef433e2e1256a71f4fbe91905d72e8135097a06ee944011f8a"
+        }
+      ]
+    },
+    {
+      "id": "economics",
+      "status": "PASS",
+      "kind": "process",
+      "action_taken": "Captured work/test/replay intervals with existing operating ledger; no paid workload.",
+      "observation": "Unknown token/cost and initial capture gap remain disclosed; no Mac speedup percentage is claimed.",
+      "evidence": [
+        {
+          "path": "results/workflow323/validation01/tests.txt",
+          "sha256": "416453c622a0de9ce621af680502362575fd292f8f42c6178840e9e6e7db7760"
+        },
+        {
+          "path": "results/workflow323/replay03/replay.json",
+          "sha256": "7436153402df0a297aea8645b3dd250ab6f1309c6ac098e0bed884f95e4cb649"
+        },
+        {
+          "path": "src/movie_factory/production_workflow.py",
+          "sha256": "bfb5c43f58ad2bef433e2e1256a71f4fbe91905d72e8135097a06ee944011f8a"
+        }
+      ]
+    },
+    {
+      "id": "retrieval",
+      "status": "PASS",
+      "kind": "technical",
+      "action_taken": "Generated fresh knowledge packet and manually reconciled321/322/323 rather than repin307.",
+      "observation": "Old current capsule remains stale; no universal memory or newly indexed corpus claim.",
+      "evidence": [
+        {
+          "path": "results/workflow323/validation01/tests.txt",
+          "sha256": "416453c622a0de9ce621af680502362575fd292f8f42c6178840e9e6e7db7760"
+        },
+        {
+          "path": "results/workflow323/replay03/replay.json",
+          "sha256": "7436153402df0a297aea8645b3dd250ab6f1309c6ac098e0bed884f95e4cb649"
+        },
+        {
+          "path": "src/movie_factory/production_workflow.py",
+          "sha256": "bfb5c43f58ad2bef433e2e1256a71f4fbe91905d72e8135097a06ee944011f8a"
+        }
+      ]
+    },
+    {
+      "id": "current_state",
+      "status": "PASS",
+      "kind": "process",
+      "action_taken": "Preserved253 exact provisional Pashtun and321 rejected Nihang status.",
+      "observation": "Positive reuse is not release or strict renderer qualification; false direct AV capability remains false.",
+      "evidence": [
+        {
+          "path": "results/workflow323/validation01/tests.txt",
+          "sha256": "416453c622a0de9ce621af680502362575fd292f8f42c6178840e9e6e7db7760"
+        },
+        {
+          "path": "results/workflow323/replay03/replay.json",
+          "sha256": "7436153402df0a297aea8645b3dd250ab6f1309c6ac098e0bed884f95e4cb649"
+        },
+        {
+          "path": "src/movie_factory/production_workflow.py",
+          "sha256": "bfb5c43f58ad2bef433e2e1256a71f4fbe91905d72e8135097a06ee944011f8a"
+        }
+      ]
+    },
+    {
+      "id": "au_reuse",
+      "status": "PASS",
+      "kind": "review",
+      "action_taken": "Preserved audit sheets and linked existing source provenance; avoided new scene derivatives.",
+      "observation": "Local commits are not remote backup; no accepted actor/source asset changed.",
+      "evidence": [
+        {
+          "path": "results/workflow323/validation01/tests.txt",
+          "sha256": "416453c622a0de9ce621af680502362575fd292f8f42c6178840e9e6e7db7760"
+        },
+        {
+          "path": "results/workflow323/replay03/replay.json",
+          "sha256": "7436153402df0a297aea8645b3dd250ab6f1309c6ac098e0bed884f95e4cb649"
+        },
+        {
+          "path": "src/movie_factory/production_workflow.py",
+          "sha256": "bfb5c43f58ad2bef433e2e1256a71f4fbe91905d72e8135097a06ee944011f8a"
+        }
+      ]
+    },
+    {
+      "id": "au_review",
+      "status": "PASS",
+      "kind": "review",
+      "action_taken": "Separated control-flow tests from familiar visual reinspection and unknown semantic accuracy.",
+      "observation": "Known controls are regressions; no fresh blind/independent accuracy or held-out success claimed.",
+      "evidence": [
+        {
+          "path": "results/workflow323/validation01/tests.txt",
+          "sha256": "416453c622a0de9ce621af680502362575fd292f8f42c6178840e9e6e7db7760"
+        },
+        {
+          "path": "results/workflow323/replay03/replay.json",
+          "sha256": "7436153402df0a297aea8645b3dd250ab6f1309c6ac098e0bed884f95e4cb649"
+        },
+        {
+          "path": "src/movie_factory/production_workflow.py",
+          "sha256": "bfb5c43f58ad2bef433e2e1256a71f4fbe91905d72e8135097a06ee944011f8a"
+        }
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "prediction": "Reference role could be lost between stages",
+      "observation": "Omission/downgrade tests block",
+      "response": "Same frozen contract plus aspect comparison at each stage",
+      "result": "resolved"
+    },
+    {
+      "prediction": "Old receipt or renamed pass might bypass limits",
+      "observation": "Freshness and stable deliverable tests block",
+      "response": "Revalidate delivery; retain counters and exclusive deliverable ownership",
+      "result": "resolved"
+    }
+  ],
+  "adjacent_regressions": "Focused legacy suites pass; three separate older317/319 assertions fail on pre-existing corpus evolution. No patches to those modules or pins.",
+  "stopping_reason": "Offline scoped deliverable complete. Live driver, OS isolation and perceptual judgment remain unqualified, not claimed as implemented."
+}

@@ -1,0 +1,19 @@
+{
+  "id": "workflow323-offline-controller",
+  "operation": "knowledge",
+  "entities": ["knowledge"],
+  "query": "Reference roles, source authority, staged execution review, known visible failure veto, bounded repair and restart",
+  "intent": "Implement and test local offline workflow controller; no production construction or provider execution",
+  "phase": "execution",
+  "inputs": {
+    "results/workflow323/STRATEGY.md": "15fc6d8f015d68574b4c84a28a90c63ca987d9f90edcd4ba8d19ad0658fc5711",
+    "docs/planning/DETERMINISTIC_PRODUCTION_WORKFLOW_322.md": "1cb9fd1d63f8dd9cde5e9c3c27daad84d5fb5fe6e261ad35ab609e6ddc8ef505",
+    "docs/knowledge/NIHANG_REARING_REVIEW_FAILURE_321.md": "36d8cbec705017972bb1a80b5b0f7fe8af7b5c17d0669760d5b35ffbf48b1157"
+  },
+  "open_decisions": [],
+  "execution_authority": {
+    "source": "results/workflow323/STRATEGY.md",
+    "scope": "Director323 approval of offline workflow pilot and reference roles; no live model or scene execution"
+  },
+  "max_context_characters": 60000
+}

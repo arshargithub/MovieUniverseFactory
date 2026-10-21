@@ -1,0 +1,769 @@
+{
+  "scope": "Offline policy replay using known judgments; not blinded perceptual validation",
+  "negative": {
+    "brief": {
+      "schema": 1,
+      "route": "production",
+      "offline_only": true,
+      "intent": "Offline replay of known candidate disposition, not scene repair",
+      "audience_result": "Prevent another known failed handoff while preserving exact accepted work",
+      "strategy": "Replay stage contracts with source-bound audit judgments",
+      "early_proof": "Appearance failure and negative-control bytes veto pending human AV queue",
+      "scope": "Offline existing-evidence replay",
+      "exclusions": "Rendering, live models, paid calls, upload, release",
+      "protected": [
+        "Accepted Pashtun20s unchanged; no native/source media edits"
+      ],
+      "open_decisions": [],
+      "source_bindings": {
+        "0": {
+          "path": "results/workflow323/task.json",
+          "sha256": "fb1193576e2b1da2526a8da14fa2851821edd045bd5c79e41825be1502e572cc"
+        },
+        "1": {
+          "path": "results/workflow323/STRATEGY.md",
+          "sha256": "15fc6d8f015d68574b4c84a28a90c63ca987d9f90edcd4ba8d19ad0658fc5711"
+        },
+        "2": {
+          "path": "docs/knowledge/NIHANG_REARING_REVIEW_FAILURE_321.md",
+          "sha256": "36d8cbec705017972bb1a80b5b0f7fe8af7b5c17d0669760d5b35ffbf48b1157"
+        },
+        "3": {
+          "path": "results/sikh321/disposition.json",
+          "sha256": "1c760b52335743b4e0c9e2b81d55cae6cfc23337f81d6474893dba840c80fd82"
+        },
+        "4": {
+          "path": "docs/knowledge/CURRENT_PRODUCTION_STATE.md",
+          "sha256": "fcbd3501515872265928982f428cc06018a2a5b4c82608663dd158d8a264c6fb"
+        }
+      },
+      "knowledge_task": "results/workflow323/task.json",
+      "knowledge_digest": "62fac406c120861200a3ecececcf47850f892ee7cadf8de9524e687c5e5512b9",
+      "knowledge_mapping": {
+        "reuse_envelope": {
+          "requirements": [
+            "visible"
+          ],
+          "reason": "Offline policy replay only; source audit and strategy reconcile this obligation, not new production qualification"
+        },
+        "authority": {
+          "requirements": [
+            "visible"
+          ],
+          "reason": "Offline policy replay only; source audit and strategy reconcile this obligation, not new production qualification"
+        },
+        "strategy": {
+          "requirements": [
+            "visible"
+          ],
+          "reason": "Offline policy replay only; source audit and strategy reconcile this obligation, not new production qualification"
+        },
+        "visual_gate": {
+          "requirements": [
+            "visible"
+          ],
+          "reason": "Offline policy replay only; source audit and strategy reconcile this obligation, not new production qualification"
+        },
+        "anticipation": {
+          "requirements": [
+            "visible"
+          ],
+          "reason": "Offline policy replay only; source audit and strategy reconcile this obligation, not new production qualification"
+        },
+        "stopping": {
+          "requirements": [
+            "visible"
+          ],
+          "reason": "Offline policy replay only; source audit and strategy reconcile this obligation, not new production qualification"
+        },
+        "versioning": {
+          "requirements": [
+            "visible"
+          ],
+          "reason": "Offline policy replay only; source audit and strategy reconcile this obligation, not new production qualification"
+        },
+        "economics": {
+          "requirements": [
+            "visible"
+          ],
+          "reason": "Offline policy replay only; source audit and strategy reconcile this obligation, not new production qualification"
+        },
+        "retrieval": {
+          "requirements": [
+            "visible"
+          ],
+          "reason": "Offline policy replay only; source audit and strategy reconcile this obligation, not new production qualification"
+        },
+        "current_state": {
+          "requirements": [
+            "visible"
+          ],
+          "reason": "Offline policy replay only; source audit and strategy reconcile this obligation, not new production qualification"
+        },
+        "au_reuse": {
+          "requirements": [
+            "visible"
+          ],
+          "reason": "Offline policy replay only; source audit and strategy reconcile this obligation, not new production qualification"
+        },
+        "au_review": {
+          "requirements": [
+            "visible"
+          ],
+          "reason": "Offline policy replay only; source audit and strategy reconcile this obligation, not new production qualification"
+        }
+      },
+      "requirements": [
+        {
+          "id": "visible",
+          "criterion": "No known visible same-film or pose failure in claimed scope",
+          "modes": [
+            "image"
+          ],
+          "director_av": false
+        },
+        {
+          "id": "temporal",
+          "criterion": "Full-speed audiovisual judgment remains with Director",
+          "modes": [
+            "direct_motion",
+            "direct_audio"
+          ],
+          "director_av": true
+        }
+      ],
+      "capabilities": {
+        "image": true,
+        "timed_images": true,
+        "technical": true,
+        "authority": true,
+        "direct_motion": false,
+        "direct_audio": false
+      },
+      "references": [
+        {
+          "id": "accepted_film",
+          "role": "accepted_quality",
+          "binding": {
+            "path": ".runtime/art-direction/series01-finish248/delivery01/pashtun-20s.mp4",
+            "sha256": "1004ed9f2e06d2eafb008c925eb9d266e8a13b8603086020e28d19e3b606722b"
+          },
+          "authority": "Director323 reference roles; prior321 rejection or253 acceptance as applicable",
+          "scope": "Visible production construction quality",
+          "fidelity": "Same-film visible forms and materials",
+          "allowed_variation": "Different character, costume, lighting and action",
+          "not_authority": "No release approval, strict renderer replay qualification or identity transfer",
+          "aspects": [
+            {
+              "id": "screen_requirement",
+              "instruction": "Compare applicable acceptance scope, not pixel-match different characters",
+              "requirements": [
+                "visible"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "rear_motion",
+          "role": "faithful_motion",
+          "binding": {
+            "path": ".runtime/art-direction/series01-sikh256/references/reference-b.mov",
+            "sha256": "78d0d691e8712c02931876cf0bc405e4869de357f337f531708be7a7da4898e2"
+          },
+          "authority": "Director323 reference roles; prior321 rejection or253 acceptance as applicable",
+          "scope": "14\u201319s horse/rider rearing",
+          "fidelity": "Faithful coordinated gather, drive, active crest, descent, weight and recovery",
+          "allowed_variation": "Production camera, actor identity and scenery within accepted direction",
+          "not_authority": "Not motion capture, measured force data or permission to copy incidental background",
+          "aspects": [
+            {
+              "id": "screen_requirement",
+              "instruction": "Compare whole-body pose transitions and contact, not just nonzero keyframes",
+              "requirements": [
+                "visible"
+              ]
+            },
+            {
+              "id": "full_speed_performance",
+              "instruction": "Compare rhythm, fluidity, weight and landing at full speed",
+              "requirements": [
+                "temporal"
+              ]
+            }
+          ],
+          "time_range_seconds": [
+            14,
+            19
+          ]
+        },
+        {
+          "id": "rejected320",
+          "role": "negative_control",
+          "binding": {
+            "path": ".runtime/art-direction/series01-sikh320/delivery-10/nihang-crowd-review.mp4",
+            "sha256": "ad7d980eb064a03837989f27d68ebacfe08576cb30625f92696c20b5fc50d452"
+          },
+          "authority": "Director323 reference roles; prior321 rejection or253 acceptance as applicable",
+          "scope": "Known rejected leader/rearing passage",
+          "fidelity": "Must not be admitted unchanged",
+          "allowed_variation": "Use only for diagnosis and regression tests",
+          "not_authority": "Not an accepted aesthetic target",
+          "aspects": [
+            {
+              "id": "screen_requirement",
+              "instruction": "Reject the same failed bytes and visible defects",
+              "requirements": [
+                "visible"
+              ]
+            }
+          ]
+        }
+      ],
+      "reference_plan": {
+        "accepted_film": {
+          "reference_digest": "8db02ebb83b1fb2be38ebe40e08373f5e16c49ceade156c15e115e555f39fd79",
+          "application": "Compare applicable acceptance scope, not pixel-match different characters"
+        },
+        "rear_motion": {
+          "reference_digest": "9cd6210b6b94a8c0956b9617e3f6db95db3e8a6ea080fc5a986357da209d7e16",
+          "application": "Compare whole-body pose transitions and contact, not just nonzero keyframes"
+        },
+        "rejected320": {
+          "reference_digest": "f1f08ecd9209c2caabc05a9c6e886543b1993db4eeeb301406559db32cd45a78",
+          "application": "Reject the same failed bytes and visible defects"
+        }
+      }
+    },
+    "planner_reference_ids": [
+      "accepted_film",
+      "rear_motion",
+      "rejected320"
+    ],
+    "verdicts": [
+      {
+        "cycle": 0,
+        "stage": "EXECUTING",
+        "findings": {
+          "failures": [
+            "KNOWN_REJECTED_ARTIFACT:rejected320",
+            "reference:accepted_film:screen_requirement",
+            "reference:rear_motion:screen_requirement",
+            "reference:rejected320:screen_requirement",
+            "visible",
+            "visible:D321-01",
+            "visible:D321-02",
+            "visible:D321-03",
+            "visible:D321-04"
+          ],
+          "missing_evidence": [],
+          "pending_director_av": [
+            "temporal",
+            "reference:rear_motion:full_speed_performance"
+          ],
+          "production_approved": false,
+          "director_approved": false
+        }
+      },
+      {
+        "cycle": 1,
+        "stage": "EXECUTING",
+        "findings": {
+          "failures": [
+            "KNOWN_REJECTED_ARTIFACT:rejected320",
+            "reference:accepted_film:screen_requirement",
+            "reference:rear_motion:screen_requirement",
+            "reference:rejected320:screen_requirement",
+            "visible",
+            "visible:D321-01",
+            "visible:D321-02",
+            "visible:D321-03",
+            "visible:D321-04"
+          ],
+          "missing_evidence": [],
+          "pending_director_av": [
+            "temporal",
+            "reference:rear_motion:full_speed_performance"
+          ],
+          "production_approved": false,
+          "director_approved": false
+        }
+      },
+      {
+        "cycle": 2,
+        "stage": "REPLAN_REQUIRED",
+        "findings": {
+          "failures": [
+            "KNOWN_REJECTED_ARTIFACT:rejected320",
+            "reference:accepted_film:screen_requirement",
+            "reference:rear_motion:screen_requirement",
+            "reference:rejected320:screen_requirement",
+            "visible",
+            "visible:D321-01",
+            "visible:D321-02",
+            "visible:D321-03",
+            "visible:D321-04"
+          ],
+          "missing_evidence": [],
+          "pending_director_av": [
+            "temporal",
+            "reference:rear_motion:full_speed_performance"
+          ],
+          "production_approved": false,
+          "director_approved": false
+        }
+      }
+    ],
+    "delivery": {
+      "blocked": "NOT_READY"
+    },
+    "events": [
+      {
+        "seq": 1,
+        "utc": "2026-10-21T09:45:22.509971+00:00",
+        "action": "create",
+        "stage": "BRIEFING",
+        "cycle": 0,
+        "findings": {}
+      },
+      {
+        "seq": 2,
+        "utc": "2026-10-21T09:45:22.686024+00:00",
+        "action": "submit:planner",
+        "stage": "EXECUTING",
+        "cycle": 0,
+        "findings": {}
+      },
+      {
+        "seq": 3,
+        "utc": "2026-10-21T09:45:23.025430+00:00",
+        "action": "submit:builder",
+        "stage": "REVIEWING",
+        "cycle": 0,
+        "findings": {}
+      },
+      {
+        "seq": 4,
+        "utc": "2026-10-21T09:45:23.409298+00:00",
+        "action": "submit:reviewer",
+        "stage": "EXECUTING",
+        "cycle": 1,
+        "findings": {
+          "director_approved": false,
+          "failures": [
+            "KNOWN_REJECTED_ARTIFACT:rejected320",
+            "reference:accepted_film:screen_requirement",
+            "reference:rear_motion:screen_requirement",
+            "reference:rejected320:screen_requirement",
+            "visible",
+            "visible:D321-01",
+            "visible:D321-02",
+            "visible:D321-03",
+            "visible:D321-04"
+          ],
+          "missing_evidence": [],
+          "pending_director_av": [
+            "temporal",
+            "reference:rear_motion:full_speed_performance"
+          ],
+          "production_approved": false
+        }
+      },
+      {
+        "seq": 5,
+        "utc": "2026-10-21T09:45:23.768265+00:00",
+        "action": "submit:builder",
+        "stage": "REVIEWING",
+        "cycle": 1,
+        "findings": {
+          "director_approved": false,
+          "failures": [
+            "KNOWN_REJECTED_ARTIFACT:rejected320",
+            "reference:accepted_film:screen_requirement",
+            "reference:rear_motion:screen_requirement",
+            "reference:rejected320:screen_requirement",
+            "visible",
+            "visible:D321-01",
+            "visible:D321-02",
+            "visible:D321-03",
+            "visible:D321-04"
+          ],
+          "missing_evidence": [],
+          "pending_director_av": [
+            "temporal",
+            "reference:rear_motion:full_speed_performance"
+          ],
+          "production_approved": false
+        }
+      },
+      {
+        "seq": 6,
+        "utc": "2026-10-21T09:45:24.115063+00:00",
+        "action": "submit:reviewer",
+        "stage": "EXECUTING",
+        "cycle": 2,
+        "findings": {
+          "director_approved": false,
+          "failures": [
+            "KNOWN_REJECTED_ARTIFACT:rejected320",
+            "reference:accepted_film:screen_requirement",
+            "reference:rear_motion:screen_requirement",
+            "reference:rejected320:screen_requirement",
+            "visible",
+            "visible:D321-01",
+            "visible:D321-02",
+            "visible:D321-03",
+            "visible:D321-04"
+          ],
+          "missing_evidence": [],
+          "pending_director_av": [
+            "temporal",
+            "reference:rear_motion:full_speed_performance"
+          ],
+          "production_approved": false
+        }
+      },
+      {
+        "seq": 7,
+        "utc": "2026-10-21T09:45:24.461458+00:00",
+        "action": "submit:builder",
+        "stage": "REVIEWING",
+        "cycle": 2,
+        "findings": {
+          "director_approved": false,
+          "failures": [
+            "KNOWN_REJECTED_ARTIFACT:rejected320",
+            "reference:accepted_film:screen_requirement",
+            "reference:rear_motion:screen_requirement",
+            "reference:rejected320:screen_requirement",
+            "visible",
+            "visible:D321-01",
+            "visible:D321-02",
+            "visible:D321-03",
+            "visible:D321-04"
+          ],
+          "missing_evidence": [],
+          "pending_director_av": [
+            "temporal",
+            "reference:rear_motion:full_speed_performance"
+          ],
+          "production_approved": false
+        }
+      },
+      {
+        "seq": 8,
+        "utc": "2026-10-21T09:45:24.803767+00:00",
+        "action": "submit:reviewer",
+        "stage": "REPLAN_REQUIRED",
+        "cycle": 2,
+        "findings": {
+          "director_approved": false,
+          "failures": [
+            "KNOWN_REJECTED_ARTIFACT:rejected320",
+            "reference:accepted_film:screen_requirement",
+            "reference:rear_motion:screen_requirement",
+            "reference:rejected320:screen_requirement",
+            "visible",
+            "visible:D321-01",
+            "visible:D321-02",
+            "visible:D321-03",
+            "visible:D321-04"
+          ],
+          "missing_evidence": [],
+          "pending_director_av": [
+            "temporal",
+            "reference:rear_motion:full_speed_performance"
+          ],
+          "production_approved": false
+        }
+      }
+    ]
+  },
+  "positive": {
+    "brief": {
+      "schema": 1,
+      "route": "production",
+      "offline_only": true,
+      "intent": "Offline replay of known candidate disposition, not scene repair",
+      "audience_result": "Prevent another known failed handoff while preserving exact accepted work",
+      "strategy": "Replay stage contracts with source-bound audit judgments",
+      "early_proof": "Appearance failure and negative-control bytes veto pending human AV queue",
+      "scope": "Offline existing-evidence replay",
+      "exclusions": "Rendering, live models, paid calls, upload, release",
+      "protected": [
+        "Accepted Pashtun20s unchanged; no native/source media edits"
+      ],
+      "open_decisions": [],
+      "source_bindings": {
+        "0": {
+          "path": "results/workflow323/task.json",
+          "sha256": "fb1193576e2b1da2526a8da14fa2851821edd045bd5c79e41825be1502e572cc"
+        },
+        "1": {
+          "path": "results/workflow323/STRATEGY.md",
+          "sha256": "15fc6d8f015d68574b4c84a28a90c63ca987d9f90edcd4ba8d19ad0658fc5711"
+        },
+        "2": {
+          "path": "docs/knowledge/NIHANG_REARING_REVIEW_FAILURE_321.md",
+          "sha256": "36d8cbec705017972bb1a80b5b0f7fe8af7b5c17d0669760d5b35ffbf48b1157"
+        },
+        "3": {
+          "path": "results/sikh321/disposition.json",
+          "sha256": "1c760b52335743b4e0c9e2b81d55cae6cfc23337f81d6474893dba840c80fd82"
+        },
+        "4": {
+          "path": "docs/knowledge/CURRENT_PRODUCTION_STATE.md",
+          "sha256": "fcbd3501515872265928982f428cc06018a2a5b4c82608663dd158d8a264c6fb"
+        }
+      },
+      "knowledge_task": "results/workflow323/task.json",
+      "knowledge_digest": "62fac406c120861200a3ecececcf47850f892ee7cadf8de9524e687c5e5512b9",
+      "knowledge_mapping": {
+        "reuse_envelope": {
+          "requirements": [
+            "visible"
+          ],
+          "reason": "Offline policy replay only; source audit and strategy reconcile this obligation, not new production qualification"
+        },
+        "authority": {
+          "requirements": [
+            "visible"
+          ],
+          "reason": "Offline policy replay only; source audit and strategy reconcile this obligation, not new production qualification"
+        },
+        "strategy": {
+          "requirements": [
+            "visible"
+          ],
+          "reason": "Offline policy replay only; source audit and strategy reconcile this obligation, not new production qualification"
+        },
+        "visual_gate": {
+          "requirements": [
+            "visible"
+          ],
+          "reason": "Offline policy replay only; source audit and strategy reconcile this obligation, not new production qualification"
+        },
+        "anticipation": {
+          "requirements": [
+            "visible"
+          ],
+          "reason": "Offline policy replay only; source audit and strategy reconcile this obligation, not new production qualification"
+        },
+        "stopping": {
+          "requirements": [
+            "visible"
+          ],
+          "reason": "Offline policy replay only; source audit and strategy reconcile this obligation, not new production qualification"
+        },
+        "versioning": {
+          "requirements": [
+            "visible"
+          ],
+          "reason": "Offline policy replay only; source audit and strategy reconcile this obligation, not new production qualification"
+        },
+        "economics": {
+          "requirements": [
+            "visible"
+          ],
+          "reason": "Offline policy replay only; source audit and strategy reconcile this obligation, not new production qualification"
+        },
+        "retrieval": {
+          "requirements": [
+            "visible"
+          ],
+          "reason": "Offline policy replay only; source audit and strategy reconcile this obligation, not new production qualification"
+        },
+        "current_state": {
+          "requirements": [
+            "visible"
+          ],
+          "reason": "Offline policy replay only; source audit and strategy reconcile this obligation, not new production qualification"
+        },
+        "au_reuse": {
+          "requirements": [
+            "visible"
+          ],
+          "reason": "Offline policy replay only; source audit and strategy reconcile this obligation, not new production qualification"
+        },
+        "au_review": {
+          "requirements": [
+            "visible"
+          ],
+          "reason": "Offline policy replay only; source audit and strategy reconcile this obligation, not new production qualification"
+        }
+      },
+      "requirements": [
+        {
+          "id": "visible",
+          "criterion": "No known visible same-film or pose failure in claimed scope",
+          "modes": [
+            "image"
+          ],
+          "director_av": false
+        },
+        {
+          "id": "temporal",
+          "criterion": "Full-speed audiovisual judgment remains with Director",
+          "modes": [
+            "direct_motion",
+            "direct_audio"
+          ],
+          "director_av": true
+        }
+      ],
+      "capabilities": {
+        "image": true,
+        "timed_images": true,
+        "technical": true,
+        "authority": true,
+        "direct_motion": false,
+        "direct_audio": false
+      },
+      "references": [
+        {
+          "id": "accepted_film",
+          "role": "exact_asset",
+          "binding": {
+            "path": ".runtime/art-direction/series01-finish248/delivery01/pashtun-20s.mp4",
+            "sha256": "1004ed9f2e06d2eafb008c925eb9d266e8a13b8603086020e28d19e3b606722b"
+          },
+          "authority": "Director323 reference roles; prior321 rejection or253 acceptance as applicable",
+          "scope": "Exact provisional accepted20s reuse",
+          "fidelity": "Preserve bytes and approval scope",
+          "allowed_variation": "No changes to accepted clip",
+          "not_authority": "No release approval, strict renderer replay qualification or identity transfer",
+          "aspects": [
+            {
+              "id": "screen_requirement",
+              "instruction": "Compare applicable acceptance scope, not pixel-match different characters",
+              "requirements": [
+                "visible"
+              ]
+            }
+          ]
+        }
+      ],
+      "reference_plan": {
+        "accepted_film": {
+          "reference_digest": "666916837b235c40648bcabc57a74ed3866420bb5b29385fcc46a978de414aa0",
+          "application": "Compare applicable acceptance scope, not pixel-match different characters"
+        }
+      }
+    },
+    "planner_reference_ids": [
+      "accepted_film"
+    ],
+    "verdicts": [
+      {
+        "cycle": 0,
+        "stage": "READY_FOR_DIRECTOR_AV",
+        "findings": {
+          "failures": [],
+          "missing_evidence": [],
+          "pending_director_av": [
+            "temporal"
+          ],
+          "production_approved": false,
+          "director_approved": false
+        }
+      }
+    ],
+    "delivery": {
+      "stage": "READY_FOR_DIRECTOR_AV",
+      "offline_replay_only": true,
+      "production_approved": false,
+      "director_approved": false,
+      "artifacts": {
+        "clip": {
+          "path": ".runtime/art-direction/series01-finish248/delivery01/pashtun-20s.mp4",
+          "sha256": "1004ed9f2e06d2eafb008c925eb9d266e8a13b8603086020e28d19e3b606722b"
+        }
+      }
+    },
+    "events": [
+      {
+        "seq": 9,
+        "utc": "2026-10-21T09:45:24.911448+00:00",
+        "action": "create",
+        "stage": "BRIEFING",
+        "cycle": 0,
+        "findings": {}
+      },
+      {
+        "seq": 10,
+        "utc": "2026-10-21T09:45:25.073073+00:00",
+        "action": "submit:planner",
+        "stage": "EXECUTING",
+        "cycle": 0,
+        "findings": {}
+      },
+      {
+        "seq": 11,
+        "utc": "2026-10-21T09:45:25.446892+00:00",
+        "action": "submit:builder",
+        "stage": "REVIEWING",
+        "cycle": 0,
+        "findings": {}
+      },
+      {
+        "seq": 12,
+        "utc": "2026-10-21T09:45:25.857170+00:00",
+        "action": "submit:reviewer",
+        "stage": "READY_FOR_DIRECTOR_AV",
+        "cycle": 0,
+        "findings": {
+          "director_approved": false,
+          "failures": [],
+          "missing_evidence": [],
+          "pending_director_av": [
+            "temporal"
+          ],
+          "production_approved": false
+        }
+      },
+      {
+        "seq": 13,
+        "utc": "2026-10-21T09:45:25.994281+00:00",
+        "action": "deliver",
+        "stage": "READY_FOR_DIRECTOR_AV",
+        "cycle": 0,
+        "findings": {
+          "director_approved": false,
+          "failures": [],
+          "missing_evidence": [],
+          "pending_director_av": [
+            "temporal"
+          ],
+          "production_approved": false
+        }
+      }
+    ]
+  },
+  "directional_contract_example": {
+    "id": "sikh_direction",
+    "role": "directional_design",
+    "binding": {
+      "path": ".runtime/art-direction/series01-sikh257/sikh-uncovered-concept-v03.png",
+      "sha256": "7aaa7a8433d85024681e427b5cd290ec35fd5b78adfa0aea67035847665a151f"
+    },
+    "authority": "Director323 reference roles; prior321 rejection or253 acceptance as applicable",
+    "scope": "Principal Sikh illustrated identity, not Nihang leader identity",
+    "fidelity": "Rugged elongated face, broad natural beard and painted presence",
+    "allowed_variation": "Coherent native proportions, unseen geometry and practical construction",
+    "not_authority": "Pixel reconstruction, native approval, incidental buildings and generated cloth topology",
+    "aspects": [
+      {
+        "id": "screen_requirement",
+        "instruction": "Judge recognizable protected traits without treating image as literal ground truth",
+        "requirements": [
+          "visible"
+        ]
+      }
+    ]
+  },
+  "limits": [
+    "No live agent driver or OS sandbox boundary",
+    "No automatic perceptual truth check",
+    "Known cases are regressions, not held-out accuracy estimates",
+    "Positive is exact accepted reuse, not new native/render qualification"
+  ]
+}
