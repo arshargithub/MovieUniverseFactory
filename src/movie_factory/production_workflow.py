@@ -1,4 +1,4 @@
-"""Offline staged workflow controller. No model, shell, render or network dispatch.
+"""Staged workflow controller. No model, shell, render or network dispatch.
 
 Enforces transitions through this API, not arbitrary chat/filesystem operations.
 Tickets separate stage submissions; they are not an OS sandbox. Semantic review
@@ -53,12 +53,15 @@ def bindings(root, items):
         rc.binding(root, item)
 
 
-def validate_brief(root, brief, route):
+def validate_brief(root, brief, route, mode='offline'):
     require(brief.get('schema') == 1 and brief.get('route') == route, 'BRIEF_ROUTE')
     for field in ('intent', 'audience_result', 'strategy', 'early_proof', 'scope', 'exclusions'):
         require(nonempty(brief.get(field)), 'MISSING_BRIEF:' + field)
     require(brief.get('open_decisions') == [], 'DIRECTOR_DECISION_REQUIRED')
-    require(brief.get('offline_only') is True, 'LIVE_DRIVER_NOT_QUALIFIED')
+    require(mode in {'offline', 'frozen_evidence'}, 'LIVE_DRIVER_NOT_QUALIFIED')
+    require(brief.get('offline_only') is (mode == 'offline'), 'WORKFLOW_MODE_MISMATCH')
+    if mode == 'frozen_evidence':
+        require(brief.get('frozen_evidence_only') is True, 'FROZEN_EVIDENCE_REQUIRED')
     require(brief.get('protected'), 'PROTECTED_SCOPE_REQUIRED')
     bindings(root, brief['source_bindings'])
     task = pk.read_json(root, brief['knowledge_task'])
@@ -277,9 +280,11 @@ class Controller:
         state['ticket'] = secrets.token_hex(24) if stage in STAGES else None
         return state
 
-    def create(self, task, route, authority, event_id, max_corrections=2, direction=None):
+    def create(self, task, route, authority, event_id, max_corrections=2, direction=None, mode='offline'):
         require(route in ROUTES and type(max_corrections) is int and 0 <= max_corrections <= 20,
                 'INVALID_ROUTE_OR_LIMIT')
+        require(mode in {'offline', 'frozen_evidence'} and (mode == 'offline' or route == 'production'),
+                'LIVE_DRIVER_NOT_QUALIFIED')
         rc.binding(self.root, authority)
         if route == 'production':
             require(isinstance(direction, dict) and nonempty(direction.get('intent'))
@@ -297,9 +302,10 @@ class Controller:
             return self._stage({'task': task, 'route': route, 'cycle': 0,
                                 'max_corrections': max_corrections, 'authority': authority,
                                 'direction': direction,
-                                'offline_only': True, 'production_approved': False},
+                                'mode': mode, 'offline_only': mode == 'offline',
+                                'frozen_evidence_only': mode == 'frozen_evidence', 'production_approved': False},
                                'BRIEFING' if route == 'production' else 'LIGHTWEIGHT')
-        return self._change(task, event_id, 'create', [route, authority, max_corrections, direction], apply)
+        return self._change(task, event_id, 'create', [route, authority, max_corrections, direction, mode], apply)
 
     def _fresh(self, state):
         rc.binding(self.root, state['authority'])
@@ -309,7 +315,7 @@ class Controller:
             for ref in state['direction']['references']:
                 rc.binding(self.root, ref['binding'])
         if 'brief' in state:
-            require(validate_brief(self.root, state['brief'], state['route']) == state['fingerprint'],
+            require(validate_brief(self.root, state['brief'], state['route'], state.get('mode', 'offline')) == state['fingerprint'],
                     'STALE_BRIEF')
         if state.get('candidate'):
             bindings(self.root, state['candidate']['artifacts'])
@@ -322,7 +328,8 @@ class Controller:
         require(state['stage'] in STAGES, 'NO_STAGE_DISPATCH')
         packet = {'task': task, 'stage': state['stage'], 'actor': STAGES[state['stage']],
                   'ticket': state['ticket'], 'cycle': state['cycle'],
-                  'max_corrections': state['max_corrections'], 'offline_only': True,
+                  'max_corrections': state['max_corrections'], 'offline_only': state['offline_only'],
+                  'frozen_evidence_only': state.get('frozen_evidence_only', False),
                   'direction': state['direction'], 'authority': state['authority']}
         if 'brief' in state:
             packet.update(brief=state['brief'], fingerprint=state['fingerprint'])
@@ -343,7 +350,7 @@ class Controller:
             if actor == 'planner':
                 require(result.get('references') == state['direction']['references'] and
                         result.get('protected') == state['direction']['protected'], 'PLANNER_CHANGED_DIRECTOR_AUTHORITY')
-                state['fingerprint'] = validate_brief(self.root, result, state['route'])
+                state['fingerprint'] = validate_brief(self.root, result, state['route'], state.get('mode', 'offline'))
                 state['brief'] = result
                 return self._stage(state, 'EXECUTING')
             if actor == 'builder':
@@ -383,7 +390,7 @@ class Controller:
             state = self._state(con, task)
             require(state['route'] == 'production', 'WRONG_ROUTE')
             require(not con.execute('SELECT 1 FROM heavy_job WHERE task=?', (task,)).fetchone(), 'JOB_STILL_ACTIVE')
-            fingerprint = validate_brief(self.root, brief, state['route'])
+            fingerprint = validate_brief(self.root, brief, state['route'], state.get('mode', 'offline'))
             state.update(brief=brief, fingerprint=fingerprint, revision_reason=reason, revision_authority=decision)
             state['direction'].update(intent=brief['intent'], references=brief['references'], protected=brief['protected'])
             for key in ('candidate', 'review', 'builder_record'):
@@ -414,7 +421,8 @@ class Controller:
             else:
                 findings = review_result(self.root, state['brief'], state['candidate'], state['review'], state['fingerprint'])
                 require(not findings['failures'] and not findings['missing_evidence'], 'REVIEW_FAILED')
-            state['receipt'] = {'stage': state['stage'], 'offline_replay_only': True,
+            state['receipt'] = {'stage': state['stage'], 'offline_replay_only': state['offline_only'],
+                                'frozen_evidence_only': state.get('frozen_evidence_only', False),
                                 'production_approved': False, 'director_approved': False,
                                 'artifacts': state.get('candidate', state.get('result'))['artifacts']}
             return state
