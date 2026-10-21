@@ -1674,6 +1674,20 @@
     "known_native_process_seconds": 207.0133579163812,
     "timing_coverage": "Five native process receipts; early context recovery predates operating capture. Process sum is not full turn or rendering-only time.",
     "evidence": ["results/sikh331/PROOF_AUDIT.md", "results/sikh331/verification.json", "results/sikh331/frozen-review02/report.json"]
+  },
+  {
+    "event_id": "series01-exchange332-router-admission",
+    "event_type": "engineering_review_outcome",
+    "recorded_date": "2026-10-21",
+    "reported_model": null,
+    "reported_reasoning_effort": null,
+    "runtime_verified": false,
+    "controlled_model_comparison": false,
+    "outcome": "ROUTING_AND_INSPECTION_ADMISSION_OFFLINE_TESTED_NOT_NATIVE_AUTHORING_QUALIFIED",
+    "observation": "374 focused tests; existing runner exercised with mocked process. Router-first and fail-closed supported paths implemented. Raw tools remain outside OS enforcement; semantic classification remains agent-owned. No native process or model/provider call. No model superiority, token savings or production quality uplift inferred.",
+    "engineering_subscription_usage": null,
+    "engineering_cost_usd": null,
+    "evidence": ["results/workflow332/report.json", "results/workflow332/entrypoint-inventory.json"]
   }
   ],
   "recording_mode": "manual_evidence_backfill_and_future_event_capture",

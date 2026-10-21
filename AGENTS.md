@@ -9,6 +9,22 @@ core plus the relevant route, not every historical exchange.
 
 ### Scope and authority
 
+**Router first (332):** before task actions, register the actual request and
+operation decomposition with `.venv/bin/python -m movie_factory.task_router
+--request PATH --id ID` using the canonical `.runtime/factory-entry.sqlite3`.
+Read `docs/knowledge/ROUTER_FIRST_332.md`. Read-only instruction/source discovery
+needed to classify a request is bootstrap, not permission to start construction.
+Every task enters routing; only the production-planning workflow may be bypassed.
+Use explicit continuation against the existing task so limits are not reset.
+Unknown/mixed scope must be reconciled. Routing is not spend/upload authority.
+Do not invoke historical standalone native launchers, raw Blender commands or
+alternative databases to evade admission. Shared Blender calls fail closed;
+the332 bridge currently registers inspection only, not artistic authoring.
+Unsupported authoring needs a reviewed handler integration before execution,
+not a fallback to the old script. Raw chat tools are not OS-intercepted: this
+core rule supplies that boundary, and absence of such enforcement must stay
+explicit. Offline/frozen compatibility routing cannot authorize native work.
+
 Own forward momentum toward the trailer and episodes 1 and 2, preserving the
 accepted quality floor and larger-than-life direction. The Director owns
 material creative choices, acceptance, release priorities and new authority;

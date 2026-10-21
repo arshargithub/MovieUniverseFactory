@@ -4,6 +4,29 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+### Exchange332 — mandatory router-first entry
+
+Director adopts routing as the first step for every request. The
+[entry contract](../knowledge/ROUTER_FIRST_332.md) distinguishes production
+planning from lightweight display/research/engineering/operations; bypass never
+means bypass routing. The existing controller records the decision before task
+creation. Native admission requires admitted planning and reviewed prerequisites;
+actual returned outputs must enter final review. Shared Blender dispatch and the
+legacy mf3d CLI now fail closed when not admitted.
+
+[Qualification](../../results/workflow332/report.json):374 focused tests pass,
+including a mocked subprocess through the real runner. No Blender process,
+model/provider call, media change, remote push or new allowance. Inspection is
+the only registered native operation. Raw shell/historical standalone launchers
+are procedurally quarantined, not OS-intercepted; semantic interpretation of the
+request is still fallible. Neither a route nor a schema pass proves expert judgment.
+
+Next: integrate and qualify a trusted Nihang authoring handler with this entry
+point before renewed reference-pose/look construction. Exit: dispatch cannot
+precede planning, failed proof blocks propagation, actual artifacts reach review,
+and counters/authority survive recovery.331 remains closed; this change does not
+manufacture another native correction allowance or325 runtime call. Checkpoint340.
+
 ### Exchange331 — production proof failed; native-authoring boundary exposed
 
 [Proof audit](../../results/sikh331/PROOF_AUDIT.md): three local native pose/look

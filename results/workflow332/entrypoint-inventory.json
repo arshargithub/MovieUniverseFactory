@@ -1,0 +1,52 @@
+{
+  "method": "Textual candidate scan only; indirect launches may be missed",
+  "shared_runner_files": [
+    "src/movie_factory/adapters/blender/runner.py",
+    "src/movie_factory/asset_controller.py",
+    "src/movie_factory/character_controller.py",
+    "src/movie_factory/character_motion.py",
+    "src/movie_factory/cli.py",
+    "src/movie_factory/controller.py",
+    "src/movie_factory/evaluator.py",
+    "src/movie_factory/gesture_controller.py",
+    "src/movie_factory/interaction_controller.py",
+    "src/movie_factory/native_admission.py",
+    "src/movie_factory/performance_controller.py",
+    "src/movie_factory/performance_controls.py",
+    "scripts/workflow332_validate.py"
+  ],
+  "direct_launch_candidate_files": [
+    "src/movie_factory/adapters/blender/runner.py",
+    "scripts/finish248_run.py",
+    "scripts/inspect_meshy278.py",
+    "scripts/qualify_trellis288.py",
+    "scripts/sikh257_run.py",
+    "scripts/sikh269_character.py",
+    "scripts/sikh270_cloth.py",
+    "scripts/sikh270_crown.py",
+    "scripts/sikh270_guides.py",
+    "scripts/sikh272_construct.py",
+    "scripts/sikh279_convert.py",
+    "scripts/sikh281_eye.py",
+    "scripts/sikh283_head.py",
+    "scripts/trellis294_inspect.py",
+    "scripts/trellis298_body.py",
+    "scripts/trellis298_inspect.py",
+    "scripts/trellis298_repair.py",
+    "scripts/trellis301_cascade_inspect.py",
+    "scripts/trellis301_export_inspect.py",
+    "scripts/trellis301_inspect.py",
+    "scripts/trellis303_inspect.py",
+    "scripts/workflow332_validate.py"
+  ],
+  "mechanical": [
+    "Controller.create invokes routing first",
+    "Shared Blender runner capability gate",
+    "Historical mf3d main refuses dispatch before side effects"
+  ],
+  "procedural_only": "Standalone legacy scripts and raw terminal calls quarantined in AGENTS; not OS intercepted",
+  "registered_native_operations": [
+    "inspect"
+  ],
+  "artistic_authoring_qualified": false
+}

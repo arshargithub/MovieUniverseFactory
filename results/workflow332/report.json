@@ -1,0 +1,63 @@
+{
+  "tests": "374 passed in 13.61s",
+  "gate": {
+    "ready_for_review": true,
+    "failures": [],
+    "scope": "execution",
+    "limits": "Evidence checked for presence and hashes, not artistic truth or Director acceptance. Planning evidence cannot qualify a production result."
+  },
+  "native_processes": 0,
+  "external_calls": 0,
+  "production_approved": false,
+  "native_authoring_qualified": false,
+  "universal_tool_interception": false,
+  "semantic_routing_accuracy": null,
+  "measured_efficiency_gain": null,
+  "protected_unchanged": true,
+  "evidence": [
+    {
+      "path": "results/workflow332/tests.txt",
+      "sha256": "131779e59f5b1642e473f682c885376a61cf942121d308ce18b2b72f12adcbe9"
+    },
+    {
+      "path": "results/workflow332/entrypoint-inventory.json",
+      "sha256": "f9da18b6cbb46bef84e6d786af7a0219f112067934ec4e0d0f3b5da3bebb895c"
+    },
+    {
+      "path": "results/workflow332/protected.json",
+      "sha256": "1cb7c355adde44ed8ec5150e15b7b92bd2b406ae1af9797d3e6f914686e9e790"
+    },
+    {
+      "path": "results/workflow332/SOURCE_RECONCILIATION.md",
+      "sha256": "5afcc90e86778d101c889aad5ddde10007783c2dae5d1f00d727940010039631"
+    },
+    {
+      "path": "docs/knowledge/ROUTER_FIRST_332.md",
+      "sha256": "510d928d06a6717c43393cdd4dd56eb53d46896064f1e3dc1bfaa31c94349d53"
+    },
+    {
+      "path": "src/movie_factory/task_router.py",
+      "sha256": "f6581ddcbbbd9e31f6a9d5440f485bb401c7270635e3c1d883fa90fef73df6ec"
+    },
+    {
+      "path": "src/movie_factory/native_admission.py",
+      "sha256": "263ce1b541e6fdfb0ec01a65e79504dbf59f015304acb3ace6a62d63b65b05d3"
+    },
+    {
+      "path": "src/movie_factory/production_workflow.py",
+      "sha256": "54946fd55ad99579afcf188e0e7df9ecfc6ce62808819ad64003e5dac7c03165"
+    },
+    {
+      "path": "src/movie_factory/adapters/blender/runner.py",
+      "sha256": "145ebf674d7f48087beacfdf89b0213ac2591712fcc20bd1ff12c5b9cca6bee6"
+    },
+    {
+      "path": "src/movie_factory/cli.py",
+      "sha256": "1f76792f1c9462645d62b4083e9eae8832aec606c7813c311215f207cf0abe33"
+    },
+    {
+      "path": "tests/test_task_router332.py",
+      "sha256": "e7406e2eaa627f317c521484b92b8e1ae70db2bb63b39d3337a94ae0b5eb562a"
+    }
+  ]
+}
