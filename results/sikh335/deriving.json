@@ -1,0 +1,442 @@
+{
+  "input_digest": "ee253538726fe626605981278da7e35d7b0ba8d7f79488c2407d38fff3fc7503",
+  "outcome": "complete",
+  "artifact": {
+    "requirements": [
+      {
+        "id": "preservation",
+        "criterion": "Source masters remain unchanged; no pose or appearance edits during diagnosis.",
+        "modes": [
+          "technical"
+        ],
+        "director_av": false
+      },
+      {
+        "id": "ownership",
+        "criterion": "Record all horse rest/evaluated joints, constraint targets/influences, driver paths and mesh bindings; distinguish control from deformation.",
+        "modes": [
+          "technical"
+        ],
+        "director_av": false
+      },
+      {
+        "id": "support",
+        "criterion": "Identify the supported hindquarter chain and neck/poll/foreleg ownership needed for coupled gather, lift and landing.",
+        "modes": [
+          "technical"
+        ],
+        "director_av": false
+      },
+      {
+        "id": "no_false_pass",
+        "criterion": "A successful inventory is not a healthy rig, faithful rearing, same-film look or Director AV pass.",
+        "modes": [
+          "technical"
+        ],
+        "director_av": false
+      }
+    ],
+    "beats": [
+      {
+        "id": "ownership",
+        "audience_read": "No new audience media yet; eliminate unsupported representation assumptions.",
+        "framing": "Inventory at rejected crest327; evaluated against reference phase comparison, not artistic approval.",
+        "lenses": {
+          "story_performance": {
+            "applies": true,
+            "why": "Required to interpret actual rig evidence before selecting a representation.",
+            "requirements": [
+              "no_false_pass"
+            ]
+          },
+          "camera_editorial": {
+            "applies": false,
+            "why": "Deferred to integrated335 production; no camera, effects, audio or visual change in this read-only precursor.",
+            "requirements": []
+          },
+          "animation_physics": {
+            "applies": true,
+            "why": "Required to interpret actual rig evidence before selecting a representation.",
+            "requirements": [
+              "ownership"
+            ]
+          },
+          "anatomy_contact": {
+            "applies": true,
+            "why": "Required to interpret actual rig evidence before selecting a representation.",
+            "requirements": [
+              "support"
+            ]
+          },
+          "effects_environment": {
+            "applies": false,
+            "why": "Deferred to integrated335 production; no camera, effects, audio or visual change in this read-only precursor.",
+            "requirements": []
+          },
+          "sound_music": {
+            "applies": false,
+            "why": "Deferred to integrated335 production; no camera, effects, audio or visual change in this read-only precursor.",
+            "requirements": []
+          },
+          "production_reuse": {
+            "applies": true,
+            "why": "Required to interpret actual rig evidence before selecting a representation.",
+            "requirements": [
+              "preservation"
+            ]
+          }
+        }
+      }
+    ],
+    "derivations": {
+      "preservation": {
+        "beats": [
+          "ownership"
+        ],
+        "lenses": [
+          "production_reuse"
+        ],
+        "derivation": "Source masters remain unchanged; no pose or appearance edits during diagnosis.",
+        "origin": "craft_inference",
+        "priority": "quality_floor",
+        "reference_ids": [
+          "reference_rear"
+        ]
+      },
+      "ownership": {
+        "beats": [
+          "ownership"
+        ],
+        "lenses": [
+          "animation_physics"
+        ],
+        "derivation": "Record all horse rest/evaluated joints, constraint targets/influences, driver paths and mesh bindings; distinguish control from deformation.",
+        "origin": "craft_inference",
+        "priority": "quality_floor",
+        "reference_ids": [
+          "reference_rear"
+        ]
+      },
+      "support": {
+        "beats": [
+          "ownership"
+        ],
+        "lenses": [
+          "anatomy_contact"
+        ],
+        "derivation": "Identify the supported hindquarter chain and neck/poll/foreleg ownership needed for coupled gather, lift and landing.",
+        "origin": "craft_inference",
+        "priority": "quality_floor",
+        "reference_ids": [
+          "reference_rear"
+        ]
+      },
+      "no_false_pass": {
+        "beats": [
+          "ownership"
+        ],
+        "lenses": [
+          "story_performance"
+        ],
+        "derivation": "A successful inventory is not a healthy rig, faithful rearing, same-film look or Director AV pass.",
+        "origin": "craft_inference",
+        "priority": "quality_floor",
+        "reference_ids": [
+          "reference_rear"
+        ]
+      }
+    },
+    "context_mapping": {
+      "direction": {
+        "requirements": [
+          "preservation",
+          "ownership",
+          "support",
+          "no_false_pass"
+        ],
+        "reason": "Resume the integrated isolated production package; this precursor discovers rig ownership before any new pose authoring."
+      },
+      "learnings": {
+        "requirements": [
+          "preservation",
+          "ownership",
+          "support",
+          "no_false_pass"
+        ],
+        "reason": "331 failed whole-pose support and same-film character fidelity despite incremental offset corrections; those attempts remain closed."
+      },
+      "film_language": {
+        "requirements": [
+          "preservation",
+          "ownership",
+          "support",
+          "no_false_pass"
+        ],
+        "reason": "Accepted Pashtun quality stays fixed; a supporting actor cannot be a schematic statue."
+      },
+      "director_preferences": {
+        "requirements": [
+          "preservation",
+          "ownership",
+          "support",
+          "no_false_pass"
+        ],
+        "reason": "Predict failure through expert lenses and fix internally; setup and routine algorithms are not handovers."
+      },
+      "references": {
+        "requirements": [
+          "preservation",
+          "ownership",
+          "support",
+          "no_false_pass"
+        ],
+        "reason": "Reference14\u201319s governs faithful action phases; accepted film governs appearance; rejected poses are negative controls."
+      },
+      "controls": {
+        "requirements": [
+          "preservation",
+          "ownership",
+          "support",
+          "no_false_pass"
+        ],
+        "reason": "Fresh motion-domain packet and manual AU09\u201313,16 plus317\u2013334 reconciliation accompany this inspection."
+      },
+      "constraints": {
+        "requirements": [
+          "preservation",
+          "ownership",
+          "support",
+          "no_false_pass"
+        ],
+        "reason": "Inspect64 invalid used-armature drivers, removed object drivers and FK bypasses; no blind restoration or defect waiver."
+      }
+    },
+    "knowledge_mapping": {
+      "construction_interfaces": {
+        "requirements": [
+          "preservation",
+          "ownership",
+          "support",
+          "no_false_pass"
+        ],
+        "reason": "Inspect bone local/rest/world transforms and visible endpoint ownership before adapting; later prove one clothed actor and partial poses before crowd copies."
+      },
+      "reuse_envelope": {
+        "requirements": [
+          "preservation",
+          "ownership",
+          "support",
+          "no_false_pass"
+        ],
+        "reason": "Existing horse is an unqualified adaptation source, not a qualified rearing asset; diagnose its actual reuse envelope before reconstruction."
+      },
+      "animal_coordination": {
+        "requirements": [
+          "preservation",
+          "ownership",
+          "support",
+          "no_false_pass"
+        ],
+        "reason": "Trace hind support, chest, poll, forefeet and rider contact together; reference phases govern, not number of keys."
+      },
+      "crowd_support": {
+        "requirements": [
+          "preservation",
+          "ownership",
+          "support",
+          "no_false_pass"
+        ],
+        "reason": "Retain rider attention and coordinated supported stepping in the integrated package; no crowd mutation in the ownership precursor."
+      },
+      "authority": {
+        "requirements": [
+          "preservation",
+          "ownership",
+          "support",
+          "no_false_pass"
+        ],
+        "reason": "Resume authorized local production; no spend, installation, cloud, external calls, identity changes or higher-model assumptions."
+      },
+      "strategy": {
+        "requirements": [
+          "preservation",
+          "ownership",
+          "support",
+          "no_false_pass"
+        ],
+        "reason": "Ownership inspection discriminates repair versus rebuild before authored poses;331 root-offset failures remain closed and inform the method change."
+      },
+      "visual_gate": {
+        "requirements": [
+          "preservation",
+          "ownership",
+          "support",
+          "no_false_pass"
+        ],
+        "reason": "Inventory success only qualifies completeness of evidence; rejected native art and unreviewed motion remain rejected or NOT_RUN."
+      },
+      "anticipation": {
+        "requirements": [
+          "preservation",
+          "ownership",
+          "support",
+          "no_false_pass"
+        ],
+        "reason": "Predict unsupported hind legs, straight neck, rigid rider and slow contact before editing; include phase interiors and reverse views in the next proof."
+      },
+      "stopping": {
+        "requirements": [
+          "preservation",
+          "ownership",
+          "support",
+          "no_false_pass"
+        ],
+        "reason": "No technical setup handover; continue toward integrated isolated clip unless a genuine material blocker requires the Director."
+      },
+      "versioning": {
+        "requirements": [
+          "preservation",
+          "ownership",
+          "support",
+          "no_false_pass"
+        ],
+        "reason": "Bind parent, handler, recipe and dependencies; preserve original320,331 failure evidence and accepted Pashtun unchanged."
+      },
+      "economics": {
+        "requirements": [
+          "preservation",
+          "ownership",
+          "support",
+          "no_false_pass"
+        ],
+        "reason": "Record serial worker and active intervals inSIKH335; no invented savings, cost or denominator from old sequence effort."
+      },
+      "anatomy": {
+        "requirements": [
+          "preservation",
+          "ownership",
+          "support",
+          "no_false_pass"
+        ],
+        "reason": "Read rest joint lengths and evaluated chain before diagnosing deformation; later separate anatomical pose from shader and lighting problems."
+      },
+      "motion": {
+        "requirements": [
+          "preservation",
+          "ownership",
+          "support",
+          "no_false_pass"
+        ],
+        "reason": "Establish one owner per control and endpoint before keys; no nonzero-key or numeric-distance claim of natural performance."
+      },
+      "secondary": {
+        "requirements": [
+          "preservation",
+          "ownership",
+          "support",
+          "no_false_pass"
+        ],
+        "reason": "Changed primary motion reopens mane, tail, reins, cloth and earth response; defer these until the primary representation works, not waive them."
+      },
+      "look": {
+        "requirements": [
+          "preservation",
+          "ownership",
+          "support",
+          "no_false_pass"
+        ],
+        "reason": "Keep same-film Pashtun richness as fixed floor for leader and near crowd; source320 schematic costumes are negative controls."
+      },
+      "render_profile": {
+        "requirements": [
+          "preservation",
+          "ownership",
+          "support",
+          "no_false_pass"
+        ],
+        "reason": "Read-only precursor does not render; later measure actual source/profile and retain CPU fallback without assuming previous Metal qualification transfers."
+      },
+      "cache_safety": {
+        "requirements": [
+          "preservation",
+          "ownership",
+          "support",
+          "no_false_pass"
+        ],
+        "reason": "One owned worker, disabled embedded scripts, credential-free job and no source/cache overwrite; future motion invalidates dependent caches."
+      },
+      "current_state": {
+        "requirements": [
+          "preservation",
+          "ownership",
+          "support",
+          "no_false_pass"
+        ],
+        "reason": "253 provisional Pashtun stays protected;335 resumes isolated leader/crowd, not Sikh identity or full trailer. Director313 retains AV judgment."
+      },
+      "au_deformation": {
+        "requirements": [
+          "preservation",
+          "ownership",
+          "support",
+          "no_false_pass"
+        ],
+        "reason": "Test control ownership and deformation separately from material/light; never hide unsupported anatomy with costume."
+      },
+      "au_performance": {
+        "requirements": [
+          "preservation",
+          "ownership",
+          "support",
+          "no_false_pass"
+        ],
+        "reason": "Reference-like loading, forcing and recovery require coupled torso/neck and support; still inventory cannot certify continuous motion."
+      },
+      "au_contact": {
+        "requirements": [
+          "preservation",
+          "ownership",
+          "support",
+          "no_false_pass"
+        ],
+        "reason": "Endpoint contact does not prove anatomical pose; inspect actual hoof/joint axes and rider hand/seat chains, retaining known-bad controls."
+      },
+      "au_surface": {
+        "requirements": [
+          "preservation",
+          "ownership",
+          "support",
+          "no_false_pass"
+        ],
+        "reason": "Subsequent look proof compares matched lighting and scale with accepted film; no flat color or noise substitute for designed forms."
+      },
+      "au_reuse": {
+        "requirements": [
+          "preservation",
+          "ownership",
+          "support",
+          "no_false_pass"
+        ],
+        "reason": "Record exact tested-use limits and native jobs; do not call local artifacts a remote backup or whole-scene portable bundle."
+      },
+      "sikh_scope": {
+        "requirements": [
+          "preservation",
+          "ownership",
+          "support",
+          "no_false_pass"
+        ],
+        "reason": "Sikh sequence only, nonrecurring leader recognizes rider, no new story or music mapping in this correction."
+      },
+      "sikh_motion": {
+        "requirements": [
+          "preservation",
+          "ownership",
+          "support",
+          "no_false_pass"
+        ],
+        "reason": "Rearing and crowd have their own support proof; keep causal exchange and corridor clearance in integrated isolated output. No reuse of gallop qualification as rear proof."
+      }
+    }
+  }
+}

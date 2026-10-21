@@ -1,0 +1,23 @@
+{
+  "operation": "nihang_patch",
+  "frame": 327,
+  "width": 540,
+  "height": 960,
+  "samples": 8,
+  "edits": [
+    {
+      "kind": "repair_bbone_targets",
+      "target": "horse.rig"
+    },
+    {
+      "kind": "supported_pose",
+      "target": "horse.rig",
+      "frame": 327,
+      "pitch": -0.8,
+      "hip_back": 0.12,
+      "hip_drop": 0.18,
+      "neck_pitch": -0.05,
+      "poll_pitch": 0.6
+    }
+  ]
+}

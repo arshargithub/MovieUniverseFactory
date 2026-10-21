@@ -1,0 +1,238 @@
+{
+  "fingerprint": "aafcddf874b6baecf89ac8e86fedf30d4f4b0cd230419f52dc5e5584d63ad824",
+  "candidate_digest": "3a7096bff24fac525b9e6f5019651fb814a36bb05e0514a263015ce946b5f6b5",
+  "evidence": {
+    "render_snapshot": {
+      "binding": {
+        "path": ".runtime/factory-native/sikh335-support02-c2-render/snapshot.json",
+        "sha256": "0f37490c76220863b5db1a5a6bed4281e025cbb938b14c4bdeaa54db6c71dbf8"
+      },
+      "mode": "technical",
+      "candidate_digest": "3a7096bff24fac525b9e6f5019651fb814a36bb05e0514a263015ce946b5f6b5",
+      "scope": "Actual native crest proof only"
+    },
+    "render_dependencies": {
+      "binding": {
+        "path": ".runtime/factory-native/sikh335-support02-c2-render/dependencies.json",
+        "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+      },
+      "mode": "technical",
+      "candidate_digest": "3a7096bff24fac525b9e6f5019651fb814a36bb05e0514a263015ce946b5f6b5",
+      "scope": "Actual native crest proof only"
+    },
+    "render_scripts": {
+      "binding": {
+        "path": ".runtime/factory-native/sikh335-support02-c2-render/script-diagnostics.json",
+        "sha256": "99bbbecec312f933855a69b1d853770138fd35ab62669f2fe652484d335f4ec7"
+      },
+      "mode": "technical",
+      "candidate_digest": "3a7096bff24fac525b9e6f5019651fb814a36bb05e0514a263015ce946b5f6b5",
+      "scope": "Actual native crest proof only"
+    },
+    "render_frame": {
+      "binding": {
+        "path": ".runtime/factory-native/sikh335-support02-c2-render/frame.png",
+        "sha256": "f3c3bcf8cc9cce2b1e142131ecf604cc4f80675668a6a2bbdc21657eda6d9d11"
+      },
+      "mode": "image",
+      "candidate_digest": "3a7096bff24fac525b9e6f5019651fb814a36bb05e0514a263015ce946b5f6b5",
+      "scope": "Actual native crest proof only"
+    },
+    "save_snapshot": {
+      "binding": {
+        "path": ".runtime/factory-native/sikh335-support02-c2-save/snapshot.json",
+        "sha256": "0f37490c76220863b5db1a5a6bed4281e025cbb938b14c4bdeaa54db6c71dbf8"
+      },
+      "mode": "technical",
+      "candidate_digest": "3a7096bff24fac525b9e6f5019651fb814a36bb05e0514a263015ce946b5f6b5",
+      "scope": "Actual native crest proof only"
+    },
+    "save_dependencies": {
+      "binding": {
+        "path": ".runtime/factory-native/sikh335-support02-c2-save/dependencies.json",
+        "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+      },
+      "mode": "technical",
+      "candidate_digest": "3a7096bff24fac525b9e6f5019651fb814a36bb05e0514a263015ce946b5f6b5",
+      "scope": "Actual native crest proof only"
+    },
+    "save_scripts": {
+      "binding": {
+        "path": ".runtime/factory-native/sikh335-support02-c2-save/script-diagnostics.json",
+        "sha256": "d8c950e68c5c42eb08e3ba4cd795b716e2b5ac082b76301b8697edb7667b2ad9"
+      },
+      "mode": "technical",
+      "candidate_digest": "3a7096bff24fac525b9e6f5019651fb814a36bb05e0514a263015ce946b5f6b5",
+      "scope": "Actual native crest proof only"
+    },
+    "save_native": {
+      "binding": {
+        "path": ".runtime/factory-native/sikh335-support02-c2-save/scene.blend",
+        "sha256": "7d381d206d427d7027b1843d01bcb0ba1d7a1f9b8134e78bd9f8be2902d0d0b8"
+      },
+      "mode": "technical",
+      "candidate_digest": "3a7096bff24fac525b9e6f5019651fb814a36bb05e0514a263015ce946b5f6b5",
+      "scope": "Actual native crest proof only"
+    },
+    "save_patch": {
+      "binding": {
+        "path": ".runtime/factory-native/sikh335-support02-c2-save/patch-evidence.json",
+        "sha256": "b0cd4ee308b301ceb3befd78301f9d67c3e5e8d54b036d597b73bb8c849dbd09"
+      },
+      "mode": "technical",
+      "candidate_digest": "3a7096bff24fac525b9e6f5019651fb814a36bb05e0514a263015ce946b5f6b5",
+      "scope": "Actual native crest proof only"
+    },
+    "analysis": {
+      "binding": {
+        "path": "results/sikh335/support02/IMAGE_REVIEW.md",
+        "sha256": "b5e779ff1dc6941d7d13a2307f4616165f371aa8839a8a658bb5ce7d3d74142d"
+      },
+      "mode": "technical",
+      "candidate_digest": "3a7096bff24fac525b9e6f5019651fb814a36bb05e0514a263015ce946b5f6b5",
+      "scope": "Narrow visual findings and explicit remaining integrated blockers"
+    },
+    "reference_frames": {
+      "binding": {
+        "path": "results/sikh321/preserved-comparisons/reference-3.jpg",
+        "sha256": "b4df8b620b617cb5fd15b58eef4cb9d76cbcda6bea36217116c2195dfba58787"
+      },
+      "mode": "image",
+      "candidate_digest": "3a7096bff24fac525b9e6f5019651fb814a36bb05e0514a263015ce946b5f6b5",
+      "scope": "Observed reference crest and descent phase strip"
+    }
+  },
+  "checks": [
+    {
+      "id": "preservation",
+      "status": "PASS",
+      "observation": "Source-camera crest shows bent hindquarters, flexed neck/poll and raised carpi with hooves below, no former upward tray. Actual fresh-open selected state matches;64 targets healthy and hind support errors below0.07mm.",
+      "comparison": "Narrow crest control only. Continuous action, side/rear, rider contacts and same-film leader/tack appearance are not qualified and remain blockers in335 overall.",
+      "evidence": [
+        "render_snapshot",
+        "render_dependencies",
+        "render_scripts",
+        "render_frame",
+        "save_snapshot",
+        "save_dependencies",
+        "save_scripts",
+        "save_native",
+        "save_patch",
+        "analysis",
+        "reference_frames"
+      ]
+    },
+    {
+      "id": "driver_health",
+      "status": "PASS",
+      "observation": "Source-camera crest shows bent hindquarters, flexed neck/poll and raised carpi with hooves below, no former upward tray. Actual fresh-open selected state matches;64 targets healthy and hind support errors below0.07mm.",
+      "comparison": "Narrow crest control only. Continuous action, side/rear, rider contacts and same-film leader/tack appearance are not qualified and remain blockers in335 overall.",
+      "evidence": [
+        "render_snapshot",
+        "render_dependencies",
+        "render_scripts",
+        "render_frame",
+        "save_snapshot",
+        "save_dependencies",
+        "save_scripts",
+        "save_native",
+        "save_patch",
+        "analysis",
+        "reference_frames"
+      ]
+    },
+    {
+      "id": "support",
+      "status": "PASS",
+      "observation": "Source-camera crest shows bent hindquarters, flexed neck/poll and raised carpi with hooves below, no former upward tray. Actual fresh-open selected state matches;64 targets healthy and hind support errors below0.07mm.",
+      "comparison": "Narrow crest control only. Continuous action, side/rear, rider contacts and same-film leader/tack appearance are not qualified and remain blockers in335 overall.",
+      "evidence": [
+        "render_snapshot",
+        "render_dependencies",
+        "render_scripts",
+        "render_frame",
+        "save_snapshot",
+        "save_dependencies",
+        "save_scripts",
+        "save_native",
+        "save_patch",
+        "analysis",
+        "reference_frames"
+      ]
+    },
+    {
+      "id": "whole_pose",
+      "status": "PASS",
+      "observation": "Source-camera crest shows bent hindquarters, flexed neck/poll and raised carpi with hooves below, no former upward tray. Actual fresh-open selected state matches;64 targets healthy and hind support errors below0.07mm.",
+      "comparison": "Narrow crest control only. Continuous action, side/rear, rider contacts and same-film leader/tack appearance are not qualified and remain blockers in335 overall.",
+      "evidence": [
+        "render_snapshot",
+        "render_dependencies",
+        "render_scripts",
+        "render_frame",
+        "save_snapshot",
+        "save_dependencies",
+        "save_scripts",
+        "save_native",
+        "save_patch",
+        "analysis",
+        "reference_frames"
+      ]
+    },
+    {
+      "id": "persistence",
+      "status": "PASS",
+      "observation": "Source-camera crest shows bent hindquarters, flexed neck/poll and raised carpi with hooves below, no former upward tray. Actual fresh-open selected state matches;64 targets healthy and hind support errors below0.07mm.",
+      "comparison": "Narrow crest control only. Continuous action, side/rear, rider contacts and same-film leader/tack appearance are not qualified and remain blockers in335 overall.",
+      "evidence": [
+        "render_snapshot",
+        "render_dependencies",
+        "render_scripts",
+        "render_frame",
+        "save_snapshot",
+        "save_dependencies",
+        "save_scripts",
+        "save_native",
+        "save_patch",
+        "analysis",
+        "reference_frames"
+      ]
+    }
+  ],
+  "reference_checks": {
+    "reference_rear": {
+      "reference_digest": "b9977917914c01b2a63ff2f996b3e091846bccf1f32d6946405176ef82206cde",
+      "observation": "Carpi above downward folded hooves and bent supported hindquarters now present in intended crest view.",
+      "comparison": "Usable discriminating crest control, not literal horse conformation or full faithful action qualification.",
+      "evidence": [
+        "render_frame",
+        "reference_frames",
+        "analysis"
+      ],
+      "aspects": [
+        {
+          "id": "whole_pose",
+          "status": "PASS",
+          "observation": "Narrow crest structure demonstrated; temporal and integrated interfaces still NOT_RUN."
+        }
+      ]
+    }
+  },
+  "audience_read": "Static crest has supported animal structure; it is not yet an audience-ready performance.",
+  "strongest_counterexample": "Rider reins/spear are disconnected, appearance schematic, and other phases and revealing views untested. None can be passed from this control.",
+  "adjacent_review": "Masters unchanged; revised pose invalidates rider/contact/cache assumptions for the next integrated phase.",
+  "open_visible_defects": [],
+  "intent_checks": {
+    "crest": {
+      "scope": "supported_evidence_only",
+      "status": "PASS",
+      "observation": "Source-camera crest shows bent hindquarters, flexed neck/poll and raised carpi with hooves below, no former upward tray. Actual fresh-open selected state matches;64 targets healthy and hind support errors below0.07mm.",
+      "comparison": "Narrow crest control only. Continuous action, side/rear, rider contacts and same-film leader/tack appearance are not qualified and remain blockers in335 overall.",
+      "evidence": [
+        "render_frame",
+        "analysis"
+      ]
+    }
+  },
+  "planning_gaps": []
+}

@@ -4,6 +4,22 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+### Exchange335 — Nihang control repair and supported crest proof
+
+The isolated Nihang work has resumed. Actual rig inspection distinguished64
+missing BBone curvature targets from removed object-level IK/FK drivers.
+The targets are repaired in a derivative, and an explicit fixed-length support
+solve has passed a narrow fresh-open crest control. The first image failed
+internally on upward-curling forefeet; that failure and its correction remain
+recorded.433 focused tests pass; no artistic or efficiency claim follows from them.
+
+The integrated sequence is still open. Next: reference-phase whole-horse/rider
+motion and side/rear contact proof, then leader/near-crowd appearance and supported
+attention before the isolated clip. Reins/spear interfaces and schematic costume
+remain blockers. [Continuation](../../results/sikh335/CONTINUATION.md) preserves
+exact sources, limitations and operating state. No new spend or remote action;
+checkpoint340 unchanged.
+
 ### Exchange334 — native workflow ready to resume the Nihang package
 
 [Qualification](../../results/workflow334/CLOSEOUT.md) completes same-task technical

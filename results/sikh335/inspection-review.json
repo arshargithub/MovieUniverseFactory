@@ -1,0 +1,140 @@
+{
+  "fingerprint": "4782aece736aac774cb2e787c5957eaf7fb1a63f3194d02625f2c3da5460ab2d",
+  "candidate_digest": "802eab026a1fbae0239a344d8ebe9d33675b51bf08d260dd8194acdc116b0bad",
+  "evidence": {
+    "snapshot": {
+      "binding": {
+        "path": ".runtime/factory-native/sikh335-ownership/snapshot.json",
+        "sha256": "b45db2ce4e67c3e8316ad93256736312e4afd73dca8d0f13f68db5630e82569c"
+      },
+      "mode": "technical",
+      "candidate_digest": "802eab026a1fbae0239a344d8ebe9d33675b51bf08d260dd8194acdc116b0bad",
+      "scope": "Read-only ownership inventory, not production-media approval"
+    },
+    "dependencies": {
+      "binding": {
+        "path": ".runtime/factory-native/sikh335-ownership/dependencies.json",
+        "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+      },
+      "mode": "technical",
+      "candidate_digest": "802eab026a1fbae0239a344d8ebe9d33675b51bf08d260dd8194acdc116b0bad",
+      "scope": "Read-only ownership inventory, not production-media approval"
+    },
+    "scripts": {
+      "binding": {
+        "path": ".runtime/factory-native/sikh335-ownership/script-diagnostics.json",
+        "sha256": "de08f61ac7f048bff58b77f9cac8916755c9a7de80e49d4139d0bac34e728c20"
+      },
+      "mode": "technical",
+      "candidate_digest": "802eab026a1fbae0239a344d8ebe9d33675b51bf08d260dd8194acdc116b0bad",
+      "scope": "Read-only ownership inventory, not production-media approval"
+    },
+    "rig": {
+      "binding": {
+        "path": ".runtime/factory-native/sikh335-ownership/rig.json",
+        "sha256": "d37de970c6442489733f67e8b3f5b1ead9e995dcd7e726fdcb26096113508e78"
+      },
+      "mode": "technical",
+      "candidate_digest": "802eab026a1fbae0239a344d8ebe9d33675b51bf08d260dd8194acdc116b0bad",
+      "scope": "Read-only ownership inventory, not production-media approval"
+    },
+    "analysis": {
+      "binding": {
+        "path": "results/sikh335/CONTROL_FINDINGS.md",
+        "sha256": "354f092ddf6a2f5a390c8c0a4aedafc121b0a2dedb435e4eb421e634bfa2d0c6"
+      },
+      "mode": "technical",
+      "candidate_digest": "802eab026a1fbae0239a344d8ebe9d33675b51bf08d260dd8194acdc116b0bad",
+      "scope": "Exact ownership diagnosis and retained artistic rejection"
+    }
+  },
+  "checks": [
+    {
+      "id": "preservation",
+      "status": "PASS",
+      "observation": "456 bones,64 null-target BBone ease drivers,2 deformed meshes; fore FK and hind IK overrides identified. Native parent hash unchanged.",
+      "comparison": "Complete ownership evidence distinguishes smoothing-driver defects from missing object control drivers; it does not qualify any rejected pose or appearance.",
+      "evidence": [
+        "snapshot",
+        "dependencies",
+        "scripts",
+        "rig",
+        "analysis"
+      ]
+    },
+    {
+      "id": "ownership",
+      "status": "PASS",
+      "observation": "456 bones,64 null-target BBone ease drivers,2 deformed meshes; fore FK and hind IK overrides identified. Native parent hash unchanged.",
+      "comparison": "Complete ownership evidence distinguishes smoothing-driver defects from missing object control drivers; it does not qualify any rejected pose or appearance.",
+      "evidence": [
+        "snapshot",
+        "dependencies",
+        "scripts",
+        "rig",
+        "analysis"
+      ]
+    },
+    {
+      "id": "support",
+      "status": "PASS",
+      "observation": "456 bones,64 null-target BBone ease drivers,2 deformed meshes; fore FK and hind IK overrides identified. Native parent hash unchanged.",
+      "comparison": "Complete ownership evidence distinguishes smoothing-driver defects from missing object control drivers; it does not qualify any rejected pose or appearance.",
+      "evidence": [
+        "snapshot",
+        "dependencies",
+        "scripts",
+        "rig",
+        "analysis"
+      ]
+    },
+    {
+      "id": "no_false_pass",
+      "status": "PASS",
+      "observation": "456 bones,64 null-target BBone ease drivers,2 deformed meshes; fore FK and hind IK overrides identified. Native parent hash unchanged.",
+      "comparison": "Complete ownership evidence distinguishes smoothing-driver defects from missing object control drivers; it does not qualify any rejected pose or appearance.",
+      "evidence": [
+        "snapshot",
+        "dependencies",
+        "scripts",
+        "rig",
+        "analysis"
+      ]
+    }
+  ],
+  "reference_checks": {
+    "reference_rear": {
+      "reference_digest": "888adf0bcd2368806883e0963c147f952f81c007c15c7b06de1cffe2fca0132a",
+      "observation": "Reference whole-body loading contrasts with source rigid pivot; inventory identifies the relevant chain.",
+      "comparison": "Required joints and ownership are identified, not corrected or approved.",
+      "evidence": [
+        "rig",
+        "analysis"
+      ],
+      "aspects": [
+        {
+          "id": "whole_pose",
+          "status": "PASS",
+          "observation": "Control-discovery requirement met; faithful-motion qualification explicitly not claimed."
+        }
+      ]
+    }
+  },
+  "audience_read": "No new audience media; this internal precursor removes unsupported assumptions.",
+  "strongest_counterexample": "Driver repair alone cannot make a faithful rear or credible leader; all artistic defects remain open in the overall335 package.",
+  "adjacent_review": "Source unchanged; no deformation, material, camera or cache mutation.",
+  "open_visible_defects": [],
+  "intent_checks": {
+    "ownership": {
+      "scope": "supported_evidence_only",
+      "status": "PASS",
+      "observation": "456 bones,64 null-target BBone ease drivers,2 deformed meshes; fore FK and hind IK overrides identified. Native parent hash unchanged.",
+      "comparison": "Complete ownership evidence distinguishes smoothing-driver defects from missing object control drivers; it does not qualify any rejected pose or appearance.",
+      "evidence": [
+        "rig",
+        "analysis"
+      ]
+    }
+  },
+  "planning_gaps": []
+}

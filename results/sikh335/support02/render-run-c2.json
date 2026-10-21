@@ -1,0 +1,37 @@
+{
+  "id": "sikh335-support02-c2-render",
+  "task": "sikh335-supported-representation",
+  "step": "render",
+  "cycle": 2,
+  "fingerprint": "aafcddf874b6baecf89ac8e86fedf30d4f4b0cd230419f52dc5e5584d63ad824",
+  "parent": {
+    "path": ".runtime/factory-native/sikh335-support02-c2-save/scene.blend",
+    "sha256": "7d381d206d427d7027b1843d01bcb0ba1d7a1f9b8134e78bd9f8be2902d0d0b8"
+  },
+  "job_digest": "3e51d89502beaa90915230919b5c13b4743b998de0d1fbfd86e57aba6215e9a7",
+  "handler_digest": "6311087cd79265ea87c953cc94a86f3d015bce1d59782eb4b8fb2a8df9a2c53f",
+  "status": "RETURNED",
+  "artifacts": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh335-support02-c2-render/snapshot.json",
+      "sha256": "0f37490c76220863b5db1a5a6bed4281e025cbb938b14c4bdeaa54db6c71dbf8"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh335-support02-c2-render/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh335-support02-c2-render/script-diagnostics.json",
+      "sha256": "99bbbecec312f933855a69b1d853770138fd35ab62669f2fe652484d335f4ec7"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh335-support02-c2-render/frame.png",
+      "sha256": "f3c3bcf8cc9cce2b1e142131ecf604cc4f80675668a6a2bbdc21657eda6d9d11"
+    }
+  },
+  "dependencies": {},
+  "recipe": {
+    "path": "results/sikh335/support02/render-recipe.json",
+    "sha256": "ecdf94a4953635003c68287367a2438aa058de904351fec8642995ddb24e155c"
+  }
+}
