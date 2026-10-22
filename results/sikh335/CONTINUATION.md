@@ -1,5 +1,25 @@
 # Nihang work remains active
 
+## Current boundary after exchange341
+
+Appearance is REPLAN_REQUIRED19/max19 after the explicit two-correction approval.
+Actual neutral donor/garment proof was performed: two saved natives, four actual
+images.18 front fails molded anatomy;19 has more credible fabric but the front
+neckline remains jagged/intersecting, confirmed in side view. Bend NOT_RUN and
+blocked by the actual neutral review. Do not retry or reset the task allowance.
+See REASSESSMENT_341.md and look01/exhaustion-c19.json.
+
+19 fixes inactive-source-scene matrix evaluation and all three reopened selected
+states match. Strict dependency inventories still fail because an appended orphan
+library entry disappears. The subsequent zero-user-library inventory repair is
+unit-tested only, not native-qualified. Failed receipts stay failed. Exact native
+handler versions are preserved in source-c18/source-c19 plus full hash manifests;
+unchanged files resolve to Git parent7d079d6. No whole-character visual pass.
+
+Motion remains9/max10, no active worker. No new spend/upload/push/backup. Proposed
+next package needs new allowance: resolve neckline/evaluated clearance and native
+reopen, then the single controlled bend, before any appearance propagation.
+
 ## Current boundary after exchange340
 
 Appearance is REPLAN_REQUIRED17/max17. Exact approval of five extended12 to17.
