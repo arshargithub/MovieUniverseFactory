@@ -1,0 +1,38 @@
+{
+  "verdict": "FAIL",
+  "run_digest": "88f8ffd5b41c4d1f176e2f5e6e1dc27fc2bcd68506a2ff6b735a32b2f65f5e55",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh338-look-c8-crowd_front/snapshot.json",
+      "sha256": "fb8ddb167be29e4614bfdf395989bfb5a3dc24ea795188dc1b4c3388b33019d1"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh338-look-c8-crowd_front/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh338-look-c8-crowd_front/script-diagnostics.json",
+      "sha256": "99bbbecec312f933855a69b1d853770138fd35ab62669f2fe652484d335f4ec7"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh338-look-c8-crowd_front/frame.png",
+      "sha256": "bf86f41d4b15700223fa2887b37d990f78cb3b5708f9b58f630fe301db20ba6d"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh338-look-c8-crowd_front/frames.json",
+      "sha256": "38b37faf2b9e9f1ef5e54338fd06f067ae0b8cdb6358237fff0291f409e668fd"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh338-look-c8-crowd_front/frame.png",
+      "sha256": "bf86f41d4b15700223fa2887b37d990f78cb3b5708f9b58f630fe301db20ba6d"
+    }
+  },
+  "observation": "Target is partially occluded by a foreground warrior/shield. Visible hard chest transition and abrupt cheek/beard boundary fail; full garment coverage is NOT_RUN.",
+  "comparison": "Actual returned images inspected against accepted Pashtun quality and whole-character requirements. Numeric stability is not cloth construction or artistic acceptance.",
+  "open_defects": [
+    "garment-form",
+    "same-film-appearance",
+    "face-headwear",
+    "incomplete-interface-proof"
+  ]
+}

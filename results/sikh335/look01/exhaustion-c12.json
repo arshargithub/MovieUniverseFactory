@@ -1,0 +1,85 @@
+{
+  "task": "sikh335-supporting-appearance",
+  "stage": "REPLAN_REQUIRED",
+  "cycle": 12,
+  "max_corrections": 12,
+  "artistic_pass": false,
+  "new_saved_candidates": 0,
+  "attempts": [
+    {
+      "cycle": 9,
+      "status": "FAILED",
+      "error": "ValueError: GARMENT_ELBOW_OWNERS",
+      "process_seconds": 2.832968750037253,
+      "receipt": {
+        "path": "results/sikh335/look01/save-run-c9.json",
+        "sha256": "db154a8a82b06f8adf03e498c912ceec72e8200a5b9a0164f960556a7e0e4bc6"
+      },
+      "stderr": {
+        "path": ".runtime/factory-native/sikh339-look-c9-save/stderr.log",
+        "sha256": "ebadbb7d5b7a7771fde89b670fbf7492332b14ff4a67fa2e063ea39e145707b6"
+      },
+      "stdout": {
+        "path": ".runtime/factory-native/sikh339-look-c9-save/stdout.log",
+        "sha256": "d4dff0fd23195a0b052d9377f2415acd29049c70492cddf43e62af883240441b"
+      }
+    },
+    {
+      "cycle": 10,
+      "status": "FAILED",
+      "error": "ValueError: GARMENT_SLEEVE_LENGTH",
+      "process_seconds": 2.3449888746254146,
+      "receipt": {
+        "path": "results/sikh335/look01/save-run-c10.json",
+        "sha256": "102360ed11fee68d2343c144302d3a64e610d484cd883eb2553c3cf84e197d2e"
+      },
+      "stderr": {
+        "path": ".runtime/factory-native/sikh339-look-c10-save/stderr.log",
+        "sha256": "2ef80c304a6b3e93ac8a7dab709e712040303d461826417ffcda4a9243c74e84"
+      },
+      "stdout": {
+        "path": ".runtime/factory-native/sikh339-look-c10-save/stdout.log",
+        "sha256": "d59d23f4a43362e5b7a17cca1a5f106b8a69c6238c20fe82faac973a9a27b0b0"
+      }
+    },
+    {
+      "cycle": 11,
+      "status": "FAILED",
+      "error": "ValueError: GARMENT_DRAPE_DISPLACEMENT:0.129874",
+      "process_seconds": 16.290873458143324,
+      "receipt": {
+        "path": "results/sikh335/look01/save-run-c11.json",
+        "sha256": "5dc0d02e39f86978f210482d7c88cdb723c1847b06a12d89c274ac77062d8281"
+      },
+      "stderr": {
+        "path": ".runtime/factory-native/sikh339-look-c11-save/stderr.log",
+        "sha256": "14b86363e2e1dc23678c4bed58f423e8274977f21e91393cc71546eae3cd002f"
+      },
+      "stdout": {
+        "path": ".runtime/factory-native/sikh339-look-c11-save/stdout.log",
+        "sha256": "ca075e53fca900a9612b50a35f00cfa85db6327331334078448d4774ae94f90b"
+      }
+    },
+    {
+      "cycle": 12,
+      "status": "FAILED",
+      "error": "ValueError: GARMENT_DRAPE_DISPLACEMENT:0.116709",
+      "process_seconds": 14.050175415817648,
+      "receipt": {
+        "path": "results/sikh335/look01/save-run-c12.json",
+        "sha256": "19cc5080f2398ebff2b94789b99337924073adccfdcb52e0764cd2c241b1cec8"
+      },
+      "stderr": {
+        "path": ".runtime/factory-native/sikh339-look-c12-save/stderr.log",
+        "sha256": "b3c43118ce369af13e48227a7c0b6f095a7140fff7fe3045e75dbc34f91cbe79"
+      },
+      "stdout": {
+        "path": ".runtime/factory-native/sikh339-look-c12-save/stdout.log",
+        "sha256": "5f819adfbcb136a3f37fffb4778289bb389f5406c923b097549d6c708e60a9e7"
+      }
+    }
+  ],
+  "native_process_seconds": 35.51900649862364,
+  "next_requires": "Explicit additional same-task correction authority; no counter reset.",
+  "limitation": "Displacement guard failure does not establish what the unrendered cloth would look like."
+}

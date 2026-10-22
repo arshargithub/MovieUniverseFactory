@@ -1,0 +1,42 @@
+{
+  "verdict": "FAIL",
+  "run_digest": "88cd1c4a23b626c7901b3c0d77868e068e5bad5a6000c508c0577c9043dc1aec",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh338-look-c8-render/snapshot.json",
+      "sha256": "fb8ddb167be29e4614bfdf395989bfb5a3dc24ea795188dc1b4c3388b33019d1"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh338-look-c8-render/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh338-look-c8-render/script-diagnostics.json",
+      "sha256": "99bbbecec312f933855a69b1d853770138fd35ab62669f2fe652484d335f4ec7"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh338-look-c8-render/frame.png",
+      "sha256": "51d0cb757e775605c003882ecb9047b3ba7ff2c99181139b7e072f25f22bea7a"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh338-look-c8-render/frames.json",
+      "sha256": "148a5552bec43829f1694e4ac27eaa31fa4855b8302a74f64fc4b12daaa5a386"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh338-look-c8-render/frame.png",
+      "sha256": "51d0cb757e775605c003882ecb9047b3ba7ff2c99181139b7e072f25f22bea7a"
+    },
+    "frame_327": {
+      "path": ".runtime/factory-native/sikh338-look-c8-render/frame-0327.png",
+      "sha256": "4c676cf3007d43def902007b16dba590d0a0596f6c6bb8fe1020060934e230ad"
+    }
+  },
+  "observation": "Both actual-shot frames retain schematic clothing and mannequin face/headwear. Improved crown seam does not establish same-film coherence.",
+  "comparison": "Actual returned images inspected against accepted Pashtun quality and whole-character requirements. Numeric stability is not cloth construction or artistic acceptance.",
+  "open_defects": [
+    "garment-form",
+    "same-film-appearance",
+    "face-headwear",
+    "incomplete-interface-proof"
+  ]
+}

@@ -15,6 +15,14 @@ def drape_module():
     return module
 
 
+def garment_module():
+    import importlib.util
+    from pathlib import Path
+    spec=importlib.util.spec_from_file_location('mf_nihang_garment',Path(__file__).with_name('nihang_garment.py'))
+    module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+    return module
+
+
 def mesh(bpy,name,points,faces,material,parent,weld=False):
     data=bpy.data.meshes.new(name);data.from_pydata(points,[],faces);data.update()
     if weld:
@@ -117,17 +125,15 @@ def garment_form(bpy,root,leader):
     shirt=next(o for o in upper.children if o.name.startswith('319 anatomically'))
     # Copy data including all existing relative shape keys; original master stays
     # untouched on disk and no motion owner is renamed or reparented.
-    shirt.data=shirt.data.copy();shirt['mf_supporting_appearance']=True
+    shirt,drape=garment_module().build(bpy,shirt,leader)
+    shirt['mf_supporting_appearance']=True
     blocks=[k.data for k in shirt.data.shape_keys.key_blocks] if shirt.data.shape_keys else [shirt.data.vertices]
-    drape=drape_module().settle(bpy,shirt,leader)
     for obj in upper.children:
         if obj.name.startswith('319 overlapping chola chest panel'):
             # Continuous shirt exists underneath; retain the separate narrow placket.
             obj.hide_render=True;obj.hide_viewport=True
         if obj.name.startswith('319 bound chola neckline'):
-            obj.data=obj.data.copy()
-            base=min(v.co.z for v in obj.data.vertices)
-            for v in obj.data.vertices:v.co.z=base+(v.co.z-base)*.28
+            obj.hide_render=True;obj.hide_viewport=True
     # Refit only actual existing outside-facing layers to this changed torso.
     bpy.context.view_layer.update()
     evaluated=shirt.evaluated_get(bpy.context.evaluated_depsgraph_get())
@@ -136,6 +142,8 @@ def garment_form(bpy,root,leader):
     for obj in upper.children:
         if not obj.name.startswith(('297 woven diagonal sash','319 overlapping chola chest panel','319 chola folded placket')):continue
         obj.data=obj.data.copy();obj['mf_supporting_appearance']=True
+        for mod in obj.modifiers:
+            if mod.type=='SHRINKWRAP':mod.target=shirt
         points=obj.data.vertices if obj.type=='MESH' else [p for sp in obj.data.splines for p in sp.points]
         hits=0
         for p in points:

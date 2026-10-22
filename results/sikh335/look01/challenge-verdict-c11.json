@@ -1,0 +1,86 @@
+{
+  "outcome": "admit",
+  "checks": {
+    "grounding": {
+      "status": "PASS",
+      "observation": "C10 failed on straight shoulder-to-wrist distance before simulation. That criterion rejects a bent arm visible in the actual stance. Use measured elbow-chain length plus endpoint separation, preserve guard bounds, orient sleeve rings along each segment, and log all actual cuff/elbow coordinates. New bent-arm regression passes. No appearance claim.",
+      "comparison": "No repeated approval was counted twice; all eight failed attempts remain.",
+      "source_ids": [
+        "direction",
+        "cast_findings"
+      ]
+    },
+    "expert_coverage": {
+      "status": "PASS",
+      "observation": "Pattern construction, garment support, sleeve elbow/cuff ownership and barycentric pose transfer are now explicit. Face/headwear are still independent mandatory dependencies.",
+      "comparison": "A low-poly shell is not automatically tailored cloth. The complete actor must eventually pass.",
+      "source_ids": [
+        "controls",
+        "learnings"
+      ]
+    },
+    "film_alignment": {
+      "status": "PASS",
+      "observation": "Accepted Pashtun remains the material and integrated-form floor.",
+      "comparison": "Night lighting and supporting framing are differences, not permission for a mannequin.",
+      "source_ids": [
+        "film_language"
+      ]
+    },
+    "preferences": {
+      "status": "PASS",
+      "observation": "Proceed internally through known defects within the four approved corrections.",
+      "comparison": "No algorithm choice or incremental known-failure review is sent to the Director.",
+      "source_ids": [
+        "director_preferences"
+      ]
+    },
+    "reference_roles": {
+      "status": "PASS",
+      "observation": "Faithful motion reference and accepted-quality appearance comparator remain distinct and unchanged.",
+      "comparison": "Static drape does not qualify full-speed animation or cultural identity.",
+      "source_ids": [
+        "references",
+        "film_language"
+      ]
+    },
+    "method": {
+      "status": "PASS",
+      "observation": "Reviewed the specific correction and unchanged full sewn-shell method. Hidden sleeve geometry is in the same raw donor coordinate convention used by319; discarded object transforms are not valid contact frames. Actual donor surface-distance guard remains. Native and image results remain unqualified.",
+      "comparison": "This changes representation rather than embossing a rectangular patch. Native body fit and simulation are still hypotheses, not qualified capabilities.",
+      "source_ids": [
+        "controls",
+        "cast_findings"
+      ]
+    },
+    "interfaces": {
+      "status": "PASS",
+      "observation": "Actual elbow/cuff donors are transformed into shirt space; fixed waist and shoulder support remain. Existing207 pose action is copied to the new surface-bound topology. Outer layers retarget to the new exterior.",
+      "comparison": "Straight portions of the sleeve and pinned shoulder boundaries may still intersect or look rigid; stance/crest/reverse images are vetoes. No animated-cloth claim.",
+      "source_ids": [
+        "learnings",
+        "constraints"
+      ]
+    },
+    "efficient_quality": {
+      "status": "PASS",
+      "observation": "One complete replacement garment on leader and near actor, with serial revealing images before further construction or propagation.",
+      "comparison": "No final sequence rerender or cosmetic detailing of a rejected torso.",
+      "source_ids": [
+        "director_preferences",
+        "controls"
+      ]
+    },
+    "authority": {
+      "status": "PASS",
+      "observation": "Same task correction11/12 under separate339 extension. No new spending; prior failures preserved.",
+      "comparison": "No automatic extension beyond12 and no resetting motion allowance.",
+      "source_ids": [
+        "constraints",
+        "direction"
+      ]
+    }
+  },
+  "strongest_counterexample": "The new shell can be connected yet still badly tailored: shoulder/cuff pinning can cause rigid ridges, initial sleeve-body collision can explode, nearest binding can distort inside an elbow. Reject on these actual results; do not claim success because a solver completed. Face and crown still block whole-character delivery.",
+  "issues": []
+}
