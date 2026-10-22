@@ -27,7 +27,7 @@ def validate(recipe):
         if type(recipe[key]) is not int or not lo <= recipe[key] <= hi:
             raise ValueError('NIHANG_RECIPE_BOUND:' + key)
     if recipe['operation']=='nihang_frames':
-        if not isinstance(recipe.get('view','production'),str) or recipe.get('view','production') not in {'production','leader_front','leader_reverse','leader_contact','crowd_front','crowd_reverse','neutral_front','neutral_back','neutral_side'}:
+        if not isinstance(recipe.get('view','production'),str) or recipe.get('view','production') not in {'production','leader_front','leader_reverse','leader_contact','leader_anatomy','crowd_front','crowd_reverse','neutral_front','neutral_back','neutral_side'}:
             raise ValueError('NIHANG_DIAGNOSTIC_VIEW')
         frames=recipe['frames']
         if (not isinstance(frames,list) or not 1<=len(frames)<=16 or
@@ -40,6 +40,11 @@ def validate(recipe):
 def diagnostic_camera(bpy,view):
     """Temporary evidence camera only. No production-camera key edits or save."""
     from mathutils import Vector
+    if view=='leader_anatomy':
+        for ob in bpy.data.objects:
+            if ob.name.startswith(('MF coherent coat','MF coherent pants','MF coherent boots','MF coherent split chola','MF coherent waist wrap','MF coherent shoulder sash','MF347 chola')):
+                ob.hide_render=True
+        view='leader_reverse'
     if view=='leader_contact':
         rig=bpy.data.objects['MF coherent Nihang rig'];root=bpy.data.objects['mounted leader']
         target=rig.matrix_world@rig.pose.bones['finger3-1.L'].head
