@@ -1,0 +1,29 @@
+{
+  "verdict": "PASS",
+  "run_digest": "3deffba19badfc20648b0182507295f62054b431d95a0560db9a2d3984b2ccff",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh343-look-c33-save/snapshot.json",
+      "sha256": "05e0e3600970b273ab76544f71041347fb99b3d04e95c48085bf3b029bd7d261"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh343-look-c33-save/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh343-look-c33-save/script-diagnostics.json",
+      "sha256": "d8c950e68c5c42eb08e3ba4cd795b716e2b5ac082b76301b8697edb7667b2ad9"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh343-look-c33-save/scene.blend",
+      "sha256": "c95f5b00fe16c29c8e264172698c1d387708ebd210930aff7b4acffe48238cfd"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh343-look-c33-save/patch-evidence.json",
+      "sha256": "67a409eded828089456a49295e7fba40e4750fc9ced152f8bc268b27b55dcec2"
+    }
+  },
+  "observation": "Protected production transforms unchanged. Coherent source163-bone body, weighted clothing and190 sampled pose states saved/reopened with safe drivers.",
+  "comparison": "Technical prerequisite only; whole character, contacts, same-film look and AV remain unqualified.",
+  "open_defects": []
+}

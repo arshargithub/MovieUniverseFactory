@@ -1,0 +1,10 @@
+{
+  "status": "FAIL",
+  "reason": "Native11 owning-scene repair succeeds, but actual forehoof descent still slows in the final interval: left3.546 to2.937 and right3.116 to2.351 scene units/s. This fails the explicit no-airborne-ease criterion. Technical save PASS is not motion PASS. Skip expensive16-frame render of known temporal failure; preserve actual190-frame support evidence. Appearance can continue from unchanged motion5/23.",
+  "metrics": {
+    "path": "results/sikh335/motion01/impact-metrics-c11.json",
+    "sha256": "30212a2a40b2478858b2b2eab21ca9c01c571e16bc1dbf9d8468dcc0441ab482"
+  },
+  "render": "NOT_RUN",
+  "next_hypothesis": "Actual world-space hoof arrival needs direct trajectory control; fold and body curves jointly change endpoint velocity."
+}

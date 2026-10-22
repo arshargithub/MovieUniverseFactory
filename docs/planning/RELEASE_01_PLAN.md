@@ -4,6 +4,17 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+### Exchange343 — coherent actor attempted; production still blocked
+
+The five additional shared corrections are exhausted: motion11 and appearance30–33.
+Actual scene ownership is repaired. A complete163-bone actor and weighted costume
+save/reopen, but inspected front/reverse evidence still fails on layer intersections,
+hands/cuffs and same-film appearance. Actual hoof arrival still slows before impact.
+No near-crowd propagation or integrated clip is admitted.84 focused tests are technical
+evidence only. Next proposed work must qualify the mounted actor at actual poses before
+full baking, and the actual world-space hoof path before more channel tweaks. Renewed
+correction authority is required. See [the reassessment](../../results/sikh335/REASSESSMENT_343.md).
+
 ### Exchange335 — Nihang control repair and supported crest proof
 
 The isolated Nihang work has resumed. Actual rig inspection distinguished64

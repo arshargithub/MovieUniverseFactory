@@ -1,0 +1,9 @@
+{
+  "cycle": 31,
+  "status": "FAIL",
+  "reason": "31 failed before producing a candidate: ACTOR_SASH_UNSUPPORTED. The old fixed sash path did not fit the newly reused continuous garment. Preserve the guard and failure; derive the shoulder bridge and waist wrap from actual garment intersections, with bounded edge adjustment rather than assuming the former neckline coordinates.",
+  "source": {
+    "path": "src/movie_factory/adapters/blender/nihang_actor.py",
+    "sha256": "9a61887e8b66869ec6e450f4ee425284f9c56f3cdf216a4112a32af91f49ec18"
+  }
+}

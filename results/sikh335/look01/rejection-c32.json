@@ -1,0 +1,9 @@
+{
+  "cycle": 32,
+  "status": "FAIL",
+  "reason": "32 failed before a candidate at ACTOR_WAIST_SUPPORT_MISSING. Measured neutral23 torso hem is not a single z plane: central lower edge reaches0.9952, mapping to1.057 in the new rest fit before small surface marks. The assumed belt lower edge1.056-1.064 crossed below that open hem.33 must derive belt and sash start from the actual fitted hem boundary plus clearance, retain missing-support guards, and preserve intermediate geometry for diagnosis.",
+  "source": {
+    "path": "src/movie_factory/adapters/blender/nihang_actor.py",
+    "sha256": "a98ba3ebf8561382345fe403b34e545b8ea1ab9c9696f58de3e85a4fba677e9f"
+  }
+}
