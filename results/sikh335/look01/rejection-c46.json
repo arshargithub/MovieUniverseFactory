@@ -1,0 +1,9 @@
+{
+  "cycle": 46,
+  "status": "FAIL",
+  "reason": "46 corrected bone-frame roll but all actual contact poses still show sharply folded wrist/cuff. Earlier diagnosis was incomplete: palm direction is fixed to global forward while elbow is independently prescribed, forcing an incompatible wrist angle. Next discriminating control must solve palm azimuth from shoulder-to-shaft direction and choose reachable elbow nearest neutral wrist, not continue roll-only patches.45 layer repairs preserved, whole actor same-film failure remains.",
+  "source": {
+    "path": "src/movie_factory/adapters/blender/nihang_finish345.py",
+    "sha256": "e2e46990aa0cbd1b218d5dd3fd90d6c620f23a224e68cfdfedf17ca415b20cb8"
+  }
+}

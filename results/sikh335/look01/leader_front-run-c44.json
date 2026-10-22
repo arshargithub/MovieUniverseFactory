@@ -1,0 +1,54 @@
+{
+  "id": "sikh346-look-c44-leader_front",
+  "task": "sikh335-supporting-appearance",
+  "step": "leader_front",
+  "cycle": 44,
+  "fingerprint": "df6b1f29349566d10fa6c0f88b4a90fde0621369e51b6e17ded9efcc53e61e92",
+  "parent": {
+    "path": ".runtime/factory-native/sikh346-look-c44-save/scene.blend",
+    "sha256": "9cea7cf6528a2ff4d2ea59c7d1267ae1580fd6004bf619cce8e50e6784c41b89"
+  },
+  "job_digest": "bfc7f83a6cc675275098dbae8d2943f315cf8522c8c77a43889944ba365e9b35",
+  "handler_digest": "e19fc028c1f9fc2fe7ad2353d503c168c4db8b4564a4044d499d3d0067790196",
+  "status": "FAILED",
+  "artifacts": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh346-look-c44-leader_front/snapshot.json",
+      "sha256": "900de63456af21023524a57a81dd7d6ed788da48b1c11beb61251c61cfbc0c39"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh346-look-c44-leader_front/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh346-look-c44-leader_front/script-diagnostics.json",
+      "sha256": "99bbbecec312f933855a69b1d853770138fd35ab62669f2fe652484d335f4ec7"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh346-look-c44-leader_front/frame.png",
+      "sha256": "30c46254b45564e4de61bbcd048c68662780078477747fcdb2cddc9d067ddeca"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh346-look-c44-leader_front/frames.json",
+      "sha256": "301f58ce545b2bed15bb34330805fb87115913e28983553e19a4073b0584a82e"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh346-look-c44-leader_front/frame.png",
+      "sha256": "30c46254b45564e4de61bbcd048c68662780078477747fcdb2cddc9d067ddeca"
+    },
+    "frame_327": {
+      "path": ".runtime/factory-native/sikh346-look-c44-leader_front/frame-0327.png",
+      "sha256": "a2ae847d59fa225cf2be27884dab6df6c6619325d9c262fa1c54ae47b003fdf4"
+    },
+    "frame_350": {
+      "path": ".runtime/factory-native/sikh346-look-c44-leader_front/frame-0350.png",
+      "sha256": "3bf71857aba913fa48f2816356752e627b8af28d099b3970c18f0d672e001a15"
+    }
+  },
+  "dependencies": {},
+  "recipe": {
+    "path": "results/sikh335/look01/leader_front-recipe-c44.json",
+    "sha256": "e15036a89bd60ceb0ceeb92d7d9579465a4db69356560a82911d54a7de9018ac"
+  },
+  "error": "Blocked: NATIVE_SELECTED_STATE_DRIFT"
+}

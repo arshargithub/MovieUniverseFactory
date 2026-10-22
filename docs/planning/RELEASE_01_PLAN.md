@@ -4,6 +4,22 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+### Exchange346 — interfaces improve but whole actor remains rejected
+
+Five shared corrections end at appearance47. Regional preflight, welded/evaluated
+waist support and beard attachment now survive the inspected poses. Coupled
+palm/elbow placement reduces the severe wrist fold but reveals a sleeve pinch.
+The leader's face, turban, clothing and saddle remain below the accepted film's
+finish. Four final view families were inspected and rejected;53 focused tests
+do not qualify art. Motion12, accepted masters and crowd remain unchanged.
+
+The proposed next package must prove the complete mounted leader at actual shot
+framing, with true garment form and extreme/reverse poses from the first proof,
+instead of spending another allowance on isolated contact metrics. Renewed
+correction authority is required. [Outcome](../../results/sikh335/REASSESSMENT_346.md)
+and [lessons](../../results/sikh335/LEARNINGS_346.md) preserve failures and useful
+repairs. No full clip, new spend, upload, remote push or backup claim. Next350.
+
 ### Exchange345 — contact and waist progress remains unqualified
 
 Five shared additions are exhausted at appearance42.38 improves the skirt origin

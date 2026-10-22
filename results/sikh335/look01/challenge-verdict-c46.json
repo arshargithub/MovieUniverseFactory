@@ -1,0 +1,81 @@
+{
+  "outcome": "admit",
+  "checks": {
+    "grounding": {
+      "status": "PASS",
+      "observation": "Actual45 front/reverse/contact images were inspected in all three poses, plus accepted Pashtun actual-450. Layer repair advanced; wrist and whole-character quality failed. Preserve rejection45.",
+      "comparison": "Construction hypothesis only; no visual or AV pass.",
+      "source_ids": [
+        "direction",
+        "learnings"
+      ]
+    },
+    "expert_coverage": {
+      "status": "PASS",
+      "observation": "Anatomical bone roll, mesh deformation, cuff/contact and same-film look are distinct gates. Fixed-length endpoints do not qualify skin.",
+      "comparison": "Construction hypothesis only; no visual or AV pass.",
+      "source_ids": [
+        "controls",
+        "learnings"
+      ]
+    },
+    "film_alignment": {
+      "status": "PASS",
+      "observation": "Accepted Pashtun remains the finish control. Generic eyes, face, crown and garment remain open; no whole-actor admission from a wrist repair.",
+      "comparison": "Construction hypothesis only; no visual or AV pass.",
+      "source_ids": [
+        "film_language"
+      ]
+    },
+    "preferences": {
+      "status": "PASS",
+      "observation": "Continue within shared47 cap without technical handover or propagation of a failed actor.",
+      "comparison": "Construction hypothesis only; no visual or AV pass.",
+      "source_ids": [
+        "director_preferences"
+      ]
+    },
+    "reference_roles": {
+      "status": "PASS",
+      "observation": "Three diagnostic poses constrain interfaces, faithful original video constrains motion, Pashtun image constrains shared fidelity; none substitutes for another.",
+      "comparison": "Construction hypothesis only; no visual or AV pass.",
+      "source_ids": [
+        "references"
+      ]
+    },
+    "method": {
+      "status": "PASS",
+      "observation": "Transport each forearm bone's own rest frame with the hand rotation, then swing its length axis to the solved segment. This replaces the erroneous copy of wrist-local X. Nine unit tests pass including distinct rest-roll control.",
+      "comparison": "Construction hypothesis only; no visual or AV pass.",
+      "source_ids": [
+        "controls"
+      ]
+    },
+    "interfaces": {
+      "status": "PASS",
+      "observation": "A correct roll matrix can still leave an anatomically extreme wrist angle or distorted weights. Actual contact views in stance/crest/landing must veto those. Layer source and restored beard unchanged.",
+      "comparison": "Construction hypothesis only; no visual or AV pass.",
+      "source_ids": [
+        "learnings"
+      ]
+    },
+    "efficient_quality": {
+      "status": "PASS",
+      "observation": "Early contact proof before wider rendering; local existing source only. No fresh full-sequence render or crowd work while this prerequisite fails.",
+      "comparison": "Construction hypothesis only; no visual or AV pass.",
+      "source_ids": [
+        "director_preferences"
+      ]
+    },
+    "authority": {
+      "status": "PASS",
+      "observation": "46 is fourth of five346 additions, existing47 ceiling. No new spending, assets, providers or egress.",
+      "comparison": "Construction hypothesis only; no visual or AV pass.",
+      "source_ids": [
+        "constraints"
+      ]
+    }
+  },
+  "strongest_counterexample": "Bone-frame correction may remove twist while leaving excessive wrist bend or poor mesh skin weights. Rendered anatomy can still fail.",
+  "issues": []
+}

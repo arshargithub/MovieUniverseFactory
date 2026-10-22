@@ -1,0 +1,50 @@
+{
+  "verdict": "FAIL",
+  "run_digest": "9631243f97be019d65abc71f11c4c1306e2c6ce5445afe30a2009f93f9bc9543",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh346-look-c47-render/snapshot.json",
+      "sha256": "3fa48b4d7ad45884b65580275b0d16d9b0d8d865a5d41606941ffb9f7d0fa443"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh346-look-c47-render/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh346-look-c47-render/script-diagnostics.json",
+      "sha256": "99bbbecec312f933855a69b1d853770138fd35ab62669f2fe652484d335f4ec7"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh346-look-c47-render/frame.png",
+      "sha256": "22cb471d3f048b013f912b0022da25bb5f36c4506f00fb80447c273bf64a4ebb"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh346-look-c47-render/frames.json",
+      "sha256": "b125b504a3219661b26d4b7ee68bf028a9101a245ceaf4ca7387e45c19b4a2f0"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh346-look-c47-render/frame.png",
+      "sha256": "22cb471d3f048b013f912b0022da25bb5f36c4506f00fb80447c273bf64a4ebb"
+    },
+    "frame_327": {
+      "path": ".runtime/factory-native/sikh346-look-c47-render/frame-0327.png",
+      "sha256": "d44a2e8fc8e217782add635d9ca1f0ed93dd766c4d4a45542bb6f8468e4b72e3"
+    },
+    "frame_350": {
+      "path": ".runtime/factory-native/sikh346-look-c47-render/frame-0350.png",
+      "sha256": "a75bba74eee3fc462c133ceb5e15d0e346178c43d9f11ea016134b85557dba63"
+    },
+    "accepted_co_star": {
+      "path": ".runtime/art-direction/series01-finish248/opening08/actual-450.png",
+      "sha256": "c874497d244bb8b896d952a8ee30536d33b79bee3d62d4cefd50c8221a37498a"
+    }
+  },
+  "observation": "Actual production camera283/327/350: mounted assembly is readable but actor and saddle remain simplified. Horse surface still glossy/statue-like. No whole-shot same-film quality pass; these three stills cannot qualify rearing fluidity or audio.",
+  "comparison": "Actual images inspected at all three returned poses; accepted co-star is finish control, not identity. Improved predecessor is not acceptance. Full-speed AV remains NOT_RUN.",
+  "open_defects": [
+    "Whole actor same-film appearance unqualified",
+    "Sleeve elbow pinch in changed arm pose",
+    "Complete hand/cuff anatomy and all-frame performance unqualified",
+    "Horse/crowd and integrated isolated passage remain open"
+  ]
+}
