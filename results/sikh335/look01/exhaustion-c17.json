@@ -1,0 +1,175 @@
+{
+  "task": "sikh335-supporting-appearance",
+  "state": {
+    "stage": "REPLAN_REQUIRED",
+    "cycle": 17,
+    "max_corrections": 17
+  },
+  "attempts": [
+    {
+      "cycle": 13,
+      "status": "FAILED",
+      "actors": {
+        "leader": {
+          "maximum_displacement_m": 0.10689157068914207,
+          "finite": true,
+          "vertices": 3234
+        }
+      },
+      "diagnostic_arrays": [
+        {
+          "path": ".runtime/factory-native/sikh340-look-c13-save/leader-pattern.npz",
+          "sha256": "0c9477fbd349a8a9d63b7d6271dc4f54e12a683b6f99f03bb48c005b3199d28a",
+          "bytes": 583330
+        },
+        {
+          "path": ".runtime/factory-native/sikh340-look-c13-save/leader-settle.npz",
+          "sha256": "b856980aed385b50548840a7a8eb17f11eaffc80243032ccfb7c19e19dfa1016",
+          "bytes": 124903
+        }
+      ],
+      "process_wall_seconds": 16.453714999835938,
+      "error": "GARMENT_DRAPE_DISPLACEMENT:0.106892"
+    },
+    {
+      "cycle": 14,
+      "status": "FAILED",
+      "actors": {
+        "leader": {
+          "maximum_displacement_m": 0.10301592639382762,
+          "finite": true,
+          "vertices": 3234
+        }
+      },
+      "diagnostic_arrays": [
+        {
+          "path": ".runtime/factory-native/sikh340-look-c14-save/leader-pattern.npz",
+          "sha256": "12b9c8a3994cf8ab2e0660f84a48e15da3a9ba215d2ce3f775d35f4202f596f4",
+          "bytes": 583375
+        },
+        {
+          "path": ".runtime/factory-native/sikh340-look-c14-save/leader-settle.npz",
+          "sha256": "9d5279a0c3f25159ca49ac38cabbd6db28e37e568c59fc8cc89f961f29daa0d1",
+          "bytes": 124649
+        }
+      ],
+      "process_wall_seconds": 13.573520749807358,
+      "error": "GARMENT_DRAPE_DISPLACEMENT:0.103016"
+    },
+    {
+      "cycle": 15,
+      "status": "FAILED",
+      "actors": {
+        "leader": {
+          "maximum_displacement_m": 0.10053869338280705,
+          "finite": true,
+          "vertices": 3234
+        }
+      },
+      "diagnostic_arrays": [
+        {
+          "path": ".runtime/factory-native/sikh340-look-c15-save/leader-pattern.npz",
+          "sha256": "ee5fbda8e04f877303e1e3d7f407675592696bfefe6505cc02a569bccf61159e",
+          "bytes": 634130
+        },
+        {
+          "path": ".runtime/factory-native/sikh340-look-c15-save/leader-settle.npz",
+          "sha256": "6d4247be82ebda29d631c38c9f185cc922b19b6b40d15b39bc05739009830d1a",
+          "bytes": 127590
+        }
+      ],
+      "process_wall_seconds": 12.714746625162661,
+      "error": "GARMENT_DRAPE_DISPLACEMENT:0.100539"
+    },
+    {
+      "cycle": 16,
+      "status": "FAILED",
+      "actors": {
+        "leader": {
+          "maximum_displacement_m": 0.08656983987910824,
+          "finite": true,
+          "vertices": 3234
+        },
+        "crowd": {
+          "maximum_displacement_m": 0.11062514003750719,
+          "finite": true,
+          "vertices": 3234
+        }
+      },
+      "diagnostic_arrays": [
+        {
+          "path": ".runtime/factory-native/sikh340-look-c16-save/crowd-pattern.npz",
+          "sha256": "ce0cdc165758f7bfd68fac9a633b04a41949a8db3f441cffdb230469b0accb7f",
+          "bytes": 642551
+        },
+        {
+          "path": ".runtime/factory-native/sikh340-look-c16-save/crowd-settle.npz",
+          "sha256": "4cad648c8d8b77f16895eee043dac0e276098651a608e53dfd3b7c06c4113025",
+          "bytes": 130500
+        },
+        {
+          "path": ".runtime/factory-native/sikh340-look-c16-save/leader-pattern.npz",
+          "sha256": "92da846e098caded269c3ad3579b8ec5700f51403142bdeef1368d7af4b71112",
+          "bytes": 641039
+        },
+        {
+          "path": ".runtime/factory-native/sikh340-look-c16-save/leader-settle.npz",
+          "sha256": "8a1b2efdf23e4c2854cfd103fb648f169c5cb0a85555c2e2c6bbb82aaccb2991",
+          "bytes": 131616
+        }
+      ],
+      "process_wall_seconds": 20.525156958028674,
+      "error": "GARMENT_DRAPE_DISPLACEMENT:0.110625"
+    },
+    {
+      "cycle": 17,
+      "status": "FAILED",
+      "actors": {
+        "leader": {
+          "maximum_displacement_m": 0.08656983987910824,
+          "finite": true,
+          "vertices": 3234
+        },
+        "crowd": {
+          "maximum_displacement_m": 0.10334243896549082,
+          "finite": true,
+          "vertices": 3234
+        }
+      },
+      "diagnostic_arrays": [
+        {
+          "path": ".runtime/factory-native/sikh340-look-c17-save/crowd-pattern.npz",
+          "sha256": "87e7df371ad34a1d3b0296bce91e5964d4a5e3b58237339b0d98ed4be8510be8",
+          "bytes": 643429
+        },
+        {
+          "path": ".runtime/factory-native/sikh340-look-c17-save/crowd-settle.npz",
+          "sha256": "28002b8a95e285847ef1ee5e623b866c2aea683858aa15ba8ca19ea0bdd3963e",
+          "bytes": 130509
+        },
+        {
+          "path": ".runtime/factory-native/sikh340-look-c17-save/leader-pattern.npz",
+          "sha256": "92da846e098caded269c3ad3579b8ec5700f51403142bdeef1368d7af4b71112",
+          "bytes": 641039
+        },
+        {
+          "path": ".runtime/factory-native/sikh340-look-c17-save/leader-settle.npz",
+          "sha256": "8a1b2efdf23e4c2854cfd103fb648f169c5cb0a85555c2e2c6bbb82aaccb2991",
+          "bytes": 131616
+        }
+      ],
+      "process_wall_seconds": 19.635144125204533,
+      "error": "GARMENT_DRAPE_DISPLACEMENT:0.103342"
+    }
+  ],
+  "process_wall_seconds": 82.90228345803916,
+  "motion_state": {
+    "stage": "EXECUTING",
+    "cycle": 9,
+    "max_corrections": 10
+  },
+  "new_saved_candidates": 0,
+  "new_production_renders": 0,
+  "new_external_spend": 0,
+  "limits": "Numeric geometry evidence only. Native neutral-body drape was NOT_RUN. No full appearance, AV, production, backup or efficiency pass."
+}

@@ -117,7 +117,7 @@ def wrapped_crown(bpy,frame,material,leader):
     return [core.name,*cloth,top.name]
 
 
-def garment_form(bpy,root,leader):
+def garment_form(bpy,root,leader,diagnostic_dir=None):
     import numpy as np
     from mathutils import Vector
     from mathutils.bvhtree import BVHTree
@@ -125,7 +125,7 @@ def garment_form(bpy,root,leader):
     shirt=next(o for o in upper.children if o.name.startswith('319 anatomically'))
     # Copy data including all existing relative shape keys; original master stays
     # untouched on disk and no motion owner is renamed or reparented.
-    shirt,drape=garment_module().build(bpy,shirt,leader)
+    shirt,drape=garment_module().build(bpy,shirt,leader,diagnostic_dir)
     shirt['mf_supporting_appearance']=True
     blocks=[k.data for k in shirt.data.shape_keys.key_blocks] if shirt.data.shape_keys else [shirt.data.vertices]
     for obj in upper.children:
@@ -236,7 +236,7 @@ def saddle_pad(bpy):
             'scope':'Standing actual body surface fit; rising/reverse rider interfaces remain unqualified.'}
 
 
-def run(bpy):
+def run(bpy,diagnostic_dir=None):
     bpy.context.scene.frame_set(283);bpy.context.view_layer.update()
     roots=[bpy.data.objects['mounted leader'],sorted([o for o in bpy.data.objects if o.name.startswith('FOOT WARRIOR ')],key=lambda o:o.name)[0]]
     report=[]
@@ -247,7 +247,7 @@ def run(bpy):
         core=next(o for o in frame.children if o.name.startswith('319 supported dumalla'))
         material=core.data.materials[0]
         report.append({'actor':root.name,'crown':wrapped_crown(bpy,frame,material,leader),
-                       'garment':garment_form(bpy,root,leader),'beard':beard_volume(frame)})
+                       'garment':garment_form(bpy,root,leader,diagnostic_dir),'beard':beard_volume(frame)})
     pad=saddle_pad(bpy)
     coat=horse_finish(bpy)
     return {'actors':report,'saddle':pad,'coat':coat,'scope':'Two-actor cloth and beard-volume proof plus existing dark horse coat treatment; no motion or appearance acceptance.'}

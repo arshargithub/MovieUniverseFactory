@@ -74,7 +74,7 @@ def validate(recipe):
     return recipe
 
 
-def apply(bpy, recipe):
+def apply(bpy, recipe,diagnostic_dir=None):
     # Preflight the entire patch before mutation. A mesh operation creates a new
     # named derivative; it cannot overwrite an accepted existing object.
     names = set()
@@ -99,7 +99,7 @@ def apply(bpy, recipe):
             import importlib.util
             spec=importlib.util.spec_from_file_location('mf_nihang_look',Path(__file__).with_name('nihang_look.py'))
             look=importlib.util.module_from_spec(spec);spec.loader.exec_module(look)
-            support_evidence.append({'look':look.run(bpy)})
+            support_evidence.append({'look':look.run(bpy,diagnostic_dir)})
         elif edit['kind'] in {'repair_bbone_targets','supported_pose','supported_motion'}:
             import importlib.util
             spec=importlib.util.spec_from_file_location('mf_nihang_support',Path(__file__).with_name('nihang_support.py'))
@@ -144,7 +144,7 @@ def run(out, job, control):
     diagnostics = control.script_diagnostics(bpy)
     if diagnostics['blocked_drivers']: raise ValueError('PATCH_UNSAFE_DRIVER')
     before = control.selected_state(bpy, recipe['frame'])
-    support = apply(bpy, recipe)
+    support = apply(bpy, recipe,out)
     after = control.selected_state(bpy, recipe['frame'])
     diagnostics = control.script_diagnostics(bpy)
     if diagnostics['blocked_drivers']: raise ValueError('PATCH_INVALID_AFTER_REPAIR')

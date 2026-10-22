@@ -23,16 +23,63 @@ def transport(vector, old_axis, new_axis):
     return vector+np.cross(cross,vector)+np.cross(cross,np.cross(cross,vector))/(1+cos)
 
 
+def sleeve_axis(origin, elbow, cuff, t):
+    """Pose a two-segment rest sleeve without a quadratic overshoot at the elbow.
+
+    Arc distance on the straight rest sleeve determines segment ownership. A
+    short quadratic fillet stays INSIDE the elbow control triangle; the old
+    curve passed through the elbow and overshot it between samples.
+    """
+    a=np.linalg.norm(elbow-origin);b=np.linalg.norm(cuff-elbow)
+    if min(a,b)<.025:raise ValueError('GARMENT_SHORT_ARM_SEGMENT')
+    d=t*(a+b);fillet=min(.035,a*.2,b*.2)
+    u=(elbow-origin)/a;v=(cuff-elbow)/b
+    if d<a-fillet:return origin+u*d,u
+    if d>a+fillet:return elbow+v*(d-a),v
+    s=(d-a+fillet)/(2*fillet)
+    left=elbow-u*fillet;right=elbow+v*fillet
+    center=(1-s)**2*left+2*s*(1-s)*elbow+s*s*right
+    tangent=(1-s)*u+s*v;tangent/=np.linalg.norm(tangent)
+    return center,tangent
+
+
+def outward_triangles(points,triangles,leader):
+    """Orient an open torso proxy by its measured front/back, not signed volume.
+
+    The319 source has inward winding on both chest and back. Keep the original
+    asset unchanged; repair only this collision/binding proxy and verify the vote.
+    """
+    tri=points[triangles];center=tri.mean(axis=1)
+    normal=np.cross(tri[:,1]-tri[:,0],tri[:,2]-tri[:,0])
+    normal/=np.maximum(1e-12,np.linalg.norm(normal,axis=1))[:,None]
+    base=0 if leader else .83
+    torso=(abs(center[:,0])<.10)&(center[:,2]>base+.13)&(center[:,2]<base+.36)
+    if torso.sum()<20:raise ValueError('GARMENT_NORMAL_CONTROL_MISSING')
+    mid=float(np.median(center[torso,1]))
+    select=torso&(abs(center[:,1]-mid)>.04)
+    if select.sum()<20:raise ValueError('GARMENT_NORMAL_CONTROL_AMBIGUOUS')
+    vote=float(np.mean(normal[select,1]*np.sign(center[select,1]-mid)))
+    if abs(vote)<.5:raise ValueError('GARMENT_NORMAL_CONTROL_INCONSISTENT')
+    return (triangles[:,::-1].copy() if vote<0 else triangles.copy()),vote
+
+
 def pattern(source, cuffs, elbows, leader):
     """Front/back panels, sewn shoulders/sides and connected sleeve tubes."""
     rows=33;cols=33;arm=22;points=[];faces=[];pins=[]
     bottom=.055 if leader else .885
-    height=.435;half=.205
+    #297's native garment tops are0.5 mounted and1.4 standing, with separate
+    #waist heights. A shared height incorrectly lowered the crowd shoulder80mm.
+    height=.435 if leader else .515;half=.205
     for side in (-1,1):
         for j in range(rows):
             u=j/(rows-1)
+            row_z=bottom+height*u
+            width_band=source[(abs(source[:,2]-row_z)<.025)&(abs(source[:,0])<.19)]
+            if len(width_band)<8:raise ValueError('GARMENT_WIDTH_MEASUREMENT')
+            row_half=float(np.quantile(abs(width_band[:,0]),.98))+.012
+            if not .10<row_half<.205:raise ValueError('GARMENT_WIDTH_RANGE')
             for k in range(cols):
-                x=half*(2*k/(cols-1)-1)
+                x=row_half*(2*k/(cols-1)-1)
                 top=height-.025*math.exp(-(x/.075)**4)
                 z=bottom+top*u
                 band=source[(abs(source[:,2]-z)<.025)&(abs(source[:,0])<.16)]
@@ -41,7 +88,7 @@ def pattern(source, cuffs, elbows, leader):
                 depth=(high-low)/2+.025
                 if not .045<depth<.24:raise ValueError('GARMENT_TORSO_DEPTH')
                 # Ease belongs to the complete pattern, not a local depth patch.
-                y=center+side*(.016+depth*math.sqrt(max(0,1-(x/half)**2)))
+                y=center+side*(.016+depth*math.sqrt(max(0,1-(x/row_half)**2)))
                 points.append((x,y,z))
                 pins.append(max(0,1-j/2,1-(rows-1-j)/2))
         off=(0 if side==-1 else rows*cols)
@@ -67,25 +114,25 @@ def pattern(source, cuffs, elbows, leader):
         chain=np.linalg.norm(elbow-origin)+np.linalg.norm(cuff-elbow)
         if not (.06<length<.85 and .18<chain<.95):
             raise ValueError(f'GARMENT_SLEEVE_LENGTH:{length:.5f}:chain={chain:.5f}:origin={origin}:elbow={elbow}:cuff={cuff}')
-        control=2*elbow-(origin+cuff)/2
-        direction=(control-origin)/np.linalg.norm(control-origin)
+        direction=(elbow-origin)/np.linalg.norm(elbow-origin)
         vertical=np.array([0.,0.,1.]);v=vertical-direction*np.dot(vertical,direction)
         if np.linalg.norm(v)<.1:v=np.array([0.,1.,0.])
         v/=np.linalg.norm(v);w=np.cross(direction,v)
         previous=loop
         # Preserve the armhole parameterization continuously, rather than joining
         # mismatched ring orders. Wrist opening is left open, with a pinned cuff.
-        angles=np.arctan2((base-origin)@w,(base-origin)@v)
+        angles=np.unwrap(np.arctan2((base-origin)@w,(base-origin)@v))
+        winding=1 if angles[-1]>angles[0] else -1
+        uniform=angles[0]+winding*math.tau*np.arange(len(loop))/len(loop)
         for ring in range(1,25):
             t=ring/24
-            center=(1-t)**2*origin+2*t*(1-t)*control+t*t*cuff
-            tangent=(1-t)*(control-origin)+t*(cuff-control)
-            tangent=tangent/np.linalg.norm(tangent)
+            center,tangent=sleeve_axis(origin,elbow,cuff,t)
             v=transport(v,direction,tangent);direction=tangent
             v/=np.linalg.norm(v);w=np.cross(tangent,v)
             radius=.078*(1-t)+.043*t
             ids=[]
-            for n,a in enumerate(angles):
+            ring_angles=angles*(1-min(1,t/.25))+uniform*min(1,t/.25)
+            for n,a in enumerate(ring_angles):
                 target=center+radius*(v*math.cos(a)+w*math.sin(a))
                 blend=min(1,t/.25)
                 p=(base[n]+center-origin)*(1-blend)+target*blend
@@ -97,13 +144,15 @@ def pattern(source, cuffs, elbows, leader):
     return np.asarray(points),faces,np.asarray(pins)
 
 
-def build(bpy,shirt,leader):
+def build(bpy,shirt,leader,diagnostic_dir=None):
     import json
     from mathutils import Vector
     from mathutils.bvhtree import BVHTree
     original=bpy.context.window.scene;dg=bpy.context.evaluated_depsgraph_get()
     ev=shirt.evaluated_get(dg);src=np.array([v.co[:] for v in ev.data.vertices])
     ev.data.calc_loop_triangles();tri=np.array([tuple(t.vertices) for t in ev.data.loop_triangles])
+    tri,normal_vote=outward_triangles(src,tri,leader)
+    print('GARMENT_PROXY_NORMAL_VOTE',normal_vote,flush=True)
     tree=BVHTree.FromPolygons(src,tri,all_triangles=True)
     cuff_ids=json.loads(shirt['cuff_indices'])
     cuffs={s:src[ids].mean(axis=0) for s,ids in cuff_ids.items()}
@@ -125,6 +174,23 @@ def build(bpy,shirt,leader):
     for side,p in elbows.items():
         if tree.find_nearest(Vector(p))[3]>.09:raise ValueError('GARMENT_ELBOW_BIND_DISTANCE')
     start,faces,pins=pattern(src,cuffs,elbows,leader)
+    raw_start=start.copy()
+    # Construction fit precedes gravity. The planar armhole edges were inside
+    # the donor by up to51mm; asking collision to eject them caused large jumps.
+    # Outward proxy normals are independently checked above. This is bounded
+    # initial fitting, not a relaxed simulation displacement threshold.
+    for _ in range(3):
+        for i,p in enumerate(start):
+            hit,normal,index,distance=tree.find_nearest(Vector(p))
+            if hit is None:raise ValueError('GARMENT_INITIAL_FIT_MISSING')
+            signed=float(np.dot(p-np.array(hit),np.array(normal)))
+            if signed<.008:start[i]+=np.array(normal)*(.008-signed)
+    fit=np.linalg.norm(start-raw_start,axis=1)
+    if fit.max()>.065:raise ValueError(f'GARMENT_INITIAL_FIT_EXCESS:{fit.max():.6f}')
+    print('GARMENT_INITIAL_FIT_MAX',float(fit.max()),flush=True)
+    if diagnostic_dir is not None:
+        np.savez_compressed(diagnostic_dir/('leader-pattern.npz' if leader else 'crowd-pattern.npz'),
+                            source=src,triangles=tri,start=start,raw_start=raw_start,fit=fit,faces=np.asarray(faces),pins=pins)
     temporary=bpy.data.scenes.new('MF sewn shirt drape proof');objects=[];meshes=[]
     def new(name,vertices,polygons,scene):
         data=bpy.data.meshes.new(name);data.from_pydata(vertices,[],polygons);data.update()
@@ -151,6 +217,9 @@ def build(bpy,shirt,leader):
             evaluated=cloth.evaluated_get(bpy.context.evaluated_depsgraph_get())
         final=np.array([v.co[:] for v in evaluated.data.vertices])
         delta=np.linalg.norm(final-start,axis=1)
+        if diagnostic_dir is not None:
+            np.savez_compressed(diagnostic_dir/('leader-settle.npz' if leader else 'crowd-settle.npz'),
+                                start=start,final=final,faces=np.asarray(faces),pins=pins,displacement=delta)
         if not np.isfinite(final).all() or delta.max()>.09:
             worst=np.argsort(delta)[-5:]
             print('GARMENT_DRAPE_FAILURE',json.dumps({'indices':worst.tolist(),'start':start[worst].tolist(),'end':final[worst].tolist()}),flush=True)
