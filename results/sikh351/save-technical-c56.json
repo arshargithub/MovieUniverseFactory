@@ -1,0 +1,29 @@
+{
+  "verdict": "PASS",
+  "run_digest": "85080d0438eb71b2dcd2dd417e261ca8c2edff2720ff42f211dc9b2316a2e4eb",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh351-c56-save/snapshot.json",
+      "sha256": "cf9f61401d8fd78c536015def7cae0769e20f97884d98b8bf1437c514e833335"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh351-c56-save/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh351-c56-save/script-diagnostics.json",
+      "sha256": "d8c950e68c5c42eb08e3ba4cd795b716e2b5ac082b76301b8697edb7667b2ad9"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh351-c56-save/scene.blend",
+      "sha256": "dab59b06b9696278527addd674b659e7fa1d49bd610b53e7d22623788ad005dd"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh351-c56-save/patch-evidence.json",
+      "sha256": "5371faa2628e152b1488977c3caf97e0baa268547f887c1e5366e258aab5bb57"
+    }
+  },
+  "observation": "Pose-only candidate saved/reopened; protected owner snapshots and wrist/digit contact positions retained. Anatomy is not passed.",
+  "comparison": "Source52 remains an unqualified negative control.",
+  "open_defects": []
+}

@@ -1,0 +1,57 @@
+{
+  "verdict": "FAIL",
+  "run_digest": "7f83e34e89cd1bcf0626891fd16d292843fc46be823558fd6b63a596c7532cd5",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh351-c57-anatomy_custom_front/snapshot.json",
+      "sha256": "cf9f61401d8fd78c536015def7cae0769e20f97884d98b8bf1437c514e833335"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh351-c57-anatomy_custom_front/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh351-c57-anatomy_custom_front/script-diagnostics.json",
+      "sha256": "99bbbecec312f933855a69b1d853770138fd35ab62669f2fe652484d335f4ec7"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh351-c57-anatomy_custom_front/frame.png",
+      "sha256": "3c134e4ef3414fd0324dbad8f878f14fdd6b871f779d1985b64abfdee802d1e6"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh351-c57-anatomy_custom_front/frames.json",
+      "sha256": "65450ecbab23b5a19a46d3526c541309c4a736af584c2de78792ff91e30ab2aa"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh351-c57-anatomy_custom_front/frame-0283.png",
+      "sha256": "ce5f4253cdafcbb924d4cdcc14a71bee6d93dbe83a833fc2bff56d6952035b89"
+    },
+    "frame_327": {
+      "path": ".runtime/factory-native/sikh351-c57-anatomy_custom_front/frame.png",
+      "sha256": "3c134e4ef3414fd0324dbad8f878f14fdd6b871f779d1985b64abfdee802d1e6"
+    },
+    "frame_350": {
+      "path": ".runtime/factory-native/sikh351-c57-anatomy_custom_front/frame-0350.png",
+      "sha256": "e201008dd7f15c90c547bfc8325c284ab815418c4dc2cff4fef183bd86eaf5db"
+    },
+    ".runtime/factory-native/sikh351-c57-anatomy_custom_front/frame-0283.png": {
+      "path": ".runtime/factory-native/sikh351-c57-anatomy_custom_front/frame-0283.png",
+      "sha256": "ce5f4253cdafcbb924d4cdcc14a71bee6d93dbe83a833fc2bff56d6952035b89"
+    },
+    ".runtime/factory-native/sikh351-c57-anatomy_custom_front/frame.png": {
+      "path": ".runtime/factory-native/sikh351-c57-anatomy_custom_front/frame.png",
+      "sha256": "3c134e4ef3414fd0324dbad8f878f14fdd6b871f779d1985b64abfdee802d1e6"
+    },
+    ".runtime/factory-native/sikh351-c57-anatomy_custom_front/frame-0350.png": {
+      "path": ".runtime/factory-native/sikh351-c57-anatomy_custom_front/frame-0350.png",
+      "sha256": "e201008dd7f15c90c547bfc8325c284ab815418c4dc2cff4fef183bd86eaf5db"
+    }
+  },
+  "observation": "All six front/back283/327/350 images inspected. Rear elbow is rounder and separated from torso, but front shows a severe shelf/crease where the upper arm joins shoulder, plus abrupt wrist transition. Adjacent regression is an unequivocal failure.",
+  "comparison": "56 retained tucked arm;57 improves rear silhouette but worsens visible front shoulder. Neither passes matched native-bend control. Contact error below1e-6m is not anatomical validity.",
+  "open_defects": [
+    "Severe front shoulder crease across all three poses.",
+    "Wrist/forearm continuity remains unnatural.",
+    "Garment transfer, whole actor and crowd remain unqualified."
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "events": [
+    {
+      "activity_id": "sikh351-work",
+      "episode_id": "appearance351",
+      "event_id": "sikh351-work-start",
+      "event_type": "work_started",
+      "evidence_ref": "results/sikh351/REQUEST.md",
+      "experiment_id": "sikh335",
+      "phase": "diagnosis",
+      "reason": "Five approved appearance corrections; initial bootstrap retrieval precedes capture",
+      "run_id": null,
+      "schema_version": "1.0",
+      "task_id": null,
+      "turn_id": null,
+      "utc": "2026-10-22T23:03:54.941756+00:00"
+    },
+    {
+      "event_id": "sikh351-work-end",
+      "experiment_id": "sikh335",
+      "episode_id": "appearance351",
+      "phase": "diagnosis",
+      "event_type": "work_ended",
+      "activity_id": "sikh351-work",
+      "utc": "2026-10-22T23:40:26.458623+00:00",
+      "note": "Five authorized corrections exhausted; actual anatomy candidates rejected; experiment remains open."
+    }
+  ],
+  "elapsed_seconds": 2191.5168669223785,
+  "verified_director_idle_seconds": 0,
+  "scope": "Captured active-turn interval includes overlapping serial native jobs, not additive to native occupancy. No Director-response wait within recorded interval. Not model-only time or complete historical effort.",
+  "lifecycle": "OPEN",
+  "gaps": [
+    "Initial bootstrap retrieval before recorded start",
+    "Final Git/handoff overhead after recorded end"
+  ]
+}

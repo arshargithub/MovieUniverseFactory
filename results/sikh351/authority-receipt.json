@@ -1,0 +1,60 @@
+{
+  "task": "sikh335-supporting-appearance",
+  "stage": "BRIEFING",
+  "cycle": 53,
+  "maximum": 57,
+  "motion_cycle": 12,
+  "motion_maximum": 12,
+  "migration": {
+    "state_digest": "54b8bfa6eb47aaba5b6c9b5479e23a4f03516100da00fa3b586b4b61e6b1e33a",
+    "coverage": "Retained appearance cycles0\u201352, original335 authority,348 causal audit including23 cloth proof,35 representation regression and52 bare deformation. Motion12 is separate and not extended.",
+    "unknowns": "Shoulder/elbow causal diagnosis remains unproven. No whole actor, crowd, horse performance or full-speed AV acceptance. No migration of motion task.",
+    "evidence": {
+      "results/sikh348/RETROSPECTIVE.md": {
+        "path": "results/sikh348/RETROSPECTIVE.md",
+        "sha256": "7f2327e244caa61de93e8ef8da25d2bbb2919bb6cfa5baff6a4cfd36431dbcb1"
+      },
+      "results/sikh348/CAUSAL_LEDGER.md": {
+        "path": "results/sikh348/CAUSAL_LEDGER.md",
+        "sha256": "6bc7d973b4480a922a970ef7542f4e7459fbda0dfd761205675d2ae87d52cdc9"
+      },
+      "results/sikh348/NEXT_PROOF.md": {
+        "path": "results/sikh348/NEXT_PROOF.md",
+        "sha256": "a5e97945f85c295ca013943298ff8d894f47aca4414fc53422f7fde81e510b09"
+      },
+      "results/sikh335/REASSESSMENT_347.md": {
+        "path": "results/sikh335/REASSESSMENT_347.md",
+        "sha256": "ae8395e79a016262bed621a2cec55e6e03924f366cd2978dbe543b3f4352d3ee"
+      },
+      "results/sikh351/REQUEST.md": {
+        "path": "results/sikh351/REQUEST.md",
+        "sha256": "6583e0b2f6a7dbbe5e2a61fe6012985a74efb061cb18f121da043dd7bdce9b3b"
+      }
+    }
+  },
+  "retrospective": {
+    "policy": 1,
+    "sequence": 3,
+    "gates": {
+      "__migration__": {
+        "status": "OPEN",
+        "reason": "evidence_reconciliation",
+        "triggers": [
+          "migration-evidence:sikh351-reviewed-migration"
+        ]
+      },
+      "__allowance__": {
+        "status": "OPEN",
+        "reason": "allowance_exhausted",
+        "triggers": [
+          "migration-evidence:sikh351-reviewed-migration"
+        ]
+      }
+    },
+    "warnings": {},
+    "responses": {},
+    "proofs": {},
+    "history_api": "retrospective.events(connection, task)",
+    "instruction": "Inspect source-bound outcomes for each open finding; respond, challenge, then test. Admission is not effectiveness. No new authority."
+  }
+}

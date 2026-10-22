@@ -1,0 +1,55 @@
+{
+  "verdict": "FAIL",
+  "run_digest": "1b87fd25d021b1461087b608d50f04a54427554b95eb4bb12f834eaae077301c",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh351-c56-anatomy_custom_back/snapshot.json",
+      "sha256": "cf9f61401d8fd78c536015def7cae0769e20f97884d98b8bf1437c514e833335"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh351-c56-anatomy_custom_back/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh351-c56-anatomy_custom_back/script-diagnostics.json",
+      "sha256": "99bbbecec312f933855a69b1d853770138fd35ab62669f2fe652484d335f4ec7"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh351-c56-anatomy_custom_back/frame.png",
+      "sha256": "00baa8690179e3dfd5c04cf2f08ba733cf1117144137a6b01ecdc19579053c2c"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh351-c56-anatomy_custom_back/frames.json",
+      "sha256": "2fb46dd528d40e6bdd8244b4fdde55361879f79aafbb7e64b529029016b9cd3c"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh351-c56-anatomy_custom_back/frame-0283.png",
+      "sha256": "d22494303c792dfd6c14f0916be37c19f21a8c827504713a680c2f8f9a3ac3f4"
+    },
+    "frame_327": {
+      "path": ".runtime/factory-native/sikh351-c56-anatomy_custom_back/frame.png",
+      "sha256": "00baa8690179e3dfd5c04cf2f08ba733cf1117144137a6b01ecdc19579053c2c"
+    },
+    "frame_350": {
+      "path": ".runtime/factory-native/sikh351-c56-anatomy_custom_back/frame-0350.png",
+      "sha256": "5961c39b67a4a3506ecced25c29c59678b5c3aa4f75fb4bda774629ad9eb617c"
+    },
+    ".runtime/factory-native/sikh351-c56-anatomy_custom_back/frame-0283.png": {
+      "path": ".runtime/factory-native/sikh351-c56-anatomy_custom_back/frame-0283.png",
+      "sha256": "d22494303c792dfd6c14f0916be37c19f21a8c827504713a680c2f8f9a3ac3f4"
+    },
+    ".runtime/factory-native/sikh351-c56-anatomy_custom_back/frame.png": {
+      "path": ".runtime/factory-native/sikh351-c56-anatomy_custom_back/frame.png",
+      "sha256": "00baa8690179e3dfd5c04cf2f08ba733cf1117144137a6b01ecdc19579053c2c"
+    },
+    ".runtime/factory-native/sikh351-c56-anatomy_custom_back/frame-0350.png": {
+      "path": ".runtime/factory-native/sikh351-c56-anatomy_custom_back/frame-0350.png",
+      "sha256": "5961c39b67a4a3506ecced25c29c59678b5c3aa4f75fb4bda774629ad9eb617c"
+    }
+  },
+  "observation": "All three actual poses inspected. Sharp rear elbow slit reduced, but spear-side upper arm remains flattened/tucked behind torso with abrupt shoulder junction. Front hides much of upper arm; not a plausible bare anatomical proof.",
+  "comparison": "55 rest/native bend retain more plausible segment shape.56 plane transport improves local crease but does not establish a plausible integrated arm configuration.",
+  "open_defects": [
+    "Spear-side upper-arm/shoulder configuration remains implausible; garment construction blocked."
+  ]
+}
