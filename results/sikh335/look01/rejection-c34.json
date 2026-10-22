@@ -1,0 +1,9 @@
+{
+  "cycle": 34,
+  "status": "FAIL",
+  "reason": "34 rejects the reused template coat: removing projection exposes severe torso/shoulder intersections and cuff geometry wrongly on fingers. Layer binding is mechanically valid but only propagates an invalid base. Replan to construct continuous coat directly on the actual rest body with identical anatomical weights, true neck/wrist/hem boundaries and actual body clearance before outer layers.",
+  "source": {
+    "path": "src/movie_factory/adapters/blender/nihang_refit.py",
+    "sha256": "6031a94a1ef915416cda9985e505a5695a93e5a281cff0b093c46389ca63c69d"
+  }
+}

@@ -4,6 +4,23 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+### Exchange344 — narrower structural progress; five-cycle limit reached
+
+Motion12 corrects the measured final hoof slowdown through actual world-space
+arrival control. Appearance34–37 recover garment coverage and layer visibility,
+remove pants geometry mistakenly generated on fingers, close the waist and
+improve thumb opposition. These do not complete the isolated passage: final
+front/reverse/production views still fail grip and whole-character finish; the
+horse surface and crowd remain unqualified. Both tasks are `REPLAN_REQUIRED` at
+their limits of12 and37. No failed candidate is queued as production-ready.
+
+Renewed correction authority is needed for the next package: finish one actual
+mounted leader across stance/crest/landing, then integrate the preserved motion
+and qualify the crowd and continuous passage.90 focused tests are technical
+evidence only. See [results and next exit criteria](../../results/sikh335/REASSESSMENT_344.md)
+and [carry-forward findings](../../results/sikh335/LEARNINGS_344.md). No new remote
+protection is claimed; next release checkpoint remains350.
+
 ### Exchange343 — coherent actor attempted; production still blocked
 
 The five additional shared corrections are exhausted: motion11 and appearance30–33.

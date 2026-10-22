@@ -1,0 +1,29 @@
+{
+  "verdict": "PASS",
+  "run_digest": "c57eb5be2f1a9cf0bce0bca3c427afd35f493391bbe018107de41008229ef677",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh344-motion-c12-save/snapshot.json",
+      "sha256": "e4a0893d681f17f92ce6739e18b2c5fba27ada2a9cda9759769107fc4292bcca"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh344-motion-c12-save/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh344-motion-c12-save/script-diagnostics.json",
+      "sha256": "d8c950e68c5c42eb08e3ba4cd795b716e2b5ac082b76301b8697edb7667b2ad9"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh344-motion-c12-save/scene.blend",
+      "sha256": "e48f3465b6148d4dff1cf275b64ae5aa99494a745509a15f8dd738562fcd0ec5"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh344-motion-c12-save/patch-evidence.json",
+      "sha256": "ac9bf0664a4dd3207053ca5b1d43d3031a6811cb7cdff2685ce2a94020cddb62"
+    }
+  },
+  "observation": "Fresh native save/reopen, drivers and all190 recorded support states returned. Production scene selected before baseline; no appearance replay or acceptance.",
+  "comparison": "Technical prerequisite only. Actual trajectory and images still require review; appearance remains rejected and AV NOT_RUN.",
+  "open_defects": []
+}

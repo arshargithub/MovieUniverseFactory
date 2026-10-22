@@ -1,0 +1,29 @@
+{
+  "verdict": "PASS",
+  "run_digest": "56e4eba4d4ae1e55f6f93e256547ef511b131f8a64873a2f569e0a35e0d838f6",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh344-look-c37-save/snapshot.json",
+      "sha256": "f312bebeda7c5eb012763be4f6fc2bbba8e1fd4a28edc626b0e2cd9ccdb0a1e6"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh344-look-c37-save/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh344-look-c37-save/script-diagnostics.json",
+      "sha256": "d8c950e68c5c42eb08e3ba4cd795b716e2b5ac082b76301b8697edb7667b2ad9"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh344-look-c37-save/scene.blend",
+      "sha256": "e3786ea5a7449beb945f5b13bc8d401af88c4e4921fbd9c417b3088f2f9486a0"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh344-look-c37-save/patch-evidence.json",
+      "sha256": "0304d269c76c8ed0ac798fea76226050720bb2c0803e7a930f928b69aa7bc6ce"
+    }
+  },
+  "observation": "Native surface bindings, saved poses and protected owners verified.",
+  "comparison": "Technical prerequisite only, all visual and full-speed judgments separate.",
+  "open_defects": []
+}
