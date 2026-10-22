@@ -58,3 +58,12 @@ def test_ribbon_fills_small_edge_gaps_without_flattening():
     result=supported_ribbon(a,1)
     assert np.isfinite(result).all()
     assert np.ptp(result[30])>.05
+
+def test_crown_actual_center_and_brow_boundary():
+    from movie_factory.adapters.blender.nihang_look import aligned_crown_point,crown_point
+    p=aligned_crown_point(0,.01,.2484,.114,-.0434)
+    assert p[2]==pytest.approx(.057)
+    original=crown_point(0,.057,.2484,.114)
+    assert p[1]-original[1]==pytest.approx(-.0554)
+    # The back edge does not need to be lifted to the same height as the brow.
+    assert aligned_crown_point(np.pi,.01,.2484,.114,-.0434)[2]==pytest.approx(.045)

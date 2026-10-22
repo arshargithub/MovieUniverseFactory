@@ -38,13 +38,20 @@ def test_frame_set_strict_limits():
 def test_flight_arrives_with_velocity_then_ground_constraint_holds():
     rows=anchors();eps=.0001
     incoming=(sample(rows,350)['fold']-sample(rows,350-eps)['fold'])/eps
-    assert incoming==pytest.approx(-.125,rel=.001)
+    assert incoming==pytest.approx(-.078125,rel=.001)
     assert sample(rows,350+eps)['fold']==sample(rows,351)['fold']==0
     # Monotonic flight with no undershoot, including fractional frames.
     values=[sample(rows,342+i/100)['fold'] for i in range(801)]
     assert all(0<=v<=.5 for v in values)
     assert all(a>=b for a,b in zip(values,values[1:]))
     assert values[-101]-values[-1]>values[-201]-values[-101]
+
+def test_body_reaches_impact_with_secant_velocity():
+    rows=anchors();eps=.0001
+    incoming=(sample(rows,350)['pitch']-sample(rows,350-eps)['pitch'])/eps
+    assert incoming==pytest.approx(.45/8,rel=.001)
+    # Contact is an allowed velocity break; it is not an airborne stop.
+    assert incoming>.05
 
 def test_cast_inspection_has_no_target_or_code():
     r={'operation':'nihang_cast_inspect','frame':283,'width':64,'height':64,'samples':1}

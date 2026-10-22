@@ -88,6 +88,10 @@ def run(bpy,phase,out):
             else:pts=np.array([p.co[:] for p in sleeve.data.vertices])
             if len(pts)!=312:raise ValueError('TRANSFER_CACHE_TOPOLOGY')
             target=np.array([pts[j*24:(j+1)*24].mean(0) for j in (0,6,12)])
+            if not leader:
+                direction=target[2]-target[1];length=np.linalg.norm(direction)
+                if length<.1:raise ValueError('TRANSFER_STANDING_FOREARM_RANGE')
+                target[2]-=.018*direction/length
             side=-1 if target[0,0]<0 else 1
             if side in targets:raise ValueError('TRANSFER_CACHE_SIDE')
             targets[side]=target

@@ -76,8 +76,11 @@ def sash(bpy,root,shirt):
     old=next(o for o in root.children_recursive if o.name.startswith('297 woven diagonal sash'))
     keys=shirt.data.shape_keys
     ref=np.array([v.co[:] for v in (keys.key_blocks['bound0283'].data if keys else shirt.data.vertices)])
-    faces=[tuple(p.vertices) for p in shirt.data.polygons]
-    tree=BVHTree.FromPolygons(ref,faces)
+    bpy.context.view_layer.update()
+    evaluated=shirt.evaluated_get(bpy.context.evaluated_depsgraph_get())
+    # Layer support is the rendered cloth, including subdivision and thickness.
+    # Binding still uses original topology/pose keys below.
+    tree=BVHTree.FromPolygons([v.co for v in evaluated.data.vertices],[tuple(p.vertices) for p in evaluated.data.polygons])
     leader=root.name=='mounted leader';facing=-1 if leader else 1
     rows=61;cols=9;panels=[];missing=0
     for side in (facing,-facing):
@@ -104,8 +107,10 @@ def sash(bpy,root,shirt):
     mat=old.data.materials[0].copy();mat.name='MF Nihang continuous worn sash'
     ob=mesh(bpy,'MF Nihang continuous shoulder sash '+root.name,points.reshape(-1,3),quads,shirt.parent,mat,shirt)
     bind_overlay(bpy,ob,shirt,ref)
-    solid=ob.modifiers.new('Turned woven sash thickness','SOLIDIFY');solid.thickness=.002
     sub=ob.modifiers.new('Soft supported ribbon','SUBSURF');sub.levels=1;sub.render_levels=1
+    support=ob.modifiers.new('Final rendered cloth clearance','SHRINKWRAP')
+    support.target=shirt;support.wrap_method='NEAREST_SURFACEPOINT';support.wrap_mode='OUTSIDE_SURFACE';support.offset=.006
+    solid=ob.modifiers.new('Turned woven sash thickness','SOLIDIFY');solid.thickness=.002
     old.hide_render=True;old.hide_viewport=True
     return {'object':ob.name,'vertices':len(ob.data.vertices),'missing_edge_samples':missing,'scope':'Continuous shoulder wrap with source-bound pose cache; visual contact remains required.'}
 
@@ -148,7 +153,7 @@ def fabric(bpy,name,ochre=False):
     noise.inputs['Scale'].default_value=32;noise.inputs['Detail'].default_value=3
     noise.inputs['Roughness'].default_value=.7;l.new(tc.outputs['Object'],noise.inputs['Vector'])
     ramp=n.new('ShaderNodeValToRGB');ramp.color_ramp.elements[0].position=.22;ramp.color_ramp.elements[1].position=.78
-    colors=((.085,.044,.012,1),(.245,.145,.041,1)) if ochre else ((.008,.019,.052,1),(.031,.062,.15,1))
+    colors=((.12,.070,.022,1),(.17,.10,.030,1)) if ochre else ((.016,.034,.083,1),(.023,.046,.105,1))
     for e,color in zip(ramp.color_ramp.elements,colors):e.color=color
     l.new(noise.outputs['Fac'],ramp.inputs['Fac']);l.new(ramp.outputs['Color'],bs.inputs['Base Color'])
     fine=n.new('ShaderNodeTexNoise');fine.inputs['Scale'].default_value=950;fine.inputs['Detail'].default_value=2
@@ -164,7 +169,7 @@ def finish_layers(bpy,root):
         if ob.name.startswith(('297 chola front seam','319 chola folded placket')):
             ob.hide_render=True;ob.hide_viewport=True
         if ob.type!='MESH' or ob.hide_render:continue
-        if ob.name.startswith(('MF Nihang neutral-derived','MF Nihang wrapped','MF Nihang overlapped','MF Nihang gathered','319 flared chola skirt','297 continuous leader trousers','297 continuous crowd trousers')):
+        if ob.name.startswith(('MF Nihang neutral-derived','MF Nihang wrapped','MF Nihang overlapped','MF Nihang gathered','319 flared chola skirt','297 continuous leader trousers','297 continuous crowd trousers','320 supported mounted trousers','320 articulated gathered trousers')):
             ob.data.materials[0]=blue
         if ob.name.startswith(('MF Nihang continuous shoulder sash','297 cloth waist sash','300 loose woven sash end')):
             ob.data.materials[0]=gold
@@ -186,9 +191,6 @@ def run(bpy,out):
         upper=shirt.parent;frame=next(o for o in upper.children if o.name.startswith('secondary facial and crown'))
         old=next(o for o in frame.children if o.name.startswith('319 supported dumalla'))
         crown=look.wrapped_crown(bpy,frame,old.data.materials[0],name=='mounted leader')
-        for ob in frame.children:
-            if ob.name.startswith('MF Nihang ') and ob.type=='MESH':
-                for p in ob.data.vertices:p.co.z=.045+(p.co.z-.045)*.92
         beard=look.beard_volume(frame)
         for ob in frame.children:
             if not ob.name.startswith('319 tapered beard fibers'):continue

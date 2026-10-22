@@ -49,8 +49,14 @@ def sample(rows,frame):
             w1=2*b+a;w2=b+2*a
             return (w1+w2)/(w1/ds[j-1]+w2/ds[j])
         incoming=slope(i+1)
-        if field=='fold' and ys[i]>0 and ys[i+1]==0:
-            incoming=2*ds[i]
+        impact=rows[i]['fold']>0 and rows[i+1]['fold']==0
+        if impact and field=='fold':
+            # A twice-secant endpoint forced a shallow mid-flight pocket then
+            # a last-frame rush. Retain finite arrival without that deceleration.
+            incoming=1.25*ds[i]
+        if impact and field=='pitch':
+            # Body braking belongs after the hoof contact, not in mid-air.
+            incoming=ds[i]
         result[field]=(2*t**3-3*t*t+1)*ys[i]+(t**3-2*t*t+t)*h*slope(i)+(-2*t**3+3*t*t)*ys[i+1]+(t**3-t*t)*h*incoming
     return result
 

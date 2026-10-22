@@ -64,6 +64,14 @@ def crown_point(angle,z,height,width,offset=0):
             .012-radius*(1.12-.12*u)*math.cos(angle)+.008*u*u,z)
 
 
+def aligned_crown_point(angle,z,height,width,center_y,offset=0):
+    # Crown placement must share the actual cranial center, not the old proxy
+    # face sphere. Keep its front lower edge above the established brow height.
+    z=max(z,.045+.012*max(0,math.cos(angle)))
+    x,y,z=crown_point(angle,z,height,width,offset)
+    return (x,y+center_y-.012,z)
+
+
 def wrapped_crown(bpy,frame,material,leader):
     """Tapered supported crown and one continuous oblique cloth winding.
 
@@ -72,10 +80,28 @@ def wrapped_crown(bpy,frame,material,leader):
     for obj in frame.children:
         if obj.name.startswith(('319 supported dumalla','319 overlapping tied cloth','319 restrained chakram')):
             obj.hide_render=True;obj.hide_viewport=True
-    height=.270 if leader else .220
+    from mathutils import Vector
+    from mathutils.bvhtree import BVHTree
+    head=next(o for o in frame.parent.children if o.name.startswith('secondary adult head'))
+    transform=frame.matrix_world.inverted()@head.matrix_world
+    head_points=[transform@v.co for v in head.data.vertices]
+    skin=BVHTree.FromPolygons(head_points,[tuple(p.vertices) for p in head.data.polygons])
+    band=[p for p in head_points if .05<p.z<.10]
+    if len(band)<20:raise ValueError('LOOK_CROWN_CRANIAL_BAND_MISSING')
+    center_y=(min(p.y for p in band)+max(p.y for p in band))/2
+    if not -.09<center_y<.02:raise ValueError('LOOK_CROWN_CENTER_RANGE')
+    height=(.270 if leader else .220)*.92
     width=.114 if leader else .108
     def point(angle,z,offset=0):
-        return crown_point(angle,z,height,width,offset)
+        p=Vector(aligned_crown_point(angle,z,height,width,center_y,offset))
+        axis=Vector((p.x,p.y-center_y,0));radius=axis.length
+        if radius>1e-8:
+            axis/=radius;hit=skin.ray_cast(Vector((axis.x*.35,center_y+axis.y*.35,p.z)),-axis)[0]
+            if hit is not None:
+                needed=math.hypot(hit.x,hit.y-center_y)+.004+offset
+                if needed-radius>.035:raise ValueError('LOOK_CROWN_HEAD_FIT_EXCESS')
+                if needed>radius:p.x=axis.x*needed;p.y=center_y+axis.y*needed
+        return tuple(p)
     points=[];rows=41;cols=97
     for j in range(rows):
         z=.045+height*j/(rows-1)
@@ -112,7 +138,7 @@ def wrapped_crown(bpy,frame,material,leader):
             a=math.tau*k/(cols-1)
             p=point(a,z,.0015*(1-u)*math.cos(a*9))
             shrink=1-.80*u
-            points.append((p[0]*shrink,.012+(p[1]-.012)*shrink,z))
+            points.append((p[0]*shrink,center_y+(p[1]-center_y)*shrink,z))
     top=mesh(bpy,'MF Nihang gathered crown cloth',points,grid(rows,cols),material,frame,weld=True)
     return [core.name,*cloth,top.name]
 

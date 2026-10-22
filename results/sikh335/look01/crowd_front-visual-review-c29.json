@@ -1,0 +1,35 @@
+{
+  "verdict": "FAIL",
+  "run_digest": "33759836df5482b7af1d04bdcebd6b14851567bfe5fbd5be6a5d054641b2ee89",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh342-look-c29-crowd_front/snapshot.json",
+      "sha256": "1445a2c263729f8f33629a17f3bfa8196cbe5206eddee39dc8425c3091ed28ce"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh342-look-c29-crowd_front/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh342-look-c29-crowd_front/script-diagnostics.json",
+      "sha256": "99bbbecec312f933855a69b1d853770138fd35ab62669f2fe652484d335f4ec7"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh342-look-c29-crowd_front/frame.png",
+      "sha256": "d63c1db2167874e6124ca0a4a0657a90b43582a6d910fd56047f997ca6f2bfe9"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh342-look-c29-crowd_front/frames.json",
+      "sha256": "63da59631a58e5f0e25a65700f2c553963e51572619ec469d6113cc51e075a21"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh342-look-c29-crowd_front/frame.png",
+      "sha256": "d63c1db2167874e6124ca0a4a0657a90b43582a6d910fd56047f997ca6f2bfe9"
+    }
+  },
+  "observation": "Actual29 improves crown placement, reduces cloth blotching and removes obsolete trim, but wrist/cuff still has visible cut-through and the neck/collar/shoulder read remains rigid and schematic. Eyes/face/beard and crown still do not meet the accepted same-film supporting-character floor. Do not propagate or present as ready.",
+  "comparison": "Compared actual29 leader and crowd front/reverse with actual27 and accepted Pashtun450. Coherent shirt and saddle contact are usable component progress, not whole-character acceptance. Production29 pose batch NOT_RUN because representative already fails.",
+  "open_defects": [
+    "Actual29 improves crown placement, reduces cloth blotching and removes obsolete trim, but wrist/cuff still has visible cut-through and the neck/collar/shoulder read remains rigid and schematic. Eyes/face/beard and crown still do not meet the accepted same-film supporting-character floor. Do not propagate or present as ready."
+  ]
+}
