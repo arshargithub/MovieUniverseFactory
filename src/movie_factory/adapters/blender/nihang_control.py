@@ -27,7 +27,7 @@ def validate(recipe):
         if type(recipe[key]) is not int or not lo <= recipe[key] <= hi:
             raise ValueError('NIHANG_RECIPE_BOUND:' + key)
     if recipe['operation']=='nihang_frames':
-        if not isinstance(recipe.get('view','production'),str) or recipe.get('view','production') not in {'production','leader_front','leader_reverse','crowd_front','crowd_reverse','neutral_front','neutral_back','neutral_side'}:
+        if not isinstance(recipe.get('view','production'),str) or recipe.get('view','production') not in {'production','leader_front','leader_reverse','leader_contact','crowd_front','crowd_reverse','neutral_front','neutral_back','neutral_side'}:
             raise ValueError('NIHANG_DIAGNOSTIC_VIEW')
         frames=recipe['frames']
         if (not isinstance(frames,list) or not 1<=len(frames)<=16 or
@@ -40,6 +40,14 @@ def validate(recipe):
 def diagnostic_camera(bpy,view):
     """Temporary evidence camera only. No production-camera key edits or save."""
     from mathutils import Vector
+    if view=='leader_contact':
+        rig=bpy.data.objects['MF coherent Nihang rig'];root=bpy.data.objects['mounted leader']
+        target=rig.matrix_world@rig.pose.bones['finger3-1.L'].head
+        data=bpy.data.cameras.new('MF diagnostic camera temporary');data.type='ORTHO';data.ortho_scale=.40
+        camera=bpy.data.objects.new('MF diagnostic camera temporary',data);bpy.context.scene.collection.objects.link(camera)
+        camera.location=target+root.matrix_world.to_quaternion()@Vector((.8,-1.4,.20))
+        camera.rotation_euler=(target-camera.location).to_track_quat('-Z','Y').to_euler()
+        return camera
     if view.startswith('neutral_'):
         if bpy.context.scene.name!='MF neutral garment studio':raise ValueError('NEUTRAL_VIEW_SCENE')
         target=Vector((0,0,1.19))

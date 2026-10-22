@@ -36,7 +36,7 @@ def validate(recipe):
         elif kind=='neutral_actor_transfer':
             if set(edit)!={'kind','target','phase'} or name!='mounted leader' or edit['phase'] not in {'leader','near_crowd'}:
                 raise ValueError('PATCH_TRANSFER_FIELDS')
-        elif kind in {'coherent_actor','coherent_refit'}:
+        elif kind in {'coherent_actor','coherent_refit','mounted_finish345','mounted_cloth345'}:
             if set(edit)!={'kind','target'} or name!='mounted leader':raise ValueError('PATCH_ACTOR_FIELDS')
         elif kind=='supporting_look':
             if set(edit)!={'kind','target'} or name!='mounted leader':raise ValueError('PATCH_LOOK_FIELDS')
@@ -91,7 +91,7 @@ def apply(bpy, recipe,diagnostic_dir=None):
     for edit in recipe['edits']:
         if edit['kind'] in {'neutral_garment_proof','neutral_actor_transfer'}:
             if bpy.data.objects.get('mounted leader') is None:raise ValueError('PATCH_NEUTRAL_OWNER')
-        elif edit['kind'] in {'supporting_look','supporting_finish','coherent_actor','coherent_refit'}:
+        elif edit['kind'] in {'supporting_look','supporting_finish','coherent_actor','coherent_refit','mounted_finish345','mounted_cloth345'}:
             if bpy.data.objects.get('mounted leader') is None or bpy.data.objects.get('fitted saddle blanket292') is None:
                 raise ValueError('PATCH_LOOK_OBJECTS')
         elif edit['kind'] in {'repair_bbone_targets','supported_pose','supported_motion'}:
@@ -107,7 +107,12 @@ def apply(bpy, recipe,diagnostic_dir=None):
             names.add(edit['target'])
     support_evidence=[]
     for edit in recipe['edits']:
-        if edit['kind']=='coherent_refit':
+        if edit['kind'] in {'mounted_finish345','mounted_cloth345'}:
+            import importlib.util
+            spec=importlib.util.spec_from_file_location('mf_nihang_finish345',Path(__file__).with_name('nihang_finish345.py'))
+            finish=importlib.util.module_from_spec(spec);spec.loader.exec_module(finish)
+            support_evidence.append({'finish345':(finish.cloth if edit['kind']=='mounted_cloth345' else finish.run)(bpy,diagnostic_dir)})
+        elif edit['kind']=='coherent_refit':
             import importlib.util
             spec=importlib.util.spec_from_file_location('mf_nihang_refit',Path(__file__).with_name('nihang_refit.py'))
             refit=importlib.util.module_from_spec(spec);spec.loader.exec_module(refit)
