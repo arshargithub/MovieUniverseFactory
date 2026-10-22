@@ -1,0 +1,280 @@
+{
+  "packet_digest": "3608ab734020915104df26957fd0e496e2fa02484296916c11ffca3cff144452",
+  "scope": "Software implementation only; not production artistic qualification",
+  "checks": [
+    {
+      "id": "reuse_envelope",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Reuse existing resource manifests and bind exact proof versions and conditions.",
+      "observation": "Changed rig conditions, proof removal, source replacement and dependent-task holds are exercised.",
+      "evidence": [
+        {
+          "path": "results/workflow350/verification.json",
+          "sha256": "b5a08c716e8513e96c9490b5c56b34ab253dc93ec205e2e6613fc8b9c6730951"
+        },
+        {
+          "path": "results/workflow350/replay-final.json",
+          "sha256": "5c5689a06c52d9c4515f0606ae18fdd6b1dca3af0e4353d0ac6b705e0352ae94"
+        },
+        {
+          "path": "docs/knowledge/RETROSPECTIVE_WORKFLOW_350.md",
+          "sha256": "b00c2ac1909d041a49b89fa2f8632dc957d7a28c6033529284fa45b11be64855"
+        }
+      ]
+    },
+    {
+      "id": "authority",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Keep implementation offline and preserve original limits.",
+      "observation": "Live appearance52/52 and motion12/12 read-only states remain unmigrated; no native/provider calls or added spend.",
+      "evidence": [
+        {
+          "path": "results/workflow350/verification.json",
+          "sha256": "b5a08c716e8513e96c9490b5c56b34ab253dc93ec205e2e6613fc8b9c6730951"
+        },
+        {
+          "path": "results/workflow350/replay-final.json",
+          "sha256": "5c5689a06c52d9c4515f0606ae18fdd6b1dca3af0e4353d0ac6b705e0352ae94"
+        },
+        {
+          "path": "docs/knowledge/RETROSPECTIVE_WORKFLOW_350.md",
+          "sha256": "b00c2ac1909d041a49b89fa2f8632dc957d7a28c6033529284fa45b11be64855"
+        }
+      ]
+    },
+    {
+      "id": "strategy",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Implement349 in the existing event controller and native bridge.",
+      "observation": "Earliest recurrence/restart/test-admission proof passes; seven historical classifications exercise targeted versus causal responses.",
+      "evidence": [
+        {
+          "path": "results/workflow350/verification.json",
+          "sha256": "b5a08c716e8513e96c9490b5c56b34ab253dc93ec205e2e6613fc8b9c6730951"
+        },
+        {
+          "path": "results/workflow350/replay-final.json",
+          "sha256": "5c5689a06c52d9c4515f0606ae18fdd6b1dca3af0e4353d0ac6b705e0352ae94"
+        },
+        {
+          "path": "docs/knowledge/RETROSPECTIVE_WORKFLOW_350.md",
+          "sha256": "b00c2ac1909d041a49b89fa2f8632dc957d7a28c6033529284fa45b11be64855"
+        }
+      ]
+    },
+    {
+      "id": "visual_gate",
+      "kind": "review",
+      "status": "PASS",
+      "action_taken": "Keep software review distinct from production visual approval.",
+      "observation": "The false-PASS negative control still escapes; no new image, motion or AV qualification claimed.",
+      "evidence": [
+        {
+          "path": "results/workflow350/verification.json",
+          "sha256": "b5a08c716e8513e96c9490b5c56b34ab253dc93ec205e2e6613fc8b9c6730951"
+        },
+        {
+          "path": "results/workflow350/replay-final.json",
+          "sha256": "5c5689a06c52d9c4515f0606ae18fdd6b1dca3af0e4353d0ac6b705e0352ae94"
+        },
+        {
+          "path": "docs/knowledge/RETROSPECTIVE_WORKFLOW_350.md",
+          "sha256": "b00c2ac1909d041a49b89fa2f8632dc957d7a28c6033529284fa45b11be64855"
+        }
+      ]
+    },
+    {
+      "id": "anticipation",
+      "kind": "review",
+      "status": "PASS",
+      "action_taken": "Probe stale receipts, corrected history, concurrent callbacks, changed proofs, exhaustion and transactional failure.",
+      "observation": "The focused suite passes including capability invalidation and rollback before a native review could be retained without its finding.",
+      "evidence": [
+        {
+          "path": "results/workflow350/verification.json",
+          "sha256": "b5a08c716e8513e96c9490b5c56b34ab253dc93ec205e2e6613fc8b9c6730951"
+        },
+        {
+          "path": "results/workflow350/replay-final.json",
+          "sha256": "5c5689a06c52d9c4515f0606ae18fdd6b1dca3af0e4353d0ac6b705e0352ae94"
+        },
+        {
+          "path": "docs/knowledge/RETROSPECTIVE_WORKFLOW_350.md",
+          "sha256": "b00c2ac1909d041a49b89fa2f8632dc957d7a28c6033529284fa45b11be64855"
+        }
+      ]
+    },
+    {
+      "id": "stopping",
+      "kind": "review",
+      "status": "PASS",
+      "action_taken": "Close only the software scope and identify the next production proof.",
+      "observation": "Existing construction allowances are exhausted; historical replay is not prospective reduction in Director inputs.",
+      "evidence": [
+        {
+          "path": "results/workflow350/verification.json",
+          "sha256": "b5a08c716e8513e96c9490b5c56b34ab253dc93ec205e2e6613fc8b9c6730951"
+        },
+        {
+          "path": "results/workflow350/replay-final.json",
+          "sha256": "5c5689a06c52d9c4515f0606ae18fdd6b1dca3af0e4353d0ac6b705e0352ae94"
+        },
+        {
+          "path": "docs/knowledge/RETROSPECTIVE_WORKFLOW_350.md",
+          "sha256": "b00c2ac1909d041a49b89fa2f8632dc957d7a28c6033529284fa45b11be64855"
+        }
+      ]
+    },
+    {
+      "id": "versioning",
+      "kind": "technical",
+      "status": "PASS",
+      "action_taken": "Pin policy and exact evidence in append-only events and recheck admissions.",
+      "observation": "Changed source bytes, proof versions and test plans block; explicit migration retains counts and creates an unknown-evidence obligation.",
+      "evidence": [
+        {
+          "path": "results/workflow350/verification.json",
+          "sha256": "b5a08c716e8513e96c9490b5c56b34ab253dc93ec205e2e6613fc8b9c6730951"
+        },
+        {
+          "path": "results/workflow350/replay-final.json",
+          "sha256": "5c5689a06c52d9c4515f0606ae18fdd6b1dca3af0e4353d0ac6b705e0352ae94"
+        },
+        {
+          "path": "docs/knowledge/RETROSPECTIVE_WORKFLOW_350.md",
+          "sha256": "b00c2ac1909d041a49b89fa2f8632dc957d7a28c6033529284fa45b11be64855"
+        }
+      ]
+    },
+    {
+      "id": "economics",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Use local mocked/offline tests and record a partial verification interval.",
+      "observation": "No paid calls or new dependencies; overall work time and improvement percentage remain unmeasured.",
+      "evidence": [
+        {
+          "path": "results/workflow350/verification.json",
+          "sha256": "b5a08c716e8513e96c9490b5c56b34ab253dc93ec205e2e6613fc8b9c6730951"
+        },
+        {
+          "path": "results/workflow350/replay-final.json",
+          "sha256": "5c5689a06c52d9c4515f0606ae18fdd6b1dca3af0e4353d0ac6b705e0352ae94"
+        },
+        {
+          "path": "docs/knowledge/RETROSPECTIVE_WORKFLOW_350.md",
+          "sha256": "b00c2ac1909d041a49b89fa2f8632dc957d7a28c6033529284fa45b11be64855"
+        }
+      ]
+    },
+    {
+      "id": "retrieval",
+      "kind": "technical",
+      "status": "PASS",
+      "action_taken": "Use the fresh350 software packet and manually reconcile348 source findings.",
+      "observation": "Active controller findings enter packets; no unsupported claim that the global catalog already indexes all new historical conclusions.",
+      "evidence": [
+        {
+          "path": "results/workflow350/verification.json",
+          "sha256": "b5a08c716e8513e96c9490b5c56b34ab253dc93ec205e2e6613fc8b9c6730951"
+        },
+        {
+          "path": "results/workflow350/replay-final.json",
+          "sha256": "5c5689a06c52d9c4515f0606ae18fdd6b1dca3af0e4353d0ac6b705e0352ae94"
+        },
+        {
+          "path": "docs/knowledge/RETROSPECTIVE_WORKFLOW_350.md",
+          "sha256": "b00c2ac1909d041a49b89fa2f8632dc957d7a28c6033529284fa45b11be64855"
+        }
+      ]
+    },
+    {
+      "id": "current_state",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Read actual current production task snapshots without migrating them.",
+      "observation": "Appearance52/52 and motion12/12 retained; accepted Pashtun media and production assets not edited.",
+      "evidence": [
+        {
+          "path": "results/workflow350/verification.json",
+          "sha256": "b5a08c716e8513e96c9490b5c56b34ab253dc93ec205e2e6613fc8b9c6730951"
+        },
+        {
+          "path": "results/workflow350/replay-final.json",
+          "sha256": "5c5689a06c52d9c4515f0606ae18fdd6b1dca3af0e4353d0ac6b705e0352ae94"
+        },
+        {
+          "path": "docs/knowledge/RETROSPECTIVE_WORKFLOW_350.md",
+          "sha256": "b00c2ac1909d041a49b89fa2f8632dc957d7a28c6033529284fa45b11be64855"
+        }
+      ]
+    },
+    {
+      "id": "au_reuse",
+      "kind": "review",
+      "status": "PASS",
+      "action_taken": "Separate retained neutral proof from changed actor qualification.",
+      "observation": "Frozen c23 positive and changed-use cases have different outcomes; numerical landing proof does not qualify whole rearing.",
+      "evidence": [
+        {
+          "path": "results/workflow350/verification.json",
+          "sha256": "b5a08c716e8513e96c9490b5c56b34ab253dc93ec205e2e6613fc8b9c6730951"
+        },
+        {
+          "path": "results/workflow350/replay-final.json",
+          "sha256": "5c5689a06c52d9c4515f0606ae18fdd6b1dca3af0e4353d0ac6b705e0352ae94"
+        },
+        {
+          "path": "docs/knowledge/RETROSPECTIVE_WORKFLOW_350.md",
+          "sha256": "b00c2ac1909d041a49b89fa2f8632dc957d7a28c6033529284fa45b11be64855"
+        }
+      ]
+    },
+    {
+      "id": "au_review",
+      "kind": "review",
+      "status": "PASS",
+      "action_taken": "Preserve original method failures and test the review mechanism itself.",
+      "observation": "c13 missing proof, c35 representation regression and c48 falsifier trigger when correctly classified; semantic truth remains a review responsibility.",
+      "evidence": [
+        {
+          "path": "results/workflow350/verification.json",
+          "sha256": "b5a08c716e8513e96c9490b5c56b34ab253dc93ec205e2e6613fc8b9c6730951"
+        },
+        {
+          "path": "results/workflow350/replay-final.json",
+          "sha256": "5c5689a06c52d9c4515f0606ae18fdd6b1dca3af0e4353d0ac6b705e0352ae94"
+        },
+        {
+          "path": "docs/knowledge/RETROSPECTIVE_WORKFLOW_350.md",
+          "sha256": "b00c2ac1909d041a49b89fa2f8632dc957d7a28c6033529284fa45b11be64855"
+        }
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "prediction": "A manual replan could exhaust the limit without triggering synthesis.",
+      "observation": "Review identified an uncovered manual transition; the final test exercises this path.",
+      "response": "Centralized exhaustion-event capture and tested extension retention.",
+      "result": "resolved"
+    },
+    {
+      "prediction": "An unrelated PASS or changed proof could clear a finding.",
+      "observation": "Negative-control/worker PASS, changed conditions and replacement proof tests block the claimed effect or reuse.",
+      "response": "Bind effect to post-admission production/diagnostic evidence and exact proof version.",
+      "result": "resolved"
+    },
+    {
+      "prediction": "A structurally valid false visual PASS can evade policy.",
+      "observation": "The explicit false-PASS test confirms this semantic limitation.",
+      "response": "Limit qualification to declared-evidence workflow; retain source review and prospective test.",
+      "result": "resolved"
+    }
+  ],
+  "adjacent_regressions": "Reviewed lightweight routing, shared correction limits, native recovery, reference roles, proof manifests, staged runner and prior knowledge/review controls. No production assets changed.",
+  "stopping_reason": "Offline implementation, API/migration procedure and seven frozen classifications complete. Next requires authorized prospective bare-deformation and preserved-garment transfer proof; no efficiency or artistic pass claimed."
+}

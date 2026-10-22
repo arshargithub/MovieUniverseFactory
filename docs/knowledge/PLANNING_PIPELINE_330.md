@@ -5,6 +5,14 @@ extends the existing controller, not a new orchestration service. The requested
 software scope is complete after the linked qualification; it is not a claim of
 better animation or autonomous studio-quality production.
 
+**350 operational extension:** read
+[Retrospective workflow and operating procedure](RETROSPECTIVE_WORKFLOW_350.md)
+before continuing covered production tasks. Registered outcome events now enforce
+scoped retrospective/revalidation obligations before dependent execution and
+delivery. Admission to test a response is distinct from demonstrated effectiveness;
+existing authority and correction limits remain binding. Legacy tasks require
+reviewed migration;350 did not migrate or resume the exhausted Nihang tasks.
+
 ## Critique and design decisions
 
 The idea is sound **if stages constrain subsequent work**. Merely splitting one

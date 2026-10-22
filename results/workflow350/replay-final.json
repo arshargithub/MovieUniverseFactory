@@ -1,0 +1,206 @@
+{
+  "policy_version": 1,
+  "engine": "230d279e44506c94ecd3f3a75ec114c5ec298186debdded7913b4bb45ee3f402",
+  "case_spec_sha256": "ffc105a85f5da82dd7527fd12759a8a3df4d5b50656c291f8b990f356822b49e",
+  "scope": "Analyst-authored hindsight classifications, not blind prediction or new media review",
+  "no_native_or_provider_calls": true,
+  "cases": [
+    {
+      "id": "c13-missing-neutral-proof",
+      "sources": {
+        "results/sikh335/look01/challenge-verdict-c13.json": "cac390da6b151b9f0f5115ab4e53f020d600e00dbb332bf0a448a7fc23a7e740",
+        "results/sikh348/RETROSPECTIVE.md": "7f2327e244caa61de93e8ef8da25d2bbb2919bb6cfa5baff6a4cfd36431dbcb1"
+      },
+      "observations": [
+        {
+          "requirement": "garment",
+          "status": "FAIL",
+          "foundation": true,
+          "observation": "The admitted method substituted rest-sleeve mathematics for the required native neutral garment proof."
+        }
+      ],
+      "expected": [
+        "garment"
+      ],
+      "actual": [
+        "garment"
+      ],
+      "passed": true,
+      "gates": {
+        "garment": {
+          "status": "OPEN",
+          "reason": "strategy_falsifier_or_regression",
+          "triggers": [
+            "c13-missing-neutral-proof"
+          ]
+        }
+      }
+    },
+    {
+      "id": "c23-useful-neutral-proof",
+      "sources": {
+        "results/sikh335/look01/neutral_front-visual-review-c23.json": "355233320c63c3359b38ce9176cfc6953d88a9f4781042d3ef868b61c86cfa10"
+      },
+      "observations": [
+        {
+          "requirement": "garment",
+          "status": "PASS",
+          "observation": "A neutral garment proof is useful without qualifying the complete actor."
+        },
+        {
+          "requirement": "whole_actor",
+          "status": "NOT_TESTED",
+          "observation": "A neutral garment proof is useful without qualifying the complete actor."
+        }
+      ],
+      "expected": [],
+      "actual": [],
+      "passed": true,
+      "gates": {}
+    },
+    {
+      "id": "c23-transfer-to-changed-actor",
+      "sources": {
+        "results/sikh348/RETROSPECTIVE.md": "7f2327e244caa61de93e8ef8da25d2bbb2919bb6cfa5baff6a4cfd36431dbcb1",
+        "results/sikh335/look01/leader_front-visual-review-c24.json": "07c1f581868359fe3bd9a5113fa3c4a2b34862e1348ba7af4700ab53ef7be57f"
+      },
+      "observations": [
+        {
+          "requirement": "garment",
+          "status": "NOT_TESTED",
+          "dependency_changed": true,
+          "observation": "Preserve the source proof; the new actor and rig need targeted transfer qualification."
+        }
+      ],
+      "expected": [
+        "garment"
+      ],
+      "actual": [
+        "garment"
+      ],
+      "passed": true,
+      "gates": {
+        "garment": {
+          "status": "OPEN",
+          "reason": "targeted_revalidation",
+          "triggers": [
+            "c23-transfer-to-changed-actor"
+          ]
+        }
+      }
+    },
+    {
+      "id": "c35-coverage-is-not-clothing",
+      "sources": {
+        "results/sikh335/look01/leader_front-visual-review-c35.json": "1380103f4592ed5306303cae945658581a2a9630ff927c1e7291be2951253d00",
+        "results/sikh348/RETROSPECTIVE.md": "7f2327e244caa61de93e8ef8da25d2bbb2919bb6cfa5baff6a4cfd36431dbcb1"
+      },
+      "observations": [
+        {
+          "requirement": "coverage",
+          "status": "PASS",
+          "observation": "Improved coverage does not replace independent garment form; the previously useful form regressed."
+        },
+        {
+          "requirement": "garment",
+          "status": "FAIL",
+          "regressed": true,
+          "observation": "Improved coverage does not replace independent garment form; the previously useful form regressed."
+        }
+      ],
+      "expected": [
+        "garment"
+      ],
+      "actual": [
+        "garment"
+      ],
+      "passed": true,
+      "gates": {
+        "garment": {
+          "status": "OPEN",
+          "reason": "strategy_falsifier_or_regression",
+          "triggers": [
+            "c35-coverage-is-not-clothing"
+          ]
+        }
+      }
+    },
+    {
+      "id": "c48-predicted-shell-failure",
+      "sources": {
+        "results/sikh335/look01/challenge-verdict-c48.json": "b150062dcc9d05955a5e1b4a353fc531a02b39a912a249fe210a914a6fe4ba60",
+        "results/sikh335/REASSESSMENT_347.md": "ae8395e79a016262bed621a2cec55e6e03924f366cd2978dbe543b3f4352d3ee"
+      },
+      "observations": [
+        {
+          "requirement": "garment",
+          "status": "FAIL",
+          "falsified": true,
+          "observation": "The challenge predicted shrunken shell or clipping; the actual failure must redirect the method."
+        }
+      ],
+      "expected": [
+        "garment"
+      ],
+      "actual": [
+        "garment"
+      ],
+      "passed": true,
+      "gates": {
+        "garment": {
+          "status": "OPEN",
+          "reason": "strategy_falsifier_or_regression",
+          "triggers": [
+            "c48-predicted-shell-failure"
+          ]
+        }
+      }
+    },
+    {
+      "id": "motion12-narrow-success",
+      "sources": {
+        "results/sikh335/motion01/landing-review-c12.md": "d0fada04fcdbb952b29178817f673295a1f6b85d46c40bc08c819f0956a51a94"
+      },
+      "observations": [
+        {
+          "requirement": "hoof_arrival",
+          "status": "PASS",
+          "observation": "Retain the world-space arrival improvement; it does not pass whole rearing or AV."
+        },
+        {
+          "requirement": "whole_rearing",
+          "status": "NOT_TESTED",
+          "observation": "Retain the world-space arrival improvement; it does not pass whole rearing or AV."
+        }
+      ],
+      "expected": [],
+      "actual": [],
+      "passed": true,
+      "gates": {}
+    },
+    {
+      "id": "c51-technical-not-artistic",
+      "sources": {
+        "results/sikh335/REASSESSMENT_347.md": "ae8395e79a016262bed621a2cec55e6e03924f366cd2978dbe543b3f4352d3ee"
+      },
+      "observations": [
+        {
+          "requirement": "__worker__",
+          "status": "FAIL",
+          "observation": "The absent saddle object caused a technical failure before a candidate, not evidence of an artistic capability ceiling."
+        },
+        {
+          "requirement": "whole_actor",
+          "status": "NOT_TESTED",
+          "observation": "The absent saddle object caused a technical failure before a candidate, not evidence of an artistic capability ceiling."
+        }
+      ],
+      "expected": [],
+      "actual": [],
+      "passed": true,
+      "gates": {}
+    }
+  ],
+  "passed": true,
+  "semantic_limit": "A false PASS without failure flags still evades the trigger. Dedicated regression retains this counterexample. No Director-input savings measured."
+}

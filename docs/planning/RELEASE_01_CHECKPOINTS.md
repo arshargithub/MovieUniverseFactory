@@ -1,5 +1,30 @@
 # Release 01 — checkpoints
 
+## CP-035 — exchange350, 2026-10-22
+
+The Sikh sequence remains the production dependency. Since330, controlled native
+work and numerous appearance/motion corrections produced useful narrow proofs,
+but no accepted whole Nihang leader/rearing/crowd passage.348's retrospective
+identified lost garment form through integration and warnings that did not alter
+the next operation.350 implements the approved workflow response, not new footage.
+
+- [Retrospective controls](../knowledge/RETROSPECTIVE_WORKFLOW_350.md) now capture
+  outcomes and enforce scoped obligations on registered paths.452 offline tests
+  and seven historical classifications pass; false semantic PASS remains possible.
+- [Production next proof](../../results/sikh348/NEXT_PROOF.md): qualify bare
+  deformation and transfer23's useful cloth form before whole mounted finish.
+  Existing appearance52/52 and motion12/12 remain exhausted and unmigrated;
+  renewed authority is needed. Full-speed AV remains Director-owned.
+- Accepted Pashtun20s is unchanged and provisional until full-trailer release.
+  Sikh/Gurkha/ending, trailer and two episodes remain unfinished. Process tests
+  are not production gate advancement or an artistic completion percentage.
+- Scoped implementation and design work is retained locally. Before350 commits,
+  origin/main..HEAD contained104 commits; the accumulated range was not reviewed
+  or authorized for a broad push. No remote push, S3 copy or restore verification
+  occurred. Local persistence is not fresh off-device protection.
+
+Next checkpoint360. [Verification and remaining boundaries](../../results/workflow350/VERIFICATION.md).
+
 ## CP-033 — exchange330, 2026-10-21
 
 Current release dependency remains the Sikh sequence, specifically credible

@@ -4,6 +4,23 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+### Exchange350 — retrospective control implemented and tested offline
+
+The approved349 proposal now has append-only outcome records, persistent scoped
+obligations, response/challenge/test/effect separation, proof-condition checks
+and guards on registered execution/delivery paths. Native-step and worker failures
+feed the same policy; shared correction limits and failed history remain intact.
+[Operating procedure](../knowledge/RETROSPECTIVE_WORKFLOW_350.md) and
+[verification](../../results/workflow350/VERIFICATION.md) record452 focused tests,
+seven hindsight classifications and the retained false-PASS semantic control.
+No production-quality or measured efficiency improvement is inferred.
+
+No live migration or construction occurred. Appearance52/max52 and motion12/max12
+remain exhausted. Next: renew construction authority, reconcile/migrate existing
+state, then prove bare deformation and transfer23's useful garment form before
+whole-actor finish or crowd propagation. CP-035 records this software checkpoint;
+next checkpoint360. No broad accumulated push or fresh remote-backup claim.
+
 ### Exchange349 — critically reviewed retrospective workflow proposal
 
 The [final proposal](RETROSPECTIVE_WORKFLOW_PROPOSAL_349.md) consolidates the

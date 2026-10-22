@@ -1,0 +1,76 @@
+{
+  "tests": "452 passed in 16.85s",
+  "test_receipt": {
+    "path": ".runtime/context-hygiene/runs/retrospective350-final/receipt.json",
+    "sha256": "9ee131ee71a8a072f3ae6e016ed844019359f844e03c78799bf93a628a95b377"
+  },
+  "test_stdout": {
+    "path": ".runtime/context-hygiene/runs/retrospective350-final/stdout.log",
+    "sha256": "c0bc6b3fd22dcb62bb85132e3ca5ffab29120d39ff63e7347e9bdb42300f7084"
+  },
+  "test_stderr": {
+    "path": ".runtime/context-hygiene/runs/retrospective350-final/stderr.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "historical_cases": 7,
+  "evidence": [
+    {
+      "path": "src/movie_factory/retrospective.py",
+      "sha256": "230d279e44506c94ecd3f3a75ec114c5ec298186debdded7913b4bb45ee3f402"
+    },
+    {
+      "path": "src/movie_factory/production_workflow.py",
+      "sha256": "7f441e4b72953e1847746dafba2a1d3701452d3887b15b4cbb98ced5d196134e"
+    },
+    {
+      "path": "src/movie_factory/native_admission.py",
+      "sha256": "069c0576be969e11926a592ed4d1f6959e82c0a1bfb390663bf57ea2a1cb5026"
+    },
+    {
+      "path": "src/movie_factory/planning_pipeline.py",
+      "sha256": "c9925280a599a28d29f9283b56103a345b57651f7e6528068af685969bc4c497"
+    },
+    {
+      "path": "src/movie_factory/production_allowance.py",
+      "sha256": "e2b38dc65436328a03c7a73405fffd79652a691bc38047ed21f884632b1aefa9"
+    },
+    {
+      "path": "tests/test_retrospective350.py",
+      "sha256": "c8c294f193d5fd3448e58f2b7cd06fac32d07ccf69d7464e8bd3a1e6ddc1b280"
+    },
+    {
+      "path": "docs/knowledge/RETROSPECTIVE_WORKFLOW_350.md",
+      "sha256": "b00c2ac1909d041a49b89fa2f8632dc957d7a28c6033529284fa45b11be64855"
+    },
+    {
+      "path": "docs/knowledge/PLANNING_PIPELINE_330.md",
+      "sha256": "ce6bfc3668ef68a8fc4d194b68959c05b022d2b68169436e2694a40740c04a8b"
+    },
+    {
+      "path": "results/workflow350/replay-final.json",
+      "sha256": "5c5689a06c52d9c4515f0606ae18fdd6b1dca3af0e4353d0ac6b705e0352ae94"
+    }
+  ],
+  "live_states_read_only": {
+    "sikh335-supporting-appearance": {
+      "state_hash": "30bf7fbac200cadf43645b1079ca5dbca96920bee070ca8f8acfc830dcdd97cd",
+      "stage": "REPLAN_REQUIRED",
+      "cycle": 52,
+      "max_corrections": 52
+    },
+    "sikh335-continuous-performance": {
+      "state_hash": "707656ae1790b1713303e6986d4653e5410f72bbc4bdc1b15f49d19e2aae9868",
+      "stage": "REPLAN_REQUIRED",
+      "cycle": 12,
+      "max_corrections": 12
+    }
+  },
+  "production_migrations": 0,
+  "native_processes": 0,
+  "provider_calls": 0,
+  "new_spend": 0,
+  "uploads": 0,
+  "production_approved": false,
+  "measured_efficiency_gain": null,
+  "semantic_negative_control": "False well-formed PASS remains undetectable; passing this regression demonstrates the limitation, not visual qualification."
+}

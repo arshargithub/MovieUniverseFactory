@@ -1,0 +1,43 @@
+{
+  "events": [
+    {
+      "activity_id": "workflow350-final-verification",
+      "episode_id": "offline-implementation",
+      "event_id": "workflow350-verify-start",
+      "event_type": "work_started",
+      "evidence_ref": null,
+      "experiment_id": "workflow350",
+      "note": "Partial measured interval only; earlier source recovery and implementation not timed. No production campaign opened.",
+      "phase": "verification-documentation",
+      "reason": null,
+      "run_id": null,
+      "schema_version": "1.0",
+      "task_id": null,
+      "turn_id": null,
+      "utc": "2026-10-22T22:26:12.046585+00:00"
+    },
+    {
+      "activity_id": "workflow350-final-verification",
+      "episode_id": "offline-implementation",
+      "event_id": "workflow350-verify-end",
+      "event_type": "work_ended",
+      "evidence_ref": null,
+      "experiment_id": "workflow350",
+      "note": "Partial measured interval only; earlier source recovery and implementation not timed. No production campaign opened.",
+      "phase": "verification-documentation",
+      "reason": null,
+      "run_id": null,
+      "schema_version": "1.0",
+      "task_id": null,
+      "turn_id": null,
+      "utc": "2026-10-22T22:34:44.942625+00:00"
+    }
+  ],
+  "elapsed_seconds": 512.8960399627686,
+  "verified_director_wait_seconds": 0,
+  "gaps": [
+    "Source recovery and implementation before recorded start",
+    "Final Git and response overhead after end"
+  ],
+  "scope": "Verification and documentation elapsed interval, overlapping test time included once. Not total work, model time, production time or efficiency improvement."
+}
