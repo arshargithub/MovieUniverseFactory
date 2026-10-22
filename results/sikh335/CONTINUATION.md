@@ -1,5 +1,30 @@
 # Nihang work remains active
 
+## Current boundary after exchange339 (supersedes snapshots below)
+
+Appearance is REPLAN_REQUIRED, cycle12/max12. Separate explicit339 approval
+extended8 to12, not a double-counted earlier reply. All four new native attempts
+failed before a saved candidate:9 stale sleeve object frames;10 inappropriate
+straight endpoint length guard;11 and12 actual cloth displacement guards.
+Final116.709mm maximum is localized to the raised sleeve elbow. Do not silently
+raise the90mm guard, relaunch, reset counters or claim a visual failure/success
+for a garment never rendered. See `REASSESSMENT_339.md` and `look01/exhaustion-c12.json`.
+
+Correction8's five actual images are rejected in the four new visual-review
+records. New connected garment shell implementation and30 focused passing tests
+do not qualify drape or appearance. The original candidate5/master is untouched.
+All new workers ended; no render is left running. No provider/spending/upload.
+
+Motion remains9/max10.190-frame silent internal diagnostic is complete, with
+verified frame/movie hashes in `motion01/continuous-evidence-c9.json`. No AV pass
+or integrated review queue exists; appearance still blocks. Its inherited frames
+and unadmitted c8 subset remain explicitly distinguished in that receipt.
+
+Proposed next work is a neutral-garment/support proof followed by bent-arm fit,
+on the SAME appearance task, requiring additional Director correction authority.
+No authority has been inferred for that next attempt. Keep source snapshots
+before future native runs; no exact intermediate-handler replay claim this pass.
+
 ## Live continuation after appearance correction4 (supersedes all snapshots below)
 
 - Appearance is `REPLAN_REQUIRED`, cycle4/max4. c1 failed before save on a
