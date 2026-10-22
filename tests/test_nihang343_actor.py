@@ -23,3 +23,7 @@ def test_belt_above_highest_nonplanar_hem_not_global_minimum():
                 [-.18,-.1,1.5],[.18,-.1,1.5],[.18,.1,1.5],[-.18,.1,1.5]])
     faces=[(0,1,5,4),(1,2,6,5),(2,3,7,6),(3,0,4,7)]
     assert supported_waist_height(p,faces)==pytest.approx(1.083)
+
+def test_low_rest_fingertips_are_not_pants():
+    p=np.array([[.55,-.35,1.03],[-.55,-.35,1.03],[.12,-.05,1.03]])
+    assert garment_mask(p,'pants',{},{}).tolist()==[False,False,True]

@@ -17,7 +17,7 @@ def module(name):
 
 def garment_mask(points,kind,wrists,elbows):
     p=np.asarray(points);z=p[:,2]
-    if kind=='pants':return (z>.075)&(z<1.075)
+    if kind=='pants':return (z>.075)&(z<1.075)&(np.abs(p[:,0])<.34)
     if kind=='boots':return z<.255
     keep=(z>1.025)&(z<1.60)
     for side in (-1,1):

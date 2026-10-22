@@ -104,6 +104,22 @@ def contact_frames(records):
     return result
 
 
+def arrival_position(start, previous, end, elapsed, duration):
+    """Final airborne path: matched incoming vertical speed, finite impact.
+
+    Unlike easing a fold channel to zero, this constrains the visible endpoint.
+    Duration and elapsed are seconds; samples are 24fps. Ground contact is a
+    velocity discontinuity absorbed by the existing post-contact body response.
+    """
+    if not 0<=elapsed<=duration or duration<=0:raise ValueError('ARRIVAL_TIME')
+    v=(start[2]-previous[2])*24
+    acceleration=2*(end[2]-start[2]-v*duration)/(duration*duration)
+    if v>=0 or acceleration>=0:raise ValueError('ARRIVAL_NOT_ACCELERATING_DOWN')
+    u=elapsed/duration;s=u*u*(3-2*u)
+    return [start[0]+(end[0]-start[0])*s,start[1]+(end[1]-start[1])*s,
+            start[2]+v*elapsed+.5*acceleration*elapsed*elapsed]
+
+
 def rider_samples(rows):
     """Pelvis-relative counterbalance with a critically damped response.
 
@@ -200,6 +216,13 @@ def run(bpy,edit,support):
     for frame in range(252,442):
         values=sample(edit['anchors'],frame)
         values['forelegs']=foreleg_phases(edit['anchors'],frame)
+        for index,side in enumerate(('L','R')):
+            begin=343+index;end_frame=350+index
+            if begin<frame<=end_frame:
+                start=next(r for r in records if r['frame']==begin)['hind_support'][index]['fore_visible_hoof']
+                prior=next(r for r in records if r['frame']==begin-1)['hind_support'][index]['fore_visible_hoof']
+                end=list(baseline['feet'][side]['f_hoof'].translation)
+                values['forelegs'][side]['arrival_target']=arrival_position(start,prior,end,(frame-begin)/24,(end_frame-begin)/24)
         support_rows=support.apply_pose(bpy,values,baseline)
         m=(Quaternion(axis,values['pitch']*.38).to_matrix()@base_rider).to_4x4()
         m.translation=rig.matrix_world@seat

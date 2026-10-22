@@ -163,6 +163,13 @@ def apply_pose(bpy, edit, baseline=None):
         fold=leg.get('fold',edit.get('fold',1.0))
         placement=direction((0,leg.get('back',0)*unit,leg.get('lift',0)*unit))
         wrist=(feet[side]['forefoot_fk'].translation+placement).lerp(folded_wrist,fold)
+        down=(feet[side]['f_toe_fk'].translation-feet[side]['forefoot_fk'].translation).normalized()
+        down=down.lerp(direction((0,.15,-math.sqrt(1-.15**2))),fold).normalized()
+        arrival=leg.get('arrival_target')
+        if arrival is not None:
+            toe_delta=feet[side]['f_hoof'].translation-feet[side]['f_toe_fk'].translation
+            toe_delta=Quaternion(direction((1,0,0)),.25*fold)@toe_delta
+            wrist=Vector(arrival)-down*length('forefoot_fk'+suffix)-toe_delta
         # A straight interpolation of world-space wrist targets can leave the
         # reachable sphere as the shoulder rises on its arc. In flight only,
         # lift/retract the wrist to a flexed reachable target, never stretch a
@@ -170,7 +177,7 @@ def apply_pose(bpy, edit, baseline=None):
         reach=length('upper_arm_fk'+suffix)+length('forearm_fk'+suffix)
         requested_distance=(wrist-shoulder).length
         wrist_adjustment=0.
-        if fold>1e-6 and requested_distance>reach*.992:
+        if arrival is None and fold>1e-6 and requested_distance>reach*.992:
             wrist_adjustment=requested_distance-reach*.992
             if wrist_adjustment>.12*unit:
                 raise ValueError(f'SUPPORT_FLIGHT_PATH_TOO_FAR frame={frame} side={side} adjustment={wrist_adjustment:.6f}')
@@ -180,8 +187,6 @@ def apply_pose(bpy, edit, baseline=None):
             raise ValueError(f'SUPPORT_FORE_REACH frame={frame} side={side} fold={fold:.6f} distance={distance:.6f} reach={reach:.6f}')
         elbow=Vector(bend_joint(list(shoulder),list(wrist),length('upper_arm_fk'+suffix),
                     length('forearm_fk'+suffix),list(direction((0,1,0)))))
-        down=(feet[side]['f_toe_fk'].translation-feet[side]['forefoot_fk'].translation).normalized()
-        down=down.lerp(direction((0,.15,-math.sqrt(1-.15**2))),fold).normalized()
         fetlock=wrist+down*length('forefoot_fk'+suffix)
         segment('upper_arm_fk'+suffix,shoulder,elbow)
         segment('forearm_fk'+suffix,elbow,wrist)
@@ -195,6 +200,8 @@ def apply_pose(bpy, edit, baseline=None):
             'flight_wrist_adjustment':wrist_adjustment,'fore_shoulder':list(shoulder),'fore_elbow':list(elbow),
             'fore_carpus':list(wrist),'fore_fetlock':list(fetlock),
             'fore_fold':fold,'fore_placement':list(placement),
+            'arrival_target':arrival,
+            'arrival_error':None if arrival is None else (rig.matrix_world@rig.pose.bones['DEF-f_hoof'+suffix].head-Vector(arrival)).length,
             'fore_visible_hoof':list(rig.matrix_world @ rig.pose.bones['DEF-f_hoof'+suffix].head),
             'support_target':list(feet[side]['r_hoof'].translation),
             'visible_hoof':list(rig.matrix_world @ rig.pose.bones['DEF-r_hoof'+suffix].head)})
