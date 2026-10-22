@@ -1,4 +1,4 @@
-# Exchange342 — construction and evidence lessons in progress
+# Exchange342 — construction and evidence lessons
 
 No whole-character, ensemble or production pass follows from this record.
 The ten extra corrections form one shared pool. Source snapshots and original
@@ -52,3 +52,26 @@ review must include reverse support and actual animated poses; native persistenc
 must inspect true external dependencies; all evidence review must wait for the
 claimed check's result. These are scoped campaign learnings, not a claim that the
 global knowledge index or semantic retrieval calibration has already been updated.
+
+## Closure findings
+
+- **Fit in the actual anatomical frame.**29 measured the cranial band center
+  rather than assuming the legacy crown origin matched it. The approximately55mm
+  discrepancy explained the previous fit-guard failure. Preserve displacement
+  guards; do not inflate their thresholds to admit a mismatched frame.
+- **Secure a complete actor before costume propagation.** A qualified garment
+  does not rescue incompatible neck, wrist and waist proxy interfaces.29 still
+  fails the whole-character floor; next proof must include all these interfaces
+  together before any ensemble duplication.
+- **Owning scene is an execution precondition.** Motion10 challenge found a
+  neutral-active parent feeding a production-scene-dependent capture. Test both
+  scene states and explicitly select the unique owner before bake. Source/hash
+  preservation and interpolation tests alone do not establish evaluated poses.
+- **Correction counts include failed plans and implementation failures.** The
+  ten shared corrections20–29 are consumed; motion10 is separately exhausted.
+  Do not rename a pass, silently revise admitted sources or convert a failed
+  representative into a production-review candidate to continue beyond authority.
+
+Apply these through the next task's grounding sources and interface proof. These
+entries have not yet been incorporated into or calibrated against the global
+retrieval index; that work must be explicit before claiming automatic reuse.
