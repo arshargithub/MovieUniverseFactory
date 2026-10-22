@@ -4,6 +4,20 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+### Exchange349 — critically reviewed retrospective workflow proposal
+
+The [final proposal](RETROSPECTIVE_WORKFLOW_PROPOSAL_349.md) consolidates the
+retrospective-trigger discussion. It distinguishes routine outcome capture,
+targeted revalidation and causal retros; captures native-step and pre-candidate
+failures; preserves the adopted three-similar-variant reassessment default with
+an earlier warning; and separates response admission from proven effectiveness.
+Proposed enforcement is scoped to registered controller/native paths, with
+transactional obligations, stable requirement/proof lineage, unchanged authority
+and counters, offline tests, historical semantic controls and a prospective
+Nihang pilot. No implementation or new production work is authorized by this
+proposal request.348 next-proof findings remain active; appearance52/motion12
+remain exhausted. Next checkpoint350; no remote push or new protection claim.
+
 ### Exchange348 — retrospective changes the next construction proof
 
 Read-only cross-cycle audit finds a useful neutral/bend garment proof at23 was
