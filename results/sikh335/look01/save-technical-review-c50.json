@@ -1,0 +1,29 @@
+{
+  "verdict": "PASS",
+  "run_digest": "b659e125a496a830583d55bc11968cdf7306fd8c14f1b0a9f3640138e95ca1a1",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh347-look-c50-save/snapshot.json",
+      "sha256": "4bdc8176ce54dc7fe3634d7a654e370cd72da7b9d89e557210cc41739c3898cc"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh347-look-c50-save/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh347-look-c50-save/script-diagnostics.json",
+      "sha256": "d8c950e68c5c42eb08e3ba4cd795b716e2b5ac082b76301b8697edb7667b2ad9"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh347-look-c50-save/scene.blend",
+      "sha256": "34bd6b0c31370409d10960e4fddae8e996d0e6e23bbb4c1acdeca4902124d71c"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh347-look-c50-save/patch-evidence.json",
+      "sha256": "6b715662ac0806a68271354a88932b6d5a73bbfbbfd52edc6382bc8b15170696"
+    }
+  },
+  "observation": "Protected owners and source diagnostics verified; complete actor mutation saved and reopened.",
+  "comparison": "Technical prerequisite only, no image or performance pass.",
+  "open_defects": []
+}

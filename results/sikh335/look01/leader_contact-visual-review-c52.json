@@ -1,0 +1,50 @@
+{
+  "verdict": "FAIL",
+  "run_digest": "4afa7f6ed1089411bacc6c4b168b370e114fb407256bce6446c221faa3d244e4",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh347-look-c52-leader_contact/snapshot.json",
+      "sha256": "4bdc8176ce54dc7fe3634d7a654e370cd72da7b9d89e557210cc41739c3898cc"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh347-look-c52-leader_contact/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh347-look-c52-leader_contact/script-diagnostics.json",
+      "sha256": "99bbbecec312f933855a69b1d853770138fd35ab62669f2fe652484d335f4ec7"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh347-look-c52-leader_contact/frame.png",
+      "sha256": "cdfa9a8cc4f127d7979ba2a1f5af4246d4a6d796052b2cd366909879ab21075e"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh347-look-c52-leader_contact/frames.json",
+      "sha256": "d24c2baadeb02c4ebfb198665b3afeaee685f98743ac58dd858ad84a8a49783f"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh347-look-c52-leader_contact/frame.png",
+      "sha256": "cdfa9a8cc4f127d7979ba2a1f5af4246d4a6d796052b2cd366909879ab21075e"
+    },
+    "frame_327": {
+      "path": ".runtime/factory-native/sikh347-look-c52-leader_contact/frame-0327.png",
+      "sha256": "4c34fbb7f990322f8cceebae9ca42709a4e92d40869b447c11703b5c61316ff5"
+    },
+    "frame_350": {
+      "path": ".runtime/factory-native/sikh347-look-c52-leader_contact/frame-0350.png",
+      "sha256": "6978b13ae1dfeab00c269dac8dfe2a8f20865346b8d906d8853b2e165d7462eb"
+    },
+    "accepted_co_star": {
+      "path": ".runtime/art-direction/series01-finish248/opening08/actual-450.png",
+      "sha256": "c874497d244bb8b896d952a8ee30536d33b79bee3d62d4cefd50c8221a37498a"
+    }
+  },
+  "observation": "283/327/350: fingers surround the shaft but are smooth, widely separated and simplified; wrist transition remains angular, especially327. An endpoint or reduced wrist-angle metric is not a complete anatomical pass. Shoulder/elbow controls independently fail.",
+  "comparison": "Actual three poses in each view inspected. Accepted co-star is finish control, not identity. No direct real-time AV or all-frame claim.",
+  "open_defects": [
+    "Whole actor same-film finish",
+    "Bare shoulder/elbow and clothed sleeve deformation",
+    "Complete contact/anatomy",
+    "Horse/crowd and isolated passage remain open"
+  ]
+}

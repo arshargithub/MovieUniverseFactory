@@ -1,0 +1,38 @@
+{
+  "events": [
+    {
+      "activity_id": "sikh347-work",
+      "actor": "assistant",
+      "episode_id": "first",
+      "event_id": "sikh347-work-start",
+      "event_type": "work_started",
+      "evidence_ref": null,
+      "experiment_id": "SIKH335",
+      "phase": "design",
+      "reason": "Approved complete mounted-leader five-correction package; startup reading before timestamp not measured",
+      "run_id": null,
+      "schema_version": "1.0",
+      "task_id": null,
+      "turn_id": null,
+      "utc": "2026-10-22T19:06:06.079900+00:00"
+    },
+    {
+      "event_id": "sikh347-work-end",
+      "experiment_id": "SIKH335",
+      "episode_id": "first",
+      "phase": "design",
+      "event_type": "work_ended",
+      "activity_id": "sikh347-work",
+      "utc": "2026-10-22T19:43:49.899665+00:00",
+      "note": "Exhausted five347 corrections; final whole actor FAIL; technical evidence preserved. Experiment not closed."
+    }
+  ],
+  "elapsed_seconds": 2263.8197650909424,
+  "verified_director_idle_seconds": 0,
+  "scope": "Measured active turn interval including overlapping local jobs; excludes unmeasured startup reading before work-start. No Director-response wait occurred inside this interval. Not model-only compute or total historical effort. Post-interval Git handoff overhead is outside this measurement.",
+  "lifecycle": "OPEN",
+  "gaps": [
+    "Initial continuation/source retrieval before recorded start",
+    "Final Git handoff overhead after recorded end"
+  ]
+}

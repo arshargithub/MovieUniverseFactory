@@ -4,6 +4,26 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+### Exchange347 — whole-form construction route remains unsuccessful
+
+Five corrections48–52 are exhausted. Native beard continuity and sewn edges
+improve, but complete actor controls still fail the accepted Pashtun finish
+floor. Bare-body reverse views expose shoulder/elbow deformation beneath the
+failing sleeve.51 failed on an incorrect saddle-object assumption;52 saves and
+reopens but all five view families are rejected.26 tests are technical evidence
+only. Motion12 and accepted masters remain unchanged; no crowd propagation or
+full isolated clip is admitted.
+
+The method did not follow through on346's garment-reconstruction recommendation:
+it largely continued the body-shell approach. Next proposed package must first
+discriminate bare anatomy/pose/weights, then prove independently constructed
+garment form before texture. No further cosmetic shell loop. Bind the new
+[outcome](../../results/sikh335/REASSESSMENT_347.md),
+[lessons](../../results/sikh335/LEARNINGS_347.md) and matched final controls in the
+next fresh packet; this is not automatic knowledge-index coverage. Renewed
+correction authority required. No new spend, upload, remote push or backup claim.
+Checkpoint350 remains next.
+
 ### Exchange346 — interfaces improve but whole actor remains rejected
 
 Five shared corrections end at appearance47. Regional preflight, welded/evaluated

@@ -1,0 +1,50 @@
+{
+  "verdict": "FAIL",
+  "run_digest": "ffa384ddc3730e2243730476e58bdf24c684c63f02239bbcb0a69ee8c31385ff",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh347-look-c52-leader_anatomy/snapshot.json",
+      "sha256": "4bdc8176ce54dc7fe3634d7a654e370cd72da7b9d89e557210cc41739c3898cc"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh347-look-c52-leader_anatomy/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh347-look-c52-leader_anatomy/script-diagnostics.json",
+      "sha256": "99bbbecec312f933855a69b1d853770138fd35ab62669f2fe652484d335f4ec7"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh347-look-c52-leader_anatomy/frame.png",
+      "sha256": "deb01dfd2b6ce75550e5153623af240882c02b8c511203773c684e2c3ce56af6"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh347-look-c52-leader_anatomy/frames.json",
+      "sha256": "a7d9395e01d74ade36468747b7c0d6e6f91948fa6a4c6b6e96d6196a4dd5313c"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh347-look-c52-leader_anatomy/frame.png",
+      "sha256": "deb01dfd2b6ce75550e5153623af240882c02b8c511203773c684e2c3ce56af6"
+    },
+    "frame_327": {
+      "path": ".runtime/factory-native/sikh347-look-c52-leader_anatomy/frame-0327.png",
+      "sha256": "92f724407b310b2613c5ec762b5fcd4c3a1d04a4394ef8365151aaf6e116956b"
+    },
+    "frame_350": {
+      "path": ".runtime/factory-native/sikh347-look-c52-leader_anatomy/frame-0350.png",
+      "sha256": "901fa39e364bda609ecfef8674363b5fe5bae3da27d958479107e74789c74ea6"
+    },
+    "accepted_co_star": {
+      "path": ".runtime/art-direction/series01-finish248/opening08/actual-450.png",
+      "sha256": "c874497d244bb8b896d952a8ee30536d33b79bee3d62d4cefd50c8221a37498a"
+    }
+  },
+  "observation": "283/327/350 with clothing hidden: spear-side upper arm/elbow shows a hard wedge and unnatural transition beneath the failing sleeve. Underlying anatomy/pose/weights must be discriminated before further cloth finish. Upper-arm roll is only a source-derived hypothesis, not a verified cause.",
+  "comparison": "Actual three poses in each view inspected. Accepted co-star is finish control, not identity. No direct real-time AV or all-frame claim.",
+  "open_defects": [
+    "Whole actor same-film finish",
+    "Bare shoulder/elbow and clothed sleeve deformation",
+    "Complete contact/anatomy",
+    "Horse/crowd and isolated passage remain open"
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "verdict": "FAIL",
+  "run_digest": "7ba08164cebddf75885e1ec2c514a5171447dfe1c2c929dc480c20e1a612fe93",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh347-look-c52-render/snapshot.json",
+      "sha256": "4bdc8176ce54dc7fe3634d7a654e370cd72da7b9d89e557210cc41739c3898cc"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh347-look-c52-render/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh347-look-c52-render/script-diagnostics.json",
+      "sha256": "99bbbecec312f933855a69b1d853770138fd35ab62669f2fe652484d335f4ec7"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh347-look-c52-render/frame.png",
+      "sha256": "725da6dc2fad0a5f19e0938c3068de3e82268cd548cf95fa6bbcf03e1a5635a8"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh347-look-c52-render/frames.json",
+      "sha256": "6283df7dde61c7403d8f02b3a20a7aac2feaa64747c3001899dec470a60a1e73"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh347-look-c52-render/frame.png",
+      "sha256": "725da6dc2fad0a5f19e0938c3068de3e82268cd548cf95fa6bbcf03e1a5635a8"
+    },
+    "frame_327": {
+      "path": ".runtime/factory-native/sikh347-look-c52-render/frame-0327.png",
+      "sha256": "e21361010dac7abca3e1927b6613f10914e5bdd131f1c5a54ccc34e8eac5dc2f"
+    },
+    "frame_350": {
+      "path": ".runtime/factory-native/sikh347-look-c52-render/frame-0350.png",
+      "sha256": "0a459bef95729537de7c94fcc76a80215ecbc3e27be3c99633656894d803e30c"
+    },
+    "accepted_co_star": {
+      "path": ".runtime/art-direction/series01-finish248/opening08/actual-450.png",
+      "sha256": "c874497d244bb8b896d952a8ee30536d33b79bee3d62d4cefd50c8221a37498a"
+    }
+  },
+  "observation": "283/327/350 production controls: mounted figure remains a simplified assembly rather than a same-film finished supporting character. Actor, horse and saddle form/material finish remain open. Three stills cannot establish rearing fluidity, timing or sound.",
+  "comparison": "Actual three poses in each view inspected. Accepted co-star is finish control, not identity. No direct real-time AV or all-frame claim.",
+  "open_defects": [
+    "Whole actor same-film finish",
+    "Bare shoulder/elbow and clothed sleeve deformation",
+    "Complete contact/anatomy",
+    "Horse/crowd and isolated passage remain open"
+  ]
+}
