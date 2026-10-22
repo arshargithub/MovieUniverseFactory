@@ -49,10 +49,31 @@ def repair_bbone_targets(bpy):
     return len(todo)
 
 
+def select_production_scene(bpy):
+    """Resolve the scene by ownership, never by the saved active UI scene.
+
+    A neutral fitting studio can be active in a valid parent file. Sampling
+    global object matrices in that scene yields stale pose data. Ambiguous
+    ownership is a hard failure rather than choosing the first scene.
+    """
+    names = ('horse.rig', 'HORSE hind support pivot', 'mounted leader',
+             '320 articulated upper body mounted leader')
+    owners = [s for s in bpy.data.scenes if all(n in s.objects for n in names)]
+    if len(owners) != 1:
+        raise ValueError('SUPPORT_PRODUCTION_SCENE_OWNERSHIP')
+    scene = owners[0]
+    if bpy.context.scene != scene:
+        if bpy.context.window is None:
+            raise ValueError('SUPPORT_SCENE_SWITCH_UNAVAILABLE')
+        bpy.context.window.scene = scene
+    bpy.context.view_layer.update()
+    return scene
+
+
 def capture_stance(bpy):
     """Capture once before any frame authoring; never re-sample a modified stance."""
     from mathutils import Vector
-    scene = bpy.context.scene
+    scene = select_production_scene(bpy)
     rig = bpy.data.objects['horse.rig']; pivot = bpy.data.objects['HORSE hind support pivot']
     scene.frame_set(283); bpy.context.view_layer.update()
     base_world = rig.matrix_world.copy(); base_pivot = pivot.matrix_world.copy()
