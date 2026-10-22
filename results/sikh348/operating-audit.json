@@ -1,0 +1,60 @@
+{
+  "scope": "Only audit348 measured activity, not whole campaign or historical savings.",
+  "events": [
+    {
+      "activity_id": "sikh348-retrospective",
+      "episode_id": "first",
+      "event_id": "sikh348-work-start",
+      "event_type": "work_started",
+      "evidence_ref": null,
+      "experiment_id": "SIKH335",
+      "note": "Causal audit; initial source recovery before this timestamp is unmeasured.",
+      "phase": "design",
+      "reason": null,
+      "run_id": null,
+      "schema_version": "1.0",
+      "task_id": null,
+      "turn_id": null,
+      "utc": "2026-10-22T21:19:49.225027+00:00"
+    },
+    {
+      "activity_id": "sikh348-retrospective",
+      "episode_id": "first",
+      "event_id": "sikh348-work-end",
+      "event_type": "work_ended",
+      "evidence_ref": null,
+      "experiment_id": "SIKH335",
+      "note": "Audit artifacts complete; initial source recovery and subsequent final handoff not measured. No experiment closure.",
+      "phase": "design",
+      "reason": null,
+      "run_id": null,
+      "schema_version": "1.0",
+      "task_id": null,
+      "turn_id": null,
+      "utc": "2026-10-22T21:33:47.980683+00:00"
+    }
+  ],
+  "report": {
+    "episode_id": "first",
+    "lifecycle": "OPEN",
+    "disposition": null,
+    "calendar_elapsed_seconds": null,
+    "excluded_input_wait_seconds": null,
+    "observed_excluded_input_wait_seconds": 0,
+    "net_elapsed_seconds": null,
+    "coverage_fraction": 1.0,
+    "unknown_gap_seconds": 0,
+    "uncertainties": [
+      "missing_or_duplicate_lifecycle_boundary"
+    ],
+    "jobs": [],
+    "native_jobs": [],
+    "native_job_wall_sum_seconds": 0,
+    "native_job_wall_union_seconds": null,
+    "assistant_active_union_seconds": 0,
+    "assistant_time_scope": "Recorded activity intervals only; not token generation time",
+    "human_review_seconds": null,
+    "phase_net_seconds": null,
+    "operational_proxies": {}
+  }
+}

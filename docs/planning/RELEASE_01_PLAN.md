@@ -4,6 +4,24 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+### Exchange348 — retrospective changes the next construction proof
+
+Read-only cross-cycle audit finds a useful neutral/bend garment proof at23 was
+not preserved through changed actor/rig integration.35 replaced the garment with
+a body-derived shell; later refinements retained its unsuitable clothing form.
+Known warnings at13/48 did not reliably constrain execution. Technical rejection
+containment improved, but whole actor/horse/crowd qualification has not converged.
+Motion12 remains a narrow world-space landing improvement, not complete rearing
+acceptance. [Retrospective](../../results/sikh348/RETROSPECTIVE.md),
+[causal evidence](../../results/sikh348/CAUSAL_LEDGER.md) and
+[revised proof](../../results/sikh348/NEXT_PROOF.md) are required continuation
+sources, not automatically covered global retrieval entries. The revised proof
+first discriminates bare deformation, then tests transfer of23's useful garment
+before deciding which components genuinely need reconstruction. This refines347's
+proposal, not its failed disposition. Appearance52/max52 and motion12/max12 remain
+exhausted; renewed construction authority required. No new production media,
+spend, upload, remote push or backup verification. Next checkpoint350.
+
 ### Exchange347 — whole-form construction route remains unsuccessful
 
 Five corrections48–52 are exhausted. Native beard continuity and sewn edges
