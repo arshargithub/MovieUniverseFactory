@@ -1,0 +1,29 @@
+{
+  "verdict": "PASS",
+  "run_digest": "6954da5befb5d5ee97003e50e913ba28c4c86660ab766c974180f94c5389d376",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh342-look-c23-bend/snapshot.json",
+      "sha256": "e5f24d65b99a56984232fa962c98b899460d9a3e939df6bad6474bdc7d747eef"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh342-look-c23-bend/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh342-look-c23-bend/script-diagnostics.json",
+      "sha256": "d8c950e68c5c42eb08e3ba4cd795b716e2b5ac082b76301b8697edb7667b2ad9"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh342-look-c23-bend/scene.blend",
+      "sha256": "08a6279260cb74bfc33725893e199d1a98968ca64494e61cc3a6de502a387cea"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh342-look-c23-bend/patch-evidence.json",
+      "sha256": "b7ea0a33fdf73d5560025387984753f0ea90160f986056e1a8524f61a4368c56"
+    }
+  },
+  "observation": "Saved actual neutral/bend proof preserves original scene objects and driver safety. Bounded geometric guards pass.",
+  "comparison": "Technical prerequisite only; visible form and contact still require image inspection.",
+  "open_defects": []
+}

@@ -43,6 +43,23 @@ def test_bend_preserves_shoulder_opposite_and_forearm_radius():
     assert result[0,1]<pts[0,1] # forward is -Y, never an outward elbow flip
 
 
+def test_elbow_field_never_grabs_outer_thigh():
+    pts=np.array([[.20,0,.96],[.24,.02,.91],[.18,-.07,.83],[.31,-.005,.91]])
+    result=n.bend_points(pts,math.radians(-75),np.array([False,False,False,True]))
+    np.testing.assert_array_equal(result[:3],pts[:3])
+    assert np.linalg.norm(result[3]-pts[3])>.1
+
+
+def test_connected_arm_keeps_medial_fingers_and_excludes_nearby_body():
+    pts=np.array([[.20,0,.85],[.44,0,.85],[.30,0,1.16],
+                  [.20,.1,.85],[.24,.1,.85],[.24,.1,1.16]])
+    mask=n.connected_arm(pts,[(0,1,2),(3,4,5)])
+    np.testing.assert_array_equal(mask,[True,True,True,False,False,False])
+    weights=n.bend_weights(pts,mask)
+    assert weights[0]==weights[1]==1
+    assert (weights[3:]==0).all()
+
+
 @pytest.mark.parametrize('view',['neutral_front','neutral_back','neutral_side'])
 def test_fixed_neutral_views(view):
     r=dict(operation='nihang_frames',frame=283,frames=[283],width=640,height=640,samples=16,view=view)
@@ -54,3 +71,9 @@ def test_fixed_neutral_views(view):
     ('libraries',0,True,True),('images',0,False,True),('cache_files',0,False,True)])
 def test_only_orphan_appended_libraries_are_not_runtime_dependencies(collection,users,fake,expected):
     assert c.dependency_relevant(collection,SimpleNamespace(users=users,use_fake_user=fake))==expected
+
+def test_weak_append_provenance_is_not_a_live_link():
+    lib=SimpleNamespace(users=2,use_fake_user=False)
+    assert not c.dependency_relevant('libraries',lib,[SimpleNamespace(library=None)])
+    assert c.dependency_relevant('libraries',lib,[SimpleNamespace(library=lib)])
+    assert c.dependency_relevant('images',lib,[])

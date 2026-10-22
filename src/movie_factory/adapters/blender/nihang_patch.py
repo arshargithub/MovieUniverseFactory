@@ -33,8 +33,13 @@ def validate(recipe):
         elif kind=='neutral_garment_proof':
             if set(edit)!={'kind','target','phase'} or name!='mounted leader' or edit['phase'] not in {'neutral','bend'}:
                 raise ValueError('PATCH_NEUTRAL_FIELDS')
+        elif kind=='neutral_actor_transfer':
+            if set(edit)!={'kind','target','phase'} or name!='mounted leader' or edit['phase'] not in {'leader','near_crowd'}:
+                raise ValueError('PATCH_TRANSFER_FIELDS')
         elif kind=='supporting_look':
             if set(edit)!={'kind','target'} or name!='mounted leader':raise ValueError('PATCH_LOOK_FIELDS')
+        elif kind=='supporting_finish':
+            if set(edit)!={'kind','target'} or name!='mounted leader':raise ValueError('PATCH_FINISH_FIELDS')
         elif kind == 'supported_motion':
             import importlib.util
             spec=importlib.util.spec_from_file_location('mf_nihang_motion',Path(__file__).with_name('nihang_motion.py'))
@@ -82,9 +87,9 @@ def apply(bpy, recipe,diagnostic_dir=None):
     # named derivative; it cannot overwrite an accepted existing object.
     names = set()
     for edit in recipe['edits']:
-        if edit['kind']=='neutral_garment_proof':
+        if edit['kind'] in {'neutral_garment_proof','neutral_actor_transfer'}:
             if bpy.data.objects.get('mounted leader') is None:raise ValueError('PATCH_NEUTRAL_OWNER')
-        elif edit['kind']=='supporting_look':
+        elif edit['kind'] in {'supporting_look','supporting_finish'}:
             if bpy.data.objects.get('mounted leader') is None or bpy.data.objects.get('fitted saddle blanket292') is None:
                 raise ValueError('PATCH_LOOK_OBJECTS')
         elif edit['kind'] in {'repair_bbone_targets','supported_pose','supported_motion'}:
@@ -105,11 +110,21 @@ def apply(bpy, recipe,diagnostic_dir=None):
             spec=importlib.util.spec_from_file_location('mf_nihang_neutral',Path(__file__).with_name('nihang_neutral.py'))
             neutral=importlib.util.module_from_spec(spec);spec.loader.exec_module(neutral)
             support_evidence.append({'neutral':neutral.run(bpy,edit['phase'],diagnostic_dir)})
+        elif edit['kind']=='neutral_actor_transfer':
+            import importlib.util
+            spec=importlib.util.spec_from_file_location('mf_nihang_transfer',Path(__file__).with_name('nihang_transfer.py'))
+            transfer=importlib.util.module_from_spec(spec);spec.loader.exec_module(transfer)
+            support_evidence.append({'transfer':transfer.run(bpy,edit['phase'],diagnostic_dir)})
         elif edit['kind']=='supporting_look':
             import importlib.util
             spec=importlib.util.spec_from_file_location('mf_nihang_look',Path(__file__).with_name('nihang_look.py'))
             look=importlib.util.module_from_spec(spec);spec.loader.exec_module(look)
             support_evidence.append({'look':look.run(bpy,diagnostic_dir)})
+        elif edit['kind']=='supporting_finish':
+            import importlib.util
+            spec=importlib.util.spec_from_file_location('mf_nihang_finish',Path(__file__).with_name('nihang_finish.py'))
+            finish=importlib.util.module_from_spec(spec);spec.loader.exec_module(finish)
+            support_evidence.append({'finish':finish.run(bpy,diagnostic_dir)})
         elif edit['kind'] in {'repair_bbone_targets','supported_pose','supported_motion'}:
             import importlib.util
             spec=importlib.util.spec_from_file_location('mf_nihang_support',Path(__file__).with_name('nihang_support.py'))

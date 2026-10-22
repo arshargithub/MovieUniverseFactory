@@ -1,0 +1,33 @@
+{
+  "verdict": "PASS",
+  "run_digest": "08b1997197714747700f8d7b19ae68a1b863e433d889c6a9b5b5e44577adc896",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh342-look-c23-neutral_back/snapshot.json",
+      "sha256": "e18c331b702e23f110439a74f2c01317d94b5c95a0f6d0d55bd349559a025a95"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh342-look-c23-neutral_back/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh342-look-c23-neutral_back/script-diagnostics.json",
+      "sha256": "99bbbecec312f933855a69b1d853770138fd35ab62669f2fe652484d335f4ec7"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh342-look-c23-neutral_back/frame.png",
+      "sha256": "59764d73f0c2d88a836feb567859051e61ae7e2dbab29886f22aff9776f734b2"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh342-look-c23-neutral_back/frames.json",
+      "sha256": "b84a72cf785943fc6b4ece8c39e39954d5a445f2043d634dfc31aecc8eaf0d5d"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh342-look-c23-neutral_back/frame.png",
+      "sha256": "59764d73f0c2d88a836feb567859051e61ae7e2dbab29886f22aff9776f734b2"
+    }
+  },
+  "observation": "c23 decoded pixels exactly match directly inspected c22 reverse. Connected back and sleeves; no visible neutral clipping. Suitable only to attempt bend.",
+  "comparison": "Verified decoded pixel equality to inspected c22, not new aesthetic approval.",
+  "open_defects": []
+}

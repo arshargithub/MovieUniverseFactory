@@ -1,0 +1,35 @@
+{
+  "verdict": "FAIL",
+  "run_digest": "3cd8f7664c212182b904f0f66b1a249add8dc7e92eace944e847d3ff8d5a1f5c",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh342-look-c24-leader_front/snapshot.json",
+      "sha256": "7d6a197530a8ca6f0021c8b8a1d82a123c91088c1d2ca29115676a9dc47cca37"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh342-look-c24-leader_front/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh342-look-c24-leader_front/script-diagnostics.json",
+      "sha256": "99bbbecec312f933855a69b1d853770138fd35ab62669f2fe652484d335f4ec7"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh342-look-c24-leader_front/frame.png",
+      "sha256": "a024d3bdd3f997e3e31be765cd5fb38544aaae06f075925003102f0622a6586f"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh342-look-c24-leader_front/frames.json",
+      "sha256": "6ad989da0b884bf95507594a8ccf4fefdd28a5f1c5cdc9c1c8368b95b087fed9"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh342-look-c24-leader_front/frame.png",
+      "sha256": "a024d3bdd3f997e3e31be765cd5fb38544aaae06f075925003102f0622a6586f"
+    }
+  },
+  "observation": "Actual actor front: main shirt now has continuous draped torso and connected sleeves, but retargeted sash is serrated and penetrates folds; unfinished collar edge remains visible. Face/eyes, cylindrical crown and pointed beard remain too schematic for whole-character pass.",
+  "comparison": "Compared actual neutral23 and rejected look8. Do not present as a finished character; repair support interface before propagation.",
+  "open_defects": [
+    "Actual actor front: main shirt now has continuous draped torso and connected sleeves, but retargeted sash is serrated and penetrates folds; unfinished collar edge remains visible. Face/eyes, cylindrical crown and pointed beard remain too schematic for whole-character pass."
+  ]
+}

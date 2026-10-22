@@ -14,22 +14,42 @@ BODY = 'MF Nihang neutral body proof'
 CLOTH = 'MF Nihang neutral garment proof'
 
 
-def bend_weights(points):
+def connected_arm(points, faces, cut=1.17):
+    """Below upper arm cut, topology separates hand/forearm from torso/leg."""
+    p=np.asarray(points);mask=(p[:,2]<cut)&(p[:,0]>0)
+    adj={int(i):set() for i in np.flatnonzero(mask)}
+    for face in faces:
+        members=[int(i) for i in face if mask[i]]
+        for i in members:adj[i].update(members)
+    candidates=np.flatnonzero(mask)
+    seed=int(candidates[np.argmax(p[candidates,0])]);seen={seed};stack=[seed]
+    while stack:
+        for j in adj[stack.pop()]:
+            if j not in seen:seen.add(j);stack.append(j)
+    result=np.zeros(len(p),dtype=bool);result[list(seen)]=True
+    return result
+
+
+def bend_weights(points, arm=None):
     """One right elbow test; shoulder and opposite arm are deliberately fixed."""
     p=np.asarray(points)
     t=np.clip((1.19-p[:,2])/.12,0,1)
     side=np.clip((p[:,0]-.19)/.06,0,1)
+    # Low hand vertices reach x=.199 on this donor. A lateral weight ramp
+    # splits the hand, and a rectangular cutoff cannot identify anatomy.
+    if arm is not None:side=np.where(p[:,2]<1.17,np.asarray(arm,dtype=float),side)
     return (t*t*(3-2*t))*(side*side*(3-2*side))
 
 
-def bend_points(points, angle):
+def bend_points(points, angle, arm=None):
     """Weighted rigid elbow rotation; no segment scaling or cuff target fitting."""
-    p=np.asarray(points);w=bend_weights(p)
+    p=np.asarray(points);w=bend_weights(p,arm)
     pivot=np.array([.285,-.005,1.13]);q=p-pivot
     a=angle*w;c=np.cos(a);s=np.sin(a)
     result=p.copy()
     result[:,1]=pivot[1]+q[:,1]*c-q[:,2]*s
     result[:,2]=pivot[2]+q[:,1]*s+q[:,2]*c
+    result[w==0]=p[w==0]
     return result
 
 
@@ -63,10 +83,12 @@ def run(bpy, phase, out):
             ob=bpy.data.objects.get(name)
             if ob is None or ob.get('neutral_rest_proof')!=1:raise ValueError('NEUTRAL_REST_REQUIRED')
             rest=np.array([v.co[:] for v in ob.data.vertices])
-            bent=bend_points(rest,math.radians(-75))
+            faces=[tuple(p.vertices) for p in ob.data.polygons]
+            arm=connected_arm(rest,faces)
+            bent=bend_points(rest,math.radians(-75),arm)
             ob.data.vertices.foreach_set('co',bent.ravel());ob.data.update()
             ob['proof_bend_degrees']=-75
-            np.savez_compressed(out/('body-bend.npz' if name==BODY else 'garment-bend.npz'),rest=rest,bent=bent)
+            np.savez_compressed(out/('body-bend.npz' if name==BODY else 'garment-bend.npz'),rest=rest,bent=bent,arm=arm)
             evidence[name]={'vertices':len(rest),'unchanged_shoulder':bool(np.array_equal(rest[rest[:,2]>1.21],bent[rest[:,2]>1.21])),
                             'max_displacement':float(np.linalg.norm(bent-rest,axis=1).max())}
         return {'phase':phase,'angle_degrees':-75,'objects':evidence,
@@ -112,12 +134,25 @@ def run(bpy, phase, out):
     # Smooth cut-boundary sampling before adding ease. This repairs the visibly
     # saw-toothed crop without smoothing body anatomy or hiding it under a collar.
     bm=bmesh.new();bm.from_mesh(cloth.data)
+    # Cut through faces at one coherent plane. Selecting only donor vertices
+    # above/below a height leaves a stair-stepped opening; smoothing that stair
+    # and pinning it merely preserves the defect through simulation.
+    bmesh.ops.bisect_plane(bm,geom=list(bm.verts)+list(bm.edges)+list(bm.faces),
+        dist=1e-6,plane_co=(0,0,1.425),plane_no=(0,0,1),clear_outer=True)
+    loose=[v for v in bm.verts if not v.link_faces]
+    if loose:bmesh.ops.delete(bm,geom=loose,context='VERTS')
     boundary=[v for v in bm.verts if v.is_boundary]
     for _ in range(6):
         updates={v:sum((e.other_vert(v).co for e in v.link_edges if e.is_boundary),Vector())/
                  max(1,sum(e.is_boundary for e in v.link_edges)) for v in boundary}
         for v,p in updates.items():v.co=v.co.lerp(p,.45)
     bm.to_mesh(cloth.data);bm.free();cloth.data.update()
+    bm=bmesh.new();bm.from_mesh(cloth.data);bm.verts.ensure_lookup_table()
+    neck_ids=np.array([v.index for v in bm.verts if v.is_boundary and v.co.z>1.38],dtype=int)
+    if len(neck_ids)<12:raise ValueError('NEUTRAL_NECK_BOUNDARY_MISSING')
+    if any(sum(e.is_boundary for e in bm.verts[int(i)].link_edges)!=2 for i in neck_ids):
+        raise ValueError('NEUTRAL_NECK_NONMANIFOLD')
+    bm.free()
     raw=np.array([v.co[:] for v in cloth.data.vertices]);norm=np.array([v.normal[:] for v in cloth.data.vertices])
     designed=neutral_ease(raw+norm*.018)
     start=designed.copy()
@@ -127,6 +162,11 @@ def run(bpy, phase, out):
         for i,p in enumerate(start):
             hit,n,idx,dist=tree.find_nearest(Vector(p));signed=np.dot(p-np.array(hit),np.array(n))
             if signed<.009:start[i]+=np.array(n)*(.009-signed)
+    # True opening follows a single level; radial ease leaves room for the
+    # subdivided skin without changing body anatomy or hiding the edge.
+    start[neck_ids,2]=1.427
+    radial=start[neck_ids,:2]-np.array([0,-.018])
+    start[neck_ids,:2]+=radial/np.maximum(1e-8,np.linalg.norm(radial,axis=1))[:,None]*.006
     fit=np.linalg.norm(start-designed,axis=1)
     if fit.max()>.045:raise ValueError('NEUTRAL_INITIAL_FIT_EXCESS')
     cloth.data.vertices.foreach_set('co',start.ravel());cloth.data.update()
@@ -135,6 +175,7 @@ def run(bpy, phase, out):
     pins=np.maximum.reduce([np.clip((z-1.355)/.055,0,1)*(x<.22),
                             np.clip((.995-z)/.020,0,1)*(x<.19),
                             np.clip((.94-z)/.025,0,1)*(x>.25)])
+    pins[neck_ids]=1
     for i,w in enumerate(pins):
         if w>0:group.add([i],float(w),'REPLACE')
     body.modifiers.new('Neutral support collision','COLLISION');body.collision.thickness_outer=.002
@@ -148,7 +189,7 @@ def run(bpy, phase, out):
         ev=cloth.evaluated_get(bpy.context.evaluated_depsgraph_get())
     final=np.array([v.co[:] for v in ev.data.vertices]);delta=np.linalg.norm(final-start,axis=1)
     polys=[tuple(p.vertices) for p in cloth.data.polygons]
-    np.savez_compressed(out/'neutral-proof.npz',body=points,triangles=tri,raw=raw,designed=designed,start=start,final=final,pins=pins,displacement=delta)
+    np.savez_compressed(out/'neutral-proof.npz',body=points,triangles=tri,raw=raw,designed=designed,start=start,final=final,pins=pins,displacement=delta,neck_ids=neck_ids)
     if not np.isfinite(final).all() or delta.max()>.09:raise ValueError('NEUTRAL_DRAPE_DISPLACEMENT:'+str(float(delta.max())))
     cloth.modifiers.remove(mod);cloth.data.vertices.foreach_set('co',final.ravel());cloth.data.update()
     body.modifiers.clear();cloth['neutral_rest_proof']=1
@@ -158,6 +199,20 @@ def run(bpy, phase, out):
         ob.data.materials.clear();ob.data.materials.append(mat)
         sub=ob.modifiers.new('Proof smooth surface','SUBSURF');sub.levels=1;sub.render_levels=1
     solid=cloth.modifiers.new('Fabric thickness','SOLIDIFY');solid.thickness=.0015
+    bpy.context.view_layer.update()
+    deps=bpy.context.evaluated_depsgraph_get()
+    body_eval=body.evaluated_get(deps);cloth_eval=cloth.evaluated_get(deps)
+    bp=np.array([v.co[:] for v in body_eval.data.vertices]);body_eval.data.calc_loop_triangles()
+    bt=[tuple(t.vertices) for t in body_eval.data.loop_triangles]
+    final_tree=BVHTree.FromPolygons(bp,bt,all_triangles=True)
+    cp=np.array([v.co[:] for v in cloth_eval.data.vertices]);mask=cp[:,2]>1.395
+    distances=[]
+    for p in cp[mask]:
+        hit,n,_,_=final_tree.find_nearest(Vector(p));distances.append(float(np.dot(p-np.array(hit),np.array(n))))
+    (out/'neck-clearance.json').write_text(json.dumps({'evaluated_samples':len(distances),
+        'minimum_signed_vertex_clearance':min(distances),'negative_samples':sum(v<0 for v in distances),
+        'boundary_z_range':float(np.ptp(final[neck_ids,2])),
+        'limits':'Vertex samples after all render modifiers; not continuous face-face collision proof.'},indent=2))
     # Retain neutral body and garment as real editable native meshes, not an
     # image plane or a data plot. Lighting reveals armpit and shoulder forms.
     camera_data=bpy.data.cameras.new('MF neutral camera');camera=bpy.data.objects.new('MF neutral camera',camera_data)

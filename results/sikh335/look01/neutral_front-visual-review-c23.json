@@ -1,0 +1,33 @@
+{
+  "verdict": "PASS",
+  "run_digest": "31cbbd826018c91d612c3b6fbe53b90aff27cc5c53296ba1d28f281a88678eb8",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh342-look-c23-neutral_front/snapshot.json",
+      "sha256": "e18c331b702e23f110439a74f2c01317d94b5c95a0f6d0d55bd349559a025a95"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh342-look-c23-neutral_front/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh342-look-c23-neutral_front/script-diagnostics.json",
+      "sha256": "99bbbecec312f933855a69b1d853770138fd35ab62669f2fe652484d335f4ec7"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh342-look-c23-neutral_front/frame.png",
+      "sha256": "dff5348eca06354f5670d27db5cc7bb3f2cadc2a6d6351f094b217b84ee9d2eb"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh342-look-c23-neutral_front/frames.json",
+      "sha256": "a280b7c8a3365d079cba557f0e1a4e2ac7f7329e2c299206a25de512d70818c5"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh342-look-c23-neutral_front/frame.png",
+      "sha256": "dff5348eca06354f5670d27db5cc7bb3f2cadc2a6d6351f094b217b84ee9d2eb"
+    }
+  },
+  "observation": "c23 decoded pixels exactly match directly inspected c22 front. Neutral collar and continuous shoulder/armhole fit remain suitable for elbow proof. Unfinished hem/cuffs retained, not final costume acceptance.",
+  "comparison": "Verified decoded pixel equality, not PNG-file equality. Original c22 direct inspection and erratum remain.",
+  "open_defects": []
+}

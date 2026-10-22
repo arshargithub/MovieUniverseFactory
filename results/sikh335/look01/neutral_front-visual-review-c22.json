@@ -1,0 +1,33 @@
+{
+  "verdict": "PASS",
+  "run_digest": "d8ce85794a4e4c8ad2b6b5d6dbab91e57d6e99a14a9df0a72ae95bd09034d327",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh342-look-c22-neutral_front/snapshot.json",
+      "sha256": "e18c331b702e23f110439a74f2c01317d94b5c95a0f6d0d55bd349559a025a95"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh342-look-c22-neutral_front/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh342-look-c22-neutral_front/script-diagnostics.json",
+      "sha256": "99bbbecec312f933855a69b1d853770138fd35ab62669f2fe652484d335f4ec7"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh342-look-c22-neutral_front/frame.png",
+      "sha256": "90226eb1f5374003a3b95d3c283d146f1a3397e7b1628d9e36c3cd3062443de4"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh342-look-c22-neutral_front/frames.json",
+      "sha256": "f5772b2bfaaf232ea3177fcc8f802192bd2e7fc18037136231e3323ab622dd31"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh342-look-c22-neutral_front/frame.png",
+      "sha256": "90226eb1f5374003a3b95d3c283d146f1a3397e7b1628d9e36c3cd3062443de4"
+    }
+  },
+  "observation": "Actual c22 front PNG byte-identical to directly viewed c21 front; continuous collar/shoulders, cloth bridging chest. Hem and cuffs remain unfinished. Narrow neutral fit gate only.",
+  "comparison": "SHA256 equality to c21 directly inspected image; no costume or motion acceptance.",
+  "open_defects": []
+}

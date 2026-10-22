@@ -1,0 +1,33 @@
+{
+  "verdict": "PASS",
+  "run_digest": "4412c3a20a13eb99257fb6687e08edd24ebf0e9fad787ff629f20ad70e7d6847",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh342-look-c22-neutral_back/snapshot.json",
+      "sha256": "e18c331b702e23f110439a74f2c01317d94b5c95a0f6d0d55bd349559a025a95"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh342-look-c22-neutral_back/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh342-look-c22-neutral_back/script-diagnostics.json",
+      "sha256": "99bbbecec312f933855a69b1d853770138fd35ab62669f2fe652484d335f4ec7"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh342-look-c22-neutral_back/frame.png",
+      "sha256": "181771f42fc30ac3b3a472487435d620288269c6c3d81b4619688f432879e8f1"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh342-look-c22-neutral_back/frames.json",
+      "sha256": "21d75a676c2e9b18d902ebdd2b0463233a9d1cf72a496512495877ba988c00ea"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh342-look-c22-neutral_back/frame.png",
+      "sha256": "181771f42fc30ac3b3a472487435d620288269c6c3d81b4619688f432879e8f1"
+    }
+  },
+  "observation": "Actual c22 back PNG byte-identical to directly viewed c21 back; coherent connected back/armholes. Narrow neutral fit gate only.",
+  "comparison": "SHA256 equality to c21 directly inspected image; unchanged final costume obligations.",
+  "open_defects": []
+}

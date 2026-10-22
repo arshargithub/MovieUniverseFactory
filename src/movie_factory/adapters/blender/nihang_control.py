@@ -27,7 +27,7 @@ def validate(recipe):
         if type(recipe[key]) is not int or not lo <= recipe[key] <= hi:
             raise ValueError('NIHANG_RECIPE_BOUND:' + key)
     if recipe['operation']=='nihang_frames':
-        if not isinstance(recipe.get('view','production'),str) or recipe.get('view','production') not in {'production','leader_front','leader_reverse','crowd_front','neutral_front','neutral_back','neutral_side'}:
+        if not isinstance(recipe.get('view','production'),str) or recipe.get('view','production') not in {'production','leader_front','leader_reverse','crowd_front','crowd_reverse','neutral_front','neutral_back','neutral_side'}:
             raise ValueError('NIHANG_DIAGNOSTIC_VIEW')
         frames=recipe['frames']
         if (not isinstance(frames,list) or not 1<=len(frames)<=16 or
@@ -53,11 +53,17 @@ def diagnostic_camera(bpy,view):
         return camera
     leader=view.startswith('leader_')
     root=bpy.data.objects['mounted leader' if leader else 'FOOT WARRIOR 0']
+    if not leader:
+        # Diagnostic only: neighbours occluded the target's face and entire torso.
+        # Production frames retain the complete ensemble unchanged.
+        for other in bpy.data.objects:
+            if other.name.startswith('FOOT WARRIOR ') and other!=root:
+                for child in other.children_recursive:child.hide_render=True
     upper=next(o for o in root.children if o.name.startswith('320 articulated upper body'))
     head=next(o for o in upper.children if o.name.startswith('secondary adult head'))
     target=head.matrix_world.translation+Vector((0,0,-.22 if leader else -.35))
     facing=-1 if leader else 1
-    if view=='leader_reverse':facing=1
+    if view.endswith('_reverse'):facing*=-1
     offset=root.matrix_world.to_quaternion()@Vector((.6,facing*1.9,.12))
     data=bpy.data.cameras.new('MF diagnostic camera temporary')
     camera=bpy.data.objects.new('MF diagnostic camera temporary',data)
@@ -263,22 +269,29 @@ def script_diagnostics(bpy):
             'orphan_driver_count': sum(d['users'] == 0 for d in drivers)}
 
 
-def dependency_relevant(collection, item):
+def dependency_relevant(collection, item, linked_ids=None):
     """A fully appended, unused library is input provenance, not a live link.
 
     Blender drops that orphan ID on save/reopen. Keep input provenance in the
     admitted source bindings; retain every actually used/fake-user library here.
     Other dependency collections are unchanged.
     """
-    return not (collection=='libraries' and item.users==0 and not item.use_fake_user)
+    if collection!='libraries':return True
+    if linked_ids is not None:
+        return any(getattr(block,'library',None)==item for block in linked_ids)
+    return item.users!=0 or item.use_fake_user
 
 
 def dependencies(bpy, root):
     """Scoped external-file inventory; not complete simulation portability."""
     found = {}
+    # Appending can leave nonzero weak provenance users on a library ID, even
+    # though no data remains externally linked. Inventory actual linked IDs;
+    # the admitted donor hash remains immutable input provenance separately.
+    all_ids=list(bpy.data.user_map())
     for collection in ('images', 'libraries', 'cache_files', 'movieclips', 'sounds', 'fonts', 'volumes'):
         for item in getattr(bpy.data, collection):
-            if not dependency_relevant(collection,item):continue
+            if not dependency_relevant(collection,item,all_ids):continue
             filename = getattr(item, 'filepath', '')
             if not filename or filename == '<builtin>' or getattr(item, 'packed_file', None):
                 continue

@@ -1,0 +1,43 @@
+{
+  "verdict": "PASS",
+  "run_digest": "0afc446b7ae12a76a71a6938da56a2015b2091785effffdf42a26a95c0600cd5",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh342-look-c21-bend/snapshot.json",
+      "sha256": "20a1c95212ec9c0c04770136372bad3206730857d6bc14aa511fbf486a241193"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh342-look-c21-bend/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh342-look-c21-bend/script-diagnostics.json",
+      "sha256": "d8c950e68c5c42eb08e3ba4cd795b716e2b5ac082b76301b8697edb7667b2ad9"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh342-look-c21-bend/scene.blend",
+      "sha256": "9c42e6fec4bc90651974706b12261007d83d2ab5ee8352699f03872043f863ed"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh342-look-c21-bend/patch-evidence.json",
+      "sha256": "a78d1e90836ba1d16295ab716bf8158dbfbb62888a2ff60f6a5103479b6d90a0"
+    }
+  },
+  "observation": "Technical prerequisite only. Original four production owners unchanged and safe. Shoulder/opposite arm are bit-identical at Blender float32 mesh-write precision. Prior float64 assertion failed on 6.94e-18m cancellation and remains recorded.",
+  "comparison": "No visual bend or integration pass. Saved inputs/outputs independently checked for finiteness and storage precision.",
+  "open_defects": [],
+  "numeric_evidence": {
+    "body": {
+      "path": ".runtime/factory-native/sikh342-look-c21-bend/body-bend.npz",
+      "sha256": "6e5ff9590a40ff220b975bb183a0a138eff711d52a8e239b90124bfbbc2ca922",
+      "max_float64_arithmetic_delta": 6.938893903907228e-18,
+      "exact_float32_mesh_write_identity": true
+    },
+    "garment": {
+      "path": ".runtime/factory-native/sikh342-look-c21-bend/garment-bend.npz",
+      "sha256": "c5b1b31ca6fc7213e02446edccc52b8c8d35549d5ebbd68c726dcd9042c2a6f8",
+      "max_float64_arithmetic_delta": 6.938893903907228e-18,
+      "exact_float32_mesh_write_identity": true
+    }
+  }
+}

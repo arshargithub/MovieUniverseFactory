@@ -1,0 +1,35 @@
+{
+  "verdict": "FAIL",
+  "run_digest": "8d07165ef6c3f4e81b00b100a4ce465e54a84cae2e1de4cc934c619e9f7d7631",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh342-look-c22-bend_front/snapshot.json",
+      "sha256": "8957343efe1f6454589ad47c71ee994f776575abfed308251ae8bfd5280db5ca"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh342-look-c22-bend_front/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh342-look-c22-bend_front/script-diagnostics.json",
+      "sha256": "99bbbecec312f933855a69b1d853770138fd35ab62669f2fe652484d335f4ec7"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh342-look-c22-bend_front/frame.png",
+      "sha256": "e237a06c9b82095a8cd3705cf8e3daec03200f7867c91bc36945e7b5e91eb5c9"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh342-look-c22-bend_front/frames.json",
+      "sha256": "470eca6dc8d96303b07e92e0f44f5f7964553e119a9532724aece2d9ba481c35"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh342-look-c22-bend_front/frame.png",
+      "sha256": "e237a06c9b82095a8cd3705cf8e3daec03200f7867c91bc36945e7b5e91eb5c9"
+    }
+  },
+  "observation": "Actual c22 front still leaves a sliver of the lowered hand and a sharp sleeve projection. Investigation using donor connectivity shows the low lateral fragment belongs to hand/forearm, not thigh. Coordinate threshold splits the hand. Earlier thigh diagnosis is superseded.",
+  "comparison": "Need connected anatomical region, not a spatial cutoff that splits fingers or wrist. No visual bend pass.",
+  "open_defects": [
+    "Actual c22 front still leaves a sliver of the lowered hand and a sharp sleeve projection. Investigation using donor connectivity shows the low lateral fragment belongs to hand/forearm, not thigh. Coordinate threshold splits the hand. Earlier thigh diagnosis is superseded."
+  ]
+}

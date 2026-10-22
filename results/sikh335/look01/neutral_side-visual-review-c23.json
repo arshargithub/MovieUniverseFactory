@@ -1,0 +1,33 @@
+{
+  "verdict": "PASS",
+  "run_digest": "1ae5a5fb70a55115d5210607d3bfa15ee75479f2c4f9c660893532ad27895dc2",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh342-look-c23-neutral_side/snapshot.json",
+      "sha256": "e18c331b702e23f110439a74f2c01317d94b5c95a0f6d0d55bd349559a025a95"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh342-look-c23-neutral_side/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh342-look-c23-neutral_side/script-diagnostics.json",
+      "sha256": "99bbbecec312f933855a69b1d853770138fd35ab62669f2fe652484d335f4ec7"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh342-look-c23-neutral_side/frame.png",
+      "sha256": "7389cbe20a42c648905a7f77d5baea610027b14f3f7312450231fe5dbcaf3b8a"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh342-look-c23-neutral_side/frames.json",
+      "sha256": "ca86acdff734279343a7f18e27b62cc394f02109d91eafebfdfb571ac24a8155"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh342-look-c23-neutral_side/frame.png",
+      "sha256": "7389cbe20a42c648905a7f77d5baea610027b14f3f7312450231fe5dbcaf3b8a"
+    }
+  },
+  "observation": "c23 decoded pixels exactly match directly viewed c22 side; continuous shoulder, armhole and collar. This qualifies neutral fit only, with finish detail still pending.",
+  "comparison": "Verified decoded equality. Bend remains unreviewed.",
+  "open_defects": []
+}

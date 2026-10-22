@@ -1,0 +1,46 @@
+{
+  "id": "sikh342-look-c20-neutral_front",
+  "task": "sikh335-supporting-appearance",
+  "step": "neutral_front",
+  "cycle": 20,
+  "fingerprint": "7dae9b8b4033d0e364327b39ef4ace7944b43ac3334394a801d030a5d7ebfa1b",
+  "parent": {
+    "path": ".runtime/factory-native/sikh342-look-c20-save/scene.blend",
+    "sha256": "79ee1f26e217d96c63bdc18c04422cde60ee01396c07ff8233892d6421c41664"
+  },
+  "job_digest": "9c4ba73af5a5ee27e73665e53f7cca38b17eea82096f27a5873c893a72f20e0e",
+  "handler_digest": "606c0f7b6974c57b7521b026748819fa5cd718eb0edfceea6705f421ff16df2d",
+  "status": "FAILED",
+  "artifacts": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh342-look-c20-neutral_front/snapshot.json",
+      "sha256": "e18c331b702e23f110439a74f2c01317d94b5c95a0f6d0d55bd349559a025a95"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh342-look-c20-neutral_front/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh342-look-c20-neutral_front/script-diagnostics.json",
+      "sha256": "99bbbecec312f933855a69b1d853770138fd35ab62669f2fe652484d335f4ec7"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh342-look-c20-neutral_front/frame.png",
+      "sha256": "cd629fd17ec3075d86b5b7c0532893c5ae850639b3a1116de1e394344c8affb4"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh342-look-c20-neutral_front/frames.json",
+      "sha256": "e459a6883446a501584cceeea4d22a36bf865fb9f001e563413694d0a88784f0"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh342-look-c20-neutral_front/frame.png",
+      "sha256": "cd629fd17ec3075d86b5b7c0532893c5ae850639b3a1116de1e394344c8affb4"
+    }
+  },
+  "dependencies": {},
+  "recipe": {
+    "path": "results/sikh335/look01/neutral_front-recipe-c20.json",
+    "sha256": "eff9c030e5fb6931e4ced4c95c510484084b4c43f076f457a67cd8111fb9f27e"
+  },
+  "error": "Blocked: NATIVE_DEPENDENCY_DRIFT"
+}

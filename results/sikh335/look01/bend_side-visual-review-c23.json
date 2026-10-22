@@ -1,0 +1,33 @@
+{
+  "verdict": "PASS",
+  "run_digest": "7b42584304635953a6191aed2083bad258e5d7257cc445013067720286ae8422",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh342-look-c23-bend_side/snapshot.json",
+      "sha256": "e5f24d65b99a56984232fa962c98b899460d9a3e939df6bad6474bdc7d747eef"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh342-look-c23-bend_side/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh342-look-c23-bend_side/script-diagnostics.json",
+      "sha256": "99bbbecec312f933855a69b1d853770138fd35ab62669f2fe652484d335f4ec7"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh342-look-c23-bend_side/frame.png",
+      "sha256": "1ee42dc37c74d59177be20d10894de4208caf2d54e81850f24355597581e6c6f"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh342-look-c23-bend_side/frames.json",
+      "sha256": "0607270842d80e110cef2f15552a3cd632440c7f9d5ff1114a5677927cdaf8ab"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh342-look-c23-bend_side/frame.png",
+      "sha256": "1ee42dc37c74d59177be20d10894de4208caf2d54e81850f24355597581e6c6f"
+    }
+  },
+  "observation": "Actual c23 side: hand/forearm now coherent; elbow bends with connected sleeve, no projecting sliver or obvious skin-through. Cuff rests around wrist, shoulder unchanged. Allows actual-actor transfer, not production appearance pass.",
+  "comparison": "Direct comparison to neutral side and failed c21/c22 front. No motion claim.",
+  "open_defects": []
+}

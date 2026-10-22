@@ -220,7 +220,7 @@ def saddle_pad(bpy):
             if hit is None or distance>.25:raise ValueError('LOOK_SADDLE_SUPPORT_MISSING')
             max_projection=max(max_projection,distance)
             edge=abs(2*u-1)**5
-            offset=.022+.003*math.sin(v*math.tau*3+.4)*edge
+            offset=.006+.001*math.sin(v*math.tau*3+.4)*edge
             points.append(inverse@(hit+normal*offset))
     material=old.data.materials[0].copy();material.name='MF Nihang supported wool saddle pad'
     bs=material.node_tree.nodes.get('Principled BSDF')
@@ -229,8 +229,10 @@ def saddle_pad(bpy):
             if link.to_socket==bs.inputs['Roughness']:material.node_tree.links.remove(link)
         bs.inputs['Roughness'].default_value=.91
     obj=mesh(bpy,'MF Nihang body-fitted wool saddle pad',points,grid(rows,cols),material,parent)
-    solid=obj.modifiers.new('Layered wool thickness','SOLIDIFY');solid.thickness=.009
     sub=obj.modifiers.new('Soft blanket edges','SUBSURF');sub.levels=1;sub.render_levels=1
+    support=obj.modifiers.new('Follow actual animated horse surface','SHRINKWRAP')
+    support.target=body;support.wrap_method='NEAREST_SURFACEPOINT';support.wrap_mode='OUTSIDE_SURFACE';support.offset=.006
+    solid=obj.modifiers.new('Layered wool thickness','SOLIDIFY');solid.thickness=.009
     old.hide_render=True;old.hide_viewport=True
     return {'pad':obj.name,'vertices':len(points),'maximum_projection':max_projection,
             'scope':'Standing actual body surface fit; rising/reverse rider interfaces remain unqualified.'}

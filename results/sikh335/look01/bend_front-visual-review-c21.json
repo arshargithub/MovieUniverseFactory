@@ -1,0 +1,35 @@
+{
+  "verdict": "FAIL",
+  "run_digest": "9a1419e6411ff49ebc184096122ad552ec76bc4fb692684fa0e07a20caf4059a",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh342-look-c21-bend_front/snapshot.json",
+      "sha256": "20a1c95212ec9c0c04770136372bad3206730857d6bc14aa511fbf486a241193"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh342-look-c21-bend_front/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh342-look-c21-bend_front/script-diagnostics.json",
+      "sha256": "99bbbecec312f933855a69b1d853770138fd35ab62669f2fe652484d335f4ec7"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh342-look-c21-bend_front/frame.png",
+      "sha256": "f8087f28ae13317be6c70b6301113d9422dfc23db48f78715a767d9a2743fd25"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh342-look-c21-bend_front/frames.json",
+      "sha256": "d21e345b5d8429a0f9af8f95e2fdefca45728e49fc898a0371ed2c0a30fea644"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh342-look-c21-bend_front/frame.png",
+      "sha256": "f8087f28ae13317be6c70b6301113d9422dfc23db48f78715a767d9a2743fd25"
+    }
+  },
+  "observation": "Actual front image: garment and raised arm remain connected, but a narrow strip of outer thigh is incorrectly included in elbow deformation and projects upward. Whole-body prerequisite fails; no bend or integration pass.",
+  "comparison": "Unchanged neutral body compared with actual bend; deformation must affect only the chosen arm, not the thigh.",
+  "open_defects": [
+    "Actual front image: garment and raised arm remain connected, but a narrow strip of outer thigh is incorrectly included in elbow deformation and projects upward. Whole-body prerequisite fails; no bend or integration pass."
+  ]
+}
