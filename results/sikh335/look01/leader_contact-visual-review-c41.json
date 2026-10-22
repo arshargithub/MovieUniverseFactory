@@ -1,0 +1,43 @@
+{
+  "verdict": "FAIL",
+  "run_digest": "5fe1b5f508d12a68574d197ab09792c337dc832e8ca015311fa45129a08525bb",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh345-look-c41-leader_contact/snapshot.json",
+      "sha256": "900de63456af21023524a57a81dd7d6ed788da48b1c11beb61251c61cfbc0c39"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh345-look-c41-leader_contact/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh345-look-c41-leader_contact/script-diagnostics.json",
+      "sha256": "99bbbecec312f933855a69b1d853770138fd35ab62669f2fe652484d335f4ec7"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh345-look-c41-leader_contact/frame.png",
+      "sha256": "6f2289fcceb810c01da931e620ac01992d5db9ef3eefa307867371821c18f6f6"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh345-look-c41-leader_contact/frames.json",
+      "sha256": "9fd46b0469e7bf6948e4414fd0cbd295a1b3a4416667d6038e0cdd99667bba9b"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh345-look-c41-leader_contact/frame.png",
+      "sha256": "6f2289fcceb810c01da931e620ac01992d5db9ef3eefa307867371821c18f6f6"
+    },
+    "frame_327": {
+      "path": ".runtime/factory-native/sikh345-look-c41-leader_contact/frame-0327.png",
+      "sha256": "53d8f3b46bf7c1f4a7466dc481b3325d786fa56c9baa5b86562256ef8966c44c"
+    },
+    "frame_350": {
+      "path": ".runtime/factory-native/sikh345-look-c41-leader_contact/frame-0350.png",
+      "sha256": "50f106c355512af7666d24da36b04348b14ccfe39d1f3bf87f87958dd09398fc"
+    }
+  },
+  "observation": "Actual283/327/350: four fingers and opposing thumb now visibly surround the spear. Wrist-to-palm transition has an unnatural sharp band and cuff edge; forearm twist is not coordinated with palm roll. Retain contact improvement, reject complete anatomical interface.",
+  "comparison": "Dedicated view exposes what cropped front images could not. Fixed tip error and frame rotation are insufficient.",
+  "open_defects": [
+    "Actual283/327/350: four fingers and opposing thumb now visibly surround the spear. Wrist-to-palm transition has an unnatural sharp band and cuff edge; forearm twist is not coordinated with palm roll. Retain contact improvement, reject complete anatomical interface."
+  ]
+}

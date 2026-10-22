@@ -4,6 +4,22 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+### Exchange345 — contact and waist progress remains unqualified
+
+Five shared additions are exhausted at appearance42.38 improves the skirt origin
+and shaft-relative hand arrangement.41 removes the raised-arm belt strip but
+actual images still fail on belt-edge deformation, detached beard cards and the
+wrist transition. Three attempts fail technically or at admission, including an
+agent-caused edit of a bound plan during39. No complete actor or isolated passage
+is admitted; motion12 stays preserved, crowd propagation remains blocked.
+
+Next proposed package: region-specific waist and shoulder support preflight,
+then actual beard/wrist/cloth proof across stance, crest and landing, followed by
+the complete same-film appearance check. Renewed correction authority is needed.
+67 focused tests are technical evidence only. See [outcome and next package](../../results/sikh335/REASSESSMENT_345.md)
+and [carry-forward lessons](../../results/sikh335/LEARNINGS_345.md). No new remote
+protection; checkpoint350 unchanged.
+
 ### Exchange344 — narrower structural progress; five-cycle limit reached
 
 Motion12 corrects the measured final hoof slowdown through actual world-space

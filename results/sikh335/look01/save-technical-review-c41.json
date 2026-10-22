@@ -1,0 +1,29 @@
+{
+  "verdict": "PASS",
+  "run_digest": "dea078e69c646cda7a3717f6c57ea897b61ac6d0aa6cb8ebb4de2e7e6d945df4",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh345-look-c41-save/snapshot.json",
+      "sha256": "900de63456af21023524a57a81dd7d6ed788da48b1c11beb61251c61cfbc0c39"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh345-look-c41-save/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh345-look-c41-save/script-diagnostics.json",
+      "sha256": "d8c950e68c5c42eb08e3ba4cd795b716e2b5ac082b76301b8697edb7667b2ad9"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh345-look-c41-save/scene.blend",
+      "sha256": "5bf1f28822686654436cad50c0494042f38ff12fafca51b1f1afbf4a8b05c29d"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh345-look-c41-save/patch-evidence.json",
+      "sha256": "900bc6f6b462dfb4f225e04ae163c236403c463463c8fefdea1004ab0a13447c"
+    }
+  },
+  "observation": "Fixed-length shaft-relative hand solve, saved poses and protected owners verified. Image evidence separate.",
+  "comparison": "Technical prerequisite only, all visual and full-speed judgments separate.",
+  "open_defects": []
+}

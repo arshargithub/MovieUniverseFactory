@@ -1,0 +1,9 @@
+{
+  "cycle": 40,
+  "status": "FAIL",
+  "reason": "40 fails before save: torso-only belt ray has missing support. Filtering by an incomplete torso bone whitelist excluded legitimate waist support. Preserve worker failure; replace whitelist with explicit arm/hand exclusion plus rest torso envelope, with diagnostic support counts and hard ray failures.",
+  "source": {
+    "path": "src/movie_factory/adapters/blender/nihang_finish345.py",
+    "sha256": "1d2579d8fde1ed3a6818e9b029df92f12adcf75d0019d583b8b1d71f252551f7"
+  }
+}

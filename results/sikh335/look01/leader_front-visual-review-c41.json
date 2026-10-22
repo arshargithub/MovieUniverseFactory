@@ -1,0 +1,43 @@
+{
+  "verdict": "FAIL",
+  "run_digest": "5a5adac8ffd6f13ef0866fc702884897db921f2dc1dd01c7230f4cf3bf7268ba",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh345-look-c41-leader_front/snapshot.json",
+      "sha256": "900de63456af21023524a57a81dd7d6ed788da48b1c11beb61251c61cfbc0c39"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh345-look-c41-leader_front/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh345-look-c41-leader_front/script-diagnostics.json",
+      "sha256": "99bbbecec312f933855a69b1d853770138fd35ab62669f2fe652484d335f4ec7"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh345-look-c41-leader_front/frame.png",
+      "sha256": "8efbe1515007f5c6da70e4fb4b90dd5fa0ae9bc090434efd2d447708a9650e19"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh345-look-c41-leader_front/frames.json",
+      "sha256": "d9b53c05861b72a1e1b529478256fbcdcfa70b143cab365075c272e5181b49e3"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh345-look-c41-leader_front/frame.png",
+      "sha256": "8efbe1515007f5c6da70e4fb4b90dd5fa0ae9bc090434efd2d447708a9650e19"
+    },
+    "frame_327": {
+      "path": ".runtime/factory-native/sikh345-look-c41-leader_front/frame-0327.png",
+      "sha256": "916a6fa172d19a243e61447c4403ac78ed89645bf1b3c9120aa34e22a7f71f07"
+    },
+    "frame_350": {
+      "path": ".runtime/factory-native/sikh345-look-c41-leader_front/frame-0350.png",
+      "sha256": "e10217b36babe4a2720127ea27ac7f10ef0d775d4b26784c89445af8f6418d59"
+    }
+  },
+  "observation": "Actual283/327/350: raised-arm gold strip is removed, but waist lower edge deforms into an irregular flap. Restored beard cards float away from face at crest; imported attachment rotation mode is incompatible with copied quaternion action. Whole character still fails.",
+  "comparison": "Direct comparison to38 shows corrected belt ownership extent but two new visible defects; no artistic pass.",
+  "open_defects": [
+    "Actual283/327/350: raised-arm gold strip is removed, but waist lower edge deforms into an irregular flap. Restored beard cards float away from face at crest; imported attachment rotation mode is incompatible with copied quaternion action. Whole character still fails."
+  ]
+}
