@@ -37,12 +37,48 @@ def layer_weights(row,bones,waist=False):
     return {name:value/total for name,value in valid.items()}
 
 
+def transported_frame(rest_frame,hand_rotation,axis):
+    """Keep this bone's rest roll; swing its transported Y onto the limb axis.
+
+    A wrist's local X is not a forearm bone's local X. Copying it constructs an
+    unrelated roll frame and can twist the skin despite perfect endpoint tests.
+    """
+    target=np.asarray(hand_rotation,dtype=float)@np.asarray(rest_frame,dtype=float)
+    a=target[:,1];a=a/np.linalg.norm(a)
+    b=np.asarray(axis,dtype=float);b=b/np.linalg.norm(b)
+    v=np.cross(a,b);c=float(np.clip(a@b,-1,1))
+    if c<-.999999:raise ValueError('FOREARM_TRANSPORT_ANTIPARALLEL')
+    k=np.array([[0,-v[2],v[1]],[v[2],0,-v[0]],[-v[1],v[0],0]])
+    swing=np.eye(3)+k+k@k/(1+c)
+    return swing@target
+
+
+def neutral_elbow(shoulder,wrist,upper,lower,palm_direction):
+    """On the two-bone elbow circle, minimize forearm-to-palm bending.
+
+    This chooses a physically reachable elbow, not a free joint displacement.
+    Skin, torso clearance and the animated elbow path still need visual review.
+    """
+    a=np.asarray(shoulder,dtype=float);b=np.asarray(wrist,dtype=float)
+    axis=b-a;distance=np.linalg.norm(axis);axis/=distance
+    if not abs(upper-lower)+1e-5<distance<upper+lower-1e-5:
+        raise ValueError('NEUTRAL_ELBOW_UNREACHABLE')
+    along=(upper*upper-lower*lower+distance*distance)/(2*distance)
+    center=a+axis*along;radius=math.sqrt(max(0,upper*upper-along*along))
+    direction=np.asarray(palm_direction,dtype=float);direction/=np.linalg.norm(direction)
+    projected=b-direction*lower-center
+    projected-=axis*np.dot(projected,axis)
+    if np.linalg.norm(projected)<1e-6:raise ValueError('NEUTRAL_ELBOW_AMBIGUOUS')
+    return center+radius*projected/np.linalg.norm(projected)
+
+
 def restore_beard(bpy,rig):
     """Restore omitted fitted base cards from the already-inspected donor."""
     from pathlib import Path
     from mathutils import Matrix
     donor=Path(__file__).resolve().parents[4]/'.runtime/art-direction/series01-sikh265/candidate-04/character.blend'
     names=['Sikh265 coherent MPFB male.rehmanpolanski_'+n+'_viking' for n in ('beard','moustache')]
+    original_objects=set(bpy.data.objects)
     with bpy.data.libraries.load(str(donor),link=False) as (available,loaded):
         if not all(n in available.objects for n in names):raise ValueError('FINISH345_BEARD_DONOR')
         loaded.objects=names
@@ -58,6 +94,11 @@ def restore_beard(bpy,rig):
         if obj.animation_data.action.slots:obj.animation_data.action_slot=obj.animation_data.action.slots[0]
         obj.hide_render=False;obj.hide_viewport=False
         restored.append(obj.name)
+    # Library append also loads the source rig. Once both cards are reparented
+    # it is a new unused dependency, dropped by save/reopen. Remove only such
+    # newly appended orphans before the immutable snapshot is measured.
+    for obj in set(bpy.data.objects)-original_objects:
+        if obj.users==0:bpy.data.objects.remove(obj)
     for obj in bpy.data.objects:
         if obj.name.startswith('iris.') and obj.parent==rig:
             for v in obj.data.vertices:v.co.x*=1.17;v.co.z*=1.17
@@ -73,7 +114,7 @@ def cloth(bpy,out):
     from mathutils.kdtree import KDTree
     scene=bpy.context.scene;scene.frame_set(283)
     rig=bpy.data.objects['MF coherent Nihang rig'];coat=bpy.data.objects['MF coherent coat']
-    if not rig.get('finish345') or rig.get('cloth345'):raise ValueError('CLOTH345_PARENT')
+    if not rig.get('layer_refit_proof') or rig.get('cloth345'):raise ValueError('CLOTH345_PARENT')
     rig.data.pose_position='REST';bpy.context.view_layer.update()
     # Local compression and elbow folds preserve the fitted outer silhouette.
     for v in coat.data.vertices:
@@ -99,21 +140,31 @@ def cloth(bpy,out):
         groups=[g.name for g in coat.vertex_groups],bounds=[[min(v.co[i] for v in coat.data.vertices),max(v.co[i] for v in coat.data.vertices)] for i in range(3)]),indent=2)+'\n')
     if len(faces)<100:raise ValueError('CLOTH345_TORSO_TOPOLOGY')
     tree=BVHTree.FromPolygons([v.co for v in coat.data.vertices],faces)
+    # Shoulder cloth is supported by the actual outer shoulder, not the waist
+    # mask. Keep geometric support distinct from the permitted deform owners.
+    shoulder_faces=[tuple(p.vertices) for p in coat.data.polygons if all(
+        abs(coat.data.vertices[i].co.x)<.36 for i in p.vertices)]
+    shoulder_tree=BVHTree.FromPolygons([v.co for v in coat.data.vertices],shoulder_faces)
     kd=KDTree(len(coat.data.vertices))
     for v in coat.data.vertices:kd.insert(v.co,v.index)
     kd.balance();rows=[]
-    def bind(obj,coords):
+    def bind(obj,coords,surface,surface_faces):
         if len(coords)!=len(obj.data.vertices):raise ValueError('CLOTH345_LAYER_TOPOLOGY')
         for mod in list(obj.modifiers):obj.modifiers.remove(mod)
         obj.vertex_groups.clear()
         for v,p in zip(obj.data.vertices,coords):
-            v.co=p;_,_,face,_=tree.find_nearest(p)
+            v.co=p;_,_,face,_=surface.find_nearest(p)
             if face is None:raise ValueError('CLOTH345_NO_TORSO')
-            ids=faces[face];inv=[1/max(.003,(coat.data.vertices[i].co-p).length) for i in ids];total=sum(inv)
+            ids=surface_faces[face];inv=[1/max(.003,(coat.data.vertices[i].co-p).length) for i in ids];total=sum(inv)
             weights={}
             for i,weight in zip(ids,inv):
                 for name,value in w[i].items():
                     if allowed(name):weights[name]=weights.get(name,0)+value*weight/total
+            # Removed arm influence is redistributed to valid torso bones;
+            # do not confuse that with coverage of a missing geometric surface.
+            total_weight=sum(weights.values())
+            if total_weight<.01:raise ValueError('CLOTH345_SHOULDER_OWNER')
+            weights={n:v/total_weight for n,v in weights.items()}
             weights=layer_weights(weights,set(rig.data.bones.keys()),waist=obj.name=='MF coherent waist wrap')
             for name,value in weights.items():
                 g=obj.vertex_groups.get(name) or obj.vertex_groups.new(name=name);g.add([v.index],value,'REPLACE')
@@ -130,7 +181,7 @@ def cloth(bpy,out):
             hit=tree.ray_cast(Vector((0,-.02,z))+axis*.5,-axis)[0]
             if hit is None:raise ValueError(f'CLOTH345_BELT_RAY:{j}:{k}:{z}')
             coords.append(hit+axis*(.010+.002*math.sin(u*math.pi*4+a)))
-    bind(belt,coords)
+    belt_coords=coords
     sash=bpy.data.objects['MF coherent shoulder sash'];panels=[]
     for side in (-1,1):
         pts=[]
@@ -138,19 +189,50 @@ def cloth(bpy,out):
             t=j/40;x=.12-.25*t;z=1.145*(1-t)+1.55*t
             for k in range(7):
                 off=(k/6-.5)*.065;xx=x+off*.84;zz=z+off*.54
-                hit=tree.ray_cast(Vector((xx,side*.7,zz)),Vector((0,-side,0)))[0]
-                if hit is None:raise ValueError('CLOTH345_SASH_RAY')
+                hit=shoulder_tree.ray_cast(Vector((xx,side*.7,zz)),Vector((0,-side,0)))[0]
+                if hit is None:raise ValueError(f'CLOTH345_SASH_RAY:{side}:{j}:{k}:{xx}:{zz}')
                 pts.append(hit+Vector((0,side*.010,0)))
         panels.append(np.array(pts).reshape(41,7,3))
     front,back=panels;bridge=[]
     for j in range(1,9):
         u=j/9;p=front[-1]*(1-u)+back[-1]*u
         for k in range(7):
-            hit=tree.ray_cast(Vector((p[k,0],p[k,1],1.9)),Vector((0,0,-1)))[0]
+            hit=shoulder_tree.ray_cast(Vector((p[k,0],p[k,1],1.9)),Vector((0,0,-1)))[0]
             if hit is None:raise ValueError('CLOTH345_SHOULDER_RAY')
             p[k,2]=max(p[k,2],hit.z+.010)
         bridge.append(p)
-    bind(sash,[Vector(p) for p in np.concatenate((front,np.array(bridge),back[::-1])).reshape(-1,3)])
+    sash_coords=[Vector(p) for p in np.concatenate((front,np.array(bridge),back[::-1])).reshape(-1,3)]
+    # All rays completed before either dependent layer is changed; this handler
+    # runs before the expensive190-frame contact solve in346.
+    (out/'cloth-preflight346.json').write_text(json.dumps(dict(
+        belt_samples=len(belt_coords),sash_samples=len(sash_coords),
+        waist_faces=len(faces),shoulder_faces=len(shoulder_faces),
+        geometry_complete=True,scope='support samples, not visual qualification'),indent=2)+'\n')
+    bind(belt,belt_coords,tree,faces)
+    bind(sash,sash_coords,shoulder_tree,shoulder_faces)
+    # Follow the actual deformed coat at the loaded waist without allowing a
+    # nearest-surface query to jump onto an arm or knee. This is a restricted
+    # support copy with identical source bone weights, not a visible substitute.
+    waist_faces=[tuple(p.vertices) for p in coat.data.polygons if all(
+        .99<coat.data.vertices[i].co.z<1.36 and abs(coat.data.vertices[i].co.x)<.30
+        for i in p.vertices)]
+    ids=sorted({i for f in waist_faces for i in f});mapping={i:n for n,i in enumerate(ids)}
+    mesh=bpy.data.meshes.new('346 waist support geometry')
+    mesh.from_pydata([coat.data.vertices[i].co for i in ids],[],[[mapping[i] for i in f] for f in waist_faces]);mesh.update()
+    proxy=bpy.data.objects.new('MF346 waist-only coat support',mesh);scene.collection.objects.link(proxy)
+    proxy.parent=coat.parent;proxy.matrix_parent_inverse=coat.matrix_parent_inverse.copy();proxy.matrix_basis=coat.matrix_basis.copy();proxy.hide_render=True
+    for n,i in enumerate(ids):
+        for name,value in w[i].items():
+            if name not in rig.data.bones:continue
+            group=proxy.vertex_groups.get(name) or proxy.vertex_groups.new(name=name);group.add([n],value,'REPLACE')
+    arm=proxy.modifiers.new('Same coat deformation','ARMATURE');arm.object=rig;arm.use_deform_preserve_volume=True
+    smooth=proxy.modifiers.new('Coat outer continuity','SUBSURF');smooth.levels=1;smooth.render_levels=1
+    weld=belt.modifiers.new('Closed woven waist seam','WELD');weld.merge_threshold=.0002
+    bpy.context.view_layer.objects.active=belt
+    bpy.ops.object.modifier_move_up(modifier=weld.name);bpy.ops.object.modifier_move_up(modifier=weld.name)
+    contact=belt.modifiers.new('Actual waist cloth support','SHRINKWRAP');contact.target=proxy
+    contact.wrap_method='NEAREST_SURFACEPOINT';contact.wrap_mode='ABOVE_SURFACE';contact.offset=.007
+    bpy.ops.object.modifier_move_up(modifier=contact.name)
     rig.data.pose_position='POSE';rig['cloth345']=1;scene.frame_set(283);bpy.context.view_layer.update()
     result=dict(scope='Actual torso-owned layer repair; all poses require image inspection',layers=rows,contact_retained=True)
     (out/'leader-cloth345.json').write_text(json.dumps(result,indent=2)+'\n')
@@ -200,14 +282,13 @@ def run(bpy,out):
         pb.rotation_mode='QUATERNION';pb.matrix=mat
         for prop in ('location','rotation_quaternion','scale'):pb.keyframe_insert(prop,frame=f)
         bpy.context.view_layer.update()
-    def chain(names,a,b,roll_axis=None):
+    def chain(names,a,b,hand_rotation=None):
         axis=(b-a).normalized();p=a.copy()
         for index,name in enumerate(names):
             pb=rig.pose.bones[name];q=p+axis*pb.bone.length;rot=None
-            if roll_axis is not None:
-                x=(roll_axis-axis*roll_axis.dot(axis)).normalized();z=x.cross(axis).normalized()
-                target=Matrix((x,axis,z)).transposed()
+            if hand_rotation is not None:
                 base=pb.bone.matrix_local.to_3x3();natural=base.col[1].normalized().rotation_difference(axis).to_matrix()@base
+                target=Matrix(transported_frame(base,hand_rotation,axis).tolist())
                 rot=natural.to_quaternion().slerp(target.to_quaternion(),(index+1)/len(names)).to_matrix()
             set_bone(pb,p,q,rot);p=q
         if (p-b).length>.0001:raise ValueError('FINISH345_ARM_LENGTH')
@@ -216,19 +297,23 @@ def run(bpy,out):
         origin=inv@shaft.matrix_world.translation
         up=(inv.to_3x3()@shaft.matrix_world.to_3x3()@Vector((0,0,1))).normalized()
         hint=inv@proxy.matrix_world.translation;center=origin+up*(hint-origin).dot(up)
-        rotation=Matrix(frame_map(across,longitudinal,up,Vector((0,-1,0))).tolist())
+        start=rig.pose.bones['upperarm01.L'].head.copy()
+        # The grip may rotate around a cylindrical shaft. Use that freedom to
+        # face the hand away from the shoulder, rather than global scene forward.
+        forward=center-start;forward-=up*forward.dot(up)
+        if forward.length<.02:raise ValueError('FINISH345_PALM_DIRECTION')
+        rotation=Matrix(frame_map(across,longitudinal,up,forward).tolist())
         dorsal=(rotation@across.normalized()).cross((rotation@longitudinal).normalized()).normalized()
         palm=center+dorsal*.031
         wrist=palm-rotation@(palm_rest-wrist_rest)
-        start=rig.pose.bones['upperarm01.L'].head.copy()
         upper=sum(rest[n+'.L'].length for n in ('upperarm01','upperarm02'))
         lower=sum(rest[n+'.L'].length for n in ('lowerarm01','lowerarm02'))
         d=(wrist-start).length
         if not abs(upper-lower)+.001<d<upper+lower-.001:raise ValueError('FINISH345_ARM_REACH')
-        elbow=Vector(support.bend_joint(start,wrist,upper,lower,(1,.35,-.2)))
+        palm_axis=(rotation@longitudinal).normalized()
+        elbow=Vector(neutral_elbow(start,wrist,upper,lower,palm_axis))
         chain(['upperarm01.L','upperarm02.L'],start,elbow)
-        roll_axis=rotation@rest['wrist.L'].matrix_local.to_3x3().col[0]
-        chain(['lowerarm01.L','lowerarm02.L'],elbow,wrist,roll_axis)
+        chain(['lowerarm01.L','lowerarm02.L'],elbow,wrist,rotation)
         pb=rig.pose.bones['wrist.L'];set_bone(pb,wrist,wrist+rotation@(pb.bone.tail_local-pb.bone.head_local),rotation@pb.bone.matrix_local.to_3x3())
         hand=Matrix.Translation(wrist)@rotation.to_4x4()@Matrix.Translation(-wrist_rest)
         for digit in range(2,6):
@@ -251,7 +336,8 @@ def run(bpy,out):
             rot=rotation@pb.bone.matrix_local.to_3x3()
             rot=rot.col[1].normalized().rotation_difference((b-a).normalized()).to_matrix()@rot
             set_bone(pb,a,b,rot)
-        records.append(dict(frame=f,shaft=list(center),wrist=list(wrist),palm=list(palm),thumb_error=(thumbs[-1].tail-target).length))
+        bend=math.degrees((wrist-elbow).normalized().angle(palm_axis))
+        records.append(dict(frame=f,shaft=list(center),wrist=list(wrist),elbow=list(elbow),palm=list(palm),wrist_bend_degrees=bend,thumb_error=(thumbs[-1].tail-target).length))
     scene.frame_set(283);bpy.context.view_layer.update();rig['finish345']=1
     (out/'leader-contact345.json').write_text(json.dumps(records,indent=2)+'\n')
     scene.frame_set(327);bpy.context.view_layer.update();visible=[]
