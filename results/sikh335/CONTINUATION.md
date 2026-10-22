@@ -1,5 +1,30 @@
 # Nihang work remains active
 
+## Current boundary after exchange340
+
+Appearance is REPLAN_REQUIRED17/max17. Exact approval of five extended12 to17.
+All five native attempts failed before complete save; no new rendered character.
+Leader16/17 passed numeric settle/attachment at86.570mm, not appearance. Crowd17
+still failed103.342mm against unchanged90mm guard. See REASSESSMENT_340.md and
+look01/exhaustion-c17.json. Do not retry, reset counters or raise guards.
+
+Actual start/fitted/settled arrays and source bytes are retained per attempt.
+Found inward collision normals, initial armhole penetration, clustered sleeve
+sampling and incorrectly shared torso height. These repairs do not qualify the
+whole garment. Native neutral-body proof was NOT_RUN: a straight-rest unit test
+was substituted while posed-body settling continued. Next method must complete
+the actual neutral proof before bending, not another parameter pass.
+
+Motion remains9/max10, unchanged; no worker is running. Face/crown/beard/tack and
+same-film appearance still block integration.86 focused tests pass. No new spend,
+cloud, uploads or remote backup. Checkpoint340 has83 pre-existing outgoing commits;
+no broad ancestry push was performed. Native diagnostics remain SSD-only.
+
+Next work package proposed: one complete neutral-body garment saved/reopened and
+visually inspected, then controlled elbow bend with cuff/contact/shoulder/waist
+preserved; only then existing performance transfer and separate near-actor fit.
+Further native corrections need Director allowance on this same task.
+
 ## Current boundary after exchange339 (supersedes snapshots below)
 
 Appearance is REPLAN_REQUIRED, cycle12/max12. Separate explicit339 approval

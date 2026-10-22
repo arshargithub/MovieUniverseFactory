@@ -1,0 +1,999 @@
+{
+  "closed_episode_count": 0,
+  "consumption_per_outcome": {
+    "closed_episodes": {
+      "engineering_tokens": null,
+      "net_seconds": null
+    },
+    "closed_experiments": {
+      "engineering_tokens": null,
+      "net_seconds": null
+    },
+    "director_accepted_outputs": {
+      "engineering_tokens": null,
+      "net_seconds": null
+    },
+    "technically_successful_outputs": {
+      "engineering_tokens": null,
+      "net_seconds": null
+    }
+  },
+  "cost_scope": "Development investment; repeatable runtime cost remains in the campaign provider records.",
+  "engineering_usage": {
+    "account_allowance": {
+      "observations": [],
+      "scope": "account-wide; not experiment token attribution"
+    },
+    "actual_engineering_charge_usd": null,
+    "api_equivalent_estimate_usd": null,
+    "blocks": [],
+    "captured_tasks": [],
+    "category_coverage": {
+      "cache_write_input_tokens": {
+        "observed_blocks": 0,
+        "total_blocks": 0
+      },
+      "cached_input_tokens": {
+        "observed_blocks": 0,
+        "total_blocks": 0
+      },
+      "input_tokens": {
+        "observed_blocks": 0,
+        "total_blocks": 0
+      },
+      "output_tokens": {
+        "observed_blocks": 0,
+        "total_blocks": 0
+      },
+      "reasoning_output_tokens": {
+        "observed_blocks": 0,
+        "total_blocks": 0
+      },
+      "total_tokens": {
+        "observed_blocks": 0,
+        "total_blocks": 0
+      }
+    },
+    "exact_attributable_tokens": null,
+    "expected_tasks": [
+      "sikh335"
+    ],
+    "missing_tasks": [
+      "sikh335"
+    ],
+    "observed_tokens": {
+      "cache_write_input_tokens": null,
+      "cached_input_tokens": null,
+      "input_tokens": null,
+      "output_tokens": null,
+      "reasoning_output_tokens": null,
+      "total_tokens": null
+    },
+    "status": "UNKNOWN",
+    "subscription": {
+      "allocation_usd": null,
+      "treatment": "shared fixed overhead"
+    },
+    "token_definitions": {
+      "cache_write_input_tokens": "Retained as reported; not added to total.",
+      "cached_input_tokens": "Subset of input; do not add to total.",
+      "input_tokens": "Reported input total; cached input is a subset.",
+      "output_tokens": "Reported output total; reasoning output is a subset.",
+      "reasoning_output_tokens": "Subset of output; do not add to total.",
+      "total_tokens": "Reported total; input plus output, without subset double counting."
+    },
+    "uncertainties": [
+      "capture_completeness_not_established",
+      "missing_linked_tasks"
+    ],
+    "window_end": "2026-10-22T02:42:24.949985+00:00",
+    "window_start": "2026-10-21T19:08:18.255033+00:00"
+  },
+  "episodes": [
+    {
+      "assistant_active_union_seconds": 5878.501221179962,
+      "assistant_time_scope": "Recorded activity intervals only; not token generation time",
+      "calendar_elapsed_seconds": null,
+      "coverage_fraction": 0.8202332419264845,
+      "disposition": null,
+      "episode_id": "representation",
+      "excluded_input_wait_seconds": null,
+      "human_review_seconds": null,
+      "jobs": [
+        {
+          "job_id": "sikh335-ownership",
+          "job_kind": "native",
+          "monotonic_seconds": 4.142300749663264,
+          "outcome": "PASSED",
+          "utc_seconds": 4.142402172088623
+        },
+        {
+          "job_id": "sikh335-support01-save",
+          "job_kind": "native",
+          "monotonic_seconds": 3.100064291153103,
+          "outcome": "PASSED",
+          "utc_seconds": 3.100193977355957
+        },
+        {
+          "job_id": "sikh335-support01-c1-save",
+          "job_kind": "native",
+          "monotonic_seconds": 5.714779500383884,
+          "outcome": "PASSED",
+          "utc_seconds": 5.71490216255188
+        },
+        {
+          "job_id": "sikh335-support01-c1-render",
+          "job_kind": "native",
+          "monotonic_seconds": 23.367283707950264,
+          "outcome": "PASSED",
+          "utc_seconds": 23.366424083709717
+        },
+        {
+          "job_id": "sikh335-support02-c2-save",
+          "job_kind": "native",
+          "monotonic_seconds": 5.773944667074829,
+          "outcome": "PASSED",
+          "utc_seconds": 5.774096965789795
+        },
+        {
+          "job_id": "sikh335-support02-c2-render",
+          "job_kind": "native",
+          "monotonic_seconds": 23.571469457820058,
+          "outcome": "PASSED",
+          "utc_seconds": 23.571584939956665
+        },
+        {
+          "job_id": "sikh335-motion-c0-save",
+          "job_kind": "native",
+          "monotonic_seconds": 38.96430208301172,
+          "outcome": "PASSED",
+          "utc_seconds": 38.96438717842102
+        },
+        {
+          "job_id": "sikh335-motion-c1-save",
+          "job_kind": "native",
+          "monotonic_seconds": 73.3128641252406,
+          "outcome": "PASSED",
+          "utc_seconds": 73.31164598464966
+        },
+        {
+          "job_id": "sikh335-motion-c1-render",
+          "job_kind": "native",
+          "monotonic_seconds": 163.24929074989632,
+          "outcome": "PASSED",
+          "utc_seconds": 163.2491180896759
+        },
+        {
+          "job_id": "sikh335-motion-c2-save",
+          "job_kind": "native",
+          "monotonic_seconds": 74.14626416703686,
+          "outcome": "PASSED",
+          "utc_seconds": 74.14628386497498
+        },
+        {
+          "job_id": "sikh335-motion-c2-render",
+          "job_kind": "native",
+          "monotonic_seconds": 182.95875195786357,
+          "outcome": "PASSED",
+          "utc_seconds": 182.9585518836975
+        },
+        {
+          "job_id": "sikh335-cast-inspection",
+          "job_kind": "native",
+          "monotonic_seconds": 5.089687082916498,
+          "outcome": "PASSED",
+          "utc_seconds": 5.089813947677612
+        },
+        {
+          "job_id": "sikh335-motion-c3-save",
+          "job_kind": "native",
+          "monotonic_seconds": 71.82946308283135,
+          "outcome": "PASSED",
+          "utc_seconds": 71.82939600944519
+        },
+        {
+          "job_id": "sikh335-motion-c3-render",
+          "job_kind": "native",
+          "monotonic_seconds": 262.54842995805666,
+          "outcome": "PASSED",
+          "utc_seconds": 262.54794788360596
+        },
+        {
+          "job_id": "sikh335-motion-c4-save",
+          "job_kind": "native",
+          "monotonic_seconds": 73.09116116724908,
+          "outcome": "PASSED",
+          "utc_seconds": 73.09114384651184
+        },
+        {
+          "job_id": "sikh335-motion-c4-render",
+          "job_kind": "native",
+          "monotonic_seconds": 295.4569272911176,
+          "outcome": "PASSED",
+          "utc_seconds": 295.4586091041565
+        },
+        {
+          "job_id": "sikh335-motion-c5-save",
+          "job_kind": "native",
+          "monotonic_seconds": 96.9406860419549,
+          "outcome": "PASSED",
+          "utc_seconds": 96.94081711769104
+        },
+        {
+          "job_id": "sikh335-motion-c5-render",
+          "job_kind": "native",
+          "monotonic_seconds": 329.68577029183507,
+          "outcome": "PASSED",
+          "utc_seconds": 329.68534994125366
+        },
+        {
+          "job_id": "sikh336-c6-preserve",
+          "job_kind": "native",
+          "monotonic_seconds": 5.0616712919436395,
+          "outcome": "PASSED",
+          "utc_seconds": 5.061836004257202
+        },
+        {
+          "job_id": "sikh336-c6-clip00",
+          "job_kind": "native",
+          "monotonic_seconds": 406.09531358396634,
+          "outcome": "PASSED",
+          "utc_seconds": 406.10146284103394
+        },
+        {
+          "job_id": "sikh336-c6-clip01",
+          "job_kind": "native",
+          "monotonic_seconds": 503.5101346252486,
+          "outcome": "PASSED",
+          "utc_seconds": 503.5107560157776
+        },
+        {
+          "job_id": "sikh336-c6-clip02",
+          "job_kind": "native",
+          "monotonic_seconds": 463.61962183285505,
+          "outcome": "PASSED",
+          "utc_seconds": 463.61995482444763
+        },
+        {
+          "job_id": "sikh336-c6-clip03",
+          "job_kind": "native",
+          "monotonic_seconds": 471.2301313751377,
+          "outcome": "PASSED",
+          "utc_seconds": 471.23059606552124
+        },
+        {
+          "job_id": "sikh336-c6-clip04",
+          "job_kind": "native",
+          "monotonic_seconds": 496.37523404089734,
+          "outcome": "PASSED",
+          "utc_seconds": 496.38500905036926
+        },
+        {
+          "job_id": "sikh337-look-c1-save",
+          "job_kind": "native",
+          "monotonic_seconds": 3.4997072080150247,
+          "outcome": "FAILED",
+          "utc_seconds": 3.5006489753723145
+        },
+        {
+          "job_id": "sikh336-c6-clip05",
+          "job_kind": "native",
+          "monotonic_seconds": 458.78828183282167,
+          "outcome": "PASSED",
+          "utc_seconds": 458.7895381450653
+        },
+        {
+          "job_id": "sikh336-c6-orchestration",
+          "job_kind": "local",
+          "monotonic_seconds": 2899.455617291387,
+          "outcome": "FAILED",
+          "utc_seconds": 2899.4732558727264
+        },
+        {
+          "job_id": "sikh337-look-c2-save",
+          "job_kind": "native",
+          "monotonic_seconds": 6.798680583015084,
+          "outcome": "PASSED",
+          "utc_seconds": 6.798886060714722
+        },
+        {
+          "job_id": "sikh337-look-c2-render",
+          "job_kind": "native",
+          "monotonic_seconds": 90.17309829220176,
+          "outcome": "PASSED",
+          "utc_seconds": 90.17363619804382
+        },
+        {
+          "job_id": "sikh337-look-c3-save",
+          "job_kind": "native",
+          "monotonic_seconds": 6.479636542033404,
+          "outcome": "PASSED",
+          "utc_seconds": 6.479773998260498
+        },
+        {
+          "job_id": "sikh337-look-c3-render",
+          "job_kind": "native",
+          "monotonic_seconds": 47.205172415822744,
+          "outcome": "PASSED",
+          "utc_seconds": 47.2054500579834
+        },
+        {
+          "job_id": "sikh337-look-c3-leader_front",
+          "job_kind": "native",
+          "monotonic_seconds": 26.007590916007757,
+          "outcome": "PASSED",
+          "utc_seconds": 26.007786989212036
+        },
+        {
+          "job_id": "sikh337-look-c3-leader_reverse",
+          "job_kind": "native",
+          "monotonic_seconds": 26.281190166715533,
+          "outcome": "PASSED",
+          "utc_seconds": 26.281423091888428
+        },
+        {
+          "job_id": "sikh337-look-c3-crowd_front",
+          "job_kind": "native",
+          "monotonic_seconds": 27.5159381669946,
+          "outcome": "PASSED",
+          "utc_seconds": 27.516175985336304
+        },
+        {
+          "job_id": "sikh337-look-c3-images",
+          "job_kind": "local",
+          "monotonic_seconds": 127.2807351667434,
+          "outcome": "PASSED",
+          "utc_seconds": 127.28126287460327
+        },
+        {
+          "job_id": "sikh337-look-c4-save",
+          "job_kind": "native",
+          "monotonic_seconds": 4.095881999935955,
+          "outcome": "FAILED",
+          "utc_seconds": 4.096104145050049
+        },
+        {
+          "job_id": "sikh337-c8-preserve",
+          "job_kind": "native",
+          "monotonic_seconds": 5.233989915810525,
+          "outcome": "PASSED",
+          "utc_seconds": 5.234183073043823
+        },
+        {
+          "job_id": "sikh337-c8-clip06",
+          "job_kind": "native",
+          "monotonic_seconds": 426.99222550028935,
+          "outcome": "FAILED",
+          "utc_seconds": 426.99970602989197
+        },
+        {
+          "job_id": "sikh337-c9-preserve",
+          "job_kind": "native",
+          "monotonic_seconds": 6.1869347910396755,
+          "outcome": "PASSED",
+          "utc_seconds": 6.1873791217803955
+        },
+        {
+          "job_id": "sikh337-c9-clip07",
+          "job_kind": "native",
+          "monotonic_seconds": 417.39240120816976,
+          "outcome": "PASSED",
+          "utc_seconds": 417.3947410583496
+        },
+        {
+          "job_id": "sikh337-c9-clip08",
+          "job_kind": "native",
+          "monotonic_seconds": 331.7141708340496,
+          "outcome": "PASSED",
+          "utc_seconds": 331.71617698669434
+        },
+        {
+          "job_id": "sikh337-c9-clip09",
+          "job_kind": "native",
+          "monotonic_seconds": 322.51189145771787,
+          "outcome": "PASSED",
+          "utc_seconds": 322.51376605033875
+        },
+        {
+          "job_id": "sikh337-c9-clip10",
+          "job_kind": "native",
+          "monotonic_seconds": 300.49862620886415,
+          "outcome": "PASSED",
+          "utc_seconds": 300.5038478374481
+        },
+        {
+          "job_id": "sikh337-c9-clip11",
+          "job_kind": "native",
+          "monotonic_seconds": 301.8751590838656,
+          "outcome": "PASSED",
+          "utc_seconds": 301.87717294692993
+        },
+        {
+          "job_id": "sikh337-c9-clip12",
+          "job_kind": "native",
+          "monotonic_seconds": 225.2272211248055,
+          "outcome": "PASSED",
+          "utc_seconds": 225.22886514663696
+        },
+        {
+          "job_id": "sikh338-look-c5-save",
+          "job_kind": "native",
+          "monotonic_seconds": 2.0477411253377795,
+          "outcome": "FAILED",
+          "utc_seconds": 2.0478148460388184
+        },
+        {
+          "job_id": "sikh338-look-c6-save",
+          "job_kind": "native",
+          "monotonic_seconds": 79.83232624968514,
+          "outcome": "FAILED",
+          "utc_seconds": 79.82578706741333
+        },
+        {
+          "job_id": "sikh338-look-c7-save",
+          "job_kind": "native",
+          "monotonic_seconds": 3.3177750832401216,
+          "outcome": "FAILED",
+          "utc_seconds": 3.3178720474243164
+        },
+        {
+          "job_id": "sikh338-look-c8-save",
+          "job_kind": "native",
+          "monotonic_seconds": 17.12453837506473,
+          "outcome": "PASSED",
+          "utc_seconds": 17.12468910217285
+        },
+        {
+          "job_id": "sikh338-look-c8-leader_front",
+          "job_kind": "native",
+          "monotonic_seconds": 23.187731332611293,
+          "outcome": "PASSED",
+          "utc_seconds": 23.187843084335327
+        },
+        {
+          "job_id": "sikh338-look-c8-leader_reverse",
+          "job_kind": "native",
+          "monotonic_seconds": 23.68430387461558,
+          "outcome": "PASSED",
+          "utc_seconds": 23.684464931488037
+        },
+        {
+          "job_id": "sikh338-look-c8-render",
+          "job_kind": "native",
+          "monotonic_seconds": 43.556687166914344,
+          "outcome": "PASSED",
+          "utc_seconds": 43.556854009628296
+        },
+        {
+          "job_id": "sikh338-look-c8-crowd_front",
+          "job_kind": "native",
+          "monotonic_seconds": 24.99693770799786,
+          "outcome": "PASSED",
+          "utc_seconds": 24.997951984405518
+        },
+        {
+          "job_id": "sikh339-look-c9-save",
+          "job_kind": "native",
+          "monotonic_seconds": 4.175073374994099,
+          "outcome": "FAILED",
+          "utc_seconds": 4.175221920013428
+        },
+        {
+          "job_id": "sikh339-look-c10-save",
+          "job_kind": "native",
+          "monotonic_seconds": 3.6406404171139,
+          "outcome": "FAILED",
+          "utc_seconds": 3.639831066131592
+        },
+        {
+          "job_id": "sikh339-look-c11-save",
+          "job_kind": "native",
+          "monotonic_seconds": 17.58788299979642,
+          "outcome": "FAILED",
+          "utc_seconds": 17.5880069732666
+        },
+        {
+          "job_id": "sikh339-look-c12-save",
+          "job_kind": "native",
+          "monotonic_seconds": 15.356207167264074,
+          "outcome": "FAILED",
+          "utc_seconds": 15.35633897781372
+        },
+        {
+          "job_id": "sikh339-final-regression",
+          "job_kind": "local",
+          "monotonic_seconds": 1.5121642090380192,
+          "outcome": "PASSED",
+          "utc_seconds": 1.5130641460418701
+        },
+        {
+          "job_id": "sikh340-c13-save",
+          "job_kind": "native",
+          "monotonic_seconds": 16.453714999835938,
+          "outcome": "FAILED",
+          "utc_seconds": 16.45388102531433
+        },
+        {
+          "job_id": "sikh340-c14-save",
+          "job_kind": "native",
+          "monotonic_seconds": 13.573520749807358,
+          "outcome": "FAILED",
+          "utc_seconds": 13.573688983917236
+        },
+        {
+          "job_id": "sikh340-c15-save",
+          "job_kind": "native",
+          "monotonic_seconds": 12.714746625162661,
+          "outcome": "FAILED",
+          "utc_seconds": 12.714892864227295
+        },
+        {
+          "job_id": "sikh340-c16-save",
+          "job_kind": "native",
+          "monotonic_seconds": 20.525156958028674,
+          "outcome": "FAILED",
+          "utc_seconds": 20.525327920913696
+        },
+        {
+          "job_id": "sikh340-c17-save",
+          "job_kind": "native",
+          "monotonic_seconds": 19.635144125204533,
+          "outcome": "FAILED",
+          "utc_seconds": 19.635513067245483
+        }
+      ],
+      "lifecycle": "OPEN",
+      "native_job_wall_sum_seconds": 7454.723473703954,
+      "native_job_wall_union_seconds": null,
+      "native_jobs": [
+        {
+          "job_id": "sikh335-ownership",
+          "job_kind": "native",
+          "monotonic_seconds": 4.142300749663264,
+          "outcome": "PASSED",
+          "utc_seconds": 4.142402172088623
+        },
+        {
+          "job_id": "sikh335-support01-save",
+          "job_kind": "native",
+          "monotonic_seconds": 3.100064291153103,
+          "outcome": "PASSED",
+          "utc_seconds": 3.100193977355957
+        },
+        {
+          "job_id": "sikh335-support01-c1-save",
+          "job_kind": "native",
+          "monotonic_seconds": 5.714779500383884,
+          "outcome": "PASSED",
+          "utc_seconds": 5.71490216255188
+        },
+        {
+          "job_id": "sikh335-support01-c1-render",
+          "job_kind": "native",
+          "monotonic_seconds": 23.367283707950264,
+          "outcome": "PASSED",
+          "utc_seconds": 23.366424083709717
+        },
+        {
+          "job_id": "sikh335-support02-c2-save",
+          "job_kind": "native",
+          "monotonic_seconds": 5.773944667074829,
+          "outcome": "PASSED",
+          "utc_seconds": 5.774096965789795
+        },
+        {
+          "job_id": "sikh335-support02-c2-render",
+          "job_kind": "native",
+          "monotonic_seconds": 23.571469457820058,
+          "outcome": "PASSED",
+          "utc_seconds": 23.571584939956665
+        },
+        {
+          "job_id": "sikh335-motion-c0-save",
+          "job_kind": "native",
+          "monotonic_seconds": 38.96430208301172,
+          "outcome": "PASSED",
+          "utc_seconds": 38.96438717842102
+        },
+        {
+          "job_id": "sikh335-motion-c1-save",
+          "job_kind": "native",
+          "monotonic_seconds": 73.3128641252406,
+          "outcome": "PASSED",
+          "utc_seconds": 73.31164598464966
+        },
+        {
+          "job_id": "sikh335-motion-c1-render",
+          "job_kind": "native",
+          "monotonic_seconds": 163.24929074989632,
+          "outcome": "PASSED",
+          "utc_seconds": 163.2491180896759
+        },
+        {
+          "job_id": "sikh335-motion-c2-save",
+          "job_kind": "native",
+          "monotonic_seconds": 74.14626416703686,
+          "outcome": "PASSED",
+          "utc_seconds": 74.14628386497498
+        },
+        {
+          "job_id": "sikh335-motion-c2-render",
+          "job_kind": "native",
+          "monotonic_seconds": 182.95875195786357,
+          "outcome": "PASSED",
+          "utc_seconds": 182.9585518836975
+        },
+        {
+          "job_id": "sikh335-cast-inspection",
+          "job_kind": "native",
+          "monotonic_seconds": 5.089687082916498,
+          "outcome": "PASSED",
+          "utc_seconds": 5.089813947677612
+        },
+        {
+          "job_id": "sikh335-motion-c3-save",
+          "job_kind": "native",
+          "monotonic_seconds": 71.82946308283135,
+          "outcome": "PASSED",
+          "utc_seconds": 71.82939600944519
+        },
+        {
+          "job_id": "sikh335-motion-c3-render",
+          "job_kind": "native",
+          "monotonic_seconds": 262.54842995805666,
+          "outcome": "PASSED",
+          "utc_seconds": 262.54794788360596
+        },
+        {
+          "job_id": "sikh335-motion-c4-save",
+          "job_kind": "native",
+          "monotonic_seconds": 73.09116116724908,
+          "outcome": "PASSED",
+          "utc_seconds": 73.09114384651184
+        },
+        {
+          "job_id": "sikh335-motion-c4-render",
+          "job_kind": "native",
+          "monotonic_seconds": 295.4569272911176,
+          "outcome": "PASSED",
+          "utc_seconds": 295.4586091041565
+        },
+        {
+          "job_id": "sikh335-motion-c5-save",
+          "job_kind": "native",
+          "monotonic_seconds": 96.9406860419549,
+          "outcome": "PASSED",
+          "utc_seconds": 96.94081711769104
+        },
+        {
+          "job_id": "sikh335-motion-c5-render",
+          "job_kind": "native",
+          "monotonic_seconds": 329.68577029183507,
+          "outcome": "PASSED",
+          "utc_seconds": 329.68534994125366
+        },
+        {
+          "job_id": "sikh336-c6-preserve",
+          "job_kind": "native",
+          "monotonic_seconds": 5.0616712919436395,
+          "outcome": "PASSED",
+          "utc_seconds": 5.061836004257202
+        },
+        {
+          "job_id": "sikh336-c6-clip00",
+          "job_kind": "native",
+          "monotonic_seconds": 406.09531358396634,
+          "outcome": "PASSED",
+          "utc_seconds": 406.10146284103394
+        },
+        {
+          "job_id": "sikh336-c6-clip01",
+          "job_kind": "native",
+          "monotonic_seconds": 503.5101346252486,
+          "outcome": "PASSED",
+          "utc_seconds": 503.5107560157776
+        },
+        {
+          "job_id": "sikh336-c6-clip02",
+          "job_kind": "native",
+          "monotonic_seconds": 463.61962183285505,
+          "outcome": "PASSED",
+          "utc_seconds": 463.61995482444763
+        },
+        {
+          "job_id": "sikh336-c6-clip03",
+          "job_kind": "native",
+          "monotonic_seconds": 471.2301313751377,
+          "outcome": "PASSED",
+          "utc_seconds": 471.23059606552124
+        },
+        {
+          "job_id": "sikh336-c6-clip04",
+          "job_kind": "native",
+          "monotonic_seconds": 496.37523404089734,
+          "outcome": "PASSED",
+          "utc_seconds": 496.38500905036926
+        },
+        {
+          "job_id": "sikh337-look-c1-save",
+          "job_kind": "native",
+          "monotonic_seconds": 3.4997072080150247,
+          "outcome": "FAILED",
+          "utc_seconds": 3.5006489753723145
+        },
+        {
+          "job_id": "sikh336-c6-clip05",
+          "job_kind": "native",
+          "monotonic_seconds": 458.78828183282167,
+          "outcome": "PASSED",
+          "utc_seconds": 458.7895381450653
+        },
+        {
+          "job_id": "sikh337-look-c2-save",
+          "job_kind": "native",
+          "monotonic_seconds": 6.798680583015084,
+          "outcome": "PASSED",
+          "utc_seconds": 6.798886060714722
+        },
+        {
+          "job_id": "sikh337-look-c2-render",
+          "job_kind": "native",
+          "monotonic_seconds": 90.17309829220176,
+          "outcome": "PASSED",
+          "utc_seconds": 90.17363619804382
+        },
+        {
+          "job_id": "sikh337-look-c3-save",
+          "job_kind": "native",
+          "monotonic_seconds": 6.479636542033404,
+          "outcome": "PASSED",
+          "utc_seconds": 6.479773998260498
+        },
+        {
+          "job_id": "sikh337-look-c3-render",
+          "job_kind": "native",
+          "monotonic_seconds": 47.205172415822744,
+          "outcome": "PASSED",
+          "utc_seconds": 47.2054500579834
+        },
+        {
+          "job_id": "sikh337-look-c3-leader_front",
+          "job_kind": "native",
+          "monotonic_seconds": 26.007590916007757,
+          "outcome": "PASSED",
+          "utc_seconds": 26.007786989212036
+        },
+        {
+          "job_id": "sikh337-look-c3-leader_reverse",
+          "job_kind": "native",
+          "monotonic_seconds": 26.281190166715533,
+          "outcome": "PASSED",
+          "utc_seconds": 26.281423091888428
+        },
+        {
+          "job_id": "sikh337-look-c3-crowd_front",
+          "job_kind": "native",
+          "monotonic_seconds": 27.5159381669946,
+          "outcome": "PASSED",
+          "utc_seconds": 27.516175985336304
+        },
+        {
+          "job_id": "sikh337-look-c4-save",
+          "job_kind": "native",
+          "monotonic_seconds": 4.095881999935955,
+          "outcome": "FAILED",
+          "utc_seconds": 4.096104145050049
+        },
+        {
+          "job_id": "sikh337-c8-preserve",
+          "job_kind": "native",
+          "monotonic_seconds": 5.233989915810525,
+          "outcome": "PASSED",
+          "utc_seconds": 5.234183073043823
+        },
+        {
+          "job_id": "sikh337-c8-clip06",
+          "job_kind": "native",
+          "monotonic_seconds": 426.99222550028935,
+          "outcome": "FAILED",
+          "utc_seconds": 426.99970602989197
+        },
+        {
+          "job_id": "sikh337-c9-preserve",
+          "job_kind": "native",
+          "monotonic_seconds": 6.1869347910396755,
+          "outcome": "PASSED",
+          "utc_seconds": 6.1873791217803955
+        },
+        {
+          "job_id": "sikh337-c9-clip07",
+          "job_kind": "native",
+          "monotonic_seconds": 417.39240120816976,
+          "outcome": "PASSED",
+          "utc_seconds": 417.3947410583496
+        },
+        {
+          "job_id": "sikh337-c9-clip08",
+          "job_kind": "native",
+          "monotonic_seconds": 331.7141708340496,
+          "outcome": "PASSED",
+          "utc_seconds": 331.71617698669434
+        },
+        {
+          "job_id": "sikh337-c9-clip09",
+          "job_kind": "native",
+          "monotonic_seconds": 322.51189145771787,
+          "outcome": "PASSED",
+          "utc_seconds": 322.51376605033875
+        },
+        {
+          "job_id": "sikh337-c9-clip10",
+          "job_kind": "native",
+          "monotonic_seconds": 300.49862620886415,
+          "outcome": "PASSED",
+          "utc_seconds": 300.5038478374481
+        },
+        {
+          "job_id": "sikh337-c9-clip11",
+          "job_kind": "native",
+          "monotonic_seconds": 301.8751590838656,
+          "outcome": "PASSED",
+          "utc_seconds": 301.87717294692993
+        },
+        {
+          "job_id": "sikh337-c9-clip12",
+          "job_kind": "native",
+          "monotonic_seconds": 225.2272211248055,
+          "outcome": "PASSED",
+          "utc_seconds": 225.22886514663696
+        },
+        {
+          "job_id": "sikh338-look-c5-save",
+          "job_kind": "native",
+          "monotonic_seconds": 2.0477411253377795,
+          "outcome": "FAILED",
+          "utc_seconds": 2.0478148460388184
+        },
+        {
+          "job_id": "sikh338-look-c6-save",
+          "job_kind": "native",
+          "monotonic_seconds": 79.83232624968514,
+          "outcome": "FAILED",
+          "utc_seconds": 79.82578706741333
+        },
+        {
+          "job_id": "sikh338-look-c7-save",
+          "job_kind": "native",
+          "monotonic_seconds": 3.3177750832401216,
+          "outcome": "FAILED",
+          "utc_seconds": 3.3178720474243164
+        },
+        {
+          "job_id": "sikh338-look-c8-save",
+          "job_kind": "native",
+          "monotonic_seconds": 17.12453837506473,
+          "outcome": "PASSED",
+          "utc_seconds": 17.12468910217285
+        },
+        {
+          "job_id": "sikh338-look-c8-leader_front",
+          "job_kind": "native",
+          "monotonic_seconds": 23.187731332611293,
+          "outcome": "PASSED",
+          "utc_seconds": 23.187843084335327
+        },
+        {
+          "job_id": "sikh338-look-c8-leader_reverse",
+          "job_kind": "native",
+          "monotonic_seconds": 23.68430387461558,
+          "outcome": "PASSED",
+          "utc_seconds": 23.684464931488037
+        },
+        {
+          "job_id": "sikh338-look-c8-render",
+          "job_kind": "native",
+          "monotonic_seconds": 43.556687166914344,
+          "outcome": "PASSED",
+          "utc_seconds": 43.556854009628296
+        },
+        {
+          "job_id": "sikh338-look-c8-crowd_front",
+          "job_kind": "native",
+          "monotonic_seconds": 24.99693770799786,
+          "outcome": "PASSED",
+          "utc_seconds": 24.997951984405518
+        },
+        {
+          "job_id": "sikh339-look-c9-save",
+          "job_kind": "native",
+          "monotonic_seconds": 4.175073374994099,
+          "outcome": "FAILED",
+          "utc_seconds": 4.175221920013428
+        },
+        {
+          "job_id": "sikh339-look-c10-save",
+          "job_kind": "native",
+          "monotonic_seconds": 3.6406404171139,
+          "outcome": "FAILED",
+          "utc_seconds": 3.639831066131592
+        },
+        {
+          "job_id": "sikh339-look-c11-save",
+          "job_kind": "native",
+          "monotonic_seconds": 17.58788299979642,
+          "outcome": "FAILED",
+          "utc_seconds": 17.5880069732666
+        },
+        {
+          "job_id": "sikh339-look-c12-save",
+          "job_kind": "native",
+          "monotonic_seconds": 15.356207167264074,
+          "outcome": "FAILED",
+          "utc_seconds": 15.35633897781372
+        },
+        {
+          "job_id": "sikh340-c13-save",
+          "job_kind": "native",
+          "monotonic_seconds": 16.453714999835938,
+          "outcome": "FAILED",
+          "utc_seconds": 16.45388102531433
+        },
+        {
+          "job_id": "sikh340-c14-save",
+          "job_kind": "native",
+          "monotonic_seconds": 13.573520749807358,
+          "outcome": "FAILED",
+          "utc_seconds": 13.573688983917236
+        },
+        {
+          "job_id": "sikh340-c15-save",
+          "job_kind": "native",
+          "monotonic_seconds": 12.714746625162661,
+          "outcome": "FAILED",
+          "utc_seconds": 12.714892864227295
+        },
+        {
+          "job_id": "sikh340-c16-save",
+          "job_kind": "native",
+          "monotonic_seconds": 20.525156958028674,
+          "outcome": "FAILED",
+          "utc_seconds": 20.525327920913696
+        },
+        {
+          "job_id": "sikh340-c17-save",
+          "job_kind": "native",
+          "monotonic_seconds": 19.635144125204533,
+          "outcome": "FAILED",
+          "utc_seconds": 19.635513067245483
+        }
+      ],
+      "net_elapsed_seconds": null,
+      "observed_excluded_input_wait_seconds": 0,
+      "operational_proxies": {},
+      "phase_net_seconds": null,
+      "uncertainties": [
+        "missing_interval_end",
+        "missing_or_duplicate_lifecycle_boundary",
+        "unexplained_gap"
+      ],
+      "unknown_gap_seconds": 4898.050019741058
+    }
+  ],
+  "experiment_id": "SIKH335",
+  "factory_api": {
+    "known_api_cost_usd": null,
+    "provider_calls": null,
+    "reason": "No provider ledger evidence supplied; absence is not zero.",
+    "status": "UNKNOWN"
+  },
+  "model_setting_observations": [],
+  "net_episode_sum_seconds": null,
+  "note": "Episode totals exclude inter-episode gaps. Job sums are process-seconds, not CPU time.",
+  "outcome_denominators": {
+    "closed_episodes": 0,
+    "closed_experiments": 0,
+    "director_accepted_outputs": null,
+    "technically_successful_outputs": null
+  },
+  "schema_version": "1.0"
+}
