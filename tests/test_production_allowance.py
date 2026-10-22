@@ -1,4 +1,5 @@
 import json
+from copy import deepcopy
 import pytest
 from movie_factory import production_allowance as pa, production_workflow as wf
 from test_production_workflow import setup, direction, bind
@@ -57,3 +58,35 @@ def test_four_more_means_four_not_unlimited_or_replayable(setup):
     assert c.replan('t','GROUNDING','Fourth correction failed','limit')['stage']=='REPLAN_REQUIRED'
     with pytest.raises(wf.Blocked):pa.extend(c,'t','extension',binding,'reuse-approval')
     assert c.state('t')['cycle']==6 and c.state('t')['max_corrections']==6
+
+
+def test_exhausted_source_reconciliation_is_atomic_and_preserves_intent(setup):
+    root,c,data=blocked(setup);before=c.state('t');binding=route(root,c,data)
+    setup[3]['packet_digest']='knowledge-v2'
+    with pytest.raises(wf.Blocked,match='STALE_GROUNDING_KNOWLEDGE'):
+        pa.extend(c,'t','extension',binding,'stale')
+    grounding=dict(context_sources=deepcopy(before['direction']['context_sources']),
+        knowledge_task=before['direction']['knowledge_task'],knowledge_digest='knowledge-v2',
+        reason='Reviewed source revision; original intent and references unchanged',
+        evidence={'review':bind(root,'evidence.jpg')})
+    result=pa.extend(c,'t','extension',binding,'reconciled',grounding=grounding)
+    assert result['cycle']==3 and result['max_corrections']==6
+    assert result['direction']['intent']==before['direction']['intent']
+    assert result['direction']['references']==before['direction']['references']
+    assert result['allowance_history'][-1]['prior_direction']==before['direction']
+    assert result['planning_artifacts']=={} and result['planning_step']=='GROUNDING'
+
+
+@pytest.mark.parametrize('change',['drop','promote','stale','no_evidence'])
+def test_allowance_reconciliation_cannot_erase_or_promote_sources(setup,change):
+    root,c,data=blocked(setup);before=c.state('t');binding=route(root,c,data)
+    g=dict(context_sources=deepcopy(before['direction']['context_sources']),
+        knowledge_task=before['direction']['knowledge_task'],knowledge_digest='knowledge-v1',
+        reason='Reviewed reconciliation',evidence={'review':bind(root,'evidence.jpg')})
+    if change=='drop': g['context_sources']=[]
+    elif change=='promote': g['context_sources'][0]['status']='provisional'
+    elif change=='stale': g['knowledge_digest']='stale'
+    else: g['evidence']={}
+    with pytest.raises((wf.Blocked,ValueError)):
+        pa.extend(c,'t','extension',binding,'bad-reconciliation',grounding=g)
+    assert c.state('t')==before

@@ -36,7 +36,7 @@ def validate(recipe):
         elif kind=='neutral_actor_transfer':
             if set(edit)!={'kind','target','phase'} or name!='mounted leader' or edit['phase'] not in {'leader','near_crowd'}:
                 raise ValueError('PATCH_TRANSFER_FIELDS')
-        elif kind in {'coherent_actor','coherent_refit','mounted_finish345','mounted_cloth345','mounted_whole347'}:
+        elif kind in {'coherent_actor','coherent_refit','mounted_finish345','mounted_cloth345','mounted_whole347','mounted_anatomy351'}:
             if set(edit)!={'kind','target'} or name!='mounted leader':raise ValueError('PATCH_ACTOR_FIELDS')
         elif kind=='supporting_look':
             if set(edit)!={'kind','target'} or name!='mounted leader':raise ValueError('PATCH_LOOK_FIELDS')
@@ -91,7 +91,7 @@ def apply(bpy, recipe,diagnostic_dir=None):
     for edit in recipe['edits']:
         if edit['kind'] in {'neutral_garment_proof','neutral_actor_transfer'}:
             if bpy.data.objects.get('mounted leader') is None:raise ValueError('PATCH_NEUTRAL_OWNER')
-        elif edit['kind'] in {'supporting_look','supporting_finish','coherent_actor','coherent_refit','mounted_finish345','mounted_cloth345','mounted_whole347'}:
+        elif edit['kind'] in {'supporting_look','supporting_finish','coherent_actor','coherent_refit','mounted_finish345','mounted_cloth345','mounted_whole347','mounted_anatomy351'}:
             if bpy.data.objects.get('mounted leader') is None or bpy.data.objects.get('fitted saddle blanket292') is None:
                 raise ValueError('PATCH_LOOK_OBJECTS')
         elif edit['kind'] in {'repair_bbone_targets','supported_pose','supported_motion'}:
@@ -107,7 +107,12 @@ def apply(bpy, recipe,diagnostic_dir=None):
             names.add(edit['target'])
     support_evidence=[]
     for edit in recipe['edits']:
-        if edit['kind']=='mounted_whole347':
+        if edit['kind']=='mounted_anatomy351':
+            import importlib.util
+            spec=importlib.util.spec_from_file_location('mf_nihang_anatomy351',Path(__file__).with_name('nihang_anatomy351.py'))
+            anatomy=importlib.util.module_from_spec(spec);spec.loader.exec_module(anatomy)
+            support_evidence.append({'anatomy351':anatomy.run(bpy,diagnostic_dir)})
+        elif edit['kind']=='mounted_whole347':
             import importlib.util
             spec=importlib.util.spec_from_file_location('mf_nihang_whole347',Path(__file__).with_name('nihang_whole347.py'))
             whole=importlib.util.module_from_spec(spec);spec.loader.exec_module(whole)

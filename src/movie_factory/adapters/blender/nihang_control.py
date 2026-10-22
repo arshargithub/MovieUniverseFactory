@@ -12,6 +12,7 @@ OBJECTS = ('horse.rig', 'HORSE hind support pivot', 'mounted leader',
 # Exact diagnosed legacy320 defect, permitted ONLY for this unchanged negative
 # control. It is not a working-rig certificate or a general invalid-driver waiver.
 LEGACY_DRIVER_DEFECT = '054bf94aeb90448916005e7c0e8c5dbe163e7fbbea52cde230adf8c32ee0e21c'
+ANATOMY_VIEWS = {f'anatomy_{pose}_{view}' for pose in ('rest','bend','custom') for view in ('front','back')}
 
 
 def validate(recipe):
@@ -27,7 +28,7 @@ def validate(recipe):
         if type(recipe[key]) is not int or not lo <= recipe[key] <= hi:
             raise ValueError('NIHANG_RECIPE_BOUND:' + key)
     if recipe['operation']=='nihang_frames':
-        if not isinstance(recipe.get('view','production'),str) or recipe.get('view','production') not in {'production','leader_front','leader_reverse','leader_contact','leader_anatomy','crowd_front','crowd_reverse','neutral_front','neutral_back','neutral_side'}:
+        if not isinstance(recipe.get('view','production'),str) or recipe.get('view','production') not in ({'production','leader_front','leader_reverse','leader_contact','leader_anatomy','crowd_front','crowd_reverse','neutral_front','neutral_back','neutral_side'} | ANATOMY_VIEWS):
             raise ValueError('NIHANG_DIAGNOSTIC_VIEW')
         frames=recipe['frames']
         if (not isinstance(frames,list) or not 1<=len(frames)<=16 or
@@ -40,6 +41,8 @@ def validate(recipe):
 def diagnostic_camera(bpy,view):
     """Temporary evidence camera only. No production-camera key edits or save."""
     from mathutils import Vector
+    if view in ANATOMY_VIEWS:
+        return anatomy_control(bpy,view)
     if view=='leader_anatomy':
         for ob in bpy.data.objects:
             if ob.name.startswith(('MF coherent coat','MF coherent pants','MF coherent boots','MF coherent split chola','MF coherent waist wrap','MF coherent shoulder sash','MF347 chola')):
@@ -85,6 +88,55 @@ def diagnostic_camera(bpy,view):
     camera.rotation_euler=(target-camera.location).to_track_quat('-Z','Y').to_euler()
     data.lens=55
     return camera
+
+
+def anatomy_control(bpy,view):
+    """Temporary matched body-only controls. Never saved or a pose repair."""
+    from mathutils import Vector, Matrix
+    import math
+    rig=bpy.data.objects['MF coherent Nihang rig']
+    body=bpy.data.objects['MF coherent Nihang body']
+    for ob in bpy.data.objects:
+        if ob.type in {'MESH','CURVE','CURVES','LIGHT'}: ob.hide_render=ob!=body
+    pose=view.split('_')[1]
+    if pose=='rest':rig.data.pose_position='REST'
+    elif pose=='bend':
+        rig.animation_data_clear()
+        for pb in rig.pose.bones:pb.matrix_basis=Matrix.Identity(4)
+        pb=rig.pose.bones['lowerarm01.L'];pb.rotation_mode='XYZ';pb.rotation_euler.x=math.radians(90)
+    # Camera and illumination co-move with the rig, not with the tested arm.
+    matrix=rig.matrix_world.copy();q=matrix.to_quaternion()
+    target=matrix@Vector((0,0,1.37))
+    for name,offset,power,size in [('key',(-1.4,-1.8,2.1),450,2.0),('fill',(1.2,1.2,1.6),350,2.0)]:
+        light=bpy.data.lights.new('351 anatomy '+name,'AREA');light.energy=power;light.shape='DISK';light.size=size
+        ob=bpy.data.objects.new(light.name,light);bpy.context.scene.collection.objects.link(ob)
+        ob.location=target+q@Vector(offset);ob.rotation_euler=(target-ob.location).to_track_quat('-Z','Y').to_euler()
+    data=bpy.data.cameras.new('MF diagnostic camera temporary');data.type='ORTHO';data.ortho_scale=1.40
+    camera=bpy.data.objects.new(data.name,data);bpy.context.scene.collection.objects.link(camera)
+    camera.location=target+q@Vector((.12,-3 if view.endswith('front') else 3,.12))
+    camera.rotation_euler=(target-camera.location).to_track_quat('-Z','Y').to_euler()
+    return camera
+
+
+def anatomy_inventory(bpy):
+    """Actual joint frames and ownership, not a pose-quality assertion."""
+    rig=bpy.data.objects['MF coherent Nihang rig'];body=bpy.data.objects['MF coherent Nihang body']
+    names=[n for n in rig.data.bones.keys() if n.startswith(('upperarm','lowerarm','clavicle','shoulder','wrist'))]
+    bones={n:dict(parent=rig.data.bones[n].parent.name if rig.data.bones[n].parent else None,
+        rest_head=list(rig.data.bones[n].head_local),rest_tail=list(rig.data.bones[n].tail_local),
+        rest_matrix=[list(r) for r in rig.data.bones[n].matrix_local],
+        pose_matrix=[list(r) for r in rig.pose.bones[n].matrix],
+        basis=[list(r) for r in rig.pose.bones[n].matrix_basis],
+        deform=rig.data.bones[n].use_deform) for n in names}
+    weights={n:[] for n in names}
+    for v in body.data.vertices:
+        for g in v.groups:
+            name=body.vertex_groups[g.group].name
+            if name in weights and g.weight>.05: weights[name].append([*v.co,g.weight])
+    return dict(bones=bones,weighted_vertices=weights,
+        body_matrix=[list(r) for r in body.matrix_world],rig_matrix=[list(r) for r in rig.matrix_world],
+        modifiers=[dict(name=m.name,type=m.type,render=m.show_render,
+          preserve_volume=getattr(m,'use_deform_preserve_volume',None)) for m in body.modifiers])
 
 
 def cast_inventory(bpy):
@@ -383,6 +435,10 @@ def run(out, job):
                     data=temp.data;bpy.data.objects.remove(temp,do_unlink=True);bpy.data.cameras.remove(data)
             manifest.append({'frame':frame,'file':filename,'sha256':digest_file(out/filename),
                              'view':view,'camera_matrix':camera_matrix})
+            if view in ANATOMY_VIEWS:
+                manifest[-1]['anatomy']=anatomy_inventory(bpy)
+                for ob in list(bpy.data.objects):
+                    if ob.name.startswith('351 anatomy '):bpy.data.objects.remove(ob,do_unlink=True)
         if recipe['operation']=='nihang_frames':
             (out/'frames.json').write_text(json.dumps(manifest,indent=2)+'\n')
             artifacts.append('frames.json')

@@ -5,11 +5,12 @@ router-classified administrative amendment and explicit decision are mandatory. 
 regrounding follows; an amendment is not approval of an old plan or candidate.
 """
 from . import production_knowledge as pk, review_control as rc, planning_pipeline as pp
-from .production_workflow import require, nonempty
+from .production_workflow import require, nonempty, rows
+from copy import deepcopy
 from . import retrospective as retro
 
 
-def extend(controller, task, admission, decision, event_id):
+def extend(controller, task, admission, decision, event_id, *, grounding=None):
     rc.binding(controller.root, decision)
     approved=pk.read_json(controller.root,decision['path'])
     require(approved.get('task')==task and approved.get('decision')=='approve_additional_corrections', 'ALLOWANCE_EXPLICIT_DECISION')
@@ -31,12 +32,28 @@ def extend(controller, task, admission, decision, event_id):
         require(not any(h['decision']==decision for h in state.get('allowance_history',[])), 'ALLOWANCE_ALREADY_USED')
         rc.binding(controller.root,state['authority'])
         if state.get('revision_authority'):rc.binding(controller.root,state['revision_authority'])
+        # Exhausted tasks cannot call reground. Reconcile explicitly reviewed
+        # sources atomically with the already-authorized first new correction;
+        # never waive freshness or change the creative direction to escape it.
+        prior_direction = deepcopy(state['direction'])
+        if grounding is not None:
+            require(nonempty(grounding.get('reason')) and grounding.get('evidence'), 'ALLOWANCE_GROUNDING_RECORD')
+            for item in grounding['evidence'].values(): rc.binding(controller.root, item)
+            updated = rows(grounding['context_sources'])
+            for old in state['direction']['context_sources']:
+                require(not old['required'] or old['id'] in updated, 'REQUIRED_SOURCE_DROPPED')
+                if old['id'] in updated:
+                    require(all(updated[old['id']].get(k) == old[k] for k in
+                                ('category','status','required','statement','scope')), 'REGROUND_AUTHORITY_CHANGED')
+            state['direction'].update(context_sources=grounding['context_sources'],
+                knowledge_task=grounding['knowledge_task'], knowledge_digest=grounding['knowledge_digest'])
         pp.sources(controller.root,state['direction']);pp.source_context(controller.root,state['direction'])
         for ref in state['direction']['references']:rc.binding(controller.root,ref['binding'])
         state.setdefault('allowance_history',[]).append({'decision':decision,'admission':admission,
             'prior_cycle':state['cycle'],'prior_max_corrections':state['max_corrections'],
             'additional_corrections':count,'prior_engine':state['planning_engine'],
-            'prior_fingerprint':state.get('fingerprint'),'prior_stage':state['stage']})
+            'prior_fingerprint':state.get('fingerprint'),'prior_stage':state['stage'],
+            'prior_direction':prior_direction, 'grounding_reconciliation':grounding})
         state['max_corrections']+=count
         state['cycle']+=1  # first newly authorized correction, never cycle zero
         state['allowance_authority']=decision
@@ -44,4 +61,4 @@ def extend(controller, task, admission, decision, event_id):
         pp.invalidate(state,'GROUNDING')
         state['planning_feedback']=['Explicit Director allowance amendment. Preserve all original constraints and failures; reground before another native attempt.']
         return controller._stage(state,'BRIEFING')
-    return controller._change(task,event_id,'extend_allowance',[admission,decision],apply)
+    return controller._change(task,event_id,'extend_allowance',[admission,decision,grounding],apply)
