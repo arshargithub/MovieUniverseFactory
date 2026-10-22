@@ -30,6 +30,9 @@ def validate(recipe):
         if kind == 'repair_bbone_targets':
             if set(edit) != {'kind','target'} or name != 'horse.rig':
                 raise ValueError('PATCH_REPAIR_FIELDS')
+        elif kind=='neutral_garment_proof':
+            if set(edit)!={'kind','target','phase'} or name!='mounted leader' or edit['phase'] not in {'neutral','bend'}:
+                raise ValueError('PATCH_NEUTRAL_FIELDS')
         elif kind=='supporting_look':
             if set(edit)!={'kind','target'} or name!='mounted leader':raise ValueError('PATCH_LOOK_FIELDS')
         elif kind == 'supported_motion':
@@ -79,7 +82,9 @@ def apply(bpy, recipe,diagnostic_dir=None):
     # named derivative; it cannot overwrite an accepted existing object.
     names = set()
     for edit in recipe['edits']:
-        if edit['kind']=='supporting_look':
+        if edit['kind']=='neutral_garment_proof':
+            if bpy.data.objects.get('mounted leader') is None:raise ValueError('PATCH_NEUTRAL_OWNER')
+        elif edit['kind']=='supporting_look':
             if bpy.data.objects.get('mounted leader') is None or bpy.data.objects.get('fitted saddle blanket292') is None:
                 raise ValueError('PATCH_LOOK_OBJECTS')
         elif edit['kind'] in {'repair_bbone_targets','supported_pose','supported_motion'}:
@@ -95,7 +100,12 @@ def apply(bpy, recipe,diagnostic_dir=None):
             names.add(edit['target'])
     support_evidence=[]
     for edit in recipe['edits']:
-        if edit['kind']=='supporting_look':
+        if edit['kind']=='neutral_garment_proof':
+            import importlib.util
+            spec=importlib.util.spec_from_file_location('mf_nihang_neutral',Path(__file__).with_name('nihang_neutral.py'))
+            neutral=importlib.util.module_from_spec(spec);spec.loader.exec_module(neutral)
+            support_evidence.append({'neutral':neutral.run(bpy,edit['phase'],diagnostic_dir)})
+        elif edit['kind']=='supporting_look':
             import importlib.util
             spec=importlib.util.spec_from_file_location('mf_nihang_look',Path(__file__).with_name('nihang_look.py'))
             look=importlib.util.module_from_spec(spec);spec.loader.exec_module(look)

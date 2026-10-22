@@ -1,0 +1,46 @@
+{
+  "id": "sikh341-look-c18-neutral_front",
+  "task": "sikh335-supporting-appearance",
+  "step": "neutral_front",
+  "cycle": 18,
+  "fingerprint": "14f4526d443ab2ff076a266dcfa169e53a520d207eb70f7f5068dd92659aeb2c",
+  "parent": {
+    "path": ".runtime/factory-native/sikh341-look-c18-save/scene.blend",
+    "sha256": "7cf777e46e7e65e23bf55a5a4b031e6b631178a7bfda8e07b42e95f7984ac5c9"
+  },
+  "job_digest": "f694ff26b631cfacec16c172f170152c1931c117af1afd57bd3a4b675282e05a",
+  "handler_digest": "c41ff1448ac21a1bbc279edc803af9c06086a9e7ecdcdc4b1ab4dac7b0bf61db",
+  "status": "FAILED",
+  "artifacts": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh341-look-c18-neutral_front/snapshot.json",
+      "sha256": "979144972af94e72459be849686b5d61ba7dab5303dac96d3cca3a7a8a449358"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh341-look-c18-neutral_front/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh341-look-c18-neutral_front/script-diagnostics.json",
+      "sha256": "99bbbecec312f933855a69b1d853770138fd35ab62669f2fe652484d335f4ec7"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh341-look-c18-neutral_front/frame.png",
+      "sha256": "acd4a42c13f47db64f79b693c32a74a173bfd101d5245bfa0b43af0460f00c15"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh341-look-c18-neutral_front/frames.json",
+      "sha256": "a9dd0b92ec4c52b1bbf51dea04d800e55d7429065e2508ce3192cfc1139b3eb1"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh341-look-c18-neutral_front/frame.png",
+      "sha256": "acd4a42c13f47db64f79b693c32a74a173bfd101d5245bfa0b43af0460f00c15"
+    }
+  },
+  "dependencies": {},
+  "recipe": {
+    "path": "results/sikh335/look01/neutral_front-recipe-c18.json",
+    "sha256": "eff9c030e5fb6931e4ced4c95c510484084b4c43f076f457a67cd8111fb9f27e"
+  },
+  "error": "Blocked: NATIVE_SELECTED_STATE_DRIFT"
+}

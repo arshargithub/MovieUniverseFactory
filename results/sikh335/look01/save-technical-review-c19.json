@@ -1,0 +1,29 @@
+{
+  "verdict": "PASS",
+  "run_digest": "b3a31303f3452fdad8b0bdc924a71ba13784325ceab88f897ee2fec1f8f651fd",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh341-look-c19-save/snapshot.json",
+      "sha256": "cbf59785929f22bbc3abc6b9aa4cee6bf5c61c4473e05d41ff9aeac7647177c2"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh341-look-c19-save/dependencies.json",
+      "sha256": "4811a78ee0580daa4137f922efb7c3f91b40dd510bfaafe18af6ddcd1d970f05"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh341-look-c19-save/script-diagnostics.json",
+      "sha256": "d8c950e68c5c42eb08e3ba4cd795b716e2b5ac082b76301b8697edb7667b2ad9"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh341-look-c19-save/scene.blend",
+      "sha256": "7f6f08e5ef6bf30406c776cdce648f6ec3698e69284b5b32bcca287c2e39cc88"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh341-look-c19-save/patch-evidence.json",
+      "sha256": "231f0869878220531c92752fcca23c1a1bc23b6c79e1a7297fec653c0c28896c"
+    }
+  },
+  "observation": "Actual neutral body/garment saved: 7507 cloth vertices;40-frame settle maximum0.038378m. Source actor/rig state unchanged. No used invalid/unsafe drivers. Neutral studio is an explicit new diagnostic scene.",
+  "comparison": "Technical save prerequisite only; actual front/back/side images and form/contact review are still NOT_RUN. This is not a garment visual or whole-character PASS.",
+  "open_defects": []
+}

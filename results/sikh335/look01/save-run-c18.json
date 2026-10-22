@@ -1,0 +1,46 @@
+{
+  "id": "sikh341-look-c18-save",
+  "task": "sikh335-supporting-appearance",
+  "step": "save",
+  "cycle": 18,
+  "fingerprint": "14f4526d443ab2ff076a266dcfa169e53a520d207eb70f7f5068dd92659aeb2c",
+  "parent": {
+    "path": ".runtime/factory-native/sikh335-motion-c5-save/scene.blend",
+    "sha256": "8ac5220519e712dbc2d9e19e305a05971b883d7879b2a6289fc937f1975a98c4"
+  },
+  "job_digest": "6f9d78cf22ac3826c27a8bd412902c8c60c9a039d1bf0816227e4f4a3a53a391",
+  "handler_digest": "c41ff1448ac21a1bbc279edc803af9c06086a9e7ecdcdc4b1ab4dac7b0bf61db",
+  "status": "RETURNED",
+  "artifacts": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh341-look-c18-save/snapshot.json",
+      "sha256": "72ea909dd0d0e91d293fa30554cf95ae5321b13c4c8dce71811584cc12545146"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh341-look-c18-save/dependencies.json",
+      "sha256": "4811a78ee0580daa4137f922efb7c3f91b40dd510bfaafe18af6ddcd1d970f05"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh341-look-c18-save/script-diagnostics.json",
+      "sha256": "d8c950e68c5c42eb08e3ba4cd795b716e2b5ac082b76301b8697edb7667b2ad9"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh341-look-c18-save/scene.blend",
+      "sha256": "7cf777e46e7e65e23bf55a5a4b031e6b631178a7bfda8e07b42e95f7984ac5c9"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh341-look-c18-save/patch-evidence.json",
+      "sha256": "7b34c396f46f443af3ec8bea3051cc29c25fd562cec49493d0eb5536b7a8a1ed"
+    }
+  },
+  "dependencies": {
+    ".runtime/assets/series01-body-blender-studio/human-base-meshes-bundle-v1.4.1/human_base_meshes_bundle.blend": {
+      "path": ".runtime/assets/series01-body-blender-studio/human-base-meshes-bundle-v1.4.1/human_base_meshes_bundle.blend",
+      "sha256": "3c121505651140ceb4d69fd1d8923f7788ffadd81672f5be14845a5f2c75c137"
+    }
+  },
+  "recipe": {
+    "path": "results/sikh335/look01/save-recipe-c18.json",
+    "sha256": "1c6577a6cd9461557a9666f0490ce4bc6427b480e46f14a2d3e32d2a7fd6d08d"
+  }
+}

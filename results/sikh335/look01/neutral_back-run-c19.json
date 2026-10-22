@@ -1,0 +1,46 @@
+{
+  "id": "sikh341-look-c19-neutral_back",
+  "task": "sikh335-supporting-appearance",
+  "step": "neutral_back",
+  "cycle": 19,
+  "fingerprint": "50ec287e935ec6e4b3c7c6c55b7303162b94a2dcdd634a03b381527c8aba728e",
+  "parent": {
+    "path": ".runtime/factory-native/sikh341-look-c19-save/scene.blend",
+    "sha256": "7f6f08e5ef6bf30406c776cdce648f6ec3698e69284b5b32bcca287c2e39cc88"
+  },
+  "job_digest": "f4f3b0cdbb2448e79a249e4cc816f6d579dea52aca463547e13e31c5c2ca73f7",
+  "handler_digest": "63827801642833ecbf4870c1e60377c68e14bcdc1600322672630560ed7a47b0",
+  "status": "FAILED",
+  "artifacts": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh341-look-c19-neutral_back/snapshot.json",
+      "sha256": "cbf59785929f22bbc3abc6b9aa4cee6bf5c61c4473e05d41ff9aeac7647177c2"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh341-look-c19-neutral_back/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh341-look-c19-neutral_back/script-diagnostics.json",
+      "sha256": "99bbbecec312f933855a69b1d853770138fd35ab62669f2fe652484d335f4ec7"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh341-look-c19-neutral_back/frame.png",
+      "sha256": "70373e77f64c5559d16a1c29a0c18dd3453b165611f66899be7a9924210f2871"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh341-look-c19-neutral_back/frames.json",
+      "sha256": "624582d82fc9b22c34306a34f4f4771c9f304dd5ea74aaa790889ddd3a789889"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh341-look-c19-neutral_back/frame.png",
+      "sha256": "70373e77f64c5559d16a1c29a0c18dd3453b165611f66899be7a9924210f2871"
+    }
+  },
+  "dependencies": {},
+  "recipe": {
+    "path": "results/sikh335/look01/neutral_back-recipe-c19.json",
+    "sha256": "a27d50f26bbe94759ff17a214977e406d5e98d89bb475d53206a839442b50414"
+  },
+  "error": "Blocked: NATIVE_DEPENDENCY_DRIFT"
+}

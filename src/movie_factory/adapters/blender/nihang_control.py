@@ -27,7 +27,7 @@ def validate(recipe):
         if type(recipe[key]) is not int or not lo <= recipe[key] <= hi:
             raise ValueError('NIHANG_RECIPE_BOUND:' + key)
     if recipe['operation']=='nihang_frames':
-        if not isinstance(recipe.get('view','production'),str) or recipe.get('view','production') not in {'production','leader_front','leader_reverse','crowd_front'}:
+        if not isinstance(recipe.get('view','production'),str) or recipe.get('view','production') not in {'production','leader_front','leader_reverse','crowd_front','neutral_front','neutral_back','neutral_side'}:
             raise ValueError('NIHANG_DIAGNOSTIC_VIEW')
         frames=recipe['frames']
         if (not isinstance(frames,list) or not 1<=len(frames)<=16 or
@@ -40,6 +40,17 @@ def validate(recipe):
 def diagnostic_camera(bpy,view):
     """Temporary evidence camera only. No production-camera key edits or save."""
     from mathutils import Vector
+    if view.startswith('neutral_'):
+        if bpy.context.scene.name!='MF neutral garment studio':raise ValueError('NEUTRAL_VIEW_SCENE')
+        target=Vector((0,0,1.19))
+        offset=Vector({'neutral_front':(0,-3,.07),'neutral_back':(0,3,.07),'neutral_side':(3,-.15,.07)}[view])
+        data=bpy.data.cameras.new('MF diagnostic camera temporary')
+        camera=bpy.data.objects.new('MF diagnostic camera temporary',data)
+        bpy.context.scene.collection.objects.link(camera)
+        camera.location=target+offset
+        camera.rotation_euler=(target-camera.location).to_track_quat('-Z','Y').to_euler()
+        data.type='ORTHO';data.ortho_scale=1.22
+        return camera
     leader=view.startswith('leader_')
     root=bpy.data.objects['mounted leader' if leader else 'FOOT WARRIOR 0']
     upper=next(o for o in root.children if o.name.startswith('320 articulated upper body'))
@@ -166,6 +177,13 @@ def selected_state(bpy, frame):
         return [[round(float(v), 6) for v in row] for row in m]
     result = {'frame': frame, 'objects': {}, 'camera': scene.camera.name if scene.camera else None,
               'object_count': len(bpy.data.objects)}
+    # In the isolated neutral proof, production objects belong to another scene.
+    # A fresh open leaves their unevaluated matrices at identity. Evaluate their
+    # owning scene explicitly; never compare cached old matrices with identities.
+    if scene.name=='MF neutral garment studio':
+        owners=[s for s in bpy.data.scenes if s!=scene and all(n in s.objects for n in OBJECTS)]
+        if len(owners)!=1:raise ValueError('NEUTRAL_SOURCE_SCENE_AMBIGUOUS')
+        bpy.context.window.scene=owners[0];owners[0].frame_set(frame);bpy.context.view_layer.update()
     for name in OBJECTS:
         obj = bpy.data.objects.get(name)
         if obj is None:
@@ -176,6 +194,8 @@ def selected_state(bpy, frame):
             result['objects'][name]['bones'] = {bone.name: {
                 'matrix': matrix(bone.matrix), 'basis': matrix(bone.matrix_basis)}
                 for bone in sorted(obj.pose.bones, key=lambda b: b.name)}
+    if bpy.context.window.scene!=scene:
+        bpy.context.window.scene=scene;scene.frame_set(frame);bpy.context.view_layer.update()
     if not scene.camera:
         raise ValueError('NIHANG_CAMERA_MISSING')
     result['camera_matrix'] = matrix(scene.camera.matrix_world)
@@ -243,11 +263,22 @@ def script_diagnostics(bpy):
             'orphan_driver_count': sum(d['users'] == 0 for d in drivers)}
 
 
+def dependency_relevant(collection, item):
+    """A fully appended, unused library is input provenance, not a live link.
+
+    Blender drops that orphan ID on save/reopen. Keep input provenance in the
+    admitted source bindings; retain every actually used/fake-user library here.
+    Other dependency collections are unchanged.
+    """
+    return not (collection=='libraries' and item.users==0 and not item.use_fake_user)
+
+
 def dependencies(bpy, root):
     """Scoped external-file inventory; not complete simulation portability."""
     found = {}
     for collection in ('images', 'libraries', 'cache_files', 'movieclips', 'sounds', 'fonts', 'volumes'):
         for item in getattr(bpy.data, collection):
+            if not dependency_relevant(collection,item):continue
             filename = getattr(item, 'filepath', '')
             if not filename or filename == '<builtin>' or getattr(item, 'packed_file', None):
                 continue

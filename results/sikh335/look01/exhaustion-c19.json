@@ -1,0 +1,304 @@
+{
+  "task": "sikh335-supporting-appearance",
+  "state": {
+    "stage": "REPLAN_REQUIRED",
+    "cycle": 19,
+    "max_corrections": 19
+  },
+  "motion_state": {
+    "stage": "EXECUTING",
+    "cycle": 9,
+    "max_corrections": 10
+  },
+  "runs": [
+    {
+      "cycle": 18,
+      "step": "save",
+      "run": "sikh341-look-c18-save",
+      "status": "RETURNED",
+      "error": null,
+      "evidence": {
+        "scene.blend": {
+          "path": ".runtime/factory-native/sikh341-look-c18-save/scene.blend",
+          "sha256": "7cf777e46e7e65e23bf55a5a4b031e6b631178a7bfda8e07b42e95f7984ac5c9",
+          "bytes": 199458816
+        },
+        "snapshot.json": {
+          "path": ".runtime/factory-native/sikh341-look-c18-save/snapshot.json",
+          "sha256": "72ea909dd0d0e91d293fa30554cf95ae5321b13c4c8dce71811584cc12545146",
+          "bytes": 457596
+        },
+        "dependencies.json": {
+          "path": ".runtime/factory-native/sikh341-look-c18-save/dependencies.json",
+          "sha256": "4811a78ee0580daa4137f922efb7c3f91b40dd510bfaafe18af6ddcd1d970f05",
+          "bytes": 494
+        },
+        "patch-evidence.json": {
+          "path": ".runtime/factory-native/sikh341-look-c18-save/patch-evidence.json",
+          "sha256": "7b34c396f46f443af3ec8bea3051cc29c25fd562cec49493d0eb5536b7a8a1ed",
+          "bytes": 1014557
+        },
+        "neutral-proof.npz": {
+          "path": ".runtime/factory-native/sikh341-look-c18-save/neutral-proof.npz",
+          "sha256": "d0b037f2eee50f83ad631b5f2cc0197b70f2e94488e8269ca8b937fa6e3d04c5",
+          "bytes": 1246221
+        },
+        "stdout.log": {
+          "path": ".runtime/factory-native/sikh341-look-c18-save/stdout.log",
+          "sha256": "56336e1134c40be27693a2b280c76ab680d7ef0c9f6d56b36631df5d1a0757d5",
+          "bytes": 406
+        },
+        "stderr.log": {
+          "path": ".runtime/factory-native/sikh341-look-c18-save/stderr.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        }
+      }
+    },
+    {
+      "cycle": 18,
+      "step": "neutral_front",
+      "run": "sikh341-look-c18-neutral_front",
+      "status": "FAILED",
+      "error": "Blocked: NATIVE_SELECTED_STATE_DRIFT",
+      "evidence": {
+        "frame.png": {
+          "path": ".runtime/factory-native/sikh341-look-c18-neutral_front/frame.png",
+          "sha256": "acd4a42c13f47db64f79b693c32a74a173bfd101d5245bfa0b43af0460f00c15",
+          "bytes": 401680
+        },
+        "snapshot.json": {
+          "path": ".runtime/factory-native/sikh341-look-c18-neutral_front/snapshot.json",
+          "sha256": "979144972af94e72459be849686b5d61ba7dab5303dac96d3cca3a7a8a449358",
+          "bytes": 457423
+        },
+        "dependencies.json": {
+          "path": ".runtime/factory-native/sikh341-look-c18-neutral_front/dependencies.json",
+          "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d",
+          "bytes": 160
+        },
+        "stdout.log": {
+          "path": ".runtime/factory-native/sikh341-look-c18-neutral_front/stdout.log",
+          "sha256": "8fe6254d3ca4b540d2e81a3dbc79a0bf2318a0aa72d08791c14c179c4e9b703b",
+          "bytes": 525
+        },
+        "stderr.log": {
+          "path": ".runtime/factory-native/sikh341-look-c18-neutral_front/stderr.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        }
+      },
+      "selected_state_identical": false,
+      "dependencies_removed_on_reopen": [
+        ".runtime/assets/series01-body-blender-studio/human-base-meshes-bundle-v1.4.1/human_base_meshes_bundle.blend"
+      ],
+      "dependencies_added_on_reopen": []
+    },
+    {
+      "cycle": 19,
+      "step": "save",
+      "run": "sikh341-look-c19-save",
+      "status": "RETURNED",
+      "error": null,
+      "evidence": {
+        "scene.blend": {
+          "path": ".runtime/factory-native/sikh341-look-c19-save/scene.blend",
+          "sha256": "7f6f08e5ef6bf30406c776cdce648f6ec3698e69284b5b32bcca287c2e39cc88",
+          "bytes": 199457600
+        },
+        "snapshot.json": {
+          "path": ".runtime/factory-native/sikh341-look-c19-save/snapshot.json",
+          "sha256": "cbf59785929f22bbc3abc6b9aa4cee6bf5c61c4473e05d41ff9aeac7647177c2",
+          "bytes": 457596
+        },
+        "dependencies.json": {
+          "path": ".runtime/factory-native/sikh341-look-c19-save/dependencies.json",
+          "sha256": "4811a78ee0580daa4137f922efb7c3f91b40dd510bfaafe18af6ddcd1d970f05",
+          "bytes": 494
+        },
+        "patch-evidence.json": {
+          "path": ".runtime/factory-native/sikh341-look-c19-save/patch-evidence.json",
+          "sha256": "231f0869878220531c92752fcca23c1a1bc23b6c79e1a7297fec653c0c28896c",
+          "bytes": 1014608
+        },
+        "neutral-proof.npz": {
+          "path": ".runtime/factory-native/sikh341-look-c19-save/neutral-proof.npz",
+          "sha256": "80333cd50f609abac94d3b29d0dde0d9ad0d37131860c089a430af293ca9a1cb",
+          "bytes": 1480317
+        },
+        "stdout.log": {
+          "path": ".runtime/factory-native/sikh341-look-c19-save/stdout.log",
+          "sha256": "ce8c1117a004ba68f9c578dee998b40e4f6147e7c077a2b7523e16994ad10f33",
+          "bytes": 406
+        },
+        "stderr.log": {
+          "path": ".runtime/factory-native/sikh341-look-c19-save/stderr.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        }
+      }
+    },
+    {
+      "cycle": 19,
+      "step": "neutral_front",
+      "run": "sikh341-look-c19-neutral_front",
+      "status": "FAILED",
+      "error": "Blocked: NATIVE_DEPENDENCY_DRIFT",
+      "evidence": {
+        "frame.png": {
+          "path": ".runtime/factory-native/sikh341-look-c19-neutral_front/frame.png",
+          "sha256": "9501000f2c2e233d4170cec08d38f86c66654e967c5b082854a66634e4bc0577",
+          "bytes": 404833
+        },
+        "snapshot.json": {
+          "path": ".runtime/factory-native/sikh341-look-c19-neutral_front/snapshot.json",
+          "sha256": "cbf59785929f22bbc3abc6b9aa4cee6bf5c61c4473e05d41ff9aeac7647177c2",
+          "bytes": 457596
+        },
+        "dependencies.json": {
+          "path": ".runtime/factory-native/sikh341-look-c19-neutral_front/dependencies.json",
+          "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d",
+          "bytes": 160
+        },
+        "stdout.log": {
+          "path": ".runtime/factory-native/sikh341-look-c19-neutral_front/stdout.log",
+          "sha256": "12050eaf54dccdcc246f8a5bdc8c94a66bf25b1c49113e59f8794cfa2ad648a0",
+          "bytes": 525
+        },
+        "stderr.log": {
+          "path": ".runtime/factory-native/sikh341-look-c19-neutral_front/stderr.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        }
+      },
+      "selected_state_identical": true,
+      "dependencies_removed_on_reopen": [
+        ".runtime/assets/series01-body-blender-studio/human-base-meshes-bundle-v1.4.1/human_base_meshes_bundle.blend"
+      ],
+      "dependencies_added_on_reopen": []
+    },
+    {
+      "cycle": 19,
+      "step": "neutral_back",
+      "run": "sikh341-look-c19-neutral_back",
+      "status": "FAILED",
+      "error": "Blocked: NATIVE_DEPENDENCY_DRIFT",
+      "evidence": {
+        "frame.png": {
+          "path": ".runtime/factory-native/sikh341-look-c19-neutral_back/frame.png",
+          "sha256": "70373e77f64c5559d16a1c29a0c18dd3453b165611f66899be7a9924210f2871",
+          "bytes": 398496
+        },
+        "snapshot.json": {
+          "path": ".runtime/factory-native/sikh341-look-c19-neutral_back/snapshot.json",
+          "sha256": "cbf59785929f22bbc3abc6b9aa4cee6bf5c61c4473e05d41ff9aeac7647177c2",
+          "bytes": 457596
+        },
+        "dependencies.json": {
+          "path": ".runtime/factory-native/sikh341-look-c19-neutral_back/dependencies.json",
+          "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d",
+          "bytes": 160
+        },
+        "stdout.log": {
+          "path": ".runtime/factory-native/sikh341-look-c19-neutral_back/stdout.log",
+          "sha256": "0308f6a087fdee79fada314c8289ac2d0b5c9d0089102792a6af74b3916a878d",
+          "bytes": 524
+        },
+        "stderr.log": {
+          "path": ".runtime/factory-native/sikh341-look-c19-neutral_back/stderr.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        }
+      },
+      "selected_state_identical": true,
+      "dependencies_removed_on_reopen": [
+        ".runtime/assets/series01-body-blender-studio/human-base-meshes-bundle-v1.4.1/human_base_meshes_bundle.blend"
+      ],
+      "dependencies_added_on_reopen": []
+    },
+    {
+      "cycle": 19,
+      "step": "neutral_side",
+      "run": "sikh341-look-c19-neutral_side",
+      "status": "FAILED",
+      "error": "Blocked: NATIVE_DEPENDENCY_DRIFT",
+      "evidence": {
+        "frame.png": {
+          "path": ".runtime/factory-native/sikh341-look-c19-neutral_side/frame.png",
+          "sha256": "fb2c337883ef187957e0787762bc0d9af1529f45c0a22161ec239aeea644d317",
+          "bytes": 371430
+        },
+        "snapshot.json": {
+          "path": ".runtime/factory-native/sikh341-look-c19-neutral_side/snapshot.json",
+          "sha256": "cbf59785929f22bbc3abc6b9aa4cee6bf5c61c4473e05d41ff9aeac7647177c2",
+          "bytes": 457596
+        },
+        "dependencies.json": {
+          "path": ".runtime/factory-native/sikh341-look-c19-neutral_side/dependencies.json",
+          "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d",
+          "bytes": 160
+        },
+        "stdout.log": {
+          "path": ".runtime/factory-native/sikh341-look-c19-neutral_side/stdout.log",
+          "sha256": "9d7c2b610558eff8d7a99ae11f7cb4d3a93ef2c703d51eb4c8516d18e89c3c24",
+          "bytes": 524
+        },
+        "stderr.log": {
+          "path": ".runtime/factory-native/sikh341-look-c19-neutral_side/stderr.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        }
+      },
+      "selected_state_identical": true,
+      "dependencies_removed_on_reopen": [
+        ".runtime/assets/series01-body-blender-studio/human-base-meshes-bundle-v1.4.1/human_base_meshes_bundle.blend"
+      ],
+      "dependencies_added_on_reopen": []
+    }
+  ],
+  "jobs": [
+    {
+      "job": "sikh341-c18-save",
+      "process_wall_seconds": 22.665009667165577
+    },
+    {
+      "job": "sikh341-c18-front",
+      "process_wall_seconds": 5.854301583953202
+    },
+    {
+      "job": "sikh341-c19-save",
+      "process_wall_seconds": 20.252843209076673
+    },
+    {
+      "job": "sikh341-c19-front",
+      "process_wall_seconds": 7.978850165847689
+    },
+    {
+      "job": "sikh341-c19-neutral_back",
+      "process_wall_seconds": 6.732842500321567
+    },
+    {
+      "job": "sikh341-c19-neutral_side",
+      "process_wall_seconds": 5.46133045759052
+    }
+  ],
+  "new_saved_candidates": 2,
+  "new_rendered_diagnostic_images": 4,
+  "native_process_wall_seconds": 68.94517758395523,
+  "visual_verdict": "FAIL",
+  "bend": "NOT_RUN",
+  "direct_motion": "NOT_RUN",
+  "director_acceptance": "NOT_REQUESTED",
+  "observations": {
+    "neutral18_front": "Molded pectoral/abdominal read and jagged collar. Rejected.",
+    "neutral19_front": "Fabric bridges chest with hanging folds; molded pectoral read substantially reduced. Neckline still saw-toothed and unacceptable.",
+    "neutral19_back": "Continuous shoulder/armpit region and restrained back folds; no detached rectangular shoulder panels. Waist and cuffs still unfinished.",
+    "neutral19_side": "Continuous sleeve/shoulder; chest projects as draped fabric rather than bare anatomy. Front neckline irregularity is visible again.",
+    "technical": "19 selected snapshots match exactly in all three fresh processes; all fail strict dependency inventory because an appended unused donor library is dropped. Original failure receipts retained."
+  },
+  "scope": "Actual neutral garment method proof only. No Nihang face, crown, saddle, crowd, faithful performance or integrated sequence completion.",
+  "new_provider_calls": 0,
+  "new_external_spend": 0,
+  "remote_push": false,
+  "new_remote_backup": false
+}
