@@ -11,6 +11,7 @@ import math
 import re
 from . import production_knowledge as pk
 from . import review_control as rc
+from . import retrospective as retro
 from .production_workflow import require, nonempty, rows, bindings
 
 _ACTIVE = {}
@@ -28,6 +29,10 @@ def check_capability(capability, job):
     require(not entry['used'] and entry['digest'] == pk.digest(job), 'NATIVE_CAPABILITY_REPLAY_OR_SUBSTITUTION')
     entry['controller']._fresh(entry['state'])
     current = entry['controller'].state(entry['state']['task'])
+    with closing(entry['controller'].connect()) as con:
+        retro.guard(con,current)
+        retro.check_proofs(entry['controller'].root,con,current)
+        require(retro.snapshot(con,current['task'])['sequence']==entry['retro_sequence'], 'RETRO_ADMISSION_CHANGED')
     require(current['stage'] == 'EXECUTING' and all(current[k] == entry['state'][k]
             for k in ('cycle', 'fingerprint')), 'NATIVE_ADMISSION_CHANGED')
     require(entry['engine'] == engine_digest(), 'NATIVE_HANDLER_CHANGED')
@@ -146,11 +151,15 @@ class Bridge:
             self.c.job(task, run_id, 'release', 'native-release:' + run_id)
             require(False, 'NATIVE_ADMISSION_CHANGED')
         with self.c.transaction() as con:
+            current = self.c._state(con,task)
+            retro.guard(con,current)
+            retro.check_proofs(self.c.root,con,current)
+            retro_sequence = retro.snapshot(con,task)['sequence']
             con.execute('INSERT INTO native_runs VALUES(?,?,?,?,?,?)',
                         (run_id, task, state['cycle'], state['fingerprint'], step, json.dumps(record)))
         capability = object()
         _ACTIVE[id(capability)] = {'capability': capability, 'used': False, 'digest': pk.digest(job),
-                                  'controller': self.c, 'state': state, 'engine': record['handler_digest']}
+                                  'controller': self.c, 'state': state, 'engine': record['handler_digest'], 'retro_sequence':retro_sequence}
         try:
             result = run_blender(job, blender_bin=blender_bin, timeout=timeout, _admission=capability)
             require(result.get('ok') is True, 'NATIVE_WORKER_FAILED')
@@ -230,6 +239,10 @@ class Bridge:
         # Operator must establish process termination before recovery; no replay.
         with self.c.transaction() as con:
             con.execute('UPDATE native_runs SET record=? WHERE id=?', (json.dumps(record), run_id))
+            retro.auto_outcome(con,state,'worker:'+run_id,
+                [dict(requirement='__worker__',status='PASS' if record['status']=='RETURNED' else 'FAIL',
+                      observation=record.get('error','Worker returned; not appearance qualification.'))],
+                origin='worker',evidence=record.get('artifacts',{}))
         self.c.job(task, run_id, 'release', 'native-release:' + run_id)
         return record
 
@@ -253,7 +266,16 @@ class Bridge:
         bindings(self.c.root, verdict['evidence'])
         require(all(b in verdict['evidence'].values() for b in run['artifacts'].values()), 'REVIEW_MUST_INSPECT_ACTUAL_OUTPUT')
         with self.c.transaction() as con:
+            old = con.execute('SELECT record FROM native_reviews WHERE run=?',(run['id'],)).fetchone()
+            if old:
+                require(json.loads(old[0])==verdict,'RETRO_EVENT_CONFLICT')
+                return verdict
             con.execute('INSERT INTO native_reviews VALUES(?,?)', (run['id'], json.dumps(verdict)))
+            requirements = rows(state['planning_artifacts']['STRATEGIZING']['steps'])[step]['requirements']
+            status = 'FAIL' if verdict['open_defects'] else ('UNKNOWN' if verdict['verdict']=='NOT_RUN' else verdict['verdict'])
+            retro.auto_outcome(con,state,'native-review:'+run['id'],
+                [dict(requirement=r,status=status,observation=verdict['observation']) for r in requirements],
+                origin='native_review',evidence=verdict['evidence'],extra=verdict.get('retrospective_observations'))
         return verdict
 
 

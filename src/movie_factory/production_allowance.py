@@ -6,6 +6,7 @@ regrounding follows; an amendment is not approval of an old plan or candidate.
 """
 from . import production_knowledge as pk, review_control as rc, planning_pipeline as pp
 from .production_workflow import require, nonempty
+from . import retrospective as retro
 
 
 def extend(controller, task, admission, decision, event_id):
@@ -21,6 +22,7 @@ def extend(controller, task, admission, decision, event_id):
             'ALLOWANCE_ROUTED_AUTHORITY')
     def apply(con):
         state=controller._state(con,task)
+        retro.fresh(con,state)
         require(state['route']=='production' and state['stage']=='REPLAN_REQUIRED','ALLOWANCE_BLOCKED_TASK_ONLY')
         require(not con.execute('SELECT 1 FROM heavy_job').fetchone(),'JOB_STILL_ACTIVE')
         require(state['cycle']==approved.get('prior_cycle') and state['max_corrections']==approved.get('prior_max_corrections'),

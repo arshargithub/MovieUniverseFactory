@@ -69,7 +69,8 @@ def engine_digest():
     from . import production_workflow as wf
     from . import task_router as tr
     from . import native_admission as na
-    return pk.digest({m.__name__: pk.file_hash(Path(m.__file__)) for m in (wf, ep, rc, pk, ch, tr, na)} | {'pipeline': pk.file_hash(Path(__file__))})
+    from . import retrospective as retro
+    return pk.digest({m.__name__: pk.file_hash(Path(m.__file__)) for m in (wf, ep, rc, pk, ch, tr, na, retro)} | {'pipeline': pk.file_hash(Path(__file__))})
 
 
 def input_digest(state):

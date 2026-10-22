@@ -17,6 +17,7 @@ import sqlite3
 
 from . import production_knowledge as pk
 from . import review_control as rc
+from . import retrospective as retro
 
 
 class Blocked(ValueError):
@@ -225,6 +226,7 @@ class Controller:
                 CREATE TRIGGER IF NOT EXISTS routing_no_delete BEFORE DELETE ON routing
                     BEGIN SELECT RAISE(ABORT, 'immutable routing'); END;
             ''')
+            retro.install(con)
 
     def route_request(self, request_id, request, continuation=None):
         from . import task_router as tr
@@ -310,13 +312,22 @@ class Controller:
                             and current.get('candidate') == old.get('candidate')
                             and current.get('result') == old.get('result'), 'STALE_RECEIPT')
                     self._fresh(current)
+                    retro.guard(con, current, delivery=True)
+                    retro.check_proofs(self.root, con, current)
                     if current['stage'] == 'COMPLETE':
                         bindings(self.root, current['result']['artifacts'])
                     else:
                         findings = review_result(self.root, current['brief'], current['candidate'], current['review'], current['fingerprint'])
                         require(not findings['failures'] and not findings['missing_evidence'], 'REVIEW_FAILED')
                 return self._public(old)
+            previous = con.execute('SELECT state FROM events WHERE task=? ORDER BY seq DESC LIMIT 1', (task,)).fetchone()
+            previous = json.loads(previous[0]) if previous else None
             state = fn(con)
+            if (state['route']=='production' and state['stage']=='REPLAN_REQUIRED'
+                    and (not previous or previous['stage']!='REPLAN_REQUIRED')):
+                retro.auto_outcome(con,state,'exhaustion:'+event_id,
+                    [dict(requirement='__allowance__',status='NOT_TESTED',observation='Correction allowance exhausted; synthesis required before continuation.')],
+                    origin='exhaustion',evidence={'authority':state['authority']})
             con.execute('INSERT INTO events(task,event_id,request_hash,utc,action,state,state_hash) VALUES(?,?,?,?,?,?,?)',
                         (task, event_id, digest, datetime.now(timezone.utc).isoformat(), action,
                          json.dumps(state, sort_keys=True), pk.digest(state)))
@@ -374,6 +385,7 @@ class Controller:
                 require(not con.execute('SELECT 1 FROM deliverables WHERE deliverable_id=?',
                                         (direction['deliverable_id'],)).fetchone(), 'DELIVERABLE_ALREADY_TRACKED')
                 con.execute('INSERT INTO deliverables VALUES(?,?)', (direction['deliverable_id'], task))
+                retro.append(con,task,'initialize','initialize',dict(version=retro.VERSION,engine=retro.engine()))
             return self._stage({'task': task, 'route': route, 'cycle': 0,
                                 'max_corrections': max_corrections, 'authority': authority,
                                 'direction': direction,
@@ -387,6 +399,9 @@ class Controller:
         return self._change(task, event_id, 'create', [route, authority, max_corrections, direction, mode, admission], apply)
 
     def _fresh(self, state):
+        with closing(self.connect()) as con:
+            retro.fresh(con,state)
+            retro.validate_evidence(self.root,con,state)
         if state.get('routing'):
             require(self.routing(state['routing']['id']) == state['routing'], 'ROUTE_CHANGED')
         rc.binding(self.root, state['authority'])
@@ -411,12 +426,18 @@ class Controller:
         with closing(self.connect()) as con:
             state = self._state(con, task)
         self._fresh(state)
+        with closing(self.connect()) as con:
+            if state['stage']=='EXECUTING':
+                retro.guard(con,state)
+                retro.check_proofs(self.root,con,state)
+            retrospective = retro.packet(con,state)
         require(state['stage'] in STAGES, 'NO_STAGE_DISPATCH')
         packet = {'task': task, 'stage': state['stage'], 'actor': stage_actor(state),
                   'ticket': state['ticket'], 'cycle': state['cycle'],
                   'max_corrections': state['max_corrections'], 'offline_only': state['offline_only'],
                   'frozen_evidence_only': state.get('frozen_evidence_only', False),
                   'direction': state['direction'], 'authority': state['authority']}
+        packet['retrospective'] = retrospective
         from . import planning_pipeline as pp
         if state.get('direction'):
             packet['source_context'] = pp.source_context(self.root, state['direction'])
@@ -455,8 +476,10 @@ class Controller:
             require(not con.execute('SELECT 1 FROM heavy_job WHERE task=?', (task,)).fetchone(), 'JOB_STILL_ACTIVE')
             self._fresh(state)
             if state['stage'] == 'BRIEFING':
-                return self._planning_submit(state, result)
+                return self._planning_submit(state, result, con, event_id)
             if actor == 'builder':
+                retro.guard(con,state)
+                retro.check_proofs(self.root,con,state)
                 from . import expert_planning as ep
                 ep.validate_execution(state['brief'], result)
                 require(result['fingerprint'] == state['fingerprint'], 'BUILDER_STALE_BRIEF')
@@ -479,16 +502,33 @@ class Controller:
             findings = review_result(self.root, state['brief'], state['candidate'], result, state['fingerprint'])
             state['review'] = result
             state['findings'] = findings
+            observations = [dict(requirement=r['id'],status=('NOT_TESTED' if r['status']=='NOT_RUN' else r['status']),
+                                 observation=r['observation']) for r in result['checks']]
+            # A general visible/reference/intent veto cannot be hidden by PASS
+            # rows. Preserve an aggregate issue in addition to specific checks.
+            if findings['failures']:
+                observations.append(dict(requirement='__whole_result__',status='FAIL',observation='; '.join(findings['failures'])))
+            def capture():
+                retro.auto_outcome(con,state,'review:'+event_id,observations,origin='final_review',
+                                   evidence={k:v['binding'] for k,v in result['evidence'].items()},extra=result.get('retrospective_observations'))
             if findings['planning_gaps']:
+                capture()
                 return self._planning_repair(state, 'DERIVING', findings['planning_gaps'])
             if findings['failures']:
                 if state['cycle'] >= state['max_corrections']:
-                    return self._stage(state, 'REPLAN_REQUIRED')
+                    self._stage(state, 'REPLAN_REQUIRED'); capture(); return state
+                capture()
                 state['cycle'] += 1
                 return self._stage(state, 'EXECUTING')
             if findings['missing_evidence']:
+                capture()
                 state['evidence_cycles'] = state.get('evidence_cycles', 0) + 1
                 return self._stage(state, 'EVIDENCE_NEEDED' if state['evidence_cycles'] <= 2 else 'BLOCKED')
+            capture()
+            retro.append(con,task,'closure:'+event_id,'closure',dict(
+                result='AWAITING_DIRECTOR_AV' if findings['pending_director_av'] else 'AWAITING_DIRECTOR',
+                candidate=state['candidate'],scope=state['brief']['scope'],
+                pending=findings['pending_director_av'],production_approved=False))
             return self._stage(state, 'READY_FOR_DIRECTOR_AV' if findings['pending_director_av'] else 'READY_FOR_DIRECTOR')
         return self._change(task, event_id, 'submit:' + actor, [ticket, result], apply)
 
@@ -501,7 +541,7 @@ class Controller:
         pp.invalidate(state, target)
         return self._stage(state, 'BRIEFING')
 
-    def _planning_submit(self, state, result):
+    def _planning_submit(self, state, result, con, event_id):
         from . import planning_pipeline as pp
         require(result.get('input_digest') == pp.input_digest(state), 'STALE_PLANNING_INPUT')
         step, direction = state['planning_step'], state['direction']
@@ -513,11 +553,15 @@ class Controller:
         if step == 'CHALLENGING':
             target = pp.challenge(direction, result)
             if target:
+                retro.auto_outcome(con,state,'challenge:'+event_id,
+                    [dict(requirement='__planning__',status='FAIL',observation=str(result['issues']))],origin='planning_challenge',
+                    extra=result.get('retrospective_observations'))
                 return self._planning_repair(state, target, result['issues'])
             brief = artifacts['STRATEGIZING']['brief']
             state['fingerprint'] = validate_brief(self.root, brief, state['route'], state.get('mode', 'offline'))
             state['brief'] = brief
             state['planning_admission'] = result
+            retro.plan(con,state,'plan:'+event_id,brief,self.root)
             return self._stage(state, 'EXECUTING')
         require(result.get('outcome') == 'complete' and isinstance(result.get('artifact'), dict), 'PLANNING_ARTIFACT_REQUIRED')
         data = result['artifact']
@@ -565,6 +609,7 @@ class Controller:
         pp.source_context(self.root, direction)
         def apply(con):
             state = self._state(con, task)
+            retro.fresh(con,state)
             require(state['mode'] == 'local_native' and state['stage'] in {'EXECUTING', 'REPLAN_REQUIRED'},
                     'RECOVERY_NATIVE_STATE')
             require(not con.execute('SELECT 1 FROM heavy_job').fetchone(), 'JOB_STILL_ACTIVE')
@@ -612,6 +657,7 @@ class Controller:
         require(nonempty(reason), 'RECOVERY_REASON')
         def apply(con):
             state = self._state(con, task)
+            retro.fresh(con,state)
             require(state['stage'] == 'BRIEFING' and state['planning_step'] == 'GROUNDING'
                     and not state['planning_artifacts'] and state.get('recovery_history'), 'RECOVERY_PLAN_ALREADY_STARTED')
             require(state['recovery_history'][-1]['admission'] == admission
@@ -628,6 +674,7 @@ class Controller:
         require(nonempty(reason), 'REVISION_REASON')
         def apply(con):
             state = self._state(con, task)
+            retro.fresh(con,state)
             require(state['route'] == 'production', 'WRONG_ROUTE')
             require(not con.execute('SELECT 1 FROM heavy_job WHERE task=?', (task,)).fetchone(), 'JOB_STILL_ACTIVE')
             validate_brief(self.root, brief, state['route'], state.get('mode', 'offline'))
@@ -660,6 +707,7 @@ class Controller:
         require(nonempty(reason), 'REGROUND_REASON')
         def apply(con):
             state = self._state(con, task)
+            retro.fresh(con,state)
             require(state['route'] == 'production' and state['stage'] not in {'DIRECTOR_DECISION', 'REPLAN_REQUIRED'}, 'REGROUND_NOT_AVAILABLE')
             require(not con.execute('SELECT 1 FROM heavy_job WHERE task=?', (task,)).fetchone(), 'JOB_STILL_ACTIVE')
             rc.binding(self.root, state['authority'])
@@ -691,6 +739,8 @@ class Controller:
             state = self._state(con, task)
             require(state['stage'] in READY, 'NOT_READY')
             self._fresh(state)
+            retro.guard(con,state,delivery=True)
+            retro.check_proofs(self.root,con,state)
             if state['stage'] == 'COMPLETE':
                 bindings(self.root, state['result']['artifacts'])
             else:
@@ -710,6 +760,8 @@ class Controller:
             state = self._state(con, task)
             if action == 'acquire':
                 self._fresh(state)
+                retro.guard(con,state)
+                retro.check_proofs(self.root,con,state)
                 require(state['stage'] == 'EXECUTING', 'JOB_OUTSIDE_EXECUTION')
                 require(not con.execute('SELECT 1 FROM heavy_job').fetchone(), 'HEAVY_JOB_BUSY')
                 require(not con.execute('SELECT 1 FROM jobs WHERE job_id=?', (job_id,)).fetchone(), 'DUPLICATE_JOB')
@@ -723,17 +775,70 @@ class Controller:
             return state
         return self._change(task, event_id, 'job:' + action, job_id, apply)
 
+    def retrospective_packet(self, task):
+        """Read-only even if the task is exhausted; never authorizes a worker."""
+        with closing(self.connect()) as con:
+            state = self._state(con,task)
+            return retro.packet(con,state)
+
+    def migrate_retrospective(self, task, decision, reconciliation, event_id):
+        """Explicit reviewed policy migration; never updates native/planning pins."""
+        rc.binding(self.root,decision)
+        require(reconciliation.get('evidence') and reconciliation.get('coverage') and
+                reconciliation.get('unknowns'), 'RETRO_MIGRATION_RECORD_REQUIRED')
+        bindings(self.root,reconciliation['evidence'])
+        def apply(con):
+            state=self._state(con,task)
+            require(state['route']=='production','RETRO_PRODUCTION_ONLY')
+            require(not con.execute('SELECT 1 FROM heavy_job').fetchone(),'JOB_STILL_ACTIVE')
+            require(reconciliation.get('state_digest')==pk.digest(self._public(state)), 'RETRO_MIGRATION_STALE')
+            previous=retro.snapshot(con,task)
+            require(previous['version'] != retro.VERSION or previous['engine'] != retro.engine(), 'RETRO_ALREADY_INITIALIZED')
+            retro.append(con,task,'policy:'+event_id,'initialize',dict(version=retro.VERSION,engine=retro.engine(),
+                         decision=decision,reconciliation=reconciliation))
+            if state.get('brief'):
+                retro.plan(con,state,'migration-plan:'+event_id,state['brief'],self.root)
+            retro.auto_outcome(con,state,'migration-evidence:'+event_id,
+                [dict(requirement='__migration__',status='UNKNOWN',observation='Reconcile retained history and unknowns before native continuation.')],
+                origin='migration',evidence=reconciliation['evidence'])
+            return state
+        return self._change(task,event_id,'migrate_retrospective',[decision,reconciliation],apply)
+
+    def retrospective(self, task, action, data, event_id):
+        """Source-bound internal analysis API. No stage or correction reset."""
+        require(action in {'outcome','response','admit','evaluate','proof'}, 'RETRO_ACTION')
+        def apply(con):
+            state = self._state(con,task)
+            require(state['route']=='production','RETRO_PRODUCTION_ONLY')
+            retro.fresh(con,state)
+            if action=='outcome':
+                require(data.get('evidence'), 'RETRO_EVIDENCE_REQUIRED')
+                bindings(self.root,data['evidence'])
+                retro.outcome(con,state,event_id,data)
+            elif action=='response': retro.response(self.root,con,state,event_id,data['key'],data['response'])
+            elif action=='admit':
+                self._fresh(state)
+                require(not con.execute('SELECT 1 FROM heavy_job WHERE task=?',(task,)).fetchone(),'JOB_STILL_ACTIVE')
+                retro.admit(self.root,con,state,event_id,data['key'],data['challenge'])
+            elif action=='evaluate': retro.evaluate(self.root,con,state,event_id,data['key'],data['evaluation'])
+            else: retro.proof(self.root,con,state,event_id,data)
+            if state['stage'] in STAGES:
+                self._stage(state,state['stage'])
+            return state
+        return self._change(task,event_id,'retrospective:'+action,data,apply)
+
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--root', type=Path, default=Path.cwd())
     parser.add_argument('--database', default='.runtime/workflow323.sqlite3')
-    parser.add_argument('command', choices=['status', 'events'])
+    parser.add_argument('command', choices=['status', 'events', 'retrospective'])
     parser.add_argument('--task', required=True)
     args = parser.parse_args(argv)
     try:
         controller = Controller(args.root, args.database)
-        value = controller.state(args.task) if args.command == 'status' else controller.events(args.task)
+        value = (controller.state(args.task) if args.command == 'status' else
+                 controller.retrospective_packet(args.task) if args.command == 'retrospective' else controller.events(args.task))
         print(json.dumps(value, indent=2))
         return 0
     except (Blocked, rc.Blocked, pk.KnowledgeError, OSError, ValueError, KeyError, TypeError) as e:
