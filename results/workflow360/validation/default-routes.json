@@ -1,0 +1,60 @@
+{
+  "general": {
+    "planner": {
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "actor": "planner",
+      "policy_digest": "763f6615536c0720205be4dfd6997f08360e1cc13e04a533a63866d0d80b9d44",
+      "reason": "default_sol_high",
+      "escalation": null,
+      "assignment_call": null
+    },
+    "builder": {
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "actor": "builder",
+      "policy_digest": "763f6615536c0720205be4dfd6997f08360e1cc13e04a533a63866d0d80b9d44",
+      "reason": "default_sol_high",
+      "escalation": null,
+      "assignment_call": null
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "actor": "reviewer",
+      "policy_digest": "763f6615536c0720205be4dfd6997f08360e1cc13e04a533a63866d0d80b9d44",
+      "reason": "default_sol_high",
+      "escalation": null,
+      "assignment_call": null
+    }
+  },
+  "specialist_3d": {
+    "planner": {
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "actor": "planner",
+      "policy_digest": "774964344bd36869e2058c67137011d23bf921ee39e61658964421c72339aa5e",
+      "reason": "default_sol_high",
+      "escalation": null,
+      "assignment_call": null
+    },
+    "builder": {
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "actor": "builder",
+      "policy_digest": "774964344bd36869e2058c67137011d23bf921ee39e61658964421c72339aa5e",
+      "reason": "default_sol_high",
+      "escalation": null,
+      "assignment_call": null
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "actor": "reviewer",
+      "policy_digest": "774964344bd36869e2058c67137011d23bf921ee39e61658964421c72339aa5e",
+      "reason": "default_sol_high",
+      "escalation": null,
+      "assignment_call": null
+    }
+  }
+}

@@ -1,0 +1,13 @@
+#360 — Sol default with bounded Director-approved Astra assignments
+
+Outcome: every current stage profile resolves to Sol6.1 High unless a specific, current Astra assignment has retrospective evidence and explicit Director approval. Planning, execution, review and retrospective reasoning in the main chat follow the same policy. Deterministic operations need no extra model call. Quality, correction limits and provider/call authority remain unchanged.
+
+Approach: version the existing routing policy rather than add a new runtime. An Astra record binds a unique assignment ID, allowed trigger/reason, retrospective evidence, exact current task/stage packet scope, expected output/success test, Director approval source and a maximum call count. The runner reserves/counts calls persistently, including aborted/failed attempts. Scope change or consumed assignment allowance resolves back to Sol; uncertain calls still block. Reject legacy automatic-Astra policies until explicit reconciliation; preserve historical records.
+
+Earliest proof: offline negative tests must show that specialist3D alone cannot select Astra, missing/stale/wrong-scope approval blocks escalation, a one-stage grant expires, consumed calls remain consumed after restart, and an expired/reused grant cannot silently reactivate. Keep exact model/High settings and metadata mismatch controls. Test the complete synthetic plan/build/review chain after unit controls, without live inference or production rendering.
+
+Interfaces: stage_routing validates approved assignments; SerialRunner owns task/current packet and persistent reservation counts; CodexProtocol checks the explicit route before starting inference. Main-chat enforcement remains an agent instruction, not OS-level interception. Fresh contexts and rigorous review are retained without automatically creating new LLM sessions for routine work.
+
+Risks: a bound approval file is a trusted-parent record of human authorization, not a cryptographic human identity proof; applicability/reasoning quality remains manual. Old persisted policies must not change meaning silently. No token savings percentage or Sol/Astra quality comparison follows from mocks. Existing global307 capsule remains stale; this scoped engineering packet does not refresh it.
+
+Exit: focused routing/restart/failure tests plus affected workflow regressions pass; current instructions and retrieval source paths name this policy; complete a source-bound engineering review. No native actor or motion approval is implied. Resume production under its retained original tasks and allowances after this process package.

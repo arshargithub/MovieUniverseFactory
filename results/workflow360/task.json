@@ -1,0 +1,20 @@
+{
+  "id": "workflow360-sol-default",
+  "operation": "knowledge",
+  "entities": [
+    "knowledge"
+  ],
+  "query": "Sol default, Director approved bounded Astra assignment, retrospective evidence, persistent call limits, restart and scope expiration",
+  "intent": "Implement Director360 routing policy with local mocks and no inference",
+  "phase": "execution",
+  "inputs": {
+    "results/workflow360/REQUEST.md": "26e11fd2503846902b5bf61c82148f2230b7435dcfa81ee045cd8a1ca720499d",
+    "results/workflow360/STRATEGY.md": "ff99466a5ea306b19b0f410e590d6667135f813ff3ac6f886aac9ba990e6967c"
+  },
+  "open_decisions": [],
+  "execution_authority": {
+    "source": "results/workflow360/REQUEST.md",
+    "scope": "Approved local workflow code, documentation and mocked tests only"
+  },
+  "max_context_characters": 60000
+}

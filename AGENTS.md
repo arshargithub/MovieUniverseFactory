@@ -140,13 +140,24 @@ evidence and unrelated edits; use reversible derivatives. Follow
 `MOVIE_FACTORY_3D_FEASIBILITY_SPEC.md` for applicable3D work; prerequisites or
 Director reviews missing stay NOT_RUN/YELLOW. Houdini/Unreal remain later-phase.
 
+Director359/360 makes Sol6.1 High the default for every task and stage, including
+complex3D execution and retrospectives. Read
+`docs/engineering-intelligence/STAGE_MODEL_ROUTING.md`. Astra High requires a
+narrow assignment, retrospective evidence and explicit Director approval bound
+to scope and allowance; no automatic specialist3D escalation. Return separate
+runtime calls to Sol on scope/call expiry; the Director controls the main-chat
+selector. Preserve quality, task history and limits. This supersedes326 and
+older broad Astra continuation instructions. Deterministic work needs no extra
+LLM call; do not multiply sessions merely to satisfy workflow stage labels.
+
 Record engineering-model switches/outcomes in `docs/engineering-intelligence/events.json`
 following its README, separate from experiment API models; unknown usage stays
 unknown. Astra High is the top workflow escalation tier. Reassess methods and
 run a discriminating control before requesting a manual escalation from Sol;
 escalate earlier for consequential unsupported assumptions. No higher tier is
-available in this workflow. Return to Sol only after demonstrated cause/path;
-never infer runtime settings, savings or superiority from a model name.
+available in this workflow. At assignment expiry return to Sol under360,
+preserving unresolved findings; further Astra work needs a new approved scope.
+Never infer runtime settings, savings or superiority from a model name.
 
 Persist substantive planning decisions; maintain the release exchange counter
 and ten-exchange checkpoints. Keep scoped local design/planning commits separate

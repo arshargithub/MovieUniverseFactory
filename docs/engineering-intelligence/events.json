@@ -1,6 +1,50 @@
 {
   "events": [
     {
+      "event_id": "workflow360-sol-default-scoped-astra-adopted",
+      "event_type": "routing_policy_adoption",
+      "recorded_date": "2026-10-23",
+      "reported_model": "gpt-6.1-sol",
+      "reported_reasoning_effort": "high",
+      "setting_attribution": "director359_report_and_director360_policy_approval",
+      "runtime_verified": false,
+      "controlled_model_comparison": false,
+      "outcome": "SOL_HIGH_ALL_STAGES_SCOPED_DIRECTOR_APPROVED_ASTRA_OFFLINE_TESTED",
+      "observation": "Both routing profiles now default to Sol6.1 High. Astra requires a scope-bound assignment, retrospective evidence, exact human approval and persistent call allowance tied to the original runner database. Scope/call expiry returns dispatch to Sol. Version1 automatic-Astra policies require explicit reconciliation retaining history/caps.432 offline tests pass, including unchanged review/retrospective/correction boundaries. No live inference, measured quota saving, native production pass or main-chat runtime-setting verification.",
+      "engineering_subscription_usage": null,
+      "engineering_cost_usd": null,
+      "new_external_paid_provider_calls": 0,
+      "evidence": [
+        "results/workflow360/REQUEST.md",
+        "results/workflow360/STRATEGY.md",
+        "results/workflow360/REVIEW.md",
+        "docs/engineering-intelligence/STAGE_MODEL_ROUTING.md",
+        "tests/test_stage_routing360.py"
+      ]
+    },
+    {
+      "event_id": "series01-exchange359-director-sol-high-switch",
+      "event_type": "engineering_model_switch",
+      "recorded_date": "2026-10-23",
+      "reported_model": "gpt-6.1-sol",
+      "reported_reasoning_effort": "high",
+      "previous_reported_model": "gpt-6-astra",
+      "setting_attribution": "director_report_in_current_conversation",
+      "runtime_verified": false,
+      "controlled_model_comparison": false,
+      "outcome": "DIRECTOR_REPORTS_CHAT_SWITCH_SOL_DEFAULT_POLICY_UNDER_DISCUSSION",
+      "observation": "Director reports rapid allowance consumption and switching the main chat to Sol6.1 High. Requests assessment of Sol High for all workflow stages, with narrow Astra escalation supported by retrospective evidence and Director approval. Existing326 separate-runtime specialist builder still defaults to Astra; its High-stage mix is offline-tested, not live-qualified. Recent358 production scripts use main-chat reasoning and trusted local native handlers, not SerialRunner model dispatch. No runtime policy changed or paid model call made in this discussion. No savings percentage or controlled quality advantage established.",
+      "engineering_subscription_usage": null,
+      "engineering_cost_usd": null,
+      "new_external_paid_provider_calls": 0,
+      "evidence": [
+        "results/routing359/REQUEST.md",
+        "docs/engineering-intelligence/STAGE_MODEL_ROUTING.md",
+        "src/movie_factory/stage_routing.py",
+        "scripts/sikh358_plan.py"
+      ]
+    },
+    {
       "event_id": "series01-exchange358-coupled-headstall-rein-boundary",
       "event_type": "engineering_review_outcome",
       "recorded_date": "2026-10-23",

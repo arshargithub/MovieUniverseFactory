@@ -1,0 +1,748 @@
+{
+  "packet_digest": "0a047676bf76383ffdd8067f6422a766ecb27116394064d25a853f9a1d96ba92",
+  "scope": "Offline routing engineering only",
+  "checks": [
+    {
+      "id": "reuse_envelope",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Extended the existing policy/runner and canonical task history; no replacement harness or asset reuse qualification.",
+      "observation": "Scoped software/evidence checks pass; no live model or artistic claim.",
+      "evidence": [
+        {
+          "path": "AGENTS.md",
+          "sha256": "2a1831a28164078dccf5fc7092546c8596973a72b3d806cde9d92c0b343db805"
+        },
+        {
+          "path": "docs/knowledge/context/rules.json",
+          "sha256": "da39afa9152a633f5292f91861bc5b927c6c18b628c99488e9ff3fb3d202adc2"
+        },
+        {
+          "path": "src/movie_factory/stage_routing.py",
+          "sha256": "8cd40334ad3f3026eb78f80627446d1b1efc20d2db55c5b4675834b761e0e039"
+        },
+        {
+          "path": "src/movie_factory/staged_runner.py",
+          "sha256": "c1933cc685351c55529e029d5a08ebe13eb1efd60dc9c33616a8e1af22d41459"
+        },
+        {
+          "path": "docs/engineering-intelligence/STAGE_MODEL_ROUTING.md",
+          "sha256": "2529ac1c41758e49f876721d92b87f834c393fdeb118537729a0545222b7ffb0"
+        },
+        {
+          "path": "docs/engineering-intelligence/SOL_DEFAULT_ROUTING.json",
+          "sha256": "e8d365773197765b5a43084c5050b55001b1210b69e523f6bc192b018ae6e8c3"
+        },
+        {
+          "path": "tests/test_stage_routing360.py",
+          "sha256": "f169069ebef9dfb3d26484779ad2f6a2efea5dcc7619cc5d2ba27a81b156e946"
+        },
+        {
+          "path": "tests/test_staged_runner.py",
+          "sha256": "73a1f41f8e26d15271c73fbe356d5059443d20195c07f970b8b770b7ba3eb446"
+        },
+        {
+          "path": "tests/routing_fixtures360.py",
+          "sha256": "91d319a795e7f42202736da81ca5857039f0f9a4a7cf6e6549de1af865d5bbe8"
+        },
+        {
+          "path": "results/workflow360/REVIEW.md",
+          "sha256": "8b0a4d54df46f85e9a324cfc7c22ed22fbed9f3aa8e6124634a292185daa770b"
+        },
+        {
+          "path": ".runtime/context-hygiene/runs/workflow360-final/stdout.log",
+          "sha256": "8f942aad9f6f1751654e8a9c39ffb2579257351a7ff7cd90431e3e41b4f8c956"
+        },
+        {
+          "path": "results/workflow360/validation/default-routes.json",
+          "sha256": "9203745845cf8fe66219cbe4b2a8ae16a2e369eb50dcc211417c4c9b937ba375"
+        },
+        {
+          "path": "results/workflow360/validation/production-state.json",
+          "sha256": "bfdebe369bad6eb9676ea81c801da1cf05e4157e1271414f9dfd371e97ce93af"
+        }
+      ]
+    },
+    {
+      "id": "authority",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Astra requires exact scoped Director approval and current retrospective evidence; call/correction caps unchanged. No live calls.",
+      "observation": "Scoped software/evidence checks pass; no live model or artistic claim.",
+      "evidence": [
+        {
+          "path": "AGENTS.md",
+          "sha256": "2a1831a28164078dccf5fc7092546c8596973a72b3d806cde9d92c0b343db805"
+        },
+        {
+          "path": "docs/knowledge/context/rules.json",
+          "sha256": "da39afa9152a633f5292f91861bc5b927c6c18b628c99488e9ff3fb3d202adc2"
+        },
+        {
+          "path": "src/movie_factory/stage_routing.py",
+          "sha256": "8cd40334ad3f3026eb78f80627446d1b1efc20d2db55c5b4675834b761e0e039"
+        },
+        {
+          "path": "src/movie_factory/staged_runner.py",
+          "sha256": "c1933cc685351c55529e029d5a08ebe13eb1efd60dc9c33616a8e1af22d41459"
+        },
+        {
+          "path": "docs/engineering-intelligence/STAGE_MODEL_ROUTING.md",
+          "sha256": "2529ac1c41758e49f876721d92b87f834c393fdeb118537729a0545222b7ffb0"
+        },
+        {
+          "path": "docs/engineering-intelligence/SOL_DEFAULT_ROUTING.json",
+          "sha256": "e8d365773197765b5a43084c5050b55001b1210b69e523f6bc192b018ae6e8c3"
+        },
+        {
+          "path": "tests/test_stage_routing360.py",
+          "sha256": "f169069ebef9dfb3d26484779ad2f6a2efea5dcc7619cc5d2ba27a81b156e946"
+        },
+        {
+          "path": "tests/test_staged_runner.py",
+          "sha256": "73a1f41f8e26d15271c73fbe356d5059443d20195c07f970b8b770b7ba3eb446"
+        },
+        {
+          "path": "tests/routing_fixtures360.py",
+          "sha256": "91d319a795e7f42202736da81ca5857039f0f9a4a7cf6e6549de1af865d5bbe8"
+        },
+        {
+          "path": "results/workflow360/REVIEW.md",
+          "sha256": "8b0a4d54df46f85e9a324cfc7c22ed22fbed9f3aa8e6124634a292185daa770b"
+        },
+        {
+          "path": ".runtime/context-hygiene/runs/workflow360-final/stdout.log",
+          "sha256": "8f942aad9f6f1751654e8a9c39ffb2579257351a7ff7cd90431e3e41b4f8c956"
+        },
+        {
+          "path": "results/workflow360/validation/default-routes.json",
+          "sha256": "9203745845cf8fe66219cbe4b2a8ae16a2e369eb50dcc211417c4c9b937ba375"
+        },
+        {
+          "path": "results/workflow360/validation/production-state.json",
+          "sha256": "bfdebe369bad6eb9676ea81c801da1cf05e4157e1271414f9dfd371e97ce93af"
+        }
+      ]
+    },
+    {
+      "id": "strategy",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Bound strategy and fresh packet preceded construction; tested silent Astra routing, lost authority and restart/expiry before completion.",
+      "observation": "Scoped software/evidence checks pass; no live model or artistic claim.",
+      "evidence": [
+        {
+          "path": "AGENTS.md",
+          "sha256": "2a1831a28164078dccf5fc7092546c8596973a72b3d806cde9d92c0b343db805"
+        },
+        {
+          "path": "docs/knowledge/context/rules.json",
+          "sha256": "da39afa9152a633f5292f91861bc5b927c6c18b628c99488e9ff3fb3d202adc2"
+        },
+        {
+          "path": "src/movie_factory/stage_routing.py",
+          "sha256": "8cd40334ad3f3026eb78f80627446d1b1efc20d2db55c5b4675834b761e0e039"
+        },
+        {
+          "path": "src/movie_factory/staged_runner.py",
+          "sha256": "c1933cc685351c55529e029d5a08ebe13eb1efd60dc9c33616a8e1af22d41459"
+        },
+        {
+          "path": "docs/engineering-intelligence/STAGE_MODEL_ROUTING.md",
+          "sha256": "2529ac1c41758e49f876721d92b87f834c393fdeb118537729a0545222b7ffb0"
+        },
+        {
+          "path": "docs/engineering-intelligence/SOL_DEFAULT_ROUTING.json",
+          "sha256": "e8d365773197765b5a43084c5050b55001b1210b69e523f6bc192b018ae6e8c3"
+        },
+        {
+          "path": "tests/test_stage_routing360.py",
+          "sha256": "f169069ebef9dfb3d26484779ad2f6a2efea5dcc7619cc5d2ba27a81b156e946"
+        },
+        {
+          "path": "tests/test_staged_runner.py",
+          "sha256": "73a1f41f8e26d15271c73fbe356d5059443d20195c07f970b8b770b7ba3eb446"
+        },
+        {
+          "path": "tests/routing_fixtures360.py",
+          "sha256": "91d319a795e7f42202736da81ca5857039f0f9a4a7cf6e6549de1af865d5bbe8"
+        },
+        {
+          "path": "results/workflow360/REVIEW.md",
+          "sha256": "8b0a4d54df46f85e9a324cfc7c22ed22fbed9f3aa8e6124634a292185daa770b"
+        },
+        {
+          "path": ".runtime/context-hygiene/runs/workflow360-final/stdout.log",
+          "sha256": "8f942aad9f6f1751654e8a9c39ffb2579257351a7ff7cd90431e3e41b4f8c956"
+        },
+        {
+          "path": "results/workflow360/validation/default-routes.json",
+          "sha256": "9203745845cf8fe66219cbe4b2a8ae16a2e369eb50dcc211417c4c9b937ba375"
+        },
+        {
+          "path": "results/workflow360/validation/production-state.json",
+          "sha256": "bfdebe369bad6eb9676ea81c801da1cf05e4157e1271414f9dfd371e97ce93af"
+        }
+      ]
+    },
+    {
+      "id": "visual_gate",
+      "kind": "review",
+      "status": "PASS",
+      "action_taken": "Engineering scope only. No media changed or artistic PASS; existing Director AV and known Nihang failures remain.",
+      "observation": "Scoped software/evidence checks pass; no live model or artistic claim.",
+      "evidence": [
+        {
+          "path": "AGENTS.md",
+          "sha256": "2a1831a28164078dccf5fc7092546c8596973a72b3d806cde9d92c0b343db805"
+        },
+        {
+          "path": "docs/knowledge/context/rules.json",
+          "sha256": "da39afa9152a633f5292f91861bc5b927c6c18b628c99488e9ff3fb3d202adc2"
+        },
+        {
+          "path": "src/movie_factory/stage_routing.py",
+          "sha256": "8cd40334ad3f3026eb78f80627446d1b1efc20d2db55c5b4675834b761e0e039"
+        },
+        {
+          "path": "src/movie_factory/staged_runner.py",
+          "sha256": "c1933cc685351c55529e029d5a08ebe13eb1efd60dc9c33616a8e1af22d41459"
+        },
+        {
+          "path": "docs/engineering-intelligence/STAGE_MODEL_ROUTING.md",
+          "sha256": "2529ac1c41758e49f876721d92b87f834c393fdeb118537729a0545222b7ffb0"
+        },
+        {
+          "path": "docs/engineering-intelligence/SOL_DEFAULT_ROUTING.json",
+          "sha256": "e8d365773197765b5a43084c5050b55001b1210b69e523f6bc192b018ae6e8c3"
+        },
+        {
+          "path": "tests/test_stage_routing360.py",
+          "sha256": "f169069ebef9dfb3d26484779ad2f6a2efea5dcc7619cc5d2ba27a81b156e946"
+        },
+        {
+          "path": "tests/test_staged_runner.py",
+          "sha256": "73a1f41f8e26d15271c73fbe356d5059443d20195c07f970b8b770b7ba3eb446"
+        },
+        {
+          "path": "tests/routing_fixtures360.py",
+          "sha256": "91d319a795e7f42202736da81ca5857039f0f9a4a7cf6e6549de1af865d5bbe8"
+        },
+        {
+          "path": "results/workflow360/REVIEW.md",
+          "sha256": "8b0a4d54df46f85e9a324cfc7c22ed22fbed9f3aa8e6124634a292185daa770b"
+        },
+        {
+          "path": ".runtime/context-hygiene/runs/workflow360-final/stdout.log",
+          "sha256": "8f942aad9f6f1751654e8a9c39ffb2579257351a7ff7cd90431e3e41b4f8c956"
+        },
+        {
+          "path": "results/workflow360/validation/default-routes.json",
+          "sha256": "9203745845cf8fe66219cbe4b2a8ae16a2e369eb50dcc211417c4c9b937ba375"
+        },
+        {
+          "path": "results/workflow360/validation/production-state.json",
+          "sha256": "bfdebe369bad6eb9676ea81c801da1cf05e4157e1271414f9dfd371e97ce93af"
+        }
+      ]
+    },
+    {
+      "id": "anticipation",
+      "kind": "review",
+      "status": "PASS",
+      "action_taken": "Negative controls cover tampered approval, changed candidate/stage/cycle, another database, aborted retries and legacy policy history.",
+      "observation": "Scoped software/evidence checks pass; no live model or artistic claim.",
+      "evidence": [
+        {
+          "path": "AGENTS.md",
+          "sha256": "2a1831a28164078dccf5fc7092546c8596973a72b3d806cde9d92c0b343db805"
+        },
+        {
+          "path": "docs/knowledge/context/rules.json",
+          "sha256": "da39afa9152a633f5292f91861bc5b927c6c18b628c99488e9ff3fb3d202adc2"
+        },
+        {
+          "path": "src/movie_factory/stage_routing.py",
+          "sha256": "8cd40334ad3f3026eb78f80627446d1b1efc20d2db55c5b4675834b761e0e039"
+        },
+        {
+          "path": "src/movie_factory/staged_runner.py",
+          "sha256": "c1933cc685351c55529e029d5a08ebe13eb1efd60dc9c33616a8e1af22d41459"
+        },
+        {
+          "path": "docs/engineering-intelligence/STAGE_MODEL_ROUTING.md",
+          "sha256": "2529ac1c41758e49f876721d92b87f834c393fdeb118537729a0545222b7ffb0"
+        },
+        {
+          "path": "docs/engineering-intelligence/SOL_DEFAULT_ROUTING.json",
+          "sha256": "e8d365773197765b5a43084c5050b55001b1210b69e523f6bc192b018ae6e8c3"
+        },
+        {
+          "path": "tests/test_stage_routing360.py",
+          "sha256": "f169069ebef9dfb3d26484779ad2f6a2efea5dcc7619cc5d2ba27a81b156e946"
+        },
+        {
+          "path": "tests/test_staged_runner.py",
+          "sha256": "73a1f41f8e26d15271c73fbe356d5059443d20195c07f970b8b770b7ba3eb446"
+        },
+        {
+          "path": "tests/routing_fixtures360.py",
+          "sha256": "91d319a795e7f42202736da81ca5857039f0f9a4a7cf6e6549de1af865d5bbe8"
+        },
+        {
+          "path": "results/workflow360/REVIEW.md",
+          "sha256": "8b0a4d54df46f85e9a324cfc7c22ed22fbed9f3aa8e6124634a292185daa770b"
+        },
+        {
+          "path": ".runtime/context-hygiene/runs/workflow360-final/stdout.log",
+          "sha256": "8f942aad9f6f1751654e8a9c39ffb2579257351a7ff7cd90431e3e41b4f8c956"
+        },
+        {
+          "path": "results/workflow360/validation/default-routes.json",
+          "sha256": "9203745845cf8fe66219cbe4b2a8ae16a2e369eb50dcc211417c4c9b937ba375"
+        },
+        {
+          "path": "results/workflow360/validation/production-state.json",
+          "sha256": "bfdebe369bad6eb9676ea81c801da1cf05e4157e1271414f9dfd371e97ce93af"
+        }
+      ]
+    },
+    {
+      "id": "stopping",
+      "kind": "review",
+      "status": "PASS",
+      "action_taken": "Scoped engineering result complete after432 passing controls. No extra production cycles or requirement relaxation.",
+      "observation": "Scoped software/evidence checks pass; no live model or artistic claim.",
+      "evidence": [
+        {
+          "path": "AGENTS.md",
+          "sha256": "2a1831a28164078dccf5fc7092546c8596973a72b3d806cde9d92c0b343db805"
+        },
+        {
+          "path": "docs/knowledge/context/rules.json",
+          "sha256": "da39afa9152a633f5292f91861bc5b927c6c18b628c99488e9ff3fb3d202adc2"
+        },
+        {
+          "path": "src/movie_factory/stage_routing.py",
+          "sha256": "8cd40334ad3f3026eb78f80627446d1b1efc20d2db55c5b4675834b761e0e039"
+        },
+        {
+          "path": "src/movie_factory/staged_runner.py",
+          "sha256": "c1933cc685351c55529e029d5a08ebe13eb1efd60dc9c33616a8e1af22d41459"
+        },
+        {
+          "path": "docs/engineering-intelligence/STAGE_MODEL_ROUTING.md",
+          "sha256": "2529ac1c41758e49f876721d92b87f834c393fdeb118537729a0545222b7ffb0"
+        },
+        {
+          "path": "docs/engineering-intelligence/SOL_DEFAULT_ROUTING.json",
+          "sha256": "e8d365773197765b5a43084c5050b55001b1210b69e523f6bc192b018ae6e8c3"
+        },
+        {
+          "path": "tests/test_stage_routing360.py",
+          "sha256": "f169069ebef9dfb3d26484779ad2f6a2efea5dcc7619cc5d2ba27a81b156e946"
+        },
+        {
+          "path": "tests/test_staged_runner.py",
+          "sha256": "73a1f41f8e26d15271c73fbe356d5059443d20195c07f970b8b770b7ba3eb446"
+        },
+        {
+          "path": "tests/routing_fixtures360.py",
+          "sha256": "91d319a795e7f42202736da81ca5857039f0f9a4a7cf6e6549de1af865d5bbe8"
+        },
+        {
+          "path": "results/workflow360/REVIEW.md",
+          "sha256": "8b0a4d54df46f85e9a324cfc7c22ed22fbed9f3aa8e6124634a292185daa770b"
+        },
+        {
+          "path": ".runtime/context-hygiene/runs/workflow360-final/stdout.log",
+          "sha256": "8f942aad9f6f1751654e8a9c39ffb2579257351a7ff7cd90431e3e41b4f8c956"
+        },
+        {
+          "path": "results/workflow360/validation/default-routes.json",
+          "sha256": "9203745845cf8fe66219cbe4b2a8ae16a2e369eb50dcc211417c4c9b937ba375"
+        },
+        {
+          "path": "results/workflow360/validation/production-state.json",
+          "sha256": "bfdebe369bad6eb9676ea81c801da1cf05e4157e1271414f9dfd371e97ce93af"
+        }
+      ]
+    },
+    {
+      "id": "versioning",
+      "kind": "technical",
+      "status": "PASS",
+      "action_taken": "Version2 explicit adoption preserves old policies and call records; scope/call expiry selects Sol without resetting authority.",
+      "observation": "Scoped software/evidence checks pass; no live model or artistic claim.",
+      "evidence": [
+        {
+          "path": "AGENTS.md",
+          "sha256": "2a1831a28164078dccf5fc7092546c8596973a72b3d806cde9d92c0b343db805"
+        },
+        {
+          "path": "docs/knowledge/context/rules.json",
+          "sha256": "da39afa9152a633f5292f91861bc5b927c6c18b628c99488e9ff3fb3d202adc2"
+        },
+        {
+          "path": "src/movie_factory/stage_routing.py",
+          "sha256": "8cd40334ad3f3026eb78f80627446d1b1efc20d2db55c5b4675834b761e0e039"
+        },
+        {
+          "path": "src/movie_factory/staged_runner.py",
+          "sha256": "c1933cc685351c55529e029d5a08ebe13eb1efd60dc9c33616a8e1af22d41459"
+        },
+        {
+          "path": "docs/engineering-intelligence/STAGE_MODEL_ROUTING.md",
+          "sha256": "2529ac1c41758e49f876721d92b87f834c393fdeb118537729a0545222b7ffb0"
+        },
+        {
+          "path": "docs/engineering-intelligence/SOL_DEFAULT_ROUTING.json",
+          "sha256": "e8d365773197765b5a43084c5050b55001b1210b69e523f6bc192b018ae6e8c3"
+        },
+        {
+          "path": "tests/test_stage_routing360.py",
+          "sha256": "f169069ebef9dfb3d26484779ad2f6a2efea5dcc7619cc5d2ba27a81b156e946"
+        },
+        {
+          "path": "tests/test_staged_runner.py",
+          "sha256": "73a1f41f8e26d15271c73fbe356d5059443d20195c07f970b8b770b7ba3eb446"
+        },
+        {
+          "path": "tests/routing_fixtures360.py",
+          "sha256": "91d319a795e7f42202736da81ca5857039f0f9a4a7cf6e6549de1af865d5bbe8"
+        },
+        {
+          "path": "results/workflow360/REVIEW.md",
+          "sha256": "8b0a4d54df46f85e9a324cfc7c22ed22fbed9f3aa8e6124634a292185daa770b"
+        },
+        {
+          "path": ".runtime/context-hygiene/runs/workflow360-final/stdout.log",
+          "sha256": "8f942aad9f6f1751654e8a9c39ffb2579257351a7ff7cd90431e3e41b4f8c956"
+        },
+        {
+          "path": "results/workflow360/validation/default-routes.json",
+          "sha256": "9203745845cf8fe66219cbe4b2a8ae16a2e369eb50dcc211417c4c9b937ba375"
+        },
+        {
+          "path": "results/workflow360/validation/production-state.json",
+          "sha256": "bfdebe369bad6eb9676ea81c801da1cf05e4157e1271414f9dfd371e97ce93af"
+        }
+      ]
+    },
+    {
+      "id": "economics",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "No external paid calls, renders or new services. Engineering quota/cost unknown; no projected savings from tests.",
+      "observation": "Scoped software/evidence checks pass; no live model or artistic claim.",
+      "evidence": [
+        {
+          "path": "AGENTS.md",
+          "sha256": "2a1831a28164078dccf5fc7092546c8596973a72b3d806cde9d92c0b343db805"
+        },
+        {
+          "path": "docs/knowledge/context/rules.json",
+          "sha256": "da39afa9152a633f5292f91861bc5b927c6c18b628c99488e9ff3fb3d202adc2"
+        },
+        {
+          "path": "src/movie_factory/stage_routing.py",
+          "sha256": "8cd40334ad3f3026eb78f80627446d1b1efc20d2db55c5b4675834b761e0e039"
+        },
+        {
+          "path": "src/movie_factory/staged_runner.py",
+          "sha256": "c1933cc685351c55529e029d5a08ebe13eb1efd60dc9c33616a8e1af22d41459"
+        },
+        {
+          "path": "docs/engineering-intelligence/STAGE_MODEL_ROUTING.md",
+          "sha256": "2529ac1c41758e49f876721d92b87f834c393fdeb118537729a0545222b7ffb0"
+        },
+        {
+          "path": "docs/engineering-intelligence/SOL_DEFAULT_ROUTING.json",
+          "sha256": "e8d365773197765b5a43084c5050b55001b1210b69e523f6bc192b018ae6e8c3"
+        },
+        {
+          "path": "tests/test_stage_routing360.py",
+          "sha256": "f169069ebef9dfb3d26484779ad2f6a2efea5dcc7619cc5d2ba27a81b156e946"
+        },
+        {
+          "path": "tests/test_staged_runner.py",
+          "sha256": "73a1f41f8e26d15271c73fbe356d5059443d20195c07f970b8b770b7ba3eb446"
+        },
+        {
+          "path": "tests/routing_fixtures360.py",
+          "sha256": "91d319a795e7f42202736da81ca5857039f0f9a4a7cf6e6549de1af865d5bbe8"
+        },
+        {
+          "path": "results/workflow360/REVIEW.md",
+          "sha256": "8b0a4d54df46f85e9a324cfc7c22ed22fbed9f3aa8e6124634a292185daa770b"
+        },
+        {
+          "path": ".runtime/context-hygiene/runs/workflow360-final/stdout.log",
+          "sha256": "8f942aad9f6f1751654e8a9c39ffb2579257351a7ff7cd90431e3e41b4f8c956"
+        },
+        {
+          "path": "results/workflow360/validation/default-routes.json",
+          "sha256": "9203745845cf8fe66219cbe4b2a8ae16a2e369eb50dcc211417c4c9b937ba375"
+        },
+        {
+          "path": "results/workflow360/validation/production-state.json",
+          "sha256": "bfdebe369bad6eb9676ea81c801da1cf05e4157e1271414f9dfd371e97ce93af"
+        }
+      ]
+    },
+    {
+      "id": "retrieval",
+      "kind": "technical",
+      "status": "PASS",
+      "action_taken": "Read initial task obligations and manually reconcile Director360 policy with326/187.42 original routed rules retained; current core points to360. Fresh final packet.",
+      "observation": "Scoped software/evidence checks pass; no live model or artistic claim.",
+      "evidence": [
+        {
+          "path": "AGENTS.md",
+          "sha256": "2a1831a28164078dccf5fc7092546c8596973a72b3d806cde9d92c0b343db805"
+        },
+        {
+          "path": "docs/knowledge/context/rules.json",
+          "sha256": "da39afa9152a633f5292f91861bc5b927c6c18b628c99488e9ff3fb3d202adc2"
+        },
+        {
+          "path": "src/movie_factory/stage_routing.py",
+          "sha256": "8cd40334ad3f3026eb78f80627446d1b1efc20d2db55c5b4675834b761e0e039"
+        },
+        {
+          "path": "src/movie_factory/staged_runner.py",
+          "sha256": "c1933cc685351c55529e029d5a08ebe13eb1efd60dc9c33616a8e1af22d41459"
+        },
+        {
+          "path": "docs/engineering-intelligence/STAGE_MODEL_ROUTING.md",
+          "sha256": "2529ac1c41758e49f876721d92b87f834c393fdeb118537729a0545222b7ffb0"
+        },
+        {
+          "path": "docs/engineering-intelligence/SOL_DEFAULT_ROUTING.json",
+          "sha256": "e8d365773197765b5a43084c5050b55001b1210b69e523f6bc192b018ae6e8c3"
+        },
+        {
+          "path": "tests/test_stage_routing360.py",
+          "sha256": "f169069ebef9dfb3d26484779ad2f6a2efea5dcc7619cc5d2ba27a81b156e946"
+        },
+        {
+          "path": "tests/test_staged_runner.py",
+          "sha256": "73a1f41f8e26d15271c73fbe356d5059443d20195c07f970b8b770b7ba3eb446"
+        },
+        {
+          "path": "tests/routing_fixtures360.py",
+          "sha256": "91d319a795e7f42202736da81ca5857039f0f9a4a7cf6e6549de1af865d5bbe8"
+        },
+        {
+          "path": "results/workflow360/REVIEW.md",
+          "sha256": "8b0a4d54df46f85e9a324cfc7c22ed22fbed9f3aa8e6124634a292185daa770b"
+        },
+        {
+          "path": ".runtime/context-hygiene/runs/workflow360-final/stdout.log",
+          "sha256": "8f942aad9f6f1751654e8a9c39ffb2579257351a7ff7cd90431e3e41b4f8c956"
+        },
+        {
+          "path": "results/workflow360/validation/default-routes.json",
+          "sha256": "9203745845cf8fe66219cbe4b2a8ae16a2e369eb50dcc211417c4c9b937ba375"
+        },
+        {
+          "path": "results/workflow360/validation/production-state.json",
+          "sha256": "bfdebe369bad6eb9676ea81c801da1cf05e4157e1271414f9dfd371e97ce93af"
+        }
+      ]
+    },
+    {
+      "id": "current_state",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Accepted Pashtun and unresolved Nihang/crowd scope unchanged; original task states recorded. No production acceptance inferred.",
+      "observation": "Scoped software/evidence checks pass; no live model or artistic claim.",
+      "evidence": [
+        {
+          "path": "AGENTS.md",
+          "sha256": "2a1831a28164078dccf5fc7092546c8596973a72b3d806cde9d92c0b343db805"
+        },
+        {
+          "path": "docs/knowledge/context/rules.json",
+          "sha256": "da39afa9152a633f5292f91861bc5b927c6c18b628c99488e9ff3fb3d202adc2"
+        },
+        {
+          "path": "src/movie_factory/stage_routing.py",
+          "sha256": "8cd40334ad3f3026eb78f80627446d1b1efc20d2db55c5b4675834b761e0e039"
+        },
+        {
+          "path": "src/movie_factory/staged_runner.py",
+          "sha256": "c1933cc685351c55529e029d5a08ebe13eb1efd60dc9c33616a8e1af22d41459"
+        },
+        {
+          "path": "docs/engineering-intelligence/STAGE_MODEL_ROUTING.md",
+          "sha256": "2529ac1c41758e49f876721d92b87f834c393fdeb118537729a0545222b7ffb0"
+        },
+        {
+          "path": "docs/engineering-intelligence/SOL_DEFAULT_ROUTING.json",
+          "sha256": "e8d365773197765b5a43084c5050b55001b1210b69e523f6bc192b018ae6e8c3"
+        },
+        {
+          "path": "tests/test_stage_routing360.py",
+          "sha256": "f169069ebef9dfb3d26484779ad2f6a2efea5dcc7619cc5d2ba27a81b156e946"
+        },
+        {
+          "path": "tests/test_staged_runner.py",
+          "sha256": "73a1f41f8e26d15271c73fbe356d5059443d20195c07f970b8b770b7ba3eb446"
+        },
+        {
+          "path": "tests/routing_fixtures360.py",
+          "sha256": "91d319a795e7f42202736da81ca5857039f0f9a4a7cf6e6549de1af865d5bbe8"
+        },
+        {
+          "path": "results/workflow360/REVIEW.md",
+          "sha256": "8b0a4d54df46f85e9a324cfc7c22ed22fbed9f3aa8e6124634a292185daa770b"
+        },
+        {
+          "path": ".runtime/context-hygiene/runs/workflow360-final/stdout.log",
+          "sha256": "8f942aad9f6f1751654e8a9c39ffb2579257351a7ff7cd90431e3e41b4f8c956"
+        },
+        {
+          "path": "results/workflow360/validation/default-routes.json",
+          "sha256": "9203745845cf8fe66219cbe4b2a8ae16a2e369eb50dcc211417c4c9b937ba375"
+        },
+        {
+          "path": "results/workflow360/validation/production-state.json",
+          "sha256": "bfdebe369bad6eb9676ea81c801da1cf05e4157e1271414f9dfd371e97ce93af"
+        }
+      ]
+    },
+    {
+      "id": "au_reuse",
+      "kind": "review",
+      "status": "PASS",
+      "action_taken": "No accepted masters changed; local commits are separate from remote/native protection.",
+      "observation": "Scoped software/evidence checks pass; no live model or artistic claim.",
+      "evidence": [
+        {
+          "path": "AGENTS.md",
+          "sha256": "2a1831a28164078dccf5fc7092546c8596973a72b3d806cde9d92c0b343db805"
+        },
+        {
+          "path": "docs/knowledge/context/rules.json",
+          "sha256": "da39afa9152a633f5292f91861bc5b927c6c18b628c99488e9ff3fb3d202adc2"
+        },
+        {
+          "path": "src/movie_factory/stage_routing.py",
+          "sha256": "8cd40334ad3f3026eb78f80627446d1b1efc20d2db55c5b4675834b761e0e039"
+        },
+        {
+          "path": "src/movie_factory/staged_runner.py",
+          "sha256": "c1933cc685351c55529e029d5a08ebe13eb1efd60dc9c33616a8e1af22d41459"
+        },
+        {
+          "path": "docs/engineering-intelligence/STAGE_MODEL_ROUTING.md",
+          "sha256": "2529ac1c41758e49f876721d92b87f834c393fdeb118537729a0545222b7ffb0"
+        },
+        {
+          "path": "docs/engineering-intelligence/SOL_DEFAULT_ROUTING.json",
+          "sha256": "e8d365773197765b5a43084c5050b55001b1210b69e523f6bc192b018ae6e8c3"
+        },
+        {
+          "path": "tests/test_stage_routing360.py",
+          "sha256": "f169069ebef9dfb3d26484779ad2f6a2efea5dcc7619cc5d2ba27a81b156e946"
+        },
+        {
+          "path": "tests/test_staged_runner.py",
+          "sha256": "73a1f41f8e26d15271c73fbe356d5059443d20195c07f970b8b770b7ba3eb446"
+        },
+        {
+          "path": "tests/routing_fixtures360.py",
+          "sha256": "91d319a795e7f42202736da81ca5857039f0f9a4a7cf6e6549de1af865d5bbe8"
+        },
+        {
+          "path": "results/workflow360/REVIEW.md",
+          "sha256": "8b0a4d54df46f85e9a324cfc7c22ed22fbed9f3aa8e6124634a292185daa770b"
+        },
+        {
+          "path": ".runtime/context-hygiene/runs/workflow360-final/stdout.log",
+          "sha256": "8f942aad9f6f1751654e8a9c39ffb2579257351a7ff7cd90431e3e41b4f8c956"
+        },
+        {
+          "path": "results/workflow360/validation/default-routes.json",
+          "sha256": "9203745845cf8fe66219cbe4b2a8ae16a2e369eb50dcc211417c4c9b937ba375"
+        },
+        {
+          "path": "results/workflow360/validation/production-state.json",
+          "sha256": "bfdebe369bad6eb9676ea81c801da1cf05e4157e1271414f9dfd371e97ce93af"
+        }
+      ]
+    },
+    {
+      "id": "au_review",
+      "kind": "review",
+      "status": "PASS",
+      "action_taken": "Preserved failed controls and protocol mismatch checks; tests establish enforcement, not semantic truth or audiovisual judgment.",
+      "observation": "Scoped software/evidence checks pass; no live model or artistic claim.",
+      "evidence": [
+        {
+          "path": "AGENTS.md",
+          "sha256": "2a1831a28164078dccf5fc7092546c8596973a72b3d806cde9d92c0b343db805"
+        },
+        {
+          "path": "docs/knowledge/context/rules.json",
+          "sha256": "da39afa9152a633f5292f91861bc5b927c6c18b628c99488e9ff3fb3d202adc2"
+        },
+        {
+          "path": "src/movie_factory/stage_routing.py",
+          "sha256": "8cd40334ad3f3026eb78f80627446d1b1efc20d2db55c5b4675834b761e0e039"
+        },
+        {
+          "path": "src/movie_factory/staged_runner.py",
+          "sha256": "c1933cc685351c55529e029d5a08ebe13eb1efd60dc9c33616a8e1af22d41459"
+        },
+        {
+          "path": "docs/engineering-intelligence/STAGE_MODEL_ROUTING.md",
+          "sha256": "2529ac1c41758e49f876721d92b87f834c393fdeb118537729a0545222b7ffb0"
+        },
+        {
+          "path": "docs/engineering-intelligence/SOL_DEFAULT_ROUTING.json",
+          "sha256": "e8d365773197765b5a43084c5050b55001b1210b69e523f6bc192b018ae6e8c3"
+        },
+        {
+          "path": "tests/test_stage_routing360.py",
+          "sha256": "f169069ebef9dfb3d26484779ad2f6a2efea5dcc7619cc5d2ba27a81b156e946"
+        },
+        {
+          "path": "tests/test_staged_runner.py",
+          "sha256": "73a1f41f8e26d15271c73fbe356d5059443d20195c07f970b8b770b7ba3eb446"
+        },
+        {
+          "path": "tests/routing_fixtures360.py",
+          "sha256": "91d319a795e7f42202736da81ca5857039f0f9a4a7cf6e6549de1af865d5bbe8"
+        },
+        {
+          "path": "results/workflow360/REVIEW.md",
+          "sha256": "8b0a4d54df46f85e9a324cfc7c22ed22fbed9f3aa8e6124634a292185daa770b"
+        },
+        {
+          "path": ".runtime/context-hygiene/runs/workflow360-final/stdout.log",
+          "sha256": "8f942aad9f6f1751654e8a9c39ffb2579257351a7ff7cd90431e3e41b4f8c956"
+        },
+        {
+          "path": "results/workflow360/validation/default-routes.json",
+          "sha256": "9203745845cf8fe66219cbe4b2a8ae16a2e369eb50dcc211417c4c9b937ba375"
+        },
+        {
+          "path": "results/workflow360/validation/production-state.json",
+          "sha256": "bfdebe369bad6eb9676ea81c801da1cf05e4157e1271414f9dfd371e97ce93af"
+        }
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "prediction": "A specialist label or restart could continue Astra without a current bounded approval.",
+      "result": "resolved",
+      "observation": "Both defaults select Sol; expired/exhausted grants return to Sol; approval/database/restart controls pass.",
+      "response": "Retain source-bound grants and original accounting history."
+    }
+  ],
+  "adjacent_regressions": "432 affected workflow tests pass. Main-chat selector and semantic authorization remain trusted human/agent responsibilities.",
+  "stopping_reason": "Approved policy implementation complete; no inference or production change authorized by this engineering package."
+}

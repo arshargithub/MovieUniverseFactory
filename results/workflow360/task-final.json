@@ -1,0 +1,30 @@
+{
+  "id": "workflow360-sol-default",
+  "operation": "knowledge",
+  "entities": [
+    "knowledge"
+  ],
+  "query": "Sol default, Director approved bounded Astra assignment, retrospective evidence, persistent call limits, restart and scope expiration",
+  "intent": "Implement Director360 routing policy with local mocks and no inference",
+  "phase": "execution",
+  "inputs": {
+    "results/workflow360/REQUEST.md": "26e11fd2503846902b5bf61c82148f2230b7435dcfa81ee045cd8a1ca720499d",
+    "results/workflow360/STRATEGY.md": "ff99466a5ea306b19b0f410e590d6667135f813ff3ac6f886aac9ba990e6967c",
+    "AGENTS.md": "2a1831a28164078dccf5fc7092546c8596973a72b3d806cde9d92c0b343db805",
+    "docs/knowledge/context/rules.json": "da39afa9152a633f5292f91861bc5b927c6c18b628c99488e9ff3fb3d202adc2",
+    "src/movie_factory/stage_routing.py": "8cd40334ad3f3026eb78f80627446d1b1efc20d2db55c5b4675834b761e0e039",
+    "src/movie_factory/staged_runner.py": "c1933cc685351c55529e029d5a08ebe13eb1efd60dc9c33616a8e1af22d41459",
+    "docs/engineering-intelligence/STAGE_MODEL_ROUTING.md": "2529ac1c41758e49f876721d92b87f834c393fdeb118537729a0545222b7ffb0",
+    "docs/engineering-intelligence/SOL_DEFAULT_ROUTING.json": "e8d365773197765b5a43084c5050b55001b1210b69e523f6bc192b018ae6e8c3",
+    "tests/test_stage_routing360.py": "f169069ebef9dfb3d26484779ad2f6a2efea5dcc7619cc5d2ba27a81b156e946",
+    "tests/test_staged_runner.py": "73a1f41f8e26d15271c73fbe356d5059443d20195c07f970b8b770b7ba3eb446",
+    "tests/routing_fixtures360.py": "91d319a795e7f42202736da81ca5857039f0f9a4a7cf6e6549de1af865d5bbe8",
+    "results/workflow360/REVIEW.md": "8b0a4d54df46f85e9a324cfc7c22ed22fbed9f3aa8e6124634a292185daa770b"
+  },
+  "open_decisions": [],
+  "execution_authority": {
+    "source": "results/workflow360/REQUEST.md",
+    "scope": "Approved local workflow code, documentation and mocked tests only"
+  },
+  "max_context_characters": 60000
+}

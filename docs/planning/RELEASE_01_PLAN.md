@@ -4,6 +4,24 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+### Checkpoint360 — Sol default; bounded Astra escalation
+
+Director359/360 adopts Sol6.1 High across planning, execution, review and
+retrospectives. The specialist3D profile no longer selects Astra automatically.
+Astra requires a narrowly scoped assignment backed by retrospective evidence,
+explicit Director approval, a success test and persistent allowance. Scope/call
+expiry returns separate-runtime dispatch to Sol; the Director controls the chat
+selector.432 offline workflow tests pass. There were no live calls or production
+asset changes; savings and model-quality differences remain unmeasured.
+
+Read [360 implementation and checkpoint](../../results/workflow360/REVIEW.md)
+and the [current routing policy](../engineering-intelligence/STAGE_MODEL_ROUTING.md).
+The original Nihang tasks retain their findings/counters; the next production
+package resumes contact/interface work under Sol before a complete isolated
+review clip. Crowd remains deferred and the accepted Pashtun is protected.
+Local code/evidence commits are separate; no new remote protection is claimed.
+Next regular checkpoint370. Earlier policy and production snapshots remain history.
+
 ### Exchange358 — coupled tack construction; rein route remains blocked
 
 Five additional corrections were added to each original task. Appearance82–86

@@ -6,6 +6,10 @@ Demonstrator 01 now has a Director-accepted 24-second rough cut. See the [consol
 
 This is the central record of **Codex engineering models**, distinct from the paid API models inside Movie Factory. Previously, model changes were recorded inconsistently in handoffs and conversation history. [events.json](events.json) starts a curated, machine-readable backfill. It is not an automatic capture of Codex runtime settings or token usage.
 
+Director360's current policy governs this work. Model-policy descriptions and
+prospective defaults in the historical entries below describe their time;
+they do not override Sol High with approved, scoped Astra exceptions.
+
 ## Current evidence
 
 | Experiment | Documented sequence | Observed outcome | Limit on interpretation |
@@ -24,11 +28,16 @@ Keep observations and causal claims separate. A model that inherits a diagnosis,
 
 ## Feedback into the Factory design
 
-**Exchange326 separate runtime:** [stage-specific routing](STAGE_MODEL_ROUTING.md)
-is adopted and implemented with offline tests: Sol High planning/review and
-general work, Astra High difficult3D execution, evidence-backed strategy/review
-escalations. It does not switch the main chat or authorize calls. Historical325
-Sol Low remains the only observed live mix; no superiority benchmark follows.
+**Current policy, Director359/360:** [stage routing](STAGE_MODEL_ROUTING.md) uses
+Sol6.1 High for all task classes and stages, including complex3D and retros.
+Astra High needs a narrow assignment, retrospective evidence and explicit
+Director approval. Scope/call expiry returns separate-runtime dispatch to Sol;
+the main chat still requires the Director's selector. Offline controls qualify
+routing/accounting only; no live inference allowance or model superiority claim.
+
+**Historical326 policy:** Sol planning/review with automatic Astra specialist3D
+execution is superseded. Its source, fixtures and outcomes remain preserved.
+Historical325's Sol Low settings are observations, not the current default.
 
 **Exchange188 clarification:** Director reports Astra High as the current top escalation tier. There is no higher-model escalation in this workflow; a return to Sol is a step down after an evidenced route. Failure on Astra requires method/input/representation reassessment, not model cycling. Built-in image generation, including more than two images for the agreed deliverable, is agent-owned implementation; external spending, new tools and material creative changes retain their authority boundaries. Runtime settings and engineering usage are not independently verified.
 
