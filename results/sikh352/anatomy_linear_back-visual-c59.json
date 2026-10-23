@@ -1,0 +1,61 @@
+{
+  "verdict": "PASS",
+  "run_digest": "38b8cda0f408b82e098778837aead1ebe0f115ddbf829da10a99f572250272cd",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh352-c59-anatomy_linear_back/snapshot.json",
+      "sha256": "cf9f61401d8fd78c536015def7cae0769e20f97884d98b8bf1437c514e833335"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh352-c59-anatomy_linear_back/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh352-c59-anatomy_linear_back/script-diagnostics.json",
+      "sha256": "99bbbecec312f933855a69b1d853770138fd35ab62669f2fe652484d335f4ec7"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh352-c59-anatomy_linear_back/frame.png",
+      "sha256": "e1ba4c07b56866f8a4cdb0f8aabb22e75237b3bc2ce2aa8c53c65864c107ecc7"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh352-c59-anatomy_linear_back/frames.json",
+      "sha256": "5bca7a8059eecddf68f37044fbee12f4c3b3543c927a9607e61ff3d823591db9"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh352-c59-anatomy_linear_back/frame-0283.png",
+      "sha256": "a7588de7820903c133c457a3687f83e52e27275b67c865c89fedaa7d867a9d32"
+    },
+    "frame_290": {
+      "path": ".runtime/factory-native/sikh352-c59-anatomy_linear_back/frame-0290.png",
+      "sha256": "7baf2e9c646f9d49a7819b1830389a50bc982fd19b4e2cc48ae2227ed1ed7e40"
+    },
+    "frame_327": {
+      "path": ".runtime/factory-native/sikh352-c59-anatomy_linear_back/frame.png",
+      "sha256": "e1ba4c07b56866f8a4cdb0f8aabb22e75237b3bc2ce2aa8c53c65864c107ecc7"
+    },
+    "frame_350": {
+      "path": ".runtime/factory-native/sikh352-c59-anatomy_linear_back/frame-0350.png",
+      "sha256": "4b837ed0eb56ffd72e2075bb89fd965d2dd50d04bdf3671cc73c277e628dea16"
+    },
+    ".runtime/factory-native/sikh352-c59-anatomy_linear_back/frame-0283.png": {
+      "path": ".runtime/factory-native/sikh352-c59-anatomy_linear_back/frame-0283.png",
+      "sha256": "a7588de7820903c133c457a3687f83e52e27275b67c865c89fedaa7d867a9d32"
+    },
+    ".runtime/factory-native/sikh352-c59-anatomy_linear_back/frame-0290.png": {
+      "path": ".runtime/factory-native/sikh352-c59-anatomy_linear_back/frame-0290.png",
+      "sha256": "7baf2e9c646f9d49a7819b1830389a50bc982fd19b4e2cc48ae2227ed1ed7e40"
+    },
+    ".runtime/factory-native/sikh352-c59-anatomy_linear_back/frame.png": {
+      "path": ".runtime/factory-native/sikh352-c59-anatomy_linear_back/frame.png",
+      "sha256": "e1ba4c07b56866f8a4cdb0f8aabb22e75237b3bc2ce2aa8c53c65864c107ecc7"
+    },
+    ".runtime/factory-native/sikh352-c59-anatomy_linear_back/frame-0350.png": {
+      "path": ".runtime/factory-native/sikh352-c59-anatomy_linear_back/frame-0350.png",
+      "sha256": "4b837ed0eb56ffd72e2075bb89fd965d2dd50d04bdf3671cc73c277e628dea16"
+    }
+  },
+  "observation": "All four frames inspected. Continuous shoulder/upper arm, separated elbow, plausible forearm/wrist and closed shaft grip in these sampled controls. No58 torso penetration or shelf. Scoped static result only.",
+  "comparison": "Both linear and DQ preserve recognizable anatomy; retain DQ. Hand wraps actual tilted shaft while tip error is zero. Maximum288 wrist case still needs its exact view; animation/whole actor not passed.",
+  "open_defects": []
+}

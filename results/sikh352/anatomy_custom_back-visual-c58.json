@@ -1,0 +1,53 @@
+{
+  "verdict": "FAIL",
+  "run_digest": "a58c785eb01ffcc135267ac810a3da7b0aa2a9fd284048c4ca55a5d73537ba9c",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh352-c58-anatomy_custom_back/snapshot.json",
+      "sha256": "cf9f61401d8fd78c536015def7cae0769e20f97884d98b8bf1437c514e833335"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh352-c58-anatomy_custom_back/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh352-c58-anatomy_custom_back/script-diagnostics.json",
+      "sha256": "99bbbecec312f933855a69b1d853770138fd35ab62669f2fe652484d335f4ec7"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh352-c58-anatomy_custom_back/frame.png",
+      "sha256": "2427e785aecfcb2a6a6d9412c91348cf55a79e0cd116a045991093ad77376214"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh352-c58-anatomy_custom_back/frames.json",
+      "sha256": "93f00ddca6e57d97a600397161118c14bb3be64d342494f165a73faaa3088b97"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh352-c58-anatomy_custom_back/frame-0283.png",
+      "sha256": "8a56feef18f86493efb798083216bbfbb3d25ed9b5269507acc1c05b27818224"
+    },
+    "frame_290": {
+      "path": ".runtime/factory-native/sikh352-c58-anatomy_custom_back/frame-0290.png",
+      "sha256": "c06bfc422159a9b862c1f51d8c5754a5f8e14adb2101c46a2317c02e07a1f3fc"
+    },
+    "frame_327": {
+      "path": ".runtime/factory-native/sikh352-c58-anatomy_custom_back/frame.png",
+      "sha256": "2427e785aecfcb2a6a6d9412c91348cf55a79e0cd116a045991093ad77376214"
+    },
+    "frame_350": {
+      "path": ".runtime/factory-native/sikh352-c58-anatomy_custom_back/frame-0350.png",
+      "sha256": "b870eff280cdd161af4e0ea0dc7938199f4138f86c304f2ca0dd6d4a42055e01"
+    },
+    ".runtime/factory-native/sikh352-c58-anatomy_custom_back/frame.png": {
+      "path": ".runtime/factory-native/sikh352-c58-anatomy_custom_back/frame.png",
+      "sha256": "2427e785aecfcb2a6a6d9412c91348cf55a79e0cd116a045991093ad77376214"
+    }
+  },
+  "observation": "Actual reviewed frames listed in evidence. Upper arm penetrates torso and leaves a shoulder bulb; both skinning methods fail. Hand contact cannot qualify malformed arm.",
+  "comparison": "Paired skinning does not resolve pose failure; numeric393.6mm elbow jump is independently unacceptable.",
+  "open_defects": [
+    "Upper arm/torso collision",
+    "Wrist overbend and discontinuous elbow",
+    "Whole actor not qualified"
+  ]
+}

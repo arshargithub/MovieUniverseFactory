@@ -1,0 +1,29 @@
+{
+  "verdict": "PASS",
+  "run_digest": "6e83a658f3ffffe2aa4d4b8eff02f4e017ba2780526e87140ca8bea6c9bc321b",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh352-c58-save/snapshot.json",
+      "sha256": "cf9f61401d8fd78c536015def7cae0769e20f97884d98b8bf1437c514e833335"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh352-c58-save/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh352-c58-save/script-diagnostics.json",
+      "sha256": "d8c950e68c5c42eb08e3ba4cd795b716e2b5ac082b76301b8697edb7667b2ad9"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh352-c58-save/scene.blend",
+      "sha256": "69f7e6469e530c326e513c7db9736b864404cf7d3d0057272ea91969263a6601"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh352-c58-save/patch-evidence.json",
+      "sha256": "4c9ae2ee500c8c80cabbcb36ef937a5debb8b3723d38b625352c080664a1ab24"
+    }
+  },
+  "observation": "Coupled pose saved/reopened, all190frames solved, protected owners retained. No visual anatomy/contact acceptance.",
+  "comparison": "Original52 remains unqualified control.",
+  "open_defects": []
+}

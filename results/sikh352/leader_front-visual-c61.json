@@ -1,0 +1,49 @@
+{
+  "verdict": "FAIL",
+  "run_digest": "341a042b64b82582b72cf60850647b88558fbdc5dfbac6a5a2950052948cd563",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh352-c61-leader_front/snapshot.json",
+      "sha256": "cf9f61401d8fd78c536015def7cae0769e20f97884d98b8bf1437c514e833335"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh352-c61-leader_front/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh352-c61-leader_front/script-diagnostics.json",
+      "sha256": "99bbbecec312f933855a69b1d853770138fd35ab62669f2fe652484d335f4ec7"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh352-c61-leader_front/frame.png",
+      "sha256": "8b52a0068203f05e3a4d8d903014f840d8486df7091e777fd4994fb55f4bc0ef"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh352-c61-leader_front/frames.json",
+      "sha256": "c74a636d4bf9ef4254b535167f6f78bc952c5f2a1556cd3ba163443e23b906f2"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh352-c61-leader_front/frame-0283.png",
+      "sha256": "820a97d785a6ec9912e7c5860c7e8a8e57d7632d33a425c8f2994de1b140eed4"
+    },
+    "frame_288": {
+      "path": ".runtime/factory-native/sikh352-c61-leader_front/frame-0288.png",
+      "sha256": "7de94545a2bf8a964c62c2363585ebc185d9bdb99fa9cfca79b7afbd2dc84bf8"
+    },
+    "frame_327": {
+      "path": ".runtime/factory-native/sikh352-c61-leader_front/frame.png",
+      "sha256": "8b52a0068203f05e3a4d8d903014f840d8486df7091e777fd4994fb55f4bc0ef"
+    },
+    "frame_350": {
+      "path": ".runtime/factory-native/sikh352-c61-leader_front/frame-0350.png",
+      "sha256": "61dab44a642de51ea2b1518914c29ce11980ea1f2dd24daa91be2f689e5246f9"
+    }
+  },
+  "observation": "All four front samples283/288/327/350 inspected: prior elbow poke absent but waist band projects as rigid strips with lobed lower edge.",
+  "comparison": "Retained59 bare-arm scaffold and60 fabric volume; no improvement waives interface regression or whole-actor quality.",
+  "open_defects": [
+    "Projecting waist band",
+    "Whole garment and actor appearance unqualified",
+    "Full-speed performance not qualified by static controls"
+  ]
+}

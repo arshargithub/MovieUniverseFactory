@@ -1,0 +1,86 @@
+{
+  "outcome": "admit",
+  "checks": {
+    "grounding": {
+      "status": "PASS",
+      "observation": "59 all28 sampled images inspected; shoulder/arm shape and shaft grip locally viable. Not full actor or motion acceptance.",
+      "comparison": "Exact288 extremum remains planned.",
+      "source_ids": [
+        "strategy352",
+        "controls"
+      ]
+    },
+    "expert_coverage": {
+      "status": "PASS",
+      "observation": "Anatomy, prop contact, skinning and revealing camera controls explicitly coupled.",
+      "comparison": "Joint lengths do not qualify skin.",
+      "source_ids": [
+        "learnings",
+        "controls"
+      ]
+    },
+    "film_alignment": {
+      "status": "PASS",
+      "observation": "Bare proof only; whole face/clothing/tack and accepted Pashtun comparison remain unresolved.",
+      "comparison": "No lower quality floor.",
+      "source_ids": [
+        "film_language"
+      ]
+    },
+    "preferences": {
+      "status": "PASS",
+      "observation": "No known failure is handed over as ready; no sleeve concealment.",
+      "comparison": "Technical choices remain agent owned.",
+      "source_ids": [
+        "director_preferences"
+      ]
+    },
+    "reference_roles": {
+      "status": "PASS",
+      "observation": "Faithful rearing authority unchanged,23 useful cloth volume not finished approval,52 failed body shell.",
+      "comparison": "No promotion of rejected reference.",
+      "source_ids": [
+        "references",
+        "audit348"
+      ]
+    },
+    "method": {
+      "status": "PASS",
+      "observation": "26 tests. Restore real23 neutral cloth, interpolate body weights, outward-only rest clearance; no post-deform skin shrinkwrap.",
+      "comparison": "Mapping may still distort shoulder or neckline; actual render decisive.",
+      "source_ids": [
+        "controls",
+        "strategy352"
+      ]
+    },
+    "interfaces": {
+      "status": "PASS",
+      "observation": "Hidden supports receive matching new mesh and owners; old edge/sash components must be inspected against new fabric. Body59 unchanged.",
+      "comparison": "Stale trim or weighting can fail despite good neutral volume.",
+      "source_ids": [
+        "constraints",
+        "cast_findings"
+      ]
+    },
+    "efficient_quality": {
+      "status": "PASS",
+      "observation": "Actor front/reverse/contact and exact bare288, no crowd/full scene production render.",
+      "comparison": "Foundation prerequisite scoped, not wholesale approval.",
+      "source_ids": [
+        "director_preferences",
+        "audit348"
+      ]
+    },
+    "authority": {
+      "status": "PASS",
+      "observation": "Exactly58\u201361 existing appearance; motion12 unchanged; no new spending or egress.",
+      "comparison": "No reset or expansion.",
+      "source_ids": [
+        "constraints",
+        "strategy352"
+      ]
+    }
+  },
+  "strongest_counterexample": "A correct body can still acquire distorted cloth at shoulder/neck or stale layer intersections. Weight transfer and topology equality cannot qualify this. Exact288 and whole actor views remain mandatory; static success does not pass animation.",
+  "issues": []
+}
