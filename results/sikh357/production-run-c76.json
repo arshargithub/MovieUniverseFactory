@@ -1,0 +1,49 @@
+{
+  "id": "sikh357-c76-production",
+  "task": "sikh335-supporting-appearance",
+  "step": "production",
+  "cycle": 76,
+  "fingerprint": "ec2943818bda7d0d1ca49cc92e3fb97ad2411ca1cef59bdb644e8f32aac87466",
+  "parent": {
+    "path": ".runtime/factory-native/sikh357-c76-save/scene.blend",
+    "sha256": "763ba914fb9ffeeb1b783e732ca28f68fc03e687ea0f5e25a7c851cfb5f86f12"
+  },
+  "job_digest": "06a89c9227f044abd5aea0b9f6d107cc91608eb4077d3402c939488bf103a312",
+  "handler_digest": "b9e0f8186e84695d8d771991e3a8d25a4e2ef82a79e1da4f64306da255f359cf",
+  "status": "RETURNED",
+  "artifacts": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh357-c76-production/snapshot.json",
+      "sha256": "b2a1973ab52fbbfb4bed96ed92a924f2ff9bca9465a254589ba4fda003b8fbfa"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh357-c76-production/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh357-c76-production/script-diagnostics.json",
+      "sha256": "99bbbecec312f933855a69b1d853770138fd35ab62669f2fe652484d335f4ec7"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh357-c76-production/frame.png",
+      "sha256": "c1677ad143cebf5ecef1ff5f88048c60a85d7a0faa1629f33350b3e76d037d7f"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh357-c76-production/frames.json",
+      "sha256": "75abaf90656075461a0800f2625ee169eddda2f3ff4a8e151c6698e4b3854af1"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh357-c76-production/frame-0283.png",
+      "sha256": "4d6fa091517d9b1ce8908f9de660d87f9b519f8cbe1af601b97fffdf4209d562"
+    },
+    "frame_327": {
+      "path": ".runtime/factory-native/sikh357-c76-production/frame.png",
+      "sha256": "c1677ad143cebf5ecef1ff5f88048c60a85d7a0faa1629f33350b3e76d037d7f"
+    }
+  },
+  "dependencies": {},
+  "recipe": {
+    "path": "results/sikh357/production-recipe-c76.json",
+    "sha256": "d6b1a59a6c6fadb9df03f8745cd8982ebe5d0563af113f7420ab1e6d84dc07ac"
+  }
+}

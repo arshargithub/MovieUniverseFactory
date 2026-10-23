@@ -4,6 +4,24 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+### Exchange357 — nine appearance cycles; tack/contact authority boundary
+
+Director357 authorized ten appearance cycles73–82. Nine73–81 completed with
+per-candidate review and checkpoint77;82 remains unused. Retained81 improves
+anatomical beard rooting, brows/pigment, current-coat trim, indigo/folds and matte
+authored horse-coat detail, preserving71 sash/tack and motion16 keys. Close horse
+inspection exposes the inherited forehead-positioned noseband and bit/rein
+attachment dependency. Whole unit remains NOT_READY; no new AV clip is queued.
+
+Two additional motion corrections are requested, not assumed, to repair that
+interface together with remaining appearance82. Motion remains16/max16.
+Crowd is deferred.203 software tests are not art qualification. No new spend,
+upload, push or off-device backup claim. Next checkpoint360. Read
+[357 scope and next package](../../results/sikh357/CLOSEOUT.md),
+[checkpoint77](../../results/sikh357/CHECKPOINT_77.md) and
+[learnings](../../results/sikh357/LEARNINGS.md). Earlier snapshots below remain
+history, not current authority.
+
 ### Exchange354 — five appearance corrections; retrospective audit
 
 Five additional corrections68–72 remain on the original appearance task, with

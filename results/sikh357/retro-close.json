@@ -1,0 +1,339 @@
+{
+  "sikh335-supporting-appearance": {
+    "counts": {
+      "initialize": 1,
+      "plan": 30,
+      "outcome": 223,
+      "response": 104,
+      "admit": 104,
+      "evaluate": 1
+    },
+    "projection": {
+      "policy": 1,
+      "sequence": 463,
+      "gates": {
+        "__migration__": {
+          "status": "CLOSED",
+          "evaluation": "sikh351-migration-effect"
+        },
+        "__allowance__": {
+          "status": "TESTING",
+          "reason": "evidence_reconciliation",
+          "triggers": [
+            "migration-evidence:sikh351-reviewed-migration",
+            "sikh351-c55-__allowance__-reopen",
+            "sikh351-c56-__allowance__-reopen",
+            "sikh351-c57-__allowance__-reopen",
+            "exhaustion:sikh351-exhausted",
+            "sikh352-c59-__allowance__-reopen",
+            "sikh352-c60-__allowance__-reopen",
+            "sikh352-c61-__allowance__-reopen",
+            "exhaustion:sikh352-exhausted61",
+            "sikh353-c63-__allowance__-reopen",
+            "sikh353-c64-__allowance__-reopen",
+            "sikh353-c65-__allowance__-reopen",
+            "sikh353-c66-__allowance__-reopen",
+            "sikh353-c67-__allowance__-reopen",
+            "exhaustion:sikh353-appearance-exhausted",
+            "sikh354-c69-__allowance__-reopen",
+            "sikh354-c70-__allowance__-reopen",
+            "sikh354-c71-__allowance__-reopen",
+            "sikh354-c72-__allowance__-reopen",
+            "exhaustion:sikh354-c72-visual-replan",
+            "sikh357-c74-__allowance__-reopen",
+            "sikh357-c75-__allowance__-reopen",
+            "sikh357-c76-__allowance__-reopen",
+            "sikh357-c77-__allowance__-reopen",
+            "sikh357-c78-__allowance__-reopen",
+            "sikh357-c79-__allowance__-reopen",
+            "sikh357-c80-__allowance__-reopen",
+            "sikh357-c81-__allowance__-reopen"
+          ],
+          "plan": "ffeee5cc1978c9f1ca724cce59620a1acde132c708339b3dd11b5adcb6da9f3a",
+          "admitted_event": "sikh357-c81-__allowance__-admit"
+        },
+        "form": {
+          "status": "OPEN",
+          "reason": "strategy_falsifier_or_regression",
+          "triggers": [
+            "sikh351-legacy-form",
+            "sikh351-c54-form-open",
+            "sikh351-c55-form-open",
+            "sikh351-c56-form-open",
+            "native-review:sikh351-c56-anatomy_custom_back",
+            "sikh351-c57-form-open",
+            "native-review:sikh351-c57-anatomy_custom_back",
+            "sikh352-c58-form-open",
+            "native-review:sikh352-c58-anatomy_custom_front",
+            "sikh352-c59-form-open",
+            "sikh352-c60-form-open",
+            "native-review:sikh352-c60-leader_front",
+            "sikh352-c61-form-open",
+            "native-review:sikh352-c61-leader_front",
+            "sikh352-c61-final-form-failure",
+            "sikh353-c63-form-reopen",
+            "native-review:sikh353-c63-leader_reverse",
+            "native-review:sikh353-c64-leader_front",
+            "native-review:sikh353-c65-leader_face",
+            "native-review:sikh353-c66-leader_face",
+            "native-review:sikh353-c67-leader_front",
+            "sikh353-c67-final-failure",
+            "sikh354-c68-leader_face-failure",
+            "sikh354-c69-save-failure",
+            "native-review:sikh354-c70-production",
+            "sikh354-c70-production-failure",
+            "native-review:sikh354-c71-leader_front",
+            "sikh354-c71-leader_front-failure",
+            "native-review:sikh354-c72-leader_face",
+            "sikh354-c72-leader_face-failure",
+            "native-review:sikh357-c73-leader_face",
+            "sikh357-c73-leader_face-failure",
+            "native-review:sikh357-c74-leader_face",
+            "sikh357-c74-leader_face-failure",
+            "native-review:sikh357-c75-leader_face",
+            "sikh357-c75-leader_face-failure",
+            "native-review:sikh357-c76-leader_face",
+            "sikh357-c76-leader_face-failure",
+            "native-review:sikh357-c77-leader_front",
+            "sikh357-c77-leader_front-failure",
+            "native-review:sikh357-c78-leader_reverse",
+            "sikh357-c78-leader_reverse-failure",
+            "native-review:sikh357-c79-leader_reverse",
+            "sikh357-c79-leader_reverse-failure",
+            "native-review:sikh357-c80-horse_head",
+            "sikh357-c80-horse_head-failure",
+            "native-review:sikh357-c81-horse_head",
+            "sikh357-c81-horse_head-failure"
+          ]
+        },
+        "interfaces": {
+          "status": "OPEN",
+          "reason": "intervention_failed",
+          "triggers": [
+            "native-review:sikh352-c58-anatomy_custom_front",
+            "native-review:sikh352-c58-anatomy_custom_back",
+            "native-review:sikh352-c58-anatomy_custom_side",
+            "native-review:sikh352-c58-anatomy_linear_front",
+            "native-review:sikh352-c58-anatomy_linear_back",
+            "native-review:sikh352-c58-leader_contact",
+            "sikh352-c60-interfaces-reopen",
+            "native-review:sikh352-c60-leader_front",
+            "native-review:sikh352-c61-leader_front",
+            "sikh353-c63-interfaces-reopen",
+            "native-review:sikh353-c63-leader_reverse",
+            "sikh353-c63-leader_reverse-failure",
+            "native-review:sikh353-c64-leader_front",
+            "sikh353-c64-leader_front-failure",
+            "native-review:sikh353-c65-leader_face",
+            "sikh353-c65-leader_face-failure",
+            "native-review:sikh353-c66-leader_face",
+            "sikh353-c66-leader_face-failure",
+            "native-review:sikh353-c67-leader_front",
+            "sikh354-c69-interfaces-reopen",
+            "sikh354-c70-interfaces-reopen",
+            "native-review:sikh354-c70-production",
+            "native-review:sikh354-c71-leader_front",
+            "native-review:sikh354-c72-leader_face",
+            "native-review:sikh357-c73-leader_face",
+            "native-review:sikh357-c74-leader_face",
+            "native-review:sikh357-c75-leader_face",
+            "native-review:sikh357-c76-leader_face",
+            "native-review:sikh357-c77-leader_front",
+            "native-review:sikh357-c78-leader_reverse",
+            "native-review:sikh357-c79-leader_reverse",
+            "native-review:sikh357-c80-horse_head",
+            "native-review:sikh357-c81-horse_head"
+          ]
+        },
+        "evidence": {
+          "status": "OPEN",
+          "reason": "intervention_failed",
+          "triggers": [
+            "native-review:sikh352-c58-anatomy_custom_front",
+            "native-review:sikh352-c58-anatomy_custom_back",
+            "native-review:sikh352-c58-anatomy_custom_side",
+            "native-review:sikh352-c58-anatomy_linear_front",
+            "native-review:sikh352-c58-anatomy_linear_back",
+            "native-review:sikh352-c58-leader_contact",
+            "sikh352-c60-evidence-reopen",
+            "native-review:sikh352-c60-leader_front",
+            "native-review:sikh352-c61-leader_front",
+            "sikh353-c63-evidence-reopen",
+            "native-review:sikh353-c63-leader_reverse",
+            "native-review:sikh353-c64-leader_front",
+            "native-review:sikh353-c65-leader_face",
+            "native-review:sikh353-c66-leader_face",
+            "native-review:sikh353-c67-leader_front",
+            "sikh354-c69-evidence-reopen",
+            "sikh354-c70-evidence-reopen",
+            "native-review:sikh354-c70-production",
+            "native-review:sikh354-c71-leader_front",
+            "native-review:sikh354-c72-leader_face",
+            "native-review:sikh357-c73-leader_face",
+            "native-review:sikh357-c74-leader_face",
+            "native-review:sikh357-c75-leader_face",
+            "native-review:sikh357-c76-leader_face",
+            "native-review:sikh357-c77-leader_front",
+            "native-review:sikh357-c78-leader_reverse",
+            "native-review:sikh357-c79-leader_reverse",
+            "native-review:sikh357-c80-horse_head",
+            "native-review:sikh357-c81-horse_head"
+          ]
+        }
+      },
+      "warnings": {},
+      "responses": {
+        "__allowance__": {
+          "cause": "80 head close283327350 remains polished; replacement discarded existing authored188 texture. Reuse regression identified before handoff.",
+          "change_or_retain_rationale": "Return to79 protected actor; retain planned sub2 silhouette smoothing but explicitly reuse inspected owned188 UV hair detail, normalize actual luminance and map to dark bay. Matte varied roughness replaces glossy surface. Feature slots and all action keys preserved.",
+          "evidence": {
+            "results/sikh354/LEARNINGS.md": {
+              "path": "results/sikh354/LEARNINGS.md",
+              "sha256": "e7aa493fdc4e008e780b8432784833937ae0203796281594969c22f1d81ccc14"
+            },
+            "results/sikh354/RETRO_AUDIT.md": {
+              "path": "results/sikh354/RETRO_AUDIT.md",
+              "sha256": "c8f36cf66031c06595e513f83a2f5334f562ad45dfbf3c950fc0eaff382f6048"
+            },
+            "results/sikh357/REQUEST.md": {
+              "path": "results/sikh357/REQUEST.md",
+              "sha256": "b21cf83e1c171c209b48cfc190521a56c2dbc684344d2119a00dfbc12cdb98bf"
+            },
+            "results/sikh357/STRATEGY.md": {
+              "path": "results/sikh357/STRATEGY.md",
+              "sha256": "e45b13dd1dff6b40aee2cd8bfaec9bc0dae544c8989df3ef09c1cfc9033ca95a"
+            },
+            "results/sikh357/challenge-c81.json": {
+              "path": "results/sikh357/challenge-c81.json",
+              "sha256": "855ba7e9cd5a7c116b095f58c5734616d7a074bb0cb9d55a673c68e42629ad76"
+            },
+            "results/sikh357/config-c81.json": {
+              "path": "results/sikh357/config-c81.json",
+              "sha256": "ca44ad91231eb9aab98bac4323127a4fb3d5f0a4fa3bc55ecb7b0c684c861d65"
+            }
+          },
+          "expected": "Only observed corrected subproof can advance; whole actor remains failed until all visible requirements met.",
+          "failure_response": "Replan actual failed representation and retain counters; no decorative substitution.",
+          "gate_digest": "63ed5f1d6192c15d39e2eeba89fb8852510b131ac8931e08c4bca6c474ad00bb",
+          "key": "__allowance__",
+          "plan": "ffeee5cc1978c9f1ca724cce59620a1acde132c708339b3dd11b5adcb6da9f3a",
+          "preserve": "Original references, motion16,64 waist and all failure history; ten total new corrections.",
+          "target_stage": "STRATEGIZING",
+          "test": "Horse head283327350 and production283307327341350. Reject lacquer/clay, oversized fur wallpaper, texture discontinuity, lost eye/mouth separation or regression in leader/tack. The source188 is reusable texture evidence, not proof this new horse is approved.",
+          "uncertainty": "Reconstructed curves/surfaces can still fail anatomy, rooting or posed support; no predeclared artistic pass.",
+          "event": "sikh357-c81-__allowance__-response"
+        }
+      },
+      "proofs": {},
+      "history_api": "retrospective.events(connection, task)",
+      "instruction": "Inspect source-bound outcomes for each open finding; respond, challenge, then test. Admission is not effectiveness. No new authority."
+    }
+  },
+  "sikh335-continuous-performance": {
+    "counts": {
+      "initialize": 1,
+      "plan": 5,
+      "outcome": 29,
+      "response": 11,
+      "admit": 11
+    },
+    "projection": {
+      "policy": 1,
+      "sequence": 57,
+      "gates": {
+        "__migration__": {
+          "status": "TESTING",
+          "reason": "evidence_reconciliation",
+          "triggers": [
+            "migration-evidence:sikh353-motion-retro-migration",
+            "sikh353-motion14-__migration__-reopen",
+            "sikh353-motion15-__migration__-reopen",
+            "sikh353-motion16-__migration__-reopen"
+          ],
+          "plan": "1d9ef115be556576f52f54cc1538c2b22fa820ac07baf163ce03aa164ee85e21",
+          "admitted_event": "sikh353-motion16-__migration__-admit"
+        },
+        "__allowance__": {
+          "status": "OPEN",
+          "reason": "allowance_exhausted",
+          "triggers": [
+            "migration-evidence:sikh353-motion-retro-migration",
+            "sikh353-motion14-__allowance__-reopen",
+            "sikh353-motion15-__allowance__-reopen",
+            "sikh353-motion16-__allowance__-reopen",
+            "exhaustion:sikh353-motion16-replan"
+          ]
+        },
+        "phases": {
+          "status": "OPEN",
+          "reason": "intervention_failed",
+          "triggers": [
+            "sikh353-motion13-failure",
+            "native-review:sikh353-motion-c14-render",
+            "sikh353-motion14-failure",
+            "native-review:sikh353-motion-c15-render",
+            "sikh353-motion15-failure",
+            "native-review:sikh353-motion-c16-render"
+          ]
+        },
+        "rider": {
+          "status": "OPEN",
+          "reason": "strategy_falsifier_or_regression",
+          "triggers": [
+            "sikh353-motion16-failure"
+          ]
+        }
+      },
+      "warnings": {},
+      "responses": {
+        "__migration__": {
+          "cause": "15 downstroke ease-out slows actual tip before strike despite correct held grip.",
+          "change_or_retain_rationale": "Change only descending lift profile; preserve prelift, constant material grip and14 horse trajectory.",
+          "evidence": {
+            "results/sikh335/motion01/landing-review-c12.md": {
+              "path": "results/sikh335/motion01/landing-review-c12.md",
+              "sha256": "d0fada04fcdbb952b29178817f673295a1f6b85d46c40bc08c819f0956a51a94"
+            },
+            "results/sikh353/GESTURE15_STRATEGY.md": {
+              "path": "results/sikh353/GESTURE15_STRATEGY.md",
+              "sha256": "3170d27c6210e3112454d93ea0182d09dfa36f0123247b7505fee7a0d638f09f"
+            },
+            "results/sikh353/INTEGRATION14_STRATEGY.md": {
+              "path": "results/sikh353/INTEGRATION14_STRATEGY.md",
+              "sha256": "30dd7bdece017cdb8c092e4b2a5f08c7d6c1d3eaa349e333cbd8fc7532678db1"
+            },
+            "results/sikh353/MOTION_INTEGRATION_FINDING.md": {
+              "path": "results/sikh353/MOTION_INTEGRATION_FINDING.md",
+              "sha256": "af67c44587d4319ad04e6b42bf672747bfd70150e0ee2a11059f759e18b617c4"
+            },
+            "results/sikh353/MOTION_STRATEGY.md": {
+              "path": "results/sikh353/MOTION_STRATEGY.md",
+              "sha256": "5614e2f4b5aa8780edbb3220e7930bb872bfd2d6e85e80dd270158ef81437a30"
+            },
+            "results/sikh353/REQUEST.md": {
+              "path": "results/sikh353/REQUEST.md",
+              "sha256": "61889620ac3b5a5bc0160d2bf5d4264d9a013094d395003733513f35d4c2301e"
+            },
+            "results/sikh353/motion-challenge-c16.json": {
+              "path": "results/sikh353/motion-challenge-c16.json",
+              "sha256": "9b58e8e080e3fab77dd498cee0f68118b9f8f382c8b0fafa2c822b4df0353944"
+            }
+          },
+          "expected": "No pre-contact slowing or new arm/cuff/grip defect; whole form remains separately failed.",
+          "failure_response": "Replan targeted fold/release within existing four motion corrections, no handoff as ready.",
+          "gate_digest": "ff5d0c4ddb656a5c027187669ecdffd787f1371b8c84f5abf6cdc539dc7d204f",
+          "key": "__migration__",
+          "plan": "1d9ef115be556576f52f54cc1538c2b22fa820ac07baf163ce03aa164ee85e21",
+          "preserve": "Original tasks and all prior evidence; this is the final authorized correction of353 total ten.",
+          "target_stage": "STRATEGIZING",
+          "test": "15 measured negative velocity control; actual16 tip296\u2013300 must accelerate downward; repeat front and production phase images.",
+          "uncertainty": "Constant material grip can force unnatural arm/cloth or penetration; strike timing must remain readable.",
+          "event": "sikh353-motion16-__migration__-response"
+        }
+      },
+      "proofs": {},
+      "history_api": "retrospective.events(connection, task)",
+      "instruction": "Inspect source-bound outcomes for each open finding; respond, challenge, then test. Admission is not effectiveness. No new authority."
+    }
+  }
+}

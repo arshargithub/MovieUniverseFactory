@@ -1,0 +1,41 @@
+{
+  "id": "sikh357-c76-save",
+  "task": "sikh335-supporting-appearance",
+  "step": "save",
+  "cycle": 76,
+  "fingerprint": "ec2943818bda7d0d1ca49cc92e3fb97ad2411ca1cef59bdb644e8f32aac87466",
+  "parent": {
+    "path": ".runtime/factory-native/sikh357-c73-save/scene.blend",
+    "sha256": "5042b4c368d86acf0f443223a78a05681de0ef8a561197861cfd6f7e74dad957"
+  },
+  "job_digest": "fe49e9fd443c64f49e66f5ec27f85ec1743a0a8589de54bc9146e563a1bd32ed",
+  "handler_digest": "b9e0f8186e84695d8d771991e3a8d25a4e2ef82a79e1da4f64306da255f359cf",
+  "status": "RETURNED",
+  "artifacts": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh357-c76-save/snapshot.json",
+      "sha256": "b2a1973ab52fbbfb4bed96ed92a924f2ff9bca9465a254589ba4fda003b8fbfa"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh357-c76-save/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh357-c76-save/script-diagnostics.json",
+      "sha256": "d8c950e68c5c42eb08e3ba4cd795b716e2b5ac082b76301b8697edb7667b2ad9"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh357-c76-save/scene.blend",
+      "sha256": "763ba914fb9ffeeb1b783e732ca28f68fc03e687ea0f5e25a7c851cfb5f86f12"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh357-c76-save/patch-evidence.json",
+      "sha256": "4c29c72ce61160ee4685a3768ff619f2a1c098db34256c0f7ce314097ffc0ee7"
+    }
+  },
+  "dependencies": {},
+  "recipe": {
+    "path": "results/sikh357/save-recipe-c76.json",
+    "sha256": "5ad32a1b50807673d438646a3baddf9d9ee7cb2dd90904715078ba4b1a22eb67"
+  }
+}

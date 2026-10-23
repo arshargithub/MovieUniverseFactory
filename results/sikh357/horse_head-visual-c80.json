@@ -1,0 +1,43 @@
+{
+  "verdict": "FAIL",
+  "run_digest": "28ac291e61e285c4360fdd7702d7cf74169a6645ca0f8e40ebb938eb008ad430",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh357-c80-horse_head/snapshot.json",
+      "sha256": "4ee52e0c8c9adc944075137431fce77ab86d5b3837f003c06580d2f75b1b9d53"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh357-c80-horse_head/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh357-c80-horse_head/script-diagnostics.json",
+      "sha256": "99bbbecec312f933855a69b1d853770138fd35ab62669f2fe652484d335f4ec7"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh357-c80-horse_head/frame.png",
+      "sha256": "b463ebf94650686847ba3196e323806602e558b6f73bb482f2a645ab65b39f56"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh357-c80-horse_head/frames.json",
+      "sha256": "ee1c3aab59e82e54fbcec343a19890531d899bb3aec8f76fd40bc817368703b8"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh357-c80-horse_head/frame-0283.png",
+      "sha256": "5eabb57aa9caf820c70ea6a1b926955e1fbbcf69809600a2ff709e204f75f80b"
+    },
+    "frame_327": {
+      "path": ".runtime/factory-native/sikh357-c80-horse_head/frame.png",
+      "sha256": "b463ebf94650686847ba3196e323806602e558b6f73bb482f2a645ab65b39f56"
+    },
+    "frame_350": {
+      "path": ".runtime/factory-native/sikh357-c80-horse_head/frame-0350.png",
+      "sha256": "1e5ebe5067f5fad0ffa6b6fec2b155d28a399fabeb3dcf0ccb5d74e0170d5b87"
+    }
+  },
+  "observation": "80 actual close head283327350: dark coat still polished/clay-like; replacement shader discarded existing authored188 coat texture. Subdivision retained as a useful hypothesis, but no living-surface pass. Rebuild from79 using explicit inspected188 UV hair detail normalization and matte roughness; preserve feature material slots.",
+  "comparison": "Actual354 failed controls and accepted production quality; local technical success is not whole-form qualification.",
+  "open_defects": [
+    "80 actual close head283327350: dark coat still polished/clay-like; replacement shader discarded existing authored188 coat texture. Subdivision retained as a useful hypothesis, but no living-surface pass. Rebuild from79 using explicit inspected188 UV hair detail normalization and matte roughness; preserve feature material slots."
+  ]
+}

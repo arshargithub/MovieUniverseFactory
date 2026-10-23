@@ -1,0 +1,29 @@
+{
+  "verdict": "PASS",
+  "run_digest": "b932469063ec6afccbeb46d719bc03cf33370d66fd1b05c90f007e001dd4e079",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh357-c75-save/snapshot.json",
+      "sha256": "b2a1973ab52fbbfb4bed96ed92a924f2ff9bca9465a254589ba4fda003b8fbfa"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh357-c75-save/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh357-c75-save/script-diagnostics.json",
+      "sha256": "d8c950e68c5c42eb08e3ba4cd795b716e2b5ac082b76301b8697edb7667b2ad9"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh357-c75-save/scene.blend",
+      "sha256": "0dff761e7ff6b8793d07a58a959ad61e32fae1b8de44720337360255b3ac5ea2"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh357-c75-save/patch-evidence.json",
+      "sha256": "fe004c1525a6bf52d875454d82a0d0c8509e7a8b1c7c03edba3311f72fdd08b2"
+    }
+  },
+  "observation": "Reversible derivative saved/reopened; artifacts verified and script diagnostics clean. Fixed form change only; no visual pass.",
+  "comparison": "Original integrated16 source preserved; actual diagnostic report retained.",
+  "open_defects": []
+}
