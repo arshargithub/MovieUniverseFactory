@@ -12,7 +12,8 @@ OBJECTS = ('horse.rig', 'HORSE hind support pivot', 'mounted leader',
 # Exact diagnosed legacy320 defect, permitted ONLY for this unchanged negative
 # control. It is not a working-rig certificate or a general invalid-driver waiver.
 LEGACY_DRIVER_DEFECT = '054bf94aeb90448916005e7c0e8c5dbe163e7fbbea52cde230adf8c32ee0e21c'
-ANATOMY_VIEWS = {f'anatomy_{pose}_{view}' for pose in ('rest','bend','custom') for view in ('front','back')}
+ANATOMY_VIEWS = {f'anatomy_{pose}_{view}' for pose in ('rest','bend','custom','linear') for view in ('front','back')}
+ANATOMY_VIEWS |= {'anatomy_custom_side','anatomy_linear_side'}
 
 
 def validate(recipe):
@@ -99,6 +100,9 @@ def anatomy_control(bpy,view):
     for ob in bpy.data.objects:
         if ob.type in {'MESH','CURVE','CURVES','LIGHT'}: ob.hide_render=ob!=body
     pose=view.split('_')[1]
+    if pose=='linear':
+        for mod in body.modifiers:
+            if mod.type=='ARMATURE':mod.use_deform_preserve_volume=False
     if pose=='rest':rig.data.pose_position='REST'
     elif pose=='bend':
         rig.animation_data_clear()
@@ -113,7 +117,8 @@ def anatomy_control(bpy,view):
         ob.location=target+q@Vector(offset);ob.rotation_euler=(target-ob.location).to_track_quat('-Z','Y').to_euler()
     data=bpy.data.cameras.new('MF diagnostic camera temporary');data.type='ORTHO';data.ortho_scale=1.40
     camera=bpy.data.objects.new(data.name,data);bpy.context.scene.collection.objects.link(camera)
-    camera.location=target+q@Vector((.12,-3 if view.endswith('front') else 3,.12))
+    offset=(3,0,.12) if view.endswith('side') else (.12,-3 if view.endswith('front') else 3,.12)
+    camera.location=target+q@Vector(offset)
     camera.rotation_euler=(target-camera.location).to_track_quat('-Z','Y').to_euler()
     return camera
 

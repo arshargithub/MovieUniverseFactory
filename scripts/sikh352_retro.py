@@ -1,0 +1,25 @@
+"""Retained foundation failure; admit only the discriminating test."""
+from pathlib import Path
+from movie_factory import production_workflow as wf,production_knowledge as pk
+from movie_factory.task_router import DATABASE
+r=Path(__file__).resolve().parents[1];c=wf.Controller(r,DATABASE);task='sikh335-supporting-appearance';cycle=c.state(task)['cycle']
+ev={p:dict(path=p,sha256=pk.file_hash(r/p)) for p in ['results/sikh348/CAUSAL_LEDGER.md','results/sikh351/DIAGNOSIS57.md','results/sikh352/REQUEST.md','results/sikh352/STRATEGY.md',f'results/sikh352/challenge-c{cycle}.json']}
+if cycle>=59:ev['diagnosis58']=dict(path='results/sikh352/DIAGNOSIS58.md',sha256=pk.file_hash(r/'results/sikh352/DIAGNOSIS58.md'))
+if cycle==61:ev['diagnosis60']=dict(path='results/sikh352/DIAGNOSIS60.md',sha256=pk.file_hash(r/'results/sikh352/DIAGNOSIS60.md'))
+c.retrospective(task,'outcome',dict(attempt=f'c{cycle}-retained-foundation',role='diagnostic',origin='replan-reconciliation',observations=[dict(requirement='form',status='FAIL',observation='57 shoulder shelf and wrist deformation remain;352 not yet run.',foundation=True)],evidence=ev),f'sikh352-c{cycle}-form-open')
+for key,g in c.retrospective_packet(task)['gates'].items():
+ if g['status']=='TESTING' and g['plan']!=pk.digest(c.state(task)['brief']):
+  c.retrospective(task,'outcome',dict(attempt=f'c{cycle}-reconcile-{key}',role='diagnostic',origin='changed-plan',observations=[dict(requirement=key,status='UNKNOWN',observation='Prior admission belongs to old plan; retain evidence and reconcile.')],evidence=ev),f'sikh352-c{cycle}-{key}-reopen')
+for key,g in c.retrospective_packet(task)['gates'].items():
+ if g['status']!='OPEN':continue
+ response=dict(cause='Fixed unaccepted hand pose constrains wrist/elbow incompatibly; independent poles failed actual front anatomy.',uncertainty='Pose coupling may not suffice if shoulder weights or frame convention is wrong; numeric score may choose bad appearance.',change_or_retain_rationale='Allow fixed shaft-relative grip height/azimuth, solve arm together, test same pose with two skinning methods before any cloth.',preserve='All history/accepted assets and motion12;58–61 appearance allowance.',test='Save/reopen then paired bare front/back/side and hand contact283/290/327/350, allframe numeric preflight.',expected='Discriminate pose versus deformation, or retain failure; no whole actor pass.',failure_response='Replan affected strategy within retained allowance, not cosmetic retry.',target_stage='STRATEGIZING',plan=pk.digest(c.state(task)['brief']),gate_digest=pk.digest(g),evidence=ev)
+ if cycle>=59:
+  response.update(cause='58 shaft constraint forces torso penetration; DQ and linear both fail.393mm elbow discontinuity rejects numeric best.',change_or_retain_rationale='59 anatomically supported arm; shaft orientation meets hand while tip trajectory and timing stay invariant.',test='Allframe hard joint bounds and exact tip invariance; matched bare views and hand contact. No cloth before anatomy.',uncertainty='Shoulder deformation may still fail despite credible endpoints; supported arm may need motivated gesture after form proof.')
+ if cycle>=60:
+  response.update(cause='59 resolves sampled bare/contact prerequisite; inherited52 garment is still a skin-following shell, not independent cloth.',change_or_retain_rationale='Restore actual23 settled fabric topology/ease on59 rig; compare actor and interfaces, retaining full form gate.',test='Front/reverse/contact283/288/327/350 plus bare288; no costume masking, no crowd yet.',uncertainty='Landmark transfer, nearest weights and inherited trim can expose new shoulder/waist defects.')
+ if cycle==61:
+  response.update(cause='60 local elbow penetration and stale rear hem/waist overlap are actual visible failures.',change_or_retain_rationale='Retain59 bare anatomy and60 independent fabric;61 adds local sleeve ease and coherent hem/waist interface, with support rebinding.',test='Four leader poses front/reverse/contact; reject residual or adjacent defects. Last authorized correction.',uncertainty='Skirt/waist interface may still fail, and whole actor look remains below final floor.')
+ event=f'sikh352-c{cycle}-{key}-response';c.retrospective(task,'response',dict(key=key,response=response),event)
+ challenge=dict(response_event=event,counterexample='Correct lengths and contact can coexist with a malformed shoulder; actual evaluated skin is decisive.',evidence=ev,checks={k:dict(status='PASS',observation=v) for k,v in dict(causal_test='Fixed-hand57 failure motivates coupled pose with paired skinning.',actual_method='Reviewed fixed typed handler, allframe reach preflight, admitted save dependency.',preservation='52 untouched,23 useful volume retained, no clothing/crowd propagation.',authority=f'Four approved corrections;{cycle}/61. No spend.').items()})
+ c.retrospective(task,'admit',dict(key=key,challenge=challenge),f'sikh352-c{cycle}-{key}-admit')
+print({k:v['status'] for k,v in c.retrospective_packet(task)['gates'].items()})
