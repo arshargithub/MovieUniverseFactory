@@ -29,14 +29,27 @@ def exterior_path(points, bvh, margin=.018):
         p=q
     return p
 
-def visible(bvh,a,b,margin=.006):
+def visible(bvh,a,b,margin=.007):
     d=b-a;length=d.length
     if length<1e-8:return True
     hit,_,_,distance=bvh.ray_cast(a,d.normalized(),length)
     if hit is not None and distance<length-1e-6:return False
-    for u in (.25,.5,.75):
-        v=a.lerp(b,u);p,n,_,_=bvh.find_nearest(v)
-        if (v-p).dot(n)<margin:return False
+    # Signed distance to the closed skin is1-Lipschitz: a midpoint distance
+    # greater than margin+half-length certifies the entire segment. Otherwise
+    # subdivide; sparse quarter probes missed the actual287 rein collision.
+    def distance(v):
+        p,n,_,_=bvh.find_nearest(v)
+        return (v-p).dot(n)
+    if distance(a)<margin or distance(b)<margin:return False
+    pending=[(a,b)]
+    while pending:
+        x,y=pending.pop();m=x.lerp(y,.5);half=(y-x).length*.5;d=distance(m)
+        if d<margin:return False
+        if d>=margin+half:continue
+        # Uncertified tiny intervals fail conservatively; never treat a
+        # recursion limit as permission to ignore a close surface.
+        if half<.00005:return False
+        pending.extend(((x,m),(m,y)))
     return True
 
 def surface_route(target,hand,bvh,verts,normals,edges,cache):
@@ -222,5 +235,5 @@ def run(bpy,out):
     if protected_signature()!=sig:raise ValueError('REIN358_PROTECTED_ACTION_DRIFT')
     if max(errors)>1e-5 or max(grip_errors)>1e-8:raise ValueError('REIN358_CONTACT')
     rig['rein358']=1;scene.frame_set(frame);bpy.context.view_layer.update()
-    report=dict(changed=True,source_preserved=True,protected_action_signature=sig,protected_actions_unchanged=True,maximum_bit_error=max(errors),maximum_grip_change=max(grip_errors),maximum_animation_readback_error=max(playback_errors),minimum_skin_clearance=min(x['minimum_skin_clearance'] for x in records),ring_stations=stations,ring_clearance_candidates=scores,records=records,scope='Entire exterior span reconstructed against evaluated horse skin; actual hand endpoints preserved. Shot-authored contact, not rope simulation; images and timing still required.')
+    report=dict(changed=True,source_preserved=True,protected_action_signature=sig,protected_actions_unchanged=True,maximum_bit_error=max(errors),maximum_grip_change=max(grip_errors),maximum_animation_readback_error=max(playback_errors),minimum_skin_clearance=min(x['minimum_skin_clearance'] for x in records),ring_stations=stations,ring_clearance_candidates=scores,records=records,scope='Entire exterior span reconstructed against evaluated horse skin with conservative adaptive segment checks; actual hand endpoints preserved. Shot-authored contact, not rope simulation; images and timing still required.')
     (out/'rein358.json').write_text(json.dumps(report,indent=2)+'\n');return report

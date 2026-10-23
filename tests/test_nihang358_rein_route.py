@@ -68,3 +68,18 @@ def test_same_frame_cache_does_not_reuse_other_rein_endpoints():
     p=surface_route(a,b,Box(),vertices,normals,edges,cache)
     assert (p[0]-a).length==0 and (p[-1]-b).length==0
     assert all(visible(Box(),x,y,.006) for x,y in zip(p,p[1:]))
+
+
+def test_sparse_quarter_samples_cannot_certify_a_narrow_near_miss():
+    class NarrowObstacle:
+        center=.375
+        def ray_cast(self,*args):return None,None,None,None
+        def find_nearest(self,p):
+            # Cross-section of a small sphere close to, but not intersecting,
+            # the centreline. The7mm radius clearance fails between probes.
+            center=V(self.center,.010,0);d=p-center;n=d.normalized()
+            hit=center+n*.004
+            return hit,n,0,(p-hit).length
+    surface=NarrowObstacle();a,b=V(0,0,0),V(1,0,0)
+    assert all((a.lerp(b,u)-surface.find_nearest(a.lerp(b,u))[0]).dot(surface.find_nearest(a.lerp(b,u))[1])>.007 for u in (.25,.5,.75))
+    assert not visible(surface,a,b,.007)
