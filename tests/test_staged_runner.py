@@ -11,6 +11,7 @@ from movie_factory import stage_routing as routing
 from test_production_workflow import setup, bind, direction, review, make_brief
 import expert_fixtures as ef
 import planning_fixtures as pf
+from routing_fixtures360 import assignment, packet as routing_packet
 
 
 @pytest.fixture(autouse=True)
@@ -201,9 +202,9 @@ def test_scoped_knowledge_survives_stage_dispatch(setup):
 
 
 @pytest.mark.parametrize('selected', [routing.SOL, routing.ASTRA])
-def test_protocol_fresh_thread_no_environment_and_structured_result(selected):
+def test_protocol_fresh_thread_no_environment_and_structured_result(selected, tmp_path):
     proto = object.__new__(sr.CodexProtocol)
-    proto.cwd, proto.mcp_off, proto.history = '/private/tmp/fixture', {'mcp_servers.fixture.enabled': False}, []
+    proto.cwd, proto.mcp_off, proto.history = str(tmp_path), {'mcp_servers.fixture.enabled': False}, []
     proto.preflight = lambda: {'auth_type': 'chatgpt'}
     proto.progress = lambda event: None
     calls = []
@@ -219,9 +220,10 @@ def test_protocol_fresh_thread_no_environment_and_structured_result(selected):
          'text': json.dumps({'result_json': json.dumps({'verdict': 'NOT_RUN'})})}}},
         {'method': 'turn/completed', 'params': {'turn': {'id': 'turn', 'status': 'completed'}}}])
     proto.read = lambda **kw: next(events)
-    route = routing.resolve(routing.policy('general'), 'reviewer', Path('/private/tmp'))
-    route['model'] = selected
-    result = proto.infer({'actor': 'reviewer', 'runtime_route': route, 'image_paths': ['/private/tmp/fixture.png']})
+    packet = routing_packet('reviewer')
+    policy = routing.policy('general', {'reviewer': assignment(tmp_path, packet)} if selected == routing.ASTRA else {})
+    route = routing.resolve(policy, 'reviewer', tmp_path, packet)
+    result = proto.infer({**packet, 'runtime_route': route, 'image_paths': ['/private/tmp/fixture.png']})
     start, turn = calls[1][1], calls[2][1]
     assert start['ephemeral'] and start['environments'] == turn['environments'] == []
     assert start['dynamicTools'] == start['selectedCapabilityRoots'] == []
@@ -290,20 +292,19 @@ def test_runtime_setting_mismatch_blocks_before_inference():
 
 
 @pytest.mark.parametrize('profile,expected', [('general', [routing.SOL]*3),
-                                          ('specialist_3d', [routing.SOL, routing.ASTRA, routing.SOL])])
+                                          ('specialist_3d', [routing.SOL]*3)])
 def test_routing_defaults(tmp_path, profile, expected):
     assert [routing.resolve(routing.policy(profile), a, tmp_path)['model'] for a in routing.ACTORS] == expected
 
 
 def test_escalation_requires_reason_current_evidence_and_valid_actor(tmp_path):
-    (tmp_path / 'diagnosis.txt').write_text('Structural assumption unresolved')
-    escalation = {'trigger': 'foundational_strategy', 'reason': 'Must select representation before building',
-                  'evidence': {'diagnosis.txt': wf.pk.file_hash(tmp_path / 'diagnosis.txt')}}
+    packet = routing_packet()
+    escalation = assignment(tmp_path, packet)
     p = routing.policy('specialist_3d', {'planner': escalation})
-    assert routing.resolve(p, 'planner', tmp_path)['model'] == routing.ASTRA
+    assert routing.resolve(p, 'planner', tmp_path, packet)['model'] == routing.ASTRA
     assert routing.resolve(p, 'reviewer', tmp_path)['model'] == routing.SOL
-    (tmp_path / 'diagnosis.txt').write_text('changed')
-    with pytest.raises(wf.Blocked, match='STALE_ESCALATION'): routing.resolve(p, 'planner', tmp_path)
+    (tmp_path / escalation['retrospective']['path']).write_text('changed')
+    with pytest.raises(wf.Blocked, match='STALE_ESCALATION'): routing.resolve(p, 'planner', tmp_path, packet)
     with pytest.raises(wf.Blocked, match='ROUTING_ACTOR'): routing.policy('general', {'director': escalation})
     escalation['trigger'] = 'want_a_pass'
     with pytest.raises(wf.Blocked, match='ESCALATION_REASON'): routing.policy('general', {'reviewer': escalation})
@@ -335,7 +336,7 @@ def test_routed_three_stage_chain_and_policy_restart(setup):
     for _ in range(3): runner.step('t', routed_adapter(brief, seen), {})
     runner.step('t', routed_adapter(build(root, c), seen), {})
     runner.step('t', routed_adapter(review(root, c, status='FAIL'), seen), {})
-    assert [r['runtime_route']['model'] for r in seen] == [routing.SOL]*4 + [routing.ASTRA, routing.SOL]
+    assert [r['runtime_route']['model'] for r in seen] == [routing.SOL]*6
     assert all('ticket' not in r for r in seen) and 'builder_record' not in seen[-1]
     with pytest.raises(wf.Blocked, match='NOT_READY'): runner.present('t')
 
@@ -361,14 +362,14 @@ def test_explicit_escalation_preserves_state_and_cap(setup):
     runner = sr.SerialRunner(c, 'routed.sqlite3', max_calls=1, routing=routing.policy('general'))
     runner.step('t', routed_adapter(brief, []), {})
     before = c.state('t')
-    record = {'trigger': 'unresolved_diagnosis', 'reason': 'Fixture method ambiguity',
-              'evidence': {'authority.md': wf.pk.file_hash(root / 'authority.md')}}
+    packet = c.packet('t')
+    record = assignment(root, packet)
     runner.escalate('t', record)
     assert c.state('t') == before
     with runner.connection() as con:
         assert con.execute('SELECT count(*) FROM route_events').fetchone()[0] == 1
         updated = json.loads(con.execute('SELECT policy FROM routing').fetchone()[0])
-    assert routing.resolve(updated, 'planner', root)['model'] == routing.ASTRA
+    assert routing.resolve(updated, 'planner', root, packet)['model'] == routing.ASTRA
     assert routing.resolve(updated, 'builder', root)['model'] == routing.SOL
     assert routing.resolve(updated, 'reviewer', root)['model'] == routing.SOL
     with pytest.raises(wf.Blocked, match='ALREADY_TOP'): runner.escalate('t', record)

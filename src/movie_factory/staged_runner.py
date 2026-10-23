@@ -144,6 +144,8 @@ class CodexProtocol:
         require(not request.get('offline_simulation'), 'SIMULATION_CANNOT_CALL_LIVE_RUNTIME')
         route = request.get('runtime_route')
         stage_routing.validate_route(route, request['actor'])
+        if route['model'] == stage_routing.ASTRA:
+            stage_routing.validate_request(request, Path(self.cwd))
         preflight = self.preflight()
         models, cursor = [], None
         seen = set()
@@ -230,7 +232,7 @@ class SerialRunner:
     def __init__(self, controller: Controller, database, progress=None, max_calls=None, routing=None, offline_simulation=False):
         self.controller = controller
         self.root = controller.root
-        self.database = controller.root / database
+        self.database = (controller.root / database).resolve()
         require(self.database.resolve().is_relative_to(self.root), 'RUNNER_PATH')
         self.database.parent.mkdir(parents=True, exist_ok=True)
         self.progress = progress or (lambda event: None)
@@ -277,6 +279,49 @@ class SerialRunner:
         with self.connection() as con:
             return [dict(r) for r in con.execute('SELECT id,task,actor,status,request_hash,response_hash FROM calls ORDER BY rowid')]
 
+    def _route(self, packet, con):
+        if self.routing is None: return None  # Historical offline fixtures only.
+        escalation = self.routing['escalations'].get(packet['actor'])
+        used = 0
+        if escalation:
+            for row in con.execute('SELECT request FROM calls'):
+                e = (json.loads(row['request']).get('runtime_route') or {}).get('escalation')
+                used += bool(e and e.get('id') == escalation['id'])
+        route = stage_routing.resolve(self.routing, packet['actor'], self.root, packet, used)
+        if route['model'] == stage_routing.ASTRA:
+            require(route['escalation']['assignment']['runner_database'] == str(self.database.relative_to(self.root)),
+                    'ESCALATION_RUNNER_DATABASE_MISMATCH')
+        return route
+
+    def adopt_sol_default(self, task, authority):
+        """Explicitly reconcile a persisted policy without erasing its history."""
+        with self.exclusive():
+            self.controller.packet(task)
+            p = stage_routing._source(self.root, authority, 'ROUTING_ADOPTION_AUTHORITY')
+            decision = pk.read_json(self.root, str(p.relative_to(self.root)))
+            reply = decision.get('director_reply')
+            require(decision.get('decision') == 'adopt_sol_default' and decision.get('task') == task
+                    and isinstance(reply, str) and reply.strip(), 'ROUTING_ADOPTION_AUTHORITY')
+            stage_routing._source(self.root, decision.get('source'), 'ROUTING_ADOPTION_AUTHORITY')
+            updated = stage_routing.policy('general')
+            with self.connection() as con:
+                require(not con.execute("SELECT 1 FROM calls WHERE status NOT IN ('SUBMITTED','ABORTED')").fetchone(), 'UNRESOLVED_CALL')
+                stored = con.execute('SELECT policy FROM routing WHERE task=?', (task,)).fetchone()
+                require(stored is not None, 'ROUTING_TASK_NOT_REGISTERED')
+                old = json.loads(stored[0])
+                require(old is not None, 'ROUTING_ADOPTION_REQUIRES_EXISTING_POLICY')
+                updated['profile'] = old['profile']
+                stage_routing.validate(updated)
+                following = json.dumps(updated, sort_keys=True)
+                require(stored[0] != following, 'SOL_DEFAULT_ALREADY_ADOPTED')
+                con.execute('UPDATE routing SET policy=? WHERE task=?', (following, task))
+                con.execute('INSERT INTO route_events(task,previous,current) VALUES(?,?,?)', (task, stored[0], following))
+                con.execute('CREATE TABLE IF NOT EXISTS route_adoptions (event_id INTEGER PRIMARY KEY, authority TEXT)')
+                event = con.execute('SELECT last_insert_rowid()').fetchone()[0]
+                con.execute('INSERT INTO route_adoptions VALUES(?,?)', (event, json.dumps(authority, sort_keys=True)))
+            self.routing = updated
+            self.progress({'event': 'sol_default_adopted', 'task': task, 'authority': authority, 'call_cap_unchanged': True})
+
     def escalate(self, task, record):
         """Trusted operator reassessment only; never triggered by a failed verdict.
 
@@ -288,21 +333,27 @@ class SerialRunner:
             packet = self.controller.packet(task)
             actor = packet['actor']
             require(self.routing is not None, 'EXPLICIT_RUNTIME_ROUTE_REQUIRED')
-            current = stage_routing.resolve(self.routing, actor, self.root)
-            require(current['model'] == stage_routing.SOL, 'ALREADY_TOP_ROUTING_TIER')
             updated = json.loads(json.dumps(self.routing))
             updated['escalations'][actor] = record
-            stage_routing.resolve(updated, actor, self.root)
+            stage_routing.validate(updated)
+            proposed = stage_routing.resolve(updated, actor, self.root, packet)
+            require(proposed['model'] == stage_routing.ASTRA, 'ESCALATION_SCOPE_MISMATCH')
+            require(record['assignment']['runner_database'] == str(self.database.relative_to(self.root)),
+                    'ESCALATION_RUNNER_DATABASE_MISMATCH')
             previous, following = json.dumps(self.routing, sort_keys=True), json.dumps(updated, sort_keys=True)
             with self.connection() as con:
                 require(not con.execute("SELECT 1 FROM calls WHERE status NOT IN ('SUBMITTED','ABORTED')").fetchone(), 'UNRESOLVED_CALL')
                 stored = con.execute('SELECT policy FROM routing WHERE task=?', (task,)).fetchone()
                 require(stored is not None and stored[0] == previous, 'ROUTING_POLICY_CHANGED_REPLAN_REQUIRED')
+                require(self._route(packet, con)['model'] == stage_routing.SOL, 'ALREADY_TOP_ROUTING_TIER')
+                history = [stored[0]] + [x[k] for x in con.execute('SELECT previous,current FROM route_events') for k in ('previous', 'current')]
+                require(not any(e.get('id') == record['id'] for p in history for e in (json.loads(p) or {}).get('escalations', {}).values()),
+                        'ESCALATION_ASSIGNMENT_ALREADY_USED')
                 con.execute('UPDATE routing SET policy=? WHERE task=?', (following, task))
                 con.execute('INSERT INTO route_events(task,previous,current) VALUES(?,?,?)', (task, previous, following))
             self.routing = updated
             self.progress({'event': 'route_escalated', 'task': task, 'actor': actor,
-                           'route': stage_routing.resolve(updated, actor, self.root), 'call_cap_unchanged': True})
+                           'route': proposed, 'call_cap_unchanged': True})
 
     def _admit_returned(self, row):
         require(pk.digest(json.loads(row['request'])) == row['request_hash'], 'CORRUPT_RESERVED_REQUEST')
@@ -359,13 +410,10 @@ class SerialRunner:
             call_id = pk.digest({'task': task, 'ticket': packet['ticket']})
             request = {k: v for k, v in packet.items() if k != 'ticket'}
             request['offline_simulation'] = self.offline_simulation
-            if self.routing is not None:
-                request['runtime_route'] = stage_routing.resolve(self.routing, packet['actor'], self.root)
             require(set(supplement) <= {'instruction', 'result_template', 'image_paths', 'image_hashes', 'evidence_notes', 'knowledge_context'},
                     'UNSCOPED_STAGE_SUPPLEMENT')
             require(not (set(request) & set(supplement)), 'SUPPLEMENT_CANNOT_OVERRIDE_CONTRACT')
             request.update(supplement)
-            require(len(json.dumps(request)) <= 120_000, 'CONTEXT_BUDGET_EXCEEDED')
             for path in request.get('image_paths', []):
                 p = Path(path).resolve()
                 require(p.is_relative_to(self.root) and p.suffix.lower() in {'.jpg', '.jpeg', '.png'}, 'UNAPPROVED_IMAGE_PATH')
@@ -375,6 +423,8 @@ class SerialRunner:
                 con.execute('INSERT OR IGNORE INTO routing VALUES(?,?)', (task, serialized_route))
                 require(con.execute('SELECT policy FROM routing WHERE task=?', (task,)).fetchone()[0] == serialized_route,
                         'ROUTING_POLICY_CHANGED_REPLAN_REQUIRED')
+                if self.routing is not None: request['runtime_route'] = self._route(packet, con)
+                require(len(json.dumps(request)) <= 120_000, 'CONTEXT_BUDGET_EXCEEDED')
                 abandoned = con.execute("SELECT count(*) FROM calls WHERE task=? AND ticket=? AND status='ABORTED'",
                                         (task, packet['ticket'])).fetchone()[0]
                 if abandoned:
