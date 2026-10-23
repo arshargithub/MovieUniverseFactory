@@ -1,0 +1,29 @@
+{
+  "verdict": "PASS",
+  "run_digest": "acd0151f95f4e11e687df4dc4cbe96c92d07b5b07c4a158de51a5ffb90c2bbed",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh353-c66-save/snapshot.json",
+      "sha256": "3a0b416cba643b098125bab3e8b3f36229a427e49983c8db2fbd502ac4e9e3b4"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh353-c66-save/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh353-c66-save/script-diagnostics.json",
+      "sha256": "d8c950e68c5c42eb08e3ba4cd795b716e2b5ac082b76301b8697edb7667b2ad9"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh353-c66-save/scene.blend",
+      "sha256": "7a09209095b06a7d6a8fe2cdd91344f2c7d1e3efed5d7a5dcec280d6d975ed83"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh353-c66-save/patch-evidence.json",
+      "sha256": "bfc05ed62f5dd4bd7ec0c4e98913b00c9f1c26ac73e5410bc2ea775e5dceba45"
+    }
+  },
+  "observation": "Owned finish edits saved/reopened, source and protected root/horse pose state retained. Actual material/crown/beard/eye inventory returned. Technical persistence only.",
+  "comparison": "64 source remains preserved; this does not pass facial shape, garment interfaces, horse appearance or AV.",
+  "open_defects": []
+}

@@ -1,0 +1,29 @@
+{
+  "verdict": "PASS",
+  "run_digest": "e14d27cccbd1616c906d3d0851530b3dc7fb4bad1fe936f632030086d3025bfa",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh353-motion-c15-save/snapshot.json",
+      "sha256": "b2a1973ab52fbbfb4bed96ed92a924f2ff9bca9465a254589ba4fda003b8fbfa"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh353-motion-c15-save/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh353-motion-c15-save/script-diagnostics.json",
+      "sha256": "d8c950e68c5c42eb08e3ba4cd795b716e2b5ac082b76301b8697edb7667b2ad9"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh353-motion-c15-save/scene.blend",
+      "sha256": "b183f07258d3ab77bd88664eb26d14d9a3515e2baa58f9b57243752bcadc7893"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh353-motion-c15-save/patch-evidence.json",
+      "sha256": "61192a7100cc0003c3ca9f0d795e42256f15fe3b2461254910a3cf41df6fe690"
+    }
+  },
+  "observation": "Saved/reopened,190 frame guards passed.14 actual consuming-branch arrival integrated;15+ fixed material grip/horse-root preservation and bounded wrist passed. Technical prerequisite only.",
+  "comparison": "Reference shape/whole performance and actor appearance still require actual images and eventual Director AV.",
+  "open_defects": []
+}

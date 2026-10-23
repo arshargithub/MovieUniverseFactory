@@ -1,0 +1,71 @@
+{
+  "verdict": "FAIL",
+  "run_digest": "2ca43d961046005531a2185811f2e412c69bac7b2739d493dc8cc9cd3414f490",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh353-motion-c15-render/snapshot.json",
+      "sha256": "b2a1973ab52fbbfb4bed96ed92a924f2ff9bca9465a254589ba4fda003b8fbfa"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh353-motion-c15-render/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh353-motion-c15-render/script-diagnostics.json",
+      "sha256": "99bbbecec312f933855a69b1d853770138fd35ab62669f2fe652484d335f4ec7"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh353-motion-c15-render/frame.png",
+      "sha256": "08d81802d349782e2840b6197252ad29925e93193e09ca77cedc865d0f5acf89"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh353-motion-c15-render/frames.json",
+      "sha256": "271f5dc57658ac641bb7107f91aaf8ae66dbf3d886b5280694cd97befda92436"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh353-motion-c15-render/frame-0283.png",
+      "sha256": "6335c578ed978e6212926dfba3f2eecb76ee1932aa32e4516028f0e5c2f25d5f"
+    },
+    "frame_293": {
+      "path": ".runtime/factory-native/sikh353-motion-c15-render/frame-0293.png",
+      "sha256": "b4b6e170612a4bfe401dfd6d51eb25d0662796de2cb8a77dcfb2bb6be1792697"
+    },
+    "frame_297": {
+      "path": ".runtime/factory-native/sikh353-motion-c15-render/frame-0297.png",
+      "sha256": "125cbad1085ca273ab79d4d1580333ff2e8ca75922ce2de16722e66804f6291d"
+    },
+    "frame_300": {
+      "path": ".runtime/factory-native/sikh353-motion-c15-render/frame-0300.png",
+      "sha256": "7904980fd764d1260e40540c4170ace200e22421f1d1d40330795c7b0d0dff6c"
+    },
+    "frame_307": {
+      "path": ".runtime/factory-native/sikh353-motion-c15-render/frame-0307.png",
+      "sha256": "ad00597c8fc46d04cda58a3018556ae7b5daccef87bc5ce0a016b944a46eaa0e"
+    },
+    "frame_327": {
+      "path": ".runtime/factory-native/sikh353-motion-c15-render/frame.png",
+      "sha256": "08d81802d349782e2840b6197252ad29925e93193e09ca77cedc865d0f5acf89"
+    },
+    "frame_341": {
+      "path": ".runtime/factory-native/sikh353-motion-c15-render/frame-0341.png",
+      "sha256": "2f9c409e67240333599e3e69d9c38fdb86acf14058d840fd98ab854302f7378b"
+    },
+    "frame_347": {
+      "path": ".runtime/factory-native/sikh353-motion-c15-render/frame-0347.png",
+      "sha256": "bc069da18f0c9426f92b9589a3a10118fab2ee49d4dec430a208c98b563adbfa"
+    },
+    "frame_350": {
+      "path": ".runtime/factory-native/sikh353-motion-c15-render/frame-0350.png",
+      "sha256": "9d625f240589604cc12f62853d035d4c513001e085194650ec0e6f6ceab82ef2"
+    },
+    "frame_353": {
+      "path": ".runtime/factory-native/sikh353-motion-c15-render/frame-0353.png",
+      "sha256": "702cea7997baeb4dd56dc4055f2fcaa6aac965808f3976a0c973f4d80172939d"
+    }
+  },
+  "observation": "All ten phase frames and four front controls inspected. Fixed material grip and airborne spear carry are improved, but actual final tip speeds slow from -0.938 to -0.295m/s before strike. This repeats the contact ease-out failure; reject15 and use final16 for accelerating downstroke. Whole appearance67, garment/saddle form and continuous performance remain unqualified.",
+  "comparison": "All ten actual phase images inspected against original whole-rear reference and recorded12 arrival. Static images do not establish fluidity.",
+  "open_defects": [
+    "All ten phase frames and four front controls inspected. Fixed material grip and airborne spear carry are improved, but actual final tip speeds slow from -0.938 to -0.295m/s before strike. This repeats the contact ease-out failure; reject15 and use final16 for accelerating downstroke. Whole appearance67, garment/saddle form and continuous performance remain unqualified."
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "events": [
+    {
+      "activity_id": "sikh353-work",
+      "episode_id": "leader353",
+      "event_id": "sikh353-work-start",
+      "event_type": "work_started",
+      "evidence_ref": null,
+      "experiment_id": "sikh335",
+      "note": "Leader and horse ten total cycle continuation; initial mandatory source bootstrap before interval.",
+      "phase": "construction",
+      "reason": null,
+      "run_id": null,
+      "schema_version": "1.0",
+      "task_id": null,
+      "turn_id": null,
+      "utc": "2026-10-23T01:11:18.072567+00:00"
+    },
+    {
+      "event_id": "sikh353-work-end",
+      "experiment_id": "sikh335",
+      "episode_id": "leader353",
+      "phase": "construction",
+      "event_type": "work_ended",
+      "activity_id": "sikh353-work",
+      "utc": "2026-10-23T02:57:41.376172+00:00",
+      "note": "Ten corrections exhausted; component repairs retained, whole leader appearance/performance unqualified. Crowd deferred; experiment open."
+    }
+  ],
+  "elapsed_seconds": 6383.303605079651,
+  "verified_director_idle_seconds": 0,
+  "lifecycle": "OPEN",
+  "scope": "Active-turn interval includes overlapping serial native jobs; not additive, not model-only time. No Director-response wait during recorded interval.",
+  "gaps": [
+    "Bootstrap before recorded start",
+    "Final Git and handoff overhead after recorded end"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "verdict": "PASS",
+  "run_digest": "543f9db1410a3b54fe6cb8ec6e622fe2a3a1c549c24e5f1c737d2b633bb805af",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh353-c63-save/snapshot.json",
+      "sha256": "cf9f61401d8fd78c536015def7cae0769e20f97884d98b8bf1437c514e833335"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh353-c63-save/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh353-c63-save/script-diagnostics.json",
+      "sha256": "d8c950e68c5c42eb08e3ba4cd795b716e2b5ac082b76301b8697edb7667b2ad9"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh353-c63-save/scene.blend",
+      "sha256": "d37241e8eb9fce09a659ed879ecbd77414f1a2bbf07e03bd20fbfcbcd60e11d8"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh353-c63-save/patch-evidence.json",
+      "sha256": "b7cf4ce947ded923a72adf6251ff363c4f0e2f3621e727f5cfdf733253365c60"
+    }
+  },
+  "observation": "Saved/reopened derivative, protected objects retained; torso-only face set and radial limits verified. Not a visual pass.",
+  "comparison": "61 unrestricted support is preserved negative control; actual diagnostics retained.",
+  "open_defects": []
+}
