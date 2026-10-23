@@ -1,0 +1,43 @@
+{
+  "verdict": "FAIL",
+  "run_digest": "1f194723674e5c39a0268ee05676e64b477478d22161c686bf2b4ed489021efa",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh354-c68-leader_face/snapshot.json",
+      "sha256": "d4ddf8e4b3e16e4c19e24abbf286c9b2132331ffe825fcfb524129d6b1577d63"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh354-c68-leader_face/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh354-c68-leader_face/script-diagnostics.json",
+      "sha256": "99bbbecec312f933855a69b1d853770138fd35ab62669f2fe652484d335f4ec7"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh354-c68-leader_face/frame.png",
+      "sha256": "fefbe2e338d9b5c8062423f75dbf1102b8501e7972b7f01d6a8a7b33982dc3d6"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh354-c68-leader_face/frames.json",
+      "sha256": "b032bccfd68c2587fc3b4e750fa9d6fc0b39cf23ce868d38598702618da14e49"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh354-c68-leader_face/frame.png",
+      "sha256": "fefbe2e338d9b5c8062423f75dbf1102b8501e7972b7f01d6a8a7b33982dc3d6"
+    },
+    "frame_327": {
+      "path": ".runtime/factory-native/sikh354-c68-leader_face/frame-0327.png",
+      "sha256": "8ec0811ea2fde92139ec5b3fac3401da39f71c5fd08ccb73ddc15fee36e52e9c"
+    },
+    "frame_350": {
+      "path": ".runtime/factory-native/sikh354-c68-leader_face/frame-0350.png",
+      "sha256": "40edde508ec35ca82f04b683152542e57449c11dec48317b7513a1723bb5a9f3"
+    }
+  },
+  "observation": "All three actual images inspected.68 rounded envelope still reads as long straight curtain, moustache remains disconnected and face/crown synthetic. Crest horse occludes lower face. Technical render also failed selected-state comparison because primary render frame283 differs from saved327; preserve failure and correct recipe primary to327. No production pass.",
+  "comparison": "Actual353 negative and accepted production quality; local technical success is not whole-form qualification.",
+  "open_defects": [
+    "All three actual images inspected.68 rounded envelope still reads as long straight curtain, moustache remains disconnected and face/crown synthetic. Crest horse occludes lower face. Technical render also failed selected-state comparison because primary render frame283 differs from saved327; preserve failure and correct recipe primary to327. No production pass."
+  ]
+}

@@ -1,0 +1,19 @@
+#354: whole-form reconstruction, preserved performance
+
+Five total new appearance corrections68–72, same335 task. Motion16 is the protected integrated base; crowd deferred. No external authority. Director request and prior353 failure remain binding. Current307 capsule is historically stale and not repinned: this fresh explicit task grounding retains all original source/reference roles and current353 evidence.
+
+## Outcome and method
+The leader and horse must read as the same richly illustrated production as the accepted Pashtun, at intended leader shot framing, with no known frame-visible anatomical, garment or contact defect. Full-speed/audio judgment remains Director313's; successful geometry or static images cannot qualify it.
+
+Actual353 images inspected: face283 has straight curtain beard and disconnected triangular moustache, regular brow strokes, simplified skin; reverse327 sash has jagged side and unsupported route; production327 horse has smooth angular anatomy and saddle border reads as rigid slab. These are form/interface failures, not insufficient random noise. Retain useful64 waistband, complete66 crown membership,14 landing and16 spear/hand material contact. Do not restart from an older standalone appearance native and silently lose motion.
+
+Choose anatomical-rooted, shaped beard flow with cheek-to-jaw transition and rounded unequal ends, soft moustache integrated over lip instead of triangular wings. Reconstruct continuous sash edges using original rest topology and deformation ownership, removing nearest-surface postprojection that creates angular discontinuity; prove route at front/reverse and crest. Reconstruct saddle edge geometry/drape and compressed layering rather than adding a huge shader border. Horse and face form/material remain whole-shot vetoes; do not certify from these local fixes.
+
+## Lenses and interfaces
+Character design: adult commanding supporting leader, no new identity or ethnic-template claim. Hair: rooted coherent masses/flow, not random fibers on wrong envelope. Costume: continuous load-bearing cloth route, support at shoulder/waist, smooth edges across moving torso. Tack: saddlecloth covers back, rounded turned edge and compression, no rigid projecting rectangle. Anatomy/rig: preserve body/action and attachment transforms, all added forms inherit actual owner, check crest/landing. Cinematography: actual production camera and small screen plus close face and reverse controls; no flattering diagnostic alone. Reuse/rights: owned local geometry/material only. Sound/camera/crowd unchanged and not recertified.
+
+## Early proof and stop/replan
+Begin each correction from explicitly bound integrated source; unchanged camera/rig key signatures and old geometry retained. Save/reopen through admitted fixed handler. Use face283/327/350 and front/reverse283/327/350 plus production283/307/327/350 as applicable; no full movie rerender until forms withstand these views. Missing/occluded evidence is NOT_RUN. Known bad353 comparison and accepted Pashtun same-film control remain authoritative. If geometry change merely trades one defect for another, replan that representation; do not add decorative detail. Five cycles are cumulative and not a requirement to consume all. If floor remains unmet, stop honestly at allowance boundary without calling it production-ready.
+
+## Lessons applied
+AU05–07 separate shape/light/texture; AU08 choose hair representation and review whole face interface; AU09–10 preserve native body and prove posed cloth; AU11–12 appearance and performance remain distinct; AU13 correct method is not visual proof.271 known-negative cannot become accepted through a new label.353 lesson: integrate on actual latest scene, not a sibling branch.350 retro triggers demand a causal method change and observed test; repeated response/admission records are not effectiveness.

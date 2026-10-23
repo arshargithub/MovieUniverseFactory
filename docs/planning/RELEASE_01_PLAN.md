@@ -4,6 +4,25 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+### Exchange354 — five appearance corrections; retrospective audit
+
+Five additional corrections68–72 remain on the original appearance task, with
+motion16 unchanged and crowd deferred.70 produces a continuous sampled sash;
+71 replaces the rigid saddlecloth with a rounded body-supported drape and narrow
+binding.72 introduces a jaw/neck beard regression and is rejected. Retain71 as
+the useful integration base, not a production-ready actor. Both task allowances
+are exhausted. Next: true anatomical beard-root domain and sparse face/jaw guide
+proof before density, followed by whole leader/horse look and isolated AV proof.
+[Actual results and scope](../../results/sikh354/CLOSEOUT.md) and
+[carry-forward lessons](../../results/sikh354/LEARNINGS.md) preserve failures.
+
+The retrospective has triggered repeatedly: pre354 response/admission counts were
+48 appearance and11 motion, including repeated per-requirement responses. Only
+the historical migration was formally closed as effective; artistic gates remain
+open. Trigger/admission does not establish construction convergence.77 focused
+tests pass, not art/AV. No new spend, upload, push or remote protection claim;
+next checkpoint360.
+
 ### Exchange350 — retrospective control implemented and tested offline
 
 The approved349 proposal now has append-only outcome records, persistent scoped

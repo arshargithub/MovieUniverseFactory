@@ -1,0 +1,38 @@
+{
+  "events": [
+    {
+      "activity_id": "sikh354-work",
+      "episode_id": "leader354",
+      "event_id": "sikh354-work-start",
+      "event_type": "work_started",
+      "evidence_ref": null,
+      "experiment_id": "sikh335",
+      "note": "Five appearance corrections on motion16; initial mandatory bootstrap not in interval.",
+      "phase": "construction",
+      "reason": null,
+      "run_id": null,
+      "schema_version": "1.0",
+      "task_id": null,
+      "turn_id": null,
+      "utc": "2026-10-23T11:50:07.966249+00:00"
+    },
+    {
+      "event_id": "sikh354-work-end",
+      "experiment_id": "sikh335",
+      "episode_id": "leader354",
+      "phase": "construction",
+      "event_type": "work_ended",
+      "activity_id": "sikh354-work",
+      "utc": "2026-10-23T12:18:56.955217+00:00",
+      "note": "Five corrections exhausted, two useful interface subproofs; final facial regression rejected. Production open."
+    }
+  ],
+  "elapsed_seconds": 1728.9889678955078,
+  "verified_director_idle_seconds": 0,
+  "lifecycle": "OPEN",
+  "scope": "Active interval includes native waits; no additive model time claim.",
+  "gaps": [
+    "Initial bootstrap before start",
+    "Final closure/commit/handoff after end"
+  ]
+}

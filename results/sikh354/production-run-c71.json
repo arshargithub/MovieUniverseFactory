@@ -1,0 +1,57 @@
+{
+  "id": "sikh354-c71-production",
+  "task": "sikh335-supporting-appearance",
+  "step": "production",
+  "cycle": 71,
+  "fingerprint": "d1e09990504f0d00ce7c25760aa1e272ca0a284441c311957466025e499f2cfe",
+  "parent": {
+    "path": ".runtime/factory-native/sikh354-c71-save/scene.blend",
+    "sha256": "eb84869b819c87956f16f8b309b4a76e49c1f6802fd67bddccca370ef3487c69"
+  },
+  "job_digest": "0446dfcd37fc3bff3dde596132b30c632f6c632823817e85797db5716c4c58b7",
+  "handler_digest": "70508de92b8f4a0082ff74f25262808a460ba2d82a80322c5266fd21ce1a1d9e",
+  "status": "RETURNED",
+  "artifacts": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh354-c71-production/snapshot.json",
+      "sha256": "b2a1973ab52fbbfb4bed96ed92a924f2ff9bca9465a254589ba4fda003b8fbfa"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh354-c71-production/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh354-c71-production/script-diagnostics.json",
+      "sha256": "99bbbecec312f933855a69b1d853770138fd35ab62669f2fe652484d335f4ec7"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh354-c71-production/frame.png",
+      "sha256": "92d78a7498ff5f5f85caa3ecb31e0ff8ca5e4aae9c4fc15d69a4a189b403c336"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh354-c71-production/frames.json",
+      "sha256": "dfbcab659aa4da3b0de7f4b587dcd34d23f108bb2d49f6b362fede81fed5d9c7"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh354-c71-production/frame-0283.png",
+      "sha256": "719bd3c5e7840e7eeedc205cc703cb45ebe0d9de8fa2a083047373e987189eb0"
+    },
+    "frame_307": {
+      "path": ".runtime/factory-native/sikh354-c71-production/frame-0307.png",
+      "sha256": "9ae1bef12108e77fdb4982217ec432bf624831c82175b247870a74b808be1647"
+    },
+    "frame_327": {
+      "path": ".runtime/factory-native/sikh354-c71-production/frame.png",
+      "sha256": "92d78a7498ff5f5f85caa3ecb31e0ff8ca5e4aae9c4fc15d69a4a189b403c336"
+    },
+    "frame_350": {
+      "path": ".runtime/factory-native/sikh354-c71-production/frame-0350.png",
+      "sha256": "ab00e25cdbf40948b11938a093827bc9ab86374ab11373860e2d3de0ad4ed206"
+    }
+  },
+  "dependencies": {},
+  "recipe": {
+    "path": "results/sikh354/production-recipe-c71.json",
+    "sha256": "37f48f106ac4a2506fa83a975bc130426904c51255746e9116fc7bb6bdabd090"
+  }
+}
