@@ -29,7 +29,7 @@ def validate(recipe):
         if type(recipe[key]) is not int or not lo <= recipe[key] <= hi:
             raise ValueError('NIHANG_RECIPE_BOUND:' + key)
     if recipe['operation']=='nihang_frames':
-        if not isinstance(recipe.get('view','production'),str) or recipe.get('view','production') not in ({'production','horse_head','leader_front','leader_reverse','leader_contact','leader_anatomy','leader_face','leader_face_left','leader_face_right','leader_face_profile','crowd_front','crowd_reverse','neutral_front','neutral_back','neutral_side'} | ANATOMY_VIEWS):
+        if not isinstance(recipe.get('view','production'),str) or recipe.get('view','production') not in ({'production','horse_head','horse_head_reverse','leader_front','leader_reverse','leader_contact','leader_anatomy','leader_face','leader_face_left','leader_face_right','leader_face_profile','crowd_front','crowd_reverse','neutral_front','neutral_back','neutral_side'} | ANATOMY_VIEWS):
             raise ValueError('NIHANG_DIAGNOSTIC_VIEW')
         frames=recipe['frames']
         if (not isinstance(frames,list) or not 1<=len(frames)<=16 or
@@ -42,12 +42,12 @@ def validate(recipe):
 def diagnostic_camera(bpy,view):
     """Temporary evidence camera only. No production-camera key edits or save."""
     from mathutils import Vector
-    if view=='horse_head':
+    if view in {'horse_head','horse_head_reverse'}:
         rig=bpy.data.objects['horse.rig'];bone=rig.pose.bones['head']
         target=rig.matrix_world@((bone.head+bone.tail)*.5)
         data=bpy.data.cameras.new('MF diagnostic camera temporary');data.type='ORTHO';data.ortho_scale=1.25
         camera=bpy.data.objects.new(data.name,data);bpy.context.scene.collection.objects.link(camera)
-        camera.location=target+rig.matrix_world.to_quaternion()@Vector((1.4,-1.8,.35));camera.rotation_euler=(target-camera.location).to_track_quat('-Z','Y').to_euler()
+        camera.location=target+rig.matrix_world.to_quaternion()@Vector((-1.4 if view.endswith('_reverse') else 1.4,-1.8,.35));camera.rotation_euler=(target-camera.location).to_track_quat('-Z','Y').to_euler()
         return camera
     if view.startswith('leader_face'):
         rig=bpy.data.objects['MF coherent Nihang rig'];root=bpy.data.objects['mounted leader']
@@ -250,8 +250,53 @@ def rig_inventory(bpy):
             'groups': [g.name for g in obj.vertex_groups],
             'modifiers': [{'name': m.name, 'type': m.type, 'viewport': m.show_viewport,
                            'render': m.show_render} for m in obj.modifiers]})
+    # Bounded rest-space surface evidence for headstall placement. Bone tails
+    # are control landmarks, not anatomical muzzle/eye locations.
+    head_surface = {}
+    horse = bpy.data.objects.get('horse')
+    if horse is not None and horse.type == 'MESH':
+        transform = rig.matrix_world.inverted() @ horse.matrix_world
+        groups = {g.index:g.name for g in horse.vertex_groups}
+        verts = [(v.index, transform @ v.co) for v in horse.data.vertices
+                 if sum(g.weight for g in v.groups if groups.get(g.group) in
+                        {'DEF-head','DEF-jaw'}) > .5]
+        if verts:
+            head_surface['bounds'] = [[min(p[k] for _,p in verts),max(p[k] for _,p in verts)] for k in range(3)]
+            head_surface['vertex_count'] = len(verts)
+            head_surface['sections'] = []
+            lo,hi=head_surface['bounds'][1]
+            for i in range(16):
+                y=lo+(hi-lo)*(i+.5)/16
+                points=[p for _,p in verts if abs(p.y-y)<(hi-lo)/32]
+                if points:head_surface['sections'].append({'y':y,'count':len(points),
+                    'x':[min(p.x for p in points),max(p.x for p in points)],
+                    'z':[min(p.z for p in points),max(p.z for p in points)]})
+            head_surface['materials']={}
+            for index,mat in enumerate(horse.data.materials):
+                ids={v for poly in horse.data.polygons if poly.material_index==index for v in poly.vertices}
+                points=[p for v,p in verts if v in ids]
+                if points:head_surface['materials'][str(index)]={'name':mat.name if mat else None,'count':len(points),
+                    'bounds':[[min(p[k] for p in points),max(p[k] for p in points)] for k in range(3)]}
+    head_center=rig.matrix_world@rig.pose.bones['DEF-head'].head
+    nearby=[]
+    for obj in bpy.context.scene.objects:
+        if obj.type not in {'MESH','CURVE'} or obj.hide_render:continue
+        from mathutils import Vector
+        world=[obj.matrix_world@Vector(v) for v in obj.bound_box]
+        lo=[min(v[k] for v in world) for k in range(3)];hi=[max(v[k] for v in world) for k in range(3)]
+        distance=sum(max(lo[k]-head_center[k],0,head_center[k]-hi[k])**2 for k in range(3))**.5
+        if distance>.65 and 'rein' not in obj.name.lower():continue
+        row={'name':obj.name,'type':obj.type,'data':obj.data.name,'parent':obj.parent.name if obj.parent else None,
+             'bbox_distance':distance,'materials':[{'name':slot.material.name if slot.material else None,'link':slot.link} for slot in obj.material_slots],
+             'modifiers':[{'name':m.name,'type':m.type} for m in obj.modifiers]}
+        if obj.type=='CURVE':
+            row['splines']=[{'type':sp.type,'material_index':sp.material_index,'points':[vector(obj.matrix_world@Vector(p.co[:3])) for p in sp.points]} for sp in obj.data.splines if len(sp.points)<=20]
+            row['shape_keys']=obj.data.shape_keys.name if obj.data.shape_keys else None
+        nearby.append(row)
     return {'rig': rig.name, 'world': matrix(rig.matrix_world), 'bones': bones,
             'drivers': drivers, 'deformed_meshes': meshes,
+            'head_surface_rest':head_surface,
+            'near_head_visible_objects':nearby,
             'scope': 'Read-only horse controls, rest/evaluated joints, constraint ownership and driver target paths.'}
 
 

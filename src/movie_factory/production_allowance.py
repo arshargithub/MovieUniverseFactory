@@ -24,11 +24,18 @@ def extend(controller, task, admission, decision, event_id, *, grounding=None):
     def apply(con):
         state=controller._state(con,task)
         retro.fresh(con,state)
-        require(state['route']=='production' and state['stage']=='REPLAN_REQUIRED','ALLOWANCE_BLOCKED_TASK_ONLY')
+        # An explicit Director top-up may also arrive while the next correction
+        # is still untouched. Preserve that cycle; never burn it to unlock an
+        # administrative extension. Running/admitted/reviewed plans stay barred.
+        untouched = (state['stage']=='BRIEFING' and state.get('planning_step')=='GROUNDING'
+                     and not state.get('planning_artifacts') and not state.get('candidate'))
+        exhausted = state['stage']=='REPLAN_REQUIRED'
+        require(state['route']=='production' and (exhausted or untouched),'ALLOWANCE_BLOCKED_TASK_ONLY')
         require(not con.execute('SELECT 1 FROM heavy_job').fetchone(),'JOB_STILL_ACTIVE')
         require(state['cycle']==approved.get('prior_cycle') and state['max_corrections']==approved.get('prior_max_corrections'),
                 'ALLOWANCE_STALE_COUNTERS')
-        require(state['cycle']==state['max_corrections'], 'ALLOWANCE_NOT_EXHAUSTED')
+        require(state['cycle']<=state['max_corrections'] and
+                (untouched or state['cycle']==state['max_corrections']), 'ALLOWANCE_NOT_EXHAUSTED')
         require(not any(h['decision']==decision for h in state.get('allowance_history',[])), 'ALLOWANCE_ALREADY_USED')
         rc.binding(controller.root,state['authority'])
         if state.get('revision_authority'):rc.binding(controller.root,state['revision_authority'])
@@ -55,7 +62,8 @@ def extend(controller, task, admission, decision, event_id, *, grounding=None):
             'prior_fingerprint':state.get('fingerprint'),'prior_stage':state['stage'],
             'prior_direction':prior_direction, 'grounding_reconciliation':grounding})
         state['max_corrections']+=count
-        state['cycle']+=1  # first newly authorized correction, never cycle zero
+        if exhausted:
+            state['cycle']+=1  # untouched planning keeps its already reserved cycle
         state['allowance_authority']=decision
         state['planning_engine']=pp.engine_digest()
         pp.invalidate(state,'GROUNDING')

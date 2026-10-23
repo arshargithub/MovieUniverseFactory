@@ -60,6 +60,20 @@ def test_four_more_means_four_not_unlimited_or_replayable(setup):
     assert c.state('t')['cycle']==6 and c.state('t')['max_corrections']==6
 
 
+def test_topup_preserves_untouched_correction_and_history(setup):
+    root,c,b,_=setup
+    c.create('t','production',bind(root,'authority.md'),'create',2,direction(b))
+    c.replan('t','GROUNDING','Existing correction','first')
+    before=c.state('t');history=c.events('t')
+    data={'task':'t','decision':'approve_additional_corrections','additional_corrections':5,
+          'prior_cycle':1,'prior_max_corrections':2,'question':'Five more?','director_reply':'Five more approved'}
+    result=pa.extend(c,'t','extension',route(root,c,data),'topup')
+    assert result['cycle']==1 and result['max_corrections']==7
+    assert result['direction']==before['direction']
+    assert c.events('t')[:len(history)]==history
+    with pytest.raises(wf.Blocked):pa.extend(c,'t','extension',bind(root,'decision.json'),'double')
+
+
 def test_exhausted_source_reconciliation_is_atomic_and_preserves_intent(setup):
     root,c,data=blocked(setup);before=c.state('t');binding=route(root,c,data)
     setup[3]['packet_digest']='knowledge-v2'

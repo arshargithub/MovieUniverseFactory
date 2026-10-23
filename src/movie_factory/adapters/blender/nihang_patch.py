@@ -36,7 +36,7 @@ def validate(recipe):
         elif kind=='neutral_actor_transfer':
             if set(edit)!={'kind','target','phase'} or name!='mounted leader' or edit['phase'] not in {'leader','near_crowd'}:
                 raise ValueError('PATCH_TRANSFER_FIELDS')
-        elif kind in {'coherent_actor','coherent_refit','mounted_finish345','mounted_cloth345','mounted_whole347','mounted_anatomy351','mounted_arm352','mounted_cloth352','mounted_cloth352_refine','mounted_waist353','mounted_waist353_attach','mounted_coat357','mounted_fabric357','mounted_trim357','mounted_surface357','mounted_groom357','mounted_beard357','mounted_tack354','mounted_face354','mounted_form354','mounted_finish353','mounted_motion353','mounted_integrate353','mounted_gesture353'}:
+        elif kind in {'coherent_actor','coherent_refit','mounted_finish345','mounted_cloth345','mounted_whole347','mounted_anatomy351','mounted_arm352','mounted_cloth352','mounted_cloth352_refine','mounted_waist353','mounted_waist353_attach','mounted_tack358','mounted_rein358','mounted_coat357','mounted_fabric357','mounted_trim357','mounted_surface357','mounted_groom357','mounted_beard357','mounted_tack354','mounted_face354','mounted_form354','mounted_finish353','mounted_motion353','mounted_integrate353','mounted_gesture353'}:
             if set(edit)!={'kind','target'} or name!='mounted leader':raise ValueError('PATCH_ACTOR_FIELDS')
         elif kind=='supporting_look':
             if set(edit)!={'kind','target'} or name!='mounted leader':raise ValueError('PATCH_LOOK_FIELDS')
@@ -91,7 +91,7 @@ def apply(bpy, recipe,diagnostic_dir=None):
     for edit in recipe['edits']:
         if edit['kind'] in {'neutral_garment_proof','neutral_actor_transfer'}:
             if bpy.data.objects.get('mounted leader') is None:raise ValueError('PATCH_NEUTRAL_OWNER')
-        elif edit['kind'] in {'supporting_look','supporting_finish','coherent_actor','coherent_refit','mounted_finish345','mounted_cloth345','mounted_whole347','mounted_anatomy351','mounted_arm352','mounted_cloth352','mounted_cloth352_refine','mounted_waist353','mounted_waist353_attach','mounted_coat357','mounted_fabric357','mounted_trim357','mounted_surface357','mounted_groom357','mounted_beard357','mounted_tack354','mounted_face354','mounted_form354','mounted_finish353','mounted_motion353','mounted_integrate353','mounted_gesture353'}:
+        elif edit['kind'] in {'supporting_look','supporting_finish','coherent_actor','coherent_refit','mounted_finish345','mounted_cloth345','mounted_whole347','mounted_anatomy351','mounted_arm352','mounted_cloth352','mounted_cloth352_refine','mounted_waist353','mounted_waist353_attach','mounted_tack358','mounted_rein358','mounted_coat357','mounted_fabric357','mounted_trim357','mounted_surface357','mounted_groom357','mounted_beard357','mounted_tack354','mounted_face354','mounted_form354','mounted_finish353','mounted_motion353','mounted_integrate353','mounted_gesture353'}:
             if bpy.data.objects.get('mounted leader') is None or bpy.data.objects.get('fitted saddle blanket292') is None:
                 raise ValueError('PATCH_LOOK_OBJECTS')
         elif edit['kind'] in {'repair_bbone_targets','supported_pose','supported_motion'}:
@@ -107,7 +107,7 @@ def apply(bpy, recipe,diagnostic_dir=None):
             names.add(edit['target'])
     support_evidence=[]
     for edit in recipe['edits']:
-        if edit['kind'] in {'mounted_coat357','mounted_fabric357','mounted_trim357','mounted_surface357','mounted_groom357','mounted_beard357','mounted_tack354','mounted_face354','mounted_form354','mounted_finish353','mounted_motion353','mounted_integrate353','mounted_gesture353'}:
+        if edit['kind'] in {'mounted_tack358','mounted_rein358','mounted_coat357','mounted_fabric357','mounted_trim357','mounted_surface357','mounted_groom357','mounted_beard357','mounted_tack354','mounted_face354','mounted_form354','mounted_finish353','mounted_motion353','mounted_integrate353','mounted_gesture353'}:
             import importlib.util
             name=edit['kind'].removeprefix('mounted_')
             spec=importlib.util.spec_from_file_location('mf_nihang_'+name,Path(__file__).with_name('nihang_'+name+'.py'))
