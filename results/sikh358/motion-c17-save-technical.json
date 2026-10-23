@@ -1,0 +1,29 @@
+{
+  "verdict": "PASS",
+  "run_digest": "066043ea77383f20b4e88b15cad4028e43944eb4128cd65f350993823c30d43c",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh358-motion-c17-save/snapshot.json",
+      "sha256": "e17721f592eadecbd98ec1aca5121cf784cbad8c7e76d632b964856cd590c720"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh358-motion-c17-save/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh358-motion-c17-save/script-diagnostics.json",
+      "sha256": "d8c950e68c5c42eb08e3ba4cd795b716e2b5ac082b76301b8697edb7667b2ad9"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh358-motion-c17-save/scene.blend",
+      "sha256": "3ec9ad43bb839719a123d90f960df33fd339ee722c5abf7c182f2879f25deccf"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh358-motion-c17-save/patch-evidence.json",
+      "sha256": "af3d3d526cc8bcdfcd32e9da872d6e9919a045faac62db629c5a116808fe003b"
+    }
+  },
+  "observation": "Source preserved; returned native artifacts hash-verified, diagnostics clean. Read-only report or derivative reopen only; no visual or motion approval.",
+  "comparison": "Parent unchanged; source-bound worker. Subsequent actual inspection independently required.",
+  "open_defects": []
+}

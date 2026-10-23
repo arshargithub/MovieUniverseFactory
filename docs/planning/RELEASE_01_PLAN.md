@@ -4,6 +4,23 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+### Exchange358 — coupled tack construction; rein route remains blocked
+
+Five additional corrections were added to each original task. Appearance82–86
+were attempted;87 remains unused.86 supplies a supported anatomical headstall
+and mouth rings, preserving prior leader/horse appearance and action keys.
+Motion17–21 are exhausted: actual17 images reject neck-crossing reins;18 traces
+their ownership;19–21 fail actual surface-clearance guards before saving.
+No completed integrated unit or Director AV clip is claimed. Crowd stays deferred.
+
+Recommend two further motion corrections, then the remaining appearance87 for
+integrated proof if contact clears. Do not relax quality gates at exhaustion.
+261 software tests pass, including three simplified obstacle controls; these do
+not qualify the actual animated horse or artistic result. No new spending,
+upload, push or verified off-device backup. Next checkpoint360. Read
+[358 outcome and next work package](../../results/sikh358/CLOSEOUT.md) and
+[358 causal learnings](../../results/sikh358/LEARNINGS.md). Older entries are history.
+
 ### Exchange357 — nine appearance cycles; tack/contact authority boundary
 
 Director357 authorized ten appearance cycles73–82. Nine73–81 completed with

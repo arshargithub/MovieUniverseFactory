@@ -1,0 +1,38 @@
+{
+  "events": [
+    {
+      "activity_id": "sikh358-work",
+      "episode_id": "leader358",
+      "event_id": "sikh358-work-start",
+      "event_type": "work_started",
+      "evidence_ref": null,
+      "experiment_id": "sikh335",
+      "note": "Five additional appearance and motion corrections each; prior bootstrap unmeasured; no external spend.",
+      "phase": "construction",
+      "reason": null,
+      "run_id": null,
+      "schema_version": "1.0",
+      "task_id": null,
+      "turn_id": null,
+      "utc": "2026-10-23T15:33:54.735011+00:00"
+    },
+    {
+      "event_id": "sikh358-work-end",
+      "experiment_id": "sikh335",
+      "episode_id": "leader358",
+      "phase": "construction",
+      "event_type": "work_ended",
+      "activity_id": "sikh358-work",
+      "utc": "2026-10-23T16:43:08.513633+00:00",
+      "note": "Headstall86 retained; motion21 exhausted with actual rein-route clearance failure. Appearance87 unused; no production/media handoff."
+    }
+  ],
+  "elapsed_seconds": 4153.778621912003,
+  "verified_director_idle_seconds": 0,
+  "lifecycle": "OPEN",
+  "scope": "Active work includes render waits; not additive.",
+  "gaps": [
+    "Bootstrap before work-start",
+    "Final records/commit/handoff after work-end"
+  ]
+}

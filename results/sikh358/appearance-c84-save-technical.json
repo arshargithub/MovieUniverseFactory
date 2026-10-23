@@ -1,0 +1,29 @@
+{
+  "verdict": "PASS",
+  "run_digest": "7298e916758d0f73951b4d1a9283750347b3938a0e4eee0dd071e480187a6064",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh358-appearance-c84-save/snapshot.json",
+      "sha256": "e17721f592eadecbd98ec1aca5121cf784cbad8c7e76d632b964856cd590c720"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh358-appearance-c84-save/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh358-appearance-c84-save/script-diagnostics.json",
+      "sha256": "d8c950e68c5c42eb08e3ba4cd795b716e2b5ac082b76301b8697edb7667b2ad9"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh358-appearance-c84-save/scene.blend",
+      "sha256": "10de5cd45eba86ec145ee77a05c27c6655685bf9627769b6baaabb206bd8ded4"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh358-appearance-c84-save/patch-evidence.json",
+      "sha256": "b8a47d3b24893451fabac47ce98d4c01bee7db3bf8b5e4b197d2a0b5a930bcfd"
+    }
+  },
+  "observation": "Source preserved; returned native artifacts hash-verified, diagnostics clean. Read-only report or derivative reopen only; no visual or motion approval.",
+  "comparison": "Parent unchanged; source-bound worker. Subsequent actual inspection independently required.",
+  "open_defects": []
+}

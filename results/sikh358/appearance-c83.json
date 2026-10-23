@@ -1,0 +1,29 @@
+{
+  "parent": ".runtime/factory-native/sikh357-c81-save/scene.blend",
+  "method": "Inspect actual head and jaw weighted surface rest coordinates, material regions and cross sections before constructing anatomical headstall. A bone tail is not a muzzle landmark. This read-only precursor preserves appearance81 and motion16.",
+  "proof": "Bounded actual head surface bounds, cross sections and eye/material extents in horse rig rest space; compare with visible283 tan-arch defect. No construction or artistic pass from inventory.",
+  "scope": "Anatomical headstall source inspection within existing appearance correction82; all construction and motion proof remain pending.",
+  "methods": {
+    "preservation": "Read only current81 source; verify unchanged file and selected state.",
+    "form": "Inspect actual head mesh regions rather than assume DEF-head endpoint is mouth.",
+    "interfaces": "Determine local mouth/eye/poll positions used by both new headstall and animated rein endpoint.",
+    "evidence": "Bind mesh-coordinate inventory and actual prior283 view; measurements do not qualify appearance."
+  },
+  "sources": [
+    "src/movie_factory/adapters/blender/nihang_control.py"
+  ],
+  "steps": [
+    {
+      "id": "inspect",
+      "depends_on": [],
+      "recipe": {
+        "operation": "nihang_rig_inspect",
+        "frame": 327,
+        "width": 64,
+        "height": 64,
+        "samples": 1
+      }
+    }
+  ],
+  "cause": "82 process crashed in Metal GPU discovery before worker Python; retry exact read-only inspection with host execution, no source change."
+}

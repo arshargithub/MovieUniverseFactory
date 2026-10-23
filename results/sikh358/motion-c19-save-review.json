@@ -1,0 +1,15 @@
+{
+  "verdict": "FAIL",
+  "run_digest": "9fc572eaf3f0d278fd5d8bba971e63042c3aa003d0d6e5f629266a124bb3b140",
+  "evidence": {
+    "failed_run": {
+      "path": "results/sikh358/motion-c19-save-run.json",
+      "sha256": "981e182319120667ad510e73719a2f864bd0ddc192f418f25a3f2bb2d178e18e"
+    }
+  },
+  "observation": "19 dense actual skin test rejected far rein at frame317: segment clearance minus0.0904m. Local nearest projection changes route side and cannot preserve exterior segment topology. No candidate saved. Replace with collision-checked surface connectivity and visibility routing.",
+  "comparison": "Actual returned images/technical data against explicit358 plan and original quality/reference requirements. No full-speed AV certification.",
+  "open_defects": [
+    "19 dense actual skin test rejected far rein at frame317: segment clearance minus0.0904m. Local nearest projection changes route side and cannot preserve exterior segment topology. No candidate saved. Replace with collision-checked surface connectivity and visibility routing."
+  ]
+}

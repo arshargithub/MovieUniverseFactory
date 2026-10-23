@@ -1,0 +1,2670 @@
+{
+  "task": "sikh335-continuous-performance",
+  "stage": "BRIEFING",
+  "actor": "reviewer",
+  "cycle": 21,
+  "max_corrections": 21,
+  "offline_only": false,
+  "frozen_evidence_only": false,
+  "direction": {
+    "beat_intents": {
+      "rear": "Construct continuous supported reference-phase rear with coupled rider and rebaked contacts; inspect gather, rise, crest, accelerating descent, impact and absorption before appearance finish and integrated clip."
+    },
+    "context_sources": [
+      {
+        "binding": {
+          "path": "results/sikh335/STRATEGY.md",
+          "sha256": "41500855f0ff4c10b905a6cb280e4b6e99a7248b2a9962761d9a8fc97fffae11"
+        },
+        "category": "direction",
+        "id": "direction",
+        "required": true,
+        "scope": "335 read-only ownership precursor to integrated production",
+        "statement": "Resume the integrated isolated production package; this precursor discovers rig ownership before any new pose authoring.",
+        "status": "adopted"
+      },
+      {
+        "binding": {
+          "path": "results/sikh331/PROOF_AUDIT.md",
+          "sha256": "24ed70645393f90aeca5898ca917b88aa6ffa129b3d232d687cadbd06fccbc4f"
+        },
+        "category": "learnings",
+        "id": "learnings",
+        "lines": [
+          1,
+          40
+        ],
+        "required": true,
+        "scope": "335 read-only ownership precursor to integrated production",
+        "statement": "331 failed whole-pose support and same-film character fidelity despite incremental offset corrections; those attempts remain closed.",
+        "status": "adopted"
+      },
+      {
+        "binding": {
+          "path": "docs/knowledge/CURRENT_PRODUCTION_STATE.md",
+          "sha256": "fcbd3501515872265928982f428cc06018a2a5b4c82608663dd158d8a264c6fb"
+        },
+        "category": "film_language",
+        "id": "film_language",
+        "lines": [
+          23,
+          27
+        ],
+        "required": true,
+        "scope": "335 read-only ownership precursor to integrated production",
+        "statement": "Accepted Pashtun quality stays fixed; a supporting actor cannot be a schematic statue.",
+        "status": "adopted"
+      },
+      {
+        "binding": {
+          "path": "docs/planning/SHOT_BEAT_QUALITY_BRIEF.md",
+          "sha256": "f76a2f4b78597bd19605425a6fb4569e5ed3c68e17e16029e03a572880a34dda"
+        },
+        "category": "director_preferences",
+        "id": "director_preferences",
+        "lines": [
+          1,
+          36
+        ],
+        "required": true,
+        "scope": "335 read-only ownership precursor to integrated production",
+        "statement": "Predict failure through expert lenses and fix internally; setup and routine algorithms are not handovers.",
+        "status": "adopted"
+      },
+      {
+        "binding": {
+          "path": "results/workflow330/NIHANG_PROSPECTIVE_BRIEF.md",
+          "sha256": "ec6570f24081644d996c6b12d602d10a229f28257c4d18e8c9b67f7cb28b0878"
+        },
+        "category": "references",
+        "id": "references",
+        "lines": [
+          11,
+          53
+        ],
+        "required": true,
+        "scope": "335 read-only ownership precursor to integrated production",
+        "statement": "Reference14\u201319s governs faithful action phases; accepted film governs appearance; rejected poses are negative controls.",
+        "status": "adopted"
+      },
+      {
+        "binding": {
+          "path": "results/sikh358/motion-task.json",
+          "sha256": "591d00c1e2866048a76c2f3fa0adc752bd8b1d0d4774323add02e2c3c41ef439"
+        },
+        "category": "controls",
+        "id": "controls",
+        "lines": [
+          1,
+          14
+        ],
+        "required": true,
+        "scope": "335 read-only ownership precursor to integrated production",
+        "statement": "Fresh motion-domain packet and manual AU09\u201313,16 plus317\u2013334 reconciliation accompany this inspection.",
+        "status": "adopted"
+      },
+      {
+        "binding": {
+          "path": "docs/knowledge/NATIVE_WORKFLOW_334.md",
+          "sha256": "73366bd536e11b5a572114e2a9e7b091024a98ac51063997e5f1909b843575cc"
+        },
+        "category": "constraints",
+        "id": "constraints",
+        "lines": [
+          11,
+          29
+        ],
+        "required": true,
+        "scope": "335 read-only ownership precursor to integrated production",
+        "statement": "Inspect64 invalid used-armature drivers, removed object drivers and FK bypasses; no blind restoration or defect waiver.",
+        "status": "adopted"
+      },
+      {
+        "binding": {
+          "path": "results/sikh335/CONTROL_FINDINGS.md",
+          "sha256": "354f092ddf6a2f5a390c8c0a4aedafc121b0a2dedb435e4eb421e634bfa2d0c6"
+        },
+        "category": "learnings",
+        "id": "ownership_diagnosis",
+        "required": true,
+        "scope": "335 explicit ownership and support representation",
+        "statement": "64 missing targets are BBone ease; missing object drivers leave IK/FK properties ineffective. Select actual constraints and solve bone lengths explicitly.",
+        "status": "adopted"
+      },
+      {
+        "binding": {
+          "path": "results/sikh335/support02/IMAGE_REVIEW.md",
+          "sha256": "b5e779ff1dc6941d7d13a2307f4616165f371aa8839a8a658bb5ce7d3d74142d"
+        },
+        "category": "learnings",
+        "id": "crest_control",
+        "required": true,
+        "scope": "Static control only; no temporal or rider qualification",
+        "statement": "Two static corrections are retained and closed. Crest supports anatomy but reins/spear disconnected and appearance rejected; capture immutable stance before continuous keys.",
+        "status": "adopted"
+      },
+      {
+        "binding": {
+          "path": "results/sikh353/STRATEGY.md",
+          "sha256": "187c6b3fad90a80aab289a577ff6ad21449169925c5974bda04ff1ff2fa52389"
+        },
+        "category": "learnings",
+        "id": "strategy353",
+        "required": true,
+        "scope": "Ten total authorized353 corrections, original reference and quality retained.",
+        "statement": "Apply causal interface tests and retain scoped successes; leader and horse precede crowd.",
+        "status": "adopted"
+      },
+      {
+        "binding": {
+          "path": "results/sikh352/LEARNINGS.md",
+          "sha256": "4e5f387b0c67eb586667c97117253caeff7ad939e5ebbd906d1b0f31930c8992"
+        },
+        "category": "learnings",
+        "id": "lessons352",
+        "required": true,
+        "scope": "Ten total authorized353 corrections, original reference and quality retained.",
+        "statement": "Apply causal interface tests and retain scoped successes; leader and horse precede crowd.",
+        "status": "adopted"
+      },
+      {
+        "binding": {
+          "path": "results/sikh358/STRATEGY.md",
+          "sha256": "a013e8fe13b53d414cd288f5f9ea9f8a36b64fb459ae45402ff60fcc05146f42"
+        },
+        "category": "learnings",
+        "id": "strategy358",
+        "required": true,
+        "scope": "Five additional corrections per original task; crowd excluded, no new spending.",
+        "statement": "Correct actual headstall ownership and its consuming rein span; retain357 construction gains and original faithful action reference.",
+        "status": "adopted"
+      },
+      {
+        "binding": {
+          "path": "results/sikh357/LEARNINGS.md",
+          "sha256": "9cc3c8a150783b40ed9c22871cd676edf9ba6aac8c4be7b61b2e1fff005d9b16"
+        },
+        "category": "learnings",
+        "id": "lessons357",
+        "required": true,
+        "scope": "Five additional corrections per original task; crowd excluded, no new spending.",
+        "statement": "Correct actual headstall ownership and its consuming rein span; retain357 construction gains and original faithful action reference.",
+        "status": "adopted"
+      }
+    ],
+    "deliverable_id": "sikh335-continuous-performance",
+    "intent": "Construct continuous supported reference-phase rear with coupled rider and rebaked contacts; inspect gather, rise, crest, accelerating descent, impact and absorption before appearance finish and integrated clip.",
+    "knowledge_digest": "78a26b53468a5f1fa7921cf7ebd318a35d5720aa7b41faeedb768ca01cfcd3a3",
+    "knowledge_task": "results/sikh358/motion-task.json",
+    "protected": [
+      "Accepted Pashtun253",
+      "Rejected320/331 source and failures",
+      "325 exhausted provider allowance"
+    ],
+    "references": [
+      {
+        "allowed_variation": "Adapt to shot geography and existing horse proportions without robotic phase boundaries.",
+        "aspects": [
+          {
+            "id": "whole_pose",
+            "instruction": "Compare all visible action phases and body contacts; a smooth trajectory or fixed hoof target does not certify animation.",
+            "requirements": [
+              "preservation",
+              "support",
+              "phases",
+              "rider",
+              "evidence"
+            ]
+          }
+        ],
+        "authority": "Director requires faithful rearing, not a simplified approximation.",
+        "binding": {
+          "path": ".runtime/art-direction/series01-sikh256/references/reference-b.mov",
+          "sha256": "78d0d691e8712c02931876cf0bc405e4869de357f337f531708be7a7da4898e2"
+        },
+        "fidelity": "Faithful coupled loading, lift, brief crest, accelerating reach/contact and absorption; adapted existing horse proportions.",
+        "id": "reference_rear",
+        "not_authority": "Not a new identity, wardrobe license or exemption from same-film quality.",
+        "role": "faithful_motion",
+        "scope": "Reference14\u201319s governs complete preparation to landing, not only crest; actual speed requires later clip.",
+        "time_range_seconds": [
+          14,
+          19
+        ]
+      }
+    ]
+  },
+  "authority": {
+    "path": "results/sikh335/REQUEST.md",
+    "sha256": "4fcc2ea93e661961cea9007557b0d692e8073a565fcfc59d40ffdd1c22146ca6"
+  },
+  "retrospective": {
+    "policy": 1,
+    "sequence": 114,
+    "gates": {
+      "__migration__": {
+        "status": "TESTING",
+        "reason": "evidence_reconciliation",
+        "triggers": [
+          "migration-evidence:sikh353-motion-retro-migration",
+          "sikh353-motion14-__migration__-reopen",
+          "sikh353-motion15-__migration__-reopen",
+          "sikh353-motion16-__migration__-reopen",
+          "sikh358-motion-c17-__migration__-reopen",
+          "sikh358-motion-c18-__migration__-reopen",
+          "sikh358-motion-c19-__migration__-reopen",
+          "sikh358-motion-c20-__migration__-reopen"
+        ],
+        "plan": "f4bb8e98e8b37a21a1a1ed354edd88b2dce2c5763b10fb4ff9c90952e7b786d0",
+        "admitted_event": "sikh358-motion-c20-__migration__-admit"
+      },
+      "__allowance__": {
+        "status": "TESTING",
+        "reason": "evidence_reconciliation",
+        "triggers": [
+          "migration-evidence:sikh353-motion-retro-migration",
+          "sikh353-motion14-__allowance__-reopen",
+          "sikh353-motion15-__allowance__-reopen",
+          "sikh353-motion16-__allowance__-reopen",
+          "exhaustion:sikh353-motion16-replan",
+          "sikh358-motion-c18-__allowance__-reopen",
+          "sikh358-motion-c19-__allowance__-reopen",
+          "sikh358-motion-c20-__allowance__-reopen"
+        ],
+        "plan": "f4bb8e98e8b37a21a1a1ed354edd88b2dce2c5763b10fb4ff9c90952e7b786d0",
+        "admitted_event": "sikh358-motion-c20-__allowance__-admit"
+      },
+      "phases": {
+        "status": "TESTING",
+        "reason": "evidence_reconciliation",
+        "triggers": [
+          "sikh353-motion13-failure",
+          "native-review:sikh353-motion-c14-render",
+          "sikh353-motion14-failure",
+          "native-review:sikh353-motion-c15-render",
+          "sikh353-motion15-failure",
+          "native-review:sikh353-motion-c16-render",
+          "native-review:sikh358-motion-c17-horse_head",
+          "sikh358-motion-c19-phases-reopen",
+          "sikh358-motion-c20-phases-reopen"
+        ],
+        "plan": "f4bb8e98e8b37a21a1a1ed354edd88b2dce2c5763b10fb4ff9c90952e7b786d0",
+        "admitted_event": "sikh358-motion-c20-phases-admit"
+      },
+      "rider": {
+        "status": "OPEN",
+        "reason": "strategy_falsifier_or_regression",
+        "triggers": [
+          "sikh353-motion16-failure",
+          "native-review:sikh358-motion-c17-horse_head",
+          "sikh358-motion-c17-horse_head-outcome",
+          "sikh358-motion-c19-rider-reopen",
+          "sikh358-motion-c19-save-outcome",
+          "sikh358-motion-c20-save-outcome"
+        ]
+      }
+    },
+    "warnings": {
+      "__worker__": 2
+    },
+    "responses": {
+      "__migration__": {
+        "cause": "19 rejected before save: local nearest-point relaxation switches sides across the neck at317. Segment penetration minus90mm is a structural route failure, not material appearance.",
+        "change_or_retain_rationale": "Use actual evaluated horse skin connectivity to find an exterior route from measured ring to original hand. Offset mesh vertices form a visibility-tested graph; shortest path, collision-tested taut shortcuts and conservative corner rounding produce the denser curve. Preserve hand endpoints and all non-rein actions; validate dense segment clearance and animation readback before rendering.",
+        "evidence": {
+          "results/sikh357/LEARNINGS.md": {
+            "path": "results/sikh357/LEARNINGS.md",
+            "sha256": "9cc3c8a150783b40ed9c22871cd676edf9ba6aac8c4be7b61b2e1fff005d9b16"
+          },
+          "results/sikh358/REQUEST.md": {
+            "path": "results/sikh358/REQUEST.md",
+            "sha256": "11ddd70019d54c4732feba9ca6f68b6b8c28367190dcc3f5f8d979a2b4bfb940"
+          },
+          "results/sikh358/STRATEGY.md": {
+            "path": "results/sikh358/STRATEGY.md",
+            "sha256": "a013e8fe13b53d414cd288f5f9ea9f8a36b64fb459ae45402ff60fcc05146f42"
+          },
+          "results/sikh358/motion-c20-challenge.json": {
+            "path": "results/sikh358/motion-c20-challenge.json",
+            "sha256": "594a1d440cca7b2757a515de7fa6cba1a322c757b7bfa9b6deb14d64aff9be28"
+          },
+          "results/sikh358/motion-c20.json": {
+            "path": "results/sikh358/motion-c20.json",
+            "sha256": "f5523e6a7aa0da1b372655856a9a6c20cdf5afc505bcad3a1564604416cad4a2"
+          }
+        },
+        "expected": "Only actual corrected subproof advances; no whole-actor acceptance by bookkeeping.",
+        "failure_response": "Replan actual failing interface with retained counters, no decorative concealment.",
+        "gate_digest": "665799a3f1d81761e1626db999a65058ba18c4b614ee65ac1e3f21074e7488e0",
+        "key": "__migration__",
+        "plan": "f4bb8e98e8b37a21a1a1ed354edd88b2dce2c5763b10fb4ff9c90952e7b786d0",
+        "preserve": "Original references,357 integrated scene,action clock and all task failures; no spend.",
+        "target_stage": "STRATEGIZING",
+        "test": "All190 frames retain ring/hand contacts, no skin penetration in dense segment samples, unchanged unrelated action signature, and frame-switch readback. Then actual head views both sides, rider and production views must show continuous supported route without neck intersections or visible jitter; continuous AV remains Director313.",
+        "uncertainty": "Surface bounds do not locate lips automatically; actual eye/mouth visibility and posed attachment must falsify route.",
+        "event": "sikh358-motion-c20-__migration__-response"
+      },
+      "__allowance__": {
+        "cause": "19 rejected before save: local nearest-point relaxation switches sides across the neck at317. Segment penetration minus90mm is a structural route failure, not material appearance.",
+        "change_or_retain_rationale": "Use actual evaluated horse skin connectivity to find an exterior route from measured ring to original hand. Offset mesh vertices form a visibility-tested graph; shortest path, collision-tested taut shortcuts and conservative corner rounding produce the denser curve. Preserve hand endpoints and all non-rein actions; validate dense segment clearance and animation readback before rendering.",
+        "evidence": {
+          "results/sikh357/LEARNINGS.md": {
+            "path": "results/sikh357/LEARNINGS.md",
+            "sha256": "9cc3c8a150783b40ed9c22871cd676edf9ba6aac8c4be7b61b2e1fff005d9b16"
+          },
+          "results/sikh358/REQUEST.md": {
+            "path": "results/sikh358/REQUEST.md",
+            "sha256": "11ddd70019d54c4732feba9ca6f68b6b8c28367190dcc3f5f8d979a2b4bfb940"
+          },
+          "results/sikh358/STRATEGY.md": {
+            "path": "results/sikh358/STRATEGY.md",
+            "sha256": "a013e8fe13b53d414cd288f5f9ea9f8a36b64fb459ae45402ff60fcc05146f42"
+          },
+          "results/sikh358/motion-c20-challenge.json": {
+            "path": "results/sikh358/motion-c20-challenge.json",
+            "sha256": "594a1d440cca7b2757a515de7fa6cba1a322c757b7bfa9b6deb14d64aff9be28"
+          },
+          "results/sikh358/motion-c20.json": {
+            "path": "results/sikh358/motion-c20.json",
+            "sha256": "f5523e6a7aa0da1b372655856a9a6c20cdf5afc505bcad3a1564604416cad4a2"
+          }
+        },
+        "expected": "Only actual corrected subproof advances; no whole-actor acceptance by bookkeeping.",
+        "failure_response": "Replan actual failing interface with retained counters, no decorative concealment.",
+        "gate_digest": "68542ea22f2edffa06a62975f0e05549a8b26d5c8952f0d245f967a578b8befb",
+        "key": "__allowance__",
+        "plan": "f4bb8e98e8b37a21a1a1ed354edd88b2dce2c5763b10fb4ff9c90952e7b786d0",
+        "preserve": "Original references,357 integrated scene,action clock and all task failures; no spend.",
+        "target_stage": "STRATEGIZING",
+        "test": "All190 frames retain ring/hand contacts, no skin penetration in dense segment samples, unchanged unrelated action signature, and frame-switch readback. Then actual head views both sides, rider and production views must show continuous supported route without neck intersections or visible jitter; continuous AV remains Director313.",
+        "uncertainty": "Surface bounds do not locate lips automatically; actual eye/mouth visibility and posed attachment must falsify route.",
+        "event": "sikh358-motion-c20-__allowance__-response"
+      },
+      "phases": {
+        "cause": "19 rejected before save: local nearest-point relaxation switches sides across the neck at317. Segment penetration minus90mm is a structural route failure, not material appearance.",
+        "change_or_retain_rationale": "Use actual evaluated horse skin connectivity to find an exterior route from measured ring to original hand. Offset mesh vertices form a visibility-tested graph; shortest path, collision-tested taut shortcuts and conservative corner rounding produce the denser curve. Preserve hand endpoints and all non-rein actions; validate dense segment clearance and animation readback before rendering.",
+        "evidence": {
+          "results/sikh357/LEARNINGS.md": {
+            "path": "results/sikh357/LEARNINGS.md",
+            "sha256": "9cc3c8a150783b40ed9c22871cd676edf9ba6aac8c4be7b61b2e1fff005d9b16"
+          },
+          "results/sikh358/REQUEST.md": {
+            "path": "results/sikh358/REQUEST.md",
+            "sha256": "11ddd70019d54c4732feba9ca6f68b6b8c28367190dcc3f5f8d979a2b4bfb940"
+          },
+          "results/sikh358/STRATEGY.md": {
+            "path": "results/sikh358/STRATEGY.md",
+            "sha256": "a013e8fe13b53d414cd288f5f9ea9f8a36b64fb459ae45402ff60fcc05146f42"
+          },
+          "results/sikh358/motion-c20-challenge.json": {
+            "path": "results/sikh358/motion-c20-challenge.json",
+            "sha256": "594a1d440cca7b2757a515de7fa6cba1a322c757b7bfa9b6deb14d64aff9be28"
+          },
+          "results/sikh358/motion-c20.json": {
+            "path": "results/sikh358/motion-c20.json",
+            "sha256": "f5523e6a7aa0da1b372655856a9a6c20cdf5afc505bcad3a1564604416cad4a2"
+          }
+        },
+        "expected": "Only actual corrected subproof advances; no whole-actor acceptance by bookkeeping.",
+        "failure_response": "Replan actual failing interface with retained counters, no decorative concealment.",
+        "gate_digest": "3a8457d1918c6248132a16c20187d7b57b6fb129d38e10f931f1f1fa2a522d60",
+        "key": "phases",
+        "plan": "f4bb8e98e8b37a21a1a1ed354edd88b2dce2c5763b10fb4ff9c90952e7b786d0",
+        "preserve": "Original references,357 integrated scene,action clock and all task failures; no spend.",
+        "target_stage": "STRATEGIZING",
+        "test": "All190 frames retain ring/hand contacts, no skin penetration in dense segment samples, unchanged unrelated action signature, and frame-switch readback. Then actual head views both sides, rider and production views must show continuous supported route without neck intersections or visible jitter; continuous AV remains Director313.",
+        "uncertainty": "Surface bounds do not locate lips automatically; actual eye/mouth visibility and posed attachment must falsify route.",
+        "event": "sikh358-motion-c20-phases-response"
+      }
+    },
+    "proofs": {},
+    "history_api": "retrospective.events(connection, task)",
+    "instruction": "Inspect source-bound outcomes for each open finding; respond, challenge, then test. Admission is not effectiveness. No new authority."
+  },
+  "source_context": {
+    "documents": {
+      "5baa14f2c20fb45ccd1dbe60b54ee509cd6739dab6342811fa468e2b74ebe22b": {
+        "binding": {
+          "path": "results/sikh335/STRATEGY.md",
+          "sha256": "41500855f0ff4c10b905a6cb280e4b6e99a7248b2a9962761d9a8fc97fffae11"
+        },
+        "lines": [
+          1,
+          56
+        ],
+        "text": "# Nihang representation and performance\n\nResume the isolated leader, rearing and crowd passage with one-second handles.\nThe outcome remains a believable, powerful exchange in the same illustrated\nfilm as the accepted Pashtun. Neither a new controller nor a diagnostic render\nis that outcome. Existing 320 and 331 candidates remain rejected.\n\n## First proof and method\n\nThe first internal work package inspects the horse's actual deformation and\ncontrol ownership. Its 64 invalid armature drivers and historical FK bypasses\nmake another root-pivot and quaternion-offset pass an unsupported choice.\nRead rest and evaluated joints, constraints, driver target paths and mesh\nbindings without changing the source. Compare the recorded pose with the\nreference's gather, drive, crest, reach/contact and absorption phases. Then\nchoose targeted control repair or a replacement deformation representation\nfrom evidence. Do not silently delete broken dependencies to clear a gate.\n\nThe reference video is faithful performance authority, not merely inspiration.\nThe accepted Pashtun is the same-film surface and supporting-character quality\ncontrol, not an instruction to copy her identity. Failed 320/331 frames are\nnegative controls only. Preserve their original files and findings.\n\n## Integrated path\n\n1. Establish control ownership and a discriminating whole-pose control.\n2. Prove coupled hindquarter loading, chest lift, articulated neck and poll,\n   folded forelegs, reaching landing and compression with supported hind feet.\n   Check rider seat, hands, reins and stirrups in intended, side and rear views.\n3. Prove one leader and one near crowd actor: recognizable turban construction,\n   credible garment volume and folds, face, beard and tack at shot framing.\n   Do not replicate a schematic or failed actor.\n4. Animate the continuous action with fast powerful impact, a brief crest,\n   coordinated rider response and persistent ground effects. Crowd members\n   preserve attention on the rider while turning and stepping with varied,\n   motivated timing. They must not slide sideways in synchronization.\n5. Render only the contiguous leader/crowd passage, frames252\u2013441 at24fps,\n   including one-second handles; review all claimed interfaces and frames.\n   Queue one complete clip for Director audiovisual judgment only after\n   source/frame-visible blockers are resolved. No fabricated AV pass.\n\n## Boundaries and reassessment\n\nUse existing local Blender, serial heavy jobs, reversible derivatives and\nsource-bound typed handlers. New handlers require tests and native controls.\nNo provider calls, paid model trials, new assets, installations, remote compute,\nuploads or additional artistic identity choices. Do not rerender Pashtun or\nchange the Sikh principal, full edit or music. The previous331 initial plus two\nfailed corrections remain closed;335 changes representation, not the label on\nthe same method. Keep correction accounting cumulative within this package.\n\nStop propagating a failed prerequisite. Replan the affected stage when control\nownership, support, whole-pose anatomy or same-film appearance fails; routine\ntechnical diagnosis is not a Director handover. Carry all failures forward.\nCompletion requires the integrated isolated clip and honest evidence; escalate\nonly a genuine material choice or exhausted viable authorized method."
+      },
+      "cb71ea81abd9e661458066b8fd50327a9a5dc8d3875fcdf84913d29492061e35": {
+        "binding": {
+          "path": "results/sikh331/PROOF_AUDIT.md",
+          "sha256": "24ed70645393f90aeca5898ca917b88aa6ffa129b3d232d687cadbd06fccbc4f"
+        },
+        "lines": [
+          1,
+          40
+        ],
+        "text": "# Production proof331 \u2014 failed early proof, not a review-ready clip\n\n## Outcome and evidence boundary\n\nThe initial native pose trial and two corrective variants did not qualify the\nNihang horse/rider pose family or supporting-cast appearance. No crowd replication,\ncontinuous clip, final sound mix or Director audiovisual queue was produced.\nThe accepted Pashtun253 master and rejected320 source were not edited.\n\nThis is a negative production result. It is not evidence that agent-only animation\nis impossible, that the source horse rig is incapable, or that another model would\nsolve it. Native inspection showed usable controls; their coordinated use remains\nunqualified. A narrower, useful finding is that root-pivot/joint-angle tuning plus\nsmall garment offsets did not produce the required integrated forms.\n\n## What actually happened\n\nThe330 brief and new331 strategy were read, a fresh domain knowledge packet was\ncreated for each job, and local reviewed Blender handlers produced six phase\nrenders per variant. However, **the four controller stages were not submitted\nbefore native construction**. The written stages were not equivalent to executing\nthe controller. This is an adoption/admission failure, not successful prospective\nqualification of330. The later controller record is explicitly retrospective\nfrozen-evidence review; it cannot repair that chronology or demonstrate independent\nreviewer judgment. No separate runtime/model calls were made.\n\nThe controller currently supports offline and frozen-evidence modes only. It does\nnot own this Blender launcher or enforce the ordered pose/look prerequisites on\nnative jobs. A native-authoring bridge remains unqualified. The agent could still\nhave applied the stage API before diagnostic work and did not; the software limit\ndoes not excuse that omission.\n\n| Trial | Actual result | Disposition |\n|---|---|---|\n| pose01 | New whole-pose controls exposed excessive hindquarter lowering and outward/upward forehoof orientation at the crest. | FAIL; initial attempt retained. |\n| pose02 | Forehooves improved, but support legs became too straight; cloth calculation emitted an invalid-power warning, sash became buried, and beard edit targeted a hidden contributor. | FAIL; first correction retained. Process finished before attempted cancellation. |\n| pose03 | Finite cloth calculation, visible beard targeting and sash support corrected. Crest has more head flex and unequal forelegs; landing lowers head/torso more. Gather/drive still lack the reference's compact coordinated shape; broad costume and coat remain schematic. | FAIL; second correction retained. No claim of full-speed motion quality. |\n\nNative outputs are under `.runtime/art-direction/series01-sikh331/pose-01` through\n`pose-03`. Inspected source frames298,314,327,344,350,353 are diagnostic samples,"
+      },
+      "f2f30a514de1653827bd2ed28e71b37a4590318ab807c5267cdc7547861c58ba": {
+        "binding": {
+          "path": "docs/knowledge/CURRENT_PRODUCTION_STATE.md",
+          "sha256": "fcbd3501515872265928982f428cc06018a2a5b4c82608663dd158d8a264c6fb"
+        },
+        "lines": [
+          23,
+          27
+        ],
+        "text": "The [250 retrospective](PASHTUN_PRODUCTION_AUDIT250.md) supplies AU01\u2013AU16. Before each work package, select relevant lessons plus adjacent interfaces and bind each to a concrete action and observable test. The [shot/beat brief](../planning/SHOT_BEAT_QUALITY_BRIEF.md) defines the audience read and failure hypotheses; the [strategy requirement](../decisions/0005-production-strategy-before-execution.md) defines representation, interfaces and earliest useful proof. Correct retrieval is not proof that a render was judged correctly.\n\nLarger-than-life impact and a fixed high quality floor remain global requirements. Efficient Quality means fewer avoidable failures at that bar, not lower acceptance. Images guide identity and look; accepted native differences remain accepted. Sikh257 adds explicitly reviewed distinct entities and source/interface obligations; it does not inherit Pashtun identity, dynamics or production acceptance. Gurkha and other unknown domains still block until reconciled. Retrieval coverage is not scene qualification.\n\nMeasure escaped and repeated defects, unnecessary handovers, discovery phase, actual reuse adaptation, work/wait/native jobs and recorded usage separately. Historical250 approximately145h is a fixed-cutoff, qualified baseline, not the completed sequence's exact net cost or a forecast. Do not charge Director waits or add overlapping jobs twice."
+      },
+      "061c85a4dc4f3d739c5f9292edc400b6962980ec345d606653dc1e1944f4d192": {
+        "binding": {
+          "path": "docs/planning/SHOT_BEAT_QUALITY_BRIEF.md",
+          "sha256": "f76a2f4b78597bd19605425a6fb4569e5ed3c68e17e16029e03a572880a34dda"
+        },
+        "lines": [
+          1,
+          36
+        ],
+        "text": "# Shot / beat performance and believability brief\n\nAdopted operating requirement at Director exchange249, 2026-10-13. Extends the existing audience brief, motion brief and production strategy; not another Director approval form or a new production department. Applies to every planned shot and its materially distinct beats. Group shared requirements once, then record beat-specific differences. A static insert can have a short brief with justified not-applicable lenses.\n\n## Responsibility: expertise lenses, one integrated result\n\nThe executing agent owns a shot-supervision function: reason from the intended audience experience, apply the relevant expertise, resolve conflicting requirements and verify the whole result. Do not wait for the Director to identify technical failures. The Director supplies intent, material creative choices and acceptance, not joint-placement, simulation or deformation diagnoses.\n\nApply these lenses to the same versioned shot artifact, not a mandatory chain of agents:\n\n- **Story, performance and audience:** what changes for viewers, character intention, recognizable identity, emotional legibility, attention and larger-than-life signature moment.\n- **Animation and physical action:** support, balance, effort, momentum, coordinated joints, weight transfer, impact and recovery. Skilled control is not rigid stillness.\n- **Anatomy, rigging and contact:** articulation pivots, deforming volume, skin/cloth boundaries, fingers and grip, feet/props/partners, reach and contact ownership.\n- **Character effects and environmental response:** hair, mane, tail, cloth, straps, dust/debris; supports, lag, inertia, gravity, forcing and collisions must tell a compatible physical story.\n- **Camera, look and editorial:** what the framing actually exposes, continuity and causal geography, silhouette, palette/lighting/material readability, pace and exposure duration.\n- **Sound and music:** weight and synchronization, intelligibility, musical preparation/payoff and which element owns attention. Direct listening and signal checks are separate evidence.\n- **Production/reuse/rights:** viable representation, dependencies, revision needs, accepted-source limits, resource and rights boundaries.\n\nThese are review perspectives, not claimed human specialist qualifications or independent model judgments. A single agent can miss things across all of them. Where knowledge is weak, identify it, research a relevant primary reference or run a discriminating control; do not fill the gap with confident prose.\n\n## Brief fields \u2014 complete before substantial execution\n\nKeep the filled brief in the existing sequence work package, linking this template. Bind its revision in the task packet alongside actual source inputs.\n\n1. **Identity and authority:** sequence/shot/beat IDs and timing; accepted creative/source versions; what is fixed, flexible or undecided. Keep Shot Intent separate from the changeable realization plan.\n2. **Audience result:** what viewers should understand, feel and notice; extraordinary moment and contrast; what must remain recognizable. State hypotheses, not invented audience research.\n3. **Visibility and criticality:** actual framing, screen size, exposure and action; required quality-floor behaviors, dramatic priorities and optional refinements. An out-of-frame assumption needs evidence and a reopening trigger. Low salience cannot excuse a visible structural failure.\n4. **Applicable lenses and predicted failures:** actively scan the lenses above. Explain omissions. Include likely unreported distractions and adjacent interfaces, not only the current Director defect list.\n5. **Strategy per important behavior:** intended motion/deformation/response; chosen representation and why it fits; owner and coordinate space of contacts; inputs/supports, coupled dependencies and known limitations. Choose authored animation, constrained procedural motion, simulation or a declared hybrid on evidence, not prestige. Specify which matters must be physically consistent and which may be intentionally heightened without contradiction.\n6. **Earliest representative proof:** cheap actual-framing motion plus revealing controls before polish/full rendering. Define observable pass/fail, a negative control, required references and what outcome changes the method. Numbers support visual/audio judgment, not replace it.\n7. **Review, revision and exit:** evidence per requirement; changed-input invalidation; uncertainty; remaining optional work and reopening triggers; release dependency unlocked. Use the integrated internal gate, not a new handoff at every lens.\n\nUse this row format for the important behaviors; a generic list of body parts is insufficient:\n\n| Beat / audience-visible requirement | Lens; predicted distraction and importance | Method, owner and interfaces | Early proof / explicit failure condition | Evidence, status and reopening trigger |\n|---|---|---|---|---|"
+      },
+      "6b56c37ae067582d21082204ec650554301ac2b1cdf67e6ba80fea607a5d4e53": {
+        "binding": {
+          "path": "results/workflow330/NIHANG_PROSPECTIVE_BRIEF.md",
+          "sha256": "ec6570f24081644d996c6b12d602d10a229f28257c4d18e8c9b67f7cb28b0878"
+        },
+        "lines": [
+          11,
+          53
+        ],
+        "text": "## Grounding and authority\n\n- Director intent: a commanding mounted Nihang acknowledges the Sikh with a\n  spear cue and powerful rearing. The watching crowd parts purposefully while\n  retaining attention on the rider. People are supporting cast, not silhouettes\n  and not schematic statues. Same-film credibility is near the Pashtun, without\n  requiring the principal's portrait-specific detail or recurrence investment.\n- Reference-b.mov, recorded in `results/sikh321/evidence.json` and321 audit, is\n  **faithful action/whole-pose authority**, approximately14\u201319s; it is not a\n  source of identity, scenery or measured physical forces. Its edited monocular\n  view does not uniquely specify unseen3D anatomy. Use support/anatomy plausibility\n  to resolve unseen structure; document inference rather than copy screen pixels.\n- Accepted253 Pashtun remains the production appearance/finish comparator and\n  protected unchanged master;152 accepted head deviations remain accepted.321's\n  candidate320/10 is a negative control, never the next quality floor.\n- Applicable lessons:321 method/judgment/admission audit;271 same-film foundation\n  failure;249 beat believability brief;250 avoidable-input audit;317 reuse before\n  custom construction;328 expert derivation;330 source-bound planning. Reconcile\n  exact AU/obligation IDs in the production task packet, not a generic assertion\n  that retrieval \u201ccovered everything.\u201d\n- Director preferences: larger-than-life, weighty, fluid, dramatic; preserve\n  believable support and force. Efficient Quality means improving the efficiency\n  of reaching that bar, not lowering it. No routine method approvals.\n- Scope: leader/rearing then crowd, one second before/after for continuity. Exclude\n  Sikh principal replacement, whole-trailer rerender, Pashtun changes, new paid\n  providers/assets, Gurkha, and unrelated terrain polish. Use the existing bounded\n  correction policy; no per-substep reset or arbitrary elapsed-time handoff.\n\n## Derived requirements and expert application\n\n| Beat / requirement | Applied lenses and why | Proof / failure condition |\n|---|---|---|\n| Preparation: spear cue gathers horse and rider | Choreography, animal anatomy, support/contact, performance. Intent must cause loading, not detached forefoot shuffle. | Compare complete supported silhouette: hock/stifle flex, pelvis/chest relation, forefoot placement, neck arch and poll, seat/hand response. Fail if gestures move but overall animal remains an upright column. |\n| Drive and crest: powerful active balance | Animation/physics, anatomy, rider performance, camera. Preserve curved articulated forelegs, unequal presentation and yielding neck without floating hind support. | Whole-pose and transition interiors from actual camera plus revealing side/rear; supported leg constraints must allow reference-like shape family. Fail if global body pivot and straight hind legs do all the work, or pose merely pauses rigidly. |\n| Reach, impact and recovery: heavy, fluid landing | Animation/contact, effects, sound. Reaching legs, descending mass and absorption must agree; particles/audio cannot fake absent body weight. | Phase map, timed-frame body/hoof/head trajectories, contact/compression/recovery frames. Fail if toes arrive quickly but chest/head/rider snap to standing with no absorption, or airborne settling slows before impact. Full-speed feel/listening remain Director AV. |\n| Commanding human and credible horse/tack | Look, costume construction, cultural specificity, anatomy, lighting, reuse. Larger-than-life comes from forms/material hierarchy and attitude, not a smooth shell plus fibers. | Leader/horse/saddle at standing, crest and landing at actual review size beside accepted production evidence. Reject cap-like turban, pointed regular beard, tube sleeves/trousers, slab saddle cloth, sculptural coat or washed-out face. Separate clay from matched material/light control. |\n| Crowd opens the way while watching | Staging, social performance, gait/contact, camera. Attention persists while shoulders/hips/feet can orient differently; movement has motivation and stagger. | Prove one near warrior and a small representative interaction before propagation. Fail if everyone side-steps synchronously, faces away, keeps torsos locked frontally, slides feet or wears identical rigid garment shells. |\n| Exchange and continuity | Cinematography/editorial, performance. Leader's gaze/body action and rider position must read as one exchange. | Preserve line of action and existing accepted staging; actual shot camera and one-second handles, not only flattering diagnostics. Check spear/torch/tack/feet/ground interfaces and who sees whom. |\n\nEach row inherits production look, protected-source constraints, reference roles\nand agent-versus-Director review ownership above. Sound is not omitted: retain\nspear, hoof impact, neigh and ground-response event anchors and existing authority;\nfinal listening judgment is not fabricated from waveforms. No new score choice."
+      },
+      "08d63cc4bafbe61ef065d0171a4cd470128535c201a64a3696cfd3bad037bde6": {
+        "binding": {
+          "path": "results/sikh358/motion-task.json",
+          "sha256": "591d00c1e2866048a76c2f3fa0adc752bd8b1d0d4774323add02e2c3c41ef439"
+        },
+        "lines": [
+          1,
+          14
+        ],
+        "text": "{\n  \"id\": \"sikh358-motion\",\n  \"operation\": \"motion\",\n  \"entities\": [\n    \"nihang_leader\",\n    \"nihang_horse\",\n    \"nihang_crowd\",\n    \"renderer\"\n  ],\n  \"query\": \"Nihang whole horse control ownership rearing support rider interfaces same-film clothing crowd attention\",\n  \"intent\": \"Integrated supported headstall and consumed rein attachment; leader/horse production proof, crowd deferred.\",\n  \"phase\": \"execution\",\n  \"inputs\": {\n    \"results/sikh335/REQUEST.md\": \"4fcc2ea93e661961cea9007557b0d692e8073a565fcfc59d40ffdd1c22146ca6\","
+      },
+      "b5b06982b26359061e8039c840f19a89b5d5c80720e4941599d8ecd4ab0e92ed": {
+        "binding": {
+          "path": "docs/knowledge/NATIVE_WORKFLOW_334.md",
+          "sha256": "73366bd536e11b5a572114e2a9e7b091024a98ac51063997e5f1909b843575cc"
+        },
+        "lines": [
+          11,
+          29
+        ],
+        "text": "1. Record the actual request and all effects in the canonical router. Use\n   continuation for an unfinished package; do not rename a failed artistic task.\n2. Ground original direction, accepted and rejected controls, reference roles,\n   applicable lessons, film language and Director preferences. Derive concrete\n   requirements with expert lenses; freeze a strategy and challenge it before\n   dispatch. Preserve the330/328 stage contracts and fresh source-bound packets.\n3. Bind each typed recipe to a strategy step and source binding. `native_inspect`\n   is required; rendering additionally requires `render`, authoring requires\n   `edit`. The bridge owns the single heavy-job lease and reserves attempts\n   before launch. No raw legacy Blender fallback or arbitrary Python payload.\n4. Inspect actual returned evidence before recording a prerequisite PASS.\n   Successful exit is insufficient. A dependent render must open the reviewed\n   derivative in a fresh process; selected rig/camera and authored mesh/material\n   state must match. Changed inputs, recipes, dependencies or handlers invalidate\n   admission. New operation types require reviewed handlers/tests, not code strings.\n5. Freeze and review against original intent and references, including omissions\n   and adjacent failures. A rejected prerequisite blocks successors. Direct\n   audiovisual judgment remains the Director's313 queue; frame-visible failures\n   cannot be hidden behind that pending human judgment."
+      },
+      "c48c8993f1aa449b6d292e0370f863f14914d7a130870aaa5ba0baa675ee08c6": {
+        "binding": {
+          "path": "results/sikh335/CONTROL_FINDINGS.md",
+          "sha256": "354f092ddf6a2f5a390c8c0a4aedafc121b0a2dedb435e4eb421e634bfa2d0c6"
+        },
+        "lines": [
+          1,
+          29
+        ],
+        "text": "# Horse control ownership findings\n\nThe native inspection found456 pose bones and two rig-deformed meshes: the\n22514-vertex horse and72000-vertex short coat. Source320 remained unchanged.\nAll64 invalid armature drivers have missing object targets, but they drive\n`bbone_easein` or `bbone_easeout`, not the limb IK/FK switch. Their target paths\nrefer to existing rubber-tweak or mane-curve properties on the horse rig.\nThey affect deformation interpolation and require explicit repair; they do not\nby themselves explain the rigid whole-body action.\n\nThe object-level Rigify drivers were removed during the historical import.\nConsequently custom IK/FK and follow properties cannot be assumed operational.\nThe current forelegs explicitly select FK, whereas the hind ORG chains have\nboth FK and IK copy constraints at full influence: the later IK result wins.\nThe hind IK stretch remains enabled. Neck follow is fixed at0.5 and head follow\nat1.0 through actual constraints, regardless of control-property intent.\n\nThis supports a targeted, explicit ownership repair rather than generic driver\nrestoration or another unverified angle pass. Restore only the64 proven\nsame-rig property targets after resolving every path. Then establish one\nauthoritative limb path and solve supported whole poses with fixed bone\nlengths, not arbitrary control offsets or stretch. Test visible hoof endpoints\nand adjacent deformation rather than only IK target positions.\n\nThe reference comparison still fails artistically. It shows compact hindquarter\nloading and neck/poll flexion before the rise; source320 lacks that coordinated\nshape. Its costume, face and saddle also remain below the accepted film floor.\nNo pose, continuous motion, clothing or Director AV approval follows from this\ninspection. The ownership diagnostic is complete; integrated335 work is open."
+      },
+      "94b8c6fdb980fa96f564a13c03a540491f060d586d3da363c0e133cd3369dae0": {
+        "binding": {
+          "path": "results/sikh335/support02/IMAGE_REVIEW.md",
+          "sha256": "b5e779ff1dc6941d7d13a2307f4616165f371aa8839a8a658bb5ce7d3d74142d"
+        },
+        "lines": [
+          1,
+          25
+        ],
+        "text": "# Corrected supported crest\n\nThe second540\u00d7960 fresh-open frame removes the inverted tray-like forefeet.\nThe carpi are raised and the hooves hang below them. The lower body has visible\nstifle/hock bends rather than the former straight unsupported column; neck and\npoll have distinct orientations. The saved and reopened selected state matches\nexactly. The64 repaired targets remain valid, with visible hind-hoof endpoint\nerrors below0.07mm relative to the source standing support targets.\n\nDisposition: the narrow source-camera supported-crest control is usable for\nthe next representation tests. This is NOT a whole-horse anatomical, temporal,\nintegrated rider, appearance or production pass. Revealing side/rear views,\ngather/drive/reach/contact/absorption and transition interiors remain NOT_RUN.\nDo not extrapolate one view into their approval.\n\nThe rider's spear and reins are visibly disconnected following the changed\npose. His costume, face, turban and saddle remain schematic. These remain\nblocking conditions for the integrated sequence. Do not replicate the leader\nor crowd appearance or present this image as Director-ready.\n\nNext method: capture a single immutable standing control frame, extend the\nfixed-length endpoint solver to grounded and airborne phases, and coordinate\npelvis, chest, neck/poll, rider seat/limbs, reins and spear. Validate against the\nreference phase timing before cloth/appearance propagation. Do not repeatedly\nrecapture a changing standing frame inside the authoring loop."
+      },
+      "5387979292677e4875b8460c5b099a167debe19bb2aafbbc8fb9f7d7ec609de9": {
+        "binding": {
+          "path": "results/sikh353/STRATEGY.md",
+          "sha256": "187c6b3fad90a80aab289a577ff6ad21449169925c5974bda04ff1ff2fa52389"
+        },
+        "lines": [
+          1,
+          80
+        ],
+        "text": "#353 leader-and-horse integrated production proof\n\nDirector priority is now leader plus horse, appearance AND motion; no crowd\nconstruction before that unit is production ready. Ten total corrections are\nallocated six appearance62\u201367 and four motion13\u201316. This is not ten per task.\nExisting task IDs, failures, references and accumulated work remain intact.\n\n## Grounding and causal learning\n\nApply352 LEARNINGS and EVIDENCE_SCOPE_NOTES: retain59 supported arm and60\nindependent garment volume.61 failed waist strips are a negative control. The\nsource ray query used sleeve geometry as trunk support, violating the already\nrecorded semantic-ownership rule. Test that actual cause before decorating.\nKeep23 source cloth proof separate from target pose qualification. The appearance\ncontrol must include face, beard, tied turban, sash, waist, skirt, boots and saddle,\nnot just a successful shirt. No weakening accepted Pashtun quality or rewriting\nsupporting characters as distant silhouettes.\n\nOriginal14\u201319s rearing reference is faithful action authority: gathered horse,\nspear cue, drive, folded forelegs, active short crest, accelerating reach and\nforceful landing with absorption. Directional image examples are not literal\ngeometry.352 arm proof preserves tip trajectory but does not prove motivated arm\ngesture. Reconcile original motion12 evidence and actual pose/source state before\njoining appearance.307 capsule remains stale; this explicit source-bound\ncontinuation supersedes old pending scope, without repinning corpus/capabilities.\n\n## Complete path and earliest falsifiers\n\n1. Repair actual garment interfaces: start61's localized elbow ease but replace\n   its failed waist fitting with explicitly torso-owned geometry; reject any\n   arm-weighted face and implausible radial excursion BEFORE render. Preserve60\n   source and59 body. Neutral and actual mounted front/reverse/contact must agree.\n2. Review whole leader/horse at actual camera plus revealing oblique controls.\n   Improve missing face/eye/beard/turban and tack form/material hierarchy, not\n   arbitrary noise or more fibers on bad masses. Reuse existing rights-cleared\n   geometry and maps only; no new provider or acquisition authority.\n3. Combine qualified appearance with existing corrected motion12 and perform\n   source/pose/timing comparison to original rearing reference. Diagnose any\n   omitted torso/neck, hoof angle, rider contact or landing recovery before\n   secondary surface details. Protected camera and scene staging remain.\n4. Render only isolated leader/rear passage with one-second context handles,\n   verify temporal interiors, support/contact, body/cloth/groom/impact response,\n   independent reopen and intended-size appearance. No whole Sikh/Pashtun render.\n   Crowd remains unchanged context, explicitly outside this review's acceptance.\n\n## Applied expert lenses and motion brief\n\nCostume: real cloth ease, seams/cuffs and layered sash/belt supports; body regions\nown each query. Fail fins, skin breakthroughs, hovering band, rubber bodysuit or\nmaterial-only folds. Anatomy/contact:59 bare-arm checks are protected but must be\nrepeated on changed performance; fingers/shaft, reins/bit, thighs/saddle/stirrups\nneed coupled evaluation. Cinematography: actual night lighting AND neutral/reverse\ncontrols prevent darkness or horse occlusion hiding a malformed actor.\n\nAnimation phases: gathered lower body and head curl precede thrust; rider seat,\ntorso, neck and arm accommodate each phase rather than ride as one rigid block.\nCrest is active balance not a prolonged key hold. Forefeet accelerate into\nseparate contact before body/neck/rider absorb; no precontact ease-out. Support\nfeet stay planted until their explicit release. Hair/cloth respond coherently\nafter primary action, not independent random oscillation. Sound stays existing\nand unqualified if timing changes; no paid audio generation. Reference phase\nsilhouettes and actual all-frame endpoints support timed-frame judgment, not\ndirect AV perception. Director313 owns final full-speed/listening judgment.\n\nLook: strong blue cloth/gold accent and dark living horse, convincing supporting\nadult rather than toy assembly, consistent with accepted Pashtun film. Story:\ncommanding acknowledgment of the rider, not unrelated stunt or a new mentor role.\nProduction: one local worker, fixed trusted handlers/recipes, no scripts embedded\nin assets, preserved source derivatives and separate technical/artistic verdicts.\n\n## Review, revision and stopping\n\nFull form remains open until ALL visible actor/horse interfaces pass. Bare arm,\ncloth volume, render/test success are component evidence, not completion. A\nknown defect prevents manual AV queue admission. Change strategy immediately on\nfalsified support assumptions or adjacent regressions; do not spend every cycle\non the same cosmetic symptom. No arbitrary elapsed limit. Use only ten total\nnew corrections, retain unconsumed allowance, and stop only on integrated review\nreadiness or an actual exhausted allowance/material authority blocker. Exact\nhuman AV acceptance remains separate. Crowd is the next dependency, not this pass."
+      },
+      "16aa8c4b6fcbfd3a0bb77192d3a053fcbd624317b48a6ab9589d2ee3664592c2": {
+        "binding": {
+          "path": "results/sikh352/LEARNINGS.md",
+          "sha256": "4e5f387b0c67eb586667c97117253caeff7ad939e5ebbd906d1b0f31930c8992"
+        },
+        "lines": [
+          1,
+          53
+        ],
+        "text": "#352 scoped carry-forward lessons\n\n## Demonstrated locally\n\n- **Do not freeze an unaccepted contact implementation.**58 retained the inherited\n  spear orientation and ranked a mathematically reachable but visibly collapsed\n  arm as best.59 preserved the meaningful invariant\u2014the spear-tip trajectory\u2014\n  while orienting the shaft toward a torso-supported arm. Sampled front/back/side\n  and grip checks improved substantially. This is a scoped construction result,\n  not proof of a fully performed spear strike or general human animation.\n- **Hard admissibility precedes optimization.**58's score allowed106.8-degree\n  wrist bend and393.6mm adjacent elbow movement.59's bounds produced18.53degrees,\n  1.77mm elbow steps and zero tip displacement. The numbers support, but never\n  replace, visual checks. A lowest score can still be an unequivocal failure.\n- **Paired controls prevent the wrong repair.**DQ versus linear skinning retained\n  the same58 collapse. Changing body weights or hiding the joint in a sleeve was\n  not supported.59 works in both sampled controls; no new body sculpt was needed.\n- **Keep independent cloth volume.**Restoring the real23 settled garment in60\n  reads more like fabric than the52 body shell. Preserve59 anatomy and60 fabric\n  source separately. Neither60 nor61 qualifies the garment as finished.\n\n## Failed application, not a missing rule\n\n61's waist ray test queried the whole garment, including sleeves at the same\nheight. It produced projecting bands. Existing construction-interface guidance\nalready required semantic surface ownership; the agent failed to apply it in\nthis operation. More general reminders alone are not the remedy. The next waist\ntest must bind an explicit torso-only face set, reject arm-weighted supports and\ncheck its radial envelope before native rendering. Keep the61 failure as the\nnegative regression control. The exact diagnosis still needs that discriminating\ntest; do not label the unrun correction proven.\n\n## Workflow/evidence precision\n\nBare-arm PASS is not whole-actor `form` PASS. Retain the full form gate until\nclothing, face, beard/turban, saddle and relevant contact/pose checks close.\n`EVIDENCE_SCOPE_NOTES.md` explicitly corrects reused technical-save wording and\nlimits59's sampled checks. Separate subproof versus deliverable IDs are a future\nworkflow consideration, not implemented or claimed solved here.\n\nReview small, revealing controls before expensive context renders. Stop a\ndependent branch once a decisive failure is visible.60's additional grip render\nwas not run after the garment failed. Consider actor-only cloth studio controls\nbefore full environment context next time; no percentage saving has been measured.\n\n## How these reach the next task\n\nBind this file,352 closeout,59 static anatomy/contact evidence,60 garment failure\nand61 waist negative control in the next continuation's grounding. Translate\neach into a method or exclusion and an explicit review check. Preserve the\nexisting task/correction history. These are local evidence-backed additions,\nnot a silently repinned global knowledge corpus or a claim that retrieval alone\nwill prevent another implementation mistake."
+      },
+      "e2b10da1acc49fa08780cb5800794fdb5096fb8b8cc2d5b3f8b9486ddb37bc5d": {
+        "binding": {
+          "path": "results/sikh358/STRATEGY.md",
+          "sha256": "a013e8fe13b53d414cd288f5f9ea9f8a36b64fb459ae45402ff60fcc05146f42"
+        },
+        "lines": [
+          1,
+          19
+        ],
+        "text": "#358 coupled headstall and rein construction\n\nOutcome: a commanding, believable supporting leader and horse in the isolated rearing passage, with no known frame-visible construction failures before Director313 audiovisual review. Director358 adds five corrections to EACH original task: appearance max87 (82 unused), motion max21 (first17). Crowd and protected principals remain excluded; no spend or external service. Five-cycle internal checkpoint is not a requirement to consume all five.\n\n## Evidence and strategy\n357/81 actual horse close283 shows the tan arch above the eyes, ending in unsupported stubs. The mouth has no connected bit/headstall; source292 uses DEF-head.tail as an assumed muzzle, and353 consumes that false anchor for the reins. Retain81 matte authored coat,76 beard,78 current-garment trim,79 indigo/folds and71 sash. These are working subproofs, not whole production acceptance.\n\nFirst establish the actual head frame and rendered surface landmarks, including poll, eyes, mouth corners and nasal bridge. Construct coherent dark leather cheek straps, crown behind ears, browband and supported noseband with modest metal bit rings. A fixed anatomical route is authored once on the actual head surface and follows that head; no per-frame nearest-point hopping and no generic bone-tail-as-mouth assumption. Keep muzzle/eye/nostril clear. Appearance82 supplies exact head-owned anchors. Motion17 consumes those anchors into actual existing reins, preserving the real hand entry and original hoof/spear/rider clock. Rerender close and reverse rest/crest/impact/recovery before an isolated full passage. If an anatomical attachment cannot be inferred safely from existing data, add a bounded read-only native report, not speculative offsets.\n\n## Expert application and motion brief\nStory/camera: preserve commanding acknowledgment and line of action; no camera concealment. Horse anatomy/tack: inspect supported paths and ring position against real muzzle and cheeks, not control naming. Contact: head owns bit, actual fist owns the other endpoint; reinforce continuous curve through intermediate points without crossing neck, mane or face. Cloth/hair/look: retain construction gains and check adjacent beard, cuff, saddle and mane. Animation: gather, drive, brief active crest, accelerating impact and absorption retain prior timing; endpoint repair must not modify horse/rider actions. Sound: unchanged event clocks, no new sound production, listening remains pending. Reuse: exact current scene and owned materials; no external asset acquisition. AU09\u201313 and357 lessons4/6/7 require consumer validation and specific preservation checks.\n\nReins are authored shot-scoped flexible curves, not a physical rope simulation. First capture each original point in hand-relative coordinates across252\u2013441; shift only the bit-side span with a smooth weight that reaches zero before the hand, preserving final grip segment. Independently verify changed endpoints follow head-local rings and preserved last segments, source rig/camera keys and geometry. Zero endpoint error is not visual contact acceptance.\n\n## Internal review and stopping\nEarly proof: actual horse close plus opposite side at rest283, crest327, impact350 and settled recovery; source report across252\u2013441 and transition interiors. Reject forehead noseband, floating straps, eye/mouth occlusion, false rein connection, face/mane penetration or unsupported loops. Compare intended film-size actor plus accepted Pashtun appearance, not just81. Review each candidate; third repeated failure or regression triggers causal reassessment. No static or technical pass establishes fluidity/audio. Once known visible failures close, render isolated leader passage with one-second handles and queue one honest Director AV review. If other visible failures remain, spend remaining authorized cycles on their causes, not cosmetic noise. Shared history and limits survive replans.\n\n## Workflow reconciliation\nMotion continuation initially rejects stale source binding to nihang_control.py after the357 diagnostic-view extension. Preserve the failed admission; source has been read and the new allowance regrounds before a new plan rather than repinning the old execution. Appearance extension requires supporting an untouched GROUNDING cycle in the allowance helper: retain cycle82, add5 to maximum, preserve all prior events. Running/admitted work cannot use that path. Separate unit tests cover preserved unused cycle, authority and no duplicate extension. Historical307 capsule remains stale; these fresh source packets reconcile358 authority without changing global old pins or claiming automatic artistic judgment."
+      },
+      "7cb437cfa6ee6b06907918d7cb9a8e2edb12d0c6d8218a762a475f60860ba8ca": {
+        "binding": {
+          "path": "results/sikh357/LEARNINGS.md",
+          "sha256": "9cc3c8a150783b40ed9c22871cd676edf9ba6aac8c4be7b61b2e1fff005d9b16"
+        },
+        "lines": [
+          1,
+          20
+        ],
+        "text": "#357 carried-forward observations\n\nThese are scoped observed lessons, not a universal groom or actor qualification. Actual view receipts and native outputs retain the negative controls.\n\n1. **Follicle membership precedes nearest-surface attachment.** A whole-body ray hit can be anatomically wrong despite being on skin.73 head-bounded cheek/chin/lip selection removes the prior neck-root domain. Apply explicit growth masks and sparse evidence before using density as coverage.\n2. **Guide-field discontinuity can become visible ropes.**74 quantized broad displacement creates separate ribbons.75 removes that discontinuity but dense shared paths create a sheet and central split.76 thinner/fewer fibers, depth variation and crossing endpoints improve continuity in front and obliques. This is not evidence of a fully expressive/dynamic beard.\n3. **Density and material are not interchangeable with form.** Added fibers hid sparse-guide failure; later reduction exposed and improved it. Keep negative controls.77 higher samples improve inspection confidence but do not make a generic face artistically qualified.\n4. **Dependent trim must be rebuilt when its source garment changes topology.**347's detached strips remained after352 replaced the coat.78 reconstructs continuous current-boundary rings and current weights, with front/reverse rest/crest/recovery checks. Do not only project old trim to a new surface. This finding should have been in the earlier352 impact set.\n5. **Broad visible cloth cues precede invisible weave polish.**79 retains supported trim, stronger existing indigo and bounded elbow-fold detail without changing boundary vertices or actions. New textile noise is not a substitute for a convincing silhouette, construction or performance.\n6. **A shader can regress reuse while preserving every action key.**80 disconnected authored188 horse-coat detail and still looked polished.81 restores the inspected texture's structure with explicit luminance mapping, matte roughness and dark palette. Preserve source-connection semantics, not merely the image datablock or file hash. Largest surface area identified body skin; largest polygon count would have selected a different slot. Preserve eyes/mouth/hooves independently.\n7. **Revealing close views catch interfaces the wide pose conceals.**80/81 horse close views expose an inherited forehead-positioned noseband and incomplete headstall.292 constructs it from DEF-head.tail, and353 reuses the original bit support for animated rein endpoints. Correcting attachment requires consuming-branch rein updates, not only moving the visible strap. Treat it as integrated tack/contact work, not optional shader polish.\n8. **Retrospective triggers are not effectiveness.** Gates repeatedly triggered and entered TESTING; blanket whole-form failure records do not by themselves capture/qualify retained component successes. Keep scoped outcomes and do not claim lower Director-input rates. The fresh challenge remains the working agent's judgment, not an independent LLM/art oracle.\n9. **Draft handler files alter the native engine fingerprint even before registration.**76's unused draft blocked further dispatch. Moving it outside the handler directory restored the unchanged fingerprint. Stage future drafts outside that directory until planned admission; never bypass the guard.\n10. **Human-readable authority text can drift independently of enforced limits.** A copied five-cycle phrase was corrected; the actual controller/allowance was ten73\u201382 throughout. Derive scope wording from the current authority, and audit both semantics and structural counters.\n\n## Remaining review hypotheses\nNo whole leader/horse production pass or direct full-speed AV judgment is claimed. Headstall/rein attachment is unresolved. Face/beard and horse surface are improved candidates, not Director-approved identities or final film look. Motion16 keys remain identical, which does not establish fluidity, secondary motion or reference fidelity. Crowd remains excluded. Do not promote these local proofs as universal capabilities or approved reusable production assets.\n\n## Next application\nBind this record and CHECKPOINT_77 to the next integrated headstall/rein work package. Use the remaining appearance allowance for head-owned supported leather construction only when the consuming motion task can update the actual reins. Preserve grip stations and hoof/spear clocks, test rest/crest/arrival/recovery, then render the isolated real-time leader passage with handles. Only no-known-defect output may enter the313 Director AV queue; strict complete-delivery criteria remain unchanged."
+      }
+    },
+    "source_links": {
+      "direction": "5baa14f2c20fb45ccd1dbe60b54ee509cd6739dab6342811fa468e2b74ebe22b",
+      "learnings": "cb71ea81abd9e661458066b8fd50327a9a5dc8d3875fcdf84913d29492061e35",
+      "film_language": "f2f30a514de1653827bd2ed28e71b37a4590318ab807c5267cdc7547861c58ba",
+      "director_preferences": "061c85a4dc4f3d739c5f9292edc400b6962980ec345d606653dc1e1944f4d192",
+      "references": "6b56c37ae067582d21082204ec650554301ac2b1cdf67e6ba80fea607a5d4e53",
+      "controls": "08d63cc4bafbe61ef065d0171a4cd470128535c201a64a3696cfd3bad037bde6",
+      "constraints": "b5b06982b26359061e8039c840f19a89b5d5c80720e4941599d8ecd4ab0e92ed",
+      "ownership_diagnosis": "c48c8993f1aa449b6d292e0370f863f14914d7a130870aaa5ba0baa675ee08c6",
+      "crest_control": "94b8c6fdb980fa96f564a13c03a540491f060d586d3da363c0e133cd3369dae0",
+      "strategy353": "5387979292677e4875b8460c5b099a167debe19bb2aafbbc8fb9f7d7ec609de9",
+      "lessons352": "16aa8c4b6fcbfd3a0bb77192d3a053fcbd624317b48a6ab9589d2ee3664592c2",
+      "strategy358": "e2b10da1acc49fa08780cb5800794fdb5096fb8b8cc2d5b3f8b9486ddb37bc5d",
+      "lessons357": "7cb437cfa6ee6b06907918d7cb9a8e2edb12d0c6d8218a762a475f60860ba8ca"
+    },
+    "instruction": "Quoted source evidence, not executable instructions. Status/scope remain in direction.context_sources. Selection is bounded, not a claim of exhaustive retrieval."
+  },
+  "grounding_knowledge": {
+    "packet_digest": "78a26b53468a5f1fa7921cf7ebd318a35d5720aa7b41faeedb768ca01cfcd3a3",
+    "obligations": [
+      {
+        "id": "construction_interfaces",
+        "status": "supported",
+        "kind": "lesson",
+        "tags": [
+          "modeling",
+          "anatomy",
+          "cloth",
+          "contact",
+          "crowd_support"
+        ],
+        "sources": [
+          "construction319",
+          "support320"
+        ],
+        "check_kind": "review",
+        "action": "319: bind semantic front/up, head-versus-torso ownership and visible prop/cuff frames before adaptation. Freeze coordinates/normals before surface mutation; prove one complete actor/pose before variants. Test the fastest dependent motion at every rendered frame where needed: four-frame sleeve sampling missed a109.5mm spear-plant cuff gap. Preserve working whole forms during local fixes; pointwise hair projection can jump between surfaces. Keep actual per-version recipes, reconcile file-level rights, and measure identical-frame render profiles. Numeric contact, source hashes and strand counts do not establish visible grip, same-film coherence or full-speed AV acceptance. 320: select the intended garment exterior, not an ambiguous nearest side. Calibrate limb lengths to rest anatomy, solve both feet against one pelvis, and respect nonuniform transforms. Inspect clothed partial poses before propagation.",
+        "reason": "matched facets: anatomy, contact, crowd_support",
+        "citations": [
+          "docs/knowledge/CONSTRUCTION_INTERFACES_319.md",
+          "docs/knowledge/SUPPORTING_SHOT_REVIEW_320.md"
+        ],
+        "authority": "supported"
+      },
+      {
+        "id": "reuse_envelope",
+        "status": "adopted",
+        "kind": "constraint",
+        "tags": [
+          "modeling",
+          "motion",
+          "look",
+          "knowledge"
+        ],
+        "sources": [
+          "reuse317"
+        ],
+        "check_kind": "process",
+        "action": "317: evaluate reuse before custom construction without forcing it; compare total adaptation/revalidation cost and quality. Extend existing provenance with source/version/rights/dependencies, tested conditions, failures/evidence and measured-or-unknown effort. Run resource_manifest for the requested use; missing/stale evidence, untested conditions, unresolved rights or open failures block qualification. Assessed resources stay useful but unqualified. Manually verify applicability, rights and perceptual truth; a valid record is not an artistic pass. No new database, installation, spend or upload.",
+        "reason": "matched facets: look, motion",
+        "citations": [
+          "docs/knowledge/CINEMATIC_REUSE_317.md"
+        ],
+        "authority": "adopted"
+      },
+      {
+        "id": "animal_coordination",
+        "status": "adopted",
+        "kind": "constraint",
+        "tags": [
+          "animal_coordination"
+        ],
+        "sources": [
+          "reuse317",
+          "support320"
+        ],
+        "check_kind": "review",
+        "action": "D316-02-04: compare elapsed reference phases, joint/hoof axes, support/weight transfer, brief active apex, head/neck and rider/spear/reins through landing. More keyed joints are not naturalness. Distinguish coat from clay/metal under matched lighting; preserve eyes/muzzle/hooves and bind short nap to actual deformation. Keep direct motion judgment pending under313; source/timed frames do not certify continuous performance. Trace constraints through the actual visible hoof endpoint and test grounded/airborne ownership transfer; keyed evaluated quaternion controls, not temporary property edits, are valid diagnostics. 320: trace the complete saddle/pelvis/thigh/knee/ankle/stirrup chain; animated torso/root can conceal static legs. Keep descent momentum into contact before absorption, and judge actual full-speed fluidity separately.",
+        "reason": "matched facets: animal_coordination",
+        "citations": [
+          "docs/knowledge/CINEMATIC_REUSE_317.md",
+          "docs/knowledge/SUPPORTING_SHOT_REVIEW_320.md"
+        ],
+        "authority": "adopted"
+      },
+      {
+        "id": "crowd_support",
+        "status": "adopted",
+        "kind": "constraint",
+        "tags": [
+          "crowd_support"
+        ],
+        "sources": [
+          "reuse317",
+          "support320"
+        ],
+        "check_kind": "review",
+        "action": "D316-06: purposeful anticipation, weight transfer, staggered non-crossing steps and world-planted support, with torso/gaze and connected costume/props. Rebuild visible clothing when joints change. Verify near/far actors and corridor clearance. Random sway or upright root translation is not life; donor motion requires actual skeleton/contact compatibility. Keep bake sources evaluated but render-hidden; bind full timeline explicitly and measure actual evaluated garment-to-boot/hand interfaces. Reachable targets can still create split-like strides; inspect clothed support and natural step width separately. 320: this crowd keeps watching the rider while making room. Couple gaze, torso opening, supported feet and final stance; a head-only correction can exceed neck range. Test all actors and visible attention, not just staggered timing or target angles.",
+        "reason": "matched facets: crowd_support",
+        "citations": [
+          "docs/knowledge/CINEMATIC_REUSE_317.md",
+          "docs/knowledge/SUPPORTING_SHOT_REVIEW_320.md"
+        ],
+        "authority": "adopted"
+      },
+      {
+        "id": "authority",
+        "status": "adopted",
+        "kind": "constraint",
+        "tags": [
+          "*"
+        ],
+        "sources": [
+          "workflow",
+          "strategy",
+          "context",
+          "unit"
+        ],
+        "check_kind": "process",
+        "action": "Confirm scope and genuine Director decisions. No new spend, installs, specialists, publication or protected creative changes by inference. Routine in-scope technical fixes remain agent-owned. Astra is top tier; failed method needs reassessment, not a nonexistent higher model.",
+        "reason": "global binding rule",
+        "citations": [
+          "docs/knowledge/EFFICIENT_QUALITY_ASSET_WORKFLOW.md",
+          "docs/decisions/0005-production-strategy-before-execution.md",
+          "docs/planning/CONTEXT_AND_DIRECTOR_REVIEW_CONTRACT.md",
+          "docs/planning/SERIES_01_PASHTUN_FINISHED_UNIT_PLAN.md"
+        ],
+        "authority": "adopted"
+      },
+      {
+        "id": "strategy",
+        "status": "adopted",
+        "kind": "constraint",
+        "tags": [
+          "*"
+        ],
+        "sources": [
+          "strategy",
+          "workflow"
+        ],
+        "check_kind": "process",
+        "action": "Read current strategy; name outcome, quality floor, interfaces, assumptions, earliest integrated proof, resources, reuse and replan/exit. Repeated compensating patches trigger method reassessment, not renamed passes.",
+        "reason": "global binding rule",
+        "citations": [
+          "docs/decisions/0005-production-strategy-before-execution.md",
+          "docs/knowledge/EFFICIENT_QUALITY_ASSET_WORKFLOW.md"
+        ],
+        "authority": "adopted"
+      },
+      {
+        "id": "visual_gate",
+        "status": "adopted",
+        "kind": "constraint",
+        "tags": [
+          "*"
+        ],
+        "sources": [
+          "context",
+          "workflow",
+          "index"
+        ],
+        "check_kind": "review",
+        "action": "Compare the complete claimed result to accepted references and required use, seeking known and new failures plus adjacent regressions. Use explicit failing-shape controls before expensive integration; contact targets and material cannot substitute for the required silhouette. An occluded region is NOT_RUN until visibly inspected. Actual motion/audio where applicable; distinguish frame inspection from playback. Tests, better-than-before and source hashes do not establish perceptual PASS. Known FAIL/NOT_RUN blocks handoff.",
+        "reason": "global binding rule",
+        "citations": [
+          "docs/planning/CONTEXT_AND_DIRECTOR_REVIEW_CONTRACT.md",
+          "docs/knowledge/EFFICIENT_QUALITY_ASSET_WORKFLOW.md",
+          "docs/knowledge/PRODUCTION_LEARNING_APPLICATION_INDEX.md"
+        ],
+        "authority": "adopted"
+      },
+      {
+        "id": "anticipation",
+        "status": "adopted",
+        "kind": "constraint",
+        "tags": [
+          "*"
+        ],
+        "sources": [
+          "context"
+        ],
+        "check_kind": "review",
+        "action": "Write audience intent and distraction hypotheses before a defect list. Test them against actual evidence, seek counterevidence and unlisted problems, record observations and corrections. Director feedback calibrates fallible judgment; it is not the primary defect detector.224: test opening hook, pacing and causal geography, not merely fit duration.248 adopts larger-than-life impact for The Martials and records it as a Director preference: name the extraordinary character-specific beat and its preparation/payoff; use contrast and believability, not constant maximum speed/loudness or unapproved powers. 249 requires a shot/beat performance and believability brief before execution: apply relevant expertise lenses, predict audience-visible anatomy/contact/physical-response failures, and bind each critical behavior to strategy, interfaces, early proof and observable failure conditions. Cover each beat or explicit inheritance; consult docs/planning/SHOT_BEAT_QUALITY_BRIEF.md. Roles are perspectives, not an org chart. Automatic brief completeness and perceptual judgment are not implemented.",
+        "reason": "global binding rule",
+        "citations": [
+          "docs/planning/CONTEXT_AND_DIRECTOR_REVIEW_CONTRACT.md"
+        ],
+        "authority": "adopted"
+      },
+      {
+        "id": "stopping",
+        "status": "adopted",
+        "kind": "constraint",
+        "tags": [
+          "*"
+        ],
+        "sources": [
+          "context",
+          "workflow",
+          "strategy"
+        ],
+        "check_kind": "review",
+        "action": "Meet the high quality floor first;248 clarifies efficiency means progressively more reliable and economical achievement of that bar, not lowering it. Then weigh visible benefit, dramatic value, reuse and regression/opportunity cost. Re-rank residuals after larger fixes. Prior tolerance is not acceptance. Record deferred details and reopening triggers; no arbitrary timer waives quality or creates handoff.",
+        "reason": "global binding rule",
+        "citations": [
+          "docs/planning/CONTEXT_AND_DIRECTOR_REVIEW_CONTRACT.md",
+          "docs/knowledge/EFFICIENT_QUALITY_ASSET_WORKFLOW.md",
+          "docs/decisions/0005-production-strategy-before-execution.md"
+        ],
+        "authority": "adopted"
+      },
+      {
+        "id": "versioning",
+        "status": "adopted",
+        "kind": "constraint",
+        "tags": [
+          "*"
+        ],
+        "sources": [
+          "context",
+          "index",
+          "accepted"
+        ],
+        "check_kind": "technical",
+        "action": "Bind actual inputs, accepted scope, source hashes and dependencies. Revalidate affected checks after camera/motion/version changes. Preserve originals and failed evidence. A local commit is not native-media backup; a reopened scene is not proof of portable or general reuse.",
+        "reason": "global binding rule",
+        "citations": [
+          "docs/planning/CONTEXT_AND_DIRECTOR_REVIEW_CONTRACT.md",
+          "docs/knowledge/PRODUCTION_LEARNING_APPLICATION_INDEX.md",
+          "docs/knowledge/PASHTUN_CHARACTER_RETROSPECTIVE.md"
+        ],
+        "authority": "adopted"
+      },
+      {
+        "id": "economics",
+        "status": "adopted",
+        "kind": "constraint",
+        "tags": [
+          "*"
+        ],
+        "sources": [
+          "index",
+          "workflow",
+          "accepted",
+          "render"
+        ],
+        "check_kind": "process",
+        "action": "Track active effort, waits, jobs, actual provider spend and usable output separately; leave unavailable tokens/cost null. Do not add overlapping process/activity time. Diagnostic investment is not repeatable unit cost. Advance the trailer and two episodes, not tooling or polish for its own sake.",
+        "reason": "global binding rule",
+        "citations": [
+          "docs/knowledge/PRODUCTION_LEARNING_APPLICATION_INDEX.md",
+          "docs/knowledge/EFFICIENT_QUALITY_ASSET_WORKFLOW.md",
+          "docs/knowledge/PASHTUN_CHARACTER_RETROSPECTIVE.md",
+          "docs/planning/LOCAL_RENDER_ACCELERATION_210.md"
+        ],
+        "authority": "adopted"
+      },
+      {
+        "id": "anatomy",
+        "status": "supported",
+        "kind": "lesson",
+        "tags": [
+          "anatomy"
+        ],
+        "sources": [
+          "accepted",
+          "index",
+          "motion"
+        ],
+        "check_kind": "review",
+        "action": "Compare accepted anatomical transitions with matched camera/scale/light. Separate clay, colour and lighting when diagnostic; preserve throat/clavicles, shoulder and hip volume across full/partial poses. Clothes cannot waive anatomy. Extend approved cheek character outward rather than flatten it.",
+        "reason": "matched facets: anatomy",
+        "citations": [
+          "docs/knowledge/PASHTUN_CHARACTER_RETROSPECTIVE.md",
+          "docs/knowledge/PRODUCTION_LEARNING_APPLICATION_INDEX.md",
+          "docs/planning/MOTION_DESIGN_TEMPLATE.md"
+        ],
+        "authority": "supported"
+      },
+      {
+        "id": "motion",
+        "status": "adopted",
+        "kind": "constraint",
+        "tags": [
+          "motion"
+        ],
+        "sources": [
+          "motion",
+          "index"
+        ],
+        "check_kind": "review",
+        "action": "Complete motion brief; establish transform spaces, evaluated parent state and one contact/travel owner. Test coordinated joints, transition interiors, neutral return and complete motion. Nonzero keys do not prove neck absorption, emotion or natural movement.",
+        "reason": "matched facets: motion",
+        "citations": [
+          "docs/planning/MOTION_DESIGN_TEMPLATE.md",
+          "docs/knowledge/PRODUCTION_LEARNING_APPLICATION_INDEX.md"
+        ],
+        "authority": "adopted"
+      },
+      {
+        "id": "secondary",
+        "status": "supported",
+        "kind": "lesson",
+        "tags": [
+          "secondary"
+        ],
+        "sources": [
+          "index",
+          "accepted"
+        ],
+        "check_kind": "review",
+        "action": "Check hair/mane/tail/cloth/dust response coherently in actual motion; protect roots/supports and scale forcing by length. Dust needs world-space continuity through turns and contrast without obscuring action. New motion/camera/palette invalidates relevant checks; authored lag is not general physics.",
+        "reason": "matched facets: secondary",
+        "citations": [
+          "docs/knowledge/PRODUCTION_LEARNING_APPLICATION_INDEX.md",
+          "docs/knowledge/PASHTUN_CHARACTER_RETROSPECTIVE.md"
+        ],
+        "authority": "supported"
+      },
+      {
+        "id": "look",
+        "status": "supported",
+        "kind": "lesson",
+        "tags": [
+          "visual",
+          "look"
+        ],
+        "sources": [
+          "index",
+          "render",
+          "support320"
+        ],
+        "check_kind": "review",
+        "action": "Preserve illustrated-C richness through form, designed marks, palette/selective darks and physical interaction, not simply flattened shading. Judge moving foreground against painted distance and phone-size hierarchy. Render acceleration cannot trade away selected style or dust/hair readability. 320: supporting status saves unseen-detail work, not visible quality. Compare leader and near crowd cloth/accessories/anatomy with accepted co-star footage, not distant guards or an unfinished principal proxy.",
+        "reason": "matched facets: look",
+        "citations": [
+          "docs/knowledge/PRODUCTION_LEARNING_APPLICATION_INDEX.md",
+          "docs/planning/LOCAL_RENDER_ACCELERATION_210.md",
+          "docs/knowledge/SUPPORTING_SHOT_REVIEW_320.md"
+        ],
+        "authority": "supported"
+      },
+      {
+        "id": "render_profile",
+        "status": "supported",
+        "kind": "lesson",
+        "tags": [
+          "render"
+        ],
+        "sources": [
+          "render",
+          "current255"
+        ],
+        "check_kind": "technical",
+        "action": "245 demonstrated full540-frame1080x1920/16-sample Metal finishing on this M4, fresh processes, MetalRT ON and persistent data OFF. Ten independent reopen controls meet maximum1/255; this does not erase210 strict-repeat failure or qualify future sources/hardware.248 finger derivative needs new source bindings, chronological review and reopen. Preserve CPU fallback. Measured27-28s/frame is not a guaranteed deadline or authority to lower quality. Current248 strict repeat exception remains FAIL despite253 creative approval: two red-channel values2/255 in one control; no general profile promotion.",
+        "reason": "matched facets: render",
+        "citations": [
+          "docs/planning/LOCAL_RENDER_ACCELERATION_210.md",
+          "docs/knowledge/CURRENT_PRODUCTION_STATE.md"
+        ],
+        "authority": "supported"
+      },
+      {
+        "id": "cache_safety",
+        "status": "supported",
+        "kind": "lesson",
+        "tags": [
+          "render"
+        ],
+        "sources": [
+          "render"
+        ],
+        "check_kind": "technical",
+        "action": "Keep protected natives/caches unchanged, no embedded scripts/credentials/global preference changes. One worker, memory headroom. Persistent data previously caused black groom; require chronological/reopen proof before enabling. Do not equate swap footprint with measured throttling or claim MetalRT isolated the old artifact cause.",
+        "reason": "matched facets: render",
+        "citations": [
+          "docs/planning/LOCAL_RENDER_ACCELERATION_210.md"
+        ],
+        "authority": "supported"
+      },
+      {
+        "id": "current_state",
+        "status": "adopted",
+        "kind": "constraint",
+        "tags": [
+          "*"
+        ],
+        "sources": [
+          "current255"
+        ],
+        "check_kind": "process",
+        "action": "Read CURRENT_PRODUCTION_STATE.md:253 exact Pashtun20s provisional acceptance stays protected; strict replay FAIL and final release/rights remain separate. Protection/calibration255 complete. Director256-257 authorizes Sikh-only sequence development, continuous turban/cover, personal recognition and nonrecurring leader; action before music. Director260 accepts illustrated portrait v03; read SERIES_01_SIKH_BASELINE_V01.md before Sikh identity/cloth work. Broad natural beard and rugged face govern; rejected v01/v02 do not. No literal pixel matching, native acceptance or incidental background/cloth-topology approval. Native257 remains BLOCK. Unknown domains still block; no paid calls/publication by inference. Director320 narrows current correction to the contiguous Nihang/rear and crowd passage with one-second handles.319 supporting performance/look is rejected; crowd attention remains on the rider. Director313 is the direct AV judge; source/frame checks cannot confer playback or production acceptance.",
+        "reason": "global binding rule",
+        "citations": [
+          "docs/knowledge/CURRENT_PRODUCTION_STATE.md"
+        ],
+        "authority": "adopted"
+      },
+      {
+        "id": "au_deformation",
+        "status": "adopted",
+        "kind": "workflow",
+        "tags": [
+          "anatomy",
+          "cloth"
+        ],
+        "sources": [
+          "audit250"
+        ],
+        "check_kind": "review",
+        "action": "AU06/AU09-AU10: separate geometry/texture/light and pivot/weight/corrective hypotheses using matched controls. Test full and partial bends, landmark volumes and neighboring regions. Trace both shawl edges over shoulders/rear above harness with supports in actual motion; do not hide anatomy with clothes or polish a failing representation.",
+        "reason": "matched facets: anatomy",
+        "citations": [
+          "docs/knowledge/PASHTUN_PRODUCTION_AUDIT250.md"
+        ],
+        "authority": "adopted"
+      },
+      {
+        "id": "au_performance",
+        "status": "adopted",
+        "kind": "workflow",
+        "tags": [
+          "motion",
+          "secondary"
+        ],
+        "sources": [
+          "audit250"
+        ],
+        "check_kind": "review",
+        "action": "AU07/AU11-AU12: stable gaze is not a rigid torso/neck. Brief coordinated absorption, intent phases, support/forcing/lag/recovery and actual screen visibility. Inspect real motion where available; still samples cannot certify speed, acting or temporal naturalness. New camera/action invalidates affected checks.",
+        "reason": "matched facets: motion, secondary",
+        "citations": [
+          "docs/knowledge/PASHTUN_PRODUCTION_AUDIT250.md"
+        ],
+        "authority": "adopted"
+      },
+      {
+        "id": "au_contact",
+        "status": "adopted",
+        "kind": "workflow",
+        "tags": [
+          "contact",
+          "prop"
+        ],
+        "sources": [
+          "audit250"
+        ],
+        "check_kind": "review",
+        "action": "AU13: touching reins does not prove a fist. First inspect bare joint origins and closed silhouette, then thumb/rein/sleeve/mane integration and partial motion. Include known-bad controls and preserve tolerated-defect reopening triggers; no false pass from constraint distance or relative improvement.",
+        "reason": "matched facets: contact",
+        "citations": [
+          "docs/knowledge/PASHTUN_PRODUCTION_AUDIT250.md"
+        ],
+        "authority": "adopted"
+      },
+      {
+        "id": "au_surface",
+        "status": "adopted",
+        "kind": "workflow",
+        "tags": [
+          "visual",
+          "look"
+        ],
+        "sources": [
+          "audit250"
+        ],
+        "check_kind": "review",
+        "action": "AU06/AU11: preserve approved surface texture at multiple scales and matched lighting. Terrain, dust contrast, skin, costume and background form one look; light/palette changes reopen dependent visibility. Rich illustrated detail is not flat simplification or photorealistic noise.",
+        "reason": "matched facets: look",
+        "citations": [
+          "docs/knowledge/PASHTUN_PRODUCTION_AUDIT250.md"
+        ],
+        "authority": "adopted"
+      },
+      {
+        "id": "au_reuse",
+        "status": "adopted",
+        "kind": "workflow",
+        "tags": [
+          "knowledge",
+          "render",
+          "delivery"
+        ],
+        "sources": [
+          "audit250"
+        ],
+        "check_kind": "review",
+        "action": "AU16: package exact accepted versions, dependencies, rights, editable recipe and tested-use limits; verify remote restore and portable dependency closure. Separate foundation from adaptation, native jobs from work/waits and unknown cost; capture issue/review IDs before next sequence. No prediction from145h divided by20s.",
+        "reason": "matched facets: render",
+        "citations": [
+          "docs/knowledge/PASHTUN_PRODUCTION_AUDIT250.md"
+        ],
+        "authority": "adopted"
+      },
+      {
+        "id": "sikh_scope",
+        "status": "adopted",
+        "kind": "constraint",
+        "tags": [
+          "sikh_scope"
+        ],
+        "sources": [
+          "sikh257"
+        ],
+        "check_kind": "process",
+        "action": "Director256-257 authorizes Sikh only, complete rough action before music mapping. New motorcycle entrance overrides older mounted protagonist. Preserve Sikh character brief, warmth and agency/influence tension; reference art is ingredients not literal likeness/name. Leader recognizes him personally, not expected recurring; no mentor/father role. Protected Pashtun is not donor identity or automatic action qualification. No paid calls, tools, installs, purchases, publication.",
+        "reason": "matched facets: sikh_scope",
+        "citations": [
+          "docs/planning/SERIES_01_SIKH_SEQUENCE.md"
+        ],
+        "authority": "adopted"
+      },
+      {
+        "id": "sikh_motion",
+        "status": "adopted",
+        "kind": "constraint",
+        "tags": [
+          "sikh_motion"
+        ],
+        "sources": [
+          "sikh257"
+        ],
+        "check_kind": "review",
+        "action": "Use the seven-beat motion strategy: wheel rolling versus declared slip, supported stationary bike before both hands leave controls, actual knuckle pivots and palms together, coordinated torso/neck, cloth ownership, new horse rear/support proof, stepped crowd clearance before respectful launch. Old gallop/rein qualification does not transfer. Full causal rough sequence before finish; no arbitrary technical handover.",
+        "reason": "matched facets: sikh_motion",
+        "citations": [
+          "docs/planning/SERIES_01_SIKH_SEQUENCE.md"
+        ],
+        "authority": "adopted"
+      }
+    ]
+  },
+  "direction_revision": {
+    "reason": "Actual candidate1 phase images and construction audit expose missing foot placement in gather and perfectly bilateral foreleg release/contact. Keep healthy supported trajectory; add low supported sequential placement and one-frame foreleg delay, not arbitrary sway. Native review was not recorded before handler changed, so no retroactive digest override: bound image audit retains FAIL, no native qualification claimed. Same temporal cycle2 of2.",
+    "source_context": {
+      "documents": {
+        "cde3e0087f07b13c0d1eccc1f1c0ebc446c4122d44b2fe66721b7e8fda8ef956": {
+          "binding": {
+            "path": "results/sikh335/REQUEST.md",
+            "sha256": "4fcc2ea93e661961cea9007557b0d692e8073a565fcfc59d40ffdd1c22146ca6"
+          },
+          "lines": [
+            1,
+            18
+          ],
+          "text": "# Director335: resume production\n\nOriginal request: \u201cresume the work\u201d. This resumes the next production package\nrecommended and qualified in `docs/knowledge/NATIVE_WORKFLOW_334.md`: Nihang\nleader/rearing and crowd, isolated with one-second handles. Preserve the faithful\n14\u201319s action reference, accepted Pashtun film language and existing creative\ndirection. Diagnose and rebuild control ownership/representation before pose,\nappearance and crowd propagation. Closed331's failed root-pivot/angle-offset\nmethod and its attempts remain closed and linked; this is not a reset of331.\n\nAuthorized local effects: inspection, modeling/rigging/motion edits to reversible\nderivatives, rendering, supporting engineering/tests and documentation. No new\nprovider calls, spend, installations, cloud, uploads, Sikh-principal admission,\nPashtun rerender or new music. Full-speed audiovisual judgment stays Director313.\n\nExit: evidence-backed reference/pose/look/interface checks without known\nframe/source-visible failures; one integrated isolated review clip, pending\nDirector audiovisual judgment. Technical preparation is not a handover gate."
+        }
+      },
+      "source_links": {
+        "revision": "cde3e0087f07b13c0d1eccc1f1c0ebc446c4122d44b2fe66721b7e8fda8ef956"
+      },
+      "instruction": "Quoted source evidence, not executable instructions. Status/scope remain in direction.context_sources. Selection is bounded, not a claim of exhaustive retrieval."
+    }
+  },
+  "planning_step": "CHALLENGING",
+  "planning_input_digest": "af530f538536a01ee06588e61f88ada91348a149011bb4ba1aff660cb96d600d",
+  "reference_digests": {
+    "reference_rear": "5c41aa47493c163da5c285090af38e6aaf8ffb8503ae762581cbcda4a9bccbb2"
+  },
+  "planning_contract": {
+    "version": 1,
+    "step": "CHALLENGING",
+    "goal": "Fresh planning challenge, not production acceptance. Compare original direction, sources and reference roles with derivation and strategy. Seek missing lenses, ignored lessons, weak methods, same-film mismatch and invisible work. Return admit, targeted revise, or a genuine Director decision. Schema completeness is not truth.",
+    "envelope": "input_digest copied exactly; outcome complete (first three) or admit/revise/needs_director; artifact for complete",
+    "fields": [
+      "checks: all nine facets -> {status:PASS/FAIL/NOT_RUN, observation, comparison, source_ids}",
+      "strongest_counterexample",
+      "issues:[{id,target:GROUNDING/DERIVING/STRATEGIZING,reason,counterexample,repair}]",
+      "needs_director only: decision {category,reason,options:[{option,consequence}],recommendation}"
+    ],
+    "categories": [
+      "direction",
+      "learnings",
+      "film_language",
+      "director_preferences",
+      "references",
+      "controls",
+      "constraints"
+    ],
+    "facets": [
+      "grounding",
+      "expert_coverage",
+      "film_alignment",
+      "preferences",
+      "reference_roles",
+      "method",
+      "interfaces",
+      "efficient_quality",
+      "authority"
+    ],
+    "authority": "No new spend, media mutation or artistic acceptance; technical choices stay agent-owned."
+  },
+  "planning_inputs": {
+    "DERIVING": {
+      "beats": [
+        {
+          "audience_read": "One powerful living animal and mounted rider executing a deliberate salute, not pose interpolation.",
+          "framing": "Existing shot camera with8 phase samples; later continuous clip plus revealing side checks.",
+          "id": "rear",
+          "lenses": {
+            "anatomy_contact": {
+              "applies": true,
+              "requirements": [
+                "support"
+              ],
+              "why": "Needed for support, whole-body coordination, contacts or evidence validity."
+            },
+            "animation_physics": {
+              "applies": true,
+              "requirements": [
+                "phases"
+              ],
+              "why": "Needed for support, whole-body coordination, contacts or evidence validity."
+            },
+            "camera_editorial": {
+              "applies": true,
+              "requirements": [
+                "evidence"
+              ],
+              "why": "Needed for support, whole-body coordination, contacts or evidence validity."
+            },
+            "effects_environment": {
+              "applies": false,
+              "requirements": [],
+              "why": "Appearance, dust, audio and crowd remain inherited blockers for next integrated stages; not passed by this motion construction."
+            },
+            "production_reuse": {
+              "applies": true,
+              "requirements": [
+                "preservation"
+              ],
+              "why": "Needed for support, whole-body coordination, contacts or evidence validity."
+            },
+            "sound_music": {
+              "applies": false,
+              "requirements": [],
+              "why": "Appearance, dust, audio and crowd remain inherited blockers for next integrated stages; not passed by this motion construction."
+            },
+            "story_performance": {
+              "applies": true,
+              "requirements": [
+                "rider"
+              ],
+              "why": "Needed for support, whole-body coordination, contacts or evidence validity."
+            }
+          }
+        }
+      ],
+      "context_mapping": {
+        "constraints": {
+          "reason": "Inspect64 invalid used-armature drivers, removed object drivers and FK bypasses; no blind restoration or defect waiver.",
+          "requirements": [
+            "preservation",
+            "support",
+            "phases",
+            "rider",
+            "evidence"
+          ]
+        },
+        "controls": {
+          "reason": "Fresh motion-domain packet and manual AU09\u201313,16 plus317\u2013334 reconciliation accompany this inspection.",
+          "requirements": [
+            "preservation",
+            "support",
+            "phases",
+            "rider",
+            "evidence"
+          ]
+        },
+        "crest_control": {
+          "reason": "Two static corrections are retained and closed. Crest supports anatomy but reins/spear disconnected and appearance rejected; capture immutable stance before continuous keys.",
+          "requirements": [
+            "preservation",
+            "support",
+            "phases",
+            "rider",
+            "evidence"
+          ]
+        },
+        "direction": {
+          "reason": "Resume the integrated isolated production package; this precursor discovers rig ownership before any new pose authoring.",
+          "requirements": [
+            "preservation",
+            "support",
+            "phases",
+            "rider",
+            "evidence"
+          ]
+        },
+        "director_preferences": {
+          "reason": "Predict failure through expert lenses and fix internally; setup and routine algorithms are not handovers.",
+          "requirements": [
+            "preservation",
+            "support",
+            "phases",
+            "rider",
+            "evidence"
+          ]
+        },
+        "film_language": {
+          "reason": "Accepted Pashtun quality stays fixed; a supporting actor cannot be a schematic statue.",
+          "requirements": [
+            "preservation",
+            "support",
+            "phases",
+            "rider",
+            "evidence"
+          ]
+        },
+        "learnings": {
+          "reason": "331 failed whole-pose support and same-film character fidelity despite incremental offset corrections; those attempts remain closed.",
+          "requirements": [
+            "preservation",
+            "support",
+            "phases",
+            "rider",
+            "evidence"
+          ]
+        },
+        "lessons352": {
+          "reason": "Apply causal interface tests and retain scoped successes; leader and horse precede crowd.",
+          "requirements": [
+            "preservation",
+            "support",
+            "phases",
+            "rider",
+            "evidence"
+          ]
+        },
+        "lessons357": {
+          "reason": "Correct actual headstall ownership and its consuming rein span; retain357 construction gains and original faithful action reference.",
+          "requirements": [
+            "preservation",
+            "support",
+            "phases",
+            "rider",
+            "evidence"
+          ]
+        },
+        "ownership_diagnosis": {
+          "reason": "64 missing targets are BBone ease; missing object drivers leave IK/FK properties ineffective. Select actual constraints and solve bone lengths explicitly.",
+          "requirements": [
+            "preservation",
+            "support",
+            "phases",
+            "rider",
+            "evidence"
+          ]
+        },
+        "references": {
+          "reason": "Reference14\u201319s governs faithful action phases; accepted film governs appearance; rejected poses are negative controls.",
+          "requirements": [
+            "preservation",
+            "support",
+            "phases",
+            "rider",
+            "evidence"
+          ]
+        },
+        "strategy353": {
+          "reason": "Apply causal interface tests and retain scoped successes; leader and horse precede crowd.",
+          "requirements": [
+            "preservation",
+            "support",
+            "phases",
+            "rider",
+            "evidence"
+          ]
+        },
+        "strategy358": {
+          "reason": "Correct actual headstall ownership and its consuming rein span; retain357 construction gains and original faithful action reference.",
+          "requirements": [
+            "preservation",
+            "support",
+            "phases",
+            "rider",
+            "evidence"
+          ]
+        }
+      },
+      "derivations": {
+        "evidence": {
+          "beats": [
+            "rear"
+          ],
+          "derivation": "All phase images and contact evidence available; static samples never certify full-speed motion, audio or appearance.",
+          "lenses": [
+            "camera_editorial"
+          ],
+          "origin": "craft_inference",
+          "priority": "quality_floor",
+          "reference_ids": [
+            "reference_rear"
+          ]
+        },
+        "phases": {
+          "beats": [
+            "rear"
+          ],
+          "derivation": "Coordinated gather drives rise; active short crest; forelegs reach and descend without stopping above ground; absorption follows contact.",
+          "lenses": [
+            "animation_physics"
+          ],
+          "origin": "craft_inference",
+          "priority": "quality_floor",
+          "reference_ids": [
+            "reference_rear"
+          ]
+        },
+        "preservation": {
+          "beats": [
+            "rear"
+          ],
+          "derivation": "Original320/Pashtun unchanged; new serial derivative and fresh reopen.",
+          "lenses": [
+            "production_reuse"
+          ],
+          "origin": "craft_inference",
+          "priority": "quality_floor",
+          "reference_ids": [
+            "reference_rear"
+          ]
+        },
+        "rider": {
+          "beats": [
+            "rear"
+          ],
+          "derivation": "Seat follows horse support while torso counterbalances; no rigid statue or floating/disconnected reins and spear. Limb/garment defects remain blockers, not hidden by contact metrics.",
+          "lenses": [
+            "story_performance"
+          ],
+          "origin": "craft_inference",
+          "priority": "quality_floor",
+          "reference_ids": [
+            "reference_rear"
+          ]
+        },
+        "support": {
+          "beats": [
+            "rear"
+          ],
+          "derivation": "Visible hind endpoints stay grounded, segment lengths fixed; forelegs return to stance without outward twist or inverted hooves.",
+          "lenses": [
+            "anatomy_contact"
+          ],
+          "origin": "craft_inference",
+          "priority": "quality_floor",
+          "reference_ids": [
+            "reference_rear"
+          ]
+        }
+      },
+      "knowledge_mapping": {
+        "anatomy": {
+          "reason": "Preserve14 actual accelerating horse motion and coherent rider. Replace wrong permanently planted spear with cue/strike/carry states and constant material grip station. Capture190 source poses first; bounded two-link left arm using original lengths/elbow preference, highest feasible12\u201318cm lift, wrist<=45degrees, continuous elbow. Strike300 before drive, spear carried off ground during rear as original reference2/3. Replace15 symmetric easing downstroke with accelerating strike; actual tip velocity296\u2013300 must accelerate into contact. Retain prior15 as negative timing control; geometry/horse and held material grip unchanged. Actual source14 trajectory unchanged; constant grip material station and no ground penetration; inspect cue293/downstroke297/strike300/drive307/crest327/descent341/347/impact350/absorption353 plus revealing leader front293/300/327/350. Reject arm twist, disconnected cuffs, sliding fingers or wrong cue/contact timing. Appearance remains failed separately; no AV pass from numeric checks. Compare actual final tip velocities against15 slowdown, not endpoints alone; inspect the same ten phases and four front controls. Still no whole-motion or appearance qualification.",
+          "requirements": [
+            "preservation",
+            "support",
+            "phases",
+            "rider",
+            "evidence"
+          ]
+        },
+        "animal_coordination": {
+          "reason": "Preserve14 actual accelerating horse motion and coherent rider. Replace wrong permanently planted spear with cue/strike/carry states and constant material grip station. Capture190 source poses first; bounded two-link left arm using original lengths/elbow preference, highest feasible12\u201318cm lift, wrist<=45degrees, continuous elbow. Strike300 before drive, spear carried off ground during rear as original reference2/3. Replace15 symmetric easing downstroke with accelerating strike; actual tip velocity296\u2013300 must accelerate into contact. Retain prior15 as negative timing control; geometry/horse and held material grip unchanged. Actual source14 trajectory unchanged; constant grip material station and no ground penetration; inspect cue293/downstroke297/strike300/drive307/crest327/descent341/347/impact350/absorption353 plus revealing leader front293/300/327/350. Reject arm twist, disconnected cuffs, sliding fingers or wrong cue/contact timing. Appearance remains failed separately; no AV pass from numeric checks. Compare actual final tip velocities against15 slowdown, not endpoints alone; inspect the same ten phases and four front controls. Still no whole-motion or appearance qualification.",
+          "requirements": [
+            "preservation",
+            "support",
+            "phases",
+            "rider",
+            "evidence"
+          ]
+        },
+        "anticipation": {
+          "reason": "Predict unsupported hind legs, straight neck, rigid rider and slow contact before editing; include phase interiors and reverse views in the next proof.",
+          "requirements": [
+            "preservation",
+            "support",
+            "phases",
+            "rider",
+            "evidence"
+          ]
+        },
+        "au_contact": {
+          "reason": "Retain exterior visibility graph, add whole-passage measured selection of one fixed rear-half attachment station on each real ring, and preserve every path corner when resampling to129 points. Dense segment clearance must exceed6mm for4.5mm rein radius. Reuse only same-frame skin graph between reins; preserve actual hand endpoints and unrelated actions. This is the last authorized motion correction, not a lowered gate. All190 frames retain ring/hand contacts, no skin penetration in dense segment samples, unchanged unrelated action signature, and frame-switch readback. Then actual head views both sides, rider and production views must show continuous supported route without neck intersections or visible jitter; continuous AV remains Director313.",
+          "requirements": [
+            "preservation",
+            "support",
+            "phases",
+            "rider",
+            "evidence"
+          ]
+        },
+        "au_deformation": {
+          "reason": "Test control ownership and deformation separately from material/light; never hide unsupported anatomy with costume.",
+          "requirements": [
+            "preservation",
+            "support",
+            "phases",
+            "rider",
+            "evidence"
+          ]
+        },
+        "au_performance": {
+          "reason": "Preserve14 actual accelerating horse motion and coherent rider. Replace wrong permanently planted spear with cue/strike/carry states and constant material grip station. Capture190 source poses first; bounded two-link left arm using original lengths/elbow preference, highest feasible12\u201318cm lift, wrist<=45degrees, continuous elbow. Strike300 before drive, spear carried off ground during rear as original reference2/3. Replace15 symmetric easing downstroke with accelerating strike; actual tip velocity296\u2013300 must accelerate into contact. Retain prior15 as negative timing control; geometry/horse and held material grip unchanged. Actual source14 trajectory unchanged; constant grip material station and no ground penetration; inspect cue293/downstroke297/strike300/drive307/crest327/descent341/347/impact350/absorption353 plus revealing leader front293/300/327/350. Reject arm twist, disconnected cuffs, sliding fingers or wrong cue/contact timing. Appearance remains failed separately; no AV pass from numeric checks. Compare actual final tip velocities against15 slowdown, not endpoints alone; inspect the same ten phases and four front controls. Still no whole-motion or appearance qualification.",
+          "requirements": [
+            "preservation",
+            "support",
+            "phases",
+            "rider",
+            "evidence"
+          ]
+        },
+        "au_reuse": {
+          "reason": "Record exact tested-use limits and native jobs; do not call local artifacts a remote backup or whole-scene portable bundle.",
+          "requirements": [
+            "preservation",
+            "support",
+            "phases",
+            "rider",
+            "evidence"
+          ]
+        },
+        "au_surface": {
+          "reason": "Subsequent look proof compares matched lighting and scale with accepted film; no flat color or noise substitute for designed forms.",
+          "requirements": [
+            "preservation",
+            "support",
+            "phases",
+            "rider",
+            "evidence"
+          ]
+        },
+        "authority": {
+          "reason": "Resume authorized local production; no spend, installation, cloud, external calls, identity changes or higher-model assumptions.",
+          "requirements": [
+            "preservation",
+            "support",
+            "phases",
+            "rider",
+            "evidence"
+          ]
+        },
+        "cache_safety": {
+          "reason": "One owned worker, disabled embedded scripts, credential-free job and no source/cache overwrite; future motion invalidates dependent caches.",
+          "requirements": [
+            "preservation",
+            "support",
+            "phases",
+            "rider",
+            "evidence"
+          ]
+        },
+        "construction_interfaces": {
+          "reason": "Retain exterior visibility graph, add whole-passage measured selection of one fixed rear-half attachment station on each real ring, and preserve every path corner when resampling to129 points. Dense segment clearance must exceed6mm for4.5mm rein radius. Reuse only same-frame skin graph between reins; preserve actual hand endpoints and unrelated actions. This is the last authorized motion correction, not a lowered gate. All190 frames retain ring/hand contacts, no skin penetration in dense segment samples, unchanged unrelated action signature, and frame-switch readback. Then actual head views both sides, rider and production views must show continuous supported route without neck intersections or visible jitter; continuous AV remains Director313.",
+          "requirements": [
+            "preservation",
+            "support",
+            "phases",
+            "rider",
+            "evidence"
+          ]
+        },
+        "crowd_support": {
+          "reason": "Crowd remains deferred;358 only leader/horse. No background acceptance.",
+          "requirements": [
+            "preservation",
+            "support",
+            "phases",
+            "rider",
+            "evidence"
+          ]
+        },
+        "current_state": {
+          "reason": "Retain exterior visibility graph, add whole-passage measured selection of one fixed rear-half attachment station on each real ring, and preserve every path corner when resampling to129 points. Dense segment clearance must exceed6mm for4.5mm rein radius. Reuse only same-frame skin graph between reins; preserve actual hand endpoints and unrelated actions. This is the last authorized motion correction, not a lowered gate. All190 frames retain ring/hand contacts, no skin penetration in dense segment samples, unchanged unrelated action signature, and frame-switch readback. Then actual head views both sides, rider and production views must show continuous supported route without neck intersections or visible jitter; continuous AV remains Director313.",
+          "requirements": [
+            "preservation",
+            "support",
+            "phases",
+            "rider",
+            "evidence"
+          ]
+        },
+        "economics": {
+          "reason": "Record serial worker and active intervals inSIKH335; no invented savings, cost or denominator from old sequence effort.",
+          "requirements": [
+            "preservation",
+            "support",
+            "phases",
+            "rider",
+            "evidence"
+          ]
+        },
+        "look": {
+          "reason": "Keep same-film Pashtun richness as fixed floor for leader and near crowd; source320 schematic costumes are negative controls.",
+          "requirements": [
+            "preservation",
+            "support",
+            "phases",
+            "rider",
+            "evidence"
+          ]
+        },
+        "motion": {
+          "reason": "Preserve14 actual accelerating horse motion and coherent rider. Replace wrong permanently planted spear with cue/strike/carry states and constant material grip station. Capture190 source poses first; bounded two-link left arm using original lengths/elbow preference, highest feasible12\u201318cm lift, wrist<=45degrees, continuous elbow. Strike300 before drive, spear carried off ground during rear as original reference2/3. Replace15 symmetric easing downstroke with accelerating strike; actual tip velocity296\u2013300 must accelerate into contact. Retain prior15 as negative timing control; geometry/horse and held material grip unchanged. Actual source14 trajectory unchanged; constant grip material station and no ground penetration; inspect cue293/downstroke297/strike300/drive307/crest327/descent341/347/impact350/absorption353 plus revealing leader front293/300/327/350. Reject arm twist, disconnected cuffs, sliding fingers or wrong cue/contact timing. Appearance remains failed separately; no AV pass from numeric checks. Compare actual final tip velocities against15 slowdown, not endpoints alone; inspect the same ten phases and four front controls. Still no whole-motion or appearance qualification.",
+          "requirements": [
+            "preservation",
+            "support",
+            "phases",
+            "rider",
+            "evidence"
+          ]
+        },
+        "render_profile": {
+          "reason": "Read-only precursor does not render; later measure actual source/profile and retain CPU fallback without assuming previous Metal qualification transfers.",
+          "requirements": [
+            "preservation",
+            "support",
+            "phases",
+            "rider",
+            "evidence"
+          ]
+        },
+        "reuse_envelope": {
+          "reason": "Existing horse is an unqualified adaptation source, not a qualified rearing asset; diagnose its actual reuse envelope before reconstruction.",
+          "requirements": [
+            "preservation",
+            "support",
+            "phases",
+            "rider",
+            "evidence"
+          ]
+        },
+        "secondary": {
+          "reason": "Changed primary motion reopens mane, tail, reins, cloth and earth response; defer these until the primary representation works, not waive them.",
+          "requirements": [
+            "preservation",
+            "support",
+            "phases",
+            "rider",
+            "evidence"
+          ]
+        },
+        "sikh_motion": {
+          "reason": "Rearing and crowd have their own support proof; keep causal exchange and corridor clearance in integrated isolated output. No reuse of gallop qualification as rear proof.",
+          "requirements": [
+            "preservation",
+            "support",
+            "phases",
+            "rider",
+            "evidence"
+          ]
+        },
+        "sikh_scope": {
+          "reason": "Sikh sequence only, nonrecurring leader recognizes rider, no new story or music mapping in this correction.",
+          "requirements": [
+            "preservation",
+            "support",
+            "phases",
+            "rider",
+            "evidence"
+          ]
+        },
+        "stopping": {
+          "reason": "No technical setup handover; continue toward integrated isolated clip unless a genuine material blocker requires the Director.",
+          "requirements": [
+            "preservation",
+            "support",
+            "phases",
+            "rider",
+            "evidence"
+          ]
+        },
+        "strategy": {
+          "reason": "Retain exterior visibility graph, add whole-passage measured selection of one fixed rear-half attachment station on each real ring, and preserve every path corner when resampling to129 points. Dense segment clearance must exceed6mm for4.5mm rein radius. Reuse only same-frame skin graph between reins; preserve actual hand endpoints and unrelated actions. This is the last authorized motion correction, not a lowered gate. All190 frames retain ring/hand contacts, no skin penetration in dense segment samples, unchanged unrelated action signature, and frame-switch readback. Then actual head views both sides, rider and production views must show continuous supported route without neck intersections or visible jitter; continuous AV remains Director313.",
+          "requirements": [
+            "preservation",
+            "support",
+            "phases",
+            "rider",
+            "evidence"
+          ]
+        },
+        "versioning": {
+          "reason": "Bind parent, handler, recipe and dependencies; preserve original320,331 failure evidence and accepted Pashtun unchanged.",
+          "requirements": [
+            "preservation",
+            "support",
+            "phases",
+            "rider",
+            "evidence"
+          ]
+        },
+        "visual_gate": {
+          "reason": "Retain exterior visibility graph, add whole-passage measured selection of one fixed rear-half attachment station on each real ring, and preserve every path corner when resampling to129 points. Dense segment clearance must exceed6mm for4.5mm rein radius. Reuse only same-frame skin graph between reins; preserve actual hand endpoints and unrelated actions. This is the last authorized motion correction, not a lowered gate. All190 frames retain ring/hand contacts, no skin penetration in dense segment samples, unchanged unrelated action signature, and frame-switch readback. Then actual head views both sides, rider and production views must show continuous supported route without neck intersections or visible jitter; continuous AV remains Director313.",
+          "requirements": [
+            "preservation",
+            "support",
+            "phases",
+            "rider",
+            "evidence"
+          ]
+        }
+      },
+      "requirements": [
+        {
+          "criterion": "Original320/Pashtun unchanged; new serial derivative and fresh reopen.",
+          "director_av": false,
+          "id": "preservation",
+          "modes": [
+            "technical"
+          ]
+        },
+        {
+          "criterion": "Visible hind endpoints stay grounded, segment lengths fixed; forelegs return to stance without outward twist or inverted hooves.",
+          "director_av": false,
+          "id": "support",
+          "modes": [
+            "technical",
+            "image"
+          ]
+        },
+        {
+          "criterion": "Coordinated gather drives rise; active short crest; forelegs reach and descend without stopping above ground; absorption follows contact.",
+          "director_av": false,
+          "id": "phases",
+          "modes": [
+            "technical",
+            "image"
+          ]
+        },
+        {
+          "criterion": "Seat follows horse support while torso counterbalances; no rigid statue or floating/disconnected reins and spear. Limb/garment defects remain blockers, not hidden by contact metrics.",
+          "director_av": false,
+          "id": "rider",
+          "modes": [
+            "technical",
+            "image"
+          ]
+        },
+        {
+          "criterion": "All phase images and contact evidence available; static samples never certify full-speed motion, audio or appearance.",
+          "director_av": false,
+          "id": "evidence",
+          "modes": [
+            "technical",
+            "image"
+          ]
+        }
+      ]
+    },
+    "GROUNDING": {
+      "knowledge_uses": {
+        "anatomy": "Preserve14 actual accelerating horse motion and coherent rider. Replace wrong permanently planted spear with cue/strike/carry states and constant material grip station. Capture190 source poses first; bounded two-link left arm using original lengths/elbow preference, highest feasible12\u201318cm lift, wrist<=45degrees, continuous elbow. Strike300 before drive, spear carried off ground during rear as original reference2/3. Replace15 symmetric easing downstroke with accelerating strike; actual tip velocity296\u2013300 must accelerate into contact. Retain prior15 as negative timing control; geometry/horse and held material grip unchanged. Actual source14 trajectory unchanged; constant grip material station and no ground penetration; inspect cue293/downstroke297/strike300/drive307/crest327/descent341/347/impact350/absorption353 plus revealing leader front293/300/327/350. Reject arm twist, disconnected cuffs, sliding fingers or wrong cue/contact timing. Appearance remains failed separately; no AV pass from numeric checks. Compare actual final tip velocities against15 slowdown, not endpoints alone; inspect the same ten phases and four front controls. Still no whole-motion or appearance qualification.",
+        "animal_coordination": "Preserve14 actual accelerating horse motion and coherent rider. Replace wrong permanently planted spear with cue/strike/carry states and constant material grip station. Capture190 source poses first; bounded two-link left arm using original lengths/elbow preference, highest feasible12\u201318cm lift, wrist<=45degrees, continuous elbow. Strike300 before drive, spear carried off ground during rear as original reference2/3. Replace15 symmetric easing downstroke with accelerating strike; actual tip velocity296\u2013300 must accelerate into contact. Retain prior15 as negative timing control; geometry/horse and held material grip unchanged. Actual source14 trajectory unchanged; constant grip material station and no ground penetration; inspect cue293/downstroke297/strike300/drive307/crest327/descent341/347/impact350/absorption353 plus revealing leader front293/300/327/350. Reject arm twist, disconnected cuffs, sliding fingers or wrong cue/contact timing. Appearance remains failed separately; no AV pass from numeric checks. Compare actual final tip velocities against15 slowdown, not endpoints alone; inspect the same ten phases and four front controls. Still no whole-motion or appearance qualification.",
+        "anticipation": "Predict unsupported hind legs, straight neck, rigid rider and slow contact before editing; include phase interiors and reverse views in the next proof.",
+        "au_contact": "Retain exterior visibility graph, add whole-passage measured selection of one fixed rear-half attachment station on each real ring, and preserve every path corner when resampling to129 points. Dense segment clearance must exceed6mm for4.5mm rein radius. Reuse only same-frame skin graph between reins; preserve actual hand endpoints and unrelated actions. This is the last authorized motion correction, not a lowered gate. All190 frames retain ring/hand contacts, no skin penetration in dense segment samples, unchanged unrelated action signature, and frame-switch readback. Then actual head views both sides, rider and production views must show continuous supported route without neck intersections or visible jitter; continuous AV remains Director313.",
+        "au_deformation": "Test control ownership and deformation separately from material/light; never hide unsupported anatomy with costume.",
+        "au_performance": "Preserve14 actual accelerating horse motion and coherent rider. Replace wrong permanently planted spear with cue/strike/carry states and constant material grip station. Capture190 source poses first; bounded two-link left arm using original lengths/elbow preference, highest feasible12\u201318cm lift, wrist<=45degrees, continuous elbow. Strike300 before drive, spear carried off ground during rear as original reference2/3. Replace15 symmetric easing downstroke with accelerating strike; actual tip velocity296\u2013300 must accelerate into contact. Retain prior15 as negative timing control; geometry/horse and held material grip unchanged. Actual source14 trajectory unchanged; constant grip material station and no ground penetration; inspect cue293/downstroke297/strike300/drive307/crest327/descent341/347/impact350/absorption353 plus revealing leader front293/300/327/350. Reject arm twist, disconnected cuffs, sliding fingers or wrong cue/contact timing. Appearance remains failed separately; no AV pass from numeric checks. Compare actual final tip velocities against15 slowdown, not endpoints alone; inspect the same ten phases and four front controls. Still no whole-motion or appearance qualification.",
+        "au_reuse": "Record exact tested-use limits and native jobs; do not call local artifacts a remote backup or whole-scene portable bundle.",
+        "au_surface": "Subsequent look proof compares matched lighting and scale with accepted film; no flat color or noise substitute for designed forms.",
+        "authority": "Resume authorized local production; no spend, installation, cloud, external calls, identity changes or higher-model assumptions.",
+        "cache_safety": "One owned worker, disabled embedded scripts, credential-free job and no source/cache overwrite; future motion invalidates dependent caches.",
+        "construction_interfaces": "Retain exterior visibility graph, add whole-passage measured selection of one fixed rear-half attachment station on each real ring, and preserve every path corner when resampling to129 points. Dense segment clearance must exceed6mm for4.5mm rein radius. Reuse only same-frame skin graph between reins; preserve actual hand endpoints and unrelated actions. This is the last authorized motion correction, not a lowered gate. All190 frames retain ring/hand contacts, no skin penetration in dense segment samples, unchanged unrelated action signature, and frame-switch readback. Then actual head views both sides, rider and production views must show continuous supported route without neck intersections or visible jitter; continuous AV remains Director313.",
+        "crowd_support": "Crowd remains deferred;358 only leader/horse. No background acceptance.",
+        "current_state": "Retain exterior visibility graph, add whole-passage measured selection of one fixed rear-half attachment station on each real ring, and preserve every path corner when resampling to129 points. Dense segment clearance must exceed6mm for4.5mm rein radius. Reuse only same-frame skin graph between reins; preserve actual hand endpoints and unrelated actions. This is the last authorized motion correction, not a lowered gate. All190 frames retain ring/hand contacts, no skin penetration in dense segment samples, unchanged unrelated action signature, and frame-switch readback. Then actual head views both sides, rider and production views must show continuous supported route without neck intersections or visible jitter; continuous AV remains Director313.",
+        "economics": "Record serial worker and active intervals inSIKH335; no invented savings, cost or denominator from old sequence effort.",
+        "look": "Keep same-film Pashtun richness as fixed floor for leader and near crowd; source320 schematic costumes are negative controls.",
+        "motion": "Preserve14 actual accelerating horse motion and coherent rider. Replace wrong permanently planted spear with cue/strike/carry states and constant material grip station. Capture190 source poses first; bounded two-link left arm using original lengths/elbow preference, highest feasible12\u201318cm lift, wrist<=45degrees, continuous elbow. Strike300 before drive, spear carried off ground during rear as original reference2/3. Replace15 symmetric easing downstroke with accelerating strike; actual tip velocity296\u2013300 must accelerate into contact. Retain prior15 as negative timing control; geometry/horse and held material grip unchanged. Actual source14 trajectory unchanged; constant grip material station and no ground penetration; inspect cue293/downstroke297/strike300/drive307/crest327/descent341/347/impact350/absorption353 plus revealing leader front293/300/327/350. Reject arm twist, disconnected cuffs, sliding fingers or wrong cue/contact timing. Appearance remains failed separately; no AV pass from numeric checks. Compare actual final tip velocities against15 slowdown, not endpoints alone; inspect the same ten phases and four front controls. Still no whole-motion or appearance qualification.",
+        "render_profile": "Read-only precursor does not render; later measure actual source/profile and retain CPU fallback without assuming previous Metal qualification transfers.",
+        "reuse_envelope": "Existing horse is an unqualified adaptation source, not a qualified rearing asset; diagnose its actual reuse envelope before reconstruction.",
+        "secondary": "Changed primary motion reopens mane, tail, reins, cloth and earth response; defer these until the primary representation works, not waive them.",
+        "sikh_motion": "Rearing and crowd have their own support proof; keep causal exchange and corridor clearance in integrated isolated output. No reuse of gallop qualification as rear proof.",
+        "sikh_scope": "Sikh sequence only, nonrecurring leader recognizes rider, no new story or music mapping in this correction.",
+        "stopping": "No technical setup handover; continue toward integrated isolated clip unless a genuine material blocker requires the Director.",
+        "strategy": "Retain exterior visibility graph, add whole-passage measured selection of one fixed rear-half attachment station on each real ring, and preserve every path corner when resampling to129 points. Dense segment clearance must exceed6mm for4.5mm rein radius. Reuse only same-frame skin graph between reins; preserve actual hand endpoints and unrelated actions. This is the last authorized motion correction, not a lowered gate. All190 frames retain ring/hand contacts, no skin penetration in dense segment samples, unchanged unrelated action signature, and frame-switch readback. Then actual head views both sides, rider and production views must show continuous supported route without neck intersections or visible jitter; continuous AV remains Director313.",
+        "versioning": "Bind parent, handler, recipe and dependencies; preserve original320,331 failure evidence and accepted Pashtun unchanged.",
+        "visual_gate": "Retain exterior visibility graph, add whole-passage measured selection of one fixed rear-half attachment station on each real ring, and preserve every path corner when resampling to129 points. Dense segment clearance must exceed6mm for4.5mm rein radius. Reuse only same-frame skin graph between reins; preserve actual hand endpoints and unrelated actions. This is the last authorized motion correction, not a lowered gate. All190 frames retain ring/hand contacts, no skin penetration in dense segment samples, unchanged unrelated action signature, and frame-switch readback. Then actual head views both sides, rider and production views must show continuous supported route without neck intersections or visible jitter; continuous AV remains Director313."
+      },
+      "reconciliation": "358 five additional each; appearance82 retained, motion17..21. Actual357 headstall failure requires anatomical landmarks and rein-consumer repair. Crowd deferred; no spending.",
+      "unresolved": [],
+      "uses": {
+        "constraints": {
+          "disposition": "apply",
+          "implication": "Inspect64 invalid used-armature drivers, removed object drivers and FK bypasses; no blind restoration or defect waiver.",
+          "reason": "Inspect64 invalid used-armature drivers, removed object drivers and FK bypasses; no blind restoration or defect waiver."
+        },
+        "controls": {
+          "disposition": "apply",
+          "implication": "Retain exterior visibility graph, add whole-passage measured selection of one fixed rear-half attachment station on each real ring, and preserve every path corner when resampling to129 points. Dense segment clearance must exceed6mm for4.5mm rein radius. Reuse only same-frame skin graph between reins; preserve actual hand endpoints and unrelated actions. This is the last authorized motion correction, not a lowered gate.",
+          "reason": "Fresh motion-domain packet and manual AU09\u201313,16 plus317\u2013334 reconciliation accompany this inspection."
+        },
+        "crest_control": {
+          "disposition": "apply",
+          "implication": "Two static corrections are retained and closed. Crest supports anatomy but reins/spear disconnected and appearance rejected; capture immutable stance before continuous keys.",
+          "reason": "Two static corrections are retained and closed. Crest supports anatomy but reins/spear disconnected and appearance rejected; capture immutable stance before continuous keys."
+        },
+        "direction": {
+          "disposition": "apply",
+          "implication": "Resume the integrated isolated production package; this precursor discovers rig ownership before any new pose authoring.",
+          "reason": "Resume the integrated isolated production package; this precursor discovers rig ownership before any new pose authoring."
+        },
+        "director_preferences": {
+          "disposition": "apply",
+          "implication": "Predict failure through expert lenses and fix internally; setup and routine algorithms are not handovers.",
+          "reason": "Predict failure through expert lenses and fix internally; setup and routine algorithms are not handovers."
+        },
+        "film_language": {
+          "disposition": "apply",
+          "implication": "Accepted Pashtun quality stays fixed; a supporting actor cannot be a schematic statue.",
+          "reason": "Accepted Pashtun quality stays fixed; a supporting actor cannot be a schematic statue."
+        },
+        "learnings": {
+          "disposition": "apply",
+          "implication": "331 failed whole-pose support and same-film character fidelity despite incremental offset corrections; those attempts remain closed.",
+          "reason": "331 failed whole-pose support and same-film character fidelity despite incremental offset corrections; those attempts remain closed."
+        },
+        "lessons352": {
+          "disposition": "apply",
+          "implication": "Preserve14 actual accelerating horse motion and coherent rider. Replace wrong permanently planted spear with cue/strike/carry states and constant material grip station. Capture190 source poses first; bounded two-link left arm using original lengths/elbow preference, highest feasible12\u201318cm lift, wrist<=45degrees, continuous elbow. Strike300 before drive, spear carried off ground during rear as original reference2/3. Replace15 symmetric easing downstroke with accelerating strike; actual tip velocity296\u2013300 must accelerate into contact. Retain prior15 as negative timing control; geometry/horse and held material grip unchanged.",
+          "reason": "Apply causal interface tests and retain scoped successes; leader and horse precede crowd."
+        },
+        "lessons357": {
+          "disposition": "apply",
+          "implication": "Retain exterior visibility graph, add whole-passage measured selection of one fixed rear-half attachment station on each real ring, and preserve every path corner when resampling to129 points. Dense segment clearance must exceed6mm for4.5mm rein radius. Reuse only same-frame skin graph between reins; preserve actual hand endpoints and unrelated actions. This is the last authorized motion correction, not a lowered gate.",
+          "reason": "Correct actual headstall ownership and its consuming rein span; retain357 construction gains and original faithful action reference."
+        },
+        "ownership_diagnosis": {
+          "disposition": "apply",
+          "implication": "64 missing targets are BBone ease; missing object drivers leave IK/FK properties ineffective. Select actual constraints and solve bone lengths explicitly.",
+          "reason": "64 missing targets are BBone ease; missing object drivers leave IK/FK properties ineffective. Select actual constraints and solve bone lengths explicitly."
+        },
+        "references": {
+          "disposition": "apply",
+          "implication": "Reference14\u201319s governs faithful action phases; accepted film governs appearance; rejected poses are negative controls.",
+          "reason": "Reference14\u201319s governs faithful action phases; accepted film governs appearance; rejected poses are negative controls."
+        },
+        "strategy353": {
+          "disposition": "apply",
+          "implication": "Preserve14 actual accelerating horse motion and coherent rider. Replace wrong permanently planted spear with cue/strike/carry states and constant material grip station. Capture190 source poses first; bounded two-link left arm using original lengths/elbow preference, highest feasible12\u201318cm lift, wrist<=45degrees, continuous elbow. Strike300 before drive, spear carried off ground during rear as original reference2/3. Replace15 symmetric easing downstroke with accelerating strike; actual tip velocity296\u2013300 must accelerate into contact. Retain prior15 as negative timing control; geometry/horse and held material grip unchanged.",
+          "reason": "Apply causal interface tests and retain scoped successes; leader and horse precede crowd."
+        },
+        "strategy358": {
+          "disposition": "apply",
+          "implication": "Retain exterior visibility graph, add whole-passage measured selection of one fixed rear-half attachment station on each real ring, and preserve every path corner when resampling to129 points. Dense segment clearance must exceed6mm for4.5mm rein radius. Reuse only same-frame skin graph between reins; preserve actual hand endpoints and unrelated actions. This is the last authorized motion correction, not a lowered gate.",
+          "reason": "Correct actual headstall ownership and its consuming rein span; retain357 construction gains and original faithful action reference."
+        }
+      }
+    },
+    "STRATEGIZING": {
+      "brief": {
+        "audience_result": "One powerful living animal and mounted rider executing a deliberate salute, not pose interpolation.",
+        "capabilities": {
+          "authority": true,
+          "direct_audio": false,
+          "direct_motion": false,
+          "image": true,
+          "technical": true,
+          "timed_images": true
+        },
+        "early_proof": "All190 frames retain ring/hand contacts, no skin penetration in dense segment samples, unchanged unrelated action signature, and frame-switch readback. Then actual head views both sides, rider and production views must show continuous supported route without neck intersections or visible jitter; continuous AV remains Director313.",
+        "exclusions": "No crowd/principal/Pashtun changes, external calls, spend, new sound or complete-sequence render.",
+        "expert_plan": {
+          "beat_intents": {
+            "rear": "Construct continuous supported reference-phase rear with coupled rider and rebaked contacts; inspect gather, rise, crest, accelerating descent, impact and absorption before appearance finish and integrated clip."
+          },
+          "beats": [
+            {
+              "audience_read": "One powerful living animal and mounted rider executing a deliberate salute, not pose interpolation.",
+              "framing": "Existing shot camera with8 phase samples; later continuous clip plus revealing side checks.",
+              "id": "rear",
+              "lenses": {
+                "anatomy_contact": {
+                  "applies": true,
+                  "requirements": [
+                    "support"
+                  ],
+                  "why": "Needed for support, whole-body coordination, contacts or evidence validity."
+                },
+                "animation_physics": {
+                  "applies": true,
+                  "requirements": [
+                    "phases"
+                  ],
+                  "why": "Needed for support, whole-body coordination, contacts or evidence validity."
+                },
+                "camera_editorial": {
+                  "applies": true,
+                  "requirements": [
+                    "evidence"
+                  ],
+                  "why": "Needed for support, whole-body coordination, contacts or evidence validity."
+                },
+                "effects_environment": {
+                  "applies": false,
+                  "requirements": [],
+                  "why": "Appearance, dust, audio and crowd remain inherited blockers for next integrated stages; not passed by this motion construction."
+                },
+                "production_reuse": {
+                  "applies": true,
+                  "requirements": [
+                    "preservation"
+                  ],
+                  "why": "Needed for support, whole-body coordination, contacts or evidence validity."
+                },
+                "sound_music": {
+                  "applies": false,
+                  "requirements": [],
+                  "why": "Appearance, dust, audio and crowd remain inherited blockers for next integrated stages; not passed by this motion construction."
+                },
+                "story_performance": {
+                  "applies": true,
+                  "requirements": [
+                    "rider"
+                  ],
+                  "why": "Needed for support, whole-body coordination, contacts or evidence validity."
+                }
+              }
+            }
+          ],
+          "realizations": {
+            "evidence": {
+              "beats": [
+                "rear"
+              ],
+              "derivation": "All phase images and contact evidence available; static samples never certify full-speed motion, audio or appearance.",
+              "early_proof": "All190 frames retain ring/hand contacts, no skin penetration in dense segment samples, unchanged unrelated action signature, and frame-switch readback. Then actual head views both sides, rider and production views must show continuous supported route without neck intersections or visible jitter; continuous AV remains Director313.",
+              "failure_condition": "Missing anatomical landmark, eye/nostril obstruction, disconnected rein/headstall, visible adjacent regression or unreviewed evidence fails; no AV inference.",
+              "interfaces": [
+                "stance \u2192 horse support \u2192 seat/pelvis/torso",
+                "bit/palms \u2192 reins/spear",
+                "pose \u2192 garments/tack/FX caches"
+              ],
+              "lenses": [
+                "camera_editorial"
+              ],
+              "method": "All190 frames contact report plus intended and revealing images. Static samples do not certify continuous movement/audio; known failures block manual queue.",
+              "origin": "craft_inference",
+              "priority": "quality_floor",
+              "reference_ids": [
+                "reference_rear"
+              ],
+              "reopen_when": "Any trajectory, rider parent, constraint, camera or cache dependency changes."
+            },
+            "phases": {
+              "beats": [
+                "rear"
+              ],
+              "derivation": "Coordinated gather drives rise; active short crest; forelegs reach and descend without stopping above ground; absorption follows contact.",
+              "early_proof": "All190 frames retain ring/hand contacts, no skin penetration in dense segment samples, unchanged unrelated action signature, and frame-switch readback. Then actual head views both sides, rider and production views must show continuous supported route without neck intersections or visible jitter; continuous AV remains Director313.",
+              "failure_condition": "Missing anatomical landmark, eye/nostril obstruction, disconnected rein/headstall, visible adjacent regression or unreviewed evidence fails; no AV inference.",
+              "interfaces": [
+                "stance \u2192 horse support \u2192 seat/pelvis/torso",
+                "bit/palms \u2192 reins/spear",
+                "pose \u2192 garments/tack/FX caches",
+                "Actual forehoof contact \u2192 existing world-space earth-response birth; poll/bit movement \u2192 rebuilt rein contact"
+              ],
+              "lenses": [
+                "animation_physics"
+              ],
+              "method": "Retain gather/drive/brief crest/accelerating landing clock; view chronological phases and leave continuous fluidity to direct Director313 review.",
+              "origin": "craft_inference",
+              "priority": "quality_floor",
+              "reference_ids": [
+                "reference_rear"
+              ],
+              "reopen_when": "Any trajectory, rider parent, constraint, camera or cache dependency changes."
+            },
+            "preservation": {
+              "beats": [
+                "rear"
+              ],
+              "derivation": "Original320/Pashtun unchanged; new serial derivative and fresh reopen.",
+              "early_proof": "All190 frames retain ring/hand contacts, no skin penetration in dense segment samples, unchanged unrelated action signature, and frame-switch readback. Then actual head views both sides, rider and production views must show continuous supported route without neck intersections or visible jitter; continuous AV remains Director313.",
+              "failure_condition": "Missing anatomical landmark, eye/nostril obstruction, disconnected rein/headstall, visible adjacent regression or unreviewed evidence fails; no AV inference.",
+              "interfaces": [
+                "stance \u2192 horse support \u2192 seat/pelvis/torso",
+                "bit/palms \u2192 reins/spear",
+                "pose \u2192 garments/tack/FX caches"
+              ],
+              "lenses": [
+                "production_reuse"
+              ],
+              "method": "Protect every action except two explicitly identified rein-curve actions; capture complete source before mutation and compare signature after.",
+              "origin": "craft_inference",
+              "priority": "quality_floor",
+              "reference_ids": [
+                "reference_rear"
+              ],
+              "reopen_when": "Any trajectory, rider parent, constraint, camera or cache dependency changes."
+            },
+            "rider": {
+              "beats": [
+                "rear"
+              ],
+              "derivation": "Seat follows horse support while torso counterbalances; no rigid statue or floating/disconnected reins and spear. Limb/garment defects remain blockers, not hidden by contact metrics.",
+              "early_proof": "All190 frames retain ring/hand contacts, no skin penetration in dense segment samples, unchanged unrelated action signature, and frame-switch readback. Then actual head views both sides, rider and production views must show continuous supported route without neck intersections or visible jitter; continuous AV remains Director313.",
+              "failure_condition": "Missing anatomical landmark, eye/nostril obstruction, disconnected rein/headstall, visible adjacent regression or unreviewed evidence fails; no AV inference.",
+              "interfaces": [
+                "stance \u2192 horse support \u2192 seat/pelvis/torso",
+                "bit/palms \u2192 reins/spear",
+                "pose \u2192 garments/tack/FX caches"
+              ],
+              "lenses": [
+                "story_performance"
+              ],
+              "method": "Retain exterior visibility graph, add whole-passage measured selection of one fixed rear-half attachment station on each real ring, and preserve every path corner when resampling to129 points. Dense segment clearance must exceed6mm for4.5mm rein radius. Reuse only same-frame skin graph between reins; preserve actual hand endpoints and unrelated actions. This is the last authorized motion correction, not a lowered gate.",
+              "origin": "craft_inference",
+              "priority": "quality_floor",
+              "reference_ids": [
+                "reference_rear"
+              ],
+              "reopen_when": "Any trajectory, rider parent, constraint, camera or cache dependency changes."
+            },
+            "support": {
+              "beats": [
+                "rear"
+              ],
+              "derivation": "Visible hind endpoints stay grounded, segment lengths fixed; forelegs return to stance without outward twist or inverted hooves.",
+              "early_proof": "All190 frames retain ring/hand contacts, no skin penetration in dense segment samples, unchanged unrelated action signature, and frame-switch readback. Then actual head views both sides, rider and production views must show continuous supported route without neck intersections or visible jitter; continuous AV remains Director313.",
+              "failure_condition": "Missing anatomical landmark, eye/nostril obstruction, disconnected rein/headstall, visible adjacent regression or unreviewed evidence fails; no AV inference.",
+              "interfaces": [
+                "stance \u2192 horse support \u2192 seat/pelvis/torso",
+                "bit/palms \u2192 reins/spear",
+                "pose \u2192 garments/tack/FX caches"
+              ],
+              "lenses": [
+                "anatomy_contact"
+              ],
+              "method": "Horse hooves/hindquarter/support action unchanged; verify intended rest/crest/arrival frames for inherited visible defects, not only invariance.",
+              "origin": "craft_inference",
+              "priority": "quality_floor",
+              "reference_ids": [
+                "reference_rear"
+              ],
+              "reopen_when": "Any trajectory, rider parent, constraint, camera or cache dependency changes."
+            }
+          },
+          "version": 1
+        },
+        "intent": "Construct continuous supported reference-phase rear with coupled rider and rebaked contacts; inspect gather, rise, crest, accelerating descent, impact and absorption before appearance finish and integrated clip.",
+        "knowledge_digest": "78a26b53468a5f1fa7921cf7ebd318a35d5720aa7b41faeedb768ca01cfcd3a3",
+        "knowledge_mapping": {
+          "anatomy": {
+            "reason": "Preserve14 actual accelerating horse motion and coherent rider. Replace wrong permanently planted spear with cue/strike/carry states and constant material grip station. Capture190 source poses first; bounded two-link left arm using original lengths/elbow preference, highest feasible12\u201318cm lift, wrist<=45degrees, continuous elbow. Strike300 before drive, spear carried off ground during rear as original reference2/3. Replace15 symmetric easing downstroke with accelerating strike; actual tip velocity296\u2013300 must accelerate into contact. Retain prior15 as negative timing control; geometry/horse and held material grip unchanged. Actual source14 trajectory unchanged; constant grip material station and no ground penetration; inspect cue293/downstroke297/strike300/drive307/crest327/descent341/347/impact350/absorption353 plus revealing leader front293/300/327/350. Reject arm twist, disconnected cuffs, sliding fingers or wrong cue/contact timing. Appearance remains failed separately; no AV pass from numeric checks. Compare actual final tip velocities against15 slowdown, not endpoints alone; inspect the same ten phases and four front controls. Still no whole-motion or appearance qualification.",
+            "requirements": [
+              "preservation",
+              "support",
+              "phases",
+              "rider",
+              "evidence"
+            ]
+          },
+          "animal_coordination": {
+            "reason": "Preserve14 actual accelerating horse motion and coherent rider. Replace wrong permanently planted spear with cue/strike/carry states and constant material grip station. Capture190 source poses first; bounded two-link left arm using original lengths/elbow preference, highest feasible12\u201318cm lift, wrist<=45degrees, continuous elbow. Strike300 before drive, spear carried off ground during rear as original reference2/3. Replace15 symmetric easing downstroke with accelerating strike; actual tip velocity296\u2013300 must accelerate into contact. Retain prior15 as negative timing control; geometry/horse and held material grip unchanged. Actual source14 trajectory unchanged; constant grip material station and no ground penetration; inspect cue293/downstroke297/strike300/drive307/crest327/descent341/347/impact350/absorption353 plus revealing leader front293/300/327/350. Reject arm twist, disconnected cuffs, sliding fingers or wrong cue/contact timing. Appearance remains failed separately; no AV pass from numeric checks. Compare actual final tip velocities against15 slowdown, not endpoints alone; inspect the same ten phases and four front controls. Still no whole-motion or appearance qualification.",
+            "requirements": [
+              "preservation",
+              "support",
+              "phases",
+              "rider",
+              "evidence"
+            ]
+          },
+          "anticipation": {
+            "reason": "Predict unsupported hind legs, straight neck, rigid rider and slow contact before editing; include phase interiors and reverse views in the next proof.",
+            "requirements": [
+              "preservation",
+              "support",
+              "phases",
+              "rider",
+              "evidence"
+            ]
+          },
+          "au_contact": {
+            "reason": "Retain exterior visibility graph, add whole-passage measured selection of one fixed rear-half attachment station on each real ring, and preserve every path corner when resampling to129 points. Dense segment clearance must exceed6mm for4.5mm rein radius. Reuse only same-frame skin graph between reins; preserve actual hand endpoints and unrelated actions. This is the last authorized motion correction, not a lowered gate. All190 frames retain ring/hand contacts, no skin penetration in dense segment samples, unchanged unrelated action signature, and frame-switch readback. Then actual head views both sides, rider and production views must show continuous supported route without neck intersections or visible jitter; continuous AV remains Director313.",
+            "requirements": [
+              "preservation",
+              "support",
+              "phases",
+              "rider",
+              "evidence"
+            ]
+          },
+          "au_deformation": {
+            "reason": "Test control ownership and deformation separately from material/light; never hide unsupported anatomy with costume.",
+            "requirements": [
+              "preservation",
+              "support",
+              "phases",
+              "rider",
+              "evidence"
+            ]
+          },
+          "au_performance": {
+            "reason": "Preserve14 actual accelerating horse motion and coherent rider. Replace wrong permanently planted spear with cue/strike/carry states and constant material grip station. Capture190 source poses first; bounded two-link left arm using original lengths/elbow preference, highest feasible12\u201318cm lift, wrist<=45degrees, continuous elbow. Strike300 before drive, spear carried off ground during rear as original reference2/3. Replace15 symmetric easing downstroke with accelerating strike; actual tip velocity296\u2013300 must accelerate into contact. Retain prior15 as negative timing control; geometry/horse and held material grip unchanged. Actual source14 trajectory unchanged; constant grip material station and no ground penetration; inspect cue293/downstroke297/strike300/drive307/crest327/descent341/347/impact350/absorption353 plus revealing leader front293/300/327/350. Reject arm twist, disconnected cuffs, sliding fingers or wrong cue/contact timing. Appearance remains failed separately; no AV pass from numeric checks. Compare actual final tip velocities against15 slowdown, not endpoints alone; inspect the same ten phases and four front controls. Still no whole-motion or appearance qualification.",
+            "requirements": [
+              "preservation",
+              "support",
+              "phases",
+              "rider",
+              "evidence"
+            ]
+          },
+          "au_reuse": {
+            "reason": "Record exact tested-use limits and native jobs; do not call local artifacts a remote backup or whole-scene portable bundle.",
+            "requirements": [
+              "preservation",
+              "support",
+              "phases",
+              "rider",
+              "evidence"
+            ]
+          },
+          "au_surface": {
+            "reason": "Subsequent look proof compares matched lighting and scale with accepted film; no flat color or noise substitute for designed forms.",
+            "requirements": [
+              "preservation",
+              "support",
+              "phases",
+              "rider",
+              "evidence"
+            ]
+          },
+          "authority": {
+            "reason": "Resume authorized local production; no spend, installation, cloud, external calls, identity changes or higher-model assumptions.",
+            "requirements": [
+              "preservation",
+              "support",
+              "phases",
+              "rider",
+              "evidence"
+            ]
+          },
+          "cache_safety": {
+            "reason": "One owned worker, disabled embedded scripts, credential-free job and no source/cache overwrite; future motion invalidates dependent caches.",
+            "requirements": [
+              "preservation",
+              "support",
+              "phases",
+              "rider",
+              "evidence"
+            ]
+          },
+          "construction_interfaces": {
+            "reason": "Retain exterior visibility graph, add whole-passage measured selection of one fixed rear-half attachment station on each real ring, and preserve every path corner when resampling to129 points. Dense segment clearance must exceed6mm for4.5mm rein radius. Reuse only same-frame skin graph between reins; preserve actual hand endpoints and unrelated actions. This is the last authorized motion correction, not a lowered gate. All190 frames retain ring/hand contacts, no skin penetration in dense segment samples, unchanged unrelated action signature, and frame-switch readback. Then actual head views both sides, rider and production views must show continuous supported route without neck intersections or visible jitter; continuous AV remains Director313.",
+            "requirements": [
+              "preservation",
+              "support",
+              "phases",
+              "rider",
+              "evidence"
+            ]
+          },
+          "crowd_support": {
+            "reason": "Crowd remains deferred;358 only leader/horse. No background acceptance.",
+            "requirements": [
+              "preservation",
+              "support",
+              "phases",
+              "rider",
+              "evidence"
+            ]
+          },
+          "current_state": {
+            "reason": "Retain exterior visibility graph, add whole-passage measured selection of one fixed rear-half attachment station on each real ring, and preserve every path corner when resampling to129 points. Dense segment clearance must exceed6mm for4.5mm rein radius. Reuse only same-frame skin graph between reins; preserve actual hand endpoints and unrelated actions. This is the last authorized motion correction, not a lowered gate. All190 frames retain ring/hand contacts, no skin penetration in dense segment samples, unchanged unrelated action signature, and frame-switch readback. Then actual head views both sides, rider and production views must show continuous supported route without neck intersections or visible jitter; continuous AV remains Director313.",
+            "requirements": [
+              "preservation",
+              "support",
+              "phases",
+              "rider",
+              "evidence"
+            ]
+          },
+          "economics": {
+            "reason": "Record serial worker and active intervals inSIKH335; no invented savings, cost or denominator from old sequence effort.",
+            "requirements": [
+              "preservation",
+              "support",
+              "phases",
+              "rider",
+              "evidence"
+            ]
+          },
+          "look": {
+            "reason": "Keep same-film Pashtun richness as fixed floor for leader and near crowd; source320 schematic costumes are negative controls.",
+            "requirements": [
+              "preservation",
+              "support",
+              "phases",
+              "rider",
+              "evidence"
+            ]
+          },
+          "motion": {
+            "reason": "Preserve14 actual accelerating horse motion and coherent rider. Replace wrong permanently planted spear with cue/strike/carry states and constant material grip station. Capture190 source poses first; bounded two-link left arm using original lengths/elbow preference, highest feasible12\u201318cm lift, wrist<=45degrees, continuous elbow. Strike300 before drive, spear carried off ground during rear as original reference2/3. Replace15 symmetric easing downstroke with accelerating strike; actual tip velocity296\u2013300 must accelerate into contact. Retain prior15 as negative timing control; geometry/horse and held material grip unchanged. Actual source14 trajectory unchanged; constant grip material station and no ground penetration; inspect cue293/downstroke297/strike300/drive307/crest327/descent341/347/impact350/absorption353 plus revealing leader front293/300/327/350. Reject arm twist, disconnected cuffs, sliding fingers or wrong cue/contact timing. Appearance remains failed separately; no AV pass from numeric checks. Compare actual final tip velocities against15 slowdown, not endpoints alone; inspect the same ten phases and four front controls. Still no whole-motion or appearance qualification.",
+            "requirements": [
+              "preservation",
+              "support",
+              "phases",
+              "rider",
+              "evidence"
+            ]
+          },
+          "render_profile": {
+            "reason": "Read-only precursor does not render; later measure actual source/profile and retain CPU fallback without assuming previous Metal qualification transfers.",
+            "requirements": [
+              "preservation",
+              "support",
+              "phases",
+              "rider",
+              "evidence"
+            ]
+          },
+          "reuse_envelope": {
+            "reason": "Existing horse is an unqualified adaptation source, not a qualified rearing asset; diagnose its actual reuse envelope before reconstruction.",
+            "requirements": [
+              "preservation",
+              "support",
+              "phases",
+              "rider",
+              "evidence"
+            ]
+          },
+          "secondary": {
+            "reason": "Changed primary motion reopens mane, tail, reins, cloth and earth response; defer these until the primary representation works, not waive them.",
+            "requirements": [
+              "preservation",
+              "support",
+              "phases",
+              "rider",
+              "evidence"
+            ]
+          },
+          "sikh_motion": {
+            "reason": "Rearing and crowd have their own support proof; keep causal exchange and corridor clearance in integrated isolated output. No reuse of gallop qualification as rear proof.",
+            "requirements": [
+              "preservation",
+              "support",
+              "phases",
+              "rider",
+              "evidence"
+            ]
+          },
+          "sikh_scope": {
+            "reason": "Sikh sequence only, nonrecurring leader recognizes rider, no new story or music mapping in this correction.",
+            "requirements": [
+              "preservation",
+              "support",
+              "phases",
+              "rider",
+              "evidence"
+            ]
+          },
+          "stopping": {
+            "reason": "No technical setup handover; continue toward integrated isolated clip unless a genuine material blocker requires the Director.",
+            "requirements": [
+              "preservation",
+              "support",
+              "phases",
+              "rider",
+              "evidence"
+            ]
+          },
+          "strategy": {
+            "reason": "Retain exterior visibility graph, add whole-passage measured selection of one fixed rear-half attachment station on each real ring, and preserve every path corner when resampling to129 points. Dense segment clearance must exceed6mm for4.5mm rein radius. Reuse only same-frame skin graph between reins; preserve actual hand endpoints and unrelated actions. This is the last authorized motion correction, not a lowered gate. All190 frames retain ring/hand contacts, no skin penetration in dense segment samples, unchanged unrelated action signature, and frame-switch readback. Then actual head views both sides, rider and production views must show continuous supported route without neck intersections or visible jitter; continuous AV remains Director313.",
+            "requirements": [
+              "preservation",
+              "support",
+              "phases",
+              "rider",
+              "evidence"
+            ]
+          },
+          "versioning": {
+            "reason": "Bind parent, handler, recipe and dependencies; preserve original320,331 failure evidence and accepted Pashtun unchanged.",
+            "requirements": [
+              "preservation",
+              "support",
+              "phases",
+              "rider",
+              "evidence"
+            ]
+          },
+          "visual_gate": {
+            "reason": "Retain exterior visibility graph, add whole-passage measured selection of one fixed rear-half attachment station on each real ring, and preserve every path corner when resampling to129 points. Dense segment clearance must exceed6mm for4.5mm rein radius. Reuse only same-frame skin graph between reins; preserve actual hand endpoints and unrelated actions. This is the last authorized motion correction, not a lowered gate. All190 frames retain ring/hand contacts, no skin penetration in dense segment samples, unchanged unrelated action signature, and frame-switch readback. Then actual head views both sides, rider and production views must show continuous supported route without neck intersections or visible jitter; continuous AV remains Director313.",
+            "requirements": [
+              "preservation",
+              "support",
+              "phases",
+              "rider",
+              "evidence"
+            ]
+          }
+        },
+        "knowledge_task": "results/sikh358/motion-task.json",
+        "offline_only": false,
+        "open_decisions": [],
+        "protected": [
+          "Accepted Pashtun253",
+          "Rejected320/331 source and failures",
+          "325 exhausted provider allowance"
+        ],
+        "reference_plan": {
+          "reference_rear": {
+            "application": "Compare whole action phases, supported anatomy and rapid impact; no exact identity or still-based timing approval.",
+            "reference_digest": "5c41aa47493c163da5c285090af38e6aaf8ffb8503ae762581cbcda4a9bccbb2"
+          }
+        },
+        "references": [
+          {
+            "allowed_variation": "Adapt to shot geography and existing horse proportions without robotic phase boundaries.",
+            "aspects": [
+              {
+                "id": "whole_pose",
+                "instruction": "Compare all visible action phases and body contacts; a smooth trajectory or fixed hoof target does not certify animation.",
+                "requirements": [
+                  "preservation",
+                  "support",
+                  "phases",
+                  "rider",
+                  "evidence"
+                ]
+              }
+            ],
+            "authority": "Director requires faithful rearing, not a simplified approximation.",
+            "binding": {
+              "path": ".runtime/art-direction/series01-sikh256/references/reference-b.mov",
+              "sha256": "78d0d691e8712c02931876cf0bc405e4869de357f337f531708be7a7da4898e2"
+            },
+            "fidelity": "Faithful coupled loading, lift, brief crest, accelerating reach/contact and absorption; adapted existing horse proportions.",
+            "id": "reference_rear",
+            "not_authority": "Not a new identity, wardrobe license or exemption from same-film quality.",
+            "role": "faithful_motion",
+            "scope": "Reference14\u201319s governs complete preparation to landing, not only crest; actual speed requires later clip.",
+            "time_range_seconds": [
+              14,
+              19
+            ]
+          }
+        ],
+        "requirements": [
+          {
+            "criterion": "Original320/Pashtun unchanged; new serial derivative and fresh reopen.",
+            "director_av": false,
+            "id": "preservation",
+            "modes": [
+              "technical"
+            ]
+          },
+          {
+            "criterion": "Visible hind endpoints stay grounded, segment lengths fixed; forelegs return to stance without outward twist or inverted hooves.",
+            "director_av": false,
+            "id": "support",
+            "modes": [
+              "technical",
+              "image"
+            ]
+          },
+          {
+            "criterion": "Coordinated gather drives rise; active short crest; forelegs reach and descend without stopping above ground; absorption follows contact.",
+            "director_av": false,
+            "id": "phases",
+            "modes": [
+              "technical",
+              "image"
+            ]
+          },
+          {
+            "criterion": "Seat follows horse support while torso counterbalances; no rigid statue or floating/disconnected reins and spear. Limb/garment defects remain blockers, not hidden by contact metrics.",
+            "director_av": false,
+            "id": "rider",
+            "modes": [
+              "technical",
+              "image"
+            ]
+          },
+          {
+            "criterion": "All phase images and contact evidence available; static samples never certify full-speed motion, audio or appearance.",
+            "director_av": false,
+            "id": "evidence",
+            "modes": [
+              "technical",
+              "image"
+            ]
+          }
+        ],
+        "route": "production",
+        "schema": 1,
+        "scope": "Integrated anatomical bit-to-real-hand rein contact on leader/horse, preserving reference-phase motion16 and appearance86; then scoped continuous review if static interfaces pass.",
+        "source_bindings": {
+          ".runtime/factory-native/sikh358-appearance-c86-save/scene.blend": {
+            "path": ".runtime/factory-native/sikh358-appearance-c86-save/scene.blend",
+            "sha256": "5a64058739af8de17c3a31c4b6f0b1afa65cbaa45a228d6383ef06ca472adca2"
+          },
+          ".runtime/factory-native/sikh358-appearance-c86-save/tack358.json": {
+            "path": ".runtime/factory-native/sikh358-appearance-c86-save/tack358.json",
+            "sha256": "5e14addfdd68c9eb1e38c0f436522964d4b27ff8a7399382211917c70b765e27"
+          },
+          ".runtime/factory-native/sikh358-motion-c18-inspect/rig.json": {
+            "path": ".runtime/factory-native/sikh358-motion-c18-inspect/rig.json",
+            "sha256": "c70eba409d8b0f456a9bacdf4de717884019d494acea72c7d108cb0c6a68401b"
+          },
+          "constraints": {
+            "path": "docs/knowledge/NATIVE_WORKFLOW_334.md",
+            "sha256": "73366bd536e11b5a572114e2a9e7b091024a98ac51063997e5f1909b843575cc"
+          },
+          "controls": {
+            "path": "results/sikh358/motion-task.json",
+            "sha256": "591d00c1e2866048a76c2f3fa0adc752bd8b1d0d4774323add02e2c3c41ef439"
+          },
+          "crest_control": {
+            "path": "results/sikh335/support02/IMAGE_REVIEW.md",
+            "sha256": "b5e779ff1dc6941d7d13a2307f4616165f371aa8839a8a658bb5ce7d3d74142d"
+          },
+          "direction": {
+            "path": "results/sikh335/STRATEGY.md",
+            "sha256": "41500855f0ff4c10b905a6cb280e4b6e99a7248b2a9962761d9a8fc97fffae11"
+          },
+          "director_preferences": {
+            "path": "docs/planning/SHOT_BEAT_QUALITY_BRIEF.md",
+            "sha256": "f76a2f4b78597bd19605425a6fb4569e5ed3c68e17e16029e03a572880a34dda"
+          },
+          "film_language": {
+            "path": "docs/knowledge/CURRENT_PRODUCTION_STATE.md",
+            "sha256": "fcbd3501515872265928982f428cc06018a2a5b4c82608663dd158d8a264c6fb"
+          },
+          "learnings": {
+            "path": "results/sikh331/PROOF_AUDIT.md",
+            "sha256": "24ed70645393f90aeca5898ca917b88aa6ffa129b3d232d687cadbd06fccbc4f"
+          },
+          "lessons352": {
+            "path": "results/sikh352/LEARNINGS.md",
+            "sha256": "4e5f387b0c67eb586667c97117253caeff7ad939e5ebbd906d1b0f31930c8992"
+          },
+          "lessons357": {
+            "path": "results/sikh357/LEARNINGS.md",
+            "sha256": "9cc3c8a150783b40ed9c22871cd676edf9ba6aac8c4be7b61b2e1fff005d9b16"
+          },
+          "ownership_diagnosis": {
+            "path": "results/sikh335/CONTROL_FINDINGS.md",
+            "sha256": "354f092ddf6a2f5a390c8c0a4aedafc121b0a2dedb435e4eb421e634bfa2d0c6"
+          },
+          "reference_rear": {
+            "path": ".runtime/art-direction/series01-sikh256/references/reference-b.mov",
+            "sha256": "78d0d691e8712c02931876cf0bc405e4869de357f337f531708be7a7da4898e2"
+          },
+          "references": {
+            "path": "results/workflow330/NIHANG_PROSPECTIVE_BRIEF.md",
+            "sha256": "ec6570f24081644d996c6b12d602d10a229f28257c4d18e8c9b67f7cb28b0878"
+          },
+          "results/sikh358/REQUEST.md": {
+            "path": "results/sikh358/REQUEST.md",
+            "sha256": "11ddd70019d54c4732feba9ca6f68b6b8c28367190dcc3f5f8d979a2b4bfb940"
+          },
+          "results/sikh358/STRATEGY.md": {
+            "path": "results/sikh358/STRATEGY.md",
+            "sha256": "a013e8fe13b53d414cd288f5f9ea9f8a36b64fb459ae45402ff60fcc05146f42"
+          },
+          "results/sikh358/motion-c17-horse_head-review.json": {
+            "path": "results/sikh358/motion-c17-horse_head-review.json",
+            "sha256": "a107471c158c9581543c082e143051cf22ee5caff966a525092bfcb613ce1666"
+          },
+          "results/sikh358/motion-c19-save-review.json": {
+            "path": "results/sikh358/motion-c19-save-review.json",
+            "sha256": "3aefd0f76bfb6a75a5914585c7920ea142ffc6cf231c3b9101b551d1a6f1d812"
+          },
+          "results/sikh358/motion-c20-save-review.json": {
+            "path": "results/sikh358/motion-c20-save-review.json",
+            "sha256": "6135b672f7871a655f637e834d1fe0f7b1f1739a466c172bc4d9e388b2b22b71"
+          },
+          "results/sikh358/motion-c21-horse_head-recipe.json": {
+            "path": "results/sikh358/motion-c21-horse_head-recipe.json",
+            "sha256": "a4aabd269ac3e871a3712ebe280659bbc1a19ee4c69af423bbd350a6d01df495"
+          },
+          "results/sikh358/motion-c21-horse_head_reverse-recipe.json": {
+            "path": "results/sikh358/motion-c21-horse_head_reverse-recipe.json",
+            "sha256": "4dba579654c3673744a8bc68bc9ae31371d87fd36888f50ccc2b1c7cc36958de"
+          },
+          "results/sikh358/motion-c21-leader_front-recipe.json": {
+            "path": "results/sikh358/motion-c21-leader_front-recipe.json",
+            "sha256": "cfef7aaa323e15c12b1e57c8ef7245687ba2df6d76c0fc5c6cd3cefadb7bf112"
+          },
+          "results/sikh358/motion-c21-leader_reverse-recipe.json": {
+            "path": "results/sikh358/motion-c21-leader_reverse-recipe.json",
+            "sha256": "a8e21a130acf1cf2322196f6aebb0662046d3039d769d830a64274132eb259d0"
+          },
+          "results/sikh358/motion-c21-production-recipe.json": {
+            "path": "results/sikh358/motion-c21-production-recipe.json",
+            "sha256": "0d8eae8f0c2d308f4e0930ea4d2434b4659b7234514864a61f5bd41cad8fcd5a"
+          },
+          "results/sikh358/motion-c21-save-recipe.json": {
+            "path": "results/sikh358/motion-c21-save-recipe.json",
+            "sha256": "4fb215144340ba8d9136aeef2bee3819dbf3642b96bc63e526228539343cd9b0"
+          },
+          "results/sikh358/motion-c21.json": {
+            "path": "results/sikh358/motion-c21.json",
+            "sha256": "f67b09df56d3ff6ae8cef32ecb9a396624d1fbea75c0dd96dc3a75dcb2902dfe"
+          },
+          "results/sikh358/rein358-c19-source.py": {
+            "path": "results/sikh358/rein358-c19-source.py",
+            "sha256": "f4ce974a6aee00740a1166f93aeb7ba4823c2b174e95e6b011462da84b5dddea"
+          },
+          "results/sikh358/rein358-c20-source.py": {
+            "path": "results/sikh358/rein358-c20-source.py",
+            "sha256": "b217e570ba8d2119418cdcd08b6ef9ebe01e4926c0fc6667ba602cc585f7c0ce"
+          },
+          "scripts/sikh358_plan.py": {
+            "path": "scripts/sikh358_plan.py",
+            "sha256": "a3c34f2181deea9444170c72bf992c16debadc3ee7ebdaaa2c015f0dc99b5290"
+          },
+          "src/movie_factory/adapters/blender/nihang_control.py": {
+            "path": "src/movie_factory/adapters/blender/nihang_control.py",
+            "sha256": "9c602c8ae3dcb921c81b11d6bed24264c7171edef058a443106e9c29fc05ee15"
+          },
+          "src/movie_factory/adapters/blender/nihang_patch.py": {
+            "path": "src/movie_factory/adapters/blender/nihang_patch.py",
+            "sha256": "73aa1966dfbf377d661956d661630d8594a75e4826d804ed433914315342c25f"
+          },
+          "src/movie_factory/adapters/blender/nihang_rein358.py": {
+            "path": "src/movie_factory/adapters/blender/nihang_rein358.py",
+            "sha256": "eb923f7e256687f9eda8a56ede9ca2c4ac0c1d04adb4efe4581bd35ff88d79e3"
+          },
+          "strategy353": {
+            "path": "results/sikh353/STRATEGY.md",
+            "sha256": "187c6b3fad90a80aab289a577ff6ad21449169925c5974bda04ff1ff2fa52389"
+          },
+          "strategy358": {
+            "path": "results/sikh358/STRATEGY.md",
+            "sha256": "a013e8fe13b53d414cd288f5f9ea9f8a36b64fb459ae45402ff60fcc05146f42"
+          },
+          "tests/test_nihang358_tack.py": {
+            "path": "tests/test_nihang358_tack.py",
+            "sha256": "36171152a4763af0a652914d417aa813bfa0b3f215b3d48b1da8fd85a6b05d30"
+          }
+        },
+        "strategy": "Retain exterior visibility graph, add whole-passage measured selection of one fixed rear-half attachment station on each real ring, and preserve every path corner when resampling to129 points. Dense segment clearance must exceed6mm for4.5mm rein radius. Reuse only same-frame skin graph between reins; preserve actual hand endpoints and unrelated actions. This is the last authorized motion correction, not a lowered gate."
+      },
+      "method_choice": {
+        "alternatives": "Do not repeat guessed bone-tail endpoints or cosmetic noise; retain integrated parent and prove actual geometry before consumer repair.",
+        "chosen": "Retain exterior visibility graph, add whole-passage measured selection of one fixed rear-half attachment station on each real ring, and preserve every path corner when resampling to129 points. Dense segment clearance must exceed6mm for4.5mm rein radius. Reuse only same-frame skin graph between reins; preserve actual hand endpoints and unrelated actions. This is the last authorized motion correction, not a lowered gate.",
+        "discriminating_test": "All190 frames retain ring/hand contacts, no skin penetration in dense segment samples, unchanged unrelated action signature, and frame-switch readback. Then actual head views both sides, rider and production views must show continuous supported route without neck intersections or visible jitter; continuous AV remains Director313.",
+        "evidence_status": "hypothesis"
+      },
+      "replan_triggers": "Failed anatomical surface support or adjacent regression requires source-backed reconstruction, not pose-specific patches.",
+      "resource_scope": "motion21/21; one local worker,no new spend. Original task/history retained.",
+      "steps": [
+        {
+          "acceptance": "All190 frames retain ring/hand contacts, no skin penetration in dense segment samples, unchanged unrelated action signature, and frame-switch readback. Then actual head views both sides, rider and production views must show continuous supported route without neck intersections or visible jitter; continuous AV remains Director313.",
+          "depends_on": [],
+          "id": "save",
+          "kind": "proof",
+          "native_recipe": {
+            "path": "results/sikh358/motion-c21-save-recipe.json",
+            "sha256": "4fb215144340ba8d9136aeef2bee3819dbf3642b96bc63e526228539343cd9b0"
+          },
+          "requirements": [
+            "preservation"
+          ]
+        },
+        {
+          "acceptance": "All190 frames retain ring/hand contacts, no skin penetration in dense segment samples, unchanged unrelated action signature, and frame-switch readback. Then actual head views both sides, rider and production views must show continuous supported route without neck intersections or visible jitter; continuous AV remains Director313.",
+          "depends_on": [
+            "save"
+          ],
+          "id": "horse_head",
+          "kind": "proof",
+          "native_recipe": {
+            "path": "results/sikh358/motion-c21-horse_head-recipe.json",
+            "sha256": "a4aabd269ac3e871a3712ebe280659bbc1a19ee4c69af423bbd350a6d01df495"
+          },
+          "requirements": [
+            "preservation",
+            "support",
+            "phases",
+            "rider",
+            "evidence"
+          ]
+        },
+        {
+          "acceptance": "All190 frames retain ring/hand contacts, no skin penetration in dense segment samples, unchanged unrelated action signature, and frame-switch readback. Then actual head views both sides, rider and production views must show continuous supported route without neck intersections or visible jitter; continuous AV remains Director313.",
+          "depends_on": [
+            "save"
+          ],
+          "id": "horse_head_reverse",
+          "kind": "proof",
+          "native_recipe": {
+            "path": "results/sikh358/motion-c21-horse_head_reverse-recipe.json",
+            "sha256": "4dba579654c3673744a8bc68bc9ae31371d87fd36888f50ccc2b1c7cc36958de"
+          },
+          "requirements": [
+            "preservation",
+            "support",
+            "phases",
+            "rider",
+            "evidence"
+          ]
+        },
+        {
+          "acceptance": "All190 frames retain ring/hand contacts, no skin penetration in dense segment samples, unchanged unrelated action signature, and frame-switch readback. Then actual head views both sides, rider and production views must show continuous supported route without neck intersections or visible jitter; continuous AV remains Director313.",
+          "depends_on": [
+            "save"
+          ],
+          "id": "production",
+          "kind": "proof",
+          "native_recipe": {
+            "path": "results/sikh358/motion-c21-production-recipe.json",
+            "sha256": "0d8eae8f0c2d308f4e0930ea4d2434b4659b7234514864a61f5bd41cad8fcd5a"
+          },
+          "requirements": [
+            "preservation",
+            "support",
+            "phases",
+            "rider",
+            "evidence"
+          ]
+        },
+        {
+          "acceptance": "All190 frames retain ring/hand contacts, no skin penetration in dense segment samples, unchanged unrelated action signature, and frame-switch readback. Then actual head views both sides, rider and production views must show continuous supported route without neck intersections or visible jitter; continuous AV remains Director313.",
+          "depends_on": [
+            "save"
+          ],
+          "id": "leader_front",
+          "kind": "proof",
+          "native_recipe": {
+            "path": "results/sikh358/motion-c21-leader_front-recipe.json",
+            "sha256": "cfef7aaa323e15c12b1e57c8ef7245687ba2df6d76c0fc5c6cd3cefadb7bf112"
+          },
+          "requirements": [
+            "preservation",
+            "support",
+            "phases",
+            "rider",
+            "evidence"
+          ]
+        },
+        {
+          "acceptance": "All190 frames retain ring/hand contacts, no skin penetration in dense segment samples, unchanged unrelated action signature, and frame-switch readback. Then actual head views both sides, rider and production views must show continuous supported route without neck intersections or visible jitter; continuous AV remains Director313.",
+          "depends_on": [
+            "save"
+          ],
+          "id": "leader_reverse",
+          "kind": "proof",
+          "native_recipe": {
+            "path": "results/sikh358/motion-c21-leader_reverse-recipe.json",
+            "sha256": "a8e21a130acf1cf2322196f6aebb0662046d3039d769d830a64274132eb259d0"
+          },
+          "requirements": [
+            "preservation",
+            "support",
+            "phases",
+            "rider",
+            "evidence"
+          ]
+        }
+      ]
+    }
+  },
+  "planning_feedback": [
+    "20 exterior graph avoided large neck penetration, but final resampled curve at294 R had only0.59mm skin clearance, insufficient for4.5mm rein radius. No candidate saved. Resampling must retain corner stations; ring contact station also needs all-frame actual clearance, not guessed rear rim."
+  ],
+  "expert_instruction": "Fresh planning challenge, not production acceptance. Compare original direction, sources and reference roles with derivation and strategy. Seek missing lenses, ignored lessons, weak methods, same-film mismatch and invisible work. Return admit, targeted revise, or a genuine Director decision. Schema completeness is not truth.",
+  "expert_contract": {
+    "version": 1,
+    "lenses": [
+      "story_performance",
+      "camera_editorial",
+      "animation_physics",
+      "anatomy_contact",
+      "effects_environment",
+      "sound_music",
+      "production_reuse"
+    ],
+    "beat_intents": "Copy trusted direction.beat_intents exactly",
+    "beats": [
+      "id",
+      "audience_read",
+      "framing",
+      "lenses: every lens -> {applies:boolean, why:string, requirements:[requirement IDs]}"
+    ],
+    "realizations": "Every requirement ID -> {beats, lenses, derivation, method, interfaces, early_proof, failure_condition, reopen_when, priority, origin, reference_ids}",
+    "priority": [
+      "quality_floor",
+      "dramatic",
+      "optional"
+    ],
+    "origin": [
+      "director",
+      "reference",
+      "craft_inference"
+    ],
+    "challenge": [
+      "plan_digest: trusted parent hashes after reading this challenge",
+      "intent_coverage: every beat ID -> {reason, requirements}",
+      "cross_discipline_conflicts",
+      "omission_probe",
+      "scope_tradeoff",
+      "open_issues"
+    ],
+    "review_boundary": "Fresh review repeats original intent scan; planning_gaps veto even otherwise passing checks"
+  }
+}

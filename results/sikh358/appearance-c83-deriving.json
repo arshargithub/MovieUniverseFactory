@@ -1,0 +1,575 @@
+{
+  "input_digest": "b94949650a1557c17f3b291b67da1c3713bce78509cbaeff8ec11979d15f2eeb",
+  "outcome": "complete",
+  "artifact": {
+    "requirements": [
+      {
+        "id": "preservation",
+        "criterion": "Original320, accepted Pashtun and failed motion2 remain untouched; all new assets stay local derivative.",
+        "modes": [
+          "technical"
+        ],
+        "director_av": false
+      },
+      {
+        "id": "form",
+        "criterion": "Wrapped crown reads as layered Sikh cloth rather than a cylinder; clothing has supported volume and waist-origin folds; saddle pad follows actual horse surface.",
+        "modes": [
+          "technical",
+          "image"
+        ],
+        "director_av": false
+      },
+      {
+        "id": "interfaces",
+        "criterion": "One anatomical body/skeleton and weighted garment assembly; real sleeve/hand, neck, waist, seat and crown interfaces remain coherent across stance/crest/landing.",
+        "modes": [
+          "technical",
+          "image"
+        ],
+        "director_av": false
+      },
+      {
+        "id": "evidence",
+        "criterion": "Actual stance, crest and nearest-crowd images compared with accepted film floor; head/beard/horse surface and full-speed motion remain open, not passed by this limited proof.",
+        "modes": [
+          "technical",
+          "image"
+        ],
+        "director_av": false
+      }
+    ],
+    "beats": [
+      {
+        "id": "appearance",
+        "audience_read": "A materially credible supporting warrior in the same film, not a dressed mannequin.",
+        "framing": "Leader front/reverse/contact283/288/327/350; existing production camera unchanged.",
+        "lenses": {
+          "story_performance": {
+            "applies": true,
+            "requirements": [
+              "form"
+            ],
+            "why": "Layered Sikh cloth must read as worn by a person, not a generic cap and painted body. Face/beard remain an explicit subsequent appearance dependency."
+          },
+          "camera_editorial": {
+            "applies": true,
+            "requirements": [
+              "form",
+              "evidence"
+            ],
+            "why": "Inspect reverse waist and interfaces hidden by horse in front; then whole intended shot."
+          },
+          "animation_physics": {
+            "applies": true,
+            "requirements": [
+              "interfaces"
+            ],
+            "why": "Clothing must remain supported through the existing pose caches and current crest; static projection at rest cannot prove animated fit."
+          },
+          "anatomy_contact": {
+            "applies": true,
+            "requirements": [
+              "interfaces"
+            ],
+            "why": "Support belongs to anatomical torso, never an incidental sleeve intersection; preserve valid59 pose."
+          },
+          "effects_environment": {
+            "applies": false,
+            "requirements": [],
+            "why": "No terrain, light or FX authoring in this form proof; retain the existing shot lighting so new geometry cannot be hidden by a relight."
+          },
+          "sound_music": {
+            "applies": false,
+            "requirements": [],
+            "why": "This is an appearance prerequisite with no new timing or audio claim. Existing sound and final integrated AV remain outside this proof."
+          },
+          "production_reuse": {
+            "applies": true,
+            "requirements": [
+              "preservation",
+              "interfaces",
+              "evidence"
+            ],
+            "why": "Preserve accepted originals and current motion; qualify leader and one near actor before any crowd propagation."
+          }
+        }
+      }
+    ],
+    "derivations": {
+      "preservation": {
+        "beats": [
+          "appearance"
+        ],
+        "lenses": [
+          "production_reuse"
+        ],
+        "derivation": "Original320, accepted Pashtun and failed motion2 remain untouched; all new assets stay local derivative.",
+        "origin": "craft_inference",
+        "priority": "quality_floor",
+        "reference_ids": [
+          "reference_rear",
+          "accepted_film"
+        ]
+      },
+      "form": {
+        "beats": [
+          "appearance"
+        ],
+        "lenses": [
+          "story_performance",
+          "camera_editorial"
+        ],
+        "derivation": "Wrapped crown reads as layered Sikh cloth rather than a cylinder; clothing has supported volume and waist-origin folds; saddle pad follows actual horse surface.",
+        "origin": "craft_inference",
+        "priority": "quality_floor",
+        "reference_ids": [
+          "reference_rear",
+          "accepted_film"
+        ]
+      },
+      "interfaces": {
+        "beats": [
+          "appearance"
+        ],
+        "lenses": [
+          "animation_physics",
+          "anatomy_contact",
+          "production_reuse"
+        ],
+        "derivation": "Existing207 garment poses, head parents, sash, horse and rider interfaces remain intact; no hovering or clipping accepted as detail.",
+        "origin": "craft_inference",
+        "priority": "quality_floor",
+        "reference_ids": [
+          "reference_rear",
+          "accepted_film"
+        ]
+      },
+      "evidence": {
+        "beats": [
+          "appearance"
+        ],
+        "lenses": [
+          "camera_editorial",
+          "production_reuse"
+        ],
+        "derivation": "Actual stance, crest and nearest-crowd images compared with accepted film floor; head/beard/horse surface and full-speed motion remain open, not passed by this limited proof.",
+        "origin": "craft_inference",
+        "priority": "quality_floor",
+        "reference_ids": [
+          "reference_rear",
+          "accepted_film"
+        ]
+      }
+    },
+    "context_mapping": {
+      "direction": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence"
+        ],
+        "reason": "Resume the integrated isolated production package; this precursor discovers rig ownership before any new pose authoring."
+      },
+      "learnings": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence"
+        ],
+        "reason": "331 failed whole-pose support and same-film character fidelity despite incremental offset corrections; those attempts remain closed."
+      },
+      "film_language": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence"
+        ],
+        "reason": "Accepted Pashtun quality stays fixed; a supporting actor cannot be a schematic statue."
+      },
+      "director_preferences": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence"
+        ],
+        "reason": "Predict failure through expert lenses and fix internally; setup and routine algorithms are not handovers."
+      },
+      "references": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence"
+        ],
+        "reason": "Reference14\u201319s governs faithful action phases; accepted film governs appearance; rejected poses are negative controls."
+      },
+      "controls": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence"
+        ],
+        "reason": "Fresh motion-domain packet and manual AU09\u201313,16 plus317\u2013334 reconciliation accompany this inspection."
+      },
+      "constraints": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence"
+        ],
+        "reason": "Inspect64 invalid used-armature drivers, removed object drivers and FK bypasses; no blind restoration or defect waiver."
+      },
+      "cast_findings": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence"
+        ],
+        "reason": "High topology and assigned texture already exist. Address cylindrical turban, smooth costume silhouette and unsupported saddle form before extra surface noise; preserve207 garment pose keys."
+      },
+      "audit348": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence"
+        ],
+        "reason": "Apply the reviewed causal proof before dependent clothing work."
+      },
+      "reconciliation351": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence"
+        ],
+        "reason": "Apply the reviewed causal proof before dependent clothing work."
+      },
+      "strategy352": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence"
+        ],
+        "reason": "Coordinate arm and contact constraints; isolate pose versus skinning before independent garment transfer."
+      },
+      "strategy353": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence"
+        ],
+        "reason": "Apply causal interface tests and retain scoped successes; leader and horse precede crowd."
+      },
+      "lessons352": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence"
+        ],
+        "reason": "Apply causal interface tests and retain scoped successes; leader and horse precede crowd."
+      },
+      "strategy354": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence"
+        ],
+        "reason": "Reconstruct failed whole-form appearance, preserve motion16 and original quality/reference authority."
+      },
+      "retro354": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence"
+        ],
+        "reason": "Reconstruct failed whole-form appearance, preserve motion16 and original quality/reference authority."
+      },
+      "lessons353": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence"
+        ],
+        "reason": "Reconstruct failed whole-form appearance, preserve motion16 and original quality/reference authority."
+      },
+      "strategy357": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence"
+        ],
+        "reason": "Replace invalid inherited follicle domain before density; retain354/71 sash/tack and motion16; review each cycle and cumulative fifth."
+      },
+      "lessons354": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence"
+        ],
+        "reason": "Replace invalid inherited follicle domain before density; retain354/71 sash/tack and motion16; review each cycle and cumulative fifth."
+      },
+      "strategy358": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence"
+        ],
+        "reason": "Correct actual headstall ownership and its consuming rein span; retain357 construction gains and original faithful action reference."
+      },
+      "lessons357": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence"
+        ],
+        "reason": "Correct actual headstall ownership and its consuming rein span; retain357 construction gains and original faithful action reference."
+      }
+    },
+    "knowledge_mapping": {
+      "construction_interfaces": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence"
+        ],
+        "reason": "Inspect actual head and jaw weighted surface rest coordinates, material regions and cross sections before constructing anatomical headstall. A bone tail is not a muzzle landmark. This read-only precursor preserves appearance81 and motion16. Bounded actual head surface bounds, cross sections and eye/material extents in horse rig rest space; compare with visible283 tan-arch defect. No construction or artistic pass from inventory."
+      },
+      "reuse_envelope": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence"
+        ],
+        "reason": "Existing horse is an unqualified adaptation source, not a qualified rearing asset; diagnose its actual reuse envelope before reconstruction."
+      },
+      "animal_coordination": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence"
+        ],
+        "reason": "Trace hind support, chest, poll, forefeet and rider contact together; reference phases govern, not number of keys."
+      },
+      "crowd_support": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence"
+        ],
+        "reason": "Crowd remains deferred;358 only leader/horse. No background acceptance."
+      },
+      "authority": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence"
+        ],
+        "reason": "Resume authorized local production; no spend, installation, cloud, external calls, identity changes or higher-model assumptions."
+      },
+      "strategy": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence"
+        ],
+        "reason": "Inspect actual head and jaw weighted surface rest coordinates, material regions and cross sections before constructing anatomical headstall. A bone tail is not a muzzle landmark. This read-only precursor preserves appearance81 and motion16. Bounded actual head surface bounds, cross sections and eye/material extents in horse rig rest space; compare with visible283 tan-arch defect. No construction or artistic pass from inventory."
+      },
+      "visual_gate": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence"
+        ],
+        "reason": "Inspect actual head and jaw weighted surface rest coordinates, material regions and cross sections before constructing anatomical headstall. A bone tail is not a muzzle landmark. This read-only precursor preserves appearance81 and motion16. Bounded actual head surface bounds, cross sections and eye/material extents in horse rig rest space; compare with visible283 tan-arch defect. No construction or artistic pass from inventory."
+      },
+      "anticipation": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence"
+        ],
+        "reason": "Predict unsupported hind legs, straight neck, rigid rider and slow contact before editing; include phase interiors and reverse views in the next proof."
+      },
+      "stopping": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence"
+        ],
+        "reason": "No technical setup handover; continue toward integrated isolated clip unless a genuine material blocker requires the Director."
+      },
+      "versioning": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence"
+        ],
+        "reason": "Bind parent, handler, recipe and dependencies; preserve original320,331 failure evidence and accepted Pashtun unchanged."
+      },
+      "economics": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence"
+        ],
+        "reason": "Record serial worker and active intervals inSIKH335; no invented savings, cost or denominator from old sequence effort."
+      },
+      "anatomy": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence"
+        ],
+        "reason": "352 four additional appearance corrections58\u201361. Solve shoulder/elbow/wrist with grip height and azimuth on the unchanged spear; compare identical evaluated poses under volume preserving and linear skinning. Do not freeze an unaccepted hand constraint or conceal failed anatomy with cloth. Whole actor and AV remain unqualified."
+      },
+      "motion": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence"
+        ],
+        "reason": "Establish one owner per control and endpoint before keys; no nonzero-key or numeric-distance claim of natural performance."
+      },
+      "secondary": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence"
+        ],
+        "reason": "Preserve horse/root/opposite arm and separate motion12. This is a coupled spear-arm diagnostic, not whole motion acceptance."
+      },
+      "look": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence"
+        ],
+        "reason": "Compare intended-frame cloth volume and material separation with the accepted Pashtun, not equal daylight pixel detail. Pillbox/cone turban, bodysuit shirt or hovering pad fail."
+      },
+      "render_profile": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence"
+        ],
+        "reason": "Matched temporary studio CPU8 controls640 square; production contact frame supplements anatomy. No acceleration claim."
+      },
+      "cache_safety": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence"
+        ],
+        "reason": "One owned worker, disabled embedded scripts, credential-free job and no source/cache overwrite; future motion invalidates dependent caches."
+      },
+      "current_state": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence"
+        ],
+        "reason": "Inspect actual head and jaw weighted surface rest coordinates, material regions and cross sections before constructing anatomical headstall. A bone tail is not a muzzle landmark. This read-only precursor preserves appearance81 and motion16. Bounded actual head surface bounds, cross sections and eye/material extents in horse rig rest space; compare with visible283 tan-arch defect. No construction or artistic pass from inventory."
+      },
+      "au_deformation": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence"
+        ],
+        "reason": "352 four additional appearance corrections58\u201361. Solve shoulder/elbow/wrist with grip height and azimuth on the unchanged spear; compare identical evaluated poses under volume preserving and linear skinning. Do not freeze an unaccepted hand constraint or conceal failed anatomy with cloth. Whole actor and AV remain unqualified."
+      },
+      "au_performance": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence"
+        ],
+        "reason": "Reference-like loading, forcing and recovery require coupled torso/neck and support; still inventory cannot certify continuous motion."
+      },
+      "au_contact": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence"
+        ],
+        "reason": "Inspect actual head and jaw weighted surface rest coordinates, material regions and cross sections before constructing anatomical headstall. A bone tail is not a muzzle landmark. This read-only precursor preserves appearance81 and motion16. Bounded actual head surface bounds, cross sections and eye/material extents in horse rig rest space; compare with visible283 tan-arch defect. No construction or artistic pass from inventory."
+      },
+      "au_surface": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence"
+        ],
+        "reason": "Subsequent look proof compares matched lighting and scale with accepted film; no flat color or noise substitute for designed forms."
+      },
+      "au_reuse": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence"
+        ],
+        "reason": "Record exact tested-use limits and native jobs; do not call local artifacts a remote backup or whole-scene portable bundle."
+      },
+      "sikh_scope": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence"
+        ],
+        "reason": "Sikh sequence only, nonrecurring leader recognizes rider, no new story or music mapping in this correction."
+      },
+      "sikh_motion": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence"
+        ],
+        "reason": "Rearing and crowd have their own support proof; keep causal exchange and corridor clearance in integrated isolated output. No reuse of gallop qualification as rear proof."
+      }
+    }
+  }
+}

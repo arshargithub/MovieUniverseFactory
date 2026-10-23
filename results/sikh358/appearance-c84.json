@@ -1,0 +1,13 @@
+{
+ "parent":".runtime/factory-native/sikh357-c81-save/scene.blend",
+ "method":"Construct head-owned flat leather straps and modest bit rings using measured actual horse skin, eye, nose and jaw extents from83. All head surfaces include jaw001/muzzle rather than only DEF-head weights. Project bounded anatomical guides once; retain rig and action keys. Hide old floating tan headstall only in derivative.",
+ "proof":"Inspect supported brow/crown/cheeks/noseband and bit on actual head283327350, plus intended production. Reject eye/nostril obstruction, floating strips, intersections or adjacent appearance regression. Existing incorrect reins remain explicit pending consumer17, never a whole-interface pass.",
+ "scope":"Leader horse anatomical headstall derivative; preserved81 character and motion16. Coupled rein repair follows in motion17.",
+ "methods":{"preservation":"Hash all existing actions before/after; original81 source unchanged.","form":"Actual skin BVH support for dark flat leather straps, measured mouth-corner steel rings, no tail-as-muzzle assumption.","interfaces":"DEF-head owns rest-space skin-supported strap vertices; same stored ring coordinates feed next real rein consumer. Check rest/crest/impact for pose divergence.","evidence":"Head close and intended camera prove visible shape; technical hashes never close artistic review."},
+ "sources":["src/movie_factory/adapters/blender/nihang_control.py","src/movie_factory/adapters/blender/nihang_patch.py","src/movie_factory/adapters/blender/nihang_tack358.py","src/movie_factory/adapters/blender/nihang_tack354.py","tests/test_nihang358_tack.py",".runtime/context-hygiene/runs/sikh358-tack-tests/stdout.log",".runtime/factory-native/sikh358-appearance-c83-inspect/rig.json"],
+ "steps":[
+  {"id":"save","depends_on":[],"requirements":["preservation"],"recipe":{"operation":"nihang_patch","frame":327,"width":640,"height":640,"samples":8,"edits":[{"kind":"mounted_tack358","target":"mounted leader"}]}},
+  {"id":"horse_head","depends_on":["save"],"recipe":{"operation":"nihang_frames","frame":327,"frames":[283,327,350],"view":"horse_head","width":640,"height":640,"samples":16}},
+  {"id":"production","depends_on":["save"],"recipe":{"operation":"nihang_frames","frame":327,"frames":[283,307,327,341,350],"view":"production","width":432,"height":768,"samples":16}}
+ ]
+}

@@ -1,0 +1,47 @@
+{
+  "verdict": "FAIL",
+  "run_digest": "f80d62e5811820bd3443249d65ee789f6ee75879fb3f03f5a2ea87a12cafccef",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh358-motion-c17-horse_head/snapshot.json",
+      "sha256": "e17721f592eadecbd98ec1aca5121cf784cbad8c7e76d632b964856cd590c720"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh358-motion-c17-horse_head/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh358-motion-c17-horse_head/script-diagnostics.json",
+      "sha256": "99bbbecec312f933855a69b1d853770138fd35ab62669f2fe652484d335f4ec7"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh358-motion-c17-horse_head/frame.png",
+      "sha256": "d04c7cb72908cd97de5131d8fab37a0d0d0059c9c2ff45a55f2bf359da91f9fc"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh358-motion-c17-horse_head/frames.json",
+      "sha256": "ea313248421da362ab404a724c09681ddb1b711bbafd823fa5ed8b15c6ff73cf"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh358-motion-c17-horse_head/frame-0283.png",
+      "sha256": "3c10fecd0fc28357e766b831177a9803c91a0a1fd9c34e4a2ae7e0a63c18048d"
+    },
+    "frame_307": {
+      "path": ".runtime/factory-native/sikh358-motion-c17-horse_head/frame-0307.png",
+      "sha256": "e718a86a5ef022734f67efc778c6c80ab21220cca0412b7f4ef7af69c050ddd4"
+    },
+    "frame_327": {
+      "path": ".runtime/factory-native/sikh358-motion-c17-horse_head/frame.png",
+      "sha256": "d04c7cb72908cd97de5131d8fab37a0d0d0059c9c2ff45a55f2bf359da91f9fc"
+    },
+    "frame_350": {
+      "path": ".runtime/factory-native/sikh358-motion-c17-horse_head/frame-0350.png",
+      "sha256": "ad93fab27a580b82e5a1591349c0b76353f9eea39da78868596a50fccf5e3019"
+    }
+  },
+  "observation": "17 actual283307327350: new dark ring-side span exists, but neck hides/penetrates central route and tan legacy-looking span remains by hand. Numeric endpoint and preserved grip checks do not establish continuous visible rein. Inspect actual visible object/material/curve ownership before rebuilding clear side-supported route; no whole contact pass.",
+  "comparison": "Actual returned images/technical data against explicit358 plan and original quality/reference requirements. No full-speed AV certification.",
+  "open_defects": [
+    "17 actual283307327350: new dark ring-side span exists, but neck hides/penetrates central route and tan legacy-looking span remains by hand. Numeric endpoint and preserved grip checks do not establish continuous visible rein. Inspect actual visible object/material/curve ownership before rebuilding clear side-supported route; no whole contact pass."
+  ]
+}

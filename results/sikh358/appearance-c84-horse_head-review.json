@@ -1,0 +1,43 @@
+{
+  "verdict": "FAIL",
+  "run_digest": "42a4951c463d85899de175287306e2bfc05e9b3f6d73752160cde98241179941",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh358-appearance-c84-horse_head/snapshot.json",
+      "sha256": "e17721f592eadecbd98ec1aca5121cf784cbad8c7e76d632b964856cd590c720"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh358-appearance-c84-horse_head/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh358-appearance-c84-horse_head/script-diagnostics.json",
+      "sha256": "99bbbecec312f933855a69b1d853770138fd35ab62669f2fe652484d335f4ec7"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh358-appearance-c84-horse_head/frame.png",
+      "sha256": "1e35490fcf042eaba28975de77c5913f084646b7bc06b80ceebfc3b0b40f15fd"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh358-appearance-c84-horse_head/frames.json",
+      "sha256": "6f3e0f3c80bbc32b6755a53452a7a360be363a2a48c8b79aada507f2135bf3ff"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh358-appearance-c84-horse_head/frame-0283.png",
+      "sha256": "df5ff18021db0985c5d18aec2b5ded34084fcc0ee0110d47105c058da1853150"
+    },
+    "frame_327": {
+      "path": ".runtime/factory-native/sikh358-appearance-c84-horse_head/frame.png",
+      "sha256": "1e35490fcf042eaba28975de77c5913f084646b7bc06b80ceebfc3b0b40f15fd"
+    },
+    "frame_350": {
+      "path": ".runtime/factory-native/sikh358-appearance-c84-horse_head/frame-0350.png",
+      "sha256": "f0a6ce9b50da39b589096fc40925d4ef3da127ce3b18ae254d36853f4e0c77bf"
+    }
+  },
+  "observation": "84 actual close283327350: muzzle ring/noseband and cheek route improved; crown center projects sideways onto ear rather than across poll, leaving upright stub, and brow joins stop above cheek. Reins remain old disconnected consumer. Reject whole interface; rebuild continuous crown/brow routes before17 rein update.",
+  "comparison": "Actual returned images/technical data against explicit358 plan and original quality/reference requirements. No full-speed AV certification.",
+  "open_defects": [
+    "84 actual close283327350: muzzle ring/noseband and cheek route improved; crown center projects sideways onto ear rather than across poll, leaving upright stub, and brow joins stop above cheek. Reins remain old disconnected consumer. Reject whole interface; rebuild continuous crown/brow routes before17 rein update."
+  ]
+}

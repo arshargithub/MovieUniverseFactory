@@ -1,0 +1,15 @@
+{
+  "verdict": "FAIL",
+  "run_digest": "1dd0b95a22575a1e2f15ba949fbcbca87b19e22529956665ade4bf9a756a15d9",
+  "evidence": {
+    "failed_run": {
+      "path": "results/sikh358/motion-c21-save-run.json",
+      "sha256": "02dc487f2bab5a9ea649b5eaa0b018a69e768fb1a843a1205049d3d09cf82fd7"
+    }
+  },
+  "observation": "21 fixed ring-station screening and corner-preserving route still fail dense clearance at287 L, sample236:4.60mm versus6mm declared floor for4.5mm rein radius. Guard failed before save; whole190-frame route not qualified. Do not relax gate at allowance exhaustion. Next method should repair the collision-checked full segments with explicit clearance margin, retaining evidence.",
+  "comparison": "Actual returned images/technical data against explicit358 plan and original quality/reference requirements. No full-speed AV certification.",
+  "open_defects": [
+    "21 fixed ring-station screening and corner-preserving route still fail dense clearance at287 L, sample236:4.60mm versus6mm declared floor for4.5mm rein radius. Guard failed before save; whole190-frame route not qualified. Do not relax gate at allowance exhaustion. Next method should repair the collision-checked full segments with explicit clearance margin, retaining evidence."
+  ]
+}

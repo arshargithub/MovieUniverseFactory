@@ -1,0 +1,25 @@
+{
+  "verdict": "PASS",
+  "run_digest": "bcd539699fbad91573e25961a48dcd493f14b72b9b7025baf5278cecab629d6b",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh358-appearance-c83-inspect/snapshot.json",
+      "sha256": "4ee52e0c8c9adc944075137431fce77ab86d5b3837f003c06580d2f75b1b9d53"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh358-appearance-c83-inspect/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh358-appearance-c83-inspect/script-diagnostics.json",
+      "sha256": "99bbbecec312f933855a69b1d853770138fd35ab62669f2fe652484d335f4ec7"
+    },
+    "rig": {
+      "path": ".runtime/factory-native/sikh358-appearance-c83-inspect/rig.json",
+      "sha256": "0ac05a90c8407faa7c711c7ce647619e4452b0ccb2124f8d2154aa9a27219261"
+    }
+  },
+  "observation": "Source preserved; returned native artifacts hash-verified, diagnostics clean. Read-only report or derivative reopen only; no visual or motion approval.",
+  "comparison": "Parent unchanged; source-bound worker. Subsequent actual inspection independently required.",
+  "open_defects": []
+}

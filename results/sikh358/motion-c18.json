@@ -1,0 +1,11 @@
+{
+ "parent":".runtime/factory-native/sikh358-motion-c17-save/scene.blend",
+ "template":"results/sikh353/motion-strategizing-c16.json",
+ "cause":"17 ring endpoints moved numerically but actual view retains tan hand span and neck penetration. Need actual visible material/curve ownership, not another endpoint-only correction.",
+ "method":"Read-only inventory of actual render-visible objects around horse head and all rein names, material overrides, original curve points and modifiers. Resolve whether tan span is another object or object-slot override, and inspect actual curve shape crossing neck. Preserve failed17 source for negative comparison.",
+ "proof":"Returned actual object/material/curve coordinates at327 identify visible consumers; no constructed or artistic result from this inspection.",
+ "scope":"Read-only consuming-geometry diagnosis within original motion18; appearance86 and action16 retained.",
+ "methods":{"preservation":"No native mutation; exact failed17 source retained.","support":"No changed horse support; trace actual visible objects only.","phases":"No retiming; inspect crest327 where penetration is revealed.","rider":"Resolve every visible rein object and material slot rather than assume names identify final rendering.","evidence":"Actual inventory before revised method; no numeric or artistic qualification."},
+ "sources":["src/movie_factory/adapters/blender/nihang_control.py","results/sikh358/motion-c17-horse_head-review.json"],
+ "steps":[{"id":"inspect","depends_on":[],"recipe":{"operation":"nihang_rig_inspect","frame":327,"width":64,"height":64,"samples":1}}]
+}

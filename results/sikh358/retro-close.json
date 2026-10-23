@@ -1,0 +1,526 @@
+{
+  "sikh335-supporting-appearance": {
+    "counts": {
+      "initialize": 1,
+      "plan": 35,
+      "outcome": 251,
+      "response": 124,
+      "admit": 124,
+      "evaluate": 1
+    },
+    "projection": {
+      "policy": 1,
+      "sequence": 536,
+      "gates": {
+        "__migration__": {
+          "status": "CLOSED",
+          "evaluation": "sikh351-migration-effect"
+        },
+        "__allowance__": {
+          "status": "TESTING",
+          "reason": "evidence_reconciliation",
+          "triggers": [
+            "migration-evidence:sikh351-reviewed-migration",
+            "sikh351-c55-__allowance__-reopen",
+            "sikh351-c56-__allowance__-reopen",
+            "sikh351-c57-__allowance__-reopen",
+            "exhaustion:sikh351-exhausted",
+            "sikh352-c59-__allowance__-reopen",
+            "sikh352-c60-__allowance__-reopen",
+            "sikh352-c61-__allowance__-reopen",
+            "exhaustion:sikh352-exhausted61",
+            "sikh353-c63-__allowance__-reopen",
+            "sikh353-c64-__allowance__-reopen",
+            "sikh353-c65-__allowance__-reopen",
+            "sikh353-c66-__allowance__-reopen",
+            "sikh353-c67-__allowance__-reopen",
+            "exhaustion:sikh353-appearance-exhausted",
+            "sikh354-c69-__allowance__-reopen",
+            "sikh354-c70-__allowance__-reopen",
+            "sikh354-c71-__allowance__-reopen",
+            "sikh354-c72-__allowance__-reopen",
+            "exhaustion:sikh354-c72-visual-replan",
+            "sikh357-c74-__allowance__-reopen",
+            "sikh357-c75-__allowance__-reopen",
+            "sikh357-c76-__allowance__-reopen",
+            "sikh357-c77-__allowance__-reopen",
+            "sikh357-c78-__allowance__-reopen",
+            "sikh357-c79-__allowance__-reopen",
+            "sikh357-c80-__allowance__-reopen",
+            "sikh357-c81-__allowance__-reopen",
+            "sikh358-appearance-c82-__allowance__-reopen",
+            "sikh358-appearance-c83-__allowance__-reopen",
+            "sikh358-appearance-c84-__allowance__-reopen",
+            "sikh358-appearance-c85-__allowance__-reopen",
+            "sikh358-appearance-c86-__allowance__-reopen"
+          ],
+          "plan": "f3acbb2ae4928fdddd2ed93e046da97b71879e98cf5a669091628f3166e0d1f7",
+          "admitted_event": "sikh358-appearance-c86-__allowance__-admit"
+        },
+        "form": {
+          "status": "TESTING",
+          "reason": "evidence_reconciliation",
+          "triggers": [
+            "sikh351-legacy-form",
+            "sikh351-c54-form-open",
+            "sikh351-c55-form-open",
+            "sikh351-c56-form-open",
+            "native-review:sikh351-c56-anatomy_custom_back",
+            "sikh351-c57-form-open",
+            "native-review:sikh351-c57-anatomy_custom_back",
+            "sikh352-c58-form-open",
+            "native-review:sikh352-c58-anatomy_custom_front",
+            "sikh352-c59-form-open",
+            "sikh352-c60-form-open",
+            "native-review:sikh352-c60-leader_front",
+            "sikh352-c61-form-open",
+            "native-review:sikh352-c61-leader_front",
+            "sikh352-c61-final-form-failure",
+            "sikh353-c63-form-reopen",
+            "native-review:sikh353-c63-leader_reverse",
+            "native-review:sikh353-c64-leader_front",
+            "native-review:sikh353-c65-leader_face",
+            "native-review:sikh353-c66-leader_face",
+            "native-review:sikh353-c67-leader_front",
+            "sikh353-c67-final-failure",
+            "sikh354-c68-leader_face-failure",
+            "sikh354-c69-save-failure",
+            "native-review:sikh354-c70-production",
+            "sikh354-c70-production-failure",
+            "native-review:sikh354-c71-leader_front",
+            "sikh354-c71-leader_front-failure",
+            "native-review:sikh354-c72-leader_face",
+            "sikh354-c72-leader_face-failure",
+            "native-review:sikh357-c73-leader_face",
+            "sikh357-c73-leader_face-failure",
+            "native-review:sikh357-c74-leader_face",
+            "sikh357-c74-leader_face-failure",
+            "native-review:sikh357-c75-leader_face",
+            "sikh357-c75-leader_face-failure",
+            "native-review:sikh357-c76-leader_face",
+            "sikh357-c76-leader_face-failure",
+            "native-review:sikh357-c77-leader_front",
+            "sikh357-c77-leader_front-failure",
+            "native-review:sikh357-c78-leader_reverse",
+            "sikh357-c78-leader_reverse-failure",
+            "native-review:sikh357-c79-leader_reverse",
+            "sikh357-c79-leader_reverse-failure",
+            "native-review:sikh357-c80-horse_head",
+            "sikh357-c80-horse_head-failure",
+            "native-review:sikh357-c81-horse_head",
+            "sikh357-c81-horse_head-failure",
+            "sikh358-appearance-c83-form-reopen",
+            "sikh358-appearance-c84-form-reopen",
+            "native-review:sikh358-appearance-c84-horse_head",
+            "sikh358-appearance-c86-form-reopen"
+          ],
+          "plan": "f3acbb2ae4928fdddd2ed93e046da97b71879e98cf5a669091628f3166e0d1f7",
+          "admitted_event": "sikh358-appearance-c86-form-admit"
+        },
+        "interfaces": {
+          "status": "TESTING",
+          "reason": "strategy_falsifier_or_regression",
+          "triggers": [
+            "native-review:sikh352-c58-anatomy_custom_front",
+            "native-review:sikh352-c58-anatomy_custom_back",
+            "native-review:sikh352-c58-anatomy_custom_side",
+            "native-review:sikh352-c58-anatomy_linear_front",
+            "native-review:sikh352-c58-anatomy_linear_back",
+            "native-review:sikh352-c58-leader_contact",
+            "sikh352-c60-interfaces-reopen",
+            "native-review:sikh352-c60-leader_front",
+            "native-review:sikh352-c61-leader_front",
+            "sikh353-c63-interfaces-reopen",
+            "native-review:sikh353-c63-leader_reverse",
+            "sikh353-c63-leader_reverse-failure",
+            "native-review:sikh353-c64-leader_front",
+            "sikh353-c64-leader_front-failure",
+            "native-review:sikh353-c65-leader_face",
+            "sikh353-c65-leader_face-failure",
+            "native-review:sikh353-c66-leader_face",
+            "sikh353-c66-leader_face-failure",
+            "native-review:sikh353-c67-leader_front",
+            "sikh354-c69-interfaces-reopen",
+            "sikh354-c70-interfaces-reopen",
+            "native-review:sikh354-c70-production",
+            "native-review:sikh354-c71-leader_front",
+            "native-review:sikh354-c72-leader_face",
+            "native-review:sikh357-c73-leader_face",
+            "native-review:sikh357-c74-leader_face",
+            "native-review:sikh357-c75-leader_face",
+            "native-review:sikh357-c76-leader_face",
+            "native-review:sikh357-c77-leader_front",
+            "native-review:sikh357-c78-leader_reverse",
+            "native-review:sikh357-c79-leader_reverse",
+            "native-review:sikh357-c80-horse_head",
+            "native-review:sikh357-c81-horse_head",
+            "sikh358-appearance-c83-interfaces-reopen",
+            "sikh358-appearance-c84-interfaces-reopen",
+            "native-review:sikh358-appearance-c84-horse_head",
+            "sikh358-appearance-c84-horse_head-outcome",
+            "sikh358-appearance-c85-save-outcome"
+          ],
+          "plan": "f3acbb2ae4928fdddd2ed93e046da97b71879e98cf5a669091628f3166e0d1f7",
+          "admitted_event": "sikh358-appearance-c86-interfaces-admit"
+        },
+        "evidence": {
+          "status": "TESTING",
+          "reason": "evidence_reconciliation",
+          "triggers": [
+            "native-review:sikh352-c58-anatomy_custom_front",
+            "native-review:sikh352-c58-anatomy_custom_back",
+            "native-review:sikh352-c58-anatomy_custom_side",
+            "native-review:sikh352-c58-anatomy_linear_front",
+            "native-review:sikh352-c58-anatomy_linear_back",
+            "native-review:sikh352-c58-leader_contact",
+            "sikh352-c60-evidence-reopen",
+            "native-review:sikh352-c60-leader_front",
+            "native-review:sikh352-c61-leader_front",
+            "sikh353-c63-evidence-reopen",
+            "native-review:sikh353-c63-leader_reverse",
+            "native-review:sikh353-c64-leader_front",
+            "native-review:sikh353-c65-leader_face",
+            "native-review:sikh353-c66-leader_face",
+            "native-review:sikh353-c67-leader_front",
+            "sikh354-c69-evidence-reopen",
+            "sikh354-c70-evidence-reopen",
+            "native-review:sikh354-c70-production",
+            "native-review:sikh354-c71-leader_front",
+            "native-review:sikh354-c72-leader_face",
+            "native-review:sikh357-c73-leader_face",
+            "native-review:sikh357-c74-leader_face",
+            "native-review:sikh357-c75-leader_face",
+            "native-review:sikh357-c76-leader_face",
+            "native-review:sikh357-c77-leader_front",
+            "native-review:sikh357-c78-leader_reverse",
+            "native-review:sikh357-c79-leader_reverse",
+            "native-review:sikh357-c80-horse_head",
+            "native-review:sikh357-c81-horse_head",
+            "sikh358-appearance-c83-evidence-reopen",
+            "sikh358-appearance-c84-evidence-reopen",
+            "native-review:sikh358-appearance-c84-horse_head",
+            "sikh358-appearance-c86-evidence-reopen"
+          ],
+          "plan": "f3acbb2ae4928fdddd2ed93e046da97b71879e98cf5a669091628f3166e0d1f7",
+          "admitted_event": "sikh358-appearance-c86-evidence-admit"
+        }
+      },
+      "warnings": {},
+      "responses": {
+        "__allowance__": {
+          "cause": "85 broad behind-ear rays missed outside skull; lower shared cheek/crown junction to skull and cast only supported central width behind ears.",
+          "change_or_retain_rationale": "84 muzzle/cheek proof retained; replace ear-level crown junction with lower skull-side junction and narrow behind-ear top section, preserve identical brow/crown/cheek end points. No motion key edits.",
+          "evidence": {
+            "results/sikh357/LEARNINGS.md": {
+              "path": "results/sikh357/LEARNINGS.md",
+              "sha256": "9cc3c8a150783b40ed9c22871cd676edf9ba6aac8c4be7b61b2e1fff005d9b16"
+            },
+            "results/sikh358/REQUEST.md": {
+              "path": "results/sikh358/REQUEST.md",
+              "sha256": "11ddd70019d54c4732feba9ca6f68b6b8c28367190dcc3f5f8d979a2b4bfb940"
+            },
+            "results/sikh358/STRATEGY.md": {
+              "path": "results/sikh358/STRATEGY.md",
+              "sha256": "a013e8fe13b53d414cd288f5f9ea9f8a36b64fb459ae45402ff60fcc05146f42"
+            },
+            "results/sikh358/appearance-c86-challenge.json": {
+              "path": "results/sikh358/appearance-c86-challenge.json",
+              "sha256": "67a2cc7ed0971769a90ab3d83e5e94d6300112f5cde8eba5abf4245b9665fcae"
+            },
+            "results/sikh358/appearance-c86.json": {
+              "path": "results/sikh358/appearance-c86.json",
+              "sha256": "0c9ed00ebd3ed15a8e05c98a6ef37b84fd47e85b888e5ef5dc46547ddfead0b0"
+            }
+          },
+          "expected": "Only actual corrected subproof advances; no whole-actor acceptance by bookkeeping.",
+          "failure_response": "Replan actual failing interface with retained counters, no decorative concealment.",
+          "gate_digest": "3967bd8ef24664364ecada7f1b5b270b8e7c0b708160e68b004778a8f17cd2ab",
+          "key": "__allowance__",
+          "plan": "f3acbb2ae4928fdddd2ed93e046da97b71879e98cf5a669091628f3166e0d1f7",
+          "preserve": "Original references,357 integrated scene,action clock and all task failures; no spend.",
+          "target_stage": "STRATEGIZING",
+          "test": "Inspect supported brow/crown/cheeks/noseband and bit on actual head283327350, plus intended production. Reject eye/nostril obstruction, floating strips, intersections or adjacent appearance regression. Existing incorrect reins remain explicit pending consumer17, never a whole-interface pass.",
+          "uncertainty": "Surface bounds do not locate lips automatically; actual eye/mouth visibility and posed attachment must falsify route.",
+          "event": "sikh358-appearance-c86-__allowance__-response"
+        },
+        "form": {
+          "cause": "85 broad behind-ear rays missed outside skull; lower shared cheek/crown junction to skull and cast only supported central width behind ears.",
+          "change_or_retain_rationale": "84 muzzle/cheek proof retained; replace ear-level crown junction with lower skull-side junction and narrow behind-ear top section, preserve identical brow/crown/cheek end points. No motion key edits.",
+          "evidence": {
+            "results/sikh357/LEARNINGS.md": {
+              "path": "results/sikh357/LEARNINGS.md",
+              "sha256": "9cc3c8a150783b40ed9c22871cd676edf9ba6aac8c4be7b61b2e1fff005d9b16"
+            },
+            "results/sikh358/REQUEST.md": {
+              "path": "results/sikh358/REQUEST.md",
+              "sha256": "11ddd70019d54c4732feba9ca6f68b6b8c28367190dcc3f5f8d979a2b4bfb940"
+            },
+            "results/sikh358/STRATEGY.md": {
+              "path": "results/sikh358/STRATEGY.md",
+              "sha256": "a013e8fe13b53d414cd288f5f9ea9f8a36b64fb459ae45402ff60fcc05146f42"
+            },
+            "results/sikh358/appearance-c86-challenge.json": {
+              "path": "results/sikh358/appearance-c86-challenge.json",
+              "sha256": "67a2cc7ed0971769a90ab3d83e5e94d6300112f5cde8eba5abf4245b9665fcae"
+            },
+            "results/sikh358/appearance-c86.json": {
+              "path": "results/sikh358/appearance-c86.json",
+              "sha256": "0c9ed00ebd3ed15a8e05c98a6ef37b84fd47e85b888e5ef5dc46547ddfead0b0"
+            }
+          },
+          "expected": "Only actual corrected subproof advances; no whole-actor acceptance by bookkeeping.",
+          "failure_response": "Replan actual failing interface with retained counters, no decorative concealment.",
+          "gate_digest": "0a292a8cd327de7c840be14d3500a927a138cea25a2e090c64621f2f6fd6823a",
+          "key": "form",
+          "plan": "f3acbb2ae4928fdddd2ed93e046da97b71879e98cf5a669091628f3166e0d1f7",
+          "preserve": "Original references,357 integrated scene,action clock and all task failures; no spend.",
+          "target_stage": "STRATEGIZING",
+          "test": "Inspect supported brow/crown/cheeks/noseband and bit on actual head283327350, plus intended production. Reject eye/nostril obstruction, floating strips, intersections or adjacent appearance regression. Existing incorrect reins remain explicit pending consumer17, never a whole-interface pass.",
+          "uncertainty": "Surface bounds do not locate lips automatically; actual eye/mouth visibility and posed attachment must falsify route.",
+          "event": "sikh358-appearance-c86-form-response"
+        },
+        "interfaces": {
+          "cause": "85 broad behind-ear rays missed outside skull; lower shared cheek/crown junction to skull and cast only supported central width behind ears.",
+          "change_or_retain_rationale": "84 muzzle/cheek proof retained; replace ear-level crown junction with lower skull-side junction and narrow behind-ear top section, preserve identical brow/crown/cheek end points. No motion key edits.",
+          "evidence": {
+            "results/sikh357/LEARNINGS.md": {
+              "path": "results/sikh357/LEARNINGS.md",
+              "sha256": "9cc3c8a150783b40ed9c22871cd676edf9ba6aac8c4be7b61b2e1fff005d9b16"
+            },
+            "results/sikh358/REQUEST.md": {
+              "path": "results/sikh358/REQUEST.md",
+              "sha256": "11ddd70019d54c4732feba9ca6f68b6b8c28367190dcc3f5f8d979a2b4bfb940"
+            },
+            "results/sikh358/STRATEGY.md": {
+              "path": "results/sikh358/STRATEGY.md",
+              "sha256": "a013e8fe13b53d414cd288f5f9ea9f8a36b64fb459ae45402ff60fcc05146f42"
+            },
+            "results/sikh358/appearance-c86-challenge.json": {
+              "path": "results/sikh358/appearance-c86-challenge.json",
+              "sha256": "67a2cc7ed0971769a90ab3d83e5e94d6300112f5cde8eba5abf4245b9665fcae"
+            },
+            "results/sikh358/appearance-c86.json": {
+              "path": "results/sikh358/appearance-c86.json",
+              "sha256": "0c9ed00ebd3ed15a8e05c98a6ef37b84fd47e85b888e5ef5dc46547ddfead0b0"
+            }
+          },
+          "expected": "Only actual corrected subproof advances; no whole-actor acceptance by bookkeeping.",
+          "failure_response": "Replan actual failing interface with retained counters, no decorative concealment.",
+          "gate_digest": "dddf6f9d0383bac1372ed72bb3dc86892c6ad1176d68265f3a4511d493421d96",
+          "key": "interfaces",
+          "plan": "f3acbb2ae4928fdddd2ed93e046da97b71879e98cf5a669091628f3166e0d1f7",
+          "preserve": "Original references,357 integrated scene,action clock and all task failures; no spend.",
+          "target_stage": "STRATEGIZING",
+          "test": "Inspect supported brow/crown/cheeks/noseband and bit on actual head283327350, plus intended production. Reject eye/nostril obstruction, floating strips, intersections or adjacent appearance regression. Existing incorrect reins remain explicit pending consumer17, never a whole-interface pass.",
+          "uncertainty": "Surface bounds do not locate lips automatically; actual eye/mouth visibility and posed attachment must falsify route.",
+          "event": "sikh358-appearance-c86-interfaces-response"
+        },
+        "evidence": {
+          "cause": "85 broad behind-ear rays missed outside skull; lower shared cheek/crown junction to skull and cast only supported central width behind ears.",
+          "change_or_retain_rationale": "84 muzzle/cheek proof retained; replace ear-level crown junction with lower skull-side junction and narrow behind-ear top section, preserve identical brow/crown/cheek end points. No motion key edits.",
+          "evidence": {
+            "results/sikh357/LEARNINGS.md": {
+              "path": "results/sikh357/LEARNINGS.md",
+              "sha256": "9cc3c8a150783b40ed9c22871cd676edf9ba6aac8c4be7b61b2e1fff005d9b16"
+            },
+            "results/sikh358/REQUEST.md": {
+              "path": "results/sikh358/REQUEST.md",
+              "sha256": "11ddd70019d54c4732feba9ca6f68b6b8c28367190dcc3f5f8d979a2b4bfb940"
+            },
+            "results/sikh358/STRATEGY.md": {
+              "path": "results/sikh358/STRATEGY.md",
+              "sha256": "a013e8fe13b53d414cd288f5f9ea9f8a36b64fb459ae45402ff60fcc05146f42"
+            },
+            "results/sikh358/appearance-c86-challenge.json": {
+              "path": "results/sikh358/appearance-c86-challenge.json",
+              "sha256": "67a2cc7ed0971769a90ab3d83e5e94d6300112f5cde8eba5abf4245b9665fcae"
+            },
+            "results/sikh358/appearance-c86.json": {
+              "path": "results/sikh358/appearance-c86.json",
+              "sha256": "0c9ed00ebd3ed15a8e05c98a6ef37b84fd47e85b888e5ef5dc46547ddfead0b0"
+            }
+          },
+          "expected": "Only actual corrected subproof advances; no whole-actor acceptance by bookkeeping.",
+          "failure_response": "Replan actual failing interface with retained counters, no decorative concealment.",
+          "gate_digest": "20de0bd287c28bdf1230d6d29d0a7d019d69de81f20348c65698e902be65d67c",
+          "key": "evidence",
+          "plan": "f3acbb2ae4928fdddd2ed93e046da97b71879e98cf5a669091628f3166e0d1f7",
+          "preserve": "Original references,357 integrated scene,action clock and all task failures; no spend.",
+          "target_stage": "STRATEGIZING",
+          "test": "Inspect supported brow/crown/cheeks/noseband and bit on actual head283327350, plus intended production. Reject eye/nostril obstruction, floating strips, intersections or adjacent appearance regression. Existing incorrect reins remain explicit pending consumer17, never a whole-interface pass.",
+          "uncertainty": "Surface bounds do not locate lips automatically; actual eye/mouth visibility and posed attachment must falsify route.",
+          "event": "sikh358-appearance-c86-evidence-response"
+        }
+      },
+      "proofs": {},
+      "history_api": "retrospective.events(connection, task)",
+      "instruction": "Inspect source-bound outcomes for each open finding; respond, challenge, then test. Admission is not effectiveness. No new authority."
+    }
+  },
+  "sikh335-continuous-performance": {
+    "counts": {
+      "initialize": 1,
+      "plan": 10,
+      "outcome": 56,
+      "response": 31,
+      "admit": 31
+    },
+    "projection": {
+      "policy": 1,
+      "sequence": 129,
+      "gates": {
+        "__migration__": {
+          "status": "TESTING",
+          "reason": "evidence_reconciliation",
+          "triggers": [
+            "migration-evidence:sikh353-motion-retro-migration",
+            "sikh353-motion14-__migration__-reopen",
+            "sikh353-motion15-__migration__-reopen",
+            "sikh353-motion16-__migration__-reopen",
+            "sikh358-motion-c17-__migration__-reopen",
+            "sikh358-motion-c18-__migration__-reopen",
+            "sikh358-motion-c19-__migration__-reopen",
+            "sikh358-motion-c20-__migration__-reopen",
+            "sikh358-motion-c21-__migration__-reopen"
+          ],
+          "plan": "9a39c8da94d2b8c8d054f942c477025f676af76c72599aae1d8d1e9ec94549ab",
+          "admitted_event": "sikh358-motion-c21-__migration__-admit"
+        },
+        "__allowance__": {
+          "status": "OPEN",
+          "reason": "allowance_exhausted",
+          "triggers": [
+            "migration-evidence:sikh353-motion-retro-migration",
+            "sikh353-motion14-__allowance__-reopen",
+            "sikh353-motion15-__allowance__-reopen",
+            "sikh353-motion16-__allowance__-reopen",
+            "exhaustion:sikh353-motion16-replan",
+            "sikh358-motion-c18-__allowance__-reopen",
+            "sikh358-motion-c19-__allowance__-reopen",
+            "sikh358-motion-c20-__allowance__-reopen",
+            "sikh358-motion-c21-__allowance__-reopen",
+            "exhaustion:sikh358-motion-c21-save-replan"
+          ]
+        },
+        "phases": {
+          "status": "TESTING",
+          "reason": "evidence_reconciliation",
+          "triggers": [
+            "sikh353-motion13-failure",
+            "native-review:sikh353-motion-c14-render",
+            "sikh353-motion14-failure",
+            "native-review:sikh353-motion-c15-render",
+            "sikh353-motion15-failure",
+            "native-review:sikh353-motion-c16-render",
+            "native-review:sikh358-motion-c17-horse_head",
+            "sikh358-motion-c19-phases-reopen",
+            "sikh358-motion-c20-phases-reopen",
+            "sikh358-motion-c21-phases-reopen"
+          ],
+          "plan": "9a39c8da94d2b8c8d054f942c477025f676af76c72599aae1d8d1e9ec94549ab",
+          "admitted_event": "sikh358-motion-c21-phases-admit"
+        },
+        "rider": {
+          "status": "OPEN",
+          "reason": "strategy_falsifier_or_regression",
+          "triggers": [
+            "sikh353-motion16-failure",
+            "native-review:sikh358-motion-c17-horse_head",
+            "sikh358-motion-c17-horse_head-outcome",
+            "sikh358-motion-c19-rider-reopen",
+            "sikh358-motion-c19-save-outcome",
+            "sikh358-motion-c20-save-outcome",
+            "sikh358-motion-c21-save-outcome"
+          ]
+        },
+        "__worker__": {
+          "status": "OPEN",
+          "reason": "repeated_unresolved_requirement",
+          "triggers": [
+            "worker:sikh358-motion-c21-save"
+          ]
+        }
+      },
+      "warnings": {
+        "__worker__": 3
+      },
+      "responses": {
+        "__migration__": {
+          "cause": "20 avoided the deep neck crossing but final uniform arclength sampling shortcut a supported path corner or ring-adjacent segment:294 R minimum0.59mm. Existing4.5mm radius therefore still intersects; not a visual waiver.",
+          "change_or_retain_rationale": "Retain exterior visibility graph, add whole-passage measured selection of one fixed rear-half attachment station on each real ring, and preserve every path corner when resampling to129 points. Dense segment clearance must exceed6mm for4.5mm rein radius. Reuse only same-frame skin graph between reins; preserve actual hand endpoints and unrelated actions. This is the last authorized motion correction, not a lowered gate.",
+          "evidence": {
+            "results/sikh357/LEARNINGS.md": {
+              "path": "results/sikh357/LEARNINGS.md",
+              "sha256": "9cc3c8a150783b40ed9c22871cd676edf9ba6aac8c4be7b61b2e1fff005d9b16"
+            },
+            "results/sikh358/REQUEST.md": {
+              "path": "results/sikh358/REQUEST.md",
+              "sha256": "11ddd70019d54c4732feba9ca6f68b6b8c28367190dcc3f5f8d979a2b4bfb940"
+            },
+            "results/sikh358/STRATEGY.md": {
+              "path": "results/sikh358/STRATEGY.md",
+              "sha256": "a013e8fe13b53d414cd288f5f9ea9f8a36b64fb459ae45402ff60fcc05146f42"
+            },
+            "results/sikh358/motion-c21-challenge.json": {
+              "path": "results/sikh358/motion-c21-challenge.json",
+              "sha256": "354d2e6ccdeec13836c102924b00f9f4b64434dab8183857239215cf0bb6b767"
+            },
+            "results/sikh358/motion-c21.json": {
+              "path": "results/sikh358/motion-c21.json",
+              "sha256": "f67b09df56d3ff6ae8cef32ecb9a396624d1fbea75c0dd96dc3a75dcb2902dfe"
+            }
+          },
+          "expected": "Only actual corrected subproof advances; no whole-actor acceptance by bookkeeping.",
+          "failure_response": "Replan actual failing interface with retained counters, no decorative concealment.",
+          "gate_digest": "9e10c144d1894987f50e29a23e2b6c23768d5a60e8cff09b7710d858df3e2a98",
+          "key": "__migration__",
+          "plan": "9a39c8da94d2b8c8d054f942c477025f676af76c72599aae1d8d1e9ec94549ab",
+          "preserve": "Original references,357 integrated scene,action clock and all task failures; no spend.",
+          "target_stage": "STRATEGIZING",
+          "test": "All190 frames retain ring/hand contacts, no skin penetration in dense segment samples, unchanged unrelated action signature, and frame-switch readback. Then actual head views both sides, rider and production views must show continuous supported route without neck intersections or visible jitter; continuous AV remains Director313.",
+          "uncertainty": "Surface bounds do not locate lips automatically; actual eye/mouth visibility and posed attachment must falsify route.",
+          "event": "sikh358-motion-c21-__migration__-response"
+        },
+        "phases": {
+          "cause": "20 avoided the deep neck crossing but final uniform arclength sampling shortcut a supported path corner or ring-adjacent segment:294 R minimum0.59mm. Existing4.5mm radius therefore still intersects; not a visual waiver.",
+          "change_or_retain_rationale": "Retain exterior visibility graph, add whole-passage measured selection of one fixed rear-half attachment station on each real ring, and preserve every path corner when resampling to129 points. Dense segment clearance must exceed6mm for4.5mm rein radius. Reuse only same-frame skin graph between reins; preserve actual hand endpoints and unrelated actions. This is the last authorized motion correction, not a lowered gate.",
+          "evidence": {
+            "results/sikh357/LEARNINGS.md": {
+              "path": "results/sikh357/LEARNINGS.md",
+              "sha256": "9cc3c8a150783b40ed9c22871cd676edf9ba6aac8c4be7b61b2e1fff005d9b16"
+            },
+            "results/sikh358/REQUEST.md": {
+              "path": "results/sikh358/REQUEST.md",
+              "sha256": "11ddd70019d54c4732feba9ca6f68b6b8c28367190dcc3f5f8d979a2b4bfb940"
+            },
+            "results/sikh358/STRATEGY.md": {
+              "path": "results/sikh358/STRATEGY.md",
+              "sha256": "a013e8fe13b53d414cd288f5f9ea9f8a36b64fb459ae45402ff60fcc05146f42"
+            },
+            "results/sikh358/motion-c21-challenge.json": {
+              "path": "results/sikh358/motion-c21-challenge.json",
+              "sha256": "354d2e6ccdeec13836c102924b00f9f4b64434dab8183857239215cf0bb6b767"
+            },
+            "results/sikh358/motion-c21.json": {
+              "path": "results/sikh358/motion-c21.json",
+              "sha256": "f67b09df56d3ff6ae8cef32ecb9a396624d1fbea75c0dd96dc3a75dcb2902dfe"
+            }
+          },
+          "expected": "Only actual corrected subproof advances; no whole-actor acceptance by bookkeeping.",
+          "failure_response": "Replan actual failing interface with retained counters, no decorative concealment.",
+          "gate_digest": "e3cb1803f71a2bfcbe2a12ecacdbcb443a6d5412a9cece5dbf079558bc5bf19e",
+          "key": "phases",
+          "plan": "9a39c8da94d2b8c8d054f942c477025f676af76c72599aae1d8d1e9ec94549ab",
+          "preserve": "Original references,357 integrated scene,action clock and all task failures; no spend.",
+          "target_stage": "STRATEGIZING",
+          "test": "All190 frames retain ring/hand contacts, no skin penetration in dense segment samples, unchanged unrelated action signature, and frame-switch readback. Then actual head views both sides, rider and production views must show continuous supported route without neck intersections or visible jitter; continuous AV remains Director313.",
+          "uncertainty": "Surface bounds do not locate lips automatically; actual eye/mouth visibility and posed attachment must falsify route.",
+          "event": "sikh358-motion-c21-phases-response"
+        }
+      },
+      "proofs": {},
+      "history_api": "retrospective.events(connection, task)",
+      "instruction": "Inspect source-bound outcomes for each open finding; respond, challenge, then test. Admission is not effectiveness. No new authority."
+    }
+  }
+}

@@ -1,0 +1,151 @@
+{
+  "parent": ".runtime/factory-native/sikh358-appearance-c86-save/scene.blend",
+  "template": "results/sikh353/motion-strategizing-c16.json",
+  "cause": "18 actual visible-object inventory proves exactly two reins, DATA leather slots and no modifiers/shape keys.17 reaches mouth but central span intersects neck. Tan color alone was not evidence of duplicate geometry.",
+  "method": "Reconstruct each whole 65-point rein span against actual evaluated animated horse surface, seeded on the correct side, tension-relaxed and projected exterior. Preserve exact real-hand endpoints and ring attachments, all unrelated actions and the original action datablocks. Dense segment clearance and frame-switch readback falsify the route before both-side visual proof.",
+  "proof": "All190 frames retain ring/hand contacts, no skin penetration in dense segment samples, unchanged unrelated action signature, and frame-switch readback. Then actual head views both sides, rider and production views must show continuous supported route without neck intersections or visible jitter; continuous AV remains Director313.",
+  "scope": "Integrated anatomical bit-to-real-hand rein contact on leader/horse, preserving reference-phase motion16 and appearance86; then scoped continuous review if static interfaces pass.",
+  "methods": {
+    "preservation": "Protect every action except two explicitly identified rein-curve actions; capture complete source before mutation and compare signature after.",
+    "support": "Horse hooves/hindquarter/support action unchanged; verify intended rest/crest/arrival frames for inherited visible defects, not only invariance.",
+    "phases": "Retain gather/drive/brief crest/accelerating landing clock; view chronological phases and leave continuous fluidity to direct Director313 review.",
+    "rider": "Full exterior route must pass in front of visible horse surface rather than enter neck; preserve only actual grip endpoints, not erroneous old central path.",
+    "evidence": "All190 frames contact report plus intended and revealing images. Static samples do not certify continuous movement/audio; known failures block manual queue."
+  },
+  "sources": [
+    "src/movie_factory/adapters/blender/nihang_rein358.py",
+    "src/movie_factory/adapters/blender/nihang_control.py",
+    "src/movie_factory/adapters/blender/nihang_patch.py",
+    "tests/test_nihang358_tack.py",
+    ".runtime/factory-native/sikh358-appearance-c86-save/tack358.json",
+    ".runtime/factory-native/sikh358-motion-c18-inspect/rig.json",
+    "results/sikh358/motion-c17-horse_head-review.json"
+  ],
+  "steps": [
+    {
+      "id": "save",
+      "depends_on": [],
+      "requirements": [
+        "preservation"
+      ],
+      "recipe": {
+        "operation": "nihang_patch",
+        "frame": 327,
+        "width": 640,
+        "height": 640,
+        "samples": 8,
+        "edits": [
+          {
+            "kind": "mounted_rein358",
+            "target": "mounted leader"
+          }
+        ]
+      }
+    },
+    {
+      "id": "horse_head",
+      "depends_on": [
+        "save"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 327,
+        "frames": [
+          283,
+          307,
+          327,
+          350
+        ],
+        "view": "horse_head",
+        "width": 640,
+        "height": 640,
+        "samples": 16
+      }
+    },
+    {
+      "id": "horse_head_reverse",
+      "depends_on": [
+        "save"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 327,
+        "frames": [
+          283,
+          327,
+          350
+        ],
+        "view": "horse_head_reverse",
+        "width": 640,
+        "height": 640,
+        "samples": 16
+      }
+    },
+    {
+      "id": "production",
+      "depends_on": [
+        "save"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 327,
+        "frames": [
+          283,
+          295,
+          300,
+          307,
+          319,
+          327,
+          335,
+          341,
+          347,
+          350,
+          357,
+          375
+        ],
+        "view": "production",
+        "width": 432,
+        "height": 768,
+        "samples": 16
+      }
+    },
+    {
+      "id": "leader_front",
+      "depends_on": [
+        "save"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 327,
+        "frames": [
+          283,
+          327,
+          350
+        ],
+        "view": "leader_front",
+        "width": 640,
+        "height": 640,
+        "samples": 16
+      }
+    },
+    {
+      "id": "leader_reverse",
+      "depends_on": [
+        "save"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 327,
+        "frames": [
+          283,
+          327,
+          350
+        ],
+        "view": "leader_reverse",
+        "width": 640,
+        "height": 640,
+        "samples": 16
+      }
+    }
+  ]
+}

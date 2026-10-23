@@ -1,0 +1,15 @@
+{
+  "verdict": "FAIL",
+  "run_digest": "0ce7105343864da169c3e10f811750e0e47fc75a74748e03b5f22b6a6e553ed3",
+  "evidence": {
+    "failed_run": {
+      "path": "results/sikh358/motion-c20-save-run.json",
+      "sha256": "1d26bd2cf6fb7951935b25771d5876517b62b67f9f975b9dc062dca696881ff3"
+    }
+  },
+  "observation": "20 exterior graph avoided large neck penetration, but final resampled curve at294 R had only0.59mm skin clearance, insufficient for4.5mm rein radius. No candidate saved. Resampling must retain corner stations; ring contact station also needs all-frame actual clearance, not guessed rear rim.",
+  "comparison": "Actual returned images/technical data against explicit358 plan and original quality/reference requirements. No full-speed AV certification.",
+  "open_defects": [
+    "20 exterior graph avoided large neck penetration, but final resampled curve at294 R had only0.59mm skin clearance, insufficient for4.5mm rein radius. No candidate saved. Resampling must retain corner stations; ring contact station also needs all-frame actual clearance, not guessed rear rim."
+  ]
+}
