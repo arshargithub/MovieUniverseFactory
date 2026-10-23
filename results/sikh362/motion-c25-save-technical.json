@@ -1,0 +1,25 @@
+{
+  "verdict": "PASS",
+  "run_digest": "980348598b09573c3d4f7b2b72be31e0d89b096fdf9cbac66f0c91f33739196e",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh362-motion-c25-save/snapshot.json",
+      "sha256": "83bd7c5cee3cd7800e426a6b3c244c1eb937e1bdda8a13c25d88e5d9ed0161ab"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh362-motion-c25-save/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh362-motion-c25-save/script-diagnostics.json",
+      "sha256": "99bbbecec312f933855a69b1d853770138fd35ab62669f2fe652484d335f4ec7"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh362-motion-c25-save/scene.blend",
+      "sha256": "bcb9ebcc4781acd44391f4de55b6263a62905a2b3d87ed2b38c64cb40fbf6b02"
+    }
+  },
+  "observation": "Source preserved; returned native artifacts hash-verified, diagnostics clean. Read-only report or derivative reopen only; no visual or motion approval.",
+  "comparison": "Parent unchanged; source-bound worker. Subsequent actual inspection independently required.",
+  "open_defects": []
+}

@@ -1,0 +1,42 @@
+{
+  "verdict": "PASS",
+  "run_digest": "d2334bc0e4e392d1f3f1b4e74a75758c438e796228794262f66dd6be4902c298",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh362-appearance-c99-leader_reverse/snapshot.json",
+      "sha256": "83bd7c5cee3cd7800e426a6b3c244c1eb937e1bdda8a13c25d88e5d9ed0161ab"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh362-appearance-c99-leader_reverse/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh362-appearance-c99-leader_reverse/script-diagnostics.json",
+      "sha256": "99bbbecec312f933855a69b1d853770138fd35ab62669f2fe652484d335f4ec7"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh362-appearance-c99-leader_reverse/frame.png",
+      "sha256": "8904fb156148da552836c5f8ad984658feb3f1a85891f3f9c38408aeab268aa1"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh362-appearance-c99-leader_reverse/frames.json",
+      "sha256": "04ed8cb05ac1cb10cd0c0683df02137d5f0815bd4aed233f073310300e38c1bf"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh362-appearance-c99-leader_reverse/frame.png",
+      "sha256": "8904fb156148da552836c5f8ad984658feb3f1a85891f3f9c38408aeab268aa1"
+    },
+    "frame_327": {
+      "path": ".runtime/factory-native/sikh362-appearance-c99-leader_reverse/frame-0327.png",
+      "sha256": "145eb7203c412a0bcd45839f3702bc519952e51ee3c45085b59e04742e7580dd"
+    },
+    "frame_350": {
+      "path": ".runtime/factory-native/sikh362-appearance-c99-leader_reverse/frame-0350.png",
+      "sha256": "20c2564415ee8ce00de394dc2ca9d7bc4c319c97b4f9fe7f42eeba4e6eb25a4e"
+    }
+  },
+  "observation": "Actual99 reverse283/327/350: formerly occluded band remains continuous in all poses, lower skirt flare preserved, crown and attached neck pigment retain continuity; no detached sash or new layer crossing visible. Static dressed component only; full-speed performance pending.",
+  "comparison": "Actual returned images/technical data against explicit361 plan and original quality/reference requirements. No full-speed AV certification.",
+  "open_defects": [],
+  "scope": "Subproof only; whole requirement unresolved"
+}

@@ -1,0 +1,41 @@
+{
+  "events": [
+    {
+      "activity_id": "sikh362-work",
+      "actor": "assistant",
+      "episode_id": "leader362",
+      "event_id": "sikh362-work-start",
+      "event_type": "work_started",
+      "evidence_ref": null,
+      "experiment_id": "sikh335",
+      "phase": "construction",
+      "reason": null,
+      "run_id": null,
+      "schema_version": "1.0",
+      "task_id": "sikh335-supporting-appearance",
+      "turn_id": null,
+      "utc": "2026-10-23T20:01:30.707752+00:00"
+    },
+    {
+      "event_id": "sikh362-work-end",
+      "experiment_id": "sikh335",
+      "episode_id": "leader362",
+      "phase": "construction",
+      "event_type": "work_ended",
+      "activity_id": "sikh362-work",
+      "utc": "2026-10-23T22:28:13.995946+00:00",
+      "note": "Exact isolated leader/horse proof and scoped agent checks complete; human AV pending, remaining cycles retained."
+    }
+  ],
+  "elapsed_seconds": 8803.288193941116,
+  "verified_director_idle_seconds": 0,
+  "lifecycle": "OPEN",
+  "scope": "Recorded active interval includes rendering waits and errors; do not add native process seconds. No verified Director waiting inside this interval.",
+  "gaps": [
+    "Bootstrap before work-start",
+    "Final record/gate/commit/handoff operations after work-end",
+    "Per-job start/end timestamps were not prospectively recorded in the ledger; native elapsed receipts are separate and do not establish complete interval coverage"
+  ],
+  "tokens": null,
+  "engineering_cost_usd": null
+}

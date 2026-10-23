@@ -4,6 +4,18 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+### Exchange362 — integrated isolated leader/horse review queue
+
+98 fixes the consuming skirt/band layers;99 rounds the crown and restores
+clipped skin detail.100 broadens inherited garment-only qualification without
+new art construction. Actual129-frame silent proof includes the leader shot and
+one second of context each side. Source/image checks complete; full-speed
+fluidity, weight and same-film effect await Director313. Appearance100/max107,
+motion27/max31, neither production-approved. Crowd/principal remain unfinished
+context, no sound or whole Sikh sequence pass. Next: exact leader playback
+judgment, then one near-crowd actor proof before propagation. No new spend,
+Astra, remote operation or backup claim. [Evidence](../../results/sikh362/CLOSEOUT.md).
+
 ### Exchange361 — original Nihang tasks continued; appearance allowance reached
 
 Director adds ten corrections each, retaining appearance87 and all original

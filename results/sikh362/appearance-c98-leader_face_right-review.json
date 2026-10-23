@@ -1,0 +1,35 @@
+{
+  "verdict": "FAIL",
+  "run_digest": "8a8fa1f2fe098011d67388c7cdcccb3c4ebae5b889b2481b3b261e9b8b0ec94a",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh362-appearance-c98-leader_face_right/snapshot.json",
+      "sha256": "abdfc0cfdd101ba1c89c0a797ba771b672badab98b68b2e01288a2a1d45af0af"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh362-appearance-c98-leader_face_right/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh362-appearance-c98-leader_face_right/script-diagnostics.json",
+      "sha256": "99bbbecec312f933855a69b1d853770138fd35ab62669f2fe652484d335f4ec7"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh362-appearance-c98-leader_face_right/frame.png",
+      "sha256": "90cc9ee6c462d149235e85faffb04a55875bca63359d2c09f09548d00d702c48"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh362-appearance-c98-leader_face_right/frames.json",
+      "sha256": "1d2053ab872d9537ea3588333bd5b009eb549a3da3d0c4f8fd31b417b97c61f7"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh362-appearance-c98-leader_face_right/frame.png",
+      "sha256": "90cc9ee6c462d149235e85faffb04a55875bca63359d2c09f09548d00d702c48"
+    }
+  },
+  "observation": "Actual right oblique: rooted beard/ear and side shape retained, but smooth conical cap and simple surface remain below same-film control.",
+  "comparison": "Actual inspected images against accepted Pashtun film richness and original supporting-shot quality; source crop control diagnoses clipped detail, not visual closure.",
+  "open_defects": [
+    "Crown/form and integrated surface-read unresolved"
+  ]
+}

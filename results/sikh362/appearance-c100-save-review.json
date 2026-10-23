@@ -1,0 +1,26 @@
+{
+  "verdict": "PASS",
+  "run_digest": "8d54abe4a390790d9960d3b210d85abc4751336b1678ffaf15328b6799122290",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh362-appearance-c100-save/snapshot.json",
+      "sha256": "83bd7c5cee3cd7800e426a6b3c244c1eb937e1bdda8a13c25d88e5d9ed0161ab"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh362-appearance-c100-save/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh362-appearance-c100-save/script-diagnostics.json",
+      "sha256": "99bbbecec312f933855a69b1d853770138fd35ab62669f2fe652484d335f4ec7"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh362-appearance-c100-save/scene.blend",
+      "sha256": "ca0645b79c78727216bdca132abbe3f258331acf07793c75b2de8ff1004c3bd8"
+    }
+  },
+  "observation": "Actual100 fresh save from exact99 source returns clean diagnostics and preserved selected state/dependencies. No geometry, shader, action or camera change; this is a technical prerequisite only, not whole-look/AV approval.",
+  "comparison": "Actual returned images/technical data against explicit361 plan and original quality/reference requirements. No full-speed AV certification.",
+  "open_defects": [],
+  "scope": "Subproof only; whole requirement unresolved"
+}

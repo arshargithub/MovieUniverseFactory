@@ -1,0 +1,50 @@
+{
+  "verdict": "PASS",
+  "run_digest": "3a83387c231357f15798ad8f9a0e031203f97f0bcd46c5e216a988c2deae94a7",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh362-motion-c27-tail_context/snapshot.json",
+      "sha256": "83bd7c5cee3cd7800e426a6b3c244c1eb937e1bdda8a13c25d88e5d9ed0161ab"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh362-motion-c27-tail_context/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh362-motion-c27-tail_context/script-diagnostics.json",
+      "sha256": "99bbbecec312f933855a69b1d853770138fd35ab62669f2fe652484d335f4ec7"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh362-motion-c27-tail_context/frame.png",
+      "sha256": "6af254c93fabb7aff7102a2a74c683741027ea1827834152ab0ee4728aa4e852"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh362-motion-c27-tail_context/frames.json",
+      "sha256": "8462c744cd35a91309fd959304744041408dcd935e98fb711b157fbff004cbb7"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh362-motion-c27-tail_context/frame.png",
+      "sha256": "6af254c93fabb7aff7102a2a74c683741027ea1827834152ab0ee4728aa4e852"
+    },
+    "frame_377": {
+      "path": ".runtime/factory-native/sikh362-motion-c27-tail_context/frame-0377.png",
+      "sha256": "7fbdc1ef1831f1946ed28236f4ee3e0ae446971c50ce10c81ac5992b3825a65f"
+    },
+    "frame_378": {
+      "path": ".runtime/factory-native/sikh362-motion-c27-tail_context/frame-0378.png",
+      "sha256": "325b614f7dee974207c52e652f743be091dd89ae83131b8b9fa36121d11d8025"
+    },
+    "frame_379": {
+      "path": ".runtime/factory-native/sikh362-motion-c27-tail_context/frame-0379.png",
+      "sha256": "f6c34259985214f0cd63b5640eee252d4fff4ad788c1fa0657dc5170d5b6f1c7"
+    },
+    "frame_380": {
+      "path": ".runtime/factory-native/sikh362-motion-c27-tail_context/frame-0380.png",
+      "sha256": "3abc1f48d8d60deb0008d90f89b679d27fb73206e2386f6a11d90b64e5f55e11"
+    }
+  },
+  "observation": "Actual canonical283 and377..380 inspected. Canonical pixels equal99/100 exactly; the four tail frames complete the requested source handle and show the unfinished principal context, not qualified crowd/hero. Availability and source/frame checks only: director_motion remains NOT_RUN.",
+  "comparison": "Actual returned images/technical data against explicit361 plan and original quality/reference requirements. No full-speed AV certification.",
+  "open_defects": [],
+  "scope": "Subproof only; whole requirement unresolved"
+}

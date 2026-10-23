@@ -1,0 +1,26 @@
+{
+  "verdict": "PASS",
+  "run_digest": "b0727e9ac98925a0a38f4532a49fa56f94b909272569917a3ba6540aee5d892d",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh362-motion-c27-save/snapshot.json",
+      "sha256": "83bd7c5cee3cd7800e426a6b3c244c1eb937e1bdda8a13c25d88e5d9ed0161ab"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh362-motion-c27-save/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh362-motion-c27-save/script-diagnostics.json",
+      "sha256": "99bbbecec312f933855a69b1d853770138fd35ab62669f2fe652484d335f4ec7"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh362-motion-c27-save/scene.blend",
+      "sha256": "405eddcaea24b7d82f6bf962096a922cd330fae19465e9542fec46905a1909f0"
+    }
+  },
+  "observation": "Fresh no-edit derivative saved/reopened through admitted handler. Returned diagnostics contain no blocked drivers or declared source defects; source99 and actions unchanged. No motion approval.",
+  "comparison": "Actual returned images/technical data against explicit361 plan and original quality/reference requirements. No full-speed AV certification.",
+  "open_defects": [],
+  "scope": "Subproof only; whole requirement unresolved"
+}

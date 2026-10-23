@@ -1,0 +1,165 @@
+{
+  "parent": ".runtime/factory-native/sikh362-appearance-c98-save/scene.blend",
+  "template": "results/sikh353/strategizing-c67.json",
+  "cause": "98 seam is visibly fixed; whole look fails pointed stacked crown and smooth surface. Source crop linear-domain test demonstrates59.65percent upper clipping, so new contrast is measured rather than more noise.",
+  "method": "Preserve98 seam,24 rein paths, roots, identity/anatomy and all action keys. Apply the fixed reviewed finish362: common bounded monotone upper-crown rounding with fitted lower edge unchanged, rest-attached crossed textile relief, and exact old pigment-range correction to measured source domain. Keep palette and pose ownership; actual front/oblique and intended framing must reject residual shell, noise, smoothing or adjacent regression.",
+  "proof": "Actions exact, fitted crown lower edge unchanged and no unknown cranial mesh or shape-key state. First actual front and intended frame proof must show credible rounded layered crown and perceptible rich material without dirt/tiling. Then both sides, front/reverse rest/crest/landing and whole horse/rider. No whole art or AV pass from tests.",
+  "scope": "Same supporting leader and horse integrated appearance; no identity redesign, new assets, crowd, sound, spending or external operations.",
+  "methods": {},
+  "sources": [
+    "src/movie_factory/adapters/blender/nihang_look361.py",
+    "src/movie_factory/adapters/blender/nihang_patch.py",
+    "src/movie_factory/adapters/blender/nihang_waist353.py",
+    "tests/test_nihang361_detail.py",
+    "tests/test_nihang353_waist.py",
+    "results/sikh361/HANDLER_REVIEW.md",
+    "results/sikh361/APPEARANCE_AUDIT.md",
+    ".runtime/art-direction/series01-facebuilder-trial-01/bust-atlas-input-02/skin-authored.png",
+    ".runtime/art-direction/series01-finish248/opening08/actual-450.png",
+    ".runtime/factory-native/sikh361-motion-c24-leader_reverse/frame.png",
+    "results/sikh361/appearance-c89-leader_reverse-review.json",
+    "results/sikh361/appearance-c90-save-review.json",
+    "results/sikh361/appearance-c92-save-review.json",
+    ".runtime/factory-native/sikh361-appearance-c92-save/waist361-failure.json",
+    "results/sikh361/appearance-c93-save-review.json",
+    "results/sikh361/appearance-c94-save-review.json",
+    "results/sikh361/appearance-c96-save-review.json",
+    ".runtime/factory-native/sikh361-appearance-c96-save/layers361.json",
+    "src/movie_factory/adapters/blender/nihang_finish362.py",
+    "tests/test_nihang362_finish.py",
+    "results/sikh362/HANDLER_REVIEW.md",
+    "results/sikh362/texture-control.json",
+    "results/sikh362/appearance-c98-production-review.json"
+  ],
+  "steps": [
+    {
+      "id": "save",
+      "depends_on": [],
+      "requirements": [
+        "preservation"
+      ],
+      "recipe": {
+        "operation": "nihang_patch",
+        "frame": 283,
+        "width": 640,
+        "height": 640,
+        "samples": 8,
+        "edits": [
+          {
+            "kind": "mounted_finish362",
+            "target": "mounted leader"
+          }
+        ]
+      }
+    },
+    {
+      "id": "leader_face",
+      "depends_on": [
+        "save"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 283,
+        "frames": [
+          283
+        ],
+        "view": "leader_face",
+        "width": 640,
+        "height": 640,
+        "samples": 16
+      }
+    },
+    {
+      "id": "production",
+      "depends_on": [
+        "save"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 283,
+        "frames": [
+          283,
+          307,
+          327,
+          350
+        ],
+        "view": "production",
+        "width": 432,
+        "height": 768,
+        "samples": 16
+      }
+    },
+    {
+      "id": "leader_face_left",
+      "depends_on": [
+        "save"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 283,
+        "frames": [
+          283
+        ],
+        "view": "leader_face_left",
+        "width": 640,
+        "height": 640,
+        "samples": 16
+      }
+    },
+    {
+      "id": "leader_face_right",
+      "depends_on": [
+        "save"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 283,
+        "frames": [
+          283
+        ],
+        "view": "leader_face_right",
+        "width": 640,
+        "height": 640,
+        "samples": 16
+      }
+    },
+    {
+      "id": "leader_front",
+      "depends_on": [
+        "save"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 283,
+        "frames": [
+          283,
+          327,
+          350
+        ],
+        "view": "leader_front",
+        "width": 640,
+        "height": 640,
+        "samples": 16
+      }
+    },
+    {
+      "id": "leader_reverse",
+      "depends_on": [
+        "save"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 283,
+        "frames": [
+          283,
+          327,
+          350
+        ],
+        "view": "leader_reverse",
+        "width": 640,
+        "height": 640,
+        "samples": 16
+      }
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "verdict": "PASS",
+  "run_digest": "a5884eed2cd0b4a1202268aa074f939e9557fea90d165fb04ca7da23977b5ff8",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh362-motion-c26-frames15/snapshot.json",
+      "sha256": "83bd7c5cee3cd7800e426a6b3c244c1eb937e1bdda8a13c25d88e5d9ed0161ab"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh362-motion-c26-frames15/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh362-motion-c26-frames15/script-diagnostics.json",
+      "sha256": "99bbbecec312f933855a69b1d853770138fd35ab62669f2fe652484d335f4ec7"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh362-motion-c26-frames15/frame.png",
+      "sha256": "4f7a14a95d1e867300a2765a23ee3db70cb2fbbad7b803f7a9f988c8ae1825de"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh362-motion-c26-frames15/frames.json",
+      "sha256": "d74f3fc329166ad1b9d241d6975d4aac6e239a8ca8f676cf106de129e31094aa"
+    },
+    "frame_364": {
+      "path": ".runtime/factory-native/sikh362-motion-c26-frames15/frame-0364.png",
+      "sha256": "116c7a872663af74331cc36a78c3e9a9dc59d3af2d024435fd8d710cd4a84de2"
+    },
+    "frame_365": {
+      "path": ".runtime/factory-native/sikh362-motion-c26-frames15/frame-0365.png",
+      "sha256": "24e1b966e1f9f22c14623c260e207f8b068b4ab59871a7361d384d8eb5ca1c90"
+    },
+    "frame_366": {
+      "path": ".runtime/factory-native/sikh362-motion-c26-frames15/frame-0366.png",
+      "sha256": "075feb376b84a7c01eb8c0d8fc908d0ef89ffefbe8673d4466a33a1bef4ec301"
+    },
+    "frame_367": {
+      "path": ".runtime/factory-native/sikh362-motion-c26-frames15/frame-0367.png",
+      "sha256": "3433be1c28bd2dc0284b5e658926a43987a479dc9781094eb01f21fe38ffa581"
+    },
+    "frame_368": {
+      "path": ".runtime/factory-native/sikh362-motion-c26-frames15/frame-0368.png",
+      "sha256": "5e83c1f1258dd2be0e87a90129c0d576dbea4d6ac6357f4c2dea7aaa1b45144c"
+    },
+    "frame_369": {
+      "path": ".runtime/factory-native/sikh362-motion-c26-frames15/frame-0369.png",
+      "sha256": "0585e0c51789457f6dd731b90180cdc19b7f462185e20713cf922026e14fa371"
+    },
+    "frame_370": {
+      "path": ".runtime/factory-native/sikh362-motion-c26-frames15/frame-0370.png",
+      "sha256": "a33ac22f0c37b992d722d33e6ebec9a390fef6478fc59712d21023a38cd5c74a"
+    },
+    "frame_371": {
+      "path": ".runtime/factory-native/sikh362-motion-c26-frames15/frame-0371.png",
+      "sha256": "7040a734c6df0fb8ceca6c740b456f943d3cae4aff534c7b950a86e0582e6028"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh362-motion-c26-frames15/frame.png",
+      "sha256": "4f7a14a95d1e867300a2765a23ee3db70cb2fbbad7b803f7a9f988c8ae1825de"
+    }
+  },
+  "observation": "Actual364..371 unchanged crowd context and canonical283 inspected. Crowd remains visibly unfinished and explicitly excluded from leader/horse acceptance; no crowd improvement or naturalness pass. Canonical leader frame reproduces99. Context is retained only to assess the existing cut, with corrected handle end380 pending.",
+  "comparison": "Actual returned images/technical data against explicit361 plan and original quality/reference requirements. No full-speed AV certification.",
+  "open_defects": [],
+  "scope": "Subproof only; whole requirement unresolved"
+}

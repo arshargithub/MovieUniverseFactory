@@ -1,0 +1,66 @@
+{
+  "verdict": "PASS",
+  "run_digest": "edda7e0b67ef98008328a779f56fee8aaea398141fbe80e5bb8bb9c7acc8e2e9",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh362-motion-c26-frames07/snapshot.json",
+      "sha256": "83bd7c5cee3cd7800e426a6b3c244c1eb937e1bdda8a13c25d88e5d9ed0161ab"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh362-motion-c26-frames07/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh362-motion-c26-frames07/script-diagnostics.json",
+      "sha256": "99bbbecec312f933855a69b1d853770138fd35ab62669f2fe652484d335f4ec7"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh362-motion-c26-frames07/frame.png",
+      "sha256": "cad7476032297077e52cc590f7a986ab151c3e3e30cdf7e089f0dd12c8e0efc9"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh362-motion-c26-frames07/frames.json",
+      "sha256": "2a31d9bd4bb69ac2b79c44612e2229963d274e96320e10847c9006e77ecc17bd"
+    },
+    "frame_300": {
+      "path": ".runtime/factory-native/sikh362-motion-c26-frames07/frame-0300.png",
+      "sha256": "3f90f90c7c7b51122d5d0969badca1d1ff4d7882310e8f39a248a69c800ec863"
+    },
+    "frame_301": {
+      "path": ".runtime/factory-native/sikh362-motion-c26-frames07/frame-0301.png",
+      "sha256": "7d0a77df9f73a02f726729e4d63f13c23aa04bf418c924bb3fb70f546151b53c"
+    },
+    "frame_302": {
+      "path": ".runtime/factory-native/sikh362-motion-c26-frames07/frame-0302.png",
+      "sha256": "ea703bf30acbb188fe0ed8e6ab974ab3983fbf12927512da9b89354719f28a0b"
+    },
+    "frame_303": {
+      "path": ".runtime/factory-native/sikh362-motion-c26-frames07/frame-0303.png",
+      "sha256": "e327bdae6f726c11c7949a3186c0461b03708784c31833918ebf24bb3c0c3fa3"
+    },
+    "frame_304": {
+      "path": ".runtime/factory-native/sikh362-motion-c26-frames07/frame-0304.png",
+      "sha256": "ef9fa36c98938be1e3cd375683bda870d63efee3e336e6a8b6caabb935f09d3e"
+    },
+    "frame_305": {
+      "path": ".runtime/factory-native/sikh362-motion-c26-frames07/frame-0305.png",
+      "sha256": "169cec5ca2eaae715c6032062773bd7f05ab527b081d082027f8aa258a9d35f2"
+    },
+    "frame_306": {
+      "path": ".runtime/factory-native/sikh362-motion-c26-frames07/frame-0306.png",
+      "sha256": "9b9c7d37cbef1ac12b671e5eddd98d4debd9799b463e24181b226bba326698f5"
+    },
+    "frame_307": {
+      "path": ".runtime/factory-native/sikh362-motion-c26-frames07/frame-0307.png",
+      "sha256": "fe8ac179fe30a130bebf16380f856b3fab02e19c62c4e5b7b0f9e4cee22d8ec3"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh362-motion-c26-frames07/frame.png",
+      "sha256": "cad7476032297077e52cc590f7a986ab151c3e3e30cdf7e089f0dd12c8e0efc9"
+    }
+  },
+  "observation": "Actual300..307 consecutive frames plus canonical283 inspected: gathered neck/hoof placement transitions into forequarter rise, rider/seat/spear/rein attachments remain connected, fitted waist and skirt layers retain99 appearance. No sudden layer crossing visible. Direct fluidity and remaining phases pending.",
+  "comparison": "Actual returned images/technical data against explicit361 plan and original quality/reference requirements. No full-speed AV certification.",
+  "open_defects": [],
+  "scope": "Subproof only; whole requirement unresolved"
+}

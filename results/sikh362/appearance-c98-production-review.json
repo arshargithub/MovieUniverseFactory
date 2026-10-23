@@ -1,0 +1,47 @@
+{
+  "verdict": "FAIL",
+  "run_digest": "037c0b0288311acb9694a6586a418efa3f209d0f4e87cf16d0158d6bd26be14f",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh362-appearance-c98-production/snapshot.json",
+      "sha256": "abdfc0cfdd101ba1c89c0a797ba771b672badab98b68b2e01288a2a1d45af0af"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh362-appearance-c98-production/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh362-appearance-c98-production/script-diagnostics.json",
+      "sha256": "99bbbecec312f933855a69b1d853770138fd35ab62669f2fe652484d335f4ec7"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh362-appearance-c98-production/frame.png",
+      "sha256": "d3fcbab6d4323d71c7d624745ff57ac2b187e5ec456207e102e3ecc83edab1ea"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh362-appearance-c98-production/frames.json",
+      "sha256": "bd3d9a35ce14a7d0393333119a31ed1c41c6a27e428127a1f0d950cb86378bb6"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh362-appearance-c98-production/frame.png",
+      "sha256": "d3fcbab6d4323d71c7d624745ff57ac2b187e5ec456207e102e3ecc83edab1ea"
+    },
+    "frame_307": {
+      "path": ".runtime/factory-native/sikh362-appearance-c98-production/frame-0307.png",
+      "sha256": "d3603e057964d1bdcb066ad282f4f1a2a119c8ddce73817d0d1cb8ac48648f86"
+    },
+    "frame_327": {
+      "path": ".runtime/factory-native/sikh362-appearance-c98-production/frame-0327.png",
+      "sha256": "805e18e557c56390deaaf2494e862015de81520913cd55017c903270230f60d2"
+    },
+    "frame_350": {
+      "path": ".runtime/factory-native/sikh362-appearance-c98-production/frame-0350.png",
+      "sha256": "7da00ce45954f17557d3b1e4a388a5116aea97d16bd95ddc788119a406ca4097"
+    }
+  },
+  "observation": "Actual283/307/327/350: continuous waistband and retained rider/horse/seat/spear/reins through key phases. Larger forms intact at shot size, but costume still overly smooth and crown cone remains visible. No whole look or full-speed motion pass.",
+  "comparison": "Actual inspected images against accepted Pashtun film richness and original supporting-shot quality; source crop control diagnoses clipped detail, not visual closure.",
+  "open_defects": [
+    "Crown/form and integrated surface-read unresolved"
+  ]
+}
