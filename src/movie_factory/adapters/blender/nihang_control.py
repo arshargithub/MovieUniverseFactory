@@ -29,7 +29,7 @@ def validate(recipe):
         if type(recipe[key]) is not int or not lo <= recipe[key] <= hi:
             raise ValueError('NIHANG_RECIPE_BOUND:' + key)
     if recipe['operation']=='nihang_frames':
-        if not isinstance(recipe.get('view','production'),str) or recipe.get('view','production') not in ({'production','leader_front','leader_reverse','leader_contact','leader_anatomy','leader_face','crowd_front','crowd_reverse','neutral_front','neutral_back','neutral_side'} | ANATOMY_VIEWS):
+        if not isinstance(recipe.get('view','production'),str) or recipe.get('view','production') not in ({'production','horse_head','leader_front','leader_reverse','leader_contact','leader_anatomy','leader_face','leader_face_left','leader_face_right','leader_face_profile','crowd_front','crowd_reverse','neutral_front','neutral_back','neutral_side'} | ANATOMY_VIEWS):
             raise ValueError('NIHANG_DIAGNOSTIC_VIEW')
         frames=recipe['frames']
         if (not isinstance(frames,list) or not 1<=len(frames)<=16 or
@@ -42,12 +42,20 @@ def validate(recipe):
 def diagnostic_camera(bpy,view):
     """Temporary evidence camera only. No production-camera key edits or save."""
     from mathutils import Vector
-    if view=='leader_face':
+    if view=='horse_head':
+        rig=bpy.data.objects['horse.rig'];bone=rig.pose.bones['head']
+        target=rig.matrix_world@((bone.head+bone.tail)*.5)
+        data=bpy.data.cameras.new('MF diagnostic camera temporary');data.type='ORTHO';data.ortho_scale=1.25
+        camera=bpy.data.objects.new(data.name,data);bpy.context.scene.collection.objects.link(camera)
+        camera.location=target+rig.matrix_world.to_quaternion()@Vector((1.4,-1.8,.35));camera.rotation_euler=(target-camera.location).to_track_quat('-Z','Y').to_euler()
+        return camera
+    if view.startswith('leader_face'):
         rig=bpy.data.objects['MF coherent Nihang rig'];root=bpy.data.objects['mounted leader']
         target=rig.matrix_world@((rig.pose.bones['eye.L'].head+rig.pose.bones['eye.R'].head)*.5)+Vector((0,0,.015))
         data=bpy.data.cameras.new('MF diagnostic camera temporary');data.type='ORTHO';data.ortho_scale=.48
         camera=bpy.data.objects.new('MF diagnostic camera temporary',data);bpy.context.scene.collection.objects.link(camera)
-        camera.location=target+root.matrix_world.to_quaternion()@Vector((.08,-1,.05));camera.rotation_euler=(target-camera.location).to_track_quat('-Z','Y').to_euler()
+        offset={'leader_face':(.08,-1,.05),'leader_face_left':(.70,-1,.02),'leader_face_right':(-.70,-1,.02),'leader_face_profile':(1,-.08,.02)}[view]
+        camera.location=target+root.matrix_world.to_quaternion()@Vector(offset);camera.rotation_euler=(target-camera.location).to_track_quat('-Z','Y').to_euler()
         light=bpy.data.lights.new('353 face diagnostic fill','AREA');light.energy=35;light.shape='DISK';light.size=1.0
         obj=bpy.data.objects.new('353 face diagnostic fill',light);bpy.context.scene.collection.objects.link(obj)
         obj.location=camera.location+Vector((0,0,.2));obj.rotation_euler=(target-obj.location).to_track_quat('-Z','Y').to_euler()
@@ -448,7 +456,7 @@ def run(out, job):
                 scene.camera=original_camera
                 if temp:
                     data=temp.data;bpy.data.objects.remove(temp,do_unlink=True);bpy.data.cameras.remove(data)
-                if view=='leader_face':
+                if view.startswith('leader_face'):
                     for ob in list(bpy.data.objects):
                         if ob.name.startswith('353 face diagnostic fill'):
                             data=ob.data;bpy.data.objects.remove(ob,do_unlink=True);bpy.data.lights.remove(data)
