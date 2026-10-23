@@ -1,0 +1,16 @@
+{
+  "verdict": "FAIL",
+  "run_digest": "9bf33d6656add2f18707ce13dd732d6140bf3034f92cde8b3cec73f234d61381",
+  "evidence": {
+    "failed_run": {
+      "path": "results/sikh361/appearance-c93-save-run.json",
+      "sha256": "47457a72154935e390e02f2bc7036d1163d6deb9dc8b0557ab2d4b9b1e16318c"
+    }
+  },
+  "observation": "93 exact outer surface restores4.67..9.17mm geometric separation with correct torso owner at252, but the closed-shell ray test flags8 vertices inside. Do not waive them. Cross-check those and negative-normal edge cases with independent generalized winding numbers to distinguish actual penetration from grazing-ray ambiguity; preserve both results.",
+  "comparison": "Actual returned images/technical data against explicit361 plan and original quality/reference requirements. No full-speed AV certification.",
+  "open_defects": [
+    "93 exact outer surface restores4.67..9.17mm geometric separation with correct torso owner at252, but the closed-shell ray test flags8 vertices inside. Do not waive them. Cross-check those and negative-normal edge cases with independent generalized winding numbers to distinguish actual penetration from grazing-ray ambiguity; preserve both results."
+  ],
+  "scope": "Claimed scoped review"
+}

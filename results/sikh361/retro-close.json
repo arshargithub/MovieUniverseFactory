@@ -1,0 +1,598 @@
+{
+  "sikh335-supporting-appearance": {
+    "counts": {
+      "initialize": 1,
+      "plan": 45,
+      "outcome": 318,
+      "response": 169,
+      "admit": 169,
+      "evaluate": 1
+    },
+    "projection": {
+      "policy": 1,
+      "sequence": 703,
+      "gates": {
+        "__migration__": {
+          "status": "CLOSED",
+          "evaluation": "sikh351-migration-effect"
+        },
+        "__allowance__": {
+          "status": "OPEN",
+          "reason": "allowance_exhausted",
+          "triggers": [
+            "migration-evidence:sikh351-reviewed-migration",
+            "sikh351-c55-__allowance__-reopen",
+            "sikh351-c56-__allowance__-reopen",
+            "sikh351-c57-__allowance__-reopen",
+            "exhaustion:sikh351-exhausted",
+            "sikh352-c59-__allowance__-reopen",
+            "sikh352-c60-__allowance__-reopen",
+            "sikh352-c61-__allowance__-reopen",
+            "exhaustion:sikh352-exhausted61",
+            "sikh353-c63-__allowance__-reopen",
+            "sikh353-c64-__allowance__-reopen",
+            "sikh353-c65-__allowance__-reopen",
+            "sikh353-c66-__allowance__-reopen",
+            "sikh353-c67-__allowance__-reopen",
+            "exhaustion:sikh353-appearance-exhausted",
+            "sikh354-c69-__allowance__-reopen",
+            "sikh354-c70-__allowance__-reopen",
+            "sikh354-c71-__allowance__-reopen",
+            "sikh354-c72-__allowance__-reopen",
+            "exhaustion:sikh354-c72-visual-replan",
+            "sikh357-c74-__allowance__-reopen",
+            "sikh357-c75-__allowance__-reopen",
+            "sikh357-c76-__allowance__-reopen",
+            "sikh357-c77-__allowance__-reopen",
+            "sikh357-c78-__allowance__-reopen",
+            "sikh357-c79-__allowance__-reopen",
+            "sikh357-c80-__allowance__-reopen",
+            "sikh357-c81-__allowance__-reopen",
+            "sikh358-appearance-c82-__allowance__-reopen",
+            "sikh358-appearance-c83-__allowance__-reopen",
+            "sikh358-appearance-c84-__allowance__-reopen",
+            "sikh358-appearance-c85-__allowance__-reopen",
+            "sikh358-appearance-c86-__allowance__-reopen",
+            "sikh361-appearance-c87-__allowance__-reopen",
+            "sikh361-appearance-c88-__allowance__-reopen",
+            "sikh361-appearance-c89-__allowance__-reopen",
+            "sikh361-appearance-c90-__allowance__-reopen",
+            "sikh361-appearance-c91-__allowance__-reopen",
+            "sikh361-appearance-c92-__allowance__-reopen",
+            "sikh361-appearance-c93-__allowance__-reopen",
+            "sikh361-appearance-c94-__allowance__-reopen",
+            "sikh361-appearance-c95-__allowance__-reopen",
+            "sikh361-appearance-c96-__allowance__-reopen",
+            "exhaustion:sikh361-appearance-c97-admit"
+          ]
+        },
+        "form": {
+          "status": "OPEN",
+          "reason": "intervention_failed",
+          "triggers": [
+            "sikh351-legacy-form",
+            "sikh351-c54-form-open",
+            "sikh351-c55-form-open",
+            "sikh351-c56-form-open",
+            "native-review:sikh351-c56-anatomy_custom_back",
+            "sikh351-c57-form-open",
+            "native-review:sikh351-c57-anatomy_custom_back",
+            "sikh352-c58-form-open",
+            "native-review:sikh352-c58-anatomy_custom_front",
+            "sikh352-c59-form-open",
+            "sikh352-c60-form-open",
+            "native-review:sikh352-c60-leader_front",
+            "sikh352-c61-form-open",
+            "native-review:sikh352-c61-leader_front",
+            "sikh352-c61-final-form-failure",
+            "sikh353-c63-form-reopen",
+            "native-review:sikh353-c63-leader_reverse",
+            "native-review:sikh353-c64-leader_front",
+            "native-review:sikh353-c65-leader_face",
+            "native-review:sikh353-c66-leader_face",
+            "native-review:sikh353-c67-leader_front",
+            "sikh353-c67-final-failure",
+            "sikh354-c68-leader_face-failure",
+            "sikh354-c69-save-failure",
+            "native-review:sikh354-c70-production",
+            "sikh354-c70-production-failure",
+            "native-review:sikh354-c71-leader_front",
+            "sikh354-c71-leader_front-failure",
+            "native-review:sikh354-c72-leader_face",
+            "sikh354-c72-leader_face-failure",
+            "native-review:sikh357-c73-leader_face",
+            "sikh357-c73-leader_face-failure",
+            "native-review:sikh357-c74-leader_face",
+            "sikh357-c74-leader_face-failure",
+            "native-review:sikh357-c75-leader_face",
+            "sikh357-c75-leader_face-failure",
+            "native-review:sikh357-c76-leader_face",
+            "sikh357-c76-leader_face-failure",
+            "native-review:sikh357-c77-leader_front",
+            "sikh357-c77-leader_front-failure",
+            "native-review:sikh357-c78-leader_reverse",
+            "sikh357-c78-leader_reverse-failure",
+            "native-review:sikh357-c79-leader_reverse",
+            "sikh357-c79-leader_reverse-failure",
+            "native-review:sikh357-c80-horse_head",
+            "sikh357-c80-horse_head-failure",
+            "native-review:sikh357-c81-horse_head",
+            "sikh357-c81-horse_head-failure",
+            "sikh358-appearance-c83-form-reopen",
+            "sikh358-appearance-c84-form-reopen",
+            "native-review:sikh358-appearance-c84-horse_head",
+            "sikh358-appearance-c86-form-reopen",
+            "sikh361-appearance-c87-form-reopen",
+            "native-review:sikh361-appearance-c87-leader_face",
+            "sikh361-appearance-c87-leader_face-outcome",
+            "sikh361-appearance-c89-form-reopen",
+            "sikh361-appearance-c90-form-reopen",
+            "sikh361-appearance-c91-form-reopen",
+            "sikh361-appearance-c92-form-reopen",
+            "sikh361-appearance-c93-form-reopen",
+            "sikh361-appearance-c94-form-reopen",
+            "sikh361-appearance-c95-form-reopen",
+            "native-review:sikh361-appearance-c95-leader_reverse",
+            "native-review:sikh361-appearance-c96-save"
+          ]
+        },
+        "interfaces": {
+          "status": "OPEN",
+          "reason": "strategy_falsifier_or_regression",
+          "triggers": [
+            "native-review:sikh352-c58-anatomy_custom_front",
+            "native-review:sikh352-c58-anatomy_custom_back",
+            "native-review:sikh352-c58-anatomy_custom_side",
+            "native-review:sikh352-c58-anatomy_linear_front",
+            "native-review:sikh352-c58-anatomy_linear_back",
+            "native-review:sikh352-c58-leader_contact",
+            "sikh352-c60-interfaces-reopen",
+            "native-review:sikh352-c60-leader_front",
+            "native-review:sikh352-c61-leader_front",
+            "sikh353-c63-interfaces-reopen",
+            "native-review:sikh353-c63-leader_reverse",
+            "sikh353-c63-leader_reverse-failure",
+            "native-review:sikh353-c64-leader_front",
+            "sikh353-c64-leader_front-failure",
+            "native-review:sikh353-c65-leader_face",
+            "sikh353-c65-leader_face-failure",
+            "native-review:sikh353-c66-leader_face",
+            "sikh353-c66-leader_face-failure",
+            "native-review:sikh353-c67-leader_front",
+            "sikh354-c69-interfaces-reopen",
+            "sikh354-c70-interfaces-reopen",
+            "native-review:sikh354-c70-production",
+            "native-review:sikh354-c71-leader_front",
+            "native-review:sikh354-c72-leader_face",
+            "native-review:sikh357-c73-leader_face",
+            "native-review:sikh357-c74-leader_face",
+            "native-review:sikh357-c75-leader_face",
+            "native-review:sikh357-c76-leader_face",
+            "native-review:sikh357-c77-leader_front",
+            "native-review:sikh357-c78-leader_reverse",
+            "native-review:sikh357-c79-leader_reverse",
+            "native-review:sikh357-c80-horse_head",
+            "native-review:sikh357-c81-horse_head",
+            "sikh358-appearance-c83-interfaces-reopen",
+            "sikh358-appearance-c84-interfaces-reopen",
+            "native-review:sikh358-appearance-c84-horse_head",
+            "sikh358-appearance-c84-horse_head-outcome",
+            "sikh358-appearance-c85-save-outcome",
+            "sikh361-appearance-c87-interfaces-reopen",
+            "native-review:sikh361-appearance-c87-leader_face",
+            "sikh361-appearance-c89-interfaces-reopen",
+            "sikh361-appearance-c89-leader_reverse-outcome",
+            "sikh361-appearance-c90-save-outcome",
+            "sikh361-appearance-c91-save-outcome",
+            "sikh361-appearance-c92-save-outcome",
+            "sikh361-appearance-c93-save-outcome",
+            "sikh361-appearance-c94-save-outcome",
+            "native-review:sikh361-appearance-c95-leader_reverse",
+            "sikh361-appearance-c95-leader_reverse-outcome",
+            "native-review:sikh361-appearance-c96-save",
+            "sikh361-appearance-c96-save-outcome"
+          ]
+        },
+        "evidence": {
+          "status": "OPEN",
+          "reason": "intervention_failed",
+          "triggers": [
+            "native-review:sikh352-c58-anatomy_custom_front",
+            "native-review:sikh352-c58-anatomy_custom_back",
+            "native-review:sikh352-c58-anatomy_custom_side",
+            "native-review:sikh352-c58-anatomy_linear_front",
+            "native-review:sikh352-c58-anatomy_linear_back",
+            "native-review:sikh352-c58-leader_contact",
+            "sikh352-c60-evidence-reopen",
+            "native-review:sikh352-c60-leader_front",
+            "native-review:sikh352-c61-leader_front",
+            "sikh353-c63-evidence-reopen",
+            "native-review:sikh353-c63-leader_reverse",
+            "native-review:sikh353-c64-leader_front",
+            "native-review:sikh353-c65-leader_face",
+            "native-review:sikh353-c66-leader_face",
+            "native-review:sikh353-c67-leader_front",
+            "sikh354-c69-evidence-reopen",
+            "sikh354-c70-evidence-reopen",
+            "native-review:sikh354-c70-production",
+            "native-review:sikh354-c71-leader_front",
+            "native-review:sikh354-c72-leader_face",
+            "native-review:sikh357-c73-leader_face",
+            "native-review:sikh357-c74-leader_face",
+            "native-review:sikh357-c75-leader_face",
+            "native-review:sikh357-c76-leader_face",
+            "native-review:sikh357-c77-leader_front",
+            "native-review:sikh357-c78-leader_reverse",
+            "native-review:sikh357-c79-leader_reverse",
+            "native-review:sikh357-c80-horse_head",
+            "native-review:sikh357-c81-horse_head",
+            "sikh358-appearance-c83-evidence-reopen",
+            "sikh358-appearance-c84-evidence-reopen",
+            "native-review:sikh358-appearance-c84-horse_head",
+            "sikh358-appearance-c86-evidence-reopen",
+            "sikh361-appearance-c87-evidence-reopen",
+            "native-review:sikh361-appearance-c87-leader_face",
+            "sikh361-appearance-c89-evidence-reopen",
+            "sikh361-appearance-c90-evidence-reopen",
+            "sikh361-appearance-c91-evidence-reopen",
+            "sikh361-appearance-c92-evidence-reopen",
+            "sikh361-appearance-c93-evidence-reopen",
+            "sikh361-appearance-c94-evidence-reopen",
+            "sikh361-appearance-c95-evidence-reopen",
+            "native-review:sikh361-appearance-c95-leader_reverse",
+            "native-review:sikh361-appearance-c96-save"
+          ]
+        },
+        "__worker__": {
+          "status": "TESTING",
+          "reason": "evidence_reconciliation",
+          "triggers": [
+            "worker:sikh361-appearance-c91-save",
+            "worker:sikh361-appearance-c92-save",
+            "worker:sikh361-appearance-c93-save",
+            "worker:sikh361-appearance-c94-save",
+            "sikh361-appearance-c96-__worker__-reopen"
+          ],
+          "plan": "e61bf8c308274c98e7065632a58142e21e3bac501dff9d9019ad198446e3cde4",
+          "admitted_event": "sikh361-appearance-c96-__worker__-admit"
+        }
+      },
+      "warnings": {
+        "preservation": 2
+      },
+      "responses": {
+        "__worker__": {
+          "cause": "Actual95 reverse shows a visible dressed-layer/material failure despite numeric coat-contact success; identify actual first visible mesh before changing construction.",
+          "change_or_retain_rationale": "Read-only actual waistband visibility and material diagnosis at283/327/350 using the same reverse camera. Ray sampled camera-facing final band points against visible current actor garments/body/band, recording first-hit object/depth, bounds and material nodes. No art approval, geometry change or proxy assumption.",
+          "evidence": {
+            "results/sikh358/LEARNINGS.md": {
+              "path": "results/sikh358/LEARNINGS.md",
+              "sha256": "ca64171302fb0d5ffb7ef26d68d918e53482145266ff0a4ae7312961cf6ae337"
+            },
+            "results/sikh361/REQUEST.md": {
+              "path": "results/sikh361/REQUEST.md",
+              "sha256": "469941a11dcd361f919c5a74e44d03197ed0f4b3cef9bc1689eea69302469140"
+            },
+            "results/sikh361/STRATEGY.md": {
+              "path": "results/sikh361/STRATEGY.md",
+              "sha256": "8f07bd01891e82b8f4d2ea0e8ac858b342e9df117f0764310333bb92dadb6bbd"
+            },
+            "results/sikh361/appearance-c96-challenge.json": {
+              "path": "results/sikh361/appearance-c96-challenge.json",
+              "sha256": "390014a775e56222dfdd6dd2e71cde0baf173c651ba9cbae4a9276ecc1f70053"
+            },
+            "results/sikh361/appearance-c96.json": {
+              "path": "results/sikh361/appearance-c96.json",
+              "sha256": "8b804850c6b81eb2fd0278d604f5930314d7785cb55b2691e105354e61fc9b8d"
+            }
+          },
+          "expected": "Only actual corrected subproof advances; no whole-actor acceptance by bookkeeping.",
+          "failure_response": "Replan actual failing interface with retained counters, no decorative concealment.",
+          "gate_digest": "08a1dee63b99ba98963189f0e27ab45c2184230e139f955ab5b937d6ebc3fdd4",
+          "key": "__worker__",
+          "plan": "e61bf8c308274c98e7065632a58142e21e3bac501dff9d9019ad198446e3cde4",
+          "preserve": "Original references,357 integrated scene,action clock and all task failures; no spend.",
+          "target_stage": "STRATEGIZING",
+          "test": "Persistent actual occluder/material evidence identifies the blue interruption owner; no whole production requirement closes from this diagnostic.",
+          "uncertainty": "Adaptive distance certification may fail on a poor contact or visually unstable route; actual mesh and frame evidence remain decisive.",
+          "event": "sikh361-appearance-c96-__worker__-response"
+        }
+      },
+      "proofs": {},
+      "history_api": "retrospective.events(connection, task)",
+      "instruction": "Inspect source-bound outcomes for each open finding; respond, challenge, then test. Admission is not effectiveness. No new authority."
+    }
+  },
+  "sikh335-continuous-performance": {
+    "counts": {
+      "initialize": 1,
+      "plan": 13,
+      "outcome": 88,
+      "response": 46,
+      "admit": 46
+    },
+    "projection": {
+      "policy": 1,
+      "sequence": 194,
+      "gates": {
+        "__migration__": {
+          "status": "TESTING",
+          "reason": "evidence_reconciliation",
+          "triggers": [
+            "migration-evidence:sikh353-motion-retro-migration",
+            "sikh353-motion14-__migration__-reopen",
+            "sikh353-motion15-__migration__-reopen",
+            "sikh353-motion16-__migration__-reopen",
+            "sikh358-motion-c17-__migration__-reopen",
+            "sikh358-motion-c18-__migration__-reopen",
+            "sikh358-motion-c19-__migration__-reopen",
+            "sikh358-motion-c20-__migration__-reopen",
+            "sikh358-motion-c21-__migration__-reopen",
+            "sikh361-motion-c22-__migration__-reopen",
+            "sikh361-motion-c23-__migration__-reopen",
+            "sikh361-motion-c24-__migration__-reopen"
+          ],
+          "plan": "8b1763ae680cf36237e774b93a838934c8524259f81f4a910b3bce96999c0c02",
+          "admitted_event": "sikh361-motion-c24-__migration__-admit"
+        },
+        "__allowance__": {
+          "status": "TESTING",
+          "reason": "evidence_reconciliation",
+          "triggers": [
+            "migration-evidence:sikh353-motion-retro-migration",
+            "sikh353-motion14-__allowance__-reopen",
+            "sikh353-motion15-__allowance__-reopen",
+            "sikh353-motion16-__allowance__-reopen",
+            "exhaustion:sikh353-motion16-replan",
+            "sikh358-motion-c18-__allowance__-reopen",
+            "sikh358-motion-c19-__allowance__-reopen",
+            "sikh358-motion-c20-__allowance__-reopen",
+            "sikh358-motion-c21-__allowance__-reopen",
+            "exhaustion:sikh358-motion-c21-save-replan",
+            "sikh361-motion-c23-__allowance__-reopen",
+            "sikh361-motion-c24-__allowance__-reopen"
+          ],
+          "plan": "8b1763ae680cf36237e774b93a838934c8524259f81f4a910b3bce96999c0c02",
+          "admitted_event": "sikh361-motion-c24-__allowance__-admit"
+        },
+        "phases": {
+          "status": "TESTING",
+          "reason": "intervention_failed",
+          "triggers": [
+            "sikh353-motion13-failure",
+            "native-review:sikh353-motion-c14-render",
+            "sikh353-motion14-failure",
+            "native-review:sikh353-motion-c15-render",
+            "sikh353-motion15-failure",
+            "native-review:sikh353-motion-c16-render",
+            "native-review:sikh358-motion-c17-horse_head",
+            "sikh358-motion-c19-phases-reopen",
+            "sikh358-motion-c20-phases-reopen",
+            "sikh358-motion-c21-phases-reopen",
+            "sikh361-motion-c22-phases-reopen",
+            "native-review:sikh361-motion-c22-horse_head_reverse",
+            "native-review:sikh361-motion-c23-save"
+          ],
+          "plan": "8b1763ae680cf36237e774b93a838934c8524259f81f4a910b3bce96999c0c02",
+          "admitted_event": "sikh361-motion-c24-phases-admit"
+        },
+        "rider": {
+          "status": "TESTING",
+          "reason": "strategy_falsifier_or_regression",
+          "triggers": [
+            "sikh353-motion16-failure",
+            "native-review:sikh358-motion-c17-horse_head",
+            "sikh358-motion-c17-horse_head-outcome",
+            "sikh358-motion-c19-rider-reopen",
+            "sikh358-motion-c19-save-outcome",
+            "sikh358-motion-c20-save-outcome",
+            "sikh358-motion-c21-save-outcome",
+            "native-review:sikh361-motion-c22-horse_head_reverse",
+            "sikh361-motion-c22-horse_head_reverse-outcome",
+            "native-review:sikh361-motion-c23-save",
+            "sikh361-motion-c23-save-outcome"
+          ],
+          "plan": "8b1763ae680cf36237e774b93a838934c8524259f81f4a910b3bce96999c0c02",
+          "admitted_event": "sikh361-motion-c24-rider-admit"
+        },
+        "__worker__": {
+          "status": "TESTING",
+          "reason": "evidence_reconciliation",
+          "triggers": [
+            "worker:sikh358-motion-c21-save",
+            "sikh361-motion-c23-__worker__-reopen",
+            "sikh361-motion-c24-__worker__-reopen"
+          ],
+          "plan": "8b1763ae680cf36237e774b93a838934c8524259f81f4a910b3bce96999c0c02",
+          "admitted_event": "sikh361-motion-c24-__worker__-admit"
+        }
+      },
+      "warnings": {},
+      "responses": {
+        "__migration__": {
+          "cause": "Exact native23 audit confirms up to323mm interior rein-route changes in one frame; nearest-polyline comparison confirms actual geometry jumps rather than only point correspondence. Independent per-frame shortest routes are the cause to replace.",
+          "change_or_retain_rationale": "Retain one chronological material path, advect it with the actual head transform and hand displacement, then apply only small local skin contact corrections. Preserve endpoints, certify every final segment at6.5mm, reject a local correction over40mm, protect all unrelated action keys, and read the entire animation back. This is authored flexible tack, not a rope simulation. Inspect actual worst-change frames and intended/reverse views before any continuous handoff.",
+          "evidence": {
+            "results/sikh358/LEARNINGS.md": {
+              "path": "results/sikh358/LEARNINGS.md",
+              "sha256": "ca64171302fb0d5ffb7ef26d68d918e53482145266ff0a4ae7312961cf6ae337"
+            },
+            "results/sikh361/REQUEST.md": {
+              "path": "results/sikh361/REQUEST.md",
+              "sha256": "469941a11dcd361f919c5a74e44d03197ed0f4b3cef9bc1689eea69302469140"
+            },
+            "results/sikh361/STRATEGY.md": {
+              "path": "results/sikh361/STRATEGY.md",
+              "sha256": "8f07bd01891e82b8f4d2ea0e8ac858b342e9df117f0764310333bb92dadb6bbd"
+            },
+            "results/sikh361/motion-c24-challenge.json": {
+              "path": "results/sikh361/motion-c24-challenge.json",
+              "sha256": "d1a2f5aee215876a708bf69d84eaa831e48f0d187dbdb87c829a3f690263bc7f"
+            },
+            "results/sikh361/motion-c24.json": {
+              "path": "results/sikh361/motion-c24.json",
+              "sha256": "65f6479a05ebdb90de6269922c03313b7b363b4e34dafcc0de82f5f87c517bc5"
+            }
+          },
+          "expected": "Only actual corrected subproof advances; no whole-actor acceptance by bookkeeping.",
+          "failure_response": "Replan actual failing interface with retained counters, no decorative concealment.",
+          "gate_digest": "08543274e0c3e66333c717f1a79e498c3a38ec35ea0dc73872595127127ff32c",
+          "key": "__migration__",
+          "plan": "8b1763ae680cf36237e774b93a838934c8524259f81f4a910b3bce96999c0c02",
+          "preserve": "Original references,357 integrated scene,action clock and all task failures; no spend.",
+          "target_stage": "STRATEGIZING",
+          "test": "Complete190-frame path succeeds without independent shortest-route resets, endpoint drift, clearance failure or large local correction. Compare endpoint-relative trajectory steps with rejected22/23, then inspect both sides and production/rest/crest/impact/recovery. Numerical improvement does not certify full-speed AV or whole appearance.",
+          "uncertainty": "Adaptive distance certification may fail on a poor contact or visually unstable route; actual mesh and frame evidence remain decisive.",
+          "event": "sikh361-motion-c24-__migration__-response"
+        },
+        "__allowance__": {
+          "cause": "Exact native23 audit confirms up to323mm interior rein-route changes in one frame; nearest-polyline comparison confirms actual geometry jumps rather than only point correspondence. Independent per-frame shortest routes are the cause to replace.",
+          "change_or_retain_rationale": "Retain one chronological material path, advect it with the actual head transform and hand displacement, then apply only small local skin contact corrections. Preserve endpoints, certify every final segment at6.5mm, reject a local correction over40mm, protect all unrelated action keys, and read the entire animation back. This is authored flexible tack, not a rope simulation. Inspect actual worst-change frames and intended/reverse views before any continuous handoff.",
+          "evidence": {
+            "results/sikh358/LEARNINGS.md": {
+              "path": "results/sikh358/LEARNINGS.md",
+              "sha256": "ca64171302fb0d5ffb7ef26d68d918e53482145266ff0a4ae7312961cf6ae337"
+            },
+            "results/sikh361/REQUEST.md": {
+              "path": "results/sikh361/REQUEST.md",
+              "sha256": "469941a11dcd361f919c5a74e44d03197ed0f4b3cef9bc1689eea69302469140"
+            },
+            "results/sikh361/STRATEGY.md": {
+              "path": "results/sikh361/STRATEGY.md",
+              "sha256": "8f07bd01891e82b8f4d2ea0e8ac858b342e9df117f0764310333bb92dadb6bbd"
+            },
+            "results/sikh361/motion-c24-challenge.json": {
+              "path": "results/sikh361/motion-c24-challenge.json",
+              "sha256": "d1a2f5aee215876a708bf69d84eaa831e48f0d187dbdb87c829a3f690263bc7f"
+            },
+            "results/sikh361/motion-c24.json": {
+              "path": "results/sikh361/motion-c24.json",
+              "sha256": "65f6479a05ebdb90de6269922c03313b7b363b4e34dafcc0de82f5f87c517bc5"
+            }
+          },
+          "expected": "Only actual corrected subproof advances; no whole-actor acceptance by bookkeeping.",
+          "failure_response": "Replan actual failing interface with retained counters, no decorative concealment.",
+          "gate_digest": "4bf391ce0fb054e46a434bccc7c5866e48b176b4a3ce1bf74c7d7c0c85a2cbd0",
+          "key": "__allowance__",
+          "plan": "8b1763ae680cf36237e774b93a838934c8524259f81f4a910b3bce96999c0c02",
+          "preserve": "Original references,357 integrated scene,action clock and all task failures; no spend.",
+          "target_stage": "STRATEGIZING",
+          "test": "Complete190-frame path succeeds without independent shortest-route resets, endpoint drift, clearance failure or large local correction. Compare endpoint-relative trajectory steps with rejected22/23, then inspect both sides and production/rest/crest/impact/recovery. Numerical improvement does not certify full-speed AV or whole appearance.",
+          "uncertainty": "Adaptive distance certification may fail on a poor contact or visually unstable route; actual mesh and frame evidence remain decisive.",
+          "event": "sikh361-motion-c24-__allowance__-response"
+        },
+        "phases": {
+          "cause": "Exact native23 audit confirms up to323mm interior rein-route changes in one frame; nearest-polyline comparison confirms actual geometry jumps rather than only point correspondence. Independent per-frame shortest routes are the cause to replace.",
+          "change_or_retain_rationale": "Retain one chronological material path, advect it with the actual head transform and hand displacement, then apply only small local skin contact corrections. Preserve endpoints, certify every final segment at6.5mm, reject a local correction over40mm, protect all unrelated action keys, and read the entire animation back. This is authored flexible tack, not a rope simulation. Inspect actual worst-change frames and intended/reverse views before any continuous handoff.",
+          "evidence": {
+            "results/sikh358/LEARNINGS.md": {
+              "path": "results/sikh358/LEARNINGS.md",
+              "sha256": "ca64171302fb0d5ffb7ef26d68d918e53482145266ff0a4ae7312961cf6ae337"
+            },
+            "results/sikh361/REQUEST.md": {
+              "path": "results/sikh361/REQUEST.md",
+              "sha256": "469941a11dcd361f919c5a74e44d03197ed0f4b3cef9bc1689eea69302469140"
+            },
+            "results/sikh361/STRATEGY.md": {
+              "path": "results/sikh361/STRATEGY.md",
+              "sha256": "8f07bd01891e82b8f4d2ea0e8ac858b342e9df117f0764310333bb92dadb6bbd"
+            },
+            "results/sikh361/motion-c24-challenge.json": {
+              "path": "results/sikh361/motion-c24-challenge.json",
+              "sha256": "d1a2f5aee215876a708bf69d84eaa831e48f0d187dbdb87c829a3f690263bc7f"
+            },
+            "results/sikh361/motion-c24.json": {
+              "path": "results/sikh361/motion-c24.json",
+              "sha256": "65f6479a05ebdb90de6269922c03313b7b363b4e34dafcc0de82f5f87c517bc5"
+            }
+          },
+          "expected": "Only actual corrected subproof advances; no whole-actor acceptance by bookkeeping.",
+          "failure_response": "Replan actual failing interface with retained counters, no decorative concealment.",
+          "gate_digest": "66def79ec3ea3675f7f243ded86dfee01467651025cc5b6c4996bcc0a639dbdf",
+          "key": "phases",
+          "plan": "8b1763ae680cf36237e774b93a838934c8524259f81f4a910b3bce96999c0c02",
+          "preserve": "Original references,357 integrated scene,action clock and all task failures; no spend.",
+          "target_stage": "STRATEGIZING",
+          "test": "Complete190-frame path succeeds without independent shortest-route resets, endpoint drift, clearance failure or large local correction. Compare endpoint-relative trajectory steps with rejected22/23, then inspect both sides and production/rest/crest/impact/recovery. Numerical improvement does not certify full-speed AV or whole appearance.",
+          "uncertainty": "Adaptive distance certification may fail on a poor contact or visually unstable route; actual mesh and frame evidence remain decisive.",
+          "event": "sikh361-motion-c24-phases-response"
+        },
+        "rider": {
+          "cause": "Exact native23 audit confirms up to323mm interior rein-route changes in one frame; nearest-polyline comparison confirms actual geometry jumps rather than only point correspondence. Independent per-frame shortest routes are the cause to replace.",
+          "change_or_retain_rationale": "Retain one chronological material path, advect it with the actual head transform and hand displacement, then apply only small local skin contact corrections. Preserve endpoints, certify every final segment at6.5mm, reject a local correction over40mm, protect all unrelated action keys, and read the entire animation back. This is authored flexible tack, not a rope simulation. Inspect actual worst-change frames and intended/reverse views before any continuous handoff.",
+          "evidence": {
+            "results/sikh358/LEARNINGS.md": {
+              "path": "results/sikh358/LEARNINGS.md",
+              "sha256": "ca64171302fb0d5ffb7ef26d68d918e53482145266ff0a4ae7312961cf6ae337"
+            },
+            "results/sikh361/REQUEST.md": {
+              "path": "results/sikh361/REQUEST.md",
+              "sha256": "469941a11dcd361f919c5a74e44d03197ed0f4b3cef9bc1689eea69302469140"
+            },
+            "results/sikh361/STRATEGY.md": {
+              "path": "results/sikh361/STRATEGY.md",
+              "sha256": "8f07bd01891e82b8f4d2ea0e8ac858b342e9df117f0764310333bb92dadb6bbd"
+            },
+            "results/sikh361/motion-c24-challenge.json": {
+              "path": "results/sikh361/motion-c24-challenge.json",
+              "sha256": "d1a2f5aee215876a708bf69d84eaa831e48f0d187dbdb87c829a3f690263bc7f"
+            },
+            "results/sikh361/motion-c24.json": {
+              "path": "results/sikh361/motion-c24.json",
+              "sha256": "65f6479a05ebdb90de6269922c03313b7b363b4e34dafcc0de82f5f87c517bc5"
+            }
+          },
+          "expected": "Only actual corrected subproof advances; no whole-actor acceptance by bookkeeping.",
+          "failure_response": "Replan actual failing interface with retained counters, no decorative concealment.",
+          "gate_digest": "bcfe506ef3a1293490c609b0a0425c4c7163e7dc46519423504e0c61ae465532",
+          "key": "rider",
+          "plan": "8b1763ae680cf36237e774b93a838934c8524259f81f4a910b3bce96999c0c02",
+          "preserve": "Original references,357 integrated scene,action clock and all task failures; no spend.",
+          "target_stage": "STRATEGIZING",
+          "test": "Complete190-frame path succeeds without independent shortest-route resets, endpoint drift, clearance failure or large local correction. Compare endpoint-relative trajectory steps with rejected22/23, then inspect both sides and production/rest/crest/impact/recovery. Numerical improvement does not certify full-speed AV or whole appearance.",
+          "uncertainty": "Adaptive distance certification may fail on a poor contact or visually unstable route; actual mesh and frame evidence remain decisive.",
+          "event": "sikh361-motion-c24-rider-response"
+        },
+        "__worker__": {
+          "cause": "Exact native23 audit confirms up to323mm interior rein-route changes in one frame; nearest-polyline comparison confirms actual geometry jumps rather than only point correspondence. Independent per-frame shortest routes are the cause to replace.",
+          "change_or_retain_rationale": "Retain one chronological material path, advect it with the actual head transform and hand displacement, then apply only small local skin contact corrections. Preserve endpoints, certify every final segment at6.5mm, reject a local correction over40mm, protect all unrelated action keys, and read the entire animation back. This is authored flexible tack, not a rope simulation. Inspect actual worst-change frames and intended/reverse views before any continuous handoff.",
+          "evidence": {
+            "results/sikh358/LEARNINGS.md": {
+              "path": "results/sikh358/LEARNINGS.md",
+              "sha256": "ca64171302fb0d5ffb7ef26d68d918e53482145266ff0a4ae7312961cf6ae337"
+            },
+            "results/sikh361/REQUEST.md": {
+              "path": "results/sikh361/REQUEST.md",
+              "sha256": "469941a11dcd361f919c5a74e44d03197ed0f4b3cef9bc1689eea69302469140"
+            },
+            "results/sikh361/STRATEGY.md": {
+              "path": "results/sikh361/STRATEGY.md",
+              "sha256": "8f07bd01891e82b8f4d2ea0e8ac858b342e9df117f0764310333bb92dadb6bbd"
+            },
+            "results/sikh361/motion-c24-challenge.json": {
+              "path": "results/sikh361/motion-c24-challenge.json",
+              "sha256": "d1a2f5aee215876a708bf69d84eaa831e48f0d187dbdb87c829a3f690263bc7f"
+            },
+            "results/sikh361/motion-c24.json": {
+              "path": "results/sikh361/motion-c24.json",
+              "sha256": "65f6479a05ebdb90de6269922c03313b7b363b4e34dafcc0de82f5f87c517bc5"
+            }
+          },
+          "expected": "Only actual corrected subproof advances; no whole-actor acceptance by bookkeeping.",
+          "failure_response": "Replan actual failing interface with retained counters, no decorative concealment.",
+          "gate_digest": "9b4fccbf991ccd8d2b5a5ac926f200020f85acd3ee8b7c40ca4125b34ca77d38",
+          "key": "__worker__",
+          "plan": "8b1763ae680cf36237e774b93a838934c8524259f81f4a910b3bce96999c0c02",
+          "preserve": "Original references,357 integrated scene,action clock and all task failures; no spend.",
+          "target_stage": "STRATEGIZING",
+          "test": "Complete190-frame path succeeds without independent shortest-route resets, endpoint drift, clearance failure or large local correction. Compare endpoint-relative trajectory steps with rejected22/23, then inspect both sides and production/rest/crest/impact/recovery. Numerical improvement does not certify full-speed AV or whole appearance.",
+          "uncertainty": "Adaptive distance certification may fail on a poor contact or visually unstable route; actual mesh and frame evidence remain decisive.",
+          "event": "sikh361-motion-c24-__worker__-response"
+        }
+      },
+      "proofs": {},
+      "history_api": "retrospective.events(connection, task)",
+      "instruction": "Inspect source-bound outcomes for each open finding; respond, challenge, then test. Admission is not effectiveness. No new authority."
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "parent": ".runtime/factory-native/sikh361-motion-c22-save/scene.blend",
+  "template": "results/sikh353/strategizing-c67.json",
+  "cause": "Actual retained face76/front77 show a near-uniform vertically brushed beard mass; root correctness does not create clump richness or an irregular silhouette.",
+  "method": "Preserve the existing identity, actual anatomical roots and head ownership; replace only the existing beard object's rendered curve data with coherent overlapping irregular wavy clumps and restrained fiber variation. Keep old data, original actions and all neighboring components. Review front and both three-quarter views, then intended production framing; reject a noisy or sculpted beard mass.",
+  "proof": "Actual native root/action preservation and fresh front/left/right face renders must show integrated rooting, plausible mouth clearance, rich flow and irregular free tips. No whole actor or motion acceptance from this groom proof.",
+  "scope": "Supporting Nihang beard richness proof; no identity replacement, crowd construction, Pashtun edits or provider use.",
+  "methods": {},
+  "sources": ["src/movie_factory/adapters/blender/nihang_beard361.py", "src/movie_factory/adapters/blender/nihang_patch.py", "tests/test_nihang361_detail.py", "results/sikh361/HANDLER_REVIEW.md", "results/sikh361/APPEARANCE_AUDIT.md"],
+  "steps": [
+    {"id":"save", "depends_on":[], "requirements":["preservation"], "recipe":{"operation":"nihang_patch", "frame":283, "width":640, "height":640, "samples":8, "edits":[{"kind":"mounted_beard361", "target":"mounted leader"}]}},
+    {"id":"leader_face", "depends_on":["save"], "recipe":{"operation":"nihang_frames", "frame":283, "frames":[283], "view":"leader_face", "width":640, "height":640, "samples":16}},
+    {"id":"leader_face_left", "depends_on":["save"], "recipe":{"operation":"nihang_frames", "frame":283, "frames":[283], "view":"leader_face_left", "width":640, "height":640, "samples":16}},
+    {"id":"leader_face_right", "depends_on":["save"], "recipe":{"operation":"nihang_frames", "frame":283, "frames":[283], "view":"leader_face_right", "width":640, "height":640, "samples":16}},
+    {"id":"production", "depends_on":["save"], "recipe":{"operation":"nihang_frames", "frame":307, "frames":[283,307,327,350], "view":"production", "width":432, "height":768, "samples":16}}
+  ]
+}

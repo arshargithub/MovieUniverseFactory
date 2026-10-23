@@ -1,0 +1,32 @@
+{
+  "verdict": "FAIL",
+  "run_digest": "b8d004dbb9b73035ea385c81a1be7e07b30009e9e944442aa6f17808fcc781ae",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh361-appearance-c96-save/snapshot.json",
+      "sha256": "abdfc0cfdd101ba1c89c0a797ba771b672badab98b68b2e01288a2a1d45af0af"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh361-appearance-c96-save/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh361-appearance-c96-save/script-diagnostics.json",
+      "sha256": "d8c950e68c5c42eb08e3ba4cd795b716e2b5ac082b76301b8697edb7667b2ad9"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh361-appearance-c96-save/scene.blend",
+      "sha256": "4117b3ac1750452508a2843a1468c85f5c69e2dcdd573306f6324d1393c02e7d"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh361-appearance-c96-save/patch-evidence.json",
+      "sha256": "46bd74a622ed4f73ab7df23ca154f325628f79f9bb1484cfaf218405b7683612"
+    }
+  },
+  "observation": "96 diagnosis succeeds: sampled reverse band rays hit MF coherent split chola/.001 across the band (140,168,143 sampled hits at283/327/350); top panels extend to1.145m inside the1.083..1.168m waistband range. Band material is opaque ochre, so the blue interruption is geometry, not shader alpha. Fit the upper skirt seam beneath the coat/band and transfer its upper waist weights to the actual torso; preserve lower flare.",
+  "comparison": "Actual returned images/technical data against explicit361 plan and original quality/reference requirements. No full-speed AV certification.",
+  "open_defects": [
+    "96 diagnosis succeeds: sampled reverse band rays hit MF coherent split chola/.001 across the band (140,168,143 sampled hits at283/327/350); top panels extend to1.145m inside the1.083..1.168m waistband range. Band material is opaque ochre, so the blue interruption is geometry, not shader alpha. Fit the upper skirt seam beneath the coat/band and transfer its upper waist weights to the actual torso; preserve lower flare."
+  ],
+  "scope": "Claimed scoped review"
+}

@@ -1,0 +1,16 @@
+{
+  "verdict": "FAIL",
+  "run_digest": "905c480b14d1b8ac6f550db9c30d0a67e6b359f3fc49d31618764e7a548f03a0",
+  "evidence": {
+    "failed_run": {
+      "path": "results/sikh361/appearance-c91-save-run.json",
+      "sha256": "aef6f2be27af1abb34bf9cd1ec2ab225ba424172cf0c7b1271c4ee417b6a1897"
+    }
+  },
+  "observation": "91 rejects before save at252 with -0.643mm..9.160mm final clearance and correct torso ownership1.0. Increasing the support gap worsened the minimum, falsifying a simple thickness-deficit explanation. Stop offset fitting; inspect exact failing vertices, target faces, normals and pre/post-thickness evaluation before another appearance candidate.",
+  "comparison": "Actual returned images/technical data against explicit361 plan and original quality/reference requirements. No full-speed AV certification.",
+  "open_defects": [
+    "91 rejects before save at252 with -0.643mm..9.160mm final clearance and correct torso ownership1.0. Increasing the support gap worsened the minimum, falsifying a simple thickness-deficit explanation. Stop offset fitting; inspect exact failing vertices, target faces, normals and pre/post-thickness evaluation before another appearance candidate."
+  ],
+  "scope": "Claimed scoped review"
+}

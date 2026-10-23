@@ -1,0 +1,38 @@
+{
+  "events": [
+    {
+      "activity_id": "sikh361-work",
+      "actor": "assistant",
+      "episode_id": "leader361",
+      "event_id": "sikh361-work-start",
+      "event_type": "work_started",
+      "evidence_ref": null,
+      "experiment_id": "sikh335",
+      "phase": "construction",
+      "reason": "Active admitted correction and internal review; earlier bootstrap remains a disclosed timing gap",
+      "run_id": null,
+      "schema_version": "1.0",
+      "task_id": "sikh335-continuous-performance",
+      "turn_id": null,
+      "utc": "2026-10-23T18:09:15.527067+00:00"
+    },
+    {
+      "event_id": "sikh361-work-end",
+      "experiment_id": "sikh335",
+      "episode_id": "leader361",
+      "phase": "construction",
+      "event_type": "work_ended",
+      "activity_id": "sikh361-work",
+      "utc": "2026-10-23T19:47:50.147327+00:00",
+      "note": "Rein24 retained; appearance97 limit reached. Prepared code not run. No production-media handoff."
+    }
+  ],
+  "elapsed_seconds": 5914.620260000229,
+  "verified_director_idle_seconds": 0,
+  "lifecycle": "OPEN",
+  "scope": "Active work includes render waits; exact full-turn net time UNKNOWN.",
+  "gaps": [
+    "Bootstrap before recorded work start",
+    "Final gate checks, commit and handoff after recorded work end"
+  ]
+}

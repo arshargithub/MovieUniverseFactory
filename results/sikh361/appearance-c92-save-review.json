@@ -1,0 +1,16 @@
+{
+  "verdict": "FAIL",
+  "run_digest": "ac756f90342a4a182a3add8f0b9bfe3d3ece0eed4247cbbf6b0c310dec70550a",
+  "evidence": {
+    "failed_run": {
+      "path": "results/sikh361/appearance-c92-save-run.json",
+      "sha256": "7990cc65808646e284f82ebaf855f6d7f373d0c9440047844ea64419e659cea9"
+    }
+  },
+  "observation": "92 exact diagnostic identifies the closest failing faces as downward-facing thickness/hem caps (normal z about-0.95), not the dressed outer torso surface. Pre-thickness minimum is already nearzero while actual nearest distance is several millimetres. A full solid-coat nearest target can pull onto caps. Replace target with the exact full pre-thickness outer coat (no face filtering/subdivision change), and verify final separation plus closed-shell outside volume, not one nearest-face normal at a cap edge.",
+  "comparison": "Actual returned images/technical data against explicit361 plan and original quality/reference requirements. No full-speed AV certification.",
+  "open_defects": [
+    "92 exact diagnostic identifies the closest failing faces as downward-facing thickness/hem caps (normal z about-0.95), not the dressed outer torso surface. Pre-thickness minimum is already nearzero while actual nearest distance is several millimetres. A full solid-coat nearest target can pull onto caps. Replace target with the exact full pre-thickness outer coat (no face filtering/subdivision change), and verify final separation plus closed-shell outside volume, not one nearest-face normal at a cap edge."
+  ],
+  "scope": "Claimed scoped review"
+}

@@ -1,0 +1,110 @@
+{
+  "parent": ".runtime/factory-native/sikh361-motion-c22-save/scene.blend",
+  "template": "results/sikh353/strategizing-c67.json",
+  "cause": "Actual87 front rejected: quantized guide-end grouping created hanging separated locks. Dense357 volume is a useful retained component, not a rejected construction to reproduce.",
+  "method": "Retain the original357 beard volume, roots and varied tips. Replace only its rendered curve data with bounded continuous millimetre-scale waves and restrained fiber color/width variation, preserving the old path field rather than quantized group endpoints. Check actual front and both three-quarter views for coherent full density, natural mouth/cheek roots and no separated locks.",
+  "proof": "Actual native root/action preservation and fresh front/left/right face renders must show integrated rooting, plausible mouth clearance, rich flow and irregular free tips. No whole actor or motion acceptance from this groom proof.",
+  "scope": "Supporting Nihang beard richness proof; no identity replacement, crowd construction, Pashtun edits or provider use.",
+  "methods": {},
+  "sources": [
+    "src/movie_factory/adapters/blender/nihang_beard361.py",
+    "src/movie_factory/adapters/blender/nihang_patch.py",
+    "tests/test_nihang361_detail.py",
+    "results/sikh361/HANDLER_REVIEW.md",
+    "results/sikh361/APPEARANCE_AUDIT.md",
+    "results/sikh361/appearance-c87-leader_face-review.json"
+  ],
+  "steps": [
+    {
+      "id": "save",
+      "depends_on": [],
+      "requirements": [
+        "preservation"
+      ],
+      "recipe": {
+        "operation": "nihang_patch",
+        "frame": 283,
+        "width": 640,
+        "height": 640,
+        "samples": 8,
+        "edits": [
+          {
+            "kind": "mounted_beard361",
+            "target": "mounted leader"
+          }
+        ]
+      }
+    },
+    {
+      "id": "leader_face",
+      "depends_on": [
+        "save"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 283,
+        "frames": [
+          283
+        ],
+        "view": "leader_face",
+        "width": 640,
+        "height": 640,
+        "samples": 16
+      }
+    },
+    {
+      "id": "leader_face_left",
+      "depends_on": [
+        "save"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 283,
+        "frames": [
+          283
+        ],
+        "view": "leader_face_left",
+        "width": 640,
+        "height": 640,
+        "samples": 16
+      }
+    },
+    {
+      "id": "leader_face_right",
+      "depends_on": [
+        "save"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 283,
+        "frames": [
+          283
+        ],
+        "view": "leader_face_right",
+        "width": 640,
+        "height": 640,
+        "samples": 16
+      }
+    },
+    {
+      "id": "production",
+      "depends_on": [
+        "save"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 307,
+        "frames": [
+          283,
+          307,
+          327,
+          350
+        ],
+        "view": "production",
+        "width": 432,
+        "height": 768,
+        "samples": 16
+      }
+    }
+  ]
+}

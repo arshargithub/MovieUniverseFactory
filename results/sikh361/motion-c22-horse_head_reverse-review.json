@@ -1,0 +1,43 @@
+{
+  "verdict": "FAIL",
+  "run_digest": "01decade1f07997ab2970faeca24832f3edcedcd9b81a2c606e5133228dda1c8",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh361-motion-c22-horse_head_reverse/snapshot.json",
+      "sha256": "e17721f592eadecbd98ec1aca5121cf784cbad8c7e76d632b964856cd590c720"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh361-motion-c22-horse_head_reverse/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh361-motion-c22-horse_head_reverse/script-diagnostics.json",
+      "sha256": "99bbbecec312f933855a69b1d853770138fd35ab62669f2fe652484d335f4ec7"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh361-motion-c22-horse_head_reverse/frame.png",
+      "sha256": "183059465f69a8fca0c51472c82ea7be1b41cd2a127ff99ecdb95cfa58dc7827"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh361-motion-c22-horse_head_reverse/frames.json",
+      "sha256": "9ec196692f45db5de3cad86b2a85d24ab3b52fc1b1f5ee1f57a834b6f6d85fce"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh361-motion-c22-horse_head_reverse/frame-0283.png",
+      "sha256": "b415bce539d41fa6c68c81eafd78ee12ad85bd3cdff1eea3ac5ade2aa7d2d169"
+    },
+    "frame_327": {
+      "path": ".runtime/factory-native/sikh361-motion-c22-horse_head_reverse/frame.png",
+      "sha256": "183059465f69a8fca0c51472c82ea7be1b41cd2a127ff99ecdb95cfa58dc7827"
+    },
+    "frame_350": {
+      "path": ".runtime/factory-native/sikh361-motion-c22-horse_head_reverse/frame-0350.png",
+      "sha256": "44c7464fe586753d105db186b858b60f208a955d8f5735cc7e97177d2ab30679"
+    }
+  },
+  "observation": "Reverse283,327,350 show exterior routes, but report records abrupt0.140m and0.152m consecutive-frame length changes at309-312. Continuity is not established by sparse static poses; keep candidate unqualified and inspect its exact retained trajectory before a temporal repair. This is an unresolved temporal risk, not an asserted AV observation.",
+  "comparison": "Actual returned images/technical data against explicit361 plan and original quality/reference requirements. No full-speed AV certification.",
+  "open_defects": [
+    "Reverse283,327,350 show exterior routes, but report records abrupt0.140m and0.152m consecutive-frame length changes at309-312. Continuity is not established by sparse static poses; keep candidate unqualified and inspect its exact retained trajectory before a temporal repair. This is an unresolved temporal risk, not an asserted AV observation."
+  ]
+}

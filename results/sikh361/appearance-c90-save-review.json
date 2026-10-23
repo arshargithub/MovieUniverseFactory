@@ -1,0 +1,16 @@
+{
+  "verdict": "FAIL",
+  "run_digest": "a9c8ce94f74890b1a66520d300881b443957ec9e4bffe6d179231f52e4a8a713",
+  "evidence": {
+    "failed_run": {
+      "path": "results/sikh361/appearance-c90-save-run.json",
+      "sha256": "6c79aa6a47b9757430f370f5b7a76e4d4165fdff2e24adc86ccee4113117dd01"
+    }
+  },
+  "observation": "Actual90 rejects before save at252: final waistband signed clearance -0.092mm..6.094mm, with torso ownership1.0. Correct contact owner is established;4mm local support offset does not cover turned thickness/normal variation at this rig scale. Keep1..12mm world-space final guard; derive a modest larger support gap, not a proxy or relaxed acceptance.",
+  "comparison": "Actual returned images/technical data against explicit361 plan and original quality/reference requirements. No full-speed AV certification.",
+  "open_defects": [
+    "Actual90 rejects before save at252: final waistband signed clearance -0.092mm..6.094mm, with torso ownership1.0. Correct contact owner is established;4mm local support offset does not cover turned thickness/normal variation at this rig scale. Keep1..12mm world-space final guard; derive a modest larger support gap, not a proxy or relaxed acceptance."
+  ],
+  "scope": "Claimed scoped review"
+}

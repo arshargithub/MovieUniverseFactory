@@ -1,0 +1,11 @@
+{
+  "parent": ".runtime/factory-native/sikh361-motion-c22-save/scene.blend",
+  "template": "results/sikh353/motion-strategizing-c16.json",
+  "cause": "The all-frame clearance proof passes, but path-length changes of140-152mm between consecutive frames flag untested temporal topology changes.",
+  "method": "Audit the exact retained129-point native curves across all190 frames. Separate owner motion from interior shape change using endpoint-relative residuals; preserve all geometry/actions/materials. Use measured largest changes to choose the temporal correction, not another surface offset.",
+  "proof": "Returned exact trajectories and residual metrics identify whether apparent length pops are real interior changes. This diagnostic cannot certify motion or appearance and does not reset original history.",
+  "scope": "Read-only trajectory diagnosis of motion22 on the original task; no artistic acceptance or crowd work.",
+  "methods": {},
+  "sources": ["src/movie_factory/adapters/blender/nihang_rein361.py", "src/movie_factory/adapters/blender/nihang_patch.py", "tests/test_nihang361_detail.py", "results/sikh361/HANDLER_REVIEW.md", ".runtime/factory-native/sikh361-motion-c22-save/rein358.json", "results/sikh361/motion-c22-horse_head_reverse-review.json"],
+  "steps": [{"id":"save", "depends_on":[], "acceptance":"Diagnostic evidence for preservation/support/phases/rider/evidence only: report actual trajectory across the original action. None of those whole-production requirements is closed by this read-only step; retain unresolved appearance and AV obligations.", "recipe":{"operation":"nihang_patch", "frame":327, "width":640, "height":640, "samples":8, "edits":[{"kind":"mounted_rein361_audit", "target":"mounted leader"}]}}]
+}

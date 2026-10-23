@@ -1,0 +1,44 @@
+{
+  "verdict": "FAIL",
+  "run_digest": "fa3fe8b1bcf1d64cccee474435787fae2ababa5384b69cfaa5e61826f2a9a18c",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh361-appearance-c89-leader_reverse/snapshot.json",
+      "sha256": "5b2d6f73e75476ad01edc39182bb1e087716a83fa38f63c59b1d4a28f9f303b7"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh361-appearance-c89-leader_reverse/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh361-appearance-c89-leader_reverse/script-diagnostics.json",
+      "sha256": "99bbbecec312f933855a69b1d853770138fd35ab62669f2fe652484d335f4ec7"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh361-appearance-c89-leader_reverse/frame.png",
+      "sha256": "92854d6ab9d604d7689134147972ed12f742bd8edbd27f1677548db3ce128b1b"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh361-appearance-c89-leader_reverse/frames.json",
+      "sha256": "4ffed2c6415fe7578801491de9cb06bcc6525702a52e91391559eb6dc10d2eee"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh361-appearance-c89-leader_reverse/frame-0283.png",
+      "sha256": "205f63f5535df38eb77ad99c7f7a950267f1a9a1759de4459d4eb59bbfac4e96"
+    },
+    "frame_327": {
+      "path": ".runtime/factory-native/sikh361-appearance-c89-leader_reverse/frame.png",
+      "sha256": "92854d6ab9d604d7689134147972ed12f742bd8edbd27f1677548db3ce128b1b"
+    },
+    "frame_350": {
+      "path": ".runtime/factory-native/sikh361-appearance-c89-leader_reverse/frame-0350.png",
+      "sha256": "7df5d51c5a09a53bf36d34ebff4fe28a4f98974ef0db678edc75dd0b9f96a08a"
+    }
+  },
+  "observation": "Actual89 reverse283 shows waistband disappearing into the coat in separate patches. The torso-only proxy was subdivided after filtering, changing its boundary shape relative to the actual coat. Fresh render also fails NATIVE_SELECTED_STATE_DRIFT, so neither technical nor visual qualification passes. Retain24 parent; next use actual evaluated full-coat surface with explicit torso ownership checks, not a geometrically different proxy.",
+  "comparison": "Actual returned images/technical data against explicit361 plan and original quality/reference requirements. No full-speed AV certification.",
+  "open_defects": [
+    "Actual89 reverse283 shows waistband disappearing into the coat in separate patches. The torso-only proxy was subdivided after filtering, changing its boundary shape relative to the actual coat. Fresh render also fails NATIVE_SELECTED_STATE_DRIFT, so neither technical nor visual qualification passes. Retain24 parent; next use actual evaluated full-coat surface with explicit torso ownership checks, not a geometrically different proxy."
+  ],
+  "scope": "Claimed scoped review"
+}

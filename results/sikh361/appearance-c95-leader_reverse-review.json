@@ -1,0 +1,44 @@
+{
+  "verdict": "FAIL",
+  "run_digest": "e65b9dce4119fdd650c91c1c53b77ae0844a57b25fea063dc9cddcd0f1325e05",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh361-appearance-c95-leader_reverse/snapshot.json",
+      "sha256": "abdfc0cfdd101ba1c89c0a797ba771b672badab98b68b2e01288a2a1d45af0af"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh361-appearance-c95-leader_reverse/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh361-appearance-c95-leader_reverse/script-diagnostics.json",
+      "sha256": "99bbbecec312f933855a69b1d853770138fd35ab62669f2fe652484d335f4ec7"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh361-appearance-c95-leader_reverse/frame.png",
+      "sha256": "c0be9c2fe40cc76631a59bedd4e347b6e299e3871ee0b2fcb28da3e6f1c514f7"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh361-appearance-c95-leader_reverse/frames.json",
+      "sha256": "cc0630a405ad14eae5bc64d1fe55a29e94e92f038d24ce18053662e61bf68f5b"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh361-appearance-c95-leader_reverse/frame.png",
+      "sha256": "c0be9c2fe40cc76631a59bedd4e347b6e299e3871ee0b2fcb28da3e6f1c514f7"
+    },
+    "frame_327": {
+      "path": ".runtime/factory-native/sikh361-appearance-c95-leader_reverse/frame-0327.png",
+      "sha256": "fdcf8fa623a186664d824562b00224599b89991446291e28418a823478a8960b"
+    },
+    "frame_350": {
+      "path": ".runtime/factory-native/sikh361-appearance-c95-leader_reverse/frame-0350.png",
+      "sha256": "5ec22399dc619a144296bc7b349843edfe0523a0a36002b883ff9c040013883e"
+    }
+  },
+  "observation": "Actual95 reverse283,327,350 still shows large blue interruptions across the gold waistband despite valid coat separation/outside-volume metrics. Reject integrated appearance. Numerical contact with one coat surface did not prove the full dressed-layer relationship. Diagnose actual occluding mesh/material rather than changing another offset.",
+  "comparison": "Actual returned images/technical data against explicit361 plan and original quality/reference requirements. No full-speed AV certification.",
+  "open_defects": [
+    "Actual95 reverse283,327,350 still shows large blue interruptions across the gold waistband despite valid coat separation/outside-volume metrics. Reject integrated appearance. Numerical contact with one coat surface did not prove the full dressed-layer relationship. Diagnose actual occluding mesh/material rather than changing another offset."
+  ],
+  "scope": "Claimed scoped review"
+}

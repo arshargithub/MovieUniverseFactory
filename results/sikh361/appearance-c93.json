@@ -1,0 +1,156 @@
+{
+  "parent": ".runtime/factory-native/sikh361-motion-c24-save/scene.blend",
+  "template": "results/sikh353/strategizing-c67.json",
+  "cause": "92 exact vertices identify downward-facing solid-coat thickness/hem caps as a wrong support surface. Signed nearest-face projection alone is ambiguous at cap edges, while actual distance remains several millimetres.",
+  "method": "Retain24 parent. Support the waistband on the exact full pre-thickness outer coat with unchanged mesh/weights/subdivision, not filtered faces or the coat's hem/inner caps. Against the ACTUAL solid coat prove closed-shell topology, all190-frame outside volume by ray parity, geometric separation1..12mm and torso ownership>=90percent. Preserve featureless attached grain, identity/anatomy/actions; canonical283 replay and actual front/reverse/intended review stay mandatory.",
+  "proof": "All190 final band frames stay outside the proven closed solid coat, separated1..12mm, with no wrong torso contacts or action drift. Then actual front/reverse rest/crest/impact and face/intended views must reject cut-through, floating cloth, tiling and flat/mismatched surfaces. No AV acceptance follows from these controls.",
+  "scope": "Integrated leader surface and waistband support proof on retained continuity-aware horse/reins. No principal/Pashtun/identity edits, new assets/providers or crowd construction.",
+  "methods": {},
+  "sources": [
+    "src/movie_factory/adapters/blender/nihang_look361.py",
+    "src/movie_factory/adapters/blender/nihang_patch.py",
+    "src/movie_factory/adapters/blender/nihang_waist353.py",
+    "tests/test_nihang361_detail.py",
+    "tests/test_nihang353_waist.py",
+    "results/sikh361/HANDLER_REVIEW.md",
+    "results/sikh361/APPEARANCE_AUDIT.md",
+    ".runtime/art-direction/series01-facebuilder-trial-01/bust-atlas-input-02/skin-authored.png",
+    ".runtime/art-direction/series01-finish248/opening08/actual-450.png",
+    ".runtime/factory-native/sikh361-motion-c24-leader_reverse/frame.png",
+    "results/sikh361/appearance-c89-leader_reverse-review.json",
+    "results/sikh361/appearance-c90-save-review.json",
+    "results/sikh361/appearance-c92-save-review.json",
+    ".runtime/factory-native/sikh361-appearance-c92-save/waist361-failure.json"
+  ],
+  "steps": [
+    {
+      "id": "save",
+      "depends_on": [],
+      "requirements": [
+        "preservation"
+      ],
+      "recipe": {
+        "operation": "nihang_patch",
+        "frame": 283,
+        "width": 640,
+        "height": 640,
+        "samples": 8,
+        "edits": [
+          {
+            "kind": "mounted_look361",
+            "target": "mounted leader"
+          }
+        ]
+      }
+    },
+    {
+      "id": "leader_face",
+      "depends_on": [
+        "save"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 283,
+        "frames": [
+          283
+        ],
+        "view": "leader_face",
+        "width": 640,
+        "height": 640,
+        "samples": 16
+      }
+    },
+    {
+      "id": "leader_face_left",
+      "depends_on": [
+        "save"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 283,
+        "frames": [
+          283
+        ],
+        "view": "leader_face_left",
+        "width": 640,
+        "height": 640,
+        "samples": 16
+      }
+    },
+    {
+      "id": "leader_face_right",
+      "depends_on": [
+        "save"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 283,
+        "frames": [
+          283
+        ],
+        "view": "leader_face_right",
+        "width": 640,
+        "height": 640,
+        "samples": 16
+      }
+    },
+    {
+      "id": "leader_front",
+      "depends_on": [
+        "save"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 283,
+        "frames": [
+          283,
+          327,
+          350
+        ],
+        "view": "leader_front",
+        "width": 640,
+        "height": 640,
+        "samples": 16
+      }
+    },
+    {
+      "id": "leader_reverse",
+      "depends_on": [
+        "save"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 283,
+        "frames": [
+          283,
+          327,
+          350
+        ],
+        "view": "leader_reverse",
+        "width": 640,
+        "height": 640,
+        "samples": 16
+      }
+    },
+    {
+      "id": "production",
+      "depends_on": [
+        "save"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 283,
+        "frames": [
+          283,
+          307,
+          327,
+          350
+        ],
+        "view": "production",
+        "width": 432,
+        "height": 768,
+        "samples": 16
+      }
+    }
+  ]
+}

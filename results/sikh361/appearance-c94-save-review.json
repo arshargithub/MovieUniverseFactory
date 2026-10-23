@@ -1,0 +1,16 @@
+{
+  "verdict": "FAIL",
+  "run_digest": "472c02116e9fc6f2e19bcdd80880d726d690963586bef84d5b95f01e5d16c546",
+  "evidence": {
+    "failed_run": {
+      "path": "results/sikh361/appearance-c94-save-run.json",
+      "sha256": "db709dfb9e4c3db64a8b3b6fb606adcdeb9baeb79a0090e8b9da56e65967f294"
+    }
+  },
+  "observation": "94 fails before candidate when a grazing BVH ray repeats hits through the64-hit ambiguity bound; no saved volume-failure report or artistic output. Keep that result ambiguous. Route an ambiguous ray to the already tested independent solid-angle classifier, accepting only nearzero outside and rejecting inside/nonintegral values. No geometric separation or ownership guard changes.",
+  "comparison": "Actual returned images/technical data against explicit361 plan and original quality/reference requirements. No full-speed AV certification.",
+  "open_defects": [
+    "94 fails before candidate when a grazing BVH ray repeats hits through the64-hit ambiguity bound; no saved volume-failure report or artistic output. Keep that result ambiguous. Route an ambiguous ray to the already tested independent solid-angle classifier, accepting only nearzero outside and rejecting inside/nonintegral values. No geometric separation or ownership guard changes."
+  ],
+  "scope": "Claimed scoped review"
+}

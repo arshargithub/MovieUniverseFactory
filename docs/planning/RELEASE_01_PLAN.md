@@ -4,6 +4,20 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+### Exchange361 — original Nihang tasks continued; appearance allowance reached
+
+Director adds ten corrections each, retaining appearance87 and all original
+history. Motion24 retains a190-frame exterior, continuity-aware rein solution;
+actual head/phase/rider views are component evidence, not AV or whole-art approval.
+Appearance95 still fails dressed-layer review despite coat-contact metrics;
+96 identifies the two skirt panels.97 preflight catches a below-hem query before
+dispatch. Appearance97/max97 requires another allowance; motion25..31 remains.
+The seam-profile code fix and canonical-frame-safe clip template are prepared,
+not natively qualified. Recommend four further appearance corrections on Sol,
+then integrated leader/horse review. Crowd, new audio, principal changes, spend,
+Astra and remote operations remain excluded. No production pass or new media
+handoff. See [evidence and next package](../../results/sikh361/CLOSEOUT.md).
+
 ### Checkpoint360 — Sol default; bounded Astra escalation
 
 Director359/360 adopts Sol6.1 High across planning, execution, review and

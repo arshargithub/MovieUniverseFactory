@@ -1,0 +1,58 @@
+{
+  "verdict": "PASS",
+  "run_digest": "c1eeef0d86521d26ae605161d5b03dd72cfd3050909c42d20fd2a671171dc772",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh361-motion-c24-horse_head/snapshot.json",
+      "sha256": "e17721f592eadecbd98ec1aca5121cf784cbad8c7e76d632b964856cd590c720"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh361-motion-c24-horse_head/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh361-motion-c24-horse_head/script-diagnostics.json",
+      "sha256": "99bbbecec312f933855a69b1d853770138fd35ab62669f2fe652484d335f4ec7"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh361-motion-c24-horse_head/frame.png",
+      "sha256": "d91ada0383f682ce1c255962f3951c77cffacd54ca501120474bd7b8c15015ae"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh361-motion-c24-horse_head/frames.json",
+      "sha256": "95b0cafce8bb0159d03645b3f30574d69e75b6b2d64780b8be7bc7905c8fd7ad"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh361-motion-c24-horse_head/frame-0283.png",
+      "sha256": "bc137f773057b0a3f0724c9e9fa49c4302d3d93d5e9e6fa8d6ee40a00d803918"
+    },
+    "frame_305": {
+      "path": ".runtime/factory-native/sikh361-motion-c24-horse_head/frame-0305.png",
+      "sha256": "158401adef5a8bfdd6826b3e90cfb5745be2b672fade64e752c62a701b15a63a"
+    },
+    "frame_310": {
+      "path": ".runtime/factory-native/sikh361-motion-c24-horse_head/frame-0310.png",
+      "sha256": "6007cb48dbdb11075d291b901970eab0f57a683ca85b00bf1e41d7a66cc11d1c"
+    },
+    "frame_312": {
+      "path": ".runtime/factory-native/sikh361-motion-c24-horse_head/frame-0312.png",
+      "sha256": "2bdc914d75258d48790f42aa88dba0c775f81dc3c096511542c6ae0cc2baa0e3"
+    },
+    "frame_327": {
+      "path": ".runtime/factory-native/sikh361-motion-c24-horse_head/frame.png",
+      "sha256": "d91ada0383f682ce1c255962f3951c77cffacd54ca501120474bd7b8c15015ae"
+    },
+    "frame_350": {
+      "path": ".runtime/factory-native/sikh361-motion-c24-horse_head/frame-0350.png",
+      "sha256": "bf83b52ffb7fe20e5b737a9976c532708a5f724090836ca5eb84494cf2f47df8"
+    },
+    "frame_357": {
+      "path": ".runtime/factory-native/sikh361-motion-c24-horse_head/frame-0357.png",
+      "sha256": "9dfbc2a3c83adc1dc749e4414261a823355c2623bf195249661c73a8bd14a6fd"
+    }
+  },
+  "observation": "Actual283,305,310,312,327,350,357 head views retain visible exterior bit/rein span with no neck entry in these views. Static interface subproof only; intended framing, complete rider and full-speed AV remain open.",
+  "comparison": "Actual returned images/technical data against explicit361 plan and original quality/reference requirements. No full-speed AV certification.",
+  "open_defects": [],
+  "scope": "Subproof only; whole requirement unresolved"
+}
