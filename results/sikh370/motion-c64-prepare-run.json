@@ -1,0 +1,16 @@
+{
+  "id": "sikh370-motion-c64-prepare",
+  "task": "sikh335-continuous-performance",
+  "step": "prepare",
+  "cycle": 64,
+  "fingerprint": "c4aca8ab252ee1e84509f13f779cf05af2534a28369fc6609c2cf836f2226d6b",
+  "parent": {
+    "path": ".runtime/factory-native/sikh369-motion-c53-prepare/scene.blend",
+    "sha256": "874691738d0a497553490736b0369f554cb4620bae88ad680727b6515b0c1cb4"
+  },
+  "job_digest": "7dc6e8b284d3c664cfa8530a0cad2c2e7ce2f6cd12a6ee808c15fb8f66ee97fc",
+  "handler_digest": "dc1bf1758e6518dc3b380200cab6f9f05916de300fa57b199e881f1cf5d5db5e",
+  "status": "FAILED",
+  "timeout_seconds": 1200,
+  "error": "Blocked: NATIVE_WORKER_FAILED"
+}

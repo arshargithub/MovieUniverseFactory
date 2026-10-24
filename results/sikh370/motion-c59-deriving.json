@@ -1,0 +1,800 @@
+{
+  "input_digest": "2e80df76e6dcb97aef09c0c3a67b2dea3ba5e9305af109787ed614abbd6fe812",
+  "outcome": "complete",
+  "artifact": {
+    "requirements": [
+      {
+        "criterion": "Original source/Pashtun/history remain; derivative only, underlying geometry/materials/identity/environment unchanged.",
+        "director_av": false,
+        "id": "preservation",
+        "modes": [
+          "technical"
+        ]
+      },
+      {
+        "criterion": "Reference-faithful coupled loading: hock/stifle flexion, pelvis/chest relationship and gathered energy. An upright column plus moving feet fails.",
+        "director_av": false,
+        "id": "prep_load",
+        "modes": [
+          "technical",
+          "image"
+        ]
+      },
+      {
+        "criterion": "One deliberate raised/folded bracing forehoof followed by planted leverage. Opposite foreleg remains support during prep; bilateral tapping/shuffling fails. Head/neck/chest lead firstlift; legs follow.",
+        "director_av": false,
+        "id": "step",
+        "modes": [
+          "technical",
+          "image"
+        ]
+      },
+      {
+        "criterion": "Deeper coordinated downward head/poll/neck/body gathering like reference16.0..16.3, then rapid upward head/neck release. No dangling neck or head-only bob on rigid trunk.",
+        "director_av": false,
+        "id": "head_body",
+        "modes": [
+          "technical",
+          "image"
+        ]
+      },
+      {
+        "criterion": "Rapid overlapping head, neck and chest-led upward drive after the brace; forelegs follow the rising body rather than flicking up first. Continuous support/rider/seat/rein/pole coupling and outgoing pose/velocity/contacts.",
+        "director_av": false,
+        "id": "first_lift",
+        "modes": [
+          "technical",
+          "image"
+        ]
+      },
+      {
+        "criterion": "Preparation/frozen53motion andnecessarysaddlecontact only underDirector370allocation58..66, originalmax66 unchanged. No laterrear/appearance/tail/principal/crowd/terrain/audio ornewspend.",
+        "director_av": false,
+        "id": "scope",
+        "modes": [
+          "technical"
+        ]
+      },
+      {
+        "criterion": "Actual reference phases, whole-body oblique/side/intended controls and complete timed phase proof; source/frame failures cannot pass. No full rear, cloth cache or appearance acceptance.",
+        "director_av": false,
+        "id": "evidence",
+        "modes": [
+          "technical",
+          "image"
+        ]
+      },
+      {
+        "criterion": "Director313 judges actual full-speed preparation power/fluidity and firstlift. Agent direct-motion capability remains false.",
+        "director_av": true,
+        "id": "director_motion",
+        "modes": [
+          "direct_motion"
+        ]
+      }
+    ],
+    "beats": [
+      {
+        "audience_read": "Single bracing hoof and deep gathering release into rapid head/neck/chest-led firstlift",
+        "framing": "Established mounted exchange camera plus stable whole-horse oblique/side controls, head and feet visible.",
+        "id": "prep",
+        "lenses": {
+          "anatomy_contact": {
+            "applies": true,
+            "requirements": [
+              "prep_load",
+              "step",
+              "head_body",
+              "first_lift"
+            ],
+            "why": "Concrete anatomy_contact requirements for preparation and reference comparison."
+          },
+          "animation_physics": {
+            "applies": true,
+            "requirements": [
+              "prep_load",
+              "step",
+              "head_body",
+              "first_lift"
+            ],
+            "why": "Concrete animation_physics requirements for preparation and reference comparison."
+          },
+          "camera_editorial": {
+            "applies": true,
+            "requirements": [
+              "evidence",
+              "director_motion"
+            ],
+            "why": "Concrete camera_editorial requirements for preparation and reference comparison."
+          },
+          "effects_environment": {
+            "applies": false,
+            "requirements": [],
+            "why": "No new effects_environment construction; preserve scene/look/event constraints. Secondary cache invalidated until final motion."
+          },
+          "production_reuse": {
+            "applies": true,
+            "requirements": [
+              "preservation",
+              "scope",
+              "evidence",
+              "director_motion"
+            ],
+            "why": "Concrete production_reuse requirements for preparation and reference comparison."
+          },
+          "sound_music": {
+            "applies": false,
+            "requirements": [],
+            "why": "No new sound_music construction; preserve scene/look/event constraints. Secondary cache invalidated until final motion."
+          },
+          "story_performance": {
+            "applies": true,
+            "requirements": [
+              "prep_load",
+              "step",
+              "head_body",
+              "first_lift"
+            ],
+            "why": "Concrete story_performance requirements for preparation and reference comparison."
+          }
+        }
+      }
+    ],
+    "derivations": {
+      "director_motion": {
+        "beats": [
+          "prep"
+        ],
+        "lenses": [
+          "camera_editorial",
+          "production_reuse"
+        ],
+        "derivation": "Director313 judges actual full-speed preparation power/fluidity and firstlift. Agent direct-motion capability remains false.",
+        "origin": "director",
+        "priority": "quality_floor",
+        "reference_ids": [
+          "reference_rear"
+        ]
+      },
+      "evidence": {
+        "beats": [
+          "prep"
+        ],
+        "lenses": [
+          "camera_editorial",
+          "production_reuse"
+        ],
+        "derivation": "Actual reference phases, whole-body oblique/side/intended controls and complete timed phase proof; source/frame failures cannot pass. No full rear, cloth cache or appearance acceptance.",
+        "origin": "director",
+        "priority": "quality_floor",
+        "reference_ids": [
+          "reference_rear"
+        ]
+      },
+      "first_lift": {
+        "beats": [
+          "prep"
+        ],
+        "lenses": [
+          "story_performance",
+          "animation_physics",
+          "anatomy_contact"
+        ],
+        "derivation": "Rapid overlapping head, neck and chest-led upward drive after the brace; forelegs follow the rising body rather than flicking up first. Continuous support/rider/seat/rein/pole coupling and outgoing pose/velocity/contacts.",
+        "origin": "reference",
+        "priority": "quality_floor",
+        "reference_ids": [
+          "reference_rear"
+        ]
+      },
+      "head_body": {
+        "beats": [
+          "prep"
+        ],
+        "lenses": [
+          "story_performance",
+          "animation_physics",
+          "anatomy_contact"
+        ],
+        "derivation": "Deeper coordinated downward head/poll/neck/body gathering like reference16.0..16.3, then rapid upward head/neck release. No dangling neck or head-only bob on rigid trunk.",
+        "origin": "reference",
+        "priority": "quality_floor",
+        "reference_ids": [
+          "reference_rear"
+        ]
+      },
+      "prep_load": {
+        "beats": [
+          "prep"
+        ],
+        "lenses": [
+          "story_performance",
+          "animation_physics",
+          "anatomy_contact"
+        ],
+        "derivation": "Reference-faithful coupled loading: hock/stifle flexion, pelvis/chest relationship and gathered energy. An upright column plus moving feet fails.",
+        "origin": "reference",
+        "priority": "quality_floor",
+        "reference_ids": [
+          "reference_rear"
+        ]
+      },
+      "preservation": {
+        "beats": [
+          "prep"
+        ],
+        "lenses": [
+          "production_reuse"
+        ],
+        "derivation": "Original source/Pashtun/history remain; derivative only, underlying geometry/materials/identity/environment unchanged.",
+        "origin": "director",
+        "priority": "quality_floor",
+        "reference_ids": [
+          "reference_rear"
+        ]
+      },
+      "scope": {
+        "beats": [
+          "prep"
+        ],
+        "lenses": [
+          "production_reuse"
+        ],
+        "derivation": "Preparation through firstlift only under Director368. No later rear/appearance/chest/crowd/principal/terrain/audio construction. Same original task/history; approved5 extra plus retained3 unused, active50..57 only.",
+        "origin": "director",
+        "priority": "quality_floor",
+        "reference_ids": [
+          "reference_rear"
+        ]
+      },
+      "step": {
+        "beats": [
+          "prep"
+        ],
+        "lenses": [
+          "story_performance",
+          "animation_physics",
+          "anatomy_contact"
+        ],
+        "derivation": "One deliberate raised/folded bracing forehoof followed by planted leverage. Opposite foreleg remains support during prep; bilateral tapping/shuffling fails. Head/neck/chest lead firstlift; legs follow.",
+        "origin": "reference",
+        "priority": "quality_floor",
+        "reference_ids": [
+          "reference_rear"
+        ]
+      }
+    },
+    "context_mapping": {
+      "direction": {
+        "requirements": [
+          "prep_load",
+          "step",
+          "head_body",
+          "first_lift",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: Resume the integrated isolated production package; this precursor discovers rig ownership before any new pose authoring. Reference-led preparation, source ownership/support and complete phase evidence."
+      },
+      "learnings": {
+        "requirements": [
+          "prep_load",
+          "step",
+          "head_body",
+          "first_lift",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: 331 failed whole-pose support and same-film character fidelity despite incremental offset corrections; those attempts remain closed. Reference-led preparation, source ownership/support and complete phase evidence."
+      },
+      "film_language": {
+        "requirements": [
+          "scope",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: Accepted Pashtun quality stays fixed; a supporting actor cannot be a schematic statue. Preserve bounded scope, original authority/history and material/contact/cache interfaces; no unrelated construction."
+      },
+      "director_preferences": {
+        "requirements": [
+          "scope",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: Predict failure through expert lenses and fix internally; setup and routine algorithms are not handovers. Preserve bounded scope, original authority/history and material/contact/cache interfaces; no unrelated construction."
+      },
+      "references": {
+        "requirements": [
+          "prep_load",
+          "step",
+          "head_body",
+          "first_lift",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: Reference14\u201319s governs faithful action phases; accepted film governs appearance; rejected poses are negative controls. Reference-led preparation, source ownership/support and complete phase evidence."
+      },
+      "controls": {
+        "requirements": [
+          "scope",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: Fresh motion-domain packet and manual AU09\u201313,16 plus317\u2013334 reconciliation accompany this inspection. Preserve bounded scope, original authority/history and material/contact/cache interfaces; no unrelated construction."
+      },
+      "constraints": {
+        "requirements": [
+          "scope",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: Inspect64 invalid used-armature drivers, removed object drivers and FK bypasses; no blind restoration or defect waiver. Preserve bounded scope, original authority/history and material/contact/cache interfaces; no unrelated construction."
+      },
+      "ownership_diagnosis": {
+        "requirements": [
+          "prep_load",
+          "step",
+          "head_body",
+          "first_lift",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: 64 missing targets are BBone ease; missing object drivers leave IK/FK properties ineffective. Select actual constraints and solve bone lengths explicitly. Reference-led preparation, source ownership/support and complete phase evidence."
+      },
+      "crest_control": {
+        "requirements": [
+          "scope",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Historical constraint/failure context; latest370 overrides old scope and rejected-preparation preservation. Two static corrections are retained and closed. Crest supports anatomy but reins/spear disconnected and appearance rejected; capture immutable stance before continuous keys. Preserve bounded scope, original authority/history and material/contact/cache interfaces; no unrelated construction."
+      },
+      "strategy353": {
+        "requirements": [
+          "scope",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Historical constraint/failure context; latest370 overrides old scope and rejected-preparation preservation. Apply causal interface tests and retain scoped successes; leader and horse precede crowd. Preserve bounded scope, original authority/history and material/contact/cache interfaces; no unrelated construction."
+      },
+      "lessons352": {
+        "requirements": [
+          "scope",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: Apply causal interface tests and retain scoped successes; leader and horse precede crowd. Preserve bounded scope, original authority/history and material/contact/cache interfaces; no unrelated construction."
+      },
+      "strategy358": {
+        "requirements": [
+          "scope",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: Correct actual headstall ownership and its consuming rein span; retain357 construction gains and original faithful action reference. Preserve bounded scope, original authority/history and material/contact/cache interfaces; no unrelated construction."
+      },
+      "lessons357": {
+        "requirements": [
+          "scope",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: Correct actual headstall ownership and its consuming rein span; retain357 construction gains and original faithful action reference. Preserve bounded scope, original authority/history and material/contact/cache interfaces; no unrelated construction."
+      },
+      "strategy361": {
+        "requirements": [
+          "scope",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: 361 authorizes ten additional each and a conservative whole-segment proof, then integrated actor/horse review. Old358 endpoint and sparse-projection methods are rejected. Preserve bounded scope, original authority/history and material/contact/cache interfaces; no unrelated construction."
+      },
+      "lessons358": {
+        "requirements": [
+          "scope",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: Apply actual anatomical ownership, whole consumer path, final thickness/sampling review, component versus integrated proof and honest cycle accounting. Preserve bounded scope, original authority/history and material/contact/cache interfaces; no unrelated construction."
+      },
+      "routing360": {
+        "requirements": [
+          "scope",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: Sol6.1 High is default for planning/execution/review/retros; Astra needs a separate narrow Director-approved assignment, absent here. Preserve bounded scope, original authority/history and material/contact/cache interfaces; no unrelated construction."
+      },
+      "director363": {
+        "requirements": [
+          "scope",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Historical constraint/failure context; latest370 overrides old scope and rejected-preparation preservation. 363 rejects362; ten additional each. Phased fast rear, readable prep, faithful slam/hoist signal, real tied-flag cloth, face eyeline/visibility, chest/right-hand repair. Preserve bounded scope, original authority/history and material/contact/cache interfaces; no unrelated construction."
+      },
+      "strategy363": {
+        "requirements": [
+          "scope",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Historical constraint/failure context; latest370 overrides old scope and rejected-preparation preservation. Diagnose source form/hand and time consumers; prove cloth persistence on exact action; source/frame/Director AV separate. Preserve bounded scope, original authority/history and material/contact/cache interfaces; no unrelated construction."
+      },
+      "audit363": {
+        "requirements": [
+          "scope",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: Actual front chest failure, invalid side framing and open rein-hand claw confirmed; length metrics did not pass anatomy. Compare corrective effect and actual grip before integration. Preserve bounded scope, original authority/history and material/contact/cache interfaces; no unrelated construction."
+      },
+      "causal363": {
+        "requirements": [
+          "scope",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: 363 actual integer/subframe ownership findings and preserved components constrain continuation. Full LEARNINGS source and failedcloth result manually reconciled. Preserve bounded scope, original authority/history and material/contact/cache interfaces; no unrelated construction."
+      },
+      "cloth363": {
+        "requirements": [
+          "scope",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Historical constraint/failure context; latest370 overrides old scope and rejected-preparation preservation. Actual117 and final41 cloth failed; preserve113 chest/110 grasp/final41 timing; no guard relaxation or apparent near-pass. Preserve bounded scope, original authority/history and material/contact/cache interfaces; no unrelated construction."
+      },
+      "director367": {
+        "requirements": [
+          "prep_load",
+          "step",
+          "head_body",
+          "first_lift",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: Reference video is100percent motion authority, substantial linked appearance direction; implement process then ten motion cycles, motion first. Reference-led preparation, source ownership/support and complete phase evidence."
+      },
+      "unit367": {
+        "requirements": [
+          "scope",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: Single perceptual unit, positive reference gates, declared domains/boundaries and actual calibration through the existing controller. Preserve bounded scope, original authority/history and material/contact/cache interfaces; no unrelated construction."
+      },
+      "rejection365": {
+        "requirements": [
+          "prep_load",
+          "step",
+          "head_body",
+          "first_lift",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: Rejected tentative preparation, retime-only power and flattened chest; landing unaccepted. Known-history negative controls, not accepted source. Reference-led preparation, source ownership/support and complete phase evidence."
+      },
+      "cloth364": {
+        "requirements": [
+          "scope",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: Subframe collider conditioning and exact-action cache dependencies; new primary motion invalidates prior flag simulation. Preserve bounded scope, original authority/history and material/contact/cache interfaces; no unrelated construction."
+      },
+      "director368": {
+        "requirements": [
+          "scope",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: Single bracing hoof, deeper head/neck load and rapid head/neck/chest-led firstlift. Prep only; approve5 additional cycles. Preserve bounded scope, original authority/history and material/contact/cache interfaces; no unrelated construction."
+      },
+      "strategy368": {
+        "requirements": [
+          "scope",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: Reference30fps interpretation, expert pose requirements and bounded single-brace proof strategy; old49 not accepted. Preserve bounded scope, original authority/history and material/contact/cache interfaces; no unrelated construction."
+      },
+      "director369": {
+        "requirements": [
+          "scope",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: Director369 adds hindquarter squat/load, defers tail, and adopts perceptually meaningful variable-size units. Preserve bounded scope, original authority/history and material/contact/cache interfaces; no unrelated construction."
+      },
+      "strategy369": {
+        "requirements": [
+          "scope",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: Deeper grounded pelvis loading using bounded prep controls; side/contact whole-unit proof before fullframe rendering. Preserve bounded scope, original authority/history and material/contact/cache interfaces; no unrelated construction."
+      },
+      "granularity369": {
+        "requirements": [
+          "scope",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: Motion units are smallest independently reviewable causal outcomes; appearance equivalent is manual, no automatic appearance validator claim. Preserve bounded scope, original authority/history and material/contact/cache interfaces; no unrelated construction."
+      },
+      "contact369": {
+        "requirements": [
+          "scope",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: Two compressionvariants expose saddlecontact regression; inspect actual evaluatedsupport then boundedexistingmodifier clearance. No restmesh/material/action change. Preserve bounded scope, original authority/history and material/contact/cache interfaces; no unrelated construction."
+      },
+      "bind369": {
+        "requirements": [
+          "scope",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: 54stand-offcontrol falsifies margin-only repair; bind stablepad materialpoints to actualanimatedhorse before localprojection, preserve53pose/restgeometry/look. Preserve bounded scope, original authority/history and material/contact/cache interfaces; no unrelated construction."
+      },
+      "follow369": {
+        "requirements": [
+          "scope",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: Bothstand-offcontrols failed; retainstablebind anddisableoldprojection todiscriminate attachment fromnearest-surface reprojection. Actualsource/render veto. Preserve bounded scope, original authority/history and material/contact/cache interfaces; no unrelated construction."
+      },
+      "director370": {
+        "requirements": [
+          "scope",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: Allocateall9previouslyunusedmotioncorrections tofinish frozen-motion saddlecontact thenprep proof; no totalcapincrease. Preserve bounded scope, original authority/history and material/contact/cache interfaces; no unrelated construction."
+      },
+      "strategy370": {
+        "requirements": [
+          "scope",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: Pairedactualsource diagnosis identifies padvertices/triangleinteriors and anatomicalsurfaceownership beforeconstruction; no moreblindoffsets. Preserve bounded scope, original authority/history and material/contact/cache interfaces; no unrelated construction."
+      },
+      "diagnosis58": {
+        "requirements": [
+          "scope",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: Actual53/55failures mostlytriangleinteriors on thighsurface, rayinsideconfirmed. Matchrenderlevels andtest finerpadbeforeprojection withoutoffset/posechange. Preserve bounded scope, original authority/history and material/contact/cache interfaces; no unrelated construction."
+      }
+    },
+    "knowledge_mapping": {
+      "anatomy": {
+        "reason": "Apply anatomy to this primary preparation proof and source/image/phase interfaces; unrelated construction explicitly frozen. Crowd/spend remain excluded, no AV self-pass.",
+        "requirements": [
+          "prep_load",
+          "step",
+          "head_body",
+          "first_lift",
+          "evidence"
+        ]
+      },
+      "animal_coordination": {
+        "reason": "Apply animal_coordination to this primary preparation proof and source/image/phase interfaces; unrelated construction explicitly frozen. Crowd/spend remain excluded, no AV self-pass.",
+        "requirements": [
+          "prep_load",
+          "step",
+          "head_body",
+          "first_lift",
+          "evidence"
+        ]
+      },
+      "anticipation": {
+        "reason": "Apply anticipation to this primary preparation proof and source/image/phase interfaces; unrelated construction explicitly frozen. Crowd/spend remain excluded, no AV self-pass.",
+        "requirements": [
+          "prep_load",
+          "step",
+          "head_body",
+          "first_lift",
+          "evidence"
+        ]
+      },
+      "au_contact": {
+        "reason": "Apply au_contact to this primary preparation proof and source/image/phase interfaces; unrelated construction explicitly frozen. Crowd/spend remain excluded, no AV self-pass.",
+        "requirements": [
+          "prep_load",
+          "step",
+          "head_body",
+          "first_lift",
+          "evidence"
+        ]
+      },
+      "au_deformation": {
+        "reason": "Apply au_deformation to this primary preparation proof and source/image/phase interfaces; unrelated construction explicitly frozen. Crowd/spend remain excluded, no AV self-pass.",
+        "requirements": [
+          "prep_load",
+          "step",
+          "head_body",
+          "first_lift",
+          "evidence"
+        ]
+      },
+      "au_performance": {
+        "reason": "Apply au_performance to this primary preparation proof and source/image/phase interfaces; unrelated construction explicitly frozen. Crowd/spend remain excluded, no AV self-pass.",
+        "requirements": [
+          "prep_load",
+          "step",
+          "head_body",
+          "first_lift",
+          "evidence"
+        ]
+      },
+      "au_reuse": {
+        "reason": "Apply au_reuse to this primary preparation proof and source/image/phase interfaces; unrelated construction explicitly frozen. Crowd/spend remain excluded, no AV self-pass.",
+        "requirements": [
+          "prep_load",
+          "step",
+          "head_body",
+          "first_lift",
+          "evidence"
+        ]
+      },
+      "au_surface": {
+        "reason": "Apply au_surface to this primary preparation proof and source/image/phase interfaces; unrelated construction explicitly frozen. Crowd/spend remain excluded, no AV self-pass.",
+        "requirements": [
+          "prep_load",
+          "step",
+          "head_body",
+          "first_lift",
+          "evidence"
+        ]
+      },
+      "authority": {
+        "reason": "Apply authority to this primary preparation proof and source/image/phase interfaces; unrelated construction explicitly frozen. Crowd/spend remain excluded, no AV self-pass.",
+        "requirements": [
+          "scope"
+        ]
+      },
+      "cache_safety": {
+        "reason": "Apply cache_safety to this primary preparation proof and source/image/phase interfaces; unrelated construction explicitly frozen. Crowd/spend remain excluded, no AV self-pass.",
+        "requirements": [
+          "prep_load",
+          "step",
+          "head_body",
+          "first_lift",
+          "evidence"
+        ]
+      },
+      "construction_interfaces": {
+        "reason": "Apply construction_interfaces to this primary preparation proof and source/image/phase interfaces; unrelated construction explicitly frozen. Crowd/spend remain excluded, no AV self-pass.",
+        "requirements": [
+          "prep_load",
+          "step",
+          "head_body",
+          "first_lift",
+          "evidence"
+        ]
+      },
+      "current_state": {
+        "reason": "Apply current_state to this primary preparation proof and source/image/phase interfaces; unrelated construction explicitly frozen. Crowd/spend remain excluded, no AV self-pass.",
+        "requirements": [
+          "scope"
+        ]
+      },
+      "economics": {
+        "reason": "Apply economics to this primary preparation proof and source/image/phase interfaces; unrelated construction explicitly frozen. Crowd/spend remain excluded, no AV self-pass.",
+        "requirements": [
+          "scope"
+        ]
+      },
+      "look": {
+        "reason": "Apply look to this primary preparation proof and source/image/phase interfaces; unrelated construction explicitly frozen. Crowd/spend remain excluded, no AV self-pass.",
+        "requirements": [
+          "prep_load",
+          "step",
+          "head_body",
+          "first_lift",
+          "evidence"
+        ]
+      },
+      "motion": {
+        "reason": "Apply motion to this primary preparation proof and source/image/phase interfaces; unrelated construction explicitly frozen. Crowd/spend remain excluded, no AV self-pass.",
+        "requirements": [
+          "prep_load",
+          "step",
+          "head_body",
+          "first_lift",
+          "evidence"
+        ]
+      },
+      "render_profile": {
+        "reason": "Apply render_profile to this primary preparation proof and source/image/phase interfaces; unrelated construction explicitly frozen. Crowd/spend remain excluded, no AV self-pass.",
+        "requirements": [
+          "prep_load",
+          "step",
+          "head_body",
+          "first_lift",
+          "evidence"
+        ]
+      },
+      "reuse_envelope": {
+        "reason": "Apply reuse_envelope to this primary preparation proof and source/image/phase interfaces; unrelated construction explicitly frozen. Crowd/spend remain excluded, no AV self-pass.",
+        "requirements": [
+          "prep_load",
+          "step",
+          "head_body",
+          "first_lift",
+          "evidence"
+        ]
+      },
+      "secondary": {
+        "reason": "Apply secondary to this primary preparation proof and source/image/phase interfaces; unrelated construction explicitly frozen. Crowd/spend remain excluded, no AV self-pass.",
+        "requirements": [
+          "prep_load",
+          "step",
+          "head_body",
+          "first_lift",
+          "evidence"
+        ]
+      },
+      "sikh_motion": {
+        "reason": "Apply sikh_motion to this primary preparation proof and source/image/phase interfaces; unrelated construction explicitly frozen. Crowd/spend remain excluded, no AV self-pass.",
+        "requirements": [
+          "prep_load",
+          "step",
+          "head_body",
+          "first_lift",
+          "evidence"
+        ]
+      },
+      "sikh_scope": {
+        "reason": "Apply sikh_scope to this primary preparation proof and source/image/phase interfaces; unrelated construction explicitly frozen. Crowd/spend remain excluded, no AV self-pass.",
+        "requirements": [
+          "prep_load",
+          "step",
+          "head_body",
+          "first_lift",
+          "evidence"
+        ]
+      },
+      "stopping": {
+        "reason": "Apply stopping to this primary preparation proof and source/image/phase interfaces; unrelated construction explicitly frozen. Crowd/spend remain excluded, no AV self-pass.",
+        "requirements": [
+          "prep_load",
+          "step",
+          "head_body",
+          "first_lift",
+          "evidence"
+        ]
+      },
+      "strategy": {
+        "reason": "Apply strategy to this primary preparation proof and source/image/phase interfaces; unrelated construction explicitly frozen. Crowd/spend remain excluded, no AV self-pass.",
+        "requirements": [
+          "prep_load",
+          "step",
+          "head_body",
+          "first_lift",
+          "evidence"
+        ]
+      },
+      "versioning": {
+        "reason": "Apply versioning to this primary preparation proof and source/image/phase interfaces; unrelated construction explicitly frozen. Crowd/spend remain excluded, no AV self-pass.",
+        "requirements": [
+          "prep_load",
+          "step",
+          "head_body",
+          "first_lift",
+          "evidence"
+        ]
+      },
+      "visual_gate": {
+        "reason": "Apply visual_gate to this primary preparation proof and source/image/phase interfaces; unrelated construction explicitly frozen. Crowd/spend remain excluded, no AV self-pass.",
+        "requirements": [
+          "prep_load",
+          "step",
+          "head_body",
+          "first_lift",
+          "evidence"
+        ]
+      }
+    }
+  }
+}

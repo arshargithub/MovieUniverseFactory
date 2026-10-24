@@ -1,0 +1,44 @@
+{
+  "run_digest": "7e9a087cfee7162a5de65447dd4d437771611b7c73dad913593bf2bb4f53f30f",
+  "verdict": "FAIL",
+  "observation": "Finerpad3 stillcutsupperthigh: render-matcheddeepestgap -29.43mm and976samplesinside. Sourcegeometry/actionsunchanged. Finerface densitydoesnotremove discontinuity; no newlevel/offsetvariants orrenders.",
+  "comparison": "Actualrender-matchedbefore/after59 on53source. Gapstaysabout30mm despite16timesmoreclothsamples. Nearestsurfacecorrespondence/physicalenvelope, notdensityalone, fails.",
+  "open_defects": [
+    "Nearest projection folds cloth faces through loaded thigh"
+  ],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh370-motion-c59-prepare/snapshot.json",
+      "sha256": "cda3a096661b64ee2797a4c309745dbf1b5ebf08a75ad5b5f3d59bbbcc3eb53a"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh370-motion-c59-prepare/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh370-motion-c59-prepare/script-diagnostics.json",
+      "sha256": "4e1205462c9c8153ef4f4d15eba35ea263f6079e3b74341771bbb12e2f41f34c"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh370-motion-c59-prepare/scene.blend",
+      "sha256": "60308798434a348607568b42275c8c7746d16577bdfb2c2dead6571e0686f704"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh370-motion-c59-prepare/patch-evidence.json",
+      "sha256": "044ee3e975cc51fe013f4ec2e7c02d4a1c4c1034d5ca9b15283f9b6f761c7206"
+    }
+  },
+  "retrospective_observations": [
+    {
+      "requirement": "prep_load",
+      "status": "FAIL",
+      "falsified": true,
+      "observation": "59falsifiesdensityonly. Needstableclothseed and outer-envelopecontact, notnearestfoldedlimbselection."
+    },
+    {
+      "requirement": "preservation",
+      "status": "FAIL",
+      "observation": "Allmotion/originalrestmesh preservedbutrequired contact stillfails."
+    }
+  ]
+}

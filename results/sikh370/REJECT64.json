@@ -1,0 +1,20 @@
+{
+  "cycle": 64,
+  "status": "FAIL",
+  "observation": "Native fixed39frame run failed at313 with PAD370_TOTAL_CONTACT_JUMP; earlier33frame progress has zero sampledpenetration but is incomplete. No saved derivative/artisticpass.",
+  "evidence": {
+    "results/sikh370/motion-c64-prepare-run.json": {
+      "path": "results/sikh370/motion-c64-prepare-run.json",
+      "sha256": "aa5729c6c79fecfdd0e10b14f889ac92066ef01d4c36f14b89366580b369dd6f"
+    },
+    ".runtime/factory-native/sikh370-motion-c64-prepare/stderr.log": {
+      "path": ".runtime/factory-native/sikh370-motion-c64-prepare/stderr.log",
+      "sha256": "9aaf665c739be6973ed346123310f95d2fbd1b84ba9a658204ab0a9e9f2c4637"
+    },
+    ".runtime/factory-native/sikh370-motion-c64-prepare/padsolve370-progress.json": {
+      "path": ".runtime/factory-native/sikh370-motion-c64-prepare/padsolve370-progress.json",
+      "sha256": "e22e028e454d6bda9e09732924539ac856acdc975342965c8a449de38964e22c"
+    }
+  },
+  "response": "65 tests actualper-frame fittedseed, known313/314first, no guardrelaxation/motionchange."
+}

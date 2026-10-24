@@ -1,0 +1,77 @@
+{
+  "run_digest": "b981199aac359c6010ee3ec9b5a13581cbd024b44e3694125d79fa7e59820235",
+  "verdict": "PASS",
+  "observation": "Returned4obliquecontrols; actual303/306load and311/314firstlift images inspected for visiblepadbreakthrough, floatingedge/spikes andriderinterfaces. Wholephase/directAV notqualified.",
+  "comparison": "Actual returned source/report/image availability versus admitted recipe. Artistic unit criteria and full-speed AV remain separately NOT_TESTED.",
+  "open_defects": [],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh370-motion-c66-oblique/snapshot.json",
+      "sha256": "4dddae165fa319563ef93f5b23169b485a66871098566d61aa2277820d81c8d2"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh370-motion-c66-oblique/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh370-motion-c66-oblique/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh370-motion-c66-oblique/frame.png",
+      "sha256": "4343dfc71f2282bbc777786e8bfe15482f408923a0e3d6d9fe9ffe3e33689455"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh370-motion-c66-oblique/frames.json",
+      "sha256": "ad782995ab3c24b86dff8b0a83a9bd372763cab71e53734a3e3583a8366d2285"
+    },
+    "frame_303": {
+      "path": ".runtime/factory-native/sikh370-motion-c66-oblique/frame-0303.png",
+      "sha256": "16163f2e32fbff2c022b02e22421449331260991335bab2f0b4b39bc8bd56399"
+    },
+    "frame_306": {
+      "path": ".runtime/factory-native/sikh370-motion-c66-oblique/frame-0306.png",
+      "sha256": "abb1890d7ba0bb336d29320bd64087533590c943c3daba5f1278e238dd4e4320"
+    },
+    "frame_311": {
+      "path": ".runtime/factory-native/sikh370-motion-c66-oblique/frame-0311.png",
+      "sha256": "db229c55a977ff734717e8e9c51ea27243d6f0533d089d58d21d4e2c6d8c2672"
+    },
+    "frame_314": {
+      "path": ".runtime/factory-native/sikh370-motion-c66-oblique/frame.png",
+      "sha256": "4343dfc71f2282bbc777786e8bfe15482f408923a0e3d6d9fe9ffe3e33689455"
+    }
+  },
+  "retrospective_observations": [
+    {
+      "requirement": "prep_load",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "step",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "head_body",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "first_lift",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "evidence",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "director_motion",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    }
+  ]
+}

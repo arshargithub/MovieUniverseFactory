@@ -1,0 +1,353 @@
+{
+  "parent": ".runtime/factory-native/sikh369-motion-c53-prepare/scene.blend",
+  "method": "Use actual original evaluated fitted pad at EACH frame instead of SurfaceDeform seed; minimum-intervention point/interior contacts and allguards retained. First313/314 counterexamples thenremaining37, same39frame nativeclock.",
+  "proof": "Known313/314 displacementcounterexample mustclearfirst, thenall39thickenedgaps/sourceinvariants andfreshside/oblique/shot/wholeprep renders. Preservefrozen53pose/actions/material/UV.",
+  "scope": "Director370allocation58..66, actual65/max66; onlypadcontactderivative with53motionfrozen. Nootherconstruction/spend.",
+  "reconciliation": "Originalgeometry/actions andacceptedmasters protected; exactlyonenewclothcache permitted. Oldmethods/history retained; actualperframefitdiscriminatesseedhypothesis, notgenericclothphysics.",
+  "alternatives": "Reject retime-only plan because it cannot change rejected preparation; inspect actual support/pose ownership before authoring.",
+  "failure": "Anyjump/missingray, negativegap, originaldrift, float/fold/jitter fails;65/max66, onefurthercorrection remains. Noimplicitnewfamily/cap.",
+  "cause": "64failed250mmtotaldisplacement at313afterearlierpositivecontacts; testper-frameactualfittedseed versuspropagatedfit.",
+  "expected": "Visibly loaded hindquarters underneath a gathered torso before rapid head/neck-led release; no known frame/source defect, Director fullspeed pending.",
+  "steps": [
+    {
+      "id": "prepare",
+      "depends_on": [],
+      "requirements": [
+        "preservation",
+        "scope",
+        "prep_load",
+        "step",
+        "head_body",
+        "first_lift"
+      ],
+      "recipe": {
+        "operation": "nihang_patch",
+        "frame": 314,
+        "width": 432,
+        "height": 768,
+        "samples": 8,
+        "edits": [
+          {
+            "kind": "mounted_padcontact369",
+            "target": "fitted saddle blanket292",
+            "mode": "envelope"
+          }
+        ]
+      },
+      "timeout": 1200
+    },
+    {
+      "id": "audit",
+      "depends_on": [
+        "prepare"
+      ],
+      "requirements": [
+        "preservation",
+        "scope",
+        "first_lift"
+      ],
+      "recipe": {
+        "operation": "nihang_patch",
+        "frame": 314,
+        "width": 432,
+        "height": 768,
+        "samples": 8,
+        "edits": [
+          {
+            "kind": "mounted_prepaudit367",
+            "target": "mounted leader"
+          }
+        ]
+      }
+    },
+    {
+      "id": "side",
+      "depends_on": [
+        "audit"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 314,
+        "frames": [
+          300,
+          303,
+          306,
+          311,
+          314
+        ],
+        "view": "horse_side367",
+        "width": 640,
+        "height": 640,
+        "samples": 8
+      }
+    },
+    {
+      "id": "oblique",
+      "depends_on": [
+        "audit"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 314,
+        "frames": [
+          303,
+          306,
+          311,
+          314
+        ],
+        "view": "horse_phase367",
+        "width": 640,
+        "height": 640,
+        "samples": 8
+      }
+    },
+    {
+      "id": "production",
+      "depends_on": [
+        "audit"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 314,
+        "frames": [
+          303,
+          306,
+          311,
+          314
+        ],
+        "view": "production",
+        "width": 432,
+        "height": 768,
+        "samples": 8
+      }
+    },
+    {
+      "id": "phase01",
+      "depends_on": [
+        "audit",
+        "side",
+        "oblique",
+        "production"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 314,
+        "frames": [
+          276,
+          277,
+          278,
+          279,
+          280,
+          281,
+          282,
+          314
+        ],
+        "view": "horse_phase367",
+        "width": 432,
+        "height": 432,
+        "samples": 8
+      }
+    },
+    {
+      "id": "phase02",
+      "depends_on": [
+        "audit",
+        "side",
+        "oblique",
+        "production"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 314,
+        "frames": [
+          283,
+          284,
+          285,
+          286,
+          287,
+          288,
+          289,
+          314
+        ],
+        "view": "horse_phase367",
+        "width": 432,
+        "height": 432,
+        "samples": 8
+      }
+    },
+    {
+      "id": "phase03",
+      "depends_on": [
+        "audit",
+        "side",
+        "oblique",
+        "production"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 314,
+        "frames": [
+          290,
+          291,
+          292,
+          293,
+          294,
+          295,
+          296,
+          314
+        ],
+        "view": "horse_phase367",
+        "width": 432,
+        "height": 432,
+        "samples": 8
+      }
+    },
+    {
+      "id": "phase04",
+      "depends_on": [
+        "audit",
+        "side",
+        "oblique",
+        "production"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 314,
+        "frames": [
+          297,
+          298,
+          299,
+          300,
+          301,
+          302,
+          303,
+          314
+        ],
+        "view": "horse_phase367",
+        "width": 432,
+        "height": 432,
+        "samples": 8
+      }
+    },
+    {
+      "id": "phase05",
+      "depends_on": [
+        "audit",
+        "side",
+        "oblique",
+        "production"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 314,
+        "frames": [
+          304,
+          305,
+          306,
+          307,
+          308,
+          309,
+          310,
+          314
+        ],
+        "view": "horse_phase367",
+        "width": 432,
+        "height": 432,
+        "samples": 8
+      }
+    },
+    {
+      "id": "phase06",
+      "depends_on": [
+        "audit",
+        "side",
+        "oblique",
+        "production"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 314,
+        "frames": [
+          311,
+          312,
+          313,
+          314
+        ],
+        "view": "horse_phase367",
+        "width": 432,
+        "height": 432,
+        "samples": 8
+      }
+    }
+  ],
+  "sources": [
+    "src/movie_factory/adapters/blender/nihang_prep367.py",
+    "src/movie_factory/adapters/blender/nihang_patch.py",
+    "src/movie_factory/adapters/blender/nihang_control.py",
+    "results/sikh367/AUDIT44.md",
+    "results/sikh367/REFERENCE_POSE_MAP.md",
+    ".runtime/factory-native/sikh367-motion-c44-audit/prepaudit367.json",
+    "results/sikh367/REVIEW45.md",
+    "results/sikh367/ERROR48.md",
+    "results/sikh367/POSE46_REVIEW.md",
+    "results/sikh368/REQUEST.md",
+    "results/sikh368/STRATEGY.md",
+    "results/sikh367/LEARNINGS367.md",
+    "results/sikh367/FINAL_FRAME_REVIEW.md",
+    ".runtime/art-direction/sikh368-reference/reference-01.jpg",
+    ".runtime/art-direction/sikh368-reference/reference-02.jpg",
+    "results/sikh368/HIND_CONTACT50_FAIL.json",
+    ".runtime/factory-native/sikh368-motion-c50-prepare/prep367.json",
+    "results/sikh369/REQUEST.md",
+    "results/sikh369/STRATEGY.md",
+    "docs/knowledge/WORK_UNIT_GRANULARITY_369.md",
+    "results/sikh368/HIND_CONTACT51_RESULT.json",
+    "results/sikh369/REJECT52.json",
+    ".runtime/art-direction/sikh369-review-c52/saddle-load-comparison.png",
+    "src/movie_factory/adapters/blender/nihang_padcontact369.py",
+    "tests/test_padcontact369.py",
+    "results/sikh370/REQUEST.md",
+    "results/sikh370/STRATEGY.md",
+    "results/sikh370/DIAGNOSIS58.md",
+    ".runtime/context-hygiene/runs/sikh370-pad-refine-tests/stdout.log",
+    ".runtime/factory-native/sikh370-motion-c58-diagnose53/padcontact369.json",
+    ".runtime/factory-native/sikh370-motion-c58-diagnose55/padcontact369.json",
+    "src/movie_factory/adapters/blender/nihang_padsolve370.py",
+    "tests/test_padsolve370.py",
+    "results/sikh370/ENVELOPE60.md",
+    "results/sikh370/REJECT59.json",
+    ".runtime/context-hygiene/runs/sikh370-pad-envelope-tests/stdout.log",
+    "results/sikh370/SEMANTIC_FRAME61.md",
+    ".runtime/factory-native/sikh370-motion-c60-prepare/stderr.log",
+    "results/sikh370/FITTED_SEED62.md",
+    ".runtime/factory-native/sikh370-motion-c61-prepare/padsolve370-failure.json",
+    ".runtime/context-hygiene/runs/sikh370-fitted-seed-tests/stdout.log",
+    "results/sikh370/MINIMUM_CONTACT63.md",
+    ".runtime/factory-native/sikh370-motion-c62-prepare/stderr.log",
+    ".runtime/context-hygiene/runs/sikh370-minimum-contact-tests/stdout.log",
+    "src/movie_factory/native_admission.py",
+    "tests/test_contact_timeout370.py",
+    "results/sikh370/RUNTIME64.md",
+    ".runtime/factory-native/sikh370-motion-c63-prepare/padsolve370-progress.json",
+    ".runtime/context-hygiene/runs/sikh370-contact-runtime-tests/stdout.log",
+    ".runtime/context-hygiene/runs/sikh370-contact-runtime-negative/stdout.log",
+    "results/sikh370/FITTED_FRAME65.md",
+    ".runtime/factory-native/sikh370-motion-c64-prepare/stderr.log",
+    ".runtime/context-hygiene/runs/sikh370-fitted-frame-tests/stdout.log"
+  ],
+  "retro_evidence": [
+    "results/sikh369/REQUEST.md",
+    "results/sikh369/STRATEGY.md",
+    "results/sikh368/FINAL_FRAME_REVIEW51.md",
+    "results/sikh368/HIND_CONTACT51_RESULT.json",
+    "results/sikh369/REJECT52.json",
+    "results/sikh370/REQUEST.md",
+    "results/sikh370/DIAGNOSIS58.md"
+  ],
+  "retrospective_evidence": [
+    "results/sikh370/motion-c65.json",
+    "results/sikh370/motion-c65-challenge.json",
+    "results/sikh370/REQUEST.md",
+    "results/sikh370/FITTED_FRAME65.md"
+  ]
+}

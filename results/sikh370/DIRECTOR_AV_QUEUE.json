@@ -1,0 +1,57 @@
+{
+  "status": "AWAITING_DIRECTOR_AV",
+  "policy": "Director313 manualqueue; not strict review_control deliver receipt orproductionapproval",
+  "scope": "Horse preparation276..314 only, frozen53 motion with66contactrepair, normal-time24fps. Fullrear/appearance/tail excluded.",
+  "candidate": {
+    "path": ".runtime/art-direction/sikh370-review-c66/preparation-firstlift.mp4",
+    "sha256": "985100faa0b9970c610eb6d45914fbdf74a9d63b0178c8661b5dd77c2bc06939"
+  },
+  "comparison": {
+    "path": ".runtime/art-direction/sikh370-review-c66/preparation-comparison-three-repeats.mp4",
+    "sha256": "ce5df75d54d1821c5eb7549b8f0c7778746314fca084fbe2d12bda3ab1131738"
+  },
+  "reference": {
+    "path": ".runtime/art-direction/series01-sikh256/references/reference-b.mov",
+    "sha256": "78d0d691e8712c02931876cf0bc405e4869de357f337f531708be7a7da4898e2"
+  },
+  "requirements": {
+    "path": "results/sikh370/final-input66.json",
+    "sha256": "60ba95f241af43041a4d04fe3f59ee73a1f29f3b1fa87fa5cfc4324174a98ebe"
+  },
+  "protected_masters": {
+    "path": "results/sikh370/PROTECTED_MASTERS.json",
+    "sha256": "563b801e8be992a8b1f0d249d80c86de3b0f784599fef0aaac940db9a3a80c6a"
+  },
+  "agent_checks": [
+    {
+      "path": "results/sikh370/FINAL_FRAME_REVIEW66.md",
+      "sha256": "048156399e44159cbf9e5f81d14ea90601f490153886c4dc578f17c2581a3369"
+    },
+    {
+      "path": "results/sikh370/ENCODED_REVIEW66.md",
+      "sha256": "8eada9cce8225d33178a6c041d890c9321721d065b9e330306f2c4911d458125"
+    },
+    {
+      "path": "results/sikh370/CONTACT_SOURCE66.json",
+      "sha256": "29cfae7aa63f1bfcbeb184475f51e5ca68af1a2e2e4d9f94f4f66d423e353ecf"
+    },
+    {
+      "path": "results/sikh370/SOURCE_CONTROLS66.json",
+      "sha256": "30167cec6f9f73147d4b5c07386c21bd5613dc61c91f1e3855b1925d77b1ad6d"
+    }
+  ],
+  "pending_human_judgments": [
+    "Full-speed preparation referencefaithfulness, singlebrace weight anddeeperhindload",
+    "Head/neck/trunk release andfirstlift power/fluidity",
+    "Temporalcloth read/no distracting jitter"
+  ],
+  "technical_limits": [
+    "Sampledintegerframe vertices/trianglecentres, not continuous/subframecollision orclothphysics",
+    "Currentothercamera/standalonepadasset/laterrear unqualified",
+    "HistoricalstrictreplayFAIL andglobal307STALE_OR_BLOCKED_KNOWLEDGE unchanged; no new strictdeliver receipt"
+  ],
+  "direct_motion_capability": false,
+  "direct_audio_capability": false,
+  "production_approved": false,
+  "director_approved": false
+}

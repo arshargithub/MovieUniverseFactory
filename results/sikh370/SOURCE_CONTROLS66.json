@@ -1,0 +1,63 @@
+{
+  "status": "PASS_SOURCE_ONLY",
+  "reference": {
+    "path": ".runtime/factory-native/sikh369-motion-c53-audit/prepaudit367.json",
+    "sha256": "c91d3165191478dfac42afe83d2840a80c2c52006a0a4aa42e39ec6fe0a47654"
+  },
+  "candidate": {
+    "path": ".runtime/factory-native/sikh370-motion-c66-audit/prepaudit367.json",
+    "sha256": "07de6d9df49066132cac6a63fca30940122aff2e837b848b61e98acabcc65a46"
+  },
+  "frames": 11,
+  "max_pose_landmark_difference": 0.0,
+  "original_mesh_domains": 1621,
+  "original_geometry_unchanged": true,
+  "only_new_mesh": "370 contact-solved saddle cloth",
+  "pole_gaps": [
+    [
+      276,
+      0.16989445686340332
+    ],
+    [
+      283,
+      0.16989421844482422
+    ],
+    [
+      287,
+      0.15685200691223145
+    ],
+    [
+      291,
+      0.03252577781677246
+    ],
+    [
+      294,
+      0.005226612091064453
+    ],
+    [
+      298,
+      0.04391002655029297
+    ],
+    [
+      300,
+      0.08859729766845703
+    ],
+    [
+      303,
+      0.20312857627868652
+    ],
+    [
+      306,
+      0.2578577995300293
+    ],
+    [
+      310,
+      0.46024465560913086
+    ],
+    [
+      314,
+      0.7102947235107422
+    ]
+  ],
+  "scope": "Frozen53source controls and actualfreshopenpose/terrain report; not motion/artistic approval."
+}

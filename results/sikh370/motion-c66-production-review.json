@@ -1,0 +1,77 @@
+{
+  "run_digest": "386af3d644a44653ca23c099719df3ad3dc65fc3fa8959da3ec3a201d321260b",
+  "verdict": "PASS",
+  "observation": "Actual4shot-camera frames returned and inspected at303/306/311/314: repairedpad/rider interface noobviousbreakthrough at this framing. Source/finalsurface checks separate; full39frames/directmotion/appearance stillunqualified.",
+  "comparison": "Actual returned source/report/image availability versus admitted recipe. Artistic unit criteria and full-speed AV remain separately NOT_TESTED.",
+  "open_defects": [],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh370-motion-c66-production/snapshot.json",
+      "sha256": "4dddae165fa319563ef93f5b23169b485a66871098566d61aa2277820d81c8d2"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh370-motion-c66-production/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh370-motion-c66-production/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh370-motion-c66-production/frame.png",
+      "sha256": "914bc92b2e99b64a6136b2a228335433c8bf4c404dc346f3c374c030219fcf68"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh370-motion-c66-production/frames.json",
+      "sha256": "65ed686d281c4e466579b455770773c11ab63cbc03cbc3b454030929a07c1c2d"
+    },
+    "frame_303": {
+      "path": ".runtime/factory-native/sikh370-motion-c66-production/frame-0303.png",
+      "sha256": "758ab49d5b7e7da4b68b8234f03cea09590d595d2fe4920b5b797b4ddcfe737d"
+    },
+    "frame_306": {
+      "path": ".runtime/factory-native/sikh370-motion-c66-production/frame-0306.png",
+      "sha256": "6b7387dcfee30f6a724080c16c95d3f043f05239fbb5c218156536d4cd6da991"
+    },
+    "frame_311": {
+      "path": ".runtime/factory-native/sikh370-motion-c66-production/frame-0311.png",
+      "sha256": "1abde71d78327517a1021c24669ae78cb00010b5b1c5eab8efcff2e3a04e92af"
+    },
+    "frame_314": {
+      "path": ".runtime/factory-native/sikh370-motion-c66-production/frame.png",
+      "sha256": "914bc92b2e99b64a6136b2a228335433c8bf4c404dc346f3c374c030219fcf68"
+    }
+  },
+  "retrospective_observations": [
+    {
+      "requirement": "prep_load",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "step",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "head_body",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "first_lift",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "evidence",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "director_motion",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    }
+  ]
+}

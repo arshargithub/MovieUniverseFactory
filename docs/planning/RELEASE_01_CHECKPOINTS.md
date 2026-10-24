@@ -1,5 +1,35 @@
 # Release 01 — checkpoints
 
+## CP-037 — exchange370, 2026-10-24
+
+Director369's smaller, perceptually judgeable work unit is retained. The horse
+preparation now has a complete39-frame normal-time comparison, with53's single
+brace/deeper hind load/head-led release preserved and66's tack contact repair.
+Fresh-open11frame pose difference is0; all1621 original mesh domains/actions are
+unchanged. Known horse-through-blanket patches are closed in current source/frame
+checks.59 focused tests and24-obligation scoped application gate pass; none is a
+full-speed artistic or whole-production approval. Exact clip awaits Director313 AV.
+
+- All nine previously unused corrections58..66 were explicitly allocated and used;
+  originaltask66/max66, no reset or further automatic work. Appearance untouched.
+- [Learnings](../../results/sikh370/LEARNINGS.md): evaluated thickness/face interiors,
+  discriminating seed controls, worst counterexamples first, finite cache/reuse
+  bounds and preserved failures. This is not new universal semantic retrieval.
+- Next: preparation verdict, then a separate powerful-rise/brief-crest unit using
+  exact314 pose/velocity/contact; later landing, chest/look, tail, crowd and full
+  Sikh scene remain unaccepted. Pashtun253 remains exact/provisional and unchanged.
+- Accepted release gates remain1/25 (4%), a coarse binary deliverable count, not
+  effort/time completion. Sikh, Gurkha, ending, full trailer and two episodes remain.
+-20 local native jobs measured4724.34s job occupancy, overlapping assistant work;
+  not pure render time or additive net effort. Whole-episode net and engineering
+  tokens/cost remain unknown. No new paid provider/tool/cloud/spend.
+- Local persistence only. Before370 commits, local origin/main tracking ancestry
+  had137 outgoing commits; that is not a fresh remote verification or authority
+  for an unreviewed broad push. No S3 copy/restore or new off-device protection.
+- Catch-up bookkeeping: this log's latest prior entry was350/CP-035; no360 entry
+  was found. Prior status's CP-033 marker was stale. Do not invent a completed360
+  checkpoint. Current status now points here; next checkpoint380.
+
 ## CP-035 — exchange350, 2026-10-22
 
 The Sikh sequence remains the production dependency. Since330, controlled native
