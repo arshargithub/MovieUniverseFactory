@@ -70,7 +70,8 @@ def engine_digest():
     from . import task_router as tr
     from . import native_admission as na
     from . import retrospective as retro
-    return pk.digest({m.__name__: pk.file_hash(Path(m.__file__)) for m in (wf, ep, rc, pk, ch, tr, na, retro)} | {'pipeline': pk.file_hash(Path(__file__))})
+    from . import work_units
+    return pk.digest({m.__name__: pk.file_hash(Path(m.__file__)) for m in (wf, ep, rc, pk, ch, tr, na, retro, work_units)} | {'pipeline': pk.file_hash(Path(__file__))})
 
 
 def input_digest(state):

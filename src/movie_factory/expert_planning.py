@@ -19,13 +19,18 @@ do not invent new creative authority. Challenge causal readability, unreported
 failures, conflicting disciplines and optional work before admitting the plan.
 Return the complete brief, not only strategy prose. A named lens is not its
 application. If a requirement cannot be supported, report the gap, do not fill
-fields with assurances. No stage tools or production changes are authorized.'''
+fields with assurances. For unit_required references, retain one work_unit with
+positive reference criteria, allowed/frozen domains, phase boundaries and rejected
+calibration controls. Protect accepted behavior, not rejected source poses.
+No stage tools or production changes are authorized.'''
 
 REVIEWER_INSTRUCTION = '''Review original intent and reference roles as well as the
 listed requirements. Return intent_checks for every beat with actual evidence,
 plus planning_gaps for important omissions in the plan. A perfect checklist
 score cannot offset failure of the intended audience experience. Keep direct
 AV pending where unavailable, but never hide frame-visible defects there.
+For a work_unit, explicitly compare every positive reference feature and phase
+boundary, state the largest remaining mismatch and any outside-scope changes.
 Do not treat the builder's application statements as visual proof. Every
 intent_check must set scope=supported_evidence_only; a PASS there is not a
 full-speed audiovisual verdict. Preserve the separate Director AV checks.'''
@@ -35,7 +40,8 @@ def plan_digest(brief):
     plan = {k: v for k, v in brief['expert_plan'].items() if k != 'challenge'}
     return pk.digest({'plan': plan, 'requirements': brief['requirements'],
                       'references': brief['references'], 'intent': brief['intent'],
-                      'protected': brief['protected']})
+                      'protected': brief['protected'],
+                      **({'work_unit': brief['work_unit']} if 'work_unit' in brief else {})})
 
 
 def contract():
@@ -50,7 +56,8 @@ def contract():
             'challenge': ['plan_digest: trusted parent hashes after reading this challenge',
                           'intent_coverage: every beat ID -> {reason, requirements}',
                           'cross_discipline_conflicts', 'omission_probe', 'scope_tradeoff', 'open_issues'],
-            'review_boundary': 'Fresh review repeats original intent scan; planning_gaps veto even otherwise passing checks'}
+            'review_boundary': 'Fresh review repeats original intent scan; planning_gaps veto even otherwise passing checks',
+            'work_unit': 'Required when trusted reference.unit_required=true: one primary_outcome, phase, task, reference, positive_criteria, allowed/frozen_domains, pose/velocity/contact boundaries, negative_controls+FAIL calibration, permitted native operations/edit_kinds and cumulative cycle_window. Builder supplies unit_application; reviewer supplies unit_review with positive comparisons, boundary checks, largest_remaining_mismatch and outside_scope_changes. Coverage is not artistic truth.'}
 
 
 def seal_planner_response(raw):
@@ -68,6 +75,8 @@ def seal_planner_response(raw):
 
 
 def validate(brief):
+    from . import work_units
+    work_units.validate(brief)
     plan = brief.get('expert_plan')
     require(isinstance(plan, dict) and plan.get('version') == 1, 'EXPERT_PLAN_REQUIRED')
     intents = plan.get('beat_intents')
@@ -122,6 +131,8 @@ def validate(brief):
 
 
 def validate_execution(brief, result):
+    from . import work_units
+    work_units.execution(brief, result)
     uses = result.get('requirement_uses', {})
     require(set(uses) == set(rows(brief['requirements'])), 'EXECUTION_REQUIREMENT_COVERAGE')
     for use in uses.values():
@@ -129,6 +140,7 @@ def validate_execution(brief, result):
 
 
 def review_intent(brief, review, evidence):
+    from . import work_units
     checks = review.get('intent_checks', {})
     require(set(checks) == set(brief['expert_plan']['beat_intents']), 'REVIEW_INTENT_COVERAGE')
     failed, missing = [], []
@@ -143,4 +155,5 @@ def review_intent(brief, review, evidence):
         if check['status'] == 'NOT_RUN': missing.append('intent:' + bid)
     gaps = review.get('planning_gaps')
     require(isinstance(gaps, list) and all(nonempty(x) for x in gaps), 'PLANNING_GAP_SCAN_REQUIRED')
-    return failed, missing, gaps
+    unit_failed, unit_missing = work_units.review(brief, review, evidence)
+    return failed + unit_failed, missing + unit_missing, gaps

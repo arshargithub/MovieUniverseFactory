@@ -117,6 +117,8 @@ class Bridge:
         else:
             require(not steps[step].get('native_recipe'), 'NATIVE_RECIPE_REQUIRED')
         previous = self.runs(state)
+        from . import work_units
+        work_units.native(state, recipe_data)
         require(step not in previous, 'NATIVE_STEP_ALREADY_ATTEMPTED_REPLAN_REQUIRED')
         for dep in steps[step]['depends_on']:
             require(dep in previous, 'DEPENDENCY_NOT_RUN')
