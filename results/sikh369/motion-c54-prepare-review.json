@@ -1,0 +1,61 @@
+{
+  "run_digest": "89e3065179709a72cf3e37588d6033895e7addd6c638cc8ebd11618a9613b784",
+  "verdict": "PASS",
+  "observation": "Actualread-only pad report confirms existingowner/8mmoutside modifier. Triangle/vertex samples show realpenetration: min -29.17mm at306,157below-1mm, comparedpositive2.57mm standing283. Geometry/action unchanged. Actualdiagnosis supports boundedcontacttest, not artisticPASS.",
+  "comparison": "Actual returned source/report/image availability versus admitted recipe. Artistic unit criteria and full-speed AV remain separately NOT_TESTED.",
+  "open_defects": [],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh369-motion-c54-prepare/snapshot.json",
+      "sha256": "cda3a096661b64ee2797a4c309745dbf1b5ebf08a75ad5b5f3d59bbbcc3eb53a"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh369-motion-c54-prepare/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh369-motion-c54-prepare/script-diagnostics.json",
+      "sha256": "4e1205462c9c8153ef4f4d15eba35ea263f6079e3b74341771bbb12e2f41f34c"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh369-motion-c54-prepare/scene.blend",
+      "sha256": "1a11195784dc0498a23de99a43e402108b14f12314feda9cd2cbbd08d55887f0"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh369-motion-c54-prepare/patch-evidence.json",
+      "sha256": "ef781c90271a35942cf23ec93fe66ee7c012f8d3958654575019d9ae4632fcde"
+    }
+  },
+  "retrospective_observations": [
+    {
+      "requirement": "prep_load",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "step",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "head_body",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "first_lift",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "evidence",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "director_motion",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    }
+  ]
+}

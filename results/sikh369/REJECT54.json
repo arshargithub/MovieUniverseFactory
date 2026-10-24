@@ -1,0 +1,44 @@
+{
+  "run_digest": "8acac95a0302024441086e193a08df6988846d588a639ff258b87246c2f1ddcf",
+  "verdict": "FAIL",
+  "observation": "Actual24mmstand-off leaves -28.02mm signedpenetration at306 and increases penetratinginterior samples157to265. Rest283 gap increases16.3mm. Clearanceoffset is falsified; do notrenderanotherparameter variant.",
+  "comparison": "Actualsevenframe before/after evaluatedsurface report. Constraint is notsimply8mmmargin: midload remainsbadwhilequietframes moveout. Requiresstabledeformation attachment beforecontactprojection.",
+  "open_defects": [
+    "Nearest-surface contact remains unstable underhindloading"
+  ],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh369-motion-c54-fit/snapshot.json",
+      "sha256": "cda3a096661b64ee2797a4c309745dbf1b5ebf08a75ad5b5f3d59bbbcc3eb53a"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh369-motion-c54-fit/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh369-motion-c54-fit/script-diagnostics.json",
+      "sha256": "4e1205462c9c8153ef4f4d15eba35ea263f6079e3b74341771bbb12e2f41f34c"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh369-motion-c54-fit/scene.blend",
+      "sha256": "8214f392111d072968f119340623ad6bf904a71815e8b3d5fa1ef5e62578246b"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh369-motion-c54-fit/patch-evidence.json",
+      "sha256": "d0d3341bf911b7597b8d315ece7f94dde16968b6284419d1bda7f194733e4835"
+    }
+  },
+  "retrospective_observations": [
+    {
+      "requirement": "prep_load",
+      "status": "FAIL",
+      "falsified": true,
+      "observation": "Offset-onlyrepair cannotclose motion/tackinterface; change representation to stablemotionboundpad while preserving53pose/restgeometry/look."
+    },
+    {
+      "requirement": "preservation",
+      "status": "FAIL",
+      "observation": "Existingprojectedpad lacks dependable deformationattachment; no newwholephase render untilsupportrepaired."
+    }
+  ]
+}

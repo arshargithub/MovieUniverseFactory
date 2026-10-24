@@ -1,0 +1,44 @@
+{
+  "run_digest": "280b55a44ec2532aec6893b609850934b8da964ecb170df26260a368a5e2410a",
+  "verdict": "FAIL",
+  "observation": "Stablefollow withoutnearestprojection stillhasloadintersection: min -10.84mm at306,300samplesbelow-1mm. Quiet283 minpositive0.93mm. Action/restgeometry preserved butcontactfailed. No successor render or reviewreadyclip.",
+  "comparison": "Actual55bound8mm withprojection versus57stablefollow-only, same53motion/restpad. Removingprojectiondoesnotcloseinteriorclearance; localattachment/restsurface representation needsfocusedreassessment.",
+  "open_defects": [
+    "Saddle-to-loaded-horse contact remainsunresolved"
+  ],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh369-motion-c57-prepare/snapshot.json",
+      "sha256": "cda3a096661b64ee2797a4c309745dbf1b5ebf08a75ad5b5f3d59bbbcc3eb53a"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh369-motion-c57-prepare/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh369-motion-c57-prepare/script-diagnostics.json",
+      "sha256": "4e1205462c9c8153ef4f4d15eba35ea263f6079e3b74341771bbb12e2f41f34c"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh369-motion-c57-prepare/scene.blend",
+      "sha256": "20bcb1eea128aa4f97b7935704f8577f4f604c24c3b49328e4b485e8f8bf80f1"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh369-motion-c57-prepare/patch-evidence.json",
+      "sha256": "04d4656cd8c4af531c946b04367e6a5a0f9fd22a8cf856a7bc1e46eff2cebe56"
+    }
+  },
+  "retrospective_observations": [
+    {
+      "requirement": "prep_load",
+      "status": "FAIL",
+      "falsified": true,
+      "observation": "Allcurrent50..57 unitallowanceused; stableattachmentpartlyhelps butdoesnotcloseactualpadinterface. Retain53motion and inspectsemanticbodytarget/clothconstruction in dedicatedcontactproof, notmoreoffsets."
+    },
+    {
+      "requirement": "preservation",
+      "status": "FAIL",
+      "observation": "Basegeometry/pose unchangedbutcoupledinterface remainsfailed. Cannotqualify deeperpreparation delivery."
+    }
+  ]
+}

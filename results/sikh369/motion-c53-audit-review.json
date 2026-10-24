@@ -1,0 +1,61 @@
+{
+  "run_digest": "a3e0a90da9fae6f3f397ed657fd2e1b205f6b299ab802845bfd6b729f31c8d70",
+  "verdict": "PASS",
+  "observation": "Actual11sample audit exists; pole/terrain gaps nonnegative, underlyinggeometry and actor tree preserved. Numeric/source availability qualified, visual loading still NOT_TESTED.",
+  "comparison": "Actual returned source/report/image availability versus admitted recipe. Artistic unit criteria and full-speed AV remain separately NOT_TESTED.",
+  "open_defects": [],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh369-motion-c53-audit/snapshot.json",
+      "sha256": "cda3a096661b64ee2797a4c309745dbf1b5ebf08a75ad5b5f3d59bbbcc3eb53a"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh369-motion-c53-audit/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh369-motion-c53-audit/script-diagnostics.json",
+      "sha256": "4e1205462c9c8153ef4f4d15eba35ea263f6079e3b74341771bbb12e2f41f34c"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh369-motion-c53-audit/scene.blend",
+      "sha256": "b3ff496de9c8ff33a6070458530dc522965f0c0a3ed36982bac0886dee325d01"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh369-motion-c53-audit/patch-evidence.json",
+      "sha256": "8951a7e3e5f9a5d7b576043992d5f8555b015945fa00cdb17a2fa812490939c4"
+    }
+  },
+  "retrospective_observations": [
+    {
+      "requirement": "prep_load",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "step",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "head_body",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "first_lift",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "evidence",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "director_motion",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    }
+  ]
+}

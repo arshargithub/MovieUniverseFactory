@@ -1,0 +1,68 @@
+{
+  "run_digest": "bf5bb6750d80c34ee6e7826a599acdadf59fbec3f593c6bf880f2fd2e7c8d6e0",
+  "verdict": "FAIL",
+  "observation": "Side303/306 visibly shows new horse/saddlecloth penetration compared to51. Deeper squat itself is legible, but high drop/back variant violates coupled tack interface. Not a shadow-only diagnosis: samefrontsaddle detail preserved while brownhorsepatch appears through midblanket in matchedload views.",
+  "comparison": "Actual52 side306 vs51 side306 and referencehindload. Rootparameter success cannot pass new adjacent framevisible penetration.",
+  "open_defects": [
+    "New saddlecloth penetration during deepest load"
+  ],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh369-motion-c52-side/snapshot.json",
+      "sha256": "e71d30806144d866b69aae35a040113df1da7fdacca46d535dcf408fe1f39bff"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh369-motion-c52-side/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh369-motion-c52-side/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh369-motion-c52-side/frame.png",
+      "sha256": "5ef72d63b222db0cdb52ab4f438f6b1a3d710b7438a73595e4d66407d30aa4a0"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh369-motion-c52-side/frames.json",
+      "sha256": "e4367817c9d221363d3c8124d2e7507415fdb6d768a71d5122d026bac3a5f1c0"
+    },
+    "frame_300": {
+      "path": ".runtime/factory-native/sikh369-motion-c52-side/frame-0300.png",
+      "sha256": "eef35e13556c3155bd6a53b80cdae72725cbe83100a68a3de8bd709e52185f12"
+    },
+    "frame_303": {
+      "path": ".runtime/factory-native/sikh369-motion-c52-side/frame-0303.png",
+      "sha256": "b154e8c6fe07bb699d79242c7f898f717c1bcf4dfa28cb836b65f195ab9277d5"
+    },
+    "frame_306": {
+      "path": ".runtime/factory-native/sikh369-motion-c52-side/frame-0306.png",
+      "sha256": "b4bd0d6778f946b3d9b35fb4190721cd66a41073ca9794dfc0dbcc4d902396e4"
+    },
+    "frame_311": {
+      "path": ".runtime/factory-native/sikh369-motion-c52-side/frame-0311.png",
+      "sha256": "c74331070e8501d1c928471b0b1695570018162af5d7fcb5a725bedd939dcaaf"
+    },
+    "frame_314": {
+      "path": ".runtime/factory-native/sikh369-motion-c52-side/frame.png",
+      "sha256": "5ef72d63b222db0cdb52ab4f438f6b1a3d710b7438a73595e4d66407d30aa4a0"
+    },
+    "actual_comparison": {
+      "path": ".runtime/art-direction/sikh369-review-c52/saddle-load-comparison.png",
+      "sha256": "240465801e415a607de0cc962bb3fe1e9dbb0565d72980e2d0462c105d031598"
+    }
+  },
+  "retrospective_observations": [
+    {
+      "requirement": "prep_load",
+      "status": "FAIL",
+      "regressed": true,
+      "observation": "Highdrop/back variant makes deeper load but exposes horse through saddlecloth; reduce overcompression and verify completephase before any AV queue."
+    },
+    {
+      "requirement": "preservation",
+      "status": "FAIL",
+      "observation": "Underlyingmesh unchanged but pose/tack interface regresses visibly; frozenmesh hash is not preserved appearance relationship."
+    }
+  ]
+}

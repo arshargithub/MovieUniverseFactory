@@ -1,0 +1,1130 @@
+{
+  "policy": 1,
+  "sequence": 1198,
+  "gates": {
+    "__migration__": {
+      "status": "TESTING",
+      "reason": "evidence_reconciliation",
+      "triggers": [
+        "migration-evidence:sikh353-motion-retro-migration",
+        "sikh353-motion14-__migration__-reopen",
+        "sikh353-motion15-__migration__-reopen",
+        "sikh353-motion16-__migration__-reopen",
+        "sikh358-motion-c17-__migration__-reopen",
+        "sikh358-motion-c18-__migration__-reopen",
+        "sikh358-motion-c19-__migration__-reopen",
+        "sikh358-motion-c20-__migration__-reopen",
+        "sikh358-motion-c21-__migration__-reopen",
+        "sikh361-motion-c22-__migration__-reopen",
+        "sikh361-motion-c23-__migration__-reopen",
+        "sikh361-motion-c24-__migration__-reopen",
+        "sikh362-motion25-__migration__-reopen",
+        "sikh362-motion26-__migration__-reopen",
+        "sikh362-motion27-__migration__-reopen",
+        "sikh363-motion-c30-__migration__-reopen",
+        "sikh363-motion-c31-__migration__-reopen",
+        "sikh363-motion-c32-__migration__-reopen",
+        "sikh363-motion-c33-__migration__-reopen",
+        "sikh363-motion-c34-__migration__-reopen",
+        "sikh363-motion-c35-__migration__-reopen",
+        "sikh363-motion-c36-__migration__-reopen",
+        "sikh363-motion-c37-__migration__-reopen",
+        "sikh363-motion-c38-__migration__-reopen",
+        "sikh363-motion-c39-__migration__-reopen",
+        "sikh363-motion-c40-__migration__-reopen",
+        "sikh363-motion-c41-__migration__-reopen",
+        "sikh363-motion-c42-__migration__-reopen",
+        "sikh367-motion-c44-__migration__-reopen",
+        "sikh367-motion-c45-__migration__-reopen",
+        "sikh367-motion-c46-__migration__-reopen",
+        "sikh367-motion-c47-__migration__-reopen",
+        "sikh367-motion-c48-__migration__-reopen",
+        "sikh367-motion-c49-__migration__-reopen",
+        "sikh368-motion-c50-__migration__-reopen",
+        "sikh368-motion-c51-__migration__-reopen",
+        "sikh369-motion-c52-__migration__-reopen",
+        "sikh369-motion-c53-__migration__-reopen",
+        "sikh369-motion-c54-__migration__-reopen",
+        "sikh369-motion-c55-__migration__-reopen",
+        "sikh369-motion-c56-__migration__-reopen",
+        "sikh369-motion-c57-__migration__-reopen"
+      ],
+      "plan": "fde065aa95b3eaf317d113c649b8bccdc4aabd94c16eac81104c71125bafeeb0",
+      "admitted_event": "sikh369-motion-c57-__migration__-response-admit"
+    },
+    "__allowance__": {
+      "status": "TESTING",
+      "reason": "evidence_reconciliation",
+      "triggers": [
+        "migration-evidence:sikh353-motion-retro-migration",
+        "sikh353-motion14-__allowance__-reopen",
+        "sikh353-motion15-__allowance__-reopen",
+        "sikh353-motion16-__allowance__-reopen",
+        "exhaustion:sikh353-motion16-replan",
+        "sikh358-motion-c18-__allowance__-reopen",
+        "sikh358-motion-c19-__allowance__-reopen",
+        "sikh358-motion-c20-__allowance__-reopen",
+        "sikh358-motion-c21-__allowance__-reopen",
+        "exhaustion:sikh358-motion-c21-save-replan",
+        "sikh361-motion-c23-__allowance__-reopen",
+        "sikh361-motion-c24-__allowance__-reopen",
+        "sikh362-motion25-__allowance__-reopen",
+        "sikh362-motion26-__allowance__-reopen",
+        "sikh362-motion27-__allowance__-reopen",
+        "sikh363-motion-c30-__allowance__-reopen",
+        "sikh363-motion-c31-__allowance__-reopen",
+        "sikh363-motion-c32-__allowance__-reopen",
+        "sikh363-motion-c33-__allowance__-reopen",
+        "sikh363-motion-c34-__allowance__-reopen",
+        "sikh363-motion-c35-__allowance__-reopen",
+        "sikh363-motion-c36-__allowance__-reopen",
+        "sikh363-motion-c37-__allowance__-reopen",
+        "sikh363-motion-c38-__allowance__-reopen",
+        "sikh363-motion-c39-__allowance__-reopen",
+        "sikh363-motion-c40-__allowance__-reopen",
+        "sikh363-motion-c41-__allowance__-reopen",
+        "exhaustion:sikh363-motion-exhausted",
+        "sikh367-motion-c44-__allowance__-reopen",
+        "sikh367-motion-c45-__allowance__-reopen",
+        "sikh367-motion-c46-__allowance__-reopen",
+        "sikh367-motion-c47-__allowance__-reopen",
+        "sikh367-motion-c48-__allowance__-reopen",
+        "sikh367-motion-c49-__allowance__-reopen",
+        "sikh368-motion-c50-__allowance__-reopen",
+        "sikh368-motion-c51-__allowance__-reopen",
+        "sikh369-motion-c52-__allowance__-reopen",
+        "sikh369-motion-c53-__allowance__-reopen",
+        "sikh369-motion-c54-__allowance__-reopen",
+        "sikh369-motion-c55-__allowance__-reopen",
+        "sikh369-motion-c56-__allowance__-reopen",
+        "sikh369-motion-c57-__allowance__-reopen"
+      ],
+      "plan": "fde065aa95b3eaf317d113c649b8bccdc4aabd94c16eac81104c71125bafeeb0",
+      "admitted_event": "sikh369-motion-c57-__allowance__-response-admit"
+    },
+    "phases": {
+      "status": "TESTING",
+      "reason": "evidence_reconciliation",
+      "triggers": [
+        "sikh353-motion13-failure",
+        "native-review:sikh353-motion-c14-render",
+        "sikh353-motion14-failure",
+        "native-review:sikh353-motion-c15-render",
+        "sikh353-motion15-failure",
+        "native-review:sikh353-motion-c16-render",
+        "native-review:sikh358-motion-c17-horse_head",
+        "sikh358-motion-c19-phases-reopen",
+        "sikh358-motion-c20-phases-reopen",
+        "sikh358-motion-c21-phases-reopen",
+        "sikh361-motion-c22-phases-reopen",
+        "native-review:sikh361-motion-c22-horse_head_reverse",
+        "native-review:sikh361-motion-c23-save",
+        "sikh362-motion25-phases-reopen",
+        "sikh362-motion26-phases-reopen",
+        "sikh362-motion27-phases-reopen",
+        "sikh363-motion-c30-phases-reopen",
+        "sikh363-motion-c31-phases-reopen",
+        "native-review:sikh363-motion-c31-phases",
+        "sikh363-motion-c33-phases-reopen",
+        "sikh363-motion-c34-phases-reopen",
+        "sikh363-motion-c35-phases-reopen",
+        "sikh363-motion-c36-phases-reopen",
+        "sikh363-motion-c37-phases-reopen",
+        "sikh363-motion-c38-phases-reopen",
+        "sikh363-motion-c39-phases-reopen",
+        "sikh363-motion-c40-phases-reopen",
+        "native-review:sikh363-motion-c40-phases",
+        "native-review:sikh363-motion-c41-phases",
+        "sikh367-director365-rejection",
+        "sikh367-motion-c45-phases-reopen",
+        "sikh367-motion-c46-phases-reopen",
+        "sikh367-motion-c47-phases-reopen",
+        "sikh367-motion-c48-phases-reopen",
+        "sikh367-motion-c49-phases-reopen",
+        "sikh368-motion-c50-phases-reopen",
+        "sikh368-motion-c51-phases-reopen",
+        "sikh369-motion-c52-phases-reopen",
+        "sikh369-motion-c53-phases-reopen",
+        "sikh369-motion-c54-phases-reopen",
+        "sikh369-motion-c55-phases-reopen",
+        "sikh369-motion-c56-phases-reopen",
+        "sikh369-motion-c57-phases-reopen"
+      ],
+      "plan": "fde065aa95b3eaf317d113c649b8bccdc4aabd94c16eac81104c71125bafeeb0",
+      "admitted_event": "sikh369-motion-c57-phases-response-admit"
+    },
+    "rider": {
+      "status": "TESTING",
+      "reason": "evidence_reconciliation",
+      "triggers": [
+        "sikh353-motion16-failure",
+        "native-review:sikh358-motion-c17-horse_head",
+        "sikh358-motion-c17-horse_head-outcome",
+        "sikh358-motion-c19-rider-reopen",
+        "sikh358-motion-c19-save-outcome",
+        "sikh358-motion-c20-save-outcome",
+        "sikh358-motion-c21-save-outcome",
+        "native-review:sikh361-motion-c22-horse_head_reverse",
+        "sikh361-motion-c22-horse_head_reverse-outcome",
+        "native-review:sikh361-motion-c23-save",
+        "sikh361-motion-c23-save-outcome",
+        "sikh362-motion25-rider-reopen",
+        "sikh362-motion26-rider-reopen",
+        "sikh362-motion27-rider-reopen",
+        "sikh363-motion-c30-rider-reopen",
+        "sikh363-motion-c31-rider-reopen",
+        "native-review:sikh363-motion-c31-phases",
+        "sikh363-motion-c33-rider-reopen",
+        "sikh363-motion-c34-rider-reopen",
+        "sikh363-motion-c35-rider-reopen",
+        "sikh363-motion-c36-rider-reopen",
+        "sikh363-motion-c37-rider-reopen",
+        "sikh363-motion-c38-rider-reopen",
+        "sikh363-motion-c39-rider-reopen",
+        "sikh363-motion-c40-rider-reopen",
+        "native-review:sikh363-motion-c40-phases",
+        "native-review:sikh363-motion-c41-phases",
+        "sikh367-director365-rejection",
+        "sikh367-motion-c45-rider-reopen",
+        "sikh367-motion-c46-rider-reopen",
+        "sikh367-motion-c47-rider-reopen",
+        "sikh367-motion-c48-rider-reopen",
+        "sikh367-motion-c49-rider-reopen",
+        "sikh368-motion-c50-rider-reopen",
+        "sikh368-motion-c51-rider-reopen",
+        "sikh369-motion-c52-rider-reopen",
+        "sikh369-motion-c53-rider-reopen",
+        "sikh369-motion-c54-rider-reopen",
+        "sikh369-motion-c55-rider-reopen",
+        "sikh369-motion-c56-rider-reopen",
+        "sikh369-motion-c57-rider-reopen"
+      ],
+      "plan": "fde065aa95b3eaf317d113c649b8bccdc4aabd94c16eac81104c71125bafeeb0",
+      "admitted_event": "sikh369-motion-c57-rider-response-admit"
+    },
+    "__worker__": {
+      "status": "TESTING",
+      "reason": "evidence_reconciliation",
+      "triggers": [
+        "worker:sikh358-motion-c21-save",
+        "sikh361-motion-c23-__worker__-reopen",
+        "sikh361-motion-c24-__worker__-reopen",
+        "sikh362-motion25-__worker__-reopen",
+        "worker:sikh362-motion-c25-frames01",
+        "sikh362-motion27-__worker__-reopen",
+        "sikh363-motion-c30-__worker__-reopen",
+        "worker:sikh363-motion-c30-save",
+        "sikh363-motion-c32-__worker__-reopen",
+        "sikh363-motion-c33-__worker__-reopen",
+        "worker:sikh363-motion-c33-save",
+        "worker:sikh363-motion-c34-save",
+        "sikh363-motion-c36-__worker__-reopen",
+        "sikh363-motion-c37-__worker__-reopen",
+        "worker:sikh363-motion-c37-save",
+        "worker:sikh363-motion-c38-save",
+        "worker:sikh363-motion-c39-save",
+        "sikh363-motion-c41-__worker__-reopen",
+        "worker:sikh363-motion-c41-flag_final",
+        "sikh363-motion-c42-__worker__-reopen",
+        "sikh367-motion-c44-__worker__-reopen",
+        "sikh367-motion-c45-__worker__-reopen",
+        "sikh367-motion-c46-__worker__-reopen",
+        "sikh367-motion-c47-__worker__-reopen",
+        "sikh367-motion-c48-__worker__-reopen",
+        "worker:sikh367-motion-c48-audit",
+        "sikh368-motion-c50-__worker__-reopen",
+        "sikh368-motion-c51-__worker__-reopen",
+        "sikh369-motion-c52-__worker__-reopen",
+        "sikh369-motion-c53-__worker__-reopen",
+        "sikh369-motion-c54-__worker__-reopen",
+        "sikh369-motion-c55-__worker__-reopen",
+        "sikh369-motion-c56-__worker__-reopen",
+        "sikh369-motion-c57-__worker__-reopen"
+      ],
+      "plan": "fde065aa95b3eaf317d113c649b8bccdc4aabd94c16eac81104c71125bafeeb0",
+      "admitted_event": "sikh369-motion-c57-__worker__-response-admit"
+    },
+    "__requirements__": {
+      "status": "TESTING",
+      "reason": "evidence_reconciliation",
+      "triggers": [
+        "plan:sikh362-motion27-admit",
+        "plan:sikh363-motion-c30-admission",
+        "sikh363-motion-c31-__requirements__-reopen",
+        "sikh363-motion-c32-__requirements__-reopen",
+        "sikh363-motion-c33-__requirements__-reopen",
+        "sikh363-motion-c34-__requirements__-reopen",
+        "sikh363-motion-c35-__requirements__-reopen",
+        "sikh363-motion-c36-__requirements__-reopen",
+        "sikh363-motion-c37-__requirements__-reopen",
+        "sikh363-motion-c38-__requirements__-reopen",
+        "sikh363-motion-c39-__requirements__-reopen",
+        "sikh363-motion-c40-__requirements__-reopen",
+        "plan:sikh363-motion-c41-admission",
+        "sikh363-motion-c42-__requirements__-reopen",
+        "plan:sikh367-motion-c44-admit",
+        "sikh367-motion-c45-__requirements__-reopen",
+        "sikh367-motion-c46-__requirements__-reopen",
+        "sikh367-motion-c47-__requirements__-reopen",
+        "sikh367-motion-c48-__requirements__-reopen",
+        "sikh367-motion-c49-__requirements__-reopen",
+        "plan:sikh368-motion-c50-admit",
+        "sikh368-motion-c51-__requirements__-reopen",
+        "sikh369-motion-c52-__requirements__-reopen",
+        "sikh369-motion-c53-__requirements__-reopen",
+        "sikh369-motion-c54-__requirements__-reopen",
+        "sikh369-motion-c55-__requirements__-reopen",
+        "sikh369-motion-c56-__requirements__-reopen",
+        "sikh369-motion-c57-__requirements__-reopen"
+      ],
+      "plan": "fde065aa95b3eaf317d113c649b8bccdc4aabd94c16eac81104c71125bafeeb0",
+      "admitted_event": "sikh369-motion-c57-__requirements__-response-admit"
+    },
+    "director_motion": {
+      "status": "TESTING",
+      "reason": "evidence_reconciliation",
+      "triggers": [
+        "sikh363-motion-rejection",
+        "sikh363-motion-c31-director_motion-reopen",
+        "native-review:sikh363-motion-c31-phases",
+        "sikh363-motion-c33-director_motion-reopen",
+        "sikh363-motion-c34-director_motion-reopen",
+        "sikh363-motion-c35-director_motion-reopen",
+        "sikh363-motion-c36-director_motion-reopen",
+        "sikh363-motion-c37-director_motion-reopen",
+        "sikh363-motion-c38-director_motion-reopen",
+        "sikh363-motion-c39-director_motion-reopen",
+        "sikh363-motion-c40-director_motion-reopen",
+        "native-review:sikh363-motion-c40-phases",
+        "native-review:sikh363-motion-c41-phases",
+        "sikh367-motion-c44-director_motion-reopen",
+        "sikh367-motion-c45-director_motion-reopen",
+        "native-review:sikh367-motion-c45-side",
+        "sikh367-motion-c47-director_motion-reopen",
+        "sikh367-motion-c48-director_motion-reopen",
+        "sikh367-motion-c49-director_motion-reopen",
+        "sikh368-motion-c50-director_motion-reopen",
+        "native-review:sikh368-motion-c50-phase05",
+        "sikh369-motion-c52-director_motion-reopen",
+        "native-review:sikh369-motion-c52-side",
+        "native-review:sikh369-motion-c53-side",
+        "native-review:sikh369-motion-c54-fit",
+        "sikh369-motion-c56-director_motion-reopen",
+        "sikh369-motion-c57-director_motion-reopen"
+      ],
+      "plan": "fde065aa95b3eaf317d113c649b8bccdc4aabd94c16eac81104c71125bafeeb0",
+      "admitted_event": "sikh369-motion-c57-director_motion-response-admit"
+    },
+    "support": {
+      "status": "TESTING",
+      "reason": "evidence_reconciliation",
+      "triggers": [
+        "native-review:sikh363-motion-c41-phases",
+        "sikh367-motion-c44-support-reopen",
+        "sikh367-motion-c45-support-reopen",
+        "sikh367-motion-c46-support-reopen",
+        "sikh367-motion-c47-support-reopen",
+        "sikh367-motion-c48-support-reopen",
+        "sikh367-motion-c49-support-reopen",
+        "sikh368-motion-c50-support-reopen",
+        "sikh368-motion-c51-support-reopen",
+        "sikh369-motion-c52-support-reopen",
+        "sikh369-motion-c53-support-reopen",
+        "sikh369-motion-c54-support-reopen",
+        "sikh369-motion-c55-support-reopen",
+        "sikh369-motion-c56-support-reopen",
+        "sikh369-motion-c57-support-reopen"
+      ],
+      "plan": "fde065aa95b3eaf317d113c649b8bccdc4aabd94c16eac81104c71125bafeeb0",
+      "admitted_event": "sikh369-motion-c57-support-response-admit"
+    },
+    "evidence": {
+      "status": "TESTING",
+      "reason": "evidence_reconciliation",
+      "triggers": [
+        "native-review:sikh363-motion-c41-phases",
+        "sikh367-motion-c44-evidence-reopen",
+        "sikh367-motion-c45-evidence-reopen",
+        "native-review:sikh367-motion-c45-side",
+        "sikh367-motion-c47-evidence-reopen",
+        "sikh367-motion-c48-evidence-reopen",
+        "sikh367-motion-c49-evidence-reopen",
+        "sikh368-motion-c50-evidence-reopen",
+        "native-review:sikh368-motion-c50-phase05",
+        "sikh369-motion-c52-evidence-reopen",
+        "native-review:sikh369-motion-c52-side",
+        "native-review:sikh369-motion-c53-side",
+        "native-review:sikh369-motion-c54-fit",
+        "sikh369-motion-c56-evidence-reopen",
+        "sikh369-motion-c57-evidence-reopen"
+      ],
+      "plan": "fde065aa95b3eaf317d113c649b8bccdc4aabd94c16eac81104c71125bafeeb0",
+      "admitted_event": "sikh369-motion-c57-evidence-response-admit"
+    },
+    "step": {
+      "status": "OPEN",
+      "reason": "intervention_failed",
+      "triggers": [
+        "sikh368-director-feedback49",
+        "native-review:sikh368-motion-c50-phase05",
+        "sikh369-motion-c52-step-reopen",
+        "native-review:sikh369-motion-c52-side",
+        "native-review:sikh369-motion-c53-side",
+        "native-review:sikh369-motion-c54-fit",
+        "native-review:sikh369-motion-c55-prepare",
+        "native-review:sikh369-motion-c56-prepare",
+        "native-review:sikh369-motion-c57-prepare"
+      ]
+    },
+    "head_body": {
+      "status": "OPEN",
+      "reason": "intervention_failed",
+      "triggers": [
+        "sikh368-director-feedback49",
+        "native-review:sikh368-motion-c50-phase05",
+        "sikh369-motion-c52-head_body-reopen",
+        "native-review:sikh369-motion-c52-side",
+        "native-review:sikh369-motion-c53-side",
+        "native-review:sikh369-motion-c54-fit",
+        "native-review:sikh369-motion-c55-prepare",
+        "native-review:sikh369-motion-c56-prepare",
+        "native-review:sikh369-motion-c57-prepare"
+      ]
+    },
+    "first_lift": {
+      "status": "OPEN",
+      "reason": "intervention_failed",
+      "triggers": [
+        "sikh368-director-feedback49",
+        "native-review:sikh368-motion-c50-phase05",
+        "sikh369-motion-c52-first_lift-reopen",
+        "native-review:sikh369-motion-c52-side",
+        "native-review:sikh369-motion-c53-side",
+        "native-review:sikh369-motion-c54-fit",
+        "native-review:sikh369-motion-c55-prepare",
+        "native-review:sikh369-motion-c56-prepare",
+        "native-review:sikh369-motion-c57-prepare"
+      ]
+    },
+    "prep_load": {
+      "status": "OPEN",
+      "reason": "strategy_falsifier_or_regression",
+      "triggers": [
+        "native-review:sikh368-motion-c50-phase05",
+        "sikh369-motion-c52-prep_load-reopen",
+        "native-review:sikh369-motion-c52-side",
+        "native-review:sikh369-motion-c53-side",
+        "native-review:sikh369-motion-c54-fit",
+        "native-review:sikh369-motion-c55-prepare",
+        "native-review:sikh369-motion-c56-prepare",
+        "native-review:sikh369-motion-c57-prepare"
+      ]
+    },
+    "preservation": {
+      "status": "OPEN",
+      "reason": "intervention_failed",
+      "triggers": [
+        "native-review:sikh369-motion-c56-prepare",
+        "native-review:sikh369-motion-c57-prepare"
+      ]
+    },
+    "scope": {
+      "status": "OPEN",
+      "reason": "intervention_failed",
+      "triggers": [
+        "native-review:sikh369-motion-c56-prepare",
+        "native-review:sikh369-motion-c57-prepare"
+      ]
+    }
+  },
+  "warnings": {},
+  "responses": {
+    "__migration__": {
+      "cause": "56largerlocalprojectionoffset worsens55boundpenetration. Oldprojectionstage nowtestedagainststableattachmentalone; no moreoffsetparametercompensation.",
+      "change_or_retain_rationale": "Preserve55stablebind/53motion andoriginal8mmsettings; disableonlyoldnearestprojection viewport/renderflags usingfixedfollowmode. Stabledeformation/subdivision/thickness remain. Discriminatingrepresentationcontrol, no restmesh/material/actions.",
+      "evidence": {
+        "results/nihang-scope-review365/director-disposition.json": {
+          "path": "results/nihang-scope-review365/director-disposition.json",
+          "sha256": "ec184c722fbfbe7209aa061664c7426525b39134c9ced614f36cde12bbb1782d"
+        },
+        "results/sikh368/FINAL_FRAME_REVIEW51.md": {
+          "path": "results/sikh368/FINAL_FRAME_REVIEW51.md",
+          "sha256": "ab85f7bc7a555af4e96e1ace2889fa97e660b503ec2fb2e9ea1ed69b492e5c51"
+        },
+        "results/sikh368/HIND_CONTACT51_RESULT.json": {
+          "path": "results/sikh368/HIND_CONTACT51_RESULT.json",
+          "sha256": "de10cbfbd0f69966f5f8ad941618f88c03214b39873d90f235cc48dbbe0385db"
+        },
+        "results/sikh369/PAD_BIND_STRATEGY.md": {
+          "path": "results/sikh369/PAD_BIND_STRATEGY.md",
+          "sha256": "12014e06fcdeee770fa1111c7246ac8ff703fb385e12deae4f51c460131c1519"
+        },
+        "results/sikh369/PAD_CONTACT_STRATEGY.md": {
+          "path": "results/sikh369/PAD_CONTACT_STRATEGY.md",
+          "sha256": "9e72cb69b1eb314d372b99afb7ad34066b3575ea30a560d27ba0d6c126d054a6"
+        },
+        "results/sikh369/PAD_FOLLOW_STRATEGY.md": {
+          "path": "results/sikh369/PAD_FOLLOW_STRATEGY.md",
+          "sha256": "a6962001327335ac6be869c516d8276aceb592a1de8da508d647f30e5caf8309"
+        },
+        "results/sikh369/REJECT52.json": {
+          "path": "results/sikh369/REJECT52.json",
+          "sha256": "4d1a585841686e561cc26a9553887a51c39aba23151b7fd9741afe280f92fcc8"
+        },
+        "results/sikh369/REJECT53.json": {
+          "path": "results/sikh369/REJECT53.json",
+          "sha256": "d053b3bfe761e1abdbf6e056a1db54db24e8ba0780a0d367242ba9101a378eaf"
+        },
+        "results/sikh369/REJECT54.json": {
+          "path": "results/sikh369/REJECT54.json",
+          "sha256": "38287598da9d92a92522783a99b35b7f4bf9212ad694057b511af7bc69f51053"
+        },
+        "results/sikh369/REJECT55.json": {
+          "path": "results/sikh369/REJECT55.json",
+          "sha256": "afb81ec7e0d421c09479fa63cda9c6691c45ee860c809ee200edef179e2d5698"
+        },
+        "results/sikh369/REJECT56.json": {
+          "path": "results/sikh369/REJECT56.json",
+          "sha256": "5be0e26d87e3f3801546b2326bdc79ff78a07ffd5f9d3834afdfd3889e434e3e"
+        },
+        "results/sikh369/REQUEST.md": {
+          "path": "results/sikh369/REQUEST.md",
+          "sha256": "a9f706b9ff27f0854c07b2e3bb9100f6193883c991e7032ef879a905e27ab9cd"
+        },
+        "results/sikh369/STRATEGY.md": {
+          "path": "results/sikh369/STRATEGY.md",
+          "sha256": "8a758fce2171d1f74ad6b1df6f97c93ea981e30c6edf4aa48c6d01bb181a7d6d"
+        },
+        "results/sikh369/motion-c57-challenge.json": {
+          "path": "results/sikh369/motion-c57-challenge.json",
+          "sha256": "c5322f3189a794b9cdc0aeacf6efa53437119f3f5fbaca01ce2958a9630f70ba"
+        },
+        "results/sikh369/motion-c57.json": {
+          "path": "results/sikh369/motion-c57.json",
+          "sha256": "6b8a4624860053ab7056e61ae0a3d8faea3fd89ff664707012089c5de145c7cc"
+        }
+      },
+      "expected": "Visibly loaded hindquarters underneath a gathered torso before rapid head/neck-led release; no known frame/source defect, Director fullspeed pending.",
+      "failure_response": "Remainingnegativeclearance/visibleclip/float, unboundmodifier orchangedpose/geometry/actions fails. Lastcurrentcycle57; preservefailingevidence, no olderallowancewindow silentlyactivated.",
+      "gate_digest": "d4730c543db464829611b0dd762c2899c2b52d149e45918d08cf94af47ecec8a",
+      "key": "__migration__",
+      "plan": "fde065aa95b3eaf317d113c649b8bccdc4aabd94c16eac81104c71125bafeeb0",
+      "preserve": "Original task/history/authority/limits and failed rear/chest findings. Only preparation currently targeted; fullrear/chest not accepted.",
+      "target_stage": "GROUNDING",
+      "test": "Actualboundtrue/actiongeometry unchanged;sevenframe triangle/vertex samples mustremoveintersection; thenallside/oblique/shot controls and39phaseframes mustshowloadwithoutnewartifact/float. Source53poses reusedonlyunderactionidentity.",
+      "uncertainty": "Turningoffprojection couldexposebadunprojectedpad fit or allowcollisionwhilefollowingstablebodypoints. Neitheris_bound norimprovement canpass. Actualsource/render interface mustclose; otherwise currentassignment endswithfailure andmethod/allowance decision.",
+      "event": "sikh369-motion-c57-__migration__-response"
+    },
+    "__allowance__": {
+      "cause": "56largerlocalprojectionoffset worsens55boundpenetration. Oldprojectionstage nowtestedagainststableattachmentalone; no moreoffsetparametercompensation.",
+      "change_or_retain_rationale": "Preserve55stablebind/53motion andoriginal8mmsettings; disableonlyoldnearestprojection viewport/renderflags usingfixedfollowmode. Stabledeformation/subdivision/thickness remain. Discriminatingrepresentationcontrol, no restmesh/material/actions.",
+      "evidence": {
+        "results/nihang-scope-review365/director-disposition.json": {
+          "path": "results/nihang-scope-review365/director-disposition.json",
+          "sha256": "ec184c722fbfbe7209aa061664c7426525b39134c9ced614f36cde12bbb1782d"
+        },
+        "results/sikh368/FINAL_FRAME_REVIEW51.md": {
+          "path": "results/sikh368/FINAL_FRAME_REVIEW51.md",
+          "sha256": "ab85f7bc7a555af4e96e1ace2889fa97e660b503ec2fb2e9ea1ed69b492e5c51"
+        },
+        "results/sikh368/HIND_CONTACT51_RESULT.json": {
+          "path": "results/sikh368/HIND_CONTACT51_RESULT.json",
+          "sha256": "de10cbfbd0f69966f5f8ad941618f88c03214b39873d90f235cc48dbbe0385db"
+        },
+        "results/sikh369/PAD_BIND_STRATEGY.md": {
+          "path": "results/sikh369/PAD_BIND_STRATEGY.md",
+          "sha256": "12014e06fcdeee770fa1111c7246ac8ff703fb385e12deae4f51c460131c1519"
+        },
+        "results/sikh369/PAD_CONTACT_STRATEGY.md": {
+          "path": "results/sikh369/PAD_CONTACT_STRATEGY.md",
+          "sha256": "9e72cb69b1eb314d372b99afb7ad34066b3575ea30a560d27ba0d6c126d054a6"
+        },
+        "results/sikh369/PAD_FOLLOW_STRATEGY.md": {
+          "path": "results/sikh369/PAD_FOLLOW_STRATEGY.md",
+          "sha256": "a6962001327335ac6be869c516d8276aceb592a1de8da508d647f30e5caf8309"
+        },
+        "results/sikh369/REJECT52.json": {
+          "path": "results/sikh369/REJECT52.json",
+          "sha256": "4d1a585841686e561cc26a9553887a51c39aba23151b7fd9741afe280f92fcc8"
+        },
+        "results/sikh369/REJECT53.json": {
+          "path": "results/sikh369/REJECT53.json",
+          "sha256": "d053b3bfe761e1abdbf6e056a1db54db24e8ba0780a0d367242ba9101a378eaf"
+        },
+        "results/sikh369/REJECT54.json": {
+          "path": "results/sikh369/REJECT54.json",
+          "sha256": "38287598da9d92a92522783a99b35b7f4bf9212ad694057b511af7bc69f51053"
+        },
+        "results/sikh369/REJECT55.json": {
+          "path": "results/sikh369/REJECT55.json",
+          "sha256": "afb81ec7e0d421c09479fa63cda9c6691c45ee860c809ee200edef179e2d5698"
+        },
+        "results/sikh369/REJECT56.json": {
+          "path": "results/sikh369/REJECT56.json",
+          "sha256": "5be0e26d87e3f3801546b2326bdc79ff78a07ffd5f9d3834afdfd3889e434e3e"
+        },
+        "results/sikh369/REQUEST.md": {
+          "path": "results/sikh369/REQUEST.md",
+          "sha256": "a9f706b9ff27f0854c07b2e3bb9100f6193883c991e7032ef879a905e27ab9cd"
+        },
+        "results/sikh369/STRATEGY.md": {
+          "path": "results/sikh369/STRATEGY.md",
+          "sha256": "8a758fce2171d1f74ad6b1df6f97c93ea981e30c6edf4aa48c6d01bb181a7d6d"
+        },
+        "results/sikh369/motion-c57-challenge.json": {
+          "path": "results/sikh369/motion-c57-challenge.json",
+          "sha256": "c5322f3189a794b9cdc0aeacf6efa53437119f3f5fbaca01ce2958a9630f70ba"
+        },
+        "results/sikh369/motion-c57.json": {
+          "path": "results/sikh369/motion-c57.json",
+          "sha256": "6b8a4624860053ab7056e61ae0a3d8faea3fd89ff664707012089c5de145c7cc"
+        }
+      },
+      "expected": "Visibly loaded hindquarters underneath a gathered torso before rapid head/neck-led release; no known frame/source defect, Director fullspeed pending.",
+      "failure_response": "Remainingnegativeclearance/visibleclip/float, unboundmodifier orchangedpose/geometry/actions fails. Lastcurrentcycle57; preservefailingevidence, no olderallowancewindow silentlyactivated.",
+      "gate_digest": "f8d6a551e5d61564cf4d31757a69607bcecf4baa7a1bb1b68439d52a24a0a6d7",
+      "key": "__allowance__",
+      "plan": "fde065aa95b3eaf317d113c649b8bccdc4aabd94c16eac81104c71125bafeeb0",
+      "preserve": "Original task/history/authority/limits and failed rear/chest findings. Only preparation currently targeted; fullrear/chest not accepted.",
+      "target_stage": "GROUNDING",
+      "test": "Actualboundtrue/actiongeometry unchanged;sevenframe triangle/vertex samples mustremoveintersection; thenallside/oblique/shot controls and39phaseframes mustshowloadwithoutnewartifact/float. Source53poses reusedonlyunderactionidentity.",
+      "uncertainty": "Turningoffprojection couldexposebadunprojectedpad fit or allowcollisionwhilefollowingstablebodypoints. Neitheris_bound norimprovement canpass. Actualsource/render interface mustclose; otherwise currentassignment endswithfailure andmethod/allowance decision.",
+      "event": "sikh369-motion-c57-__allowance__-response"
+    },
+    "phases": {
+      "cause": "56largerlocalprojectionoffset worsens55boundpenetration. Oldprojectionstage nowtestedagainststableattachmentalone; no moreoffsetparametercompensation.",
+      "change_or_retain_rationale": "Preserve55stablebind/53motion andoriginal8mmsettings; disableonlyoldnearestprojection viewport/renderflags usingfixedfollowmode. Stabledeformation/subdivision/thickness remain. Discriminatingrepresentationcontrol, no restmesh/material/actions.",
+      "evidence": {
+        "results/nihang-scope-review365/director-disposition.json": {
+          "path": "results/nihang-scope-review365/director-disposition.json",
+          "sha256": "ec184c722fbfbe7209aa061664c7426525b39134c9ced614f36cde12bbb1782d"
+        },
+        "results/sikh368/FINAL_FRAME_REVIEW51.md": {
+          "path": "results/sikh368/FINAL_FRAME_REVIEW51.md",
+          "sha256": "ab85f7bc7a555af4e96e1ace2889fa97e660b503ec2fb2e9ea1ed69b492e5c51"
+        },
+        "results/sikh368/HIND_CONTACT51_RESULT.json": {
+          "path": "results/sikh368/HIND_CONTACT51_RESULT.json",
+          "sha256": "de10cbfbd0f69966f5f8ad941618f88c03214b39873d90f235cc48dbbe0385db"
+        },
+        "results/sikh369/PAD_BIND_STRATEGY.md": {
+          "path": "results/sikh369/PAD_BIND_STRATEGY.md",
+          "sha256": "12014e06fcdeee770fa1111c7246ac8ff703fb385e12deae4f51c460131c1519"
+        },
+        "results/sikh369/PAD_CONTACT_STRATEGY.md": {
+          "path": "results/sikh369/PAD_CONTACT_STRATEGY.md",
+          "sha256": "9e72cb69b1eb314d372b99afb7ad34066b3575ea30a560d27ba0d6c126d054a6"
+        },
+        "results/sikh369/PAD_FOLLOW_STRATEGY.md": {
+          "path": "results/sikh369/PAD_FOLLOW_STRATEGY.md",
+          "sha256": "a6962001327335ac6be869c516d8276aceb592a1de8da508d647f30e5caf8309"
+        },
+        "results/sikh369/REJECT52.json": {
+          "path": "results/sikh369/REJECT52.json",
+          "sha256": "4d1a585841686e561cc26a9553887a51c39aba23151b7fd9741afe280f92fcc8"
+        },
+        "results/sikh369/REJECT53.json": {
+          "path": "results/sikh369/REJECT53.json",
+          "sha256": "d053b3bfe761e1abdbf6e056a1db54db24e8ba0780a0d367242ba9101a378eaf"
+        },
+        "results/sikh369/REJECT54.json": {
+          "path": "results/sikh369/REJECT54.json",
+          "sha256": "38287598da9d92a92522783a99b35b7f4bf9212ad694057b511af7bc69f51053"
+        },
+        "results/sikh369/REJECT55.json": {
+          "path": "results/sikh369/REJECT55.json",
+          "sha256": "afb81ec7e0d421c09479fa63cda9c6691c45ee860c809ee200edef179e2d5698"
+        },
+        "results/sikh369/REJECT56.json": {
+          "path": "results/sikh369/REJECT56.json",
+          "sha256": "5be0e26d87e3f3801546b2326bdc79ff78a07ffd5f9d3834afdfd3889e434e3e"
+        },
+        "results/sikh369/REQUEST.md": {
+          "path": "results/sikh369/REQUEST.md",
+          "sha256": "a9f706b9ff27f0854c07b2e3bb9100f6193883c991e7032ef879a905e27ab9cd"
+        },
+        "results/sikh369/STRATEGY.md": {
+          "path": "results/sikh369/STRATEGY.md",
+          "sha256": "8a758fce2171d1f74ad6b1df6f97c93ea981e30c6edf4aa48c6d01bb181a7d6d"
+        },
+        "results/sikh369/motion-c57-challenge.json": {
+          "path": "results/sikh369/motion-c57-challenge.json",
+          "sha256": "c5322f3189a794b9cdc0aeacf6efa53437119f3f5fbaca01ce2958a9630f70ba"
+        },
+        "results/sikh369/motion-c57.json": {
+          "path": "results/sikh369/motion-c57.json",
+          "sha256": "6b8a4624860053ab7056e61ae0a3d8faea3fd89ff664707012089c5de145c7cc"
+        }
+      },
+      "expected": "Visibly loaded hindquarters underneath a gathered torso before rapid head/neck-led release; no known frame/source defect, Director fullspeed pending.",
+      "failure_response": "Remainingnegativeclearance/visibleclip/float, unboundmodifier orchangedpose/geometry/actions fails. Lastcurrentcycle57; preservefailingevidence, no olderallowancewindow silentlyactivated.",
+      "gate_digest": "eb25c7769e3e7d242516dc7aa285df0ba53717a77a11509c8a0ced7efc9a7e2d",
+      "key": "phases",
+      "plan": "fde065aa95b3eaf317d113c649b8bccdc4aabd94c16eac81104c71125bafeeb0",
+      "preserve": "Original task/history/authority/limits and failed rear/chest findings. Only preparation currently targeted; fullrear/chest not accepted.",
+      "target_stage": "GROUNDING",
+      "test": "Actualboundtrue/actiongeometry unchanged;sevenframe triangle/vertex samples mustremoveintersection; thenallside/oblique/shot controls and39phaseframes mustshowloadwithoutnewartifact/float. Source53poses reusedonlyunderactionidentity.",
+      "uncertainty": "Turningoffprojection couldexposebadunprojectedpad fit or allowcollisionwhilefollowingstablebodypoints. Neitheris_bound norimprovement canpass. Actualsource/render interface mustclose; otherwise currentassignment endswithfailure andmethod/allowance decision.",
+      "event": "sikh369-motion-c57-phases-response"
+    },
+    "rider": {
+      "cause": "56largerlocalprojectionoffset worsens55boundpenetration. Oldprojectionstage nowtestedagainststableattachmentalone; no moreoffsetparametercompensation.",
+      "change_or_retain_rationale": "Preserve55stablebind/53motion andoriginal8mmsettings; disableonlyoldnearestprojection viewport/renderflags usingfixedfollowmode. Stabledeformation/subdivision/thickness remain. Discriminatingrepresentationcontrol, no restmesh/material/actions.",
+      "evidence": {
+        "results/nihang-scope-review365/director-disposition.json": {
+          "path": "results/nihang-scope-review365/director-disposition.json",
+          "sha256": "ec184c722fbfbe7209aa061664c7426525b39134c9ced614f36cde12bbb1782d"
+        },
+        "results/sikh368/FINAL_FRAME_REVIEW51.md": {
+          "path": "results/sikh368/FINAL_FRAME_REVIEW51.md",
+          "sha256": "ab85f7bc7a555af4e96e1ace2889fa97e660b503ec2fb2e9ea1ed69b492e5c51"
+        },
+        "results/sikh368/HIND_CONTACT51_RESULT.json": {
+          "path": "results/sikh368/HIND_CONTACT51_RESULT.json",
+          "sha256": "de10cbfbd0f69966f5f8ad941618f88c03214b39873d90f235cc48dbbe0385db"
+        },
+        "results/sikh369/PAD_BIND_STRATEGY.md": {
+          "path": "results/sikh369/PAD_BIND_STRATEGY.md",
+          "sha256": "12014e06fcdeee770fa1111c7246ac8ff703fb385e12deae4f51c460131c1519"
+        },
+        "results/sikh369/PAD_CONTACT_STRATEGY.md": {
+          "path": "results/sikh369/PAD_CONTACT_STRATEGY.md",
+          "sha256": "9e72cb69b1eb314d372b99afb7ad34066b3575ea30a560d27ba0d6c126d054a6"
+        },
+        "results/sikh369/PAD_FOLLOW_STRATEGY.md": {
+          "path": "results/sikh369/PAD_FOLLOW_STRATEGY.md",
+          "sha256": "a6962001327335ac6be869c516d8276aceb592a1de8da508d647f30e5caf8309"
+        },
+        "results/sikh369/REJECT52.json": {
+          "path": "results/sikh369/REJECT52.json",
+          "sha256": "4d1a585841686e561cc26a9553887a51c39aba23151b7fd9741afe280f92fcc8"
+        },
+        "results/sikh369/REJECT53.json": {
+          "path": "results/sikh369/REJECT53.json",
+          "sha256": "d053b3bfe761e1abdbf6e056a1db54db24e8ba0780a0d367242ba9101a378eaf"
+        },
+        "results/sikh369/REJECT54.json": {
+          "path": "results/sikh369/REJECT54.json",
+          "sha256": "38287598da9d92a92522783a99b35b7f4bf9212ad694057b511af7bc69f51053"
+        },
+        "results/sikh369/REJECT55.json": {
+          "path": "results/sikh369/REJECT55.json",
+          "sha256": "afb81ec7e0d421c09479fa63cda9c6691c45ee860c809ee200edef179e2d5698"
+        },
+        "results/sikh369/REJECT56.json": {
+          "path": "results/sikh369/REJECT56.json",
+          "sha256": "5be0e26d87e3f3801546b2326bdc79ff78a07ffd5f9d3834afdfd3889e434e3e"
+        },
+        "results/sikh369/REQUEST.md": {
+          "path": "results/sikh369/REQUEST.md",
+          "sha256": "a9f706b9ff27f0854c07b2e3bb9100f6193883c991e7032ef879a905e27ab9cd"
+        },
+        "results/sikh369/STRATEGY.md": {
+          "path": "results/sikh369/STRATEGY.md",
+          "sha256": "8a758fce2171d1f74ad6b1df6f97c93ea981e30c6edf4aa48c6d01bb181a7d6d"
+        },
+        "results/sikh369/motion-c57-challenge.json": {
+          "path": "results/sikh369/motion-c57-challenge.json",
+          "sha256": "c5322f3189a794b9cdc0aeacf6efa53437119f3f5fbaca01ce2958a9630f70ba"
+        },
+        "results/sikh369/motion-c57.json": {
+          "path": "results/sikh369/motion-c57.json",
+          "sha256": "6b8a4624860053ab7056e61ae0a3d8faea3fd89ff664707012089c5de145c7cc"
+        }
+      },
+      "expected": "Visibly loaded hindquarters underneath a gathered torso before rapid head/neck-led release; no known frame/source defect, Director fullspeed pending.",
+      "failure_response": "Remainingnegativeclearance/visibleclip/float, unboundmodifier orchangedpose/geometry/actions fails. Lastcurrentcycle57; preservefailingevidence, no olderallowancewindow silentlyactivated.",
+      "gate_digest": "0363ffb08347520ba41adffe1bab5315c2fe53b657c3666fb1de02d44fdcc223",
+      "key": "rider",
+      "plan": "fde065aa95b3eaf317d113c649b8bccdc4aabd94c16eac81104c71125bafeeb0",
+      "preserve": "Original task/history/authority/limits and failed rear/chest findings. Only preparation currently targeted; fullrear/chest not accepted.",
+      "target_stage": "GROUNDING",
+      "test": "Actualboundtrue/actiongeometry unchanged;sevenframe triangle/vertex samples mustremoveintersection; thenallside/oblique/shot controls and39phaseframes mustshowloadwithoutnewartifact/float. Source53poses reusedonlyunderactionidentity.",
+      "uncertainty": "Turningoffprojection couldexposebadunprojectedpad fit or allowcollisionwhilefollowingstablebodypoints. Neitheris_bound norimprovement canpass. Actualsource/render interface mustclose; otherwise currentassignment endswithfailure andmethod/allowance decision.",
+      "event": "sikh369-motion-c57-rider-response"
+    },
+    "__worker__": {
+      "cause": "56largerlocalprojectionoffset worsens55boundpenetration. Oldprojectionstage nowtestedagainststableattachmentalone; no moreoffsetparametercompensation.",
+      "change_or_retain_rationale": "Preserve55stablebind/53motion andoriginal8mmsettings; disableonlyoldnearestprojection viewport/renderflags usingfixedfollowmode. Stabledeformation/subdivision/thickness remain. Discriminatingrepresentationcontrol, no restmesh/material/actions.",
+      "evidence": {
+        "results/nihang-scope-review365/director-disposition.json": {
+          "path": "results/nihang-scope-review365/director-disposition.json",
+          "sha256": "ec184c722fbfbe7209aa061664c7426525b39134c9ced614f36cde12bbb1782d"
+        },
+        "results/sikh368/FINAL_FRAME_REVIEW51.md": {
+          "path": "results/sikh368/FINAL_FRAME_REVIEW51.md",
+          "sha256": "ab85f7bc7a555af4e96e1ace2889fa97e660b503ec2fb2e9ea1ed69b492e5c51"
+        },
+        "results/sikh368/HIND_CONTACT51_RESULT.json": {
+          "path": "results/sikh368/HIND_CONTACT51_RESULT.json",
+          "sha256": "de10cbfbd0f69966f5f8ad941618f88c03214b39873d90f235cc48dbbe0385db"
+        },
+        "results/sikh369/PAD_BIND_STRATEGY.md": {
+          "path": "results/sikh369/PAD_BIND_STRATEGY.md",
+          "sha256": "12014e06fcdeee770fa1111c7246ac8ff703fb385e12deae4f51c460131c1519"
+        },
+        "results/sikh369/PAD_CONTACT_STRATEGY.md": {
+          "path": "results/sikh369/PAD_CONTACT_STRATEGY.md",
+          "sha256": "9e72cb69b1eb314d372b99afb7ad34066b3575ea30a560d27ba0d6c126d054a6"
+        },
+        "results/sikh369/PAD_FOLLOW_STRATEGY.md": {
+          "path": "results/sikh369/PAD_FOLLOW_STRATEGY.md",
+          "sha256": "a6962001327335ac6be869c516d8276aceb592a1de8da508d647f30e5caf8309"
+        },
+        "results/sikh369/REJECT52.json": {
+          "path": "results/sikh369/REJECT52.json",
+          "sha256": "4d1a585841686e561cc26a9553887a51c39aba23151b7fd9741afe280f92fcc8"
+        },
+        "results/sikh369/REJECT53.json": {
+          "path": "results/sikh369/REJECT53.json",
+          "sha256": "d053b3bfe761e1abdbf6e056a1db54db24e8ba0780a0d367242ba9101a378eaf"
+        },
+        "results/sikh369/REJECT54.json": {
+          "path": "results/sikh369/REJECT54.json",
+          "sha256": "38287598da9d92a92522783a99b35b7f4bf9212ad694057b511af7bc69f51053"
+        },
+        "results/sikh369/REJECT55.json": {
+          "path": "results/sikh369/REJECT55.json",
+          "sha256": "afb81ec7e0d421c09479fa63cda9c6691c45ee860c809ee200edef179e2d5698"
+        },
+        "results/sikh369/REJECT56.json": {
+          "path": "results/sikh369/REJECT56.json",
+          "sha256": "5be0e26d87e3f3801546b2326bdc79ff78a07ffd5f9d3834afdfd3889e434e3e"
+        },
+        "results/sikh369/REQUEST.md": {
+          "path": "results/sikh369/REQUEST.md",
+          "sha256": "a9f706b9ff27f0854c07b2e3bb9100f6193883c991e7032ef879a905e27ab9cd"
+        },
+        "results/sikh369/STRATEGY.md": {
+          "path": "results/sikh369/STRATEGY.md",
+          "sha256": "8a758fce2171d1f74ad6b1df6f97c93ea981e30c6edf4aa48c6d01bb181a7d6d"
+        },
+        "results/sikh369/motion-c57-challenge.json": {
+          "path": "results/sikh369/motion-c57-challenge.json",
+          "sha256": "c5322f3189a794b9cdc0aeacf6efa53437119f3f5fbaca01ce2958a9630f70ba"
+        },
+        "results/sikh369/motion-c57.json": {
+          "path": "results/sikh369/motion-c57.json",
+          "sha256": "6b8a4624860053ab7056e61ae0a3d8faea3fd89ff664707012089c5de145c7cc"
+        }
+      },
+      "expected": "Visibly loaded hindquarters underneath a gathered torso before rapid head/neck-led release; no known frame/source defect, Director fullspeed pending.",
+      "failure_response": "Remainingnegativeclearance/visibleclip/float, unboundmodifier orchangedpose/geometry/actions fails. Lastcurrentcycle57; preservefailingevidence, no olderallowancewindow silentlyactivated.",
+      "gate_digest": "bd70670ec33460862632d8ca4c5fb9dbb824d313d367d4b246320282c91a4e1c",
+      "key": "__worker__",
+      "plan": "fde065aa95b3eaf317d113c649b8bccdc4aabd94c16eac81104c71125bafeeb0",
+      "preserve": "Original task/history/authority/limits and failed rear/chest findings. Only preparation currently targeted; fullrear/chest not accepted.",
+      "target_stage": "GROUNDING",
+      "test": "Actualboundtrue/actiongeometry unchanged;sevenframe triangle/vertex samples mustremoveintersection; thenallside/oblique/shot controls and39phaseframes mustshowloadwithoutnewartifact/float. Source53poses reusedonlyunderactionidentity.",
+      "uncertainty": "Turningoffprojection couldexposebadunprojectedpad fit or allowcollisionwhilefollowingstablebodypoints. Neitheris_bound norimprovement canpass. Actualsource/render interface mustclose; otherwise currentassignment endswithfailure andmethod/allowance decision.",
+      "event": "sikh369-motion-c57-__worker__-response"
+    },
+    "__requirements__": {
+      "cause": "56largerlocalprojectionoffset worsens55boundpenetration. Oldprojectionstage nowtestedagainststableattachmentalone; no moreoffsetparametercompensation.",
+      "change_or_retain_rationale": "Preserve55stablebind/53motion andoriginal8mmsettings; disableonlyoldnearestprojection viewport/renderflags usingfixedfollowmode. Stabledeformation/subdivision/thickness remain. Discriminatingrepresentationcontrol, no restmesh/material/actions.",
+      "evidence": {
+        "results/nihang-scope-review365/director-disposition.json": {
+          "path": "results/nihang-scope-review365/director-disposition.json",
+          "sha256": "ec184c722fbfbe7209aa061664c7426525b39134c9ced614f36cde12bbb1782d"
+        },
+        "results/sikh368/FINAL_FRAME_REVIEW51.md": {
+          "path": "results/sikh368/FINAL_FRAME_REVIEW51.md",
+          "sha256": "ab85f7bc7a555af4e96e1ace2889fa97e660b503ec2fb2e9ea1ed69b492e5c51"
+        },
+        "results/sikh368/HIND_CONTACT51_RESULT.json": {
+          "path": "results/sikh368/HIND_CONTACT51_RESULT.json",
+          "sha256": "de10cbfbd0f69966f5f8ad941618f88c03214b39873d90f235cc48dbbe0385db"
+        },
+        "results/sikh369/PAD_BIND_STRATEGY.md": {
+          "path": "results/sikh369/PAD_BIND_STRATEGY.md",
+          "sha256": "12014e06fcdeee770fa1111c7246ac8ff703fb385e12deae4f51c460131c1519"
+        },
+        "results/sikh369/PAD_CONTACT_STRATEGY.md": {
+          "path": "results/sikh369/PAD_CONTACT_STRATEGY.md",
+          "sha256": "9e72cb69b1eb314d372b99afb7ad34066b3575ea30a560d27ba0d6c126d054a6"
+        },
+        "results/sikh369/PAD_FOLLOW_STRATEGY.md": {
+          "path": "results/sikh369/PAD_FOLLOW_STRATEGY.md",
+          "sha256": "a6962001327335ac6be869c516d8276aceb592a1de8da508d647f30e5caf8309"
+        },
+        "results/sikh369/REJECT52.json": {
+          "path": "results/sikh369/REJECT52.json",
+          "sha256": "4d1a585841686e561cc26a9553887a51c39aba23151b7fd9741afe280f92fcc8"
+        },
+        "results/sikh369/REJECT53.json": {
+          "path": "results/sikh369/REJECT53.json",
+          "sha256": "d053b3bfe761e1abdbf6e056a1db54db24e8ba0780a0d367242ba9101a378eaf"
+        },
+        "results/sikh369/REJECT54.json": {
+          "path": "results/sikh369/REJECT54.json",
+          "sha256": "38287598da9d92a92522783a99b35b7f4bf9212ad694057b511af7bc69f51053"
+        },
+        "results/sikh369/REJECT55.json": {
+          "path": "results/sikh369/REJECT55.json",
+          "sha256": "afb81ec7e0d421c09479fa63cda9c6691c45ee860c809ee200edef179e2d5698"
+        },
+        "results/sikh369/REJECT56.json": {
+          "path": "results/sikh369/REJECT56.json",
+          "sha256": "5be0e26d87e3f3801546b2326bdc79ff78a07ffd5f9d3834afdfd3889e434e3e"
+        },
+        "results/sikh369/REQUEST.md": {
+          "path": "results/sikh369/REQUEST.md",
+          "sha256": "a9f706b9ff27f0854c07b2e3bb9100f6193883c991e7032ef879a905e27ab9cd"
+        },
+        "results/sikh369/STRATEGY.md": {
+          "path": "results/sikh369/STRATEGY.md",
+          "sha256": "8a758fce2171d1f74ad6b1df6f97c93ea981e30c6edf4aa48c6d01bb181a7d6d"
+        },
+        "results/sikh369/motion-c57-challenge.json": {
+          "path": "results/sikh369/motion-c57-challenge.json",
+          "sha256": "c5322f3189a794b9cdc0aeacf6efa53437119f3f5fbaca01ce2958a9630f70ba"
+        },
+        "results/sikh369/motion-c57.json": {
+          "path": "results/sikh369/motion-c57.json",
+          "sha256": "6b8a4624860053ab7056e61ae0a3d8faea3fd89ff664707012089c5de145c7cc"
+        }
+      },
+      "expected": "Visibly loaded hindquarters underneath a gathered torso before rapid head/neck-led release; no known frame/source defect, Director fullspeed pending.",
+      "failure_response": "Remainingnegativeclearance/visibleclip/float, unboundmodifier orchangedpose/geometry/actions fails. Lastcurrentcycle57; preservefailingevidence, no olderallowancewindow silentlyactivated.",
+      "gate_digest": "97bf7def8833968c4bda1d550a2a52769cc573b93ab55fabb5ea31b7cc2e5755",
+      "key": "__requirements__",
+      "plan": "fde065aa95b3eaf317d113c649b8bccdc4aabd94c16eac81104c71125bafeeb0",
+      "preserve": "Original task/history/authority/limits and failed rear/chest findings. Only preparation currently targeted; fullrear/chest not accepted.",
+      "target_stage": "GROUNDING",
+      "test": "Actualboundtrue/actiongeometry unchanged;sevenframe triangle/vertex samples mustremoveintersection; thenallside/oblique/shot controls and39phaseframes mustshowloadwithoutnewartifact/float. Source53poses reusedonlyunderactionidentity.",
+      "uncertainty": "Turningoffprojection couldexposebadunprojectedpad fit or allowcollisionwhilefollowingstablebodypoints. Neitheris_bound norimprovement canpass. Actualsource/render interface mustclose; otherwise currentassignment endswithfailure andmethod/allowance decision.",
+      "event": "sikh369-motion-c57-__requirements__-response"
+    },
+    "director_motion": {
+      "cause": "56largerlocalprojectionoffset worsens55boundpenetration. Oldprojectionstage nowtestedagainststableattachmentalone; no moreoffsetparametercompensation.",
+      "change_or_retain_rationale": "Preserve55stablebind/53motion andoriginal8mmsettings; disableonlyoldnearestprojection viewport/renderflags usingfixedfollowmode. Stabledeformation/subdivision/thickness remain. Discriminatingrepresentationcontrol, no restmesh/material/actions.",
+      "evidence": {
+        "results/nihang-scope-review365/director-disposition.json": {
+          "path": "results/nihang-scope-review365/director-disposition.json",
+          "sha256": "ec184c722fbfbe7209aa061664c7426525b39134c9ced614f36cde12bbb1782d"
+        },
+        "results/sikh368/FINAL_FRAME_REVIEW51.md": {
+          "path": "results/sikh368/FINAL_FRAME_REVIEW51.md",
+          "sha256": "ab85f7bc7a555af4e96e1ace2889fa97e660b503ec2fb2e9ea1ed69b492e5c51"
+        },
+        "results/sikh368/HIND_CONTACT51_RESULT.json": {
+          "path": "results/sikh368/HIND_CONTACT51_RESULT.json",
+          "sha256": "de10cbfbd0f69966f5f8ad941618f88c03214b39873d90f235cc48dbbe0385db"
+        },
+        "results/sikh369/PAD_BIND_STRATEGY.md": {
+          "path": "results/sikh369/PAD_BIND_STRATEGY.md",
+          "sha256": "12014e06fcdeee770fa1111c7246ac8ff703fb385e12deae4f51c460131c1519"
+        },
+        "results/sikh369/PAD_CONTACT_STRATEGY.md": {
+          "path": "results/sikh369/PAD_CONTACT_STRATEGY.md",
+          "sha256": "9e72cb69b1eb314d372b99afb7ad34066b3575ea30a560d27ba0d6c126d054a6"
+        },
+        "results/sikh369/PAD_FOLLOW_STRATEGY.md": {
+          "path": "results/sikh369/PAD_FOLLOW_STRATEGY.md",
+          "sha256": "a6962001327335ac6be869c516d8276aceb592a1de8da508d647f30e5caf8309"
+        },
+        "results/sikh369/REJECT52.json": {
+          "path": "results/sikh369/REJECT52.json",
+          "sha256": "4d1a585841686e561cc26a9553887a51c39aba23151b7fd9741afe280f92fcc8"
+        },
+        "results/sikh369/REJECT53.json": {
+          "path": "results/sikh369/REJECT53.json",
+          "sha256": "d053b3bfe761e1abdbf6e056a1db54db24e8ba0780a0d367242ba9101a378eaf"
+        },
+        "results/sikh369/REJECT54.json": {
+          "path": "results/sikh369/REJECT54.json",
+          "sha256": "38287598da9d92a92522783a99b35b7f4bf9212ad694057b511af7bc69f51053"
+        },
+        "results/sikh369/REJECT55.json": {
+          "path": "results/sikh369/REJECT55.json",
+          "sha256": "afb81ec7e0d421c09479fa63cda9c6691c45ee860c809ee200edef179e2d5698"
+        },
+        "results/sikh369/REJECT56.json": {
+          "path": "results/sikh369/REJECT56.json",
+          "sha256": "5be0e26d87e3f3801546b2326bdc79ff78a07ffd5f9d3834afdfd3889e434e3e"
+        },
+        "results/sikh369/REQUEST.md": {
+          "path": "results/sikh369/REQUEST.md",
+          "sha256": "a9f706b9ff27f0854c07b2e3bb9100f6193883c991e7032ef879a905e27ab9cd"
+        },
+        "results/sikh369/STRATEGY.md": {
+          "path": "results/sikh369/STRATEGY.md",
+          "sha256": "8a758fce2171d1f74ad6b1df6f97c93ea981e30c6edf4aa48c6d01bb181a7d6d"
+        },
+        "results/sikh369/motion-c57-challenge.json": {
+          "path": "results/sikh369/motion-c57-challenge.json",
+          "sha256": "c5322f3189a794b9cdc0aeacf6efa53437119f3f5fbaca01ce2958a9630f70ba"
+        },
+        "results/sikh369/motion-c57.json": {
+          "path": "results/sikh369/motion-c57.json",
+          "sha256": "6b8a4624860053ab7056e61ae0a3d8faea3fd89ff664707012089c5de145c7cc"
+        }
+      },
+      "expected": "Visibly loaded hindquarters underneath a gathered torso before rapid head/neck-led release; no known frame/source defect, Director fullspeed pending.",
+      "failure_response": "Remainingnegativeclearance/visibleclip/float, unboundmodifier orchangedpose/geometry/actions fails. Lastcurrentcycle57; preservefailingevidence, no olderallowancewindow silentlyactivated.",
+      "gate_digest": "48432889301b74ec7b9c78a4b5079f55052df50ef66eb7d251bff6ab9c23d7b6",
+      "key": "director_motion",
+      "plan": "fde065aa95b3eaf317d113c649b8bccdc4aabd94c16eac81104c71125bafeeb0",
+      "preserve": "Original task/history/authority/limits and failed rear/chest findings. Only preparation currently targeted; fullrear/chest not accepted.",
+      "target_stage": "GROUNDING",
+      "test": "Actualboundtrue/actiongeometry unchanged;sevenframe triangle/vertex samples mustremoveintersection; thenallside/oblique/shot controls and39phaseframes mustshowloadwithoutnewartifact/float. Source53poses reusedonlyunderactionidentity.",
+      "uncertainty": "Turningoffprojection couldexposebadunprojectedpad fit or allowcollisionwhilefollowingstablebodypoints. Neitheris_bound norimprovement canpass. Actualsource/render interface mustclose; otherwise currentassignment endswithfailure andmethod/allowance decision.",
+      "event": "sikh369-motion-c57-director_motion-response"
+    },
+    "support": {
+      "cause": "56largerlocalprojectionoffset worsens55boundpenetration. Oldprojectionstage nowtestedagainststableattachmentalone; no moreoffsetparametercompensation.",
+      "change_or_retain_rationale": "Preserve55stablebind/53motion andoriginal8mmsettings; disableonlyoldnearestprojection viewport/renderflags usingfixedfollowmode. Stabledeformation/subdivision/thickness remain. Discriminatingrepresentationcontrol, no restmesh/material/actions.",
+      "evidence": {
+        "results/nihang-scope-review365/director-disposition.json": {
+          "path": "results/nihang-scope-review365/director-disposition.json",
+          "sha256": "ec184c722fbfbe7209aa061664c7426525b39134c9ced614f36cde12bbb1782d"
+        },
+        "results/sikh368/FINAL_FRAME_REVIEW51.md": {
+          "path": "results/sikh368/FINAL_FRAME_REVIEW51.md",
+          "sha256": "ab85f7bc7a555af4e96e1ace2889fa97e660b503ec2fb2e9ea1ed69b492e5c51"
+        },
+        "results/sikh368/HIND_CONTACT51_RESULT.json": {
+          "path": "results/sikh368/HIND_CONTACT51_RESULT.json",
+          "sha256": "de10cbfbd0f69966f5f8ad941618f88c03214b39873d90f235cc48dbbe0385db"
+        },
+        "results/sikh369/PAD_BIND_STRATEGY.md": {
+          "path": "results/sikh369/PAD_BIND_STRATEGY.md",
+          "sha256": "12014e06fcdeee770fa1111c7246ac8ff703fb385e12deae4f51c460131c1519"
+        },
+        "results/sikh369/PAD_CONTACT_STRATEGY.md": {
+          "path": "results/sikh369/PAD_CONTACT_STRATEGY.md",
+          "sha256": "9e72cb69b1eb314d372b99afb7ad34066b3575ea30a560d27ba0d6c126d054a6"
+        },
+        "results/sikh369/PAD_FOLLOW_STRATEGY.md": {
+          "path": "results/sikh369/PAD_FOLLOW_STRATEGY.md",
+          "sha256": "a6962001327335ac6be869c516d8276aceb592a1de8da508d647f30e5caf8309"
+        },
+        "results/sikh369/REJECT52.json": {
+          "path": "results/sikh369/REJECT52.json",
+          "sha256": "4d1a585841686e561cc26a9553887a51c39aba23151b7fd9741afe280f92fcc8"
+        },
+        "results/sikh369/REJECT53.json": {
+          "path": "results/sikh369/REJECT53.json",
+          "sha256": "d053b3bfe761e1abdbf6e056a1db54db24e8ba0780a0d367242ba9101a378eaf"
+        },
+        "results/sikh369/REJECT54.json": {
+          "path": "results/sikh369/REJECT54.json",
+          "sha256": "38287598da9d92a92522783a99b35b7f4bf9212ad694057b511af7bc69f51053"
+        },
+        "results/sikh369/REJECT55.json": {
+          "path": "results/sikh369/REJECT55.json",
+          "sha256": "afb81ec7e0d421c09479fa63cda9c6691c45ee860c809ee200edef179e2d5698"
+        },
+        "results/sikh369/REJECT56.json": {
+          "path": "results/sikh369/REJECT56.json",
+          "sha256": "5be0e26d87e3f3801546b2326bdc79ff78a07ffd5f9d3834afdfd3889e434e3e"
+        },
+        "results/sikh369/REQUEST.md": {
+          "path": "results/sikh369/REQUEST.md",
+          "sha256": "a9f706b9ff27f0854c07b2e3bb9100f6193883c991e7032ef879a905e27ab9cd"
+        },
+        "results/sikh369/STRATEGY.md": {
+          "path": "results/sikh369/STRATEGY.md",
+          "sha256": "8a758fce2171d1f74ad6b1df6f97c93ea981e30c6edf4aa48c6d01bb181a7d6d"
+        },
+        "results/sikh369/motion-c57-challenge.json": {
+          "path": "results/sikh369/motion-c57-challenge.json",
+          "sha256": "c5322f3189a794b9cdc0aeacf6efa53437119f3f5fbaca01ce2958a9630f70ba"
+        },
+        "results/sikh369/motion-c57.json": {
+          "path": "results/sikh369/motion-c57.json",
+          "sha256": "6b8a4624860053ab7056e61ae0a3d8faea3fd89ff664707012089c5de145c7cc"
+        }
+      },
+      "expected": "Visibly loaded hindquarters underneath a gathered torso before rapid head/neck-led release; no known frame/source defect, Director fullspeed pending.",
+      "failure_response": "Remainingnegativeclearance/visibleclip/float, unboundmodifier orchangedpose/geometry/actions fails. Lastcurrentcycle57; preservefailingevidence, no olderallowancewindow silentlyactivated.",
+      "gate_digest": "f3e4925afe7017949194186cbfa7f910c116acaa8b7f133dc8f86fac8cd5d83f",
+      "key": "support",
+      "plan": "fde065aa95b3eaf317d113c649b8bccdc4aabd94c16eac81104c71125bafeeb0",
+      "preserve": "Original task/history/authority/limits and failed rear/chest findings. Only preparation currently targeted; fullrear/chest not accepted.",
+      "target_stage": "GROUNDING",
+      "test": "Actualboundtrue/actiongeometry unchanged;sevenframe triangle/vertex samples mustremoveintersection; thenallside/oblique/shot controls and39phaseframes mustshowloadwithoutnewartifact/float. Source53poses reusedonlyunderactionidentity.",
+      "uncertainty": "Turningoffprojection couldexposebadunprojectedpad fit or allowcollisionwhilefollowingstablebodypoints. Neitheris_bound norimprovement canpass. Actualsource/render interface mustclose; otherwise currentassignment endswithfailure andmethod/allowance decision.",
+      "event": "sikh369-motion-c57-support-response"
+    },
+    "evidence": {
+      "cause": "56largerlocalprojectionoffset worsens55boundpenetration. Oldprojectionstage nowtestedagainststableattachmentalone; no moreoffsetparametercompensation.",
+      "change_or_retain_rationale": "Preserve55stablebind/53motion andoriginal8mmsettings; disableonlyoldnearestprojection viewport/renderflags usingfixedfollowmode. Stabledeformation/subdivision/thickness remain. Discriminatingrepresentationcontrol, no restmesh/material/actions.",
+      "evidence": {
+        "results/nihang-scope-review365/director-disposition.json": {
+          "path": "results/nihang-scope-review365/director-disposition.json",
+          "sha256": "ec184c722fbfbe7209aa061664c7426525b39134c9ced614f36cde12bbb1782d"
+        },
+        "results/sikh368/FINAL_FRAME_REVIEW51.md": {
+          "path": "results/sikh368/FINAL_FRAME_REVIEW51.md",
+          "sha256": "ab85f7bc7a555af4e96e1ace2889fa97e660b503ec2fb2e9ea1ed69b492e5c51"
+        },
+        "results/sikh368/HIND_CONTACT51_RESULT.json": {
+          "path": "results/sikh368/HIND_CONTACT51_RESULT.json",
+          "sha256": "de10cbfbd0f69966f5f8ad941618f88c03214b39873d90f235cc48dbbe0385db"
+        },
+        "results/sikh369/PAD_BIND_STRATEGY.md": {
+          "path": "results/sikh369/PAD_BIND_STRATEGY.md",
+          "sha256": "12014e06fcdeee770fa1111c7246ac8ff703fb385e12deae4f51c460131c1519"
+        },
+        "results/sikh369/PAD_CONTACT_STRATEGY.md": {
+          "path": "results/sikh369/PAD_CONTACT_STRATEGY.md",
+          "sha256": "9e72cb69b1eb314d372b99afb7ad34066b3575ea30a560d27ba0d6c126d054a6"
+        },
+        "results/sikh369/PAD_FOLLOW_STRATEGY.md": {
+          "path": "results/sikh369/PAD_FOLLOW_STRATEGY.md",
+          "sha256": "a6962001327335ac6be869c516d8276aceb592a1de8da508d647f30e5caf8309"
+        },
+        "results/sikh369/REJECT52.json": {
+          "path": "results/sikh369/REJECT52.json",
+          "sha256": "4d1a585841686e561cc26a9553887a51c39aba23151b7fd9741afe280f92fcc8"
+        },
+        "results/sikh369/REJECT53.json": {
+          "path": "results/sikh369/REJECT53.json",
+          "sha256": "d053b3bfe761e1abdbf6e056a1db54db24e8ba0780a0d367242ba9101a378eaf"
+        },
+        "results/sikh369/REJECT54.json": {
+          "path": "results/sikh369/REJECT54.json",
+          "sha256": "38287598da9d92a92522783a99b35b7f4bf9212ad694057b511af7bc69f51053"
+        },
+        "results/sikh369/REJECT55.json": {
+          "path": "results/sikh369/REJECT55.json",
+          "sha256": "afb81ec7e0d421c09479fa63cda9c6691c45ee860c809ee200edef179e2d5698"
+        },
+        "results/sikh369/REJECT56.json": {
+          "path": "results/sikh369/REJECT56.json",
+          "sha256": "5be0e26d87e3f3801546b2326bdc79ff78a07ffd5f9d3834afdfd3889e434e3e"
+        },
+        "results/sikh369/REQUEST.md": {
+          "path": "results/sikh369/REQUEST.md",
+          "sha256": "a9f706b9ff27f0854c07b2e3bb9100f6193883c991e7032ef879a905e27ab9cd"
+        },
+        "results/sikh369/STRATEGY.md": {
+          "path": "results/sikh369/STRATEGY.md",
+          "sha256": "8a758fce2171d1f74ad6b1df6f97c93ea981e30c6edf4aa48c6d01bb181a7d6d"
+        },
+        "results/sikh369/motion-c57-challenge.json": {
+          "path": "results/sikh369/motion-c57-challenge.json",
+          "sha256": "c5322f3189a794b9cdc0aeacf6efa53437119f3f5fbaca01ce2958a9630f70ba"
+        },
+        "results/sikh369/motion-c57.json": {
+          "path": "results/sikh369/motion-c57.json",
+          "sha256": "6b8a4624860053ab7056e61ae0a3d8faea3fd89ff664707012089c5de145c7cc"
+        }
+      },
+      "expected": "Visibly loaded hindquarters underneath a gathered torso before rapid head/neck-led release; no known frame/source defect, Director fullspeed pending.",
+      "failure_response": "Remainingnegativeclearance/visibleclip/float, unboundmodifier orchangedpose/geometry/actions fails. Lastcurrentcycle57; preservefailingevidence, no olderallowancewindow silentlyactivated.",
+      "gate_digest": "35141e889d8aac06932d4528c38522dbd49a987393edbe614f7254a1e54877ff",
+      "key": "evidence",
+      "plan": "fde065aa95b3eaf317d113c649b8bccdc4aabd94c16eac81104c71125bafeeb0",
+      "preserve": "Original task/history/authority/limits and failed rear/chest findings. Only preparation currently targeted; fullrear/chest not accepted.",
+      "target_stage": "GROUNDING",
+      "test": "Actualboundtrue/actiongeometry unchanged;sevenframe triangle/vertex samples mustremoveintersection; thenallside/oblique/shot controls and39phaseframes mustshowloadwithoutnewartifact/float. Source53poses reusedonlyunderactionidentity.",
+      "uncertainty": "Turningoffprojection couldexposebadunprojectedpad fit or allowcollisionwhilefollowingstablebodypoints. Neitheris_bound norimprovement canpass. Actualsource/render interface mustclose; otherwise currentassignment endswithfailure andmethod/allowance decision.",
+      "event": "sikh369-motion-c57-evidence-response"
+    }
+  },
+  "proofs": {},
+  "history_api": "retrospective.events(connection, task)",
+  "instruction": "Inspect source-bound outcomes for each open finding; respond, challenge, then test. Admission is not effectiveness. No new authority."
+}

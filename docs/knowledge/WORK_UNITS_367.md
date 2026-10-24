@@ -8,6 +8,11 @@ lighting or scenery; no unrelated appearance polish in the motion-first unit.
 
 ## Operational use
 
+Director369 refines unit sizing and adds a manual appearance equivalent in
+[Perceptually reviewable work units](WORK_UNIT_GRANULARITY_369.md). Read that
+supplement when choosing or reviewing unit scope. Duration follows perceptual
+complexity; it is not a fixed number of seconds or a technical edit boundary.
+
 One work_unit declares one primary audience-visible outcome, phase, original task,
 reference, positive criteria linked to normal requirement IDs, allowed/frozen
 domains, pose/velocity/contact boundaries and consuming phases. It also binds

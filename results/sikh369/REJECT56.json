@@ -1,0 +1,44 @@
+{
+  "run_digest": "1b3bf8e431c2765c73a77c444a76f663a628051b488ce3962267206e81ad0fd1",
+  "verdict": "FAIL",
+  "observation": "Boundpad+24mmprojection worsensloadmin from-10mmto-23.85mm,373penetrating samples at306; quietgap16.3mm. Additionaloffsetfamily falsified evenwithstablebind. No render/fullphase admission.",
+  "comparison": "Actual55bound8mm versus56bound24mm sevenframecontact reports. Theprojectionstage itself mustbediscriminated from stabledeformation; no moreoffsets.",
+  "open_defects": [
+    "Nearest-surface projection stage stillproduces loadpenetration"
+  ],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh369-motion-c56-prepare/snapshot.json",
+      "sha256": "cda3a096661b64ee2797a4c309745dbf1b5ebf08a75ad5b5f3d59bbbcc3eb53a"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh369-motion-c56-prepare/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh369-motion-c56-prepare/script-diagnostics.json",
+      "sha256": "4e1205462c9c8153ef4f4d15eba35ea263f6079e3b74341771bbb12e2f41f34c"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh369-motion-c56-prepare/scene.blend",
+      "sha256": "19e8f96d0b89e8265457054c146a553063783b115f2553cfd62b732aca8f75a2"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh369-motion-c56-prepare/patch-evidence.json",
+      "sha256": "d0d3341bf911b7597b8d315ece7f94dde16968b6284419d1bda7f194733e4835"
+    }
+  },
+  "retrospective_observations": [
+    {
+      "requirement": "prep_load",
+      "status": "FAIL",
+      "falsified": true,
+      "observation": "Increasingprojectionoffset worsensunderload with orwithoutbind; teststableSurfaceDeform withoutnearestsurfaceprojection."
+    },
+    {
+      "requirement": "preservation",
+      "status": "FAIL",
+      "observation": "Motion/base geometry preserved, but padattachment remainsincomplete."
+    }
+  ]
+}

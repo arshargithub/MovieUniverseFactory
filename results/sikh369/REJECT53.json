@@ -1,0 +1,64 @@
+{
+  "run_digest": "a7eb3c287344f47eb772cd8eb24b9a7cd8697664c76c589518b470c8c1c0a66e",
+  "verdict": "FAIL",
+  "observation": "Actual53 side306 retains smaller but visible horse-colored patch through saddlecloth. Moderate load preserves usefulhindflex/contacts, but parameter reduction alone didnotclose interface. Reject before fullphase.",
+  "comparison": "Actual53side306/303 versus51 and rejected52. Newclippingremains; appearanceexcluded doesnotwaive an adjacentregression.",
+  "open_defects": [
+    "Saddlecloth intersects posed horse duringhindload"
+  ],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh369-motion-c53-side/snapshot.json",
+      "sha256": "cda3a096661b64ee2797a4c309745dbf1b5ebf08a75ad5b5f3d59bbbcc3eb53a"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh369-motion-c53-side/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh369-motion-c53-side/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh369-motion-c53-side/frame.png",
+      "sha256": "1779af0d705a4f79d52e66b0945a8ecad59420663ae7271cd3218a07a47dd339"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh369-motion-c53-side/frames.json",
+      "sha256": "8be05fec42f51973624fc6dc66eb6721f4766471ce6d6e5a4a37350a071c0527"
+    },
+    "frame_300": {
+      "path": ".runtime/factory-native/sikh369-motion-c53-side/frame-0300.png",
+      "sha256": "402f1ffcbaf90d742cc55c02d4abf195bcdc8cb554b75add6f6f66dcab5bf47a"
+    },
+    "frame_303": {
+      "path": ".runtime/factory-native/sikh369-motion-c53-side/frame-0303.png",
+      "sha256": "000a6ca98b8b77f7882f9ed560e1f4ca4ecd7720e1838afd6d74522c38aeee4f"
+    },
+    "frame_306": {
+      "path": ".runtime/factory-native/sikh369-motion-c53-side/frame-0306.png",
+      "sha256": "ba0b4af6a43f9e45d56f3c65d3a5c3b8c9fca73e6aa7b1ce410bcd3a3ffdd37d"
+    },
+    "frame_311": {
+      "path": ".runtime/factory-native/sikh369-motion-c53-side/frame-0311.png",
+      "sha256": "0eb412ace2feeb95a823b645030852d4dd3cc096ea76d9cd5f51a24ec72ef496"
+    },
+    "frame_314": {
+      "path": ".runtime/factory-native/sikh369-motion-c53-side/frame.png",
+      "sha256": "1779af0d705a4f79d52e66b0945a8ecad59420663ae7271cd3218a07a47dd339"
+    }
+  },
+  "retrospective_observations": [
+    {
+      "requirement": "prep_load",
+      "status": "FAIL",
+      "regressed": true,
+      "observation": "53moderatevariant still clips existing animatedsaddle; switch fromcompressionparameter compensation to actualcontact/attachment diagnosis."
+    },
+    {
+      "requirement": "preservation",
+      "status": "FAIL",
+      "observation": "Frozenunderlyinggeometry is insufficient protection of animatedsurfaceclearance."
+    }
+  ]
+}

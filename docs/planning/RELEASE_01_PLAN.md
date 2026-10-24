@@ -4,6 +4,17 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+### Exchange369 — perceptually meaningful units; preparation contact blocked
+
+Director369 adopts variable-size, independently reviewable motion units and a
+manual appearance equivalent: [required guidance](../knowledge/WORK_UNIT_GRANULARITY_369.md).
+Hindquarter loading was improved under existing prep authority, but early internal
+review caught saddle penetration.52..57 remain rejected/incomplete; no new AV
+queue. [Evidence and next package](../../results/sikh369/CLOSEOUT.md). Current
+unit50..57 is exhausted; originaltask57/max66 retains9olderunused. Recommend
+allocating4 to focused saddle contact with53motion frozen. Tail deferred until
+motion settles. Counter369; checkpoint370; no new spend or remote protection.
+
 ### Exchange362 — integrated isolated leader/horse review queue
 
 98 fixes the consuming skirt/band layers;99 rounds the crown and restores

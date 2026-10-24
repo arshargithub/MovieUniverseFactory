@@ -1,0 +1,43 @@
+{
+  "run_digest": "031cc0381268af839c6fbbc6b61406388ddce4be51e06a764a09a609c6cef53e",
+  "verdict": "FAIL",
+  "observation": "NativeSurfaceDeform bound successfully; actions/restgeometry unchanged. Deep-load signedpenetration decreases from29mmto10mm but remains; no image/fullphase qualification. Stableattachment partiallyeffective, localclearance stillrequiresbound-source test.",
+  "comparison": "Sevenframe actual53unbound8mm versus55bound8mm. Quietposegapunchanged2.57mm; deep-loadsample min -10.04mm, notallowedpositiveclearance.",
+  "open_defects": [
+    "Residual saddletriangle penetration underdeep load"
+  ],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh369-motion-c55-prepare/snapshot.json",
+      "sha256": "cda3a096661b64ee2797a4c309745dbf1b5ebf08a75ad5b5f3d59bbbcc3eb53a"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh369-motion-c55-prepare/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh369-motion-c55-prepare/script-diagnostics.json",
+      "sha256": "4e1205462c9c8153ef4f4d15eba35ea263f6079e3b74341771bbb12e2f41f34c"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh369-motion-c55-prepare/scene.blend",
+      "sha256": "489b449a5ebb35bc99ee73ce4d78bc3782b0fce23141cc8cbc93a65504cd21d1"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh369-motion-c55-prepare/patch-evidence.json",
+      "sha256": "09e4855b69edf7a3f4b899d4e5743913e4e1ceb34ee7dc166cee9b85e4cd0102"
+    }
+  },
+  "retrospective_observations": [
+    {
+      "requirement": "prep_load",
+      "status": "FAIL",
+      "observation": "Stableattachment reducesfailure but residual -10mm contact. Testexistingbounded24mmstand-off onnowboundpad, ratherthanoffset-onlyoldstaticpad. Actualgeometry/render veto."
+    },
+    {
+      "requirement": "preservation",
+      "status": "FAIL",
+      "observation": "Pose/action/restgeometry preserved butlocalcontact remainsincomplete."
+    }
+  ]
+}
