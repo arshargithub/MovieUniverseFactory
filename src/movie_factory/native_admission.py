@@ -273,10 +273,33 @@ class Bridge:
             con.execute('INSERT INTO native_reviews VALUES(?,?)', (run['id'], json.dumps(verdict)))
             requirements = rows(state['planning_artifacts']['STRATEGIZING']['steps'])[step]['requirements']
             status = 'FAIL' if verdict['open_defects'] else ('UNKNOWN' if verdict['verdict']=='NOT_RUN' else verdict['verdict'])
+            outcomes = review_observations(requirements, state['brief']['requirements'], verdict, status)
             retro.auto_outcome(con,state,'native-review:'+run['id'],
-                [dict(requirement=r,status=status,observation=verdict['observation']) for r in requirements],
+                outcomes,
                 origin='native_review',evidence=verdict['evidence'],extra=verdict.get('retrospective_observations'))
         return verdict
+
+
+def review_observations(requirements, brief_requirements, verdict, status):
+    """Step availability is not whole-art or human AV acceptance.
+
+    Explicit component observations may retain NOT_TESTED; they cannot erase
+    open native defects or promote an unavailable/failed native step.
+    """
+    override=verdict.get('requirement_outcomes')
+    if override is not None:
+        require(isinstance(override,dict) and set(override)==set(requirements),'NATIVE_OUTCOME_COVERAGE')
+    reqs=rows(brief_requirements);result=[]
+    for rid in requirements:
+        item=override[rid] if override is not None else dict(status=status,observation=verdict['observation'])
+        require(item.get('status') in {'PASS','FAIL','UNKNOWN','NOT_TESTED'} and nonempty(item.get('observation')),'NATIVE_OUTCOME_VERDICT')
+        if reqs[rid]['director_av']:
+            require(override is None or item['status']!='PASS','NATIVE_AV_CANNOT_BE_SELF_PASSED')
+            item=dict(status='FAIL' if item['status']=='FAIL' else 'NOT_TESTED',observation='Human audiovisual judgment remains pending; native failure, if any, remains a failure. '+item['observation'])
+        if status=='FAIL':require(item['status']=='FAIL','NATIVE_OUTCOME_HIDES_FAILURE')
+        if item['status']=='PASS':require(verdict['verdict']=='PASS','NATIVE_OUTCOME_PROMOTES_FAILURE')
+        result.append(dict(requirement=rid,**item))
+    return result
 
 
 def validate_candidate(controller, state, result):

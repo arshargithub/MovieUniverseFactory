@@ -29,7 +29,7 @@ def validate(recipe):
         if type(recipe[key]) is not int or not lo <= recipe[key] <= hi:
             raise ValueError('NIHANG_RECIPE_BOUND:' + key)
     if recipe['operation']=='nihang_frames':
-        if not isinstance(recipe.get('view','production'),str) or recipe.get('view','production') not in ({'production','horse_head','horse_head_reverse','leader_front','leader_reverse','leader_contact','leader_anatomy','leader_face','leader_face_left','leader_face_right','leader_face_profile','crowd_front','crowd_reverse','neutral_front','neutral_back','neutral_side'} | ANATOMY_VIEWS):
+        if not isinstance(recipe.get('view','production'),str) or recipe.get('view','production') not in ({'flag363','flag363_reverse','production','horse_chest','horse_chest_side','horse_chest_no_corrective','horse_chest_side_no_corrective','leader_right_contact','leader_left_contact','horse_head','horse_head_reverse','leader_front','leader_reverse','leader_contact','leader_anatomy','leader_face','leader_face_left','leader_face_right','leader_face_profile','crowd_front','crowd_reverse','neutral_front','neutral_back','neutral_side'} | ANATOMY_VIEWS):
             raise ValueError('NIHANG_DIAGNOSTIC_VIEW')
         frames=recipe['frames']
         if (not isinstance(frames,list) or not 1<=len(frames)<=16 or
@@ -42,6 +42,24 @@ def validate(recipe):
 def diagnostic_camera(bpy,view):
     """Temporary evidence camera only. No production-camera key edits or save."""
     from mathutils import Vector
+    if view in {'flag363','flag363_reverse'}:
+        flag=bpy.data.objects['MF363 physically solved tied pennant'];ev=flag.evaluated_get(bpy.context.evaluated_depsgraph_get());mesh=ev.to_mesh();target=sum((ev.matrix_world@v.co for v in mesh.vertices),Vector())/len(mesh.vertices);ev.to_mesh_clear();shaft=bpy.data.objects['LEADER spear world contact owner']
+        data=bpy.data.cameras.new('363 cloth diagnostic');data.type='ORTHO';data.ortho_scale=1.2;camera=bpy.data.objects.new(data.name,data);bpy.context.scene.collection.objects.link(camera);camera.location=target+shaft.matrix_world.to_quaternion()@Vector(((-1 if view.endswith('reverse') else 1)*1.2,-.7,.1));camera.rotation_euler=(target-camera.location).to_track_quat('-Z','Y').to_euler();return camera
+    if view.endswith('_no_corrective'):
+        for key in list(bpy.data.objects['horse'].data.shape_keys.key_blocks)[1:]:key.mute=True
+        bpy.context.view_layer.update();view=view.removesuffix('_no_corrective')
+    if view in {'horse_chest','horse_chest_side'}:
+        rig=bpy.data.objects['horse.rig'];target=rig.matrix_world@(rig.pose.bones['neck'].head+Vector((0,.03,-.35)))
+        head=rig.matrix_world@rig.pose.bones['head'].head;forward=head-target;forward.z=0;forward.normalize();side=Vector((-forward.y,forward.x,0))
+        data=bpy.data.cameras.new('363 chest diagnostic');data.type='ORTHO';data.ortho_scale=1.65
+        camera=bpy.data.objects.new(data.name,data);bpy.context.scene.collection.objects.link(camera)
+        camera.location=target+(side*2.5 if view.endswith('_side') else forward*2+side*.7)+Vector((0,0,.12));camera.rotation_euler=(target-camera.location).to_track_quat('-Z','Y').to_euler();return camera
+    if view in {'leader_right_contact','leader_left_contact'}:
+        rig=bpy.data.objects['MF coherent Nihang rig'];root=bpy.data.objects['mounted leader'];side='R' if view=='leader_right_contact' else 'L'
+        target=rig.matrix_world@rig.pose.bones['finger3-1.'+side].head
+        data=bpy.data.cameras.new('363 hand diagnostic');data.type='ORTHO';data.ortho_scale=.32
+        camera=bpy.data.objects.new(data.name,data);bpy.context.scene.collection.objects.link(camera)
+        camera.location=target+root.matrix_world.to_quaternion()@Vector((-.8 if side=='R' else .8,-1.4,.2));camera.rotation_euler=(target-camera.location).to_track_quat('-Z','Y').to_euler();return camera
     if view in {'horse_head','horse_head_reverse'}:
         rig=bpy.data.objects['horse.rig'];bone=rig.pose.bones['head']
         target=rig.matrix_world@((bone.head+bone.tail)*.5)
