@@ -1,0 +1,61 @@
+{
+  "run_digest": "30bc247c865f00a88e7b54285becab85eac9029b5360d92eaf541f0ac200adcc",
+  "verdict": "PASS",
+  "observation": "Evaluated actual Curve shaft mesh at eleven frames; terrain ray returned actual packed farm track surface in every sample. Minimum shaft gap9.5mm at294; no source-visible underground pole. Pole lifts with firstlift. This is interface/availability evidence, not motion approval.",
+  "comparison": "Actual returned source/report/image availability versus admitted recipe. Artistic unit criteria and full-speed AV remain separately NOT_TESTED.",
+  "open_defects": [],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh367-motion-c49-audit/snapshot.json",
+      "sha256": "839dacd03f93f2010f9f98475ff1d798c7683230bb66e3e5a1b5be581dfbd80d"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh367-motion-c49-audit/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh367-motion-c49-audit/script-diagnostics.json",
+      "sha256": "4e1205462c9c8153ef4f4d15eba35ea263f6079e3b74341771bbb12e2f41f34c"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh367-motion-c49-audit/scene.blend",
+      "sha256": "2dec0fdd36b1abbd55d1c0689fea4e46ab2733bd87348f6c9fc48d964d43bdd6"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh367-motion-c49-audit/patch-evidence.json",
+      "sha256": "3d1e48b78e48591362110b9a18d567994c3a7ffb3dc0e8995f9a50cc849577f1"
+    }
+  },
+  "retrospective_observations": [
+    {
+      "requirement": "prep_load",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "step",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "head_body",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "first_lift",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "evidence",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "director_motion",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    }
+  ]
+}

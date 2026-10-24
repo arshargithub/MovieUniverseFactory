@@ -1,0 +1,43 @@
+{
+  "parent": ".runtime/factory-native/sikh367-motion-c46-prepare/scene.blend",
+  "method": "Read-only current46 preparation audit: actual shaft material bottom vs actual terrain surface, with no motion/geometry/material edits. Resolve ambiguous oblique contact before chronological render.",
+  "proof": "Actual source pole-bottom/terrain ray and gap per selected phase; missing ray or material penetration remains FAIL/UNKNOWN, not imageguess or blanket PASS.",
+  "scope": "One preparation-through-firstlift unit, current44 read-only causal evidence; no other construction.",
+  "reconciliation": "367 supersedes old preserved-prep criterion. Same tasks/limits; process199tests verified. Fourappearance/ninemotion priorunused remain inhistory, noreset. Assignment43..52.",
+  "alternatives": "Reject retime-only plan because it cannot change rejected preparation; inspect actual support/pose ownership before authoring.",
+  "failure": "Unknown control ownership, unsafe source or missing reference comparison blocks authoring. Source/frame mismatch fails; fullspeed remains Director.",
+  "cause": "46 oblique can make a contact look buried; actor balance and load move pole. Need actual current material/terrain contact, not source origin or projected image assumptions.",
+  "expected": "Establish whether current pole clearance is safe; if failed, local contact repair inside this preparation unit; preserve useful motion.",
+  "steps": [
+    {
+      "id": "audit",
+      "depends_on": [],
+      "recipe": {
+        "operation": "nihang_patch",
+        "frame": 314,
+        "width": 432,
+        "height": 768,
+        "samples": 8,
+        "edits": [
+          {
+            "kind": "mounted_prepaudit367",
+            "target": "mounted leader"
+          }
+        ]
+      }
+    }
+  ],
+  "sources": [
+    "src/movie_factory/adapters/blender/nihang_prep367.py",
+    "src/movie_factory/adapters/blender/nihang_patch.py",
+    "src/movie_factory/adapters/blender/nihang_control.py",
+    "results/sikh367/AUDIT44.md",
+    "results/sikh367/REFERENCE_POSE_MAP.md",
+    ".runtime/factory-native/sikh367-motion-c44-audit/prepaudit367.json",
+    "results/sikh367/REVIEW45.md"
+  ],
+  "retro_evidence": [
+    "results/sikh367/AUDIT44.md",
+    "results/sikh367/REFERENCE_POSE_MAP.md"
+  ]
+}

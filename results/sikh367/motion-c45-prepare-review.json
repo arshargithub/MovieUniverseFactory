@@ -1,0 +1,61 @@
+{
+  "run_digest": "cf33238c236034db08ab9304ad110dd294096bf3cac5efa1d4fd72ec699ef8c1",
+  "verdict": "PASS",
+  "observation": "Actual32-frame prep report inspected: source1621 geometry hashes unchanged; staggered support targets and folded forefoot/head/body poses written, three-source phase interfaces recorded. This is native authoring availability only; actual wholebody renders must test shape, balance and reference match before any artistic verdict.",
+  "comparison": "Actual returned source/report/image availability versus admitted recipe. Artistic unit criteria and full-speed AV remain separately NOT_TESTED.",
+  "open_defects": [],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh367-motion-c45-prepare/snapshot.json",
+      "sha256": "4ec9c24b9a75bdd6028ff83af954171ad85480d86eeb5b9d51482d5ad812143d"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh367-motion-c45-prepare/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh367-motion-c45-prepare/script-diagnostics.json",
+      "sha256": "4e1205462c9c8153ef4f4d15eba35ea263f6079e3b74341771bbb12e2f41f34c"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh367-motion-c45-prepare/scene.blend",
+      "sha256": "546a23683692057b13eb800e3d479fa1d0718efc7f57a351e9783199f5f26aea"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh367-motion-c45-prepare/patch-evidence.json",
+      "sha256": "fdb057fd1e00a4e5158a69de26dc8e9087aa1e8e340b9506d5dec75342503c27"
+    }
+  },
+  "retrospective_observations": [
+    {
+      "requirement": "prep_load",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "step",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "head_body",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "first_lift",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "evidence",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "director_motion",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "run_digest": "0dd06dda95e609336baf009fbb2bcb46ec3b910e4531c61f566f4ecbb318cb6e",
+  "verdict": "PASS",
+  "observation": "Actual phase06 chronological sheet and corresponding native frames inspected against original reference; complete scoped observations in FINAL_FRAME_REVIEW.md. Transport only here; direct motion NOT_TESTED.",
+  "comparison": "Actual returned source/report/image availability versus admitted recipe. Artistic unit criteria and full-speed AV remain separately NOT_TESTED.",
+  "open_defects": [],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh367-motion-c49-phase06/snapshot.json",
+      "sha256": "839dacd03f93f2010f9f98475ff1d798c7683230bb66e3e5a1b5be581dfbd80d"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh367-motion-c49-phase06/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh367-motion-c49-phase06/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh367-motion-c49-phase06/frame.png",
+      "sha256": "3c6686ed684b0caec3a7045b32755f6c625b12d1eb5ad8d3f95c10d86f1c423a"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh367-motion-c49-phase06/frames.json",
+      "sha256": "31786798445f6717ee2413560a4570878a0771a526ba24de1d6902d5cf9d2d3a"
+    },
+    "frame_311": {
+      "path": ".runtime/factory-native/sikh367-motion-c49-phase06/frame-0311.png",
+      "sha256": "ceea2ece531c8858a907ce40e026bd35b07f9278f8c5e457d1f0c3e066a5cf4a"
+    },
+    "frame_312": {
+      "path": ".runtime/factory-native/sikh367-motion-c49-phase06/frame-0312.png",
+      "sha256": "0b5ea5e92d2cc4ee99ac781d9bd9de69dcdd84acf79b6bf8cc0f2e90ff55ad5d"
+    },
+    "frame_313": {
+      "path": ".runtime/factory-native/sikh367-motion-c49-phase06/frame-0313.png",
+      "sha256": "e73585eea2b3ef34991df9fc870364febb2bb2332a493885ef71445aafc8c8e8"
+    },
+    "frame_314": {
+      "path": ".runtime/factory-native/sikh367-motion-c49-phase06/frame.png",
+      "sha256": "3c6686ed684b0caec3a7045b32755f6c625b12d1eb5ad8d3f95c10d86f1c423a"
+    }
+  },
+  "retrospective_observations": [
+    {
+      "requirement": "prep_load",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "step",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "head_body",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "first_lift",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "evidence",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "director_motion",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    }
+  ]
+}

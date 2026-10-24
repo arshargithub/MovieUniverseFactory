@@ -1,0 +1,90 @@
+{
+  "run_digest": "56d3ac776678c86f27fc73eb1696254312834dcc30270df0b9c428f3cb4184e6",
+  "verdict": "FAIL",
+  "observation": "Actual side45 improves folded step and hind gathering, but head/neck hang too low rather than forming reference proud gathered arch; rider leans backward into firstlift. Reject, do not promote relative improvement.",
+  "comparison": "Reference15.0..16.5s has high arched neck/poll and purposeful gathered torso with rider in control. Actual side283/297/306/314 fails those positive qualities.",
+  "open_defects": [
+    "Head/neck below intended gathered arch",
+    "Backward rider balance at firstlift"
+  ],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh367-motion-c45-side/snapshot.json",
+      "sha256": "4ec9c24b9a75bdd6028ff83af954171ad85480d86eeb5b9d51482d5ad812143d"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh367-motion-c45-side/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh367-motion-c45-side/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh367-motion-c45-side/frame.png",
+      "sha256": "39fc8a6c7d69d6f4e79f1969c81e0bae5b3a0e51219e670dc27e8b2a4c8fdfcc"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh367-motion-c45-side/frames.json",
+      "sha256": "2cb534e01ce872641ccc6d4e399f884b079f3bc347c4944f5bafc4c740dc37c1"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh367-motion-c45-side/frame-0283.png",
+      "sha256": "fb3562cdf9c6ae01affda552ce1c4b03a4c874d6924e462ad93cd579c6c65d6d"
+    },
+    "frame_297": {
+      "path": ".runtime/factory-native/sikh367-motion-c45-side/frame-0297.png",
+      "sha256": "336091b15895857c551ba74af4077fc8660126365f4e1b717a0c906472bc57b2"
+    },
+    "frame_306": {
+      "path": ".runtime/factory-native/sikh367-motion-c45-side/frame-0306.png",
+      "sha256": "ef4b72a99e39e887bf15ed28b11394fc314e3beeff7a9c4f957ac96d8c60b6a4"
+    },
+    "frame_314": {
+      "path": ".runtime/factory-native/sikh367-motion-c45-side/frame.png",
+      "sha256": "39fc8a6c7d69d6f4e79f1969c81e0bae5b3a0e51219e670dc27e8b2a4c8fdfcc"
+    }
+  },
+  "retrospective_observations": [
+    {
+      "requirement": "preservation",
+      "status": "NOT_TESTED",
+      "observation": "Not accepted by this failed component proof."
+    },
+    {
+      "requirement": "prep_load",
+      "status": "NOT_TESTED",
+      "observation": "Not accepted by this failed component proof."
+    },
+    {
+      "requirement": "step",
+      "status": "NOT_TESTED",
+      "observation": "Not accepted by this failed component proof."
+    },
+    {
+      "requirement": "head_body",
+      "status": "FAIL",
+      "observation": "Actual side45 improves folded step and hind gathering, but head/neck hang too low rather than forming reference proud gathered arch; rider leans backward into firstlift. Reject, do not promote relative improvement."
+    },
+    {
+      "requirement": "first_lift",
+      "status": "FAIL",
+      "observation": "Actual side45 improves folded step and hind gathering, but head/neck hang too low rather than forming reference proud gathered arch; rider leans backward into firstlift. Reject, do not promote relative improvement."
+    },
+    {
+      "requirement": "scope",
+      "status": "NOT_TESTED",
+      "observation": "Not accepted by this failed component proof."
+    },
+    {
+      "requirement": "evidence",
+      "status": "NOT_TESTED",
+      "observation": "Not accepted by this failed component proof."
+    },
+    {
+      "requirement": "director_motion",
+      "status": "NOT_TESTED",
+      "observation": "Not accepted by this failed component proof."
+    }
+  ]
+}

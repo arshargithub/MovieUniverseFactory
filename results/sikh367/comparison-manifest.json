@@ -1,0 +1,31 @@
+{
+  "reference": {
+    "path": ".runtime/art-direction/series01-sikh256/references/reference-b.mov",
+    "sha256": "78d0d691e8712c02931876cf0bc405e4869de357f337f531708be7a7da4898e2"
+  },
+  "crop": [
+    190,
+    338,
+    350,
+    308
+  ],
+  "reference_start_seconds": 15,
+  "duration_seconds": 1.625,
+  "reference_clip": {
+    "path": ".runtime/art-direction/sikh367-review/reference-preparation.mp4",
+    "sha256": "f56a162a884e350bb5c8d6859413c44427e6f4418a62592ce8ed12f68fb23d4b"
+  },
+  "candidate": {
+    "path": ".runtime/art-direction/sikh367-review/preparation-firstlift.mp4",
+    "sha256": "ac72a7cb8f6e1fe4ddc2d90492881877c13f50332fca5dbc8a4077b0017a3db8"
+  },
+  "comparison": {
+    "path": ".runtime/art-direction/sikh367-review/preparation-reference-comparison.mp4",
+    "sha256": "0432fc7b820ffe1d184a8d79d2d91d81658c3252c8673d4ab8100edac5551dd4"
+  },
+  "three_normal_speed_repeats": {
+    "path": ".runtime/art-direction/sikh367-review/preparation-comparison-three-repeats.mp4",
+    "sha256": "6684228e9a519502031c98a3c23c418adee9e3b0fcc233f573556c0d5031dfe5"
+  },
+  "scope": "Private reference crop and candidate both normal-time24fps. Three repeats are review convenience only. No mirroring, optical flow, timewarp or extra pose hold; source captions cropped out and not adopted. Diagnostic phase comparison only."
+}

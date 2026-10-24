@@ -1,0 +1,282 @@
+{
+  "parent": ".runtime/factory-native/sikh363-motion-c42-save/scene.blend",
+  "method": "Replace only283..314 preparation using supported body load, folded foreleg placement and staggered hind steps that plant under the hips; linked actor local poses follow source prep clock, reins rebuilt. No mesh/material change; invalidate old flag cache.",
+  "proof": "Actual world support/hoof/body/head data, frozen geometry equality, source-bound wholehorse side/oblique/intended controls at step/load/firstlift. Reject small taps, trailing support or upright-body loading; later rear and chest are not accepted.",
+  "scope": "One preparation-through-firstlift unit, current44 read-only causal evidence; no other construction.",
+  "reconciliation": "367 supersedes old preserved-prep criterion. Same tasks/limits; process199tests verified. Fourappearance/ninemotion priorunused remain inhistory, noreset. Assignment43..52.",
+  "alternatives": "Reject retime-only plan because it cannot change rejected preparation; inspect actual support/pose ownership before authoring.",
+  "failure": "Unknown control ownership, unsafe source or missing reference comparison blocks authoring. Source/frame mismatch fails; fullspeed remains Director.",
+  "cause": "44 side controls reveal trailing hind supports plus insufficient head/body/foreleg action. Replace rejected targets and pose family, not another retime.",
+  "expected": "Substantial folded step, loaded bent hind support under pelvis, coupled head-neck-trunk gather then firstlift; actual geometry unchanged.",
+  "steps": [
+    {
+      "id": "prepare",
+      "depends_on": [],
+      "requirements": [
+        "preservation",
+        "scope",
+        "prep_load",
+        "step",
+        "head_body",
+        "first_lift"
+      ],
+      "recipe": {
+        "operation": "nihang_patch",
+        "frame": 314,
+        "width": 432,
+        "height": 768,
+        "samples": 8,
+        "edits": [
+          {
+            "kind": "mounted_prep367",
+            "target": "mounted leader",
+            "anchors": [
+              {
+                "pitch": 0.0,
+                "hip_back": 0.0,
+                "hip_drop": 0.0,
+                "neck_pitch": 0.0,
+                "poll_pitch": 0.0,
+                "left_fold": 0.0,
+                "right_fold": 0.0,
+                "left_back": 0.0,
+                "right_back": 0.0,
+                "left_lift": 0.0,
+                "right_lift": 0.0,
+                "actor_time": 283,
+                "left_hind_forward": 0.0,
+                "right_hind_forward": 0.0,
+                "left_hind_lift": 0.0,
+                "right_hind_lift": 0.0,
+                "frame": 283
+              },
+              {
+                "pitch": 0.0,
+                "hip_back": 0.0,
+                "hip_drop": 0.0,
+                "neck_pitch": 0.0,
+                "poll_pitch": 0.0,
+                "left_fold": 0.0,
+                "right_fold": 0.0,
+                "left_back": 0.0,
+                "right_back": 0.0,
+                "left_lift": 0.0,
+                "right_lift": 0.0,
+                "actor_time": 291,
+                "left_hind_forward": 0.0,
+                "right_hind_forward": 0.0,
+                "left_hind_lift": 0.0,
+                "right_hind_lift": 0.0,
+                "frame": 291
+              },
+              {
+                "pitch": 0.02,
+                "hip_back": 0.02,
+                "hip_drop": 0.035,
+                "neck_pitch": 0.14,
+                "poll_pitch": 0.4,
+                "left_fold": 0.3,
+                "right_fold": 0.0,
+                "left_back": -0.02,
+                "right_back": 0.0,
+                "left_lift": 0.0,
+                "right_lift": 0.0,
+                "actor_time": 293,
+                "left_hind_forward": 0.0,
+                "right_hind_forward": 0.1,
+                "left_hind_lift": 0.0,
+                "right_hind_lift": 0.05,
+                "frame": 294
+              },
+              {
+                "pitch": 0.04,
+                "hip_back": 0.04,
+                "hip_drop": 0.07,
+                "neck_pitch": 0.28,
+                "poll_pitch": 0.75,
+                "left_fold": 0.48,
+                "right_fold": 0.0,
+                "left_back": -0.06,
+                "right_back": 0.0,
+                "left_lift": 0.0,
+                "right_lift": 0.0,
+                "actor_time": 295,
+                "left_hind_forward": 0.0,
+                "right_hind_forward": 0.22,
+                "left_hind_lift": 0.0,
+                "right_hind_lift": 0,
+                "frame": 297
+              },
+              {
+                "pitch": 0.05,
+                "hip_back": 0.06,
+                "hip_drop": 0.1,
+                "neck_pitch": 0.36,
+                "poll_pitch": 0.95,
+                "left_fold": 0,
+                "right_fold": 0.0,
+                "left_back": -0.08,
+                "right_back": 0.0,
+                "left_lift": 0.0,
+                "right_lift": 0.0,
+                "actor_time": 297,
+                "left_hind_forward": 0.0,
+                "right_hind_forward": 0.22,
+                "left_hind_lift": 0.0,
+                "right_hind_lift": 0,
+                "frame": 300
+              },
+              {
+                "pitch": 0.055,
+                "hip_back": 0.08,
+                "hip_drop": 0.13,
+                "neck_pitch": 0.42,
+                "poll_pitch": 1.1,
+                "left_fold": 0,
+                "right_fold": 0.35,
+                "left_back": -0.08,
+                "right_back": -0.04,
+                "left_lift": 0.0,
+                "right_lift": 0.0,
+                "actor_time": 299,
+                "left_hind_forward": 0.1,
+                "right_hind_forward": 0.22,
+                "left_hind_lift": 0.045,
+                "right_hind_lift": 0,
+                "frame": 303
+              },
+              {
+                "pitch": 0.05,
+                "hip_back": 0.1,
+                "hip_drop": 0.15,
+                "neck_pitch": 0.45,
+                "poll_pitch": 1.1,
+                "left_fold": 0,
+                "right_fold": 0,
+                "left_back": -0.08,
+                "right_back": -0.08,
+                "left_lift": 0.0,
+                "right_lift": 0.0,
+                "actor_time": 300,
+                "left_hind_forward": 0.2,
+                "right_hind_forward": 0.22,
+                "left_hind_lift": 0,
+                "right_hind_lift": 0,
+                "frame": 306
+              },
+              {
+                "pitch": 0.015,
+                "hip_back": 0.1,
+                "hip_drop": 0.14,
+                "neck_pitch": 0.3,
+                "poll_pitch": 0.8,
+                "left_fold": 0,
+                "right_fold": 0,
+                "left_back": -0.08,
+                "right_back": -0.08,
+                "left_lift": 0.0,
+                "right_lift": 0.0,
+                "actor_time": 302,
+                "left_hind_forward": 0.2,
+                "right_hind_forward": 0.22,
+                "left_hind_lift": 0,
+                "right_hind_lift": 0,
+                "frame": 309
+              },
+              {
+                "pitch": -0.1,
+                "hip_back": 0.1,
+                "hip_drop": 0.07,
+                "neck_pitch": 0.05,
+                "poll_pitch": 0.25,
+                "left_fold": 0.12,
+                "right_fold": 0.08,
+                "left_back": -0.08,
+                "right_back": -0.08,
+                "left_lift": 0.0,
+                "right_lift": 0.0,
+                "actor_time": 305,
+                "left_hind_forward": 0.2,
+                "right_hind_forward": 0.22,
+                "left_hind_lift": 0,
+                "right_hind_lift": 0,
+                "frame": 312
+              },
+              {
+                "pitch": -0.25,
+                "hip_back": 0.1,
+                "hip_drop": 0.03,
+                "neck_pitch": -0.1,
+                "poll_pitch": -0.1,
+                "left_fold": 0.35,
+                "right_fold": 0.25,
+                "left_back": -0.08,
+                "right_back": -0.08,
+                "left_lift": 0.0,
+                "right_lift": 0.0,
+                "actor_time": 306,
+                "left_hind_forward": 0.2,
+                "right_hind_forward": 0.22,
+                "left_hind_lift": 0,
+                "right_hind_lift": 0,
+                "frame": 314
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "side",
+      "depends_on": [
+        "prepare"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 314,
+        "frames": [
+          283,
+          297,
+          306,
+          314
+        ],
+        "view": "horse_side367",
+        "width": 640,
+        "height": 640,
+        "samples": 8
+      }
+    },
+    {
+      "id": "oblique",
+      "depends_on": [
+        "prepare"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 314,
+        "frames": [
+          283,
+          297,
+          306,
+          314
+        ],
+        "view": "horse_phase367",
+        "width": 640,
+        "height": 640,
+        "samples": 8
+      }
+    }
+  ],
+  "sources": [
+    "src/movie_factory/adapters/blender/nihang_prep367.py",
+    "src/movie_factory/adapters/blender/nihang_patch.py",
+    "src/movie_factory/adapters/blender/nihang_control.py",
+    "results/sikh367/AUDIT44.md",
+    "results/sikh367/REFERENCE_POSE_MAP.md",
+    ".runtime/factory-native/sikh367-motion-c44-audit/prepaudit367.json"
+  ],
+  "retro_evidence": [
+    "results/sikh367/AUDIT44.md",
+    "results/sikh367/REFERENCE_POSE_MAP.md"
+  ]
+}

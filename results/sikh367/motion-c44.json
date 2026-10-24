@@ -1,0 +1,74 @@
+{
+  "parent": ".runtime/factory-native/sikh363-motion-c42-save/scene.blend",
+  "method": "Read-only actual preparation control/geometry audit and stable wholebody oblique/side negative controls before primary pose replacement. Source preserved; not another retime.",
+  "proof": "Actual grounded load/head/foreleg/pelvis data and source-matched wholebody silhouettes. This step must expose why old preparation fails reference15.5..16.5; availability does not pass its art.",
+  "scope": "One preparation-through-firstlift unit, current44 read-only causal evidence; no other construction.",
+  "reconciliation": "367 supersedes old preserved-prep criterion. Same tasks/limits; process199tests verified. Fourappearance/ninemotion priorunused remain inhistory, noreset. Assignment43..52.",
+  "alternatives": "Reject retime-only plan because it cannot change rejected preparation; inspect actual support/pose ownership before authoring.",
+  "failure": "Unknown control ownership, unsafe source or missing reference comparison blocks authoring. Source/frame mismatch fails; fullspeed remains Director.",
+  "cause": "Rejected prep explicitly preserved by priorplan; smallforefoot adjustment and insufficient coupledbodyload. Need actualcontrol/pose data before replacement.",
+  "expected": "Identify source domains/grounded support and wholebody negative-control mismatch, then explicitly author new preparation.",
+  "steps": [
+    {
+      "id": "audit",
+      "depends_on": [],
+      "requirements": [
+        "preservation",
+        "scope"
+      ],
+      "recipe": {
+        "operation": "nihang_patch",
+        "frame": 314,
+        "width": 432,
+        "height": 768,
+        "samples": 8,
+        "edits": [
+          {
+            "kind": "mounted_prepaudit367",
+            "target": "mounted leader"
+          }
+        ]
+      }
+    },
+    {
+      "id": "side",
+      "depends_on": [
+        "audit"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 314,
+        "frames": [
+          283,
+          298,
+          306,
+          314
+        ],
+        "view": "horse_side367",
+        "width": 640,
+        "height": 640,
+        "samples": 8
+      }
+    },
+    {
+      "id": "oblique",
+      "depends_on": [
+        "audit"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 314,
+        "frames": [
+          283,
+          298,
+          306,
+          314
+        ],
+        "view": "horse_phase367",
+        "width": 640,
+        "height": 640,
+        "samples": 8
+      }
+    }
+  ]
+}

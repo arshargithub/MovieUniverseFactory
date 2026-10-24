@@ -58,6 +58,13 @@ dependencies are not a proven production path.
 
 ### Strategy and quality
 
+Director367 applies scoped work units to new substantial production plans:
+read `docs/knowledge/WORK_UNITS_367.md`. One primary perceptual outcome, positive
+reference criteria, declared allowed/frozen domains and phase interfaces must
+survive planning, execution and review. Rejected behavior is not protected.
+Retain original tasks/limits; narrower units do not reset corrections or require
+routine Director handoffs. Mechanical coverage is not artistic judgment.
+
 Exchange330 adopts serial planning substages for substantial production work:
 read `docs/knowledge/PLANNING_PIPELINE_330.md`. Ground sources/learnings/film
 language/preferences/reference roles, derive per-beat expert requirements, choose

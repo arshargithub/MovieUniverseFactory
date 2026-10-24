@@ -1,0 +1,61 @@
+{
+  "run_digest": "a17eb6b8843c85cb163c559d0b1aaab8cd96efad0260d214168caa2736ed7bd7",
+  "verdict": "PASS",
+  "observation": "Actual source audit inspected: horse and coherent rig ownership, grounded/world head and foot samples and underlying geometry hashes present. Source preparation has small foot changes and inadequate coordinated load; retained as negative control, not passed as motion.",
+  "comparison": "Actual returned source/report/image availability versus admitted recipe. Artistic unit criteria and full-speed AV remain separately NOT_TESTED.",
+  "open_defects": [],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh367-motion-c44-audit/snapshot.json",
+      "sha256": "1f3ba155579dd8e831eb5eef92109cf40617980f94d476caeb71760c6b68eaf2"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh367-motion-c44-audit/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh367-motion-c44-audit/script-diagnostics.json",
+      "sha256": "4e1205462c9c8153ef4f4d15eba35ea263f6079e3b74341771bbb12e2f41f34c"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh367-motion-c44-audit/scene.blend",
+      "sha256": "8f58a6dd93f47a09eeb66a545046ec1e93096d42d1dd86227534c8cfad3a81ce"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh367-motion-c44-audit/patch-evidence.json",
+      "sha256": "e5f409d8d8b4195ae65d923fd8b9e7fcc1e4ca7b840cb472777031570faa085f"
+    }
+  },
+  "retrospective_observations": [
+    {
+      "requirement": "prep_load",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "step",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "head_body",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "first_lift",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "evidence",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "director_motion",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    }
+  ]
+}

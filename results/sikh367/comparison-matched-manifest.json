@@ -1,0 +1,113 @@
+{
+  "source_candidate": {
+    "path": ".runtime/art-direction/sikh367-review/preparation-firstlift.mp4",
+    "sha256": "ac72a7cb8f6e1fe4ddc2d90492881877c13f50332fca5dbc8a4077b0017a3db8"
+  },
+  "reference_clip": {
+    "path": ".runtime/art-direction/sikh367-review/reference-preparation.mp4",
+    "sha256": "f56a162a884e350bb5c8d6859413c44427e6f4418a62592ce8ed12f68fb23d4b"
+  },
+  "candidate_display_crop": [
+    60,
+    25,
+    330,
+    330
+  ],
+  "comparison": {
+    "path": ".runtime/art-direction/sikh367-review/preparation-reference-matched-size.mp4",
+    "sha256": "fc486e4dfa86ee04d4d761a78dc3dc5cc88a6fc6855db42f73b25076171abb34"
+  },
+  "review_repeats": {
+    "path": ".runtime/art-direction/sikh367-review/preparation-matched-three-repeats.mp4",
+    "sha256": "8f86fa419aa7101c3883683e832a5fc7160a461cef3f1b22cb7cc28655e0edfd"
+  },
+  "profile": {
+    "streams": [
+      {
+        "index": 0,
+        "codec_name": "h264",
+        "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+        "profile": "High",
+        "codec_type": "video",
+        "codec_tag_string": "avc1",
+        "codec_tag": "0x31637661",
+        "width": 864,
+        "height": 472,
+        "coded_width": 864,
+        "coded_height": 480,
+        "has_b_frames": 2,
+        "sample_aspect_ratio": "2375:2376",
+        "display_aspect_ratio": "2375:1298",
+        "pix_fmt": "yuv420p",
+        "level": 30,
+        "color_range": "tv",
+        "color_space": "bt709",
+        "chroma_location": "left",
+        "field_order": "progressive",
+        "refs": 4,
+        "is_avc": "true",
+        "nal_length_size": "4",
+        "id": "0x1",
+        "r_frame_rate": "24/1",
+        "avg_frame_rate": "24/1",
+        "time_base": "1/12288",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 59904,
+        "duration": "4.875000",
+        "bit_rate": "2909595",
+        "bits_per_raw_sample": "8",
+        "nb_frames": "117",
+        "nb_read_frames": "117",
+        "extradata_size": 55,
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0,
+          "non_diegetic": 0,
+          "captions": 0,
+          "descriptions": 0,
+          "metadata": 0,
+          "dependent": 0,
+          "still_image": 0,
+          "multilayer": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "VideoHandler",
+          "vendor_id": "[0][0][0][0]",
+          "encoder": "Lavc62.11.100 libx264"
+        }
+      }
+    ],
+    "format": {
+      "filename": "/Volumes/MovieFactorySSD/MovieUniverseFactory/.runtime/art-direction/sikh367-review/preparation-matched-three-repeats.mp4",
+      "nb_streams": 1,
+      "nb_programs": 0,
+      "nb_stream_groups": 0,
+      "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+      "format_long_name": "QuickTime / MOV",
+      "start_time": "0.000000",
+      "duration": "4.875000",
+      "size": "1775338",
+      "bit_rate": "2913375",
+      "probe_score": 100,
+      "tags": {
+        "major_brand": "isom",
+        "minor_version": "512",
+        "compatible_brands": "isomiso2avc1mp41",
+        "encoder": "Lavf62.3.100"
+      }
+    }
+  },
+  "scope": "Whole horse retained in a closer display crop to reduce size bias. Native camera unchanged. Three unchanged-speed repeats, no added hold, motion interpolation or timewarp."
+}

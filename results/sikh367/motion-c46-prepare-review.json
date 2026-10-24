@@ -1,0 +1,61 @@
+{
+  "run_digest": "3490d0a03d81f8bcab7a97927a56dece30031ba96b428b194de397d0d0d47a30",
+  "verdict": "PASS",
+  "observation": "Actual39-frame report inspected:1621 geometry hashes unchanged; bounded neck-chain ratios, support targets and actual rider torso-axis/pelvis measurements present. No source/frame motion pass until current wholebody images compared with reference.",
+  "comparison": "Actual returned source/report/image availability versus admitted recipe. Artistic unit criteria and full-speed AV remain separately NOT_TESTED.",
+  "open_defects": [],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh367-motion-c46-prepare/snapshot.json",
+      "sha256": "9875ea5d7c70b24e15c1d72258f5a855e141cd01a42680a16688edce9cfb79a2"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh367-motion-c46-prepare/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh367-motion-c46-prepare/script-diagnostics.json",
+      "sha256": "4e1205462c9c8153ef4f4d15eba35ea263f6079e3b74341771bbb12e2f41f34c"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh367-motion-c46-prepare/scene.blend",
+      "sha256": "02d5efc152b57cc5be3d7c2cad5539aa7fb63ee593c7092ced13a4f3bf0afed9"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh367-motion-c46-prepare/patch-evidence.json",
+      "sha256": "c08838a5753a90e9a76a65c14e5f69725778da8d06299005304ca4005989d9ec"
+    }
+  },
+  "retrospective_observations": [
+    {
+      "requirement": "prep_load",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "step",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "head_body",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "first_lift",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "evidence",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "director_motion",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    }
+  ]
+}
