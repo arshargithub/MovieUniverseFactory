@@ -6,7 +6,7 @@
   },
   "core": {
     "path": "AGENTS.md",
-    "sha256": "2a1831a28164078dccf5fc7092546c8596973a72b3d806cde9d92c0b343db805"
+    "sha256": "8523ce67699284c0c28819ff2c74e0ea483dce434cfff1ef44f163d05e61f8eb"
   },
   "topics": {
     "workflow": {
@@ -748,5 +748,14 @@
       "reconciliation": "Original instruction retained verbatim; current Director decisions resolve historical pending states. Core is mandatory; routed specifics remain mandatory when applicable."
     }
   ],
-  "limits": "Explicit topic routing, not semantic task classification. Preserve core and reconcile adjacent domains manually."
+  "limits": "Explicit topic routing, not semantic task classification. Preserve core and reconcile adjacent domains manually.",
+  "core_revision_367": {
+    "prior_core_sha256": "2a1831a28164078dccf5fc7092546c8596973a72b3d806cde9d92c0b343db805",
+    "adopted_source": "docs/knowledge/WORK_UNITS_367.md",
+    "core_sections": [
+      "strategy-and-quality"
+    ],
+    "coverage": "Universal core addendum applies to covered substantial production units; original42 verbatim rules and topic maps unchanged. Positive criteria, allowed/frozen scope, phase interfaces, same-task limits and non-oracle review survive every stage.",
+    "review": "results/sikh368/CONTEXT_RECONCILIATION.md"
+  }
 }
