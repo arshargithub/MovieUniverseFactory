@@ -10,6 +10,8 @@ def test_exact_scope_and_safe_recipe():
     nihang_patch.validate(recipe)
     p.validate(dict(kind='mounted_padcontact369', target='fitted saddle blanket292', mode='bind'))
     p.validate(dict(kind='mounted_padcontact369', target='fitted saddle blanket292', mode='follow'))
+    p.validate(dict(kind='mounted_padcontact369', target='fitted saddle blanket292', mode='diagnose'))
+    p.validate(dict(kind='mounted_padcontact369', target='fitted saddle blanket292', mode='refine', level=3))
     for field, value in [('code', 'arbitrary'), ('target', 'horse'), ('offset', .5), ('mode', 'sculpt')]:
         bad = dict(e); bad[field] = value
         with pytest.raises(ValueError): p.validate(bad)
@@ -26,3 +28,9 @@ def test_inside_and_outside_are_distinct_controls():
     assert p.classify([.008, -.006, -.002])['penetrating_samples'] == 2
     for values in ([], [float('nan')]):
         with pytest.raises(ValueError): p.classify(values)
+
+
+@pytest.mark.parametrize('level', [True, 1, 4, 2.5, '3'])
+def test_refinement_is_bounded(level):
+    with pytest.raises(ValueError):
+        p.validate(dict(kind='mounted_padcontact369', target='fitted saddle blanket292', mode='refine', level=level))

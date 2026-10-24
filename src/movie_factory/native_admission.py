@@ -18,6 +18,15 @@ _ACTIVE = {}
 BLENDER_BIN = '/Applications/Blender.app/Contents/MacOS/Blender'
 
 
+def timeout_limit(recipe):
+    """370: finite39-frame contact cache only; every other operation keeps600s."""
+    if (isinstance(recipe, dict) and recipe.get('operation') == 'nihang_patch'
+            and recipe.get('edits') == [dict(kind='mounted_padcontact369',
+                                            target='fitted saddle blanket292', mode='envelope')]):
+        return 1200
+    return 600
+
+
 def engine_digest():
     folder = Path(__file__).parent / 'adapters/blender'
     return pk.digest({str(p.relative_to(folder)): pk.file_hash(p) for p in sorted(folder.glob('*.py'))})
@@ -92,7 +101,9 @@ class Bridge:
         from .task_router import DATABASE
         from .adapters.blender.runner import run_blender
         require(blender_bin == BLENDER_BIN, 'UNREGISTERED_NATIVE_EXECUTABLE')
-        require(type(timeout) in {int, float} and 0 < timeout <= 600, 'NATIVE_TIMEOUT_BOUND')
+        require(type(timeout) in {int, float} and 0 < timeout <= 1200, 'NATIVE_TIMEOUT_BOUND')
+        if recipe is None:
+            require(timeout <= 600, 'NATIVE_TIMEOUT_BOUND')
         require(self.c.database == self.c.root / DATABASE, 'NATIVE_CANONICAL_CONTROLLER_REQUIRED')
         state = self.c.state(task)
         self.c._fresh(state)
@@ -116,6 +127,7 @@ class Bridge:
                 require('render' in state['routing']['request']['operations'], 'UNROUTED_RENDER')
         else:
             require(not steps[step].get('native_recipe'), 'NATIVE_RECIPE_REQUIRED')
+        require(timeout <= timeout_limit(recipe_data), 'NATIVE_TIMEOUT_BOUND')
         previous = self.runs(state)
         from . import work_units
         work_units.native(state, recipe_data)
@@ -144,7 +156,8 @@ class Bridge:
             if recipe_data['operation'] == 'nihang_patch': job['mode'] = 'nihang_patch'
         record = {'id': run_id, 'task': task, 'step': step, 'cycle': state['cycle'],
                   'fingerprint': state['fingerprint'], 'parent': parent,
-                  'job_digest': pk.digest(job), 'handler_digest': engine_digest(), 'status': 'RESERVED'}
+                  'job_digest': pk.digest(job), 'handler_digest': engine_digest(), 'status': 'RESERVED',
+                  'timeout_seconds': timeout}
         # Reservation precedes any process or output directory. Crash between
         # these writes leaves a held lease, never an automatic retry permission.
         self.c.job(task, run_id, 'acquire', 'native-acquire:' + run_id)
