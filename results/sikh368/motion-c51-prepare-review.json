@@ -1,0 +1,61 @@
+{
+  "run_digest": "535cd28aa9975388bb27ce359fb9a68a2fbe8872d373abbbe764f1d9cb411a3c",
+  "verdict": "PASS",
+  "observation": "Actual51 report: left hind swing clears prior stance plane by38.8mm and settles before release; outside301..305 report states equal50. 1621 geometry domains unchanged. Full source/contact/image checks still required; no automatic cachedmedia reuse.",
+  "comparison": "Actual returned source/report/image availability versus admitted recipe. Artistic unit criteria and full-speed AV remain separately NOT_TESTED.",
+  "open_defects": [],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh368-motion-c51-prepare/snapshot.json",
+      "sha256": "94b87fe94c911d3c5929e56408081e25e39d5f9fad9621984e2d777f3e7f047b"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh368-motion-c51-prepare/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh368-motion-c51-prepare/script-diagnostics.json",
+      "sha256": "4e1205462c9c8153ef4f4d15eba35ea263f6079e3b74341771bbb12e2f41f34c"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh368-motion-c51-prepare/scene.blend",
+      "sha256": "e7613c162c9fd642af20e63260bdfdbb4def7ec67e2e559367e27a311374e331"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh368-motion-c51-prepare/patch-evidence.json",
+      "sha256": "6ca169cdaa710c55627c755bc042f6772346ab0d4b499b00a40483f651453a33"
+    }
+  },
+  "retrospective_observations": [
+    {
+      "requirement": "prep_load",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "step",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "head_body",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "first_lift",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "evidence",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "director_motion",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    }
+  ]
+}

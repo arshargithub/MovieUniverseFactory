@@ -1,0 +1,75 @@
+{
+  "run_digest": "d4e311c06cf70a07647aaec82b212a63a754a54bfa03505c9c11cf783e8fe9b9",
+  "verdict": "FAIL",
+  "observation": "Actual wholephase source report and frames300..306 reveal left hindhoof skating13.8cm horizontally with~zero verticalchange during gather. Singleforebrace and headlead improve, but hindcontact fails.",
+  "comparison": "Reference functional brace/load and fixed support requirement; pose angles/forefoot eventcounts do not excuse hindfoot sliding.",
+  "open_defects": [
+    "HIND_CONTACT50_SLIDING"
+  ],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh368-motion-c50-phase05/snapshot.json",
+      "sha256": "94b87fe94c911d3c5929e56408081e25e39d5f9fad9621984e2d777f3e7f047b"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh368-motion-c50-phase05/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh368-motion-c50-phase05/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh368-motion-c50-phase05/frame.png",
+      "sha256": "4b75132e4d8490fff3bd59327997059bf80b6725c6611eec1b1325877ed9371d"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh368-motion-c50-phase05/frames.json",
+      "sha256": "96c5c41628eb332d63bdbfd00bdf5fc08c5ad8793b1da270c538d228c3759081"
+    },
+    "frame_304": {
+      "path": ".runtime/factory-native/sikh368-motion-c50-phase05/frame-0304.png",
+      "sha256": "bb353c72ec780a14d44e34d283ae8e390295185ced8c1a02790b59e1489b72c6"
+    },
+    "frame_305": {
+      "path": ".runtime/factory-native/sikh368-motion-c50-phase05/frame-0305.png",
+      "sha256": "bbfacbdf7420d39b13c2cf02cb4cd736977e728ba1e565e3a1a683638fbebe04"
+    },
+    "frame_306": {
+      "path": ".runtime/factory-native/sikh368-motion-c50-phase05/frame-0306.png",
+      "sha256": "4797156112edc66eaa67ec82b22841fe5eeabbede6a8840984259511ef44b6c7"
+    },
+    "frame_307": {
+      "path": ".runtime/factory-native/sikh368-motion-c50-phase05/frame-0307.png",
+      "sha256": "d98ddee51b4cd8cfd39c330642e16a65d0435eff394084b9d48c795c35ef708c"
+    },
+    "frame_308": {
+      "path": ".runtime/factory-native/sikh368-motion-c50-phase05/frame-0308.png",
+      "sha256": "a15ce4b21100770ee9fae42c09830d7bd6ddfad9077ce71f599b2af4c0050afd"
+    },
+    "frame_309": {
+      "path": ".runtime/factory-native/sikh368-motion-c50-phase05/frame-0309.png",
+      "sha256": "65adbd0e7dea84d09ea9bcc7a414a9158896e0deaca096bba200f419bcd0e5e4"
+    },
+    "frame_310": {
+      "path": ".runtime/factory-native/sikh368-motion-c50-phase05/frame-0310.png",
+      "sha256": "c978f95b9caeb0e1766e3d884ec1679b8796e71a928a896bae9938649687f129"
+    },
+    "frame_314": {
+      "path": ".runtime/factory-native/sikh368-motion-c50-phase05/frame.png",
+      "sha256": "4b75132e4d8490fff3bd59327997059bf80b6725c6611eec1b1325877ed9371d"
+    },
+    "contact_report": {
+      "path": "results/sikh368/HIND_CONTACT50_FAIL.json",
+      "sha256": "516843f8889d0d1c3cd0e2f0f755db64d77eaf89a333ef4931ce14dba209b72f"
+    }
+  },
+  "retrospective_observations": [
+    {
+      "requirement": "prep_load",
+      "status": "FAIL",
+      "observation": "Unexpected adjacent hindfoot sliding under load.",
+      "falsified": true
+    }
+  ]
+}

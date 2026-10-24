@@ -1,0 +1,256 @@
+{
+  "status": "AWAITING_DIRECTOR_AV",
+  "scope": "Director368 preparation only: singleforebrace, deepgather, rapidheadneckchest-led firstlift; no fullrear/appearance acceptance.",
+  "candidate": {
+    "path": ".runtime/art-direction/sikh368-review-c51/preparation-firstlift.mp4",
+    "sha256": "c6a726447f041179256aaa476274027fa668663e6bb8f97ce1921e60584c8670"
+  },
+  "comparison": {
+    "path": ".runtime/art-direction/sikh368-review-c51/preparation-comparison-three-repeats.mp4",
+    "sha256": "e73c74fb99339deba856e6ab258cc9f65bac1410383b7e0a2452f3d45c36acb8"
+  },
+  "native": {
+    "path": ".runtime/factory-native/sikh368-motion-c51-prepare/scene.blend",
+    "sha256": "e7613c162c9fd642af20e63260bdfdbb4def7ec67e2e559367e27a311374e331"
+  },
+  "candidate_manifest": {
+    "path": "results/sikh368/media-manifest.json",
+    "sha256": "6a2cc78e252c4b9685a2274fbb4d94147a49c04255a4f1e3d6a88edeb03547e3"
+  },
+  "comparison_manifest": {
+    "path": "results/sikh368/comparison-manifest.json",
+    "sha256": "dd557f4219ef7d2e0303593303c6e55a5aab0ce0aa1d05cce2d97d9afb96e396"
+  },
+  "requirements": [
+    {
+      "criterion": "Original source/Pashtun/history remain; derivative only, underlying geometry/materials/identity/environment unchanged.",
+      "director_av": false,
+      "id": "preservation",
+      "modes": [
+        "technical"
+      ]
+    },
+    {
+      "criterion": "Reference-faithful coupled loading: hock/stifle flexion, pelvis/chest relationship and gathered energy. An upright column plus moving feet fails.",
+      "director_av": false,
+      "id": "prep_load",
+      "modes": [
+        "technical",
+        "image"
+      ]
+    },
+    {
+      "criterion": "One deliberate raised/folded bracing forehoof followed by planted leverage. Opposite foreleg remains support during prep; bilateral tapping/shuffling fails. Head/neck/chest lead firstlift; legs follow.",
+      "director_av": false,
+      "id": "step",
+      "modes": [
+        "technical",
+        "image"
+      ]
+    },
+    {
+      "criterion": "Deeper coordinated downward head/poll/neck/body gathering like reference16.0..16.3, then rapid upward head/neck release. No dangling neck or head-only bob on rigid trunk.",
+      "director_av": false,
+      "id": "head_body",
+      "modes": [
+        "technical",
+        "image"
+      ]
+    },
+    {
+      "criterion": "Rapid overlapping head, neck and chest-led upward drive after the brace; forelegs follow the rising body rather than flicking up first. Continuous support/rider/seat/rein/pole coupling and outgoing pose/velocity/contacts.",
+      "director_av": false,
+      "id": "first_lift",
+      "modes": [
+        "technical",
+        "image"
+      ]
+    },
+    {
+      "criterion": "Preparation through firstlift only under Director368. No later rear/appearance/chest/crowd/principal/terrain/audio construction. Same original task/history; approved5 extra plus retained3 unused, active50..57 only.",
+      "director_av": false,
+      "id": "scope",
+      "modes": [
+        "technical"
+      ]
+    },
+    {
+      "criterion": "Actual reference phases, whole-body oblique/side/intended controls and complete timed phase proof; source/frame failures cannot pass. No full rear, cloth cache or appearance acceptance.",
+      "director_av": false,
+      "id": "evidence",
+      "modes": [
+        "technical",
+        "image"
+      ]
+    },
+    {
+      "criterion": "Director313 judges actual full-speed preparation power/fluidity and firstlift. Agent direct-motion capability remains false.",
+      "director_av": true,
+      "id": "director_motion",
+      "modes": [
+        "direct_motion"
+      ]
+    }
+  ],
+  "unit": {
+    "allowed_domains": [
+      "horse_pose",
+      "rider_contact",
+      "rein_control",
+      "secondary_cache_invalidation"
+    ],
+    "boundaries": [
+      {
+        "consumer": "preparation",
+        "id": "entry_stance",
+        "state": [
+          "pose",
+          "velocity",
+          "contacts"
+        ]
+      },
+      {
+        "consumer": "next rise unit; inherited downstream/cache invalidated",
+        "id": "firstlift_exit",
+        "state": [
+          "pose",
+          "velocity",
+          "contacts"
+        ]
+      }
+    ],
+    "calibration": {
+      "bilateral_prep49": {
+        "observation": "Director368 identifies specific reference mismatch despite earlier source/image feature PASS. Keep49 useful balance/leg placement, reject its choreography.",
+        "verdict": "FAIL"
+      },
+      "tentative_old": {
+        "observation": "Actual294..300 images show nearly upright body and small foot changes; reference15.7..16.3 includes high folded step and gathered neck/body.",
+        "verdict": "FAIL"
+      },
+      "wrong_preservation_method": {
+        "observation": "Current source-preservation method protects a rejected behavior; replace the preparation pose family instead.",
+        "verdict": "FAIL"
+      }
+    },
+    "cycle_window": [
+      50,
+      57
+    ],
+    "edit_kinds": [
+      "mounted_prep367",
+      "mounted_prepaudit367"
+    ],
+    "frozen_domains": [
+      "horse_mesh",
+      "leader_appearance",
+      "terrain",
+      "camera_story",
+      "sound",
+      "cloth_look"
+    ],
+    "id": "horse-preparation-through-firstlift",
+    "negative_controls": [
+      {
+        "binding": {
+          "path": "results/sikh363/contact-sheets/batch07.jpg",
+          "sha256": "3f5c3027e4ce67374e73c83f929a62c812edf474499d155a463383839838fe00"
+        },
+        "expected": "FAIL",
+        "failure": "Old3cm back/3.5cm up adjustments lack reference folded step and coordinated loading",
+        "id": "tentative_old"
+      },
+      {
+        "binding": {
+          "path": "results/nihang-scope-review365/ANALYSIS.md",
+          "sha256": "34515295a8e2700aca5c0e1dc49bffd60d7f25244ae656d885574e2075eb91f8"
+        },
+        "expected": "FAIL",
+        "failure": "Freezing rejected prep and retiming airborne action cannot fix prep",
+        "id": "wrong_preservation_method"
+      },
+      {
+        "binding": {
+          "path": ".runtime/art-direction/sikh367-review/phase05.jpg",
+          "sha256": "1131ea21bac657c24bba9c8cd2cdc4ecde4291fbadab550d41ee61fce9427ebb"
+        },
+        "expected": "FAIL",
+        "failure": "49 has second frontleg tap instead of reference single brace; deeper load and upward leadership also need correction.",
+        "id": "bilateral_prep49"
+      }
+    ],
+    "operations": [
+      "nihang_patch",
+      "nihang_save",
+      "nihang_frames",
+      "nihang_rig_inspect"
+    ],
+    "phase": "preparation",
+    "positive_criteria": [
+      {
+        "comparison": "Event-aligned reference15.5..16.5s versus actual whole-horse intended/stable oblique/side views; no pixel-copy claim.",
+        "failure": "Bilateral prep taps, insufficient gathering, head/neck sag, leg-led initial lift, source contact/deformation fault or missing wholephase evidence.",
+        "id": "prep_load",
+        "reference_feature": "Reference-faithful coupled loading: hock/stifle flexion, pelvis/chest relationship and gathered energy. An upright column plus moving feet fails."
+      },
+      {
+        "comparison": "Event-aligned reference15.5..16.5s versus actual whole-horse intended/stable oblique/side views; no pixel-copy claim.",
+        "failure": "Bilateral prep taps, insufficient gathering, head/neck sag, leg-led initial lift, source contact/deformation fault or missing wholephase evidence.",
+        "id": "step",
+        "reference_feature": "One deliberate raised/folded bracing forehoof followed by planted leverage. Opposite foreleg remains support during prep; bilateral tapping/shuffling fails. Head/neck/chest lead firstlift; legs follow."
+      },
+      {
+        "comparison": "Event-aligned reference15.5..16.5s versus actual whole-horse intended/stable oblique/side views; no pixel-copy claim.",
+        "failure": "Bilateral prep taps, insufficient gathering, head/neck sag, leg-led initial lift, source contact/deformation fault or missing wholephase evidence.",
+        "id": "head_body",
+        "reference_feature": "Deeper coordinated downward head/poll/neck/body gathering like reference16.0..16.3, then rapid upward head/neck release. No dangling neck or head-only bob on rigid trunk."
+      },
+      {
+        "comparison": "Event-aligned reference15.5..16.5s versus actual whole-horse intended/stable oblique/side views; no pixel-copy claim.",
+        "failure": "Bilateral prep taps, insufficient gathering, head/neck sag, leg-led initial lift, source contact/deformation fault or missing wholephase evidence.",
+        "id": "first_lift",
+        "reference_feature": "Rapid overlapping head, neck and chest-led upward drive after the brace; forelegs follow the rising body rather than flicking up first. Continuous support/rider/seat/rein/pole coupling and outgoing pose/velocity/contacts."
+      }
+    ],
+    "primary_outcome": "Single bracing hoof and deep gathering release into rapid head/neck/chest-led firstlift",
+    "reference": "reference_rear",
+    "task": "sikh335-continuous-performance",
+    "version": 1
+  },
+  "agent_review": {
+    "path": "results/sikh368/review-final51.json",
+    "sha256": "68502c01b1ee1ff1d541831a2f8fd917daed0a14ca1e81b06a3e398885d16af8"
+  },
+  "protected": {
+    "path": "results/sikh368/PROTECTED_MASTERS.json",
+    "sha256": "d2a7c952edc8864a23fcadede677c4d04ca0944ae782ad16c10ffe85e58cf4ad"
+  },
+  "known_internal_rejection": {
+    "path": "results/sikh368/HIND_CONTACT50_FAIL.json",
+    "sha256": "516843f8889d0d1c3cd0e2f0f755db64d77eaf89a333ef4931ce14dba209b72f"
+  },
+  "closure": {
+    "path": "results/sikh368/HIND_CONTACT51_RESULT.json",
+    "sha256": "de10cbfbd0f69966f5f8ad941618f88c03214b39873d90f235cc48dbbe0385db"
+  },
+  "pending": [
+    "Singlebrace reads as functional support/leverage, not a tap",
+    "Deeper head/neck/body gathering and rapid coordinated upward drive",
+    "Forelegs follow head/neck/chest; real-time power and fluidity versus faithful reference"
+  ],
+  "excluded": [
+    "Chest/neck conformation and supporting appearance remain unaccepted",
+    "Later rise/crest/landing untouched and invalidated as qualification",
+    "Finalcamera/spear-tip framing, crowd/principal/environment/audio",
+    "Oldflagcache hidden/invalidated; finalmotion must precede resimulation",
+    "FullSikh/trailer/release approval"
+  ],
+  "limitations": [
+    "Same-agent source/image/timed-frame review, no independent/direct AV capability.",
+    "Global307 remains stale; no strictdeliver or replay waiver. Scopedfreshknowledgegate plus313 manualqueue only.",
+    "Newnative/media and localcommits have no new remote backup/push/restore receipt."
+  ],
+  "production_approved": false,
+  "director_approved": false,
+  "release_approved": false
+}

@@ -1,0 +1,20 @@
+{
+  "frames": [
+    300,
+    303
+  ],
+  "left_hind_hoof_start": [
+    7.575324535369873,
+    -29.7541446685791,
+    3.279046058654785
+  ],
+  "left_hind_hoof_end": [
+    7.527994155883789,
+    -29.624492645263672,
+    3.2790462970733643
+  ],
+  "horizontal_m": 0.13802105626346092,
+  "vertical_m": 2.384185791015625e-07,
+  "observation": "Candidate50 moves left hindhoof forward through300..306 with zero authored lift. Source report shows horizontal travel with unchanged landmarkheight; wholephase review treats this as skating, not planted leverage. Restore a small lifted reposition before load settles; no secondforelegtap.",
+  "fix": "Only left_hind_lift at303 from0 to0.045; other anchors/owners unchanged. Main action outside301..305 should remain identical; verify actual outputs rather than infer universal reuse."
+}

@@ -1,0 +1,61 @@
+{
+  "run_digest": "965860760e8299ea8d8b99220c6c2fee6a4f30b09df3db510791cb500cb7e0b3",
+  "verdict": "PASS",
+  "observation": "Actual51 evaluatedCurve/terrain query returned all11hits; min9.5mm positivegap, no measured undergroundshaft. Repaired hind swing and settled support require image/wholephase proof next.",
+  "comparison": "Actual returned source/report/image availability versus admitted recipe. Artistic unit criteria and full-speed AV remain separately NOT_TESTED.",
+  "open_defects": [],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh368-motion-c51-audit/snapshot.json",
+      "sha256": "94b87fe94c911d3c5929e56408081e25e39d5f9fad9621984e2d777f3e7f047b"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh368-motion-c51-audit/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh368-motion-c51-audit/script-diagnostics.json",
+      "sha256": "4e1205462c9c8153ef4f4d15eba35ea263f6079e3b74341771bbb12e2f41f34c"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh368-motion-c51-audit/scene.blend",
+      "sha256": "28752decd84c631a3e4ae1472e8b499c95df287ce47887710a96f3a42b011832"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh368-motion-c51-audit/patch-evidence.json",
+      "sha256": "d15ee12d248ed885351bc3b07b78da9701750b4b84e17e233cf0f306dbf46203"
+    }
+  },
+  "retrospective_observations": [
+    {
+      "requirement": "prep_load",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "step",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "head_body",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "first_lift",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "evidence",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "director_motion",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "run_digest": "50d1806230ebc1f2b33a4e3bd1264e0c76186967bca6c3efe54615dc8114549b",
+  "verdict": "PASS",
+  "observation": "Actual51 phase01 frames/sheet inspected with originalreference; complete scope/contact/adjacent observations FINAL_FRAME_REVIEW51. Transport availability only; actualfullspeed DirectorAV remains pending.",
+  "comparison": "Actual returned source/report/image availability versus admitted recipe. Artistic unit criteria and full-speed AV remain separately NOT_TESTED.",
+  "open_defects": [],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh368-motion-c51-phase01/snapshot.json",
+      "sha256": "94b87fe94c911d3c5929e56408081e25e39d5f9fad9621984e2d777f3e7f047b"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh368-motion-c51-phase01/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh368-motion-c51-phase01/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh368-motion-c51-phase01/frame.png",
+      "sha256": "cdc6310e3cab928a7e4b3abe4c66991462e7f587b829991decb13b38fea742f1"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh368-motion-c51-phase01/frames.json",
+      "sha256": "b656adc39a7b3ab469173e7b975e1afff3734d1f6f5482d411c099e85d58440e"
+    },
+    "frame_276": {
+      "path": ".runtime/factory-native/sikh368-motion-c51-phase01/frame-0276.png",
+      "sha256": "a64122775c9db485c919600867d5b08f941556b847661e552e66c28bec421e35"
+    },
+    "frame_277": {
+      "path": ".runtime/factory-native/sikh368-motion-c51-phase01/frame-0277.png",
+      "sha256": "b27be327ca5820e7bf599a2b6889175b413a1238abbc8bf91258874829ccedd1"
+    },
+    "frame_278": {
+      "path": ".runtime/factory-native/sikh368-motion-c51-phase01/frame-0278.png",
+      "sha256": "9493af468cf9eddf7084e9e6916694ee5eb515d4ed4dd2ee7739ceaf0b676d9f"
+    },
+    "frame_279": {
+      "path": ".runtime/factory-native/sikh368-motion-c51-phase01/frame-0279.png",
+      "sha256": "b728ddc97beac1363133aeb0a5f637356d64d852262691367199ceb9bea761c6"
+    },
+    "frame_280": {
+      "path": ".runtime/factory-native/sikh368-motion-c51-phase01/frame-0280.png",
+      "sha256": "c55b365ae881ae50b38cafa31b661fbfcabe27b969a68fd64f9a4bea5d2f4253"
+    },
+    "frame_281": {
+      "path": ".runtime/factory-native/sikh368-motion-c51-phase01/frame-0281.png",
+      "sha256": "8e669d26db5881b482cd78d8f5c3cc5137d3e6fdc658f23f1979f967bf5cd34e"
+    },
+    "frame_282": {
+      "path": ".runtime/factory-native/sikh368-motion-c51-phase01/frame-0282.png",
+      "sha256": "e3a07892e80a2183b5cbb21d27c76552cb181129ac87ee4f962d541f3375c00b"
+    },
+    "frame_314": {
+      "path": ".runtime/factory-native/sikh368-motion-c51-phase01/frame.png",
+      "sha256": "cdc6310e3cab928a7e4b3abe4c66991462e7f587b829991decb13b38fea742f1"
+    }
+  },
+  "retrospective_observations": [
+    {
+      "requirement": "prep_load",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "step",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "head_body",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "first_lift",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "evidence",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "director_motion",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    }
+  ]
+}

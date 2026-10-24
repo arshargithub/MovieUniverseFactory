@@ -1,0 +1,77 @@
+{
+  "run_digest": "7b82070e5c7e67dfb6fd148e3c5b20decf962bec19cb134edf69e8ae33bf2c55",
+  "verdict": "PASS",
+  "observation": "Viewed303/306/311/314 actualshot: load/release legible, face clear of shaft, no visible newcontact/bodyregression from hind swing. Sourcepole/camera/look limits retained. Fullphase must be reviewed next; not motion approval.",
+  "comparison": "Actual returned source/report/image availability versus admitted recipe. Artistic unit criteria and full-speed AV remain separately NOT_TESTED.",
+  "open_defects": [],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh368-motion-c51-production/snapshot.json",
+      "sha256": "94b87fe94c911d3c5929e56408081e25e39d5f9fad9621984e2d777f3e7f047b"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh368-motion-c51-production/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh368-motion-c51-production/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh368-motion-c51-production/frame.png",
+      "sha256": "0abbd1820b1850f15073d1f54335211a606a764bdda66e73cd475eb35834c092"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh368-motion-c51-production/frames.json",
+      "sha256": "e6e334c5a0651738439432956cc5b187e55c20a429535943eaf41955595afa1d"
+    },
+    "frame_303": {
+      "path": ".runtime/factory-native/sikh368-motion-c51-production/frame-0303.png",
+      "sha256": "6f6019565151e4e0aebfc27914d32de8acbcc8cf996f1b7ebfebabb9071b6005"
+    },
+    "frame_306": {
+      "path": ".runtime/factory-native/sikh368-motion-c51-production/frame-0306.png",
+      "sha256": "96233fc1fef98e797ac2dba510bdad186fd4f1e58e26cd41bea26d1a59ae1876"
+    },
+    "frame_311": {
+      "path": ".runtime/factory-native/sikh368-motion-c51-production/frame-0311.png",
+      "sha256": "46ca2d183ad6d50f2bbeeb9367d4441bc1ac99c8ba1ee0ff9530622dc54ee571"
+    },
+    "frame_314": {
+      "path": ".runtime/factory-native/sikh368-motion-c51-production/frame.png",
+      "sha256": "0abbd1820b1850f15073d1f54335211a606a764bdda66e73cd475eb35834c092"
+    }
+  },
+  "retrospective_observations": [
+    {
+      "requirement": "prep_load",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "step",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "head_body",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "first_lift",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "evidence",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "director_motion",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    }
+  ]
+}

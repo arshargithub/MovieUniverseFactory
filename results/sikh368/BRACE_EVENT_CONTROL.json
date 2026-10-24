@@ -1,0 +1,66 @@
+{
+  "results": {
+    "rejected49": {
+      "0.02": [
+        {
+          "side": "L",
+          "start": 292,
+          "end": 299
+        },
+        {
+          "side": "R",
+          "start": 301,
+          "end": 305
+        }
+      ],
+      "0.04": [
+        {
+          "side": "L",
+          "start": 293,
+          "end": 299
+        },
+        {
+          "side": "R",
+          "start": 302,
+          "end": 304
+        }
+      ],
+      "0.06": [
+        {
+          "side": "L",
+          "start": 293,
+          "end": 298
+        },
+        {
+          "side": "R",
+          "start": 302,
+          "end": 304
+        }
+      ]
+    },
+    "candidate50": {
+      "0.02": [
+        {
+          "side": "L",
+          "start": 292,
+          "end": 299
+        }
+      ],
+      "0.04": [
+        {
+          "side": "L",
+          "start": 293,
+          "end": 299
+        }
+      ],
+      "0.06": [
+        {
+          "side": "L",
+          "start": 293,
+          "end": 298
+        }
+      ]
+    }
+  },
+  "scope": "Discriminating finite diagnostic on actual24fps deform-hoof landmark elevations through309, three2/4/6cm thresholds. Finds two old49 episodes and one current50. Not a universal gait detector, ground collision/force test or perceptual brace acceptance."
+}
