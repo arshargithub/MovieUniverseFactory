@@ -2082,6 +2082,25 @@
       "results/sikh363/CLOTH121_PROOF.json",
       "results/sikh363/DIRECTOR_AV_QUEUE364.json"
     ]
+  },
+  {
+    "event_id": "series01-exchange365-director-rejects-performance-scope-review",
+    "event_type": "director_review_outcome",
+    "recorded_date": "2026-10-24",
+    "reported_model": "gpt-6.1-sol",
+    "reported_reasoning_effort": "high",
+    "setting_attribution": "user_reported_policy359_360",
+    "runtime_verified": false,
+    "controlled_model_comparison": false,
+    "outcome": "DIRECTOR_REJECTED_PREP_POWER_CHEST_REOPENED",
+    "observation": "Director recognizes appearance/clothes/flag progress but rejects tentative preparation and weak rear; landing deferred, chest flattened. Source/image reinspection confirms prep was explicitly preserved and main action retimed, insufficient to establish reference power. Proposes smaller preparation/rise-crest/landing and anatomy work units with positive-reference review and phase interfaces. Scope overload is a hypothesis, not proven model limit. Thoughts-first only; no native construction/render or workflow change. Prior source/image READY records remain history, not Director acceptance. Original limits retained.",
+    "engineering_subscription_usage": null,
+    "engineering_cost_usd": null,
+    "new_external_paid_provider_calls": 0,
+    "evidence": [
+      "results/nihang-scope-review365/ANALYSIS.md",
+      "results/nihang-scope-review365/director-disposition.json"
+    ]
   }
   ],
   "recording_mode": "manual_evidence_backfill_and_future_event_capture",
