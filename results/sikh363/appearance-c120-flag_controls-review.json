@@ -1,0 +1,51 @@
+{
+  "verdict": "PASS",
+  "run_digest": "59bd1730a9abf0e796f539c453d282f231336cb0cdd122cbf3c563502b011a5b",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh363-appearance-c120-flag_controls/snapshot.json",
+      "sha256": "260273c47397c71ebc680227e1f139cd61c83b82a17819ebeb3186b7e5a54def"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh363-appearance-c120-flag_controls/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh363-appearance-c120-flag_controls/script-diagnostics.json",
+      "sha256": "d8c950e68c5c42eb08e3ba4cd795b716e2b5ac082b76301b8697edb7667b2ad9"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh363-appearance-c120-flag_controls/scene.blend",
+      "sha256": "51f637d1e2624a9b36c32381c82fdf7d96083ad0632c3f3ce608600d4811ed41"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh363-appearance-c120-flag_controls/patch-evidence.json",
+      "sha256": "c492961a527b10e99174ab2798695caca3bf09e5ddf05151191facdba790cf16"
+    }
+  },
+  "observation": "Actual120 currentclock nopole solves maxstrain1.33886; boundedimpulse and outwardbreeze still fail. Thus neither force staging nor impulse.5 qualifies. Retain sharedclock but inspect and condition very long/slender collider mesh faces rather than more force tweaks.",
+  "comparison": "Actual source-bound diagnostic evidence against363 known failures; output availability/coverage only, not repair or art acceptance.",
+  "open_defects": [],
+  "requirement_outcomes": {
+    "preservation": {
+      "status": "PASS",
+      "observation": "Technical preservation only."
+    },
+    "form": {
+      "status": "NOT_TESTED",
+      "observation": "Diagnostic/component coverage only; known363 artistic failure remains open, not qualified by availability."
+    },
+    "interfaces": {
+      "status": "NOT_TESTED",
+      "observation": "Diagnostic/component coverage only; known363 artistic failure remains open, not qualified by availability."
+    },
+    "evidence": {
+      "status": "NOT_TESTED",
+      "observation": "Diagnostic/component coverage only; known363 artistic failure remains open, not qualified by availability."
+    },
+    "whole_look": {
+      "status": "NOT_TESTED",
+      "observation": "Diagnostic/component coverage only; known363 artistic failure remains open, not qualified by availability."
+    }
+  }
+}

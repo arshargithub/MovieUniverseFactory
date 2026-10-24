@@ -1,0 +1,181 @@
+{
+  "template": "results/sikh363/appearance-c110-strategizing.json",
+  "derived_template": "results/sikh363/appearance-c110-deriving.json",
+  "parent": ".runtime/factory-native/sikh363-appearance-c110-save/scene.blend",
+  "method": "Two independent scoped structural proofs. On unretimed110, smooth lower-pectoral lift/transverse narrowing with explicit limb exclusion, same delta to shape blocks and bound nap; preserve rig/weights/actions. On coherent but still unapproved40 pole motion, actual Blender CLOTH with three moving pins, pole collider, gravity/air/breeze and sequential warmup230..418, finite/pin/stretch guards. Preserve editable solver scene and embedded local cache plus exact pole-matrix provenance. Final41 changes cue and MUST rebake; trial cache not production reuse.",
+  "proof": "Actual front/side standing283 and crest327 must remove pendulous pectoral volume without neck/foreleg regression. Real CLOTH/cache must solve with3 material ties and visible free-edge deformation; exact independent reopen front/reverse314 and actual production views283/314 inspect clipping, thin collapse, attachment and cloth quality. No whole art/AV pass; final41 cue/clock rebake and source/frame review remain mandatory.",
+  "scope": "Original363 chest repair plus independent tied-flag physics/cache qualification; no Director handoff or full production acceptance from trial.",
+  "framing": "Diagnostic front/side chest at283/327 from unretimed110; cloth front/reverse and actual40 camera283/314. Known40 cue/composition failures retained and excluded from trial acceptance.",
+  "reconciliation": "363 rejects362. All101 diagnostics preserved, including wrong side crop and open claw. Two preplanning source/runtime reconciliations retain original counters. Appearance103/max117, motion30/max41; Sol only, no additional authority.",
+  "applications": {
+    "director363": "Diagnose exact named defects, not another texture-only or faster-playback patch.",
+    "strategy363": "First identify chest/hand/ownership causes, then authored repair and real cloth proof on final action clock."
+  },
+  "alternatives": "Reject speculative smoothing of whole horse, fist endpoint-only offsets and uniform clip acceleration. Native inspection first is smaller than repeated whole-scene renders.",
+  "failure": "Reject pendant/flat/pinched chest or limb/nap regression; nonfinite/stretch/pin/cache/cloth-shape failure blocks flag. Independent branch does not qualify failed other branch. Final source/action changes require cloth rebake.",
+  "sources": [
+    "src/movie_factory/adapters/blender/nihang_audit363.py",
+    "src/movie_factory/adapters/blender/nihang_control.py",
+    "src/movie_factory/adapters/blender/nihang_patch.py",
+    "tests/test_nihang363.py",
+    "src/movie_factory/adapters/blender/nihang_hand363.py",
+    "src/movie_factory/native_admission.py",
+    "results/sikh363/CAUSAL_AUDIT.md",
+    "results/sikh363/HAND_HANDLER_REVIEW.md",
+    "src/movie_factory/adapters/blender/nihang_grip363.py",
+    "results/sikh363/GRIP104_REVIEW.md",
+    "results/sikh363/appearance-c103-right_hand-review.json",
+    "results/sikh363/GRIP105_REVIEW.md",
+    "results/sikh363/appearance-c104-right_hand-review.json",
+    "src/movie_factory/adapters/blender/nihang_repair363.py",
+    "results/sikh363/REPAIR106_REVIEW.md",
+    "results/sikh363/appearance-c105-right_hand-review.json",
+    "results/sikh363/appearance-c105-chest_side-review.json",
+    "src/movie_factory/adapters/blender/nihang_fist363.py",
+    "results/sikh363/FIST109_REVIEW.md",
+    "results/sikh363/appearance-c108-audit-review.json",
+    "src/movie_factory/adapters/blender/nihang_thumb363.py",
+    "results/sikh363/THUMB110_REVIEW.md",
+    "results/sikh363/appearance-c109-right_hand-review.json",
+    "src/movie_factory/adapters/blender/nihang_chest363.py",
+    "src/movie_factory/adapters/blender/nihang_flag363.py",
+    "results/sikh363/APPEARANCE111_REVIEW.md",
+    "results/sikh363/HAND_CAUSAL_RESULTS.md",
+    "results/sikh363/CLOCK_CAUSAL_RESULTS.md",
+    "results/sikh363/motion-c40-phases-review.json",
+    ".runtime/factory-native/sikh363-motion-c40-save/scene.blend"
+  ],
+  "steps": [
+    {
+      "id": "chest_save",
+      "depends_on": [],
+      "requirements": [
+        "preservation"
+      ],
+      "recipe": {
+        "operation": "nihang_patch",
+        "frame": 283,
+        "width": 432,
+        "height": 768,
+        "samples": 8,
+        "edits": [
+          {
+            "kind": "mounted_chest363",
+            "target": "mounted leader"
+          }
+        ]
+      }
+    },
+    {
+      "id": "flag_save",
+      "depends_on": [],
+      "parent": ".runtime/factory-native/sikh363-motion-c40-save/scene.blend",
+      "requirements": [
+        "preservation"
+      ],
+      "recipe": {
+        "operation": "nihang_patch",
+        "frame": 314,
+        "width": 432,
+        "height": 768,
+        "samples": 8,
+        "edits": [
+          {
+            "kind": "mounted_flag363",
+            "target": "mounted leader"
+          }
+        ]
+      }
+    },
+    {
+      "id": "chest_front",
+      "depends_on": [
+        "chest_save"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 283,
+        "frames": [
+          283,
+          327
+        ],
+        "view": "horse_chest",
+        "width": 640,
+        "height": 640,
+        "samples": 8
+      }
+    },
+    {
+      "id": "chest_side",
+      "depends_on": [
+        "chest_save"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 283,
+        "frames": [
+          283,
+          327
+        ],
+        "view": "horse_chest_side",
+        "width": 640,
+        "height": 640,
+        "samples": 8
+      }
+    },
+    {
+      "id": "flag_detail",
+      "depends_on": [
+        "flag_save"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 314,
+        "frames": [
+          283,
+          314,
+          333
+        ],
+        "view": "flag363",
+        "width": 640,
+        "height": 640,
+        "samples": 8
+      }
+    },
+    {
+      "id": "flag_reverse",
+      "depends_on": [
+        "flag_save"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 314,
+        "frames": [
+          314
+        ],
+        "view": "flag363_reverse",
+        "width": 640,
+        "height": 640,
+        "samples": 8
+      }
+    },
+    {
+      "id": "flag_production",
+      "depends_on": [
+        "flag_save"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 314,
+        "frames": [
+          283,
+          314
+        ],
+        "view": "production",
+        "width": 432,
+        "height": 768,
+        "samples": 8
+      }
+    }
+  ]
+}

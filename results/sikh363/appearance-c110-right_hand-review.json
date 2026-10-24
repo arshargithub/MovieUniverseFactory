@@ -1,0 +1,59 @@
+{
+  "verdict": "PASS",
+  "run_digest": "f1dfc570cdb4b02b5c91c343e8da58ce1dc0d223c1dee8ec679ee7594504d437",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh363-appearance-c110-right_hand/snapshot.json",
+      "sha256": "83bd7c5cee3cd7800e426a6b3c244c1eb937e1bdda8a13c25d88e5d9ed0161ab"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh363-appearance-c110-right_hand/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh363-appearance-c110-right_hand/script-diagnostics.json",
+      "sha256": "99bbbecec312f933855a69b1d853770138fd35ab62669f2fe652484d335f4ec7"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh363-appearance-c110-right_hand/frame.png",
+      "sha256": "1e804556d70c2d91658644b17db2251b550f13dd2ec3b81e12d1e040a826074c"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh363-appearance-c110-right_hand/frames.json",
+      "sha256": "a7f5bf9227600cb94430c96f88f24f8b842f11df26cd8ed5e08dec6b4d8ee10c"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh363-appearance-c110-right_hand/frame.png",
+      "sha256": "1e804556d70c2d91658644b17db2251b550f13dd2ec3b81e12d1e040a826074c"
+    },
+    "frame_327": {
+      "path": ".runtime/factory-native/sikh363-appearance-c110-right_hand/frame-0327.png",
+      "sha256": "f06b1b3934b87a6867a7c7c604d52b71c2fb0f2c0ea73fa3b0af685d3b1279ac"
+    }
+  },
+  "observation": "Actual283/327: extended antlers gone; curled fingers and thumb across index/middle now form a compact rein grasp without backward thumb. Retain110 as grip component for intended-shot verification. Numeric/source and close crops do not pass whole appearance or AV; full motion interfaces remain open.",
+  "comparison": "Actual source-bound diagnostic evidence against363 known failures; output availability/coverage only, not repair or art acceptance.",
+  "open_defects": [],
+  "requirement_outcomes": {
+    "preservation": {
+      "status": "PASS",
+      "observation": "Technical preservation only."
+    },
+    "form": {
+      "status": "NOT_TESTED",
+      "observation": "Diagnostic/component coverage only; known363 artistic failure remains open, not qualified by availability."
+    },
+    "interfaces": {
+      "status": "NOT_TESTED",
+      "observation": "Diagnostic/component coverage only; known363 artistic failure remains open, not qualified by availability."
+    },
+    "evidence": {
+      "status": "NOT_TESTED",
+      "observation": "Diagnostic/component coverage only; known363 artistic failure remains open, not qualified by availability."
+    },
+    "whole_look": {
+      "status": "NOT_TESTED",
+      "observation": "Diagnostic/component coverage only; known363 artistic failure remains open, not qualified by availability."
+    }
+  }
+}

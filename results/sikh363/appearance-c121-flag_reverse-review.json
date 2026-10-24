@@ -1,0 +1,55 @@
+{
+  "verdict": "PASS",
+  "run_digest": "870b53bc6f139a4e451e49118556176575c918977957b9fbc77d587f26df7fc9",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh363-appearance-c121-flag_reverse/snapshot.json",
+      "sha256": "1f3ba155579dd8e831eb5eef92109cf40617980f94d476caeb71760c6b68eaf2"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh363-appearance-c121-flag_reverse/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh363-appearance-c121-flag_reverse/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh363-appearance-c121-flag_reverse/frame.png",
+      "sha256": "b5e43207beb15f05999be9fbfe910b8112db538720fda6e49249653d3f9d68e6"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh363-appearance-c121-flag_reverse/frames.json",
+      "sha256": "8001dda4847309a71fea95e40dc16b714ecb23a0b8d7c90b289b3cbcf795868e"
+    },
+    "frame_314": {
+      "path": ".runtime/factory-native/sikh363-appearance-c121-flag_reverse/frame.png",
+      "sha256": "b5e43207beb15f05999be9fbfe910b8112db538720fda6e49249653d3f9d68e6"
+    }
+  },
+  "observation": "Actual314 reverse inspected: three binding loops meet cloth atshaft, reverse face has continuous fabric with freeedge fold, no detached edge/pole penetration. Diagnostic background not a scenery qualification. Intended production framing remains required.",
+  "comparison": "Actual source-bound diagnostic evidence against363 known failures; output availability/coverage only, not repair or art acceptance.",
+  "open_defects": [],
+  "requirement_outcomes": {
+    "preservation": {
+      "status": "PASS",
+      "observation": "Technical preservation only."
+    },
+    "form": {
+      "status": "NOT_TESTED",
+      "observation": "Diagnostic/component coverage only; known363 artistic failure remains open, not qualified by availability."
+    },
+    "interfaces": {
+      "status": "NOT_TESTED",
+      "observation": "Diagnostic/component coverage only; known363 artistic failure remains open, not qualified by availability."
+    },
+    "evidence": {
+      "status": "NOT_TESTED",
+      "observation": "Diagnostic/component coverage only; known363 artistic failure remains open, not qualified by availability."
+    },
+    "whole_look": {
+      "status": "NOT_TESTED",
+      "observation": "Diagnostic/component coverage only; known363 artistic failure remains open, not qualified by availability."
+    }
+  }
+}

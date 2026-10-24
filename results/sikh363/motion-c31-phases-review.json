@@ -1,0 +1,77 @@
+{
+  "verdict": "FAIL",
+  "run_digest": "c523c7ac5573bf8c780edc8399ba7ffe9083ac29258b306c4b5f2a11e94c2e20",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh363-motion-c31-phases/snapshot.json",
+      "sha256": "83bd7c5cee3cd7800e426a6b3c244c1eb937e1bdda8a13c25d88e5d9ed0161ab"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh363-motion-c31-phases/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh363-motion-c31-phases/script-diagnostics.json",
+      "sha256": "99bbbecec312f933855a69b1d853770138fd35ab62669f2fe652484d335f4ec7"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh363-motion-c31-phases/frame.png",
+      "sha256": "af1f59d6f944cf6f775874d04542e1a57ebb6da79bff91131f810dd48c5a8528"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh363-motion-c31-phases/frames.json",
+      "sha256": "a6ed2ee1bdb219d71c170500ba1655f57ec36cd736928b55c51299c3dca5c6f8"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh363-motion-c31-phases/frame.png",
+      "sha256": "af1f59d6f944cf6f775874d04542e1a57ebb6da79bff91131f810dd48c5a8528"
+    },
+    "frame_300": {
+      "path": ".runtime/factory-native/sikh363-motion-c31-phases/frame-0300.png",
+      "sha256": "0fcb60979209405ac6e21b92c4dd28d0e02aa8ed46d4be91dad2920d84909475"
+    },
+    "frame_306": {
+      "path": ".runtime/factory-native/sikh363-motion-c31-phases/frame-0306.png",
+      "sha256": "2e6236a46028e1394646c130d760068caf6f5285f3ff523ba36c3927e3b17f62"
+    },
+    "frame_310": {
+      "path": ".runtime/factory-native/sikh363-motion-c31-phases/frame-0310.png",
+      "sha256": "c61b023a21eb331605a62db60835c5a5289ae6cd81f3de9df8373d5103808cf3"
+    },
+    "frame_314": {
+      "path": ".runtime/factory-native/sikh363-motion-c31-phases/frame-0314.png",
+      "sha256": "15e1162ffdb3a608ab4c2612fdb1b509629f34caae48a66f1a79b2a51a39051c"
+    },
+    "frame_317": {
+      "path": ".runtime/factory-native/sikh363-motion-c31-phases/frame-0317.png",
+      "sha256": "6d7d7b965aabfeb4a07eb49c22cdbb26b6053fa749d1002be3714ea0b4c34eb5"
+    },
+    "frame_322": {
+      "path": ".runtime/factory-native/sikh363-motion-c31-phases/frame-0322.png",
+      "sha256": "25e7ac917fd2a8298ff8a3797275d1f8776ceff7eb0297816ec584711850fb84"
+    },
+    "frame_327": {
+      "path": ".runtime/factory-native/sikh363-motion-c31-phases/frame-0327.png",
+      "sha256": "9455a6c0b49db4dc79325f7e17072df8778ba3ec9e3626e453a03d4b22e20a55"
+    },
+    "frame_333": {
+      "path": ".runtime/factory-native/sikh363-motion-c31-phases/frame-0333.png",
+      "sha256": "a96a9ede7e623c834d6f25e63d1f00151592d1dc3ae906c10e0866f629f548ea"
+    }
+  },
+  "observation": "Actual nine intended phases: hand/pole crowds face283/306/314, crest clips spear tip314/317, and reins appear orphaned ahead of horse during rise310/314/322. Substantial raised signal exists but cannot pass interfaces/framing. Old flag remains rigid pending real cloth.",
+  "comparison": "Director363 clear face toward exchange, attached contacts, whole raised spear and faithful faster reference phases. Actual whole passage vetoes reachable numeric pose.",
+  "open_defects": [
+    "face-pole-occlusion",
+    "crest-tip-clipping",
+    "rein-attachment-investigation"
+  ],
+  "retrospective_observations": [
+    {
+      "requirement": "rider",
+      "status": "FAIL",
+      "observation": "Numeric pose continuity did not establish face/pole framing or visible reins; actual intended views reject interfaces.",
+      "falsified": true
+    }
+  ]
+}

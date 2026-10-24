@@ -1,0 +1,59 @@
+{
+  "verdict": "PASS",
+  "run_digest": "dd1b20413f9653840314c00ee300bb49391092190f73b4a70488db6aca762125",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh363-appearance-c109-right_hand/snapshot.json",
+      "sha256": "83bd7c5cee3cd7800e426a6b3c244c1eb937e1bdda8a13c25d88e5d9ed0161ab"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh363-appearance-c109-right_hand/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh363-appearance-c109-right_hand/script-diagnostics.json",
+      "sha256": "99bbbecec312f933855a69b1d853770138fd35ab62669f2fe652484d335f4ec7"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh363-appearance-c109-right_hand/frame.png",
+      "sha256": "ce1a31f7a6ef0d8413ca0acfb8878323faf1754aaced25b121aac6b225e9ad3d"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh363-appearance-c109-right_hand/frames.json",
+      "sha256": "1ce26489f37fa30936009cf1c56c0ad47b3e2c3be056fc6686939978bac48596"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh363-appearance-c109-right_hand/frame.png",
+      "sha256": "ce1a31f7a6ef0d8413ca0acfb8878323faf1754aaced25b121aac6b225e9ad3d"
+    },
+    "frame_327": {
+      "path": ".runtime/factory-native/sikh363-appearance-c109-right_hand/frame-0327.png",
+      "sha256": "5552f9e459ad24b7f1c52fe07481f7c9c2263a5f7f937b22df1878239378d758"
+    }
+  },
+  "observation": "Actual283/327 direct arc removes extended antlers and gives compact curled fingers, but thumb remains too hooked/open relative to fist. Retain actual improvement only as component; thumb opposition remains unclosed before whole shot.",
+  "comparison": "Actual source-bound diagnostic evidence against363 known failures; output availability/coverage only, not repair or art acceptance.",
+  "open_defects": [],
+  "requirement_outcomes": {
+    "preservation": {
+      "status": "PASS",
+      "observation": "Technical preservation only."
+    },
+    "form": {
+      "status": "NOT_TESTED",
+      "observation": "Diagnostic/component coverage only; known363 artistic failure remains open, not qualified by availability."
+    },
+    "interfaces": {
+      "status": "NOT_TESTED",
+      "observation": "Diagnostic/component coverage only; known363 artistic failure remains open, not qualified by availability."
+    },
+    "evidence": {
+      "status": "NOT_TESTED",
+      "observation": "Diagnostic/component coverage only; known363 artistic failure remains open, not qualified by availability."
+    },
+    "whole_look": {
+      "status": "NOT_TESTED",
+      "observation": "Diagnostic/component coverage only; known363 artistic failure remains open, not qualified by availability."
+    }
+  }
+}

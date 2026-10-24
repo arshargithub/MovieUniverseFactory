@@ -1,0 +1,63 @@
+{
+  "verdict": "PASS",
+  "run_digest": "81706b9499aeccbf79eb9f72471aaafca7f6a6343e4f1b64babd1fae9b0cb211",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh363-appearance-c123-reverse/snapshot.json",
+      "sha256": "1f3ba155579dd8e831eb5eef92109cf40617980f94d476caeb71760c6b68eaf2"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh363-appearance-c123-reverse/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh363-appearance-c123-reverse/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh363-appearance-c123-reverse/frame.png",
+      "sha256": "119f7b5828989c68280f80e1ae8480553c45a45aa0a30dbf7ccb69562504db38"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh363-appearance-c123-reverse/frames.json",
+      "sha256": "2bdb99daaadd8730f252463cb9a68a6bf186ccef96b310513e95a1c39f1d9ab1"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh363-appearance-c123-reverse/frame-0283.png",
+      "sha256": "407069fec084d27936652bc9e0a39c0ab9df90d459ef84b67abe51600e9438de"
+    },
+    "frame_314": {
+      "path": ".runtime/factory-native/sikh363-appearance-c123-reverse/frame.png",
+      "sha256": "119f7b5828989c68280f80e1ae8480553c45a45aa0a30dbf7ccb69562504db38"
+    },
+    "frame_333": {
+      "path": ".runtime/factory-native/sikh363-appearance-c123-reverse/frame-0333.png",
+      "sha256": "65898533485beb5028274f8caac32fbcf159a7b8776e4505abb6e0bea3afd123"
+    }
+  },
+  "observation": "Actual back views283/314/333 inspected: raised sleeve stays continuous into shoulder; neck/crown, band, seat and saddle pad remain joined with no exposed seam or floating limb. Diagnostic perspective only; intended-front sequence and separate whole appearance review remain required.",
+  "comparison": "Actual source-bound diagnostic evidence against363 known failures; output availability/coverage only, not repair or art acceptance.",
+  "open_defects": [],
+  "requirement_outcomes": {
+    "preservation": {
+      "status": "PASS",
+      "observation": "Technical preservation only."
+    },
+    "form": {
+      "status": "NOT_TESTED",
+      "observation": "Diagnostic/component coverage only; known363 artistic failure remains open, not qualified by availability."
+    },
+    "interfaces": {
+      "status": "NOT_TESTED",
+      "observation": "Diagnostic/component coverage only; known363 artistic failure remains open, not qualified by availability."
+    },
+    "evidence": {
+      "status": "NOT_TESTED",
+      "observation": "Diagnostic/component coverage only; known363 artistic failure remains open, not qualified by availability."
+    },
+    "whole_look": {
+      "status": "NOT_TESTED",
+      "observation": "Diagnostic/component coverage only; known363 artistic failure remains open, not qualified by availability."
+    }
+  }
+}

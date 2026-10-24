@@ -1,0 +1,136 @@
+{
+  "template": "results/sikh363/appearance-c101-strategizing.json",
+  "derived_template": "results/sikh363/appearance-c101-deriving.json",
+  "parent": ".runtime/factory-native/sikh362-appearance-c99-save/scene.blend",
+  "method": "Preserve exact99 horse and established costume. Close actual right-hand MCP/PIP/DIP chains around the rein, oppose thumb over proximal index, preserve wrist and anatomical segment lengths; move only hand-owned final rein span. Capture actual corrective values/drivers and effect while restoring mute states. Correct diagnostic camera from actual neck base. Compare unmuted versus render-only muted corrective front/true-side views before any horse sculpt. This is a hand candidate and causal horse test, not whole appearance acceptance.",
+  "proof": "190 right-hand poses with unchanged wrist, fixed phalanx lengths, actual thumb contact and closed visible fist; reins end inside grip. Actual horse front/true-side stance/crest plus paired no-corrective controls identify whether shape keys cause chest bulge. Horse/head/cloth adjacent interfaces remain mandatory before integration.",
+  "scope": "Internal hand repair and horse corrective discriminating test, before phased motion/flag integration; no Director handoff.",
+  "framing": "Right-hand283/327 at640 square; actual chest front/true-side283/327 and exact-pose no-corrective control, followed by original mounted framing.",
+  "reconciliation": "363 rejects362. All101 diagnostics preserved, including wrong side crop and open claw. Two preplanning source/runtime reconciliations retain original counters. Appearance103/max117, motion30/max41; Sol only, no additional authority.",
+  "applications": {
+    "director363": "Diagnose exact named defects, not another texture-only or faster-playback patch.",
+    "strategy363": "First identify chest/hand/ownership causes, then authored repair and real cloth proof on final action clock."
+  },
+  "alternatives": "Reject speculative smoothing of whole horse, fist endpoint-only offsets and uniform clip acceleration. Native inspection first is smaller than repeated whole-scene renders.",
+  "failure": "Open or intersecting fist, wrong thumb side, unchanged chest cause untested, incorrect crop, changed wrist/forearm, unsupported pose contact or false full-art outcome blocks continuation.",
+  "sources": [
+    "src/movie_factory/adapters/blender/nihang_audit363.py",
+    "src/movie_factory/adapters/blender/nihang_control.py",
+    "src/movie_factory/adapters/blender/nihang_patch.py",
+    "tests/test_nihang363.py",
+    "src/movie_factory/adapters/blender/nihang_hand363.py",
+    "src/movie_factory/native_admission.py",
+    "results/sikh363/CAUSAL_AUDIT.md",
+    "results/sikh363/HAND_HANDLER_REVIEW.md"
+  ],
+  "steps": [
+    {
+      "id": "save",
+      "depends_on": [],
+      "requirements": [
+        "preservation"
+      ],
+      "recipe": {
+        "operation": "nihang_patch",
+        "frame": 283,
+        "width": 432,
+        "height": 768,
+        "samples": 8,
+        "edits": [
+          {
+            "kind": "mounted_hand363",
+            "target": "mounted leader"
+          }
+        ]
+      }
+    },
+    {
+      "id": "right_hand",
+      "depends_on": [
+        "save"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 283,
+        "frames": [
+          283,
+          327
+        ],
+        "view": "leader_right_contact",
+        "width": 640,
+        "height": 640,
+        "samples": 8
+      }
+    },
+    {
+      "id": "chest",
+      "depends_on": [
+        "save"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 283,
+        "frames": [
+          283,
+          327
+        ],
+        "view": "horse_chest",
+        "width": 640,
+        "height": 640,
+        "samples": 8
+      }
+    },
+    {
+      "id": "chest_side",
+      "depends_on": [
+        "save"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 283,
+        "frames": [
+          283,
+          327
+        ],
+        "view": "horse_chest_side",
+        "width": 640,
+        "height": 640,
+        "samples": 8
+      }
+    },
+    {
+      "id": "no_corrective",
+      "depends_on": [
+        "save"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 283,
+        "frames": [
+          283
+        ],
+        "view": "horse_chest_no_corrective",
+        "width": 640,
+        "height": 640,
+        "samples": 8
+      }
+    },
+    {
+      "id": "no_corrective_side",
+      "depends_on": [
+        "save"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 283,
+        "frames": [
+          283
+        ],
+        "view": "horse_chest_side_no_corrective",
+        "width": 640,
+        "height": 640,
+        "samples": 8
+      }
+    }
+  ]
+}

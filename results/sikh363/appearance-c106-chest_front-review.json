@@ -1,0 +1,59 @@
+{
+  "verdict": "PASS",
+  "run_digest": "402fe6a8ab87e4a5e4f18857334817091892f0e564ecfb2d4f1feb8f83f5c7a3",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh363-appearance-c106-chest_front/snapshot.json",
+      "sha256": "83bd7c5cee3cd7800e426a6b3c244c1eb937e1bdda8a13c25d88e5d9ed0161ab"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh363-appearance-c106-chest_front/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh363-appearance-c106-chest_front/script-diagnostics.json",
+      "sha256": "99bbbecec312f933855a69b1d853770138fd35ab62669f2fe652484d335f4ec7"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh363-appearance-c106-chest_front/frame.png",
+      "sha256": "94c7e78410fd92337c57fc241ea41e6731c1f0d83e2ff32d7ddece8b3b3ec25b"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh363-appearance-c106-chest_front/frames.json",
+      "sha256": "3919f0a313c7fffc30ec8f9fec620ca1acac88e0876c6aed4fcdadb411a11a6d"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh363-appearance-c106-chest_front/frame.png",
+      "sha256": "94c7e78410fd92337c57fc241ea41e6731c1f0d83e2ff32d7ddece8b3b3ec25b"
+    },
+    "frame_327": {
+      "path": ".runtime/factory-native/sikh363-appearance-c106-chest_front/frame-0327.png",
+      "sha256": "15bac219e91b4021dbdd9758fdadbc7db2ef74d1bc0ea44c55d806e95648a0d2"
+    }
+  },
+  "observation": "Actual283/327 front lower pectoral protrusion substantially reduced versus101, continuous neck/shoulder and unchanged limb stance. Retain as contour component; hand still visibly fails and full shot/performance remain unqualified.",
+  "comparison": "Actual source-bound diagnostic evidence against363 known failures; output availability/coverage only, not repair or art acceptance.",
+  "open_defects": [],
+  "requirement_outcomes": {
+    "preservation": {
+      "status": "PASS",
+      "observation": "Technical preservation only."
+    },
+    "form": {
+      "status": "NOT_TESTED",
+      "observation": "Diagnostic/component coverage only; known363 artistic failure remains open, not qualified by availability."
+    },
+    "interfaces": {
+      "status": "NOT_TESTED",
+      "observation": "Diagnostic/component coverage only; known363 artistic failure remains open, not qualified by availability."
+    },
+    "evidence": {
+      "status": "NOT_TESTED",
+      "observation": "Diagnostic/component coverage only; known363 artistic failure remains open, not qualified by availability."
+    },
+    "whole_look": {
+      "status": "NOT_TESTED",
+      "observation": "Diagnostic/component coverage only; known363 artistic failure remains open, not qualified by availability."
+    }
+  }
+}

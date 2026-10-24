@@ -1,0 +1,35 @@
+{
+  "verdict": "PASS",
+  "run_digest": "3e58183371037c7f39d233ce6b07b636c3d4a86d03392de5b77551f7af3ecd48",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh363-motion-c40-save/snapshot.json",
+      "sha256": "d04a5dac332602fd192e26ad20f824cd801199f230c925bf66e5a0c1b80c85f5"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh363-motion-c40-save/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh363-motion-c40-save/script-diagnostics.json",
+      "sha256": "d8c950e68c5c42eb08e3ba4cd795b716e2b5ac082b76301b8697edb7667b2ad9"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh363-motion-c40-save/scene.blend",
+      "sha256": "b6de6ab11d5799bce02d26a1b35bde79c977ed46c9fcacccf0a604534d6f830b"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh363-motion-c40-save/patch-evidence.json",
+      "sha256": "84c0f8b8d812d55952749ca8872facd8d1806b949bbbb670563dd66c8f89197a"
+    }
+  },
+  "observation": "Actual40: atomic original integer poses unchanged, source/new-clock contact and pose guards pass, full raised-tip camera fit saved with Euler ownership and substantive hoist. Transport/preservation only; actual phase framing, reference chronology and flag/Director AV remain open.",
+  "comparison": "Actual source-bound diagnostic evidence against363 known failures; output availability/coverage only, not repair or art acceptance.",
+  "open_defects": [],
+  "requirement_outcomes": {
+    "preservation": {
+      "status": "PASS",
+      "observation": "Technical preservation only."
+    }
+  }
+}

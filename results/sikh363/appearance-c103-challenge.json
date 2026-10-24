@@ -1,0 +1,86 @@
+{
+  "outcome": "admit",
+  "checks": {
+    "grounding": {
+      "status": "PASS",
+      "observation": "Actual101 open claw and front chest failure retained; side crop error acknowledged, not reused as valid shape evidence.",
+      "comparison": "190 right-hand poses with unchanged wrist, fixed phalanx lengths, actual thumb contact and closed visible fist; reins end inside grip. Actual horse front/true-side stance/crest plus paired no-corrective controls identify whether shape keys cause chest bulge. Horse/head/cloth adjacent interfaces remain mandatory before integration.",
+      "source_ids": [
+        "audit363",
+        "director363"
+      ]
+    },
+    "expert_coverage": {
+      "status": "PASS",
+      "observation": "Actual MCP origins, segment lengths, wrist preservation and opposed thumb are necessary but insufficient; require closed silhouette and real rein path. Corrective versus mesh test precedes sculpt.",
+      "comparison": "190 right-hand poses with unchanged wrist, fixed phalanx lengths, actual thumb contact and closed visible fist; reins end inside grip. Actual horse front/true-side stance/crest plus paired no-corrective controls identify whether shape keys cause chest bulge. Horse/head/cloth adjacent interfaces remain mandatory before integration.",
+      "source_ids": [
+        "audit363",
+        "director_preferences"
+      ]
+    },
+    "film_alignment": {
+      "status": "PASS",
+      "observation": "Preserve actual99 materials/costume/head identity and accepted Pashtun floor. No texture hiding of chest or glove hiding of fingers.",
+      "comparison": "190 right-hand poses with unchanged wrist, fixed phalanx lengths, actual thumb contact and closed visible fist; reins end inside grip. Actual horse front/true-side stance/crest plus paired no-corrective controls identify whether shape keys cause chest bulge. Horse/head/cloth adjacent interfaces remain mandatory before integration.",
+      "source_ids": [
+        "film_language"
+      ]
+    },
+    "preferences": {
+      "status": "PASS",
+      "observation": "Complete hand and horse cause test internally before final faster-action/flag proof. No routine micro-handoff.",
+      "comparison": "190 right-hand poses with unchanged wrist, fixed phalanx lengths, actual thumb contact and closed visible fist; reins end inside grip. Actual horse front/true-side stance/crest plus paired no-corrective controls identify whether shape keys cause chest bulge. Horse/head/cloth adjacent interfaces remain mandatory before integration.",
+      "source_ids": [
+        "director363",
+        "director_preferences"
+      ]
+    },
+    "reference_roles": {
+      "status": "PASS",
+      "observation": "Faithful spear/rear remains downstream timing authority; hand source anatomy is not derived from a tiny video hand. No claim that diagnostics prove motion.",
+      "comparison": "190 right-hand poses with unchanged wrist, fixed phalanx lengths, actual thumb contact and closed visible fist; reins end inside grip. Actual horse front/true-side stance/crest plus paired no-corrective controls identify whether shape keys cause chest bulge. Horse/head/cloth adjacent interfaces remain mandatory before integration.",
+      "source_ids": [
+        "references"
+      ]
+    },
+    "method": {
+      "status": "PASS",
+      "observation": "Targeted right digit closure and hand-owned rein endpoint, no wrist or horse geometry mutation. Mute corrective only during controlled comparison and restore state.",
+      "comparison": "190 right-hand poses with unchanged wrist, fixed phalanx lengths, actual thumb contact and closed visible fist; reins end inside grip. Actual horse front/true-side stance/crest plus paired no-corrective controls identify whether shape keys cause chest bulge. Horse/head/cloth adjacent interfaces remain mandatory before integration.",
+      "source_ids": [
+        "strategy363",
+        "audit363"
+      ]
+    },
+    "interfaces": {
+      "status": "PASS",
+      "observation": "A tighter fist may still have a backward thumb or rein penetration; inspect actual right283/327 then whole-shot/retimed contact. Side camera uses measured neck base, not misleading chest control.",
+      "comparison": "190 right-hand poses with unchanged wrist, fixed phalanx lengths, actual thumb contact and closed visible fist; reins end inside grip. Actual horse front/true-side stance/crest plus paired no-corrective controls identify whether shape keys cause chest bulge. Horse/head/cloth adjacent interfaces remain mandatory before integration.",
+      "source_ids": [
+        "audit363",
+        "constraints"
+      ]
+    },
+    "efficient_quality": {
+      "status": "PASS",
+      "observation": "One190-frame hand solve, paired crops and corrective controls, not a whole render. Do not keep a corrective mute if it has no causal effect.",
+      "comparison": "190 right-hand poses with unchanged wrist, fixed phalanx lengths, actual thumb contact and closed visible fist; reins end inside grip. Actual horse front/true-side stance/crest plus paired no-corrective controls identify whether shape keys cause chest bulge. Horse/head/cloth adjacent interfaces remain mandatory before integration.",
+      "source_ids": [
+        "director_preferences",
+        "strategy363"
+      ]
+    },
+    "authority": {
+      "status": "PASS",
+      "observation": "Original103/max117, motion30/max41. No new grant, tools, spend, providers, cloud, crowd or Astra. Native outcome-owner change passed77 regression controls, not art.",
+      "comparison": "190 right-hand poses with unchanged wrist, fixed phalanx lengths, actual thumb contact and closed visible fist; reins end inside grip. Actual horse front/true-side stance/crest plus paired no-corrective controls identify whether shape keys cause chest bulge. Horse/head/cloth adjacent interfaces remain mandatory before integration.",
+      "source_ids": [
+        "director363",
+        "routing360"
+      ]
+    }
+  },
+  "strongest_counterexample": "Fixed bone lengths and closer thumb target can still produce a distorted fist. Actual isolated hand silhouette and rein enclosure must reject it. Corrective keys may have zero effect; do not interpret a successful comparison as a repaired horse.",
+  "issues": []
+}

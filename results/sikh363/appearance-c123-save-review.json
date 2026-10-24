@@ -1,0 +1,31 @@
+{
+  "verdict": "PASS",
+  "run_digest": "e991ce7886f38bc66c5220bc12fc4879d9dd4a07b19af2a8d1b3c0c1cfa97227",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh363-appearance-c123-save/snapshot.json",
+      "sha256": "1f3ba155579dd8e831eb5eef92109cf40617980f94d476caeb71760c6b68eaf2"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh363-appearance-c123-save/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh363-appearance-c123-save/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh363-appearance-c123-save/scene.blend",
+      "sha256": "d37296e8391819c1cd636f0b3efb955e2e7a64ac463990f10af029d948a03056"
+    }
+  },
+  "observation": "Actual123 noedit source/dependency/snapshot preserved against integrated42; no action/geometry/cache edits. Ready only for the admitted reversebody and rig inspections.",
+  "comparison": "Actual source-bound diagnostic evidence against363 known failures; output availability/coverage only, not repair or art acceptance.",
+  "open_defects": [],
+  "requirement_outcomes": {
+    "preservation": {
+      "status": "PASS",
+      "observation": "Technical preservation only."
+    }
+  }
+}

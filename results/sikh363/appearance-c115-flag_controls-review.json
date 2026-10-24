@@ -1,0 +1,51 @@
+{
+  "verdict": "PASS",
+  "run_digest": "e59071820ccbb14a8aac952a6405d177d218d43ebad715a8bf7b0b8db0a5e119",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh363-appearance-c115-flag_controls/snapshot.json",
+      "sha256": "d84cfe44c1108b99b2f43507f91a16a2d1d0621dfa199578d2b01bdd3dc43559"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh363-appearance-c115-flag_controls/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh363-appearance-c115-flag_controls/script-diagnostics.json",
+      "sha256": "d8c950e68c5c42eb08e3ba4cd795b716e2b5ac082b76301b8697edb7667b2ad9"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh363-appearance-c115-flag_controls/scene.blend",
+      "sha256": "83ba335e39cf327e4cabc75808c8fb78bc428d050e36e355a8bb150535815963"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh363-appearance-c115-flag_controls/patch-evidence.json",
+      "sha256": "67603285631e8b71b15bc38747e9e19ef99aeaa43c339b50f70b14bc501e51ca"
+    }
+  },
+  "observation": "Actual full189-frame gravity/breeze controls solved with maxstrain1.048/1.036 and exact pins; collision-only failed. This isolates collision cause rather than mass/wind/basic moving-goal integration. No production flag or art pass.",
+  "comparison": "Actual source-bound diagnostic evidence against363 known failures; output availability/coverage only, not repair or art acceptance.",
+  "open_defects": [],
+  "requirement_outcomes": {
+    "preservation": {
+      "status": "PASS",
+      "observation": "Technical preservation only."
+    },
+    "form": {
+      "status": "NOT_TESTED",
+      "observation": "Diagnostic/component coverage only; known363 artistic failure remains open, not qualified by availability."
+    },
+    "interfaces": {
+      "status": "NOT_TESTED",
+      "observation": "Diagnostic/component coverage only; known363 artistic failure remains open, not qualified by availability."
+    },
+    "evidence": {
+      "status": "NOT_TESTED",
+      "observation": "Diagnostic/component coverage only; known363 artistic failure remains open, not qualified by availability."
+    },
+    "whole_look": {
+      "status": "NOT_TESTED",
+      "observation": "Diagnostic/component coverage only; known363 artistic failure remains open, not qualified by availability."
+    }
+  }
+}

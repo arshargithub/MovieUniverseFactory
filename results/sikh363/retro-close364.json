@@ -1,0 +1,1374 @@
+{
+  "appearance": {
+    "counts": {
+      "initialize": 1,
+      "plan": 70,
+      "outcome": 590,
+      "response": 356,
+      "admit": 356,
+      "evaluate": 1,
+      "closure": 2
+    },
+    "projection": {
+      "policy": 1,
+      "sequence": 1376,
+      "gates": {
+        "__migration__": {
+          "status": "CLOSED",
+          "evaluation": "sikh351-migration-effect"
+        },
+        "__allowance__": {
+          "status": "TESTING",
+          "reason": "evidence_reconciliation",
+          "triggers": [
+            "migration-evidence:sikh351-reviewed-migration",
+            "sikh351-c55-__allowance__-reopen",
+            "sikh351-c56-__allowance__-reopen",
+            "sikh351-c57-__allowance__-reopen",
+            "exhaustion:sikh351-exhausted",
+            "sikh352-c59-__allowance__-reopen",
+            "sikh352-c60-__allowance__-reopen",
+            "sikh352-c61-__allowance__-reopen",
+            "exhaustion:sikh352-exhausted61",
+            "sikh353-c63-__allowance__-reopen",
+            "sikh353-c64-__allowance__-reopen",
+            "sikh353-c65-__allowance__-reopen",
+            "sikh353-c66-__allowance__-reopen",
+            "sikh353-c67-__allowance__-reopen",
+            "exhaustion:sikh353-appearance-exhausted",
+            "sikh354-c69-__allowance__-reopen",
+            "sikh354-c70-__allowance__-reopen",
+            "sikh354-c71-__allowance__-reopen",
+            "sikh354-c72-__allowance__-reopen",
+            "exhaustion:sikh354-c72-visual-replan",
+            "sikh357-c74-__allowance__-reopen",
+            "sikh357-c75-__allowance__-reopen",
+            "sikh357-c76-__allowance__-reopen",
+            "sikh357-c77-__allowance__-reopen",
+            "sikh357-c78-__allowance__-reopen",
+            "sikh357-c79-__allowance__-reopen",
+            "sikh357-c80-__allowance__-reopen",
+            "sikh357-c81-__allowance__-reopen",
+            "sikh358-appearance-c82-__allowance__-reopen",
+            "sikh358-appearance-c83-__allowance__-reopen",
+            "sikh358-appearance-c84-__allowance__-reopen",
+            "sikh358-appearance-c85-__allowance__-reopen",
+            "sikh358-appearance-c86-__allowance__-reopen",
+            "sikh361-appearance-c87-__allowance__-reopen",
+            "sikh361-appearance-c88-__allowance__-reopen",
+            "sikh361-appearance-c89-__allowance__-reopen",
+            "sikh361-appearance-c90-__allowance__-reopen",
+            "sikh361-appearance-c91-__allowance__-reopen",
+            "sikh361-appearance-c92-__allowance__-reopen",
+            "sikh361-appearance-c93-__allowance__-reopen",
+            "sikh361-appearance-c94-__allowance__-reopen",
+            "sikh361-appearance-c95-__allowance__-reopen",
+            "sikh361-appearance-c96-__allowance__-reopen",
+            "exhaustion:sikh361-appearance-c97-admit",
+            "sikh362-appearance-c99-__allowance__-reopen",
+            "sikh362-appearance100-__allowance__-reopen",
+            "sikh363-a101-__allowance__-reopen",
+            "sikh363-a103-__allowance__-reopen",
+            "sikh363-a104-__allowance__-reopen",
+            "sikh363-appearance-c105-__allowance__-reopen",
+            "sikh363-appearance-c106-__allowance__-reopen",
+            "sikh363-appearance-c107-__allowance__-reopen",
+            "sikh363-appearance-c108-__allowance__-reopen",
+            "sikh363-appearance-c109-__allowance__-reopen",
+            "sikh363-appearance-c110-__allowance__-reopen",
+            "sikh363-appearance-c111-__allowance__-reopen",
+            "sikh363-appearance-c112-__allowance__-reopen",
+            "sikh363-appearance-c113-__allowance__-reopen",
+            "sikh363-appearance-c114-__allowance__-reopen",
+            "sikh363-appearance-c115-__allowance__-reopen",
+            "sikh363-appearance-c116-__allowance__-reopen",
+            "sikh363-appearance-c117-__allowance__-reopen",
+            "exhaustion:sikh363-appearance-exhausted",
+            "sikh363-appearance-c119-__allowance__-reopen",
+            "sikh363-appearance-c120-__allowance__-reopen",
+            "sikh363-appearance-c121-__allowance__-reopen",
+            "sikh363-appearance-c122-__allowance__-reopen",
+            "sikh363-appearance-c123-__allowance__-reopen"
+          ],
+          "plan": "26ff6a3e7954950de7f6214ff2f9de4d054a18a4624a3d946a69046af925f45b",
+          "admitted_event": "sikh363-appearance-c123-__allowance__-response-admit"
+        },
+        "form": {
+          "status": "TESTING",
+          "reason": "evidence_reconciliation",
+          "triggers": [
+            "sikh351-legacy-form",
+            "sikh351-c54-form-open",
+            "sikh351-c55-form-open",
+            "sikh351-c56-form-open",
+            "native-review:sikh351-c56-anatomy_custom_back",
+            "sikh351-c57-form-open",
+            "native-review:sikh351-c57-anatomy_custom_back",
+            "sikh352-c58-form-open",
+            "native-review:sikh352-c58-anatomy_custom_front",
+            "sikh352-c59-form-open",
+            "sikh352-c60-form-open",
+            "native-review:sikh352-c60-leader_front",
+            "sikh352-c61-form-open",
+            "native-review:sikh352-c61-leader_front",
+            "sikh352-c61-final-form-failure",
+            "sikh353-c63-form-reopen",
+            "native-review:sikh353-c63-leader_reverse",
+            "native-review:sikh353-c64-leader_front",
+            "native-review:sikh353-c65-leader_face",
+            "native-review:sikh353-c66-leader_face",
+            "native-review:sikh353-c67-leader_front",
+            "sikh353-c67-final-failure",
+            "sikh354-c68-leader_face-failure",
+            "sikh354-c69-save-failure",
+            "native-review:sikh354-c70-production",
+            "sikh354-c70-production-failure",
+            "native-review:sikh354-c71-leader_front",
+            "sikh354-c71-leader_front-failure",
+            "native-review:sikh354-c72-leader_face",
+            "sikh354-c72-leader_face-failure",
+            "native-review:sikh357-c73-leader_face",
+            "sikh357-c73-leader_face-failure",
+            "native-review:sikh357-c74-leader_face",
+            "sikh357-c74-leader_face-failure",
+            "native-review:sikh357-c75-leader_face",
+            "sikh357-c75-leader_face-failure",
+            "native-review:sikh357-c76-leader_face",
+            "sikh357-c76-leader_face-failure",
+            "native-review:sikh357-c77-leader_front",
+            "sikh357-c77-leader_front-failure",
+            "native-review:sikh357-c78-leader_reverse",
+            "sikh357-c78-leader_reverse-failure",
+            "native-review:sikh357-c79-leader_reverse",
+            "sikh357-c79-leader_reverse-failure",
+            "native-review:sikh357-c80-horse_head",
+            "sikh357-c80-horse_head-failure",
+            "native-review:sikh357-c81-horse_head",
+            "sikh357-c81-horse_head-failure",
+            "sikh358-appearance-c83-form-reopen",
+            "sikh358-appearance-c84-form-reopen",
+            "native-review:sikh358-appearance-c84-horse_head",
+            "sikh358-appearance-c86-form-reopen",
+            "sikh361-appearance-c87-form-reopen",
+            "native-review:sikh361-appearance-c87-leader_face",
+            "sikh361-appearance-c87-leader_face-outcome",
+            "sikh361-appearance-c89-form-reopen",
+            "sikh361-appearance-c90-form-reopen",
+            "sikh361-appearance-c91-form-reopen",
+            "sikh361-appearance-c92-form-reopen",
+            "sikh361-appearance-c93-form-reopen",
+            "sikh361-appearance-c94-form-reopen",
+            "sikh361-appearance-c95-form-reopen",
+            "native-review:sikh361-appearance-c95-leader_reverse",
+            "native-review:sikh361-appearance-c96-save",
+            "native-review:sikh362-appearance-c98-leader_face",
+            "sikh362-appearance100-form-reopen",
+            "sikh363-a101-form-reopen",
+            "native-review:sikh363-appearance-c101-chest",
+            "native-review:sikh363-appearance-c101-chest_side",
+            "native-review:sikh363-appearance-c101-right_hand",
+            "native-review:sikh363-appearance-c101-left_hand",
+            "native-review:sikh363-appearance-c103-right_hand",
+            "native-review:sikh363-appearance-c104-right_hand",
+            "native-review:sikh363-appearance-c105-right_hand",
+            "sikh363-appearance-c106-form-reopen",
+            "sikh363-appearance-c107-form-reopen",
+            "sikh363-appearance-c108-form-reopen",
+            "sikh363-appearance-c109-form-reopen",
+            "sikh363-appearance-c110-form-reopen",
+            "sikh363-appearance-c111-form-reopen",
+            "sikh363-appearance-c112-form-reopen",
+            "native-review:sikh363-appearance-c112-chest_front",
+            "sikh363-appearance-c114-form-reopen",
+            "sikh363-appearance-c115-form-reopen",
+            "sikh363-appearance-c116-form-reopen",
+            "sikh363-appearance-c117-form-reopen",
+            "sikh363-appearance-c118-form-reopen",
+            "sikh363-appearance-c119-form-reopen",
+            "sikh363-appearance-c120-form-reopen",
+            "sikh363-appearance-c121-form-reopen",
+            "sikh363-appearance-c122-form-reopen",
+            "sikh363-appearance-c123-form-reopen"
+          ],
+          "plan": "26ff6a3e7954950de7f6214ff2f9de4d054a18a4624a3d946a69046af925f45b",
+          "admitted_event": "sikh363-appearance-c123-form-response-admit"
+        },
+        "interfaces": {
+          "status": "TESTING",
+          "reason": "evidence_reconciliation",
+          "triggers": [
+            "native-review:sikh352-c58-anatomy_custom_front",
+            "native-review:sikh352-c58-anatomy_custom_back",
+            "native-review:sikh352-c58-anatomy_custom_side",
+            "native-review:sikh352-c58-anatomy_linear_front",
+            "native-review:sikh352-c58-anatomy_linear_back",
+            "native-review:sikh352-c58-leader_contact",
+            "sikh352-c60-interfaces-reopen",
+            "native-review:sikh352-c60-leader_front",
+            "native-review:sikh352-c61-leader_front",
+            "sikh353-c63-interfaces-reopen",
+            "native-review:sikh353-c63-leader_reverse",
+            "sikh353-c63-leader_reverse-failure",
+            "native-review:sikh353-c64-leader_front",
+            "sikh353-c64-leader_front-failure",
+            "native-review:sikh353-c65-leader_face",
+            "sikh353-c65-leader_face-failure",
+            "native-review:sikh353-c66-leader_face",
+            "sikh353-c66-leader_face-failure",
+            "native-review:sikh353-c67-leader_front",
+            "sikh354-c69-interfaces-reopen",
+            "sikh354-c70-interfaces-reopen",
+            "native-review:sikh354-c70-production",
+            "native-review:sikh354-c71-leader_front",
+            "native-review:sikh354-c72-leader_face",
+            "native-review:sikh357-c73-leader_face",
+            "native-review:sikh357-c74-leader_face",
+            "native-review:sikh357-c75-leader_face",
+            "native-review:sikh357-c76-leader_face",
+            "native-review:sikh357-c77-leader_front",
+            "native-review:sikh357-c78-leader_reverse",
+            "native-review:sikh357-c79-leader_reverse",
+            "native-review:sikh357-c80-horse_head",
+            "native-review:sikh357-c81-horse_head",
+            "sikh358-appearance-c83-interfaces-reopen",
+            "sikh358-appearance-c84-interfaces-reopen",
+            "native-review:sikh358-appearance-c84-horse_head",
+            "sikh358-appearance-c84-horse_head-outcome",
+            "sikh358-appearance-c85-save-outcome",
+            "sikh361-appearance-c87-interfaces-reopen",
+            "native-review:sikh361-appearance-c87-leader_face",
+            "sikh361-appearance-c89-interfaces-reopen",
+            "sikh361-appearance-c89-leader_reverse-outcome",
+            "sikh361-appearance-c90-save-outcome",
+            "sikh361-appearance-c91-save-outcome",
+            "sikh361-appearance-c92-save-outcome",
+            "sikh361-appearance-c93-save-outcome",
+            "sikh361-appearance-c94-save-outcome",
+            "native-review:sikh361-appearance-c95-leader_reverse",
+            "sikh361-appearance-c95-leader_reverse-outcome",
+            "native-review:sikh361-appearance-c96-save",
+            "sikh361-appearance-c96-save-outcome",
+            "native-review:sikh362-appearance-c98-leader_face",
+            "sikh362-appearance100-interfaces-reopen",
+            "sikh363-a101-interfaces-reopen",
+            "native-review:sikh363-appearance-c101-chest",
+            "native-review:sikh363-appearance-c101-chest_side",
+            "native-review:sikh363-appearance-c101-right_hand",
+            "native-review:sikh363-appearance-c101-left_hand",
+            "native-review:sikh363-appearance-c103-right_hand",
+            "native-review:sikh363-appearance-c104-right_hand",
+            "native-review:sikh363-appearance-c105-right_hand",
+            "sikh363-appearance-c106-interfaces-reopen",
+            "sikh363-appearance-c107-interfaces-reopen",
+            "sikh363-appearance-c108-interfaces-reopen",
+            "sikh363-appearance-c109-interfaces-reopen",
+            "sikh363-appearance-c110-interfaces-reopen",
+            "sikh363-appearance-c111-interfaces-reopen",
+            "sikh363-appearance-c112-interfaces-reopen",
+            "native-review:sikh363-appearance-c112-chest_front",
+            "sikh363-appearance-c114-interfaces-reopen",
+            "sikh363-appearance-c115-interfaces-reopen",
+            "sikh363-appearance-c116-interfaces-reopen",
+            "sikh363-appearance-c117-interfaces-reopen",
+            "sikh363-appearance-c118-interfaces-reopen",
+            "sikh363-appearance-c119-interfaces-reopen",
+            "sikh363-appearance-c120-interfaces-reopen",
+            "sikh363-appearance-c121-interfaces-reopen",
+            "sikh363-appearance-c122-interfaces-reopen",
+            "sikh363-appearance-c123-interfaces-reopen"
+          ],
+          "plan": "26ff6a3e7954950de7f6214ff2f9de4d054a18a4624a3d946a69046af925f45b",
+          "admitted_event": "sikh363-appearance-c123-interfaces-response-admit"
+        },
+        "evidence": {
+          "status": "TESTING",
+          "reason": "evidence_reconciliation",
+          "triggers": [
+            "native-review:sikh352-c58-anatomy_custom_front",
+            "native-review:sikh352-c58-anatomy_custom_back",
+            "native-review:sikh352-c58-anatomy_custom_side",
+            "native-review:sikh352-c58-anatomy_linear_front",
+            "native-review:sikh352-c58-anatomy_linear_back",
+            "native-review:sikh352-c58-leader_contact",
+            "sikh352-c60-evidence-reopen",
+            "native-review:sikh352-c60-leader_front",
+            "native-review:sikh352-c61-leader_front",
+            "sikh353-c63-evidence-reopen",
+            "native-review:sikh353-c63-leader_reverse",
+            "native-review:sikh353-c64-leader_front",
+            "native-review:sikh353-c65-leader_face",
+            "native-review:sikh353-c66-leader_face",
+            "native-review:sikh353-c67-leader_front",
+            "sikh354-c69-evidence-reopen",
+            "sikh354-c70-evidence-reopen",
+            "native-review:sikh354-c70-production",
+            "native-review:sikh354-c71-leader_front",
+            "native-review:sikh354-c72-leader_face",
+            "native-review:sikh357-c73-leader_face",
+            "native-review:sikh357-c74-leader_face",
+            "native-review:sikh357-c75-leader_face",
+            "native-review:sikh357-c76-leader_face",
+            "native-review:sikh357-c77-leader_front",
+            "native-review:sikh357-c78-leader_reverse",
+            "native-review:sikh357-c79-leader_reverse",
+            "native-review:sikh357-c80-horse_head",
+            "native-review:sikh357-c81-horse_head",
+            "sikh358-appearance-c83-evidence-reopen",
+            "sikh358-appearance-c84-evidence-reopen",
+            "native-review:sikh358-appearance-c84-horse_head",
+            "sikh358-appearance-c86-evidence-reopen",
+            "sikh361-appearance-c87-evidence-reopen",
+            "native-review:sikh361-appearance-c87-leader_face",
+            "sikh361-appearance-c89-evidence-reopen",
+            "sikh361-appearance-c90-evidence-reopen",
+            "sikh361-appearance-c91-evidence-reopen",
+            "sikh361-appearance-c92-evidence-reopen",
+            "sikh361-appearance-c93-evidence-reopen",
+            "sikh361-appearance-c94-evidence-reopen",
+            "sikh361-appearance-c95-evidence-reopen",
+            "native-review:sikh361-appearance-c95-leader_reverse",
+            "native-review:sikh361-appearance-c96-save",
+            "native-review:sikh362-appearance-c98-leader_face",
+            "sikh362-appearance100-evidence-reopen",
+            "sikh363-a101-evidence-reopen",
+            "native-review:sikh363-appearance-c101-chest",
+            "native-review:sikh363-appearance-c101-chest_side",
+            "sikh363-side-coverage-correction",
+            "native-review:sikh363-appearance-c101-right_hand",
+            "native-review:sikh363-appearance-c101-left_hand",
+            "native-review:sikh363-appearance-c103-right_hand",
+            "native-review:sikh363-appearance-c104-right_hand",
+            "native-review:sikh363-appearance-c105-right_hand",
+            "sikh363-appearance-c106-evidence-reopen",
+            "sikh363-appearance-c107-evidence-reopen",
+            "sikh363-appearance-c108-evidence-reopen",
+            "sikh363-appearance-c109-evidence-reopen",
+            "sikh363-appearance-c110-evidence-reopen",
+            "sikh363-appearance-c111-evidence-reopen",
+            "sikh363-appearance-c112-evidence-reopen",
+            "native-review:sikh363-appearance-c112-chest_front",
+            "sikh363-appearance-c114-evidence-reopen",
+            "sikh363-appearance-c115-evidence-reopen",
+            "sikh363-appearance-c116-evidence-reopen",
+            "sikh363-appearance-c117-evidence-reopen",
+            "sikh363-appearance-c118-evidence-reopen",
+            "sikh363-appearance-c119-evidence-reopen",
+            "sikh363-appearance-c120-evidence-reopen",
+            "sikh363-appearance-c121-evidence-reopen",
+            "sikh363-appearance-c122-evidence-reopen",
+            "sikh363-appearance-c123-evidence-reopen"
+          ],
+          "plan": "26ff6a3e7954950de7f6214ff2f9de4d054a18a4624a3d946a69046af925f45b",
+          "admitted_event": "sikh363-appearance-c123-evidence-response-admit"
+        },
+        "__worker__": {
+          "status": "TESTING",
+          "reason": "evidence_reconciliation",
+          "triggers": [
+            "worker:sikh361-appearance-c91-save",
+            "worker:sikh361-appearance-c92-save",
+            "worker:sikh361-appearance-c93-save",
+            "worker:sikh361-appearance-c94-save",
+            "sikh361-appearance-c96-__worker__-reopen",
+            "sikh362-appearance-c98-__worker__-reopen",
+            "sikh362-appearance-c99-__worker__-reopen",
+            "sikh362-appearance100-__worker__-reopen",
+            "sikh363-a101-__worker__-reopen",
+            "sikh363-a103-__worker__-reopen",
+            "sikh363-a104-__worker__-reopen",
+            "sikh363-appearance-c105-__worker__-reopen",
+            "sikh363-appearance-c106-__worker__-reopen",
+            "sikh363-appearance-c107-__worker__-reopen",
+            "sikh363-appearance-c108-__worker__-reopen",
+            "sikh363-appearance-c109-__worker__-reopen",
+            "sikh363-appearance-c110-__worker__-reopen",
+            "sikh363-appearance-c111-__worker__-reopen",
+            "worker:sikh363-appearance-c111-flag_save",
+            "sikh363-appearance-c113-__worker__-reopen",
+            "worker:sikh363-appearance-c113-flag_save",
+            "sikh363-appearance-c114-__worker__-reopen",
+            "worker:sikh363-appearance-c114-flag_save",
+            "sikh363-appearance-c116-__worker__-reopen",
+            "sikh363-appearance-c117-__worker__-reopen",
+            "worker:sikh363-appearance-c117-flag_save",
+            "sikh363-appearance-c119-__worker__-reopen",
+            "sikh363-appearance-c120-__worker__-reopen",
+            "sikh363-appearance-c121-__worker__-reopen",
+            "sikh363-appearance-c122-__worker__-reopen",
+            "sikh363-appearance-c123-__worker__-reopen"
+          ],
+          "plan": "26ff6a3e7954950de7f6214ff2f9de4d054a18a4624a3d946a69046af925f45b",
+          "admitted_event": "sikh363-appearance-c123-__worker__-response-admit"
+        },
+        "__requirements__": {
+          "status": "TESTING",
+          "reason": "evidence_reconciliation",
+          "triggers": [
+            "plan:sikh362-appearance100-admit",
+            "sikh363-a101-__requirements__-reopen",
+            "sikh363-a103-__requirements__-reopen",
+            "sikh363-a104-__requirements__-reopen",
+            "sikh363-appearance-c105-__requirements__-reopen",
+            "sikh363-appearance-c106-__requirements__-reopen",
+            "sikh363-appearance-c107-__requirements__-reopen",
+            "sikh363-appearance-c108-__requirements__-reopen",
+            "sikh363-appearance-c109-__requirements__-reopen",
+            "sikh363-appearance-c110-__requirements__-reopen",
+            "sikh363-appearance-c111-__requirements__-reopen",
+            "sikh363-appearance-c112-__requirements__-reopen",
+            "sikh363-appearance-c113-__requirements__-reopen",
+            "sikh363-appearance-c114-__requirements__-reopen",
+            "sikh363-appearance-c115-__requirements__-reopen",
+            "sikh363-appearance-c116-__requirements__-reopen",
+            "sikh363-appearance-c117-__requirements__-reopen",
+            "sikh363-appearance-c118-__requirements__-reopen",
+            "sikh363-appearance-c119-__requirements__-reopen",
+            "sikh363-appearance-c120-__requirements__-reopen",
+            "sikh363-appearance-c121-__requirements__-reopen",
+            "sikh363-appearance-c122-__requirements__-reopen",
+            "sikh363-appearance-c123-__requirements__-reopen"
+          ],
+          "plan": "26ff6a3e7954950de7f6214ff2f9de4d054a18a4624a3d946a69046af925f45b",
+          "admitted_event": "sikh363-appearance-c123-__requirements__-response-admit"
+        },
+        "whole_look": {
+          "status": "TESTING",
+          "reason": "evidence_reconciliation",
+          "triggers": [
+            "sikh363-appearance-rejection",
+            "native-review:sikh363-appearance-c101-chest",
+            "native-review:sikh363-appearance-c101-chest_side",
+            "native-review:sikh363-appearance-c101-right_hand",
+            "native-review:sikh363-appearance-c101-left_hand",
+            "native-review:sikh363-appearance-c103-right_hand",
+            "native-review:sikh363-appearance-c104-right_hand",
+            "native-review:sikh363-appearance-c105-right_hand",
+            "sikh363-appearance-c106-whole_look-reopen",
+            "sikh363-appearance-c107-whole_look-reopen",
+            "sikh363-appearance-c108-whole_look-reopen",
+            "sikh363-appearance-c109-whole_look-reopen",
+            "sikh363-appearance-c110-whole_look-reopen",
+            "sikh363-appearance-c111-whole_look-reopen",
+            "sikh363-appearance-c112-whole_look-reopen",
+            "native-review:sikh363-appearance-c112-chest_front",
+            "sikh363-appearance-c114-whole_look-reopen",
+            "sikh363-appearance-c115-whole_look-reopen",
+            "sikh363-appearance-c116-whole_look-reopen",
+            "sikh363-appearance-c117-whole_look-reopen",
+            "sikh363-appearance-c118-whole_look-reopen",
+            "sikh363-appearance-c119-whole_look-reopen",
+            "sikh363-appearance-c120-whole_look-reopen",
+            "sikh363-appearance-c121-whole_look-reopen",
+            "sikh363-appearance-c122-whole_look-reopen",
+            "sikh363-appearance-c123-whole_look-reopen"
+          ],
+          "plan": "26ff6a3e7954950de7f6214ff2f9de4d054a18a4624a3d946a69046af925f45b",
+          "admitted_event": "sikh363-appearance-c123-whole_look-response-admit"
+        }
+      },
+      "warnings": {
+        "__planning__": 2
+      },
+      "responses": {
+        "__allowance__": {
+          "cause": "Internalevidenceaudit separates ridercontact metrics from actualequine support;122 viewsnotyetdispatched.",
+          "change_or_retain_rationale": "Noedit integrated42 derivative: existing read-only horse-rig inventory atnewcrest314 plus revealing wholeleaderreverse283/314/333. Corroborate actualrest/pose segmentlengths/support ownership and visible body/contact; do not mislabel rider8mm metric as measuredhoof groundconstraint. No performance/cache/source changes.",
+          "evidence": {
+            "results/sikh363/CHRONOLOGICAL_PART1.md": {
+              "path": "results/sikh363/CHRONOLOGICAL_PART1.md",
+              "sha256": "970bbe7f45448b5c35f1525bcd98af919c020887cbbfbe875a0bb3196c1985ab"
+            },
+            "results/sikh363/CLOTH121_RESULT.md": {
+              "path": "results/sikh363/CLOTH121_RESULT.md",
+              "sha256": "6ac84043ed68fa12e8d8801e081a94d33d00088cec368402724293ec39a27c22"
+            },
+            "results/sikh363/REQUEST.md": {
+              "path": "results/sikh363/REQUEST.md",
+              "sha256": "f33be4d8e362a6bec2976ce415152cefe1867769254031129d25220a0a3ebe44"
+            },
+            "results/sikh363/appearance-c123-challenge.json": {
+              "path": "results/sikh363/appearance-c123-challenge.json",
+              "sha256": "67fc30c9d0851afccdd141113c044cfdb143034a53924211f1719ee125e6f060"
+            },
+            "results/sikh363/appearance-c123.json": {
+              "path": "results/sikh363/appearance-c123.json",
+              "sha256": "caace8a8bb15d3a4581d3bbe3aa324f51d75b328d318bd6719f2f57a15b52f3b"
+            },
+            "results/sikh363/motion-c42-save-run.json": {
+              "path": "results/sikh363/motion-c42-save-run.json",
+              "sha256": "7e89d7d3af10f0dbf5d728df8ddf2c5760848a64db5cd2d929ee831f938af6b3"
+            }
+          },
+          "expected": "Currentread-only technicalrig and reversebody evidence complement completeframes, not fullspeedpass.",
+          "failure_response": "Actualreverseinterfacefailure requires triage of currentvisible/structural consequence; no blanket wholeasset acceptance from frontalone. No source/nativecodechange duringactive42 renders.",
+          "gate_digest": "4739b4aef51d64a6835fa9b12d964f36339a52894645946ab78f4fe02d1e30f5",
+          "key": "__allowance__",
+          "plan": "26ff6a3e7954950de7f6214ff2f9de4d054a18a4624a3d946a69046af925f45b",
+          "preserve": "Original tasks, history, limits, accepted masters and current scope; source/frame/AV distinct.",
+          "target_stage": "GROUNDING",
+          "test": "Actualcrest rigdata, supportedsegments/knownsafecontrols, fullsource/timedimages plus newbodyreverse. No numericall-framehoofgroundclaim from oneinventory; Director fullspeed naturalness remainspending.",
+          "uncertainty": "A singlecrest inventory cannot prove all-framehoofcontact or fluidity; combine completeactualtimedframes, keep explicitlimits, and reject anynewdriver/segment/interfacefailure.",
+          "event": "sikh363-appearance-c123-__allowance__-response"
+        },
+        "form": {
+          "cause": "Internalevidenceaudit separates ridercontact metrics from actualequine support;122 viewsnotyetdispatched.",
+          "change_or_retain_rationale": "Noedit integrated42 derivative: existing read-only horse-rig inventory atnewcrest314 plus revealing wholeleaderreverse283/314/333. Corroborate actualrest/pose segmentlengths/support ownership and visible body/contact; do not mislabel rider8mm metric as measuredhoof groundconstraint. No performance/cache/source changes.",
+          "evidence": {
+            "results/sikh363/CHRONOLOGICAL_PART1.md": {
+              "path": "results/sikh363/CHRONOLOGICAL_PART1.md",
+              "sha256": "970bbe7f45448b5c35f1525bcd98af919c020887cbbfbe875a0bb3196c1985ab"
+            },
+            "results/sikh363/CLOTH121_RESULT.md": {
+              "path": "results/sikh363/CLOTH121_RESULT.md",
+              "sha256": "6ac84043ed68fa12e8d8801e081a94d33d00088cec368402724293ec39a27c22"
+            },
+            "results/sikh363/REQUEST.md": {
+              "path": "results/sikh363/REQUEST.md",
+              "sha256": "f33be4d8e362a6bec2976ce415152cefe1867769254031129d25220a0a3ebe44"
+            },
+            "results/sikh363/appearance-c123-challenge.json": {
+              "path": "results/sikh363/appearance-c123-challenge.json",
+              "sha256": "67fc30c9d0851afccdd141113c044cfdb143034a53924211f1719ee125e6f060"
+            },
+            "results/sikh363/appearance-c123.json": {
+              "path": "results/sikh363/appearance-c123.json",
+              "sha256": "caace8a8bb15d3a4581d3bbe3aa324f51d75b328d318bd6719f2f57a15b52f3b"
+            },
+            "results/sikh363/motion-c42-save-run.json": {
+              "path": "results/sikh363/motion-c42-save-run.json",
+              "sha256": "7e89d7d3af10f0dbf5d728df8ddf2c5760848a64db5cd2d929ee831f938af6b3"
+            }
+          },
+          "expected": "Currentread-only technicalrig and reversebody evidence complement completeframes, not fullspeedpass.",
+          "failure_response": "Actualreverseinterfacefailure requires triage of currentvisible/structural consequence; no blanket wholeasset acceptance from frontalone. No source/nativecodechange duringactive42 renders.",
+          "gate_digest": "df75b5f6b4808a578424bdd5234fcb65946d0b9ce9b5a724da14771334051a32",
+          "key": "form",
+          "plan": "26ff6a3e7954950de7f6214ff2f9de4d054a18a4624a3d946a69046af925f45b",
+          "preserve": "Original tasks, history, limits, accepted masters and current scope; source/frame/AV distinct.",
+          "target_stage": "GROUNDING",
+          "test": "Actualcrest rigdata, supportedsegments/knownsafecontrols, fullsource/timedimages plus newbodyreverse. No numericall-framehoofgroundclaim from oneinventory; Director fullspeed naturalness remainspending.",
+          "uncertainty": "A singlecrest inventory cannot prove all-framehoofcontact or fluidity; combine completeactualtimedframes, keep explicitlimits, and reject anynewdriver/segment/interfacefailure.",
+          "event": "sikh363-appearance-c123-form-response"
+        },
+        "interfaces": {
+          "cause": "Internalevidenceaudit separates ridercontact metrics from actualequine support;122 viewsnotyetdispatched.",
+          "change_or_retain_rationale": "Noedit integrated42 derivative: existing read-only horse-rig inventory atnewcrest314 plus revealing wholeleaderreverse283/314/333. Corroborate actualrest/pose segmentlengths/support ownership and visible body/contact; do not mislabel rider8mm metric as measuredhoof groundconstraint. No performance/cache/source changes.",
+          "evidence": {
+            "results/sikh363/CHRONOLOGICAL_PART1.md": {
+              "path": "results/sikh363/CHRONOLOGICAL_PART1.md",
+              "sha256": "970bbe7f45448b5c35f1525bcd98af919c020887cbbfbe875a0bb3196c1985ab"
+            },
+            "results/sikh363/CLOTH121_RESULT.md": {
+              "path": "results/sikh363/CLOTH121_RESULT.md",
+              "sha256": "6ac84043ed68fa12e8d8801e081a94d33d00088cec368402724293ec39a27c22"
+            },
+            "results/sikh363/REQUEST.md": {
+              "path": "results/sikh363/REQUEST.md",
+              "sha256": "f33be4d8e362a6bec2976ce415152cefe1867769254031129d25220a0a3ebe44"
+            },
+            "results/sikh363/appearance-c123-challenge.json": {
+              "path": "results/sikh363/appearance-c123-challenge.json",
+              "sha256": "67fc30c9d0851afccdd141113c044cfdb143034a53924211f1719ee125e6f060"
+            },
+            "results/sikh363/appearance-c123.json": {
+              "path": "results/sikh363/appearance-c123.json",
+              "sha256": "caace8a8bb15d3a4581d3bbe3aa324f51d75b328d318bd6719f2f57a15b52f3b"
+            },
+            "results/sikh363/motion-c42-save-run.json": {
+              "path": "results/sikh363/motion-c42-save-run.json",
+              "sha256": "7e89d7d3af10f0dbf5d728df8ddf2c5760848a64db5cd2d929ee831f938af6b3"
+            }
+          },
+          "expected": "Currentread-only technicalrig and reversebody evidence complement completeframes, not fullspeedpass.",
+          "failure_response": "Actualreverseinterfacefailure requires triage of currentvisible/structural consequence; no blanket wholeasset acceptance from frontalone. No source/nativecodechange duringactive42 renders.",
+          "gate_digest": "76eaa0f1284c73e54c5d8f9eb21c854d5f46e291936c86dc4088735908dda8f4",
+          "key": "interfaces",
+          "plan": "26ff6a3e7954950de7f6214ff2f9de4d054a18a4624a3d946a69046af925f45b",
+          "preserve": "Original tasks, history, limits, accepted masters and current scope; source/frame/AV distinct.",
+          "target_stage": "GROUNDING",
+          "test": "Actualcrest rigdata, supportedsegments/knownsafecontrols, fullsource/timedimages plus newbodyreverse. No numericall-framehoofgroundclaim from oneinventory; Director fullspeed naturalness remainspending.",
+          "uncertainty": "A singlecrest inventory cannot prove all-framehoofcontact or fluidity; combine completeactualtimedframes, keep explicitlimits, and reject anynewdriver/segment/interfacefailure.",
+          "event": "sikh363-appearance-c123-interfaces-response"
+        },
+        "evidence": {
+          "cause": "Internalevidenceaudit separates ridercontact metrics from actualequine support;122 viewsnotyetdispatched.",
+          "change_or_retain_rationale": "Noedit integrated42 derivative: existing read-only horse-rig inventory atnewcrest314 plus revealing wholeleaderreverse283/314/333. Corroborate actualrest/pose segmentlengths/support ownership and visible body/contact; do not mislabel rider8mm metric as measuredhoof groundconstraint. No performance/cache/source changes.",
+          "evidence": {
+            "results/sikh363/CHRONOLOGICAL_PART1.md": {
+              "path": "results/sikh363/CHRONOLOGICAL_PART1.md",
+              "sha256": "970bbe7f45448b5c35f1525bcd98af919c020887cbbfbe875a0bb3196c1985ab"
+            },
+            "results/sikh363/CLOTH121_RESULT.md": {
+              "path": "results/sikh363/CLOTH121_RESULT.md",
+              "sha256": "6ac84043ed68fa12e8d8801e081a94d33d00088cec368402724293ec39a27c22"
+            },
+            "results/sikh363/REQUEST.md": {
+              "path": "results/sikh363/REQUEST.md",
+              "sha256": "f33be4d8e362a6bec2976ce415152cefe1867769254031129d25220a0a3ebe44"
+            },
+            "results/sikh363/appearance-c123-challenge.json": {
+              "path": "results/sikh363/appearance-c123-challenge.json",
+              "sha256": "67fc30c9d0851afccdd141113c044cfdb143034a53924211f1719ee125e6f060"
+            },
+            "results/sikh363/appearance-c123.json": {
+              "path": "results/sikh363/appearance-c123.json",
+              "sha256": "caace8a8bb15d3a4581d3bbe3aa324f51d75b328d318bd6719f2f57a15b52f3b"
+            },
+            "results/sikh363/motion-c42-save-run.json": {
+              "path": "results/sikh363/motion-c42-save-run.json",
+              "sha256": "7e89d7d3af10f0dbf5d728df8ddf2c5760848a64db5cd2d929ee831f938af6b3"
+            }
+          },
+          "expected": "Currentread-only technicalrig and reversebody evidence complement completeframes, not fullspeedpass.",
+          "failure_response": "Actualreverseinterfacefailure requires triage of currentvisible/structural consequence; no blanket wholeasset acceptance from frontalone. No source/nativecodechange duringactive42 renders.",
+          "gate_digest": "3bb76c9f69ee882e5aa3f5d927e1ed4a9a4b202e5dd0e348d5326cfbea6c72b4",
+          "key": "evidence",
+          "plan": "26ff6a3e7954950de7f6214ff2f9de4d054a18a4624a3d946a69046af925f45b",
+          "preserve": "Original tasks, history, limits, accepted masters and current scope; source/frame/AV distinct.",
+          "target_stage": "GROUNDING",
+          "test": "Actualcrest rigdata, supportedsegments/knownsafecontrols, fullsource/timedimages plus newbodyreverse. No numericall-framehoofgroundclaim from oneinventory; Director fullspeed naturalness remainspending.",
+          "uncertainty": "A singlecrest inventory cannot prove all-framehoofcontact or fluidity; combine completeactualtimedframes, keep explicitlimits, and reject anynewdriver/segment/interfacefailure.",
+          "event": "sikh363-appearance-c123-evidence-response"
+        },
+        "__worker__": {
+          "cause": "Internalevidenceaudit separates ridercontact metrics from actualequine support;122 viewsnotyetdispatched.",
+          "change_or_retain_rationale": "Noedit integrated42 derivative: existing read-only horse-rig inventory atnewcrest314 plus revealing wholeleaderreverse283/314/333. Corroborate actualrest/pose segmentlengths/support ownership and visible body/contact; do not mislabel rider8mm metric as measuredhoof groundconstraint. No performance/cache/source changes.",
+          "evidence": {
+            "results/sikh363/CHRONOLOGICAL_PART1.md": {
+              "path": "results/sikh363/CHRONOLOGICAL_PART1.md",
+              "sha256": "970bbe7f45448b5c35f1525bcd98af919c020887cbbfbe875a0bb3196c1985ab"
+            },
+            "results/sikh363/CLOTH121_RESULT.md": {
+              "path": "results/sikh363/CLOTH121_RESULT.md",
+              "sha256": "6ac84043ed68fa12e8d8801e081a94d33d00088cec368402724293ec39a27c22"
+            },
+            "results/sikh363/REQUEST.md": {
+              "path": "results/sikh363/REQUEST.md",
+              "sha256": "f33be4d8e362a6bec2976ce415152cefe1867769254031129d25220a0a3ebe44"
+            },
+            "results/sikh363/appearance-c123-challenge.json": {
+              "path": "results/sikh363/appearance-c123-challenge.json",
+              "sha256": "67fc30c9d0851afccdd141113c044cfdb143034a53924211f1719ee125e6f060"
+            },
+            "results/sikh363/appearance-c123.json": {
+              "path": "results/sikh363/appearance-c123.json",
+              "sha256": "caace8a8bb15d3a4581d3bbe3aa324f51d75b328d318bd6719f2f57a15b52f3b"
+            },
+            "results/sikh363/motion-c42-save-run.json": {
+              "path": "results/sikh363/motion-c42-save-run.json",
+              "sha256": "7e89d7d3af10f0dbf5d728df8ddf2c5760848a64db5cd2d929ee831f938af6b3"
+            }
+          },
+          "expected": "Currentread-only technicalrig and reversebody evidence complement completeframes, not fullspeedpass.",
+          "failure_response": "Actualreverseinterfacefailure requires triage of currentvisible/structural consequence; no blanket wholeasset acceptance from frontalone. No source/nativecodechange duringactive42 renders.",
+          "gate_digest": "bce17d506d5fb17de4b78180b9aaa2b4ffa373f6db19d04485d1f7e4662c45b3",
+          "key": "__worker__",
+          "plan": "26ff6a3e7954950de7f6214ff2f9de4d054a18a4624a3d946a69046af925f45b",
+          "preserve": "Original tasks, history, limits, accepted masters and current scope; source/frame/AV distinct.",
+          "target_stage": "GROUNDING",
+          "test": "Actualcrest rigdata, supportedsegments/knownsafecontrols, fullsource/timedimages plus newbodyreverse. No numericall-framehoofgroundclaim from oneinventory; Director fullspeed naturalness remainspending.",
+          "uncertainty": "A singlecrest inventory cannot prove all-framehoofcontact or fluidity; combine completeactualtimedframes, keep explicitlimits, and reject anynewdriver/segment/interfacefailure.",
+          "event": "sikh363-appearance-c123-__worker__-response"
+        },
+        "__requirements__": {
+          "cause": "Internalevidenceaudit separates ridercontact metrics from actualequine support;122 viewsnotyetdispatched.",
+          "change_or_retain_rationale": "Noedit integrated42 derivative: existing read-only horse-rig inventory atnewcrest314 plus revealing wholeleaderreverse283/314/333. Corroborate actualrest/pose segmentlengths/support ownership and visible body/contact; do not mislabel rider8mm metric as measuredhoof groundconstraint. No performance/cache/source changes.",
+          "evidence": {
+            "results/sikh363/CHRONOLOGICAL_PART1.md": {
+              "path": "results/sikh363/CHRONOLOGICAL_PART1.md",
+              "sha256": "970bbe7f45448b5c35f1525bcd98af919c020887cbbfbe875a0bb3196c1985ab"
+            },
+            "results/sikh363/CLOTH121_RESULT.md": {
+              "path": "results/sikh363/CLOTH121_RESULT.md",
+              "sha256": "6ac84043ed68fa12e8d8801e081a94d33d00088cec368402724293ec39a27c22"
+            },
+            "results/sikh363/REQUEST.md": {
+              "path": "results/sikh363/REQUEST.md",
+              "sha256": "f33be4d8e362a6bec2976ce415152cefe1867769254031129d25220a0a3ebe44"
+            },
+            "results/sikh363/appearance-c123-challenge.json": {
+              "path": "results/sikh363/appearance-c123-challenge.json",
+              "sha256": "67fc30c9d0851afccdd141113c044cfdb143034a53924211f1719ee125e6f060"
+            },
+            "results/sikh363/appearance-c123.json": {
+              "path": "results/sikh363/appearance-c123.json",
+              "sha256": "caace8a8bb15d3a4581d3bbe3aa324f51d75b328d318bd6719f2f57a15b52f3b"
+            },
+            "results/sikh363/motion-c42-save-run.json": {
+              "path": "results/sikh363/motion-c42-save-run.json",
+              "sha256": "7e89d7d3af10f0dbf5d728df8ddf2c5760848a64db5cd2d929ee831f938af6b3"
+            }
+          },
+          "expected": "Currentread-only technicalrig and reversebody evidence complement completeframes, not fullspeedpass.",
+          "failure_response": "Actualreverseinterfacefailure requires triage of currentvisible/structural consequence; no blanket wholeasset acceptance from frontalone. No source/nativecodechange duringactive42 renders.",
+          "gate_digest": "52c891868a6f06db42b7010623717d8b92b7ca035ec21b962decabe98210cc54",
+          "key": "__requirements__",
+          "plan": "26ff6a3e7954950de7f6214ff2f9de4d054a18a4624a3d946a69046af925f45b",
+          "preserve": "Original tasks, history, limits, accepted masters and current scope; source/frame/AV distinct.",
+          "target_stage": "GROUNDING",
+          "test": "Actualcrest rigdata, supportedsegments/knownsafecontrols, fullsource/timedimages plus newbodyreverse. No numericall-framehoofgroundclaim from oneinventory; Director fullspeed naturalness remainspending.",
+          "uncertainty": "A singlecrest inventory cannot prove all-framehoofcontact or fluidity; combine completeactualtimedframes, keep explicitlimits, and reject anynewdriver/segment/interfacefailure.",
+          "event": "sikh363-appearance-c123-__requirements__-response"
+        },
+        "whole_look": {
+          "cause": "Internalevidenceaudit separates ridercontact metrics from actualequine support;122 viewsnotyetdispatched.",
+          "change_or_retain_rationale": "Noedit integrated42 derivative: existing read-only horse-rig inventory atnewcrest314 plus revealing wholeleaderreverse283/314/333. Corroborate actualrest/pose segmentlengths/support ownership and visible body/contact; do not mislabel rider8mm metric as measuredhoof groundconstraint. No performance/cache/source changes.",
+          "evidence": {
+            "results/sikh363/CHRONOLOGICAL_PART1.md": {
+              "path": "results/sikh363/CHRONOLOGICAL_PART1.md",
+              "sha256": "970bbe7f45448b5c35f1525bcd98af919c020887cbbfbe875a0bb3196c1985ab"
+            },
+            "results/sikh363/CLOTH121_RESULT.md": {
+              "path": "results/sikh363/CLOTH121_RESULT.md",
+              "sha256": "6ac84043ed68fa12e8d8801e081a94d33d00088cec368402724293ec39a27c22"
+            },
+            "results/sikh363/REQUEST.md": {
+              "path": "results/sikh363/REQUEST.md",
+              "sha256": "f33be4d8e362a6bec2976ce415152cefe1867769254031129d25220a0a3ebe44"
+            },
+            "results/sikh363/appearance-c123-challenge.json": {
+              "path": "results/sikh363/appearance-c123-challenge.json",
+              "sha256": "67fc30c9d0851afccdd141113c044cfdb143034a53924211f1719ee125e6f060"
+            },
+            "results/sikh363/appearance-c123.json": {
+              "path": "results/sikh363/appearance-c123.json",
+              "sha256": "caace8a8bb15d3a4581d3bbe3aa324f51d75b328d318bd6719f2f57a15b52f3b"
+            },
+            "results/sikh363/motion-c42-save-run.json": {
+              "path": "results/sikh363/motion-c42-save-run.json",
+              "sha256": "7e89d7d3af10f0dbf5d728df8ddf2c5760848a64db5cd2d929ee831f938af6b3"
+            }
+          },
+          "expected": "Currentread-only technicalrig and reversebody evidence complement completeframes, not fullspeedpass.",
+          "failure_response": "Actualreverseinterfacefailure requires triage of currentvisible/structural consequence; no blanket wholeasset acceptance from frontalone. No source/nativecodechange duringactive42 renders.",
+          "gate_digest": "c06ad029986e5867dbb6801d83799ed308d0b5ab0cb985256efc6be5e9353ad3",
+          "key": "whole_look",
+          "plan": "26ff6a3e7954950de7f6214ff2f9de4d054a18a4624a3d946a69046af925f45b",
+          "preserve": "Original tasks, history, limits, accepted masters and current scope; source/frame/AV distinct.",
+          "target_stage": "GROUNDING",
+          "test": "Actualcrest rigdata, supportedsegments/knownsafecontrols, fullsource/timedimages plus newbodyreverse. No numericall-framehoofgroundclaim from oneinventory; Director fullspeed naturalness remainspending.",
+          "uncertainty": "A singlecrest inventory cannot prove all-framehoofcontact or fluidity; combine completeactualtimedframes, keep explicitlimits, and reject anynewdriver/segment/interfacefailure.",
+          "event": "sikh363-appearance-c123-whole_look-response"
+        }
+      },
+      "proofs": {},
+      "history_api": "retrospective.events(connection, task)",
+      "instruction": "Inspect source-bound outcomes for each open finding; respond, challenge, then test. Admission is not effectiveness. No new authority."
+    }
+  },
+  "motion": {
+    "counts": {
+      "initialize": 1,
+      "plan": 29,
+      "outcome": 303,
+      "response": 156,
+      "admit": 156,
+      "closure": 2
+    },
+    "projection": {
+      "policy": 1,
+      "sequence": 647,
+      "gates": {
+        "__migration__": {
+          "status": "TESTING",
+          "reason": "evidence_reconciliation",
+          "triggers": [
+            "migration-evidence:sikh353-motion-retro-migration",
+            "sikh353-motion14-__migration__-reopen",
+            "sikh353-motion15-__migration__-reopen",
+            "sikh353-motion16-__migration__-reopen",
+            "sikh358-motion-c17-__migration__-reopen",
+            "sikh358-motion-c18-__migration__-reopen",
+            "sikh358-motion-c19-__migration__-reopen",
+            "sikh358-motion-c20-__migration__-reopen",
+            "sikh358-motion-c21-__migration__-reopen",
+            "sikh361-motion-c22-__migration__-reopen",
+            "sikh361-motion-c23-__migration__-reopen",
+            "sikh361-motion-c24-__migration__-reopen",
+            "sikh362-motion25-__migration__-reopen",
+            "sikh362-motion26-__migration__-reopen",
+            "sikh362-motion27-__migration__-reopen",
+            "sikh363-motion-c30-__migration__-reopen",
+            "sikh363-motion-c31-__migration__-reopen",
+            "sikh363-motion-c32-__migration__-reopen",
+            "sikh363-motion-c33-__migration__-reopen",
+            "sikh363-motion-c34-__migration__-reopen",
+            "sikh363-motion-c35-__migration__-reopen",
+            "sikh363-motion-c36-__migration__-reopen",
+            "sikh363-motion-c37-__migration__-reopen",
+            "sikh363-motion-c38-__migration__-reopen",
+            "sikh363-motion-c39-__migration__-reopen",
+            "sikh363-motion-c40-__migration__-reopen",
+            "sikh363-motion-c41-__migration__-reopen",
+            "sikh363-motion-c42-__migration__-reopen"
+          ],
+          "plan": "f9d410171bd659d08da9fe48a80bb0b24d001be811f29365c4fa9ca1347faaf4",
+          "admitted_event": "sikh363-motion-c42-__migration__-response-admit"
+        },
+        "__allowance__": {
+          "status": "TESTING",
+          "reason": "allowance_exhausted",
+          "triggers": [
+            "migration-evidence:sikh353-motion-retro-migration",
+            "sikh353-motion14-__allowance__-reopen",
+            "sikh353-motion15-__allowance__-reopen",
+            "sikh353-motion16-__allowance__-reopen",
+            "exhaustion:sikh353-motion16-replan",
+            "sikh358-motion-c18-__allowance__-reopen",
+            "sikh358-motion-c19-__allowance__-reopen",
+            "sikh358-motion-c20-__allowance__-reopen",
+            "sikh358-motion-c21-__allowance__-reopen",
+            "exhaustion:sikh358-motion-c21-save-replan",
+            "sikh361-motion-c23-__allowance__-reopen",
+            "sikh361-motion-c24-__allowance__-reopen",
+            "sikh362-motion25-__allowance__-reopen",
+            "sikh362-motion26-__allowance__-reopen",
+            "sikh362-motion27-__allowance__-reopen",
+            "sikh363-motion-c30-__allowance__-reopen",
+            "sikh363-motion-c31-__allowance__-reopen",
+            "sikh363-motion-c32-__allowance__-reopen",
+            "sikh363-motion-c33-__allowance__-reopen",
+            "sikh363-motion-c34-__allowance__-reopen",
+            "sikh363-motion-c35-__allowance__-reopen",
+            "sikh363-motion-c36-__allowance__-reopen",
+            "sikh363-motion-c37-__allowance__-reopen",
+            "sikh363-motion-c38-__allowance__-reopen",
+            "sikh363-motion-c39-__allowance__-reopen",
+            "sikh363-motion-c40-__allowance__-reopen",
+            "sikh363-motion-c41-__allowance__-reopen",
+            "exhaustion:sikh363-motion-exhausted"
+          ],
+          "plan": "f9d410171bd659d08da9fe48a80bb0b24d001be811f29365c4fa9ca1347faaf4",
+          "admitted_event": "sikh363-motion-c42-__allowance__-response-admit"
+        },
+        "phases": {
+          "status": "TESTING",
+          "reason": "intervention_failed",
+          "triggers": [
+            "sikh353-motion13-failure",
+            "native-review:sikh353-motion-c14-render",
+            "sikh353-motion14-failure",
+            "native-review:sikh353-motion-c15-render",
+            "sikh353-motion15-failure",
+            "native-review:sikh353-motion-c16-render",
+            "native-review:sikh358-motion-c17-horse_head",
+            "sikh358-motion-c19-phases-reopen",
+            "sikh358-motion-c20-phases-reopen",
+            "sikh358-motion-c21-phases-reopen",
+            "sikh361-motion-c22-phases-reopen",
+            "native-review:sikh361-motion-c22-horse_head_reverse",
+            "native-review:sikh361-motion-c23-save",
+            "sikh362-motion25-phases-reopen",
+            "sikh362-motion26-phases-reopen",
+            "sikh362-motion27-phases-reopen",
+            "sikh363-motion-c30-phases-reopen",
+            "sikh363-motion-c31-phases-reopen",
+            "native-review:sikh363-motion-c31-phases",
+            "sikh363-motion-c33-phases-reopen",
+            "sikh363-motion-c34-phases-reopen",
+            "sikh363-motion-c35-phases-reopen",
+            "sikh363-motion-c36-phases-reopen",
+            "sikh363-motion-c37-phases-reopen",
+            "sikh363-motion-c38-phases-reopen",
+            "sikh363-motion-c39-phases-reopen",
+            "sikh363-motion-c40-phases-reopen",
+            "native-review:sikh363-motion-c40-phases",
+            "native-review:sikh363-motion-c41-phases"
+          ],
+          "plan": "f9d410171bd659d08da9fe48a80bb0b24d001be811f29365c4fa9ca1347faaf4",
+          "admitted_event": "sikh363-motion-c42-phases-response-admit"
+        },
+        "rider": {
+          "status": "TESTING",
+          "reason": "strategy_falsifier_or_regression",
+          "triggers": [
+            "sikh353-motion16-failure",
+            "native-review:sikh358-motion-c17-horse_head",
+            "sikh358-motion-c17-horse_head-outcome",
+            "sikh358-motion-c19-rider-reopen",
+            "sikh358-motion-c19-save-outcome",
+            "sikh358-motion-c20-save-outcome",
+            "sikh358-motion-c21-save-outcome",
+            "native-review:sikh361-motion-c22-horse_head_reverse",
+            "sikh361-motion-c22-horse_head_reverse-outcome",
+            "native-review:sikh361-motion-c23-save",
+            "sikh361-motion-c23-save-outcome",
+            "sikh362-motion25-rider-reopen",
+            "sikh362-motion26-rider-reopen",
+            "sikh362-motion27-rider-reopen",
+            "sikh363-motion-c30-rider-reopen",
+            "sikh363-motion-c31-rider-reopen",
+            "native-review:sikh363-motion-c31-phases",
+            "sikh363-motion-c33-rider-reopen",
+            "sikh363-motion-c34-rider-reopen",
+            "sikh363-motion-c35-rider-reopen",
+            "sikh363-motion-c36-rider-reopen",
+            "sikh363-motion-c37-rider-reopen",
+            "sikh363-motion-c38-rider-reopen",
+            "sikh363-motion-c39-rider-reopen",
+            "sikh363-motion-c40-rider-reopen",
+            "native-review:sikh363-motion-c40-phases",
+            "native-review:sikh363-motion-c41-phases"
+          ],
+          "plan": "f9d410171bd659d08da9fe48a80bb0b24d001be811f29365c4fa9ca1347faaf4",
+          "admitted_event": "sikh363-motion-c42-rider-response-admit"
+        },
+        "__worker__": {
+          "status": "TESTING",
+          "reason": "evidence_reconciliation",
+          "triggers": [
+            "worker:sikh358-motion-c21-save",
+            "sikh361-motion-c23-__worker__-reopen",
+            "sikh361-motion-c24-__worker__-reopen",
+            "sikh362-motion25-__worker__-reopen",
+            "worker:sikh362-motion-c25-frames01",
+            "sikh362-motion27-__worker__-reopen",
+            "sikh363-motion-c30-__worker__-reopen",
+            "worker:sikh363-motion-c30-save",
+            "sikh363-motion-c32-__worker__-reopen",
+            "sikh363-motion-c33-__worker__-reopen",
+            "worker:sikh363-motion-c33-save",
+            "worker:sikh363-motion-c34-save",
+            "sikh363-motion-c36-__worker__-reopen",
+            "sikh363-motion-c37-__worker__-reopen",
+            "worker:sikh363-motion-c37-save",
+            "worker:sikh363-motion-c38-save",
+            "worker:sikh363-motion-c39-save",
+            "sikh363-motion-c41-__worker__-reopen",
+            "worker:sikh363-motion-c41-flag_final",
+            "sikh363-motion-c42-__worker__-reopen"
+          ],
+          "plan": "f9d410171bd659d08da9fe48a80bb0b24d001be811f29365c4fa9ca1347faaf4",
+          "admitted_event": "sikh363-motion-c42-__worker__-response-admit"
+        },
+        "__requirements__": {
+          "status": "TESTING",
+          "reason": "evidence_reconciliation",
+          "triggers": [
+            "plan:sikh362-motion27-admit",
+            "plan:sikh363-motion-c30-admission",
+            "sikh363-motion-c31-__requirements__-reopen",
+            "sikh363-motion-c32-__requirements__-reopen",
+            "sikh363-motion-c33-__requirements__-reopen",
+            "sikh363-motion-c34-__requirements__-reopen",
+            "sikh363-motion-c35-__requirements__-reopen",
+            "sikh363-motion-c36-__requirements__-reopen",
+            "sikh363-motion-c37-__requirements__-reopen",
+            "sikh363-motion-c38-__requirements__-reopen",
+            "sikh363-motion-c39-__requirements__-reopen",
+            "sikh363-motion-c40-__requirements__-reopen",
+            "plan:sikh363-motion-c41-admission",
+            "sikh363-motion-c42-__requirements__-reopen"
+          ],
+          "plan": "f9d410171bd659d08da9fe48a80bb0b24d001be811f29365c4fa9ca1347faaf4",
+          "admitted_event": "sikh363-motion-c42-__requirements__-response-admit"
+        },
+        "director_motion": {
+          "status": "TESTING",
+          "reason": "intervention_failed",
+          "triggers": [
+            "sikh363-motion-rejection",
+            "sikh363-motion-c31-director_motion-reopen",
+            "native-review:sikh363-motion-c31-phases",
+            "sikh363-motion-c33-director_motion-reopen",
+            "sikh363-motion-c34-director_motion-reopen",
+            "sikh363-motion-c35-director_motion-reopen",
+            "sikh363-motion-c36-director_motion-reopen",
+            "sikh363-motion-c37-director_motion-reopen",
+            "sikh363-motion-c38-director_motion-reopen",
+            "sikh363-motion-c39-director_motion-reopen",
+            "sikh363-motion-c40-director_motion-reopen",
+            "native-review:sikh363-motion-c40-phases",
+            "native-review:sikh363-motion-c41-phases"
+          ],
+          "plan": "f9d410171bd659d08da9fe48a80bb0b24d001be811f29365c4fa9ca1347faaf4",
+          "admitted_event": "sikh363-motion-c42-director_motion-response-admit"
+        },
+        "support": {
+          "status": "TESTING",
+          "reason": "repeated_unresolved_requirement",
+          "triggers": [
+            "native-review:sikh363-motion-c41-phases"
+          ],
+          "plan": "f9d410171bd659d08da9fe48a80bb0b24d001be811f29365c4fa9ca1347faaf4",
+          "admitted_event": "sikh363-motion-c42-support-response-admit"
+        },
+        "evidence": {
+          "status": "TESTING",
+          "reason": "repeated_unresolved_requirement",
+          "triggers": [
+            "native-review:sikh363-motion-c41-phases"
+          ],
+          "plan": "f9d410171bd659d08da9fe48a80bb0b24d001be811f29365c4fa9ca1347faaf4",
+          "admitted_event": "sikh363-motion-c42-evidence-response-admit"
+        }
+      },
+      "warnings": {},
+      "responses": {
+        "__migration__": {
+          "cause": "Known121 clothphysics/staticinterfaces closed after actualconditioning test; complete106frameperformance and fullspeedhumanjudgment stillmissing.",
+          "change_or_retain_rationale": "No-edit save/reopen/render of exact121 realCLOTH +41 timing/camera/gesture and113 chest/110 rightgrasp. No performance reapply or reretime. Verify canonical314 repeat at8samples against exact121 intended proof, then432x76816sample isolated106frames252..357,24fps,7target+canonical perbatch below600sec.",
+          "evidence": {
+            "results/sikh363/CLOTH121_RESULT.md": {
+              "path": "results/sikh363/CLOTH121_RESULT.md",
+              "sha256": "6ac84043ed68fa12e8d8801e081a94d33d00088cec368402724293ec39a27c22"
+            },
+            "results/sikh363/EXTENSION364.md": {
+              "path": "results/sikh363/EXTENSION364.md",
+              "sha256": "b21a63979ac51c656dbf9b111da3fd46d22f0f9f98672533b1b2ee2d17894385"
+            },
+            "results/sikh363/REQUEST.md": {
+              "path": "results/sikh363/REQUEST.md",
+              "sha256": "f33be4d8e362a6bec2976ce415152cefe1867769254031129d25220a0a3ebe44"
+            },
+            "results/sikh363/appearance-c121-flag_production-review.json": {
+              "path": "results/sikh363/appearance-c121-flag_production-review.json",
+              "sha256": "6f894589f3612d0e212d790153bba565792ffdd9ec5715175b87f388a064f680"
+            },
+            "results/sikh363/motion-c42-challenge.json": {
+              "path": "results/sikh363/motion-c42-challenge.json",
+              "sha256": "1bcc082a3748daccfe888388701076c966beb3ca34409596de6d53803dda1cf8"
+            },
+            "results/sikh363/motion-c42.json": {
+              "path": "results/sikh363/motion-c42.json",
+              "sha256": "fc41379dac4d7bd01a69156988bbd608356cac48527eb3ecaf76d2ff7cf3bcbe"
+            }
+          },
+          "expected": "Exact completeisolatedclip with no knownframe/source failures; humanAV explicitlypending, or retainedfailure/replan.",
+          "failure_response": "Newframe-visible flaw, changedcache/source, canonicaldrift or unsupportednative blocks. Replan original42 within51, never lowerfidelity or reset/rename task.",
+          "gate_digest": "0e6941fc00d23590818ac18dd1185263e3858b3c70857f25b54e4dc074ff0065",
+          "key": "__migration__",
+          "plan": "f9d410171bd659d08da9fe48a80bb0b24d001be811f29365c4fa9ca1347faaf4",
+          "preserve": "Original tasks, history, limits, accepted masters and current scope; source/frame/AV distinct.",
+          "target_stage": "GROUNDING",
+          "test": "Canonical freshprocess image must match qualified121 view; all106frames/sourcecontact/cache and frame/encoded review against full363intent. Preserve originalreference14..19s and Directorpaceoverride. Manual313 fullspeed/overallpending, no selfAVpass.",
+          "uncertainty": "A physicallysolved flag can still obscureface or feelpoor atspeed; noedit native can losecache onreopen or sourceframes can end atwrongcut. Canonicalrepeat, completeframe/encoded review and humanAVpending remain mandatory.",
+          "event": "sikh363-motion-c42-__migration__-response"
+        },
+        "__allowance__": {
+          "cause": "Known121 clothphysics/staticinterfaces closed after actualconditioning test; complete106frameperformance and fullspeedhumanjudgment stillmissing.",
+          "change_or_retain_rationale": "No-edit save/reopen/render of exact121 realCLOTH +41 timing/camera/gesture and113 chest/110 rightgrasp. No performance reapply or reretime. Verify canonical314 repeat at8samples against exact121 intended proof, then432x76816sample isolated106frames252..357,24fps,7target+canonical perbatch below600sec.",
+          "evidence": {
+            "results/sikh363/CLOTH121_RESULT.md": {
+              "path": "results/sikh363/CLOTH121_RESULT.md",
+              "sha256": "6ac84043ed68fa12e8d8801e081a94d33d00088cec368402724293ec39a27c22"
+            },
+            "results/sikh363/EXTENSION364.md": {
+              "path": "results/sikh363/EXTENSION364.md",
+              "sha256": "b21a63979ac51c656dbf9b111da3fd46d22f0f9f98672533b1b2ee2d17894385"
+            },
+            "results/sikh363/REQUEST.md": {
+              "path": "results/sikh363/REQUEST.md",
+              "sha256": "f33be4d8e362a6bec2976ce415152cefe1867769254031129d25220a0a3ebe44"
+            },
+            "results/sikh363/appearance-c121-flag_production-review.json": {
+              "path": "results/sikh363/appearance-c121-flag_production-review.json",
+              "sha256": "6f894589f3612d0e212d790153bba565792ffdd9ec5715175b87f388a064f680"
+            },
+            "results/sikh363/motion-c42-challenge.json": {
+              "path": "results/sikh363/motion-c42-challenge.json",
+              "sha256": "1bcc082a3748daccfe888388701076c966beb3ca34409596de6d53803dda1cf8"
+            },
+            "results/sikh363/motion-c42.json": {
+              "path": "results/sikh363/motion-c42.json",
+              "sha256": "fc41379dac4d7bd01a69156988bbd608356cac48527eb3ecaf76d2ff7cf3bcbe"
+            }
+          },
+          "expected": "Exact completeisolatedclip with no knownframe/source failures; humanAV explicitlypending, or retainedfailure/replan.",
+          "failure_response": "Newframe-visible flaw, changedcache/source, canonicaldrift or unsupportednative blocks. Replan original42 within51, never lowerfidelity or reset/rename task.",
+          "gate_digest": "68004cd7b7adaa2216a190e90c0d63ce9c32202dca0303bdf2828fc4b9d14562",
+          "key": "__allowance__",
+          "plan": "f9d410171bd659d08da9fe48a80bb0b24d001be811f29365c4fa9ca1347faaf4",
+          "preserve": "Original tasks, history, limits, accepted masters and current scope; source/frame/AV distinct.",
+          "target_stage": "GROUNDING",
+          "test": "Canonical freshprocess image must match qualified121 view; all106frames/sourcecontact/cache and frame/encoded review against full363intent. Preserve originalreference14..19s and Directorpaceoverride. Manual313 fullspeed/overallpending, no selfAVpass.",
+          "uncertainty": "A physicallysolved flag can still obscureface or feelpoor atspeed; noedit native can losecache onreopen or sourceframes can end atwrongcut. Canonicalrepeat, completeframe/encoded review and humanAVpending remain mandatory.",
+          "event": "sikh363-motion-c42-__allowance__-response"
+        },
+        "phases": {
+          "cause": "Known121 clothphysics/staticinterfaces closed after actualconditioning test; complete106frameperformance and fullspeedhumanjudgment stillmissing.",
+          "change_or_retain_rationale": "No-edit save/reopen/render of exact121 realCLOTH +41 timing/camera/gesture and113 chest/110 rightgrasp. No performance reapply or reretime. Verify canonical314 repeat at8samples against exact121 intended proof, then432x76816sample isolated106frames252..357,24fps,7target+canonical perbatch below600sec.",
+          "evidence": {
+            "results/sikh363/CLOTH121_RESULT.md": {
+              "path": "results/sikh363/CLOTH121_RESULT.md",
+              "sha256": "6ac84043ed68fa12e8d8801e081a94d33d00088cec368402724293ec39a27c22"
+            },
+            "results/sikh363/EXTENSION364.md": {
+              "path": "results/sikh363/EXTENSION364.md",
+              "sha256": "b21a63979ac51c656dbf9b111da3fd46d22f0f9f98672533b1b2ee2d17894385"
+            },
+            "results/sikh363/REQUEST.md": {
+              "path": "results/sikh363/REQUEST.md",
+              "sha256": "f33be4d8e362a6bec2976ce415152cefe1867769254031129d25220a0a3ebe44"
+            },
+            "results/sikh363/appearance-c121-flag_production-review.json": {
+              "path": "results/sikh363/appearance-c121-flag_production-review.json",
+              "sha256": "6f894589f3612d0e212d790153bba565792ffdd9ec5715175b87f388a064f680"
+            },
+            "results/sikh363/motion-c42-challenge.json": {
+              "path": "results/sikh363/motion-c42-challenge.json",
+              "sha256": "1bcc082a3748daccfe888388701076c966beb3ca34409596de6d53803dda1cf8"
+            },
+            "results/sikh363/motion-c42.json": {
+              "path": "results/sikh363/motion-c42.json",
+              "sha256": "fc41379dac4d7bd01a69156988bbd608356cac48527eb3ecaf76d2ff7cf3bcbe"
+            }
+          },
+          "expected": "Exact completeisolatedclip with no knownframe/source failures; humanAV explicitlypending, or retainedfailure/replan.",
+          "failure_response": "Newframe-visible flaw, changedcache/source, canonicaldrift or unsupportednative blocks. Replan original42 within51, never lowerfidelity or reset/rename task.",
+          "gate_digest": "2e15b89a15eb4211a400214ab22057853789a4146209166e62870dcf008c37f5",
+          "key": "phases",
+          "plan": "f9d410171bd659d08da9fe48a80bb0b24d001be811f29365c4fa9ca1347faaf4",
+          "preserve": "Original tasks, history, limits, accepted masters and current scope; source/frame/AV distinct.",
+          "target_stage": "GROUNDING",
+          "test": "Canonical freshprocess image must match qualified121 view; all106frames/sourcecontact/cache and frame/encoded review against full363intent. Preserve originalreference14..19s and Directorpaceoverride. Manual313 fullspeed/overallpending, no selfAVpass.",
+          "uncertainty": "A physicallysolved flag can still obscureface or feelpoor atspeed; noedit native can losecache onreopen or sourceframes can end atwrongcut. Canonicalrepeat, completeframe/encoded review and humanAVpending remain mandatory.",
+          "event": "sikh363-motion-c42-phases-response"
+        },
+        "rider": {
+          "cause": "Known121 clothphysics/staticinterfaces closed after actualconditioning test; complete106frameperformance and fullspeedhumanjudgment stillmissing.",
+          "change_or_retain_rationale": "No-edit save/reopen/render of exact121 realCLOTH +41 timing/camera/gesture and113 chest/110 rightgrasp. No performance reapply or reretime. Verify canonical314 repeat at8samples against exact121 intended proof, then432x76816sample isolated106frames252..357,24fps,7target+canonical perbatch below600sec.",
+          "evidence": {
+            "results/sikh363/CLOTH121_RESULT.md": {
+              "path": "results/sikh363/CLOTH121_RESULT.md",
+              "sha256": "6ac84043ed68fa12e8d8801e081a94d33d00088cec368402724293ec39a27c22"
+            },
+            "results/sikh363/EXTENSION364.md": {
+              "path": "results/sikh363/EXTENSION364.md",
+              "sha256": "b21a63979ac51c656dbf9b111da3fd46d22f0f9f98672533b1b2ee2d17894385"
+            },
+            "results/sikh363/REQUEST.md": {
+              "path": "results/sikh363/REQUEST.md",
+              "sha256": "f33be4d8e362a6bec2976ce415152cefe1867769254031129d25220a0a3ebe44"
+            },
+            "results/sikh363/appearance-c121-flag_production-review.json": {
+              "path": "results/sikh363/appearance-c121-flag_production-review.json",
+              "sha256": "6f894589f3612d0e212d790153bba565792ffdd9ec5715175b87f388a064f680"
+            },
+            "results/sikh363/motion-c42-challenge.json": {
+              "path": "results/sikh363/motion-c42-challenge.json",
+              "sha256": "1bcc082a3748daccfe888388701076c966beb3ca34409596de6d53803dda1cf8"
+            },
+            "results/sikh363/motion-c42.json": {
+              "path": "results/sikh363/motion-c42.json",
+              "sha256": "fc41379dac4d7bd01a69156988bbd608356cac48527eb3ecaf76d2ff7cf3bcbe"
+            }
+          },
+          "expected": "Exact completeisolatedclip with no knownframe/source failures; humanAV explicitlypending, or retainedfailure/replan.",
+          "failure_response": "Newframe-visible flaw, changedcache/source, canonicaldrift or unsupportednative blocks. Replan original42 within51, never lowerfidelity or reset/rename task.",
+          "gate_digest": "c23d7a277b5fdd20489a9e90b439378938044bdf886c44a937041ef483db8b2f",
+          "key": "rider",
+          "plan": "f9d410171bd659d08da9fe48a80bb0b24d001be811f29365c4fa9ca1347faaf4",
+          "preserve": "Original tasks, history, limits, accepted masters and current scope; source/frame/AV distinct.",
+          "target_stage": "GROUNDING",
+          "test": "Canonical freshprocess image must match qualified121 view; all106frames/sourcecontact/cache and frame/encoded review against full363intent. Preserve originalreference14..19s and Directorpaceoverride. Manual313 fullspeed/overallpending, no selfAVpass.",
+          "uncertainty": "A physicallysolved flag can still obscureface or feelpoor atspeed; noedit native can losecache onreopen or sourceframes can end atwrongcut. Canonicalrepeat, completeframe/encoded review and humanAVpending remain mandatory.",
+          "event": "sikh363-motion-c42-rider-response"
+        },
+        "__worker__": {
+          "cause": "Known121 clothphysics/staticinterfaces closed after actualconditioning test; complete106frameperformance and fullspeedhumanjudgment stillmissing.",
+          "change_or_retain_rationale": "No-edit save/reopen/render of exact121 realCLOTH +41 timing/camera/gesture and113 chest/110 rightgrasp. No performance reapply or reretime. Verify canonical314 repeat at8samples against exact121 intended proof, then432x76816sample isolated106frames252..357,24fps,7target+canonical perbatch below600sec.",
+          "evidence": {
+            "results/sikh363/CLOTH121_RESULT.md": {
+              "path": "results/sikh363/CLOTH121_RESULT.md",
+              "sha256": "6ac84043ed68fa12e8d8801e081a94d33d00088cec368402724293ec39a27c22"
+            },
+            "results/sikh363/EXTENSION364.md": {
+              "path": "results/sikh363/EXTENSION364.md",
+              "sha256": "b21a63979ac51c656dbf9b111da3fd46d22f0f9f98672533b1b2ee2d17894385"
+            },
+            "results/sikh363/REQUEST.md": {
+              "path": "results/sikh363/REQUEST.md",
+              "sha256": "f33be4d8e362a6bec2976ce415152cefe1867769254031129d25220a0a3ebe44"
+            },
+            "results/sikh363/appearance-c121-flag_production-review.json": {
+              "path": "results/sikh363/appearance-c121-flag_production-review.json",
+              "sha256": "6f894589f3612d0e212d790153bba565792ffdd9ec5715175b87f388a064f680"
+            },
+            "results/sikh363/motion-c42-challenge.json": {
+              "path": "results/sikh363/motion-c42-challenge.json",
+              "sha256": "1bcc082a3748daccfe888388701076c966beb3ca34409596de6d53803dda1cf8"
+            },
+            "results/sikh363/motion-c42.json": {
+              "path": "results/sikh363/motion-c42.json",
+              "sha256": "fc41379dac4d7bd01a69156988bbd608356cac48527eb3ecaf76d2ff7cf3bcbe"
+            }
+          },
+          "expected": "Exact completeisolatedclip with no knownframe/source failures; humanAV explicitlypending, or retainedfailure/replan.",
+          "failure_response": "Newframe-visible flaw, changedcache/source, canonicaldrift or unsupportednative blocks. Replan original42 within51, never lowerfidelity or reset/rename task.",
+          "gate_digest": "47d6bc57d479ef65712d07a2aaef43f939dbb7297998b98a3f41569d5efe48d5",
+          "key": "__worker__",
+          "plan": "f9d410171bd659d08da9fe48a80bb0b24d001be811f29365c4fa9ca1347faaf4",
+          "preserve": "Original tasks, history, limits, accepted masters and current scope; source/frame/AV distinct.",
+          "target_stage": "GROUNDING",
+          "test": "Canonical freshprocess image must match qualified121 view; all106frames/sourcecontact/cache and frame/encoded review against full363intent. Preserve originalreference14..19s and Directorpaceoverride. Manual313 fullspeed/overallpending, no selfAVpass.",
+          "uncertainty": "A physicallysolved flag can still obscureface or feelpoor atspeed; noedit native can losecache onreopen or sourceframes can end atwrongcut. Canonicalrepeat, completeframe/encoded review and humanAVpending remain mandatory.",
+          "event": "sikh363-motion-c42-__worker__-response"
+        },
+        "__requirements__": {
+          "cause": "Known121 clothphysics/staticinterfaces closed after actualconditioning test; complete106frameperformance and fullspeedhumanjudgment stillmissing.",
+          "change_or_retain_rationale": "No-edit save/reopen/render of exact121 realCLOTH +41 timing/camera/gesture and113 chest/110 rightgrasp. No performance reapply or reretime. Verify canonical314 repeat at8samples against exact121 intended proof, then432x76816sample isolated106frames252..357,24fps,7target+canonical perbatch below600sec.",
+          "evidence": {
+            "results/sikh363/CLOTH121_RESULT.md": {
+              "path": "results/sikh363/CLOTH121_RESULT.md",
+              "sha256": "6ac84043ed68fa12e8d8801e081a94d33d00088cec368402724293ec39a27c22"
+            },
+            "results/sikh363/EXTENSION364.md": {
+              "path": "results/sikh363/EXTENSION364.md",
+              "sha256": "b21a63979ac51c656dbf9b111da3fd46d22f0f9f98672533b1b2ee2d17894385"
+            },
+            "results/sikh363/REQUEST.md": {
+              "path": "results/sikh363/REQUEST.md",
+              "sha256": "f33be4d8e362a6bec2976ce415152cefe1867769254031129d25220a0a3ebe44"
+            },
+            "results/sikh363/appearance-c121-flag_production-review.json": {
+              "path": "results/sikh363/appearance-c121-flag_production-review.json",
+              "sha256": "6f894589f3612d0e212d790153bba565792ffdd9ec5715175b87f388a064f680"
+            },
+            "results/sikh363/motion-c42-challenge.json": {
+              "path": "results/sikh363/motion-c42-challenge.json",
+              "sha256": "1bcc082a3748daccfe888388701076c966beb3ca34409596de6d53803dda1cf8"
+            },
+            "results/sikh363/motion-c42.json": {
+              "path": "results/sikh363/motion-c42.json",
+              "sha256": "fc41379dac4d7bd01a69156988bbd608356cac48527eb3ecaf76d2ff7cf3bcbe"
+            }
+          },
+          "expected": "Exact completeisolatedclip with no knownframe/source failures; humanAV explicitlypending, or retainedfailure/replan.",
+          "failure_response": "Newframe-visible flaw, changedcache/source, canonicaldrift or unsupportednative blocks. Replan original42 within51, never lowerfidelity or reset/rename task.",
+          "gate_digest": "fd711a899cc8170998e08af9b973a046b390c1dde1c6c68d781fed9bd3ec2f0f",
+          "key": "__requirements__",
+          "plan": "f9d410171bd659d08da9fe48a80bb0b24d001be811f29365c4fa9ca1347faaf4",
+          "preserve": "Original tasks, history, limits, accepted masters and current scope; source/frame/AV distinct.",
+          "target_stage": "GROUNDING",
+          "test": "Canonical freshprocess image must match qualified121 view; all106frames/sourcecontact/cache and frame/encoded review against full363intent. Preserve originalreference14..19s and Directorpaceoverride. Manual313 fullspeed/overallpending, no selfAVpass.",
+          "uncertainty": "A physicallysolved flag can still obscureface or feelpoor atspeed; noedit native can losecache onreopen or sourceframes can end atwrongcut. Canonicalrepeat, completeframe/encoded review and humanAVpending remain mandatory.",
+          "event": "sikh363-motion-c42-__requirements__-response"
+        },
+        "director_motion": {
+          "cause": "Known121 clothphysics/staticinterfaces closed after actualconditioning test; complete106frameperformance and fullspeedhumanjudgment stillmissing.",
+          "change_or_retain_rationale": "No-edit save/reopen/render of exact121 realCLOTH +41 timing/camera/gesture and113 chest/110 rightgrasp. No performance reapply or reretime. Verify canonical314 repeat at8samples against exact121 intended proof, then432x76816sample isolated106frames252..357,24fps,7target+canonical perbatch below600sec.",
+          "evidence": {
+            "results/sikh363/CLOTH121_RESULT.md": {
+              "path": "results/sikh363/CLOTH121_RESULT.md",
+              "sha256": "6ac84043ed68fa12e8d8801e081a94d33d00088cec368402724293ec39a27c22"
+            },
+            "results/sikh363/EXTENSION364.md": {
+              "path": "results/sikh363/EXTENSION364.md",
+              "sha256": "b21a63979ac51c656dbf9b111da3fd46d22f0f9f98672533b1b2ee2d17894385"
+            },
+            "results/sikh363/REQUEST.md": {
+              "path": "results/sikh363/REQUEST.md",
+              "sha256": "f33be4d8e362a6bec2976ce415152cefe1867769254031129d25220a0a3ebe44"
+            },
+            "results/sikh363/appearance-c121-flag_production-review.json": {
+              "path": "results/sikh363/appearance-c121-flag_production-review.json",
+              "sha256": "6f894589f3612d0e212d790153bba565792ffdd9ec5715175b87f388a064f680"
+            },
+            "results/sikh363/motion-c42-challenge.json": {
+              "path": "results/sikh363/motion-c42-challenge.json",
+              "sha256": "1bcc082a3748daccfe888388701076c966beb3ca34409596de6d53803dda1cf8"
+            },
+            "results/sikh363/motion-c42.json": {
+              "path": "results/sikh363/motion-c42.json",
+              "sha256": "fc41379dac4d7bd01a69156988bbd608356cac48527eb3ecaf76d2ff7cf3bcbe"
+            }
+          },
+          "expected": "Exact completeisolatedclip with no knownframe/source failures; humanAV explicitlypending, or retainedfailure/replan.",
+          "failure_response": "Newframe-visible flaw, changedcache/source, canonicaldrift or unsupportednative blocks. Replan original42 within51, never lowerfidelity or reset/rename task.",
+          "gate_digest": "28cd39c60cb8a5fb823a5ec92364294f0fc40dcc2e133694b1c9ef414c89b5c9",
+          "key": "director_motion",
+          "plan": "f9d410171bd659d08da9fe48a80bb0b24d001be811f29365c4fa9ca1347faaf4",
+          "preserve": "Original tasks, history, limits, accepted masters and current scope; source/frame/AV distinct.",
+          "target_stage": "GROUNDING",
+          "test": "Canonical freshprocess image must match qualified121 view; all106frames/sourcecontact/cache and frame/encoded review against full363intent. Preserve originalreference14..19s and Directorpaceoverride. Manual313 fullspeed/overallpending, no selfAVpass.",
+          "uncertainty": "A physicallysolved flag can still obscureface or feelpoor atspeed; noedit native can losecache onreopen or sourceframes can end atwrongcut. Canonicalrepeat, completeframe/encoded review and humanAVpending remain mandatory.",
+          "event": "sikh363-motion-c42-director_motion-response"
+        },
+        "support": {
+          "cause": "Known121 clothphysics/staticinterfaces closed after actualconditioning test; complete106frameperformance and fullspeedhumanjudgment stillmissing.",
+          "change_or_retain_rationale": "No-edit save/reopen/render of exact121 realCLOTH +41 timing/camera/gesture and113 chest/110 rightgrasp. No performance reapply or reretime. Verify canonical314 repeat at8samples against exact121 intended proof, then432x76816sample isolated106frames252..357,24fps,7target+canonical perbatch below600sec.",
+          "evidence": {
+            "results/sikh363/CLOTH121_RESULT.md": {
+              "path": "results/sikh363/CLOTH121_RESULT.md",
+              "sha256": "6ac84043ed68fa12e8d8801e081a94d33d00088cec368402724293ec39a27c22"
+            },
+            "results/sikh363/EXTENSION364.md": {
+              "path": "results/sikh363/EXTENSION364.md",
+              "sha256": "b21a63979ac51c656dbf9b111da3fd46d22f0f9f98672533b1b2ee2d17894385"
+            },
+            "results/sikh363/REQUEST.md": {
+              "path": "results/sikh363/REQUEST.md",
+              "sha256": "f33be4d8e362a6bec2976ce415152cefe1867769254031129d25220a0a3ebe44"
+            },
+            "results/sikh363/appearance-c121-flag_production-review.json": {
+              "path": "results/sikh363/appearance-c121-flag_production-review.json",
+              "sha256": "6f894589f3612d0e212d790153bba565792ffdd9ec5715175b87f388a064f680"
+            },
+            "results/sikh363/motion-c42-challenge.json": {
+              "path": "results/sikh363/motion-c42-challenge.json",
+              "sha256": "1bcc082a3748daccfe888388701076c966beb3ca34409596de6d53803dda1cf8"
+            },
+            "results/sikh363/motion-c42.json": {
+              "path": "results/sikh363/motion-c42.json",
+              "sha256": "fc41379dac4d7bd01a69156988bbd608356cac48527eb3ecaf76d2ff7cf3bcbe"
+            }
+          },
+          "expected": "Exact completeisolatedclip with no knownframe/source failures; humanAV explicitlypending, or retainedfailure/replan.",
+          "failure_response": "Newframe-visible flaw, changedcache/source, canonicaldrift or unsupportednative blocks. Replan original42 within51, never lowerfidelity or reset/rename task.",
+          "gate_digest": "5b4cb79054de18adcae9f3cd7790e4846f143f6b7b80dc98af9ad9255f5b3d09",
+          "key": "support",
+          "plan": "f9d410171bd659d08da9fe48a80bb0b24d001be811f29365c4fa9ca1347faaf4",
+          "preserve": "Original tasks, history, limits, accepted masters and current scope; source/frame/AV distinct.",
+          "target_stage": "GROUNDING",
+          "test": "Canonical freshprocess image must match qualified121 view; all106frames/sourcecontact/cache and frame/encoded review against full363intent. Preserve originalreference14..19s and Directorpaceoverride. Manual313 fullspeed/overallpending, no selfAVpass.",
+          "uncertainty": "A physicallysolved flag can still obscureface or feelpoor atspeed; noedit native can losecache onreopen or sourceframes can end atwrongcut. Canonicalrepeat, completeframe/encoded review and humanAVpending remain mandatory.",
+          "event": "sikh363-motion-c42-support-response"
+        },
+        "evidence": {
+          "cause": "Known121 clothphysics/staticinterfaces closed after actualconditioning test; complete106frameperformance and fullspeedhumanjudgment stillmissing.",
+          "change_or_retain_rationale": "No-edit save/reopen/render of exact121 realCLOTH +41 timing/camera/gesture and113 chest/110 rightgrasp. No performance reapply or reretime. Verify canonical314 repeat at8samples against exact121 intended proof, then432x76816sample isolated106frames252..357,24fps,7target+canonical perbatch below600sec.",
+          "evidence": {
+            "results/sikh363/CLOTH121_RESULT.md": {
+              "path": "results/sikh363/CLOTH121_RESULT.md",
+              "sha256": "6ac84043ed68fa12e8d8801e081a94d33d00088cec368402724293ec39a27c22"
+            },
+            "results/sikh363/EXTENSION364.md": {
+              "path": "results/sikh363/EXTENSION364.md",
+              "sha256": "b21a63979ac51c656dbf9b111da3fd46d22f0f9f98672533b1b2ee2d17894385"
+            },
+            "results/sikh363/REQUEST.md": {
+              "path": "results/sikh363/REQUEST.md",
+              "sha256": "f33be4d8e362a6bec2976ce415152cefe1867769254031129d25220a0a3ebe44"
+            },
+            "results/sikh363/appearance-c121-flag_production-review.json": {
+              "path": "results/sikh363/appearance-c121-flag_production-review.json",
+              "sha256": "6f894589f3612d0e212d790153bba565792ffdd9ec5715175b87f388a064f680"
+            },
+            "results/sikh363/motion-c42-challenge.json": {
+              "path": "results/sikh363/motion-c42-challenge.json",
+              "sha256": "1bcc082a3748daccfe888388701076c966beb3ca34409596de6d53803dda1cf8"
+            },
+            "results/sikh363/motion-c42.json": {
+              "path": "results/sikh363/motion-c42.json",
+              "sha256": "fc41379dac4d7bd01a69156988bbd608356cac48527eb3ecaf76d2ff7cf3bcbe"
+            }
+          },
+          "expected": "Exact completeisolatedclip with no knownframe/source failures; humanAV explicitlypending, or retainedfailure/replan.",
+          "failure_response": "Newframe-visible flaw, changedcache/source, canonicaldrift or unsupportednative blocks. Replan original42 within51, never lowerfidelity or reset/rename task.",
+          "gate_digest": "5b4cb79054de18adcae9f3cd7790e4846f143f6b7b80dc98af9ad9255f5b3d09",
+          "key": "evidence",
+          "plan": "f9d410171bd659d08da9fe48a80bb0b24d001be811f29365c4fa9ca1347faaf4",
+          "preserve": "Original tasks, history, limits, accepted masters and current scope; source/frame/AV distinct.",
+          "target_stage": "GROUNDING",
+          "test": "Canonical freshprocess image must match qualified121 view; all106frames/sourcecontact/cache and frame/encoded review against full363intent. Preserve originalreference14..19s and Directorpaceoverride. Manual313 fullspeed/overallpending, no selfAVpass.",
+          "uncertainty": "A physicallysolved flag can still obscureface or feelpoor atspeed; noedit native can losecache onreopen or sourceframes can end atwrongcut. Canonicalrepeat, completeframe/encoded review and humanAVpending remain mandatory.",
+          "event": "sikh363-motion-c42-evidence-response"
+        }
+      },
+      "proofs": {},
+      "history_api": "retrospective.events(connection, task)",
+      "instruction": "Inspect source-bound outcomes for each open finding; respond, challenge, then test. Admission is not effectiveness. No new authority."
+    }
+  }
+}

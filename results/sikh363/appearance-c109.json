@@ -1,0 +1,78 @@
+{
+  "template": "results/sikh363/appearance-c108-strategizing.json",
+  "derived_template": "results/sikh363/appearance-c108-deriving.json",
+  "parent": ".runtime/factory-native/sikh363-appearance-c106-save/scene.blend",
+  "method": "Direct palm-frame phalangeal directions construct a genuinely enclosed finger arc, replacing rest-angle inference. Hierarchy-aware local action bake and190 evaluated matrix guards retained. Thumb opposed outside curled index.106 chest is retained without another contour application.",
+  "proof": "Actual283/327 hand must read as a closed rein fist with opposed thumb, no open antlers, wrong pivots or self-intersection. Numeric matrix agreement alone is insufficient. Horse contour remains unaccepted component; other363 work follows.",
+  "scope": "Actual direct grasp candidate on retained106 chest component; no whole appearance or AV acceptance.",
+  "framing": "Right-hand283/327 and actual neck-base-centred chest side283/327; source chest vertices/weights under exact same horse pose.",
+  "reconciliation": "363 rejects362. All101 diagnostics preserved, including wrong side crop and open claw. Two preplanning source/runtime reconciliations retain original counters. Appearance103/max117, motion30/max41; Sol only, no additional authority.",
+  "applications": {
+    "director363": "Diagnose exact named defects, not another texture-only or faster-playback patch.",
+    "strategy363": "First identify chest/hand/ownership causes, then authored repair and real cloth proof on final action clock."
+  },
+  "alternatives": "Reject speculative smoothing of whole horse, fist endpoint-only offsets and uniform clip acceleration. Native inspection first is smaller than repeated whole-scene renders.",
+  "failure": "If direct palm-frame grasp still fails actual skin image, reject and reassess pose frame/representation without further angle-only patches.",
+  "sources": [
+    "src/movie_factory/adapters/blender/nihang_audit363.py",
+    "src/movie_factory/adapters/blender/nihang_control.py",
+    "src/movie_factory/adapters/blender/nihang_patch.py",
+    "tests/test_nihang363.py",
+    "src/movie_factory/adapters/blender/nihang_hand363.py",
+    "src/movie_factory/native_admission.py",
+    "results/sikh363/CAUSAL_AUDIT.md",
+    "results/sikh363/HAND_HANDLER_REVIEW.md",
+    "src/movie_factory/adapters/blender/nihang_grip363.py",
+    "results/sikh363/GRIP104_REVIEW.md",
+    "results/sikh363/appearance-c103-right_hand-review.json",
+    "results/sikh363/GRIP105_REVIEW.md",
+    "results/sikh363/appearance-c104-right_hand-review.json",
+    "src/movie_factory/adapters/blender/nihang_repair363.py",
+    "results/sikh363/REPAIR106_REVIEW.md",
+    "results/sikh363/appearance-c105-right_hand-review.json",
+    "results/sikh363/appearance-c105-chest_side-review.json",
+    "src/movie_factory/adapters/blender/nihang_fist363.py",
+    "results/sikh363/FIST109_REVIEW.md",
+    "results/sikh363/appearance-c108-audit-review.json"
+  ],
+  "steps": [
+    {
+      "id": "save",
+      "depends_on": [],
+      "requirements": [
+        "preservation"
+      ],
+      "recipe": {
+        "operation": "nihang_patch",
+        "frame": 283,
+        "width": 432,
+        "height": 768,
+        "samples": 8,
+        "edits": [
+          {
+            "kind": "mounted_fist363",
+            "target": "mounted leader"
+          }
+        ]
+      }
+    },
+    {
+      "id": "right_hand",
+      "depends_on": [
+        "save"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 283,
+        "frames": [
+          283,
+          327
+        ],
+        "view": "leader_right_contact",
+        "width": 640,
+        "height": 640,
+        "samples": 8
+      }
+    }
+  ]
+}

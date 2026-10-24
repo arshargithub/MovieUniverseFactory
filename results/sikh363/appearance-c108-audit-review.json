@@ -1,0 +1,51 @@
+{
+  "verdict": "PASS",
+  "run_digest": "5564c9e4af6bc845ce9a5fe488af03c86adc30071b7a0ba6a7e7c6c2735129bf",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh363-appearance-c108-audit/snapshot.json",
+      "sha256": "83bd7c5cee3cd7800e426a6b3c244c1eb937e1bdda8a13c25d88e5d9ed0161ab"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh363-appearance-c108-audit/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh363-appearance-c108-audit/script-diagnostics.json",
+      "sha256": "d8c950e68c5c42eb08e3ba4cd795b716e2b5ac082b76301b8697edb7667b2ad9"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh363-appearance-c108-audit/scene.blend",
+      "sha256": "cd7476e64e40cd80259bd48eb7332ecaa4377088393acb94de514d1226a4d0f4"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh363-appearance-c108-audit/patch-evidence.json",
+      "sha256": "62ae85d74b14b6406e4940fa4a1496763eb885da8952b86ada601192d375cd7c"
+    }
+  },
+  "observation": "Actual morphed helper centers match every right finger/wrist rest joint within0.4micrometres. Rest-skin mismatch falsified. Active matching skin/weights plus exact pose transport establish remaining failure is intended grip geometry/skin silhouette, requiring direct palm-frame closure instead of rest-direction rotations.",
+  "comparison": "Actual source-bound diagnostic evidence against363 known failures; output availability/coverage only, not repair or art acceptance.",
+  "open_defects": [],
+  "requirement_outcomes": {
+    "preservation": {
+      "status": "PASS",
+      "observation": "Technical preservation only."
+    },
+    "form": {
+      "status": "NOT_TESTED",
+      "observation": "Diagnostic/component coverage only; known363 artistic failure remains open, not qualified by availability."
+    },
+    "interfaces": {
+      "status": "NOT_TESTED",
+      "observation": "Diagnostic/component coverage only; known363 artistic failure remains open, not qualified by availability."
+    },
+    "evidence": {
+      "status": "NOT_TESTED",
+      "observation": "Diagnostic/component coverage only; known363 artistic failure remains open, not qualified by availability."
+    },
+    "whole_look": {
+      "status": "NOT_TESTED",
+      "observation": "Diagnostic/component coverage only; known363 artistic failure remains open, not qualified by availability."
+    }
+  }
+}

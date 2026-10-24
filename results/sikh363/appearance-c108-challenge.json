@@ -1,0 +1,87 @@
+{
+  "outcome": "admit",
+  "checks": {
+    "grounding": {
+      "status": "PASS",
+      "observation": "Read-only actual morphed helper centers versus rest bone joints after107 confirmed matching visible mesh, active modifier and finger weights. Preserve all original states.",
+      "comparison": "Source ownership causality only, no actual anatomy or motion approval.",
+      "source_ids": [
+        "director363",
+        "audit363"
+      ]
+    },
+    "expert_coverage": {
+      "status": "PASS",
+      "observation": "Read-only actual morphed helper centers versus rest bone joints after107 confirmed matching visible mesh, active modifier and finger weights. Preserve all original states.",
+      "comparison": "Source ownership causality only, no actual anatomy or motion approval.",
+      "source_ids": [
+        "audit363",
+        "director_preferences"
+      ]
+    },
+    "film_alignment": {
+      "status": "PASS",
+      "observation": "Read-only actual morphed helper centers versus rest bone joints after107 confirmed matching visible mesh, active modifier and finger weights. Preserve all original states.",
+      "comparison": "Source ownership causality only, no actual anatomy or motion approval.",
+      "source_ids": [
+        "film_language"
+      ]
+    },
+    "preferences": {
+      "status": "PASS",
+      "observation": "Read-only actual morphed helper centers versus rest bone joints after107 confirmed matching visible mesh, active modifier and finger weights. Preserve all original states.",
+      "comparison": "Source ownership causality only, no actual anatomy or motion approval.",
+      "source_ids": [
+        "director363",
+        "director_preferences"
+      ]
+    },
+    "reference_roles": {
+      "status": "PASS",
+      "observation": "Read-only actual morphed helper centers versus rest bone joints after107 confirmed matching visible mesh, active modifier and finger weights. Preserve all original states.",
+      "comparison": "Source ownership causality only, no actual anatomy or motion approval.",
+      "source_ids": [
+        "references",
+        "director363"
+      ]
+    },
+    "method": {
+      "status": "PASS",
+      "observation": "Read-only actual morphed helper centers versus rest bone joints after107 confirmed matching visible mesh, active modifier and finger weights. Preserve all original states.",
+      "comparison": "Source ownership causality only, no actual anatomy or motion approval.",
+      "source_ids": [
+        "audit363",
+        "strategy363"
+      ]
+    },
+    "interfaces": {
+      "status": "PASS",
+      "observation": "Read-only actual morphed helper centers versus rest bone joints after107 confirmed matching visible mesh, active modifier and finger weights. Preserve all original states.",
+      "comparison": "Source ownership causality only, no actual anatomy or motion approval.",
+      "source_ids": [
+        "audit363",
+        "constraints"
+      ]
+    },
+    "efficient_quality": {
+      "status": "PASS",
+      "observation": "Read-only actual morphed helper centers versus rest bone joints after107 confirmed matching visible mesh, active modifier and finger weights. Preserve all original states.",
+      "comparison": "Source ownership causality only, no actual anatomy or motion approval.",
+      "source_ids": [
+        "strategy363",
+        "director_preferences"
+      ]
+    },
+    "authority": {
+      "status": "PASS",
+      "observation": "Original appearance108/max117, motion30/max41; no new authority.",
+      "comparison": "Source ownership causality only, no actual anatomy or motion approval.",
+      "source_ids": [
+        "director363",
+        "routing360"
+      ]
+    }
+  },
+  "strongest_counterexample": "A named rig or correct bone transform does not prove the visible skin belongs to it. Audit real mesh modifiers, weights and render visibility before choosing repair.",
+  "issues": []
+}

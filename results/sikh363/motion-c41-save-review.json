@@ -1,0 +1,35 @@
+{
+  "verdict": "PASS",
+  "run_digest": "b3b9a2dc95eac5c19e775f2cbc67bea4d7b7e6cbf9628ce1bb35061f625b0e91",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh363-motion-c41-save/snapshot.json",
+      "sha256": "e92d31d9063dc21cfc66dad5945c124cd6ec563e0083ffa7467fb597f1e8be3a"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh363-motion-c41-save/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh363-motion-c41-save/script-diagnostics.json",
+      "sha256": "d8c950e68c5c42eb08e3ba4cd795b716e2b5ac082b76301b8697edb7667b2ad9"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh363-motion-c41-save/scene.blend",
+      "sha256": "2e114c77d9a0ec10111901c796fc00ab972113f4ca3fe3f37ffea11e1d39ecc1"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh363-motion-c41-save/patch-evidence.json",
+      "sha256": "695a260444e394e0d2f150d7c242583cac9d2730e3d90ab7dd028783ba49ea65"
+    }
+  },
+  "observation": "Actual41 source preservation, shared retime, arm/shaft/head accessory and contact reports inspected. Exact prep clock unit control passes, slam291/hoist304 and camera fit are candidate only. Retained113 chest/110 grasp; artwork and finalcloth not passed by numeric checks.",
+  "comparison": "Actual source-bound diagnostic evidence against363 known failures; output availability/coverage only, not repair or art acceptance.",
+  "open_defects": [],
+  "requirement_outcomes": {
+    "preservation": {
+      "status": "PASS",
+      "observation": "Technical preservation only."
+    }
+  }
+}

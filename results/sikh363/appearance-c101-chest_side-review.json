@@ -1,0 +1,59 @@
+{
+  "verdict": "PASS",
+  "run_digest": "4e9a52a0b0d74dd13bd75298abaffbf162fdf179a1aaed993b72a8ca9638f6a9",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh363-appearance-c101-chest_side/snapshot.json",
+      "sha256": "83bd7c5cee3cd7800e426a6b3c244c1eb937e1bdda8a13c25d88e5d9ed0161ab"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh363-appearance-c101-chest_side/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh363-appearance-c101-chest_side/script-diagnostics.json",
+      "sha256": "99bbbecec312f933855a69b1d853770138fd35ab62669f2fe652484d335f4ec7"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh363-appearance-c101-chest_side/frame.png",
+      "sha256": "64a9949f8587a3ccde05381379e2fa5044833375fa9a193ffe3847e6a597b10a"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh363-appearance-c101-chest_side/frames.json",
+      "sha256": "e7d7fd65472386833e3edaee1188d586bdf0964e9b9634817ee1bc38134fb331"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh363-appearance-c101-chest_side/frame.png",
+      "sha256": "64a9949f8587a3ccde05381379e2fa5044833375fa9a193ffe3847e6a597b10a"
+    },
+    "frame_327": {
+      "path": ".runtime/factory-native/sikh363-appearance-c101-chest_side/frame-0327.png",
+      "sha256": "e936a0cd4ac419e502a1f2aea15c3195b2366cd98075c6d719f756bf0bec30ff"
+    }
+  },
+  "observation": "Actual side stance shows a pronounced forward-hanging breast/neck-base lobe, and crest retains the same overfull envelope. This corroborates the front failure across pose; no cosmetic or lighting-only pass. Read-only diagnostic coverage completed.",
+  "comparison": "Actual source-bound diagnostic evidence against363 known failures; output availability/coverage only, not repair or art acceptance.",
+  "open_defects": [],
+  "retrospective_observations": [
+    {
+      "requirement": "form",
+      "status": "UNKNOWN",
+      "observation": "Known363 artistic failure remains open; diagnostic coverage is not repair."
+    },
+    {
+      "requirement": "interfaces",
+      "status": "UNKNOWN",
+      "observation": "Known363 artistic failure remains open; diagnostic coverage is not repair."
+    },
+    {
+      "requirement": "evidence",
+      "status": "UNKNOWN",
+      "observation": "Known363 artistic failure remains open; diagnostic coverage is not repair."
+    },
+    {
+      "requirement": "whole_look",
+      "status": "UNKNOWN",
+      "observation": "Known363 artistic failure remains open; diagnostic coverage is not repair."
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "template": "results/sikh363/appearance-c104-strategizing.json",
+  "derived_template": "results/sikh363/appearance-c104-deriving.json",
+  "parent": ".runtime/factory-native/sikh362-appearance-c99-save/scene.blend",
+  "method": "Exact99 source, exact104 joint angles and local-bake method, but RIGHT palm chirality determines flexion rather than rest finger bend. Actual source vectors show inherited sign has-0.9447 flex toward palm, the opposite side. Change to palm-side sign and derive thumb dorsal target consistently. Preserve wrist/forearm and190 length checks. Actual close images decide whether this causal control makes a fist. Retain source chest data and actual correctly framed side before sculpt.",
+  "proof": "Controlled sign change must turn the backward claw into a legibly closed fist, with actual thumb opposition and rein enclosure at283/327. Reject self-intersection. Numeric wrong-side control retained; wrist/segment preservation plus actual side chest coverage, not angle-only iteration.",
+  "scope": "Third grip candidate tests a falsified curl-direction assumption, alongside unfinished chest diagnosis. No whole appearance/AV pass.",
+  "framing": "Right-hand283/327 and actual neck-base-centred chest side283/327; source chest vertices/weights under exact same horse pose.",
+  "reconciliation": "363 rejects362. All101 diagnostics preserved, including wrong side crop and open claw. Two preplanning source/runtime reconciliations retain original counters. Appearance103/max117, motion30/max41; Sol only, no additional authority.",
+  "applications": {
+    "director363": "Diagnose exact named defects, not another texture-only or faster-playback patch.",
+    "strategy363": "First identify chest/hand/ownership causes, then authored repair and real cloth proof on final action clock."
+  },
+  "alternatives": "Reject speculative smoothing of whole horse, fist endpoint-only offsets and uniform clip acceleration. Native inspection first is smaller than repeated whole-scene renders.",
+  "failure": "If palm-side control still fails visible grasp, stop this family and reassess hand-frame/geometry rather than endlessly increase angles. Chest/flag/face/full-speed defects remain open.",
+  "sources": [
+    "src/movie_factory/adapters/blender/nihang_audit363.py",
+    "src/movie_factory/adapters/blender/nihang_control.py",
+    "src/movie_factory/adapters/blender/nihang_patch.py",
+    "tests/test_nihang363.py",
+    "src/movie_factory/adapters/blender/nihang_hand363.py",
+    "src/movie_factory/native_admission.py",
+    "results/sikh363/CAUSAL_AUDIT.md",
+    "results/sikh363/HAND_HANDLER_REVIEW.md",
+    "src/movie_factory/adapters/blender/nihang_grip363.py",
+    "results/sikh363/GRIP104_REVIEW.md",
+    "results/sikh363/appearance-c103-right_hand-review.json",
+    "results/sikh363/GRIP105_REVIEW.md",
+    "results/sikh363/appearance-c104-right_hand-review.json"
+  ],
+  "steps": [
+    {
+      "id": "save",
+      "depends_on": [],
+      "requirements": [
+        "preservation"
+      ],
+      "recipe": {
+        "operation": "nihang_patch",
+        "frame": 283,
+        "width": 432,
+        "height": 768,
+        "samples": 8,
+        "edits": [
+          {
+            "kind": "mounted_grip363",
+            "target": "mounted leader"
+          }
+        ]
+      }
+    },
+    {
+      "id": "right_hand",
+      "depends_on": [
+        "save"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 283,
+        "frames": [
+          283,
+          327
+        ],
+        "view": "leader_right_contact",
+        "width": 640,
+        "height": 640,
+        "samples": 8
+      }
+    },
+    {
+      "id": "chest_side",
+      "depends_on": [
+        "save"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 283,
+        "frames": [
+          283,
+          327
+        ],
+        "view": "horse_chest_side",
+        "width": 640,
+        "height": 640,
+        "samples": 8
+      }
+    }
+  ]
+}

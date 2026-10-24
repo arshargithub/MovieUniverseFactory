@@ -1,0 +1,185 @@
+{
+  "status": "AWAITING_DIRECTOR_AV",
+  "production_approved": false,
+  "release_approved": false,
+  "candidate": {
+    "path": ".runtime/art-direction/sikh364-review/nihang-leader-horse-364.mp4",
+    "sha256": "7d47f3dc56adc215cf90de1c5d2bcade2bddf3cc2ed679b03a2edbb55d1b27c6"
+  },
+  "media_manifest": {
+    "path": "results/sikh363/media-manifest.json",
+    "sha256": "0cf7f2e90ec72627a4ed39858e7f7fe2796dcc375d7cca9f02ad6c1470a4d420"
+  },
+  "source_native": {
+    "path": ".runtime/factory-native/sikh363-motion-c42-save/scene.blend",
+    "sha256": "81118d986a418ca0f7d3496b00f7984db23e9655d76b4ccd9e3624139945c68a"
+  },
+  "reverse_native": {
+    "path": ".runtime/factory-native/sikh363-appearance-c123-save/scene.blend",
+    "sha256": "d37296e8391819c1cd636f0b3efb955e2e7a64ac463990f10af029d948a03056"
+  },
+  "cloth": {
+    "path": "results/sikh363/CLOTH121_PROOF.json",
+    "sha256": "1db56a86f54d09f32f4a4f100a98dc72d6dde77fb21ac2e5fb1d76737dfcf161"
+  },
+  "protected_pashtun_sha256": "1004ed9f2e06d2eafb008c925eb9d266e8a13b8603086020e28d19e3b606722b",
+  "protected_verification": {
+    "path": ".runtime/context-hygiene/runs/sikh363-protected-hash/stdout.log",
+    "sha256": "41ac3cb3ccb8bd6d0c0c2f86293d43d1f7cd364adf880434096f5060e1ad2907"
+  },
+  "requirements": {
+    "appearance": {
+      "requirements": [
+        {
+          "criterion": "Original320, accepted Pashtun and failed motion2 remain untouched; all new assets stay local derivative.",
+          "director_av": false,
+          "id": "preservation",
+          "modes": [
+            "technical"
+          ]
+        },
+        {
+          "criterion": "Wrapped crown reads as layered Sikh cloth rather than a cylinder; clothing has supported volume and waist-origin folds; saddle pad follows actual horse surface.",
+          "director_av": false,
+          "id": "form",
+          "modes": [
+            "technical",
+            "image"
+          ]
+        },
+        {
+          "criterion": "One anatomical body/skeleton and weighted garment assembly; real sleeve/hand, neck, waist, seat and crown interfaces remain coherent across stance/crest/landing.",
+          "director_av": false,
+          "id": "interfaces",
+          "modes": [
+            "technical",
+            "image"
+          ]
+        },
+        {
+          "criterion": "Actual source-bound stance, sides, crest, landing and complete leader/horse passage compared with accepted film floor. Head/beard/horse surface are explicitly covered by whole_look; crowd is deferred and full-speed AV remains pending, not self-passed.",
+          "director_av": false,
+          "id": "evidence",
+          "modes": [
+            "technical",
+            "image"
+          ]
+        },
+        {
+          "criterion": "Entire supporting leader and horse share accepted film richness and believable form: integrated head/eyes/skin/beard/crown, cloth/accessories/seat and horse head/coat/mane/tail/tack at actual shot size. A smooth mannequin, shell crown, clay horse, visible layer/contact failure or adjacent regression fails. No new principal identity or Director AV acceptance.",
+          "director_av": false,
+          "id": "whole_look",
+          "modes": [
+            "technical",
+            "image"
+          ]
+        }
+      ],
+      "review": {
+        "path": "results/sikh363/appearance-review-final.json",
+        "sha256": "e8623fab38e674e20a35add0ed11f6631150c5726ec260fb9c900690d4a10464"
+      }
+    },
+    "motion": {
+      "requirements": [
+        {
+          "criterion": "Original320/Pashtun unchanged; new serial derivative and fresh reopen.",
+          "director_av": false,
+          "id": "preservation",
+          "modes": [
+            "technical"
+          ]
+        },
+        {
+          "criterion": "Visible hind endpoints stay grounded, segment lengths fixed; forelegs return to stance without outward twist or inverted hooves.",
+          "director_av": false,
+          "id": "support",
+          "modes": [
+            "technical",
+            "image"
+          ]
+        },
+        {
+          "criterion": "363 exact source prep through300; material spear strike291 before gather; airborne43\u219221frames, accelerating landing327, absorption333.",
+          "director_av": false,
+          "id": "phases",
+          "modes": [
+            "technical",
+            "image"
+          ]
+        },
+        {
+          "criterion": "363 coordinated rider with right fist/rein, anatomical chest, visible post-slam hoist permission and unobscured exchange eyeline; real tied flag remains required downstream.",
+          "director_av": false,
+          "id": "rider",
+          "modes": [
+            "technical",
+            "image"
+          ]
+        },
+        {
+          "criterion": "All phase images and contact evidence available; static samples never certify full-speed motion, audio or appearance.",
+          "director_av": false,
+          "id": "evidence",
+          "modes": [
+            "technical",
+            "image"
+          ]
+        },
+        {
+          "criterion": "Director313 full-speed judgment of exact final-clock assembled clip remains NOT_TESTED until Director watches. Static/matrix/cache checks cannot self-pass.",
+          "director_av": true,
+          "id": "director_motion",
+          "modes": [
+            "direct_motion"
+          ]
+        }
+      ],
+      "review": {
+        "path": "results/sikh363/motion-review-final.json",
+        "sha256": "d367ccc3c2d28208839c695e6541d96307422b907fbc40f605b9de867290e697"
+      }
+    }
+  },
+  "agent_checks": [
+    {
+      "path": "results/sikh363/STATIC_REVIEW364.md",
+      "sha256": "a960367096b82cde2cafcfa7322a65f4fd9acb408dc9db3ad49e65831bfe6970"
+    },
+    {
+      "path": "results/sikh363/CHRONOLOGICAL_REVIEW364.md",
+      "sha256": "69200a74716c803bc166244b7b141c49ea7159afbbd22f23cdbe2181e10adf1b"
+    },
+    {
+      "path": "results/sikh363/ENCODED_REVIEW364.md",
+      "sha256": "07de557297fe824195eabba79cf563cfd9cc94e07ae174286039b237a0afac42"
+    },
+    {
+      "path": "results/sikh363/CLOCK_AND_SUPPORT364.md",
+      "sha256": "02025e78ee44ca071353838261cd6f38e2752b843847c72de9b5865e74be0a91"
+    },
+    {
+      "path": "results/sikh363/controller-close364.json",
+      "sha256": "570609ead98b59760a0bf8ef37ba92a2d818330a71d261da2992a996b83a6606"
+    }
+  ],
+  "pending": [
+    "Full-speed fluidity, weight and readable preparation versus faithful reference",
+    "Brief crest and accelerating heavy landing feel",
+    "Slam-to-hoist permission and leader eyeline",
+    "Rider/horse/flag coordinated motion and overall same-film effect"
+  ],
+  "excluded": [
+    "New sound/music/listening",
+    "Unfinished principal and crowd context",
+    "Terrain and full Sikh sequence acceptance",
+    "Principal portrait or generalized horse/cloth/hand reuse",
+    "Strict global307 delivery/replay qualification",
+    "Trailer release approval"
+  ],
+  "limitations": [
+    "Same-agent fallible source/image review, not independent evaluator or direct playback.",
+    "Global context307 remains stale; not repinned or waived. Fresh scoped task packets/manual313 queue govern this handoff.",
+    "Current native assets/local commits have no new remote push, backup or restore receipt."
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "verdict": "PASS",
+  "run_digest": "18671e6cb42ce0ef9bfa75a96879e4153be925db19a2b11a3f960ebdf50acecd",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh363-appearance-c123-rig/snapshot.json",
+      "sha256": "1f3ba155579dd8e831eb5eef92109cf40617980f94d476caeb71760c6b68eaf2"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh363-appearance-c123-rig/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh363-appearance-c123-rig/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "rig": {
+      "path": ".runtime/factory-native/sikh363-appearance-c123-rig/rig.json",
+      "sha256": "de809ad34797ab05ec0c2c8168cd20e19c7e95999ef5c8f3296333580e4d3f72"
+    }
+  },
+  "observation": "Actual current frame314 horse inventory returned with expected bones and transforms; availability only. Anatomical support and appearance are reviewed separately against actual pose and images, not inferred from successful inventory.",
+  "comparison": "Actual source-bound diagnostic evidence against363 known failures; output availability/coverage only, not repair or art acceptance.",
+  "open_defects": [],
+  "requirement_outcomes": {
+    "preservation": {
+      "status": "PASS",
+      "observation": "Technical preservation only."
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "verdict": "PASS",
+  "run_digest": "24348191057954ee07715d74d05c96ebb1608f90c7e0d1c8c6e5f736f9800725",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh363-appearance-c106-save/snapshot.json",
+      "sha256": "83bd7c5cee3cd7800e426a6b3c244c1eb937e1bdda8a13c25d88e5d9ed0161ab"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh363-appearance-c106-save/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh363-appearance-c106-save/script-diagnostics.json",
+      "sha256": "d8c950e68c5c42eb08e3ba4cd795b716e2b5ac082b76301b8697edb7667b2ad9"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh363-appearance-c106-save/scene.blend",
+      "sha256": "700f3691d704125b79b43a0ff3b3b90dc0fad7fc7594ba7a39b19e20cdd81cd3"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh363-appearance-c106-save/patch-evidence.json",
+      "sha256": "7fae27fd134c12bb6817aff4681841f74c22d05279268a3932d32b36f08103ae"
+    }
+  },
+  "observation": "Actual106 desired/evaluated matrix guard passes across190 poses; hand and pectoral candidate saved. Preservation/transport only; no anatomical or grip pass without actual images.",
+  "comparison": "Actual source-bound diagnostic evidence against363 known failures; output availability/coverage only, not repair or art acceptance.",
+  "open_defects": [],
+  "requirement_outcomes": {
+    "preservation": {
+      "status": "PASS",
+      "observation": "Technical preservation only."
+    }
+  }
+}

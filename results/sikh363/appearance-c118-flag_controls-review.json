@@ -1,0 +1,51 @@
+{
+  "verdict": "PASS",
+  "run_digest": "d6b70df8a0146be713b9fcfc479d68a5b262fe266cddbb86c71e9339d90c812b",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh363-appearance-c118-flag_controls/snapshot.json",
+      "sha256": "b8bcb9e37298af1c2cebfcc666cc725e9adbcc9e1e8bcdf0f3461de868358b21"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh363-appearance-c118-flag_controls/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh363-appearance-c118-flag_controls/script-diagnostics.json",
+      "sha256": "d8c950e68c5c42eb08e3ba4cd795b716e2b5ac082b76301b8697edb7667b2ad9"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh363-appearance-c118-flag_controls/scene.blend",
+      "sha256": "435bccc8a478191f20ac4ba1a0b384a37798a8d4b155e2a5ed7b92d8fd87b3a1"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh363-appearance-c118-flag_controls/patch-evidence.json",
+      "sha256": "f850859c83176418510b91e363bf72f62f9f093240f727721912fd354f00ed4e"
+    }
+  },
+  "observation": "Actual118 negative exactly reproduces283 maxstrain1.83053; reinforcedhem fails284 max2.01225. Hem hypothesis falsified; no production flag. Preserve threepoint attachment and investigate solver-time collider/pin interpolation interface.",
+  "comparison": "Actual source-bound diagnostic evidence against363 known failures; output availability/coverage only, not repair or art acceptance.",
+  "open_defects": [],
+  "requirement_outcomes": {
+    "preservation": {
+      "status": "PASS",
+      "observation": "Technical preservation only."
+    },
+    "form": {
+      "status": "NOT_TESTED",
+      "observation": "Diagnostic/component coverage only; known363 artistic failure remains open, not qualified by availability."
+    },
+    "interfaces": {
+      "status": "NOT_TESTED",
+      "observation": "Diagnostic/component coverage only; known363 artistic failure remains open, not qualified by availability."
+    },
+    "evidence": {
+      "status": "NOT_TESTED",
+      "observation": "Diagnostic/component coverage only; known363 artistic failure remains open, not qualified by availability."
+    },
+    "whole_look": {
+      "status": "NOT_TESTED",
+      "observation": "Diagnostic/component coverage only; known363 artistic failure remains open, not qualified by availability."
+    }
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "outcome": "admit",
+  "checks": {
+    "grounding": {
+      "status": "PASS",
+      "observation": "107 correct visible mesh/weights and108 submicrometre rest binding falsify skin mismatch.106 matrix agreement leaves intended pose geometry as defect.",
+      "comparison": "Actual Director363 anatomy/contact and integrated-shot requirements, not numerical or incremental improvement.",
+      "source_ids": [
+        "director363",
+        "audit363"
+      ]
+    },
+    "expert_coverage": {
+      "status": "PASS",
+      "observation": "Hand anatomy and skinning: intended matrices must survive real parent transforms and action evaluation. Equine anatomy: chest must merge into neck/forelimbs, not a pendant pair of lobes.",
+      "comparison": "Actual Director363 anatomy/contact and integrated-shot requirements, not numerical or incremental improvement.",
+      "source_ids": [
+        "audit363",
+        "director_preferences"
+      ]
+    },
+    "film_alignment": {
+      "status": "PASS",
+      "observation": "Preserve costume/material/identity and accepted Pashtun quality floor; no hiding hand or chest with clothing/shader.",
+      "comparison": "Actual Director363 anatomy/contact and integrated-shot requirements, not numerical or incremental improvement.",
+      "source_ids": [
+        "film_language"
+      ]
+    },
+    "preferences": {
+      "status": "PASS",
+      "observation": "Keep all failed candidates internal and continue full363 integrated goal. No routine algorithm approval or component handover.",
+      "comparison": "Actual Director363 anatomy/contact and integrated-shot requirements, not numerical or incremental improvement.",
+      "source_ids": [
+        "director363",
+        "director_preferences"
+      ]
+    },
+    "reference_roles": {
+      "status": "PASS",
+      "observation": "Faithful video still governs rearing/spear; current anatomy is a necessary interface, not motion qualification. Director speed override remains phased.",
+      "comparison": "Actual Director363 anatomy/contact and integrated-shot requirements, not numerical or incremental improvement.",
+      "source_ids": [
+        "references",
+        "director363"
+      ]
+    },
+    "method": {
+      "status": "PASS",
+      "observation": "Direct orthonormal palm-frame phalangeal arc, same verified hierarchical local bake; no inherited rest-angle/sign inference.",
+      "comparison": "Actual Director363 anatomy/contact and integrated-shot requirements, not numerical or incremental improvement.",
+      "source_ids": [
+        "audit363",
+        "strategy363"
+      ]
+    },
+    "interfaces": {
+      "status": "PASS",
+      "observation": "Thumb outside curled index, rein inside closed arc, unchanged wrist/forearm; retain106 chest once only.",
+      "comparison": "Actual Director363 anatomy/contact and integrated-shot requirements, not numerical or incremental improvement.",
+      "source_ids": [
+        "audit363",
+        "constraints"
+      ]
+    },
+    "efficient_quality": {
+      "status": "PASS",
+      "observation": "Use cropped early proof to falsify transport/contour before full render. Numeric agreement never certifies skin silhouette;13 code tests only protect boundaries.",
+      "comparison": "Actual Director363 anatomy/contact and integrated-shot requirements, not numerical or incremental improvement.",
+      "source_ids": [
+        "strategy363",
+        "director_preferences"
+      ]
+    },
+    "authority": {
+      "status": "PASS",
+      "observation": "Original appearance109/max117, motion30/max41; no new authority, history and all failed candidates retained.",
+      "comparison": "Actual Director363 anatomy/contact and integrated-shot requirements, not numerical or incremental improvement.",
+      "source_ids": [
+        "director363",
+        "routing360"
+      ]
+    }
+  },
+  "strongest_counterexample": "A direct arc can still curl into the wrong palm side or leave an oversized thumb. Actual hand skin/rein crop is the veto; bones and causal elimination do not grant anatomical approval.",
+  "issues": []
+}

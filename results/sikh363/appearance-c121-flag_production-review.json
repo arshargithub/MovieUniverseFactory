@@ -1,0 +1,71 @@
+{
+  "verdict": "PASS",
+  "run_digest": "a40d0ac400a529204dd63e99a84fc61703edd687e910d88dbe269a909e7dd7e3",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh363-appearance-c121-flag_production/snapshot.json",
+      "sha256": "1f3ba155579dd8e831eb5eef92109cf40617980f94d476caeb71760c6b68eaf2"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh363-appearance-c121-flag_production/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh363-appearance-c121-flag_production/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh363-appearance-c121-flag_production/frame.png",
+      "sha256": "279a52065936d6396119fbf8b63eb3d3d770d07b944a7be855108780f575a540"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh363-appearance-c121-flag_production/frames.json",
+      "sha256": "875b586d237f865a7689e0daf23731ca71c7221650448fdef4ede7b8f97637ce"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh363-appearance-c121-flag_production/frame-0283.png",
+      "sha256": "a02d942f52132590b7ed8fc32f46e6b2b3bae7f3b35806d22c9d13a2077af576"
+    },
+    "frame_306": {
+      "path": ".runtime/factory-native/sikh363-appearance-c121-flag_production/frame-0306.png",
+      "sha256": "d63e4089082c62ac21dd1c81eaea2c59490f04d9fcf9c219f3ef228603ee63e7"
+    },
+    "frame_314": {
+      "path": ".runtime/factory-native/sikh363-appearance-c121-flag_production/frame.png",
+      "sha256": "279a52065936d6396119fbf8b63eb3d3d770d07b944a7be855108780f575a540"
+    },
+    "frame_322": {
+      "path": ".runtime/factory-native/sikh363-appearance-c121-flag_production/frame-0322.png",
+      "sha256": "354a580c8d46c409ece1b27318d152d4e1e31f0d5b7085b89bed3dd706bc0104"
+    },
+    "frame_333": {
+      "path": ".runtime/factory-native/sikh363-appearance-c121-flag_production/frame-0333.png",
+      "sha256": "30be88944662f613b4d6ae32f3c54509b233d61e79ccc720c76caab5226d8ec6"
+    }
+  },
+  "observation": "Actual5 intended-camera frames283/306/314/322/333 inspected: freeflag visibly folds through action, shaft/knots stay attached, face unobscured, chest continuous, no new hand/garment/interface collision. Spear signal visibly raised, fullflag and horse remain in frame; longtip brieflycrops as planned. Static scope only; fullspeed remainsDirector313.",
+  "comparison": "Actual source-bound diagnostic evidence against363 known failures; output availability/coverage only, not repair or art acceptance.",
+  "open_defects": [],
+  "requirement_outcomes": {
+    "preservation": {
+      "status": "PASS",
+      "observation": "Technical preservation only."
+    },
+    "form": {
+      "status": "NOT_TESTED",
+      "observation": "Diagnostic/component coverage only; known363 artistic failure remains open, not qualified by availability."
+    },
+    "interfaces": {
+      "status": "NOT_TESTED",
+      "observation": "Diagnostic/component coverage only; known363 artistic failure remains open, not qualified by availability."
+    },
+    "evidence": {
+      "status": "NOT_TESTED",
+      "observation": "Diagnostic/component coverage only; known363 artistic failure remains open, not qualified by availability."
+    },
+    "whole_look": {
+      "status": "NOT_TESTED",
+      "observation": "Diagnostic/component coverage only; known363 artistic failure remains open, not qualified by availability."
+    }
+  }
+}

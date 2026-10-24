@@ -1,0 +1,87 @@
+{
+  "verdict": "PASS",
+  "run_digest": "afa34470333a2f8f69bd2a70f9f92534f11262f56f83030d671230fa2cb8d992",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh363-motion-c42-frames08/snapshot.json",
+      "sha256": "1f3ba155579dd8e831eb5eef92109cf40617980f94d476caeb71760c6b68eaf2"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh363-motion-c42-frames08/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh363-motion-c42-frames08/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh363-motion-c42-frames08/frame.png",
+      "sha256": "de8c49f029a076e8ecb9b0908187c895cc649c5936305039038521f8dd8fd11c"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh363-motion-c42-frames08/frames.json",
+      "sha256": "2531657280b123aff05c247c318181d79ae6bbd2e948a06b724eca611b733830"
+    },
+    "frame_301": {
+      "path": ".runtime/factory-native/sikh363-motion-c42-frames08/frame-0301.png",
+      "sha256": "a2b3383acfce2bc0c357b0dbd13a67ea141375c848454dc85a8a25f5c98d3e5d"
+    },
+    "frame_302": {
+      "path": ".runtime/factory-native/sikh363-motion-c42-frames08/frame-0302.png",
+      "sha256": "6210090eacf171021ff9ac4376b6ad9c437430a70f558a153e36fb85bbd07b07"
+    },
+    "frame_303": {
+      "path": ".runtime/factory-native/sikh363-motion-c42-frames08/frame-0303.png",
+      "sha256": "cbaccf1bce0c14c0c0a481bad877343ed25db9d604e5fe1b7845304cbd35cd56"
+    },
+    "frame_304": {
+      "path": ".runtime/factory-native/sikh363-motion-c42-frames08/frame-0304.png",
+      "sha256": "e385493bb3cea6579e290743762fd4cdf1367deb80add8c8e0cb4123b4b5e1f6"
+    },
+    "frame_305": {
+      "path": ".runtime/factory-native/sikh363-motion-c42-frames08/frame-0305.png",
+      "sha256": "de2efce5f30e0ead05b2d4897cc73263628453d7b59a7d701646ebbb4934baca"
+    },
+    "frame_306": {
+      "path": ".runtime/factory-native/sikh363-motion-c42-frames08/frame-0306.png",
+      "sha256": "c8592ddbb0d1081e72beeb489ec4afd181f7440e3d17193ff6f26224832d97bd"
+    },
+    "frame_307": {
+      "path": ".runtime/factory-native/sikh363-motion-c42-frames08/frame-0307.png",
+      "sha256": "44a59e158116e57a66194e6833d4f53f7518a9014106e22ead0caa8787e52c6d"
+    },
+    "frame_314": {
+      "path": ".runtime/factory-native/sikh363-motion-c42-frames08/frame.png",
+      "sha256": "de8c49f029a076e8ecb9b0908187c895cc649c5936305039038521f8dd8fd11c"
+    }
+  },
+  "observation": "Actual completedbatch decoded/checksummed at432x768; expectedsourceframes andcoarsechronologicalsheet inspected, with separatefullsize phase/hand/chest/flag controls. Outputavailability/continuity evidence only; bodyreverse, remainingcontext, encodedclip and fullspeedDirectorAV notqualified bythis receipt.",
+  "comparison": "Actual source-bound diagnostic evidence against363 known failures; output availability/coverage only, not repair or art acceptance.",
+  "open_defects": [],
+  "requirement_outcomes": {
+    "preservation": {
+      "status": "PASS",
+      "observation": "Technical preservation only."
+    },
+    "support": {
+      "status": "NOT_TESTED",
+      "observation": "Diagnostic/component coverage only; known363 artistic failure remains open, not qualified by availability."
+    },
+    "phases": {
+      "status": "NOT_TESTED",
+      "observation": "Diagnostic/component coverage only; known363 artistic failure remains open, not qualified by availability."
+    },
+    "rider": {
+      "status": "NOT_TESTED",
+      "observation": "Diagnostic/component coverage only; known363 artistic failure remains open, not qualified by availability."
+    },
+    "evidence": {
+      "status": "NOT_TESTED",
+      "observation": "Diagnostic/component coverage only; known363 artistic failure remains open, not qualified by availability."
+    },
+    "director_motion": {
+      "status": "NOT_TESTED",
+      "observation": "Diagnostic/component coverage only; known363 artistic failure remains open, not qualified by availability."
+    }
+  }
+}

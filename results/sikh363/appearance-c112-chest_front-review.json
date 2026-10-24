@@ -1,0 +1,48 @@
+{
+  "verdict": "FAIL",
+  "run_digest": "5bdca7d21e941b15d0a30569610a586beaa32443d96da2280590ff5bfdaa099e",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh363-appearance-c112-chest_front/snapshot.json",
+      "sha256": "83bd7c5cee3cd7800e426a6b3c244c1eb937e1bdda8a13c25d88e5d9ed0161ab"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh363-appearance-c112-chest_front/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh363-appearance-c112-chest_front/script-diagnostics.json",
+      "sha256": "99bbbecec312f933855a69b1d853770138fd35ab62669f2fe652484d335f4ec7"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh363-appearance-c112-chest_front/frame.png",
+      "sha256": "0da5f2f35266ddad013ff4139e7212a2f57704c5b27b50c711075d46230b0f1b"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh363-appearance-c112-chest_front/frames.json",
+      "sha256": "d347739dda0a854a94b95ab9ad85020f1c91f7c64cd6d180684a5ef0a8ce1b4f"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh363-appearance-c112-chest_front/frame.png",
+      "sha256": "0da5f2f35266ddad013ff4139e7212a2f57704c5b27b50c711075d46230b0f1b"
+    },
+    "frame_327": {
+      "path": ".runtime/factory-native/sikh363-appearance-c112-chest_front/frame-0327.png",
+      "sha256": "fba55a64431c73ab87c498bb34e49103ef0cbde3d098df77ad5860c584c4fdfa"
+    }
+  },
+  "observation": "Actual standing283 has a sharp horizontal ridge/plate boundary across lower chest; rearing327 creates an unnatural concave shelf.12cm weighted lift is not an anatomical repair. Reject this field; source110/106 remains preserved. Unrun side control cannot pass it.",
+  "comparison": "Continuous believable neck/sternum/shoulder/forelegs, not smaller lobes exchanged for a visible sculpt patch.",
+  "open_defects": [
+    "pectoral-ridge",
+    "chest-concavity"
+  ],
+  "retrospective_observations": [
+    {
+      "requirement": "form",
+      "status": "FAIL",
+      "observation": "Large weighted pectoral lift creates boundary shelf; mathematical displacement on skin-weight mask is not continuous anatomical fairing.",
+      "falsified": true
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "outcome": "admit",
+  "checks": {
+    "grounding": {
+      "status": "PASS",
+      "observation": "Actual105 right-hand failed and true-side chest bulge confirmed; zero corrective contribution. Exact99 parent, failed history preserved.",
+      "comparison": "Actual Director363 anatomy/contact and integrated-shot requirements, not numerical or incremental improvement.",
+      "source_ids": [
+        "director363",
+        "audit363"
+      ]
+    },
+    "expert_coverage": {
+      "status": "PASS",
+      "observation": "Hand anatomy and skinning: intended matrices must survive real parent transforms and action evaluation. Equine anatomy: chest must merge into neck/forelimbs, not a pendant pair of lobes.",
+      "comparison": "Actual Director363 anatomy/contact and integrated-shot requirements, not numerical or incremental improvement.",
+      "source_ids": [
+        "audit363",
+        "director_preferences"
+      ]
+    },
+    "film_alignment": {
+      "status": "PASS",
+      "observation": "Preserve costume/material/identity and accepted Pashtun quality floor; no hiding hand or chest with clothing/shader.",
+      "comparison": "Actual Director363 anatomy/contact and integrated-shot requirements, not numerical or incremental improvement.",
+      "source_ids": [
+        "film_language"
+      ]
+    },
+    "preferences": {
+      "status": "PASS",
+      "observation": "Keep all failed candidates internal and continue full363 integrated goal. No routine algorithm approval or component handover.",
+      "comparison": "Actual Director363 anatomy/contact and integrated-shot requirements, not numerical or incremental improvement.",
+      "source_ids": [
+        "director363",
+        "director_preferences"
+      ]
+    },
+    "reference_roles": {
+      "status": "PASS",
+      "observation": "Faithful video still governs rearing/spear; current anatomy is a necessary interface, not motion qualification. Director speed override remains phased.",
+      "comparison": "Actual Director363 anatomy/contact and integrated-shot requirements, not numerical or incremental improvement.",
+      "source_ids": [
+        "references",
+        "director363"
+      ]
+    },
+    "method": {
+      "status": "PASS",
+      "observation": "Explicit hierarchy-aware local-basis conversion with actual matrix comparison; localized smooth pectoral contour at unchanged rig/weights, identical delta across shape keys and nap.",
+      "comparison": "Actual Director363 anatomy/contact and integrated-shot requirements, not numerical or incremental improvement.",
+      "source_ids": [
+        "audit363",
+        "strategy363"
+      ]
+    },
+    "interfaces": {
+      "status": "PASS",
+      "observation": "Actual rein endpoints must be enclosed by fist; fixed wrist and correct fingers. Chest shaping must leave forelegs/neck continuous and nap attached in stance/crest.",
+      "comparison": "Actual Director363 anatomy/contact and integrated-shot requirements, not numerical or incremental improvement.",
+      "source_ids": [
+        "audit363",
+        "constraints"
+      ]
+    },
+    "efficient_quality": {
+      "status": "PASS",
+      "observation": "Use cropped early proof to falsify transport/contour before full render. Numeric agreement never certifies skin silhouette;13 code tests only protect boundaries.",
+      "comparison": "Actual Director363 anatomy/contact and integrated-shot requirements, not numerical or incremental improvement.",
+      "source_ids": [
+        "strategy363",
+        "director_preferences"
+      ]
+    },
+    "authority": {
+      "status": "PASS",
+      "observation": "Original appearance106/max117, motion30/max41. No spend, external service/model, crowd/principal/Pashtun authoring; original failures and limits retained.",
+      "comparison": "Actual Director363 anatomy/contact and integrated-shot requirements, not numerical or incremental improvement.",
+      "source_ids": [
+        "director363",
+        "routing360"
+      ]
+    }
+  },
+  "strongest_counterexample": "A perfectly evaluated numerical pose can still be a claw; the chosen pectoral field can create a flat cutout or affect forelegs. Actual hand/front/side/crest images must reject these. Downstream fast rear, signal, flag and face remain unqualified.",
+  "issues": []
+}

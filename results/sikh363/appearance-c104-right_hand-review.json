@@ -1,0 +1,47 @@
+{
+  "verdict": "FAIL",
+  "run_digest": "a952fe0e18deb86b539e764c5a59aebcd884d82130ebd31d4957d9739bb953c9",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh363-appearance-c104-right_hand/snapshot.json",
+      "sha256": "83bd7c5cee3cd7800e426a6b3c244c1eb937e1bdda8a13c25d88e5d9ed0161ab"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh363-appearance-c104-right_hand/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh363-appearance-c104-right_hand/script-diagnostics.json",
+      "sha256": "99bbbecec312f933855a69b1d853770138fd35ab62669f2fe652484d335f4ec7"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh363-appearance-c104-right_hand/frame.png",
+      "sha256": "c16f41f014baf3d2fcdfc1eefd6e07712f65757e2e53e98e04296a896b7fc639"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh363-appearance-c104-right_hand/frames.json",
+      "sha256": "f3b5568fce7819fe7f5c93906a153b41f694c6f32e7588dc27387b277fea4ee0"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh363-appearance-c104-right_hand/frame.png",
+      "sha256": "c16f41f014baf3d2fcdfc1eefd6e07712f65757e2e53e98e04296a896b7fc639"
+    },
+    "frame_327": {
+      "path": ".runtime/factory-native/sikh363-appearance-c104-right_hand/frame-0327.png",
+      "sha256": "234a33837e2f5d1251c84f91df1234617aea289dfa0f7d0da15a69d42fda6783"
+    }
+  },
+  "observation": "Actual283/327 remains an open backward-curled claw; stronger joint closure did not produce palm enclosure. Additional angle-only tuning falsified. Right palm chirality control must replace tiny rest-bend sign inference.",
+  "comparison": "Required closed rein fist, not numerical length preservation or additional curl.",
+  "open_defects": [
+    "rein-hand-backward-curl"
+  ],
+  "retrospective_observations": [
+    {
+      "requirement": "interfaces",
+      "status": "FAIL",
+      "observation": "Rest-bend-derived sign curls toward dorsal side, not palm; unsupported sign assumption falsified by source vector dot-0.9447 and actual images.",
+      "falsified": true
+    }
+  ]
+}

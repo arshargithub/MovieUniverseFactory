@@ -1,0 +1,734 @@
+{
+  "input_digest": "fd1dfd468f16ea6b26c8affa0cdf1cf205220849e6a17f877b8a91ea87b68a78",
+  "outcome": "complete",
+  "artifact": {
+    "requirements": [
+      {
+        "id": "preservation",
+        "criterion": "Original320, accepted Pashtun and failed motion2 remain untouched; all new assets stay local derivative.",
+        "modes": [
+          "technical"
+        ],
+        "director_av": false
+      },
+      {
+        "id": "form",
+        "criterion": "Wrapped crown reads as layered Sikh cloth rather than a cylinder; clothing has supported volume and waist-origin folds; saddle pad follows actual horse surface.",
+        "modes": [
+          "technical",
+          "image"
+        ],
+        "director_av": false
+      },
+      {
+        "id": "interfaces",
+        "criterion": "One anatomical body/skeleton and weighted garment assembly; real sleeve/hand, neck, waist, seat and crown interfaces remain coherent across stance/crest/landing.",
+        "modes": [
+          "technical",
+          "image"
+        ],
+        "director_av": false
+      },
+      {
+        "id": "evidence",
+        "criterion": "Actual source-bound stance, sides, crest, landing and complete leader/horse passage compared with accepted film floor. Head/beard/horse surface are explicitly covered by whole_look; crowd is deferred and full-speed AV remains pending, not self-passed.",
+        "modes": [
+          "technical",
+          "image"
+        ],
+        "director_av": false
+      },
+      {
+        "id": "whole_look",
+        "criterion": "Entire supporting leader and horse share accepted film richness and believable form: integrated head/eyes/skin/beard/crown, cloth/accessories/seat and horse head/coat/mane/tail/tack at actual shot size. A smooth mannequin, shell crown, clay horse, visible layer/contact failure or adjacent regression fails. No new principal identity or Director AV acceptance.",
+        "modes": [
+          "technical",
+          "image"
+        ],
+        "director_av": false
+      }
+    ],
+    "beats": [
+      {
+        "id": "appearance",
+        "audience_read": "A materially credible supporting warrior in the same film, not a dressed mannequin.",
+        "framing": "Right-hand283/327 and actual neck-base-centred chest side283/327; source chest vertices/weights under exact same horse pose.",
+        "lenses": {
+          "story_performance": {
+            "applies": true,
+            "requirements": [
+              "form",
+              "whole_look"
+            ],
+            "why": "Whole supporting actor/horse must read as one believable film element under actual camera/light; current crowd deferred, not forgotten. Layered Sikh cloth must read as worn by a person, not a generic cap and painted body. Face/beard remain an explicit subsequent appearance dependency."
+          },
+          "camera_editorial": {
+            "applies": true,
+            "requirements": [
+              "form",
+              "evidence",
+              "whole_look"
+            ],
+            "why": "Whole supporting actor/horse must read as one believable film element under actual camera/light; current crowd deferred, not forgotten. Inspect reverse waist and interfaces hidden by horse in front; then whole intended shot."
+          },
+          "animation_physics": {
+            "applies": true,
+            "requirements": [
+              "interfaces"
+            ],
+            "why": "Clothing must remain supported through the existing pose caches and current crest; static projection at rest cannot prove animated fit."
+          },
+          "anatomy_contact": {
+            "applies": true,
+            "requirements": [
+              "interfaces",
+              "whole_look"
+            ],
+            "why": "Whole supporting actor/horse must read as one believable film element under actual camera/light; current crowd deferred, not forgotten. Support belongs to anatomical torso, never an incidental sleeve intersection; preserve valid59 pose."
+          },
+          "effects_environment": {
+            "applies": true,
+            "requirements": [
+              "whole_look"
+            ],
+            "why": "Whole supporting actor/horse must read as one believable film element under actual camera/light; current crowd deferred, not forgotten. No terrain, light or FX authoring in this form proof; retain the existing shot lighting so new geometry cannot be hidden by a relight."
+          },
+          "sound_music": {
+            "applies": false,
+            "requirements": [],
+            "why": "This is an appearance prerequisite with no new timing or audio claim. Existing sound and final integrated AV remain outside this proof."
+          },
+          "production_reuse": {
+            "applies": true,
+            "requirements": [
+              "preservation",
+              "interfaces",
+              "evidence",
+              "whole_look"
+            ],
+            "why": "Whole supporting actor/horse must read as one believable film element under actual camera/light; current crowd deferred, not forgotten. Preserve accepted originals and current motion; qualify leader and one near actor before any crowd propagation."
+          }
+        }
+      }
+    ],
+    "derivations": {
+      "preservation": {
+        "beats": [
+          "appearance"
+        ],
+        "lenses": [
+          "production_reuse"
+        ],
+        "derivation": "Original320, accepted Pashtun and failed motion2 remain untouched; all new assets stay local derivative.",
+        "origin": "craft_inference",
+        "priority": "quality_floor",
+        "reference_ids": [
+          "reference_rear",
+          "accepted_film"
+        ]
+      },
+      "form": {
+        "beats": [
+          "appearance"
+        ],
+        "lenses": [
+          "story_performance",
+          "camera_editorial"
+        ],
+        "derivation": "Wrapped crown reads as layered Sikh cloth rather than a cylinder; clothing has supported volume and waist-origin folds; saddle pad follows actual horse surface.",
+        "origin": "craft_inference",
+        "priority": "quality_floor",
+        "reference_ids": [
+          "reference_rear",
+          "accepted_film"
+        ]
+      },
+      "interfaces": {
+        "beats": [
+          "appearance"
+        ],
+        "lenses": [
+          "animation_physics",
+          "anatomy_contact",
+          "production_reuse"
+        ],
+        "derivation": "Existing207 garment poses, head parents, sash, horse and rider interfaces remain intact; no hovering or clipping accepted as detail.",
+        "origin": "craft_inference",
+        "priority": "quality_floor",
+        "reference_ids": [
+          "reference_rear",
+          "accepted_film"
+        ]
+      },
+      "evidence": {
+        "beats": [
+          "appearance"
+        ],
+        "lenses": [
+          "camera_editorial",
+          "production_reuse"
+        ],
+        "derivation": "Actual stance, crest and nearest-crowd images compared with accepted film floor; head/beard/horse surface and full-speed motion remain open, not passed by this limited proof.",
+        "origin": "craft_inference",
+        "priority": "quality_floor",
+        "reference_ids": [
+          "reference_rear",
+          "accepted_film"
+        ]
+      },
+      "whole_look": {
+        "beats": [
+          "appearance"
+        ],
+        "lenses": [
+          "story_performance",
+          "camera_editorial",
+          "anatomy_contact",
+          "effects_environment",
+          "production_reuse"
+        ],
+        "derivation": "Original supporting-shot direction requires near-principal visible realism, not distant silhouettes or wardrobe-only correctness. Current362 integrated scope requires named whole-actor/horse checks; this omission is repaired before handoff.",
+        "origin": "director",
+        "priority": "quality_floor",
+        "reference_ids": [
+          "accepted_film",
+          "reference_rear"
+        ]
+      }
+    },
+    "context_mapping": {
+      "direction": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence",
+          "whole_look"
+        ],
+        "reason": "Resume the integrated isolated production package; this precursor discovers rig ownership before any new pose authoring. Read-only actual morphed joint helper centers in armature rest space versus finger/wrist bone heads. Restore all source modifier states afterward.107 confirmed visible owner/weights; this tests whether skin morphology has moved knuckle pivots away from the bound skeleton."
+      },
+      "learnings": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence",
+          "whole_look"
+        ],
+        "reason": "331 failed whole-pose support and same-film character fidelity despite incremental offset corrections; those attempts remain closed. Read-only actual morphed joint helper centers in armature rest space versus finger/wrist bone heads. Restore all source modifier states afterward.107 confirmed visible owner/weights; this tests whether skin morphology has moved knuckle pivots away from the bound skeleton."
+      },
+      "film_language": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence",
+          "whole_look"
+        ],
+        "reason": "Accepted Pashtun quality stays fixed; a supporting actor cannot be a schematic statue. Read-only actual morphed joint helper centers in armature rest space versus finger/wrist bone heads. Restore all source modifier states afterward.107 confirmed visible owner/weights; this tests whether skin morphology has moved knuckle pivots away from the bound skeleton."
+      },
+      "director_preferences": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence",
+          "whole_look"
+        ],
+        "reason": "Predict failure through expert lenses and fix internally; setup and routine algorithms are not handovers. Read-only actual morphed joint helper centers in armature rest space versus finger/wrist bone heads. Restore all source modifier states afterward.107 confirmed visible owner/weights; this tests whether skin morphology has moved knuckle pivots away from the bound skeleton."
+      },
+      "references": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence",
+          "whole_look"
+        ],
+        "reason": "Reference14\u201319s governs faithful action phases; accepted film governs appearance; rejected poses are negative controls. Read-only actual morphed joint helper centers in armature rest space versus finger/wrist bone heads. Restore all source modifier states afterward.107 confirmed visible owner/weights; this tests whether skin morphology has moved knuckle pivots away from the bound skeleton."
+      },
+      "controls": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence",
+          "whole_look"
+        ],
+        "reason": "Fresh motion-domain packet and manual AU09\u201313,16 plus317\u2013334 reconciliation accompany this inspection. Read-only actual morphed joint helper centers in armature rest space versus finger/wrist bone heads. Restore all source modifier states afterward.107 confirmed visible owner/weights; this tests whether skin morphology has moved knuckle pivots away from the bound skeleton."
+      },
+      "constraints": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence",
+          "whole_look"
+        ],
+        "reason": "Inspect64 invalid used-armature drivers, removed object drivers and FK bypasses; no blind restoration or defect waiver. Read-only actual morphed joint helper centers in armature rest space versus finger/wrist bone heads. Restore all source modifier states afterward.107 confirmed visible owner/weights; this tests whether skin morphology has moved knuckle pivots away from the bound skeleton."
+      },
+      "cast_findings": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence",
+          "whole_look"
+        ],
+        "reason": "High topology and assigned texture already exist. Address cylindrical turban, smooth costume silhouette and unsupported saddle form before extra surface noise; preserve207 garment pose keys. Read-only actual morphed joint helper centers in armature rest space versus finger/wrist bone heads. Restore all source modifier states afterward.107 confirmed visible owner/weights; this tests whether skin morphology has moved knuckle pivots away from the bound skeleton."
+      },
+      "audit348": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence",
+          "whole_look"
+        ],
+        "reason": "Apply the reviewed causal proof before dependent clothing work. Read-only actual morphed joint helper centers in armature rest space versus finger/wrist bone heads. Restore all source modifier states afterward.107 confirmed visible owner/weights; this tests whether skin morphology has moved knuckle pivots away from the bound skeleton."
+      },
+      "reconciliation351": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence",
+          "whole_look"
+        ],
+        "reason": "Apply the reviewed causal proof before dependent clothing work. Read-only actual morphed joint helper centers in armature rest space versus finger/wrist bone heads. Restore all source modifier states afterward.107 confirmed visible owner/weights; this tests whether skin morphology has moved knuckle pivots away from the bound skeleton."
+      },
+      "strategy352": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence",
+          "whole_look"
+        ],
+        "reason": "Coordinate arm and contact constraints; isolate pose versus skinning before independent garment transfer. Read-only actual morphed joint helper centers in armature rest space versus finger/wrist bone heads. Restore all source modifier states afterward.107 confirmed visible owner/weights; this tests whether skin morphology has moved knuckle pivots away from the bound skeleton."
+      },
+      "strategy353": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence",
+          "whole_look"
+        ],
+        "reason": "Apply causal interface tests and retain scoped successes; leader and horse precede crowd. Read-only actual morphed joint helper centers in armature rest space versus finger/wrist bone heads. Restore all source modifier states afterward.107 confirmed visible owner/weights; this tests whether skin morphology has moved knuckle pivots away from the bound skeleton."
+      },
+      "lessons352": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence",
+          "whole_look"
+        ],
+        "reason": "Apply causal interface tests and retain scoped successes; leader and horse precede crowd. Read-only actual morphed joint helper centers in armature rest space versus finger/wrist bone heads. Restore all source modifier states afterward.107 confirmed visible owner/weights; this tests whether skin morphology has moved knuckle pivots away from the bound skeleton."
+      },
+      "strategy354": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence",
+          "whole_look"
+        ],
+        "reason": "Reconstruct failed whole-form appearance, preserve motion16 and original quality/reference authority. Read-only actual morphed joint helper centers in armature rest space versus finger/wrist bone heads. Restore all source modifier states afterward.107 confirmed visible owner/weights; this tests whether skin morphology has moved knuckle pivots away from the bound skeleton."
+      },
+      "retro354": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence",
+          "whole_look"
+        ],
+        "reason": "Reconstruct failed whole-form appearance, preserve motion16 and original quality/reference authority. Read-only actual morphed joint helper centers in armature rest space versus finger/wrist bone heads. Restore all source modifier states afterward.107 confirmed visible owner/weights; this tests whether skin morphology has moved knuckle pivots away from the bound skeleton."
+      },
+      "lessons353": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence",
+          "whole_look"
+        ],
+        "reason": "Reconstruct failed whole-form appearance, preserve motion16 and original quality/reference authority. Read-only actual morphed joint helper centers in armature rest space versus finger/wrist bone heads. Restore all source modifier states afterward.107 confirmed visible owner/weights; this tests whether skin morphology has moved knuckle pivots away from the bound skeleton."
+      },
+      "strategy357": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence",
+          "whole_look"
+        ],
+        "reason": "Replace invalid inherited follicle domain before density; retain354/71 sash/tack and motion16; review each cycle and cumulative fifth. Read-only actual morphed joint helper centers in armature rest space versus finger/wrist bone heads. Restore all source modifier states afterward.107 confirmed visible owner/weights; this tests whether skin morphology has moved knuckle pivots away from the bound skeleton."
+      },
+      "lessons354": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence",
+          "whole_look"
+        ],
+        "reason": "Replace invalid inherited follicle domain before density; retain354/71 sash/tack and motion16; review each cycle and cumulative fifth. Read-only actual morphed joint helper centers in armature rest space versus finger/wrist bone heads. Restore all source modifier states afterward.107 confirmed visible owner/weights; this tests whether skin morphology has moved knuckle pivots away from the bound skeleton."
+      },
+      "strategy358": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence",
+          "whole_look"
+        ],
+        "reason": "Correct actual headstall ownership and its consuming rein span; retain357 construction gains and original faithful action reference. Read-only actual morphed joint helper centers in armature rest space versus finger/wrist bone heads. Restore all source modifier states afterward.107 confirmed visible owner/weights; this tests whether skin morphology has moved knuckle pivots away from the bound skeleton."
+      },
+      "lessons357": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence",
+          "whole_look"
+        ],
+        "reason": "Correct actual headstall ownership and its consuming rein span; retain357 construction gains and original faithful action reference. Read-only actual morphed joint helper centers in armature rest space versus finger/wrist bone heads. Restore all source modifier states afterward.107 confirmed visible owner/weights; this tests whether skin morphology has moved knuckle pivots away from the bound skeleton."
+      },
+      "strategy361": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence",
+          "whole_look"
+        ],
+        "reason": "361 authorizes ten additional each and a conservative whole-segment proof, then integrated actor/horse review. Old358 endpoint and sparse-projection methods are rejected. Read-only actual morphed joint helper centers in armature rest space versus finger/wrist bone heads. Restore all source modifier states afterward.107 confirmed visible owner/weights; this tests whether skin morphology has moved knuckle pivots away from the bound skeleton."
+      },
+      "lessons358": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence",
+          "whole_look"
+        ],
+        "reason": "Apply actual anatomical ownership, whole consumer path, final thickness/sampling review, component versus integrated proof and honest cycle accounting. Read-only actual morphed joint helper centers in armature rest space versus finger/wrist bone heads. Restore all source modifier states afterward.107 confirmed visible owner/weights; this tests whether skin morphology has moved knuckle pivots away from the bound skeleton."
+      },
+      "routing360": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence",
+          "whole_look"
+        ],
+        "reason": "Sol6.1 High is default for planning/execution/review/retros; Astra needs a separate narrow Director-approved assignment, absent here. Read-only actual morphed joint helper centers in armature rest space versus finger/wrist bone heads. Restore all source modifier states afterward.107 confirmed visible owner/weights; this tests whether skin morphology has moved knuckle pivots away from the bound skeleton."
+      },
+      "strategy362": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence",
+          "whole_look"
+        ],
+        "reason": "362 adds ten appearance only; preserve motion25..31. Full dressed layer proof before whole leader and isolated passage. Read-only actual morphed joint helper centers in armature rest space versus finger/wrist bone heads. Restore all source modifier states afterward.107 confirmed visible owner/weights; this tests whether skin morphology has moved knuckle pivots away from the bound skeleton."
+      },
+      "lessons361": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence",
+          "whole_look"
+        ],
+        "reason": "Compile complete layer graph; actual support domain, continuity and canonical state must be proved. Component success does not qualify whole art. Read-only actual morphed joint helper centers in armature rest space versus finger/wrist bone heads. Restore all source modifier states afterward.107 confirmed visible owner/weights; this tests whether skin morphology has moved knuckle pivots away from the bound skeleton."
+      },
+      "director363": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence",
+          "whole_look"
+        ],
+        "reason": "363 rejects362; ten additional each. Phased fast rear, readable prep, faithful slam/hoist signal, real tied-flag cloth, face eyeline/visibility, chest/right-hand repair. Diagnose exact named defects, not another texture-only or faster-playback patch."
+      },
+      "strategy363": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence",
+          "whole_look"
+        ],
+        "reason": "Diagnose source form/hand and time consumers; prove cloth persistence on exact action; source/frame/Director AV separate. First identify chest/hand/ownership causes, then authored repair and real cloth proof on final action clock."
+      },
+      "audit363": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence",
+          "whole_look"
+        ],
+        "reason": "Actual front chest failure, invalid side framing and open rein-hand claw confirmed; length metrics did not pass anatomy. Compare corrective effect and actual grip before integration. Read-only actual morphed joint helper centers in armature rest space versus finger/wrist bone heads. Restore all source modifier states afterward.107 confirmed visible owner/weights; this tests whether skin morphology has moved knuckle pivots away from the bound skeleton."
+      }
+    },
+    "knowledge_mapping": {
+      "construction_interfaces": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence",
+          "whole_look"
+        ],
+        "reason": "Read-only actual morphed joint helper centers in armature rest space versus finger/wrist bone heads. Restore all source modifier states afterward.107 confirmed visible owner/weights; this tests whether skin morphology has moved knuckle pivots away from the bound skeleton. Actual helper centers and rest-bone distances discriminate incorrect pose targets from a rest-skin/skeleton mismatch. No guessed alignment or anatomical approval."
+      },
+      "reuse_envelope": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence",
+          "whole_look"
+        ],
+        "reason": "Read-only actual morphed joint helper centers in armature rest space versus finger/wrist bone heads. Restore all source modifier states afterward.107 confirmed visible owner/weights; this tests whether skin morphology has moved knuckle pivots away from the bound skeleton. Actual helper centers and rest-bone distances discriminate incorrect pose targets from a rest-skin/skeleton mismatch. No guessed alignment or anatomical approval."
+      },
+      "animal_coordination": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence",
+          "whole_look"
+        ],
+        "reason": "Read-only actual morphed joint helper centers in armature rest space versus finger/wrist bone heads. Restore all source modifier states afterward.107 confirmed visible owner/weights; this tests whether skin morphology has moved knuckle pivots away from the bound skeleton. Actual helper centers and rest-bone distances discriminate incorrect pose targets from a rest-skin/skeleton mismatch. No guessed alignment or anatomical approval."
+      },
+      "crowd_support": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence",
+          "whole_look"
+        ],
+        "reason": "Crowd remains deferred and unqualified context; current proof leader/horse only."
+      },
+      "authority": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence",
+          "whole_look"
+        ],
+        "reason": "Read-only actual morphed joint helper centers in armature rest space versus finger/wrist bone heads. Restore all source modifier states afterward.107 confirmed visible owner/weights; this tests whether skin morphology has moved knuckle pivots away from the bound skeleton. Actual helper centers and rest-bone distances discriminate incorrect pose targets from a rest-skin/skeleton mismatch. No guessed alignment or anatomical approval."
+      },
+      "strategy": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence",
+          "whole_look"
+        ],
+        "reason": "Read-only actual morphed joint helper centers in armature rest space versus finger/wrist bone heads. Restore all source modifier states afterward.107 confirmed visible owner/weights; this tests whether skin morphology has moved knuckle pivots away from the bound skeleton. Actual helper centers and rest-bone distances discriminate incorrect pose targets from a rest-skin/skeleton mismatch. No guessed alignment or anatomical approval."
+      },
+      "visual_gate": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence",
+          "whole_look"
+        ],
+        "reason": "Read-only actual morphed joint helper centers in armature rest space versus finger/wrist bone heads. Restore all source modifier states afterward.107 confirmed visible owner/weights; this tests whether skin morphology has moved knuckle pivots away from the bound skeleton. Actual helper centers and rest-bone distances discriminate incorrect pose targets from a rest-skin/skeleton mismatch. No guessed alignment or anatomical approval."
+      },
+      "anticipation": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence",
+          "whole_look"
+        ],
+        "reason": "Read-only actual morphed joint helper centers in armature rest space versus finger/wrist bone heads. Restore all source modifier states afterward.107 confirmed visible owner/weights; this tests whether skin morphology has moved knuckle pivots away from the bound skeleton. Actual helper centers and rest-bone distances discriminate incorrect pose targets from a rest-skin/skeleton mismatch. No guessed alignment or anatomical approval."
+      },
+      "stopping": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence",
+          "whole_look"
+        ],
+        "reason": "Read-only actual morphed joint helper centers in armature rest space versus finger/wrist bone heads. Restore all source modifier states afterward.107 confirmed visible owner/weights; this tests whether skin morphology has moved knuckle pivots away from the bound skeleton. Actual helper centers and rest-bone distances discriminate incorrect pose targets from a rest-skin/skeleton mismatch. No guessed alignment or anatomical approval."
+      },
+      "versioning": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence",
+          "whole_look"
+        ],
+        "reason": "Read-only actual morphed joint helper centers in armature rest space versus finger/wrist bone heads. Restore all source modifier states afterward.107 confirmed visible owner/weights; this tests whether skin morphology has moved knuckle pivots away from the bound skeleton. Actual helper centers and rest-bone distances discriminate incorrect pose targets from a rest-skin/skeleton mismatch. No guessed alignment or anatomical approval."
+      },
+      "economics": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence",
+          "whole_look"
+        ],
+        "reason": "Read-only actual morphed joint helper centers in armature rest space versus finger/wrist bone heads. Restore all source modifier states afterward.107 confirmed visible owner/weights; this tests whether skin morphology has moved knuckle pivots away from the bound skeleton. Actual helper centers and rest-bone distances discriminate incorrect pose targets from a rest-skin/skeleton mismatch. No guessed alignment or anatomical approval."
+      },
+      "anatomy": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence",
+          "whole_look"
+        ],
+        "reason": "Read-only actual morphed joint helper centers in armature rest space versus finger/wrist bone heads. Restore all source modifier states afterward.107 confirmed visible owner/weights; this tests whether skin morphology has moved knuckle pivots away from the bound skeleton. Actual helper centers and rest-bone distances discriminate incorrect pose targets from a rest-skin/skeleton mismatch. No guessed alignment or anatomical approval."
+      },
+      "motion": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence",
+          "whole_look"
+        ],
+        "reason": "Read-only actual morphed joint helper centers in armature rest space versus finger/wrist bone heads. Restore all source modifier states afterward.107 confirmed visible owner/weights; this tests whether skin morphology has moved knuckle pivots away from the bound skeleton. Actual helper centers and rest-bone distances discriminate incorrect pose targets from a rest-skin/skeleton mismatch. No guessed alignment or anatomical approval."
+      },
+      "secondary": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence",
+          "whole_look"
+        ],
+        "reason": "Read-only actual morphed joint helper centers in armature rest space versus finger/wrist bone heads. Restore all source modifier states afterward.107 confirmed visible owner/weights; this tests whether skin morphology has moved knuckle pivots away from the bound skeleton. Actual helper centers and rest-bone distances discriminate incorrect pose targets from a rest-skin/skeleton mismatch. No guessed alignment or anatomical approval."
+      },
+      "look": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence",
+          "whole_look"
+        ],
+        "reason": "Read-only actual morphed joint helper centers in armature rest space versus finger/wrist bone heads. Restore all source modifier states afterward.107 confirmed visible owner/weights; this tests whether skin morphology has moved knuckle pivots away from the bound skeleton. Actual helper centers and rest-bone distances discriminate incorrect pose targets from a rest-skin/skeleton mismatch. No guessed alignment or anatomical approval."
+      },
+      "render_profile": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence",
+          "whole_look"
+        ],
+        "reason": "Read-only actual morphed joint helper centers in armature rest space versus finger/wrist bone heads. Restore all source modifier states afterward.107 confirmed visible owner/weights; this tests whether skin morphology has moved knuckle pivots away from the bound skeleton. Actual helper centers and rest-bone distances discriminate incorrect pose targets from a rest-skin/skeleton mismatch. No guessed alignment or anatomical approval."
+      },
+      "cache_safety": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence",
+          "whole_look"
+        ],
+        "reason": "Read-only actual morphed joint helper centers in armature rest space versus finger/wrist bone heads. Restore all source modifier states afterward.107 confirmed visible owner/weights; this tests whether skin morphology has moved knuckle pivots away from the bound skeleton. Actual helper centers and rest-bone distances discriminate incorrect pose targets from a rest-skin/skeleton mismatch. No guessed alignment or anatomical approval."
+      },
+      "current_state": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence",
+          "whole_look"
+        ],
+        "reason": "Read-only actual morphed joint helper centers in armature rest space versus finger/wrist bone heads. Restore all source modifier states afterward.107 confirmed visible owner/weights; this tests whether skin morphology has moved knuckle pivots away from the bound skeleton. Actual helper centers and rest-bone distances discriminate incorrect pose targets from a rest-skin/skeleton mismatch. No guessed alignment or anatomical approval."
+      },
+      "au_deformation": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence",
+          "whole_look"
+        ],
+        "reason": "Read-only actual morphed joint helper centers in armature rest space versus finger/wrist bone heads. Restore all source modifier states afterward.107 confirmed visible owner/weights; this tests whether skin morphology has moved knuckle pivots away from the bound skeleton. Actual helper centers and rest-bone distances discriminate incorrect pose targets from a rest-skin/skeleton mismatch. No guessed alignment or anatomical approval."
+      },
+      "au_performance": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence",
+          "whole_look"
+        ],
+        "reason": "Read-only actual morphed joint helper centers in armature rest space versus finger/wrist bone heads. Restore all source modifier states afterward.107 confirmed visible owner/weights; this tests whether skin morphology has moved knuckle pivots away from the bound skeleton. Actual helper centers and rest-bone distances discriminate incorrect pose targets from a rest-skin/skeleton mismatch. No guessed alignment or anatomical approval."
+      },
+      "au_contact": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence",
+          "whole_look"
+        ],
+        "reason": "Read-only actual morphed joint helper centers in armature rest space versus finger/wrist bone heads. Restore all source modifier states afterward.107 confirmed visible owner/weights; this tests whether skin morphology has moved knuckle pivots away from the bound skeleton. Actual helper centers and rest-bone distances discriminate incorrect pose targets from a rest-skin/skeleton mismatch. No guessed alignment or anatomical approval."
+      },
+      "au_surface": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence",
+          "whole_look"
+        ],
+        "reason": "Read-only actual morphed joint helper centers in armature rest space versus finger/wrist bone heads. Restore all source modifier states afterward.107 confirmed visible owner/weights; this tests whether skin morphology has moved knuckle pivots away from the bound skeleton. Actual helper centers and rest-bone distances discriminate incorrect pose targets from a rest-skin/skeleton mismatch. No guessed alignment or anatomical approval."
+      },
+      "au_reuse": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence",
+          "whole_look"
+        ],
+        "reason": "Read-only actual morphed joint helper centers in armature rest space versus finger/wrist bone heads. Restore all source modifier states afterward.107 confirmed visible owner/weights; this tests whether skin morphology has moved knuckle pivots away from the bound skeleton. Actual helper centers and rest-bone distances discriminate incorrect pose targets from a rest-skin/skeleton mismatch. No guessed alignment or anatomical approval."
+      },
+      "sikh_scope": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence",
+          "whole_look"
+        ],
+        "reason": "Read-only actual morphed joint helper centers in armature rest space versus finger/wrist bone heads. Restore all source modifier states afterward.107 confirmed visible owner/weights; this tests whether skin morphology has moved knuckle pivots away from the bound skeleton. Actual helper centers and rest-bone distances discriminate incorrect pose targets from a rest-skin/skeleton mismatch. No guessed alignment or anatomical approval."
+      },
+      "sikh_motion": {
+        "requirements": [
+          "preservation",
+          "form",
+          "interfaces",
+          "evidence",
+          "whole_look"
+        ],
+        "reason": "Read-only actual morphed joint helper centers in armature rest space versus finger/wrist bone heads. Restore all source modifier states afterward.107 confirmed visible owner/weights; this tests whether skin morphology has moved knuckle pivots away from the bound skeleton. Actual helper centers and rest-bone distances discriminate incorrect pose targets from a rest-skin/skeleton mismatch. No guessed alignment or anatomical approval."
+      }
+    }
+  }
+}

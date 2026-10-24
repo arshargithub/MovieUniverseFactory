@@ -1,0 +1,133 @@
+{
+  "template": "results/sikh363/appearance-c113-strategizing.json",
+  "derived_template": "results/sikh363/appearance-c113-deriving.json",
+  "parent": ".runtime/factory-native/sikh363-motion-c40-save/scene.blend",
+  "method": "Discriminating113 failure control: actual Blender CLOTH same regular triangle, three material ties, source40 pole, stiffness80/shear50/quality20/air4/wind3; change only per-vertex mass.20 to.001kg. Readback discrete mass0.276kg replaces erroneous55.2kg; guards unchanged. Final41 changed pole still requires rebake.",
+  "proof": "Actual sequential230..418 solve passes finite/topology,6mm pin and1.7 maxstrain guards; actual front/reverse/production views must reject collapse, excessive stiffness or intersections. Component capability only, never final-action or AV approval.",
+  "scope": "Original363 tied-flag physics capability; chest113 retained separately. No Director handoff or final41 approval.",
+  "framing": "Actual40 trial camera and front/reverse cloth diagnostics; known40 timing/composition excluded from trial acceptance.",
+  "reconciliation": "Original appearance114/max117 and motion41/max41; all363 authority, sources and failed results retained. No external spend, runtime model calls or task reset.",
+  "applications": {
+    "director363": "Diagnose exact named defects, not another texture-only or faster-playback patch.",
+    "strategy363": "First identify chest/hand/ownership causes, then authored repair and real cloth proof on final action clock."
+  },
+  "alternatives": "Reject speculative smoothing of whole horse, fist endpoint-only offsets and uniform clip acceleration. Native inspection first is smaller than repeated whole-scene renders.",
+  "failure": "Any guarded solver failure retained with deformed mesh/rest/goals/edges. Reassess wind/collision if mass control fails; never loosen guard. Final changed pole cache invalid.",
+  "sources": [
+    "src/movie_factory/adapters/blender/nihang_audit363.py",
+    "src/movie_factory/adapters/blender/nihang_control.py",
+    "src/movie_factory/adapters/blender/nihang_patch.py",
+    "tests/test_nihang363.py",
+    "src/movie_factory/adapters/blender/nihang_hand363.py",
+    "src/movie_factory/native_admission.py",
+    "results/sikh363/CAUSAL_AUDIT.md",
+    "results/sikh363/HAND_HANDLER_REVIEW.md",
+    "src/movie_factory/adapters/blender/nihang_grip363.py",
+    "results/sikh363/GRIP104_REVIEW.md",
+    "results/sikh363/appearance-c103-right_hand-review.json",
+    "results/sikh363/GRIP105_REVIEW.md",
+    "results/sikh363/appearance-c104-right_hand-review.json",
+    "src/movie_factory/adapters/blender/nihang_repair363.py",
+    "results/sikh363/REPAIR106_REVIEW.md",
+    "results/sikh363/appearance-c105-right_hand-review.json",
+    "results/sikh363/appearance-c105-chest_side-review.json",
+    "src/movie_factory/adapters/blender/nihang_fist363.py",
+    "results/sikh363/FIST109_REVIEW.md",
+    "results/sikh363/appearance-c108-audit-review.json",
+    "src/movie_factory/adapters/blender/nihang_thumb363.py",
+    "results/sikh363/THUMB110_REVIEW.md",
+    "results/sikh363/appearance-c109-right_hand-review.json",
+    "src/movie_factory/adapters/blender/nihang_chest363.py",
+    "src/movie_factory/adapters/blender/nihang_flag363.py",
+    "results/sikh363/APPEARANCE111_REVIEW.md",
+    "results/sikh363/HAND_CAUSAL_RESULTS.md",
+    "results/sikh363/CLOCK_CAUSAL_RESULTS.md",
+    "results/sikh363/motion-c40-phases-review.json",
+    ".runtime/factory-native/sikh363-motion-c40-save/scene.blend",
+    "results/sikh363/CLOTH112_REVIEW.md",
+    "results/sikh363/appearance-c111-flag_save-run.json",
+    "results/sikh363/CHEST113_REVIEW.md",
+    "results/sikh363/chest112-frozen.py",
+    "results/sikh363/appearance-c112-chest_front-review.json",
+    "results/sikh363/CLOTH113_DIAG.md",
+    "results/sikh363/flag113-frozen.py",
+    "results/sikh363/CHEST113_RESULT.md",
+    "results/sikh363/appearance-c113-flag_save-run.json"
+  ],
+  "steps": [
+    {
+      "id": "flag_save",
+      "depends_on": [],
+      "requirements": [
+        "preservation"
+      ],
+      "recipe": {
+        "operation": "nihang_patch",
+        "frame": 314,
+        "width": 432,
+        "height": 768,
+        "samples": 8,
+        "edits": [
+          {
+            "kind": "mounted_flag363",
+            "target": "mounted leader"
+          }
+        ]
+      }
+    },
+    {
+      "id": "flag_detail",
+      "depends_on": [
+        "flag_save"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 314,
+        "frames": [
+          283,
+          314,
+          333
+        ],
+        "view": "flag363",
+        "width": 640,
+        "height": 640,
+        "samples": 8
+      }
+    },
+    {
+      "id": "flag_reverse",
+      "depends_on": [
+        "flag_save"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 314,
+        "frames": [
+          314
+        ],
+        "view": "flag363_reverse",
+        "width": 640,
+        "height": 640,
+        "samples": 8
+      }
+    },
+    {
+      "id": "flag_production",
+      "depends_on": [
+        "flag_save"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 314,
+        "frames": [
+          283,
+          314
+        ],
+        "view": "production",
+        "width": 432,
+        "height": 768,
+        "samples": 8
+      }
+    }
+  ]
+}

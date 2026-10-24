@@ -1,0 +1,62 @@
+{
+  "verdict": "FAIL",
+  "run_digest": "f31f44b9a6ee30a6cd20ae4c1f8d185d7cfc20773330541b6e5b6b033ebe75f1",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh363-motion-c40-phases/snapshot.json",
+      "sha256": "d04a5dac332602fd192e26ad20f824cd801199f230c925bf66e5a0c1b80c85f5"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh363-motion-c40-phases/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh363-motion-c40-phases/script-diagnostics.json",
+      "sha256": "99bbbecec312f933855a69b1d853770138fd35ab62669f2fe652484d335f4ec7"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh363-motion-c40-phases/frame.png",
+      "sha256": "79d8eb53cbbaa5af6cb3d90acafbe89726f8aee45ce0c1ac2d47aa21a61b93c7"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh363-motion-c40-phases/frames.json",
+      "sha256": "c4fe2c24765d5f96c23b3a1564cb51d97426a0f3137080b693d289a536b7929d"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh363-motion-c40-phases/frame.png",
+      "sha256": "79d8eb53cbbaa5af6cb3d90acafbe89726f8aee45ce0c1ac2d47aa21a61b93c7"
+    },
+    "frame_306": {
+      "path": ".runtime/factory-native/sikh363-motion-c40-phases/frame-0306.png",
+      "sha256": "abcbfd48378bdbff2549caceecc95c114a09ac45e6c93b764cdbdf7297961120"
+    },
+    "frame_314": {
+      "path": ".runtime/factory-native/sikh363-motion-c40-phases/frame-0314.png",
+      "sha256": "9540237f17088cc925a3065fca6d43f05e322e0c33fd4f950719b023dc2718d3"
+    },
+    "frame_322": {
+      "path": ".runtime/factory-native/sikh363-motion-c40-phases/frame-0322.png",
+      "sha256": "85a6271a86ee203a9707bce8badb3b7ffa6d522b2eba37b374ddb2c3234dd4cb"
+    },
+    "frame_333": {
+      "path": ".runtime/factory-native/sikh363-motion-c40-phases/frame-0333.png",
+      "sha256": "11416e73b1bc7e9857e2cd08f29dedcf1326b4f39a66372ebb06a9c8d97cb5c7"
+    }
+  },
+  "observation": "Actual five phase images: face/pole separation and live reins are fixed, but frontal crest still shows excessive paired pectoral volume, cropped torch intrudes from left edge, and flag remains rigid/edge-on. Source/reference chronology check finds hoof prep291 begins before inherited spear strike300, contrary to reference slam then gather. Do not promote component successes to whole pass.",
+  "comparison": "363 faithful slam/gather/rapid rear/permission, clear exchange face, believable chest and genuinely tied flag. Full-speed AV remains Director-owned.",
+  "open_defects": [
+    "pectoral-volume",
+    "torch-edge",
+    "spear-prep-order",
+    "rigid-flag"
+  ],
+  "retrospective_observations": [
+    {
+      "requirement": "rider",
+      "status": "FAIL",
+      "observation": "Actual frontal proof and reference/source chronology reveal remaining appearance and ordering failures despite corrected contact.",
+      "falsified": true
+    }
+  ]
+}

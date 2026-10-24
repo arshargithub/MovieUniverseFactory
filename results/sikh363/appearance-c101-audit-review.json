@@ -1,0 +1,29 @@
+{
+  "verdict": "PASS",
+  "run_digest": "f4b556cce6b5bc20d087eb346c61eb74ea7a59ea58db5485ab5130a3c853d11c",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh363-appearance-c101-audit/snapshot.json",
+      "sha256": "83bd7c5cee3cd7800e426a6b3c244c1eb937e1bdda8a13c25d88e5d9ed0161ab"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh363-appearance-c101-audit/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh363-appearance-c101-audit/script-diagnostics.json",
+      "sha256": "d8c950e68c5c42eb08e3ba4cd795b716e2b5ac082b76301b8697edb7667b2ad9"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh363-appearance-c101-audit/scene.blend",
+      "sha256": "da59415044fb0735f020041553c6afddb95c2a70ea5e8f43ff71dd57f3f92aba"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh363-appearance-c101-audit/patch-evidence.json",
+      "sha256": "5789cc34203e88cafb59e4ac03d19d13031eb7f6155cf74c1cbf12bfb6fbbf84"
+    }
+  },
+  "observation": "Actual fixed read-only report returns horse modifier/sections, both hand chains and action consumers; clean script diagnostics. No art or repair approval.",
+  "comparison": "Exact99 parent; audit no action or mesh mutation, following363 causal prerequisite.",
+  "open_defects": []
+}

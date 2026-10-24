@@ -1,0 +1,87 @@
+{
+  "template": "results/sikh363/appearance-c103-strategizing.json",
+  "derived_template": "results/sikh363/appearance-c103-deriving.json",
+  "parent": ".runtime/factory-native/sikh362-appearance-c99-save/scene.blend",
+  "method": "Return to exact99 source, not failed103 fist. Increase actual MCP/PIP/DIP closure to1.45/1.60/.90 radians and oppose thumb to the curled middle index segment. Preserve wrist/forearm, segment lengths and actual knuckle origins. A grasp constant relative to wrist is solved once and its local curves fixed; sample190 actual wrist poses and rebase only hand-owned rein end with bounded bulk curve updates. Inspect source chest rest-versus-posed vertices/weights and true-side view. Correctives have exactly zero values, no drivers and zero geometric effect at283/327, so omit duplicate no-effect mute renders; never retain a mute as horse repair.",
+  "proof": "Actual right283/327 must read as a closed fist with opposed thumb and enclosed rein, not another claw.190 pose guards retain wrist/segment lengths. Actual true-side chest coverage and rest/posed source coordinates identify mesh versus rig cause before sculpt. Other known363 deficiencies stay open for integrated motion/cloth work.",
+  "scope": "Internal second hand candidate and true chest-source diagnosis; not whole art or Director AV handoff.",
+  "framing": "Right-hand283/327 and actual neck-base-centred chest side283/327; source chest vertices/weights under exact same horse pose.",
+  "reconciliation": "363 rejects362. All101 diagnostics preserved, including wrong side crop and open claw. Two preplanning source/runtime reconciliations retain original counters. Appearance103/max117, motion30/max41; Sol only, no additional authority.",
+  "applications": {
+    "director363": "Diagnose exact named defects, not another texture-only or faster-playback patch.",
+    "strategy363": "First identify chest/hand/ownership causes, then authored repair and real cloth proof on final action clock."
+  },
+  "alternatives": "Reject speculative smoothing of whole horse, fist endpoint-only offsets and uniform clip acceleration. Native inspection first is smaller than repeated whole-scene renders.",
+  "failure": "If visibly still a claw, thumb self-intersection, wrong rein entry or skin deformation persists, reject actual candidate rather than cite bone metrics. No-effect corrective hypothesis is falsified and must not consume duplicate renders.",
+  "sources": [
+    "src/movie_factory/adapters/blender/nihang_audit363.py",
+    "src/movie_factory/adapters/blender/nihang_control.py",
+    "src/movie_factory/adapters/blender/nihang_patch.py",
+    "tests/test_nihang363.py",
+    "src/movie_factory/adapters/blender/nihang_hand363.py",
+    "src/movie_factory/native_admission.py",
+    "results/sikh363/CAUSAL_AUDIT.md",
+    "results/sikh363/HAND_HANDLER_REVIEW.md",
+    "src/movie_factory/adapters/blender/nihang_grip363.py",
+    "results/sikh363/GRIP104_REVIEW.md",
+    "results/sikh363/appearance-c103-right_hand-review.json"
+  ],
+  "steps": [
+    {
+      "id": "save",
+      "depends_on": [],
+      "requirements": [
+        "preservation"
+      ],
+      "recipe": {
+        "operation": "nihang_patch",
+        "frame": 283,
+        "width": 432,
+        "height": 768,
+        "samples": 8,
+        "edits": [
+          {
+            "kind": "mounted_grip363",
+            "target": "mounted leader"
+          }
+        ]
+      }
+    },
+    {
+      "id": "right_hand",
+      "depends_on": [
+        "save"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 283,
+        "frames": [
+          283,
+          327
+        ],
+        "view": "leader_right_contact",
+        "width": 640,
+        "height": 640,
+        "samples": 8
+      }
+    },
+    {
+      "id": "chest_side",
+      "depends_on": [
+        "save"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 283,
+        "frames": [
+          283,
+          327
+        ],
+        "view": "horse_chest_side",
+        "width": 640,
+        "height": 640,
+        "samples": 8
+      }
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "verdict": "FAIL",
+  "run_digest": "dfbbdc093344a51065af11b7765a58d40e5298b4e2679de54e86162631c7f77b",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh363-appearance-c105-right_hand/snapshot.json",
+      "sha256": "83bd7c5cee3cd7800e426a6b3c244c1eb937e1bdda8a13c25d88e5d9ed0161ab"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh363-appearance-c105-right_hand/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh363-appearance-c105-right_hand/script-diagnostics.json",
+      "sha256": "99bbbecec312f933855a69b1d853770138fd35ab62669f2fe652484d335f4ec7"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh363-appearance-c105-right_hand/frame.png",
+      "sha256": "754f6112e06fdea581add424c13f0fb21603366ea5d0aa05395d58da2e2b6a59"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh363-appearance-c105-right_hand/frames.json",
+      "sha256": "ed0da6b73638eb45b7a72024f5c26f8dcd6f9880f6794f1b824c9ec8fa6bdf5b"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh363-appearance-c105-right_hand/frame.png",
+      "sha256": "754f6112e06fdea581add424c13f0fb21603366ea5d0aa05395d58da2e2b6a59"
+    },
+    "frame_327": {
+      "path": ".runtime/factory-native/sikh363-appearance-c105-right_hand/frame-0327.png",
+      "sha256": "bc91fd3c215ba8ba1a5fb648a0a77f2d88effa97f0a0de7ae2e0c34de2702ab6"
+    }
+  },
+  "observation": "Actual283/327 still shows an open antler-like claw with large finger gaps and protruding thumb. Palm-side sign control did not close the skin silhouette; the isolated joint-angle family is rejected. Need actual evaluated bone/skin ownership and grip-frame reconstruction, not further angle increases.",
+  "comparison": "Director closed rein fist and anatomically plausible thumb, not stronger numerical curl.",
+  "open_defects": [
+    "open-claw",
+    "thumb-extended"
+  ],
+  "retrospective_observations": [
+    {
+      "requirement": "interfaces",
+      "status": "FAIL",
+      "observation": "Palm chirality change alone still leaves open skin silhouette; finger bone frame/mesh transport assumption falsified.",
+      "falsified": true
+    }
+  ]
+}

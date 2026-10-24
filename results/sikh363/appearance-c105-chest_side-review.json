@@ -1,0 +1,59 @@
+{
+  "verdict": "PASS",
+  "run_digest": "020655efb1ec78d618150b3f2d329df362ce485dd7b2bc3dd1c53d78fed8bdd6",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh363-appearance-c105-chest_side/snapshot.json",
+      "sha256": "83bd7c5cee3cd7800e426a6b3c244c1eb937e1bdda8a13c25d88e5d9ed0161ab"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh363-appearance-c105-chest_side/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh363-appearance-c105-chest_side/script-diagnostics.json",
+      "sha256": "99bbbecec312f933855a69b1d853770138fd35ab62669f2fe652484d335f4ec7"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh363-appearance-c105-chest_side/frame.png",
+      "sha256": "1287a5d3a181269ca8df8e83c299757e14b20c91725c06e21d00b368cdb3f29a"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh363-appearance-c105-chest_side/frames.json",
+      "sha256": "dcd2f0411cd581baee37782efeab6e165ded9315cba96be72041a28d93aa7080"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh363-appearance-c105-chest_side/frame.png",
+      "sha256": "1287a5d3a181269ca8df8e83c299757e14b20c91725c06e21d00b368cdb3f29a"
+    },
+    "frame_327": {
+      "path": ".runtime/factory-native/sikh363-appearance-c105-chest_side/frame-0327.png",
+      "sha256": "0bb64bfb03adf7fc704c316c33dff011f26d0651a410382a036513732c10d563"
+    }
+  },
+  "observation": "Actual283 true-side covers the previously missed pectoral bulge from neck base to forelegs;327 shows protruding front chest in rear. Both visibly confirm excessive form. No anatomical pass; actual diagnostic coverage only.",
+  "comparison": "Actual source-bound diagnostic evidence against363 known failures; output availability/coverage only, not repair or art acceptance.",
+  "open_defects": [],
+  "requirement_outcomes": {
+    "preservation": {
+      "status": "PASS",
+      "observation": "Technical preservation only."
+    },
+    "form": {
+      "status": "NOT_TESTED",
+      "observation": "Diagnostic/component coverage only; known363 artistic failure remains open, not qualified by availability."
+    },
+    "interfaces": {
+      "status": "NOT_TESTED",
+      "observation": "Diagnostic/component coverage only; known363 artistic failure remains open, not qualified by availability."
+    },
+    "evidence": {
+      "status": "NOT_TESTED",
+      "observation": "Diagnostic/component coverage only; known363 artistic failure remains open, not qualified by availability."
+    },
+    "whole_look": {
+      "status": "NOT_TESTED",
+      "observation": "Diagnostic/component coverage only; known363 artistic failure remains open, not qualified by availability."
+    }
+  }
+}

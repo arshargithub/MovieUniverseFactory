@@ -1,0 +1,55 @@
+{
+  "verdict": "PASS",
+  "run_digest": "25b607d9eb94a943e386e89aad385574281189301ae9508c2c49e1c52053d7b5",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh363-motion-c36-audit/snapshot.json",
+      "sha256": "83bd7c5cee3cd7800e426a6b3c244c1eb937e1bdda8a13c25d88e5d9ed0161ab"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh363-motion-c36-audit/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh363-motion-c36-audit/script-diagnostics.json",
+      "sha256": "d8c950e68c5c42eb08e3ba4cd795b716e2b5ac082b76301b8697edb7667b2ad9"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh363-motion-c36-audit/scene.blend",
+      "sha256": "8e426f6dbc060be2ddbcefa37574b06b1ce9052725a51ed6d6d491b78d5839dd"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh363-motion-c36-audit/patch-evidence.json",
+      "sha256": "c63a489d5ddab42aac7e741800a4f1e6b5b1c37e63f5750f2e1b4d8110e2bb04"
+    }
+  },
+  "observation": "Actual36 identifies cause: HORSE hind support pivot location tracks contain current integer keys340/341 plus superseded fractional339.438/340.936 positions, causing half-metre sawtooth motion between valid integer poses. No bone/NLA/driver issue. Remove fractional keys only on fully replaced190-key owned tracks, preserving original integer poses; never waive a native defect.",
+  "comparison": "Actual source-bound diagnostic evidence against363 known failures; output availability/coverage only, not repair or art acceptance.",
+  "open_defects": [],
+  "requirement_outcomes": {
+    "preservation": {
+      "status": "PASS",
+      "observation": "Technical preservation only."
+    },
+    "support": {
+      "status": "NOT_TESTED",
+      "observation": "Diagnostic/component coverage only; known363 artistic failure remains open, not qualified by availability."
+    },
+    "phases": {
+      "status": "NOT_TESTED",
+      "observation": "Diagnostic/component coverage only; known363 artistic failure remains open, not qualified by availability."
+    },
+    "rider": {
+      "status": "NOT_TESTED",
+      "observation": "Diagnostic/component coverage only; known363 artistic failure remains open, not qualified by availability."
+    },
+    "evidence": {
+      "status": "NOT_TESTED",
+      "observation": "Diagnostic/component coverage only; known363 artistic failure remains open, not qualified by availability."
+    },
+    "director_motion": {
+      "status": "NOT_TESTED",
+      "observation": "Diagnostic/component coverage only; known363 artistic failure remains open, not qualified by availability."
+    }
+  }
+}

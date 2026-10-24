@@ -1,0 +1,21 @@
+{
+  "template":"results/sikh362/appearance-c100-strategizing.json",
+  "derived_template":"results/sikh362/appearance-c100-deriving.json",
+  "parent":".runtime/factory-native/sikh362-appearance-c99-save/scene.blend",
+  "method":"Read-only causal precursor on exact99 master. Enumerate actual horse base/evaluated chest sections, deformation modifiers/controls, both hand anatomical chains and all action/attachment consumers. Render actual chest/side and both hand contacts at stance/crest before changing geometry. Preserve all source art; no diagnosis image is an appearance approval. Use actual reference crop to plan phased timing/spear/flag downstream.",
+  "proof":"Exact source inventory and actual intended/diagnostic images distinguish rest horse shape, posed deformation and shading; expose both palms, knuckles, thumb and pole/rein relationship. Frozen21-test typed handlers return bounded report; unchanged action/source controls. Known chest/hand/flag/signal failures remain OPEN until subsequent actual repair.",
+  "scope":"Internal read-only diagnosis prerequisite to363 integrated repair, not a Director deliverable or whole appearance pass.",
+  "framing":"Actual production283/327, horse chest front/side283/327 and both hand diagnostic283/327. No hidden region can be passed.",
+  "reconciliation":"363 explicitly rejects362 for slow rear and visible chest/hand/flag/face failures, adds ten each preserving original tasks and unused authority. Appearance101/max117 and motion28/max41. Reviewed late362 learning additions explicitly reconciled; old stale appearance binding preserved. Crowd deferred, Sol only; source/frame/AV separate.",
+  "applications":{"director363":"Diagnose exact named defects, not another texture-only or faster-playback patch.","strategy363":"First identify chest/hand/ownership causes, then authored repair and real cloth proof on final action clock."},
+  "alternatives":"Reject speculative smoothing of whole horse, fist endpoint-only offsets and uniform clip acceleration. Native inspection first is smaller than repeated whole-scene renders.",
+  "failure":"Wrong owner/axes, missing anatomical region, source edits during audit, unbound animation consumer or failed native diagnostics block repair admission. Diagnosis does not close known artistic failures.",
+  "sources":["src/movie_factory/adapters/blender/nihang_audit363.py","src/movie_factory/adapters/blender/nihang_control.py","src/movie_factory/adapters/blender/nihang_patch.py","tests/test_nihang363.py"],
+  "steps":[
+    {"id":"audit","depends_on":[],"requirements":["preservation"],"recipe":{"operation":"nihang_patch","frame":283,"width":432,"height":768,"samples":8,"edits":[{"kind":"mounted_audit363","target":"mounted leader"}]}},
+    {"id":"chest","depends_on":["audit"],"recipe":{"operation":"nihang_frames","frame":283,"frames":[283,327],"view":"horse_chest","width":640,"height":640,"samples":8}},
+    {"id":"chest_side","depends_on":["audit"],"recipe":{"operation":"nihang_frames","frame":283,"frames":[283,327],"view":"horse_chest_side","width":640,"height":640,"samples":8}},
+    {"id":"right_hand","depends_on":["audit"],"recipe":{"operation":"nihang_frames","frame":283,"frames":[283,327],"view":"leader_right_contact","width":640,"height":640,"samples":8}},
+    {"id":"left_hand","depends_on":["audit"],"recipe":{"operation":"nihang_frames","frame":283,"frames":[283,327],"view":"leader_left_contact","width":640,"height":640,"samples":8}}
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "status": "SOURCE_FRAME_COMPONENT_VERIFIED_DIRECTOR_AV_PENDING",
+  "native": {
+    "path": ".runtime/factory-native/sikh363-appearance-c121-flag_save/scene.blend",
+    "sha256": "c50221dba335b7c1d5a37c28a5c573811ebe809458af4253a99bd1df72f72c80"
+  },
+  "cache": {
+    "path": ".runtime/factory-native/sikh363-appearance-c121-flag_save/flag363-cache.npz",
+    "sha256": "83e33ced5b66164051c665d1eebcb25b15449b8c62ea929ce8db86a715698f57"
+  },
+  "provenance": {
+    "path": ".runtime/factory-native/sikh363-appearance-c121-flag_save/flag363.json",
+    "sha256": "e6660e0a593ae815386ce6412077286900e37b4f0808548315f4fe9f85c5cc17"
+  },
+  "conditions": {
+    "fps": 24,
+    "pole_matrix_sha256": "a93a49fa72941c08ed6091df8b69b7a98487a07bbe38a9191690f43cdbccea80",
+    "frames": [
+      230,
+      418
+    ],
+    "settings": {
+      "collider_rings": 32,
+      "collider_vertices": 660,
+      "wind_direction": [
+        1,
+        0.35,
+        0.1
+      ],
+      "impulse_clamp": 0.0,
+      "shared_worldvertex_collider": true,
+      "reinforced_hem": false,
+      "attachment_excluded_vertices": 0,
+      "collision_iterations": 12,
+      "pole_outer": 0.0010000000474974513,
+      "pole_inner": 0.0010000000474974513,
+      "tie_offset": 0.032,
+      "quality": 20,
+      "mass": 0.0010000000474974513,
+      "discrete_total_mass": 0.27600001310929656,
+      "tension": 80,
+      "compression": 80,
+      "shear": 50,
+      "bending": 0.18,
+      "air_damping": 4,
+      "wind_strength": 3
+    }
+  },
+  "evidence": [
+    {
+      "path": ".runtime/factory-native/sikh363-appearance-c121-flag_detail/frames.json",
+      "sha256": "85e60ed2ad8ad54d518b636a8beddd34c86079868474dcac6fe0ca839441f320"
+    },
+    {
+      "path": ".runtime/factory-native/sikh363-appearance-c121-flag_reverse/frames.json",
+      "sha256": "8001dda4847309a71fea95e40dc16b714ecb23a0b8d7c90b289b3cbcf795868e"
+    },
+    {
+      "path": ".runtime/factory-native/sikh363-appearance-c121-flag_production/frames.json",
+      "sha256": "875b586d237f865a7689e0daf23731ca71c7221650448fdef4ede7b8f97637ce"
+    }
+  ],
+  "reuse": "Same exact native pole/action/wind/cache only; newaction or wind needs actualresimulation and intendedframing review.",
+  "unsupported": [
+    "Generalcloth/stunt/otheractor qualification",
+    "Directorfullspeed acceptance",
+    "Principalcloseup or everywinddirection",
+    "Productionrelease or currentremotebackup"
+  ]
+}

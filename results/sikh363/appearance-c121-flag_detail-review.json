@@ -1,0 +1,63 @@
+{
+  "verdict": "PASS",
+  "run_digest": "cfd8f060ced51e9c48f0c2977db9f2834e4464f94306a237c5b9a4b30aedcd80",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh363-appearance-c121-flag_detail/snapshot.json",
+      "sha256": "1f3ba155579dd8e831eb5eef92109cf40617980f94d476caeb71760c6b68eaf2"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh363-appearance-c121-flag_detail/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh363-appearance-c121-flag_detail/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh363-appearance-c121-flag_detail/frame.png",
+      "sha256": "59970aaf72fbcc3e77ce8218fd91a8dca341648ad2116fa126ef2a0b20b5051f"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh363-appearance-c121-flag_detail/frames.json",
+      "sha256": "85e60ed2ad8ad54d518b636a8beddd34c86079868474dcac6fe0ca839441f320"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh363-appearance-c121-flag_detail/frame-0283.png",
+      "sha256": "4e582eee5be28d690523dfaa75f696b01d08d087ec712b3a947e1fe464c78c0b"
+    },
+    "frame_314": {
+      "path": ".runtime/factory-native/sikh363-appearance-c121-flag_detail/frame.png",
+      "sha256": "59970aaf72fbcc3e77ce8218fd91a8dca341648ad2116fa126ef2a0b20b5051f"
+    },
+    "frame_333": {
+      "path": ".runtime/factory-native/sikh363-appearance-c121-flag_detail/frame-0333.png",
+      "sha256": "355a35468763f9999de9e39cdb5530583aec2af7914f19bc900e6743e9af4bf9"
+    }
+  },
+  "observation": "Actual283/314/333 detail images inspected: three visible ties attached, freefabric billows and folds byrecovery rather than oldrigidtriangle; sourcepole edge remains clear. Rest/crest can be extended under tension,333 has genuine curledfold. No floatingedge/shaft penetration in theseviews; reverse and intendedshot still required.",
+  "comparison": "Actual source-bound diagnostic evidence against363 known failures; output availability/coverage only, not repair or art acceptance.",
+  "open_defects": [],
+  "requirement_outcomes": {
+    "preservation": {
+      "status": "PASS",
+      "observation": "Technical preservation only."
+    },
+    "form": {
+      "status": "NOT_TESTED",
+      "observation": "Diagnostic/component coverage only; known363 artistic failure remains open, not qualified by availability."
+    },
+    "interfaces": {
+      "status": "NOT_TESTED",
+      "observation": "Diagnostic/component coverage only; known363 artistic failure remains open, not qualified by availability."
+    },
+    "evidence": {
+      "status": "NOT_TESTED",
+      "observation": "Diagnostic/component coverage only; known363 artistic failure remains open, not qualified by availability."
+    },
+    "whole_look": {
+      "status": "NOT_TESTED",
+      "observation": "Diagnostic/component coverage only; known363 artistic failure remains open, not qualified by availability."
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "verdict": "PASS",
+  "run_digest": "c0f5d7d94d5c502fe305c16fe1fa6bded6281a3b009297b63632871213ae7ee4",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh363-appearance-c113-chest_save/snapshot.json",
+      "sha256": "83bd7c5cee3cd7800e426a6b3c244c1eb937e1bdda8a13c25d88e5d9ed0161ab"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh363-appearance-c113-chest_save/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh363-appearance-c113-chest_save/script-diagnostics.json",
+      "sha256": "d8c950e68c5c42eb08e3ba4cd795b716e2b5ac082b76301b8697edb7667b2ad9"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh363-appearance-c113-chest_save/scene.blend",
+      "sha256": "3580ff751d8575a577a060ae65227e6f068641eabd85c096b0d6ef62bd18b31c"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh363-appearance-c113-chest_save/patch-evidence.json",
+      "sha256": "0abade34849038767fb717c54d5b866973d7d39036bd0b0dc70809445f109bb3"
+    }
+  },
+  "observation": "Actual113 saved chest fairing on110; report shows bounded delta, original rig/weights and all shape blocks retained. Artistic anatomy NOT_TESTED until matched images.",
+  "comparison": "Actual source-bound diagnostic evidence against363 known failures; output availability/coverage only, not repair or art acceptance.",
+  "open_defects": [],
+  "requirement_outcomes": {
+    "preservation": {
+      "status": "PASS",
+      "observation": "Technical preservation only."
+    }
+  }
+}

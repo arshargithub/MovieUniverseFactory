@@ -1,0 +1,59 @@
+{
+  "verdict": "PASS",
+  "run_digest": "f36c54a87a8eb211d41ccf5c65d9c3b015c876ecc44a006cd765ee1bf76c32b5",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh363-appearance-c101-right_hand/snapshot.json",
+      "sha256": "83bd7c5cee3cd7800e426a6b3c244c1eb937e1bdda8a13c25d88e5d9ed0161ab"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh363-appearance-c101-right_hand/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh363-appearance-c101-right_hand/script-diagnostics.json",
+      "sha256": "99bbbecec312f933855a69b1d853770138fd35ab62669f2fe652484d335f4ec7"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh363-appearance-c101-right_hand/frame.png",
+      "sha256": "70245fdb7ea45ee391ef16e0b2a5beb4fbcde285eaa3c7a607592e3d3e063f89"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh363-appearance-c101-right_hand/frames.json",
+      "sha256": "13fa59ec779b4fcaa5873955d2be9d18dc271e2cd5c498b8134128485ff55919"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh363-appearance-c101-right_hand/frame.png",
+      "sha256": "70245fdb7ea45ee391ef16e0b2a5beb4fbcde285eaa3c7a607592e3d3e063f89"
+    },
+    "frame_327": {
+      "path": ".runtime/factory-native/sikh363-appearance-c101-right_hand/frame-0327.png",
+      "sha256": "3ba69d59d4a10acf95f65de031677e35c30b051d40babf6a333b7bf8f3b78507"
+    }
+  },
+  "observation": "Actual right hand283/327 is an open claw: isolated arched thumb/index and spread curled digits, with the reins merely touching the open space rather than a closed grip. Bone lengths remain1.0 but that does not pass anatomy/contact. Diagnostic source coverage complete; repair required.",
+  "comparison": "Actual source-bound diagnostic evidence against363 known failures; output availability/coverage only, not repair or art acceptance.",
+  "open_defects": [],
+  "retrospective_observations": [
+    {
+      "requirement": "form",
+      "status": "UNKNOWN",
+      "observation": "Known363 artistic failure remains open; diagnostic coverage is not repair."
+    },
+    {
+      "requirement": "interfaces",
+      "status": "UNKNOWN",
+      "observation": "Known363 artistic failure remains open; diagnostic coverage is not repair."
+    },
+    {
+      "requirement": "evidence",
+      "status": "UNKNOWN",
+      "observation": "Known363 artistic failure remains open; diagnostic coverage is not repair."
+    },
+    {
+      "requirement": "whole_look",
+      "status": "UNKNOWN",
+      "observation": "Known363 artistic failure remains open; diagnostic coverage is not repair."
+    }
+  ]
+}

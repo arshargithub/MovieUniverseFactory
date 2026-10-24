@@ -1,0 +1,67 @@
+{
+  "verdict": "PASS",
+  "run_digest": "3a7307375b9d39e627ca625b9c38bf6fc3b4767a09cafa4ad50d9c059b7edb8d",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh363-motion-c41-right_hand/snapshot.json",
+      "sha256": "e92d31d9063dc21cfc66dad5945c124cd6ec563e0083ffa7467fb597f1e8be3a"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh363-motion-c41-right_hand/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh363-motion-c41-right_hand/script-diagnostics.json",
+      "sha256": "99bbbecec312f933855a69b1d853770138fd35ab62669f2fe652484d335f4ec7"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh363-motion-c41-right_hand/frame.png",
+      "sha256": "7e0481e36f71d9e9eca4a54e5c50bf8c33ed6b12f198ee012b3792830eb5a8d9"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh363-motion-c41-right_hand/frames.json",
+      "sha256": "e8cc0313dc523b861ef8e98f9ce1ac754d4f1fe589b892f311ac01c53c926c1b"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh363-motion-c41-right_hand/frame.png",
+      "sha256": "7e0481e36f71d9e9eca4a54e5c50bf8c33ed6b12f198ee012b3792830eb5a8d9"
+    },
+    "frame_314": {
+      "path": ".runtime/factory-native/sikh363-motion-c41-right_hand/frame-0314.png",
+      "sha256": "af114ecefb9a6463708a5c1a6a5582e9dfb5a65810fa86ff15a1f6fa1e3243c1"
+    },
+    "frame_333": {
+      "path": ".runtime/factory-native/sikh363-motion-c41-right_hand/frame-0333.png",
+      "sha256": "6831d527af470ef37c6262719b37cb7548dd9b1351e2b9d295979340746d21a7"
+    }
+  },
+  "observation": "Actual283/314/333 crops inspected: fingers curl into palm and thumb crosses index/middle without earlier backward hook/open antlers; rein terminal stays within grasp through crest and recovery. Scoped static hand component retained; intended-shot and full-speed integration still required, flag remains failed.",
+  "comparison": "Actual source-bound diagnostic evidence against363 known failures; output availability/coverage only, not repair or art acceptance.",
+  "open_defects": [],
+  "requirement_outcomes": {
+    "preservation": {
+      "status": "PASS",
+      "observation": "Technical preservation only."
+    },
+    "support": {
+      "status": "NOT_TESTED",
+      "observation": "Diagnostic/component coverage only; known363 artistic failure remains open, not qualified by availability."
+    },
+    "phases": {
+      "status": "NOT_TESTED",
+      "observation": "Diagnostic/component coverage only; known363 artistic failure remains open, not qualified by availability."
+    },
+    "rider": {
+      "status": "NOT_TESTED",
+      "observation": "Diagnostic/component coverage only; known363 artistic failure remains open, not qualified by availability."
+    },
+    "evidence": {
+      "status": "NOT_TESTED",
+      "observation": "Diagnostic/component coverage only; known363 artistic failure remains open, not qualified by availability."
+    },
+    "director_motion": {
+      "status": "NOT_TESTED",
+      "observation": "Diagnostic/component coverage only; known363 artistic failure remains open, not qualified by availability."
+    }
+  }
+}

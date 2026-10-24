@@ -1,0 +1,35 @@
+{
+  "verdict": "PASS",
+  "run_digest": "53319efb70701faa7f4a285c4282af661fadcbf0aa31d749621e80baa0053c7a",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh363-appearance-c112-chest_save/snapshot.json",
+      "sha256": "83bd7c5cee3cd7800e426a6b3c244c1eb937e1bdda8a13c25d88e5d9ed0161ab"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh363-appearance-c112-chest_save/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh363-appearance-c112-chest_save/script-diagnostics.json",
+      "sha256": "d8c950e68c5c42eb08e3ba4cd795b716e2b5ac082b76301b8697edb7667b2ad9"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh363-appearance-c112-chest_save/scene.blend",
+      "sha256": "c80172272d6f1b26a9647b0c2d574d8005cb7c1f7d631bc2c5e1a00cddd80925"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh363-appearance-c112-chest_save/patch-evidence.json",
+      "sha256": "a59ab8f42ddc4ca65084555c355340019daef391a4c9fdf83cacbb5dab4fb7f4"
+    }
+  },
+  "observation": "Actual112 field changes519 lower-pectoral vertices, maximum12.48cm, transfers same field to72000 nap vertices. Rig/weights/actions retained by fixed handler. Persistence only; actual standing/front/side/crest images still veto anatomy.",
+  "comparison": "Actual source-bound diagnostic evidence against363 known failures; output availability/coverage only, not repair or art acceptance.",
+  "open_defects": [],
+  "requirement_outcomes": {
+    "preservation": {
+      "status": "PASS",
+      "observation": "Technical preservation only."
+    }
+  }
+}

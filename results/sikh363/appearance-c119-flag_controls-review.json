@@ -1,0 +1,51 @@
+{
+  "verdict": "PASS",
+  "run_digest": "68eb43a7da0407e12be8ff62fbaab64b10909241eac4e94affc3b32e4fa82497",
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh363-appearance-c119-flag_controls/snapshot.json",
+      "sha256": "b8bcb9e37298af1c2cebfcc666cc725e9adbcc9e1e8bcdf0f3461de868358b21"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh363-appearance-c119-flag_controls/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh363-appearance-c119-flag_controls/script-diagnostics.json",
+      "sha256": "d8c950e68c5c42eb08e3ba4cd795b716e2b5ac082b76301b8697edb7667b2ad9"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh363-appearance-c119-flag_controls/scene.blend",
+      "sha256": "f816e186f66948dc27d7b6a44a1932eba97cbfe7906030322966cd73ba094835"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh363-appearance-c119-flag_controls/patch-evidence.json",
+      "sha256": "7c68ae903cbb93e9853dfe579bee27cd6305c6b612d7747f84b65ecb4ae508be"
+    }
+  },
+  "observation": "Actual119 legacy path deviates0.732m at309.5 and quaternion dot-0.9969; sharedworldvertex path closes to3.96um but still fails285 maxstrain2.10385. Interpolation bug is real but not sufficient root; actual collision response under pole-facing wind remains unresolved.",
+  "comparison": "Actual source-bound diagnostic evidence against363 known failures; output availability/coverage only, not repair or art acceptance.",
+  "open_defects": [],
+  "requirement_outcomes": {
+    "preservation": {
+      "status": "PASS",
+      "observation": "Technical preservation only."
+    },
+    "form": {
+      "status": "NOT_TESTED",
+      "observation": "Diagnostic/component coverage only; known363 artistic failure remains open, not qualified by availability."
+    },
+    "interfaces": {
+      "status": "NOT_TESTED",
+      "observation": "Diagnostic/component coverage only; known363 artistic failure remains open, not qualified by availability."
+    },
+    "evidence": {
+      "status": "NOT_TESTED",
+      "observation": "Diagnostic/component coverage only; known363 artistic failure remains open, not qualified by availability."
+    },
+    "whole_look": {
+      "status": "NOT_TESTED",
+      "observation": "Diagnostic/component coverage only; known363 artistic failure remains open, not qualified by availability."
+    }
+  }
+}
