@@ -27,7 +27,12 @@ def validate(recipe):
         name = edit.get('target')
         if not isinstance(name, str) or not name or len(name) > 128 or any(c in name for c in '/\\\n'):
             raise ValueError('PATCH_TARGET')
-        if kind == 'repair_bbone_targets':
+        if kind == 'mounted_prep367':
+            import importlib.util
+            spec=importlib.util.spec_from_file_location('mf_prep367',Path(__file__).with_name('nihang_prep367.py'));module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module);module.validate(edit)
+        elif kind == 'mounted_prepaudit367':
+            if set(edit)!={'kind','target'} or name!='mounted leader':raise ValueError('PREP367_AUDIT_FIELDS')
+        elif kind == 'repair_bbone_targets':
             if set(edit) != {'kind','target'} or name != 'horse.rig':
                 raise ValueError('PATCH_REPAIR_FIELDS')
         elif kind=='neutral_garment_proof':
@@ -91,7 +96,9 @@ def apply(bpy, recipe,diagnostic_dir=None):
     # named derivative; it cannot overwrite an accepted existing object.
     names = set()
     for edit in recipe['edits']:
-        if edit['kind'] in {'mounted_flagcontrol363','mounted_flag363','mounted_chest363','mounted_performance363','mounted_thumb363','mounted_fist363','mounted_repair363','mounted_grip363','mounted_hand363','mounted_audit363','mounted_finish362','mounted_layers361','mounted_look361','mounted_rein361','mounted_rein361_audit','mounted_beard361'}:
+        if edit['kind'] in {'mounted_prep367','mounted_prepaudit367'}:
+            if bpy.data.objects.get('horse.rig') is None or bpy.data.objects.get('MF coherent Nihang rig') is None:raise ValueError('PREP367_OWNERS')
+        elif edit['kind'] in {'mounted_flagcontrol363','mounted_flag363','mounted_chest363','mounted_performance363','mounted_thumb363','mounted_fist363','mounted_repair363','mounted_grip363','mounted_hand363','mounted_audit363','mounted_finish362','mounted_layers361','mounted_look361','mounted_rein361','mounted_rein361_audit','mounted_beard361'}:
             if bpy.data.objects.get('MF coherent Nihang rig') is None or bpy.data.objects.get('horse.rig') is None:
                 raise ValueError('PATCH_361_OWNERS')
         elif edit['kind'] in {'neutral_garment_proof','neutral_actor_transfer'}:
@@ -112,7 +119,11 @@ def apply(bpy, recipe,diagnostic_dir=None):
             names.add(edit['target'])
     support_evidence=[]
     for edit in recipe['edits']:
-        if edit['kind'] in {'mounted_flagcontrol363','mounted_flag363','mounted_chest363','mounted_performance363','mounted_thumb363','mounted_fist363','mounted_repair363','mounted_grip363','mounted_hand363','mounted_audit363','mounted_finish362','mounted_layers361','mounted_look361','mounted_rein361','mounted_rein361_audit','mounted_beard361'}:
+        if edit['kind'] in {'mounted_prep367','mounted_prepaudit367'}:
+            import importlib.util
+            spec=importlib.util.spec_from_file_location('mf_prep367',Path(__file__).with_name('nihang_prep367.py'));module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+            support_evidence.append({'prep367':module.audit(bpy,diagnostic_dir) if edit['kind']=='mounted_prepaudit367' else module.run(bpy,diagnostic_dir,edit)})
+        elif edit['kind'] in {'mounted_flagcontrol363','mounted_flag363','mounted_chest363','mounted_performance363','mounted_thumb363','mounted_fist363','mounted_repair363','mounted_grip363','mounted_hand363','mounted_audit363','mounted_finish362','mounted_layers361','mounted_look361','mounted_rein361','mounted_rein361_audit','mounted_beard361'}:
             import importlib.util
             name='flag363' if edit['kind'] in {'mounted_flag363','mounted_flagcontrol363'} else 'chest363' if edit['kind']=='mounted_chest363' else 'performance363' if edit['kind']=='mounted_performance363' else 'thumb363' if edit['kind']=='mounted_thumb363' else 'fist363' if edit['kind']=='mounted_fist363' else 'repair363' if edit['kind']=='mounted_repair363' else 'grip363' if edit['kind']=='mounted_grip363' else 'hand363' if edit['kind']=='mounted_hand363' else 'audit363' if edit['kind']=='mounted_audit363' else 'finish362' if edit['kind']=='mounted_finish362' else 'look361' if edit['kind'] in {'mounted_look361','mounted_layers361'} else 'beard361' if edit['kind']=='mounted_beard361' else 'rein361'
             spec=importlib.util.spec_from_file_location('mf_nihang_'+name,Path(__file__).with_name('nihang_'+name+'.py'))
