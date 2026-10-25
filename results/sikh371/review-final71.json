@@ -1,0 +1,474 @@
+{
+  "checks": [
+    {
+      "id": "preservation",
+      "status": "PASS",
+      "observation": "All39acceptedprefixposes/scalartracks exact; all1622originalmeshdomains unchanged. Contactchanges onlydeclaredvisibilitytracks/newnativecache. Masterslocalhashverified.",
+      "comparison": "OriginalDirector371apex/hold intent, faithful reference16.5..18.0, accepted66preparation. Currenthighpose/source/contact gains do notwaive missing lowerforelegcurl/activehold; fullspeedAVpending.",
+      "evidence": [
+        "source",
+        "contact",
+        "protected",
+        "handoff"
+      ]
+    },
+    {
+      "id": "rise",
+      "status": "PASS",
+      "observation": "Actual315..323 frame/sourceproof risesstronglyfrommoving314 tohighrear, forelegs gatherafterbody. Wholehead/feet visible in side/reverse/story controls. Fullspeedpowerhumanpending.",
+      "comparison": "OriginalDirector371apex/hold intent, faithful reference16.5..18.0, accepted66preparation. Currenthighpose/source/contact gains do notwaive missing lowerforelegcurl/activehold; fullspeedAVpending.",
+      "evidence": [
+        "review",
+        "pose",
+        "side",
+        "reverse",
+        "reference",
+        "phase01"
+      ]
+    },
+    {
+      "id": "crest",
+      "status": "FAIL",
+      "observation": "FAIL. Matchedreferenceapex/hold andsource solver shownearverticalhanginglowerforelegs andinsufficientactivecurl. Tinyunequalkeychanges do notachieve requiredlivingcrest. Internalrejection, no readyqueue.",
+      "comparison": "OriginalDirector371apex/hold intent, faithful reference16.5..18.0, accepted66preparation. Currenthighpose/source/contact gains do notwaive missing lowerforelegcurl/activehold; fullspeedAVpending.",
+      "evidence": [
+        "review",
+        "solver",
+        "compare_apex",
+        "compare_hold",
+        "reference",
+        "phase02",
+        "phase03"
+      ]
+    },
+    {
+      "id": "balance",
+      "status": "PASS",
+      "observation": "Actualsampled hindgroundsupport/limblength guards andriderseat/rein/pole/coherentpad remain; no newobviousstretch/skate/contacthole inrevealingviews. Biologicalweight/fullspeed stillNOT_RUN.",
+      "comparison": "OriginalDirector371apex/hold intent, faithful reference16.5..18.0, accepted66preparation. Currenthighpose/source/contact gains do notwaive missing lowerforelegcurl/activehold; fullspeedAVpending.",
+      "evidence": [
+        "review",
+        "contact",
+        "pose",
+        "side",
+        "reverse",
+        "shot"
+      ]
+    },
+    {
+      "id": "continuity",
+      "status": "PASS",
+      "observation": "Accepted276..314 frozen; exact314evaluatedboundarypinned beforefuturekeyreplacement. All58samefixedview, canonical333repeatdiffzero, finite333source/velocityhandoff bound butnotaccepted.",
+      "comparison": "OriginalDirector371apex/hold intent, faithful reference16.5..18.0, accepted66preparation. Currenthighpose/source/contact gains do notwaive missing lowerforelegcurl/activehold; fullspeedAVpending.",
+      "evidence": [
+        "review",
+        "source",
+        "pose",
+        "handoff",
+        "accepted03",
+        "phase01"
+      ]
+    },
+    {
+      "id": "scope",
+      "status": "PASS",
+      "observation": "Original71/max71, allfiveDirector371cycles67..71 used. No72/newspend/tool/provider/Astra/upload/landing/appearanceconstruction; failurehistory retained.",
+      "comparison": "OriginalDirector371apex/hold intent, faithful reference16.5..18.0, accepted66preparation. Currenthighpose/source/contact gains do notwaive missing lowerforelegcurl/activehold; fullspeedAVpending.",
+      "evidence": [
+        "review",
+        "protected",
+        "handoff"
+      ]
+    },
+    {
+      "id": "evidence",
+      "status": "PASS",
+      "observation": "All58actualframes, primary/revealing/reverse/story/boundarycontrols, actualreference anddecodedcomparison inspected. Knowncrestfailure remainsopen; production/fullspeedapprovalnotclaimed.",
+      "comparison": "OriginalDirector371apex/hold intent, faithful reference16.5..18.0, accepted66preparation. Currenthighpose/source/contact gains do notwaive missing lowerforelegcurl/activehold; fullspeedAVpending.",
+      "evidence": [
+        "review",
+        "encoded",
+        "contact",
+        "source",
+        "pose",
+        "solver",
+        "protected",
+        "handoff",
+        "side",
+        "reverse",
+        "shot",
+        "compare_apex",
+        "compare_hold",
+        "reference",
+        "phase01",
+        "phase02",
+        "phase03",
+        "accepted01",
+        "accepted02",
+        "accepted03"
+      ]
+    },
+    {
+      "id": "director_motion",
+      "status": "NOT_RUN",
+      "observation": "NOT_RUN. Director313 isdirectAVjudge, butknowncrestfailureblocksreadyqueue beforehumanacceptance.",
+      "comparison": "OriginalDirector371apex/hold intent, faithful reference16.5..18.0, accepted66preparation. Currenthighpose/source/contact gains do notwaive missing lowerforelegcurl/activehold; fullspeedAVpending.",
+      "evidence": []
+    }
+  ],
+  "evidence": {
+    "review": {
+      "binding": {
+        "path": "results/sikh371/FINAL_FRAME_REVIEW71.md",
+        "sha256": "8197eb832ab3db72a46b2ae69d2e58bc88ebbfc82f93f75824da46300959ee62"
+      },
+      "mode": "technical",
+      "scope": "Actual58frame/revealing/source/reference failure-seeking review; no directAV.",
+      "candidate_digest": "2cfd9f554067e4ba04d97783f4c0d59e19bf2275d0ff6d8f12b038f0ea8eae76"
+    },
+    "encoded": {
+      "binding": {
+        "path": "results/sikh371/ENCODED_REVIEW71.md",
+        "sha256": "59364f5d9eb60b13b5fe15db9de678aa95422b30ee58f127612aa3c5596d11f4"
+      },
+      "mode": "technical",
+      "scope": "Actualencodedprofiles/ninecandidate/fivecomparison decodedimages inspected.",
+      "candidate_digest": "2cfd9f554067e4ba04d97783f4c0d59e19bf2275d0ff6d8f12b038f0ea8eae76"
+    },
+    "contact": {
+      "binding": {
+        "path": "results/sikh371/CONTACT_SOURCE71.json",
+        "sha256": "1dd72460387c727df1095a5e3db0a27bfa86448e326db7a0e06e6e3a0c89f570"
+      },
+      "mode": "technical",
+      "scope": "Actual19sampled finalsurfacecontact andoriginalmotion/mesh invariants.",
+      "candidate_digest": "2cfd9f554067e4ba04d97783f4c0d59e19bf2275d0ff6d8f12b038f0ea8eae76"
+    },
+    "source": {
+      "binding": {
+        "path": "results/sikh371/SOURCE_CONTROLS71.json",
+        "sha256": "f5a732b8f0751ef7736612cea8cbacdf850fd6bbd4e527fb6ef86e20bbefa3ae"
+      },
+      "mode": "technical",
+      "scope": "All39acceptedprefixstates andscalartrack errorzero.",
+      "candidate_digest": "2cfd9f554067e4ba04d97783f4c0d59e19bf2275d0ff6d8f12b038f0ea8eae76"
+    },
+    "pose": {
+      "binding": {
+        "path": ".runtime/factory-native/sikh371-motion-c71-prepare/apex371.json",
+        "sha256": "4633a2631336ef3a9cfe1d47c10c2b6e759fcc39583a6f45ca3b28e04e411d4a"
+      },
+      "mode": "technical",
+      "scope": "All19actualphase poses, support/reach andprefixpreservation report.",
+      "candidate_digest": "2cfd9f554067e4ba04d97783f4c0d59e19bf2275d0ff6d8f12b038f0ea8eae76"
+    },
+    "solver": {
+      "binding": {
+        "path": "src/movie_factory/adapters/blender/nihang_support.py",
+        "sha256": "51bd4e03e4309216c84b3e756948c94b2c499da4737040313357eff5d564e064"
+      },
+      "mode": "technical",
+      "scope": "Actualsolverlowerforefootdirection lacksindependentapexflexion.",
+      "candidate_digest": "2cfd9f554067e4ba04d97783f4c0d59e19bf2275d0ff6d8f12b038f0ea8eae76"
+    },
+    "protected": {
+      "binding": {
+        "path": "results/sikh371/PROTECTED_MASTERS.json",
+        "sha256": "cba05655433b6e41668c684881e44c3e1ad158fbcfc73185397113b6e700d52f"
+      },
+      "mode": "technical",
+      "scope": "Acceptedmasterlocalhashes preserved.",
+      "candidate_digest": "2cfd9f554067e4ba04d97783f4c0d59e19bf2275d0ff6d8f12b038f0ea8eae76"
+    },
+    "handoff": {
+      "binding": {
+        "path": "results/sikh371/REUSE_HANDOFF.json",
+        "sha256": "be5ad54c57e90038a3e1f4befb3b2e99d0457850d677b258a798f0824a8428d0"
+      },
+      "mode": "technical",
+      "scope": "Candidate333state/source contact; NOTaccepted, no oldlanding/cache reuse.",
+      "candidate_digest": "2cfd9f554067e4ba04d97783f4c0d59e19bf2275d0ff6d8f12b038f0ea8eae76"
+    },
+    "side": {
+      "binding": {
+        "path": ".runtime/factory-native/sikh371-motion-c71-side/frame-0323.png",
+        "sha256": "dc203f147b1913f0fa2ff04a411cb3e5dbbc0003cb83a90353aab3678a970b86"
+      },
+      "mode": "image",
+      "scope": "Highcrest wholesideview andsaddlecontact.",
+      "candidate_digest": "2cfd9f554067e4ba04d97783f4c0d59e19bf2275d0ff6d8f12b038f0ea8eae76"
+    },
+    "reverse": {
+      "binding": {
+        "path": ".runtime/factory-native/sikh371-motion-c71-reverse/frame-0323.png",
+        "sha256": "295e08c04af3b35e6c139f0eebd7719d0b074224e3601e790db515bc7e8a2e60"
+      },
+      "mode": "image",
+      "scope": "Revealingreverse support/rider/contact view.",
+      "candidate_digest": "2cfd9f554067e4ba04d97783f4c0d59e19bf2275d0ff6d8f12b038f0ea8eae76"
+    },
+    "shot": {
+      "binding": {
+        "path": ".runtime/factory-native/sikh371-motion-c71-production/frame-0323.png",
+        "sha256": "5976433e62559038e4d8c69f479bfd9aa25586a79c43e9116eee24bd436fc39a"
+      },
+      "mode": "image",
+      "scope": "Actualstoryframe; horsevisible, riderpartlybehindhorse, no storycameraapproval.",
+      "candidate_digest": "2cfd9f554067e4ba04d97783f4c0d59e19bf2275d0ff6d8f12b038f0ea8eae76"
+    },
+    "compare_apex": {
+      "binding": {
+        "path": ".runtime/art-direction/sikh371-review-c71/decoded/comparison-04.png",
+        "sha256": "71d64204fc46e83ed7b1fa3ebf91c00f7fad206bfd833138478ee0b6d241ff36"
+      },
+      "mode": "image",
+      "scope": "Actualreference/candidate apex: lowerlegs hang instead ofcurling.",
+      "candidate_digest": "2cfd9f554067e4ba04d97783f4c0d59e19bf2275d0ff6d8f12b038f0ea8eae76"
+    },
+    "compare_hold": {
+      "binding": {
+        "path": ".runtime/art-direction/sikh371-review-c71/decoded/comparison-05.png",
+        "sha256": "4113855e1cdf5028532abe6b7cfecd992ea2ff07966c86aeb519f4c3df05da7a"
+      },
+      "mode": "image",
+      "scope": "Actualreference/candidate activecrest; insufficientlowerlimbarticulation.",
+      "candidate_digest": "2cfd9f554067e4ba04d97783f4c0d59e19bf2275d0ff6d8f12b038f0ea8eae76"
+    },
+    "reference": {
+      "binding": {
+        "path": ".runtime/art-direction/sikh371-reference/crest-02.jpg",
+        "sha256": "2fa668a5e1eafa3d1b88934580bb9dffaf7a5559639f3d24904d3196f753448c"
+      },
+      "mode": "image",
+      "scope": "Actual17.0..17.467reference activecrest, faithfulmotionauthority.",
+      "candidate_digest": "2cfd9f554067e4ba04d97783f4c0d59e19bf2275d0ff6d8f12b038f0ea8eae76"
+    },
+    "phase01": {
+      "binding": {
+        "path": ".runtime/art-direction/sikh371-review-c71/phase01.jpg",
+        "sha256": "0e3e99df9a52a8b053fc6ead0c445dad9d7584389f3572051c4ca7ff51c1ff1d"
+      },
+      "mode": "image",
+      "scope": "Actualcomplete chronologicalframes inspected, notdirectmotion.",
+      "candidate_digest": "2cfd9f554067e4ba04d97783f4c0d59e19bf2275d0ff6d8f12b038f0ea8eae76"
+    },
+    "phase02": {
+      "binding": {
+        "path": ".runtime/art-direction/sikh371-review-c71/phase02.jpg",
+        "sha256": "d4fb3cf55fa8254c818d626d3ae00868ea3fb1721c6b71fb6a382bf4a7ded12e"
+      },
+      "mode": "image",
+      "scope": "Actualcomplete chronologicalframes inspected, notdirectmotion.",
+      "candidate_digest": "2cfd9f554067e4ba04d97783f4c0d59e19bf2275d0ff6d8f12b038f0ea8eae76"
+    },
+    "phase03": {
+      "binding": {
+        "path": ".runtime/art-direction/sikh371-review-c71/phase03.jpg",
+        "sha256": "97c6aa139cad89797443a358610543dd53c34c9c39b4f6610533b601e07c6961"
+      },
+      "mode": "image",
+      "scope": "Actualcomplete chronologicalframes inspected, notdirectmotion.",
+      "candidate_digest": "2cfd9f554067e4ba04d97783f4c0d59e19bf2275d0ff6d8f12b038f0ea8eae76"
+    },
+    "accepted01": {
+      "binding": {
+        "path": ".runtime/art-direction/sikh371-review-c71/accepted01.jpg",
+        "sha256": "94971dc9ed9517058be20431d7e53791ce5e3bde4f4b6de92c691a0388e389ea"
+      },
+      "mode": "image",
+      "scope": "Actualcomplete chronologicalframes inspected, notdirectmotion.",
+      "candidate_digest": "2cfd9f554067e4ba04d97783f4c0d59e19bf2275d0ff6d8f12b038f0ea8eae76"
+    },
+    "accepted02": {
+      "binding": {
+        "path": ".runtime/art-direction/sikh371-review-c71/accepted02.jpg",
+        "sha256": "2a42e91bee0e53800600080f6f612fe3d92e62620ac7f497c22d066100dacbba"
+      },
+      "mode": "image",
+      "scope": "Actualcomplete chronologicalframes inspected, notdirectmotion.",
+      "candidate_digest": "2cfd9f554067e4ba04d97783f4c0d59e19bf2275d0ff6d8f12b038f0ea8eae76"
+    },
+    "accepted03": {
+      "binding": {
+        "path": ".runtime/art-direction/sikh371-review-c71/accepted03.jpg",
+        "sha256": "2d185972822812ed8c2647717e247f2ecc43eb6aa056624a823e27669106ceee"
+      },
+      "mode": "image",
+      "scope": "Actualcomplete chronologicalframes inspected, notdirectmotion.",
+      "candidate_digest": "2cfd9f554067e4ba04d97783f4c0d59e19bf2275d0ff6d8f12b038f0ea8eae76"
+    }
+  },
+  "reference_checks": {
+    "reference_rear": {
+      "observation": "Actualreference anddecodedcomparison revealmissingforefootcurl/activecrest. Currenthighrise isusefulbutwholeunitfails.",
+      "comparison": "OriginalDirector371apex/hold intent, faithful reference16.5..18.0, accepted66preparation. Currenthighpose/source/contact gains do notwaive missing lowerforelegcurl/activehold; fullspeedAVpending.",
+      "evidence": [
+        "review",
+        "encoded",
+        "contact",
+        "source",
+        "pose",
+        "solver",
+        "protected",
+        "handoff",
+        "side",
+        "reverse",
+        "shot",
+        "compare_apex",
+        "compare_hold",
+        "reference",
+        "phase01",
+        "phase02",
+        "phase03",
+        "accepted01",
+        "accepted02",
+        "accepted03"
+      ],
+      "aspects": [
+        {
+          "id": "rise",
+          "status": "PASS",
+          "observation": "Actual315..323 frame/sourceproof risesstronglyfrommoving314 tohighrear, forelegs gatherafterbody. Wholehead/feet visible in side/reverse/story controls. Fullspeedpowerhumanpending."
+        },
+        {
+          "id": "crest",
+          "status": "FAIL",
+          "observation": "FAIL. Matchedreferenceapex/hold andsource solver shownearverticalhanginglowerforelegs andinsufficientactivecurl. Tinyunequalkeychanges do notachieve requiredlivingcrest. Internalrejection, no readyqueue."
+        },
+        {
+          "id": "balance",
+          "status": "PASS",
+          "observation": "Actualsampled hindgroundsupport/limblength guards andriderseat/rein/pole/coherentpad remain; no newobviousstretch/skate/contacthole inrevealingviews. Biologicalweight/fullspeed stillNOT_RUN."
+        },
+        {
+          "id": "continuity",
+          "status": "PASS",
+          "observation": "Accepted276..314 frozen; exact314evaluatedboundarypinned beforefuturekeyreplacement. All58samefixedview, canonical333repeatdiffzero, finite333source/velocityhandoff bound butnotaccepted."
+        }
+      ],
+      "reference_digest": "5cacee5b1aeb489a1e4bbe3b1cea59d803fb344ff59d8fbeafdc1b6d8eb797d3"
+    }
+  },
+  "audience_read": "Bodyreachesahighrear, buthangingforefeet andinsufficientarticulationstillriskmechanicalstatue read.",
+  "strongest_counterexample": "Nonzeroangles/contactmetrics passedwhileactualreferencecomparisonfails. Do notdelegateknownsource/framefailuretoDirectorAV.",
+  "adjacent_review": "Wholephase/sides/reverse/story inspectsupport,seat/reins/pole,neck andpad. Frozenchest/look/tail/flag andlegacydusttiming remainunaccepted; nonequalifiedforthenewclock.",
+  "open_visible_defects": [
+    "Apexlowerforelegs hangnearverticalinstead ofreference-shapedcurl andactiveadjustment."
+  ],
+  "intent_checks": {
+    "apex": {
+      "scope": "supported_evidence_only",
+      "status": "FAIL",
+      "observation": "FAIL. Matchedreferenceapex/hold andsource solver shownearverticalhanginglowerforelegs andinsufficientactivecurl. Tinyunequalkeychanges do notachieve requiredlivingcrest. Internalrejection, no readyqueue.",
+      "comparison": "OriginalDirector371apex/hold intent, faithful reference16.5..18.0, accepted66preparation. Currenthighpose/source/contact gains do notwaive missing lowerforelegcurl/activehold; fullspeedAVpending.",
+      "evidence": [
+        "review",
+        "solver",
+        "compare_apex",
+        "compare_hold",
+        "reference",
+        "phase02",
+        "phase03"
+      ]
+    }
+  },
+  "planning_gaps": [],
+  "unit_review": {
+    "id": "horse-rise-apex-activehold",
+    "criteria": {
+      "rise": {
+        "status": "PASS",
+        "observation": "Actual315..323 frame/sourceproof risesstronglyfrommoving314 tohighrear, forelegs gatherafterbody. Wholehead/feet visible in side/reverse/story controls. Fullspeedpowerhumanpending.",
+        "comparison": "OriginalDirector371apex/hold intent, faithful reference16.5..18.0, accepted66preparation. Currenthighpose/source/contact gains do notwaive missing lowerforelegcurl/activehold; fullspeedAVpending.",
+        "evidence": [
+          "review",
+          "pose",
+          "side",
+          "reverse",
+          "reference",
+          "phase01"
+        ]
+      },
+      "crest": {
+        "status": "FAIL",
+        "observation": "FAIL. Matchedreferenceapex/hold andsource solver shownearverticalhanginglowerforelegs andinsufficientactivecurl. Tinyunequalkeychanges do notachieve requiredlivingcrest. Internalrejection, no readyqueue.",
+        "comparison": "OriginalDirector371apex/hold intent, faithful reference16.5..18.0, accepted66preparation. Currenthighpose/source/contact gains do notwaive missing lowerforelegcurl/activehold; fullspeedAVpending.",
+        "evidence": [
+          "review",
+          "solver",
+          "compare_apex",
+          "compare_hold",
+          "reference",
+          "phase02",
+          "phase03"
+        ]
+      },
+      "balance": {
+        "status": "PASS",
+        "observation": "Actualsampled hindgroundsupport/limblength guards andriderseat/rein/pole/coherentpad remain; no newobviousstretch/skate/contacthole inrevealingviews. Biologicalweight/fullspeed stillNOT_RUN.",
+        "comparison": "OriginalDirector371apex/hold intent, faithful reference16.5..18.0, accepted66preparation. Currenthighpose/source/contact gains do notwaive missing lowerforelegcurl/activehold; fullspeedAVpending.",
+        "evidence": [
+          "review",
+          "contact",
+          "pose",
+          "side",
+          "reverse",
+          "shot"
+        ]
+      },
+      "continuity": {
+        "status": "PASS",
+        "observation": "Accepted276..314 frozen; exact314evaluatedboundarypinned beforefuturekeyreplacement. All58samefixedview, canonical333repeatdiffzero, finite333source/velocityhandoff bound butnotaccepted.",
+        "comparison": "OriginalDirector371apex/hold intent, faithful reference16.5..18.0, accepted66preparation. Currenthighpose/source/contact gains do notwaive missing lowerforelegcurl/activehold; fullspeedAVpending.",
+        "evidence": [
+          "review",
+          "source",
+          "pose",
+          "handoff",
+          "accepted03",
+          "phase01"
+        ]
+      }
+    },
+    "boundaries": {
+      "accepted_firstlift_entry": {
+        "status": "PASS",
+        "observation": "All39acceptedprefixpose/scalartrack samples exact; actual314 movingexit feeds315.",
+        "comparison": "OriginalDirector371apex/hold intent, faithful reference16.5..18.0, accepted66preparation. Currenthighpose/source/contact gains do notwaive missing lowerforelegcurl/activehold; fullspeedAVpending.",
+        "evidence": [
+          "source",
+          "pose",
+          "handoff",
+          "accepted03"
+        ]
+      },
+      "active_crest_exit": {
+        "status": "PASS",
+        "observation": "Actual332333sourceposes/supports andnative bound; crest NOTaccepted, onlyfinitecurrentstate forfuturecorrection. Do notstartoldlanding.",
+        "comparison": "OriginalDirector371apex/hold intent, faithful reference16.5..18.0, accepted66preparation. Currenthighpose/source/contact gains do notwaive missing lowerforelegcurl/activehold; fullspeedAVpending.",
+        "evidence": [
+          "source",
+          "pose",
+          "handoff",
+          "phase03"
+        ]
+      }
+    },
+    "largest_remaining_mismatch": {
+      "blocking": true,
+      "observation": "FAIL. Matchedreferenceapex/hold andsource solver shownearverticalhanginglowerforelegs andinsufficientactivecurl. Tinyunequalkeychanges do notachieve requiredlivingcrest. Internalrejection, no readyqueue.",
+      "evidence": [
+        "review",
+        "solver",
+        "compare_apex",
+        "compare_hold",
+        "reference",
+        "phase02",
+        "phase03"
+      ]
+    },
+    "outside_scope_changes": []
+  },
+  "fingerprint": "a66c60edada7c4d99effee76c4fdfae3ab2c052684d1592fb0463e068e47af25",
+  "candidate_digest": "2cfd9f554067e4ba04d97783f4c0d59e19bf2275d0ff6d8f12b038f0ea8eae76"
+}

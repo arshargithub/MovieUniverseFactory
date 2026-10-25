@@ -1,0 +1,37 @@
+{
+  "reference": {
+    "path": ".runtime/art-direction/series01-sikh256/references/reference-b.mov",
+    "sha256": "78d0d691e8712c02931876cf0bc405e4869de357f337f531708be7a7da4898e2"
+  },
+  "reference_crop": [
+    190,
+    338,
+    350,
+    328
+  ],
+  "candidate_display_crop": [
+    130,
+    20,
+    400,
+    470
+  ],
+  "reference_start_seconds": 15,
+  "duration_seconds": 2.4166666666666665,
+  "reference_clip": {
+    "path": ".runtime/art-direction/sikh371-review-c71/reference-preparation-apex.mp4",
+    "sha256": "3805514b85a305a20f8d4730151522ef8ae141b5787a652428a4e9ad3eecdc75"
+  },
+  "candidate": {
+    "path": ".runtime/art-direction/sikh371-review-c71/preparation-rise-apex-hold.mp4",
+    "sha256": "b8262e93e33deed7c2e6225f916cdfca645d4d9bc7553f6f595e0980adb1744a"
+  },
+  "comparison": {
+    "path": ".runtime/art-direction/sikh371-review-c71/apex-reference-comparison.mp4",
+    "sha256": "17d048932e30e4840e2a94934915d137253515f6cfda92af774f86fc9f0e3508"
+  },
+  "three_normal_speed_repeats": {
+    "path": ".runtime/art-direction/sikh371-review-c71/apex-comparison-three-repeats.mp4",
+    "sha256": "13d4a9c5f6673896d7d736aab61c05f0eb146ac84b1d56d1baa6f4f2c7315c84"
+  },
+  "scope": "Private diagnostic comparison, both normal-time24fps, three repeats without timewarp/interpolation/addedholds. Reference30fps resampled to24fps, sourcecaptions excluded, no mirroring. Landing/appearance/audio/AVapproval excluded."
+}

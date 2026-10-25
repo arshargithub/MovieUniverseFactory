@@ -1,0 +1,39 @@
+{
+  "status": "DIRECTOR_ACCEPTED_PREPARATION_MICRO_MOTION",
+  "director_source": {
+    "path": "results/sikh371/REQUEST.md",
+    "sha256": "131565c443be98e6faa7aedaaa23a7be19079d99621b008e1cc6205d7b3e398f"
+  },
+  "director_reply": "approved",
+  "candidate": {
+    "path": ".runtime/art-direction/sikh370-review-c66/preparation-firstlift.mp4",
+    "sha256": "985100faa0b9970c610eb6d45914fbdf74a9d63b0178c8661b5dd77c2bc06939"
+  },
+  "comparison": {
+    "path": ".runtime/art-direction/sikh370-review-c66/preparation-comparison-three-repeats.mp4",
+    "sha256": "ce5df75d54d1821c5eb7549b8f0c7778746314fca084fbe2d12bda3ab1131738"
+  },
+  "scope": "Horse preparation276..314 only, frozen53 motion with66contactrepair, normal-time24fps. Fullrear/appearance/tail excluded.",
+  "accepted": [
+    "Preparationthroughfirstlift276..314",
+    "Retainedsinglebrace/deeperhindload/headledrelease andscopedtemporalclothread"
+  ],
+  "not_accepted": [
+    "Wholecharacter/horseappearance",
+    "Laterrear/crest/landing",
+    "Tail/flag/clothgeneralphysics",
+    "FullSikh/trailer/release"
+  ],
+  "new_allowance": {
+    "task": "sikh335-continuous-performance",
+    "additional_motion_corrections": 5,
+    "prior_cycle": 66,
+    "prior_max": 66,
+    "new_max": 71,
+    "window": [
+      67,
+      71
+    ],
+    "scope": "Nextmicro-motion riseintoapex/briefhold; landingseparate"
+  }
+}

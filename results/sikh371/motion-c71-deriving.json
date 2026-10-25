@@ -1,0 +1,928 @@
+{
+  "input_digest": "8ca3d7f8b245ebcffb139e12c3cec472466ff76b9b6876fc3bb80b87646e75aa",
+  "outcome": "complete",
+  "artifact": {
+    "requirements": [
+      {
+        "id": "preservation",
+        "criterion": "Preserveaccepted66preparation276..314 sourcepose/cloth states andtestedframeprefix, protectedmasters, originalmesh/shape/material identity andhistory. Reversiblephaseextension only.",
+        "modes": [
+          "technical"
+        ],
+        "director_av": false
+      },
+      {
+        "id": "rise",
+        "criterion": "Stronghead/neck/trunk-ledascent fromexact314pose/velocity tohighrear; forelegsgatherafterbodydrive, no hesitantroot-only lift orspeedmultiplier.",
+        "modes": [
+          "image",
+          "technical"
+        ],
+        "director_av": false
+      },
+      {
+        "id": "crest",
+        "criterion": "Highmajesticbalancedcrest withshortactivehold: coherent neck/poll/body andsmallunequal foreleg/support adjustments; no duplicatedfrozenpose, pendulumrocking orprolongedlimbo.",
+        "modes": [
+          "image",
+          "technical"
+        ],
+        "director_av": false
+      },
+      {
+        "id": "balance",
+        "criterion": "Actualhindhoof endpoints grounded withoutskating/stretch, limb/necklengths credible; riderseat/torso balance,hand/rein/bit andspear contact coherent; actualthickenedtack validfornew19frames.",
+        "modes": [
+          "image",
+          "technical"
+        ],
+        "director_av": false
+      },
+      {
+        "id": "continuity",
+        "criterion": "Accepted313..314incomingstate flows through315 withoutsnap/hold;333exit bindsfinitepose/velocity/support/contact fornextlanding. No olddownstream/cachereusequalification.",
+        "modes": [
+          "image",
+          "technical"
+        ],
+        "director_av": false
+      },
+      {
+        "id": "scope",
+        "criterion": "Director371fiveadditionalmotioncycles67..71 onoriginaltask, apex/holdonly. No landing/appearance/tail/crowd/environment/sound/newspend/provider/tool/Astra/upload.",
+        "modes": [
+          "technical"
+        ],
+        "director_av": false
+      },
+      {
+        "id": "evidence",
+        "criterion": "Positivephase/referencecontrols, side/frontoblique/reverse/shot views, actualallnewframes/source/prefixreusecontrols andencodedfullmicro-motion comparison. Knownframe/sourcefailures remaininternal.",
+        "modes": [
+          "image",
+          "technical"
+        ],
+        "director_av": false
+      },
+      {
+        "id": "director_motion",
+        "criterion": "Director313/371 judgesnatural-time power,activehold/referencefaithfulness/fluidity andtemporalcontact ofexactmicro-motion. Agent directmotion/audio flagsremainfalse.",
+        "modes": [
+          "direct_motion"
+        ],
+        "director_av": true
+      }
+    ],
+    "beats": [
+      {
+        "id": "apex",
+        "audience_read": "Atrainedpowerfulhorse commandsahighrear; calmNihangleader iscarried bycoherent, livingbalance ratherthana statue.",
+        "framing": "Existingmountedshot plus stablewhole-horseside/frontoblique/reverse; head,hooves andriderseat visible.",
+        "lenses": {
+          "story_performance": {
+            "applies": true,
+            "requirements": [
+              "rise",
+              "crest",
+              "balance"
+            ],
+            "why": "Horsepower/support andleadercomposure mustreadasrespectedauthority, not a strugglinganimal ormechanicalstatue."
+          },
+          "camera_editorial": {
+            "applies": true,
+            "requirements": [
+              "continuity",
+              "evidence",
+              "director_motion"
+            ],
+            "why": "Protectcausalprep; fullhead/feet/seat inmatchedside/oblique/reverse andshot, no cut/crophidingweakcrest. Normal-speed comparison andplannedAVgate."
+          },
+          "animation_physics": {
+            "applies": true,
+            "requirements": [
+              "rise",
+              "crest",
+              "balance",
+              "continuity"
+            ],
+            "why": "Exactincomingvelocity, world-groundhindcontacts, independentneck/poll/forefold andasymmetricactivebalance. Positivesilhouette andtiming, notanglethresholdalone."
+          },
+          "anatomy_contact": {
+            "applies": true,
+            "requirements": [
+              "preservation",
+              "rise",
+              "balance"
+            ],
+            "why": "Freezeunderlyingbodyshape, butinspectposedchest/neck/limbvolumes andlengths; actualseat/rein/pole andnewfinalclothsurfaces acrossactivecrest."
+          },
+          "effects_environment": {
+            "applies": false,
+            "requirements": [],
+            "why": "No newgroundimpact/terrain/wind/FXforcrest. Flagcache invalidatedforprimarymotion,taildeferred; tackcontactcoveredbyanatomy/performance. Landingimpactnextunit."
+          },
+          "sound_music": {
+            "applies": false,
+            "requirements": [],
+            "why": "Silentmotiondiagnostic; no audioorwholeAVproductionclaim. Existingselectedmusic unaffected."
+          },
+          "production_reuse": {
+            "applies": true,
+            "requirements": [
+              "preservation",
+              "continuity",
+              "scope",
+              "evidence",
+              "director_motion"
+            ],
+            "why": "Exactacceptedprefixsource/pixel controls beforeoldframe reuse; cacheexplicit315..333 and333exitforlanding. Same task/history andfivecycles, no genericassetqualification."
+          }
+        }
+      }
+    ],
+    "derivations": {
+      "preservation": {
+        "beats": [
+          "apex"
+        ],
+        "lenses": [
+          "anatomy_contact",
+          "production_reuse"
+        ],
+        "derivation": "Preserveaccepted66preparation276..314 sourcepose/cloth states andtestedframeprefix, protectedmasters, originalmesh/shape/material identity andhistory. Reversiblephaseextension only.",
+        "origin": "director",
+        "priority": "quality_floor",
+        "reference_ids": [
+          "reference_rear"
+        ]
+      },
+      "rise": {
+        "beats": [
+          "apex"
+        ],
+        "lenses": [
+          "story_performance",
+          "animation_physics",
+          "anatomy_contact"
+        ],
+        "derivation": "Stronghead/neck/trunk-ledascent fromexact314pose/velocity tohighrear; forelegsgatherafterbodydrive, no hesitantroot-only lift orspeedmultiplier.",
+        "origin": "reference",
+        "priority": "quality_floor",
+        "reference_ids": [
+          "reference_rear"
+        ]
+      },
+      "crest": {
+        "beats": [
+          "apex"
+        ],
+        "lenses": [
+          "story_performance",
+          "animation_physics"
+        ],
+        "derivation": "Highmajesticbalancedcrest withshortactivehold: coherent neck/poll/body andsmallunequal foreleg/support adjustments; no duplicatedfrozenpose, pendulumrocking orprolongedlimbo.",
+        "origin": "reference",
+        "priority": "quality_floor",
+        "reference_ids": [
+          "reference_rear"
+        ]
+      },
+      "balance": {
+        "beats": [
+          "apex"
+        ],
+        "lenses": [
+          "story_performance",
+          "animation_physics",
+          "anatomy_contact"
+        ],
+        "derivation": "Actualhindhoof endpoints grounded withoutskating/stretch, limb/necklengths credible; riderseat/torso balance,hand/rein/bit andspear contact coherent; actualthickenedtack validfornew19frames.",
+        "origin": "reference",
+        "priority": "quality_floor",
+        "reference_ids": [
+          "reference_rear"
+        ]
+      },
+      "continuity": {
+        "beats": [
+          "apex"
+        ],
+        "lenses": [
+          "camera_editorial",
+          "animation_physics",
+          "production_reuse"
+        ],
+        "derivation": "Accepted313..314incomingstate flows through315 withoutsnap/hold;333exit bindsfinitepose/velocity/support/contact fornextlanding. No olddownstream/cachereusequalification.",
+        "origin": "reference",
+        "priority": "quality_floor",
+        "reference_ids": [
+          "reference_rear"
+        ]
+      },
+      "scope": {
+        "beats": [
+          "apex"
+        ],
+        "lenses": [
+          "production_reuse"
+        ],
+        "derivation": "Director371fiveadditionalmotioncycles67..71 onoriginaltask, apex/holdonly. No landing/appearance/tail/crowd/environment/sound/newspend/provider/tool/Astra/upload.",
+        "origin": "director",
+        "priority": "quality_floor",
+        "reference_ids": [
+          "reference_rear"
+        ]
+      },
+      "evidence": {
+        "beats": [
+          "apex"
+        ],
+        "lenses": [
+          "camera_editorial",
+          "production_reuse"
+        ],
+        "derivation": "Positivephase/referencecontrols, side/frontoblique/reverse/shot views, actualallnewframes/source/prefixreusecontrols andencodedfullmicro-motion comparison. Knownframe/sourcefailures remaininternal.",
+        "origin": "craft_inference",
+        "priority": "quality_floor",
+        "reference_ids": [
+          "reference_rear"
+        ]
+      },
+      "director_motion": {
+        "beats": [
+          "apex"
+        ],
+        "lenses": [
+          "camera_editorial",
+          "production_reuse"
+        ],
+        "derivation": "Director313/371 judgesnatural-time power,activehold/referencefaithfulness/fluidity andtemporalcontact ofexactmicro-motion. Agent directmotion/audio flagsremainfalse.",
+        "origin": "director",
+        "priority": "quality_floor",
+        "reference_ids": [
+          "reference_rear"
+        ]
+      }
+    },
+    "context_mapping": {
+      "direction": {
+        "requirements": [
+          "rise",
+          "crest",
+          "balance",
+          "continuity",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: Resume the integrated isolated production package; this precursor discovers rig ownership before any new pose authoring. Reference-led rise/highactivecrest, acceptedprefix/sourceownership/support andcompletephase evidence."
+      },
+      "learnings": {
+        "requirements": [
+          "rise",
+          "crest",
+          "balance",
+          "continuity",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: 331 failed whole-pose support and same-film character fidelity despite incremental offset corrections; those attempts remain closed. Reference-led rise/highactivecrest, acceptedprefix/sourceownership/support andcompletephase evidence."
+      },
+      "film_language": {
+        "requirements": [
+          "scope",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: Accepted Pashtun quality stays fixed; a supporting actor cannot be a schematic statue. Preserve bounded scope, original authority/history and material/contact/cache interfaces; no unrelated construction."
+      },
+      "director_preferences": {
+        "requirements": [
+          "scope",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: Predict failure through expert lenses and fix internally; setup and routine algorithms are not handovers. Preserve bounded scope, original authority/history and material/contact/cache interfaces; no unrelated construction."
+      },
+      "references": {
+        "requirements": [
+          "rise",
+          "crest",
+          "balance",
+          "continuity",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: Reference14\u201319s governs faithful action phases; accepted film governs appearance; rejected poses are negative controls. Reference-led rise/highactivecrest, acceptedprefix/sourceownership/support andcompletephase evidence."
+      },
+      "controls": {
+        "requirements": [
+          "scope",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: Fresh motion-domain packet and manual AU09\u201313,16 plus317\u2013334 reconciliation accompany this inspection. Preserve bounded scope, original authority/history and material/contact/cache interfaces; no unrelated construction."
+      },
+      "constraints": {
+        "requirements": [
+          "scope",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: Inspect64 invalid used-armature drivers, removed object drivers and FK bypasses; no blind restoration or defect waiver. Preserve bounded scope, original authority/history and material/contact/cache interfaces; no unrelated construction."
+      },
+      "ownership_diagnosis": {
+        "requirements": [
+          "rise",
+          "crest",
+          "balance",
+          "continuity",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: 64 missing targets are BBone ease; missing object drivers leave IK/FK properties ineffective. Select actual constraints and solve bone lengths explicitly. Reference-led rise/highactivecrest, acceptedprefix/sourceownership/support andcompletephase evidence."
+      },
+      "crest_control": {
+        "requirements": [
+          "scope",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Historical constraint/failure context; latest371 preserves accepted66preparation and overrides historicalphase-onlyscope; earlier rejectedbehavior staysrejected. Two static corrections are retained and closed. Crest supports anatomy but reins/spear disconnected and appearance rejected; capture immutable stance before continuous keys. Preserve bounded scope, original authority/history and material/contact/cache interfaces; no unrelated construction."
+      },
+      "strategy353": {
+        "requirements": [
+          "scope",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Historical constraint/failure context; latest371 preserves accepted66preparation and overrides historicalphase-onlyscope; earlier rejectedbehavior staysrejected. Apply causal interface tests and retain scoped successes; leader and horse precede crowd. Preserve bounded scope, original authority/history and material/contact/cache interfaces; no unrelated construction."
+      },
+      "lessons352": {
+        "requirements": [
+          "scope",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: Apply causal interface tests and retain scoped successes; leader and horse precede crowd. Preserve bounded scope, original authority/history and material/contact/cache interfaces; no unrelated construction."
+      },
+      "strategy358": {
+        "requirements": [
+          "scope",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: Correct actual headstall ownership and its consuming rein span; retain357 construction gains and original faithful action reference. Preserve bounded scope, original authority/history and material/contact/cache interfaces; no unrelated construction."
+      },
+      "lessons357": {
+        "requirements": [
+          "scope",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: Correct actual headstall ownership and its consuming rein span; retain357 construction gains and original faithful action reference. Preserve bounded scope, original authority/history and material/contact/cache interfaces; no unrelated construction."
+      },
+      "strategy361": {
+        "requirements": [
+          "scope",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: 361 authorizes ten additional each and a conservative whole-segment proof, then integrated actor/horse review. Old358 endpoint and sparse-projection methods are rejected. Preserve bounded scope, original authority/history and material/contact/cache interfaces; no unrelated construction."
+      },
+      "lessons358": {
+        "requirements": [
+          "scope",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: Apply actual anatomical ownership, whole consumer path, final thickness/sampling review, component versus integrated proof and honest cycle accounting. Preserve bounded scope, original authority/history and material/contact/cache interfaces; no unrelated construction."
+      },
+      "routing360": {
+        "requirements": [
+          "scope",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: Sol6.1 High is default for planning/execution/review/retros; Astra needs a separate narrow Director-approved assignment, absent here. Preserve bounded scope, original authority/history and material/contact/cache interfaces; no unrelated construction."
+      },
+      "director363": {
+        "requirements": [
+          "scope",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Historical constraint/failure context; latest371 preserves accepted66preparation and overrides historicalphase-onlyscope; earlier rejectedbehavior staysrejected. 363 rejects362; ten additional each. Phased fast rear, readable prep, faithful slam/hoist signal, real tied-flag cloth, face eyeline/visibility, chest/right-hand repair. Preserve bounded scope, original authority/history and material/contact/cache interfaces; no unrelated construction."
+      },
+      "strategy363": {
+        "requirements": [
+          "scope",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Historical constraint/failure context; latest371 preserves accepted66preparation and overrides historicalphase-onlyscope; earlier rejectedbehavior staysrejected. Diagnose source form/hand and time consumers; prove cloth persistence on exact action; source/frame/Director AV separate. Preserve bounded scope, original authority/history and material/contact/cache interfaces; no unrelated construction."
+      },
+      "audit363": {
+        "requirements": [
+          "scope",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: Actual front chest failure, invalid side framing and open rein-hand claw confirmed; length metrics did not pass anatomy. Compare corrective effect and actual grip before integration. Preserve bounded scope, original authority/history and material/contact/cache interfaces; no unrelated construction."
+      },
+      "causal363": {
+        "requirements": [
+          "scope",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: 363 actual integer/subframe ownership findings and preserved components constrain continuation. Full LEARNINGS source and failedcloth result manually reconciled. Preserve bounded scope, original authority/history and material/contact/cache interfaces; no unrelated construction."
+      },
+      "cloth363": {
+        "requirements": [
+          "scope",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Historical constraint/failure context; latest371 preserves accepted66preparation and overrides historicalphase-onlyscope; earlier rejectedbehavior staysrejected. Actual117 and final41 cloth failed; preserve113 chest/110 grasp/final41 timing; no guard relaxation or apparent near-pass. Preserve bounded scope, original authority/history and material/contact/cache interfaces; no unrelated construction."
+      },
+      "director367": {
+        "requirements": [
+          "rise",
+          "crest",
+          "balance",
+          "continuity",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: Reference video is100percent motion authority, substantial linked appearance direction; implement process then ten motion cycles, motion first. Reference-led rise/highactivecrest, acceptedprefix/sourceownership/support andcompletephase evidence."
+      },
+      "unit367": {
+        "requirements": [
+          "scope",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: Single perceptual unit, positive reference gates, declared domains/boundaries and actual calibration through the existing controller. Preserve bounded scope, original authority/history and material/contact/cache interfaces; no unrelated construction."
+      },
+      "rejection365": {
+        "requirements": [
+          "rise",
+          "crest",
+          "balance",
+          "continuity",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: Rejected tentative preparation, retime-only power and flattened chest; landing unaccepted. Known-history negative controls, not accepted source. Reference-led rise/highactivecrest, acceptedprefix/sourceownership/support andcompletephase evidence."
+      },
+      "cloth364": {
+        "requirements": [
+          "scope",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: Subframe collider conditioning and exact-action cache dependencies; new primary motion invalidates prior flag simulation. Preserve bounded scope, original authority/history and material/contact/cache interfaces; no unrelated construction."
+      },
+      "director368": {
+        "requirements": [
+          "scope",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: Single bracing hoof, deeper head/neck load and rapid head/neck/chest-led firstlift. Prep only; approve5 additional cycles. Preserve bounded scope, original authority/history and material/contact/cache interfaces; no unrelated construction."
+      },
+      "strategy368": {
+        "requirements": [
+          "scope",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: Reference30fps interpretation, expert pose requirements and bounded single-brace proof strategy; old49 not accepted. Preserve bounded scope, original authority/history and material/contact/cache interfaces; no unrelated construction."
+      },
+      "director369": {
+        "requirements": [
+          "scope",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: Director369 adds hindquarter squat/load, defers tail, and adopts perceptually meaningful variable-size units. Preserve bounded scope, original authority/history and material/contact/cache interfaces; no unrelated construction."
+      },
+      "strategy369": {
+        "requirements": [
+          "scope",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: Deeper grounded pelvis loading using bounded prep controls; side/contact whole-unit proof before fullframe rendering. Preserve bounded scope, original authority/history and material/contact/cache interfaces; no unrelated construction."
+      },
+      "granularity369": {
+        "requirements": [
+          "scope",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: Motion units are smallest independently reviewable causal outcomes; appearance equivalent is manual, no automatic appearance validator claim. Preserve bounded scope, original authority/history and material/contact/cache interfaces; no unrelated construction."
+      },
+      "contact369": {
+        "requirements": [
+          "scope",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: Two compressionvariants expose saddlecontact regression; inspect actual evaluatedsupport then boundedexistingmodifier clearance. No restmesh/material/action change. Preserve bounded scope, original authority/history and material/contact/cache interfaces; no unrelated construction."
+      },
+      "bind369": {
+        "requirements": [
+          "scope",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: 54stand-offcontrol falsifies margin-only repair; bind stablepad materialpoints to actualanimatedhorse before localprojection, preserve53pose/restgeometry/look. Preserve bounded scope, original authority/history and material/contact/cache interfaces; no unrelated construction."
+      },
+      "follow369": {
+        "requirements": [
+          "scope",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: Bothstand-offcontrols failed; retainstablebind anddisableoldprojection todiscriminate attachment fromnearest-surface reprojection. Actualsource/render veto. Preserve bounded scope, original authority/history and material/contact/cache interfaces; no unrelated construction."
+      },
+      "director370": {
+        "requirements": [
+          "scope",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: Allocateall9previouslyunusedmotioncorrections tofinish frozen-motion saddlecontact thenprep proof; no totalcapincrease. Preserve bounded scope, original authority/history and material/contact/cache interfaces; no unrelated construction."
+      },
+      "strategy370": {
+        "requirements": [
+          "scope",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: Pairedactualsource diagnosis identifies padvertices/triangleinteriors and anatomicalsurfaceownership beforeconstruction; no moreblindoffsets. Preserve bounded scope, original authority/history and material/contact/cache interfaces; no unrelated construction."
+      },
+      "diagnosis58": {
+        "requirements": [
+          "scope",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: Actual53/55failures mostlytriangleinteriors on thighsurface, rayinsideconfirmed. Matchrenderlevels andtest finerpadbeforeprojection withoutoffset/posechange. Preserve bounded scope, original authority/history and material/contact/cache interfaces; no unrelated construction."
+      },
+      "envelope60": {
+        "requirements": [
+          "scope",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: 59density-only fails; stable55seed plus exteriorradialcontact and declarednativecachederivative. Original53pose/meshes/material/actions protected; fullsource/image veto. Preserve bounded scope, original authority/history and material/contact/cache interfaces; no unrelated construction."
+      },
+      "frame61": {
+        "requirements": [
+          "scope",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: Useestablishedrig anatomicalframe, notimportedmesh axes; actual60missingrayguard stoppedbefore save. Nativepoint/matrix diagnostic retained. Preserve bounded scope, original authority/history and material/contact/cache interfaces; no unrelated construction."
+      },
+      "seed62": {
+        "requirements": [
+          "scope",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: 61actualrig/meshmatrices identical; withdrawaxis-cause. Rawseed89mmoutside: bindactualfitted283reference, thenstableexteriorcontact/clear-overhanghandling. Preserve bounded scope, original authority/history and material/contact/cache interfaces; no unrelated construction."
+      },
+      "contact63": {
+        "requirements": [
+          "scope",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: Keepallalready-clearfittedpoints; boundedoutwardcorrection/sharedfacecontacts. Spherecounterexampletestsoutsidevertices/insideface. Freshbindingfromclean53fit. Preserve bounded scope, original authority/history and material/contact/cache interfaces; no unrelated construction."
+      },
+      "runtime64": {
+        "requirements": [
+          "scope",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: 63partial33/39contactstates positivebut600s processceiling preventscompletednative. Exactsingleenveloperecipegets1200s, allothers600; samequality/method/authority. Preserve bounded scope, original authority/history and material/contact/cache interfaces; no unrelated construction."
+      },
+      "fitted65": {
+        "requirements": [
+          "scope",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: 64late313totaldisplacementfails. Testactualper-framefittedseed, known313/314first, preserveallguards/actions/materials/39frameclock; noartqualificationfromgaps. Preserve bounded scope, original authority/history and material/contact/cache interfaces; no unrelated construction."
+      },
+      "final66": {
+        "requirements": [
+          "scope",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: 65finalsurfaceFAIL297..311. ActualSolidifyvertices/interiorsnowdrivebounded12sourcecorrections,2mmfloor. Testworst306/300/308andfirstliftfirst; all39/renders required; noautomaticmorecycles. Preserve bounded scope, original authority/history and material/contact/cache interfaces; no unrelated construction."
+      },
+      "director371": {
+        "requirements": [
+          "rise",
+          "crest",
+          "balance",
+          "continuity",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: Director371acceptsexact66preparation; fiveadditionalmotioncycles forapex/hold, landingseparate; micro-motionnames369unit. Reference-led rise/highactivecrest, acceptedprefix/sourceownership/support andcompletephase evidence."
+      },
+      "strategy371": {
+        "requirements": [
+          "rise",
+          "crest",
+          "balance",
+          "continuity",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: Currentprimaryoutcome/path/risks/coupledinterfaces/earlyproof andcounter/prefix/cache limits; no frozenpose/retime-only workaround. Reference-led rise/highactivecrest, acceptedprefix/sourceownership/support andcompletephase evidence."
+      },
+      "reference371": {
+        "requirements": [
+          "rise",
+          "crest",
+          "balance",
+          "continuity",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: Actual45referenceframes show highdrivingrise andsustainedactivecrest; currentunitdemonstratesfirstshortcrest, landinglater; no recoveredphysicsclaim. Reference-led rise/highactivecrest, acceptedprefix/sourceownership/support andcompletephase evidence."
+      },
+      "carry370": {
+        "requirements": [
+          "rise",
+          "crest",
+          "balance",
+          "continuity",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: Actualfinalsurfacecontact, risk-firstproof andstrictper-intervalcache/reuse limits; source/image success separatefromDirectorAV. Reference-led rise/highactivecrest, acceptedprefix/sourceownership/support andcompletephase evidence."
+      },
+      "current_method371": {
+        "requirements": [
+          "rise",
+          "crest",
+          "balance",
+          "continuity",
+          "evidence"
+        ],
+        "reason": "Apply current source authority/lesson: Agent-owned currentmethod/failure response anddiscriminatingtest forapex/hold; preserveallfailurehistory andacceptedboundary, no newauthority orqualitywaiver. Reference-led rise/highactivecrest, acceptedprefix/sourceownership/support andcompletephase evidence."
+      }
+    },
+    "knowledge_mapping": {
+      "construction_interfaces": {
+        "requirements": [
+          "rise",
+          "crest",
+          "balance",
+          "continuity",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply actual371specificlens/strategy/interface implications and370contact/prefixlessons; olderfullscene/directAV/appearanceconstraints retained asscope, notpromotedtoPASS."
+      },
+      "reuse_envelope": {
+        "requirements": [
+          "preservation",
+          "scope",
+          "continuity",
+          "evidence"
+        ],
+        "reason": "Apply actual371specificlens/strategy/interface implications and370contact/prefixlessons; olderfullscene/directAV/appearanceconstraints retained asscope, notpromotedtoPASS."
+      },
+      "animal_coordination": {
+        "requirements": [
+          "rise",
+          "crest",
+          "balance",
+          "continuity",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply actual371specificlens/strategy/interface implications and370contact/prefixlessons; olderfullscene/directAV/appearanceconstraints retained asscope, notpromotedtoPASS."
+      },
+      "authority": {
+        "requirements": [
+          "preservation",
+          "scope",
+          "continuity",
+          "evidence"
+        ],
+        "reason": "Apply actual371specificlens/strategy/interface implications and370contact/prefixlessons; olderfullscene/directAV/appearanceconstraints retained asscope, notpromotedtoPASS."
+      },
+      "strategy": {
+        "requirements": [
+          "rise",
+          "crest",
+          "balance",
+          "continuity",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply actual371specificlens/strategy/interface implications and370contact/prefixlessons; olderfullscene/directAV/appearanceconstraints retained asscope, notpromotedtoPASS."
+      },
+      "visual_gate": {
+        "requirements": [
+          "rise",
+          "crest",
+          "balance",
+          "continuity",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply actual371specificlens/strategy/interface implications and370contact/prefixlessons; olderfullscene/directAV/appearanceconstraints retained asscope, notpromotedtoPASS."
+      },
+      "anticipation": {
+        "requirements": [
+          "rise",
+          "crest",
+          "balance",
+          "continuity",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply actual371specificlens/strategy/interface implications and370contact/prefixlessons; olderfullscene/directAV/appearanceconstraints retained asscope, notpromotedtoPASS."
+      },
+      "stopping": {
+        "requirements": [
+          "preservation",
+          "scope",
+          "continuity",
+          "evidence"
+        ],
+        "reason": "Apply actual371specificlens/strategy/interface implications and370contact/prefixlessons; olderfullscene/directAV/appearanceconstraints retained asscope, notpromotedtoPASS."
+      },
+      "versioning": {
+        "requirements": [
+          "preservation",
+          "scope",
+          "continuity",
+          "evidence"
+        ],
+        "reason": "Apply actual371specificlens/strategy/interface implications and370contact/prefixlessons; olderfullscene/directAV/appearanceconstraints retained asscope, notpromotedtoPASS."
+      },
+      "economics": {
+        "requirements": [
+          "preservation",
+          "scope",
+          "continuity",
+          "evidence"
+        ],
+        "reason": "Apply actual371specificlens/strategy/interface implications and370contact/prefixlessons; olderfullscene/directAV/appearanceconstraints retained asscope, notpromotedtoPASS."
+      },
+      "anatomy": {
+        "requirements": [
+          "rise",
+          "crest",
+          "balance",
+          "continuity",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply actual371specificlens/strategy/interface implications and370contact/prefixlessons; olderfullscene/directAV/appearanceconstraints retained asscope, notpromotedtoPASS."
+      },
+      "motion": {
+        "requirements": [
+          "rise",
+          "crest",
+          "balance",
+          "continuity",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply actual371specificlens/strategy/interface implications and370contact/prefixlessons; olderfullscene/directAV/appearanceconstraints retained asscope, notpromotedtoPASS."
+      },
+      "secondary": {
+        "requirements": [
+          "rise",
+          "crest",
+          "balance",
+          "continuity",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply actual371specificlens/strategy/interface implications and370contact/prefixlessons; olderfullscene/directAV/appearanceconstraints retained asscope, notpromotedtoPASS."
+      },
+      "look": {
+        "requirements": [
+          "rise",
+          "crest",
+          "balance",
+          "continuity",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply actual371specificlens/strategy/interface implications and370contact/prefixlessons; olderfullscene/directAV/appearanceconstraints retained asscope, notpromotedtoPASS."
+      },
+      "render_profile": {
+        "requirements": [
+          "rise",
+          "crest",
+          "balance",
+          "continuity",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply actual371specificlens/strategy/interface implications and370contact/prefixlessons; olderfullscene/directAV/appearanceconstraints retained asscope, notpromotedtoPASS."
+      },
+      "cache_safety": {
+        "requirements": [
+          "rise",
+          "crest",
+          "balance",
+          "continuity",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply actual371specificlens/strategy/interface implications and370contact/prefixlessons; olderfullscene/directAV/appearanceconstraints retained asscope, notpromotedtoPASS."
+      },
+      "current_state": {
+        "requirements": [
+          "preservation",
+          "scope",
+          "continuity",
+          "evidence"
+        ],
+        "reason": "Apply actual371specificlens/strategy/interface implications and370contact/prefixlessons; olderfullscene/directAV/appearanceconstraints retained asscope, notpromotedtoPASS."
+      },
+      "au_deformation": {
+        "requirements": [
+          "rise",
+          "crest",
+          "balance",
+          "continuity",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply actual371specificlens/strategy/interface implications and370contact/prefixlessons; olderfullscene/directAV/appearanceconstraints retained asscope, notpromotedtoPASS."
+      },
+      "au_performance": {
+        "requirements": [
+          "rise",
+          "crest",
+          "balance",
+          "continuity",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply actual371specificlens/strategy/interface implications and370contact/prefixlessons; olderfullscene/directAV/appearanceconstraints retained asscope, notpromotedtoPASS."
+      },
+      "au_contact": {
+        "requirements": [
+          "rise",
+          "crest",
+          "balance",
+          "continuity",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply actual371specificlens/strategy/interface implications and370contact/prefixlessons; olderfullscene/directAV/appearanceconstraints retained asscope, notpromotedtoPASS."
+      },
+      "au_surface": {
+        "requirements": [
+          "rise",
+          "crest",
+          "balance",
+          "continuity",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply actual371specificlens/strategy/interface implications and370contact/prefixlessons; olderfullscene/directAV/appearanceconstraints retained asscope, notpromotedtoPASS."
+      },
+      "au_reuse": {
+        "requirements": [
+          "rise",
+          "crest",
+          "balance",
+          "continuity",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply actual371specificlens/strategy/interface implications and370contact/prefixlessons; olderfullscene/directAV/appearanceconstraints retained asscope, notpromotedtoPASS."
+      },
+      "sikh_scope": {
+        "requirements": [
+          "preservation",
+          "scope",
+          "continuity",
+          "evidence"
+        ],
+        "reason": "Apply actual371specificlens/strategy/interface implications and370contact/prefixlessons; olderfullscene/directAV/appearanceconstraints retained asscope, notpromotedtoPASS."
+      },
+      "sikh_motion": {
+        "requirements": [
+          "rise",
+          "crest",
+          "balance",
+          "continuity",
+          "preservation",
+          "evidence"
+        ],
+        "reason": "Apply actual371specificlens/strategy/interface implications and370contact/prefixlessons; olderfullscene/directAV/appearanceconstraints retained asscope, notpromotedtoPASS."
+      }
+    }
+  }
+}

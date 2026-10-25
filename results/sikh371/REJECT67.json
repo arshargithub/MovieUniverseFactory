@@ -1,0 +1,11 @@
+{
+  "cycle": 67,
+  "status": "FAIL_BEFORE_SAVED_CANDIDATE",
+  "failure": "SUPPORT_FLIGHT_PATH_TOO_FAR frame315 sideR adjustment0.106686m; unchangedguard0.12*unit (~0.1035m).",
+  "evidence": {
+    "path": ".runtime/factory-native/sikh371-motion-c67-prepare/stderr.log",
+    "sha256": "99d180f02e53314d258562416709857755b2db3d01c5f48afb1a91bf02436640"
+  },
+  "accepted_source": "66native untouched; disposablefailedworker only. No claimthatallprefixcheckscompleted.",
+  "response": "68 accelerates315Rfold only, withbody/neck/rootincomingpath andallguards unchanged; secondreachfailure triggersflight-pathreassessment."
+}

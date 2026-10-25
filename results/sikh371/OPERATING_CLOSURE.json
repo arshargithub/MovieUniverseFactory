@@ -1,0 +1,76 @@
+{
+  "status": "WORK_ENDED_AWAITING_DIRECTOR_ALLOWANCE",
+  "events": [
+    {
+      "episode_id": "leader369",
+      "event_id": "sikh371-wait-end",
+      "event_type": "wait_ended",
+      "evidence_ref": null,
+      "experiment_id": "sikh335",
+      "phase": "planning",
+      "reason": "director_response",
+      "run_id": null,
+      "schema_version": "1.0",
+      "task_id": null,
+      "turn_id": null,
+      "utc": "2026-10-24T18:26:40.259672+00:00",
+      "wait_id": "sikh370-director-av"
+    },
+    {
+      "activity_id": "sikh371-work",
+      "actor": "assistant",
+      "episode_id": "leader369",
+      "event_id": "sikh371-work-start",
+      "event_type": "work_started",
+      "evidence_ref": null,
+      "experiment_id": "sikh335",
+      "phase": "planning",
+      "reason": null,
+      "run_id": null,
+      "schema_version": "1.0",
+      "task_id": null,
+      "turn_id": null,
+      "utc": "2026-10-24T18:26:40.298780+00:00"
+    },
+    {
+      "activity_id": "sikh371-work",
+      "actor": "assistant",
+      "episode_id": "leader369",
+      "event_id": "sikh371-work-end",
+      "event_type": "work_ended",
+      "evidence_ref": null,
+      "experiment_id": "sikh335",
+      "phase": "review",
+      "reason": "known_crest_failure_allowance_exhausted",
+      "run_id": null,
+      "schema_version": "1.0",
+      "task_id": null,
+      "turn_id": null,
+      "utc": "2026-10-25T14:43:55.138293+00:00"
+    },
+    {
+      "episode_id": "leader369",
+      "event_id": "sikh371-decision-wait",
+      "event_type": "wait_started",
+      "evidence_ref": null,
+      "experiment_id": "sikh335",
+      "phase": "review",
+      "reason": "director_response",
+      "run_id": null,
+      "schema_version": "1.0",
+      "task_id": null,
+      "turn_id": null,
+      "utc": "2026-10-25T14:43:55.178847+00:00",
+      "wait_id": "sikh371-additional-cycles"
+    }
+  ],
+  "export": {
+    "path": ".runtime/operating-sikh371-close.json",
+    "sha256": "f2835a55fe6d791a3009ef2fa02c302480a218e79ceaba3a3d9e414ba91b44cd"
+  },
+  "report_path": ".runtime/operating-sikh371-report/REPORT.md",
+  "scope": "Originalleader369episode remainsopen forcontinuation; current371assistantactivity ended, nativejobs complete. Finalbookkeeping/commitafterwaitregistration isboundaryuncertainty, not verifiedDirectoridle. Promptarrival/bootstrap andolderlifecycle gaps not reconstructed; netwholeepisode unknown. Nativejobtime overlapsactivity; no addition/doublecount.",
+  "engineering_tokens": null,
+  "engineering_cost_usd": null,
+  "new_external_paid_provider_calls": 0
+}

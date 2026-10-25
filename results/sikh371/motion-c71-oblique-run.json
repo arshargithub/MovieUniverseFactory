@@ -1,0 +1,54 @@
+{
+  "id": "sikh371-motion-c71-oblique",
+  "task": "sikh335-continuous-performance",
+  "step": "oblique",
+  "cycle": 71,
+  "fingerprint": "a66c60edada7c4d99effee76c4fdfae3ab2c052684d1592fb0463e068e47af25",
+  "parent": {
+    "path": ".runtime/factory-native/sikh371-motion-c71-contact/scene.blend",
+    "sha256": "6aefab81d6e8eb4bc862dfd673ddeedff73345bccd2f56715013123eed1bd430"
+  },
+  "job_digest": "be6c45a9a000a2417024197dd2924ebc8131f75b6d39c4c49f2c43e6a50bceca",
+  "handler_digest": "f4efe7b6c039b183233abdbc82320df15ae9b10efca2a2b89e7f4fad8615f696",
+  "status": "RETURNED",
+  "timeout_seconds": 600,
+  "artifacts": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh371-motion-c71-oblique/snapshot.json",
+      "sha256": "77a684c8d29f369b58eb9c269401d93fc68732d618d79dac5c645d1588a92c4b"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh371-motion-c71-oblique/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh371-motion-c71-oblique/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh371-motion-c71-oblique/frame.png",
+      "sha256": "7d9a2a40f5b9db35bd26897c01705433942960cbf6f0deeac4a5cddb504a83e9"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh371-motion-c71-oblique/frames.json",
+      "sha256": "618375687e42333afdebe1bf4f4ed3f347eff3db01b21f97f953acb8d94730d8"
+    },
+    "frame_319": {
+      "path": ".runtime/factory-native/sikh371-motion-c71-oblique/frame-0319.png",
+      "sha256": "3975ea967a56fd1b4b5f13c4c9a146fd66e4844de08f282288c21be032ed0757"
+    },
+    "frame_323": {
+      "path": ".runtime/factory-native/sikh371-motion-c71-oblique/frame-0323.png",
+      "sha256": "b6063d833574a5046d12bc2c4fe9f242bf02a9f6a30d91f94b03e65a60d52392"
+    },
+    "frame_333": {
+      "path": ".runtime/factory-native/sikh371-motion-c71-oblique/frame.png",
+      "sha256": "7d9a2a40f5b9db35bd26897c01705433942960cbf6f0deeac4a5cddb504a83e9"
+    }
+  },
+  "dependencies": {},
+  "recipe": {
+    "path": "results/sikh371/motion-c71-oblique-recipe.json",
+    "sha256": "c0bd2b56e2542e5b4536e1d9d7e63bdc4f284730767b6f9928a7d151ac29dd22"
+  }
+}
