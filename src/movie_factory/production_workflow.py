@@ -668,7 +668,7 @@ class Controller:
             return self._stage(state, 'BRIEFING')
         return self._change(task, event_id, 'reconcile_recovery_planner', [admission, reason], apply)
 
-    def revise(self, task, brief, decision, reason, event_id):
+    def revise(self, task, brief, decision, reason, event_id, *, grounding=None):
         """Controller-owned Director direction update. Never resets the retry cap."""
         rc.binding(self.root, decision)
         require(nonempty(reason), 'REVISION_REASON')
@@ -678,6 +678,20 @@ class Controller:
             require(state['route'] == 'production', 'WRONG_ROUTE')
             require(not con.execute('SELECT 1 FROM heavy_job WHERE task=?', (task,)).fetchone(), 'JOB_STILL_ACTIVE')
             validate_brief(self.root, brief, state['route'], state.get('mode', 'offline'))
+            # Direction and its reviewed knowledge packet may change together.
+            # Serial reground+revise used two correction slots and could not
+            # bind a new knowledge-task path during revision. Keep this atomic,
+            # preserving every required source role/status and prior history.
+            if grounding is not None:
+                require(nonempty(grounding.get('reason')) and grounding.get('evidence'), 'REVISION_GROUNDING_RECORD')
+                for item in grounding['evidence'].values(): rc.binding(self.root,item)
+                updated=rows(grounding['context_sources'])
+                for old in state['direction']['context_sources']:
+                    require(not old['required'] or old['id'] in updated, 'REQUIRED_SOURCE_DROPPED')
+                    if old['id'] in updated:
+                        require(all(updated[old['id']].get(k)==old[k] for k in
+                            ('category','status','required','statement','scope')), 'REGROUND_AUTHORITY_CHANGED')
+                state['direction']['context_sources']=grounding['context_sources']
             state.update(revision_reason=reason, revision_authority=decision)
             state['direction'].update(intent=brief['intent'], references=brief['references'], protected=brief['protected'],
                                       beat_intents=brief['expert_plan']['beat_intents'],
@@ -695,7 +709,7 @@ class Controller:
             state['planning_engine'] = pp.engine_digest()
             state.pop('decision', None)
             return self._planning_repair(state, 'GROUNDING', [reason])
-        return self._change(task, event_id, 'revise', [brief, decision, reason], apply)
+        return self._change(task, event_id, 'revise', [brief, decision, reason, grounding], apply)
 
     def reground(self, task, context_sources, knowledge_task, knowledge_digest, reason, event_id):
         """Trusted source reconciliation, not a model response or new creative authority.

@@ -72,6 +72,7 @@ def actions(bpy, ignore=None):
 def phase_spec(phase):
     if phase=='preparation':return ('370 contact-solved saddle cloth',[306,300,308,313,314]+[f for f in range(276,315) if f not in (306,300,308,313,314)])
     if phase=='apex':return ('371 apex contact-solved saddle cloth',[323,333,315,319,328]+[f for f in range(315,334) if f not in (323,333,315,319,328)])
+    if phase=='landing':return ('373 landing contact-solved saddle cloth',[343,344,346,334,367]+[f for f in range(334,368) if f not in (343,344,346,334,367)])
     raise ValueError('PAD371_UNKNOWN_PHASE')
 
 
@@ -84,6 +85,7 @@ def run(bpy, out, phase='preparation'):
     frame_owner = bpy.data.objects['horse.rig']
     name,frames=phase_spec(phase)
     if phase=='apex' and (not scene.get('apex371') or bpy.data.objects.get('370 contact-solved saddle cloth') is None):raise ValueError('PAD371_APEX_SOURCE')
+    if phase=='landing' and not scene.get('landing373'):raise ValueError('PAD373_LANDING_SOURCE')
     if bpy.data.objects.get(name) is not None: raise ValueError('PAD370_ALREADY_SOLVED')
     # Use the actual evaluated fit at every frame; no deform-binding seed.
     # Original pad and all original actions stay untouched.
@@ -92,11 +94,11 @@ def run(bpy, out, phase='preparation'):
     solid = next(m for m in pad.modifiers if m.type == 'SOLIDIFY')
     if wrap.target != horse: raise ValueError('PAD370_HORSE_OWNER')
     ignore={}
-    if phase=='apex' and pad.animation_data and pad.animation_data.action:ignore[pad.animation_data.action.name]={'hide_render'}
+    if phase in ('apex','landing') and pad.animation_data and pad.animation_data.action:ignore[pad.animation_data.action.name]={'hide_render'}
     entry_frame=scene.frame_current
     accepted_visibility={}
-    if phase=='apex':
-        for f in range(276,315):
+    if phase in ('apex','landing'):
+        for f in range(276,334 if phase=='landing' else 315):
             scene.frame_set(f);bpy.context.view_layer.update();accepted_visibility[f]=bool(pad.hide_render)
     original = prep.frozen(bpy); original_actions = actions(bpy,ignore)
     saved = (wrap.show_viewport, wrap.show_render, solid.show_viewport, solid.show_render,
@@ -237,6 +239,13 @@ def run(bpy, out, phase='preparation'):
         motion = module('nihang_motion')
         for fc in motion.curves(solved.data.shape_keys):
             for k in fc.keyframe_points: k.interpolation = 'LINEAR'
+        if phase=='landing':
+            visibility=module('nihang_landing373').visibility_keys(accepted_visibility,{334:True,367:True,368:True})
+            for ob,values in [(pad,visibility),(solved,[(333,True),(334,False),(367,False),(368,True)])]:
+                for f,value in values:ob.hide_render=value;ob.keyframe_insert('hide_render',frame=f)
+                for fc in motion.curves(ob):
+                    if fc.data_path=='hide_render':
+                        for key in fc.keyframe_points:key.interpolation='CONSTANT'
         if phase=='apex':
             for ob,values in [(pad,module('nihang_apex371').visibility_keys(accepted_visibility,{315:True,333:True,334:True})),
                               (solved,[(314,True),(315,False),(333,False),(334,True)])]:
@@ -244,7 +253,7 @@ def run(bpy, out, phase='preparation'):
                 for fc in motion.curves(ob):
                     if fc.data_path=='hide_render':
                         for key in fc.keyframe_points:key.interpolation='CONSTANT'
-        if phase=='apex':
+        if phase in ('apex','landing'):
             for f,expected in accepted_visibility.items():
                 scene.frame_set(f);bpy.context.view_layer.update()
                 if bool(pad.hide_render)!=expected:raise ValueError('PAD371_ACCEPTED_VISIBILITY_CHANGED')
@@ -253,7 +262,7 @@ def run(bpy, out, phase='preparation'):
             raise ValueError('PAD370_ORIGINAL_ACTION_CHANGED')
         added = set(after_actions)-set(original_actions)
         expected_actions={solved.data.shape_keys.animation_data.action.name}
-        if phase=='apex':expected_actions.add(solved.animation_data.action.name)
+        if phase in ('apex','landing'):expected_actions.add(solved.animation_data.action.name)
         if added != expected_actions: raise ValueError('PAD370_CACHE_ACTION_SCOPE')
         after = prep.frozen(bpy)
         if any(after.get(n) != h for n, h in original.items()) or set(after)-set(original) != {name}:

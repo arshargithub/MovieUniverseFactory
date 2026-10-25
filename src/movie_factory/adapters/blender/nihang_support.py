@@ -165,10 +165,13 @@ def apply_pose(bpy, edit, baseline=None):
         wrist=(feet[side]['forefoot_fk'].translation+placement).lerp(folded_wrist,fold)
         down=(feet[side]['f_toe_fk'].translation-feet[side]['forefoot_fk'].translation).normalized()
         down=down.lerp(direction((0,.15,-math.sqrt(1-.15**2))),fold).normalized()
+        curl=leg.get('curl',0.);toe_angle=leg.get('toe',0.)
+        axis=direction((1,0,0))
+        if curl:down=Quaternion(axis,curl)@down
         arrival=leg.get('arrival_target')
         if arrival is not None:
             toe_delta=feet[side]['f_hoof'].translation-feet[side]['f_toe_fk'].translation
-            toe_delta=Quaternion(direction((1,0,0)),.25*fold)@toe_delta
+            toe_delta=Quaternion(axis,.25*fold+curl+toe_angle)@toe_delta
             wrist=Vector(arrival)-down*length('forefoot_fk'+suffix)-toe_delta
         # A straight interpolation of world-space wrist targets can leave the
         # reachable sphere as the shoulder rises on its arc. In flight only,
@@ -192,7 +195,7 @@ def apply_pose(bpy, edit, baseline=None):
         segment('forearm_fk'+suffix,elbow,wrist)
         segment('forefoot_fk'+suffix,wrist,fetlock)
         toe=feet[side]['f_toe_fk'].copy(); toe.translation=fetlock
-        toe = Matrix.Translation(fetlock) @ Quaternion(direction((1,0,0)), .25*fold).to_matrix().to_4x4() @ Matrix.Translation(-fetlock) @ toe
+        toe = Matrix.Translation(fetlock) @ Quaternion(axis, .25*fold+curl+toe_angle).to_matrix().to_4x4() @ Matrix.Translation(-fetlock) @ toe
         set_world('f_toe_fk'+suffix,toe)
         hoof=toe @ feet[side]['f_toe_fk'].inverted() @ feet[side]['f_hoof']
         set_world('f_hoof'+suffix,hoof)
