@@ -2714,6 +2714,25 @@
         "results/sikh372/DIRECTOR_AV_QUEUE.json",
         "results/sikh372/OPERATING_JOBS75.json"
       ]
+    },
+    {
+      "event_id": "sikh374-appearance-internal-rejection",
+      "recorded_date": "2026-10-25",
+      "reported_model": "Sol6.1",
+      "reported_reasoning_effort": "high",
+      "setting_attribution": "Director359/360 policy; no new model-switch report or runtime verification",
+      "runtime_verified": false,
+      "controlled_model_comparison": false,
+      "outcome": "LANDING80_DIRECTOR_ACCEPTED_TORSO128_INTERNAL_FAIL_ALLOWANCE_EXHAUSTED",
+      "observation": "Five total124..128 original appearance cycles.124 source diagnosis,125\u2013127 proxy guards rejected before save,128 actual final-surface check passes5poses but15-image review rejects descent skin web. Existing motion preserved; new full clip/92frame contact not run. Method/measurement errors do not establish Sol inferiority or warrant automatic Astra.",
+      "engineering_subscription_usage": null,
+      "engineering_cost_usd": null,
+      "new_external_paid_provider_calls": 0,
+      "evidence": [
+        "results/sikh374/LANDING_ACCEPTANCE.json",
+        "results/sikh374/INTERNAL_REJECTION128.json",
+        "results/sikh374/LEARNINGS.md"
+      ]
     }
   ],
   "recording_mode": "manual_evidence_backfill_and_future_event_capture",
