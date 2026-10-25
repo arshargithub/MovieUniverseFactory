@@ -1,0 +1,61 @@
+{
+  "run_digest": "6548dc8cbc6ab1a3302c64730a18244966b0cfb2144fc18eefd3149a44c3e932",
+  "verdict": "PASS",
+  "observation": "Actual74newcachebuilt viaapex_envelope,19framesfinalsurfacechecks twice agree min3.9996mm andzero below2mm. Originalmotion/geometrypreserved. Hardcoded same71cache reportwording correctedbyCONTACT_PROVENANCE74; rawreceiptkept, actualrecipeprovesnewcache. No generalphysicsclaim.",
+  "comparison": "Actual returned source/report/image availability versus admitted recipe. Artistic unit criteria and full-speed AV remain separately NOT_TESTED.",
+  "open_defects": [],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh372-motion-c74-contact/snapshot.json",
+      "sha256": "443ea4d61b60e13d3e4e11ac1359d08558ca349d47335211b52869da3ba511db"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh372-motion-c74-contact/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh372-motion-c74-contact/script-diagnostics.json",
+      "sha256": "4e1205462c9c8153ef4f4d15eba35ea263f6079e3b74341771bbb12e2f41f34c"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh372-motion-c74-contact/scene.blend",
+      "sha256": "420dea9b888ed211b535cea94cda03516fb615df2a9f9c6b70260d8f9f62e1db"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh372-motion-c74-contact/patch-evidence.json",
+      "sha256": "72a1b278e48fdc99ece6af1ef83f3d7f82f081b0e637535f160b571d69831665"
+    }
+  },
+  "retrospective_observations": [
+    {
+      "requirement": "rise",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "crest",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "balance",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "continuity",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "evidence",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "director_motion",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    }
+  ]
+}

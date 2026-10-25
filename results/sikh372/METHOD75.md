@@ -1,0 +1,8 @@
+#75 readonly completion evidence
+74fourpairedposes passscopedposeproof; new19cachecontact min3.9996mm andzero
+failedsamples. AddactualfinalsideAFTERcache becauseearlysideshowedlivepad.
+Reuseexact74contactnative, notanothermotionvariant. Readonlysave/source, finalside
+andfreshprefix controls thenfull19chronology; retain74reverse/story evidence
+boundtosameparent.39acceptedimages onlyifsource/camera/hash/pixelchecks pass.
+Same75/max76, onefurthercorrectionremains. No newmotion/look/landing/spend.
+KnownmetadatareportwordingcorrectedbyCONTACT_PROVENANCE74, rawreceiptpreserved.

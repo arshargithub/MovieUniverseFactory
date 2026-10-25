@@ -1,0 +1,48 @@
+{
+  "run_digest": "e79a5a34e311c3f4bebd96bc42bb13998b7a1d00d23fdf3edd6636e1f5aec59f",
+  "verdict": "FAIL",
+  "observation": "Actualfourpairedreferenceposes: overcurledlowerlegs andprematurelyheldlowercrest. No contact/fullrenderadmission.",
+  "comparison": "Reference16.633..17.367 bodycontinueshigher andfeetremainmoreopen; staticcandidate323/333fails.",
+  "open_defects": [
+    "Overtightforefoottuck",
+    "Prematurebodyholdbeforetrueapex"
+  ],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh372-motion-c72-early_oblique/snapshot.json",
+      "sha256": "7ca5d025446e40ca7cf09ec959bc31af7da182f64a3f17566407246669b4e984"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh372-motion-c72-early_oblique/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh372-motion-c72-early_oblique/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh372-motion-c72-early_oblique/frame.png",
+      "sha256": "4ee34878408187a4d49e0f7842201070f9ca593fd8c39528f02fc816a0642b7d"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh372-motion-c72-early_oblique/frames.json",
+      "sha256": "735fc0631dd875094e56dfa5f5fd591d1105ae3b12e292c749938cb7bb75ace1"
+    },
+    "frame_315": {
+      "path": ".runtime/factory-native/sikh372-motion-c72-early_oblique/frame-0315.png",
+      "sha256": "f156d91428d42f55a18fe012c9afe92a1b2b97fd6a55d590452b77d6c5785018"
+    },
+    "frame_319": {
+      "path": ".runtime/factory-native/sikh372-motion-c72-early_oblique/frame-0319.png",
+      "sha256": "eb24b6f3b9043d2e3f2d2aea7a6caea9b42dd6255312717cb0f73966d8efd4e0"
+    },
+    "frame_323": {
+      "path": ".runtime/factory-native/sikh372-motion-c72-early_oblique/frame-0323.png",
+      "sha256": "3ff3a0a4db8523a8877f2fcd93c3b1ee62053e84199e97ff1ccd530d8ecf6e58"
+    },
+    "frame_333": {
+      "path": ".runtime/factory-native/sikh372-motion-c72-early_oblique/frame.png",
+      "sha256": "4ee34878408187a4d49e0f7842201070f9ca593fd8c39528f02fc816a0642b7d"
+    }
+  }
+}

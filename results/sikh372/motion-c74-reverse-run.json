@@ -1,0 +1,54 @@
+{
+  "id": "sikh372-motion-c74-reverse",
+  "task": "sikh335-continuous-performance",
+  "step": "reverse",
+  "cycle": 74,
+  "fingerprint": "9b9f2fb1d01e498d54bdd6d7aec682f70a0dd9c6a0039f53526e9e51174dedfd",
+  "parent": {
+    "path": ".runtime/factory-native/sikh372-motion-c74-contact/scene.blend",
+    "sha256": "420dea9b888ed211b535cea94cda03516fb615df2a9f9c6b70260d8f9f62e1db"
+  },
+  "job_digest": "66682f9d5a8a5ec7f3256ce1ac42da84cc7464f9c02d4dcfff8ed8fab46cca38",
+  "handler_digest": "88e76964295496f6cd85e2638e9e372075ab80caed02d2b5797aaed519c2364e",
+  "status": "RETURNED",
+  "timeout_seconds": 600,
+  "artifacts": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh372-motion-c74-reverse/snapshot.json",
+      "sha256": "443ea4d61b60e13d3e4e11ac1359d08558ca349d47335211b52869da3ba511db"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh372-motion-c74-reverse/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh372-motion-c74-reverse/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh372-motion-c74-reverse/frame.png",
+      "sha256": "e30bc80863999047004287dcf1d0c131c84021316d01a2b458ac16fc125a17e1"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh372-motion-c74-reverse/frames.json",
+      "sha256": "5ee49aae4fdfaaab94b9d87a9bc562e0913e89cf40f2da76a4d51bca3997afd4"
+    },
+    "frame_315": {
+      "path": ".runtime/factory-native/sikh372-motion-c74-reverse/frame-0315.png",
+      "sha256": "9373ed9e727e824e9b48172453b2cffdc28c575f0d36a64487b892c9ad7d9da3"
+    },
+    "frame_323": {
+      "path": ".runtime/factory-native/sikh372-motion-c74-reverse/frame-0323.png",
+      "sha256": "d1f2d1fe398a75805ae970b41bc52f90d2e9570f0c972d15a5ed703fd36f1fce"
+    },
+    "frame_333": {
+      "path": ".runtime/factory-native/sikh372-motion-c74-reverse/frame.png",
+      "sha256": "e30bc80863999047004287dcf1d0c131c84021316d01a2b458ac16fc125a17e1"
+    }
+  },
+  "dependencies": {},
+  "recipe": {
+    "path": "results/sikh372/motion-c74-reverse-recipe.json",
+    "sha256": "42f8b6992fc1423653c52c0ad54042ce64799a2a2cbef8cf2caed095203bd64e"
+  }
+}

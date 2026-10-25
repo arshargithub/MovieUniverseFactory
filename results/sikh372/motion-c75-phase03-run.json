@@ -1,0 +1,54 @@
+{
+  "id": "sikh372-motion-c75-phase03",
+  "task": "sikh335-continuous-performance",
+  "step": "phase03",
+  "cycle": 75,
+  "fingerprint": "2513b54459bfe2873ae2ec28f09c8596480073dc465bcaf7aecb4b2aacfd4499",
+  "parent": {
+    "path": ".runtime/factory-native/sikh372-motion-c75-source/scene.blend",
+    "sha256": "9633bf00d5cabdedde370c2195729b9f1e5190e681130d75c2c9a6187b8701ca"
+  },
+  "job_digest": "713146d309f84fc95a196c8f629c09fac879351c51f4a7cd5f5f7ee316e5bc86",
+  "handler_digest": "88e76964295496f6cd85e2638e9e372075ab80caed02d2b5797aaed519c2364e",
+  "status": "RETURNED",
+  "timeout_seconds": 600,
+  "artifacts": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh372-motion-c75-phase03/snapshot.json",
+      "sha256": "443ea4d61b60e13d3e4e11ac1359d08558ca349d47335211b52869da3ba511db"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh372-motion-c75-phase03/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh372-motion-c75-phase03/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh372-motion-c75-phase03/frame.png",
+      "sha256": "65684f7ce9e07f397eb2262cf303678aee8eaffc640045240b4e817ade23dd47"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh372-motion-c75-phase03/frames.json",
+      "sha256": "f3b7ba41a61f6033b3b36909f61f7b95dc6ec571e2b7f3d27973aac0e995009c"
+    },
+    "frame_331": {
+      "path": ".runtime/factory-native/sikh372-motion-c75-phase03/frame-0331.png",
+      "sha256": "162d218ca33e57d0049d48e5cfbe25f1ad2a80ec296211948e04cab8c121bb3e"
+    },
+    "frame_332": {
+      "path": ".runtime/factory-native/sikh372-motion-c75-phase03/frame-0332.png",
+      "sha256": "db21198a8c69a025d7b22707b305e88e1fd63cd7423931d764fcccfa30f437ce"
+    },
+    "frame_333": {
+      "path": ".runtime/factory-native/sikh372-motion-c75-phase03/frame.png",
+      "sha256": "65684f7ce9e07f397eb2262cf303678aee8eaffc640045240b4e817ade23dd47"
+    }
+  },
+  "dependencies": {},
+  "recipe": {
+    "path": "results/sikh372/motion-c75-phase03-recipe.json",
+    "sha256": "3e3759d3045b4fbcdd912c40ad4ba86cfc9b9d2b66216dd63555b1aa0cc0def3"
+  }
+}

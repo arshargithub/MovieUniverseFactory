@@ -1,0 +1,65 @@
+{
+  "status": "AWAITING_DIRECTOR_AV",
+  "policy": "Director313manualqueue; not strictdeliver receipt orproductionapproval",
+  "scope": "Horse rise/apex/briefactivehold315..333 with exactacceptedpreparation276..314 context. Landing/look/tail/flag/audio excluded.",
+  "candidate": {
+    "path": ".runtime/art-direction/sikh372-review-c75/preparation-rise-apex-hold.mp4",
+    "sha256": "89e10b5d29a7c11712a82d9627a834dea198ccac00d5e987390a7e3ef879855e"
+  },
+  "comparison": {
+    "path": ".runtime/art-direction/sikh372-review-c75/apex-comparison-three-repeats.mp4",
+    "sha256": "26f0e738e632c4056f260ba894b61186314d1461d6dbb66b85acd657b143cb2c"
+  },
+  "reference": {
+    "path": ".runtime/art-direction/series01-sikh256/references/reference-b.mov",
+    "sha256": "78d0d691e8712c02931876cf0bc405e4869de357f337f531708be7a7da4898e2"
+  },
+  "requirements": {
+    "path": "results/sikh372/final-input75.json",
+    "sha256": "d1ad4159fd85294e4d50417fed11027ce474e121202bba30dd24014a5c08ec52"
+  },
+  "protected_masters": {
+    "path": "results/sikh372/PROTECTED_MASTERS.json",
+    "sha256": "29bd21f796b7caa3850ec6456b7cda60d96549ffc840686fe370f1ec9dc613bb"
+  },
+  "agent_checks": [
+    {
+      "path": "results/sikh372/FINAL_FRAME_REVIEW75.md",
+      "sha256": "452e880d56c84bfca17a0ac6070c38aeeb162444a99ce27dc32842a77459c40e"
+    },
+    {
+      "path": "results/sikh372/ENCODED_REVIEW75.md",
+      "sha256": "b9d2096a31575313810ed5f210ec24566c673d8208f537eaf5f1ea15b7f4bedc"
+    },
+    {
+      "path": "results/sikh372/SOURCE_CONTROLS75.json",
+      "sha256": "b528010fb79463ef6da944a6a2e7383cbf25b5d32f3041830453ca1d798b51de"
+    },
+    {
+      "path": "results/sikh372/CONTACT_SOURCE75.json",
+      "sha256": "3758f8eb295dcc28a482d8af221e81e9b07f84fcd293d8b6db6b586f39a89bad"
+    },
+    {
+      "path": "results/sikh372/SOURCE_SAVE75.json",
+      "sha256": "e017c7a41d1003fcca2fe23d88c07ffd340b9cc40e76355e1b3d30221621fe8a"
+    }
+  ],
+  "pending_human_judgments": [
+    "Normal-time power/weight andfluidity ofcontinuedrise/apex",
+    "Naturalness/duration ofbriefactivehold andunequalforelegadjustments",
+    "Temporalcloth/contact readandoverallreferencefaithfulness"
+  ],
+  "technical_limits": [
+    "Integerframe finalvertices/trianglecentre contact, notcontinuous/subframecollision orclothphysics",
+    "Frozenhorse/leaderlook/chest/tail/flag/oldFX andlaterlanding unqualified",
+    "HistoricalstrictreplayFAIL/global307STALE unchanged; no new strictdeliverreceipt"
+  ],
+  "direct_motion_capability": false,
+  "direct_audio_capability": false,
+  "production_approved": false,
+  "director_approved": false,
+  "task": "sikh335-continuous-performance",
+  "cycle": 75,
+  "max_corrections": 76,
+  "remaining_current_scope_corrections": 1
+}

@@ -1,0 +1,52 @@
+{
+  "run_digest": "23d0a9e907f760f45ba51204a76a6f86bec2410e480c624a4aa00f29126d64db",
+  "verdict": "PASS",
+  "observation": "Actualfourpairedposesviewed. Tallercontinuedcrest, moreopenunequalforelimbs;72overcurl gone, no obviousbrokenfoot/chestintersection. Wholehead/feet/seat visible. Livepad/unseen/fullspeedchecksremainpending.",
+  "comparison": "Actualreference16.633..17.367 wholebody/wholelimbchain versus74sideANDoblique; admissiontointegrationonly, notAVapproval.",
+  "open_defects": [],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh372-motion-c74-early_side/snapshot.json",
+      "sha256": "eafe050b063b7790139396bf8022dc79638d47d1d52dfecf3c280cf1345e4732"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh372-motion-c74-early_side/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh372-motion-c74-early_side/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh372-motion-c74-early_side/frame.png",
+      "sha256": "6835a36392822a07b0045d680caa9376c396a3e90383e84ac79e961324605224"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh372-motion-c74-early_side/frames.json",
+      "sha256": "9ddd677640752bdd6156d4840b069c061b0c9c0856e7af269eb9f51fe4e155e9"
+    },
+    "frame_315": {
+      "path": ".runtime/factory-native/sikh372-motion-c74-early_side/frame-0315.png",
+      "sha256": "7d6da08a20d2e7f353e906a337aec30f002b4c9a608dbe8db1e11b293e1e7ea6"
+    },
+    "frame_319": {
+      "path": ".runtime/factory-native/sikh372-motion-c74-early_side/frame-0319.png",
+      "sha256": "2b4cbdb82e10b7d4809d094567c1235eed77b3761222cba0e968b42fef27aa12"
+    },
+    "frame_323": {
+      "path": ".runtime/factory-native/sikh372-motion-c74-early_side/frame-0323.png",
+      "sha256": "1f13c7ab0fc6f10b26ca566ca2fc42625343544cde4786399cef8890e622c339"
+    },
+    "frame_333": {
+      "path": ".runtime/factory-native/sikh372-motion-c74-early_side/frame.png",
+      "sha256": "6835a36392822a07b0045d680caa9376c396a3e90383e84ac79e961324605224"
+    }
+  },
+  "retrospective_observations": [
+    {
+      "requirement": "director_motion",
+      "status": "NOT_TESTED",
+      "observation": "Staticpairedposeproofonly, nofullspeedjudgment."
+    }
+  ]
+}
