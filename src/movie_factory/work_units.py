@@ -18,7 +18,20 @@ def validate(brief):
         require(nonempty(unit.get(key)), 'UNIT_FIELD:' + key)
     require(isinstance(unit.get('primary_outcome'), str), 'ONE_PRIMARY_OUTCOME')
     reqs, refs = rows(brief['requirements']), rows(brief['references'])
-    require(unit.get('reference') in refs and refs[unit['reference']]['role'] == 'faithful_motion', 'UNIT_REFERENCE')
+    discipline=unit.get('discipline','motion')
+    require(discipline in {'motion','appearance'}, 'UNIT_DISCIPLINE')
+    roles={'faithful_motion'} if discipline=='motion' else {'directional_design','accepted_quality','exact_asset'}
+    require(unit.get('reference') in refs and refs[unit['reference']]['role'] in roles, 'UNIT_REFERENCE')
+    if discipline=='appearance':
+        proof=unit.get('appearance_proof',{})
+        poses,views=proof.get('poses'),proof.get('views')
+        require(isinstance(poses,list) and len(poses)>=3 and len(set(poses))==len(poses)
+                and all(type(f) is int and 252<=f<=441 for f in poses), 'UNIT_APPEARANCE_POSES')
+        require(isinstance(views,list) and len(views)>=3 and len(set(views))==len(views)
+                and all(nonempty(v) for v in views), 'UNIT_APPEARANCE_VIEWS')
+        require(proof.get('motion_source') in brief['source_bindings'].values(), 'UNIT_APPEARANCE_MOTION_SOURCE')
+        require(isinstance(proof.get('interfaces'),list) and len(proof['interfaces'])>=3
+                and all(nonempty(v) for v in proof['interfaces']), 'UNIT_APPEARANCE_INTERFACES')
     allowed, frozen = unit.get('allowed_domains'), unit.get('frozen_domains')
     require(isinstance(allowed, list) and allowed and all(nonempty(v) for v in allowed), 'UNIT_ALLOWED_DOMAINS')
     require(isinstance(frozen, list) and frozen and all(nonempty(v) for v in frozen), 'UNIT_FROZEN_DOMAINS')
@@ -49,6 +62,12 @@ def validate(brief):
     return unit
 
 
+def appearance_cells(unit):
+    if unit.get('discipline','motion')!='appearance':return set()
+    p=unit['appearance_proof']
+    return {str(f)+':'+v for f in p['poses'] for v in p['views']}
+
+
 def native(state, recipe):
     unit = validate(state['brief'])
     if not unit:
@@ -68,6 +87,9 @@ def execution(brief, result):
     criteria = rows(unit['positive_criteria'])
     require(set(use.get('criteria', {})) == set(criteria) and all(nonempty(x) for x in use['criteria'].values()), 'UNIT_EXECUTION_COVERAGE')
     require(set(use.get('changed_domains', [])) <= set(unit['allowed_domains']), 'UNIT_OUTSIDE_DOMAIN')
+    if unit.get('discipline')=='appearance':
+        coverage=use.get('pose_views',{})
+        require(set(coverage)==appearance_cells(unit) and all(nonempty(v) for v in coverage.values()), 'UNIT_APPEARANCE_EXECUTION_COVERAGE')
     require(set(use.get('boundaries', {})) == set(rows(unit['boundaries'])) and all(nonempty(x) for x in use['boundaries'].values()), 'UNIT_EXECUTION_BOUNDARIES')
 
 
@@ -81,8 +103,12 @@ def review(brief, result, evidence):
     require(set(checks) == set(rows(unit['positive_criteria'])), 'UNIT_REVIEW_COVERAGE')
     boundaries = data.get('boundaries', {})
     require(set(boundaries) == set(rows(unit['boundaries'])), 'UNIT_REVIEW_BOUNDARIES')
+    posed={}
+    if unit.get('discipline')=='appearance':
+        posed=data.get('pose_views',{})
+        require(set(posed)==appearance_cells(unit), 'UNIT_APPEARANCE_REVIEW_COVERAGE')
     failed, missing = [], []
-    for key, row in {**checks, **boundaries}.items():
+    for key, row in {**checks, **boundaries, **posed}.items():
         require(row.get('status') in {'PASS', 'FAIL', 'NOT_RUN'}, 'UNIT_REVIEW_STATUS')
         require(nonempty(row.get('observation')) and nonempty(row.get('comparison')), 'UNIT_POSITIVE_COMPARISON')
         ids = row.get('evidence', [])

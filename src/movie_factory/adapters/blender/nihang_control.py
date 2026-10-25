@@ -29,7 +29,7 @@ def validate(recipe):
         if type(recipe[key]) is not int or not lo <= recipe[key] <= hi:
             raise ValueError('NIHANG_RECIPE_BOUND:' + key)
     if recipe['operation']=='nihang_frames':
-        if not isinstance(recipe.get('view','production'),str) or recipe.get('view','production') not in ({'horse_reverse371','horse_phase367','horse_side367','flag363','flag363_reverse','production','horse_chest','horse_chest_side','horse_chest_no_corrective','horse_chest_side_no_corrective','leader_right_contact','leader_left_contact','horse_head','horse_head_reverse','leader_front','leader_reverse','leader_contact','leader_anatomy','leader_face','leader_face_left','leader_face_right','leader_face_profile','crowd_front','crowd_reverse','neutral_front','neutral_back','neutral_side'} | ANATOMY_VIEWS):
+        if not isinstance(recipe.get('view','production'),str) or recipe.get('view','production') not in ({'horse_form_front374','horse_form_side374','horse_form_reverse374','horse_reverse371','horse_phase367','horse_side367','flag363','flag363_reverse','production','horse_chest','horse_chest_side','horse_chest_no_corrective','horse_chest_side_no_corrective','leader_right_contact','leader_left_contact','horse_head','horse_head_reverse','leader_front','leader_reverse','leader_contact','leader_anatomy','leader_face','leader_face_left','leader_face_right','leader_face_profile','crowd_front','crowd_reverse','neutral_front','neutral_back','neutral_side'} | ANATOMY_VIEWS):
             raise ValueError('NIHANG_DIAGNOSTIC_VIEW')
         frames=recipe['frames']
         if (not isinstance(frames,list) or not 1<=len(frames)<=16 or
@@ -42,6 +42,16 @@ def validate(recipe):
 def diagnostic_camera(bpy,view):
     """Temporary evidence camera only. No production-camera key edits or save."""
     from mathutils import Vector
+    if view in {'horse_form_front374','horse_form_side374','horse_form_reverse374'}:
+        scene=bpy.context.scene;frame=scene.frame_current;scene.frame_set(283);bpy.context.view_layer.update();rig=bpy.data.objects['horse.rig'];target=rig.matrix_world@Vector((0,0,1.6));rot=rig.matrix_world.to_quaternion();scene.frame_set(frame);bpy.context.view_layer.update()
+        data=bpy.data.cameras.new('374 wholehorse form diagnostic');data.type='ORTHO';data.ortho_scale=4.8
+        camera=bpy.data.objects.new(data.name,data);scene.collection.objects.link(camera)
+        offset={'horse_form_front374':(0,-5,.6),'horse_form_side374':(5,0,.6),'horse_form_reverse374':(-4,-4,.6)}[view]
+        camera.location=target+rot@Vector(offset);camera.rotation_euler=(target-camera.location).to_track_quat('-Z','Y').to_euler()
+        for label,offset,power in [('key',(3,-4,4),700),('fill',(-4,-2,2),450)]:
+            light=bpy.data.lights.new('374 form diagnostic '+label,'AREA');light.energy=power;light.shape='DISK';light.size=4
+            ob=bpy.data.objects.new(light.name,light);scene.collection.objects.link(ob);ob.location=target+rot@Vector(offset);ob.rotation_euler=(target-ob.location).to_track_quat('-Z','Y').to_euler()
+        return camera
     if view in {'horse_reverse371','horse_phase367','horse_side367'}:
         scene=bpy.context.scene;frame=scene.frame_current;scene.frame_set(283);bpy.context.view_layer.update();rig=bpy.data.objects['horse.rig'];target=rig.matrix_world@Vector((0,0,1.6));rot=rig.matrix_world.to_quaternion();scene.frame_set(frame);bpy.context.view_layer.update()
         data=bpy.data.cameras.new('367 stable whole horse diagnostic');data.type='ORTHO';data.ortho_scale=4.8
@@ -523,6 +533,10 @@ def run(out, job):
                 scene.camera=original_camera
                 if temp:
                     data=temp.data;bpy.data.objects.remove(temp,do_unlink=True);bpy.data.cameras.remove(data)
+                if view.startswith('horse_form_'):
+                    for ob in list(bpy.data.objects):
+                        if ob.name.startswith('374 form diagnostic '):
+                            data=ob.data;bpy.data.objects.remove(ob,do_unlink=True);bpy.data.lights.remove(data)
                 if view.startswith('leader_face'):
                     for ob in list(bpy.data.objects):
                         if ob.name.startswith('353 face diagnostic fill'):

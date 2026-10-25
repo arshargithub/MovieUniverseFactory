@@ -27,7 +27,13 @@ def validate(recipe):
         name = edit.get('target')
         if not isinstance(name, str) or not name or len(name) > 128 or any(c in name for c in '/\\\n'):
             raise ValueError('PATCH_TARGET')
-        if kind == 'mounted_padcontact369':
+        if kind in {'mounted_horseform374_sculpt','mounted_horseform374_contact'}:
+            import importlib.util
+            spec=importlib.util.spec_from_file_location('mf_sculpt374',Path(__file__).with_name('nihang_sculpt374.py'));module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module);module.validate(edit)
+        elif kind == 'mounted_horseform374_inspect':
+            import importlib.util
+            spec=importlib.util.spec_from_file_location('mf_form374',Path(__file__).with_name('nihang_form374.py'));module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module);module.validate(edit)
+        elif kind == 'mounted_padcontact369':
             import importlib.util
             spec=importlib.util.spec_from_file_location('mf_pad369',Path(__file__).with_name('nihang_padcontact369.py'));module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module);module.validate(edit)
         elif kind in {'mounted_crest372','mounted_crest372_contact'}:
@@ -108,7 +114,9 @@ def apply(bpy, recipe,diagnostic_dir=None):
     # named derivative; it cannot overwrite an accepted existing object.
     names = set()
     for edit in recipe['edits']:
-        if edit['kind']=='mounted_padcontact369':
+        if edit['kind'] in {'mounted_horseform374_inspect','mounted_horseform374_sculpt','mounted_horseform374_contact'}:
+            if bpy.data.objects.get('horse') is None:raise ValueError('FORM374_SOURCE_OWNER')
+        elif edit['kind']=='mounted_padcontact369':
             if bpy.data.objects.get('horse') is None or bpy.data.objects.get('fitted saddle blanket292') is None:raise ValueError('PAD369_OWNERS')
         elif edit['kind'] in {'mounted_landing373','mounted_landing373_contact','mounted_crest372','mounted_crest372_contact','mounted_apex371','mounted_prep367','mounted_prepaudit367'}:
             if bpy.data.objects.get('horse.rig') is None or bpy.data.objects.get('MF coherent Nihang rig') is None:raise ValueError('PREP367_OWNERS')
@@ -133,7 +141,15 @@ def apply(bpy, recipe,diagnostic_dir=None):
             names.add(edit['target'])
     support_evidence=[]
     for edit in recipe['edits']:
-        if edit['kind']=='mounted_padcontact369':
+        if edit['kind'] in {'mounted_horseform374_sculpt','mounted_horseform374_contact'}:
+            import importlib.util
+            spec=importlib.util.spec_from_file_location('mf_sculpt374',Path(__file__).with_name('nihang_sculpt374.py'));module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+            support_evidence.append({'sculpt374':module.run(bpy,diagnostic_dir,edit)})
+        elif edit['kind']=='mounted_horseform374_inspect':
+            import importlib.util
+            spec=importlib.util.spec_from_file_location('mf_form374',Path(__file__).with_name('nihang_form374.py'));module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+            support_evidence.append({'form374':module.run(bpy,diagnostic_dir,edit)})
+        elif edit['kind']=='mounted_padcontact369':
             import importlib.util
             spec=importlib.util.spec_from_file_location('mf_pad369',Path(__file__).with_name('nihang_padcontact369.py'));module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
             support_evidence.append({'padcontact369':module.run(bpy,diagnostic_dir,edit)})
