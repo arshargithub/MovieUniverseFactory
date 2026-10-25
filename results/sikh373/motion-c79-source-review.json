@@ -1,0 +1,57 @@
+{
+  "run_digest": "bf51a060e907bc00ddfa0d690c8418d294389115fe5bde399709c964def37dc8",
+  "verdict": "PASS",
+  "observation": "Source-save/reopen returned at367; snapshot matchesknown78landing source selected367, no pose or geometry authoring; readyforfourphaseproofonly.",
+  "comparison": "Actual returned source/report/image availability versus admitted recipe. Artistic unit criteria and full-speed AV remain separately NOT_TESTED.",
+  "open_defects": [],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh373-motion-c79-source/snapshot.json",
+      "sha256": "a5cb45d540e6708d558edf1a80db1f2358576b1ef56a2ec0484ec42bda9083d6"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh373-motion-c79-source/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh373-motion-c79-source/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh373-motion-c79-source/scene.blend",
+      "sha256": "6c9d47925ce78a7977caf5e1c0d7d71d496ca7e13ff24ccf6c3fa4a7582e5219"
+    }
+  },
+  "retrospective_observations": [
+    {
+      "requirement": "descent",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "impact",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "balance",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "continuity",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "evidence",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "director_motion",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    }
+  ]
+}

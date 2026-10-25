@@ -1,0 +1,58 @@
+{
+  "id": "sikh373-motion-c80-prefix",
+  "task": "sikh335-continuous-performance",
+  "step": "prefix",
+  "cycle": 80,
+  "fingerprint": "c5fc741f5cf26f829649bf0ec3134c285291447d8d8e3fa443311ee31acd3e43",
+  "parent": {
+    "path": ".runtime/factory-native/sikh373-motion-c80-contact/scene.blend",
+    "sha256": "204eea24a877219a30c7405bba178ddcff9655c30036d0c5ab218b603fc0fb44"
+  },
+  "job_digest": "fe27147e53bcd44062ad12ddab5ce3f0577ea8d959e0eef52d28b15d42658ada",
+  "handler_digest": "9124bcc964b06d6bfbad926172cd0dfb3ecc2684323311b02c241f91b8dd4f8a",
+  "status": "RETURNED",
+  "timeout_seconds": 600,
+  "artifacts": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh373-motion-c80-prefix/snapshot.json",
+      "sha256": "e8373a7d08dab22f9a9ba466424f33d658318570043abe84404b5e1bc283f6b8"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh373-motion-c80-prefix/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh373-motion-c80-prefix/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh373-motion-c80-prefix/frame.png",
+      "sha256": "aba2c5ac993f22d8dadbbf1a60f48a484abbb30c26169d3cf0227d1c5b0e548d"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh373-motion-c80-prefix/frames.json",
+      "sha256": "710107ef46866f0f639ca57b16e33bfb5e45c7605795a06bfa11dccfcd5b09ec"
+    },
+    "frame_306": {
+      "path": ".runtime/factory-native/sikh373-motion-c80-prefix/frame-0306.png",
+      "sha256": "7978c5652da81d5c003100c923cbf79a64221b61172b510f888524d4a5a61c26"
+    },
+    "frame_314": {
+      "path": ".runtime/factory-native/sikh373-motion-c80-prefix/frame-0314.png",
+      "sha256": "ede88cb0edb07df8bd52dce8b04bc7de59e3756f5db39bcf15ca44d735f37185"
+    },
+    "frame_333": {
+      "path": ".runtime/factory-native/sikh373-motion-c80-prefix/frame-0333.png",
+      "sha256": "f94b139a91e77acca831f1573c561e2ea062b79e6ae9741ea6f5a3449d61f3fe"
+    },
+    "frame_367": {
+      "path": ".runtime/factory-native/sikh373-motion-c80-prefix/frame.png",
+      "sha256": "aba2c5ac993f22d8dadbbf1a60f48a484abbb30c26169d3cf0227d1c5b0e548d"
+    }
+  },
+  "dependencies": {},
+  "recipe": {
+    "path": "results/sikh373/motion-c80-prefix-recipe.json",
+    "sha256": "f36a183965d7dcf628e13d4b42ef2baa035f221d8a1e51acd8c395062950bd8a"
+  }
+}

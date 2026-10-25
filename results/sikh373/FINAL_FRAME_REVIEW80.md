@@ -1,0 +1,15 @@
+#80 scoped final frame/source review
+
+Actual scope: horse landing334..367, with accepted276..333 preparation/rise/crest context. Five cycles76..80 used; no full character, filmshot, full Sikh sequence or release pass.
+
+Inspected all34new chronological images in phase01/02/03 sheets, four actual reference/side/oblique phase pairs, final-after-cache side333335339343346353367 and reverse339343346367, plus production and fresh prefix controls. Also inspected13decoded candidate frames and6decoded comparison frames. No direct-motion or listening capability is claimed.
+
+-334..336 continues the accepted crest without an observed pose/cache discontinuity.337..341 deploys the forelimbs while trunk and neck descend, with sagittal feet rather than outward hoof rotation.
+-342 left and343 right forehoof contacts are followed by344..346 compression;347..357 recovers,358..367 settles with planted feet. Actual visible-hoof vertical steps keep accelerating into contact (lastabout7.98m/s, previousabout7.10m/s); planted endpoint errors below0.012mm. This is bounded kinematic evidence, not a measured biological-force simulation or full-speed perceptual verdict.
+-The80 neck/poll correction keeps the head higher than rejected79 through contact/compression. Compare actual reference17.933/18.000/18.233/18.333. Reference slope and camera differ, so world stance and projection are adapted.18.133 is not misrepresented as proven support.
+-The rider remains carried at the pelvis; seat/rein/bit/spear interfaces show no new frame-visible separation in these controls. The native solve checks fixed-length limb reach and neck segments. Final saddle cloth is the NEW334..367 cache, all final-thickness vertices/triangle centres sampled against actual render-level horse; minimum clearance2.1687mm. Final side/reverse controls show no new cloth spike or large visible gap.
+-All58accepted276..333 evaluated poses and scalar tracks remain exact in the primary authoring guard; cache builder preserves original motion actions/geometry and all58accepted original visibility values. Fresh306314333 controls have maximum pixel difference0; source/camera/hash controls justify58image reuse. Canonical367 pixels also match across the three new frame batches.66/75 masters remain hash-identical.
+
+The existing production-camera controls show the old crowd shot339343346 and motorcycle367. They DO NOT qualify landing shot coverage. Story camera/edit was explicitly frozen for this isolated unit; later integration must retime coverage for the accepted full rear and leader signal. This is an explicit future interface, not a successful full-sequence review.
+
+No known source/frame-visible blocker remains within the isolated landing claim. Pending Director313: normal-speed power/weight, fluidity, reference faithfulness, timing and temporal seat/cloth read. Frozen horse/leader appearance, torso/chest shape, tail/flag/oldFX, sound and crowd remain separately unapproved. Mesh/weight changes must reopen posed deformation/contact checks. Global307staleness/strict replay failure remain unchanged; no strict deliver receipt or release approval.

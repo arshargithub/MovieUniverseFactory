@@ -1,0 +1,59 @@
+{
+  "id": "sikh373-motion-c78-early_side",
+  "task": "sikh335-continuous-performance",
+  "step": "early_side",
+  "cycle": 78,
+  "fingerprint": "8dd578e15f88c56973935394f405e5f40a3e761b624141732eed88a48696de2a",
+  "parent": {
+    "path": ".runtime/factory-native/sikh373-motion-c78-prepare/scene.blend",
+    "sha256": "0325c486e52dd0655ddf94a8ba0dca50c48fc4c8b4e5e01b6b0b01f76def2017"
+  },
+  "job_digest": "9d10c0ac067946eb9b3a8406d0639f5848f18bd88d5de3d2c326dab4b105adac",
+  "handler_digest": "9124bcc964b06d6bfbad926172cd0dfb3ecc2684323311b02c241f91b8dd4f8a",
+  "status": "FAILED",
+  "timeout_seconds": 600,
+  "artifacts": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh373-motion-c78-early_side/snapshot.json",
+      "sha256": "27bc689d8fe4d8fea33def7f3460f267349740d428265daf06b82a5e193510f0"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh373-motion-c78-early_side/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh373-motion-c78-early_side/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh373-motion-c78-early_side/frame.png",
+      "sha256": "e32f7bbc3e2e5cf5328a3fa18121c42f51ed3996933373bd8d52c89b9cb22952"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh373-motion-c78-early_side/frames.json",
+      "sha256": "90ed29fbcf5af5d7da21326408cba0fc98c5352616bc67cd180e98fc46bdb835"
+    },
+    "frame_335": {
+      "path": ".runtime/factory-native/sikh373-motion-c78-early_side/frame-0335.png",
+      "sha256": "e6a1670b1afba494010d0f8350e205543ce8b307269d1ff88be3c0982193d39a"
+    },
+    "frame_339": {
+      "path": ".runtime/factory-native/sikh373-motion-c78-early_side/frame-0339.png",
+      "sha256": "4d8c9b0991303f63f876600955cd4e8b834da0aaf16302ff57f09c1acd512688"
+    },
+    "frame_343": {
+      "path": ".runtime/factory-native/sikh373-motion-c78-early_side/frame-0343.png",
+      "sha256": "3d4287426529f6fd9a37fe593fe59e45fca82aeafd6e09bf42bb94fa8669b147"
+    },
+    "frame_346": {
+      "path": ".runtime/factory-native/sikh373-motion-c78-early_side/frame.png",
+      "sha256": "e32f7bbc3e2e5cf5328a3fa18121c42f51ed3996933373bd8d52c89b9cb22952"
+    }
+  },
+  "dependencies": {},
+  "recipe": {
+    "path": "results/sikh373/motion-c78-early_side-recipe.json",
+    "sha256": "f1fcbcc59c949d3077aa265d04e46d80fded9497407eb903c3fbb4b34e4048df"
+  },
+  "error": "Blocked: NATIVE_SELECTED_STATE_DRIFT"
+}

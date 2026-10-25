@@ -1,0 +1,296 @@
+{
+  "parent": ".runtime/factory-native/sikh373-motion-c78-prepare/scene.blend",
+  "method": "Readonlycontinuedproof of valid78landing: source-save at367, allfixedview recipes include367 as source-selected anchor, pairedphaseimages thennew334..367 contactcache. No newhorse/riderauthoring.",
+  "proof": "Fourphase335339343346 sideANDoblique beforecontact/fullrender, then new34frame finalsurfacecache, finalside/reverse/story, allnewchronology with acceptedincomingandsettledhandle plus reference. No directAVclaim.",
+  "scope": "Five total landingcycles76..80, originaltask; no appearance/tail/crowd/sound/newresources.",
+  "reconciliation": "Latest373 accepts75crest andauthorizeslanding; earlierapexonlyconstraints historical. Prefix276..333exact. Unused76plus4newslots=max80, notsixcycles.",
+  "alternatives": "Oldwholeactiongenerator rejected because would overwriteacceptedprefix andinheritsweaklanding. Simpletimeremap or hoof-only ease rejected because doesnotproducecoupledbody/groundresponse.",
+  "failure": "Anyreference/frame/contact/continuityfailure staysinternal. Replanfromactualevidence underoriginal76..80cap; no automaticextension.",
+  "cause": "78pose/sourceguards pass exactly. Earlysideworkerproducedimages but bridgecorrectlyrejectedselectedstate drift: recipe346 differedfromsavedsource367. Plan79alignsreadonlyselectedanchor367 andretainsallfailedrecords.",
+  "expected": "Weightycontrolledlandingcontinuousfromapprovedrear, groundedwholechain withcrediblebody/riderresponse andnoairbraking.",
+  "steps": [
+    {
+      "id": "source",
+      "depends_on": [],
+      "recipe": {
+        "operation": "nihang_save",
+        "frame": 367,
+        "width": 432,
+        "height": 768,
+        "samples": 8
+      }
+    },
+    {
+      "id": "early_side",
+      "depends_on": [
+        "source"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 367,
+        "frames": [
+          335,
+          339,
+          343,
+          346,
+          367
+        ],
+        "view": "horse_side367",
+        "width": 640,
+        "height": 640,
+        "samples": 8
+      }
+    },
+    {
+      "id": "early_oblique",
+      "depends_on": [
+        "source"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 367,
+        "frames": [
+          335,
+          339,
+          343,
+          346,
+          367
+        ],
+        "view": "horse_phase367",
+        "width": 640,
+        "height": 640,
+        "samples": 8
+      }
+    },
+    {
+      "id": "contact",
+      "depends_on": [
+        "source",
+        "early_side",
+        "early_oblique"
+      ],
+      "recipe": {
+        "operation": "nihang_patch",
+        "frame": 367,
+        "width": 432,
+        "height": 768,
+        "samples": 8,
+        "edits": [
+          {
+            "kind": "mounted_landing373_contact",
+            "target": "mounted leader"
+          }
+        ]
+      },
+      "timeout": 1800
+    },
+    {
+      "id": "final_side",
+      "depends_on": [
+        "contact"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 367,
+        "frames": [
+          333,
+          335,
+          339,
+          343,
+          346,
+          353,
+          367
+        ],
+        "view": "horse_side367",
+        "width": 640,
+        "height": 640,
+        "samples": 8
+      }
+    },
+    {
+      "id": "reverse",
+      "depends_on": [
+        "contact"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 367,
+        "frames": [
+          339,
+          343,
+          346,
+          367
+        ],
+        "view": "horse_reverse371",
+        "width": 640,
+        "height": 640,
+        "samples": 8
+      }
+    },
+    {
+      "id": "production",
+      "depends_on": [
+        "contact"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 367,
+        "frames": [
+          339,
+          343,
+          346,
+          367
+        ],
+        "view": "production",
+        "width": 432,
+        "height": 768,
+        "samples": 8
+      }
+    },
+    {
+      "id": "prefix",
+      "depends_on": [
+        "contact"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 367,
+        "frames": [
+          306,
+          314,
+          333,
+          367
+        ],
+        "view": "horse_phase367",
+        "width": 576,
+        "height": 576,
+        "samples": 8
+      }
+    },
+    {
+      "id": "phase01",
+      "depends_on": [
+        "contact",
+        "final_side",
+        "reverse",
+        "production",
+        "prefix"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 367,
+        "frames": [
+          334,
+          335,
+          336,
+          337,
+          338,
+          339,
+          340,
+          341,
+          342,
+          343,
+          344,
+          345,
+          367
+        ],
+        "view": "horse_phase367",
+        "width": 576,
+        "height": 576,
+        "samples": 8
+      }
+    },
+    {
+      "id": "phase02",
+      "depends_on": [
+        "contact",
+        "final_side",
+        "reverse",
+        "production",
+        "prefix"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 367,
+        "frames": [
+          346,
+          347,
+          348,
+          349,
+          350,
+          351,
+          352,
+          353,
+          354,
+          355,
+          356,
+          357,
+          367
+        ],
+        "view": "horse_phase367",
+        "width": 576,
+        "height": 576,
+        "samples": 8
+      }
+    },
+    {
+      "id": "phase03",
+      "depends_on": [
+        "contact",
+        "final_side",
+        "reverse",
+        "production",
+        "prefix"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 367,
+        "frames": [
+          358,
+          359,
+          360,
+          361,
+          362,
+          363,
+          364,
+          365,
+          366,
+          367
+        ],
+        "view": "horse_phase367",
+        "width": 576,
+        "height": 576,
+        "samples": 8
+      }
+    }
+  ],
+  "sources": [
+    "src/movie_factory/adapters/blender/nihang_patch.py",
+    "src/movie_factory/adapters/blender/nihang_support.py",
+    "src/movie_factory/adapters/blender/nihang_padsolve370.py",
+    "src/movie_factory/production_workflow.py",
+    "tests/test_revision373.py",
+    "src/movie_factory/adapters/blender/nihang_landing373.py",
+    "tests/test_landing373.py",
+    "scripts/sikh373_plan.py",
+    "results/sikh373/REQUEST.md",
+    "results/sikh373/APPROVED_ALLOWANCE.json",
+    "results/sikh373/STRATEGY.md",
+    "results/sikh373/METHOD76.md",
+    "results/sikh373/REFERENCE_OBSERVATIONS.md",
+    "results/sikh373/APEX_ACCEPTANCE.json",
+    "results/sikh372/LEARNINGS.md",
+    "results/sikh372/REUSE_HANDOFF75.json",
+    ".runtime/factory-native/sikh372-motion-c75-source/scene.blend",
+    ".runtime/context-hygiene/runs/sikh373-landing-tests02/stdout.log",
+    "results/sikh373/REJECT77.md",
+    "results/sikh373/TECHNICAL_CAPTURE78.md",
+    ".runtime/factory-native/sikh373-motion-c78-prepare/scene.blend"
+  ],
+  "retrospective_evidence": [
+    "results/sikh373/motion-c79.json",
+    "results/sikh373/motion-c79-challenge.json",
+    "results/sikh373/TECHNICAL_CAPTURE78.md",
+    "results/sikh373/STRATEGY.md"
+  ]
+}

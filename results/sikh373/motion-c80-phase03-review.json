@@ -1,0 +1,101 @@
+{
+  "run_digest": "801afcb9062ee8c6bfcec2c4f1f57a22f663f2f0673681d31614500aa60cc240",
+  "verdict": "PASS",
+  "observation": "Actualreturnedsource-boundimages/manifests verifiedbybridge; availabilityonly. Parent mustinspectreference/wholephase beforeartisticqualification orDirectorqueue.",
+  "comparison": "Actual returned source/report/image availability versus admitted recipe. Artistic unit criteria and full-speed AV remain separately NOT_TESTED.",
+  "open_defects": [],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh373-motion-c80-phase03/snapshot.json",
+      "sha256": "e8373a7d08dab22f9a9ba466424f33d658318570043abe84404b5e1bc283f6b8"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh373-motion-c80-phase03/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh373-motion-c80-phase03/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh373-motion-c80-phase03/frame.png",
+      "sha256": "f873ef321e607a40c11ed31339dc8eb739cd245fd9cc5379eb5c83a92cbe5189"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh373-motion-c80-phase03/frames.json",
+      "sha256": "935e35422a0b399ed5d0e17ede06ef312a54999abe55484abd5e5956134b9067"
+    },
+    "frame_358": {
+      "path": ".runtime/factory-native/sikh373-motion-c80-phase03/frame-0358.png",
+      "sha256": "eeb985508af3003e0f4466f64e662ed3172b5417b3aecc0e3450b9082cb50489"
+    },
+    "frame_359": {
+      "path": ".runtime/factory-native/sikh373-motion-c80-phase03/frame-0359.png",
+      "sha256": "6b5d3982685017dbfa263140ab073a02d215021193bdb6fd914ea95425bf4df1"
+    },
+    "frame_360": {
+      "path": ".runtime/factory-native/sikh373-motion-c80-phase03/frame-0360.png",
+      "sha256": "d2b4e8b8d850790c177314a01fe0ce8e09d721da520d48c45a3e94a375c41b4b"
+    },
+    "frame_361": {
+      "path": ".runtime/factory-native/sikh373-motion-c80-phase03/frame-0361.png",
+      "sha256": "895140a963bf7f9215147f076ad9ea6f1cb90e5800cde30cdd3b7da39ac5209f"
+    },
+    "frame_362": {
+      "path": ".runtime/factory-native/sikh373-motion-c80-phase03/frame-0362.png",
+      "sha256": "989610d91eed2cc153095e068f3e9a3577318757edbea63909d3dd3a301b8ed1"
+    },
+    "frame_363": {
+      "path": ".runtime/factory-native/sikh373-motion-c80-phase03/frame-0363.png",
+      "sha256": "5432571c6873724cd1dde2619a7adbd049ace69ef7367802e3632dd3468d3504"
+    },
+    "frame_364": {
+      "path": ".runtime/factory-native/sikh373-motion-c80-phase03/frame-0364.png",
+      "sha256": "4db2da63e646a7cf990e11af5acad113ceb9e7ae55fd8d3a4700fb1356138ba3"
+    },
+    "frame_365": {
+      "path": ".runtime/factory-native/sikh373-motion-c80-phase03/frame-0365.png",
+      "sha256": "dacf569c22fb50a16c1bea51460776fb8e1178153eacd514d2ee7a5525959bd1"
+    },
+    "frame_366": {
+      "path": ".runtime/factory-native/sikh373-motion-c80-phase03/frame-0366.png",
+      "sha256": "6ddf2dcc28b09ccc1c21af8f4ad44a42ede15a51303cc336e787709bd41e95b7"
+    },
+    "frame_367": {
+      "path": ".runtime/factory-native/sikh373-motion-c80-phase03/frame.png",
+      "sha256": "f873ef321e607a40c11ed31339dc8eb739cd245fd9cc5379eb5c83a92cbe5189"
+    }
+  },
+  "retrospective_observations": [
+    {
+      "requirement": "descent",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "impact",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "balance",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "continuity",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "evidence",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "director_motion",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    }
+  ]
+}

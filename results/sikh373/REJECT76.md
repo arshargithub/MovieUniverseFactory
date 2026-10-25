@@ -1,0 +1,1 @@
+76 failed beforecandidate: SUPPORT_FORE_REACH339/R requested0.143m betweenwrist/shoulder, fixedtwo-link reach0.706m; shorterthanpermittedminimum. Ballistichooftargetdescendedtooslowlyrelativebody. Next341/342contactsdeployfeetearlier; preserveguard/prefix. No visualPASS/no source saved.

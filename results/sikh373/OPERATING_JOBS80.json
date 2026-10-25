@@ -1,0 +1,225 @@
+{
+  "jobs": [
+    {
+      "job": "sikh373-motion-c76-prepare",
+      "runner_ok": false,
+      "worker_seconds": 22.994770125020295,
+      "runner_seconds": 24.59237787500024,
+      "bridge_status": "FAILED",
+      "bridge_error": "Blocked: NATIVE_WORKER_FAILED",
+      "status_binding": {
+        "path": ".runtime/factory-native/sikh373-motion-c76-prepare/runner-status.json",
+        "sha256": "0fac86653390d254b7340cdddf7fa0b4e8b65f6cb8187763faf63f9a7811abec"
+      }
+    },
+    {
+      "job": "sikh373-motion-c77-prepare",
+      "runner_ok": false,
+      "worker_seconds": 24.559976499993354,
+      "runner_seconds": 25.444850124884397,
+      "bridge_status": "FAILED",
+      "bridge_error": "Blocked: NATIVE_WORKER_FAILED",
+      "status_binding": {
+        "path": ".runtime/factory-native/sikh373-motion-c77-prepare/runner-status.json",
+        "sha256": "86ee4cb64e63680a283b9d647d423fa0f14177ba43b0d75a1fedffb5cf3332ea"
+      }
+    },
+    {
+      "job": "sikh373-motion-c78-early_side",
+      "runner_ok": true,
+      "worker_seconds": 128.45989408390597,
+      "runner_seconds": 130.1927081667818,
+      "bridge_status": "FAILED",
+      "bridge_error": "Blocked: NATIVE_SELECTED_STATE_DRIFT",
+      "status_binding": {
+        "path": ".runtime/factory-native/sikh373-motion-c78-early_side/runner-status.json",
+        "sha256": "229e7611cafa13509c2fc172d0eee1cd291507c3162c8a7c1f924765d471bd49"
+      }
+    },
+    {
+      "job": "sikh373-motion-c78-prepare",
+      "runner_ok": true,
+      "worker_seconds": 80.88194058323279,
+      "runner_seconds": 81.7984334579669,
+      "bridge_status": "RETURNED",
+      "bridge_error": null,
+      "status_binding": {
+        "path": ".runtime/factory-native/sikh373-motion-c78-prepare/runner-status.json",
+        "sha256": "393e6971f78b2ac02be6f0bdeaafd4b1da64ed5d5a6d7677d0b45a3cd476fcae"
+      }
+    },
+    {
+      "job": "sikh373-motion-c79-early_oblique",
+      "runner_ok": true,
+      "worker_seconds": 176.05280833272263,
+      "runner_seconds": 179.47514366731048,
+      "bridge_status": "RETURNED",
+      "bridge_error": null,
+      "status_binding": {
+        "path": ".runtime/factory-native/sikh373-motion-c79-early_oblique/runner-status.json",
+        "sha256": "2e8f77814091fe901560dfdbcc1e727bd4e35cd16885ccc4349c8ac6469fad16"
+      }
+    },
+    {
+      "job": "sikh373-motion-c79-early_side",
+      "runner_ok": true,
+      "worker_seconds": 151.30387783283368,
+      "runner_seconds": 153.21811600029469,
+      "bridge_status": "RETURNED",
+      "bridge_error": null,
+      "status_binding": {
+        "path": ".runtime/factory-native/sikh373-motion-c79-early_side/runner-status.json",
+        "sha256": "3ff7c02747672d82dda06d146ba8fc0a176519d0999cd67af92b0cf430e8bfe7"
+      }
+    },
+    {
+      "job": "sikh373-motion-c79-source",
+      "runner_ok": true,
+      "worker_seconds": 2.494089791085571,
+      "runner_seconds": 3.3179844999685884,
+      "bridge_status": "RETURNED",
+      "bridge_error": null,
+      "status_binding": {
+        "path": ".runtime/factory-native/sikh373-motion-c79-source/runner-status.json",
+        "sha256": "e44c546a8c41078bbc0e3c0ab136b4f75b95615623ce6b3f901f0f86653866be"
+      }
+    },
+    {
+      "job": "sikh373-motion-c80-contact",
+      "runner_ok": true,
+      "worker_seconds": 114.69090824993327,
+      "runner_seconds": 115.93420666689053,
+      "bridge_status": "RETURNED",
+      "bridge_error": null,
+      "status_binding": {
+        "path": ".runtime/factory-native/sikh373-motion-c80-contact/runner-status.json",
+        "sha256": "0498555df6a5d4887870704ec83432dc2eb695215d2a15e3ed82b8eaae54d13a"
+      }
+    },
+    {
+      "job": "sikh373-motion-c80-early_oblique",
+      "runner_ok": true,
+      "worker_seconds": 171.41951820906252,
+      "runner_seconds": 174.75038504227996,
+      "bridge_status": "RETURNED",
+      "bridge_error": null,
+      "status_binding": {
+        "path": ".runtime/factory-native/sikh373-motion-c80-early_oblique/runner-status.json",
+        "sha256": "340c0aca679a52a104a23f1c48aaa76e443516ab263995919e0a4ec6bc92d84e"
+      }
+    },
+    {
+      "job": "sikh373-motion-c80-early_side",
+      "runner_ok": true,
+      "worker_seconds": 164.5587149998173,
+      "runner_seconds": 166.14234541589394,
+      "bridge_status": "RETURNED",
+      "bridge_error": null,
+      "status_binding": {
+        "path": ".runtime/factory-native/sikh373-motion-c80-early_side/runner-status.json",
+        "sha256": "f81015f8d733ecd16efb32288d7389d0bd27fcf56e391c06e52d16670b73469b"
+      }
+    },
+    {
+      "job": "sikh373-motion-c80-final_side",
+      "runner_ok": true,
+      "worker_seconds": 170.0019533331506,
+      "runner_seconds": 171.33489958336577,
+      "bridge_status": "RETURNED",
+      "bridge_error": null,
+      "status_binding": {
+        "path": ".runtime/factory-native/sikh373-motion-c80-final_side/runner-status.json",
+        "sha256": "b525b8996d12887de91df525c0679c69063db5d6ddb533202cd62128afef7666"
+      }
+    },
+    {
+      "job": "sikh373-motion-c80-phase01",
+      "runner_ok": true,
+      "worker_seconds": 324.3763449997641,
+      "runner_seconds": 325.8697824170813,
+      "bridge_status": "RETURNED",
+      "bridge_error": null,
+      "status_binding": {
+        "path": ".runtime/factory-native/sikh373-motion-c80-phase01/runner-status.json",
+        "sha256": "1038efac4021b64ccfa4a214c3a184b40770dcadfb6585f666613ed99517b317"
+      }
+    },
+    {
+      "job": "sikh373-motion-c80-phase02",
+      "runner_ok": true,
+      "worker_seconds": 272.49112729076296,
+      "runner_seconds": 275.711360250134,
+      "bridge_status": "RETURNED",
+      "bridge_error": null,
+      "status_binding": {
+        "path": ".runtime/factory-native/sikh373-motion-c80-phase02/runner-status.json",
+        "sha256": "6e0e5b353a198638e64298140e89df201b9e2c2439e054d0a948471cc6f2fb02"
+      }
+    },
+    {
+      "job": "sikh373-motion-c80-phase03",
+      "runner_ok": true,
+      "worker_seconds": 213.28910924959928,
+      "runner_seconds": 214.5325998752378,
+      "bridge_status": "RETURNED",
+      "bridge_error": null,
+      "status_binding": {
+        "path": ".runtime/factory-native/sikh373-motion-c80-phase03/runner-status.json",
+        "sha256": "0347602d686fd368c8c2f204ac9465258536bda53b47af6ca9cf528058e8d929"
+      }
+    },
+    {
+      "job": "sikh373-motion-c80-prefix",
+      "runner_ok": true,
+      "worker_seconds": 104.26183879189193,
+      "runner_seconds": 105.5679049170576,
+      "bridge_status": "RETURNED",
+      "bridge_error": null,
+      "status_binding": {
+        "path": ".runtime/factory-native/sikh373-motion-c80-prefix/runner-status.json",
+        "sha256": "3fe73e482edcf5211346790e1662e86e3c7a8bb49e9fde0c11f41b108caeddb6"
+      }
+    },
+    {
+      "job": "sikh373-motion-c80-prepare",
+      "runner_ok": true,
+      "worker_seconds": 88.17548491619527,
+      "runner_seconds": 89.4609423330985,
+      "bridge_status": "RETURNED",
+      "bridge_error": null,
+      "status_binding": {
+        "path": ".runtime/factory-native/sikh373-motion-c80-prepare/runner-status.json",
+        "sha256": "0cd566bdc14fa9b3218a0035cc47174caef55d368a7045708cb24beecee5f53a"
+      }
+    },
+    {
+      "job": "sikh373-motion-c80-production",
+      "runner_ok": true,
+      "worker_seconds": 92.49790545832366,
+      "runner_seconds": 93.8848397503607,
+      "bridge_status": "RETURNED",
+      "bridge_error": null,
+      "status_binding": {
+        "path": ".runtime/factory-native/sikh373-motion-c80-production/runner-status.json",
+        "sha256": "05ad7038a6716d2610725848acedc7d95bceb7b1bb7d6fe147a81df402743749"
+      }
+    },
+    {
+      "job": "sikh373-motion-c80-reverse",
+      "runner_ok": true,
+      "worker_seconds": 111.04866020800546,
+      "runner_seconds": 114.00803954107687,
+      "bridge_status": "RETURNED",
+      "bridge_error": null,
+      "status_binding": {
+        "path": ".runtime/factory-native/sikh373-motion-c80-reverse/runner-status.json",
+        "sha256": "8535d78873f8feeb1534fb980deca1c925d70afc808fdd4f30757969dedc151a"
+      }
+    }
+  ],
+  "known_worker_seconds": 2413.5589229553007,
+  "known_runner_seconds": 2445.236919584684,
+  "known_native_processes": 18,
+  "policy": "Oneheavyworker. Worker/runner sums are known occupied process durations, not totalactiveeffort/tokens. Job wrappers79early/80jobs areprospective; initial76/77/78and79source lackedprospectivejobintervals: preserve capturegap, do not invent Directoridle. Initialbootstrap before373workstart alsoacapturegap. Twooversizedcontacttransportrequests neverlaunchedBlender. No newprovider/cloudspend/upload.",
+  "model_usage": null
+}

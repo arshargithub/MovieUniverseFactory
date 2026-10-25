@@ -1,0 +1,1 @@
+77failsreach340L:0.729642m >0.705734m, previousframe339hasvalidlengths/hoofpositions. 76wasoppositeunderreach339R. Reconcile342343contacts withloweredbodyatcontact, no scalarpadding/noguardrelaxation. Bothfailurespreserved, no nativecandidate.

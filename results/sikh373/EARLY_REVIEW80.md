@@ -1,0 +1,7 @@
+#80 actual early phase review
+
+Inspected all four unmirrored actual reference/side/oblique pairs335339343346. Reference contact pair now18.233, absorption18.333;18.133 islateair/nearcontact andisnotlabeledgrounded. Originalsourcecaptionsnotinstructions.
+
+Release335 continuesapprovedhigh333, no newbodyjump; sagittalforelimbs remainunderbody, notoutturned.339forelegsreachwhiletrunkdescends andheadremainsup.343forefeetnowgrounded andriderstillseated;346trunk/legcompression followscontact.80head/neckcarriage israisedrelativerejected79,withoutmuzzlepointinguporvisiblebrokenneck. No new source/frame-visible blocker inthisfourphaseproof.
+
+Referencehill isupsloping, ourplatformisflat; worldstance/bodyangleisadapted,notliteralimageoverlay. Frozenmodelappearance/chest/tail/flag/oldFX andleadergestureareseparateunapprovedunits. Currentlivefittedsaddlecloth remainsdiagnosticuntilnewfinal-surfacecache; theseviewsdonotqualifyfinalcloth orfullspeednaturalness. Next:80new334..367padcache,thenrevealingFINALsourceviews, allframes andDirector313normal-timequeue.

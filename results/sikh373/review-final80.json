@@ -1,0 +1,543 @@
+{
+  "checks": [
+    {
+      "id": "preservation",
+      "status": "PASS",
+      "observation": "All58accepted276..333 protectedposes/scalartracks exact, originalgeometryandmotionpreserved; all58originalpadvisibilitychecked,306314333actualpixels0, protected66/75mastersmatch.",
+      "comparison": "Actualreference17.933/18.000/18.233/18.333 wholeforms andoriginal-speedcomparison versus80final334..367source/images, preservingaccepted276..333. Supportedframe/technicalscope only; fullspeed/appearance/fullshot separate.",
+      "evidence": [
+        "source",
+        "pose",
+        "protected",
+        "prefix",
+        "accepted"
+      ]
+    },
+    {
+      "id": "descent",
+      "status": "PASS",
+      "observation": "All334..341actualframes plusfourpairedphase/side/oblique controls showforelegdeployment withtrunkdescent andraisedheadcarriage.79lowheadfailurecorrected80. No knownnewframe-visible inversionorboundaryjump; real-timefaithfulness pendingDirector.",
+      "comparison": "Actualreference17.933/18.000/18.233/18.333 wholeforms andoriginal-speedcomparison versus80final334..367source/images, preservingaccepted276..333. Supportedframe/technicalscope only; fullspeed/appearance/fullshot separate.",
+      "evidence": [
+        "review",
+        "pose",
+        "early",
+        "paired_contact",
+        "side",
+        "phase01",
+        "compare"
+      ]
+    },
+    {
+      "id": "impact",
+      "status": "PASS",
+      "observation": "Actualleft342/right343hoofcontacts reachfixedstandingtargets; lastdownwardspeed~7.98m/s versusprevious~7.10, thenplantederrors<0.012mm.344..346compression followscontact; recoverythrough367. Noairborne ease inrecordedtrajectory; perceivedweight/fullspeed NOT_RUN.",
+      "comparison": "Actualreference17.933/18.000/18.233/18.333 wholeforms andoriginal-speedcomparison versus80final334..367source/images, preservingaccepted276..333. Supportedframe/technicalscope only; fullspeed/appearance/fullshot separate.",
+      "evidence": [
+        "review",
+        "source",
+        "pose",
+        "side",
+        "reverse",
+        "phase01",
+        "phase02",
+        "decoded"
+      ]
+    },
+    {
+      "id": "balance",
+      "status": "PASS",
+      "observation": "Nativefixedsegmentreach/neckguards pass34frames. Finalside/reverse showseatedrider, coherentseat/reins/pole andnonewclothspike. New34framefinalsurfaces sampled; min2.1687mmclearance. No subframecollision/biologicalforceclaim.",
+      "comparison": "Actualreference17.933/18.000/18.233/18.333 wholeforms andoriginal-speedcomparison versus80final334..367source/images, preservingaccepted276..333. Supportedframe/technicalscope only; fullspeed/appearance/fullshot separate.",
+      "evidence": [
+        "review",
+        "source",
+        "pose",
+        "contact",
+        "side",
+        "reverse",
+        "paired_absorption"
+      ]
+    },
+    {
+      "id": "continuity",
+      "status": "PASS",
+      "observation": "Accepted333source/velocity retained, actualallnewframes anddecoded332333334controls inspected. Threefreshprefiximagespixel0; canonical367pixels0betweenbatches. Actual367native/lasttwostates/cache bindnextunit;368+unqualified.",
+      "comparison": "Actualreference17.933/18.000/18.233/18.333 wholeforms andoriginal-speedcomparison versus80final334..367source/images, preservingaccepted276..333. Supportedframe/technicalscope only; fullspeed/appearance/fullshot separate.",
+      "evidence": [
+        "review",
+        "source",
+        "pose",
+        "prefix",
+        "handoff",
+        "phase01",
+        "phase03",
+        "decoded"
+      ]
+    },
+    {
+      "id": "scope",
+      "status": "PASS",
+      "observation": "Five total373landingcycles76..80, originaltask/history. Noappearance/flag/tail/audio/crowd/newresources. Storyeditfrozenandactualcontrols showcutaway: isolatedmotionproof only, laterretimingrequired.",
+      "comparison": "Actualreference17.933/18.000/18.233/18.333 wholeforms andoriginal-speedcomparison versus80final334..367source/images, preservingaccepted276..333. Supportedframe/technicalscope only; fullspeed/appearance/fullshot separate.",
+      "evidence": [
+        "authority",
+        "review",
+        "shot",
+        "jobs",
+        "learnings"
+      ]
+    },
+    {
+      "id": "evidence",
+      "status": "PASS",
+      "observation": "All34newchronologicalframes, fourreferencepairs, finalside/reverse, productioncoveragecontrol, prefix/source and13candidate/6comparisondecodecontrols inspected.92/58/78/234frame24fpsencodesverified. Director313 AVpending; no strictdeliver/global307waiver.",
+      "comparison": "Actualreference17.933/18.000/18.233/18.333 wholeforms andoriginal-speedcomparison versus80final334..367source/images, preservingaccepted276..333. Supportedframe/technicalscope only; fullspeed/appearance/fullshot separate.",
+      "evidence": [
+        "review",
+        "encoded",
+        "profile",
+        "source",
+        "pose",
+        "contact",
+        "protected",
+        "prefix",
+        "handoff",
+        "early",
+        "side",
+        "reverse",
+        "shot",
+        "phase01",
+        "phase02",
+        "phase03",
+        "paired_contact",
+        "paired_absorption",
+        "decoded",
+        "compare",
+        "jobs",
+        "learnings",
+        "authority",
+        "accepted"
+      ]
+    },
+    {
+      "id": "director_motion",
+      "status": "NOT_RUN",
+      "observation": "NOT_RUN: Director313judgesactualnormal-speedweight/fluidity/referencefaithfulness andtemporalcontact ofthisexactlanding. Agentdirectmotion/audiofalse; nosilentclip listeningclaim.",
+      "comparison": "Actualreference17.933/18.000/18.233/18.333 wholeforms andoriginal-speedcomparison versus80final334..367source/images, preservingaccepted276..333. Supportedframe/technicalscope only; fullspeed/appearance/fullshot separate.",
+      "evidence": []
+    }
+  ],
+  "evidence": {
+    "review": {
+      "binding": {
+        "path": "results/sikh373/FINAL_FRAME_REVIEW80.md",
+        "sha256": "1be4237c4b553bc5d381b3561abe22ac23ba37d6b6c493b851ba4f380d5f837e"
+      },
+      "mode": "technical",
+      "scope": "Actualsource/frame/encodedscope only; notdirectAV orwholefilm/appearanceapproval.",
+      "candidate_digest": "ecb6603e901bc7737560e40c775658aace26e6a2412d8748d9e5be826b239189"
+    },
+    "encoded": {
+      "binding": {
+        "path": "results/sikh373/ENCODED_REVIEW80.md",
+        "sha256": "9aadd337fb39982d558f4beabbae7429d1bf0b0b9ee413c335644fed3067dc61"
+      },
+      "mode": "technical",
+      "scope": "Actualsource/frame/encodedscope only; notdirectAV orwholefilm/appearanceapproval.",
+      "candidate_digest": "ecb6603e901bc7737560e40c775658aace26e6a2412d8748d9e5be826b239189"
+    },
+    "profile": {
+      "binding": {
+        "path": "results/sikh373/encoded-profile80.json",
+        "sha256": "2c73e4d664b503ecac72917a1b8cc0cd0b30ce2879bf59ed6eee0a6dc3f61f63"
+      },
+      "mode": "technical",
+      "scope": "Actualsource/frame/encodedscope only; notdirectAV orwholefilm/appearanceapproval.",
+      "candidate_digest": "ecb6603e901bc7737560e40c775658aace26e6a2412d8748d9e5be826b239189"
+    },
+    "source": {
+      "binding": {
+        "path": "results/sikh373/SOURCE_CONTROLS80.json",
+        "sha256": "ffdaea2362dd72487d7b1681e7c38a4755963c9f962266b92a0fc9531bc62b33"
+      },
+      "mode": "technical",
+      "scope": "Actualsource/frame/encodedscope only; notdirectAV orwholefilm/appearanceapproval.",
+      "candidate_digest": "ecb6603e901bc7737560e40c775658aace26e6a2412d8748d9e5be826b239189"
+    },
+    "pose": {
+      "binding": {
+        "path": ".runtime/factory-native/sikh373-motion-c80-prepare/landing373.json",
+        "sha256": "efac1f40e0b0aadf902da99800702d43b9a6c58b0f3c30161fb01242f8ddbbc4"
+      },
+      "mode": "technical",
+      "scope": "Actualsource/frame/encodedscope only; notdirectAV orwholefilm/appearanceapproval.",
+      "candidate_digest": "ecb6603e901bc7737560e40c775658aace26e6a2412d8748d9e5be826b239189"
+    },
+    "contact": {
+      "binding": {
+        "path": ".runtime/factory-native/sikh373-motion-c80-contact/padsolve370.json",
+        "sha256": "6c209c7f29b750cc2e59d99d5aa1c7dce03735a106135de51471c6cb567d08d7"
+      },
+      "mode": "technical",
+      "scope": "Actualsource/frame/encodedscope only; notdirectAV orwholefilm/appearanceapproval.",
+      "candidate_digest": "ecb6603e901bc7737560e40c775658aace26e6a2412d8748d9e5be826b239189"
+    },
+    "protected": {
+      "binding": {
+        "path": "results/sikh373/PROTECTED_MASTERS.json",
+        "sha256": "46f260d6c201c12967b3933078e09fb091a9f5d3d82dca5719e14925df6b9c1c"
+      },
+      "mode": "technical",
+      "scope": "Actualsource/frame/encodedscope only; notdirectAV orwholefilm/appearanceapproval.",
+      "candidate_digest": "ecb6603e901bc7737560e40c775658aace26e6a2412d8748d9e5be826b239189"
+    },
+    "prefix": {
+      "binding": {
+        "path": "results/sikh373/PREFIX_PIXEL_CONTROL80.json",
+        "sha256": "f90e45e96959fe47d193734d2e11f7614647172896cfc1f620d7f2efe599466c"
+      },
+      "mode": "technical",
+      "scope": "Actualsource/frame/encodedscope only; notdirectAV orwholefilm/appearanceapproval.",
+      "candidate_digest": "ecb6603e901bc7737560e40c775658aace26e6a2412d8748d9e5be826b239189"
+    },
+    "handoff": {
+      "binding": {
+        "path": "results/sikh373/REUSE_HANDOFF80.json",
+        "sha256": "a8bdd30574cd884ae2dfecc2dd762ce0b32482febd4053b358c33486d8963c2e"
+      },
+      "mode": "technical",
+      "scope": "Actualsource/frame/encodedscope only; notdirectAV orwholefilm/appearanceapproval.",
+      "candidate_digest": "ecb6603e901bc7737560e40c775658aace26e6a2412d8748d9e5be826b239189"
+    },
+    "early": {
+      "binding": {
+        "path": "results/sikh373/early-pairs80.json",
+        "sha256": "c34b197278a570193ff8eb55c41833efe2d579c0c791fb4edff91dea932c6141"
+      },
+      "mode": "technical",
+      "scope": "Actualsource/frame/encodedscope only; notdirectAV orwholefilm/appearanceapproval.",
+      "candidate_digest": "ecb6603e901bc7737560e40c775658aace26e6a2412d8748d9e5be826b239189"
+    },
+    "side": {
+      "binding": {
+        "path": ".runtime/art-direction/sikh373-review-c80/final_side.jpg",
+        "sha256": "54a5161426e715e242d50cb1e725566615f7906ba4a94f8e1b61ba09d9f239f8"
+      },
+      "mode": "image",
+      "scope": "Actualsource/frame/encodedscope only; notdirectAV orwholefilm/appearanceapproval.",
+      "candidate_digest": "ecb6603e901bc7737560e40c775658aace26e6a2412d8748d9e5be826b239189"
+    },
+    "reverse": {
+      "binding": {
+        "path": ".runtime/art-direction/sikh373-review-c80/reverse.jpg",
+        "sha256": "f1503ce732464bb0a2d5bbe578edcfa19d2c8a0d21c0c108e40d5a7d1b161d05"
+      },
+      "mode": "image",
+      "scope": "Actualsource/frame/encodedscope only; notdirectAV orwholefilm/appearanceapproval.",
+      "candidate_digest": "ecb6603e901bc7737560e40c775658aace26e6a2412d8748d9e5be826b239189"
+    },
+    "shot": {
+      "binding": {
+        "path": ".runtime/art-direction/sikh373-review-c80/production.jpg",
+        "sha256": "9e97877636e3c3a31c91a51a4a93511cb3ee744445d26fbeb1563b41b08bb265"
+      },
+      "mode": "image",
+      "scope": "Actualsource/frame/encodedscope only; notdirectAV orwholefilm/appearanceapproval.",
+      "candidate_digest": "ecb6603e901bc7737560e40c775658aace26e6a2412d8748d9e5be826b239189"
+    },
+    "phase01": {
+      "binding": {
+        "path": ".runtime/art-direction/sikh373-review-c80/phase01.jpg",
+        "sha256": "ff84558dd310a8e5da682bc08b49c3a7f2e17198451f02b2bc4402f08d5eae0c"
+      },
+      "mode": "image",
+      "scope": "Actualsource/frame/encodedscope only; notdirectAV orwholefilm/appearanceapproval.",
+      "candidate_digest": "ecb6603e901bc7737560e40c775658aace26e6a2412d8748d9e5be826b239189"
+    },
+    "phase02": {
+      "binding": {
+        "path": ".runtime/art-direction/sikh373-review-c80/phase02.jpg",
+        "sha256": "4e7084b8cfa179bb321c718b6ec9352aa439b6488367111302685aeb88a9c31f"
+      },
+      "mode": "image",
+      "scope": "Actualsource/frame/encodedscope only; notdirectAV orwholefilm/appearanceapproval.",
+      "candidate_digest": "ecb6603e901bc7737560e40c775658aace26e6a2412d8748d9e5be826b239189"
+    },
+    "phase03": {
+      "binding": {
+        "path": ".runtime/art-direction/sikh373-review-c80/phase03.jpg",
+        "sha256": "bb6fedb88b311b3c6618673f860401b7dedc8a5bb95c5ed3f93bba209aa16115"
+      },
+      "mode": "image",
+      "scope": "Actualsource/frame/encodedscope only; notdirectAV orwholefilm/appearanceapproval.",
+      "candidate_digest": "ecb6603e901bc7737560e40c775658aace26e6a2412d8748d9e5be826b239189"
+    },
+    "paired_contact": {
+      "binding": {
+        "path": ".runtime/art-direction/sikh373-review-c80/early-pair-0343.jpg",
+        "sha256": "6ddc2501d3e45b63af4414b1c8b543db18f75efc2df787c247b5d5e6da2ecfed"
+      },
+      "mode": "image",
+      "scope": "Actualsource/frame/encodedscope only; notdirectAV orwholefilm/appearanceapproval.",
+      "candidate_digest": "ecb6603e901bc7737560e40c775658aace26e6a2412d8748d9e5be826b239189"
+    },
+    "paired_absorption": {
+      "binding": {
+        "path": ".runtime/art-direction/sikh373-review-c80/early-pair-0346.jpg",
+        "sha256": "cea110b9e526da759119fb6f8df608df3da37b01573b537eb20830acb2272954"
+      },
+      "mode": "image",
+      "scope": "Actualsource/frame/encodedscope only; notdirectAV orwholefilm/appearanceapproval.",
+      "candidate_digest": "ecb6603e901bc7737560e40c775658aace26e6a2412d8748d9e5be826b239189"
+    },
+    "decoded": {
+      "binding": {
+        "path": ".runtime/art-direction/sikh373-review-c80/decoded/candidate-sheet.jpg",
+        "sha256": "9499d59b216db8eeb3d52fdc1e8d187177f20df1a41ee4aa5c1b77c6cd17be3c"
+      },
+      "mode": "image",
+      "scope": "Actualsource/frame/encodedscope only; notdirectAV orwholefilm/appearanceapproval.",
+      "candidate_digest": "ecb6603e901bc7737560e40c775658aace26e6a2412d8748d9e5be826b239189"
+    },
+    "compare": {
+      "binding": {
+        "path": ".runtime/art-direction/sikh373-review-c80/decoded/comparison-sheet.jpg",
+        "sha256": "0a217e8ab8bc14dfdf7ca0f5ad56223fb9b4deda97a7e161d52e229259426ee0"
+      },
+      "mode": "image",
+      "scope": "Actualsource/frame/encodedscope only; notdirectAV orwholefilm/appearanceapproval.",
+      "candidate_digest": "ecb6603e901bc7737560e40c775658aace26e6a2412d8748d9e5be826b239189"
+    },
+    "jobs": {
+      "binding": {
+        "path": "results/sikh373/OPERATING_JOBS80.json",
+        "sha256": "66150bd35e1b6c4d9ab78a0870b42de64e348951af70eba166d66c2b4a025ba5"
+      },
+      "mode": "technical",
+      "scope": "Actualsource/frame/encodedscope only; notdirectAV orwholefilm/appearanceapproval.",
+      "candidate_digest": "ecb6603e901bc7737560e40c775658aace26e6a2412d8748d9e5be826b239189"
+    },
+    "learnings": {
+      "binding": {
+        "path": "results/sikh373/LEARNINGS.md",
+        "sha256": "4d7d8b7b41a40df4be54606e27859606b070885a8ba8e5051e539eab81bb1024"
+      },
+      "mode": "technical",
+      "scope": "Actualsource/frame/encodedscope only; notdirectAV orwholefilm/appearanceapproval.",
+      "candidate_digest": "ecb6603e901bc7737560e40c775658aace26e6a2412d8748d9e5be826b239189"
+    },
+    "authority": {
+      "binding": {
+        "path": "results/sikh373/REQUEST.md",
+        "sha256": "8ea79b3f93767cbde48fb2f3a62eef4d146161184d9cf20a818c6f46daf1e50e"
+      },
+      "mode": "technical",
+      "scope": "Actualsource/frame/encodedscope only; notdirectAV orwholefilm/appearanceapproval.",
+      "candidate_digest": "ecb6603e901bc7737560e40c775658aace26e6a2412d8748d9e5be826b239189"
+    },
+    "accepted": {
+      "binding": {
+        "path": "results/sikh373/APEX_ACCEPTANCE.json",
+        "sha256": "fe8dfcc98cfcce2e63fa28d0df27ee8ab2c0c500b44b18b8ce3a0eb01db2e27b"
+      },
+      "mode": "technical",
+      "scope": "Actualsource/frame/encodedscope only; notdirectAV orwholefilm/appearanceapproval.",
+      "candidate_digest": "ecb6603e901bc7737560e40c775658aace26e6a2412d8748d9e5be826b239189"
+    }
+  },
+  "reference_checks": {
+    "reference_rear": {
+      "observation": "Fouractualphasepairs andallnewframes supportdescent/support/absorption;79headmismatch corrected. Referenceworldslope/identitynotcopied. Natural-timejudgmentpendingDirector.",
+      "comparison": "Actualreference17.933/18.000/18.233/18.333 wholeforms andoriginal-speedcomparison versus80final334..367source/images, preservingaccepted276..333. Supportedframe/technicalscope only; fullspeed/appearance/fullshot separate.",
+      "evidence": [
+        "review",
+        "encoded",
+        "profile",
+        "source",
+        "pose",
+        "contact",
+        "protected",
+        "prefix",
+        "handoff",
+        "early",
+        "side",
+        "reverse",
+        "shot",
+        "phase01",
+        "phase02",
+        "phase03",
+        "paired_contact",
+        "paired_absorption",
+        "decoded",
+        "compare",
+        "jobs",
+        "learnings",
+        "authority",
+        "accepted"
+      ],
+      "aspects": [
+        {
+          "id": "descent",
+          "status": "PASS",
+          "observation": "All334..341actualframes plusfourpairedphase/side/oblique controls showforelegdeployment withtrunkdescent andraisedheadcarriage.79lowheadfailurecorrected80. No knownnewframe-visible inversionorboundaryjump; real-timefaithfulness pendingDirector."
+        },
+        {
+          "id": "impact",
+          "status": "PASS",
+          "observation": "Actualleft342/right343hoofcontacts reachfixedstandingtargets; lastdownwardspeed~7.98m/s versusprevious~7.10, thenplantederrors<0.012mm.344..346compression followscontact; recoverythrough367. Noairborne ease inrecordedtrajectory; perceivedweight/fullspeed NOT_RUN."
+        },
+        {
+          "id": "balance",
+          "status": "PASS",
+          "observation": "Nativefixedsegmentreach/neckguards pass34frames. Finalside/reverse showseatedrider, coherentseat/reins/pole andnonewclothspike. New34framefinalsurfaces sampled; min2.1687mmclearance. No subframecollision/biologicalforceclaim."
+        },
+        {
+          "id": "continuity",
+          "status": "PASS",
+          "observation": "Accepted333source/velocity retained, actualallnewframes anddecoded332333334controls inspected. Threefreshprefiximagespixel0; canonical367pixels0betweenbatches. Actual367native/lasttwostates/cache bindnextunit;368+unqualified."
+        }
+      ],
+      "reference_digest": "86e548ee6711b349075a2ef5f2325594c7c4e804f5792e0914c11af7eb19db01"
+    }
+  },
+  "audience_read": "Theapprovedrear returnsdecisivelytowardground; feet take support, thenhorse/ridercompressandrecover. Normal-speedweight/read ispendingDirector.",
+  "strongest_counterexample": "Evenwithacceleratinghooftrajectoryandcompleteposecontrols, motioncanstillfeelmechanical/lightatfullspeed; directAVremainsNOT_RUN. Frozenform/secondaryperformance andstorytiming areseparate, nothiddenPASS.",
+  "adjacent_review": "Actualoldproductioneditcutsawaytolatercrowd/motorcycle; notupdatedshotcoverage. Horse/leaderlook,chest/tail/flag/oldFX/audio/crowd remainseparateunapprovedwork. Mesh/weightchanges reopenposeddeformation/contact.",
+  "open_visible_defects": [],
+  "intent_checks": {
+    "landing": {
+      "scope": "supported_evidence_only",
+      "status": "PASS",
+      "observation": "No knownsource/frameblocker inisolatedlanding; allnewframes/contactandboundarieschecked, oldstorycoverage explicitlynotqualified.",
+      "comparison": "Actualreference17.933/18.000/18.233/18.333 wholeforms andoriginal-speedcomparison versus80final334..367source/images, preservingaccepted276..333. Supportedframe/technicalscope only; fullspeed/appearance/fullshot separate.",
+      "evidence": [
+        "review",
+        "encoded",
+        "profile",
+        "source",
+        "pose",
+        "contact",
+        "protected",
+        "prefix",
+        "handoff",
+        "early",
+        "side",
+        "reverse",
+        "shot",
+        "phase01",
+        "phase02",
+        "phase03",
+        "paired_contact",
+        "paired_absorption",
+        "decoded",
+        "compare",
+        "jobs",
+        "learnings",
+        "authority",
+        "accepted"
+      ]
+    }
+  },
+  "planning_gaps": [],
+  "unit_review": {
+    "id": "horse-landing-absorption",
+    "criteria": {
+      "descent": {
+        "status": "PASS",
+        "observation": "All334..341actualframes plusfourpairedphase/side/oblique controls showforelegdeployment withtrunkdescent andraisedheadcarriage.79lowheadfailurecorrected80. No knownnewframe-visible inversionorboundaryjump; real-timefaithfulness pendingDirector.",
+        "comparison": "Actualreference17.933/18.000/18.233/18.333 wholeforms andoriginal-speedcomparison versus80final334..367source/images, preservingaccepted276..333. Supportedframe/technicalscope only; fullspeed/appearance/fullshot separate.",
+        "evidence": [
+          "review",
+          "pose",
+          "early",
+          "paired_contact",
+          "side",
+          "phase01",
+          "compare"
+        ]
+      },
+      "impact": {
+        "status": "PASS",
+        "observation": "Actualleft342/right343hoofcontacts reachfixedstandingtargets; lastdownwardspeed~7.98m/s versusprevious~7.10, thenplantederrors<0.012mm.344..346compression followscontact; recoverythrough367. Noairborne ease inrecordedtrajectory; perceivedweight/fullspeed NOT_RUN.",
+        "comparison": "Actualreference17.933/18.000/18.233/18.333 wholeforms andoriginal-speedcomparison versus80final334..367source/images, preservingaccepted276..333. Supportedframe/technicalscope only; fullspeed/appearance/fullshot separate.",
+        "evidence": [
+          "review",
+          "source",
+          "pose",
+          "side",
+          "reverse",
+          "phase01",
+          "phase02",
+          "decoded"
+        ]
+      },
+      "balance": {
+        "status": "PASS",
+        "observation": "Nativefixedsegmentreach/neckguards pass34frames. Finalside/reverse showseatedrider, coherentseat/reins/pole andnonewclothspike. New34framefinalsurfaces sampled; min2.1687mmclearance. No subframecollision/biologicalforceclaim.",
+        "comparison": "Actualreference17.933/18.000/18.233/18.333 wholeforms andoriginal-speedcomparison versus80final334..367source/images, preservingaccepted276..333. Supportedframe/technicalscope only; fullspeed/appearance/fullshot separate.",
+        "evidence": [
+          "review",
+          "source",
+          "pose",
+          "contact",
+          "side",
+          "reverse",
+          "paired_absorption"
+        ]
+      },
+      "continuity": {
+        "status": "PASS",
+        "observation": "Accepted333source/velocity retained, actualallnewframes anddecoded332333334controls inspected. Threefreshprefiximagespixel0; canonical367pixels0betweenbatches. Actual367native/lasttwostates/cache bindnextunit;368+unqualified.",
+        "comparison": "Actualreference17.933/18.000/18.233/18.333 wholeforms andoriginal-speedcomparison versus80final334..367source/images, preservingaccepted276..333. Supportedframe/technicalscope only; fullspeed/appearance/fullshot separate.",
+        "evidence": [
+          "review",
+          "source",
+          "pose",
+          "prefix",
+          "handoff",
+          "phase01",
+          "phase03",
+          "decoded"
+        ]
+      }
+    },
+    "boundaries": {
+      "accepted_crest333": {
+        "status": "PASS",
+        "observation": "Actual333acceptednative/velocity from75 preserved; protectedall58pose/scalar/visibility andfresh306314333pixels0; no oldmethodassumption protects rejectedfuture.",
+        "comparison": "Actualreference17.933/18.000/18.233/18.333 wholeforms andoriginal-speedcomparison versus80final334..367source/images, preservingaccepted276..333. Supportedframe/technicalscope only; fullspeed/appearance/fullshot separate.",
+        "evidence": [
+          "source",
+          "prefix",
+          "handoff",
+          "decoded"
+        ]
+      },
+      "settled_exit367": {
+        "status": "PASS",
+        "observation": "Actual367nativeandlasttwocoupled/support/riderstates pluslandingcache valid334..367; plantedfeet andsettledbody visible.368+action/cache/flag requiresnewintegration.",
+        "comparison": "Actualreference17.933/18.000/18.233/18.333 wholeforms andoriginal-speedcomparison versus80final334..367source/images, preservingaccepted276..333. Supportedframe/technicalscope only; fullspeed/appearance/fullshot separate.",
+        "evidence": [
+          "source",
+          "prefix",
+          "handoff",
+          "decoded"
+        ]
+      }
+    },
+    "largest_remaining_mismatch": {
+      "blocking": false,
+      "observation": "Fullspeedpower/fluidityandtemporalread requireDirector313. Differentgroundslope/projection andfrozenappearance remainexplicit; no knownisolatedsource/frameblocker. Oldstoryeditnotlandingcoverage.",
+      "evidence": [
+        "review",
+        "compare",
+        "shot",
+        "phase03"
+      ]
+    },
+    "outside_scope_changes": []
+  },
+  "fingerprint": "c5fc741f5cf26f829649bf0ec3134c285291447d8d8e3fa443311ee31acd3e43",
+  "candidate_digest": "ecb6603e901bc7737560e40c775658aace26e6a2412d8748d9e5be826b239189"
+}

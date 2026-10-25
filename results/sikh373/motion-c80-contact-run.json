@@ -1,0 +1,42 @@
+{
+  "id": "sikh373-motion-c80-contact",
+  "task": "sikh335-continuous-performance",
+  "step": "contact",
+  "cycle": 80,
+  "fingerprint": "c5fc741f5cf26f829649bf0ec3134c285291447d8d8e3fa443311ee31acd3e43",
+  "parent": {
+    "path": ".runtime/factory-native/sikh373-motion-c80-prepare/scene.blend",
+    "sha256": "f9db451240fe6355bd0083215304ca54091f5017e60cee4a9bed3ffe7b91d63c"
+  },
+  "job_digest": "34c6e0b5f4a9a476ab3e15efc3fec646b91ed5fa446fae54c706eedec12773bf",
+  "handler_digest": "9124bcc964b06d6bfbad926172cd0dfb3ecc2684323311b02c241f91b8dd4f8a",
+  "status": "RETURNED",
+  "timeout_seconds": 600,
+  "artifacts": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh373-motion-c80-contact/snapshot.json",
+      "sha256": "e8373a7d08dab22f9a9ba466424f33d658318570043abe84404b5e1bc283f6b8"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh373-motion-c80-contact/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh373-motion-c80-contact/script-diagnostics.json",
+      "sha256": "4e1205462c9c8153ef4f4d15eba35ea263f6079e3b74341771bbb12e2f41f34c"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh373-motion-c80-contact/scene.blend",
+      "sha256": "204eea24a877219a30c7405bba178ddcff9655c30036d0c5ab218b603fc0fb44"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh373-motion-c80-contact/patch-evidence.json",
+      "sha256": "f05f272f197c8b5d82907aa8c9a7a43968171e0a04ef8ef364ea8fac3e30053e"
+    }
+  },
+  "dependencies": {},
+  "recipe": {
+    "path": "results/sikh373/motion-c80-contact-recipe.json",
+    "sha256": "0bd510ce4388e4cc47ff6d911657b1ad1a24450420e3c7cc59cbacff8c8c82b0"
+  }
+}

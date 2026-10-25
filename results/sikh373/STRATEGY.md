@@ -1,0 +1,11 @@
+# Landing strategy373
+
+Outcome: the powerful approved rear returns decisively to the ground, with finite downward hoof speed, weight absorption in the legs/body, and a carried, balanced rider. No airborne braking/easing into a soft tap. Accepted276..333 stays exact. Five total landing cycles76..80, one worker, Sol6.1, no new resources.
+
+Strategy: extend the evaluated-world supported FK method, not the old whole-action generator. Preserve actual333 pose and332..333 velocity; target visible hoof endpoints through measured-entry ballistic vertical arrival, with controlled horizontal reach and distinct contact frames. Independent torso, neck/poll, foreleg deployment and actual pelvis-balanced rider form the whole chain. Existing limb lengths and hind support owners remain. Pin333 scalar values before replacing334..367; compare every accepted scalar and evaluated pose. Mesh/material identity stays unchanged.
+
+Interfaces: approved crest333 and prior velocity, planted hind feet, actual forehoof targets, saddle seat, hands/reins/bit and spear carried by the rider; a new landing-only native exterior contact cache334..367. Older later action, flag and future trajectory remain unqualified. Primary motion proof is silent; appearance/tail/flag, sound/FX enrichment and crowd are separate. Existing premature dust must not be promoted as correct contact response.
+
+Early falsification: four final physical phases (release, reach, contact, compression) rendered from fixed side and oblique BEFORE expensive all-frame contact/cache/full chronology. Reject broken/long limbs, foot inversion, body/chest collapse, rider launch, contact reach failure or incoming snap. After contact rebake, inspect final side/oblique/reverse and whole chronology, not just pre-cache images. Normal-speed comparison includes incoming approved motion and settling.
+
+Stop/replan: any structural failure stays internal and uses the same task/history/allowance. No serial small patches that ignore reference whole-body motion. Five-cycle cap only, no time cap. Director judges actual full-speed naturalness under313; agent never claims direct AV. Candidate/frame/technical proof must be complete first. Exit binds settled367 state for next leader/signal integration; does not approve all character appearance or the full Sikh sequence.

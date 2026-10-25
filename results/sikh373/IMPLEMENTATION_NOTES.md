@@ -1,0 +1,7 @@
+#373 construction/transport notes
+
+Reviewed changes: landing373 typed numeric anchors and contact command; optional zero-default distal curl/toe support method (existing paths unchanged); landing-only334..367 exterior-pad cache; atomic revision+reviewed source reconciliation in controller. The latter closes a preexisting bind-order problem: a new knowledge-task path could not be carried through revise before controls were updated; serial reground+revise would burn two cycles. Required metadata, original authority, history and allowance stay checked.79workflow/allowance tests pass;27landing/support/cache tests pass. First test invocation named nonexistenttestfile, corrected; no test success inferredfromthatfailure.
+
+76 rejected as too-tightforelimb339R.77 rejected as overextended340L.78 coupled timing gives actualwhole34frames with unchanged276..333pose/actions and fixedlengthguards.78earlyside produced allfourimages but failed formal selected-state comparison (source367/recipe346);79 uses source367 includedineachcaptureframeslist, no pose reauthoring. No failure erased or counted as artisticPASS. First79sourcesave/reopen returned.
+
+Lesson: preflight also source-selected frame equality, beyond schema frame-in-list. Every nativeworker/report needs both technicalresult and outer admission verdict; worker ok alone cannot qualifydependency. Globalcontext307 remainsstale,313manualmotionqueue explicit; nofakeAV.

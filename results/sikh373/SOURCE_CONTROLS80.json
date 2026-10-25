@@ -1,0 +1,55 @@
+{
+  "primary": {
+    "path": ".runtime/factory-native/sikh373-motion-c80-prepare/scene.blend",
+    "sha256": "f9db451240fe6355bd0083215304ca54091f5017e60cee4a9bed3ffe7b91d63c"
+  },
+  "landing_native": {
+    "path": ".runtime/factory-native/sikh373-motion-c80-contact/scene.blend",
+    "sha256": "204eea24a877219a30c7405bba178ddcff9655c30036d0c5ab218b603fc0fb44"
+  },
+  "pose_report": {
+    "path": ".runtime/factory-native/sikh373-motion-c80-prepare/landing373.json",
+    "sha256": "efac1f40e0b0aadf902da99800702d43b9a6c58b0f3c30161fb01242f8ddbbc4"
+  },
+  "contact_report": {
+    "path": ".runtime/factory-native/sikh373-motion-c80-contact/padsolve370.json",
+    "sha256": "6c209c7f29b750cc2e59d99d5aa1c7dce03735a106135de51471c6cb567d08d7"
+  },
+  "accepted_prefix": [
+    276,
+    333
+  ],
+  "prefix_pose_error": 0,
+  "prefix_scalar_error": 0,
+  "original_geometry_unchanged": true,
+  "hoof_metrics": {
+    "L": {
+      "contact_frame": 342,
+      "world_hoof": [
+        7.122602939605713,
+        -28.433191299438477,
+        3.282830238342285
+      ],
+      "last_airborne_downward_speed_m_s": -7.978723526000977,
+      "previous_speed_m_s": -7.095571517944336,
+      "postcontact_anchor_error_m": 1.1444091796875e-05
+    },
+    "R": {
+      "contact_frame": 343,
+      "world_hoof": [
+        7.423503875732422,
+        -28.32335090637207,
+        3.2828309535980225
+      ],
+      "last_airborne_downward_speed_m_s": -7.977842330932617,
+      "previous_speed_m_s": -7.09782600402832,
+      "postcontact_anchor_error_m": 9.5367431640625e-06
+    }
+  },
+  "cache_minimum_gap_m": 0.002168722217902541,
+  "cache_interval": [
+    334,
+    367
+  ],
+  "scope": "Integer-frame worldpose/scalar/mesh support; finalsurfacevertex/trianglecentre clothclearance, notsubframephysics/directAV. Original padvisibilityexcludedfromactionhashbutall58acceptedvalues explicitlychecked bycachebuilder; actualprefixpixels separatelyrequired."
+}

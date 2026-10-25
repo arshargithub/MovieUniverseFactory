@@ -1,0 +1,77 @@
+{
+  "run_digest": "643c4007e3f6b1a32385018828377badff6875c97195ff0ab5fa64af96e5a947",
+  "verdict": "PASS",
+  "observation": "Actualreturnedsource-boundimages/manifests verifiedbybridge; availabilityonly. Parent mustinspectreference/wholephase beforeartisticqualification orDirectorqueue.",
+  "comparison": "Actual returned source/report/image availability versus admitted recipe. Artistic unit criteria and full-speed AV remain separately NOT_TESTED.",
+  "open_defects": [],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh373-motion-c80-prefix/snapshot.json",
+      "sha256": "e8373a7d08dab22f9a9ba466424f33d658318570043abe84404b5e1bc283f6b8"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh373-motion-c80-prefix/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh373-motion-c80-prefix/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh373-motion-c80-prefix/frame.png",
+      "sha256": "aba2c5ac993f22d8dadbbf1a60f48a484abbb30c26169d3cf0227d1c5b0e548d"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh373-motion-c80-prefix/frames.json",
+      "sha256": "710107ef46866f0f639ca57b16e33bfb5e45c7605795a06bfa11dccfcd5b09ec"
+    },
+    "frame_306": {
+      "path": ".runtime/factory-native/sikh373-motion-c80-prefix/frame-0306.png",
+      "sha256": "7978c5652da81d5c003100c923cbf79a64221b61172b510f888524d4a5a61c26"
+    },
+    "frame_314": {
+      "path": ".runtime/factory-native/sikh373-motion-c80-prefix/frame-0314.png",
+      "sha256": "ede88cb0edb07df8bd52dce8b04bc7de59e3756f5db39bcf15ca44d735f37185"
+    },
+    "frame_333": {
+      "path": ".runtime/factory-native/sikh373-motion-c80-prefix/frame-0333.png",
+      "sha256": "f94b139a91e77acca831f1573c561e2ea062b79e6ae9741ea6f5a3449d61f3fe"
+    },
+    "frame_367": {
+      "path": ".runtime/factory-native/sikh373-motion-c80-prefix/frame.png",
+      "sha256": "aba2c5ac993f22d8dadbbf1a60f48a484abbb30c26169d3cf0227d1c5b0e548d"
+    }
+  },
+  "retrospective_observations": [
+    {
+      "requirement": "descent",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "impact",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "balance",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "continuity",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "evidence",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "director_motion",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    }
+  ]
+}
