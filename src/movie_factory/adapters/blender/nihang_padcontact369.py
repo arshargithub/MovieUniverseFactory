@@ -1,6 +1,7 @@
 """Fixed saddle/animated-horse contact inspection and bounded support clearance.
 
-No mesh, material, action or pose authoring. Not a cloth simulation qualification.
+Diagnostics and explicit technical-cache modes; no horse/rider pose authoring.
+Not a cloth simulation qualification.
 """
 import json
 import math
@@ -13,7 +14,7 @@ def validate(edit):
         raise ValueError('PAD369_TARGET')
     mode = edit.get('mode')
     expected = base | ({'offset'} if mode == 'fit' else {'level'} if mode == 'refine' else set())
-    if mode not in {'inspect', 'fit', 'bind', 'follow', 'diagnose', 'refine', 'envelope'} or set(edit) != expected:
+    if mode not in {'inspect', 'fit', 'bind', 'follow', 'diagnose', 'refine', 'envelope', 'apex_envelope'} or set(edit) != expected:
         raise ValueError('PAD369_FIELDS')
     if mode == 'refine' and (type(edit['level']) is not int or edit['level'] not in (2, 3)):
         raise ValueError('PAD370_RESOLUTION')
@@ -35,10 +36,10 @@ def classify(values):
 def run(bpy, out, edit):
     validate(edit)
     import importlib.util
-    if edit['mode'] == 'envelope':
+    if edit['mode'] in {'envelope','apex_envelope'}:
         spec = importlib.util.spec_from_file_location('padsolve370', Path(__file__).with_name('nihang_padsolve370.py'))
         module = importlib.util.module_from_spec(spec); spec.loader.exec_module(module)
-        return module.run(bpy, out)
+        return module.run(bpy, out, phase='apex' if edit['mode']=='apex_envelope' else 'preparation')
     from mathutils.bvhtree import BVHTree
     spec = importlib.util.spec_from_file_location('pad369_prep', Path(__file__).with_name('nihang_prep367.py'))
     prep = importlib.util.module_from_spec(spec); spec.loader.exec_module(prep)

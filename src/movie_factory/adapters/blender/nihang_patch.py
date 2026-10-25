@@ -30,6 +30,9 @@ def validate(recipe):
         if kind == 'mounted_padcontact369':
             import importlib.util
             spec=importlib.util.spec_from_file_location('mf_pad369',Path(__file__).with_name('nihang_padcontact369.py'));module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module);module.validate(edit)
+        elif kind == 'mounted_apex371':
+            import importlib.util
+            spec=importlib.util.spec_from_file_location('mf_apex371',Path(__file__).with_name('nihang_apex371.py'));module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module);module.validate(edit)
         elif kind == 'mounted_prep367':
             import importlib.util
             spec=importlib.util.spec_from_file_location('mf_prep367',Path(__file__).with_name('nihang_prep367.py'));module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module);module.validate(edit)
@@ -101,7 +104,7 @@ def apply(bpy, recipe,diagnostic_dir=None):
     for edit in recipe['edits']:
         if edit['kind']=='mounted_padcontact369':
             if bpy.data.objects.get('horse') is None or bpy.data.objects.get('fitted saddle blanket292') is None:raise ValueError('PAD369_OWNERS')
-        elif edit['kind'] in {'mounted_prep367','mounted_prepaudit367'}:
+        elif edit['kind'] in {'mounted_apex371','mounted_prep367','mounted_prepaudit367'}:
             if bpy.data.objects.get('horse.rig') is None or bpy.data.objects.get('MF coherent Nihang rig') is None:raise ValueError('PREP367_OWNERS')
         elif edit['kind'] in {'mounted_flagcontrol363','mounted_flag363','mounted_chest363','mounted_performance363','mounted_thumb363','mounted_fist363','mounted_repair363','mounted_grip363','mounted_hand363','mounted_audit363','mounted_finish362','mounted_layers361','mounted_look361','mounted_rein361','mounted_rein361_audit','mounted_beard361'}:
             if bpy.data.objects.get('MF coherent Nihang rig') is None or bpy.data.objects.get('horse.rig') is None:
@@ -128,6 +131,10 @@ def apply(bpy, recipe,diagnostic_dir=None):
             import importlib.util
             spec=importlib.util.spec_from_file_location('mf_pad369',Path(__file__).with_name('nihang_padcontact369.py'));module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
             support_evidence.append({'padcontact369':module.run(bpy,diagnostic_dir,edit)})
+        elif edit['kind']=='mounted_apex371':
+            import importlib.util
+            spec=importlib.util.spec_from_file_location('mf_apex371',Path(__file__).with_name('nihang_apex371.py'));module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+            support_evidence.append({'apex371':module.run(bpy,diagnostic_dir,edit)})
         elif edit['kind'] in {'mounted_prep367','mounted_prepaudit367'}:
             import importlib.util
             spec=importlib.util.spec_from_file_location('mf_prep367',Path(__file__).with_name('nihang_prep367.py'));module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)

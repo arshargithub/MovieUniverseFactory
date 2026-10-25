@@ -29,7 +29,7 @@ def validate(recipe):
         if type(recipe[key]) is not int or not lo <= recipe[key] <= hi:
             raise ValueError('NIHANG_RECIPE_BOUND:' + key)
     if recipe['operation']=='nihang_frames':
-        if not isinstance(recipe.get('view','production'),str) or recipe.get('view','production') not in ({'horse_phase367','horse_side367','flag363','flag363_reverse','production','horse_chest','horse_chest_side','horse_chest_no_corrective','horse_chest_side_no_corrective','leader_right_contact','leader_left_contact','horse_head','horse_head_reverse','leader_front','leader_reverse','leader_contact','leader_anatomy','leader_face','leader_face_left','leader_face_right','leader_face_profile','crowd_front','crowd_reverse','neutral_front','neutral_back','neutral_side'} | ANATOMY_VIEWS):
+        if not isinstance(recipe.get('view','production'),str) or recipe.get('view','production') not in ({'horse_reverse371','horse_phase367','horse_side367','flag363','flag363_reverse','production','horse_chest','horse_chest_side','horse_chest_no_corrective','horse_chest_side_no_corrective','leader_right_contact','leader_left_contact','horse_head','horse_head_reverse','leader_front','leader_reverse','leader_contact','leader_anatomy','leader_face','leader_face_left','leader_face_right','leader_face_profile','crowd_front','crowd_reverse','neutral_front','neutral_back','neutral_side'} | ANATOMY_VIEWS):
             raise ValueError('NIHANG_DIAGNOSTIC_VIEW')
         frames=recipe['frames']
         if (not isinstance(frames,list) or not 1<=len(frames)<=16 or
@@ -42,10 +42,10 @@ def validate(recipe):
 def diagnostic_camera(bpy,view):
     """Temporary evidence camera only. No production-camera key edits or save."""
     from mathutils import Vector
-    if view in {'horse_phase367','horse_side367'}:
-        scene=bpy.context.scene;frame=scene.frame_current;scene.frame_set(283);bpy.context.view_layer.update();rig=bpy.data.objects['horse.rig'];target=rig.matrix_world@Vector((0,0,1.25));rot=rig.matrix_world.to_quaternion();scene.frame_set(frame);bpy.context.view_layer.update()
-        data=bpy.data.cameras.new('367 stable whole horse diagnostic');data.type='ORTHO';data.ortho_scale=4.3
-        camera=bpy.data.objects.new(data.name,data);scene.collection.objects.link(camera);camera.location=target+rot@Vector((5,.1,.6) if view=='horse_side367' else (4,-4,.6));camera.rotation_euler=(target-camera.location).to_track_quat('-Z','Y').to_euler();return camera
+    if view in {'horse_reverse371','horse_phase367','horse_side367'}:
+        scene=bpy.context.scene;frame=scene.frame_current;scene.frame_set(283);bpy.context.view_layer.update();rig=bpy.data.objects['horse.rig'];target=rig.matrix_world@Vector((0,0,1.6));rot=rig.matrix_world.to_quaternion();scene.frame_set(frame);bpy.context.view_layer.update()
+        data=bpy.data.cameras.new('367 stable whole horse diagnostic');data.type='ORTHO';data.ortho_scale=4.8
+        camera=bpy.data.objects.new(data.name,data);scene.collection.objects.link(camera);camera.location=target+rot@Vector((5,.1,.6) if view=='horse_side367' else (-4,-4,.6) if view=='horse_reverse371' else (4,-4,.6));camera.rotation_euler=(target-camera.location).to_track_quat('-Z','Y').to_euler();return camera
     if view in {'flag363','flag363_reverse'}:
         flag=bpy.data.objects['MF363 physically solved tied pennant'];ev=flag.evaluated_get(bpy.context.evaluated_depsgraph_get());mesh=ev.to_mesh();target=sum((ev.matrix_world@v.co for v in mesh.vertices),Vector())/len(mesh.vertices);ev.to_mesh_clear();shaft=bpy.data.objects['LEADER spear world contact owner']
         data=bpy.data.cameras.new('363 cloth diagnostic');data.type='ORTHO';data.ortho_scale=1.2;camera=bpy.data.objects.new(data.name,data);bpy.context.scene.collection.objects.link(camera);camera.location=target+shaft.matrix_world.to_quaternion()@Vector(((-1 if view.endswith('reverse') else 1)*1.2,-.7,.1));camera.rotation_euler=(target-camera.location).to_track_quat('-Z','Y').to_euler();return camera

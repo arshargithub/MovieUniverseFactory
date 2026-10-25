@@ -52,7 +52,7 @@ def module(name):
     m = importlib.util.module_from_spec(spec); spec.loader.exec_module(m); return m
 
 
-def actions(bpy):
+def actions(bpy, ignore=None):
     result = {}
     for action in bpy.data.actions:
         curves = []
@@ -63,19 +63,27 @@ def actions(bpy):
             for layer in action.layers:
                 for strip in layer.strips:
                     for bag in getattr(strip, 'channelbags', []): curves.extend(bag.fcurves)
+        curves=[c for c in curves if c.data_path not in (ignore or {}).get(action.name,set())]
         result[action.name] = hashlib.sha256(json.dumps([(c.data_path, c.array_index,
             [(tuple(k.co), k.interpolation) for k in c.keyframe_points]) for c in curves], sort_keys=True).encode()).hexdigest()
     return result
 
 
-def run(bpy, out):
+def phase_spec(phase):
+    if phase=='preparation':return ('370 contact-solved saddle cloth',[306,300,308,313,314]+[f for f in range(276,315) if f not in (306,300,308,313,314)])
+    if phase=='apex':return ('371 apex contact-solved saddle cloth',[323,333,315,319,328]+[f for f in range(315,334) if f not in (323,333,315,319,328)])
+    raise ValueError('PAD371_UNKNOWN_PHASE')
+
+
+def run(bpy, out, phase='preparation'):
     from mathutils import Vector, Matrix
     from mathutils.bvhtree import BVHTree
     prep = module('nihang_prep367'); support = module('nihang_support')
     scene = support.select_production_scene(bpy)
     pad = bpy.data.objects['fitted saddle blanket292']; horse = bpy.data.objects['horse']
     frame_owner = bpy.data.objects['horse.rig']
-    name = '370 contact-solved saddle cloth'
+    name,frames=phase_spec(phase)
+    if phase=='apex' and (not scene.get('apex371') or bpy.data.objects.get('370 contact-solved saddle cloth') is None):raise ValueError('PAD371_APEX_SOURCE')
     if bpy.data.objects.get(name) is not None: raise ValueError('PAD370_ALREADY_SOLVED')
     # Use the actual evaluated fit at every frame; no deform-binding seed.
     # Original pad and all original actions stay untouched.
@@ -83,16 +91,23 @@ def run(bpy, out):
     sub = next(m for m in pad.modifiers if m.type == 'SUBSURF')
     solid = next(m for m in pad.modifiers if m.type == 'SOLIDIFY')
     if wrap.target != horse: raise ValueError('PAD370_HORSE_OWNER')
-    original = prep.frozen(bpy); original_actions = actions(bpy)
+    ignore={}
+    if phase=='apex' and pad.animation_data and pad.animation_data.action:ignore[pad.animation_data.action.name]={'hide_render'}
+    entry_frame=scene.frame_current
+    accepted_visibility={}
+    if phase=='apex':
+        for f in range(276,315):
+            scene.frame_set(f);bpy.context.view_layer.update();accepted_visibility[f]=bool(pad.hide_render)
+    original = prep.frozen(bpy); original_actions = actions(bpy,ignore)
     saved = (wrap.show_viewport, wrap.show_render, solid.show_viewport, solid.show_render,
-             sub.levels, sub.render_levels, scene.frame_current)
+             sub.levels, sub.render_levels, entry_frame)
     horse_levels = [(m, m.levels) for m in horse.modifiers if m.type == 'SUBSURF']
     for m, old in horse_levels: m.levels = m.render_levels
     # Sample the ACTUAL fitted reference, not the unfitted base cage.
     wrap.show_viewport = wrap.show_render = True
     solid.show_viewport = solid.show_render = False
     sub.levels = sub.render_levels = 2
-    rows = []; frames = [306, 300, 308, 313, 314] + [f for f in range(276,315) if f not in (306,300,308,313,314)]; solved = None
+    rows = []; solved = None
     try:
         scene.frame_set(283); bpy.context.view_layer.update()
         dg = bpy.context.evaluated_depsgraph_get(); pe = pad.evaluated_get(dg)
@@ -222,26 +237,39 @@ def run(bpy, out):
         motion = module('nihang_motion')
         for fc in motion.curves(solved.data.shape_keys):
             for k in fc.keyframe_points: k.interpolation = 'LINEAR'
-        after_actions = actions(bpy)
+        if phase=='apex':
+            for ob,values in [(pad,module('nihang_apex371').visibility_keys(accepted_visibility,{315:True,333:True,334:True})),
+                              (solved,[(314,True),(315,False),(333,False),(334,True)])]:
+                for f,value in values:ob.hide_render=value;ob.keyframe_insert('hide_render',frame=f)
+                for fc in motion.curves(ob):
+                    if fc.data_path=='hide_render':
+                        for key in fc.keyframe_points:key.interpolation='CONSTANT'
+        if phase=='apex':
+            for f,expected in accepted_visibility.items():
+                scene.frame_set(f);bpy.context.view_layer.update()
+                if bool(pad.hide_render)!=expected:raise ValueError('PAD371_ACCEPTED_VISIBILITY_CHANGED')
+        after_actions = actions(bpy,ignore)
         if any(after_actions.get(n) != h for n, h in original_actions.items()):
             raise ValueError('PAD370_ORIGINAL_ACTION_CHANGED')
         added = set(after_actions)-set(original_actions)
-        if len(added) != 1: raise ValueError('PAD370_CACHE_ACTION_SCOPE')
+        expected_actions={solved.data.shape_keys.animation_data.action.name}
+        if phase=='apex':expected_actions.add(solved.animation_data.action.name)
+        if added != expected_actions: raise ValueError('PAD370_CACHE_ACTION_SCOPE')
         after = prep.frozen(bpy)
         if any(after.get(n) != h for n, h in original.items()) or set(after)-set(original) != {name}:
             raise ValueError('PAD370_ORIGINAL_GEOMETRY_CHANGED')
         pad.hide_render = True
         solved['contact_source'] = 'fitted saddle blanket292 evaluated each frame; frozen53 motion; no Surface Deform seed'
-        solved['contact_interval'] = [276, 314]
+        solved['contact_interval'] = [min(frames),max(frames)]
         report = dict(rows=sorted(rows,key=lambda row:row['frame']), vertices=len(data.vertices), original_geometry_unchanged=True,
-                      original_actions_unchanged=True, added_cache_actions=sorted(added),
-                      original_hidden_only=True, material_names=[m.name for m in data.materials],
+                      original_actions_unchanged=not bool(ignore), original_motion_actions_unchanged=True, added_cache_actions=sorted(added),
+                      original_hidden_only=True, phase=phase, interval=[min(frames),max(frames)], visibility_only_action_exclusions=sorted(ignore), material_names=[m.name for m in data.materials],
                       source_uv_layers=[u.name for u in pad.data.uv_layers],
                       result_uv_layers=[u.name for u in data.uv_layers],
-                      scope='Native linear shape-key contact cache for39integerframes only; no horse/rider changes, cloth/wind simulation or unseen-motion qualification. Full rendered review and subframe limits separate.')
+                      scope='Native linear shape-key contact cache for declared integer interval only; no horse/rider changes, cloth/wind simulation or unseen-motion qualification. Full rendered review/subframe limits separate.')
         (out/'padsolve370.json').write_text(json.dumps(report, indent=2)+'\n')
         return dict(report='padsolve370.json', frames=len(rows), original_geometry_unchanged=True,
-                    original_actions_unchanged=True, new_native_contact_cache=name)
+                    original_actions_unchanged=not bool(ignore), original_motion_actions_unchanged=True, new_native_contact_cache=name)
     finally:
         wrap.show_viewport, wrap.show_render, solid.show_viewport, solid.show_render, sub.levels, sub.render_levels, frame = saved
         for m, old in horse_levels: m.levels = old
