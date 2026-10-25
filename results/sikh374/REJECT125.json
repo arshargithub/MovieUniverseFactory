@@ -1,0 +1,13 @@
+{
+  "status": "FAIL",
+  "cause": "Post-sculpt guard rejected expanded torso-neighbour/cache gap2.778mm at276 before save. The broad field reached cloth-owned surface; current code now derives a source-contact exclusion BEFORE sculpt, retains25mm guard and records failure coordinates. No new candidate or weakened clearance claim.",
+  "run": {
+    "path": "results/sikh374/appearance-c125-sculpt-run.json",
+    "sha256": "48b045c9c816644dd6622c231a423f4ff2ebfb5a1494428cefb7d1df6f6f0ac0"
+  },
+  "stderr": {
+    "path": ".runtime/factory-native/sikh374-appearance-c125-sculpt/stderr.log",
+    "sha256": "4ee8ce3b2e65d881a68a91fdf6abcc8e58b814b7980b9a0b419eb9e96e1b8250"
+  },
+  "scope": "Method repair, original task/cap retained; not artistic acceptance."
+}

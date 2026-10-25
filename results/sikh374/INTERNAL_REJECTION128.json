@@ -1,0 +1,105 @@
+{
+  "outcome": "REJECTED_INTERNAL_NOT_READY",
+  "reason": "FAIL:339 opposite-oblique and side expose a broad triangular skin web/shelf between neck and foreleg during descent. Upper rest-chest volume improved, but the positive connected posed anatomy remains false. Do not pass on relative improvement or numerical contact.",
+  "images": {
+    "283:horse_form_front374": {
+      "path": ".runtime/factory-native/sikh374-appearance-c128-front/frame-0283.png",
+      "sha256": "8a17f3beb9da0d5af7539fe37527e4e83182770463cc565dc1fefc189a080342"
+    },
+    "333:horse_form_front374": {
+      "path": ".runtime/factory-native/sikh374-appearance-c128-front/frame-0333.png",
+      "sha256": "626cf1fb662c8fd78ed55477f4d6c4ca3e1f898bebf9819106522fbc2159556c"
+    },
+    "339:horse_form_front374": {
+      "path": ".runtime/factory-native/sikh374-appearance-c128-front/frame-0339.png",
+      "sha256": "a6a3cd875d20c73b27a65dd16d2c9b05e36186ad8e3173681b90a2811e4d77a4"
+    },
+    "346:horse_form_front374": {
+      "path": ".runtime/factory-native/sikh374-appearance-c128-front/frame-0346.png",
+      "sha256": "637ee20435155ca92cf37bf4d7d47849566b19b4319e7a53f4ed7a4b498e65ce"
+    },
+    "367:horse_form_front374": {
+      "path": ".runtime/factory-native/sikh374-appearance-c128-front/frame.png",
+      "sha256": "54c94bb4ed8e61b97bf25e0b7efd367b39db7463942d47de618f35f095ae2471"
+    },
+    "283:horse_form_side374": {
+      "path": ".runtime/factory-native/sikh374-appearance-c128-side/frame-0283.png",
+      "sha256": "6914fb55523f750af2a6ff9873e8c5fc919f2238178cf6e089bf0a85008ce406"
+    },
+    "333:horse_form_side374": {
+      "path": ".runtime/factory-native/sikh374-appearance-c128-side/frame-0333.png",
+      "sha256": "083a20835500151bf235d60fca6dd7c5a5d63cf60008ba551e636df51daeac82"
+    },
+    "339:horse_form_side374": {
+      "path": ".runtime/factory-native/sikh374-appearance-c128-side/frame-0339.png",
+      "sha256": "895d5798ec2fe6ef025678991f45dc727769288d007efab86a28123abb7fdca9"
+    },
+    "346:horse_form_side374": {
+      "path": ".runtime/factory-native/sikh374-appearance-c128-side/frame-0346.png",
+      "sha256": "617c32e146e56677075cb51daa3d91d41bf9537f95194929b85cc92f2431f085"
+    },
+    "367:horse_form_side374": {
+      "path": ".runtime/factory-native/sikh374-appearance-c128-side/frame.png",
+      "sha256": "b5c281a6469ddd55ba48a511f6f0b077876b9637d0b5337997ac6ea4a9804c2a"
+    },
+    "283:horse_form_reverse374": {
+      "path": ".runtime/factory-native/sikh374-appearance-c128-reverse/frame-0283.png",
+      "sha256": "f8e73182134868a626f213172d166d05a575ac465f04fd19c00eb90b24fda4cc"
+    },
+    "333:horse_form_reverse374": {
+      "path": ".runtime/factory-native/sikh374-appearance-c128-reverse/frame-0333.png",
+      "sha256": "ccac9cb0c990322ab163fa00d3d6aa0d9ed07629e1254c30b4461c1da84af03a"
+    },
+    "339:horse_form_reverse374": {
+      "path": ".runtime/factory-native/sikh374-appearance-c128-reverse/frame-0339.png",
+      "sha256": "c68383ed6cb6e0900b5d85def1a9e24c981da37830b814e049bc96bd067bb1d3"
+    },
+    "346:horse_form_reverse374": {
+      "path": ".runtime/factory-native/sikh374-appearance-c128-reverse/frame-0346.png",
+      "sha256": "b933b3aa7c295f2fb1a9df094252c370c53be4a8293e4fd35da4d235cfdf7968"
+    },
+    "367:horse_form_reverse374": {
+      "path": ".runtime/factory-native/sikh374-appearance-c128-reverse/frame.png",
+      "sha256": "c5cccde03a796f13457c2589e4890bf61b1a7963d0e01269731536434934f5f0"
+    }
+  },
+  "source_preservation": {
+    "path": "results/sikh374/SOURCE_COMPARISON128.json",
+    "sha256": "6f4c54145fe7fdd6e832ba685834fd3ce1d2ab16c669581bbd562ee547d4a091"
+  },
+  "critical_contact": {
+    "path": ".runtime/factory-native/sikh374-appearance-c128-sculpt/horse-contact374.json",
+    "sha256": "15fb2b26006c5a4910bcf8f6e823dcc98e8f0ae3226105cba67e6250a3c32808"
+  },
+  "candidate_native": {
+    "path": ".runtime/factory-native/sikh374-appearance-c128-inspect/scene.blend",
+    "sha256": "6aa915eccb18b79eeaaba618b017536e850e06e72d03a3b37292b9498a89946b"
+  },
+  "protected_accepted_motion": {
+    "path": ".runtime/factory-native/sikh373-motion-c80-contact/scene.blend",
+    "sha256": "204eea24a877219a30c7405bba178ddcff9655c30036d0c5ab218b603fc0fb44"
+  },
+  "knowledge_packet": {
+    "path": "results/sikh374/packet128.json",
+    "sha256": "4f496254a82281bcac1a56af4e7086e663977c065b27b18bba50f9e4ee83e0b7"
+  },
+  "known_defects": [
+    "neck_chest_foreleg_skin_web339",
+    "positive anatomical form not established through descent"
+  ],
+  "not_run": [
+    "intended-light controls",
+    "all92frame cache audit",
+    "new whole moving proof",
+    "Director AV queue",
+    "strict delivery"
+  ],
+  "not_run_reason": "Stop expensive downstream proof on actual early appearance FAIL; do not fabricate completion or mark native plans as passed.",
+  "allowance": {
+    "first": 124,
+    "last": 128,
+    "max": 128,
+    "remaining": 0
+  },
+  "causal_limits": "Inactive shape keys do not eliminate a skin-weight/deformation cause. Breast/neck/shoulder ownership and posed response must be diagnosed next; no definitive bone-level cause established by these image controls."
+}

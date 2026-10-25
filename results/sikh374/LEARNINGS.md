@@ -1,0 +1,26 @@
+#374 appearance retrospective: rejected torso candidate
+
+## Outcomes and authority
+
+Director374 accepts exact80 landing motion, completing horse primary motion276..367 only. All accepted masters remain unchanged. Five total appearance cycles124..128 were used:124 source diagnosis/control,125–127 rejected prospective clearance proxies before any native candidate save,128 actual derivative plus15 matched images.128 fails internal form review; no new appearance, wholehorse, story edit or release acceptance. No full moving render, all92 contact audit or Director AV queue was run after the visible failure. Original task is REPLAN_REQUIRED128/max128; no reset or extra authority.
+
+## What worked
+
+The explicit appearance unit extends367's schema without pretending appearance is faithful_motion. It requires a separate valid visual reference role, fixed accepted motion source, coupled interfaces and complete pose×view execution/review coverage.40 focused current tests pass; the local typed handler returned a real candidate. This is structural coverage, not artistic judgment or general qualification.
+
+Actual final-surface contact testing from370 was reusable.128's five critical poses passed vertex/triangle-centroid signed clearance, minimum2.754mm. Actions/weights were unchanged, back/seat rest delta0, and sampled vertices outside the actual sculpt differ by at most0.134micrometre. Historical raw mesh and Basis differed168.87mm;128 synchronizes raw cage to actual Basis and preserves relative correctives within0.060micrometre. Edge graph is identical; recalculated loop tessellation differs in12 triangles, so do not claim triangle byte identity.
+
+The opposite-flank339 view exposed an obvious triangular skin web between neck and foreleg. The internal review rejected it before a new full-motion render or director-ready handoff. This is one successful failure catch, not measured general Director-input reduction. Front-only comparison would have been insufficient.
+
+## Failures and method changes to carry forward
+
+1. **Calibrate a proposed blocker on the accepted source first.**125's global25mm cage/cache threshold and126/127 variants were poorly chosen proxies for an interface intentionally fitted near2mm.126/127 rejected virtually unchanged neighbours. They did not establish a collision. Three authorized cycles were consumed without an artistic candidate. The proposed guard should have been tested against the known accepted cache BEFORE artistic admission, including a negative control. Do not multiply heuristics to repair a bad measurement model.
+2. **Search actual reusable checks before inventing replacements.**The accepted padsolve370 final-surface signed test already existed.128 reused it rather than demanding unrelated clearance on expanded cage neighbours. Its sample-based scope and subframe limits remain explicit; it is not continuous collision certification.
+3. **Inactive correctives do not prove a rest-mesh cause.**All non-Basis keys were0 at the tested poses, but skin ownership and evaluated deformation still matter. The field restored upper rest volume while the descent skin web remained. The earlier assumption that rest form was the sufficient correction layer was not established. A read-only source edge diagnostic now finds339 anterior-torso95th-percentile edge-length ratio1.823 and maximum3.971 versus stance283; this supports phase-conditioned deformation investigation, not a force/bone-cause claim (POSE_STRAIN_DIAGNOSTIC.json). Next diagnosis must separate base shape, local breast/shoulder/neck ownership and pose response before choosing a repair. Do not add another Gaussian bump as a substitute for that test.
+4. **Prove the worst revealing pose first.**The5x3 final matrix remains necessary, but the earliest discriminating proof should be339 opposite flank plus stance283 and high333, not15 images before seeing the most revealing view. Escalate to the full matrix only after that small integrated positive-form proof. This changes sequencing, not the quality floor.
+5. **Preserve the primary motion while correcting moving form.**Appearance and motion are coupled; unchanged keyframes are not unchanged skin. Local geometry/weights/corrective changes must keep the approved action and limb proportions and revalidate visible deformation/contact. Do not reopen accepted performance or hide the web with tack, coat or lighting.
+6. **Keep failure semantics scoped.**The native failed dependency gate conservatively propagates failure to its shared step requirements. This does not mean the accepted master changed or the Director judged playback. Preserve separate source-pass, sampled-contact-pass, image-form-fail and unrun-AV records.
+
+## Next use and stopping
+
+Read this file, INTERNAL_REJECTION128.json and NEXT_WORK_PACKAGE.md in the next fresh packet. Retain automated open form/interfaces/whole_look/evidence/allowance retrospective gates and all failed inputs. Original authority/model/correction counts persist. New artistic cycles require Director approval; no additional allowance inferred from technical debugging. No Astra escalation is justified by these method/proxy errors. Sol remains the default. No new provider calls, spend, upload or remote protection occurred; engineering tokens/cost are unknown.

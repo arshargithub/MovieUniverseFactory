@@ -1,0 +1,56 @@
+{
+  "run_digest": "763a7061b5816a02cd8304d52f8188409dc9ba605289ad361e95a9ffe1fad76e",
+  "verdict": "PASS",
+  "observation": "Saved bounded torso/nap-only derivative. Actual five-pose final horse/cloth surface signed gaps pass, minimum2.754mm; actions/weights/back fixed. No appearance or full-motion pass inferred.",
+  "comparison": "Actual returned source/report/image availability versus admitted recipe. Artistic unit criteria and full-speed AV remain separately NOT_TESTED.",
+  "open_defects": [],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh374-appearance-c128-sculpt/snapshot.json",
+      "sha256": "e8373a7d08dab22f9a9ba466424f33d658318570043abe84404b5e1bc283f6b8"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh374-appearance-c128-sculpt/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh374-appearance-c128-sculpt/script-diagnostics.json",
+      "sha256": "4e1205462c9c8153ef4f4d15eba35ea263f6079e3b74341771bbb12e2f41f34c"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh374-appearance-c128-sculpt/scene.blend",
+      "sha256": "6dac31862cb925ea574c8ac05110568dfa3f5819cbf14b0916224ff2a7c78913"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh374-appearance-c128-sculpt/patch-evidence.json",
+      "sha256": "55c9a52b1159a2b0cb60c413590080a668093d4680ac1a5aff63de461554982e"
+    }
+  },
+  "retrospective_observations": [
+    {
+      "requirement": "form",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "interfaces",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "evidence",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "whole_look",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "director_form_motion",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    }
+  ]
+}

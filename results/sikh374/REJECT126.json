@@ -1,0 +1,13 @@
+{
+  "status": "FAIL",
+  "cause": "126 source report: expanded-neighbour source9.403mm versus candidate9.408mm, so absolute25mm guard rejected an unchanged interface. Replace invalid global threshold with2mm floor and twice local two-ring displacement bound, retain source-contact mask and all92frame checks; no candidate yet or artistic acceptance.",
+  "run": {
+    "path": "results/sikh374/appearance-c126-sculpt-run.json",
+    "sha256": "8c590c74b183f844f66c0fbd7a3d32a734f47af6eeb90e15c19d3b6f6db65095"
+  },
+  "stderr": {
+    "path": ".runtime/factory-native/sikh374-appearance-c126-sculpt/stderr.log",
+    "sha256": "ddd55460554eed312ec736315bb2d2483d2a09331c25fe6b260c9bac94ad5144"
+  },
+  "scope": "Method repair, original task/cap retained; not artistic acceptance."
+}

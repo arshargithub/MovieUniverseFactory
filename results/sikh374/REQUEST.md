@@ -1,0 +1,6 @@
+#Director374: landing acceptance and horse torso appearance
+
+User: “approved”
+Directreply to373fullrear/landingcomparisonandproposednextpackage: fiveappearancecycles forhorsechest/torso, checkedacrossacceptedmotion. Thisaccepts exact80landingmotion andauthorizesnextfiveTOTALappearancecycles, retainingoriginalappearancehistory. No newprincipalidentity/style, assets/provider/tools/install/cloud/upload/spend, no crowd/audio/leadergesture/shotintegration. Preserveaccepted276..367horse/ridermotion andmasters; repairtorso/chestform atrest,crest,descent/compression; revalidateaffectedposeddeformation/tackcontact.
+
+Existingappearance123/max127hasfourunusedslots124..127. Assignthoseunderlatestdirectionandaddone128, givingexactlyfiveformcycles124..128; notnine andnotanewtask. Originaltask sikh335-supporting-appearance. DirectorAVacceptance appliesonlyexact80horselanding, notfrozenappearance oroldfilmshotcoverage.

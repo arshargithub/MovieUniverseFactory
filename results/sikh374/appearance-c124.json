@@ -1,0 +1,107 @@
+{
+  "parent": ".runtime/factory-native/sikh373-motion-c80-contact/scene.blend",
+  "method": "Fixed read-only actual Basis/key/weight/topology/posed-cage export and matched5x3 wholehorse diagnostic views, temporary neutral lights cleaned after render; no sculpt until diagnosis.",
+  "proof": "Actual source mesh layer/weights/posed cages and readable matched rest/crest/descent/compression/settled front/side/opposite-oblique. Technical invariance then image-led causal diagnosis.",
+  "scope": "Director374 five TOTAL chest/torso appearance cycles124..128 under frozen accepted276..367 motion.",
+  "reconciliation": "Current374 accepts80landing;365 rejects flat113 chest. Old broader actor/clothing and motion defects historical; no new authority by repinning. Source history retained with selected relevant old excerpts; full sources preserved/read.",
+  "alternatives": "Wholechest smoothing rejected by365; bone scaling would break accepted proportions/motion/contact; cosmetic relighting would hide structural failure.",
+  "failure": "Diagnose actual source; known negativeform, missing pose/view, action drift or interface failure staysinternal. No automatic extension after128.",
+  "cause": "113 broad rest-mesh fairing removed lobes but flattened lower chest; determine current Basis/corrective/skinning contributions rather than layering another compensation.",
+  "expected": "Bounded anatomical form correction chosen from actual source evidence without changing accepted movement.",
+  "steps": [
+    {
+      "id": "inspect",
+      "depends_on": [],
+      "recipe": {
+        "operation": "nihang_patch",
+        "frame": 367,
+        "width": 432,
+        "height": 768,
+        "samples": 8,
+        "edits": [
+          {
+            "kind": "mounted_horseform374_inspect",
+            "target": "horse"
+          }
+        ]
+      }
+    },
+    {
+      "id": "front",
+      "depends_on": [
+        "inspect"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 367,
+        "frames": [
+          283,
+          333,
+          339,
+          346,
+          367
+        ],
+        "view": "horse_form_front374",
+        "width": 640,
+        "height": 640,
+        "samples": 8
+      }
+    },
+    {
+      "id": "side",
+      "depends_on": [
+        "inspect"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 367,
+        "frames": [
+          283,
+          333,
+          339,
+          346,
+          367
+        ],
+        "view": "horse_form_side374",
+        "width": 640,
+        "height": 640,
+        "samples": 8
+      }
+    },
+    {
+      "id": "reverse",
+      "depends_on": [
+        "inspect"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 367,
+        "frames": [
+          283,
+          333,
+          339,
+          346,
+          367
+        ],
+        "view": "horse_form_reverse374",
+        "width": 640,
+        "height": 640,
+        "samples": 8
+      }
+    }
+  ],
+  "sources": [
+    "src/movie_factory/adapters/blender/nihang_form374.py",
+    "tests/test_horse_form374.py",
+    "tests/test_appearance_unit374.py",
+    "results/sikh374/STRATEGY.md",
+    "results/sikh374/LANDING_ACCEPTANCE.json"
+  ],
+  "retrospective_evidence": [
+    "results/sikh374/appearance-c124.json",
+    "results/sikh374/appearance-c124-challenge.json",
+    "results/sikh374/REQUEST.md",
+    "results/sikh374/STRATEGY.md",
+    "results/nihang-scope-review365/ANALYSIS.md"
+  ]
+}

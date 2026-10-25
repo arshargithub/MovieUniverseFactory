@@ -1,0 +1,11 @@
+# Proposed next package: chest deformation, same accepted rear
+
+Director-owned decision: authorize four additional appearance cycles on original sikh335-supporting-appearance after128/max128. No new primary motion, character identity, resources, spend or Astra. Preserve exact accepted80 action and protected masters. Do not begin native correction before fresh authority, same-task allowance amendment, source reconciliation and plan challenge.
+
+Audience outcome: the neck/chest/foreleg junction remains a believable powerful horse through the rear, especially descent339; no triangular skin web, flat bib, hanging breasts or crease shelf. Same-film floor retained. Keep leader/crowd/flag/tail/audio/shot integration separate and unaccepted.
+
+Bind POSE_STRAIN_DIAGNOSTIC.json and actual128/124 failing339 images as early discriminating controls. First diagnose actual breast/shoulder/neck rest/pose ownership and point deformation in accepted80 versus128; inactive shape keys are insufficient cause evidence. Use original/reference positives and actual124/128 negatives. Choose a bounded local geometry/weight/corrective strategy only after that discrimination. Calibrate technical checks on accepted source and a failing control; reuse actual final-surface contact test, not old125–127 cage proxies.
+
+Earliest proof: actual339 opposite-oblique +283 stance +333 crest before any full matrix or animation render. These must show positive connected anatomy and unchanged limb/neck support. Any web/shelf/regression remains internal. If that proof passes, complete5x3 revealing controls, intended framing, exact action/geometry-interface checks, all92frame sampled cloth contact and full-speed moving-form proof for manual313 Director AV. No static-source or scalar PASS substitutes for those missing checks.
+
+Exit: complete torso-form/source/interface proof and exact reviewable clip, with only Director temporal judgment pending; or genuine exhausted-allowance/strategy decision with failed evidence. No incremental ready claims. Then propose the next coherent appearance unit: tail attachment/form and secondary response under accepted motion, before wholehorse readiness; leader/signal/flag and crowd remain later dependencies.

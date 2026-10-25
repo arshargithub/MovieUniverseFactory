@@ -1,0 +1,71 @@
+{
+  "run_digest": "e0d6c5d967f81ff3ccbcc58cbb97c2f9d7d7cf888ef56fc8f1c168370789e454",
+  "verdict": "PASS",
+  "observation": "All five matched front images returned; actual283/333 inspected, current lower chest still too planar and broad. This is diagnostic evidence, not form approval.",
+  "comparison": "Actual returned source/report/image availability versus admitted recipe. Artistic unit criteria and full-speed AV remain separately NOT_TESTED.",
+  "open_defects": [],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh374-appearance-c124-front/snapshot.json",
+      "sha256": "e8373a7d08dab22f9a9ba466424f33d658318570043abe84404b5e1bc283f6b8"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh374-appearance-c124-front/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh374-appearance-c124-front/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh374-appearance-c124-front/frame.png",
+      "sha256": "4d46a81a09349345f5ec1ef3d719832fa246ffa5aa7dc148d205b7fe0fc4b6bd"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh374-appearance-c124-front/frames.json",
+      "sha256": "8204e59628ffe788553ef5c3d9014f23096c57f770afadd07a4985eff43cf136"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh374-appearance-c124-front/frame-0283.png",
+      "sha256": "99737923d287ac0d9f0a31c0a74e969a5bf51c6028a71474c31d11e4aad74d7c"
+    },
+    "frame_333": {
+      "path": ".runtime/factory-native/sikh374-appearance-c124-front/frame-0333.png",
+      "sha256": "6240846d60fd1a25e16668bfc49538664a0d16cf3d9dca7f650b038627cf9c3b"
+    },
+    "frame_339": {
+      "path": ".runtime/factory-native/sikh374-appearance-c124-front/frame-0339.png",
+      "sha256": "9c47925db1780a9dc3b5adc1625d4e975037115fcb81c95c8ff7be9348fc2888"
+    },
+    "frame_346": {
+      "path": ".runtime/factory-native/sikh374-appearance-c124-front/frame-0346.png",
+      "sha256": "337df88db11fa3c66e55f2337f0b7ae2ee9e72d71afabc1287d73df269b29e24"
+    },
+    "frame_367": {
+      "path": ".runtime/factory-native/sikh374-appearance-c124-front/frame.png",
+      "sha256": "4d46a81a09349345f5ec1ef3d719832fa246ffa5aa7dc148d205b7fe0fc4b6bd"
+    }
+  },
+  "retrospective_observations": [
+    {
+      "requirement": "form",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "interfaces",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "evidence",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "whole_look",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    }
+  ]
+}

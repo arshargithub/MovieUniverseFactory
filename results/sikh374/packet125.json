@@ -1,0 +1,825 @@
+{
+  "schema_version": 1,
+  "task": {
+    "id": "sikh374-horseform125",
+    "operation": "modeling",
+    "entities": [
+      "nihang_horse",
+      "nihang_leader",
+      "renderer"
+    ],
+    "query": "horse pectoral sternum shoulder barrel base mesh corrective skinning deformation contact accepted motion form",
+    "intent": "Believable chest/torso anatomy under fixed accepted276..367 motion; diagnose actual source before bounded local repair; five total124..128.",
+    "phase": "execution",
+    "inputs": {
+      "results/sikh335/REQUEST.md": "4fcc2ea93e661961cea9007557b0d692e8073a565fcfc59d40ffdd1c22146ca6",
+      "results/sikh335/STRATEGY.md": "41500855f0ff4c10b905a6cb280e4b6e99a7248b2a9962761d9a8fc97fffae11",
+      "results/sikh331/PROOF_AUDIT.md": "24ed70645393f90aeca5898ca917b88aa6ffa129b3d232d687cadbd06fccbc4f",
+      "results/workflow330/NIHANG_PROSPECTIVE_BRIEF.md": "ec6570f24081644d996c6b12d602d10a229f28257c4d18e8c9b67f7cb28b0878",
+      "docs/knowledge/NATIVE_WORKFLOW_334.md": "73366bd536e11b5a572114e2a9e7b091024a98ac51063997e5f1909b843575cc",
+      "docs/knowledge/PLANNING_PIPELINE_330.md": "ce6bfc3668ef68a8fc4d194b68959c05b022d2b68169436e2694a40740c04a8b",
+      "docs/knowledge/EXPERT_LENS_PLANNING_328.md": "71b7c3b34557cfdc297b223f8313783055ce12449e08217d55c4a6a9e6d627c7",
+      ".runtime/art-direction/series01-sikh320/build-10/sequence.blend": "c7af07ec8ea14e1f321cf7bb7d5ec4e5cd6b8bbccabfaa886c3622e7cacc3a00",
+      "results/sikh351/REQUEST.md": "6583e0b2f6a7dbbe5e2a61fe6012985a74efb061cb18f121da043dd7bdce9b3b",
+      "results/sikh351/GROUNDING_RECONCILIATION.md": "1a627d2f65cc418599919ef84c46fca204211875c91588a0dea4b64d8dd11808",
+      "results/sikh348/CAUSAL_LEDGER.md": "6bc7d973b4480a922a970ef7542f4e7459fbda0dfd761205675d2ae87d52cdc9",
+      "results/sikh348/NEXT_PROOF.md": "a5e97945f85c295ca013943298ff8d894f47aca4414fc53422f7fde81e510b09",
+      "results/sikh335/REASSESSMENT_347.md": "ae8395e79a016262bed621a2cec55e6e03924f366cd2978dbe543b3f4352d3ee",
+      "results/sikh352/REQUEST.md": "5fa298ed37f1f7d3545170743a04a986079496d3850ccd12ddf9160415718522",
+      "results/sikh352/STRATEGY.md": "4e1fc267f76700cf56afd3d880bd09ba8d67cdbbe8a8bc6507a2aa5cd4e0f6d6",
+      "results/sikh351/CLOSEOUT.md": "3449c0997136eee16920370861d6b49f7593b4da2c16e288d4e79cac41b7cfcf",
+      "results/sikh351/DIAGNOSIS.md": "9288b9c8502cbc5deac61ad7a07aa466cac2669b27aa2f115d988fabdbe04fdd",
+      "results/sikh351/DIAGNOSIS57.md": "67d416c3acfab412919ba92389e1bd35ba69926d46d44cb203b794f03b8aa564",
+      "results/sikh353/REQUEST.md": "61889620ac3b5a5bc0160d2bf5d4264d9a013094d395003733513f35d4c2301e",
+      "results/sikh353/STRATEGY.md": "187c6b3fad90a80aab289a577ff6ad21449169925c5974bda04ff1ff2fa52389",
+      "results/sikh352/CLOSEOUT.md": "cbe599102b6dade0595114c92ed4b7dbfd48c04daa28fb5082a9aaa7fc1d47b1",
+      "results/sikh352/LEARNINGS.md": "4e5f387b0c67eb586667c97117253caeff7ad939e5ebbd906d1b0f31930c8992",
+      "results/sikh352/EVIDENCE_SCOPE_NOTES.md": "29d1527a4b750e0edab3e2409fb694e50f0cd91d697b7058005bb14019b1637b",
+      "results/sikh335/motion01/landing-review-c12.md": "d0fada04fcdbb952b29178817f673295a1f6b85d46c40bc08c819f0956a51a94",
+      "results/sikh354/REQUEST.md": "1971c343f8df45667820c1a5d4b620b4d24b4ae2f551ddbd77d3f0435189c65b",
+      "results/sikh354/STRATEGY.md": "9bd5eba5733dc751e64e5e957aaae3172972573cb4c1a5169c4b80cf762f5ebe",
+      "results/sikh354/RETRO_AUDIT.md": "c8f36cf66031c06595e513f83a2f5334f562ad45dfbf3c950fc0eaff382f6048",
+      "results/sikh353/LEARNINGS.md": "68bfb72e32f682c8258fc920c726fb1f66afa9a9e48d33228b9ed25df771d981",
+      "results/sikh353/CLOSEOUT.md": "4f3ad121d260c1d03a8881e8a65bab423b6e9be3efe8aef569509e8f20848ed7",
+      "results/sikh357/REQUEST.md": "b21cf83e1c171c209b48cfc190521a56c2dbc684344d2119a00dfbc12cdb98bf",
+      "results/sikh357/STRATEGY.md": "e45b13dd1dff6b40aee2cd8bfaec9bc0dae544c8989df3ef09c1cfc9033ca95a",
+      "results/sikh354/LEARNINGS.md": "e7aa493fdc4e008e780b8432784833937ae0203796281594969c22f1d81ccc14",
+      "results/sikh354/CLOSEOUT.md": "77b4b65db9d9b73e3dfa65df816413809e60662f58ca42d91d4d2439e7ec945d",
+      "results/sikh358/REQUEST.md": "11ddd70019d54c4732feba9ca6f68b6b8c28367190dcc3f5f8d979a2b4bfb940",
+      "results/sikh358/STRATEGY.md": "a013e8fe13b53d414cd288f5f9ea9f8a36b64fb459ae45402ff60fcc05146f42",
+      "results/sikh357/LEARNINGS.md": "9cc3c8a150783b40ed9c22871cd676edf9ba6aac8c4be7b61b2e1fff005d9b16",
+      "results/sikh357/CLOSEOUT.md": "33507fd5df05c68691190a293f3ee7816abd0f988e99522004ac8448e45f032c",
+      "results/sikh361/REQUEST.md": "469941a11dcd361f919c5a74e44d03197ed0f4b3cef9bc1689eea69302469140",
+      "results/sikh361/STRATEGY.md": "8f07bd01891e82b8f4d2ea0e8ac858b342e9df117f0764310333bb92dadb6bbd",
+      "results/sikh358/LEARNINGS.md": "ca64171302fb0d5ffb7ef26d68d918e53482145266ff0a4ae7312961cf6ae337",
+      "results/sikh358/CLOSEOUT.md": "8ce013d9001fa60a2da41dded5e50909b2cdd0cfaab88087673e453bb63188d7",
+      "docs/engineering-intelligence/STAGE_MODEL_ROUTING.md": "2529ac1c41758e49f876721d92b87f834c393fdeb118537729a0545222b7ffb0",
+      "results/sikh362/REQUEST.md": "d1ee9b03d2aa7a0f7be6e0030e35e01230ece2f8d97ae69d260ecf0106efb592",
+      "results/sikh362/STRATEGY.md": "bce8b55cb00a1fc0870788699968d83e3d9297014a8c4c83844a2fd2f2fab7c4",
+      "results/sikh361/LEARNINGS.md": "b44c612c5413a8b45bb50dedbbb865ffd133e6ca5866d81810ce20b96e084a5e",
+      "results/sikh361/CLOSEOUT.md": "9b0fc1dba8cb873c5f690119e995f9639a7b7a37983a7b72e8101f70cd8b1bf9",
+      "results/sikh363/REQUEST.md": "f33be4d8e362a6bec2976ce415152cefe1867769254031129d25220a0a3ebe44",
+      "results/sikh363/STRATEGY.md": "403b263174b2fa1ae58b2c737c76fd26278e35ac27c5ae9173925cf003bc1099",
+      "results/sikh362/LEARNINGS.md": "5d53c2d110040fd891f6d25bf33432eb650cc79041d5f7d831673d1c09a15a20",
+      "results/sikh362/CLOSEOUT.md": "372681982a702a7cdd2a2e09d82e4e4088fbb9e7abb0a7e0025569636e5a2f91",
+      "results/sikh363/CAUSAL_AUDIT.md": "5d163f96fa6ba91fb2688bfd07123a6200b4e3d26fd20b84ec8195e0b2065137",
+      "results/sikh363/APPEARANCE111_REVIEW.md": "c5025263cc5a3abb5935e49835c320c1d9765f25d0d98739cf81ed3d0695a13d",
+      "results/sikh363/motion-c40-phases-review.json": "622b7ceefd7eb9d0925f8f2f908d469db2abd24f8ee1cd48c79e1a791d1e91b5",
+      "results/sikh363/LEARNINGS.md": "23fb25c8f1155a66d0758f12a6d340b2731ae64d9af949df22f856894c6da29d",
+      "results/sikh363/CLOTH117_RESULT.md": "32c275204f3c3fb4a27ff1459fb86323873dbc0be46a6b5287339bbbd3e1f2b9",
+      "results/sikh363/EXTENSION364.md": "b21a63979ac51c656dbf9b111da3fd46d22f0f9f98672533b1b2ee2d17894385",
+      "src/movie_factory/adapters/blender/nihang_control.py": "bd48e4fd65063a70cb11311cf16b89b5dd05e28dadecb51467965cf10dfe7519",
+      "src/movie_factory/adapters/blender/nihang_patch.py": "60ea2143291d7ed49786ea4158f517242497aff5c11e28ed3addccee3165342a",
+      "src/movie_factory/native_admission.py": "0a7040f98a1226705600baed4c3ad7764b38c63d8487bb9cbc7e9c9d5ea77b8a",
+      "src/movie_factory/adapters/blender/nihang_form374.py": "fd0e30e8d3c1c598a7e49428bb6656e5069cf5051fa34404120cc803d5223c2b",
+      "src/movie_factory/work_units.py": "435aa43a8ef2a0630417aaf40cbbc81a0764bf436f1019105a42f18075d32d85",
+      "tests/test_appearance_unit374.py": "f4bc66f073363f9949fee6e9dd2246af1baf607197f3bf49007ecaea2d193af3",
+      "tests/test_horse_form374.py": "67f575d324b87bcc2230a5e784f98f80fface0b8de0e4e87af95e01487e626fa",
+      "src/movie_factory/production_workflow.py": "b01129281208a1bc4a752d12dee4e5ee4c2496bbec75c266a6e43782fd875189",
+      "tests/test_revision373.py": "906983d20ccaefd7667f9086696f6155a20921672f2c2fc88280bbaf931d02fa",
+      "results/sikh374/REQUEST.md": "df815d77f02ae5160902ddd7d96c6af8a8a5b29420d9b11dbec5f6aaaf2dc29f",
+      "results/sikh374/STRATEGY.md": "27408c6d82a131337edf63c3a2421288f485e1c6f122cd45944226d4b2f94f20",
+      "results/sikh374/LANDING_ACCEPTANCE.json": "694abc6345aa9540e2a2cf8e0c572ac6929e684038b573cd72fb935e9043f5db",
+      "results/sikh373/LEARNINGS.md": "4d7d8b7b41a40df4be54606e27859606b070885a8ba8e5051e539eab81bb1024",
+      "results/sikh373/REUSE_HANDOFF80.json": "a8bdd30574cd884ae2dfecc2dd762ce0b32482febd4053b358c33486d8963c2e",
+      "results/nihang-scope-review365/ANALYSIS.md": "34515295a8e2700aca5c0e1dc49bffd60d7f25244ae656d885574e2075eb91f8",
+      "docs/knowledge/WORK_UNIT_GRANULARITY_369.md": "76bedc02598b2596d54a882b5d19c4258cc220136970a87d9dabc3822f1c243f",
+      "docs/knowledge/WORK_UNITS_367.md": "6d60e8bef77d178b0be0a1d2fb757136be150549604e5fbe9b6af13e53de5592",
+      ".runtime/factory-native/sikh373-motion-c80-contact/scene.blend": "204eea24a877219a30c7405bba178ddcff9655c30036d0c5ab218b603fc0fb44",
+      ".runtime/context-hygiene/runs/sikh374-form-handler-tests/stdout.log": "14ccc40b087ee0c85c6c3975d200f67fa7349830956540aa62219046f466d62c",
+      "src/movie_factory/adapters/blender/nihang_sculpt374.py": "81842d049368b061981b4e6a4c92b6006ab0ce818d21ba79cb11ef0086ebe657",
+      "tests/test_horse_sculpt374.py": "90e2521a9d8d9458f16d87fc8db617b005aaccfd27f65df9af1451efdc59658d",
+      "results/sikh374/SOURCE_FORM124_REVIEW.json": "04545a386ef03eee035a333337c311fd3c45f0b07685e1f75b91f1d0ff5f424a",
+      "results/sikh374/GROUNDING_RECONCILIATION.md": "9ec1a81003ba23a5b004941ddcc436350d1d150d709aa52bef779d016b246dc8",
+      "results/sikh374/DIAGNOSIS124.json": "b57a1cf1626aaac358de6a106bbebd303e10075b7427bb012b4b4d4147d0cac0",
+      ".runtime/context-hygiene/runs/sikh374-sculpt-tests/stdout.log": "1d960b4dff849cb0b2532d527d5914eba7296aa65c78fca43d97335992adef79",
+      ".runtime/factory-native/sikh374-appearance-c124-inspect/scene.blend": "7210700068723c28b8a7239ef57acce19b79e09abef37b0835f847735742810e"
+    },
+    "open_decisions": [],
+    "execution_authority": {
+      "source": "results/sikh374/REQUEST.md",
+      "scope": "Director374 five total horse torso appearance cycles124..128; no new resources."
+    },
+    "max_context_characters": 60000
+  },
+  "corpus_digest": "9cd199826d1f7745dd2439fd06b4794f60481676f710964f92953b07b2f19bd4",
+  "engine_sha256": "54c09108922d30f0d4dfe72318b92af1ff3853a4d142ff7ada5d154b07d4a400",
+  "entity_versions": {
+    "nihang_horse": "320-shot-tier-quality-unqualified-development",
+    "nihang_leader": "320-shot-tier-quality-unqualified-development",
+    "renderer": "248-strict-replay-fail-separate-from253-creative"
+  },
+  "entity_reasons": {
+    "nihang_horse": "explicit task entity",
+    "nihang_leader": "explicit task entity",
+    "renderer": "explicit task entity"
+  },
+  "traversed_edges": [
+    [
+      "nihang_leader",
+      "supported_by",
+      "nihang_horse"
+    ]
+  ],
+  "facets": [
+    "anatomy",
+    "animal_coordination",
+    "contact",
+    "look",
+    "modeling",
+    "motion",
+    "render",
+    "secondary",
+    "sikh_motion",
+    "sikh_scope",
+    "visual"
+  ],
+  "obligations": [
+    {
+      "id": "construction_interfaces",
+      "status": "supported",
+      "kind": "lesson",
+      "tags": [
+        "modeling",
+        "anatomy",
+        "cloth",
+        "contact",
+        "crowd_support"
+      ],
+      "sources": [
+        "construction319",
+        "support320"
+      ],
+      "check_kind": "review",
+      "action": "319: bind semantic front/up, head-versus-torso ownership and visible prop/cuff frames before adaptation. Freeze coordinates/normals before surface mutation; prove one complete actor/pose before variants. Test the fastest dependent motion at every rendered frame where needed: four-frame sleeve sampling missed a109.5mm spear-plant cuff gap. Preserve working whole forms during local fixes; pointwise hair projection can jump between surfaces. Keep actual per-version recipes, reconcile file-level rights, and measure identical-frame render profiles. Numeric contact, source hashes and strand counts do not establish visible grip, same-film coherence or full-speed AV acceptance. 320: select the intended garment exterior, not an ambiguous nearest side. Calibrate limb lengths to rest anatomy, solve both feet against one pelvis, and respect nonuniform transforms. Inspect clothed partial poses before propagation.",
+      "reason": "matched facets: anatomy, contact, modeling",
+      "citations": [
+        "docs/knowledge/CONSTRUCTION_INTERFACES_319.md",
+        "docs/knowledge/SUPPORTING_SHOT_REVIEW_320.md"
+      ],
+      "authority": "supported"
+    },
+    {
+      "id": "reuse_envelope",
+      "status": "adopted",
+      "kind": "constraint",
+      "tags": [
+        "modeling",
+        "motion",
+        "look",
+        "knowledge"
+      ],
+      "sources": [
+        "reuse317"
+      ],
+      "check_kind": "process",
+      "action": "317: evaluate reuse before custom construction without forcing it; compare total adaptation/revalidation cost and quality. Extend existing provenance with source/version/rights/dependencies, tested conditions, failures/evidence and measured-or-unknown effort. Run resource_manifest for the requested use; missing/stale evidence, untested conditions, unresolved rights or open failures block qualification. Assessed resources stay useful but unqualified. Manually verify applicability, rights and perceptual truth; a valid record is not an artistic pass. No new database, installation, spend or upload.",
+      "reason": "matched facets: look, modeling, motion",
+      "citations": [
+        "docs/knowledge/CINEMATIC_REUSE_317.md"
+      ],
+      "authority": "adopted"
+    },
+    {
+      "id": "animal_coordination",
+      "status": "adopted",
+      "kind": "constraint",
+      "tags": [
+        "animal_coordination"
+      ],
+      "sources": [
+        "reuse317",
+        "support320"
+      ],
+      "check_kind": "review",
+      "action": "D316-02-04: compare elapsed reference phases, joint/hoof axes, support/weight transfer, brief active apex, head/neck and rider/spear/reins through landing. More keyed joints are not naturalness. Distinguish coat from clay/metal under matched lighting; preserve eyes/muzzle/hooves and bind short nap to actual deformation. Keep direct motion judgment pending under313; source/timed frames do not certify continuous performance. Trace constraints through the actual visible hoof endpoint and test grounded/airborne ownership transfer; keyed evaluated quaternion controls, not temporary property edits, are valid diagnostics. 320: trace the complete saddle/pelvis/thigh/knee/ankle/stirrup chain; animated torso/root can conceal static legs. Keep descent momentum into contact before absorption, and judge actual full-speed fluidity separately.",
+      "reason": "matched facets: animal_coordination",
+      "citations": [
+        "docs/knowledge/CINEMATIC_REUSE_317.md",
+        "docs/knowledge/SUPPORTING_SHOT_REVIEW_320.md"
+      ],
+      "authority": "adopted"
+    },
+    {
+      "id": "authority",
+      "status": "adopted",
+      "kind": "constraint",
+      "tags": [
+        "*"
+      ],
+      "sources": [
+        "workflow",
+        "strategy",
+        "context",
+        "unit"
+      ],
+      "check_kind": "process",
+      "action": "Confirm scope and genuine Director decisions. No new spend, installs, specialists, publication or protected creative changes by inference. Routine in-scope technical fixes remain agent-owned. Astra is top tier; failed method needs reassessment, not a nonexistent higher model.",
+      "reason": "global binding rule",
+      "citations": [
+        "docs/knowledge/EFFICIENT_QUALITY_ASSET_WORKFLOW.md",
+        "docs/decisions/0005-production-strategy-before-execution.md",
+        "docs/planning/CONTEXT_AND_DIRECTOR_REVIEW_CONTRACT.md",
+        "docs/planning/SERIES_01_PASHTUN_FINISHED_UNIT_PLAN.md"
+      ],
+      "authority": "adopted"
+    },
+    {
+      "id": "strategy",
+      "status": "adopted",
+      "kind": "constraint",
+      "tags": [
+        "*"
+      ],
+      "sources": [
+        "strategy",
+        "workflow"
+      ],
+      "check_kind": "process",
+      "action": "Read current strategy; name outcome, quality floor, interfaces, assumptions, earliest integrated proof, resources, reuse and replan/exit. Repeated compensating patches trigger method reassessment, not renamed passes.",
+      "reason": "global binding rule",
+      "citations": [
+        "docs/decisions/0005-production-strategy-before-execution.md",
+        "docs/knowledge/EFFICIENT_QUALITY_ASSET_WORKFLOW.md"
+      ],
+      "authority": "adopted"
+    },
+    {
+      "id": "visual_gate",
+      "status": "adopted",
+      "kind": "constraint",
+      "tags": [
+        "*"
+      ],
+      "sources": [
+        "context",
+        "workflow",
+        "index"
+      ],
+      "check_kind": "review",
+      "action": "Compare the complete claimed result to accepted references and required use, seeking known and new failures plus adjacent regressions. Use explicit failing-shape controls before expensive integration; contact targets and material cannot substitute for the required silhouette. An occluded region is NOT_RUN until visibly inspected. Actual motion/audio where applicable; distinguish frame inspection from playback. Tests, better-than-before and source hashes do not establish perceptual PASS. Known FAIL/NOT_RUN blocks handoff.",
+      "reason": "global binding rule",
+      "citations": [
+        "docs/planning/CONTEXT_AND_DIRECTOR_REVIEW_CONTRACT.md",
+        "docs/knowledge/EFFICIENT_QUALITY_ASSET_WORKFLOW.md",
+        "docs/knowledge/PRODUCTION_LEARNING_APPLICATION_INDEX.md"
+      ],
+      "authority": "adopted"
+    },
+    {
+      "id": "anticipation",
+      "status": "adopted",
+      "kind": "constraint",
+      "tags": [
+        "*"
+      ],
+      "sources": [
+        "context"
+      ],
+      "check_kind": "review",
+      "action": "Write audience intent and distraction hypotheses before a defect list. Test them against actual evidence, seek counterevidence and unlisted problems, record observations and corrections. Director feedback calibrates fallible judgment; it is not the primary defect detector.224: test opening hook, pacing and causal geography, not merely fit duration.248 adopts larger-than-life impact for The Martials and records it as a Director preference: name the extraordinary character-specific beat and its preparation/payoff; use contrast and believability, not constant maximum speed/loudness or unapproved powers. 249 requires a shot/beat performance and believability brief before execution: apply relevant expertise lenses, predict audience-visible anatomy/contact/physical-response failures, and bind each critical behavior to strategy, interfaces, early proof and observable failure conditions. Cover each beat or explicit inheritance; consult docs/planning/SHOT_BEAT_QUALITY_BRIEF.md. Roles are perspectives, not an org chart. Automatic brief completeness and perceptual judgment are not implemented.",
+      "reason": "global binding rule",
+      "citations": [
+        "docs/planning/CONTEXT_AND_DIRECTOR_REVIEW_CONTRACT.md"
+      ],
+      "authority": "adopted"
+    },
+    {
+      "id": "stopping",
+      "status": "adopted",
+      "kind": "constraint",
+      "tags": [
+        "*"
+      ],
+      "sources": [
+        "context",
+        "workflow",
+        "strategy"
+      ],
+      "check_kind": "review",
+      "action": "Meet the high quality floor first;248 clarifies efficiency means progressively more reliable and economical achievement of that bar, not lowering it. Then weigh visible benefit, dramatic value, reuse and regression/opportunity cost. Re-rank residuals after larger fixes. Prior tolerance is not acceptance. Record deferred details and reopening triggers; no arbitrary timer waives quality or creates handoff.",
+      "reason": "global binding rule",
+      "citations": [
+        "docs/planning/CONTEXT_AND_DIRECTOR_REVIEW_CONTRACT.md",
+        "docs/knowledge/EFFICIENT_QUALITY_ASSET_WORKFLOW.md",
+        "docs/decisions/0005-production-strategy-before-execution.md"
+      ],
+      "authority": "adopted"
+    },
+    {
+      "id": "versioning",
+      "status": "adopted",
+      "kind": "constraint",
+      "tags": [
+        "*"
+      ],
+      "sources": [
+        "context",
+        "index",
+        "accepted"
+      ],
+      "check_kind": "technical",
+      "action": "Bind actual inputs, accepted scope, source hashes and dependencies. Revalidate affected checks after camera/motion/version changes. Preserve originals and failed evidence. A local commit is not native-media backup; a reopened scene is not proof of portable or general reuse.",
+      "reason": "global binding rule",
+      "citations": [
+        "docs/planning/CONTEXT_AND_DIRECTOR_REVIEW_CONTRACT.md",
+        "docs/knowledge/PRODUCTION_LEARNING_APPLICATION_INDEX.md",
+        "docs/knowledge/PASHTUN_CHARACTER_RETROSPECTIVE.md"
+      ],
+      "authority": "adopted"
+    },
+    {
+      "id": "economics",
+      "status": "adopted",
+      "kind": "constraint",
+      "tags": [
+        "*"
+      ],
+      "sources": [
+        "index",
+        "workflow",
+        "accepted",
+        "render"
+      ],
+      "check_kind": "process",
+      "action": "Track active effort, waits, jobs, actual provider spend and usable output separately; leave unavailable tokens/cost null. Do not add overlapping process/activity time. Diagnostic investment is not repeatable unit cost. Advance the trailer and two episodes, not tooling or polish for its own sake.",
+      "reason": "global binding rule",
+      "citations": [
+        "docs/knowledge/PRODUCTION_LEARNING_APPLICATION_INDEX.md",
+        "docs/knowledge/EFFICIENT_QUALITY_ASSET_WORKFLOW.md",
+        "docs/knowledge/PASHTUN_CHARACTER_RETROSPECTIVE.md",
+        "docs/planning/LOCAL_RENDER_ACCELERATION_210.md"
+      ],
+      "authority": "adopted"
+    },
+    {
+      "id": "representation",
+      "status": "supported",
+      "kind": "lesson",
+      "tags": [
+        "modeling"
+      ],
+      "sources": [
+        "index",
+        "accepted",
+        "workflow"
+      ],
+      "check_kind": "review",
+      "action": "Inspect actual geometry, scale, roots, controls, rights and integrated silhouette before polish. Donor/tool feasibility informs design but does not erase identity. Painted-plus-native hair conflict and knight-body mismatch require representation reassessment, not more noise or local offsets.",
+      "reason": "matched facets: modeling",
+      "citations": [
+        "docs/knowledge/PRODUCTION_LEARNING_APPLICATION_INDEX.md",
+        "docs/knowledge/PASHTUN_CHARACTER_RETROSPECTIVE.md",
+        "docs/knowledge/EFFICIENT_QUALITY_ASSET_WORKFLOW.md"
+      ],
+      "authority": "supported"
+    },
+    {
+      "id": "anatomy",
+      "status": "supported",
+      "kind": "lesson",
+      "tags": [
+        "anatomy"
+      ],
+      "sources": [
+        "accepted",
+        "index",
+        "motion"
+      ],
+      "check_kind": "review",
+      "action": "Compare accepted anatomical transitions with matched camera/scale/light. Separate clay, colour and lighting when diagnostic; preserve throat/clavicles, shoulder and hip volume across full/partial poses. Clothes cannot waive anatomy. Extend approved cheek character outward rather than flatten it.",
+      "reason": "matched facets: anatomy",
+      "citations": [
+        "docs/knowledge/PASHTUN_CHARACTER_RETROSPECTIVE.md",
+        "docs/knowledge/PRODUCTION_LEARNING_APPLICATION_INDEX.md",
+        "docs/planning/MOTION_DESIGN_TEMPLATE.md"
+      ],
+      "authority": "supported"
+    },
+    {
+      "id": "motion",
+      "status": "adopted",
+      "kind": "constraint",
+      "tags": [
+        "motion"
+      ],
+      "sources": [
+        "motion",
+        "index"
+      ],
+      "check_kind": "review",
+      "action": "Complete motion brief; establish transform spaces, evaluated parent state and one contact/travel owner. Test coordinated joints, transition interiors, neutral return and complete motion. Nonzero keys do not prove neck absorption, emotion or natural movement.",
+      "reason": "matched facets: motion",
+      "citations": [
+        "docs/planning/MOTION_DESIGN_TEMPLATE.md",
+        "docs/knowledge/PRODUCTION_LEARNING_APPLICATION_INDEX.md"
+      ],
+      "authority": "adopted"
+    },
+    {
+      "id": "secondary",
+      "status": "supported",
+      "kind": "lesson",
+      "tags": [
+        "secondary"
+      ],
+      "sources": [
+        "index",
+        "accepted"
+      ],
+      "check_kind": "review",
+      "action": "Check hair/mane/tail/cloth/dust response coherently in actual motion; protect roots/supports and scale forcing by length. Dust needs world-space continuity through turns and contrast without obscuring action. New motion/camera/palette invalidates relevant checks; authored lag is not general physics.",
+      "reason": "matched facets: secondary",
+      "citations": [
+        "docs/knowledge/PRODUCTION_LEARNING_APPLICATION_INDEX.md",
+        "docs/knowledge/PASHTUN_CHARACTER_RETROSPECTIVE.md"
+      ],
+      "authority": "supported"
+    },
+    {
+      "id": "look",
+      "status": "supported",
+      "kind": "lesson",
+      "tags": [
+        "visual",
+        "look"
+      ],
+      "sources": [
+        "index",
+        "render",
+        "support320"
+      ],
+      "check_kind": "review",
+      "action": "Preserve illustrated-C richness through form, designed marks, palette/selective darks and physical interaction, not simply flattened shading. Judge moving foreground against painted distance and phone-size hierarchy. Render acceleration cannot trade away selected style or dust/hair readability. 320: supporting status saves unseen-detail work, not visible quality. Compare leader and near crowd cloth/accessories/anatomy with accepted co-star footage, not distant guards or an unfinished principal proxy.",
+      "reason": "matched facets: look, visual",
+      "citations": [
+        "docs/knowledge/PRODUCTION_LEARNING_APPLICATION_INDEX.md",
+        "docs/planning/LOCAL_RENDER_ACCELERATION_210.md",
+        "docs/knowledge/SUPPORTING_SHOT_REVIEW_320.md"
+      ],
+      "authority": "supported"
+    },
+    {
+      "id": "render_profile",
+      "status": "supported",
+      "kind": "lesson",
+      "tags": [
+        "render"
+      ],
+      "sources": [
+        "render",
+        "current255"
+      ],
+      "check_kind": "technical",
+      "action": "245 demonstrated full540-frame1080x1920/16-sample Metal finishing on this M4, fresh processes, MetalRT ON and persistent data OFF. Ten independent reopen controls meet maximum1/255; this does not erase210 strict-repeat failure or qualify future sources/hardware.248 finger derivative needs new source bindings, chronological review and reopen. Preserve CPU fallback. Measured27-28s/frame is not a guaranteed deadline or authority to lower quality. Current248 strict repeat exception remains FAIL despite253 creative approval: two red-channel values2/255 in one control; no general profile promotion.",
+      "reason": "matched facets: render",
+      "citations": [
+        "docs/planning/LOCAL_RENDER_ACCELERATION_210.md",
+        "docs/knowledge/CURRENT_PRODUCTION_STATE.md"
+      ],
+      "authority": "supported"
+    },
+    {
+      "id": "cache_safety",
+      "status": "supported",
+      "kind": "lesson",
+      "tags": [
+        "render"
+      ],
+      "sources": [
+        "render"
+      ],
+      "check_kind": "technical",
+      "action": "Keep protected natives/caches unchanged, no embedded scripts/credentials/global preference changes. One worker, memory headroom. Persistent data previously caused black groom; require chronological/reopen proof before enabling. Do not equate swap footprint with measured throttling or claim MetalRT isolated the old artifact cause.",
+      "reason": "matched facets: render",
+      "citations": [
+        "docs/planning/LOCAL_RENDER_ACCELERATION_210.md"
+      ],
+      "authority": "supported"
+    },
+    {
+      "id": "rights",
+      "status": "adopted",
+      "kind": "constraint",
+      "tags": [
+        "audio",
+        "delivery",
+        "modeling"
+      ],
+      "sources": [
+        "index",
+        "audio",
+        "accepted",
+        "unit"
+      ],
+      "check_kind": "process",
+      "action": "Check source/scan/font/recording/donor rights separately; free is not cleared. Provider feature, balance, terms and retry allowance require fresh eligible-route preflight and budget reservation before external calls. Old workspace/API credits are not interchangeable. Release/publication is separately authorized.",
+      "reason": "matched facets: modeling",
+      "citations": [
+        "docs/knowledge/PRODUCTION_LEARNING_APPLICATION_INDEX.md",
+        "docs/planning/SERIES_01_PASHTUN_NARRATIVE_AUDIO_PROPOSAL.md",
+        "docs/knowledge/PASHTUN_CHARACTER_RETROSPECTIVE.md",
+        "docs/planning/SERIES_01_PASHTUN_FINISHED_UNIT_PLAN.md"
+      ],
+      "authority": "adopted"
+    },
+    {
+      "id": "current_state",
+      "status": "adopted",
+      "kind": "constraint",
+      "tags": [
+        "*"
+      ],
+      "sources": [
+        "current255"
+      ],
+      "check_kind": "process",
+      "action": "Read CURRENT_PRODUCTION_STATE.md:253 exact Pashtun20s provisional acceptance stays protected; strict replay FAIL and final release/rights remain separate. Protection/calibration255 complete. Director256-257 authorizes Sikh-only sequence development, continuous turban/cover, personal recognition and nonrecurring leader; action before music. Director260 accepts illustrated portrait v03; read SERIES_01_SIKH_BASELINE_V01.md before Sikh identity/cloth work. Broad natural beard and rugged face govern; rejected v01/v02 do not. No literal pixel matching, native acceptance or incidental background/cloth-topology approval. Native257 remains BLOCK. Unknown domains still block; no paid calls/publication by inference. Director320 narrows current correction to the contiguous Nihang/rear and crowd passage with one-second handles.319 supporting performance/look is rejected; crowd attention remains on the rider. Director313 is the direct AV judge; source/frame checks cannot confer playback or production acceptance.",
+      "reason": "global binding rule",
+      "citations": [
+        "docs/knowledge/CURRENT_PRODUCTION_STATE.md"
+      ],
+      "authority": "adopted"
+    },
+    {
+      "id": "au_reference",
+      "status": "adopted",
+      "kind": "workflow",
+      "tags": [
+        "modeling",
+        "identity"
+      ],
+      "sources": [
+        "audit250"
+      ],
+      "check_kind": "review",
+      "action": "AU01-AU05/AU08: preserve approved identity/native differences; images are art-direction references, not literal reconstruction mandates. Inspect candidate license, editable topology and whole-character fit before commitment. Test genuinely different visual languages, not filters; interpret unseen views explicitly.",
+      "reason": "matched facets: modeling",
+      "citations": [
+        "docs/knowledge/PASHTUN_PRODUCTION_AUDIT250.md"
+      ],
+      "authority": "adopted"
+    },
+    {
+      "id": "au_deformation",
+      "status": "adopted",
+      "kind": "workflow",
+      "tags": [
+        "anatomy",
+        "cloth"
+      ],
+      "sources": [
+        "audit250"
+      ],
+      "check_kind": "review",
+      "action": "AU06/AU09-AU10: separate geometry/texture/light and pivot/weight/corrective hypotheses using matched controls. Test full and partial bends, landmark volumes and neighboring regions. Trace both shawl edges over shoulders/rear above harness with supports in actual motion; do not hide anatomy with clothes or polish a failing representation.",
+      "reason": "matched facets: anatomy",
+      "citations": [
+        "docs/knowledge/PASHTUN_PRODUCTION_AUDIT250.md"
+      ],
+      "authority": "adopted"
+    },
+    {
+      "id": "au_performance",
+      "status": "adopted",
+      "kind": "workflow",
+      "tags": [
+        "motion",
+        "secondary"
+      ],
+      "sources": [
+        "audit250"
+      ],
+      "check_kind": "review",
+      "action": "AU07/AU11-AU12: stable gaze is not a rigid torso/neck. Brief coordinated absorption, intent phases, support/forcing/lag/recovery and actual screen visibility. Inspect real motion where available; still samples cannot certify speed, acting or temporal naturalness. New camera/action invalidates affected checks.",
+      "reason": "matched facets: motion, secondary",
+      "citations": [
+        "docs/knowledge/PASHTUN_PRODUCTION_AUDIT250.md"
+      ],
+      "authority": "adopted"
+    },
+    {
+      "id": "au_contact",
+      "status": "adopted",
+      "kind": "workflow",
+      "tags": [
+        "contact",
+        "prop"
+      ],
+      "sources": [
+        "audit250"
+      ],
+      "check_kind": "review",
+      "action": "AU13: touching reins does not prove a fist. First inspect bare joint origins and closed silhouette, then thumb/rein/sleeve/mane integration and partial motion. Include known-bad controls and preserve tolerated-defect reopening triggers; no false pass from constraint distance or relative improvement.",
+      "reason": "matched facets: contact",
+      "citations": [
+        "docs/knowledge/PASHTUN_PRODUCTION_AUDIT250.md"
+      ],
+      "authority": "adopted"
+    },
+    {
+      "id": "au_surface",
+      "status": "adopted",
+      "kind": "workflow",
+      "tags": [
+        "visual",
+        "look"
+      ],
+      "sources": [
+        "audit250"
+      ],
+      "check_kind": "review",
+      "action": "AU06/AU11: preserve approved surface texture at multiple scales and matched lighting. Terrain, dust contrast, skin, costume and background form one look; light/palette changes reopen dependent visibility. Rich illustrated detail is not flat simplification or photorealistic noise.",
+      "reason": "matched facets: look, visual",
+      "citations": [
+        "docs/knowledge/PASHTUN_PRODUCTION_AUDIT250.md"
+      ],
+      "authority": "adopted"
+    },
+    {
+      "id": "au_reuse",
+      "status": "adopted",
+      "kind": "workflow",
+      "tags": [
+        "knowledge",
+        "render",
+        "delivery"
+      ],
+      "sources": [
+        "audit250"
+      ],
+      "check_kind": "review",
+      "action": "AU16: package exact accepted versions, dependencies, rights, editable recipe and tested-use limits; verify remote restore and portable dependency closure. Separate foundation from adaptation, native jobs from work/waits and unknown cost; capture issue/review IDs before next sequence. No prediction from145h divided by20s.",
+      "reason": "matched facets: render",
+      "citations": [
+        "docs/knowledge/PASHTUN_PRODUCTION_AUDIT250.md"
+      ],
+      "authority": "adopted"
+    },
+    {
+      "id": "sikh_scope",
+      "status": "adopted",
+      "kind": "constraint",
+      "tags": [
+        "sikh_scope"
+      ],
+      "sources": [
+        "sikh257"
+      ],
+      "check_kind": "process",
+      "action": "Director256-257 authorizes Sikh only, complete rough action before music mapping. New motorcycle entrance overrides older mounted protagonist. Preserve Sikh character brief, warmth and agency/influence tension; reference art is ingredients not literal likeness/name. Leader recognizes him personally, not expected recurring; no mentor/father role. Protected Pashtun is not donor identity or automatic action qualification. No paid calls, tools, installs, purchases, publication.",
+      "reason": "matched facets: sikh_scope",
+      "citations": [
+        "docs/planning/SERIES_01_SIKH_SEQUENCE.md"
+      ],
+      "authority": "adopted"
+    },
+    {
+      "id": "sikh_motion",
+      "status": "adopted",
+      "kind": "constraint",
+      "tags": [
+        "sikh_motion"
+      ],
+      "sources": [
+        "sikh257"
+      ],
+      "check_kind": "review",
+      "action": "Use the seven-beat motion strategy: wheel rolling versus declared slip, supported stationary bike before both hands leave controls, actual knuckle pivots and palms together, coordinated torso/neck, cloth ownership, new horse rear/support proof, stepped crowd clearance before respectful launch. Old gallop/rein qualification does not transfer. Full causal rough sequence before finish; no arbitrary technical handover.",
+      "reason": "matched facets: sikh_motion",
+      "citations": [
+        "docs/planning/SERIES_01_SIKH_SEQUENCE.md"
+      ],
+      "authority": "adopted"
+    }
+  ],
+  "excluded": [
+    {
+      "id": "vehicle_response",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "crowd_support",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "drainage_use",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "identity",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "contact",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "garment",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "geography",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "sword",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "narrative",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "quotation",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "sound",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "captions",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "retrieval",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "narration_a",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "single_wrap",
+      "reason": "not current authority/workflow"
+    },
+    {
+      "id": "gpu_ban",
+      "reason": "not current authority/workflow"
+    },
+    {
+      "id": "music_reference",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "au_staging",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "au_audio",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "au_review",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "sikh_cloth",
+      "reason": "outside declared impact facets"
+    },
+    {
+      "id": "sikh_geography",
+      "reason": "outside declared impact facets"
+    }
+  ],
+  "supporting_search": [
+    {
+      "id": "sikh_geography",
+      "status": "adopted",
+      "role": "supporting_only"
+    },
+    {
+      "id": "sikh_motion",
+      "status": "adopted",
+      "role": "supporting_only"
+    },
+    {
+      "id": "sikh_scope",
+      "status": "adopted",
+      "role": "supporting_only"
+    },
+    {
+      "id": "sikh_cloth",
+      "status": "adopted",
+      "role": "supporting_only"
+    },
+    {
+      "id": "au_deformation",
+      "status": "adopted",
+      "role": "supporting_only"
+    }
+  ],
+  "resource_checks": [],
+  "blockers": [],
+  "dispatch_ready": true,
+  "gaps": [
+    "Detailed linked asset/experiment histories are not exhaustively re-audited in this nine-document pilot.",
+    "Legacy742-turn capture has one truncated response;588 candidates are not all reconciled or approved.",
+    "Task/entity descriptors and dependency relationships are manually curated, not extracted from Blender automatically.",
+    "No new visual/audio review, paid generation, production renderer promotion or release authorization is supplied by a context packet."
+  ],
+  "open_decisions": [],
+  "limits": "Planning readiness is not execution authorization. Manually curated scope and authority records require agent verification. CLI enforces evidence structure/freshness, not honesty or perceptual quality.",
+  "packet_digest": "01162198ed77fa18c4c9b5c260acd3c84f4ed6ffccd58003a814186b67e7159f"
+}
