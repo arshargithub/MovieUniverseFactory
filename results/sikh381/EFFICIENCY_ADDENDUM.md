@@ -9,4 +9,3 @@ serious efficiency failure, not a successful pass merely because review rejected
 bad art. The next qualification must put the actual visual falsification first,
 and avoid repeated full-history packet/state output. No percentage token savings
 is established.
-
