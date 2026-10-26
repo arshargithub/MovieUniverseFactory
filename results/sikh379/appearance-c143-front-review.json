@@ -1,0 +1,61 @@
+{
+  "run_digest": "5d22ce83c0da90269c1878c937a1d023764fe8dbbbc173072c5e3eaf7032aeab",
+  "verdict": "FAIL",
+  "observation": "Actual143 fivefrontcontrolsFAIL:333 gains paired bulges but339 has rounded overhanging pectoral pouch disconnected from upper-leg roots;342 hanging central mass persists; standing283/367 rounded chest is too bulbous and undifferentiated. Body-supported targets change appearance but do not achieve supported connected anatomy. This is construction failure against adequate gross references, not missing-reference evidence. No reverse/side/coat/contact/movie qualification.",
+  "comparison": "Actual143 versus inspected UMN paired pectoral and Cavalo rearing shoulder/limb continuity, protected accepted motion and142 negative control. Improvement in one phase cannot pass descent or standing.",
+  "open_defects": [
+    "overhanging pectoral pouch in descent",
+    "bulbous standing contour",
+    "unsupported chest/limb-root continuity"
+  ],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh379-appearance-c143-front/snapshot.json",
+      "sha256": "e8373a7d08dab22f9a9ba466424f33d658318570043abe84404b5e1bc283f6b8"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh379-appearance-c143-front/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh379-appearance-c143-front/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh379-appearance-c143-front/frame.png",
+      "sha256": "c83203398b4539102271ea747be41dfdf91175d5970be11e1ddf81d4fc1efc1b"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh379-appearance-c143-front/frames.json",
+      "sha256": "444e069fe2e69176d9014b2fe4972a14714a1e1be51086671921880c8397987b"
+    },
+    "frame_367": {
+      "path": ".runtime/factory-native/sikh379-appearance-c143-front/frame.png",
+      "sha256": "c83203398b4539102271ea747be41dfdf91175d5970be11e1ddf81d4fc1efc1b"
+    },
+    "frame_339": {
+      "path": ".runtime/factory-native/sikh379-appearance-c143-front/frame-0339.png",
+      "sha256": "938bba5c9059e058eb46552ea32806a15a087e16b91cf0e4b4519bf5f672e65a"
+    },
+    "frame_333": {
+      "path": ".runtime/factory-native/sikh379-appearance-c143-front/frame-0333.png",
+      "sha256": "3bbccd5dc872e4d5ccd53e6ea926ef61a8c661019311625e795e98cea08077a2"
+    },
+    "frame_342": {
+      "path": ".runtime/factory-native/sikh379-appearance-c143-front/frame-0342.png",
+      "sha256": "9a178e08134307c2eec2d3a6d58af110a51038d8fbf43d19dd8ef26d5649299c"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh379-appearance-c143-front/frame-0283.png",
+      "sha256": "f2bf23399191d93427bd4f6cc7d0717a580ad9b3e8c44a1e027023ca5f165a88"
+    }
+  },
+  "retrospective_observations": [
+    {
+      "requirement": "form",
+      "status": "FAIL",
+      "observation": "Actual143 fivefrontcontrolsFAIL:333 gains paired bulges but339 has rounded overhanging pectoral pouch disconnected from upper-leg roots;342 hanging central mass persists; standing283/367 rounded chest is too bulbous and undifferentiated. Body-supported targets change appearance but do not achieve supported connected anatomy. This is construction failure against adequate gross references, not missing-reference evidence. No reverse/side/coat/contact/movie qualification.",
+      "foundation": true
+    }
+  ]
+}

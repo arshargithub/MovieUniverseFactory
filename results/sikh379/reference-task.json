@@ -1,0 +1,31 @@
+{
+  "id": "sikh379-reference-target",
+  "operation": "modeling",
+  "entities": [
+    "nihang_horse",
+    "nihang_leader",
+    "renderer"
+  ],
+  "query": "qualified physical references horse chest pectoral neck shoulder folded foreleg posing same-film protected motion",
+  "intent": "Ground a positive chest target, then prove plausible form across accepted rearing poses; do not change motion or leader.",
+  "phase": "planning",
+  "inputs": {
+    "results/sikh379/REQUEST.md": "757c5a9be0df5b65f7db272f1cc1c319ce88fc722dd86a1c45e1d5cd86b1f34d",
+    "docs/knowledge/REFERENCE_READINESS_378.md": "9c286ec7d930e79197faacd464a478387eb1793e5d24a1b63319c986c4303208",
+    "docs/knowledge/PLANNING_PIPELINE_330.md": "7c28d6809a43fddb2f0d9af18b18390f0680c3ed65ee4cb4ea9e54ba89c57de1",
+    "docs/knowledge/EXPERT_LENS_PLANNING_328.md": "94fc0f677e8b61f95031f50b9de1ea90bf71ec3d4d71692af6c6e9121b2cabce",
+    "docs/knowledge/RETROSPECTIVE_WORKFLOW_350.md": "f3e3bfb939644890e3c780e771cc4e7433bd4c94c96441ba28467ed5ee266f24",
+    "results/workflow378/CHEST_HYPOTHESIS.md": "b118b348692ea57a67f8106b3f9a1dcc5ea89e6cd1dea66e5a8c7b386cc8814f",
+    "results/sikh376/RETROSPECTIVE136.md": "5eeceab6c34f54934a4ee06f9f47cafb0e9557385338bcd5d03144bc9896ee67",
+    "results/sikh376/REJECT136.md": "b274e41a88e5d897603f7c2b4ece81dbbd9456c680fd82571343e5c22dd21de1"
+  },
+  "open_decisions": [],
+  "hypotheses_to_test": [
+    "Current opposite junction target lacks adequate real-form coverage.",
+    "An explicit connected chest contour must remove the web without shelf/pinch or adjacent limb regressions."
+  ],
+  "execution_prerequisites": [
+    "Qualify physical reference views before native construction.",
+    "Use canonical task and supported handler, preserve motion and actual limits."
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "mode": "built_in_imagegen",
+  "role": "Internal generated target candidates, rejected; not anatomical authority or production frames",
+  "attempts": [
+    {
+      "prompt": "Use case: precise-object-edit. Asset: internal anatomy/form target for a Blender horse correction, NOT a new movie frame or character redesign. Input 1 is the EDIT TARGET, our existing dark brown stylized 3D horse and Sikh rider in a rearing/descent pose. Inputs 2 and 3 are physical-anatomy references ONLY: a real frontal chest and a real rearing horse. Edit only the horse's LOWER NECK, CHEST and UPPER FORELEG ROOT TRANSITIONS in Input1. Replace its flattened/pouch-like hanging triangular chest and the pinched crease where chest meets the raised forelegs with a convincingly connected, supported, muscular equine chest. The lower neck broadens naturally into rounded shoulder and pectoral forms; raised forelegs emerge from continuous anatomical roots; chest underside is compact and flows toward barrel, without a pendant bib, spherical breasts, shelf or deep pinching. Preserve existing horse proportions and artistic style. Keep the exact pose, hoof positions, head position, camera angle, perspective, crop, lighting, coat color, rider, clothing, spear, foreground pole, ground and background of Input1. Do NOT copy photographs' identity, coat, shading, background or limb pose. No text, diagrams, arrows or labels. Produce one same-camera edited image serving as a positive visual form proposal, not photorealism.",
+      "output": ".runtime/art-direction/sikh379-references/generated-target-rejected-humanized.png",
+      "decision": "REJECTED_HUMANIZED_ANATOMY_AND_POSE_DRIFT"
+    },
+    {
+      "prompt": "Edit target: Image1, an existing stylized Blender render of a horse and Sikh rider. Image2 is a photograph of a REAL HORSE, for natural equine silhouette only. Make the smallest local correction to the bottom of the horse's neck where it meets the chest and forelegs in Image1: tuck the sagging triangular flap/pouch of skin back into a smooth, compact, natural equine chest transition, matching the ordinary smooth horse surface in Image2. Preserve original horse neck width and all limb positions. IMPORTANT: this is a HORSE with a smooth coat. No human anatomy, no bodybuilding, no bulging pectoral balls, no biceps, no visible muscle diagrams, no sculpted abs, no added grooves. Preserve exact existing camera, square framing, entire pose, horse head, all hooves, existing proportions, brown coat color, rider, equipment, ground and foliage. Correct only that local neck-chest skin connection. Same stylized render medium, not a photo. No text or annotations.",
+      "output": ".runtime/art-direction/sikh379-references/generated-target-rejected-long-neck.png",
+      "decision": "REJECTED_NECK_PROPORTION_AND_POSE_DRIFT"
+    }
+  ]
+}

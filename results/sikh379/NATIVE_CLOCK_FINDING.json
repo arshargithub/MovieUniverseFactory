@@ -1,0 +1,9 @@
+{
+  "candidate": 137,
+  "worker_returned": true,
+  "admission": "FAILED",
+  "reason": "NATIVE_SELECTED_STATE_DRIFT",
+  "diagnosis": "Primary snapshotframe339 compared to parent saved367; anatomical FAIL independent of transport-clock mismatch.",
+  "repair": "Retain qualified primary367 snapshot; render339333342 and283 as additional frames. No waiver of selected-state check or rerun of failedstep under a newname.",
+  "effect_on_allowance": "137 remains consumed; next admitted attempt138 retains all history."
+}

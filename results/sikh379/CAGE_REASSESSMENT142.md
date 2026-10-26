@@ -1,0 +1,9 @@
+#142 retrospective and changed143 construction
+
+Actual141/142 front failures recorded before code edits. Expanding upperleg domain removes part of sharp crease; restoring raw rest alone barely changes resulting panel. Original source-relative positional handles still track distorted pectoral skin. The target is sufficiently grounded to reject that shape; reference acquisition is not the remaining bottleneck.
+
+143 uses a body-supported cage target: weighted rigid fit from actual unmodified dorsal thorax (spine005/006) maps the raw rounded local chest shape into each accepted pose. Central pectoral handles point to that body-supported shape, not to displacement averages of the folded lower humerus. Local ARAP connects it to original moving limb boundaries. Skeleton, accepted hoof timing, head and rider actions stay unchanged; only shot-local skin position changes. This is an artist-guided construction hypothesis, not physical muscle simulation, exact volume conservation or a general rig repair.
+
+Synthetic rigid-fit control proves translation/rotation and exclusion of limb-only motion. Actual native fivefrontframes are earliest falsifier, then reverse/side if they pass, coat/contact/full-window afterward. If the supported chest remains a shelf or creates detached limb roots, stop adjusting this same solver and reassess representation or scope-bound Astra; do not spend remaining slots on tiny gain changes.
+
+Unadmitted numeric target143 full cage was rejected by the existing0.45m maximum-displacement guard near late descent; no target file/native candidate was produced. Preserve helper receipt sikh379-target143. One bounded75percent cage blend tests the representation inside the existing interface bound; no guard relaxation and no posthoc vertex clamping. If actual form fails, no further blend sweep.

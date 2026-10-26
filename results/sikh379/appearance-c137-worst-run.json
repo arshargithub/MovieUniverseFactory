@@ -1,0 +1,63 @@
+{
+  "id": "sikh379-appearance-c137-worst",
+  "task": "sikh335-supporting-appearance",
+  "step": "worst",
+  "cycle": 137,
+  "fingerprint": "b63a26736416a65e82db481eca9f42711174fa518616f7a7c24781d7ccc77cfc",
+  "parent": {
+    "path": ".runtime/factory-native/sikh379-appearance-c137-repair/scene.blend",
+    "sha256": "6a2bc0dd736c2d46a877eedcea812a6df38b3de869d633621515b0fc9c63549d"
+  },
+  "job_digest": "9e50830c17fc484614b7005844f8ddba94531742d23041312b9c3eef3da928e6",
+  "handler_digest": "f9dc85b394e817b7054370d1949f49d4eb6dd893bdeee224038948dd21e7c4f5",
+  "status": "FAILED",
+  "timeout_seconds": 600,
+  "artifacts": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh379-appearance-c137-worst/snapshot.json",
+      "sha256": "06e3ff2832e9f94eaeff0bb16d40706180e5b7307a28ec310ec0ab37c5bcea9a"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh379-appearance-c137-worst/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh379-appearance-c137-worst/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh379-appearance-c137-worst/frame.png",
+      "sha256": "a74de7f1725029cbd9547f0713f03e6b86d6ad3e6030e79a7d009255cc95c6e1"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh379-appearance-c137-worst/frames.json",
+      "sha256": "0ec8006c3650ddbed382701d2af20885dc267cf0fc97d238721d56c281bd4466"
+    },
+    "frame_339": {
+      "path": ".runtime/factory-native/sikh379-appearance-c137-worst/frame.png",
+      "sha256": "a74de7f1725029cbd9547f0713f03e6b86d6ad3e6030e79a7d009255cc95c6e1"
+    },
+    "frame_333": {
+      "path": ".runtime/factory-native/sikh379-appearance-c137-worst/frame-0333.png",
+      "sha256": "25e3d34757e50a2d407dc890c26562e8bf21c5409b84da3c0430ed6d3f2be684"
+    },
+    "frame_342": {
+      "path": ".runtime/factory-native/sikh379-appearance-c137-worst/frame-0342.png",
+      "sha256": "24e46276a3520d9913a5216450217a0d7425f18fbc4d3eec218278184c8ff5d4"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh379-appearance-c137-worst/frame-0283.png",
+      "sha256": "84893fac9060b810917e0174f8c622f3662bc4111e9d37ce08581264b9698179"
+    },
+    "frame_367": {
+      "path": ".runtime/factory-native/sikh379-appearance-c137-worst/frame-0367.png",
+      "sha256": "a1c3ee97bb7defb432ed3a2e90acd86c7b2fbcbe1321fa5f938f6c240ed2df08"
+    }
+  },
+  "dependencies": {},
+  "recipe": {
+    "path": "results/sikh379/appearance-c137-worst-recipe.json",
+    "sha256": "11d2cd76a025dda0cb8f795605261ce28d0f7685ff4bb1aba7696daea8d6e6cd"
+  },
+  "error": "Blocked: NATIVE_SELECTED_STATE_DRIFT"
+}

@@ -1,0 +1,27 @@
+{
+  "attempt": "379-c140-front",
+  "role": "diagnostic",
+  "origin": "actual-frame-review",
+  "observations": [
+    {
+      "requirement": "form",
+      "status": "FAIL",
+      "observation": "#140 INTERNAL FAIL\n\nActual front339 has folded transverse chest edge and333 has a horizontal skin shelf under the chest; central tissue moves against over-frozen upper-leg roots. This fails physical reference continuity despite preserved motion/source metrics.\n\nRead INTERFACE_REASSESSMENT140.md. Coupled-domain fix is a discriminating method test, not more missing imagery or new motion. Lower limbs and original bone/action tracks stay fixed. No opposite/side/coat/contact/movie after this early front failure.\n",
+      "foundation": true
+    }
+  ],
+  "evidence": {
+    ".runtime/factory-native/sikh379-appearance-c140-front/frame-0339.png": {
+      "path": ".runtime/factory-native/sikh379-appearance-c140-front/frame-0339.png",
+      "sha256": "e733c3519e4b7061055d7b2ade61f37a2d35408a631978735880a0bc9c2c5200"
+    },
+    ".runtime/factory-native/sikh379-appearance-c140-front/frame-0333.png": {
+      "path": ".runtime/factory-native/sikh379-appearance-c140-front/frame-0333.png",
+      "sha256": "b81398a447b79a628b3c7fc936db6c555c127e6e3f32feb01a1741e77be20356"
+    },
+    "results/sikh379/INTERFACE_REASSESSMENT140.md": {
+      "path": "results/sikh379/INTERFACE_REASSESSMENT140.md",
+      "sha256": "391710fffdd62deffa3eb505a81a04e8094dc90f5e36ede82866c2af32630429"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "state_digest": "351d32a5ef2e59195ec57ce2347b7b6237f7f4f5a922e32fbe2f3c3515f1508a",
+  "coverage": "Reviewed lossless response-table deduplication only; all original full events, gates, evidence and checks retained. Actual-state decoder equality demonstrated.",
+  "unknowns": "139 shape still unexecuted and unqualified; no horse quality or newmodel authority. Prior137/138 failures remain.",
+  "evidence": {
+    "results/sikh379/REQUEST.md": {
+      "path": "results/sikh379/REQUEST.md",
+      "sha256": "757c5a9be0df5b65f7db272f1cc1c319ce88fc722dd86a1c45e1d5cd86b1f34d"
+    },
+    "results/sikh379/PACKET_REPAIR_STRATEGY.md": {
+      "path": "results/sikh379/PACKET_REPAIR_STRATEGY.md",
+      "sha256": "3cecf861dbe3d84f0c68c1be715528a149e423dc758fe911155c2105d3482894"
+    },
+    "results/sikh379/PACKET_DEDUP_CONTROL.json": {
+      "path": "results/sikh379/PACKET_DEDUP_CONTROL.json",
+      "sha256": "49196bdb34451070541036a5c122823c5417ec880394518ee083b055f8da5c5c"
+    },
+    ".runtime/context-hygiene/runs/sikh379-retro-packet-tests/stdout.log": {
+      "path": ".runtime/context-hygiene/runs/sikh379-retro-packet-tests/stdout.log",
+      "sha256": "18b38b60c48eddfbf1f3bbdb9ba3bac500c577dcb400ff8ad570b6a253fb0c21"
+    }
+  }
+}

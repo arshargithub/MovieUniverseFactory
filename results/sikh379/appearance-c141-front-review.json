@@ -1,0 +1,60 @@
+{
+  "run_digest": "df8fa1303faa927f327ae21f2b6db4e87ec02e735a1d8bf6ae4cc904d2b53819",
+  "verdict": "FAIL",
+  "observation": "Actual141 front333: broad flattened pectoral panel and loss of paired rounded masses;339/342: pointed hanging folded edge under neck remains. Wider upper-leg domain reduces small crease but does not resolve the anatomical target. Standing283/367 remains broad flat teardrop. FAIL against UMN paired chest and Cavalo continuous shoulder/upperleg references. No reverse/side/coat/movie qualification.",
+  "comparison": "Actual five rendered141 front controls versus inspected qualified horse photographs and whole-region acceptance, not previous failed candidate.",
+  "open_defects": [
+    "flattened chest panel",
+    "pointed pectoral fold through descent"
+  ],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh379-appearance-c141-front/snapshot.json",
+      "sha256": "e8373a7d08dab22f9a9ba466424f33d658318570043abe84404b5e1bc283f6b8"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh379-appearance-c141-front/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh379-appearance-c141-front/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh379-appearance-c141-front/frame.png",
+      "sha256": "a9d445c9d8fe2d917332e5fbcad3f7871a15a1e857c209c3e0a6ecf5a462d4cf"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh379-appearance-c141-front/frames.json",
+      "sha256": "60614895fc0331043f10e47bb0a7a9ec9961f35f546e1a4ec7ba341c62ff8cc2"
+    },
+    "frame_367": {
+      "path": ".runtime/factory-native/sikh379-appearance-c141-front/frame.png",
+      "sha256": "a9d445c9d8fe2d917332e5fbcad3f7871a15a1e857c209c3e0a6ecf5a462d4cf"
+    },
+    "frame_339": {
+      "path": ".runtime/factory-native/sikh379-appearance-c141-front/frame-0339.png",
+      "sha256": "a357d840f46d7a02849eeedf7469cb8e6494c15b5286b02bb685ec8252624e91"
+    },
+    "frame_333": {
+      "path": ".runtime/factory-native/sikh379-appearance-c141-front/frame-0333.png",
+      "sha256": "2b22e20d9c51bed9a19dbd39c3de39dc89d837982c5daad5915c87c37a2bf5b0"
+    },
+    "frame_342": {
+      "path": ".runtime/factory-native/sikh379-appearance-c141-front/frame-0342.png",
+      "sha256": "7260303aef5d127cae325ec67e753a5f354af7aac89742183ad8ef240c984048"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh379-appearance-c141-front/frame-0283.png",
+      "sha256": "01f15f0edd3398d88d707fffe943956864a9859e8f37f990aa74f7218091fcf8"
+    }
+  },
+  "retrospective_observations": [
+    {
+      "requirement": "form",
+      "status": "FAIL",
+      "observation": "Actual141 front333: broad flattened pectoral panel and loss of paired rounded masses;339/342: pointed hanging folded edge under neck remains. Wider upper-leg domain reduces small crease but does not resolve the anatomical target. Standing283/367 remains broad flat teardrop. FAIL against UMN paired chest and Cavalo continuous shoulder/upperleg references. No reverse/side/coat/movie qualification.",
+      "foundation": true
+    }
+  ]
+}
