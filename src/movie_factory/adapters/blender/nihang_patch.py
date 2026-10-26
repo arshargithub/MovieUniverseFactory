@@ -27,7 +27,19 @@ def validate(recipe):
         name = edit.get('target')
         if not isinstance(name, str) or not name or len(name) > 128 or any(c in name for c in '/\\\n'):
             raise ValueError('PATCH_TARGET')
-        if kind in {'mounted_horseform374_sculpt','mounted_horseform374_contact'}:
+        if kind in {'mounted_horse_pose376_inspect','mounted_horse_pose376_correct'}:
+            import importlib.util
+            spec=importlib.util.spec_from_file_location('mf_pose376',Path(__file__).with_name('nihang_pose376.py'));module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module);module.validate(edit)
+        elif kind == 'mounted_horse_corrective375':
+            import importlib.util
+            spec=importlib.util.spec_from_file_location('mf_corrective375',Path(__file__).with_name('nihang_corrective375.py'));module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module);module.validate(edit)
+        elif kind == 'mounted_horse_deform375_weights':
+            import importlib.util
+            spec=importlib.util.spec_from_file_location('mf_weight375',Path(__file__).with_name('nihang_weights375.py'));module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module);module.validate(edit)
+        elif kind == 'mounted_horse_deform375_inspect':
+            import importlib.util
+            spec=importlib.util.spec_from_file_location('mf_deform375',Path(__file__).with_name('nihang_deform375.py'));module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module);module.validate(edit)
+        elif kind in {'mounted_horseform374_sculpt','mounted_horseform374_contact'}:
             import importlib.util
             spec=importlib.util.spec_from_file_location('mf_sculpt374',Path(__file__).with_name('nihang_sculpt374.py'));module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module);module.validate(edit)
         elif kind == 'mounted_horseform374_inspect':
@@ -114,7 +126,7 @@ def apply(bpy, recipe,diagnostic_dir=None):
     # named derivative; it cannot overwrite an accepted existing object.
     names = set()
     for edit in recipe['edits']:
-        if edit['kind'] in {'mounted_horseform374_inspect','mounted_horseform374_sculpt','mounted_horseform374_contact'}:
+        if edit['kind'] in {'mounted_horseform374_inspect','mounted_horseform374_sculpt','mounted_horseform374_contact','mounted_horse_deform375_inspect','mounted_horse_deform375_weights','mounted_horse_corrective375','mounted_horse_pose376_inspect','mounted_horse_pose376_correct'}:
             if bpy.data.objects.get('horse') is None:raise ValueError('FORM374_SOURCE_OWNER')
         elif edit['kind']=='mounted_padcontact369':
             if bpy.data.objects.get('horse') is None or bpy.data.objects.get('fitted saddle blanket292') is None:raise ValueError('PAD369_OWNERS')
@@ -141,7 +153,23 @@ def apply(bpy, recipe,diagnostic_dir=None):
             names.add(edit['target'])
     support_evidence=[]
     for edit in recipe['edits']:
-        if edit['kind'] in {'mounted_horseform374_sculpt','mounted_horseform374_contact'}:
+        if edit['kind'] in {'mounted_horse_pose376_inspect','mounted_horse_pose376_correct'}:
+            import importlib.util
+            spec=importlib.util.spec_from_file_location('mf_pose376',Path(__file__).with_name('nihang_pose376.py'));module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+            support_evidence.append({'pose376':module.run(bpy,diagnostic_dir,edit)})
+        elif edit['kind']=='mounted_horse_corrective375':
+            import importlib.util
+            spec=importlib.util.spec_from_file_location('mf_corrective375',Path(__file__).with_name('nihang_corrective375.py'));module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+            support_evidence.append({'corrective375':module.run(bpy,diagnostic_dir,edit)})
+        elif edit['kind']=='mounted_horse_deform375_weights':
+            import importlib.util
+            spec=importlib.util.spec_from_file_location('mf_weight375',Path(__file__).with_name('nihang_weights375.py'));module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+            support_evidence.append({'weights375':module.run(bpy,diagnostic_dir,edit)})
+        elif edit['kind']=='mounted_horse_deform375_inspect':
+            import importlib.util
+            spec=importlib.util.spec_from_file_location('mf_deform375',Path(__file__).with_name('nihang_deform375.py'));module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+            support_evidence.append({'deform375':module.run(bpy,diagnostic_dir,edit)})
+        elif edit['kind'] in {'mounted_horseform374_sculpt','mounted_horseform374_contact'}:
             import importlib.util
             spec=importlib.util.spec_from_file_location('mf_sculpt374',Path(__file__).with_name('nihang_sculpt374.py'));module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
             support_evidence.append({'sculpt374':module.run(bpy,diagnostic_dir,edit)})
