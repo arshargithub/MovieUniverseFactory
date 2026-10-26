@@ -1,0 +1,35 @@
+{
+  "run_digest": "baa9901b117eaea861a8da43d4764fa9edc96738512753dd765f589f3e44fd74",
+  "verdict": "PASS",
+  "observation": "Actual measured730hindfoot vertices,92 integer frames; largest root-height adjustment118.14mm and floor residual0.24micrometre. Original source selected transforms unchanged. Restricted root/technical prerequisite only.",
+  "comparison": "Actual evaluated hindfoot surface response to1mm probe versus unit response and floor0; this does not qualify second-foot/forefoot/horizontal contacts or anatomy.",
+  "open_defects": [],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh383-appearance-c166-import/snapshot.json",
+      "sha256": "363a48efec04b4d9ee23c8da32f70e27ae9712156131d31ea3a7681ec3af57d4"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh383-appearance-c166-import/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh383-appearance-c166-import/script-diagnostics.json",
+      "sha256": "4e1205462c9c8153ef4f4d15eba35ea263f6079e3b74341771bbb12e2f41f34c"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh383-appearance-c166-import/scene.blend",
+      "sha256": "f0a831453eb4ee70c9e3513e7df634d14f5ce1355cf73d58adac40b06aa07414"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh383-appearance-c166-import/patch-evidence.json",
+      "sha256": "af9dfc6d50762c5ea2b537be67533c50451ce2fa292966ece9a504a09e9eb7dc"
+    }
+  },
+  "requirement_outcomes": {
+    "preservation": {
+      "status": "PASS",
+      "observation": "Original source object/bone state retained; diagnostic only target rootZ/exposure changed."
+    }
+  }
+}

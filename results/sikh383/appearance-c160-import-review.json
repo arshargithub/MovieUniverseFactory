@@ -1,0 +1,35 @@
+{
+  "run_digest": "164dbf123641b639fe829646aee8a6fb4fe045c35087a336e10823f5349e8023",
+  "verdict": "PASS",
+  "observation": "Actual imported39bone donor and rear283..343 present; sampled geometry hashes differ across rear. Original selected object matrices unchanged. Blocked drivers zero; imported rig has no drivers. Technical source/transport qualification only.",
+  "comparison": "Original source selected object state versus derivative and bundled GLB metadata; anatomy/stock timing/armor suitability require actual rendered views.",
+  "open_defects": [],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh383-appearance-c160-import/snapshot.json",
+      "sha256": "9191e9dfa738229a60cd644b8e52d2a9a291a8f0a88349f9287a9cfea3e8d25e"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh383-appearance-c160-import/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh383-appearance-c160-import/script-diagnostics.json",
+      "sha256": "4e1205462c9c8153ef4f4d15eba35ea263f6079e3b74341771bbb12e2f41f34c"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh383-appearance-c160-import/scene.blend",
+      "sha256": "27eca7dc77391239cdb841e1318edd18f9fe77759cb32479c9d2e41d198cde1b"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh383-appearance-c160-import/patch-evidence.json",
+      "sha256": "88f6d7c44a6efa8460c9f7eb9fda0ab357a77393a5415591565b6cfc03ce861f"
+    }
+  },
+  "requirement_outcomes": {
+    "preservation": {
+      "status": "PASS",
+      "observation": "Source matrices unchanged; accepted master not overwritten. New donor pose is explicitly independent and not adopted."
+    }
+  }
+}

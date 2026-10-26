@@ -1,0 +1,61 @@
+{
+  "run_digest": "5733bf6fc0baacda25c6aa8086d7d7c3dfc6d96c82ea6d0d0b9bd854bbb1d532",
+  "verdict": "FAIL",
+  "observation": "Actual transferred poses preserve a more connected forequarter than381 but both hindfeet visibly float at apex; donor limb proportions need contact adaptation. Fused armor remains, and raw material is pale. Timed frames are not direct motion review.",
+  "comparison": "Actual283310320333339346367 side/front/opposite sheets and original form references; bounded bone-transfer accuracy is not contact or production quality.",
+  "open_defects": [
+    "Visible root-to-ground gap in transferred poses",
+    "Donor fused tack and film material unresolved",
+    "Continuous/direct motion judgment not performed"
+  ],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh383-appearance-c163-front/snapshot.json",
+      "sha256": "bd5814f51b3cf1d8b797375ed7c47dfe441ec5b8971e869a85cb301334b1b3fc"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh383-appearance-c163-front/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh383-appearance-c163-front/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh383-appearance-c163-front/frame.png",
+      "sha256": "cb58895e34faab4f16614fb618479f20930243915b21dd559e6e8a8c94bbb6ee"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh383-appearance-c163-front/frames.json",
+      "sha256": "6c2d44e64f8783d6b98af473728d4adae1989e8ee0a73570ca07b72f8f774ad5"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh383-appearance-c163-front/frame.png",
+      "sha256": "cb58895e34faab4f16614fb618479f20930243915b21dd559e6e8a8c94bbb6ee"
+    },
+    "frame_310": {
+      "path": ".runtime/factory-native/sikh383-appearance-c163-front/frame-0310.png",
+      "sha256": "08802f70216f3baa682b5800419e9397bd9a64496ad588b22503a167ce158012"
+    },
+    "frame_320": {
+      "path": ".runtime/factory-native/sikh383-appearance-c163-front/frame-0320.png",
+      "sha256": "45ca41c55f499d75f7284e57d740a7ae9d8d101602cf7d3ceed0c28c0d55246b"
+    },
+    "frame_333": {
+      "path": ".runtime/factory-native/sikh383-appearance-c163-front/frame-0333.png",
+      "sha256": "9f1be587bb3e7bae1207f29dcf53f83d295994ad4896a45690a4ef5e69d55b92"
+    },
+    "frame_339": {
+      "path": ".runtime/factory-native/sikh383-appearance-c163-front/frame-0339.png",
+      "sha256": "0bdf2f05ec54b51f94936228882a42caf9b711504ee92d0da1ec619fc4c1a7cd"
+    },
+    "frame_346": {
+      "path": ".runtime/factory-native/sikh383-appearance-c163-front/frame-0346.png",
+      "sha256": "4081ed6cf1619bf07b8b6a6431eab900cb234f87447327574217df62a8ce53ff"
+    },
+    "frame_367": {
+      "path": ".runtime/factory-native/sikh383-appearance-c163-front/frame-0367.png",
+      "sha256": "5af783baa1a3a03ca62654eeafc3a78862f9f5697255068c1e143115f97c8feb"
+    }
+  }
+}

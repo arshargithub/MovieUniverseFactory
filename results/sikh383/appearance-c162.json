@@ -1,0 +1,191 @@
+{
+  "parent": ".runtime/factory-native/sikh383-appearance-c161-import/scene.blend",
+  "brief_path": "results/sikh383/revised162-brief.json",
+  "method": "Baseline-calibrated accepted global rotation transfer onto the donor skeleton; anatomical/retarget feasibility control, not production adoption.",
+  "cause": "161 stock rear has connected chest but weak limb/support performance and fused armor.162 isolates deformation versus animation by transferring accepted-source rotation deltas to the new rig, retaining original masters; explicit diagnostic, no choreography adoption.",
+  "scope": "383 isolated donor anatomy/deformation and adaptation-feasibility proof, no production adoption.",
+  "proof": "Actual donor under accepted-source pose deltas at283310320333339346367 front/side/oblique. Detect collapse, unsupported chest or contact infeasibility before full integration.",
+  "failure": "Reject unsafe import, inactive rear, weak anatomy or economically unsuitable fused tack; no production PASS.",
+  "alternatives": "Current donor repairs failed381; untested raw reimport is identical. Alternative foundation changes actual mesh/rig, with retargeting risk.",
+  "expected": "A sounder connected forequarter through a rear with an editable rig.",
+  "reconciliation": "383 explicit alternative-source authority supersedes old local chest edit scope for qualification only; original action remains protected, stock rear not adopted.",
+  "sources": [
+    "results/sikh383/REQUEST.md",
+    "results/sikh383/APPROVED_ALLOWANCE.json",
+    "results/sikh383/STRATEGY.md",
+    "results/sikh383/HANDLER_REVIEW.md",
+    "results/sikh383/ASSET_MANIFEST.json",
+    "results/sikh381/RETROSPECTIVE381.md",
+    "results/sikh381/EFFICIENCY_ADDENDUM.md",
+    "src/movie_factory/adapters/blender/warhorse383.py",
+    "src/movie_factory/adapters/blender/nihang_patch.py",
+    "src/movie_factory/adapters/blender/nihang_control.py",
+    "tests/test_warhorse383.py",
+    "scripts/sikh383_setup.py",
+    "scripts/sikh383_plan.py",
+    ".runtime/assets/warhorse383/Warhorse_Lite.glb",
+    ".runtime/assets/warhorse383/LICENSE.txt",
+    ".runtime/assets/warhorse383/README.md",
+    "scripts/sikh383_next.py"
+  ],
+  "retrospective_evidence": [
+    "results/sikh383/REQUEST.md",
+    "results/sikh383/APPROVED_ALLOWANCE.json",
+    "results/sikh383/STRATEGY.md",
+    "results/sikh383/HANDLER_REVIEW.md",
+    "results/sikh383/ASSET_MANIFEST.json",
+    "results/sikh381/RETROSPECTIVE381.md",
+    "results/sikh381/EFFICIENCY_ADDENDUM.md"
+  ],
+  "steps": [
+    {
+      "id": "import",
+      "depends_on": [],
+      "recipe": {
+        "operation": "nihang_patch",
+        "frame": 283,
+        "width": 640,
+        "height": 640,
+        "samples": 8,
+        "edits": [
+          {
+            "kind": "warhorse_retarget383",
+            "target": "warhorse383"
+          }
+        ]
+      },
+      "requirements": [
+        "preservation"
+      ]
+    },
+    {
+      "id": "oblique",
+      "depends_on": [
+        "import"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 283,
+        "frames": [
+          283,
+          310,
+          320,
+          333,
+          339,
+          346,
+          367
+        ],
+        "view": "warhorse_reverse383",
+        "width": 640,
+        "height": 640,
+        "samples": 8
+      },
+      "requirements": [
+        "form",
+        "interfaces",
+        "whole_look"
+      ]
+    },
+    {
+      "id": "front",
+      "depends_on": [
+        "import"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 283,
+        "frames": [
+          283,
+          310,
+          320,
+          333,
+          339,
+          346,
+          367
+        ],
+        "view": "warhorse_front383",
+        "width": 640,
+        "height": 640,
+        "samples": 8
+      },
+      "requirements": [
+        "form",
+        "interfaces",
+        "whole_look"
+      ]
+    },
+    {
+      "id": "side",
+      "depends_on": [
+        "import"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 283,
+        "frames": [
+          283,
+          310,
+          320,
+          333,
+          339,
+          346,
+          367
+        ],
+        "view": "warhorse_side383",
+        "width": 640,
+        "height": 640,
+        "samples": 8
+      },
+      "requirements": [
+        "form",
+        "interfaces",
+        "whole_look"
+      ]
+    },
+    {
+      "id": "motion0",
+      "depends_on": [
+        "import"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 283,
+        "frames": [
+          283,
+          288,
+          293,
+          298,
+          303,
+          308,
+          313,
+          318,
+          323,
+          328,
+          333,
+          338,
+          343,
+          348,
+          353,
+          367
+        ],
+        "view": "warhorse_reverse383",
+        "width": 512,
+        "height": 512,
+        "samples": 8
+      },
+      "requirements": [
+        "evidence",
+        "director_form_motion"
+      ]
+    }
+  ],
+  "poses": [
+    283,
+    310,
+    320,
+    333,
+    339,
+    346,
+    367
+  ]
+}

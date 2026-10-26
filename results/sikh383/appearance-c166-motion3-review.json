@@ -1,0 +1,103 @@
+{
+  "run_digest": "70c00bf80bd76aa7db377f1e6269a0bf73fe01fd5f46dca09ea50fd0360a9cd5",
+  "verdict": "PASS",
+  "observation": "Actual returned timed-frame chunk/manifest bound and decoded; all92 unique frames present across chunks and encoded at24fps. Availability/coverage only, no motion-quality judgment.",
+  "comparison": "Actual frames manifests versus admitted frame sets; repeated283 decoded pixels match across six duplicate controls, container metadata differs. No general replay claim.",
+  "open_defects": [],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh383-appearance-c166-motion3/snapshot.json",
+      "sha256": "363a48efec04b4d9ee23c8da32f70e27ae9712156131d31ea3a7681ec3af57d4"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh383-appearance-c166-motion3/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh383-appearance-c166-motion3/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh383-appearance-c166-motion3/frame.png",
+      "sha256": "342eef267d60edd9a10c0ba37f81066175588624e7f19d66fa7243a85a9894e6"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh383-appearance-c166-motion3/frames.json",
+      "sha256": "38dc80dba38dad3add000124c74b53e56f25de5c57980cd075637bdeab1d95c6"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh383-appearance-c166-motion3/frame.png",
+      "sha256": "342eef267d60edd9a10c0ba37f81066175588624e7f19d66fa7243a85a9894e6"
+    },
+    "frame_321": {
+      "path": ".runtime/factory-native/sikh383-appearance-c166-motion3/frame-0321.png",
+      "sha256": "c74f8b3ceb7db4703a613f175e58638ed72144a6724ea05639c6ec006b065ad9"
+    },
+    "frame_322": {
+      "path": ".runtime/factory-native/sikh383-appearance-c166-motion3/frame-0322.png",
+      "sha256": "657f91c8784dbb4cbea4f1ab551516668ab025db8ad55407005101fcdb4e7c66"
+    },
+    "frame_323": {
+      "path": ".runtime/factory-native/sikh383-appearance-c166-motion3/frame-0323.png",
+      "sha256": "27e60ebe5cba7679e13ae31f371eb83eb7c14734074f1215bbec813b48f033b9"
+    },
+    "frame_324": {
+      "path": ".runtime/factory-native/sikh383-appearance-c166-motion3/frame-0324.png",
+      "sha256": "490fdfc0f9c87c9b72c98d7aae8d720c210a44d8fd5d161cc9c5defa49d0b37b"
+    },
+    "frame_325": {
+      "path": ".runtime/factory-native/sikh383-appearance-c166-motion3/frame-0325.png",
+      "sha256": "4bbdaf4a2831763cc60ed27d921daddd08dff224f0b2b281e191f4bcfda7ea0a"
+    },
+    "frame_326": {
+      "path": ".runtime/factory-native/sikh383-appearance-c166-motion3/frame-0326.png",
+      "sha256": "0eb4e804a8c4780f66ae0c83bac30b67ef04cc688507cc92fad6eeb6a85adc80"
+    },
+    "frame_327": {
+      "path": ".runtime/factory-native/sikh383-appearance-c166-motion3/frame-0327.png",
+      "sha256": "741948fc37f553a306f2bc28ca8327d94f42b19f2799e73c1717db4e7620a46f"
+    },
+    "frame_328": {
+      "path": ".runtime/factory-native/sikh383-appearance-c166-motion3/frame-0328.png",
+      "sha256": "c137fc4583b195b0b4abeffc8e1a639afe648cd9b5fcf28f21c1c6cfa85d2290"
+    },
+    "frame_329": {
+      "path": ".runtime/factory-native/sikh383-appearance-c166-motion3/frame-0329.png",
+      "sha256": "b7dd589554ac4f5008fe5e5c51b3fece2ca57545a50401b3b7483cd5cf28af72"
+    },
+    "frame_330": {
+      "path": ".runtime/factory-native/sikh383-appearance-c166-motion3/frame-0330.png",
+      "sha256": "0a1e36b68fe80f52bb08698877d78d9787d1d679f9d063aa702c9e2aea3d04cc"
+    },
+    "frame_331": {
+      "path": ".runtime/factory-native/sikh383-appearance-c166-motion3/frame-0331.png",
+      "sha256": "7e39461820ccc5df7f84b41a92f71472e48c69e851a65b7cecfe5aa4c5a06d00"
+    },
+    "frame_332": {
+      "path": ".runtime/factory-native/sikh383-appearance-c166-motion3/frame-0332.png",
+      "sha256": "b03f9de9b28d42fa6674c476bf0db67702101cb77bd302cc9b980ade01db2e2f"
+    },
+    "frame_333": {
+      "path": ".runtime/factory-native/sikh383-appearance-c166-motion3/frame-0333.png",
+      "sha256": "32e6412f8500db226cc817999ffc6f6cc4f1ed079225632e8910a468c9438419"
+    },
+    "frame_334": {
+      "path": ".runtime/factory-native/sikh383-appearance-c166-motion3/frame-0334.png",
+      "sha256": "3e19a6e6371fc2d776430d9da87f853d8454979d0e4a5d52286bbb84eace97df"
+    },
+    "frame_335": {
+      "path": ".runtime/factory-native/sikh383-appearance-c166-motion3/frame-0335.png",
+      "sha256": "fa864e57b0ab5b76838300d58dd8963ca45a194a817fbf7f8c97dd651d4dff7b"
+    }
+  },
+  "requirement_outcomes": {
+    "evidence": {
+      "status": "NOT_TESTED",
+      "observation": "Component byte/frame coverage only. Complete unit and direct temporal judgment not independently qualified."
+    },
+    "director_form_motion": {
+      "status": "NOT_TESTED",
+      "observation": "Component byte/frame coverage only. Complete unit and direct temporal judgment not independently qualified."
+    }
+  }
+}

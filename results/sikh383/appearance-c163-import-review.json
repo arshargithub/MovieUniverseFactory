@@ -1,0 +1,35 @@
+{
+  "run_digest": "22e681b6d03deed61624d3da94ee6e31033c5154e22f753f1e7e4f47a8e1fe93",
+  "verdict": "PASS",
+  "observation": "Actual source-selected transforms unchanged;34mapped bones transferred over276..367; maximum authored/evaluated head error20.01micrometres. Native derivative returned. Numeric transfer only, no visual or motion judgment.",
+  "comparison": "Baseline-calibrated transfer against actual source frames and assigned poses; different body/limb lengths leave foot-contact qualification open.",
+  "open_defects": [],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh383-appearance-c163-import/snapshot.json",
+      "sha256": "bd5814f51b3cf1d8b797375ed7c47dfe441ec5b8971e869a85cb301334b1b3fc"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh383-appearance-c163-import/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh383-appearance-c163-import/script-diagnostics.json",
+      "sha256": "4e1205462c9c8153ef4f4d15eba35ea263f6079e3b74341771bbb12e2f41f34c"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh383-appearance-c163-import/scene.blend",
+      "sha256": "0cd113a729c79a7ce7d53183322c970140ad3619b12f64fe2036639d7add1e60"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh383-appearance-c163-import/patch-evidence.json",
+      "sha256": "13f455e3a11c309f5556a66ea66fb97f26c62c48609b61966499d44d20782e56"
+    }
+  },
+  "requirement_outcomes": {
+    "preservation": {
+      "status": "PASS",
+      "observation": "Actual original selected transforms preserved and master unchanged; transferred action is a separate diagnostic."
+    }
+  }
+}

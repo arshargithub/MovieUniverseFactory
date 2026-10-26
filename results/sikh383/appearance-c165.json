@@ -1,0 +1,393 @@
+{
+  "parent": ".runtime/factory-native/sikh383-appearance-c163-import/scene.blend",
+  "brief_path": "results/sikh383/revised165-brief.json",
+  "method": "Measured hindfoot root-height fit over accepted-motion transfer; no mesh/weights/bone curve edit. Neutral exposure -1.25 for legible source material.",
+  "cause": "164 implementation dispatch entered import instead of root adaptation; no candidate.165 fixes explicit closed-operation dispatch and adds no-Blender dispatch tests catching that error. Same root-fit method and bounds; no limit refund.",
+  "scope": "383 isolated donor anatomy/deformation and adaptation-feasibility proof, no production adoption.",
+  "proof": "Actual multi-view body plus full24fps276..367 diagnostic. Hindfoot floor gap tested from evaluated vertices at each frame, other contact/armor/production integration remain explicitly unqualified.",
+  "failure": "Reject unsafe import, inactive rear, weak anatomy or economically unsuitable fused tack; no production PASS.",
+  "alternatives": "Current donor repairs failed381; untested raw reimport is identical. Alternative foundation changes actual mesh/rig, with retargeting risk.",
+  "expected": "A sounder connected forequarter through a rear with an editable rig.",
+  "reconciliation": "383 explicit alternative-source authority supersedes old local chest edit scope for qualification only; original action remains protected, stock rear not adopted.",
+  "sources": [
+    "results/sikh383/REQUEST.md",
+    "results/sikh383/APPROVED_ALLOWANCE.json",
+    "results/sikh383/STRATEGY.md",
+    "results/sikh383/HANDLER_REVIEW.md",
+    "results/sikh383/ASSET_MANIFEST.json",
+    "results/sikh381/RETROSPECTIVE381.md",
+    "results/sikh381/EFFICIENCY_ADDENDUM.md",
+    "src/movie_factory/adapters/blender/warhorse383.py",
+    "src/movie_factory/adapters/blender/nihang_patch.py",
+    "src/movie_factory/adapters/blender/nihang_control.py",
+    "tests/test_warhorse383.py",
+    "scripts/sikh383_setup.py",
+    "scripts/sikh383_plan.py",
+    ".runtime/assets/warhorse383/Warhorse_Lite.glb",
+    ".runtime/assets/warhorse383/LICENSE.txt",
+    ".runtime/assets/warhorse383/README.md",
+    "scripts/sikh383_next.py"
+  ],
+  "retrospective_evidence": [
+    "results/sikh383/REQUEST.md",
+    "results/sikh383/APPROVED_ALLOWANCE.json",
+    "results/sikh383/STRATEGY.md",
+    "results/sikh383/HANDLER_REVIEW.md",
+    "results/sikh383/ASSET_MANIFEST.json",
+    "results/sikh381/RETROSPECTIVE381.md",
+    "results/sikh381/EFFICIENCY_ADDENDUM.md"
+  ],
+  "steps": [
+    {
+      "id": "import",
+      "depends_on": [],
+      "recipe": {
+        "operation": "nihang_patch",
+        "frame": 283,
+        "width": 640,
+        "height": 640,
+        "samples": 8,
+        "edits": [
+          {
+            "kind": "warhorse_ground383",
+            "target": "warhorse383"
+          }
+        ]
+      },
+      "requirements": [
+        "preservation"
+      ]
+    },
+    {
+      "id": "oblique",
+      "depends_on": [
+        "import"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 283,
+        "frames": [
+          283,
+          310,
+          320,
+          333,
+          339,
+          346,
+          367
+        ],
+        "view": "warhorse_reverse383",
+        "width": 640,
+        "height": 640,
+        "samples": 8
+      },
+      "requirements": [
+        "form",
+        "interfaces",
+        "whole_look"
+      ]
+    },
+    {
+      "id": "front",
+      "depends_on": [
+        "import"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 283,
+        "frames": [
+          283,
+          310,
+          320,
+          333,
+          339,
+          346,
+          367
+        ],
+        "view": "warhorse_front383",
+        "width": 640,
+        "height": 640,
+        "samples": 8
+      },
+      "requirements": [
+        "form",
+        "interfaces",
+        "whole_look"
+      ]
+    },
+    {
+      "id": "side",
+      "depends_on": [
+        "import"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 283,
+        "frames": [
+          283,
+          310,
+          320,
+          333,
+          339,
+          346,
+          367
+        ],
+        "view": "warhorse_side383",
+        "width": 640,
+        "height": 640,
+        "samples": 8
+      },
+      "requirements": [
+        "form",
+        "interfaces",
+        "whole_look"
+      ]
+    },
+    {
+      "id": "motion0",
+      "depends_on": [
+        "import"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 283,
+        "frames": [
+          283,
+          276,
+          277,
+          278,
+          279,
+          280,
+          281,
+          282,
+          284,
+          285,
+          286,
+          287,
+          288,
+          289,
+          290
+        ],
+        "view": "warhorse_reverse383",
+        "width": 512,
+        "height": 512,
+        "samples": 8
+      },
+      "requirements": [
+        "evidence",
+        "director_form_motion"
+      ]
+    },
+    {
+      "id": "motion1",
+      "depends_on": [
+        "import"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 283,
+        "frames": [
+          283,
+          291,
+          292,
+          293,
+          294,
+          295,
+          296,
+          297,
+          298,
+          299,
+          300,
+          301,
+          302,
+          303,
+          304,
+          305
+        ],
+        "view": "warhorse_reverse383",
+        "width": 512,
+        "height": 512,
+        "samples": 8
+      },
+      "requirements": [
+        "evidence",
+        "director_form_motion"
+      ]
+    },
+    {
+      "id": "motion2",
+      "depends_on": [
+        "import"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 283,
+        "frames": [
+          283,
+          306,
+          307,
+          308,
+          309,
+          310,
+          311,
+          312,
+          313,
+          314,
+          315,
+          316,
+          317,
+          318,
+          319,
+          320
+        ],
+        "view": "warhorse_reverse383",
+        "width": 512,
+        "height": 512,
+        "samples": 8
+      },
+      "requirements": [
+        "evidence",
+        "director_form_motion"
+      ]
+    },
+    {
+      "id": "motion3",
+      "depends_on": [
+        "import"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 283,
+        "frames": [
+          283,
+          321,
+          322,
+          323,
+          324,
+          325,
+          326,
+          327,
+          328,
+          329,
+          330,
+          331,
+          332,
+          333,
+          334,
+          335
+        ],
+        "view": "warhorse_reverse383",
+        "width": 512,
+        "height": 512,
+        "samples": 8
+      },
+      "requirements": [
+        "evidence",
+        "director_form_motion"
+      ]
+    },
+    {
+      "id": "motion4",
+      "depends_on": [
+        "import"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 283,
+        "frames": [
+          283,
+          336,
+          337,
+          338,
+          339,
+          340,
+          341,
+          342,
+          343,
+          344,
+          345,
+          346,
+          347,
+          348,
+          349,
+          350
+        ],
+        "view": "warhorse_reverse383",
+        "width": 512,
+        "height": 512,
+        "samples": 8
+      },
+      "requirements": [
+        "evidence",
+        "director_form_motion"
+      ]
+    },
+    {
+      "id": "motion5",
+      "depends_on": [
+        "import"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 283,
+        "frames": [
+          283,
+          351,
+          352,
+          353,
+          354,
+          355,
+          356,
+          357,
+          358,
+          359,
+          360,
+          361,
+          362,
+          363,
+          364,
+          365
+        ],
+        "view": "warhorse_reverse383",
+        "width": 512,
+        "height": 512,
+        "samples": 8
+      },
+      "requirements": [
+        "evidence",
+        "director_form_motion"
+      ]
+    },
+    {
+      "id": "motion6",
+      "depends_on": [
+        "import"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 283,
+        "frames": [
+          283,
+          366,
+          367
+        ],
+        "view": "warhorse_reverse383",
+        "width": 512,
+        "height": 512,
+        "samples": 8
+      },
+      "requirements": [
+        "evidence",
+        "director_form_motion"
+      ]
+    }
+  ],
+  "poses": [
+    283,
+    310,
+    320,
+    333,
+    339,
+    346,
+    367
+  ]
+}
