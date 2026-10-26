@@ -1,0 +1,52 @@
+{
+  "scope": "380 recorded work, not full-turn timing qualification",
+  "start": "2026-10-26T12:55:12.630446+00:00",
+  "end": "2026-10-26T13:38:42.146532+00:00",
+  "recorded_elapsed_seconds": 2609.516086101532,
+  "jobs": [
+    {
+      "id": "sikh380-appearance-c144-repair",
+      "process_elapsed_seconds": 0.7519049160182476,
+      "exit_code": -11,
+      "receipt": ".runtime/factory-native/sikh380-appearance-c144-repair/runner-status.json",
+      "sha256": "457b894334fdd647ca0f337a7c38026dabd2f600b36ade1cc84ad53a9e40fd15"
+    },
+    {
+      "id": "sikh380-appearance-c145-repair",
+      "process_elapsed_seconds": 26.78240320784971,
+      "exit_code": 0,
+      "receipt": ".runtime/factory-native/sikh380-appearance-c145-repair/runner-status.json",
+      "sha256": "fda17081d655ad6b8f36c4eb1e84f574d80b7a78fdbd2abc8858b244e116f503"
+    },
+    {
+      "id": "sikh380-appearance-c145-front",
+      "process_elapsed_seconds": 112.8716954998672,
+      "exit_code": 0,
+      "receipt": ".runtime/factory-native/sikh380-appearance-c145-front/runner-status.json",
+      "sha256": "976e5f9b66b0d27671978ddb2593cadcffb2f4a683ed795626f983aa2bc01aff"
+    },
+    {
+      "id": "sikh380-appearance-c146-repair",
+      "process_elapsed_seconds": 26.33458741614595,
+      "exit_code": 0,
+      "receipt": ".runtime/factory-native/sikh380-appearance-c146-repair/runner-status.json",
+      "sha256": "a1f63aa898adcc09214d1033f65b1009c5426dac36c7cbd7c8653ab9bab6c959"
+    },
+    {
+      "id": "sikh380-appearance-c146-front",
+      "process_elapsed_seconds": 133.94023195793852,
+      "exit_code": 0,
+      "receipt": ".runtime/factory-native/sikh380-appearance-c146-front/runner-status.json",
+      "sha256": "f55a47955885682bda8dcee49fb563ea49694f586747050f850d48e701d8534b"
+    }
+  ],
+  "job_process_seconds": 300.68082299781963,
+  "interval_rule": "Rendering already lies inside work interval; never add job seconds to work. Native reservation timestamps are not CPU timestamps. Idle before selector confirmation excluded by separate wait.",
+  "gaps": [
+    "Unmeasured bootstrap before activity start",
+    "Closeout/commit/handoff after activity end"
+  ],
+  "token_usage": null,
+  "engineering_cost_usd": null,
+  "external_paid_calls": 0
+}

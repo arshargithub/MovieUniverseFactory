@@ -2838,6 +2838,44 @@
         "results/workflow378/CHEST_HYPOTHESIS.md",
         "results/workflow378/PRESERVATION.json"
       ]
+    },
+    {
+      "event_id": "series01-exchange380-astra-selector-confirmed",
+      "event_type": "model_switch",
+      "recorded_date": "2026-10-26",
+      "reported_model": "gpt-6-astra",
+      "reported_reasoning_effort": "high",
+      "setting_attribution": "user_reported",
+      "runtime_verified": false,
+      "controlled_model_comparison": false,
+      "scope": "Same task143/max146; chest/neck/foreleg surface ownership only, remaining144..146, no new spending or live separate runtime calls.",
+      "observation": "Director confirms main-chat selector after approving exact379proposal. New causal ownership/rest-source control planned, no result yet.",
+      "engineering_subscription_usage": null,
+      "engineering_cost_usd": null,
+      "evidence": [
+        "results/sikh380/SWITCH.md",
+        "results/sikh380/APPROVAL.json"
+      ]
+    },
+    {
+      "event_id": "series01-exchange380-astra-scope-exhausted",
+      "event_type": "engineering_outcome",
+      "recorded_date": "2026-10-26",
+      "reported_model": "gpt-6-astra",
+      "reported_reasoning_effort": "high",
+      "setting_attribution": "user_reported",
+      "runtime_verified": false,
+      "controlled_model_comparison": false,
+      "outcome": "NARROW_SCOPE_EXHAUSTED_NO_ARTISTIC_PASS",
+      "observation": "144 startup crash;145 and146 actual native front FAIL. Ownership diagnosis improved but positive anatomical construction remains unresolved. Return to Sol default; main-chat switch requires Director. No further Astra scope or cycles.",
+      "engineering_subscription_usage": null,
+      "engineering_cost_usd": null,
+      "new_external_paid_provider_calls": 0,
+      "evidence": [
+        "results/sikh380/RETROSPECTIVE380.md",
+        "results/sikh380/appearance-c146-front-review.json",
+        "results/sikh380/PROTECTED_MASTERS_VERIFIED.json"
+      ]
     }
   ],
   "recording_mode": "manual_evidence_backfill_and_future_event_capture",
