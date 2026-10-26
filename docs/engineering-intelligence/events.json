@@ -54,7 +54,7 @@
       "runtime_verified": false,
       "controlled_model_comparison": false,
       "outcome": "HEADSTALL_COMPONENT_PROGRESS_REIN_ROUTE_BLOCKED",
-      "observation": "Five additional each retained on original tasks. Appearance82\u201386 attempted,87 unused.86 supported anatomical headstall retained. Motion17\u201321 exhausted:17 endpoint checks pass but actual images fail neck contact;18 inventory;19\u201321 geometry guards reject before save. Exterior path unit controls pass but actual horse route remains unqualified.261 focused software tests are not art or AV approval. No crowd propagation or production clip. No inferred model switch, superiority or cost savings.",
+      "observation": "Five additional each retained on original tasks. Appearance82–86 attempted,87 unused.86 supported anatomical headstall retained. Motion17–21 exhausted:17 endpoint checks pass but actual images fail neck contact;18 inventory;19–21 geometry guards reject before save. Exterior path unit controls pass but actual horse route remains unqualified.261 focused software tests are not art or AV approval. No crowd propagation or production clip. No inferred model switch, superiority or cost savings.",
       "engineering_subscription_usage": null,
       "engineering_cost_usd": null,
       "new_external_paid_provider_calls": 0,
@@ -2478,7 +2478,7 @@
       "runtime_verified": false,
       "controlled_model_comparison": false,
       "outcome": "FIVE_CORRECTIONS_EXHAUSTED_SASH_TACK_PROGRESS_FACE_REGRESSION",
-      "observation": "Five68\u201372 on existing appearance task.70 continuous sash and71 supported saddlecloth improve sampled views;72 face/neck beard regression rejected,71 retained. Motion16 keys unchanged. Retrospective audit confirms repeated triggers/admissions but unresolved artistic effectiveness.77 tests are technical only; no crowd or review-ready clip.",
+      "observation": "Five68–72 on existing appearance task.70 continuous sash and71 supported saddlecloth improve sampled views;72 face/neck beard regression rejected,71 retained. Motion16 keys unchanged. Retrospective audit confirms repeated triggers/admissions but unresolved artistic effectiveness.77 tests are technical only; no crowd or review-ready clip.",
       "engineering_subscription_usage": null,
       "engineering_cost_usd": null,
       "new_external_paid_provider_calls": 0,
@@ -2500,7 +2500,7 @@
       "runtime_verified": false,
       "controlled_model_comparison": false,
       "outcome": "COMPONENT_PROGRESS_TACK_CONTACT_BLOCK_ONE_APPEARANCE_CYCLE_REMAINS",
-      "observation": "Nine73\u201381 of ten authorized appearance cycles completed with checkpoint77. Beard root domain, brows/pigment, current topology trim, indigo/folds and authored horse texture retained.74/75 groom failures and80 texture/shader regression rejected.81 close horse view exposes inherited noseband/bit/rein attachment requiring separate exhausted motion allowance. Appearance82 unexecuted; two motion corrections requested, not assumed.203 software tests are not art or AV qualification. No crowd propagation, production-ready media or controlled model superiority claim.",
+      "observation": "Nine73–81 of ten authorized appearance cycles completed with checkpoint77. Beard root domain, brows/pigment, current topology trim, indigo/folds and authored horse texture retained.74/75 groom failures and80 texture/shader regression rejected.81 close horse view exposes inherited noseband/bit/rein attachment requiring separate exhausted motion allowance. Appearance82 unexecuted; two motion corrections requested, not assumed.203 software tests are not art or AV qualification. No crowd propagation, production-ready media or controlled model superiority claim.",
       "engineering_subscription_usage": null,
       "engineering_cost_usd": null,
       "new_external_paid_provider_calls": 0,
@@ -2724,7 +2724,7 @@
       "runtime_verified": false,
       "controlled_model_comparison": false,
       "outcome": "LANDING80_DIRECTOR_ACCEPTED_TORSO128_INTERNAL_FAIL_ALLOWANCE_EXHAUSTED",
-      "observation": "Five total124..128 original appearance cycles.124 source diagnosis,125\u2013127 proxy guards rejected before save,128 actual final-surface check passes5poses but15-image review rejects descent skin web. Existing motion preserved; new full clip/92frame contact not run. Method/measurement errors do not establish Sol inferiority or warrant automatic Astra.",
+      "observation": "Five total124..128 original appearance cycles.124 source diagnosis,125–127 proxy guards rejected before save,128 actual final-surface check passes5poses but15-image review rejects descent skin web. Existing motion preserved; new full clip/92frame contact not run. Method/measurement errors do not establish Sol inferiority or warrant automatic Astra.",
       "engineering_subscription_usage": null,
       "engineering_cost_usd": null,
       "new_external_paid_provider_calls": 0,
@@ -2732,6 +2732,47 @@
         "results/sikh374/LANDING_ACCEPTANCE.json",
         "results/sikh374/INTERNAL_REJECTION128.json",
         "results/sikh374/LEARNINGS.md"
+      ]
+    },
+    {
+      "event_id": "series01-exchange375-torso-counterfactuals-rejected",
+      "event_type": "engineering_outcome",
+      "recorded_date": "2026-10-25",
+      "reported_model": "gpt-6.1-sol",
+      "reported_reasoning_effort": "high",
+      "setting_attribution": "currentDirector360policy, not independent runtime observation",
+      "runtime_verified": false,
+      "controlled_model_comparison": false,
+      "outcome": "THREE_TORSO_CANDIDATES_INTERNALLY_REJECTED",
+      "observation": "375 four slots129..132 source inspection, torso-fixed/proximal weight controls and restbound corrective. All artistic candidates retain bib339. No director-ready result.376 approves five more cycles but no Astra assignment/selector switch; Sol continues.82software regressions pass, not artistic acceptance.",
+      "engineering_subscription_usage": null,
+      "engineering_cost_usd": null,
+      "new_external_paid_provider_calls": 0,
+      "evidence": [
+        "results/sikh375/INTERNAL_REJECTION132.json",
+        "results/sikh375/LEARNINGS.md",
+        "results/sikh376/REQUEST.md"
+      ]
+    },
+    {
+      "event_id": "series01-exchange376-form-fail-pause377",
+      "event_type": "engineering_outcome",
+      "recorded_date": "2026-10-25",
+      "reported_model": "gpt-6.1-sol",
+      "reported_reasoning_effort": "high",
+      "setting_attribution": "Director360defaultpolicy; runtimeunverified",
+      "runtime_verified": false,
+      "controlled_model_comparison": false,
+      "outcome": "FOUR_ADDITIONAL_SLOTS_USED_NO_FORM_PASS_DIRECTOR_PAUSED_BEFORE137",
+      "observation": "133deformerqualification,134singlepose,135sparsepose and136densecache. Actual339webremainsdespitenumericalfit/cachecontrols. AstrarequestedbutNOTapproved; Director377pausesproductionfordiscussionofreference-needs/adequacyworkflow.137preserved.89regressionspass, notart; noactualmodelswitch.",
+      "engineering_subscription_usage": null,
+      "engineering_cost_usd": null,
+      "new_external_paid_provider_calls": 0,
+      "evidence": [
+        "results/sikh376/REJECT136.md",
+        "results/sikh376/RETROSPECTIVE136.md",
+        "results/workflow377/PRODUCTION_PAUSE.json",
+        "results/workflow377/REFERENCE_WORKFLOW_PROPOSAL.md"
       ]
     }
   ],
