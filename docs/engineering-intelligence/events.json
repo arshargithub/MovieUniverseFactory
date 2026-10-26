@@ -1,6 +1,26 @@
 {
   "events": [
     {
+      "event_id": "series01-exchange380-astra-chest-assignment-approved",
+      "event_type": "escalation_approval",
+      "recorded_date": "2026-10-26",
+      "requested_model": "gpt-6-astra",
+      "requested_reasoning_effort": "high",
+      "setting_attribution": "Director380 approves concrete379 proposal; selector switch not yet reported",
+      "runtime_verified": false,
+      "controlled_model_comparison": false,
+      "outcome": "SCOPED_ASTRA_APPROVED_SELECTOR_REPORT_PENDING",
+      "observation": "Same task143/max146,3remaining cycles144..146. Chest/neck/foreleg representation reassessment only; preserve accepted primary motion. No separate-runtime calls or external spend. No new native attempt or artistic outcome in approval bookkeeping.",
+      "engineering_subscription_usage": null,
+      "engineering_cost_usd": null,
+      "new_external_paid_provider_calls": 0,
+      "evidence": [
+        "results/sikh380/REQUEST.md",
+        "results/sikh380/APPROVAL.json",
+        "results/sikh379/RETROSPECTIVE379.md"
+      ]
+    },
+    {
       "event_id": "series01-exchange379-chest-form-reference-versus-execution",
       "event_type": "engineering_review_outcome",
       "recorded_date": "2026-10-26",
