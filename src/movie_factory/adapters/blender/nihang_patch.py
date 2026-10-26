@@ -27,7 +27,10 @@ def validate(recipe):
         name = edit.get('target')
         if not isinstance(name, str) or not name or len(name) > 128 or any(c in name for c in '/\\\n'):
             raise ValueError('PATCH_TARGET')
-        if kind == 'mounted_horse_chest379':
+        if kind in {'mounted_horse_chest380','mounted_horse_chest380_coat'}:
+            import importlib.util
+            spec=importlib.util.spec_from_file_location('mf_chest380',Path(__file__).with_name('nihang_chest380.py'));module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module);module.validate(edit)
+        elif kind == 'mounted_horse_chest379':
             import importlib.util
             spec=importlib.util.spec_from_file_location('mf_chest379',Path(__file__).with_name('nihang_chest379.py'));module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module);module.validate(edit)
         elif kind == 'mounted_horse_cache376':
@@ -135,7 +138,7 @@ def apply(bpy, recipe,diagnostic_dir=None):
     # named derivative; it cannot overwrite an accepted existing object.
     names = set()
     for edit in recipe['edits']:
-        if edit['kind'] in {'mounted_horse_chest379','mounted_horseform374_inspect','mounted_horseform374_sculpt','mounted_horseform374_contact','mounted_horse_deform375_inspect','mounted_horse_deform375_weights','mounted_horse_corrective375','mounted_horse_pose376_inspect','mounted_horse_pose376_correct','mounted_horse_multiform376','mounted_horse_cache376'}:
+        if edit['kind'] in {'mounted_horse_chest380','mounted_horse_chest380_coat','mounted_horse_chest379','mounted_horseform374_inspect','mounted_horseform374_sculpt','mounted_horseform374_contact','mounted_horse_deform375_inspect','mounted_horse_deform375_weights','mounted_horse_corrective375','mounted_horse_pose376_inspect','mounted_horse_pose376_correct','mounted_horse_multiform376','mounted_horse_cache376'}:
             if bpy.data.objects.get('horse') is None:raise ValueError('FORM374_SOURCE_OWNER')
         elif edit['kind']=='mounted_padcontact369':
             if bpy.data.objects.get('horse') is None or bpy.data.objects.get('fitted saddle blanket292') is None:raise ValueError('PAD369_OWNERS')
@@ -162,7 +165,11 @@ def apply(bpy, recipe,diagnostic_dir=None):
             names.add(edit['target'])
     support_evidence=[]
     for edit in recipe['edits']:
-        if edit['kind']=='mounted_horse_chest379':
+        if edit['kind'] in {'mounted_horse_chest380','mounted_horse_chest380_coat'}:
+            import importlib.util
+            spec=importlib.util.spec_from_file_location('mf_chest380',Path(__file__).with_name('nihang_chest380.py'));module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+            support_evidence.append({'chest380':module.run(bpy,diagnostic_dir,edit)})
+        elif edit['kind']=='mounted_horse_chest379':
             import importlib.util
             spec=importlib.util.spec_from_file_location('mf_chest379',Path(__file__).with_name('nihang_chest379.py'));module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
             support_evidence.append({'chest379':module.run(bpy,diagnostic_dir,edit)})

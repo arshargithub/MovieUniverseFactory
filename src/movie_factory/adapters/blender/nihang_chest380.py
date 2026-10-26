@@ -1,0 +1,124 @@
+"""Scoped pectoral ownership control; real rig evaluation, no pose cache or code payload."""
+import importlib.util,json,hashlib
+from pathlib import Path
+import numpy as np
+
+
+def mod(name):
+ s=importlib.util.spec_from_file_location('chest380_'+name,Path(__file__).with_name(name+'.py'));m=importlib.util.module_from_spec(s);s.loader.exec_module(m);return m
+
+
+def validate(edit):
+ if edit=={'kind':'mounted_horse_chest380_coat','target':'horse'}:return edit
+ if set(edit)!={'kind','target','restoration'} or edit['kind']!='mounted_horse_chest380' or edit['target']!='horse' or type(edit['restoration']) not in (int,float) or not 0<=edit['restoration']<=1:raise ValueError('CHEST380_FIELDS')
+ return edit
+
+
+def ownership(weights,names):
+ """Transfer whole pectoral group, including midline, to each proximal humerus.
+
+ Existing breast weights already express anatomical falloff. An extra lateral
+ or height gate leaves a stationary island and can fold the central lower edge.
+ This is a falsifiable skin-binding hypothesis, not anatomical force simulation.
+ """
+ w=np.asarray(weights,dtype=float);names=list(names)
+ if w.ndim!=2 or w.shape[1]!=len(names) or not np.isfinite(w).all() or (w<0).any():raise ValueError('CHEST380_WEIGHTS')
+ q=w.copy()
+ for side in ('L','R'):
+  a=names.index('DEF-breast.'+side);b=names.index('DEF-upper_arm.'+side)
+  q[:,b]+=w[:,a];q[:,a]=0
+ if np.max(np.abs(q.sum(1)-w.sum(1)))>1e-7:raise ValueError('CHEST380_MASS')
+ return q
+
+
+def run(bpy,out,edit):
+ validate(edit)
+ if edit['kind']=='mounted_horse_chest380_coat':return coat(bpy,out)
+ scene=mod('nihang_support').select_production_scene(bpy);horse=bpy.data.objects['horse']
+ if horse.get('chest380') or horse.get('deform375_weights') or horse.get('cache376'):raise ValueError('CHEST380_ORIGINAL_SOURCE')
+ before=mod('nihang_prep367').frozen(bpy);actions=mod('nihang_padsolve370').actions(bpy);keys=horse.data.shape_keys.key_blocks
+ basis=np.array([v.co[:] for v in keys[0].data]);raw=np.array([v.co[:] for v in horse.data.vertices]);delta=(raw-basis)*edit['restoration']
+ changed=np.linalg.norm(delta,axis=1)>1e-6
+ if not changed.any() or np.linalg.norm(delta,axis=1).max()>.18 or np.any((basis[changed,2]<.85)|(basis[changed,2]>1.8)|(basis[changed,1]>-.1)):raise ValueError('CHEST380_SOURCE_DELTA_SCOPE')
+ names=[g.name for g in horse.vertex_groups];w=np.zeros((len(raw),len(names)))
+ for v in horse.data.vertices:
+  for g in v.groups:w[v.index,g.group]=g.weight
+ proposed=ownership(w,names);changes=np.abs(proposed-w)>1e-10
+ # Undo only the historically accumulated rest sculpt, preserving all relative
+ # corrective deltas and their action values. Raw geometry remains untouched.
+ for key in keys:
+  q=np.empty(len(raw)*3,dtype=np.float32);key.data.foreach_get('co',q);key.data.foreach_set('co',(q.reshape(-1,3)+delta).astype(np.float32).ravel())
+ for i,g in enumerate(horse.vertex_groups):
+  for idx in np.flatnonzero(changes[:,i]):
+   value=float(proposed[idx,i])
+   if value<1e-10:g.remove([int(idx)])
+   else:g.add([int(idx)],value,'REPLACE')
+ actual=np.zeros_like(w)
+ for v in horse.data.vertices:
+  for g in v.groups:actual[v.index,g.group]=g.weight
+ if np.max(np.abs(actual-proposed))>2e-7:raise ValueError('CHEST380_STORED_WEIGHTS')
+ nap=bpy.data.objects.get('317 rig-bound short horse nap')
+ if nap:nap.hide_render=True;nap.hide_viewport=True
+ horse.data.update();bpy.context.view_layer.update();after=mod('nihang_prep367').frozen(bpy)
+ if any(before[n]!=after.get(n) for n in before if n!='horse') or actions!=mod('nihang_padsolve370').actions(bpy):raise ValueError('CHEST380_PROTECTED_DRIFT')
+ horse['chest380']='restrained rest sculpt + bilateral full pectoral/proximal-humeral ownership; diagnostic no coat'
+ horse['chest380_restoration']=edit['restoration']
+ rows=[];levels=[(m,m.show_viewport) for m in horse.modifiers if m.type=='SUBSURF'];saved=scene.frame_current;arrays={'raw':raw,'before':basis,'weights_before':w,'weights_after':actual,'names':np.array(names)}
+ try:
+  for m,_ in levels:m.show_viewport=False
+  for f in [283,333,339,342,367]:
+   scene.frame_set(f);bpy.context.view_layer.update();ev=horse.evaluated_get(bpy.context.evaluated_depsgraph_get());me=ev.to_mesh()
+   try:arrays['posed_'+str(f)]=np.array([v.co[:] for v in me.vertices])
+   finally:ev.to_mesh_clear()
+ finally:
+  for m,v in levels:m.show_viewport=v
+  scene.frame_set(saved);bpy.context.view_layer.update()
+ np.savez_compressed(out/'chest380.npz',**arrays)
+ report=dict(restored_vertices=int(changed.sum()),maximum_rest_delta=float(np.linalg.norm(delta,axis=1).max()),changed_weight_vertices=int(changes.any(1).sum()),weight_sum_error=float(np.abs(actual.sum(1)-w.sum(1)).max()),actions_unchanged=True,other_geometry_unchanged=True,coat='hidden diagnostic; integration NOT_RUN',method=horse['chest380'],scope='Candidate only; five poses/front/reverse/side and coat/contact/full-motion still require actual review.')
+ (out/'chest380.json').write_text(json.dumps(report,indent=2)+'\n');return report
+
+
+def coat(bpy,out):
+ """Rebind existing nap follicles from verified old body roots/weights; no regroom."""
+ from mathutils import Vector
+ from mathutils.kdtree import KDTree
+ root=Path(__file__).resolve().parents[4];path=root/'.runtime/factory-native/sikh374-appearance-c124-inspect/horse-form374.npz'
+ if hashlib.sha256(path.read_bytes()).hexdigest()!='a3e78873d6bac337dae5034186179423b69857c66e54ce7f05ec9ba7d6c094fd':raise ValueError('CHEST380_COAT_SOURCE_HASH')
+ with np.load(path,allow_pickle=False) as q:p=q['shape'][0].copy();w=q['weights'].copy();names=list(q['group_names'])
+ horse=bpy.data.objects['horse'];nap=bpy.data.objects['317 rig-bound short horse nap']
+ if not horse.get('chest380') or horse.get('chest380_coat') or len(nap.data.vertices)!=3*len(nap.data.polygons):raise ValueError('CHEST380_COAT_STATE')
+ b=np.array([v.co[:] for v in horse.data.shape_keys.key_blocks[0].data]);d=b-p;actual=np.zeros_like(w)
+ if names!=[g.name for g in horse.vertex_groups]:raise ValueError('CHEST380_COAT_GROUPS')
+ for v in horse.data.vertices:
+  for g in v.groups:actual[v.index,g.group]=g.weight
+ if np.max(np.abs(actual-ownership(w,names)))>2e-7:raise ValueError('CHEST380_COAT_BODY_BIND')
+ changed=(np.linalg.norm(d,axis=1)>1e-8)|(np.max(np.abs(actual-w),axis=1)>1e-8)
+ before=mod('nihang_prep367').frozen(bpy);actions=mod('nihang_padsolve370').actions(bpy)
+ kd=KDTree(len(p))
+ for i,v in enumerate(p):kd.insert(Vector(v),i)
+ kd.balance();mx=horse.matrix_world.inverted()@nap.matrix_world;inv=mx.inverted().to_3x3();nn={g.index:g.name for g in nap.vertex_groups};idx={n:i for i,n in enumerate(names)};updates=0;unmapped=0;maxdist=0
+ for poly in nap.data.polygons:
+  ids=list(poly.vertices);rootpt=mx@((nap.data.vertices[ids[0]].co+nap.data.vertices[ids[1]].co)*.5);old=np.zeros(len(names))
+  for g in nap.data.vertices[ids[0]].groups:
+   if nn[g.group] in idx:old[idx[nn[g.group]]]=g.weight
+  near=kd.find_n(rootpt,32);matches=[(dist,i) for _,i,dist in near if dist<.02 and np.max(np.abs(w[i]-old))<1e-4]
+  if not matches:
+   if any(changed[i] for _,i,_ in near[:8]):unmapped+=1
+   continue
+  dist,i=min(matches)
+  if not changed[i]:continue
+  for vi in ids:nap.data.vertices[vi].co+=inv@Vector(d[i])
+  for j in np.flatnonzero(np.abs(actual[i]-w[i])>1e-9):
+   group=nap.vertex_groups.get(str(names[j]))
+   if group is None:raise ValueError('CHEST380_COAT_MISSING_GROUP')
+   value=float(actual[i,j])
+   if value<1e-10:
+    for vi in ids:
+     if any(g.group==group.index for g in nap.data.vertices[vi].groups):group.remove([vi])
+   else:group.add(ids,value,'REPLACE')
+  updates+=1;maxdist=max(maxdist,dist)
+ if unmapped:raise ValueError('CHEST380_COAT_UNMAPPED:'+str(unmapped))
+ nap.hide_render=False;nap.hide_viewport=False;nap.data.update();bpy.context.view_layer.update();after=mod('nihang_prep367').frozen(bpy)
+ if any(v!=after.get(n) for n,v in before.items() if n!=nap.name) or actions!=mod('nihang_padsolve370').actions(bpy):raise ValueError('CHEST380_COAT_DRIFT')
+ horse['chest380_coat']=1;report=dict(updated_follicles=updates,unmapped=unmapped,maximum_root_match_distance=maxdist,actions_unchanged=True,body_unchanged=True,scope='Existing follicle group geometry and weights rebound; appearance/contact/full-speed remain separate.')
+ (out/'chest380-coat.json').write_text(json.dumps(report,indent=2)+'\n');return report
