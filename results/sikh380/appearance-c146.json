@@ -1,0 +1,526 @@
+{
+  "parent": ".runtime/factory-native/sikh375-appearance-c129-inspect/scene.blend",
+  "brief_path": "results/sikh380/revised146-brief.json",
+  "method": "380 restrained rest sculpture:50percent raw/Basis delta, full bilateral pectoral/proximal-humeral ownership. Live rig preserved. After body proof, rebind existing coat roots/weights; verify contacts and continuous sampled sequence.",
+  "proof": "Actual339 then333/342 opposite/front/side plus283367 must show supported rounded chest without sheet/shelf/pinch/bulb. Source/cache metrics are technical only. Known bodyFAIL blocks coat/full integration.",
+  "scope": "Same horse torso micro-appearance, first actual proof under379, primary motion fixed; no full leader/crowd claim.",
+  "reconciliation": "380 approved scoped Astra main-chat reassessment and reported switch supersede historical Sol-only text only within144..146. All earlier authority/history/quality retained. Unknown global307 remainsblocked,313 scoped correction applies.",
+  "alternatives": "Restoration alone leaves stationary sag in source-matrix control; partial-mask ownership leaves midline island. Full transfer may over-gather and must be rejected if globular or pinched.",
+  "failure": "Any source drift, bib/crease/shelf/globe/limb-root collapse or missing view remains internalFAIL. Reassess target versus method; no automatic Astra.",
+  "cause": "145 actual front rejects full-rest inflated lobes despite improved central participation. Retain live bilateral skin ownership but restore only half of historical sculpt displacement, reducing protrusion while preserving paired muscle form. One final explicit sculpt, no ARAP or action change.",
+  "expected": "Supported continuous powerful horse chest through existing motion, with unrelated surfaces/actions unchanged.",
+  "steps": [
+    {
+      "id": "repair",
+      "depends_on": [],
+      "recipe": {
+        "operation": "nihang_patch",
+        "frame": 367,
+        "width": 432,
+        "height": 768,
+        "samples": 8,
+        "edits": [
+          {
+            "kind": "mounted_horse_chest380",
+            "target": "horse",
+            "restoration": 0.5
+          }
+        ]
+      }
+    },
+    {
+      "id": "front",
+      "depends_on": [
+        "repair"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 367,
+        "frames": [
+          367,
+          339,
+          333,
+          342,
+          346,
+          283
+        ],
+        "view": "horse_form_front374",
+        "width": 640,
+        "height": 640,
+        "samples": 8
+      }
+    },
+    {
+      "id": "worst",
+      "depends_on": [
+        "repair",
+        "front"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 367,
+        "frames": [
+          367,
+          339,
+          333,
+          342,
+          346,
+          283
+        ],
+        "view": "horse_form_reverse374",
+        "width": 640,
+        "height": 640,
+        "samples": 8
+      }
+    },
+    {
+      "id": "side",
+      "depends_on": [
+        "repair",
+        "front",
+        "worst"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 367,
+        "frames": [
+          367,
+          339,
+          333,
+          342,
+          346,
+          283
+        ],
+        "view": "horse_form_side374",
+        "width": 640,
+        "height": 640,
+        "samples": 8
+      }
+    },
+    {
+      "id": "coat",
+      "depends_on": [
+        "repair",
+        "front",
+        "worst",
+        "side"
+      ],
+      "recipe": {
+        "operation": "nihang_patch",
+        "frame": 367,
+        "width": 432,
+        "height": 768,
+        "samples": 8,
+        "edits": [
+          {
+            "kind": "mounted_horse_chest380_coat",
+            "target": "horse"
+          }
+        ]
+      }
+    },
+    {
+      "id": "contact",
+      "depends_on": [
+        "coat"
+      ],
+      "recipe": {
+        "operation": "nihang_patch",
+        "frame": 367,
+        "width": 432,
+        "height": 768,
+        "samples": 8,
+        "edits": [
+          {
+            "kind": "mounted_horseform374_contact",
+            "target": "horse",
+            "frames": [
+              283,
+              310,
+              320,
+              333,
+              339,
+              342,
+              346,
+              359,
+              367
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "coatfront",
+      "depends_on": [
+        "contact"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 367,
+        "frames": [
+          367,
+          339,
+          333,
+          342,
+          346,
+          283
+        ],
+        "view": "horse_form_front374",
+        "width": 640,
+        "height": 640,
+        "samples": 8
+      }
+    },
+    {
+      "id": "coatreverse",
+      "depends_on": [
+        "contact"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 367,
+        "frames": [
+          367,
+          339,
+          333,
+          342,
+          346,
+          283
+        ],
+        "view": "horse_form_reverse374",
+        "width": 640,
+        "height": 640,
+        "samples": 8
+      }
+    },
+    {
+      "id": "coatside",
+      "depends_on": [
+        "contact"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 367,
+        "frames": [
+          367,
+          339,
+          333,
+          342,
+          346,
+          283
+        ],
+        "view": "horse_form_side374",
+        "width": 640,
+        "height": 640,
+        "samples": 8
+      }
+    },
+    {
+      "id": "motion0",
+      "depends_on": [
+        "contact",
+        "coatfront",
+        "coatreverse",
+        "coatside"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 367,
+        "frames": [
+          367,
+          276,
+          277,
+          278,
+          279,
+          280,
+          281,
+          282,
+          283,
+          284,
+          285,
+          286,
+          287,
+          288,
+          289,
+          290
+        ],
+        "view": "production",
+        "width": 432,
+        "height": 768,
+        "samples": 8
+      }
+    },
+    {
+      "id": "motion1",
+      "depends_on": [
+        "contact",
+        "coatfront",
+        "coatreverse",
+        "coatside"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 367,
+        "frames": [
+          367,
+          291,
+          292,
+          293,
+          294,
+          295,
+          296,
+          297,
+          298,
+          299,
+          300,
+          301,
+          302,
+          303,
+          304,
+          305
+        ],
+        "view": "production",
+        "width": 432,
+        "height": 768,
+        "samples": 8
+      }
+    },
+    {
+      "id": "motion2",
+      "depends_on": [
+        "contact",
+        "coatfront",
+        "coatreverse",
+        "coatside"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 367,
+        "frames": [
+          367,
+          306,
+          307,
+          308,
+          309,
+          310,
+          311,
+          312,
+          313,
+          314,
+          315,
+          316,
+          317,
+          318,
+          319,
+          320
+        ],
+        "view": "production",
+        "width": 432,
+        "height": 768,
+        "samples": 8
+      }
+    },
+    {
+      "id": "motion3",
+      "depends_on": [
+        "contact",
+        "coatfront",
+        "coatreverse",
+        "coatside"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 367,
+        "frames": [
+          367,
+          321,
+          322,
+          323,
+          324,
+          325,
+          326,
+          327,
+          328,
+          329,
+          330,
+          331,
+          332,
+          333,
+          334,
+          335
+        ],
+        "view": "production",
+        "width": 432,
+        "height": 768,
+        "samples": 8
+      }
+    },
+    {
+      "id": "motion4",
+      "depends_on": [
+        "contact",
+        "coatfront",
+        "coatreverse",
+        "coatside"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 367,
+        "frames": [
+          367,
+          336,
+          337,
+          338,
+          339,
+          340,
+          341,
+          342,
+          343,
+          344,
+          345,
+          346,
+          347,
+          348,
+          349,
+          350
+        ],
+        "view": "production",
+        "width": 432,
+        "height": 768,
+        "samples": 8
+      }
+    },
+    {
+      "id": "motion5",
+      "depends_on": [
+        "contact",
+        "coatfront",
+        "coatreverse",
+        "coatside"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 367,
+        "frames": [
+          367,
+          351,
+          352,
+          353,
+          354,
+          355,
+          356,
+          357,
+          358,
+          359,
+          360,
+          361,
+          362,
+          363,
+          364,
+          365
+        ],
+        "view": "production",
+        "width": 432,
+        "height": 768,
+        "samples": 8
+      }
+    },
+    {
+      "id": "motion6",
+      "depends_on": [
+        "contact",
+        "coatfront",
+        "coatreverse",
+        "coatside"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 367,
+        "frames": [
+          367,
+          366
+        ],
+        "view": "production",
+        "width": 432,
+        "height": 768,
+        "samples": 8
+      }
+    }
+  ],
+  "sources": [
+    "results/sikh379/REQUEST.md",
+    "results/sikh379/STRATEGY.md",
+    "results/sikh379/REFERENCE_QUALIFICATION.md",
+    "src/movie_factory/horse_shape379.py",
+    "src/movie_factory/adapters/blender/nihang_chest379.py",
+    "scripts/sikh379_targets.py",
+    "scripts/sikh379_plan.py",
+    "tests/test_horse_shape379.py",
+    "docs/knowledge/REFERENCE_READINESS_378.md",
+    "results/workflow378/CHEST_HYPOTHESIS.md",
+    "results/sikh376/REJECT136.md",
+    ".runtime/context-hygiene/runs/sikh379-handler-tests/stdout.log",
+    ".runtime/art-direction/sikh379-targets/c137.npz",
+    ".runtime/art-direction/sikh379-targets/c137.json",
+    ".runtime/art-direction/sikh379-references/acquisition.json",
+    ".runtime/art-direction/series01-sikh256/references/reference-b.mov",
+    ".runtime/art-direction/series01-finish248/opening08/actual-450.png",
+    ".runtime/art-direction/sikh379-references/umn-front-pectorals.jpg",
+    ".runtime/art-direction/sikh379-references/cavalo-rear.jpg",
+    ".runtime/art-direction/sikh379-references/friesian-rear.jpg",
+    ".runtime/art-direction/sikh379-targets/c138.npz",
+    ".runtime/art-direction/sikh379-targets/c138.json",
+    "results/sikh379/REJECT137.md",
+    "scripts/sikh379_replan.py",
+    ".runtime/art-direction/sikh379-targets/c139.npz",
+    ".runtime/art-direction/sikh379-targets/c139.json",
+    "results/sikh379/REJECT138.md",
+    ".runtime/art-direction/sikh379-targets/c140.npz",
+    ".runtime/art-direction/sikh379-targets/c140.json",
+    "results/sikh379/REJECT139.md",
+    "src/movie_factory/retrospective.py",
+    "tests/test_retro_packet379.py",
+    "results/sikh379/PACKET_REPAIR_STRATEGY.md",
+    "results/sikh379/PACKET_DEDUP_CONTROL.json",
+    ".runtime/art-direction/sikh379-targets/c141.npz",
+    ".runtime/art-direction/sikh379-targets/c141.json",
+    "results/sikh379/REJECT140.md",
+    ".runtime/art-direction/sikh379-targets/c142.npz",
+    ".runtime/art-direction/sikh379-targets/c142.json",
+    "results/sikh379/REJECT141.md",
+    ".runtime/art-direction/sikh379-targets/c143.npz",
+    ".runtime/art-direction/sikh379-targets/c143.json",
+    "results/sikh379/REJECT142.md",
+    "results/sikh379/CAGE_REASSESSMENT142.md",
+    "results/sikh379/REST_REASSESSMENT141.md",
+    "results/sikh380/SWITCH.md",
+    "results/sikh380/APPROVAL.json",
+    "results/sikh380/STRATEGY.md",
+    "results/sikh379/RETROSPECTIVE379.md",
+    "results/sikh379/REJECT143.md",
+    "src/movie_factory/adapters/blender/nihang_chest380.py",
+    "src/movie_factory/adapters/blender/nihang_patch.py",
+    "tests/test_chest380.py",
+    "scripts/sikh380_plan.py",
+    "scripts/sikh380_replan.py",
+    "scripts/sikh380_retry.py",
+    "results/sikh380/REJECT144.md",
+    ".runtime/factory-native/sikh380-appearance-c144-repair/runner-status.json",
+    "scripts/sikh380_final.py",
+    "results/sikh380/REJECT145.md",
+    "results/sikh380/appearance-c145-front-review.json",
+    ".runtime/factory-native/sikh374-appearance-c124-inspect/horse-form374.npz"
+  ],
+  "retrospective_evidence": [
+    "results/sikh380/SWITCH.md",
+    "results/sikh380/APPROVAL.json",
+    "results/sikh380/STRATEGY.md",
+    "results/sikh379/RETROSPECTIVE379.md",
+    "results/sikh379/REFERENCE_QUALIFICATION.md",
+    "scripts/sikh380_retry.py",
+    "results/sikh380/REJECT144.md",
+    ".runtime/factory-native/sikh380-appearance-c144-repair/runner-status.json",
+    "results/sikh380/REJECT145.md",
+    "results/sikh380/appearance-c145-front-review.json"
+  ]
+}

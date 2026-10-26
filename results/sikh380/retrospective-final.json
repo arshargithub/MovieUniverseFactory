@@ -1,0 +1,1298 @@
+{
+  "policy": 1,
+  "sequence": 1972,
+  "gates": {
+    "__migration__": {
+      "status": "TESTING",
+      "reason": "evidence_reconciliation",
+      "triggers": [
+        "migration-evidence:sikh351-reviewed-migration",
+        "migration-evidence:sikh379-reference-policy-migration",
+        "sikh379-appearance-c138-__migration__-reopen",
+        "migration-evidence:sikh379-lossless-packet-migration",
+        "sikh379-appearance-c141-__migration__-reopen",
+        "sikh379-appearance-c142-__migration__-reopen",
+        "sikh379-appearance-c143-__migration__-reopen",
+        "sikh380-appearance-c144-__migration__-reopen",
+        "sikh380-appearance-c145-__migration__-reopen",
+        "sikh380-appearance-c146-__migration__-reopen"
+      ],
+      "plan": "a5caa2a19e0080ab06540762431d3d3bcb8b385e65fe349b5ab4c822e1221ebf",
+      "admitted_event": "sikh380-appearance-c146-__migration__-response-admit"
+    },
+    "__allowance__": {
+      "status": "TESTING",
+      "reason": "evidence_reconciliation",
+      "triggers": [
+        "migration-evidence:sikh351-reviewed-migration",
+        "sikh351-c55-__allowance__-reopen",
+        "sikh351-c56-__allowance__-reopen",
+        "sikh351-c57-__allowance__-reopen",
+        "exhaustion:sikh351-exhausted",
+        "sikh352-c59-__allowance__-reopen",
+        "sikh352-c60-__allowance__-reopen",
+        "sikh352-c61-__allowance__-reopen",
+        "exhaustion:sikh352-exhausted61",
+        "sikh353-c63-__allowance__-reopen",
+        "sikh353-c64-__allowance__-reopen",
+        "sikh353-c65-__allowance__-reopen",
+        "sikh353-c66-__allowance__-reopen",
+        "sikh353-c67-__allowance__-reopen",
+        "exhaustion:sikh353-appearance-exhausted",
+        "sikh354-c69-__allowance__-reopen",
+        "sikh354-c70-__allowance__-reopen",
+        "sikh354-c71-__allowance__-reopen",
+        "sikh354-c72-__allowance__-reopen",
+        "exhaustion:sikh354-c72-visual-replan",
+        "sikh357-c74-__allowance__-reopen",
+        "sikh357-c75-__allowance__-reopen",
+        "sikh357-c76-__allowance__-reopen",
+        "sikh357-c77-__allowance__-reopen",
+        "sikh357-c78-__allowance__-reopen",
+        "sikh357-c79-__allowance__-reopen",
+        "sikh357-c80-__allowance__-reopen",
+        "sikh357-c81-__allowance__-reopen",
+        "sikh358-appearance-c82-__allowance__-reopen",
+        "sikh358-appearance-c83-__allowance__-reopen",
+        "sikh358-appearance-c84-__allowance__-reopen",
+        "sikh358-appearance-c85-__allowance__-reopen",
+        "sikh358-appearance-c86-__allowance__-reopen",
+        "sikh361-appearance-c87-__allowance__-reopen",
+        "sikh361-appearance-c88-__allowance__-reopen",
+        "sikh361-appearance-c89-__allowance__-reopen",
+        "sikh361-appearance-c90-__allowance__-reopen",
+        "sikh361-appearance-c91-__allowance__-reopen",
+        "sikh361-appearance-c92-__allowance__-reopen",
+        "sikh361-appearance-c93-__allowance__-reopen",
+        "sikh361-appearance-c94-__allowance__-reopen",
+        "sikh361-appearance-c95-__allowance__-reopen",
+        "sikh361-appearance-c96-__allowance__-reopen",
+        "exhaustion:sikh361-appearance-c97-admit",
+        "sikh362-appearance-c99-__allowance__-reopen",
+        "sikh362-appearance100-__allowance__-reopen",
+        "sikh363-a101-__allowance__-reopen",
+        "sikh363-a103-__allowance__-reopen",
+        "sikh363-a104-__allowance__-reopen",
+        "sikh363-appearance-c105-__allowance__-reopen",
+        "sikh363-appearance-c106-__allowance__-reopen",
+        "sikh363-appearance-c107-__allowance__-reopen",
+        "sikh363-appearance-c108-__allowance__-reopen",
+        "sikh363-appearance-c109-__allowance__-reopen",
+        "sikh363-appearance-c110-__allowance__-reopen",
+        "sikh363-appearance-c111-__allowance__-reopen",
+        "sikh363-appearance-c112-__allowance__-reopen",
+        "sikh363-appearance-c113-__allowance__-reopen",
+        "sikh363-appearance-c114-__allowance__-reopen",
+        "sikh363-appearance-c115-__allowance__-reopen",
+        "sikh363-appearance-c116-__allowance__-reopen",
+        "sikh363-appearance-c117-__allowance__-reopen",
+        "exhaustion:sikh363-appearance-exhausted",
+        "sikh363-appearance-c119-__allowance__-reopen",
+        "sikh363-appearance-c120-__allowance__-reopen",
+        "sikh363-appearance-c121-__allowance__-reopen",
+        "sikh363-appearance-c122-__allowance__-reopen",
+        "sikh363-appearance-c123-__allowance__-reopen",
+        "sikh374-appearance-c124-__allowance__-reopen",
+        "sikh374-appearance-c125-__allowance__-reopen",
+        "sikh374-appearance-c126-__allowance__-reopen",
+        "sikh374-appearance-c127-__allowance__-reopen",
+        "sikh374-appearance-c128-__allowance__-reopen",
+        "exhaustion:sikh374-rejected-form128-replan",
+        "sikh375-appearance-c130-__allowance__-reopen",
+        "sikh375-appearance-c131-__allowance__-reopen",
+        "sikh375-appearance-c132-__allowance__-reopen",
+        "exhaustion:sikh375-rejected132-exhausted",
+        "sikh376-appearance-c134-__allowance__-reopen",
+        "sikh376-appearance-c135-__allowance__-reopen",
+        "sikh376-appearance-c136-__allowance__-reopen",
+        "sikh379-appearance-c137-__allowance__-reopen",
+        "sikh379-appearance-c138-__allowance__-reopen",
+        "sikh379-appearance-c140-__allowance__-reopen",
+        "sikh379-appearance-c141-__allowance__-reopen",
+        "sikh379-appearance-c142-__allowance__-reopen",
+        "sikh379-appearance-c143-__allowance__-reopen",
+        "sikh380-appearance-c144-__allowance__-reopen",
+        "sikh380-appearance-c145-__allowance__-reopen",
+        "sikh380-appearance-c146-__allowance__-reopen"
+      ],
+      "plan": "a5caa2a19e0080ab06540762431d3d3bcb8b385e65fe349b5ab4c822e1221ebf",
+      "admitted_event": "sikh380-appearance-c146-__allowance__-response-admit"
+    },
+    "form": {
+      "status": "OPEN",
+      "reason": "intervention_failed",
+      "triggers": [
+        "sikh351-legacy-form",
+        "sikh351-c54-form-open",
+        "sikh351-c55-form-open",
+        "sikh351-c56-form-open",
+        "native-review:sikh351-c56-anatomy_custom_back",
+        "sikh351-c57-form-open",
+        "native-review:sikh351-c57-anatomy_custom_back",
+        "sikh352-c58-form-open",
+        "native-review:sikh352-c58-anatomy_custom_front",
+        "sikh352-c59-form-open",
+        "sikh352-c60-form-open",
+        "native-review:sikh352-c60-leader_front",
+        "sikh352-c61-form-open",
+        "native-review:sikh352-c61-leader_front",
+        "sikh352-c61-final-form-failure",
+        "sikh353-c63-form-reopen",
+        "native-review:sikh353-c63-leader_reverse",
+        "native-review:sikh353-c64-leader_front",
+        "native-review:sikh353-c65-leader_face",
+        "native-review:sikh353-c66-leader_face",
+        "native-review:sikh353-c67-leader_front",
+        "sikh353-c67-final-failure",
+        "sikh354-c68-leader_face-failure",
+        "sikh354-c69-save-failure",
+        "native-review:sikh354-c70-production",
+        "sikh354-c70-production-failure",
+        "native-review:sikh354-c71-leader_front",
+        "sikh354-c71-leader_front-failure",
+        "native-review:sikh354-c72-leader_face",
+        "sikh354-c72-leader_face-failure",
+        "native-review:sikh357-c73-leader_face",
+        "sikh357-c73-leader_face-failure",
+        "native-review:sikh357-c74-leader_face",
+        "sikh357-c74-leader_face-failure",
+        "native-review:sikh357-c75-leader_face",
+        "sikh357-c75-leader_face-failure",
+        "native-review:sikh357-c76-leader_face",
+        "sikh357-c76-leader_face-failure",
+        "native-review:sikh357-c77-leader_front",
+        "sikh357-c77-leader_front-failure",
+        "native-review:sikh357-c78-leader_reverse",
+        "sikh357-c78-leader_reverse-failure",
+        "native-review:sikh357-c79-leader_reverse",
+        "sikh357-c79-leader_reverse-failure",
+        "native-review:sikh357-c80-horse_head",
+        "sikh357-c80-horse_head-failure",
+        "native-review:sikh357-c81-horse_head",
+        "sikh357-c81-horse_head-failure",
+        "sikh358-appearance-c83-form-reopen",
+        "sikh358-appearance-c84-form-reopen",
+        "native-review:sikh358-appearance-c84-horse_head",
+        "sikh358-appearance-c86-form-reopen",
+        "sikh361-appearance-c87-form-reopen",
+        "native-review:sikh361-appearance-c87-leader_face",
+        "sikh361-appearance-c87-leader_face-outcome",
+        "sikh361-appearance-c89-form-reopen",
+        "sikh361-appearance-c90-form-reopen",
+        "sikh361-appearance-c91-form-reopen",
+        "sikh361-appearance-c92-form-reopen",
+        "sikh361-appearance-c93-form-reopen",
+        "sikh361-appearance-c94-form-reopen",
+        "sikh361-appearance-c95-form-reopen",
+        "native-review:sikh361-appearance-c95-leader_reverse",
+        "native-review:sikh361-appearance-c96-save",
+        "native-review:sikh362-appearance-c98-leader_face",
+        "sikh362-appearance100-form-reopen",
+        "sikh363-a101-form-reopen",
+        "native-review:sikh363-appearance-c101-chest",
+        "native-review:sikh363-appearance-c101-chest_side",
+        "native-review:sikh363-appearance-c101-right_hand",
+        "native-review:sikh363-appearance-c101-left_hand",
+        "native-review:sikh363-appearance-c103-right_hand",
+        "native-review:sikh363-appearance-c104-right_hand",
+        "native-review:sikh363-appearance-c105-right_hand",
+        "sikh363-appearance-c106-form-reopen",
+        "sikh363-appearance-c107-form-reopen",
+        "sikh363-appearance-c108-form-reopen",
+        "sikh363-appearance-c109-form-reopen",
+        "sikh363-appearance-c110-form-reopen",
+        "sikh363-appearance-c111-form-reopen",
+        "sikh363-appearance-c112-form-reopen",
+        "native-review:sikh363-appearance-c112-chest_front",
+        "sikh363-appearance-c114-form-reopen",
+        "sikh363-appearance-c115-form-reopen",
+        "sikh363-appearance-c116-form-reopen",
+        "sikh363-appearance-c117-form-reopen",
+        "sikh363-appearance-c118-form-reopen",
+        "sikh363-appearance-c119-form-reopen",
+        "sikh363-appearance-c120-form-reopen",
+        "sikh363-appearance-c121-form-reopen",
+        "sikh363-appearance-c122-form-reopen",
+        "sikh363-appearance-c123-form-reopen",
+        "sikh374-appearance-c124-form-reopen",
+        "sikh374-form124-failure",
+        "sikh374-appearance-c126-form-reopen",
+        "sikh374-appearance-c127-form-reopen",
+        "sikh374-appearance-c128-form-reopen",
+        "native-review:sikh374-appearance-c128-reverse",
+        "sikh375-appearance-c130-form-reopen",
+        "native-review:sikh375-appearance-c130-worst",
+        "native-review:sikh375-appearance-c131-front",
+        "native-review:sikh375-appearance-c132-worstfront",
+        "sikh376-appearance-c134-form-reopen",
+        "native-review:sikh376-appearance-c134-worst",
+        "native-review:sikh376-appearance-c135-worst",
+        "native-review:sikh376-appearance-c136-worst",
+        "sikh379-reject137",
+        "sikh379-reject138",
+        "sikh379-reject140",
+        "native-review:sikh379-appearance-c141-front",
+        "native-review:sikh379-appearance-c142-front",
+        "native-review:sikh379-appearance-c143-front",
+        "sikh380-appearance-c145-form-reopen",
+        "native-review:sikh380-appearance-c145-front",
+        "native-review:sikh380-appearance-c146-front"
+      ]
+    },
+    "interfaces": {
+      "status": "OPEN",
+      "reason": "intervention_failed",
+      "triggers": [
+        "native-review:sikh352-c58-anatomy_custom_front",
+        "native-review:sikh352-c58-anatomy_custom_back",
+        "native-review:sikh352-c58-anatomy_custom_side",
+        "native-review:sikh352-c58-anatomy_linear_front",
+        "native-review:sikh352-c58-anatomy_linear_back",
+        "native-review:sikh352-c58-leader_contact",
+        "sikh352-c60-interfaces-reopen",
+        "native-review:sikh352-c60-leader_front",
+        "native-review:sikh352-c61-leader_front",
+        "sikh353-c63-interfaces-reopen",
+        "native-review:sikh353-c63-leader_reverse",
+        "sikh353-c63-leader_reverse-failure",
+        "native-review:sikh353-c64-leader_front",
+        "sikh353-c64-leader_front-failure",
+        "native-review:sikh353-c65-leader_face",
+        "sikh353-c65-leader_face-failure",
+        "native-review:sikh353-c66-leader_face",
+        "sikh353-c66-leader_face-failure",
+        "native-review:sikh353-c67-leader_front",
+        "sikh354-c69-interfaces-reopen",
+        "sikh354-c70-interfaces-reopen",
+        "native-review:sikh354-c70-production",
+        "native-review:sikh354-c71-leader_front",
+        "native-review:sikh354-c72-leader_face",
+        "native-review:sikh357-c73-leader_face",
+        "native-review:sikh357-c74-leader_face",
+        "native-review:sikh357-c75-leader_face",
+        "native-review:sikh357-c76-leader_face",
+        "native-review:sikh357-c77-leader_front",
+        "native-review:sikh357-c78-leader_reverse",
+        "native-review:sikh357-c79-leader_reverse",
+        "native-review:sikh357-c80-horse_head",
+        "native-review:sikh357-c81-horse_head",
+        "sikh358-appearance-c83-interfaces-reopen",
+        "sikh358-appearance-c84-interfaces-reopen",
+        "native-review:sikh358-appearance-c84-horse_head",
+        "sikh358-appearance-c84-horse_head-outcome",
+        "sikh358-appearance-c85-save-outcome",
+        "sikh361-appearance-c87-interfaces-reopen",
+        "native-review:sikh361-appearance-c87-leader_face",
+        "sikh361-appearance-c89-interfaces-reopen",
+        "sikh361-appearance-c89-leader_reverse-outcome",
+        "sikh361-appearance-c90-save-outcome",
+        "sikh361-appearance-c91-save-outcome",
+        "sikh361-appearance-c92-save-outcome",
+        "sikh361-appearance-c93-save-outcome",
+        "sikh361-appearance-c94-save-outcome",
+        "native-review:sikh361-appearance-c95-leader_reverse",
+        "sikh361-appearance-c95-leader_reverse-outcome",
+        "native-review:sikh361-appearance-c96-save",
+        "sikh361-appearance-c96-save-outcome",
+        "native-review:sikh362-appearance-c98-leader_face",
+        "sikh362-appearance100-interfaces-reopen",
+        "sikh363-a101-interfaces-reopen",
+        "native-review:sikh363-appearance-c101-chest",
+        "native-review:sikh363-appearance-c101-chest_side",
+        "native-review:sikh363-appearance-c101-right_hand",
+        "native-review:sikh363-appearance-c101-left_hand",
+        "native-review:sikh363-appearance-c103-right_hand",
+        "native-review:sikh363-appearance-c104-right_hand",
+        "native-review:sikh363-appearance-c105-right_hand",
+        "sikh363-appearance-c106-interfaces-reopen",
+        "sikh363-appearance-c107-interfaces-reopen",
+        "sikh363-appearance-c108-interfaces-reopen",
+        "sikh363-appearance-c109-interfaces-reopen",
+        "sikh363-appearance-c110-interfaces-reopen",
+        "sikh363-appearance-c111-interfaces-reopen",
+        "sikh363-appearance-c112-interfaces-reopen",
+        "native-review:sikh363-appearance-c112-chest_front",
+        "sikh363-appearance-c114-interfaces-reopen",
+        "sikh363-appearance-c115-interfaces-reopen",
+        "sikh363-appearance-c116-interfaces-reopen",
+        "sikh363-appearance-c117-interfaces-reopen",
+        "sikh363-appearance-c118-interfaces-reopen",
+        "sikh363-appearance-c119-interfaces-reopen",
+        "sikh363-appearance-c120-interfaces-reopen",
+        "sikh363-appearance-c121-interfaces-reopen",
+        "sikh363-appearance-c122-interfaces-reopen",
+        "sikh363-appearance-c123-interfaces-reopen",
+        "sikh374-appearance-c124-interfaces-reopen",
+        "sikh374-appearance-c125-interfaces-reopen",
+        "sikh374-form125-guard-fail",
+        "sikh374-form126-guard-fail",
+        "sikh374-form127-method-fail",
+        "native-review:sikh374-appearance-c128-reverse",
+        "sikh375-appearance-c130-interfaces-reopen",
+        "native-review:sikh375-appearance-c130-worst",
+        "native-review:sikh375-appearance-c131-front",
+        "native-review:sikh375-appearance-c132-worstfront",
+        "sikh376-appearance-c134-interfaces-reopen",
+        "native-review:sikh376-appearance-c134-worst",
+        "native-review:sikh376-appearance-c135-worst",
+        "native-review:sikh376-appearance-c136-worst",
+        "sikh379-appearance-c138-interfaces-reopen",
+        "sikh379-appearance-c140-interfaces-reopen",
+        "sikh379-appearance-c141-interfaces-reopen",
+        "native-review:sikh379-appearance-c141-front",
+        "native-review:sikh379-appearance-c142-front",
+        "native-review:sikh379-appearance-c143-front",
+        "sikh380-appearance-c145-interfaces-reopen",
+        "native-review:sikh380-appearance-c145-front",
+        "native-review:sikh380-appearance-c146-front"
+      ]
+    },
+    "evidence": {
+      "status": "OPEN",
+      "reason": "intervention_failed",
+      "triggers": [
+        "native-review:sikh352-c58-anatomy_custom_front",
+        "native-review:sikh352-c58-anatomy_custom_back",
+        "native-review:sikh352-c58-anatomy_custom_side",
+        "native-review:sikh352-c58-anatomy_linear_front",
+        "native-review:sikh352-c58-anatomy_linear_back",
+        "native-review:sikh352-c58-leader_contact",
+        "sikh352-c60-evidence-reopen",
+        "native-review:sikh352-c60-leader_front",
+        "native-review:sikh352-c61-leader_front",
+        "sikh353-c63-evidence-reopen",
+        "native-review:sikh353-c63-leader_reverse",
+        "native-review:sikh353-c64-leader_front",
+        "native-review:sikh353-c65-leader_face",
+        "native-review:sikh353-c66-leader_face",
+        "native-review:sikh353-c67-leader_front",
+        "sikh354-c69-evidence-reopen",
+        "sikh354-c70-evidence-reopen",
+        "native-review:sikh354-c70-production",
+        "native-review:sikh354-c71-leader_front",
+        "native-review:sikh354-c72-leader_face",
+        "native-review:sikh357-c73-leader_face",
+        "native-review:sikh357-c74-leader_face",
+        "native-review:sikh357-c75-leader_face",
+        "native-review:sikh357-c76-leader_face",
+        "native-review:sikh357-c77-leader_front",
+        "native-review:sikh357-c78-leader_reverse",
+        "native-review:sikh357-c79-leader_reverse",
+        "native-review:sikh357-c80-horse_head",
+        "native-review:sikh357-c81-horse_head",
+        "sikh358-appearance-c83-evidence-reopen",
+        "sikh358-appearance-c84-evidence-reopen",
+        "native-review:sikh358-appearance-c84-horse_head",
+        "sikh358-appearance-c86-evidence-reopen",
+        "sikh361-appearance-c87-evidence-reopen",
+        "native-review:sikh361-appearance-c87-leader_face",
+        "sikh361-appearance-c89-evidence-reopen",
+        "sikh361-appearance-c90-evidence-reopen",
+        "sikh361-appearance-c91-evidence-reopen",
+        "sikh361-appearance-c92-evidence-reopen",
+        "sikh361-appearance-c93-evidence-reopen",
+        "sikh361-appearance-c94-evidence-reopen",
+        "sikh361-appearance-c95-evidence-reopen",
+        "native-review:sikh361-appearance-c95-leader_reverse",
+        "native-review:sikh361-appearance-c96-save",
+        "native-review:sikh362-appearance-c98-leader_face",
+        "sikh362-appearance100-evidence-reopen",
+        "sikh363-a101-evidence-reopen",
+        "native-review:sikh363-appearance-c101-chest",
+        "native-review:sikh363-appearance-c101-chest_side",
+        "sikh363-side-coverage-correction",
+        "native-review:sikh363-appearance-c101-right_hand",
+        "native-review:sikh363-appearance-c101-left_hand",
+        "native-review:sikh363-appearance-c103-right_hand",
+        "native-review:sikh363-appearance-c104-right_hand",
+        "native-review:sikh363-appearance-c105-right_hand",
+        "sikh363-appearance-c106-evidence-reopen",
+        "sikh363-appearance-c107-evidence-reopen",
+        "sikh363-appearance-c108-evidence-reopen",
+        "sikh363-appearance-c109-evidence-reopen",
+        "sikh363-appearance-c110-evidence-reopen",
+        "sikh363-appearance-c111-evidence-reopen",
+        "sikh363-appearance-c112-evidence-reopen",
+        "native-review:sikh363-appearance-c112-chest_front",
+        "sikh363-appearance-c114-evidence-reopen",
+        "sikh363-appearance-c115-evidence-reopen",
+        "sikh363-appearance-c116-evidence-reopen",
+        "sikh363-appearance-c117-evidence-reopen",
+        "sikh363-appearance-c118-evidence-reopen",
+        "sikh363-appearance-c119-evidence-reopen",
+        "sikh363-appearance-c120-evidence-reopen",
+        "sikh363-appearance-c121-evidence-reopen",
+        "sikh363-appearance-c122-evidence-reopen",
+        "sikh363-appearance-c123-evidence-reopen",
+        "sikh374-appearance-c124-evidence-reopen",
+        "sikh374-appearance-c125-evidence-reopen",
+        "sikh374-appearance-c126-evidence-reopen",
+        "sikh374-appearance-c127-evidence-reopen",
+        "sikh374-appearance-c128-evidence-reopen",
+        "native-review:sikh374-appearance-c128-reverse",
+        "sikh375-appearance-c130-evidence-reopen",
+        "native-review:sikh375-appearance-c130-worst",
+        "native-review:sikh375-appearance-c131-front",
+        "native-review:sikh375-appearance-c132-worstfront",
+        "sikh376-appearance-c134-evidence-reopen",
+        "native-review:sikh376-appearance-c134-worst",
+        "native-review:sikh376-appearance-c135-worst",
+        "native-review:sikh376-appearance-c136-worst",
+        "sikh379-appearance-c138-evidence-reopen",
+        "sikh379-appearance-c140-evidence-reopen",
+        "sikh379-appearance-c141-evidence-reopen",
+        "native-review:sikh379-appearance-c141-front",
+        "native-review:sikh379-appearance-c142-front",
+        "native-review:sikh379-appearance-c143-front",
+        "sikh380-appearance-c145-evidence-reopen",
+        "native-review:sikh380-appearance-c145-front",
+        "native-review:sikh380-appearance-c146-front"
+      ]
+    },
+    "__worker__": {
+      "status": "TESTING",
+      "reason": "evidence_reconciliation",
+      "triggers": [
+        "worker:sikh361-appearance-c91-save",
+        "worker:sikh361-appearance-c92-save",
+        "worker:sikh361-appearance-c93-save",
+        "worker:sikh361-appearance-c94-save",
+        "sikh361-appearance-c96-__worker__-reopen",
+        "sikh362-appearance-c98-__worker__-reopen",
+        "sikh362-appearance-c99-__worker__-reopen",
+        "sikh362-appearance100-__worker__-reopen",
+        "sikh363-a101-__worker__-reopen",
+        "sikh363-a103-__worker__-reopen",
+        "sikh363-a104-__worker__-reopen",
+        "sikh363-appearance-c105-__worker__-reopen",
+        "sikh363-appearance-c106-__worker__-reopen",
+        "sikh363-appearance-c107-__worker__-reopen",
+        "sikh363-appearance-c108-__worker__-reopen",
+        "sikh363-appearance-c109-__worker__-reopen",
+        "sikh363-appearance-c110-__worker__-reopen",
+        "sikh363-appearance-c111-__worker__-reopen",
+        "worker:sikh363-appearance-c111-flag_save",
+        "sikh363-appearance-c113-__worker__-reopen",
+        "worker:sikh363-appearance-c113-flag_save",
+        "sikh363-appearance-c114-__worker__-reopen",
+        "worker:sikh363-appearance-c114-flag_save",
+        "sikh363-appearance-c116-__worker__-reopen",
+        "sikh363-appearance-c117-__worker__-reopen",
+        "worker:sikh363-appearance-c117-flag_save",
+        "sikh363-appearance-c119-__worker__-reopen",
+        "sikh363-appearance-c120-__worker__-reopen",
+        "sikh363-appearance-c121-__worker__-reopen",
+        "sikh363-appearance-c122-__worker__-reopen",
+        "sikh363-appearance-c123-__worker__-reopen",
+        "sikh374-appearance-c124-__worker__-reopen",
+        "sikh374-appearance-c125-__worker__-reopen",
+        "worker:sikh374-appearance-c125-sculpt",
+        "worker:sikh374-appearance-c126-sculpt",
+        "worker:sikh374-appearance-c127-sculpt",
+        "sikh375-appearance-c129-__worker__-reopen",
+        "sikh375-appearance-c130-__worker__-reopen",
+        "sikh375-appearance-c131-__worker__-reopen",
+        "sikh375-appearance-c132-__worker__-reopen",
+        "sikh376-appearance-c133-__worker__-reopen",
+        "sikh376-appearance-c134-__worker__-reopen",
+        "sikh376-appearance-c135-__worker__-reopen",
+        "sikh376-appearance-c136-__worker__-reopen",
+        "sikh379-appearance-c137-__worker__-reopen",
+        "worker:sikh379-appearance-c137-worst",
+        "sikh379-appearance-c140-__worker__-reopen",
+        "sikh379-appearance-c141-__worker__-reopen",
+        "sikh379-appearance-c142-__worker__-reopen",
+        "sikh379-appearance-c143-__worker__-reopen",
+        "sikh380-appearance-c144-__worker__-reopen",
+        "worker:sikh380-appearance-c144-repair",
+        "sikh380-appearance-c146-__worker__-reopen"
+      ],
+      "plan": "a5caa2a19e0080ab06540762431d3d3bcb8b385e65fe349b5ab4c822e1221ebf",
+      "admitted_event": "sikh380-appearance-c146-__worker__-response-admit"
+    },
+    "__requirements__": {
+      "status": "TESTING",
+      "reason": "evidence_reconciliation",
+      "triggers": [
+        "plan:sikh362-appearance100-admit",
+        "sikh363-a101-__requirements__-reopen",
+        "sikh363-a103-__requirements__-reopen",
+        "sikh363-a104-__requirements__-reopen",
+        "sikh363-appearance-c105-__requirements__-reopen",
+        "sikh363-appearance-c106-__requirements__-reopen",
+        "sikh363-appearance-c107-__requirements__-reopen",
+        "sikh363-appearance-c108-__requirements__-reopen",
+        "sikh363-appearance-c109-__requirements__-reopen",
+        "sikh363-appearance-c110-__requirements__-reopen",
+        "sikh363-appearance-c111-__requirements__-reopen",
+        "sikh363-appearance-c112-__requirements__-reopen",
+        "sikh363-appearance-c113-__requirements__-reopen",
+        "sikh363-appearance-c114-__requirements__-reopen",
+        "sikh363-appearance-c115-__requirements__-reopen",
+        "sikh363-appearance-c116-__requirements__-reopen",
+        "sikh363-appearance-c117-__requirements__-reopen",
+        "sikh363-appearance-c118-__requirements__-reopen",
+        "sikh363-appearance-c119-__requirements__-reopen",
+        "sikh363-appearance-c120-__requirements__-reopen",
+        "sikh363-appearance-c121-__requirements__-reopen",
+        "sikh363-appearance-c122-__requirements__-reopen",
+        "sikh363-appearance-c123-__requirements__-reopen",
+        "plan:sikh374-appearance-c124-admit",
+        "sikh374-appearance-c125-__requirements__-reopen",
+        "sikh374-appearance-c126-__requirements__-reopen",
+        "sikh374-appearance-c127-__requirements__-reopen",
+        "plan:sikh374-appearance-c128-admit",
+        "sikh375-appearance-c129-__requirements__-reopen",
+        "sikh375-appearance-c130-__requirements__-reopen",
+        "sikh375-appearance-c131-__requirements__-reopen",
+        "sikh375-appearance-c132-__requirements__-reopen",
+        "sikh376-appearance-c133-__requirements__-reopen",
+        "sikh376-appearance-c134-__requirements__-reopen",
+        "sikh376-appearance-c135-__requirements__-reopen",
+        "sikh376-appearance-c136-__requirements__-reopen",
+        "sikh379-appearance-c137-__requirements__-reopen",
+        "sikh379-appearance-c138-__requirements__-reopen",
+        "sikh379-appearance-c140-__requirements__-reopen",
+        "sikh379-appearance-c141-__requirements__-reopen",
+        "sikh379-appearance-c142-__requirements__-reopen",
+        "sikh379-appearance-c143-__requirements__-reopen",
+        "sikh380-appearance-c144-__requirements__-reopen",
+        "sikh380-appearance-c145-__requirements__-reopen",
+        "sikh380-appearance-c146-__requirements__-reopen"
+      ],
+      "plan": "a5caa2a19e0080ab06540762431d3d3bcb8b385e65fe349b5ab4c822e1221ebf",
+      "admitted_event": "sikh380-appearance-c146-__requirements__-response-admit"
+    },
+    "whole_look": {
+      "status": "OPEN",
+      "reason": "intervention_failed",
+      "triggers": [
+        "sikh363-appearance-rejection",
+        "native-review:sikh363-appearance-c101-chest",
+        "native-review:sikh363-appearance-c101-chest_side",
+        "native-review:sikh363-appearance-c101-right_hand",
+        "native-review:sikh363-appearance-c101-left_hand",
+        "native-review:sikh363-appearance-c103-right_hand",
+        "native-review:sikh363-appearance-c104-right_hand",
+        "native-review:sikh363-appearance-c105-right_hand",
+        "sikh363-appearance-c106-whole_look-reopen",
+        "sikh363-appearance-c107-whole_look-reopen",
+        "sikh363-appearance-c108-whole_look-reopen",
+        "sikh363-appearance-c109-whole_look-reopen",
+        "sikh363-appearance-c110-whole_look-reopen",
+        "sikh363-appearance-c111-whole_look-reopen",
+        "sikh363-appearance-c112-whole_look-reopen",
+        "native-review:sikh363-appearance-c112-chest_front",
+        "sikh363-appearance-c114-whole_look-reopen",
+        "sikh363-appearance-c115-whole_look-reopen",
+        "sikh363-appearance-c116-whole_look-reopen",
+        "sikh363-appearance-c117-whole_look-reopen",
+        "sikh363-appearance-c118-whole_look-reopen",
+        "sikh363-appearance-c119-whole_look-reopen",
+        "sikh363-appearance-c120-whole_look-reopen",
+        "sikh363-appearance-c121-whole_look-reopen",
+        "sikh363-appearance-c122-whole_look-reopen",
+        "sikh363-appearance-c123-whole_look-reopen",
+        "sikh374-appearance-c124-whole_look-reopen",
+        "sikh374-appearance-c125-whole_look-reopen",
+        "sikh374-appearance-c126-whole_look-reopen",
+        "sikh374-appearance-c127-whole_look-reopen",
+        "sikh374-appearance-c128-whole_look-reopen",
+        "native-review:sikh374-appearance-c128-reverse",
+        "sikh375-appearance-c130-whole_look-reopen",
+        "native-review:sikh375-appearance-c130-worst",
+        "native-review:sikh375-appearance-c131-front",
+        "native-review:sikh375-appearance-c132-worstfront",
+        "sikh376-appearance-c134-whole_look-reopen",
+        "native-review:sikh376-appearance-c134-worst",
+        "native-review:sikh376-appearance-c135-worst",
+        "native-review:sikh376-appearance-c136-worst",
+        "sikh379-appearance-c138-whole_look-reopen",
+        "sikh379-appearance-c140-whole_look-reopen",
+        "sikh379-appearance-c141-whole_look-reopen",
+        "native-review:sikh379-appearance-c141-front",
+        "native-review:sikh379-appearance-c142-front",
+        "native-review:sikh379-appearance-c143-front",
+        "sikh380-appearance-c145-whole_look-reopen",
+        "native-review:sikh380-appearance-c145-front",
+        "native-review:sikh380-appearance-c146-front"
+      ]
+    },
+    "director_form_motion": {
+      "status": "OPEN",
+      "reason": "intervention_failed",
+      "triggers": [
+        "native-review:sikh375-appearance-c131-front",
+        "native-review:sikh375-appearance-c132-worstfront",
+        "sikh376-appearance-c134-director_form_motion-reopen",
+        "native-review:sikh376-appearance-c134-worst",
+        "native-review:sikh376-appearance-c135-worst",
+        "native-review:sikh376-appearance-c136-worst",
+        "sikh379-appearance-c138-director_form_motion-reopen",
+        "sikh379-appearance-c140-director_form_motion-reopen",
+        "sikh379-appearance-c141-director_form_motion-reopen",
+        "native-review:sikh379-appearance-c141-front",
+        "native-review:sikh379-appearance-c142-front",
+        "native-review:sikh379-appearance-c143-front",
+        "sikh380-appearance-c145-director_form_motion-reopen",
+        "native-review:sikh380-appearance-c145-front",
+        "native-review:sikh380-appearance-c146-front"
+      ]
+    },
+    "__positive_forequarter_form__": {
+      "status": "OPEN",
+      "reason": "strategy_falsifier_or_regression",
+      "triggers": [
+        "sikh380-final-outcome"
+      ]
+    }
+  },
+  "warnings": {
+    "__planning__": 2
+  },
+  "responses": {
+    "__migration__": {
+      "cause": "145 actual front rejects full-rest inflated lobes despite improved central participation. Retain live bilateral skin ownership but restore only half of historical sculpt displacement, reducing protrusion while preserving paired muscle form. One final explicit sculpt, no ARAP or action change.",
+      "change_or_retain_rationale": "380 restrained rest sculpture:50percent raw/Basis delta, full bilateral pectoral/proximal-humeral ownership. Live rig preserved. After body proof, rebind existing coat roots/weights; verify contacts and continuous sampled sequence.",
+      "evidence": {
+        ".runtime/factory-native/sikh380-appearance-c144-repair/runner-status.json": {
+          "path": ".runtime/factory-native/sikh380-appearance-c144-repair/runner-status.json",
+          "sha256": "457b894334fdd647ca0f337a7c38026dabd2f600b36ade1cc84ad53a9e40fd15"
+        },
+        "results/sikh379/REFERENCE_QUALIFICATION.md": {
+          "path": "results/sikh379/REFERENCE_QUALIFICATION.md",
+          "sha256": "1d8c810772130d16219b41a374aa6b96563ae1da3b83bc524fc9c4d6eefa7c71"
+        },
+        "results/sikh379/RETROSPECTIVE379.md": {
+          "path": "results/sikh379/RETROSPECTIVE379.md",
+          "sha256": "0c7aab7e8c29f2cda0cf1543b90db0d3540a6f074a6990633ae0f813372064a4"
+        },
+        "results/sikh380/APPROVAL.json": {
+          "path": "results/sikh380/APPROVAL.json",
+          "sha256": "04e732fb4884039d9408975a9f06bb44552e80651a99c59fec7eb53d34a03f88"
+        },
+        "results/sikh380/REJECT144.md": {
+          "path": "results/sikh380/REJECT144.md",
+          "sha256": "f635560798b1e1d305c49269618eeca2b891fce871c2358be06de0c406cabacd"
+        },
+        "results/sikh380/REJECT145.md": {
+          "path": "results/sikh380/REJECT145.md",
+          "sha256": "b141ab515f9d70f29f9521038007f034efb7e272e050d7ff1e59f57090feab5a"
+        },
+        "results/sikh380/STRATEGY.md": {
+          "path": "results/sikh380/STRATEGY.md",
+          "sha256": "47456a3e281c92341732c945a68649a0eb9e257bd68a051b785b3ce9173f5459"
+        },
+        "results/sikh380/SWITCH.md": {
+          "path": "results/sikh380/SWITCH.md",
+          "sha256": "9d9c9a6eee1c0daa6c129e45d88d01b7fe7404b1d60ae31fea96e1c5cddcbcc5"
+        },
+        "results/sikh380/appearance-c145-front-review.json": {
+          "path": "results/sikh380/appearance-c145-front-review.json",
+          "sha256": "1dfecf033327e8dd365068fed98aeb0aaf019f40667f59401fb7777ebf9de55b"
+        },
+        "scripts/sikh380_retry.py": {
+          "path": "scripts/sikh380_retry.py",
+          "sha256": "d217ef2d6f4a9051ee87430e445c3d5cec6fce6a75f611cd9aabfc6ddce5d099"
+        }
+      },
+      "expected": "Supported continuous powerful horse chest through existing motion, with unrelated surfaces/actions unchanged.",
+      "failure_response": "Any source drift, bib/crease/shelf/globe/limb-root collapse or missing view remains internalFAIL. Reassess target versus method; no automatic Astra.",
+      "gate_digest": "54d726ba387a761fe7cd4e87f10f61edd53c040afc0bdafa8f2a1ce5691a9e2b",
+      "key": "__migration__",
+      "plan": "a5caa2a19e0080ab06540762431d3d3bcb8b385e65fe349b5ab4c822e1221ebf",
+      "preserve": "Accepted276..367 actions, originaltask/history/limits and protectedmasters preserved; chestform only, leader/tail/flag/crowd outside scope.",
+      "reference_assessment": {
+        "aspects": [
+          "film",
+          "junction",
+          "motion",
+          "preservation"
+        ],
+        "diagnosis": "method",
+        "disposition": "retain",
+        "evidence": [
+          {
+            "path": "results/sikh380/SWITCH.md",
+            "sha256": "9d9c9a6eee1c0daa6c129e45d88d01b7fe7404b1d60ae31fea96e1c5cddcbcc5"
+          },
+          {
+            "path": "results/sikh380/APPROVAL.json",
+            "sha256": "04e732fb4884039d9408975a9f06bb44552e80651a99c59fec7eb53d34a03f88"
+          },
+          {
+            "path": "results/sikh380/STRATEGY.md",
+            "sha256": "47456a3e281c92341732c945a68649a0eb9e257bd68a051b785b3ce9173f5459"
+          },
+          {
+            "path": "results/sikh379/RETROSPECTIVE379.md",
+            "sha256": "0c7aab7e8c29f2cda0cf1543b90db0d3540a6f074a6990633ae0f813372064a4"
+          },
+          {
+            "path": "results/sikh379/REFERENCE_QUALIFICATION.md",
+            "sha256": "1d8c810772130d16219b41a374aa6b96563ae1da3b83bc524fc9c4d6eefa7c71"
+          },
+          {
+            "path": "scripts/sikh380_retry.py",
+            "sha256": "d217ef2d6f4a9051ee87430e445c3d5cec6fce6a75f611cd9aabfc6ddce5d099"
+          },
+          {
+            "path": "results/sikh380/REJECT144.md",
+            "sha256": "f635560798b1e1d305c49269618eeca2b891fce871c2358be06de0c406cabacd"
+          },
+          {
+            "path": ".runtime/factory-native/sikh380-appearance-c144-repair/runner-status.json",
+            "sha256": "457b894334fdd647ca0f337a7c38026dabd2f600b36ade1cc84ad53a9e40fd15"
+          },
+          {
+            "path": "results/sikh380/REJECT145.md",
+            "sha256": "b141ab515f9d70f29f9521038007f034efb7e272e050d7ff1e59f57090feab5a"
+          },
+          {
+            "path": "results/sikh380/appearance-c145-front-review.json",
+            "sha256": "1dfecf033327e8dd365068fed98aeb0aaf019f40667f59401fb7777ebf9de55b"
+          }
+        ],
+        "readiness_digest": "66e5f64cf918ee3b2ffdcadd4a2ee694f56c3477ffc9142a48ebe597ff20eec5",
+        "reason": "379 qualified sources retained under380 resolve gross target coverage; test construction rather than acquire imagery automatically."
+      },
+      "target_stage": "GROUNDING",
+      "test": "Actual339 then333/342 opposite/front/side plus283367 must show supported rounded chest without sheet/shelf/pinch/bulb. Source/cache metrics are technical only. Known bodyFAIL blocks coat/full integration.",
+      "uncertainty": "Half restoration may still retain paired pouches or recreate the flattened slab. If any actual pose/view fails, stop146 rather than admit incremental improvement. Coat can amplify mismatch and is checked separately.",
+      "event": "sikh380-appearance-c146-__migration__-response"
+    },
+    "__allowance__": {
+      "cause": "145 actual front rejects full-rest inflated lobes despite improved central participation. Retain live bilateral skin ownership but restore only half of historical sculpt displacement, reducing protrusion while preserving paired muscle form. One final explicit sculpt, no ARAP or action change.",
+      "change_or_retain_rationale": "380 restrained rest sculpture:50percent raw/Basis delta, full bilateral pectoral/proximal-humeral ownership. Live rig preserved. After body proof, rebind existing coat roots/weights; verify contacts and continuous sampled sequence.",
+      "evidence": {
+        ".runtime/factory-native/sikh380-appearance-c144-repair/runner-status.json": {
+          "path": ".runtime/factory-native/sikh380-appearance-c144-repair/runner-status.json",
+          "sha256": "457b894334fdd647ca0f337a7c38026dabd2f600b36ade1cc84ad53a9e40fd15"
+        },
+        "results/sikh379/REFERENCE_QUALIFICATION.md": {
+          "path": "results/sikh379/REFERENCE_QUALIFICATION.md",
+          "sha256": "1d8c810772130d16219b41a374aa6b96563ae1da3b83bc524fc9c4d6eefa7c71"
+        },
+        "results/sikh379/RETROSPECTIVE379.md": {
+          "path": "results/sikh379/RETROSPECTIVE379.md",
+          "sha256": "0c7aab7e8c29f2cda0cf1543b90db0d3540a6f074a6990633ae0f813372064a4"
+        },
+        "results/sikh380/APPROVAL.json": {
+          "path": "results/sikh380/APPROVAL.json",
+          "sha256": "04e732fb4884039d9408975a9f06bb44552e80651a99c59fec7eb53d34a03f88"
+        },
+        "results/sikh380/REJECT144.md": {
+          "path": "results/sikh380/REJECT144.md",
+          "sha256": "f635560798b1e1d305c49269618eeca2b891fce871c2358be06de0c406cabacd"
+        },
+        "results/sikh380/REJECT145.md": {
+          "path": "results/sikh380/REJECT145.md",
+          "sha256": "b141ab515f9d70f29f9521038007f034efb7e272e050d7ff1e59f57090feab5a"
+        },
+        "results/sikh380/STRATEGY.md": {
+          "path": "results/sikh380/STRATEGY.md",
+          "sha256": "47456a3e281c92341732c945a68649a0eb9e257bd68a051b785b3ce9173f5459"
+        },
+        "results/sikh380/SWITCH.md": {
+          "path": "results/sikh380/SWITCH.md",
+          "sha256": "9d9c9a6eee1c0daa6c129e45d88d01b7fe7404b1d60ae31fea96e1c5cddcbcc5"
+        },
+        "results/sikh380/appearance-c145-front-review.json": {
+          "path": "results/sikh380/appearance-c145-front-review.json",
+          "sha256": "1dfecf033327e8dd365068fed98aeb0aaf019f40667f59401fb7777ebf9de55b"
+        },
+        "scripts/sikh380_retry.py": {
+          "path": "scripts/sikh380_retry.py",
+          "sha256": "d217ef2d6f4a9051ee87430e445c3d5cec6fce6a75f611cd9aabfc6ddce5d099"
+        }
+      },
+      "expected": "Supported continuous powerful horse chest through existing motion, with unrelated surfaces/actions unchanged.",
+      "failure_response": "Any source drift, bib/crease/shelf/globe/limb-root collapse or missing view remains internalFAIL. Reassess target versus method; no automatic Astra.",
+      "gate_digest": "8b249c11854a2e5d4bb0af4b6e15e7004ad35e8dca23cf800569922f685a6dab",
+      "key": "__allowance__",
+      "plan": "a5caa2a19e0080ab06540762431d3d3bcb8b385e65fe349b5ab4c822e1221ebf",
+      "preserve": "Accepted276..367 actions, originaltask/history/limits and protectedmasters preserved; chestform only, leader/tail/flag/crowd outside scope.",
+      "reference_assessment": {
+        "aspects": [
+          "film",
+          "junction",
+          "motion",
+          "preservation"
+        ],
+        "diagnosis": "method",
+        "disposition": "retain",
+        "evidence": [
+          {
+            "path": "results/sikh380/SWITCH.md",
+            "sha256": "9d9c9a6eee1c0daa6c129e45d88d01b7fe7404b1d60ae31fea96e1c5cddcbcc5"
+          },
+          {
+            "path": "results/sikh380/APPROVAL.json",
+            "sha256": "04e732fb4884039d9408975a9f06bb44552e80651a99c59fec7eb53d34a03f88"
+          },
+          {
+            "path": "results/sikh380/STRATEGY.md",
+            "sha256": "47456a3e281c92341732c945a68649a0eb9e257bd68a051b785b3ce9173f5459"
+          },
+          {
+            "path": "results/sikh379/RETROSPECTIVE379.md",
+            "sha256": "0c7aab7e8c29f2cda0cf1543b90db0d3540a6f074a6990633ae0f813372064a4"
+          },
+          {
+            "path": "results/sikh379/REFERENCE_QUALIFICATION.md",
+            "sha256": "1d8c810772130d16219b41a374aa6b96563ae1da3b83bc524fc9c4d6eefa7c71"
+          },
+          {
+            "path": "scripts/sikh380_retry.py",
+            "sha256": "d217ef2d6f4a9051ee87430e445c3d5cec6fce6a75f611cd9aabfc6ddce5d099"
+          },
+          {
+            "path": "results/sikh380/REJECT144.md",
+            "sha256": "f635560798b1e1d305c49269618eeca2b891fce871c2358be06de0c406cabacd"
+          },
+          {
+            "path": ".runtime/factory-native/sikh380-appearance-c144-repair/runner-status.json",
+            "sha256": "457b894334fdd647ca0f337a7c38026dabd2f600b36ade1cc84ad53a9e40fd15"
+          },
+          {
+            "path": "results/sikh380/REJECT145.md",
+            "sha256": "b141ab515f9d70f29f9521038007f034efb7e272e050d7ff1e59f57090feab5a"
+          },
+          {
+            "path": "results/sikh380/appearance-c145-front-review.json",
+            "sha256": "1dfecf033327e8dd365068fed98aeb0aaf019f40667f59401fb7777ebf9de55b"
+          }
+        ],
+        "readiness_digest": "66e5f64cf918ee3b2ffdcadd4a2ee694f56c3477ffc9142a48ebe597ff20eec5",
+        "reason": "379 qualified sources retained under380 resolve gross target coverage; test construction rather than acquire imagery automatically."
+      },
+      "target_stage": "GROUNDING",
+      "test": "Actual339 then333/342 opposite/front/side plus283367 must show supported rounded chest without sheet/shelf/pinch/bulb. Source/cache metrics are technical only. Known bodyFAIL blocks coat/full integration.",
+      "uncertainty": "Half restoration may still retain paired pouches or recreate the flattened slab. If any actual pose/view fails, stop146 rather than admit incremental improvement. Coat can amplify mismatch and is checked separately.",
+      "event": "sikh380-appearance-c146-__allowance__-response"
+    },
+    "__worker__": {
+      "cause": "145 actual front rejects full-rest inflated lobes despite improved central participation. Retain live bilateral skin ownership but restore only half of historical sculpt displacement, reducing protrusion while preserving paired muscle form. One final explicit sculpt, no ARAP or action change.",
+      "change_or_retain_rationale": "380 restrained rest sculpture:50percent raw/Basis delta, full bilateral pectoral/proximal-humeral ownership. Live rig preserved. After body proof, rebind existing coat roots/weights; verify contacts and continuous sampled sequence.",
+      "evidence": {
+        ".runtime/factory-native/sikh380-appearance-c144-repair/runner-status.json": {
+          "path": ".runtime/factory-native/sikh380-appearance-c144-repair/runner-status.json",
+          "sha256": "457b894334fdd647ca0f337a7c38026dabd2f600b36ade1cc84ad53a9e40fd15"
+        },
+        "results/sikh379/REFERENCE_QUALIFICATION.md": {
+          "path": "results/sikh379/REFERENCE_QUALIFICATION.md",
+          "sha256": "1d8c810772130d16219b41a374aa6b96563ae1da3b83bc524fc9c4d6eefa7c71"
+        },
+        "results/sikh379/RETROSPECTIVE379.md": {
+          "path": "results/sikh379/RETROSPECTIVE379.md",
+          "sha256": "0c7aab7e8c29f2cda0cf1543b90db0d3540a6f074a6990633ae0f813372064a4"
+        },
+        "results/sikh380/APPROVAL.json": {
+          "path": "results/sikh380/APPROVAL.json",
+          "sha256": "04e732fb4884039d9408975a9f06bb44552e80651a99c59fec7eb53d34a03f88"
+        },
+        "results/sikh380/REJECT144.md": {
+          "path": "results/sikh380/REJECT144.md",
+          "sha256": "f635560798b1e1d305c49269618eeca2b891fce871c2358be06de0c406cabacd"
+        },
+        "results/sikh380/REJECT145.md": {
+          "path": "results/sikh380/REJECT145.md",
+          "sha256": "b141ab515f9d70f29f9521038007f034efb7e272e050d7ff1e59f57090feab5a"
+        },
+        "results/sikh380/STRATEGY.md": {
+          "path": "results/sikh380/STRATEGY.md",
+          "sha256": "47456a3e281c92341732c945a68649a0eb9e257bd68a051b785b3ce9173f5459"
+        },
+        "results/sikh380/SWITCH.md": {
+          "path": "results/sikh380/SWITCH.md",
+          "sha256": "9d9c9a6eee1c0daa6c129e45d88d01b7fe7404b1d60ae31fea96e1c5cddcbcc5"
+        },
+        "results/sikh380/appearance-c145-front-review.json": {
+          "path": "results/sikh380/appearance-c145-front-review.json",
+          "sha256": "1dfecf033327e8dd365068fed98aeb0aaf019f40667f59401fb7777ebf9de55b"
+        },
+        "scripts/sikh380_retry.py": {
+          "path": "scripts/sikh380_retry.py",
+          "sha256": "d217ef2d6f4a9051ee87430e445c3d5cec6fce6a75f611cd9aabfc6ddce5d099"
+        }
+      },
+      "expected": "Supported continuous powerful horse chest through existing motion, with unrelated surfaces/actions unchanged.",
+      "failure_response": "Any source drift, bib/crease/shelf/globe/limb-root collapse or missing view remains internalFAIL. Reassess target versus method; no automatic Astra.",
+      "gate_digest": "cf57bb82ec4c68a454b6824deaae6ab56a9eb5f47f129f337213cbf4123c2a8f",
+      "key": "__worker__",
+      "plan": "a5caa2a19e0080ab06540762431d3d3bcb8b385e65fe349b5ab4c822e1221ebf",
+      "preserve": "Accepted276..367 actions, originaltask/history/limits and protectedmasters preserved; chestform only, leader/tail/flag/crowd outside scope.",
+      "reference_assessment": {
+        "aspects": [
+          "film",
+          "junction",
+          "motion",
+          "preservation"
+        ],
+        "diagnosis": "method",
+        "disposition": "retain",
+        "evidence": [
+          {
+            "path": "results/sikh380/SWITCH.md",
+            "sha256": "9d9c9a6eee1c0daa6c129e45d88d01b7fe7404b1d60ae31fea96e1c5cddcbcc5"
+          },
+          {
+            "path": "results/sikh380/APPROVAL.json",
+            "sha256": "04e732fb4884039d9408975a9f06bb44552e80651a99c59fec7eb53d34a03f88"
+          },
+          {
+            "path": "results/sikh380/STRATEGY.md",
+            "sha256": "47456a3e281c92341732c945a68649a0eb9e257bd68a051b785b3ce9173f5459"
+          },
+          {
+            "path": "results/sikh379/RETROSPECTIVE379.md",
+            "sha256": "0c7aab7e8c29f2cda0cf1543b90db0d3540a6f074a6990633ae0f813372064a4"
+          },
+          {
+            "path": "results/sikh379/REFERENCE_QUALIFICATION.md",
+            "sha256": "1d8c810772130d16219b41a374aa6b96563ae1da3b83bc524fc9c4d6eefa7c71"
+          },
+          {
+            "path": "scripts/sikh380_retry.py",
+            "sha256": "d217ef2d6f4a9051ee87430e445c3d5cec6fce6a75f611cd9aabfc6ddce5d099"
+          },
+          {
+            "path": "results/sikh380/REJECT144.md",
+            "sha256": "f635560798b1e1d305c49269618eeca2b891fce871c2358be06de0c406cabacd"
+          },
+          {
+            "path": ".runtime/factory-native/sikh380-appearance-c144-repair/runner-status.json",
+            "sha256": "457b894334fdd647ca0f337a7c38026dabd2f600b36ade1cc84ad53a9e40fd15"
+          },
+          {
+            "path": "results/sikh380/REJECT145.md",
+            "sha256": "b141ab515f9d70f29f9521038007f034efb7e272e050d7ff1e59f57090feab5a"
+          },
+          {
+            "path": "results/sikh380/appearance-c145-front-review.json",
+            "sha256": "1dfecf033327e8dd365068fed98aeb0aaf019f40667f59401fb7777ebf9de55b"
+          }
+        ],
+        "readiness_digest": "66e5f64cf918ee3b2ffdcadd4a2ee694f56c3477ffc9142a48ebe597ff20eec5",
+        "reason": "379 qualified sources retained under380 resolve gross target coverage; test construction rather than acquire imagery automatically."
+      },
+      "target_stage": "GROUNDING",
+      "test": "Actual339 then333/342 opposite/front/side plus283367 must show supported rounded chest without sheet/shelf/pinch/bulb. Source/cache metrics are technical only. Known bodyFAIL blocks coat/full integration.",
+      "uncertainty": "Half restoration may still retain paired pouches or recreate the flattened slab. If any actual pose/view fails, stop146 rather than admit incremental improvement. Coat can amplify mismatch and is checked separately.",
+      "event": "sikh380-appearance-c146-__worker__-response"
+    },
+    "__requirements__": {
+      "cause": "145 actual front rejects full-rest inflated lobes despite improved central participation. Retain live bilateral skin ownership but restore only half of historical sculpt displacement, reducing protrusion while preserving paired muscle form. One final explicit sculpt, no ARAP or action change.",
+      "change_or_retain_rationale": "380 restrained rest sculpture:50percent raw/Basis delta, full bilateral pectoral/proximal-humeral ownership. Live rig preserved. After body proof, rebind existing coat roots/weights; verify contacts and continuous sampled sequence.",
+      "evidence": {
+        ".runtime/factory-native/sikh380-appearance-c144-repair/runner-status.json": {
+          "path": ".runtime/factory-native/sikh380-appearance-c144-repair/runner-status.json",
+          "sha256": "457b894334fdd647ca0f337a7c38026dabd2f600b36ade1cc84ad53a9e40fd15"
+        },
+        "results/sikh379/REFERENCE_QUALIFICATION.md": {
+          "path": "results/sikh379/REFERENCE_QUALIFICATION.md",
+          "sha256": "1d8c810772130d16219b41a374aa6b96563ae1da3b83bc524fc9c4d6eefa7c71"
+        },
+        "results/sikh379/RETROSPECTIVE379.md": {
+          "path": "results/sikh379/RETROSPECTIVE379.md",
+          "sha256": "0c7aab7e8c29f2cda0cf1543b90db0d3540a6f074a6990633ae0f813372064a4"
+        },
+        "results/sikh380/APPROVAL.json": {
+          "path": "results/sikh380/APPROVAL.json",
+          "sha256": "04e732fb4884039d9408975a9f06bb44552e80651a99c59fec7eb53d34a03f88"
+        },
+        "results/sikh380/REJECT144.md": {
+          "path": "results/sikh380/REJECT144.md",
+          "sha256": "f635560798b1e1d305c49269618eeca2b891fce871c2358be06de0c406cabacd"
+        },
+        "results/sikh380/REJECT145.md": {
+          "path": "results/sikh380/REJECT145.md",
+          "sha256": "b141ab515f9d70f29f9521038007f034efb7e272e050d7ff1e59f57090feab5a"
+        },
+        "results/sikh380/STRATEGY.md": {
+          "path": "results/sikh380/STRATEGY.md",
+          "sha256": "47456a3e281c92341732c945a68649a0eb9e257bd68a051b785b3ce9173f5459"
+        },
+        "results/sikh380/SWITCH.md": {
+          "path": "results/sikh380/SWITCH.md",
+          "sha256": "9d9c9a6eee1c0daa6c129e45d88d01b7fe7404b1d60ae31fea96e1c5cddcbcc5"
+        },
+        "results/sikh380/appearance-c145-front-review.json": {
+          "path": "results/sikh380/appearance-c145-front-review.json",
+          "sha256": "1dfecf033327e8dd365068fed98aeb0aaf019f40667f59401fb7777ebf9de55b"
+        },
+        "scripts/sikh380_retry.py": {
+          "path": "scripts/sikh380_retry.py",
+          "sha256": "d217ef2d6f4a9051ee87430e445c3d5cec6fce6a75f611cd9aabfc6ddce5d099"
+        }
+      },
+      "expected": "Supported continuous powerful horse chest through existing motion, with unrelated surfaces/actions unchanged.",
+      "failure_response": "Any source drift, bib/crease/shelf/globe/limb-root collapse or missing view remains internalFAIL. Reassess target versus method; no automatic Astra.",
+      "gate_digest": "ff05eb90e401153abe2139e96cd2e0f8de2e76d80849be32d7915088195af2f8",
+      "key": "__requirements__",
+      "plan": "a5caa2a19e0080ab06540762431d3d3bcb8b385e65fe349b5ab4c822e1221ebf",
+      "preserve": "Accepted276..367 actions, originaltask/history/limits and protectedmasters preserved; chestform only, leader/tail/flag/crowd outside scope.",
+      "reference_assessment": {
+        "aspects": [
+          "film",
+          "junction",
+          "motion",
+          "preservation"
+        ],
+        "diagnosis": "method",
+        "disposition": "retain",
+        "evidence": [
+          {
+            "path": "results/sikh380/SWITCH.md",
+            "sha256": "9d9c9a6eee1c0daa6c129e45d88d01b7fe7404b1d60ae31fea96e1c5cddcbcc5"
+          },
+          {
+            "path": "results/sikh380/APPROVAL.json",
+            "sha256": "04e732fb4884039d9408975a9f06bb44552e80651a99c59fec7eb53d34a03f88"
+          },
+          {
+            "path": "results/sikh380/STRATEGY.md",
+            "sha256": "47456a3e281c92341732c945a68649a0eb9e257bd68a051b785b3ce9173f5459"
+          },
+          {
+            "path": "results/sikh379/RETROSPECTIVE379.md",
+            "sha256": "0c7aab7e8c29f2cda0cf1543b90db0d3540a6f074a6990633ae0f813372064a4"
+          },
+          {
+            "path": "results/sikh379/REFERENCE_QUALIFICATION.md",
+            "sha256": "1d8c810772130d16219b41a374aa6b96563ae1da3b83bc524fc9c4d6eefa7c71"
+          },
+          {
+            "path": "scripts/sikh380_retry.py",
+            "sha256": "d217ef2d6f4a9051ee87430e445c3d5cec6fce6a75f611cd9aabfc6ddce5d099"
+          },
+          {
+            "path": "results/sikh380/REJECT144.md",
+            "sha256": "f635560798b1e1d305c49269618eeca2b891fce871c2358be06de0c406cabacd"
+          },
+          {
+            "path": ".runtime/factory-native/sikh380-appearance-c144-repair/runner-status.json",
+            "sha256": "457b894334fdd647ca0f337a7c38026dabd2f600b36ade1cc84ad53a9e40fd15"
+          },
+          {
+            "path": "results/sikh380/REJECT145.md",
+            "sha256": "b141ab515f9d70f29f9521038007f034efb7e272e050d7ff1e59f57090feab5a"
+          },
+          {
+            "path": "results/sikh380/appearance-c145-front-review.json",
+            "sha256": "1dfecf033327e8dd365068fed98aeb0aaf019f40667f59401fb7777ebf9de55b"
+          }
+        ],
+        "readiness_digest": "66e5f64cf918ee3b2ffdcadd4a2ee694f56c3477ffc9142a48ebe597ff20eec5",
+        "reason": "379 qualified sources retained under380 resolve gross target coverage; test construction rather than acquire imagery automatically."
+      },
+      "target_stage": "GROUNDING",
+      "test": "Actual339 then333/342 opposite/front/side plus283367 must show supported rounded chest without sheet/shelf/pinch/bulb. Source/cache metrics are technical only. Known bodyFAIL blocks coat/full integration.",
+      "uncertainty": "Half restoration may still retain paired pouches or recreate the flattened slab. If any actual pose/view fails, stop146 rather than admit incremental improvement. Coat can amplify mismatch and is checked separately.",
+      "event": "sikh380-appearance-c146-__requirements__-response"
+    }
+  },
+  "proofs": {},
+  "history_api": "retrospective.events(connection, task)",
+  "instruction": "Inspect source-bound outcomes for each open finding; respond, challenge, then test. Admission is not effectiveness. No new authority.",
+  "reference_contract": {
+    "version": 1,
+    "entry": "Each new native production plan declares reference_scope and explicit reuse_existing/acquire/none_needed decisions; legacy offline/frozen records are not native authority.",
+    "qualification": "Purpose, actual coverage observations, governs/excluded authority, provenance/rights-use and bound inspected source media; generated physical claims need non-generated corroboration.",
+    "propagation": "Grounding.reference_readiness -> Derivation.reference_mapping -> brief -> planning challenge -> actual execution/review; copies/digests do not prove truth.",
+    "retro": "Every current-protocol retrospective response assesses retain/supplement/replace/no_reference_issue; reference_gap outcome opens an immediate finding; reference gap returns to Grounding.",
+    "acquisition": "Image search and built-in images agent-owned; paid video requires exact approval and persistent budget guard; raw chat tools remain instruction governed.",
+    "limits": "Source bindings and declared coverage are structural checks. They cannot establish truthful viewing, physical correctness, artistic sufficiency or director acceptance. Reference readiness review does not replace full-speed motion/audio checks."
+  },
+  "reference_readiness": {
+    "decisions": {
+      "film": {
+        "decision": "reuse_existing",
+        "reason": "Inspected qualified sources address gross scoped target; limits and exclusions documented.",
+        "references": [
+          {
+            "coverage": {
+              "accepted_look": "Illustrated rich coherent forms/materials, separate from anatomical truth"
+            },
+            "evidence": [
+              {
+                "path": ".runtime/art-direction/series01-finish248/opening08/actual-450.png",
+                "sha256": "c874497d244bb8b896d952a8ee30536d33b79bee3d62d4cefd50c8221a37498a"
+              },
+              {
+                "path": "results/sikh379/REFERENCE_QUALIFICATION.md",
+                "sha256": "1d8c810772130d16219b41a374aa6b96563ae1da3b83bc524fc9c4d6eefa7c71"
+              }
+            ],
+            "excluded_authority": "Not a motion reference, identity-copy target, wardrobe pattern, lighting match or permission to modify the accepted Pashtun.",
+            "governs": "Accepted appearance-quality comparator for visible material, garment and character integration at intended framing.",
+            "id": "accepted_film",
+            "observation": "Comparable believable whole forms, supported cloth, differentiated materials and readable living-character detail; not equal pixel density across different shot sizes.",
+            "origin": "accepted_asset",
+            "provenance": "Director253 provisional production comparator; no permission to modify",
+            "rights_use": "reference_only"
+          }
+        ],
+        "reopen_when": "A required hidden view or motion/form feature is unresolved or contradicted by actual proof.",
+        "status": "sufficient"
+      },
+      "junction": {
+        "decision": "acquire",
+        "reason": "Inspected qualified sources address gross scoped target; limits and exclusions documented.",
+        "references": [
+          {
+            "coverage": {
+              "front": "Rounded paired muscles and central groove; distinct forelimbs"
+            },
+            "evidence": [
+              {
+                "path": ".runtime/art-direction/sikh379-references/umn-front-pectorals.jpg",
+                "sha256": "d02fe0eb122be49b7510dea2c570f4e057a1e3a0dae40161da48eca9215f5aa3"
+              },
+              {
+                "path": "results/sikh379/REFERENCE_QUALIFICATION.md",
+                "sha256": "1d8c810772130d16219b41a374aa6b96563ae1da3b83bc524fc9c4d6eefa7c71"
+              }
+            ],
+            "excluded_authority": "Not identity/breed, film palette/materials, choreography, or permission to incorporate source pixels",
+            "governs": "Gross physical chest/neck/proximal-limb form only",
+            "id": "pectoral_front",
+            "observation": "Paired supported pectoral masses, central groove, distinct roots into forelegs.",
+            "origin": "image_search",
+            "provenance": "UMN CVM Lab1 image10, public internal anatomy study",
+            "rights_use": "reference_only"
+          },
+          {
+            "coverage": {
+              "oblique_rear": "Supported chest underside and rounded limb roots during rear"
+            },
+            "evidence": [
+              {
+                "path": ".runtime/art-direction/sikh379-references/cavalo-rear.jpg",
+                "sha256": "1f99a25cd924d3d7bcc7429e13fe4d6fc1dd4937bccb015b4fa521e725fc1801"
+              },
+              {
+                "path": "results/sikh379/REFERENCE_QUALIFICATION.md",
+                "sha256": "1d8c810772130d16219b41a374aa6b96563ae1da3b83bc524fc9c4d6eefa7c71"
+              }
+            ],
+            "excluded_authority": "Not identity/breed, film palette/materials, choreography, or permission to incorporate source pixels",
+            "governs": "Gross physical chest/neck/proximal-limb form only",
+            "id": "pectoral_rear",
+            "observation": "Rounded shoulder and supported continuous underside while forelimbs lift; no flat bib.",
+            "origin": "image_search",
+            "provenance": "Jonathan Wilkins own photo,22Nov2007,CC BY-SA3.0; source page in acquisition.json",
+            "rights_use": "reference_only"
+          },
+          {
+            "coverage": {
+              "opposite_partial": "Opposite-facing partial lift and folded limb/chest continuity"
+            },
+            "evidence": [
+              {
+                "path": ".runtime/art-direction/sikh379-references/friesian-rear.jpg",
+                "sha256": "fc23837380c482e30224ba371ffc443e1a7540d34386cb20c4002fd250d789d4"
+              },
+              {
+                "path": "results/sikh379/REFERENCE_QUALIFICATION.md",
+                "sha256": "1d8c810772130d16219b41a374aa6b96563ae1da3b83bc524fc9c4d6eefa7c71"
+              }
+            ],
+            "excluded_authority": "Not identity/breed, film palette/materials, choreography, or permission to incorporate source pixels",
+            "governs": "Gross physical chest/neck/proximal-limb form only",
+            "id": "pectoral_opposite",
+            "observation": "Folded limb roots and continuous chest on opposite-facing/partial-lift horse.",
+            "origin": "image_search",
+            "provenance": "KaRede own photo,17Aug2016,CC BY-SA4.0; source page in acquisition.json",
+            "rights_use": "reference_only"
+          }
+        ],
+        "reopen_when": "A required hidden view or motion/form feature is unresolved or contradicted by actual proof.",
+        "status": "sufficient"
+      },
+      "motion": {
+        "decision": "reuse_existing",
+        "reason": "Inspected qualified sources address gross scoped target; limits and exclusions documented.",
+        "references": [
+          {
+            "coverage": {
+              "prep_apex_landing": "Original14..19 video and exact66/75/80 accepted motion source"
+            },
+            "evidence": [
+              {
+                "path": ".runtime/art-direction/series01-sikh256/references/reference-b.mov",
+                "sha256": "78d0d691e8712c02931876cf0bc405e4869de357f337f531708be7a7da4898e2"
+              },
+              {
+                "path": "results/sikh379/REFERENCE_QUALIFICATION.md",
+                "sha256": "1d8c810772130d16219b41a374aa6b96563ae1da3b83bc524fc9c4d6eefa7c71"
+              }
+            ],
+            "excluded_authority": "Not a new identity, wardrobe license or exemption from same-film quality.",
+            "governs": "Preserve accepted276..367 motion and linked horse anatomy; earlier rejected motion statuses are superseded only by exact Director374 acceptance.",
+            "id": "reference_rear",
+            "observation": "Coordinated gather, driving hindquarters, brief crest, accelerating reach/contact and absorption.",
+            "origin": "director",
+            "provenance": "Director-provided reference-b, protected accepted action",
+            "rights_use": "reference_only"
+          }
+        ],
+        "reopen_when": "A required hidden view or motion/form feature is unresolved or contradicted by actual proof.",
+        "status": "sufficient"
+      },
+      "preservation": {
+        "decision": "none_needed",
+        "reason": "Exact native/action/source comparison is deterministic; no additional illustrative reference required.",
+        "references": [],
+        "reopen_when": "Claim extends to physical or artistic correctness.",
+        "status": "not_needed"
+      }
+    },
+    "scope": {
+      "id": "horse-chest379",
+      "kind": "micro_appearance",
+      "needs": [
+        {
+          "coverage": [
+            "front",
+            "oblique_rear",
+            "opposite_partial"
+          ],
+          "critical": true,
+          "id": "junction",
+          "purpose": "physical_form",
+          "question": "What positive chest/neck/raised upper-leg contours replace the bib?"
+        },
+        {
+          "coverage": [
+            "prep_apex_landing"
+          ],
+          "critical": true,
+          "id": "motion",
+          "purpose": "motion_mechanics",
+          "question": "Which accepted action and pose family must remain fixed?"
+        },
+        {
+          "coverage": [
+            "accepted_look"
+          ],
+          "critical": true,
+          "id": "film",
+          "purpose": "film_style",
+          "question": "What established quality/style must this horse inhabit?"
+        },
+        {
+          "coverage": [
+            "hash_action_controls"
+          ],
+          "critical": true,
+          "id": "preservation",
+          "purpose": "technical_validation",
+          "question": "Can source invariants be checked deterministically?"
+        }
+      ],
+      "version": 1
+    },
+    "version": 1
+  }
+}

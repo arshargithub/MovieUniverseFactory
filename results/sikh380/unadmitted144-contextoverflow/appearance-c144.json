@@ -1,0 +1,161 @@
+{
+  "parent": ".runtime/factory-native/sikh375-appearance-c129-inspect/scene.blend",
+  "brief_path": "results/sikh380/revised144-brief.json",
+  "method": "380 restore measured historical raw/Basis delta and transfer whole bilateral pectoral influence to proximal humeri, including center; actual live rig, no pose cache or ARAP.",
+  "proof": "Actual339 then333/342 opposite/front/side plus283367 must show supported rounded chest without sheet/shelf/pinch/bulb. Source/cache metrics are technical only. Known bodyFAIL blocks coat/full integration.",
+  "scope": "Same horse torso micro-appearance, first actual proof under379, primary motion fixed; no full leader/crowd claim.",
+  "reconciliation": "380 approved scoped Astra main-chat reassessment and reported switch supersede historical Sol-only text only within144..146. All earlier authority/history/quality retained. Unknown global307 remainsblocked,313 scoped correction applies.",
+  "alternatives": "Restoration alone leaves stationary sag in source-matrix control; partial-mask ownership leaves midline island. Full transfer may over-gather and must be rejected if globular or pinched.",
+  "failure": "Any source drift, bib/crease/shelf/globe/limb-root collapse or missing view remains internalFAIL. Reassess target versus method; no automatic Astra.",
+  "cause": "Actual363 code and original375 matrices identify altered rest form plus stationary central pectoral ownership while humerus turns sharply. Earlier375 masked redistribution excluded central island. Test full bilateral pectoral transfer with raw rest restoration using live native B-bone evaluation; no ARAP or new action.",
+  "expected": "Supported continuous powerful horse chest through existing motion, with unrelated surfaces/actions unchanged.",
+  "steps": [
+    {
+      "id": "repair",
+      "depends_on": [],
+      "recipe": {
+        "operation": "nihang_patch",
+        "frame": 367,
+        "width": 432,
+        "height": 768,
+        "samples": 8,
+        "edits": [
+          {
+            "kind": "mounted_horse_chest380",
+            "target": "horse"
+          }
+        ]
+      }
+    },
+    {
+      "id": "front",
+      "depends_on": [
+        "repair"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 367,
+        "frames": [
+          367,
+          339,
+          333,
+          342,
+          283
+        ],
+        "view": "horse_form_front374",
+        "width": 640,
+        "height": 640,
+        "samples": 8
+      }
+    },
+    {
+      "id": "worst",
+      "depends_on": [
+        "repair",
+        "front"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 367,
+        "frames": [
+          367,
+          339,
+          333,
+          342,
+          283
+        ],
+        "view": "horse_form_reverse374",
+        "width": 640,
+        "height": 640,
+        "samples": 8
+      }
+    },
+    {
+      "id": "side",
+      "depends_on": [
+        "repair",
+        "front",
+        "worst"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 367,
+        "frames": [
+          367,
+          339,
+          333,
+          342,
+          283
+        ],
+        "view": "horse_form_side374",
+        "width": 640,
+        "height": 640,
+        "samples": 8
+      }
+    }
+  ],
+  "sources": [
+    "results/sikh379/REQUEST.md",
+    "results/sikh379/STRATEGY.md",
+    "results/sikh379/REFERENCE_QUALIFICATION.md",
+    "src/movie_factory/horse_shape379.py",
+    "src/movie_factory/adapters/blender/nihang_chest379.py",
+    "scripts/sikh379_targets.py",
+    "scripts/sikh379_plan.py",
+    "tests/test_horse_shape379.py",
+    "docs/knowledge/REFERENCE_READINESS_378.md",
+    "results/workflow378/CHEST_HYPOTHESIS.md",
+    "results/sikh376/REJECT136.md",
+    ".runtime/context-hygiene/runs/sikh379-handler-tests/stdout.log",
+    ".runtime/art-direction/sikh379-targets/c137.npz",
+    ".runtime/art-direction/sikh379-targets/c137.json",
+    ".runtime/art-direction/sikh379-references/acquisition.json",
+    ".runtime/art-direction/series01-sikh256/references/reference-b.mov",
+    ".runtime/art-direction/series01-finish248/opening08/actual-450.png",
+    ".runtime/art-direction/sikh379-references/umn-front-pectorals.jpg",
+    ".runtime/art-direction/sikh379-references/cavalo-rear.jpg",
+    ".runtime/art-direction/sikh379-references/friesian-rear.jpg",
+    ".runtime/art-direction/sikh379-targets/c138.npz",
+    ".runtime/art-direction/sikh379-targets/c138.json",
+    "results/sikh379/REJECT137.md",
+    "scripts/sikh379_replan.py",
+    ".runtime/art-direction/sikh379-targets/c139.npz",
+    ".runtime/art-direction/sikh379-targets/c139.json",
+    "results/sikh379/REJECT138.md",
+    ".runtime/art-direction/sikh379-targets/c140.npz",
+    ".runtime/art-direction/sikh379-targets/c140.json",
+    "results/sikh379/REJECT139.md",
+    "src/movie_factory/retrospective.py",
+    "tests/test_retro_packet379.py",
+    "results/sikh379/PACKET_REPAIR_STRATEGY.md",
+    "results/sikh379/PACKET_DEDUP_CONTROL.json",
+    ".runtime/art-direction/sikh379-targets/c141.npz",
+    ".runtime/art-direction/sikh379-targets/c141.json",
+    "results/sikh379/REJECT140.md",
+    ".runtime/art-direction/sikh379-targets/c142.npz",
+    ".runtime/art-direction/sikh379-targets/c142.json",
+    "results/sikh379/REJECT141.md",
+    ".runtime/art-direction/sikh379-targets/c143.npz",
+    ".runtime/art-direction/sikh379-targets/c143.json",
+    "results/sikh379/REJECT142.md",
+    "results/sikh379/CAGE_REASSESSMENT142.md",
+    "results/sikh379/REST_REASSESSMENT141.md",
+    "results/sikh380/SWITCH.md",
+    "results/sikh380/APPROVAL.json",
+    "results/sikh380/STRATEGY.md",
+    "results/sikh379/RETROSPECTIVE379.md",
+    "results/sikh379/REJECT143.md",
+    "src/movie_factory/adapters/blender/nihang_chest380.py",
+    "src/movie_factory/adapters/blender/nihang_patch.py",
+    "tests/test_chest380.py",
+    "scripts/sikh380_plan.py",
+    "scripts/sikh380_replan.py"
+  ],
+  "retrospective_evidence": [
+    "results/sikh380/SWITCH.md",
+    "results/sikh380/APPROVAL.json",
+    "results/sikh380/STRATEGY.md",
+    "results/sikh379/RETROSPECTIVE379.md",
+    "results/sikh379/REFERENCE_QUALIFICATION.md"
+  ]
+}

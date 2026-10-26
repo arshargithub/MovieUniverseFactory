@@ -1,9 +1,30 @@
-#380 approved escalation — selector prerequisite
+#380 closed narrow escalation — chest still unresolved
 
-Director said "approved" to the concrete379 Astra High chest/neck/foreleg assignment. Exact proposal and human source bound in APPROVAL.json; scope144..146 only, same task/canonical DB. No extra cycles/live runtime calls/spend. Main-chat selector cannot be changed by agent; async question pending whether Director has switched to Astra High. Do not attribute reasoning to Astra or dispatch an unauthorized separate runtime.
+Director confirmed main-chat Astra High selector in SWITCH.md after the scoped
+approval. This is user-reported, not verified runtime metadata. The historical
+APPROVAL.json pending-selector wording is superseded by that subsequent report.
+Same canonical task sikh335-supporting-appearance, database
+.runtime/factory-entry.sqlite3, cycle146/max146. All allowance consumed; no reset.
 
-Router registered engineering approval bookkeeping sikh380-escalation-record and production continuation sikh380-torso-astra. Current controller stays143/max146 with failed front and open retrospective gates, no new native candidate. Protected masters unchanged at379; no modifications380.
+144 crashed at native startup before candidate generation.145 whole-pectoral
+ownership plus full raw-rest restoration failed actual front anatomy.146 half
+restoration also failed actual six-frame front anatomy. FAIL reviews are saved
+and registered before source changes. RETROSPECTIVE380.md records the causal
+findings, reference assessment and a materially different proposed next package.
 
-After Director confirms switch: record reported setting (not independently verified), end selector wait, recover current/task routes, read378 reference contract,379 retrospective and exact actual negative/positive evidence; derive an alternative construction before consuming144, not another ARAP gain sweep. Fresh packet and330 stages preserve old direction/source coverage, approved360exception and143history. Native bridge only. Exit no sheet/pouch/shelf/pinch/bulb/detached limb root over all5poses/front/reverse/side; coat/contact/wholewindow and Director AV separate. Return to Sol on assignment expiry.
+No production-ready media. Reverse/side/coat/contact/full-window checks NOT_RUN
+because the front already fails. No Director AV gate or global307 knowledge gate
+waived. Accepted motion66/75/80 protected; final streamed receipts are in
+PROTECTED_MASTERS_VERIFIED.json. No leader/crowd/tail/flag work, new spend,
+provider generation, upload or publication in380. Failed local derivatives kept.
 
-380 ten-exchange checkpoint: production stillblocked on chestform, sequence/crowd not advanced. Current accepted motion66/75/80 and Pashtun production floor protected. No new remote protection or broad push performed: outgoing ancestry must be inspected/scoped; this approval does not authorize unrelated publication. Exact net bootstrap/modelusage unknown.
+Astra assignment expired with its scope/allowance. Director controls the chat
+selector; request return to Sol6.1 High before a new assignment. Separate runtime
+remains Sol default. Do not infer another Astra call or another correction from
+this closeout. Next recommended package: positive forequarter reconstruction
+proof, standing and worst descent first, preserving accepted motion; detailed
+exit in RETROSPECTIVE380.md. It needs renewed scope/correction authority.
+
+92 affected regressions passed. Engineering token/cost usage and exact total net
+turn time unknown. Local commits are not remote protection; no new S3 backup or
+remote push. Operating interval closeout/export are separate receipts.
