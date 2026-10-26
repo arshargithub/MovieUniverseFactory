@@ -1,0 +1,134 @@
+{
+  "schema_version": "1.0",
+  "experiment_id": "workflow378",
+  "episodes": [
+    {
+      "episode_id": "reference-implementation378",
+      "lifecycle": "CLOSED",
+      "disposition": "GREEN",
+      "calendar_elapsed_seconds": 2162.068022966385,
+      "excluded_input_wait_seconds": null,
+      "observed_excluded_input_wait_seconds": 0,
+      "net_elapsed_seconds": null,
+      "coverage_fraction": 1.0,
+      "unknown_gap_seconds": 0,
+      "uncertainties": [
+        "missing_interval_end"
+      ],
+      "jobs": [],
+      "native_jobs": [],
+      "native_job_wall_sum_seconds": 0,
+      "native_job_wall_union_seconds": null,
+      "assistant_active_union_seconds": 2162.068022966385,
+      "assistant_time_scope": "Recorded activity intervals only; not token generation time",
+      "human_review_seconds": null,
+      "phase_net_seconds": null,
+      "operational_proxies": {}
+    }
+  ],
+  "closed_episode_count": 1,
+  "net_episode_sum_seconds": null,
+  "note": "Episode totals exclude inter-episode gaps. Job sums are process-seconds, not CPU time.",
+  "engineering_usage": {
+    "status": "UNKNOWN",
+    "observed_tokens": {
+      "input_tokens": null,
+      "cached_input_tokens": null,
+      "cache_write_input_tokens": null,
+      "output_tokens": null,
+      "reasoning_output_tokens": null,
+      "total_tokens": null
+    },
+    "category_coverage": {
+      "input_tokens": {
+        "observed_blocks": 0,
+        "total_blocks": 0
+      },
+      "cached_input_tokens": {
+        "observed_blocks": 0,
+        "total_blocks": 0
+      },
+      "cache_write_input_tokens": {
+        "observed_blocks": 0,
+        "total_blocks": 0
+      },
+      "output_tokens": {
+        "observed_blocks": 0,
+        "total_blocks": 0
+      },
+      "reasoning_output_tokens": {
+        "observed_blocks": 0,
+        "total_blocks": 0
+      },
+      "total_tokens": {
+        "observed_blocks": 0,
+        "total_blocks": 0
+      }
+    },
+    "exact_attributable_tokens": null,
+    "expected_tasks": [
+      "workflow378-reference-readiness"
+    ],
+    "captured_tasks": [],
+    "missing_tasks": [
+      "workflow378-reference-readiness"
+    ],
+    "window_start": "2026-10-26T00:53:30.340815+00:00",
+    "window_end": "2026-10-26T01:29:32.408838+00:00",
+    "uncertainties": [
+      "capture_completeness_not_established",
+      "missing_linked_tasks"
+    ],
+    "blocks": [],
+    "token_definitions": {
+      "input_tokens": "Reported input total; cached input is a subset.",
+      "cached_input_tokens": "Subset of input; do not add to total.",
+      "cache_write_input_tokens": "Retained as reported; not added to total.",
+      "output_tokens": "Reported output total; reasoning output is a subset.",
+      "reasoning_output_tokens": "Subset of output; do not add to total.",
+      "total_tokens": "Reported total; input plus output, without subset double counting."
+    },
+    "actual_engineering_charge_usd": null,
+    "subscription": {
+      "treatment": "shared fixed overhead",
+      "allocation_usd": null
+    },
+    "api_equivalent_estimate_usd": null,
+    "account_allowance": {
+      "scope": "account-wide; not experiment token attribution",
+      "observations": []
+    }
+  },
+  "model_setting_observations": [],
+  "factory_api": {
+    "provider_calls": 0,
+    "known_api_cost_usd": 0,
+    "status": "OBSERVED_THIS_SCOPE",
+    "reason": "Only local unit mocks/read-only existing-media extraction; no live provider/native/cloud dispatch."
+  },
+  "outcome_denominators": {
+    "closed_experiments": 1,
+    "closed_episodes": 1,
+    "technically_successful_outputs": 1,
+    "director_accepted_outputs": 0
+  },
+  "consumption_per_outcome": {
+    "closed_experiments": {
+      "net_seconds": null,
+      "engineering_tokens": null
+    },
+    "closed_episodes": {
+      "net_seconds": null,
+      "engineering_tokens": null
+    },
+    "technically_successful_outputs": {
+      "net_seconds": null,
+      "engineering_tokens": null
+    },
+    "director_accepted_outputs": {
+      "net_seconds": null,
+      "engineering_tokens": null
+    }
+  },
+  "cost_scope": "Development investment; repeatable runtime cost remains in the campaign provider records."
+}
