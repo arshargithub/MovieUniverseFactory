@@ -353,5 +353,27 @@ def packet(con, state):
         from . import reference_readiness as rr
         result['reference_contract']=rr.contract()
         result['reference_readiness']=state['brief']['reference_readiness']
+    # Lossless deduplication: active findings often share the same intervention.
+    # Keep every event/key/gate identity, but carry its common payload once.
+    if len(json.dumps(result))>60000:
+        pool={};indexed={}
+        for key,row in result['responses'].items():
+            identity={k:v for k,v in row.items() if k in {'event','key','gate_digest'}}
+            body={k:v for k,v in row.items() if k not in identity}
+            digest=pk.digest(body);pool[digest]=body
+            indexed[key]=dict(identity,payload_ref=digest)
+        result.update(response_encoding='shared_payloads_v1',response_payloads=pool,responses=indexed)
+        result['instruction']+=' Responses use lossless shared payloads: merge response_payloads[payload_ref] with each indexed event/key/gate_digest; full original records remain in events.'
     need(len(json.dumps(result))<=60000,'PACKET_TOO_LARGE_RECONCILE_SCOPE')
     return result
+
+
+def expand_packet_responses(value):
+    """Read-only lossless decoder for audit/tools; no authority or state change."""
+    if value.get('response_encoding')!='shared_payloads_v1':return value['responses']
+    pool=value['response_payloads'];out={}
+    for key,row in value['responses'].items():
+        body=pool[row['payload_ref']]
+        need(pk.digest(body)==row['payload_ref'],'RESPONSE_PAYLOAD_CHANGED')
+        out[key]=dict(body,**{k:v for k,v in row.items() if k!='payload_ref'})
+    return out

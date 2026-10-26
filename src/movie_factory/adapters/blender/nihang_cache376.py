@@ -40,7 +40,7 @@ def evaluated(bpy,horse):
 def at(scene,f):scene.frame_set(int(f),subframe=float(f-int(f)))
 
 
-def run(bpy,out,e):
+def run(bpy,out,e,*,target_function=None):
  validate(e);scene=mod('nihang_support').select_production_scene(bpy);horse=bpy.data.objects['horse'];nap=bpy.data.objects['317 rig-bound short horse nap'];saved=(scene.frame_current,scene.frame_subframe)
  if any(horse.get(n) for n in ('pose376_corrective','corrective375','deform375_weights','multiform376','cache376')):raise ValueError('CACHE376_ORIGINAL_SOURCE')
  keys=horse.data.shape_keys.key_blocks;original={k.name:np.array([v.co[:] for v in k.data],dtype=np.float32) for k in keys};rest=original[keys[0].name];raw=np.array([v.co[:] for v in horse.data.vertices],dtype=np.float32);actions=mod('nihang_padsolve370').actions(bpy);geom=mod('nihang_prep367').frozen(bpy);levels=[(m,m.show_viewport) for m in horse.modifiers if m.type=='SUBSURF'];arms=[m for m in horse.modifiers if m.type=='ARMATURE']
@@ -49,7 +49,7 @@ def run(bpy,out,e):
  try:
   for m,_ in levels:m.show_viewport=False
   for f in times:
-   at(scene,float(f));bpy.context.view_layer.update();p,n=evaluated(bpy,horse);delta,mask=target(p,rest,edges,breast,float(f));sources.append(p);normals.append(n);targets.append((p+delta).astype(np.float32));maxima.append(float(np.linalg.norm(delta,axis=1).max()))
+   at(scene,float(f));bpy.context.view_layer.update();p,n=evaluated(bpy,horse);delta,mask=(target_function or target)(p,rest,edges,breast,float(f));sources.append(p);normals.append(n);targets.append((p+delta).astype(np.float32));maxima.append(float(np.linalg.norm(delta,axis=1).max()))
    if len(sources)%24==0:(out/'horse-cache376-progress.json').write_text(json.dumps(dict(samples=len(sources),total=len(times),phase='sourceandtarget'),indent=2)+'\n')
  finally:
   for m,v in levels:m.show_viewport=v
