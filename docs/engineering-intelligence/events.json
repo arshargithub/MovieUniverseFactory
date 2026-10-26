@@ -2876,6 +2876,43 @@
         "results/sikh380/appearance-c146-front-review.json",
         "results/sikh380/PROTECTED_MASTERS_VERIFIED.json"
       ]
+    },
+    {
+      "event_id": "series01-exchange381-return-sol",
+      "event_type": "model_switch",
+      "recorded_date": "2026-10-26",
+      "reported_model": "gpt-6.1-sol",
+      "reported_reasoning_effort": "high",
+      "setting_attribution": "user_reported",
+      "runtime_verified": false,
+      "controlled_model_comparison": false,
+      "observation": "Director reports return to Sol6.1High and approves ten same-task corrections147..156; no Astra authority carries forward.",
+      "engineering_subscription_usage": null,
+      "engineering_cost_usd": null,
+      "evidence": [
+        "results/sikh381/REQUEST.md",
+        "results/sikh381/APPROVED_ALLOWANCE.json"
+      ]
+    },
+    {
+      "event_id": "series01-exchange381-sol-outcome",
+      "event_type": "engineering_outcome",
+      "recorded_date": "2026-10-26",
+      "reported_model": "gpt-6.1-sol",
+      "reported_reasoning_effort": "high",
+      "setting_attribution": "user_reported",
+      "runtime_verified": false,
+      "controlled_model_comparison": false,
+      "outcome": "EXHAUSTED_NO_ARTISTIC_PASS",
+      "observation": "147..156 consumed; four actual construction candidates fail positive chest/foreleg anatomy; donor control excludes simple reimport. Stop same-foundation variants.103 software tests pass. No spend or model-superiority inference.",
+      "engineering_subscription_usage": null,
+      "engineering_cost_usd": null,
+      "new_external_paid_provider_calls": 0,
+      "evidence": [
+        "results/sikh381/RETROSPECTIVE381.md",
+        "results/sikh381/final-state.json",
+        "results/sikh381/PROTECTED_MASTERS_VERIFIED.json"
+      ]
     }
   ],
   "recording_mode": "manual_evidence_backfill_and_future_event_capture",
