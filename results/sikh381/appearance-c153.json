@@ -1,0 +1,224 @@
+{
+  "parent": ".runtime/factory-native/sikh375-appearance-c129-inspect/scene.blend",
+  "brief_path": "results/sikh381/revised153-brief.json",
+  "method": "Compact rest pectoral cage: reduce inferior extent/front projection and modest width while preserving curved upper relief; native volume skinning with fixed posterior origin and graded anterior insertion.",
+  "proof": "Actual367 and339 standing/descent front first; reject inflated or attached masses, then all six poses/front/reverse/side before coat/contact/fullwindow.",
+  "scope": "381 horse forequarter reconstruction under fixed accepted motion only; not entire leader/crowd qualification.",
+  "reconciliation": "Explicit381Sol+ten cycle grant supersedes expired380Astra. Adequate qualified physical references retained for gross form. Historical original rules and rejected evidence retained.",
+  "alternatives": "Repeat ARAP/restoration rejected380. Whole horse replacement is broader than needed. New positive attached-form construction is a falsifiable local alternative, not guaranteed anatomy.",
+  "failure": "Reject unsupported masses, shelf/web, detached roots, source drift, interface failure or missing proof. Known failures stay internal; strategy reassessment after3 related variants.",
+  "cause": "152 actual form still has pendant low raw-rest mass. Author compact supported3D pectoral rest volume before the now-bounded native attachment deformation.",
+  "expected": "Supported curved chest joins neck/shoulder/upperlegs throughout accepted action.",
+  "steps": [
+    {
+      "id": "repair",
+      "depends_on": [],
+      "recipe": {
+        "operation": "nihang_patch",
+        "frame": 367,
+        "width": 432,
+        "height": 768,
+        "samples": 8,
+        "edits": [
+          {
+            "kind": "mounted_forequarter381",
+            "target": "horse",
+            "profile": "native_compact"
+          }
+        ]
+      }
+    },
+    {
+      "id": "front",
+      "depends_on": [
+        "repair"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 367,
+        "frames": [
+          367,
+          339
+        ],
+        "view": "horse_form_front374",
+        "width": 640,
+        "height": 640,
+        "samples": 8
+      }
+    },
+    {
+      "id": "matrix",
+      "depends_on": [
+        "repair",
+        "front"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 367,
+        "frames": [
+          367,
+          339,
+          333,
+          342,
+          346,
+          283
+        ],
+        "view": "horse_form_front374",
+        "width": 640,
+        "height": 640,
+        "samples": 8
+      }
+    },
+    {
+      "id": "worst",
+      "depends_on": [
+        "repair",
+        "front",
+        "matrix"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 367,
+        "frames": [
+          367,
+          339,
+          333,
+          342,
+          346,
+          283
+        ],
+        "view": "horse_form_reverse374",
+        "width": 640,
+        "height": 640,
+        "samples": 8
+      }
+    },
+    {
+      "id": "side",
+      "depends_on": [
+        "repair",
+        "front",
+        "matrix"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 367,
+        "frames": [
+          367,
+          339,
+          333,
+          342,
+          346,
+          283
+        ],
+        "view": "horse_form_side374",
+        "width": 640,
+        "height": 640,
+        "samples": 8
+      }
+    }
+  ],
+  "sources": [
+    "results/sikh379/REQUEST.md",
+    "results/sikh379/STRATEGY.md",
+    "results/sikh379/REFERENCE_QUALIFICATION.md",
+    "src/movie_factory/horse_shape379.py",
+    "src/movie_factory/adapters/blender/nihang_chest379.py",
+    "scripts/sikh379_targets.py",
+    "scripts/sikh379_plan.py",
+    "tests/test_horse_shape379.py",
+    "docs/knowledge/REFERENCE_READINESS_378.md",
+    "results/workflow378/CHEST_HYPOTHESIS.md",
+    "results/sikh376/REJECT136.md",
+    ".runtime/context-hygiene/runs/sikh379-handler-tests/stdout.log",
+    ".runtime/art-direction/sikh379-targets/c137.npz",
+    ".runtime/art-direction/sikh379-targets/c137.json",
+    ".runtime/art-direction/sikh379-references/acquisition.json",
+    ".runtime/art-direction/series01-sikh256/references/reference-b.mov",
+    ".runtime/art-direction/series01-finish248/opening08/actual-450.png",
+    ".runtime/art-direction/sikh379-references/umn-front-pectorals.jpg",
+    ".runtime/art-direction/sikh379-references/cavalo-rear.jpg",
+    ".runtime/art-direction/sikh379-references/friesian-rear.jpg",
+    ".runtime/art-direction/sikh379-targets/c138.npz",
+    ".runtime/art-direction/sikh379-targets/c138.json",
+    "results/sikh379/REJECT137.md",
+    "scripts/sikh379_replan.py",
+    ".runtime/art-direction/sikh379-targets/c139.npz",
+    ".runtime/art-direction/sikh379-targets/c139.json",
+    "results/sikh379/REJECT138.md",
+    ".runtime/art-direction/sikh379-targets/c140.npz",
+    ".runtime/art-direction/sikh379-targets/c140.json",
+    "results/sikh379/REJECT139.md",
+    "src/movie_factory/retrospective.py",
+    "tests/test_retro_packet379.py",
+    "results/sikh379/PACKET_REPAIR_STRATEGY.md",
+    "results/sikh379/PACKET_DEDUP_CONTROL.json",
+    ".runtime/art-direction/sikh379-targets/c141.npz",
+    ".runtime/art-direction/sikh379-targets/c141.json",
+    "results/sikh379/REJECT140.md",
+    ".runtime/art-direction/sikh379-targets/c142.npz",
+    ".runtime/art-direction/sikh379-targets/c142.json",
+    "results/sikh379/REJECT141.md",
+    ".runtime/art-direction/sikh379-targets/c143.npz",
+    ".runtime/art-direction/sikh379-targets/c143.json",
+    "results/sikh379/REJECT142.md",
+    "results/sikh379/CAGE_REASSESSMENT142.md",
+    "results/sikh379/REST_REASSESSMENT141.md",
+    "results/sikh380/SWITCH.md",
+    "results/sikh380/APPROVAL.json",
+    "results/sikh380/STRATEGY.md",
+    "results/sikh379/RETROSPECTIVE379.md",
+    "results/sikh379/REJECT143.md",
+    "src/movie_factory/adapters/blender/nihang_chest380.py",
+    "src/movie_factory/adapters/blender/nihang_patch.py",
+    "tests/test_chest380.py",
+    "scripts/sikh380_plan.py",
+    "scripts/sikh380_replan.py",
+    "scripts/sikh380_retry.py",
+    "results/sikh380/REJECT144.md",
+    ".runtime/factory-native/sikh380-appearance-c144-repair/runner-status.json",
+    "scripts/sikh380_final.py",
+    "results/sikh380/REJECT145.md",
+    "results/sikh380/appearance-c145-front-review.json",
+    ".runtime/factory-native/sikh374-appearance-c124-inspect/horse-form374.npz",
+    "results/sikh381/REQUEST.md",
+    "results/sikh381/APPROVED_ALLOWANCE.json",
+    "results/sikh381/STRATEGY.md",
+    "results/sikh381/HANDLER_REVIEW.md",
+    "results/sikh380/RETROSPECTIVE380.md",
+    "results/sikh380/REJECT146.md",
+    "results/sikh380/appearance-c146-front-review.json",
+    "src/movie_factory/adapters/blender/nihang_forequarter381.py",
+    "tests/test_forequarter381.py",
+    "scripts/sikh381_setup.py",
+    "scripts/sikh381_plan.py",
+    ".runtime/context-hygiene/runs/sikh381-handler-tests2/stdout.log",
+    "scripts/sikh381_revise.py",
+    "results/sikh381/DONOR_RESULT149.md",
+    "results/sikh381/VOLUME_HANDLER_REVIEW.md",
+    ".runtime/factory-native/sikh381-appearance-c149-repair/donor381.json",
+    ".runtime/factory-native/sikh381-appearance-c149-repair/donor381.npz",
+    "results/sikh381/appearance-c149-repair-review.json",
+    ".runtime/context-hygiene/runs/sikh381-volume-tests/stdout.log",
+    "results/sikh381/FAIL150.md",
+    ".runtime/factory-native/sikh381-appearance-c150-repair/worker-status.json",
+    "results/sikh381/DIAGNOSIS151.md",
+    ".runtime/factory-native/sikh381-appearance-c151-repair/volume381-failure.json",
+    ".runtime/factory-native/sikh381-appearance-c151-repair/volume381-failure.npz",
+    ".runtime/context-hygiene/runs/sikh381-attachment-tests152/stdout.log",
+    "results/sikh381/FORM152.md",
+    "results/sikh381/appearance-c152-front-review.json",
+    ".runtime/context-hygiene/runs/sikh381-compact-tests153/stdout.log"
+  ],
+  "retrospective_evidence": [
+    "results/sikh381/FORM152.md",
+    "results/sikh381/appearance-c152-front-review.json",
+    "results/sikh381/DIAGNOSIS151.md",
+    "results/sikh381/REQUEST.md"
+  ],
+  "counterexample": "Rest compaction may flatten upper-leg relief or retain an attached shelf. Actual367/339 must show positive connected anatomy, not merely smaller lobes.",
+  "edit_kinds": [
+    "mounted_forequarter381",
+    "mounted_horseform374_contact"
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "run_digest": "20dc2c62f29ad6e7889946ca8d8f804b63c00eb14ef555256b31796543f5387b",
+  "verdict": "FAIL",
+  "observation": "Actual367 lower chest hangs separately in front of the upper foreleg;333 and339 retain an abrupt projecting chest shelf rather than a supported continuous neck/shoulder/upper-leg volume.",
+  "comparison": "Inspected real standing and rearing physical-form references, including near-frontal381 supplement; original faithful motion role unchanged. Static images do not qualify continuous motion.",
+  "open_defects": [
+    "Unsupported chest/foreleg-root continuity"
+  ],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh381-appearance-c156-side/snapshot.json",
+      "sha256": "e8373a7d08dab22f9a9ba466424f33d658318570043abe84404b5e1bc283f6b8"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh381-appearance-c156-side/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh381-appearance-c156-side/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh381-appearance-c156-side/frame.png",
+      "sha256": "0e8d10b88a06a674b22649836820e924b585bff2c13178b0fd7da6d168231b5f"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh381-appearance-c156-side/frames.json",
+      "sha256": "8e831eed10aeabeee6b7af470afd506d2c38b0ab993643b55ad01dd5bf71c8b2"
+    },
+    "frame_367": {
+      "path": ".runtime/factory-native/sikh381-appearance-c156-side/frame.png",
+      "sha256": "0e8d10b88a06a674b22649836820e924b585bff2c13178b0fd7da6d168231b5f"
+    },
+    "frame_333": {
+      "path": ".runtime/factory-native/sikh381-appearance-c156-side/frame-0333.png",
+      "sha256": "7464ec72cdc696a49cb58ea0dd71d3eda59d84fea613c58ee7a73746369a94fe"
+    },
+    "frame_339": {
+      "path": ".runtime/factory-native/sikh381-appearance-c156-side/frame-0339.png",
+      "sha256": "6ee8131634534c4df38f33cd4a9b399d5b193b2e2a79089a562d08521218b0ad"
+    }
+  },
+  "requirement_outcomes": {
+    "preservation": {
+      "status": "FAIL",
+      "observation": "This broad step cannot satisfy its claimed whole-unit requirement because actual form fails. No audiovisual inspection or independent failure diagnosis of an untested interface is claimed."
+    },
+    "form": {
+      "status": "FAIL",
+      "observation": "Actual367 lower chest hangs separately in front of the upper foreleg;333 and339 retain an abrupt projecting chest shelf rather than a supported continuous neck/shoulder/upper-leg volume."
+    },
+    "interfaces": {
+      "status": "FAIL",
+      "observation": "This broad step cannot satisfy its claimed whole-unit requirement because actual form fails. No audiovisual inspection or independent failure diagnosis of an untested interface is claimed."
+    },
+    "evidence": {
+      "status": "FAIL",
+      "observation": "This broad step cannot satisfy its claimed whole-unit requirement because actual form fails. No audiovisual inspection or independent failure diagnosis of an untested interface is claimed."
+    },
+    "whole_look": {
+      "status": "FAIL",
+      "observation": "This broad step cannot satisfy its claimed whole-unit requirement because actual form fails. No audiovisual inspection or independent failure diagnosis of an untested interface is claimed."
+    },
+    "director_form_motion": {
+      "status": "FAIL",
+      "observation": "This broad step cannot satisfy its claimed whole-unit requirement because actual form fails. No audiovisual inspection or independent failure diagnosis of an untested interface is claimed."
+    }
+  }
+}

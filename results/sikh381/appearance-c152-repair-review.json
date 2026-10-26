@@ -1,0 +1,56 @@
+{
+  "run_digest": "6a2a5554c18e7c8169cb7f2d2f2fc028b2b157f160e5db5aec9a8f6839ffc6ff",
+  "verdict": "PASS",
+  "observation": "Actual report confirms183sample bounded native-volume cache with original raw/shapes/actions and other geometry unchanged; target playback errors below2e-6. Temporary evaluation copy removed. This is availability/preservation only, not an anatomical verdict.",
+  "comparison": "Actual returned source/report/image availability versus admitted recipe. Artistic unit criteria and full-speed AV remain separately NOT_TESTED.",
+  "open_defects": [],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh381-appearance-c152-repair/snapshot.json",
+      "sha256": "e8373a7d08dab22f9a9ba466424f33d658318570043abe84404b5e1bc283f6b8"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh381-appearance-c152-repair/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh381-appearance-c152-repair/script-diagnostics.json",
+      "sha256": "4e1205462c9c8153ef4f4d15eba35ea263f6079e3b74341771bbb12e2f41f34c"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh381-appearance-c152-repair/scene.blend",
+      "sha256": "cfc988c8d2a1df55461201fc86dc96cdaeaa040dc7a90af8720f8d1a116587e0"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh381-appearance-c152-repair/patch-evidence.json",
+      "sha256": "832692a20dcba00abe55e7c5f577b39da8f071988d6b8447206823d1f4bf25eb"
+    }
+  },
+  "retrospective_observations": [
+    {
+      "requirement": "form",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "interfaces",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "evidence",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "whole_look",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    },
+    {
+      "requirement": "director_form_motion",
+      "status": "NOT_TESTED",
+      "observation": "Transport availability only; does not qualify this artistic/reference requirement."
+    }
+  ]
+}

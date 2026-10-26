@@ -1,0 +1,450 @@
+{
+  "input_digest": "97eb13f7c1cf29f7c48ec89b1afe0dc77d0948304b2671eaf7f4e597ec20f0a3",
+  "outcome": "complete",
+  "artifact": {
+    "reference_readiness": {
+      "decisions": {
+        "film": {
+          "decision": "reuse_existing",
+          "reason": "Inspected qualified sources address gross scoped target; limits and exclusions documented.",
+          "references": [
+            {
+              "coverage": {
+                "accepted_look": "Illustrated rich coherent forms/materials, separate from anatomical truth"
+              },
+              "evidence": [
+                {
+                  "path": ".runtime/art-direction/series01-finish248/opening08/actual-450.png",
+                  "sha256": "c874497d244bb8b896d952a8ee30536d33b79bee3d62d4cefd50c8221a37498a"
+                },
+                {
+                  "path": "results/sikh379/REFERENCE_QUALIFICATION.md",
+                  "sha256": "1d8c810772130d16219b41a374aa6b96563ae1da3b83bc524fc9c4d6eefa7c71"
+                }
+              ],
+              "excluded_authority": "Not a motion reference, identity-copy target, wardrobe pattern, lighting match or permission to modify the accepted Pashtun.",
+              "governs": "Accepted appearance-quality comparator for visible material, garment and character integration at intended framing.",
+              "id": "accepted_film",
+              "observation": "Comparable believable whole forms, supported cloth, differentiated materials and readable living-character detail; not equal pixel density across different shot sizes.",
+              "origin": "accepted_asset",
+              "provenance": "Director253 provisional production comparator; no permission to modify",
+              "rights_use": "reference_only"
+            }
+          ],
+          "reopen_when": "A required hidden view or motion/form feature is unresolved or contradicted by actual proof.",
+          "status": "sufficient"
+        },
+        "junction": {
+          "decision": "acquire",
+          "reason": "Inspected qualified sources address gross scoped target; limits and exclusions documented.",
+          "references": [
+            {
+              "coverage": {
+                "front": "Rounded paired muscles and central groove; distinct forelimbs"
+              },
+              "evidence": [
+                {
+                  "path": ".runtime/art-direction/sikh379-references/umn-front-pectorals.jpg",
+                  "sha256": "d02fe0eb122be49b7510dea2c570f4e057a1e3a0dae40161da48eca9215f5aa3"
+                },
+                {
+                  "path": "results/sikh379/REFERENCE_QUALIFICATION.md",
+                  "sha256": "1d8c810772130d16219b41a374aa6b96563ae1da3b83bc524fc9c4d6eefa7c71"
+                }
+              ],
+              "excluded_authority": "Not identity/breed, film palette/materials, choreography, or permission to incorporate source pixels",
+              "governs": "Gross physical chest/neck/proximal-limb form only",
+              "id": "pectoral_front",
+              "observation": "Paired supported pectoral masses, central groove, distinct roots into forelegs.",
+              "origin": "image_search",
+              "provenance": "UMN CVM Lab1 image10, public internal anatomy study",
+              "rights_use": "reference_only"
+            },
+            {
+              "coverage": {
+                "oblique_rear": "Supported chest underside and rounded limb roots during rear"
+              },
+              "evidence": [
+                {
+                  "path": ".runtime/art-direction/sikh379-references/cavalo-rear.jpg",
+                  "sha256": "1f99a25cd924d3d7bcc7429e13fe4d6fc1dd4937bccb015b4fa521e725fc1801"
+                },
+                {
+                  "path": "results/sikh379/REFERENCE_QUALIFICATION.md",
+                  "sha256": "1d8c810772130d16219b41a374aa6b96563ae1da3b83bc524fc9c4d6eefa7c71"
+                }
+              ],
+              "excluded_authority": "Not identity/breed, film palette/materials, choreography, or permission to incorporate source pixels",
+              "governs": "Gross physical chest/neck/proximal-limb form only",
+              "id": "pectoral_rear",
+              "observation": "Rounded shoulder and supported continuous underside while forelimbs lift; no flat bib.",
+              "origin": "image_search",
+              "provenance": "Jonathan Wilkins own photo,22Nov2007,CC BY-SA3.0; source page in acquisition.json",
+              "rights_use": "reference_only"
+            },
+            {
+              "coverage": {
+                "opposite_partial": "Opposite-facing partial lift and folded limb/chest continuity"
+              },
+              "evidence": [
+                {
+                  "path": ".runtime/art-direction/sikh379-references/friesian-rear.jpg",
+                  "sha256": "fc23837380c482e30224ba371ffc443e1a7540d34386cb20c4002fd250d789d4"
+                },
+                {
+                  "path": "results/sikh379/REFERENCE_QUALIFICATION.md",
+                  "sha256": "1d8c810772130d16219b41a374aa6b96563ae1da3b83bc524fc9c4d6eefa7c71"
+                }
+              ],
+              "excluded_authority": "Not identity/breed, film palette/materials, choreography, or permission to incorporate source pixels",
+              "governs": "Gross physical chest/neck/proximal-limb form only",
+              "id": "pectoral_opposite",
+              "observation": "Folded limb roots and continuous chest on opposite-facing/partial-lift horse.",
+              "origin": "image_search",
+              "provenance": "KaRede own photo,17Aug2016,CC BY-SA4.0; source page in acquisition.json",
+              "rights_use": "reference_only"
+            }
+          ],
+          "reopen_when": "A required hidden view or motion/form feature is unresolved or contradicted by actual proof.",
+          "status": "sufficient"
+        },
+        "motion": {
+          "decision": "reuse_existing",
+          "reason": "Inspected qualified sources address gross scoped target; limits and exclusions documented.",
+          "references": [
+            {
+              "coverage": {
+                "prep_apex_landing": "Original14..19 video and exact66/75/80 accepted motion source"
+              },
+              "evidence": [
+                {
+                  "path": ".runtime/art-direction/series01-sikh256/references/reference-b.mov",
+                  "sha256": "78d0d691e8712c02931876cf0bc405e4869de357f337f531708be7a7da4898e2"
+                },
+                {
+                  "path": "results/sikh379/REFERENCE_QUALIFICATION.md",
+                  "sha256": "1d8c810772130d16219b41a374aa6b96563ae1da3b83bc524fc9c4d6eefa7c71"
+                }
+              ],
+              "excluded_authority": "Not a new identity, wardrobe license or exemption from same-film quality.",
+              "governs": "Preserve accepted276..367 motion and linked horse anatomy; earlier rejected motion statuses are superseded only by exact Director374 acceptance.",
+              "id": "reference_rear",
+              "observation": "Coordinated gather, driving hindquarters, brief crest, accelerating reach/contact and absorption.",
+              "origin": "director",
+              "provenance": "Director-provided reference-b, protected accepted action",
+              "rights_use": "reference_only"
+            }
+          ],
+          "reopen_when": "A required hidden view or motion/form feature is unresolved or contradicted by actual proof.",
+          "status": "sufficient"
+        },
+        "preservation": {
+          "decision": "none_needed",
+          "reason": "Exact native/action/source comparison is deterministic; no additional illustrative reference required.",
+          "references": [],
+          "reopen_when": "Claim extends to physical or artistic correctness.",
+          "status": "not_needed"
+        }
+      },
+      "scope": {
+        "id": "horse-chest379",
+        "kind": "micro_appearance",
+        "needs": [
+          {
+            "coverage": [
+              "front",
+              "oblique_rear",
+              "opposite_partial"
+            ],
+            "critical": true,
+            "id": "junction",
+            "purpose": "physical_form",
+            "question": "What positive chest/neck/raised upper-leg contours replace the bib?"
+          },
+          {
+            "coverage": [
+              "prep_apex_landing"
+            ],
+            "critical": true,
+            "id": "motion",
+            "purpose": "motion_mechanics",
+            "question": "Which accepted action and pose family must remain fixed?"
+          },
+          {
+            "coverage": [
+              "accepted_look"
+            ],
+            "critical": true,
+            "id": "film",
+            "purpose": "film_style",
+            "question": "What established quality/style must this horse inhabit?"
+          },
+          {
+            "coverage": [
+              "hash_action_controls"
+            ],
+            "critical": true,
+            "id": "preservation",
+            "purpose": "technical_validation",
+            "question": "Can source invariants be checked deterministically?"
+          }
+        ],
+        "version": 1
+      },
+      "version": 1
+    },
+    "uses": {
+      "direction": {
+        "disposition": "apply",
+        "reason": "Apply source under current381 torso-only authority; historical broad costume/phase scope remains historical, original quality and failed evidence preserved. Resume the integrated isolated production package; this precursor discovers rig ownership before any new pose authoring.",
+        "implication": "Actual Basis/correctives/weights diagnosis, positive sternum/pectoral/shoulder form under fixed276..367, complete5x3 pose/view matrix and affected contact."
+      },
+      "learnings": {
+        "disposition": "apply",
+        "reason": "Apply source under current381 torso-only authority; historical broad costume/phase scope remains historical, original quality and failed evidence preserved. 331 failed whole-pose support and same-film character fidelity despite incremental offset corrections; those attempts remain closed.",
+        "implication": "Actual Basis/correctives/weights diagnosis, positive sternum/pectoral/shoulder form under fixed276..367, complete5x3 pose/view matrix and affected contact."
+      },
+      "film_language": {
+        "disposition": "apply",
+        "reason": "Apply source under current381 torso-only authority; historical broad costume/phase scope remains historical, original quality and failed evidence preserved. Accepted Pashtun quality stays fixed; a supporting actor cannot be a schematic statue.",
+        "implication": "Actual Basis/correctives/weights diagnosis, positive sternum/pectoral/shoulder form under fixed276..367, complete5x3 pose/view matrix and affected contact."
+      },
+      "director_preferences": {
+        "disposition": "apply",
+        "reason": "Apply source under current381 torso-only authority; historical broad costume/phase scope remains historical, original quality and failed evidence preserved. Predict failure through expert lenses and fix internally; setup and routine algorithms are not handovers.",
+        "implication": "Actual Basis/correctives/weights diagnosis, positive sternum/pectoral/shoulder form under fixed276..367, complete5x3 pose/view matrix and affected contact."
+      },
+      "references": {
+        "disposition": "apply",
+        "reason": "Apply source under current381 torso-only authority; historical broad costume/phase scope remains historical, original quality and failed evidence preserved. Reference14\u201319s governs faithful action phases; accepted film governs appearance; rejected poses are negative controls.",
+        "implication": "Actual Basis/correctives/weights diagnosis, positive sternum/pectoral/shoulder form under fixed276..367, complete5x3 pose/view matrix and affected contact."
+      },
+      "controls": {
+        "disposition": "apply",
+        "reason": "Apply source under current381 torso-only authority; historical broad costume/phase scope remains historical, original quality and failed evidence preserved. Fresh motion-domain packet and manual AU09\u201313,16 plus317\u2013334 reconciliation accompany this inspection.",
+        "implication": "Actual Basis/correctives/weights diagnosis, positive sternum/pectoral/shoulder form under fixed276..367, complete5x3 pose/view matrix and affected contact."
+      },
+      "constraints": {
+        "disposition": "apply",
+        "reason": "Apply source under current381 torso-only authority; historical broad costume/phase scope remains historical, original quality and failed evidence preserved. Inspect64 invalid used-armature drivers, removed object drivers and FK bypasses; no blind restoration or defect waiver.",
+        "implication": "Actual Basis/correctives/weights diagnosis, positive sternum/pectoral/shoulder form under fixed276..367, complete5x3 pose/view matrix and affected contact."
+      },
+      "cast_findings": {
+        "disposition": "apply",
+        "reason": "Apply source under current381 torso-only authority; historical broad costume/phase scope remains historical, original quality and failed evidence preserved. High topology and assigned texture already exist. Address cylindrical turban, smooth costume silhouette and unsupported saddle form before extra surface noise; preserve207 garment pose keys.",
+        "implication": "Actual Basis/correctives/weights diagnosis, positive sternum/pectoral/shoulder form under fixed276..367, complete5x3 pose/view matrix and affected contact."
+      },
+      "audit348": {
+        "disposition": "apply",
+        "reason": "Apply source under current381 torso-only authority; historical broad costume/phase scope remains historical, original quality and failed evidence preserved. Apply the reviewed causal proof before dependent clothing work.",
+        "implication": "Actual Basis/correctives/weights diagnosis, positive sternum/pectoral/shoulder form under fixed276..367, complete5x3 pose/view matrix and affected contact."
+      },
+      "reconciliation351": {
+        "disposition": "apply",
+        "reason": "Apply source under current381 torso-only authority; historical broad costume/phase scope remains historical, original quality and failed evidence preserved. Apply the reviewed causal proof before dependent clothing work.",
+        "implication": "Actual Basis/correctives/weights diagnosis, positive sternum/pectoral/shoulder form under fixed276..367, complete5x3 pose/view matrix and affected contact."
+      },
+      "strategy352": {
+        "disposition": "apply",
+        "reason": "Apply source under current381 torso-only authority; historical broad costume/phase scope remains historical, original quality and failed evidence preserved. Coordinate arm and contact constraints; isolate pose versus skinning before independent garment transfer.",
+        "implication": "Actual Basis/correctives/weights diagnosis, positive sternum/pectoral/shoulder form under fixed276..367, complete5x3 pose/view matrix and affected contact."
+      },
+      "strategy353": {
+        "disposition": "apply",
+        "reason": "Apply source under current381 torso-only authority; historical broad costume/phase scope remains historical, original quality and failed evidence preserved. Apply causal interface tests and retain scoped successes; leader and horse precede crowd.",
+        "implication": "Actual Basis/correctives/weights diagnosis, positive sternum/pectoral/shoulder form under fixed276..367, complete5x3 pose/view matrix and affected contact."
+      },
+      "lessons352": {
+        "disposition": "apply",
+        "reason": "Apply source under current381 torso-only authority; historical broad costume/phase scope remains historical, original quality and failed evidence preserved. Apply causal interface tests and retain scoped successes; leader and horse precede crowd.",
+        "implication": "Actual Basis/correctives/weights diagnosis, positive sternum/pectoral/shoulder form under fixed276..367, complete5x3 pose/view matrix and affected contact."
+      },
+      "strategy354": {
+        "disposition": "apply",
+        "reason": "Apply source under current381 torso-only authority; historical broad costume/phase scope remains historical, original quality and failed evidence preserved. Reconstruct failed whole-form appearance, preserve motion16 and original quality/reference authority.",
+        "implication": "Actual Basis/correctives/weights diagnosis, positive sternum/pectoral/shoulder form under fixed276..367, complete5x3 pose/view matrix and affected contact."
+      },
+      "retro354": {
+        "disposition": "apply",
+        "reason": "Apply source under current381 torso-only authority; historical broad costume/phase scope remains historical, original quality and failed evidence preserved. Reconstruct failed whole-form appearance, preserve motion16 and original quality/reference authority.",
+        "implication": "Actual Basis/correctives/weights diagnosis, positive sternum/pectoral/shoulder form under fixed276..367, complete5x3 pose/view matrix and affected contact."
+      },
+      "lessons353": {
+        "disposition": "apply",
+        "reason": "Apply source under current381 torso-only authority; historical broad costume/phase scope remains historical, original quality and failed evidence preserved. Reconstruct failed whole-form appearance, preserve motion16 and original quality/reference authority.",
+        "implication": "Actual Basis/correctives/weights diagnosis, positive sternum/pectoral/shoulder form under fixed276..367, complete5x3 pose/view matrix and affected contact."
+      },
+      "strategy357": {
+        "disposition": "apply",
+        "reason": "Apply source under current381 torso-only authority; historical broad costume/phase scope remains historical, original quality and failed evidence preserved. Replace invalid inherited follicle domain before density; retain354/71 sash/tack and motion16; review each cycle and cumulative fifth.",
+        "implication": "Actual Basis/correctives/weights diagnosis, positive sternum/pectoral/shoulder form under fixed276..367, complete5x3 pose/view matrix and affected contact."
+      },
+      "lessons354": {
+        "disposition": "apply",
+        "reason": "Apply source under current381 torso-only authority; historical broad costume/phase scope remains historical, original quality and failed evidence preserved. Replace invalid inherited follicle domain before density; retain354/71 sash/tack and motion16; review each cycle and cumulative fifth.",
+        "implication": "Actual Basis/correctives/weights diagnosis, positive sternum/pectoral/shoulder form under fixed276..367, complete5x3 pose/view matrix and affected contact."
+      },
+      "strategy358": {
+        "disposition": "apply",
+        "reason": "Apply source under current381 torso-only authority; historical broad costume/phase scope remains historical, original quality and failed evidence preserved. Correct actual headstall ownership and its consuming rein span; retain357 construction gains and original faithful action reference.",
+        "implication": "Actual Basis/correctives/weights diagnosis, positive sternum/pectoral/shoulder form under fixed276..367, complete5x3 pose/view matrix and affected contact."
+      },
+      "lessons357": {
+        "disposition": "apply",
+        "reason": "Apply source under current381 torso-only authority; historical broad costume/phase scope remains historical, original quality and failed evidence preserved. Correct actual headstall ownership and its consuming rein span; retain357 construction gains and original faithful action reference.",
+        "implication": "Actual Basis/correctives/weights diagnosis, positive sternum/pectoral/shoulder form under fixed276..367, complete5x3 pose/view matrix and affected contact."
+      },
+      "strategy361": {
+        "disposition": "apply",
+        "reason": "Apply source under current381 torso-only authority; historical broad costume/phase scope remains historical, original quality and failed evidence preserved. 361 authorizes ten additional each and a conservative whole-segment proof, then integrated actor/horse review. Old358 endpoint and sparse-projection methods are rejected.",
+        "implication": "Actual Basis/correctives/weights diagnosis, positive sternum/pectoral/shoulder form under fixed276..367, complete5x3 pose/view matrix and affected contact."
+      },
+      "lessons358": {
+        "disposition": "apply",
+        "reason": "Apply source under current381 torso-only authority; historical broad costume/phase scope remains historical, original quality and failed evidence preserved. Apply actual anatomical ownership, whole consumer path, final thickness/sampling review, component versus integrated proof and honest cycle accounting.",
+        "implication": "Actual Basis/correctives/weights diagnosis, positive sternum/pectoral/shoulder form under fixed276..367, complete5x3 pose/view matrix and affected contact."
+      },
+      "routing360": {
+        "disposition": "apply",
+        "reason": "Apply source under current381 torso-only authority; historical broad costume/phase scope remains historical, original quality and failed evidence preserved. Sol6.1 High is default for planning/execution/review/retros; Astra needs a separate narrow Director-approved assignment, absent here.",
+        "implication": "Actual Basis/correctives/weights diagnosis, positive sternum/pectoral/shoulder form under fixed276..367, complete5x3 pose/view matrix and affected contact."
+      },
+      "strategy362": {
+        "disposition": "apply",
+        "reason": "Apply source under current381 torso-only authority; historical broad costume/phase scope remains historical, original quality and failed evidence preserved. 362 adds ten appearance only; preserve motion25..31. Full dressed layer proof before whole leader and isolated passage.",
+        "implication": "Actual Basis/correctives/weights diagnosis, positive sternum/pectoral/shoulder form under fixed276..367, complete5x3 pose/view matrix and affected contact."
+      },
+      "lessons361": {
+        "disposition": "apply",
+        "reason": "Apply source under current381 torso-only authority; historical broad costume/phase scope remains historical, original quality and failed evidence preserved. Compile complete layer graph; actual support domain, continuity and canonical state must be proved. Component success does not qualify whole art.",
+        "implication": "Actual Basis/correctives/weights diagnosis, positive sternum/pectoral/shoulder form under fixed276..367, complete5x3 pose/view matrix and affected contact."
+      },
+      "director363": {
+        "disposition": "apply",
+        "reason": "Apply source under current381 torso-only authority; historical broad costume/phase scope remains historical, original quality and failed evidence preserved. 363 rejects362; ten additional each. Phased fast rear, readable prep, faithful slam/hoist signal, real tied-flag cloth, face eyeline/visibility, chest/right-hand repair.",
+        "implication": "Actual Basis/correctives/weights diagnosis, positive sternum/pectoral/shoulder form under fixed276..367, complete5x3 pose/view matrix and affected contact."
+      },
+      "strategy363": {
+        "disposition": "apply",
+        "reason": "Apply source under current381 torso-only authority; historical broad costume/phase scope remains historical, original quality and failed evidence preserved. Diagnose source form/hand and time consumers; prove cloth persistence on exact action; source/frame/Director AV separate.",
+        "implication": "Actual Basis/correctives/weights diagnosis, positive sternum/pectoral/shoulder form under fixed276..367, complete5x3 pose/view matrix and affected contact."
+      },
+      "audit363": {
+        "disposition": "apply",
+        "reason": "Apply source under current381 torso-only authority; historical broad costume/phase scope remains historical, original quality and failed evidence preserved. Actual front chest failure, invalid side framing and open rein-hand claw confirmed; length metrics did not pass anatomy. Compare corrective effect and actual grip before integration.",
+        "implication": "Actual Basis/correctives/weights diagnosis, positive sternum/pectoral/shoulder form under fixed276..367, complete5x3 pose/view matrix and affected contact."
+      },
+      "structural111": {
+        "disposition": "apply",
+        "reason": "Apply source under current381 torso-only authority; historical broad costume/phase scope remains historical, original quality and failed evidence preserved. Actual40 frontal/chronology failures remain open; independent lower-pectoral correction and actual tied-CLOTH/cache capability proof precede final41 rebake and art review.",
+        "implication": "Actual Basis/correctives/weights diagnosis, positive sternum/pectoral/shoulder form under fixed276..367, complete5x3 pose/view matrix and affected contact."
+      },
+      "causal363": {
+        "disposition": "apply",
+        "reason": "Apply source under current381 torso-only authority; historical broad costume/phase scope remains historical, original quality and failed evidence preserved. 363 actual integer/subframe ownership findings and preserved components constrain continuation. Full LEARNINGS source and failedcloth result manually reconciled.",
+        "implication": "Actual Basis/correctives/weights diagnosis, positive sternum/pectoral/shoulder form under fixed276..367, complete5x3 pose/view matrix and affected contact."
+      },
+      "cloth363": {
+        "disposition": "apply",
+        "reason": "Apply source under current381 torso-only authority; historical broad costume/phase scope remains historical, original quality and failed evidence preserved. Actual117 and final41 cloth failed; preserve113 chest/110 grasp/final41 timing; no guard relaxation or apparent near-pass.",
+        "implication": "Actual Basis/correctives/weights diagnosis, positive sternum/pectoral/shoulder form under fixed276..367, complete5x3 pose/view matrix and affected contact."
+      },
+      "director374": {
+        "disposition": "apply",
+        "reason": "Apply source under current381 torso-only authority; historical broad costume/phase scope remains historical, original quality and failed evidence preserved. Apply latest Director374 scope, positive coherent form, accepted motion preservation and diagnostic-before-sculpt strategy; earlier broad appearance scope remains historical.",
+        "implication": "Actual Basis/correctives/weights diagnosis, positive sternum/pectoral/shoulder form under fixed276..367, complete5x3 pose/view matrix and affected contact."
+      },
+      "strategy374": {
+        "disposition": "apply",
+        "reason": "Apply source under current381 torso-only authority; historical broad costume/phase scope remains historical, original quality and failed evidence preserved. Apply latest Director374 scope, positive coherent form, accepted motion preservation and diagnostic-before-sculpt strategy; earlier broad appearance scope remains historical.",
+        "implication": "Actual Basis/correctives/weights diagnosis, positive sternum/pectoral/shoulder form under fixed276..367, complete5x3 pose/view matrix and affected contact."
+      },
+      "carry373": {
+        "disposition": "apply",
+        "reason": "Apply source under current381 torso-only authority; historical broad costume/phase scope remains historical, original quality and failed evidence preserved. Apply latest Director374 scope, positive coherent form, accepted motion preservation and diagnostic-before-sculpt strategy; earlier broad appearance scope remains historical.",
+        "implication": "Actual Basis/correctives/weights diagnosis, positive sternum/pectoral/shoulder form under fixed276..367, complete5x3 pose/view matrix and affected contact."
+      },
+      "form_failure365": {
+        "disposition": "apply",
+        "reason": "Apply source under current381 torso-only authority; historical broad costume/phase scope remains historical, original quality and failed evidence preserved. Apply latest Director374 scope, positive coherent form, accepted motion preservation and diagnostic-before-sculpt strategy; earlier broad appearance scope remains historical.",
+        "implication": "Actual Basis/correctives/weights diagnosis, positive sternum/pectoral/shoulder form under fixed276..367, complete5x3 pose/view matrix and affected contact."
+      },
+      "director375": {
+        "disposition": "apply",
+        "reason": "Apply source under current381 torso-only authority; historical broad costume/phase scope remains historical, original quality and failed evidence preserved. Director375 approves4additional appearance cycles to fix rejected chest deformation; failing339 view first, no spending/escalation.",
+        "implication": "Actual Basis/correctives/weights diagnosis, positive sternum/pectoral/shoulder form under fixed276..367, complete5x3 pose/view matrix and affected contact."
+      },
+      "carry374": {
+        "disposition": "apply",
+        "reason": "Apply source under current381 torso-only authority; historical broad costume/phase scope remains historical, original quality and failed evidence preserved. 374rest-form assumption failed; inactive correctives do not exclude skinning, proxy guards need accepted-source calibration, early339 must fail before expensive proof.",
+        "implication": "Actual Basis/correctives/weights diagnosis, positive sternum/pectoral/shoulder form under fixed276..367, complete5x3 pose/view matrix and affected contact."
+      },
+      "director376": {
+        "disposition": "apply",
+        "reason": "Apply source under current381 torso-only authority; historical broad costume/phase scope remains historical, original quality and failed evidence preserved. Director376 approves5morecycles; no other resources or Astra authority inferred.",
+        "implication": "Actual Basis/correctives/weights diagnosis, positive sternum/pectoral/shoulder form under fixed276..367, complete5x3 pose/view matrix and affected contact."
+      },
+      "carry375": {
+        "disposition": "apply",
+        "reason": "Apply source under current381 torso-only authority; historical broad costume/phase scope remains historical, original quality and failed evidence preserved. 375actual body-only front339 still has pendant bib; simpler ownership andrest-bound smoothing failed. Preserve sourcecontrols and exactprimary; qualify posed-response before positiveform sculpt.",
+        "implication": "Actual Basis/correctives/weights diagnosis, positive sternum/pectoral/shoulder form under fixed276..367, complete5x3 pose/view matrix and affected contact."
+      },
+      "director379": {
+        "disposition": "apply",
+        "reason": "Apply source under current381 torso-only authority; historical broad costume/phase scope remains historical, original quality and failed evidence preserved. Explicit resume, ten available same-task cycles137..146; no Astra or spend.",
+        "implication": "Actual Basis/correctives/weights diagnosis, positive sternum/pectoral/shoulder form under fixed276..367, complete5x3 pose/view matrix and affected contact."
+      },
+      "reference378": {
+        "disposition": "apply",
+        "reason": "Apply source under current381 torso-only authority; historical broad costume/phase scope remains historical, original quality and failed evidence preserved. Purpose-qualified coverage decisions govern this continuation.",
+        "implication": "Actual Basis/correctives/weights diagnosis, positive sternum/pectoral/shoulder form under fixed276..367, complete5x3 pose/view matrix and affected contact."
+      },
+      "target379": {
+        "disposition": "apply",
+        "reason": "Apply source under current381 torso-only authority; historical broad costume/phase scope remains historical, original quality and failed evidence preserved. Inspected frontal/oblique/rearing target features and role exclusions.",
+        "implication": "Actual Basis/correctives/weights diagnosis, positive sternum/pectoral/shoulder form under fixed276..367, complete5x3 pose/view matrix and affected contact."
+      },
+      "director380": {
+        "disposition": "apply",
+        "reason": "Apply source under current381 torso-only authority; historical broad costume/phase scope remains historical, original quality and failed evidence preserved. 380 supersedes earlier no-Astra clauses only for exact remaining chest assignment. Same history/cap, no separate runtime calls or new spend.",
+        "implication": "Actual Basis/correctives/weights diagnosis, positive sternum/pectoral/shoulder form under fixed276..367, complete5x3 pose/view matrix and affected contact."
+      },
+      "director381": {
+        "disposition": "apply",
+        "reason": "Apply source under current381 torso-only authority; historical broad costume/phase scope remains historical, original quality and failed evidence preserved. Return to Sol6.1High; ten further corrections147..156 for proposed positive forequarter reconstruction.",
+        "implication": "Actual Basis/correctives/weights diagnosis, positive sternum/pectoral/shoulder form under fixed276..367, complete5x3 pose/view matrix and affected contact."
+      }
+    },
+    "knowledge_uses": {
+      "anatomy": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "animal_coordination": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "anticipation": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "au_contact": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "au_deformation": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "au_performance": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "au_reference": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "au_reuse": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "au_surface": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "authority": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "cache_safety": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "construction_interfaces": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "current_state": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "economics": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "look": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "motion": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "render_profile": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "representation": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "reuse_envelope": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "rights": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "secondary": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "sikh_motion": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "sikh_scope": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "stopping": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "strategy": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "versioning": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "visual_gate": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures."
+    },
+    "reconciliation": "Explicit381Sol+ten cycle grant supersedes expired380Astra. Adequate qualified physical references retained for gross form. Historical original rules and rejected evidence retained.",
+    "unresolved": []
+  }
+}

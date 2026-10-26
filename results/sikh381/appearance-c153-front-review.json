@@ -1,0 +1,40 @@
+{
+  "run_digest": "a0f2ac79e248efeb6f2af4e191014144d53288a3224c9d207592f223555daea5",
+  "verdict": "FAIL",
+  "observation": "Actual367 and339 inspected. Lower mass is reduced but the rest sculpt produces a curled/scalloped lower chest with a hard upper crease and pinched leg-root transitions. Standing also has a visibly sculpted relief plate. This fails anatomy.",
+  "comparison": "Real horse physical-form references have continuous muscle planes and supported limb origins. Smaller than152 does not compensate for new creases and surface discontinuity.",
+  "open_defects": [
+    "Curled scalloped chest edge",
+    "Hard rest-sculpt boundary/plate and pinched roots"
+  ],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh381-appearance-c153-front/snapshot.json",
+      "sha256": "e8373a7d08dab22f9a9ba466424f33d658318570043abe84404b5e1bc283f6b8"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh381-appearance-c153-front/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh381-appearance-c153-front/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh381-appearance-c153-front/frame.png",
+      "sha256": "fe4b49d17f0467e205cea9d23bc2ca76a3a957cc0271ad2997759b9784408eb7"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh381-appearance-c153-front/frames.json",
+      "sha256": "780eda1ca9c7bbe8b94c2e874d24c732cae008b322d4a67f6d994b7f4931a800"
+    },
+    "frame_367": {
+      "path": ".runtime/factory-native/sikh381-appearance-c153-front/frame.png",
+      "sha256": "fe4b49d17f0467e205cea9d23bc2ca76a3a957cc0271ad2997759b9784408eb7"
+    },
+    "frame_339": {
+      "path": ".runtime/factory-native/sikh381-appearance-c153-front/frame-0339.png",
+      "sha256": "621608dcc9f5f0cb52a3132540ac46c851432418fa0b89a54220ece533510c62"
+    }
+  }
+}

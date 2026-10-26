@@ -1,0 +1,40 @@
+{
+  "run_digest": "68d8f32bf8eea3a07b1ae1075ce9e667284530f1aeb18dcef794539abfc2f5c5",
+  "verdict": "FAIL",
+  "observation": "Actual367/339 reviewed. Standing retains mass but339 still has paired full lower pectoral lobes that hang over the front-leg roots. The unnatural arch148 is reduced, but positive attached anatomy remains unproven and visibly wrong.",
+  "comparison": "Front standing and rearing photo controls show supported chest into upper-leg roots. Native volume deformation alone retains too much low donor pectoral volume.",
+  "open_defects": [
+    "Pendant lower pectoral bulk in descent",
+    "Insufficiently supported chest-to-foreleg transition"
+  ],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh381-appearance-c152-front/snapshot.json",
+      "sha256": "e8373a7d08dab22f9a9ba466424f33d658318570043abe84404b5e1bc283f6b8"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh381-appearance-c152-front/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh381-appearance-c152-front/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh381-appearance-c152-front/frame.png",
+      "sha256": "9d60f0d9cfedfb867e8979fb580154a5389e479fe3ad09d7e050fd3e8df78416"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh381-appearance-c152-front/frames.json",
+      "sha256": "ed205863617d872ac55187c9f6614944fb30eb3527d63d9585a427a4dc5e993f"
+    },
+    "frame_367": {
+      "path": ".runtime/factory-native/sikh381-appearance-c152-front/frame.png",
+      "sha256": "9d60f0d9cfedfb867e8979fb580154a5389e479fe3ad09d7e050fd3e8df78416"
+    },
+    "frame_339": {
+      "path": ".runtime/factory-native/sikh381-appearance-c152-front/frame-0339.png",
+      "sha256": "aaad722691d1fdcfc74a7f57988de03de21d366a9f8ac5d92427f7ac41be2599"
+    }
+  }
+}

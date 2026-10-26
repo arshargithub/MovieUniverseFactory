@@ -1,0 +1,40 @@
+{
+  "run_digest": "e28849e8b0d0b5f1db118e21a99c60ea35d3ec82502df7f8d4280002204cdc92",
+  "verdict": "FAIL",
+  "observation": "Actual367 and339 inspected. Standing has an over-sculpted central upward notch;339 makes a sharply arched lower pectoral edge with two dependent outer lobes and a thin-looking lower transition. The patch still reads attached rather than organic anatomy.",
+  "comparison": "Qualified UMN/Cavalo/Friesian connected pectorals and rounded limb origins; preserved curve and rotation controls do not qualify the failed visible contour.",
+  "open_defects": [
+    "Over-arched central sternum notch",
+    "Dependent lateral pectoral masses and underarm transition"
+  ],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh381-appearance-c148-front/snapshot.json",
+      "sha256": "e8373a7d08dab22f9a9ba466424f33d658318570043abe84404b5e1bc283f6b8"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh381-appearance-c148-front/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh381-appearance-c148-front/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh381-appearance-c148-front/frame.png",
+      "sha256": "977d47161d57b110081feba1b5c3cc2450257d9eab37cefaaf030683e612ba65"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh381-appearance-c148-front/frames.json",
+      "sha256": "55887976adb446a53eecf35a16e098d05e5ec03de6da42de1deb592bd0069835"
+    },
+    "frame_367": {
+      "path": ".runtime/factory-native/sikh381-appearance-c148-front/frame.png",
+      "sha256": "977d47161d57b110081feba1b5c3cc2450257d9eab37cefaaf030683e612ba65"
+    },
+    "frame_339": {
+      "path": ".runtime/factory-native/sikh381-appearance-c148-front/frame-0339.png",
+      "sha256": "ec9e6915e6334695e9520c20d7916578b63ac7813e2832beeac41f1bd3d7f30a"
+    }
+  }
+}

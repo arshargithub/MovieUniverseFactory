@@ -1,0 +1,50 @@
+{
+  "id": "sikh381-appearance-c154-front",
+  "task": "sikh335-supporting-appearance",
+  "step": "front",
+  "cycle": 154,
+  "fingerprint": "d0fde364a437c31ced85063da95193d628808c89c1f7f702520a58e8a79a9dcd",
+  "parent": {
+    "path": ".runtime/factory-native/sikh381-appearance-c154-repair/scene.blend",
+    "sha256": "faa1ea6960a5bd129c5929c71e6132dac996819202d964cc892fdfbdd8b585d8"
+  },
+  "job_digest": "ab3fe89329f48b93dc6e900f09f0b4c57527a6d80448957d37dce497ba66941b",
+  "handler_digest": "b1dc2b87b1c135e34e6a652232426fbe4d203c3c9ca1f06218fdb3a97377efc6",
+  "status": "RETURNED",
+  "timeout_seconds": 600,
+  "artifacts": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh381-appearance-c154-front/snapshot.json",
+      "sha256": "e8373a7d08dab22f9a9ba466424f33d658318570043abe84404b5e1bc283f6b8"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh381-appearance-c154-front/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh381-appearance-c154-front/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh381-appearance-c154-front/frame.png",
+      "sha256": "7e13c6c510ba40a99619e513b567aa69807b5b6018c8ba6c095640d8c78fba11"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh381-appearance-c154-front/frames.json",
+      "sha256": "5d63bd0a47f3118e0b624e96db59705c42b61ce87aca34423aca11d089aebbdc"
+    },
+    "frame_367": {
+      "path": ".runtime/factory-native/sikh381-appearance-c154-front/frame.png",
+      "sha256": "7e13c6c510ba40a99619e513b567aa69807b5b6018c8ba6c095640d8c78fba11"
+    },
+    "frame_339": {
+      "path": ".runtime/factory-native/sikh381-appearance-c154-front/frame-0339.png",
+      "sha256": "3887756238f1e4c753ee92406862ca92793429aeeadcba42645531b16acf5846"
+    }
+  },
+  "dependencies": {},
+  "recipe": {
+    "path": "results/sikh381/appearance-c154-front-recipe.json",
+    "sha256": "4aee39b264fb02f366a9ed36fa8cec661ecf84a62f43cfabcde0162b79dcb632"
+  }
+}

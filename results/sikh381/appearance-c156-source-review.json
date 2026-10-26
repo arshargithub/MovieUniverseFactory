@@ -1,0 +1,51 @@
+{
+  "run_digest": "61462e72f3c152859228a7c1453005f521056105a9dd664e17fe3926b8cb1e21",
+  "verdict": "PASS",
+  "observation": "No-edit save returned; frame, selected object state, authored mesh hashes and object count exactly match154 parent snapshot. Read-only audit source availability only.",
+  "comparison": "Actual154 parent versus156 save snapshot; original failed anatomy is retained, no visual or AV acceptance.",
+  "open_defects": [],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh381-appearance-c156-source/snapshot.json",
+      "sha256": "e8373a7d08dab22f9a9ba466424f33d658318570043abe84404b5e1bc283f6b8"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh381-appearance-c156-source/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh381-appearance-c156-source/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh381-appearance-c156-source/scene.blend",
+      "sha256": "e687b3ac57422f11b1d3f9c4dbf4f141e1225d79c4d24a3c04891b99ea9a88a0"
+    }
+  },
+  "requirement_outcomes": {
+    "preservation": {
+      "status": "PASS",
+      "observation": "Source snapshot unchanged."
+    },
+    "form": {
+      "status": "NOT_TESTED",
+      "observation": "No-edit transport only; failing body remains unqualified."
+    },
+    "interfaces": {
+      "status": "NOT_TESTED",
+      "observation": "No-edit transport only; failing body remains unqualified."
+    },
+    "evidence": {
+      "status": "NOT_TESTED",
+      "observation": "No-edit transport only; failing body remains unqualified."
+    },
+    "whole_look": {
+      "status": "NOT_TESTED",
+      "observation": "No-edit transport only; failing body remains unqualified."
+    },
+    "director_form_motion": {
+      "status": "NOT_TESTED",
+      "observation": "No-edit transport only; failing body remains unqualified."
+    }
+  }
+}
