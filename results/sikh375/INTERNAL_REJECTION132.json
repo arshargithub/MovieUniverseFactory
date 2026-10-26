@@ -1,0 +1,58 @@
+{
+  "status": "FAIL",
+  "task": "sikh335-supporting-appearance",
+  "cycle": 132,
+  "max_corrections": 132,
+  "authority": {
+    "path": "results/sikh375/REQUEST.md",
+    "sha256": "280e525c13c9fe5f967b7bde0357db8489de307fe4ffb6d18d4df1a29b6fecbe"
+  },
+  "reason": "Actual coatless front339 still has projecting rounded pendant chest bib; opposite339 also shows excessive projecting mass. Correction is smoother than source but not anatomically coherent. Rest bind and exact primary actions do not qualify positive form.",
+  "source": {
+    "path": ".runtime/factory-native/sikh373-motion-c80-contact/scene.blend",
+    "sha256": "204eea24a877219a30c7405bba178ddcff9655c30036d0c5ab218b603fc0fb44"
+  },
+  "candidate": {
+    "path": ".runtime/factory-native/sikh375-appearance-c132-inspect/scene.blend",
+    "sha256": "6511156729bde5d766b5fc79055403a13783935516bfad715214b964951392f8"
+  },
+  "evidence": {
+    ".runtime/factory-native/sikh375-appearance-c132-worstfront/frame-0339.png": {
+      "path": ".runtime/factory-native/sikh375-appearance-c132-worstfront/frame-0339.png",
+      "sha256": "6725e1b3c3af8986b41a93680928e388b01e45ca40667378d7b3d5a2c24ebc7f"
+    },
+    ".runtime/factory-native/sikh375-appearance-c132-worst/frame-0339.png": {
+      "path": ".runtime/factory-native/sikh375-appearance-c132-worst/frame-0339.png",
+      "sha256": "7839b6f295fd99c3cecf5d9f42e495a56f3b696f0461814cea37bda56357498c"
+    },
+    ".runtime/factory-native/sikh375-appearance-c132-repair/horse-corrective375-body.json": {
+      "path": ".runtime/factory-native/sikh375-appearance-c132-repair/horse-corrective375-body.json",
+      "sha256": "df604f0dc4893bc29c6393f16d3b20268f4f0e109c896b53c6c63ba4d1871dbd"
+    },
+    "results/sikh375/REJECT130.md": {
+      "path": "results/sikh375/REJECT130.md",
+      "sha256": "66f0a91dff94641fdcb79ad00e11cc7cef0a787e6d9407494e12871d0c163ded"
+    },
+    "results/sikh375/REJECT131.md": {
+      "path": "results/sikh375/REJECT131.md",
+      "sha256": "a786040e4db9631e8421f110c4a30cf6fa2ae86b283a058de13f8f03cacb7eee"
+    }
+  },
+  "completed_cycles": {
+    "129": "Source ownership diagnosis and matched controls",
+    "130": "Torso-fixed weight test rejected",
+    "131": "Proximal sharing test rejected",
+    "132": "Rest-bound post-armature corrective rejected"
+  },
+  "source_preservation": "Raw geometry/shape/actions exact in132, accepted masters separately hash-verified.",
+  "not_run": [
+    "coat SurfaceDeform",
+    "final5x3 matrix",
+    "intended-light positive proof",
+    "all92frame contact",
+    "new fullspeed appearance clip",
+    "DirectorAV queue"
+  ],
+  "new_spend": false,
+  "model_escalation": false
+}

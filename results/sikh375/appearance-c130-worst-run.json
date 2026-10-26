@@ -1,0 +1,58 @@
+{
+  "id": "sikh375-appearance-c130-worst",
+  "task": "sikh335-supporting-appearance",
+  "step": "worst",
+  "cycle": 130,
+  "fingerprint": "77acc2a14dbdfc43bac5e48aed03dad0d5dc70ad18c145145205f41567618698",
+  "parent": {
+    "path": ".runtime/factory-native/sikh375-appearance-c130-inspect/scene.blend",
+    "sha256": "c8797f3632d3f92772b97db4603a426134eb9bbd58e2319a316f3de7e28e3af0"
+  },
+  "job_digest": "44978b6adfed6032cbb10578d07e39df4414250db827e08f09f5319166686c33",
+  "handler_digest": "e4350cb051e56f6b73f32454a8936ab87ea142f138f7712678b155bda4771bf1",
+  "status": "RETURNED",
+  "timeout_seconds": 600,
+  "artifacts": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh375-appearance-c130-worst/snapshot.json",
+      "sha256": "e8373a7d08dab22f9a9ba466424f33d658318570043abe84404b5e1bc283f6b8"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh375-appearance-c130-worst/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh375-appearance-c130-worst/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh375-appearance-c130-worst/frame.png",
+      "sha256": "21ffce3d4fced9b7bd55788c9f6d1f2ac6907f26b00c386f89e9e49e255521c1"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh375-appearance-c130-worst/frames.json",
+      "sha256": "38b701e96c43880d65619f30cfd2a4912b4640f1dc514c1240c44ebd9f9da94a"
+    },
+    "frame_339": {
+      "path": ".runtime/factory-native/sikh375-appearance-c130-worst/frame-0339.png",
+      "sha256": "e15300867405a85c6e3e8c67ba505fc88aa5626fd539152fdcfeb48ca1621b01"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh375-appearance-c130-worst/frame-0283.png",
+      "sha256": "bb05e2c7382e924ade3433fe300ba85bf6197bbbc0fdbb4c758b47b22e86a836"
+    },
+    "frame_333": {
+      "path": ".runtime/factory-native/sikh375-appearance-c130-worst/frame-0333.png",
+      "sha256": "af1512be73b010f4b97259fa515c307fe288be701c8eefe8a00d8299d46ad775"
+    },
+    "frame_367": {
+      "path": ".runtime/factory-native/sikh375-appearance-c130-worst/frame.png",
+      "sha256": "21ffce3d4fced9b7bd55788c9f6d1f2ac6907f26b00c386f89e9e49e255521c1"
+    }
+  },
+  "dependencies": {},
+  "recipe": {
+    "path": "results/sikh375/appearance-c130-worst-recipe.json",
+    "sha256": "332babb3c8012febd7434a8f3989c7f48344233f8e740713465d2320afea2c1f"
+  }
+}
