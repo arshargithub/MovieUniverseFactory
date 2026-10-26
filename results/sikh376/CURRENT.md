@@ -1,3 +1,7 @@
+#379 resume supersedes377 pause
+
+Director379: "ok resume. 10 cycles approved". Original task preserved. Up to10 available137..146, unused137 included. References qualified in results/sikh379/REFERENCE_QUALIFICATION.md; construction/current evidence in results/sikh379. Sol default; no Astra grant or new spend. Historical paused state below is preserved as history.
+
 # PAUSED by Director377 — no production dispatch
 
 378 update: reference-readiness process is implemented/calibrated, not merely

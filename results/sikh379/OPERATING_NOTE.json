@@ -1,0 +1,40 @@
+{
+  "native_jobs": 12,
+  "native_runner_process_sum_seconds": 945.0062925848179,
+  "native_images_rendered": 30,
+  "cycles_consumed": [
+    137,
+    138,
+    139,
+    140,
+    141,
+    142,
+    143
+  ],
+  "native_candidate_cycles": [
+    137,
+    138,
+    140,
+    141,
+    142,
+    143
+  ],
+  "unused_cycles": [
+    144,
+    145,
+    146
+  ],
+  "status": "AWAITING_DIRECTOR_MODEL_DECISION_INTERNAL_FAIL",
+  "work_stop": "2026-10-26T04:07:23.381157+00:00",
+  "engineering_tokens": null,
+  "engineering_cost_usd": null,
+  "new_external_paid_provider_calls": 0,
+  "builtin_image_generation_calls": 2,
+  "limits": "Process elapsed overlaps activity and UTC reservation occupancy; do not add durations. No paired monotonic reservation clock, no CPU-core/token inference. Same episode retains earlier gaps; no fabricated precise net effort. No new remote backup.",
+  "closeout_stop": "2026-10-26T04:11:13.845639+00:00",
+  "code_commit": "9570932",
+  "planning_commit": "fe8cd49",
+  "knowledge_gate": "results/sikh379/evidence-gate143.json",
+  "knowledge_gate_result": "BLOCKED_KNOWN_FAIL_NOT_RUN_UNRESOLVED_HYPOTHESIS",
+  "commit_time_gap": "Final operational export/staging/commit follows capture; no claim of exact net exchange effort or token usage."
+}
