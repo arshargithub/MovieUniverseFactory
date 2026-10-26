@@ -14,6 +14,14 @@ OBJECTS = ('horse.rig', 'HORSE hind support pivot', 'mounted leader',
 LEGACY_DRIVER_DEFECT = '054bf94aeb90448916005e7c0e8c5dbe163e7fbbea52cde230adf8c32ee0e21c'
 ANATOMY_VIEWS = {f'anatomy_{pose}_{view}' for pose in ('rest','bend','custom','linear') for view in ('front','back')}
 ANATOMY_VIEWS |= {'anatomy_custom_side','anatomy_linear_side'}
+WARHORSE_VIEWS = {'warhorse_front383','warhorse_side383','warhorse_reverse383'}
+
+
+def warhorse_module():
+    import importlib.util
+    spec=importlib.util.spec_from_file_location('mf_warhorse383',Path(__file__).with_name('warhorse383.py'))
+    module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+    return module
 
 
 def validate(recipe):
@@ -29,7 +37,7 @@ def validate(recipe):
         if type(recipe[key]) is not int or not lo <= recipe[key] <= hi:
             raise ValueError('NIHANG_RECIPE_BOUND:' + key)
     if recipe['operation']=='nihang_frames':
-        if not isinstance(recipe.get('view','production'),str) or recipe.get('view','production') not in ({'horse_form_front374','horse_form_side374','horse_form_reverse374','horse_reverse371','horse_phase367','horse_side367','flag363','flag363_reverse','production','horse_chest','horse_chest_side','horse_chest_no_corrective','horse_chest_side_no_corrective','leader_right_contact','leader_left_contact','horse_head','horse_head_reverse','leader_front','leader_reverse','leader_contact','leader_anatomy','leader_face','leader_face_left','leader_face_right','leader_face_profile','crowd_front','crowd_reverse','neutral_front','neutral_back','neutral_side'} | ANATOMY_VIEWS):
+        if not isinstance(recipe.get('view','production'),str) or recipe.get('view','production') not in ({'horse_form_front374','horse_form_side374','horse_form_reverse374','horse_reverse371','horse_phase367','horse_side367','flag363','flag363_reverse','production','horse_chest','horse_chest_side','horse_chest_no_corrective','horse_chest_side_no_corrective','leader_right_contact','leader_left_contact','horse_head','horse_head_reverse','leader_front','leader_reverse','leader_contact','leader_anatomy','leader_face','leader_face_left','leader_face_right','leader_face_profile','crowd_front','crowd_reverse','neutral_front','neutral_back','neutral_side'} | ANATOMY_VIEWS | WARHORSE_VIEWS):
             raise ValueError('NIHANG_DIAGNOSTIC_VIEW')
         frames=recipe['frames']
         if (not isinstance(frames,list) or not 1<=len(frames)<=16 or
@@ -42,6 +50,8 @@ def validate(recipe):
 def diagnostic_camera(bpy,view):
     """Temporary evidence camera only. No production-camera key edits or save."""
     from mathutils import Vector
+    if view in WARHORSE_VIEWS:
+        return warhorse_module().camera(bpy,view)
     if view in {'horse_form_front374','horse_form_side374','horse_form_reverse374'}:
         scene=bpy.context.scene;frame=scene.frame_current;scene.frame_set(283);bpy.context.view_layer.update();rig=bpy.data.objects['horse.rig'];target=rig.matrix_world@Vector((0,0,1.6));rot=rig.matrix_world.to_quaternion();scene.frame_set(frame);bpy.context.view_layer.update()
         data=bpy.data.cameras.new('374 wholehorse form diagnostic');data.type='ORTHO';data.ortho_scale=4.8
@@ -351,7 +361,7 @@ def selected_state(bpy, frame):
     # In the isolated neutral proof, production objects belong to another scene.
     # A fresh open leaves their unevaluated matrices at identity. Evaluate their
     # owning scene explicitly; never compare cached old matrices with identities.
-    if scene.name=='MF neutral garment studio':
+    if scene.name in {'MF neutral garment studio','MF383 Warhorse studio'}:
         owners=[s for s in bpy.data.scenes if s!=scene and all(n in s.objects for n in OBJECTS)]
         if len(owners)!=1:raise ValueError('NEUTRAL_SOURCE_SCENE_AMBIGUOUS')
         bpy.context.window.scene=owners[0];owners[0].frame_set(frame);bpy.context.view_layer.update()
@@ -385,6 +395,8 @@ def selected_state(bpy, frame):
             result['authored_meshes'][obj.name] = {'geometry_hash': hashlib.sha256(
                 json.dumps(geometry, sort_keys=True).encode()).hexdigest(),
                 'vertices': len(obj.data.vertices), 'faces': len(obj.data.polygons), 'materials': mats}
+    if bpy.data.objects.get('MF383 Warhorse rig'):
+        result['warhorse383'] = warhorse_module().inventory(bpy)
     return result
 
 
