@@ -11,7 +11,7 @@ TRIGGERS = {'foundational_strategy', 'unsupported_structural_assumption',
             'unresolved_diagnosis', 'contradictory_evidence', 'repeated_missed_defects'}
 SCOPE_KEYS = ('task', 'actor', 'stage', 'cycle', 'planning_step', 'planning_input_digest',
               'fingerprint', 'authority', 'direction', 'retrospective', 'candidate',
-              'source_context', 'grounding_knowledge', 'direction_revision')
+              'source_context', 'grounding_knowledge', 'direction_revision', 'reference_escalation_basis')
 
 
 def scope_digest(packet):
@@ -93,6 +93,8 @@ def resolve(value, actor, root, packet=None, used_calls=0):
             escalation, reason = None, 'assignment_call_limit_reached'
         else:
             approved(escalation, root)
+            from . import reference_readiness as rr
+            rr.escalation(root, packet)
             reason = escalation['reason']
     return {'model': ASTRA if escalation else SOL, 'effort': 'high',
             'actor': actor, 'policy_digest': pk.digest(value),
@@ -120,3 +122,5 @@ def validate_request(request, root):
         e = route['escalation'];a = e['assignment']
         require(a['task'] == request.get('task') and a['packet_digest'] == scope_digest(request), 'ESCALATION_SCOPE_MISMATCH')
         approved(e, root)
+        from . import reference_readiness as rr
+        rr.escalation(root, request)

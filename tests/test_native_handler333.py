@@ -39,6 +39,8 @@ def prepare(setup, monkeypatch, *, render_route=True, authoring=False, edit_rout
         (root / name).write_text(json.dumps(value))
         brief['source_bindings'][name] = bind(root, name)
     brief['source_bindings']['native'] = bind(root, 'parent.blend')
+    from reference_fixtures378 import attach_transport
+    attach_transport(root, brief)
     brief['offline_only'] = False
     req = request(root, ['native_inspect', 'render'] if render_route else ['native_inspect'])
     if authoring and edit_route: req['operations'].append('edit')

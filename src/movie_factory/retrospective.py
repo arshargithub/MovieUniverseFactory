@@ -89,8 +89,10 @@ def project(history):
                 # An expected negative control is retained, never counted as a
                 # failed creative iteration. Contradicted assumptions use flags.
                 if (data['role'] == 'negative_control' and
-                        not any(obs.get(f) for f in ('falsified','foundation','regressed','dependency_changed'))): continue
-                if obs.get('falsified') or obs.get('foundation') or obs.get('regressed'):
+                        not any(obs.get(f) for f in ('falsified','foundation','regressed','dependency_changed','reference_gap'))): continue
+                if obs.get('reference_gap'):
+                    hold(key, 'reference_inputs_inadequate', eid)
+                elif obs.get('falsified') or obs.get('foundation') or obs.get('regressed'):
                     hold(key, 'strategy_falsifier_or_regression', eid)
                 elif obs.get('dependency_changed'):
                     hold(key, 'targeted_revalidation', eid)
@@ -207,7 +209,7 @@ def outcome(con, state, ident, data):
         need(item.get('requirement') in reqs or str(item.get('requirement','')).startswith('__'), 'UNKNOWN_REQUIREMENT')
         need(item.get('status') in {'PASS','FAIL','UNKNOWN','NOT_TESTED'}, 'STATUS')
         need(isinstance(item.get('observation'),str) and item['observation'].strip(), 'OBSERVATION')
-        for flag in ('falsified','foundation','regressed','dependency_changed'):
+        for flag in ('falsified','foundation','regressed','dependency_changed','reference_gap'):
             need(flag not in item or type(item[flag]) is bool, 'FLAG')
     if data.get('supersedes'):
         prior = [e for e in events(con,state['task']) if e['id']==data['supersedes'] and e['kind']=='outcome']
@@ -222,7 +224,7 @@ def outcome(con, state, ident, data):
             previous = combined[key]
             if order[item['status']] > order[previous['status']]: previous['status']=item['status']
             previous['observation'] += '\n' + item['observation']
-            for flag in ('falsified','foundation','regressed','dependency_changed'):
+            for flag in ('falsified','foundation','regressed','dependency_changed','reference_gap'):
                 previous[flag] = previous.get(flag,False) or item.get(flag,False)
     append(con,state['task'],ident,'outcome',dict(data,plan=pk.digest(state.get('brief')),observations=list(combined.values())))
 
@@ -242,9 +244,13 @@ def auto_outcome(con, state, ident, observations, *, origin, evidence=None, extr
 
 
 def response(root, con, state, ident, key, data):
+    from . import reference_readiness as rr
+    rr.assessment(root, state.get('brief', {}).get('reference_readiness'), data)
     value = fresh(con,state)
     gate = value['gates'].get(key)
     need(gate and gate['status']=='OPEN', 'NO_OPEN_FINDING')
+    if gate['reason']=='reference_inputs_inadequate':
+        need(data.get('target_stage')=='GROUNDING' and data.get('reference_assessment',{}).get('diagnosis')=='reference_gap', 'REFERENCE_GAP_REQUIRES_GROUNDING')
     for field in ('cause','uncertainty','change_or_retain_rationale','preserve','test','expected','failure_response'):
         need(isinstance(data.get(field),str) and data[field].strip(), 'RESPONSE_'+field.upper())
     need(data.get('target_stage') in {'GROUNDING','DERIVING','STRATEGIZING'}, 'REPAIR_STAGE')
@@ -261,6 +267,8 @@ def admit(root, con, state, ident, key, data):
     need(gate and gate['status']=='OPEN' and reply, 'RESPONSE_REQUIRED')
     need(reply['gate_digest']==pk.digest(gate) and reply['plan']==pk.digest(state.get('brief')), 'STALE_RESPONSE')
     need(data.get('response_event')==reply['event'], 'WRONG_RESPONSE')
+    from . import reference_readiness as rr
+    rr.assessment(root, state.get('brief', {}).get('reference_readiness'), reply)
     for b in reply['evidence'].values(): rc.binding(root,b)
     checks = data.get('checks',{})
     need(set(checks)=={'causal_test','actual_method','preservation','authority'}, 'CHALLENGE_COVERAGE')
@@ -341,5 +349,9 @@ def packet(con, state):
                 responses={k:v for k,v in value['responses'].items() if gates[k]['status']!='CLOSED'},
                 proofs=value['proofs'],history_api='retrospective.events(connection, task)',
                 instruction='Inspect source-bound outcomes for each open finding; respond, challenge, then test. Admission is not effectiveness. No new authority.')
+    if state.get('brief',{}).get('reference_readiness') is not None:
+        from . import reference_readiness as rr
+        result['reference_contract']=rr.contract()
+        result['reference_readiness']=state['brief']['reference_readiness']
     need(len(json.dumps(result))<=60000,'PACKET_TOO_LARGE_RECONCILE_SCOPE')
     return result

@@ -115,6 +115,8 @@ def validate_brief(root, brief, route, mode='offline'):
     for rid, application in brief['reference_plan'].items():
         require(application.get('reference_digest') == pk.digest(references[rid]) and
                 nonempty(application.get('application')), 'PLANNING_REFERENCE_ROLE_LOST')
+    from . import reference_readiness as rr
+    rr.brief(root, brief, required=mode == 'local_native')
     ep.validate(brief)
     # Engine changes invalidate old agreements even if the input media is identical.
     return pk.digest({'brief': brief, 'controller': pk.file_hash(Path(__file__)),
@@ -191,6 +193,10 @@ def review_result(root, brief, candidate, review, fingerprint):
     intent_failures, intent_missing, gaps = ep.review_intent(brief, review, evidence)
     failures += intent_failures + ['planning:' + g for g in gaps]
     missing += intent_missing
+    from . import reference_readiness as rr
+    ref_fail, ref_missing = rr.review(brief, review, evidence)
+    failures += ref_fail
+    missing += ref_missing
     return {'failures': sorted(set(failures)), 'missing_evidence': sorted(set(missing)), 'pending_director_av': pending,
             'planning_gaps': gaps,
             'production_approved': False, 'director_approved': False}
@@ -438,6 +444,8 @@ class Controller:
                   'frozen_evidence_only': state.get('frozen_evidence_only', False),
                   'direction': state['direction'], 'authority': state['authority']}
         packet['retrospective'] = retrospective
+        from . import reference_readiness as rr
+        packet['reference_contract'] = rr.contract()
         from . import planning_pipeline as pp
         if state.get('direction'):
             packet['source_context'] = pp.source_context(self.root, state['direction'])
@@ -551,7 +559,8 @@ class Controller:
             return self._stage(state, 'DIRECTOR_DECISION')
         artifacts = state['planning_artifacts']
         if step == 'CHALLENGING':
-            target = pp.challenge(direction, result)
+            target = pp.challenge(direction, result, root=self.root,
+                                  readiness=artifacts.get('GROUNDING', {}).get('reference_readiness'))
             if target:
                 retro.auto_outcome(con,state,'challenge:'+event_id,
                     [dict(requirement='__planning__',status='FAIL',observation=str(result['issues']))],origin='planning_challenge',
@@ -565,7 +574,8 @@ class Controller:
             return self._stage(state, 'EXECUTING')
         require(result.get('outcome') == 'complete' and isinstance(result.get('artifact'), dict), 'PLANNING_ARTIFACT_REQUIRED')
         data = result['artifact']
-        if step == 'GROUNDING': pp.grounding(self.root, direction, data)
+        if step == 'GROUNDING': pp.grounding(self.root, direction, data,
+                                            reference_required=state.get('mode') == 'local_native')
         elif step == 'DERIVING': pp.derivation(self.root, direction, artifacts['GROUNDING'], data)
         elif step == 'STRATEGIZING':
             if data.get('brief', {}).get('expert_plan', {}).get('challenge', {}).get('plan_digest') == '__PARENT_COMPUTES__':
@@ -696,6 +706,8 @@ class Controller:
             state['direction'].update(intent=brief['intent'], references=brief['references'], protected=brief['protected'],
                                       beat_intents=brief['expert_plan']['beat_intents'],
                                       knowledge_task=brief['knowledge_task'], knowledge_digest=brief['knowledge_digest'])
+            if brief.get('reference_readiness') is not None:
+                state['direction']['reference_scope'] = brief['reference_readiness']['scope']
             # Explicit reviewed rebase only. Metadata/status cannot be silently
             # rewritten; source hashes must be bound in the revised brief.
             for source in state['direction']['context_sources']:

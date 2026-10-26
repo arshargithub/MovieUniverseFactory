@@ -41,7 +41,9 @@ def plan_digest(brief):
     return pk.digest({'plan': plan, 'requirements': brief['requirements'],
                       'references': brief['references'], 'intent': brief['intent'],
                       'protected': brief['protected'],
-                      **({'work_unit': brief['work_unit']} if 'work_unit' in brief else {})})
+                      **({'work_unit': brief['work_unit']} if 'work_unit' in brief else {}),
+                      **({k: brief.get(k) for k in ('reference_readiness','reference_mapping')}
+                         if 'reference_readiness' in brief else {})})
 
 
 def contract():
@@ -131,6 +133,8 @@ def validate(brief):
 
 
 def validate_execution(brief, result):
+    from . import reference_readiness as rr
+    rr.execution(brief, result)
     from . import work_units
     work_units.execution(brief, result)
     uses = result.get('requirement_uses', {})

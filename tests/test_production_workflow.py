@@ -75,6 +75,9 @@ def build(root, c, task='t', event='build'):
               'requirement_uses': ef.uses(packet['brief']),
               'reference_uses': {r['id']: {'reference_digest': pk.digest(r), 'application': 'Used full pose mapping'} for r in packet['brief']['references']},
               'candidate': {'version': event, 'artifacts': {'clip': bind(root, 'candidate.bin')}}}
+    if 'reference_readiness' in packet['brief']:
+        from reference_fixtures378 import application
+        result['reference_application']=application(packet['brief']['reference_readiness'])
     submit(c, task, result, task + '-' + event)
     return result
 

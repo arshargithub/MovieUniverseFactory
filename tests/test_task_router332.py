@@ -78,6 +78,8 @@ def native(setup, monkeypatch, plan=True):
     c = wf.Controller(root, tr.DATABASE)
     (root / 'parent.blend').write_bytes(b'SYNTHETIC NATIVE')
     b['source_bindings']['parent'] = bind(root, 'parent.blend')
+    from reference_fixtures378 import attach_transport
+    attach_transport(root,b)
     b['offline_only'] = False
     req = request(root, ['native_inspect'])
     c.route_request('request', req)
@@ -147,10 +149,15 @@ def test_native_outputs_must_enter_final_review(setup, monkeypatch):
     result = {'fingerprint': state['fingerprint'], 'requirement_uses': ef.uses(b),
         'reference_uses': {r['id']: {'reference_digest': wf.pk.digest(r), 'application': 'Synthetic'} for r in b['references']},
         'candidate': {'version': 'native-fixture', 'artifacts': artifacts}}
+    from reference_fixtures378 import application
+    result['reference_application']=application(b['reference_readiness'])
     submit(c, 't', result, 'builder')
     with pytest.raises(wf.Blocked, match='NOT_READY'): c.deliver('t', 'deliver')
     assert c.state('t')['stage'] == 'REVIEWING'
-    submit(c, 't', review(root, c, status='FAIL'), 'review')
+    value=review(root, c, status='FAIL')
+    from reference_fixtures378 import review as reference_review
+    value['reference_readiness_review']=reference_review(b['reference_readiness'])
+    submit(c, 't', value, 'review')
     assert c.state('t')['cycle'] == 1
     assert c.state('t')['stage'] == 'EXECUTING'
 

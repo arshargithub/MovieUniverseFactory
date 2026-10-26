@@ -71,7 +71,8 @@ def engine_digest():
     from . import native_admission as na
     from . import retrospective as retro
     from . import work_units
-    return pk.digest({m.__name__: pk.file_hash(Path(m.__file__)) for m in (wf, ep, rc, pk, ch, tr, na, retro, work_units)} | {'pipeline': pk.file_hash(Path(__file__))})
+    from . import reference_readiness as rr, reference_acquisition as ra
+    return pk.digest({m.__name__: pk.file_hash(Path(m.__file__)) for m in (wf, ep, rc, pk, ch, tr, na, retro, work_units, rr, ra)} | {'pipeline': pk.file_hash(Path(__file__))})
 
 
 def input_digest(state):
@@ -81,7 +82,9 @@ def input_digest(state):
 
 
 def contract(step):
+    from . import reference_readiness as rr
     return {'version': 1, 'step': step, 'goal': GOALS[step],
+        'reference_readiness': rr.contract(),
         'envelope': 'input_digest copied exactly; outcome complete (first three) or admit/revise/needs_director; artifact for complete',
         'fields': {
           'GROUNDING': ['uses: source ID -> {disposition:apply/context_only, reason, implication}',
@@ -116,7 +119,9 @@ def mapping(value, expected, requirement_ids, message):
                 and set(row['requirements']) <= requirement_ids, message + '_APPLICATION')
 
 
-def grounding(root, direction, data):
+def grounding(root, direction, data, *, reference_required=False):
+    from . import reference_readiness as rr
+    rr.grounding(root, direction, data, required=reference_required)
     src, knowledge = sources(root, direction)
     uses = data.get('uses', {})
     require(set(uses) == set(src), 'GROUNDING_SOURCE_COVERAGE')
@@ -130,6 +135,8 @@ def grounding(root, direction, data):
 
 
 def derivation(root, direction, ground, data):
+    from . import reference_readiness as rr
+    rr.derivation(ground, data)
     src, knowledge = sources(root, direction)
     reqs, beats = rows(data.get('requirements', [])), rows(data.get('beats', []))
     require(reqs and set(beats) == set(direction['beat_intents']), 'DERIVATION_BEAT_COVERAGE')
@@ -170,6 +177,8 @@ def derivation(root, direction, ground, data):
 
 
 def strategy(direction, derived, data):
+    from . import reference_readiness as rr
+    rr.strategy(derived, data)
     brief = data['brief']
     require(all(brief.get(k) == direction[k] for k in ('intent', 'references', 'protected', 'knowledge_task', 'knowledge_digest')), 'STRATEGY_AUTHORITY_CHANGED')
     p = brief['expert_plan']
@@ -195,7 +204,9 @@ def strategy(direction, derived, data):
     require(covered == reqs and nonempty(data.get('resource_scope')) and nonempty(data.get('replan_triggers')), 'STRATEGY_EXECUTION_COVERAGE')
 
 
-def challenge(direction, result):
+def challenge(direction, result, *, root=None, readiness=None):
+    from . import reference_readiness as rr
+    rr.challenge(root, readiness, result)
     checks = result.get('checks', {})
     require(set(checks) == set(FACETS), 'CHALLENGE_FACET_COVERAGE')
     sources_ = set(rows(direction['context_sources']))

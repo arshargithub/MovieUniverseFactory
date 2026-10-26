@@ -6,6 +6,7 @@ from movie_factory import planning_pipeline as pp
 def direction_fields(brief):
     binding = next(b for b in brief['source_bindings'].values() if b['path'] == brief['knowledge_task'])
     return {'knowledge_task': brief['knowledge_task'], 'knowledge_digest': brief['knowledge_digest'],
+        **({'reference_scope':brief['reference_readiness']['scope']} if 'reference_readiness' in brief else {}),
         'context_sources': [{'id': c, 'category': c, 'binding': binding, 'status': 'adopted',
             'required': True, 'statement': 'Synthetic ' + c, 'scope': 'Offline control fixture only'} for c in pp.CATEGORIES]}
 
@@ -31,10 +32,17 @@ def result(packet, brief):
                       {'id': 'build', 'depends_on': ['proof'], 'requirements': ids, 'kind': 'build', 'acceptance': 'Synthetic integrated evidence'}],
             'resource_scope': 'No calls or render; fixture only', 'replan_triggers': 'Synthetic bad supported pose'}
     else:
-        return {'input_digest': packet['planning_input_digest'], 'outcome': 'admit', 'issues': [],
+        value = {'input_digest': packet['planning_input_digest'], 'outcome': 'admit', 'issues': [],
             'checks': {f: {'status': 'PASS', 'observation': 'Synthetic facet observation', 'comparison': 'Synthetic original intent',
                            'source_ids': [next(iter(mappings))]} for f in pp.FACETS},
             'strongest_counterexample': 'Synthetic semantic result is not real film qualification'}
+        if 'reference_readiness' in brief:
+            from reference_fixtures378 import challenge
+            value['reference_challenge']=challenge(brief['reference_readiness'])
+        return value
+    if 'reference_readiness' in brief and step in {'GROUNDING','DERIVING'}:
+        data['reference_readiness']=deepcopy(brief['reference_readiness'])
+        if step=='DERIVING':data['reference_mapping']=deepcopy(brief['reference_mapping'])
     return deepcopy({'input_digest': packet['planning_input_digest'], 'outcome': 'complete', 'artifact': data})
 
 
