@@ -1,5 +1,10 @@
 # Expert-lens planning: derivation, proof and original-intent review
 
+**378 extension:** [reference readiness](REFERENCE_READINESS_378.md) requires
+expert derivation to map requirements to purpose-qualified reference needs,
+observed features and explicit authority exclusions. Test adequacy before
+choosing a method; a physical reference does not silently govern film style.
+
 Adopted and implemented locally at Director exchange328. Goal: extract more
 value from creative direction and reduce avoidable technical corrections, not
 reduce useful Director choices or lower the quality floor.

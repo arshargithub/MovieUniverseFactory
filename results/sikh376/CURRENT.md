@@ -1,5 +1,11 @@
 # PAUSED by Director377 — no production dispatch
 
+378 update: reference-readiness process is implemented/calibrated, not merely
+proposed. Read docs/knowledge/REFERENCE_READINESS_378.md and
+results/workflow378/CHEST_HYPOTHESIS.md. Production remains paused136/max137;
+no137/native work or Astra grant. Workflow engine changes require an explicit
+fresh source reconciliation on eventual resume, never automatic repinning.
+
 Read results/workflow377/REQUEST.md and PRODUCTION_PAUSE.json. User explicitlypausedhorseconstruction todiscuss reference-drivenworkflow. No nativeworkeractive; all10jobs376terminal. Original task sikh335-supporting-appearance lastcontrollerstageEXECUTING136/max137, worststepFAIL. Four376slots133..136 used;137UNEXECUTED andNOTRESERVED. Do notconsumeit, resumeconstruction orswitchmodels untilDirectorresumesandgrantsnecessarymodelauthority. LatestfivecycleapprovaldidNOTapproveAstra;377deferredthatquestion. Existingcontrollerlaststatepreserved; pauseiscurrentDirectorinstruction/record, notnewcontrollercode. No appGoalobjectexists.
 
 136bodycandidateFAIL: actual339triangularweb betweenlowerneck/foreleg,333pinch remains. ItisnotDirectorready. Read REJECT136.md, RETROSPECTIVE136.md andknowledge-gate136.json. 183half-framegeometrycache has8actualplaybackcontrolsmax0.12micrometres; exactreproductionofwrongtargetisnotsuccess. Newtask concernisfit-for-purpose positiveanatomicalreferences beforemoreconstruction/modelescalation. No finalcoat/frontside5x3/contact/movie/AVqueue runafterearlyfailure.

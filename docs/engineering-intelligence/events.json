@@ -2774,6 +2774,26 @@
         "results/workflow377/PRODUCTION_PAUSE.json",
         "results/workflow377/REFERENCE_WORKFLOW_PROPOSAL.md"
       ]
+    },
+    {
+      "event_id": "series01-exchange378-reference-diagnosis-no-escalation",
+      "event_type": "engineering_outcome",
+      "recorded_date": "2026-10-25",
+      "reported_model": "gpt-6.1-sol",
+      "reported_reasoning_effort": "high",
+      "setting_attribution": "Director360 default policy; runtime unverified",
+      "runtime_verified": false,
+      "controlled_model_comparison": false,
+      "outcome": "REFERENCE_WORKFLOW_SOFTWARE_QUALIFIED_CHEST_TARGET_PARTIAL_NO_ASTRA_GRANT",
+      "observation": "408 offline regressions pass. Reassessment distinguishes inadequate operational target and failed construction from unproven inability under an adequate target. Previous escalation rationale premature on input sufficiency. Production remains paused136/max137, no new construction or model switch.",
+      "engineering_subscription_usage": null,
+      "engineering_cost_usd": null,
+      "new_external_paid_provider_calls": 0,
+      "evidence": [
+        "results/workflow378/CALIBRATION.md",
+        "results/workflow378/CHEST_HYPOTHESIS.md",
+        "results/workflow378/PRESERVATION.json"
+      ]
     }
   ],
   "recording_mode": "manual_evidence_backfill_and_future_event_capture",

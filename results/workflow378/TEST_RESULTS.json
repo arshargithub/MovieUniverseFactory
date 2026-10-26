@@ -1,0 +1,17 @@
+{
+  "broad_suite": {
+    "passed": 408,
+    "seconds": 14.31,
+    "receipt": ".runtime/context-hygiene/runs/workflow378-broad-regression/receipt.json",
+    "receipt_sha256": "a96e078da32f48af14fb6ad0b82509fcc11f36abd88cd3d64366be1b19bf969b",
+    "stdout_sha256": "9eedb58a423b88922e400558c5e4bbd3e0c4640f49a275972a7335e08358518e"
+  },
+  "final_reference_suite": {
+    "passed": 23,
+    "seconds": 0.44,
+    "receipt": ".runtime/context-hygiene/runs/workflow378-final-contract/receipt.json",
+    "receipt_sha256": "905a336b01a3b248944c78d21e4afddc933c1833e68cccd905fe6c6932a10cf1",
+    "stdout_sha256": "cd84e8755f28ffe0b353fd61d2485cc35c9a034b682e3d2e6ba1af3a43cb3e7f"
+  },
+  "limits": "Offline synthetic/mocked controls. Counts overlap; not431 distinct tests, no artistic/native/AV qualification."
+}

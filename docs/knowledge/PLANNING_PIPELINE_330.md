@@ -1,5 +1,11 @@
 # Serial planning pipeline — adopted at exchange330
 
+**378 extension:** read [purpose-qualified reference readiness](REFERENCE_READINESS_378.md).
+New native Grounding requires explicit reference needs/adequacy decisions;
+Derivation, Strategy, Challenge, execution, review and retros retain the same
+aspect contract. A reference gap returns to Grounding. This does not resume
+paused work, reset limits or turn structural checks into artistic judgment.
+
 Director330 authorizes critique, local implementation and testing of329. This
 extends the existing controller, not a new orchestration service. The requested
 software scope is complete after the linked qualification; it is not a claim of

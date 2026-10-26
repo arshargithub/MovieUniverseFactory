@@ -1,5 +1,11 @@
 # Retrospective workflow and operating procedure
 
+**378 extension:** [purpose-qualified references](REFERENCE_READINESS_378.md)
+adds `reference_gap` as an immediate outcome trigger. Current-contract responses
+must assess retain/supplement/replace/no-reference-issue with bound evidence;
+input gaps require Grounding, while adequate-reference execution failures retain
+their targets. See the new contract for compatibility and semantic limits.
+
 Exchange350 implements the offline controller portion of the approved349
 proposal. The purpose is to make failures change the next operation, preserve
 useful results through integration and avoid repeated Director corrections.
@@ -74,7 +80,7 @@ recommendation. No existing limit is enlarged by this mechanism.
 
 - `outcome`: attempt, role, origin, observations and source bindings. Observation
   fields are requirement, status and actual observation; optional boolean flags
-  are falsified, foundation, regressed and dependency_changed. Corrections name
+  are falsified, foundation, regressed, dependency_changed and reference_gap. Corrections name
   `supersedes`; original events remain immutable.
 - `response`: key plus response containing cause, uncertainty,
   change_or_retain_rationale, preserve, test, expected, failure_response,

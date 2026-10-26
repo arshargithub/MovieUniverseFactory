@@ -1,0 +1,232 @@
+{
+  "packet_digest": "ddd8f200cd5d0d8da8252c21437933d52c6a2d0c6317195f10ecdd1228203adc",
+  "scope": "378 software/planning/frozen-evidence audit only; no production asset or AV pass",
+  "checks": [
+    {
+      "id": "reuse_envelope",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Extended existing controller/reference/budget/retro contracts, not a separate reference service.",
+      "observation": "Historical native/offline authority and accepted master scope preserved; qualified targets remain partial.",
+      "evidence": [
+        {
+          "path": "docs/knowledge/REFERENCE_READINESS_378.md",
+          "sha256": "9c286ec7d930e79197faacd464a478387eb1793e5d24a1b63319c986c4303208"
+        },
+        {
+          "path": "results/workflow378/PRESERVATION.json",
+          "sha256": "a75ec0e36361d715960ad01e81be9f5d7f617820639869eed0feca1dfe97cb82"
+        }
+      ]
+    },
+    {
+      "id": "authority",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Kept Director377 production pause and deferred Astra; only software mocks and read-only source extracts.",
+      "observation": "No137/native job or paid call; actual task136/max137 and masters unchanged.",
+      "evidence": [
+        {
+          "path": "results/workflow378/PRESERVATION.json",
+          "sha256": "a75ec0e36361d715960ad01e81be9f5d7f617820639869eed0feca1dfe97cb82"
+        },
+        {
+          "path": "results/workflow378/CALIBRATION.md",
+          "sha256": "0ce7365a1d423f1df58ea39b6508ba74f5bfe610bc16dd4ccc5470fc1828dfdf"
+        }
+      ]
+    },
+    {
+      "id": "strategy",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Wrote outcome, method, interfaces, earliest proof and limits before code.",
+      "observation": "Controller proof and regression suite passed; no unsupported live-provider qualification.",
+      "evidence": [
+        {
+          "path": "results/workflow378/STRATEGY.md",
+          "sha256": "52aa10b6f329498908b9c7b391813edc808c2b043ff4c291051b1b656e9c18c5"
+        },
+        {
+          "path": "results/workflow378/CALIBRATION.md",
+          "sha256": "0ce7365a1d423f1df58ea39b6508ba74f5bfe610bc16dd4ccc5470fc1828dfdf"
+        }
+      ]
+    },
+    {
+      "id": "visual_gate",
+      "kind": "review",
+      "status": "PASS",
+      "action_taken": "Inspected frozen333/339/342 and fresh16.15/17.1/17.6/18.05 source frames; labeled anatomy failure and partial reference coverage.",
+      "observation": "Chest remains FAIL; source coverage is PARTIAL. Software PASS is not an appearance/motion pass.",
+      "evidence": [
+        {
+          "path": "results/workflow378/CHEST_HYPOTHESIS.md",
+          "sha256": "b118b348692ea57a67f8106b3f9a1dcc5ea89e6cd1dea66e5a8c7b386cc8814f"
+        },
+        {
+          "path": "results/workflow378/REFERENCE_COVERAGE.json",
+          "sha256": "e4d6f2ef204881f1238069d159fb0f078850765d583e03cd21b7d50b7085a49b"
+        }
+      ]
+    },
+    {
+      "id": "anticipation",
+      "kind": "review",
+      "status": "PASS",
+      "action_taken": "Predicted dropped aspects, stale media, generated physical circularity, incomplete coverage, premature model escalation and cap resets.",
+      "observation": "Negative controls block malformed inputs; intentionally well-formed dishonest claim still passes structural checks.",
+      "evidence": [
+        {
+          "path": "tests/test_reference_readiness378.py",
+          "sha256": "9dc3eeca2863bbfacbc2b74a38091816ae9086d7617639c29e7a6329599e29fe"
+        },
+        {
+          "path": "results/workflow378/CALIBRATION.md",
+          "sha256": "0ce7365a1d423f1df58ea39b6508ba74f5bfe610bc16dd4ccc5470fc1828dfdf"
+        }
+      ]
+    },
+    {
+      "id": "stopping",
+      "kind": "review",
+      "status": "PASS",
+      "action_taken": "Completed the process/hypothesis scope without consuming a production slot to prove a speculative remedy.",
+      "observation": "Next discriminating target/native proof is explicit; no causal percentage or model inferiority claim.",
+      "evidence": [
+        {
+          "path": "results/workflow378/CHEST_HYPOTHESIS.md",
+          "sha256": "b118b348692ea57a67f8106b3f9a1dcc5ea89e6cd1dea66e5a8c7b386cc8814f"
+        },
+        {
+          "path": "results/workflow378/CALIBRATION.md",
+          "sha256": "0ce7365a1d423f1df58ea39b6508ba74f5bfe610bc16dd4ccc5470fc1828dfdf"
+        }
+      ]
+    },
+    {
+      "id": "versioning",
+      "kind": "technical",
+      "status": "PASS",
+      "action_taken": "Bound contracts to plan/step digests, original media and source bindings; preserved task events and failures.",
+      "observation": "Native admissions require explicit future reconciliation; no307 repinning or counter reset.",
+      "evidence": [
+        {
+          "path": "src/movie_factory/reference_readiness.py",
+          "sha256": "76f07f18852053706591fc0cc15cdc16969b556442d7e1e275d9bd2ebfbe0a3e"
+        },
+        {
+          "path": "results/workflow378/PRESERVATION.json",
+          "sha256": "a75ec0e36361d715960ad01e81be9f5d7f617820639869eed0feca1dfe97cb82"
+        }
+      ]
+    },
+    {
+      "id": "economics",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Recorded workflow activity separately from continuing production pause; no generation/render/installation.",
+      "observation": "408-test duration14.31s is not whole active effort; engineering tokens and cost unknown.",
+      "evidence": [
+        {
+          "path": "results/workflow378/CALIBRATION.md",
+          "sha256": "0ce7365a1d423f1df58ea39b6508ba74f5bfe610bc16dd4ccc5470fc1828dfdf"
+        },
+        {
+          "path": "results/workflow378/STRATEGY.md",
+          "sha256": "52aa10b6f329498908b9c7b391813edc808c2b043ff4c291051b1b656e9c18c5"
+        }
+      ]
+    },
+    {
+      "id": "retrieval",
+      "kind": "technical",
+      "status": "PASS",
+      "action_taken": "Read the fresh12-obligation pilot packet plus330/328/350/360 and new378 contract; kept mandatory enforcement independent of ranking.",
+      "observation": "Initial engineering-test-before-packet gap retained. No new global catalog/source pin or universal-memory claim.",
+      "evidence": [
+        {
+          "path": "results/workflow378/CALIBRATION.md",
+          "sha256": "0ce7365a1d423f1df58ea39b6508ba74f5bfe610bc16dd4ccc5470fc1828dfdf"
+        },
+        {
+          "path": "docs/knowledge/REFERENCE_READINESS_378.md",
+          "sha256": "9c286ec7d930e79197faacd464a478387eb1793e5d24a1b63319c986c4303208"
+        }
+      ]
+    },
+    {
+      "id": "current_state",
+      "kind": "process",
+      "status": "PASS",
+      "action_taken": "Reconciled current377/378 authority rather than historical production permission.",
+      "observation": "No resume or Astra grant;137 unexecuted and failed136 retained.",
+      "evidence": [
+        {
+          "path": "results/workflow378/PRESERVATION.json",
+          "sha256": "a75ec0e36361d715960ad01e81be9f5d7f617820639869eed0feca1dfe97cb82"
+        },
+        {
+          "path": "results/workflow378/CHEST_HYPOTHESIS.md",
+          "sha256": "b118b348692ea57a67f8106b3f9a1dcc5ea89e6cd1dea66e5a8c7b386cc8814f"
+        }
+      ]
+    },
+    {
+      "id": "au_reuse",
+      "kind": "review",
+      "status": "PASS",
+      "action_taken": "Preserved exact66/75/80 and shot-local136 cache limitations; no native/media backup inferred from text commits.",
+      "observation": "Source hashes unchanged; no off-device-protection claim.",
+      "evidence": [
+        {
+          "path": "results/workflow378/PRESERVATION.json",
+          "sha256": "a75ec0e36361d715960ad01e81be9f5d7f617820639869eed0feca1dfe97cb82"
+        },
+        {
+          "path": "results/workflow378/CALIBRATION.md",
+          "sha256": "0ce7365a1d423f1df58ea39b6508ba74f5bfe610bc16dd4ccc5470fc1828dfdf"
+        }
+      ]
+    },
+    {
+      "id": "au_review",
+      "kind": "review",
+      "status": "PASS",
+      "action_taken": "Separated input, method, execution and judgment; preserved failure history and challenged previous escalation rationale.",
+      "observation": "Moderate target-plus-method hypothesis; inability under adequate target untested.",
+      "evidence": [
+        {
+          "path": "results/workflow378/CHEST_HYPOTHESIS.md",
+          "sha256": "b118b348692ea57a67f8106b3f9a1dcc5ea89e6cd1dea66e5a8c7b386cc8814f"
+        },
+        {
+          "path": "results/workflow378/CALIBRATION.md",
+          "sha256": "0ce7365a1d423f1df58ea39b6508ba74f5bfe610bc16dd4ccc5470fc1828dfdf"
+        }
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "prediction": "A micro kind declared only in readiness may escape Astra input checks.",
+      "observation": "First dedicated regression exposed that exact detector omission.",
+      "response": "Added readiness scope-kind detection and retained real boundary test.",
+      "result": "resolved"
+    },
+    {
+      "prediction": "Well-formed reference declarations may still be semantically false.",
+      "observation": "Deliberate synthetic-media positive-coverage claim remains structurally admitted.",
+      "response": "Documented semantic limit; actual viewing/challenge and Director AV remain essential.",
+      "result": "resolved"
+    },
+    {
+      "prediction": "Process changes might silently alter production or consume137.",
+      "observation": "Preservation receipt confirms old state/hash, zero137 runs and unchanged masters.",
+      "response": "Kept production instruction-paused and explicit future migration required.",
+      "result": "not_observed"
+    }
+  ],
+  "adjacent_regressions": "408 workflow regressions plus23 final reference controls; no new native/art/AV qualification. Lightweight routing and offline compatibility preserved; old307 blocker remains.",
+  "stopping_reason": "Complete scoped software implementation/calibration and clear chest hypothesis with no causal overclaim. Chest construction remains paused and FAIL; target sufficiency and later artistic remedy not claimed."
+}

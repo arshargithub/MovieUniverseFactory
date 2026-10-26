@@ -1,0 +1,57 @@
+{
+  "status": "PARTIAL_NOT_READY_FOR_CONSTRUCTION",
+  "scope": "Frozen chest diagnosis only; no new production admission",
+  "sources": [
+    {
+      "id": "director-rear",
+      "purpose": [
+        "motion_mechanics",
+        "physical_form"
+      ],
+      "source": {
+        "path": ".runtime/art-direction/series01-sikh256/references/reference-b.mov",
+        "sha256": "78d0d691e8712c02931876cf0bc405e4869de357f337f531708be7a7da4898e2"
+      },
+      "frames": [
+        {
+          "seconds": 16.15,
+          "artifact": {
+            "path": "results/workflow378/reference-prep.png",
+            "sha256": "d4663b41f038c1ce379290b75dee4110debc1fc8d26a16cac079d68a996fb405"
+          }
+        },
+        {
+          "seconds": 17.1,
+          "artifact": {
+            "path": "results/workflow378/reference-rise.png",
+            "sha256": "42288450bff3d1714c63f2463517162449b9e4c79a87ad5f8035b084c76e8bd9"
+          }
+        },
+        {
+          "seconds": 17.6,
+          "artifact": {
+            "path": "results/workflow378/reference-apex.png",
+            "sha256": "a243904e5a305ecaa7a5bbcde32060d2839f1e631c2e01a3d54a103fde658e9d"
+          }
+        },
+        {
+          "seconds": 18.05,
+          "artifact": {
+            "path": "results/workflow378/reference-descent.png",
+            "sha256": "55bcd31be51a7bae66c276a48efe204fdc437d916166638fc593a397fdc1b2f9"
+          }
+        }
+      ],
+      "governs": "Faithful motion and visible same-side gross form; frames do not qualify timing alone",
+      "excludes": "Film palette, identity, reverse/front anatomy, embedded caption narrative",
+      "observations": "Rounded visible shoulder and proximal limb transition; opposite lower-neck junction not resolved",
+      "missing": [
+        "reverse/front chest junction",
+        "sufficient fine-form resolution in target posed region"
+      ]
+    }
+  ],
+  "required_next": "Qualify targeted actual physical views; preserve supplied motion and separate accepted film-style authority",
+  "generated_reference_policy": "Design aid only unless physical claims corroborated by non-generated evidence",
+  "hypothesis": "Operational target insufficient plus failed construction methods; inability under a qualified target NOT_TESTED"
+}

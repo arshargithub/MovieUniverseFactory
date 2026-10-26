@@ -14,6 +14,13 @@ stay in force. Source: [approved request](../../results/workflow360/REQUEST.md).
 
 ## Before requesting Astra
 
+378 adds [reference readiness](../knowledge/REFERENCE_READINESS_378.md) to
+micro-motion/appearance escalation. First distinguish an inadequate target from
+failure to achieve an adequate target. Bind qualified input coverage and the
+`reference_escalation_basis` (execution gap or unresolved after adequate
+references) in the scope-bound packet. Missing references return to Grounding;
+they do not by themselves justify a model change. This adds no Astra grant.
+
 The agent owns detection and reassessment. Read the relevant retrospective,
 identify unresolved causes and failed methods, and run a discriminating control
 where useful. Explain why a particular Astra contribution is likely to help.
