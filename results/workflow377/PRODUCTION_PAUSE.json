@@ -1,0 +1,29 @@
+{
+  "status": "PAUSED_BY_DIRECTOR",
+  "director_request": {
+    "path": "results/workflow377/REQUEST.md",
+    "sha256": "fdf0d7b43611e4bf95b5db037e3a76b7500eb2ec89cbd183e1578d9376dc8b2f"
+  },
+  "captured_transition_utc": "2026-10-26T00:34:23.320807+00:00",
+  "task": "sikh335-supporting-appearance",
+  "last_controller_stage": "EXECUTING",
+  "last_cycle": 136,
+  "max_corrections": 137,
+  "completed_current_allocation": [
+    133,
+    134,
+    135,
+    136
+  ],
+  "remaining_unexecuted": [
+    137
+  ],
+  "active_native_jobs": 0,
+  "last_candidate": "INTERNAL_FAIL",
+  "failed_evidence": "results/sikh376/REJECT136.md",
+  "masters": "results/sikh376/PROTECTED_MASTERS136.json",
+  "astra_status": "NOT_APPROVED_DEFERRED_BY377_PAUSE",
+  "no_new_spending": true,
+  "resume": "OnlyonexplicitDirectorresume; continueoriginaltask, doNOTresetcounters. Firstassessfit-for-purpose references; modelproposalnotapproved. DoNOTcallreplanthenrevise twice: nextactualfreshrevision136to137atomically.",
+  "enforcement_boundary": "Directorinstruction/current-statehold; existingcontrollerlaststatepreserved. No new genericcontrollerpausefeature orOSinterceptionimplemented. No appGoalobjectexists."
+}
