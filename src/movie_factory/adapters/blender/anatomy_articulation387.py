@@ -10,7 +10,7 @@ BONES=['DEF-breast.L','DEF-breast.R']
 FRAMES=[272,276,283,293,306,315,323,333,339,346,358,367,370]
 
 def validate(e):
-    if not isinstance(e,dict) or set(e)!={'kind','target','strength'} or e['kind']!='mounted_articulation387' or e['target']!='horse':raise ValueError('ARTICULATION387_FIELDS')
+    if not isinstance(e,dict) or set(e)!={'kind','target','strength'} or e['kind'] not in {'mounted_articulation387','mounted_articulation387_calibrated'} or e['target']!='horse':raise ValueError('ARTICULATION387_FIELDS')
     if type(e['strength']) not in (int,float) or not np.isfinite(e['strength']) or not 0<=e['strength']<=1:raise ValueError('ARTICULATION387_STRENGTH')
     return e
 
@@ -24,6 +24,15 @@ def insertion_solution(head,tail,humeral_insertion,strength):
     q=np.r_[1+dot,np.cross(a,b)];q/=np.linalg.norm(q);scale=lb/la
     if not .2<=scale<=1.25:raise ValueError('ARTICULATION387_SCALE')
     return q,float(scale),goal
+
+def calibrated_point(neutral,current,point):
+    a,b,p=map(lambda x:np.asarray(x,dtype=float),(neutral,current,point))
+    if a.shape!=(4,4) or b.shape!=(4,4) or p.shape!=(3,) or not all(np.isfinite(x).all() for x in [a,b,p]):raise ValueError('ARTICULATION387_BIND_INPUT')
+    if np.linalg.cond(a)>1e6 or np.linalg.cond(b)>1e6:raise ValueError('ARTICULATION387_BIND_SINGULAR')
+    result=b@np.linalg.solve(a,np.r_[p,1.])
+    if abs(result[3]-1)>1e-6:raise ValueError('ARTICULATION387_BIND_AFFINE')
+    return result[:3]
+
 
 def run(bpy,out,e,helpers):
     from mathutils import Quaternion,Vector
@@ -50,13 +59,19 @@ def run(bpy,out,e,helpers):
     before,mat_before=muscle.capture(bpy,horse,rig,names,helpers)
     # Gather all targets before writing any channel; new keys cannot feed back
     # into later source samples. Keep exact original293and boundary states.
-    rows=[]
+    rows=[];bind_reference={}
+    if e['kind']=='mounted_articulation387_calibrated':
+        scene.frame_set(283);bpy.context.view_layer.update()
+        for side,n in zip(['L','R'],BONES):
+            bind_reference[side]=dict(matrix=np.array(rig.pose.bones['DEF-upper_arm.'+side].matrix).tolist(),tail=list(rig.pose.bones[n].tail))
     for f,scale_old in muscle.contraction_keys(1.):
         scene.frame_set(f);bpy.context.view_layer.update();phase=1-scale_old
         for side,n in zip(['L','R'],BONES):
             pb=rig.pose.bones[n];arm=rig.pose.bones['DEF-upper_arm.'+side]
             # Local tissue handle inserts near proximal humerus, not distal hoof.
-            insertion=arm.head.lerp(arm.tail,.5)
+            if bind_reference:
+                ref=bind_reference[side];insertion=Vector(calibrated_point(ref['matrix'],np.array(arm.matrix),ref['tail']).tolist())
+            else:insertion=arm.head.lerp(arm.tail,.5)
             q,scale,goal=insertion_solution(pb.head,pb.tail,insertion,e['strength']*phase)
             current=pb.matrix.to_quaternion();local=current.inverted()@Quaternion(q.tolist())@current
             rows.append(dict(frame=f,bone=n,quaternion=list(local),scale=scale,source_head=list(pb.head),source_tail=list(pb.tail),insertion=list(insertion),goal=goal.tolist()))
@@ -92,5 +107,5 @@ def run(bpy,out,e,helpers):
     else:
         for n,mode in original_modes.items():rig.pose.bones[n].rotation_mode=mode
     scene.frame_set(saved[0],subframe=saved[1]);bpy.context.view_layer.update()
-    report=dict(strength=e['strength'],metrics=metrics,targets=rows,endpoint_audit=endpoint_audit,new_paths=paths if e['strength'] else [],old_geometry_keys_weights_bones_primary_actions_exact=True,scope='Existingsecondaryleafmuscleinsertion proof, not a primarymotion edit. Original source retained; native anatomy/contact/fullspeed remain separate and unqualified.')
+    report=dict(method=e['kind'],bind_reference=bind_reference,strength=e['strength'],metrics=metrics,targets=rows,endpoint_audit=endpoint_audit,new_paths=paths if e['strength'] else [],old_geometry_keys_weights_bones_primary_actions_exact=True,scope='Existingsecondaryleafmuscleinsertion proof, not a primarymotion edit. Original source retained; native anatomy/contact/fullspeed remain separate and unqualified.')
     (out/'articulation387.json').write_text(json.dumps(report,indent=2)+'\n');return report

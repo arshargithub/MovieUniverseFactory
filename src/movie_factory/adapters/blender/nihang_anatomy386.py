@@ -18,7 +18,7 @@ def mod(name):
 
 
 def validate(e):
-    if isinstance(e,dict) and e.get('kind')=='mounted_articulation387':return mod('anatomy_articulation387').validate(e)
+    if isinstance(e,dict) and e.get('kind') in {'mounted_articulation387','mounted_articulation387_calibrated'}:return mod('anatomy_articulation387').validate(e)
     if isinstance(e,dict) and e.get('kind')=='mounted_anatomy386_muscle_contract':return mod('anatomy_muscle386').validate(e)
     if isinstance(e,dict) and e.get('kind') in {'mounted_anatomy386_rigid_support','mounted_anatomy386_dominant_support'}:return mod('anatomy_support386').validate(e)
     if isinstance(e,dict) and e.get('kind') in {'mounted_anatomy386_bind_preserve','mounted_anatomy386_bind_core'}:return mod('anatomy_bind386').validate(e)
@@ -200,7 +200,7 @@ def export(bpy,out):
 
 
 def run(bpy,out,e):
-    if e['kind']=='mounted_articulation387':return mod('anatomy_articulation387').run(bpy,out,e,mod)
+    if e['kind'] in {'mounted_articulation387','mounted_articulation387_calibrated'}:return mod('anatomy_articulation387').run(bpy,out,e,mod)
     if e['kind']=='mounted_anatomy386_muscle_contract':return mod('anatomy_muscle386').run(bpy,out,e,mod)
     if e['kind'] in {'mounted_anatomy386_rigid_support','mounted_anatomy386_dominant_support'}:return mod('anatomy_support386').run(bpy,out,e,mod)
     if e['kind'] in {'mounted_anatomy386_bind_preserve','mounted_anatomy386_bind_core'}:return mod('anatomy_bind386').apply(bpy,out,e,mod)

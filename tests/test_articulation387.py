@@ -23,3 +23,14 @@ def test_schema_allows_only_fixed_leaf_articulation():
 def test_bad_endpoint_scale_is_not_clamped_into_apparent_safety():
     for h,t,p in [([0,0,0],[0,0,0],[0,1,0]),([0,0,0],[0,.4,0],[0,-.4,0]),([0,0,0],[0,.4,0],[0,2,0])]:
         with pytest.raises(ValueError):insertion_solution(h,t,p,1)
+
+
+def test_calibrated_handle_retains_bind_offset_instead_of_snapping_to_joint():
+    from movie_factory.adapters.blender.anatomy_articulation387 import calibrated_point
+    A=np.eye(4);A[:3,3]=[.2,-.8,1.4];P=np.array([.12,-.95,1.2])
+    assert np.allclose(calibrated_point(A,A,P),P)
+    B=A.copy();theta=.6;B[:3,:3]=[[1,0,0],[0,np.cos(theta),-np.sin(theta)],[0,np.sin(theta),np.cos(theta)]]
+    expected=B[:3,3]+B[:3,:3]@(P-A[:3,3]);assert np.allclose(calibrated_point(A,B,P),expected)
+    assert not np.allclose(expected,B[:3,3])
+    with pytest.raises(ValueError):calibrated_point(np.zeros((4,4)),B,P)
+    patch(dict(operation='nihang_patch',frame=283,width=640,height=640,samples=8,edits=[dict(kind='mounted_articulation387_calibrated',target='horse',strength=.8)]))
