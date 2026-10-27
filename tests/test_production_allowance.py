@@ -35,7 +35,7 @@ def test_extension_retains_history_and_consumes_first_new_cycle(setup):
 
 
 @pytest.mark.parametrize('change',[{'additional_corrections':True},{'additional_corrections':0},{'additional_corrections':-1},
-    {'additional_corrections':21},{'prior_cycle':0},{'prior_max_corrections':3},{'task':'other'},
+    {'additional_corrections':51},{'prior_cycle':0},{'prior_max_corrections':3},{'task':'other'},
     {'decision':'agent_recommendation'},{'director_reply':''}])
 def test_invalid_or_stale_authority_cannot_extend(setup,change):
     root,c,data=blocked(setup);data.update(change);binding=route(root,c,data)
@@ -58,6 +58,13 @@ def test_four_more_means_four_not_unlimited_or_replayable(setup):
     assert c.replan('t','GROUNDING','Fourth correction failed','limit')['stage']=='REPLAN_REQUIRED'
     with pytest.raises(wf.Blocked):pa.extend(c,'t','extension',binding,'reuse-approval')
     assert c.state('t')['cycle']==6 and c.state('t')['max_corrections']==6
+
+
+def test_director_fifty_is_one_shared_nonrenewable_grant(setup):
+    root,c,data=blocked(setup);data.update(additional_corrections=50,director_reply='Approve fifty shared corrections')
+    binding=route(root,c,data);after=pa.extend(c,'t','extension',binding,'fifty')
+    assert after['cycle']==3 and after['max_corrections']==52
+    with pytest.raises(wf.Blocked):pa.extend(c,'t','extension',binding,'fifty-again')
 
 
 def test_topup_preserves_untouched_correction_and_history(setup):

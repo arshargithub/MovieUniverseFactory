@@ -13,7 +13,7 @@ def validate(brief):
     require(unit is not None or not required, 'WORK_UNIT_REQUIRED')
     if unit is None:
         return None
-    require(isinstance(unit, dict) and unit.get('version') == 1, 'UNIT_VERSION')
+    require(isinstance(unit, dict) and unit.get('version') in {1, 2}, 'UNIT_VERSION')
     for key in ('id', 'primary_outcome', 'phase', 'task'):
         require(nonempty(unit.get(key)), 'UNIT_FIELD:' + key)
     require(isinstance(unit.get('primary_outcome'), str), 'ONE_PRIMARY_OUTCOME')
@@ -59,7 +59,46 @@ def validate(brief):
     require(isinstance(unit.get('edit_kinds'), list) and unit['edit_kinds'] and all(nonempty(x) for x in unit['edit_kinds']), 'UNIT_EDIT_KINDS')
     lo, hi = unit.get('cycle_window', [None, None])
     require(type(lo) is int and type(hi) is int and 0 <= lo <= hi, 'UNIT_CYCLE_WINDOW')
+    if unit['version'] == 2:
+        scope_contract(brief, unit)
     return unit
+
+
+def scope_contract(brief, unit):
+    """386: require a reasoned scope/experiment, without pretending to judge art."""
+    bound = list(brief['source_bindings'].values())
+    scope = unit.get('scope_decision', {})
+    require(scope.get('decision') in {'keep', 'split', 'merge'}, 'UNIT_SCOPE_DECISION')
+    for key in ('rationale', 'independent_judgment', 'coupled_context', 'worst_proof', 'integration_proof'):
+        require(nonempty(scope.get(key)), 'UNIT_SCOPE_' + key.upper())
+    parts = rows(scope.get('considered_outcomes', []))
+    require(parts, 'UNIT_SCOPE_ALTERNATIVES')
+    for part in parts.values():
+        require(part.get('disposition') in {'current', 'coupled', 'deferred'} and
+                nonempty(part.get('criterion')) and nonempty(part.get('reason')), 'UNIT_SCOPE_PART')
+    require(sum(p['disposition']=='current' for p in parts.values()) == 1, 'UNIT_ONE_CURRENT_OUTCOME')
+    require(scope.get('parent_task') == unit['task'] and
+            scope.get('allowance_binding') in bound, 'UNIT_SHARED_ALLOWANCE')
+    experiment = unit.get('causal_experiment', {})
+    for key in ('unknown', 'hypothesis', 'method_family', 'discriminator', 'success_prediction',
+                'failure_prediction', 'failure_response'):
+        require(nonempty(experiment.get(key)), 'UNIT_EXPERIMENT_' + key.upper())
+    require(isinstance(experiment.get('failed_alternatives'), list) and
+            all(nonempty(v) for v in experiment['failed_alternatives']), 'UNIT_PRIOR_METHODS')
+    proof = experiment.get('evidence', [])
+    require(proof and all(b in bound for b in proof), 'UNIT_EXPERIMENT_EVIDENCE')
+    challenge = unit.get('scope_challenge', {})
+    require(challenge.get('status') == 'PASS' and nonempty(challenge.get('observation')) and
+            nonempty(challenge.get('counterexample')) and challenge.get('evidence') and
+            all(b in bound for b in challenge['evidence']), 'UNIT_SCOPE_CHALLENGE')
+    dependencies = unit.get('dependencies')
+    require(isinstance(dependencies, list), 'UNIT_DEPENDENCIES')
+    for dep in dependencies:
+        require(nonempty(dep.get('id')) and dep.get('binding') in bound and
+                isinstance(dep.get('interfaces'), list) and dep['interfaces'] and
+                all(nonempty(x) for x in dep['interfaces']) and
+                dep.get('disposition') in {'preserve', 'revalidate'}, 'UNIT_DEPENDENCY')
+        require(nonempty(dep.get('reason')), 'UNIT_DEPENDENCY_REASON')
 
 
 def appearance_cells(unit):
@@ -68,11 +107,24 @@ def appearance_cells(unit):
     return {str(f)+':'+v for f in p['poses'] for v in p['views']}
 
 
+def component_disposition(unit, verdict):
+    """Keep per-native evidence classification, including early rejected proofs."""
+    if not unit or unit.get('version') != 2:
+        return
+    data=verdict.get('cycle_disposition', {})
+    require(data.get('category') in {'causal_control_only','art_rejected','scoped_image_proof_pass'}
+            and nonempty(data.get('observation')), 'UNIT_NATIVE_DISPOSITION386')
+    if verdict['verdict'] != 'PASS' or verdict['open_defects']:
+        require(data['category'] != 'scoped_image_proof_pass', 'UNIT_NATIVE_FAILURE_CANNOT_PASS386')
+
+
 def native(state, recipe):
     unit = validate(state['brief'])
     if not unit:
         return
     require(state['task'] == unit['task'] and unit['cycle_window'][0] <= state['cycle'] <= unit['cycle_window'][1], 'UNIT_ASSIGNMENT_EXPIRED')
+    if unit['version'] == 2:
+        require(unit['cycle_window'][1] <= state['max_corrections'], 'UNIT_PARENT_ALLOWANCE_EXCEEDED')
     require(recipe is not None and recipe['operation'] in unit['operations'], 'UNIT_UNDECLARED_OPERATION')
     if recipe['operation'] == 'nihang_patch':
         require(all(x['kind'] in unit['edit_kinds'] for x in recipe['edits']), 'UNIT_OUTSIDE_EDIT_SCOPE')
@@ -121,4 +173,23 @@ def review(brief, result, evidence):
     if mismatch['blocking']: failed.append('unit:remaining_mismatch')
     require(isinstance(data.get('outside_scope_changes'), list), 'UNIT_SCOPE_REVIEW_REQUIRED')
     if data['outside_scope_changes']: failed.append('unit:outside_scope_changes')
+    if unit['version'] == 2:
+        disposition = data.get('cycle_disposition', {})
+        require(disposition.get('category') in {'causal_control_only', 'art_rejected', 'scoped_image_proof_pass'}, 'UNIT_CYCLE_CATEGORY')
+        require(disposition.get('hypothesis_result') in {'effective', 'ineffective', 'inconclusive'} and
+                nonempty(disposition.get('observation')), 'UNIT_CYCLE_EFFECT')
+        if failed or missing:
+            require(disposition['category'] != 'scoped_image_proof_pass' and
+                    disposition['hypothesis_result'] != 'effective', 'UNIT_FAILED_CANNOT_PASS')
+        dep_checks = data.get('dependency_checks', {})
+        require(set(dep_checks) == {d['id'] for d in unit['dependencies']}, 'UNIT_DEPENDENCY_REVIEW')
+        for key, dep in dep_checks.items():
+            require(dep.get('status') in {'PASS','FAIL','NOT_RUN'} and
+                    nonempty(dep.get('observation')) and isinstance(dep.get('changed_interfaces'), list), 'UNIT_DEPENDENCY_CHECK')
+            ids = dep.get('evidence', [])
+            require(ids and set(ids) <= set(evidence), 'UNIT_DEPENDENCY_EVIDENCE')
+            if dep['changed_interfaces']:
+                require(dep.get('revalidation') in {'PASS','FAIL','NOT_RUN'}, 'UNIT_CHANGED_INTERFACE_UNJUDGED')
+                if dep['revalidation'] != 'PASS': failed.append('unit:dependency:' + key)
+            if dep['status'] != 'PASS': failed.append('unit:dependency:' + key)
     return failed, missing

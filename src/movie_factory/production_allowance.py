@@ -15,7 +15,7 @@ def extend(controller, task, admission, decision, event_id, *, grounding=None):
     approved=pk.read_json(controller.root,decision['path'])
     require(approved.get('task')==task and approved.get('decision')=='approve_additional_corrections', 'ALLOWANCE_EXPLICIT_DECISION')
     count=approved.get('additional_corrections')
-    require(type(count) is int and 1<=count<=20 and nonempty(approved.get('director_reply'))
+    require(type(count) is int and 1<=count<=50 and nonempty(approved.get('director_reply'))
             and nonempty(approved.get('question')), 'ALLOWANCE_DECISION_FIELDS')
     routed=controller.routing(admission)
     require(routed['route']=='engineering' and routed['request'].get('amendment_task')==task

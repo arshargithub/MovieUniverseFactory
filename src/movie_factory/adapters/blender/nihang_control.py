@@ -16,6 +16,7 @@ ANATOMY_VIEWS = {f'anatomy_{pose}_{view}' for pose in ('rest','bend','custom','l
 ANATOMY_VIEWS |= {'anatomy_custom_side','anatomy_linear_side'}
 WARHORSE_VIEWS = {'warhorse_front383','warhorse_side383','warhorse_reverse383'}
 WARHORSE384_VIEWS = {'warhorse_head_front384','warhorse_head_side384','warhorse_head_oblique384','warhorse_chest384'}
+ANATOMY386_VIEWS = {'anatomy_chest_front386','anatomy_chest_side386','anatomy_chest_oblique386'}
 
 
 def warhorse384_module():
@@ -45,7 +46,7 @@ def validate(recipe):
         if type(recipe[key]) is not int or not lo <= recipe[key] <= hi:
             raise ValueError('NIHANG_RECIPE_BOUND:' + key)
     if recipe['operation']=='nihang_frames':
-        if not isinstance(recipe.get('view','production'),str) or recipe.get('view','production') not in ({'horse_form_front374','horse_form_side374','horse_form_reverse374','horse_reverse371','horse_phase367','horse_side367','flag363','flag363_reverse','production','horse_chest','horse_chest_side','horse_chest_no_corrective','horse_chest_side_no_corrective','leader_right_contact','leader_left_contact','horse_head','horse_head_reverse','leader_front','leader_reverse','leader_contact','leader_anatomy','leader_face','leader_face_left','leader_face_right','leader_face_profile','crowd_front','crowd_reverse','neutral_front','neutral_back','neutral_side'} | ANATOMY_VIEWS | WARHORSE_VIEWS | WARHORSE384_VIEWS):
+        if not isinstance(recipe.get('view','production'),str) or recipe.get('view','production') not in ({'horse_form_front374','horse_form_side374','horse_form_reverse374','horse_reverse371','horse_phase367','horse_side367','flag363','flag363_reverse','production','horse_chest','horse_chest_side','horse_chest_no_corrective','horse_chest_side_no_corrective','leader_right_contact','leader_left_contact','horse_head','horse_head_reverse','leader_front','leader_reverse','leader_contact','leader_anatomy','leader_face','leader_face_left','leader_face_right','leader_face_profile','crowd_front','crowd_reverse','neutral_front','neutral_back','neutral_side'} | ANATOMY_VIEWS | WARHORSE_VIEWS | WARHORSE384_VIEWS | ANATOMY386_VIEWS):
             raise ValueError('NIHANG_DIAGNOSTIC_VIEW')
         frames=recipe['frames']
         if (not isinstance(frames,list) or not 1<=len(frames)<=16 or
@@ -58,6 +59,11 @@ def validate(recipe):
 def diagnostic_camera(bpy,view):
     """Temporary evidence camera only. No production-camera key edits or save."""
     from mathutils import Vector
+    if view in ANATOMY386_VIEWS:
+        import importlib.util
+        spec=importlib.util.spec_from_file_location('mf_anatomy386_camera',Path(__file__).with_name('nihang_anatomy386.py'))
+        module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+        return module.camera(bpy,view)
     if view in WARHORSE384_VIEWS:
         return warhorse384_module().camera(bpy,view)
     if view in WARHORSE_VIEWS:

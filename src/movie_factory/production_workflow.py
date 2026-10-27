@@ -117,6 +117,8 @@ def validate_brief(root, brief, route, mode='offline'):
                 nonempty(application.get('application')), 'PLANNING_REFERENCE_ROLE_LOST')
     from . import reference_readiness as rr
     rr.brief(root, brief, required=mode == 'local_native')
+    if mode == 'local_native' and brief.get('work_unit'):
+        require(brief['work_unit'].get('version') == 2, 'NATIVE_UNIT_SCOPE_CONTRACT386_REQUIRED')
     ep.validate(brief)
     # Engine changes invalidate old agreements even if the input media is identical.
     return pk.digest({'brief': brief, 'controller': pk.file_hash(Path(__file__)),
@@ -560,7 +562,8 @@ class Controller:
         artifacts = state['planning_artifacts']
         if step == 'CHALLENGING':
             target = pp.challenge(direction, result, root=self.root,
-                                  readiness=artifacts.get('GROUNDING', {}).get('reference_readiness'))
+                                  readiness=artifacts.get('GROUNDING', {}).get('reference_readiness'),
+                                  work_unit=artifacts['STRATEGIZING']['brief'].get('work_unit'))
             if target:
                 retro.auto_outcome(con,state,'challenge:'+event_id,
                     [dict(requirement='__planning__',status='FAIL',observation=str(result['issues']))],origin='planning_challenge',
@@ -832,7 +835,7 @@ class Controller:
 
     def retrospective(self, task, action, data, event_id):
         """Source-bound internal analysis API. No stage or correction reset."""
-        require(action in {'outcome','response','admit','evaluate','proof'}, 'RETRO_ACTION')
+        require(action in {'outcome','response','admit','evaluate','proof','supersede_scope'}, 'RETRO_ACTION')
         def apply(con):
             state = self._state(con,task)
             require(state['route']=='production','RETRO_PRODUCTION_ONLY')
@@ -847,6 +850,7 @@ class Controller:
                 require(not con.execute('SELECT 1 FROM heavy_job WHERE task=?',(task,)).fetchone(),'JOB_STILL_ACTIVE')
                 retro.admit(self.root,con,state,event_id,data['key'],data['challenge'])
             elif action=='evaluate': retro.evaluate(self.root,con,state,event_id,data['key'],data['evaluation'])
+            elif action=='supersede_scope': retro.supersede_scope(self.root,con,state,event_id,data)
             else: retro.proof(self.root,con,state,event_id,data)
             if state['stage'] in STAGES:
                 self._stage(state,state['stage'])

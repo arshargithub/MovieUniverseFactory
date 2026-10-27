@@ -96,6 +96,7 @@ def contract(step):
                           'steps:[{id,depends_on,requirements,kind:proof/build,acceptance}]', 'resource_scope', 'replan_triggers'],
           'CHALLENGING': ['checks: all nine facets -> {status:PASS/FAIL/NOT_RUN, observation, comparison, source_ids}',
                          'strongest_counterexample', 'issues:[{id,target:GROUNDING/DERIVING/STRATEGIZING,reason,counterexample,repair}]',
+                         'version2 unit: unit_scope_challenge {unit_digest,counterexample,checks:{independent_outcome,coupled_context,positive_target,causal_test,interfaces}->{status,observation,evidence:[bindings]}}',
                          'needs_director only: decision {category,reason,options:[{option,consequence}],recommendation}']
         }[step], 'categories': list(CATEGORIES), 'facets': list(FACETS),
         'authority': 'No new spend, media mutation or artistic acceptance; technical choices stay agent-owned.'}
@@ -204,9 +205,22 @@ def strategy(direction, derived, data):
     require(covered == reqs and nonempty(data.get('resource_scope')) and nonempty(data.get('replan_triggers')), 'STRATEGY_EXECUTION_COVERAGE')
 
 
-def challenge(direction, result, *, root=None, readiness=None):
+def challenge(direction, result, *, root=None, readiness=None, work_unit=None):
     from . import reference_readiness as rr
     rr.challenge(root, readiness, result)
+    if work_unit and work_unit.get('version') == 2:
+        scoped=result.get('unit_scope_challenge', {})
+        require(scoped.get('unit_digest') == pk.digest(work_unit), 'CHALLENGE_UNIT_SCOPE_CHANGED386')
+        require(nonempty(scoped.get('counterexample')), 'CHALLENGE_UNIT_COUNTEREXAMPLE386')
+        checks_=scoped.get('checks', {})
+        require(set(checks_) == {'independent_outcome','coupled_context','positive_target','causal_test','interfaces'}, 'CHALLENGE_UNIT_COVERAGE386')
+        for check in checks_.values():
+            require(check.get('status') in {'PASS','FAIL','NOT_RUN'} and nonempty(check.get('observation'))
+                    and check.get('evidence'), 'CHALLENGE_UNIT_OBSERVATION386')
+            if root is not None:
+                for b in check['evidence']: rc.binding(root,b)
+        if result.get('outcome')=='admit':
+            require(all(x['status']=='PASS' for x in checks_.values()), 'CHALLENGE_UNIT_NOT_ADMITTED386')
     checks = result.get('checks', {})
     require(set(checks) == set(FACETS), 'CHALLENGE_FACET_COVERAGE')
     sources_ = set(rows(direction['context_sources']))

@@ -21,7 +21,10 @@ Return the complete brief, not only strategy prose. A named lens is not its
 application. If a requirement cannot be supported, report the gap, do not fill
 fields with assurances. For unit_required references, retain one work_unit with
 positive reference criteria, allowed/frozen domains, phase boundaries and rejected
-calibration controls. Protect accepted behavior, not rejected source poses.
+calibration controls. New local-native units use version2: scope_decision,
+causal_experiment, scope_challenge and version-bound dependencies. Scope is a
+judgeable outcome, not a mesh/parameter box. Split independent failures and retain
+necessary coupled context. Protect accepted behavior, not rejected source poses.
 No stage tools or production changes are authorized.'''
 
 REVIEWER_INSTRUCTION = '''Review original intent and reference roles as well as the

@@ -57,7 +57,8 @@ def append(con, task, ident, kind, data):
 def project(history):
     """Pure replay. Stable requirement keys defeat issue-label-only resets."""
     state = dict(version=None, engine=None, gates={}, warnings={}, streaks={},
-                 requirements={}, outcomes=[], proofs={}, responses={}, proof_uses=[], proof_bindings={}, sequence=len(history))
+                 requirements={}, outcomes=[], proofs={}, responses={}, proof_uses=[], proof_bindings={},
+                 interventions={}, sequence=len(history))
     superseded = {e['data']['supersedes'] for e in history if e['kind']=='outcome' and e['data'].get('supersedes')}
 
     def hold(key, reason, event):
@@ -120,16 +121,32 @@ def project(history):
                 hold(key,'corrected_history_invalidates_admission',eid)
                 continue
             state['gates'][key].update(status='TESTING',plan=data['plan'],admitted_event=eid)
+            state['interventions'][eid] = dict(key=key, plan=data['plan'],
+                response_event=data['challenge']['response_event'],
+                effect_required=data.get('effect_required', False))
             state['streaks'].pop(key,None)
             state['warnings'].pop(key,None)
         elif kind == 'evaluate':
             key = data['key']
+            admission=data.get('admission_event') or state['gates'].get(key,{}).get('admitted_event')
+            if admission in state['interventions']:
+                state['interventions'][admission].update(result=data['result'],
+                    outcome_event=data['outcome_event'], evaluation=eid)
+            # A disposition of a failed/older trial must not close a newer gate.
+            if admission != state['gates'].get(key,{}).get('admitted_event'): continue
             if state['gates'].get(key,{}).get('status') != 'TESTING': continue
             if data['result'] == 'effective':
                 state['gates'][key].update(status='CLOSED', evaluation=eid)
             else: hold(key, 'intervention_' + data['result'], eid)
         elif kind == 'proof':
             state['proofs'][data['id']] = data
+        elif kind == 'scope_superseded':
+            state['gates'][data['key']]=dict(status='SUPERSEDED_SCOPE',reason=data['reason'],
+                event=eid,decision=data['decision'],triggers=state['gates'][data['key']]['triggers'])
+            state['responses'].pop(data['key'],None)
+            for trial in state['interventions'].values():
+                if trial['key']==data['key'] and 'result' not in trial:
+                    trial.update(result='superseded_scope',decision=data['decision'])
         elif kind == 'dependency':
             hold(data['key'], 'targeted_revalidation', eid)
         elif kind == 'closure':
@@ -258,6 +275,15 @@ def response(root, con, state, ident, key, data):
     need(data.get('gate_digest') == pk.digest(gate), 'STALE_FINDING')
     need(data.get('evidence'), 'EVIDENCE_REQUIRED')
     for b in data['evidence'].values(): rc.binding(root,b)
+    if state.get('brief',{}).get('work_unit',{}).get('version') == 2:
+        scope=data.get('scope_assessment',{})
+        need(scope.get('decision') in {'keep','split','merge','abandon'} and
+             scope.get('unit_digest')==pk.digest(state['brief']['work_unit']) and
+             isinstance(scope.get('reason'),str) and scope['reason'].strip(), 'SCOPE_REASSESSMENT386')
+        diagnosis=data.get('causal_assessment',{})
+        need(diagnosis.get('category') in {'reference','positive_target','representation','execution','integration','evidence','judgment','administrative'} and
+             all(isinstance(diagnosis.get(k),str) and diagnosis[k].strip()
+                 for k in ('method_family','changed_prediction','previous_result')), 'CAUSAL_REASSESSMENT386')
     append(con,state['task'],ident,'response',dict(key=key,**data))
 
 
@@ -266,6 +292,8 @@ def admit(root, con, state, ident, key, data):
     gate, reply = value['gates'].get(key), value['responses'].get(key)
     need(gate and gate['status']=='OPEN' and reply, 'RESPONSE_REQUIRED')
     need(reply['gate_digest']==pk.digest(gate) and reply['plan']==pk.digest(state.get('brief')), 'STALE_RESPONSE')
+    need(not any(x['key']==key and x['effect_required'] and 'result' not in x
+                 for x in value['interventions'].values()), 'PRIOR_INTERVENTION_UNEVALUATED386')
     need(data.get('response_event')==reply['event'], 'WRONG_RESPONSE')
     from . import reference_readiness as rr
     rr.assessment(root, state.get('brief', {}).get('reference_readiness'), reply)
@@ -276,28 +304,37 @@ def admit(root, con, state, ident, key, data):
         need(check.get('status')=='PASS' and bool(check.get('observation')), 'CHALLENGE_FAILED')
     need(bool(data.get('counterexample')) and data.get('evidence'), 'CHALLENGE_EVIDENCE')
     for b in data['evidence'].values(): rc.binding(root,b)
-    append(con,state['task'],ident,'admit',dict(key=key,plan=reply['plan'],gate_digest=pk.digest(gate),challenge=data))
+    append(con,state['task'],ident,'admit',dict(key=key,plan=reply['plan'],gate_digest=pk.digest(gate),challenge=data,
+        effect_required=state.get('brief',{}).get('work_unit',{}).get('version')==2))
 
 
 def evaluate(root, con, state, ident, key, data):
     value = fresh(con,state)
     validate_evidence(root,con,state)
     gate = value['gates'].get(key)
-    need(gate and gate['status']=='TESTING', 'TEST_NOT_ADMITTED')
+    admission=data.get('admission_event') or (gate or {}).get('admitted_event')
+    trial=value['interventions'].get(admission)
+    need(gate and trial and trial['key']==key and 'result' not in trial, 'TEST_NOT_ADMITTED')
     need(data.get('result') in {'effective','ineffective','inconclusive'}, 'EFFECT_RESULT')
     need(data.get('observation') and data.get('evidence'), 'EFFECT_EVIDENCE')
     for b in data['evidence'].values(): rc.binding(root,b)
     history = events(con,state['task'])
-    since = next(i for i,e in enumerate(history) if e['id']==gate['admitted_event'])
+    since = next(i for i,e in enumerate(history) if e['id']==admission)
     later = [e for e in history[since+1:] if e['kind']=='outcome']
     need(data.get('outcome_event') in {e['id'] for e in later}, 'NO_POST_TEST_OUTCOME')
     observed = next(e['data'] for e in later if e['id']==data['outcome_event'])
+    need(observed['plan']==trial['plan'], 'WRONG_EFFECT_SCOPE')
+    need(not any(e['data'].get('supersedes')==data['outcome_event'] for e in history), 'OUTCOME_SUPERSEDED')
+    matching=[o for o in observed['observations'] if o['requirement']==key]
+    need(matching, 'NO_MATCHING_OUTCOME')
     if data['result']=='effective':
-        need(not any(e['data'].get('supersedes')==data['outcome_event'] for e in history), 'OUTCOME_SUPERSEDED')
-        need(observed['role'] in {'production','diagnostic'} and observed['plan']==gate['plan'], 'WRONG_EFFECT_SCOPE')
+        need(gate['status']=='TESTING' and gate.get('admitted_event')==admission, 'EFFECTIVE_REQUIRES_CURRENT_TEST')
+        need(observed['role'] in {'production','diagnostic'}, 'WRONG_EFFECT_SCOPE')
         for b in observed.get('evidence',{}).values(): rc.binding(root,b)
         need(any(o['requirement']==key and o['status']=='PASS' for o in observed['observations']), 'NO_MATCHING_PASS')
-    append(con,state['task'],ident,'evaluate',dict(key=key,**data))
+    elif data['result']=='ineffective':
+        need(any(o['status']=='FAIL' for o in matching), 'NO_MATCHING_FAILURE')
+    append(con,state['task'],ident,'evaluate',{**data,'key':key,'admission_event':admission})
 
 
 def proof(root, con, state, ident, data):
@@ -313,6 +350,18 @@ def proof(root, con, state, ident, data):
     append(con,state['task'],ident,'proof',data)
 
 
+def supersede_scope(root, con, state, ident, data):
+    """Trusted Director scope reconciliation; never a PASS or history deletion."""
+    current=fresh(con,state);key=data.get('key')
+    need(key in current['gates'] and key not in current['requirements'], 'CURRENT_REQUIREMENT_CANNOT_RETIRE386')
+    rc.binding(root,data['decision']);approved=pk.read_json(root,data['decision']['path'])
+    need(approved.get('decision')=='supersede_requirement_scope' and approved.get('task')==state['task']
+         and key in approved.get('keys',[]) and approved.get('director_reply') and approved.get('reason'), 'SCOPE_AUTHORITY386')
+    rc.binding(root,approved['director_source'])
+    need(data.get('reason')==approved['reason'], 'SCOPE_REASON386')
+    append(con,state['task'],ident,'scope_superseded',data)
+
+
 def check_proofs(root, con, state):
     from .resource_manifest import validate
     value = fresh(con,state)
@@ -324,7 +373,7 @@ def check_proofs(root, con, state):
         need(found, 'UNKNOWN_PROOF')
         need(value['proof_bindings'].get(owner+':'+use['id'])==pk.digest(found), 'PROOF_VERSION_CHANGED')
         need(other['version']==VERSION and other['engine']==engine(), 'DEPENDENT_POLICY_RECONCILE')
-        need(not any(other['gates'].get(r,{}).get('status') in {'OPEN','TESTING'}
+        need(not any(other['gates'].get(r,{}).get('status') in {'OPEN','TESTING','SUPERSEDED_SCOPE'}
                      for r in found['requirements']+['__requirements__','__migration__','__dependencies__']), 'DEPENDENT_PROOF_HELD')
         rc.binding(root,found['manifest'])
         result = validate(root,pk.read_json(root,found['manifest']['path']),use['conditions'])
@@ -348,7 +397,9 @@ def packet(con, state):
     result=dict(policy=VERSION,sequence=value['sequence'],gates=gates,warnings=value['warnings'],
                 responses={k:v for k,v in value['responses'].items() if gates[k]['status']!='CLOSED'},
                 proofs=value['proofs'],history_api='retrospective.events(connection, task)',
-                instruction='Inspect source-bound outcomes for each open finding; respond, challenge, then test. Admission is not effectiveness. No new authority.')
+                instruction='Inspect source-bound outcomes for each open finding; respond, challenge, then test. Admission is not effectiveness. For version2 units include scope_assessment and causal_assessment; evaluate each pending_effects386 trial before admitting a replacement. Failed trials may be evaluated by explicit admission_event after the gate reopens. No new authority.')
+    result['pending_effects386']={k:v for k,v in value['interventions'].items()
+                                 if v['effect_required'] and 'result' not in v}
     if state.get('brief',{}).get('reference_readiness') is not None:
         from . import reference_readiness as rr
         result['reference_contract']=rr.contract()

@@ -276,6 +276,8 @@ class Bridge:
         for key in ('observation', 'comparison'):
             require(nonempty(verdict.get(key)), 'NATIVE_REVIEW_OBSERVATION_REQUIRED')
         require(isinstance(verdict.get('open_defects'), list), 'NATIVE_DEFECTS_REQUIRED')
+        from . import work_units
+        work_units.component_disposition(state['brief'].get('work_unit'), verdict)
         require(verdict['run_digest'] == pk.digest(run), 'STEP_REVIEW_STALE')
         bindings(self.c.root, run['artifacts'])
         bindings(self.c.root, verdict['evidence'])
