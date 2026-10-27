@@ -1,0 +1,39 @@
+{
+  "run_digest": "0903df43f401a80fe54efefd51372b1424c6a9281300b1ac3298634b39ab2fc0",
+  "verdict": "PASS",
+  "observation": "Frontal source shows silver forehead/nasal plate with protruding lower nose edge, eye cutouts and silver V breastplate; negative material control, not accepted anatomy.",
+  "comparison": "Actual640px returned image inspected against383 source: correct revealing control, unchanged geometry at283. PASS is availability/preservation only; visible armor expected and not artistic qualification.",
+  "open_defects": [],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh384-appearance-c168-before_front/snapshot.json",
+      "sha256": "0020273afac93030b505e9eab76bdb681e8d9a88972a03dc9519661a8ae2ea7a"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh384-appearance-c168-before_front/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh384-appearance-c168-before_front/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh384-appearance-c168-before_front/frame.png",
+      "sha256": "267b4a5cd2cc5bbb2451c252f6396eca3a3aae716ec843c83f3eb91c885fcc34"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh384-appearance-c168-before_front/frames.json",
+      "sha256": "980867e1825f5ae750cfa8d4a7f878965d55293abf71ab35eb6c2c86f686739b"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh384-appearance-c168-before_front/frame.png",
+      "sha256": "267b4a5cd2cc5bbb2451c252f6396eca3a3aae716ec843c83f3eb91c885fcc34"
+    }
+  },
+  "requirement_outcomes": {
+    "preservation": {
+      "status": "PASS",
+      "observation": "Source control is unchanged and available; deliberate failed material not carried as a positive look reference."
+    }
+  }
+}

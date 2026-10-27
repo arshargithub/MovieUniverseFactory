@@ -1,0 +1,520 @@
+{
+  "parent": ".runtime/factory-native/sikh383-appearance-c166-import/scene.blend",
+  "brief_path": "results/sikh384/revised175-brief.json",
+  "method": "Complete head envelope and aligned cervical sections; shared-vertex zipper skin bridge joins reused native head/bridle to heavier body. Exact original body coordinates/weights, UV/shading and rig actions retained.",
+  "cause": "174 ownership-only selection omitted facial skin and left open attachment.175 tests actual anatomically sectioned full skin and literal weighted boundary join; no overlap-as-fit claim.",
+  "scope": "384 bare-head/tack adaptation proof only; no production adoption or leader/groom work.",
+  "proof": "Matched before/after head front, side and chest close views first; then front/side/oblique283333339 plus wholehorse to reject recolored helmet, seams and damaged eyes.",
+  "failure": "Visible helmet identity, discontinuous coat, damaged anatomy/eyes, unsupported tack or source mutation rejects method before downstream work.",
+  "alternatives": "Deleting plate triangles risks absent anatomy; material reinterpretation is smallest discriminating proof. Local geometry reconstruction only after actual failure.",
+  "expected": "Natural exposed head and matte rugged leather without changing accepted heavier form or choreography.",
+  "reconciliation": "Director384 accepts383 build and grants167..176 adaptation proof. Old torso-construction scopes are historical failed methods, original quality/motion/protection remain binding. Exact173 scope reconciliation preserves original references/roles/history and freezes old torso construction; active physical target is head, with neck/tack/regression interfaces retained.",
+  "reference_reason": "384 real bare profile/anatomy plus coat/leather macro address head target; original reference video/accepted film remain their separate authorities.",
+  "sources": [
+    "results/sikh384/REQUEST.md",
+    "results/sikh384/APPROVED_ALLOWANCE.json",
+    "results/sikh384/STRATEGY.md",
+    "results/sikh384/HANDLER_REVIEW.md",
+    "results/sikh384/REFERENCE_ACQUISITION.json",
+    "results/sikh384/REFERENCE_QUALIFICATION.md",
+    "src/movie_factory/adapters/blender/warhorse384.py",
+    "src/movie_factory/adapters/blender/nihang_patch.py",
+    "src/movie_factory/adapters/blender/nihang_control.py",
+    "tests/test_warhorse384.py",
+    "scripts/sikh384_plan.py",
+    "scripts/sikh384_setup.py",
+    ".runtime/art-direction/sikh384-references/head-closeup.jpg",
+    ".runtime/art-direction/sikh384-references/head-profile.jpg",
+    ".runtime/art-direction/sikh384-references/head-conformation.jpg",
+    ".runtime/art-direction/sikh384-references/head-anatomy.jpg",
+    "results/sikh384/HEADBLEND_REVIEW169.md",
+    "results/sikh384/appearance-c168-after_front-review.json",
+    "results/sikh384/appearance-c168-after_side-review.json",
+    "scripts/sikh384_next.py",
+    "results/sikh384/REBUILD_REVIEW170.md",
+    "results/sikh384/HEAD_LAYERS.json",
+    "results/sikh384/appearance-c169-after_front-review.json",
+    "results/sikh384/appearance-c169-after_side-review.json",
+    "src/movie_factory/adapters/blender/warhorse_graft384.py",
+    "results/sikh384/GRAFT_REVIEW171.md",
+    ".runtime/factory-native/sikh361-motion-c24-horse_head/frame.png",
+    "results/sikh384/appearance-c170-after_front-review.json",
+    "results/sikh384/appearance-c170-after_side-review.json",
+    "results/sikh384/GRAFT_PREFLIGHT172.md",
+    "results/sikh384/SCOPE_RECONCILIATION173.md",
+    "results/sikh384/COMPONENT_REVIEW174.md",
+    "results/sikh384/appearance-c173-after_front-review.json",
+    "results/sikh384/appearance-c173-after_side-review.json",
+    "src/movie_factory/adapters/blender/warhorse_join384.py",
+    "results/sikh384/JOIN_REVIEW175.md",
+    "results/sikh384/appearance-c174-after_front-review.json",
+    "results/sikh384/appearance-c174-after_side-review.json"
+  ],
+  "retrospective_evidence": [
+    "results/sikh384/JOIN_REVIEW175.md",
+    "results/sikh384/APPROVED_ALLOWANCE.json",
+    "results/sikh384/appearance-c174-after_front-review.json",
+    "results/sikh384/appearance-c174-after_side-review.json"
+  ],
+  "steps": [
+    {
+      "id": "source",
+      "depends_on": [],
+      "recipe": {
+        "operation": "nihang_save",
+        "frame": 283,
+        "width": 640,
+        "height": 640,
+        "samples": 8
+      },
+      "requirements": [
+        "preservation"
+      ]
+    },
+    {
+      "id": "adapt",
+      "depends_on": [
+        "source"
+      ],
+      "recipe": {
+        "operation": "nihang_patch",
+        "frame": 283,
+        "width": 640,
+        "height": 640,
+        "samples": 8,
+        "edits": [
+          {
+            "kind": "warhorse_headgraft384",
+            "target": "warhorse383"
+          }
+        ]
+      },
+      "requirements": [
+        "preservation"
+      ]
+    },
+    {
+      "id": "after_front",
+      "depends_on": [
+        "adapt"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 283,
+        "frames": [
+          283,
+          333,
+          339
+        ],
+        "view": "warhorse_head_front384",
+        "width": 640,
+        "height": 640,
+        "samples": 8
+      },
+      "requirements": [
+        "form",
+        "interfaces",
+        "evidence",
+        "whole_look"
+      ]
+    },
+    {
+      "id": "after_side",
+      "depends_on": [
+        "adapt"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 283,
+        "frames": [
+          283,
+          333,
+          339
+        ],
+        "view": "warhorse_head_side384",
+        "width": 640,
+        "height": 640,
+        "samples": 8
+      },
+      "requirements": [
+        "form",
+        "interfaces",
+        "evidence",
+        "whole_look"
+      ]
+    },
+    {
+      "id": "after_oblique",
+      "depends_on": [
+        "adapt"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 283,
+        "frames": [
+          283,
+          333,
+          339
+        ],
+        "view": "warhorse_head_oblique384",
+        "width": 640,
+        "height": 640,
+        "samples": 8
+      },
+      "requirements": [
+        "form",
+        "interfaces",
+        "evidence",
+        "whole_look"
+      ]
+    },
+    {
+      "id": "after_chest",
+      "depends_on": [
+        "adapt"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 283,
+        "frames": [
+          283,
+          333,
+          339
+        ],
+        "view": "warhorse_chest384",
+        "width": 640,
+        "height": 640,
+        "samples": 8
+      },
+      "requirements": [
+        "interfaces",
+        "evidence"
+      ]
+    },
+    {
+      "id": "whole",
+      "depends_on": [
+        "adapt"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 283,
+        "frames": [
+          283,
+          333,
+          339
+        ],
+        "view": "warhorse_reverse383",
+        "width": 640,
+        "height": 640,
+        "samples": 8
+      },
+      "requirements": [
+        "evidence",
+        "whole_look",
+        "director_form_motion"
+      ]
+    },
+    {
+      "id": "motion0",
+      "depends_on": [
+        "adapt",
+        "after_front",
+        "after_side",
+        "after_oblique",
+        "after_chest",
+        "whole"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 283,
+        "frames": [
+          283,
+          276,
+          277,
+          278,
+          279,
+          280,
+          281,
+          282,
+          284,
+          285,
+          286,
+          287,
+          288,
+          289,
+          290
+        ],
+        "view": "warhorse_reverse383",
+        "width": 512,
+        "height": 512,
+        "samples": 8
+      },
+      "requirements": [
+        "evidence",
+        "director_form_motion"
+      ]
+    },
+    {
+      "id": "motion1",
+      "depends_on": [
+        "adapt",
+        "after_front",
+        "after_side",
+        "after_oblique",
+        "after_chest",
+        "whole"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 283,
+        "frames": [
+          283,
+          291,
+          292,
+          293,
+          294,
+          295,
+          296,
+          297,
+          298,
+          299,
+          300,
+          301,
+          302,
+          303,
+          304,
+          305
+        ],
+        "view": "warhorse_reverse383",
+        "width": 512,
+        "height": 512,
+        "samples": 8
+      },
+      "requirements": [
+        "evidence",
+        "director_form_motion"
+      ]
+    },
+    {
+      "id": "motion2",
+      "depends_on": [
+        "adapt",
+        "after_front",
+        "after_side",
+        "after_oblique",
+        "after_chest",
+        "whole"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 283,
+        "frames": [
+          283,
+          306,
+          307,
+          308,
+          309,
+          310,
+          311,
+          312,
+          313,
+          314,
+          315,
+          316,
+          317,
+          318,
+          319,
+          320
+        ],
+        "view": "warhorse_reverse383",
+        "width": 512,
+        "height": 512,
+        "samples": 8
+      },
+      "requirements": [
+        "evidence",
+        "director_form_motion"
+      ]
+    },
+    {
+      "id": "motion3",
+      "depends_on": [
+        "adapt",
+        "after_front",
+        "after_side",
+        "after_oblique",
+        "after_chest",
+        "whole"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 283,
+        "frames": [
+          283,
+          321,
+          322,
+          323,
+          324,
+          325,
+          326,
+          327,
+          328,
+          329,
+          330,
+          331,
+          332,
+          333,
+          334,
+          335
+        ],
+        "view": "warhorse_reverse383",
+        "width": 512,
+        "height": 512,
+        "samples": 8
+      },
+      "requirements": [
+        "evidence",
+        "director_form_motion"
+      ]
+    },
+    {
+      "id": "motion4",
+      "depends_on": [
+        "adapt",
+        "after_front",
+        "after_side",
+        "after_oblique",
+        "after_chest",
+        "whole"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 283,
+        "frames": [
+          283,
+          336,
+          337,
+          338,
+          339,
+          340,
+          341,
+          342,
+          343,
+          344,
+          345,
+          346,
+          347,
+          348,
+          349,
+          350
+        ],
+        "view": "warhorse_reverse383",
+        "width": 512,
+        "height": 512,
+        "samples": 8
+      },
+      "requirements": [
+        "evidence",
+        "director_form_motion"
+      ]
+    },
+    {
+      "id": "motion5",
+      "depends_on": [
+        "adapt",
+        "after_front",
+        "after_side",
+        "after_oblique",
+        "after_chest",
+        "whole"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 283,
+        "frames": [
+          283,
+          351,
+          352,
+          353,
+          354,
+          355,
+          356,
+          357,
+          358,
+          359,
+          360,
+          361,
+          362,
+          363,
+          364,
+          365
+        ],
+        "view": "warhorse_reverse383",
+        "width": 512,
+        "height": 512,
+        "samples": 8
+      },
+      "requirements": [
+        "evidence",
+        "director_form_motion"
+      ]
+    },
+    {
+      "id": "motion6",
+      "depends_on": [
+        "adapt",
+        "after_front",
+        "after_side",
+        "after_oblique",
+        "after_chest",
+        "whole"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 283,
+        "frames": [
+          283,
+          366,
+          367
+        ],
+        "view": "warhorse_reverse383",
+        "width": 512,
+        "height": 512,
+        "samples": 8
+      },
+      "requirements": [
+        "evidence",
+        "director_form_motion"
+      ]
+    }
+  ],
+  "counterexample": "Source cut loops may be nonmanifold, bridge may read as a hard band or fold through the rear, or facial skin may still be missing. Reject actual close views before deferred animation.",
+  "unit_changes": {
+    "allowed_domains": [
+      "horse_head_geometry",
+      "horse_head_skinweights",
+      "horse_head_surface",
+      "horse_tack_surface",
+      "neutral_evidence_camera",
+      "horse_head_neck_interface"
+    ],
+    "frozen_domains": [
+      "donor_torso_limb_geometry",
+      "donor_torso_limb_weights",
+      "accepted_motion_masters",
+      "pashtun",
+      "production_scene",
+      "leader",
+      "crowd",
+      "groom",
+      "sound"
+    ]
+  },
+  "criteria": {
+    "preservation": "Accepted masters/source objects/actions unchanged; original donor coordinate/weight prefix retained exactly. Head/upper-neck cut faces and a shared connecting skin surface may be replaced; torso/limb shape is frozen."
+  },
+  "reviewed_changes": [
+    "src/movie_factory/adapters/blender/warhorse_graft384.py"
+  ]
+}

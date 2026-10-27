@@ -1,0 +1,31 @@
+{
+  "run_digest": "b61a6c59ef5657b040bc7fa0dcdbf9312adc510cf6c0cdd059aee36721ef1e02",
+  "verdict": "PASS",
+  "observation": "Reopened original166 donor control matches required objects and donor pose/mesh/action/world/material state exactly at283.",
+  "comparison": "Direct source166 versus control170 snapshot equality; no creative claim.",
+  "open_defects": [],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh384-appearance-c170-source/snapshot.json",
+      "sha256": "0020273afac93030b505e9eab76bdb681e8d9a88972a03dc9519661a8ae2ea7a"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh384-appearance-c170-source/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh384-appearance-c170-source/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh384-appearance-c170-source/scene.blend",
+      "sha256": "18e5d89e1a8d5b44a912e60fb861143063f32aabd0a0175c11bdf139a58404ad"
+    }
+  },
+  "requirement_outcomes": {
+    "preservation": {
+      "status": "PASS",
+      "observation": "Original control preserved and available for reconstruction comparison."
+    }
+  }
+}

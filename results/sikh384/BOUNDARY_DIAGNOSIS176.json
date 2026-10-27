@@ -1,0 +1,36 @@
+{
+  "actual175": {
+    "body_loop": 0,
+    "head_loop": 50,
+    "body_components": [
+      {
+        "vertices": 29,
+        "degrees": [
+          1,
+          2
+        ]
+      }
+    ],
+    "head_components": [
+      {
+        "vertices": 50,
+        "degrees": [
+          2
+        ]
+      },
+      {
+        "vertices": 48,
+        "degrees": [
+          2
+        ]
+      }
+    ]
+  },
+  "rest_control": {
+    "open_chain_vertices": 29,
+    "endpoint_distance_m": 0.10475591916450364,
+    "omitted_cut_vertex_plane_distance_m": 0.21192556012821262,
+    "closed_loop_vertices_with_full_component": 30
+  },
+  "scope": "Static GLB negative/discriminating control. Native175 same29-node open chain. No fabricated bridge or actual176 success claim."
+}

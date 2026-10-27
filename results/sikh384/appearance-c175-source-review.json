@@ -1,0 +1,31 @@
+{
+  "run_digest": "4ffd45aa3e17d5bc902dbe3fc592ede0c512963cc8a794172a7028eb8a584611",
+  "verdict": "PASS",
+  "observation": "Actual source175 original objects and donor geometry/bones/action/world/material snapshot match166 at283 exactly.",
+  "comparison": "Direct original/control equality before anatomical section and shared bridge.",
+  "open_defects": [],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh384-appearance-c175-source/snapshot.json",
+      "sha256": "18769efcba8c7da12e9d37553f76c657d8014cbb3e1baac61379a24195397038"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh384-appearance-c175-source/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh384-appearance-c175-source/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh384-appearance-c175-source/scene.blend",
+      "sha256": "071e8a83f8e0497caf193d27d54990a920ad068410e7c498109aa7d3d0dcf888"
+    }
+  },
+  "requirement_outcomes": {
+    "preservation": {
+      "status": "PASS",
+      "observation": "Unchanged original control available; no artistic qualification."
+    }
+  }
+}

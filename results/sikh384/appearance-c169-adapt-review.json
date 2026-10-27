@@ -1,0 +1,35 @@
+{
+  "run_digest": "d671c07ee5c3f5186245350a81b15e5bb742afb5194e41c840b7e0fe528278df",
+  "verdict": "PASS",
+  "observation": "Actual local head reconstruction completed within45mm displacement cap; original objects and donor bone matrices/action/world unchanged at283. New coat/leather graph and attributes saved.",
+  "comparison": "Source169 versus adapted169 snapshots and headblend report. Actual code edits head/edge ring coordinates/custom normals only; image anatomy and other poses remain unqualified.",
+  "open_defects": [],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh384-appearance-c169-adapt/snapshot.json",
+      "sha256": "6533bec4a05bf9220738057f2eb4adeb0811c82f8fb94b232dd9cc712a71228b"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh384-appearance-c169-adapt/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh384-appearance-c169-adapt/script-diagnostics.json",
+      "sha256": "4e1205462c9c8153ef4f4d15eba35ea263f6079e3b74341771bbb12e2f41f34c"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh384-appearance-c169-adapt/scene.blend",
+      "sha256": "c35c388a35e47263a42dd833f84a02c88c0e0a0418a937ddc8d70223ee5c0f78"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh384-appearance-c169-adapt/patch-evidence.json",
+      "sha256": "389b7a83d79b24ca0fe1637bde63358c389b8357310256f6f4adaaaf36388513"
+    }
+  },
+  "requirement_outcomes": {
+    "preservation": {
+      "status": "PASS",
+      "observation": "Protected original objects and sampled donor motion state equal; head-only coordinate method and actual measured bound reviewed."
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "run_digest": "f2883a201ff915e5ebc686e8138886cfe82c35716950ac6ab7ef1fd7997d2b08",
+  "verdict": "PASS",
+  "observation": "Actual chest control captures silver studded V plate on shoulders/central chest, with bridle/head above; this is original failed costume control.",
+  "comparison": "Actual640px returned image inspected against383 source: correct revealing control, unchanged geometry at283. PASS is availability/preservation only; visible armor expected and not artistic qualification.",
+  "open_defects": [],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh384-appearance-c168-before_chest/snapshot.json",
+      "sha256": "0020273afac93030b505e9eab76bdb681e8d9a88972a03dc9519661a8ae2ea7a"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh384-appearance-c168-before_chest/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh384-appearance-c168-before_chest/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh384-appearance-c168-before_chest/frame.png",
+      "sha256": "7fe7da0cbeab5242e9dc27a935d8983c465b2051d309e579dc0e831a99b87676"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh384-appearance-c168-before_chest/frames.json",
+      "sha256": "c09f3cf169cc34407b7061c9e12d1998398a79e329cbd094400822fb02fe1fec"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh384-appearance-c168-before_chest/frame.png",
+      "sha256": "7fe7da0cbeab5242e9dc27a935d8983c465b2051d309e579dc0e831a99b87676"
+    }
+  },
+  "requirement_outcomes": {
+    "preservation": {
+      "status": "PASS",
+      "observation": "Source control is unchanged and available; deliberate failed material not carried as a positive look reference."
+    }
+  }
+}

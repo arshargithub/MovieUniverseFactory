@@ -1,0 +1,44 @@
+{
+  "run_digest": "9f91e3530f7231d3eb363616e2236af6f9d1ed855df6b59a9aae0fd438f242b2",
+  "verdict": "FAIL",
+  "observation": "Actual283 close image fails: brown rigid face mask remains visibly bordered at poll, eye and lower nasal edge; flat sparse material mismatches adjacent textured coat. Chest glimpsed as blank bib.",
+  "comparison": "Matched original283 front/side versus real bare conformation profile and accepted rich coat. Metal removed technically, helmet-shaped surface remains. First-frame blocker stops wider rendering; no full-family qualification claimed.",
+  "open_defects": [
+    "Rigid armor border and shape",
+    "Flat coat replacement and obvious transition"
+  ],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh384-appearance-c168-after_front/snapshot.json",
+      "sha256": "65115ae3aaf0a36385d4de945d37d15a75ded93a2606d090b6e41b60eed76f23"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh384-appearance-c168-after_front/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh384-appearance-c168-after_front/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh384-appearance-c168-after_front/frame.png",
+      "sha256": "53760254929de7de5124c1172500baae543d142a31ea87c9823e4ef36198f052"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh384-appearance-c168-after_front/frames.json",
+      "sha256": "c4afa5b8d076791dbc13a24c0a8e676c18f5335686ad186f0defc0b051a5dcde"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh384-appearance-c168-after_front/frame.png",
+      "sha256": "53760254929de7de5124c1172500baae543d142a31ea87c9823e4ef36198f052"
+    },
+    "frame_333": {
+      "path": ".runtime/factory-native/sikh384-appearance-c168-after_front/frame-0333.png",
+      "sha256": "9c9c19f1657942bef32f88236a1cd403c844d62045aa0427f8cb87fe22efc9f8"
+    },
+    "frame_339": {
+      "path": ".runtime/factory-native/sikh384-appearance-c168-after_front/frame-0339.png",
+      "sha256": "df7840d9bc310e1a5ebefe3875bbb940df9eac84c7d12f6e8ef220e4b8915134"
+    }
+  }
+}

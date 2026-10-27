@@ -1,0 +1,31 @@
+{
+  "run_digest": "f39e4823fbde2ef17101c82c7f458bc9952e4394c09e1f29973c7b92b6908054",
+  "verdict": "PASS",
+  "observation": "Actual reopened source174 matches166 required objects and donor pose/geometry/action/world/material inventory exactly at283.",
+  "comparison": "Direct source snapshot equality, source availability only.",
+  "open_defects": [],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh384-appearance-c174-source/snapshot.json",
+      "sha256": "18769efcba8c7da12e9d37553f76c657d8014cbb3e1baac61379a24195397038"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh384-appearance-c174-source/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh384-appearance-c174-source/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh384-appearance-c174-source/scene.blend",
+      "sha256": "3ea72deb0214df166924149ef1b1b137d8cf263958ae8dc59e6582a6360331d9"
+    }
+  },
+  "requirement_outcomes": {
+    "preservation": {
+      "status": "PASS",
+      "observation": "Exact original control remains unchanged."
+    }
+  }
+}

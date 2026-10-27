@@ -1,0 +1,31 @@
+{
+  "run_digest": "027ee4d609601ebc87b6f67391cb0bed205ed71689981a4b5cb1ac37efc0be3c",
+  "verdict": "PASS",
+  "observation": "Reopened control173 exactly matches source166 required original objects and donor geometry/bones/action/world/material snapshot at283.",
+  "comparison": "Direct original source/control snapshot equality; graphical donor unchanged before component extraction.",
+  "open_defects": [],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh384-appearance-c173-source/snapshot.json",
+      "sha256": "18769efcba8c7da12e9d37553f76c657d8014cbb3e1baac61379a24195397038"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh384-appearance-c173-source/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh384-appearance-c173-source/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh384-appearance-c173-source/scene.blend",
+      "sha256": "17a19db3e645dff97139516716e75b3d4d8a7460c50adfc90efb2e27d0b53755"
+    }
+  },
+  "requirement_outcomes": {
+    "preservation": {
+      "status": "PASS",
+      "observation": "Exact source control matches; current head/tack method remains unqualified."
+    }
+  }
+}

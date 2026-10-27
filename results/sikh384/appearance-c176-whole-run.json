@@ -1,0 +1,54 @@
+{
+  "id": "sikh384-appearance-c176-whole",
+  "task": "sikh335-supporting-appearance",
+  "step": "whole",
+  "cycle": 176,
+  "fingerprint": "cc916f189aa8fb423d357e9c758c95f8c15a556103cb01effa12cd7ef67a40bf",
+  "parent": {
+    "path": ".runtime/factory-native/sikh384-appearance-c176-adapt/scene.blend",
+    "sha256": "aab6d6b80711b2488f02c2d613014ca1822fa1208759fbc04d5770af64c43468"
+  },
+  "job_digest": "cff8f1440674fe5069306356df2c5aafdedd42f3519ca86263105621f302a68f",
+  "handler_digest": "671370095249f818baf064f3998d8bfcc981b9a54de03b4d024646bf22064812",
+  "status": "RETURNED",
+  "timeout_seconds": 600,
+  "artifacts": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh384-appearance-c176-whole/snapshot.json",
+      "sha256": "7c7f097d817b0b9825214976afd976e0227949ddbfa987ab50acbd68f0d6b7f4"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh384-appearance-c176-whole/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh384-appearance-c176-whole/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh384-appearance-c176-whole/frame.png",
+      "sha256": "9e32c807cc76ad0ebda350ab12019a963e632d19270a95bdcd97050e1a2ad436"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh384-appearance-c176-whole/frames.json",
+      "sha256": "bb20272d8dbd1772c89f1074d149642d5788bd480b14aa65ba7e83ebd70d3fb8"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh384-appearance-c176-whole/frame.png",
+      "sha256": "9e32c807cc76ad0ebda350ab12019a963e632d19270a95bdcd97050e1a2ad436"
+    },
+    "frame_333": {
+      "path": ".runtime/factory-native/sikh384-appearance-c176-whole/frame-0333.png",
+      "sha256": "0f4ae71d97af9227a2682eb40ce138ef51b09653c9e74a9d1abc3c645ec46524"
+    },
+    "frame_339": {
+      "path": ".runtime/factory-native/sikh384-appearance-c176-whole/frame-0339.png",
+      "sha256": "8340e38125338eae8f01918c726e4bf74f34aecaa395a54dc60309e779499ed9"
+    }
+  },
+  "dependencies": {},
+  "recipe": {
+    "path": "results/sikh384/appearance-c176-whole-recipe.json",
+    "sha256": "cecdcf2c8d0f4d978f9abc9806d9b01a3d0434e3d9c05a3ae106cc88eba8d5be"
+  }
+}

@@ -4,6 +4,18 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+### Exchange384 — donor head/tack qualification failed; design fork
+
+Ten167..176slots are exhausted. Bare-head conversion failed internal visual review
+with a neck web/collar; no production adoption or continuous proof. Original166
+head/neck and accepted motion/Pashtun masters remain unchanged.
+[Full failure evidence, lessons and decision](../../results/sikh384/CLOSEOUT.md).
+Recommend retaining the coherent original head and intentionally designing its
+headpiece. This is a Director-owned visible costume choice. Proposed five scoped
+finishing cycles require approval; exit is matched multi-view rearing poses and
+continuous proof before rider integration. Bare-head reconstruction remains an
+alternative with uncertain effort. No new spend/push/upload; checkpoint390.
+
 ### Exchange369 — perceptually meaningful units; preparation contact blocked
 
 Director369 adopts variable-size, independently reviewable motion units and a

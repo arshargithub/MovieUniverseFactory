@@ -1,0 +1,35 @@
+{
+  "run_digest": "758ad229fe75c91f51489bdc6080721c0b7998d2ac4d7b5debf3bdaf05dd35d8",
+  "verdict": "PASS",
+  "observation": "Actual cut-boundary reconstruction and new skin material saved; native guard verifies every original non-head vertex coordinate/weight unchanged. Required original objects and donor bone/action/world snapshot match source at283.",
+  "comparison": "Source/adapted snapshots plus actual headrebuild report; topology count changes are confined to head. Shape/eye/skin patch still requires actual rendered review.",
+  "open_defects": [],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh384-appearance-c170-adapt/snapshot.json",
+      "sha256": "dad780159bf3085dea65b15cac848023744b04cc8246c92d1dc1681e4fc70639"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh384-appearance-c170-adapt/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh384-appearance-c170-adapt/script-diagnostics.json",
+      "sha256": "4e1205462c9c8153ef4f4d15eba35ea263f6079e3b74341771bbb12e2f41f34c"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh384-appearance-c170-adapt/scene.blend",
+      "sha256": "fefb0797dc5268e1ac8d2fbb3d488773fbeca07622a7ee081fbf5a9cc05aa69a"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh384-appearance-c170-adapt/patch-evidence.json",
+      "sha256": "aad8e27dbb9bb3ad9ed4a6a1af09e91bc8175fce5971608d0d0ffd8375bde4c7"
+    }
+  },
+  "requirement_outcomes": {
+    "preservation": {
+      "status": "PASS",
+      "observation": "Actual non-head coordinate/weight equality guard passed; original pose state unchanged; head reconstruction remains a visual hypothesis."
+    }
+  }
+}

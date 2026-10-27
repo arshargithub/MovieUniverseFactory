@@ -1,0 +1,615 @@
+{
+  "input_digest": "2ea5e900ec1b3d08f60824f35e8e855ae5d9f95a740c878a58c04568fccf2e6d",
+  "outcome": "complete",
+  "artifact": {
+    "reference_readiness": {
+      "decisions": {
+        "film": {
+          "decision": "reuse_existing",
+          "reason": "Inspected qualified sources address gross scoped target; limits and exclusions documented.",
+          "references": [
+            {
+              "coverage": {
+                "accepted_look": "Illustrated rich coherent forms/materials, separate from anatomical truth"
+              },
+              "evidence": [
+                {
+                  "path": ".runtime/art-direction/series01-finish248/opening08/actual-450.png",
+                  "sha256": "c874497d244bb8b896d952a8ee30536d33b79bee3d62d4cefd50c8221a37498a"
+                },
+                {
+                  "path": "results/sikh379/REFERENCE_QUALIFICATION.md",
+                  "sha256": "1d8c810772130d16219b41a374aa6b96563ae1da3b83bc524fc9c4d6eefa7c71"
+                }
+              ],
+              "excluded_authority": "Not a motion reference, identity-copy target, wardrobe pattern, lighting match or permission to modify the accepted Pashtun.",
+              "governs": "Accepted appearance-quality comparator for visible material, garment and character integration at intended framing.",
+              "id": "accepted_film",
+              "observation": "Comparable believable whole forms, supported cloth, differentiated materials and readable living-character detail; not equal pixel density across different shot sizes.",
+              "origin": "accepted_asset",
+              "provenance": "Director253 provisional production comparator; no permission to modify",
+              "rights_use": "reference_only"
+            }
+          ],
+          "reopen_when": "A required hidden view or motion/form feature is unresolved or contradicted by actual proof.",
+          "status": "sufficient"
+        },
+        "junction": {
+          "decision": "acquire",
+          "reason": "379 gross form sources retained;381 inspected near-frontal posed photographs supplement the previously ambiguous front chest/foreleg interface.",
+          "references": [
+            {
+              "coverage": {
+                "front": "Rounded paired muscles and central groove; distinct forelimbs"
+              },
+              "evidence": [
+                {
+                  "path": ".runtime/art-direction/sikh379-references/umn-front-pectorals.jpg",
+                  "sha256": "d02fe0eb122be49b7510dea2c570f4e057a1e3a0dae40161da48eca9215f5aa3"
+                },
+                {
+                  "path": "results/sikh379/REFERENCE_QUALIFICATION.md",
+                  "sha256": "1d8c810772130d16219b41a374aa6b96563ae1da3b83bc524fc9c4d6eefa7c71"
+                }
+              ],
+              "excluded_authority": "Not identity/breed, film palette/materials, choreography, or permission to incorporate source pixels",
+              "governs": "Gross physical chest/neck/proximal-limb form only",
+              "id": "pectoral_front",
+              "observation": "Paired supported pectoral masses, central groove, distinct roots into forelegs.",
+              "origin": "image_search",
+              "provenance": "UMN CVM Lab1 image10, public internal anatomy study",
+              "rights_use": "reference_only"
+            },
+            {
+              "coverage": {
+                "oblique_rear": "Supported chest underside and rounded limb roots during rear"
+              },
+              "evidence": [
+                {
+                  "path": ".runtime/art-direction/sikh379-references/cavalo-rear.jpg",
+                  "sha256": "1f99a25cd924d3d7bcc7429e13fe4d6fc1dd4937bccb015b4fa521e725fc1801"
+                },
+                {
+                  "path": "results/sikh379/REFERENCE_QUALIFICATION.md",
+                  "sha256": "1d8c810772130d16219b41a374aa6b96563ae1da3b83bc524fc9c4d6eefa7c71"
+                }
+              ],
+              "excluded_authority": "Not identity/breed, film palette/materials, choreography, or permission to incorporate source pixels",
+              "governs": "Gross physical chest/neck/proximal-limb form only",
+              "id": "pectoral_rear",
+              "observation": "Rounded shoulder and supported continuous underside while forelimbs lift; no flat bib.",
+              "origin": "image_search",
+              "provenance": "Jonathan Wilkins own photo,22Nov2007,CC BY-SA3.0; source page in acquisition.json",
+              "rights_use": "reference_only"
+            },
+            {
+              "coverage": {
+                "opposite_partial": "Opposite-facing partial lift and folded limb/chest continuity"
+              },
+              "evidence": [
+                {
+                  "path": ".runtime/art-direction/sikh379-references/friesian-rear.jpg",
+                  "sha256": "fc23837380c482e30224ba371ffc443e1a7540d34386cb20c4002fd250d789d4"
+                },
+                {
+                  "path": "results/sikh379/REFERENCE_QUALIFICATION.md",
+                  "sha256": "1d8c810772130d16219b41a374aa6b96563ae1da3b83bc524fc9c4d6eefa7c71"
+                }
+              ],
+              "excluded_authority": "Not identity/breed, film palette/materials, choreography, or permission to incorporate source pixels",
+              "governs": "Gross physical chest/neck/proximal-limb form only",
+              "id": "pectoral_opposite",
+              "observation": "Folded limb roots and continuous chest on opposite-facing/partial-lift horse.",
+              "origin": "image_search",
+              "provenance": "KaRede own photo,17Aug2016,CC BY-SA4.0; source page in acquisition.json",
+              "rights_use": "reference_only"
+            },
+            {
+              "coverage": {
+                "frontal_rear": "White near-frontal partial rear: supported pectoral relief connects into proximal forelegs; no separate hanging badge."
+              },
+              "evidence": [
+                {
+                  "path": ".runtime/art-direction/sikh381-references/front-stock-preview.jpg",
+                  "sha256": "2e9fbc0cd7de46dad54f527dd789a46bae2fedea77f0c51030b431ee1978c242"
+                },
+                {
+                  "path": "results/sikh381/REFERENCE_SUPPLEMENT.md",
+                  "sha256": "8c29f64b8c51d48cbe8e46c110f1d5aa5b306b970b795791eb767b90c05ddc6e"
+                }
+              ],
+              "excluded_authority": "Not film style/materials, identity/breed, choreography or film-pixel incorporation",
+              "governs": "Near-frontal chest/foreleg physical continuity only",
+              "id": "front381",
+              "observation": "White near-frontal partial rear: supported pectoral relief connects into proximal forelegs; no separate hanging badge.",
+              "origin": "image_search",
+              "provenance": "Depositphotos3988601 public preview; internal viewing only, source URL in acquisition-verified.json",
+              "rights_use": "reference_only"
+            },
+            {
+              "coverage": {
+                "frontal_rear": "Black near-frontal rear: broad lower neck and chest form one supported forequarter with clearly integrated folded forelegs."
+              },
+              "evidence": [
+                {
+                  "path": ".runtime/art-direction/sikh381-references/stud-rear.jpg",
+                  "sha256": "920ee4387eadbd24e7e954026115ef3ca8f19b9ca028feb2051b5ecbed109fa4"
+                },
+                {
+                  "path": "results/sikh381/REFERENCE_SUPPLEMENT.md",
+                  "sha256": "8c29f64b8c51d48cbe8e46c110f1d5aa5b306b970b795791eb767b90c05ddc6e"
+                }
+              ],
+              "excluded_authority": "Not film style/materials, identity/breed, choreography or film-pixel incorporation",
+              "governs": "Near-frontal chest/foreleg physical continuity only",
+              "id": "frontrear381",
+              "observation": "Black near-frontal rear: broad lower neck and chest form one supported forequarter with clearly integrated folded forelegs.",
+              "origin": "image_search",
+              "provenance": "Carlos Hernani photograph published by Coudelaria Ortigao Costa on Samitra OC page; internal study only",
+              "rights_use": "reference_only"
+            }
+          ],
+          "reopen_when": "A required hidden view or motion/form feature is unresolved or contradicted by actual proof.",
+          "status": "sufficient"
+        },
+        "motion": {
+          "decision": "reuse_existing",
+          "reason": "Inspected qualified sources address gross scoped target; limits and exclusions documented.",
+          "references": [
+            {
+              "coverage": {
+                "prep_apex_landing": "Original14..19 video and exact66/75/80 accepted motion source"
+              },
+              "evidence": [
+                {
+                  "path": ".runtime/art-direction/series01-sikh256/references/reference-b.mov",
+                  "sha256": "78d0d691e8712c02931876cf0bc405e4869de357f337f531708be7a7da4898e2"
+                },
+                {
+                  "path": "results/sikh379/REFERENCE_QUALIFICATION.md",
+                  "sha256": "1d8c810772130d16219b41a374aa6b96563ae1da3b83bc524fc9c4d6eefa7c71"
+                }
+              ],
+              "excluded_authority": "Not a new identity, wardrobe license or exemption from same-film quality.",
+              "governs": "Preserve accepted276..367 motion and linked horse anatomy; earlier rejected motion statuses are superseded only by exact Director374 acceptance.",
+              "id": "reference_rear",
+              "observation": "Coordinated gather, driving hindquarters, brief crest, accelerating reach/contact and absorption.",
+              "origin": "director",
+              "provenance": "Director-provided reference-b, protected accepted action",
+              "rights_use": "reference_only"
+            }
+          ],
+          "reopen_when": "A required hidden view or motion/form feature is unresolved or contradicted by actual proof.",
+          "status": "sufficient"
+        },
+        "preservation": {
+          "decision": "none_needed",
+          "reason": "Exact native/action/source comparison is deterministic; no additional illustrative reference required.",
+          "references": [],
+          "reopen_when": "Claim extends to physical or artistic correctness.",
+          "status": "not_needed"
+        },
+        "head_surface": {
+          "decision": "acquire",
+          "reason": "Inspected real conformation photo/anatomy plate and coat/leather macro resolve scoped target; blinker profile explicitly rejected for forehead coverage.",
+          "references": [
+            {
+              "id": "head_conformation384",
+              "origin": "image_search",
+              "observation": "Visible poll, eye socket, cheek, bridge and muzzle continuity; breed convexity excluded.",
+              "coverage": {
+                "profile_structure": "Visible poll, eye socket, cheek, bridge and muzzle continuity; breed convexity excluded."
+              },
+              "evidence": [
+                {
+                  "path": ".runtime/art-direction/sikh384-references/head-conformation.jpg",
+                  "sha256": "70fa4723eb5d1a21c5a8f9e19d1b80371734b5adb50eec5bf30aae18b970ca1b"
+                },
+                {
+                  "path": "results/sikh384/REFERENCE_QUALIFICATION.md",
+                  "sha256": "d4626265ba7f7e9e2db7ee51f07d08923167ce74acf30ca0da293709f5e216af"
+                }
+              ],
+              "governs": "Scoped physical head or coat/leather study only",
+              "excluded_authority": "No breed/identity/style/choreography adoption, no source-pixel incorporation",
+              "provenance": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Head_conformation.JPG; Amazona01; edited background Tsaag Valren; CC BY-SA3.0; physical outline study only",
+              "rights_use": "reference_only"
+            },
+            {
+              "id": "head_anatomy384",
+              "origin": "image_search",
+              "observation": "Skull/muscle relations corroborate physical planes, not exposed-muscle final look.",
+              "coverage": {
+                "lateral_anatomy": "Skull/muscle relations corroborate physical planes, not exposed-muscle final look."
+              },
+              "evidence": [
+                {
+                  "path": ".runtime/art-direction/sikh384-references/head-anatomy.jpg",
+                  "sha256": "f3d694329c0a91275a244dda190f5ce81588bdecde561a95389613b8716712e3"
+                },
+                {
+                  "path": "results/sikh384/REFERENCE_QUALIFICATION.md",
+                  "sha256": "d4626265ba7f7e9e2db7ee51f07d08923167ce74acf30ca0da293709f5e216af"
+                }
+              ],
+              "governs": "Scoped physical head or coat/leather study only",
+              "excluded_authority": "No breed/identity/style/choreography adoption, no source-pixel incorporation",
+              "provenance": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Horse_anatomy_head.jpg; Ellenberger/Baum with Dittrich illustration; historical anatomy publication, public-domain plate; internal structure study only",
+              "rights_use": "reference_only"
+            },
+            {
+              "id": "head_material384",
+              "origin": "image_search",
+              "observation": "Short coat variation around eye and worn separate leather strap edges; macro crop not overall head form.",
+              "coverage": {
+                "coat_leather": "Short coat variation around eye and worn separate leather strap edges; macro crop not overall head form."
+              },
+              "evidence": [
+                {
+                  "path": ".runtime/art-direction/sikh384-references/head-closeup.jpg",
+                  "sha256": "0b50910fa3cb98e0c4ee4207aca63390d2cee7590b5d72ed984bfb3a13c5b803"
+                },
+                {
+                  "path": "results/sikh384/REFERENCE_QUALIFICATION.md",
+                  "sha256": "d4626265ba7f7e9e2db7ee51f07d08923167ce74acf30ca0da293709f5e216af"
+                }
+              ],
+              "governs": "Scoped physical head or coat/leather study only",
+              "excluded_authority": "No breed/identity/style/choreography adoption, no source-pixel incorporation",
+              "provenance": "https://upload.wikimedia.org/wikipedia/commons/9/97/Horse-head-closeup-0A.jpg; Adamantios; ownwork May2007; CC BY-SA3.0; internal physical study only",
+              "rights_use": "reference_only"
+            }
+          ],
+          "status": "sufficient",
+          "reopen_when": "Actual exposed surface lacks structure beyond observed views or hidden anatomy must be reconstructed."
+        }
+      },
+      "scope": {
+        "id": "horse-head-tack384",
+        "kind": "micro_appearance",
+        "needs": [
+          {
+            "coverage": [
+              "front",
+              "oblique_rear",
+              "opposite_partial",
+              "frontal_rear"
+            ],
+            "critical": true,
+            "id": "junction",
+            "purpose": "physical_form",
+            "question": "What positive chest/neck/raised upper-leg contours replace the bib?"
+          },
+          {
+            "coverage": [
+              "prep_apex_landing"
+            ],
+            "critical": true,
+            "id": "motion",
+            "purpose": "motion_mechanics",
+            "question": "Which accepted action and pose family must remain fixed?"
+          },
+          {
+            "coverage": [
+              "accepted_look"
+            ],
+            "critical": true,
+            "id": "film",
+            "purpose": "film_style",
+            "question": "What established quality/style must this horse inhabit?"
+          },
+          {
+            "coverage": [
+              "hash_action_controls"
+            ],
+            "critical": true,
+            "id": "preservation",
+            "purpose": "technical_validation",
+            "question": "Can source invariants be checked deterministically?"
+          },
+          {
+            "id": "head_surface",
+            "purpose": "physical_form",
+            "question": "Which unarmored head planes and tactile coat/leather differences must survive adaptation?",
+            "critical": true,
+            "coverage": [
+              "profile_structure",
+              "lateral_anatomy",
+              "coat_leather"
+            ]
+          }
+        ],
+        "version": 1
+      },
+      "version": 1
+    },
+    "uses": {
+      "direction": {
+        "disposition": "apply",
+        "reason": "Director384 accepts383 build and grants167..176 adaptation proof. Old torso-construction scopes are historical failed methods, original quality/motion/protection remain binding. Original source role: Resume the integrated isolated production package; this precursor discovers rig ownership before any new pose authoring.",
+        "implication": "Bare head and adapted leather proof, same-source matched close views, fixed accepted-motion derivative and unchanged body; context historical scope reconciled without dropping rules."
+      },
+      "learnings": {
+        "disposition": "apply",
+        "reason": "Director384 accepts383 build and grants167..176 adaptation proof. Old torso-construction scopes are historical failed methods, original quality/motion/protection remain binding. Original source role: 331 failed whole-pose support and same-film character fidelity despite incremental offset corrections; those attempts remain closed.",
+        "implication": "Bare head and adapted leather proof, same-source matched close views, fixed accepted-motion derivative and unchanged body; context historical scope reconciled without dropping rules."
+      },
+      "film_language": {
+        "disposition": "apply",
+        "reason": "Director384 accepts383 build and grants167..176 adaptation proof. Old torso-construction scopes are historical failed methods, original quality/motion/protection remain binding. Original source role: Accepted Pashtun quality stays fixed; a supporting actor cannot be a schematic statue.",
+        "implication": "Bare head and adapted leather proof, same-source matched close views, fixed accepted-motion derivative and unchanged body; context historical scope reconciled without dropping rules."
+      },
+      "director_preferences": {
+        "disposition": "apply",
+        "reason": "Director384 accepts383 build and grants167..176 adaptation proof. Old torso-construction scopes are historical failed methods, original quality/motion/protection remain binding. Original source role: Predict failure through expert lenses and fix internally; setup and routine algorithms are not handovers.",
+        "implication": "Bare head and adapted leather proof, same-source matched close views, fixed accepted-motion derivative and unchanged body; context historical scope reconciled without dropping rules."
+      },
+      "references": {
+        "disposition": "apply",
+        "reason": "Director384 accepts383 build and grants167..176 adaptation proof. Old torso-construction scopes are historical failed methods, original quality/motion/protection remain binding. Original source role: Reference14\u201319s governs faithful action phases; accepted film governs appearance; rejected poses are negative controls.",
+        "implication": "Bare head and adapted leather proof, same-source matched close views, fixed accepted-motion derivative and unchanged body; context historical scope reconciled without dropping rules."
+      },
+      "controls": {
+        "disposition": "apply",
+        "reason": "Director384 accepts383 build and grants167..176 adaptation proof. Old torso-construction scopes are historical failed methods, original quality/motion/protection remain binding. Original source role: Fresh motion-domain packet and manual AU09\u201313,16 plus317\u2013334 reconciliation accompany this inspection.",
+        "implication": "Bare head and adapted leather proof, same-source matched close views, fixed accepted-motion derivative and unchanged body; context historical scope reconciled without dropping rules."
+      },
+      "constraints": {
+        "disposition": "apply",
+        "reason": "Director384 accepts383 build and grants167..176 adaptation proof. Old torso-construction scopes are historical failed methods, original quality/motion/protection remain binding. Original source role: Inspect64 invalid used-armature drivers, removed object drivers and FK bypasses; no blind restoration or defect waiver.",
+        "implication": "Bare head and adapted leather proof, same-source matched close views, fixed accepted-motion derivative and unchanged body; context historical scope reconciled without dropping rules."
+      },
+      "cast_findings": {
+        "disposition": "apply",
+        "reason": "Director384 accepts383 build and grants167..176 adaptation proof. Old torso-construction scopes are historical failed methods, original quality/motion/protection remain binding. Original source role: High topology and assigned texture already exist. Address cylindrical turban, smooth costume silhouette and unsupported saddle form before extra surface noise; preserve207 garment pose keys.",
+        "implication": "Bare head and adapted leather proof, same-source matched close views, fixed accepted-motion derivative and unchanged body; context historical scope reconciled without dropping rules."
+      },
+      "audit348": {
+        "disposition": "apply",
+        "reason": "Director384 accepts383 build and grants167..176 adaptation proof. Old torso-construction scopes are historical failed methods, original quality/motion/protection remain binding. Original source role: Apply the reviewed causal proof before dependent clothing work.",
+        "implication": "Bare head and adapted leather proof, same-source matched close views, fixed accepted-motion derivative and unchanged body; context historical scope reconciled without dropping rules."
+      },
+      "reconciliation351": {
+        "disposition": "apply",
+        "reason": "Director384 accepts383 build and grants167..176 adaptation proof. Old torso-construction scopes are historical failed methods, original quality/motion/protection remain binding. Original source role: Apply the reviewed causal proof before dependent clothing work.",
+        "implication": "Bare head and adapted leather proof, same-source matched close views, fixed accepted-motion derivative and unchanged body; context historical scope reconciled without dropping rules."
+      },
+      "strategy352": {
+        "disposition": "apply",
+        "reason": "Director384 accepts383 build and grants167..176 adaptation proof. Old torso-construction scopes are historical failed methods, original quality/motion/protection remain binding. Original source role: Coordinate arm and contact constraints; isolate pose versus skinning before independent garment transfer.",
+        "implication": "Bare head and adapted leather proof, same-source matched close views, fixed accepted-motion derivative and unchanged body; context historical scope reconciled without dropping rules."
+      },
+      "strategy353": {
+        "disposition": "apply",
+        "reason": "Director384 accepts383 build and grants167..176 adaptation proof. Old torso-construction scopes are historical failed methods, original quality/motion/protection remain binding. Original source role: Apply causal interface tests and retain scoped successes; leader and horse precede crowd.",
+        "implication": "Bare head and adapted leather proof, same-source matched close views, fixed accepted-motion derivative and unchanged body; context historical scope reconciled without dropping rules."
+      },
+      "lessons352": {
+        "disposition": "apply",
+        "reason": "Director384 accepts383 build and grants167..176 adaptation proof. Old torso-construction scopes are historical failed methods, original quality/motion/protection remain binding. Original source role: Apply causal interface tests and retain scoped successes; leader and horse precede crowd.",
+        "implication": "Bare head and adapted leather proof, same-source matched close views, fixed accepted-motion derivative and unchanged body; context historical scope reconciled without dropping rules."
+      },
+      "strategy354": {
+        "disposition": "apply",
+        "reason": "Director384 accepts383 build and grants167..176 adaptation proof. Old torso-construction scopes are historical failed methods, original quality/motion/protection remain binding. Original source role: Reconstruct failed whole-form appearance, preserve motion16 and original quality/reference authority.",
+        "implication": "Bare head and adapted leather proof, same-source matched close views, fixed accepted-motion derivative and unchanged body; context historical scope reconciled without dropping rules."
+      },
+      "retro354": {
+        "disposition": "apply",
+        "reason": "Director384 accepts383 build and grants167..176 adaptation proof. Old torso-construction scopes are historical failed methods, original quality/motion/protection remain binding. Original source role: Reconstruct failed whole-form appearance, preserve motion16 and original quality/reference authority.",
+        "implication": "Bare head and adapted leather proof, same-source matched close views, fixed accepted-motion derivative and unchanged body; context historical scope reconciled without dropping rules."
+      },
+      "lessons353": {
+        "disposition": "apply",
+        "reason": "Director384 accepts383 build and grants167..176 adaptation proof. Old torso-construction scopes are historical failed methods, original quality/motion/protection remain binding. Original source role: Reconstruct failed whole-form appearance, preserve motion16 and original quality/reference authority.",
+        "implication": "Bare head and adapted leather proof, same-source matched close views, fixed accepted-motion derivative and unchanged body; context historical scope reconciled without dropping rules."
+      },
+      "strategy357": {
+        "disposition": "apply",
+        "reason": "Director384 accepts383 build and grants167..176 adaptation proof. Old torso-construction scopes are historical failed methods, original quality/motion/protection remain binding. Original source role: Replace invalid inherited follicle domain before density; retain354/71 sash/tack and motion16; review each cycle and cumulative fifth.",
+        "implication": "Bare head and adapted leather proof, same-source matched close views, fixed accepted-motion derivative and unchanged body; context historical scope reconciled without dropping rules."
+      },
+      "lessons354": {
+        "disposition": "apply",
+        "reason": "Director384 accepts383 build and grants167..176 adaptation proof. Old torso-construction scopes are historical failed methods, original quality/motion/protection remain binding. Original source role: Replace invalid inherited follicle domain before density; retain354/71 sash/tack and motion16; review each cycle and cumulative fifth.",
+        "implication": "Bare head and adapted leather proof, same-source matched close views, fixed accepted-motion derivative and unchanged body; context historical scope reconciled without dropping rules."
+      },
+      "strategy358": {
+        "disposition": "apply",
+        "reason": "Director384 accepts383 build and grants167..176 adaptation proof. Old torso-construction scopes are historical failed methods, original quality/motion/protection remain binding. Original source role: Correct actual headstall ownership and its consuming rein span; retain357 construction gains and original faithful action reference.",
+        "implication": "Bare head and adapted leather proof, same-source matched close views, fixed accepted-motion derivative and unchanged body; context historical scope reconciled without dropping rules."
+      },
+      "lessons357": {
+        "disposition": "apply",
+        "reason": "Director384 accepts383 build and grants167..176 adaptation proof. Old torso-construction scopes are historical failed methods, original quality/motion/protection remain binding. Original source role: Correct actual headstall ownership and its consuming rein span; retain357 construction gains and original faithful action reference.",
+        "implication": "Bare head and adapted leather proof, same-source matched close views, fixed accepted-motion derivative and unchanged body; context historical scope reconciled without dropping rules."
+      },
+      "strategy361": {
+        "disposition": "apply",
+        "reason": "Director384 accepts383 build and grants167..176 adaptation proof. Old torso-construction scopes are historical failed methods, original quality/motion/protection remain binding. Original source role: 361 authorizes ten additional each and a conservative whole-segment proof, then integrated actor/horse review. Old358 endpoint and sparse-projection methods are rejected.",
+        "implication": "Bare head and adapted leather proof, same-source matched close views, fixed accepted-motion derivative and unchanged body; context historical scope reconciled without dropping rules."
+      },
+      "lessons358": {
+        "disposition": "apply",
+        "reason": "Director384 accepts383 build and grants167..176 adaptation proof. Old torso-construction scopes are historical failed methods, original quality/motion/protection remain binding. Original source role: Apply actual anatomical ownership, whole consumer path, final thickness/sampling review, component versus integrated proof and honest cycle accounting.",
+        "implication": "Bare head and adapted leather proof, same-source matched close views, fixed accepted-motion derivative and unchanged body; context historical scope reconciled without dropping rules."
+      },
+      "routing360": {
+        "disposition": "apply",
+        "reason": "Director384 accepts383 build and grants167..176 adaptation proof. Old torso-construction scopes are historical failed methods, original quality/motion/protection remain binding. Original source role: Sol6.1 High is default for planning/execution/review/retros; Astra needs a separate narrow Director-approved assignment, absent here.",
+        "implication": "Bare head and adapted leather proof, same-source matched close views, fixed accepted-motion derivative and unchanged body; context historical scope reconciled without dropping rules."
+      },
+      "strategy362": {
+        "disposition": "apply",
+        "reason": "Director384 accepts383 build and grants167..176 adaptation proof. Old torso-construction scopes are historical failed methods, original quality/motion/protection remain binding. Original source role: 362 adds ten appearance only; preserve motion25..31. Full dressed layer proof before whole leader and isolated passage.",
+        "implication": "Bare head and adapted leather proof, same-source matched close views, fixed accepted-motion derivative and unchanged body; context historical scope reconciled without dropping rules."
+      },
+      "lessons361": {
+        "disposition": "apply",
+        "reason": "Director384 accepts383 build and grants167..176 adaptation proof. Old torso-construction scopes are historical failed methods, original quality/motion/protection remain binding. Original source role: Compile complete layer graph; actual support domain, continuity and canonical state must be proved. Component success does not qualify whole art.",
+        "implication": "Bare head and adapted leather proof, same-source matched close views, fixed accepted-motion derivative and unchanged body; context historical scope reconciled without dropping rules."
+      },
+      "director363": {
+        "disposition": "apply",
+        "reason": "Director384 accepts383 build and grants167..176 adaptation proof. Old torso-construction scopes are historical failed methods, original quality/motion/protection remain binding. Original source role: 363 rejects362; ten additional each. Phased fast rear, readable prep, faithful slam/hoist signal, real tied-flag cloth, face eyeline/visibility, chest/right-hand repair.",
+        "implication": "Bare head and adapted leather proof, same-source matched close views, fixed accepted-motion derivative and unchanged body; context historical scope reconciled without dropping rules."
+      },
+      "strategy363": {
+        "disposition": "apply",
+        "reason": "Director384 accepts383 build and grants167..176 adaptation proof. Old torso-construction scopes are historical failed methods, original quality/motion/protection remain binding. Original source role: Diagnose source form/hand and time consumers; prove cloth persistence on exact action; source/frame/Director AV separate.",
+        "implication": "Bare head and adapted leather proof, same-source matched close views, fixed accepted-motion derivative and unchanged body; context historical scope reconciled without dropping rules."
+      },
+      "audit363": {
+        "disposition": "apply",
+        "reason": "Director384 accepts383 build and grants167..176 adaptation proof. Old torso-construction scopes are historical failed methods, original quality/motion/protection remain binding. Original source role: Actual front chest failure, invalid side framing and open rein-hand claw confirmed; length metrics did not pass anatomy. Compare corrective effect and actual grip before integration.",
+        "implication": "Bare head and adapted leather proof, same-source matched close views, fixed accepted-motion derivative and unchanged body; context historical scope reconciled without dropping rules."
+      },
+      "structural111": {
+        "disposition": "apply",
+        "reason": "Director384 accepts383 build and grants167..176 adaptation proof. Old torso-construction scopes are historical failed methods, original quality/motion/protection remain binding. Original source role: Actual40 frontal/chronology failures remain open; independent lower-pectoral correction and actual tied-CLOTH/cache capability proof precede final41 rebake and art review.",
+        "implication": "Bare head and adapted leather proof, same-source matched close views, fixed accepted-motion derivative and unchanged body; context historical scope reconciled without dropping rules."
+      },
+      "causal363": {
+        "disposition": "apply",
+        "reason": "Director384 accepts383 build and grants167..176 adaptation proof. Old torso-construction scopes are historical failed methods, original quality/motion/protection remain binding. Original source role: 363 actual integer/subframe ownership findings and preserved components constrain continuation. Full LEARNINGS source and failedcloth result manually reconciled.",
+        "implication": "Bare head and adapted leather proof, same-source matched close views, fixed accepted-motion derivative and unchanged body; context historical scope reconciled without dropping rules."
+      },
+      "cloth363": {
+        "disposition": "apply",
+        "reason": "Director384 accepts383 build and grants167..176 adaptation proof. Old torso-construction scopes are historical failed methods, original quality/motion/protection remain binding. Original source role: Actual117 and final41 cloth failed; preserve113 chest/110 grasp/final41 timing; no guard relaxation or apparent near-pass.",
+        "implication": "Bare head and adapted leather proof, same-source matched close views, fixed accepted-motion derivative and unchanged body; context historical scope reconciled without dropping rules."
+      },
+      "director374": {
+        "disposition": "apply",
+        "reason": "Director384 accepts383 build and grants167..176 adaptation proof. Old torso-construction scopes are historical failed methods, original quality/motion/protection remain binding. Original source role: Apply latest Director374 scope, positive coherent form, accepted motion preservation and diagnostic-before-sculpt strategy; earlier broad appearance scope remains historical.",
+        "implication": "Bare head and adapted leather proof, same-source matched close views, fixed accepted-motion derivative and unchanged body; context historical scope reconciled without dropping rules."
+      },
+      "strategy374": {
+        "disposition": "apply",
+        "reason": "Director384 accepts383 build and grants167..176 adaptation proof. Old torso-construction scopes are historical failed methods, original quality/motion/protection remain binding. Original source role: Apply latest Director374 scope, positive coherent form, accepted motion preservation and diagnostic-before-sculpt strategy; earlier broad appearance scope remains historical.",
+        "implication": "Bare head and adapted leather proof, same-source matched close views, fixed accepted-motion derivative and unchanged body; context historical scope reconciled without dropping rules."
+      },
+      "carry373": {
+        "disposition": "apply",
+        "reason": "Director384 accepts383 build and grants167..176 adaptation proof. Old torso-construction scopes are historical failed methods, original quality/motion/protection remain binding. Original source role: Apply latest Director374 scope, positive coherent form, accepted motion preservation and diagnostic-before-sculpt strategy; earlier broad appearance scope remains historical.",
+        "implication": "Bare head and adapted leather proof, same-source matched close views, fixed accepted-motion derivative and unchanged body; context historical scope reconciled without dropping rules."
+      },
+      "form_failure365": {
+        "disposition": "apply",
+        "reason": "Director384 accepts383 build and grants167..176 adaptation proof. Old torso-construction scopes are historical failed methods, original quality/motion/protection remain binding. Original source role: Apply latest Director374 scope, positive coherent form, accepted motion preservation and diagnostic-before-sculpt strategy; earlier broad appearance scope remains historical.",
+        "implication": "Bare head and adapted leather proof, same-source matched close views, fixed accepted-motion derivative and unchanged body; context historical scope reconciled without dropping rules."
+      },
+      "director375": {
+        "disposition": "apply",
+        "reason": "Director384 accepts383 build and grants167..176 adaptation proof. Old torso-construction scopes are historical failed methods, original quality/motion/protection remain binding. Original source role: Director375 approves4additional appearance cycles to fix rejected chest deformation; failing339 view first, no spending/escalation.",
+        "implication": "Bare head and adapted leather proof, same-source matched close views, fixed accepted-motion derivative and unchanged body; context historical scope reconciled without dropping rules."
+      },
+      "carry374": {
+        "disposition": "apply",
+        "reason": "Director384 accepts383 build and grants167..176 adaptation proof. Old torso-construction scopes are historical failed methods, original quality/motion/protection remain binding. Original source role: 374rest-form assumption failed; inactive correctives do not exclude skinning, proxy guards need accepted-source calibration, early339 must fail before expensive proof.",
+        "implication": "Bare head and adapted leather proof, same-source matched close views, fixed accepted-motion derivative and unchanged body; context historical scope reconciled without dropping rules."
+      },
+      "director376": {
+        "disposition": "apply",
+        "reason": "Director384 accepts383 build and grants167..176 adaptation proof. Old torso-construction scopes are historical failed methods, original quality/motion/protection remain binding. Original source role: Director376 approves5morecycles; no other resources or Astra authority inferred.",
+        "implication": "Bare head and adapted leather proof, same-source matched close views, fixed accepted-motion derivative and unchanged body; context historical scope reconciled without dropping rules."
+      },
+      "carry375": {
+        "disposition": "apply",
+        "reason": "Director384 accepts383 build and grants167..176 adaptation proof. Old torso-construction scopes are historical failed methods, original quality/motion/protection remain binding. Original source role: 375actual body-only front339 still has pendant bib; simpler ownership andrest-bound smoothing failed. Preserve sourcecontrols and exactprimary; qualify posed-response before positiveform sculpt.",
+        "implication": "Bare head and adapted leather proof, same-source matched close views, fixed accepted-motion derivative and unchanged body; context historical scope reconciled without dropping rules."
+      },
+      "director379": {
+        "disposition": "apply",
+        "reason": "Director384 accepts383 build and grants167..176 adaptation proof. Old torso-construction scopes are historical failed methods, original quality/motion/protection remain binding. Original source role: Explicit resume, ten available same-task cycles137..146; no Astra or spend.",
+        "implication": "Bare head and adapted leather proof, same-source matched close views, fixed accepted-motion derivative and unchanged body; context historical scope reconciled without dropping rules."
+      },
+      "reference378": {
+        "disposition": "apply",
+        "reason": "Director384 accepts383 build and grants167..176 adaptation proof. Old torso-construction scopes are historical failed methods, original quality/motion/protection remain binding. Original source role: Purpose-qualified coverage decisions govern this continuation.",
+        "implication": "Bare head and adapted leather proof, same-source matched close views, fixed accepted-motion derivative and unchanged body; context historical scope reconciled without dropping rules."
+      },
+      "target379": {
+        "disposition": "apply",
+        "reason": "Director384 accepts383 build and grants167..176 adaptation proof. Old torso-construction scopes are historical failed methods, original quality/motion/protection remain binding. Original source role: Inspected frontal/oblique/rearing target features and role exclusions.",
+        "implication": "Bare head and adapted leather proof, same-source matched close views, fixed accepted-motion derivative and unchanged body; context historical scope reconciled without dropping rules."
+      },
+      "director380": {
+        "disposition": "apply",
+        "reason": "Director384 accepts383 build and grants167..176 adaptation proof. Old torso-construction scopes are historical failed methods, original quality/motion/protection remain binding. Original source role: 380 supersedes earlier no-Astra clauses only for exact remaining chest assignment. Same history/cap, no separate runtime calls or new spend.",
+        "implication": "Bare head and adapted leather proof, same-source matched close views, fixed accepted-motion derivative and unchanged body; context historical scope reconciled without dropping rules."
+      },
+      "director381": {
+        "disposition": "apply",
+        "reason": "Director384 accepts383 build and grants167..176 adaptation proof. Old torso-construction scopes are historical failed methods, original quality/motion/protection remain binding. Original source role: Return to Sol6.1High; ten further corrections147..156 for proposed positive forequarter reconstruction.",
+        "implication": "Bare head and adapted leather proof, same-source matched close views, fixed accepted-motion derivative and unchanged body; context historical scope reconciled without dropping rules."
+      },
+      "target381": {
+        "disposition": "apply",
+        "reason": "Director384 accepts383 build and grants167..176 adaptation proof. Old torso-construction scopes are historical failed methods, original quality/motion/protection remain binding. Original source role: Actual near-frontal rearing photographs supplement physical chest/foreleg continuity; no film pixels, style or choreography authority.",
+        "implication": "Bare head and adapted leather proof, same-source matched close views, fixed accepted-motion derivative and unchanged body; context historical scope reconciled without dropping rules."
+      },
+      "director383": {
+        "disposition": "apply",
+        "reason": "Director384 accepts383 build and grants167..176 adaptation proof. Old torso-construction scopes are historical failed methods, original quality/motion/protection remain binding. Original source role: Ten additional corrections to test Director-downloaded Warhorse Lite as an alternative foundation; no production adoption yet.",
+        "implication": "Bare head and adapted leather proof, same-source matched close views, fixed accepted-motion derivative and unchanged body; context historical scope reconciled without dropping rules."
+      },
+      "strategy383": {
+        "disposition": "apply",
+        "reason": "Director384 accepts383 build and grants167..176 adaptation proof. Old torso-construction scopes are historical failed methods, original quality/motion/protection remain binding. Original source role: Qualify actual donor form before adaptation; license and safe local route established; stock rear not an accepted replacement.",
+        "implication": "Bare head and adapted leather proof, same-source matched close views, fixed accepted-motion derivative and unchanged body; context historical scope reconciled without dropping rules."
+      },
+      "carry381": {
+        "disposition": "apply",
+        "reason": "Director384 accepts383 build and grants167..176 adaptation proof. Old torso-construction scopes are historical failed methods, original quality/motion/protection remain binding. Original source role: Previous native chest reconstructions failed; stop same-foundation variants and test actual visible alternative early.",
+        "implication": "Bare head and adapted leather proof, same-source matched close views, fixed accepted-motion derivative and unchanged body; context historical scope reconciled without dropping rules."
+      },
+      "director384": {
+        "disposition": "apply",
+        "reason": "Director384 accepts383 build and grants167..176 adaptation proof. Old torso-construction scopes are historical failed methods, original quality/motion/protection remain binding. Original source role: Director384 accepts383 heavy build and authorizes ten167..176 head/tack adaptation proof slots, before leader fit.",
+        "implication": "Bare head and adapted leather proof, same-source matched close views, fixed accepted-motion derivative and unchanged body; context historical scope reconciled without dropping rules."
+      },
+      "strategy384": {
+        "disposition": "apply",
+        "reason": "Director384 accepts383 build and grants167..176 adaptation proof. Old torso-construction scopes are historical failed methods, original quality/motion/protection remain binding. Original source role: Actual before/after close proof first; material adaptation cannot hide a helmet-shaped face.",
+        "implication": "Bare head and adapted leather proof, same-source matched close views, fixed accepted-motion derivative and unchanged body; context historical scope reconciled without dropping rules."
+      },
+      "refs384": {
+        "disposition": "apply",
+        "reason": "Director384 accepts383 build and grants167..176 adaptation proof. Old torso-construction scopes are historical failed methods, original quality/motion/protection remain binding. Original source role: Actual conformation/anatomy and coat/leather references cover structure/material separately, without breed/style adoption.",
+        "implication": "Bare head and adapted leather proof, same-source matched close views, fixed accepted-motion derivative and unchanged body; context historical scope reconciled without dropping rules."
+      }
+    },
+    "knowledge_uses": {
+      "anatomy": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "animal_coordination": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "anticipation": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "au_contact": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "au_deformation": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "au_performance": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "au_reference": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "au_reuse": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "au_surface": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "authority": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "cache_safety": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "construction_interfaces": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "current_state": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "economics": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "look": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "motion": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "render_profile": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "representation": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "reuse_envelope": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "rights": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "secondary": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "sikh_motion": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "sikh_scope": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "stopping": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "strategy": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "versioning": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "visual_gate": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures."
+    },
+    "reconciliation": "Director384 accepts383 build and grants167..176 adaptation proof. Old torso-construction scopes are historical failed methods, original quality/motion/protection remain binding.",
+    "unresolved": []
+  }
+}

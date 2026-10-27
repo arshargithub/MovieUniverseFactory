@@ -1,0 +1,44 @@
+{
+  "run_digest": "dd93cc95d303d66a50541350915c3bf716590f1de93fcd2d4a21fea19f91a085",
+  "verdict": "FAIL",
+  "observation": "Full ears restored, but ownership-only extraction drops unclassified nose/cheek skin. Front and side show holes; head/neck boundary remains open at crest with old cut strips. Critical owner counts did not cover all facial skin or attachment.",
+  "comparison": "Actual source complete head,173 intact face and current174 images. Ears/jaw/eye coverage100percent is not complete head coverage; no pose-family/pass claim.",
+  "open_defects": [
+    "Missing nose/cheek skin",
+    "Unsealed head/neck interface"
+  ],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh384-appearance-c174-after_front/snapshot.json",
+      "sha256": "536bf80340a8bd49ebec79be1c51e15cae9aac5f95567da1265c72e192793f6d"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh384-appearance-c174-after_front/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh384-appearance-c174-after_front/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh384-appearance-c174-after_front/frame.png",
+      "sha256": "67d237fe7502c6991dc12917182438fbf55fe5532c16b3903effe76c20a0f96f"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh384-appearance-c174-after_front/frames.json",
+      "sha256": "1da77f1039ab6c8920c440155922fc2c8b45a2499b2a9a67e42e062ba0e349dd"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh384-appearance-c174-after_front/frame.png",
+      "sha256": "67d237fe7502c6991dc12917182438fbf55fe5532c16b3903effe76c20a0f96f"
+    },
+    "frame_333": {
+      "path": ".runtime/factory-native/sikh384-appearance-c174-after_front/frame-0333.png",
+      "sha256": "687d6dd0abb11a9d5373cd87f8c7fbc978f79c80f3dff69abf2514e90b1a361b"
+    },
+    "frame_339": {
+      "path": ".runtime/factory-native/sikh384-appearance-c174-after_front/frame-0339.png",
+      "sha256": "b0255806d9295c3be1cbcb1c4aec463cfd97e00fcee8bf63b818d9496a8e9c32"
+    }
+  }
+}

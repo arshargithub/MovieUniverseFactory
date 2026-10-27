@@ -34,3 +34,7 @@ Measure escaped and repeated defects, unnecessary handovers, discovery phase, ac
 - Current protection/calibration status: [255 report](../planning/PROTECTION_CALIBRATION_255.md). A private MP4 copy is not a recoverable project backup. Neither source hashes nor a scene reopen prove all native dependencies are portable.
 
 No successful recovery/calibration is claimed by this index. New evidence must update the receipt/report; stale source bindings must block until reviewed reconciliation.
+
+## Exchange384 — head/tack qualification exhausted; creative decision pending
+
+Director384 accepted383’s heavy donor direction and authorized ten further slots167..176. Bare-head conversion is **internally rejected**, not adopted: the final anatomical graft leaves a visible neck web/collar in front, side and whole-horse views. Task `sikh335-supporting-appearance` is REPLAN_REQUIRED176/max176; no active native lease, no motion proof or Director AV queue. Protected accepted motion/Pashtun and166donor masters are unchanged. See [failed qualification and decision](../../results/sikh384/CLOSEOUT.md). Recommend retaining the coherent original166 head/neck and styling its headpiece, subject to Director approval because this changes visible costume. Five scoped finishing cycles are proposed, not authorized. Indian armor references support an invented-world option, not a Nihang-specific historical claim. No new spend, upload, push or remote-backup claim. Next substantive checkpoint390.

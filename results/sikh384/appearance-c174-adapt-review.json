@@ -1,0 +1,35 @@
+{
+  "run_digest": "3f52892090ed275b6aecc50f2790033d304f0992b139933e6485a4a1947f4d4c",
+  "verdict": "PASS",
+  "observation": "Actual complete component extraction, guarded body coordinate/weight equality and evaluated bind residual pass; critical mapped component coverage reported. Original object and target rig snapshots unchanged at283.",
+  "comparison": "Actual report and source/adapted snapshot comparisons. This qualifies transport/preservation only; head-neck fit and appearance await renders.",
+  "open_defects": [],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh384-appearance-c174-adapt/snapshot.json",
+      "sha256": "536bf80340a8bd49ebec79be1c51e15cae9aac5f95567da1265c72e192793f6d"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh384-appearance-c174-adapt/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh384-appearance-c174-adapt/script-diagnostics.json",
+      "sha256": "4e1205462c9c8153ef4f4d15eba35ea263f6079e3b74341771bbb12e2f41f34c"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh384-appearance-c174-adapt/scene.blend",
+      "sha256": "962cbf7687f0e03cd27f95072046aba787fdf62060fedcbc95e25218c1e2b2d1"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh384-appearance-c174-adapt/patch-evidence.json",
+      "sha256": "ebb3bfa42b69d884dba659693277f59d4c60f40b19205ef28564a9c4c49574e7"
+    }
+  },
+  "requirement_outcomes": {
+    "preservation": {
+      "status": "PASS",
+      "observation": "Native guarded original body/source/rig preservation; new component remains subject to visual checks."
+    }
+  }
+}

@@ -1,0 +1,262 @@
+{
+  "parent": ".runtime/factory-native/sikh383-appearance-c166-import/scene.blend",
+  "brief_path": "results/sikh384/revised168-brief.json",
+  "method": "Material-only source-metal pixel adaptation to natural dark bay coat and rugged leather; original actual outer surface and motion preserved.",
+  "cause": "Accepted heavy build carries fused metal face/breast plate; no intact underlying anatomy is known.",
+  "scope": "384 bare-head/tack adaptation proof only; no production adoption or leader/groom work.",
+  "proof": "Matched before/after head front, side and chest close views first; then front/side/oblique283333339 plus wholehorse to reject recolored helmet, seams and damaged eyes.",
+  "failure": "Visible helmet identity, discontinuous coat, damaged anatomy/eyes, unsupported tack or source mutation rejects method before downstream work.",
+  "alternatives": "Deleting plate triangles risks absent anatomy; material reinterpretation is smallest discriminating proof. Local geometry reconstruction only after actual failure.",
+  "expected": "Natural exposed head and matte rugged leather without changing accepted heavier form or choreography.",
+  "reconciliation": "Director384 accepts383 build and grants167..176 adaptation proof. Old torso-construction scopes are historical failed methods, original quality/motion/protection remain binding.",
+  "reference_reason": "384 real bare profile/anatomy plus coat/leather macro address head target; original reference video/accepted film remain their separate authorities.",
+  "sources": [
+    "results/sikh384/REQUEST.md",
+    "results/sikh384/APPROVED_ALLOWANCE.json",
+    "results/sikh384/STRATEGY.md",
+    "results/sikh384/HANDLER_REVIEW.md",
+    "results/sikh384/REFERENCE_ACQUISITION.json",
+    "results/sikh384/REFERENCE_QUALIFICATION.md",
+    "src/movie_factory/adapters/blender/warhorse384.py",
+    "src/movie_factory/adapters/blender/nihang_patch.py",
+    "src/movie_factory/adapters/blender/nihang_control.py",
+    "tests/test_warhorse384.py",
+    "scripts/sikh384_plan.py",
+    "scripts/sikh384_setup.py",
+    ".runtime/art-direction/sikh384-references/head-closeup.jpg",
+    ".runtime/art-direction/sikh384-references/head-profile.jpg",
+    ".runtime/art-direction/sikh384-references/head-conformation.jpg",
+    ".runtime/art-direction/sikh384-references/head-anatomy.jpg"
+  ],
+  "retrospective_evidence": [
+    "results/sikh384/REQUEST.md",
+    "results/sikh384/APPROVED_ALLOWANCE.json",
+    "results/sikh384/STRATEGY.md",
+    "results/sikh384/HANDLER_REVIEW.md",
+    "results/sikh384/REFERENCE_ACQUISITION.json",
+    "results/sikh384/REFERENCE_QUALIFICATION.md"
+  ],
+  "steps": [
+    {
+      "id": "source",
+      "depends_on": [],
+      "recipe": {
+        "operation": "nihang_save",
+        "frame": 283,
+        "width": 640,
+        "height": 640,
+        "samples": 8
+      },
+      "requirements": [
+        "preservation"
+      ]
+    },
+    {
+      "id": "before_front",
+      "depends_on": [
+        "source"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 283,
+        "frames": [
+          283
+        ],
+        "view": "warhorse_head_front384",
+        "width": 640,
+        "height": 640,
+        "samples": 8
+      },
+      "requirements": [
+        "preservation"
+      ]
+    },
+    {
+      "id": "before_side",
+      "depends_on": [
+        "source"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 283,
+        "frames": [
+          283
+        ],
+        "view": "warhorse_head_side384",
+        "width": 640,
+        "height": 640,
+        "samples": 8
+      },
+      "requirements": [
+        "preservation"
+      ]
+    },
+    {
+      "id": "before_chest",
+      "depends_on": [
+        "source"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 283,
+        "frames": [
+          283
+        ],
+        "view": "warhorse_chest384",
+        "width": 640,
+        "height": 640,
+        "samples": 8
+      },
+      "requirements": [
+        "preservation"
+      ]
+    },
+    {
+      "id": "adapt",
+      "depends_on": [
+        "source",
+        "before_front",
+        "before_side",
+        "before_chest"
+      ],
+      "recipe": {
+        "operation": "nihang_patch",
+        "frame": 283,
+        "width": 640,
+        "height": 640,
+        "samples": 8,
+        "edits": [
+          {
+            "kind": "warhorse_surface384",
+            "target": "warhorse383"
+          }
+        ]
+      },
+      "requirements": [
+        "preservation"
+      ]
+    },
+    {
+      "id": "after_front",
+      "depends_on": [
+        "adapt"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 283,
+        "frames": [
+          283,
+          333,
+          339
+        ],
+        "view": "warhorse_head_front384",
+        "width": 640,
+        "height": 640,
+        "samples": 8
+      },
+      "requirements": [
+        "form",
+        "interfaces",
+        "evidence",
+        "whole_look"
+      ]
+    },
+    {
+      "id": "after_side",
+      "depends_on": [
+        "adapt"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 283,
+        "frames": [
+          283,
+          333,
+          339
+        ],
+        "view": "warhorse_head_side384",
+        "width": 640,
+        "height": 640,
+        "samples": 8
+      },
+      "requirements": [
+        "form",
+        "interfaces",
+        "evidence",
+        "whole_look"
+      ]
+    },
+    {
+      "id": "after_oblique",
+      "depends_on": [
+        "adapt"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 283,
+        "frames": [
+          283,
+          333,
+          339
+        ],
+        "view": "warhorse_head_oblique384",
+        "width": 640,
+        "height": 640,
+        "samples": 8
+      },
+      "requirements": [
+        "form",
+        "interfaces",
+        "evidence",
+        "whole_look"
+      ]
+    },
+    {
+      "id": "after_chest",
+      "depends_on": [
+        "adapt"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 283,
+        "frames": [
+          283,
+          333,
+          339
+        ],
+        "view": "warhorse_chest384",
+        "width": 640,
+        "height": 640,
+        "samples": 8
+      },
+      "requirements": [
+        "interfaces",
+        "evidence"
+      ]
+    },
+    {
+      "id": "whole",
+      "depends_on": [
+        "adapt"
+      ],
+      "recipe": {
+        "operation": "nihang_frames",
+        "frame": 283,
+        "frames": [
+          283,
+          333,
+          339
+        ],
+        "view": "warhorse_reverse383",
+        "width": 640,
+        "height": 640,
+        "samples": 8
+      },
+      "requirements": [
+        "evidence",
+        "whole_look",
+        "director_form_motion"
+      ]
+    }
+  ]
+}

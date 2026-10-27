@@ -1,0 +1,45 @@
+{
+  "run_digest": "ebc32711f2c6d4ee85683d42f5396d4bfe09bf6a77f746dbcfd98e86a2d3bac6",
+  "verdict": "FAIL",
+  "observation": "Actual reused face/eyes/muzzle/bridle have credible detail, but source positional crop amputates rear head and ears. Side shows a major open head-to-neck gap; source component is incomplete.",
+  "comparison": "Actual old complete native head and real physical references, not just improvement over169/170. Source positional bounds were not a valid anatomical component boundary.",
+  "open_defects": [
+    "Amputated ear/back-head component",
+    "Open neck attachment",
+    "No full pose/whole qualification"
+  ],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh384-appearance-c173-after_side/snapshot.json",
+      "sha256": "c78c29f30ceffc910158c4a6953d52f29ce5eb903dc34a4a1417fca14ae4469d"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh384-appearance-c173-after_side/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh384-appearance-c173-after_side/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh384-appearance-c173-after_side/frame.png",
+      "sha256": "bf7ab5a52236433ebe4e79d4e5bfa8087625ce41e42d09a02c70bad8e55edbe2"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh384-appearance-c173-after_side/frames.json",
+      "sha256": "5fda9dafed415f56307b9849aebba328356312d430bb961f404641a0d8be7a39"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh384-appearance-c173-after_side/frame.png",
+      "sha256": "bf7ab5a52236433ebe4e79d4e5bfa8087625ce41e42d09a02c70bad8e55edbe2"
+    },
+    "frame_333": {
+      "path": ".runtime/factory-native/sikh384-appearance-c173-after_side/frame-0333.png",
+      "sha256": "fa055f747584e29088c00267a2b1c743927e0f376d7c8f716b307f4a2d796396"
+    },
+    "frame_339": {
+      "path": ".runtime/factory-native/sikh384-appearance-c173-after_side/frame-0339.png",
+      "sha256": "3ddc53ca50b51fe34ed35ce6ab6884021b6d08bcde5db6cd5c32fae4566fbcf7"
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "run_digest": "fe40b75f7035708ad5cec6cbd9d481270e40c0fba1d72c3c96cd7ea3f3431252",
+  "verdict": "FAIL",
+  "observation": "Actual283 head has overlapping/broken forehead patches, persistent armor-outline and unnatural eye/bridge transitions. Local relaxation on layered geometry creates collisions instead of coherent anatomy.",
+  "comparison": "Matched168/source front/side and bare real conformation. Distinctly fails exposed head quality; no wholehorse render or leader integration warranted.",
+  "open_defects": [
+    "Layered surface overlaps",
+    "Rigid remaining head border",
+    "Broken coat continuity"
+  ],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh384-appearance-c169-after_side/snapshot.json",
+      "sha256": "6533bec4a05bf9220738057f2eb4adeb0811c82f8fb94b232dd9cc712a71228b"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh384-appearance-c169-after_side/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh384-appearance-c169-after_side/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh384-appearance-c169-after_side/frame.png",
+      "sha256": "b03955bb09f542ecd0907fc5ba79c899a769a7ad9c0eccc96d770484336db529"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh384-appearance-c169-after_side/frames.json",
+      "sha256": "e7c532533a0306dc164584a14c34fbdcd8155bedc1f9065043303c6fa17bae13"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh384-appearance-c169-after_side/frame.png",
+      "sha256": "b03955bb09f542ecd0907fc5ba79c899a769a7ad9c0eccc96d770484336db529"
+    },
+    "frame_333": {
+      "path": ".runtime/factory-native/sikh384-appearance-c169-after_side/frame-0333.png",
+      "sha256": "46f3664a9b3c9f0f008c6f9525930678fa88acadb9446037cd7b4a84dc5e56fd"
+    },
+    "frame_339": {
+      "path": ".runtime/factory-native/sikh384-appearance-c169-after_side/frame-0339.png",
+      "sha256": "feaeae85440253307924bbea95563d0e2fca18431243fdb474913116b64769ee"
+    }
+  }
+}

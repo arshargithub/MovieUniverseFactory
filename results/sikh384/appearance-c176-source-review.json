@@ -1,0 +1,31 @@
+{
+  "run_digest": "d1ae1a05a4464f1e844561b0378de5d39eb9172ba61a4f3c5d9a6b5ccdef23e8",
+  "verdict": "PASS",
+  "observation": "Actual source176 original objects and donor pose/geometry/action/world/material state equal166 at283 exactly.",
+  "comparison": "Direct original/control snapshot equality, not an appearance pass.",
+  "open_defects": [],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh384-appearance-c176-source/snapshot.json",
+      "sha256": "18769efcba8c7da12e9d37553f76c657d8014cbb3e1baac61379a24195397038"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh384-appearance-c176-source/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh384-appearance-c176-source/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh384-appearance-c176-source/scene.blend",
+      "sha256": "63114468404f21301a4d9e249ab2d27d1423a876545963259307ac37131eb784"
+    }
+  },
+  "requirement_outcomes": {
+    "preservation": {
+      "status": "PASS",
+      "observation": "Unchanged original control available for final authorized proof."
+    }
+  }
+}

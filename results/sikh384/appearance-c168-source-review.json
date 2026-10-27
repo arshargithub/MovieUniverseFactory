@@ -1,0 +1,31 @@
+{
+  "run_digest": "a47b9e1fa4eeff7870e9c971472d70011bbd33248b2ef7d39b962a09cb585bd8",
+  "verdict": "PASS",
+  "observation": "Fresh reopened source snapshot matches166 required original objects and exact donor383 pose/mesh/material inventory at283; returned native and diagnostics present.",
+  "comparison": "Direct JSON comparison of original166 snapshot to168 source at same frame; new384 shader inventory adds measurement only.",
+  "open_defects": [],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh384-appearance-c168-source/snapshot.json",
+      "sha256": "0020273afac93030b505e9eab76bdb681e8d9a88972a03dc9519661a8ae2ea7a"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh384-appearance-c168-source/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh384-appearance-c168-source/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh384-appearance-c168-source/scene.blend",
+      "sha256": "63f0ba3ab12ddd7f9de31996b8dfa7cddfba469201713180bdfca0082db55ce2"
+    }
+  },
+  "requirement_outcomes": {
+    "preservation": {
+      "status": "PASS",
+      "observation": "Required original objects and donor evaluated geometry/bones/action/world/material names match166 exactly."
+    }
+  }
+}

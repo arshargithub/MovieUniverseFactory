@@ -1,0 +1,45 @@
+{
+  "run_digest": "7eb75409fc251ff542603c0c599dc342cd24776b48a7e8341d507fc64f2df756",
+  "verdict": "FAIL",
+  "observation": "Actual283 front/side shows broken segmented forehead and visible openings around brow/ear; cut-loop patch is not a coherent skin surface. Frontal breastcollar/strap edges also have new dark gaps despite preserved non-head coordinates.",
+  "comparison": "Actual bare real head, original166 and rejected169. Coordinate/weight preservation did not preserve whole surface topology/shading. New vertex IDs were inherited, so optional bridge-profile branch did not execute.",
+  "open_defects": [
+    "Broken exposed head topology",
+    "Adjacent tack shading/topology regression",
+    "Profile/explicit new-vertex branch did not run"
+  ],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh384-appearance-c170-after_front/snapshot.json",
+      "sha256": "dad780159bf3085dea65b15cac848023744b04cc8246c92d1dc1681e4fc70639"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh384-appearance-c170-after_front/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh384-appearance-c170-after_front/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh384-appearance-c170-after_front/frame.png",
+      "sha256": "f52e44da4a59f5ff626ed41b72b7aed296f673148f801e400ad8e84828f85926"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh384-appearance-c170-after_front/frames.json",
+      "sha256": "b9e4970cb82037daeef54bf5f099e592ade58cc500d63be5ee31b74cfe0cca8a"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh384-appearance-c170-after_front/frame.png",
+      "sha256": "f52e44da4a59f5ff626ed41b72b7aed296f673148f801e400ad8e84828f85926"
+    },
+    "frame_333": {
+      "path": ".runtime/factory-native/sikh384-appearance-c170-after_front/frame-0333.png",
+      "sha256": "347b91d6345b6a03e784e81348827592efbf06542a21c95cd24d26a0356d170c"
+    },
+    "frame_339": {
+      "path": ".runtime/factory-native/sikh384-appearance-c170-after_front/frame-0339.png",
+      "sha256": "22554ab6e6d1e4fc505a8068050d23d9b2af7b01807f31867e35f406ad3eb15b"
+    }
+  }
+}
