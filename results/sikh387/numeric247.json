@@ -1,0 +1,59 @@
+{
+  "controls": {
+    "neutral_error": 5.551115123125783e-17,
+    "rigid_error": 4.440892098500626e-16
+  },
+  "free_vertices": 1693,
+  "poses": [
+    {
+      "frame": 333,
+      "max_delta": 0.1757969856262207,
+      "outside_error": 0.0,
+      "iterations": 100,
+      "last_step": 0.0003235517894506669,
+      "near_collapsed_faces": 0,
+      "area_ratio": [
+        0.31542104184627534,
+        1.010753571987152,
+        4.452011909484864
+      ],
+      "crossings_before": 300,
+      "crossings_after": 245,
+      "introduced_crossings": 220
+    },
+    {
+      "frame": 339,
+      "max_delta": 0.39147284626960754,
+      "outside_error": 0.0,
+      "iterations": 100,
+      "last_step": 0.0006408203101923811,
+      "near_collapsed_faces": 1,
+      "area_ratio": [
+        0.262585344016552,
+        1.0078349709510803,
+        5.7850250816345214
+      ],
+      "crossings_before": 473,
+      "crossings_after": 364,
+      "introduced_crossings": 353
+    },
+    {
+      "frame": 346,
+      "max_delta": 0.2316620945930481,
+      "outside_error": 0.0,
+      "iterations": 100,
+      "last_step": 0.0005912388590469022,
+      "near_collapsed_faces": 0,
+      "area_ratio": [
+        0.30193773239850996,
+        0.9861178398132324,
+        4.417687091827393
+      ],
+      "crossings_before": 295,
+      "crossings_after": 208,
+      "introduced_crossings": 208
+    }
+  ],
+  "scope": "Three diagnostic poses, coupled original-rest skin reconstruction; no full-speed or anatomical pass.",
+  "domain_failure": "OWNER387_SURFACE_LIMIT"
+}

@@ -1,0 +1,16 @@
+# Director388 — two-correction forequarter reassessment
+
+Approved manual-chat Astra scope247–248; parent task and251ceiling unchanged. Original motion66/75/80, head, distal contacts and identity remain protected. No donor or armor. Qualitative references (Friesian rear, original motion, front pectorals) govern anatomy, not literal pixel/metric targets. The generated study is not anatomical authority.
+
+## Reassessment
+The actual side243 shows a triangular triceps/upperarm plate beneath a protruding lower-neck mass.246's primitive study replaces it with toy-like knobs and is not a usable goal. The real photograph has continuous scapular and chest surfaces, with upper legs emerging beneath the thorax; no separate shelf.
+
+Earlier227/229 rest-metric solves froze every vertex with forearm ownership >=.35, including the actual elbow/proximal tissue.241 curvature flow freed that region but only smoothed the already deformed surface; it did not restore rest-shape relationships.240 ruled out B-bone segment count as the main cause. Thus neither test answered whether the original connected skin can accommodate the accepted distal paths when the entire necessary proximal interface is free. This is a discriminating revisit of a solver family with a materially different anatomical boundary, not a new algorithm label or coefficient sweep.
+
+## Construction and first proof
+247: reconstruct the connected shoulder/chest/proximal-forearm skin using original-rest differential edge constraints and exact outside/distal Dirichlet constraints. Include all necessary actual upperarm and proximalforearm skin; no normal/nearest-surface projection or primitive target. Use local-global rotational elasticity across the connected patch, with actual source333/339/346 boundary positions. No geometry changes to the accepted masters, skeleton or timing. Start from actual pose and restore coherent local rest relationships. Test neutral and global-rigid controls, exact protected surfaces, affected triangle quality and intersections, including inherited defects. Scope is three diagnostic poses; interpolation/motion is expressly unqualified.
+
+248: if numeric data are safe, import the bound inert target through the existing reviewed owner-target handler, independently reopen and inspect native side/front/opposite339 and333/346. Reject unsupported mass, shelf, web, collapsed skin, disconnected upperarm, unrealistic neck/chest continuity or changed head/distal geometry. Inspect the whole region, not just lower numerical strain. If the source geometry/accepted boundary itself cannot yield a believable form, stop this narrow escalation with a concrete construction boundary and unused corrections; do not disguise it with surface finish.
+
+## Challenge and limits
+Rest geometry is an input hypothesis, not an already accepted anatomical goal. It may preserve a bad bulge; surface elasticity can collapse volume or fold under constrained endpoints. These are actual rejection conditions. Source crossings must be reported, never treated as harmless solely because inherited. No claim of success from convergence, technical save/reopen or conservative guard passing. Broad pipeline and full-speed AV remain NOT_RUN. One heavy worker. No extra model calls or resources. Main-chat return to Sol requested at scope expiry.

@@ -1,0 +1,43 @@
+{
+  "verdict": "PASS",
+  "run_digest": "335ba35438d75aac3aa3d15c17371b089ae905ba552af2cd25802146e583349c",
+  "observation": "Actual zero control is exact across12poses. All three inherited corrective keys are0 at every sampledpose, including333339346. This falsifies the proposed active-corrective contribution at these poses; no anatomyPASS.",
+  "comparison": "Native evaluated keyvalues and actual before/after skin/joint arrays, not stored shape displacement estimates.",
+  "open_defects": [],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh387-appearance-c248-zero/snapshot.json",
+      "sha256": "06e3ff2832e9f94eaeff0bb16d40706180e5b7307a28ec310ec0ab37c5bcea9a"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh387-appearance-c248-zero/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh387-appearance-c248-zero/script-diagnostics.json",
+      "sha256": "4e1205462c9c8153ef4f4d15eba35ea263f6079e3b74341771bbb12e2f41f34c"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh387-appearance-c248-zero/scene.blend",
+      "sha256": "0c4364d5b11c31ef8b4fa00aa6a20e56d5211812abdaa61f7e87392c7ec8ac0e"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh387-appearance-c248-zero/patch-evidence.json",
+      "sha256": "48f7b99c46fea6ecfe2ec700c6d6314b60ae6a45fe6b3381583e0abde21f558d"
+    }
+  },
+  "cycle_disposition": {
+    "category": "causal_control_only",
+    "observation": "Zero/keyvalue inspection only. Nonzero candidate/render cancelled because the mechanism is inactive; original anatomy remainsFAIL."
+  },
+  "requirement_outcomes": {
+    "preservation": {
+      "status": "PASS",
+      "observation": "Zero source/primary matrices and skin exact."
+    },
+    "evidence": {
+      "status": "NOT_TESTED",
+      "observation": "No new positiveform/nativeartcandidate orAV."
+    }
+  }
+}

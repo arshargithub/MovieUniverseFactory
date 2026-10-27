@@ -2998,6 +2998,39 @@
         "results/sikh387/PROTECTED_MASTERS_VERIFY246.json",
         "results/sikh387/rejection246.json"
       ]
+    },
+    {
+      "event_id": "series01-exchange388-astra-approved",
+      "event_type": "model_switch",
+      "recorded_date": "2026-10-27",
+      "reported_model": "gpt-6-astra",
+      "reported_reasoning_effort": "high",
+      "runtime_verified": false,
+      "setting_attribution": "Director388 explicitly reported selector switch",
+      "scope": "manual-chat originalhorse forequarter247-248 only, zero separate runtime calls",
+      "evidence": [
+        "results/sikh388/REQUEST.md",
+        "results/sikh388/APPROVED_ESCALATION.json"
+      ],
+      "engineering_subscription_usage": null,
+      "engineering_cost_usd": null
+    },
+    {
+      "event_id": "series01-exchange388-astra-outcome",
+      "event_type": "model_outcome",
+      "recorded_date": "2026-10-27",
+      "reported_model": "gpt-6-astra",
+      "reported_reasoning_effort": "high",
+      "runtime_verified": false,
+      "scope": "Manual-chat corrections247-248 only; assignment expired",
+      "outcome": "247 coupled rest-metric reconstruction failed;248 actual native control falsified active-corrective cause. No repaired anatomy or artistic pass. Three shared corrections remain; return to Sol selector pending Director.",
+      "evidence": [
+        "results/sikh388/CLOSEOUT.md",
+        "results/sikh387/CYCLE247_CLOSEOUT.json",
+        "results/sikh387/CYCLE248_CLOSEOUT.json"
+      ],
+      "engineering_subscription_usage": null,
+      "engineering_cost_usd": null
     }
   ],
   "recording_mode": "manual_evidence_backfill_and_future_event_capture",

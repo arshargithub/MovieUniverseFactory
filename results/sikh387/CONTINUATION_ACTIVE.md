@@ -55,3 +55,7 @@ Localcodecommits:2aba845direct-insertiondiagnostic;f9ada0ccalibratedvariant. Lat
 ## Superseding246 checkpoint
 
 Current246/max251;20of25used,5remain. All actual formcandidates through246 rejected, all pending retrospective effects evaluated. No nativeworker active. No newauthority. See REASSESSMENT246.md and PROPOSED_ESCALATION246.json; proposal unapproved. Do not resume retired muscle/curvature/projection/primitive variants. Originalraw184 remains clean starting source. Main-chat staysSol until explicit Director modelapproval+switch; no separate runtime calls.
+
+## Superseding388 checkpoint
+
+Director388 approved manual-chat Astra247-248 and reported selector switch. Both slots are now consumed; no repaired anatomy.247 coupled rest-metric solve fails;248 actual native zero-control records inherited correctives inactive in12poses, so nonzero edit was not run. All retrospective effects closed. Current248/max251, THREE corrections remain. Assignment expired; wait for Director-reported return to Sol6.1High before more construction. No new cycle approval needed. No new resources/spend granted. See results/sikh388/CLOSEOUT.md and STATUS.json. Global release counter updated after dispatch closure; next planning must explicitly reconcile the changed status source, not silently repin it. Source184 and acceptedmotion masters unchanged.
