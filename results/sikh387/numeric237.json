@@ -1,0 +1,478 @@
+{
+  "frame": 339,
+  "area_ratio_p01_p50_p99": [
+    0.31977076053619385,
+    0.9930346012115479,
+    3.1122523808479308
+  ],
+  "near_collapsed_faces": 3,
+  "opposed_normals": 121,
+  "changed_vertices": 1231,
+  "max_delta": 0.23434334993362427,
+  "zero_control_error": 0.0,
+  "forearm_policy": "Oldstrict>=.35exact for this first causal shape proof",
+  "handles": [
+    {
+      "name": "sternum_center",
+      "material_landmark": [
+        0,
+        -0.98,
+        1.1
+      ],
+      "requested_displacement": [
+        0,
+        0.23,
+        0.045
+      ],
+      "nearest_distance": 0.044080417809950916,
+      "vertices": [
+        6418,
+        12058,
+        22365,
+        19593,
+        22479,
+        6442,
+        12082,
+        867,
+        3673,
+        868,
+        3674,
+        6447,
+        6632,
+        3253,
+        447,
+        6065,
+        11725,
+        12623,
+        7011,
+        22480,
+        6265,
+        11914,
+        20145,
+        17373,
+        6893,
+        12509,
+        17347,
+        20119,
+        6810,
+        12429
+      ],
+      "scope": "Anatomical modeling hypothesis; physical and native views must veto incorrect shape."
+    },
+    {
+      "name": "chest_center",
+      "material_landmark": [
+        0,
+        -1.01,
+        1.3
+      ],
+      "requested_displacement": [
+        0,
+        0.17,
+        0.015
+      ],
+      "nearest_distance": 0.01283704899501346,
+      "vertices": [
+        6859,
+        3668,
+        862,
+        6187,
+        11843,
+        22382,
+        22489,
+        3667,
+        861,
+        11816,
+        6860,
+        6160,
+        12477,
+        20121,
+        17349,
+        12184,
+        6549,
+        7225,
+        12830,
+        20118,
+        17346,
+        17345,
+        20117,
+        3220
+      ],
+      "scope": "Anatomical modeling hypothesis; physical and native views must veto incorrect shape."
+    },
+    {
+      "name": "neck_base",
+      "material_landmark": [
+        0,
+        -1.04,
+        1.53
+      ],
+      "requested_displacement": [
+        0,
+        0.075,
+        0
+      ],
+      "nearest_distance": 0.023490587136546975,
+      "vertices": [
+        5940,
+        865,
+        3671,
+        6613,
+        12246,
+        6682,
+        12309,
+        3221,
+        415,
+        22459,
+        6816,
+        12435,
+        20122,
+        17350,
+        425,
+        3231,
+        20124,
+        17352,
+        6204,
+        11860,
+        11591,
+        17151,
+        5924,
+        19923
+      ],
+      "scope": "Anatomical modeling hypothesis; physical and native views must veto incorrect shape."
+    },
+    {
+      "name": "lower_root-1",
+      "material_landmark": [
+        -0.17,
+        -0.96,
+        1.11
+      ],
+      "requested_displacement": [
+        0,
+        0.2,
+        0.09
+      ],
+      "nearest_distance": 0.024468597884627213,
+      "vertices": [
+        11867,
+        20135,
+        3247,
+        11461,
+        12704,
+        3242,
+        20102,
+        12657,
+        3252,
+        12388,
+        13035,
+        3250,
+        20101,
+        20136,
+        11428,
+        12620,
+        12044,
+        20143,
+        12053,
+        12729,
+        12619,
+        20140,
+        20017,
+        12358
+      ],
+      "scope": "Anatomical modeling hypothesis; physical and native views must veto incorrect shape."
+    },
+    {
+      "name": "pectoral-1",
+      "material_landmark": [
+        -0.19,
+        -0.99,
+        1.28
+      ],
+      "requested_displacement": [
+        0,
+        0.15,
+        0.035
+      ],
+      "nearest_distance": 0.013632740349163138,
+      "vertices": [
+        3216,
+        11710,
+        12570,
+        20110,
+        12460,
+        11989,
+        3214,
+        12621,
+        20112,
+        20111,
+        3215,
+        20115,
+        3213,
+        12059,
+        11963,
+        12627,
+        12679,
+        12709,
+        11967,
+        20104,
+        12107,
+        3228,
+        12021,
+        20114
+      ],
+      "scope": "Anatomical modeling hypothesis; physical and native views must veto incorrect shape."
+    },
+    {
+      "name": "upper_transition-1",
+      "material_landmark": [
+        -0.24,
+        -0.91,
+        1.49
+      ],
+      "requested_displacement": [
+        0,
+        0.06,
+        0
+      ],
+      "nearest_distance": 0.04104686260336515,
+      "vertices": [
+        12057,
+        12976,
+        3229,
+        20130,
+        11722,
+        20126,
+        3224,
+        13040,
+        13041,
+        20125,
+        12949,
+        3373,
+        20243,
+        3375,
+        12386,
+        3230,
+        13043,
+        11669,
+        13038,
+        12027
+      ],
+      "scope": "Anatomical modeling hypothesis; physical and native views must veto incorrect shape."
+    },
+    {
+      "name": "point_shoulder-1",
+      "material_landmark": [
+        -0.29,
+        -0.73,
+        1.47
+      ],
+      "requested_displacement": [
+        0,
+        0,
+        0
+      ],
+      "nearest_distance": 0.013315457658279014,
+      "vertices": [
+        13012,
+        20185,
+        20186,
+        11614,
+        12988,
+        20184,
+        20187,
+        11472,
+        3301,
+        3372,
+        12803,
+        3370,
+        12634,
+        3298,
+        11362,
+        3300,
+        12756,
+        11643,
+        12593,
+        13030,
+        3371,
+        11354,
+        12598,
+        3297,
+        3384,
+        3369,
+        20182,
+        3299,
+        12732,
+        20174
+      ],
+      "scope": "Anatomical modeling hypothesis; physical and native views must veto incorrect shape."
+    },
+    {
+      "name": "lower_root1",
+      "material_landmark": [
+        0.17,
+        -0.96,
+        1.11
+      ],
+      "requested_displacement": [
+        0,
+        0.2,
+        0.09
+      ],
+      "nearest_distance": 0.024521600615478954,
+      "vertices": [
+        6212,
+        17363,
+        441,
+        5787,
+        7093,
+        436,
+        17330,
+        7046,
+        446,
+        6768,
+        7436,
+        17329,
+        444,
+        17364,
+        5754,
+        6402,
+        17371,
+        7008,
+        6412,
+        7118,
+        7007,
+        17245,
+        17368,
+        6737
+      ],
+      "scope": "Anatomical modeling hypothesis; physical and native views must veto incorrect shape."
+    },
+    {
+      "name": "pectoral1",
+      "material_landmark": [
+        0.19,
+        -0.99,
+        1.28
+      ],
+      "requested_displacement": [
+        0,
+        0.15,
+        0.035
+      ],
+      "nearest_distance": 0.013632549860520827,
+      "vertices": [
+        410,
+        6050,
+        6955,
+        17338,
+        6842,
+        6344,
+        408,
+        7009,
+        17340,
+        17339,
+        409,
+        17343,
+        407,
+        6419,
+        6317,
+        7015,
+        7068,
+        7098,
+        6321,
+        17332,
+        6468,
+        422,
+        6379,
+        17342
+      ],
+      "scope": "Anatomical modeling hypothesis; physical and native views must veto incorrect shape."
+    },
+    {
+      "name": "upper_transition1",
+      "material_landmark": [
+        0.24,
+        -0.91,
+        1.49
+      ],
+      "requested_displacement": [
+        0,
+        0.06,
+        0
+      ],
+      "nearest_distance": 0.041070533956082365,
+      "vertices": [
+        6417,
+        423,
+        7375,
+        17358,
+        6062,
+        17354,
+        418,
+        7441,
+        7442,
+        17353,
+        7348,
+        17471,
+        567,
+        569,
+        6766,
+        424,
+        7444,
+        6008,
+        7439,
+        6385
+      ],
+      "scope": "Anatomical modeling hypothesis; physical and native views must veto incorrect shape."
+    },
+    {
+      "name": "point_shoulder1",
+      "material_landmark": [
+        0.29,
+        -0.73,
+        1.47
+      ],
+      "requested_displacement": [
+        0,
+        0,
+        0
+      ],
+      "nearest_distance": 0.013200047938443881,
+      "vertices": [
+        7413,
+        17413,
+        17414,
+        5949,
+        7389,
+        17412,
+        17415,
+        566,
+        5798,
+        495,
+        7195,
+        564,
+        7022,
+        492,
+        5685,
+        494,
+        7148,
+        5980,
+        6980,
+        5676,
+        7431,
+        565,
+        6985,
+        491,
+        578,
+        563,
+        17410,
+        493,
+        7121,
+        17402
+      ],
+      "scope": "Anatomical modeling hypothesis; physical and native views must veto incorrect shape."
+    }
+  ],
+  "scope": "Single posed surface reconstruction only; other samples unchanged. Not motion-ready, not image matching, no skeleton/identity/source-master edit. Native form/embedding/contact still unqualified."
+}

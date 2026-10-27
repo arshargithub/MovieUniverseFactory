@@ -1,0 +1,43 @@
+{
+  "verdict": "PASS",
+  "run_digest": "65145b97f77c200f54df7afbfae404a7da4699d5c8e334422bcb77bb7c12d96b",
+  "observation": "Actual bound target applied, saved/reopened;183source samples; original raw/shapes/actions/othergeometry retained. Sampled maximum replay error1.1920928955078125e-07.",
+  "comparison": "Actual handler source/rest/replay invariants versus admitted data; exact transfer cannot establish correct anatomy.",
+  "open_defects": [],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh387-appearance-c230-source/snapshot.json",
+      "sha256": "ba184accc29855f40b1a1303cd6b71113abaed954b4a30c51f8851c6b9d79d85"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh387-appearance-c230-source/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh387-appearance-c230-source/script-diagnostics.json",
+      "sha256": "4e1205462c9c8153ef4f4d15eba35ea263f6079e3b74341771bbb12e2f41f34c"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh387-appearance-c230-source/scene.blend",
+      "sha256": "ad9c2e828ffcb71a7f7ca41fe042c832b63d2cd7ca11289704dc0786a4ff9182"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh387-appearance-c230-source/patch-evidence.json",
+      "sha256": "c42784bf648725d6b7edd7d78a207ad16fb5c12d2ee2001c4b7928d3463cfd74"
+    }
+  },
+  "cycle_disposition": {
+    "category": "causal_control_only",
+    "observation": "Deterministic transfer verification only; art and temporal proof remain unqualified."
+  },
+  "requirement_outcomes": {
+    "preservation": {
+      "status": "PASS",
+      "observation": "Source geometry/action and outside-mask sampledpoints preserved."
+    },
+    "evidence": {
+      "status": "NOT_TESTED",
+      "observation": "No anatomical or temporal evidence in this technical check."
+    }
+  }
+}

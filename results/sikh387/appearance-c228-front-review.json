@@ -1,0 +1,49 @@
+{
+  "verdict": "FAIL",
+  "run_digest": "dea3da1579a4258025dae9c56c55327a41b4597abc538f27c5dfdd661abc02cd",
+  "observation": "Actual339native: side flange reduced, but frontal broad wing/bib and opposite unsupported lower contour remain. Native neutral has folded chest/root surfaces. Not a convincing connected forequarter.",
+  "comparison": "Actual283333339front/side/opposite versus physicalUMN chest and rearing anatomy; betterthan226doesnotpass.",
+  "open_defects": [
+    "Broad flat anterior chest/shoulder wing",
+    "Unsupported lower chest/root contour",
+    "Neutral folds not natural muscle insertion"
+  ],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh387-appearance-c228-front/snapshot.json",
+      "sha256": "ba184accc29855f40b1a1303cd6b71113abaed954b4a30c51f8851c6b9d79d85"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh387-appearance-c228-front/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh387-appearance-c228-front/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh387-appearance-c228-front/frame.png",
+      "sha256": "b66b37bc9a537a8cebf093945ae3e53fb6092701458bad044e7fba9e8fd254e8"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh387-appearance-c228-front/frames.json",
+      "sha256": "7d9966d7ad69cbfa32c6fa7e1980037007e4495d7c7ff69bb9aced98fcf74ef7"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh387-appearance-c228-front/frame.png",
+      "sha256": "b66b37bc9a537a8cebf093945ae3e53fb6092701458bad044e7fba9e8fd254e8"
+    },
+    "frame_333": {
+      "path": ".runtime/factory-native/sikh387-appearance-c228-front/frame-0333.png",
+      "sha256": "4fcd18151e45760dac2a56bc551eb129ab168e63a3b5e18405c18a6b0877a52b"
+    },
+    "frame_339": {
+      "path": ".runtime/factory-native/sikh387-appearance-c228-front/frame-0339.png",
+      "sha256": "75f274d8c230d90eb5d7ae1a4c390943527c358f902a8a4c3b697675d51f7ce6"
+    }
+  },
+  "cycle_disposition": {
+    "category": "art_rejected",
+    "observation": "Actual339native: side flange reduced, but frontal broad wing/bib and opposite unsupported lower contour remain. Native neutral has folded chest/root surfaces. Not a convincing connected forequarter."
+  }
+}

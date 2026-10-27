@@ -1,0 +1,1 @@
+Unsubmitted STRATEGIZING was blocked for omitted whole-look/DirectorAV requirement coverage. Repair includes their explicit NOT_RUN disposition in the diagnostic stage; no proof or artistic PASS invented. Original failed config is preserved. No correction reset or limit change. Current canonical241 retained.

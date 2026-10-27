@@ -1,0 +1,48 @@
+{
+  "verdict": "FAIL",
+  "run_digest": "6277d16bdbbeaa2bebbd84d2f39191512c1a433ec4fbae0c098c50ecbbb77f89",
+  "observation": "Actual339front with volumetric graph has rounded pendant paired chest masses and obliquecentralfold; not supportednaturalpectorals. Virtualtet inversions also unresolved. A rounder wrongmass isnotpositiveanatomy.",
+  "comparison": "PhysicalUMNmuscleinsertion versusactual230front and228flatwing. Both fail anatomicalsupport; no furtherdiagnosticrendersneeded torejectthisvariant.",
+  "open_defects": [
+    "Pendant chest mass",
+    "Unnatural central fold and unsupported insertion"
+  ],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh387-appearance-c230-front/snapshot.json",
+      "sha256": "ba184accc29855f40b1a1303cd6b71113abaed954b4a30c51f8851c6b9d79d85"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh387-appearance-c230-front/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh387-appearance-c230-front/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh387-appearance-c230-front/frame.png",
+      "sha256": "80404b85855fc1a0d145dff60d8d87d71e7df42051198cec6906807d2c1a390f"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh387-appearance-c230-front/frames.json",
+      "sha256": "5ce50ce5fff953179b3f6b389e2a796749f95fad21ab586e0c0f8d30a7d15910"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh387-appearance-c230-front/frame.png",
+      "sha256": "80404b85855fc1a0d145dff60d8d87d71e7df42051198cec6906807d2c1a390f"
+    },
+    "frame_333": {
+      "path": ".runtime/factory-native/sikh387-appearance-c230-front/frame-0333.png",
+      "sha256": "5557cc86b3698166c988a8b9f8ed55beaa1bd3f174003dbeccc0f5092751dd41"
+    },
+    "frame_339": {
+      "path": ".runtime/factory-native/sikh387-appearance-c230-front/frame-0339.png",
+      "sha256": "d5d6e2d0c6ee4dbe48127145158681046e3b19766b3f404797ee0f2798fdcdb4"
+    }
+  },
+  "cycle_disposition": {
+    "category": "art_rejected",
+    "observation": "Actual339front with volumetric graph has rounded pendant paired chest masses and obliquecentralfold; not supportednaturalpectorals. Virtualtet inversions also unresolved. A rounder wrongmass isnotpositiveanatomy."
+  }
+}

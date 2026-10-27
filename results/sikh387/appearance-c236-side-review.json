@@ -1,0 +1,48 @@
+{
+  "verdict": "FAIL",
+  "run_digest": "d5658d23a32f492b26eb15a90d7e59b43f2d86fe57339b01c635190a8983b804",
+  "observation": "Actual339side retains a pronounced projecting pectoral shelf with horizontal underside; front stillshows broad unsupported lower mass. Boundedcontraction/endpoint/sourcechecks pass but calibratedcontrol doesnotconstruct naturalforequarter.",
+  "comparison": "Actual236side/front comparedwithreference rear, studrear and frontpectorals. Smallerdeformationisnotpositiveform.",
+  "open_defects": [
+    "Projectinglowerchest shelf",
+    "Broad unsupportedlowerchestmass"
+  ],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh387-appearance-c236-side/snapshot.json",
+      "sha256": "ba184accc29855f40b1a1303cd6b71113abaed954b4a30c51f8851c6b9d79d85"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh387-appearance-c236-side/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh387-appearance-c236-side/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh387-appearance-c236-side/frame.png",
+      "sha256": "d0f9df9418e537b31b06a8badf4f4dcef856e4fd4f5aa13b5d93e83358448b29"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh387-appearance-c236-side/frames.json",
+      "sha256": "2624d61762b1dca4eec8e3af323ee60835fb5b7f33eb148b866a9c8c549e31b3"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh387-appearance-c236-side/frame.png",
+      "sha256": "d0f9df9418e537b31b06a8badf4f4dcef856e4fd4f5aa13b5d93e83358448b29"
+    },
+    "frame_333": {
+      "path": ".runtime/factory-native/sikh387-appearance-c236-side/frame-0333.png",
+      "sha256": "90a93c25068cf2de60294bdb09bafc7a90b7149bb5b8c93150584f99e1ee125f"
+    },
+    "frame_339": {
+      "path": ".runtime/factory-native/sikh387-appearance-c236-side/frame-0339.png",
+      "sha256": "718759e416cde58185fd90550ba9bd170f603bf52150b03549a18525ee63a372"
+    }
+  },
+  "cycle_disposition": {
+    "category": "art_rejected",
+    "observation": "Actual339side retains a pronounced projecting pectoral shelf with horizontal underside; front stillshows broad unsupported lower mass. Boundedcontraction/endpoint/sourcechecks pass but calibratedcontrol doesnotconstruct naturalforequarter."
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "verdict": "PASS",
+  "run_digest": "ab6ff2ff9be8369666da555882ae913d505416e3fb7bd0dea146c10627261fc8",
+  "observation": "Actual fixed upper-arm segmentation and source/matrix/outside/distal controls pass. Max changed skin distance 0.0m. This is a causal-control transport pass, no artistic/anatomical acceptance.",
+  "comparison": "Actual source reports and declared four-bone control; original pose, weights, shape keys, meshes and actions retained.",
+  "open_defects": [],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh387-appearance-c240-zero/snapshot.json",
+      "sha256": "06e3ff2832e9f94eaeff0bb16d40706180e5b7307a28ec310ec0ab37c5bcea9a"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh387-appearance-c240-zero/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh387-appearance-c240-zero/script-diagnostics.json",
+      "sha256": "4e1205462c9c8153ef4f4d15eba35ea263f6079e3b74341771bbb12e2f41f34c"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh387-appearance-c240-zero/scene.blend",
+      "sha256": "19cbb7fa46f9645a2d8be0702975e725924fd1fc21cd6e84e7c74f337eb960f0"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh387-appearance-c240-zero/patch-evidence.json",
+      "sha256": "f6da2e5b20f97c0fe5a537a98a6682f5fd7f1791d5916fb7141ba3b1979d0b0e"
+    }
+  },
+  "cycle_disposition": {
+    "category": "causal_control_only",
+    "observation": "Natural form, interface and full-speed performance remain unpassed."
+  },
+  "requirement_outcomes": {
+    "preservation": {
+      "status": "PASS",
+      "observation": "Actual source/matrix/declared-edit controls passed."
+    },
+    "evidence": {
+      "status": "NOT_TESTED",
+      "observation": "No art/AV judgment from source checks."
+    }
+  }
+}

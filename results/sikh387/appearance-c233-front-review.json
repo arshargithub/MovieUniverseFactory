@@ -1,0 +1,48 @@
+{
+  "verdict": "FAIL",
+  "run_digest": "56bd8dfe25cb40226318c09c6e0f5b84eb57cbc86d821b9e41996a751f944976",
+  "observation": "Actual339front shows folded lower-neck/chest skin above a horizontal projecting flap, despite actual insertion endpoints and primary preservation. Fulloriginalsecondary ownership reveals a coupled restform/neck-root problem, not a completed attachment fix.",
+  "comparison": "PhysicalUMNchest and negative230pendant versus actual233fold/plane. Correct boneendpoint isnot anatomical success.",
+  "open_defects": [
+    "Folded lower neck/chest",
+    "Horizontal projecting skin flap"
+  ],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh387-appearance-c233-front/snapshot.json",
+      "sha256": "ba184accc29855f40b1a1303cd6b71113abaed954b4a30c51f8851c6b9d79d85"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh387-appearance-c233-front/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh387-appearance-c233-front/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh387-appearance-c233-front/frame.png",
+      "sha256": "6eeebb907ab386daccd8ef704893904b8916c074d4e8c5cfbddcc2429c547274"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh387-appearance-c233-front/frames.json",
+      "sha256": "ed3b8e37d000dbc464cc60563e08dc221bbb502d0cfa27ef07e23b7e8eefaf82"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh387-appearance-c233-front/frame.png",
+      "sha256": "6eeebb907ab386daccd8ef704893904b8916c074d4e8c5cfbddcc2429c547274"
+    },
+    "frame_333": {
+      "path": ".runtime/factory-native/sikh387-appearance-c233-front/frame-0333.png",
+      "sha256": "6de39ca9e2c47427b1faaa13a404c2afeb6bde0ea466b7b00bff18bdc5885baf"
+    },
+    "frame_339": {
+      "path": ".runtime/factory-native/sikh387-appearance-c233-front/frame-0339.png",
+      "sha256": "1fdcc357eaa46e94642ac0dae1b84ebfd251235808a99e194b8be78be69789bc"
+    }
+  },
+  "cycle_disposition": {
+    "category": "art_rejected",
+    "observation": "Actual339front shows folded lower-neck/chest skin above a horizontal projecting flap, despite actual insertion endpoints and primary preservation. Fulloriginalsecondary ownership reveals a coupled restform/neck-root problem, not a completed attachment fix."
+  }
+}

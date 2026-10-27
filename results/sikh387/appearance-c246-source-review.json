@@ -1,0 +1,43 @@
+{
+  "verdict": "PASS",
+  "run_digest": "cc399ecdbe980200233cdc8d1e85eeb273f443c9ef2460688018e3027b32f116",
+  "observation": "Actual bounded modelingstudy mesh imported on local derivative, sourcegeometry/actions retained and staticprofile confirmed. This qualifies transport only, not a positivevolume/anatomy or referenceauthority.",
+  "comparison": "Actualcompiled source reports versus admitted inertmesh binding and explicitstudio scope.",
+  "open_defects": [],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh387-appearance-c246-source/snapshot.json",
+      "sha256": "7f8ff87d75fc4f669dbb2b5d124d722bd6bb02ac72c2e6554260a03a3350468b"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh387-appearance-c246-source/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh387-appearance-c246-source/script-diagnostics.json",
+      "sha256": "4e1205462c9c8153ef4f4d15eba35ea263f6079e3b74341771bbb12e2f41f34c"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh387-appearance-c246-source/scene.blend",
+      "sha256": "bac61ebb6cede3fe0614cbabc98241b3d64c4d3f7bfffca55f5d5348c8b50701"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh387-appearance-c246-source/patch-evidence.json",
+      "sha256": "f15c3b1b9c3dca8cb9d8129bda46e8ad3c87f8ae4705945dc8b26205826c5cd5"
+    }
+  },
+  "cycle_disposition": {
+    "category": "causal_control_only",
+    "observation": "Modelinggoal and skinfit unqualified."
+  },
+  "requirement_outcomes": {
+    "preservation": {
+      "status": "PASS",
+      "observation": "Originalsourcegeometry/actions unchanged."
+    },
+    "evidence": {
+      "status": "NOT_TESTED",
+      "observation": "No anatomy/AV judgment from import."
+    }
+  }
+}

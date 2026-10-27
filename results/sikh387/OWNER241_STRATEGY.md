@@ -1,0 +1,7 @@
+# Owner-region surface proof241
+
+Actual240 full segment control did not repair the shelf: only0–1.3mm movement at the visible wedge; distal spline dependencies also failed the exact guard. Retire segmentation as grosscause.
+
+The anatomical micro-unit must include shoulder, upper-arm and its proximal forearm transition. Prior237harmonic edit explicitly froze forearmownership>=0.35, leaving the actual239visibleowner mostly untouched. New proof expands surface participation through the proximalforearm with a smooth rest-z0.72 boundary above the carpus. Hooves/lowercannons, all joints, original data and all source actions remain unchanged. This expansion is an agent-owned method/interface correction inside the original structural scope, not a new performance/identity.
+
+Use alternating shrink/expand curvature flow with actual skin ownership. It can round a high-curvature planar flange while limiting volume loss; it does NOT ensure correct anatomy or fixed volume. Validate an exact zero control, outside vertices, triangle degeneration and signed closed-skin volume. Only339first; all other samples remain source and this cannot be motion-ready. Actualside/front/opposite must reject residual shelf, a smoothed blob, flattened neck or shortened-looking forearm. Physical photos and qualified guide remain anatomy authority. No more pectoral gain/offset variants. A numeric change must not be called anatomy success.

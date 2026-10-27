@@ -1,0 +1,27 @@
+{
+  "method": "built_in_image",
+  "calls": 2,
+  "paid_api_calls": 0,
+  "new_spend_authorized": false,
+  "quota_usage": "unknown",
+  "prepared_prompt_a": {
+    "path": "results/sikh387/ANATOMY237_PROMPT.txt",
+    "sha256": "d5a1aa372418b5379ca4b038ab3318c4cb4ab66f43b679461c0b4273e2181fbe"
+  },
+  "actual_a_provenance": "Conversation image_gen call producing exec-2e7409fc-38be-468c-a898-0f7dfaafd9aa; preparedprompt was normalized for actualtoolcall, noexactbyte-equivalence claim.",
+  "actual_prompt_b": {
+    "path": "results/sikh387/ANATOMY237B_ACTUAL_PROMPT.txt",
+    "sha256": "c9fe8b8aa21d8a84611d77af539b3c104f13077e1b83055386188b2382096a0d"
+  },
+  "outputs": [
+    {
+      "path": ".runtime/art-direction/anatomy387-references/study237-a.png",
+      "sha256": "95d8f452a1b260edd4292f2a2b70b0df07e063ea147f2a53eeb437dc7587583e"
+    },
+    {
+      "path": ".runtime/art-direction/anatomy387-references/study237-b.png",
+      "sha256": "f0efc2ffb103a4679d2ccd006e5a54dcbe9ddad4bd14ac6ec46160c4dbbb85a1"
+    }
+  ],
+  "scope": "Internalgrounding references only; no film pixels/nativeactor adoption or physicallyvalidated simulation. Aislimited/rejectedfront; Bawaitspurposequalification."
+}

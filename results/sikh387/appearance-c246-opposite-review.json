@@ -1,0 +1,41 @@
+{
+  "verdict": "FAIL",
+  "run_digest": "442c00e512f25fc6b595d54152602ffc165d44c0fb14c2d54e0f0eace4640b04",
+  "observation": "Actual nativevolume study fails horseforequarter anatomy even excluding head/distalleg study boundaries: inflatedcentralsternalball, roundedshoulderknobs, fusedloss of upperarm/armpit structure. A smoothclosedvolume is not the anatomicalgoal. Originalactor notadopted/modified.",
+  "comparison": "246threeviews against realFriesian rear/side and frontpectorals plus237qualifiedgrossside study; these require a supportedcontinuous chest, defined shoulder-to-upperleg relation and no isolatedlobe/knobs. Proxy doesnotmeetthat.",
+  "open_defects": [
+    "Unnatural inflated sternum mass",
+    "Rounded shoulder knobs and indistinct upperarm attachment",
+    "No credible horse-specific forequarter volume"
+  ],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh387-appearance-c246-opposite/snapshot.json",
+      "sha256": "7f8ff87d75fc4f669dbb2b5d124d722bd6bb02ac72c2e6554260a03a3350468b"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh387-appearance-c246-opposite/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh387-appearance-c246-opposite/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh387-appearance-c246-opposite/frame.png",
+      "sha256": "0320f457a7a209cc6ab6c63d9de165715c4ff26f6cf6b1254d2909474a0aaf1d"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh387-appearance-c246-opposite/frames.json",
+      "sha256": "5a9dfcdb091f72efa1562714aa0d34392d614647f549b9d400992f258af04509"
+    },
+    "frame_339": {
+      "path": ".runtime/factory-native/sikh387-appearance-c246-opposite/frame.png",
+      "sha256": "0320f457a7a209cc6ab6c63d9de165715c4ff26f6cf6b1254d2909474a0aaf1d"
+    }
+  },
+  "cycle_disposition": {
+    "category": "art_rejected",
+    "observation": "Actual nativevolume study fails horseforequarter anatomy even excluding head/distalleg study boundaries: inflatedcentralsternalball, roundedshoulderknobs, fusedloss of upperarm/armpit structure. A smoothclosedvolume is not the anatomicalgoal. Originalactor notadopted/modified."
+  }
+}

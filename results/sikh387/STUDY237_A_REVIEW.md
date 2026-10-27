@@ -1,0 +1,3 @@
+# Study237A — not qualified as a literal target
+
+Built-in output was inspected. The side shows a much more continuous neck/chest/upperarm volume and removes the projecting hard ledge. However, the front has exaggerated hanging paired muscle lobes, and the generated proximal-leg contour/position differs from the native source. This is not a physically validated or registered3D target and does not pass the full purpose. Preserve as failed/limited directional evidence only. Do not fit native vertices to its front lobes. One focused revision will reduce the anterior mass and retain only the continuity lesson, cross-checked against real rearing photographs. No native actor or motion is newly approved.

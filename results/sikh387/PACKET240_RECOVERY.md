@@ -1,0 +1,3 @@
+# Technical closure transport recovery
+
+The expanded retrospective packet exceeded its60000byte transport ceiling after240admissions. No production admission, review or history was relaxed. Closure now uses fresh canonical retrospective state projected to unresolved intervention IDs/keys only, the exact same effect predicate. This is a bounded bookkeeping read, not a replacement planning packet or scope reset. All source-bound outcomes still go through canonical Controller retrospective validation. New production packets must still pass their original bounds. No art failure is closed by this recovery.

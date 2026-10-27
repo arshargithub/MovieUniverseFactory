@@ -1,0 +1,21 @@
+{
+  "operation": "nihang_patch",
+  "frame": 339,
+  "width": 640,
+  "height": 640,
+  "samples": 8,
+  "edits": [
+    {
+      "kind": "mounted_anatomy386_reference",
+      "target": "horse",
+      "data": {
+        "path": ".runtime/art-direction/anatomy386-references/envelope387-245.npz",
+        "sha256": "6082684105ac67a64f9e775e3d46890cc91fdaa2c19bf676f0a7b9d278f60a22"
+      }
+    },
+    {
+      "kind": "mounted_anatomy387_static_control",
+      "target": "horse"
+    }
+  ]
+}

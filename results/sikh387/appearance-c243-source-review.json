@@ -1,0 +1,43 @@
+{
+  "verdict": "PASS",
+  "run_digest": "7a39af71f04bba064e77997a5800575109ffe877e270e72d3bc6340296436520",
+  "observation": "Actual source/static profile and source/import preservation qualified; source blur setting False. Diagnostic blur disabled; no natural anatomy, embedding or AV pass.",
+  "comparison": "Actual compiledreport and declaredsource/profile invariants, not assumeddefaults.",
+  "open_defects": [],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh387-appearance-c243-source/snapshot.json",
+      "sha256": "06e3ff2832e9f94eaeff0bb16d40706180e5b7307a28ec310ec0ab37c5bcea9a"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh387-appearance-c243-source/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh387-appearance-c243-source/script-diagnostics.json",
+      "sha256": "4e1205462c9c8153ef4f4d15eba35ea263f6079e3b74341771bbb12e2f41f34c"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh387-appearance-c243-source/scene.blend",
+      "sha256": "d37435f28792f324703243966d5fdbe5cdd56a9cf620479f9d6e03da5b320fe1"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh387-appearance-c243-source/patch-evidence.json",
+      "sha256": "a89cda6f3a7a1c5c2cbde670baab2cc00c4f60f6bdd7bd441b944fdad13782a6"
+    }
+  },
+  "cycle_disposition": {
+    "category": "causal_control_only",
+    "observation": "Static diagnostic/technical control only; actorform and moving/contact qualificationremainopen."
+  },
+  "requirement_outcomes": {
+    "preservation": {
+      "status": "PASS",
+      "observation": "Actualsource/target and staticprofile checks passed."
+    },
+    "evidence": {
+      "status": "NOT_TESTED",
+      "observation": "No anatomical or audiovisual approval from profile/transport."
+    }
+  }
+}

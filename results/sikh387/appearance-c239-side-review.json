@@ -1,0 +1,41 @@
+{
+  "verdict": "FAIL",
+  "run_digest": "c4b965b02dcea7c8c40883ec7f8f9783c91e773bd05b1809ef7a1ab58ece74a4",
+  "observation": "Actualstatic339side still has a prominent flat shoulder/upperarm wedge and lower-neck discontinuity. Frontsternalreconstructiondoesnotresolve thetruevisibleowner. SourcewasalreadyblurFalse, so temporalaveragingwasnotcause.",
+  "comparison": "Actual239side versusphysicalrear/study237contour. Sourceprojectedvertextrace links wedge to upper_arm.L.001andupper_arm.L, not disconnectedgear or chieflypectorals.",
+  "open_defects": [
+    "Flat upperarm/shoulder wedge",
+    "Unnatural forequartercontinuity",
+    "237cagearea diagnostics unresolved"
+  ],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh387-appearance-c239-side/snapshot.json",
+      "sha256": "06e3ff2832e9f94eaeff0bb16d40706180e5b7307a28ec310ec0ab37c5bcea9a"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh387-appearance-c239-side/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh387-appearance-c239-side/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh387-appearance-c239-side/frame.png",
+      "sha256": "e503e3570f3a97be627f6ace0d1556bcfd58a81d3c5036163bb7eff3fcfdcad8"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh387-appearance-c239-side/frames.json",
+      "sha256": "d65fe4df0e023de3a04bd238fcf984834130c9c0019c040537d3d29598451e60"
+    },
+    "frame_339": {
+      "path": ".runtime/factory-native/sikh387-appearance-c239-side/frame.png",
+      "sha256": "e503e3570f3a97be627f6ace0d1556bcfd58a81d3c5036163bb7eff3fcfdcad8"
+    }
+  },
+  "cycle_disposition": {
+    "category": "art_rejected",
+    "observation": "Actualstatic339side still has a prominent flat shoulder/upperarm wedge and lower-neck discontinuity. Frontsternalreconstructiondoesnotresolve thetruevisibleowner. SourcewasalreadyblurFalse, so temporalaveragingwasnotcause."
+  }
+}
