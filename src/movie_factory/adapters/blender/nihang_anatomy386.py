@@ -33,7 +33,7 @@ def validate(e):
         b=e['data']
         if (not isinstance(b,dict) or set(b)!={'path','sha256'} or not isinstance(b['path'],str) or not b['path'].startswith('.runtime/art-direction/anatomy386-references/') or '..' in Path(b['path']).parts or not b['path'].endswith('.npz') or not isinstance(b['sha256'],str) or len(b['sha256'])!=64 or any(c not in '0123456789abcdef' for c in b['sha256'])):raise ValueError('ANATOMY386_REFERENCE_BINDING')
         return e
-    if not isinstance(e,dict) or set(e)!={'kind','target','data'} or e.get('kind') not in {'mounted_anatomy387_static_target','mounted_anatomy386_target','mounted_anatomy386_rest','mounted_anatomy386_form','mounted_anatomy386_pectoral','mounted_anatomy386_connected','mounted_anatomy386_weights','mounted_anatomy386_weights_core','mounted_anatomy386_bind_preserve','mounted_anatomy386_bind_core'} or e.get('target')!='horse':
+    if not isinstance(e,dict) or set(e)!={'kind','target','data'} or e.get('kind') not in {'mounted_anatomy387_owner_target','mounted_anatomy387_static_target','mounted_anatomy386_target','mounted_anatomy386_rest','mounted_anatomy386_form','mounted_anatomy386_pectoral','mounted_anatomy386_connected','mounted_anatomy386_weights','mounted_anatomy386_weights_core','mounted_anatomy386_bind_preserve','mounted_anatomy386_bind_core'} or e.get('target')!='horse':
         raise ValueError('ANATOMY386_FIELDS')
     b=e['data']
     if (not isinstance(b,dict) or set(b)!={'path','sha256'} or not isinstance(b['path'],str)
@@ -219,13 +219,15 @@ def run(bpy,out,e):
     horse=bpy.data.objects['horse'];names=[g.name for g in horse.vertex_groups];weights=np.zeros((len(horse.data.vertices),len(names)),dtype=np.float32)
     for vertex in horse.data.vertices:
         for item in vertex.groups:weights[vertex.index,item.group]=item.weight
-    domain_report=mod('anatomy_domain386').preserve_forelegs(q['source'],q['target'],weights,names)
+    if e['kind']=='mounted_anatomy387_owner_target':
+        edges=np.array([ed.vertices[:] for ed in horse.data.edges]);domain_report=mod('anatomy_domain386').preserve_owner387(q['source'],q['target'],q['rest'],weights,names,edges)
+    else:domain_report=mod('anatomy_domain386').preserve_forelegs(q['source'],q['target'],weights,names)
     def target(p,rest,edges,breast,t):
         i=int(round((t-276)*2))
         if not np.array_equal(rest,q['rest']) or np.max(np.abs(p-q['source'][i]))>2e-5:
             raise ValueError('ANATOMY386_ACTUAL_SOURCE_MISMATCH')
         return q['target'][i]-p,q['mask']
     result=base.run(bpy,out,dict(kind='mounted_horse_cache376',target='horse'),target_function=target)
-    if e['kind']=='mounted_anatomy387_static_target':result['diagnostic_render_profile']=mod('anatomy_static387').freeze(bpy.context.scene)
+    if e['kind'] in {'mounted_anatomy387_static_target','mounted_anatomy387_owner_target'}:result['diagnostic_render_profile']=mod('anatomy_static387').freeze(bpy.context.scene)
     result.update(target_binding=e['data'],domain_preservation=domain_report,method='386 bound positive-form target under exact accepted source action',artistic_pass=False)
     (out/'anatomy386-target.json').write_text(json.dumps(result,indent=2)+'\n');return result

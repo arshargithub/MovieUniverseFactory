@@ -74,3 +74,23 @@ def evaluated_preservation(before,after,outside,rig_before,rig_after):
     rig_error=float(abs(r0-r1).max())
     if outside_error>2e-5 or rig_error>1e-7:raise ValueError('ANATOMY386_EVALUATED_PRESERVATION')
     return dict(poses=[283,333,339],outside_surface_max_error=outside_error,skeleton_and_world_max_error=rig_error,scope='Actualselectedpose preservation, not fullspeed/appearanceapproval.')
+
+
+def preserve_owner387(source,target,rest,weights,names,edges):
+    """Declared coupled shoulder/proximal-forearm unit, not a legacy waiver.
+
+    Only the new387 target vocabulary uses this policy. The old entire-forearm
+    and1.0m pectoral guards stay unchanged for all existing callers.
+    """
+    r=np.asarray(rest);w=np.asarray(weights);a=np.asarray(source);b=np.asarray(target)
+    if r.ndim!=2 or r.shape[1]!=3 or a.shape!=b.shape or a.shape[-2:]!=r.shape or w.shape!=(len(r),len(names)):raise ValueError('OWNER387_SHAPE')
+    if not all(np.isfinite(x).all() for x in (r,w,a,b)):raise ValueError('OWNER387_NONFINITE')
+    required=['DEF-forefoot.L','DEF-forefoot.R','DEF-f_hoof.L','DEF-f_hoof.R']
+    if not all(n in names for n in required):raise ValueError('OWNER387_RIG')
+    foot=w[:,[i for i,n in enumerate(names) if n.startswith(('DEF-forefoot.','DEF-f_toe.','DEF-f_hoof.'))]].sum(1)
+    allowed=main_skin(edges,len(r))&(r[:,2]>.72)&(r[:,2]<1.88)&(r[:,1]>-1.4)&(r[:,1]<-.23)&(foot<.05)
+    if not allowed.any() or not (~allowed).any():raise ValueError('OWNER387_EMPTY_DOMAIN')
+    if not np.array_equal(a[...,~allowed,:],b[...,~allowed,:]):raise ValueError('OWNER387_DISTAL_OR_OUTSIDE_DRIFT')
+    maximum=float(np.linalg.norm(b-a,axis=-1).max())
+    if maximum>.2:raise ValueError('OWNER387_SURFACE_LIMIT')
+    return dict(policy='coupled_shoulder_upperarm_proximalforearm387',protected_vertices=int((~allowed).sum()),max_protected_delta=0.,max_changed_delta=maximum,scope='Distal cannon/carpus/hoof ownership and all outside skin exact; only necessary proximal skin may change. Original joint paths/actions independently checked. No anatomy/motion approval.')
