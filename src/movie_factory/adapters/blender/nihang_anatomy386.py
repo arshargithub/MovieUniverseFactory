@@ -20,6 +20,11 @@ def mod(name):
 def validate(e):
     if e==dict(kind='mounted_anatomy386_export',target='horse'):
         return e
+    if isinstance(e,dict) and e.get('kind')=='mounted_anatomy386_reference':
+        if set(e)!={'kind','target','data'} or e.get('target')!='horse':raise ValueError('ANATOMY386_REFERENCE_FIELDS')
+        b=e['data']
+        if (not isinstance(b,dict) or set(b)!={'path','sha256'} or not isinstance(b['path'],str) or not b['path'].startswith('.runtime/art-direction/anatomy386-references/') or '..' in Path(b['path']).parts or not b['path'].endswith('.npz') or not isinstance(b['sha256'],str) or len(b['sha256'])!=64 or any(c not in '0123456789abcdef' for c in b['sha256'])):raise ValueError('ANATOMY386_REFERENCE_BINDING')
+        return e
     if not isinstance(e,dict) or set(e)!={'kind','target','data'} or e.get('kind')!='mounted_anatomy386_target' or e.get('target')!='horse':
         raise ValueError('ANATOMY386_FIELDS')
     b=e['data']
@@ -48,6 +53,36 @@ def load(root,b):
     if np.linalg.norm(v['target']-v['source'],axis=2).max()>.45:raise ValueError('ANATOMY386_DISPLACEMENT')
     if not np.array_equal(v['target'][:,v['mask']==0],v['source'][:,v['mask']==0]):raise ValueError('ANATOMY386_OUTSIDE_DRIFT')
     return v
+
+
+def load_reference(root,b):
+    p=(root/b['path']).resolve()
+    if not p.is_relative_to(root.resolve()) or p.stat().st_size>8*1024*1024 or hashlib.sha256(p.read_bytes()).hexdigest()!=b['sha256']:raise ValueError('ANATOMY386_REFERENCE_STALE')
+    with np.load(p,allow_pickle=False) as q:
+        if set(q.files)!={'vertices','faces'}:raise ValueError('ANATOMY386_REFERENCE_KEYS')
+        v=q['vertices'].copy();f=q['faces'].copy()
+    if (v.ndim!=2 or v.shape[1]!=3 or not 3<=len(v)<=10000 or f.ndim!=2 or f.shape[1]!=3 or not 1<=len(f)<=20000 or f.dtype.kind not in 'iu' or not np.isfinite(v).all() or abs(v).max()>5 or f.min()<0 or f.max()>=len(v) or np.any(np.diff(np.sort(f,axis=1),axis=1)==0)):raise ValueError('ANATOMY386_REFERENCE_TOPOLOGY')
+    return v,f
+
+
+def reference(bpy,out,e):
+    root=Path(__file__).resolve().parents[4];v,f=load_reference(root,e['data'])
+    name='MF Nihang anatomy spatial reference386'
+    if bpy.data.objects.get(name):raise ValueError('ANATOMY386_REFERENCE_REAPPLY')
+    horse=bpy.data.objects['horse'];geometry=mod('nihang_prep367').frozen(bpy);actions=mod('nihang_padsolve370').actions(bpy)
+    # Reference-only derivative: original geometry/action untouched. No rig,
+    # material, script or texture is imported from the reference asset.
+    hidden=[]
+    for ob in bpy.data.objects:
+        if ob.type=='MESH' and not ob.hide_render:ob.hide_render=True;hidden.append(ob.name)
+    mesh=bpy.data.meshes.new(name);mesh.from_pydata(v.tolist(),[],f.tolist());mesh.update()
+    ob=bpy.data.objects.new(name,mesh);bpy.context.scene.collection.objects.link(ob);ob.matrix_world=horse.matrix_world.copy()
+    for poly in mesh.polygons:poly.use_smooth=True
+    mat=bpy.data.materials.new(name+' neutral');mat.use_nodes=True;node=mat.node_tree.nodes.get('Principled BSDF');node.inputs['Base Color'].default_value=(.32,.29,.25,1);node.inputs['Roughness'].default_value=.8;mesh.materials.append(mat)
+    after=mod('nihang_prep367').frozen(bpy);after.pop(name)
+    if geometry!=after or actions!=mod('nihang_padsolve370').actions(bpy):raise ValueError('ANATOMY386_REFERENCE_SOURCE_DRIFT')
+    report=dict(binding=e['data'],vertices=len(v),triangles=len(f),original_geometry_actions_unchanged=True,hidden_original_objects=hidden,scope='Spatial anatomy study only. Neutral static reference, not the production horse, retargeting, costume, material, animation or film adoption.')
+    (out/'anatomy386-reference.json').write_text(json.dumps(report,indent=2)+'\n');return report
 
 
 def camera(bpy,view):
@@ -102,6 +137,7 @@ def export(bpy,out):
 def run(bpy,out,e):
     validate(e)
     if e['kind']=='mounted_anatomy386_export':return export(bpy,out)
+    if e['kind']=='mounted_anatomy386_reference':return reference(bpy,out,e)
     root=Path(__file__).resolve().parents[4];q=load(root,e['data']);base=mod('nihang_cache376')
     def target(p,rest,edges,breast,t):
         i=int(round((t-276)*2))

@@ -8,6 +8,8 @@ ev={p:bind(p) for p in [f]+v['evidence_paths']};packet=c.retrospective_packet(ta
 common=dict(reference_assessment=dict(readiness_digest=pk.digest(s['brief']['reference_readiness']),diagnosis=v['diagnosis'],disposition='retain',reason=v['reference_reason'],aspects=list(s['brief']['reference_readiness']['decisions']),evidence=list(ev.values())),cause=v['cause'],uncertainty=v['uncertainty'],change_or_retain_rationale=v['rationale'],preserve=v['preserve'],test=v['test'],expected=v['expected'],failure_response=v['failure_response'],target_stage='STRATEGIZING',plan=pk.digest(s['brief']),evidence=ev,scope_assessment=dict(decision=v['scope_decision'],unit_digest=pk.digest(s['brief']['work_unit']),reason=v['scope_reason']),causal_assessment=dict(category=v['category'],method_family=v['method_family'],changed_prediction=v['prediction'],previous_result=v['previous_result']))
 for key in v['keys']:
  gate=rt.expand_packet_gates(c.retrospective_packet(task))[key]
+ if gate['status']=='CLOSED':
+  print('No open gate; retain existing closed disposition without new PASS:',key);continue
  if gate['status']=='TESTING':
   oid=f'sikh386-c{cy}-{key}-prior-plan-unknown';c.retrospective(task,'outcome',dict(attempt=oid,role='diagnostic',origin='changed_test_plan',observations=[dict(requirement=key,status='UNKNOWN',observation='Previous plan outcome does not qualify current experiment; retain original findings.')],evidence=ev),oid)
   gate=rt.expand_packet_gates(c.retrospective_packet(task))[key]
