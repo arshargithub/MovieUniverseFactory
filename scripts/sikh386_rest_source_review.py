@@ -1,0 +1,10 @@
+"""Actual deterministic rest-handler checks only; never judges anatomy."""
+import json
+from pathlib import Path
+from movie_factory import production_workflow as w,production_knowledge as p
+from movie_factory.native_admission import Bridge
+r=Path(__file__).resolve().parents[1];c=w.Controller(r,'.runtime/factory-entry.sqlite3');t='sikh335-supporting-appearance';cy=c.state(t)['cycle'];run=p.read_json(r,f'results/sikh386/appearance-c{cy}-source-run.json');a=p.read_json(r,f'.runtime/factory-native/sikh386-appearance-c{cy}-source/anatomy386-rest.json')
+assert a['pose_preservation']['outside_surface_max_error']<=2e-5 and a['pose_preservation']['skeleton_and_world_max_error']<=1e-7
+assert a['raw_actions_other_geometry_unchanged'] and a['domain_preservation']['max_protected_delta']==0 and a['relative_corrective_error']<1e-6 and all(x[1:3]==[True,True] for x in a['original_armature_live']) and a['max_delta']<=.18
+v=dict(verdict='PASS',run_digest=p.digest(run),observation=f'Actualclosed{a.get("mode","depth_only")}handler appliedbounddata,saved/reopened;{a["changed_vertices"]}skinpointschanged<={a["max_delta"]:.5f}m, allprotectedforeleg/non-skinpointsunchanged,raw/actions/othergeometry/relativekeyoffsetspreserved. Originalarmaturelive. Technicalintegration only.',comparison='Actualhandler/source/rest/domain/relativekey/action/nativeinvariants versusadmitteddata. Anatomy/posedconsumer/fullspeedAVnotjudged.',open_defects=[],evidence=run['artifacts'],cycle_disposition=dict(category='causal_control_only',observation='Trustedrest/formhandlerintegrationonly; actualanatomicalviews remainNOT_RUN.'),requirement_outcomes=dict(preservation=dict(status='PASS',observation='Actualsemantic/rest/action/relativekey/othergeometryguardspassed; originalliverig.'),evidence=dict(status='NOT_TESTED',observation='Sourceapplication isnot anatomicalorAV evidence.')))
+Bridge(c).record_review(t,'source',v);(r/f'results/sikh386/appearance-c{cy}-source-review.json').write_text(json.dumps(v,indent=2)+'\n');print('Technical source only',cy)

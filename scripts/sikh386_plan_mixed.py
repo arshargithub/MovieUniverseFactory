@@ -28,7 +28,10 @@ if action=='plan':
             assert spec.get('kind') in {'proof','build'} and spec.get('script')
             from movie_factory.review_control import binding
             binding(r,spec['script']);b['source_bindings'][spec['script']['path']]=spec['script']
-            steps.append(dict(id=spec['id'],kind=spec['kind'],depends_on=spec['depends_on'],requirements=spec['requirements'],acceptance=spec['acceptance'],numeric_script=spec['script']))
+            inputs=spec.get('numeric_inputs');assert isinstance(inputs,list) and inputs,'Explicit numeric data inputs required'
+            for item in inputs:
+                binding(r,item);assert item in b['source_bindings'].values(),'Unbound numeric input'
+            steps.append(dict(id=spec['id'],kind=spec['kind'],depends_on=spec['depends_on'],requirements=spec['requirements'],acceptance=spec['acceptance'],numeric_script=spec['script'],numeric_inputs=inputs))
             continue
         recipe=spec['recipe'];assert spec.get('timeout',600)<=timeout_limit(recipe)
         work_units.native(dict(task=task,cycle=cy,max_corrections=s['max_corrections'],brief=b),recipe)

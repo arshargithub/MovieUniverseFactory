@@ -18,6 +18,7 @@ def mod(name):
 
 
 def validate(e):
+    if isinstance(e,dict) and e.get('kind')=='mounted_anatomy386_weights':return mod('anatomy_weights386').validate(e)
     if e in [dict(kind='mounted_anatomy386_clay',target='horse'),dict(kind='mounted_anatomy386_raw_control',target='horse')]:return e
     if e==dict(kind='mounted_anatomy386_export',target='horse'):
         return e
@@ -26,7 +27,7 @@ def validate(e):
         b=e['data']
         if (not isinstance(b,dict) or set(b)!={'path','sha256'} or not isinstance(b['path'],str) or not b['path'].startswith('.runtime/art-direction/anatomy386-references/') or '..' in Path(b['path']).parts or not b['path'].endswith('.npz') or not isinstance(b['sha256'],str) or len(b['sha256'])!=64 or any(c not in '0123456789abcdef' for c in b['sha256'])):raise ValueError('ANATOMY386_REFERENCE_BINDING')
         return e
-    if not isinstance(e,dict) or set(e)!={'kind','target','data'} or e.get('kind')!='mounted_anatomy386_target' or e.get('target')!='horse':
+    if not isinstance(e,dict) or set(e)!={'kind','target','data'} or e.get('kind') not in {'mounted_anatomy386_target','mounted_anatomy386_rest','mounted_anatomy386_form','mounted_anatomy386_pectoral','mounted_anatomy386_connected','mounted_anatomy386_weights'} or e.get('target')!='horse':
         raise ValueError('ANATOMY386_FIELDS')
     b=e['data']
     if (not isinstance(b,dict) or set(b)!={'path','sha256'} or not isinstance(b['path'],str)
@@ -195,10 +196,12 @@ def export(bpy,out):
 
 
 def run(bpy,out,e):
+    if e['kind']=='mounted_anatomy386_weights':return mod('anatomy_weights386').apply(bpy,out,e,mod)
     validate(e)
     if e['kind']=='mounted_anatomy386_raw_control':return raw_control(bpy,out)
     if e['kind']=='mounted_anatomy386_clay':return clay(bpy,out)
     if e['kind']=='mounted_anatomy386_export':return export(bpy,out)
+    if e['kind'] in {'mounted_anatomy386_rest','mounted_anatomy386_form','mounted_anatomy386_pectoral','mounted_anatomy386_connected'}:return mod('anatomy_rest386').apply(bpy,out,e['data'],mod,depth_only=e['kind']=='mounted_anatomy386_rest',allow_proximal=e['kind'] in {'mounted_anatomy386_pectoral','mounted_anatomy386_connected'},proximal_limit=.15 if e['kind']=='mounted_anatomy386_connected' else .06)
     if e['kind']=='mounted_anatomy386_reference':return reference(bpy,out,e)
     root=Path(__file__).resolve().parents[4];q=load(root,e['data']);base=mod('nihang_cache376')
     horse=bpy.data.objects['horse'];names=[g.name for g in horse.vertex_groups];weights=np.zeros((len(horse.data.vertices),len(names)),dtype=np.float32)

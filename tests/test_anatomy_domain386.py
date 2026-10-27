@@ -13,3 +13,7 @@ def test_forearm_and_downstream_are_protected_even_when_mask_would_include_them(
 
 def test_unknown_rig_ownership_fails_closed():
  with pytest.raises(ValueError,match='MISSING_FOREARM'):foreleg_ownership(np.zeros((2,1)),['body'])
+
+def test_main_skin_excludes_disconnected_cards():
+ from movie_factory.adapters.blender.anatomy_domain386 import main_skin
+ assert main_skin(np.array([[0,1],[1,2],[2,3],[4,5]]),7).tolist()==[True,True,True,True,False,False,False]
