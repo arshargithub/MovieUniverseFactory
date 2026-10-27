@@ -1,5 +1,10 @@
 # Retrospective workflow and operating procedure
 
+**386 extension:** [scope and effectiveness contract](MICRO_APPEARANCE_WORKFLOW_386.md).
+New version2 interventions require scope/causal reassessment and a tested outcome
+disposition before a replacement remedy. Failed tests can be evaluated by explicit
+admission identity after reopening; this never closes unresolved/newer art.
+
 **378 extension:** [purpose-qualified references](REFERENCE_READINESS_378.md)
 adds `reference_gap` as an immediate outcome trigger. Current-contract responses
 must assess retain/supplement/replace/no-reference-issue with bound evidence;

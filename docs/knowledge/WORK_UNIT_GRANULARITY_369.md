@@ -43,13 +43,14 @@ allowed changes and frozen interfaces. Judge the complete region in those views,
 then reintegrate. Static appearance cannot qualify motion. Moving forms need
 motion-conditioned checks even when the task began as appearance work.
 
-This appearance equivalent is an adopted manual planning/review rule. The current
-367 machine work-unit validator still requires a faithful_motion reference; it
-has not been generalized or qualified for appearance. Do not mislabel an
-appearance reference or claim enforcement that does not exist. Extend that
-validator through a separately routed, tested implementation before using it for
-appearance admission. No such implementation or new construction is authorized
-by this learning capture alone.
+At369 this was a manual rule. **374 subsequently implemented** a distinct
+appearance discipline with visual-reference roles, pose/view coverage and
+interfaces (see `results/sikh374/LEARNINGS.md`). **386 now adds** the required
+scope/causal challenge and evaluated-intervention contract in
+[the current guide](MICRO_APPEARANCE_WORKFLOW_386.md). Coverage enforcement is
+implemented; semantic unit sizing and artistic judgment remain agent duties.
+Do not mislabel appearance as faithful_motion or infer art from software tests.
+The original369 learning capture alone granted no construction authority.
 
 ## Carry-forward and evidence
 

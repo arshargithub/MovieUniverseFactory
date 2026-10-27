@@ -1,5 +1,9 @@
 # Scoped reference-led work units — Director367
 
+**Current386 extension:** [coherent micro-units and evaluated retrospectives](MICRO_APPEARANCE_WORKFLOW_386.md)
+requires version2 scope/experiment/dependency contracts for new covered native
+units. Legacy/offline version1 remains historical; shared task/allowance preserved.
+
 Adopts366's proposal inside the existing staged controller, without another
 service, LLM session or worker. Director367 says the rearing reference is the
 100percent motion acceptance authority and substantially the horse appearance
