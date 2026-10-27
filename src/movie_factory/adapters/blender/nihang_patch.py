@@ -150,7 +150,7 @@ def apply(bpy, recipe,diagnostic_dir=None):
     # named derivative; it cannot overwrite an accepted existing object.
     names = set()
     for edit in recipe['edits']:
-        if edit['kind'] in {'mounted_forequarter381','mounted_forequarter381_donor_inspect','mounted_forequarter381_data','mounted_horse_chest380','mounted_horse_chest380_coat','mounted_horse_chest379','mounted_horseform374_inspect','mounted_horseform374_sculpt','mounted_horseform374_contact','mounted_horse_deform375_inspect','mounted_horse_deform375_weights','mounted_horse_corrective375','mounted_horse_pose376_inspect','mounted_horse_pose376_correct','mounted_horse_multiform376','mounted_horse_cache376'}:
+        if edit['kind'] in {'mounted_anatomy386_export','mounted_anatomy386_target','mounted_forequarter381','mounted_forequarter381_donor_inspect','mounted_forequarter381_data','mounted_horse_chest380','mounted_horse_chest380_coat','mounted_horse_chest379','mounted_horseform374_inspect','mounted_horseform374_sculpt','mounted_horseform374_contact','mounted_horse_deform375_inspect','mounted_horse_deform375_weights','mounted_horse_corrective375','mounted_horse_pose376_inspect','mounted_horse_pose376_correct','mounted_horse_multiform376','mounted_horse_cache376'}:
             if bpy.data.objects.get('horse') is None:raise ValueError('FORM374_SOURCE_OWNER')
         elif edit['kind']=='mounted_padcontact369':
             if bpy.data.objects.get('horse') is None or bpy.data.objects.get('fitted saddle blanket292') is None:raise ValueError('PAD369_OWNERS')

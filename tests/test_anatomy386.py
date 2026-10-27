@@ -1,5 +1,8 @@
 """Closed handler/data boundary; actual native source preservation is separate."""
 import hashlib
+import importlib.util
+from importlib.machinery import ModuleSpec
+from types import SimpleNamespace
 import numpy as np
 import pytest
 from movie_factory.adapters.blender import nihang_anatomy386 as a, nihang_patch as p, nihang_control as c
@@ -37,3 +40,17 @@ def test_closed_anatomical_camera_views():
         c.validate(dict(operation='nihang_frames',frame=283,frames=[283,333,339],view=v,width=640,height=640,samples=8))
     with pytest.raises(ValueError):
         c.validate(dict(operation='nihang_frames',frame=283,frames=[283],view='anatomy_arbitrary386',width=640,height=640,samples=8))
+
+
+@pytest.mark.parametrize('kind',['mounted_anatomy386_export','mounted_anatomy386_target'])
+def test_actual_apply_preflight_accepts_existing_horse(monkeypatch,tmp_path,kind):
+    class Loader:
+        def create_module(self,spec):return None
+        def exec_module(self,module):module.run=lambda bpy,out,edit:{'fixed386':edit['kind']}
+    monkeypatch.setattr(importlib.util,'spec_from_file_location',lambda name,path:ModuleSpec(name,Loader()))
+    calls=[];bpy=SimpleNamespace(data=SimpleNamespace(objects={'horse':object()}),
+        context=SimpleNamespace(scene=SimpleNamespace(frame_set=calls.append),view_layer=SimpleNamespace(update=lambda:None)))
+    edit=dict(kind=kind,target='horse')
+    if kind.endswith('target'):edit['data']=dict(path='.runtime/art-direction/anatomy386-targets/test.npz',sha256='a'*64)
+    result=p.apply(bpy,dict(frame=283,edits=[edit]),tmp_path)
+    assert result==[{'anatomy386':{'fixed386':kind}}] and calls==[283]

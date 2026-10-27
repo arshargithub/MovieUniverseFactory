@@ -415,8 +415,47 @@ def packet(con, state):
             indexed[key]=dict(identity,payload_ref=digest)
         result.update(response_encoding='shared_payloads_v1',response_payloads=pool,responses=indexed)
         result['instruction']+=' Responses use lossless shared payloads: merge response_payloads[payload_ref] with each indexed event/key/gate_digest; full original records remain in events.'
+    if len(json.dumps(result))>60000:
+        result=encode_trigger_dictionary(result)
     need(len(json.dumps(result))<=60000,'PACKET_TOO_LARGE_RECONCILE_SCOPE')
     return result
+
+
+def encode_trigger_dictionary(value):
+    """Lossless386 transport: shared event IDs once, every membership retained."""
+    result=json.loads(json.dumps(value))
+    need(not result.get('trigger_encoding386'), 'TRIGGERS_ALREADY_ENCODED')
+    gates=result['gates'];all_ids=set()
+    for row in gates.values():
+        triggers=row.get('triggers',[])
+        need(isinstance(triggers,list) and all(isinstance(x,str) for x in triggers), 'TRIGGER_SOURCE')
+        all_ids.update(triggers)
+    table=sorted(all_ids);lookup={text:i for i,text in enumerate(table)}
+    digests={k:pk.digest(row) for k,row in gates.items()}
+    for row in gates.values():
+        if 'triggers' in row:row['triggers']=[lookup[x] for x in row['triggers']]
+    result.update(trigger_encoding386='indexed_events_v1',trigger_events386=table,gate_digests386=digests)
+    result['instruction']=result.get('instruction','')+' Trigger IDs are losslessly dictionary-encoded. Use retrospective.expand_packet_gates(packet) before inspecting gates or computing a response gate digest; gate_digest(packet,key) returns the exact original gate hash. No finding, trigger or event is omitted.'
+    return result
+
+
+def expand_packet_gates(value):
+    gates=json.loads(json.dumps(value['gates']))
+    if not value.get('trigger_encoding386'):return gates
+    need(value['trigger_encoding386']=='indexed_events_v1', 'TRIGGER_ENCODING')
+    table=value.get('trigger_events386');digests=value.get('gate_digests386',{})
+    need(isinstance(table,list) and all(isinstance(x,str) for x in table)
+         and len(table)==len(set(table)) and set(digests)==set(gates), 'TRIGGER_TABLE')
+    for key,row in gates.items():
+        if 'triggers' in row:
+            indices=row['triggers'];need(isinstance(indices,list) and all(type(i) is int and 0<=i<len(table) for i in indices), 'TRIGGER_INDEX')
+            row['triggers']=[table[i] for i in indices]
+        need(pk.digest(row)==digests[key], 'TRIGGER_GATE_DIGEST')
+    return gates
+
+
+def gate_digest(value,key):
+    return pk.digest(expand_packet_gates(value)[key])
 
 
 def expand_packet_responses(value):
