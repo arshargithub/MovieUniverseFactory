@@ -1,0 +1,19 @@
+{
+  "scope": "385process audit/plan only; not production readiness",
+  "sources_checked": 39,
+  "source_mismatches": [],
+  "native_runs_this_pass": 0,
+  "appearance_cycle": 176,
+  "appearance_max": 176,
+  "workflow_implementation_changes": false,
+  "new_correction_grant": false,
+  "prior_wait_closeout": {
+    "path": ".runtime/operating385/receipt.json",
+    "sha256": "36004d27e7c6389c6b80508d067fb0d02a8e6b548b1d490b9194890b049ab3a0"
+  },
+  "audit_duration_seconds": null,
+  "bootstrap_and_active_time": "Not fully instrumented; no exact net effort claimed",
+  "software_existing_controls": 59,
+  "production_gate": "NOT_PASSED; explicit process/failure audit only",
+  "remote_push_or_backup": false
+}
