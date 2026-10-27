@@ -170,13 +170,13 @@ def export(bpy,out):
     for v in horse.data.vertices:
         for g in v.groups:w[v.index,g.group]=g.weight
     levels=[(m,m.show_viewport) for m in horse.modifiers if m.type=='SUBSURF']
-    times=np.arange(552,735)/2.;points=[];bone_names=['DEF-spine.003','DEF-spine.004','DEF-neck.001','DEF-breast.L','DEF-breast.R','DEF-upper_arm.L','DEF-upper_arm.R','DEF-forearm.L','DEF-forearm.R'];bones=[]
+    times=np.arange(552,735)/2.;points=[];bone_names=['DEF-spine.003','DEF-spine.004','DEF-neck.001','DEF-breast.L','DEF-breast.R','DEF-upper_arm.L','DEF-upper_arm.R','DEF-forearm.L','DEF-forearm.R'];bones=[];worlds=[];rig_worlds=[]
     try:
         for m,_ in levels:m.show_viewport=False
         for t in times:
             base.at(scene,float(t));bpy.context.view_layer.update();p,_=base.evaluated(bpy,horse)
             if p.shape!=rest.shape:raise ValueError('ANATOMY386_SOURCE_TOPOLOGY')
-            points.append(p)
+            points.append(p);worlds.append([list(row) for row in horse.matrix_world]);rig_worlds.append([list(row) for row in rig.matrix_world])
             B=horse.matrix_world.inverted()@rig.matrix_world
             bones.append([[list(B@rig.pose.bones[n].head),list(B@rig.pose.bones[n].tail)] for n in bone_names])
     finally:
@@ -187,7 +187,7 @@ def export(bpy,out):
     dest=out/'anatomy386-source.npz'
     np.savez_compressed(dest,source=np.array(points,dtype=np.float32),rest=rest,raw=raw,
         weights=w,group_names=np.array(names),edges=np.array([ed.vertices[:] for ed in horse.data.edges],dtype=np.int32),
-        times=times,bones=np.array(bones),bone_names=np.array(bone_names))
+        times=times,bones=np.array(bones),bone_names=np.array(bone_names),body_world=np.array(worlds),rig_world=np.array(rig_worlds))
     report=dict(npz=dict(path=str(dest),sha256=hashlib.sha256(dest.read_bytes()).hexdigest()),
         frames=[276,367],step=.5,samples=len(times),geometry_actions_unchanged=True,
         scope='Read-only actual evaluated cage/bone source, subdivision temporarily disabled/restored. Not anatomy or full-speed approval.')
@@ -201,11 +201,15 @@ def run(bpy,out,e):
     if e['kind']=='mounted_anatomy386_export':return export(bpy,out)
     if e['kind']=='mounted_anatomy386_reference':return reference(bpy,out,e)
     root=Path(__file__).resolve().parents[4];q=load(root,e['data']);base=mod('nihang_cache376')
+    horse=bpy.data.objects['horse'];names=[g.name for g in horse.vertex_groups];weights=np.zeros((len(horse.data.vertices),len(names)),dtype=np.float32)
+    for vertex in horse.data.vertices:
+        for item in vertex.groups:weights[vertex.index,item.group]=item.weight
+    domain_report=mod('anatomy_domain386').preserve_forelegs(q['source'],q['target'],weights,names)
     def target(p,rest,edges,breast,t):
         i=int(round((t-276)*2))
         if not np.array_equal(rest,q['rest']) or np.max(np.abs(p-q['source'][i]))>2e-5:
             raise ValueError('ANATOMY386_ACTUAL_SOURCE_MISMATCH')
         return q['target'][i]-p,q['mask']
     result=base.run(bpy,out,dict(kind='mounted_horse_cache376',target='horse'),target_function=target)
-    result.update(target_binding=e['data'],method='386 bound positive-form target under exact accepted source action',artistic_pass=False)
+    result.update(target_binding=e['data'],domain_preservation=domain_report,method='386 bound positive-form target under exact accepted source action',artistic_pass=False)
     (out/'anatomy386-target.json').write_text(json.dumps(result,indent=2)+'\n');return result
