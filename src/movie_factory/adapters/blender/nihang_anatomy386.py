@@ -18,6 +18,7 @@ def mod(name):
 
 
 def validate(e):
+    if isinstance(e,dict) and e.get('kind')=='mounted_anatomy387_static_control':return mod('anatomy_static387').validate(e)
     if isinstance(e,dict) and e.get('kind') in {'mounted_articulation387','mounted_articulation387_calibrated'}:return mod('anatomy_articulation387').validate(e)
     if isinstance(e,dict) and e.get('kind')=='mounted_anatomy386_muscle_contract':return mod('anatomy_muscle386').validate(e)
     if isinstance(e,dict) and e.get('kind') in {'mounted_anatomy386_rigid_support','mounted_anatomy386_dominant_support'}:return mod('anatomy_support386').validate(e)
@@ -31,7 +32,7 @@ def validate(e):
         b=e['data']
         if (not isinstance(b,dict) or set(b)!={'path','sha256'} or not isinstance(b['path'],str) or not b['path'].startswith('.runtime/art-direction/anatomy386-references/') or '..' in Path(b['path']).parts or not b['path'].endswith('.npz') or not isinstance(b['sha256'],str) or len(b['sha256'])!=64 or any(c not in '0123456789abcdef' for c in b['sha256'])):raise ValueError('ANATOMY386_REFERENCE_BINDING')
         return e
-    if not isinstance(e,dict) or set(e)!={'kind','target','data'} or e.get('kind') not in {'mounted_anatomy386_target','mounted_anatomy386_rest','mounted_anatomy386_form','mounted_anatomy386_pectoral','mounted_anatomy386_connected','mounted_anatomy386_weights','mounted_anatomy386_weights_core','mounted_anatomy386_bind_preserve','mounted_anatomy386_bind_core'} or e.get('target')!='horse':
+    if not isinstance(e,dict) or set(e)!={'kind','target','data'} or e.get('kind') not in {'mounted_anatomy387_static_target','mounted_anatomy386_target','mounted_anatomy386_rest','mounted_anatomy386_form','mounted_anatomy386_pectoral','mounted_anatomy386_connected','mounted_anatomy386_weights','mounted_anatomy386_weights_core','mounted_anatomy386_bind_preserve','mounted_anatomy386_bind_core'} or e.get('target')!='horse':
         raise ValueError('ANATOMY386_FIELDS')
     b=e['data']
     if (not isinstance(b,dict) or set(b)!={'path','sha256'} or not isinstance(b['path'],str)
@@ -200,6 +201,7 @@ def export(bpy,out):
 
 
 def run(bpy,out,e):
+    if e['kind']=='mounted_anatomy387_static_control':return mod('anatomy_static387').control(bpy,out,mod)
     if e['kind'] in {'mounted_articulation387','mounted_articulation387_calibrated'}:return mod('anatomy_articulation387').run(bpy,out,e,mod)
     if e['kind']=='mounted_anatomy386_muscle_contract':return mod('anatomy_muscle386').run(bpy,out,e,mod)
     if e['kind'] in {'mounted_anatomy386_rigid_support','mounted_anatomy386_dominant_support'}:return mod('anatomy_support386').run(bpy,out,e,mod)
@@ -222,5 +224,6 @@ def run(bpy,out,e):
             raise ValueError('ANATOMY386_ACTUAL_SOURCE_MISMATCH')
         return q['target'][i]-p,q['mask']
     result=base.run(bpy,out,dict(kind='mounted_horse_cache376',target='horse'),target_function=target)
+    if e['kind']=='mounted_anatomy387_static_target':result['diagnostic_render_profile']=mod('anatomy_static387').freeze(bpy.context.scene)
     result.update(target_binding=e['data'],domain_preservation=domain_report,method='386 bound positive-form target under exact accepted source action',artistic_pass=False)
     (out/'anatomy386-target.json').write_text(json.dumps(result,indent=2)+'\n');return result
