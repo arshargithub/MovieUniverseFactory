@@ -18,6 +18,7 @@ def mod(name):
 
 
 def validate(e):
+    if isinstance(e,dict) and e.get("kind")=="mounted_anatomy388_corrective_control":return mod("anatomy_corrective388").validate(e)
     if isinstance(e,dict) and e.get('kind')=='mounted_upperarm387_rigid':return mod('anatomy_upperarm387').validate(e)
     if isinstance(e,dict) and e.get('kind')=='mounted_anatomy387_static_control':return mod('anatomy_static387').validate(e)
     if isinstance(e,dict) and e.get('kind') in {'mounted_articulation387','mounted_articulation387_calibrated'}:return mod('anatomy_articulation387').validate(e)
@@ -202,6 +203,7 @@ def export(bpy,out):
 
 
 def run(bpy,out,e):
+    if e["kind"]=="mounted_anatomy388_corrective_control":return mod("anatomy_corrective388").run(bpy,out,e,mod)
     if e['kind']=='mounted_upperarm387_rigid':return mod('anatomy_upperarm387').run(bpy,out,e,mod)
     if e['kind']=='mounted_anatomy387_static_control':return mod('anatomy_static387').control(bpy,out,mod)
     if e['kind'] in {'mounted_articulation387','mounted_articulation387_calibrated'}:return mod('anatomy_articulation387').run(bpy,out,e,mod)
