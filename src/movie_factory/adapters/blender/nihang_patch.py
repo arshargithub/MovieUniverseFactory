@@ -27,7 +27,10 @@ def validate(recipe):
         name = edit.get('target')
         if not isinstance(name, str) or not name or len(name) > 128 or any(c in name for c in '/\\\n'):
             raise ValueError('PATCH_TARGET')
-        if kind in {'warhorse_import383','warhorse_retarget383','warhorse_ground383'}:
+        if kind in {'warhorse_surface384','warhorse_headblend384','warhorse_headrebuild384','warhorse_headgraft384'}:
+            import importlib.util
+            spec=importlib.util.spec_from_file_location('mf_warhorse384',Path(__file__).with_name('warhorse384.py'));module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module);module.validate(edit)
+        elif kind in {'warhorse_import383','warhorse_retarget383','warhorse_ground383'}:
             import importlib.util
             spec=importlib.util.spec_from_file_location('mf_warhorse383',Path(__file__).with_name('warhorse383.py'));module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module);module.validate(edit)
         elif kind in {'mounted_forequarter381','mounted_forequarter381_donor_inspect','mounted_forequarter381_data'}:
@@ -171,7 +174,11 @@ def apply(bpy, recipe,diagnostic_dir=None):
             names.add(edit['target'])
     support_evidence=[]
     for edit in recipe['edits']:
-        if edit['kind'] in {'warhorse_import383','warhorse_retarget383','warhorse_ground383'}:
+        if edit['kind'] in {'warhorse_surface384','warhorse_headblend384','warhorse_headrebuild384','warhorse_headgraft384'}:
+            import importlib.util
+            spec=importlib.util.spec_from_file_location('mf_warhorse384',Path(__file__).with_name('warhorse384.py'));module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+            support_evidence.append({'warhorse384':module.run(bpy,diagnostic_dir,edit)})
+        elif edit['kind'] in {'warhorse_import383','warhorse_retarget383','warhorse_ground383'}:
             import importlib.util
             spec=importlib.util.spec_from_file_location('mf_warhorse383',Path(__file__).with_name('warhorse383.py'));module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
             support_evidence.append({'warhorse383':module.run(bpy,diagnostic_dir,edit)})
