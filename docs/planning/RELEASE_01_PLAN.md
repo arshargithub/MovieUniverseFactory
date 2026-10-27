@@ -4,6 +4,18 @@ Established 2026-09-17 at the Director's request. This is the active delivery pl
 
 ## Outcome and operating agreement
 
+### Exchange385 — review the loop before a larger anatomy grant
+
+Director rejects armored donor costume and chooses the previous inherited horse
+for chest anatomy. [Audit](../../results/sikh385/AUDIT.md) finds stronger failure
+containment but inadequate chest convergence/formal intervention effect closure.
+[Proposal](../../results/sikh385/PROPOSAL.md): explicit scope challenge, outcome-
+linked retros, coherent chest/shoulder/neck micro-appearance units then integrated
+moving-form/contact proof. Changes and a shared50extra-cycle ceiling await
+Director response;176/max176 is unchanged. No construction or remote protection
+performed. Existing59protocol tests pass, not proposed implementation or art.
+Checkpoint390. Earlier384headpiece recommendation is rejected/superseded.
+
 ### Exchange384 — donor head/tack qualification failed; design fork
 
 Ten167..176slots are exhausted. Bare-head conversion failed internal visual review

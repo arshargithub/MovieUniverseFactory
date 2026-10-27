@@ -1,0 +1,517 @@
+{
+  "scope": "Canonical335tasks through end384; append-only outcome records are not independent artistic cycles",
+  "tasks": {
+    "sikh335-supporting-appearance": {
+      "event_count": 2805,
+      "kind_counts": {
+        "initialize": 3,
+        "plan": 119,
+        "outcome": 1112,
+        "response": 784,
+        "admit": 784,
+        "evaluate": 1,
+        "closure": 2
+      },
+      "evaluations": [
+        {
+          "id": "sikh351-migration-effect",
+          "key": "__migration__",
+          "result": "effective",
+          "observation": "Administrative reconciliation only; form remains TESTING, not accepted."
+        }
+      ],
+      "closure_events": [
+        {
+          "id": "closure:sikh362-appearance-review-final",
+          "candidate_artifact_count": 10,
+          "scope": "closure preserves candidate/requirements; not explicit intervention effectiveness evaluation"
+        },
+        {
+          "id": "closure:sikh364-appearance-review-final",
+          "candidate_artifact_count": 16,
+          "scope": "closure preserves candidate/requirements; not explicit intervention effectiveness evaluation"
+        }
+      ],
+      "gate_status_counts": {
+        "TESTING": 6,
+        "OPEN": 6
+      },
+      "gates": {
+        "__migration__": {
+          "status": "TESTING",
+          "reason": "evidence_reconciliation",
+          "trigger_count": 33
+        },
+        "__allowance__": {
+          "status": "OPEN",
+          "reason": "allowance_exhausted",
+          "trigger_count": 114
+        },
+        "form": {
+          "status": "OPEN",
+          "reason": "intervention_failed",
+          "trigger_count": 138
+        },
+        "interfaces": {
+          "status": "OPEN",
+          "reason": "intervention_failed",
+          "trigger_count": 125
+        },
+        "evidence": {
+          "status": "OPEN",
+          "reason": "intervention_failed",
+          "trigger_count": 119
+        },
+        "__worker__": {
+          "status": "TESTING",
+          "reason": "intervention_failed",
+          "trigger_count": 76
+        },
+        "__requirements__": {
+          "status": "TESTING",
+          "reason": "evidence_reconciliation",
+          "trigger_count": 68
+        },
+        "whole_look": {
+          "status": "OPEN",
+          "reason": "intervention_failed",
+          "trigger_count": 72
+        },
+        "director_form_motion": {
+          "status": "OPEN",
+          "reason": "intervention_failed",
+          "trigger_count": 38
+        },
+        "__positive_forequarter_form__": {
+          "status": "TESTING",
+          "reason": "evidence_reconciliation",
+          "trigger_count": 23
+        },
+        "__forequarter_method__": {
+          "status": "TESTING",
+          "reason": "evidence_reconciliation",
+          "trigger_count": 14
+        },
+        "__warhorse383_qualification__": {
+          "status": "TESTING",
+          "reason": "evidence_reconciliation",
+          "trigger_count": 7
+        }
+      },
+      "latest_cycle": 176,
+      "max_corrections": 176,
+      "stage": "REPLAN_REQUIRED",
+      "unit": {
+        "allowed_domains": [
+          "horse_head_geometry",
+          "horse_head_skinweights",
+          "horse_head_surface",
+          "horse_tack_surface",
+          "neutral_evidence_camera",
+          "horse_head_neck_interface"
+        ],
+        "appearance_proof": {
+          "interfaces": [
+            "eye/coat/head surface",
+            "bridle/cheek/muzzle",
+            "breastcollar/chest",
+            "fixed pose/shader"
+          ],
+          "motion_source": {
+            "path": ".runtime/factory-native/sikh383-appearance-c166-import/scene.blend",
+            "sha256": "f0a831453eb4ee70c9e3513e7df634d14f5ce1355cf73d58adac40b06aa07414"
+          },
+          "poses": [
+            283,
+            333,
+            339
+          ],
+          "views": [
+            "warhorse_head_front384",
+            "warhorse_head_side384",
+            "warhorse_head_oblique384"
+          ]
+        },
+        "boundaries": [
+          {
+            "consumer": "Protected accepted source action and future retarget/rider/tack interface; donor action remains qualification-only.",
+            "id": "accepted_animation",
+            "state": [
+              "pose",
+              "velocity",
+              "contacts"
+            ]
+          }
+        ],
+        "calibration": {
+          "actual124": {
+            "observation": "Actual matched5x3 source controls show flattening; they remain the same-camera negative comparator for new form, not a positive anatomical donor.",
+            "verdict": "FAIL"
+          },
+          "flat113": {
+            "observation": "365 source audit explicitly rejects113 form; actual matched current-source images must be inspected before choosing repair.",
+            "verdict": "FAIL"
+          },
+          "web128": {
+            "observation": "128 actual opposite339 presents triangular skin web. New correction must positively close this before full proof.",
+            "verdict": "FAIL"
+          }
+        },
+        "cycle_window": [
+          167,
+          176
+        ],
+        "discipline": "appearance",
+        "edit_kinds": [
+          "warhorse_headgraft384"
+        ],
+        "frozen_domains": [
+          "donor_torso_limb_geometry",
+          "donor_torso_limb_weights",
+          "accepted_motion_masters",
+          "pashtun",
+          "production_scene",
+          "leader",
+          "crowd",
+          "groom",
+          "sound"
+        ],
+        "id": "horse-head-tack384",
+        "negative_controls": [
+          {
+            "binding": {
+              "path": "results/nihang-scope-review365/ANALYSIS.md",
+              "sha256": "34515295a8e2700aca5c0e1dc49bffd60d7f25244ae656d885574e2075eb91f8"
+            },
+            "expected": "FAIL",
+            "failure": "365 rejects broad flattened lower chest despite removed bulge.",
+            "id": "flat113"
+          },
+          {
+            "binding": {
+              "path": "results/sikh374/SOURCE_FORM124_REVIEW.json",
+              "sha256": "04545a386ef03eee035a333337c311fd3c45f0b07685e1f75b91f1d0ff5f424a"
+            },
+            "expected": "FAIL",
+            "failure": "Actual source matrix confirms broad planar anterior torso and weak sternum/pectoral continuity; old raw mesh retains rejected lower bulge. All non-Basis correctives0 in testedposes: choose bounded positive base-form correction, not motion/skinweight patch.",
+            "id": "actual124"
+          },
+          {
+            "binding": {
+              "path": "results/sikh374/INTERNAL_REJECTION128.json",
+              "sha256": "502f7042730ef3eb566626d5fb2da05f5e3b3ab58218ea5b715a04ea8bfdea32"
+            },
+            "expected": "FAIL",
+            "failure": "Actual339 opposite flank neck/chest/foreleg skin web; rest-volume change insufficient.",
+            "id": "web128"
+          }
+        ],
+        "operations": [
+          "nihang_patch",
+          "nihang_save",
+          "nihang_render",
+          "nihang_frames"
+        ],
+        "phase": "head_tack_adaptation",
+        "positive_criteria": [
+          {
+            "comparison": "Matched same-source384 close views, real qualified head/material study and383 accepted heavier build.",
+            "failure": "Any obvious armor-shaped forehead, hard material border, eye loss, malformed chest or unsupported strap fails.",
+            "id": "form",
+            "reference_feature": "Exposed horse forehead, eye, cheek, bridge and muzzle read as natural coherent anatomy, not recolored plate or rigid helmet."
+          },
+          {
+            "comparison": "Matched same-source384 close views, real qualified head/material study and383 accepted heavier build.",
+            "failure": "Any obvious armor-shaped forehead, hard material border, eye loss, malformed chest or unsupported strap fails.",
+            "id": "interfaces",
+            "reference_feature": "Real eyes/muzzle/coat preserved; adapted breastcollar reads as leather with supported strap routes, not chrome or skin plate."
+          },
+          {
+            "comparison": "Matched same-source384 close views, real qualified head/material study and383 accepted heavier build.",
+            "failure": "Any obvious armor-shaped forehead, hard material border, eye loss, malformed chest or unsupported strap fails.",
+            "id": "evidence",
+            "reference_feature": "Matched before/after close front/side/chest plus oblique standing/apex/descent; source remains available and head changes remain coherent through motion."
+          },
+          {
+            "comparison": "Matched same-source384 close views, real qualified head/material study and383 accepted heavier build.",
+            "failure": "Any obvious armor-shaped forehead, hard material border, eye loss, malformed chest or unsupported strap fails.",
+            "id": "whole_look",
+            "reference_feature": "Accepted heavy build and rich dark bay look retained, new surface belongs to film quality; no broad body/groom/rider redesign."
+          }
+        ],
+        "primary_outcome": "Prove bare-head and rugged leather tack adaptation on Director-accepted heavier Warhorse build before any leader integration.",
+        "reference": "horse_form",
+        "task": "sikh335-supporting-appearance",
+        "version": 1
+      },
+      "requirement_named_director_pass_events": [],
+      "interpretation": "Requirement names containing director are NOT human approval provenance. Explicit request/approval sources must corroborate acceptance; no accuracy or independent success rate derived."
+    },
+    "sikh335-continuous-performance": {
+      "event_count": 2309,
+      "kind_counts": {
+        "initialize": 1,
+        "plan": 65,
+        "outcome": 946,
+        "response": 645,
+        "admit": 645,
+        "closure": 7
+      },
+      "evaluations": [],
+      "closure_events": [
+        {
+          "id": "closure:sikh362-motion-review-final",
+          "candidate_artifact_count": 14,
+          "scope": "closure preserves candidate/requirements; not explicit intervention effectiveness evaluation"
+        },
+        {
+          "id": "closure:sikh364-motion-review-final",
+          "candidate_artifact_count": 211,
+          "scope": "closure preserves candidate/requirements; not explicit intervention effectiveness evaluation"
+        },
+        {
+          "id": "closure:sikh367-review-final49",
+          "candidate_artifact_count": 114,
+          "scope": "closure preserves candidate/requirements; not explicit intervention effectiveness evaluation"
+        },
+        {
+          "id": "closure:sikh368-review-final51",
+          "candidate_artifact_count": 112,
+          "scope": "closure preserves candidate/requirements; not explicit intervention effectiveness evaluation"
+        },
+        {
+          "id": "closure:sikh370-review-final66",
+          "candidate_artifact_count": 112,
+          "scope": "closure preserves candidate/requirements; not explicit intervention effectiveness evaluation"
+        },
+        {
+          "id": "closure:sikh372-review-final75",
+          "candidate_artifact_count": 57,
+          "scope": "closure preserves candidate/requirements; not explicit intervention effectiveness evaluation"
+        },
+        {
+          "id": "closure:sikh373-review-final80",
+          "candidate_artifact_count": 120,
+          "scope": "closure preserves candidate/requirements; not explicit intervention effectiveness evaluation"
+        }
+      ],
+      "gate_status_counts": {
+        "TESTING": 15
+      },
+      "gates": {
+        "__migration__": {
+          "status": "TESTING",
+          "reason": "evidence_reconciliation",
+          "trigger_count": 64
+        },
+        "__allowance__": {
+          "status": "TESTING",
+          "reason": "evidence_reconciliation",
+          "trigger_count": 65
+        },
+        "phases": {
+          "status": "TESTING",
+          "reason": "evidence_reconciliation",
+          "trigger_count": 65
+        },
+        "rider": {
+          "status": "TESTING",
+          "reason": "evidence_reconciliation",
+          "trigger_count": 63
+        },
+        "__worker__": {
+          "status": "TESTING",
+          "reason": "evidence_reconciliation",
+          "trigger_count": 56
+        },
+        "__requirements__": {
+          "status": "TESTING",
+          "reason": "evidence_reconciliation",
+          "trigger_count": 50
+        },
+        "director_motion": {
+          "status": "TESTING",
+          "reason": "evidence_reconciliation",
+          "trigger_count": 49
+        },
+        "support": {
+          "status": "TESTING",
+          "reason": "evidence_reconciliation",
+          "trigger_count": 37
+        },
+        "evidence": {
+          "status": "TESTING",
+          "reason": "evidence_reconciliation",
+          "trigger_count": 37
+        },
+        "step": {
+          "status": "TESTING",
+          "reason": "evidence_reconciliation",
+          "trigger_count": 30
+        },
+        "head_body": {
+          "status": "TESTING",
+          "reason": "evidence_reconciliation",
+          "trigger_count": 30
+        },
+        "first_lift": {
+          "status": "TESTING",
+          "reason": "evidence_reconciliation",
+          "trigger_count": 30
+        },
+        "prep_load": {
+          "status": "TESTING",
+          "reason": "evidence_reconciliation",
+          "trigger_count": 29
+        },
+        "preservation": {
+          "status": "TESTING",
+          "reason": "evidence_reconciliation",
+          "trigger_count": 23
+        },
+        "scope": {
+          "status": "TESTING",
+          "reason": "evidence_reconciliation",
+          "trigger_count": 23
+        }
+      },
+      "latest_cycle": 80,
+      "max_corrections": 80,
+      "stage": "READY_FOR_DIRECTOR_AV",
+      "unit": {
+        "allowed_domains": [
+          "horse_pose",
+          "rider_contact",
+          "rein_control",
+          "secondary_cache_invalidation",
+          "tack_contact"
+        ],
+        "boundaries": [
+          {
+            "consumer": "new landing334..367",
+            "id": "accepted_crest333",
+            "state": [
+              "pose",
+              "velocity",
+              "contacts"
+            ]
+          },
+          {
+            "consumer": "futureleader/signalintegration",
+            "id": "settled_exit367",
+            "state": [
+              "pose",
+              "velocity",
+              "contacts"
+            ]
+          }
+        ],
+        "calibration": {
+          "statue_crest_old": {
+            "observation": "Actualoldbatch10and365audit compared withreferencecrest: a heldroot/jointpose isnotpositiveproof ofpowerfulactivebalancedhorse. Oldchest/look notaccepted either.",
+            "verdict": "FAIL"
+          }
+        },
+        "cycle_window": [
+          76,
+          80
+        ],
+        "edit_kinds": [
+          "mounted_landing373",
+          "mounted_landing373_contact"
+        ],
+        "frozen_domains": [
+          "accepted276_333",
+          "horse_mesh",
+          "leader_appearance",
+          "terrain",
+          "camera_story",
+          "sound",
+          "cloth_look"
+        ],
+        "id": "horse-landing-absorption",
+        "negative_controls": [
+          {
+            "binding": {
+              "path": "results/sikh363/contact-sheets/batch10.jpg",
+              "sha256": "029a8bd6a42469ef3cad0861336f1a01d44f84bc86e883b6d4264c4a02f6afe3"
+            },
+            "expected": "FAIL",
+            "failure": "Director365rejectsretimedweak/roboticrear; theseold314..321crestframes do notestablisha highlivingcoordinatedhold.",
+            "id": "statue_crest_old"
+          }
+        ],
+        "operations": [
+          "nihang_patch",
+          "nihang_frames",
+          "nihang_rig_inspect",
+          "nihang_save"
+        ],
+        "phase": "landing_absorption",
+        "positive_criteria": [
+          {
+            "comparison": "Actual reference17.85..18.65 and approved333 source; phase-matched side/oblique/reverse, allframes and normal-speed Director queue.",
+            "failure": "Any float/airbraking/contactstretch/bodycollapse, wrongincoming/outgoingstate or missingactualproof stays FAIL.",
+            "id": "descent",
+            "reference_feature": "Break out of active crest into head/neck/trunk-led accelerating descent and deploying forelimbs; no airborne slow ease or inverted/outturned feet."
+          },
+          {
+            "comparison": "Actual reference17.85..18.65 and approved333 source; phase-matched side/oblique/reverse, allframes and normal-speed Director queue.",
+            "failure": "Any float/airbraking/contactstretch/bodycollapse, wrongincoming/outgoingstate or missingactualproof stays FAIL.",
+            "id": "impact",
+            "reference_feature": "Finite increasing downward visiblehoof speed through distinct forehoof contacts, then leg/trunk compression and recovery; no precontact freeze or penetration."
+          },
+          {
+            "comparison": "Actual reference17.85..18.65 and approved333 source; phase-matched side/oblique/reverse, allframes and normal-speed Director queue.",
+            "failure": "Any float/airbraking/contactstretch/bodycollapse, wrongincoming/outgoingstate or missingactualproof stays FAIL.",
+            "id": "balance",
+            "reference_feature": "Grounded hind support and correct-length wholelimbs; carried rider pelvis/torso/reins/bit/spear, new final-surface contactcache334..367."
+          },
+          {
+            "comparison": "Actual reference17.85..18.65 and approved333 source; phase-matched side/oblique/reverse, allframes and normal-speed Director queue.",
+            "failure": "Any float/airbraking/contactstretch/bodycollapse, wrongincoming/outgoingstate or missingactualproof stays FAIL.",
+            "id": "continuity",
+            "reference_feature": "Actual333 entry pose/velocity preserved; settled367 exit with grounded feet and rider for next integration. Old lateraction/cache notqualified."
+          }
+        ],
+        "primary_outcome": "The horse lands with weight and control, not a hovering soft tap; the rider absorbs the impact naturally.",
+        "reference": "reference_rear",
+        "task": "sikh335-continuous-performance",
+        "version": 1
+      },
+      "requirement_named_director_pass_events": [
+        {
+          "id": "native-review:sikh362-motion-c27-tail_context",
+          "observations": [
+            {
+              "observation": "Actual canonical283 and377..380 inspected. Canonical pixels equal99/100 exactly; the four tail frames complete the requested source handle and show the unfinished principal context, not qualified crowd/hero. Availability and source/frame checks only: director_motion remains NOT_RUN.",
+              "requirement": "director_motion",
+              "status": "PASS"
+            }
+          ]
+        },
+        {
+          "id": "director371-accepted-preparation66",
+          "observations": [
+            {
+              "observation": "Director371 explicitlyapproves exact370preparationcomparison; scopedhumanverdict only, notagentAV/fullhorse/releasequalification.",
+              "requirement": "director_motion",
+              "status": "PASS"
+            }
+          ]
+        },
+        {
+          "id": "sikh374-director-motion-accept80",
+          "observations": [
+            {
+              "observation": "Director374approved exact80landingcomparison/fullrear. Scopehorse276..367motiononly; appearance/shot/releaseunapproved.",
+              "requirement": "director_motion",
+              "status": "PASS"
+            }
+          ]
+        }
+      ],
+      "interpretation": "Requirement names containing director are NOT human approval provenance. Explicit request/approval sources must corroborate acceptance; no accuracy or independent success rate derived."
+    }
+  }
+}

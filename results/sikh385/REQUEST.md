@@ -1,0 +1,3 @@
+Director385: I do not think that armour and chest plate jive with our movie. Go back to the previous horse and work on chest anatomy. I want to approve50cycles, but before that: audit the rearing turns and evaluate internal review and retros effectiveness; assess micro-appearance decomposition with clear success criteria and admission/retro triggers.
+
+Current scope: read-only historical/technical evidence audit and a proposed work/process plan. No50cycle amendment or native construction before Director review of this audit. Reject armored donor direction; preserve originals. No provider, new spend, model escalation, install, upload or publication.
