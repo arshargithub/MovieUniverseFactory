@@ -1,0 +1,51 @@
+{
+  "verdict": "PASS",
+  "run_digest": "9a876eb14be7d11e89f286219527fc85bd996e9a29b17de98817be9cdd8ef78c",
+  "observation": "Actual neutral3Dguide shows continuous chest/shoulder volume joining distinct proximal forelegs; no separate lower sphere, cape or skinweb in the claimed junction. Qualified as gross spatialguide only.",
+  "comparison": "Front/side/oblique compared to UMNfront and Cavalorear/Friesian/studrear junction features. Reference is lowresolution and has different head/stance/proportions; not filmlook or exact breed/identity. Originalcurve overlays abovehead/atback are unclaimed reference-scene clutter, not guide surface.",
+  "open_defects": [],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh386-appearance-c182-side/snapshot.json",
+      "sha256": "dd3dd34dd1b415e5b27070c5b524fe3e34ade23f85c65b908b79abd69ebfb29d"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh386-appearance-c182-side/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh386-appearance-c182-side/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh386-appearance-c182-side/frame.png",
+      "sha256": "f2e14ac6bf79574d803565ba65ced22b923b0951e99b50721dbcc98cd15a9ef3"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh386-appearance-c182-side/frames.json",
+      "sha256": "aa306405a2352f68d937aef31e7da6ef061cd311194c36f6284b0cb5ed73e407"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh386-appearance-c182-side/frame.png",
+      "sha256": "f2e14ac6bf79574d803565ba65ced22b923b0951e99b50721dbcc98cd15a9ef3"
+    }
+  },
+  "cycle_disposition": {
+    "category": "causal_control_only",
+    "observation": "Reference qualification only; no repaired originalhorse, motion or finalappearancePASS."
+  },
+  "requirement_outcomes": {
+    "form": {
+      "status": "NOT_TESTED",
+      "observation": "Static reference available for grossshape guidance; originalhorse anatomy and moving/contact proof still unqualified."
+    },
+    "interfaces": {
+      "status": "NOT_TESTED",
+      "observation": "Static reference available for grossshape guidance; originalhorse anatomy and moving/contact proof still unqualified."
+    },
+    "whole_look": {
+      "status": "NOT_TESTED",
+      "observation": "Static reference available for grossshape guidance; originalhorse anatomy and moving/contact proof still unqualified."
+    }
+  }
+}

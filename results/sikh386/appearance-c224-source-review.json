@@ -1,0 +1,33 @@
+{
+  "verdict": "PASS",
+  "run_digest": "056a9b59996e3ba5e8100bd91d96b1ad30136c2bc00e4d1c1f9b6c0774b7cdcc",
+  "observation": "Actual source/neutral/original-motion numeric preservation only: neutralerror0.000021143m. Zero no-added-bone roundtrip explains222originalmatrixdrift with maxvector error0.000000000. Sourcegeometry/keys/actions exact. Contacts=[]. No anatomy/contact/consumer/AV qualification; allknownphysical failuresblockadoption.",
+  "comparison": "Actual no-added-bone editroundtrip versus222failure and cumulative same-original-source pose matrices/surfaces; predeclared100microunit/metre visibility cap. Legacy guards unchanged.",
+  "open_defects": [],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh386-appearance-c224-source/snapshot.json",
+      "sha256": "e2f1359625957620c04bc32ae6fe7395db703971c4f272a6d3bb86fc90007b6d"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh386-appearance-c224-source/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh386-appearance-c224-source/script-diagnostics.json",
+      "sha256": "4e1205462c9c8153ef4f4d15eba35ea263f6079e3b74341771bbb12e2f41f34c"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh386-appearance-c224-source/scene.blend",
+      "sha256": "ce00c986d1ab824943e9d9ef60fa7a280f717c91d72b0f3768fcae90da1a3f06"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh386-appearance-c224-source/patch-evidence.json",
+      "sha256": "fb6d11e2da7ee86076fb037d56fd0386871528d910b91ac95cb3176154cfa6d4"
+    }
+  },
+  "cycle_disposition": {
+    "category": "causal_control_only",
+    "observation": "Explicit numeric control only. Actual artistic/contact verdict separate; no known-defect waiver."
+  }
+}

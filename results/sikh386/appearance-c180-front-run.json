@@ -1,0 +1,55 @@
+{
+  "id": "sikh386-appearance-c180-front",
+  "task": "sikh335-supporting-appearance",
+  "step": "front",
+  "cycle": 180,
+  "fingerprint": "83c39eb551cc2635c64d0e39b13ee504d2c627ec89c22020e18573f5302210da",
+  "parent": {
+    "path": ".runtime/factory-native/sikh386-appearance-c180-source/scene.blend",
+    "sha256": "c80d2fa4cf16c2f0af0657a9f57dfa13e6a8b40e37682fb83a6425e9aae93f81"
+  },
+  "job_digest": "e97e81fd8cf207715afce0459b5b376e067268fefdffb4377c4b63dadb703a87",
+  "handler_digest": "e2fb103f62112fa517f375361c67c10aeba4623c4e83ad6cbc271670f5d564ad",
+  "status": "FAILED",
+  "timeout_seconds": 600,
+  "artifacts": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh386-appearance-c180-front/snapshot.json",
+      "sha256": "06e3ff2832e9f94eaeff0bb16d40706180e5b7307a28ec310ec0ab37c5bcea9a"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh386-appearance-c180-front/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh386-appearance-c180-front/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh386-appearance-c180-front/frame.png",
+      "sha256": "5b5c827e76131ddc5182cd0aa69007d576e2bc31f7d2a92e82910909ca640aeb"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh386-appearance-c180-front/frames.json",
+      "sha256": "d0ad0688ba219b16b611b54b0eb286cc78d7370c41c154f0797d85340364fdaf"
+    },
+    "frame_339": {
+      "path": ".runtime/factory-native/sikh386-appearance-c180-front/frame.png",
+      "sha256": "5b5c827e76131ddc5182cd0aa69007d576e2bc31f7d2a92e82910909ca640aeb"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh386-appearance-c180-front/frame-0283.png",
+      "sha256": "604f608df981ad2b62264592bf08ae8966272af5598c4847fee84194acb3631f"
+    },
+    "frame_333": {
+      "path": ".runtime/factory-native/sikh386-appearance-c180-front/frame-0333.png",
+      "sha256": "3504ae218ce615b974dcb1c8d571dcd44b0c824abf0efce60f7fd07821733415"
+    }
+  },
+  "dependencies": {},
+  "recipe": {
+    "path": "results/sikh386/appearance-c180-front-recipe.json",
+    "sha256": "5957b1807c0a9792a5b09cc97f6c7013f6b8da2e1ae102954964756182c07660"
+  },
+  "error": "Blocked: NATIVE_SELECTED_STATE_DRIFT"
+}

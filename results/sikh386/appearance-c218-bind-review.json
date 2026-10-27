@@ -1,0 +1,35 @@
+{
+  "verdict": "FAIL",
+  "run_digest": "f31df700708f7268d292252017b4650d47e9828f8919e8eb325f6c8cbab48e06",
+  "observation": "218actual measured inverse succeeded: neutral92.9micrometres, max70.8mm restshift, reset/rig/outsidezero; stricter independentprobe18.95micrometres. However affected raised cage has297/542crossings at333/339 including207/445introduced. StructuralFAIL beforeanatomicalrender; no final appearance candidate.",
+  "comparison": "Actual zero control and source216 before/after cage; preservation passed independently but complete binding step fails surface topology. No effect proof from reduced overallcross count.",
+  "open_defects": [
+    "Raised cage selfintersections remain and new pairs introduced."
+  ],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh386-appearance-c218-bind/snapshot.json",
+      "sha256": "ba184accc29855f40b1a1303cd6b71113abaed954b4a30c51f8851c6b9d79d85"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh386-appearance-c218-bind/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh386-appearance-c218-bind/script-diagnostics.json",
+      "sha256": "4e1205462c9c8153ef4f4d15eba35ea263f6079e3b74341771bbb12e2f41f34c"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh386-appearance-c218-bind/scene.blend",
+      "sha256": "521e4185f3d638ffc52e0575ef334009cc71e2e2caa2df5d5377e235b06bbab8"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh386-appearance-c218-bind/patch-evidence.json",
+      "sha256": "e524cd2df2152ae225cee1726c4ca90dd44254a5a65bfff90219377bba26e4e1"
+    }
+  },
+  "cycle_disposition": {
+    "category": "art_rejected",
+    "observation": "Native structural veto, not an artistic image review."
+  }
+}

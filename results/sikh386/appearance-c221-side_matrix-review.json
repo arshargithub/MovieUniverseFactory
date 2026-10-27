@@ -1,0 +1,49 @@
+{
+  "verdict": "FAIL",
+  "run_digest": "63fb8fd9bb7bd4051aef85451431a38e7e5c638ca527ff45e38a210130146d8a",
+  "observation": "Actual219surface in221diagnostic views still fails:339side has a horizontal lower-chest lip/shelf and abrupt triangular root fold;339front has a detached-looking rolled underside and unsupported boxy pectoral mass. Neutral-preserving numerical fit did not provide natural raised anatomy. Primary motion is not rejudged here.",
+  "comparison": "Actual side/front339 native views versus supported continuous real UMN pectoral/root anatomy, limited204gross-form direction and216negative shelf control. This is a specific shape/contact failure, not rejection merely for deviating from generated pixels.",
+  "open_defects": [
+    "Flat lower chest shelf/lip in side339",
+    "Rolled/webbed underside and unsupported boxy pectoral mass in front339",
+    "Known219cage contacts unresolved"
+  ],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh386-appearance-c221-side_matrix/snapshot.json",
+      "sha256": "ba184accc29855f40b1a1303cd6b71113abaed954b4a30c51f8851c6b9d79d85"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh386-appearance-c221-side_matrix/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh386-appearance-c221-side_matrix/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh386-appearance-c221-side_matrix/frame.png",
+      "sha256": "50b2b1a4b3ef3b329fa3ca91b672ccd43f3e4c1a6ac2913ca8f78bf98cf849b6"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh386-appearance-c221-side_matrix/frames.json",
+      "sha256": "2219e47a1b6c10693c7a3983234da1c15c4447dae1d4ddd530cbdcdcd46514a1"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh386-appearance-c221-side_matrix/frame.png",
+      "sha256": "50b2b1a4b3ef3b329fa3ca91b672ccd43f3e4c1a6ac2913ca8f78bf98cf849b6"
+    },
+    "frame_333": {
+      "path": ".runtime/factory-native/sikh386-appearance-c221-side_matrix/frame-0333.png",
+      "sha256": "7a88fb96b237328708f6d30565eecc0f44cd99165f466140d1fd64056f2b46dc"
+    },
+    "frame_339": {
+      "path": ".runtime/factory-native/sikh386-appearance-c221-side_matrix/frame-0339.png",
+      "sha256": "edc0e9ce1c2161a837ca6ea2b4da53b6c342c2d23600896275b48b24cd2522cc"
+    }
+  },
+  "cycle_disposition": {
+    "category": "art_rejected",
+    "observation": "Actual219surface in221diagnostic views still fails:339side has a horizontal lower-chest lip/shelf and abrupt triangular root fold;339front has a detached-looking rolled underside and unsupported boxy pectoral mass. Neutral-preserving numerical fit did not provide natural raised anatomy. Primary motion is not rejudged here."
+  }
+}

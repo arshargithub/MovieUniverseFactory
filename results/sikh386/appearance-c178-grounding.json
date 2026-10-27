@@ -1,0 +1,555 @@
+{
+  "input_digest": "fe26a545175fa9c28a7cb0d6d33a7f4af5cbe58a7ec3ba59ecf059dae19a4131",
+  "outcome": "complete",
+  "artifact": {
+    "reference_readiness": {
+      "decisions": {
+        "film": {
+          "decision": "reuse_existing",
+          "reason": "Inspected qualified sources address gross scoped target; limits and exclusions documented.",
+          "references": [
+            {
+              "coverage": {
+                "accepted_look": "Illustrated rich coherent forms/materials, separate from anatomical truth"
+              },
+              "evidence": [
+                {
+                  "path": ".runtime/art-direction/series01-finish248/opening08/actual-450.png",
+                  "sha256": "c874497d244bb8b896d952a8ee30536d33b79bee3d62d4cefd50c8221a37498a"
+                },
+                {
+                  "path": "results/sikh379/REFERENCE_QUALIFICATION.md",
+                  "sha256": "1d8c810772130d16219b41a374aa6b96563ae1da3b83bc524fc9c4d6eefa7c71"
+                }
+              ],
+              "excluded_authority": "Not a motion reference, identity-copy target, wardrobe pattern, lighting match or permission to modify the accepted Pashtun.",
+              "governs": "Accepted appearance-quality comparator for visible material, garment and character integration at intended framing.",
+              "id": "accepted_film",
+              "observation": "Comparable believable whole forms, supported cloth, differentiated materials and readable living-character detail; not equal pixel density across different shot sizes.",
+              "origin": "accepted_asset",
+              "provenance": "Director253 provisional production comparator; no permission to modify",
+              "rights_use": "reference_only"
+            }
+          ],
+          "reopen_when": "A required hidden view or motion/form feature is unresolved or contradicted by actual proof.",
+          "status": "sufficient"
+        },
+        "junction": {
+          "decision": "acquire",
+          "reason": "379 gross form sources retained;381 inspected near-frontal posed photographs supplement the previously ambiguous front chest/foreleg interface.",
+          "references": [
+            {
+              "coverage": {
+                "front": "Rounded paired muscles and central groove; distinct forelimbs"
+              },
+              "evidence": [
+                {
+                  "path": ".runtime/art-direction/sikh379-references/umn-front-pectorals.jpg",
+                  "sha256": "d02fe0eb122be49b7510dea2c570f4e057a1e3a0dae40161da48eca9215f5aa3"
+                },
+                {
+                  "path": "results/sikh379/REFERENCE_QUALIFICATION.md",
+                  "sha256": "1d8c810772130d16219b41a374aa6b96563ae1da3b83bc524fc9c4d6eefa7c71"
+                }
+              ],
+              "excluded_authority": "Not identity/breed, film palette/materials, choreography, or permission to incorporate source pixels",
+              "governs": "Gross physical chest/neck/proximal-limb form only",
+              "id": "pectoral_front",
+              "observation": "Paired supported pectoral masses, central groove, distinct roots into forelegs.",
+              "origin": "image_search",
+              "provenance": "UMN CVM Lab1 image10, public internal anatomy study",
+              "rights_use": "reference_only"
+            },
+            {
+              "coverage": {
+                "oblique_rear": "Supported chest underside and rounded limb roots during rear"
+              },
+              "evidence": [
+                {
+                  "path": ".runtime/art-direction/sikh379-references/cavalo-rear.jpg",
+                  "sha256": "1f99a25cd924d3d7bcc7429e13fe4d6fc1dd4937bccb015b4fa521e725fc1801"
+                },
+                {
+                  "path": "results/sikh379/REFERENCE_QUALIFICATION.md",
+                  "sha256": "1d8c810772130d16219b41a374aa6b96563ae1da3b83bc524fc9c4d6eefa7c71"
+                }
+              ],
+              "excluded_authority": "Not identity/breed, film palette/materials, choreography, or permission to incorporate source pixels",
+              "governs": "Gross physical chest/neck/proximal-limb form only",
+              "id": "pectoral_rear",
+              "observation": "Rounded shoulder and supported continuous underside while forelimbs lift; no flat bib.",
+              "origin": "image_search",
+              "provenance": "Jonathan Wilkins own photo,22Nov2007,CC BY-SA3.0; source page in acquisition.json",
+              "rights_use": "reference_only"
+            },
+            {
+              "coverage": {
+                "opposite_partial": "Opposite-facing partial lift and folded limb/chest continuity"
+              },
+              "evidence": [
+                {
+                  "path": ".runtime/art-direction/sikh379-references/friesian-rear.jpg",
+                  "sha256": "fc23837380c482e30224ba371ffc443e1a7540d34386cb20c4002fd250d789d4"
+                },
+                {
+                  "path": "results/sikh379/REFERENCE_QUALIFICATION.md",
+                  "sha256": "1d8c810772130d16219b41a374aa6b96563ae1da3b83bc524fc9c4d6eefa7c71"
+                }
+              ],
+              "excluded_authority": "Not identity/breed, film palette/materials, choreography, or permission to incorporate source pixels",
+              "governs": "Gross physical chest/neck/proximal-limb form only",
+              "id": "pectoral_opposite",
+              "observation": "Folded limb roots and continuous chest on opposite-facing/partial-lift horse.",
+              "origin": "image_search",
+              "provenance": "KaRede own photo,17Aug2016,CC BY-SA4.0; source page in acquisition.json",
+              "rights_use": "reference_only"
+            },
+            {
+              "coverage": {
+                "frontal_rear": "White near-frontal partial rear: supported pectoral relief connects into proximal forelegs; no separate hanging badge."
+              },
+              "evidence": [
+                {
+                  "path": ".runtime/art-direction/sikh381-references/front-stock-preview.jpg",
+                  "sha256": "2e9fbc0cd7de46dad54f527dd789a46bae2fedea77f0c51030b431ee1978c242"
+                },
+                {
+                  "path": "results/sikh381/REFERENCE_SUPPLEMENT.md",
+                  "sha256": "8c29f64b8c51d48cbe8e46c110f1d5aa5b306b970b795791eb767b90c05ddc6e"
+                }
+              ],
+              "excluded_authority": "Not film style/materials, identity/breed, choreography or film-pixel incorporation",
+              "governs": "Near-frontal chest/foreleg physical continuity only",
+              "id": "front381",
+              "observation": "White near-frontal partial rear: supported pectoral relief connects into proximal forelegs; no separate hanging badge.",
+              "origin": "image_search",
+              "provenance": "Depositphotos3988601 public preview; internal viewing only, source URL in acquisition-verified.json",
+              "rights_use": "reference_only"
+            },
+            {
+              "coverage": {
+                "frontal_rear": "Black near-frontal rear: broad lower neck and chest form one supported forequarter with clearly integrated folded forelegs."
+              },
+              "evidence": [
+                {
+                  "path": ".runtime/art-direction/sikh381-references/stud-rear.jpg",
+                  "sha256": "920ee4387eadbd24e7e954026115ef3ca8f19b9ca028feb2051b5ecbed109fa4"
+                },
+                {
+                  "path": "results/sikh381/REFERENCE_SUPPLEMENT.md",
+                  "sha256": "8c29f64b8c51d48cbe8e46c110f1d5aa5b306b970b795791eb767b90c05ddc6e"
+                }
+              ],
+              "excluded_authority": "Not film style/materials, identity/breed, choreography or film-pixel incorporation",
+              "governs": "Near-frontal chest/foreleg physical continuity only",
+              "id": "frontrear381",
+              "observation": "Black near-frontal rear: broad lower neck and chest form one supported forequarter with clearly integrated folded forelegs.",
+              "origin": "image_search",
+              "provenance": "Carlos Hernani photograph published by Coudelaria Ortigao Costa on Samitra OC page; internal study only",
+              "rights_use": "reference_only"
+            }
+          ],
+          "reopen_when": "A required hidden view or motion/form feature is unresolved or contradicted by actual proof.",
+          "status": "sufficient"
+        },
+        "motion": {
+          "decision": "reuse_existing",
+          "reason": "Inspected qualified sources address gross scoped target; limits and exclusions documented.",
+          "references": [
+            {
+              "coverage": {
+                "prep_apex_landing": "Original14..19 video and exact66/75/80 accepted motion source"
+              },
+              "evidence": [
+                {
+                  "path": ".runtime/art-direction/series01-sikh256/references/reference-b.mov",
+                  "sha256": "78d0d691e8712c02931876cf0bc405e4869de357f337f531708be7a7da4898e2"
+                },
+                {
+                  "path": "results/sikh379/REFERENCE_QUALIFICATION.md",
+                  "sha256": "1d8c810772130d16219b41a374aa6b96563ae1da3b83bc524fc9c4d6eefa7c71"
+                }
+              ],
+              "excluded_authority": "Not a new identity, wardrobe license or exemption from same-film quality.",
+              "governs": "Preserve accepted276..367 motion and linked horse anatomy; earlier rejected motion statuses are superseded only by exact Director374 acceptance.",
+              "id": "reference_rear",
+              "observation": "Coordinated gather, driving hindquarters, brief crest, accelerating reach/contact and absorption.",
+              "origin": "director",
+              "provenance": "Director-provided reference-b, protected accepted action",
+              "rights_use": "reference_only"
+            }
+          ],
+          "reopen_when": "A required hidden view or motion/form feature is unresolved or contradicted by actual proof.",
+          "status": "sufficient"
+        },
+        "preservation": {
+          "decision": "none_needed",
+          "reason": "Exact native/action/source comparison is deterministic; no additional illustrative reference required.",
+          "references": [],
+          "reopen_when": "Claim extends to physical or artistic correctness.",
+          "status": "not_needed"
+        }
+      },
+      "scope": {
+        "id": "horse-chest379",
+        "kind": "micro_appearance",
+        "needs": [
+          {
+            "coverage": [
+              "front",
+              "oblique_rear",
+              "opposite_partial",
+              "frontal_rear"
+            ],
+            "critical": true,
+            "id": "junction",
+            "purpose": "physical_form",
+            "question": "What positive chest/neck/raised upper-leg contours replace the bib?"
+          },
+          {
+            "coverage": [
+              "prep_apex_landing"
+            ],
+            "critical": true,
+            "id": "motion",
+            "purpose": "motion_mechanics",
+            "question": "Which accepted action and pose family must remain fixed?"
+          },
+          {
+            "coverage": [
+              "accepted_look"
+            ],
+            "critical": true,
+            "id": "film",
+            "purpose": "film_style",
+            "question": "What established quality/style must this horse inhabit?"
+          },
+          {
+            "coverage": [
+              "hash_action_controls"
+            ],
+            "critical": true,
+            "id": "preservation",
+            "purpose": "technical_validation",
+            "question": "Can source invariants be checked deterministically?"
+          }
+        ],
+        "version": 1
+      },
+      "version": 1
+    },
+    "uses": {
+      "direction": {
+        "disposition": "apply",
+        "reason": "Relevant current authority, positive-form/reference, technical preservation or failure/review lesson: Resume the integrated isolated production package; this precursor discovers rig ownership before any new pose authoring.",
+        "implication": "Test supported chest mass with actual-source and reference controls; technical/source proof cannot pass anatomy. Entire386guide read: no routine Director handover; excerpt65starts a continuation, not a new approval rule."
+      },
+      "learnings": {
+        "disposition": "apply",
+        "reason": "Relevant current authority, positive-form/reference, technical preservation or failure/review lesson: 331 failed whole-pose support and same-film character fidelity despite incremental offset corrections; those attempts remain closed.",
+        "implication": "Test supported chest mass with actual-source and reference controls; technical/source proof cannot pass anatomy. Entire386guide read: no routine Director handover; excerpt65starts a continuation, not a new approval rule."
+      },
+      "film_language": {
+        "disposition": "apply",
+        "reason": "Relevant current authority, positive-form/reference, technical preservation or failure/review lesson: Accepted Pashtun quality stays fixed; a supporting actor cannot be a schematic statue.",
+        "implication": "Test supported chest mass with actual-source and reference controls; technical/source proof cannot pass anatomy. Entire386guide read: no routine Director handover; excerpt65starts a continuation, not a new approval rule."
+      },
+      "director_preferences": {
+        "disposition": "apply",
+        "reason": "Relevant current authority, positive-form/reference, technical preservation or failure/review lesson: Predict failure through expert lenses and fix internally; setup and routine algorithms are not handovers.",
+        "implication": "Test supported chest mass with actual-source and reference controls; technical/source proof cannot pass anatomy. Entire386guide read: no routine Director handover; excerpt65starts a continuation, not a new approval rule."
+      },
+      "references": {
+        "disposition": "apply",
+        "reason": "Relevant current authority, positive-form/reference, technical preservation or failure/review lesson: Reference14\u201319s governs faithful action phases; accepted film governs appearance; rejected poses are negative controls.",
+        "implication": "Test supported chest mass with actual-source and reference controls; technical/source proof cannot pass anatomy. Entire386guide read: no routine Director handover; excerpt65starts a continuation, not a new approval rule."
+      },
+      "controls": {
+        "disposition": "apply",
+        "reason": "Relevant current authority, positive-form/reference, technical preservation or failure/review lesson: Fresh motion-domain packet and manual AU09\u201313,16 plus317\u2013334 reconciliation accompany this inspection.",
+        "implication": "Test supported chest mass with actual-source and reference controls; technical/source proof cannot pass anatomy. Entire386guide read: no routine Director handover; excerpt65starts a continuation, not a new approval rule."
+      },
+      "constraints": {
+        "disposition": "apply",
+        "reason": "Relevant current authority, positive-form/reference, technical preservation or failure/review lesson: Inspect64 invalid used-armature drivers, removed object drivers and FK bypasses; no blind restoration or defect waiver.",
+        "implication": "Test supported chest mass with actual-source and reference controls; technical/source proof cannot pass anatomy. Entire386guide read: no routine Director handover; excerpt65starts a continuation, not a new approval rule."
+      },
+      "cast_findings": {
+        "disposition": "apply",
+        "reason": "Relevant current authority, positive-form/reference, technical preservation or failure/review lesson: High topology and assigned texture already exist. Address cylindrical turban, smooth costume silhouette and unsupported saddle form before extra surface noise; preserve207 garment pose keys.",
+        "implication": "Test supported chest mass with actual-source and reference controls; technical/source proof cannot pass anatomy. Entire386guide read: no routine Director handover; excerpt65starts a continuation, not a new approval rule."
+      },
+      "audit348": {
+        "disposition": "apply",
+        "reason": "Historical scoped instruction/proof retained; latest385/386returns to previous horse chest. Old donor, expired Astra assignment, garment and old grant choices do not authorize current changes. Apply the binding as a preservation/provenance and no-inferred-authority constraint, not as the superseded method.",
+        "implication": "Retain the actual old failures, source rights and scoped reuse restrictions; current386alone authorizes new construction."
+      },
+      "reconciliation351": {
+        "disposition": "apply",
+        "reason": "Relevant current authority, positive-form/reference, technical preservation or failure/review lesson: Apply the reviewed causal proof before dependent clothing work.",
+        "implication": "Test supported chest mass with actual-source and reference controls; technical/source proof cannot pass anatomy. Entire386guide read: no routine Director handover; excerpt65starts a continuation, not a new approval rule."
+      },
+      "strategy352": {
+        "disposition": "apply",
+        "reason": "Historical scoped instruction/proof retained; latest385/386returns to previous horse chest. Old donor, expired Astra assignment, garment and old grant choices do not authorize current changes. Apply the binding as a preservation/provenance and no-inferred-authority constraint, not as the superseded method.",
+        "implication": "Retain the actual old failures, source rights and scoped reuse restrictions; current386alone authorizes new construction."
+      },
+      "strategy353": {
+        "disposition": "apply",
+        "reason": "Historical scoped instruction/proof retained; latest385/386returns to previous horse chest. Old donor, expired Astra assignment, garment and old grant choices do not authorize current changes. Apply the binding as a preservation/provenance and no-inferred-authority constraint, not as the superseded method.",
+        "implication": "Retain the actual old failures, source rights and scoped reuse restrictions; current386alone authorizes new construction."
+      },
+      "lessons352": {
+        "disposition": "apply",
+        "reason": "Relevant current authority, positive-form/reference, technical preservation or failure/review lesson: Apply causal interface tests and retain scoped successes; leader and horse precede crowd.",
+        "implication": "Test supported chest mass with actual-source and reference controls; technical/source proof cannot pass anatomy. Entire386guide read: no routine Director handover; excerpt65starts a continuation, not a new approval rule."
+      },
+      "strategy354": {
+        "disposition": "apply",
+        "reason": "Historical scoped instruction/proof retained; latest385/386returns to previous horse chest. Old donor, expired Astra assignment, garment and old grant choices do not authorize current changes. Apply the binding as a preservation/provenance and no-inferred-authority constraint, not as the superseded method.",
+        "implication": "Retain the actual old failures, source rights and scoped reuse restrictions; current386alone authorizes new construction."
+      },
+      "retro354": {
+        "disposition": "apply",
+        "reason": "Relevant current authority, positive-form/reference, technical preservation or failure/review lesson: Reconstruct failed whole-form appearance, preserve motion16 and original quality/reference authority.",
+        "implication": "Test supported chest mass with actual-source and reference controls; technical/source proof cannot pass anatomy. Entire386guide read: no routine Director handover; excerpt65starts a continuation, not a new approval rule."
+      },
+      "lessons353": {
+        "disposition": "apply",
+        "reason": "Relevant current authority, positive-form/reference, technical preservation or failure/review lesson: Reconstruct failed whole-form appearance, preserve motion16 and original quality/reference authority.",
+        "implication": "Test supported chest mass with actual-source and reference controls; technical/source proof cannot pass anatomy. Entire386guide read: no routine Director handover; excerpt65starts a continuation, not a new approval rule."
+      },
+      "strategy357": {
+        "disposition": "apply",
+        "reason": "Historical scoped instruction/proof retained; latest385/386returns to previous horse chest. Old donor, expired Astra assignment, garment and old grant choices do not authorize current changes. Apply the binding as a preservation/provenance and no-inferred-authority constraint, not as the superseded method.",
+        "implication": "Retain the actual old failures, source rights and scoped reuse restrictions; current386alone authorizes new construction."
+      },
+      "lessons354": {
+        "disposition": "apply",
+        "reason": "Relevant current authority, positive-form/reference, technical preservation or failure/review lesson: Replace invalid inherited follicle domain before density; retain354/71 sash/tack and motion16; review each cycle and cumulative fifth.",
+        "implication": "Test supported chest mass with actual-source and reference controls; technical/source proof cannot pass anatomy. Entire386guide read: no routine Director handover; excerpt65starts a continuation, not a new approval rule."
+      },
+      "strategy358": {
+        "disposition": "apply",
+        "reason": "Historical scoped instruction/proof retained; latest385/386returns to previous horse chest. Old donor, expired Astra assignment, garment and old grant choices do not authorize current changes. Apply the binding as a preservation/provenance and no-inferred-authority constraint, not as the superseded method.",
+        "implication": "Retain the actual old failures, source rights and scoped reuse restrictions; current386alone authorizes new construction."
+      },
+      "lessons357": {
+        "disposition": "apply",
+        "reason": "Relevant current authority, positive-form/reference, technical preservation or failure/review lesson: Correct actual headstall ownership and its consuming rein span; retain357 construction gains and original faithful action reference.",
+        "implication": "Test supported chest mass with actual-source and reference controls; technical/source proof cannot pass anatomy. Entire386guide read: no routine Director handover; excerpt65starts a continuation, not a new approval rule."
+      },
+      "strategy361": {
+        "disposition": "apply",
+        "reason": "Historical scoped instruction/proof retained; latest385/386returns to previous horse chest. Old donor, expired Astra assignment, garment and old grant choices do not authorize current changes. Apply the binding as a preservation/provenance and no-inferred-authority constraint, not as the superseded method.",
+        "implication": "Retain the actual old failures, source rights and scoped reuse restrictions; current386alone authorizes new construction."
+      },
+      "lessons358": {
+        "disposition": "apply",
+        "reason": "Relevant current authority, positive-form/reference, technical preservation or failure/review lesson: Apply actual anatomical ownership, whole consumer path, final thickness/sampling review, component versus integrated proof and honest cycle accounting.",
+        "implication": "Test supported chest mass with actual-source and reference controls; technical/source proof cannot pass anatomy. Entire386guide read: no routine Director handover; excerpt65starts a continuation, not a new approval rule."
+      },
+      "routing360": {
+        "disposition": "apply",
+        "reason": "Relevant current authority, positive-form/reference, technical preservation or failure/review lesson: Sol6.1 High is default for planning/execution/review/retros; Astra needs a separate narrow Director-approved assignment, absent here.",
+        "implication": "Test supported chest mass with actual-source and reference controls; technical/source proof cannot pass anatomy. Entire386guide read: no routine Director handover; excerpt65starts a continuation, not a new approval rule."
+      },
+      "strategy362": {
+        "disposition": "apply",
+        "reason": "Historical scoped instruction/proof retained; latest385/386returns to previous horse chest. Old donor, expired Astra assignment, garment and old grant choices do not authorize current changes. Apply the binding as a preservation/provenance and no-inferred-authority constraint, not as the superseded method.",
+        "implication": "Retain the actual old failures, source rights and scoped reuse restrictions; current386alone authorizes new construction."
+      },
+      "lessons361": {
+        "disposition": "apply",
+        "reason": "Relevant current authority, positive-form/reference, technical preservation or failure/review lesson: Compile complete layer graph; actual support domain, continuity and canonical state must be proved. Component success does not qualify whole art.",
+        "implication": "Test supported chest mass with actual-source and reference controls; technical/source proof cannot pass anatomy. Entire386guide read: no routine Director handover; excerpt65starts a continuation, not a new approval rule."
+      },
+      "director363": {
+        "disposition": "apply",
+        "reason": "Historical scoped instruction/proof retained; latest385/386returns to previous horse chest. Old donor, expired Astra assignment, garment and old grant choices do not authorize current changes. Apply the binding as a preservation/provenance and no-inferred-authority constraint, not as the superseded method.",
+        "implication": "Retain the actual old failures, source rights and scoped reuse restrictions; current386alone authorizes new construction."
+      },
+      "strategy363": {
+        "disposition": "apply",
+        "reason": "Relevant current authority, positive-form/reference, technical preservation or failure/review lesson: Diagnose source form/hand and time consumers; prove cloth persistence on exact action; source/frame/Director AV separate.",
+        "implication": "Test supported chest mass with actual-source and reference controls; technical/source proof cannot pass anatomy. Entire386guide read: no routine Director handover; excerpt65starts a continuation, not a new approval rule."
+      },
+      "audit363": {
+        "disposition": "apply",
+        "reason": "Relevant current authority, positive-form/reference, technical preservation or failure/review lesson: Actual front chest failure, invalid side framing and open rein-hand claw confirmed; length metrics did not pass anatomy. Compare corrective effect and actual grip before integration.",
+        "implication": "Test supported chest mass with actual-source and reference controls; technical/source proof cannot pass anatomy. Entire386guide read: no routine Director handover; excerpt65starts a continuation, not a new approval rule."
+      },
+      "structural111": {
+        "disposition": "apply",
+        "reason": "Historical scoped instruction/proof retained; latest385/386returns to previous horse chest. Old donor, expired Astra assignment, garment and old grant choices do not authorize current changes. Apply the binding as a preservation/provenance and no-inferred-authority constraint, not as the superseded method.",
+        "implication": "Retain the actual old failures, source rights and scoped reuse restrictions; current386alone authorizes new construction."
+      },
+      "causal363": {
+        "disposition": "apply",
+        "reason": "Relevant current authority, positive-form/reference, technical preservation or failure/review lesson: 363 actual integer/subframe ownership findings and preserved components constrain continuation. Full LEARNINGS source and failedcloth result manually reconciled.",
+        "implication": "Test supported chest mass with actual-source and reference controls; technical/source proof cannot pass anatomy. Entire386guide read: no routine Director handover; excerpt65starts a continuation, not a new approval rule."
+      },
+      "cloth363": {
+        "disposition": "apply",
+        "reason": "Historical scoped instruction/proof retained; latest385/386returns to previous horse chest. Old donor, expired Astra assignment, garment and old grant choices do not authorize current changes. Apply the binding as a preservation/provenance and no-inferred-authority constraint, not as the superseded method.",
+        "implication": "Retain the actual old failures, source rights and scoped reuse restrictions; current386alone authorizes new construction."
+      },
+      "director374": {
+        "disposition": "apply",
+        "reason": "Relevant current authority, positive-form/reference, technical preservation or failure/review lesson: Apply latest Director374 scope, positive coherent form, accepted motion preservation and diagnostic-before-sculpt strategy; earlier broad appearance scope remains historical.",
+        "implication": "Test supported chest mass with actual-source and reference controls; technical/source proof cannot pass anatomy. Entire386guide read: no routine Director handover; excerpt65starts a continuation, not a new approval rule."
+      },
+      "strategy374": {
+        "disposition": "apply",
+        "reason": "Relevant current authority, positive-form/reference, technical preservation or failure/review lesson: Apply latest Director374 scope, positive coherent form, accepted motion preservation and diagnostic-before-sculpt strategy; earlier broad appearance scope remains historical.",
+        "implication": "Test supported chest mass with actual-source and reference controls; technical/source proof cannot pass anatomy. Entire386guide read: no routine Director handover; excerpt65starts a continuation, not a new approval rule."
+      },
+      "carry373": {
+        "disposition": "apply",
+        "reason": "Relevant current authority, positive-form/reference, technical preservation or failure/review lesson: Apply latest Director374 scope, positive coherent form, accepted motion preservation and diagnostic-before-sculpt strategy; earlier broad appearance scope remains historical.",
+        "implication": "Test supported chest mass with actual-source and reference controls; technical/source proof cannot pass anatomy. Entire386guide read: no routine Director handover; excerpt65starts a continuation, not a new approval rule."
+      },
+      "form_failure365": {
+        "disposition": "apply",
+        "reason": "Relevant current authority, positive-form/reference, technical preservation or failure/review lesson: Apply latest Director374 scope, positive coherent form, accepted motion preservation and diagnostic-before-sculpt strategy; earlier broad appearance scope remains historical.",
+        "implication": "Test supported chest mass with actual-source and reference controls; technical/source proof cannot pass anatomy. Entire386guide read: no routine Director handover; excerpt65starts a continuation, not a new approval rule."
+      },
+      "director375": {
+        "disposition": "apply",
+        "reason": "Historical scoped instruction/proof retained; latest385/386returns to previous horse chest. Old donor, expired Astra assignment, garment and old grant choices do not authorize current changes. Apply the binding as a preservation/provenance and no-inferred-authority constraint, not as the superseded method.",
+        "implication": "Retain the actual old failures, source rights and scoped reuse restrictions; current386alone authorizes new construction."
+      },
+      "carry374": {
+        "disposition": "apply",
+        "reason": "Relevant current authority, positive-form/reference, technical preservation or failure/review lesson: 374rest-form assumption failed; inactive correctives do not exclude skinning, proxy guards need accepted-source calibration, early339 must fail before expensive proof.",
+        "implication": "Test supported chest mass with actual-source and reference controls; technical/source proof cannot pass anatomy. Entire386guide read: no routine Director handover; excerpt65starts a continuation, not a new approval rule."
+      },
+      "director376": {
+        "disposition": "apply",
+        "reason": "Historical scoped instruction/proof retained; latest385/386returns to previous horse chest. Old donor, expired Astra assignment, garment and old grant choices do not authorize current changes. Apply the binding as a preservation/provenance and no-inferred-authority constraint, not as the superseded method.",
+        "implication": "Retain the actual old failures, source rights and scoped reuse restrictions; current386alone authorizes new construction."
+      },
+      "carry375": {
+        "disposition": "apply",
+        "reason": "Relevant current authority, positive-form/reference, technical preservation or failure/review lesson: 375actual body-only front339 still has pendant bib; simpler ownership andrest-bound smoothing failed. Preserve sourcecontrols and exactprimary; qualify posed-response before positiveform sculpt.",
+        "implication": "Test supported chest mass with actual-source and reference controls; technical/source proof cannot pass anatomy. Entire386guide read: no routine Director handover; excerpt65starts a continuation, not a new approval rule."
+      },
+      "director379": {
+        "disposition": "apply",
+        "reason": "Historical scoped instruction/proof retained; latest385/386returns to previous horse chest. Old donor, expired Astra assignment, garment and old grant choices do not authorize current changes. Apply the binding as a preservation/provenance and no-inferred-authority constraint, not as the superseded method.",
+        "implication": "Retain the actual old failures, source rights and scoped reuse restrictions; current386alone authorizes new construction."
+      },
+      "reference378": {
+        "disposition": "apply",
+        "reason": "Relevant current authority, positive-form/reference, technical preservation or failure/review lesson: Purpose-qualified coverage decisions govern this continuation.",
+        "implication": "Test supported chest mass with actual-source and reference controls; technical/source proof cannot pass anatomy. Entire386guide read: no routine Director handover; excerpt65starts a continuation, not a new approval rule."
+      },
+      "target379": {
+        "disposition": "apply",
+        "reason": "Relevant current authority, positive-form/reference, technical preservation or failure/review lesson: Inspected frontal/oblique/rearing target features and role exclusions.",
+        "implication": "Test supported chest mass with actual-source and reference controls; technical/source proof cannot pass anatomy. Entire386guide read: no routine Director handover; excerpt65starts a continuation, not a new approval rule."
+      },
+      "director380": {
+        "disposition": "apply",
+        "reason": "Historical scoped instruction/proof retained; latest385/386returns to previous horse chest. Old donor, expired Astra assignment, garment and old grant choices do not authorize current changes. Apply the binding as a preservation/provenance and no-inferred-authority constraint, not as the superseded method.",
+        "implication": "Retain the actual old failures, source rights and scoped reuse restrictions; current386alone authorizes new construction."
+      },
+      "director381": {
+        "disposition": "apply",
+        "reason": "Historical scoped instruction/proof retained; latest385/386returns to previous horse chest. Old donor, expired Astra assignment, garment and old grant choices do not authorize current changes. Apply the binding as a preservation/provenance and no-inferred-authority constraint, not as the superseded method.",
+        "implication": "Retain the actual old failures, source rights and scoped reuse restrictions; current386alone authorizes new construction."
+      },
+      "target381": {
+        "disposition": "apply",
+        "reason": "Relevant current authority, positive-form/reference, technical preservation or failure/review lesson: Actual near-frontal rearing photographs supplement physical chest/foreleg continuity; no film pixels, style or choreography authority.",
+        "implication": "Test supported chest mass with actual-source and reference controls; technical/source proof cannot pass anatomy. Entire386guide read: no routine Director handover; excerpt65starts a continuation, not a new approval rule."
+      },
+      "director383": {
+        "disposition": "apply",
+        "reason": "Historical scoped instruction/proof retained; latest385/386returns to previous horse chest. Old donor, expired Astra assignment, garment and old grant choices do not authorize current changes. Apply the binding as a preservation/provenance and no-inferred-authority constraint, not as the superseded method.",
+        "implication": "Retain the actual old failures, source rights and scoped reuse restrictions; current386alone authorizes new construction."
+      },
+      "strategy383": {
+        "disposition": "apply",
+        "reason": "Historical scoped instruction/proof retained; latest385/386returns to previous horse chest. Old donor, expired Astra assignment, garment and old grant choices do not authorize current changes. Apply the binding as a preservation/provenance and no-inferred-authority constraint, not as the superseded method.",
+        "implication": "Retain the actual old failures, source rights and scoped reuse restrictions; current386alone authorizes new construction."
+      },
+      "carry381": {
+        "disposition": "apply",
+        "reason": "Relevant current authority, positive-form/reference, technical preservation or failure/review lesson: Previous native chest reconstructions failed; stop same-foundation variants and test actual visible alternative early.",
+        "implication": "Test supported chest mass with actual-source and reference controls; technical/source proof cannot pass anatomy. Entire386guide read: no routine Director handover; excerpt65starts a continuation, not a new approval rule."
+      },
+      "director384": {
+        "disposition": "apply",
+        "reason": "Historical scoped instruction/proof retained; latest385/386returns to previous horse chest. Old donor, expired Astra assignment, garment and old grant choices do not authorize current changes. Apply the binding as a preservation/provenance and no-inferred-authority constraint, not as the superseded method.",
+        "implication": "Retain the actual old failures, source rights and scoped reuse restrictions; current386alone authorizes new construction."
+      },
+      "strategy384": {
+        "disposition": "apply",
+        "reason": "Historical scoped instruction/proof retained; latest385/386returns to previous horse chest. Old donor, expired Astra assignment, garment and old grant choices do not authorize current changes. Apply the binding as a preservation/provenance and no-inferred-authority constraint, not as the superseded method.",
+        "implication": "Retain the actual old failures, source rights and scoped reuse restrictions; current386alone authorizes new construction."
+      },
+      "refs384": {
+        "disposition": "apply",
+        "reason": "Historical scoped instruction/proof retained; latest385/386returns to previous horse chest. Old donor, expired Astra assignment, garment and old grant choices do not authorize current changes. Apply the binding as a preservation/provenance and no-inferred-authority constraint, not as the superseded method.",
+        "implication": "Retain the actual old failures, source rights and scoped reuse restrictions; current386alone authorizes new construction."
+      },
+      "director386": {
+        "disposition": "apply",
+        "reason": "Relevant current authority, positive-form/reference, technical preservation or failure/review lesson: Director386 adopts385plan and one shared50additional corrections on previous horse; no armored donor or new resources.",
+        "implication": "Test supported chest mass with actual-source and reference controls; technical/source proof cannot pass anatomy. Entire386guide read: no routine Director handover; excerpt65starts a continuation, not a new approval rule."
+      },
+      "scope386": {
+        "disposition": "apply",
+        "reason": "Relevant current authority, positive-form/reference, technical preservation or failure/review lesson: New coherent units require scope/causal/dependency contracts and fresh separate challenge; semantics remain judgment.",
+        "implication": "Test supported chest mass with actual-source and reference controls; technical/source proof cannot pass anatomy. Entire386guide read: no routine Director handover; excerpt65starts a continuation, not a new approval rule."
+      },
+      "effects386": {
+        "disposition": "apply",
+        "reason": "Relevant current authority, positive-form/reference, technical preservation or failure/review lesson: A remedy needs outcome-linked effect disposition; superseded donor scope is explicit history, never an art PASS.",
+        "implication": "Apply complete operative rule paragraphs: full-speedAV remains human, no routine per-unit handover; positive targets and effect disposition drive current anatomy work."
+      },
+      "audit385": {
+        "disposition": "apply",
+        "reason": "Relevant current authority, positive-form/reference, technical preservation or failure/review lesson: Wrong target, broad scope, ineffective interventions and weak proof retention caused failure; precision is not anatomy.",
+        "implication": "Apply complete operative rule paragraphs: full-speedAV remains human, no routine per-unit handover; positive targets and effect disposition drive current anatomy work."
+      },
+      "strategy386": {
+        "disposition": "apply",
+        "reason": "Relevant current authority, positive-form/reference, technical preservation or failure/review lesson: Source ownership then positive chest mass first; volumetric envelope is a falsifiable shape hypothesis, not anatomy truth.",
+        "implication": "Test supported chest mass with actual-source and reference controls; technical/source proof cannot pass anatomy. Entire386guide read: no routine Director handover; excerpt65starts a continuation, not a new approval rule."
+      }
+    },
+    "knowledge_uses": {
+      "anatomy": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "animal_coordination": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "anticipation": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "au_contact": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "au_deformation": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "au_performance": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "au_reference": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "au_reuse": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "au_surface": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "authority": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "cache_safety": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "construction_interfaces": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "current_state": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "economics": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "look": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "motion": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "render_profile": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "representation": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "reuse_envelope": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "rights": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "secondary": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "sikh_motion": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "sikh_scope": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "stopping": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "strategy": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "versioning": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures.",
+      "visual_gate": "Apply current source-backed torso diagnosis, positive form and coupled interface proof; latest374 scope supersedes historical broad actor work without erasing failures."
+    },
+    "reconciliation": "Count177technical-blocked normally; reviewed owner-preflight fix and lossless trigger dictionary retain all source/authority/findings and same50ceiling. No new art method or scope. Full operative386AVparagraph/385root-cause excerpts restored in source windows.",
+    "unresolved": []
+  }
+}

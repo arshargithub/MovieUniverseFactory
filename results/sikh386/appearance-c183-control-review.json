@@ -1,0 +1,43 @@
+{
+  "verdict": "PASS",
+  "run_digest": "8bc283ac67e24e6db7a3c0617611c8d1aa2d609e2678c8ad03946492c8f30ddb",
+  "observation": "Matched-clay control saved/reopened, exactly9990main-skinvertices selected; rawgeometry/shapes/actionshash unchanged. Skintexture/bump removed onlyon diagnosticderivative.",
+  "comparison": "Actualclayreport plus frozengeometry/actionchecks; sourcecustomnormals=True. No positiveanatomy judgmentfromtechnicalcontrol.",
+  "open_defects": [],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh386-appearance-c183-control/snapshot.json",
+      "sha256": "ba184accc29855f40b1a1303cd6b71113abaed954b4a30c51f8851c6b9d79d85"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh386-appearance-c183-control/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh386-appearance-c183-control/script-diagnostics.json",
+      "sha256": "4e1205462c9c8153ef4f4d15eba35ea263f6079e3b74341771bbb12e2f41f34c"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh386-appearance-c183-control/scene.blend",
+      "sha256": "aa794669650719109e937ec79dd86f063571c09711898fbb6ca23c251bda1ece"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh386-appearance-c183-control/patch-evidence.json",
+      "sha256": "78ed324c775ff329229adea7dd5e9c1a8e9604b178e5383936be9b790b4804c6"
+    }
+  },
+  "cycle_disposition": {
+    "category": "causal_control_only",
+    "observation": "Sourceclaytransportonly; originalchestfailure remainsnegativecontrol."
+  },
+  "requirement_outcomes": {
+    "preservation": {
+      "status": "PASS",
+      "observation": "Exactsourcegeometry/action preserved."
+    },
+    "evidence": {
+      "status": "NOT_TESTED",
+      "observation": "Actualmatchedcontrolimagespending;noartproof."
+    }
+  }
+}

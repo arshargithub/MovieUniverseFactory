@@ -1,0 +1,35 @@
+{
+  "verdict": "FAIL",
+  "run_digest": "bbf4d625f8d689c528f0db3fe68ed12b42ba49293c0725e61f2b8ed8afc36270",
+  "observation": "219core-only inverse preservesneutral20.8micrometres with361changedweightvertices and69.6mm maxrestshift. No rig/world/action/exterior drift. Raisedcage113/397crossings,74/286new at333/339:FAIL. Coreownership alone insufficient; do not waive original ornewcontacts. No anatomicalimagecandidate.",
+  "comparison": "Actual zero control and source216 before/after cage; preservation passed independently but complete binding step fails surface topology. No effect proof from reduced overallcross count.",
+  "open_defects": [
+    "Raised cage selfintersections remain and new pairs introduced."
+  ],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh386-appearance-c219-bind/snapshot.json",
+      "sha256": "ba184accc29855f40b1a1303cd6b71113abaed954b4a30c51f8851c6b9d79d85"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh386-appearance-c219-bind/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh386-appearance-c219-bind/script-diagnostics.json",
+      "sha256": "4e1205462c9c8153ef4f4d15eba35ea263f6079e3b74341771bbb12e2f41f34c"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh386-appearance-c219-bind/scene.blend",
+      "sha256": "5301e6afd44be0b435dc601143aa0764daf3527d4c9e059f342e4a658370bbe2"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh386-appearance-c219-bind/patch-evidence.json",
+      "sha256": "d297a676dae2260edcdddcca7a6771f82143263413e17dc05e726b1780e34bbe"
+    }
+  },
+  "cycle_disposition": {
+    "category": "art_rejected",
+    "observation": "Native structural veto, not an artistic image review."
+  }
+}

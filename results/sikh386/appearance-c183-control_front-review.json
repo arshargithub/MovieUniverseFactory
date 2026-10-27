@@ -1,0 +1,43 @@
+{
+  "verdict": "FAIL",
+  "run_digest": "c11f82350bf9cf35f074a1e91e51b6b1604429e7dac445af5a1242849b7cdd83",
+  "observation": "Expected original80negativecontrol: broad block chest at283 and unsupported apron/shelf above foldedforelegs339 remain in matchedclay with automaticnormals.",
+  "comparison": "Actualmatchedsourceframe versusphysicalanatomy and182spatialguide; removing texture/bump/normals doesnot eliminategeometrydefect. This is a sourcecontrol, not a newartistcandidate.",
+  "open_defects": [
+    "Known original chest shelf/apron and pinched root"
+  ],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh386-appearance-c183-control_front/snapshot.json",
+      "sha256": "ba184accc29855f40b1a1303cd6b71113abaed954b4a30c51f8851c6b9d79d85"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh386-appearance-c183-control_front/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh386-appearance-c183-control_front/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh386-appearance-c183-control_front/frame.png",
+      "sha256": "831bde48804def874c5d42f3c8f3e19a5937df7d406632d3e2c526f49afa9c26"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh386-appearance-c183-control_front/frames.json",
+      "sha256": "985ae08c0eab9c81a565775dd6e22164964c390de4a7de84725e393bc19e94bc"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh386-appearance-c183-control_front/frame.png",
+      "sha256": "831bde48804def874c5d42f3c8f3e19a5937df7d406632d3e2c526f49afa9c26"
+    },
+    "frame_339": {
+      "path": ".runtime/factory-native/sikh386-appearance-c183-control_front/frame-0339.png",
+      "sha256": "230e5b9388aa362799bd14fc6ac639b9b64b695e8ffab108bebc145fb2eb9aa2"
+    }
+  },
+  "cycle_disposition": {
+    "category": "causal_control_only",
+    "observation": "Known source negative control remains FAIL; geometry attribution retained."
+  }
+}

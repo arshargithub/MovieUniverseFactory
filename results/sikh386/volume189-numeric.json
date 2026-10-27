@@ -1,0 +1,340 @@
+{
+  "phase": "numeric_prototype_complete",
+  "cage": {
+    "nodes": 1043,
+    "tets": 3934,
+    "fixed": 107,
+    "skin": 1854,
+    "min_barycentric": -0.3368360295015221,
+    "max_barycentric": 0.9958078160005455,
+    "min_tet_volume": 0.0001075249999999998,
+    "max_tet_condition": 4.100975223995949
+  },
+  "history": [
+    {
+      "frame": 283,
+      "success": true,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "iterations": 28,
+      "min_jacobian": 0.9866092389467009,
+      "max_jacobian": 1.004008402153741,
+      "volume_ratio": 0.9998992075631903,
+      "pin_max": 3.455457823117107e-05,
+      "pin_rms": 8.283917287961565e-06
+    },
+    {
+      "frame": 285,
+      "success": true,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "iterations": 1,
+      "min_jacobian": 0.9866423969034203,
+      "max_jacobian": 1.00398324820424,
+      "volume_ratio": 0.999899349533772,
+      "pin_max": 3.4344754304240205e-05,
+      "pin_rms": 8.27635066087164e-06
+    },
+    {
+      "frame": 287,
+      "success": true,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "iterations": 1,
+      "min_jacobian": 0.9866559979434022,
+      "max_jacobian": 1.004034247716764,
+      "volume_ratio": 0.9999001886901845,
+      "pin_max": 3.42476473464563e-05,
+      "pin_rms": 8.272748951784845e-06
+    },
+    {
+      "frame": 289,
+      "success": true,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "iterations": 1,
+      "min_jacobian": 0.9866434845019086,
+      "max_jacobian": 1.003993748628101,
+      "volume_ratio": 0.9998996168452918,
+      "pin_max": 3.4273543740924595e-05,
+      "pin_rms": 8.256739099472375e-06
+    },
+    {
+      "frame": 291,
+      "success": true,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "iterations": 1,
+      "min_jacobian": 0.986638005004129,
+      "max_jacobian": 1.0039942451514137,
+      "volume_ratio": 0.9998992862408028,
+      "pin_max": 3.428894167721588e-05,
+      "pin_rms": 8.26669211374995e-06
+    },
+    {
+      "frame": 293,
+      "success": true,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "iterations": 272,
+      "min_jacobian": 0.8009278126002276,
+      "max_jacobian": 1.0695462261170023,
+      "volume_ratio": 0.9939298253579651,
+      "pin_max": 0.0006761776783191019,
+      "pin_rms": 0.00014272260420543513
+    },
+    {
+      "frame": 295,
+      "success": true,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "iterations": 202,
+      "min_jacobian": 0.7074881556436546,
+      "max_jacobian": 1.2098471176734922,
+      "volume_ratio": 0.9908018361377634,
+      "pin_max": 0.0008195712505910222,
+      "pin_rms": 0.0002279752023408318
+    },
+    {
+      "frame": 297,
+      "success": true,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "iterations": 253,
+      "min_jacobian": 0.6764573415764429,
+      "max_jacobian": 1.290258657100849,
+      "volume_ratio": 0.9904620189149671,
+      "pin_max": 0.0009486477352294765,
+      "pin_rms": 0.0002910877232570341
+    },
+    {
+      "frame": 299,
+      "success": true,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "iterations": 280,
+      "min_jacobian": 0.7229836786947447,
+      "max_jacobian": 1.4157334710091312,
+      "volume_ratio": 0.9873076354210156,
+      "pin_max": 0.0012771401462690832,
+      "pin_rms": 0.0003733246769024682
+    },
+    {
+      "frame": 301,
+      "success": true,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "iterations": 264,
+      "min_jacobian": 0.70477116495957,
+      "max_jacobian": 1.5165503487338545,
+      "volume_ratio": 0.9855867286662623,
+      "pin_max": 0.0015286755977024144,
+      "pin_rms": 0.00043813955543972637
+    },
+    {
+      "frame": 303,
+      "success": true,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "iterations": 299,
+      "min_jacobian": 0.6629462972021721,
+      "max_jacobian": 1.585759553962371,
+      "volume_ratio": 0.9841697248999368,
+      "pin_max": 0.0016915326910589808,
+      "pin_rms": 0.0004949115633183005
+    },
+    {
+      "frame": 305,
+      "success": true,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "iterations": 122,
+      "min_jacobian": 0.6588837361836688,
+      "max_jacobian": 1.6133123649977323,
+      "volume_ratio": 0.9842379652055872,
+      "pin_max": 0.0017550732520520956,
+      "pin_rms": 0.0005119904643124612
+    },
+    {
+      "frame": 307,
+      "success": true,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "iterations": 131,
+      "min_jacobian": 0.6778160823811488,
+      "max_jacobian": 1.5717495110964195,
+      "volume_ratio": 0.9846159597319813,
+      "pin_max": 0.0016550896168148778,
+      "pin_rms": 0.0004955559798727765
+    },
+    {
+      "frame": 309,
+      "success": true,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "iterations": 296,
+      "min_jacobian": 0.7239346147848283,
+      "max_jacobian": 1.1723379330163641,
+      "volume_ratio": 0.9867774144351019,
+      "pin_max": 0.0010693042200060454,
+      "pin_rms": 0.0003559810187382169
+    },
+    {
+      "frame": 311,
+      "success": true,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "iterations": 270,
+      "min_jacobian": 0.7972213668494103,
+      "max_jacobian": 1.1610969034582275,
+      "volume_ratio": 0.9941349059551862,
+      "pin_max": 0.0008461685019191192,
+      "pin_rms": 0.00023766930630594527
+    },
+    {
+      "frame": 313,
+      "success": true,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "iterations": 178,
+      "min_jacobian": 0.9212214157565308,
+      "max_jacobian": 1.2601085196833324,
+      "volume_ratio": 1.0033521767552802,
+      "pin_max": 0.0007582345205594345,
+      "pin_rms": 0.00016991819154820335
+    },
+    {
+      "frame": 315,
+      "success": true,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "iterations": 174,
+      "min_jacobian": 0.8770933166331873,
+      "max_jacobian": 1.5995608511323263,
+      "volume_ratio": 1.0063631287894006,
+      "pin_max": 0.0016236710039606499,
+      "pin_rms": 0.0003055535544137666
+    },
+    {
+      "frame": 317,
+      "success": true,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "iterations": 220,
+      "min_jacobian": 0.7802402205621444,
+      "max_jacobian": 1.6073366456154576,
+      "volume_ratio": 0.9980680171558358,
+      "pin_max": 0.0017463171228397384,
+      "pin_rms": 0.00038267248238399784
+    },
+    {
+      "frame": 319,
+      "success": true,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "iterations": 193,
+      "min_jacobian": 0.73766341963325,
+      "max_jacobian": 1.5865501949861316,
+      "volume_ratio": 0.9966334405336682,
+      "pin_max": 0.001723959094738162,
+      "pin_rms": 0.000416460299585973
+    },
+    {
+      "frame": 321,
+      "success": true,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "iterations": 203,
+      "min_jacobian": 0.7157263279173445,
+      "max_jacobian": 1.5858938766720414,
+      "volume_ratio": 0.995812715244877,
+      "pin_max": 0.001734042154768549,
+      "pin_rms": 0.0004428834029799228
+    },
+    {
+      "frame": 323,
+      "success": true,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "iterations": 155,
+      "min_jacobian": 0.6986274583526666,
+      "max_jacobian": 1.5925662268758514,
+      "volume_ratio": 0.9948646406409204,
+      "pin_max": 0.0017605296265848316,
+      "pin_rms": 0.0004698166205776923
+    },
+    {
+      "frame": 325,
+      "success": true,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "iterations": 222,
+      "min_jacobian": 0.6900426601600982,
+      "max_jacobian": 1.6096641249017378,
+      "volume_ratio": 0.9933427636237685,
+      "pin_max": 0.0018136764968077121,
+      "pin_rms": 0.0005045258275896494
+    },
+    {
+      "frame": 327,
+      "success": true,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "iterations": 132,
+      "min_jacobian": 0.6776853073851046,
+      "max_jacobian": 1.6442656950934869,
+      "volume_ratio": 0.9925557769511478,
+      "pin_max": 0.001900937866077487,
+      "pin_rms": 0.0005303547883461125
+    },
+    {
+      "frame": 329,
+      "success": true,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "iterations": 176,
+      "min_jacobian": 0.6692908855112485,
+      "max_jacobian": 1.6777471281759309,
+      "volume_ratio": 0.9926247520871658,
+      "pin_max": 0.001977239981760935,
+      "pin_rms": 0.0005427226654996041
+    },
+    {
+      "frame": 331,
+      "success": true,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "iterations": 131,
+      "min_jacobian": 0.6705924934959077,
+      "max_jacobian": 1.6787318903924497,
+      "volume_ratio": 0.9925139819260687,
+      "pin_max": 0.001980227923575421,
+      "pin_rms": 0.0005436152906810398
+    },
+    {
+      "frame": 333,
+      "success": true,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "iterations": 151,
+      "min_jacobian": 0.6758915020141336,
+      "max_jacobian": 1.6765952067463954,
+      "volume_ratio": 0.9924764695970417,
+      "pin_max": 0.001975703134999614,
+      "pin_rms": 0.0005428031463209023
+    },
+    {
+      "frame": 335,
+      "success": true,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "iterations": 309,
+      "min_jacobian": 0.6351611825385947,
+      "max_jacobian": 1.658768273360536,
+      "volume_ratio": 0.9867922402478354,
+      "pin_max": 0.001974090159322216,
+      "pin_rms": 0.0005993049277999122
+    },
+    {
+      "frame": 337,
+      "success": true,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "iterations": 431,
+      "min_jacobian": 0.378560538397019,
+      "max_jacobian": 1.658461928380891,
+      "volume_ratio": 0.9802589549332081,
+      "pin_max": 0.003926588096733253,
+      "pin_rms": 0.0007743092223740845
+    },
+    {
+      "frame": 339,
+      "success": true,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "iterations": 611,
+      "min_jacobian": 0.19862149670915633,
+      "max_jacobian": 1.7131267103050363,
+      "volume_ratio": 0.9773654361711599,
+      "pin_max": 0.005450011901051895,
+      "pin_rms": 0.0008840342546061064
+    }
+  ],
+  "max_delta": 0.4205745884515752,
+  "corrected_frames": [
+    339
+  ],
+  "other_samples": "Exact uncorrected source placeholders; NOT a motion candidate.",
+  "scope": "Static339 continuous-interface finite-strain proof only; native front/side/opposite/whole required."
+}

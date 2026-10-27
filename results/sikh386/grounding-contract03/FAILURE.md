@@ -1,0 +1,1 @@
+Grounding blocked REQUIRED_SOURCE_DROPPED before native execution. Required historical sources must be applied as preservation/evidence constraints with current-scope reconciliation; context_only is not permitted for required sources. Counts remain177/226, no worker. Original config retained.

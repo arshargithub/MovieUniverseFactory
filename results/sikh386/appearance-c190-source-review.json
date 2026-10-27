@@ -1,0 +1,35 @@
+{
+  "verdict": "FAIL",
+  "run_digest": "bffa61123502f7436e3f9907f475007983d60b3fc7ca221fa6c4b50c72d360b9",
+  "observation": "Geometricbox mask included forearm vertices; volumetric grid anchored only crosscuts and did not preserve their accepted surfaces. This defeats the frozenlowerlegs contract despite positivecells. Actual protectedforearm displacement0.4206m is inadmissible.",
+  "comparison": "Actual target/source22514-coordinate arrays and original sourcegroupweights compared against frozenlowerlegs intent. Transport can be exact while violating semanticownership; no image or AV claimed.",
+  "open_defects": [
+    "Forearm surface violates accepted pose/protecteddomain"
+  ],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh386-appearance-c190-source/snapshot.json",
+      "sha256": "06e3ff2832e9f94eaeff0bb16d40706180e5b7307a28ec310ec0ab37c5bcea9a"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh386-appearance-c190-source/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh386-appearance-c190-source/script-diagnostics.json",
+      "sha256": "4e1205462c9c8153ef4f4d15eba35ea263f6079e3b74341771bbb12e2f41f34c"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh386-appearance-c190-source/scene.blend",
+      "sha256": "38c0be7cbad47bcce6d057407ccc2aefd0e6d1b7523070cf6fa4ca7a1f992f2a"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh386-appearance-c190-source/patch-evidence.json",
+      "sha256": "909fa31daf0a0e7c2dc85385406042e35d048b1677744bf6ac3ea8f55f6b4860"
+    }
+  },
+  "cycle_disposition": {
+    "category": "art_rejected",
+    "observation": "Geometry/scope rejection before imageproof, not a visually accepted candidate."
+  }
+}

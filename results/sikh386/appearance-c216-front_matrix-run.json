@@ -1,0 +1,54 @@
+{
+  "id": "sikh386-appearance-c216-front_matrix",
+  "task": "sikh335-supporting-appearance",
+  "step": "front_matrix",
+  "cycle": 216,
+  "fingerprint": "978ce805c83e15d251d5ba7a0b77829db8e6ef8839619a4b528f357ce6ddb7fe",
+  "parent": {
+    "path": ".runtime/factory-native/sikh386-appearance-c216-source/scene.blend",
+    "sha256": "deaf2c548e73ceded65897483133d2eae080335a1e9c9071ecd4ed6f6123bf6b"
+  },
+  "job_digest": "707fc1445ed80298c03a7a319a4fc8fd10c0319e972f3d4d84a39db10f493a69",
+  "handler_digest": "4759cfd8b8e1ba7b549e116be4d5bf91c05bf4b441331195f2b3f6a3210f3382",
+  "status": "RETURNED",
+  "timeout_seconds": 600,
+  "artifacts": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh386-appearance-c216-front_matrix/snapshot.json",
+      "sha256": "ba184accc29855f40b1a1303cd6b71113abaed954b4a30c51f8851c6b9d79d85"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh386-appearance-c216-front_matrix/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh386-appearance-c216-front_matrix/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh386-appearance-c216-front_matrix/frame.png",
+      "sha256": "01b958d7bda734f447d1c704e4b7ea33fd2143435c7a68264e7f031806fbe577"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh386-appearance-c216-front_matrix/frames.json",
+      "sha256": "ad9f2938474c39521aab65d8d6552e4581f64150cbdb44fe26476b92aa39e061"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh386-appearance-c216-front_matrix/frame.png",
+      "sha256": "01b958d7bda734f447d1c704e4b7ea33fd2143435c7a68264e7f031806fbe577"
+    },
+    "frame_333": {
+      "path": ".runtime/factory-native/sikh386-appearance-c216-front_matrix/frame-0333.png",
+      "sha256": "c74a4af59bf3bb6e2c052c0a7a39b58f870d9ab75d00791fb1bf690e1593a0b5"
+    },
+    "frame_339": {
+      "path": ".runtime/factory-native/sikh386-appearance-c216-front_matrix/frame-0339.png",
+      "sha256": "87a6e5b9f325cab03ded87fb31390489f452a14f5c642d21120bfb24266f061e"
+    }
+  },
+  "dependencies": {},
+  "recipe": {
+    "path": "results/sikh386/appearance-c216-front_matrix-recipe.json",
+    "sha256": "b0913e60513aaf8a6b53f155020e97bdbe918473d5af0be8b3b109a403744f81"
+  }
+}

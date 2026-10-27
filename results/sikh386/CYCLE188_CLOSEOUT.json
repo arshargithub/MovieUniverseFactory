@@ -1,0 +1,22 @@
+{
+  "cycle": 188,
+  "max": 226,
+  "disposition": "numeric_rejected",
+  "art_candidates": 0,
+  "observation": "Actual188 finite-strain solve converged and trackedcuts within.0119m. FinalJmin.2237 positive, Jmax19.3782 exceedsunchanged5 guard. No target/native output. Irregularcage contains condition2329 slivers; nexttest replaces topology without relaxing guards.",
+  "next": "189 conforming regulargrid tissue cage; same goal/action/constraints and finalguards.",
+  "evidence": [
+    {
+      "path": "results/sikh386/volume188-numeric.json",
+      "sha256": "97e11a1e47c1996ea407f723e27ef6613fd0dcf78426bdc736f520032911def2"
+    },
+    {
+      "path": "results/sikh386/numeric188-run.json",
+      "sha256": "a29c11a3173d76631815fa2da803834b15644bad19c8fef1a9d02399f5a68969"
+    },
+    {
+      "path": "results/sikh386/numeric188.log",
+      "sha256": "9399bdd53afd7c0fccf5ef4ab5fe1772b6acad2834b529e3b424d4ff9148d70c"
+    }
+  ]
+}

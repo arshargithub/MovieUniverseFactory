@@ -1,0 +1,50 @@
+{
+  "verdict": "FAIL",
+  "run_digest": "d1d11fbf00aa97f9620cc1992b39049f44f618b2bb38a098924fc3bac84cbf70",
+  "observation": "Final raw226 candidate fails actual anatomy. Side339 retains a rounded unsupported mass with a horizontal underside. Front339 forms a broad flanged/bib-like lower chest. Opposite oblique339 exposes a triangular shoulder/root skin web and a dark hollow beneath its overhang. The whole333 view supplies context but cannot cancel those close-view defects. Neutral raw283 remains an experimental control, not a final accepted anatomy target. Primary matrices, existing curves, neutral/boundary/exterior/true-distal surfaces are preserved; eight coupled upper-elbow points move3.11mm. Those technical successes do not pass the anatomical result.",
+  "comparison": "Matched raw226 versus225rest215 under the same amount0.30 contraction, same original primary action/weights/timing/camera/light; physical UMN anatomy and limited204gross direction remain the positive references. Removing the later rest sculpt did not resolve the complete chest/root problem.",
+  "open_defects": [
+    "Unsupported lower chest volume/underside",
+    "Broad frontal flange/bib",
+    "Triangular shoulder/root web and hollow in opposite view",
+    "Final-surface/contact/consumer qualification not established"
+  ],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh386-appearance-c226-side_matrix/snapshot.json",
+      "sha256": "ba184accc29855f40b1a1303cd6b71113abaed954b4a30c51f8851c6b9d79d85"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh386-appearance-c226-side_matrix/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh386-appearance-c226-side_matrix/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh386-appearance-c226-side_matrix/frame.png",
+      "sha256": "ccb795e120d2024427c845911d608178f1b6c9c0e2e9223b162e21d632bdfd03"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh386-appearance-c226-side_matrix/frames.json",
+      "sha256": "8b8d7ac355da2a694f3f0e293bac06ceb3dd60c2e518cdb34f5c9b0ae47f3175"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh386-appearance-c226-side_matrix/frame.png",
+      "sha256": "ccb795e120d2024427c845911d608178f1b6c9c0e2e9223b162e21d632bdfd03"
+    },
+    "frame_333": {
+      "path": ".runtime/factory-native/sikh386-appearance-c226-side_matrix/frame-0333.png",
+      "sha256": "b2bc9a24488fa6bac673f8896be1bcb68181646311c5dcaeb73ab288e282007e"
+    },
+    "frame_339": {
+      "path": ".runtime/factory-native/sikh386-appearance-c226-side_matrix/frame-0339.png",
+      "sha256": "70dee7fd35e05eade0915c3074828abfd578219ff0a4d55615af2ea8b1c891eb"
+    }
+  },
+  "cycle_disposition": {
+    "category": "art_rejected",
+    "observation": "Final raw226 candidate fails actual anatomy. Side339 retains a rounded unsupported mass with a horizontal underside. Front339 forms a broad flanged/bib-like lower chest. Opposite oblique339 exposes a triangular shoulder/root skin web and a dark hollow beneath its overhang. The whole333 view supplies context but cannot cancel those close-view defects. Neutral raw283 remains an experimental control, not a final accepted anatomy target. Primary matrices, existing curves, neutral/boundary/exterior/true-distal surfaces are preserved; eight coupled upper-elbow points move3.11mm. Those technical successes do not pass the anatomical result."
+  }
+}

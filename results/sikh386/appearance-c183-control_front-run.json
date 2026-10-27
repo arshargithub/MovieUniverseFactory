@@ -1,0 +1,50 @@
+{
+  "id": "sikh386-appearance-c183-control_front",
+  "task": "sikh335-supporting-appearance",
+  "step": "control_front",
+  "cycle": 183,
+  "fingerprint": "56547ce045d79e33aa8f60d01ee3bfdcf60eac85ad657154fcc50bf8f9002718",
+  "parent": {
+    "path": ".runtime/factory-native/sikh386-appearance-c183-control/scene.blend",
+    "sha256": "aa794669650719109e937ec79dd86f063571c09711898fbb6ca23c251bda1ece"
+  },
+  "job_digest": "cca424a8d25ee52f81a8453097f118cd91cda823b73779f7bb8a7705d63fe668",
+  "handler_digest": "057f4d102d574585149cd8ca1a1e078f560e5788537f84ef690af20284a869bf",
+  "status": "RETURNED",
+  "timeout_seconds": 600,
+  "artifacts": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh386-appearance-c183-control_front/snapshot.json",
+      "sha256": "ba184accc29855f40b1a1303cd6b71113abaed954b4a30c51f8851c6b9d79d85"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh386-appearance-c183-control_front/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh386-appearance-c183-control_front/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh386-appearance-c183-control_front/frame.png",
+      "sha256": "831bde48804def874c5d42f3c8f3e19a5937df7d406632d3e2c526f49afa9c26"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh386-appearance-c183-control_front/frames.json",
+      "sha256": "985ae08c0eab9c81a565775dd6e22164964c390de4a7de84725e393bc19e94bc"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh386-appearance-c183-control_front/frame.png",
+      "sha256": "831bde48804def874c5d42f3c8f3e19a5937df7d406632d3e2c526f49afa9c26"
+    },
+    "frame_339": {
+      "path": ".runtime/factory-native/sikh386-appearance-c183-control_front/frame-0339.png",
+      "sha256": "230e5b9388aa362799bd14fc6ac639b9b64b695e8ffab108bebc145fb2eb9aa2"
+    }
+  },
+  "dependencies": {},
+  "recipe": {
+    "path": "results/sikh386/appearance-c183-control_front-recipe.json",
+    "sha256": "7ea3dbc5a2ff32fc2133f94e426965c9d83af4ef96848d2c0ace61059170f529"
+  }
+}

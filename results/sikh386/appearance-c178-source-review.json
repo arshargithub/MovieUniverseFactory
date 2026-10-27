@@ -1,0 +1,37 @@
+{
+  "verdict": "PASS",
+  "run_digest": "30b2d238393a3be23a760dfbc7f7935e215dc1fa79915918cb77cca8baf709e4",
+  "observation": "Actual fixed exporter returned183finite sampled cages and bone anchors, correct source topology, original geometry/actions unchanged per before/after invariants. Source control only; known chest defect not repaired.",
+  "comparison": "Actual report/arrays match admitted183samples22514vertices; original80parent hash retained. No target or motion acceptance.",
+  "open_defects": [],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh386-appearance-c178-source/snapshot.json",
+      "sha256": "ba184accc29855f40b1a1303cd6b71113abaed954b4a30c51f8851c6b9d79d85"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh386-appearance-c178-source/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh386-appearance-c178-source/script-diagnostics.json",
+      "sha256": "4e1205462c9c8153ef4f4d15eba35ea263f6079e3b74341771bbb12e2f41f34c"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh386-appearance-c178-source/scene.blend",
+      "sha256": "765883774975fcfa9f18316af127f885a4a7eef7c7f01438e3dd08905636f161"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh386-appearance-c178-source/patch-evidence.json",
+      "sha256": "ba2aa05a16e17cc0eac2aad4b07294d603f81fc8c3a40d01fd9089677cb8ec3f"
+    },
+    "source": {
+      "path": ".runtime/factory-native/sikh386-appearance-c178-source/anatomy386-source.npz",
+      "sha256": "84732e22864c2eb74698d1c5c68d034632cf534f4783d1ae759025f0bbc88bee"
+    }
+  },
+  "cycle_disposition": {
+    "category": "causal_control_only",
+    "observation": "Read-only source extraction; no anatomyPASS."
+  }
+}

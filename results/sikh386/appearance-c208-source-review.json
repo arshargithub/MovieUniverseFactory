@@ -1,0 +1,43 @@
+{
+  "verdict": "PASS",
+  "run_digest": "0a016357272e3bd75fe6689ef51e11a80e9eaa85ba677dcbd9a8329cd9920fc5",
+  "observation": "Actual closed skin-ownership handler integrated, saved/reopened.1107 local weights changed; actual283333339 outside cage and skeleton/world error0, rest/keys/actions unchanged, distal weights exact. Diagnostic skin only.",
+  "comparison": "Actual handler/report versus admitted original207source, structured0.6 operation and preservation guards.",
+  "open_defects": [],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh386-appearance-c208-source/snapshot.json",
+      "sha256": "ba184accc29855f40b1a1303cd6b71113abaed954b4a30c51f8851c6b9d79d85"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh386-appearance-c208-source/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh386-appearance-c208-source/script-diagnostics.json",
+      "sha256": "4e1205462c9c8153ef4f4d15eba35ea263f6079e3b74341771bbb12e2f41f34c"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh386-appearance-c208-source/scene.blend",
+      "sha256": "b7fcafc84f703fe51296ea7853c4f2f3e47af98f4281efe3df8bc05861538a9a"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh386-appearance-c208-source/patch-evidence.json",
+      "sha256": "90b2c70d13675064ec18ed900187bdd980e079164e6bdbf15e068f607b3c135e"
+    }
+  },
+  "cycle_disposition": {
+    "category": "causal_control_only",
+    "observation": "Native handler integration only, not anatomy or production nap/contact."
+  },
+  "requirement_outcomes": {
+    "preservation": {
+      "status": "PASS",
+      "observation": "Actual selected invariants passed."
+    },
+    "evidence": {
+      "status": "NOT_TESTED",
+      "observation": "Native surface appearance/nap/AV not yet judged."
+    }
+  }
+}

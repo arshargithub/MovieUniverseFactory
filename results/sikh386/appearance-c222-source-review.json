@@ -1,0 +1,33 @@
+{
+  "verdict": "PASS",
+  "run_digest": "ea480cad3e469b1a51ba86fc8cc679b09591194c1c4561b4569c05fc28b2fcb3",
+  "observation": "Actual source/neutral/original-motion preservation only: neutralerror0.000000000m, originalbones/actions/rest/keys/exterior retained, declaredsecondarypair only. Surface diagnostics=[]. No anatomy/contact/consumer/AV qualification; any known contact remains blocking.",
+  "comparison": "Actual same-parent neutral calibration and original-bone/outside matrices against source216, closed exact-operation invariant contract.",
+  "open_defects": [],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh386-appearance-c222-source/snapshot.json",
+      "sha256": "ba184accc29855f40b1a1303cd6b71113abaed954b4a30c51f8851c6b9d79d85"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh386-appearance-c222-source/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh386-appearance-c222-source/script-diagnostics.json",
+      "sha256": "4e1205462c9c8153ef4f4d15eba35ea263f6079e3b74341771bbb12e2f41f34c"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh386-appearance-c222-source/scene.blend",
+      "sha256": "91ebbfae32f2d6a7d311958bfb7ca6856f14fe347f34ecade49a644d4ac12bbc"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh386-appearance-c222-source/patch-evidence.json",
+      "sha256": "d61f847f96d7221e5a6408d6fd66718a6dffa5b0f814f618303f3da2383e2964"
+    }
+  },
+  "cycle_disposition": {
+    "category": "causal_control_only",
+    "observation": "Technical invariant scope only. Actual art/contact reviews still mandatory; no known-defect waiver."
+  }
+}

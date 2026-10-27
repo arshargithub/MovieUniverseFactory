@@ -1,0 +1,33 @@
+{
+  "verdict": "PASS",
+  "run_digest": "191a7a5033223fd0e0b8d771e88d5917409a6f5d8d58d68730db90f329f84f62",
+  "observation": "Actual primary-performance/source preservation passed across twelve frames. Only declared two secondary scale-Y channels may differ. Primarymatrix error=0.0, true-distal/exterior/neutral/boundary error={'true_distal_error': 0.0, 'outside_error': 0.0, 'neutral_error': 0.0, 'boundary_error': 0.0}. Coupled eight-point upper-elbow skin delta=0.0031085272785276175. Contacts=[{'frame': 283, 'before': 4, 'after': 4, 'introduced': 0}, {'frame': 333, 'before': 272, 'after': 298, 'introduced': 166}, {'frame': 339, 'before': 473, 'after': 512, 'introduced': 242}]. This is not anatomical/contact/consumer/AV approval.",
+  "comparison": "Actual same-source amount-zero versus bounded secondary tissue operation, exact original geometry/weights/keys/rest/old channels and strict primary-joint/boundary/distal checks.",
+  "open_defects": [],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh386-appearance-c226-bind/snapshot.json",
+      "sha256": "ba184accc29855f40b1a1303cd6b71113abaed954b4a30c51f8851c6b9d79d85"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh386-appearance-c226-bind/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh386-appearance-c226-bind/script-diagnostics.json",
+      "sha256": "4e1205462c9c8153ef4f4d15eba35ea263f6079e3b74341771bbb12e2f41f34c"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh386-appearance-c226-bind/scene.blend",
+      "sha256": "63e0d2f66104da1080418f54eadf8ca7811c602520be9696294a58917f48aa0b"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh386-appearance-c226-bind/patch-evidence.json",
+      "sha256": "d2dc33cbb036e5e0eaa30cae4bbe1de02aa244d80263bbfc0c4e37ac6d66e6cd"
+    }
+  },
+  "cycle_disposition": {
+    "category": "causal_control_only",
+    "observation": "Source/primary invariant control only; all physical failures still block adoption."
+  }
+}

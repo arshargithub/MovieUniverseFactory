@@ -1,0 +1,49 @@
+{
+  "verdict": "FAIL",
+  "run_digest": "dd34e900aa4ac4772b70d6e94c2c9ab5fa67669712c0462ea6f5a316dd994ba4",
+  "observation": "Actual216valid-rest/original-skin control retains coherent muscular neutral volume, but339side still has a projecting pectoral shelf and frontal raised views retain a hanging chest bib. The whole pose-family fails. Neutral is an internal control, not Director-approved anatomy or final production PASS.",
+  "comparison": "Actual216283front/side and333339versus208partialskin, invalid212 and physical rear references. 215rest is structurally valid; the posed response still fails despite fixed original skeleton.",
+  "open_defects": [
+    "Raised static pectoral shelf",
+    "Hanging frontal chest bib",
+    "Production nap/consumer unqualified"
+  ],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh386-appearance-c216-side_matrix/snapshot.json",
+      "sha256": "ba184accc29855f40b1a1303cd6b71113abaed954b4a30c51f8851c6b9d79d85"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh386-appearance-c216-side_matrix/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh386-appearance-c216-side_matrix/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh386-appearance-c216-side_matrix/frame.png",
+      "sha256": "f9496ddc89f8ce1b88f242d4654570c333f22c2ea9ed9c5a3cf23016c7c91851"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh386-appearance-c216-side_matrix/frames.json",
+      "sha256": "1cea103f503438c9237694f3eec47378c1c388dcc0a2166fa0b6c70225ce24e2"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh386-appearance-c216-side_matrix/frame.png",
+      "sha256": "f9496ddc89f8ce1b88f242d4654570c333f22c2ea9ed9c5a3cf23016c7c91851"
+    },
+    "frame_333": {
+      "path": ".runtime/factory-native/sikh386-appearance-c216-side_matrix/frame-0333.png",
+      "sha256": "5548974f6eb041e26e609590dfe0d8e40e6df78a0aa0797d4ed5d941bdff8fba"
+    },
+    "frame_339": {
+      "path": ".runtime/factory-native/sikh386-appearance-c216-side_matrix/frame-0339.png",
+      "sha256": "124116513080ef5ac1f6781f5ef45681a7b2ba86e8e7c01a8914e11f7b672e1c"
+    }
+  },
+  "cycle_disposition": {
+    "category": "art_rejected",
+    "observation": "Actual216valid-rest/original-skin control retains coherent muscular neutral volume, but339side still has a projecting pectoral shelf and frontal raised views retain a hanging chest bib. The whole pose-family fails. Neutral is an internal control, not Director-approved anatomy or final production PASS."
+  }
+}

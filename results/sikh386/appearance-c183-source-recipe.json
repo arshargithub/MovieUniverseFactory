@@ -1,0 +1,21 @@
+{
+  "operation": "nihang_patch",
+  "frame": 283,
+  "width": 640,
+  "height": 640,
+  "samples": 8,
+  "edits": [
+    {
+      "kind": "mounted_anatomy386_target",
+      "target": "horse",
+      "data": {
+        "path": ".runtime/art-direction/anatomy386-targets/template183.npz",
+        "sha256": "674f1ce96d68fb0145879096ef5f7f9ba5bd83b556eb6d9c3b1937f23e55c4a9"
+      }
+    },
+    {
+      "kind": "mounted_anatomy386_clay",
+      "target": "horse"
+    }
+  ]
+}

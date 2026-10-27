@@ -143,3 +143,22 @@ when preparing responses. Legacy small packets remain unchanged. Round-trip,
 corruption and gate-digest tests qualify transport only, not model recall or art.
 Oversized unique content still blocks; do not raise the bound or silently omit
 obligations. Full history remains in the canonical event ledger.
+
+## Observed outcome of the fifty-correction construction run
+
+Read [the226exhaustion audit](../../results/sikh386/EXHAUSTION226.md) before
+continuing this forequarter or applying the pattern elsewhere. The shared grant
+is exhausted at226/226; the chest/root anatomy is rejected and construction is
+stopped. This outcome is not another allowance, actor replacement, artistic
+approval or model escalation.
+
+The explicit scope/effectiveness machinery contained failed candidates and
+retained causal controls, but it did not produce a usable anatomical result.
+Future plans must distinguish Director-owned accepted performance from
+method-owned bone/vertex freezes and calibrated numerical guards. A zero control
+must exercise the mechanism being measured. Require a positive connected form
+under the revealing pose before investing in precise fitting, caches or finish.
+Track the same visible feature across interventions; a new method label does
+not close it. These are operational applications of the existing quality,
+authority and strategy rules, not a new service or an automatic anatomy test.
+The proposed regional reconstruction package remains unapproved.

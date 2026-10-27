@@ -1,0 +1,43 @@
+{
+  "verdict": "PASS",
+  "run_digest": "503364ae370eaf2bed585c456dca1ee79b25728b7cf7233cdbe173c1ccc11ec8",
+  "observation": "Actual186 read-only183-sample source export succeeded with geometry/actions unchanged; NPZ hash verified. Raw184 surface/live original rig retained. This is source preparation only.",
+  "comparison": "Actual returned source report and exact artifact hash against admitted export; no target or artistic verdict.",
+  "open_defects": [],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh386-appearance-c186-source/snapshot.json",
+      "sha256": "ba184accc29855f40b1a1303cd6b71113abaed954b4a30c51f8851c6b9d79d85"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh386-appearance-c186-source/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh386-appearance-c186-source/script-diagnostics.json",
+      "sha256": "4e1205462c9c8153ef4f4d15eba35ea263f6079e3b74341771bbb12e2f41f34c"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh386-appearance-c186-source/scene.blend",
+      "sha256": "08e5963edbc4e286e45b3eb8dd23a072a385dbcbc69948d978b69ea9ec964d37"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh386-appearance-c186-source/patch-evidence.json",
+      "sha256": "3a419b7211fc62da64028648c94a2a30174ccf0037eb0e45d13121d7c910b5eb"
+    }
+  },
+  "cycle_disposition": {
+    "category": "causal_control_only",
+    "observation": "Technical source control only; actual volumetric and artistic proof NOT_RUN."
+  },
+  "requirement_outcomes": {
+    "preservation": {
+      "status": "PASS",
+      "observation": "Actual exporter verified no geometry/action change."
+    },
+    "evidence": {
+      "status": "NOT_TESTED",
+      "observation": "Data export is not anatomical or AV evidence."
+    }
+  }
+}

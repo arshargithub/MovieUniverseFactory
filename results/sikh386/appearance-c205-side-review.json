@@ -1,0 +1,41 @@
+{
+  "verdict": "FAIL",
+  "run_digest": "4cd43113fbd4a7346c9370efc82117de549ff10fa2f9a664fbf8611909438bd1",
+  "observation": "Actual native205 front and side show a large flattened shield-like chest, a sharp lateral seam and angular lower-neck/root transitions. This is not natural equine anatomy.",
+  "comparison": "Compared actual205 with raw184, failed203, physical UMN photograph and qualified directional study204. The solver removed relief instead of constructing supported volume.",
+  "open_defects": [
+    "Flattened broad chest plate",
+    "Sharp lateral transition",
+    "Lower-root pinching"
+  ],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh386-appearance-c205-side/snapshot.json",
+      "sha256": "ba184accc29855f40b1a1303cd6b71113abaed954b4a30c51f8851c6b9d79d85"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh386-appearance-c205-side/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh386-appearance-c205-side/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh386-appearance-c205-side/frame.png",
+      "sha256": "9c2fa9da21f27fa9256c3154ac1ec4c730f46c45644800ebce9cdee587e00371"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh386-appearance-c205-side/frames.json",
+      "sha256": "7f0b77f099e5246db895d321817f616eb00c8bf3fb5bd2544c1db12a1fa0caeb"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh386-appearance-c205-side/frame.png",
+      "sha256": "9c2fa9da21f27fa9256c3154ac1ec4c730f46c45644800ebce9cdee587e00371"
+    }
+  },
+  "cycle_disposition": {
+    "category": "art_rejected",
+    "observation": "Actual native205 front and side show a large flattened shield-like chest, a sharp lateral seam and angular lower-neck/root transitions. This is not natural equine anatomy."
+  }
+}

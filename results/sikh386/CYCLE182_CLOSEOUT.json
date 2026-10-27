@@ -1,0 +1,21 @@
+{
+  "cycle": 182,
+  "max": 226,
+  "disposition": "causal_control_only",
+  "art_candidates": 0,
+  "source": "CC0LyndonDaniels3697vertexbodyOBJ",
+  "qualified": "Gross3Dspatial chest/root/neck anatomyguide only, actualthreeviews inspected",
+  "excluded": [
+    "headidentity/style/texture",
+    "thirdparty rig/action",
+    "finishedfilmhorse",
+    "registration/fitting/deformation",
+    "fullspeedAV"
+  ],
+  "limits": [
+    "Lowreference resolution",
+    "Different neutral head/stance/proportions",
+    "Unclaimed oldscene curveclutter"
+  ],
+  "next": "183register guide to local anatomical landmarks; fit only previoushorse bounded chest/root region and carry correction with actualsourceone-ring deformation; native neutral/raisedproof before fullmatrix."
+}

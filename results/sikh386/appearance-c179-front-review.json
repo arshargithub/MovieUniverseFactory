@@ -1,0 +1,49 @@
+{
+  "verdict": "FAIL",
+  "run_digest": "c387c8afc8e6ef38b143b7cee7577abceb262213e7d8b625bd1f9d03e43d3f6b",
+  "observation": "Actual283/333/339front images remain an oval shield/bib; artificial ridges appear along lowerneck boundary. Numerical183sample playback was accurate but target is anatomically wrong;21triangles reverse source orientation at339.",
+  "comparison": "Physical frontpectorals/studrear show attached modest paired muscular contours and clear foreleg origins.179has no convincing paired anatomy; the source178negative is reduced but not positively solved.",
+  "open_defects": [
+    "Unsupported oval lowerchest/shield",
+    "New neck-boundary ridges",
+    "Folded triangles under lifted-limb poses"
+  ],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh386-appearance-c179-front/snapshot.json",
+      "sha256": "ba184accc29855f40b1a1303cd6b71113abaed954b4a30c51f8851c6b9d79d85"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh386-appearance-c179-front/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh386-appearance-c179-front/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh386-appearance-c179-front/frame.png",
+      "sha256": "58f7babe59ba99d716d2c9395f5bd7549cd3dcab5bfa4409301813ecaf28b67e"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh386-appearance-c179-front/frames.json",
+      "sha256": "ff2cd4f449450c7dc9cea66c0c645432914aa7dcfd30227f53f3b4e342e12391"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh386-appearance-c179-front/frame.png",
+      "sha256": "58f7babe59ba99d716d2c9395f5bd7549cd3dcab5bfa4409301813ecaf28b67e"
+    },
+    "frame_333": {
+      "path": ".runtime/factory-native/sikh386-appearance-c179-front/frame-0333.png",
+      "sha256": "0cd782a9aa4c0e99b65f88e166ab8f1b0ddccf9c09a870f1279f87409c31eb3a"
+    },
+    "frame_339": {
+      "path": ".runtime/factory-native/sikh386-appearance-c179-front/frame-0339.png",
+      "sha256": "baed58e157cb13544fb859a90f0cf1e449b21e7b7a303f3e90b43d31114475a2"
+    }
+  },
+  "cycle_disposition": {
+    "category": "art_rejected",
+    "observation": "Actual283/333/339front images remain an oval shield/bib; artificial ridges appear along lowerneck boundary. Numerical183sample playback was accurate but target is anatomically wrong;21triangles reverse source orientation at339."
+  }
+}

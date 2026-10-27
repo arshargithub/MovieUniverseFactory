@@ -1,0 +1,40 @@
+{
+  "verdict": "FAIL",
+  "run_digest": "73ffd2c6cf8be7dc0facee686eed9463d891aa7daec4e6e3caa33095705aefd7",
+  "observation": "Actualneutralfront/side FAIL. Depthcompression retracts lowerneck more than breasttip, making the remaining rounded lowerpectoral protuberance more separate in sideview. Frontretains a broad horizontal three-lobed bottomrow ratherthan tapering smoothlybetween forelegs.",
+  "comparison": "Actual196front/side compared to184rawmatchedcontrols, physicalUMNfrontpectoralphoto and182spatialguide. Technicalinvariants passed but positiveanatomicalform didnot. No raisedpose/fullfilm/AVclaim.",
+  "open_defects": [
+    "Separate forward/bottom pectoral bulb remains in neutral side",
+    "Broad horizontal lobed lower chest rather than supported taper"
+  ],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh386-appearance-c196-side/snapshot.json",
+      "sha256": "ba184accc29855f40b1a1303cd6b71113abaed954b4a30c51f8851c6b9d79d85"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh386-appearance-c196-side/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh386-appearance-c196-side/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh386-appearance-c196-side/frame.png",
+      "sha256": "d9a70a8ba4c081373df0a9846ce48f8629c7bd90f282dddb4c72928636d34929"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh386-appearance-c196-side/frames.json",
+      "sha256": "572ad82d75cb8c439e69cc81b2bfd6b5cbbecf8fd06c786987d64cbf9813dd16"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh386-appearance-c196-side/frame.png",
+      "sha256": "d9a70a8ba4c081373df0a9846ce48f8629c7bd90f282dddb4c72928636d34929"
+    }
+  },
+  "cycle_disposition": {
+    "category": "art_rejected",
+    "observation": "Actualneutralfront/side FAIL. Depthcompression retracts lowerneck more than breasttip, making the remaining rounded lowerpectoral protuberance more separate in sideview. Frontretains a broad horizontal three-lobed bottomrow ratherthan tapering smoothlybetween forelegs."
+  }
+}

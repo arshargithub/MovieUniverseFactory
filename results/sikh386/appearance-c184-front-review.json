@@ -1,0 +1,44 @@
+{
+  "verdict": "FAIL",
+  "run_digest": "1b240113845cdb1e638773cf833e2b0b3e8785b80f5a3df1fe19d90c38437972",
+  "observation": "Exactraw/liveoriginalrig control recovers coherent muscular neutralvolume, but339stillforms a strongly projecting chest shelf above foldedforelegs. Sourceweights/actionsunchanged and auto normals do not solve posedattachment. Neutralbaselineis a provisionalcoherentgoal, not finalappearancePASS.",
+  "comparison": "Actualneutralfront/side versusphysicalreferences/182guide has continuous shoulder/chestinto standinglegs; actualraisedside shows unsupportedforward shelf absentfromrealrearing references. Priorrestsculpts are not the principalremainingposedjunctionsolution.",
+  "open_defects": [
+    "Pose-dependent projecting chest shelf",
+    "Pinched proximalforeleg attachment in lift"
+  ],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh386-appearance-c184-front/snapshot.json",
+      "sha256": "ba184accc29855f40b1a1303cd6b71113abaed954b4a30c51f8851c6b9d79d85"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh386-appearance-c184-front/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh386-appearance-c184-front/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh386-appearance-c184-front/frame.png",
+      "sha256": "d56017c5939fe84b8d999c654d7b44fc1006e42a7a5ef2ec02e205d7b0f59267"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh386-appearance-c184-front/frames.json",
+      "sha256": "d0234d16d696e269159754cb99b18d89066193ff942a59b37e1115bcd084c1df"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh386-appearance-c184-front/frame.png",
+      "sha256": "d56017c5939fe84b8d999c654d7b44fc1006e42a7a5ef2ec02e205d7b0f59267"
+    },
+    "frame_339": {
+      "path": ".runtime/factory-native/sikh386-appearance-c184-front/frame-0339.png",
+      "sha256": "236e8304a8ba4408a857958b6abe13c1d65646aa25bbed4aaa7f3ccc7ff2e0e7"
+    }
+  },
+  "cycle_disposition": {
+    "category": "art_rejected",
+    "observation": "Exactraw/liveoriginalrig control recovers coherent muscular neutralvolume, but339stillforms a strongly projecting chest shelf above foldedforelegs. Sourceweights/actionsunchanged and auto normals do not solve posedattachment. Neutralbaselineis a provisionalcoherentgoal, not finalappearancePASS."
+  }
+}

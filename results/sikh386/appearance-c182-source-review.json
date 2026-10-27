@@ -1,0 +1,43 @@
+{
+  "verdict": "PASS",
+  "run_digest": "b37a5f05ebaf2535e426be064a6c53e6f8b47b86860e4cec0da9a5699d044daa",
+  "observation": "Actual inertbodyreference created with3697vertices/7390triangles; alloriginalgeometry/actions retained, oldmeshes hiddenonlyinreference-onlyderivative. No externalrig/material/assetcode executed.",
+  "comparison": "Actualfixedhandler report and admitted normalizedOBJdata; this establishes reference transport, not its anatomy or productionhorse.",
+  "open_defects": [],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh386-appearance-c182-source/snapshot.json",
+      "sha256": "dd3dd34dd1b415e5b27070c5b524fe3e34ade23f85c65b908b79abd69ebfb29d"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh386-appearance-c182-source/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh386-appearance-c182-source/script-diagnostics.json",
+      "sha256": "4e1205462c9c8153ef4f4d15eba35ea263f6079e3b74341771bbb12e2f41f34c"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh386-appearance-c182-source/scene.blend",
+      "sha256": "7ee2e59e12237302f1016af20863ea43d7a480976a8de0f749ad8f32145925a4"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh386-appearance-c182-source/patch-evidence.json",
+      "sha256": "6c12e505ca5d7daba74ee29b99605f278cfeac662b68b16dbeb441383854a276"
+    }
+  },
+  "cycle_disposition": {
+    "category": "causal_control_only",
+    "observation": "Technicalreferenceimportonly; formguidequalityandalloriginalhorsefindingsremainunqualified."
+  },
+  "requirement_outcomes": {
+    "preservation": {
+      "status": "PASS",
+      "observation": "Originalgeometry/actionsunchanged;acceptedmasterread-only."
+    },
+    "evidence": {
+      "status": "NOT_TESTED",
+      "observation": "Actualreferenceimagequalificationpending;nohorseunitproof."
+    }
+  }
+}

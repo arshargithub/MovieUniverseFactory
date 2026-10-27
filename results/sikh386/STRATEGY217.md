@@ -1,0 +1,13 @@
+#217: preserve evaluated neutral appearance while repairing skin attachment
+
+216's valid mesh/original mapping keeps coherent neutral volume but still shelves in the rear.208sharing partly repaired the rear while shifting the neutral surface backward about7cm. Preserving raw rest coordinates was the wrong interface invariant for a binding change. Freeze216's actual283evaluated surface as an internal method control, not Director-approved anatomy or final production acceptance.
+
+Use the existing local breast-to-upper-arm sharing rule at0.6, then solve bind/rest-coordinate compensation so the actual283evaluated surface remains within0.5mm of the original control. Measure the actual deformer Jacobian using three scoped finite probes, shifting all four shape keys together to preserve relative corrective offsets. Verify an independent probe, reject ill-conditioned response, and use bounded actual-error-decreasing Newton updates. Do not author new pose curves, bone transforms, time warps, or dense caches. The original live rig drives every pose.
+
+This is different from376's posed339target key/curve:217preserves one good evaluated neutral interface while changing constant tissue binding; dynamic appearance is separately judged across original accepted motion. Existing neural/visual/physics references retain their roles. No reference-image literalism or new breed/head/actor adoption.
+
+Critical assumptions: only the actual ARMATURE+SUBSURF coordinate-deformer stack is supported; actual probes must predict independently sampled response; the compensated rest must stay within cumulative18cm/typed15cm proximal bounds with exact distal/exterior geometry; original action/skeleton/world and relative key offsets unchanged. Source integration checks do not pass anatomy.
+
+Earliest proof: zero-strength structured native control saves/reopens with no geometry/action drift; then actual0.6response/neutral-fit proof on the same source. Save intermediate and final metrics distinctly. All actual neutral/raised/front/side/opposite/whole views must reject shelf/bib/web/limb or neck regressions. Actual cage crossing diagnostics before/after are evidence, not universal high-resolution or fullspeed qualification. Production nap/tack/contact/consumer and Director AV remain mandatory before adoption.
+
+If neutral preservation cannot converge or bounds fail, preserve failed evidence and reassess. If it converges but the rear still fails, diagnose the remaining actual vertex/owner/interface rather than repeat neutral carving. Same original task,217..226shared50grant. No new actor/armor, provider/spend/install/upload/Astra/subagents or allowance reset.

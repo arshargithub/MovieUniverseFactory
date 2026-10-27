@@ -1,0 +1,11 @@
+#215: preserve a valid surface embedding during anatomical fit
+
+214precondition found57proper triangle intersections and28severely compressed faces in211/213target. The original-skin render control was correctly blocked; its outcome remainsNOT_RUN. The visual goal is sufficiently clear. Construction/correspondence is failing: proximity to a plausible surface does not mean a valid surface embedding.212plain front/source failures and211data remain negative controls.
+
+Construct from original raw193valid topology and ORIGINAL skin mapping. Use normal-compatible closest surface correspondence to avoid matching the wrong branch/side. Local-rigidity energy (ARAP) preserves neighboring edge relationships while fitting the guide. After every global solve, line-search actualfloat32 geometry, retaining original distal/exterior coordinates, cumulative18cm/typed15cm proximal bounds, per-step triangle orientation continuity, area floor and no new proper triangle crossings. Final local crossings must be zero; a stall or residual known failure is not success.
+
+The orientation check is incremental versus the previous accepted step, not a blanket final-versus-original normal limit;202proved the latter can falsely reject valid rotations. Existing original crossings, if any, must be removed by the final proof; they are not a production waiver. Guide fit remains directional physical form, not identity or literal pixel truth. Source topology stays original, no new actor/rig/cache. Actual original live motion must still qualify neutral/raised/opposite/whole, then production consumer/nap/contact/fullspeed AV.
+
+Focused controls cover rigid-motion rotation recovery and rejecting a closer opposite-facing reference branch, alongside existing proper crossing and distal-policy tests.215numeric structure first; only a valid meaningful anatomy candidate advances native216. Valid structure is necessary but not artistic approval. If injectivity constraints stall fitting, preserve that evidence for method reassessment before escalation.
+
+Original50shared grant215..226, no reset, no new spend/provider/install/upload/Astra/subagents. No original-skin positive result is inferred from the blocked214control.

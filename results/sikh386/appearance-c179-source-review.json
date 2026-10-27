@@ -1,0 +1,43 @@
+{
+  "verdict": "PASS",
+  "run_digest": "a438809293557e4d39ae9fbdbe1a05e8bd07f733ef4ce6a472a8b05097ef39bb",
+  "observation": "Bound179target applied to exact183source samples; action/raw/shapes/othergeometry retained, target replay errors below1.2e-7. This is technical transport only.",
+  "comparison": "Actual saved target report versus exact178source and schema; numerical precision cannot pass positive anatomy.",
+  "open_defects": [],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh386-appearance-c179-source/snapshot.json",
+      "sha256": "ba184accc29855f40b1a1303cd6b71113abaed954b4a30c51f8851c6b9d79d85"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh386-appearance-c179-source/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh386-appearance-c179-source/script-diagnostics.json",
+      "sha256": "4e1205462c9c8153ef4f4d15eba35ea263f6079e3b74341771bbb12e2f41f34c"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh386-appearance-c179-source/scene.blend",
+      "sha256": "e9b34c395565f540d439c544740016d3d3177768174c38f2f345c7d92da866a0"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh386-appearance-c179-source/patch-evidence.json",
+      "sha256": "fc01f44cbac488acc623c1d201fd4e8a7382a5f3ea6e11641ab790083967c972"
+    }
+  },
+  "cycle_disposition": {
+    "category": "causal_control_only",
+    "observation": "Technical application succeeds; visible anatomy not reviewed yet."
+  },
+  "requirement_outcomes": {
+    "preservation": {
+      "status": "PASS",
+      "observation": "Original raw/action/othergeometry and outside-mask sampledsource retained."
+    },
+    "evidence": {
+      "status": "NOT_TESTED",
+      "observation": "Image matrix and full moving-form proof pending."
+    }
+  }
+}

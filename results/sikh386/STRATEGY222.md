@@ -1,0 +1,13 @@
+#222: neutral-calibrated rigid secondary attachment control
+
+Actual221views of219failedsurface show a flat lower lip/shelf and rolled web underneath the chest. Neutral-preserving original8-segment upper-arm influence still fails natural form and contact. Restcarving and changing only influence-domain width were insufficient. Do not claim that Bbone is the proven sole cause; test it.
+
+Use the same original216surface, primary motion and coretransfer0.6. Replace the new portion of breast-to-upper-arm influence with two single-segment secondary deformation supports. They copy the existing upper-arm pose transform continuously; no new primary keyframes, pose cache or runtime script. At283 choose support rest matrix R=inv(Dbreast283)*Aupperarm283, so support deformation Aupperarm283*inv(R)=Dbreast283. The analytical control and actualnative0.1mm neutral check must both pass. No mesh/key/rest sculpt accompanies this test.
+
+This is an agent-owned skin-attachment construction method inside the approved anatomy scope, not another actor, material identity change, tool or model escalation. Original motion bones/rest matrices/actions remain fixed and are measured independently by original names; two new exact-name helper bones are separately declared. This explicitly replaces the prior method's no-new-secondary-bones choice, while keeping accepted primary action66/75/80 frozen. Original distal/outside, source geometry/keys,18cm/15cm bounds and source masters persist.
+
+20focused tests passed;11overlapping focused tests repeated after adding preflight diagnostics. These are not31tests or anatomy evidence. New operation accepts only targethorse and bounded0..0.7strength. Original legacy operators unchanged. Official Blender5.2 PoseBone documentation describes segment-matrix deformation, not a clinical anatomy model: https://docs.blender.org/api/5.2/bpy.types.PoseBone.html . The hypothesis is tested in the actual installed runtime.
+
+Sourcezero and nonzero technical steps judge source/neutral/original-motion preservation only. Their causal_control_only verdict cannot pass art/contact. Permit explicitly diagnostic actual shape views even if cage contacts remain, to avoid repeating220's unobservable experiment. All known crossings remain blockers to anatomical/production adoption; this changes evidence order, not the quality floor. Side/front/raised/worstroot then opposite/whole/consumer/fullspeed proof; early known art failure stops dependent polish.
+
+Same original50shared grant222/226,4remaining after this. No spend/provider/install/cloud/upload/armor/newactor/Astra. No limit reset. If the rigid control also fails shape, do not call another coefficient a new representation.

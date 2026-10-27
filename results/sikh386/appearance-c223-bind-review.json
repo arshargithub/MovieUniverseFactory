@@ -1,0 +1,33 @@
+{
+  "verdict": "PASS",
+  "run_digest": "83f2539d713bf230cffbe9c96efe25f673cd42138510b59b56d6d6bd0a4d1cdb",
+  "observation": "Actual source/neutral/original-motion numeric preservation only: neutralerror0.000007128m. Cumulativeoriginal-source matrixerror0.000049591,outsideerror0.000023365; bounded100microunits/metres policy, not bit-exact. Sourcegeometry/keys/actions exact. Contacts=[{'frame': 283, 'before': 0, 'after': 0, 'introduced': 0}, {'frame': 333, 'before': 133, 'after': 115, 'introduced': 75}, {'frame': 339, 'before': 265, 'after': 420, 'introduced': 320}]. No anatomy/contact/consumer/AV qualification; allknownphysical failuresblockadoption.",
+  "comparison": "Actual no-added-bone editroundtrip versus222failure and cumulative same-original-source pose matrices/surfaces; predeclared100microunit/metre visibility cap. Legacy guards unchanged.",
+  "open_defects": [],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh386-appearance-c223-bind/snapshot.json",
+      "sha256": "55981886604f377d71364838d0962df45c4a7816eb657c7349c82330131cdbc9"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh386-appearance-c223-bind/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh386-appearance-c223-bind/script-diagnostics.json",
+      "sha256": "4e1205462c9c8153ef4f4d15eba35ea263f6079e3b74341771bbb12e2f41f34c"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh386-appearance-c223-bind/scene.blend",
+      "sha256": "a0468ebb236a883d1fb02e5cb10b6c7e03ceef008ffb2c19938bf7b38877e763"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh386-appearance-c223-bind/patch-evidence.json",
+      "sha256": "dea60506ab5219b4849a1705b9947288d8890874e7c03a0193ae5d82bbd04342"
+    }
+  },
+  "cycle_disposition": {
+    "category": "causal_control_only",
+    "observation": "Explicit numeric control only. Actual artistic/contact verdict separate; no known-defect waiver."
+  }
+}

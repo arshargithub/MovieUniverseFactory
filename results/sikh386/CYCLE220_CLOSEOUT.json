@@ -1,0 +1,14 @@
+{
+  "cycle": 220,
+  "max": 226,
+  "disposition": "pre_execution_dependency_block",
+  "art_candidates": 0,
+  "observation": "220renderadmissionblocked beforeworker: render requires an explicitly reviewed native dependency in the current plan. No new native job/image/artcandidate.220structuralFAIL remains. Correct plan transport with a source-preserving save control; no authority/threshold/limit change.",
+  "review_transport": "No native run or fake review after pre-execution admission block.",
+  "not_run": [
+    "artisticrenders",
+    "consumer",
+    "AV"
+  ],
+  "next": "Actualfailedcorecandidate diagnosticviews before sculpting another mathematicaltarget;6remain."
+}

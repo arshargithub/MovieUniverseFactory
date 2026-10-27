@@ -1,0 +1,41 @@
+{
+  "verdict": "FAIL",
+  "run_digest": "69cc12190f19edcc8a5c75467a6e90bd69288e235ad97a71dae98d12b927a8b2",
+  "observation": "Actual207 neutral retains an exaggerated lower pectoral pendant, though coherent curvature is stronger than205. Actual339 side still shows a projecting chest shelf above folded forelegs; static chest and moving roots remain disconnected in appearance.",
+  "comparison": "Actual207 neutral/339 versus physical references, raw184, failed205 and limited study204. Numeric and selected motion preservation passed; anatomical form did not.",
+  "open_defects": [
+    "Raised anterior chest shelf",
+    "Neutral lower-mass pendant",
+    "Unresolved moving-root attachment"
+  ],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh386-appearance-c207-side/snapshot.json",
+      "sha256": "ba184accc29855f40b1a1303cd6b71113abaed954b4a30c51f8851c6b9d79d85"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh386-appearance-c207-side/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh386-appearance-c207-side/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh386-appearance-c207-side/frame.png",
+      "sha256": "bb1a7b71e1ccf3042c48036fdfa66734715ff152dc5142f714c6df54bbf4ea0a"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh386-appearance-c207-side/frames.json",
+      "sha256": "ca4d54e31557f5684a4d80618c76af1fd43af6ab2446daf842c64d0be42bab96"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh386-appearance-c207-side/frame.png",
+      "sha256": "bb1a7b71e1ccf3042c48036fdfa66734715ff152dc5142f714c6df54bbf4ea0a"
+    }
+  },
+  "cycle_disposition": {
+    "category": "art_rejected",
+    "observation": "Actual207 neutral retains an exaggerated lower pectoral pendant, though coherent curvature is stronger than205. Actual339 side still shows a projecting chest shelf above folded forelegs; static chest and moving roots remain disconnected in appearance."
+  }
+}

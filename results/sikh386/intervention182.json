@@ -1,0 +1,36 @@
+{
+  "cycle": 182,
+  "diagnosis": "method",
+  "reference_reason": "Existing photos remain adequate for judgment; new geometry is a provisional spatialguide after three inaccurate hand-specifiedgoals. It must first be qualified as anatomyguide, not filmlook.",
+  "cause": "Three failed analyticpositivegoals, not missing sourceprecision, despite actualtransferchecks. Physical visualrejectioncriteria did not automatically produce a usable3Dtarget.",
+  "uncertainty": "CC0bodymesh may be coarse or anatomically unhelpful; mustreject before registration. Newreference alone doesnot solve deformation.",
+  "rationale": "Changefoundation of positivegoal: inspect actuallicensed3Dshape beforefitting, rather than moreprimitivecoefficients.",
+  "preserve": "Exact accepted80action, head/hindquarters/distal limbs and all outside-mask vertices; no accepted master overwrite. UnitDconsumer boundary/skin/nap contact remains unqualified.",
+  "test": "Actual fixedreferenceimport/save/reopen with geometry/actioninvariants, then283front/side/opposite/whole guide againstphysicalphotos. No rig/texture/animation/sourcehorseadoption.",
+  "expected": "Reference qualified onlyforlocalspatialguidance; actualoldhorse anatomy remainsunqualified until localfit/nativeproof.",
+  "failure_response": "Inspect actual failure, evaluate each admitted intervention then revise scope/target/representation rather than tuning blindly.",
+  "scope_decision": "keep",
+  "scope_reason": "ABsupportremainsonejudgeableoutcome;182onlyqualifies requiredspatialguide. No newactor, identity, motion, coat or fullperformancework.",
+  "category": "positive_target",
+  "method_family": "qualified_spatial_anatomy_template_before_local_fit",
+  "prediction": "Neutralreference has actualcontinuous chest/foreleg/neck shape that is better sourcegoal than our shields/cups/bib; ifnot do notfit.",
+  "previous_result": "179/180/181actualartrejected and allinterventioneffectsevaluated.181selectedframeconsistencyfixed;52referenceboundarycontrols pass but no native art/sourceclaim.",
+  "method": "Closedhashbound inertNPZ; existingreviewedhandler plus explicitreference-onlyextension; actualsafeownerpreflighttests. Uniformscale preserves anatomy; no Blenderassetscripts.",
+  "counterexample": "Another lowresolution horse can also have poor chest anatomy; licensing/availability and successfulimport cannot qualify its form or our eventual mapping. It must beat the rejected analyticgoal against realphotos before fitting.",
+  "keys": [
+    "form",
+    "interfaces",
+    "evidence",
+    "whole_look",
+    "director_form_motion",
+    "__positive_forequarter_form__",
+    "__forequarter_method__"
+  ],
+  "evidence_paths": [
+    "results/sikh386/RETROSPECTIVE181.md",
+    "results/sikh386/REFERENCE_GEOMETRY_SCREEN.md",
+    "results/sikh386/REFERENCE_HANDLER182_REVIEW.md",
+    "results/sikh386/reference-normalized.json",
+    "results/sikh386/REQUEST.md"
+  ]
+}

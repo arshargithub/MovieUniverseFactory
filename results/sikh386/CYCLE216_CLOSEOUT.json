@@ -1,0 +1,23 @@
+{
+  "cycle": 216,
+  "steps": [
+    "side_matrix",
+    "front_matrix"
+  ],
+  "observation": "Actual216valid-rest/original-skin control retains coherent muscular neutral volume, but339side still has a projecting pectoral shelf and frontal raised views retain a hanging chest bib. The whole pose-family fails. Neutral is an internal control, not Director-approved anatomy or final production PASS.",
+  "comparison": "Actual216283front/side and333339versus208partialskin, invalid212 and physical rear references. 215rest is structurally valid; the posed response still fails despite fixed original skeleton.",
+  "defects": [
+    "Raised static pectoral shelf",
+    "Hanging frontal chest bib",
+    "Production nap/consumer unqualified"
+  ],
+  "conclusion": "Preserve evaluated283surface as a method control, not raw coordinates alone. Next change tissue attachment while solving a neutral bind compensation so skin repair cannot destroy the neutral shape. This directly addresses measured208~7cm neutral drift; no more rest carving to compensate a posed binding defect.",
+  "not_run": [
+    "opposite/whole after raised failure",
+    "production nap/contact/consumer",
+    "fullspeed AV"
+  ],
+  "max": 226,
+  "disposition": "art_rejected",
+  "art_candidates": 1
+}

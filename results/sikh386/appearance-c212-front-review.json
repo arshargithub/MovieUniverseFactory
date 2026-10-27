@@ -1,0 +1,41 @@
+{
+  "verdict": "FAIL",
+  "run_digest": "15b59ca65241c02890cf5ace66593dbace4a4fc7a237f8cf3c43b5fd71aaa90f",
+  "observation": "Actual212front has a flat/caved central chest and irregular lower attachment edge; side adds an abrupt shoulder transition. The numerically close3Dguide rest fit is not a qualified anatomical result through the current skin mapping.",
+  "comparison": "Actual212versus physical/guide target and210/208 controls. Skin mapping208was retained during guide construction, so the interaction has not been isolated. Original193breast-owned shelf points have zero rest-to-neutral displacement under original weights;208neutral introduces~7cm backward movement.",
+  "open_defects": [
+    "Caved/flat frontal pectoral mass",
+    "Irregular lower edge",
+    "Abrupt shoulder transition"
+  ],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh386-appearance-c212-front/snapshot.json",
+      "sha256": "ba184accc29855f40b1a1303cd6b71113abaed954b4a30c51f8851c6b9d79d85"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh386-appearance-c212-front/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh386-appearance-c212-front/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh386-appearance-c212-front/frame.png",
+      "sha256": "f7587f80bf97bb8bbeccd2565e66a37fbafe82962965aa36044968b45acce021"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh386-appearance-c212-front/frames.json",
+      "sha256": "fef825253d0d5533c51e4e8fc63b55bb7fcb050db2a2ca9504b1ab6609e181a1"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh386-appearance-c212-front/frame.png",
+      "sha256": "f7587f80bf97bb8bbeccd2565e66a37fbafe82962965aa36044968b45acce021"
+    }
+  },
+  "cycle_disposition": {
+    "category": "art_rejected",
+    "observation": "Actual212front has a flat/caved central chest and irregular lower attachment edge; side adds an abrupt shoulder transition. The numerically close3Dguide rest fit is not a qualified anatomical result through the current skin mapping."
+  }
+}

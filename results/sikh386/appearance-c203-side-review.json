@@ -1,0 +1,40 @@
+{
+  "verdict": "FAIL",
+  "run_digest": "5c39f95d92d77dded21e824bd303053d1b6ae716fb09f5e99112fae24b08024f",
+  "observation": "Actual203neutralFAIL: hollow/sharp transition above the remaining lowerpectoral bulbs, and knotted armpit/rootshape. Exactrig/world/outsidepreservation passed, but form is not anatomical enough. Validoutwardnormals/0propercrossings didnotpredictgoodappearance.",
+  "comparison": "Actual203front/sideversusphysicalUMN/182spatialguideand199/196negatives. No neutralAaccepted, no posedmatrix orfilm/AVclaim.",
+  "open_defects": [
+    "Hollow/step above retained lowerpectoral protrusions",
+    "Knotted root/underside rather than continuous anatomical mass"
+  ],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh386-appearance-c203-side/snapshot.json",
+      "sha256": "ba184accc29855f40b1a1303cd6b71113abaed954b4a30c51f8851c6b9d79d85"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh386-appearance-c203-side/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh386-appearance-c203-side/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh386-appearance-c203-side/frame.png",
+      "sha256": "712fff69991dc9d5fb66efdba0f56c71dc45dee7729bde48e69f0ab1403cc3f2"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh386-appearance-c203-side/frames.json",
+      "sha256": "d077dd26d80463a8063d5120ae23aa2697f34ad8475d60cdfe500a1bcba98a75"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh386-appearance-c203-side/frame.png",
+      "sha256": "712fff69991dc9d5fb66efdba0f56c71dc45dee7729bde48e69f0ab1403cc3f2"
+    }
+  },
+  "cycle_disposition": {
+    "category": "art_rejected",
+    "observation": "Actual203neutralFAIL: hollow/sharp transition above the remaining lowerpectoral bulbs, and knotted armpit/rootshape. Exactrig/world/outsidepreservation passed, but form is not anatomical enough. Validoutwardnormals/0propercrossings didnotpredictgoodappearance."
+  }
+}

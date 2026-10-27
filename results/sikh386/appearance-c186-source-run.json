@@ -1,0 +1,42 @@
+{
+  "id": "sikh386-appearance-c186-source",
+  "task": "sikh335-supporting-appearance",
+  "step": "source",
+  "cycle": 186,
+  "fingerprint": "cdfb5bb9797dcdc3dd9aaf4f1cd5850b2b9bd8b3304f51e34951c5100e44514c",
+  "parent": {
+    "path": ".runtime/factory-native/sikh386-appearance-c184-source/scene.blend",
+    "sha256": "4db02a96be38c4cbbf94f6e86c4576e3284cc73539c808f014ec36fbba2db87b"
+  },
+  "job_digest": "aded3ca87faf284f58f76d5b5121a4ab0bffc16abc8a5be7fe7917c2166846a0",
+  "handler_digest": "319f1c7d20bab5fe52fd84e342056426934f3b739e1feda34f76faa7f3f752a2",
+  "status": "RETURNED",
+  "timeout_seconds": 600,
+  "artifacts": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh386-appearance-c186-source/snapshot.json",
+      "sha256": "ba184accc29855f40b1a1303cd6b71113abaed954b4a30c51f8851c6b9d79d85"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh386-appearance-c186-source/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh386-appearance-c186-source/script-diagnostics.json",
+      "sha256": "4e1205462c9c8153ef4f4d15eba35ea263f6079e3b74341771bbb12e2f41f34c"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh386-appearance-c186-source/scene.blend",
+      "sha256": "08e5963edbc4e286e45b3eb8dd23a072a385dbcbc69948d978b69ea9ec964d37"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh386-appearance-c186-source/patch-evidence.json",
+      "sha256": "3a419b7211fc62da64028648c94a2a30174ccf0037eb0e45d13121d7c910b5eb"
+    }
+  },
+  "dependencies": {},
+  "recipe": {
+    "path": "results/sikh386/appearance-c186-source-recipe.json",
+    "sha256": "4d03f6739fb8194ec90fe919b515f22a174a669a11ac13b86c8621f78ec9a82d"
+  }
+}

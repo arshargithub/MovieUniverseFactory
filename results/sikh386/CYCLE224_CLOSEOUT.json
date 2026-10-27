@@ -1,0 +1,22 @@
+{
+  "cycle": 224,
+  "steps": [
+    "side_matrix"
+  ],
+  "observation": "Actual224side339 rounds the leading corner slightly but retains a horizontal unsupported lower-chest shelf and triangular shoulder/root fold. Source-bound chest connectors now move as predicted, so correcting that particular mask discontinuity is insufficient. Numericalcontrol passed; anatomy/contact still FAIL.",
+  "comparison": "Matched224side339 versus223andphysicalsupportedchest/root. Improvedweightcontinuity/lowercorner does notpass the entireclaimedform.",
+  "defects": [
+    "Horizontal lower-chest shelf remains",
+    "Triangular root fold remains",
+    "Pose/contact family unqualified"
+  ],
+  "conclusion": "Stopmask/rigiditychanges. Reassess an agent-imposed constraint: originalbreastbones are secondarytissueleafbones, not acceptedprimarymotion. A bounded whole-muscle contraction can follow nativeexisting weights continuously without newbones, maskpartitioning or edit-mode drift; originalprimary joints/curves remain protected.",
+  "not_run": [
+    "front/opposite/whole after decisive sideFAIL",
+    "skin/nap/consumer",
+    "fullspeedAV"
+  ],
+  "max": 226,
+  "disposition": "art_rejected",
+  "art_candidates": 1
+}

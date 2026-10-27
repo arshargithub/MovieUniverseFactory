@@ -1,0 +1,13 @@
+{
+  "cycle": 217,
+  "max": 226,
+  "disposition": "execution_response_control_failed",
+  "art_candidates": 0,
+  "observation": "Zero native control preservedsource. Actual0.6failed independentdeformer probe:389.7micrometres mismatch after8cm neutralshift, beforeanyinverse update. No anatomicalcandidate orcompensationresult. Cache/update versusnonsmoothlocalresponse remainsunknown; measure/reset/probe before relaxing any assumption.",
+  "not_run": [
+    "neutralinverse",
+    "anatomicalrenders",
+    "productionconsumer/AV"
+  ],
+  "next": "Qualifyactualreset/localresponsewithstrongerdataandactualpervertexevidence; samegoal/allowance, noinferredeffect."
+}

@@ -1,0 +1,40 @@
+{
+  "verdict": "FAIL",
+  "run_digest": "c156bd12eaf73b0ef44a9f4dcc5ca9bb57001b41ab38ce4311198770e9a2ccce",
+  "observation": "Actual339front remains an artificial pointed central bib with rounded side masses. Actual339side retains unsupported projecting underside and pinched junction above foreleg. Source/render nowmatch339andnativeRETURNED; numeric orientation/transfer do not establish anatomy.",
+  "comparison": "UMNfront/Cavalorear/Friesian/studrear show chest mass continuously supported into limb roots and lowerneck, not a separate pointedapron.181does not meet that target and is not reviewready.",
+  "open_defects": [
+    "Pointed hanging central bib",
+    "Unsupported lateral pectoral masses and pinched foreleg junction"
+  ],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh386-appearance-c181-side/snapshot.json",
+      "sha256": "06e3ff2832e9f94eaeff0bb16d40706180e5b7307a28ec310ec0ab37c5bcea9a"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh386-appearance-c181-side/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh386-appearance-c181-side/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh386-appearance-c181-side/frame.png",
+      "sha256": "c361db703e5c6432c055b168265306b0fcc8966248967bf5b1766e7b4e818518"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh386-appearance-c181-side/frames.json",
+      "sha256": "e32748c145ec40b2c8eff444c4b300f17cae8410756ab7e79c938f901be9a07f"
+    },
+    "frame_339": {
+      "path": ".runtime/factory-native/sikh386-appearance-c181-side/frame.png",
+      "sha256": "c361db703e5c6432c055b168265306b0fcc8966248967bf5b1766e7b4e818518"
+    }
+  },
+  "cycle_disposition": {
+    "category": "art_rejected",
+    "observation": "Actual339front remains an artificial pointed central bib with rounded side masses. Actual339side retains unsupported projecting underside and pinched junction above foreleg. Source/render nowmatch339andnativeRETURNED; numeric orientation/transfer do not establish anatomy."
+  }
+}

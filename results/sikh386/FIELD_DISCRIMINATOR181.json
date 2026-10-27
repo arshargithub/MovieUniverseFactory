@@ -1,0 +1,32 @@
+{
+  "rows": [
+    {
+      "frame": 283,
+      "points": 444,
+      "absolute_field_residual_percentiles_50_90_100": [
+        0.0030631516907520945,
+        0.010170847738987217,
+        0.04032519853124685
+      ]
+    },
+    {
+      "frame": 333,
+      "points": 444,
+      "absolute_field_residual_percentiles_50_90_100": [
+        0.003832114214829159,
+        0.011313877405456703,
+        0.03442760539992594
+      ]
+    },
+    {
+      "frame": 339,
+      "points": 444,
+      "absolute_field_residual_percentiles_50_90_100": [
+        0.005526778168010565,
+        0.02314693997916131,
+        0.0683014661537433
+      ]
+    }
+  ],
+  "interpretation": "Distance-like implicitfield residual, NOT exact measured surface error. Central high-mask vertices mostly follow supplied primitivegoal; some boundary/limiter gaps remain. Native images still reject whole form. Evidence supports wrongpositivegoal plus unresolved rootmapping, not pure transfer precisionfailure."
+}

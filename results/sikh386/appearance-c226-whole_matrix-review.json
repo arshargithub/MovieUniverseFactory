@@ -1,0 +1,55 @@
+{
+  "verdict": "PASS",
+  "run_digest": "5042d62d637a8b0daef798ed2193fa1768ab93547391c8bdc1580296106a2887",
+  "observation": "Whole diagnostic images returned and were inspected for source/pose context. This is availability only. The actual side/front/opposite images fail the chest/root form; whole-view distance cannot erase those failures. No artistic, whole-result or human audiovisual pass.",
+  "comparison": "Same raw226 candidate at283/333/339 with complete-body context; decisive anatomical failure recorded in the coupled detailed views.",
+  "open_defects": [],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh386-appearance-c226-whole_matrix/snapshot.json",
+      "sha256": "ba184accc29855f40b1a1303cd6b71113abaed954b4a30c51f8851c6b9d79d85"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh386-appearance-c226-whole_matrix/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh386-appearance-c226-whole_matrix/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh386-appearance-c226-whole_matrix/frame.png",
+      "sha256": "df980f3888233982c7e6ab272243207a022111e45e7e2ff90d591cb7c4cadd37"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh386-appearance-c226-whole_matrix/frames.json",
+      "sha256": "a53f209fe1a00cc8b65fb7069b43e026f2b97df270c4fe6aa9a6918edeaeb030"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh386-appearance-c226-whole_matrix/frame.png",
+      "sha256": "df980f3888233982c7e6ab272243207a022111e45e7e2ff90d591cb7c4cadd37"
+    },
+    "frame_333": {
+      "path": ".runtime/factory-native/sikh386-appearance-c226-whole_matrix/frame-0333.png",
+      "sha256": "9b57edf73313fd06fc7de937aba5fce7bfa2c32781fdace8248a34301e7afa6f"
+    },
+    "frame_339": {
+      "path": ".runtime/factory-native/sikh386-appearance-c226-whole_matrix/frame-0339.png",
+      "sha256": "183c07e68d107ecee13f967ec7b63b17c38aff119ee685a9aa2c2312866f07f5"
+    }
+  },
+  "cycle_disposition": {
+    "category": "causal_control_only",
+    "observation": "Whole-image availability only; current anatomical result remains rejected."
+  },
+  "requirement_outcomes": {
+    "evidence": {
+      "status": "NOT_TESTED",
+      "observation": "Whole-frame availability is not a passing anatomical evidence package; detailed source views fail."
+    },
+    "director_form_motion": {
+      "status": "NOT_TESTED",
+      "observation": "Static frames cannot provide human full-speed audiovisual judgment."
+    }
+  }
+}

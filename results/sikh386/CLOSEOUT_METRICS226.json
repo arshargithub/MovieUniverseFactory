@@ -1,0 +1,730 @@
+{
+  "shared_slots": 50,
+  "range": [
+    177,
+    226
+  ],
+  "artistic_candidates_closeout_classification": 19,
+  "other_slots": 31,
+  "dispositions": {
+    "technical_blocked": 1,
+    "causal_control_only": 2,
+    "art_rejected": 18,
+    "art_rejected_and_technical_blocked": 1,
+    "technical_failure": 1,
+    "numeric_rejected": 2,
+    "numeric_rejected_implementation": 1,
+    "numeric_prototype_only": 1,
+    "geometry_scope_rejected": 1,
+    "numeric_model_rejected": 1,
+    "numeric_interface_rejected": 1,
+    "causal_source_localization_only": 1,
+    "rest_interface_rejected": 1,
+    "rest_numeric_prototype_only": 1,
+    "authored_stroke_out_of_bounds": 1,
+    "bounded_rest_numeric_only": 1,
+    "pre_execution_validation_replan": 1,
+    "semantic_classifier_rejected_before_native": 1,
+    "rest_data_structural_prototype_only": 1,
+    "numeric_proposal_only": 1,
+    "numeric_target_only": 5,
+    "structural_precondition_failed": 1,
+    "execution_response_control_failed": 1,
+    "native_structural_fail": 2,
+    "pre_execution_dependency_block": 1,
+    "execution_primary_precision_control_failed": 1
+  },
+  "native_jobs_with_runner_receipt": 85,
+  "native_jobs_missing_runner_receipt": [],
+  "recorded_runner_elapsed_sum_seconds": 2232.4504923243076,
+  "render_operation_runner_sum_seconds": 1043.6853432436474,
+  "runner_failures": 4,
+  "limits": [
+    "Candidate classification is recorded per correction, not rendered image count or artistic success rate.",
+    "Runner elapsed includes process/load/inspection/save/render and excludes planning/code/client work; it is not pure kernel render time, CPU core-seconds or full campaign net work.",
+    "Do not add overlapping operating-ledger work/job intervals; Director idle is reconciled separately.",
+    "No token/model-usage efficiency is inferred."
+  ],
+  "jobs": [
+    {
+      "id": "sikh386-appearance-c177-source",
+      "cycle": 177,
+      "operation": "nihang_patch",
+      "elapsed_seconds": 5.6512629999779165,
+      "exit_code": 7,
+      "ok": false
+    },
+    {
+      "id": "sikh386-appearance-c178-front",
+      "cycle": 178,
+      "operation": "nihang_frames",
+      "elapsed_seconds": 86.47896629106253,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c178-side",
+      "cycle": 178,
+      "operation": "nihang_frames",
+      "elapsed_seconds": 103.46589041594416,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c178-source",
+      "cycle": 178,
+      "operation": "nihang_patch",
+      "elapsed_seconds": 40.4873734167777,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c179-front",
+      "cycle": 179,
+      "operation": "nihang_frames",
+      "elapsed_seconds": 95.99820624990389,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c179-source",
+      "cycle": 179,
+      "operation": "nihang_patch",
+      "elapsed_seconds": 45.27322224993259,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c180-front",
+      "cycle": 180,
+      "operation": "nihang_frames",
+      "elapsed_seconds": 84.33974987501279,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c180-source",
+      "cycle": 180,
+      "operation": "nihang_patch",
+      "elapsed_seconds": 44.90634066704661,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c181-front",
+      "cycle": 181,
+      "operation": "nihang_frames",
+      "elapsed_seconds": 30.39193662488833,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c181-side",
+      "cycle": 181,
+      "operation": "nihang_frames",
+      "elapsed_seconds": 28.4228900000453,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c181-source",
+      "cycle": 181,
+      "operation": "nihang_patch",
+      "elapsed_seconds": 41.92196612479165,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c182-front",
+      "cycle": 182,
+      "operation": "nihang_frames",
+      "elapsed_seconds": 9.225473958067596,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c182-oblique",
+      "cycle": 182,
+      "operation": "nihang_frames",
+      "elapsed_seconds": 9.080195332877338,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c182-side",
+      "cycle": 182,
+      "operation": "nihang_frames",
+      "elapsed_seconds": 8.952662916854024,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c182-source",
+      "cycle": 182,
+      "operation": "nihang_patch",
+      "elapsed_seconds": 26.259208790957928,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c183-control",
+      "cycle": 183,
+      "operation": "nihang_patch",
+      "elapsed_seconds": 25.95421333378181,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c183-control_front",
+      "cycle": 183,
+      "operation": "nihang_frames",
+      "elapsed_seconds": 16.763411999680102,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c183-control_side",
+      "cycle": 183,
+      "operation": "nihang_frames",
+      "elapsed_seconds": 15.39935691608116,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c183-front",
+      "cycle": 183,
+      "operation": "nihang_frames",
+      "elapsed_seconds": 17.04974575014785,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c183-source",
+      "cycle": 183,
+      "operation": "nihang_patch",
+      "elapsed_seconds": 63.63870145799592,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c184-front",
+      "cycle": 184,
+      "operation": "nihang_frames",
+      "elapsed_seconds": 16.727904499974102,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c184-side",
+      "cycle": 184,
+      "operation": "nihang_frames",
+      "elapsed_seconds": 15.22984654083848,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c184-source",
+      "cycle": 184,
+      "operation": "nihang_patch",
+      "elapsed_seconds": 47.841157250106335,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c185-source",
+      "cycle": 185,
+      "operation": "nihang_patch",
+      "elapsed_seconds": 0.3309238748624921,
+      "exit_code": -11,
+      "ok": false
+    },
+    {
+      "id": "sikh386-appearance-c186-source",
+      "cycle": 186,
+      "operation": "nihang_patch",
+      "elapsed_seconds": 36.182792332954705,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c190-source",
+      "cycle": 190,
+      "operation": "nihang_patch",
+      "elapsed_seconds": 40.70889287488535,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c193-source",
+      "cycle": 193,
+      "operation": "nihang_patch",
+      "elapsed_seconds": 36.4414401659742,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c196-front",
+      "cycle": 196,
+      "operation": "nihang_frames",
+      "elapsed_seconds": 8.057119249831885,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c196-side",
+      "cycle": 196,
+      "operation": "nihang_frames",
+      "elapsed_seconds": 7.822216041851789,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c196-source",
+      "cycle": 196,
+      "operation": "nihang_patch",
+      "elapsed_seconds": 25.101520999800414,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c199-front",
+      "cycle": 199,
+      "operation": "nihang_frames",
+      "elapsed_seconds": 7.8471996248699725,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c199-side",
+      "cycle": 199,
+      "operation": "nihang_frames",
+      "elapsed_seconds": 7.699780208989978,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c199-source",
+      "cycle": 199,
+      "operation": "nihang_patch",
+      "elapsed_seconds": 24.76049591600895,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c203-front",
+      "cycle": 203,
+      "operation": "nihang_frames",
+      "elapsed_seconds": 8.11616133293137,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c203-side",
+      "cycle": 203,
+      "operation": "nihang_frames",
+      "elapsed_seconds": 7.7387913330458105,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c203-source",
+      "cycle": 203,
+      "operation": "nihang_patch",
+      "elapsed_seconds": 25.80750458408147,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c205-front",
+      "cycle": 205,
+      "operation": "nihang_frames",
+      "elapsed_seconds": 7.976125624962151,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c205-side",
+      "cycle": 205,
+      "operation": "nihang_frames",
+      "elapsed_seconds": 7.751214874908328,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c205-source",
+      "cycle": 205,
+      "operation": "nihang_patch",
+      "elapsed_seconds": 26.08501704176888,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c207-front",
+      "cycle": 207,
+      "operation": "nihang_frames",
+      "elapsed_seconds": 7.874185541179031,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c207-side",
+      "cycle": 207,
+      "operation": "nihang_frames",
+      "elapsed_seconds": 7.73076295806095,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c207-side_matrix",
+      "cycle": 207,
+      "operation": "nihang_frames",
+      "elapsed_seconds": 24.07707804115489,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c207-source",
+      "cycle": 207,
+      "operation": "nihang_patch",
+      "elapsed_seconds": 25.532620958052576,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c208-front",
+      "cycle": 208,
+      "operation": "nihang_frames",
+      "elapsed_seconds": 8.003675417043269,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c208-front_matrix",
+      "cycle": 208,
+      "operation": "nihang_frames",
+      "elapsed_seconds": 26.933812458999455,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c208-side",
+      "cycle": 208,
+      "operation": "nihang_frames",
+      "elapsed_seconds": 7.956223084125668,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c208-side_matrix",
+      "cycle": 208,
+      "operation": "nihang_frames",
+      "elapsed_seconds": 24.182017457671463,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c208-source",
+      "cycle": 208,
+      "operation": "nihang_patch",
+      "elapsed_seconds": 25.605933958198875,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c210-front",
+      "cycle": 210,
+      "operation": "nihang_frames",
+      "elapsed_seconds": 8.299874334130436,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c210-side",
+      "cycle": 210,
+      "operation": "nihang_frames",
+      "elapsed_seconds": 7.815189625136554,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c210-source",
+      "cycle": 210,
+      "operation": "nihang_patch",
+      "elapsed_seconds": 26.290499040856957,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c212-front",
+      "cycle": 212,
+      "operation": "nihang_frames",
+      "elapsed_seconds": 8.056688124779612,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c212-side",
+      "cycle": 212,
+      "operation": "nihang_frames",
+      "elapsed_seconds": 8.397474040742964,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c212-source",
+      "cycle": 212,
+      "operation": "nihang_patch",
+      "elapsed_seconds": 25.305987709201872,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c216-front",
+      "cycle": 216,
+      "operation": "nihang_frames",
+      "elapsed_seconds": 8.408837459050119,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c216-front_matrix",
+      "cycle": 216,
+      "operation": "nihang_frames",
+      "elapsed_seconds": 27.385226499754936,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c216-side",
+      "cycle": 216,
+      "operation": "nihang_frames",
+      "elapsed_seconds": 8.151020999997854,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c216-side_matrix",
+      "cycle": 216,
+      "operation": "nihang_frames",
+      "elapsed_seconds": 24.655921041034162,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c216-source",
+      "cycle": 216,
+      "operation": "nihang_patch",
+      "elapsed_seconds": 25.95721441693604,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c217-bind",
+      "cycle": 217,
+      "operation": "nihang_patch",
+      "elapsed_seconds": 35.827413249760866,
+      "exit_code": 7,
+      "ok": false
+    },
+    {
+      "id": "sikh386-appearance-c217-source",
+      "cycle": 217,
+      "operation": "nihang_patch",
+      "elapsed_seconds": 26.179881792049855,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c218-bind",
+      "cycle": 218,
+      "operation": "nihang_patch",
+      "elapsed_seconds": 53.61121666710824,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c218-source",
+      "cycle": 218,
+      "operation": "nihang_patch",
+      "elapsed_seconds": 27.155993457883596,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c219-bind",
+      "cycle": 219,
+      "operation": "nihang_patch",
+      "elapsed_seconds": 50.58011133270338,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c219-source",
+      "cycle": 219,
+      "operation": "nihang_patch",
+      "elapsed_seconds": 26.964129250030965,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c221-front_matrix",
+      "cycle": 221,
+      "operation": "nihang_frames",
+      "elapsed_seconds": 27.437095165718347,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c221-save",
+      "cycle": 221,
+      "operation": "nihang_save",
+      "elapsed_seconds": 3.6559097496792674,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c221-side_matrix",
+      "cycle": 221,
+      "operation": "nihang_frames",
+      "elapsed_seconds": 24.437968792393804,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c222-bind",
+      "cycle": 222,
+      "operation": "nihang_patch",
+      "elapsed_seconds": 16.73933720914647,
+      "exit_code": 7,
+      "ok": false
+    },
+    {
+      "id": "sikh386-appearance-c222-source",
+      "cycle": 222,
+      "operation": "nihang_patch",
+      "elapsed_seconds": 28.181659707799554,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c223-bind",
+      "cycle": 223,
+      "operation": "nihang_patch",
+      "elapsed_seconds": 31.32840650016442,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c223-side_matrix",
+      "cycle": 223,
+      "operation": "nihang_frames",
+      "elapsed_seconds": 31.250996209215373,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c223-source",
+      "cycle": 223,
+      "operation": "nihang_patch",
+      "elapsed_seconds": 28.465770999900997,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c224-bind",
+      "cycle": 224,
+      "operation": "nihang_patch",
+      "elapsed_seconds": 28.61904333299026,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c224-side_matrix",
+      "cycle": 224,
+      "operation": "nihang_frames",
+      "elapsed_seconds": 24.27905087498948,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c224-source",
+      "cycle": 224,
+      "operation": "nihang_patch",
+      "elapsed_seconds": 27.125017625279725,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c225-bind",
+      "cycle": 225,
+      "operation": "nihang_patch",
+      "elapsed_seconds": 31.83318654121831,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c225-side_matrix",
+      "cycle": 225,
+      "operation": "nihang_frames",
+      "elapsed_seconds": 24.42756791692227,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c225-source",
+      "cycle": 225,
+      "operation": "nihang_patch",
+      "elapsed_seconds": 27.31575904088095,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c226-bind",
+      "cycle": 226,
+      "operation": "nihang_patch",
+      "elapsed_seconds": 32.028530875220895,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c226-front_matrix",
+      "cycle": 226,
+      "operation": "nihang_frames",
+      "elapsed_seconds": 27.498547207564116,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c226-oblique_matrix",
+      "cycle": 226,
+      "operation": "nihang_frames",
+      "elapsed_seconds": 25.65038524987176,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c226-side_matrix",
+      "cycle": 226,
+      "operation": "nihang_frames",
+      "elapsed_seconds": 24.426708665676415,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c226-source",
+      "cycle": 226,
+      "operation": "nihang_patch",
+      "elapsed_seconds": 27.109491583891213,
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "id": "sikh386-appearance-c226-whole_matrix",
+      "cycle": 226,
+      "operation": "nihang_frames",
+      "elapsed_seconds": 25.814190415665507,
+      "exit_code": 0,
+      "ok": true
+    }
+  ]
+}

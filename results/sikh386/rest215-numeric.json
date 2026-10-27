@@ -1,0 +1,73 @@
+{
+  "iterations": [
+    {
+      "iteration": 0,
+      "accepted": true,
+      "alpha": 0.5,
+      "valid_correspondences": 1461,
+      "median_distance": 0.03279212540291075,
+      "crossings": 0,
+      "max_delta": 0.03309805153495976
+    },
+    {
+      "iteration": 1,
+      "accepted": true,
+      "alpha": 0.25,
+      "valid_correspondences": 1461,
+      "median_distance": 0.029853353081876935,
+      "crossings": 0,
+      "max_delta": 0.0462388452355067
+    },
+    {
+      "iteration": 2,
+      "accepted": true,
+      "alpha": 0.0625,
+      "valid_correspondences": 1461,
+      "median_distance": 0.02799980715162,
+      "crossings": 0,
+      "max_delta": 0.04928202068792258
+    },
+    {
+      "iteration": 3,
+      "accepted": true,
+      "alpha": 0.03125,
+      "valid_correspondences": 1461,
+      "median_distance": 0.027244563540856092,
+      "crossings": 0,
+      "max_delta": 0.050856429258023673
+    },
+    {
+      "iteration": 4,
+      "accepted": true,
+      "alpha": 0.0078125,
+      "valid_correspondences": 1461,
+      "median_distance": 0.026871730231336037,
+      "crossings": 0,
+      "max_delta": 0.051266798163797804
+    },
+    {
+      "iteration": 5,
+      "accepted": false,
+      "alpha": 0.0,
+      "valid_correspondences": 1461,
+      "median_distance": 0.026873826983730118,
+      "crossings": 0,
+      "max_delta": 0.051266798163797804
+    }
+  ],
+  "initial_crossings": 0,
+  "final_crossings": 0,
+  "new_crossings": 0,
+  "near_collapsed_faces": 0,
+  "protection": {
+    "policy": "pectoral_coupled_skin",
+    "protected_vertices": 1928,
+    "max_protected_delta": 0.0,
+    "proximal_vertices": 196,
+    "proximal_max_delta": 0.03649694100022316,
+    "proximal_limit": 0.15,
+    "scope": "Distal lower-leg surfaces exact; bounded necessary proximal skin reshaping only. Original skeletal action must remain unchanged. Not motion/anatomy approval."
+  },
+  "max_original_delta": 0.05126679688692093,
+  "scope": "Normal-aware ARAP/injectivity-guarded construction control. No artistic PASS from a valid embedding; actual native neutral/raised review and consumer/AV remain mandatory."
+}

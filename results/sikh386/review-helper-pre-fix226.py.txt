@@ -1,0 +1,14 @@
+"""Actual bind-handler integration checks, never an artistic review."""
+import json,sys
+from pathlib import Path
+from movie_factory import production_workflow as w,production_knowledge as p
+from movie_factory.native_admission import Bridge
+r=Path(__file__).resolve().parents[1];c=w.Controller(r,'.runtime/factory-entry.sqlite3');t='sikh335-supporting-appearance';cy=c.state(t)['cycle'];step=sys.argv[1]
+run=p.read_json(r,f'results/sikh386/appearance-c{cy}-{step}-run.json');a=p.read_json(r,f'.runtime/factory-native/sikh386-appearance-c{cy}-{step}/anatomy386-bind-preserve.json')
+assert a['neutral_error']<=.0001 and a['relative_corrective_error']<1e-6 and a['max_original_rest_delta']<=.18
+assert a['geometry_actions_other_objects_preserved'] and a['pose_preservation']['outside_surface_max_error']<=2e-5 and a['pose_preservation']['skeleton_and_world_max_error']<=1e-7
+assert all(x[1:] == [True,True] for x in a['original_armature_live'])
+defects=[f'frame{x["frame"]}: {x["after_crossings"]} affected cage crossings' for x in a['surface_diagnostics'] if x['after_crossings']]
+v=dict(verdict='FAIL' if defects else 'PASS',run_digest=p.digest(run),observation=f'Actual bounded bind-handler integration; strength{a["strength"]}, neutral max error{a["neutral_error"]:.8f}m, outside/skeleton/world preservation measured, relative keys/actions/exterior/raw retained. Zero control or numeric integration only, not anatomy/AV approval.',comparison='Actual source report/probe/inverse and pose preservation versus admitted source/control and guardrails. Intermediate weight report is not final output.',open_defects=defects,evidence=run['artifacts'],cycle_disposition=dict(category='art_rejected' if defects else 'causal_control_only',observation='Cage crossing veto; final appearance/high-res/nap/contact/AV remain unqualified.'),requirement_outcomes=dict(preservation=dict(status='PASS',observation='Actual selected invariants and neutral fit passed.'),evidence=dict(status='NOT_TESTED',observation='Technical source integration is not final anatomical or audiovisual evidence.')))
+Bridge(c).record_review(t,step,v);(r/f'results/sikh386/appearance-c{cy}-{step}-review.json').write_text(json.dumps(v,indent=2)+'\n');print(step,v['verdict'],'technical integration only')
+if defects:raise SystemExit(2)

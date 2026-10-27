@@ -1,0 +1,57 @@
+{
+  "vertices": 1461,
+  "registration": {
+    "x_scale": 0.84,
+    "y_scale": 0.82,
+    "y_offset": -0.22,
+    "z_scale": 0.95,
+    "z_offset": 0.07
+  },
+  "iterations": [
+    {
+      "strength": 0.5,
+      "median_distance": 0.03279212540291075,
+      "max_displacement": 0.13305613039937078
+    },
+    {
+      "strength": 2.0,
+      "median_distance": 0.005449380116359526,
+      "max_displacement": 0.14108801170024476
+    },
+    {
+      "strength": 8.0,
+      "median_distance": 0.0028968694833031443,
+      "max_displacement": 0.14675894793393238
+    },
+    {
+      "strength": 20.0,
+      "median_distance": 0.0015112850472917521,
+      "max_displacement": 0.14902129115885596
+    }
+  ],
+  "global_scale": 1.0,
+  "incremental_scale": 1.0,
+  "mean_guide_distance_before": 0.047841575690183935,
+  "mean_guide_distance_after": 0.0032078424117027277,
+  "cumulative": {
+    "policy": "pectoral_coupled_skin",
+    "protected_vertices": 1928,
+    "max_protected_delta": 0.0,
+    "proximal_vertices": 196,
+    "proximal_max_delta": 0.11594975562316721,
+    "proximal_limit": 0.15,
+    "scope": "Distal lower-leg surfaces exact; bounded necessary proximal skin reshaping only. Original skeletal action must remain unchanged. Not motion/anatomy approval."
+  },
+  "incremental": {
+    "policy": "pectoral_coupled_skin",
+    "protected_vertices": 1928,
+    "max_protected_delta": 0.0,
+    "proximal_vertices": 196,
+    "proximal_max_delta": 0.1377288826922501,
+    "proximal_limit": 0.15,
+    "scope": "Distal lower-leg surfaces exact; bounded necessary proximal skin reshaping only. Original skeletal action must remain unchanged. Not motion/anatomy approval."
+  },
+  "max_original_delta": 0.14902129115885598,
+  "max_incremental_delta": 0.17095073728992569,
+  "scope": "QualifiedCC0guide used for connected gross anatomy. Same vertex topology/rest/live rig and original action; no posed cache. Numeric fit is not natural anatomy or production approval; actual neutral/raised views required."
+}

@@ -1,0 +1,53 @@
+{
+  "error": "RETRO_PACKET_TOO_LARGE_RECONCILE_SCOPE",
+  "native_jobs": 0,
+  "cycle": 177,
+  "max": 226,
+  "pending_interventions": {
+    "sikh386-c177-form-response-admit": {
+      "key": "form",
+      "plan": "3aa47f5cdf120d7f85033e21f0847c7ea31ee003357c867b3d98bd08306356c6",
+      "response_event": "sikh386-c177-form-response",
+      "effect_required": true
+    },
+    "sikh386-c177-interfaces-response-admit": {
+      "key": "interfaces",
+      "plan": "3aa47f5cdf120d7f85033e21f0847c7ea31ee003357c867b3d98bd08306356c6",
+      "response_event": "sikh386-c177-interfaces-response",
+      "effect_required": true
+    },
+    "sikh386-c177-evidence-response-admit": {
+      "key": "evidence",
+      "plan": "3aa47f5cdf120d7f85033e21f0847c7ea31ee003357c867b3d98bd08306356c6",
+      "response_event": "sikh386-c177-evidence-response",
+      "effect_required": true
+    },
+    "sikh386-c177-whole_look-response-admit": {
+      "key": "whole_look",
+      "plan": "3aa47f5cdf120d7f85033e21f0847c7ea31ee003357c867b3d98bd08306356c6",
+      "response_event": "sikh386-c177-whole_look-response",
+      "effect_required": true
+    },
+    "sikh386-c177-director_form_motion-response-admit": {
+      "key": "director_form_motion",
+      "plan": "3aa47f5cdf120d7f85033e21f0847c7ea31ee003357c867b3d98bd08306356c6",
+      "response_event": "sikh386-c177-director_form_motion-response",
+      "effect_required": true
+    },
+    "sikh386-c177-__worker__-shared-response-admit": {
+      "key": "__worker__",
+      "plan": "3aa47f5cdf120d7f85033e21f0847c7ea31ee003357c867b3d98bd08306356c6",
+      "response_event": "sikh386-c177-__worker__-shared-response",
+      "effect_required": true
+    },
+    "sikh386-c177-__positive_forequarter_form__-shared-response-admit": {
+      "key": "__positive_forequarter_form__",
+      "plan": "3aa47f5cdf120d7f85033e21f0847c7ea31ee003357c867b3d98bd08306356c6",
+      "response_event": "sikh386-c177-__positive_forequarter_form__-shared-response",
+      "effect_required": true
+    }
+  },
+  "original_event_count": 2839,
+  "gate_count": 12,
+  "rationale": "Distinct requirement findings were given distinct descriptions of the same source-control prerequisite. Existing lossless whole-payload dedup needs one shared prerequisite body. Preserve per-key causes in bound table and all previous events; no art trial or target has run."
+}

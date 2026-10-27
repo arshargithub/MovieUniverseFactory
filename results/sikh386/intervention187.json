@@ -1,0 +1,35 @@
+{
+  "cycle": 187,
+  "diagnosis": "method",
+  "reference_reason": "Originalphysical/video/film rolesretainauthority;182qualifiedstatic3Dguide nowexplicitlyformalizedforlocalspatialtarget only. No newreferenceacquisition needed.",
+  "cause": "186 hard region-cut transformations created inverted cells. Whole-head fit at neck cut and discontinuous group labels are not the actual continuous source tissue motion.",
+  "uncertainty": "Cage connectivity/strain and soft attachments can still produce invalid or wrong anatomy. Numerical validity alone cannot settle the goal.",
+  "rationale": "Discriminate boundary formulation on the same rest/cage/source before new rest sculpt or another positional field.",
+  "preserve": "Exact accepted80action, head/hindquarters/distal limbs and all outside-mask vertices; no accepted master overwrite. UnitDconsumer boundary/skin/nap contact remains unqualified.",
+  "test": "Continuous24-neighbor source-affine cut tracking, neo-Hookean orientation barrier, actual339Jacobian/cut-residual/convergence guards then nativeproof in nextchargedcycle.",
+  "expected": "No inverted tissue and supported chest/root visible in actual nativeviews; no static or numeric artifact as production motion.",
+  "failure_response": "Inspect actual failure, evaluate each admitted intervention then revise scope/target/representation rather than tuning blindly.",
+  "scope_decision": "keep",
+  "scope_reason": "One necessary coupled chest/root deformation. Early339 proof narrows work without removing multi-pose unit exit criteria.",
+  "category": "representation",
+  "method_family": "continuous_cut_finite_strain_tissue",
+  "prediction": "Continuous observed cut motion removes conflicting rigid group targets; barrier prevents orientation loss while allowing tissue bending.",
+  "previous_result": "186 final339J[-3.97,22.42], rejected before render. Exactsource technicalsuccess retained, physicalform unqualified.",
+  "method": "186 actual numeric cell inversion rejects the hard regional cut model.187 retains raw cage/source and tests continuous locally tracked cut motion plus orientation-barrier finite strain. Analytic gradient, rigid tracking and inversion controls pass; actual solve remains NOT_RUN.",
+  "counterexample": "Soft source attachments can yield a numerically valid but anatomically unsupported mass, or displace tissue at the blend seam. Native339 front/side/opposite/whole remains a veto; optimizer success cannot pass anatomy.",
+  "keys": [
+    "form",
+    "interfaces",
+    "evidence",
+    "whole_look",
+    "director_form_motion",
+    "__positive_forequarter_form__",
+    "__forequarter_method__"
+  ],
+  "evidence_paths": [
+    "results/sikh386/STRATEGY187.md",
+    "results/sikh386/CYCLE186_CLOSEOUT.json",
+    "results/sikh386/volume186-numeric.json",
+    "results/sikh386/REQUEST.md"
+  ]
+}

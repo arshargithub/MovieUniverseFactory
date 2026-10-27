@@ -1,0 +1,9 @@
+{
+  "cycle": 177,
+  "native_status": "FAILED",
+  "cause": "New fixed386kinds missing from existing-horse owner preflight; generic mesh-creation branch rejected the legitimate existing horse.",
+  "worker_error": "PATCH_EXISTING_MESH",
+  "anatomy_tested": false,
+  "geometry_changed": false,
+  "fix": "Include both closed386operations in existing-horse preflight; test actual apply dispatch with a mocked bpyowner and fixed module loader before a new admitted cycle."
+}

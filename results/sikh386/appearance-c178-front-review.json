@@ -1,0 +1,47 @@
+{
+  "verdict": "FAIL",
+  "run_digest": "47e52ebc2da4aca6f95b1afb386f3eb2c2db397da3e365680050d49b550830f3",
+  "observation": "Original80source chest has a broad oval/shelf ending abruptly above the forelegs; in339side the underside projects forward with no believable pectoral-to-root continuation. Controls are usable, anatomy is rejected.",
+  "comparison": "Actual283/333/339front and side inspected against physical frontpectorals/studrear: real chest mass attaches and narrows into limbs; this source has a continuous artificial bib. No new candidate is being accepted.",
+  "open_defects": [
+    "Inherited chest shelf/bib and unsupported lower mass"
+  ],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh386-appearance-c178-front/snapshot.json",
+      "sha256": "ba184accc29855f40b1a1303cd6b71113abaed954b4a30c51f8851c6b9d79d85"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh386-appearance-c178-front/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh386-appearance-c178-front/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh386-appearance-c178-front/frame.png",
+      "sha256": "75badedbd97d1fa53382de8e75fdf269507e2b0e22e1d6c427e33c07352207b8"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh386-appearance-c178-front/frames.json",
+      "sha256": "b6f336b124fb7aa47c3c1f7999d4949aa1a6ed224997ec412688a767fdfece51"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh386-appearance-c178-front/frame.png",
+      "sha256": "75badedbd97d1fa53382de8e75fdf269507e2b0e22e1d6c427e33c07352207b8"
+    },
+    "frame_333": {
+      "path": ".runtime/factory-native/sikh386-appearance-c178-front/frame-0333.png",
+      "sha256": "c3ce9e415746ee379f4ca9080309e0e8876f64f10eca85213c2e14d32bdc0427"
+    },
+    "frame_339": {
+      "path": ".runtime/factory-native/sikh386-appearance-c178-front/frame-0339.png",
+      "sha256": "1b926569efb106cfc2189247ce422b6efbb8584a3339cef48ca364edbfe8713c"
+    }
+  },
+  "cycle_disposition": {
+    "category": "causal_control_only",
+    "observation": "Read-only control establishes actual negative form and framing; no anatomyPASS."
+  }
+}

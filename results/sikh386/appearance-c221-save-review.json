@@ -1,0 +1,29 @@
+{
+  "verdict": "PASS",
+  "run_digest": "e9f8e5f512d5272bcb665eaae691f205ee55525d90aad02f9a4771c8f9a1e4db",
+  "observation": "Exact selected snapshot and resolved dependencies unchanged across no-edit save; native returned. Source219known raisedcrossingFAIL remains. This technical control only permits internal diagnostic images, not anatomy adoption.",
+  "comparison": "Actual219postedit283snapshot/dependencies versus221no-edit save at283; structural219report retained.",
+  "open_defects": [],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh386-appearance-c221-save/snapshot.json",
+      "sha256": "ba184accc29855f40b1a1303cd6b71113abaed954b4a30c51f8851c6b9d79d85"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh386-appearance-c221-save/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh386-appearance-c221-save/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh386-appearance-c221-save/scene.blend",
+      "sha256": "4f9cb4bd2ed051d30b4df595013f0bcc9f16ecfb1a60dd522d5de71148cc0ad8"
+    }
+  },
+  "cycle_disposition": {
+    "category": "causal_control_only",
+    "observation": "Read-only transport/source control; no artistic verdict or reversal of219FAIL."
+  }
+}

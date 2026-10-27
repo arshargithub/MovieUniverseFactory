@@ -1,0 +1,40 @@
+{
+  "verdict": "FAIL",
+  "run_digest": "5e178b486aca4fb9c28e19753b1a050508d5a86f26dfc60adfc7beda4997a372",
+  "observation": "Actual199neutralFAIL: anteriorwall above breasttip is hollowed, while lowerbulb remains. Front has a pronounced cavity above the broadlobed bottomedge; side retains the forward/bottomprotuberance. The wholeforearm freeze makes the geodesicfield weak near the bulb-root and strong above it.",
+  "comparison": "Actual199front/side versus196/184andphysicalUMN/spatialguide. Boundstroke/surfacechecks valid, but positiveanatomyfails. No raised/fullfilm/AVproof.",
+  "open_defects": [
+    "Hollowed anteriorpectoralwall above retained bulb",
+    "Lowerbulb/root constrained by overbroad wholeforearm skin freeze"
+  ],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh386-appearance-c199-front/snapshot.json",
+      "sha256": "ba184accc29855f40b1a1303cd6b71113abaed954b4a30c51f8851c6b9d79d85"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh386-appearance-c199-front/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh386-appearance-c199-front/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh386-appearance-c199-front/frame.png",
+      "sha256": "185861a54e199a28efd1df5dc3b9b7c51d146a31efa677600be6be464984546a"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh386-appearance-c199-front/frames.json",
+      "sha256": "a22684f13d5842b7931fdaf3244db5af1da01c7a05e9fbfde549fef2a33de1e0"
+    },
+    "frame_283": {
+      "path": ".runtime/factory-native/sikh386-appearance-c199-front/frame.png",
+      "sha256": "185861a54e199a28efd1df5dc3b9b7c51d146a31efa677600be6be464984546a"
+    }
+  },
+  "cycle_disposition": {
+    "category": "art_rejected",
+    "observation": "Actual199neutralFAIL: anteriorwall above breasttip is hollowed, while lowerbulb remains. Front has a pronounced cavity above the broadlobed bottomedge; side retains the forward/bottomprotuberance. The wholeforearm freeze makes the geodesicfield weak near the bulb-root and strong above it."
+  }
+}

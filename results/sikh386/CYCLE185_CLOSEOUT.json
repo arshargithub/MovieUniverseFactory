@@ -1,0 +1,17 @@
+{
+  "cycle": 185,
+  "max": 226,
+  "disposition": "technical_failure",
+  "art_candidates": 0,
+  "observation": "Blender startup exited-11 in0.33s before worker status/scene open or exporter. No source or numeric target produced. Retain the actual return; retry via canonical bridge with controlled local OS permissions in next charged cycle.",
+  "evidence": [
+    {
+      "path": "results/sikh386/appearance-c185-source-run.json",
+      "sha256": "b1c53630d4eecdb9aae391986750d7e7ab64e519da5ee0aa8100278fb6977f23"
+    },
+    {
+      "path": ".runtime/factory-native/sikh386-appearance-c185-source/runner-status.json",
+      "sha256": "6804d7cf5fbf1f6d80b59630df795b333f7cbf4b9af2959dab2dc71cf18e2b1e"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "verdict": "PASS",
+  "run_digest": "d0e549fe05d128b02b6813173d9eae88f2b47db4286520a05181aae7d605f74c",
+  "observation": "Actualexact979vertexrawrecovery succeeded on original live rig; Basisrawerror0, relativecorrectives<3e-7, rawmesh/weights/actions/othergeometryunchanged. Claynormalcontrolalsoapplied.",
+  "comparison": "Actualboundsourcepreflight andnativeinvariants; coherentraw is not automaticallyanatomicalpositivegoal.",
+  "open_defects": [],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh386-appearance-c184-source/snapshot.json",
+      "sha256": "ba184accc29855f40b1a1303cd6b71113abaed954b4a30c51f8851c6b9d79d85"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh386-appearance-c184-source/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh386-appearance-c184-source/script-diagnostics.json",
+      "sha256": "4e1205462c9c8153ef4f4d15eba35ea263f6079e3b74341771bbb12e2f41f34c"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh386-appearance-c184-source/scene.blend",
+      "sha256": "4db02a96be38c4cbbf94f6e86c4576e3284cc73539c808f014ec36fbba2db87b"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh386-appearance-c184-source/patch-evidence.json",
+      "sha256": "afe4e81b90c43eedbe7f87a13b47acb9869e712ce5ec5dd4ff24d19ab5b65041"
+    }
+  },
+  "cycle_disposition": {
+    "category": "causal_control_only",
+    "observation": "Exactrecovery/normaltransportonly;actualformpending."
+  },
+  "requirement_outcomes": {
+    "preservation": {
+      "status": "PASS",
+      "observation": "Unchangedrawmesh/weights/actions/othergeometry; intended979Basisrestoreonly."
+    },
+    "evidence": {
+      "status": "NOT_TESTED",
+      "observation": "Actualrawbaselineviewspending."
+    }
+  }
+}

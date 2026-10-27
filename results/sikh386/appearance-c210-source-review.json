@@ -1,0 +1,43 @@
+{
+  "verdict": "PASS",
+  "run_digest": "dcf616850d7a308afc57d48301ed79b69d5c9ecd0f32d1644ba65098271c5e94",
+  "observation": "Actualclosedbounded_3d_formhandler appliedbounddata,saved/reopened;1442skinpointschanged<=0.09532m, allprotectedforeleg/non-skinpointsunchanged,raw/actions/othergeometry/relativekeyoffsetspreserved. Originalarmaturelive. Technicalintegration only.",
+  "comparison": "Actualhandler/source/rest/domain/relativekey/action/nativeinvariants versusadmitteddata. Anatomy/posedconsumer/fullspeedAVnotjudged.",
+  "open_defects": [],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh386-appearance-c210-source/snapshot.json",
+      "sha256": "ba184accc29855f40b1a1303cd6b71113abaed954b4a30c51f8851c6b9d79d85"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh386-appearance-c210-source/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh386-appearance-c210-source/script-diagnostics.json",
+      "sha256": "4e1205462c9c8153ef4f4d15eba35ea263f6079e3b74341771bbb12e2f41f34c"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh386-appearance-c210-source/scene.blend",
+      "sha256": "733b356c7d1b111cf28c3c84cac4d81ea876e0c512457fa8b065297ee3af083c"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh386-appearance-c210-source/patch-evidence.json",
+      "sha256": "519b5a055aabc3f756251dce7f530b9f436b97ebe45a22c78b38d650a39accbf"
+    }
+  },
+  "cycle_disposition": {
+    "category": "causal_control_only",
+    "observation": "Trustedrest/formhandlerintegrationonly; actualanatomicalviews remainNOT_RUN."
+  },
+  "requirement_outcomes": {
+    "preservation": {
+      "status": "PASS",
+      "observation": "Actualsemantic/rest/action/relativekey/othergeometryguardspassed; originalliverig."
+    },
+    "evidence": {
+      "status": "NOT_TESTED",
+      "observation": "Sourceapplication isnot anatomicalorAV evidence."
+    }
+  }
+}
