@@ -1,0 +1,31 @@
+{
+  "utc": "2026-10-27T19:53:11.324493+00:00",
+  "task": "sikh335-supporting-appearance",
+  "stage": "EXECUTING",
+  "cycle": 246,
+  "max_corrections": 251,
+  "remaining": 5,
+  "active_heavy_jobs": [],
+  "active_jobs": [],
+  "pending_effects": {},
+  "production_approved": false,
+  "director_model_decision": "PENDING_NOT_APPROVED",
+  "protected_master_receipt": "results/sikh387/PROTECTED_MASTERS_VERIFY246.json",
+  "knowledge_gate": {
+    "path": "results/sikh387/evidence-gate246.json",
+    "ready": false,
+    "reason": "Known artfailure/unrunintegratedobligations; decisionauditonly, no staleevidence waiver."
+  },
+  "local_commits": [
+    "72c8d1d",
+    "b9a3af9",
+    "a620c75",
+    "d8c1b67",
+    "2e0ade3"
+  ],
+  "remote_push_uploads_this_checkpoint": 0,
+  "remote_protection_reverified": false,
+  "native_binaries_committed_to_git": false,
+  "operating_state": "workended;Directorresponsewaitopen;experiment/episodeNOTclosed",
+  "usage_and_engineering_cost": "UNKNOWN"
+}

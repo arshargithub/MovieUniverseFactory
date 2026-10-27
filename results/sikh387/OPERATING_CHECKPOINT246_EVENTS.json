@@ -1,0 +1,63 @@
+[
+  {
+    "episode_id": "leader369",
+    "event_id": "sikh387-wait-end",
+    "event_type": "wait_ended",
+    "evidence_ref": null,
+    "experiment_id": "sikh335",
+    "phase": "anatomy",
+    "reason": "Director387 approved25 shared additional corrections",
+    "run_id": null,
+    "schema_version": "1.0",
+    "task_id": null,
+    "turn_id": null,
+    "utc": "2026-10-27T16:11:05.851965+00:00",
+    "wait_id": "sikh386-next-allowance"
+  },
+  {
+    "activity_id": "sikh387-work",
+    "episode_id": "leader369",
+    "event_id": "sikh387-work-start",
+    "event_type": "work_started",
+    "evidence_ref": null,
+    "experiment_id": "sikh335",
+    "phase": "anatomy",
+    "reason": null,
+    "run_id": null,
+    "schema_version": "1.0",
+    "scope": "Original horse structural compatibility and reconstruction proof",
+    "task_id": null,
+    "turn_id": null,
+    "utc": "2026-10-27T16:11:05.892528+00:00"
+  },
+  {
+    "activity_id": "sikh387-work",
+    "episode_id": "leader369",
+    "event_id": "sikh387-work-checkpoint246-end",
+    "event_type": "work_ended",
+    "evidence_ref": "results/sikh387/REASSESSMENT246.md",
+    "experiment_id": "sikh335",
+    "phase": "anatomy",
+    "reason": null,
+    "run_id": null,
+    "schema_version": "1.0",
+    "task_id": null,
+    "turn_id": null,
+    "utc": "2026-10-27T19:53:11.324493+00:00"
+  },
+  {
+    "episode_id": "leader369",
+    "event_id": "sikh387-model-decision246-wait-start",
+    "event_type": "wait_started",
+    "evidence_ref": "results/sikh387/PROPOSED_ESCALATION246.json",
+    "experiment_id": "sikh335",
+    "phase": "anatomy",
+    "reason": "director_response",
+    "run_id": null,
+    "schema_version": "1.0",
+    "task_id": null,
+    "turn_id": null,
+    "utc": "2026-10-27T19:53:11.324493+00:00",
+    "wait_id": "sikh387-model-decision246"
+  }
+]

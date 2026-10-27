@@ -1,0 +1,4980 @@
+{
+  "closed_episode_count": 0,
+  "consumption_per_outcome": {
+    "closed_episodes": {
+      "engineering_tokens": null,
+      "net_seconds": null
+    },
+    "closed_experiments": {
+      "engineering_tokens": null,
+      "net_seconds": null
+    },
+    "director_accepted_outputs": {
+      "engineering_tokens": null,
+      "net_seconds": null
+    },
+    "technically_successful_outputs": {
+      "engineering_tokens": null,
+      "net_seconds": null
+    }
+  },
+  "cost_scope": "Development investment; repeatable runtime cost remains in the campaign provider records.",
+  "engineering_usage": {
+    "account_allowance": {
+      "observations": [],
+      "scope": "account-wide; not experiment token attribution"
+    },
+    "actual_engineering_charge_usd": null,
+    "api_equivalent_estimate_usd": null,
+    "blocks": [],
+    "captured_tasks": [],
+    "category_coverage": {
+      "cache_write_input_tokens": {
+        "observed_blocks": 0,
+        "total_blocks": 0
+      },
+      "cached_input_tokens": {
+        "observed_blocks": 0,
+        "total_blocks": 0
+      },
+      "input_tokens": {
+        "observed_blocks": 0,
+        "total_blocks": 0
+      },
+      "output_tokens": {
+        "observed_blocks": 0,
+        "total_blocks": 0
+      },
+      "reasoning_output_tokens": {
+        "observed_blocks": 0,
+        "total_blocks": 0
+      },
+      "total_tokens": {
+        "observed_blocks": 0,
+        "total_blocks": 0
+      }
+    },
+    "exact_attributable_tokens": null,
+    "expected_tasks": [
+      "sikh335-continuous-performance",
+      "sikh335-supporting-appearance"
+    ],
+    "missing_tasks": [
+      "sikh335-continuous-performance",
+      "sikh335-supporting-appearance"
+    ],
+    "observed_tokens": {
+      "cache_write_input_tokens": null,
+      "cached_input_tokens": null,
+      "input_tokens": null,
+      "output_tokens": null,
+      "reasoning_output_tokens": null,
+      "total_tokens": null
+    },
+    "status": "UNKNOWN",
+    "subscription": {
+      "allocation_usd": null,
+      "treatment": "shared fixed overhead"
+    },
+    "token_definitions": {
+      "cache_write_input_tokens": "Retained as reported; not added to total.",
+      "cached_input_tokens": "Subset of input; do not add to total.",
+      "input_tokens": "Reported input total; cached input is a subset.",
+      "output_tokens": "Reported output total; reasoning output is a subset.",
+      "reasoning_output_tokens": "Subset of output; do not add to total.",
+      "total_tokens": "Reported total; input plus output, without subset double counting."
+    },
+    "uncertainties": [
+      "capture_completeness_not_established",
+      "missing_linked_tasks"
+    ],
+    "window_end": "2026-10-27T19:53:11.324493+00:00",
+    "window_start": "2026-10-22T23:03:54.941756+00:00"
+  },
+  "episodes": [
+    {
+      "assistant_active_union_seconds": 0,
+      "assistant_time_scope": "Recorded activity intervals only; not token generation time",
+      "calendar_elapsed_seconds": null,
+      "coverage_fraction": 1.0,
+      "disposition": null,
+      "episode_id": "appearance351",
+      "excluded_input_wait_seconds": null,
+      "human_review_seconds": null,
+      "jobs": [],
+      "lifecycle": "OPEN",
+      "native_job_wall_sum_seconds": 0,
+      "native_job_wall_union_seconds": null,
+      "native_jobs": [],
+      "net_elapsed_seconds": null,
+      "observed_excluded_input_wait_seconds": 0,
+      "operational_proxies": {},
+      "phase_net_seconds": null,
+      "uncertainties": [
+        "missing_or_duplicate_lifecycle_boundary"
+      ],
+      "unknown_gap_seconds": 0
+    },
+    {
+      "assistant_active_union_seconds": 0,
+      "assistant_time_scope": "Recorded activity intervals only; not token generation time",
+      "calendar_elapsed_seconds": null,
+      "coverage_fraction": 1.0,
+      "disposition": null,
+      "episode_id": "appearance352",
+      "excluded_input_wait_seconds": null,
+      "human_review_seconds": null,
+      "jobs": [],
+      "lifecycle": "OPEN",
+      "native_job_wall_sum_seconds": 0,
+      "native_job_wall_union_seconds": null,
+      "native_jobs": [],
+      "net_elapsed_seconds": null,
+      "observed_excluded_input_wait_seconds": 0,
+      "operational_proxies": {},
+      "phase_net_seconds": null,
+      "uncertainties": [
+        "missing_or_duplicate_lifecycle_boundary"
+      ],
+      "unknown_gap_seconds": 0
+    },
+    {
+      "assistant_active_union_seconds": 0,
+      "assistant_time_scope": "Recorded activity intervals only; not token generation time",
+      "calendar_elapsed_seconds": null,
+      "coverage_fraction": 1.0,
+      "disposition": null,
+      "episode_id": "leader353",
+      "excluded_input_wait_seconds": null,
+      "human_review_seconds": null,
+      "jobs": [],
+      "lifecycle": "OPEN",
+      "native_job_wall_sum_seconds": 0,
+      "native_job_wall_union_seconds": null,
+      "native_jobs": [],
+      "net_elapsed_seconds": null,
+      "observed_excluded_input_wait_seconds": 0,
+      "operational_proxies": {},
+      "phase_net_seconds": null,
+      "uncertainties": [
+        "missing_or_duplicate_lifecycle_boundary"
+      ],
+      "unknown_gap_seconds": 0
+    },
+    {
+      "assistant_active_union_seconds": 0,
+      "assistant_time_scope": "Recorded activity intervals only; not token generation time",
+      "calendar_elapsed_seconds": null,
+      "coverage_fraction": 1.0,
+      "disposition": null,
+      "episode_id": "leader354",
+      "excluded_input_wait_seconds": null,
+      "human_review_seconds": null,
+      "jobs": [],
+      "lifecycle": "OPEN",
+      "native_job_wall_sum_seconds": 0,
+      "native_job_wall_union_seconds": null,
+      "native_jobs": [],
+      "net_elapsed_seconds": null,
+      "observed_excluded_input_wait_seconds": 0,
+      "operational_proxies": {},
+      "phase_net_seconds": null,
+      "uncertainties": [
+        "missing_or_duplicate_lifecycle_boundary"
+      ],
+      "unknown_gap_seconds": 0
+    },
+    {
+      "assistant_active_union_seconds": 0,
+      "assistant_time_scope": "Recorded activity intervals only; not token generation time",
+      "calendar_elapsed_seconds": null,
+      "coverage_fraction": 1.0,
+      "disposition": null,
+      "episode_id": "leader357",
+      "excluded_input_wait_seconds": null,
+      "human_review_seconds": null,
+      "jobs": [],
+      "lifecycle": "OPEN",
+      "native_job_wall_sum_seconds": 0,
+      "native_job_wall_union_seconds": null,
+      "native_jobs": [],
+      "net_elapsed_seconds": null,
+      "observed_excluded_input_wait_seconds": 0,
+      "operational_proxies": {},
+      "phase_net_seconds": null,
+      "uncertainties": [
+        "missing_or_duplicate_lifecycle_boundary"
+      ],
+      "unknown_gap_seconds": 0
+    },
+    {
+      "assistant_active_union_seconds": 0,
+      "assistant_time_scope": "Recorded activity intervals only; not token generation time",
+      "calendar_elapsed_seconds": null,
+      "coverage_fraction": 1.0,
+      "disposition": null,
+      "episode_id": "leader358",
+      "excluded_input_wait_seconds": null,
+      "human_review_seconds": null,
+      "jobs": [],
+      "lifecycle": "OPEN",
+      "native_job_wall_sum_seconds": 0,
+      "native_job_wall_union_seconds": null,
+      "native_jobs": [],
+      "net_elapsed_seconds": null,
+      "observed_excluded_input_wait_seconds": 0,
+      "operational_proxies": {},
+      "phase_net_seconds": null,
+      "uncertainties": [
+        "missing_or_duplicate_lifecycle_boundary"
+      ],
+      "unknown_gap_seconds": 0
+    },
+    {
+      "assistant_active_union_seconds": 5914.620260000229,
+      "assistant_time_scope": "Recorded activity intervals only; not token generation time",
+      "calendar_elapsed_seconds": null,
+      "coverage_fraction": 0.954882391458332,
+      "disposition": null,
+      "episode_id": "leader361",
+      "excluded_input_wait_seconds": null,
+      "human_review_seconds": null,
+      "jobs": [],
+      "lifecycle": "OPEN",
+      "native_job_wall_sum_seconds": 0,
+      "native_job_wall_union_seconds": null,
+      "native_jobs": [],
+      "net_elapsed_seconds": null,
+      "observed_excluded_input_wait_seconds": 516.6146059036255,
+      "operational_proxies": {},
+      "phase_net_seconds": null,
+      "uncertainties": [
+        "missing_or_duplicate_lifecycle_boundary",
+        "unexplained_gap"
+      ],
+      "unknown_gap_seconds": 303.87191104888916
+    },
+    {
+      "assistant_active_union_seconds": 8803.288193941116,
+      "assistant_time_scope": "Recorded activity intervals only; not token generation time",
+      "calendar_elapsed_seconds": null,
+      "coverage_fraction": 0.9999903559804363,
+      "disposition": null,
+      "episode_id": "leader362",
+      "excluded_input_wait_seconds": null,
+      "human_review_seconds": null,
+      "jobs": [],
+      "lifecycle": "OPEN",
+      "native_job_wall_sum_seconds": 0,
+      "native_job_wall_union_seconds": null,
+      "native_jobs": [],
+      "net_elapsed_seconds": null,
+      "observed_excluded_input_wait_seconds": 0,
+      "operational_proxies": {},
+      "phase_net_seconds": null,
+      "uncertainties": [
+        "missing_or_duplicate_lifecycle_boundary",
+        "unexplained_gap"
+      ],
+      "unknown_gap_seconds": 0.08489990234375
+    },
+    {
+      "assistant_active_union_seconds": 12746.46255493164,
+      "assistant_time_scope": "Recorded activity intervals only; not token generation time",
+      "calendar_elapsed_seconds": null,
+      "coverage_fraction": 0.988156399170516,
+      "disposition": null,
+      "episode_id": "leader363",
+      "excluded_input_wait_seconds": null,
+      "human_review_seconds": null,
+      "jobs": [
+        {
+          "job_id": "sikh363-appearance101-audit",
+          "job_kind": "native",
+          "monotonic_seconds": 14.947755583096296,
+          "outcome": "PASSED",
+          "utc_seconds": 14.948026180267334
+        },
+        {
+          "job_id": "sikh363-appearance101-chest",
+          "job_kind": "native",
+          "monotonic_seconds": 111.67632124992087,
+          "outcome": "PASSED",
+          "utc_seconds": 111.67729997634888
+        },
+        {
+          "job_id": "sikh363-appearance101-chest-side",
+          "job_kind": "native",
+          "monotonic_seconds": 1.4945217091590166,
+          "outcome": "FAILED",
+          "utc_seconds": 1.4954030513763428
+        },
+        {
+          "job_id": "sikh363-appearance101-chest-side-admitted",
+          "job_kind": "native",
+          "monotonic_seconds": 100.9024484581314,
+          "outcome": "PASSED",
+          "utc_seconds": 100.90316390991211
+        },
+        {
+          "job_id": "sikh363-appearance101-right-hand",
+          "job_kind": "native",
+          "monotonic_seconds": 88.80300000030547,
+          "outcome": "PASSED",
+          "utc_seconds": 88.80399203300476
+        },
+        {
+          "job_id": "sikh363-appearance101-left-hand",
+          "job_kind": "native",
+          "monotonic_seconds": 96.92828812496737,
+          "outcome": "PASSED",
+          "utc_seconds": 96.92901301383972
+        },
+        {
+          "job_id": "sikh363-appearance103-save",
+          "job_kind": "native",
+          "monotonic_seconds": 243.11668229103088,
+          "outcome": "PASSED",
+          "utc_seconds": 243.1184368133545
+        },
+        {
+          "job_id": "sikh363-appearance103-right-hand",
+          "job_kind": "native",
+          "monotonic_seconds": 95.63508016616106,
+          "outcome": "PASSED",
+          "utc_seconds": 95.63581204414368
+        },
+        {
+          "job_id": "sikh363-appearance104-save",
+          "job_kind": "native",
+          "monotonic_seconds": 57.945139249786735,
+          "outcome": "PASSED",
+          "utc_seconds": 57.94560503959656
+        },
+        {
+          "job_id": "sikh363-appearance104-right-hand",
+          "job_kind": "native",
+          "monotonic_seconds": 65.92913216678426,
+          "outcome": "PASSED",
+          "utc_seconds": 65.93245601654053
+        },
+        {
+          "job_id": "sikh363-appearance-c105-save",
+          "job_kind": "native",
+          "monotonic_seconds": 38.89050849992782,
+          "outcome": "PASSED",
+          "utc_seconds": 38.89087200164795
+        },
+        {
+          "job_id": "sikh363-appearance-c105-right",
+          "job_kind": "native",
+          "monotonic_seconds": 56.615590958856046,
+          "outcome": "PASSED",
+          "utc_seconds": 56.616065979003906
+        },
+        {
+          "job_id": "sikh363-appearance-c105-chestside",
+          "job_kind": "native",
+          "monotonic_seconds": 1.2053432501852512,
+          "outcome": "FAILED",
+          "utc_seconds": 1.205495834350586
+        },
+        {
+          "job_id": "sikh363-appearance-c105-chestside-retry",
+          "job_kind": "native",
+          "monotonic_seconds": 55.739044750109315,
+          "outcome": "PASSED",
+          "utc_seconds": 55.73951005935669
+        },
+        {
+          "job_id": "sikh363-appearance-c106-save",
+          "job_kind": "native",
+          "monotonic_seconds": 39.5650431253016,
+          "outcome": "PASSED",
+          "utc_seconds": 39.56540489196777
+        },
+        {
+          "job_id": "sikh363-appearance-c106-righthand",
+          "job_kind": "native",
+          "monotonic_seconds": 66.46046645799652,
+          "outcome": "PASSED",
+          "utc_seconds": 66.46100902557373
+        },
+        {
+          "job_id": "sikh363-appearance-c106-chestside",
+          "job_kind": "native",
+          "monotonic_seconds": 70.69218283286318,
+          "outcome": "PASSED",
+          "utc_seconds": 70.69355416297913
+        },
+        {
+          "job_id": "sikh363-appearance-c106-chestfront",
+          "job_kind": "native",
+          "monotonic_seconds": 73.28962225001305,
+          "outcome": "PASSED",
+          "utc_seconds": 73.2904760837555
+        },
+        {
+          "job_id": "sikh363-appearance-c107-audit",
+          "job_kind": "native",
+          "monotonic_seconds": 0.029768750071525574,
+          "outcome": "FAILED",
+          "utc_seconds": 0.03000187873840332
+        },
+        {
+          "job_id": "sikh363-appearance-c107-audit-admitted",
+          "job_kind": "native",
+          "monotonic_seconds": 7.913411917164922,
+          "outcome": "PASSED",
+          "utc_seconds": 7.91375994682312
+        },
+        {
+          "job_id": "sikh363-appearance-c108-audit",
+          "job_kind": "native",
+          "monotonic_seconds": 7.988984208088368,
+          "outcome": "PASSED",
+          "utc_seconds": 7.989130973815918
+        },
+        {
+          "job_id": "sikh363-appearance-c109-save",
+          "job_kind": "native",
+          "monotonic_seconds": 38.339122167322785,
+          "outcome": "PASSED",
+          "utc_seconds": 38.339478969573975
+        },
+        {
+          "job_id": "sikh363-appearance-c109-right",
+          "job_kind": "native",
+          "monotonic_seconds": 55.0788976252079,
+          "outcome": "PASSED",
+          "utc_seconds": 55.07934808731079
+        },
+        {
+          "job_id": "sikh363-appearance-c110-save",
+          "job_kind": "native",
+          "monotonic_seconds": 53.192867499776185,
+          "outcome": "PASSED",
+          "utc_seconds": 53.1933331489563
+        },
+        {
+          "job_id": "sikh363-appearance-c110-right",
+          "job_kind": "native",
+          "monotonic_seconds": 70.36213108384982,
+          "outcome": "PASSED",
+          "utc_seconds": 70.36268901824951
+        },
+        {
+          "job_id": "sikh363-motion-c30-save",
+          "job_kind": "native",
+          "monotonic_seconds": 36.90628912486136,
+          "outcome": "FAILED",
+          "utc_seconds": 36.90665102005005
+        },
+        {
+          "job_id": "sikh363-motion-c31-save",
+          "job_kind": "native",
+          "monotonic_seconds": 58.684498709160835,
+          "outcome": "PASSED",
+          "utc_seconds": 58.684983015060425
+        },
+        {
+          "job_id": "sikh363-motion-c31-phases",
+          "job_kind": "native",
+          "monotonic_seconds": 339.5254232920706,
+          "outcome": "PASSED",
+          "utc_seconds": 339.52695989608765
+        },
+        {
+          "job_id": "sikh363-motion-c32-audit",
+          "job_kind": "native",
+          "monotonic_seconds": 12.79313808400184,
+          "outcome": "PASSED",
+          "utc_seconds": 12.793326139450073
+        },
+        {
+          "job_id": "sikh363-motion-c33-save",
+          "job_kind": "native",
+          "monotonic_seconds": 89.75457875011489,
+          "outcome": "FAILED",
+          "utc_seconds": 89.7552330493927
+        },
+        {
+          "job_id": "sikh363-motion-c34-save",
+          "job_kind": "native",
+          "monotonic_seconds": 29.818671417422593,
+          "outcome": "FAILED",
+          "utc_seconds": 29.818912982940674
+        },
+        {
+          "job_id": "sikh363-motion-c35-audit",
+          "job_kind": "native",
+          "monotonic_seconds": 15.913950665853918,
+          "outcome": "PASSED",
+          "utc_seconds": 15.914226055145264
+        },
+        {
+          "job_id": "sikh363-motion-c36-audit",
+          "job_kind": "native",
+          "monotonic_seconds": 13.802422750275582,
+          "outcome": "PASSED",
+          "utc_seconds": 13.802608013153076
+        },
+        {
+          "job_id": "sikh363-motion-c37-save",
+          "job_kind": "native",
+          "monotonic_seconds": 65.54220083309337,
+          "outcome": "FAILED",
+          "utc_seconds": 65.54298090934753
+        },
+        {
+          "job_id": "sikh363-motion-c38-save",
+          "job_kind": "native",
+          "monotonic_seconds": 73.76052495837212,
+          "outcome": "FAILED",
+          "utc_seconds": 73.7610878944397
+        },
+        {
+          "job_id": "sikh363-motion-c39-save",
+          "job_kind": "native",
+          "monotonic_seconds": 87.93481329223141,
+          "outcome": "FAILED",
+          "utc_seconds": 87.935378074646
+        },
+        {
+          "job_id": "sikh363-motion-c40-save",
+          "job_kind": "native",
+          "monotonic_seconds": 192.25122283399105,
+          "outcome": "PASSED",
+          "utc_seconds": 192.25246500968933
+        },
+        {
+          "job_id": "sikh363-motion-c40-phases",
+          "job_kind": "native",
+          "monotonic_seconds": 194.49102345807478,
+          "outcome": "PASSED",
+          "utc_seconds": 194.49311304092407
+        },
+        {
+          "job_id": "sikh363-appearance-c111-flag",
+          "job_kind": "native",
+          "monotonic_seconds": 38.09503245912492,
+          "outcome": "FAILED",
+          "utc_seconds": 38.095402002334595
+        },
+        {
+          "job_id": "sikh363-appearance-c112-chest",
+          "job_kind": "native",
+          "monotonic_seconds": 11.436045417096466,
+          "outcome": "PASSED",
+          "utc_seconds": 11.436213970184326
+        },
+        {
+          "job_id": "sikh363-appearance-c112-chestfront",
+          "job_kind": "native",
+          "monotonic_seconds": 83.83931045886129,
+          "outcome": "PASSED",
+          "utc_seconds": 83.8399920463562
+        },
+        {
+          "job_id": "sikh363-appearance-c113-flag",
+          "job_kind": "native",
+          "monotonic_seconds": 30.75771345803514,
+          "outcome": "FAILED",
+          "utc_seconds": 30.75796890258789
+        },
+        {
+          "job_id": "sikh363-a113-chest-save",
+          "job_kind": "native",
+          "monotonic_seconds": 7.655689707957208,
+          "outcome": "PASSED",
+          "utc_seconds": 7.655826091766357
+        },
+        {
+          "job_id": "sikh363-a113-chest-front",
+          "job_kind": "native",
+          "monotonic_seconds": 56.53453079238534,
+          "outcome": "PASSED",
+          "utc_seconds": 56.53497505187988
+        },
+        {
+          "job_id": "sikh363-a113-chest-side",
+          "job_kind": "native",
+          "monotonic_seconds": 60.38668879214674,
+          "outcome": "PASSED",
+          "utc_seconds": 60.38791108131409
+        },
+        {
+          "job_id": "sikh363-a114-flag-save",
+          "job_kind": "native",
+          "monotonic_seconds": 31.144539167173207,
+          "outcome": "FAILED",
+          "utc_seconds": 31.144824028015137
+        },
+        {
+          "job_id": "sikh363-a115-flag-controls",
+          "job_kind": "native",
+          "monotonic_seconds": 0.029863125178962946,
+          "outcome": "FAILED",
+          "utc_seconds": 0.02996087074279785
+        },
+        {
+          "job_id": "sikh363-a115-flag-controls-admitted",
+          "job_kind": "native",
+          "monotonic_seconds": 76.95672541717067,
+          "outcome": "PASSED",
+          "utc_seconds": 76.9573130607605
+        },
+        {
+          "job_id": "sikh363-a116-flag-controls",
+          "job_kind": "native",
+          "monotonic_seconds": 54.745168457739055,
+          "outcome": "PASSED",
+          "utc_seconds": 54.745604038238525
+        },
+        {
+          "job_id": "sikh363-a117-flag-save",
+          "job_kind": "native",
+          "monotonic_seconds": 24.94238525023684,
+          "outcome": "FAILED",
+          "utc_seconds": 24.942685842514038
+        },
+        {
+          "job_id": "sikh363-m41-save",
+          "job_kind": "native",
+          "monotonic_seconds": 152.91087391693145,
+          "outcome": "PASSED",
+          "utc_seconds": 152.91190814971924
+        },
+        {
+          "job_id": "sikh363-m41-final-cloth",
+          "job_kind": "native",
+          "monotonic_seconds": 28.737387500237674,
+          "outcome": "FAILED",
+          "utc_seconds": 28.737656116485596
+        },
+        {
+          "job_id": "sikh363-m41-right-hand",
+          "job_kind": "native",
+          "monotonic_seconds": 138.0839964589104,
+          "outcome": "PASSED",
+          "utc_seconds": 138.08496594429016
+        },
+        {
+          "job_id": "sikh363-m41-phases",
+          "job_kind": "native",
+          "monotonic_seconds": 293.97141512529925,
+          "outcome": "PASSED",
+          "utc_seconds": 293.97384786605835
+        },
+        {
+          "job_id": "sikh364-a118-flag-controls",
+          "job_kind": "native",
+          "monotonic_seconds": 68.89811399998143,
+          "outcome": "PASSED",
+          "utc_seconds": 68.89868092536926
+        },
+        {
+          "job_id": "sikh364-a119-flag-controls",
+          "job_kind": "native",
+          "monotonic_seconds": 69.55681945802644,
+          "outcome": "PASSED",
+          "utc_seconds": 69.55738496780396
+        },
+        {
+          "job_id": "sikh364-a120-flag-controls",
+          "job_kind": "native",
+          "monotonic_seconds": 99.59640233265236,
+          "outcome": "PASSED",
+          "utc_seconds": 99.59715700149536
+        },
+        {
+          "job_id": "sikh364-a121-flag-save",
+          "job_kind": "native",
+          "monotonic_seconds": 44.398810542188585,
+          "outcome": "PASSED",
+          "utc_seconds": 44.399211168289185
+        },
+        {
+          "job_id": "sikh364-a121-flag-detail",
+          "job_kind": "native",
+          "monotonic_seconds": 119.37436791695654,
+          "outcome": "PASSED",
+          "utc_seconds": 119.37524080276489
+        },
+        {
+          "job_id": "sikh364-a121-flag-reverse",
+          "job_kind": "native",
+          "monotonic_seconds": 49.63965387502685,
+          "outcome": "PASSED",
+          "utc_seconds": 49.640758991241455
+        },
+        {
+          "job_id": "sikh364-a121-flag-production",
+          "job_kind": "native",
+          "monotonic_seconds": 169.22713879169896,
+          "outcome": "PASSED",
+          "utc_seconds": 169.22828197479248
+        },
+        {
+          "job_id": "sikh364-m42-save",
+          "job_kind": "native",
+          "monotonic_seconds": 6.569920958019793,
+          "outcome": "PASSED",
+          "utc_seconds": 6.570055961608887
+        },
+        {
+          "job_id": "sikh364-m42-repeat",
+          "job_kind": "native",
+          "monotonic_seconds": 41.37004441721365,
+          "outcome": "PASSED",
+          "utc_seconds": 41.37039017677307
+        },
+        {
+          "job_id": "sikh364-m42-frames01",
+          "job_kind": "native",
+          "monotonic_seconds": 343.12619645893574,
+          "outcome": "PASSED",
+          "utc_seconds": 343.1288011074066
+        },
+        {
+          "job_id": "sikh364-m42-frames02",
+          "job_kind": "native",
+          "monotonic_seconds": 348.8575265831314,
+          "outcome": "PASSED",
+          "utc_seconds": 348.8600161075592
+        },
+        {
+          "job_id": "sikh364-m42-frames03",
+          "job_kind": "native",
+          "monotonic_seconds": 411.1925797499716,
+          "outcome": "PASSED",
+          "utc_seconds": 411.1954550743103
+        },
+        {
+          "job_id": "sikh364-m42-frames04",
+          "job_kind": "native",
+          "monotonic_seconds": 446.02544833300635,
+          "outcome": "PASSED",
+          "utc_seconds": 446.02670979499817
+        },
+        {
+          "job_id": "sikh364-m42-frames05",
+          "job_kind": "native",
+          "monotonic_seconds": 312.3270837496966,
+          "outcome": "PASSED",
+          "utc_seconds": 312.33096718788147
+        },
+        {
+          "job_id": "sikh364-m42-frames06",
+          "job_kind": "native",
+          "monotonic_seconds": 340.58600737480447,
+          "outcome": "PASSED",
+          "utc_seconds": 340.5882580280304
+        },
+        {
+          "job_id": "sikh364-m42-frames07",
+          "job_kind": "native",
+          "monotonic_seconds": 351.5569397499785,
+          "outcome": "PASSED",
+          "utc_seconds": 351.559378862381
+        },
+        {
+          "job_id": "sikh364-m42-frames08",
+          "job_kind": "native",
+          "monotonic_seconds": 377.30759820807725,
+          "outcome": "PASSED",
+          "utc_seconds": 377.3103241920471
+        },
+        {
+          "job_id": "sikh364-m42-frames09",
+          "job_kind": "native",
+          "monotonic_seconds": 337.81477025011554,
+          "outcome": "PASSED",
+          "utc_seconds": 337.8166010379791
+        },
+        {
+          "job_id": "sikh364-m42-frames10",
+          "job_kind": "native",
+          "monotonic_seconds": 351.6459535830654,
+          "outcome": "PASSED",
+          "utc_seconds": 351.64852714538574
+        },
+        {
+          "job_id": "sikh364-m42-frames11",
+          "job_kind": "native",
+          "monotonic_seconds": 401.0989687908441,
+          "outcome": "PASSED",
+          "utc_seconds": 401.10174584388733
+        },
+        {
+          "job_id": "sikh364-m42-frames12",
+          "job_kind": "native",
+          "monotonic_seconds": 444.1537268329412,
+          "outcome": "PASSED",
+          "utc_seconds": 444.1561920642853
+        },
+        {
+          "job_id": "sikh364-m42-frames13",
+          "job_kind": "native",
+          "monotonic_seconds": 418.74477874999866,
+          "outcome": "PASSED",
+          "utc_seconds": 418.74776101112366
+        },
+        {
+          "job_id": "sikh364-m42-frames14",
+          "job_kind": "native",
+          "monotonic_seconds": 372.9051012499258,
+          "outcome": "PASSED",
+          "utc_seconds": 372.9078629016876
+        },
+        {
+          "job_id": "sikh364-m42-frames15",
+          "job_kind": "native",
+          "monotonic_seconds": 324.9483093749732,
+          "outcome": "PASSED",
+          "utc_seconds": 324.9505500793457
+        },
+        {
+          "job_id": "sikh364-m42-frames16",
+          "job_kind": "native",
+          "monotonic_seconds": 91.96639891667292,
+          "outcome": "PASSED",
+          "utc_seconds": 91.9673490524292
+        },
+        {
+          "job_id": "sikh364-a123-save",
+          "job_kind": "native",
+          "monotonic_seconds": 12.717714000027627,
+          "outcome": "PASSED",
+          "utc_seconds": 12.717888116836548
+        },
+        {
+          "job_id": "sikh364-a123-rig",
+          "job_kind": "native",
+          "monotonic_seconds": 9.344444625079632,
+          "outcome": "PASSED",
+          "utc_seconds": 9.344672918319702
+        },
+        {
+          "job_id": "sikh364-a123-reverse",
+          "job_kind": "native",
+          "monotonic_seconds": 166.85816724970937,
+          "outcome": "PASSED",
+          "utc_seconds": 166.85779190063477
+        }
+      ],
+      "lifecycle": "OPEN",
+      "native_job_wall_sum_seconds": 10345.956464172807,
+      "native_job_wall_union_seconds": null,
+      "native_jobs": [
+        {
+          "job_id": "sikh363-appearance101-audit",
+          "job_kind": "native",
+          "monotonic_seconds": 14.947755583096296,
+          "outcome": "PASSED",
+          "utc_seconds": 14.948026180267334
+        },
+        {
+          "job_id": "sikh363-appearance101-chest",
+          "job_kind": "native",
+          "monotonic_seconds": 111.67632124992087,
+          "outcome": "PASSED",
+          "utc_seconds": 111.67729997634888
+        },
+        {
+          "job_id": "sikh363-appearance101-chest-side",
+          "job_kind": "native",
+          "monotonic_seconds": 1.4945217091590166,
+          "outcome": "FAILED",
+          "utc_seconds": 1.4954030513763428
+        },
+        {
+          "job_id": "sikh363-appearance101-chest-side-admitted",
+          "job_kind": "native",
+          "monotonic_seconds": 100.9024484581314,
+          "outcome": "PASSED",
+          "utc_seconds": 100.90316390991211
+        },
+        {
+          "job_id": "sikh363-appearance101-right-hand",
+          "job_kind": "native",
+          "monotonic_seconds": 88.80300000030547,
+          "outcome": "PASSED",
+          "utc_seconds": 88.80399203300476
+        },
+        {
+          "job_id": "sikh363-appearance101-left-hand",
+          "job_kind": "native",
+          "monotonic_seconds": 96.92828812496737,
+          "outcome": "PASSED",
+          "utc_seconds": 96.92901301383972
+        },
+        {
+          "job_id": "sikh363-appearance103-save",
+          "job_kind": "native",
+          "monotonic_seconds": 243.11668229103088,
+          "outcome": "PASSED",
+          "utc_seconds": 243.1184368133545
+        },
+        {
+          "job_id": "sikh363-appearance103-right-hand",
+          "job_kind": "native",
+          "monotonic_seconds": 95.63508016616106,
+          "outcome": "PASSED",
+          "utc_seconds": 95.63581204414368
+        },
+        {
+          "job_id": "sikh363-appearance104-save",
+          "job_kind": "native",
+          "monotonic_seconds": 57.945139249786735,
+          "outcome": "PASSED",
+          "utc_seconds": 57.94560503959656
+        },
+        {
+          "job_id": "sikh363-appearance104-right-hand",
+          "job_kind": "native",
+          "monotonic_seconds": 65.92913216678426,
+          "outcome": "PASSED",
+          "utc_seconds": 65.93245601654053
+        },
+        {
+          "job_id": "sikh363-appearance-c105-save",
+          "job_kind": "native",
+          "monotonic_seconds": 38.89050849992782,
+          "outcome": "PASSED",
+          "utc_seconds": 38.89087200164795
+        },
+        {
+          "job_id": "sikh363-appearance-c105-right",
+          "job_kind": "native",
+          "monotonic_seconds": 56.615590958856046,
+          "outcome": "PASSED",
+          "utc_seconds": 56.616065979003906
+        },
+        {
+          "job_id": "sikh363-appearance-c105-chestside",
+          "job_kind": "native",
+          "monotonic_seconds": 1.2053432501852512,
+          "outcome": "FAILED",
+          "utc_seconds": 1.205495834350586
+        },
+        {
+          "job_id": "sikh363-appearance-c105-chestside-retry",
+          "job_kind": "native",
+          "monotonic_seconds": 55.739044750109315,
+          "outcome": "PASSED",
+          "utc_seconds": 55.73951005935669
+        },
+        {
+          "job_id": "sikh363-appearance-c106-save",
+          "job_kind": "native",
+          "monotonic_seconds": 39.5650431253016,
+          "outcome": "PASSED",
+          "utc_seconds": 39.56540489196777
+        },
+        {
+          "job_id": "sikh363-appearance-c106-righthand",
+          "job_kind": "native",
+          "monotonic_seconds": 66.46046645799652,
+          "outcome": "PASSED",
+          "utc_seconds": 66.46100902557373
+        },
+        {
+          "job_id": "sikh363-appearance-c106-chestside",
+          "job_kind": "native",
+          "monotonic_seconds": 70.69218283286318,
+          "outcome": "PASSED",
+          "utc_seconds": 70.69355416297913
+        },
+        {
+          "job_id": "sikh363-appearance-c106-chestfront",
+          "job_kind": "native",
+          "monotonic_seconds": 73.28962225001305,
+          "outcome": "PASSED",
+          "utc_seconds": 73.2904760837555
+        },
+        {
+          "job_id": "sikh363-appearance-c107-audit",
+          "job_kind": "native",
+          "monotonic_seconds": 0.029768750071525574,
+          "outcome": "FAILED",
+          "utc_seconds": 0.03000187873840332
+        },
+        {
+          "job_id": "sikh363-appearance-c107-audit-admitted",
+          "job_kind": "native",
+          "monotonic_seconds": 7.913411917164922,
+          "outcome": "PASSED",
+          "utc_seconds": 7.91375994682312
+        },
+        {
+          "job_id": "sikh363-appearance-c108-audit",
+          "job_kind": "native",
+          "monotonic_seconds": 7.988984208088368,
+          "outcome": "PASSED",
+          "utc_seconds": 7.989130973815918
+        },
+        {
+          "job_id": "sikh363-appearance-c109-save",
+          "job_kind": "native",
+          "monotonic_seconds": 38.339122167322785,
+          "outcome": "PASSED",
+          "utc_seconds": 38.339478969573975
+        },
+        {
+          "job_id": "sikh363-appearance-c109-right",
+          "job_kind": "native",
+          "monotonic_seconds": 55.0788976252079,
+          "outcome": "PASSED",
+          "utc_seconds": 55.07934808731079
+        },
+        {
+          "job_id": "sikh363-appearance-c110-save",
+          "job_kind": "native",
+          "monotonic_seconds": 53.192867499776185,
+          "outcome": "PASSED",
+          "utc_seconds": 53.1933331489563
+        },
+        {
+          "job_id": "sikh363-appearance-c110-right",
+          "job_kind": "native",
+          "monotonic_seconds": 70.36213108384982,
+          "outcome": "PASSED",
+          "utc_seconds": 70.36268901824951
+        },
+        {
+          "job_id": "sikh363-motion-c30-save",
+          "job_kind": "native",
+          "monotonic_seconds": 36.90628912486136,
+          "outcome": "FAILED",
+          "utc_seconds": 36.90665102005005
+        },
+        {
+          "job_id": "sikh363-motion-c31-save",
+          "job_kind": "native",
+          "monotonic_seconds": 58.684498709160835,
+          "outcome": "PASSED",
+          "utc_seconds": 58.684983015060425
+        },
+        {
+          "job_id": "sikh363-motion-c31-phases",
+          "job_kind": "native",
+          "monotonic_seconds": 339.5254232920706,
+          "outcome": "PASSED",
+          "utc_seconds": 339.52695989608765
+        },
+        {
+          "job_id": "sikh363-motion-c32-audit",
+          "job_kind": "native",
+          "monotonic_seconds": 12.79313808400184,
+          "outcome": "PASSED",
+          "utc_seconds": 12.793326139450073
+        },
+        {
+          "job_id": "sikh363-motion-c33-save",
+          "job_kind": "native",
+          "monotonic_seconds": 89.75457875011489,
+          "outcome": "FAILED",
+          "utc_seconds": 89.7552330493927
+        },
+        {
+          "job_id": "sikh363-motion-c34-save",
+          "job_kind": "native",
+          "monotonic_seconds": 29.818671417422593,
+          "outcome": "FAILED",
+          "utc_seconds": 29.818912982940674
+        },
+        {
+          "job_id": "sikh363-motion-c35-audit",
+          "job_kind": "native",
+          "monotonic_seconds": 15.913950665853918,
+          "outcome": "PASSED",
+          "utc_seconds": 15.914226055145264
+        },
+        {
+          "job_id": "sikh363-motion-c36-audit",
+          "job_kind": "native",
+          "monotonic_seconds": 13.802422750275582,
+          "outcome": "PASSED",
+          "utc_seconds": 13.802608013153076
+        },
+        {
+          "job_id": "sikh363-motion-c37-save",
+          "job_kind": "native",
+          "monotonic_seconds": 65.54220083309337,
+          "outcome": "FAILED",
+          "utc_seconds": 65.54298090934753
+        },
+        {
+          "job_id": "sikh363-motion-c38-save",
+          "job_kind": "native",
+          "monotonic_seconds": 73.76052495837212,
+          "outcome": "FAILED",
+          "utc_seconds": 73.7610878944397
+        },
+        {
+          "job_id": "sikh363-motion-c39-save",
+          "job_kind": "native",
+          "monotonic_seconds": 87.93481329223141,
+          "outcome": "FAILED",
+          "utc_seconds": 87.935378074646
+        },
+        {
+          "job_id": "sikh363-motion-c40-save",
+          "job_kind": "native",
+          "monotonic_seconds": 192.25122283399105,
+          "outcome": "PASSED",
+          "utc_seconds": 192.25246500968933
+        },
+        {
+          "job_id": "sikh363-motion-c40-phases",
+          "job_kind": "native",
+          "monotonic_seconds": 194.49102345807478,
+          "outcome": "PASSED",
+          "utc_seconds": 194.49311304092407
+        },
+        {
+          "job_id": "sikh363-appearance-c111-flag",
+          "job_kind": "native",
+          "monotonic_seconds": 38.09503245912492,
+          "outcome": "FAILED",
+          "utc_seconds": 38.095402002334595
+        },
+        {
+          "job_id": "sikh363-appearance-c112-chest",
+          "job_kind": "native",
+          "monotonic_seconds": 11.436045417096466,
+          "outcome": "PASSED",
+          "utc_seconds": 11.436213970184326
+        },
+        {
+          "job_id": "sikh363-appearance-c112-chestfront",
+          "job_kind": "native",
+          "monotonic_seconds": 83.83931045886129,
+          "outcome": "PASSED",
+          "utc_seconds": 83.8399920463562
+        },
+        {
+          "job_id": "sikh363-appearance-c113-flag",
+          "job_kind": "native",
+          "monotonic_seconds": 30.75771345803514,
+          "outcome": "FAILED",
+          "utc_seconds": 30.75796890258789
+        },
+        {
+          "job_id": "sikh363-a113-chest-save",
+          "job_kind": "native",
+          "monotonic_seconds": 7.655689707957208,
+          "outcome": "PASSED",
+          "utc_seconds": 7.655826091766357
+        },
+        {
+          "job_id": "sikh363-a113-chest-front",
+          "job_kind": "native",
+          "monotonic_seconds": 56.53453079238534,
+          "outcome": "PASSED",
+          "utc_seconds": 56.53497505187988
+        },
+        {
+          "job_id": "sikh363-a113-chest-side",
+          "job_kind": "native",
+          "monotonic_seconds": 60.38668879214674,
+          "outcome": "PASSED",
+          "utc_seconds": 60.38791108131409
+        },
+        {
+          "job_id": "sikh363-a114-flag-save",
+          "job_kind": "native",
+          "monotonic_seconds": 31.144539167173207,
+          "outcome": "FAILED",
+          "utc_seconds": 31.144824028015137
+        },
+        {
+          "job_id": "sikh363-a115-flag-controls",
+          "job_kind": "native",
+          "monotonic_seconds": 0.029863125178962946,
+          "outcome": "FAILED",
+          "utc_seconds": 0.02996087074279785
+        },
+        {
+          "job_id": "sikh363-a115-flag-controls-admitted",
+          "job_kind": "native",
+          "monotonic_seconds": 76.95672541717067,
+          "outcome": "PASSED",
+          "utc_seconds": 76.9573130607605
+        },
+        {
+          "job_id": "sikh363-a116-flag-controls",
+          "job_kind": "native",
+          "monotonic_seconds": 54.745168457739055,
+          "outcome": "PASSED",
+          "utc_seconds": 54.745604038238525
+        },
+        {
+          "job_id": "sikh363-a117-flag-save",
+          "job_kind": "native",
+          "monotonic_seconds": 24.94238525023684,
+          "outcome": "FAILED",
+          "utc_seconds": 24.942685842514038
+        },
+        {
+          "job_id": "sikh363-m41-save",
+          "job_kind": "native",
+          "monotonic_seconds": 152.91087391693145,
+          "outcome": "PASSED",
+          "utc_seconds": 152.91190814971924
+        },
+        {
+          "job_id": "sikh363-m41-final-cloth",
+          "job_kind": "native",
+          "monotonic_seconds": 28.737387500237674,
+          "outcome": "FAILED",
+          "utc_seconds": 28.737656116485596
+        },
+        {
+          "job_id": "sikh363-m41-right-hand",
+          "job_kind": "native",
+          "monotonic_seconds": 138.0839964589104,
+          "outcome": "PASSED",
+          "utc_seconds": 138.08496594429016
+        },
+        {
+          "job_id": "sikh363-m41-phases",
+          "job_kind": "native",
+          "monotonic_seconds": 293.97141512529925,
+          "outcome": "PASSED",
+          "utc_seconds": 293.97384786605835
+        },
+        {
+          "job_id": "sikh364-a118-flag-controls",
+          "job_kind": "native",
+          "monotonic_seconds": 68.89811399998143,
+          "outcome": "PASSED",
+          "utc_seconds": 68.89868092536926
+        },
+        {
+          "job_id": "sikh364-a119-flag-controls",
+          "job_kind": "native",
+          "monotonic_seconds": 69.55681945802644,
+          "outcome": "PASSED",
+          "utc_seconds": 69.55738496780396
+        },
+        {
+          "job_id": "sikh364-a120-flag-controls",
+          "job_kind": "native",
+          "monotonic_seconds": 99.59640233265236,
+          "outcome": "PASSED",
+          "utc_seconds": 99.59715700149536
+        },
+        {
+          "job_id": "sikh364-a121-flag-save",
+          "job_kind": "native",
+          "monotonic_seconds": 44.398810542188585,
+          "outcome": "PASSED",
+          "utc_seconds": 44.399211168289185
+        },
+        {
+          "job_id": "sikh364-a121-flag-detail",
+          "job_kind": "native",
+          "monotonic_seconds": 119.37436791695654,
+          "outcome": "PASSED",
+          "utc_seconds": 119.37524080276489
+        },
+        {
+          "job_id": "sikh364-a121-flag-reverse",
+          "job_kind": "native",
+          "monotonic_seconds": 49.63965387502685,
+          "outcome": "PASSED",
+          "utc_seconds": 49.640758991241455
+        },
+        {
+          "job_id": "sikh364-a121-flag-production",
+          "job_kind": "native",
+          "monotonic_seconds": 169.22713879169896,
+          "outcome": "PASSED",
+          "utc_seconds": 169.22828197479248
+        },
+        {
+          "job_id": "sikh364-m42-save",
+          "job_kind": "native",
+          "monotonic_seconds": 6.569920958019793,
+          "outcome": "PASSED",
+          "utc_seconds": 6.570055961608887
+        },
+        {
+          "job_id": "sikh364-m42-repeat",
+          "job_kind": "native",
+          "monotonic_seconds": 41.37004441721365,
+          "outcome": "PASSED",
+          "utc_seconds": 41.37039017677307
+        },
+        {
+          "job_id": "sikh364-m42-frames01",
+          "job_kind": "native",
+          "monotonic_seconds": 343.12619645893574,
+          "outcome": "PASSED",
+          "utc_seconds": 343.1288011074066
+        },
+        {
+          "job_id": "sikh364-m42-frames02",
+          "job_kind": "native",
+          "monotonic_seconds": 348.8575265831314,
+          "outcome": "PASSED",
+          "utc_seconds": 348.8600161075592
+        },
+        {
+          "job_id": "sikh364-m42-frames03",
+          "job_kind": "native",
+          "monotonic_seconds": 411.1925797499716,
+          "outcome": "PASSED",
+          "utc_seconds": 411.1954550743103
+        },
+        {
+          "job_id": "sikh364-m42-frames04",
+          "job_kind": "native",
+          "monotonic_seconds": 446.02544833300635,
+          "outcome": "PASSED",
+          "utc_seconds": 446.02670979499817
+        },
+        {
+          "job_id": "sikh364-m42-frames05",
+          "job_kind": "native",
+          "monotonic_seconds": 312.3270837496966,
+          "outcome": "PASSED",
+          "utc_seconds": 312.33096718788147
+        },
+        {
+          "job_id": "sikh364-m42-frames06",
+          "job_kind": "native",
+          "monotonic_seconds": 340.58600737480447,
+          "outcome": "PASSED",
+          "utc_seconds": 340.5882580280304
+        },
+        {
+          "job_id": "sikh364-m42-frames07",
+          "job_kind": "native",
+          "monotonic_seconds": 351.5569397499785,
+          "outcome": "PASSED",
+          "utc_seconds": 351.559378862381
+        },
+        {
+          "job_id": "sikh364-m42-frames08",
+          "job_kind": "native",
+          "monotonic_seconds": 377.30759820807725,
+          "outcome": "PASSED",
+          "utc_seconds": 377.3103241920471
+        },
+        {
+          "job_id": "sikh364-m42-frames09",
+          "job_kind": "native",
+          "monotonic_seconds": 337.81477025011554,
+          "outcome": "PASSED",
+          "utc_seconds": 337.8166010379791
+        },
+        {
+          "job_id": "sikh364-m42-frames10",
+          "job_kind": "native",
+          "monotonic_seconds": 351.6459535830654,
+          "outcome": "PASSED",
+          "utc_seconds": 351.64852714538574
+        },
+        {
+          "job_id": "sikh364-m42-frames11",
+          "job_kind": "native",
+          "monotonic_seconds": 401.0989687908441,
+          "outcome": "PASSED",
+          "utc_seconds": 401.10174584388733
+        },
+        {
+          "job_id": "sikh364-m42-frames12",
+          "job_kind": "native",
+          "monotonic_seconds": 444.1537268329412,
+          "outcome": "PASSED",
+          "utc_seconds": 444.1561920642853
+        },
+        {
+          "job_id": "sikh364-m42-frames13",
+          "job_kind": "native",
+          "monotonic_seconds": 418.74477874999866,
+          "outcome": "PASSED",
+          "utc_seconds": 418.74776101112366
+        },
+        {
+          "job_id": "sikh364-m42-frames14",
+          "job_kind": "native",
+          "monotonic_seconds": 372.9051012499258,
+          "outcome": "PASSED",
+          "utc_seconds": 372.9078629016876
+        },
+        {
+          "job_id": "sikh364-m42-frames15",
+          "job_kind": "native",
+          "monotonic_seconds": 324.9483093749732,
+          "outcome": "PASSED",
+          "utc_seconds": 324.9505500793457
+        },
+        {
+          "job_id": "sikh364-m42-frames16",
+          "job_kind": "native",
+          "monotonic_seconds": 91.96639891667292,
+          "outcome": "PASSED",
+          "utc_seconds": 91.9673490524292
+        },
+        {
+          "job_id": "sikh364-a123-save",
+          "job_kind": "native",
+          "monotonic_seconds": 12.717714000027627,
+          "outcome": "PASSED",
+          "utc_seconds": 12.717888116836548
+        },
+        {
+          "job_id": "sikh364-a123-rig",
+          "job_kind": "native",
+          "monotonic_seconds": 9.344444625079632,
+          "outcome": "PASSED",
+          "utc_seconds": 9.344672918319702
+        },
+        {
+          "job_id": "sikh364-a123-reverse",
+          "job_kind": "native",
+          "monotonic_seconds": 166.85816724970937,
+          "outcome": "PASSED",
+          "utc_seconds": 166.85779190063477
+        }
+      ],
+      "net_elapsed_seconds": null,
+      "observed_excluded_input_wait_seconds": 0,
+      "operational_proxies": {},
+      "phase_net_seconds": null,
+      "uncertainties": [
+        "missing_interval_end",
+        "missing_or_duplicate_lifecycle_boundary",
+        "unexplained_gap"
+      ],
+      "unknown_gap_seconds": 257.530668258667
+    },
+    {
+      "assistant_active_union_seconds": 6500.532788991928,
+      "assistant_time_scope": "Recorded activity intervals only; not token generation time",
+      "calendar_elapsed_seconds": null,
+      "coverage_fraction": 0.9999917425941192,
+      "disposition": null,
+      "episode_id": "leader367",
+      "excluded_input_wait_seconds": null,
+      "human_review_seconds": null,
+      "jobs": [
+        {
+          "job_id": "sikh367-m44-audit",
+          "job_kind": "native",
+          "monotonic_seconds": 10.060125375166535,
+          "outcome": "PASSED",
+          "utc_seconds": 10.060286045074463
+        },
+        {
+          "job_id": "sikh367-m44-side",
+          "job_kind": "native",
+          "monotonic_seconds": 86.05440799985081,
+          "outcome": "PASSED",
+          "utc_seconds": 86.05491185188293
+        },
+        {
+          "job_id": "sikh367-m45-prepare",
+          "job_kind": "native",
+          "monotonic_seconds": 63.34405970899388,
+          "outcome": "PASSED",
+          "utc_seconds": 63.34444808959961
+        },
+        {
+          "job_id": "sikh367-m45-side",
+          "job_kind": "native",
+          "monotonic_seconds": 86.1366356657818,
+          "outcome": "PASSED",
+          "utc_seconds": 86.13786911964417
+        },
+        {
+          "job_id": "sikh367-m46-prepare",
+          "job_kind": "native",
+          "monotonic_seconds": 74.63193037500605,
+          "outcome": "PASSED",
+          "utc_seconds": 74.63232398033142
+        },
+        {
+          "job_id": "sikh367-m46-side",
+          "job_kind": "native",
+          "monotonic_seconds": 85.74382437532768,
+          "outcome": "PASSED",
+          "utc_seconds": 85.744225025177
+        },
+        {
+          "job_id": "sikh367-m46-oblique",
+          "job_kind": "native",
+          "monotonic_seconds": 87.70450987527147,
+          "outcome": "PASSED",
+          "utc_seconds": 87.70490384101868
+        },
+        {
+          "job_id": "sikh367-m47-audit",
+          "job_kind": "native",
+          "monotonic_seconds": 0.6972467498853803,
+          "outcome": "FAILED",
+          "utc_seconds": 0.6974120140075684
+        },
+        {
+          "job_id": "sikh367-m48-audit",
+          "job_kind": "native",
+          "monotonic_seconds": 4.838376958388835,
+          "outcome": "FAILED",
+          "utc_seconds": 4.838505029678345
+        },
+        {
+          "job_id": "sikh367-m49-prepare",
+          "job_kind": "native",
+          "monotonic_seconds": 75.81206154217944,
+          "outcome": "PASSED",
+          "utc_seconds": 75.81240010261536
+        },
+        {
+          "job_id": "sikh367-m49-audit",
+          "job_kind": "native",
+          "monotonic_seconds": 11.3105602087453,
+          "outcome": "PASSED",
+          "utc_seconds": 11.310704946517944
+        },
+        {
+          "job_id": "sikh367-m49-side",
+          "job_kind": "native",
+          "monotonic_seconds": 85.93168562464416,
+          "outcome": "PASSED",
+          "utc_seconds": 85.93209195137024
+        },
+        {
+          "job_id": "sikh367-m49-oblique",
+          "job_kind": "native",
+          "monotonic_seconds": 86.63699491741136,
+          "outcome": "PASSED",
+          "utc_seconds": 86.63806915283203
+        },
+        {
+          "job_id": "sikh367-m49-production",
+          "job_kind": "native",
+          "monotonic_seconds": 135.5706957075745,
+          "outcome": "PASSED",
+          "utc_seconds": 135.57119584083557
+        },
+        {
+          "job_id": "sikh367-m49-phase01",
+          "job_kind": "native",
+          "monotonic_seconds": 152.92582837492228,
+          "outcome": "PASSED",
+          "utc_seconds": 152.92643213272095
+        },
+        {
+          "job_id": "sikh367-m49-phase02",
+          "job_kind": "native",
+          "monotonic_seconds": 171.1442452496849,
+          "outcome": "PASSED",
+          "utc_seconds": 171.14504098892212
+        },
+        {
+          "job_id": "sikh367-m49-phase03",
+          "job_kind": "native",
+          "monotonic_seconds": 168.24938016571105,
+          "outcome": "PASSED",
+          "utc_seconds": 168.25024914741516
+        },
+        {
+          "job_id": "sikh367-m49-phase04",
+          "job_kind": "native",
+          "monotonic_seconds": 180.30302400002256,
+          "outcome": "PASSED",
+          "utc_seconds": 180.30412602424622
+        },
+        {
+          "job_id": "sikh367-m49-phase05",
+          "job_kind": "native",
+          "monotonic_seconds": 198.28520479192957,
+          "outcome": "PASSED",
+          "utc_seconds": 198.2861988544464
+        },
+        {
+          "job_id": "sikh367-m49-phase06",
+          "job_kind": "native",
+          "monotonic_seconds": 105.32461075019091,
+          "outcome": "PASSED",
+          "utc_seconds": 105.32602787017822
+        }
+      ],
+      "lifecycle": "OPEN",
+      "native_job_wall_sum_seconds": 1870.7054084166884,
+      "native_job_wall_union_seconds": null,
+      "native_jobs": [
+        {
+          "job_id": "sikh367-m44-audit",
+          "job_kind": "native",
+          "monotonic_seconds": 10.060125375166535,
+          "outcome": "PASSED",
+          "utc_seconds": 10.060286045074463
+        },
+        {
+          "job_id": "sikh367-m44-side",
+          "job_kind": "native",
+          "monotonic_seconds": 86.05440799985081,
+          "outcome": "PASSED",
+          "utc_seconds": 86.05491185188293
+        },
+        {
+          "job_id": "sikh367-m45-prepare",
+          "job_kind": "native",
+          "monotonic_seconds": 63.34405970899388,
+          "outcome": "PASSED",
+          "utc_seconds": 63.34444808959961
+        },
+        {
+          "job_id": "sikh367-m45-side",
+          "job_kind": "native",
+          "monotonic_seconds": 86.1366356657818,
+          "outcome": "PASSED",
+          "utc_seconds": 86.13786911964417
+        },
+        {
+          "job_id": "sikh367-m46-prepare",
+          "job_kind": "native",
+          "monotonic_seconds": 74.63193037500605,
+          "outcome": "PASSED",
+          "utc_seconds": 74.63232398033142
+        },
+        {
+          "job_id": "sikh367-m46-side",
+          "job_kind": "native",
+          "monotonic_seconds": 85.74382437532768,
+          "outcome": "PASSED",
+          "utc_seconds": 85.744225025177
+        },
+        {
+          "job_id": "sikh367-m46-oblique",
+          "job_kind": "native",
+          "monotonic_seconds": 87.70450987527147,
+          "outcome": "PASSED",
+          "utc_seconds": 87.70490384101868
+        },
+        {
+          "job_id": "sikh367-m47-audit",
+          "job_kind": "native",
+          "monotonic_seconds": 0.6972467498853803,
+          "outcome": "FAILED",
+          "utc_seconds": 0.6974120140075684
+        },
+        {
+          "job_id": "sikh367-m48-audit",
+          "job_kind": "native",
+          "monotonic_seconds": 4.838376958388835,
+          "outcome": "FAILED",
+          "utc_seconds": 4.838505029678345
+        },
+        {
+          "job_id": "sikh367-m49-prepare",
+          "job_kind": "native",
+          "monotonic_seconds": 75.81206154217944,
+          "outcome": "PASSED",
+          "utc_seconds": 75.81240010261536
+        },
+        {
+          "job_id": "sikh367-m49-audit",
+          "job_kind": "native",
+          "monotonic_seconds": 11.3105602087453,
+          "outcome": "PASSED",
+          "utc_seconds": 11.310704946517944
+        },
+        {
+          "job_id": "sikh367-m49-side",
+          "job_kind": "native",
+          "monotonic_seconds": 85.93168562464416,
+          "outcome": "PASSED",
+          "utc_seconds": 85.93209195137024
+        },
+        {
+          "job_id": "sikh367-m49-oblique",
+          "job_kind": "native",
+          "monotonic_seconds": 86.63699491741136,
+          "outcome": "PASSED",
+          "utc_seconds": 86.63806915283203
+        },
+        {
+          "job_id": "sikh367-m49-production",
+          "job_kind": "native",
+          "monotonic_seconds": 135.5706957075745,
+          "outcome": "PASSED",
+          "utc_seconds": 135.57119584083557
+        },
+        {
+          "job_id": "sikh367-m49-phase01",
+          "job_kind": "native",
+          "monotonic_seconds": 152.92582837492228,
+          "outcome": "PASSED",
+          "utc_seconds": 152.92643213272095
+        },
+        {
+          "job_id": "sikh367-m49-phase02",
+          "job_kind": "native",
+          "monotonic_seconds": 171.1442452496849,
+          "outcome": "PASSED",
+          "utc_seconds": 171.14504098892212
+        },
+        {
+          "job_id": "sikh367-m49-phase03",
+          "job_kind": "native",
+          "monotonic_seconds": 168.24938016571105,
+          "outcome": "PASSED",
+          "utc_seconds": 168.25024914741516
+        },
+        {
+          "job_id": "sikh367-m49-phase04",
+          "job_kind": "native",
+          "monotonic_seconds": 180.30302400002256,
+          "outcome": "PASSED",
+          "utc_seconds": 180.30412602424622
+        },
+        {
+          "job_id": "sikh367-m49-phase05",
+          "job_kind": "native",
+          "monotonic_seconds": 198.28520479192957,
+          "outcome": "PASSED",
+          "utc_seconds": 198.2861988544464
+        },
+        {
+          "job_id": "sikh367-m49-phase06",
+          "job_kind": "native",
+          "monotonic_seconds": 105.32461075019091,
+          "outcome": "PASSED",
+          "utc_seconds": 105.32602787017822
+        }
+      ],
+      "net_elapsed_seconds": null,
+      "observed_excluded_input_wait_seconds": 16468.942618131638,
+      "operational_proxies": {},
+      "phase_net_seconds": null,
+      "uncertainties": [
+        "missing_or_duplicate_lifecycle_boundary",
+        "unexplained_gap"
+      ],
+      "unknown_gap_seconds": 0.18966984748840332
+    },
+    {
+      "assistant_active_union_seconds": 4398.703315973282,
+      "assistant_time_scope": "Recorded activity intervals only; not token generation time",
+      "calendar_elapsed_seconds": null,
+      "coverage_fraction": 0.9999893043099777,
+      "disposition": null,
+      "episode_id": "leader368",
+      "excluded_input_wait_seconds": null,
+      "human_review_seconds": null,
+      "jobs": [
+        {
+          "job_id": "sikh368-m50-prepare",
+          "job_kind": "native",
+          "monotonic_seconds": 81.64205141691491,
+          "outcome": "PASSED",
+          "utc_seconds": 81.64193296432495
+        },
+        {
+          "job_id": "sikh368-m50-audit",
+          "job_kind": "native",
+          "monotonic_seconds": 12.368839125148952,
+          "outcome": "PASSED",
+          "utc_seconds": 12.369000911712646
+        },
+        {
+          "job_id": "sikh368-m50-side",
+          "job_kind": "native",
+          "monotonic_seconds": 144.29868033435196,
+          "outcome": "PASSED",
+          "utc_seconds": 144.298406124115
+        },
+        {
+          "job_id": "sikh368-m50-oblique",
+          "job_kind": "native",
+          "monotonic_seconds": 101.28118262533098,
+          "outcome": "PASSED",
+          "utc_seconds": 101.28099989891052
+        },
+        {
+          "job_id": "sikh368-m50-production",
+          "job_kind": "native",
+          "monotonic_seconds": 89.75832370808348,
+          "outcome": "PASSED",
+          "utc_seconds": 89.76627397537231
+        },
+        {
+          "job_id": "sikh368-m50-phase01",
+          "job_kind": "native",
+          "monotonic_seconds": 161.40597999980673,
+          "outcome": "PASSED",
+          "utc_seconds": 161.40602707862854
+        },
+        {
+          "job_id": "sikh368-m50-phase02",
+          "job_kind": "native",
+          "monotonic_seconds": 176.0219189999625,
+          "outcome": "PASSED",
+          "utc_seconds": 176.0218870639801
+        },
+        {
+          "job_id": "sikh368-m50-phase03",
+          "job_kind": "native",
+          "monotonic_seconds": 190.6675586248748,
+          "outcome": "PASSED",
+          "utc_seconds": 190.6675570011139
+        },
+        {
+          "job_id": "sikh368-m50-phase04",
+          "job_kind": "native",
+          "monotonic_seconds": 178.36395200015977,
+          "outcome": "PASSED",
+          "utc_seconds": 178.36395287513733
+        },
+        {
+          "job_id": "sikh368-m50-phase05",
+          "job_kind": "native",
+          "monotonic_seconds": 196.30089187482372,
+          "outcome": "PASSED",
+          "utc_seconds": 196.30087900161743
+        },
+        {
+          "job_id": "sikh368-m50-phase06",
+          "job_kind": "native",
+          "monotonic_seconds": 106.82997916685417,
+          "outcome": "PASSED",
+          "utc_seconds": 106.83008885383606
+        },
+        {
+          "job_id": "sikh368-m51-prepare",
+          "job_kind": "native",
+          "monotonic_seconds": 75.2849532077089,
+          "outcome": "PASSED",
+          "utc_seconds": 75.29047012329102
+        },
+        {
+          "job_id": "sikh368-m51-audit",
+          "job_kind": "native",
+          "monotonic_seconds": 11.903091374784708,
+          "outcome": "PASSED",
+          "utc_seconds": 11.903465032577515
+        },
+        {
+          "job_id": "sikh368-m51-side",
+          "job_kind": "native",
+          "monotonic_seconds": 112.84695445885882,
+          "outcome": "PASSED",
+          "utc_seconds": 112.84799385070801
+        },
+        {
+          "job_id": "sikh368-m51-oblique",
+          "job_kind": "native",
+          "monotonic_seconds": 97.54407895822078,
+          "outcome": "PASSED",
+          "utc_seconds": 97.54428505897522
+        },
+        {
+          "job_id": "sikh368-m51-production",
+          "job_kind": "native",
+          "monotonic_seconds": 104.76498287497088,
+          "outcome": "PASSED",
+          "utc_seconds": 104.76549005508423
+        },
+        {
+          "job_id": "sikh368-m51-phase01",
+          "job_kind": "native",
+          "monotonic_seconds": 213.3959488333203,
+          "outcome": "PASSED",
+          "utc_seconds": 213.39664006233215
+        },
+        {
+          "job_id": "sikh368-m51-phase02",
+          "job_kind": "native",
+          "monotonic_seconds": 237.58342408388853,
+          "outcome": "PASSED",
+          "utc_seconds": 237.5841040611267
+        },
+        {
+          "job_id": "sikh368-m51-phase03",
+          "job_kind": "native",
+          "monotonic_seconds": 216.2416964592412,
+          "outcome": "PASSED",
+          "utc_seconds": 216.24226093292236
+        },
+        {
+          "job_id": "sikh368-m51-phase04",
+          "job_kind": "native",
+          "monotonic_seconds": 222.51888416707516,
+          "outcome": "PASSED",
+          "utc_seconds": 222.51941204071045
+        },
+        {
+          "job_id": "sikh368-m51-phase05",
+          "job_kind": "native",
+          "monotonic_seconds": 235.34850125014782,
+          "outcome": "PASSED",
+          "utc_seconds": 235.35749411582947
+        },
+        {
+          "job_id": "sikh368-m51-phase06",
+          "job_kind": "native",
+          "monotonic_seconds": 110.67057187482715,
+          "outcome": "PASSED",
+          "utc_seconds": 110.67126321792603
+        }
+      ],
+      "lifecycle": "OPEN",
+      "native_job_wall_sum_seconds": 3077.042445419356,
+      "native_job_wall_union_seconds": null,
+      "native_jobs": [
+        {
+          "job_id": "sikh368-m50-prepare",
+          "job_kind": "native",
+          "monotonic_seconds": 81.64205141691491,
+          "outcome": "PASSED",
+          "utc_seconds": 81.64193296432495
+        },
+        {
+          "job_id": "sikh368-m50-audit",
+          "job_kind": "native",
+          "monotonic_seconds": 12.368839125148952,
+          "outcome": "PASSED",
+          "utc_seconds": 12.369000911712646
+        },
+        {
+          "job_id": "sikh368-m50-side",
+          "job_kind": "native",
+          "monotonic_seconds": 144.29868033435196,
+          "outcome": "PASSED",
+          "utc_seconds": 144.298406124115
+        },
+        {
+          "job_id": "sikh368-m50-oblique",
+          "job_kind": "native",
+          "monotonic_seconds": 101.28118262533098,
+          "outcome": "PASSED",
+          "utc_seconds": 101.28099989891052
+        },
+        {
+          "job_id": "sikh368-m50-production",
+          "job_kind": "native",
+          "monotonic_seconds": 89.75832370808348,
+          "outcome": "PASSED",
+          "utc_seconds": 89.76627397537231
+        },
+        {
+          "job_id": "sikh368-m50-phase01",
+          "job_kind": "native",
+          "monotonic_seconds": 161.40597999980673,
+          "outcome": "PASSED",
+          "utc_seconds": 161.40602707862854
+        },
+        {
+          "job_id": "sikh368-m50-phase02",
+          "job_kind": "native",
+          "monotonic_seconds": 176.0219189999625,
+          "outcome": "PASSED",
+          "utc_seconds": 176.0218870639801
+        },
+        {
+          "job_id": "sikh368-m50-phase03",
+          "job_kind": "native",
+          "monotonic_seconds": 190.6675586248748,
+          "outcome": "PASSED",
+          "utc_seconds": 190.6675570011139
+        },
+        {
+          "job_id": "sikh368-m50-phase04",
+          "job_kind": "native",
+          "monotonic_seconds": 178.36395200015977,
+          "outcome": "PASSED",
+          "utc_seconds": 178.36395287513733
+        },
+        {
+          "job_id": "sikh368-m50-phase05",
+          "job_kind": "native",
+          "monotonic_seconds": 196.30089187482372,
+          "outcome": "PASSED",
+          "utc_seconds": 196.30087900161743
+        },
+        {
+          "job_id": "sikh368-m50-phase06",
+          "job_kind": "native",
+          "monotonic_seconds": 106.82997916685417,
+          "outcome": "PASSED",
+          "utc_seconds": 106.83008885383606
+        },
+        {
+          "job_id": "sikh368-m51-prepare",
+          "job_kind": "native",
+          "monotonic_seconds": 75.2849532077089,
+          "outcome": "PASSED",
+          "utc_seconds": 75.29047012329102
+        },
+        {
+          "job_id": "sikh368-m51-audit",
+          "job_kind": "native",
+          "monotonic_seconds": 11.903091374784708,
+          "outcome": "PASSED",
+          "utc_seconds": 11.903465032577515
+        },
+        {
+          "job_id": "sikh368-m51-side",
+          "job_kind": "native",
+          "monotonic_seconds": 112.84695445885882,
+          "outcome": "PASSED",
+          "utc_seconds": 112.84799385070801
+        },
+        {
+          "job_id": "sikh368-m51-oblique",
+          "job_kind": "native",
+          "monotonic_seconds": 97.54407895822078,
+          "outcome": "PASSED",
+          "utc_seconds": 97.54428505897522
+        },
+        {
+          "job_id": "sikh368-m51-production",
+          "job_kind": "native",
+          "monotonic_seconds": 104.76498287497088,
+          "outcome": "PASSED",
+          "utc_seconds": 104.76549005508423
+        },
+        {
+          "job_id": "sikh368-m51-phase01",
+          "job_kind": "native",
+          "monotonic_seconds": 213.3959488333203,
+          "outcome": "PASSED",
+          "utc_seconds": 213.39664006233215
+        },
+        {
+          "job_id": "sikh368-m51-phase02",
+          "job_kind": "native",
+          "monotonic_seconds": 237.58342408388853,
+          "outcome": "PASSED",
+          "utc_seconds": 237.5841040611267
+        },
+        {
+          "job_id": "sikh368-m51-phase03",
+          "job_kind": "native",
+          "monotonic_seconds": 216.2416964592412,
+          "outcome": "PASSED",
+          "utc_seconds": 216.24226093292236
+        },
+        {
+          "job_id": "sikh368-m51-phase04",
+          "job_kind": "native",
+          "monotonic_seconds": 222.51888416707516,
+          "outcome": "PASSED",
+          "utc_seconds": 222.51941204071045
+        },
+        {
+          "job_id": "sikh368-m51-phase05",
+          "job_kind": "native",
+          "monotonic_seconds": 235.34850125014782,
+          "outcome": "PASSED",
+          "utc_seconds": 235.35749411582947
+        },
+        {
+          "job_id": "sikh368-m51-phase06",
+          "job_kind": "native",
+          "monotonic_seconds": 110.67057187482715,
+          "outcome": "PASSED",
+          "utc_seconds": 110.67126321792603
+        }
+      ],
+      "net_elapsed_seconds": null,
+      "observed_excluded_input_wait_seconds": 1585.2955989837646,
+      "operational_proxies": {},
+      "phase_net_seconds": null,
+      "uncertainties": [
+        "event_outside_episode",
+        "missing_or_duplicate_lifecycle_boundary",
+        "unexplained_gap",
+        "invalid_reopen_link"
+      ],
+      "unknown_gap_seconds": 0.06368613243103027
+    },
+    {
+      "assistant_active_union_seconds": 128934.2470138073,
+      "assistant_time_scope": "Recorded activity intervals only; not token generation time",
+      "calendar_elapsed_seconds": null,
+      "coverage_fraction": 0.9869213520746623,
+      "disposition": null,
+      "episode_id": "leader369",
+      "excluded_input_wait_seconds": null,
+      "human_review_seconds": null,
+      "jobs": [
+        {
+          "job_id": "sikh369-m52-prepare",
+          "job_kind": "native",
+          "monotonic_seconds": 77.32366979168728,
+          "outcome": "PASSED",
+          "utc_seconds": 77.32413697242737
+        },
+        {
+          "job_id": "sikh369-m52-audit",
+          "job_kind": "native",
+          "monotonic_seconds": 12.139305041637272,
+          "outcome": "PASSED",
+          "utc_seconds": 12.139475107192993
+        },
+        {
+          "job_id": "sikh369-m52-side",
+          "job_kind": "native",
+          "monotonic_seconds": 111.06862754235044,
+          "outcome": "PASSED",
+          "utc_seconds": 111.06916379928589
+        },
+        {
+          "job_id": "sikh369-m53-prepare",
+          "job_kind": "native",
+          "monotonic_seconds": 78.85587704181671,
+          "outcome": "PASSED",
+          "utc_seconds": 78.85631394386292
+        },
+        {
+          "job_id": "sikh369-m53-audit",
+          "job_kind": "native",
+          "monotonic_seconds": 12.262005290947855,
+          "outcome": "PASSED",
+          "utc_seconds": 12.262162923812866
+        },
+        {
+          "job_id": "sikh369-m53-side",
+          "job_kind": "native",
+          "monotonic_seconds": 112.25381541624665,
+          "outcome": "PASSED",
+          "utc_seconds": 112.25162696838379
+        },
+        {
+          "job_id": "sikh369-m54-pad-inspect",
+          "job_kind": "native",
+          "monotonic_seconds": 34.06472670799121,
+          "outcome": "PASSED",
+          "utc_seconds": 34.06493902206421
+        },
+        {
+          "job_id": "sikh369-m54-pad-fit",
+          "job_kind": "native",
+          "monotonic_seconds": 35.2420448330231,
+          "outcome": "PASSED",
+          "utc_seconds": 35.24226784706116
+        },
+        {
+          "job_id": "sikh369-m55-pad-bind",
+          "job_kind": "native",
+          "monotonic_seconds": 33.65234279213473,
+          "outcome": "PASSED",
+          "utc_seconds": 33.65254092216492
+        },
+        {
+          "job_id": "sikh369-m56-pad-contact",
+          "job_kind": "native",
+          "monotonic_seconds": 36.34013762511313,
+          "outcome": "PASSED",
+          "utc_seconds": 36.34036111831665
+        },
+        {
+          "job_id": "sikh369-m57-pad-follow",
+          "job_kind": "native",
+          "monotonic_seconds": 36.011393500026315,
+          "outcome": "PASSED",
+          "utc_seconds": 36.01161789894104
+        },
+        {
+          "job_id": "sikh370-m58-diagnose53",
+          "job_kind": "native",
+          "monotonic_seconds": 37.33334641624242,
+          "outcome": "PASSED",
+          "utc_seconds": 37.33355712890625
+        },
+        {
+          "job_id": "sikh370-m58-diagnose55",
+          "job_kind": "native",
+          "monotonic_seconds": 37.58460312476382,
+          "outcome": "PASSED",
+          "utc_seconds": 37.584818840026855
+        },
+        {
+          "job_id": "sikh370-m59-refine",
+          "job_kind": "native",
+          "monotonic_seconds": 278.3542285421863,
+          "outcome": "PASSED",
+          "utc_seconds": 278.35472106933594
+        },
+        {
+          "job_id": "sikh370-m60-envelope",
+          "job_kind": "native",
+          "monotonic_seconds": 132.38383162487298,
+          "outcome": "FAILED",
+          "utc_seconds": 132.38458895683289
+        },
+        {
+          "job_id": "sikh370-m61-envelope",
+          "job_kind": "native",
+          "monotonic_seconds": 130.79414874967188,
+          "outcome": "FAILED",
+          "utc_seconds": 130.79489493370056
+        },
+        {
+          "job_id": "sikh370-m62-fitted-envelope",
+          "job_kind": "native",
+          "monotonic_seconds": 137.29745970806107,
+          "outcome": "FAILED",
+          "utc_seconds": 137.29814314842224
+        },
+        {
+          "job_id": "sikh370-m63-minimum-contact",
+          "job_kind": "native",
+          "monotonic_seconds": 631.9463522499427,
+          "outcome": "FAILED",
+          "utc_seconds": 631.9489600658417
+        },
+        {
+          "job_id": "sikh370-m64-envelope",
+          "job_kind": "native",
+          "monotonic_seconds": 705.1727612921968,
+          "outcome": "FAILED",
+          "utc_seconds": 705.1761600971222
+        },
+        {
+          "job_id": "sikh370-m65-envelope",
+          "job_kind": "native",
+          "monotonic_seconds": 702.8973849168979,
+          "outcome": "PASSED",
+          "utc_seconds": 702.9052600860596
+        },
+        {
+          "job_id": "sikh370-m66-envelope",
+          "job_kind": "native",
+          "monotonic_seconds": 518.6063781250268,
+          "outcome": "PASSED",
+          "utc_seconds": 518.6097331047058
+        },
+        {
+          "job_id": "sikh370-m66-audit",
+          "job_kind": "native",
+          "monotonic_seconds": 39.84467929089442,
+          "outcome": "PASSED",
+          "utc_seconds": 39.845277070999146
+        },
+        {
+          "job_id": "sikh370-m66-side",
+          "job_kind": "native",
+          "monotonic_seconds": 227.1693876250647,
+          "outcome": "PASSED",
+          "utc_seconds": 227.17073011398315
+        },
+        {
+          "job_id": "sikh370-m66-oblique",
+          "job_kind": "native",
+          "monotonic_seconds": 100.35990929091349,
+          "outcome": "PASSED",
+          "utc_seconds": 100.36136603355408
+        },
+        {
+          "job_id": "sikh370-m66-production",
+          "job_kind": "native",
+          "monotonic_seconds": 90.56759079219773,
+          "outcome": "PASSED",
+          "utc_seconds": 90.56880903244019
+        },
+        {
+          "job_id": "sikh370-m66-phase01",
+          "job_kind": "native",
+          "monotonic_seconds": 156.73719887482002,
+          "outcome": "PASSED",
+          "utc_seconds": 156.73814702033997
+        },
+        {
+          "job_id": "sikh370-m66-phase02",
+          "job_kind": "native",
+          "monotonic_seconds": 162.3121263338253,
+          "outcome": "PASSED",
+          "utc_seconds": 162.31311702728271
+        },
+        {
+          "job_id": "sikh370-m66-phase03",
+          "job_kind": "native",
+          "monotonic_seconds": 168.26901570800692,
+          "outcome": "PASSED",
+          "utc_seconds": 168.27282094955444
+        },
+        {
+          "job_id": "sikh370-m66-phase04",
+          "job_kind": "native",
+          "monotonic_seconds": 174.84267329098657,
+          "outcome": "PASSED",
+          "utc_seconds": 174.84378504753113
+        },
+        {
+          "job_id": "sikh370-m66-phase05",
+          "job_kind": "native",
+          "monotonic_seconds": 193.73500112490728,
+          "outcome": "PASSED",
+          "utc_seconds": 193.73707699775696
+        },
+        {
+          "job_id": "sikh370-m66-phase06",
+          "job_kind": "native",
+          "monotonic_seconds": 98.12845700001344,
+          "outcome": "PASSED",
+          "utc_seconds": 98.1299979686737
+        },
+        {
+          "job_id": "sikh371-m67-prepare",
+          "job_kind": "native",
+          "monotonic_seconds": 17.93234095769003,
+          "outcome": "FAILED",
+          "utc_seconds": 17.932722091674805
+        },
+        {
+          "job_id": "sikh371-m68-prepare",
+          "job_kind": "native",
+          "monotonic_seconds": 51.93503691582009,
+          "outcome": "FAILED",
+          "utc_seconds": 51.93533110618591
+        },
+        {
+          "job_id": "sikh371-m69-prepare",
+          "job_kind": "native",
+          "monotonic_seconds": 62.45628425013274,
+          "outcome": "FAILED",
+          "utc_seconds": 62.456533908843994
+        },
+        {
+          "job_id": "sikh371-m70-prepare",
+          "job_kind": "native",
+          "monotonic_seconds": 64.59960837475955,
+          "outcome": "PASSED",
+          "utc_seconds": 64.59958100318909
+        },
+        {
+          "job_id": "sikh371-m70-pose-side",
+          "job_kind": "native",
+          "monotonic_seconds": 123.44140399992466,
+          "outcome": "PASSED",
+          "utc_seconds": 123.44147086143494
+        },
+        {
+          "job_id": "sikh371-m71-prepare",
+          "job_kind": "native",
+          "monotonic_seconds": 61.48439075006172,
+          "outcome": "PASSED",
+          "utc_seconds": 61.48423981666565
+        },
+        {
+          "job_id": "sikh371-m71-pose-side",
+          "job_kind": "native",
+          "monotonic_seconds": 113.06885875016451,
+          "outcome": "PASSED",
+          "utc_seconds": 113.0685830116272
+        },
+        {
+          "job_id": "sikh371-m71-contact",
+          "job_kind": "native",
+          "monotonic_seconds": 76.73651670804247,
+          "outcome": "PASSED",
+          "utc_seconds": 76.73714709281921
+        },
+        {
+          "job_id": "sikh371-m71-side",
+          "job_kind": "native",
+          "monotonic_seconds": 89.23796104080975,
+          "outcome": "PASSED",
+          "utc_seconds": 89.23777484893799
+        },
+        {
+          "job_id": "sikh371-m71-oblique",
+          "job_kind": "native",
+          "monotonic_seconds": 85.3048915839754,
+          "outcome": "PASSED",
+          "utc_seconds": 85.3047399520874
+        },
+        {
+          "job_id": "sikh371-m71-reverse",
+          "job_kind": "native",
+          "monotonic_seconds": 89.72871283395216,
+          "outcome": "PASSED",
+          "utc_seconds": 89.72856712341309
+        },
+        {
+          "job_id": "sikh371-m71-production",
+          "job_kind": "native",
+          "monotonic_seconds": 79.2121979999356,
+          "outcome": "PASSED",
+          "utc_seconds": 79.2120509147644
+        },
+        {
+          "job_id": "sikh371-m71-prefix",
+          "job_kind": "native",
+          "monotonic_seconds": 99.02388041699305,
+          "outcome": "PASSED",
+          "utc_seconds": 99.02444100379944
+        },
+        {
+          "job_id": "sikh371-m71-phase01",
+          "job_kind": "native",
+          "monotonic_seconds": 260.0994483330287,
+          "outcome": "PASSED",
+          "utc_seconds": 260.21321296691895
+        },
+        {
+          "job_id": "sikh371-m71-phase02",
+          "job_kind": "native",
+          "monotonic_seconds": 327.6825725832023,
+          "outcome": "PASSED",
+          "utc_seconds": 327.6850609779358
+        },
+        {
+          "job_id": "sikh371-m71-phase03",
+          "job_kind": "native",
+          "monotonic_seconds": 128.20679483376443,
+          "outcome": "PASSED",
+          "utc_seconds": 128.20773696899414
+        },
+        {
+          "job_id": "sikh371-m71-accepted01",
+          "job_kind": "native",
+          "monotonic_seconds": 440.48615687480196,
+          "outcome": "PASSED",
+          "utc_seconds": 440.5039801597595
+        },
+        {
+          "job_id": "sikh371-m71-accepted02",
+          "job_kind": "native",
+          "monotonic_seconds": 439.6924040419981,
+          "outcome": "PASSED",
+          "utc_seconds": 439.6975541114807
+        },
+        {
+          "job_id": "sikh371-m71-accepted03",
+          "job_kind": "native",
+          "monotonic_seconds": 506.9139399169944,
+          "outcome": "PASSED",
+          "utc_seconds": 506.92329502105713
+        },
+        {
+          "job_id": "sikh372-m72-prepare",
+          "job_kind": "native",
+          "monotonic_seconds": 38.70284124976024,
+          "outcome": "PASSED",
+          "utc_seconds": 38.7029709815979
+        },
+        {
+          "job_id": "sikh372-m72-early-side",
+          "job_kind": "native",
+          "monotonic_seconds": 111.90053966687992,
+          "outcome": "PASSED",
+          "utc_seconds": 111.90068507194519
+        },
+        {
+          "job_id": "sikh372-m72-early-oblique",
+          "job_kind": "native",
+          "monotonic_seconds": 114.35326791694388,
+          "outcome": "PASSED",
+          "utc_seconds": 114.35940885543823
+        },
+        {
+          "job_id": "sikh372-m74-prepare",
+          "job_kind": "native",
+          "monotonic_seconds": 82.93307658284903,
+          "outcome": "PASSED",
+          "utc_seconds": 82.9369740486145
+        },
+        {
+          "job_id": "sikh372-m74-early_side",
+          "job_kind": "native",
+          "monotonic_seconds": 102.79960312508047,
+          "outcome": "PASSED",
+          "utc_seconds": 102.80003309249878
+        },
+        {
+          "job_id": "sikh372-m74-early_oblique",
+          "job_kind": "native",
+          "monotonic_seconds": 102.51803166698664,
+          "outcome": "PASSED",
+          "utc_seconds": 102.51850700378418
+        },
+        {
+          "job_id": "sikh372-m74-contact",
+          "job_kind": "native",
+          "monotonic_seconds": 110.55232845898718,
+          "outcome": "PASSED",
+          "utc_seconds": 110.55335593223572
+        },
+        {
+          "job_id": "sikh372-m74-reverse",
+          "job_kind": "native",
+          "monotonic_seconds": 83.73765504127368,
+          "outcome": "PASSED",
+          "utc_seconds": 83.73879289627075
+        },
+        {
+          "job_id": "sikh372-m74-production",
+          "job_kind": "native",
+          "monotonic_seconds": 73.2769306669943,
+          "outcome": "PASSED",
+          "utc_seconds": 73.2778799533844
+        },
+        {
+          "job_id": "sikh372-m74-prefix",
+          "job_kind": "native",
+          "monotonic_seconds": 100.95001879194751,
+          "outcome": "PASSED",
+          "utc_seconds": 100.95031690597534
+        },
+        {
+          "job_id": "sikh372-m75-source",
+          "job_kind": "native",
+          "monotonic_seconds": 13.520747582893819,
+          "outcome": "PASSED",
+          "utc_seconds": 13.520863056182861
+        },
+        {
+          "job_id": "sikh372-m75-final_side",
+          "job_kind": "native",
+          "monotonic_seconds": 79.47447987506166,
+          "outcome": "PASSED",
+          "utc_seconds": 79.47467994689941
+        },
+        {
+          "job_id": "sikh372-m75-prefix",
+          "job_kind": "native",
+          "monotonic_seconds": 98.88109404128045,
+          "outcome": "PASSED",
+          "utc_seconds": 98.88129687309265
+        },
+        {
+          "job_id": "sikh372-m75-phase01",
+          "job_kind": "native",
+          "monotonic_seconds": 246.15323579125106,
+          "outcome": "PASSED",
+          "utc_seconds": 246.15421104431152
+        },
+        {
+          "job_id": "sikh372-m75-phase02",
+          "job_kind": "native",
+          "monotonic_seconds": 300.06235350016505,
+          "outcome": "PASSED",
+          "utc_seconds": 300.0729470252991
+        },
+        {
+          "job_id": "sikh372-m75-phase03",
+          "job_kind": "native",
+          "monotonic_seconds": 129.7722153752111,
+          "outcome": "PASSED",
+          "utc_seconds": 129.7728190422058
+        },
+        {
+          "job_id": "sikh373-native79-early-side",
+          "job_kind": "native",
+          "monotonic_seconds": 167.75584041699767,
+          "outcome": "PASSED",
+          "utc_seconds": 167.75660705566406
+        },
+        {
+          "job_id": "sikh373-native79-early-oblique",
+          "job_kind": "native",
+          "monotonic_seconds": 194.41822104202583,
+          "outcome": "PASSED",
+          "utc_seconds": 194.41874194145203
+        },
+        {
+          "job_id": "sikh373-native80-prepare",
+          "job_kind": "native",
+          "monotonic_seconds": 103.50362283270806,
+          "outcome": "PASSED",
+          "utc_seconds": 103.50420784950256
+        },
+        {
+          "job_id": "sikh373-native80-early_side",
+          "job_kind": "native",
+          "monotonic_seconds": 180.83792049996555,
+          "outcome": "PASSED",
+          "utc_seconds": 180.83881306648254
+        },
+        {
+          "job_id": "sikh373-native80-early_oblique",
+          "job_kind": "native",
+          "monotonic_seconds": 189.9144446658902,
+          "outcome": "PASSED",
+          "utc_seconds": 189.91530108451843
+        },
+        {
+          "job_id": "sikh373-native80-contact",
+          "job_kind": "native",
+          "monotonic_seconds": 0.03605687525123358,
+          "outcome": "FAILED",
+          "utc_seconds": 0.03691697120666504
+        },
+        {
+          "job_id": "sikh373-native80-contact1200",
+          "job_kind": "native",
+          "monotonic_seconds": 3.187388875056058,
+          "outcome": "FAILED",
+          "utc_seconds": 3.1875479221343994
+        },
+        {
+          "job_id": "sikh373-native80-contact600",
+          "job_kind": "native",
+          "monotonic_seconds": 129.94714483385906,
+          "outcome": "PASSED",
+          "utc_seconds": 129.9476819038391
+        },
+        {
+          "job_id": "sikh373-native80-final_side",
+          "job_kind": "native",
+          "monotonic_seconds": 185.4947888329625,
+          "outcome": "PASSED",
+          "utc_seconds": 185.49679589271545
+        },
+        {
+          "job_id": "sikh373-native80-reverse",
+          "job_kind": "native",
+          "monotonic_seconds": 128.5989997498691,
+          "outcome": "PASSED",
+          "utc_seconds": 128.60002493858337
+        },
+        {
+          "job_id": "sikh373-native80-production",
+          "job_kind": "native",
+          "monotonic_seconds": 108.49268249981105,
+          "outcome": "PASSED",
+          "utc_seconds": 108.49330496788025
+        },
+        {
+          "job_id": "sikh373-native80-prefix",
+          "job_kind": "native",
+          "monotonic_seconds": 120.05760712502524,
+          "outcome": "PASSED",
+          "utc_seconds": 120.05815291404724
+        },
+        {
+          "job_id": "sikh373-native80-phase01",
+          "job_kind": "native",
+          "monotonic_seconds": 340.61249295808375,
+          "outcome": "PASSED",
+          "utc_seconds": 340.61405301094055
+        },
+        {
+          "job_id": "sikh373-native80-phase02",
+          "job_kind": "native",
+          "monotonic_seconds": 290.3940755408257,
+          "outcome": "PASSED",
+          "utc_seconds": 290.39546489715576
+        },
+        {
+          "job_id": "sikh373-native80-phase03",
+          "job_kind": "native",
+          "monotonic_seconds": 229.284120333381,
+          "outcome": "PASSED",
+          "utc_seconds": 229.28575587272644
+        },
+        {
+          "job_id": "sikh374-appearance-c124-front",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 132.25137209892273
+        },
+        {
+          "job_id": "sikh374-appearance-c124-inspect",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 30.385568141937256
+        },
+        {
+          "job_id": "sikh374-appearance-c124-reverse",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 123.1767590045929
+        },
+        {
+          "job_id": "sikh374-appearance-c124-side",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 125.82543587684631
+        },
+        {
+          "job_id": "sikh374-appearance-c125-sculpt",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "FAILED",
+          "utc_seconds": 25.896742820739746
+        },
+        {
+          "job_id": "sikh374-appearance-c126-sculpt",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "FAILED",
+          "utc_seconds": 27.028282165527344
+        },
+        {
+          "job_id": "sikh374-appearance-c127-sculpt",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "FAILED",
+          "utc_seconds": 26.973905086517334
+        },
+        {
+          "job_id": "sikh374-appearance-c128-front",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 121.1314902305603
+        },
+        {
+          "job_id": "sikh374-appearance-c128-inspect",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 29.692370176315308
+        },
+        {
+          "job_id": "sikh374-appearance-c128-reverse",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 123.88266587257385
+        },
+        {
+          "job_id": "sikh374-appearance-c128-sculpt",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 54.96308994293213
+        },
+        {
+          "job_id": "sikh374-appearance-c128-side",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 119.78192210197449
+        },
+        {
+          "job_id": "sikh375-appearance-c129-inspect",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 32.32206106185913
+        },
+        {
+          "job_id": "sikh375-appearance-c129-worst",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 98.38394093513489
+        },
+        {
+          "job_id": "sikh375-appearance-c130-repair",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 31.876110076904297
+        },
+        {
+          "job_id": "sikh375-appearance-c130-inspect",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 31.762902975082397
+        },
+        {
+          "job_id": "sikh375-appearance-c130-worst",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 105.56809186935425
+        },
+        {
+          "job_id": "sikh375-appearance-c131-repair",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 31.485127925872803
+        },
+        {
+          "job_id": "sikh375-appearance-c131-inspect",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 29.280215978622437
+        },
+        {
+          "job_id": "sikh375-appearance-c131-worst",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 96.56871390342712
+        },
+        {
+          "job_id": "sikh375-appearance-c131-front",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 127.07568001747131
+        },
+        {
+          "job_id": "sikh375-appearance-c132-repair",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 32.115516901016235
+        },
+        {
+          "job_id": "sikh375-appearance-c132-inspect",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 29.488124132156372
+        },
+        {
+          "job_id": "sikh375-appearance-c132-worst",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 99.97518491744995
+        },
+        {
+          "job_id": "sikh375-appearance-c132-worstfront",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 105.59540700912476
+        },
+        {
+          "job_id": "sikh376-appearance-c133-inspect",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 31.421282052993774
+        },
+        {
+          "job_id": "sikh376-appearance-c134-repair",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 30.803156852722168
+        },
+        {
+          "job_id": "sikh376-appearance-c134-inspect",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 30.59422492980957
+        },
+        {
+          "job_id": "sikh376-appearance-c134-worst",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 102.48859000205994
+        },
+        {
+          "job_id": "sikh376-appearance-c135-repair",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 31.433670043945312
+        },
+        {
+          "job_id": "sikh376-appearance-c135-inspect",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 31.158463954925537
+        },
+        {
+          "job_id": "sikh376-appearance-c135-worst",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 200.55478286743164
+        },
+        {
+          "job_id": "sikh376-appearance-c136-repair",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 73.77472305297852
+        },
+        {
+          "job_id": "sikh376-appearance-c136-inspect",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 34.31867504119873
+        },
+        {
+          "job_id": "sikh376-appearance-c136-worst",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 165.23698902130127
+        },
+        {
+          "job_id": "sikh379-appearance-c137-repair",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 50.55455303192139
+        },
+        {
+          "job_id": "sikh379-appearance-c137-worst",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "FAILED",
+          "utc_seconds": 127.73606204986572
+        },
+        {
+          "job_id": "sikh379-appearance-c138-repair",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 46.65328097343445
+        },
+        {
+          "job_id": "sikh379-appearance-c138-worst",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 122.01789402961731
+        },
+        {
+          "job_id": "sikh379-appearance-c140-repair",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 46.90246295928955
+        },
+        {
+          "job_id": "sikh379-appearance-c140-front",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 118.49766516685486
+        },
+        {
+          "job_id": "sikh379-appearance-c141-repair",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 46.92919206619263
+        },
+        {
+          "job_id": "sikh379-appearance-c141-front",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 120.82132887840271
+        },
+        {
+          "job_id": "sikh379-appearance-c142-repair",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 49.03300714492798
+        },
+        {
+          "job_id": "sikh379-appearance-c142-front",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 120.7886381149292
+        },
+        {
+          "job_id": "sikh379-appearance-c143-repair",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 48.949280977249146
+        },
+        {
+          "job_id": "sikh379-appearance-c143-front",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 123.26656413078308
+        },
+        {
+          "job_id": "sikh380-appearance-c144-repair",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 3.8364779949188232
+        },
+        {
+          "job_id": "sikh380-appearance-c145-repair",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 33.53805899620056
+        },
+        {
+          "job_id": "sikh380-appearance-c145-front",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 120.38834309577942
+        },
+        {
+          "job_id": "sikh380-appearance-c146-repair",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 32.67886781692505
+        },
+        {
+          "job_id": "sikh380-appearance-c146-front",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 141.451269865036
+        },
+        {
+          "job_id": "sikh381-appearance-c148-repair",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 48.44890308380127
+        },
+        {
+          "job_id": "sikh381-appearance-c148-front",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 53.57548213005066
+        },
+        {
+          "job_id": "sikh381-appearance-c149-repair",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 39.744489908218384
+        },
+        {
+          "job_id": "sikh381-appearance-c150-repair",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 24.114786863327026
+        },
+        {
+          "job_id": "sikh381-appearance-c151-repair",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 24.313771963119507
+        },
+        {
+          "job_id": "sikh381-appearance-c152-repair",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 48.85552096366882
+        },
+        {
+          "job_id": "sikh381-appearance-c152-front",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 56.11565399169922
+        },
+        {
+          "job_id": "sikh381-appearance-c153-repair",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 49.612783908843994
+        },
+        {
+          "job_id": "sikh381-appearance-c153-front",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 55.40618300437927
+        },
+        {
+          "job_id": "sikh381-appearance-c154-repair",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 49.051191091537476
+        },
+        {
+          "job_id": "sikh381-appearance-c154-front",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 55.872143030166626
+        },
+        {
+          "job_id": "sikh381-appearance-c156-source",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 12.645562171936035
+        },
+        {
+          "job_id": "sikh381-appearance-c156-oblique",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 79.0434319972992
+        },
+        {
+          "job_id": "sikh381-appearance-c156-side",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 77.89665699005127
+        },
+        {
+          "job_id": "sikh383-appearance-c158-import",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 8.784142971038818
+        },
+        {
+          "job_id": "sikh383-appearance-c159-import",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 7.833335876464844
+        },
+        {
+          "job_id": "sikh383-appearance-c160-import",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 15.073664903640747
+        },
+        {
+          "job_id": "sikh383-appearance-c160-oblique",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 73.71609783172607
+        },
+        {
+          "job_id": "sikh383-appearance-c161-import",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 13.42245602607727
+        },
+        {
+          "job_id": "sikh383-appearance-c161-oblique",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 19.914994955062866
+        },
+        {
+          "job_id": "sikh383-appearance-c161-front",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 19.6837739944458
+        },
+        {
+          "job_id": "sikh383-appearance-c161-side",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 20.40452218055725
+        },
+        {
+          "job_id": "sikh383-appearance-c163-import",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 20.161363124847412
+        },
+        {
+          "job_id": "sikh383-appearance-c163-oblique",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 19.46342897415161
+        },
+        {
+          "job_id": "sikh383-appearance-c163-front",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 19.123265981674194
+        },
+        {
+          "job_id": "sikh383-appearance-c163-side",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 19.57700514793396
+        },
+        {
+          "job_id": "sikh383-appearance-c163-motion0",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 25.206143856048584
+        },
+        {
+          "job_id": "sikh383-appearance-c164-import",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 7.9272301197052
+        },
+        {
+          "job_id": "sikh383-appearance-c166-import",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 15.20870304107666
+        },
+        {
+          "job_id": "sikh383-appearance-c166-oblique",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 20.690603971481323
+        },
+        {
+          "job_id": "sikh383-appearance-c166-front",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 20.25458788871765
+        },
+        {
+          "job_id": "sikh383-appearance-c166-side",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 20.724366903305054
+        },
+        {
+          "job_id": "sikh383-appearance-c166-motion0",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 25.486239194869995
+        },
+        {
+          "job_id": "sikh383-appearance-c166-motion1",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 26.328288078308105
+        },
+        {
+          "job_id": "sikh383-appearance-c166-motion2",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 26.971712827682495
+        },
+        {
+          "job_id": "sikh383-appearance-c166-motion3",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 26.341351985931396
+        },
+        {
+          "job_id": "sikh383-appearance-c166-motion4",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 26.49326992034912
+        },
+        {
+          "job_id": "sikh383-appearance-c166-motion5",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 26.42612600326538
+        },
+        {
+          "job_id": "sikh383-appearance-c166-motion6",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 16.010746955871582
+        },
+        {
+          "job_id": "sikh384-appearance-c168-source",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 16.99575710296631
+        },
+        {
+          "job_id": "sikh384-appearance-c168-before_front",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 18.848949909210205
+        },
+        {
+          "job_id": "sikh384-appearance-c168-before_side",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 16.295765161514282
+        },
+        {
+          "job_id": "sikh384-appearance-c168-before_chest",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 16.683830976486206
+        },
+        {
+          "job_id": "sikh384-appearance-c168-adapt",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 19.84243106842041
+        },
+        {
+          "job_id": "sikh384-appearance-c168-after_front",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 20.596662044525146
+        },
+        {
+          "job_id": "sikh384-appearance-c168-after_side",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 21.89121699333191
+        },
+        {
+          "job_id": "sikh384-appearance-c169-source",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 18.988977193832397
+        },
+        {
+          "job_id": "sikh384-appearance-c169-adapt",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 20.050305128097534
+        },
+        {
+          "job_id": "sikh384-appearance-c169-after_front",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 20.600011110305786
+        },
+        {
+          "job_id": "sikh384-appearance-c169-after_side",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 20.26435089111328
+        },
+        {
+          "job_id": "sikh384-appearance-c170-source",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 16.84668493270874
+        },
+        {
+          "job_id": "sikh384-appearance-c170-adapt",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 29.19056010246277
+        },
+        {
+          "job_id": "sikh384-appearance-c170-after_front",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 35.48831605911255
+        },
+        {
+          "job_id": "sikh384-appearance-c170-after_side",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 31.239081859588623
+        },
+        {
+          "job_id": "sikh384-appearance-c173-source",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 16.454041957855225
+        },
+        {
+          "job_id": "sikh384-appearance-c173-adapt",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 19.004687070846558
+        },
+        {
+          "job_id": "sikh384-appearance-c173-after_front",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 20.45009708404541
+        },
+        {
+          "job_id": "sikh384-appearance-c173-after_side",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 20.143737077713013
+        },
+        {
+          "job_id": "sikh384-appearance-c174-source",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 16.670500993728638
+        },
+        {
+          "job_id": "sikh384-appearance-c174-adapt",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 19.50807809829712
+        },
+        {
+          "job_id": "sikh384-appearance-c174-after_front",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 20.63445806503296
+        },
+        {
+          "job_id": "sikh384-appearance-c174-after_side",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 20.225046157836914
+        },
+        {
+          "job_id": "sikh384-appearance-c175-source",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 16.8015398979187
+        },
+        {
+          "job_id": "sikh384-appearance-c175-adapt",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 11.417438983917236
+        },
+        {
+          "job_id": "sikh384-appearance-c176-source",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 32.280914068222046
+        },
+        {
+          "job_id": "sikh384-appearance-c176-adapt",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 30.456913948059082
+        },
+        {
+          "job_id": "sikh384-appearance-c176-after_front",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 31.579410076141357
+        },
+        {
+          "job_id": "sikh384-appearance-c176-after_side",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 34.59565997123718
+        },
+        {
+          "job_id": "sikh384-appearance-c176-whole",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 31.248500108718872
+        }
+      ],
+      "lifecycle": "OPEN",
+      "native_job_wall_sum_seconds": null,
+      "native_job_wall_union_seconds": null,
+      "native_jobs": [
+        {
+          "job_id": "sikh369-m52-prepare",
+          "job_kind": "native",
+          "monotonic_seconds": 77.32366979168728,
+          "outcome": "PASSED",
+          "utc_seconds": 77.32413697242737
+        },
+        {
+          "job_id": "sikh369-m52-audit",
+          "job_kind": "native",
+          "monotonic_seconds": 12.139305041637272,
+          "outcome": "PASSED",
+          "utc_seconds": 12.139475107192993
+        },
+        {
+          "job_id": "sikh369-m52-side",
+          "job_kind": "native",
+          "monotonic_seconds": 111.06862754235044,
+          "outcome": "PASSED",
+          "utc_seconds": 111.06916379928589
+        },
+        {
+          "job_id": "sikh369-m53-prepare",
+          "job_kind": "native",
+          "monotonic_seconds": 78.85587704181671,
+          "outcome": "PASSED",
+          "utc_seconds": 78.85631394386292
+        },
+        {
+          "job_id": "sikh369-m53-audit",
+          "job_kind": "native",
+          "monotonic_seconds": 12.262005290947855,
+          "outcome": "PASSED",
+          "utc_seconds": 12.262162923812866
+        },
+        {
+          "job_id": "sikh369-m53-side",
+          "job_kind": "native",
+          "monotonic_seconds": 112.25381541624665,
+          "outcome": "PASSED",
+          "utc_seconds": 112.25162696838379
+        },
+        {
+          "job_id": "sikh369-m54-pad-inspect",
+          "job_kind": "native",
+          "monotonic_seconds": 34.06472670799121,
+          "outcome": "PASSED",
+          "utc_seconds": 34.06493902206421
+        },
+        {
+          "job_id": "sikh369-m54-pad-fit",
+          "job_kind": "native",
+          "monotonic_seconds": 35.2420448330231,
+          "outcome": "PASSED",
+          "utc_seconds": 35.24226784706116
+        },
+        {
+          "job_id": "sikh369-m55-pad-bind",
+          "job_kind": "native",
+          "monotonic_seconds": 33.65234279213473,
+          "outcome": "PASSED",
+          "utc_seconds": 33.65254092216492
+        },
+        {
+          "job_id": "sikh369-m56-pad-contact",
+          "job_kind": "native",
+          "monotonic_seconds": 36.34013762511313,
+          "outcome": "PASSED",
+          "utc_seconds": 36.34036111831665
+        },
+        {
+          "job_id": "sikh369-m57-pad-follow",
+          "job_kind": "native",
+          "monotonic_seconds": 36.011393500026315,
+          "outcome": "PASSED",
+          "utc_seconds": 36.01161789894104
+        },
+        {
+          "job_id": "sikh370-m58-diagnose53",
+          "job_kind": "native",
+          "monotonic_seconds": 37.33334641624242,
+          "outcome": "PASSED",
+          "utc_seconds": 37.33355712890625
+        },
+        {
+          "job_id": "sikh370-m58-diagnose55",
+          "job_kind": "native",
+          "monotonic_seconds": 37.58460312476382,
+          "outcome": "PASSED",
+          "utc_seconds": 37.584818840026855
+        },
+        {
+          "job_id": "sikh370-m59-refine",
+          "job_kind": "native",
+          "monotonic_seconds": 278.3542285421863,
+          "outcome": "PASSED",
+          "utc_seconds": 278.35472106933594
+        },
+        {
+          "job_id": "sikh370-m60-envelope",
+          "job_kind": "native",
+          "monotonic_seconds": 132.38383162487298,
+          "outcome": "FAILED",
+          "utc_seconds": 132.38458895683289
+        },
+        {
+          "job_id": "sikh370-m61-envelope",
+          "job_kind": "native",
+          "monotonic_seconds": 130.79414874967188,
+          "outcome": "FAILED",
+          "utc_seconds": 130.79489493370056
+        },
+        {
+          "job_id": "sikh370-m62-fitted-envelope",
+          "job_kind": "native",
+          "monotonic_seconds": 137.29745970806107,
+          "outcome": "FAILED",
+          "utc_seconds": 137.29814314842224
+        },
+        {
+          "job_id": "sikh370-m63-minimum-contact",
+          "job_kind": "native",
+          "monotonic_seconds": 631.9463522499427,
+          "outcome": "FAILED",
+          "utc_seconds": 631.9489600658417
+        },
+        {
+          "job_id": "sikh370-m64-envelope",
+          "job_kind": "native",
+          "monotonic_seconds": 705.1727612921968,
+          "outcome": "FAILED",
+          "utc_seconds": 705.1761600971222
+        },
+        {
+          "job_id": "sikh370-m65-envelope",
+          "job_kind": "native",
+          "monotonic_seconds": 702.8973849168979,
+          "outcome": "PASSED",
+          "utc_seconds": 702.9052600860596
+        },
+        {
+          "job_id": "sikh370-m66-envelope",
+          "job_kind": "native",
+          "monotonic_seconds": 518.6063781250268,
+          "outcome": "PASSED",
+          "utc_seconds": 518.6097331047058
+        },
+        {
+          "job_id": "sikh370-m66-audit",
+          "job_kind": "native",
+          "monotonic_seconds": 39.84467929089442,
+          "outcome": "PASSED",
+          "utc_seconds": 39.845277070999146
+        },
+        {
+          "job_id": "sikh370-m66-side",
+          "job_kind": "native",
+          "monotonic_seconds": 227.1693876250647,
+          "outcome": "PASSED",
+          "utc_seconds": 227.17073011398315
+        },
+        {
+          "job_id": "sikh370-m66-oblique",
+          "job_kind": "native",
+          "monotonic_seconds": 100.35990929091349,
+          "outcome": "PASSED",
+          "utc_seconds": 100.36136603355408
+        },
+        {
+          "job_id": "sikh370-m66-production",
+          "job_kind": "native",
+          "monotonic_seconds": 90.56759079219773,
+          "outcome": "PASSED",
+          "utc_seconds": 90.56880903244019
+        },
+        {
+          "job_id": "sikh370-m66-phase01",
+          "job_kind": "native",
+          "monotonic_seconds": 156.73719887482002,
+          "outcome": "PASSED",
+          "utc_seconds": 156.73814702033997
+        },
+        {
+          "job_id": "sikh370-m66-phase02",
+          "job_kind": "native",
+          "monotonic_seconds": 162.3121263338253,
+          "outcome": "PASSED",
+          "utc_seconds": 162.31311702728271
+        },
+        {
+          "job_id": "sikh370-m66-phase03",
+          "job_kind": "native",
+          "monotonic_seconds": 168.26901570800692,
+          "outcome": "PASSED",
+          "utc_seconds": 168.27282094955444
+        },
+        {
+          "job_id": "sikh370-m66-phase04",
+          "job_kind": "native",
+          "monotonic_seconds": 174.84267329098657,
+          "outcome": "PASSED",
+          "utc_seconds": 174.84378504753113
+        },
+        {
+          "job_id": "sikh370-m66-phase05",
+          "job_kind": "native",
+          "monotonic_seconds": 193.73500112490728,
+          "outcome": "PASSED",
+          "utc_seconds": 193.73707699775696
+        },
+        {
+          "job_id": "sikh370-m66-phase06",
+          "job_kind": "native",
+          "monotonic_seconds": 98.12845700001344,
+          "outcome": "PASSED",
+          "utc_seconds": 98.1299979686737
+        },
+        {
+          "job_id": "sikh371-m67-prepare",
+          "job_kind": "native",
+          "monotonic_seconds": 17.93234095769003,
+          "outcome": "FAILED",
+          "utc_seconds": 17.932722091674805
+        },
+        {
+          "job_id": "sikh371-m68-prepare",
+          "job_kind": "native",
+          "monotonic_seconds": 51.93503691582009,
+          "outcome": "FAILED",
+          "utc_seconds": 51.93533110618591
+        },
+        {
+          "job_id": "sikh371-m69-prepare",
+          "job_kind": "native",
+          "monotonic_seconds": 62.45628425013274,
+          "outcome": "FAILED",
+          "utc_seconds": 62.456533908843994
+        },
+        {
+          "job_id": "sikh371-m70-prepare",
+          "job_kind": "native",
+          "monotonic_seconds": 64.59960837475955,
+          "outcome": "PASSED",
+          "utc_seconds": 64.59958100318909
+        },
+        {
+          "job_id": "sikh371-m70-pose-side",
+          "job_kind": "native",
+          "monotonic_seconds": 123.44140399992466,
+          "outcome": "PASSED",
+          "utc_seconds": 123.44147086143494
+        },
+        {
+          "job_id": "sikh371-m71-prepare",
+          "job_kind": "native",
+          "monotonic_seconds": 61.48439075006172,
+          "outcome": "PASSED",
+          "utc_seconds": 61.48423981666565
+        },
+        {
+          "job_id": "sikh371-m71-pose-side",
+          "job_kind": "native",
+          "monotonic_seconds": 113.06885875016451,
+          "outcome": "PASSED",
+          "utc_seconds": 113.0685830116272
+        },
+        {
+          "job_id": "sikh371-m71-contact",
+          "job_kind": "native",
+          "monotonic_seconds": 76.73651670804247,
+          "outcome": "PASSED",
+          "utc_seconds": 76.73714709281921
+        },
+        {
+          "job_id": "sikh371-m71-side",
+          "job_kind": "native",
+          "monotonic_seconds": 89.23796104080975,
+          "outcome": "PASSED",
+          "utc_seconds": 89.23777484893799
+        },
+        {
+          "job_id": "sikh371-m71-oblique",
+          "job_kind": "native",
+          "monotonic_seconds": 85.3048915839754,
+          "outcome": "PASSED",
+          "utc_seconds": 85.3047399520874
+        },
+        {
+          "job_id": "sikh371-m71-reverse",
+          "job_kind": "native",
+          "monotonic_seconds": 89.72871283395216,
+          "outcome": "PASSED",
+          "utc_seconds": 89.72856712341309
+        },
+        {
+          "job_id": "sikh371-m71-production",
+          "job_kind": "native",
+          "monotonic_seconds": 79.2121979999356,
+          "outcome": "PASSED",
+          "utc_seconds": 79.2120509147644
+        },
+        {
+          "job_id": "sikh371-m71-prefix",
+          "job_kind": "native",
+          "monotonic_seconds": 99.02388041699305,
+          "outcome": "PASSED",
+          "utc_seconds": 99.02444100379944
+        },
+        {
+          "job_id": "sikh371-m71-phase01",
+          "job_kind": "native",
+          "monotonic_seconds": 260.0994483330287,
+          "outcome": "PASSED",
+          "utc_seconds": 260.21321296691895
+        },
+        {
+          "job_id": "sikh371-m71-phase02",
+          "job_kind": "native",
+          "monotonic_seconds": 327.6825725832023,
+          "outcome": "PASSED",
+          "utc_seconds": 327.6850609779358
+        },
+        {
+          "job_id": "sikh371-m71-phase03",
+          "job_kind": "native",
+          "monotonic_seconds": 128.20679483376443,
+          "outcome": "PASSED",
+          "utc_seconds": 128.20773696899414
+        },
+        {
+          "job_id": "sikh371-m71-accepted01",
+          "job_kind": "native",
+          "monotonic_seconds": 440.48615687480196,
+          "outcome": "PASSED",
+          "utc_seconds": 440.5039801597595
+        },
+        {
+          "job_id": "sikh371-m71-accepted02",
+          "job_kind": "native",
+          "monotonic_seconds": 439.6924040419981,
+          "outcome": "PASSED",
+          "utc_seconds": 439.6975541114807
+        },
+        {
+          "job_id": "sikh371-m71-accepted03",
+          "job_kind": "native",
+          "monotonic_seconds": 506.9139399169944,
+          "outcome": "PASSED",
+          "utc_seconds": 506.92329502105713
+        },
+        {
+          "job_id": "sikh372-m72-prepare",
+          "job_kind": "native",
+          "monotonic_seconds": 38.70284124976024,
+          "outcome": "PASSED",
+          "utc_seconds": 38.7029709815979
+        },
+        {
+          "job_id": "sikh372-m72-early-side",
+          "job_kind": "native",
+          "monotonic_seconds": 111.90053966687992,
+          "outcome": "PASSED",
+          "utc_seconds": 111.90068507194519
+        },
+        {
+          "job_id": "sikh372-m72-early-oblique",
+          "job_kind": "native",
+          "monotonic_seconds": 114.35326791694388,
+          "outcome": "PASSED",
+          "utc_seconds": 114.35940885543823
+        },
+        {
+          "job_id": "sikh372-m74-prepare",
+          "job_kind": "native",
+          "monotonic_seconds": 82.93307658284903,
+          "outcome": "PASSED",
+          "utc_seconds": 82.9369740486145
+        },
+        {
+          "job_id": "sikh372-m74-early_side",
+          "job_kind": "native",
+          "monotonic_seconds": 102.79960312508047,
+          "outcome": "PASSED",
+          "utc_seconds": 102.80003309249878
+        },
+        {
+          "job_id": "sikh372-m74-early_oblique",
+          "job_kind": "native",
+          "monotonic_seconds": 102.51803166698664,
+          "outcome": "PASSED",
+          "utc_seconds": 102.51850700378418
+        },
+        {
+          "job_id": "sikh372-m74-contact",
+          "job_kind": "native",
+          "monotonic_seconds": 110.55232845898718,
+          "outcome": "PASSED",
+          "utc_seconds": 110.55335593223572
+        },
+        {
+          "job_id": "sikh372-m74-reverse",
+          "job_kind": "native",
+          "monotonic_seconds": 83.73765504127368,
+          "outcome": "PASSED",
+          "utc_seconds": 83.73879289627075
+        },
+        {
+          "job_id": "sikh372-m74-production",
+          "job_kind": "native",
+          "monotonic_seconds": 73.2769306669943,
+          "outcome": "PASSED",
+          "utc_seconds": 73.2778799533844
+        },
+        {
+          "job_id": "sikh372-m74-prefix",
+          "job_kind": "native",
+          "monotonic_seconds": 100.95001879194751,
+          "outcome": "PASSED",
+          "utc_seconds": 100.95031690597534
+        },
+        {
+          "job_id": "sikh372-m75-source",
+          "job_kind": "native",
+          "monotonic_seconds": 13.520747582893819,
+          "outcome": "PASSED",
+          "utc_seconds": 13.520863056182861
+        },
+        {
+          "job_id": "sikh372-m75-final_side",
+          "job_kind": "native",
+          "monotonic_seconds": 79.47447987506166,
+          "outcome": "PASSED",
+          "utc_seconds": 79.47467994689941
+        },
+        {
+          "job_id": "sikh372-m75-prefix",
+          "job_kind": "native",
+          "monotonic_seconds": 98.88109404128045,
+          "outcome": "PASSED",
+          "utc_seconds": 98.88129687309265
+        },
+        {
+          "job_id": "sikh372-m75-phase01",
+          "job_kind": "native",
+          "monotonic_seconds": 246.15323579125106,
+          "outcome": "PASSED",
+          "utc_seconds": 246.15421104431152
+        },
+        {
+          "job_id": "sikh372-m75-phase02",
+          "job_kind": "native",
+          "monotonic_seconds": 300.06235350016505,
+          "outcome": "PASSED",
+          "utc_seconds": 300.0729470252991
+        },
+        {
+          "job_id": "sikh372-m75-phase03",
+          "job_kind": "native",
+          "monotonic_seconds": 129.7722153752111,
+          "outcome": "PASSED",
+          "utc_seconds": 129.7728190422058
+        },
+        {
+          "job_id": "sikh373-native79-early-side",
+          "job_kind": "native",
+          "monotonic_seconds": 167.75584041699767,
+          "outcome": "PASSED",
+          "utc_seconds": 167.75660705566406
+        },
+        {
+          "job_id": "sikh373-native79-early-oblique",
+          "job_kind": "native",
+          "monotonic_seconds": 194.41822104202583,
+          "outcome": "PASSED",
+          "utc_seconds": 194.41874194145203
+        },
+        {
+          "job_id": "sikh373-native80-prepare",
+          "job_kind": "native",
+          "monotonic_seconds": 103.50362283270806,
+          "outcome": "PASSED",
+          "utc_seconds": 103.50420784950256
+        },
+        {
+          "job_id": "sikh373-native80-early_side",
+          "job_kind": "native",
+          "monotonic_seconds": 180.83792049996555,
+          "outcome": "PASSED",
+          "utc_seconds": 180.83881306648254
+        },
+        {
+          "job_id": "sikh373-native80-early_oblique",
+          "job_kind": "native",
+          "monotonic_seconds": 189.9144446658902,
+          "outcome": "PASSED",
+          "utc_seconds": 189.91530108451843
+        },
+        {
+          "job_id": "sikh373-native80-contact",
+          "job_kind": "native",
+          "monotonic_seconds": 0.03605687525123358,
+          "outcome": "FAILED",
+          "utc_seconds": 0.03691697120666504
+        },
+        {
+          "job_id": "sikh373-native80-contact1200",
+          "job_kind": "native",
+          "monotonic_seconds": 3.187388875056058,
+          "outcome": "FAILED",
+          "utc_seconds": 3.1875479221343994
+        },
+        {
+          "job_id": "sikh373-native80-contact600",
+          "job_kind": "native",
+          "monotonic_seconds": 129.94714483385906,
+          "outcome": "PASSED",
+          "utc_seconds": 129.9476819038391
+        },
+        {
+          "job_id": "sikh373-native80-final_side",
+          "job_kind": "native",
+          "monotonic_seconds": 185.4947888329625,
+          "outcome": "PASSED",
+          "utc_seconds": 185.49679589271545
+        },
+        {
+          "job_id": "sikh373-native80-reverse",
+          "job_kind": "native",
+          "monotonic_seconds": 128.5989997498691,
+          "outcome": "PASSED",
+          "utc_seconds": 128.60002493858337
+        },
+        {
+          "job_id": "sikh373-native80-production",
+          "job_kind": "native",
+          "monotonic_seconds": 108.49268249981105,
+          "outcome": "PASSED",
+          "utc_seconds": 108.49330496788025
+        },
+        {
+          "job_id": "sikh373-native80-prefix",
+          "job_kind": "native",
+          "monotonic_seconds": 120.05760712502524,
+          "outcome": "PASSED",
+          "utc_seconds": 120.05815291404724
+        },
+        {
+          "job_id": "sikh373-native80-phase01",
+          "job_kind": "native",
+          "monotonic_seconds": 340.61249295808375,
+          "outcome": "PASSED",
+          "utc_seconds": 340.61405301094055
+        },
+        {
+          "job_id": "sikh373-native80-phase02",
+          "job_kind": "native",
+          "monotonic_seconds": 290.3940755408257,
+          "outcome": "PASSED",
+          "utc_seconds": 290.39546489715576
+        },
+        {
+          "job_id": "sikh373-native80-phase03",
+          "job_kind": "native",
+          "monotonic_seconds": 229.284120333381,
+          "outcome": "PASSED",
+          "utc_seconds": 229.28575587272644
+        },
+        {
+          "job_id": "sikh374-appearance-c124-front",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 132.25137209892273
+        },
+        {
+          "job_id": "sikh374-appearance-c124-inspect",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 30.385568141937256
+        },
+        {
+          "job_id": "sikh374-appearance-c124-reverse",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 123.1767590045929
+        },
+        {
+          "job_id": "sikh374-appearance-c124-side",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 125.82543587684631
+        },
+        {
+          "job_id": "sikh374-appearance-c125-sculpt",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "FAILED",
+          "utc_seconds": 25.896742820739746
+        },
+        {
+          "job_id": "sikh374-appearance-c126-sculpt",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "FAILED",
+          "utc_seconds": 27.028282165527344
+        },
+        {
+          "job_id": "sikh374-appearance-c127-sculpt",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "FAILED",
+          "utc_seconds": 26.973905086517334
+        },
+        {
+          "job_id": "sikh374-appearance-c128-front",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 121.1314902305603
+        },
+        {
+          "job_id": "sikh374-appearance-c128-inspect",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 29.692370176315308
+        },
+        {
+          "job_id": "sikh374-appearance-c128-reverse",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 123.88266587257385
+        },
+        {
+          "job_id": "sikh374-appearance-c128-sculpt",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 54.96308994293213
+        },
+        {
+          "job_id": "sikh374-appearance-c128-side",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 119.78192210197449
+        },
+        {
+          "job_id": "sikh375-appearance-c129-inspect",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 32.32206106185913
+        },
+        {
+          "job_id": "sikh375-appearance-c129-worst",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 98.38394093513489
+        },
+        {
+          "job_id": "sikh375-appearance-c130-repair",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 31.876110076904297
+        },
+        {
+          "job_id": "sikh375-appearance-c130-inspect",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 31.762902975082397
+        },
+        {
+          "job_id": "sikh375-appearance-c130-worst",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 105.56809186935425
+        },
+        {
+          "job_id": "sikh375-appearance-c131-repair",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 31.485127925872803
+        },
+        {
+          "job_id": "sikh375-appearance-c131-inspect",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 29.280215978622437
+        },
+        {
+          "job_id": "sikh375-appearance-c131-worst",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 96.56871390342712
+        },
+        {
+          "job_id": "sikh375-appearance-c131-front",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 127.07568001747131
+        },
+        {
+          "job_id": "sikh375-appearance-c132-repair",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 32.115516901016235
+        },
+        {
+          "job_id": "sikh375-appearance-c132-inspect",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 29.488124132156372
+        },
+        {
+          "job_id": "sikh375-appearance-c132-worst",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 99.97518491744995
+        },
+        {
+          "job_id": "sikh375-appearance-c132-worstfront",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 105.59540700912476
+        },
+        {
+          "job_id": "sikh376-appearance-c133-inspect",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 31.421282052993774
+        },
+        {
+          "job_id": "sikh376-appearance-c134-repair",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 30.803156852722168
+        },
+        {
+          "job_id": "sikh376-appearance-c134-inspect",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 30.59422492980957
+        },
+        {
+          "job_id": "sikh376-appearance-c134-worst",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 102.48859000205994
+        },
+        {
+          "job_id": "sikh376-appearance-c135-repair",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 31.433670043945312
+        },
+        {
+          "job_id": "sikh376-appearance-c135-inspect",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 31.158463954925537
+        },
+        {
+          "job_id": "sikh376-appearance-c135-worst",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 200.55478286743164
+        },
+        {
+          "job_id": "sikh376-appearance-c136-repair",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 73.77472305297852
+        },
+        {
+          "job_id": "sikh376-appearance-c136-inspect",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 34.31867504119873
+        },
+        {
+          "job_id": "sikh376-appearance-c136-worst",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 165.23698902130127
+        },
+        {
+          "job_id": "sikh379-appearance-c137-repair",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 50.55455303192139
+        },
+        {
+          "job_id": "sikh379-appearance-c137-worst",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "FAILED",
+          "utc_seconds": 127.73606204986572
+        },
+        {
+          "job_id": "sikh379-appearance-c138-repair",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 46.65328097343445
+        },
+        {
+          "job_id": "sikh379-appearance-c138-worst",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 122.01789402961731
+        },
+        {
+          "job_id": "sikh379-appearance-c140-repair",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 46.90246295928955
+        },
+        {
+          "job_id": "sikh379-appearance-c140-front",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 118.49766516685486
+        },
+        {
+          "job_id": "sikh379-appearance-c141-repair",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 46.92919206619263
+        },
+        {
+          "job_id": "sikh379-appearance-c141-front",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 120.82132887840271
+        },
+        {
+          "job_id": "sikh379-appearance-c142-repair",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 49.03300714492798
+        },
+        {
+          "job_id": "sikh379-appearance-c142-front",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 120.7886381149292
+        },
+        {
+          "job_id": "sikh379-appearance-c143-repair",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 48.949280977249146
+        },
+        {
+          "job_id": "sikh379-appearance-c143-front",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": "RETURNED",
+          "utc_seconds": 123.26656413078308
+        },
+        {
+          "job_id": "sikh380-appearance-c144-repair",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 3.8364779949188232
+        },
+        {
+          "job_id": "sikh380-appearance-c145-repair",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 33.53805899620056
+        },
+        {
+          "job_id": "sikh380-appearance-c145-front",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 120.38834309577942
+        },
+        {
+          "job_id": "sikh380-appearance-c146-repair",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 32.67886781692505
+        },
+        {
+          "job_id": "sikh380-appearance-c146-front",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 141.451269865036
+        },
+        {
+          "job_id": "sikh381-appearance-c148-repair",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 48.44890308380127
+        },
+        {
+          "job_id": "sikh381-appearance-c148-front",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 53.57548213005066
+        },
+        {
+          "job_id": "sikh381-appearance-c149-repair",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 39.744489908218384
+        },
+        {
+          "job_id": "sikh381-appearance-c150-repair",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 24.114786863327026
+        },
+        {
+          "job_id": "sikh381-appearance-c151-repair",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 24.313771963119507
+        },
+        {
+          "job_id": "sikh381-appearance-c152-repair",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 48.85552096366882
+        },
+        {
+          "job_id": "sikh381-appearance-c152-front",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 56.11565399169922
+        },
+        {
+          "job_id": "sikh381-appearance-c153-repair",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 49.612783908843994
+        },
+        {
+          "job_id": "sikh381-appearance-c153-front",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 55.40618300437927
+        },
+        {
+          "job_id": "sikh381-appearance-c154-repair",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 49.051191091537476
+        },
+        {
+          "job_id": "sikh381-appearance-c154-front",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 55.872143030166626
+        },
+        {
+          "job_id": "sikh381-appearance-c156-source",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 12.645562171936035
+        },
+        {
+          "job_id": "sikh381-appearance-c156-oblique",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 79.0434319972992
+        },
+        {
+          "job_id": "sikh381-appearance-c156-side",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 77.89665699005127
+        },
+        {
+          "job_id": "sikh383-appearance-c158-import",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 8.784142971038818
+        },
+        {
+          "job_id": "sikh383-appearance-c159-import",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 7.833335876464844
+        },
+        {
+          "job_id": "sikh383-appearance-c160-import",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 15.073664903640747
+        },
+        {
+          "job_id": "sikh383-appearance-c160-oblique",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 73.71609783172607
+        },
+        {
+          "job_id": "sikh383-appearance-c161-import",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 13.42245602607727
+        },
+        {
+          "job_id": "sikh383-appearance-c161-oblique",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 19.914994955062866
+        },
+        {
+          "job_id": "sikh383-appearance-c161-front",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 19.6837739944458
+        },
+        {
+          "job_id": "sikh383-appearance-c161-side",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 20.40452218055725
+        },
+        {
+          "job_id": "sikh383-appearance-c163-import",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 20.161363124847412
+        },
+        {
+          "job_id": "sikh383-appearance-c163-oblique",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 19.46342897415161
+        },
+        {
+          "job_id": "sikh383-appearance-c163-front",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 19.123265981674194
+        },
+        {
+          "job_id": "sikh383-appearance-c163-side",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 19.57700514793396
+        },
+        {
+          "job_id": "sikh383-appearance-c163-motion0",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 25.206143856048584
+        },
+        {
+          "job_id": "sikh383-appearance-c164-import",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 7.9272301197052
+        },
+        {
+          "job_id": "sikh383-appearance-c166-import",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 15.20870304107666
+        },
+        {
+          "job_id": "sikh383-appearance-c166-oblique",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 20.690603971481323
+        },
+        {
+          "job_id": "sikh383-appearance-c166-front",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 20.25458788871765
+        },
+        {
+          "job_id": "sikh383-appearance-c166-side",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 20.724366903305054
+        },
+        {
+          "job_id": "sikh383-appearance-c166-motion0",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 25.486239194869995
+        },
+        {
+          "job_id": "sikh383-appearance-c166-motion1",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 26.328288078308105
+        },
+        {
+          "job_id": "sikh383-appearance-c166-motion2",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 26.971712827682495
+        },
+        {
+          "job_id": "sikh383-appearance-c166-motion3",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 26.341351985931396
+        },
+        {
+          "job_id": "sikh383-appearance-c166-motion4",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 26.49326992034912
+        },
+        {
+          "job_id": "sikh383-appearance-c166-motion5",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 26.42612600326538
+        },
+        {
+          "job_id": "sikh383-appearance-c166-motion6",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 16.010746955871582
+        },
+        {
+          "job_id": "sikh384-appearance-c168-source",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 16.99575710296631
+        },
+        {
+          "job_id": "sikh384-appearance-c168-before_front",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 18.848949909210205
+        },
+        {
+          "job_id": "sikh384-appearance-c168-before_side",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 16.295765161514282
+        },
+        {
+          "job_id": "sikh384-appearance-c168-before_chest",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 16.683830976486206
+        },
+        {
+          "job_id": "sikh384-appearance-c168-adapt",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 19.84243106842041
+        },
+        {
+          "job_id": "sikh384-appearance-c168-after_front",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 20.596662044525146
+        },
+        {
+          "job_id": "sikh384-appearance-c168-after_side",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 21.89121699333191
+        },
+        {
+          "job_id": "sikh384-appearance-c169-source",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 18.988977193832397
+        },
+        {
+          "job_id": "sikh384-appearance-c169-adapt",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 20.050305128097534
+        },
+        {
+          "job_id": "sikh384-appearance-c169-after_front",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 20.600011110305786
+        },
+        {
+          "job_id": "sikh384-appearance-c169-after_side",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 20.26435089111328
+        },
+        {
+          "job_id": "sikh384-appearance-c170-source",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 16.84668493270874
+        },
+        {
+          "job_id": "sikh384-appearance-c170-adapt",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 29.19056010246277
+        },
+        {
+          "job_id": "sikh384-appearance-c170-after_front",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 35.48831605911255
+        },
+        {
+          "job_id": "sikh384-appearance-c170-after_side",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 31.239081859588623
+        },
+        {
+          "job_id": "sikh384-appearance-c173-source",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 16.454041957855225
+        },
+        {
+          "job_id": "sikh384-appearance-c173-adapt",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 19.004687070846558
+        },
+        {
+          "job_id": "sikh384-appearance-c173-after_front",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 20.45009708404541
+        },
+        {
+          "job_id": "sikh384-appearance-c173-after_side",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 20.143737077713013
+        },
+        {
+          "job_id": "sikh384-appearance-c174-source",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 16.670500993728638
+        },
+        {
+          "job_id": "sikh384-appearance-c174-adapt",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 19.50807809829712
+        },
+        {
+          "job_id": "sikh384-appearance-c174-after_front",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 20.63445806503296
+        },
+        {
+          "job_id": "sikh384-appearance-c174-after_side",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 20.225046157836914
+        },
+        {
+          "job_id": "sikh384-appearance-c175-source",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 16.8015398979187
+        },
+        {
+          "job_id": "sikh384-appearance-c175-adapt",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 11.417438983917236
+        },
+        {
+          "job_id": "sikh384-appearance-c176-source",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 32.280914068222046
+        },
+        {
+          "job_id": "sikh384-appearance-c176-adapt",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 30.456913948059082
+        },
+        {
+          "job_id": "sikh384-appearance-c176-after_front",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 31.579410076141357
+        },
+        {
+          "job_id": "sikh384-appearance-c176-after_side",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 34.59565997123718
+        },
+        {
+          "job_id": "sikh384-appearance-c176-whole",
+          "job_kind": "native",
+          "monotonic_seconds": null,
+          "outcome": null,
+          "utc_seconds": 31.248500108718872
+        }
+      ],
+      "net_elapsed_seconds": null,
+      "observed_excluded_input_wait_seconds": 61202.338661432266,
+      "operational_proxies": {
+        "appearance_cycles": 5,
+        "clearance_proxy_rejections": 3,
+        "matched_source_and_candidate_stills": 30,
+        "native_jobs": 12,
+        "rendered_artistic_candidates": 1
+      },
+      "phase_net_seconds": null,
+      "uncertainties": [
+        "clock_discontinuity_or_out_of_order_capture",
+        "missing_interval_end",
+        "missing_job_monotonic_clock",
+        "missing_or_duplicate_lifecycle_boundary",
+        "unexplained_gap",
+        "invalid_reopen_link"
+      ],
+      "unknown_gap_seconds": 3652.7756078243256
+    }
+  ],
+  "experiment_id": "sikh335",
+  "factory_api": {
+    "known_api_cost_usd": null,
+    "provider_calls": null,
+    "reason": "No provider ledger evidence supplied; absence is not zero.",
+    "status": "UNKNOWN"
+  },
+  "model_setting_observations": [],
+  "net_episode_sum_seconds": null,
+  "note": "Episode totals exclude inter-episode gaps. Job sums are process-seconds, not CPU time.",
+  "outcome_denominators": {
+    "closed_episodes": 0,
+    "closed_experiments": 0,
+    "director_accepted_outputs": null,
+    "technically_successful_outputs": null
+  },
+  "schema_version": "1.0"
+}
