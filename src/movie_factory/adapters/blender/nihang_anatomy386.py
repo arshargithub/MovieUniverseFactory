@@ -18,6 +18,8 @@ def mod(name):
 
 
 def validate(e):
+    if isinstance(e,dict) and e.get("kind")=="mounted_anatomy389_contour":return mod("anatomy_contour389").validate(e)
+    if isinstance(e,dict) and e.get("kind")=="mounted_anatomy389_skinning":return mod("anatomy_skinning389").validate(e)
     if isinstance(e,dict) and e.get("kind")=="mounted_anatomy388_corrective_control":return mod("anatomy_corrective388").validate(e)
     if isinstance(e,dict) and e.get('kind')=='mounted_upperarm387_rigid':return mod('anatomy_upperarm387').validate(e)
     if isinstance(e,dict) and e.get('kind')=='mounted_anatomy387_static_control':return mod('anatomy_static387').validate(e)
@@ -203,6 +205,8 @@ def export(bpy,out):
 
 
 def run(bpy,out,e):
+    if e.get("kind")=="mounted_anatomy389_contour":return mod("anatomy_contour389").run(bpy,out,e,mod)
+    if e.get("kind")=="mounted_anatomy389_skinning":return mod("anatomy_skinning389").run(bpy,out,e,mod)
     if e["kind"]=="mounted_anatomy388_corrective_control":return mod("anatomy_corrective388").run(bpy,out,e,mod)
     if e['kind']=='mounted_upperarm387_rigid':return mod('anatomy_upperarm387').run(bpy,out,e,mod)
     if e['kind']=='mounted_anatomy387_static_control':return mod('anatomy_static387').control(bpy,out,mod)
