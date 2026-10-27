@@ -1,0 +1,5 @@
+#255 semantic cut-frame and collar repair
+
+254localization found crossings both in registeredpatch and collar/originalinterfaces. Its682.97mmguidewarp mapped a verticalYguide neckring to a horizontalZsource ring. This is a causalhypothesis to test, not proven by254failure alone. Use anatomically aligned oblique neckcut normals (0,-.6,.8) on both meshes, with explicit originalhead/jaw/eye-owned faces excluded. This changes the graft boundary correspondence, not a gain coefficient.
+
+Each innerpatchring is now placed on a plane beyond the deepestvertex of its jaggedsourceboundary, toward patchinterior, instead of shifting eachresampled zigzag by50mm. Thus retainedoriginalsurface cannot stick through merelybecause originalquads cross the centroidcut. Directionalconsistency and sameclosedEuler/manifold/zero-intersection gates remain. Ifpatchstillfolds, registrationhypothesis fails and no nativecandidate isadmitted. Originalhead andouterfaces kept; allowing the oblique neckring's posteriorlowerneck toreach2.12m is a newexplicit localconstructiondomain, not a relaxation of oldexistingvertexdisplacementguard (oldvertices stilldo notmove).

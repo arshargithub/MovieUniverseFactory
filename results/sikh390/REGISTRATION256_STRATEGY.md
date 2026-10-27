@@ -1,0 +1,3 @@
+#256 isolate relaxation vs boundary warp
+
+255alignedcuts/planarcollars retained84crossings. The implementation constructs an initial harmonicboundary-displacement warp and then applies80ARAPsteps. Priorreports didnot distinguish their embedding.256keeps allgeometry/cuts/weights/triangle guards, computes both explicitly, and chooses the pre-ARAP harmonicregistration as the declaredcandidate. The ARAPresult is a numericalnegativecontrol, not another artcandidate. Compare completejoined restcrossings. A failedharmonicwarp willrefute relaxation-alonecause and return to boundaryconstruction; no tolerancechange or quietclipping. Actualnativeform remains required evenif0crossings.

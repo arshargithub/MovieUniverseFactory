@@ -1,0 +1,170 @@
+"""Construct a local four-boundary anatomical graft and harmonic skin binding.
+
+Inert numeric inputs only. No Blender/provider launch and no artistic PASS.
+"""
+from pathlib import Path
+from collections import defaultdict,Counter
+import json
+import numpy as np
+from scipy.sparse import coo_matrix
+from scipy.sparse.linalg import factorized
+from movie_factory.adapters.blender.anatomy_domain386 import main_skin
+from movie_factory.adapters.blender.anatomy_bind386 import crossing_pairs
+from anatomy386_structural387 import arap
+
+
+def polygon_edges(polys):
+    return [(int(a),int(b)) for p in polys for a,b in zip(p,np.roll(p,-1))]
+
+
+def recover_polygons(tris,edges):
+    """Recover original polygon boundaries from triangulation and true edges."""
+    true={tuple(sorted(map(int,e))) for e in edges};owner={};parent=np.arange(len(tris))
+    def find(i):
+        while parent[i]!=i:parent[i]=parent[parent[i]];i=int(parent[i])
+        return i
+    for i,t in enumerate(tris):
+        for a,b in zip(t,np.roll(t,-1)):
+            e=tuple(sorted((int(a),int(b))))
+            if e in true:continue
+            if e in owner:parent[find(i)]=find(owner[e])
+            else:owner[e]=i
+    groups=defaultdict(list)
+    for i in range(len(tris)):groups[find(i)].append(i)
+    polygons=[];members=[]
+    for ids in groups.values():
+        c=Counter(tuple(sorted(e)) for e in polygon_edges(tris[ids]));boundary=[e for e in polygon_edges(tris[ids]) if c[tuple(sorted(e))]==1]
+        nxt={a:b for a,b in boundary}
+        if len(nxt)!=len(boundary):raise ValueError('GRAFT390_POLYGON_BOUNDARY')
+        start=boundary[0][0];p=[start]
+        while nxt[p[-1]]!=start:
+            p.append(nxt[p[-1]])
+            if len(p)>len(boundary):raise ValueError('GRAFT390_POLYGON_CYCLE')
+        if len(p)!=len(boundary) or len(p) not in (3,4):raise ValueError('GRAFT390_POLYGON_SIZE')
+        polygons.append(np.array(p,dtype=np.int32));members.append(ids)
+    return polygons,members
+
+
+def largest_face_component(polys,selected):
+    owners=defaultdict(list)
+    for i in np.flatnonzero(selected):
+        for e in polygon_edges([polys[i]]):owners[tuple(sorted(e))].append(int(i))
+    adj=defaultdict(list)
+    for ids in owners.values():
+        if len(ids)==2:adj[ids[0]].append(ids[1]);adj[ids[1]].append(ids[0])
+    seen=set();components=[]
+    for i in np.flatnonzero(selected):
+        if i in seen:continue
+        todo=[int(i)];comp=[]
+        while todo:
+            k=todo.pop()
+            if k in seen:continue
+            seen.add(k);comp.append(k);todo.extend(adj[k])
+        components.append(comp)
+    if not components:raise ValueError('GRAFT390_EMPTY_PATCH')
+    keep=np.zeros(len(polys),bool);keep[max(components,key=len)]=True
+    return keep
+
+
+def boundary_loops(polys):
+    c=Counter(tuple(sorted(e)) for e in polygon_edges(polys));boundary=[e for e in polygon_edges(polys) if c[tuple(sorted(e))]==1]
+    nxt={a:b for a,b in boundary}
+    if len(nxt)!=len(boundary) or len(set(nxt.values()))!=len(boundary):raise ValueError('GRAFT390_NONMANIFOLD_BOUNDARY')
+    seen=set();loops=[]
+    for start in nxt:
+        if start in seen:continue
+        p=[];k=start
+        while k not in seen:seen.add(k);p.append(k);k=nxt[k]
+        if k!=start:raise ValueError('GRAFT390_OPEN_BOUNDARY')
+        loops.append(np.array(p,dtype=np.int32))
+    return loops
+
+
+def semantic_loops(v,loops):
+    result={}
+    for loop in loops:
+        center=v[loop].mean(0)
+        label=('legL' if center[0]>0 else 'legR') if center[2]<1.05 else ('barrel' if center[1]>-.5 else 'neck')
+        if label in result:raise ValueError('GRAFT390_AMBIGUOUS_RING')
+        # Stable anatomical start, keeping actual face orientation.
+        start=int(np.argmax(v[loop,0]));result[label]=np.roll(loop,-start)
+    if set(result)!={'legL','legR','barrel','neck'}:raise ValueError('GRAFT390_RING_COVERAGE')
+    return result
+
+
+def fractions(points):
+    d=np.linalg.norm(np.roll(points,-1,axis=0)-points,axis=1)
+    if (d<1e-8).any():raise ValueError('GRAFT390_ZERO_RING_EDGE')
+    return np.r_[0,np.cumsum(d)[:-1]]/d.sum()
+
+
+def sample_ring(points,u,geometry=None):
+    t=fractions(points if geometry is None else geometry);xp=np.r_[t,1.];a=np.vstack([points,points[0]])
+    return np.stack([np.interp(u,xp,a[:,j]) for j in range(points.shape[1])],axis=1)
+
+
+def harmonic(v,edges,fixed,values):
+    n=len(v);a,b=edges.T;deg=np.bincount(edges.ravel(),minlength=n)
+    lap=coo_matrix((np.r_[deg,-np.ones(len(a)),-np.ones(len(a))],(np.r_[np.arange(n),a,b],np.r_[np.arange(n),b,a])),shape=(n,n)).tocsr()
+    free=np.ones(n,bool);free[fixed]=False;ids=np.flatnonzero(free);out=np.zeros((n,values.shape[1]));out[fixed]=values
+    if len(ids):out[ids]=factorized(lap[ids][:,ids].tocsc())(-lap[ids][:,fixed]@values)
+    return out
+
+
+def zipper(s,d,sv,dv):
+    a=np.r_[fractions(sv),1.];b=np.r_[fractions(dv),1.];i=j=0;out=[];n=len(s);m=len(d)
+    while i<n or j<m:
+        if j==m or (i<n and a[i+1]<=b[j+1]):out.append([s[i%n],s[(i+1)%n],d[j%m]]);i+=1
+        else:out.append([s[i%n],d[(j+1)%m],d[j%m]]);j+=1
+    return np.array(out,dtype=np.int32)
+
+
+def build(root):
+    q=np.load(root/'.runtime/factory-native/sikh386-appearance-c193-source/anatomy386-source.npz',allow_pickle=False)
+    old=np.load(root/'.runtime/factory-native/sikh374-appearance-c124-inspect/horse-form374.npz',allow_pickle=False)
+    guide=np.load(root/'.runtime/art-direction/anatomy386-references/lyndon-body-reference.npz',allow_pickle=False)
+    v=q['rest'].astype(float);tris=old['triangles'];skin=main_skin(q['edges'],len(v));polys,members=recover_polygons(tris,q['edges'])
+    centers=np.array([v[p].mean(0) for p in polys]);all_skin=np.array([skin[p].all() for p in polys]);selected=all_skin&(centers[:,1]<-.28)&(centers[:,2]>.82)&(centers[:,2]<1.79)
+    selected=largest_face_component(polys,selected);removed=[p for p,s in zip(polys,selected) if s];sloops=semantic_loops(v,boundary_loops(removed))
+    gv=guide['vertices'].astype(float);gf=guide['faces'].copy();volume=lambda x,f:float(np.sum(np.einsum('ij,ij->i',x[f[:,0]],np.cross(x[f[:,1]],x[f[:,2]])))/6)
+    if volume(v,tris[np.all(skin[tris],axis=1)])*volume(gv,gf)<0:gf=gf[:,::-1]
+    center=gv[gf].mean(1);gs=(center[:,1]<-.28)&(center[:,1]>-1.10)&(center[:,2]>.82);gs=largest_face_component(list(gf),gs)
+    used=np.unique(gf[gs]);index=np.full(len(gv),-1);index[used]=np.arange(len(used));patch_v=gv[used];patch_f=index[gf[gs]];dloops=semantic_loops(patch_v,boundary_loops(list(patch_f)))
+    edges=np.unique(np.sort(np.concatenate([patch_f[:,[0,1]],patch_f[:,[1,2]],patch_f[:,[2,0]]]),axis=1),axis=0)
+    fixed=[];targets=[];weights=[];ring_data={};offsets={'neck':np.array([0,0,-.05]),'barrel':np.array([0,-.05,0]),'legL':np.array([0,0,.05]),'legR':np.array([0,0,.05])}
+    for label,sloop in sloops.items():
+        dloop=dloops[label];u=fractions(patch_v[dloop]);target=sample_ring(v[sloop],u);target=target.mean(0)+(target-target.mean(0))*.98+offsets[label]
+        fixed.extend(dloop);targets.extend(target);weights.extend(sample_ring(q['weights'][sloop],u,geometry=v[sloop]));ring_data[label]=dict(source_vertices=len(sloop),patch_vertices=len(dloop),target_center=target.mean(0).tolist())
+    fixed=np.array(fixed);targets=np.array(targets);boundaryweights=np.array(weights)
+    displacement=harmonic(patch_v,edges,fixed,targets-patch_v[fixed]);initial=patch_v+displacement;free=np.ones(len(patch_v),bool);free[fixed]=False
+    fitted,history=arap(patch_v,initial,edges,free,iterations=80)
+    if abs(fitted[fixed]-targets).max()>1e-9:raise ValueError('GRAFT390_BOUNDARY_DRIFT')
+    # Dirichlet skin binding: exact source boundary values plus tissue anchors.
+    names=list(q['group_names']);anchors={};binding_targets=[('sternum',(0,-.83,1.26),{'DEF-spine.003':.5,'DEF-spine.004':.5})]
+    for side,sign in [('L',1),('R',-1)]:
+        binding_targets += [(f'shoulder{side}',(sign*.29,-.77,1.43),{'DEF-spine.004':.7,f'DEF-upper_arm.{side}':.3}),(f'upperleg{side}',(sign*.20,-.65,1.16),{f'DEF-upper_arm.{side}.001':.65,f'DEF-forearm.{side}':.35})]
+    taken=set(fixed.tolist());ai=[];aw=[]
+    for label,position,blend in binding_targets:
+        order=np.argsort(np.linalg.norm(fitted-np.array(position),axis=1));chosen=next(int(i) for i in order if int(i) not in taken);taken.add(chosen);row=np.zeros(len(names))
+        for name,value in blend.items():row[names.index(name)]=value
+        ai.append(chosen);aw.append(row);anchors[label]=dict(vertex=chosen,position=fitted[chosen].tolist(),weights=blend)
+    w=harmonic(fitted,edges,np.r_[fixed,ai],np.vstack([boundaryweights,aw]));minimum=float(w.min());sums=w.sum(1)
+    if minimum < -1e-7 or abs(sums-1).max()>2e-5:raise ValueError('GRAFT390_WEIGHT_SOLVE')
+    w=np.maximum(w,0);w/=w.sum(1)[:,None]
+    n=len(v);stitches=[]
+    for label,sloop in sloops.items():
+        dloop=dloops[label];stitches.append(zipper(sloop,dloop+n,v[sloop],patch_v[dloop]))
+    append_faces=np.vstack([patch_f+n]+stitches);removed_ids={i for j,s in enumerate(selected) if s for i in members[j]};keep=np.array([i not in removed_ids for i in range(len(tris))]);allfaces=np.vstack([tris[keep],append_faces]);allv=np.vstack([v,fitted]);new_main=np.vstack([tris[keep&np.all(skin[tris],axis=1)],append_faces])
+    ec=Counter(tuple(sorted(e)) for e in polygon_edges(new_main));nonmanifold=sum(c!=2 for c in ec.values());euler=len(np.unique(new_main))-len(ec)+len(new_main)
+    area=np.linalg.norm(np.cross(allv[append_faces[:,1]]-allv[append_faces[:,0]],allv[append_faces[:,2]]-allv[append_faces[:,0]]),axis=1)
+    if nonmanifold or euler!=2 or (area<1e-10).any():raise ValueError('GRAFT390_TOPOLOGY:'+str((nonmanifold,euler,float(area.min()))))
+    relevant=np.any(new_main>=n,axis=1);cross=crossing_pairs(allv,new_main,relevant)
+    remove_data=np.full((len(removed),4),-1,np.int32)
+    for i,p in enumerate(removed):remove_data[i,:len(p)]=p
+    out=root/'.runtime/art-direction/anatomy390-targets';out.mkdir(exist_ok=True)
+    np.savez_compressed(out/'graft252.npz',source_rest=q['rest'],source_weights=q['weights'],group_names=q['group_names'],remove_polygons=remove_data,vertices=fitted.astype(np.float32),faces=append_faces,weights=w.astype(np.float32),source_boundary=np.unique(np.concatenate(list(sloops.values()))).astype(np.int32))
+    report=dict(source_vertices=n,removed_polygons=len(removed),added_vertices=len(fitted),added_triangles=len(append_faces),rings=ring_data,anchors=anchors,main_skin_nonmanifold_edges=nonmanifold,main_skin_euler=euler,minimum_twice_triangle_area=float(area.min()),new_region_intersections=len(cross),minimum_harmonic_weight=minimum,maximum_weight_sum_error=float(abs(sums-1).max()),arap_iterations=len(history),arap_final_change=history[-1],guide_patch_displacement_max=float(np.linalg.norm(fitted-patch_v,axis=1).max()),scope='New local topology and proposed binding, numeric rest construction only. No native anatomy/pose/coat/motion pass. Exterior original geometry retained exactly.')
+    (root/'results/sikh390/numeric252.json').write_text(json.dumps(report,indent=2)+'\n');print(json.dumps(report),flush=True)
+    if cross:raise ValueError('GRAFT390_REST_INTERSECTIONS:'+str(len(cross)))
+
+if __name__=='__main__':build(Path(__file__).resolve().parents[1])

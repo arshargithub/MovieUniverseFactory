@@ -1,0 +1,68 @@
+{
+  "events": [
+    {
+      "episode_id": "leader369",
+      "event_id": "sikh390-wait-end",
+      "event_type": "wait_ended",
+      "evidence_ref": null,
+      "experiment_id": "sikh335",
+      "phase": "anatomy",
+      "reason": "Director390approved exact10additionalstructuralcorrections",
+      "run_id": null,
+      "schema_version": "1.0",
+      "task_id": null,
+      "turn_id": null,
+      "utc": "2026-10-27T21:53:06.075515+00:00",
+      "wait_id": "sikh389-new-authority"
+    },
+    {
+      "activity_id": "sikh390-work",
+      "episode_id": "leader369",
+      "event_id": "sikh390-work-start",
+      "event_type": "work_started",
+      "evidence_ref": null,
+      "experiment_id": "sikh335",
+      "phase": "anatomy",
+      "reason": null,
+      "run_id": null,
+      "schema_version": "1.0",
+      "scope": "Structural surface/skinbinding rebuild252-261, Sol, originalhorse",
+      "task_id": null,
+      "turn_id": null,
+      "utc": "2026-10-27T21:53:06.166292+00:00"
+    },
+    {
+      "activity_id": "sikh390-work",
+      "episode_id": "leader369",
+      "event_id": "sikh390-work-end",
+      "event_type": "work_ended",
+      "evidence_ref": null,
+      "experiment_id": "sikh335",
+      "phase": "anatomy",
+      "reason": null,
+      "run_id": null,
+      "schema_version": "1.0",
+      "scope": "252\u2013261 exhausted; numeric rest construction only, no native/art pass.",
+      "task_id": null,
+      "turn_id": null,
+      "utc": "2026-10-27T23:28:16.773946+00:00"
+    },
+    {
+      "episode_id": "leader369",
+      "event_id": "sikh390-director-wait-start",
+      "event_type": "wait_started",
+      "evidence_ref": null,
+      "experiment_id": "sikh335",
+      "phase": "anatomy",
+      "reason": "director_response",
+      "run_id": null,
+      "schema_version": "1.0",
+      "scope": "Proposed5same-task native/form corrections; no execution under exhausted261.",
+      "task_id": null,
+      "turn_id": null,
+      "utc": "2026-10-27T23:28:45.868940+00:00",
+      "wait_id": "sikh390-native-proof-authority"
+    }
+  ],
+  "scope": "390event subset; canonical full ledger retained in.runtime/experiment-ops.sqlite3; enclosing experiment remainsopen. Construction work ended before final commit bookkeeping."
+}

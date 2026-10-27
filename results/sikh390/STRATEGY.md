@@ -1,0 +1,27 @@
+#390 structural forequarter rebuild strategy
+
+## Outcome, authority and references
+Director390 approves10shared corrections252–261 on original `sikh335-supporting-appearance`; no actor replacement, armor, model escalation or spending. Reconstruct a coherent chest/shoulder/lower-neck/upper-leg surface and binding, first neutral283 and raised339 front/side/opposite, then333/346 and full action/contact/coat. Original head, remaining horse, accepted66/75/80root/head/hoof timing and Pashtun masters stay protected. Specific original internal vertices/skin weights are implementation choices, not Director acceptance.
+
+Physical horse photos govern connected loaded anatomy; the original video and accepted action govern performance. Existing LyndonCC0geometry offers a constructive local mesh substrate, not identity, film finish or choreography. Rechecked original OpenGameArt model-pack and rigged-horse pages on2026-10-27: both listCC0 and credit Lyndon Daniels. Only already-local inert geometry is used; no third-party code, rig, textures, materials or actions. The new use is a local anatomical mesh graft, not qualified reuse of its whole actor. Any source-derived pixels/material remain out of scope. Local adaptation $0, no upload/provider/deployment dependency or install. The original reference-only qualification does not by itself prove this graft.
+
+## Why construction changes
+The prior original surface/weights produced473intersections at difficult339. Elastic fitting, projection, fairing, DQ and direct sculpt failed positive form;251added83crossings. Preserve those failures. A new coefficient or renamed skinfield is not a new strategy. Replace the local topological patch and construct a new smooth regional binding; preserve the original external boundary rather than push its distorted interior around.
+
+## Chosen method and interfaces
+Read-only discovery finds four main source boundary rings when the connected forequarter patch is selected: neck, thorax and both forelegs. Two unrelated muzzle islands must be excluded by connected-face analysis. The CC0local guide supplies a four-ring connected positive patch with different vertex density. Match semantic rings, construct an inward collar, deform the guide patch by coherent boundary-constrained ARAP, and zipper-stitch the rings to the exact original boundary. Preserve original polygons/UVs/materials outside the removed patch; do not triangulate the entire horse and change head subdivision. Retain removed original data for reversal.
+
+Solve nonnegative harmonic regional weights from exact source boundary weights plus explicit chest/shoulder/upper-leg anatomical anchors; original outer weights stay unchanged. This is a proposed skinning representation, not a physiological muscle solver or already-qualified neutral/raised shape. The anatomical anchors may be wrong and must be rejected by actual native poses. No full motion cache before a native positive form.
+
+## Proof sequence and resources
+252: admitted inert-array construction, topology/weld/orientation/skin-weight checks and canonical source preservation; no native artistry claim. Then native graft handler integration, save/reopen and neutral/raised matched views under remaining shared slots. If neutral fails, correct construction before raised propagation. If raised fails with a good neutral, isolate binding/articulation rather than destroy neutral anatomy. Only after positive static family build moving-form/contact/coat integration.
+
+One worker; existing Python/Numpy/Scipy/Blender only, no extra inference/subagent. Original source184 and actual193skin data remain input; no static250/251probe may be animated. Guide boundary correspondence and skinning are hypotheses. Risks: warped neck, weak shoulder, collar seams, poor leg attachment, nonmanifold zipper, inverted/crossed faces, UV/coat discontinuity and a good rest shape that fails339. Earliest gates require watertight consistent topology and no new intersections, followed by native anatomy in all revealing views and wholehorse scale.
+
+## Expert derivation and review
+Animal anatomy: chest supported by thorax, coherent shoulder/upper-leg origins, flowing lower-neck transition, neither bib nor membrane. Mesh/rigging: manifold welded patch, original outer faces/points/weights, new binding owns only the local repair, source transform and actual bone paths measured. Cinematography: matched front/side/opposite and neutral/raised framing cannot hide a defect. Production/reuse: original identity/film quality; no guide low-poly surface as finished look, old garments/coat are not concealment. Director313retains fullspeed/audio judgment. Structural tests do not judge anatomy.
+
+## Revision, stopping and failure response
+Keep all history and one shared cap. Reference inadequacy returns to grounding; the present goal is clear enough for construction. A collar/topology failure repairs construction; a pose-only failure returns to binding; repeated failures require a changed premise, not a border or smoothing sweep. Do not spend all10merely because granted. No handover for methods or code. Hand back a meaningful form/motion review only after known visible blockers close, or a genuine allowance/capability/Director-owned boundary with evidence and a next package.
+
+Checkpoint390: maintain scoped local planning/code commits separately. Remote design push must first inspect outgoing ancestry and exclude unrelated code/native/secrets; mixed ancestry is not silently authorized by the checkpoint. No new remote protection claim.

@@ -1,0 +1,5 @@
+#257 proper semantic frame alignment before local registration
+
+256provedboth initialwarp65crossings andARAP84fail; removingrelaxationalone isinsufficient. Existingreference's fourringcentroids differ systematically fromsource, notablyforelegsY. The priorlocalfitter tried to absorb that fullframe mismatch. Read-only4pointsolve yields an orientation-preserving affineframe det0.49845, singularvalues0.647..1.041, condition9.74: plausible localanatomicaladaptation withoutreflection/extremescale.
+
+257firstaligns allfour semanticringcentroids jointly, then solves onlyresidual boundarywarp. This is a changedregistrationframe, not anotherstroke/gain. Itcomputes bothharmonic andARAP numericcontrols; fixedcandidate isaffine+harmonic and mustmeet unchangedclosedorientabletopology/no-crossings beforeactualnativeproof. No automaticpromotion ifonlytheothercontrolworks; recordboth. Nativeanatomy, raisedskinning and filmfinish remainunknown. Originaloutside/head/action unchanged; same261cap/Sol/noresources.

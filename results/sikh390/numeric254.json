@@ -1,0 +1,117 @@
+{
+  "source_vertices": 22514,
+  "removed_polygons": 1660,
+  "added_vertices": 517,
+  "added_triangles": 1198,
+  "rings": {
+    "neck": {
+      "source_vertices": 72,
+      "patch_vertices": 28,
+      "target_center": [
+        0.0030135521311638073,
+        -0.9213404607093015,
+        1.7406731889376594
+      ]
+    },
+    "legL": {
+      "source_vertices": 24,
+      "patch_vertices": 10,
+      "target_center": [
+        0.18917640390093118,
+        -0.7460030481483884,
+        0.8495052969415067
+      ]
+    },
+    "barrel": {
+      "source_vertices": 40,
+      "patch_vertices": 30,
+      "target_center": [
+        -0.013290616830986137,
+        -0.3093547523552211,
+        1.3314762593851401
+      ]
+    },
+    "legR": {
+      "source_vertices": 24,
+      "patch_vertices": 9,
+      "target_center": [
+        -0.18087829449400247,
+        -0.7451729413461979,
+        0.8531786934388743
+      ]
+    }
+  },
+  "anchors": {
+    "sternum": {
+      "vertex": 451,
+      "position": [
+        0.011317656672798083,
+        -0.8416053140361412,
+        1.2524559946957525
+      ],
+      "weights": {
+        "DEF-spine.003": 0.5,
+        "DEF-spine.004": 0.5
+      }
+    },
+    "shoulderL": {
+      "vertex": 493,
+      "position": [
+        0.3156916603412443,
+        -0.7422859009893473,
+        1.4281582845525747
+      ],
+      "weights": {
+        "DEF-spine.004": 0.7,
+        "DEF-upper_arm.L": 0.3
+      }
+    },
+    "upperlegL": {
+      "vertex": 201,
+      "position": [
+        0.22688298273305157,
+        -0.674811272465004,
+        1.122839647143188
+      ],
+      "weights": {
+        "DEF-upper_arm.L.001": 0.65,
+        "DEF-forearm.L": 0.35
+      }
+    },
+    "shoulderR": {
+      "vertex": 316,
+      "position": [
+        -0.25408868824898345,
+        -0.769357768855715,
+        1.416751014372964
+      ],
+      "weights": {
+        "DEF-spine.004": 0.7,
+        "DEF-upper_arm.R": 0.3
+      }
+    },
+    "upperlegR": {
+      "vertex": 349,
+      "position": [
+        -0.1434425366304189,
+        -0.6863640314782734,
+        1.1829246676423582
+      ],
+      "weights": {
+        "DEF-upper_arm.R.001": 0.65,
+        "DEF-forearm.R": 0.35
+      }
+    }
+  },
+  "main_skin_nonmanifold_edges": 0,
+  "main_skin_euler": 2,
+  "minimum_twice_triangle_area": 1.1873224291475154e-05,
+  "new_region_intersections": 151,
+  "minimum_harmonic_weight": 0.0,
+  "deforming_columns": 80,
+  "maximum_weight_sum_error": 1.3322676295501878e-15,
+  "arap_iterations": 80,
+  "arap_final_change": 3.0251591343990202e-05,
+  "guide_patch_displacement_max": 0.6829673077764972,
+  "scope": "New local topology and proposed binding, numeric rest construction only. No native anatomy/pose/coat/motion pass. Exterior original geometry retained exactly."
+}
