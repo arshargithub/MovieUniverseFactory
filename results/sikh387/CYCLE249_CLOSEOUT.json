@@ -1,0 +1,21 @@
+{
+  "cycle": 249,
+  "statuses": {
+    "__positive_forequarter_form__": "FAIL",
+    "director_form_motion": "UNKNOWN",
+    "whole_look": "FAIL",
+    "form": "FAIL",
+    "__requirements__": "FAIL",
+    "evidence": "FAIL",
+    "interfaces": "FAIL",
+    "__forequarter_method__": "FAIL",
+    "__allowance__": "FAIL"
+  },
+  "observation": "Native no-edit control passed;12pose DQ data exact outside/joints max140.88mm, but dense alternative exceeded200mm surface guard after120samples. Worker failed with SKINNING389_DENSE_LIMIT; no returned candidate/no artpass. Cache-before-static-preview sequencing error identified; nextproof must snapshot actual339before any densecache. No surface guard waived.",
+  "evidence": [
+    "results/sikh387/appearance-c249-source-run.json",
+    ".runtime/factory-native/sikh387-appearance-c249-source/anatomy389-skinning.json",
+    ".runtime/factory-native/sikh387-appearance-c249-source/worker-status.json"
+  ],
+  "max": 251
+}

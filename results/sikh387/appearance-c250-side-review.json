@@ -1,0 +1,41 @@
+{
+  "verdict": "FAIL",
+  "run_digest": "b9b2c1df4cc8bc83d0a546c6afb4381b44d631f4c4797a48fc7c56386248262d",
+  "observation": "Actual native side339 retains a broad projecting shelf/bib below the neck and sharp unsupported shoulder/upperarm insertion. DQ changes volume but does not supply coherent horse anatomy. This is not a production-ready or positive micro-appearance proof.",
+  "comparison": "Compared actual side250 with source/failed243 and the real Friesian rear plus limited237B form reference: required flowing supported chest/shoulder transition absent.",
+  "open_defects": [
+    "projecting lower-neck/chest shelf",
+    "unsupported shoulder/upperarm root",
+    "connected anatomical form unresolved"
+  ],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh387-appearance-c250-side/snapshot.json",
+      "sha256": "06e3ff2832e9f94eaeff0bb16d40706180e5b7307a28ec310ec0ab37c5bcea9a"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh387-appearance-c250-side/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh387-appearance-c250-side/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh387-appearance-c250-side/frame.png",
+      "sha256": "6da8b7c7687b475069314e4d17372078731f0dade60aa7ad2e28fb9bdd38ade0"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh387-appearance-c250-side/frames.json",
+      "sha256": "cb2b1f1bdf991b5e4a6e69e9fb8be9ae0ffa411a0f86fdeee1ba2d11804cbe43"
+    },
+    "frame_339": {
+      "path": ".runtime/factory-native/sikh387-appearance-c250-side/frame.png",
+      "sha256": "6da8b7c7687b475069314e4d17372078731f0dade60aa7ad2e28fb9bdd38ade0"
+    }
+  },
+  "cycle_disposition": {
+    "category": "art_rejected",
+    "observation": "Actual native side339 retains a broad projecting shelf/bib below the neck and sharp unsupported shoulder/upperarm insertion. DQ changes volume but does not supply coherent horse anatomy. This is not a production-ready or positive micro-appearance proof."
+  }
+}

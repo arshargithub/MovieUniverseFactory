@@ -1,0 +1,73 @@
+{
+  "experiment": "sikh335",
+  "episode": "leader369",
+  "events": [
+    {
+      "episode_id": "leader369",
+      "event_id": "sikh389-wait-end",
+      "event_type": "wait_ended",
+      "evidence_ref": null,
+      "experiment_id": "sikh335",
+      "phase": "anatomy",
+      "reason": "Director389 reports model return; current developer model instruction also identifies Sol6.1",
+      "run_id": null,
+      "schema_version": "1.0",
+      "task_id": null,
+      "turn_id": null,
+      "utc": "2026-10-27T21:13:02.144978+00:00",
+      "wait_id": "sikh388-sol-return"
+    },
+    {
+      "activity_id": "sikh389-work",
+      "episode_id": "leader369",
+      "event_id": "sikh389-work-start",
+      "event_type": "work_started",
+      "evidence_ref": null,
+      "experiment_id": "sikh335",
+      "phase": "anatomy",
+      "reason": null,
+      "run_id": null,
+      "schema_version": "1.0",
+      "scope": "Originalhorse forequarter corrections249-251 on Sol; no new resources",
+      "task_id": null,
+      "turn_id": null,
+      "utc": "2026-10-27T21:13:02.227063+00:00"
+    },
+    {
+      "activity_id": "sikh389-work",
+      "episode_id": "leader369",
+      "event_id": "sikh389-work-end",
+      "event_type": "work_ended",
+      "evidence_ref": null,
+      "experiment_id": "sikh335",
+      "phase": "anatomy",
+      "reason": "249-251 completed without anatomy pass; canonical REPLAN_REQUIRED251/max251",
+      "run_id": null,
+      "schema_version": "1.0",
+      "task_id": null,
+      "turn_id": null,
+      "utc": "2026-10-27T21:42:47.700039+00:00"
+    },
+    {
+      "episode_id": "leader369",
+      "event_id": "sikh389-allowance-wait",
+      "event_type": "wait_started",
+      "evidence_ref": null,
+      "experiment_id": "sikh335",
+      "phase": "anatomy",
+      "reason": "director_response",
+      "run_id": null,
+      "schema_version": "1.0",
+      "scope": "Exhausted251ceiling; proposed structural forequarter rebuild needs new Director correction authority",
+      "task_id": null,
+      "turn_id": null,
+      "utc": "2026-10-27T21:42:47.811021+00:00",
+      "wait_id": "sikh389-new-authority"
+    }
+  ],
+  "active_work_interval_seconds": 1785.472976,
+  "director_wait_excluded": true,
+  "model_usage": null,
+  "provider_spend_usd": 0,
+  "scope": "This continuation session only; work interval includes native wait, not additive. No complete historical cost claim."
+}

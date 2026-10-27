@@ -1,0 +1,43 @@
+{
+  "verdict": "PASS",
+  "run_digest": "e32cf6e7484a621c5a1800c1b9e47f0c4cc504b88712b1f960a207e0b58400f8",
+  "observation": "Actual339snapshot, existing200mmguard, outside points and original data checks passed. No anatomical verdict.",
+  "comparison": "Declared fixed field, actual target playback and original shape/action/othergeometry source.",
+  "open_defects": [],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh387-appearance-c251-source/snapshot.json",
+      "sha256": "06e3ff2832e9f94eaeff0bb16d40706180e5b7307a28ec310ec0ab37c5bcea9a"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh387-appearance-c251-source/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh387-appearance-c251-source/script-diagnostics.json",
+      "sha256": "4e1205462c9c8153ef4f4d15eba35ea263f6079e3b74341771bbb12e2f41f34c"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh387-appearance-c251-source/scene.blend",
+      "sha256": "2a02b12e379ad4d963fdd579925b497a66290d20b2f01343ae509060abcc3a3e"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh387-appearance-c251-source/patch-evidence.json",
+      "sha256": "1f726be878e6220ed497cc17d515dd11dc8293081e914a1eb8504717b7feb10a"
+    }
+  },
+  "cycle_disposition": {
+    "category": "causal_control_only",
+    "observation": "Static source transport only; anatomy remains unjudged."
+  },
+  "requirement_outcomes": {
+    "preservation": {
+      "status": "PASS",
+      "observation": "Native target and original data checks passed."
+    },
+    "evidence": {
+      "status": "NOT_TESTED",
+      "observation": "Requires actual nativeviews."
+    }
+  }
+}

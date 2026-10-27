@@ -1,0 +1,43 @@
+{
+  "verdict": "PASS",
+  "run_digest": "04c9a60ced3079b3ca20058ddd8b1547444242694811327593451561c26c369a",
+  "observation": "Actual native source/matrix/exterior controls passed for fixed local skinning representation; anatomy unjudged.",
+  "comparison": "Actual source control, declared interpolation edit and protected original action. No art PASS from volume or cache.",
+  "open_defects": [],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh387-appearance-c250-source/snapshot.json",
+      "sha256": "06e3ff2832e9f94eaeff0bb16d40706180e5b7307a28ec310ec0ab37c5bcea9a"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh387-appearance-c250-source/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh387-appearance-c250-source/script-diagnostics.json",
+      "sha256": "4e1205462c9c8153ef4f4d15eba35ea263f6079e3b74341771bbb12e2f41f34c"
+    },
+    "native": {
+      "path": ".runtime/factory-native/sikh387-appearance-c250-source/scene.blend",
+      "sha256": "df2bbda94872deefc7a14ce613d7667a5d1fed1cfcee2ad5f89ac846c800abfb"
+    },
+    "patch": {
+      "path": ".runtime/factory-native/sikh387-appearance-c250-source/patch-evidence.json",
+      "sha256": "ebbbe8e80cc77a7ae4eeaa4f9584f4db122a2c5cd836019569dbd6950d8460db"
+    }
+  },
+  "cycle_disposition": {
+    "category": "causal_control_only",
+    "observation": "Anatomical form and full-speed remain unpassed."
+  },
+  "requirement_outcomes": {
+    "preservation": {
+      "status": "PASS",
+      "observation": "Actual native source and matrix/exterior tests passed."
+    },
+    "evidence": {
+      "status": "NOT_TESTED",
+      "observation": "No artistic judgment from source controls."
+    }
+  }
+}

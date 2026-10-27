@@ -3031,6 +3031,37 @@
       ],
       "engineering_subscription_usage": null,
       "engineering_cost_usd": null
+    },
+    {
+      "event_id": "series01-exchange389-sol-return",
+      "event_type": "model_switch",
+      "recorded_date": "2026-10-27",
+      "reported_model": "gpt-6.1-sol",
+      "reported_reasoning_effort": "high",
+      "runtime_verified": false,
+      "setting_attribution": "Director389 Done reply to Sol selector return request; developer identifies gpt-6.1-sol",
+      "scope": "Existing originalhorse forequarter; remaining corrections249-251; no separate runtime calls",
+      "evidence": [
+        "results/sikh389/REQUEST.md"
+      ],
+      "engineering_subscription_usage": null,
+      "engineering_cost_usd": null
+    },
+    {
+      "event_id": "series01-exchange389-sol-outcome",
+      "event_type": "model_outcome",
+      "recorded_date": "2026-10-27",
+      "reported_model": "gpt-6.1-sol",
+      "reported_reasoning_effort": "high",
+      "runtime_verified": false,
+      "scope": "Existing forequarter249-251; no separate runtime calls",
+      "outcome": "249dense guard failure;250native DQ form rejected;251direct sculpt form/intersections rejected. No repaired anatomy.251ceiling exhausted, original taskREPLAN_REQUIRED. No model superiority or cost claim.",
+      "evidence": [
+        "results/sikh389/CLOSEOUT.md",
+        "results/sikh389/CANONICAL_CLOSEOUT.json"
+      ],
+      "engineering_subscription_usage": null,
+      "engineering_cost_usd": null
     }
   ],
   "recording_mode": "manual_evidence_backfill_and_future_event_capture",

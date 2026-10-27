@@ -1,0 +1,42 @@
+{
+  "verdict": "FAIL",
+  "run_digest": "110daaedd4e6361aa899603ea81a88d5f1f87bb33a7b6988586d7a37709ab03f",
+  "observation": "Actual native side339 still has a rigid projecting lowerneck/chest shelf, an angular unsupported shoulder root and a newly pinched lower chest contour. Smallerfrontmass is not connected anatomical support. Native geometry diagnostic also found83introduced trianglecrossings (473source,483target), so candidate fails structure and visibleform.",
+  "comparison": "Matched actual250/251side and physicalFriesian supported chest/shoulder reference:251recesses theledge without reconstructing its attachment. No anatomical positiveproof. Not compared only to previousfailure.",
+  "open_defects": [
+    "rigid lowerneck/chest ledge",
+    "angular unsupported shoulder root",
+    "pinched chest contour",
+    "83 newly introduced surface intersections"
+  ],
+  "evidence": {
+    "snapshot": {
+      "path": ".runtime/factory-native/sikh387-appearance-c251-side/snapshot.json",
+      "sha256": "06e3ff2832e9f94eaeff0bb16d40706180e5b7307a28ec310ec0ab37c5bcea9a"
+    },
+    "dependencies": {
+      "path": ".runtime/factory-native/sikh387-appearance-c251-side/dependencies.json",
+      "sha256": "e9b039a17eb8b98c90f88f2622abc3c937c87d351022aeee5a0a3239ae18728d"
+    },
+    "scripts": {
+      "path": ".runtime/factory-native/sikh387-appearance-c251-side/script-diagnostics.json",
+      "sha256": "b842416dfc28d33412267f3d6034e272bbbe7b38e3c9c7453ecec16ba2adac37"
+    },
+    "frame": {
+      "path": ".runtime/factory-native/sikh387-appearance-c251-side/frame.png",
+      "sha256": "2f7f55b62cca79b9311ce2e5601f0e86f1ae336760457964fecb246742fd21ff"
+    },
+    "frames": {
+      "path": ".runtime/factory-native/sikh387-appearance-c251-side/frames.json",
+      "sha256": "118cd44a67b04aab79deec514cfd16b598ef74738b0a66ec01c36a831b6bfc4f"
+    },
+    "frame_339": {
+      "path": ".runtime/factory-native/sikh387-appearance-c251-side/frame.png",
+      "sha256": "2f7f55b62cca79b9311ce2e5601f0e86f1ae336760457964fecb246742fd21ff"
+    }
+  },
+  "cycle_disposition": {
+    "category": "art_rejected",
+    "observation": "Actual native side339 still has a rigid projecting lowerneck/chest shelf, an angular unsupported shoulder root and a newly pinched lower chest contour. Smallerfrontmass is not connected anatomical support. Native geometry diagnostic also found83introduced trianglecrossings (473source,483target), so candidate fails structure and visibleform."
+  }
+}
