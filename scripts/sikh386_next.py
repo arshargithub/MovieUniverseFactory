@@ -19,6 +19,14 @@ for row in src:
     if row['id'] in cfg.get('source_ranges',{}):row['lines']=cfg['source_ranges'][row['id']]
     if row['id']!='controls':row['binding']=bind(row['binding']['path'])
 for p in list(reviewed)+cfg['sources']+[sys.argv[1],'scripts/sikh386_next.py']:b['source_bindings'][p]=bind(p)
+for addition in cfg.get('reference_additions',[]):
+    ref=copy.deepcopy(addition['reference']);rid=ref['id'];assert rid not in {x['id'] for x in b['references']}
+    need=addition['need'];qualified=copy.deepcopy(addition['qualification']);assert qualified['id']==rid
+    b['references'].append(ref);b['reference_plan'][rid]=dict(reference_digest=pk.digest(ref),application=addition['application'])
+    d=b['reference_readiness']['decisions'][need];d['references'].append(qualified);d['decision']='acquire';d['reason']=addition['reason']
+    for req,needs in b['reference_mapping'].items():
+        if need in needs and rid not in b['expert_plan']['realizations'][req]['reference_ids']:b['expert_plan']['realizations'][req]['reference_ids'].append(rid)
+    for item in [ref['binding']]+qualified['evidence']:b['source_bindings'][item['path']]=item
 if 'unit_changes' in cfg:b['work_unit'].update(cfg['unit_changes'])
 if 'experiment_changes' in cfg:b['work_unit']['causal_experiment'].update(cfg['experiment_changes'])
 if 'criteria' in cfg:

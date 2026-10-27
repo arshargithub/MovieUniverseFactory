@@ -42,7 +42,7 @@ def test_closed_anatomical_camera_views():
         c.validate(dict(operation='nihang_frames',frame=283,frames=[283],view='anatomy_arbitrary386',width=640,height=640,samples=8))
 
 
-@pytest.mark.parametrize('kind',['mounted_anatomy386_export','mounted_anatomy386_target'])
+@pytest.mark.parametrize('kind',['mounted_anatomy386_export','mounted_anatomy386_target','mounted_anatomy386_clay','mounted_anatomy386_raw_control'])
 def test_actual_apply_preflight_accepts_existing_horse(monkeypatch,tmp_path,kind):
     class Loader:
         def create_module(self,spec):return None
@@ -78,3 +78,20 @@ def test_actual_reference_apply_uses_existing_horse_owner(monkeypatch,tmp_path):
     bpy=SimpleNamespace(data=SimpleNamespace(objects={'horse':object()}),context=SimpleNamespace(scene=SimpleNamespace(frame_set=lambda f:None),view_layer=SimpleNamespace(update=lambda:None)))
     edit=dict(kind='mounted_anatomy386_reference',target='horse',data=dict(path='.runtime/art-direction/anatomy386-references/a.npz',sha256='a'*64))
     assert p.apply(bpy,dict(frame=283,edits=[edit]),tmp_path)==[{'anatomy386':{'reference_only':True}}]
+
+
+def test_clay_cannot_change_geometry_or_accept_arbitrary_options():
+    e=dict(kind='mounted_anatomy386_clay',target='horse');a.validate(e)
+    for change in [dict(code='run'),dict(target='elsewhere'),dict(color=[1,0,0,1])]:
+        with pytest.raises(ValueError):a.validate(dict(e,**change))
+
+
+def test_raw_control_rejects_out_of_region_and_preserves_corrective_offsets():
+    raw=np.zeros((22514,3),dtype=np.float32);raw[:,1]=-.7;raw[:,2]=1.3
+    shapes=np.tile(raw,(4,1,1));shapes[:,:979,1]+=.04;shapes[1,:,2]+=.02
+    restored,ids=a.raw_control_data(raw,shapes)
+    assert len(ids)==979 and np.array_equal(restored[0],raw)
+    assert np.allclose(restored-restored[0],shapes-shapes[0],atol=1e-7)
+    bad=shapes.copy();bad[:,0,2]+=1.1;badraw=raw.copy();badraw[0,2]+=1.1
+    with pytest.raises(ValueError,match='REGION'):a.raw_control_data(badraw,bad)
+    with pytest.raises(ValueError,match='TOPOLOGY'):a.raw_control_data(raw[:3],shapes[:,:3])

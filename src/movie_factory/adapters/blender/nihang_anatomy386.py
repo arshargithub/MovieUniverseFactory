@@ -18,6 +18,7 @@ def mod(name):
 
 
 def validate(e):
+    if e in [dict(kind='mounted_anatomy386_clay',target='horse'),dict(kind='mounted_anatomy386_raw_control',target='horse')]:return e
     if e==dict(kind='mounted_anatomy386_export',target='horse'):
         return e
     if isinstance(e,dict) and e.get('kind')=='mounted_anatomy386_reference':
@@ -85,6 +86,65 @@ def reference(bpy,out,e):
     (out/'anatomy386-reference.json').write_text(json.dumps(report,indent=2)+'\n');return report
 
 
+def clay(bpy,out):
+    horse=bpy.data.objects['horse'];mesh=horse.data
+    if horse.get('anatomy386_clay'):raise ValueError('ANATOMY386_CLAY_REAPPLY')
+    geometry=mod('nihang_prep367').frozen(bpy);actions=mod('nihang_padsolve370').actions(bpy)
+    custom=bool(getattr(mesh,'has_custom_normals',False))
+    if custom and not hasattr(mesh,'normals_split_custom_set'):raise ValueError('ANATOMY386_CLAY_NORMAL_API')
+    # Select the connected skin only: alpha mane/eye cards keep their materials.
+    parent=list(range(len(mesh.vertices)))
+    def find(i):
+        while parent[i]!=i:parent[i]=parent[parent[i]];i=parent[i]
+        return i
+    for edge in mesh.edges:
+        a,b=edge.vertices;aa,bb=find(a),find(b)
+        if aa!=bb:parent[bb]=aa
+    labels=[find(i) for i in range(len(parent))];counts={}
+    for i in labels:counts[i]=counts.get(i,0)+1
+    main=max(counts,key=counts.get)
+    hidden=[]
+    for ob in bpy.data.objects:
+        if ob!=horse and ob.type in {'MESH','CURVE','CURVES','POINTCLOUD','VOLUME'} and not ob.hide_render:ob.hide_render=True;hidden.append(ob.name)
+    mat=bpy.data.materials.new('386 neutral anatomy clay');mat.use_nodes=True;node=mat.node_tree.nodes.get('Principled BSDF');node.inputs['Base Color'].default_value=(.32,.29,.25,1);node.inputs['Roughness'].default_value=.8
+    mesh.materials.append(mat);index=len(mesh.materials)-1;changed=0
+    for face in mesh.polygons:
+        if all(labels[i]==main for i in face.vertices):face.material_index=index;changed+=1
+    if custom:mesh.normals_split_custom_set([(0.,0.,0.)]*len(mesh.loops))
+    horse['anatomy386_clay']=True;bpy.context.view_layer.update()
+    if geometry!=mod('nihang_prep367').frozen(bpy) or actions!=mod('nihang_padsolve370').actions(bpy):raise ValueError('ANATOMY386_CLAY_GEOMETRY_DRIFT')
+    report=dict(main_skin_vertices=counts[main],skin_polygons=changed,source_custom_normals=custom,normal_policy='automatic geometricnormals plus neutral skin shader; no skintexture/bump',original_geometry_actions_unchanged=True,hidden_other_objects=len(hidden),scope='Diagnostic derivative only; not a productionmaterial/look change. Original master and final shader remain separate.')
+    (out/'anatomy386-clay.json').write_text(json.dumps(report,indent=2)+'\n');return report
+
+
+def raw_control_data(raw,shapes):
+    if raw.shape!=(22514,3) or shapes.shape!=(4,22514,3) or not np.isfinite(raw).all() or not np.isfinite(shapes).all():raise ValueError('ANATOMY386_RAW_TOPOLOGY')
+    d=raw-shapes[0];length=np.linalg.norm(d,axis=1);ids=np.flatnonzero(length>1e-6)
+    if len(ids)!=979 or length.max()>.200001:raise ValueError('ANATOMY386_RAW_SOURCE_CHANGED')
+    p=shapes[0][ids]
+    if abs(p[:,0]).max()>.4 or p[:,1].min()<-1.3 or p[:,1].max()>0 or p[:,2].min()<.9 or p[:,2].max()>1.8:raise ValueError('ANATOMY386_RAW_REGION')
+    restored=raw[None,:,:]+(shapes-shapes[0][None,:,:]);restored[0]=raw
+    return restored,ids
+
+
+def raw_control(bpy,out):
+    horse=bpy.data.objects['horse'];rig=bpy.data.objects['horse.rig']
+    if horse.get('cache376') or horse.get('anatomy386_raw_control'):raise ValueError('ANATOMY386_RAW_REAPPLY')
+    keys=horse.data.shape_keys.key_blocks
+    if [k.name for k in keys]!=['Basis','corr.neck','corr.chin','corr.neck.2']:raise ValueError('ANATOMY386_RAW_KEYS')
+    raw=np.array([v.co[:] for v in horse.data.vertices],dtype=np.float32);shapes=np.array([[v.co[:] for v in k.data] for k in keys],dtype=np.float32)
+    restored,ids=raw_control_data(raw,shapes);before=mod('nihang_prep367').frozen(bpy);actions=mod('nihang_padsolve370').actions(bpy)
+    weights=[[(g.group,g.weight) for g in v.groups] for v in horse.data.vertices]
+    for k,co in zip(keys,restored):k.data.foreach_set('co',co.ravel())
+    horse['anatomy386_raw_control']=True;bpy.context.view_layer.update()
+    after=mod('nihang_prep367').frozen(bpy)
+    if any(before[n]!=h for n,h in after.items() if n!='horse') or actions!=mod('nihang_padsolve370').actions(bpy) or weights!=[[(g.group,g.weight) for g in v.groups] for v in horse.data.vertices]:raise ValueError('ANATOMY386_RAW_OUTSIDE_DRIFT')
+    actual=np.array([[v.co[:] for v in k.data] for k in keys]);error=float(np.max(abs((actual-actual[0])-(shapes-shapes[0]))))
+    if error>3e-7 or not np.array_equal(np.array([v.co[:] for v in horse.data.vertices],dtype=np.float32),raw):raise ValueError('ANATOMY386_RAW_IDENTITY_DRIFT')
+    report=dict(changed_vertices=len(ids),max_restoration_delta=float(np.linalg.norm(raw-shapes[0],axis=1).max()),restored_basis_raw_error=float(abs(actual[0]-raw).max()),relative_corrective_error=error,weights_actions_other_geometry_unchanged=True,scope='Exact coherent original rawchest recovery control on original live rig. Not adopted anatomy, new motion or identity. Normals/material require separately qualified clay/film controls.')
+    (out/'anatomy386-raw-control.json').write_text(json.dumps(report,indent=2)+'\n');return report
+
+
 def camera(bpy,view):
     """Pose-owned fixed anatomical anchors, not a guessed control named chest."""
     from mathutils import Vector
@@ -136,6 +196,8 @@ def export(bpy,out):
 
 def run(bpy,out,e):
     validate(e)
+    if e['kind']=='mounted_anatomy386_raw_control':return raw_control(bpy,out)
+    if e['kind']=='mounted_anatomy386_clay':return clay(bpy,out)
     if e['kind']=='mounted_anatomy386_export':return export(bpy,out)
     if e['kind']=='mounted_anatomy386_reference':return reference(bpy,out,e)
     root=Path(__file__).resolve().parents[4];q=load(root,e['data']);base=mod('nihang_cache376')
