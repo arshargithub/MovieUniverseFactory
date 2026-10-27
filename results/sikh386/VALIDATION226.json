@@ -1,0 +1,20 @@
+{
+  "regression_receipt": ".runtime/context-hygiene/runs/sikh386-closeout-controls226/receipt.json",
+  "tests_passed": 254,
+  "scope": "Offline handler/client/controller regressions, not artistic or native replay acceptance.",
+  "code_commit": "aba3599",
+  "planning_evidence_commit": "97d73d78472348d936176d3e3f9275b374cd2d11",
+  "master_hash_verification": "PROTECTED_MASTERS_VERIFY226.json",
+  "production_evidence_gate": "FAIL",
+  "canonical_state": "REPLAN_REQUIRED226/226",
+  "remaining_corrections": 0,
+  "new_production_approval": false,
+  "new_remote_backup": false,
+  "closure_sources_changed": [
+    "scripts/sikh386_bind_source_review.py",
+    "docs/knowledge/MICRO_APPEARANCE_WORKFLOW_386.md"
+  ],
+  "future_requirement": "Read and reconcile exact closure source changes in a fresh plan after new authority; old execution packet stays stale/failed.",
+  "portable_regression_receipt": "results/sikh386/CONTROL_TEST_RECEIPT226.json",
+  "portable_regression_stdout": "results/sikh386/control-tests226.stdout.txt"
+}

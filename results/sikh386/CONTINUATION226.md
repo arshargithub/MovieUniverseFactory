@@ -4,6 +4,8 @@
 
 Canonical task `sikh335-supporting-appearance`, database `.runtime/factory-entry.sqlite3`, stage `REPLAN_REQUIRED`, correction226/max226. No native job remains registered. The original50additional correction authority is exhausted. Do not resume artist construction, rename the task, reset/refund limits or adopt the failed candidate. A new Director allowance/scope is required. Release exchange remains386; next normal exchange checkpoint390. Assistant updates/compactions are not new Director exchanges.
 
+Operating activity`sikh386-work`has ended; wait`sikh386-next-allowance`(Director response)is open. On the next actual Director response, end that exact wait before recording new work. Do not close the whole Sikh experiment as completed.
+
 Read [EXHAUSTION226.md](EXHAUSTION226.md), [rejection226.json](rejection226.json), [STOP226.json](STOP226.json), the mandatory [386guide](../../docs/knowledge/MICRO_APPEARANCE_WORKFLOW_386.md), and the actual final side/front/opposite native images. This is a diagnosed failure, not a review-ready asset.
 
 ## Exact source boundaries
