@@ -11,17 +11,26 @@ def smooth(a,b,x):
     t=np.clip((x-a)/(b-a),0,1);return t*t*(3-2*t)
 
 def validate(e):
-    if set(e)!={'kind','target','strength'} or e['kind']!='mounted_anatomy386_weights' or e['target']!='horse':raise ValueError('WEIGHTS386_FIELDS')
+    if set(e)!={'kind','target','strength'} or e['kind'] not in {'mounted_anatomy386_weights','mounted_anatomy386_weights_core'} or e['target']!='horse':raise ValueError('WEIGHTS386_FIELDS')
     if type(e['strength']) not in (int,float) or not np.isfinite(e['strength']) or not 0<e['strength']<=.7:raise ValueError('WEIGHTS386_STRENGTH')
     return e
 
-def remap(rest,weights,names,edges,strength,skin):
+def remap(rest,weights,names,edges,strength,skin,*,core=False,dominant=False):
     names=list(names);r=np.asarray(rest);w=np.asarray(weights);x,y,z=r.T
     if r.shape!=(len(w),3) or len(names)!=w.shape[1] or not np.isfinite(w).all() or w.min()<0:raise ValueError('WEIGHTS386_ARRAYS')
     spatial=smooth(1.02,1.16,z)*(1-smooth(1.43,1.66,z))*smooth(-1.2,-1.10,y)*(1-smooth(-.45,-.25,y))*(1-smooth(.25,.36,abs(x)))*skin
     breast=[names.index('DEF-breast.'+s) for s in ['L','R']]
     ownership=w[:,breast].sum(1);mask=spatial*smooth(.03,.2,ownership)
+    if core:
+        # The218 probe localized unintended changes on forearm-dominant skin.
+        # This separate policy leaves the legacy operator unchanged and fixes
+        # the controlled limb surface rather than compensating it later.
+        limb=w[:,[j for j,n in enumerate(names) if n.startswith('DEF-forearm.')]].sum(1)
+        spatial*=1-smooth(.60,1.,limb/np.maximum(ownership,1e-8)) if dominant else 1-smooth(.03,.15,limb)
+        mask=spatial*smooth(.30,.65,ownership)
     a,b=edges.T;count=np.bincount(edges.ravel(),minlength=len(r));fixed=(spatial==0)|(ownership<.03)
+    if core:fixed|=ownership<=.30
+    if core and dominant:fixed|=limb>=ownership
     for _ in range(6):
         total=np.zeros(len(r));np.add.at(total,a,mask[b]);np.add.at(total,b,mask[a]);mask=.75*mask+.25*total/np.maximum(count,1);mask[fixed]=0
     result=w.copy()
@@ -37,7 +46,7 @@ def apply(bpy,out,e,helpers):
     for v in horse.data.vertices:
         for g in v.groups:weights[v.index,g.group]=g.weight
     edges=np.array([ed.vertices[:] for ed in horse.data.edges]);skin=helpers('anatomy_domain386').main_skin(edges,len(rest))
-    target,mask=remap(rest,weights,names,edges,e['strength'],skin);changed=np.any(target!=weights,axis=1)
+    target,mask=remap(rest,weights,names,edges,e['strength'],skin,core=e['kind'].endswith('_core'));changed=np.any(target!=weights,axis=1)
     domain=helpers('anatomy_domain386');distal,_=domain.pectoral_domains(rest,weights,names)
     if np.any(changed&distal) or np.any(changed&~skin):raise ValueError('WEIGHTS386_PROTECTED')
     geom=helpers('nihang_prep367').frozen(bpy);actions=helpers('nihang_padsolve370').actions(bpy)

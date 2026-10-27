@@ -18,7 +18,10 @@ def mod(name):
 
 
 def validate(e):
-    if isinstance(e,dict) and e.get('kind')=='mounted_anatomy386_weights':return mod('anatomy_weights386').validate(e)
+    if isinstance(e,dict) and e.get('kind')=='mounted_anatomy386_muscle_contract':return mod('anatomy_muscle386').validate(e)
+    if isinstance(e,dict) and e.get('kind') in {'mounted_anatomy386_rigid_support','mounted_anatomy386_dominant_support'}:return mod('anatomy_support386').validate(e)
+    if isinstance(e,dict) and e.get('kind') in {'mounted_anatomy386_bind_preserve','mounted_anatomy386_bind_core'}:return mod('anatomy_bind386').validate(e)
+    if isinstance(e,dict) and e.get('kind') in {'mounted_anatomy386_weights','mounted_anatomy386_weights_core'}:return mod('anatomy_weights386').validate(e)
     if e in [dict(kind='mounted_anatomy386_clay',target='horse'),dict(kind='mounted_anatomy386_raw_control',target='horse')]:return e
     if e==dict(kind='mounted_anatomy386_export',target='horse'):
         return e
@@ -27,7 +30,7 @@ def validate(e):
         b=e['data']
         if (not isinstance(b,dict) or set(b)!={'path','sha256'} or not isinstance(b['path'],str) or not b['path'].startswith('.runtime/art-direction/anatomy386-references/') or '..' in Path(b['path']).parts or not b['path'].endswith('.npz') or not isinstance(b['sha256'],str) or len(b['sha256'])!=64 or any(c not in '0123456789abcdef' for c in b['sha256'])):raise ValueError('ANATOMY386_REFERENCE_BINDING')
         return e
-    if not isinstance(e,dict) or set(e)!={'kind','target','data'} or e.get('kind') not in {'mounted_anatomy386_target','mounted_anatomy386_rest','mounted_anatomy386_form','mounted_anatomy386_pectoral','mounted_anatomy386_connected','mounted_anatomy386_weights'} or e.get('target')!='horse':
+    if not isinstance(e,dict) or set(e)!={'kind','target','data'} or e.get('kind') not in {'mounted_anatomy386_target','mounted_anatomy386_rest','mounted_anatomy386_form','mounted_anatomy386_pectoral','mounted_anatomy386_connected','mounted_anatomy386_weights','mounted_anatomy386_weights_core','mounted_anatomy386_bind_preserve','mounted_anatomy386_bind_core'} or e.get('target')!='horse':
         raise ValueError('ANATOMY386_FIELDS')
     b=e['data']
     if (not isinstance(b,dict) or set(b)!={'path','sha256'} or not isinstance(b['path'],str)
@@ -196,7 +199,10 @@ def export(bpy,out):
 
 
 def run(bpy,out,e):
-    if e['kind']=='mounted_anatomy386_weights':return mod('anatomy_weights386').apply(bpy,out,e,mod)
+    if e['kind']=='mounted_anatomy386_muscle_contract':return mod('anatomy_muscle386').run(bpy,out,e,mod)
+    if e['kind'] in {'mounted_anatomy386_rigid_support','mounted_anatomy386_dominant_support'}:return mod('anatomy_support386').run(bpy,out,e,mod)
+    if e['kind'] in {'mounted_anatomy386_bind_preserve','mounted_anatomy386_bind_core'}:return mod('anatomy_bind386').apply(bpy,out,e,mod)
+    if e['kind'] in {'mounted_anatomy386_weights','mounted_anatomy386_weights_core'}:return mod('anatomy_weights386').apply(bpy,out,e,mod)
     validate(e)
     if e['kind']=='mounted_anatomy386_raw_control':return raw_control(bpy,out)
     if e['kind']=='mounted_anatomy386_clay':return clay(bpy,out)
