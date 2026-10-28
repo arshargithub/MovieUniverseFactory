@@ -1,11 +1,11 @@
 {
   "full_regression": {
-    "passed": 2987,
+    "passed": 2988,
     "skipped": 16,
-    "seconds": 42.1,
+    "seconds": 41.29,
     "command": ".venv/bin/python -m pytest tests --ignore=tests/native -q",
-    "log": ".runtime/context-hygiene/runs/workflow397-final-frozen02/stdout.log",
-    "sha256": "6ee5000f4348934387825002a67aa1c9dfe7f1c40576160242d20cb0b10a9c7e"
+    "log": ".runtime/context-hygiene/runs/workflow397-final-regression04/stdout.log",
+    "sha256": "856ea81b14c04c987f460862cbb901f8c7f1b8aae52cbe1983b0d32f55394f9c"
   },
   "knowledge_gate": {
     "ready_for_review": true,

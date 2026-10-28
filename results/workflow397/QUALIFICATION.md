@@ -10,7 +10,7 @@ status projection. Lightweight routes still bypass production planning only.
 
 ## Evidence and scope
 
-Full frozen offline regression: **2987 passed,16 skipped** in42.10s. Native/provider
+Full frozen offline regression: **2988 passed,16 skipped** in41.29s. Native/provider
 calls are mocked or excluded; no paid call or Blender job was launched. Tests
 exercise actual Controller and native-admission paths, missing/failed target
 proofs, cache-before-pose, aggregatePASS contradicting failed cells, known negative
