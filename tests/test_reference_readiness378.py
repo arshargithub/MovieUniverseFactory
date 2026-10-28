@@ -33,6 +33,8 @@ def test_native_grounding_requires_decision_before_any_execution(setup):
     root,_,b,_=setup;c=wf.Controller(root,'.runtime/factory-entry.sqlite3')
     c.route_request('r',request(root,['native_inspect']))
     c.create('t','production',bind(root,'authority.md'),'c',direction=direction(b),mode='local_native',admission='r')
+    from governance_fixtures397 import attach
+    attach(root,c,b)
     p=c.packet('t')
     with pytest.raises(wf.Blocked,match='REFERENCE_SCOPE_REQUIRED'):
         c.submit('t',p['actor'],p['ticket'],pf.result(p,b),'missing')
@@ -52,6 +54,8 @@ def test_native_physical_plan_accepts_qualified_inputs_without_worker(setup):
     root,_,b,_=setup;physical(root,b);b['offline_only']=False
     c=wf.Controller(root,'.runtime/factory-entry.sqlite3');c.route_request('r',request(root,['native_inspect']))
     c.create('t','production',bind(root,'authority.md'),'c',direction=direction(b),mode='local_native',admission='r')
+    from governance_fixtures397 import attach
+    attach(root,c,b)
     assert pf.complete(c,'t',b,'qualified')['stage']=='EXECUTING'
     assert c.state('t')['cycle']==0
 

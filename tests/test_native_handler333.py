@@ -47,6 +47,8 @@ def prepare(setup, monkeypatch, *, render_route=True, authoring=False, edit_rout
     c.route_request('request', req)
     c.create('t', 'production', req['authority'], 'create', direction=direction(brief),
              mode='local_native', admission='request')
+    from governance_fixtures397 import attach
+    attach(root,c,brief,recipes={'proof':bind(root,'save.json'),'build':bind(root,'render.json')})
     for stage in range(4):
         packet = c.packet('t'); response = pf.result(packet, brief)
         if packet['planning_step'] == 'STRATEGIZING':

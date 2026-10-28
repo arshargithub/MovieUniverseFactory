@@ -6,6 +6,7 @@ outcome. No provider, native process, automatic budget or knowledge promotion.
 from __future__ import annotations
 
 import json
+from copy import deepcopy
 from pathlib import Path
 from . import production_knowledge as pk
 from . import review_control as rc
@@ -32,6 +33,8 @@ def install(con):
           BEGIN SELECT RAISE(ABORT, 'immutable retrospective'); END;
         CREATE TRIGGER IF NOT EXISTS retro_no_delete BEFORE DELETE ON retrospective_events
           BEGIN SELECT RAISE(ABORT, 'immutable retrospective'); END;
+        CREATE TABLE IF NOT EXISTS retrospective_cache397 (
+          task TEXT PRIMARY KEY, last_seq INTEGER, engine TEXT, state TEXT, digest TEXT);
     ''')
 
 
@@ -52,13 +55,18 @@ def append(con, task, ident, kind, data):
         return
     con.execute('INSERT INTO retrospective_events(task,event_id,record,digest) VALUES(?,?,?,?)',
                 (task,ident,json.dumps(record,sort_keys=True),pk.digest(record)))
+    value = snapshot(con,task)
+    last = con.execute('SELECT MAX(seq) FROM retrospective_events WHERE task=?',(task,)).fetchone()[0]
+    con.execute('INSERT OR REPLACE INTO retrospective_cache397 VALUES(?,?,?,?,?)',
+                (task,last,engine(),json.dumps(value,sort_keys=True),pk.digest(value)))
 
 
-def project(history):
+def project(history, base=None):
     """Pure replay. Stable requirement keys defeat issue-label-only resets."""
-    state = dict(version=None, engine=None, gates={}, warnings={}, streaks={},
+    state = deepcopy(base) if base is not None else dict(version=None, engine=None, gates={}, warnings={}, streaks={},
                  requirements={}, outcomes=[], proofs={}, responses={}, proof_uses=[], proof_bindings={},
                  interventions={}, sequence=len(history))
+    if base is not None: state['sequence'] = base['sequence'] + len(history)
     superseded = {e['data']['supersedes'] for e in history if e['kind']=='outcome' and e['data'].get('supersedes')}
 
     def hold(key, reason, event):
@@ -154,8 +162,22 @@ def project(history):
     return state
 
 
-def snapshot(con, task):
-    return project(events(con,task))
+def snapshot(con, task, *, full=False):
+    if full: return project(events(con,task))
+    cached=con.execute('SELECT last_seq,engine,state,digest FROM retrospective_cache397 WHERE task=?',(task,)).fetchone()
+    if cached is None or cached[1] != engine(): return project(events(con,task))
+    state=json.loads(cached[2])
+    need(pk.digest(state)==cached[3], 'CACHE_CORRUPT_FULL_REPLAY_REQUIRED397')
+    maximum=con.execute('SELECT MAX(seq) FROM retrospective_events WHERE task=?',(task,)).fetchone()[0]
+    need(maximum is not None and cached[0]<=maximum,'CACHE_AHEAD397')
+    tail=[]
+    for eid,raw,digest in con.execute('SELECT event_id,record,digest FROM retrospective_events WHERE task=? AND seq>? ORDER BY seq',(task,cached[0])):
+        record=json.loads(raw); need(pk.digest(record)==digest,'CORRUPT_EVENT')
+        tail.append(dict(id=eid,**record))
+    # Supersession changes interpretation of earlier events: full replay required.
+    if any(e['kind']=='outcome' and e['data'].get('supersedes') for e in tail):
+        return project(events(con,task))
+    return project(tail,state)
 
 
 def fresh(con, state):
@@ -174,7 +196,11 @@ def validate_evidence(root, con, state):
         reply=value['responses'].get(key)
         need(reply, 'MISSING_RESPONSE')
         for b in reply['evidence'].values(): rc.binding(root,b)
-        admission=next(e['data'] for e in events(con,state['task']) if e['id']==gate['admitted_event'])
+        row=con.execute('SELECT record,digest FROM retrospective_events WHERE task=? AND event_id=?',
+                        (state['task'],gate['admitted_event'])).fetchone()
+        need(row is not None,'MISSING_ADMISSION397')
+        record=json.loads(row[0]);need(pk.digest(record)==row[1],'CORRUPT_EVENT')
+        admission=record['data']
         for b in admission['challenge']['evidence'].values(): rc.binding(root,b)
 
 

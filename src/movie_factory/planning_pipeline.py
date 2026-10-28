@@ -72,7 +72,8 @@ def engine_digest():
     from . import retrospective as retro
     from . import work_units
     from . import reference_readiness as rr, reference_acquisition as ra
-    return pk.digest({m.__name__: pk.file_hash(Path(m.__file__)) for m in (wf, ep, rc, pk, ch, tr, na, retro, work_units, rr, ra)} | {'pipeline': pk.file_hash(Path(__file__))})
+    from . import production_governance as gov, production_contracts as pc, context_projection397 as cp
+    return pk.digest({m.__name__: pk.file_hash(Path(m.__file__)) for m in (wf, ep, rc, pk, ch, tr, na, retro, work_units, rr, ra, gov, pc, cp)} | {'pipeline': pk.file_hash(Path(__file__))})
 
 
 def input_digest(state):
@@ -177,7 +178,7 @@ def derivation(root, direction, ground, data):
     require(all(r['requirements'] for r in data['knowledge_mapping'].values()), 'APPLIED_LEARNING_LOST')
 
 
-def strategy(direction, derived, data):
+def strategy(direction, derived, data, *, root=None):
     from . import reference_readiness as rr
     rr.strategy(derived, data)
     brief = data['brief']
@@ -203,6 +204,10 @@ def strategy(direction, derived, data):
         proved.add(step['id'])
         seen.add(step['id']); covered.update(step['requirements'])
     require(covered == reqs and nonempty(data.get('resource_scope')) and nonempty(data.get('replan_triggers')), 'STRATEGY_EXECUTION_COVERAGE')
+    from . import production_contracts as pc
+    if brief.get('production_contract397'):
+        require(root is not None, 'CONTRACT_ROOT_REQUIRED397')
+        pc.validate(root, brief, steps)
 
 
 def challenge(direction, result, *, root=None, readiness=None, work_unit=None):

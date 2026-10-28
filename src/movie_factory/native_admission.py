@@ -39,6 +39,8 @@ def check_capability(capability, job):
     entry['controller']._fresh(entry['state'])
     current = entry['controller'].state(entry['state']['task'])
     with closing(entry['controller'].connect()) as con:
+        from . import production_governance as gov
+        gov.guard(con,current,allow_existing=True,root=entry['controller'].root)
         retro.guard(con,current)
         retro.check_proofs(entry['controller'].root,con,current)
         require(retro.snapshot(con,current['task'])['sequence']==entry['retro_sequence'], 'RETRO_ADMISSION_CHANGED')
@@ -129,6 +131,16 @@ class Bridge:
             require(not steps[step].get('native_recipe'), 'NATIVE_RECIPE_REQUIRED')
         require(timeout <= timeout_limit(recipe_data), 'NATIVE_TIMEOUT_BOUND')
         previous = self.runs(state)
+        from . import production_governance as gov
+        with closing(self.c.connect()) as con:
+            gov.guard(con,state,allow_existing=True,recipe_digest=pk.digest(recipe_data) if recipe_data else None,root=self.c.root)
+            gov.validate_plan(con,state,state['brief'],self.c.root)
+        from . import production_contracts as pc
+        prior_reviews = {}
+        for dep in steps[step]['depends_on']:
+            if dep in previous:
+                prior_reviews[dep] = self.review(previous[dep]['id'])
+        pc.native_operation(self.c.root, state, step, recipe_data, previous, prior_reviews)
         from . import work_units
         work_units.native(state, recipe_data)
         require(step not in previous, 'NATIVE_STEP_ALREADY_ATTEMPTED_REPLAN_REQUIRED')
@@ -258,6 +270,9 @@ class Bridge:
                 [dict(requirement='__worker__',status='PASS' if record['status']=='RETURNED' else 'FAIL',
                       observation=record.get('error','Worker returned; not appearance qualification.'))],
                 origin='worker',evidence=record.get('artifacts',{}))
+            if record['status'] != 'RETURNED':
+                from . import production_governance as gov
+                gov.finish_cycle(con,state,'TECHNICAL_FAILURE','worker-cycle:' + run_id)
         self.c.job(task, run_id, 'release', 'native-release:' + run_id)
         return record
 
@@ -281,6 +296,8 @@ class Bridge:
         require(verdict['run_digest'] == pk.digest(run), 'STEP_REVIEW_STALE')
         bindings(self.c.root, run['artifacts'])
         bindings(self.c.root, verdict['evidence'])
+        from . import production_contracts as pc
+        pc.native_review(state, step, run, verdict)
         require(all(b in verdict['evidence'].values() for b in run['artifacts'].values()), 'REVIEW_MUST_INSPECT_ACTUAL_OUTPUT')
         with self.c.transaction() as con:
             old = con.execute('SELECT record FROM native_reviews WHERE run=?',(run['id'],)).fetchone()
@@ -294,6 +311,26 @@ class Bridge:
             retro.auto_outcome(con,state,'native-review:'+run['id'],
                 outcomes,
                 origin='native_review',evidence=verdict['evidence'],extra=verdict.get('retrospective_observations'))
+            from . import production_governance as gov
+            if status == 'FAIL': gov.finish_cycle(con,state,'FAIL','native-cycle:' + run['id'])
+            if verdict.get('cycle_disposition',{}).get('category')=='art_rejected':
+                gov.capture_outcomes(con,state,outcomes,'native-feature:'+run['id'])
+            for index, sub in enumerate(verdict.get('subproofs397', [])):
+                require(verdict['verdict']=='PASS' and not verdict['open_defects'], 'FAILED_SUBPROOF397')
+                candidate = {'version':run['id'],'artifacts':run['artifacts']}
+                require(all(e['binding'] in run['artifacts'].values() for e in sub['evidence'].values()),
+                        'SUBPROOF_NOT_NATIVE_OUTPUT397')
+                bad, missing, features = pc.review(self.c.root,state['brief'],candidate,sub,subset=sub['criteria'])
+                require(not bad and not missing and sub['feature'] in features, 'SUBPROOF_NOT_QUALIFIED397')
+                observed={x['requirement']:x['status'] for x in outcomes}
+                require(all(observed.get(r)=='PASS' for r in sub['criteria']), 'SUBPROOF_CONTRADICTS_NATIVE_REVIEW397')
+                require(sub.get('proof_kind') in verdict.get('proof_kinds397',[]), 'SUBPROOF_KIND397')
+                gov.record_proof(self.c.root,con,state,'subproof:'+run['id']+':'+str(index),
+                    dict(id=run['id']+':'+str(index),task=task,cycle=state['cycle'],feature=sub['feature'],
+                         validated_contract=pk.digest(state['brief']['production_contract397']),
+                         conditions=dict(sub['conditions'],proof_kind=sub['proof_kind']),
+                         evidence={**run['artifacts'],'source_native':run['parent'],
+                                   **{k:e['binding'] for k,e in sub['evidence'].items()}}))
         return verdict
 
 

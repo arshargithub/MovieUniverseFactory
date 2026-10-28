@@ -72,6 +72,29 @@ def route(root,topics,budget=24000):
 
 def current(root):
     load(root)
+    adoption=root/'docs/knowledge/context/current397.json'
+    if adoption.exists():
+        from . import production_governance as gov
+        import sqlite3
+        a=json.loads(adoption.read_text())
+        if a.get('schema')!=1 or a.get('database')!='.runtime/factory-entry.sqlite3':
+            raise rc.Blocked('CURRENT397_ADOPTION_SCOPE')
+        for b in a['sources'].values():rc.binding(root,b)
+        for b in a['protected'].values():rc.binding(root,b)
+        db=safe(root,a['database'])
+        with sqlite3.connect('file:'+str(db)+'?mode=ro',uri=True) as con:
+            s=gov.snapshot(con)
+            progress={t:gov.task_progress(s,t) for t in a['tasks']}
+            for t in a['tasks']:
+                for b in s['tasks'][t]['history_evidence'].values():rc.binding(root,b)
+        status_path=safe(root,'docs/planning/RELEASE_01_STATUS.json');status=json.loads(status_path.read_text())
+        return dict(outcome=status['outcome'],exchange=status['substantive_exchange_count'],
+            next_checkpoint=status['next_checkpoint_exchange'],governance=progress,
+            release_progress=gov.release_progress(s),protected=a['protected'],
+            production_review_state='No new artistic approval; Director audiovisual review remains required.',
+            legacy307='Preserved, not repinned or cleared. Strict review_control deliver unchanged.',
+            next=status.get('current_next_action'),source_bindings=a['sources'],
+            details='Explicit397 adoption reads canonical governance fresh; no new cycle, spend or native authority.')
     state=rc.capsule(root)  # all pinned307 state, source, candidate and knowledge checks
     status_path=safe(root,'docs/planning/RELEASE_01_STATUS.json')
     status=json.loads(status_path.read_text())

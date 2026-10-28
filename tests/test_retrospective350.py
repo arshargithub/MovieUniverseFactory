@@ -374,7 +374,9 @@ def test_replacing_registered_proof_cannot_silently_repin_consumers(setup):
 def test_explicit_legacy_migration_keeps_counts_and_creates_unknown_hold(setup):
     root,c,_,_=setup;start(setup)
     # Simulate a pre-policy database in this disposable fixture only.
-    with c.transaction() as con:con.execute('DROP TABLE retrospective_events')
+    with c.transaction() as con:
+        con.execute('DROP TABLE retrospective_events')
+        con.execute('DROP TABLE retrospective_cache397')
     c=wf.Controller(root,'state.sqlite3')
     with pytest.raises(wf.Blocked,match='MIGRATION'):c.packet('t')
     before=c.state('t')

@@ -31,6 +31,9 @@ def read(root, rel):
 
 
 def binding(root, b):
+    if isinstance(b, dict) and 'projection397' in b:
+        from .context_projection397 import validate
+        return validate(root,b)
     if set(b) != {'path', 'sha256'} or pk.file_hash(path(root, b['path'])) != b['sha256']:
         raise Blocked('STALE_BINDING')
 

@@ -84,6 +84,8 @@ def native(setup, monkeypatch, plan=True):
     req = request(root, ['native_inspect'])
     c.route_request('request', req)
     c.create('t', 'production', req['authority'], 'create', direction=direction(b), mode='local_native', admission='request')
+    from governance_fixtures397 import attach
+    attach(root,c,b)
     if plan:
         pf.complete(c, 't', b, 'plan')
     calls = []
@@ -116,13 +118,13 @@ def test_plan_must_precede_native(setup, monkeypatch):
 
 def test_dependency_actual_output_review_precedes_build(setup, monkeypatch):
     root, c, b, bridge, calls = native(setup, monkeypatch)
-    with pytest.raises(wf.Blocked, match='DEPENDENCY_NOT_RUN'):
+    with pytest.raises(wf.Blocked, match='DEPENDENCY_NOT_RUN|PREREQUISITE_NOT_REVIEWED'):
         dispatch(root, bridge, 'build', 'build-run')
     run = dispatch(root, bridge)
     with pytest.raises(wf.Blocked, match='REVIEW_NOT_RUN'):
         dispatch(root, bridge, 'build', 'build-run')
     step_review(bridge, run, 'FAIL')
-    with pytest.raises(wf.Blocked, match='REVIEW_FAILED'):
+    with pytest.raises(wf.Blocked, match='REVIEW_FAILED|PREREQUISITE_FAILED'):
         dispatch(root, bridge, 'build', 'build-run')
     assert len(calls) == 1
 
@@ -157,6 +159,8 @@ def test_native_outputs_must_enter_final_review(setup, monkeypatch):
     value=review(root, c, status='FAIL')
     from reference_fixtures378 import review as reference_review
     value['reference_readiness_review']=reference_review(b['reference_readiness'])
+    from governance_fixtures397 import checks
+    checks(b,value)
     submit(c, 't', value, 'review')
     assert c.state('t')['cycle'] == 1
     assert c.state('t')['stage'] == 'EXECUTING'
@@ -252,7 +256,7 @@ def test_replan_preserves_limit_and_invalidates_proof(setup, monkeypatch):
     assert c.state('t')['cycle'] == 1
     pf.complete(c, 't', b, 'new-plan')
     assert bridge.runs(c.state('t')) == {}
-    with pytest.raises(wf.Blocked, match='DEPENDENCY_NOT_RUN'):
+    with pytest.raises(wf.Blocked, match='DEPENDENCY_NOT_RUN|PREREQUISITE_NOT_REVIEWED'):
         dispatch(root, bridge, 'build', 'later-build')
 
 

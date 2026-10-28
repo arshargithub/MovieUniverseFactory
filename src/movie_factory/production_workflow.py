@@ -120,6 +120,8 @@ def validate_brief(root, brief, route, mode='offline'):
     if mode == 'local_native' and brief.get('work_unit'):
         require(brief['work_unit'].get('version') == 2, 'NATIVE_UNIT_SCOPE_CONTRACT386_REQUIRED')
     ep.validate(brief)
+    from . import production_contracts as pc
+    pc.validate(root, brief, required=mode == 'local_native')
     # Engine changes invalidate old agreements even if the input media is identical.
     return pk.digest({'brief': brief, 'controller': pk.file_hash(Path(__file__)),
                       'expert_planning': pk.file_hash(Path(ep.__file__)),
@@ -199,6 +201,10 @@ def review_result(root, brief, candidate, review, fingerprint):
     ref_fail, ref_missing = rr.review(brief, review, evidence)
     failures += ref_fail
     missing += ref_missing
+    from . import production_contracts as pc
+    typed_fail, typed_missing, _ = pc.review(root, brief, candidate, review)
+    failures += ['contract397:' + k for k in typed_fail]
+    missing += ['contract397:' + k for k in typed_missing]
     return {'failures': sorted(set(failures)), 'missing_evidence': sorted(set(missing)), 'pending_director_av': pending,
             'planning_gaps': gaps,
             'production_approved': False, 'director_approved': False}
@@ -235,6 +241,8 @@ class Controller:
                     BEGIN SELECT RAISE(ABORT, 'immutable routing'); END;
             ''')
             retro.install(con)
+            from . import production_governance as gov
+            gov.install(con)
 
     def route_request(self, request_id, request, continuation=None):
         from . import task_router as tr
@@ -331,6 +339,9 @@ class Controller:
             previous = con.execute('SELECT state FROM events WHERE task=? ORDER BY seq DESC LIMIT 1', (task,)).fetchone()
             previous = json.loads(previous[0]) if previous else None
             state = fn(con)
+            if previous and previous['cycle'] != state['cycle']:
+                from . import production_governance as gov
+                gov.finish_cycle(con, previous, 'FAIL', 'cycle-result:' + event_id)
             if (state['route']=='production' and state['stage']=='REPLAN_REQUIRED'
                     and (not previous or previous['stage']!='REPLAN_REQUIRED')):
                 retro.auto_outcome(con,state,'exhaustion:'+event_id,
@@ -434,6 +445,10 @@ class Controller:
         with closing(self.connect()) as con:
             state = self._state(con, task)
         self._fresh(state)
+        from . import production_governance as gov
+        with self.transaction() as con:
+            if state['stage'] in {'BRIEFING', 'EXECUTING'}:
+                gov.reserve(con, state,self.root)
         with closing(self.connect()) as con:
             if state['stage']=='EXECUTING':
                 retro.guard(con,state)
@@ -463,7 +478,7 @@ class Controller:
             packet.update(pp.packet(state))
             packet['expert_instruction'] = pp.GOALS[state['planning_step']]
             packet['expert_contract'] = ep.contract()
-            return packet
+            return self._compact_packet397(state, packet)
         if 'brief' in state:
             packet.update(brief=state['brief'], fingerprint=state['fingerprint'])
         if packet['actor'] == 'planner':
@@ -476,7 +491,16 @@ class Controller:
             # Builder's narrative/application claims are deliberately not supplied.
         elif state.get('findings'):
             packet['feedback'] = state['findings']
-        return packet
+        return self._compact_packet397(state, packet)
+
+    def _compact_packet397(self, state, packet):
+        from . import production_governance as gov, production_contracts as pc
+        with closing(self.connect()) as con:
+            s = gov.snapshot(con)
+        if state['task'] not in s['tasks']: return packet
+        summary = gov.task_progress(s, state['task'])
+        return pc.compact_packet(packet, summary,
+            maximum=s['tasks'][state['task']]['profile']['context_bytes'])
 
     def submit(self, task, actor, ticket, result, event_id):
         def apply(con):
@@ -485,6 +509,11 @@ class Controller:
                     'WRONG_STAGE_OR_TICKET')
             require(not con.execute('SELECT 1 FROM heavy_job WHERE task=?', (task,)).fetchone(), 'JOB_STILL_ACTIVE')
             self._fresh(state)
+            from . import production_governance as gov
+            if state['stage'] in {'BRIEFING', 'EXECUTING'}:
+                gov.reserve(con, state,self.root)
+            else:
+                gov.guard(con, state, operation='review', allow_existing=True,root=self.root)
             if state['stage'] == 'BRIEFING':
                 return self._planning_submit(state, result, con, event_id)
             if actor == 'builder':
@@ -512,6 +541,18 @@ class Controller:
             findings = review_result(self.root, state['brief'], state['candidate'], result, state['fingerprint'])
             state['review'] = result
             state['findings'] = findings
+            gov.finish_cycle(con, state, 'FAIL' if findings['failures'] else
+                             ('UNKNOWN' if findings['missing_evidence'] else 'PASS'), 'cycle-result:' + event_id)
+            if not findings['failures'] and not findings['missing_evidence'] and state['brief'].get('production_contract397'):
+                from . import production_contracts as pc
+                _, _, features = pc.review(self.root, state['brief'], state['candidate'], result)
+                for feature in features:
+                    gov.record_proof(self.root, con, state, 'qualified:' + event_id + ':' + feature,
+                        dict(id=event_id + ':' + feature, task=task, cycle=state['cycle'], feature=feature,
+                             validated_contract=pk.digest(state['brief']['production_contract397']),
+                             conditions={'scope': state['brief']['scope'], 'candidate': pk.digest(state['candidate'])},
+                             evidence={**state['candidate']['artifacts'],
+                                       **{k:v['binding'] for k,v in result['evidence'].items()}}))
             observations = [dict(requirement=r['id'],status=('NOT_TESTED' if r['status']=='NOT_RUN' else r['status']),
                                  observation=r['observation']) for r in result['checks']]
             # A general visible/reference/intent veto cannot be hidden by PASS
@@ -521,6 +562,7 @@ class Controller:
             def capture():
                 retro.auto_outcome(con,state,'review:'+event_id,observations,origin='final_review',
                                    evidence={k:v['binding'] for k,v in result['evidence'].items()},extra=result.get('retrospective_observations'))
+                gov.capture_outcomes(con,state,observations,'feature-result:'+event_id)
             if findings['planning_gaps']:
                 capture()
                 return self._planning_repair(state, 'DERIVING', findings['planning_gaps'])
@@ -571,6 +613,8 @@ class Controller:
                 return self._planning_repair(state, target, result['issues'])
             brief = artifacts['STRATEGIZING']['brief']
             state['fingerprint'] = validate_brief(self.root, brief, state['route'], state.get('mode', 'offline'))
+            from . import production_governance as gov
+            gov.validate_plan(con,state,brief,self.root)
             state['brief'] = brief
             state['planning_admission'] = result
             retro.plan(con,state,'plan:'+event_id,brief,self.root)
@@ -585,7 +629,7 @@ class Controller:
                 from . import expert_planning as ep
                 data = json.loads(json.dumps(data))
                 data['brief'] = ep.seal_planner_response(data['brief'])
-            pp.strategy(direction, artifacts['DERIVING'], data)
+            pp.strategy(direction, artifacts['DERIVING'], data, root=self.root)
             validate_brief(self.root, data['brief'], state['route'], state.get('mode', 'offline'))
         else: require(False, 'UNKNOWN_PLANNING_STEP')
         artifacts[step] = data
@@ -789,6 +833,8 @@ class Controller:
             state = self._state(con, task)
             if action == 'acquire':
                 self._fresh(state)
+                from . import production_governance as gov
+                gov.reserve(con, state,self.root)
                 retro.guard(con,state)
                 retro.check_proofs(self.root,con,state)
                 require(state['stage'] == 'EXECUTING', 'JOB_OUTSIDE_EXECUTION')
@@ -833,41 +879,100 @@ class Controller:
             return state
         return self._change(task,event_id,'migrate_retrospective',[decision,reconciliation],apply)
 
+    def _retrospective_apply(self, con, state, action, data, event_id):
+        require(state['route']=='production','RETRO_PRODUCTION_ONLY')
+        retro.fresh(con,state)
+        if action=='outcome':
+            require(data.get('evidence'), 'RETRO_EVIDENCE_REQUIRED')
+            bindings(self.root,data['evidence'])
+            retro.outcome(con,state,event_id,data)
+        elif action=='response': retro.response(self.root,con,state,event_id,data['key'],data['response'])
+        elif action=='admit':
+            self._fresh(state)
+            require(not con.execute('SELECT 1 FROM heavy_job WHERE task=?',(state['task'],)).fetchone(),'JOB_STILL_ACTIVE')
+            retro.admit(self.root,con,state,event_id,data['key'],data['challenge'])
+        elif action=='evaluate':
+            retro.evaluate(self.root,con,state,event_id,data['key'],data['evaluation'])
+            from . import production_governance as gov
+            gov.capture_effect(con,state,event_id,data)
+        elif action=='supersede_scope': retro.supersede_scope(self.root,con,state,event_id,data)
+        else: retro.proof(self.root,con,state,event_id,data)
+
     def retrospective(self, task, action, data, event_id):
         """Source-bound internal analysis API. No stage or correction reset."""
         require(action in {'outcome','response','admit','evaluate','proof','supersede_scope'}, 'RETRO_ACTION')
         def apply(con):
-            state = self._state(con,task)
-            require(state['route']=='production','RETRO_PRODUCTION_ONLY')
-            retro.fresh(con,state)
-            if action=='outcome':
-                require(data.get('evidence'), 'RETRO_EVIDENCE_REQUIRED')
-                bindings(self.root,data['evidence'])
-                retro.outcome(con,state,event_id,data)
-            elif action=='response': retro.response(self.root,con,state,event_id,data['key'],data['response'])
-            elif action=='admit':
-                self._fresh(state)
-                require(not con.execute('SELECT 1 FROM heavy_job WHERE task=?',(task,)).fetchone(),'JOB_STILL_ACTIVE')
-                retro.admit(self.root,con,state,event_id,data['key'],data['challenge'])
-            elif action=='evaluate': retro.evaluate(self.root,con,state,event_id,data['key'],data['evaluation'])
-            elif action=='supersede_scope': retro.supersede_scope(self.root,con,state,event_id,data)
-            else: retro.proof(self.root,con,state,event_id,data)
-            if state['stage'] in STAGES:
-                self._stage(state,state['stage'])
+            state = self._state(con, task)
+            self._retrospective_apply(con,state,action,data,event_id)
+            if state['stage'] in STAGES: self._stage(state,state['stage'])
             return state
         return self._change(task,event_id,'retrospective:'+action,data,apply)
+
+    def retrospective_batch(self, task, items, event_id):
+        """Atomic shared-response processing; each original item/event survives."""
+        require(isinstance(items,list) and 0 < len(items) <= 32,'RETRO_BATCH_BOUND397')
+        require(len({i['id'] for i in items})==len(items),'RETRO_BATCH_DUPLICATE397')
+        require(all(i.get('action') in {'outcome','response','admit','evaluate','proof','supersede_scope'}
+                    and nonempty(i.get('id')) and isinstance(i.get('data'),dict) for i in items),'RETRO_BATCH_ITEM397')
+        def apply(con):
+            state=self._state(con,task)
+            for i in items: self._retrospective_apply(con,state,i['action'],i['data'],i['id'])
+            if state['stage'] in STAGES: self._stage(state,state['stage'])
+            return state
+        return self._change(task,event_id,'retrospective_batch397',items,apply)
+
+    def governance(self, task, action, data, event_id):
+        """Trusted administrative API, not a model stage or allowance reset.
+
+        Governance events are append-only in the canonical controller database;
+        metadata does not copy megabytes of historical brief into every event.
+        """
+        from . import production_governance as gov
+        require(action in {'node', 'migrate', 'scope_review', 'retire', 'invalidate',
+                           'exception', 'rebind', 'allocation', 'task_allocation', 'milestone'}, 'GOV397_ACTION')
+        with self.transaction() as con:
+            state = self._public(self._state(con, task))
+            request_digest=pk.digest(dict(task=task,action=action,data=data))
+            prior=con.execute('SELECT digest FROM governance_requests397 WHERE event_id=?',(event_id,)).fetchone()
+            if prior:
+                require(prior[0]==request_digest,'GOV397_REQUEST_ID_CONFLICT')
+                value=gov.snapshot(con)
+                return gov.task_progress(value,task) if task in value['tasks'] else {'registered':True}
+            if action == 'node': gov.define_node(self.root, con, event_id, data)
+            elif action == 'migrate': gov.migrate(self.root, con, state, event_id, data)
+            elif action == 'scope_review': gov.scope_review(self.root, con, state, event_id, data)
+            elif action == 'retire': gov.retire(self.root, con, event_id, data)
+            elif action == 'exception': gov.authorize_exception(self.root, con, state, event_id, data)
+            elif action == 'rebind': gov.rebind(self.root, con, state, event_id, data)
+            elif action == 'allocation': gov.amend_limit(self.root, con, event_id, data)
+            elif action == 'task_allocation': gov.amend_task_allocation(self.root, con, state, event_id, data)
+            elif action == 'milestone': gov.milestone(self.root, con, event_id, data)
+            else:
+                rc.binding(self.root, data['authority'])
+                require(nonempty(data.get('reason')), 'GOV397_INVALIDATION_REASON')
+                gov.append(con, event_id, 'invalidate', data)
+            con.execute('INSERT INTO governance_requests397 VALUES(?,?)',(event_id,request_digest))
+            value = gov.snapshot(con)
+            return gov.task_progress(value, task) if task in value['tasks'] else {'registered': True}
+
+    def governance_status(self, task, *, full=False):
+        from . import production_governance as gov
+        with closing(self.connect()) as con:
+            s = gov.snapshot(con, full=full)
+        return gov.task_progress(s, task)
 
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--root', type=Path, default=Path.cwd())
-    parser.add_argument('--database', default='.runtime/workflow323.sqlite3')
-    parser.add_argument('command', choices=['status', 'events', 'retrospective'])
+    parser.add_argument('--database', default='.runtime/factory-entry.sqlite3')
+    parser.add_argument('command', choices=['status', 'events', 'retrospective', 'governance'])
     parser.add_argument('--task', required=True)
     args = parser.parse_args(argv)
     try:
         controller = Controller(args.root, args.database)
-        value = (controller.state(args.task) if args.command == 'status' else
+        value = (controller.governance_status(args.task) if args.command=='governance' else
+                 controller.state(args.task) if args.command == 'status' else
                  controller.retrospective_packet(args.task) if args.command == 'retrospective' else controller.events(args.task))
         print(json.dumps(value, indent=2))
         return 0
