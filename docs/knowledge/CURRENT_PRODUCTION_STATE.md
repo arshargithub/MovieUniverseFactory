@@ -68,3 +68,23 @@ planning package, applicable reference roles and reconciled original sources.
 Historical calendar/status strings elsewhere do not override these counters.
 Git/S3 protection is authorized, with completion measured only by actual remote
 and restore receipts; an implementation or prepared manifest is not a backup.
+
+## Current399 — strictly free replacement-horse sourcing
+
+Director399 authorizes free-source research and explicitly rejects paying for a
+horse model. No paid model, subscription or required paid conversion/tool path.
+The WildMesh demo is parked: its live listing and embedded GLB are CC-BY-NC4.0;
+the cached CC-BY counterpart is deleted. Do not treat the demo as commercially
+cleared. Research recommends abhayexe's CC-BY4.0 Horse Rigged(Game Ready) first,
+ShakeySco's CC-BY Realistic Horse Mesh second; Lyndon Daniels/ChadM CC0 is weaker.
+See `results/workflow399/SCREEN.md` and the exact downloaded GLB metadata.
+
+The abhayexe source is byte-preserved in `.runtime/assets/horse399-quarantine/`
+with attribution. This is source custody, not native import or artistic adoption.
+It has42joint references and a single60.33s animation, not a verified rear clip.
+No replacement horse has passed native form, continuous action or Director AV.
+Original inherited anatomy crafting remains retired. Source research does not
+replenish261/261appearance or80/80motion allowance. A proposed8-cycle, at-most-
+two-candidate qualification is pending Director approval; no native dispatch.
+397protection continues independently. New research is a post-freeze journal,
+not falsely part of an earlier frozen backup manifest.

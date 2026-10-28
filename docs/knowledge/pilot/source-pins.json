@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "catalog_sha256": "a4ea237e67d78923fb535c65b5b8a10989b8b8061a8c1afdf3a7807a035b922b",
+  "catalog_sha256": "470c1286b625c8aa14f580a868fa3aa0b4a9e47ef717eca11e78048d222e4cbb",
   "sources": {
     "construction319": {
       "path": "docs/knowledge/CONSTRUCTION_INTERFACES_319.md",
@@ -1114,7 +1114,7 @@
     },
     "current255": {
       "path": "docs/knowledge/CURRENT_PRODUCTION_STATE.md",
-      "sha256": "c0dd7e4b448ec4564c687a7b5b6e629a5641e01c2c03d4b3d85fb373ad6199c2",
+      "sha256": "208d62165787039a4db7df4a1e95ff4ddb1aec037a15a5c9d194fa7daf507ab5",
       "sections": [
         {
           "heading": "# Current production authority and carry forward",
@@ -1167,8 +1167,14 @@
         {
           "heading": "## Current397 \u2014 workflow implementation and exhausted production authority",
           "start_line": 50,
-          "end_line": 70,
-          "sha256": "3b94b4e0bfd0db048ab82bafbbb7ebc446771789268d07288348aa5cc70c6870"
+          "end_line": 71,
+          "sha256": "097f238bfd5d2a53da745cd0e2b74c6d4c1707a4d87ac903b41e4827d3029ac5"
+        },
+        {
+          "heading": "## Current399 \u2014 strictly free replacement-horse sourcing",
+          "start_line": 72,
+          "end_line": 90,
+          "sha256": "6d1a8bb558567afafb3aa0aff62d490c1145bc9ed2422c99b3cfd6614159348d"
         }
       ]
     },
@@ -1323,5 +1329,5 @@
       ]
     }
   },
-  "method": "397 inspected update: only current255 amended, governance397 added; all other original source pins verified unchanged."
+  "method": "399 inspected current255amendment and current_state action reconciliation; every other reviewed source pin unchanged."
 }
