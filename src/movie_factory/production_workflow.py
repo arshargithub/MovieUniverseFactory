@@ -961,17 +961,31 @@ class Controller:
             s = gov.snapshot(con, full=full)
         return gov.task_progress(s, task)
 
+    def production_scorecard(self, *, window=10):
+        """Read-only canonical investment + explicitly captured operating data."""
+        from . import production_scorecard401 as scorecard
+        events = []
+        ledger = self.root / '.runtime/experiment-ops.sqlite3'
+        if ledger.exists():
+            with closing(sqlite3.connect('file:' + str(ledger) + '?mode=ro', uri=True)) as con:
+                events = [json.loads(r[0]) for r in con.execute('SELECT payload FROM events ORDER BY seq')]
+        with closing(self.connect()) as con:
+            return scorecard.build(con, operating_events=events, window=window, root=self.root)
+
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--root', type=Path, default=Path.cwd())
     parser.add_argument('--database', default='.runtime/factory-entry.sqlite3')
-    parser.add_argument('command', choices=['status', 'events', 'retrospective', 'governance'])
-    parser.add_argument('--task', required=True)
+    parser.add_argument('command', choices=['status', 'events', 'retrospective', 'governance', 'scorecard'])
+    parser.add_argument('--task')
+    parser.add_argument('--window', type=int, default=10)
     args = parser.parse_args(argv)
     try:
         controller = Controller(args.root, args.database)
-        value = (controller.governance_status(args.task) if args.command=='governance' else
+        require(args.task is not None or args.command == 'scorecard', 'TASK_REQUIRED')
+        value = (controller.production_scorecard(window=args.window) if args.command=='scorecard' else
+                 controller.governance_status(args.task) if args.command=='governance' else
                  controller.state(args.task) if args.command == 'status' else
                  controller.retrospective_packet(args.task) if args.command == 'retrospective' else controller.events(args.task))
         print(json.dumps(value, indent=2))

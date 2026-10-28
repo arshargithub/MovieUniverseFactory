@@ -140,7 +140,7 @@ class Bridge:
         for dep in steps[step]['depends_on']:
             if dep in previous:
                 prior_reviews[dep] = self.review(previous[dep]['id'])
-        pc.native_operation(self.c.root, state, step, recipe_data, previous, prior_reviews)
+        pc.native_operation(self.c.root, state, step, recipe_data, previous, prior_reviews, parent=parent)
         from . import work_units
         work_units.native(state, recipe_data)
         require(step not in previous, 'NATIVE_STEP_ALREADY_ATTEMPTED_REPLAN_REQUIRED')
@@ -325,10 +325,12 @@ class Bridge:
                 observed={x['requirement']:x['status'] for x in outcomes}
                 require(all(observed.get(r)=='PASS' for r in sub['criteria']), 'SUBPROOF_CONTRADICTS_NATIVE_REVIEW397')
                 require(sub.get('proof_kind') in verdict.get('proof_kinds397',[]), 'SUBPROOF_KIND397')
+                child_conditions = pc.child_proof(state['brief']['production_contract397'],
+                                                  sub['criteria'], sub['proof_kind'],state['brief']['references'])
                 gov.record_proof(self.c.root,con,state,'subproof:'+run['id']+':'+str(index),
                     dict(id=run['id']+':'+str(index),task=task,cycle=state['cycle'],feature=sub['feature'],
                          validated_contract=pk.digest(state['brief']['production_contract397']),
-                         conditions=dict(sub['conditions'],proof_kind=sub['proof_kind']),
+                         conditions=dict(sub['conditions'],proof_kind=sub['proof_kind'], **child_conditions),
                          evidence={**run['artifacts'],'source_native':run['parent'],
                                    **{k:e['binding'] for k,e in sub['evidence'].items()}}))
         return verdict

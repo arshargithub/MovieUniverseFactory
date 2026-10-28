@@ -48,7 +48,9 @@ def replay(history, base=None):
     for e in history:
         need(e['seq'] == s['sequence'] + 1, 'EVENT_SEQUENCE')
         need(pk.digest({'kind': e['kind'], 'data': e['data']}) == e['digest'], 'EVENT_CORRUPT')
-        d, k = e['data'], e['kind']
+        # Derived nodes/tasks can later change; never mutate the input event
+        # objects and then misdiagnose a second replay as ledger corruption.
+        d, k = deepcopy(e['data']), e['kind']
         if k == 'node':
             need(d['id'] not in s['nodes'], 'NODE_EXISTS')
             s['nodes'][d['id']] = d
@@ -76,7 +78,7 @@ def replay(history, base=None):
             need(d['id'] not in s['exceptions'], 'EXCEPTION_REUSED')
             s['exceptions'][d['id']] = d
         elif k == 'scope_review':
-            s['reviews'][d['task']] = d
+            s['reviews'][d['task']] = dict(d, recorded_sequence=e['seq'])
         elif k == 'rebind':
             s['tasks'][d['task']]['node'] = d['node']
         elif k == 'node_limit':
@@ -111,6 +113,10 @@ def snapshot(con, *, full=False):
         need(s['sequence'] == row[0] and pk.digest(s) == row[2], 'CACHE_CORRUPT_FULL_REPLAY_REQUIRED')
         end = con.execute('SELECT COALESCE(MAX(seq),0) FROM governance_events397').fetchone()[0]
         need(row[0] <= end, 'CACHE_AHEAD_OF_LEDGER')
+        if any('recorded_sequence' not in v for v in s['reviews'].values()):
+            # Pre401 derived reviews lack ledger ordering. Recover from the
+            # immutable oracle; never invent an order or mutate old events.
+            return replay(history(con))
     else:
         s = empty()
     return replay(history(con, s['sequence']), s)
@@ -227,6 +233,7 @@ def task_progress(s, task):
     peers={k:v for k,v in s['tasks'].items() if capability in ancestors(s,v['node'])}
     lineage_cycles=[v for v in s['cycles'].values() if v['task'] in peers]
     ages = {f:max(x['historical_age'].get(f,0) for x in peers.values()) for f in t['features']}
+    result_ages = dict(ages)
     proof_stamps={}
     for f in t['features']:
         cutoff=max(s.get('regression_sequence',{}).get(k+':'+f,-1) for k in peers)
@@ -236,11 +243,14 @@ def task_progress(s, task):
         if valid:
             # IDs carry task-local cycle counters; ledger order supplies global time.
             latest=max(valid,key=lambda v:v['qualified_sequence']);proof_stamps[f]=latest['id']
-            ages[f] = sum(c['completed'] and f in c['features'] and c['reserved_sequence']>
-                          latest['qualified_sequence'] for c in lineage_cycles)
+            affected = [c for c in lineage_cycles if f in c['features'] and
+                        c['reserved_sequence'] > latest['qualified_sequence']]
+            ages[f] = len(affected)
+            result_ages[f] = sum(c['completed'] for c in affected)
         else:
             proof_stamps[f]='historical-baseline'
-            ages[f] += sum(c['completed'] and f in c['features'] for c in lineage_cycles)
+            ages[f] += sum(f in c['features'] for c in lineage_cycles)
+            result_ages[f] += sum(c['completed'] and f in c['features'] for c in lineage_cycles)
     effects = [e for e in s['effects'].values() if e['task'] in peers and e['result'] != 'effective']
     failures = {f: len({e['experiment'] for e in effects if e['feature'] == f}) for f in t['features']}
     r = s['reviews'].get(task)
@@ -251,15 +261,21 @@ def task_progress(s, task):
     for n in line:
         below = descendants(s, n)
         used[n] = sum(1 for c in s['cycles'].values() if c['node'] in below)
+    # Investment is capability-wide. A newly named peer must neither reset its
+    # age nor repeat a still-current capability review on every reservation.
+    investment = max((v for k,v in s['reviews'].items() if k in peers),
+                     key=lambda v:v.get('recorded_sequence',0), default=None)
     due=[f for f,n in ages.items() if n>=t['profile']['review_after'] and
-         (not r or r.get('proof_stamps',{}).get(f)!=proof_stamps[f] or
-          r.get('reviewed_ages',{}).get(f,-1)<(n//t['profile']['review_after'])*t['profile']['review_after'])]
+         (not investment or investment.get('proof_stamps',{}).get(f)!=proof_stamps[f] or
+          investment.get('reviewed_ages',{}).get(f,-1)<(n//t['profile']['review_after'])*t['profile']['review_after'])]
     decision=('STOP_AND_REALLOCATE' if any(n in s['retirements'] for n in line) or any(
         n>=t['profile']['stop_after'] for n in ages.values()) else
         'REASSESS' if due or any(n>=2 for n in failures.values()) else
         'ALLOCATION_EXHAUSTED' if len(cycles)>=t['remaining_allocation'] else 'CONTINUE_WITHIN_AUTHORITY')
     return dict(task=task, decision=decision,spent=len(cycles), historical_slots=t['baseline_slots'],
                 remaining=max(0, t['remaining_allocation'] - len(cycles)), feature_age=ages,
+                completed_result_age=result_ages,
+                unresolved_cycles=[c['id'] for c in lineage_cycles if not c['completed']],
                 ineffective_interventions=failures, lineage=line, ancestor_spent=used,
                 retirement=[n for n in line if n in s['retirements']],
                 warnings=[f for f, n in ages.items() if n >= t['profile']['review_after']],
@@ -282,15 +298,16 @@ def guard(con, state, *, operation='construction', allow_existing=False, recipe_
     key = state['task'] + ':' + str(state['cycle'])
     if operation == 'review' and key in s['cycles']:
         return p  # Finish existing evidence at the ceiling; never reserve new work.
+    in_flight = allow_existing and key in s['cycles'] and not s['cycles'][key]['completed']
     exceptions = [x for x in s['exceptions'].values() if x['task'] == state['task'] and
                   x['node'] in p['lineage'] and p['spent'] - x['start_spent'] -
                   int(key in s['cycles'] and not s['cycles'][key]['completed']) < x['limit'] and
                   operation in x['operations'] and (recipe_digest is None or recipe_digest in x['recipes'])]
     exception = exceptions[-1] if exceptions else None
     need(not p['retirement'] or exception, 'RETIRED_FOR_PRODUCTION')
-    need(not p['blocked_features'] or exception, 'NO_PROGRESS_STOP_RECOMMEND_REALLOCATION')
+    need(not p['blocked_features'] or exception or in_flight, 'NO_PROGRESS_STOP_RECOMMEND_REALLOCATION')
     if operation == 'construction':
-        need(not p['investment_review_required'] or exception, 'INVESTMENT_REVIEW_REQUIRED')
+        need(not p['investment_review_required'] or exception or in_flight, 'INVESTMENT_REVIEW_REQUIRED')
         if state.get('brief', {}).get('production_contract397'):
             contract = state['brief']['production_contract397']
             need(contract['family'] == s['tasks'][state['task']]['node'] and
@@ -458,6 +475,7 @@ def scope_review(root, con, state, ident, data):
     need(data.get('task') == state['task'], 'SCOPE_TASK')
     need(data.get('decision') in {'split', 'keep', 'merge', 'change_method', 'retire'}, 'SCOPE_DECISION')
     scope_contract(root, data['diagnostic'])
+    need(data['decision'] == data['diagnostic']['decision'], 'SCOPE_DECISION_CONTRADICTION')
     need(data.get('effect_counts') == {f: n + (s['reviews'].get(state['task'], {}).get('effect_counts', {}).get(f, 0))
                                      for f, n in p['ineffective_interventions'].items()}, 'SCOPE_COUNTS_NOT_CANONICAL')
     need(data.get('next_operation') == data['diagnostic']['first_operation'], 'SCOPE_NO_EXECUTABLE_CHANGE')
@@ -488,6 +506,9 @@ def validate_plan(con, state, brief, root=None):
              proof['conditions'].get('proof_kind')==p.get('kind'), 'INPUT_PROOF_STALE_OR_UNQUALIFIED')
         need(root is not None,'INPUT_PROOF_ROOT_REQUIRED')
         for b in proof['evidence'].values():rc.binding(root,b)
+        need(p.get('artifact') in proof['evidence'].values(), 'INPUT_PROOF_ARTIFACT_NOT_QUALIFIED')
+        need(p.get('consumer_steps') and set(p['consumer_steps']) <= {o['id'] for o in d['operations']},
+             'INPUT_PROOF_CONSUMER_BINDING')
 
 
 def capture_effect(con, state, ident, data):

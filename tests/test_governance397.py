@@ -188,8 +188,10 @@ def test_split_requires_actual_child_proof_graph(setup):
     root,c,b,_=setup;start(setup);attach(root,c,b)
     d=copy.deepcopy(b['production_contract397']['scope']);d['decision']='split'
     with pytest.raises((ValueError,wf.Blocked)):pc.scope_contract(root,d)
-    d['children']=[dict(id='target',question='Is form convincing?',acceptance='Matched reference',depends_on=[]),
-                   dict(id='deformation',question='Is form preserved?',acceptance='Raised pose',depends_on=['target'])]
+    d['children']=[dict(id='target',question='Is form convincing?',acceptance='Matched reference',depends_on=[],
+                       proof_kind='target_form',criteria=['appearance'],operation_ids=['proof']),
+                   dict(id='deformation',question='Is form preserved?',acceptance='Raised pose',depends_on=['target'],
+                        proof_kind='pose_form',criteria=['appearance'],operation_ids=['deform'])]
     d['current_child']='target';pc.scope_contract(root,d)
 
 

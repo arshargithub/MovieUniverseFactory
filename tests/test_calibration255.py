@@ -1,6 +1,7 @@
 """New current-authority tests plus synthetic application/invalidations."""
 import copy
 import json
+import re
 import subprocess
 import sys
 from pathlib import Path
@@ -44,8 +45,14 @@ def test_current_authority_excludes_old_pending_claim(root):
     current=next(r for r in packet['obligations'] if r['id']=='current_state')['action']
     #257 added Sikh onboarding and revised wording; test current authority,
     #not obsolete literal phrases or a deliberately superseded unknown entity.
-    assert '253 exact Pashtun20s provisional acceptance stays protected' in current
-    assert 'strict replay FAIL and final release/rights remain separate' in current
+    # Meaning-bearing anchors, not one obsolete full sentence. The exact asset
+    # hash and execution/release negative controls below remain independently bound.
+    assert all(x in current for x in ['253', 'Pashtun20s', 'provisional', 'Preserve accepted'])
+    assert re.search(r'strict replay\s*FAIL', current)
+    assert all(x in current for x in ['rights', 'final release', 'separate'])
+    record=next(x for x in json.loads((root/pk.CATALOG).read_text())['records'] if x['id']=='narrative')
+    assert record['accepted_artifact']['sha256']=='1004ed9f2e06d2eafb008c925eb9d266e8a13b8603086020e28d19e3b606722b'
+    assert record['unresolved_decision']=='approve_new_narration_or_bind_accepted_unit'
     source=(root/'docs/knowledge/CURRENT_PRODUCTION_STATE.md').read_text()
     assert 'Final pass occurs only when the full trailer is approved for release' in source
     assert pk.task_packet(root,task(root,'modeling',['sikh']))['obligations']

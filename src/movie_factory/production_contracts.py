@@ -13,6 +13,49 @@ def text(v):
     return isinstance(v, str) and bool(v.strip())
 
 
+def metric_conditions(c):
+    return {k: c[k] for k in ('metric_key', 'comparator', 'threshold',
+                              'coordinate_space', 'profile', 'cells')}
+
+
+def calibrated_metric(root, c):
+    """Bound comparator controls, not a scientific or artistic truth oracle.
+
+    The positive and negative control must have real, bound measurements and
+    candidate artifacts in exactly the criterion's declared use conditions.
+    """
+    for name, expected in (('calibration', True), ('negative_control', False)):
+        b = c.get(name)
+        need(isinstance(b, dict), 'METRIC_CALIBRATION_BINDING')
+        rc.binding(root, b)
+        p = rc.path(root, b['path'])
+        need(p.suffix == '.json' and p.stat().st_size <= 1024*1024, 'METRIC_CALIBRATION_BOUND')
+        d = json.loads(p.read_text())
+        need(type(d.get('schema')) is int and d['schema'] == 1 and d.get('purpose') == name and
+             d.get('conditions') == metric_conditions(c) and text(d.get('applicability')),
+             'METRIC_CALIBRATION_CONDITIONS')
+        control = d.get('control', {})
+        candidate = control.get('candidate', {})
+        need(text(candidate.get('version')) and isinstance(candidate.get('artifacts'),dict)
+             and candidate['artifacts'], 'METRIC_CONTROL_CANDIDATE')
+        for artifact in candidate['artifacts'].values(): rc.binding(root, artifact)
+        measurement = control.get('measurement')
+        need(isinstance(measurement, dict), 'METRIC_CONTROL_MEASUREMENT')
+        rc.binding(root, measurement)
+        q = rc.path(root, measurement['path'])
+        need(q.suffix == '.json' and q.stat().st_size <= 1024*1024, 'METRIC_CONTROL_BOUND')
+        raw = json.loads(q.read_text())
+        need(control.get('cell') in c['cells'] and raw.get('cell') == control['cell'] and
+             raw.get('candidate_digest') == pk.digest(candidate) and
+             raw.get('coordinate_space') == c['coordinate_space'] and raw.get('profile') == c['profile'],
+             'METRIC_CONTROL_CONDITIONS')
+        value = raw.get(c['metric_key'])
+        need(type(value) in {int, float} and math.isfinite(value), 'METRIC_CONTROL_VALUE')
+        threshold = c['threshold']
+        actual = {'eq': value == threshold, 'lte': value <= threshold, 'gte': value >= threshold}[c['comparator']]
+        need(actual is expected, 'METRIC_CONTROL_DOES_NOT_DISCRIMINATE')
+
+
 def scope_contract(root, d):
     for k in ('question', 'first_operation', 'success_next', 'failure_next',
               'smaller_proof', 'coupling_counterexample', 'discriminator'):
@@ -26,7 +69,14 @@ def scope_contract(root, d):
         for child in children.values():
             need(text(child.get('question')) and text(child.get('acceptance')) and
                  isinstance(child.get('depends_on'),list) and set(child['depends_on'])<=seen,'CHILD_PROOF_DEPENDENCY')
+            need(child.get('proof_kind') in PROOFS and child.get('criteria') and
+                 len(set(child['criteria'])) == len(child['criteria']) and
+                 all(text(x) for x in child['criteria']), 'CHILD_PROOF_CONTRACT')
+            need(child.get('operation_ids') and len(set(child['operation_ids'])) == len(child['operation_ids'])
+                 and all(text(x) for x in child['operation_ids']), 'CHILD_OPERATION_CONTRACT')
             seen.add(child['id'])
+        operation_ids = [op for child in children.values() for op in child['operation_ids']]
+        need(len(operation_ids) == len(set(operation_ids)), 'CHILD_OPERATION_OWNERSHIP')
         need(d.get('current_child') in children,'CURRENT_CHILD_REQUIRED')
     need(d.get('changes') and all(text(x.get('domain')) and text(x.get('control'))
                                  for x in d['changes']), 'CAUSAL_CHANGE_SET')
@@ -59,7 +109,7 @@ def validate(root, brief, steps=None, *, required=False):
         if c['kind'] == 'measurement':
             need(c.get('comparator') in {'eq', 'lte', 'gte'} and type(c.get('threshold')) in {int, float}
                  and math.isfinite(c['threshold']) and text(c.get('metric_key')), 'METRIC_DEFINITION')
-            need(text(c.get('calibration')) and text(c.get('negative_control')), 'METRIC_CALIBRATION')
+            calibrated_metric(root, c)
         else:
             need(c.get('threshold') is None and c.get('comparator') is None, 'SUBJECTIVE_NUMBER_IS_NOT_MEASUREMENT')
     need(set(d.get('feature_map', {})) == set(reqs) and all(isinstance(v, list) and v
@@ -85,10 +135,63 @@ def validate(root, brief, steps=None, *, required=False):
         seen.add(op['id']); available.update(op['produces'])
     if plan_steps is not None: need(seen == set(plan_steps), 'UNCONTRACTED_OPERATION')
     need(d['scope']['first_operation'] == operations[0]['id'], 'FIRST_PROOF_NOT_EXECUTABLE')
+    split_execution(d, criteria, refs)
     return d
 
 
-def native_operation(root, state, step, recipe, prior_runs, prior_reviews):
+def split_execution(d, criteria, refs):
+    """One eligible child per plan; its predecessor artifacts come from governance.
+
+    Future children remain a scope DAG, not permission to execute them early.
+    Canonical existence/qualification of the input proofs is checked separately
+    by governance.validate_plan at admission and again at native dispatch.
+    """
+    scope = d['scope']
+    if scope['decision'] != 'split': return
+    children = rc.unique(scope['children'])
+    current = children[scope['current_child']]
+    for child in children.values():
+        need(set(child['criteria']) <= set(criteria), 'CHILD_CRITERION_UNKNOWN')
+    ops = d['operations']
+    need(set(current['operation_ids']) == {o['id'] for o in ops}, 'CHILD_EXECUTION_MAPPING')
+    need(current['proof_kind'] in {p for o in ops for p in o['produces']}, 'CHILD_PROOF_NOT_PRODUCED')
+    proofs = d.get('input_proofs', [])
+    for predecessor in current['depends_on']:
+        child = children[predecessor]
+        matches = [p for p in proofs if p.get('child') == predecessor and
+                   p.get('kind') == child['proof_kind'] and
+                   p.get('conditions', {}).get('child') == predecessor and
+                   p['conditions'].get('child_digest') == pk.digest(child) and
+                   p['conditions'].get('child_criteria_digest') == child_criteria_digest(d,child) and
+                   p['conditions'].get('child_reference_digest') == child_reference_digest(d,child,refs)]
+        need(len(matches) == 1, 'CHILD_PREREQUISITE_UNQUALIFIED')
+        need(child['proof_kind'] in ops[0]['requires'], 'CHILD_PREREQUISITE_NOT_CONSUMED')
+        need(ops[0]['id'] in matches[0].get('consumer_steps',[]) and
+             isinstance(matches[0].get('artifact'),dict), 'CHILD_INPUT_ARTIFACT_BINDING')
+
+
+def child_criteria_digest(d, child):
+    criteria = rc.unique(d['criteria'])
+    return pk.digest([criteria[k] for k in child['criteria']])
+
+
+def child_reference_digest(d, child, refs):
+    criteria = rc.unique(d['criteria'])
+    used = {r for k in child['criteria'] for r in criteria[k]['references']}
+    return pk.digest({r:refs[r] for r in sorted(used)})
+
+
+def child_proof(d, criteria, kind, references):
+    """Conditions are parent-derived, not supplied as a builder PASS assertion."""
+    if d['scope']['decision'] != 'split': return {}
+    child = rc.unique(d['scope']['children'])[d['scope']['current_child']]
+    need(set(criteria) == set(child['criteria']) and kind == child['proof_kind'], 'CHILD_PROOF_COVERAGE')
+    return dict(child=child['id'], child_digest=pk.digest(child),
+                child_criteria_digest=child_criteria_digest(d,child),
+                child_reference_digest=child_reference_digest(d,child,rc.unique(references)))
+
+
+def native_operation(root, state, step, recipe, prior_runs, prior_reviews, *, parent=None):
     d = state['brief'].get('production_contract397')
     need(d is not None, 'NATIVE_CONTRACT_REQUIRED')
     op = next((x for x in d['operations'] if x['id'] == step), None)
@@ -104,7 +207,11 @@ def native_operation(root, state, step, recipe, prior_runs, prior_reviews):
              'CUSTOM_AUTHORING_REQUIRES_TARGET_PROOF')
     elif 'mesh' in kinds:
         need(op['class'] in {'target', 'fit'}, 'GEOMETRY_IS_NOT_TRANSPORT')
-    supplied = {p['kind'] for p in d.get('input_proofs', [])}
+    supplied = set()
+    for proof in d.get('input_proofs', []):
+        if step in proof.get('consumer_steps',[]):
+            need(proof.get('artifact') == parent, 'INPUT_PROOF_NATIVE_SOURCE_MISMATCH')
+            supplied.add(proof['kind'])
     for dep in op.get('prerequisite_steps', []):
         need(dep in prior_runs and dep in prior_reviews, 'PREREQUISITE_NOT_REVIEWED')
         prior = next(x for x in d['operations'] if x['id'] == dep)
@@ -115,6 +222,9 @@ def native_operation(root, state, step, recipe, prior_runs, prior_reviews):
                 need(any(k == 'frame' or k.startswith('frame_') for k in prior_runs[dep]['artifacts']),
                      'ART_PROOF_REQUIRES_NATIVE_IMAGE')
                 need(verdict.get('proof_kinds397') and kind in verdict['proof_kinds397'], 'UNQUALIFIED_PROOF_KIND')
+                if kind in op['requires']:
+                    source = prior_runs[dep]['artifacts'].get('native',prior_runs[dep].get('parent'))
+                    need(source == parent, 'PREREQUISITE_NATIVE_SOURCE_MISMATCH')
             supplied.add(kind)
     need(set(op['requires']) <= supplied, 'ACTUAL_PROOF_PREREQUISITE_MISSING')
     return op
@@ -166,6 +276,7 @@ def review(root, brief, candidate, result, *, subset=None):
                 need(e.get('candidate_digest') == digest and e.get('mode') in reqs[key]['modes'], 'CELL_CANDIDATE_MODE')
             need(set(reqs[key]['modes']) <= {evidence[x]['mode'] for x in ids}, 'CELL_MODALITY_COVERAGE')
             if c['kind'] == 'measurement':
+                calibrated_metric(root, c)
                 measurement = next((evidence[x] for x in ids if evidence[x]['mode'] == 'technical'), None)
                 need(measurement is not None, 'MEASUREMENT_ARTIFACT_REQUIRED')
                 p = rc.path(root, measurement['binding']['path'])
