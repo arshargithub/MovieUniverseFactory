@@ -1,0 +1,704 @@
+{
+  "policy": {
+    "version": "392-PROPOSED",
+    "first_visual_slots": 2,
+    "family_slots": 6,
+    "stagnation_visual_attempts": 3,
+    "families_per_capability": 2,
+    "engineering_slots": 12,
+    "qualified_capability_slots": 12,
+    "foundational_capability_slots": 24
+  },
+  "valid_base_fixture": {
+    "contract_complete": true,
+    "lineage_complete": true,
+    "scope_authorized": true,
+    "sources_current": true,
+    "rights_and_model_authorized": true,
+    "mandatory_context_complete": true,
+    "proof_kinds_match": true,
+    "prerequisites_met": true,
+    "evidence_coverage_complete": true,
+    "authority_remaining": 6,
+    "image_evidence": true
+  },
+  "cases": [
+    {
+      "case": "missing required attribute",
+      "inputs": {
+        "contract_complete": true,
+        "scope_authorized": true,
+        "sources_current": true,
+        "rights_and_model_authorized": true,
+        "mandatory_context_complete": true,
+        "proof_kinds_match": true,
+        "prerequisites_met": true,
+        "evidence_coverage_complete": true,
+        "authority_remaining": 6,
+        "image_evidence": true
+      },
+      "expected": "BLOCK_CONTRACT",
+      "actual": "BLOCK_CONTRACT"
+    },
+    {
+      "case": "missing contract",
+      "inputs": {
+        "contract_complete": false,
+        "lineage_complete": true,
+        "scope_authorized": true,
+        "sources_current": true,
+        "rights_and_model_authorized": true,
+        "mandatory_context_complete": true,
+        "proof_kinds_match": true,
+        "prerequisites_met": true,
+        "evidence_coverage_complete": true,
+        "authority_remaining": 6,
+        "image_evidence": true
+      },
+      "expected": "BLOCK_CONTRACT",
+      "actual": "BLOCK_CONTRACT"
+    },
+    {
+      "case": "renaming loses history",
+      "inputs": {
+        "contract_complete": true,
+        "lineage_complete": false,
+        "scope_authorized": true,
+        "sources_current": true,
+        "rights_and_model_authorized": true,
+        "mandatory_context_complete": true,
+        "proof_kinds_match": true,
+        "prerequisites_met": true,
+        "evidence_coverage_complete": true,
+        "authority_remaining": 6,
+        "image_evidence": true
+      },
+      "expected": "BLOCK_ACCOUNTING",
+      "actual": "BLOCK_ACCOUNTING"
+    },
+    {
+      "case": "new name cannot evade parent118",
+      "inputs": {
+        "contract_complete": true,
+        "lineage_complete": true,
+        "scope_authorized": true,
+        "sources_current": true,
+        "rights_and_model_authorized": true,
+        "mandatory_context_complete": true,
+        "proof_kinds_match": true,
+        "prerequisites_met": true,
+        "evidence_coverage_complete": true,
+        "authority_remaining": 6,
+        "image_evidence": true,
+        "needs_engineering": true,
+        "goal_slots_used": 118
+      },
+      "expected": "RETIRE_CAPABILITY_FOR_ENVELOPE",
+      "actual": "RETIRE_CAPABILITY_FOR_ENVELOPE"
+    },
+    {
+      "case": "244fit before target form",
+      "inputs": {
+        "contract_complete": true,
+        "lineage_complete": true,
+        "scope_authorized": true,
+        "sources_current": true,
+        "rights_and_model_authorized": true,
+        "mandatory_context_complete": true,
+        "proof_kinds_match": true,
+        "prerequisites_met": false,
+        "evidence_coverage_complete": true,
+        "authority_remaining": 6,
+        "image_evidence": true
+      },
+      "expected": "BLOCK_DEPENDENCY_ORDER",
+      "actual": "BLOCK_DEPENDENCY_ORDER"
+    },
+    {
+      "case": "249dense build before pose proof",
+      "inputs": {
+        "contract_complete": true,
+        "lineage_complete": true,
+        "scope_authorized": true,
+        "sources_current": true,
+        "rights_and_model_authorized": true,
+        "mandatory_context_complete": true,
+        "proof_kinds_match": true,
+        "prerequisites_met": false,
+        "evidence_coverage_complete": true,
+        "authority_remaining": 6,
+        "image_evidence": true
+      },
+      "expected": "BLOCK_DEPENDENCY_ORDER",
+      "actual": "BLOCK_DEPENDENCY_ORDER"
+    },
+    {
+      "case": "218image-free art label",
+      "inputs": {
+        "contract_complete": true,
+        "lineage_complete": true,
+        "scope_authorized": true,
+        "sources_current": true,
+        "rights_and_model_authorized": true,
+        "mandatory_context_complete": true,
+        "proof_kinds_match": true,
+        "prerequisites_met": true,
+        "evidence_coverage_complete": true,
+        "authority_remaining": 6,
+        "image_evidence": false,
+        "art_disposition": true
+      },
+      "expected": "BLOCK_DISPOSITION_KIND",
+      "actual": "BLOCK_DISPOSITION_KIND"
+    },
+    {
+      "case": "rest metric passed as visual proof",
+      "inputs": {
+        "contract_complete": true,
+        "lineage_complete": true,
+        "scope_authorized": true,
+        "sources_current": true,
+        "rights_and_model_authorized": true,
+        "mandatory_context_complete": true,
+        "proof_kinds_match": false,
+        "prerequisites_met": true,
+        "evidence_coverage_complete": true,
+        "authority_remaining": 6,
+        "image_evidence": true
+      },
+      "expected": "BLOCK_PROOF_KIND",
+      "actual": "BLOCK_PROOF_KIND"
+    },
+    {
+      "case": "new topology reuses old proof",
+      "inputs": {
+        "contract_complete": true,
+        "lineage_complete": true,
+        "scope_authorized": true,
+        "sources_current": false,
+        "rights_and_model_authorized": true,
+        "mandatory_context_complete": true,
+        "proof_kinds_match": true,
+        "prerequisites_met": true,
+        "evidence_coverage_complete": true,
+        "authority_remaining": 6,
+        "image_evidence": true
+      },
+      "expected": "BLOCK_STALE_PROOF",
+      "actual": "BLOCK_STALE_PROOF"
+    },
+    {
+      "case": "missing reverse view",
+      "inputs": {
+        "contract_complete": true,
+        "lineage_complete": true,
+        "scope_authorized": true,
+        "sources_current": true,
+        "rights_and_model_authorized": true,
+        "mandatory_context_complete": true,
+        "proof_kinds_match": true,
+        "prerequisites_met": true,
+        "evidence_coverage_complete": false,
+        "authority_remaining": 6,
+        "image_evidence": true
+      },
+      "expected": "BLOCK_EVIDENCE_COVERAGE",
+      "actual": "BLOCK_EVIDENCE_COVERAGE"
+    },
+    {
+      "case": "small score improvements no closure",
+      "inputs": {
+        "contract_complete": true,
+        "lineage_complete": true,
+        "scope_authorized": true,
+        "sources_current": true,
+        "rights_and_model_authorized": true,
+        "mandatory_context_complete": true,
+        "proof_kinds_match": true,
+        "prerequisites_met": true,
+        "evidence_coverage_complete": true,
+        "authority_remaining": 6,
+        "image_evidence": true,
+        "stagnant_visual_attempts": 3
+      },
+      "expected": "RETIRE_FAMILY",
+      "actual": "RETIRE_FAMILY"
+    },
+    {
+      "case": "family ceiling with partial progress",
+      "inputs": {
+        "contract_complete": true,
+        "lineage_complete": true,
+        "scope_authorized": true,
+        "sources_current": true,
+        "rights_and_model_authorized": true,
+        "mandatory_context_complete": true,
+        "proof_kinds_match": true,
+        "prerequisites_met": true,
+        "evidence_coverage_complete": true,
+        "authority_remaining": 6,
+        "image_evidence": true,
+        "family_slots_used": 6
+      },
+      "expected": "RETIRE_FAMILY",
+      "actual": "RETIRE_FAMILY"
+    },
+    {
+      "case": "valid result at family ceiling",
+      "inputs": {
+        "contract_complete": true,
+        "lineage_complete": true,
+        "scope_authorized": true,
+        "sources_current": true,
+        "rights_and_model_authorized": true,
+        "mandatory_context_complete": true,
+        "proof_kinds_match": true,
+        "prerequisites_met": true,
+        "evidence_coverage_complete": true,
+        "authority_remaining": 0,
+        "image_evidence": true,
+        "family_slots_used": 6,
+        "all_required_agent_criteria_pass": true
+      },
+      "expected": "READY_FOR_DIRECTOR_AV",
+      "actual": "READY_FOR_DIRECTOR_AV"
+    },
+    {
+      "case": "three good cells permit remaining work",
+      "inputs": {
+        "contract_complete": true,
+        "lineage_complete": true,
+        "scope_authorized": true,
+        "sources_current": true,
+        "rights_and_model_authorized": true,
+        "mandatory_context_complete": true,
+        "proof_kinds_match": true,
+        "prerequisites_met": true,
+        "evidence_coverage_complete": true,
+        "authority_remaining": 6,
+        "image_evidence": true,
+        "family_slots_used": 4,
+        "first_visual_exists": true,
+        "qualified_path": true,
+        "stagnant_visual_attempts": 0
+      },
+      "expected": "CONTINUE_AUTHORIZED_WORK",
+      "actual": "CONTINUE_AUTHORIZED_WORK"
+    },
+    {
+      "case": "first visual absent qualified path",
+      "inputs": {
+        "contract_complete": true,
+        "lineage_complete": true,
+        "scope_authorized": true,
+        "sources_current": true,
+        "rights_and_model_authorized": true,
+        "mandatory_context_complete": true,
+        "proof_kinds_match": true,
+        "prerequisites_met": true,
+        "evidence_coverage_complete": true,
+        "authority_remaining": 6,
+        "image_evidence": true,
+        "qualified_path": true,
+        "family_slots_used": 2,
+        "first_visual_exists": false
+      },
+      "expected": "STOP_QUALIFICATION_NOT_DEMONSTRATED",
+      "actual": "STOP_QUALIFICATION_NOT_DEMONSTRATED"
+    },
+    {
+      "case": "known prep66bringup sensitivity",
+      "inputs": {
+        "contract_complete": true,
+        "lineage_complete": true,
+        "scope_authorized": true,
+        "sources_current": true,
+        "rights_and_model_authorized": true,
+        "mandatory_context_complete": true,
+        "proof_kinds_match": true,
+        "prerequisites_met": true,
+        "evidence_coverage_complete": true,
+        "authority_remaining": 6,
+        "image_evidence": true,
+        "engineering_lane": true,
+        "engineering_slots_used": 9,
+        "needs_engineering": true,
+        "goal_slots_used": 9
+      },
+      "expected": "CONTINUE_BOUNDED_ENGINEERING",
+      "actual": "CONTINUE_BOUNDED_ENGINEERING"
+    },
+    {
+      "case": "bringup is not infinite",
+      "inputs": {
+        "contract_complete": true,
+        "lineage_complete": true,
+        "scope_authorized": true,
+        "sources_current": true,
+        "rights_and_model_authorized": true,
+        "mandatory_context_complete": true,
+        "proof_kinds_match": true,
+        "prerequisites_met": true,
+        "evidence_coverage_complete": true,
+        "authority_remaining": 6,
+        "image_evidence": true,
+        "engineering_lane": true,
+        "engineering_slots_used": 12,
+        "needs_engineering": true,
+        "goal_slots_used": 12
+      },
+      "expected": "STOP_ENGINEERING_UNQUALIFIED",
+      "actual": "STOP_ENGINEERING_UNQUALIFIED"
+    },
+    {
+      "case": "repeat technical purported repair",
+      "inputs": {
+        "contract_complete": true,
+        "lineage_complete": true,
+        "scope_authorized": true,
+        "sources_current": true,
+        "rights_and_model_authorized": true,
+        "mandatory_context_complete": true,
+        "proof_kinds_match": true,
+        "prerequisites_met": true,
+        "evidence_coverage_complete": true,
+        "authority_remaining": 6,
+        "image_evidence": true,
+        "engineering_lane": true,
+        "same_error_after_repair_count": 2
+      },
+      "expected": "HOLD_ENGINEERING_REASSESSMENT",
+      "actual": "HOLD_ENGINEERING_REASSESSMENT"
+    },
+    {
+      "case": "regression cannot average away",
+      "inputs": {
+        "contract_complete": true,
+        "lineage_complete": true,
+        "scope_authorized": true,
+        "sources_current": true,
+        "rights_and_model_authorized": true,
+        "mandatory_context_complete": true,
+        "proof_kinds_match": true,
+        "prerequisites_met": true,
+        "evidence_coverage_complete": true,
+        "authority_remaining": 6,
+        "image_evidence": true,
+        "critical_regression": true
+      },
+      "expected": "HOLD_REPAIR_REGRESSION",
+      "actual": "HOLD_REPAIR_REGRESSION"
+    },
+    {
+      "case": "two failed families stop goal",
+      "inputs": {
+        "contract_complete": true,
+        "lineage_complete": true,
+        "scope_authorized": true,
+        "sources_current": true,
+        "rights_and_model_authorized": true,
+        "mandatory_context_complete": true,
+        "proof_kinds_match": true,
+        "prerequisites_met": true,
+        "evidence_coverage_complete": true,
+        "authority_remaining": 6,
+        "image_evidence": true,
+        "failed_families": 2
+      },
+      "expected": "RETIRE_CAPABILITY_FOR_ENVELOPE",
+      "actual": "RETIRE_CAPABILITY_FOR_ENVELOPE"
+    },
+    {
+      "case": "more cycles do not unretire",
+      "inputs": {
+        "contract_complete": true,
+        "lineage_complete": true,
+        "scope_authorized": true,
+        "sources_current": true,
+        "rights_and_model_authorized": true,
+        "mandatory_context_complete": true,
+        "proof_kinds_match": true,
+        "prerequisites_met": true,
+        "evidence_coverage_complete": true,
+        "authority_remaining": 100,
+        "image_evidence": true,
+        "root_retired": true
+      },
+      "expected": "RETIRED_FOR_PRODUCTION",
+      "actual": "RETIRED_FOR_PRODUCTION"
+    },
+    {
+      "case": "Astra cannot unretire",
+      "inputs": {
+        "contract_complete": true,
+        "lineage_complete": true,
+        "scope_authorized": true,
+        "sources_current": true,
+        "rights_and_model_authorized": true,
+        "mandatory_context_complete": true,
+        "proof_kinds_match": true,
+        "prerequisites_met": true,
+        "evidence_coverage_complete": true,
+        "authority_remaining": 6,
+        "image_evidence": true,
+        "root_retired": true
+      },
+      "expected": "RETIRED_FOR_PRODUCTION",
+      "actual": "RETIRED_FOR_PRODUCTION"
+    },
+    {
+      "case": "specific approved terminal probe",
+      "inputs": {
+        "contract_complete": true,
+        "lineage_complete": true,
+        "scope_authorized": true,
+        "sources_current": true,
+        "rights_and_model_authorized": true,
+        "mandatory_context_complete": true,
+        "proof_kinds_match": true,
+        "prerequisites_met": true,
+        "evidence_coverage_complete": true,
+        "authority_remaining": 2,
+        "image_evidence": true,
+        "root_retired": true,
+        "exception_approved": true,
+        "operation": "apply_existing_graft",
+        "exception_used": 0
+      },
+      "expected": "CONTINUE_TERMINAL_PROBE",
+      "actual": "CONTINUE_TERMINAL_PROBE"
+    },
+    {
+      "case": "terminal probe forbids sculpt loop",
+      "inputs": {
+        "contract_complete": true,
+        "lineage_complete": true,
+        "scope_authorized": true,
+        "sources_current": true,
+        "rights_and_model_authorized": true,
+        "mandatory_context_complete": true,
+        "proof_kinds_match": true,
+        "prerequisites_met": true,
+        "evidence_coverage_complete": true,
+        "authority_remaining": 6,
+        "image_evidence": true,
+        "root_retired": true,
+        "exception_approved": true,
+        "operation": "apply_existing_graft",
+        "new_anatomy_variant": true
+      },
+      "expected": "BLOCK_EXCEPTION_SCOPE",
+      "actual": "BLOCK_EXCEPTION_SCOPE"
+    },
+    {
+      "case": "terminal valid anatomy failure",
+      "inputs": {
+        "contract_complete": true,
+        "lineage_complete": true,
+        "scope_authorized": true,
+        "sources_current": true,
+        "rights_and_model_authorized": true,
+        "mandatory_context_complete": true,
+        "proof_kinds_match": true,
+        "prerequisites_met": true,
+        "evidence_coverage_complete": true,
+        "authority_remaining": 6,
+        "image_evidence": true,
+        "root_retired": true,
+        "exception_approved": true,
+        "operation": "review",
+        "valid_native_anatomy_failed": true
+      },
+      "expected": "STOP_TERMINAL_PROBE",
+      "actual": "STOP_TERMINAL_PROBE"
+    },
+    {
+      "case": "terminal no extension",
+      "inputs": {
+        "contract_complete": true,
+        "lineage_complete": true,
+        "scope_authorized": true,
+        "sources_current": true,
+        "rights_and_model_authorized": true,
+        "mandatory_context_complete": true,
+        "proof_kinds_match": true,
+        "prerequisites_met": true,
+        "evidence_coverage_complete": true,
+        "authority_remaining": 6,
+        "image_evidence": true,
+        "root_retired": true,
+        "exception_approved": true,
+        "operation": "review",
+        "exception_used": 2
+      },
+      "expected": "STOP_TERMINAL_PROBE",
+      "actual": "STOP_TERMINAL_PROBE"
+    },
+    {
+      "case": "terminal no extra repair",
+      "inputs": {
+        "contract_complete": true,
+        "lineage_complete": true,
+        "scope_authorized": true,
+        "sources_current": true,
+        "rights_and_model_authorized": true,
+        "mandatory_context_complete": true,
+        "proof_kinds_match": true,
+        "prerequisites_met": true,
+        "evidence_coverage_complete": true,
+        "authority_remaining": 6,
+        "image_evidence": true,
+        "root_retired": true,
+        "exception_approved": true,
+        "operation": "native_transport",
+        "requests_technical_repair": true,
+        "technical_repairs_used": 1
+      },
+      "expected": "STOP_TERMINAL_PROBE",
+      "actual": "STOP_TERMINAL_PROBE"
+    },
+    {
+      "case": "unapproved quality reduction",
+      "inputs": {
+        "contract_complete": true,
+        "lineage_complete": true,
+        "scope_authorized": true,
+        "sources_current": true,
+        "rights_and_model_authorized": true,
+        "mandatory_context_complete": true,
+        "proof_kinds_match": true,
+        "prerequisites_met": true,
+        "evidence_coverage_complete": true,
+        "authority_remaining": 6,
+        "image_evidence": true,
+        "unapproved_contract_change": true
+      },
+      "expected": "BLOCK_SCOPE_CHANGE",
+      "actual": "BLOCK_SCOPE_CHANGE"
+    },
+    {
+      "case": "mandatory rule lost during compaction",
+      "inputs": {
+        "contract_complete": true,
+        "lineage_complete": true,
+        "scope_authorized": true,
+        "sources_current": true,
+        "rights_and_model_authorized": true,
+        "mandatory_context_complete": false,
+        "proof_kinds_match": true,
+        "prerequisites_met": true,
+        "evidence_coverage_complete": true,
+        "authority_remaining": 6,
+        "image_evidence": true
+      },
+      "expected": "BLOCK_CONTEXT",
+      "actual": "BLOCK_CONTEXT"
+    },
+    {
+      "case": "unreserved paid operation",
+      "inputs": {
+        "contract_complete": true,
+        "lineage_complete": true,
+        "scope_authorized": true,
+        "sources_current": true,
+        "rights_and_model_authorized": true,
+        "mandatory_context_complete": true,
+        "proof_kinds_match": true,
+        "prerequisites_met": true,
+        "evidence_coverage_complete": true,
+        "authority_remaining": 6,
+        "image_evidence": true,
+        "paid_operation": true,
+        "cost_reserved": false
+      },
+      "expected": "BLOCK_RESOURCE_RESERVATION",
+      "actual": "BLOCK_RESOURCE_RESERVATION"
+    },
+    {
+      "case": "external outage not anatomy failure",
+      "inputs": {
+        "contract_complete": true,
+        "lineage_complete": true,
+        "scope_authorized": true,
+        "sources_current": true,
+        "rights_and_model_authorized": true,
+        "mandatory_context_complete": true,
+        "proof_kinds_match": true,
+        "prerequisites_met": true,
+        "evidence_coverage_complete": true,
+        "authority_remaining": 6,
+        "image_evidence": true,
+        "external_block": true
+      },
+      "expected": "BLOCK_EXTERNAL",
+      "actual": "BLOCK_EXTERNAL"
+    },
+    {
+      "case": "positive internal proof still needs DirectorAV",
+      "inputs": {
+        "contract_complete": true,
+        "lineage_complete": true,
+        "scope_authorized": true,
+        "sources_current": true,
+        "rights_and_model_authorized": true,
+        "mandatory_context_complete": true,
+        "proof_kinds_match": true,
+        "prerequisites_met": true,
+        "evidence_coverage_complete": true,
+        "authority_remaining": 6,
+        "image_evidence": true,
+        "all_required_agent_criteria_pass": true
+      },
+      "expected": "READY_FOR_DIRECTOR_AV",
+      "actual": "READY_FOR_DIRECTOR_AV"
+    },
+    {
+      "case": "actual scoped Director acceptance",
+      "inputs": {
+        "contract_complete": true,
+        "lineage_complete": true,
+        "scope_authorized": true,
+        "sources_current": true,
+        "rights_and_model_authorized": true,
+        "mandatory_context_complete": true,
+        "proof_kinds_match": true,
+        "prerequisites_met": true,
+        "evidence_coverage_complete": true,
+        "authority_remaining": 6,
+        "image_evidence": true,
+        "all_required_agent_criteria_pass": true,
+        "director_accepted": true
+      },
+      "expected": "COMPLETE",
+      "actual": "COMPLETE"
+    },
+    {
+      "case": "SEMANTIC_LIMIT_bad_image_falsely_asserted_pass",
+      "inputs": {
+        "contract_complete": true,
+        "lineage_complete": true,
+        "scope_authorized": true,
+        "sources_current": true,
+        "rights_and_model_authorized": true,
+        "mandatory_context_complete": true,
+        "proof_kinds_match": true,
+        "prerequisites_met": true,
+        "evidence_coverage_complete": true,
+        "authority_remaining": 6,
+        "image_evidence": true,
+        "all_required_agent_criteria_pass": true
+      },
+      "expected": "READY_FOR_DIRECTOR_AV",
+      "actual": "READY_FOR_DIRECTOR_AV"
+    }
+  ],
+  "assertion_matches": 34,
+  "deployment": "NONE",
+  "scope": "Authored offline decision-table checks only.",
+  "limits": [
+    "Not production implementation or Director policy adoption.",
+    "Not blind historical prediction or perceptual qualification.",
+    "Known false artistic PASS remains able to reach human review.",
+    "Does not qualify admin projection equivalence or safe migration."
+  ]
+}
