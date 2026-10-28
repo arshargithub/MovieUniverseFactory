@@ -10,7 +10,7 @@ status projection. Lightweight routes still bypass production planning only.
 
 ## Evidence and scope
 
-Full frozen offline regression: **2988 passed,16 skipped** in41.29s. Native/provider
+Full frozen offline regression: **2991 passed,16 skipped** in40.55s. Native/provider
 calls are mocked or excluded; no paid call or Blender job was launched. Tests
 exercise actual Controller and native-admission paths, missing/failed target
 proofs, cache-before-pose, aggregatePASS contradicting failed cells, known negative
@@ -88,3 +88,10 @@ is complete only when remote Git contains the intended commits and the latest
 private S3 manifest passes inventory and representative streamed restore, followed
 by verified single-generation retention. Follow `PROTECTION.json`/`CLOSEOUT.md`
 when those receipts exist; no prepared manifest or local commit is called backup.
+
+Live protection qualification exposed a hardlink-ctime false rejection after the
+payload transfer. No snapshot manifest or deletion followed that failure. The
+repair validates the staged frozen bytes, not mutable live-path ctime. Twenty
+backup tests cover large hardlinks, post-freeze live edits and same-size frozen
+byte corruption. The completed transfer can be reused by the refreshed snapshot;
+failed logs and prior recovery generations remain preserved.
