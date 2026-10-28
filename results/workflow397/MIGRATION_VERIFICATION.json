@@ -1,0 +1,134 @@
+{
+  "tasks": {
+    "sikh335-supporting-appearance": {
+      "before": {
+        "cycle": 261,
+        "max_corrections": 261,
+        "stage": "REPLAN_REQUIRED",
+        "fingerprint": "e89ff5050075fb9be5d99d943bfc17d6a2d07d9799d22f3410e0a2437d242105"
+      },
+      "after": {
+        "cycle": 261,
+        "max_corrections": 261,
+        "stage": "REPLAN_REQUIRED",
+        "fingerprint": "e89ff5050075fb9be5d99d943bfc17d6a2d07d9799d22f3410e0a2437d242105"
+      },
+      "governance": {
+        "task": "sikh335-supporting-appearance",
+        "decision": "STOP_AND_REALLOCATE",
+        "spent": 0,
+        "historical_slots": 261,
+        "remaining": 0,
+        "feature_age": {
+          "continuous-forequarter-form": 50
+        },
+        "ineffective_interventions": {
+          "continuous-forequarter-form": 0
+        },
+        "lineage": [
+          "inherited-anatomy-crafting",
+          "nihang-form",
+          "trailer01",
+          "release01"
+        ],
+        "ancestor_spent": {
+          "inherited-anatomy-crafting": 0,
+          "nihang-form": 0,
+          "trailer01": 0,
+          "release01": 0
+        },
+        "retirement": [
+          "inherited-anatomy-crafting"
+        ],
+        "warnings": [
+          "continuous-forequarter-form"
+        ],
+        "blocked_features": [
+          "continuous-forequarter-form"
+        ],
+        "proof_stamps": {
+          "continuous-forequarter-form": "historical-baseline"
+        },
+        "investment_review_required": [
+          "continuous-forequarter-form"
+        ],
+        "scope_review_required": false
+      }
+    },
+    "sikh335-continuous-performance": {
+      "before": {
+        "cycle": 80,
+        "max_corrections": 80,
+        "stage": "READY_FOR_DIRECTOR_AV",
+        "fingerprint": "c5fc741f5cf26f829649bf0ec3134c285291447d8d8e3fa443311ee31acd3e43"
+      },
+      "after": {
+        "cycle": 80,
+        "max_corrections": 80,
+        "stage": "READY_FOR_DIRECTOR_AV",
+        "fingerprint": "c5fc741f5cf26f829649bf0ec3134c285291447d8d8e3fa443311ee31acd3e43"
+      },
+      "governance": {
+        "task": "sikh335-continuous-performance",
+        "decision": "ALLOCATION_EXHAUSTED",
+        "spent": 0,
+        "historical_slots": 80,
+        "remaining": 0,
+        "feature_age": {
+          "rearing-performance": 0
+        },
+        "ineffective_interventions": {
+          "rearing-performance": 0
+        },
+        "lineage": [
+          "accepted-motion-preservation",
+          "nihang-motion",
+          "trailer01",
+          "release01"
+        ],
+        "ancestor_spent": {
+          "accepted-motion-preservation": 0,
+          "nihang-motion": 0,
+          "trailer01": 0,
+          "release01": 0
+        },
+        "retirement": [],
+        "warnings": [],
+        "blocked_features": [],
+        "proof_stamps": {
+          "rearing-performance": "historical-baseline"
+        },
+        "investment_review_required": [],
+        "scope_review_required": false
+      }
+    }
+  },
+  "protected": {
+    "prep66": {
+      "path": ".runtime/factory-native/sikh370-motion-c66-audit/scene.blend",
+      "sha256": "4b31c8428034de3635c23992d4e3068d43fa83fa49eae1fa6dac7103a9b3e748"
+    },
+    "crest75": {
+      "path": ".runtime/factory-native/sikh372-motion-c75-source/scene.blend",
+      "sha256": "9633bf00d5cabdedde370c2195729b9f1e5190e681130d75c2c9a6187b8701ca"
+    },
+    "landing80": {
+      "path": ".runtime/factory-native/sikh373-motion-c80-contact/scene.blend",
+      "sha256": "204eea24a877219a30c7405bba178ddcff9655c30036d0c5ab218b603fc0fb44"
+    },
+    "pashtun20": {
+      "path": ".runtime/art-direction/series01-finish248/delivery01/pashtun-20s.mp4",
+      "sha256": "1004ed9f2e06d2eafb008c925eb9d266e8a13b8603086020e28d19e3b606722b"
+    },
+    "action_reference": {
+      "path": ".runtime/art-direction/series01-sikh256/references/reference-b.mov",
+      "sha256": "78d0d691e8712c02931876cf0bc405e4869de357f337f531708be7a7da4898e2"
+    },
+    "clean_source184": {
+      "path": ".runtime/factory-native/sikh386-appearance-c184-source/scene.blend",
+      "sha256": "4db02a96be38c4cbbf94f6e86c4576e3284cc73539c808f014ec36fbba2db87b"
+    }
+  },
+  "no_new_native_jobs": true,
+  "native_runs": 806
+}

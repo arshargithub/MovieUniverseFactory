@@ -46,3 +46,25 @@ Director385 rejects the armor/chestplate direction. Return to the previous inher
 ## Exchange386 — approved anatomy micro-units and one shared fifty-cycle ceiling
 
 Director386 “go ahead” adopts the385audit/proposal: implement/test scope and effect-disposition changes, then repair the previous inherited horse chest/shoulder/lower-neck anatomy under one shared50additional correction ceiling (176→226 once). Prior385pending-approval wording is historical. Preserve accepted66/75/80action and source masters; Warhorse armor remains rejected. The current process contract is [386](MICRO_APPEARANCE_WORKFLOW_386.md). This records authority, not a claim that allowance amendment, workflow qualification, anatomy or integration has already passed. No new model/spend/provider/install/cloud/upload/release authority. No routine per-unit Director handovers; actual internal reviews and final313humanAV remain separate.
+
+## Current397 — workflow implementation and exhausted production authority
+
+Director392–397 authorizes the complete integrated governance implementation and
+protection described in [workflow397](GOVERNANCE_WORKFLOW_397.md) and the
+[completion contract396](../planning/WORKFLOW_IMPLEMENTATION_COMPLETION_CONTRACT_396.md).
+The previous50-cycle grant and subsequent allowances are historical, exhausted:
+appearance261/261, motion80/80. No new horse construction, render, live model call
+or creative acceptance is granted by this engineering work. Preserve accepted
+prep66, crest75, landing80 and the Pashtun20s master. Continuous horse anatomy is
+not production-qualified. Original anatomy-crafting is held/retired for further
+production investment under the new no-progress guard; a larger generic grant
+cannot reset it. A next method needs a bounded discriminating proof and ordinary
+Director authority for any material change or narrowly scoped exception.
+
+The current-state capsule adopts canonical397 governance explicitly; old307
+bindings remain preserved and its strict delivery route is not cleared. New
+production admission needs typed micro-task/proof contracts, a fresh serial
+planning package, applicable reference roles and reconciled original sources.
+Historical calendar/status strings elsewhere do not override these counters.
+Git/S3 protection is authorized, with completion measured only by actual remote
+and restore receipts; an implementation or prepared manifest is not a backup.

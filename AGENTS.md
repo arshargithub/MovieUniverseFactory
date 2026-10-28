@@ -208,3 +208,17 @@ when interpretation is uncertain; it is not required for routine core compliance
 
 Routes add prerequisites; they do not grant execution authority. See current
 task source decisions before treating historical pending fields as current.
+
+## Adopted397 integrated governance
+
+Read `docs/knowledge/GOVERNANCE_WORKFLOW_397.md` for covered production admission,
+review, retrospectives, effort/progress accounting and method retirement.
+Canonical397 migration preserves original counters and artistic failures.
+Production contracts must bind typed criteria, causal micro-task scope and actual
+proof/operation dependencies. Two ineffective experiments require applied scope
+reassessment; provisional10/20 feature-age guards require investment review/stop.
+Only scoped positive evidence earns progress; transport and internal declarations
+are not Director AV approval. No generic new cycle grant clears retirement.
+Lightweight routes remain lightweight. `context_hygiene current` uses explicit397
+adoption without repinning or clearing legacy307. Read the measured qualification
+and limitations before claiming savings, artistic readiness or reduced inputs.

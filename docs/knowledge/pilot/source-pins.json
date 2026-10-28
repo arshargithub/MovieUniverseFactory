@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "catalog_sha256": "340c2cb405c713050deaa397a1581c763f8b3644c825ed9a8297c746ed3bddab",
+  "catalog_sha256": "a4ea237e67d78923fb535c65b5b8a10989b8b8061a8c1afdf3a7807a035b922b",
   "sources": {
     "construction319": {
       "path": "docs/knowledge/CONSTRUCTION_INTERFACES_319.md",
@@ -1114,7 +1114,7 @@
     },
     "current255": {
       "path": "docs/knowledge/CURRENT_PRODUCTION_STATE.md",
-      "sha256": "8033f974abd190a218f396997ba51298a7c1f055143278cb8a58cfb20186120d",
+      "sha256": "c0dd7e4b448ec4564c687a7b5b6e629a5641e01c2c03d4b3d85fb373ad6199c2",
       "sections": [
         {
           "heading": "# Current production authority and carry forward",
@@ -1161,8 +1161,14 @@
         {
           "heading": "## Exchange386 \u2014 approved anatomy micro-units and one shared fifty-cycle ceiling",
           "start_line": 46,
-          "end_line": 48,
-          "sha256": "155d670aab815f9c6172dd7023e47b1a2f17b764e81f617be21ae4b04f67c5a9"
+          "end_line": 49,
+          "sha256": "67a44cafebd2411de48fffee7be40d410ded28c06e692ef34a351798d56e39c6"
+        },
+        {
+          "heading": "## Current397 \u2014 workflow implementation and exhausted production authority",
+          "start_line": 50,
+          "end_line": 70,
+          "sha256": "3b94b4e0bfd0db048ab82bafbbb7ebc446771789268d07288348aa5cc70c6870"
         }
       ]
     },
@@ -1267,7 +1273,55 @@
           "sha256": "9ad057972fba7d5f63bd6908470bfeb0cd30afca1b564493f30c1a3e120ea09a"
         }
       ]
+    },
+    "governance397": {
+      "path": "docs/knowledge/GOVERNANCE_WORKFLOW_397.md",
+      "sha256": "c1121484312e7a2d55eea44458b3ff29fa453ccc2e67c00fb95af3c2e1ec776f",
+      "sections": [
+        {
+          "heading": "# Integrated workflow397 \u2014 implementation and operating contract",
+          "start_line": 1,
+          "end_line": 7,
+          "sha256": "cd0b3e21a6329a3e1aff50d9ef109cdbe74b368997b414ad6d950f586b76d546"
+        },
+        {
+          "heading": "## Mandatory sequence and boundaries",
+          "start_line": 8,
+          "end_line": 28,
+          "sha256": "7945a4606221c537e1774903d2a1c800b358011592ca678b1d34dda30f8cdf4b"
+        },
+        {
+          "heading": "## Micro-task admission and decomposition",
+          "start_line": 29,
+          "end_line": 53,
+          "sha256": "f6144f60a64ee6e8a0a23fc947c320881fbd7c7a0f19ddae1a379f1f6bc64178"
+        },
+        {
+          "heading": "## Accounting, forward momentum and stopping",
+          "start_line": 54,
+          "end_line": 83,
+          "sha256": "c324d72b4db0f5ddfa758ae8d900e08abc8ed16240b359395186f35daaec4217"
+        },
+        {
+          "heading": "## Contradiction-first review and handover",
+          "start_line": 84,
+          "end_line": 99,
+          "sha256": "4bc3207ad426bef8b0b0add8c332b7174aa808cbd85aa9d20449a5e3934c1b46"
+        },
+        {
+          "heading": "## Context, administration and recovery",
+          "start_line": 100,
+          "end_line": 124,
+          "sha256": "4257155e8d566e262c4f029c4e7e8132ceee09873a4c8cbb1cfeee491637fad4"
+        },
+        {
+          "heading": "## Qualification, rollback and protection",
+          "start_line": 125,
+          "end_line": 150,
+          "sha256": "6ffa3d9849fdfd60b70b372c3298717705e8340f124f56e0796c80a50123847c"
+        }
+      ]
     }
   },
-  "method": "Reviewed nine-document corpus frozen explicitly; re-freezing is not an audit or automatic acceptance of source changes."
+  "method": "397 inspected update: only current255 amended, governance397 added; all other original source pins verified unchanged."
 }

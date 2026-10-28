@@ -1,0 +1,17 @@
+{
+  "text": "Implement full workflow392\u2013396, test/calibrate/safely migrate, start existing AWS authentication, then scoped Git push and verified S3 backup/retention cleanup.",
+  "operations": [
+    "code",
+    "test",
+    "document",
+    "status",
+    "backup",
+    "upload",
+    "publish"
+  ],
+  "rationale": "Engineering/controller implementation plus expressly authorized private remote protection. publish denotes Git push to configured project remote, not film/media release. No native production effects or new artistic allowance.",
+  "authority": {
+    "path": "results/workflow397/REQUEST.md",
+    "sha256": "3625c08e51d07f91649fef3b845c4a28a4cba6cb8ec0100062fcec9f76c9c925"
+  }
+}
