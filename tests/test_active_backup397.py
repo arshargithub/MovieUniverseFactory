@@ -133,3 +133,40 @@ def test_bulk_failure_retains_previous_backup(tmp_path,monkeypatch):
     monkeypatch.setattr(b.subprocess,'run',lambda *a,**k:types.SimpleNamespace(returncode=1))
     with pytest.raises(ValueError,match='RETAIN_OLD_BACKUP'):b.upload_bulk(c,tmp_path)
     assert not c.deleted and not (tmp_path/'uploaded.json').exists()
+
+
+@pytest.mark.parametrize('large',[False,True])
+def test_bulk_validates_frozen_bytes_not_live_or_hardlink_ctime(tmp_path,monkeypatch,large):
+    import types
+    c=Fake();c.profile='fixture';source=tmp_path/'source'
+    source.write_bytes(b'a'*(16*1024**2+1 if large else 20));digest=b.sha(source);st=source.stat()
+    o=dict(key=b.key(digest),sha256=digest,bytes=st.st_size,paths=['native.blend'],
+      source=str(source),stat=[st.st_size,st.st_mtime_ns,st.st_ctime_ns])
+    m=dict(schema_version=2,snapshot_id='new',git_head='fixture',path_count=1,unique_bytes=st.st_size,objects=[o])
+    b.save(tmp_path/'manifest-local.json',m);b.save(tmp_path/'manifest.json',m)
+    monkeypatch.setattr(b,'inspect_controls',lambda c:{})
+    original=c.inventory
+    c.inventory=lambda p:{k:dict(v,ChecksumAlgorithm=['SHA256']) for k,v in original(p).items()}
+    def run(cmd,**kwargs):
+        frozen=tmp_path/'transfer-payload'/digest[:2]/digest
+        c.objects[o['key']]=frozen.read_bytes()
+        if not large:source.write_bytes(b'Post-freeze edit to a live file')
+        else:assert source.stat().st_nlink>=2
+        return types.SimpleNamespace(returncode=0)
+    monkeypatch.setattr(b.subprocess,'run',run)
+    assert b.upload_bulk(c,tmp_path)['verified']
+
+
+def test_bulk_mutated_frozen_payload_never_publishes_manifest(tmp_path,monkeypatch):
+    import types
+    c=Fake();c.profile='fixture';source=tmp_path/'source';source.write_bytes(b'original')
+    digest=b.sha(source);st=source.stat();o=dict(key=b.key(digest),sha256=digest,bytes=st.st_size,
+      paths=['native.blend'],source=str(source),stat=[st.st_size,st.st_mtime_ns,st.st_ctime_ns])
+    b.save(tmp_path/'manifest-local.json',dict(objects=[o]));monkeypatch.setattr(b,'inspect_controls',lambda c:{})
+    original=c.inventory;c.inventory=lambda p:{k:dict(v,ChecksumAlgorithm=['SHA256']) for k,v in original(p).items()}
+    def run(*a,**k):
+        frozen=tmp_path/'transfer-payload'/digest[:2]/digest;c.objects[o['key']]=frozen.read_bytes();frozen.write_bytes(b'changed!')
+        return types.SimpleNamespace(returncode=0)
+    monkeypatch.setattr(b.subprocess,'run',run)
+    with pytest.raises(ValueError,match='FROZEN_PAYLOAD_CHANGED'):b.upload_bulk(c,tmp_path)
+    assert not (tmp_path/'uploaded.json').exists() and not c.deleted

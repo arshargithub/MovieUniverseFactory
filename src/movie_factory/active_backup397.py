@@ -218,10 +218,10 @@ def upload_bulk(client,work):
     stage=work/'transfer-payload';stage.mkdir(exist_ok=True)
     pending=[];reused=[]
     for o in m['objects']:
-        source=Path(o['source']);s=source.stat()
-        require([s.st_size,s.st_mtime_ns,s.st_ctime_ns]==o['stat'],'FROZEN_SOURCE_CHANGED:'+o['paths'][0])
         if o['key'] in inventory:
             require(inventory[o['key']]['Size']==o['bytes'],'REMOTE_SIZE_COLLISION');reused.append(o['key']);continue
+        source=Path(o['source']);s=source.stat()
+        require([s.st_size,s.st_mtime_ns,s.st_ctime_ns]==o['stat'],'FROZEN_SOURCE_CHANGED:'+o['paths'][0])
         require(sha(source)==o['sha256'],'FROZEN_DIGEST_CHANGED')
         dest=stage/o['sha256'][:2]/o['sha256'];dest.parent.mkdir(exist_ok=True)
         if not dest.exists():
@@ -244,8 +244,12 @@ def upload_bulk(client,work):
     require(all(o['key'] in after and after[o['key']]['Size']==o['bytes'] and
                 'SHA256' in after[o['key']].get('ChecksumAlgorithm',[]) for o in pending), 'BULK_CHECKSUM_INVENTORY_MISSING')
     for o in pending:
-        s=Path(o['source']).stat()
-        require([s.st_size,s.st_mtime_ns,s.st_ctime_ns]==o['stat'],'SOURCE_CHANGED_DURING_TRANSFER')
+        # Creating our own hardlink changes the original inode's ctime. Copied
+        # small files may also legitimately change after this checkpoint. The
+        # actual uploaded, frozen payload is the contract, not live-path ctime.
+        frozen=stage/o['sha256'][:2]/o['sha256']
+        require(frozen.stat().st_size==o['bytes'] and sha(frozen)==o['sha256'],
+                'FROZEN_PAYLOAD_CHANGED_DURING_TRANSFER')
     save(work/'transfer.json',dict(uploaded=[o['key'] for o in pending],reused=reused,
         checksum_scope='AWS CLI SHA256-validated uploads; multipart composite checksum; exact local manifest digests and representative whole-file restore.'))
     manifest_key=SNAPSHOTS+m['snapshot_id']+'/manifest.json';client.put(work/'manifest.json',manifest_key)
