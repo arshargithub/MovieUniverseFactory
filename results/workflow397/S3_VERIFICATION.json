@@ -1,0 +1,33 @@
+{
+  "snapshot_id": "workflow397-20261028",
+  "manifest_key": "movie-factory/backup/active/movie-universe-factory/snapshots/workflow397-20261028/manifest.json",
+  "manifest_sha256": "8479a4a60efca5b0381306af20b1d281be75bf3cce06e6f69c9b90da5ff6970d",
+  "verified": true,
+  "restore_samples": [
+    {
+      "key": "movie-factory/backup/objects/sha256/6a/6a21d1e227344039b333d98484b4a20af480e25a5fefc0e457061ac164c53cb8",
+      "bytes": 105168,
+      "sha256": "6a21d1e227344039b333d98484b4a20af480e25a5fefc0e457061ac164c53cb8",
+      "stored_checksums": {
+        "ChecksumSHA256": "aiHR4ic0QDmzM9mEhLSiCvSA4lpf78DkVwYawWTFPLg=",
+        "ChecksumType": "FULL_OBJECT"
+      }
+    },
+    {
+      "key": "movie-factory/backup/objects/sha256/bc/bc6469457eee18bf191aab25279d3295d05640d9f04abd0793b6e4e75df7ef42",
+      "bytes": 30128,
+      "sha256": "bc6469457eee18bf191aab25279d3295d05640d9f04abd0793b6e4e75df7ef42",
+      "stored_checksums": {
+        "ChecksumSHA256": "vGRpRX7uGL8ZGqslJ50yldBWQNnwSr0Hk7bk513370I=",
+        "ChecksumType": "FULL_OBJECT"
+      }
+    }
+  ],
+  "path_count": 113224,
+  "unique_object_count": 87171,
+  "unique_bytes": 243170116178,
+  "inventory_missing": 0,
+  "size_mismatches": 0,
+  "git_head": "618d52dc1441e77d9c30429770d0b0cff10329d1",
+  "checksum_scope": "SHA256-validated new uploads (multipart may use composite checksums); full size/key inventory; manifest and representative streamed whole-file SHA256 restores; no exhaustive full-data restore."
+}

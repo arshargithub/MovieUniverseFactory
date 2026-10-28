@@ -1,0 +1,24 @@
+{
+  "versioning": {
+    "Status": "Enabled"
+  },
+  "public": {
+    "BlockPublicAcls": true,
+    "IgnorePublicAcls": true,
+    "BlockPublicPolicy": true,
+    "RestrictPublicBuckets": true
+  },
+  "encryption": [
+    {
+      "ApplyServerSideEncryptionByDefault": {
+        "SSEAlgorithm": "AES256"
+      },
+      "BucketKeyEnabled": true
+    }
+  ],
+  "ownership": [
+    {
+      "ObjectOwnership": "BucketOwnerEnforced"
+    }
+  ]
+}
