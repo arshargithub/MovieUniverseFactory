@@ -13,6 +13,11 @@
   "deleted_versions": 103,
   "deleted_bytes": 5085876537,
   "archive_namespace_preserved": true,
-  "postfreeze_journal": "PENDING_UPLOAD",
-  "limitations": "SHA256-validated new uploads (multipart may use composite checksums); full size/key inventory; manifest and representative streamed whole-file SHA256 restores; no exhaustive full-data restore."
+  "postfreeze_journal": "VERIFIED",
+  "limitations": "SHA256-validated new uploads (multipart may use composite checksums); full size/key inventory; manifest and representative streamed whole-file SHA256 restores; no exhaustive full-data restore.",
+  "remote_receipt_head": "fdad192",
+  "journal_local_archive": ".runtime/workflow397/postfreeze/postfreeze.tar.gz",
+  "postfreeze_receipt": "results/workflow397/POSTFREEZE_PROTECTION.json",
+  "postfreeze_manifest_key": "movie-factory/backup/active/movie-universe-factory/snapshots/workflow397-20261028/closure/manifest.json",
+  "postfreeze_verified_members": 35
 }

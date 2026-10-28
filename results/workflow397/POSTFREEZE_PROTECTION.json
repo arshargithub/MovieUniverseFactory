@@ -1,0 +1,20 @@
+{
+  "schema": 1,
+  "verified": true,
+  "status": "VERIFIED",
+  "bucket": "movie-factory-archive",
+  "archive_key": "movie-factory/backup/active/movie-universe-factory/snapshots/workflow397-20261028/closure/postfreeze.tar.gz",
+  "archive_bytes": 7994135,
+  "archive_sha256": "6e9f621a439aaf2de21a240472ea00d421e23efab3b852993b34d44eb08d75b6",
+  "manifest_key": "movie-factory/backup/active/movie-universe-factory/snapshots/workflow397-20261028/closure/manifest.json",
+  "members_sha256_verified": 35,
+  "git_bundle_verified_locally": true,
+  "protected_remote_head_at_freeze": "fdad192",
+  "protected_local_planning_head": "a2c4faad8da15ad19714d97e96be8df776459d22",
+  "active_generations": [
+    "workflow397-20261028"
+  ],
+  "bucket_private_controls_verified": true,
+  "no_publication": true,
+  "limitations": "All35journal member-byte hashes verified from S3 restore; base remains representative streamed restores plus full inventory, not exhaustive all-data restore. Journal is frozen before final receipts, which are separate closure metadata."
+}

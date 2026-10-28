@@ -33,11 +33,17 @@ validation and immutable text snapshots repair the causes; actual corrupted-byte
 negative controls still block. Completed content transfer was reused. Failed
 logs and consistent pre-migration recovery remain local. No warning was waived.
 
-Post-freeze398/399work is a separate continuation journal: free-only horse source
-research, source custody and pending eight-cycle proposal. It is not retroactively
-claimed in the base manifest. Final journal/remote-head receipts accompany the
-base in the latest generation; see PROTECTION.json and POSTFREEZE_PROTECTION.json
-when available. Local planning history remains distinct from the framework push.
+Post-freeze398/399work is protected by a separate verified continuation journal.
+The Director explicitly approved its exact7,994,135-byte payload and private
+closure prefix after automatic review required exact-payload authorization. The
+unchanged archive was uploaded, downloaded and all35member sizes/SHA256hashes
+matched. Bucket private controls and the single active generation were checked
+again. The incremental Git bundle protects local planning a2c4faa against remote
+base618d52d; remote code/receipt head remains fdad192. This is not a public push of
+399planning. Read POSTFREEZE_PROTECTION.json for exact keys/hash and restore order
+in its linked manifest. The frozen journal contains its capture-time records;
+its later verification is separate closure metadata, not retroactive content.
+No additional native work, artistic approval, paid call or resource deletion.
 
 Next proposed package: qualify free replacement horse1(abhayexe), then2if needed,
 only under a new finite allowance. Exit requires supported connected chest/neck/
