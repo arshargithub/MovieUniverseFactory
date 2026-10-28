@@ -154,9 +154,18 @@ def prepare(root,work,*,snapshot_id,prior=None):
                 if found:flags.append(dict(path=rel,sha256=digest))
             now=read_path.stat();require(identity==[now.st_size,now.st_mtime_ns,now.st_ctime_ns],'SOURCE_CHANGED_DURING_FREEZE:'+rel)
             cache[rel]=dict(stat=identity,sha256=digest)
+            object_identity=identity
+            # Capture mutable code/records at manifest time. Parallel research
+            # may append a usage log before transfer starts; retaining only its
+            # old live path is not a frozen snapshot. Never omit those records.
+            if source.suffix.lower() in TEXT and st.st_size<=16*1024**2:
+                frozen=work/'frozen-text'/digest[:2]/digest;frozen.parent.mkdir(parents=True,exist_ok=True)
+                if not frozen.exists():shutil.copyfile(read_path,frozen)
+                require(sha(frozen)==digest,'TEXT_CHANGED_DURING_FREEZE:'+rel)
+                read_path=frozen;fs=frozen.stat();object_identity=[fs.st_size,fs.st_mtime_ns,fs.st_ctime_ns]
             files.append(dict(path=rel,bytes=st.st_size,sha256=digest,mode=st.st_mode & 0o777))
             objects.setdefault(digest,dict(sha256=digest,bytes=st.st_size,key=key(digest),
-                                          source=str(read_path),stat=identity,paths=[]))['paths'].append(rel)
+                                          source=str(read_path),stat=object_identity,paths=[]))['paths'].append(rel)
             scanned+=1
             if scanned%2000==0:
                 save(cache_path,cache);print(json.dumps({'scanned':scanned,'unique':len(objects)}),flush=True)

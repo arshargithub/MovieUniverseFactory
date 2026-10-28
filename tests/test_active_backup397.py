@@ -170,3 +170,13 @@ def test_bulk_mutated_frozen_payload_never_publishes_manifest(tmp_path,monkeypat
     monkeypatch.setattr(b.subprocess,'run',run)
     with pytest.raises(ValueError,match='FROZEN_PAYLOAD_CHANGED'):b.upload_bulk(c,tmp_path)
     assert not (tmp_path/'uploaded.json').exists() and not c.deleted
+
+
+def test_prepare_freezes_text_before_parallel_log_append(tmp_path):
+    from unittest.mock import patch
+    root=tmp_path/'project';root.mkdir();source=root/'usage.jsonl';source.write_text('original\n')
+    class R:stdout='fake-head\n'
+    with patch.object(b.subprocess,'run',return_value=R()):m=b.prepare(root,tmp_path/'work',snapshot_id='fixture')
+    source.write_text('original\nnew parallel research event\n')
+    assert Path(m['objects'][0]['source']).read_text()=='original\n'
+    assert m['paths'][0]['path']=='usage.jsonl' and b.sha(m['objects'][0]['source'])==m['paths'][0]['sha256']
