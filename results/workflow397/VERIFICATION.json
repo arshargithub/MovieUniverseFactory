@@ -1,11 +1,11 @@
 {
   "full_regression": {
-    "passed": 2991,
+    "passed": 2992,
     "skipped": 16,
-    "seconds": 40.55,
+    "seconds": 38.06,
     "command": ".venv/bin/python -m pytest tests --ignore=tests/native -q",
-    "log": ".runtime/context-hygiene/runs/workflow397-final-regression05/stdout.log",
-    "sha256": "30fdfc0fcfdf5eeb194df73745f0018b4408248c5ce6f5c86c65882d11f88f98"
+    "log": ".runtime/context-hygiene/runs/workflow397-final-regression06/stdout.log",
+    "sha256": "b88d4b8b998fcef025d19610c489d645a0a04a928182d30dc16b2e3070ec9491"
   },
   "knowledge_gate": {
     "ready_for_review": true,
@@ -21,6 +21,7 @@
   "backup_supplemental_tests": {
     "passed": 20,
     "log": ".runtime/context-hygiene/runs/workflow397-byte-mutation-control/stdout.log",
-    "sha256": "960902798c8ae0926f32c40256e305b071ea1b616b5bfb0bc671d0df29830d2d"
+    "sha256": "960902798c8ae0926f32c40256e305b071ea1b616b5bfb0bc671d0df29830d2d",
+    "frozen_text_append_control": "Included in full2992suite"
   }
 }

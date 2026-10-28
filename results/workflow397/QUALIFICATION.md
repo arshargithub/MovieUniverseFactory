@@ -10,7 +10,7 @@ status projection. Lightweight routes still bypass production planning only.
 
 ## Evidence and scope
 
-Full frozen offline regression: **2991 passed,16 skipped** in40.55s. Native/provider
+Full frozen offline regression: **2992 passed,16 skipped** in38.06s. Native/provider
 calls are mocked or excluded; no paid call or Blender job was launched. Tests
 exercise actual Controller and native-admission paths, missing/failed target
 proofs, cache-before-pose, aggregatePASS contradicting failed cells, known negative
@@ -95,3 +95,11 @@ repair validates the staged frozen bytes, not mutable live-path ctime. Twenty
 backup tests cover large hardlinks, post-freeze live edits and same-size frozen
 byte corruption. The completed transfer can be reused by the refreshed snapshot;
 failed logs and prior recovery generations remain preserved.
+
+A second preflight correctly held a live usage-log append before staging. Mutable
+text records up to16MiB are now copied into hash-verified immutable snapshot
+storage during preparation; databases already use consistent online snapshots.
+Large/static payloads retain checksum guards. Parallel work may create a later
+journal delta; it cannot change a frozen text payload. The new regression covers
+the precise append-before-transfer case. No evidence/log was excluded to bypass
+this failure, and no older recovery copy was deleted.
