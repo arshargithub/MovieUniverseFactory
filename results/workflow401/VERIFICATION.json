@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "status": "GREEN_SCOPED_MECHANICAL_CONFORMANCE",
+  "authority": "results/workflow401/REQUEST.md",
+  "findings": {
+    "F1": {
+      "status": "CLOSED",
+      "tests": [
+        "test_public_scope_decision_must_match_diagnostic",
+        "test_scope_plan_must_apply_the_public_review_operation"
+      ]
+    },
+    "F2": {
+      "status": "CLOSED",
+      "tests": [
+        "test_controller_admits_eligible_split_and_blocks_fictitious_predecessor",
+        "test_bridge_records_child_form_proof_from_actual_reviewed_output"
+      ]
+    },
+    "F3": {
+      "status": "CLOSED",
+      "tests": [
+        "test_numeric_provenance_blocks_invalid_calibration",
+        "test_controller_numeric_provenance_and_actual_measurement"
+      ]
+    },
+    "F4": {
+      "status": "CLOSED",
+      "tests": [
+        "test_original400_pending_peer_counterexample_stops_at_shared_twenty",
+        "test_charged_pending_watchdog_counts_peers_and_allows_existing"
+      ]
+    }
+  },
+  "full_regression": {
+    "passed": 3034,
+    "skipped": 16,
+    "failed": 0,
+    "seconds": 41.83,
+    "command": ".venv/bin/python -m pytest tests --ignore=tests/native -q",
+    "stdout": ".runtime/context-hygiene/runs/workflow401-final-full04/stdout.log",
+    "sha256": "1bb25e9275ee418b68032e6a9c12c71ea19acb10c30d0031e24ef82ab0c5d2d9"
+  },
+  "code": {
+    "src/movie_factory/production_governance.py": "d151d697e507e73f27e414e8c2b5c0cfac7fdec848967da81d3a816c04e2f0d3",
+    "src/movie_factory/production_scorecard401.py": "28262c52adf6fce33cd2ff3722f52f51bdc48fc624b113872ba0795390e9dc64",
+    "src/movie_factory/context_hygiene.py": "54680e037f3d748ac00ad766fbc42d1afc01a38fb8f097de32fde48db786278d",
+    "src/movie_factory/production_contracts.py": "1fd3122958ee9aa9c242d367921f5a35be901ff9ecac43a5cd486b44324f419e",
+    "src/movie_factory/native_admission.py": "3208a2a7155540ee976712be439ece4c8a1187c1ec85f3408014e3ea899e7948",
+    "src/movie_factory/production_workflow.py": "de00925b05780728cf50cf573911375cb3863cccb3ef44b174a52b636d770f35"
+  },
+  "preservation": "results/workflow401/PRESERVATION.json",
+  "adjacent_repairs": [
+    "Immutable replay input objects; derived legacy review order recovers from full replay",
+    "Knowledge instructions consolidated through mandatory global routes; context limits unchanged",
+    "Authority-wording regression replaced with explicit anchors/exact asset/negative controls"
+  ],
+  "remaining_data_conditions": [
+    "Whole-project cycleC is not uniformly reconciled",
+    "Release weights and future production allocation are not invented",
+    "Director input/rate/cost metrics require explicit complete scoped capture and known resources",
+    "No prospective real production unit under401has passed"
+  ],
+  "limits": [
+    "Controller/Bridge integration uses mocked native workers; no Blender or provider/model calls",
+    "No independent artistic/calibration-truth oracle or observed reduction in Director inputs",
+    "Original tasks/old native plans require fresh reviewed admission, not automatic repinning",
+    "No horse cycles granted; proposed8remain pending;401changes not remotely protected in this pass"
+  ],
+  "reporting": "Read-only canonical rolling yield plus source-bound scoped operating rates when complete coverage/resources exist; otherwise null. No all-project census or permission inferred."
+}

@@ -1,0 +1,97 @@
+{
+  "schema": 1,
+  "economics": {
+    "prospective_reserved_cycles": 0,
+    "by_lane": {
+      "production": 0,
+      "engineering": 0,
+      "workflow_admin": 0
+    },
+    "admin_share": null,
+    "milestones": {
+      "trailer01": {
+        "spent": 0,
+        "envelope": 0,
+        "burn": null
+      }
+    },
+    "historical_baselines": {
+      "sikh335-continuous-performance": 80,
+      "sikh335-supporting-appearance": 261
+    },
+    "qualified_release": {
+      "earned": 0.0,
+      "total_weight": null,
+      "fraction": null,
+      "note": "Qualified milestone scope only; not cycle consumption or the Director394scenario."
+    },
+    "scenario": {
+      "label": "Director394illustration only;not measured readiness",
+      "scope": 12,
+      "earned": 1.5,
+      "fraction": 0.125,
+      "remaining": 10.5,
+      "remaining_to_completed": 7,
+      "baseline_cycles": null,
+      "same_productivity_remaining": null,
+      "same_productivity_total": null,
+      "total_envelope": null,
+      "required_improvement": null
+    },
+    "limits": "No uniform whole-project census or forecast; no finished-footage credit forR&D/admin."
+  },
+  "configuration": {
+    "release_weights_configured": false,
+    "historical_project_cycle_baseline_configured": false,
+    "original_task_baselines": {
+      "sikh335-continuous-performance": 80,
+      "sikh335-supporting-appearance": 261
+    },
+    "allocation_state": "NO_NEW_TASK_ALLOWANCE",
+    "forecasts_available": false
+  },
+  "rolling": {
+    "charged_cycles": 0,
+    "completed_results": 0,
+    "pending": 0,
+    "retained_feature_delta": null,
+    "retained_production_yield": null,
+    "reason": "No prospective enrolled cycles; historical baselines are separate."
+  },
+  "operating": {
+    "observed_additional_cycles": 1,
+    "by_lane": {
+      "production": 0,
+      "engineering": 0,
+      "workflow_admin": 1
+    },
+    "completed_cycles": 1,
+    "failed_cycles": 0,
+    "pending_cycles": 0,
+    "duplicate_enrolled_cycles_not_recharged": [],
+    "known_director_escapes": 0,
+    "known_director_handovers": 0,
+    "known_usable_output_observations": 0,
+    "escape_rate": null,
+    "handover_rate": null,
+    "cost_per_usable_output": null,
+    "scoped_rates": null,
+    "coverage": "Source-scoped observations only; missing observations/usage/census are unknown, not proof of zero events or cost.",
+    "conflicts": [],
+    "unverified_observations": [],
+    "provenance": "Bound source hashes checked"
+  },
+  "observed_combined_cycles": 1,
+  "observed_admin_share": 1.0,
+  "routed_operation_inventory": {
+    "engineering": 86,
+    "operations": 3,
+    "plan": 1,
+    "production": 51,
+    "research": 2,
+    "show": 2
+  },
+  "coverage": "Enrolled canonical cycles plus explicitly identified operating-cycle observations. Routed operations are not cycles. Not a uniform historical/all-work census.",
+  "outcome": "Trailer plus episodes1and2; artistic/readiness gates remain separate.",
+  "authority_granted": false
+}
