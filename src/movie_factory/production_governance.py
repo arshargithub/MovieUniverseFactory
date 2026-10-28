@@ -214,7 +214,8 @@ def migrate(root, con, state, ident, data):
          'MIGRATION_CANNOT_GRANT_CYCLES')
     assigned=sum(t['remaining_allocation'] for t in s['tasks'].values() if t['node']==node)
     need(assigned+data['remaining_allocation']<=s['nodes'][node]['limit'],'TASK_ALLOCATION_OVER_FAMILY')
-    data = dict(data, baseline_cycle=state['cycle'], baseline_stage=state['stage'])
+    need(data.get('lane','production') in {'production','engineering','workflow_admin'},'TASK_LANE')
+    data = dict(data, lane=data.get('lane','production'),baseline_cycle=state['cycle'], baseline_stage=state['stage'])
     return append(con, ident, 'migration', data)
 
 
@@ -374,6 +375,12 @@ def milestone(root, con, ident, data):
 
 
 def release_progress(s):
+    def retained(ident):
+        p=s['proofs'][ident];t=s['tasks'][p['task']]
+        cap=next(n for n in ancestors(s,t['node']) if s['nodes'][n]['kind']=='capability')
+        peers=[k for k,v in s['tasks'].items() if cap in ancestors(s,v['node'])]
+        cutoff=max(s.get('regression_sequence',{}).get(k+':'+p['feature'],-1) for k in peers)
+        return p['valid'] and p['qualified_sequence']>cutoff
     earned = 0.0
     roots = [n for n in s['nodes'].values() if n['kind']=='release']
     total = sum(n['weight'] for n in roots) if roots and all('weight' in n for n in roots) else None
@@ -381,10 +388,40 @@ def release_progress(s):
         if n['kind'] != 'milestone': continue
         weight = n.get('weight', 0.0)
         proofs = n.get('completion_proofs', [])
-        if proofs and all(s['proofs'][p]['valid'] and s['proofs'][p]['cycle']>
-            s.get('regressions',{}).get(s['proofs'][p]['task']+':'+s['proofs'][p]['feature'],-1) for p in proofs): earned += weight
+        if proofs and all(retained(p) for p in proofs): earned += weight
     return dict(earned=earned, total_weight=total, fraction=earned/total if total else None,
                 note='Qualified milestone scope only; not cycle consumption or the Director394scenario.')
+
+
+def economics(s, *, baseline_cycles=None, total_envelope=None):
+    """Canonical prospective investment plus explicitly conditional394 scenario.
+
+    Unknown historical whole-projectC remains unknown; original task baselines
+    are reported separately and never summed as a complete project census.
+    """
+    need(baseline_cycles is None or integer(baseline_cycles,1),'ECONOMIC_BASELINE')
+    need(total_envelope is None or integer(total_envelope,1),'ECONOMIC_ENVELOPE')
+    counts={lane:0 for lane in ('production','engineering','workflow_admin')}
+    for cycle in s['cycles'].values():counts[s['tasks'][cycle['task']].get('lane','production')]+=1
+    total=sum(counts.values())
+    milestones={}
+    for ident,node in s['nodes'].items():
+        if node['kind']!='milestone':continue
+        used=sum(c['node'] in descendants(s,ident) for c in s['cycles'].values())
+        milestones[ident]=dict(spent=used,envelope=node['limit'],burn=used/node['limit'] if node['limit'] else None)
+    scenario=dict(label='Director394illustration only;not measured readiness',scope=12,earned=1.5,
+        fraction=.125,remaining=10.5,remaining_to_completed=7,baseline_cycles=baseline_cycles,
+        same_productivity_remaining=7*baseline_cycles if baseline_cycles is not None else None,
+        same_productivity_total=8*baseline_cycles if baseline_cycles is not None else None,
+        total_envelope=total_envelope,required_improvement=None)
+    if baseline_cycles is not None and total_envelope is not None:
+        need(total_envelope>baseline_cycles,'ECONOMIC_ENVELOPE_NOT_ABOVE_SUNK')
+        scenario['required_improvement']=7*baseline_cycles/(total_envelope-baseline_cycles)
+    return dict(prospective_reserved_cycles=total,by_lane=counts,
+        admin_share=counts['workflow_admin']/total if total else None,milestones=milestones,
+        historical_baselines={k:t['baseline_slots'] for k,t in s['tasks'].items()},
+        qualified_release=release_progress(s),scenario=scenario,
+        limits='No uniform whole-project census or forecast; no finished-footage credit forR&D/admin.')
 
 
 def reserve(con, state, root=None):
@@ -396,7 +433,7 @@ def reserve(con, state, root=None):
     need(state['cycle'] <= state['max_corrections'], 'ORIGINAL_ALLOWANCE_EXHAUSTED')
     append(con, 'cycle:' + key, 'cycle', dict(id=key, task=state['task'], node=t['node'],
         cycle=state['cycle'], features=t['features'], profile=t['profile'],
-        phase=state.get('planning_step') or state['stage']))
+        lane=t.get('lane','production'),phase=state.get('planning_step') or state['stage']))
 
 
 def finish_cycle(con, state, status, ident):

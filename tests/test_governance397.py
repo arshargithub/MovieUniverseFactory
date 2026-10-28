@@ -248,3 +248,12 @@ def test_proof_order_survives_cache_sorting_and_restart(ledger):
     g.append(c,'a','proof',dict(id='a',task='t',cycle=1,feature='chest',conditions={},evidence={}))
     assert g.task_progress(g.snapshot(c),'t')['proof_stamps']['chest']=='a'
     assert g.task_progress(g.snapshot(c,full=True),'t')==g.task_progress(g.snapshot(c),'t')
+
+
+def test_economics_keeps_scenario_separate_and_does_not_invent_C(ledger):
+    _,c,_=ledger;fail_cycles(c,0,3);v=g.economics(g.snapshot(c))
+    assert v['prospective_reserved_cycles']==3 and v['scenario']['fraction']==.125
+    assert v['scenario']['same_productivity_total'] is None
+    assert v['qualified_release']['fraction'] is None
+    assert g.economics(g.snapshot(c),baseline_cycles=100,total_envelope=400)['scenario']['required_improvement']==pytest.approx(7/3)
+    with pytest.raises(wf.Blocked):g.economics(g.snapshot(c),baseline_cycles=100,total_envelope=100)
