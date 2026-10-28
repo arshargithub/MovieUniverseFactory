@@ -1,5 +1,18 @@
 # Release 01 — checkpoints
 
+## CP-040 — exchange400, 2026-10-28
+
+[Full audit checkpoint](../../results/workflow400/CHECKPOINT.md). Framework397
+exists, but400finds incomplete deterministic conformance and unconfigured live
+release economics. Four reproduced validator counterexamples are preserved;
+fresh offline suite2991passed/1failed/16skipped. No new native work, allowance or
+art acceptance. Recommend conformance repairs before separately approved horse
+qualification.397private backup+35-file continuation restore are complete.
+
+The previous checkpoint ledger entry is370;380/390were not recorded here. This
+is a maintenance/cadence gap, not retrospectively fabricated checkpoints.400
+records current evidence only; next substantive checkpoint410.
+
 ## CP-037 — exchange370, 2026-10-24
 
 Director369's smaller, perceptually judgeable work unit is retained. The horse

@@ -88,3 +88,9 @@ replenish261/261appearance or80/80motion allowance. A proposed8-cycle, at-most-
 two-candidate qualification is pending Director approval; no native dispatch.
 397protection continues independently. New research is a post-freeze journal,
 not falsely part of an earlier frozen backup manifest.
+
+## Current400 — framework conformance audit, not a production resumption
+
+Director requests verification of397against392–396before proceeding. The [audit](../../results/workflow400/AUDIT.md) finds a substantial implemented foundation but incomplete conformance: split decisions/child execution are not fully joined, numerical calibration provenance is only textual, and charged pending attempts escape the completed-result stagnation age. Fresh full suite:2991passed/1failed/16skipped; the red test is an old exact-wording assertion after399, not evidence of lost253authority. Live397release weights/remaining envelope and a uniform total-cycle baseline are not configured; no measured production-efficiency benefit is claimed.
+
+The earlier complete-implementation wording must not be used as admission evidence. Four isolated validator counterexamples and two scalar controls are preserved in400. Recommended next package is conformance repair and actual Controller/Bridge qualification before the separately approved bounded horse pilot; this audit request grants no implementation/native cycles. Original261/261and80/80ceilings, retirement and protected masters remain unchanged.397base plus the exact399continuation journal are now remotely verified; protection is no longer pending. No audit400remote protection is claimed.

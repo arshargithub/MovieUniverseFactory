@@ -1,0 +1,239 @@
+{
+  "tasks": {
+    "sikh335-supporting-appearance": {
+      "original_state_unchanged": true,
+      "original_state": {
+        "cycle": 261,
+        "max_corrections": 261,
+        "stage": "REPLAN_REQUIRED",
+        "fingerprint": "e89ff5050075fb9be5d99d943bfc17d6a2d07d9799d22f3410e0a2437d242105"
+      },
+      "governance": {
+        "task": "sikh335-supporting-appearance",
+        "decision": "STOP_AND_REALLOCATE",
+        "spent": 0,
+        "historical_slots": 261,
+        "remaining": 0,
+        "feature_age": {
+          "continuous-forequarter-form": 50
+        },
+        "ineffective_interventions": {
+          "continuous-forequarter-form": 0
+        },
+        "lineage": [
+          "inherited-anatomy-crafting",
+          "nihang-form",
+          "trailer01",
+          "release01"
+        ],
+        "ancestor_spent": {
+          "inherited-anatomy-crafting": 0,
+          "nihang-form": 0,
+          "trailer01": 0,
+          "release01": 0
+        },
+        "retirement": [
+          "inherited-anatomy-crafting"
+        ],
+        "warnings": [
+          "continuous-forequarter-form"
+        ],
+        "blocked_features": [
+          "continuous-forequarter-form"
+        ],
+        "proof_stamps": {
+          "continuous-forequarter-form": "historical-baseline"
+        },
+        "investment_review_required": [
+          "continuous-forequarter-form"
+        ],
+        "scope_review_required": false
+      }
+    },
+    "sikh335-continuous-performance": {
+      "original_state_unchanged": true,
+      "original_state": {
+        "cycle": 80,
+        "max_corrections": 80,
+        "stage": "READY_FOR_DIRECTOR_AV",
+        "fingerprint": "c5fc741f5cf26f829649bf0ec3134c285291447d8d8e3fa443311ee31acd3e43"
+      },
+      "governance": {
+        "task": "sikh335-continuous-performance",
+        "decision": "ALLOCATION_EXHAUSTED",
+        "spent": 0,
+        "historical_slots": 80,
+        "remaining": 0,
+        "feature_age": {
+          "rearing-performance": 0
+        },
+        "ineffective_interventions": {
+          "rearing-performance": 0
+        },
+        "lineage": [
+          "accepted-motion-preservation",
+          "nihang-motion",
+          "trailer01",
+          "release01"
+        ],
+        "ancestor_spent": {
+          "accepted-motion-preservation": 0,
+          "nihang-motion": 0,
+          "trailer01": 0,
+          "release01": 0
+        },
+        "retirement": [],
+        "warnings": [],
+        "blocked_features": [],
+        "proof_stamps": {
+          "rearing-performance": "historical-baseline"
+        },
+        "investment_review_required": [],
+        "scope_review_required": false
+      }
+    }
+  },
+  "protected": {
+    "prep66": {
+      "path": ".runtime/factory-native/sikh370-motion-c66-audit/scene.blend",
+      "sha256": "4b31c8428034de3635c23992d4e3068d43fa83fa49eae1fa6dac7103a9b3e748",
+      "unchanged": true
+    },
+    "crest75": {
+      "path": ".runtime/factory-native/sikh372-motion-c75-source/scene.blend",
+      "sha256": "9633bf00d5cabdedde370c2195729b9f1e5190e681130d75c2c9a6187b8701ca",
+      "unchanged": true
+    },
+    "landing80": {
+      "path": ".runtime/factory-native/sikh373-motion-c80-contact/scene.blend",
+      "sha256": "204eea24a877219a30c7405bba178ddcff9655c30036d0c5ab218b603fc0fb44",
+      "unchanged": true
+    },
+    "pashtun20": {
+      "path": ".runtime/art-direction/series01-finish248/delivery01/pashtun-20s.mp4",
+      "sha256": "1004ed9f2e06d2eafb008c925eb9d266e8a13b8603086020e28d19e3b606722b",
+      "unchanged": true
+    },
+    "action_reference": {
+      "path": ".runtime/art-direction/series01-sikh256/references/reference-b.mov",
+      "sha256": "78d0d691e8712c02931876cf0bc405e4869de357f337f531708be7a7da4898e2",
+      "unchanged": true
+    },
+    "clean_source184": {
+      "path": ".runtime/factory-native/sikh386-appearance-c184-source/scene.blend",
+      "sha256": "4db02a96be38c4cbbf94f6e86c4576e3284cc73539c808f014ec36fbba2db87b",
+      "unchanged": true
+    }
+  },
+  "governance_full_cached_equal": true,
+  "heavy_jobs": 0,
+  "native_runs": 806,
+  "economics": {
+    "prospective_reserved_cycles": 0,
+    "by_lane": {
+      "production": 0,
+      "engineering": 0,
+      "workflow_admin": 0
+    },
+    "admin_share": null,
+    "milestones": {
+      "trailer01": {
+        "spent": 0,
+        "envelope": 0,
+        "burn": null
+      }
+    },
+    "historical_baselines": {
+      "sikh335-continuous-performance": 80,
+      "sikh335-supporting-appearance": 261
+    },
+    "qualified_release": {
+      "earned": 0.0,
+      "total_weight": null,
+      "fraction": null,
+      "note": "Qualified milestone scope only; not cycle consumption or the Director394scenario."
+    },
+    "scenario": {
+      "label": "Director394illustration only;not measured readiness",
+      "scope": 12,
+      "earned": 1.5,
+      "fraction": 0.125,
+      "remaining": 10.5,
+      "remaining_to_completed": 7,
+      "baseline_cycles": null,
+      "same_productivity_remaining": null,
+      "same_productivity_total": null,
+      "total_envelope": null,
+      "required_improvement": null
+    },
+    "limits": "No uniform whole-project census or forecast; no finished-footage credit forR&D/admin."
+  },
+  "governance_nodes": {
+    "accepted-motion-preservation": {
+      "authority": {
+        "path": "results/workflow397/REQUEST.md",
+        "sha256": "3625c08e51d07f91649fef3b845c4a28a4cba6cb8ec0100062fcec9f76c9c925"
+      },
+      "id": "accepted-motion-preservation",
+      "kind": "family",
+      "limit": 0,
+      "parent": "nihang-motion",
+      "purpose": "Preserve accepted micro-motion66/75/80"
+    },
+    "inherited-anatomy-crafting": {
+      "authority": {
+        "path": "results/workflow397/REQUEST.md",
+        "sha256": "3625c08e51d07f91649fef3b845c4a28a4cba6cb8ec0100062fcec9f76c9c925"
+      },
+      "id": "inherited-anatomy-crafting",
+      "kind": "family",
+      "limit": 0,
+      "parent": "nihang-form",
+      "purpose": "Original inherited-horse anatomy crafting"
+    },
+    "nihang-form": {
+      "authority": {
+        "path": "results/workflow397/REQUEST.md",
+        "sha256": "3625c08e51d07f91649fef3b845c4a28a4cba6cb8ec0100062fcec9f76c9c925"
+      },
+      "id": "nihang-form",
+      "kind": "capability",
+      "limit": 0,
+      "parent": "trailer01",
+      "purpose": "Continuous credible horse form under accepted rear"
+    },
+    "nihang-motion": {
+      "authority": {
+        "path": "results/workflow397/REQUEST.md",
+        "sha256": "3625c08e51d07f91649fef3b845c4a28a4cba6cb8ec0100062fcec9f76c9c925"
+      },
+      "id": "nihang-motion",
+      "kind": "capability",
+      "limit": 0,
+      "parent": "trailer01",
+      "purpose": "Reference-grounded rearing performance"
+    },
+    "release01": {
+      "authority": {
+        "path": "results/workflow397/REQUEST.md",
+        "sha256": "3625c08e51d07f91649fef3b845c4a28a4cba6cb8ec0100062fcec9f76c9c925"
+      },
+      "id": "release01",
+      "kind": "release",
+      "limit": 0,
+      "parent": null,
+      "purpose": "Trailer and episodes1and2; global envelope remains unresolved"
+    },
+    "trailer01": {
+      "authority": {
+        "path": "results/workflow397/REQUEST.md",
+        "sha256": "3625c08e51d07f91649fef3b845c4a28a4cba6cb8ec0100062fcec9f76c9c925"
+      },
+      "id": "trailer01",
+      "kind": "milestone",
+      "limit": 0,
+      "parent": "release01",
+      "purpose": "Trailer completion, distinct from consumed effort"
+    }
+  }
+}

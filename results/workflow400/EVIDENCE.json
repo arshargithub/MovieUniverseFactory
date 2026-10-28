@@ -1,0 +1,47 @@
+{
+  "head": "2e13837297b083fe454188156d3fc4060d4ac145",
+  "files": {
+    "docs/planning/DETERMINISTIC_PRODUCTION_WORKFLOW_392_PROPOSAL.md": "ae693e089a378c2d7277984be1ed7180d770317a1baf243899f324630fedc12e",
+    "docs/planning/WORKFLOW_DECOMPOSITION_AND_CHALLENGE_393.md": "63b1ec6938fb369689d74e017f70dd50d091a50b1ce0b20c4fb5f7749b118bfd",
+    "docs/planning/PRODUCTION_CYCLE_ECONOMICS_394_PROPOSAL.md": "b6eb3c3803a265aec856769222c1f1237afd705fe6d5bcf18d6c4b78ae1ee2ff",
+    "docs/planning/WORKFLOW_IMPLEMENTATION_COMPLETION_CONTRACT_396.md": "2aaa7604ad36e60987a4dbd90b9d7cbb99861147c6a500dbc480827b60f8fe6c",
+    "docs/knowledge/GOVERNANCE_WORKFLOW_397.md": "c1121484312e7a2d55eea44458b3ff29fa453ccc2e67c00fb95af3c2e1ec776f",
+    "src/movie_factory/production_governance.py": "bc6469457eee18bf191aab25279d3295d05640d9f04abd0793b6e4e75df7ef42",
+    "src/movie_factory/production_contracts.py": "c1e4d47c90640dfe352361ff9f8979f34d6f55b89f6cc0ffae4f749139685638",
+    "src/movie_factory/production_workflow.py": "789cfc9d98b6f468125da424e40935747cbe4493ee8d8be7eee655ed5651501c",
+    "src/movie_factory/native_admission.py": "67ec33ac69cce6c58789d43ff20cad2c40c28490d0a05701363ab8afba77eedf",
+    "src/movie_factory/planning_pipeline.py": "2873cdd5c6d85307074b1db77b313ac15fdc3813904db2e34d7c61ae4a21acd0",
+    "src/movie_factory/context_projection397.py": "ae3e9696235307992bb7375db7c7549ab4a3b58ac876914f2090732c84567d1d",
+    "src/movie_factory/retrospective.py": "1b620a9e0753ac4855675fdbfdcf501ae75631b9dbe38d10da0169687de5b0d0",
+    "tests/test_governance397.py": "7c253a802afaab7d37b5354689d0fa5726d1e66f85466ed5f6039f57defdea44",
+    "tests/test_calibration255.py": "bb9141395ab4cc382171cb881f22540415ac6afaed67aac04889845dfe81085a",
+    "results/workflow400/probes.py": "1fe4479967c7b57ded7fc008ca54419399e7fccc2067fb2d8e9ad0f17fa738d4",
+    ".runtime/context-hygiene/runs/workflow400-regression/stdout.log": "606517ab37793000310c3bd94d643b1a4c8c83b556c2aad7c24c3ca106046e78",
+    "results/workflow400/COUNTEREXAMPLES.json": "66a97b1f8141be345c03aaf83ef015b25ad04733fcc134cf7cb525de75160b00",
+    "results/workflow400/CANONICAL_VERIFY.json": "39b00bad972079a8abab562b54ee721e75fb7598f42755130a70d16b262ff89e",
+    "results/workflow400/AUDIT.md": "d04a78f4455021381a5618e48e8d6af334c988fc2457d238e707c13de4719c4b",
+    "docs/knowledge/CURRENT_PRODUCTION_STATE.md": "945a0e7896d2cc3a773ba498c7ed1b958191a665aed06c42f2c874e00d97bd00",
+    "docs/knowledge/pilot/catalog.json": "f801e8527b0029ce43b85913964841d932862a6f13f63d0a439162edcc78e278",
+    "docs/knowledge/pilot/source-pins.json": "3a220ef2c99b4ccbbf7e65d67f730e5b884295e33e4431f67599b64164227a69",
+    "docs/planning/RELEASE_01_STATUS.json": "ce3c434ad368561037751b30716236fa98a6041e52139d3edd4e292ca6a0c469",
+    "docs/planning/RELEASE_01_CHECKPOINTS.md": "4e2ac2367b5c87b4f4fa2d9d5009bec14d5b7c0f4dae9eb95b33fe3696d243a2",
+    ".runtime/context-hygiene/runs/workflow400-current-source-controls/stdout.log": "ad75de0aee210d543513abaa7ba250d0a4a4be393ca9d144707adeb80493d299"
+  },
+  "scope": "Conformance audit only; original code unchanged; no native or provider calls",
+  "full_suite": {
+    "passed": 2991,
+    "failed": 1,
+    "skipped": 16,
+    "seconds": 37.09
+  },
+  "fresh_probes": {
+    "policy_expectations_met": 2,
+    "counterexamples": 4,
+    "total": 6
+  },
+  "post_audit_source_controls": {
+    "passed": 88,
+    "seconds": 4.39,
+    "scope": "Knowledge/context tests after reviewed400source update; not a second complete suite."
+  }
+}

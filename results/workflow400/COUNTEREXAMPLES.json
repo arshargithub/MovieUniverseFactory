@@ -1,0 +1,64 @@
+[
+  {
+    "id": "scope_outer_split_inner_keep",
+    "expected": "BLOCKED",
+    "observed": "ADMITTED",
+    "conforms": false,
+    "details": {
+      "meaning": "Outer review says split, but diagnostic/next plan remains keep with no child graph"
+    }
+  },
+  {
+    "id": "split_child_without_target_or_execution_mapping",
+    "expected": "BLOCKED",
+    "observed": "ADMITTED",
+    "conforms": false,
+    "details": {
+      "meaning": "Current child depends on unqualified target; actual first operation produces transport only, no child mapping"
+    }
+  },
+  {
+    "id": "unbound_nonexistent_numeric_calibration",
+    "expected": "BLOCKED",
+    "observed": "ADMITTED",
+    "conforms": false,
+    "details": {
+      "meaning": "Only nonempty strings are required, no bound calibration/control provenance"
+    }
+  },
+  {
+    "id": "charged_pending_capability_stagnation",
+    "expected": "BLOCKED",
+    "observed": "ADMITTED",
+    "conforms": false,
+    "details": {
+      "reserved": 21,
+      "completed": 0,
+      "feature_age": {
+        "chest": 0
+      },
+      "decision": "ALLOCATION_EXHAUSTED",
+      "meaning": "Twenty-one charged attempts can remain pending without any proof; watchdog ages only completed results"
+    }
+  },
+  {
+    "id": "actual_bound_scalar_overrules_false_pass",
+    "expected": "BLOCKED",
+    "observed": "BLOCKED",
+    "conforms": true,
+    "details": {
+      "raw_value": 3,
+      "threshold": 0
+    }
+  },
+  {
+    "id": "valid_bound_scalar_positive_control",
+    "expected": "ADMITTED",
+    "observed": "ADMITTED",
+    "conforms": true,
+    "details": {
+      "raw_value": 0,
+      "threshold": 0
+    }
+  }
+]
