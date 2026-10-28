@@ -1,0 +1,903 @@
+{
+  "window": [
+    212,
+    261
+  ],
+  "correction_slots": 50,
+  "image_review_cycles": [
+    212,
+    216,
+    221,
+    223,
+    224,
+    225,
+    226,
+    228,
+    230,
+    233,
+    235,
+    236,
+    239,
+    243,
+    246,
+    250,
+    251
+  ],
+  "image_review_cycle_count": 17,
+  "without_artistic_image_review": [
+    213,
+    214,
+    215,
+    217,
+    218,
+    219,
+    220,
+    222,
+    227,
+    229,
+    231,
+    232,
+    234,
+    237,
+    238,
+    240,
+    241,
+    242,
+    244,
+    245,
+    247,
+    248,
+    249,
+    252,
+    253,
+    254,
+    255,
+    256,
+    257,
+    258,
+    259,
+    260,
+    261
+  ],
+  "without_artistic_image_review_count": 33,
+  "scoped_artistic_pass_cycles": [],
+  "native_jobs": 71,
+  "native_returned": 65,
+  "native_failed": 6,
+  "retrospective_event_counts": {
+    "plan": 46,
+    "response": 384,
+    "admit": 384,
+    "outcome": 182,
+    "evaluate": 384
+  },
+  "effectiveness_dispositions": {
+    "ineffective": 244,
+    "inconclusive": 140
+  },
+  "cycles_with_retro_responses": [
+    212,
+    213,
+    214,
+    215,
+    216,
+    217,
+    218,
+    219,
+    220,
+    221,
+    222,
+    223,
+    224,
+    225,
+    226,
+    227,
+    228,
+    229,
+    230,
+    232,
+    233,
+    235,
+    236,
+    237,
+    239,
+    240,
+    241,
+    242,
+    243,
+    244,
+    245,
+    246,
+    247,
+    248,
+    249,
+    250,
+    251,
+    253,
+    254,
+    255,
+    256,
+    257,
+    258,
+    259,
+    260,
+    261
+  ],
+  "scope_response_counts": {
+    "keep": 105,
+    "merge": 279
+  },
+  "unmapped_all_history_events": [
+    {
+      "event_id": "policy:sikh351-reviewed-migration",
+      "kind": "initialize",
+      "plan": null
+    },
+    {
+      "event_id": "migration-plan:sikh351-reviewed-migration",
+      "kind": "plan",
+      "plan": null
+    },
+    {
+      "event_id": "sikh351-legacy-form",
+      "kind": "outcome",
+      "plan": "e1e9ac562dd55f83faf7aad839b7972978fd454d2b2ee4f01c05912e68217acd"
+    },
+    {
+      "event_id": "sikh351-response-__migration__",
+      "kind": "response",
+      "plan": "e1e9ac562dd55f83faf7aad839b7972978fd454d2b2ee4f01c05912e68217acd"
+    },
+    {
+      "event_id": "sikh351-admit-__migration__",
+      "kind": "admit",
+      "plan": "e1e9ac562dd55f83faf7aad839b7972978fd454d2b2ee4f01c05912e68217acd"
+    },
+    {
+      "event_id": "sikh351-response-form",
+      "kind": "response",
+      "plan": "e1e9ac562dd55f83faf7aad839b7972978fd454d2b2ee4f01c05912e68217acd"
+    },
+    {
+      "event_id": "sikh351-admit-form",
+      "kind": "admit",
+      "plan": "e1e9ac562dd55f83faf7aad839b7972978fd454d2b2ee4f01c05912e68217acd"
+    },
+    {
+      "event_id": "sikh351-migration-proof",
+      "kind": "outcome",
+      "plan": "e1e9ac562dd55f83faf7aad839b7972978fd454d2b2ee4f01c05912e68217acd"
+    },
+    {
+      "event_id": "sikh351-migration-effect",
+      "kind": "evaluate",
+      "plan": null
+    },
+    {
+      "event_id": "sikh362-whole-look-planning-gap",
+      "kind": "outcome",
+      "plan": "768b883e1876701f0a27f63ec6e2ed076567dc1a7b79ef3991191510ac12c199"
+    },
+    {
+      "event_id": "plan:sikh362-appearance100-admit",
+      "kind": "plan",
+      "plan": null
+    },
+    {
+      "event_id": "sikh362-appearance100-__allowance__-reopen",
+      "kind": "outcome",
+      "plan": "b9311d0ed6a6f0197cd469f9b2be21bd8918bfe0972971cb35f967d4f8676e80"
+    },
+    {
+      "event_id": "sikh362-appearance100-form-reopen",
+      "kind": "outcome",
+      "plan": "b9311d0ed6a6f0197cd469f9b2be21bd8918bfe0972971cb35f967d4f8676e80"
+    },
+    {
+      "event_id": "sikh362-appearance100-interfaces-reopen",
+      "kind": "outcome",
+      "plan": "b9311d0ed6a6f0197cd469f9b2be21bd8918bfe0972971cb35f967d4f8676e80"
+    },
+    {
+      "event_id": "sikh362-appearance100-evidence-reopen",
+      "kind": "outcome",
+      "plan": "b9311d0ed6a6f0197cd469f9b2be21bd8918bfe0972971cb35f967d4f8676e80"
+    },
+    {
+      "event_id": "sikh362-appearance100-__worker__-reopen",
+      "kind": "outcome",
+      "plan": "b9311d0ed6a6f0197cd469f9b2be21bd8918bfe0972971cb35f967d4f8676e80"
+    },
+    {
+      "event_id": "sikh362-appearance100-__allowance__-response",
+      "kind": "response",
+      "plan": "b9311d0ed6a6f0197cd469f9b2be21bd8918bfe0972971cb35f967d4f8676e80"
+    },
+    {
+      "event_id": "sikh362-appearance100-__allowance__-admit",
+      "kind": "admit",
+      "plan": "b9311d0ed6a6f0197cd469f9b2be21bd8918bfe0972971cb35f967d4f8676e80"
+    },
+    {
+      "event_id": "sikh362-appearance100-form-response",
+      "kind": "response",
+      "plan": "b9311d0ed6a6f0197cd469f9b2be21bd8918bfe0972971cb35f967d4f8676e80"
+    },
+    {
+      "event_id": "sikh362-appearance100-form-admit",
+      "kind": "admit",
+      "plan": "b9311d0ed6a6f0197cd469f9b2be21bd8918bfe0972971cb35f967d4f8676e80"
+    },
+    {
+      "event_id": "sikh362-appearance100-interfaces-response",
+      "kind": "response",
+      "plan": "b9311d0ed6a6f0197cd469f9b2be21bd8918bfe0972971cb35f967d4f8676e80"
+    },
+    {
+      "event_id": "sikh362-appearance100-interfaces-admit",
+      "kind": "admit",
+      "plan": "b9311d0ed6a6f0197cd469f9b2be21bd8918bfe0972971cb35f967d4f8676e80"
+    },
+    {
+      "event_id": "sikh362-appearance100-evidence-response",
+      "kind": "response",
+      "plan": "b9311d0ed6a6f0197cd469f9b2be21bd8918bfe0972971cb35f967d4f8676e80"
+    },
+    {
+      "event_id": "sikh362-appearance100-evidence-admit",
+      "kind": "admit",
+      "plan": "b9311d0ed6a6f0197cd469f9b2be21bd8918bfe0972971cb35f967d4f8676e80"
+    },
+    {
+      "event_id": "sikh362-appearance100-__worker__-response",
+      "kind": "response",
+      "plan": "b9311d0ed6a6f0197cd469f9b2be21bd8918bfe0972971cb35f967d4f8676e80"
+    },
+    {
+      "event_id": "sikh362-appearance100-__worker__-admit",
+      "kind": "admit",
+      "plan": "b9311d0ed6a6f0197cd469f9b2be21bd8918bfe0972971cb35f967d4f8676e80"
+    },
+    {
+      "event_id": "sikh362-appearance100-__requirements__-response",
+      "kind": "response",
+      "plan": "b9311d0ed6a6f0197cd469f9b2be21bd8918bfe0972971cb35f967d4f8676e80"
+    },
+    {
+      "event_id": "sikh362-appearance100-__requirements__-admit",
+      "kind": "admit",
+      "plan": "b9311d0ed6a6f0197cd469f9b2be21bd8918bfe0972971cb35f967d4f8676e80"
+    },
+    {
+      "event_id": "closure:sikh362-appearance-review-final",
+      "kind": "closure",
+      "plan": null
+    },
+    {
+      "event_id": "sikh363-appearance-rejection",
+      "kind": "outcome",
+      "plan": "b9311d0ed6a6f0197cd469f9b2be21bd8918bfe0972971cb35f967d4f8676e80"
+    },
+    {
+      "event_id": "sikh363-a101-__allowance__-reopen",
+      "kind": "outcome",
+      "plan": "6a8987d9d2b791a616a8e4c5f564f701ff3e33c09e9bb0c46e4b0e17fa2bcc5e"
+    },
+    {
+      "event_id": "sikh363-a101-form-reopen",
+      "kind": "outcome",
+      "plan": "6a8987d9d2b791a616a8e4c5f564f701ff3e33c09e9bb0c46e4b0e17fa2bcc5e"
+    },
+    {
+      "event_id": "sikh363-a101-interfaces-reopen",
+      "kind": "outcome",
+      "plan": "6a8987d9d2b791a616a8e4c5f564f701ff3e33c09e9bb0c46e4b0e17fa2bcc5e"
+    },
+    {
+      "event_id": "sikh363-a101-evidence-reopen",
+      "kind": "outcome",
+      "plan": "6a8987d9d2b791a616a8e4c5f564f701ff3e33c09e9bb0c46e4b0e17fa2bcc5e"
+    },
+    {
+      "event_id": "sikh363-a101-__worker__-reopen",
+      "kind": "outcome",
+      "plan": "6a8987d9d2b791a616a8e4c5f564f701ff3e33c09e9bb0c46e4b0e17fa2bcc5e"
+    },
+    {
+      "event_id": "sikh363-a101-__requirements__-reopen",
+      "kind": "outcome",
+      "plan": "6a8987d9d2b791a616a8e4c5f564f701ff3e33c09e9bb0c46e4b0e17fa2bcc5e"
+    },
+    {
+      "event_id": "sikh363-a101-__allowance__-response",
+      "kind": "response",
+      "plan": "6a8987d9d2b791a616a8e4c5f564f701ff3e33c09e9bb0c46e4b0e17fa2bcc5e"
+    },
+    {
+      "event_id": "sikh363-a101-__allowance__-admit",
+      "kind": "admit",
+      "plan": "6a8987d9d2b791a616a8e4c5f564f701ff3e33c09e9bb0c46e4b0e17fa2bcc5e"
+    },
+    {
+      "event_id": "sikh363-a101-form-response",
+      "kind": "response",
+      "plan": "6a8987d9d2b791a616a8e4c5f564f701ff3e33c09e9bb0c46e4b0e17fa2bcc5e"
+    },
+    {
+      "event_id": "sikh363-a101-form-admit",
+      "kind": "admit",
+      "plan": "6a8987d9d2b791a616a8e4c5f564f701ff3e33c09e9bb0c46e4b0e17fa2bcc5e"
+    },
+    {
+      "event_id": "sikh363-a101-interfaces-response",
+      "kind": "response",
+      "plan": "6a8987d9d2b791a616a8e4c5f564f701ff3e33c09e9bb0c46e4b0e17fa2bcc5e"
+    },
+    {
+      "event_id": "sikh363-a101-interfaces-admit",
+      "kind": "admit",
+      "plan": "6a8987d9d2b791a616a8e4c5f564f701ff3e33c09e9bb0c46e4b0e17fa2bcc5e"
+    },
+    {
+      "event_id": "sikh363-a101-evidence-response",
+      "kind": "response",
+      "plan": "6a8987d9d2b791a616a8e4c5f564f701ff3e33c09e9bb0c46e4b0e17fa2bcc5e"
+    },
+    {
+      "event_id": "sikh363-a101-evidence-admit",
+      "kind": "admit",
+      "plan": "6a8987d9d2b791a616a8e4c5f564f701ff3e33c09e9bb0c46e4b0e17fa2bcc5e"
+    },
+    {
+      "event_id": "sikh363-a101-__worker__-response",
+      "kind": "response",
+      "plan": "6a8987d9d2b791a616a8e4c5f564f701ff3e33c09e9bb0c46e4b0e17fa2bcc5e"
+    },
+    {
+      "event_id": "sikh363-a101-__worker__-admit",
+      "kind": "admit",
+      "plan": "6a8987d9d2b791a616a8e4c5f564f701ff3e33c09e9bb0c46e4b0e17fa2bcc5e"
+    },
+    {
+      "event_id": "sikh363-a101-__requirements__-response",
+      "kind": "response",
+      "plan": "6a8987d9d2b791a616a8e4c5f564f701ff3e33c09e9bb0c46e4b0e17fa2bcc5e"
+    },
+    {
+      "event_id": "sikh363-a101-__requirements__-admit",
+      "kind": "admit",
+      "plan": "6a8987d9d2b791a616a8e4c5f564f701ff3e33c09e9bb0c46e4b0e17fa2bcc5e"
+    },
+    {
+      "event_id": "sikh363-a101-whole_look-response",
+      "kind": "response",
+      "plan": "6a8987d9d2b791a616a8e4c5f564f701ff3e33c09e9bb0c46e4b0e17fa2bcc5e"
+    },
+    {
+      "event_id": "sikh363-a101-whole_look-admit",
+      "kind": "admit",
+      "plan": "6a8987d9d2b791a616a8e4c5f564f701ff3e33c09e9bb0c46e4b0e17fa2bcc5e"
+    },
+    {
+      "event_id": "sikh363-diagnostic-after-chest-form",
+      "kind": "response",
+      "plan": "6a8987d9d2b791a616a8e4c5f564f701ff3e33c09e9bb0c46e4b0e17fa2bcc5e"
+    },
+    {
+      "event_id": "sikh363-diagnostic-after-chest-form-admit",
+      "kind": "admit",
+      "plan": "6a8987d9d2b791a616a8e4c5f564f701ff3e33c09e9bb0c46e4b0e17fa2bcc5e"
+    },
+    {
+      "event_id": "sikh363-diagnostic-after-chest-interfaces",
+      "kind": "response",
+      "plan": "6a8987d9d2b791a616a8e4c5f564f701ff3e33c09e9bb0c46e4b0e17fa2bcc5e"
+    },
+    {
+      "event_id": "sikh363-diagnostic-after-chest-interfaces-admit",
+      "kind": "admit",
+      "plan": "6a8987d9d2b791a616a8e4c5f564f701ff3e33c09e9bb0c46e4b0e17fa2bcc5e"
+    },
+    {
+      "event_id": "sikh363-diagnostic-after-chest-evidence",
+      "kind": "response",
+      "plan": "6a8987d9d2b791a616a8e4c5f564f701ff3e33c09e9bb0c46e4b0e17fa2bcc5e"
+    },
+    {
+      "event_id": "sikh363-diagnostic-after-chest-evidence-admit",
+      "kind": "admit",
+      "plan": "6a8987d9d2b791a616a8e4c5f564f701ff3e33c09e9bb0c46e4b0e17fa2bcc5e"
+    },
+    {
+      "event_id": "sikh363-diagnostic-after-chest-whole_look",
+      "kind": "response",
+      "plan": "6a8987d9d2b791a616a8e4c5f564f701ff3e33c09e9bb0c46e4b0e17fa2bcc5e"
+    },
+    {
+      "event_id": "sikh363-diagnostic-after-chest-whole_look-admit",
+      "kind": "admit",
+      "plan": "6a8987d9d2b791a616a8e4c5f564f701ff3e33c09e9bb0c46e4b0e17fa2bcc5e"
+    },
+    {
+      "event_id": "sikh363-diagnostic-after-side-form",
+      "kind": "response",
+      "plan": "6a8987d9d2b791a616a8e4c5f564f701ff3e33c09e9bb0c46e4b0e17fa2bcc5e"
+    },
+    {
+      "event_id": "sikh363-diagnostic-after-side-form-admit",
+      "kind": "admit",
+      "plan": "6a8987d9d2b791a616a8e4c5f564f701ff3e33c09e9bb0c46e4b0e17fa2bcc5e"
+    },
+    {
+      "event_id": "sikh363-diagnostic-after-side-interfaces",
+      "kind": "response",
+      "plan": "6a8987d9d2b791a616a8e4c5f564f701ff3e33c09e9bb0c46e4b0e17fa2bcc5e"
+    },
+    {
+      "event_id": "sikh363-diagnostic-after-side-interfaces-admit",
+      "kind": "admit",
+      "plan": "6a8987d9d2b791a616a8e4c5f564f701ff3e33c09e9bb0c46e4b0e17fa2bcc5e"
+    },
+    {
+      "event_id": "sikh363-diagnostic-after-side-evidence",
+      "kind": "response",
+      "plan": "6a8987d9d2b791a616a8e4c5f564f701ff3e33c09e9bb0c46e4b0e17fa2bcc5e"
+    },
+    {
+      "event_id": "sikh363-diagnostic-after-side-evidence-admit",
+      "kind": "admit",
+      "plan": "6a8987d9d2b791a616a8e4c5f564f701ff3e33c09e9bb0c46e4b0e17fa2bcc5e"
+    },
+    {
+      "event_id": "sikh363-diagnostic-after-side-whole_look",
+      "kind": "response",
+      "plan": "6a8987d9d2b791a616a8e4c5f564f701ff3e33c09e9bb0c46e4b0e17fa2bcc5e"
+    },
+    {
+      "event_id": "sikh363-diagnostic-after-side-whole_look-admit",
+      "kind": "admit",
+      "plan": "6a8987d9d2b791a616a8e4c5f564f701ff3e33c09e9bb0c46e4b0e17fa2bcc5e"
+    },
+    {
+      "event_id": "sikh363-side-coverage-correction",
+      "kind": "outcome",
+      "plan": "6a8987d9d2b791a616a8e4c5f564f701ff3e33c09e9bb0c46e4b0e17fa2bcc5e"
+    },
+    {
+      "event_id": "sikh363-diagnostic-after-right-hand-form",
+      "kind": "response",
+      "plan": "6a8987d9d2b791a616a8e4c5f564f701ff3e33c09e9bb0c46e4b0e17fa2bcc5e"
+    },
+    {
+      "event_id": "sikh363-diagnostic-after-right-hand-form-admit",
+      "kind": "admit",
+      "plan": "6a8987d9d2b791a616a8e4c5f564f701ff3e33c09e9bb0c46e4b0e17fa2bcc5e"
+    },
+    {
+      "event_id": "sikh363-diagnostic-after-right-hand-interfaces",
+      "kind": "response",
+      "plan": "6a8987d9d2b791a616a8e4c5f564f701ff3e33c09e9bb0c46e4b0e17fa2bcc5e"
+    },
+    {
+      "event_id": "sikh363-diagnostic-after-right-hand-interfaces-admit",
+      "kind": "admit",
+      "plan": "6a8987d9d2b791a616a8e4c5f564f701ff3e33c09e9bb0c46e4b0e17fa2bcc5e"
+    },
+    {
+      "event_id": "sikh363-diagnostic-after-right-hand-evidence",
+      "kind": "response",
+      "plan": "6a8987d9d2b791a616a8e4c5f564f701ff3e33c09e9bb0c46e4b0e17fa2bcc5e"
+    },
+    {
+      "event_id": "sikh363-diagnostic-after-right-hand-evidence-admit",
+      "kind": "admit",
+      "plan": "6a8987d9d2b791a616a8e4c5f564f701ff3e33c09e9bb0c46e4b0e17fa2bcc5e"
+    },
+    {
+      "event_id": "sikh363-diagnostic-after-right-hand-whole_look",
+      "kind": "response",
+      "plan": "6a8987d9d2b791a616a8e4c5f564f701ff3e33c09e9bb0c46e4b0e17fa2bcc5e"
+    },
+    {
+      "event_id": "sikh363-diagnostic-after-right-hand-whole_look-admit",
+      "kind": "admit",
+      "plan": "6a8987d9d2b791a616a8e4c5f564f701ff3e33c09e9bb0c46e4b0e17fa2bcc5e"
+    },
+    {
+      "event_id": "sikh363-a103-__allowance__-reopen",
+      "kind": "outcome",
+      "plan": "a41937348d217a1179641c0f0fd2b4c2b7b8d4d9cf943314de6ffa5ddbc1c087"
+    },
+    {
+      "event_id": "sikh363-a103-__worker__-reopen",
+      "kind": "outcome",
+      "plan": "a41937348d217a1179641c0f0fd2b4c2b7b8d4d9cf943314de6ffa5ddbc1c087"
+    },
+    {
+      "event_id": "sikh363-a103-__requirements__-reopen",
+      "kind": "outcome",
+      "plan": "a41937348d217a1179641c0f0fd2b4c2b7b8d4d9cf943314de6ffa5ddbc1c087"
+    },
+    {
+      "event_id": "sikh363-a103-__allowance__-response",
+      "kind": "response",
+      "plan": "a41937348d217a1179641c0f0fd2b4c2b7b8d4d9cf943314de6ffa5ddbc1c087"
+    },
+    {
+      "event_id": "sikh363-a103-__allowance__-admit",
+      "kind": "admit",
+      "plan": "a41937348d217a1179641c0f0fd2b4c2b7b8d4d9cf943314de6ffa5ddbc1c087"
+    },
+    {
+      "event_id": "sikh363-a103-form-response",
+      "kind": "response",
+      "plan": "a41937348d217a1179641c0f0fd2b4c2b7b8d4d9cf943314de6ffa5ddbc1c087"
+    },
+    {
+      "event_id": "sikh363-a103-form-admit",
+      "kind": "admit",
+      "plan": "a41937348d217a1179641c0f0fd2b4c2b7b8d4d9cf943314de6ffa5ddbc1c087"
+    },
+    {
+      "event_id": "sikh363-a103-interfaces-response",
+      "kind": "response",
+      "plan": "a41937348d217a1179641c0f0fd2b4c2b7b8d4d9cf943314de6ffa5ddbc1c087"
+    },
+    {
+      "event_id": "sikh363-a103-interfaces-admit",
+      "kind": "admit",
+      "plan": "a41937348d217a1179641c0f0fd2b4c2b7b8d4d9cf943314de6ffa5ddbc1c087"
+    },
+    {
+      "event_id": "sikh363-a103-evidence-response",
+      "kind": "response",
+      "plan": "a41937348d217a1179641c0f0fd2b4c2b7b8d4d9cf943314de6ffa5ddbc1c087"
+    },
+    {
+      "event_id": "sikh363-a103-evidence-admit",
+      "kind": "admit",
+      "plan": "a41937348d217a1179641c0f0fd2b4c2b7b8d4d9cf943314de6ffa5ddbc1c087"
+    },
+    {
+      "event_id": "sikh363-a103-__worker__-response",
+      "kind": "response",
+      "plan": "a41937348d217a1179641c0f0fd2b4c2b7b8d4d9cf943314de6ffa5ddbc1c087"
+    },
+    {
+      "event_id": "sikh363-a103-__worker__-admit",
+      "kind": "admit",
+      "plan": "a41937348d217a1179641c0f0fd2b4c2b7b8d4d9cf943314de6ffa5ddbc1c087"
+    },
+    {
+      "event_id": "sikh363-a103-__requirements__-response",
+      "kind": "response",
+      "plan": "a41937348d217a1179641c0f0fd2b4c2b7b8d4d9cf943314de6ffa5ddbc1c087"
+    },
+    {
+      "event_id": "sikh363-a103-__requirements__-admit",
+      "kind": "admit",
+      "plan": "a41937348d217a1179641c0f0fd2b4c2b7b8d4d9cf943314de6ffa5ddbc1c087"
+    },
+    {
+      "event_id": "sikh363-a103-whole_look-response",
+      "kind": "response",
+      "plan": "a41937348d217a1179641c0f0fd2b4c2b7b8d4d9cf943314de6ffa5ddbc1c087"
+    },
+    {
+      "event_id": "sikh363-a103-whole_look-admit",
+      "kind": "admit",
+      "plan": "a41937348d217a1179641c0f0fd2b4c2b7b8d4d9cf943314de6ffa5ddbc1c087"
+    },
+    {
+      "event_id": "sikh363-a104-__allowance__-reopen",
+      "kind": "outcome",
+      "plan": "55519a75686bd7dd9a1c3c38f7d78ed5a82212b2bb78f686f890379f24201f50"
+    },
+    {
+      "event_id": "sikh363-a104-__worker__-reopen",
+      "kind": "outcome",
+      "plan": "55519a75686bd7dd9a1c3c38f7d78ed5a82212b2bb78f686f890379f24201f50"
+    },
+    {
+      "event_id": "sikh363-a104-__requirements__-reopen",
+      "kind": "outcome",
+      "plan": "55519a75686bd7dd9a1c3c38f7d78ed5a82212b2bb78f686f890379f24201f50"
+    },
+    {
+      "event_id": "sikh363-a104-__allowance__-response",
+      "kind": "response",
+      "plan": "55519a75686bd7dd9a1c3c38f7d78ed5a82212b2bb78f686f890379f24201f50"
+    },
+    {
+      "event_id": "sikh363-a104-__allowance__-admit",
+      "kind": "admit",
+      "plan": "55519a75686bd7dd9a1c3c38f7d78ed5a82212b2bb78f686f890379f24201f50"
+    },
+    {
+      "event_id": "sikh363-a104-form-response",
+      "kind": "response",
+      "plan": "55519a75686bd7dd9a1c3c38f7d78ed5a82212b2bb78f686f890379f24201f50"
+    },
+    {
+      "event_id": "sikh363-a104-form-admit",
+      "kind": "admit",
+      "plan": "55519a75686bd7dd9a1c3c38f7d78ed5a82212b2bb78f686f890379f24201f50"
+    },
+    {
+      "event_id": "sikh363-a104-interfaces-response",
+      "kind": "response",
+      "plan": "55519a75686bd7dd9a1c3c38f7d78ed5a82212b2bb78f686f890379f24201f50"
+    },
+    {
+      "event_id": "sikh363-a104-interfaces-admit",
+      "kind": "admit",
+      "plan": "55519a75686bd7dd9a1c3c38f7d78ed5a82212b2bb78f686f890379f24201f50"
+    },
+    {
+      "event_id": "sikh363-a104-evidence-response",
+      "kind": "response",
+      "plan": "55519a75686bd7dd9a1c3c38f7d78ed5a82212b2bb78f686f890379f24201f50"
+    },
+    {
+      "event_id": "sikh363-a104-evidence-admit",
+      "kind": "admit",
+      "plan": "55519a75686bd7dd9a1c3c38f7d78ed5a82212b2bb78f686f890379f24201f50"
+    },
+    {
+      "event_id": "sikh363-a104-__worker__-response",
+      "kind": "response",
+      "plan": "55519a75686bd7dd9a1c3c38f7d78ed5a82212b2bb78f686f890379f24201f50"
+    },
+    {
+      "event_id": "sikh363-a104-__worker__-admit",
+      "kind": "admit",
+      "plan": "55519a75686bd7dd9a1c3c38f7d78ed5a82212b2bb78f686f890379f24201f50"
+    },
+    {
+      "event_id": "sikh363-a104-__requirements__-response",
+      "kind": "response",
+      "plan": "55519a75686bd7dd9a1c3c38f7d78ed5a82212b2bb78f686f890379f24201f50"
+    },
+    {
+      "event_id": "sikh363-a104-__requirements__-admit",
+      "kind": "admit",
+      "plan": "55519a75686bd7dd9a1c3c38f7d78ed5a82212b2bb78f686f890379f24201f50"
+    },
+    {
+      "event_id": "sikh363-a104-whole_look-response",
+      "kind": "response",
+      "plan": "55519a75686bd7dd9a1c3c38f7d78ed5a82212b2bb78f686f890379f24201f50"
+    },
+    {
+      "event_id": "sikh363-a104-whole_look-admit",
+      "kind": "admit",
+      "plan": "55519a75686bd7dd9a1c3c38f7d78ed5a82212b2bb78f686f890379f24201f50"
+    },
+    {
+      "event_id": "sikh363-diagnostic-hand105fail-form",
+      "kind": "response",
+      "plan": "3f0f8b52a273acd217cb5a35e8db863fa6039450ac38f8033122466eb2550c9d"
+    },
+    {
+      "event_id": "sikh363-diagnostic-hand105fail-form-admit",
+      "kind": "admit",
+      "plan": "3f0f8b52a273acd217cb5a35e8db863fa6039450ac38f8033122466eb2550c9d"
+    },
+    {
+      "event_id": "sikh363-diagnostic-hand105fail-interfaces",
+      "kind": "response",
+      "plan": "3f0f8b52a273acd217cb5a35e8db863fa6039450ac38f8033122466eb2550c9d"
+    },
+    {
+      "event_id": "sikh363-diagnostic-hand105fail-interfaces-admit",
+      "kind": "admit",
+      "plan": "3f0f8b52a273acd217cb5a35e8db863fa6039450ac38f8033122466eb2550c9d"
+    },
+    {
+      "event_id": "sikh363-diagnostic-hand105fail-evidence",
+      "kind": "response",
+      "plan": "3f0f8b52a273acd217cb5a35e8db863fa6039450ac38f8033122466eb2550c9d"
+    },
+    {
+      "event_id": "sikh363-diagnostic-hand105fail-evidence-admit",
+      "kind": "admit",
+      "plan": "3f0f8b52a273acd217cb5a35e8db863fa6039450ac38f8033122466eb2550c9d"
+    },
+    {
+      "event_id": "sikh363-diagnostic-hand105fail-whole_look",
+      "kind": "response",
+      "plan": "3f0f8b52a273acd217cb5a35e8db863fa6039450ac38f8033122466eb2550c9d"
+    },
+    {
+      "event_id": "sikh363-diagnostic-hand105fail-whole_look-admit",
+      "kind": "admit",
+      "plan": "3f0f8b52a273acd217cb5a35e8db863fa6039450ac38f8033122466eb2550c9d"
+    },
+    {
+      "event_id": "closure:sikh364-appearance-review-final",
+      "kind": "closure",
+      "plan": null
+    },
+    {
+      "event_id": "sikh374-form124-failure",
+      "kind": "outcome",
+      "plan": "4fefc2b278c839c5e240f05f784bbbc7224a89532852abf6ff258581b0402277"
+    },
+    {
+      "event_id": "sikh374-form125-guard-fail",
+      "kind": "outcome",
+      "plan": "32ea2a0ba3bb2cd5cddbd586b6f6644a04756602ec9a30fd3d3395c33e56e8f5"
+    },
+    {
+      "event_id": "sikh374-form126-guard-fail",
+      "kind": "outcome",
+      "plan": "87123772694fac468465e41848ef5bf79097a6c67dcb781a33eb9f237e18b161"
+    },
+    {
+      "event_id": "sikh374-form127-method-fail",
+      "kind": "outcome",
+      "plan": "870a68c2a123774855495d408de20230a772956fae96271c0514aa1d6bc39a77"
+    },
+    {
+      "event_id": "policy:sikh379-reference-policy-migration",
+      "kind": "initialize",
+      "plan": null
+    },
+    {
+      "event_id": "migration-plan:sikh379-reference-policy-migration",
+      "kind": "plan",
+      "plan": null
+    },
+    {
+      "event_id": "sikh379-reject137",
+      "kind": "outcome",
+      "plan": "459da6d78b20e979d372912f667e404a7500578cd55f756f90030cee1236b883"
+    },
+    {
+      "event_id": "sikh379-reject138",
+      "kind": "outcome",
+      "plan": "95ed5f3fa4c2e473e32c3da3108fd05db851f2b43be52fefda1850fd23c7cbbb"
+    },
+    {
+      "event_id": "policy:sikh379-lossless-packet-migration",
+      "kind": "initialize",
+      "plan": null
+    },
+    {
+      "event_id": "migration-plan:sikh379-lossless-packet-migration",
+      "kind": "plan",
+      "plan": null
+    },
+    {
+      "event_id": "sikh379-reject140",
+      "kind": "outcome",
+      "plan": "c707579a8b3feb134d3a6edd8795cdab5ce7bb7baa26d5b3aed6e63f7a77c6bc"
+    },
+    {
+      "event_id": "sikh380-final-outcome",
+      "kind": "outcome",
+      "plan": "a5caa2a19e0080ab06540762431d3d3bcb8b385e65fe349b5ab4c822e1221ebf"
+    },
+    {
+      "event_id": "sikh381-final-retrospective",
+      "kind": "outcome",
+      "plan": "523d4d10f36e44e66b044c564d67efe0d929e25a0dc8ebf0d21798c648d1e46e"
+    },
+    {
+      "event_id": "sikh383-final-retrospective",
+      "kind": "outcome",
+      "plan": "bd69787b5a2f3374d719ca067fc9de4f88f58e94eed3752f5c18fd926aada752"
+    },
+    {
+      "event_id": "sikh384-material168-failure",
+      "kind": "outcome",
+      "plan": "5540307be8c23ffa02aeec228a99f1bc922b9317bb28009c7fc79c4011a74567"
+    },
+    {
+      "event_id": "sikh384-headblend169-failure",
+      "kind": "outcome",
+      "plan": "a39eabf78e289e86bd4b10024fb8adfac74ef50f657e07288ca7a7d80a036e4a"
+    },
+    {
+      "event_id": "sikh384-rebuild170-failure",
+      "kind": "outcome",
+      "plan": "e5e162e51bd8def320ad08253695a6093b14a4841058c3f3facc9027f440aaef"
+    },
+    {
+      "event_id": "sikh384-reconcile173-open-findings",
+      "kind": "outcome",
+      "plan": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+    },
+    {
+      "event_id": "sikh384-graft173-failure",
+      "kind": "outcome",
+      "plan": "a13f5096ecfdae6bd99e3cea3f2b06ddc7d264c2ddcc42b0c009c5209615e161"
+    },
+    {
+      "event_id": "sikh384-component174-failure",
+      "kind": "outcome",
+      "plan": "2609f9c60ff147187217c7a378428ff2be42f5074dd0e2bad36267c1f86757a6"
+    },
+    {
+      "event_id": "sikh384-final-failure",
+      "kind": "outcome",
+      "plan": "b36d20be63a24466dd8b6a2ac41bc5f26aca1b0b02b34d1ec9188c2bc4dc5d9d"
+    },
+    {
+      "event_id": "policy:sikh386-policy",
+      "kind": "initialize",
+      "plan": null
+    },
+    {
+      "event_id": "migration-plan:sikh386-policy",
+      "kind": "plan",
+      "plan": null
+    },
+    {
+      "event_id": "sikh386-donor-scope",
+      "kind": "scope_superseded",
+      "plan": null
+    },
+    {
+      "event_id": "policy:sikh386-policy178",
+      "kind": "initialize",
+      "plan": null
+    },
+    {
+      "event_id": "migration-plan:sikh386-policy178",
+      "kind": "plan",
+      "plan": null
+    },
+    {
+      "event_id": "sikh386-reference204-form",
+      "kind": "response",
+      "plan": "0b9b7e0a6aa41592bed7e5d3e047f16c0556d7476527ac0f485f78b55d9e7df2"
+    },
+    {
+      "event_id": "sikh386-reference204-form-admit",
+      "kind": "admit",
+      "plan": "0b9b7e0a6aa41592bed7e5d3e047f16c0556d7476527ac0f485f78b55d9e7df2"
+    },
+    {
+      "event_id": "sikh386-reference204-__positive_forequarter_form__",
+      "kind": "response",
+      "plan": "0b9b7e0a6aa41592bed7e5d3e047f16c0556d7476527ac0f485f78b55d9e7df2"
+    },
+    {
+      "event_id": "sikh386-reference204-__positive_forequarter_form__-admit",
+      "kind": "admit",
+      "plan": "0b9b7e0a6aa41592bed7e5d3e047f16c0556d7476527ac0f485f78b55d9e7df2"
+    },
+    {
+      "event_id": "sikh386-reference204-acquired",
+      "kind": "outcome",
+      "plan": "0b9b7e0a6aa41592bed7e5d3e047f16c0556d7476527ac0f485f78b55d9e7df2"
+    },
+    {
+      "event_id": "sikh386-reference204-form-admit-acquired-effect",
+      "kind": "evaluate",
+      "plan": null
+    },
+    {
+      "event_id": "sikh386-reference204-__positive_forequarter_form__-admit-acquired-effect",
+      "kind": "evaluate",
+      "plan": null
+    }
+  ],
+  "first_source_binding_count": 499,
+  "last_source_binding_count": 1019,
+  "first_brief_bytes": 143819,
+  "last_brief_bytes": 239166,
+  "production_state_before": {
+    "cycle": 261,
+    "max_corrections": 261,
+    "stage": "REPLAN_REQUIRED",
+    "fingerprint": "e89ff5050075fb9be5d99d943bfc17d6a2d07d9799d22f3410e0a2437d242105"
+  },
+  "limits": [
+    "Image-review cycles are not unique independent anatomical candidates.",
+    "Per-finding retro records are not independent retrospectives or LLM calls.",
+    "This inventory does not establish wall-clock labor, token cost, false-rejection rate or artistic accuracy.",
+    "Media and representative source reasoning require separate manual inspection."
+  ]
+}

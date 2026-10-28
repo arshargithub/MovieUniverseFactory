@@ -1,0 +1,2990 @@
+[
+  {
+    "cycle": 212,
+    "max": 226,
+    "stage": "EXECUTING",
+    "event": "sikh386-c212-__forequarter_method__-current-intervention-admit-actual-effect",
+    "utc": "2026-10-27T09:50:42.838418+00:00",
+    "scope": "Supported,taperedpectoral3Dform underoriginalLIVErig acrossneutralandacceptedraisedposefamily.",
+    "unit_id": "horse-pectoral-live-form386",
+    "method_family": "coherent_rest_space_anatomical_guide_fit",
+    "hypothesis": "A coherent connected3D anatomical target can remove frontal scallops that depth-profile strokes keep reproducing, without sacrificing live-rig integration.",
+    "method": "Actual native212 integration of coherent211registered3Dguide rest target on210source with208testedskin ownership and original live skeletal action.",
+    "source_bindings": 499,
+    "brief_bytes": 143819,
+    "state_bytes": 880995,
+    "native_jobs": 3,
+    "native_failed": 0,
+    "unique_returned_images": 2,
+    "image_bindings": [
+      {
+        "path": ".runtime/factory-native/sikh386-appearance-c212-front/frame.png",
+        "sha256": "f7587f80bf97bb8bbeccd2565e66a37fbafe82962965aa36044968b45acce021"
+      },
+      {
+        "path": ".runtime/factory-native/sikh386-appearance-c212-side/frame.png",
+        "sha256": "955a3ee5f5433827148a55e77c76ec93ebfa75179ee86d3dec34ee236dfa5a01"
+      }
+    ],
+    "review_dispositions": [
+      {
+        "category": "art_rejected",
+        "observation": "Actual212front has a flat/caved central chest and irregular lower attachment edge; side adds an abrupt shoulder transition. The numerically close3Dguide rest fit is not a qualified anatomical result through the current skin mapping."
+      },
+      {
+        "category": "art_rejected",
+        "observation": "Actual212front has a flat/caved central chest and irregular lower attachment edge; side adds an abrupt shoulder transition. The numerically close3Dguide rest fit is not a qualified anatomical result through the current skin mapping."
+      },
+      {
+        "category": "causal_control_only",
+        "observation": "Trustedrest/formhandlerintegrationonly; actualanatomicalviews remainNOT_RUN."
+      }
+    ],
+    "reviewed_artistic_images": true,
+    "scoped_artistic_pass": false,
+    "closeouts": [
+      {
+        "binding": {
+          "path": "results/sikh386/CYCLE212_CLOSEOUT.json",
+          "sha256": "989e6ddfa4b8d9a48f2ef98dedc09a7e5f8b5d51957e983959e6ea9e2d39e105"
+        },
+        "record": {
+          "cycle": 212,
+          "steps": [
+            "front",
+            "side"
+          ],
+          "observation": "Actual212front has a flat/caved central chest and irregular lower attachment edge; side adds an abrupt shoulder transition. The numerically close3Dguide rest fit is not a qualified anatomical result through the current skin mapping.",
+          "comparison": "Actual212versus physical/guide target and210/208 controls. Skin mapping208was retained during guide construction, so the interaction has not been isolated. Original193breast-owned shelf points have zero rest-to-neutral displacement under original weights;208neutral introduces~7cm backward movement.",
+          "defects": [
+            "Caved/flat frontal pectoral mass",
+            "Irregular lower edge",
+            "Abrupt shoulder transition"
+          ],
+          "conclusion": "Reject. Next discriminating control holds the exact211rest surface fixed and restores the original skin mapping by applying it to original184source. This isolates rest goal versus208attachment interaction before another construction or model escalation.",
+          "not_run": [
+            "raised matrices after neutral veto",
+            "production nap/consumer",
+            "fullspeed AV"
+          ],
+          "max": 226,
+          "disposition": "art_rejected",
+          "art_candidates": 1
+        }
+      }
+    ]
+  },
+  {
+    "cycle": 213,
+    "max": 226,
+    "stage": "EXECUTING",
+    "event": "sikh386-c213-__forequarter_method__-current-intervention-admit-numeric-only-effect",
+    "utc": "2026-10-27T09:59:11.028304+00:00",
+    "scope": "Supported,taperedpectoral3Dform underoriginalLIVErig acrossneutralandacceptedraisedposefamily.",
+    "unit_id": "horse-pectoral-live-form386",
+    "method_family": "factorial_fixed_rest_goal_original_vs_shared_skin",
+    "hypothesis": "212rest goal may be plausible before208skin influence distorts it in neutral; original-skin control will discriminate that from a bad target.",
+    "method": "Lossless re-expression of exact211anatomical rest goal against original184rest/skin source, preparing a factorial skin-mapping control with no newly authored shape.",
+    "source_bindings": 506,
+    "brief_bytes": 144733,
+    "state_bytes": 880466,
+    "native_jobs": 0,
+    "native_failed": 0,
+    "unique_returned_images": 0,
+    "image_bindings": [],
+    "review_dispositions": [],
+    "reviewed_artistic_images": false,
+    "scoped_artistic_pass": false,
+    "closeouts": [
+      {
+        "binding": {
+          "path": "results/sikh386/CYCLE213_CLOSEOUT.json",
+          "sha256": "f53242ed39b6fd7b61fedfc7bca4886583be1ed361f26b361fe18f4184c61490"
+        },
+        "record": {
+          "cycle": 213,
+          "max": 226,
+          "disposition": "numeric_target_only",
+          "art_candidates": 0,
+          "report": {
+            "path": "results/sikh386/rest213-numeric.json",
+            "sha256": "2df4925f26b12eb374c334b255fdb9a75e2170c782736cd2fa3cddee12878bae"
+          },
+          "next": "214 actual native proof; no artistic closure yet."
+        }
+      }
+    ]
+  },
+  {
+    "cycle": 214,
+    "max": 226,
+    "stage": "EXECUTING",
+    "event": "sikh386-c214-__forequarter_method__-current-intervention-admit-structural-effect",
+    "utc": "2026-10-27T10:05:36.722394+00:00",
+    "scope": "Supported,taperedpectoral3Dform underoriginalLIVErig acrossneutralandacceptedraisedposefamily.",
+    "unit_id": "horse-pectoral-live-form386",
+    "method_family": "factorial_fixed_rest_goal_original_vs_shared_skin",
+    "hypothesis": "212rest goal may be plausible before208skin influence distorts it in neutral; original-skin control will discriminate that from a bad target.",
+    "method": "Apply exact211anatomical rest goal, losslessly re-expressed in213, to original184rest and ORIGINAL skin mapping; keep all original skeletal action/relative shape offsets.",
+    "source_bindings": 521,
+    "brief_bytes": 148034,
+    "state_bytes": 889357,
+    "native_jobs": 0,
+    "native_failed": 0,
+    "unique_returned_images": 0,
+    "image_bindings": [],
+    "review_dispositions": [],
+    "reviewed_artistic_images": false,
+    "scoped_artistic_pass": false,
+    "closeouts": [
+      {
+        "binding": {
+          "path": "results/sikh386/CYCLE214_CLOSEOUT.json",
+          "sha256": "043f13c6f61b97069be3bac84f295ed5c61f2e4c4966b0d34173b0d82eca6425"
+        },
+        "record": {
+          "cycle": 214,
+          "max": 226,
+          "disposition": "structural_precondition_failed",
+          "art_candidates": 0,
+          "observation": "Exact211/213target has57proper nonadjacent crossings,28severely compressed faces;3.2mm surface proximity is not a valid embedding. Original-skin native control is blocked, not tested. Need topology-preserving correspondence/construction rather than new visual goal.",
+          "not_run": [
+            "original-skin native control",
+            "raised matrices",
+            "production consumer/fullspeed AV"
+          ],
+          "next": "Injectivity-preserving anatomical-guide fit from original valid raw topology, original skin mapping; same task/allowance."
+        }
+      }
+    ]
+  },
+  {
+    "cycle": 215,
+    "max": 226,
+    "stage": "EXECUTING",
+    "event": "sikh386-c215-__forequarter_method__-current-intervention-admit-numeric-only-effect",
+    "utc": "2026-10-27T10:25:32.568454+00:00",
+    "scope": "Supported,taperedpectoral3Dform underoriginalLIVErig acrossneutralandacceptedraisedposefamily.",
+    "unit_id": "horse-pectoral-live-form386",
+    "method_family": "normal_aware_arap_injectivity_guarded_rest_fit",
+    "hypothesis": "Normal-aware correspondence and local-rigidity with actual injectivity guards can achieve a supported anatomical fit without the foldovers nearest projection created.",
+    "method": "Normal-aware ARAP anatomical-guide rest fitting from original raw193, with actualfloat32 per-step intersection/area/orientation guards and original skin mapping; cumulative bounds/exact distal preservation.",
+    "source_bindings": 530,
+    "brief_bytes": 150155,
+    "state_bytes": 892302,
+    "native_jobs": 0,
+    "native_failed": 0,
+    "unique_returned_images": 0,
+    "image_bindings": [],
+    "review_dispositions": [],
+    "reviewed_artistic_images": false,
+    "scoped_artistic_pass": false,
+    "closeouts": [
+      {
+        "binding": {
+          "path": "results/sikh386/CYCLE215_CLOSEOUT.json",
+          "sha256": "2ef30c4fbd03a9be67bf73f7bf6fa463a780be2524dd138316bc1051516475dc"
+        },
+        "record": {
+          "cycle": 215,
+          "max": 226,
+          "disposition": "numeric_target_only",
+          "art_candidates": 0,
+          "report": {
+            "path": "results/sikh386/rest215-numeric.json",
+            "sha256": "4070a106721b13f50da334bcea00dff6dfc50b600dc32766b72680c8ff305005"
+          },
+          "next": "216 actual native proof; no artistic closure yet."
+        }
+      }
+    ]
+  },
+  {
+    "cycle": 216,
+    "max": 226,
+    "stage": "EXECUTING",
+    "event": "sikh386-c216-__forequarter_method__-current-intervention-admit-actual-effect",
+    "utc": "2026-10-27T10:39:42.144315+00:00",
+    "scope": "Supported,taperedpectoral3Dform underoriginalLIVErig acrossneutralandacceptedraisedposefamily.",
+    "unit_id": "horse-pectoral-live-form386",
+    "method_family": "normal_aware_arap_injectivity_guarded_rest_fit",
+    "hypothesis": "Normal-aware correspondence and local-rigidity with actual injectivity guards can achieve a supported anatomical fit without the foldovers nearest projection created.",
+    "method": "Apply exact215valid normal-aware ARAP rest candidate to original184source/ORIGINAL skin mapping and live rig. No208mapping stack or posed cache.",
+    "source_bindings": 544,
+    "brief_bytes": 152417,
+    "state_bytes": 898455,
+    "native_jobs": 5,
+    "native_failed": 0,
+    "unique_returned_images": 8,
+    "image_bindings": [
+      {
+        "path": ".runtime/factory-native/sikh386-appearance-c216-front/frame.png",
+        "sha256": "644efb99b7b157184d4b83d958ef41caab2210a5c84fecf64ce3779e046582a7"
+      },
+      {
+        "path": ".runtime/factory-native/sikh386-appearance-c216-front_matrix/frame.png",
+        "sha256": "01b958d7bda734f447d1c704e4b7ea33fd2143435c7a68264e7f031806fbe577"
+      },
+      {
+        "path": ".runtime/factory-native/sikh386-appearance-c216-front_matrix/frame-0333.png",
+        "sha256": "c74a4af59bf3bb6e2c052c0a7a39b58f870d9ab75d00791fb1bf690e1593a0b5"
+      },
+      {
+        "path": ".runtime/factory-native/sikh386-appearance-c216-front_matrix/frame-0339.png",
+        "sha256": "87a6e5b9f325cab03ded87fb31390489f452a14f5c642d21120bfb24266f061e"
+      },
+      {
+        "path": ".runtime/factory-native/sikh386-appearance-c216-side/frame.png",
+        "sha256": "39e20d585d1d53e440ad64d586e11384ec95cf47ed900ae89ce5ff08384b446a"
+      },
+      {
+        "path": ".runtime/factory-native/sikh386-appearance-c216-side_matrix/frame.png",
+        "sha256": "f9496ddc89f8ce1b88f242d4654570c333f22c2ea9ed9c5a3cf23016c7c91851"
+      },
+      {
+        "path": ".runtime/factory-native/sikh386-appearance-c216-side_matrix/frame-0333.png",
+        "sha256": "5548974f6eb041e26e609590dfe0d8e40e6df78a0aa0797d4ed5d941bdff8fba"
+      },
+      {
+        "path": ".runtime/factory-native/sikh386-appearance-c216-side_matrix/frame-0339.png",
+        "sha256": "124116513080ef5ac1f6781f5ef45681a7b2ba86e8e7c01a8914e11f7b672e1c"
+      }
+    ],
+    "review_dispositions": [
+      {
+        "category": "art_rejected",
+        "observation": "Actual216valid-rest/original-skin control retains coherent muscular neutral volume, but339side still has a projecting pectoral shelf and frontal raised views retain a hanging chest bib. The whole pose-family fails. Neutral is an internal control, not Director-approved anatomy or final production PASS."
+      },
+      {
+        "category": "art_rejected",
+        "observation": "Actual216valid-rest/original-skin control retains coherent muscular neutral volume, but339side still has a projecting pectoral shelf and frontal raised views retain a hanging chest bib. The whole pose-family fails. Neutral is an internal control, not Director-approved anatomy or final production PASS."
+      },
+      {
+        "category": "causal_control_only",
+        "observation": "Trustedrest/formhandlerintegrationonly; actualanatomicalviews remainNOT_RUN."
+      }
+    ],
+    "reviewed_artistic_images": true,
+    "scoped_artistic_pass": false,
+    "closeouts": [
+      {
+        "binding": {
+          "path": "results/sikh386/CYCLE216_CLOSEOUT.json",
+          "sha256": "5ea5ce7d18083d2a5ce06dc128bc53aa63e26fe2a1279b85a5e9b19e28d7253b"
+        },
+        "record": {
+          "cycle": 216,
+          "steps": [
+            "side_matrix",
+            "front_matrix"
+          ],
+          "observation": "Actual216valid-rest/original-skin control retains coherent muscular neutral volume, but339side still has a projecting pectoral shelf and frontal raised views retain a hanging chest bib. The whole pose-family fails. Neutral is an internal control, not Director-approved anatomy or final production PASS.",
+          "comparison": "Actual216283front/side and333339versus208partialskin, invalid212 and physical rear references. 215rest is structurally valid; the posed response still fails despite fixed original skeleton.",
+          "defects": [
+            "Raised static pectoral shelf",
+            "Hanging frontal chest bib",
+            "Production nap/consumer unqualified"
+          ],
+          "conclusion": "Preserve evaluated283surface as a method control, not raw coordinates alone. Next change tissue attachment while solving a neutral bind compensation so skin repair cannot destroy the neutral shape. This directly addresses measured208~7cm neutral drift; no more rest carving to compensate a posed binding defect.",
+          "not_run": [
+            "opposite/whole after raised failure",
+            "production nap/contact/consumer",
+            "fullspeed AV"
+          ],
+          "max": 226,
+          "disposition": "art_rejected",
+          "art_candidates": 1
+        }
+      }
+    ]
+  },
+  {
+    "cycle": 217,
+    "max": 226,
+    "stage": "EXECUTING",
+    "event": "sikh386-c217-__forequarter_method__-current-intervention-admit-response-effect",
+    "utc": "2026-10-27T11:08:22.460285+00:00",
+    "scope": "Supported pectoral/root deformation through the accepted rear, with evaluated neutral held as a controlled variable.",
+    "unit_id": "horse-pectoral-live-form386",
+    "method_family": "evaluated_neutral_preserving_constant_skin_bind",
+    "hypothesis": "A skin influence repair can improve posed pectoral support without sacrificing neutral form if the actual neutral deformation is preserved by measured bind compensation.",
+    "method": "Neutral-preserving constant skin binding: measured actual per-vertex deformer response, bounded rest compensation keeps evaluated283surface fixed while local0.6breast/upper-arm sharing repairs posed response. No new primary actions/poses/cache.",
+    "source_bindings": 564,
+    "brief_bytes": 158346,
+    "state_bytes": 911510,
+    "native_jobs": 2,
+    "native_failed": 1,
+    "unique_returned_images": 0,
+    "image_bindings": [],
+    "review_dispositions": [
+      {
+        "category": "causal_control_only",
+        "observation": "Cage crossing veto; final appearance/high-res/nap/contact/AV remain unqualified."
+      }
+    ],
+    "reviewed_artistic_images": false,
+    "scoped_artistic_pass": false,
+    "closeouts": [
+      {
+        "binding": {
+          "path": "results/sikh386/CYCLE217_CLOSEOUT.json",
+          "sha256": "41006591b515dbc663d6792ae1b1261ff7aa39c21ae8bfc5b6d448dfaabcc118"
+        },
+        "record": {
+          "cycle": 217,
+          "max": 226,
+          "disposition": "execution_response_control_failed",
+          "art_candidates": 0,
+          "observation": "Zero native control preservedsource. Actual0.6failed independentdeformer probe:389.7micrometres mismatch after8cm neutralshift, beforeanyinverse update. No anatomicalcandidate orcompensationresult. Cache/update versusnonsmoothlocalresponse remainsunknown; measure/reset/probe before relaxing any assumption.",
+          "not_run": [
+            "neutralinverse",
+            "anatomicalrenders",
+            "productionconsumer/AV"
+          ],
+          "next": "Qualifyactualreset/localresponsewithstrongerdataandactualpervertexevidence; samegoal/allowance, noinferredeffect."
+        }
+      }
+    ]
+  },
+  {
+    "cycle": 218,
+    "max": 226,
+    "stage": "EXECUTING",
+    "event": "sikh386-c218-__forequarter_method__-current-intervention-admit-actual-effect",
+    "utc": "2026-10-27T11:24:03.753443+00:00",
+    "scope": "Supported pectoral/root deformation through the accepted rear, with evaluated neutral held as a controlled variable.",
+    "unit_id": "horse-pectoral-live-form386",
+    "method_family": "measured_reproducible_adaptive_neutral_bind_response",
+    "hypothesis": "Reliable dependency updates and measured scale-qualified localresponse can permit neutralpreserving binding; if not, pervertex evidence will identify the actual technical limitation.",
+    "method": "Neutral-preserving binding with actual reset/rig reproducibility, active-residual central-difference response and stricter relative independent-probe qualification; bounded actual-error-decreasing inverse only after qualified measurement.",
+    "source_bindings": 579,
+    "brief_bytes": 160596,
+    "state_bytes": 915721,
+    "native_jobs": 2,
+    "native_failed": 0,
+    "unique_returned_images": 0,
+    "image_bindings": [],
+    "review_dispositions": [
+      {
+        "category": "art_rejected",
+        "observation": "Native structural veto, not an artistic image review."
+      },
+      {
+        "category": "causal_control_only",
+        "observation": "Cage crossing veto; final appearance/high-res/nap/contact/AV remain unqualified."
+      }
+    ],
+    "reviewed_artistic_images": false,
+    "scoped_artistic_pass": false,
+    "closeouts": [
+      {
+        "binding": {
+          "path": "results/sikh386/CYCLE218_CLOSEOUT.json",
+          "sha256": "580ee3b5317f2246ac81379942f5870ccae492468dca01b79b35d9d91968d5cd"
+        },
+        "record": {
+          "cycle": 218,
+          "max": 226,
+          "disposition": "native_structural_fail",
+          "art_candidates": 0,
+          "observation": "218actual measured inverse succeeded: neutral92.9micrometres, max70.8mm restshift, reset/rig/outsidezero; stricter independentprobe18.95micrometres. However affected raised cage has297/542crossings at333/339 including207/445introduced. StructuralFAIL beforeanatomicalrender; no final appearance candidate.",
+          "review_transport": "Initial helper attempted contradictoryPASSrequirementoutcome inFAILstep; controllercorrectlyblocked. ExplicitconsistentFAILrecordedwithouteditingfrozenhandler.",
+          "not_run": [
+            "artisticrenders",
+            "consumer",
+            "AV"
+          ],
+          "next": "Localize crossing geometry and actual skin/deformer contribution before another form edit;8remain."
+        }
+      }
+    ]
+  },
+  {
+    "cycle": 219,
+    "max": 226,
+    "stage": "EXECUTING",
+    "event": "sikh386-c219-__forequarter_method__-current-intervention-admit-actual-effect",
+    "utc": "2026-10-27T11:31:48.096161+00:00",
+    "scope": "Supported pectoral/root deformation through the accepted rear, with evaluated neutral held as a controlled variable.",
+    "unit_id": "horse-pectoral-live-form386",
+    "method_family": "neutral_preserving_core_tissue_binding",
+    "hypothesis": "Restricting influence changes to breast-dominant core eliminates unintended folded-elbow changes while retaining the intended chest support response.",
+    "method": "219separate core-only chest influence transfer, exact forearm-dominant skin freeze and measured neutral-preserving binding; legacy mapping unchanged.",
+    "source_bindings": 594,
+    "brief_bytes": 161492,
+    "state_bytes": 916065,
+    "native_jobs": 2,
+    "native_failed": 0,
+    "unique_returned_images": 0,
+    "image_bindings": [],
+    "review_dispositions": [
+      {
+        "category": "art_rejected",
+        "observation": "Native structural veto, not an artistic image review."
+      },
+      {
+        "category": "causal_control_only",
+        "observation": "Cage crossing veto; final appearance/high-res/nap/contact/AV remain unqualified."
+      }
+    ],
+    "reviewed_artistic_images": false,
+    "scoped_artistic_pass": false,
+    "closeouts": [
+      {
+        "binding": {
+          "path": "results/sikh386/CYCLE219_CLOSEOUT.json",
+          "sha256": "532b420919850df0f2ceb19045d95bb8977dd7be6c6a0d7d943e64e07c657c0e"
+        },
+        "record": {
+          "cycle": 219,
+          "max": 226,
+          "disposition": "native_structural_fail",
+          "art_candidates": 0,
+          "observation": "219core-only inverse preservesneutral20.8micrometres with361changedweightvertices and69.6mm maxrestshift. No rig/world/action/exterior drift. Raisedcage113/397crossings,74/286new at333/339:FAIL. Coreownership alone insufficient; do not waive original ornewcontacts. No anatomicalimagecandidate.",
+          "review_transport": "Explicit consistent structuralFAIL; no claim from omitted artisticchecks.",
+          "not_run": [
+            "artisticrenders",
+            "consumer",
+            "AV"
+          ],
+          "next": "Actualfailedcorecandidate diagnosticviews before sculpting another mathematicaltarget;7remain."
+        }
+      }
+    ]
+  },
+  {
+    "cycle": 220,
+    "max": 226,
+    "stage": "EXECUTING",
+    "event": "sikh386-c220-__forequarter_method__-current-intervention-admit-actual-effect",
+    "utc": "2026-10-27T11:36:15.052273+00:00",
+    "scope": "Supported pectoral/root deformation through the accepted rear, with evaluated neutral held as a controlled variable.",
+    "unit_id": "horse-pectoral-live-form386",
+    "method_family": "actual_failed_surface_diagnosis",
+    "hypothesis": "Actual failed219views distinguish remaining neutral-form defect from raised attachment and contact symptoms before new authoring.",
+    "method": "Read-only actual neutral/raised surface diagnostic of219failed core-binding derivative, no new authoring or passing structural veto.",
+    "source_bindings": 606,
+    "brief_bytes": 163726,
+    "state_bytes": 918552,
+    "native_jobs": 0,
+    "native_failed": 0,
+    "unique_returned_images": 0,
+    "image_bindings": [],
+    "review_dispositions": [],
+    "reviewed_artistic_images": false,
+    "scoped_artistic_pass": false,
+    "closeouts": [
+      {
+        "binding": {
+          "path": "results/sikh386/CYCLE220_CLOSEOUT.json",
+          "sha256": "2ee43b1aa65f48bd0a844976db1e95f6f605f163302799f36e70b5cab6a58ac5"
+        },
+        "record": {
+          "cycle": 220,
+          "max": 226,
+          "disposition": "pre_execution_dependency_block",
+          "art_candidates": 0,
+          "observation": "220renderadmissionblocked beforeworker: render requires an explicitly reviewed native dependency in the current plan. No new native job/image/artcandidate.220structuralFAIL remains. Correct plan transport with a source-preserving save control; no authority/threshold/limit change.",
+          "review_transport": "No native run or fake review after pre-execution admission block.",
+          "not_run": [
+            "artisticrenders",
+            "consumer",
+            "AV"
+          ],
+          "next": "Actualfailedcorecandidate diagnosticviews before sculpting another mathematicaltarget;6remain."
+        }
+      }
+    ]
+  },
+  {
+    "cycle": 221,
+    "max": 226,
+    "stage": "EXECUTING",
+    "event": "sikh386-c221-__forequarter_method__-current-intervention-admit-actual-effect",
+    "utc": "2026-10-27T11:43:04.143429+00:00",
+    "scope": "Supported pectoral/root deformation through the accepted rear, with evaluated neutral held as a controlled variable.",
+    "unit_id": "horse-pectoral-live-form386",
+    "method_family": "reviewed_failed_source_surface_diagnosis",
+    "hypothesis": "Source-preserving no-edit control enables actualdiagnosticviews without laundering the219failedsurface as qualified.",
+    "method": "Explicit source-preserving save control and reviewed dependency before internal failed-source diagnostic renders. No artistic authoring.",
+    "source_bindings": 616,
+    "brief_bytes": 165628,
+    "state_bytes": 922984,
+    "native_jobs": 3,
+    "native_failed": 0,
+    "unique_returned_images": 6,
+    "image_bindings": [
+      {
+        "path": ".runtime/factory-native/sikh386-appearance-c221-front_matrix/frame.png",
+        "sha256": "cf9d2032499bb02eb23213fd676e04dc52a81077bf3afc9e96f1a1ecf5eb355e"
+      },
+      {
+        "path": ".runtime/factory-native/sikh386-appearance-c221-front_matrix/frame-0333.png",
+        "sha256": "5ee9c9f8d51b0d696cc9ac46ac68b363578989f8718191d60865eb6a6c4e9b42"
+      },
+      {
+        "path": ".runtime/factory-native/sikh386-appearance-c221-front_matrix/frame-0339.png",
+        "sha256": "6fa34d56dde35e200025ef48a7a3acde69a2aac4ee168112bbefd2da074a78c7"
+      },
+      {
+        "path": ".runtime/factory-native/sikh386-appearance-c221-side_matrix/frame.png",
+        "sha256": "50b2b1a4b3ef3b329fa3ca91b672ccd43f3e4c1a6ac2913ca8f78bf98cf849b6"
+      },
+      {
+        "path": ".runtime/factory-native/sikh386-appearance-c221-side_matrix/frame-0333.png",
+        "sha256": "7a88fb96b237328708f6d30565eecc0f44cd99165f466140d1fd64056f2b46dc"
+      },
+      {
+        "path": ".runtime/factory-native/sikh386-appearance-c221-side_matrix/frame-0339.png",
+        "sha256": "edc0e9ce1c2161a837ca6ea2b4da53b6c342c2d23600896275b48b24cd2522cc"
+      }
+    ],
+    "review_dispositions": [
+      {
+        "category": "art_rejected",
+        "observation": "Actual219surface in221diagnostic views still fails:339side has a horizontal lower-chest lip/shelf and abrupt triangular root fold;339front has a detached-looking rolled underside and unsupported boxy pectoral mass. Neutral-preserving numerical fit did not provide natural raised anatomy. Primary motion is not rejudged here."
+      },
+      {
+        "category": "causal_control_only",
+        "observation": "Read-only transport/source control; no artistic verdict or reversal of219FAIL."
+      },
+      {
+        "category": "art_rejected",
+        "observation": "Actual219surface in221diagnostic views still fails:339side has a horizontal lower-chest lip/shelf and abrupt triangular root fold;339front has a detached-looking rolled underside and unsupported boxy pectoral mass. Neutral-preserving numerical fit did not provide natural raised anatomy. Primary motion is not rejudged here."
+      }
+    ],
+    "reviewed_artistic_images": true,
+    "scoped_artistic_pass": false,
+    "closeouts": [
+      {
+        "binding": {
+          "path": "results/sikh386/CYCLE221_CLOSEOUT.json",
+          "sha256": "6e84cc852de9655dd03ed8e716a0a9e20815d428d16203351da9e425b51632ba"
+        },
+        "record": {
+          "cycle": 221,
+          "steps": [
+            "side_matrix",
+            "front_matrix"
+          ],
+          "observation": "Actual219surface in221diagnostic views still fails:339side has a horizontal lower-chest lip/shelf and abrupt triangular root fold;339front has a detached-looking rolled underside and unsupported boxy pectoral mass. Neutral-preserving numerical fit did not provide natural raised anatomy. Primary motion is not rejudged here.",
+          "comparison": "Actual side/front339 native views versus supported continuous real UMN pectoral/root anatomy, limited204gross-form direction and216negative shelf control. This is a specific shape/contact failure, not rejection merely for deviating from generated pixels.",
+          "defects": [
+            "Flat lower chest shelf/lip in side339",
+            "Rolled/webbed underside and unsupported boxy pectoral mass in front339",
+            "Known219cage contacts unresolved"
+          ],
+          "conclusion": "Core-domain isolation and neutral preservation are useful technical controls but not sufficient anatomy. Original armBbone response still contributes a non-rigid pectoral transformation; test rigid neutral-calibrated secondary support independently, preserving original motion bones/actions. Do not repeat restcarving or relax crossings.",
+          "not_run": [
+            "opposite/whole matrix after early decisive failure",
+            "production skin/nap/tack consumer",
+            "fullspeed AV"
+          ],
+          "max": 226,
+          "disposition": "art_rejected",
+          "art_candidates": 1
+        }
+      }
+    ]
+  },
+  {
+    "cycle": 222,
+    "max": 226,
+    "stage": "EXECUTING",
+    "event": "sikh386-c222-__forequarter_method__-current-intervention-admit-diagnostic-effect",
+    "utc": "2026-10-27T11:52:07.988346+00:00",
+    "scope": "Supported pectoral/root deformation through the accepted rear, with evaluated neutral held as a controlled variable.",
+    "unit_id": "horse-pectoral-live-form386",
+    "method_family": "neutral_calibrated_secondary_rigid_attachment",
+    "hypothesis": "Replacing only newly shared segmented upper-arm influence by neutral-calibrated rigidrelative support improves natural raisedattachment without changing standing shape or primary motion.",
+    "method": "Two neutral-calibrated single-segment secondary pectoral supports copy existing upper-arm transforms, coretransfer.6; original geometry/keys/motion bones/rest/actions unchanged. No posecache ornewprimarycurves.",
+    "source_bindings": 634,
+    "brief_bytes": 171015,
+    "state_bytes": 937082,
+    "native_jobs": 2,
+    "native_failed": 1,
+    "unique_returned_images": 0,
+    "image_bindings": [],
+    "review_dispositions": [
+      {
+        "category": "causal_control_only",
+        "observation": "Technical invariant scope only. Actual art/contact reviews still mandatory; no known-defect waiver."
+      }
+    ],
+    "reviewed_artistic_images": false,
+    "scoped_artistic_pass": false,
+    "closeouts": [
+      {
+        "binding": {
+          "path": "results/sikh386/CYCLE222_CLOSEOUT.json",
+          "sha256": "f2f87bd31915f105cbc49cc2d430fdac0c928ce76026f9dbf3ab834f4fd43a19"
+        },
+        "record": {
+          "cycle": 222,
+          "observation": "222nonzero secondary support stopped before art: neutral21.1micrometres, originalrest matrix28.4microunits, originalmotion matrix49.6microunits, outside surface23.4micrometres. Edit-mode bone roundtrip is a plausible global numeric confound, not yet isolated. No artcandidate or contact conclusion. Preserve failed native and preflight arrays.",
+          "statuses": {
+            "form": "UNKNOWN",
+            "interfaces": "FAIL",
+            "evidence": "FAIL",
+            "whole_look": "UNKNOWN",
+            "preservation": "FAIL",
+            "director_form_motion": "UNKNOWN",
+            "__forequarter_method__": "FAIL",
+            "__positive_forequarter_form__": "UNKNOWN"
+          },
+          "evidence": [
+            ".runtime/factory-native/sikh386-appearance-c222-bind/anatomy386-support-preflight.json",
+            ".runtime/factory-native/sikh386-appearance-c222-bind/anatomy386-support-preflight.npz",
+            "results/sikh386/appearance-c222-bind-run.json"
+          ],
+          "disposition": "execution_primary_precision_control_failed",
+          "art_candidates": 0,
+          "next": "Calibrate no-added-bone editmode roundtrip, then bound cumulative primary/outer error against originalsource before any shape verdict.4remain.",
+          "max": 226
+        }
+      }
+    ]
+  },
+  {
+    "cycle": 223,
+    "max": 226,
+    "stage": "EXECUTING",
+    "event": "sikh386-c223-__forequarter_method__-current-intervention-admit-actual-effect",
+    "utc": "2026-10-27T12:05:34.932568+00:00",
+    "scope": "Supported pectoral/root deformation through the accepted rear, with evaluated neutral held as a controlled variable.",
+    "unit_id": "horse-pectoral-live-form386",
+    "method_family": "neutral_calibrated_secondary_rigid_attachment",
+    "hypothesis": "No-added-bone editroundtrip explains222originalmatrix drift; ifconfirmed actual rigidsecondary attachment can be judged without confusing floating reconstruction with primarymotion edits.",
+    "method": "Same neutral-calibrated rigidsecondary support, explicit no-added-bone editroundtrip control explains222drift before nonzero; cumulative original-source numericalcaps100micrometres/microunits, geometry/keys/actions exact.",
+    "source_bindings": 652,
+    "brief_bytes": 174135,
+    "state_bytes": 942839,
+    "native_jobs": 3,
+    "native_failed": 0,
+    "unique_returned_images": 3,
+    "image_bindings": [
+      {
+        "path": ".runtime/factory-native/sikh386-appearance-c223-side_matrix/frame.png",
+        "sha256": "56d7d8f6c6bba6780de0161e1d8269281896e4f3fe2ac6be550de42f69a66b79"
+      },
+      {
+        "path": ".runtime/factory-native/sikh386-appearance-c223-side_matrix/frame-0333.png",
+        "sha256": "2c5f9f2df497b7dd71d33a190f1be667f52cc61927c149a53df1bbff021be143"
+      },
+      {
+        "path": ".runtime/factory-native/sikh386-appearance-c223-side_matrix/frame-0339.png",
+        "sha256": "69079a266da50c1a3a83699c567fb05c749b2774be46ccbe2e1533aa3d16739d"
+      }
+    ],
+    "review_dispositions": [
+      {
+        "category": "causal_control_only",
+        "observation": "Explicit numeric control only. Actual artistic/contact verdict separate; no known-defect waiver."
+      },
+      {
+        "category": "art_rejected",
+        "observation": "Actual223side339 still has a flat lower chest lip/shelf and triangular root fold, nearly the same failure as219despite replacing segmented upperarm support with rigid secondary support. Actual technicalneutral/preservation controls passed within independentlycalibratedprecision. This rules out segmented upperarm deformation as a sufficient explanation. Contacts remain unqualified/knownblocking."
+      },
+      {
+        "category": "causal_control_only",
+        "observation": "Explicit numeric control only. Actual artistic/contact verdict separate; no known-defect waiver."
+      }
+    ],
+    "reviewed_artistic_images": true,
+    "scoped_artistic_pass": false,
+    "closeouts": [
+      {
+        "binding": {
+          "path": "results/sikh386/CYCLE223_CLOSEOUT.json",
+          "sha256": "a4dc424cc1afe974c3bebdab55f50781a37508aefa6dfcf812b776c7de64ddc8"
+        },
+        "record": {
+          "cycle": 223,
+          "steps": [
+            "side_matrix"
+          ],
+          "observation": "Actual223side339 still has a flat lower chest lip/shelf and triangular root fold, nearly the same failure as219despite replacing segmented upperarm support with rigid secondary support. Actual technicalneutral/preservation controls passed within independentlycalibratedprecision. This rules out segmented upperarm deformation as a sufficient explanation. Contacts remain unqualified/knownblocking.",
+          "comparison": "Matched223actualside339 versus221side339 and physicalsupportedchest/root anatomy. Technicalsucceeding neutral/calibration is not a positive artistic target.",
+          "defects": [
+            "Flat lowerlip/shelf in side339",
+            "Triangular root fold",
+            "Raised cage contacts remain"
+          ],
+          "conclusion": "Do not continue rigidity/coefficient changes. Inspect source-bound visiblelip vertices and attachment mask; highbreastownership connector skin was excluded byabsolute forearm threshold. Test tissue dominance with continuous chest coverage while fixing trulyforearmdominant skin.",
+          "not_run": [
+            "front/opposite/whole afterdecisive sidefailure",
+            "skin/nap/consumer",
+            "fullspeedAV"
+          ],
+          "max": 226,
+          "disposition": "art_rejected",
+          "art_candidates": 1
+        }
+      }
+    ]
+  },
+  {
+    "cycle": 224,
+    "max": 226,
+    "stage": "EXECUTING",
+    "event": "sikh386-c224-__forequarter_method__-current-intervention-admit-actual-effect",
+    "utc": "2026-10-27T12:18:41.968686+00:00",
+    "scope": "Supported pectoral/root deformation through the accepted rear, with evaluated neutral held as a controlled variable.",
+    "unit_id": "horse-pectoral-live-form386",
+    "method_family": "neutral_calibrated_secondary_rigid_attachment",
+    "hypothesis": "The visible lowerlip is partly an attachment discontinuity from erroneously freezing chest-dominant mixedskin. Relative tissue dominance can remove that discontinuity while trulyforearmdominant skin staysfixed.",
+    "method": "Same neutral-calibrated rigidsecondarysupport, replaceabsolute forearm cutoff by relativechest/forearmdominance to connectactualidentifiedlip vertices; all otherpose/shape/method/strengthfixed.",
+    "source_bindings": 668,
+    "brief_bytes": 177163,
+    "state_bytes": 948504,
+    "native_jobs": 3,
+    "native_failed": 0,
+    "unique_returned_images": 3,
+    "image_bindings": [
+      {
+        "path": ".runtime/factory-native/sikh386-appearance-c224-side_matrix/frame.png",
+        "sha256": "4101779bba0b76d1ceed5d98cd6353503011f10889c5f93f3515e970f82aea68"
+      },
+      {
+        "path": ".runtime/factory-native/sikh386-appearance-c224-side_matrix/frame-0333.png",
+        "sha256": "1ca2b7d7b243c7c52e8a90b9d61274d2c175c37c05707d23558ab7c4f5cd185a"
+      },
+      {
+        "path": ".runtime/factory-native/sikh386-appearance-c224-side_matrix/frame-0339.png",
+        "sha256": "006b5b8d47fe1e657f5cf806a58cf0ab661e1a6113ab2895301adfb64b13fde5"
+      }
+    ],
+    "review_dispositions": [
+      {
+        "category": "causal_control_only",
+        "observation": "Explicit numeric control only. Actual artistic/contact verdict separate; no known-defect waiver."
+      },
+      {
+        "category": "art_rejected",
+        "observation": "Actual224side339 rounds the leading corner slightly but retains a horizontal unsupported lower-chest shelf and triangular shoulder/root fold. Source-bound chest connectors now move as predicted, so correcting that particular mask discontinuity is insufficient. Numericalcontrol passed; anatomy/contact still FAIL."
+      },
+      {
+        "category": "causal_control_only",
+        "observation": "Explicit numeric control only. Actual artistic/contact verdict separate; no known-defect waiver."
+      }
+    ],
+    "reviewed_artistic_images": true,
+    "scoped_artistic_pass": false,
+    "closeouts": [
+      {
+        "binding": {
+          "path": "results/sikh386/CYCLE224_CLOSEOUT.json",
+          "sha256": "3ae76f54cfc27b3e47ac6de34ec0b4947afd8b7b024bf4ce4df8fbf41451741a"
+        },
+        "record": {
+          "cycle": 224,
+          "steps": [
+            "side_matrix"
+          ],
+          "observation": "Actual224side339 rounds the leading corner slightly but retains a horizontal unsupported lower-chest shelf and triangular shoulder/root fold. Source-bound chest connectors now move as predicted, so correcting that particular mask discontinuity is insufficient. Numericalcontrol passed; anatomy/contact still FAIL.",
+          "comparison": "Matched224side339 versus223andphysicalsupportedchest/root. Improvedweightcontinuity/lowercorner does notpass the entireclaimedform.",
+          "defects": [
+            "Horizontal lower-chest shelf remains",
+            "Triangular root fold remains",
+            "Pose/contact family unqualified"
+          ],
+          "conclusion": "Stopmask/rigiditychanges. Reassess an agent-imposed constraint: originalbreastbones are secondarytissueleafbones, not acceptedprimarymotion. A bounded whole-muscle contraction can follow nativeexisting weights continuously without newbones, maskpartitioning or edit-mode drift; originalprimary joints/curves remain protected.",
+          "not_run": [
+            "front/opposite/whole after decisive sideFAIL",
+            "skin/nap/consumer",
+            "fullspeedAV"
+          ],
+          "max": 226,
+          "disposition": "art_rejected",
+          "art_candidates": 1
+        }
+      }
+    ]
+  },
+  {
+    "cycle": 225,
+    "max": 226,
+    "stage": "EXECUTING",
+    "event": "sikh386-c225-__forequarter_method__-current-intervention-admit-actual-effect",
+    "utc": "2026-10-27T12:35:41.962809+00:00",
+    "scope": "Supported pectoral/root deformation through the accepted rear, with evaluated neutral held as a controlled variable.",
+    "unit_id": "horse-pectoral-live-form386",
+    "method_family": "coherent_existing_secondary_pectoral_contraction",
+    "hypothesis": "The chest needs coherent secondary deformation with its native full tissue weights, rather than a fixed breast group partitioned across static/moving masks. Bounded local muscle-length contraction can tuck the posed mass without changing primary joint performance.",
+    "method": "Bounded existing pectoral leaf-bone scale-Y contraction through fixed loading/rear/recovery, amount0.30. No new bones/weights/rest sculpt/editmode/cache. Original primary joints and existing curves exact.",
+    "source_bindings": 685,
+    "brief_bytes": 181134,
+    "state_bytes": 958002,
+    "native_jobs": 3,
+    "native_failed": 0,
+    "unique_returned_images": 3,
+    "image_bindings": [
+      {
+        "path": ".runtime/factory-native/sikh386-appearance-c225-side_matrix/frame.png",
+        "sha256": "a3699936a88db904e9fdcfade0997318e0363245afb7bf662f3b6226a67262af"
+      },
+      {
+        "path": ".runtime/factory-native/sikh386-appearance-c225-side_matrix/frame-0333.png",
+        "sha256": "99aecf4d2ae9647777d85f2d1f861d9ea296748564284e24b1c6850141117d7a"
+      },
+      {
+        "path": ".runtime/factory-native/sikh386-appearance-c225-side_matrix/frame-0339.png",
+        "sha256": "3b2b67e4d2e4bc6940f14e0d12557023459fbaf9c3d6461d7edaeddd02a15943"
+      }
+    ],
+    "review_dispositions": [
+      {
+        "category": "causal_control_only",
+        "observation": "Source/primary invariant control only; all physical failures still block adoption."
+      },
+      {
+        "category": "art_rejected",
+        "observation": "225 preserves every measured primary matrix, neutral/boundary/exterior/true-distal surface exactly; coupled eight-point upper-elbow change is3.11mm and maximum tissue displacement126.8mm. However actualside339 retains an unsupported rounded front mass, horizontal underside and triangular shoulder/root fold. The candidate fails anatomical form/contact; exact primarypreservation is not an artistic pass."
+      },
+      {
+        "category": "causal_control_only",
+        "observation": "Source/primary invariant control only; all physical failures still block adoption."
+      }
+    ],
+    "reviewed_artistic_images": true,
+    "scoped_artistic_pass": false,
+    "closeouts": [
+      {
+        "binding": {
+          "path": "results/sikh386/CYCLE225_CLOSEOUT.json",
+          "sha256": "cd21d0a75258d24683809b8110b5faf9e4113214894bba850849435ea97e4180"
+        },
+        "record": {
+          "cycle": 225,
+          "steps": [
+            "side_matrix"
+          ],
+          "observation": "225 preserves every measured primary matrix, neutral/boundary/exterior/true-distal surface exactly; coupled eight-point upper-elbow change is3.11mm and maximum tissue displacement126.8mm. However actualside339 retains an unsupported rounded front mass, horizontal underside and triangular shoulder/root fold. The candidate fails anatomical form/contact; exact primarypreservation is not an artistic pass.",
+          "comparison": "Actual225side339 against224andphysicalsupportedpectorals/root. Coherentexistingmusclecontraction reduces projection relative tostatic216, but the complete forequarter stilldoes not read naturally.",
+          "defects": [
+            "Unsupported lower-chest mass/underside",
+            "Triangular shoulder/root fold",
+            "Raised contacts remain unqualified"
+          ],
+          "conclusion": "Use the final authorized correction for a controlled rest-form discriminator: same secondarycontraction on the original raw184 neutral, removing the unpassed215rest sculpt as a held invariant. This is a bounded causal test, not anothernewmethod or automatic final pass. If rawpluscontraction stillfails, stopat226 and synthesize representation limits.",
+          "not_run": [
+            "front/opposite/whole after decisive sideFAIL",
+            "production skin/nap/tack consumer",
+            "fullspeedAV"
+          ],
+          "max": 226,
+          "disposition": "art_rejected",
+          "art_candidates": 1
+        }
+      }
+    ]
+  },
+  {
+    "cycle": 226,
+    "max": 226,
+    "stage": "REPLAN_REQUIRED",
+    "event": "sikh386-exhaustion226-stop",
+    "utc": "2026-10-27T12:54:26.137401+00:00",
+    "scope": "Supported pectoral/root deformation through the accepted rear, with evaluated neutral held as a controlled variable.",
+    "unit_id": "horse-pectoral-live-form386",
+    "method_family": "coherent_existing_secondary_pectoral_contraction",
+    "hypothesis": "An unpassedrestsculpt may obstruct the secondary-deformation result; originalrawneutral plusidenticalcontraction mayretain morecoherent supportingvolume/root.",
+    "method": "Final factorial control: same bounded pectoral-leaf contraction amount0.30 on original raw184 neutral, instead of unpassed215rest sculpt. Primary/action/weights/timing/camera/light fixed.",
+    "source_bindings": 700,
+    "brief_bytes": 183133,
+    "state_bytes": 960980,
+    "native_jobs": 6,
+    "native_failed": 0,
+    "unique_returned_images": 12,
+    "image_bindings": [
+      {
+        "path": ".runtime/factory-native/sikh386-appearance-c226-front_matrix/frame.png",
+        "sha256": "e6e633db23dbd67f1650c0a256ba09502723985f5921a5a365a9b645419f063f"
+      },
+      {
+        "path": ".runtime/factory-native/sikh386-appearance-c226-front_matrix/frame-0333.png",
+        "sha256": "aef14457da3f214833960266064a266dc66f000891b8363e17acda2f07226a78"
+      },
+      {
+        "path": ".runtime/factory-native/sikh386-appearance-c226-front_matrix/frame-0339.png",
+        "sha256": "211008d3d0a6d021fef4c2f622fb03831a72a5b2e8cf38322cf5611e2cbb63bd"
+      },
+      {
+        "path": ".runtime/factory-native/sikh386-appearance-c226-oblique_matrix/frame.png",
+        "sha256": "bc557f77927fd4a1f2b09faa070b7998b3615e2bf97b1e6a66de7504c95e8cd8"
+      },
+      {
+        "path": ".runtime/factory-native/sikh386-appearance-c226-oblique_matrix/frame-0333.png",
+        "sha256": "369b5996597a233f5f83ae4d8f2c986880ba591d2050e4073403ff0e1b870174"
+      },
+      {
+        "path": ".runtime/factory-native/sikh386-appearance-c226-oblique_matrix/frame-0339.png",
+        "sha256": "a14dfabd5d6f4290e995018fbabd1a9c1b04158fe91fc322f1cb7d8348844c21"
+      },
+      {
+        "path": ".runtime/factory-native/sikh386-appearance-c226-side_matrix/frame.png",
+        "sha256": "ccb795e120d2024427c845911d608178f1b6c9c0e2e9223b162e21d632bdfd03"
+      },
+      {
+        "path": ".runtime/factory-native/sikh386-appearance-c226-side_matrix/frame-0333.png",
+        "sha256": "b2bc9a24488fa6bac673f8896be1bcb68181646311c5dcaeb73ab288e282007e"
+      },
+      {
+        "path": ".runtime/factory-native/sikh386-appearance-c226-side_matrix/frame-0339.png",
+        "sha256": "70dee7fd35e05eade0915c3074828abfd578219ff0a4d55615af2ea8b1c891eb"
+      },
+      {
+        "path": ".runtime/factory-native/sikh386-appearance-c226-whole_matrix/frame.png",
+        "sha256": "df980f3888233982c7e6ab272243207a022111e45e7e2ff90d591cb7c4cadd37"
+      },
+      {
+        "path": ".runtime/factory-native/sikh386-appearance-c226-whole_matrix/frame-0333.png",
+        "sha256": "9b57edf73313fd06fc7de937aba5fce7bfa2c32781fdace8248a34301e7afa6f"
+      },
+      {
+        "path": ".runtime/factory-native/sikh386-appearance-c226-whole_matrix/frame-0339.png",
+        "sha256": "183c07e68d107ecee13f967ec7b63b17c38aff119ee685a9aa2c2312866f07f5"
+      }
+    ],
+    "review_dispositions": [
+      {
+        "category": "causal_control_only",
+        "observation": "Source/primary invariant control only; all physical failures still block adoption."
+      },
+      {
+        "category": "art_rejected",
+        "observation": "Final raw226 candidate fails actual anatomy. Side339 retains a rounded unsupported mass with a horizontal underside. Front339 forms a broad flanged/bib-like lower chest. Opposite oblique339 exposes a triangular shoulder/root skin web and a dark hollow beneath its overhang. The whole333 view supplies context but cannot cancel those close-view defects. Neutral raw283 remains an experimental control, not a final accepted anatomy target. Primary matrices, existing curves, neutral/boundary/exterior/true-distal surfaces are preserved; eight coupled upper-elbow points move3.11mm. Those technical successes do not pass the anatomical result."
+      },
+      {
+        "category": "art_rejected",
+        "observation": "Final raw226 candidate fails actual anatomy. Side339 retains a rounded unsupported mass with a horizontal underside. Front339 forms a broad flanged/bib-like lower chest. Opposite oblique339 exposes a triangular shoulder/root skin web and a dark hollow beneath its overhang. The whole333 view supplies context but cannot cancel those close-view defects. Neutral raw283 remains an experimental control, not a final accepted anatomy target. Primary matrices, existing curves, neutral/boundary/exterior/true-distal surfaces are preserved; eight coupled upper-elbow points move3.11mm. Those technical successes do not pass the anatomical result."
+      },
+      {
+        "category": "art_rejected",
+        "observation": "Final raw226 candidate fails actual anatomy. Side339 retains a rounded unsupported mass with a horizontal underside. Front339 forms a broad flanged/bib-like lower chest. Opposite oblique339 exposes a triangular shoulder/root skin web and a dark hollow beneath its overhang. The whole333 view supplies context but cannot cancel those close-view defects. Neutral raw283 remains an experimental control, not a final accepted anatomy target. Primary matrices, existing curves, neutral/boundary/exterior/true-distal surfaces are preserved; eight coupled upper-elbow points move3.11mm. Those technical successes do not pass the anatomical result."
+      },
+      {
+        "category": "causal_control_only",
+        "observation": "Source/primary invariant control only; all physical failures still block adoption."
+      },
+      {
+        "category": "causal_control_only",
+        "observation": "Whole-image availability only; current anatomical result remains rejected."
+      }
+    ],
+    "reviewed_artistic_images": true,
+    "scoped_artistic_pass": false,
+    "closeouts": [
+      {
+        "binding": {
+          "path": "results/sikh386/CYCLE226_CLOSEOUT.json",
+          "sha256": "69ad1613530de4a811c79597fc7fe2ea16fdc9f6ec308d863a574463086d94d7"
+        },
+        "record": {
+          "cycle": 226,
+          "steps": [
+            "side_matrix",
+            "front_matrix",
+            "oblique_matrix"
+          ],
+          "observation": "Final raw226 candidate fails actual anatomy. Side339 retains a rounded unsupported mass with a horizontal underside. Front339 forms a broad flanged/bib-like lower chest. Opposite oblique339 exposes a triangular shoulder/root skin web and a dark hollow beneath its overhang. The whole333 view supplies context but cannot cancel those close-view defects. Neutral raw283 remains an experimental control, not a final accepted anatomy target. Primary matrices, existing curves, neutral/boundary/exterior/true-distal surfaces are preserved; eight coupled upper-elbow points move3.11mm. Those technical successes do not pass the anatomical result.",
+          "comparison": "Matched raw226 versus225rest215 under the same amount0.30 contraction, same original primary action/weights/timing/camera/light; physical UMN anatomy and limited204gross direction remain the positive references. Removing the later rest sculpt did not resolve the complete chest/root problem.",
+          "defects": [
+            "Unsupported lower chest volume/underside",
+            "Broad frontal flange/bib",
+            "Triangular shoulder/root web and hollow in opposite view",
+            "Final-surface/contact/consumer qualification not established"
+          ],
+          "conclusion": "The approved50additional slots are used. No production-ready chest derivative has been obtained. Source/response/method controls improved diagnosis but did not produce a coherent anatomical forequarter under the accepted rearing. Stop construction at226; preserve all failed evidence and accepted masters. A further package needs a new allowance and a changed structural premise, with a positive native anatomy/pose proof before more fitting or surface detail. These failures do not prove that Blender or all agent-only modeling is impossible.",
+          "not_run": [
+            "Production material/nap/tack/contact adoption",
+            "New full-speed audiovisual qualification",
+            "Complete Sikh/trailer rendering"
+          ],
+          "max": 226,
+          "disposition": "art_rejected",
+          "art_candidates": 1
+        }
+      }
+    ]
+  },
+  {
+    "cycle": 227,
+    "max": 251,
+    "stage": "EXECUTING",
+    "event": "sikh387-c227-__forequarter_method__-structure-admit-diagnostic-effect",
+    "utc": "2026-10-27T16:20:17.592871+00:00",
+    "scope": "Structural proof of coherent supported original-horse forequarter under approved rear, treating chest, shoulder attachment and local skin articulation together; first posed-strain experiment, no final-motion or coat claim.",
+    "unit_id": "horse-forequarter-structural387",
+    "method_family": "posed_surface_local_global_arap",
+    "hypothesis": "Preserve neutral surface edge geometry under actual posed boundaries instead of fitting an already distorted source surface.",
+    "method": "Posed local-global ARAP structural compatibility experiment; actual original native source and fixed skeletal/boundary positions.",
+    "source_bindings": 700,
+    "brief_bytes": 179854,
+    "state_bytes": 1018123,
+    "native_jobs": 0,
+    "native_failed": 0,
+    "unique_returned_images": 0,
+    "image_bindings": [],
+    "review_dispositions": [],
+    "reviewed_artistic_images": false,
+    "scoped_artistic_pass": false,
+    "closeouts": [
+      {
+        "binding": {
+          "path": "results/sikh387/CYCLE227_CLOSEOUT.json",
+          "sha256": "4f03c2f366e26fb64c0eb91b0a94da3815af6f61c25cd9559ba288f2931a493d"
+        },
+        "record": {
+          "cycle": 227,
+          "statuses": {
+            "__forequarter_method__": "UNKNOWN",
+            "form": "UNKNOWN",
+            "__positive_forequarter_form__": "UNKNOWN",
+            "whole_look": "UNKNOWN",
+            "interfaces": "UNKNOWN",
+            "director_form_motion": "UNKNOWN",
+            "evidence": "UNKNOWN",
+            "__allowance__": "UNKNOWN",
+            "__requirements__": "UNKNOWN"
+          },
+          "evidence": [
+            "results/sikh387/numeric227.json",
+            "results/sikh387/numeric227-run.json"
+          ],
+          "observation": "Actual numeric selftests pass; posed edge distortion reduced, but no native shape/contact/motion proof yet. All artistic findings remain unresolved.",
+          "max": 251
+        }
+      }
+    ]
+  },
+  {
+    "cycle": 228,
+    "max": 251,
+    "stage": "EXECUTING",
+    "event": "sikh387-c228-__forequarter_method__-structure-admit-actual-effect",
+    "utc": "2026-10-27T16:31:13.855336+00:00",
+    "scope": "Structural proof of coherent supported original-horse forequarter under approved rear, treating chest, shoulder attachment and local skin articulation together; first posed-strain experiment, no final-motion or coat claim.",
+    "unit_id": "horse-forequarter-structural387",
+    "method_family": "posed_surface_local_global_arap",
+    "hypothesis": "Preserve neutral surface edge geometry under actual posed boundaries instead of fitting an already distorted source surface.",
+    "method": "Native worst-pose proof of227posed strain reconstruction on original raw184. Existing qualified target importer; fixed skeleton/exterior/distal interfaces.",
+    "source_bindings": 713,
+    "brief_bytes": 182787,
+    "state_bytes": 1025406,
+    "native_jobs": 5,
+    "native_failed": 0,
+    "unique_returned_images": 12,
+    "image_bindings": [
+      {
+        "path": ".runtime/factory-native/sikh387-appearance-c228-front/frame.png",
+        "sha256": "b66b37bc9a537a8cebf093945ae3e53fb6092701458bad044e7fba9e8fd254e8"
+      },
+      {
+        "path": ".runtime/factory-native/sikh387-appearance-c228-front/frame-0333.png",
+        "sha256": "4fcd18151e45760dac2a56bc551eb129ab168e63a3b5e18405c18a6b0877a52b"
+      },
+      {
+        "path": ".runtime/factory-native/sikh387-appearance-c228-front/frame-0339.png",
+        "sha256": "75f274d8c230d90eb5d7ae1a4c390943527c358f902a8a4c3b697675d51f7ce6"
+      },
+      {
+        "path": ".runtime/factory-native/sikh387-appearance-c228-opposite/frame.png",
+        "sha256": "6ab0493d1e222552c717684d7754335e3265264971719ba5d57ee20217250cfb"
+      },
+      {
+        "path": ".runtime/factory-native/sikh387-appearance-c228-opposite/frame-0333.png",
+        "sha256": "92cf0e5e5e71568119affa8080cc845aceab46d2d437746acaa8296c60ba494e"
+      },
+      {
+        "path": ".runtime/factory-native/sikh387-appearance-c228-opposite/frame-0339.png",
+        "sha256": "6db1f1f4d150b4d8377983d0d79017472acd3a9d5182afb5c8a35fb68e34c361"
+      },
+      {
+        "path": ".runtime/factory-native/sikh387-appearance-c228-side/frame.png",
+        "sha256": "f5eac992dedc62e777a33ee0a6972b05329c9a10f5ddf3027ac445ca510df578"
+      },
+      {
+        "path": ".runtime/factory-native/sikh387-appearance-c228-side/frame-0333.png",
+        "sha256": "6dd245218db0f179dbc7ea718629ccb1580aed87e200716bfd6bfdd61652e0a6"
+      },
+      {
+        "path": ".runtime/factory-native/sikh387-appearance-c228-side/frame-0339.png",
+        "sha256": "e8f0847be60dd4d933693722fb04b83e7a3cf4a02a6e81834a43ac3ae7317e80"
+      },
+      {
+        "path": ".runtime/factory-native/sikh387-appearance-c228-whole/frame.png",
+        "sha256": "c370625535ef0df71044e6fce69df36323efe433c2255ddb8a7c113bc93a9277"
+      },
+      {
+        "path": ".runtime/factory-native/sikh387-appearance-c228-whole/frame-0333.png",
+        "sha256": "aa1663606a0f783074c6804b11312d047def109891f30edea7e01966861c98cb"
+      },
+      {
+        "path": ".runtime/factory-native/sikh387-appearance-c228-whole/frame-0339.png",
+        "sha256": "b088d5133cd0faf07264cc628a0a7e415dff01c92b1f702d958da9dd19becf85"
+      }
+    ],
+    "review_dispositions": [
+      {
+        "category": "art_rejected",
+        "observation": "Actual339native: side flange reduced, but frontal broad wing/bib and opposite unsupported lower contour remain. Native neutral has folded chest/root surfaces. Not a convincing connected forequarter."
+      },
+      {
+        "category": "art_rejected",
+        "observation": "Actual339native: side flange reduced, but frontal broad wing/bib and opposite unsupported lower contour remain. Native neutral has folded chest/root surfaces. Not a convincing connected forequarter."
+      },
+      {
+        "category": "art_rejected",
+        "observation": "Actual339native: side flange reduced, but frontal broad wing/bib and opposite unsupported lower contour remain. Native neutral has folded chest/root surfaces. Not a convincing connected forequarter."
+      },
+      {
+        "category": "causal_control_only",
+        "observation": "Deterministic transfer verification only; art and temporal proof remain unqualified."
+      }
+    ],
+    "reviewed_artistic_images": true,
+    "scoped_artistic_pass": false,
+    "closeouts": [
+      {
+        "binding": {
+          "path": "results/sikh387/CYCLE228_CLOSEOUT.json",
+          "sha256": "34e02d7589e6b8570074068f14ddefda8c814f6dcf819bb00f0c633f52ff6632"
+        },
+        "record": {
+          "cycle": 228,
+          "steps": [
+            "front",
+            "side",
+            "opposite"
+          ],
+          "observation": "Actual339native: side flange reduced, but frontal broad wing/bib and opposite unsupported lower contour remain. Native neutral has folded chest/root surfaces. Not a convincing connected forequarter.",
+          "comparison": "Actual283333339front/side/opposite versus physicalUMN chest and rearing anatomy; betterthan226doesnotpass.",
+          "defects": [
+            "Broad flat anterior chest/shoulder wing",
+            "Unsupported lower chest/root contour",
+            "Neutral folds not natural muscle insertion"
+          ],
+          "conclusion": "Posed hollow-surface ARAP reduces strain but does not construct internal supporting volume. Reject rather than coefficient sweep; try materially volumetric representation.",
+          "not_run": [
+            "Fullspeed",
+            "Coat/contact",
+            "Final film integration"
+          ],
+          "max": 251,
+          "disposition": "art_rejected",
+          "art_candidates": 1
+        }
+      }
+    ]
+  },
+  {
+    "cycle": 229,
+    "max": 251,
+    "stage": "EXECUTING",
+    "event": "sikh387-c229-__forequarter_method__-structure-admit-diagnostic-effect",
+    "utc": "2026-10-27T16:36:02.162508+00:00",
+    "scope": "Structural proof of coherent supported original-horse forequarter under approved rear, treating chest, shoulder attachment and local skin articulation together; first posed-strain experiment, no final-motion or coat claim.",
+    "unit_id": "horse-forequarter-structural387",
+    "method_family": "posed_volumetric_corotational_graph",
+    "hypothesis": "Actualinside-skin connectivity supplies volume support absent in228hollow-surface solve.",
+    "method": "Three-dimensional interior support graph from actual source tetrahedra; corotational volume-weighted edge reconstruction under exact original surfaceboundary and lowerlegs.",
+    "source_bindings": 718,
+    "brief_bytes": 183613,
+    "state_bytes": 1025934,
+    "native_jobs": 0,
+    "native_failed": 0,
+    "unique_returned_images": 0,
+    "image_bindings": [],
+    "review_dispositions": [],
+    "reviewed_artistic_images": false,
+    "scoped_artistic_pass": false,
+    "closeouts": [
+      {
+        "binding": {
+          "path": "results/sikh387/CYCLE229_CLOSEOUT.json",
+          "sha256": "425fb7508ae6159a66fe13efa14e994457208adb75eac263e6b0dc551e52e394"
+        },
+        "record": {
+          "cycle": 229,
+          "statuses": {
+            "form": "UNKNOWN",
+            "interfaces": "UNKNOWN",
+            "__allowance__": "UNKNOWN",
+            "whole_look": "UNKNOWN",
+            "evidence": "UNKNOWN",
+            "__requirements__": "UNKNOWN",
+            "director_form_motion": "UNKNOWN",
+            "__positive_forequarter_form__": "UNKNOWN",
+            "__forequarter_method__": "UNKNOWN"
+          },
+          "evidence": [
+            "results/sikh387/numeric229.json",
+            "results/sikh387/numeric229-run.json"
+          ],
+          "observation": "Actualneutral control passes. Virtualvolumescaffold has286invertedcells at339, so solidvalidityfails. This is internal support graph, not native skin topology; diagnosticnative views maystill determine visiblemethodeffect, never a productionpass.",
+          "max": 251
+        }
+      }
+    ]
+  },
+  {
+    "cycle": 230,
+    "max": 251,
+    "stage": "EXECUTING",
+    "event": "sikh387-c230-__forequarter_method__-structure-admit-actual-effect",
+    "utc": "2026-10-27T16:46:15.925855+00:00",
+    "scope": "Structural proof of coherent supported original-horse forequarter under approved rear, treating chest, shoulder attachment and local skin articulation together; first posed-strain experiment, no final-motion or coat claim.",
+    "unit_id": "horse-forequarter-structural387",
+    "method_family": "posed_volumetric_corotational_graph",
+    "hypothesis": "Internalmaterialconnectivity may improve visibleformwherehollowsurfaceARAPfailed.",
+    "method": "Diagnostic native visualization of229volumetric support result. Known virtualcell inversion remains unresolved; no positive-art/solidvalidity claim.",
+    "source_bindings": 729,
+    "brief_bytes": 185618,
+    "state_bytes": 1031119,
+    "native_jobs": 2,
+    "native_failed": 0,
+    "unique_returned_images": 3,
+    "image_bindings": [
+      {
+        "path": ".runtime/factory-native/sikh387-appearance-c230-front/frame.png",
+        "sha256": "80404b85855fc1a0d145dff60d8d87d71e7df42051198cec6906807d2c1a390f"
+      },
+      {
+        "path": ".runtime/factory-native/sikh387-appearance-c230-front/frame-0333.png",
+        "sha256": "5557cc86b3698166c988a8b9f8ed55beaa1bd3f174003dbeccc0f5092751dd41"
+      },
+      {
+        "path": ".runtime/factory-native/sikh387-appearance-c230-front/frame-0339.png",
+        "sha256": "d5d6e2d0c6ee4dbe48127145158681046e3b19766b3f404797ee0f2798fdcdb4"
+      }
+    ],
+    "review_dispositions": [
+      {
+        "category": "art_rejected",
+        "observation": "Actual339front with volumetric graph has rounded pendant paired chest masses and obliquecentralfold; not supportednaturalpectorals. Virtualtet inversions also unresolved. A rounder wrongmass isnotpositiveanatomy."
+      },
+      {
+        "category": "causal_control_only",
+        "observation": "Deterministic transfer verification only; art and temporal proof remain unqualified."
+      }
+    ],
+    "reviewed_artistic_images": true,
+    "scoped_artistic_pass": false,
+    "closeouts": [
+      {
+        "binding": {
+          "path": "results/sikh387/CYCLE230_CLOSEOUT.json",
+          "sha256": "615b699bac6f64dee40422217b87d47afface7f8d83c3982922057c33e889f7c"
+        },
+        "record": {
+          "cycle": 230,
+          "steps": [
+            "front"
+          ],
+          "observation": "Actual339front with volumetric graph has rounded pendant paired chest masses and obliquecentralfold; not supportednaturalpectorals. Virtualtet inversions also unresolved. A rounder wrongmass isnotpositiveanatomy.",
+          "comparison": "PhysicalUMNmuscleinsertion versusactual230front and228flatwing. Both fail anatomicalsupport; no furtherdiagnosticrendersneeded torejectthisvariant.",
+          "defects": [
+            "Pendant chest mass",
+            "Unnatural central fold and unsupported insertion"
+          ],
+          "conclusion": "Internalconnectivityalone changes roundness, not correctattachment. Nextstructuralproof acts on full existing leafpectoral controls with actualhumerusinsertion target rather than restshape/weightmask fitting.",
+          "not_run": [
+            "Side/opposite/whole230: stopped after decisivefrontfailure",
+            "Densemotion",
+            "Coat/tack/contact",
+            "DirectorAV"
+          ],
+          "max": 251,
+          "disposition": "art_rejected",
+          "art_candidates": 1
+        }
+      }
+    ]
+  },
+  {
+    "cycle": 231,
+    "max": 251,
+    "stage": "BRIEFING",
+    "event": "sikh387-appearance-c231-STRATEGIZING",
+    "utc": "2026-10-27T16:49:53.273058+00:00",
+    "scope": null,
+    "unit_id": null,
+    "method_family": null,
+    "hypothesis": null,
+    "method": "Original leaf pectoral insertion follows actual proximal humerus using source-calibrated quaternion and length ratio. No primary action or skinweight edit.",
+    "source_bindings": 0,
+    "brief_bytes": 2,
+    "state_bytes": 836630,
+    "native_jobs": 0,
+    "native_failed": 0,
+    "unique_returned_images": 0,
+    "image_bindings": [],
+    "review_dispositions": [],
+    "reviewed_artistic_images": false,
+    "scoped_artistic_pass": false,
+    "closeouts": []
+  },
+  {
+    "cycle": 232,
+    "max": 251,
+    "stage": "EXECUTING",
+    "event": "sikh387-c232-__forequarter_method__-structure-admit-diagnostic-effect",
+    "utc": "2026-10-27T16:56:28.792904+00:00",
+    "scope": "Structural proof of coherent supported original-horse forequarter under approved rear, treating chest, shoulder attachment and local skin articulation together; first posed-strain experiment, no final-motion or coat claim.",
+    "unit_id": "horse-forequarter-structural387",
+    "method_family": "full_leaf_pectoral_insertion_articulation",
+    "hypothesis": "Pose-dependent full original muscle insertion, not source strain/shape preservation, governs the unsupportedmass.",
+    "method": "Original leaf pectoral insertion follows actual proximal humerus using source-calibrated quaternion and length ratio. No primary action or skinweight edit.",
+    "source_bindings": 746,
+    "brief_bytes": 188896,
+    "state_bytes": 1038280,
+    "native_jobs": 2,
+    "native_failed": 1,
+    "unique_returned_images": 0,
+    "image_bindings": [],
+    "review_dispositions": [
+      {
+        "category": "causal_control_only",
+        "observation": "Technical control only; natural chest/root/volume and AV remainunqualified."
+      }
+    ],
+    "reviewed_artistic_images": false,
+    "scoped_artistic_pass": false,
+    "closeouts": [
+      {
+        "binding": {
+          "path": "results/sikh387/CYCLE232_CLOSEOUT.json",
+          "sha256": "1a73554d954e1a027c52a70475fe68b159371df2ced3dd57d92057b1e2b630bd"
+        },
+        "record": {
+          "cycle": 232,
+          "statuses": {
+            "__positive_forequarter_form__": "UNKNOWN",
+            "interfaces": "UNKNOWN",
+            "__allowance__": "UNKNOWN",
+            "__requirements__": "UNKNOWN",
+            "__forequarter_method__": "UNKNOWN",
+            "whole_look": "UNKNOWN",
+            "director_form_motion": "UNKNOWN",
+            "form": "UNKNOWN",
+            "evidence": "UNKNOWN"
+          },
+          "evidence": [
+            ".runtime/factory-native/sikh387-appearance-c232-source/worker-status.json",
+            ".runtime/factory-native/sikh387-appearance-c232-source/articulation387-preflight.json",
+            ".runtime/factory-native/sikh387-appearance-c232-source/articulation387-endpoints.json"
+          ],
+          "observation": "Nativezero passed exactly. Nonzero actualendpoint error5.02micrometres, all primary/outside/neutral/boundary/true-distal exact; eightconnectors moved7.66mm. Largestsofttissue displacement402.37mm exceededdeclared400mmlimit; workerfailedbeforecandidate. No nativeartresult. Keepguard; reduceboundedstrengthto.9forfirstactualshapeproof rather thanraisingcap.",
+          "max": 251
+        }
+      }
+    ]
+  },
+  {
+    "cycle": 233,
+    "max": 251,
+    "stage": "EXECUTING",
+    "event": "sikh387-c233-__forequarter_method__-structure-admit-actual-effect",
+    "utc": "2026-10-27T17:06:49.054014+00:00",
+    "scope": "Structural proof of coherent supported original-horse forequarter under approved rear, treating chest, shoulder attachment and local skin articulation together; first posed-strain experiment, no final-motion or coat claim.",
+    "unit_id": "horse-forequarter-structural387",
+    "method_family": "full_leaf_pectoral_insertion_articulation",
+    "hypothesis": "Pose-dependent full original muscle insertion, not source strain/shape preservation, governs the unsupportedmass.",
+    "method": "Original leaf pectoral insertion follows actual proximal humerus using source-calibrated quaternion and length ratio. No primary action or skinweight edit.",
+    "source_bindings": 756,
+    "brief_bytes": 190700,
+    "state_bytes": 1041830,
+    "native_jobs": 3,
+    "native_failed": 0,
+    "unique_returned_images": 3,
+    "image_bindings": [
+      {
+        "path": ".runtime/factory-native/sikh387-appearance-c233-front/frame.png",
+        "sha256": "6eeebb907ab386daccd8ef704893904b8916c074d4e8c5cfbddcc2429c547274"
+      },
+      {
+        "path": ".runtime/factory-native/sikh387-appearance-c233-front/frame-0333.png",
+        "sha256": "6de39ca9e2c47427b1faaa13a404c2afeb6bde0ea466b7b00bff18bdc5885baf"
+      },
+      {
+        "path": ".runtime/factory-native/sikh387-appearance-c233-front/frame-0339.png",
+        "sha256": "1fdcc357eaa46e94642ac0dae1b84ebfd251235808a99e194b8be78be69789bc"
+      }
+    ],
+    "review_dispositions": [
+      {
+        "category": "art_rejected",
+        "observation": "Actual339front shows folded lower-neck/chest skin above a horizontal projecting flap, despite actual insertion endpoints and primary preservation. Fulloriginalsecondary ownership reveals a coupled restform/neck-root problem, not a completed attachment fix."
+      },
+      {
+        "category": "causal_control_only",
+        "observation": "Technical control only; natural chest/root/volume and AV remainunqualified."
+      },
+      {
+        "category": "causal_control_only",
+        "observation": "Technical control only; natural chest/root/volume and AV remainunqualified."
+      }
+    ],
+    "reviewed_artistic_images": true,
+    "scoped_artistic_pass": false,
+    "closeouts": [
+      {
+        "binding": {
+          "path": "results/sikh387/CYCLE233_CLOSEOUT.json",
+          "sha256": "61835787218f0b63b888a00d276ef8eb8e5dc32546d6f7822f26ec72e6085a4c"
+        },
+        "record": {
+          "cycle": 233,
+          "steps": [
+            "front"
+          ],
+          "observation": "Actual339front shows folded lower-neck/chest skin above a horizontal projecting flap, despite actual insertion endpoints and primary preservation. Fulloriginalsecondary ownership reveals a coupled restform/neck-root problem, not a completed attachment fix.",
+          "comparison": "PhysicalUMNchest and negative230pendant versus actual233fold/plane. Correct boneendpoint isnot anatomical success.",
+          "defects": [
+            "Folded lower neck/chest",
+            "Horizontal projecting skin flap"
+          ],
+          "conclusion": "Reject233. Test source dependency as one controlled integrated contrast: same qualified insertion articulation on coherent reference-fitted215rest (source216), versus raw184.215rest remains unpassedcontrol, not assumedpositive. Main skin topology audit supplies bounded source evidence; it cannot establish biological anatomy.",
+          "not_run": [
+            "Side/opposite/whole233: stopped after decisivefrontfailure",
+            "Movingform",
+            "Coat/contact",
+            "DirectorAV"
+          ],
+          "max": 251,
+          "disposition": "art_rejected",
+          "art_candidates": 1
+        }
+      }
+    ]
+  },
+  {
+    "cycle": 234,
+    "max": 251,
+    "stage": "BRIEFING",
+    "event": "sikh387-appearance-c234-STRATEGIZING",
+    "utc": "2026-10-27T17:12:21.955349+00:00",
+    "scope": null,
+    "unit_id": null,
+    "method_family": null,
+    "hypothesis": null,
+    "method": "Read-only actual articulated source export for coupled internal muscle/tissue reconstruction; not a new artcandidate.",
+    "source_bindings": 0,
+    "brief_bytes": 2,
+    "state_bytes": 836762,
+    "native_jobs": 0,
+    "native_failed": 0,
+    "unique_returned_images": 0,
+    "image_bindings": [],
+    "review_dispositions": [],
+    "reviewed_artistic_images": false,
+    "scoped_artistic_pass": false,
+    "closeouts": []
+  },
+  {
+    "cycle": 235,
+    "max": 251,
+    "stage": "EXECUTING",
+    "event": "sikh387-c235-__forequarter_method__-structure-admit-actual-effect",
+    "utc": "2026-10-27T17:34:18.887679+00:00",
+    "scope": "Structural proof of coherent supported original-horse forequarter under approved rear, treating chest, shoulder attachment and local skin articulation together; first posed-strain experiment, no final-motion or coat claim.",
+    "unit_id": "horse-forequarter-structural387",
+    "method_family": "bind_calibrated_two_anchor_secondary_tissue",
+    "hypothesis": "Retaining real handle bindoffset while holdingsternalorigin avoids directjoint-snap fold; actualskin muststillprove coherent.",
+    "method": "Bind-calibrated two-anchor secondary tissue control: preserve neutral breast-handle offset to actualproximalhumerus, retain sternalorigin, then orientation/length interpolation at.8strength. No directjoint snap.",
+    "source_bindings": 772,
+    "brief_bytes": 193411,
+    "state_bytes": 1047321,
+    "native_jobs": 3,
+    "native_failed": 0,
+    "unique_returned_images": 3,
+    "image_bindings": [
+      {
+        "path": ".runtime/factory-native/sikh387-appearance-c235-front/frame.png",
+        "sha256": "8331f78fc74d0e20aa7e3b59f297f1446bb67511bc7a3e30141ce8505c95a1c0"
+      },
+      {
+        "path": ".runtime/factory-native/sikh387-appearance-c235-front/frame-0333.png",
+        "sha256": "c17ac9d67dbf41a8be44dbcdf832e11bcd492fb43d3e34b321f6bd62a11f4a8e"
+      },
+      {
+        "path": ".runtime/factory-native/sikh387-appearance-c235-front/frame-0339.png",
+        "sha256": "6cf78ceba81bf687cf0921f7b137e2fcacdbe8512b06179b47b465fdefe331b1"
+      }
+    ],
+    "review_dispositions": [
+      {
+        "category": "art_rejected",
+        "observation": "Actual339front still has unsupported asymmetric lower-chest lobes and lower-neck discontinuity. Bind calibration fixes the specific direct-snap target error, but full.8handle-follow produces excessive muscle-shape change; no positive anatomicalresult."
+      },
+      {
+        "category": "causal_control_only",
+        "observation": "Technical control only; natural chest/root/volume and AV remainunqualified."
+      },
+      {
+        "category": "causal_control_only",
+        "observation": "Technical control only; natural chest/root/volume and AV remainunqualified."
+      }
+    ],
+    "reviewed_artistic_images": true,
+    "scoped_artistic_pass": false,
+    "closeouts": [
+      {
+        "binding": {
+          "path": "results/sikh387/CYCLE235_CLOSEOUT.json",
+          "sha256": "606ace313cb66dab95945f072e4c0826729bc8b24869575efdc6422a7ee4e010"
+        },
+        "record": {
+          "cycle": 235,
+          "steps": [
+            "front"
+          ],
+          "observation": "Actual339front still has unsupported asymmetric lower-chest lobes and lower-neck discontinuity. Bind calibration fixes the specific direct-snap target error, but full.8handle-follow produces excessive muscle-shape change; no positive anatomicalresult.",
+          "comparison": "Actual235versus233flap and realUMNproportions. Preserve correctedbindsemantics, rejectexcessive visibleactuation. Correctendpoint/primaryguards arenotartistpass.",
+          "defects": [
+            "Asymmetric hanging pectoral mass",
+            "Lower-neck/chest discontinuity"
+          ],
+          "conclusion": "One predeclared physiologicalmagnitude control remains: same calibrateddirection at.3, limiting musclelengthchange to roughly30percent instead of75percent. This matches the earlier physicalcontraction range, isolates orientation/calibration contribution, and is not approval of a further gainsweep. Ifitfails, retirethisfamily forstructural reconstruction.",
+          "not_run": [
+            "Other235views after frontveto",
+            "Movingform",
+            "Contact/material/AV"
+          ],
+          "max": 251,
+          "disposition": "art_rejected",
+          "art_candidates": 1
+        }
+      }
+    ]
+  },
+  {
+    "cycle": 236,
+    "max": 251,
+    "stage": "EXECUTING",
+    "event": "sikh387-c236-__forequarter_method__-structure-admit-actual-effect",
+    "utc": "2026-10-27T17:52:03.313350+00:00",
+    "scope": "Structural proof of coherent supported original-horse forequarter under approved rear, treating chest, shoulder attachment and local skin articulation together; first posed-strain experiment, no final-motion or coat claim.",
+    "unit_id": "horse-forequarter-structural387",
+    "method_family": "bind_calibrated_two_anchor_secondary_tissue",
+    "hypothesis": "Retaining real handle bindoffset while holdingsternalorigin avoids directjoint-snap fold; actualskin muststillprove coherent.",
+    "method": "Final bounded calibrated-handle gain.3 control; actualminimum targetscale>=.7 and maximum skinmovement<=.15m required before anatomy images. No furthergain sweep.",
+    "source_bindings": 779,
+    "brief_bytes": 194581,
+    "state_bytes": 1049454,
+    "native_jobs": 3,
+    "native_failed": 0,
+    "unique_returned_images": 6,
+    "image_bindings": [
+      {
+        "path": ".runtime/factory-native/sikh387-appearance-c236-front/frame.png",
+        "sha256": "3b42458bcef4457e404fa71e17c5a513da7782fa3ca55d4cfe4712ec10da7927"
+      },
+      {
+        "path": ".runtime/factory-native/sikh387-appearance-c236-front/frame-0333.png",
+        "sha256": "6eb0eaf6d81f8597647c3b77a72ae13dc5891791b44b1aa899e6032807e0c721"
+      },
+      {
+        "path": ".runtime/factory-native/sikh387-appearance-c236-front/frame-0339.png",
+        "sha256": "e7f52faac5519a04740ac1fa3fc97387261fe0ee1ee5e68de542242a3594e937"
+      },
+      {
+        "path": ".runtime/factory-native/sikh387-appearance-c236-side/frame.png",
+        "sha256": "d0f9df9418e537b31b06a8badf4f4dcef856e4fd4f5aa13b5d93e83358448b29"
+      },
+      {
+        "path": ".runtime/factory-native/sikh387-appearance-c236-side/frame-0333.png",
+        "sha256": "90a93c25068cf2de60294bdb09bafc7a90b7149bb5b8c93150584f99e1ee125f"
+      },
+      {
+        "path": ".runtime/factory-native/sikh387-appearance-c236-side/frame-0339.png",
+        "sha256": "718759e416cde58185fd90550ba9bd170f603bf52150b03549a18525ee63a372"
+      }
+    ],
+    "review_dispositions": [
+      {
+        "category": "art_rejected",
+        "observation": "Actual339side retains a pronounced projecting pectoral shelf with horizontal underside; front stillshows broad unsupported lower mass. Boundedcontraction/endpoint/sourcechecks pass but calibratedcontrol doesnotconstruct naturalforequarter."
+      },
+      {
+        "category": "art_rejected",
+        "observation": "Actual339side retains a pronounced projecting pectoral shelf with horizontal underside; front stillshows broad unsupported lower mass. Boundedcontraction/endpoint/sourcechecks pass but calibratedcontrol doesnotconstruct naturalforequarter."
+      },
+      {
+        "category": "causal_control_only",
+        "observation": "Technical control only; natural chest/root/volume and AV remainunqualified."
+      }
+    ],
+    "reviewed_artistic_images": true,
+    "scoped_artistic_pass": false,
+    "closeouts": [
+      {
+        "binding": {
+          "path": "results/sikh387/CYCLE236_CLOSEOUT.json",
+          "sha256": "a69784765fe37d344f5705e41aaef8232ca62e8bc6213671b47d3fd3c02b01f3"
+        },
+        "record": {
+          "cycle": 236,
+          "steps": [
+            "side",
+            "front"
+          ],
+          "observation": "Actual339side retains a pronounced projecting pectoral shelf with horizontal underside; front stillshows broad unsupported lower mass. Boundedcontraction/endpoint/sourcechecks pass but calibratedcontrol doesnotconstruct naturalforequarter.",
+          "comparison": "Actual236side/front comparedwithreference rear, studrear and frontpectorals. Smallerdeformationisnotpositiveform.",
+          "defects": [
+            "Projectinglowerchest shelf",
+            "Broad unsupportedlowerchestmass"
+          ],
+          "conclusion": "Retire bothsecondarymusclefamilies; no furthergain/orientationvariants. ReturntoGrounding for a pose-matched anatomicalconstruction study, then newstructuralmesh reconstruction strategy. Existingphysicalrefsestablishgoal; the newstudywillclarify concreteposedform, notsubstituteanatomicaltruth orintroducenewidentity.",
+          "not_run": [
+            "Opposite/whole afterside/frontveto",
+            "Fullspeed",
+            "Coat/contact",
+            "DirectorAV"
+          ],
+          "max": 251,
+          "disposition": "art_rejected",
+          "art_candidates": 1
+        }
+      }
+    ]
+  },
+  {
+    "cycle": 237,
+    "max": 251,
+    "stage": "EXECUTING",
+    "event": "sikh387-c237-__forequarter_method__-structure-admit-diagnostic-effect",
+    "utc": "2026-10-27T18:18:30.108472+00:00",
+    "scope": "Structural proof of coherent supported original-horse forequarter under approved rear, treating chest, shoulder attachment and local skin articulation together; first posed-strain experiment, no final-motion or coat claim.",
+    "unit_id": "horse-forequarter-structural387",
+    "method_family": "reference_informed_anatomical_landmark_reconstruction",
+    "hypothesis": "Explicit continuous chest/root shape handles, rather than unpassedsurfacefit or deformer-control semantics, can construct a positive nativevolume.",
+    "method": "Single339pose anatomical-landmark surface reconstruction across connected chest/root context; explicit positive contour/volume goal, no musclecontrol or pixel fitting.",
+    "source_bindings": 792,
+    "brief_bytes": 199262,
+    "state_bytes": 1062073,
+    "native_jobs": 0,
+    "native_failed": 0,
+    "unique_returned_images": 0,
+    "image_bindings": [],
+    "review_dispositions": [],
+    "reviewed_artistic_images": false,
+    "scoped_artistic_pass": false,
+    "closeouts": [
+      {
+        "binding": {
+          "path": "results/sikh387/CYCLE237_CLOSEOUT.json",
+          "sha256": "6cf96a51a0b896911f04fd4d6404899217296932b1745db1429616730c8da5e1"
+        },
+        "record": {
+          "cycle": 237,
+          "statuses": {
+            "evidence": "UNKNOWN",
+            "interfaces": "UNKNOWN",
+            "__positive_forequarter_form__": "UNKNOWN",
+            "director_form_motion": "UNKNOWN",
+            "__requirements__": "UNKNOWN",
+            "__forequarter_method__": "UNKNOWN",
+            "whole_look": "UNKNOWN",
+            "__allowance__": "UNKNOWN",
+            "form": "UNKNOWN"
+          },
+          "evidence": [
+            "results/sikh387/numeric237.json",
+            "results/sikh387/numeric237-run.json"
+          ],
+          "observation": "Actualzero/forearm guards pass; one339target moves1231vertices up to234.3mm. Three near-collapsed cagefaces and121opposed normals are unresolveddiagnostics, not a positive nativeembedding. Native shape needsactualviews; no motion/final claim.",
+          "max": 251
+        }
+      }
+    ]
+  },
+  {
+    "cycle": 238,
+    "max": 251,
+    "stage": "BRIEFING",
+    "event": "sikh387-appearance-c238-STRATEGIZING",
+    "utc": "2026-10-27T18:18:47.392879+00:00",
+    "scope": null,
+    "unit_id": null,
+    "method_family": null,
+    "hypothesis": null,
+    "method": "Native339construction proof of explicit anatomical landmark target on originalraw184, no muscleanimation; original3Didentity andprimaryperformance retained.",
+    "source_bindings": 0,
+    "brief_bytes": 2,
+    "state_bytes": 853159,
+    "native_jobs": 0,
+    "native_failed": 0,
+    "unique_returned_images": 0,
+    "image_bindings": [],
+    "review_dispositions": [],
+    "reviewed_artistic_images": false,
+    "scoped_artistic_pass": false,
+    "closeouts": []
+  },
+  {
+    "cycle": 239,
+    "max": 251,
+    "stage": "EXECUTING",
+    "event": "sikh387-c239-__forequarter_method__-structure-admit-actual-effect",
+    "utc": "2026-10-27T18:44:02.713003+00:00",
+    "scope": "Structural proof of coherent supported original-horse forequarter under approved rear, treating chest, shoulder attachment and local skin articulation together; first posed-strain experiment, no final-motion or coat claim.",
+    "unit_id": "horse-forequarter-structural387",
+    "method_family": "reference_informed_anatomical_landmark_reconstruction",
+    "hypothesis": "Explicit continuous chest/root shape handles, rather than unpassedsurfacefit or deformer-control semantics, can construct a positive nativevolume.",
+    "method": "Same237anatomical target, explicit static diagnostic control/profile. Actualsourceblur mustbe observed anddisabled; no source/artistic success inferredfromprofile.",
+    "source_bindings": 810,
+    "brief_bytes": 202474,
+    "state_bytes": 1069535,
+    "native_jobs": 3,
+    "native_failed": 0,
+    "unique_returned_images": 1,
+    "image_bindings": [
+      {
+        "path": ".runtime/factory-native/sikh387-appearance-c239-side/frame.png",
+        "sha256": "e503e3570f3a97be627f6ace0d1556bcfd58a81d3c5036163bb7eff3fcfdcad8"
+      }
+    ],
+    "review_dispositions": [
+      {
+        "category": "art_rejected",
+        "observation": "Actualstatic339side still has a prominent flat shoulder/upperarm wedge and lower-neck discontinuity. Frontsternalreconstructiondoesnotresolve thetruevisibleowner. SourcewasalreadyblurFalse, so temporalaveragingwasnotcause."
+      },
+      {
+        "category": "causal_control_only",
+        "observation": "Static diagnostic/technical control only; actorform and moving/contact qualificationremainopen."
+      },
+      {
+        "category": "causal_control_only",
+        "observation": "Static diagnostic/technical control only; actorform and moving/contact qualificationremainopen."
+      }
+    ],
+    "reviewed_artistic_images": true,
+    "scoped_artistic_pass": false,
+    "closeouts": [
+      {
+        "binding": {
+          "path": "results/sikh387/CYCLE239_CLOSEOUT.json",
+          "sha256": "944e1bcd0b5a08adeb9404f229892c226a583194eac07a2196a0e98708e84b3c"
+        },
+        "record": {
+          "cycle": 239,
+          "steps": [
+            "side"
+          ],
+          "observation": "Actualstatic339side still has a prominent flat shoulder/upperarm wedge and lower-neck discontinuity. Frontsternalreconstructiondoesnotresolve thetruevisibleowner. SourcewasalreadyblurFalse, so temporalaveragingwasnotcause.",
+          "comparison": "Actual239side versusphysicalrear/study237contour. Sourceprojectedvertextrace links wedge to upper_arm.L.001andupper_arm.L, not disconnectedgear or chieflypectorals.",
+          "defects": [
+            "Flat upperarm/shoulder wedge",
+            "Unnatural forequartercontinuity",
+            "237cagearea diagnostics unresolved"
+          ],
+          "conclusion": "Reject239shape. Replan around actualupperarmdeformerownership and properzero/nonzero segmentcontrol. No more pectoral/landmarkdepthvariants before that discriminator.",
+          "not_run": [
+            "Other239viewsafterdecisivesidefailure",
+            "Motion/contact/material/AV"
+          ],
+          "max": 251,
+          "disposition": "art_rejected",
+          "art_candidates": 1
+        }
+      }
+    ]
+  },
+  {
+    "cycle": 240,
+    "max": 251,
+    "stage": "EXECUTING",
+    "event": "sikh387-c240-__forequarter_method__-structure-admit-diagnostic-effect",
+    "utc": "2026-10-27T18:56:08.327212+00:00",
+    "scope": "Structural proof of coherent supported original-horse forequarter under approved rear, treating chest, shoulder attachment and local skin articulation together; first posed-strain experiment, no final-motion or coat claim.",
+    "unit_id": "horse-forequarter-structural387",
+    "method_family": "actual_upperarm_bbone_segment_control",
+    "hypothesis": "Full actual upperarm skin response to10to1 segments distinguishes spline-deformation shelf from primary articulation/volume shape. Proxy pectoral controls couldnot answer this.",
+    "method": "Actual four upper-arm deform bones B-bone segmentation10to1; original weight-owned union, not pectoral proxy. Typed zero control first; no primary pose, rest, weights, original data/action edits.",
+    "source_bindings": 827,
+    "brief_bytes": 206545,
+    "state_bytes": 1077977,
+    "native_jobs": 2,
+    "native_failed": 1,
+    "unique_returned_images": 0,
+    "image_bindings": [],
+    "review_dispositions": [
+      {
+        "category": "causal_control_only",
+        "observation": "Natural form, interface and full-speed performance remain unpassed."
+      }
+    ],
+    "reviewed_artistic_images": false,
+    "scoped_artistic_pass": false,
+    "closeouts": [
+      {
+        "binding": {
+          "path": "results/sikh387/CYCLE240_CLOSEOUT.json",
+          "sha256": "b17780fa832ac6bdf06bd55f3dac96ebca2a5618647c60fa36c343eaa29edccc"
+        },
+        "record": {
+          "cycle": 240,
+          "observation": "Actual full four-bone10to1 test changes shelf only0.0\u20131.3mm at339, insufficient for grossshape. All joint matrices/data exact, but downstream spline dependencies move distal skin1.50mm/outside2.54mm, failing guard. No candidate/render; retire segmentation as grosscause. Earlier pectoral proxy inference superseded by this actualowner control.",
+          "statuses": {
+            "__allowance__": "FAIL",
+            "form": "FAIL",
+            "interfaces": "FAIL",
+            "evidence": "FAIL",
+            "__requirements__": "FAIL",
+            "whole_look": "FAIL",
+            "director_form_motion": "UNKNOWN",
+            "__positive_forequarter_form__": "FAIL",
+            "__forequarter_method__": "FAIL"
+          },
+          "evidence": [
+            ".runtime/factory-native/sikh387-appearance-c240-source/anatomy387-upperarm.json",
+            ".runtime/factory-native/sikh387-appearance-c240-source/anatomy387-upperarm.npz",
+            "results/sikh387/CAUSAL_TRACE239.json"
+          ],
+          "max": 251
+        }
+      }
+    ]
+  },
+  {
+    "cycle": 241,
+    "max": 251,
+    "stage": "EXECUTING",
+    "event": "sikh387-c241-__forequarter_method__-structure-admit-diagnostic-effect",
+    "utc": "2026-10-27T19:11:11.713310+00:00",
+    "scope": "Structural proof of coherent supported original-horse forequarter under approved rear, treating chest, shoulder attachment and local skin articulation together; first posed-strain experiment, no final-motion or coat claim.",
+    "unit_id": "horse-forequarter-structural387",
+    "method_family": "actual_owner_regional_curvature_flow",
+    "hypothesis": "Highcurvature flange may relax into connected upperarmmass when actualowner and proximalforearm boundary are free together; priorchest-onlyvariantsdidnot test this.",
+    "method": "Actual-owner regional curvature reconstruction across shoulder, upperarm and proximalforearm. Alternating shrink/expand flow instead of chest-only offsets, pose/weight/skeleton unchanged.",
+    "source_bindings": 837,
+    "brief_bytes": 207569,
+    "state_bytes": 1078012,
+    "native_jobs": 0,
+    "native_failed": 0,
+    "unique_returned_images": 0,
+    "image_bindings": [],
+    "review_dispositions": [],
+    "reviewed_artistic_images": false,
+    "scoped_artistic_pass": false,
+    "closeouts": [
+      {
+        "binding": {
+          "path": "results/sikh387/CYCLE241_CLOSEOUT.json",
+          "sha256": "6cb0be6e3d28bf24f991b0696554ad19e61dfeb2d6048a12187d440dd80a365e"
+        },
+        "record": {
+          "cycle": 241,
+          "statuses": {
+            "director_form_motion": "UNKNOWN",
+            "__forequarter_method__": "UNKNOWN",
+            "__positive_forequarter_form__": "UNKNOWN",
+            "interfaces": "UNKNOWN",
+            "__allowance__": "UNKNOWN",
+            "form": "UNKNOWN",
+            "whole_look": "UNKNOWN",
+            "__requirements__": "UNKNOWN",
+            "evidence": "UNKNOWN"
+          },
+          "observation": "Numeric actual-owner fairing changes1756vertices<=56.63mm with exactzero/outside and0.2percent closedvolume change. No nearcollapsedfaces,44opposed-normal diagnostics remain. Actualnative form and embedding unresolved; NOT an anatomy/motion pass. Proceed only to sourcebound staticdiagnostic.",
+          "evidence": [
+            "results/sikh387/numeric241.json",
+            "results/sikh387/numeric241-run.json",
+            ".runtime/art-direction/anatomy386-targets/owner387-241.npz"
+          ],
+          "max": 251
+        }
+      }
+    ]
+  },
+  {
+    "cycle": 242,
+    "max": 251,
+    "stage": "EXECUTING",
+    "event": "sikh387-c242-__forequarter_method__-structure-admit-diagnostic-effect",
+    "utc": "2026-10-27T19:15:47.669101+00:00",
+    "scope": "Structural proof of coherent supported original-horse forequarter under approved rear, treating chest, shoulder attachment and local skin articulation together; first posed-strain experiment, no final-motion or coat claim.",
+    "unit_id": "horse-forequarter-structural387",
+    "method_family": "actual_owner_regional_curvature_flow",
+    "hypothesis": "Highcurvature flange may relax into connected upperarmmass when actualowner and proximalforearm boundary are free together; priorchest-onlyvariantsdidnot test this.",
+    "method": "Actual-owner regional curvature reconstruction across shoulder, upperarm and proximalforearm. Alternating shrink/expand flow instead of chest-only offsets, pose/weight/skeleton unchanged.",
+    "source_bindings": 848,
+    "brief_bytes": 209675,
+    "state_bytes": 1083315,
+    "native_jobs": 1,
+    "native_failed": 1,
+    "unique_returned_images": 0,
+    "image_bindings": [],
+    "review_dispositions": [],
+    "reviewed_artistic_images": false,
+    "scoped_artistic_pass": false,
+    "closeouts": [
+      {
+        "binding": {
+          "path": "results/sikh387/CYCLE242_CLOSEOUT.json",
+          "sha256": "c1f631e9ddef7ea96f4a999b20e1622c940fdee332169e60778efc14df934dfc"
+        },
+        "record": {
+          "cycle": 242,
+          "statuses": {
+            "interfaces": "UNKNOWN",
+            "evidence": "UNKNOWN",
+            "whole_look": "UNKNOWN",
+            "director_form_motion": "UNKNOWN",
+            "__forequarter_method__": "UNKNOWN",
+            "__allowance__": "UNKNOWN",
+            "form": "UNKNOWN",
+            "__requirements__": "UNKNOWN",
+            "__positive_forequarter_form__": "UNKNOWN"
+          },
+          "observation": "Native import refused expanded proximalforearm changes under legacy entireforearmownership freeze. This is correct failclosed for existingtypedkind; no candidate/render. Plan explicitly included newdomain but handler didnot supportit. Review new scopedowner target integration before retry, retain oldguard unchanged.",
+          "evidence": [
+            "results/sikh387/appearance-c242-source-run.json",
+            ".runtime/factory-native/sikh387-appearance-c242-source/stderr.log",
+            "results/sikh387/numeric241.json"
+          ],
+          "max": 251
+        }
+      }
+    ]
+  },
+  {
+    "cycle": 243,
+    "max": 251,
+    "stage": "EXECUTING",
+    "event": "sikh387-c243-__forequarter_method__-structure-admit-actual-effect",
+    "utc": "2026-10-27T19:23:16.142552+00:00",
+    "scope": "Structural proof of coherent supported original-horse forequarter under approved rear, treating chest, shoulder attachment and local skin articulation together; first posed-strain experiment, no final-motion or coat claim.",
+    "unit_id": "horse-forequarter-structural387",
+    "method_family": "actual_owner_regional_curvature_flow",
+    "hypothesis": "Highcurvature flange may relax into connected upperarmmass when actualowner and proximalforearm boundary are free together; priorchest-onlyvariantsdidnot test this.",
+    "method": "Actual-owner regional curvature reconstruction across shoulder, upperarm and proximalforearm. Alternating shrink/expand flow instead of chest-only offsets, pose/weight/skeleton unchanged.",
+    "source_bindings": 858,
+    "brief_bytes": 211450,
+    "state_bytes": 1087286,
+    "native_jobs": 2,
+    "native_failed": 0,
+    "unique_returned_images": 1,
+    "image_bindings": [
+      {
+        "path": ".runtime/factory-native/sikh387-appearance-c243-side/frame.png",
+        "sha256": "67757b048887518f9745e9df4e2d334da9019094f80816857207f3dbb11615ab"
+      }
+    ],
+    "review_dispositions": [
+      {
+        "category": "art_rejected",
+        "observation": "Actual339side still has a flat triangular upper-arm shelf and pronounced unsupported forward lower-neck/chest lobe. Expanded owner smoothing rounds surface but doesnot construct anatomy. No coherent natural forequarter; not ready."
+      },
+      {
+        "category": "causal_control_only",
+        "observation": "Static diagnostic/technical control only; actorform and moving/contact qualificationremainopen."
+      }
+    ],
+    "reviewed_artistic_images": true,
+    "scoped_artistic_pass": false,
+    "closeouts": [
+      {
+        "binding": {
+          "path": "results/sikh387/CYCLE243_CLOSEOUT.json",
+          "sha256": "21af381b601f50a501d355722dc3ee90fd2d71aeddc8391e3b19421e65adf703"
+        },
+        "record": {
+          "cycle": 243,
+          "steps": [
+            "side"
+          ],
+          "observation": "Actual339side still has a flat triangular upper-arm shelf and pronounced unsupported forward lower-neck/chest lobe. Expanded owner smoothing rounds surface but doesnot construct anatomy. No coherent natural forequarter; not ready.",
+          "comparison": "243side versus realrear/side anatomy and237study gross lowerneck/sternum/limb continuity. Curvature/closedvolume/source checks cannot excuse shelf or bulge.",
+          "defects": [
+            "Flat triangular upperarm shelf",
+            "Unsupported forward chest/lowerneck lobe"
+          ],
+          "conclusion": "Reject and retire regional curvatureflow family; no more iteration/gain variants. Test positive volumetric forequarter construction and embedding rather than refining sourcebad surface.",
+          "not_run": [
+            "Front/opposite/whole after decisive sidefailure",
+            "Fullspeed",
+            "Coat/contact",
+            "DirectorAV"
+          ],
+          "max": 251,
+          "disposition": "art_rejected",
+          "art_candidates": 1
+        }
+      }
+    ]
+  },
+  {
+    "cycle": 244,
+    "max": 251,
+    "stage": "EXECUTING",
+    "event": "sikh387-c244-__forequarter_method__-structure-admit-diagnostic-effect",
+    "utc": "2026-10-27T19:29:05.288319+00:00",
+    "scope": "Structural proof of coherent supported original-horse forequarter under approved rear, treating chest, shoulder attachment and local skin articulation together; first posed-strain experiment, no final-motion or coat claim.",
+    "unit_id": "horse-forequarter-structural387",
+    "method_family": "positive_volume_skin_embedding",
+    "hypothesis": "An explicitconnected anatomicalvolume can replace sourcebad mass; true triangle/crossing checks distinguish parameterizationfailure from visualgoal/constructionfailure.",
+    "method": "Positive smooth-union anatomical volume followed by one-pose existing-skin fit, actual joint anchors. Not source-curvature fairing or pectoral offsets.",
+    "source_bindings": 866,
+    "brief_bytes": 212316,
+    "state_bytes": 1087515,
+    "native_jobs": 0,
+    "native_failed": 0,
+    "unique_returned_images": 0,
+    "image_bindings": [],
+    "review_dispositions": [],
+    "reviewed_artistic_images": false,
+    "scoped_artistic_pass": false,
+    "closeouts": [
+      {
+        "binding": {
+          "path": "results/sikh387/CYCLE244_CLOSEOUT.json",
+          "sha256": "028aec89b0ae0ffab898234942f63dc0ff5d2b4c193cbc7a14e1482ccade81ec"
+        },
+        "record": {
+          "cycle": 244,
+          "statuses": {
+            "__forequarter_method__": "FAIL",
+            "director_form_motion": "UNKNOWN",
+            "form": "FAIL",
+            "__requirements__": "FAIL",
+            "__allowance__": "FAIL",
+            "evidence": "FAIL",
+            "whole_look": "FAIL",
+            "__positive_forequarter_form__": "FAIL",
+            "interfaces": "FAIL"
+          },
+          "observation": "Positivevolume pointprojection converges mathematically but is not a valid skin:228nearcollapsedtriangles,4095introducedcrossings, max290.63mm exceeds declared200mmcap. Actual sourcealready has473crossings in testedregion; preservation ofthatbaseline isnotanatomicalapproval. Targetnotexported/nativeNOT_RUN. Reject pointwiseprojection; test topology-aware elasticfit against samevolume, not primitive/gainvariants.",
+          "evidence": [
+            "results/sikh387/numeric244.json",
+            "results/sikh387/numeric244-run.json",
+            ".runtime/art-direction/anatomy386-targets/envelope387-244-diagnostic.npz"
+          ],
+          "max": 251
+        }
+      }
+    ]
+  },
+  {
+    "cycle": 245,
+    "max": 251,
+    "stage": "EXECUTING",
+    "event": "sikh387-c245-__forequarter_method__-structure-admit-diagnostic-effect",
+    "utc": "2026-10-27T19:33:05.101885+00:00",
+    "scope": "Structural proof of coherent supported original-horse forequarter under approved rear, treating chest, shoulder attachment and local skin articulation together; first posed-strain experiment, no final-motion or coat claim.",
+    "unit_id": "horse-forequarter-structural387",
+    "method_family": "positive_volume_goal_native_qualification",
+    "hypothesis": "Separate nativevolume review can distinguish an incorrect3Dgoal from inability toembed existing skin, preventing optimizationagainstwrongtarget.",
+    "method": "Separate qualification of the explicit244positivevolume before further skin fitting: inert marching-cubes modelingstudy, then actualnative anatomical multianglejudgment.",
+    "source_bindings": 873,
+    "brief_bytes": 213456,
+    "state_bytes": 1089282,
+    "native_jobs": 0,
+    "native_failed": 0,
+    "unique_returned_images": 0,
+    "image_bindings": [],
+    "review_dispositions": [],
+    "reviewed_artistic_images": false,
+    "scoped_artistic_pass": false,
+    "closeouts": [
+      {
+        "binding": {
+          "path": "results/sikh387/CYCLE245_CLOSEOUT.json",
+          "sha256": "d023824378ad725ecceeaef0759f077a51e90fba0361154eee98e464d13637fd"
+        },
+        "record": {
+          "cycle": 245,
+          "statuses": {
+            "__requirements__": "UNKNOWN",
+            "director_form_motion": "UNKNOWN",
+            "__positive_forequarter_form__": "UNKNOWN",
+            "__forequarter_method__": "UNKNOWN",
+            "interfaces": "UNKNOWN",
+            "evidence": "UNKNOWN",
+            "form": "UNKNOWN",
+            "__allowance__": "UNKNOWN",
+            "whole_look": "UNKNOWN"
+          },
+          "observation": "Numeric marching-cubes produced finite bounded modelingstudy mesh, not an anatomicalpass. Positivevolume itself stillrequiresnative review; no skinfit or animationcreated.",
+          "evidence": [
+            "results/sikh387/numeric245.json",
+            "results/sikh387/numeric245-run.json",
+            ".runtime/art-direction/anatomy386-references/envelope387-245.npz"
+          ],
+          "max": 251
+        }
+      }
+    ]
+  },
+  {
+    "cycle": 246,
+    "max": 251,
+    "stage": "EXECUTING",
+    "event": "sikh387-c246-__forequarter_method__-structure-admit-actual-effect",
+    "utc": "2026-10-27T19:42:25.380886+00:00",
+    "scope": "Structural proof of coherent supported original-horse forequarter under approved rear, treating chest, shoulder attachment and local skin articulation together; first posed-strain experiment, no final-motion or coat claim.",
+    "unit_id": "horse-forequarter-structural387",
+    "method_family": "positive_volume_goal_native_qualification",
+    "hypothesis": "Separate nativevolume review can distinguish an incorrect3Dgoal from inability toembed existing skin, preventing optimizationagainstwrongtarget.",
+    "method": "Separate qualification of the explicit244positivevolume before further skin fitting: inert marching-cubes modelingstudy, then actualnative anatomical multianglejudgment.",
+    "source_bindings": 885,
+    "brief_bytes": 215642,
+    "state_bytes": 1094948,
+    "native_jobs": 4,
+    "native_failed": 0,
+    "unique_returned_images": 3,
+    "image_bindings": [
+      {
+        "path": ".runtime/factory-native/sikh387-appearance-c246-front/frame.png",
+        "sha256": "6bac63a629b04711b26b35efb85113322ad4cad459fd5e2c145654c8f6cabb46"
+      },
+      {
+        "path": ".runtime/factory-native/sikh387-appearance-c246-opposite/frame.png",
+        "sha256": "0320f457a7a209cc6ab6c63d9de165715c4ff26f6cf6b1254d2909474a0aaf1d"
+      },
+      {
+        "path": ".runtime/factory-native/sikh387-appearance-c246-side/frame.png",
+        "sha256": "739d99df93fedfff5154eb8e9b252d920fa2ce3001ffbce6a0e48b50d2bd4753"
+      }
+    ],
+    "review_dispositions": [
+      {
+        "category": "art_rejected",
+        "observation": "Actual nativevolume study fails horseforequarter anatomy even excluding head/distalleg study boundaries: inflatedcentralsternalball, roundedshoulderknobs, fusedloss of upperarm/armpit structure. A smoothclosedvolume is not the anatomicalgoal. Originalactor notadopted/modified."
+      },
+      {
+        "category": "art_rejected",
+        "observation": "Actual nativevolume study fails horseforequarter anatomy even excluding head/distalleg study boundaries: inflatedcentralsternalball, roundedshoulderknobs, fusedloss of upperarm/armpit structure. A smoothclosedvolume is not the anatomicalgoal. Originalactor notadopted/modified."
+      },
+      {
+        "category": "art_rejected",
+        "observation": "Actual nativevolume study fails horseforequarter anatomy even excluding head/distalleg study boundaries: inflatedcentralsternalball, roundedshoulderknobs, fusedloss of upperarm/armpit structure. A smoothclosedvolume is not the anatomicalgoal. Originalactor notadopted/modified."
+      },
+      {
+        "category": "causal_control_only",
+        "observation": "Modelinggoal and skinfit unqualified."
+      }
+    ],
+    "reviewed_artistic_images": true,
+    "scoped_artistic_pass": false,
+    "closeouts": [
+      {
+        "binding": {
+          "path": "results/sikh387/CYCLE246_CLOSEOUT.json",
+          "sha256": "e966b4915f766c72dd17cf9fa5d936afe02af3a8b0c852666bb7d51b0a48f990"
+        },
+        "record": {
+          "cycle": 246,
+          "steps": [
+            "side",
+            "front",
+            "opposite"
+          ],
+          "observation": "Actual nativevolume study fails horseforequarter anatomy even excluding head/distalleg study boundaries: inflatedcentralsternalball, roundedshoulderknobs, fusedloss of upperarm/armpit structure. A smoothclosedvolume is not the anatomicalgoal. Originalactor notadopted/modified.",
+          "comparison": "246threeviews against realFriesian rear/side and frontpectorals plus237qualifiedgrossside study; these require a supportedcontinuous chest, defined shoulder-to-upperleg relation and no isolatedlobe/knobs. Proxy doesnotmeetthat.",
+          "defects": [
+            "Unnatural inflated sternum mass",
+            "Rounded shoulder knobs and indistinct upperarm attachment",
+            "No credible horse-specific forequarter volume"
+          ],
+          "conclusion": "Rejectproxy as anatomicalgoal and retire currentprimitive construction. Evidence points to construction/representation failure, not missingDirectorartdirection. Preservefive remaining corrections for a narrowly scoped model/method reassessment; no more skinfit to this wronggoal.",
+          "not_run": [
+            "Whole afterthreeanglefailure",
+            "Elasticfit against rejectedgoal",
+            "Fullspeed",
+            "Coat/contact",
+            "DirectorAV"
+          ],
+          "max": 251,
+          "disposition": "art_rejected",
+          "art_candidates": 1
+        }
+      }
+    ]
+  },
+  {
+    "cycle": 247,
+    "max": 251,
+    "stage": "EXECUTING",
+    "event": "sikh387-c247-__forequarter_method__-structure-admit-diagnostic-effect",
+    "utc": "2026-10-27T20:53:01.024401+00:00",
+    "scope": "Structural proof of coherent supported original-horse forequarter under approved rear, treating chest, shoulder attachment and local skin articulation together; first posed-strain experiment, no final-motion or coat claim.",
+    "unit_id": "horse-forequarter-structural387",
+    "method_family": "coupled_actual_owner_rest_metric_reconstruction",
+    "hypothesis": "Allowing the actual proximal forearm interface to participate in original-rest rotational elasticity removes the incompatible chest-only boundary that invalidated227, while retaining accepted distal paths.",
+    "method": "Coupled original-rest rotational elasticity across actual shoulder and proximalforearm, exact distal/outside boundaries. Revisit227 with the previously excluded actual-owner interface freed, not curvatureflow of defective posed skin.",
+    "source_bindings": 896,
+    "brief_bytes": 218301,
+    "state_bytes": 1099653,
+    "native_jobs": 0,
+    "native_failed": 0,
+    "unique_returned_images": 0,
+    "image_bindings": [],
+    "review_dispositions": [],
+    "reviewed_artistic_images": false,
+    "scoped_artistic_pass": false,
+    "closeouts": [
+      {
+        "binding": {
+          "path": "results/sikh387/CYCLE247_CLOSEOUT.json",
+          "sha256": "a316e4d41c865ddc7a3f6da7f5acb14e8ab2550a45ee8400893fe7aabe043cda"
+        },
+        "record": {
+          "cycle": 247,
+          "statuses": {
+            "__requirements__": "FAIL",
+            "director_form_motion": "UNKNOWN",
+            "__positive_forequarter_form__": "FAIL",
+            "__forequarter_method__": "FAIL",
+            "interfaces": "FAIL",
+            "evidence": "FAIL",
+            "form": "FAIL",
+            "__allowance__": "FAIL",
+            "whole_look": "FAIL"
+          },
+          "observation": "Coupled restmetric reconstruction failed:339 moves391mm above200mmguard,353newcrossings andonecollapsedface. Exactdistal/outside andzero/rigidcontrolspass, but thisdoesnotqualifyanatomy. Diagnosticplot showscollapsedupperarmroot. Rejectmethod; no productionimport.",
+          "evidence": [
+            "results/sikh387/numeric247.json",
+            "results/sikh387/numeric247-run.json",
+            "results/sikh388/numeric247-side.png"
+          ],
+          "max": 251
+        }
+      }
+    ]
+  },
+  {
+    "cycle": 248,
+    "max": 251,
+    "stage": "EXECUTING",
+    "event": "sikh387-c248-__forequarter_method__-structure-admit-diagnostic-effect",
+    "utc": "2026-10-27T20:59:16.772715+00:00",
+    "scope": "Structural proof of coherent supported original-horse forequarter under approved rear, treating chest, shoulder attachment and local skin articulation together; first posed-strain experiment, no final-motion or coat claim.",
+    "unit_id": "horse-forequarter-structural387",
+    "method_family": "inherited_lowerneck_corrective_isolation",
+    "hypothesis": "Inherited active neckcorrectives may add largeforward lowerneckmass during rearing; localrelative-delta removal can isolate their contribution without changing acceptedprimaryskeleton.",
+    "method": "Actual inherited neckcorrective isolation: fixed local suppression of relative shape displacements only, originalBasis/actions/joints/weights remain exact. Mode0 actualnegative control thenmode1.",
+    "source_bindings": 913,
+    "brief_bytes": 221040,
+    "state_bytes": 1107181,
+    "native_jobs": 1,
+    "native_failed": 0,
+    "unique_returned_images": 0,
+    "image_bindings": [],
+    "review_dispositions": [
+      {
+        "category": "causal_control_only",
+        "observation": "Zero/keyvalue inspection only. Nonzero candidate/render cancelled because the mechanism is inactive; original anatomy remainsFAIL."
+      }
+    ],
+    "reviewed_artistic_images": false,
+    "scoped_artistic_pass": false,
+    "closeouts": [
+      {
+        "binding": {
+          "path": "results/sikh387/CYCLE248_CLOSEOUT.json",
+          "sha256": "62a850f77a01031848b3d6a377f530cd34c46dc5f5aedf6ed4c050a767a99fca"
+        },
+        "record": {
+          "cycle": 248,
+          "statuses": {
+            "__requirements__": "FAIL",
+            "director_form_motion": "UNKNOWN",
+            "__positive_forequarter_form__": "FAIL",
+            "__forequarter_method__": "FAIL",
+            "interfaces": "FAIL",
+            "evidence": "FAIL",
+            "form": "FAIL",
+            "__allowance__": "FAIL",
+            "whole_look": "FAIL"
+          },
+          "observation": "Actualnative zero control records all inheritedneckcorrectivevalues0 across12poses, including333339346. Activecorrectivebulge hypothesis falsified. Sourcegeometry/actions/skin/matrices unchanged exactly. No nonzero/nativecandidate or artisticrender; downstreamsource/views intentionallyNOT_RUN. Originalanatomy remains rejected. NarrowAstra247248 allowance exhausted;3Solslotsremain.",
+          "evidence": [
+            "results/sikh387/appearance-c248-zero-review.json",
+            ".runtime/factory-native/sikh387-appearance-c248-zero/anatomy388-corrective.json",
+            "results/sikh388/CORRECTIVE_SOURCE_MEASUREMENT.json"
+          ],
+          "max": 251
+        }
+      }
+    ]
+  },
+  {
+    "cycle": 249,
+    "max": 251,
+    "stage": "EXECUTING",
+    "event": "sikh387-c249-__forequarter_method__-structure-admit-diagnostic-effect",
+    "utc": "2026-10-27T21:23:15.941947+00:00",
+    "scope": "Structural proof of coherent supported original-horse forequarter under approved rear, treating chest, shoulder attachment and local skin articulation together; first posed-strain experiment, no final-motion or coat claim.",
+    "unit_id": "horse-forequarter-structural387",
+    "method_family": "native_dual_quaternion_local_skin_interpolation",
+    "hypothesis": "Source linear blending contributes to the forequarter fold; native rigid-rotation blending will restore a connected supported surface under unchanged bone performance.",
+    "method": "Actual native dual-quaternion skinning with a connected forequarter displacement mask, exact outside/head/distal positions and original skeleton;183sample shot derivative only.",
+    "source_bindings": 930,
+    "brief_bytes": 223574,
+    "state_bytes": 1113070,
+    "native_jobs": 2,
+    "native_failed": 1,
+    "unique_returned_images": 0,
+    "image_bindings": [],
+    "review_dispositions": [
+      {
+        "category": "causal_control_only",
+        "observation": "Anatomical form and full-speed remain unpassed."
+      }
+    ],
+    "reviewed_artistic_images": false,
+    "scoped_artistic_pass": false,
+    "closeouts": [
+      {
+        "binding": {
+          "path": "results/sikh387/CYCLE249_CLOSEOUT.json",
+          "sha256": "3e499bac56eb7bba8531525595cfaa4b0a211b4dcf79f9db1e73ac0eb335ede8"
+        },
+        "record": {
+          "cycle": 249,
+          "statuses": {
+            "__positive_forequarter_form__": "FAIL",
+            "director_form_motion": "UNKNOWN",
+            "whole_look": "FAIL",
+            "form": "FAIL",
+            "__requirements__": "FAIL",
+            "evidence": "FAIL",
+            "interfaces": "FAIL",
+            "__forequarter_method__": "FAIL",
+            "__allowance__": "FAIL"
+          },
+          "observation": "Native no-edit control passed;12pose DQ data exact outside/joints max140.88mm, but dense alternative exceeded200mm surface guard after120samples. Worker failed with SKINNING389_DENSE_LIMIT; no returned candidate/no artpass. Cache-before-static-preview sequencing error identified; nextproof must snapshot actual339before any densecache. No surface guard waived.",
+          "evidence": [
+            "results/sikh387/appearance-c249-source-run.json",
+            ".runtime/factory-native/sikh387-appearance-c249-source/anatomy389-skinning.json",
+            ".runtime/factory-native/sikh387-appearance-c249-source/worker-status.json"
+          ],
+          "max": 251
+        }
+      }
+    ]
+  },
+  {
+    "cycle": 250,
+    "max": 251,
+    "stage": "EXECUTING",
+    "event": "sikh387-c250-__forequarter_method__-structure-admit-actual-effect",
+    "utc": "2026-10-27T21:30:10.475882+00:00",
+    "scope": "Structural proof of coherent supported original-horse forequarter under approved rear, treating chest, shoulder attachment and local skin articulation together; first posed-strain experiment, no final-motion or coat claim.",
+    "unit_id": "horse-forequarter-structural387",
+    "method_family": "native_dual_quaternion_static_form_discriminator",
+    "hypothesis": "A native339static proof distinguishes anatomical viability of local DQ from the failed dense-cache boundary without changing source action or relaxing the cap.",
+    "method": "Actual native static339 connected dual-quaternion skinning form proof before any time-cache construction. New shape only; original data/primary actions/exterior preserved.",
+    "source_bindings": 941,
+    "brief_bytes": 225534,
+    "state_bytes": 1116042,
+    "native_jobs": 2,
+    "native_failed": 0,
+    "unique_returned_images": 1,
+    "image_bindings": [
+      {
+        "path": ".runtime/factory-native/sikh387-appearance-c250-side/frame.png",
+        "sha256": "6da8b7c7687b475069314e4d17372078731f0dade60aa7ad2e28fb9bdd38ade0"
+      }
+    ],
+    "review_dispositions": [
+      {
+        "category": "art_rejected",
+        "observation": "Actual native side339 retains a broad projecting shelf/bib below the neck and sharp unsupported shoulder/upperarm insertion. DQ changes volume but does not supply coherent horse anatomy. This is not a production-ready or positive micro-appearance proof."
+      },
+      {
+        "category": "causal_control_only",
+        "observation": "Anatomical form and full-speed remain unpassed."
+      }
+    ],
+    "reviewed_artistic_images": true,
+    "scoped_artistic_pass": false,
+    "closeouts": [
+      {
+        "binding": {
+          "path": "results/sikh387/CYCLE250_CLOSEOUT.json",
+          "sha256": "268471f20cf2325ba5f81fdfd13681e5117b10f6fc6cf40117565037b0d7cb71"
+        },
+        "record": {
+          "cycle": 250,
+          "steps": [
+            "side"
+          ],
+          "observation": "Actual native side339 retains a broad projecting shelf/bib below the neck and sharp unsupported shoulder/upperarm insertion. DQ changes volume but does not supply coherent horse anatomy. This is not a production-ready or positive micro-appearance proof.",
+          "comparison": "Compared actual side250 with source/failed243 and the real Friesian rear plus limited237B form reference: required flowing supported chest/shoulder transition absent.",
+          "defects": [
+            "projecting lower-neck/chest shelf",
+            "unsupported shoulder/upperarm root",
+            "connected anatomical form unresolved"
+          ],
+          "conclusion": "Local DQ representation is insufficient; retire it for this anatomy goal. No strength sweep or dense-cache continuation. One shared correction remains for changed construction.",
+          "not_run": [
+            "front",
+            "opposite",
+            "whole",
+            "333/346 not supported by static derivative",
+            "moving/contact/coat/fullsequence/DirectorAV"
+          ],
+          "max": 251,
+          "disposition": "art_rejected",
+          "art_candidates": 1
+        }
+      }
+    ]
+  },
+  {
+    "cycle": 251,
+    "max": 251,
+    "stage": "REPLAN_REQUIRED",
+    "event": "sikh389-exhausted251",
+    "utc": "2026-10-27T21:39:31.885090+00:00",
+    "scope": "Structural proof of coherent supported original-horse forequarter under approved rear, treating chest, shoulder attachment and local skin articulation together; first posed-strain experiment, no final-motion or coat claim.",
+    "unit_id": "horse-forequarter-structural387",
+    "method_family": "authored_connected_forequarter_volume_stroke",
+    "hypothesis": "One common smoothmaterial stroke acrosschest/rootsoftissue willrecessandliftthelowanteriorledge without thegroupmaskedbordersteps orposedfairing collapse seenbefore.",
+    "method": "Fixed direct continuous forequarter form sculpt on actual originalLBS339, with one broad material support across chest/shoulder roots; static native proof before any motion.",
+    "source_bindings": 953,
+    "brief_bytes": 227602,
+    "state_bytes": 1120512,
+    "native_jobs": 2,
+    "native_failed": 0,
+    "unique_returned_images": 1,
+    "image_bindings": [
+      {
+        "path": ".runtime/factory-native/sikh387-appearance-c251-side/frame.png",
+        "sha256": "2f7f55b62cca79b9311ce2e5601f0e86f1ae336760457964fecb246742fd21ff"
+      }
+    ],
+    "review_dispositions": [
+      {
+        "category": "art_rejected",
+        "observation": "Actual native side339 still has a rigid projecting lowerneck/chest shelf, an angular unsupported shoulder root and a newly pinched lower chest contour. Smallerfrontmass is not connected anatomical support. Native geometry diagnostic also found83introduced trianglecrossings (473source,483target), so candidate fails structure and visibleform."
+      },
+      {
+        "category": "causal_control_only",
+        "observation": "Static source transport only; anatomy remains unjudged."
+      }
+    ],
+    "reviewed_artistic_images": true,
+    "scoped_artistic_pass": false,
+    "closeouts": [
+      {
+        "binding": {
+          "path": "results/sikh387/CYCLE251_CLOSEOUT.json",
+          "sha256": "157cf7accc7749e137bd224c525833d56a8c8521676ebeddf1097003d2ce8305"
+        },
+        "record": {
+          "cycle": 251,
+          "steps": [
+            "side"
+          ],
+          "observation": "Actual native side339 still has a rigid projecting lowerneck/chest shelf, an angular unsupported shoulder root and a newly pinched lower chest contour. Smallerfrontmass is not connected anatomical support. Native geometry diagnostic also found83introduced trianglecrossings (473source,483target), so candidate fails structure and visibleform.",
+          "comparison": "Matched actual250/251side and physicalFriesian supported chest/shoulder reference:251recesses theledge without reconstructing its attachment. No anatomical positiveproof. Not compared only to previousfailure.",
+          "defects": [
+            "rigid lowerneck/chest ledge",
+            "angular unsupported shoulder root",
+            "pinched chest contour",
+            "83 newly introduced surface intersections"
+          ],
+          "conclusion": "Last approved251fails. Directfieldsculpt and nativeDQ do not resolve the originalforequarter construction. Preserve all failures and acceptedmasters; currentsharedallowance exhausted. No newgainvariant, model escalation, actor swap or productionqueue.",
+          "not_run": [
+            "front",
+            "opposite",
+            "whole",
+            "othernativeposes",
+            "motion/contact/coat/fullsequence/DirectorAV"
+          ],
+          "max": 251,
+          "disposition": "art_rejected",
+          "art_candidates": 1,
+          "closure": "Actual native review already recorded; oversized general retrospective packet stayed blocked. Used full canonical pending-effect snapshot for failed-outcome bookkeeping only, no new admission or history omission."
+        }
+      }
+    ]
+  },
+  {
+    "cycle": 252,
+    "max": 261,
+    "stage": "BRIEFING",
+    "event": "sikh390-ten",
+    "utc": "2026-10-27T21:52:37.956839+00:00",
+    "scope": null,
+    "unit_id": null,
+    "method_family": null,
+    "hypothesis": null,
+    "method": null,
+    "source_bindings": 0,
+    "brief_bytes": 2,
+    "state_bytes": 623693,
+    "native_jobs": 0,
+    "native_failed": 0,
+    "unique_returned_images": 0,
+    "image_bindings": [],
+    "review_dispositions": [],
+    "reviewed_artistic_images": false,
+    "scoped_artistic_pass": false,
+    "closeouts": []
+  },
+  {
+    "cycle": 253,
+    "max": 261,
+    "stage": "EXECUTING",
+    "event": "sikh390-c253-__forequarter_method__-structure-admit-diagnostic-effect",
+    "utc": "2026-10-27T22:15:46.382345+00:00",
+    "scope": "Construct a supported connected original-horse forequarter surface and skin binding together: chest, both shoulder/upper-leg origins and lower-neck transition. Preserve accepted action and identity; require neutral and raised physical form before moving finish.",
+    "unit_id": "horse-forequarter-graft390",
+    "method_family": "local_topological_graft_and_harmonic_binding",
+    "hypothesis": "A coherent four-boundary anatomical patch, welded to original outer skin and harmonically bound, supports chest/shoulder form without inheriting the distorted originalinterior.",
+    "method": "Four-ring local topological mesh graft with coherent boundary-constrained registration and harmonic regional skin binding; original outside polygons/points/weights retained. Numeric construction before actual native neutral/raised proof.",
+    "source_bindings": 962,
+    "brief_bytes": 230322,
+    "state_bytes": 1199313,
+    "native_jobs": 0,
+    "native_failed": 0,
+    "unique_returned_images": 0,
+    "image_bindings": [],
+    "review_dispositions": [],
+    "reviewed_artistic_images": false,
+    "scoped_artistic_pass": false,
+    "closeouts": [
+      {
+        "binding": {
+          "path": "results/sikh387/CYCLE253_CLOSEOUT.json",
+          "sha256": "04c2dfaeacdde6e35ad6a2601a035445370c1140c06576c2b90f654db9ae465c"
+        },
+        "record": {
+          "cycle": 253,
+          "statuses": {
+            "form": "FAIL",
+            "whole_look": "FAIL",
+            "__forequarter_method__": "FAIL",
+            "__positive_forequarter_form__": "FAIL",
+            "director_form_motion": "UNKNOWN",
+            "__requirements__": "FAIL",
+            "__allowance__": "FAIL",
+            "interfaces": "FAIL",
+            "evidence": "FAIL"
+          },
+          "observation": "Numeric graft construction rejected before candidate at GRAFT390_WEIGHT_SOLVE: source84groups include body/mane/tail/eyelash selection masks, so all-group partition test was invalid for new bonebinding. Actual use_deform flags available in prior129capture; next construction will use explicit effective-bone columns. No native image/anatomy result or positiveproof.",
+          "evidence": [
+            "results/sikh390/numeric253-run.json",
+            "results/sikh390/WEIGHT253_DISCOVERY.json"
+          ],
+          "max": 261
+        }
+      }
+    ]
+  },
+  {
+    "cycle": 254,
+    "max": 261,
+    "stage": "EXECUTING",
+    "event": "sikh390-c254-__forequarter_method__-structure-admit-diagnostic-effect",
+    "utc": "2026-10-27T22:30:44.677942+00:00",
+    "scope": "Construct a supported connected original-horse forequarter surface and skin binding together: chest, both shoulder/upper-leg origins and lower-neck transition. Preserve accepted action and identity; require neutral and raised physical form before moving finish.",
+    "unit_id": "horse-forequarter-graft390",
+    "method_family": "local_topological_graft_effective_deform_binding",
+    "hypothesis": "The fourringpositivepatch can be bound using only actualeffectiveboneweights;source nondeformingmasks cannot invalidate partition or affectdeformation.",
+    "method": "Four-ring local topological mesh graft with coherent boundary-constrained registration and harmonic regional skin binding; original outside polygons/points/weights retained. Numeric construction before actual native neutral/raised proof.",
+    "source_bindings": 970,
+    "brief_bytes": 231675,
+    "state_bytes": 1200941,
+    "native_jobs": 0,
+    "native_failed": 0,
+    "unique_returned_images": 0,
+    "image_bindings": [],
+    "review_dispositions": [],
+    "reviewed_artistic_images": false,
+    "scoped_artistic_pass": false,
+    "closeouts": [
+      {
+        "binding": {
+          "path": "results/sikh390/CYCLE254_CLOSEOUT.json",
+          "sha256": "8d7ca5494a706c0956766b7d1408d799e95aa8fd0085239ff1b6475914219330"
+        },
+        "record": {
+          "cycle": 254,
+          "statuses": {
+            "evidence": "FAIL",
+            "whole_look": "FAIL",
+            "__allowance__": "FAIL",
+            "interfaces": "FAIL",
+            "__requirements__": "FAIL",
+            "__positive_forequarter_form__": "FAIL",
+            "director_form_motion": "UNKNOWN",
+            "__forequarter_method__": "FAIL",
+            "form": "FAIL"
+          },
+          "observation": "Actual numeric local graft is closed manifold/Euler2 with valid80bonepartition but151restintersections. Localization:62patch/original,48patch/collar,33patch/patch,8collar/original, concentrated neck/barrel/legcollars. A vertical guide neckcut was mapped to a horizontal sourcecut, causing large682.97mm registration and overfolded boundary collars; one fixed collaroffset also overlaps jagged sourcecut rings. No nativecandidate or positiveanatomy.",
+          "evidence": [
+            "results/sikh390/numeric254-run.json",
+            "results/sikh390/numeric254.json",
+            "results/sikh390/INTERSECTIONS254.json",
+            "results/sikh390/graft254-diagnostic.png"
+          ],
+          "max": 261
+        }
+      }
+    ]
+  },
+  {
+    "cycle": 255,
+    "max": 261,
+    "stage": "EXECUTING",
+    "event": "sikh390-c255-__forequarter_method__-structure-admit-diagnostic-effect",
+    "utc": "2026-10-27T22:40:34.395920+00:00",
+    "scope": "Construct a supported connected original-horse forequarter surface and skin binding together: chest, both shoulder/upper-leg origins and lower-neck transition. Preserve accepted action and identity; require neutral and raised physical form before moving finish.",
+    "unit_id": "horse-forequarter-graft390",
+    "method_family": "local_topological_graft_registered_cut_frames",
+    "hypothesis": "Alignedneckcutframes avoid thepreviouslargewarp, and innerplanes beyondsourceboundaryextrema preventcollarpenetration while retainingpositiveguideform.",
+    "method": "Four-ring local topological mesh graft with coherent boundary-constrained registration and harmonic regional skin binding; original outside polygons/points/weights retained. Numeric construction before actual native neutral/raised proof.",
+    "source_bindings": 978,
+    "brief_bytes": 232984,
+    "state_bytes": 1203523,
+    "native_jobs": 0,
+    "native_failed": 0,
+    "unique_returned_images": 0,
+    "image_bindings": [],
+    "review_dispositions": [],
+    "reviewed_artistic_images": false,
+    "scoped_artistic_pass": false,
+    "closeouts": [
+      {
+        "binding": {
+          "path": "results/sikh390/CYCLE255_CLOSEOUT.json",
+          "sha256": "541cfd2e95476cef2d59be543c7af1953b4cad228af9f366c1e7fb81a17edc8a"
+        },
+        "record": {
+          "cycle": 255,
+          "statuses": {
+            "__positive_forequarter_form__": "FAIL",
+            "__allowance__": "FAIL",
+            "__requirements__": "FAIL",
+            "interfaces": "FAIL",
+            "whole_look": "FAIL",
+            "evidence": "FAIL",
+            "__forequarter_method__": "FAIL",
+            "director_form_motion": "UNKNOWN",
+            "form": "FAIL"
+          },
+          "observation": "Alignedcut/planarcollar construction remains rejected: closed orientableEuler2 but84restintersections, downfrom151; maximumguidewarp404.33mm. This is not positive anatomy. Next discriminator compares pre-ARAP harmonicregistration to the relaxedpatch to test whether local-rigidity relaxation introduces crossings. No nativecandidate or guardwaiver.",
+          "evidence": [
+            "results/sikh390/numeric255-run.json",
+            "results/sikh390/numeric255.json"
+          ],
+          "max": 261
+        }
+      }
+    ]
+  },
+  {
+    "cycle": 256,
+    "max": 261,
+    "stage": "EXECUTING",
+    "event": "sikh390-c256-__forequarter_method__-structure-admit-diagnostic-effect",
+    "utc": "2026-10-27T22:47:45.408708+00:00",
+    "scope": "Construct a supported connected original-horse forequarter surface and skin binding together: chest, both shoulder/upper-leg origins and lower-neck transition. Preserve accepted action and identity; require neutral and raised physical form before moving finish.",
+    "unit_id": "horse-forequarter-graft390",
+    "method_family": "local_topological_graft_registration_discriminator",
+    "hypothesis": "ARAPrelaxation may introducefolds into a valid harmonicboundarywarp; comparingthetwo underidenticalgeometry/boundaries isolates thiscause.",
+    "method": "Four-ring local topological mesh graft with coherent boundary-constrained registration and harmonic regional skin binding; original outside polygons/points/weights retained. Numeric construction before actual native neutral/raised proof.",
+    "source_bindings": 984,
+    "brief_bytes": 233952,
+    "state_bytes": 1205414,
+    "native_jobs": 0,
+    "native_failed": 0,
+    "unique_returned_images": 0,
+    "image_bindings": [],
+    "review_dispositions": [],
+    "reviewed_artistic_images": false,
+    "scoped_artistic_pass": false,
+    "closeouts": [
+      {
+        "binding": {
+          "path": "results/sikh390/CYCLE256_CLOSEOUT.json",
+          "sha256": "9eb127ea52f51c5219d870bfa8b91af4508f3463640ff950a5089d3c803de298"
+        },
+        "record": {
+          "cycle": 256,
+          "statuses": {
+            "__forequarter_method__": "FAIL",
+            "form": "FAIL",
+            "interfaces": "FAIL",
+            "whole_look": "FAIL",
+            "director_form_motion": "UNKNOWN",
+            "__allowance__": "FAIL",
+            "__requirements__": "FAIL",
+            "__positive_forequarter_form__": "FAIL",
+            "evidence": "FAIL"
+          },
+          "observation": "256harmonicboundarywarp stillfails65restcrossings; sameboundaryARAPcontrol has84. Relaxationalone isnotcause. Source4ringlandmarks permit proper globalalignment (det0.49845,SVD0.647..1.041) beforelocalwarp, which current method omitted. No nativecandidate or anatomy pass.",
+          "evidence": [
+            "results/sikh390/numeric256-run.json",
+            "results/sikh390/numeric256.json",
+            "results/sikh390/AFFINE_FEASIBILITY.json"
+          ],
+          "max": 261
+        }
+      }
+    ]
+  },
+  {
+    "cycle": 257,
+    "max": 261,
+    "stage": "EXECUTING",
+    "event": "sikh390-c257-__forequarter_method__-structure-admit-diagnostic-effect",
+    "utc": "2026-10-27T22:57:02.302338+00:00",
+    "scope": "Construct a supported connected original-horse forequarter surface and skin binding together: chest, both shoulder/upper-leg origins and lower-neck transition. Preserve accepted action and identity; require neutral and raised physical form before moving finish.",
+    "unit_id": "horse-forequarter-graft390",
+    "method_family": "local_topological_graft_proper_frame_alignment",
+    "hypothesis": "Aligning all four anatomicalboundarylandmarks jointly removes systematicsource/guide frame mismatch before localwarp, yielding a validconnectedrestgraft.",
+    "method": "Four-ring local topological mesh graft with coherent boundary-constrained registration and harmonic regional skin binding; original outside polygons/points/weights retained. Numeric construction before actual native neutral/raised proof.",
+    "source_bindings": 991,
+    "brief_bytes": 235107,
+    "state_bytes": 1207720,
+    "native_jobs": 0,
+    "native_failed": 0,
+    "unique_returned_images": 0,
+    "image_bindings": [],
+    "review_dispositions": [],
+    "reviewed_artistic_images": false,
+    "scoped_artistic_pass": false,
+    "closeouts": [
+      {
+        "binding": {
+          "path": "results/sikh390/CYCLE257_CLOSEOUT.json",
+          "sha256": "b8e1e676648c7cda1b80bd4df6c2ccbda4cb8638e3b084bfb176459157b46817"
+        },
+        "record": {
+          "cycle": 257,
+          "statuses": {
+            "interfaces": "FAIL",
+            "__positive_forequarter_form__": "FAIL",
+            "whole_look": "FAIL",
+            "__forequarter_method__": "FAIL",
+            "evidence": "FAIL",
+            "__allowance__": "FAIL",
+            "director_form_motion": "UNKNOWN",
+            "form": "FAIL",
+            "__requirements__": "FAIL"
+          },
+          "observation": "257properframealignment reduces harmonicrestcrossings to5, ARAPcontrol4. Newlocalization: no original/patch crossings; remaining4patchself nearlegLinnerjoin,1patch/collar neck. Multiplelegtriangles lieon sameinnerplane, indicating boundary-foldback ratherthanglobalframeerror. StillFAIL, no nativecandidate. Next explicitcollartangent/axialorder control beforeactualBMesh.",
+          "evidence": [
+            "results/sikh390/numeric257-run.json",
+            "results/sikh390/numeric257.json",
+            "results/sikh390/INTERSECTIONS257.json"
+          ],
+          "max": 261
+        }
+      }
+    ]
+  },
+  {
+    "cycle": 258,
+    "max": 261,
+    "stage": "EXECUTING",
+    "event": "sikh390-c258-__forequarter_method__-structure-admit-diagnostic-effect",
+    "utc": "2026-10-27T23:05:51.333160+00:00",
+    "scope": "Construct a supported connected original-horse forequarter surface and skin binding together: chest, both shoulder/upper-leg origins and lower-neck transition. Preserve accepted action and identity; require neutral and raised physical form before moving finish.",
+    "unit_id": "horse-forequarter-graft390",
+    "method_family": "local_topological_graft_collar_tangent",
+    "hypothesis": "Advancing firstinteriorrows coherently into thepatch prevents localizedringfoldback underpositionalboundarymatching.",
+    "method": "Four-ring local topological mesh graft with coherent boundary-constrained registration and harmonic regional skin binding; original outside polygons/points/weights retained. Numeric construction before actual native neutral/raised proof.",
+    "source_bindings": 998,
+    "brief_bytes": 236196,
+    "state_bytes": 1209640,
+    "native_jobs": 0,
+    "native_failed": 0,
+    "unique_returned_images": 0,
+    "image_bindings": [],
+    "review_dispositions": [],
+    "reviewed_artistic_images": false,
+    "scoped_artistic_pass": false,
+    "closeouts": [
+      {
+        "binding": {
+          "path": "results/sikh390/CYCLE258_CLOSEOUT.json",
+          "sha256": "6d50e10e83ccb499d1cefd27635662484350dee5c1b705db041388fc1b8a10a9"
+        },
+        "record": {
+          "cycle": 258,
+          "statuses": {
+            "interfaces": "FAIL",
+            "__positive_forequarter_form__": "FAIL",
+            "whole_look": "FAIL",
+            "__forequarter_method__": "FAIL",
+            "evidence": "FAIL",
+            "__allowance__": "FAIL",
+            "director_form_motion": "UNKNOWN",
+            "form": "FAIL",
+            "__requirements__": "FAIL"
+          },
+          "observation": "258 collar-tangent construction FAIL: eleven rest intersections, ARAP control five. Selected original guide patch has zero crossings and all four fitted boundary loops are simple; first-row inward constraints alone introduced internal foldbacks. Need nonlinear registration path rather than stricter axial offsets. No native candidate or artistic pass.",
+          "evidence": [
+            "results/sikh390/numeric258-run.json",
+            "results/sikh390/numeric258.json",
+            "results/sikh390/INTERSECTIONS258.json",
+            "results/sikh390/GUIDE258_CONTROL.json",
+            "results/sikh390/BOUNDARY258_CONTROL.json"
+          ],
+          "max": 261
+        }
+      }
+    ]
+  },
+  {
+    "cycle": 259,
+    "max": 261,
+    "stage": "EXECUTING",
+    "event": "sikh390-c259-__forequarter_method__-structure-admit-diagnostic-effect",
+    "utc": "2026-10-27T23:10:52.182769+00:00",
+    "scope": "Construct a supported connected original-horse forequarter surface and skin binding together: chest, both shoulder/upper-leg origins and lower-neck transition. Preserve accepted action and identity; require neutral and raised physical form before moving finish.",
+    "unit_id": "horse-forequarter-graft390",
+    "method_family": "local_topological_graft_incremental_arap",
+    "hypothesis": "Starting from clean reference and following24small boundary deformations avoids folded full-displacement initialization.",
+    "method": "Proper affine frame, 24 incremental boundary/ARAP registration steps, four-ring welded local topology and harmonic skin binding; exact original exterior.",
+    "source_bindings": 1006,
+    "brief_bytes": 236936,
+    "state_bytes": 1210776,
+    "native_jobs": 0,
+    "native_failed": 0,
+    "unique_returned_images": 0,
+    "image_bindings": [],
+    "review_dispositions": [],
+    "reviewed_artistic_images": false,
+    "scoped_artistic_pass": false,
+    "closeouts": [
+      {
+        "binding": {
+          "path": "results/sikh390/CYCLE259_CLOSEOUT.json",
+          "sha256": "2cbf6757b35c3003d415b12243d85823e2f766b3406197744333ae1e9a3bf83b"
+        },
+        "record": {
+          "cycle": 259,
+          "statuses": {
+            "interfaces": "FAIL",
+            "__positive_forequarter_form__": "FAIL",
+            "whole_look": "FAIL",
+            "__forequarter_method__": "FAIL",
+            "evidence": "FAIL",
+            "__allowance__": "FAIL",
+            "director_form_motion": "UNKNOWN",
+            "form": "FAIL",
+            "__requirements__": "FAIL"
+          },
+          "observation": "259 incremental ARAP failed: all interior patches clean through21of24steps, four new interior crossings at22remainingat24. No newcollar/original crossings. This isolates a late deformation/contact problem, not bad guide or sourceinterface. Mathematical surface energy alone does not preserve nonintersection. No nativecandidate.",
+          "evidence": [
+            "results/sikh390/numeric259-run.json",
+            "results/sikh390/numeric259.json",
+            "results/sikh390/INTERSECTIONS259.json"
+          ],
+          "max": 261
+        }
+      }
+    ]
+  },
+  {
+    "cycle": 260,
+    "max": 261,
+    "stage": "EXECUTING",
+    "event": "sikh390-c260-__forequarter_method__-structure-admit-diagnostic-effect",
+    "utc": "2026-10-27T23:15:45.563693+00:00",
+    "scope": "Construct a supported connected original-horse forequarter surface and skin binding together: chest, both shoulder/upper-leg origins and lower-neck transition. Preserve accepted action and identity; require neutral and raised physical form before moving finish.",
+    "unit_id": "horse-forequarter-graft390",
+    "method_family": "local_topological_graft_contact_local_repair",
+    "hypothesis": "One small internal late-stagefold can be removed by local curvature reduction while preserving allrings and outside.",
+    "method": "24step nonlinear registration followed by one actual contact-local harmonic fold repair, four-ring graft topology and new regional skin binding.",
+    "source_bindings": 1013,
+    "brief_bytes": 238009,
+    "state_bytes": 1213013,
+    "native_jobs": 0,
+    "native_failed": 0,
+    "unique_returned_images": 0,
+    "image_bindings": [],
+    "review_dispositions": [],
+    "reviewed_artistic_images": false,
+    "scoped_artistic_pass": false,
+    "closeouts": [
+      {
+        "binding": {
+          "path": "results/sikh390/CYCLE260_CLOSEOUT.json",
+          "sha256": "9e62e645b0f4c1f318f879fd7d9a29b6e39f6e7d8ecd4c23cb569bb35ac3298d"
+        },
+        "record": {
+          "cycle": 260,
+          "statuses": {
+            "interfaces": "FAIL",
+            "__positive_forequarter_form__": "FAIL",
+            "whole_look": "FAIL",
+            "__forequarter_method__": "FAIL",
+            "evidence": "FAIL",
+            "__allowance__": "FAIL",
+            "director_form_motion": "UNKNOWN",
+            "form": "FAIL",
+            "__requirements__": "FAIL"
+          },
+          "observation": "260 local minimum-surface repair rejected by unchanged30mm scope bound:138.45mm demanded. No graft saved, nativeNOT_RUN. A two-ring topological neighbourhood on this low-resolution guide spans too large an anatomical region; unconstrained positional smoothing is unsuitable, not a reason to widen movement limit. Next narrow contact separation must preserve reference shape instead.",
+          "evidence": [
+            "results/sikh390/numeric260-run.json",
+            "results/sikh390/numeric260.log"
+          ],
+          "max": 261
+        }
+      }
+    ]
+  },
+  {
+    "cycle": 261,
+    "max": 261,
+    "stage": "REPLAN_REQUIRED",
+    "event": "sikh390-exhausted-native-proof-needed",
+    "utc": "2026-10-27T23:22:59.549273+00:00",
+    "scope": "Construct a supported connected original-horse forequarter surface and skin binding together: chest, both shoulder/upper-leg origins and lower-neck transition. Preserve accepted action and identity; require neutral and raised physical form before moving finish.",
+    "unit_id": "horse-forequarter-graft390",
+    "method_family": "local_topological_graft_reference_contact_qp",
+    "hypothesis": "Maintaining side-order from the last clean surface with minimal bounded displacement resolves the small fold without flattening the whole region.",
+    "method": "Incremental ARAP registration plus last-clean-reference-sided contact separation QP, exact outer/rings and30mm bound; final four-ring manifold and skin binding proof.",
+    "source_bindings": 1019,
+    "brief_bytes": 239166,
+    "state_bytes": 1215539,
+    "native_jobs": 0,
+    "native_failed": 0,
+    "unique_returned_images": 0,
+    "image_bindings": [],
+    "review_dispositions": [],
+    "reviewed_artistic_images": false,
+    "scoped_artistic_pass": false,
+    "closeouts": [
+      {
+        "binding": {
+          "path": "results/sikh390/CYCLE261_CLOSEOUT.json",
+          "sha256": "1ad9c2289c43df4ad9dfcb97c3bc0ad07e0cd4dbe444b7a92783c68fed79d32d"
+        },
+        "record": {
+          "cycle": 261,
+          "statuses": {
+            "interfaces": "UNKNOWN",
+            "__positive_forequarter_form__": "UNKNOWN",
+            "whole_look": "UNKNOWN",
+            "__forequarter_method__": "UNKNOWN",
+            "evidence": "UNKNOWN",
+            "__allowance__": "FAIL",
+            "director_form_motion": "UNKNOWN",
+            "form": "UNKNOWN",
+            "__requirements__": "UNKNOWN"
+          },
+          "observation": "261 inert rest construction passes: zero new-region crossings, welded oriented manifold skin Euler2, nonnegative80bone partition and exact stored source rest/weights. Contact QP resolved4pairs with1.540mm maximum displacement, unchanged30mm guard. Closed native payload loader and readback pass. No Blender job/native neutral or raised anatomy/coat/live binding/motion executed; all wholeform/interface/film/Director requirements remainUNKNOWN, not artisticPASS. Shared261ceiling exhausted.",
+          "evidence": [
+            "results/sikh390/numeric261-run.json",
+            "results/sikh390/numeric261.json",
+            "results/sikh390/GRAFT261_READBACK.json"
+          ],
+          "max": 261
+        }
+      }
+    ]
+  }
+]
