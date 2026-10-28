@@ -1,0 +1,50 @@
+{
+  "scope": "Known-history sensitivity only; prior391 audit classifications, not new image review or blind trial.",
+  "windows": [
+    {
+      "start": 212,
+      "end": 221,
+      "charged_cycles": 10,
+      "image_review_cycles": 3,
+      "scoped_positive_art_proofs": 0
+    },
+    {
+      "start": 222,
+      "end": 231,
+      "charged_cycles": 10,
+      "image_review_cycles": 6,
+      "scoped_positive_art_proofs": 0
+    },
+    {
+      "start": 232,
+      "end": 241,
+      "charged_cycles": 10,
+      "image_review_cycles": 4,
+      "scoped_positive_art_proofs": 0
+    },
+    {
+      "start": 242,
+      "end": 251,
+      "charged_cycles": 10,
+      "image_review_cycles": 4,
+      "scoped_positive_art_proofs": 0
+    },
+    {
+      "start": 252,
+      "end": 261,
+      "charged_cycles": 10,
+      "image_review_cycles": 0,
+      "scoped_positive_art_proofs": 0
+    }
+  ],
+  "positive_control": {
+    "scope": "Known accepted prep58\u201366; nine charged cycle positions; no image until66 per392 records.",
+    "start": 58,
+    "end": 66,
+    "cycles": 9
+  },
+  "limits": [
+    "Not an optimum threshold estimate.",
+    "Canonical historical cycles include non-art/planning/technical slots; no completed-cycle or total-project census."
+  ]
+}

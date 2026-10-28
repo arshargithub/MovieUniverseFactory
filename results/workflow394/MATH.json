@@ -1,0 +1,74 @@
+{
+  "assumptions": {
+    "deliverables_equal_effort": 3,
+    "trailer_equal_sequences": 4,
+    "pashtun_complete": 1,
+    "sikh_complete": 0.5,
+    "not_official_release_gate_replacement": true
+  },
+  "earned_sequence_equivalents": 1.5,
+  "total_sequence_equivalents": 12,
+  "progress_fraction": "1/8",
+  "progress_percent": 12.5,
+  "remaining_sequence_equivalents": 10.5,
+  "remaining_to_completed_ratio": 7.0,
+  "constant_productivity_illustration": {
+    "remaining_cycles": "7*C",
+    "total_cycles": "8*C",
+    "warning": "Conditional scaling identity, not a forecast; C is not yet fully reconciled and includes effort classes needing separation."
+  },
+  "budget_sensitivity": [
+    {
+      "total_budget_multiple_of_spend_C": 2,
+      "remaining_budget_multiple": 1,
+      "required_future_productivity_multiple_of_past": 7.0
+    },
+    {
+      "total_budget_multiple_of_spend_C": 4,
+      "remaining_budget_multiple": 3,
+      "required_future_productivity_multiple_of_past": 2.3333333333333335
+    },
+    {
+      "total_budget_multiple_of_spend_C": 8,
+      "remaining_budget_multiple": 7,
+      "required_future_productivity_multiple_of_past": 1.0
+    }
+  ],
+  "allocation_sensitivity": [
+    {
+      "sequence_budget_cycles": 100,
+      "experimental_share": 0.1,
+      "method_exploration_cycles": 10
+    },
+    {
+      "sequence_budget_cycles": 100,
+      "experimental_share": 0.2,
+      "method_exploration_cycles": 20
+    },
+    {
+      "sequence_budget_cycles": 100,
+      "experimental_share": 0.3,
+      "method_exploration_cycles": 30
+    },
+    {
+      "sequence_budget_cycles": 200,
+      "experimental_share": 0.1,
+      "method_exploration_cycles": 20
+    },
+    {
+      "sequence_budget_cycles": 200,
+      "experimental_share": 0.2,
+      "method_exploration_cycles": 40
+    },
+    {
+      "sequence_budget_cycles": 200,
+      "experimental_share": 0.3,
+      "method_exploration_cycles": 60
+    }
+  ],
+  "limits": [
+    "All allocations are illustrative, not approved ceilings.",
+    "Equal deliverable/sequence effort and Sikh50percent are Director-supplied assumptions.",
+    "No measured whole-project cycle count or cost/finish-date estimate."
+  ]
+}
